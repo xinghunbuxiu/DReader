@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBox android:id="@id/license" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" />
+    <TextView android:gravity="center_horizontal" android:id="@id/reg_via_sms_alert" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/passport_reg_via_sms_alert" style="@style/Passport.TextSecondPrimary" />
+    <Button android:id="@id/btn_login" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_miui_provision_login_reg_button_margin_top" android:layout_marginBottom="@dimen/passport_buttons_margin_v" android:text="@string/passport_login" style="@style/Passport.BlueButton" />
+    <Button android:id="@id/btn_downlink_reg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/passport_downlink_reg" style="@style/Passport.ButtonNormal" />
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@id/has_sim_card_reg_area" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:id="@id/reg_prompt" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_reg_prompt" style="@style/Passport.TextSecondPrimary" />
+            <FrameLayout android:id="@id/uplink_reg_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <Button android:id="@id/btn_uplink_reg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/passport_uplink_reg" style="@style/Passport.ButtonNormal" />
+                <LinearLayout android:orientation="horizontal" android:id="@id/double_slot_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <Button android:id="@id/btn_slot1_reg" android:background="@drawable/passport_btn_bg_first_light" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_uplink_slot1_reg" android:layout_weight="1.0" style="@style/Passport.ButtonNormal" />
+                    <Button android:id="@id/btn_slot2_reg" android:background="@drawable/passport_btn_bg_last_light" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_uplink_slot2_reg" android:layout_weight="1.0" style="@style/Passport.ButtonNormal" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

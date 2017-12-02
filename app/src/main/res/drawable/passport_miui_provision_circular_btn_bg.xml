@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <size android:height="@dimen/passport_miui_provision_circular_btn_size" android:width="@dimen/passport_miui_provision_circular_btn_size" />
+            <solid android:color="#ff009fff" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <size android:height="@dimen/passport_miui_provision_circular_btn_size" android:width="@dimen/passport_miui_provision_circular_btn_size" />
+            <solid android:color="@android:color/white" />
+        </shape>
+    </item>
+</selector>

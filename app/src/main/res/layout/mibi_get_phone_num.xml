@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/mibi_payment_general_padding" android:paddingTop="@dimen/mibi_payment_general_padding" android:paddingRight="@dimen/mibi_payment_general_padding" android:paddingBottom="@dimen/mibi_payment_padding_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mibi_get_phone_num_summary" style="@style/Mibi.TextAppearance.Payment.General" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_get_phone_num_margin_top">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/mibi_get_phone_num_edit_part_margin_bottom">
+            <TextView android:textSize="@dimen/mibi_text_size_payment_general" android:textColor="@color/mibi_text_color_black" android:layout_gravity="center|left" android:paddingLeft="@dimen/mibi_get_phone_num_margin_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mibi_get_phone_num_prefix" />
+            <EditText android:textSize="@dimen/mibi_text_size_payment_general" android:id="@id/edit_phone_num" android:paddingLeft="@dimen/mibi_get_phone_num_edit_padding_left" android:paddingRight="@dimen/mibi_get_phone_num_margin_right" android:layout_width="fill_parent" android:layout_height="fill_parent" android:singleLine="true" android:maxLength="13" android:inputType="phone" />
+        </FrameLayout>
+        <TextView android:textSize="@dimen/mibi_text_size_payment_general" android:textColor="@color/mibi_text_color_payment_red" android:layout_gravity="bottom" android:id="@id/error_info" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/mibi_payment_verify_sms_code_error_margin_bottom" />
+    </LinearLayout>
+    <Button android:layout_gravity="bottom" android:id="@id/button_confirm" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mibi_button_confirm" style="@style/Mibi.Widget.Button.Payment" />
+</LinearLayout>

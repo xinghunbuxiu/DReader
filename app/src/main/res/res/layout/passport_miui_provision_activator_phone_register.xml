@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_title_reg" style="@style/Passport.MiuiProvisionActionBarTitleStyle" />
+    <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="65.0dip" android:layout_marginBottom="19.0dip" android:src="@drawable/passport_miui_provision_sim_single" />
+    <TextView android:textSize="@dimen/passport_title_text_size" android:textColor="@android:color/black" android:layout_gravity="center_horizontal" android:id="@id/user_phone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="15.0dip" />
+    <Button android:layout_gravity="center_horizontal" android:id="@id/btn_register" android:layout_width="@dimen/passport_miui_provision_button_width" android:layout_height="wrap_content" android:text="@string/passport_quick_register" style="@style/Passport.BlueButton" />
+    <TextView android:layout_gravity="center_horizontal" android:id="@id/login_other_account" android:layout_width="@dimen/passport_miui_provision_button_width" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_miui_provision_buttons_margin_v" android:text="@string/passport_login_other_account" style="@style/Passport.ButtonNormal" />
+    <CheckBox android:layout_gravity="bottom|center" android:id="@id/license" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.6999817dip" android:checked="true" />
+    <TextView android:layout_gravity="center_horizontal" android:id="@id/extra_license" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/Passport.ActivatorPhoneLicenseStyle" />
+    <include android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" layout="@layout/passport_miui_provision_login_bottom_panel" />
+</LinearLayout>

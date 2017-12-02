@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/general__web_window_view__title" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true">
+            <ImageButton android:id="@id/general__web_window_view__back" android:background="@null" android:padding="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/general__web_window_view__back" android:scaleType="center" />
+            <ImageButton android:id="@id/general__web_window_view__foward" android:background="@null" android:padding="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/general__web_window_view__forward" android:scaleType="center" />
+            <ImageButton android:id="@id/general__web_window_view__refresh" android:background="@null" android:padding="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/general__web_window_view__refresh" android:scaleType="center" />
+            <ImageButton android:id="@id/general__web_window_view__menu" android:background="@null" android:padding="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/general__web_window_view__more" android:scaleType="center" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true">
+            <ImageButton android:id="@id/general__web_window_view__cancel" android:background="@null" android:padding="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/general__web_window_view__cancel" android:layout_alignParentLeft="true" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/general__web_window_view__title">
+        <WebView android:id="@id/general__network_view__web" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ImageView android:background="@drawable/shadow_normal" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_alignParentTop="true" />
+        <ImageView android:background="@drawable/shadow_normal_down" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/user__summary_view__mi_user" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/user__summary_view__random_named_view_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/user__summary_view__followings_root" android:background="@drawable/personal__nav__relations_bg" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <com.duokan.reader.ui.general.DkNumView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__ffffff" android:layout_gravity="center_horizontal" android:id="@id/user__summary_view__following_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__ffffff80" android:layout_gravity="center_horizontal" android:id="@id/user__summary_view__followings" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/user__summary_view__followings" android:singleLine="true" />
+                </LinearLayout>
+                <com.duokan.reader.ui.general.DkBigFaceView android:id="@id/user__summary_view__mi_user_avatar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" />
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/user__summary_view__fans_root" android:background="@drawable/personal__nav__relations_bg" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <com.duokan.reader.ui.general.DkNumView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__ffffff" android:layout_gravity="center_horizontal" android:id="@id/user__summary_view__fans_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__ffffff80" android:layout_gravity="center_horizontal" android:id="@id/user__summary_view__fans" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/user__summary_view__fans" android:singleLine="true" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textStyle="normal" android:textColor="#ffffffff" android:layout_gravity="center_horizontal" android:id="@id/user__summary_view__mi_login_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="30.0dip" />
+        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textStyle="normal" android:textColor="#ffffffff" android:layout_gravity="center_horizontal" android:id="@id/user__summary_view__mi_signature" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="7.0dip" android:layout_marginRight="30.0dip" android:maxLines="3" />
+        <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/personal__shared__xiaomi_id_icon" android:scaleType="center" android:contentDescription="@null" />
+            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__e" android:textStyle="normal" android:textColor="@color/general__shared__ffffff80" android:id="@id/user__summary_view__mi_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:singleLine="true" />
+        </LinearLayout>
+        <RelativeLayout android:layout_gravity="center_horizontal" android:id="@id/user__summary_view__relation_root" android:layout_width="100.0dip" android:layout_height="30.0dip" android:layout_marginTop="15.0dip">
+            <RelativeLayout android:id="@id/user__summary_view__relation_status" android:layout_width="100.0dip" android:layout_height="30.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                    <ImageView android:id="@id/user__summary_view__relation_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:src="@drawable/personal__follow_icon" android:contentDescription="@null" />
+                    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__ffffff" android:id="@id/user__summary_view__relation_text" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/user__summary_view__relation_unfollow" android:background="@drawable/personal__unfollow_button_bg" android:visibility="gone" android:layout_width="100.0dip" android:layout_height="30.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:src="@drawable/personal__unfollow_icon" android:contentDescription="@null" />
+                    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/user__summary_view__unfollow" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/user__summary_view__dk_user" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.duokan.reader.ui.general.DkBigFaceView android:id="@id/user__summary_view__dk_user_avatar" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textStyle="normal" android:textColor="#ffffffff" android:id="@id/user__summary_view__dk_login_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="30.0dip" android:singleLine="true" />
+    </LinearLayout>
+</RelativeLayout>

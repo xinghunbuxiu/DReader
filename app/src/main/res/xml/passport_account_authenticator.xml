@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<account-authenticator passport:passport_accountType="com.xiaomi" passport:passport_label="@string/passport_account_label" passport:passport_icon="@drawable/passport_mi_icon" passport:passport_smallIcon="@drawable/passport_mi_icon" xmlns:passport="http://schemas.android.com/apk/res-auto" />

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/country_area" android:layout_width="fill_parent" android:layout_height="@dimen/passport_miui_provision_edit_text_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/passport_title_text_size" android:textColor="@android:color/black" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/passport_user_reg_region" android:layout_weight="1.0" style="@style/Passport.LeftLayoutGravity" />
+    <TextView android:textSize="@dimen/passport_secondary_text_size" android:textColor="@color/passport_secondary_text_color" android:id="@id/country_region" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/passport_arrow_right" style="@style/Passport.AreaImagePaddingRight" />
+</LinearLayout>

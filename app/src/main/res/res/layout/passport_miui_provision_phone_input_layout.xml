@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/phone_area" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/passport_title_text_size" android:textColor="@android:color/black" android:gravity="center_vertical" android:id="@id/phone_region_iso" android:background="@drawable/passport_miui_provision_country_code" android:layout_width="wrap_content" android:layout_height="@dimen/passport_miui_provision_edit_text_height" />
+    <EditText android:id="@id/input_phone_num" android:layout_width="wrap_content" android:hint="@string/passport_phone_num_hint_text" android:layout_toRightOf="@id/phone_region_iso" style="@style/Passport.MiuiProvisionEditViewStyle" />
+</RelativeLayout>

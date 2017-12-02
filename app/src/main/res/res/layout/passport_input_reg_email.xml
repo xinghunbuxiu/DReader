@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Passport.LoginRegLayoutPadding"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/passport_user_region_layout" />
+    <com.xiaomi.passport.ui.PassportGroupEditText android:layout_gravity="center_vertical" android:id="@id/email" android:background="@drawable/passport_group_first_item_normal_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/passport_email" android:inputType="textEmailAddress" android:imeOptions="actionNext" style="@style/Passport.EditTextStyle" />
+    <include layout="@layout/passport_password" />
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_title_content_margin_v" android:layout_marginBottom="@dimen/passport_reg_content_bottom_margin" android:text="@string/passport_password_req_notice" style="@style/Passport.TextSecondPrimary" />
+    <Button android:id="@id/btn_password_confirm" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/passport_register" style="@style/Passport.BlueButton" />
+</LinearLayout>

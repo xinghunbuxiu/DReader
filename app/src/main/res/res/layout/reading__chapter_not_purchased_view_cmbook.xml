@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.reader.ui.general.DkTextView android:textSize="17.0sp" android:gravity="center" android:id="@id/reading__chapter_not_purchased_view__name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="15.0dip" />
+    <com.duokan.reader.ui.general.DkTextView android:textSize="@dimen/general_font__shared__c" android:ellipsize="end" android:gravity="center" android:id="@id/reading__chapter_not_purchased_view__tip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" />
+    <View android:id="@id/reading__chapter_not_purchased_view__divider" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="@dimen/general_font__shared__b" android:textColor="@android:color/white" android:gravity="center" android:id="@id/reading__chapter_not_purchased_view__login_or_buy" android:background="@drawable/general__shared__rounded_button_orange" android:visibility="gone" android:layout_width="207.0dip" android:layout_height="36.0dip" android:layout_marginTop="25.0dip" />
+    <LinearLayout android:gravity="center|top" android:orientation="vertical" android:id="@id/reading__chapter_not_purchased_view__server_info" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

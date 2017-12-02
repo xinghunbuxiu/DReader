@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingTop="@dimen/mibi_giftcard_detail_layout_padding_top" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:payment="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/mibi_giftcard_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/mibi_giftcard_detail_minwidth" android:minHeight="@dimen/mibi_giftcard_detail_minheight">
+        <com.mipay.common.component.MiuiDigitFontTextView android:textSize="@dimen/mibi_text_size_giftcard_detail_available" android:textColor="@color/mibi_text_color_giftcard_detail_mibi" android:gravity="center" android:id="@id/available" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_giftcard_detail_available_margin_top" payment:mibi_fontStyle="normal_0" />
+        <TextView android:textSize="13.0sp" android:textColor="@color/mibi_text_color_giftcard_detail_unit" android:layout_gravity="center" android:id="@id/unit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_giftcard_detail_unit_margin_top" />
+        <View android:layout_gravity="center_horizontal" android:background="@drawable/mibi_divider_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_divider" android:layout_marginTop="@dimen/mibi_giftcard_detail_divider_margin_top" />
+        <TableLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_detail_content_margin_top_bottom" android:layout_marginBottom="@dimen/mibi_giftcard_detail_content_margin_bottom" android:shrinkColumns="1">
+            <TableRow>
+                <TextView android:id="@id/total_amount_title" android:text="@string/mibi_detail_giftcard_total" style="@style/Mibi.TextAppearance.Detail" />
+                <TextView android:id="@id/total_amount_value" android:layout_marginLeft="@dimen/mibi_giftcard_detail_table_row_margin_left" style="@style/Mibi.TextAppearance.Detail" />
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@id/activity_title" android:text="@string/mibi_detail_giftcard_activity" style="@style/Mibi.TextAppearance.Detail" />
+                <TextView android:id="@id/activity_value" android:layout_marginLeft="@dimen/mibi_giftcard_detail_table_row_margin_left" style="@style/Mibi.TextAppearance.Detail" />
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@id/expired_time_title" android:text="@string/mibi_detail_giftcard_expired_time" style="@style/Mibi.TextAppearance.Detail" />
+                <TextView android:id="@id/expired_time_value" android:layout_marginLeft="@dimen/mibi_giftcard_detail_table_row_margin_left" style="@style/Mibi.TextAppearance.Detail" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+    <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <Button android:layout_gravity="center" android:id="@id/button_package" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/mibi_giftcard_detail_button_package_margin_left" android:layout_marginRight="@dimen/mibi_giftcard_detail_button_package_margin_right" android:layout_marginBottom="@dimen/mibi_giftcard_detail_button_package_margin_bottom" style="@style/Mibi.Widget.Button.Warning" />
+</LinearLayout>

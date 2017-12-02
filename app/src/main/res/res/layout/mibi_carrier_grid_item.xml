@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xiaomi.payment.ui.component.CarrierGridViewItem android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/mibi_carrier_grid_item_min_height" style="@style/Mibi.Widget.GridItem"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="right" android:background="@drawable/mibi_grid_view_item_divide_line" android:layout_width="@dimen/mibi_divider" android:layout_height="fill_parent" />
+    <ImageView android:layout_gravity="bottom" android:background="@drawable/mibi_grid_view_item_divide_line" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_divider" />
+    <ImageView android:layout_gravity="center" android:id="@id/carrier_icon" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="center" />
+    <TextView android:textSize="@dimen/mibi_text_size_carrier_grid_title" android:textColor="@color/mibi_primary_color" android:gravity="center|right|top" android:id="@id/carrier_title" android:duplicateParentState="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/mibi_prepaid_cardtype_carrier_title_margin_top" android:layout_marginRight="@dimen/mibi_prepaid_cardtype_carrier_title_margin_right" />
+</com.xiaomi.payment.ui.component.CarrierGridViewItem>

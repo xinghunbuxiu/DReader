@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ProgressBar android:id="@android:id/progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_get_activator_phone_loading_margin_top" android:max="10000" style="?android:attr/progressBarStyle" />
+    <TextView android:textSize="@dimen/passport_get_activator_phone_notice_text_size" android:textColor="@color/passport_text_color_gray" android:id="@id/loading_notice" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_get_activator_phone_notice_margin_top" />
+</LinearLayout>

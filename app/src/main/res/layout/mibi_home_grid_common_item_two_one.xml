@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xiaomi.payment.ui.component.HomeGridCommonTwoOneView android:background="@drawable/mibi_home_grid_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="90.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="right" android:background="@color/mibi_color_home_grid_line" android:layout_width="@dimen/mibi_divider" android:layout_height="fill_parent" />
+    <ImageView android:layout_gravity="bottom" android:background="@color/mibi_color_home_grid_line" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_divider" />
+    <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/mibi_grid_item_icon_margin_left">
+        <ImageView android:id="@id/image" android:layout_width="@dimen/mibi_home_grid_icon_width" android:layout_height="@dimen/mibi_home_grid_icon_height" android:layout_marginRight="@dimen/mibi_grid_item_icon_margin_right" android:scaleType="centerCrop" />
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/mibi_text_size_grid_item_two_one_title" android:textColor="@color/mibi_text_color_home_grid_item_title" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+            <TextView android:textSize="@dimen/mibi_text_size_grid_item_two_one_summary" android:textColor="@color/mibi_text_color_home_grid_item_summary" android:id="@id/summary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:singleLine="true" />
+        </LinearLayout>
+    </LinearLayout>
+</com.xiaomi.payment.ui.component.HomeGridCommonTwoOneView>

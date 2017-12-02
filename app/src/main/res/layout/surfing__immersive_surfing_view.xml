@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:clickable="true" android:layout_width="fill_parent" android:layout_height="68.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/surfing__immersive_surfing_view__content" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="horizontal" android:id="@id/surfing__immersive_surfing_view__phone_content" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="horizontal" android:id="@id/surfing__immersive_surfing_view__tabs" android:paddingLeft="7.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="3.0" />
+            <FrameLayout android:id="@id/surfing__immersive_surfing_view__right" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="2.0" />
+        </LinearLayout>
+        <FrameLayout android:id="@id/surfing__immersive_surfing_view__hd_content" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@id/surfing__immersive_surfing_view__tabs_hd" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+            <FrameLayout android:layout_gravity="right" android:id="@id/surfing__immersive_surfing_view__right_hd" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:paddingBottom="16.0dip" android:layout_width="190.0dip" android:layout_height="fill_parent" />
+        </FrameLayout>
+    </FrameLayout>
+    <View android:id="@id/surfing__immersive_surfing_view__search_bar" android:paddingLeft="20.0dip" android:paddingTop="10.0dip" android:paddingRight="20.0dip" android:paddingBottom="6.0dip" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

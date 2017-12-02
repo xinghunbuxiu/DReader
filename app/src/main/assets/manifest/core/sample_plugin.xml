@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 必须以plugin开始，plugin可以有id和name两个属性，当前没用 -->
+<plugin
+   id="com.mipay.wallet"
+   name="Wallet">
+   <!-- extension-point 可以有id/name/schema三个属性 -->
+   <!-- id是该扩展点的id，必填，在当前Bundle必须唯一 -->
+   <!-- id如果不包含名空间的话，会自动加上当前Bundle的符号名，就是MANIFEST.MF中申明的SymbolicName -->
+   <!-- name是该扩展点的名字，必填，仅仅用作扩展点的描述 -->
+   <!-- schema是当前扩展点的描述文件，可空，是一个W3C XML Schema，当前没用到 -->
+   <extension-point
+         id="local_entry"
+         name="Local Entry"
+         schema="local_entry.exsd"/>
+   <!-- extension 可以有id/name/point三个属性，其中-->
+   <!-- id是该扩展的id，可空，没有id的扩展无法使用指定id的方法找到，在当前Bundle必须唯一 -->
+   <!-- name是该扩展的名字，可空，仅仅用作扩展的描述 -->
+   <!-- point是该扩展实现的扩展点id，必填 -->
+   <!-- id/point如果不包含名空间的话，都会自动加上当前Bundle的符号名，就是MANIFEST.MF中申明的SymbolicName -->
+   <extension
+         id="mipay_phone_recharge_local_entry"
+         name="Phone Recharge"
+         point="com.mipay.wallet.local_entry">
+         <!-- 扩展中的配置元素可以用户指定，应当符合扩展点的Schema要求 -->
+         <!-- 如果你的配置元素包含需要可执行的类，必须实现ExtensionExecutable接口 -->
+         <entry
+             id="mipay.phoneRecharge"
+             class="com.mipay.wallet.entry.local.MipayPhoneRechargeLocalEntry"/>
+   </extension>
+</plugin>
+

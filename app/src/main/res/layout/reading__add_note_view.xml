@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.duokan.core.ui.BoxView android:background="@color/general__shared__fefaf8" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <LinearLayout android:orientation="horizontal" android:id="@id/reading__addnotedlg_view__btns" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.duokan.reader.ui.general.DkLabelView android:layout_gravity="center|left" android:id="@id/reading__addnotedlg_view__cancel" android:layout_width="56.0dip" android:text="@string/reading__addnotedlg_view__cancel" style="@style/general__shared__button_light_29dip_c9c9c9" />
+                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@android:color/black" android:gravity="center" android:layout_gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/reading__addnotedlg_view__note" android:layout_weight="1.0" />
+                <com.duokan.reader.ui.general.DkLabelView android:layout_gravity="center|right" android:id="@id/reading__addnotedlg_view__save" android:layout_width="56.0dip" android:text="@string/reading__addnotedlg_view__save" style="@style/general__shared__button_29dip_257fd2" />
+            </LinearLayout>
+            <View android:background="@color/general__shared__eed1d0" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            <View android:background="@color/general__shared__eed1d0" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="1.5dip" />
+            <com.duokan.core.ui.LinearScrollView android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <com.duokan.reader.ui.general.PinView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__8d6752" android:ellipsize="end" android:id="@id/reading__addnotedlg_view__sample" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="6.0dip" android:layout_marginRight="15.0dip" android:maxLines="4" />
+                <com.duokan.core.ui.DkEditorView android:scrollbarStyle="insideOverlay" android:textSize="@dimen/general_font__shared__c" android:gravity="top" android:id="@id/reading__addnotedlg_view__note" android:background="@android:color/transparent" android:paddingLeft="18.0dip" android:paddingTop="10.0dip" android:paddingRight="18.0dip" android:paddingBottom="15.0dip" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:singleLine="false" android:lineSpacingMultiplier="1.2" />
+            </com.duokan.core.ui.LinearScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</com.duokan.core.ui.BoxView>

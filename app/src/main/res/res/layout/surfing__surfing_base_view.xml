@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="65.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:id="@id/surfing__surfing_base_view__left" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/surfing__surfing_base_view__tabs" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="2.0" />
+        <FrameLayout android:id="@id/surfing__surfing_base_view__right" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    </LinearLayout>
+    <View android:layout_gravity="bottom" android:background="#ffbdbebf" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</FrameLayout>

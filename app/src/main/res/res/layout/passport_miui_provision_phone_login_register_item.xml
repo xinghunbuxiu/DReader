@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBox android:id="@id/license" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" />
+    <TextView android:gravity="center_horizontal" android:id="@id/reg_via_sms_alert" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/passport_reg_via_sms_alert" style="@style/Passport.TextSecondPrimary" />
+    <Button android:id="@id/btn_login" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_miui_provision_login_reg_button_margin_top" android:layout_marginBottom="@dimen/passport_buttons_margin_v" android:text="@string/passport_login" style="@style/Passport.BlueButton" />
+    <TextView android:layout_gravity="center_horizontal" android:id="@id/login_by_other_ways" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_login_using_other_ways" style="@style/Passport.TextSecondPrimary" />
+    <Button android:id="@id/btn_reg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_buttons_margin_v" android:text="@string/passport_title_reg" android:layout_below="@id/reg_prompt" style="@style/Passport.ButtonNormal" />
+</LinearLayout>

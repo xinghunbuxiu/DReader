@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/Passport.LoginRegLayoutPadding"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_gravity="center_horizontal" android:id="@id/top_prompt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_select_the_login_account" style="@style/Passport.LoginRegTopPromptStyle" />
+    <include android:id="@id/phone_user1" layout="@layout/passport_phone_info" />
+    <include android:id="@id/phone_user2" android:layout_width="fill_parent" android:layout_height="@dimen/passport_activator_phone_info_height" android:layout_marginTop="@dimen/passport_register_infos_margin_v" layout="@layout/passport_phone_info" />
+    <CheckBox android:layout_gravity="bottom|center" android:id="@id/license" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_phone_login_license_margin_top" android:checked="true" />
+    <TextView android:layout_gravity="center_horizontal" android:id="@id/extra_license" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/Passport.ActivatorPhoneLicenseStyle" />
+    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_phone_login_license_text_margin_v">
+        <TextView android:id="@id/login_other_account" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_login_other_account" style="@style/Passport.LoginRegGuideTextStyle" />
+        <TextView android:id="@id/reg_new_account" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_reg_new_account" style="@style/Passport.RegisterNewAccount" />
+    </LinearLayout>
+</LinearLayout>

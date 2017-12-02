@@ -1,0 +1,22 @@
+{
+  data: [
+    {
+      title: "surfing__shared__bookshelf",
+      type: "activity",
+      image: "general__force_touch_view__bookshelf",
+      intent: "duokan-reader://bookshelf#Intent;component=com.duokan.reader/.DkReaderActivity;end"
+    },
+    {
+      title: "surfing__shared__store",
+      type: "activity",
+      image: "general__force_touch_view__store",
+      intent: "duokan-reader://store#Intent;component=com.duokan.reader/.DkReaderActivity;end"
+    },
+    {
+      title: "surfing__shared__recently",
+      type: "activity",
+      image: "general__force_touch_view__recently",
+      intent: "duokan-reader://reading/recently#Intent;component=com.duokan.reader/.DkReaderActivity;end"
+    }
+  ]
+}

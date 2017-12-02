@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/empty" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ProgressBar android:id="@id/progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminateOnly="true" />
+    <TextView android:id="@id/progress_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mibi_progress_downloading" />
+    <ImageView android:id="@id/error_icon" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/mibi_content_empty_icon_light" />
+    <TextView android:textSize="@dimen/mibi_text_size_small" android:textColor="@color/mibi_text_color_gray" android:id="@id/error" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <Button android:id="@id/button_retry" android:visibility="gone" android:layout_width="@dimen/mibi_min_limited_button_width" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_min_limited_button_margin_top" android:text="@string/mibi_btn_net_connection_retry" style="@style/Mibi.Widget.Button" />
+</LinearLayout>

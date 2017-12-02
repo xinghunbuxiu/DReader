@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:paddingLeft="@dimen/mibi_recharge_progress_padding_left" android:paddingTop="@dimen/mibi_recharge_progress_padding_top" android:paddingRight="@dimen/mibi_recharge_progress_padding_right" android:paddingBottom="@dimen/mibi_recharge_progress_padding_bottom" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/mibi_ic_warning" />
+            <TextView android:textSize="@dimen/mibi_text_size_large" android:textStyle="bold" android:textColor="@color/mibi_text_color_black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_recharge_progress_submit_title_margin_top" android:text="@string/mibi_progress_submit_title" android:singleLine="true" />
+            <TextView android:textSize="@dimen/mibi_text_size_small" android:textColor="@color/mibi_text_color_gray" android:id="@id/progress_summary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_recharge_progress_summary_margin_top" android:singleLine="true" />
+            <TextView android:textSize="@dimen/mibi_text_size_small" android:textColor="@color/mibi_text_color_gray" android:id="@id/progress_warning" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_recharge_progress_warning_margin_top" />
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView android:textSize="@dimen/mibi_text_size_small" android:textColor="@color/mibi_text_color_red" android:gravity="center" android:id="@id/progress_error" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" />
+    <TextView android:textSize="@dimen/mibi_text_size_small" android:textColor="@color/mibi_text_color_gray" android:gravity="center" android:id="@id/progress_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:text="@string/mibi_progress_submit_hint" />
+    <Button android:id="@id/button_progress" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Mibi.Widget.Button" />
+</LinearLayout>

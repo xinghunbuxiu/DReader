@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xiaomi.payment.ui.item.MenuListItem android:layout_gravity="center|left" android:layout_width="fill_parent" style="@style/V6.Widget.ListView.Item.Immersion"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="@style/Mibi.TextAppearance.PreferenceList" android:textSize="@dimen/mibi_text_size_menu_item" android:ellipsize="marquee" android:layout_gravity="center_vertical" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/bubble_image" android:background="@drawable/mibi_bubble" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</com.xiaomi.payment.ui.item.MenuListItem>

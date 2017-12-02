@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/general__shared__f7f7f7" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.reader.ui.general.HeaderView android:id="@id/bookshelf__file_explorer_view__header" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general_shared__cccccc_enable_disabled" android:gravity="center" android:layout_gravity="center|right" android:id="@id/bookshelf__file_explorer_view__select" android:layout_width="80.0dip" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:singleLine="true" />
+    </com.duokan.reader.ui.general.HeaderView>
+    <FrameLayout android:id="@id/bookshelf__file_explorer_view__tab" android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <com.duokan.reader.ui.bookshelf.FileExplorerFlipperView android:id="@id/bookshelf__file_explorer_view__content" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+</LinearLayout>

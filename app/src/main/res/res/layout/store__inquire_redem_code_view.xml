@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/general__shared__f7f7f7" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.reader.ui.general.PageHeaderView android:id="@id/store__inquire_redem_code_view__title" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="15.0dip" android:text="@string/store__inquire_redemption_code_view__prompt" android:singleLine="false" />
+    <LinearLayout android:layout_gravity="center" android:background="@drawable/general__shared__single_input_2" android:layout_width="fill_parent" android:layout_height="42.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="15.0dip">
+        <com.duokan.core.ui.DkEditorView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:gravity="center|left" android:id="@id/store__inquire_redem_code_view__redem_code" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:hint="@string/store__inquire_redemption_code_view__hint" android:singleLine="true" android:textCursorDrawable="@null" style="@style/general__shared__digits" />
+    </LinearLayout>
+    <com.duokan.reader.ui.general.DkLabelView android:id="@id/store__inquire_redem_code_view__inquire" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="15.0dip" android:text="@string/store__inquire_redemption_code_view__send" style="@style/general__shared__button_43dip_257fd2" />
+</LinearLayout>

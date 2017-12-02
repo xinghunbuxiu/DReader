@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/Passport.LoginRegLayoutPadding"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/passport_account_title" />
+    <TextView android:id="@id/input_password_prompt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/passport_title_content_margin" android:text="@string/passport_input_password_for_login" android:layout_below="@id/passport_account_title" style="@style/Passport.TextSecondPrimary" />
+    <include android:id="@id/input_password_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/input_password_prompt" layout="@layout/passport_password" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_below="@id/input_password_layout" layout="@layout/passport_captcha" />
+    <LinearLayout android:orientation="vertical" android:id="@id/bottom_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <Button android:id="@id/btn_login" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="@string/passport_login" style="@style/Passport.BlueButton" />
+        <TextView android:id="@id/forgot_pwd" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_buttons_margin_v" android:text="@string/passport_forget_password_no_underline" style="@style/Passport.ButtonNormal" />
+    </LinearLayout>
+</RelativeLayout>

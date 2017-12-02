@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="50.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__72add8" android:gravity="center" android:id="@id/bookshelf__purchased_view__gift" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/personal__purchased_book_group_title_view__gift" android:layout_weight="1.0" />
+        <View android:id="@id/bookshelf__purchased_view__divider" android:background="@color/general__shared__e5e5e5" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" />
+        <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__72add8" android:gravity="center" android:id="@id/bookshelf__purchased_view__subscribe" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/personal__purchased_book_group_title_view__subscribe" android:layout_weight="1.0" />
+    </LinearLayout>
+    <View android:background="#ffcbcbcb" android:layout_width="fill_parent" android:layout_height="1.0px" android:contentDescription="@null" />
+</FrameLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:paddingLeft="@dimen/mibi_main_padding" android:paddingRight="@dimen/mibi_main_padding" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:layout_gravity="center|left" android:id="@id/buttonLeft" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/Mibi.Widget.ActionMode.Button" />
+    <TextView android:textAppearance="@style/Mibi.TextAppearance.TitleBar.Title" android:ellipsize="end" android:gravity="center" android:layout_gravity="center" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    <Button android:layout_gravity="center|right" android:id="@id/buttonRight" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/Mibi.Widget.ActionMode.Button" />
+</FrameLayout>

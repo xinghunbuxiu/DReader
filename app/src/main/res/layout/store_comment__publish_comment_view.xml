@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:reader="http://schemas.android.com/apk/res-auto">
+    <com.duokan.reader.ui.general.PageHeaderView android:id="@id/store_comment__publish_comment_view__header" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <View android:background="@color/general__shared__bcbcbc" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/store_comment__publish_comment_view__rating_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.duokan.reader.ui.store.comment.DkCommentScoreView android:id="@id/store_comment__publish_comment_view__rating" android:padding="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" reader:custom_operation="true" reader:high_score="@drawable/general__shared__star_25dip_pressed" reader:normal_score="@drawable/general__shared__star_25dip_normal" reader:score_space="25.0dip" />
+        <View android:background="@color/general__shared__bcbcbc" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/store_comment__publish_comment_view__title_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.duokan.core.ui.DkEditorView android:textSize="@dimen/general_font__shared__b" android:id="@id/store_comment__publish_comment_view__title" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/store_comment__publish_comment_view__title_hint" android:maxLines="3" />
+        <View android:layout_gravity="bottom" android:background="@color/general__shared__bcbcbc" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    </FrameLayout>
+    <com.duokan.core.ui.BoxView android:id="@id/store_comment__publish_comment_view__content_box" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <com.duokan.core.ui.LinearScrollView android:gravity="fill" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.duokan.core.ui.DkEditorView android:textSize="@dimen/general_font__shared__b" android:gravity="center|left|top" android:id="@id/store_comment__publish_comment_view__content" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/store_comment__publish_comment_view__content_hint" />
+            <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__cccccc" android:gravity="center" android:layout_gravity="bottom|center|right" android:id="@id/store_comment__publish_comment_view__length_reminder" android:padding="10.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/store_comment__publish_comment_view__content_word_count_left" />
+        </com.duokan.core.ui.LinearScrollView>
+    </com.duokan.core.ui.BoxView>
+</LinearLayout>

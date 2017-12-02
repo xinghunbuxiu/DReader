@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView android:textSize="@dimen/general_font__shared__a" android:textColor="@color/general__shared__555555" android:gravity="center" android:id="@id/personal__bookshelf_popup_style_view__title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/personal__bookshelf_popup_style_view__title" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="15.0dip" android:layout_below="@id/personal__bookshelf_popup_style_view__title">
+            <LinearLayout android:orientation="vertical" android:id="@id/personal__bookshelf_popup_style_view__simple" android:background="@drawable/general__shared__layout_selected_bg" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:layout_weight="1.0" android:layout_marginEnd="15.0dip">
+                <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__ffffff" android:gravity="center" android:id="@id/personal__bookshelf_popup_style_view__simple_title" android:background="@drawable/general__shared__title_selected_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/personal__bookshelf_style_view__simple_style" />
+                <ImageView android:id="@id/personal__bookshelf_popup_style_view__simple_image" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/personal__bookshelf_style_popup_view__simple_image" android:scaleType="fitXY" android:adjustViewBounds="true" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/personal__bookshelf_popup_style_view__classic" android:background="@drawable/general__shared__layout_unselected_bg" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_weight="1.0" android:layout_marginStart="15.0dip">
+                <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__ffffff" android:gravity="center" android:id="@id/personal__bookshelf_popup_style_view__classic_title" android:background="@drawable/general__shared__title_unselected_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/personal__bookshelf_style_view__classic_style" />
+                <ImageView android:id="@id/personal__bookshelf_popup_style_view__classic_image" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/personal__bookshelf_style_popup_view__classic_image" android:scaleType="fitXY" android:adjustViewBounds="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:background="#ffcbcbcb" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="15.0dip" android:contentDescription="@null" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/personal__bookshelf_popup_style_view__show_read_progress" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="50.0dip">
+            <LinearLayout android:layout_gravity="center|left" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip">
+                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:layout_gravity="center|left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/personal__personal_settings_view__show_read_progress" />
+            </LinearLayout>
+            <ImageView android:layout_gravity="center|right" android:id="@id/personal__personal_settings_view__read_progress_switcher" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="15.0dip" android:src="@drawable/general__shared__switch" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>

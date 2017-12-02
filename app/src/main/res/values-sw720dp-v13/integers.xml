@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="mibi_num_gift_grid_columns">2</integer>
+    <integer name="mibi_num_home_grid_columns">6</integer>
+</resources>

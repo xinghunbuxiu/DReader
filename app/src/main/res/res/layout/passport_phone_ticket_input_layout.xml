@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/phone_area" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/login_prompt" layout="@layout/passport_phone" />
+    <FrameLayout android:id="@id/passport_vcode" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/phone_area">
+        <EditText android:id="@id/ev_verify_code" android:background="@drawable/passport_group_last_item_normal_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/passport_input_vcode_hint" android:singleLine="true" android:digits="1234567890" android:inputType="number" style="@style/Passport.EditTextStyle" />
+        <TextView android:textSize="@dimen/passport_secondary_text_size" android:textColor="@color/passport_secondary_notice_text_color" android:gravity="center" android:id="@id/send_vcode_notice" android:background="@drawable/passport_phone_get_code_bg" android:layout_width="@dimen/passport_phone_verify_code_notice_width" android:layout_height="fill_parent" android:text="@string/passport_get_verify_code" style="@style/Passport.RightLayoutGravity" />
+    </FrameLayout>
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.669983dip" layout="@layout/passport_captcha" />
+</merge>

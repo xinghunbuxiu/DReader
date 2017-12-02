@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<functionindex
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <items>
+        <item>
+            <id>13</id>
+            <resource_name>search_resource_name__settings</resource_name>
+            <intent_action>android.intent.action.VIEW</intent_action>
+            <intent_data>duokan-reader://personal/settings?miback=true</intent_data>
+            <path>search_description__settings</path>
+            <package>com.duokan.reader</package>
+            <keywords>search_keywords__settings</keywords>
+            <is_setting>true</is_setting>
+            <app_name>search_app_name</app_name>
+        </item>
+    </items>
+</functionindex>

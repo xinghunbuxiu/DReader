@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Mibi.Theme.Payment" parent="@style/Mibi.Theme.Dialog">
+        <item name="android:windowBackground">@drawable/mibi_dialog_start_bg_light</item>
+    </style>
+    <style name="Mibi.Theme.RechargeMethodEntry" parent="@style/Mibi.Theme.Dialog.FixedSize" />
+    <style name="Mibi.Theme.Settings" parent="@style/Mibi.Theme.Dialog.FixedSize" />
+</resources>

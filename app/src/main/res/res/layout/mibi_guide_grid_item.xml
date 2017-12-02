@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xiaomi.payment.ui.item.GuideGridItem android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:paddingLeft="@dimen/mibi_milicenter_guide_grid_item_padding_left_right" android:paddingTop="@dimen/mibi_milicenter_guide_grid_item_padding_top_bottom" android:paddingRight="@dimen/mibi_milicenter_guide_grid_item_padding_left_right" android:paddingBottom="@dimen/mibi_milicenter_guide_grid_item_padding_top_bottom" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/mibi_guide_default" android:scaleType="centerCrop" />
+    <TextView android:textSize="@dimen/mibi_text_size_tiny" android:ellipsize="marquee" android:layout_gravity="center_horizontal" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:singleLine="true" />
+    <TextView android:textSize="@dimen/mibi_text_size_more_tiny" android:textColor="@color/mibi_text_color_red" android:ellipsize="marquee" android:layout_gravity="center_horizontal" android:id="@id/summary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+</com.xiaomi.payment.ui.item.GuideGridItem>

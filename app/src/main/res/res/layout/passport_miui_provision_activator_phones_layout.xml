@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_login_title" style="@style/Passport.MiuiProvisionActionBarTitleStyle" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_miui_provision_title_text_view_margin_v" android:layout_marginBottom="9.0dip" style="@style/Passport.MiuiProvisionLoginRegHorizontalMargin">
+        <TextView android:textSize="@dimen/passport_secondary_text_size" android:textColor="@color/passport_text_color_gray" android:id="@id/top_prompt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_select_the_login_account" />
+        <TextView android:textSize="@dimen/passport_secondary_text_size" android:textStyle="bold" android:textColor="@color/passport_miui_provision_secondary_clickable_text_color" android:id="@id/reg_new_account" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_register" style="@style/Passport.RightLayoutGravity" />
+    </RelativeLayout>
+    <ImageView android:id="@id/top_divider" android:layout_width="fill_parent" android:layout_height="@dimen/passport_divider" android:src="@color/passport_divider_color" style="@style/Passport.MiuiProvisionLoginRegHorizontalMargin" />
+    <include android:id="@id/phone_user1" layout="@layout/passport_miui_provision_phone_info" />
+    <ImageView android:id="@id/middle_divider" android:layout_width="fill_parent" android:layout_height="@dimen/passport_divider" android:src="@color/passport_divider_color" style="@style/Passport.MiuiProvisionLoginRegHorizontalMargin" />
+    <include android:id="@id/phone_user2" layout="@layout/passport_miui_provision_phone_info" />
+    <ImageView android:id="@id/middle_divider2" android:layout_width="fill_parent" android:layout_height="@dimen/passport_divider" android:src="@color/passport_divider_color" style="@style/Passport.MiuiProvisionLoginRegHorizontalMargin" />
+    <include android:id="@id/other_account_layout" layout="@layout/passport_miui_provision_phone_info" />
+    <ImageView android:id="@id/bottom_divider" android:layout_width="fill_parent" android:layout_height="@dimen/passport_divider" android:src="@color/passport_divider_color" style="@style/Passport.MiuiProvisionLoginRegHorizontalMargin" />
+    <CheckBox android:layout_gravity="bottom|center" android:id="@id/license" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="9.699982dip" android:checked="true" />
+    <TextView android:layout_gravity="center_horizontal" android:id="@id/extra_license" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/Passport.ActivatorPhoneLicenseStyle" />
+    <include android:gravity="bottom" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" layout="@layout/passport_miui_provision_login_bottom_panel" />
+</LinearLayout>

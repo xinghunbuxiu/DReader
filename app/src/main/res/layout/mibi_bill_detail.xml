@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:paddingTop="@dimen/mibi_record_detail_layout_padding_top" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:payment="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/mibi_record_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/mibi_record_detail_minwidth" android:minHeight="@dimen/mibi_record_detail_minheight">
+        <TextView android:textSize="@dimen/mibi_text_size_large" android:textColor="@color/mibi_text_color_black" android:layout_gravity="center_horizontal" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_record_detail_title_margin_top" />
+        <com.mipay.common.component.FormattableEditText android:textSize="@dimen/mibi_text_size_detail_orderno" android:layout_gravity="center_horizontal" android:id="@id/orderNo" android:background="@null" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_record_detail_orderNo_margin_top" payment:mibi_fontStyle="bold_0" />
+        <View android:layout_gravity="center_horizontal" android:background="@drawable/mibi_divider_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_divider" android:layout_marginTop="@dimen/mibi_record_detail_divider_margin_top" />
+        <TableLayout android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_detail_content_margin_top_bottom" android:layout_marginBottom="@dimen/mibi_detail_content_margin_top_bottom" android:shrinkColumns="1">
+            <TableRow>
+                <TextView android:id="@id/account_1_title" style="@style/Mibi.TextAppearance.Detail" />
+                <TextView android:id="@id/account_1_value" android:layout_marginLeft="@dimen/mibi_recharge_table_row_margin_left" style="@style/Mibi.TextAppearance.Detail" />
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@id/account_2_title" android:text="@string/mibi_detail_pay_account" style="@style/Mibi.TextAppearance.Detail" />
+                <TextView android:id="@id/account_2_value" android:layout_marginLeft="@dimen/mibi_recharge_table_row_margin_left" style="@style/Mibi.TextAppearance.Detail" />
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@id/name_title" style="@style/Mibi.TextAppearance.Detail" />
+                <TextView android:id="@id/name_value" android:layout_marginLeft="@dimen/mibi_recharge_table_row_margin_left" style="@style/Mibi.TextAppearance.Detail" />
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@id/mibi_title" style="@style/Mibi.TextAppearance.Detail" />
+                <TextView android:id="@id/mibi_value" android:layout_marginLeft="@dimen/mibi_recharge_table_row_margin_left" style="@style/Mibi.TextAppearance.Detail" />
+            </TableRow>
+            <TableRow>
+                <TextView android:id="@id/time_title" style="@style/Mibi.TextAppearance.Detail" />
+                <TextView android:id="@id/time_value" android:layout_marginLeft="@dimen/mibi_recharge_table_row_margin_left" style="@style/Mibi.TextAppearance.Detail" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+</FrameLayout>

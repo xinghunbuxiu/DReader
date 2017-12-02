@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xiaomi.payment.ui.item.RechargeGridItem android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/icon" android:layout_width="@dimen/mibi_recharge_grid_item_icon_width" android:layout_height="@dimen/mibi_recharge_grid_item_icon_height" android:scaleType="centerCrop" />
+    <TextView android:textAppearance="@style/Mibi.TextAppearance.GridItem.Label" android:ellipsize="marquee" android:layout_gravity="center_horizontal" android:id="@id/label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:singleLine="true" />
+    <TextView android:textAppearance="@style/Mibi.TextAppearance.GridItem.SubLabel" android:ellipsize="marquee" android:layout_gravity="center_horizontal" android:id="@id/sub_label" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+</com.xiaomi.payment.ui.item.RechargeGridItem>

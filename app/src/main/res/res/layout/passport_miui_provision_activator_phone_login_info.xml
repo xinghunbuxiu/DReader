@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/passport_account_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="44.0dip" android:layout_marginBottom="9.699982dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/phone_icon" android:background="@drawable/passport_default_avatar" android:layout_width="@dimen/passport_miui_provision_head_icon_size" android:layout_height="@dimen/passport_miui_provision_head_icon_size" />
+    <TextView android:textSize="@dimen/passport_title_text_size" android:textColor="@android:color/black" android:ellipsize="end" android:layout_gravity="center_horizontal" android:id="@id/phone_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_title_content_margin" />
+    <TextView android:textSize="@dimen/passport_secondary_text_size" android:textColor="@color/passport_text_color_gray" android:ellipsize="end" android:layout_gravity="center_horizontal" android:id="@id/phone_summary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_title_text_margin" />
+</LinearLayout>

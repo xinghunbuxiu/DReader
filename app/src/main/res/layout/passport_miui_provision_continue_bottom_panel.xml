@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="bottom" android:layout_gravity="bottom" android:id="@id/bottom_panel" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Passport.MiuiProvisionLoginRegBottomPanelHorizontalMarin"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/passport_button_text_size" android:textColor="@color/passport_miui_provision_circular_btn_text" android:gravity="center" android:id="@id/btn_miui_provision_back" android:background="@drawable/passport_miui_provision_circular_btn_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_back" />
+    <ImageButton android:gravity="center" android:id="@id/image_btn_miui_provision_back" android:background="@drawable/passport_miui_provision_circular_btn_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/passport_miui_provision_back" />
+    <TextView android:textSize="@dimen/passport_button_text_size" android:textColor="@color/passport_miui_provision_continue_btn_text" android:gravity="center" android:id="@id/btn_continue" android:background="@drawable/passport_miui_provision_circular_btn_bg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_continue" style="@style/Passport.RightLayoutGravity" />
+</RelativeLayout>

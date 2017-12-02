@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Passport.LoginRegLayoutPadding"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_login_reg_info_margin_top" layout="@layout/passport_account_title" />
+    <CheckBox android:layout_gravity="bottom|center" android:id="@id/license" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_phone_login_license_margin_top" android:checked="true" />
+    <TextView android:layout_gravity="center_horizontal" android:id="@id/extra_license" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/passport_phone_login_license_button_margin_v" style="@style/Passport.ActivatorPhoneLicenseStyle" />
+    <Button android:id="@id/btn_login_account" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/passport_quick_login" style="@style/Passport.BlueButton" />
+    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_other_login_reg_entry_margin_top">
+        <TextView android:id="@id/login_other_account" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_login_other_account" style="@style/Passport.LoginRegGuideTextStyle" />
+        <TextView android:gravity="center_horizontal" android:id="@id/reg_new_account" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_reg_new_account" style="@style/Passport.RegisterNewAccount" />
+    </LinearLayout>
+</LinearLayout>

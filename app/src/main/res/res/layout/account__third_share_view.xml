@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/general__shared__fefaf8" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:orientation="horizontal" android:id="@id/account__third_share_view__btns" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.duokan.reader.ui.general.DkLabelView android:layout_gravity="center|left" android:id="@id/account__third_share_view__cancel" android:layout_width="56.0dip" android:text="@string/general__shared__cancel" style="@style/general__shared__button_light_29dip_c9c9c9" />
+            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@android:color/black" android:gravity="center" android:layout_gravity="center" android:id="@id/account__third_share_view__third_name" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <com.duokan.reader.ui.general.DkLabelView android:layout_gravity="center|right" android:id="@id/account__third_share_view__send" android:layout_width="56.0dip" android:text="@string/share_send" style="@style/general__shared__button_29dip_257fd2" />
+        </LinearLayout>
+        <View android:background="@color/general__shared__eed1d0" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <View android:background="@color/general__shared__eed1d0" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="1.5dip" />
+        <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" android:overScrollMode="never">
+            <LinearLayout android:orientation="vertical" android:id="@id/account__third_share_view__share_content" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <FrameLayout android:id="@id/account__third_share_view__content" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                <com.duokan.core.ui.DkEditorView android:scrollbarStyle="insideOverlay" android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__666666" android:gravity="top" android:id="@id/account__third_share_view__share_text" android:background="@android:color/transparent" android:paddingLeft="18.0dip" android:paddingTop="10.0dip" android:paddingRight="18.0dip" android:paddingBottom="15.0dip" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:hint="@string/share_reason" android:singleLine="false" android:lineSpacingMultiplier="1.2" android:textCursorDrawable="@null" />
+            </LinearLayout>
+        </ScrollView>
+        <RelativeLayout android:layout_gravity="bottom|center|right" android:id="@id/account__third_share_view__bottom" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <View android:background="@color/general__shared__bcbcbc" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="1.5dip" android:layout_alignParentTop="true" />
+            <CheckBox android:textSize="@dimen/general_font__shared__b" android:textColor="@android:color/black" android:id="@id/account__third_share_view__check" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:checked="true" android:button="@null" android:text="@string/account__third_share_view__create_note" android:drawableLeft="@drawable/general__shared__single_checkbox" android:drawablePadding="5.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/hfb_title" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:background="@drawable/hfb_info_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textColor="@color/hfb_green" android:layout_gravity="center_horizontal" android:id="@id/tv_title" android:text="@string/hfb_succ_label" android:drawableLeft="@drawable/hfb_succ" android:drawablePadding="5.0dip" style="@style/hfb_app_title_style" />
+                <TextView android:textSize="16.0sp" android:textColor="#ff333333" android:autoLink="none" android:id="@id/tv_info" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/hfb_succ_result" android:lineSpacingExtra="12.0dip" />
+                <TextView android:textSize="16.0sp" android:textColor="@color/hfb_black" android:autoLink="all" android:id="@id/tv_info" android:padding="15.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/hfb_succ_service_phone_tip" />
+            </LinearLayout>
+            <Button android:layout_gravity="center_horizontal" android:id="@id/btn_query" android:background="@drawable/hfb_red_btn" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_marginLeft="40.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="40.0dip" android:text="@string/hfb_retry_query" style="@style/hfb_txt_style" />
+            <Button android:layout_gravity="center_horizontal" android:id="@id/btn_return" android:background="@drawable/hfb_blue_btn" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_marginLeft="40.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="40.0dip" android:text="@string/hfb_return" style="@style/hfb_txt_style" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

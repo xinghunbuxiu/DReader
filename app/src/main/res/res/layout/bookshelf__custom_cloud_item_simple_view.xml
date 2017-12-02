@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.reader.ui.general.BookCoverView android:id="@id/bookshelf__custom_cloud_item_view__cover" android:layout_marginLeft="15.0dip" android:layout_marginTop="@dimen/general__shared__cover_top_shadow_margin_15dip" android:layout_marginBottom="@dimen/general__shared__cover_bottom_shadow_margin_15dip" style="@style/general__shared__cover_list" />
+    <LinearLayout android:orientation="vertical" android:id="@id/bookshelf__custom_cloud_item_view__info" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="5.0dip" android:layout_weight="1.0">
+        <com.duokan.reader.ui.general.DkLabelView android:ellipsize="end" android:id="@id/bookshelf__custom_cloud_item_view__name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" android:singleLine="false" android:includeFontPadding="false" style="@style/bookshelf__shared__text_style__a" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+            <com.duokan.reader.ui.general.DkLabelView android:id="@id/bookshelf__custom_cloud_item_view__left_attr" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/bookshelf__shared__text_style__c" />
+            <com.duokan.reader.ui.general.DkLabelView android:id="@id/bookshelf__custom_cloud_item_view__split" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" | " style="@style/bookshelf__shared__text_style__c" />
+            <com.duokan.reader.ui.general.DkLabelView android:ellipsize="end" android:id="@id/bookshelf__custom_cloud_item_view__right_attr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lines="1" style="@style/bookshelf__shared__text_style__c" />
+        </LinearLayout>
+    </LinearLayout>
+    <com.duokan.reader.ui.bookshelf.BookActionView android:layout_gravity="center|right" android:id="@id/bookshelf__custom_cloud_item_view__action" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" />
+</LinearLayout>

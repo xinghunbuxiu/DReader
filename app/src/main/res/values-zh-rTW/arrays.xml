@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="bind_title_array">
+        <item>@string/account_bind_sina</item>
+        <item>@string/account_bind_qq</item>
+    </string-array>
+    <string-array name="general__shared__splash_tips">
+        <item>小提示: 您可以通過導入本地書目獲取書籍</item>
+        <item>小提示: 閱讀時可以點擊屏幕中部彈出工具欄</item>
+        <item>小提示: 閱讀時雙指上下滑動可以快捷調節亮度</item>
+        <item>小提示: 閱讀時單指下拉可以增刪書簽</item>
+        <item>小提示: 閱讀時長按文字可以查字典、做筆記</item>
+        <item>小提示: 閱讀時單指上拉可以返回書架、查看目錄</item>
+        <item>小提示: 閱讀時可以跨頁加書摘喔</item>
+        <item>小提示: 所有圖書都可以同步進度、書簽和筆記喔</item>
+        <item>小提示: 在書架拖拽封面疊加可以創建分組</item>
+        <item>小提示: 購買書後就可以發表評論啦</item>
+        <item>小提示: 漫畫圖書可以雙擊圖片切換閱讀模式</item>
+        <item>小提示: 請註意購書券的有效時間，別過期啦</item>
+    </string-array>
+    <string-array name="reading__comment_view__level">
+        <item>@string/reading__comment_view__level1</item>
+        <item>@string/reading__comment_view__level2</item>
+        <item>@string/reading__comment_view__level3</item>
+        <item>@string/reading__comment_view__level4</item>
+        <item>@string/reading__comment_view__level5</item>
+    </string-array>
+    <string-array name="share_title_array">
+        <item>@string/share_name_sina</item>
+        <item>@string/share_name_qq</item>
+        <item>@string/share_name_weixin_friend</item>
+        <item>@string/share_name_weixin_friends</item>
+        <item>@string/share_to_other</item>
+    </string-array>
+    <string-array name="bookshelf__general_shared__main_categories">
+        <item>書架</item>
+        <item>bookshelf</item>
+        <item>書架</item>
+    </string-array>
+</resources>

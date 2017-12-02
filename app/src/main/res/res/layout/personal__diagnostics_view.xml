@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/general__shared__eeeeee" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.reader.ui.general.PageHeaderView android:id="@id/personal__diagnostics_view__header" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <com.duokan.core.ui.LinearScrollView android:orientation="vertical" android:id="@id/personal__diagnostics_view__scrollerview" android:background="@color/general__shared__f8f8f8" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textColor="@color/general__shared__333333" android:id="@id/personal__diagnostics_view__log" android:padding="@dimen/dev__shared__5dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:textIsSelectable="true" />
+        <View android:id="@id/personal__diagnostics_view__placeholder" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </com.duokan.core.ui.LinearScrollView>
+</LinearLayout>

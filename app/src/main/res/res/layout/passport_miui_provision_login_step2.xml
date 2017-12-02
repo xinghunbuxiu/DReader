@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_login_title" style="@style/Passport.MiuiProvisionActionBarTitleStyle" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_miui_provision_title_edit_text_margin_v" style="@style/Passport.MiuiProvisionLoginRegHorizontalMargin">
+        <com.xiaomi.passport.ui.PassportGroupEditText android:id="@id/et_vcode" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/passport_vcode_prompt_long" android:singleLine="true" style="@style/Passport.MiuiProvisionEditViewStyle" />
+        <CheckBox android:id="@id/passport_trust_device" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/passport_trust_device" />
+        <Button android:id="@id/btn_verify" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_miui_provision_license_button_margin" android:text="@string/passport_verify" style="@style/Passport.BlueButton" />
+    </LinearLayout>
+    <include android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" layout="@layout/passport_miui_provision_login_bottom_panel" />
+</LinearLayout>

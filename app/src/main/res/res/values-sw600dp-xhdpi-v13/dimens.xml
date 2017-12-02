@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="passport_activator_phone_info_padding_left">95.0dip</dimen>
+    <dimen name="passport_activator_phone_num_margin_left">29.0dip</dimen>
+    <dimen name="passport_button_text_size">15.0sp</dimen>
+    <dimen name="passport_content_bottom_margin">40.0dip</dimen>
+    <dimen name="passport_content_horizontal_margin">145.0dip</dimen>
+    <dimen name="passport_dialog_message_horizontal_padding">17.299988dip</dimen>
+    <dimen name="passport_dialog_title_vertical_padding">43.0dip</dimen>
+    <dimen name="passport_head_icon_size">100.0dip</dimen>
+    <dimen name="passport_large_text_size">19.0sp</dimen>
+    <dimen name="passport_login_reg_padding_bottom">130.0dip</dimen>
+    <dimen name="passport_login_reg_padding_h">145.0dip</dimen>
+    <dimen name="passport_login_reg_padding_top">130.0dip</dimen>
+    <dimen name="passport_miui_provision_account_info_text_margin_v">60.0dip</dimen>
+    <dimen name="passport_miui_provision_action_bar_title_margin_left">133.0dip</dimen>
+    <dimen name="passport_miui_provision_action_bar_title_margin_top">160.0dip</dimen>
+    <dimen name="passport_miui_provision_bottom_margin">57.0dip</dimen>
+    <dimen name="passport_miui_provision_captcha_img_h">66.0dip</dimen>
+    <dimen name="passport_miui_provision_captcha_img_w">198.0dip</dimen>
+    <dimen name="passport_miui_provision_edit_text_height">66.0dip</dimen>
+    <dimen name="passport_miui_provision_find_device_status_text_margin_bottom">67.0dip</dimen>
+    <dimen name="passport_miui_provision_license_button_margin">16.0dip</dimen>
+    <dimen name="passport_miui_provision_login_reg_bottom_panel_margin_h">103.0dip</dimen>
+    <dimen name="passport_miui_provision_login_reg_margin_h">129.0dip</dimen>
+    <dimen name="passport_miui_provision_login_reg_text_view_margin_h">132.0dip</dimen>
+    <dimen name="passport_miui_provision_password_img_h">66.0dip</dimen>
+    <dimen name="passport_miui_provision_password_img_w">66.0dip</dimen>
+    <dimen name="passport_miui_provision_reg_edit_and_button_marin_v">91.0dip</dimen>
+    <dimen name="passport_miui_provision_reg_text_and_button_margin_v">111.0dip</dimen>
+    <dimen name="passport_normal_text_size">16.0sp</dimen>
+    <dimen name="passport_secondary_text_size">13.0sp</dimen>
+    <dimen name="passport_small_text_size">11.0sp</dimen>
+    <dimen name="passport_title_text_size">17.0sp</dimen>
+</resources>

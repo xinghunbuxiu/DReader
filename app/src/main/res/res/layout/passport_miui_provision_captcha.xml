@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:orientation="horizontal" android:id="@id/et_captcha_area" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:id="@id/et_captcha_code" android:layout_width="fill_parent" android:hint="@string/passport_input_captcha_hint" android:singleLine="true" style="@style/Passport.MiuiProvisionEditViewStyle" />
+    <ImageView android:id="@id/et_captcha_image" android:layout_width="@dimen/passport_miui_provision_captcha_img_w" android:layout_height="@dimen/passport_miui_provision_captcha_img_h" android:scaleType="fitXY" android:layout_centerVertical="true" style="@style/Passport.CaptchaImageMarginLeft" />
+    <ImageView android:id="@id/bottom_divider" android:layout_width="fill_parent" android:layout_height="@dimen/passport_divider" android:src="@color/passport_divider_color" android:layout_below="@id/et_captcha_code" />
+</RelativeLayout>

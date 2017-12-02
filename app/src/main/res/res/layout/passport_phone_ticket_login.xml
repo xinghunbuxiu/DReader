@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/Passport.LoginRegLayoutPadding"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:gravity="center_horizontal" android:id="@id/login_prompt" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/passport_login_prompt" style="@style/Passport.LoginRegTopPromptStyle" />
+    <include android:id="@id/phone_ticket_area" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/passport_phone_ticket_input_layout" />
+    <CheckBox android:layout_gravity="bottom|center" android:id="@id/license" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_phone_login_license_margin_top" android:layout_marginBottom="@dimen/passport_phone_login_license_button_margin_v" android:checked="true" />
+    <Button android:id="@id/btn_login_or_register" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/passport_login" style="@style/Passport.BlueButton" />
+    <Button android:id="@id/entry_to_password_login" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_buttons_margin_v" android:text="@string/passport_password_phone_login" />
+    <TextView android:gravity="bottom|center" android:id="@id/entry_to_quick_register" android:layout_width="fill_parent" android:layout_height="0.0dip" android:text="@string/passport_quick_register_notice" android:layout_weight="1.0" style="@style/Passport.LoginRegGuideTextStyle" />
+</LinearLayout>

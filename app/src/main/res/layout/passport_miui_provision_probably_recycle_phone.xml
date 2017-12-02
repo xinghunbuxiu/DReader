@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/passport_miui_provision_title_text_view_margin_v" android:text="@string/passport_login_title" style="@style/Passport.MiuiProvisionActionBarTitleStyle" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Passport.MiuiProvisionLoginRegHorizontalMargin">
+        <include layout="@layout/passport_probably_recycle_phone_content" />
+    </LinearLayout>
+    <include android:gravity="bottom" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" layout="@layout/passport_miui_provision_login_bottom_panel" />
+</LinearLayout>

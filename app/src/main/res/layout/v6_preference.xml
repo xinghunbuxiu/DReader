@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/v6_preference_icon_minWidth">
+        <ImageView android:gravity="center" android:layout_gravity="center" android:id="@android:id/icon" android:paddingRight="@dimen/v6_preference_item_padding_inner" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/v6_preference_item_padding_inner" android:layout_marginBottom="@dimen/v6_preference_item_padding_inner" android:scaleType="fitCenter" android:adjustViewBounds="true" style="@style/V6.Widget.PreferenceIcon" />
+    </LinearLayout>
+    <RelativeLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" style="@style/V6.Widget.PreferenceItem">
+        <TextView android:textAppearance="@style/V6.TextAppearance.PreferenceList" android:ellipsize="marquee" android:id="@android:id/title" android:fadingEdge="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        <TextView android:textAppearance="@style/V6.TextAppearance.List.Secondary.Preference" android:id="@android:id/summary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="10" android:layout_below="@android:id/title" android:layout_alignLeft="@android:id/title" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@android:id/widget_frame" android:layout_width="wrap_content" android:layout_height="fill_parent" android:minWidth="@dimen/v6_preference_widget_width" />
+    <ImageView android:gravity="center" android:layout_gravity="center|right" android:id="@id/arrow_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/v6_arrow_right" />
+</LinearLayout>

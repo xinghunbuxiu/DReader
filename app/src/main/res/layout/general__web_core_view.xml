@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/general__web_core_view__root" android:background="@color/general__shared__ffffff" android:paddingTop="65.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/general__web_core_view__content" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:id="@id/general__web_core_view__error" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/general__empty_view" />
+        <com.duokan.reader.ui.general.web.DkWebView android:id="@id/general__web_core_view__web" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <com.duokan.reader.ui.general.LoadingCircleView android:layout_gravity="center" android:id="@id/general__web_core_view__first_load" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</FrameLayout>

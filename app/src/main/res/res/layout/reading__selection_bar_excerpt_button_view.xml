@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="16.0dip" android:src="@drawable/reading__annotation_edit_view__placeholder_normal" android:layout_weight="1.0" />
+    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__ffffff_pressed_selected_checked" android:gravity="center|left" android:layout_gravity="center|left" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/reading__selection_bar_view__excerpt" android:layout_weight="1.0" />
+</LinearLayout>

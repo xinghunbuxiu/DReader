@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/top_divider" android:layout_width="fill_parent" android:layout_height="@dimen/passport_divider" android:src="@color/passport_divider_color" />
+    <FrameLayout android:id="@id/account_name_area" android:layout_width="fill_parent" android:layout_height="@dimen/passport_miui_provision_edit_text_height">
+        <com.xiaomi.passport.ui.PassportGroupEditText android:id="@id/et_account_name" android:layout_width="fill_parent" android:hint="@string/passport_account_hint_text" android:singleLine="true" style="@style/Passport.MiuiProvisionEditViewStyle" />
+        <include android:id="@id/phone_account_name_area" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/passport_miui_provision_phone_input_layout" />
+    </FrameLayout>
+    <ImageView android:id="@id/middle_divider" android:layout_width="fill_parent" android:layout_height="@dimen/passport_divider" android:src="@color/passport_divider_color" />
+    <include layout="@layout/passport_miui_provision_password" />
+    <ImageView android:id="@id/bottom_divider" android:layout_width="fill_parent" android:layout_height="@dimen/passport_divider" android:src="@color/passport_divider_color" />
+    <include android:visibility="gone" layout="@layout/passport_miui_provision_captcha" />
+</LinearLayout>

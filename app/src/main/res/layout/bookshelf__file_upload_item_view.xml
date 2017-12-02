@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/bookshelf__file_upload_item_view__icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/general__shared__epub_icon" android:contentDescription="@null" />
+        <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_weight="1.0">
+            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__333333" android:ellipsize="end" android:id="@id/bookshelf__file_upload_item_view__name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" android:singleLine="false" />
+            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__555555" android:ellipsize="end" android:id="@id/bookshelf__file_upload_item_view__attrs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:singleLine="true" />
+        </LinearLayout>
+        <RelativeLayout android:layout_gravity="center_vertical" android:id="@id/bookshelf__file_upload_item_view__select" android:visibility="visible" android:layout_width="60.0dip" android:layout_height="fill_parent">
+            <CheckBox android:id="@id/bookshelf__file_upload_item_view__check_box" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:button="@drawable/general__shared__multi_checkbox" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__888888" android:ellipsize="end" android:gravity="center" android:id="@id/bookshelf__file_upload_item_view__msg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/bookshelf__file_upload_view__conflicted" android:singleLine="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="@color/passport_list_text_color_normal_light" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/passport_user_reg_region" style="@style/Passport.TextAppearance.Medium" />
+    <FrameLayout android:id="@id/country_area" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_user_region_margin_top">
+        <TextView android:gravity="center_vertical" android:id="@id/country_region" android:background="@drawable/passport_group_single_item_normal_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Passport.HyperLinkTextStyle" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/passport_arrow_right" style="@style/Passport.AreaImagePaddingRight" />
+    </FrameLayout>
+    <TextView android:textSize="@dimen/passport_secondary_text_size" android:textColor="@color/passport_secondary_notice_text_color" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_user_region_warning_margin_top" android:layout_marginBottom="@dimen/passport_user_region_warning_margin_bottom" android:text="@string/passport_user_reg_region_warning" />
+</merge>

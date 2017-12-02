@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/passport_miui_provision_title_edit_text_margin_v" android:text="@string/passport_login_title" style="@style/Passport.MiuiProvisionActionBarTitleStyle" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Passport.MiuiProvisionLoginRegHorizontalMargin">
+        <include layout="@layout/passport_phone_info" />
+        <TextView android:textSize="@dimen/passport_secondary_text_size" android:textColor="@color/passport_text_color_alpha_black_40per" android:id="@id/input_password_prompt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_miui_provision_account_info_text_margin_v" android:layout_marginBottom="@dimen/passport_miui_provision_edit_and_text_margin_v" android:text="@string/passport_input_password_for_login" />
+        <ImageView android:id="@id/top_divider" android:layout_width="fill_parent" android:layout_height="@dimen/passport_divider" android:src="@color/passport_divider_color" android:layout_alignParentTop="true" />
+        <include android:id="@id/password_layout" layout="@layout/passport_miui_provision_password" />
+        <ImageView android:id="@id/bottom_divider" android:layout_width="fill_parent" android:layout_height="@dimen/passport_divider" android:src="@color/passport_divider_color" />
+        <include android:visibility="gone" layout="@layout/passport_miui_provision_captcha" />
+        <Button android:id="@id/btn_login" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_miui_provision_reg_edit_and_button_marin_v" android:text="@string/passport_login" style="@style/Passport.BlueButton" />
+    </LinearLayout>
+    <include android:gravity="bottom" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" layout="@layout/passport_miui_provision_login_bottom_panel" />
+</LinearLayout>

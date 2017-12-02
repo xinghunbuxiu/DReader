@@ -1,0 +1,17 @@
+package com.duokan.reader.ui.reading;
+
+import com.duokan.core.app.m;
+import com.duokan.reader.DkApp;
+
+class pi implements Runnable {
+    final /* synthetic */ ph a;
+
+    pi(ph phVar) {
+        this.a = phVar;
+    }
+
+    public void run() {
+        this.a.d.setThumbEnabled(true);
+        ((m) DkApp.get().getTopActivity()).addOnScreenRotationChangedListener(this.a.m);
+    }
+}

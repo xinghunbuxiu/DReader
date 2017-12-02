@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Passport.LoginRegLayoutPadding"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/passport_user_region_layout" />
+    <include android:id="@id/phone_ticket_area" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/login_prompt" layout="@layout/passport_phone_ticket_input_layout" />
+    <Button android:id="@id/btn_register" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_reg_content_bottom_margin" android:text="@string/passport_register" style="@style/Passport.BlueButton" />
+</LinearLayout>

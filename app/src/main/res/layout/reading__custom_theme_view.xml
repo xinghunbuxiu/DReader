@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.reader.ui.reading.ColorPickerView android:id="@id/reading__custom_theme_view__picker" android:layout_width="fill_parent" android:layout_height="160.0dip" />
+    <com.duokan.core.ui.TabBarView android:id="@id/reading__custom_theme_view__tab_bar" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

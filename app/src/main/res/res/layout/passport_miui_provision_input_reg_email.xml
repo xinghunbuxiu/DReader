@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/passport_miui_provision_title_edit_text_margin_v" android:text="@string/passport_title_reg" style="@style/Passport.MiuiProvisionActionBarTitleStyle" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Passport.MiuiProvisionLoginRegHorizontalMargin">
+        <ImageView android:id="@id/top_divider" android:layout_width="fill_parent" android:layout_height="@dimen/passport_divider" android:src="@color/passport_divider_color" />
+        <include layout="@layout/passport_miui_provision_user_region" />
+        <ImageView android:id="@id/middle_divider" android:layout_width="fill_parent" android:layout_height="@dimen/passport_divider" android:src="@color/passport_divider_color" />
+        <com.xiaomi.passport.ui.PassportGroupEditText android:layout_gravity="center_vertical" android:id="@id/email" android:layout_width="fill_parent" android:hint="@string/passport_email" android:inputType="textEmailAddress" android:imeOptions="actionNext" style="@style/Passport.MiuiProvisionEditViewStyle" />
+        <ImageView android:id="@id/middle_divider2" android:layout_width="fill_parent" android:layout_height="@dimen/passport_divider" android:src="@color/passport_divider_color" />
+        <include layout="@layout/passport_miui_provision_password" />
+        <ImageView android:id="@id/bottom_divider" android:layout_width="fill_parent" android:layout_height="@dimen/passport_divider" android:src="@color/passport_divider_color" />
+        <TextView android:textSize="@dimen/passport_secondary_text_size" android:textColor="@color/passport_text_color_gray" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_user_region_warning_margin_top" android:text="@string/passport_user_reg_region_warning" />
+        <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_miui_provision_edit_and_text_margin_v" android:text="@string/passport_password_req_notice" style="@style/Passport.TextAppearance.Medium" />
+    </LinearLayout>
+    <include android:gravity="bottom" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" layout="@layout/passport_miui_provision_continue_bottom_panel" />
+</LinearLayout>
