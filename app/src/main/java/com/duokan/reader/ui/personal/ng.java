@@ -5,8 +5,8 @@ import android.widget.CheckBox;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.x;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.domain.cloud.PersonalPrefs;
 import com.duokan.reader.domain.cloud.hk;
 import com.duokan.reader.ui.general.PageHeaderView;
@@ -15,15 +15,15 @@ import com.duokan.reader.ui.general.be;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ng extends e {
+public class ng extends ActivatedController {
     private final CheckBox a;
     private final CheckBox b;
     private final CheckBox c;
     private final CheckBox d;
     private final Set e = new HashSet();
 
-    public ng(x xVar) {
-        super(xVar);
+    public ng(MyContextWrapper mContext) {
+        super(mContext);
         setContentView(h.personal__user_type_view);
         ((PageHeaderView) findViewById(g.personal__user_type_view__header)).setCenterTitle(j.personal__user_type_view__header);
         this.a = (CheckBox) findViewById(g.personal__user_type_view__pub_checkbox);

@@ -1,15 +1,15 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.av;
 import com.duokan.reader.ui.general.gh;
 
 public class fm implements gh {
-    protected final a a;
+    protected final Document_a a;
     final /* synthetic */ fi b;
 
-    public fm(fi fiVar, a aVar) {
+    public fm(fi fiVar, Document_a aVar) {
         this.b = fiVar;
         this.a = aVar;
         fiVar.c.d(this.a);

@@ -1,8 +1,8 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.x;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.account.a;
 import com.duokan.reader.domain.account.u;
@@ -18,9 +18,9 @@ class bv implements u {
     }
 
     public void onQueryAccountOk(a aVar) {
-        y a = x.a(this.b.getContext());
+        IFeature a = MyContextWrapper.getFeature(this.b.getContext());
         if (a != null) {
-            e storePageController = new StorePageController(a);
+            ActivatedController storePageController = new StorePageController(a);
             storePageController.loadUrl(this.a);
             ReaderFeature readerFeature = (ReaderFeature) a.queryFeature(ReaderFeature.class);
             if (readerFeature == null) {

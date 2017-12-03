@@ -4,11 +4,10 @@ import android.content.Context;
 
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.common.async.a.a;
 import com.duokan.reader.common.async.a.b;
-import com.duokan.reader.common.async.a.c;
 import com.duokan.reader.domain.account.PersonalAccount;
 import com.duokan.reader.domain.account.ab;
 import com.duokan.reader.domain.account.h;
@@ -95,11 +94,11 @@ public class DkUserPurchasedFictionsManager implements ah {
     }
 
     public void a(a aVar) {
-        t.b(new dj(this, aVar));
+        TaskHandler.PostTask(new dj(this, aVar));
     }
 
     public void b(a aVar) {
-        t.b(new dl(this, aVar));
+        TaskHandler.PostTask(new dl(this, aVar));
     }
 
     public void a(boolean z, a aVar) {
@@ -118,7 +117,7 @@ public class DkUserPurchasedFictionsManager implements ah {
         if (z || this.c.a(PersonalAccount.class)) {
             this.c.a(PersonalAccount.class, new dp(this, z2, aVar, z));
         } else {
-            t.b(new do(this, aVar));
+            TaskHandler.b(new do (this, aVar));
         }
     }
 
@@ -126,7 +125,7 @@ public class DkUserPurchasedFictionsManager implements ah {
         if (z || this.c.a(PersonalAccount.class)) {
             this.c.a(PersonalAccount.class, new du(this, z, z2, aVar));
         } else {
-            t.b(new dt(this, aVar));
+            TaskHandler.PostTask(new dt(this, aVar));
         }
     }
 

@@ -5,9 +5,7 @@ import android.os.Build.VERSION;
 import android.view.View;
 import android.widget.TextView;
 
-import com.duokan.b.f;
-import com.duokan.b.g;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 
 public class vd extends wk {
     private final sh a;
@@ -32,8 +30,8 @@ public class vd extends wk {
     private final View t;
     private final View u;
 
-    public vd(y yVar) {
-        super(yVar);
+    public vd(IFeature featrue) {
+        super(featrue);
         setContentView(g.reading__reading_custom_typesetting_view);
         this.a = (sh) getContext().queryFeature(sh.class);
         this.g = (TextView) findViewById(f.reading__custom_typesetting__line_spacing_value);
@@ -75,7 +73,7 @@ public class vd extends wk {
         }
         this.g.setText(a(this.a.ae().s()));
         this.j.setText(a(this.a.ae().t()));
-        this.m.setText(String.format("%d", new Object[]{Integer.valueOf((int) this.a.ae().u())}));
+        this.m.setText(String.format("%getScaledTouchSlop", new Object[]{Integer.valueOf((int) this.a.ae().u())}));
         this.p.setText(a(((float) this.a.ae().x()) / 10.0f));
         this.s.setText(a(((float) this.a.ae().v()) / 10.0f));
         if (VERSION.SDK_INT >= 11) {
@@ -149,7 +147,7 @@ public class vd extends wk {
     private String a(float f) {
         float round = ((float) Math.round(f * 10.0f)) / 10.0f;
         if (((float) ((int) round)) == round && ((int) round) == 0) {
-            return String.format("%d", new Object[]{Integer.valueOf((int) round)});
+            return String.format("%getScaledTouchSlop", new Object[]{Integer.valueOf((int) round)});
         }
         return String.format("%.1f", new Object[]{Float.valueOf(round)});
     }

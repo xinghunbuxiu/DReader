@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.document.epub;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class ba implements Runnable {
     final /* synthetic */ Runnable a;
@@ -20,6 +20,6 @@ class ba implements Runnable {
             } catch (Throwable th) {
             }
         }
-        t.a(new bb(this));
+        TaskHandler.postTask(new bb(this));
     }
 }

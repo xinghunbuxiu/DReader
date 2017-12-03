@@ -22,7 +22,7 @@ class dn extends ap {
 
     protected void onSessionSucceeded() {
         if (this.a.a(this.c.c)) {
-            this.c.a(this.d, new do(this));
+            this.c.a(this.d, new do (this));
             return;
         }
         this.b.a("");

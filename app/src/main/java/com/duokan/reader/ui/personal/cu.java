@@ -4,13 +4,12 @@ import android.text.TextUtils;
 import android.view.View;
 
 import com.duokan.c.j;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.HatGridView;
 import com.duokan.core.ui.an;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.cloud.push.DkCloudPushMessage;
 import com.duokan.reader.domain.cloud.push.DkCloudPushMessage.ActionType;
-import com.duokan.reader.domain.cloud.push.b;
 import com.duokan.reader.domain.cloud.push.q;
 import com.duokan.reader.ui.general.be;
 import com.duokan.reader.ui.general.expandable.ViewMode;
@@ -34,7 +33,7 @@ class cu implements an {
             DkCloudPushMessage dkCloudPushMessage = qVar.b;
             if ((dkCloudPushMessage.getEndTime() == 0 || dkCloudPushMessage.getEndTime() > System.currentTimeMillis()) && !TextUtils.isEmpty(dkCloudPushMessage.getActionParamString())) {
                 b.a().a(dkCloudPushMessage);
-                ReaderFeature readerFeature = (ReaderFeature) x.a(this.b.getContext()).queryFeature(ReaderFeature.class);
+                ReaderFeature readerFeature = (ReaderFeature) MyContextWrapper.getFeature(this.b.getContext()).queryFeature(ReaderFeature.class);
                 if (dkCloudPushMessage.getMessageType() == ActionType.URL) {
                     readerFeature.navigate(dkCloudPushMessage.getActionUrl(), null, true, null);
                     return;

@@ -4,7 +4,7 @@ import android.graphics.PointF;
 import android.view.View;
 
 import com.duokan.core.ui.bw;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 import java.util.Iterator;
 
@@ -34,12 +34,12 @@ class ca implements bw {
                 b = this.a.a.b;
             }
             bzVar.j = b;
-            PointF pointF2 = (PointF) dv.f.a();
+            PointF pointF2 = (PointF) UTools.f.getRect();
             pointF2.x = (float) ((int) pointF.x);
             pointF2.y = (float) ((int) pointF.y);
-            dv.d(pointF2, view);
+            UTools.getScaledTouchSlop(pointF2, view);
             int a = this.a.a(pointF2, false);
-            dv.f.a(pointF2);
+            UTools.f.getRect(pointF2);
             if (a >= 0) {
                 cz a2 = this.a.c(a);
                 if (a2.g()) {

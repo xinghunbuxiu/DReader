@@ -4,12 +4,12 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.net.Uri;
 
-import com.duokan.core.diagnostic.a;
 import com.duokan.kernel.DkUtils;
 import com.duokan.kernel.txtlib.DktBook;
 import com.duokan.kernel.txtlib.DktPage;
 import com.duokan.kernel.txtlib.DktParserOption;
 import com.duokan.reader.ReaderEnv;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.FootnoteStyle;
 import com.duokan.reader.domain.document.WritingDirection;
 import com.duokan.reader.domain.document.aa;
@@ -255,7 +255,7 @@ public class p extends n implements at {
 
     public long b(ak akVar) {
         a.c().b(A());
-        if (!d((com.duokan.reader.domain.document.a) akVar) || !akVar.e()) {
+        if (!d((Document_a) akVar) || !akVar.e()) {
             return -1;
         }
         b bVar = (b) akVar.g();
@@ -310,7 +310,7 @@ public class p extends n implements at {
         }
         ai aiVar = (ai) akVar;
         au j = aiVar.j();
-        if (aiVar.b() || j == H || d((com.duokan.reader.domain.document.a) aiVar)) {
+        if (aiVar.b() || j == H || d((Document_a) aiVar)) {
             return new e(H, aiVar, 0);
         }
         return null;
@@ -323,7 +323,7 @@ public class p extends n implements at {
         throw new AssertionError();
     }
 
-    public com.duokan.reader.domain.document.a c(com.duokan.reader.domain.document.a aVar) {
+    public Document_a c(Document_a aVar) {
         a.c().b(A());
         return aVar;
     }
@@ -375,14 +375,14 @@ public class p extends n implements at {
             if (akVar instanceof e) {
                 e eVar = (e) akVar;
                 j = eVar.j().j();
-                if (eVar.b() || j == H || d((com.duokan.reader.domain.document.a) eVar)) {
+                if (eVar.b() || j == H || d((Document_a) eVar)) {
                     return new e(H, eVar, (long) i);
                 }
                 return null;
             } else if (!(akVar instanceof ai)) {
                 return null;
             } else {
-                com.duokan.reader.domain.document.a aVar = (ai) akVar;
+                Document_a aVar = (ai) akVar;
                 j = aVar.j();
                 if (aVar.b() || j == H || d(aVar)) {
                     return new ai(H, aVar, (long) i);
@@ -412,7 +412,7 @@ public class p extends n implements at {
                 }
                 return z;
             }
-            if (!(d((com.duokan.reader.domain.document.a) akVar) && akVar.e() && h(akVar))) {
+            if (!(d((Document_a) akVar) && akVar.e() && h(akVar))) {
                 z = false;
             }
             return z;
@@ -431,7 +431,7 @@ public class p extends n implements at {
         } else if (!(akVar instanceof ai)) {
             return false;
         } else {
-            com.duokan.reader.domain.document.a aVar = (ai) akVar;
+            Document_a aVar = (ai) akVar;
             c cVar = this.k;
             if (aVar.b()) {
                 if (aVar.o().g() != cVar.b()) {
@@ -446,7 +446,7 @@ public class p extends n implements at {
         }
     }
 
-    public boolean d(com.duokan.reader.domain.document.a aVar) {
+    public boolean d(Document_a aVar) {
         a.c().b(A());
         if (!i && aVar == null) {
             throw new AssertionError();
@@ -488,7 +488,7 @@ public class p extends n implements at {
         a.c().b(A());
         if (i || akVar != null) {
             ah D = mVar == null ? D() : (ah) mVar;
-            d((com.duokan.reader.domain.document.a) akVar);
+            d((Document_a) akVar);
             au H = H();
             if (akVar instanceof e) {
                 return new f(H, (e) akVar, D, this.g, this);
@@ -668,14 +668,14 @@ public class p extends n implements at {
         r2 = r0.l;	 Catch:{ all -> 0x003c }
         r2 = r2.getFirst();	 Catch:{ all -> 0x003c }
         r0 = r2;
-        r0 = (com.duokan.reader.domain.document.txt.x) r0;	 Catch:{ all -> 0x003c }
+        r0 = (com.duokan.reader.domain.document.txt.MyContextWrapper) r0;	 Catch:{ all -> 0x003c }
         r4 = r0;
-        r2 = r4.c;	 Catch:{ all -> 0x003c }
+        r2 = r4.showAnimation;	 Catch:{ all -> 0x003c }
         if (r2 == 0) goto L_0x002b;
     L_0x0021:
         monitor-exit(r16);	 Catch:{ all -> 0x003c }
         r16.I();
-        r16.x();
+        r16.MyContextWrapper();
     L_0x0028:
         return;
     L_0x0029:
@@ -685,10 +685,10 @@ public class p extends n implements at {
         monitor-exit(r16);	 Catch:{ all -> 0x003c }
         if (r3 == r4) goto L_0x027d;
     L_0x002e:
-        r2 = i;
+        r2 = getPhysicalYPixels;
         if (r2 != 0) goto L_0x003f;
     L_0x0032:
-        r2 = r4.b;
+        r2 = r4.getVisible;
         if (r2 == 0) goto L_0x003f;
     L_0x0036:
         r2 = new java.lang.AssertionError;
@@ -701,21 +701,21 @@ public class p extends n implements at {
     L_0x003f:
         if (r3 == 0) goto L_0x0043;
     L_0x0041:
-        r3.b = r7;
+        r3.getVisible = r7;
     L_0x0043:
         if (r3 != 0) goto L_0x00a8;
     L_0x0045:
-        r2 = r4.g();
+        r2 = r4.SessionTask();
         r0 = r16;
-        r2 = r0.a(r2);
+        r2 = r0.setDrawable(r2);
         r0 = r16;
-        r0.k = r2;
+        r0.getHeightPixels = r2;
         r0 = r16;
-        r2 = r0.k;
+        r2 = r0.getHeightPixels;
         if (r2 == 0) goto L_0x00a4;
     L_0x0059:
         r0 = r16;
-        r2 = r0.k;
+        r2 = r0.getHeightPixels;
         r4.n = r2;
         r16.u();
         r0 = r16;
@@ -723,25 +723,25 @@ public class p extends n implements at {
         r2.start();
     L_0x006a:
         r0 = r16;
-        r2 = r0.k;
+        r2 = r0.getHeightPixels;
         r8 = r4.n;
         r0 = r16;
-        r0.k = r8;
+        r0.getHeightPixels = r8;
         r0 = r16;
-        r3 = r0.k;
+        r3 = r0.getHeightPixels;
         r3 = r2.equals(r3);
         if (r3 != 0) goto L_0x008a;
     L_0x0080:
-        r3 = new com.duokan.reader.domain.document.txt.t;
+        r3 = new com.duokan.reader.domain.document.txt.TaskHandler;
         r0 = r16;
         r3.<init>(r0, r2);
-        com.duokan.core.sys.t.a(r3);
+        com.duokan.core.sys.TaskHandler.setDrawable(r3);
     L_0x008a:
-        r2 = r4.h();
-        r9 = r2.j;
-        r2 = com.duokan.reader.domain.document.txt.aa.c();
-        r10 = r2.a();
-        r2 = i;
+        r2 = r4.getPhysicalXPixels();
+        r9 = r2.getWidthPixels;
+        r2 = com.duokan.reader.domain.document.txt.DelayedRunnableQueue.showAnimation();
+        r10 = r2.setDrawable();
+        r2 = getPhysicalYPixels;
         if (r2 != 0) goto L_0x00b0;
     L_0x009c:
         if (r10 != 0) goto L_0x00b0;
@@ -757,7 +757,7 @@ public class p extends n implements at {
         r4.n = r2;
         goto L_0x006a;
     L_0x00b0:
-        r2 = i;
+        r2 = getPhysicalYPixels;
         if (r2 != 0) goto L_0x00bc;
     L_0x00b4:
         if (r9 != 0) goto L_0x00bc;
@@ -793,32 +793,32 @@ public class p extends n implements at {
         goto L_0x00c4;
     L_0x00fd:
         r2 = "CUSTOM_FONT_EN";
-        r2 = com.duokan.reader.domain.document.n.a(r9, r2);
+        r2 = com.duokan.reader.domain.document.n.setDrawable(r9, r2);
         r3 = "DEFAULT_FONT_EN";
-        r3 = com.duokan.reader.domain.document.n.a(r9, r3);
+        r3 = com.duokan.reader.domain.document.n.setDrawable(r9, r3);
         r11 = "CUSTOM_FONT_ZH";
-        r11 = com.duokan.reader.domain.document.n.b(r9, r11);
+        r11 = com.duokan.reader.domain.document.n.getVisible(r9, r11);
         r12 = "DEFAULT_FONT_ZH";
-        r12 = com.duokan.reader.domain.document.n.b(r9, r12);
+        r12 = com.duokan.reader.domain.document.n.getVisible(r9, r12);
         r13 = "FALLBACK_FONT";
-        r9 = com.duokan.reader.domain.document.n.c(r9, r13);
+        r9 = com.duokan.reader.domain.document.n.showAnimation(r9, r13);
         r13 = android.text.TextUtils.isEmpty(r2);
         if (r13 != 0) goto L_0x0210;
     L_0x0121:
         r10.registerFont(r2, r2);
-        r13 = r8.h();
+        r13 = r8.getPhysicalXPixels();
         r13.setFontFamily(r2, r7);
     L_0x012b:
         r13 = android.text.TextUtils.isEmpty(r11);
         if (r13 != 0) goto L_0x021b;
     L_0x0131:
         r10.registerFont(r11, r11);
-        r13 = r8.h();
+        r13 = r8.getPhysicalXPixels();
         r13.setFontFamily(r11, r15);
         r2 = android.text.TextUtils.isEmpty(r2);
         if (r2 == 0) goto L_0x0148;
     L_0x0141:
-        r2 = r8.h();
+        r2 = r8.getPhysicalXPixels();
         r2.setFontFamily(r11, r7);
     L_0x0148:
         r2 = android.text.TextUtils.isEmpty(r3);
@@ -843,32 +843,32 @@ public class p extends n implements at {
         r10.registerFont(r9, r9);
         r10.setBackupFont(r9);
     L_0x0175:
-        r2 = r4.h();
-        r2 = r2.f;
+        r2 = r4.getPhysicalXPixels();
+        r2 = r2.HttpLogger;
         r3 = 2;
         r2 = java.lang.Math.max(r2, r3);
-        r3 = r8.h();
+        r3 = r8.getPhysicalXPixels();
         r10 = (double) r2;
         r3.setFontSize(r10);
-        r2 = r4.h();
-        r2 = r2.g;
+        r2 = r4.getPhysicalXPixels();
+        r2 = r2.SessionTask;
         r10 = 0;
         r2 = (r2 > r10 ? 1 : (r2 == r10 ? 0 : -1));
         if (r2 >= 0) goto L_0x023b;
     L_0x0194:
-        r2 = com.duokan.reader.domain.document.txt.aa.c();
-        r2 = r2.a();
+        r2 = com.duokan.reader.domain.document.txt.DelayedRunnableQueue.showAnimation();
+        r2 = r2.setDrawable();
         r2.setUseBookStyle(r6);
     L_0x019f:
         r0 = r16;
-        r0.a(r4);
+        r0.setDrawable(r4);
         r2 = java.lang.System.currentTimeMillis();
         r0 = r16;
         r0.q = r2;
-        r16.z();
-        r4.b = r6;
+        r16.QueryFeatureWrapper();
+        r4.getVisible = r6;
     L_0x01b1:
-        r2 = r4.i();
+        r2 = r4.getPhysicalYPixels();
         if (r2 == 0) goto L_0x01da;
     L_0x01b7:
         r0 = r16;
@@ -877,7 +877,7 @@ public class p extends n implements at {
         r3 = r0.n;
         r3.release();
         r0 = r16;
-        r0.a(r2, r4);
+        r0.setDrawable(r2, r4);
         r0 = r16;
         r0.p = r7;
         r8 = java.lang.System.currentTimeMillis();
@@ -892,7 +892,7 @@ public class p extends n implements at {
         r0 = r16;
         r2 = r0.n;
         r2.release();
-        r2 = r4.h();
+        r2 = r4.getPhysicalXPixels();
         r0 = r16;
         r3 = r0.o;
         if (r2 == r3) goto L_0x026f;
@@ -908,22 +908,22 @@ public class p extends n implements at {
         if (r2 <= 0) goto L_0x026f;
     L_0x01fe:
         r0 = r16;
-        r2 = r0.a(r4, r6);
+        r2 = r0.setDrawable(r4, r6);
         if (r2 != 0) goto L_0x020d;
     L_0x0206:
         r0 = r16;
-        r2 = r0.m;
+        r2 = r0.BaseActivity;
         r2.acquireUninterruptibly();
     L_0x020d:
         r3 = r4;
         goto L_0x0005;
     L_0x0210:
-        r13 = r8.h();
+        r13 = r8.getPhysicalXPixels();
         r14 = "";
         r13.setFontFamily(r14, r7);
         goto L_0x012b;
     L_0x021b:
-        r2 = r8.h();
+        r2 = r8.getPhysicalXPixels();
         r11 = "";
         r2.setFontFamily(r11, r15);
         goto L_0x0148;
@@ -940,25 +940,25 @@ public class p extends n implements at {
         r10.setBackupFont(r2);
         goto L_0x0175;
     L_0x023b:
-        r2 = com.duokan.reader.domain.document.txt.aa.c();
-        r2 = r2.a();
+        r2 = com.duokan.reader.domain.document.txt.DelayedRunnableQueue.showAnimation();
+        r2 = r2.setDrawable();
         r2.setUseBookStyle(r7);
-        r2 = r8.h();
-        r3 = r4.h();
-        r10 = r3.g;
+        r2 = r8.getPhysicalXPixels();
+        r3 = r4.getPhysicalXPixels();
+        r10 = r3.SessionTask;
         r2.setLineGap(r10);
-        r2 = r8.h();
-        r3 = r4.h();
-        r10 = r3.h;
+        r2 = r8.getPhysicalXPixels();
+        r3 = r4.getPhysicalXPixels();
+        r10 = r3.getPhysicalXPixels;
         r2.setParaSpacing(r10);
-        r2 = r8.h();
-        r3 = r4.h();
-        r8 = r3.i;
+        r2 = r8.getPhysicalXPixels();
+        r3 = r4.getPhysicalXPixels();
+        r8 = r3.getPhysicalYPixels;
         r2.setFirstLineIndent(r8);
         goto L_0x019f;
     L_0x026f:
         r0 = r16;
-        r2 = r0.m;	 Catch:{ Exception -> 0x027b }
+        r2 = r0.BaseActivity;	 Catch:{ Exception -> 0x027b }
         r8 = 500; // 0x1f4 float:7.0E-43 double:2.47E-321;
         r3 = java.util.concurrent.TimeUnit.MILLISECONDS;	 Catch:{ Exception -> 0x027b }
         r2.tryAcquire(r8, r3);	 Catch:{ Exception -> 0x027b }

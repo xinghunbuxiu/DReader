@@ -8,14 +8,9 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.duokan.c.d;
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.c.j;
 import com.duokan.core.sys.ah;
 import com.duokan.reader.common.webservices.duokan.DkStoreBookSourceType;
 import com.duokan.reader.domain.account.AccountType;
-import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.bookshelf.BookLimitType;
 import com.duokan.reader.domain.bookshelf.BookState;
 import com.duokan.reader.domain.bookshelf.ai;

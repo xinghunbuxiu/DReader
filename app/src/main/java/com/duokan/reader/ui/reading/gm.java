@@ -9,8 +9,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 
 import com.duokan.b.i;
-import com.duokan.core.app.x;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.es;
 
 public class gm extends Drawable {
@@ -23,7 +23,7 @@ public class gm extends Drawable {
     private final float g;
 
     public gm(Context context) {
-        this.b = (sh) x.a(context).queryFeature(sh.class);
+        this.b = (sh) MyContextWrapper.getFeature(context).queryFeature(sh.class);
         this.c = new ColorDrawable();
         this.d = context.getResources().getDrawable(e.reading__shared__page_loading);
         this.e = new es(this.c);
@@ -40,7 +40,7 @@ public class gm extends Drawable {
 
     public void draw(Canvas canvas) {
         Rect bounds = getBounds();
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         int R = this.b.R();
         if (this.c.getColor() != R) {
             this.c.setColor(R);
@@ -51,10 +51,10 @@ public class gm extends Drawable {
         }
         rect.set(bounds);
         rect.inset(0, Math.round((((float) (bounds.height() - this.d.getIntrinsicHeight())) - (this.g * 3.0f)) / 2.0f));
-        dv.a(canvas, this.e, rect, this.d.getIntrinsicWidth(), this.d.getIntrinsicHeight(), 49);
+        UTools.setDrawable(canvas, this.e, rect, this.d.getIntrinsicWidth(), this.d.getIntrinsicHeight(), 49);
         rect.top += this.d.getIntrinsicHeight();
-        dv.a(canvas, this.f, rect, 17, this.a);
-        dv.g.a(rect);
+        UTools.addAnimation(canvas, this.f, rect, 17, this.a);
+        UTools.g.getRect(rect);
     }
 
     public void setAlpha(int i) {

@@ -8,8 +8,7 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.UmengManager;
 import com.duokan.reader.common.webservices.duokan.DkCloudMessageInfo;
@@ -134,7 +133,7 @@ public class z implements af {
         Object[] objArr = new Object[3];
         objArr[0] = a;
         objArr[1] = "onInited";
-        objArr[2] = String.format("code: %d, id: %s, reason: %s", new Object[]{Long.valueOf(j), str, str2});
+        objArr[2] = String.format("code: %getScaledTouchSlop, id: %s, reason: %s", new Object[]{Long.valueOf(j), str, str2});
         a.c().c(LogLevel.EVENT, "push", String.format("class: %s, method: %s, message: %s", objArr));
         this.f = !TextUtils.isEmpty(str);
         if (!TextUtils.isEmpty(str)) {
@@ -178,7 +177,7 @@ public class z implements af {
             if (jSONObject.has("message_type")) {
                 MessageSubType value = MessageSubType.value(String.valueOf(jSONObject.getInt("message_type")));
                 if (value != null) {
-                    t.a(new ab(this, value, i.a(jSONObject, "action_params", null), z));
+                    TaskHandler.postTask(new ab(this, value, i.a(jSONObject, "action_params", null), z));
                 } else {
                     dkCloudPushMessage = a(str, z, jSONObject);
                 }
@@ -244,7 +243,7 @@ public class z implements af {
         DkCloudPushMessage dkCloudPushMessage = null;
         DkCloudMessageInfo fromJson = DkCloudMessageInfo.fromJson(jSONObject);
         if (fromJson != null) {
-            dkCloudPushMessage = (DkCloudPushMessage) t.b().a(str, z, fromJson).first;
+            dkCloudPushMessage = (DkCloudPushMessage) TaskHandler.getThead().a(str, z, fromJson).first;
             if (this.j != null) {
                 this.j.a(dkCloudPushMessage);
             } else {

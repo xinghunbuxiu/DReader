@@ -6,7 +6,6 @@ import com.duokan.reader.domain.cloud.PersonalPrefs;
 import com.duokan.reader.domain.payment.PaymentResult;
 import com.duokan.reader.domain.payment.s;
 import com.duokan.reader.domain.store.DkStoreCallback;
-import com.duokan.reader.domain.store.DkStoreCallback.AbortPayErrorCode;
 import com.mipay.sdk.Mipay;
 
 class bu implements DkStoreCallback {

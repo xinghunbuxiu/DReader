@@ -3,10 +3,7 @@ package com.duokan.reader.ui.general;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.View.MeasureSpec;
 
-import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.Scrollable.ScrollState;
 import com.duokan.core.ui.fr;
 import com.duokan.core.ui.ft;
 import com.duokan.core.ui.fx;

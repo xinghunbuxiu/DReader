@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.j;
 import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.common.webservices.duokan.o;
@@ -24,7 +24,7 @@ class hu extends r {
 
     protected void onSessionSucceeded() {
         this.a.dismiss();
-        this.b.d.a.r.pushPageSmoothly(bv.a(x.a(this.b.d.a.getContext()), "0", Integer.parseInt(((String[]) this.c.a)[0]), ((String[]) this.c.a)[1], null), null);
+        this.b.d.a.r.pushPageSmoothly(bv.a(MyContextWrapper.getFeature(this.b.d.a.getContext()), "0", Integer.parseInt(((String[]) this.c.a)[0]), ((String[]) this.c.a)[1], null), null);
     }
 
     protected void onSessionFailed() {

@@ -1,7 +1,6 @@
 package com.duokan.reader.common;
 
 import com.duokan.reader.common.webservices.WebSession;
-import com.duokan.reader.common.webservices.WebSession.CacheStrategy;
 
 public abstract class j extends WebSession {
     private static final String a = j.class.getName();

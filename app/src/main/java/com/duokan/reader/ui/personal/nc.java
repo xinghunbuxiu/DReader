@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,6 +28,6 @@ class nc implements Runnable {
         arrayList.ensureCapacity(this.a.size());
         arrayList.addAll(this.a);
         Collections.sort(arrayList, ndVar);
-        t.b(new ne(this, arrayList));
+        TaskHandler.PostTask(new ne(this, arrayList));
     }
 }

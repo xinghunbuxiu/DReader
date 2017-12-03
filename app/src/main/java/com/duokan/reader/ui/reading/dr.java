@@ -3,7 +3,7 @@ package com.duokan.reader.ui.reading;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.ReaderUi;
 
 class dr implements OnClickListener {
@@ -22,7 +22,7 @@ class dr implements OnClickListener {
         this.b.l.selectAll();
         this.b.o.setVisibility(8);
         this.b.n.setVisibility(0);
-        dv.c(this.b.o, null);
-        dv.b(this.b.n, null);
+        UTools.showAnimation(this.b.o, null);
+        UTools.closeAnimation(this.b.n, null);
     }
 }

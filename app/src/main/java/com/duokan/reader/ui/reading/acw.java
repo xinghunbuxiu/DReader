@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.UmengManager;
 import com.duokan.reader.domain.document.as;
@@ -20,10 +20,10 @@ public class acw extends FrameLayout {
     private final lr b;
     private final yo c;
 
-    public acw(Context context, x xVar) {
+    public acw(Context context, MyContextWrapper mContext) {
         super(context);
         this.b = new lr(DkApp.get().noDensityScaleContext(context));
-        this.c = new yo(x.a(context), new acx(this, xVar));
+        this.c = new yo(MyContextWrapper.getFeature(context), new acx(this, mContext));
         addView(this.b);
         addView(this.c.getContentView());
         this.b.setVisibility(4);
@@ -81,6 +81,6 @@ public class acw extends FrameLayout {
     }
 
     private sh getReadingFeature() {
-        return (sh) x.a(getContext()).queryFeature(sh.class);
+        return (sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class);
     }
 }

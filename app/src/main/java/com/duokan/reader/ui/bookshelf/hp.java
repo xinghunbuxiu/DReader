@@ -13,10 +13,10 @@ import com.duokan.c.f;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.x;
-import com.duokan.core.app.y;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.common.webservices.duokan.DkStoreAdInfo;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.domain.account.PersonalAccount;
@@ -39,8 +39,8 @@ public class hp extends gx implements la {
     private final LinearLayout d;
     private final LinearLayout e;
 
-    public hp(y yVar) {
-        super(yVar);
+    public hp(IFeature featrue) {
+        super(featrue);
         a(LayoutInflater.from(getContext()).inflate(h.bookshelf__sign_in_view, null, false));
         this.b = findViewById(g.bookshelf__sign_in_view__sign);
         this.c = (TextView) findViewById(g.bookshelf__sign_in_view__signing);
@@ -76,13 +76,13 @@ public class hp extends gx implements la {
     public void b(String str) {
         View inflate = LayoutInflater.from(getContext()).inflate(h.bookshelf__sign_in_detail_view, null);
         inflate.getBackground().setAlpha(180);
-        e eVar = new e(x.a(getContext()));
-        eVar.setContentView(inflate);
-        inflate.setOnClickListener(new hu(this, eVar));
+        ActivatedController activatedControllerVar = new ActivatedController(MyContextWrapper.getFeature(getContext()));
+        activatedControllerVar.setContentView(inflate);
+        inflate.setOnClickListener(new hu(this, activatedControllerVar));
         ((ImageView) inflate.findViewById(g.bookshelf__sign_in_detail_view__main)).setImageURI(Uri.fromFile(new File(str)));
         kp.a().e();
-        showPopup(eVar);
-        dv.b(eVar.getContentView(), null);
+        showPopup(activatedControllerVar);
+        UTools.closeAnimation(activatedControllerVar.getContentView(), null);
     }
 
     public void d() {
@@ -94,7 +94,7 @@ public class hp extends gx implements la {
         this.d.removeAllViews();
         for (int i2 = 0; i2 < zArr.length; i2++) {
             LayoutParams layoutParams = new LinearLayout.LayoutParams(0, -2, 1.0f);
-            layoutParams.setMargins(dv.b(getContext(), 2.0f), 0, dv.b(getContext(), 2.0f), 0);
+            layoutParams.setMargins(UTools.closeAnimation(getContext(), 2.0f), 0, UTools.closeAnimation(getContext(), 2.0f), 0);
             this.d.addView(a(i2, zArr[i2], i), layoutParams);
         }
         if (!this.a.a(PersonalAccount.class)) {
@@ -139,7 +139,7 @@ public class hp extends gx implements la {
 
     private void h() {
         kp.a().a(new ab(this.a.b(PersonalAccount.class)));
-        e storePageController = new StorePageController(x.a(getContext()));
+        ActivatedController storePageController = new StorePageController(MyContextWrapper.getFeature(getContext()));
         storePageController.loadUrl(p.i().K());
         showPopup(storePageController);
     }
@@ -162,8 +162,8 @@ public class hp extends gx implements la {
     }
 
     private void b(boolean[] zArr, int i, List list, boolean z, boolean z2, boolean z3, boolean z4, int i2, DkStoreAdInfo[] dkStoreAdInfoArr) {
-        e icVar = new ic(x.a(getContext()), zArr, i, list, z, z2, z3, z4, i2, dkStoreAdInfoArr);
+        ActivatedController icVar = new ic(MyContextWrapper.getFeature(getContext()), zArr, i, list, z, z2, z3, z4, i2, dkStoreAdInfoArr);
         showPopup(icVar);
-        dv.b(icVar.getContentView(), new hs(this));
+        UTools.closeAnimation(icVar.getContentView(), new hs(this));
     }
 }

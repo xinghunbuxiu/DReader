@@ -1,8 +1,8 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.x;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.domain.bookshelf.c;
@@ -11,9 +11,9 @@ import com.duokan.reader.ui.surfing.af;
 import java.io.File;
 import java.util.List;
 
-public class fc extends e implements ff {
-    public fc(y yVar) {
-        super(yVar);
+public class fc extends ActivatedController implements ff {
+    public fc(IFeature featrue) {
+        super(featrue);
         setContentView(new fh(getContext(), new fd(this)));
     }
 
@@ -42,6 +42,6 @@ public class fc extends e implements ff {
     }
 
     public void a() {
-        ((com.duokan.reader.ui.e) x.a(getContext()).queryFeature(com.duokan.reader.ui.e.class)).pushPageSmoothly(new fr(getContext(), new fe(this)), null);
+        ((com.duokan.reader.ui.e) MyContextWrapper.getFeature(getContext()).queryFeature(com.duokan.reader.ui.e.class)).pushPageSmoothly(new fr(getContext(), new fe(this)), null);
     }
 }

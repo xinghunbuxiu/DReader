@@ -1,7 +1,5 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.ui.store.comment.a;
-
 class cd implements Runnable {
     final /* synthetic */ cc a;
 

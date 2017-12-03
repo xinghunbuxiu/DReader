@@ -6,15 +6,15 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.h;
-import com.duokan.core.app.y;
-import com.duokan.core.sys.t;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.IController;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.a;
 import com.duokan.core.ui.cv;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
-public class hd extends e {
+public class hd extends ActivatedController {
     static final /* synthetic */ boolean $assertionsDisabled = (!hd.class.desiredAssertionStatus() ? true : $assertionsDisabled);
     public static final int FLAG_CONSUME_TOUCH_EVENTS = 2;
     public static final int FLAG_DEFAULT_POPUP = 2;
@@ -22,14 +22,14 @@ public class hd extends e {
     public static final int FLAG_NONE = 0;
     private ViewGroup mPopupRootView = null;
     private cv mPopupWindow = null;
-    protected e mShareController = null;
+    protected ActivatedController mShareController = null;
 
-    public hd(y yVar) {
-        super(yVar);
+    public hd(IFeature featrue) {
+        super(featrue);
     }
 
-    public hd(y yVar, int i) {
-        super(yVar, i);
+    public hd(IFeature featrue, int i) {
+        super(featrue, i);
     }
 
     public final cv getPopupWindow() {
@@ -39,7 +39,7 @@ public class hd extends e {
                     this.mPopupWindow = new he(this, getContext(), $assertionsDisabled);
                     this.mPopupRootView = new FrameLayout(getContext());
                     this.mPopupWindow.setContentView(this.mPopupRootView, new LayoutParams(-1, -1));
-                    int b = dv.b(getContext(), 5.0f);
+                    int b = UTools.closeAnimation(getContext(), 5.0f);
                     this.mPopupWindow.setBalloonPadding(b, b, b, b);
                 } else {
                     throw new AssertionError();
@@ -50,33 +50,33 @@ public class hd extends e {
         throw new AssertionError();
     }
 
-    public boolean showPopupSmoothly(e eVar, Runnable runnable) {
-        if (!showPopup(eVar)) {
+    public boolean showPopupSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
+        if (!showPopup(activatedControllerVar)) {
             return $assertionsDisabled;
         }
-        t.b(runnable);
+        TaskHandler.PostTask(runnable);
         return true;
     }
 
     @TargetApi(19)
-    public boolean showPopup(e eVar) {
-        return showPopup(eVar, $assertionsDisabled);
+    public boolean showPopup(ActivatedController activatedControllerVar) {
+        return showPopup(activatedControllerVar, $assertionsDisabled);
     }
 
-    public boolean showPopup(e eVar, boolean z) {
-        return showPopup(eVar, 119, (z ? 1 : 0) | 2);
+    public boolean showPopup(ActivatedController activatedControllerVar, boolean z) {
+        return showPopup(activatedControllerVar, 119, (z ? 1 : 0) | 2);
     }
 
     @TargetApi(19)
-    public boolean showPopup(e eVar, int i, int i2) {
+    public boolean showPopup(ActivatedController activatedControllerVar, int i, int i2) {
         if (!$assertionsDisabled && !isActive()) {
             throw new AssertionError();
-        } else if (!$assertionsDisabled && eVar == null) {
+        } else if (!$assertionsDisabled && activatedControllerVar == null) {
             throw new AssertionError();
         } else if (!isActive()) {
             return $assertionsDisabled;
         } else {
-            e hgVar = new hg(this, getContext(), eVar, i, i2);
+            ActivatedController hgVar = new hg(this, getContext(), activatedControllerVar, i, i2);
             addSubController(hgVar);
             getPopupWindow();
             if (!$assertionsDisabled && this.mPopupWindow == null) {
@@ -94,17 +94,17 @@ public class hd extends e {
         }
     }
 
-    public void showBalloonPopup(e eVar, View view, int i) {
-        showBalloonPopup(eVar, view, i, 0);
+    public void showBalloonPopup(ActivatedController activatedControllerVar, View view, int i) {
+        showBalloonPopup(activatedControllerVar, view, i, 0);
     }
 
-    public void showBalloonPopup(e eVar, View view, int i, int i2) {
+    public void showBalloonPopup(ActivatedController activatedControllerVar, View view, int i, int i2) {
         if (!$assertionsDisabled && !isActive()) {
             throw new AssertionError();
-        } else if (!$assertionsDisabled && eVar == null) {
+        } else if (!$assertionsDisabled && activatedControllerVar == null) {
             throw new AssertionError();
         } else if (isActive()) {
-            e hfVar = new hf(this, getContext(), eVar, i, i2);
+            ActivatedController hfVar = new hf(this, getContext(), activatedControllerVar, i, i2);
             addSubController(hfVar);
             getPopupWindow();
             if ($assertionsDisabled || this.mPopupWindow != null) {
@@ -127,15 +127,15 @@ public class hd extends e {
     }
 
     public boolean dismissTopPopup() {
-        e topPopup = getTopPopup();
+        ActivatedController topPopup = getTopPopup();
         if (topPopup == null) {
             return $assertionsDisabled;
         }
         return dismissPopup(topPopup);
     }
 
-    public final boolean dismissPopup(e eVar) {
-        e popupHolder = getPopupHolder(eVar);
+    public final boolean dismissPopup(ActivatedController activatedControllerVar) {
+        ActivatedController popupHolder = getPopupHolder(activatedControllerVar);
         if (popupHolder == null) {
             return $assertionsDisabled;
         }
@@ -168,12 +168,12 @@ public class hd extends e {
         return this.mPopupWindow.getBalloonCount() + this.mPopupRootView.getChildCount();
     }
 
-    public final e getTopPopup() {
+    public final ActivatedController getTopPopup() {
         if (this.mPopupWindow == null) {
             return null;
         }
         for (int subControllerCount = getSubControllerCount() - 1; subControllerCount >= 0; subControllerCount--) {
-            e subController = getSubController(subControllerCount);
+            ActivatedController subController = getSubController(subControllerCount);
             if (subController instanceof hj) {
                 return ((hj) subController).a();
             }
@@ -181,8 +181,8 @@ public class hd extends e {
         return null;
     }
 
-    public final boolean isPopup(e eVar) {
-        if (this.mPopupWindow == null || eVar == null || eVar.getContentView() == null || getPopupHolder(eVar) == null) {
+    public final boolean isPopup(ActivatedController activatedControllerVar) {
+        if (this.mPopupWindow == null || activatedControllerVar == null || activatedControllerVar.getContentView() == null || getPopupHolder(activatedControllerVar) == null) {
             return $assertionsDisabled;
         }
         return true;
@@ -192,18 +192,18 @@ public class hd extends e {
         if (super.onBack()) {
             return true;
         }
-        e topPopup = getTopPopup();
+        ActivatedController topPopup = getTopPopup();
         if (topPopup == null || !topPopup.requestDetach()) {
             return $assertionsDisabled;
         }
         return true;
     }
 
-    protected boolean onRequestDetach(e eVar) {
-        if (!(eVar instanceof hg)) {
-            return super.onRequestDetach(eVar);
+    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
+        if (!(activatedControllerVar instanceof hg)) {
+            return super.onRequestDetach(activatedControllerVar);
         }
-        dismissPopup(((hg) eVar).a());
+        dismissPopup(((hg) activatedControllerVar).a());
         if (this.mPopupWindow == null || getPopupCount() >= 1) {
             return true;
         }
@@ -213,16 +213,16 @@ public class hd extends e {
         return true;
     }
 
-    protected h newSubControllerParent() {
+    protected IController newSubControllerParent() {
         return super.newSubControllerParent();
     }
 
-    private hj getPopupHolder(e eVar) {
+    private hj getPopupHolder(ActivatedController activatedControllerVar) {
         for (int i = 0; i < getSubControllerCount(); i++) {
-            e subController = getSubController(i);
+            ActivatedController subController = getSubController(i);
             if (subController instanceof hj) {
                 hj hjVar = (hj) subController;
-                if (hjVar.a() == eVar) {
+                if (hjVar.a() == activatedControllerVar) {
                     return hjVar;
                 }
             }

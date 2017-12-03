@@ -5,8 +5,7 @@ import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
 import android.view.View;
 
-import com.duokan.core.sys.t;
-import com.duokan.reader.common.bitmap.a;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.domain.document.i;
 
@@ -37,7 +36,7 @@ final class abd {
     }
 
     private boolean a(as asVar, abg com_duokan_reader_ui_reading_abg) {
-        if (a || t.a()) {
+        if (a || TaskHandler.isCurrentThread()) {
             View[] pageViews = this.b.f().getPageViews();
             for (View view : pageViews) {
                 gs gsVar = (gs) view;
@@ -112,7 +111,7 @@ final class abd {
     }
 
     private void f() {
-        if (a || t.a()) {
+        if (a || TaskHandler.isCurrentThread()) {
             int size = this.c.size();
             for (int i = 0; i < size; i++) {
                 ((abh) this.c.poll()).run();
@@ -177,7 +176,7 @@ final class abd {
     }
 
     private List b(int i) {
-        return (List) t.a(new abf(this, i));
+        return (List) TaskHandler.postTask(new abf(this, i));
     }
 
     /* JADX WARNING: inconsistent code. */
@@ -185,9 +184,9 @@ final class abd {
     public android.graphics.Bitmap a(com.duokan.reader.domain.document.as r5) {
         /*
         r4 = this;
-        r2 = r4.d;
+        r2 = r4.getScaledTouchSlop;
         monitor-enter(r2);
-        r0 = r4.d;	 Catch:{ all -> 0x0043 }
+        r0 = r4.getScaledTouchSlop;	 Catch:{ all -> 0x0043 }
         r0 = r0.entrySet();	 Catch:{ all -> 0x0043 }
         r3 = r0.iterator();	 Catch:{ all -> 0x0043 }
     L_0x000d:
@@ -203,19 +202,19 @@ final class abd {
         if (r1 != r5) goto L_0x000d;
     L_0x0027:
         r1 = 1;
-        r0.b = r1;	 Catch:{ all -> 0x0043 }
-        r0 = r0.a;	 Catch:{ all -> 0x0043 }
+        r0.getVisible = r1;	 Catch:{ all -> 0x0043 }
+        r0 = r0.setDrawable;	 Catch:{ all -> 0x0043 }
         monitor-exit(r2);	 Catch:{ all -> 0x0043 }
     L_0x002d:
         return r0;
     L_0x002e:
         monitor-exit(r2);	 Catch:{ all -> 0x0043 }
-        r1 = r4.f;
+        r1 = r4.HttpLogger;
         monitor-enter(r1);
-        r0 = a;	 Catch:{ all -> 0x0040 }
+        r0 = setDrawable;	 Catch:{ all -> 0x0040 }
         if (r0 != 0) goto L_0x0046;
     L_0x0036:
-        r0 = r4.g;	 Catch:{ all -> 0x0040 }
+        r0 = r4.SessionTask;	 Catch:{ all -> 0x0040 }
         if (r0 != 0) goto L_0x0046;
     L_0x003a:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0040 }
@@ -230,15 +229,15 @@ final class abd {
         monitor-exit(r2);	 Catch:{ all -> 0x0043 }
         throw r0;
     L_0x0046:
-        r0 = r4.g;	 Catch:{ all -> 0x0040 }
+        r0 = r4.SessionTask;	 Catch:{ all -> 0x0040 }
         r2 = 1;
-        r0.b = r2;	 Catch:{ all -> 0x0040 }
+        r0.getVisible = r2;	 Catch:{ all -> 0x0040 }
         monitor-exit(r1);	 Catch:{ all -> 0x0040 }
-        r0 = r4.g;
-        r0 = r0.a;
+        r0 = r4.SessionTask;
+        r0 = r0.setDrawable;
         goto L_0x002d;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.ui.reading.abd.a(com.duokan.reader.domain.document.as):android.graphics.Bitmap");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.ui.reading.abd.setDrawable(com.duokan.reader.domain.document.as):android.graphics.Bitmap");
     }
 
     public void b() {

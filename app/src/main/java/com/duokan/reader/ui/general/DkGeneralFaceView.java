@@ -6,11 +6,9 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.duokan.b.e;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.domain.account.MiAccount;
 import com.duokan.reader.domain.account.User;

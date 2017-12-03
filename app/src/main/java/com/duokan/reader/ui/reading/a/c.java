@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.core.ui.q;
@@ -20,7 +20,7 @@ public class c extends er {
     }
 
     protected void c(View view, MotionEvent motionEvent, boolean z, es esVar) {
-        if (motionEvent.getX() < ((float) dv.b(view.getContext(), 23.0f))) {
+        if (motionEvent.getX() < ((float) UTools.closeAnimation(view.getContext(), 23.0f))) {
             c(true);
         } else if (!(this.a.a() || this.e)) {
             b(false);
@@ -56,7 +56,7 @@ public class c extends er {
             z2 = true;
         }
         dtVar.b(view, z2);
-        this.c.a(dv.e(view.getContext()));
+        this.c.a(UTools.getScaledPagingTouchSlop(view.getContext()));
         this.c.a(0.0f);
         this.c.b(-30.0f);
         this.c.c(30.0f);

@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.Pair;
 
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ac;
 import com.duokan.reader.domain.document.bb;
 import com.duokan.reader.domain.document.n;
@@ -24,11 +24,11 @@ public interface gy {
 
     void a(PointF pointF, Runnable runnable, Runnable runnable2);
 
-    void a(a aVar);
+    void a(Document_a aVar);
 
     void a(bb bbVar, DecorDrawableStyle decorDrawableStyle);
 
-    void a(n nVar, a aVar);
+    void a(n nVar, Document_a aVar);
 
     void a(Runnable runnable, Runnable runnable2);
 

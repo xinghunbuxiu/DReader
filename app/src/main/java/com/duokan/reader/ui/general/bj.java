@@ -5,7 +5,6 @@ import android.graphics.PointF;
 import android.graphics.RectF;
 
 import com.duokan.core.ui.HatGridView;
-import com.duokan.core.ui.Scrollable.ScrollState;
 
 class bj extends HatGridView {
     final /* synthetic */ DkWebListView a;

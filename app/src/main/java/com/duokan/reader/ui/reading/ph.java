@@ -9,7 +9,7 @@ import com.duokan.core.app.s;
 import com.duokan.core.ui.ZoomView;
 import com.duokan.core.ui.di;
 import com.duokan.core.ui.dl;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 import org.apache.http.HttpStatus;
 
@@ -47,15 +47,15 @@ class ph implements OnPreDrawListener {
     }
 
     public boolean onPreDraw() {
-        Point point = (Point) dv.e.a();
-        dv.a(point, this.a, this.n.a);
+        Point point = (Point) UTools.e.getRect();
+        UTools.getTouchPoint(point, this.a, this.n.a);
         this.b.a(this.c.left - point.x, this.c.top - point.y);
         this.b.a(0.0f, 0.0f, ((float) (this.d.getWidth() - this.c.width())) / ((float) this.d.getWidth()), ((float) (this.d.getHeight() - this.c.height())) / ((float) this.d.getHeight()));
         this.e.a(this.f, this.g, this.h, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR);
         this.e.a(this.i, this.j, this.k, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR);
         this.e.a(this.d, this.b, this.l, HttpStatus.SC_INTERNAL_SERVER_ERROR, new pi(this), null);
         this.e.getViewTreeObserver().removeOnPreDrawListener(this);
-        dv.e.a(point);
+        UTools.e.getRect(point);
         return false;
     }
 }

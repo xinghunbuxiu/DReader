@@ -1,7 +1,6 @@
 package com.duokan.reader.domain.downloadcenter;
 
 import com.duokan.reader.common.async.work.IAsyncWorkProgressListener;
-import com.duokan.reader.common.async.work.IAsyncWorkProgressListener.CheckErrorResult;
 import com.duokan.reader.common.async.work.e;
 import com.duokan.reader.common.download.IDownloadTask.TaskState;
 import com.duokan.reader.common.download.IDownloadTask.TaskStatus;

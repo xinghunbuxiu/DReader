@@ -36,7 +36,7 @@ public class m extends ad {
         boolean z = true;
         com.duokan.reader.common.webservices.duokan.a.a a = a(true, a() + "/token/add", "token", Uri.encode(str));
         if (!TextUtils.isEmpty(str2)) {
-            a(a, SM.COOKIE, String.format("i=%s;", new Object[]{h(str2)}));
+            a(a, SM.COOKIE, String.format("getPhysicalYPixels=%s;", new Object[]{h(str2)}));
         }
         JSONObject a2 = a(a(a));
         b bVar = new b();

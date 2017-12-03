@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 import com.duokan.core.ui.GridItemsView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 public class DkListView extends GridItemsView {
     public DkListView(Context context) {
@@ -15,6 +15,6 @@ public class DkListView extends GridItemsView {
         super(context, attributeSet);
         setNumColumns(1);
         setThumbEnabled(true);
-        setMaxOverScrollHeight(dv.g(getContext()));
+        setMaxOverScrollHeight(UTools.g(getContext()));
     }
 }

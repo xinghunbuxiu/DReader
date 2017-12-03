@@ -8,11 +8,6 @@ import android.text.TextUtils;
 
 import com.duokan.b.i;
 import com.duokan.core.app.ManagedApp;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth.DeleteHandler;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth.OAuthCallback;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth.QueryAccountListener;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth.ResponseHandleResult;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth.UpdateHandler;
 import com.duokan.reader.domain.account.oauth.evernote.Evernote;
 import com.duokan.reader.domain.account.oauth.evernote.EvernoteCallback;
 import com.duokan.reader.domain.account.oauth.evernote.EvernoteOAuthDialog;

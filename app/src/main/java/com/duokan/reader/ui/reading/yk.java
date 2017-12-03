@@ -9,8 +9,8 @@ import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
 import com.duokan.common.i;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.t;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.document.au;
@@ -20,14 +20,14 @@ import com.duokan.reader.ui.general.jh;
 
 import org.apache.http.HttpStatus;
 
-public class yk extends e {
+public class yk extends ActivatedController {
     private final t a = new t(getContext());
     private final c b;
     private final au c;
     private final yn d;
 
-    public yk(y yVar, c cVar, au auVar, yn ynVar) {
-        super(yVar);
+    public yk(IFeature featrue, c cVar, au auVar, yn ynVar) {
+        super(featrue);
         setContentView(new BubbleFloatingView(getContext(), null));
         b();
         this.a.setContentView(a());

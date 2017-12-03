@@ -2,7 +2,7 @@ package com.duokan.reader.ui.reading;
 
 import android.graphics.Bitmap;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class aat implements PageProvider {
     final /* synthetic */ aar a;
@@ -12,11 +12,11 @@ class aat implements PageProvider {
     }
 
     public CurlAnchor nextPageAnchor(CurlAnchor curlAnchor) {
-        return (CurlAnchor) t.a(new aau(this, curlAnchor));
+        return (CurlAnchor) TaskHandler.postTask(new aau(this, curlAnchor));
     }
 
     public CurlAnchor prevPageAnchor(CurlAnchor curlAnchor) {
-        return (CurlAnchor) t.a(new aav(this));
+        return (CurlAnchor) TaskHandler.postTask(new aav(this));
     }
 
     public Bitmap getPageBitmap(CurlAnchor curlAnchor) {
@@ -28,19 +28,19 @@ class aat implements PageProvider {
     }
 
     public void flipPage(CurlDirection curlDirection) {
-        t.a(new aaw(this, curlDirection));
+        TaskHandler.postTask(new aaw(this, curlDirection));
     }
 
     public void afterFlip(boolean z) {
-        t.a(new aax(this));
+        TaskHandler.postTask(new aax(this));
     }
 
     public void afterDrawFrame() {
-        t.a(new aay(this));
+        TaskHandler.postTask(new aay(this));
     }
 
     public void afterSurfaceChanged() {
-        t.b(new aaz(this));
+        TaskHandler.PostTask(new aaz(this));
     }
 
     public void onPageSizeChanged(int i, int i2) {

@@ -5,7 +5,6 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 
 import com.duokan.core.ui.di;
 import com.duokan.core.ui.dl;

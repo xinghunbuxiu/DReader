@@ -4,7 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 
 import com.duokan.core.sys.ag;
-import com.duokan.reader.common.bitmap.a;
 
 import java.util.concurrent.Callable;
 

@@ -2,8 +2,6 @@ package com.duokan.reader.domain.b;
 
 import android.os.FileObserver;
 
-import com.umeng.analytics.pro.j;
-
 class c extends FileObserver {
     final /* synthetic */ b a;
 

@@ -3,9 +3,9 @@ package com.duokan.reader.ui.reading;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.x;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.sys.af;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
@@ -22,18 +22,18 @@ abstract class to extends hd implements SystemUiConditioner {
 
     protected abstract View a();
 
-    protected abstract void a(e eVar);
+    protected abstract void a(ActivatedController controller);
 
     protected abstract void b();
 
     protected abstract boolean l();
 
-    public to(y yVar) {
-        super(yVar);
+    public to(IFeature featrue) {
+        super(featrue);
         setContentView(a());
         getContentView().setLayoutParams(new LayoutParams(-1, -1));
         this.g = findViewById(f.reading__reading_menu_bottom_view__night_mode);
-        int headerPaddingTop = ((ReaderFeature) x.a(getContext()).queryFeature(ReaderFeature.class)).getTheme().getHeaderPaddingTop();
+        int headerPaddingTop = ((ReaderFeature) MyContextWrapper.getFeature(getContext()).queryFeature(ReaderFeature.class)).getTheme().getHeaderPaddingTop();
         View findViewById = findViewById(f.reading__reading_menu_view__top);
         findViewById.setPadding(findViewById.getPaddingLeft(), headerPaddingTop, findViewById.getPaddingRight(), findViewById.getPaddingBottom());
         getContentView().setOnClickListener(new tp(this));

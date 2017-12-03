@@ -4,10 +4,9 @@ import android.widget.TextView;
 
 import com.duokan.b.f;
 import com.duokan.b.i;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.domain.b.a;
-import com.duokan.reader.domain.b.b;
 import com.duokan.reader.domain.b.q;
 import com.duokan.reader.domain.downloadcenter.DownloadCenterTask;
 import com.duokan.reader.domain.downloadcenter.k;
@@ -20,8 +19,8 @@ public abstract class ek extends hd implements a, k {
 
     protected abstract int c();
 
-    public ek(y yVar) {
-        super(yVar);
+    public ek(IFeature featrue) {
+        super(featrue);
         setContentView(c());
         this.a.setOnClickListener(new el(this));
         this.b = (TextView) findViewById(f.reading__custom_font_list_view__dk_font_pacakge_description);

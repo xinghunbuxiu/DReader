@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 
-import com.duokan.b.b;
 import com.duokan.b.g;
 import com.duokan.common.i;
 import com.duokan.core.ui.BoxView;

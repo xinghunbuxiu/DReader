@@ -23,10 +23,10 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 
-import com.duokan.core.app.x;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.ui.UTools;
 import com.duokan.kernel.DkUtils;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.domain.document.g;
 import com.duokan.reader.domain.document.h;
@@ -78,13 +78,13 @@ public class PagesFrameView extends FrameLayout {
         this.q = null;
         this.r = null;
         this.s = null;
-        this.a = (sh) x.a(context).queryFeature(sh.class);
+        this.a = (sh) MyContextWrapper.getFeature(context).queryFeature(sh.class);
         this.b.setSubpixelText(true);
         this.b.setAntiAlias(true);
         this.c = new bc(getContext());
         this.d = new je(getContext());
         this.d.a().setSubpixelText(true);
-        this.d.a().setTextSize((float) dv.b(getContext(), 14.0f));
+        this.d.a().setTextSize((float) UTools.closeAnimation(getContext(), 14.0f));
         this.d.a().setAntiAlias(true);
         this.d.a(19);
         getContext().registerReceiver(this.l, new IntentFilter("android.intent.action.BATTERY_CHANGED"));
@@ -121,7 +121,7 @@ public class PagesFrameView extends FrameLayout {
         n document = this.a.getDocument();
         gn X = this.a.X();
         if (X != null && X.e()) {
-            a g = X.g();
+            Document_a g = X.g();
             as h = X.h();
             h h2 = document.h();
             this.h = h2.a();
@@ -133,7 +133,7 @@ public class PagesFrameView extends FrameLayout {
                 this.h = DkUtils.chs2chtText(this.h);
             }
             if (document.e() > 0 && h.j() >= 0) {
-                this.g = String.format("%d / %d", new Object[]{Long.valueOf(h.j() + 1), Long.valueOf(r6)});
+                this.g = String.format("%getScaledTouchSlop / %getScaledTouchSlop", new Object[]{Long.valueOf(h.j() + 1), Long.valueOf(r6)});
             }
             if (X.g().f()) {
                 z = false;
@@ -166,7 +166,7 @@ public class PagesFrameView extends FrameLayout {
             }
             canvas.save();
             if (this.p != null) {
-                Rect rect = (Rect) dv.g.a();
+                Rect rect = (Rect) UTools.g.getRect();
                 rect.set(0, 0, getWidth(), getHeight());
                 if (this.p.hasEnded() || this.q.getWidth() != getWidth() || this.q.getHeight() != getHeight()) {
                     this.q.recycle();
@@ -186,7 +186,7 @@ public class PagesFrameView extends FrameLayout {
                     this.r.setAlpha(255);
                     canvas.drawBitmap(this.q, null, rect, this.r);
                 }
-                dv.g.a(rect);
+                UTools.g.getRect(rect);
             }
             canvas.restore();
             a(canvas);
@@ -223,10 +223,10 @@ public class PagesFrameView extends FrameLayout {
             Rect selectionStartIndicatorBounds = this.a.getSelectionStartIndicatorBounds();
             Rect selectionEndIndicatorBounds = this.a.getSelectionEndIndicatorBounds();
             if (!selectionStartIndicatorBounds.isEmpty()) {
-                dv.a(canvas, this.a.a(DecorDrawableStyle.SELECTION_INDICATOR_START), selectionStartIndicatorBounds, 17);
+                UTools.addAnimation(canvas, this.a.a(DecorDrawableStyle.SELECTION_INDICATOR_START), selectionStartIndicatorBounds, 17);
             }
             if (!selectionEndIndicatorBounds.isEmpty()) {
-                dv.a(canvas, this.a.a(DecorDrawableStyle.SELECTION_INDICATOR_END), selectionEndIndicatorBounds, 17);
+                UTools.addAnimation(canvas, this.a.a(DecorDrawableStyle.SELECTION_INDICATOR_END), selectionEndIndicatorBounds, 17);
             }
         }
     }
@@ -256,19 +256,19 @@ public class PagesFrameView extends FrameLayout {
                     canvas.drawBitmap(this.j, 0.0f, (float) (getHeight() - this.j.getHeight()), this.b);
                     if (k.c.bottom >= l.f) {
                         Rect rect = k.c;
-                        Rect rect2 = (Rect) dv.g.a();
-                        this.c.c(l.f - dv.g(getContext(), 2.0f));
+                        Rect rect2 = (Rect) UTools.g.getRect();
+                        this.c.c(l.f - UTools.g(getContext(), 2.0f));
                         rect2.set(getPaddingLeft() + rect.left, getHeight() - rect.bottom, rect.left + this.c.getIntrinsicWidth(), (getHeight() - rect.bottom) + this.c.getIntrinsicHeight());
                         this.c.setBounds(rect2);
                         this.c.draw(canvas);
-                        Rect rect3 = (Rect) dv.g.a();
-                        rect3.set(rect2.right + dv.b(getContext(), 8.0f), getHeight() - rect.bottom, getWidth() - rect.right, (getHeight() - rect.bottom) + this.c.getIntrinsicHeight());
+                        Rect rect3 = (Rect) UTools.g.getRect();
+                        rect3.set(rect2.right + UTools.closeAnimation(getContext(), 8.0f), getHeight() - rect.bottom, getWidth() - rect.right, (getHeight() - rect.bottom) + this.c.getIntrinsicHeight());
                         this.d.setBounds(rect3);
                         this.d.draw(canvas);
-                        dv.g.a(rect3);
-                        dv.g.a(rect2);
+                        UTools.g.getRect(rect3);
+                        UTools.g.getRect(rect2);
                         if (this.a.bf()) {
-                            this.a.a(canvas, getWidth() / 2, (this.c.getIntrinsicHeight() / 2) + (getHeight() - rect.bottom), getHeight() - dv.b(getContext(), 65.0f), getHeight(), this.d.a().getColor());
+                            this.a.a(canvas, getWidth() / 2, (this.c.getIntrinsicHeight() / 2) + (getHeight() - rect.bottom), getHeight() - UTools.closeAnimation(getContext(), 65.0f), getHeight(), this.d.a().getColor());
                         }
                         if (!TextUtils.isEmpty(this.h)) {
                             this.b.setColor(this.e);
@@ -276,7 +276,7 @@ public class PagesFrameView extends FrameLayout {
                             a(canvas, this.g, 53, this.b);
                         }
                     } else if (this.a.bf()) {
-                        this.a.a(canvas, getWidth() / 2, getHeight() - (this.j.getHeight() / 2), getHeight() - dv.b(getContext(), 65.0f), getHeight(), this.d.a().getColor());
+                        this.a.a(canvas, getWidth() / 2, getHeight() - (this.j.getHeight() / 2), getHeight() - UTools.closeAnimation(getContext(), 65.0f), getHeight(), this.d.a().getColor());
                     }
                 }
             }
@@ -307,7 +307,7 @@ public class PagesFrameView extends FrameLayout {
                     canvas.drawRect(0.0f, 0.0f, (float) this.i.getWidth(), (float) this.i.getHeight(), paint);
                 }
             }
-            int b = (k.c.bottom + k.d.bottom) + dv.b(getContext(), 5.0f);
+            int b = (k.c.bottom + k.d.bottom) + UTools.closeAnimation(getContext(), 5.0f);
             if (this.j == null || this.j.getWidth() != getWidth() || this.j.getHeight() != b) {
                 int intrinsicHeight;
                 if (this.j != null) {
@@ -315,7 +315,7 @@ public class PagesFrameView extends FrameLayout {
                     this.j = null;
                 }
                 if (this.a.bf()) {
-                    intrinsicHeight = b + ((this.a.bg().getIntrinsicHeight() / 2) - ((l.f - dv.g(getContext(), 2.0f)) / 2));
+                    intrinsicHeight = b + ((this.a.bg().getIntrinsicHeight() / 2) - ((l.f - UTools.g(getContext(), 2.0f)) / 2));
                 } else {
                     intrinsicHeight = b;
                 }
@@ -368,22 +368,22 @@ public class PagesFrameView extends FrameLayout {
 
     private void a(Canvas canvas, String str, int i, int i2, Paint paint) {
         k k = this.a.getDocument().k();
-        RectF rectF = (RectF) dv.h.a();
+        RectF rectF = (RectF) UTools.h.getRect();
         if (i == 3) {
             rectF.set((float) k.c.left, 0.0f, (float) Math.min(getWidth() - k.c.right, k.c.left + i2), (float) k.c.top);
         } else {
             rectF.set((float) Math.max((getWidth() - k.c.right) - i2, k.c.left), 0.0f, (float) (getWidth() - k.c.right), (float) k.c.top);
         }
-        dv.a(canvas, str, rectF, i | 80, paint);
-        dv.h.a(rectF);
+        UTools.addAnimation(canvas, str, rectF, i | 80, paint);
+        UTools.h.getRect(rectF);
     }
 
     private void a(Canvas canvas, String str, int i, Paint paint) {
         k k = this.a.getDocument().k();
         this.a.getDocument().l();
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         rect.set(k.c.left, getHeight() - k.c.bottom, getWidth() - k.c.right, getHeight());
-        dv.a(canvas, str, rect, i | 16, paint);
-        dv.g.a(rect);
+        UTools.addAnimation(canvas, str, rect, i | 16, paint);
+        UTools.g.getRect(rect);
     }
 }

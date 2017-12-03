@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.document.txt;
 
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ay;
 import com.duokan.reader.domain.document.d;
 
@@ -61,14 +61,14 @@ public class b extends d {
         return true;
     }
 
-    public boolean a(a aVar) {
+    public boolean a(Document_a aVar) {
         if (aVar instanceof ay) {
             return a(((ay) aVar).g());
         }
         return this.b < ((b) aVar).b;
     }
 
-    public boolean c(a aVar) {
+    public boolean c(Document_a aVar) {
         if (aVar instanceof ay) {
             return d(((ay) aVar).h());
         }

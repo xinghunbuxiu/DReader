@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.duokan.core.ui.ct;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.core.ui.q;
@@ -56,7 +56,7 @@ public class ag extends er {
             z2 = true;
         }
         dtVar.b(view, z2);
-        this.c.a(dv.e(view.getContext()));
+        this.c.a(UTools.getScaledPagingTouchSlop(view.getContext()));
         this.c.a(0.0f);
         this.c.b(-30.0f);
         this.c.c(30.0f);

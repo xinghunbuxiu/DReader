@@ -1,7 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.io.a;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ui.general.web.StorePageController;
 
@@ -24,6 +23,6 @@ class su implements Runnable {
 
     public void run() {
         a.d(this.a);
-        t.a(new sv(this, DkPublic.unzip(new ZipInputStream(this.b), this.a)));
+        TaskHandler.postTask(new sv(this, DkPublic.unzip(new ZipInputStream(this.b), this.a)));
     }
 }

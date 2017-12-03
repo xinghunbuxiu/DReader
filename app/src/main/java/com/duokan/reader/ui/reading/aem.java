@@ -6,13 +6,13 @@ import android.view.View;
 import android.widget.SeekBar;
 
 import com.duokan.b.g;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 
 import org.apache.http.HttpStatus;
 
 @SuppressLint({"InflateParams"})
-public class aem extends e {
+public class aem extends ActivatedController {
     private final sh a = ((sh) getContext().queryFeature(sh.class));
     private final View b = LayoutInflater.from(getContext()).inflate(g.reading__tts_menu_view, null);
     private final View c;
@@ -20,8 +20,8 @@ public class aem extends e {
     private final SeekBar e;
     private final SeekBar f;
 
-    public aem(y yVar) {
-        super(yVar);
+    public aem(IFeature featrue) {
+        super(featrue);
         setContentView(this.b);
         this.b.setOnClickListener(new aen(this));
         this.c = findViewById(f.reading__tts_menu_view__default);

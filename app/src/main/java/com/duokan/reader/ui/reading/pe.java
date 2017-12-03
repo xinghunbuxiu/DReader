@@ -3,11 +3,10 @@ package com.duokan.reader.ui.reading;
 import android.graphics.Point;
 
 import com.duokan.core.app.s;
-import com.duokan.core.ui.*;
 import com.duokan.core.ui.ZoomView;
 import com.duokan.core.ui.di;
 import com.duokan.core.ui.dl;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 do;
 
@@ -26,12 +25,12 @@ class pe implements s {
 
     public void a(int i) {
         Point point = new Point(0, 0);
-        dv.c(point, this.a);
+        UTools.showAnimation(point, this.a);
         do b = this.b.b(this.c);
         dl a = this.b.a(this.c);
         float l = b.l() + a.l();
-        do doVar = new do(b);
-        doVar.d((float) dv.a(i, 0, 360));
+        do doVar = new do (b);
+        doVar.d((float) UTools.addAnimation(i, 0, 360));
         this.b.a(this.c, doVar);
         dl dlVar = new dl(a);
         dlVar.d(l - doVar.l());

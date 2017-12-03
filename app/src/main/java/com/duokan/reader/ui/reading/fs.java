@@ -1,16 +1,16 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.av;
 import com.duokan.reader.domain.document.n;
 import com.duokan.reader.ui.general.gh;
 
 public class fs implements gh {
-    protected final a a;
+    protected final Document_a a;
     final /* synthetic */ fo b;
 
-    public fs(fo foVar, a aVar) {
+    public fs(fo foVar, Document_a aVar) {
         this.b = foVar;
         this.a = aVar;
         foVar.b.d(this.a);

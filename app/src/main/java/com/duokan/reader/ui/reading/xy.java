@@ -3,10 +3,8 @@ package com.duokan.reader.ui.reading;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout.LayoutParams;
 import android.widget.TextView;
 
-import com.duokan.c.g;
 import com.duokan.reader.ui.general.PagesView;
 
 public class xy extends wl {

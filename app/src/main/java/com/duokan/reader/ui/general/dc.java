@@ -4,11 +4,10 @@ import android.content.Context;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.View;
-import android.view.View.MeasureSpec;
 
 import com.duokan.core.ui.bd;
 import com.duokan.core.ui.bh;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 import java.util.ArrayList;
 
@@ -32,8 +31,8 @@ class dc extends gg {
         if (getItemCount() < 3 || this.a.getCellsView().getChildCount() < 3 || this.a.getCurrentPagePresenter() == null) {
             return true;
         }
-        Rect rect = (Rect) dv.g.a();
-        Rect rect2 = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
+        Rect rect2 = (Rect) UTools.g.getRect();
         rect2.set(getViewportBounds());
         this.a.f(rect);
         if (rect2.top < rect.top) {
@@ -55,8 +54,8 @@ class dc extends gg {
         if (!rect2.equals(getViewportBounds())) {
             scrollTo(rect2.left, rect2.top);
         }
-        dv.g.a(rect2);
-        dv.g.a(rect);
+        UTools.g.getRect(rect2);
+        UTools.g.getRect(rect);
         this.a.e(getPreviewBounds());
         if (this.a.b(getViewportBounds())) {
             return false;

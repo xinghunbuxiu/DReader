@@ -1,7 +1,6 @@
 package com.duokan.reader.domain.cloud;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.common.webservices.duokan.DkCloudPurchasedFictionInfo;

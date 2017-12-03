@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 import java.util.LinkedList;
 
@@ -21,6 +21,6 @@ class lg implements Runnable {
 
     public void run() {
         this.e.a(this.a, this.b, this.c);
-        t.b(new lh(this));
+        TaskHandler.PostTask(new lh(this));
     }
 }

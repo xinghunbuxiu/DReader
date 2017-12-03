@@ -15,7 +15,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageButton;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.sys.af;
 import com.duokan.core.ui.f;
 import com.duokan.reader.ReaderFeature;
@@ -44,7 +44,7 @@ public class jy extends f implements SystemUiConditioner {
         this.d.setOnClickListener(new kb(this));
         this.e = findViewById(com.duokan.b.f.general__web_window_view__refresh);
         this.e.setOnClickListener(new kc(this));
-        int headerPaddingTop = ((s) x.a(getContext()).queryFeature(s.class)).getTheme().getHeaderPaddingTop();
+        int headerPaddingTop = ((s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class)).getTheme().getHeaderPaddingTop();
         View findViewById = findViewById(com.duokan.b.f.general__web_window_view__title);
         findViewById.setPadding(findViewById.getPaddingLeft(), headerPaddingTop, findViewById.getPaddingRight(), findViewById.getPaddingBottom());
         this.a = findViewById(com.duokan.b.f.general__web_window_view__menu);
@@ -65,7 +65,7 @@ public class jy extends f implements SystemUiConditioner {
     }
 
     public void onDismiss() {
-        ReaderFeature readerFeature = (ReaderFeature) x.a(getContext()).queryFeature(ReaderFeature.class);
+        ReaderFeature readerFeature = (ReaderFeature) MyContextWrapper.getFeature(getContext()).queryFeature(ReaderFeature.class);
         if (readerFeature != null) {
             readerFeature.removeSystemUiConditioner(this);
         }
@@ -166,7 +166,7 @@ public class jy extends f implements SystemUiConditioner {
 
     protected void onShow() {
         super.onShow();
-        ReaderFeature readerFeature = (ReaderFeature) x.a(getContext()).queryFeature(ReaderFeature.class);
+        ReaderFeature readerFeature = (ReaderFeature) MyContextWrapper.getFeature(getContext()).queryFeature(ReaderFeature.class);
         if (readerFeature != null) {
             readerFeature.addSystemUiConditioner(this);
             readerFeature.updateSystemUi(true);

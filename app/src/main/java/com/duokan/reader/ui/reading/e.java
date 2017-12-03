@@ -6,7 +6,7 @@ import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 import com.duokan.b.i;
-import com.duokan.d.a;
+import com.duokan.d.DownloadUtil;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.ad.g;
 import com.duokan.reader.domain.ad.x;
@@ -16,10 +16,10 @@ class e implements OnClickListener {
     final /* synthetic */ com.duokan.reader.domain.ad.e b;
     final /* synthetic */ Context c;
     final /* synthetic */ TextView d;
-    final /* synthetic */ a e;
+    final /* synthetic */ DownloadUtil e;
 
-    e(a aVar, View view, com.duokan.reader.domain.ad.e eVar, Context context, TextView textView) {
-        this.e = aVar;
+    e(DownloadUtil downloadUtilVar, View view, com.duokan.reader.domain.ad.e eVar, Context context, TextView textView) {
+        this.e = downloadUtilVar;
         this.a = view;
         this.b = eVar;
         this.c = context;

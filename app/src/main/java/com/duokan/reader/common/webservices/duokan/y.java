@@ -69,6 +69,6 @@ public class y {
         if (this.c == 0) {
             return this.b;
         }
-        return String.format(Locale.getDefault(), "%s-%d-%s", new Object[]{this.b, Integer.valueOf(this.c), this.d});
+        return String.format(Locale.getDefault(), "%s-%getScaledTouchSlop-%s", new Object[]{this.b, Integer.valueOf(this.c), this.d});
     }
 }

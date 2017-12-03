@@ -2,7 +2,7 @@ package com.duokan.reader.domain.document.epub;
 
 import com.duokan.kernel.DkFlowPosition;
 import com.duokan.kernel.epublib.DkeBook;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ay;
 import com.duokan.reader.domain.document.d;
 
@@ -143,7 +143,7 @@ public class c extends d {
         return true;
     }
 
-    public boolean a(a aVar) {
+    public boolean a(Document_a aVar) {
         if (aVar instanceof ay) {
             return a(((ay) aVar).g());
         }
@@ -160,7 +160,7 @@ public class c extends d {
         return false;
     }
 
-    public boolean c(a aVar) {
+    public boolean c(Document_a aVar) {
         if (aVar instanceof ay) {
             return d(((ay) aVar).h());
         }

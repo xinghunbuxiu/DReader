@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.e;
+import com.duokan.core.app.ActivatedController;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.ui.general.web.StorePageController;
 
@@ -17,8 +17,8 @@ class gg implements Callable {
         return a();
     }
 
-    public e a() {
-        e storePageController = new StorePageController(this.a.a.getContext());
+    public ActivatedController a() {
+        ActivatedController storePageController = new StorePageController(this.a.a.getContext());
         storePageController.loadUrl(p.i().I());
         return storePageController;
     }

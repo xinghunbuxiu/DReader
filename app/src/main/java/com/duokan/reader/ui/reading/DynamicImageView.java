@@ -3,7 +3,6 @@ package com.duokan.reader.ui.reading;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.view.View.MeasureSpec;
 import android.widget.ImageView;
 
 public class DynamicImageView extends ImageView {

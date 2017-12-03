@@ -13,7 +13,7 @@ import com.duokan.kernel.epublib.DkeFuzzyMatchResult;
 import com.duokan.kernel.epublib.DkePage;
 import com.duokan.kernel.epublib.DkeParserOption;
 import com.duokan.reader.common.b;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.bb;
 import com.duokan.reader.domain.document.x;
 
@@ -64,7 +64,7 @@ public final class ai {
         return new ce(cVar, cVar2);
     }
 
-    public static void a(DkeBook dkeBook, a aVar) {
+    public static void a(DkeBook dkeBook, Document_a aVar) {
         if (aVar instanceof c) {
             ((c) aVar).a(dkeBook);
         } else if (aVar instanceof ce) {
@@ -180,7 +180,7 @@ public final class ai {
             if (bbVar == null) {
                 bbVar = new ce(new c(((ce) xVar.a()).j().g(), ((ce) xVar.a()).j().h(), ((ce) xVar.a()).j().i(), ((ce) xVar.a()).j().j(), ((ce) xVar.a()).j().k(), ((ce) xVar.a()).j().l(), ((ce) xVar.a()).j().m()), new c(((ce) xVar.a()).k().g(), ((ce) xVar.a()).k().h(), ((ce) xVar.a()).k().i(), ((ce) xVar.a()).k().j(), ((ce) xVar.a()).k().k(), ((ce) xVar.a()).k().l(), ((ce) xVar.a()).k().m()));
             }
-            a(dkeBook, (a) bbVar);
+            a(dkeBook, (Document_a) bbVar);
         }
         if (bbVar == null) {
             return false;

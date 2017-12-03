@@ -4,7 +4,6 @@ import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.duokan.DkSyncService;
 import com.duokan.reader.common.webservices.duokan.b;
 import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.cloud.DkCloudStorage.ConflictStrategy;
 import com.mipay.sdk.Mipay;
 

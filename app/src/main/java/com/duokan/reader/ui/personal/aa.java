@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.duokan.c.g;
 import com.duokan.c.h;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.BookShelfType;
 import com.duokan.reader.ReaderEnv.BookshelfItemStyle;
@@ -21,8 +21,8 @@ public class aa extends gx {
     private final LinearLayout e;
     private BookShelfType f = ReaderEnv.get().getBookShelfType();
 
-    public aa(y yVar) {
-        super(yVar);
+    public aa(IFeature featrue) {
+        super(featrue);
         View inflate = LayoutInflater.from(getContext()).inflate(h.personal__bookshelf_popup_style_view, null, false);
         this.a = (LinearLayout) inflate.findViewById(g.personal__bookshelf_popup_style_view__simple);
         this.b = (LinearLayout) inflate.findViewById(g.personal__bookshelf_popup_style_view__classic);

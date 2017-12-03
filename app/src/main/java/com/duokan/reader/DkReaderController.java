@@ -5,14 +5,14 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.text.TextUtils;
 
+import com.duokan.core.app.BaseActivity;
 import com.duokan.core.app.BrightnessMode;
-import com.duokan.core.app.e;
-import com.duokan.core.app.m;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.af;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.ui.bookshelf.gx;
 import com.duokan.reader.ui.bookshelf.hb;
 import com.duokan.reader.ui.r;
@@ -119,11 +119,11 @@ public class DkReaderController extends ReaderController {
         super.openBook(cVar);
     }
 
-    public /* bridge */ /* synthetic */ void openBook(c cVar, a aVar, Runnable runnable) {
+    public /* bridge */ /* synthetic */ void openBook(c cVar, Document_a aVar, Runnable runnable) {
         super.openBook(cVar, aVar, runnable);
     }
 
-    public /* bridge */ /* synthetic */ void openBook(String str, a aVar) {
+    public /* bridge */ /* synthetic */ void openBook(String str, Document_a aVar) {
         super.openBook(str, aVar);
     }
 
@@ -135,28 +135,28 @@ public class DkReaderController extends ReaderController {
         super.prompt(str, i);
     }
 
-    public /* bridge */ /* synthetic */ boolean pushFloatingPage(e eVar) {
-        return super.pushFloatingPage(eVar);
+    public /* bridge */ /* synthetic */ boolean pushFloatingPage(ActivatedController activatedControllerVar) {
+        return super.pushFloatingPage(activatedControllerVar);
     }
 
-    public /* bridge */ /* synthetic */ boolean pushFloatingPageSmoothly(e eVar, Runnable runnable) {
-        return super.pushFloatingPageSmoothly(eVar, runnable);
+    public /* bridge */ /* synthetic */ boolean pushFloatingPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
+        return super.pushFloatingPageSmoothly(activatedControllerVar, runnable);
     }
 
-    public /* bridge */ /* synthetic */ boolean pushHalfPage(e eVar) {
-        return super.pushHalfPage(eVar);
+    public /* bridge */ /* synthetic */ boolean pushHalfPage(ActivatedController activatedControllerVar) {
+        return super.pushHalfPage(activatedControllerVar);
     }
 
-    public /* bridge */ /* synthetic */ boolean pushHalfPageSmoothly(e eVar, Runnable runnable) {
-        return super.pushHalfPageSmoothly(eVar, runnable);
+    public /* bridge */ /* synthetic */ boolean pushHalfPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
+        return super.pushHalfPageSmoothly(activatedControllerVar, runnable);
     }
 
-    public /* bridge */ /* synthetic */ boolean pushPage(e eVar) {
-        return super.pushPage(eVar);
+    public /* bridge */ /* synthetic */ boolean pushPage(ActivatedController activatedControllerVar) {
+        return super.pushPage(activatedControllerVar);
     }
 
-    public /* bridge */ /* synthetic */ boolean pushPageSmoothly(e eVar, Runnable runnable) {
-        return super.pushPageSmoothly(eVar, runnable);
+    public /* bridge */ /* synthetic */ boolean pushPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
+        return super.pushPageSmoothly(activatedControllerVar, runnable);
     }
 
     public /* bridge */ /* synthetic */ void removeSystemUiConditioner(SystemUiConditioner systemUiConditioner) {
@@ -187,12 +187,12 @@ public class DkReaderController extends ReaderController {
         super.setScreenTimeout(i);
     }
 
-    public /* bridge */ /* synthetic */ void shareBooks(e eVar, c[] cVarArr) {
-        super.shareBooks(eVar, cVarArr);
+    public /* bridge */ /* synthetic */ void shareBooks(ActivatedController activatedControllerVar, c[] cVarArr) {
+        super.shareBooks(activatedControllerVar, cVarArr);
     }
 
-    public /* bridge */ /* synthetic */ void showBookHomePage(y yVar, String str, String str2, boolean z, String str3) {
-        super.showBookHomePage(yVar, str, str2, z, str3);
+    public /* bridge */ /* synthetic */ void showBookHomePage(IFeature featrue, String str, String str2, boolean z, String str3) {
+        super.showBookHomePage(featrue, str, str2, z, str3);
     }
 
     public /* bridge */ /* synthetic */ void showMenuFromBottom(hb hbVar) {
@@ -203,16 +203,16 @@ public class DkReaderController extends ReaderController {
         super.showMenuFromTop(gxVar);
     }
 
-    public /* bridge */ /* synthetic */ boolean showPopup(e eVar) {
-        return super.showPopup(eVar);
+    public /* bridge */ /* synthetic */ boolean showPopup(ActivatedController activatedControllerVar) {
+        return super.showPopup(activatedControllerVar);
     }
 
-    public /* bridge */ /* synthetic */ boolean showPopup(e eVar, int i, int i2) {
-        return super.showPopup(eVar, i, i2);
+    public /* bridge */ /* synthetic */ boolean showPopup(ActivatedController activatedControllerVar, int i, int i2) {
+        return super.showPopup(activatedControllerVar, i, i2);
     }
 
-    public /* bridge */ /* synthetic */ boolean showPopupSmoothly(e eVar, Runnable runnable) {
-        return super.showPopupSmoothly(eVar, runnable);
+    public /* bridge */ /* synthetic */ boolean showPopupSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
+        return super.showPopupSmoothly(activatedControllerVar, runnable);
     }
 
     public /* bridge */ /* synthetic */ void switchEyesSavingMode(boolean z) {
@@ -227,35 +227,35 @@ public class DkReaderController extends ReaderController {
         super.updateSystemUi(z);
     }
 
-    private DkReaderController(y yVar) {
-        super(yVar);
+    private DkReaderController(IFeature featrue) {
+        super(featrue);
     }
 
-    private DkReaderController(y yVar, Uri uri) {
-        super(yVar, uri);
+    private DkReaderController(IFeature featrue, Uri uri) {
+        super(featrue, uri);
     }
 
-    private DkReaderController(m mVar, c cVar) {
-        super((y) mVar, cVar);
+    private DkReaderController(BaseActivity baseActivityVar, c cVar) {
+        super((IFeature) baseActivityVar, cVar);
     }
 
-    public static DkReaderController from(m mVar, String str) {
+    public static DkReaderController from(BaseActivity baseActivityVar, String str) {
         if (!DkApp.get().isWebAccessEnabled() && TextUtils.isEmpty(str)) {
             return null;
         }
         c b = TextUtils.isEmpty(str) ? ai.a().b(ReaderEnv.get().getReadingBookUuid()) : ai.a().b(str);
         if (b != null) {
-            return new DkReaderController(mVar, b);
+            return new DkReaderController(baseActivityVar, b);
         }
         return null;
     }
 
-    public static DkReaderController from(m mVar, c cVar) {
-        return new DkReaderController(mVar, cVar);
+    public static DkReaderController from(BaseActivity baseActivityVar, c cVar) {
+        return new DkReaderController(baseActivityVar, cVar);
     }
 
-    public static DkReaderController from(m mVar, Uri uri) {
-        return new DkReaderController((y) mVar, uri);
+    public static DkReaderController from(BaseActivity baseActivityVar, Uri uri) {
+        return new DkReaderController((IFeature) baseActivityVar, uri);
     }
 
     public static DkReaderController from(DkMainActivity dkMainActivity) {

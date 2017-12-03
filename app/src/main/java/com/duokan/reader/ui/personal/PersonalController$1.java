@@ -2,17 +2,17 @@ package com.duokan.reader.ui.personal;
 
 import android.view.ViewGroup.LayoutParams;
 
-import com.duokan.core.app.y;
-import com.duokan.core.sys.t;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.fr;
 
 class PersonalController$1 extends TaskController {
     final /* synthetic */ fl this$0;
 
-    PersonalController$1(fl flVar, y yVar) {
+    PersonalController$1(fl flVar, IFeature featrue) {
         this.this$0 = flVar;
-        super(yVar);
+        super(featrue);
     }
 
     public void onPageFinished(fr frVar, String str) {
@@ -29,7 +29,7 @@ class PersonalController$1 extends TaskController {
         }
         this.this$0.q.setVisibility(0);
         LayoutParams layoutParams = this.this$0.q.getLayoutParams();
-        int b = dv.b(getContext(), (float) (i + 10));
+        int b = UTools.closeAnimation(getContext(), (float) (i + 10));
         if (layoutParams.height != b) {
             layoutParams.height = b;
             this.this$0.q.setLayoutParams(layoutParams);
@@ -38,7 +38,7 @@ class PersonalController$1 extends TaskController {
 
     protected boolean broadcastEvent(String str, String str2) {
         if (str.equals("taskUpdated")) {
-            t.a(new fm(this));
+            TaskHandler.postTask(new fm(this));
         }
         return super.broadcastEvent(str, str2);
     }

@@ -13,18 +13,14 @@ import android.graphics.drawable.Drawable.Callback;
 import android.text.TextUtils.TruncateAt;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.OvershootInterpolator;
 import android.view.animation.Transformation;
 import android.widget.TextView;
 
-import com.duokan.c.e;
-import com.duokan.c.j;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.BookshelfItemStyle;
 import com.duokan.reader.domain.bookshelf.BookState;
@@ -36,7 +32,6 @@ import com.duokan.reader.domain.bookshelf.ej;
 import com.duokan.reader.domain.bookshelf.iz;
 import com.duokan.reader.domain.bookshelf.js;
 import com.duokan.reader.domain.micloud.i;
-import com.duokan.reader.ui.general.a.a;
 import com.duokan.reader.ui.general.cn;
 import com.duokan.reader.ui.general.et;
 import com.duokan.reader.ui.general.f;
@@ -143,7 +138,7 @@ public class cz extends ViewGroup {
     public void draw(Canvas canvas) {
         if (!this.t) {
             super.draw(canvas);
-            Rect rect = (Rect) dv.g.a();
+            Rect rect = (Rect) UTools.g.getRect();
             a(rect);
             if (this.u != DragItemStatus.Draged) {
                 a(canvas, rect);
@@ -153,13 +148,13 @@ public class cz extends ViewGroup {
             } else if (getAlpha() != 0.3f) {
                 setAlpha(0.3f);
             }
-            dv.g.a(rect);
+            UTools.g.getRect(rect);
         }
     }
 
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         a(rect);
         getCoverDrawable().draw(canvas);
         if (e()) {
@@ -168,7 +163,7 @@ public class cz extends ViewGroup {
         if (isPressed()) {
             b(canvas, rect);
         }
-        dv.g.a(rect);
+        UTools.g.getRect(rect);
     }
 
     protected void onMeasure(int i, int i2) {
@@ -215,7 +210,7 @@ public class cz extends ViewGroup {
             this.n = new RectF();
         }
         this.n.set(0.0f, 0.0f, (float) getWidth(), (float) getHeight());
-        dv.c(this.n, (View) this);
+        UTools.showAnimation(this.n, (View) this);
         return this.n;
     }
 
@@ -223,11 +218,11 @@ public class cz extends ViewGroup {
         if (this.m == null) {
             this.m = new RectF();
         }
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         getCategoryCoverDrawable().getPadding(rect);
         this.m.set((float) rect.left, (float) rect.top, (float) (getWidth() - rect.right), (float) ((getHeight() - rect.bottom) - o()));
-        dv.c(this.m, (View) this);
-        dv.g.a(rect);
+        UTools.showAnimation(this.m, (View) this);
+        UTools.g.getRect(rect);
         return this.m;
     }
 
@@ -236,7 +231,7 @@ public class cz extends ViewGroup {
             this.o = new PointF();
         }
         this.o.set(((float) getWidth()) / 2.0f, ((float) (getHeight() - o())) / 2.0f);
-        dv.d(this.o, (View) this);
+        UTools.getScaledTouchSlop(this.o, (View) this);
         return this.o;
     }
 
@@ -274,7 +269,7 @@ public class cz extends ViewGroup {
 
     protected void a(Rect rect) {
         rect.set(getCoverDrawable().getBounds());
-        Rect rect2 = (Rect) dv.g.a();
+        Rect rect2 = (Rect) UTools.g.getRect();
         if (!e()) {
             rect2.set(e);
         } else if (((f) getCoverDrawable()).c()) {
@@ -288,7 +283,7 @@ public class cz extends ViewGroup {
         rect.top += rect2.top;
         rect.right -= rect2.right;
         rect.bottom -= rect2.bottom;
-        dv.g.a(rect2);
+        UTools.g.getRect(rect2);
     }
 
     protected void a(Canvas canvas, Rect rect) {
@@ -304,7 +299,7 @@ public class cz extends ViewGroup {
                 canvas.restore();
             } else if (this.v > 0) {
                 canvas.save();
-                canvas.translate((float) (rect.left + dv.b(getContext(), 2.0f)), (float) (rect.top + dv.b(getContext(), 3.0f)));
+                canvas.translate((float) (rect.left + UTools.closeAnimation(getContext(), 2.0f)), (float) (rect.top + UTools.closeAnimation(getContext(), 3.0f)));
                 this.A.a(String.format(getResources().getString(j.bookshelf__shared__d_new_chapters), new Object[]{Integer.valueOf(this.v)}));
                 this.A.setBounds(0, 0, this.A.a(), this.A.getIntrinsicHeight());
                 this.A.draw(canvas);
@@ -314,10 +309,10 @@ public class cz extends ViewGroup {
     }
 
     private void b(Canvas canvas, Rect rect) {
-        Paint paint = (Paint) dv.b.a();
+        Paint paint = (Paint) UTools.b.getRect();
         paint.setColor(Color.argb(48, 0, 0, 0));
         canvas.drawRect(rect, paint);
-        dv.b.a(paint);
+        UTools.b.getRect(paint);
     }
 
     private void c(Canvas canvas, Rect rect) {
@@ -370,14 +365,14 @@ public class cz extends ViewGroup {
                     f3 = f2;
                 }
                 if (!cVar.j() && (this.q != null || cVar.V())) {
-                    Rect rect2 = (Rect) dv.g.a();
+                    Rect rect2 = (Rect) UTools.g.getRect();
                     rect2.set(rect);
                     rect2.bottom -= Math.round(((float) rect2.height()) * f3);
-                    Paint paint = (Paint) dv.b.a();
+                    Paint paint = (Paint) UTools.b.getRect();
                     paint.setColor(Color.argb(153, 0, 0, 0));
                     canvas.drawRect(rect2, paint);
-                    dv.b.a(paint);
-                    dv.g.a(rect2);
+                    UTools.b.getRect(paint);
+                    UTools.g.getRect(rect2);
                 }
                 if (this.p == null) {
                     this.p = new ag(getContext());
@@ -388,10 +383,10 @@ public class cz extends ViewGroup {
                 } else {
                     this.p.stop();
                 }
-                canvas.translate((float) dv.b(getContext(), 4.0f), (float) (-dv.b(getContext(), 5.0f)));
+                canvas.translate((float) UTools.closeAnimation(getContext(), 4.0f), (float) (-UTools.closeAnimation(getContext(), 5.0f)));
                 this.p.setLevel(Math.round(10000.0f * f3));
-                dv.a(canvas, this.p, rect, 83);
-                canvas.translate((float) (-dv.b(getContext(), 4.0f)), (float) dv.b(getContext(), 5.0f));
+                UTools.addAnimation(canvas, this.p, rect, 83);
+                canvas.translate((float) (-UTools.closeAnimation(getContext(), 4.0f)), (float) UTools.closeAnimation(getContext(), 5.0f));
             } else if (this.p != null) {
                 this.p.stop();
                 this.p = null;
@@ -419,10 +414,10 @@ public class cz extends ViewGroup {
                 } else {
                     this.s.start();
                 }
-                canvas.translate((float) dv.b(getContext(), 4.0f), (float) (-dv.b(getContext(), 5.0f)));
+                canvas.translate((float) UTools.closeAnimation(getContext(), 4.0f), (float) (-UTools.closeAnimation(getContext(), 5.0f)));
                 this.s.setLevel(Math.round(10000.0f * f));
-                dv.a(canvas, this.s, rect, 83);
-                canvas.translate((float) (-dv.b(getContext(), 4.0f)), (float) dv.b(getContext(), 5.0f));
+                UTools.addAnimation(canvas, this.s, rect, 83);
+                canvas.translate((float) (-UTools.closeAnimation(getContext(), 4.0f)), (float) UTools.closeAnimation(getContext(), 5.0f));
             } else if (this.s != null) {
                 this.s.stop();
                 this.s = null;
@@ -455,11 +450,11 @@ public class cz extends ViewGroup {
     private int o() {
         switch (this.l) {
             case 1:
-                return dv.a(getContext(), 35.0f);
+                return UTools.addAnimation(getContext(), 35.0f);
             case 2:
-                return dv.a(getContext(), 0.0f);
+                return UTools.addAnimation(getContext(), 0.0f);
             default:
-                return dv.a(getContext(), 53.0f);
+                return UTools.addAnimation(getContext(), 53.0f);
         }
     }
 
@@ -608,16 +603,16 @@ public class cz extends ViewGroup {
         if (f()) {
             getCategoryCoverDrawable().a(rect, j);
         } else {
-            Rect rect2 = (Rect) dv.g.a();
+            Rect rect2 = (Rect) UTools.g.getRect();
             rect2.set(getCategoryCoverDrawable().getBounds().isEmpty() ? getBookCoverDrawable().getBounds() : getCategoryCoverDrawable().getBounds());
             getCategoryCoverDrawable().a(rect2, rect, 0);
-            Rect rect3 = (Rect) dv.g.a();
+            Rect rect3 = (Rect) UTools.g.getRect();
             getCategoryCoverDrawable().a(rect2, rect3, 1);
             getBookCoverDrawable().a(rect3, j);
-            dv.g.a(rect3);
-            dv.g.a(rect2);
+            UTools.g.getRect(rect3);
+            UTools.g.getRect(rect2);
         }
-        dv.b(rect, (View) this);
+        UTools.closeAnimation(rect, (View) this);
     }
 
     public boolean k() {

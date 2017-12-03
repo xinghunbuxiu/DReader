@@ -1,5 +1,6 @@
 package com.duokan.reader.domain.bookshelf;
 
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.domain.micloud.bi;
 import com.duokan.reader.domain.micloud.o;
 import com.duokan.reader.domain.micloud.t;
@@ -24,7 +25,7 @@ class ie implements t {
         HashMap v = this.a.a.v();
         iy iyVar = new iy(biVar);
         iyVar.g();
-        com.duokan.core.sys.t.b(new if(this, (c) v.get(iyVar.f())));
+        TaskHandler.b(new if (this,(c) v.get(iyVar.f())));
     }
 
     public void b(o oVar, bi biVar) {

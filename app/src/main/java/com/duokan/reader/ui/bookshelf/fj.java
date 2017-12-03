@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.ui.general.dj;
 
 class fj implements dj {
@@ -13,7 +13,7 @@ class fj implements dj {
     }
 
     public boolean onBack() {
-        t.b(this.a);
+        TaskHandler.PostTask(this.a);
         return true;
     }
 }

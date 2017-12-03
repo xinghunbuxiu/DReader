@@ -7,21 +7,19 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.duokan.c.h;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.ag;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.bookshelf.aa;
 import com.duokan.reader.domain.bookshelf.an;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.ui.general.HeaderView;
-import com.duokan.reader.ui.general.a.a;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class ai extends e implements cv, cw {
+public class ai extends ActivatedController implements cv, cw {
     private final cu a = ((cu) getContext().queryFeature(cu.class));
     private final cr b = ((cr) getContext().queryFeature(cr.class));
     private final ViewGroup c;
@@ -41,8 +39,8 @@ public class ai extends e implements cv, cw {
     private boolean q;
     private boolean r = true;
 
-    public ai(y yVar) {
-        super(yVar);
+    public ai(IFeature featrue) {
+        super(featrue);
         this.q = this.a.d() != null;
         setContentView(h.bookshelf__book_manager_view);
         this.c = (ViewGroup) getContentView();

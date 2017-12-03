@@ -6,27 +6,27 @@ import android.widget.FrameLayout;
 
 import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.common.webservices.duokan.DkFeedbackThreadInfo;
 import com.duokan.reader.common.webservices.duokan.ae;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.ui.general.ja;
 import com.duokan.reader.ui.general.web.StorePageController;
 
-public class bg extends e implements ae {
+public class bg extends ActivatedController implements ae {
     private final boolean a;
     private final View b;
     private final ja c = new ja(getContext());
     private final bj d = new bj(getContext());
 
-    public bg(y yVar, boolean z) {
-        super(yVar);
+    public bg(IFeature featrue, boolean z) {
+        super(featrue);
         this.a = z;
         View frameLayout = new FrameLayout(getContext());
         this.b = LayoutInflater.from(getContext()).inflate(h.personal__feedback_view_create, frameLayout, false);
         this.b.setOnClickListener(new bh(this));
-        e storePageController = new StorePageController(getContext());
+        ActivatedController storePageController = new StorePageController(getContext());
         storePageController.setHasTitle(false);
         storePageController.loadUrl(p.i().N());
         this.c.a(storePageController, getString(j.personal__feedback_view__common));
@@ -45,7 +45,7 @@ public class bg extends e implements ae {
         }
     }
 
-    protected boolean onRequestDetach(e eVar) {
+    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
         requestDetach();
         return true;
     }

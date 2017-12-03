@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 import java.lang.ref.WeakReference;
 
@@ -108,7 +108,7 @@ public class eu extends Drawable {
 
     private static void a(WeakReference weakReference, View view) {
         if (weakReference != null && view != null) {
-            dv.a(view, new ev(weakReference, view));
+            UTools.addAnimation(view, new ev(weakReference, view));
             view.invalidate();
         }
     }

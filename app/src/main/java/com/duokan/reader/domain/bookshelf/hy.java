@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.bookshelf;
 
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ag;
-import com.duokan.core.sys.t;
 import com.duokan.reader.domain.store.DkStoreFictionDetail;
 
 class hy implements ag {
@@ -14,6 +14,6 @@ class hy implements ag {
     }
 
     public void a(DkStoreFictionDetail dkStoreFictionDetail) {
-        t.a(this.a);
+        TaskHandler.postTask(this.a);
     }
 }

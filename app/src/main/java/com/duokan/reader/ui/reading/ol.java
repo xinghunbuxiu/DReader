@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 
 import com.duokan.reader.domain.bookshelf.hh;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.ui.general.FixedPagesView.PageScaleType;
 
@@ -27,7 +27,7 @@ class ol extends rx {
 
     public void b(boolean z) {
         if (this.d != z) {
-            a Z = Z();
+            Document_a Z = Z();
             this.a.B().getShowingDocPresenter().a(null, null);
             this.d = z;
             if (this.d) {

@@ -16,7 +16,7 @@ class g implements Runnable {
             this.c.i = this.a;
             this.c.j = this.b;
             h hVar = new h();
-            hVar.a = "m/cold_start/" + this.b;
+            hVar.a = "BaseActivity/cold_start/" + this.b;
             this.c.g.add(hVar);
             this.c.l();
         }

@@ -1,7 +1,6 @@
 package com.duokan.reader.domain.cloud;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.common.webservices.duokan.DkCloudPurchasedBookInfo;
 import com.duokan.reader.common.webservices.duokan.DkStoreBookDetailInfo;
@@ -66,7 +65,7 @@ class ci extends cs {
     }
 
     protected boolean onSessionException(Exception exception, int i) {
-        a.c().a(LogLevel.ERROR, "pm", String.format("unexpected error while marking a book purchased(bookUuid: %s).", new Object[]{this.b.a.a}), (Throwable) exception);
+        a.c().a(LogLevel.ERROR, "pm", String.format("unexpected error while marking setDrawable book purchased(bookUuid: %s).", new Object[]{this.b.a.a}), (Throwable) exception);
         return super.onSessionException(exception, i);
     }
 }

@@ -3,22 +3,21 @@ package com.duokan.reader.ui.general;
 import android.view.ViewGroup.LayoutParams;
 import android.view.ViewGroup.MarginLayoutParams;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.a;
-import com.duokan.core.ui.dv;
-import com.umeng.analytics.pro.j;
+import com.duokan.core.ui.UTools;
 
 class hf extends hj {
     final /* synthetic */ hd a;
     private final a c = new a(getContext());
 
-    public hf(hd hdVar, y yVar, e eVar, int i, int i2) {
+    public hf(hd hdVar, IFeature featrue, ActivatedController activatedControllerVar, int i, int i2) {
         this.a = hdVar;
-        super(hdVar, yVar, eVar);
+        super(hdVar, featrue, activatedControllerVar);
         this.c.setIndicator(com.duokan.b.e.general__shared__balloon_indicator);
         this.c.setBackgroundResource(com.duokan.b.e.general__shared__balloon_background);
-        this.c.setIndicatorMargin(dv.b(getContext(), 5.0f));
+        this.c.setIndicatorMargin(UTools.closeAnimation(getContext(), 5.0f));
         this.c.addView(b());
         LayoutParams marginLayoutParams = new MarginLayoutParams(-2, -2);
         switch (i) {

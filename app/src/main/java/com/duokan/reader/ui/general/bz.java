@@ -6,14 +6,13 @@ import android.text.Editable;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.duokan.b.b;
 import com.duokan.b.c;
 import com.duokan.b.e;
 import com.duokan.b.f;
 import com.duokan.b.g;
 import com.duokan.core.app.ac;
 import com.duokan.core.app.j;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 public class bz extends ak implements j {
     private final EditText a;
@@ -22,17 +21,17 @@ public class bz extends ak implements j {
     public bz(Context context) {
         super(context);
         setContentView(g.general__edit_dialog_view);
-        int b = dv.b(getContext(), 6.0f);
+        int b = UTools.closeAnimation(getContext(), 6.0f);
         getContentView().setBackgroundDrawable(new hm(new ColorDrawable(getContext().getResources().getColor(c.general__shared__dialog)), (float) b));
         this.a = (EditText) findViewById(f.general__edit_dialog_view__edit);
         setResizeForSoftInput(true);
         TextView textView = (TextView) findViewById(f.general__edit_dialog_view__cancel);
         textView.getPaint().setFakeBoldText(true);
-        textView.setBackgroundDrawable(new hm(getContext().getResources().getDrawable(e.general__shared__dialog_button_background), (float) dv.b(getContext(), 6.0f), 4));
+        textView.setBackgroundDrawable(new hm(getContext().getResources().getDrawable(e.general__shared__dialog_button_background), (float) UTools.closeAnimation(getContext(), 6.0f), 4));
         textView.setOnClickListener(new ca(this));
         textView = (TextView) findViewById(f.general__edit_dialog_view__ok);
         textView.getPaint().setFakeBoldText(true);
-        textView.setBackgroundDrawable(new hm(getContext().getResources().getDrawable(e.general__shared__dialog_button_background), (float) dv.b(getContext(), 6.0f), 8));
+        textView.setBackgroundDrawable(new hm(getContext().getResources().getDrawable(e.general__shared__dialog_button_background), (float) UTools.closeAnimation(getContext(), 6.0f), 8));
         textView.setOnClickListener(new cb(this));
         setEnterAnimation(b.general__shared__scale_center_in);
         setExitAnimation(b.general__shared__scale_center_out);
@@ -40,12 +39,12 @@ public class bz extends ak implements j {
 
     protected void onShow() {
         super.onShow();
-        dv.a(this.a, 1);
+        UTools.addAnimation(this.a, 1);
     }
 
     protected void onDismiss() {
         super.onDismiss();
-        dv.a(getContext());
+        UTools.hideSoftInputFromWindow(getContext());
     }
 
     public Editable a() {

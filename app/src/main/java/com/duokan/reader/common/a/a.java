@@ -48,7 +48,7 @@ public class a extends InputStream {
         if (read >= 0) {
             this.c += (long) read;
         } else if (this.c < this.b) {
-            throw new IOException(String.format("content break. read: %d bytes, expected: %d bytes.", new Object[]{Long.valueOf(this.c), Long.valueOf(this.b)}));
+            throw new IOException(String.format("content break. read: %getScaledTouchSlop bytes, expected: %getScaledTouchSlop bytes.", new Object[]{Long.valueOf(this.c), Long.valueOf(this.b)}));
         }
         return read;
     }
@@ -58,7 +58,7 @@ public class a extends InputStream {
         if (read >= 0) {
             this.c++;
         } else if (this.c < this.b) {
-            throw new IOException(String.format("content break. read: %d bytes, expected: %d bytes.", new Object[]{Long.valueOf(this.c), Long.valueOf(this.b)}));
+            throw new IOException(String.format("content break. read: %getScaledTouchSlop bytes, expected: %getScaledTouchSlop bytes.", new Object[]{Long.valueOf(this.c), Long.valueOf(this.b)}));
         }
         return read;
     }

@@ -6,7 +6,6 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-import com.duokan.core.diagnostic.a;
 import com.duokan.kernel.DkFlowPosition;
 import com.duokan.kernel.DkFlowRenderOption;
 import com.duokan.kernel.DkPos;

@@ -1,6 +1,5 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.io.a;
 import com.duokan.core.sys.af;
 
 import java.io.File;

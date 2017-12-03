@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.document.txt;
 
 import com.duokan.kernel.txtlib.DktBook;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.d;
 import com.duokan.reader.domain.document.g;
 import com.duokan.reader.domain.document.h;
@@ -33,7 +33,7 @@ class w extends h {
         return this.d.length;
     }
 
-    public g b(a aVar) {
+    public g b(Document_a aVar) {
         if (!this.b.d(aVar) || !aVar.e()) {
             return null;
         }

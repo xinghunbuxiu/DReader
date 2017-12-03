@@ -3,7 +3,7 @@ package com.duokan.reader.common.cache;
 import android.content.ContentValues;
 import android.text.TextUtils;
 
-import com.duokan.core.c.b;
+import com.duokan.core.c.IRunTask;
 import com.duokan.reader.common.cache.ListCache.ListCacheStoreChangeType;
 
 import org.json.JSONException;
@@ -162,7 +162,7 @@ class n {
         }
     }
 
-    public synchronized Collection a(b bVar, Comparator comparator, t tVar) {
+    public synchronized Collection a(IRunTask bVar, Comparator comparator, t tVar) {
         Collection arrayList;
         if (this.b) {
             arrayList = new ArrayList();
@@ -177,7 +177,7 @@ class n {
         return arrayList;
     }
 
-    public synchronized Collection a(b bVar, Comparator comparator, t tVar, q qVar, p pVar) {
+    public synchronized Collection a(IRunTask bVar, Comparator comparator, t tVar, q qVar, p pVar) {
         Collection arrayList;
         if (this.b) {
             arrayList = new ArrayList();
@@ -198,7 +198,7 @@ class n {
                 }
                 if (deserializeCorePropertiesFromJson != null) {
                     if (bVar != null) {
-                        if (!bVar.a(deserializeCorePropertiesFromJson)) {
+                        if (!bVar.isRunTask(deserializeCorePropertiesFromJson)) {
                         }
                     }
                     arrayList2.add(deserializeCorePropertiesFromJson);
@@ -209,7 +209,7 @@ class n {
         return arrayList;
     }
 
-    public synchronized Collection b(b bVar, Comparator comparator, t tVar, q qVar, p pVar) {
+    public synchronized Collection b(IRunTask bVar, Comparator comparator, t tVar, q qVar, p pVar) {
         Collection arrayList;
         if (this.b) {
             arrayList = new ArrayList();
@@ -230,7 +230,7 @@ class n {
                 }
                 if (deserializeItemFromJson != null) {
                     if (bVar != null) {
-                        if (!bVar.a(deserializeItemFromJson)) {
+                        if (!bVar.isRunTask(deserializeItemFromJson)) {
                         }
                     }
                     arrayList2.add(deserializeItemFromJson);
@@ -263,26 +263,26 @@ class n {
         /*
         r6 = this;
         r1 = 0;
-        r3 = r6.g;
+        r3 = r6.SessionTask;
         monitor-enter(r3);
-        r0 = r6.d;	 Catch:{ all -> 0x004b }
+        r0 = r6.getScaledTouchSlop;	 Catch:{ all -> 0x004b }
         if (r0 == 0) goto L_0x004e;
     L_0x0008:
-        r0 = r6.d;	 Catch:{ all -> 0x004b }
+        r0 = r6.getScaledTouchSlop;	 Catch:{ all -> 0x004b }
         r0 = r0.size();	 Catch:{ all -> 0x004b }
         r0 = r0 + -1;
         r2 = r0;
     L_0x0011:
         if (r2 < 0) goto L_0x004e;
     L_0x0013:
-        r0 = r6.d;	 Catch:{ all -> 0x004b }
+        r0 = r6.getScaledTouchSlop;	 Catch:{ all -> 0x004b }
         r0 = r0.get(r2);	 Catch:{ all -> 0x004b }
-        r0 = (com.duokan.reader.common.cache.x) r0;	 Catch:{ all -> 0x004b }
-        r4 = r0.a;	 Catch:{ all -> 0x004b }
+        r0 = (com.duokan.reader.common.cache.MyContextWrapper) r0;	 Catch:{ all -> 0x004b }
+        r4 = r0.setDrawable;	 Catch:{ all -> 0x004b }
         r5 = com.duokan.reader.common.cache.ListCache.ListCacheStoreChangeType.UpdateInfo;	 Catch:{ all -> 0x004b }
         if (r4 == r5) goto L_0x0027;
     L_0x0021:
-        r4 = r0.a;	 Catch:{ all -> 0x004b }
+        r4 = r0.setDrawable;	 Catch:{ all -> 0x004b }
         r5 = com.duokan.reader.common.cache.ListCache.ListCacheStoreChangeType.UpdateVersion;	 Catch:{ all -> 0x004b }
         if (r4 != r5) goto L_0x002b;
     L_0x0027:
@@ -290,7 +290,7 @@ class n {
         r2 = r0;
         goto L_0x0011;
     L_0x002b:
-        r4 = r0.a;	 Catch:{ all -> 0x004b }
+        r4 = r0.setDrawable;	 Catch:{ all -> 0x004b }
         r5 = com.duokan.reader.common.cache.ListCache.ListCacheStoreChangeType.ClearItems;	 Catch:{ all -> 0x004b }
         if (r4 != r5) goto L_0x0034;
     L_0x0031:
@@ -299,12 +299,12 @@ class n {
     L_0x0033:
         return r0;
     L_0x0034:
-        r4 = r0.b;	 Catch:{ all -> 0x004b }
-        r4 = r4.a;	 Catch:{ all -> 0x004b }
+        r4 = r0.getVisible;	 Catch:{ all -> 0x004b }
+        r4 = r4.setDrawable;	 Catch:{ all -> 0x004b }
         r4 = r4.equals(r7);	 Catch:{ all -> 0x004b }
         if (r4 == 0) goto L_0x0027;
     L_0x003e:
-        r2 = r0.a;	 Catch:{ all -> 0x004b }
+        r2 = r0.setDrawable;	 Catch:{ all -> 0x004b }
         r4 = com.duokan.reader.common.cache.ListCache.ListCacheStoreChangeType.DeleteItem;	 Catch:{ all -> 0x004b }
         if (r2 != r4) goto L_0x0047;
     L_0x0044:
@@ -312,7 +312,7 @@ class n {
         r0 = r1;
         goto L_0x0033;
     L_0x0047:
-        r0 = r0.b;	 Catch:{ all -> 0x004b }
+        r0 = r0.getVisible;	 Catch:{ all -> 0x004b }
         monitor-exit(r3);	 Catch:{ all -> 0x004b }
         goto L_0x0033;
     L_0x004b:
@@ -320,24 +320,24 @@ class n {
         monitor-exit(r3);	 Catch:{ all -> 0x004b }
         throw r0;
     L_0x004e:
-        r0 = r6.e;	 Catch:{ all -> 0x004b }
+        r0 = r6.getScaledPagingTouchSlop;	 Catch:{ all -> 0x004b }
         if (r0 == 0) goto L_0x0095;
     L_0x0052:
-        r0 = r6.e;	 Catch:{ all -> 0x004b }
+        r0 = r6.getScaledPagingTouchSlop;	 Catch:{ all -> 0x004b }
         r0 = r0.size();	 Catch:{ all -> 0x004b }
         r0 = r0 + -1;
         r2 = r0;
     L_0x005b:
         if (r2 < 0) goto L_0x0095;
     L_0x005d:
-        r0 = r6.e;	 Catch:{ all -> 0x004b }
+        r0 = r6.getScaledPagingTouchSlop;	 Catch:{ all -> 0x004b }
         r0 = r0.get(r2);	 Catch:{ all -> 0x004b }
-        r0 = (com.duokan.reader.common.cache.x) r0;	 Catch:{ all -> 0x004b }
-        r4 = r0.a;	 Catch:{ all -> 0x004b }
+        r0 = (com.duokan.reader.common.cache.MyContextWrapper) r0;	 Catch:{ all -> 0x004b }
+        r4 = r0.setDrawable;	 Catch:{ all -> 0x004b }
         r5 = com.duokan.reader.common.cache.ListCache.ListCacheStoreChangeType.UpdateInfo;	 Catch:{ all -> 0x004b }
         if (r4 == r5) goto L_0x0071;
     L_0x006b:
-        r4 = r0.a;	 Catch:{ all -> 0x004b }
+        r4 = r0.setDrawable;	 Catch:{ all -> 0x004b }
         r5 = com.duokan.reader.common.cache.ListCache.ListCacheStoreChangeType.UpdateVersion;	 Catch:{ all -> 0x004b }
         if (r4 != r5) goto L_0x0075;
     L_0x0071:
@@ -345,7 +345,7 @@ class n {
         r2 = r0;
         goto L_0x005b;
     L_0x0075:
-        r4 = r0.a;	 Catch:{ all -> 0x004b }
+        r4 = r0.setDrawable;	 Catch:{ all -> 0x004b }
         r5 = com.duokan.reader.common.cache.ListCache.ListCacheStoreChangeType.ClearItems;	 Catch:{ all -> 0x004b }
         if (r4 != r5) goto L_0x007e;
     L_0x007b:
@@ -353,12 +353,12 @@ class n {
         r0 = r1;
         goto L_0x0033;
     L_0x007e:
-        r4 = r0.b;	 Catch:{ all -> 0x004b }
-        r4 = r4.a;	 Catch:{ all -> 0x004b }
+        r4 = r0.getVisible;	 Catch:{ all -> 0x004b }
+        r4 = r4.setDrawable;	 Catch:{ all -> 0x004b }
         r4 = r4.equals(r7);	 Catch:{ all -> 0x004b }
         if (r4 == 0) goto L_0x0071;
     L_0x0088:
-        r2 = r0.a;	 Catch:{ all -> 0x004b }
+        r2 = r0.setDrawable;	 Catch:{ all -> 0x004b }
         r4 = com.duokan.reader.common.cache.ListCache.ListCacheStoreChangeType.DeleteItem;	 Catch:{ all -> 0x004b }
         if (r2 != r4) goto L_0x0091;
     L_0x008e:
@@ -366,16 +366,16 @@ class n {
         r0 = r1;
         goto L_0x0033;
     L_0x0091:
-        r0 = r0.b;	 Catch:{ all -> 0x004b }
+        r0 = r0.getVisible;	 Catch:{ all -> 0x004b }
         monitor-exit(r3);	 Catch:{ all -> 0x004b }
         goto L_0x0033;
     L_0x0095:
         monitor-exit(r3);	 Catch:{ all -> 0x004b }
-        r0 = r6.c;
-        r0 = r0.a(r7);
+        r0 = r6.showAnimation;
+        r0 = r0.setDrawable(r7);
         goto L_0x0033;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.cache.n.a(java.lang.String):com.duokan.reader.common.cache.z");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.cache.n.setDrawable(java.lang.String):com.duokan.reader.common.cache.QueryFeatureWrapper");
     }
 
     public synchronized void a(Collection collection, q qVar, r rVar, p pVar) {

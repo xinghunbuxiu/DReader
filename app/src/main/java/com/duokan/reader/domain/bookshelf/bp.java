@@ -2,9 +2,8 @@ package com.duokan.reader.domain.bookshelf;
 
 import android.text.TextUtils;
 
-import com.duokan.common.a;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.j;
-import com.duokan.core.sys.t;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.webservices.duokan.v;
 import com.duokan.reader.domain.account.ab;
@@ -140,7 +139,7 @@ class bp extends ap {
                     this.b.x();
                     j.a(200);
                     Semaphore semaphore = new Semaphore(0);
-                    t.a(new bq(this, semaphore), 2000);
+                    TaskHandler.postTask(new bq(this, semaphore), 2000);
                     semaphore.acquireUninterruptibly();
                     i = i4;
                 } catch (Throwable th) {

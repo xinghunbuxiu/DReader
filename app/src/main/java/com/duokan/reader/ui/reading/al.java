@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.duokan.b.g;
 import com.duokan.b.i;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ui.general.DkLabelView;
 import com.duokan.reader.ui.general.hd;
 
@@ -20,8 +20,8 @@ public class al extends hd {
     private final DkLabelView e;
     private int f;
 
-    public al(y yVar) {
-        super(yVar);
+    public al(IFeature featrue) {
+        super(featrue);
         setContentView(this.b);
         this.b.setOnClickListener(new am(this));
         this.f = this.a.ae().T();

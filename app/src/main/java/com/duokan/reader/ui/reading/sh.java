@@ -15,7 +15,7 @@ import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.bookshelf.ef;
 import com.duokan.reader.domain.bookshelf.hh;
 import com.duokan.reader.domain.cloud.DkCloudRedeemBenefit;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.domain.document.au;
@@ -94,7 +94,7 @@ public interface sh extends gy, s {
 
     void a(er erVar);
 
-    void a(a aVar);
+    void a(Document_a aVar);
 
     void a(ak akVar, boolean z, ag agVar);
 
@@ -232,7 +232,7 @@ public interface sh extends gy, s {
 
     void az();
 
-    int b(a aVar);
+    int b(Document_a aVar);
 
     hh b();
 

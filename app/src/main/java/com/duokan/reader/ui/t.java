@@ -1,9 +1,9 @@
 package com.duokan.reader.ui;
 
-import com.duokan.core.app.e;
+import com.duokan.core.app.ActivatedController;
 
-public interface t extends e {
-    boolean pushHalfPage(e eVar);
+public interface t extends ActivatedController {
+    boolean pushHalfPage(ActivatedController activatedControllerVar);
 
-    boolean pushHalfPageSmoothly(e eVar, Runnable runnable);
+    boolean pushHalfPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable);
 }

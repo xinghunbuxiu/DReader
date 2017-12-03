@@ -11,7 +11,6 @@ import android.util.Pair;
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 import com.duokan.reader.common.download.IDownloadTask.TaskState;
 import com.duokan.reader.common.download.IDownloadTask.TaskStatus;
 
@@ -240,7 +239,7 @@ public class e extends Binder implements ah, l {
         /*
         r5 = this;
         r1 = 0;
-        r0 = a;
+        r0 = setDrawable;
         if (r0 != 0) goto L_0x000d;
     L_0x0005:
         if (r6 != 0) goto L_0x000d;
@@ -252,34 +251,34 @@ public class e extends Binder implements ah, l {
         r0 = r1;
     L_0x000e:
         monitor-enter(r5);
-        r2 = r6.a;	 Catch:{ all -> 0x005f }
+        r2 = r6.setDrawable;	 Catch:{ all -> 0x005f }
         if (r2 == 0) goto L_0x0067;
     L_0x0013:
-        r0 = r5.e;	 Catch:{ all -> 0x005f }
+        r0 = r5.getScaledPagingTouchSlop;	 Catch:{ all -> 0x005f }
         r2 = r0.iterator();	 Catch:{ all -> 0x005f }
         r0 = 0;
-        r6.a = r0;	 Catch:{ all -> 0x005f }
+        r6.setDrawable = r0;	 Catch:{ all -> 0x005f }
     L_0x001c:
         r0 = r2.hasNext();	 Catch:{ all -> 0x005f }
         if (r0 == 0) goto L_0x0069;
     L_0x0022:
         r0 = r2.next();	 Catch:{ all -> 0x005f }
         r0 = (com.duokan.reader.common.download.DownloadTask) r0;	 Catch:{ all -> 0x005f }
-        r3 = r0.f();	 Catch:{ all -> 0x005f }
+        r3 = r0.HttpLogger();	 Catch:{ all -> 0x005f }
         r4 = com.duokan.reader.common.download.IDownloadTask.TaskState.UNFINISHED;	 Catch:{ all -> 0x005f }
         if (r3 != r4) goto L_0x001c;
     L_0x0030:
-        r3 = r0.e();	 Catch:{ all -> 0x005f }
+        r3 = r0.getScaledPagingTouchSlop();	 Catch:{ all -> 0x005f }
         r4 = com.duokan.reader.common.download.IDownloadTask.TaskStatus.PENDING;	 Catch:{ all -> 0x005f }
         if (r3 == r4) goto L_0x0040;
     L_0x0038:
-        r3 = r0.e();	 Catch:{ all -> 0x005f }
+        r3 = r0.getScaledPagingTouchSlop();	 Catch:{ all -> 0x005f }
         r4 = com.duokan.reader.common.download.IDownloadTask.TaskStatus.RUNNING;	 Catch:{ all -> 0x005f }
         if (r3 != r4) goto L_0x001c;
     L_0x0040:
         if (r0 != 0) goto L_0x0049;
     L_0x0042:
-        r0 = r5.f;	 Catch:{ all -> 0x005f }
+        r0 = r5.HttpLogger;	 Catch:{ all -> 0x005f }
         r0.remove(r6);	 Catch:{ all -> 0x005f }
         monitor-exit(r5);	 Catch:{ all -> 0x005f }
         return;
@@ -288,9 +287,9 @@ public class e extends Binder implements ah, l {
         r3 = r0.u();
         if (r3 == 0) goto L_0x0053;
     L_0x0050:
-        r5.c();
+        r5.showAnimation();
     L_0x0053:
-        r3 = a;
+        r3 = setDrawable;
         if (r3 != 0) goto L_0x0062;
     L_0x0057:
         if (r0 != 0) goto L_0x0062;
@@ -313,14 +312,14 @@ public class e extends Binder implements ah, l {
         r0 = r1;
         goto L_0x0040;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.e.a(com.duokan.reader.common.download.j):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.getScaledPagingTouchSlop.setDrawable(com.duokan.reader.common.download.getWidthPixels):void");
     }
 
     private DownloadTask a(Context context, long j, SQLiteDatabase sQLiteDatabase, l lVar) {
         try {
             return new HttpDownloadTask(context, j, sQLiteDatabase, lVar, this.h);
         } catch (Throwable e) {
-            a.c().a(LogLevel.ERROR, "dm", "fail to create a new task.", e);
+            a.c().a(LogLevel.ERROR, "dm", "fail to create setDrawable new task.", e);
             return null;
         }
     }
@@ -331,17 +330,17 @@ public class e extends Binder implements ah, l {
         /*
         r6 = this;
         r2 = -1;
-        r0 = a;
+        r0 = setDrawable;
         if (r0 != 0) goto L_0x0010;
     L_0x0006:
-        r0 = r6.g;
+        r0 = r6.SessionTask;
         if (r0 != 0) goto L_0x0010;
     L_0x000a:
         r0 = new java.lang.AssertionError;
         r0.<init>();
         throw r0;
     L_0x0010:
-        r0 = r6.g;
+        r0 = r6.SessionTask;
         r0.beginTransaction();
         r0 = new android.content.ContentValues;	 Catch:{ Exception -> 0x0063, all -> 0x006b }
         r0.<init>();	 Catch:{ Exception -> 0x0063, all -> 0x006b }
@@ -364,17 +363,17 @@ public class e extends Binder implements ah, l {
         r0.put(r1, r13);	 Catch:{ Exception -> 0x0063, all -> 0x006b }
         r1 = "md5";
         r0.put(r1, r12);	 Catch:{ Exception -> 0x0063, all -> 0x006b }
-        r1 = r6.g;	 Catch:{ Exception -> 0x0063, all -> 0x006b }
+        r1 = r6.SessionTask;	 Catch:{ Exception -> 0x0063, all -> 0x006b }
         r4 = "tasks";
         r5 = 0;
         r0 = r1.insert(r4, r5, r0);	 Catch:{ Exception -> 0x0063, all -> 0x006b }
         r2 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1));
         if (r2 == 0) goto L_0x005d;
     L_0x0058:
-        r2 = r6.g;	 Catch:{ Exception -> 0x0072, all -> 0x006b }
+        r2 = r6.SessionTask;	 Catch:{ Exception -> 0x0072, all -> 0x006b }
         r2.setTransactionSuccessful();	 Catch:{ Exception -> 0x0072, all -> 0x006b }
     L_0x005d:
-        r2 = r6.g;
+        r2 = r6.SessionTask;
         r2.endTransaction();
     L_0x0062:
         return r0;
@@ -382,18 +381,18 @@ public class e extends Binder implements ah, l {
         r0 = move-exception;
         r0 = r2;
     L_0x0065:
-        r2 = r6.g;
+        r2 = r6.SessionTask;
         r2.endTransaction();
         goto L_0x0062;
     L_0x006b:
         r0 = move-exception;
-        r1 = r6.g;
+        r1 = r6.SessionTask;
         r1.endTransaction();
         throw r0;
     L_0x0072:
         r2 = move-exception;
         goto L_0x0065;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.e.a(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String):long");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.getScaledPagingTouchSlop.setDrawable(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String):long");
     }
 }

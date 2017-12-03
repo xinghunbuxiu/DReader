@@ -3,11 +3,10 @@ package com.duokan.reader.ui.reading;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.x;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.common.webservices.duokan.af;
 import com.duokan.reader.common.webservices.duokan.p;
-import com.duokan.reader.domain.statistics.a;
 import com.duokan.reader.ui.general.web.StorePageController;
 
 class dm implements OnClickListener {
@@ -20,7 +19,7 @@ class dm implements OnClickListener {
     }
 
     public void onClick(View view) {
-        e storePageController = new StorePageController(x.a(this.b.getContext()));
+        ActivatedController storePageController = new StorePageController(MyContextWrapper.getFeature(this.b.getContext()));
         String d = p.i().d(this.a.e, null);
         if (this.b.e.U() != PageAnimationMode.VSCROLL) {
             a.k().a("ending_page_recommendation_v3", "click", this.b.getLabelPrefix() + this.a.d + "_topic_view_more", false);

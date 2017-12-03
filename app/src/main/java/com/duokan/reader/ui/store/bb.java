@@ -1,18 +1,18 @@
 package com.duokan.reader.ui.store;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.store.DkStoreFictionDetail;
 
-public class bb extends e implements ap {
+public class bb extends ActivatedController implements ap {
     private final ReaderFeature a;
     private final bc b;
     private DkStoreFictionDetail c = null;
 
-    public bb(y yVar, DkStoreFictionDetail dkStoreFictionDetail, boolean z) {
-        super(yVar);
-        this.a = (ReaderFeature) yVar.queryFeature(ReaderFeature.class);
+    public bb(IFeature featrue, DkStoreFictionDetail dkStoreFictionDetail, boolean z) {
+        super(featrue);
+        this.a = (ReaderFeature) featrue.queryFeature(ReaderFeature.class);
         this.c = dkStoreFictionDetail;
         this.b = new bc(getContext());
         setContentView(this.b);

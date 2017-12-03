@@ -1,10 +1,11 @@
 package com.duokan.reader.ui.general;
 
 import android.content.Context;
+import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
-import android.widget.TextView;
 
-public class DkLabelView extends TextView {
+
+public class DkLabelView extends AppCompatTextView {
 
     public enum ContentMode {
         DEFAULT,

@@ -10,12 +10,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.common.c.f;
 import com.duokan.reader.common.webservices.duokan.ae;
 import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.i;
 import com.duokan.reader.ui.general.PageHeaderView;
 import com.duokan.reader.ui.general.af;
 import com.duokan.reader.ui.general.ap;
@@ -45,8 +43,8 @@ public class am extends af {
         pageHeaderView.setLeftTitle(j.personal__create_feedback_view__title);
         View findViewById = findViewById(g.personal__create_feedback_view__container);
         if (ReaderEnv.get().forHd()) {
-            pageHeaderView.setBackgroundDrawable(new hm(new ColorDrawable(Color.parseColor("#ffffff")), (float) dv.b(getContext(), 6.0f), 3));
-            findViewById.setBackgroundDrawable(new hm(new ColorDrawable(Color.parseColor("#efeff1")), (float) dv.b(getContext(), 6.0f), 12));
+            pageHeaderView.setBackgroundDrawable(new hm(new ColorDrawable(Color.parseColor("#ffffff")), (float) UTools.closeAnimation(getContext(), 6.0f), 3));
+            findViewById.setBackgroundDrawable(new hm(new ColorDrawable(Color.parseColor("#efeff1")), (float) UTools.closeAnimation(getContext(), 6.0f), 12));
         } else {
             pageHeaderView.setBackgroundColor(Color.parseColor("#ffffff"));
             findViewById.setBackgroundColor(Color.parseColor("#efeff1"));
@@ -105,7 +103,7 @@ public class am extends af {
                 this.g.a(getContext().getString(j.personal__create_feedback_view__post_thread));
                 this.g.show();
             }
-            dv.a(getContext());
+            UTools.hideSoftInputFromWindow(getContext());
             if (f.b().c() && this.d.isSelected()) {
                 ap apVar = new ap(getContext());
                 apVar.setOkLabel(j.general__shared__ok);

@@ -10,7 +10,7 @@ public class StatExitApp extends StatEventBase {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("ev", this.event);
-            jSONObject.put("t", this.exitType);
+            jSONObject.put("TaskHandler", this.exitType);
             jSONObject.put("ts", this.timeStamp);
         } catch (Exception e) {
             e.printStackTrace();

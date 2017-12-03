@@ -6,8 +6,8 @@ import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.et;
 
@@ -32,8 +32,8 @@ public class PagesController extends hd {
         DOWN
     }
 
-    public PagesController(y yVar) {
-        super(yVar);
+    public PagesController(IFeature featrue) {
+        super(featrue);
         er fsVar = new fs();
         this.c = new et();
         this.c.a(fsVar);
@@ -60,39 +60,39 @@ public class PagesController extends hd {
         }
     }
 
-    public final e h() {
+    public final ActivatedController h() {
         if (i() < 1) {
             return null;
         }
         return d(i() - 1);
     }
 
-    public final e d(int i) {
+    public final ActivatedController d(int i) {
         if (i < 0 || i >= i()) {
             return null;
         }
         return ((fy) this.b.get(i)).b();
     }
 
-    public final e d(e eVar) {
-        int f = f(eVar);
+    public final ActivatedController d(ActivatedController activatedControllerVar) {
+        int f = f(activatedControllerVar);
         if (f < 1) {
             return null;
         }
         return ((fy) this.b.get(f - 1)).b();
     }
 
-    public final e e(e eVar) {
-        int f = f(eVar);
+    public final ActivatedController e(ActivatedController activatedControllerVar) {
+        int f = f(activatedControllerVar);
         if (f < 0 || f >= i() - 1) {
             return null;
         }
         return ((fy) this.b.get(f + 1)).b();
     }
 
-    public final int f(e eVar) {
+    public final int f(ActivatedController activatedControllerVar) {
         for (int i = 0; i < this.b.size(); i++) {
-            if (((fy) this.b.get(i)).containsDirectly(eVar)) {
+            if (((fy) this.b.get(i)).containsDirectly(activatedControllerVar)) {
                 return i;
             }
         }
@@ -107,27 +107,27 @@ public class PagesController extends hd {
         this.e = i;
     }
 
-    public boolean c(e eVar) {
-        if (g(eVar) != null) {
+    public boolean c(ActivatedController activatedControllerVar) {
+        if (g(activatedControllerVar) != null) {
             return false;
         }
-        a(new fy(this, getContext(), eVar), null, 0, null);
+        a(new fy(this, getContext(), activatedControllerVar), null, 0, null);
         return true;
     }
 
-    public boolean c(e eVar, Runnable runnable) {
-        if (g(eVar) != null) {
+    public boolean c(ActivatedController activatedControllerVar, Runnable runnable) {
+        if (g(activatedControllerVar) != null) {
             return false;
         }
-        a(new fy(this, getContext(), eVar), a(AnimationType.IN, eVar), (int) HttpStatus.SC_MULTIPLE_CHOICES, runnable);
+        a(new fy(this, getContext(), activatedControllerVar), a(AnimationType.IN, activatedControllerVar), (int) HttpStatus.SC_MULTIPLE_CHOICES, runnable);
         return true;
     }
 
-    public boolean d(e eVar, Runnable runnable) {
-        if (h() == eVar) {
+    public boolean d(ActivatedController activatedControllerVar, Runnable runnable) {
+        if (h() == activatedControllerVar) {
             return false;
         }
-        fy g = g(eVar);
+        fy g = g(activatedControllerVar);
         if (g == null) {
             return false;
         }
@@ -169,14 +169,14 @@ public class PagesController extends hd {
         return a();
     }
 
-    protected boolean onRequestDetach(e eVar) {
-        if (!(eVar instanceof fy)) {
-            return super.onRequestDetach(eVar);
+    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
+        if (!(activatedControllerVar instanceof fy)) {
+            return super.onRequestDetach(activatedControllerVar);
         }
         if (i() <= this.f) {
-            return super.onRequestDetach(eVar);
+            return super.onRequestDetach(activatedControllerVar);
         }
-        a(c((fy) eVar), HttpStatus.SC_MULTIPLE_CHOICES, null);
+        a(c((fy) activatedControllerVar), HttpStatus.SC_MULTIPLE_CHOICES, null);
         return true;
     }
 
@@ -322,18 +322,18 @@ public class PagesController extends hd {
         return (fy) this.b.get(i);
     }
 
-    protected final fy g(e eVar) {
+    protected final fy g(ActivatedController activatedControllerVar) {
         Iterator it = this.b.iterator();
         while (it.hasNext()) {
             fy fyVar = (fy) it.next();
-            if (fyVar.containsDirectly(eVar)) {
+            if (fyVar.containsDirectly(activatedControllerVar)) {
                 return fyVar;
             }
         }
         return null;
     }
 
-    protected Animation a(AnimationType animationType, e eVar) {
+    protected Animation a(AnimationType animationType, ActivatedController activatedControllerVar) {
         return null;
     }
 

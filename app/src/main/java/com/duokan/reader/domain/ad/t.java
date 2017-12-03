@@ -1,5 +1,6 @@
 package com.duokan.reader.domain.ad;
 
+import com.duokan.core.sys.TaskHandler;
 import com.miui.systemAdSolution.landingPage.ILandingPageListener.Stub;
 
 class t extends Stub {
@@ -12,11 +13,11 @@ class t extends Stub {
     }
 
     public void onDownloadStart() {
-        com.duokan.core.sys.t.a(new u(this));
+        TaskHandler.postTask(new u(this));
     }
 
     public void onDownloadSuccess() {
-        com.duokan.core.sys.t.a(new v(this));
+        TaskHandler.postTask(new v(this));
     }
 
     public void onLanuchAppSuccess() {
@@ -54,6 +55,6 @@ class t extends Stub {
     }
 
     public void onInstallSuccess() {
-        com.duokan.core.sys.t.a(new w(this));
+        TaskHandler.postTask(new w(this));
     }
 }

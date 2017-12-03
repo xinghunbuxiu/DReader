@@ -1,11 +1,11 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.y;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.ui.UTools;
 
 public class yj extends yr {
-    public yj(y yVar, zj zjVar) {
-        super(yVar, zjVar);
+    public yj(IFeature featrue, zj zjVar) {
+        super(featrue, zjVar);
     }
 
     public void a(int i) {
@@ -25,9 +25,9 @@ public class yj extends yr {
             this.z.a(this.h);
         }
         for (int i = 0; i < this.z.getToolCount(); i++) {
-            this.z.a(i).setPadding(0, 0, dv.b(getContext(), 20.0f), 0);
+            this.z.a(i).setPadding(0, 0, UTools.closeAnimation(getContext(), 20.0f), 0);
         }
-        this.z.a(dv.b(getContext(), 10.0f), 0, dv.b(getContext(), 10.0f), 0);
+        this.z.a(UTools.closeAnimation(getContext(), 10.0f), 0, UTools.closeAnimation(getContext(), 10.0f), 0);
         this.d.addView(this.z);
     }
 }

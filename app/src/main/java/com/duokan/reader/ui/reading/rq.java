@@ -3,7 +3,6 @@ package com.duokan.reader.ui.reading;
 import android.text.TextUtils;
 
 import com.duokan.c.j;
-import com.duokan.reader.domain.statistics.dailystats.a;
 
 class rq implements Runnable {
     final /* synthetic */ qh a;

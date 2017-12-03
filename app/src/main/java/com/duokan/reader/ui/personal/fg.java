@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -30,6 +30,6 @@ class fg implements Runnable {
         arrayList.ensureCapacity(this.a.size());
         arrayList.addAll(this.a);
         Collections.sort(arrayList, fhVar);
-        t.b(new fi(this, arrayList));
+        TaskHandler.PostTask(new fi(this, arrayList));
     }
 }

@@ -9,7 +9,7 @@ public abstract class h {
 
     protected abstract boolean a(g gVar, d dVar);
 
-    public abstract g b(a aVar);
+    public abstract g b(Document_a aVar);
 
     public abstract g[] b();
 
@@ -18,7 +18,7 @@ public abstract class h {
     protected h() {
     }
 
-    public g a(a aVar) {
+    public g a(Document_a aVar) {
         g b = b(aVar);
         if (b == null) {
             return null;

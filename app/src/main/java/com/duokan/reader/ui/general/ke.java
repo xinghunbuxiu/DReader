@@ -1,7 +1,5 @@
 package com.duokan.reader.ui.general;
 
-import com.duokan.b.i;
-
 class ke implements ib {
     final /* synthetic */ kd a;
 

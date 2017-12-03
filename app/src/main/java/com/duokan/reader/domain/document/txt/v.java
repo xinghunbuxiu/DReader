@@ -2,7 +2,6 @@ package com.duokan.reader.domain.document.txt;
 
 import android.net.Uri;
 
-import com.duokan.core.diagnostic.a;
 import com.duokan.kernel.txtlib.DktBook;
 import com.duokan.reader.domain.document.f;
 import com.duokan.reader.domain.document.h;

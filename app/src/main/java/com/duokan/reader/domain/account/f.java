@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.net.Uri;
 
 import com.duokan.core.a.n;
-import com.duokan.core.io.a;
 import com.duokan.reader.ReaderEnv;
 
 import org.json.JSONException;

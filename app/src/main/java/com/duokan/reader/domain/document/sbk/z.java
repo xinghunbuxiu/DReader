@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.document.sbk;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class z implements Runnable {
     final /* synthetic */ Runnable a;
@@ -20,6 +20,6 @@ class z implements Runnable {
             } catch (Throwable th) {
             }
         }
-        t.a(new aa(this));
+        TaskHandler.postTask(new aa(this));
     }
 }

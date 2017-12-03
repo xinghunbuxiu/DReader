@@ -18,15 +18,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
-import com.duokan.c.f;
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.core.io.a;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.t;
 import com.duokan.core.ui.ct;
 import com.duokan.core.ui.cu;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.et;
 import com.duokan.core.ui.j;
@@ -35,7 +31,6 @@ import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.duokan.ad;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.cloud.PersonalPrefs;
 
 import org.apache.commons.logging.LogFactory;
@@ -82,7 +77,7 @@ public class WelcomeDialog extends j {
             File cacheDir = DkReader.get().getCacheDir();
             File file = new File(cacheDir, "splash.config");
             File file2 = new File(cacheDir, "splash.config.tmp");
-            String format = String.format(Locale.US, p.i().v() + "?user_type=%d&device_id=%s&app_id=%s&build=%d&channel=%s", new Object[]{Integer.valueOf(PersonalPrefs.a().b()), ReaderEnv.get().getDeviceId(), ReaderEnv.get().getAppId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel()});
+            String format = String.format(Locale.US, p.i().v() + "?user_type=%getScaledTouchSlop&device_id=%s&app_id=%s&build=%getScaledTouchSlop&channel=%s", new Object[]{Integer.valueOf(PersonalPrefs.a().b()), ReaderEnv.get().getDeviceId(), ReaderEnv.get().getAppId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel()});
             ad adVar = new ad((WebSession) this, this.a);
             a.d(file2);
             if (adVar.a(format, file2, true)) {
@@ -212,14 +207,14 @@ public class WelcomeDialog extends j {
 
             public void onTap(er erVar, View view, PointF pointF) {
                 if (this.a.g != null && this.a.i != null) {
-                    RectF rectF = (RectF) dv.h.a();
+                    RectF rectF = (RectF) UTools.h.getRect();
                     Rect bounds = this.a.g.getBounds();
                     rectF.set(this.a.i.left * ((float) bounds.width()), this.a.i.top * ((float) bounds.width()), this.a.i.right * ((float) bounds.width()), this.a.i.bottom * ((float) bounds.width()));
                     if (rectF.contains(pointF.x - ((float) bounds.left), pointF.y - ((float) bounds.top))) {
                         this.a.j = true;
                         this.a.doFinishShow();
                     }
-                    dv.h.a(rectF);
+                    UTools.h.getRect(rectF);
                 }
             }
         });
@@ -279,7 +274,7 @@ public class WelcomeDialog extends j {
 
                     public void run() {
                         com.duokan.core.diagnostic.a.c().a();
-                        dv.a(this.a.d.f, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, new Runnable(this) {
+                        UTools.a(this.a.d.f, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, new Runnable(this) {
                             final /* synthetic */ AnonymousClass1 a;
 
                             {
@@ -287,7 +282,7 @@ public class WelcomeDialog extends j {
                             }
 
                             public void run() {
-                                t.a(new Runnable(this) {
+                                TaskHandler.postTask(new Runnable(this) {
                                     final /* synthetic */ AnonymousClass1 a;
 
                                     {
@@ -321,10 +316,10 @@ public class WelcomeDialog extends j {
                     } else {
                         j = Math.max(0, 200 - (System.currentTimeMillis() - currentTimeMillis));
                     }
-                    t.a(anonymousClass3, j);
+                    TaskHandler.postDelayed(anonymousClass3, j);
                     return;
                 }
-                t.b(new Runnable(this) {
+                TaskHandler.PostTask(new Runnable(this) {
                     final /* synthetic */ AnonymousClass4 d;
 
                     public void run() {
@@ -412,7 +407,7 @@ public class WelcomeDialog extends j {
                         }
                     };
                     DkApp.get().runWhenUiReady(anonymousClass1);
-                    t.a(anonymousClass1, TimeUnit.SECONDS.toMillis(2));
+                    TaskHandler.postDelayed(anonymousClass1, TimeUnit.SECONDS.toMillis(2));
                 }
             });
         }
@@ -450,7 +445,7 @@ public class WelcomeDialog extends j {
                 Object optString = jsonObjectFromFile.optString("action", "");
                 int optInt = jsonObjectFromFile.optInt("timeout");
                 String string = jsonObjectFromFile.getString("startup_pic");
-                File file2 = new File(cacheDir, String.format("splash%d.img", new Object[]{Integer.valueOf(i2)}));
+                File file2 = new File(cacheDir, String.format("splash%getScaledTouchSlop.img", new Object[]{Integer.valueOf(i2)}));
                 if (currentTimeMillis < j2) {
                     SplashInfo splashInfo = new SplashInfo();
                     if (jsonObjectFromFile.has("trigger")) {

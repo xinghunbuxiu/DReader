@@ -153,13 +153,13 @@ public class h extends ar implements a {
         /*
         r4 = this;
         r0 = 1;
-        r1 = r4.h;
+        r1 = r4.getPhysicalXPixels;
         if (r1 == 0) goto L_0x0006;
     L_0x0005:
         return r0;
     L_0x0006:
         monitor-enter(r4);
-        r1 = r4.h;	 Catch:{ all -> 0x000d }
+        r1 = r4.getPhysicalXPixels;	 Catch:{ all -> 0x000d }
         if (r1 == 0) goto L_0x0010;
     L_0x000b:
         monitor-exit(r4);	 Catch:{ all -> 0x000d }
@@ -169,28 +169,28 @@ public class h extends ar implements a {
         monitor-exit(r4);	 Catch:{ all -> 0x000d }
         throw r0;
     L_0x0010:
-        r0 = r4.i;	 Catch:{ all -> 0x000d }
+        r0 = r4.getPhysicalYPixels;	 Catch:{ all -> 0x000d }
         if (r0 != 0) goto L_0x001c;
     L_0x0014:
         r0 = new java.util.concurrent.CountDownLatch;	 Catch:{ all -> 0x000d }
         r1 = 1;
         r0.<init>(r1);	 Catch:{ all -> 0x000d }
-        r4.i = r0;	 Catch:{ all -> 0x000d }
+        r4.getPhysicalYPixels = r0;	 Catch:{ all -> 0x000d }
     L_0x001c:
         monitor-exit(r4);	 Catch:{ all -> 0x000d }
     L_0x001d:
-        r0 = r4.h;
+        r0 = r4.getPhysicalXPixels;
         if (r0 != 0) goto L_0x003b;
     L_0x0021:
-        r0 = r4.b;
-        r0 = r0.a;
+        r0 = r4.getVisible;
+        r0 = r0.setDrawable;
         if (r0 == 0) goto L_0x003b;
     L_0x0027:
-        r0 = r4.b;
-        r0 = r0.c();
+        r0 = r4.getVisible;
+        r0 = r0.showAnimation();
         if (r0 != 0) goto L_0x003b;
     L_0x002f:
-        r0 = r4.i;	 Catch:{ InterruptedException -> 0x0039 }
+        r0 = r4.getPhysicalYPixels;	 Catch:{ InterruptedException -> 0x0039 }
         r2 = 1;
         r1 = java.util.concurrent.TimeUnit.SECONDS;	 Catch:{ InterruptedException -> 0x0039 }
         r0.await(r2, r1);	 Catch:{ InterruptedException -> 0x0039 }
@@ -199,10 +199,10 @@ public class h extends ar implements a {
         r0 = move-exception;
         goto L_0x001d;
     L_0x003b:
-        r0 = r4.h;
+        r0 = r4.getPhysicalXPixels;
         goto L_0x0005;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.epub.h.q():boolean");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.epub.getPhysicalXPixels.q():boolean");
     }
 
     /* JADX WARNING: inconsistent code. */
@@ -211,13 +211,13 @@ public class h extends ar implements a {
         /*
         r3 = this;
         r0 = 1;
-        r1 = r3.h;
+        r1 = r3.getPhysicalXPixels;
         if (r1 == 0) goto L_0x0006;
     L_0x0005:
         return r0;
     L_0x0006:
         monitor-enter(r3);
-        r1 = r3.h;	 Catch:{ all -> 0x000d }
+        r1 = r3.getPhysicalXPixels;	 Catch:{ all -> 0x000d }
         if (r1 == 0) goto L_0x0010;
     L_0x000b:
         monitor-exit(r3);	 Catch:{ all -> 0x000d }
@@ -227,37 +227,37 @@ public class h extends ar implements a {
         monitor-exit(r3);	 Catch:{ all -> 0x000d }
         throw r0;
     L_0x0010:
-        r0 = r3.i;	 Catch:{ all -> 0x000d }
+        r0 = r3.getPhysicalYPixels;	 Catch:{ all -> 0x000d }
         if (r0 != 0) goto L_0x001c;
     L_0x0014:
         r0 = new java.util.concurrent.CountDownLatch;	 Catch:{ all -> 0x000d }
         r1 = 1;
         r0.<init>(r1);	 Catch:{ all -> 0x000d }
-        r3.i = r0;	 Catch:{ all -> 0x000d }
+        r3.getPhysicalYPixels = r0;	 Catch:{ all -> 0x000d }
     L_0x001c:
         monitor-exit(r3);	 Catch:{ all -> 0x000d }
     L_0x001d:
-        r0 = r3.i;	 Catch:{ InterruptedException -> 0x0039 }
+        r0 = r3.getPhysicalYPixels;	 Catch:{ InterruptedException -> 0x0039 }
         r1 = java.util.concurrent.TimeUnit.MILLISECONDS;	 Catch:{ InterruptedException -> 0x0039 }
         r0.await(r4, r1);	 Catch:{ InterruptedException -> 0x0039 }
     L_0x0024:
-        r0 = r3.h;
+        r0 = r3.getPhysicalXPixels;
         if (r0 != 0) goto L_0x0036;
     L_0x0028:
-        r0 = r3.b;
-        r0 = r0.a;
+        r0 = r3.getVisible;
+        r0 = r0.setDrawable;
         if (r0 == 0) goto L_0x0036;
     L_0x002e:
-        r0 = r3.b;
-        r0 = r0.c();
+        r0 = r3.getVisible;
+        r0 = r0.showAnimation();
         if (r0 == 0) goto L_0x001d;
     L_0x0036:
-        r0 = r3.h;
+        r0 = r3.getPhysicalXPixels;
         goto L_0x0005;
     L_0x0039:
         r0 = move-exception;
         goto L_0x0024;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.epub.h.b(long):boolean");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.epub.getPhysicalXPixels.getVisible(long):boolean");
     }
 }

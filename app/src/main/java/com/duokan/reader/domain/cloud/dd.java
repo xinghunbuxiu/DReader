@@ -1,7 +1,6 @@
 package com.duokan.reader.domain.cloud;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 import com.duokan.reader.domain.account.ab;
 
 import java.util.Arrays;
@@ -44,7 +43,7 @@ class dd extends ef {
     }
 
     protected boolean onSessionException(Exception exception, int i) {
-        a.c().a(LogLevel.ERROR, "pm", String.format("unexpected error while marking a chapter purchased(bookUuid: %s, chapterIds: %s).", new Object[]{this.b.a.a, Arrays.deepToString(this.b.a.b.toArray(new String[0]))}), (Throwable) exception);
+        a.c().a(LogLevel.ERROR, "pm", String.format("unexpected error while marking setDrawable chapter purchased(bookUuid: %s, chapterIds: %s).", new Object[]{this.b.a.a, Arrays.deepToString(this.b.a.b.toArray(new String[0]))}), (Throwable) exception);
         return super.onSessionException(exception, i);
     }
 }

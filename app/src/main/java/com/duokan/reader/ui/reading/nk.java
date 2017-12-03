@@ -9,15 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.duokan.c.f;
-import com.duokan.c.j;
-import com.duokan.core.app.x;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.bookshelf.BookFormat;
 import com.duokan.reader.domain.bookshelf.BookState;
@@ -74,9 +71,9 @@ public class nk extends FrameLayout implements it {
         this.c = ocVar;
         this.e = new iu(getContext());
         addView(this.e, new LayoutParams(-1, -1));
-        this.o = dv.b(context, 65.0f);
+        this.o = UTools.closeAnimation(context, 65.0f);
         this.d = new ni(context);
-        this.d.setPadding(dv.b(getContext(), 45.0f), dv.b(getContext(), 20.0f), dv.b(getContext(), 45.0f), 0);
+        this.d.setPadding(UTools.closeAnimation(getContext(), 45.0f), UTools.closeAnimation(getContext(), 20.0f), UTools.closeAnimation(getContext(), 45.0f), 0);
         this.d.setLayoutParams(new ViewGroup.LayoutParams(-1, this.o));
         addView(this.d);
         LayoutInflater from = LayoutInflater.from(getContext());
@@ -197,21 +194,21 @@ public class nk extends FrameLayout implements it {
     }
 
     private void c() {
-        int headerPaddingTop = ((s) x.a(getContext()).queryFeature(s.class)).getTheme().getHeaderPaddingTop();
+        int headerPaddingTop = ((s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class)).getTheme().getHeaderPaddingTop();
         if (headerPaddingTop > 0 && this.d.getVisibility() == 8) {
             setPadding(0, headerPaddingTop, 0, 0);
         }
         headerPaddingTop = this.d.getVisibility() == 0 ? this.o : 0;
         this.g.b(0, headerPaddingTop, 0, 0);
         if (ReaderEnv.get().forHd()) {
-            int b = dv.b(getContext(), 25.0f);
-            int b2 = dv.b(getContext(), 30.0f);
+            int b = UTools.closeAnimation(getContext(), 25.0f);
+            int b2 = UTools.closeAnimation(getContext(), 30.0f);
             this.g.setPadding(0, headerPaddingTop, 0, b2);
             this.i.setPadding(b, headerPaddingTop, b, b2);
             this.j.setPadding(b, headerPaddingTop, b, b2);
             return;
         }
-        b = dv.b(getContext(), 15.0f);
+        b = UTools.closeAnimation(getContext(), 15.0f);
         this.g.setPadding(0, headerPaddingTop, 0, b);
         this.i.setPadding(b, headerPaddingTop, b, b);
         this.j.setPadding(b, headerPaddingTop, b, b);

@@ -25,7 +25,6 @@ import com.duokan.core.io.d;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
 import com.duokan.core.sys.z;
-import com.duokan.reader.common.bitmap.a;
 import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.common.webservices.duokan.o;
 import com.duokan.reader.common.webservices.duokan.r;
@@ -351,7 +350,7 @@ public final class DkPublic {
     public static boolean unzip(java.util.zip.ZipInputStream r8, java.io.File r9) {
         /*
         r1 = 0;
-        r0 = a;
+        r0 = setDrawable;
         if (r0 != 0) goto L_0x000d;
     L_0x0005:
         if (r8 != 0) goto L_0x000d;
@@ -360,7 +359,7 @@ public final class DkPublic {
         r0.<init>();
         throw r0;
     L_0x000d:
-        r0 = a;
+        r0 = setDrawable;
         if (r0 != 0) goto L_0x0019;
     L_0x0011:
         if (r9 != 0) goto L_0x0019;

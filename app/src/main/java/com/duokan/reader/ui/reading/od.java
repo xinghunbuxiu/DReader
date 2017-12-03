@@ -12,12 +12,12 @@ import com.duokan.c.f;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.core.sys.j;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.kernel.DkUtils;
 import com.duokan.reader.domain.bookshelf.BookPackageType;
 import com.duokan.reader.domain.bookshelf.fv;
-import com.duokan.reader.domain.document.a;
-import com.duokan.reader.domain.document.a.d;
+import com.duokan.reader.domain.document.Document_a;
+import com.duokan.reader.domain.document.Document_a.d;
 import com.duokan.reader.domain.document.epub.av;
 import com.duokan.reader.domain.document.epub.s;
 import com.duokan.reader.domain.document.txt.p;
@@ -115,7 +115,7 @@ class od extends cd {
             z2 = imageView.getVisibility() != 0 && gVar.k();
             int h = gVar.h();
             if (h > 0) {
-                dkLabelView.setPadding((h * ((int) dkLabelView.getTextSize())) + dv.b(this.d.getContext(), 45.0f), 0, 0, 0);
+                dkLabelView.setPadding((h * ((int) dkLabelView.getTextSize())) + UTools.closeAnimation(this.d.getContext(), 45.0f), 0, 0, 0);
             } else {
                 dkLabelView.setPadding(0, 0, 0, 0);
             }
@@ -136,7 +136,7 @@ class od extends cd {
         } else if (this.d.getDocument() instanceof d) {
             r1 = gVar.h();
             if (r1 > 0) {
-                dkLabelView.setPadding((r1 * ((int) dkLabelView.getTextSize())) + dv.b(this.d.getContext(), 45.0f), 0, 0, 0);
+                dkLabelView.setPadding((r1 * ((int) dkLabelView.getTextSize())) + UTools.closeAnimation(this.d.getContext(), 45.0f), 0, 0, 0);
             } else {
                 dkLabelView.setPadding(0, 0, 0, 0);
             }
@@ -163,7 +163,7 @@ class od extends cd {
             boolean z3 = imageView.getVisibility() != 0 && gVar.k();
             r1 = gVar.h();
             if (r1 > 0) {
-                dkLabelView.setPadding((r1 * ((int) dkLabelView.getTextSize())) + dv.b(this.d.getContext(), 45.0f), 0, 0, 0);
+                dkLabelView.setPadding((r1 * ((int) dkLabelView.getTextSize())) + UTools.closeAnimation(this.d.getContext(), 45.0f), 0, 0, 0);
             } else {
                 dkLabelView.setPadding(0, 0, 0, 0);
             }
@@ -196,7 +196,7 @@ class od extends cd {
             dkLabelView.setContentMode(ContentMode.NUM);
             dkLabelView.setTextColor(this.d.w);
             if (this.d.getDocument() instanceof s) {
-                a g = gVar.g();
+                Document_a g = gVar.g();
                 if (g.b()) {
                     dkLabelView.setText(String.valueOf(this.d.b.b(g)));
                 } else {

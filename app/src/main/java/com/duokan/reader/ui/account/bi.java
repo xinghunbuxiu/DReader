@@ -13,8 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 
 import com.duokan.c.j;
-import com.duokan.core.ui.dv;
-import com.duokan.reader.common.bitmap.a;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.store.DkShareBook;
 
 import java.util.ArrayList;
@@ -34,7 +33,7 @@ public class bi extends bn {
 
     public void show() {
         super.show();
-        dv.a(this.e.getReasonEditView());
+        UTools.addAnimation(this.e.getReasonEditView());
     }
 
     protected void a(View view) {

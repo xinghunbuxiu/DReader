@@ -7,8 +7,8 @@ import android.graphics.Paint;
 
 import com.duokan.c.f;
 import com.duokan.c.j;
-import com.duokan.core.app.x;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.DkWebListView;
 import com.duokan.reader.ui.general.PageHeaderView;
 import com.duokan.reader.ui.s;
@@ -25,7 +25,7 @@ class l extends DkWebListView {
         this.a = jVar;
         super(context);
         setBackgroundResource(d.store__shared__bg);
-        s sVar = (s) x.a(getContext()).queryFeature(s.class);
+        s sVar = (s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class);
         a(0, 0, 0, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
         this.c = new Paint();
         this.c.setStrokeWidth(0.0f);
@@ -36,7 +36,7 @@ class l extends DkWebListView {
         this.b.setLeftTitle(jVar.getString(j.store__change_log_view__title));
         setTitleView(this.b);
         setAdapter(new m(this, jVar));
-        this.d = (dv.b(getContext(), 15.0f) + (getResources().getDrawable(f.store__change_log_view__icon1).getIntrinsicWidth() / 2)) - 1;
+        this.d = (UTools.closeAnimation(getContext(), 15.0f) + (getResources().getDrawable(f.store__change_log_view__icon1).getIntrinsicWidth() / 2)) - 1;
     }
 
     protected void dispatchDraw(Canvas canvas) {

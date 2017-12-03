@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.surfing;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.cloud.PersonalPrefs;
 import com.duokan.reader.ui.store.br;
 
@@ -9,9 +9,9 @@ import java.util.Set;
 class t extends br {
     final /* synthetic */ f a;
 
-    t(f fVar, y yVar) {
+    t(f fVar, IFeature featrue) {
         this.a = fVar;
-        super(yVar);
+        super(featrue);
     }
 
     protected boolean b() {

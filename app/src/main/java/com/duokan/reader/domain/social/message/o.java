@@ -11,7 +11,6 @@ import com.duokan.reader.domain.account.PersonalAccount;
 import com.duokan.reader.domain.account.ab;
 import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.cloud.push.MessageWakeupListener;
-import com.duokan.reader.domain.cloud.push.MessageWakeupListener.MessageSubType;
 
 public class o implements ah, MessageWakeupListener {
     private static final ai h = new ai();

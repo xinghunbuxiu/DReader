@@ -2,16 +2,16 @@ package com.duokan.reader.ui.reading;
 
 import android.graphics.RectF;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.af;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.bookshelf.hh;
 import com.duokan.reader.domain.bookshelf.js;
-import com.duokan.reader.domain.document.a;
-import com.duokan.reader.domain.document.a.n;
-import com.duokan.reader.domain.document.a.q;
-import com.duokan.reader.domain.document.a.u;
+import com.duokan.reader.domain.document.Document_a;
+import com.duokan.reader.domain.document.Document_a.n;
+import com.duokan.reader.domain.document.Document_a.q;
+import com.duokan.reader.domain.document.Document_a.u;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.g;
 import com.duokan.reader.domain.document.k;
@@ -22,8 +22,8 @@ import com.duokan.reader.ui.general.ReaderUi;
 public class ok extends qh implements n {
     static final /* synthetic */ boolean a = (!ok.class.desiredAssertionStatus());
 
-    public ok(y yVar, c cVar, a aVar) {
-        super(yVar, cVar, aVar);
+    public ok(IFeature featrue, c cVar, Document_a aVar) {
+        super(featrue, cVar, aVar);
     }
 
     protected void m() {
@@ -88,7 +88,7 @@ public class ok extends qh implements n {
 
     protected float a(ak akVar) {
         if (a || akVar.b()) {
-            return Math.max(0.0f, Math.min((((float) (((com.duokan.reader.domain.document.a.a) akVar.g()).g() + 1)) / ((float) this.h.f())) * 100.0f, 100.0f));
+            return Math.max(0.0f, Math.min((((float) (((Document_a.a) akVar.g()).g() + 1)) / ((float) this.h.f())) * 100.0f, 100.0f));
         }
         throw new AssertionError();
     }

@@ -6,7 +6,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.View.MeasureSpec;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.document.ab;
 import com.duokan.reader.domain.document.az;
 import com.duokan.reader.ui.general.deprecatedDkTextView;
@@ -25,7 +25,7 @@ public class bg implements bb {
         this.b.a(runnable);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         this.c.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        this.d = displayMetrics.widthPixels - dv.b(this.c, 115.0f);
+        this.d = displayMetrics.widthPixels - UTools.closeAnimation(this.c, 115.0f);
     }
 
     public void a(Rect rect, ab abVar) {

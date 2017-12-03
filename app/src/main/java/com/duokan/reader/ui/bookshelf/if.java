@@ -1,14 +1,14 @@
 package com.duokan.reader.ui.bookshelf;
 
-class if implements Runnable {
-    final /* synthetic */ ic a;
+class if implements Runnable{
+final /* synthetic */ ic a;
 
-    if(ic icVar) {
-        this.a = icVar;
-    }
+        if(ic icVar){
+        this.a=icVar;
+        }
 
-    public void run() {
+public void run(){
         this.a.requestDetach();
         this.a.s.showPopup(bv.c(this.a.getContext()));
-    }
-}
+        }
+        }

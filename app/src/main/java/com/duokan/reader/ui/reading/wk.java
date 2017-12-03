@@ -1,13 +1,13 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 
-public abstract class wk extends e {
+public abstract class wk extends ActivatedController {
     private Runnable a = null;
 
-    public wk(y yVar) {
-        super(yVar);
+    public wk(IFeature featrue) {
+        super(featrue);
     }
 
     protected void onDetachFromStub() {

@@ -2,11 +2,9 @@ package com.duokan.reader.ui.bookshelf;
 
 import android.content.Context;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 
-import com.duokan.c.d;
 import com.duokan.c.j;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.domain.bookshelf.aa;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.ui.general.PageHeaderView;
@@ -29,8 +27,8 @@ public class ec extends LinearLayout {
     public ec(Context context, ei eiVar) {
         super(context);
         this.a = eiVar;
-        this.b = (cr) x.a(context).queryFeature(cr.class);
-        this.c = (cu) x.a(context).queryFeature(cu.class);
+        this.b = (cr) MyContextWrapper.getFeature(context).queryFeature(cr.class);
+        this.c = (cu) MyContextWrapper.getFeature(context).queryFeature(cu.class);
         this.f = new eh();
         setBackgroundColor(getResources().getColor(d.general__shared__f7f7f7));
         setOrientation(1);

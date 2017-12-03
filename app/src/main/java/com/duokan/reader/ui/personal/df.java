@@ -2,7 +2,6 @@ package com.duokan.reader.ui.personal;
 
 import com.duokan.c.j;
 import com.duokan.reader.DkApp;
-import com.duokan.reader.common.b.e;
 import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.common.webservices.duokan.r;
 import com.duokan.reader.domain.account.MiAccount;

@@ -14,7 +14,6 @@ import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.async.work.IAsyncWorkProgressListener;
 import com.duokan.reader.common.async.work.c;
 import com.duokan.reader.common.async.work.r;
-import com.duokan.reader.common.b.e;
 import com.duokan.reader.common.c.f;
 import com.duokan.reader.common.c.g;
 import com.duokan.reader.domain.account.a;

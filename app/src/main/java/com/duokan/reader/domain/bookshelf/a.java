@@ -3,10 +3,9 @@ package com.duokan.reader.domain.bookshelf;
 import android.text.TextUtils;
 
 import com.duokan.kernel.DkUtils;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.av;
 import com.duokan.reader.domain.document.epub.s;
-import com.duokan.reader.domain.document.sbk.b;
-import com.duokan.reader.domain.document.sbk.f;
 import com.duokan.reader.domain.document.txt.p;
 
 import org.json.JSONArray;
@@ -176,8 +175,8 @@ public abstract class a {
                     this.f = com.duokan.reader.domain.document.txt.b.a(jSONObject2);
                     return;
                 case 4:
-                    this.e = com.duokan.reader.domain.document.a.a.a(jSONObject);
-                    this.f = com.duokan.reader.domain.document.a.a.a(jSONObject2);
+                    this.e = Document_a.a.a(jSONObject);
+                    this.f = Document_a.a.a(jSONObject2);
                     return;
                 default:
                     return;

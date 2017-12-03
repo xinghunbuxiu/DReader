@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.text.TextUtils;
 import android.view.View;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.account.AccountType;
 import com.duokan.reader.domain.account.PersonalAccount;
 import com.duokan.reader.domain.account.User;
@@ -12,7 +12,6 @@ import com.duokan.reader.domain.account.UserAccount;
 import com.duokan.reader.domain.account.a;
 import com.duokan.reader.domain.account.bh;
 import com.duokan.reader.domain.account.h;
-import com.duokan.reader.domain.account.i;
 import com.duokan.reader.ui.general.DkLabelView;
 import com.duokan.reader.ui.general.HeaderView;
 import com.duokan.reader.ui.general.bf;
@@ -39,8 +38,8 @@ public class MiAccountProfileSettingsController extends my {
     private da r;
 
     class ChangePasswordController extends StorePageController {
-        public ChangePasswordController(y yVar) {
-            super(yVar);
+        public ChangePasswordController(IFeature featrue) {
+            super(featrue);
             setPageTitleLeft(true);
             setPageTitle(getString(j.personal__miaccount_change_password_view__title));
         }
@@ -51,8 +50,8 @@ public class MiAccountProfileSettingsController extends my {
         }
     }
 
-    public MiAccountProfileSettingsController(y yVar) {
-        super(yVar, true);
+    public MiAccountProfileSettingsController(IFeature featrue) {
+        super(featrue, true);
         setContentView(com.duokan.c.h.personal__miaccount_profile_settings_view);
         this.a.setLeftTitle(j.personal__miaccount_profile_settings_view__title);
         this.m = findViewById(g.personal__personal_settings_view__mi_milicenter);
@@ -79,7 +78,7 @@ public class MiAccountProfileSettingsController extends my {
         b();
         c();
         a b = i.f().b(PersonalAccount.class);
-        b.a(getActivity(), new do(this));
+        b.a(getActivity(), new do (this));
         findViewById(g.personal__personal_settings_view__logoff_container).setOnClickListener(new dp(this, b));
         s sVar = (s) getContext().queryFeature(s.class);
         findViewById(g.personal__miaccount_profile_settings_view__scrollerview).setPadding(0, 0, 0, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());

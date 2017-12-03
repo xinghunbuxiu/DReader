@@ -1,18 +1,18 @@
 package com.duokan.reader.ui.store;
 
 import com.duokan.b.i;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.common.async.a.a;
 import com.duokan.reader.domain.bookshelf.ej;
 import com.duokan.reader.ui.general.jq;
 
 final class ar implements a {
-    final /* synthetic */ x a;
+    final /* synthetic */ MyContextWrapper a;
     final /* synthetic */ ej b;
     final /* synthetic */ ax c;
 
-    ar(x xVar, ej ejVar, ax axVar) {
-        this.a = xVar;
+    ar(MyContextWrapper mContext, ej ejVar, ax axVar) {
+        this.a = mContext;
         this.b = ejVar;
         this.c = axVar;
     }

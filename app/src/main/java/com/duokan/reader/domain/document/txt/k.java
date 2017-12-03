@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.document.txt;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 import java.util.concurrent.TimeUnit;
 
@@ -22,6 +22,6 @@ class k implements Runnable {
             } catch (InterruptedException e) {
             }
         }
-        t.a(new l(this));
+        TaskHandler.postTask(new l(this));
     }
 }

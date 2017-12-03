@@ -6,7 +6,6 @@ import com.duokan.core.sys.ah;
 import com.duokan.core.sys.r;
 import com.duokan.reader.common.c.f;
 import com.duokan.reader.domain.document.epub.av;
-import com.umeng.analytics.pro.j;
 
 import java.io.File;
 import java.util.ArrayList;

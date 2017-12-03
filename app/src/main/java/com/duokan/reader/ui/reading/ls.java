@@ -6,20 +6,20 @@ import android.graphics.Rect;
 import android.view.View;
 import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.document.ah;
 import com.duokan.reader.ui.reading.a.w;
 import com.duokan.reader.ui.reading.a.z;
 
-public class ls extends e implements z {
+public class ls extends ActivatedController implements z {
     private final sh a;
     private final wl b;
     private lx c;
     private w d = new w(this);
 
-    public ls(y yVar, sh shVar, wl wlVar) {
-        super(yVar);
+    public ls(IFeature featrue, sh shVar, wl wlVar) {
+        super(featrue);
         this.a = shVar;
         this.b = wlVar;
         this.d.a(false);
@@ -108,7 +108,7 @@ public class ls extends e implements z {
 
     private void b(ah ahVar, Rect rect, lw lwVar) {
         if (ahVar.d()) {
-            this.c = new y(getActivity(), this.a, ahVar, rect, new lu(this, lwVar));
+            this.c = new IFeature(getActivity(), this.a, ahVar, rect, new lu(this, lwVar));
         } else if (ahVar.e()) {
             this.c = new afh(getActivity(), this.a, ahVar, rect, new lv(this, lwVar));
         }

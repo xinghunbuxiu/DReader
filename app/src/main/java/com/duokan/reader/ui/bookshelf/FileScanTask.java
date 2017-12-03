@@ -6,7 +6,6 @@ import android.text.Html;
 import android.widget.TextView;
 
 import com.duokan.common.FileTypeRecognizer;
-import com.duokan.core.io.a;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ui.general.ak;
 

@@ -7,10 +7,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.duokan.b.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.domain.b.b;
 import com.duokan.reader.domain.b.m;
 import com.duokan.reader.domain.b.o;
 import com.duokan.reader.ui.general.HeaderView;
@@ -34,8 +32,8 @@ public class en extends ek {
     private o j = null;
     private TextView k = null;
 
-    public en(y yVar, boolean z) {
-        super(yVar);
+    public en(IFeature featrue, boolean z) {
+        super(featrue);
         this.c.setLeftTitle(i.reading__custom_font_list_view__dk_title);
         this.c.a(getContext().getResources().getDrawable(e.reading__custom_font_list_view__add_font_dark)).setOnClickListener(new eo(this));
         this.d = (TabView) findViewById(f.reading__custom_font_list_view__tab);

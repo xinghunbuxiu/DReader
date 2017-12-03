@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.common.async.work.c;
 import com.duokan.reader.common.async.work.i;
 import com.duokan.reader.domain.account.ab;
@@ -36,14 +36,14 @@ class az extends i {
     }
 
     public void a(bl blVar) {
-        t.b(new ba(this, this));
+        TaskHandler.PostTask(new ba(this, this));
     }
 
     public void b(bl blVar) {
-        t.b(new bb(this, this));
+        TaskHandler.PostTask(new bb(this, this));
     }
 
     public void c(bl blVar) {
-        t.b(new bc(this, this));
+        TaskHandler.PostTask(new bc(this, this));
     }
 }

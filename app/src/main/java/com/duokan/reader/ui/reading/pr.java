@@ -10,8 +10,8 @@ import com.duokan.b.e;
 import com.duokan.b.f;
 import com.duokan.b.g;
 import com.duokan.core.app.BrightnessMode;
-import com.duokan.core.app.y;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 
 public class pr extends wk {
@@ -20,10 +20,10 @@ public class pr extends wk {
     private final View c;
     private final View d;
 
-    public pr(y yVar) {
-        super(yVar);
+    public pr(IFeature featrue) {
+        super(featrue);
         ViewGroup viewGroup = (ViewGroup) LayoutInflater.from(getContext()).inflate(g.reading__reading_brightness_view, null);
-        viewGroup.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? dv.b(getContext(), 400.0f) : -1, -2));
+        viewGroup.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? UTools.closeAnimation(getContext(), 400.0f) : -1, -2));
         setContentView((View) viewGroup);
         this.a = (sh) getContext().queryFeature(sh.class);
         this.b = (SeekBar) findViewById(f.reading__reading_brightness_view__seek_brightness);

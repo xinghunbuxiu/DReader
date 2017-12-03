@@ -6,11 +6,10 @@ import android.graphics.drawable.Drawable;
 import android.view.KeyEvent;
 import android.view.View;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.UmengManager;
 import com.duokan.reader.domain.bookshelf.BookFormat;
-import com.duokan.reader.domain.bookshelf.a;
 import com.duokan.reader.domain.bookshelf.ef;
 import com.duokan.reader.domain.bookshelf.eg;
 import com.duokan.reader.domain.document.WritingDirection;
@@ -20,7 +19,7 @@ import com.duokan.reader.ui.general.el;
 import java.util.LinkedList;
 import java.util.List;
 
-public class TextSelectionController extends e {
+public class TextSelectionController extends ActivatedController {
     private int a;
     private final wl b;
     private boolean c = false;
@@ -52,8 +51,8 @@ public class TextSelectionController extends e {
         FAST_SELECTING
     }
 
-    public TextSelectionController(y yVar, sh shVar, wl wlVar, acv com_duokan_reader_ui_reading_acv) {
-        super(yVar);
+    public TextSelectionController(IFeature featrue, sh shVar, wl wlVar, acv com_duokan_reader_ui_reading_acv) {
+        super(featrue);
         this.b = wlVar;
         this.e = shVar;
         this.h = com_duokan_reader_ui_reading_acv;

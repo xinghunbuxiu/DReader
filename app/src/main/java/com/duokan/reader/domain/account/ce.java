@@ -13,7 +13,7 @@ public class ce {
     private static boolean a(com.duokan.core.a.n r2) {
         /* JADX: method processing error */
 /*
-Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find immediate dominator for block B:18:? in {11, 13, 14, 15, 16, 17, 19, 20} preds:[]
+Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find immediate dominator for block B:18:? in {11, 13, 14, 15, 16, 17, 19, 20} preds:[]
 	at jadx.core.dex.visitors.blocksmaker.BlockProcessor.computeDominators(BlockProcessor.java:129)
 	at jadx.core.dex.visitors.blocksmaker.BlockProcessor.processBlocksTree(BlockProcessor.java:48)
 	at jadx.core.dex.visitors.blocksmaker.BlockProcessor.rerun(BlockProcessor.java:44)
@@ -26,31 +26,31 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find immediate dom
 */
         /*
         r0 = 1;
-        r1 = r2.d();
+        r1 = r2.getScaledTouchSlop();
         if (r1 < r0) goto L_0x0008;
     L_0x0007:
         return r0;
     L_0x0008:
-        r2.a(r0);
+        r2.setDrawable(r0);
         if (r1 != 0) goto L_0x0007;
     L_0x000d:
-        r2.b();
-        a(r2, r1);	 Catch:{ Exception -> 0x001a, all -> 0x0023 }
-        r2.f();	 Catch:{ Exception -> 0x001a, all -> 0x0023 }
-        r2.c();
+        r2.getVisible();
+        setDrawable(r2, r1);	 Catch:{ Exception -> 0x001a, all -> 0x0023 }
+        r2.HttpLogger();	 Catch:{ Exception -> 0x001a, all -> 0x0023 }
+        r2.showAnimation();
         goto L_0x0007;
     L_0x001a:
         r0 = move-exception;
         r0.printStackTrace();	 Catch:{ Exception -> 0x001a, all -> 0x0023 }
         r0 = 0;
-        r2.c();
+        r2.showAnimation();
         goto L_0x0007;
     L_0x0023:
         r0 = move-exception;
-        r2.c();
+        r2.showAnimation();
         throw r0;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.account.ce.a(com.duokan.core.a.n):boolean");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.account.ce.setDrawable(com.duokan.core.setDrawable.n):boolean");
     }
 
     public static n a() {

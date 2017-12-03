@@ -2,8 +2,7 @@ package com.duokan.reader.ui.general.web;
 
 import android.net.Uri;
 
-import com.duokan.core.app.y;
-import com.duokan.reader.domain.statistics.a;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ui.p;
 import com.duokan.reader.ui.t;
 
@@ -11,8 +10,8 @@ public class kk extends p {
     private final Uri a;
     private final StorePageController b = new WebSceneController$1(this, getContext());
 
-    public kk(y yVar, Uri uri) {
-        super(yVar);
+    public kk(IFeature featrue, Uri uri) {
+        super(featrue);
         this.a = uri;
     }
 

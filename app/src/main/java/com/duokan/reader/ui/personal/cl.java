@@ -1,13 +1,13 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 
 class cl extends cc {
     final /* synthetic */ ck a;
 
-    cl(ck ckVar, y yVar) {
+    cl(ck ckVar, IFeature featrue) {
         this.a = ckVar;
-        super(yVar);
+        super(featrue);
     }
 
     public void a(int i, int i2) {

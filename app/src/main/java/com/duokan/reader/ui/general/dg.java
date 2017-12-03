@@ -4,8 +4,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.core.diagnostic.a;
-
 class dg extends gj {
     final /* synthetic */ FlowPagesView a;
 

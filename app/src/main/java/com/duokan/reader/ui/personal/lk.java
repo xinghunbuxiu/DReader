@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.personal;
 
 import com.duokan.c.j;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.domain.bookshelf.an;
 import com.duokan.reader.domain.bookshelf.c;
@@ -21,13 +21,13 @@ public class lk extends hd implements iv, iw, ho {
     private final String[] b;
     private kn c;
 
-    public lk(y yVar, a aVar, String[] strArr) {
-        super(yVar);
+    public lk(IFeature featrue, a aVar, String[] strArr) {
+        super(featrue);
         this.b = strArr;
         for (String a : this.b) {
             aVar = aVar.a(a);
         }
-        this.c = (kn) yVar.queryFeature(kn.class);
+        this.c = (kn) featrue.queryFeature(kn.class);
         this.a = new lo(getContext(), aVar, this, new ke(getContext()));
         setContentView(this.a);
         this.a.getHeaderView().setOnBackListener(new ll(this));

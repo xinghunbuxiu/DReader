@@ -2,7 +2,6 @@ package com.duokan.reader.ui.reading;
 
 import android.graphics.Bitmap.Config;
 
-import com.duokan.reader.common.bitmap.a;
 import com.duokan.reader.domain.document.ad;
 
 import java.util.Collection;

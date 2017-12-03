@@ -3,7 +3,6 @@ package com.duokan.reader.ui.reading;
 import android.content.Context;
 import android.graphics.Rect;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 
 class gl extends FrameLayout {

@@ -3,7 +3,7 @@ package com.duokan.reader.ui.bookshelf;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderFeature;
 
 class o implements OnClickListener {
@@ -14,6 +14,6 @@ class o implements OnClickListener {
     }
 
     public void onClick(View view) {
-        ((ReaderFeature) x.a(this.a.getContext()).queryFeature(ReaderFeature.class)).navigate("duokan-reader://store", null, false, null);
+        ((ReaderFeature) MyContextWrapper.getFeature(this.a.getContext()).queryFeature(ReaderFeature.class)).navigate("duokan-reader://store", null, false, null);
     }
 }

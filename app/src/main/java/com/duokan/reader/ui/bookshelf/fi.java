@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class fi extends Drawable {
     final /* synthetic */ fh a;
@@ -17,14 +17,14 @@ class fi extends Drawable {
 
     public void draw(Canvas canvas) {
         Rect bounds = getBounds();
-        Paint paint = (Paint) dv.b.a();
+        Paint paint = (Paint) UTools.b.getRect();
         paint.setColor(fh.e);
-        paint.setStrokeWidth((float) dv.b(this.a.getContext(), 2.0f));
-        canvas.drawLine(((float) (bounds.width() - dv.b(this.a.getContext(), 100.0f))) / 2.0f, ((float) (bounds.bottom - 1)) - (((float) dv.b(this.a.getContext(), 2.0f)) / 2.0f), ((float) (bounds.width() + dv.b(this.a.getContext(), 100.0f))) / 2.0f, ((float) (bounds.bottom - 1)) - (((float) dv.b(this.a.getContext(), 2.0f)) / 2.0f), paint);
+        paint.setStrokeWidth((float) UTools.closeAnimation(this.a.getContext(), 2.0f));
+        canvas.drawLine(((float) (bounds.width() - UTools.closeAnimation(this.a.getContext(), 100.0f))) / 2.0f, ((float) (bounds.bottom - 1)) - (((float) UTools.closeAnimation(this.a.getContext(), 2.0f)) / 2.0f), ((float) (bounds.width() + UTools.closeAnimation(this.a.getContext(), 100.0f))) / 2.0f, ((float) (bounds.bottom - 1)) - (((float) UTools.closeAnimation(this.a.getContext(), 2.0f)) / 2.0f), paint);
         paint.setColor(fh.f);
         paint.setStrokeWidth(2.0f);
         canvas.drawLine(0.0f, ((float) (bounds.bottom - 1)) - 1.0f, (float) bounds.right, ((float) (bounds.bottom - 1)) - 1.0f, paint);
-        dv.b.a(paint);
+        UTools.b.getRect(paint);
     }
 
     public void setAlpha(int i) {

@@ -19,11 +19,11 @@ import com.duokan.c.j;
 import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.diagnostic.a;
-import com.duokan.core.sys.t;
-import com.duokan.core.ui.dv;
+import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.et;
 import com.duokan.reader.DkApp;
@@ -32,7 +32,6 @@ import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.UmengManager;
 import com.duokan.reader.domain.account.PersonalAccount;
 import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.b.b;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.bookshelf.iu;
@@ -50,7 +49,6 @@ import com.duokan.reader.domain.cloud.hg;
 import com.duokan.reader.domain.cloud.hh;
 import com.duokan.reader.domain.cloud.hi;
 import com.duokan.reader.domain.cloud.hk;
-import com.duokan.reader.ui.b.d;
 import com.duokan.reader.ui.bookshelf.bk;
 import com.duokan.reader.ui.bookshelf.hm;
 import com.duokan.reader.ui.general.ap;
@@ -93,7 +91,7 @@ public class f extends p implements OnPrimaryClipChangedListener, iu, gk, gs, hg
     private final View i;
     private final LinearLayout j;
     private final FrameLayout k;
-    private final e[] l = new e[4];
+    private final ActivatedController[] l = new ActivatedController[4];
     private final et m = new et();
     private final br n;
     private bk o = null;
@@ -109,8 +107,8 @@ public class f extends p implements OnPrimaryClipChangedListener, iu, gk, gs, hg
     private final LinkedList y = new LinkedList();
     private final Set z = new HashSet();
 
-    public f(y yVar, boolean z) {
-        super(yVar);
+    public f(IFeature featrue, boolean z) {
+        super(featrue);
         this.x = z;
         this.h = new g(this, getContext());
         this.i = new View(getContext());
@@ -123,7 +121,7 @@ public class f extends p implements OnPrimaryClipChangedListener, iu, gk, gs, hg
         this.h.addView(this.j, new LayoutParams(-1, -1));
         this.k = new FrameLayout(getContext());
         this.j.addView(this.k, new LinearLayout.LayoutParams(-1, 0, 1.0f));
-        this.n = new t(this, getContext());
+        this.n = new TaskHandler(this, getContext());
         addSubController(this.n);
         this.l[0] = this.n;
         this.k.addView(this.n.getContentView(), new LayoutParams(-1, -1));
@@ -151,13 +149,13 @@ public class f extends p implements OnPrimaryClipChangedListener, iu, gk, gs, hg
         switch (i) {
             case 0:
                 if (!this.n.isActive()) {
-                    this.C += "m";
+                    this.C += "BaseActivity";
                     return;
                 }
                 return;
             case 1:
                 if (this.p == null || !this.p.isActive()) {
-                    this.C += "c";
+                    this.C += "showAnimation";
                     return;
                 }
                 return;
@@ -255,11 +253,11 @@ public class f extends p implements OnPrimaryClipChangedListener, iu, gk, gs, hg
                     z2 = false;
                 }
                 childAt.setSelected(z2);
-                e eVar = this.l[i2];
-                if (eVar != null && i2 == this.B) {
-                    eVar.getContentView().setVisibility(0);
-                    eVar.getContentView().scrollTo(0, 0);
-                    activate(eVar);
+                ActivatedController activatedControllerVar = this.l[i2];
+                if (activatedControllerVar != null && i2 == this.B) {
+                    activatedControllerVar.getContentView().setVisibility(0);
+                    activatedControllerVar.getContentView().scrollTo(0, 0);
+                    activate(activatedControllerVar);
                 }
                 i2++;
             }
@@ -344,7 +342,7 @@ public class f extends p implements OnPrimaryClipChangedListener, iu, gk, gs, hg
             return false;
         }
         if (path.equals("cart") || path.equals("store/cart")) {
-            e b = bv.b(getContext());
+            ActivatedController b = bv.b(getContext());
             if (z) {
                 ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).pushPageSmoothly(b, runnable);
             } else {
@@ -442,7 +440,7 @@ public class f extends p implements OnPrimaryClipChangedListener, iu, gk, gs, hg
             frameLayout.setBackgroundDrawable(eVar);
             frameLayout.addView(view, new LayoutParams(-1, -1));
             this.h.addView(frameLayout, new LayoutParams(-1, -1));
-            dv.b(frameLayout, runnable);
+            UTools.closeAnimation(frameLayout, runnable);
         }
     }
 
@@ -450,7 +448,7 @@ public class f extends p implements OnPrimaryClipChangedListener, iu, gk, gs, hg
         if (view != null) {
             View view2 = (FrameLayout) view.getParent();
             view2.setVisibility(4);
-            dv.c(view2, new ae(this, view2, runnable));
+            UTools.showAnimation(view2, new ae(this, view2, runnable));
         }
     }
 
@@ -655,7 +653,7 @@ public class f extends p implements OnPrimaryClipChangedListener, iu, gk, gs, hg
     }
 
     private void w() {
-        if (ManagedApp.get().getRunningState() == RunningState.FOREGROUND) {
+        if (ManagedApp.get().getOldRunningState() == RunningState.FOREGROUND) {
             try {
                 String b = b(this.s.getPrimaryClip().getItemAt(0).coerceToText(getContext()).toString());
                 if (!TextUtils.isEmpty(b) && b.length() == 8) {

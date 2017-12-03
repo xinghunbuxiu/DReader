@@ -19,7 +19,7 @@ public enum RankingType {
     LOVE("2004"),
     RANK_FINISHED_ALL("1034"),
     RANK_PROGRESSIVE("1005");
-    
+
     private String mTypeIndex;
 
     public String value() {

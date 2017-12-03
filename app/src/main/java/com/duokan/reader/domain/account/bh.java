@@ -3,7 +3,6 @@ package com.duokan.reader.domain.account;
 import android.annotation.SuppressLint;
 import android.text.TextUtils;
 
-import com.duokan.reader.common.i;
 import com.duokan.reader.domain.social.b.b;
 import com.duokan.reader.domain.social.b.c;
 

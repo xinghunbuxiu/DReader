@@ -4,7 +4,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.duokan.c.j;
-import com.duokan.reader.domain.a.a;
 import com.duokan.reader.ui.general.ReaderUi;
 import com.duokan.reader.ui.general.be;
 

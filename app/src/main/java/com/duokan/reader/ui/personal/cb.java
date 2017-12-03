@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.domain.cloud.a;
 
 class cb implements Runnable {
@@ -20,7 +20,7 @@ class cb implements Runnable {
             if (this.b.d.k != null && this.b.d.k.isAttached()) {
                 this.b.d.k.a(this.b.d.i);
             }
-            t.b(this.b.c);
+            TaskHandler.PostTask(this.b.c);
         }
     }
 }

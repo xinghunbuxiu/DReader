@@ -4,8 +4,8 @@ import android.view.View;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 
 import com.duokan.core.diagnostic.a;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.j;
-import com.duokan.core.sys.t;
 import com.duokan.core.ui.Scrollable.ScrollState;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.ui.general.PagesView;
@@ -28,18 +28,18 @@ class ww implements OnPreDrawListener {
     }
 
     public void a(Runnable runnable) {
-        t.a(new wx(this, runnable));
+        TaskHandler.postTask(new wx(this, runnable));
     }
 
     public boolean onPreDraw() {
         if (!a()) {
-            t.b(new wz(this));
+            TaskHandler.PostTask(new wz(this));
         }
         return true;
     }
 
     protected void b(boolean z) {
-        a.c().b(t.a());
+        a.c().b(TaskHandler.isCurrentThread());
         try {
             if (this.b.isEmpty()) {
                 if (!this.b.isEmpty()) {

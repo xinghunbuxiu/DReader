@@ -1,7 +1,5 @@
 package com.duokan.reader.common.webservices;
 
-import com.duokan.reader.common.webservices.WebSession.CacheStrategy;
-
 public abstract class a extends WebSession {
     public a() {
         super(false);

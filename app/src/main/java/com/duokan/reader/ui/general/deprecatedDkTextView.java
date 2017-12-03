@@ -11,7 +11,6 @@ import android.text.TextUtils;
 import android.text.TextUtils.TruncateAt;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.ViewParent;
 
 import com.duokan.core.ui.Scrollable;
@@ -22,7 +21,6 @@ import com.duokan.kernel.txtlib.DktRenderTextInfo;
 import com.duokan.kernel.txtlib.DktRenderer;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.bitmap.BitmapsRecycler;
-import com.duokan.reader.common.bitmap.a;
 
 import java.io.File;
 import java.lang.ref.WeakReference;

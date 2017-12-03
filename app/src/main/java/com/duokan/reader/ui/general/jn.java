@@ -4,7 +4,7 @@ import android.graphics.PointF;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 import java.util.LinkedList;
 
@@ -22,7 +22,7 @@ public class jn {
             jpVar.a = motionEvent.getPointerId(i);
             jpVar.b.x = motionEvent.getX(i) + ((float) this.a.getScrollX());
             jpVar.b.y = motionEvent.getY(i) + ((float) this.a.getScrollY());
-            dv.d(jpVar.b, this.a);
+            UTools.getScaledTouchSlop(jpVar.b, this.a);
             this.c.add(jpVar);
             i++;
         }
@@ -87,13 +87,13 @@ public class jn {
     }
 
     public PointF a(PointF pointF) {
-        dv.b(pointF, this.a);
+        UTools.closeAnimation(pointF, this.a);
         pointF.offset((float) (-this.a.getScrollX()), (float) (-this.a.getScrollY()));
         return pointF;
     }
 
     public PointF b(PointF pointF) {
-        dv.a(pointF, this.a);
+        UTools.addAnimation(pointF, this.a);
         return pointF;
     }
 }

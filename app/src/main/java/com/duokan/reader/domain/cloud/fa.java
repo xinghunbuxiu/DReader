@@ -54,43 +54,43 @@ Error: java.lang.IndexOutOfBoundsException: bitIndex < 0: -1
         /*
         r8 = this;
         r1 = new com.duokan.reader.domain.cloud.fn;
-        r0 = r8.a;
+        r0 = r8.setDrawable;
         r1.<init>(r0);
-        r1.b();
-        r2 = r1.a();
+        r1.getVisible();
+        r2 = r1.setDrawable();
         r4 = r2.mReadingNoteCount;
-        r8.d = r4;
-        r4 = r8.d;
+        r8.getScaledTouchSlop = r4;
+        r4 = r8.getScaledTouchSlop;
         r6 = -1;
         r0 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));
         if (r0 != 0) goto L_0x003e;
     L_0x001a:
         r4 = 0;
-        r8.d = r4;
-        r0 = r8.c;
-        r3 = r0.a(r1);
+        r8.getScaledTouchSlop = r4;
+        r0 = r8.showAnimation;
+        r3 = r0.setDrawable(r1);
         r0 = 0;
     L_0x0025:
         r4 = r3.length;
         if (r0 >= r4) goto L_0x0037;
     L_0x0028:
-        r4 = r8.d;
+        r4 = r8.getScaledTouchSlop;
         r6 = r3[r0];
         r6 = r6.getNoteCount();
         r6 = (long) r6;
         r4 = r4 + r6;
-        r8.d = r4;
+        r8.getScaledTouchSlop = r4;
         r0 = r0 + 1;
         goto L_0x0025;
     L_0x0037:
-        r4 = r8.d;
+        r4 = r8.getScaledTouchSlop;
         r2.mReadingNoteCount = r4;
         r1.updateInfo(r2);
     L_0x003e:
         r0 = 0;
         return r0;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.cloud.fa.a(java.lang.Void[]):java.lang.Void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.cloud.fa.setDrawable(java.lang.Void[]):java.lang.Void");
     }
 
     protected void a(Void voidR) {

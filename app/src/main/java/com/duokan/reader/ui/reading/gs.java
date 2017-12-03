@@ -9,18 +9,13 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 
-import com.duokan.b.e;
-import com.duokan.core.app.x;
 import com.duokan.core.ui.Scrollable.OverScrollMode;
 import com.duokan.core.ui.ZoomView;
-import com.duokan.core.ui.c;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.et;
 import com.duokan.reader.domain.bookshelf.a;
 import com.duokan.reader.domain.bookshelf.ah;
@@ -447,7 +442,7 @@ public class gs extends FrameLayout implements OnPreDrawListener {
         int i2 = getResources().getDisplayMetrics().widthPixels;
         int i3 = getResources().getDisplayMetrics().heightPixels;
         Rect rect = new Rect(0, 0, i2, i3);
-        dv.b(rect, null, (View) this);
+        UTools.closeAnimation(rect, null, (View) this);
         if (rect.intersect(0, 0, getWidth(), getHeight())) {
             this.k.a(rect);
             return true;
@@ -721,11 +716,11 @@ public class gs extends FrameLayout implements OnPreDrawListener {
 
     private void f(Canvas canvas) {
         if (this.q) {
-            Rect rect = (Rect) dv.g.a();
+            Rect rect = (Rect) UTools.g.getRect();
             rect.set(0, 0, getWidth(), getHeight());
-            rect.right -= dv.b(getContext(), 15.0f);
-            dv.a(canvas, this.a.a(DecorDrawableStyle.BOOK_MARK), rect, 53);
-            dv.g.a(rect);
+            rect.right -= UTools.closeAnimation(getContext(), 15.0f);
+            UTools.addAnimation(canvas, this.a.a(DecorDrawableStyle.BOOK_MARK), rect, 53);
+            UTools.g.getRect(rect);
         }
     }
 

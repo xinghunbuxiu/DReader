@@ -3,7 +3,7 @@ package com.duokan.reader.ui.personal;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.social.message.b;
 import com.duokan.reader.domain.social.message.c;
@@ -12,19 +12,18 @@ import com.duokan.reader.domain.social.message.e;
 import com.duokan.reader.domain.social.message.k;
 import com.duokan.reader.ui.general.expandable.ViewMode;
 import com.duokan.reader.ui.store.bv;
-import com.duokan.reader.ui.store.comment.a;
 
 class cf implements OnClickListener {
     final /* synthetic */ int a;
     final /* synthetic */ k b;
-    final /* synthetic */ y c;
+    final /* synthetic */ IFeature c;
     final /* synthetic */ ce d;
 
-    cf(ce ceVar, int i, k kVar, y yVar) {
+    cf(ce ceVar, int i, k kVar, IFeature featrue) {
         this.d = ceVar;
         this.a = i;
         this.b = kVar;
-        this.c = yVar;
+        this.c = featrue;
     }
 
     public void onClick(View view) {

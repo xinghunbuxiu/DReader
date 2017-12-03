@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.document.epub;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 import java.util.concurrent.TimeUnit;
 
@@ -22,6 +22,6 @@ class n implements Runnable {
             } catch (InterruptedException e) {
             }
         }
-        t.a(new o(this));
+        TaskHandler.postTask(new o(this));
     }
 }

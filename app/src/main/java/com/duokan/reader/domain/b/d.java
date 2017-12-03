@@ -1,7 +1,5 @@
 package com.duokan.reader.domain.b;
 
-import com.duokan.common.a;
-
 class d implements Runnable {
     final /* synthetic */ b a;
 

@@ -1,11 +1,10 @@
 package com.duokan.reader.ui.reading;
 
+import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.app.w;
-import com.duokan.reader.domain.statistics.dailystats.a;
 
-class rr implements w {
+class rr implements IActivityRunStatusChanged {
     final /* synthetic */ qh a;
 
     rr(qh qhVar) {

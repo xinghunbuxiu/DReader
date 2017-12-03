@@ -2,7 +2,6 @@ package com.duokan.reader.ui.general;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.View.OnClickListener;
 import android.widget.CheckBox;
 import android.widget.Checkable;
 import android.widget.LinearLayout;

@@ -2,39 +2,39 @@ package com.duokan.reader.ui.account;
 
 import android.graphics.Bitmap;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.cloud.DkCloudComment;
 import com.duokan.reader.domain.cloud.DkCloudNoteBookInfo;
 import com.duokan.reader.domain.store.DkStoreBook;
 
 public class ay {
-    private final e a;
+    private final ActivatedController a;
     private ShareEntranceController b = null;
 
-    public ay(e eVar) {
-        this.a = eVar;
+    public ay(ActivatedController activatedControllerVar) {
+        this.a = activatedControllerVar;
     }
 
-    public boolean a(e eVar) {
-        return this.b == eVar;
+    public boolean a(ActivatedController activatedControllerVar) {
+        return this.b == activatedControllerVar;
     }
 
-    public void a(y yVar, String str, Bitmap bitmap) {
+    public void a(IFeature featrue, String str, Bitmap bitmap) {
         a();
-        this.b = new ShareEntranceController(yVar, str, bitmap);
+        this.b = new ShareEntranceController(featrue, str, bitmap);
         b();
     }
 
-    public void a(y yVar, DkCloudNoteBookInfo dkCloudNoteBookInfo, DkCloudComment dkCloudComment) {
+    public void a(IFeature featrue, DkCloudNoteBookInfo dkCloudNoteBookInfo, DkCloudComment dkCloudComment) {
         a();
-        this.b = new ShareEntranceController(yVar, dkCloudNoteBookInfo, dkCloudComment);
+        this.b = new ShareEntranceController(featrue, dkCloudNoteBookInfo, dkCloudComment);
         b();
     }
 
-    public void a(y yVar, String str, DkStoreBook dkStoreBook, String str2, Bitmap bitmap) {
+    public void a(IFeature featrue, String str, DkStoreBook dkStoreBook, String str2, Bitmap bitmap) {
         a();
-        this.b = new ShareEntranceController(yVar, str, dkStoreBook, str2, bitmap);
+        this.b = new ShareEntranceController(featrue, str, dkStoreBook, str2, bitmap);
         b();
     }
 

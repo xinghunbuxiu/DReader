@@ -4,7 +4,7 @@ import android.text.TextUtils;
 
 import com.duokan.kernel.epublib.DKETocPointWrapper;
 import com.duokan.kernel.epublib.DkeBook;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.d;
 import com.duokan.reader.domain.document.g;
 
@@ -18,7 +18,7 @@ class ac extends g {
         this.d = new f[0];
     }
 
-    public /* synthetic */ g b(a aVar) {
+    public /* synthetic */ g b(Document_a aVar) {
         return c(aVar);
     }
 
@@ -77,7 +77,7 @@ class ac extends g {
         return this.d.length;
     }
 
-    public f c(a aVar) {
+    public f c(Document_a aVar) {
         if (!this.c.d(aVar) || !aVar.e()) {
             return null;
         }

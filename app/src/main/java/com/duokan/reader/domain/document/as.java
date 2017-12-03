@@ -13,8 +13,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.duokan.core.diagnostic.a;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 import org.apache.http.HttpStatus;
 
@@ -357,22 +356,22 @@ public abstract class as extends Drawable {
 
     protected void a(Canvas canvas, String str, int i, int i2, Paint paint) {
         k p = p();
-        RectF rectF = (RectF) dv.h.a();
+        RectF rectF = (RectF) UTools.h.getRect();
         if (i == 3) {
             rectF.set((float) p.c.left, 0.0f, (float) Math.min(getBounds().width() - p.c.right, p.c.left + i2), (float) p.c.top);
         } else {
             rectF.set((float) Math.max((getBounds().width() - p.c.right) - i2, p.c.left), 0.0f, (float) (getBounds().width() - p.c.right), (float) p.c.top);
         }
-        dv.a(canvas, str, rectF, i | 80, paint);
-        dv.h.a(rectF);
+        UTools.addAnimation(canvas, str, rectF, i | 80, paint);
+        UTools.h.getRect(rectF);
     }
 
     protected void a(Canvas canvas, String str, int i, Paint paint) {
         k p = p();
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         rect.set(p.c.left, getBounds().height() - p.c.bottom, getBounds().width() - p.c.right, (getBounds().height() - p.c.bottom) + q().f);
-        dv.a(canvas, str, rect, i | 16, paint);
-        dv.g.a(rect);
+        UTools.addAnimation(canvas, str, rect, i | 16, paint);
+        UTools.g.getRect(rect);
     }
 
     protected void a(Runnable runnable) {

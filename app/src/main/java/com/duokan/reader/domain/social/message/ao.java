@@ -6,7 +6,6 @@ import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.common.webservices.duokan.m;
 import com.duokan.reader.common.webservices.duokan.n;
 import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.i;
 
 class ao extends n {
     final /* synthetic */ ab a;

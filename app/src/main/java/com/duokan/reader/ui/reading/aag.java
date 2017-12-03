@@ -1,6 +1,5 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.diagnostic.a;
 import com.duokan.core.sys.ag;
 
 import java.util.Map;

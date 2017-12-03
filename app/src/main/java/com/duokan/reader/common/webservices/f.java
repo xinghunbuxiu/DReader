@@ -4,7 +4,7 @@ import android.text.TextUtils;
 
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.b.a.b;
+import com.duokan.core.diagnostic.HttpLogger;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.reader.common.webservices.WebSession.CacheStrategy;
 import com.duokan.reader.common.webservices.duokan.a.a;
@@ -94,7 +94,7 @@ class f implements d {
 
     public void e() {
         StringBuilder stringBuilder;
-        com.duokan.core.diagnostic.f access$400 = WebSession.sHttpLogger;
+        HttpLogger access$400 = WebSession.sHttpLogger;
         if (access$400 != null) {
             stringBuilder = new StringBuilder();
         } else {
@@ -124,11 +124,11 @@ class f implements d {
             }
             WebSession.sHttpCountingMap.put(b, Long.valueOf((WebSession.HTTP_COUNTING_TIME * currentTimeMillis) + ((long) i)));
             if (i > 20) {
-                com.duokan.core.diagnostic.a.c().a(LogLevel.WARNING, HttpHost.DEFAULT_SCHEME_NAME, "too frequent requests(%d times within 100s) on %s", Integer.valueOf(i), this.a.b());
+                com.duokan.core.diagnostic.a.c().a(LogLevel.WARNING, HttpHost.DEFAULT_SCHEME_NAME, "too frequent requests(%getScaledTouchSlop times within 100s) on %s", Integer.valueOf(i), this.a.b());
             }
         }
-        if (ManagedApp.get().getRunningState() != RunningState.FOREGROUND && ManagedApp.get().getRunningStateMillis() > TimeUnit.MINUTES.toMillis(1) && com.duokan.reader.common.c.f.b().c()) {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.WARNING, HttpHost.DEFAULT_SCHEME_NAME, "background request through a mobile network on %s", this.a.b());
+        if (ManagedApp.get().getOldRunningState() != RunningState.FOREGROUND && ManagedApp.get().getRunningStateMillis() > TimeUnit.MINUTES.toMillis(1) && com.duokan.reader.common.c.f.b().c()) {
+            com.duokan.core.diagnostic.a.c().a(LogLevel.WARNING, HttpHost.DEFAULT_SCHEME_NAME, "background request through setDrawable mobile network on %s", this.a.b());
         }
         URL url = new URL(this.a.b());
         if (Thread.interrupted()) {
@@ -254,7 +254,7 @@ class f implements d {
         }
         this.b.connect();
         if (this.b.getResponseCode() >= HttpStatus.SC_BAD_REQUEST) {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.WARNING, HttpHost.DEFAULT_SCHEME_NAME, "bad request(%d) on %s", Integer.valueOf(this.b.getResponseCode()), this.a.b());
+            com.duokan.core.diagnostic.a.c().a(LogLevel.WARNING, HttpHost.DEFAULT_SCHEME_NAME, "bad request(%getScaledTouchSlop) on %s", Integer.valueOf(this.b.getResponseCode()), this.a.b());
             return;
         }
         this.c = this.b.getInputStream();

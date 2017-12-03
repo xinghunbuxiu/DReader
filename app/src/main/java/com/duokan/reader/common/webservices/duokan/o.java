@@ -1,6 +1,5 @@
 package com.duokan.reader.common.webservices.duokan;
 
-import com.duokan.reader.common.i;
 import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.domain.account.ab;

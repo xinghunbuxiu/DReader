@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.duokan.b.i;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.domain.account.oauth.ThirdWeiXin;
 import com.tencent.mm.opensdk.modelbase.BaseReq;

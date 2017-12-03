@@ -1,7 +1,6 @@
 package com.duokan.reader.ui.personal;
 
 import com.duokan.reader.common.async.work.IAsyncWorkProgressListener;
-import com.duokan.reader.common.async.work.IAsyncWorkProgressListener.CheckErrorResult;
 import com.duokan.reader.common.async.work.c;
 import com.duokan.reader.common.async.work.e;
 import com.duokan.reader.domain.bookshelf.iz;

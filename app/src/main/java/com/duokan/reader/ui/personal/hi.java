@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.personal;
 
 import com.duokan.c.j;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ui.bookshelf.ho;
 import com.duokan.reader.ui.general.ap;
 import com.duokan.reader.ui.general.hd;
@@ -10,8 +10,8 @@ public class hi extends hd implements ho {
     private final hl a = new hl(getContext(), this.b, this);
     private final mo b = new fa();
 
-    public hi(y yVar) {
-        super(yVar);
+    public hi(IFeature featrue) {
+        super(featrue);
         setContentView(this.a);
     }
 

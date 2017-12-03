@@ -5,7 +5,6 @@ import android.view.View.OnClickListener;
 
 import com.duokan.b.i;
 import com.duokan.reader.common.c.f;
-import com.duokan.reader.domain.downloadcenter.b;
 import com.duokan.reader.ui.general.be;
 
 class c implements OnClickListener {

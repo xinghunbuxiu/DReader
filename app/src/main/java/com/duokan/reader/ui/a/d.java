@@ -4,8 +4,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.duokan.c.j;
-import com.duokan.core.sys.t;
-import com.duokan.core.ui.dv;
+import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.jq;
 
 class d implements OnClickListener {
@@ -16,11 +16,11 @@ class d implements OnClickListener {
     }
 
     public void onClick(View view) {
-        dv.a(this.a.getContext());
+        UTools.hideSoftInputFromWindow(this.a.getContext());
         this.a.l = new jq(this.a.getContext());
         this.a.l.a(this.a.getString(j.general__shared__committing));
         this.a.l.setCancelOnBack(false);
-        t.a(new e(this), 2000);
+        TaskHandler.postDelayed(new e(this), 2000);
         this.a.l.show();
         this.a.a.a(this.a.a(true));
     }

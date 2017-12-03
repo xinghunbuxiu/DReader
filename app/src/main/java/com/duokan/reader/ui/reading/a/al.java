@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.ui.reading.DocPageLayout;
@@ -25,7 +25,7 @@ public class al extends er {
         dtVar.b(view, z2);
         this.c.b(75.0f);
         this.c.c(105.0f);
-        this.c.a(dv.b(view.getContext(), 15.0f));
+        this.c.a(UTools.closeAnimation(view.getContext(), 15.0f));
     }
 
     protected void c(View view, MotionEvent motionEvent, boolean z, es esVar) {

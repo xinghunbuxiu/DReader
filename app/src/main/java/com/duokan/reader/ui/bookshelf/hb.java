@@ -3,7 +3,7 @@ package com.duokan.reader.ui.bookshelf;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.hd;
 
 import org.apache.http.HttpStatus;
@@ -35,8 +35,8 @@ public class hb extends hd {
             return true;
         }
         this.b = true;
-        dv.a(a(), 0.0f, 0.0f, 0.0f, 1.0f, HttpStatus.SC_OK, true, new hc(this));
-        dv.a(b(), 1.0f, 0.0f, HttpStatus.SC_OK, true, null);
+        UTools.addAnimation(a(), 0.0f, 0.0f, 0.0f, 1.0f, HttpStatus.SC_OK, true, new hc(this));
+        UTools.addAnimation(b(), 1.0f, 0.0f, HttpStatus.SC_OK, true, null);
         return true;
     }
 

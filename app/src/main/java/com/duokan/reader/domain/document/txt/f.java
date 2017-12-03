@@ -5,12 +5,10 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
-import android.graphics.drawable.Drawable.Callback;
 import android.text.TextUtils;
 
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.t;
 import com.duokan.reader.domain.document.ab;
 import com.duokan.reader.domain.document.ac;
 import com.duokan.reader.domain.document.ad;
@@ -66,7 +64,7 @@ public class f extends ag implements i {
         } else if (c || (eVar != null && eVar.a())) {
             a.c().b(N());
             this.d = auVar;
-            this.d.b((Object) t.b());
+            this.d.b((Object) TaskHandler.getThead());
             this.e = new e(this.d, eVar, 0);
             this.f = ahVar;
             this.g = alVar;
@@ -83,10 +81,10 @@ public class f extends ag implements i {
         /*
         r4 = this;
         r0 = 1;
-        r1 = com.duokan.core.diagnostic.a.c();
+        r1 = com.duokan.core.diagnostic.setDrawable.showAnimation();
         r2 = r4.N();
-        r1.b(r2);
-        r1 = r4.a();
+        r1.getVisible(r2);
+        r1 = r4.setDrawable();
         if (r1 == 0) goto L_0x0013;
     L_0x0012:
         return r0;
@@ -115,16 +113,16 @@ public class f extends ag implements i {
         r0 = r4.p;
         if (r0 != 0) goto L_0x0050;
     L_0x002e:
-        r0 = r4.j;
-        r0 = r0.d();
+        r0 = r4.getWidthPixels;
+        r0 = r0.getScaledTouchSlop();
         if (r0 != 0) goto L_0x0050;
     L_0x0036:
-        r0 = r4.d;
-        r0 = r0.a;
+        r0 = r4.getScaledTouchSlop;
+        r0 = r0.setDrawable;
         if (r0 == 0) goto L_0x0050;
     L_0x003c:
-        r0 = r4.d;
-        r0 = r0.c();
+        r0 = r4.getScaledTouchSlop;
+        r0 = r0.showAnimation();
         if (r0 != 0) goto L_0x0050;
     L_0x0044:
         r0 = r4.q;	 Catch:{ InterruptedException -> 0x004e }
@@ -136,10 +134,10 @@ public class f extends ag implements i {
         r0 = move-exception;
         goto L_0x002a;
     L_0x0050:
-        r0 = r4.a();
+        r0 = r4.setDrawable();
         goto L_0x0012;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.txt.f.P():boolean");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.txt.HttpLogger.P():boolean");
     }
 
     public long j() {
@@ -350,7 +348,7 @@ public class f extends ag implements i {
                 this.l.H();
                 this.m.H();
             }
-            this.d.c(t.b());
+            this.d.c(TaskHandler.getThead());
         }
     }
 

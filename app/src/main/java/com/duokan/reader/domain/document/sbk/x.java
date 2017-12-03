@@ -89,13 +89,13 @@ public class x extends t {
         /*
         r5 = this;
         r0 = 1;
-        r1 = r5.h;
+        r1 = r5.getPhysicalXPixels;
         if (r1 != 0) goto L_0x0006;
     L_0x0005:
         return r0;
     L_0x0006:
         monitor-enter(r5);
-        r1 = r5.h;	 Catch:{ all -> 0x000d }
+        r1 = r5.getPhysicalXPixels;	 Catch:{ all -> 0x000d }
         if (r1 != 0) goto L_0x0010;
     L_0x000b:
         monitor-exit(r5);	 Catch:{ all -> 0x000d }
@@ -105,28 +105,28 @@ public class x extends t {
         monitor-exit(r5);	 Catch:{ all -> 0x000d }
         throw r0;
     L_0x0010:
-        r1 = r5.k;	 Catch:{ all -> 0x000d }
+        r1 = r5.getHeightPixels;	 Catch:{ all -> 0x000d }
         if (r1 != 0) goto L_0x001c;
     L_0x0014:
         r1 = new java.util.concurrent.CountDownLatch;	 Catch:{ all -> 0x000d }
         r2 = 1;
         r1.<init>(r2);	 Catch:{ all -> 0x000d }
-        r5.k = r1;	 Catch:{ all -> 0x000d }
+        r5.getHeightPixels = r1;	 Catch:{ all -> 0x000d }
     L_0x001c:
         monitor-exit(r5);	 Catch:{ all -> 0x000d }
     L_0x001d:
-        r1 = r5.h;
+        r1 = r5.getPhysicalXPixels;
         if (r1 == 0) goto L_0x003b;
     L_0x0021:
-        r1 = r5.g;
-        r1 = r1.a;
+        r1 = r5.SessionTask;
+        r1 = r1.setDrawable;
         if (r1 == 0) goto L_0x003b;
     L_0x0027:
-        r1 = r5.g;
-        r1 = r1.c();
+        r1 = r5.SessionTask;
+        r1 = r1.showAnimation();
         if (r1 != 0) goto L_0x003b;
     L_0x002f:
-        r1 = r5.k;	 Catch:{ InterruptedException -> 0x0039 }
+        r1 = r5.getHeightPixels;	 Catch:{ InterruptedException -> 0x0039 }
         r2 = 1;
         r4 = java.util.concurrent.TimeUnit.SECONDS;	 Catch:{ InterruptedException -> 0x0039 }
         r1.await(r2, r4);	 Catch:{ InterruptedException -> 0x0039 }
@@ -135,13 +135,13 @@ public class x extends t {
         r1 = move-exception;
         goto L_0x001d;
     L_0x003b:
-        r1 = r5.h;
+        r1 = r5.getPhysicalXPixels;
         if (r1 == 0) goto L_0x0005;
     L_0x003f:
         r0 = 0;
         goto L_0x0005;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.sbk.x.e():boolean");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.sbk.MyContextWrapper.getScaledPagingTouchSlop():boolean");
     }
 
     /* JADX WARNING: inconsistent code. */
@@ -150,13 +150,13 @@ public class x extends t {
         /*
         r3 = this;
         r0 = 1;
-        r1 = r3.h;
+        r1 = r3.getPhysicalXPixels;
         if (r1 != 0) goto L_0x0006;
     L_0x0005:
         return r0;
     L_0x0006:
         monitor-enter(r3);
-        r1 = r3.h;	 Catch:{ all -> 0x000d }
+        r1 = r3.getPhysicalXPixels;	 Catch:{ all -> 0x000d }
         if (r1 != 0) goto L_0x0010;
     L_0x000b:
         monitor-exit(r3);	 Catch:{ all -> 0x000d }
@@ -166,32 +166,32 @@ public class x extends t {
         monitor-exit(r3);	 Catch:{ all -> 0x000d }
         throw r0;
     L_0x0010:
-        r1 = r3.k;	 Catch:{ all -> 0x000d }
+        r1 = r3.getHeightPixels;	 Catch:{ all -> 0x000d }
         if (r1 != 0) goto L_0x001c;
     L_0x0014:
         r1 = new java.util.concurrent.CountDownLatch;	 Catch:{ all -> 0x000d }
         r2 = 1;
         r1.<init>(r2);	 Catch:{ all -> 0x000d }
-        r3.k = r1;	 Catch:{ all -> 0x000d }
+        r3.getHeightPixels = r1;	 Catch:{ all -> 0x000d }
     L_0x001c:
         monitor-exit(r3);	 Catch:{ all -> 0x000d }
     L_0x001d:
-        r1 = r3.k;	 Catch:{ InterruptedException -> 0x003c }
+        r1 = r3.getHeightPixels;	 Catch:{ InterruptedException -> 0x003c }
         r2 = java.util.concurrent.TimeUnit.MILLISECONDS;	 Catch:{ InterruptedException -> 0x003c }
         r1.await(r4, r2);	 Catch:{ InterruptedException -> 0x003c }
     L_0x0024:
-        r1 = r3.h;
+        r1 = r3.getPhysicalXPixels;
         if (r1 == 0) goto L_0x0036;
     L_0x0028:
-        r1 = r3.g;
-        r1 = r1.a;
+        r1 = r3.SessionTask;
+        r1 = r1.setDrawable;
         if (r1 == 0) goto L_0x0036;
     L_0x002e:
-        r1 = r3.g;
-        r1 = r1.c();
+        r1 = r3.SessionTask;
+        r1 = r1.showAnimation();
         if (r1 == 0) goto L_0x001d;
     L_0x0036:
-        r1 = r3.h;
+        r1 = r3.getPhysicalXPixels;
         if (r1 == 0) goto L_0x0005;
     L_0x003a:
         r0 = 0;
@@ -200,7 +200,7 @@ public class x extends t {
         r1 = move-exception;
         goto L_0x0024;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.sbk.x.a(long):boolean");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.sbk.MyContextWrapper.setDrawable(long):boolean");
     }
 
     protected void a(b bVar, b bVar2) {

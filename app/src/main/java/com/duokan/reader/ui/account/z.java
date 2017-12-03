@@ -8,8 +8,8 @@ import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
 import com.duokan.common.i;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.account.oauth.ThirdOAuth;
 import com.duokan.reader.domain.account.oauth.TokenStore;
@@ -17,7 +17,7 @@ import com.duokan.reader.ui.general.HeaderView;
 import com.duokan.reader.ui.general.be;
 import com.duokan.reader.ui.general.ia;
 
-public class z extends e {
+public class z extends ActivatedController {
     private final TokenStore a = TokenStore.getInstance();
     private TextView b;
     private TextView c;
@@ -25,8 +25,8 @@ public class z extends e {
     private LinearLayout e;
     private ThirdOAuth f;
 
-    public z(y yVar) {
-        super(yVar);
+    public z(IFeature featrue) {
+        super(featrue);
         setContentView(h.account__share_account_view);
         ((HeaderView) findViewById(g.account__share_account_view__header)).setLeftTitle(j.account__account_view__third_part_accounts);
         this.d = (LinearLayout) findViewById(g.account_sina_ll);

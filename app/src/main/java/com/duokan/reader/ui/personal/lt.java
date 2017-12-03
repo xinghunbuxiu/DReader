@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.domain.bookshelf.an;
@@ -15,7 +15,7 @@ import com.duokan.reader.ui.account.ay;
 import com.duokan.reader.ui.general.DkLabelView;
 import com.duokan.reader.ui.general.hs;
 
-public class lt extends e implements iv, iw {
+public class lt extends ActivatedController implements iv, iw {
     private final ReaderFeature a = ((ReaderFeature) getContext().queryFeature(ReaderFeature.class));
     private final lv b;
     private final ay c = new ay(this);
@@ -24,8 +24,8 @@ public class lt extends e implements iv, iw {
     private DkCloudReadingInfo f;
     private DkCloudReadingInfo g;
 
-    public lt(y yVar, DkCloudNoteBookInfo dkCloudNoteBookInfo, DkCloudStoreBook dkCloudStoreBook) {
-        super(yVar);
+    public lt(IFeature featrue, DkCloudNoteBookInfo dkCloudNoteBookInfo, DkCloudStoreBook dkCloudStoreBook) {
+        super(featrue);
         this.d = dkCloudNoteBookInfo;
         this.e = dkCloudStoreBook;
         this.b = new lv(this, getContext());
@@ -51,12 +51,12 @@ public class lt extends e implements iv, iw {
         super.onDetachFromStub();
     }
 
-    protected boolean onRequestDetach(e eVar) {
-        if (!this.c.a(eVar) || !containsDirectly(eVar)) {
-            return super.onRequestDetach(eVar);
+    protected boolean onRequestDetach(ActivatedController controller) {
+        if (!this.c.a(controller) || !containsDirectly(controller)) {
+            return super.onRequestDetach(controller);
         }
-        removeSubController(eVar);
-        deactivate(eVar);
+        removeSubController(controller);
+        deactivate(controller);
         return true;
     }
 

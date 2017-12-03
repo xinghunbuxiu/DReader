@@ -2,20 +2,17 @@ package com.duokan.reader.ui.reading;
 
 import android.view.View;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.x;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.t;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.common.c.f;
-import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.bookshelf.ej;
 import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.ui.general.gi;
 import com.duokan.reader.ui.general.web.StorePageController;
@@ -38,8 +35,8 @@ public abstract class zo extends qh {
     private final HashMap a = new HashMap();
     private boolean b = false;
 
-    public zo(y yVar, c cVar, a aVar) {
-        super(yVar, cVar, aVar);
+    public zo(IFeature featrue, c cVar, Document_a aVar) {
+        super(featrue, cVar, aVar);
     }
 
     protected void a() {
@@ -197,7 +194,7 @@ public abstract class zo extends qh {
             if (aa.G()) {
                 long[] a = ((bm) this.c).a(aa.l());
                 if (a.length >= 1) {
-                    e storePageController = new StorePageController(x.a(getContext()));
+                    ActivatedController storePageController = new StorePageController(x.a(getContext()));
                     storePageController.loadUrl(p.i().c(this.c.G().H()) + "?currChapterIndex=" + a[0]);
                     ((ReaderFeature) x.a(getContext()).queryFeature(ReaderFeature.class)).pushPageSmoothly(storePageController, null);
                 }

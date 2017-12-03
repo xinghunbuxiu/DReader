@@ -7,21 +7,21 @@ import android.widget.TextView;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ui.general.PageHeaderView;
 
 import java.util.Locale;
 
-public class mt extends e {
+public class mt extends ActivatedController {
     static final /* synthetic */ boolean a = (!mt.class.desiredAssertionStatus());
     private final Locale[] b = new Locale[]{null, new Locale(Locale.CHINESE.getLanguage(), Locale.SIMPLIFIED_CHINESE.getCountry()), new Locale(Locale.CHINESE.getLanguage(), Locale.TRADITIONAL_CHINESE.getCountry())};
     private final int[] c = new int[]{j.personal__setup_language_view__default, j.personal__setup_language_view__chinese, j.personal__setup_language_view__chinese_traditional};
     private int d = -1;
 
-    public mt(y yVar) {
-        super(yVar);
+    public mt(IFeature featrue) {
+        super(featrue);
         setContentView(h.personal__setup_language_view);
         ((PageHeaderView) findViewById(g.personal__setup_language_view__header)).setLeftTitle(j.personal__setup_language_view__title);
         Locale userChosenLocale = DkApp.get().getUserChosenLocale();

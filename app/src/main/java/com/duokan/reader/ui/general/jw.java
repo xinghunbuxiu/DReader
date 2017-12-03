@@ -3,9 +3,7 @@ package com.duokan.reader.ui.general;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 
-import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.ft;
 import com.duokan.reader.ui.general.WebView.PullDownHeaderState;
 
@@ -31,7 +29,7 @@ public class jw extends ft {
 
     protected void a(float f, float f2) {
         this.b.d = (int) (((float) this.b.d) + f2);
-        if (Math.abs(this.b.d) > dv.d(this.b.getContext())) {
+        if (Math.abs(this.b.d) > UTools.getScaledTouchSlop(this.b.getContext())) {
             if (this.b.b.a == null) {
                 this.b.a(PullDownHeaderState.NONE);
             } else if (!this.b.b.c) {

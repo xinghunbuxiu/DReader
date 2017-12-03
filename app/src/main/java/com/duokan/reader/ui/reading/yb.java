@@ -4,10 +4,10 @@ import android.text.TextUtils;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.document.aa;
 import com.duokan.reader.domain.document.n;
 import com.duokan.reader.domain.document.w;
@@ -18,7 +18,7 @@ import com.duokan.reader.ui.general.dk;
 import java.util.ArrayList;
 import java.util.Collections;
 
-abstract class yb extends e implements w {
+abstract class yb extends ActivatedController implements w {
     static final /* synthetic */ boolean h = (!yb.class.desiredAssertionStatus());
     protected final n a = ((sh) getContext().queryFeature(sh.class)).getDocument();
     protected final yh b;
@@ -32,8 +32,8 @@ abstract class yb extends e implements w {
     private boolean k = false;
     private boolean l = false;
 
-    public yb(y yVar, yh yhVar) {
-        super(yVar, g.reading__search_text_view);
+    public yb(IFeature featrue, yh yhVar) {
+        super(featrue, g.reading__search_text_view);
         this.b = yhVar;
         this.a.a((w) this);
         this.c = (EditText) findViewById(f.reading__search_text_view__input);
@@ -46,7 +46,7 @@ abstract class yb extends e implements w {
         this.e.setBackgroundDrawable(new yd(this));
         this.e.setOnItemClickListener(new ye(this));
         this.e.setOnScrollListener(new yf(this));
-        getContentView().setLayoutParams(new LayoutParams(dv.b(getContext(), 320.0f), -2));
+        getContentView().setLayoutParams(new LayoutParams(UTools.closeAnimation(getContext(), 320.0f), -2));
     }
 
     public void a() {

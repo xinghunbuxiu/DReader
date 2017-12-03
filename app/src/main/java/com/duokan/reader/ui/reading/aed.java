@@ -5,7 +5,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.domain.document.as;
@@ -17,7 +17,7 @@ class aed extends er {
 
     public aed(adm com_duokan_reader_ui_reading_adm) {
         this.a = com_duokan_reader_ui_reading_adm;
-        this.c.a(dv.d(com_duokan_reader_ui_reading_adm.getContext()));
+        this.c.a(UTools.getScaledTouchSlop(com_duokan_reader_ui_reading_adm.getContext()));
         this.c.b(45.0f);
         this.c.c(135.0f);
     }

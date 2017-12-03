@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class le implements Runnable {
     final /* synthetic */ Runnable a;
@@ -12,6 +12,6 @@ class le implements Runnable {
     }
 
     public void run() {
-        t.b(this.a);
+        TaskHandler.PostTask(this.a);
     }
 }

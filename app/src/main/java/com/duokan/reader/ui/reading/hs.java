@@ -3,7 +3,7 @@ package com.duokan.reader.ui.reading;
 import android.text.TextUtils;
 
 import com.duokan.c.j;
-import com.duokan.core.app.e;
+import com.duokan.core.app.ActivatedController;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.duokan.aa;
@@ -59,7 +59,7 @@ class hs extends c {
             ((ReaderFeature) this.b.getContext().queryFeature(ReaderFeature.class)).prompt(this.b.getResources().getString(j.general__shared__network_error));
             return;
         }
-        e storePageController = new StorePageController(this.b.getContext());
+        ActivatedController storePageController = new StorePageController(this.b.getContext());
         storePageController.loadUrl(this.c);
         ((ReaderFeature) this.b.getContext().queryFeature(ReaderFeature.class)).showPopup(storePageController);
     }

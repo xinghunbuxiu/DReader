@@ -6,7 +6,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.common.webservices.duokan.af;
 
 class dk extends SimpleTarget {
@@ -26,7 +26,7 @@ class dk extends SimpleTarget {
 
     public void a(Bitmap bitmap, GlideAnimation glideAnimation) {
         float width = ((float) bitmap.getWidth()) / ((float) bitmap.getHeight());
-        Bitmap createScaledBitmap = Bitmap.createScaledBitmap(bitmap, dv.j(this.c.getContext()), (bitmap.getHeight() * dv.j(this.c.getContext())) / bitmap.getWidth(), false);
+        Bitmap createScaledBitmap = Bitmap.createScaledBitmap(bitmap, UTools.getWidthPixels(this.c.getContext()), (bitmap.getHeight() * UTools.getWidthPixels(this.c.getContext())) / bitmap.getWidth(), false);
         if (width < 2.7826087f) {
             if (((float) createScaledBitmap.getWidth()) / (((float) createScaledBitmap.getHeight()) * 0.75f) > 2.7826087f) {
                 int height = (int) (((float) createScaledBitmap.getHeight()) - (((float) createScaledBitmap.getWidth()) / 2.7826087f));

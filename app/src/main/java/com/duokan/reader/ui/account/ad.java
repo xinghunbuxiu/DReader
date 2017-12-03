@@ -3,7 +3,7 @@ package com.duokan.reader.ui.account;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.ui.personal.aj;
 
@@ -15,6 +15,6 @@ class ad implements OnClickListener {
     }
 
     public void onClick(View view) {
-        ((ReaderFeature) x.a(this.a.getContext()).queryFeature(ReaderFeature.class)).pushHalfPage(new aj(this.a.getContext()));
+        ((ReaderFeature) MyContextWrapper.getFeature(this.a.getContext()).queryFeature(ReaderFeature.class)).pushHalfPage(new aj(this.a.getContext()));
     }
 }

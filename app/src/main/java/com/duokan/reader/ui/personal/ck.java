@@ -3,9 +3,8 @@ package com.duokan.reader.ui.personal;
 import android.view.View;
 
 import com.duokan.c.j;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.cloud.push.a;
-import com.duokan.reader.domain.cloud.push.b;
 import com.duokan.reader.domain.social.message.az;
 import com.duokan.reader.domain.social.message.h;
 import com.duokan.reader.ui.general.ar;
@@ -18,13 +17,13 @@ public class ck extends cq implements a, az {
     private final ig d = new ig(this);
     private final boolean e;
 
-    public ck(y yVar, boolean z) {
+    public ck(IFeature featrue, boolean z) {
         int i;
         int i2 = 0;
-        super(yVar);
+        super(featrue);
         this.e = z;
-        this.a = new cl(this, yVar);
-        this.c = new cm(this, yVar);
+        this.a = new cl(this, featrue);
+        this.c = new cm(this, featrue);
         addSubController(this.a);
         addSubController(this.c);
         ArrayList arrayList = new ArrayList();

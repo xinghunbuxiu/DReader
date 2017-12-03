@@ -3,10 +3,10 @@ package com.duokan.reader;
 import android.graphics.drawable.Drawable;
 
 import com.duokan.core.app.BrightnessMode;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.ui.bookshelf.gx;
 import com.duokan.reader.ui.bookshelf.hb;
 import com.duokan.reader.ui.reading.sh;
@@ -48,9 +48,9 @@ public interface ReaderFeature extends s, t {
 
     void openBook(c cVar);
 
-    void openBook(c cVar, a aVar, Runnable runnable);
+    void openBook(c cVar, Document_a aVar, Runnable runnable);
 
-    void openBook(String str, a aVar);
+    void openBook(String str, Document_a aVar);
 
     void prompt(String str);
 
@@ -70,9 +70,9 @@ public interface ReaderFeature extends s, t {
 
     void setScreenTimeout(int i);
 
-    void shareBooks(e eVar, c... cVarArr);
+    void shareBooks(ActivatedController activatedControllerVar, c... cVarArr);
 
-    void showBookHomePage(y yVar, String str, String str2, boolean z, String str3);
+    void showBookHomePage(IFeature featrue, String str, String str2, boolean z, String str3);
 
     void showMenuFromBottom(hb hbVar);
 

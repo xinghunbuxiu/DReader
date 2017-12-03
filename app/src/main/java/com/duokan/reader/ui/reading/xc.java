@@ -6,8 +6,8 @@ import android.view.ViewGroup.LayoutParams;
 
 import com.duokan.b.f;
 import com.duokan.b.g;
-import com.duokan.core.app.y;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.bookshelf.hh;
 import com.duokan.reader.ui.general.FixedPagesView.PageScaleType;
@@ -17,10 +17,10 @@ public class xc extends wk {
     private final View b;
     private final sh c = ((sh) getContext().queryFeature(sh.class));
 
-    public xc(y yVar) {
-        super(yVar);
+    public xc(IFeature featrue) {
+        super(featrue);
         View inflate = LayoutInflater.from(getContext()).inflate(g.reading__reading_viewtype_view, null);
-        inflate.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? dv.b(getContext(), 240.0f) : -1, -2));
+        inflate.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? UTools.closeAnimation(getContext(), 240.0f) : -1, -2));
         setContentView(inflate);
         this.a = findViewById(f.reading__reading_viewtype_view__single_page);
         this.b = findViewById(f.reading__reading_viewtype_view__scroll);

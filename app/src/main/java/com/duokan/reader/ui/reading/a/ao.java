@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.duokan.core.ui.ct;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.domain.bookshelf.a;
@@ -56,7 +56,7 @@ public class ao extends er {
             if (!TextUtils.isEmpty(aVar.m())) {
                 Rect b = b(view, a, point);
                 if (b != null) {
-                    b.bottom += dv.b(view.getContext(), 3.0f);
+                    b.bottom += UTools.closeAnimation(view.getContext(), 3.0f);
                     aqVar.a((er) this, e, aVar, this.a.a(b));
                     return true;
                 }
@@ -70,7 +70,7 @@ public class ao extends er {
     }
 
     private boolean a(View view, Rect[] rectArr, Point point) {
-        int b = dv.b(view.getContext(), 10.0f);
+        int b = UTools.closeAnimation(view.getContext(), 10.0f);
         for (Rect intersects : rectArr) {
             if (intersects.intersects(point.x - b, point.y - b, point.x + b, point.y + b)) {
                 return true;
@@ -80,7 +80,7 @@ public class ao extends er {
     }
 
     private Rect b(View view, Rect[] rectArr, Point point) {
-        int b = dv.b(view.getContext(), 5.0f);
+        int b = UTools.closeAnimation(view.getContext(), 5.0f);
         for (Rect rect : rectArr) {
             if (rect.intersects(point.x - b, point.y - b, point.x + b, point.y + b)) {
                 return rect;

@@ -24,6 +24,6 @@ class ai implements be {
 
     public void b(Account account, String str) {
         this.b.a(this.c, str);
-        com.duokan.reader.domain.statistics.dailystats.a.d().b("f");
+        com.duokan.reader.domain.statistics.dailystats.a.d().b("HttpLogger");
     }
 }

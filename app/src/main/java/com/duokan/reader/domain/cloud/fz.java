@@ -6,7 +6,6 @@ import com.duokan.reader.common.webservices.duokan.DkStoreRedeemFundInfo;
 import com.duokan.reader.domain.payment.PaymentResult;
 import com.duokan.reader.domain.payment.s;
 import com.duokan.reader.domain.store.DkStoreCallback;
-import com.duokan.reader.domain.store.DkStoreCallback.AbortPayErrorCode;
 
 class fz implements DkStoreCallback {
     static final /* synthetic */ boolean a = (!fp.class.desiredAssertionStatus());

@@ -41,7 +41,7 @@ public class DkPushMessageReceiver extends PushMessageReceiver {
         a.c().c(LogLevel.EVENT, "push", String.format("class: %s, method: %s, message: %s", new Object[]{TAG, "onNotificationMessageArrived", miPushMessage.toString()}));
         String str = "notify_foreground";
         int i = (miPushMessage.getExtra().containsKey("notify_foreground") && TextUtils.equals((CharSequence) miPushMessage.getExtra().get("notify_foreground"), "0")) ? 1 : 0;
-        if (ManagedApp.get().getRunningState() == RunningState.FOREGROUND && i != 0) {
+        if (ManagedApp.get().getOldRunningState() == RunningState.FOREGROUND && i != 0) {
             z.a().a(miPushMessage);
         }
     }

@@ -15,14 +15,12 @@ import android.graphics.drawable.BitmapDrawable;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.et;
 import com.duokan.reader.ui.reading.a.c;
 
@@ -136,15 +134,15 @@ class jg extends FrameLayout {
     public void a(int i) {
         this.b = i;
         if (i == 0) {
-            this.d.setPadding(dv.b(getContext(), 20.0f), dv.b(getContext(), 15.0f), dv.b(getContext(), 25.0f), dv.b(getContext(), 15.0f));
+            this.d.setPadding(UTools.closeAnimation(getContext(), 20.0f), UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 25.0f), UTools.closeAnimation(getContext(), 15.0f));
         } else {
-            this.d.setPadding(dv.b(getContext(), 35.0f), dv.b(getContext(), 15.0f), dv.b(getContext(), 5.0f), dv.b(getContext(), 15.0f));
+            this.d.setPadding(UTools.closeAnimation(getContext(), 35.0f), UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 5.0f), UTools.closeAnimation(getContext(), 15.0f));
         }
     }
 
     private Bitmap a(Bitmap bitmap) {
         Paint paint = new Paint();
-        paint.setMaskFilter(new BlurMaskFilter((float) dv.b(getContext(), 4.0f), Blur.SOLID));
+        paint.setMaskFilter(new BlurMaskFilter((float) UTools.closeAnimation(getContext(), 4.0f), Blur.SOLID));
         int[] iArr = new int[2];
         Bitmap extractAlpha = bitmap.extractAlpha(paint, iArr);
         Bitmap createBitmap = Bitmap.createBitmap(extractAlpha.getWidth(), extractAlpha.getHeight(), Config.ARGB_8888);

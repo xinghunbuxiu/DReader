@@ -7,8 +7,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.ui.general.BookCoverView;
@@ -22,11 +22,11 @@ public class ud extends wk {
     private final View f;
     private final View g;
     private final FrameLayout h;
-    private e i = null;
+    private ActivatedController i = null;
 
-    public ud(y yVar) {
+    public ud(IFeature featrue) {
         int i;
-        super(yVar);
+        super(featrue);
         ViewGroup viewGroup = (ViewGroup) LayoutInflater.from(getContext()).inflate(this.a.am() ? g.reading__reading_more_horizontal_view : g.reading__reading_more_vertical_view, null);
         viewGroup.setLayoutParams(new LayoutParams(-1, -2));
         setContentView((View) viewGroup);

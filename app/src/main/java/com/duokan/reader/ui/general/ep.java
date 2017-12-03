@@ -14,8 +14,6 @@ import android.view.View;
 import android.view.ViewParent;
 import android.widget.FrameLayout;
 
-import com.duokan.reader.common.bitmap.a;
-
 public class ep extends FrameLayout {
     private int a;
     private Drawable b;
@@ -48,7 +46,7 @@ public class ep extends FrameLayout {
                 Bitmap c = a.c(this.d.getWidth(), this.d.getHeight(), Config.ARGB_8888);
                 a(new Canvas(c));
                 this.d.eraseColor(0);
-                Paint paint = (Paint) ReaderUi.b.a();
+                Paint paint = (Paint) ReaderUi.b.getRect();
                 Canvas canvas2 = new Canvas(this.d);
                 b(canvas2);
                 paint.setXfermode(new PorterDuffXfermode(Mode.DST_IN));
@@ -57,7 +55,7 @@ public class ep extends FrameLayout {
                     c.recycle();
                 }
                 this.e = true;
-                ReaderUi.b.a(paint);
+                ReaderUi.b.getRect(paint);
             }
             canvas.drawBitmap(this.d, 0.0f, 0.0f, null);
             return;

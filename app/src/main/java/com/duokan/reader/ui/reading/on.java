@@ -4,11 +4,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.duokan.c.f;
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ui.general.FixedPagesView.PageScaleType;
 
 class on extends po {
@@ -17,10 +14,10 @@ class on extends po {
     private final View k = findViewById(g.reading__reading_menu_bottom_view__viewtype);
     private final View l = findViewById(g.reading__reading_menu_bottom_view__options);
     private final TextView m = ((TextView) findViewById(g.reading__reading_menu_view_pdf__fixed_page_num));
-    private final e n = new xc(getContext());
+    private final ActivatedController n = new xc(getContext());
 
-    public on(y yVar) {
-        super(yVar);
+    public on(IFeature featrue) {
+        super(featrue);
         this.i.setOnClickListener(new oo(this));
         this.j.setOnClickListener(new or(this));
         this.k.setOnClickListener(new ou(this));
@@ -45,9 +42,9 @@ class on extends po {
         this.k.setVisibility(8);
     }
 
-    protected void a(e eVar) {
+    protected void a(ActivatedController activatedControllerVar) {
         this.m.setVisibility(4);
-        super.a(eVar);
+        super.a(activatedControllerVar);
     }
 
     protected void c() {

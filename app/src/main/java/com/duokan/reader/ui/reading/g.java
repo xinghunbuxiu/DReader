@@ -13,7 +13,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.UmengManager;
 import com.duokan.reader.domain.bookshelf.ej;
 
@@ -35,17 +35,17 @@ public class g extends Drawable {
     public g(Context context, sh shVar) {
         this.a = context;
         this.b = shVar;
-        this.c = dv.b(context, 80.0f);
-        this.d = dv.b(context, 25.0f);
+        this.c = UTools.closeAnimation(context, 80.0f);
+        this.d = UTools.closeAnimation(context, 25.0f);
         this.k = context.getResources().getString(i.reading__shared__add_to_bookshelf_ok_plus);
         this.g = (ej) shVar.G();
         this.e = new Paint();
         this.e.setColor(Color.parseColor("#cccccc"));
         this.e.setAntiAlias(true);
         this.f = new Paint(this.e);
-        this.f.setTextSize((float) dv.b(context, 14.0f));
+        this.f.setTextSize((float) UTools.closeAnimation(context, 14.0f));
         this.f.setSubpixelText(true);
-        this.e.setStrokeWidth((float) dv.b(context, 1.0f));
+        this.e.setStrokeWidth((float) UTools.closeAnimation(context, 1.0f));
         this.e.setStyle(Style.STROKE);
     }
 
@@ -61,7 +61,7 @@ public class g extends Drawable {
             invalidateSelf();
         }
         canvas.drawRoundRect(new RectF(getBounds()), (float) (this.d / 2), (float) (this.d / 2), this.e);
-        dv.a(canvas, this.k, getBounds(), 17, this.f);
+        UTools.addAnimation(canvas, this.k, getBounds(), 17, this.f);
     }
 
     public void setAlpha(int i) {

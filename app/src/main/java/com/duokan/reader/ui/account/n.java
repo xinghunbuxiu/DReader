@@ -1,6 +1,5 @@
 package com.duokan.reader.ui.account;
 
-import com.duokan.reader.ui.general.*;
 import com.duokan.reader.ui.general.dn;
 
 do;

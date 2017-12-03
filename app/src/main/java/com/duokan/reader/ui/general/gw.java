@@ -12,7 +12,6 @@ import android.text.TextUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.model.LazyHeaders.Builder;
-import com.duokan.core.b.a;
 
 import org.apache.http.HttpHost;
 

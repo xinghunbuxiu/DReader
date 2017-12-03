@@ -6,10 +6,8 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.b.e;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.ge;
 import com.duokan.reader.domain.document.au;
 
@@ -121,7 +119,7 @@ public abstract class fu extends FrameLayout {
         this.h.a(i, z);
         if (this.f != null) {
             this.f.setVisibility(4);
-            dv.a(this.f, new fw(this));
+            UTools.addAnimation(this.f, new fw(this));
         }
     }
 

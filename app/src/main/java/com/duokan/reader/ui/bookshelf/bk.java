@@ -5,19 +5,17 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.text.format.Formatter;
 
+import com.duokan.core.app.FeatureListening;
 import com.duokan.core.app.aa;
-import com.duokan.core.app.e;
-import com.duokan.core.app.k;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.SystemUiConditioner;
-import com.duokan.reader.common.c.f;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.domain.bookshelf.an;
 import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.statistics.a;
 import com.duokan.reader.ui.general.ap;
 import com.duokan.reader.ui.general.be;
 import com.duokan.reader.ui.general.em;
@@ -47,10 +45,10 @@ public class bk extends em implements aa, SystemUiConditioner, cu {
     private final bz m = new bz();
     private Runnable n = null;
 
-    public bk(y yVar) {
-        super(yVar);
-        getContext().a(this.c);
-        getContext().a((k) this);
+    public bk(IFeature featrue) {
+        super(featrue);
+        getContext().addFirstLocalFeature(this.c);
+        getContext().addFirstLocalFeature((FeatureListening) this);
         this.b = new c(getContext());
         a(this.b.getContentView());
         addSubController(this.b);
@@ -285,20 +283,20 @@ public class bk extends em implements aa, SystemUiConditioner, cu {
         return true;
     }
 
-    protected boolean onRequestDetach(e eVar) {
-        if (this.i == eVar) {
+    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
+        if (this.i == activatedControllerVar) {
             return true;
         }
         if (this.j != null) {
             this.j.f();
         }
-        if (this.h == eVar) {
+        if (this.h == activatedControllerVar) {
             this.i = this.h;
             af afVar = (af) getContext().queryFeature(af.class);
             afVar.a(this.i.getContentView(), new bv(this, afVar));
             return true;
-        } else if (this.j == null || !eVar.contains(this.j)) {
-            return super.onRequestDetach(eVar);
+        } else if (this.j == null || !activatedControllerVar.contains(this.j)) {
+            return super.onRequestDetach(activatedControllerVar);
         } else {
             a(false);
             this.m.f(false);
@@ -306,7 +304,7 @@ public class bk extends em implements aa, SystemUiConditioner, cu {
             this.b.a(true);
             this.c.h();
             this.j = null;
-            return super.onRequestDetach(eVar);
+            return super.onRequestDetach(activatedControllerVar);
         }
     }
 
@@ -315,8 +313,8 @@ public class bk extends em implements aa, SystemUiConditioner, cu {
     }
 
     protected void onDetachFromStub() {
-        getContext().b(this.c);
-        getContext().b(this);
+        getContext().removeFeatureListening(this.c);
+        getContext().removeFeatureListening(this);
         ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).removeSystemUiConditioner(this);
         super.onDetachFromStub();
     }

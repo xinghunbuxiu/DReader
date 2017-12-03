@@ -14,9 +14,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import com.duokan.b.d;
-import com.duokan.b.i;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ReaderEnv;
 
@@ -24,7 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.regex.Pattern;
 
-public abstract class ReaderUi extends dv {
+public abstract class ReaderUi extends UTools {
 
     public enum ScreenType {
         SMALL,
@@ -60,8 +58,8 @@ public abstract class ReaderUi extends dv {
         if (DkPublic.isLandscape(context)) {
             return i / 2;
         }
-        int max = Math.max(Math.round(((float) i) * f), dv.b(context, 420.0f));
-        return max > i - dv.b(context, 40.0f) ? dv.b(context, 40.0f) : i - max;
+        int max = Math.max(Math.round(((float) i) * f), UTools.closeAnimation(context, 420.0f));
+        return max > i - UTools.closeAnimation(context, 40.0f) ? UTools.closeAnimation(context, 40.0f) : i - max;
     }
 
     public static int c(Context context, int i) {
@@ -187,7 +185,7 @@ public abstract class ReaderUi extends dv {
         }
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int b = (displayMetrics.widthPixels > displayMetrics.heightPixels ? displayMetrics.heightPixels : displayMetrics.widthPixels) - dv.b((Context) activity, 30.0f);
+        int b = (displayMetrics.widthPixels > displayMetrics.heightPixels ? displayMetrics.heightPixels : displayMetrics.widthPixels) - UTools.closeAnimation((Context) activity, 30.0f);
         int dimensionPixelSize = activity.getResources().getDimensionPixelSize(d.general__shared__max_center_dialog_width_at_hd);
         if (dimensionPixelSize > b) {
             dimensionPixelSize = b;
@@ -218,7 +216,7 @@ public abstract class ReaderUi extends dv {
 
     public static ScreenType l(Context context) {
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-        double sqrt = Math.sqrt(Math.pow((double) (((float) displayMetrics.heightPixels) / dv.i(context)), 2.0d) + Math.pow((double) (((float) displayMetrics.widthPixels) / dv.h(context)), 2.0d));
+        double sqrt = Math.sqrt(Math.pow((double) (((float) displayMetrics.heightPixels) / UTools.getPhysicalYPixels(context)), 2.0d) + Math.pow((double) (((float) displayMetrics.widthPixels) / UTools.getPhysicalXPixels(context)), 2.0d));
         if (Double.compare(sqrt, 4.5d) <= 0) {
             return ScreenType.SMALL;
         }

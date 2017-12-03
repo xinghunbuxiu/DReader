@@ -3,7 +3,7 @@ package com.duokan.reader.ui.personal;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class ap implements OnClickListener {
     final /* synthetic */ am a;
@@ -14,7 +14,7 @@ class ap implements OnClickListener {
 
     public void onClick(View view) {
         if (!this.a.f.isShowing()) {
-            dv.a(this.a.getContext());
+            UTools.hideSoftInputFromWindow(this.a.getContext());
             this.a.f.show();
         }
     }

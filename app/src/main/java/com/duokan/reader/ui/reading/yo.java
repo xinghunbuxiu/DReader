@@ -1,12 +1,12 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 
 class yo extends yr {
     private final zj E;
 
-    public yo(y yVar, zj zjVar) {
-        super(yVar, zjVar);
+    public yo(IFeature featrue, zj zjVar) {
+        super(featrue, zjVar);
         this.E = zjVar;
         this.o.setOnLongClickListener(new yp(this));
         this.o.setOnClickListener(new yq(this));

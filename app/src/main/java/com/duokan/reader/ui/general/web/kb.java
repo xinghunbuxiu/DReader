@@ -2,11 +2,9 @@ package com.duokan.reader.ui.general.web;
 
 import android.text.TextUtils;
 
-import com.duokan.core.b.a.b;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.io.a;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.o;
-import com.duokan.core.sys.t;
 import com.duokan.core.sys.z;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
@@ -40,7 +38,7 @@ class kb implements Runnable {
             try {
                 com.duokan.core.b.a.a aVar = new com.duokan.core.b.a.a();
                 StringBuilder stringBuilder = new StringBuilder();
-                stringBuilder.append(String.format("app_id=%s;device_id=%s;build=%d;channel=%s;", new Object[]{ReaderEnv.get().getAppId(), ReaderEnv.get().getDeviceId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel()}));
+                stringBuilder.append(String.format("app_id=%s;device_id=%s;build=%getScaledTouchSlop;channel=%s;", new Object[]{ReaderEnv.get().getAppId(), ReaderEnv.get().getDeviceId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel()}));
                 if (!TextUtils.isEmpty(i.f().i())) {
                     stringBuilder.append(String.format("device_hash=%s;", new Object[]{i.f().i()}));
                 }
@@ -103,7 +101,7 @@ class kb implements Runnable {
                                 ReaderEnv.get().setPrefString(PrivatePref.STORE, "mirror_version", a);
                                 ReaderEnv.get().commitPrefs();
                                 com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "store", "store mirror updated(ver=%s)", a);
-                                t.a(new kc(this));
+                                TaskHandler.postTask(new kc(this));
                                 com.duokan.reader.domain.statistics.a.k().a(str, j);
                                 a.d(file);
                                 return;

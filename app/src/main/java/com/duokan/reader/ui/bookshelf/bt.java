@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.ui.general.jq;
 
@@ -17,6 +17,6 @@ class bt implements Runnable {
 
     public void run() {
         ai.a().a(this.c.c, this.a);
-        t.a(new bu(this));
+        TaskHandler.postTask(new bu(this));
     }
 }

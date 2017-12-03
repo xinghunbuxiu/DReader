@@ -1,7 +1,6 @@
 package com.duokan.reader.domain.bookshelf;
 
 import com.duokan.reader.common.webservices.WebSession;
-import com.duokan.reader.common.webservices.WebSession.CacheStrategy;
 
 public abstract class ap extends WebSession {
     private static final String a = ap.class.getName();

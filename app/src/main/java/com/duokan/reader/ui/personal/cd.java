@@ -3,10 +3,8 @@ package com.duokan.reader.ui.personal;
 import android.content.Context;
 import android.graphics.drawable.InsetDrawable;
 
-import com.duokan.c.d;
-import com.duokan.c.j;
-import com.duokan.core.app.x;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.social.message.h;
 import com.duokan.reader.ui.bookshelf.gw;
@@ -26,15 +24,15 @@ public class cd extends nm {
         this.b.setVisibility(8);
         this.c.setVisibility(8);
         setAdapter(this.k);
-        this.e.setRowDivider(new InsetDrawable(new dk(getResources().getColor(d.general__shared__e9e9e9)), dv.b(getContext(), 3.0f), 0, 0, 0));
+        this.e.setRowDivider(new InsetDrawable(new dk(getResources().getColor(d.general__shared__e9e9e9)), UTools.closeAnimation(getContext(), 3.0f), 0, 0, 0));
         setBackgroundColor(getContext().getResources().getColor(d.general__shared__ffffff));
-        s sVar = (s) x.a(getContext()).queryFeature(s.class);
+        s sVar = (s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class);
         if (ReaderEnv.get().forHd()) {
-            int b = dv.b(getContext(), 15.0f);
+            int b = UTools.closeAnimation(getContext(), 15.0f);
             this.e.a(b, 0, b, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
             return;
         }
-        b = dv.b(getContext(), 10.0f);
+        b = UTools.closeAnimation(getContext(), 10.0f);
         this.e.a(b, 0, b, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
     }
 

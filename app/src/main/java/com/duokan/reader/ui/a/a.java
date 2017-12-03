@@ -8,12 +8,12 @@ import android.widget.TextView;
 
 import com.duokan.c.g;
 import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.ag;
 import com.duokan.core.ui.BoxView;
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.store.DkStoreAbsBook;
 import com.duokan.reader.ui.general.BookCoverView;
 import com.duokan.reader.ui.general.PageHeaderView;
@@ -25,7 +25,7 @@ import org.json.JSONObject;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class a extends e {
+public class a extends ActivatedController {
     private final ag a;
     private final ag b;
     private final LinearScrollView c;
@@ -39,8 +39,8 @@ public class a extends e {
     private final LinkedList k;
     private jq l = null;
 
-    public a(y yVar, String str, String str2, LinkedList linkedList, LinkedList linkedList2, ag agVar, ag agVar2) {
-        super(yVar);
+    public a(IFeature featrue, String str, String str2, LinkedList linkedList, LinkedList linkedList2, ag agVar, ag agVar2) {
+        super(featrue);
         setContentView(h.discovery__edit_feed_view);
         this.a = agVar;
         this.b = agVar2;
@@ -68,7 +68,7 @@ public class a extends e {
         this.j = (LinkedList) this.f.clone();
         this.k = (LinkedList) this.g.clone();
         b();
-        dv.a(this.d);
+        UTools.addAnimation(this.d);
     }
 
     protected void onDetachFromStub() {
@@ -78,7 +78,7 @@ public class a extends e {
         } else {
             this.l.dismiss();
         }
-        dv.a(getContext());
+        UTools.hideSoftInputFromWindow(getContext());
     }
 
     public void a() {
@@ -96,11 +96,11 @@ public class a extends e {
             JSONObject jSONObject2 = new JSONObject();
             jSONObject.put("content", jSONObject2);
             JSONArray jSONArray = new JSONArray();
-            jSONObject2.put("d", jSONArray);
+            jSONObject2.put("getScaledTouchSlop", jSONArray);
             jSONObject2 = new JSONObject();
             jSONArray.put(jSONObject2);
-            jSONObject2.put("t", "p");
-            jSONObject2.put("c", this.e.getText().toString());
+            jSONObject2.put("TaskHandler", "p");
+            jSONObject2.put("showAnimation", this.e.getText().toString());
             jSONObject.put("operation", z);
             for (int i = 0; i < this.f.size(); i++) {
                 jSONArray.put(a(i));
@@ -125,15 +125,15 @@ public class a extends e {
     private JSONObject a(int i) {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("t", "b");
-            jSONObject.put("c", ((DkStoreAbsBook) this.f.get(i)).getBookUuid());
+            jSONObject.put("TaskHandler", "getVisible");
+            jSONObject.put("showAnimation", ((DkStoreAbsBook) this.f.get(i)).getBookUuid());
             if (!TextUtils.isEmpty((CharSequence) this.g.get(i))) {
                 JSONArray jSONArray = new JSONArray();
-                jSONObject.put("d", jSONArray);
+                jSONObject.put("getScaledTouchSlop", jSONArray);
                 JSONObject jSONObject2 = new JSONObject();
                 jSONArray.put(jSONObject2);
-                jSONObject2.put("t", "p");
-                jSONObject2.put("c", this.g.get(i));
+                jSONObject2.put("TaskHandler", "p");
+                jSONObject2.put("showAnimation", this.g.get(i));
             }
         } catch (Exception e) {
         }

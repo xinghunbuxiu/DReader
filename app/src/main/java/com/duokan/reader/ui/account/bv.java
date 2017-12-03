@@ -2,9 +2,8 @@ package com.duokan.reader.ui.account;
 
 import android.text.TextUtils;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.common.webservices.duokan.p;
-import com.duokan.reader.domain.statistics.dailystats.a;
 import com.duokan.reader.domain.store.DkShareBook;
 
 import java.util.ArrayList;
@@ -15,8 +14,8 @@ public class bv extends bz {
     private String[] j;
     private final boolean k;
 
-    public bv(y yVar, boolean z, String str, String str2, String str3, String str4, String str5, String[] strArr, String[] strArr2, ce ceVar) {
-        super(yVar, str, str2, str3, str4, str5, ceVar);
+    public bv(IFeature featrue, boolean z, String str, String str2, String str3, String str4, String str5, String[] strArr, String[] strArr2, ce ceVar) {
+        super(featrue, str, str2, str3, str4, str5, ceVar);
         this.k = z;
         this.i = strArr;
         this.j = strArr2;

@@ -3,9 +3,9 @@ package com.duokan.reader.ui.reading;
 import android.text.TextUtils;
 
 import com.duokan.c.j;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
-import com.duokan.core.sys.t;
 import com.duokan.reader.common.c.f;
 import com.duokan.reader.domain.bookshelf.BookType;
 import com.duokan.reader.domain.bookshelf.ej;
@@ -14,7 +14,7 @@ import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
 import com.duokan.reader.domain.cloud.bd;
 import com.duokan.reader.domain.cloud.bk;
 import com.duokan.reader.domain.cloud.ec;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.domain.document.ba;
@@ -117,7 +117,7 @@ public abstract class aaj extends rx implements ec, aaq {
         if (!this.d.f.ai()) {
             return super.e(akVar);
         }
-        this.d.c.getDocument().d((a) akVar);
+        this.d.c.getDocument().d((Document_a) akVar);
         akVar.e();
         long a = a() - 1;
         if (akVar instanceof com.duokan.reader.domain.document.txt.a) {
@@ -205,7 +205,7 @@ public abstract class aaj extends rx implements ec, aaq {
     }
 
     public boolean b(ba baVar) {
-        com.duokan.core.diagnostic.a.c().b(t.a());
+        com.duokan.core.diagnostic.a.c().b(TaskHandler.isCurrentThread());
         if (this.d.K.contains(a(a(baVar)))) {
             return true;
         }
@@ -222,7 +222,7 @@ public abstract class aaj extends rx implements ec, aaq {
     }
 
     public int c(ba baVar) {
-        com.duokan.core.diagnostic.a.c().b(t.a());
+        com.duokan.core.diagnostic.a.c().b(TaskHandler.isCurrentThread());
         if (this.d.L.isEmpty() && this.d.Q.isEmpty()) {
             return -1;
         }

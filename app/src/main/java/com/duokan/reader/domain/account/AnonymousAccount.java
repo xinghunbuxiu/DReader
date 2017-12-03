@@ -31,7 +31,7 @@ public class AnonymousAccount extends a {
         /*
         r7 = this;
         r0 = 0;
-        r1 = r7.c;	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }
+        r1 = r7.showAnimation;	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }
         r2 = "SELECT * FROM %1$s WHERE %2$s IS '%3$s'";
         r3 = 3;
         r3 = new java.lang.Object[r3];	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }
@@ -46,15 +46,15 @@ public class AnonymousAccount extends a {
         r3[r4] = r5;	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }
         r2 = java.lang.String.format(r2, r3);	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }
         r3 = 0;
-        r0 = r1.a(r2, r3);	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }
+        r0 = r1.setDrawable(r2, r3);	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }
         r1 = r0.moveToLast();	 Catch:{ Throwable -> 0x003c, all -> 0x004d }
         if (r1 == 0) goto L_0x0036;
     L_0x0026:
         r1 = "tokens";
         r1 = r0.getColumnIndex(r1);	 Catch:{ Throwable -> 0x003c, all -> 0x004d }
         r1 = r0.getString(r1);	 Catch:{ Throwable -> 0x003c, all -> 0x004d }
-        r1 = com.duokan.reader.domain.account.a.b(r1);	 Catch:{ Throwable -> 0x003c, all -> 0x004d }
-        r7.e = r1;	 Catch:{ Throwable -> 0x003c, all -> 0x004d }
+        r1 = com.duokan.reader.domain.account.setDrawable.getVisible(r1);	 Catch:{ Throwable -> 0x003c, all -> 0x004d }
+        r7.getScaledPagingTouchSlop = r1;	 Catch:{ Throwable -> 0x003c, all -> 0x004d }
     L_0x0036:
         if (r0 == 0) goto L_0x003b;
     L_0x0038:
@@ -85,7 +85,7 @@ public class AnonymousAccount extends a {
         r0 = r6;
         goto L_0x0047;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.account.AnonymousAccount.k():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.account.AnonymousAccount.getHeightPixels():void");
     }
 
     public String b() {

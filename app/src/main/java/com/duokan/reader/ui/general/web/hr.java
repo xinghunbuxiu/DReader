@@ -7,7 +7,6 @@ import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.cloud.DkCloudPurchasedBook;
 import com.duokan.reader.domain.cloud.DkUserPurchasedBooksManager;
 import com.duokan.reader.domain.downloadcenter.DownloadCenterTask;
-import com.duokan.reader.domain.downloadcenter.b;
 
 import org.json.JSONObject;
 
@@ -39,7 +38,7 @@ class hr implements Callable {
                     }
                     jSONObject2.put("bookState", "UPGRADING");
                     break;
-                    break;
+                break;
                 case 2:
                     if (b.j() && (!b.V() || b.X())) {
                         jSONObject2.put("bookState", "NORMAL");

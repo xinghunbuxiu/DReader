@@ -24,7 +24,7 @@ class c implements b {
         if (!TextUtils.isEmpty(str)) {
             be.a(this.a.b, (CharSequence) str, 1).show();
         }
-        com.duokan.reader.domain.statistics.dailystats.a.d().b("f");
+        com.duokan.reader.domain.statistics.dailystats.a.d().b("HttpLogger");
         this.a.a(aVar, str);
     }
 }

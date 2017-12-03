@@ -8,8 +8,8 @@ import android.graphics.RectF;
 import android.text.TextUtils;
 
 import com.duokan.core.diagnostic.a;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.t;
 import com.duokan.kernel.DkArgbColor;
 import com.duokan.kernel.DkBox;
 import com.duokan.kernel.DkFlowPosition;
@@ -44,7 +44,7 @@ import com.duokan.reader.domain.document.m;
 
 import java.util.Arrays;
 
-public class w extends t implements ae, ba, bd {
+public class w extends TaskHandler implements ae, ba, bd {
     static final /* synthetic */ boolean c = (!w.class.desiredAssertionStatus());
     private final ah d;
     private final v e;
@@ -76,9 +76,9 @@ public class w extends t implements ae, ba, bd {
         if (!c && (ahVar == null || uVar == null)) {
             throw new AssertionError();
         } else if (c || (vVar != null && vVar.a())) {
-            a.c().b(N());
+            mHandler.c().b(N());
             this.d = ahVar;
-            this.d.b((Object) t.b());
+            this.d.b((Object) TaskHandler.getThead());
             this.d.b((Object) this);
             this.e = new v(this.d, vVar, 0);
             this.f = uVar;
@@ -91,12 +91,12 @@ public class w extends t implements ae, ba, bd {
     }
 
     public boolean a() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return false;
     }
 
     public boolean b() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return false;
     }
 
@@ -115,34 +115,34 @@ public class w extends t implements ae, ba, bd {
     }
 
     public long j() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return this.l;
     }
 
     public k p() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return this.d.g();
     }
 
     public m q() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return this.f;
     }
 
     public void a(m mVar) {
-        a.c().b(N());
+        mHandler.c().b(N());
         O();
         this.f = (u) mVar;
         invalidateSelf();
     }
 
     public boolean k() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return false;
     }
 
     public ak l() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return this.e;
     }
 
@@ -155,7 +155,7 @@ public class w extends t implements ae, ba, bd {
 
     public a[] c() {
         int i = 0;
-        a.c().b(N());
+        mHandler.c().b(N());
         if (!E()) {
             return new a[0];
         }
@@ -176,7 +176,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public CharSequence o() {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (!E()) {
             return "";
         }
@@ -191,57 +191,57 @@ public class w extends t implements ae, ba, bd {
     }
 
     public int r() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return 0;
     }
 
     public int s() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return 0;
     }
 
     public int t() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return 0;
     }
 
     public int u() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return 0;
     }
 
     public int v() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return 0;
     }
 
     public int w() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return 0;
     }
 
     public int x() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return 0;
     }
 
     public int y() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return 0;
     }
 
     public Rect z() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return new Rect();
     }
 
     public Rect A() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return new Rect();
     }
 
     public int B() {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (c || G()) {
             return 0;
         }
@@ -249,7 +249,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public Rect a(au auVar) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (c || G()) {
             return new Rect();
         }
@@ -257,7 +257,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public boolean E() {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (G()) {
             return true;
         }
@@ -271,22 +271,22 @@ public class w extends t implements ae, ba, bd {
     }
 
     public void a(Runnable runnable, Runnable runnable2) {
-        a.c().b(N());
+        mHandler.c().b(N());
         ah.b(new x(this, runnable, runnable2));
     }
 
     public boolean F() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return this.i.c();
     }
 
     public boolean G() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return !this.i.c() && this.j;
     }
 
     public void H() {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (!this.i.c()) {
             this.i.f();
             if (this.k) {
@@ -295,12 +295,12 @@ public class w extends t implements ae, ba, bd {
             }
             O();
             this.d.b((bd) this);
-            this.d.c(t.b());
+            this.d.c(TaskHandler.getThead());
         }
     }
 
     public void a(boolean z) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (this.o != null) {
             if (z) {
                 this.g.a(this.o, true);
@@ -312,12 +312,12 @@ public class w extends t implements ae, ba, bd {
     }
 
     public ae a(Point point) {
-        a.c().b(N());
+        mHandler.c().b(N());
         return null;
     }
 
     public ag b(Point point, Point point2) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (!G() || this.e.f()) {
             return new ag();
         }
@@ -330,13 +330,13 @@ public class w extends t implements ae, ba, bd {
             return a;
         }
         selectionRange = S().getSelectionRange(i, i2);
-        a = p.a(selectionRange[0], selectionRange[1]);
+        mHandler = p.a(selectionRange[0], selectionRange[1]);
         T();
-        return a;
+        return mHandler;
     }
 
     public ag h(Point point) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (!G() || this.e.f()) {
             return new ag();
         }
@@ -356,32 +356,32 @@ public class w extends t implements ae, ba, bd {
     }
 
     public int c(Point point) {
-        a.c().b(N());
+        mHandler.c().b(N());
         return -1;
     }
 
     public int a(Point point, int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         return -1;
     }
 
     public int d(Point point) {
-        a.c().b(N());
+        mHandler.c().b(N());
         return -1;
     }
 
     public int e(Point point) {
-        a.c().b(N());
+        mHandler.c().b(N());
         return -1;
     }
 
     public int a(bb bbVar) {
-        a.c().b(N());
+        mHandler.c().b(N());
         return -1;
     }
 
     public int f(Point point) {
-        a.c().b(N());
+        mHandler.c().b(N());
         return -1;
     }
 
@@ -390,7 +390,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public Rect b(Rect rect) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (!E()) {
             return new Rect();
         }
@@ -403,7 +403,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public Rect c(Rect rect) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (!E()) {
             return new Rect();
         }
@@ -416,42 +416,42 @@ public class w extends t implements ae, ba, bd {
     }
 
     public af c(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         return null;
     }
 
     public aw d(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         return null;
     }
 
     public ab e(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         return null;
     }
 
     public com.duokan.reader.domain.document.ah f(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         return null;
     }
 
     public Rect g(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         return new Rect();
     }
 
     public Rect h(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         return new Rect();
     }
 
     public Rect i(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         return new Rect();
     }
 
     public Rect j(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         return new Rect();
     }
 
@@ -460,12 +460,12 @@ public class w extends t implements ae, ba, bd {
     }
 
     public String J() {
-        a.c().b(N());
+        mHandler.c().b(N());
         return b(m());
     }
 
     public String b(bb bbVar) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (!c && bbVar == null) {
             throw new AssertionError();
         } else if (!E() || this.e.f()) {
@@ -485,7 +485,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public String K() {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (!c && !G()) {
             throw new AssertionError();
         } else if (this.f.k) {
@@ -496,7 +496,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public String c(bb bbVar) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (!c && !G()) {
             throw new AssertionError();
         } else if (this.f.k) {
@@ -507,7 +507,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public Rect d(bb bbVar) {
-        a.c().b(N());
+        mHandler.c().b(N());
         Rect rect = new Rect();
         for (Rect union : e(bbVar)) {
             rect.union(union);
@@ -517,7 +517,7 @@ public class w extends t implements ae, ba, bd {
 
     public Rect[] e(bb bbVar) {
         int i = 0;
-        a.c().b(N());
+        mHandler.c().b(N());
         if (!E()) {
             return new Rect[0];
         }
@@ -543,7 +543,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public Point f(bb bbVar) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (c || G()) {
             Point point = new Point();
             Rect[] e = e(bbVar);
@@ -557,7 +557,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public Point g(bb bbVar) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (c || G()) {
             Point point = new Point();
             Rect[] e = e(bbVar);
@@ -571,7 +571,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public ac k(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (c || G()) {
             return null;
         }
@@ -579,7 +579,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public Rect l(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (c || G()) {
             return null;
         }
@@ -587,7 +587,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public Rect m(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (c || G()) {
             return null;
         }
@@ -595,7 +595,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public aj n(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (c || G()) {
             return null;
         }
@@ -603,7 +603,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public Rect p(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (c || G()) {
             return null;
         }
@@ -611,7 +611,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public Rect o(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (c || G()) {
             return null;
         }
@@ -619,7 +619,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public ad q(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (c || G()) {
             return null;
         }
@@ -627,7 +627,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public Rect r(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (c || G()) {
             return null;
         }
@@ -635,7 +635,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public ax s(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (c || G()) {
             return null;
         }
@@ -643,7 +643,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public Rect t(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (c || G()) {
             return null;
         }
@@ -651,7 +651,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public Rect u(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (c || G()) {
             return null;
         }
@@ -659,7 +659,7 @@ public class w extends t implements ae, ba, bd {
     }
 
     public int v(int i) {
-        a.c().b(N());
+        mHandler.c().b(N());
         if (c || G()) {
             return -1;
         }
@@ -748,7 +748,7 @@ public class w extends t implements ae, ba, bd {
             if (k() || this.d.d()) {
                 return i;
             }
-            this.a.setTextSize((float) this.f.f);
+            this.mHandler.setTextSize((float) this.f.f);
             h d = this.d.e().d();
             if (!U() && this.d.g().c.top >= this.f.f) {
                 float length;
@@ -775,19 +775,19 @@ public class w extends t implements ae, ba, bd {
                 }
                 int width = getBounds().width() - (p().c.left + p().c.right);
                 if (Float.compare(length, 1.0f) > 0) {
-                    a(canvas, d.a(), 3, Math.round((((float) width) * length) / (length + f3)), this.a);
+                    a(canvas, d.a(), 3, Math.round((((float) width) * length) / (length + f3)), this.mHandler);
                 }
                 if (Float.compare(f3, 1.0f) > 0) {
                     String str = this.m;
                     int i3 = (!this.f.n || this.f.l) ? 5 : 3;
-                    a(canvas, str, i3, Math.round((((float) width) * f3) / (length + f3)), this.a);
+                    a(canvas, str, i3, Math.round((((float) width) * f3) / (length + f3)), this.mHandler);
                 }
             }
             if (U() || this.d.g().c.bottom < this.f.f) {
                 return i;
             }
             if (this.n == null && this.l >= 0) {
-                this.n = String.format("%d / %d", new Object[]{Long.valueOf(this.l + 1), Long.valueOf(this.d.b())});
+                this.n = String.format("%getScaledTouchSlop / %getScaledTouchSlop", new Object[]{Long.valueOf(this.l + 1), Long.valueOf(this.d.b())});
             }
             if (TextUtils.isEmpty(this.n)) {
                 return i;
@@ -799,7 +799,7 @@ public class w extends t implements ae, ba, bd {
             } else {
                 i4 = 1;
             }
-            a(canvas, str2, i4, this.a);
+            a(canvas, str2, i4, this.mHandler);
             return i;
         }
         a(canvas);
@@ -821,7 +821,7 @@ public class w extends t implements ae, ba, bd {
         if (j2 > 0 && this.i != null) {
             this.l = c(this.i);
         }
-        a(new z(this));
+        postTask(new z(this));
     }
 
     public void a(af afVar) {
@@ -849,7 +849,7 @@ public class w extends t implements ae, ba, bd {
                 }
             }
             this.j = true;
-            a(new aa(this));
+            postTask(new aa(this));
             this.d.c(this);
         } else {
             throw new AssertionError();

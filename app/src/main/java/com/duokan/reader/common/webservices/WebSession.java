@@ -3,9 +3,9 @@ package com.duokan.reader.common.webservices;
 import android.os.Looper;
 
 import com.duokan.core.b.a.a;
-import com.duokan.core.diagnostic.f;
+import com.duokan.core.diagnostic.HttpLogger;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.t;
 import com.duokan.reader.common.webservices.duokan.a.d;
 
 import java.util.HashMap;
@@ -14,12 +14,12 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 public abstract class WebSession {
-    static final /* synthetic */ boolean $assertionsDisabled = (!WebSession.class.desiredAssertionStatus() ? true : $assertionsDisabled);
+    static final  boolean $assertionsDisabled = (!WebSession.class.desiredAssertionStatus() ? true : $assertionsDisabled);
     private static final String DEFAULT_SEQ_QUEUE = WebSession.class.getName();
     private static final long HTTP_COUNTING_TIME = TimeUnit.SECONDS.toMillis(100);
     private static final int HTTP_COUNT_TO_WARN = 20;
     private static final HashMap sHttpCountingMap = new HashMap();
-    private static f sHttpLogger = null;
+    private static HttpLogger sHttpLogger = null;
     private CacheStrategy mCacheStrategy;
     private final a mHttpConfig;
     protected boolean mIsClosed;
@@ -31,7 +31,7 @@ public abstract class WebSession {
     private Exception mSessionException;
     private Future mSessionFuture;
     private SessionState mSessionState;
-    private g mSessionTask;
+    private SessionTask mSessionTask;
 
     public enum CacheStrategy {
         DISABLE_CACHE,
@@ -125,7 +125,7 @@ public abstract class WebSession {
         return this.mCacheStrategy;
     }
 
-    public static void setLogger(f fVar) {
+    public static void setLogger(HttpLogger fVar) {
         sHttpLogger = fVar;
     }
 
@@ -181,7 +181,7 @@ public abstract class WebSession {
         } else if (!$assertionsDisabled && this.mSessionTask.c != Thread.currentThread().getId()) {
             throw new AssertionError();
         } else if ($assertionsDisabled || aVar != null) {
-            d fVar = new f(this, aVar);
+            d fVar = new HttpLogger(this, aVar);
             this.mResponseList.add(fVar);
             fVar.e();
             return fVar;
@@ -201,7 +201,7 @@ public abstract class WebSession {
         if (!$assertionsDisabled && this.mSessionTask == null) {
             throw new AssertionError();
         } else if ($assertionsDisabled || this.mSessionTask.c == Thread.currentThread().getId()) {
-            t.a(new e(this, obj));
+            TaskHandler.postTask(new e(this, obj));
         } else {
             throw new AssertionError();
         }
@@ -240,7 +240,7 @@ public abstract class WebSession {
     }
 
     private void scheduleSessionTask(CacheStrategy cacheStrategy, long j) {
-        this.mSessionTask = new g(this, cacheStrategy);
+        this.mSessionTask = new SessionTask(this, cacheStrategy);
         if (this.mParallel) {
             this.mSessionFuture = j > 0 ? ah.a(this.mSessionTask, j) : ah.b(this.mSessionTask);
         } else {

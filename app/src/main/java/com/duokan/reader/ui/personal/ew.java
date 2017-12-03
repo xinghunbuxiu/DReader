@@ -1,6 +1,5 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.common.a;
 import com.duokan.reader.domain.bookshelf.iz;
 import com.duokan.reader.domain.bookshelf.jk;
 import com.duokan.reader.domain.micloud.bj;

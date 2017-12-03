@@ -2,7 +2,7 @@ package com.duokan.reader.ui.general;
 
 import android.view.animation.Animation;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class gu implements Runnable {
     final /* synthetic */ Animation a;
@@ -37,7 +37,7 @@ class gu implements Runnable {
                 this.b.c.run();
             }
             if (1.0f == duration) {
-                dv.a(this.b.a.d, new gv(this));
+                UTools.addAnimation(this.b.a.d, new gv(this));
                 return;
             }
             return;

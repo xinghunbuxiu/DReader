@@ -14,22 +14,22 @@ import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
-import com.duokan.c.f;
 import com.duokan.core.app.ManagedApp;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.diagnostic.a;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
-import com.duokan.core.sys.t;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.kernel.DkUtils;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.SystemUiConditioner;
 import com.duokan.reader.UmengManager;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.domain.document.bb;
@@ -55,15 +55,15 @@ public class adm extends hd implements SystemUiConditioner {
     private TtsEngine i = null;
     private aej j = null;
     private aek k = null;
-    private e l = null;
+    private ActivatedController l = null;
     private aeg m = null;
     private Runnable n = null;
     private aec o;
     private ServiceConnection p = new adn(this);
     private aeu q;
 
-    public adm(y yVar) {
-        super(yVar);
+    public adm(IFeature featrue) {
+        super(featrue);
         this.c.setWillNotDraw(false);
         this.c.setVisibility(4);
         View imageView = new ImageView(getContext());
@@ -72,7 +72,7 @@ public class adm extends hd implements SystemUiConditioner {
         imageView.setContentDescription(getResources().getString(j.reading__tts_menu_view__open));
         imageView.setBackgroundResource(f.general__shared__button_circular_48dip);
         this.f = new FrameLayout(getContext());
-        this.f.setPadding(0, 0, dv.b(getContext(), 15.0f), dv.b(getContext(), 30.0f));
+        this.f.setPadding(0, 0, UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 30.0f));
         this.f.setOnClickListener(new adt(this));
         this.f.addView(imageView, new LayoutParams(-2, -2));
         this.c.addView(this.f, new LayoutParams(-2, -2, 85));
@@ -267,14 +267,14 @@ public class adm extends hd implements SystemUiConditioner {
         return true;
     }
 
-    protected boolean onRequestDetach(e eVar) {
-        if (!eVar.contains(this.l)) {
-            return super.onRequestDetach(eVar);
+    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
+        if (!activatedControllerVar.contains(this.l)) {
+            return super.onRequestDetach(activatedControllerVar);
         }
         if (this.l.getContentView().getAnimation() == null) {
-            dv.c(this.l.getContentView(), new adv(this));
+            UTools.showAnimation(this.l.getContentView(), new adv(this));
             this.f.setVisibility(0);
-            dv.b(this.f, null);
+            UTools.closeAnimation(this.f, null);
         }
         return true;
     }
@@ -282,7 +282,7 @@ public class adm extends hd implements SystemUiConditioner {
     protected void onActivityResult(int i, int i2, Intent intent) {
         super.onActivityResult(i, i2, intent);
         if (i == 1 && this.n != null) {
-            t.b(this.n);
+            TaskHandler.PostTask(this.n);
             this.n = null;
         }
     }
@@ -332,7 +332,7 @@ public class adm extends hd implements SystemUiConditioner {
         if (this.m != null) {
             as aa = this.a.aa();
             if (aa.G()) {
-                Rect rect = (Rect) dv.g.a();
+                Rect rect = (Rect) UTools.g.getRect();
                 if (aa instanceof i) {
                     i iVar = (i) aa;
                     if (iVar.d().contains(this.m.c.x, this.m.c.y)) {
@@ -341,24 +341,24 @@ public class adm extends hd implements SystemUiConditioner {
                         aa = iVar.c();
                     }
                 }
-                int b = dv.b(getContext(), 3.0f);
+                int b = UTools.closeAnimation(getContext(), 3.0f);
                 rect.left = aa.getBounds().left;
                 rect.top = this.m.c.y - (b / 2);
                 rect.right = aa.getBounds().right;
                 rect.bottom = rect.top + b;
-                Paint paint = (Paint) dv.b.a();
+                Paint paint = (Paint) UTools.b.getRect();
                 paint.setColor(getResources().getColor(com.duokan.c.d.general__shared__00000066));
                 canvas.drawRect(rect, paint);
-                dv.b.a(paint);
-                dv.g.a(rect);
+                UTools.b.getRect(paint);
+                UTools.g.getRect(rect);
             }
         }
     }
 
     private void a(aej com_duokan_reader_ui_reading_aej, ag agVar) {
-        com.duokan.reader.domain.document.a aVar = com_duokan_reader_ui_reading_aej.a;
+        Document_a aVar = com_duokan_reader_ui_reading_aej.a;
         if (aVar == null) {
-            t.b(new adw(this, agVar, com_duokan_reader_ui_reading_aej));
+            TaskHandler.PostTask(new adw(this, agVar, com_duokan_reader_ui_reading_aej));
             return;
         }
         ak akVar;
@@ -389,7 +389,7 @@ public class adm extends hd implements SystemUiConditioner {
 
     private void b(aej com_duokan_reader_ui_reading_aej, ag agVar) {
         if (com_duokan_reader_ui_reading_aej.d) {
-            t.b(new adz(this, agVar, com_duokan_reader_ui_reading_aej));
+            TaskHandler.PostTask(new adz(this, agVar, com_duokan_reader_ui_reading_aej));
             return;
         }
         i();
@@ -399,7 +399,7 @@ public class adm extends hd implements SystemUiConditioner {
             this.g.startSpeaking(com_duokan_reader_ui_reading_ael.a, new aea(this, com_duokan_reader_ui_reading_ael, com_duokan_reader_ui_reading_aej, agVar));
         } else if (com_duokan_reader_ui_reading_aej.a == null) {
             a.c().c(LogLevel.ERROR, "tts", "no content");
-            t.b(new ado(this, agVar, com_duokan_reader_ui_reading_aej));
+            TaskHandler.PostTask(new ado(this, agVar, com_duokan_reader_ui_reading_aej));
         } else {
             a(com_duokan_reader_ui_reading_aej, new adp(this, agVar));
         }

@@ -4,8 +4,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.duokan.c.d;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.domain.micloud.bj;
 import com.duokan.reader.ui.general.DkLabelView;
 import com.duokan.reader.ui.general.DkListView;
@@ -66,7 +65,7 @@ public class t extends FrameLayout {
     private void a() {
         this.k.d();
         this.f.setVisibility(0);
-        bj a = ((com.duokan.reader.ui.bookshelf.bj) x.a(getContext()).queryFeature(com.duokan.reader.ui.bookshelf.bj.class)).a();
+        bj a = ((com.duokan.reader.ui.bookshelf.bj) MyContextWrapper.getFeature(getContext()).queryFeature(com.duokan.reader.ui.bookshelf.bj.class)).a();
         if (this.h > 0) {
             this.c.setText(String.format(this.i, new Object[]{i.a(this.h)}));
             if (this.h > a.b) {

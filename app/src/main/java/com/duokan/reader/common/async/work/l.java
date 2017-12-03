@@ -1,7 +1,5 @@
 package com.duokan.reader.common.async.work;
 
-import com.duokan.reader.common.async.work.IAsyncWorkProgressListener.CheckErrorResult;
-
 import java.util.LinkedList;
 import java.util.List;
 

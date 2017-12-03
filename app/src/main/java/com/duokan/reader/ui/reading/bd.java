@@ -9,7 +9,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.f;
 
 public final class bd extends f {
@@ -22,7 +22,7 @@ public final class bd extends f {
         super(context);
         this.a = new jd(context, new be(this));
         this.a.setOnTouchListener(new bf(this));
-        this.a.setVerticalOffset(dv.b(getContext(), 10.0f));
+        this.a.setVerticalOffset(UTools.closeAnimation(getContext(), 10.0f));
         setDimAmount(0.0f);
         setContentView(this.a, new LayoutParams(-1, -1));
     }

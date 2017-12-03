@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.domain.cloud.DkCloudStoreBook;
 import com.duokan.reader.ui.bookshelf.gw;
 
@@ -56,7 +56,7 @@ public abstract class kc extends gw {
 
     public kc(Context context) {
         this.h = context;
-        this.i = (kn) x.a(this.h).queryFeature(kn.class);
+        this.i = (kn) MyContextWrapper.getFeature(this.h).queryFeature(kn.class);
     }
 
     public int a() {

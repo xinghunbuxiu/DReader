@@ -4,7 +4,6 @@ import android.net.Uri;
 import android.text.TextUtils;
 
 import com.duokan.core.sys.as;
-import com.duokan.reader.common.i;
 import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.WebSession.CacheStrategy;
 import com.duokan.reader.common.webservices.duokan.p;

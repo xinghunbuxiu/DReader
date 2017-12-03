@@ -2,9 +2,8 @@ package com.duokan.reader.ui.personal;
 
 import android.os.Handler;
 
-import com.duokan.common.a;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.common.async.work.IAsyncWorkProgressListener;
 import com.duokan.reader.domain.bookshelf.ai;
@@ -22,15 +21,15 @@ import com.duokan.reader.ui.general.expandable.ViewMode;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ds extends e implements iv, iw, ho, eo {
+public class ds extends ActivatedController implements iv, iw, ho, eo {
     static final /* synthetic */ boolean a = (!ds.class.desiredAssertionStatus());
     private final eq b = new eq(getContext(), this);
     private Handler c = new Handler();
     private final IAsyncWorkProgressListener d = new dt(this);
     private IAsyncWorkProgressListener e = new dy(this);
 
-    public ds(y yVar) {
-        super(yVar);
+    public ds(IFeature featrue) {
+        super(featrue);
         ai.a().a((iw) this);
         ai.a().a((iv) this);
         iz.a().a(this.d);

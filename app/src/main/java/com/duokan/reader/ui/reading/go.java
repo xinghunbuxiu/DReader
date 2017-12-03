@@ -4,9 +4,8 @@ import android.content.Context;
 import android.graphics.Color;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.domain.document.as;
 
 import org.apache.http.HttpStatus;
@@ -15,7 +14,7 @@ import java.util.LinkedList;
 
 public class go extends FrameLayout {
     protected static final LinkedList a = new LinkedList();
-    protected final sh b = ((sh) x.a(getContext()).queryFeature(sh.class));
+    protected final sh b = ((sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class));
     protected as c = null;
     protected int d = 0;
     private View e = null;

@@ -20,7 +20,7 @@ import android.view.KeyCharacterMap;
 import com.duokan.core.a.a;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.app.w;
+import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ah;
@@ -57,7 +57,7 @@ import dalvik.system.DexClassLoader;
 import dalvik.system.PathClassLoader;
 import miuipub.os.SystemProperties;
 
-public class ReaderEnv implements w {
+public class ReaderEnv implements IActivityRunStatusChanged {
     protected static ReaderEnv a = null;
     static final /* synthetic */ boolean c;
     private static final String d = (File.separator + "lib");
@@ -1122,7 +1122,7 @@ public class ReaderEnv implements w {
 
     private void prepareInternalFiles() {
         if (!this.y.exists()) {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "env", "preparing internal files...(ver=%d)", Integer.valueOf(17));
+            com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "env", "preparing internal files...(ver=%getScaledTouchSlop)", Integer.valueOf(17));
             int i = 0;
             while (i < 3) {
                 File file = new File(this.w, "res.v17.arch");
@@ -1141,19 +1141,19 @@ public class ReaderEnv implements w {
                     DkarchLib.extract(file.getAbsolutePath(), file2.getAbsolutePath());
                     com.duokan.core.io.a.d(this.y);
                     if (file2.renameTo(this.y)) {
-                        com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "env", "internal files are ready(ver=%d)", Integer.valueOf(17));
+                        com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "env", "internal files are ready(ver=%getScaledTouchSlop)", Integer.valueOf(17));
                         com.duokan.core.io.a.d(file);
                         com.duokan.core.io.a.d(file2);
                         return;
                     }
-                    com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "env", "can't move internal files in place(ver=%d)", Integer.valueOf(17));
+                    com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "env", "can'TaskHandler move internal files in place(ver=%getScaledTouchSlop)", Integer.valueOf(17));
                     com.duokan.core.io.a.d(file);
                     com.duokan.core.io.a.d(file2);
                     j.a(3000);
                     i++;
                 } catch (Throwable th2) {
                     try {
-                        com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "env", String.format("an exception occurs while preparing internal files(ver=%d)", new Object[]{Integer.valueOf(17)}), th2);
+                        com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "env", String.format("an exception occurs while preparing internal files(ver=%getScaledTouchSlop)", new Object[]{Integer.valueOf(17)}), th2);
                     } finally {
                         com.duokan.core.io.a.d(file);
                         com.duokan.core.io.a.d(file2);

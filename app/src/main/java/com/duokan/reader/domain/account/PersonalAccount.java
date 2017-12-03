@@ -3,7 +3,6 @@ package com.duokan.reader.domain.account;
 import android.app.Activity;
 import android.text.TextUtils;
 
-import com.duokan.b.i;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.domain.account.oauth.ThirdWeiXin;
 import com.duokan.reader.domain.social.b.b;

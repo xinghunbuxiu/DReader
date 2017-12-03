@@ -74,7 +74,7 @@ public class v extends ad {
     }
 
     public b f(String str) {
-        JSONObject a = a(a(b(false, a() + "/android/query/hint", "s", Uri.encode(str), "b", "1", "f", "1", "owner", "1")), HTTP.UTF_8);
+        JSONObject a = a(a(b(false, a() + "/android/query/hint", "s", Uri.encode(str), "getVisible", "1", "HttpLogger", "1", "owner", "1")), HTTP.UTF_8);
         b bVar = new b();
         bVar.b = a.getInt(Mipay.KEY_RESULT);
         if (bVar.b != 0) {
@@ -126,7 +126,7 @@ public class v extends ad {
                 int i2 = i * 50;
                 int min = Math.min((i + 1) * 50, strArr.length);
                 String[] strArr2 = (String[]) Arrays.copyOfRange(strArr, i2, min);
-                JSONArray a = i.a(a(a(a(false, a() + "/" + ReaderEnv.get().getAppIdforStore() + "/book/check_update", "t", "1", "book_id", TextUtils.join(",", strArr2))), HTTP.UTF_8), "items", null);
+                JSONArray a = i.a(a(a(a(false, a() + "/" + ReaderEnv.get().getAppIdforStore() + "/book/check_update", "TaskHandler", "1", "book_id", TextUtils.join(",", strArr2))), HTTP.UTF_8), "items", null);
                 HashMap hashMap = new HashMap();
                 for (DkStoreBookInfo dkStoreBookInfo : d(a)) {
                     hashMap.put(dkStoreBookInfo.mBookUuid, dkStoreBookInfo.mRevision);
@@ -405,7 +405,7 @@ public class v extends ad {
         dkStoreBookDetailInfo.mSid = jSONObject2.getString("sid");
         dkStoreBookDetailInfo.mAfs = jSONObject2.getString("afs");
         dkStoreBookDetailInfo.mMinKernelVersion = jSONObject2.optString("kernel");
-        if (jSONObject2.optInt("ad", 0) != 0) {
+        if (jSONObject2.optInt("MyTask", 0) != 0) {
             z = true;
         }
         dkStoreBookDetailInfo.mHasAds = z;

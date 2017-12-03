@@ -7,9 +7,9 @@ import android.view.animation.AlphaAnimation;
 import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.et;
 import com.duokan.reader.ui.reading.a.ag;
@@ -17,7 +17,7 @@ import com.duokan.reader.ui.reading.a.ak;
 import com.duokan.reader.ui.welcome.DkTipManager.UserInput;
 import com.duokan.reader.ui.welcome.p;
 
-public class mx extends e implements ak {
+public class mx extends ActivatedController implements ak {
     private final sh a;
     private final wl b;
     private final NavigationFrameView c;
@@ -29,8 +29,8 @@ public class mx extends e implements ak {
     private int i = 0;
     private float[] j = new float[]{0.5f, 0.1f};
 
-    public mx(y yVar, wl wlVar) {
-        super(yVar);
+    public mx(IFeature featrue, wl wlVar) {
+        super(featrue);
         this.b = wlVar;
         this.a = (sh) getContext().queryFeature(sh.class);
         this.c = (NavigationFrameView) wlVar.findViewById(g.reading__reading_view__navigation_frame);
@@ -144,7 +144,7 @@ public class mx extends e implements ak {
         alphaAnimation.setAnimationListener(new ne(this, runnable));
         Runnable nfVar = new nf(this, alphaAnimation, i, i2, i3, i4);
         if (this.c.isLayoutRequested()) {
-            dv.a(this.c, nfVar);
+            UTools.addAnimation(this.c, nfVar);
         } else {
             nfVar.run();
         }

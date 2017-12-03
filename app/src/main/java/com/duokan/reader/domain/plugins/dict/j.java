@@ -8,7 +8,6 @@ import com.duokan.core.app.ai;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.UmengManager;
 import com.duokan.reader.domain.downloadcenter.DownloadCenterTask;
-import com.duokan.reader.domain.downloadcenter.b;
 import com.duokan.reader.domain.downloadcenter.k;
 import com.kingsoft.iciba.sdk2.KSCibaEngine;
 

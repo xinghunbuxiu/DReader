@@ -4,7 +4,7 @@ import android.graphics.PointF;
 import android.graphics.Rect;
 import android.view.View;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.document.au;
 import com.duokan.reader.ui.general.hd;
 
@@ -67,8 +67,8 @@ public class om extends si {
         super.o();
     }
 
-    public om(y yVar, sh shVar, wl wlVar) {
-        super(yVar, shVar, wlVar);
+    public om(IFeature featrue, sh shVar, wl wlVar) {
+        super(featrue, shVar, wlVar);
     }
 
     protected hd a() {

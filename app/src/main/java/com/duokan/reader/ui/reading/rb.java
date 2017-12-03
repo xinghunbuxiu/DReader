@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class rb implements Runnable {
     final /* synthetic */ Runnable a;
@@ -13,6 +13,6 @@ class rb implements Runnable {
 
     public void run() {
         this.b.a(null);
-        t.b(this.a);
+        TaskHandler.PostTask(this.a);
     }
 }

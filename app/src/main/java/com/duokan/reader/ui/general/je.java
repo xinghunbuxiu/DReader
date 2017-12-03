@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 public class je extends Drawable {
     private final Context a;
@@ -35,7 +35,7 @@ public class je extends Drawable {
 
     public void draw(Canvas canvas) {
         if (!TextUtils.isEmpty(this.c)) {
-            dv.a(canvas, this.c, getBounds(), this.d, this.b);
+            UTools.addAnimation(canvas, this.c, getBounds(), this.d, this.b);
         }
     }
 

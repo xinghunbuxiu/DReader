@@ -140,13 +140,13 @@ public class u extends be {
         r10 = -2;
         r2 = 0;
         r1 = 1;
-        r0 = r12.b();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = (com.duokan.reader.domain.micloud.z) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r12.getVisible();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0.D();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r4 = new java.io.File;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = r12.b();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = (com.duokan.reader.domain.micloud.z) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = r0.x();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r12.getVisible();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r0.MyContextWrapper();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r4.<init>(r0);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = r4.exists();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         if (r0 != 0) goto L_0x002d;
@@ -156,35 +156,35 @@ public class u extends be {
         r4.createNewFile();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
     L_0x002d:
         r0 = new cn.kuaipan.android.kss.KssMaster;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r3 = r12.a();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r5 = new com.duokan.reader.domain.micloud.y;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r3 = r12.setDrawable();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r5 = new com.duokan.reader.domain.micloud.IFeature;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r6 = 0;
         r5.<init>(r12, r6);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r6 = 0;
         r0.<init>(r3, r5, r6);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r3 = new com.duokan.reader.domain.micloud.x;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r3 = new com.duokan.reader.domain.micloud.MyContextWrapper;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r5 = 0;
         r3.<init>(r12, r5);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r5 = new com.duokan.reader.domain.micloud.w;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r5 = new com.duokan.reader.domain.micloud.IActivityRunStatusChanged;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r6 = 0;
         r5.<init>(r12, r6);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r6 = 1;
         r0.download(r3, r4, r5, r6);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r12.m();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r12.j();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r12.BaseActivity();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r12.getWidthPixels();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r6 = r4.length();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = r12.b();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = (com.duokan.reader.domain.micloud.z) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = r0.z();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r8 = r0.j();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r12.getVisible();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r0.QueryFeatureWrapper();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r8 = r0.getWidthPixels();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = (r6 > r8 ? 1 : (r6 == r8 ? 0 : -1));
         if (r0 == 0) goto L_0x0093;
     L_0x0069:
         r6 = r4.length();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = r12.b();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = (com.duokan.reader.domain.micloud.z) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = r0.z();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r8 = r0.j();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r12.getVisible();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r0.QueryFeatureWrapper();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r8 = r0.getWidthPixels();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = (r6 > r8 ? 1 : (r6 == r8 ? 0 : -1));
         if (r0 <= 0) goto L_0x0082;
     L_0x007f:
@@ -197,7 +197,7 @@ public class u extends be {
     L_0x008b:
         r0 = r1;
     L_0x008c:
-        r0 = com.duokan.reader.common.async.work.e.c(r3, r4, r0);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r4, r0);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
     L_0x0090:
         return r0;
     L_0x0091:
@@ -205,24 +205,24 @@ public class u extends be {
         goto L_0x008c;
     L_0x0093:
         r5 = new java.io.File;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = r12.b();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = (com.duokan.reader.domain.micloud.z) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = r0.w();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r12.getVisible();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r0.IActivityRunStatusChanged();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r5.<init>(r0);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = -1;
     L_0x00a3:
-        r3 = r12.d;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r3 = r12.getScaledTouchSlop;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r6 = 3;
         if (r3 > r6) goto L_0x0267;
     L_0x00a8:
         r0 = r4.renameTo(r5);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         if (r0 == 0) goto L_0x00c9;
     L_0x00ae:
-        r0 = r12.b();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = (com.duokan.reader.domain.micloud.z) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r12.getVisible();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0.H();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r12.m();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r12.j();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r12.BaseActivity();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r12.getWidthPixels();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r3 = r2;
     L_0x00be:
         r0 = -10004; // 0xffffffffffffd8ec float:NaN double:NaN;
@@ -230,49 +230,49 @@ public class u extends be {
     L_0x00c2:
         r0 = 0;
         r4 = 0;
-        r0 = com.duokan.reader.common.async.work.e.c(r3, r0, r4);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r0, r4);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         goto L_0x0090;
     L_0x00c9:
         r0 = r5.exists();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         if (r0 != 0) goto L_0x0109;
     L_0x00cf:
         r3 = -10003; // 0xffffffffffffd8ed float:NaN double:NaN;
-        r0 = r12.d;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r12.getScaledTouchSlop;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = r0 + 1;
-        r12.d = r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = r12.b();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = (com.duokan.reader.domain.micloud.z) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r12.getScaledTouchSlop = r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r12.getVisible();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = r0.o();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         if (r0 != 0) goto L_0x00eb;
     L_0x00e3:
         r0 = -2;
         r3 = 1;
         r4 = 1;
-        r0 = com.duokan.reader.common.async.work.e.b(r0, r3, r4);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getVisible(r0, r3, r4);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         goto L_0x0090;
     L_0x00eb:
-        r0 = r12.d;	 Catch:{ InterruptedException -> 0x0264, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r12.getScaledTouchSlop;	 Catch:{ InterruptedException -> 0x0264, KscException -> 0x0157, Exception -> 0x024c }
         r0 = r0 * 20;
         r0 = r0 * 1000;
         r6 = (long) r0;	 Catch:{ InterruptedException -> 0x0264, KscException -> 0x0157, Exception -> 0x024c }
         java.lang.Thread.sleep(r6);	 Catch:{ InterruptedException -> 0x0264, KscException -> 0x0157, Exception -> 0x024c }
     L_0x00f5:
-        r0 = r12.b();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = (com.duokan.reader.domain.micloud.z) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r12.getVisible();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = r0.o();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         if (r0 != 0) goto L_0x011a;
     L_0x0101:
         r0 = -2;
         r3 = 1;
         r4 = 1;
-        r0 = com.duokan.reader.common.async.work.e.b(r0, r3, r4);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getVisible(r0, r3, r4);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         goto L_0x0090;
     L_0x0109:
-        r0 = r12.b();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r0 = (com.duokan.reader.domain.micloud.z) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r12.getVisible();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0.H();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r12.m();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r12.j();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r12.BaseActivity();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r12.getWidthPixels();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r3 = r2;
         goto L_0x00be;
     L_0x011a:
@@ -287,7 +287,7 @@ public class u extends be {
     L_0x0125:
         r0 = r1;
     L_0x0126:
-        r0 = com.duokan.reader.common.async.work.e.c(r3, r4, r0);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r4, r0);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         goto L_0x0090;
     L_0x012c:
         r0 = r2;
@@ -296,30 +296,30 @@ public class u extends be {
         r0 = 0;
         r3 = 1;
         r4 = 1;
-        r0 = com.duokan.reader.common.async.work.e.a(r0, r3, r4);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.setDrawable(r0, r3, r4);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         goto L_0x0090;
     L_0x0137:
         r0 = move-exception;
         r3 = "micloud";
         r4 = "";
-        com.duokan.reader.common.async.work.f.a(r3, r4, r0);
-        r0 = r12.b();
-        r0 = (com.duokan.reader.domain.micloud.z) r0;
+        com.duokan.reader.common.async.work.HttpLogger.setDrawable(r3, r4, r0);
+        r0 = r12.getVisible();
+        r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;
         r0 = r0.o();
         if (r0 != 0) goto L_0x0151;
     L_0x014b:
-        r0 = com.duokan.reader.common.async.work.e.b(r10, r1, r1);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getVisible(r10, r1, r1);
         goto L_0x0090;
     L_0x0151:
-        r0 = com.duokan.reader.common.async.work.e.a(r2, r1, r1);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.setDrawable(r2, r1, r1);
         goto L_0x0090;
     L_0x0157:
         r0 = move-exception;
         r3 = "micloud";
         r4 = "";
-        com.duokan.reader.common.async.work.f.a(r3, r4, r0);
-        r3 = r12.a();
-        r3 = com.duokan.reader.domain.micloud.ay.a(r3, r0);
+        com.duokan.reader.common.async.work.HttpLogger.setDrawable(r3, r4, r0);
+        r3 = r12.setDrawable();
+        r3 = com.duokan.reader.domain.micloud.ay.setDrawable(r3, r0);
         r0 = -30010; // 0xffffffffffff8ac6 float:NaN double:NaN;
         if (r3 != r0) goto L_0x017a;
     L_0x016b:
@@ -328,7 +328,7 @@ public class u extends be {
     L_0x0171:
         r0 = r1;
     L_0x0172:
-        r0 = com.duokan.reader.common.async.work.e.c(r3, r1, r0);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r1, r0);
         goto L_0x0090;
     L_0x0178:
         r0 = r2;
@@ -340,42 +340,42 @@ public class u extends be {
         r0 = r12.p();
         if (r0 != 0) goto L_0x01cf;
     L_0x0184:
-        r0 = r12.c;
+        r0 = r12.showAnimation;
         r4 = 3;
         if (r0 >= r4) goto L_0x01cf;
     L_0x0189:
-        r0 = r12.c;
+        r0 = r12.showAnimation;
         r0 = r0 + 1;
-        r12.c = r0;
-        r0 = r12.b();
-        r0 = (com.duokan.reader.domain.micloud.z) r0;
+        r12.showAnimation = r0;
+        r0 = r12.getVisible();
+        r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;
         r0 = r0.o();
         if (r0 != 0) goto L_0x01a1;
     L_0x019b:
-        r0 = com.duokan.reader.common.async.work.e.b(r10, r1, r1);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getVisible(r10, r1, r1);
         goto L_0x0090;
     L_0x01a1:
-        r0 = r12.c;	 Catch:{ InterruptedException -> 0x0261 }
+        r0 = r12.showAnimation;	 Catch:{ InterruptedException -> 0x0261 }
         r0 = r0 * 20;
         r0 = r0 * 1000;
         r4 = (long) r0;	 Catch:{ InterruptedException -> 0x0261 }
         java.lang.Thread.sleep(r4);	 Catch:{ InterruptedException -> 0x0261 }
     L_0x01ab:
-        r0 = r12.b();
-        r0 = (com.duokan.reader.domain.micloud.z) r0;
+        r0 = r12.getVisible();
+        r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;
         r0 = r0.o();
         if (r0 != 0) goto L_0x01bd;
     L_0x01b7:
-        r0 = com.duokan.reader.common.async.work.e.b(r10, r1, r1);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getVisible(r10, r1, r1);
         goto L_0x0090;
     L_0x01bd:
         r0 = r12.p();
         if (r0 == 0) goto L_0x01c9;
     L_0x01c3:
-        r0 = com.duokan.reader.common.async.work.e.c(r3, r1, r2);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r1, r2);
         goto L_0x0090;
     L_0x01c9:
-        r0 = r12.e(r13);
+        r0 = r12.getScaledPagingTouchSlop(r13);
         goto L_0x0090;
     L_0x01cf:
         r0 = r12.p();
@@ -383,26 +383,26 @@ public class u extends be {
     L_0x01d5:
         r2 = r1;
     L_0x01d6:
-        r0 = com.duokan.reader.common.async.work.e.c(r3, r1, r2);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r1, r2);
         goto L_0x0090;
     L_0x01dc:
         r0 = -30004; // 0xffffffffffff8acc float:NaN double:NaN;
         if (r3 != r0) goto L_0x020f;
     L_0x01e0:
-        r12.k();
-        r12.m();
-        r12.j();
+        r12.getHeightPixels();
+        r12.BaseActivity();
+        r12.getWidthPixels();
         r0 = r12.p();
         if (r0 != 0) goto L_0x0200;
     L_0x01ef:
-        r0 = r12.a;
+        r0 = r12.setDrawable;
         r3 = 3;
         if (r0 >= r3) goto L_0x0200;
     L_0x01f4:
-        r0 = r12.a;
+        r0 = r12.setDrawable;
         r0 = r0 + 1;
-        r12.a = r0;
-        r0 = com.duokan.reader.common.async.work.e.a(r2, r1, r1);
+        r12.setDrawable = r0;
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.setDrawable(r2, r1, r1);
         goto L_0x0090;
     L_0x0200:
         r0 = -30004; // 0xffffffffffff8acc float:NaN double:NaN;
@@ -411,33 +411,33 @@ public class u extends be {
     L_0x0208:
         r2 = r1;
     L_0x0209:
-        r0 = com.duokan.reader.common.async.work.e.c(r0, r1, r2);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r0, r1, r2);
         goto L_0x0090;
     L_0x020f:
         r0 = -30011; // 0xffffffffffff8ac5 float:NaN double:NaN;
         if (r3 != r0) goto L_0x0219;
     L_0x0213:
-        r0 = com.duokan.reader.common.async.work.e.c(r3, r2, r2);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r2, r2);
         goto L_0x0090;
     L_0x0219:
         r0 = -30007; // 0xffffffffffff8ac9 float:NaN double:NaN;
         if (r3 != r0) goto L_0x0223;
     L_0x021d:
-        r0 = com.duokan.reader.common.async.work.e.c(r3, r1, r2);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r1, r2);
         goto L_0x0090;
     L_0x0223:
         r0 = -30008; // 0xffffffffffff8ac8 float:NaN double:NaN;
         if (r3 != r0) goto L_0x022d;
     L_0x0227:
-        r0 = com.duokan.reader.common.async.work.e.c(r3, r2, r2);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r2, r2);
         goto L_0x0090;
     L_0x022d:
-        r0 = r12.b();
-        r0 = (com.duokan.reader.domain.micloud.z) r0;
+        r0 = r12.getVisible();
+        r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;
         r0 = r0.o();
         if (r0 != 0) goto L_0x023f;
     L_0x0239:
-        r0 = com.duokan.reader.common.async.work.e.b(r10, r1, r1);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getVisible(r10, r1, r1);
         goto L_0x0090;
     L_0x023f:
         r0 = r12.p();
@@ -445,19 +445,19 @@ public class u extends be {
     L_0x0245:
         r2 = r1;
     L_0x0246:
-        r0 = com.duokan.reader.common.async.work.e.c(r11, r1, r2);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r11, r1, r2);
         goto L_0x0090;
     L_0x024c:
         r0 = move-exception;
         r3 = "micloud";
         r4 = "";
-        com.duokan.reader.common.async.work.f.a(r3, r4, r0);
+        com.duokan.reader.common.async.work.HttpLogger.setDrawable(r3, r4, r0);
         r0 = r12.p();
         if (r0 != 0) goto L_0x025b;
     L_0x025a:
         r2 = r1;
     L_0x025b:
-        r0 = com.duokan.reader.common.async.work.e.c(r11, r1, r2);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r11, r1, r2);
         goto L_0x0090;
     L_0x0261:
         r0 = move-exception;
@@ -469,7 +469,7 @@ public class u extends be {
         r3 = r0;
         goto L_0x00be;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.micloud.u.e(com.xiaomi.accountsdk.account.data.ExtendedAuthToken):com.duokan.reader.common.async.work.e");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.micloud.u.getScaledPagingTouchSlop(com.xiaomi.accountsdk.account.data.ExtendedAuthToken):com.duokan.reader.common.async.work.getScaledPagingTouchSlop");
     }
 
     protected void f() {

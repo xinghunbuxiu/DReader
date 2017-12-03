@@ -2,7 +2,6 @@ package com.duokan.reader.domain.cloud;
 
 import com.duokan.reader.common.webservices.duokan.DkCloudPurchasedBookInfo;
 import com.duokan.reader.common.webservices.duokan.DkStoreBookSourceType;
-import com.duokan.reader.domain.cloud.DkCloudBook.DkCloudBookFormat;
 
 public class DkCloudPurchasedBook extends DkCloudStoreBook {
     private DkCloudRedeemBenefit mBenefit;

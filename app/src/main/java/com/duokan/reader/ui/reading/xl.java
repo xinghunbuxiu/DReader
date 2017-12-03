@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.RectF;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.b;
 
 class xl extends b {
@@ -12,7 +12,7 @@ class xl extends b {
 
     public xl(xk xkVar, int i, int i2) {
         this.a = xkVar;
-        super(Config.ARGB_8888, dv.m);
+        super(Config.ARGB_8888, UTools.m);
     }
 
     public int getIntrinsicWidth() {

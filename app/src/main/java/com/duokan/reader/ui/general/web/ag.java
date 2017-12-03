@@ -2,7 +2,7 @@ package com.duokan.reader.ui.general.web;
 
 import android.text.TextUtils;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class ag implements Runnable {
     final /* synthetic */ String a;
@@ -17,7 +17,7 @@ class ag implements Runnable {
 
     public void run() {
         if (TextUtils.equals(this.c.a.mEditText.getText(), this.a)) {
-            t.a(this.b);
+            TaskHandler.postTask(this.b);
         }
     }
 }

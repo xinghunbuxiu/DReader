@@ -1,7 +1,5 @@
 package com.duokan.reader.common.async.work;
 
-import com.duokan.reader.common.async.work.IAsyncWorkProgressListener.CheckErrorResult;
-
 public class j implements IAsyncWorkProgressListener {
     private final IAsyncWorkProgressListener a;
 

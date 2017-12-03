@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 
 import java.lang.ref.WeakReference;
 import java.util.Iterator;
@@ -32,9 +32,9 @@ public class DkTipManager extends p {
         RESTORE_ALL_GUIDES
     }
 
-    public DkTipManager(x xVar, ViewGroup viewGroup) {
+    public DkTipManager(MyContextWrapper mContext, ViewGroup viewGroup) {
         this.b = viewGroup;
-        this.a.addLast(new j(xVar));
+        this.a.addLast(new j(mContext));
     }
 
     public void a(Context context, UserInput userInput) {

@@ -4,10 +4,10 @@ import android.net.Uri;
 import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 
+import com.duokan.core.app.IFeature;
 import com.duokan.core.app.aa;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
-import com.duokan.core.sys.t;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.PullDownRefreshView.RefreshStyle;
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
@@ -22,7 +22,6 @@ import com.duokan.reader.domain.cloud.PersonalPrefs;
 import com.duokan.reader.domain.cloud.hi;
 import com.duokan.reader.domain.cloud.push.DkCloudPushMessage;
 import com.duokan.reader.domain.cloud.push.DkCloudPushMessage.ActionType;
-import com.duokan.reader.domain.statistics.a;
 import com.duokan.reader.ui.general.LoadingCircleView.LoadingStyle;
 import com.duokan.reader.ui.general.em;
 import com.duokan.reader.ui.general.web.StorePageController;
@@ -44,8 +43,8 @@ public abstract class bl extends em implements aa, hi {
 
     protected abstract void a();
 
-    public bl(y yVar, bq bqVar) {
-        super(yVar);
+    public bl(IFeature featrue, bq bqVar) {
+        super(featrue);
         a(this.c);
         this.g = bqVar;
     }
@@ -107,7 +106,7 @@ public abstract class bl extends em implements aa, hi {
             } else if (str.startsWith("comic/") && str.length() > "book/".length()) {
                 a(getContext(), 6, str.substring("comic/".length()), str2, z, runnable);
                 return true;
-            } else if (str.equals("action/ad") && obj != null && (obj instanceof DkStoreAdsBookInfo)) {
+            } else if (str.equals("action/MyTask") && obj != null && (obj instanceof DkStoreAdsBookInfo)) {
                 a(getContext(), (DkStoreAdsBookInfo) obj, runnable);
                 return true;
             } else if (!str.equals("action/message") || obj == null || !(obj instanceof DkCloudPushMessage)) {
@@ -175,80 +174,80 @@ public abstract class bl extends em implements aa, hi {
     }
 
     private void a(String str, String str2, boolean z, Runnable runnable) {
-        e a = a(getContext(), "", p.i().e(str, str2));
+        ActivatedController a = a(getContext(), "", p.i().e(str, str2));
         if (z) {
             ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPageSmoothly(a, runnable);
             return;
         }
         ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPage(a);
-        t.b(runnable);
+        TaskHandler.PostTask(runnable);
     }
 
-    private void a(y yVar, String str, String str2, boolean z, Runnable runnable) {
-        e a = a(a(yVar), "", p.i().b(str, str2));
+    private void a(IFeature featrue, String str, String str2, boolean z, Runnable runnable) {
+        ActivatedController a = a(a(featrue), "", p.i().b(str, str2));
         if (z) {
             ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPageSmoothly(a, runnable);
             return;
         }
         ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPage(a);
-        t.b(runnable);
+        TaskHandler.PostTask(runnable);
     }
 
-    private void a(y yVar, int i, String str, String str2, boolean z, Runnable runnable) {
-        e a = a(a(yVar), "", p.i().a("0", i, str, str2));
+    private void a(IFeature featrue, int i, String str, String str2, boolean z, Runnable runnable) {
+        ActivatedController a = a(a(featrue), "", p.i().a("0", i, str, str2));
         if (z) {
             ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPageSmoothly(a, runnable);
             return;
         }
         ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPage(a);
-        t.b(runnable);
+        TaskHandler.PostTask(runnable);
     }
 
-    private void b(y yVar, String str, String str2, boolean z, Runnable runnable) {
-        e a = a(a(yVar), "", p.i().c(str, str2));
+    private void b(IFeature featrue, String str, String str2, boolean z, Runnable runnable) {
+        ActivatedController a = a(a(featrue), "", p.i().c(str, str2));
         if (z) {
             ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPageSmoothly(a, runnable);
             return;
         }
         ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPage(a);
-        t.b(runnable);
+        TaskHandler.PostTask(runnable);
     }
 
-    private void a(y yVar, DkStoreAdsBookInfo dkStoreAdsBookInfo, Runnable runnable) {
+    private void a(IFeature featrue, DkStoreAdsBookInfo dkStoreAdsBookInfo, Runnable runnable) {
         if (dkStoreAdsBookInfo.mType == AdsType.BOOK_INFO) {
-            a(a(yVar), 1, dkStoreAdsBookInfo.mBookUuid, "shelf_" + Uri.encode(dkStoreAdsBookInfo.mTitle), true, runnable);
+            a(a(featrue), 1, dkStoreAdsBookInfo.mBookUuid, "shelf_" + Uri.encode(dkStoreAdsBookInfo.mTitle), true, runnable);
         } else if (dkStoreAdsBookInfo.mType == AdsType.FICTION_INFO) {
-            a(a(yVar), 2, dkStoreAdsBookInfo.mBookUuid, "shelf_" + Uri.encode(dkStoreAdsBookInfo.mTitle), true, runnable);
+            a(a(featrue), 2, dkStoreAdsBookInfo.mBookUuid, "shelf_" + Uri.encode(dkStoreAdsBookInfo.mTitle), true, runnable);
         } else if (dkStoreAdsBookInfo.mType == AdsType.BOOK_TOPIC) {
-            b(a(yVar), dkStoreAdsBookInfo.mBookUuid, "shelf_" + Uri.encode(dkStoreAdsBookInfo.mTitle), true, runnable);
+            b(a(featrue), dkStoreAdsBookInfo.mBookUuid, "shelf_" + Uri.encode(dkStoreAdsBookInfo.mTitle), true, runnable);
         } else if (dkStoreAdsBookInfo.mType == AdsType.WEBSIZE) {
-            a(a(yVar), dkStoreAdsBookInfo.mTitle, dkStoreAdsBookInfo.mBookUuid, runnable);
+            a(a(featrue), dkStoreAdsBookInfo.mTitle, dkStoreAdsBookInfo.mBookUuid, runnable);
         } else if (dkStoreAdsBookInfo.mType == AdsType.FICTION_TOPIC) {
-            a(a(yVar), dkStoreAdsBookInfo.mBookUuid, "shelf_" + Uri.encode(dkStoreAdsBookInfo.mTitle), true, runnable);
+            a(a(featrue), dkStoreAdsBookInfo.mBookUuid, "shelf_" + Uri.encode(dkStoreAdsBookInfo.mTitle), true, runnable);
         } else if (dkStoreAdsBookInfo.mType == AdsType.PUBLISHER) {
-            a(a(yVar), "", p.i().d(dkStoreAdsBookInfo.mBookUuid), runnable);
+            a(a(featrue), "", p.i().d(dkStoreAdsBookInfo.mBookUuid), runnable);
         }
     }
 
-    private StorePageController a(y yVar, String str, String str2) {
-        StorePageController storePageController = new StorePageController(a(yVar));
+    private StorePageController a(IFeature featrue, String str, String str2) {
+        StorePageController storePageController = new StorePageController(a(featrue));
         storePageController.setPageTitle(str);
         storePageController.loadUrl(str2);
         return storePageController;
     }
 
-    private void a(y yVar, String str, String str2, Runnable runnable) {
-        c(yVar, str, str2, true, runnable);
+    private void a(IFeature featrue, String str, String str2, Runnable runnable) {
+        c(featrue, str, str2, true, runnable);
     }
 
-    private void c(y yVar, String str, String str2, boolean z, Runnable runnable) {
-        e a = a(yVar, str, str2);
+    private void c(IFeature featrue, String str, String str2, boolean z, Runnable runnable) {
+        ActivatedController a = a(featrue, str, str2);
         if (z) {
             ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPageSmoothly(a, runnable);
             return;
         }
         ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPage(a);
-        t.b(runnable);
+        TaskHandler.PostTask(runnable);
     }
 
     private void a(DkCloudPushMessage dkCloudPushMessage, boolean z, Runnable runnable) {
@@ -284,16 +283,16 @@ public abstract class bl extends em implements aa, hi {
         }
     }
 
-    private y a(y yVar) {
-        if (yVar == null) {
+    private IFeature a(IFeature featrue) {
+        if (featrue == null) {
             return getContext();
         }
-        return yVar;
+        return featrue;
     }
 
     private void m() {
         if (ReaderEnv.get().getShowAppStoreGuide() && n()) {
-            t.a(new bn(this), 2000);
+            TaskHandler.postDelayed(new bn(this), 2000);
         }
     }
 

@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class um implements Runnable {
     final /* synthetic */ ul a;
@@ -10,6 +10,6 @@ class um implements Runnable {
     }
 
     public void run() {
-        t.a(new un(this), 500);
+        TaskHandler.postDelayed(new un(this), 500);
     }
 }

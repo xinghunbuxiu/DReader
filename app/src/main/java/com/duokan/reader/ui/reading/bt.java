@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 
 class bt implements OnClickListener {
     final /* synthetic */ String a;
@@ -43,7 +42,7 @@ class bt implements OnClickListener {
             this.h.j();
         }
         if (!TextUtils.isEmpty(this.b)) {
-            a.c().a(LogLevel.EVENT, "reading", "click server ui(book: %s(%s), chapter: %s(%d|%s), type: %s, click: %s)", this.c, this.d, this.e, Long.valueOf(this.f), this.g, this.a, this.b);
+            a.c().a(LogLevel.EVENT, "reading", "click server ui(book: %s(%s), chapter: %s(%getScaledTouchSlop|%s), type: %s, click: %s)", this.c, this.d, this.e, Long.valueOf(this.f), this.g, this.a, this.b);
             this.h.a(this.b);
         }
     }

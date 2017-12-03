@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.a;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.store.DkStoreAbsBook;
 
 class h implements u {
@@ -15,7 +15,7 @@ class h implements u {
         this.a.a.g.add("");
         this.a.a.c();
         this.a.a.b();
-        dv.a(this.a.a.c, new i(this));
+        UTools.addAnimation(this.a.a.c, new i(this));
     }
 
     public void a() {

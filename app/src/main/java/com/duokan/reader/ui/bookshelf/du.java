@@ -7,18 +7,14 @@ import android.text.InputFilter;
 import android.text.InputFilter.LengthFilter;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.duokan.c.e;
-import com.duokan.c.f;
-import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.core.app.x;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.domain.bookshelf.aa;
 import com.duokan.reader.domain.bookshelf.ai;
@@ -26,7 +22,6 @@ import com.duokan.reader.domain.bookshelf.an;
 import com.duokan.reader.domain.bookshelf.iv;
 import com.duokan.reader.domain.bookshelf.iw;
 import com.duokan.reader.ui.general.ReaderUi;
-import com.duokan.reader.ui.general.a.a;
 import com.duokan.reader.ui.general.be;
 
 import java.util.List;
@@ -45,16 +40,16 @@ public class du extends LinearLayout implements iv, iw, cw, eq {
     public du(Context context, aa aaVar) {
         super(context);
         this.a = aaVar;
-        this.d = (cr) x.a(context).queryFeature(cr.class);
-        this.e = (cu) x.a(context).queryFeature(cu.class);
-        this.b.a(new dv(this));
+        this.d = (cr) MyContextWrapper.getFeature(context).queryFeature(cr.class);
+        this.e = (cu) MyContextWrapper.getFeature(context).queryFeature(cu.class);
+        this.b.a(new UTools(this));
         this.c = new gs(getContext());
-        this.c.b(this.c.getGridPaddingLeft(), dv.b(getContext(), 20.0f), this.c.getGridPaddingRight(), dv.b(getContext(), 20.0f));
+        this.c.b(this.c.getGridPaddingLeft(), UTools.closeAnimation(getContext(), 20.0f), this.c.getGridPaddingRight(), UTools.closeAnimation(getContext(), 20.0f));
         this.c.setAdapter(this.b);
         this.c.b(h.bookshelf__category_expand_tip_view);
         this.c.setNumColumns(ds.a(getContext()));
         this.c.setOnItemClickListener(new dw(this));
-        int b = dv.b(getContext(), 10.0f);
+        int b = UTools.closeAnimation(getContext(), 10.0f);
         LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams.addRule(11);
         layoutParams.addRule(15);
@@ -65,7 +60,7 @@ public class du extends LinearLayout implements iv, iw, cw, eq {
         this.h.setVisibility(8);
         this.h.setOnClickListener(new dx(this));
         layoutParams = new RelativeLayout.LayoutParams(-2, -2);
-        int b2 = dv.b(getContext(), 30.0f);
+        int b2 = UTools.closeAnimation(getContext(), 30.0f);
         layoutParams.leftMargin = b2;
         layoutParams.rightMargin = b2;
         layoutParams.addRule(14);
@@ -84,9 +79,9 @@ public class du extends LinearLayout implements iv, iw, cw, eq {
         this.g.setOnFocusChangeListener(new dz(this));
         layoutParams = new LinearLayout.LayoutParams(-1, -2);
         if (DkApp.get().forHd()) {
-            b = Math.min(Math.max((dv.j(getContext()) - dv.b(getContext(), 300.0f)) / 2, 0), dv.b(getContext(), 100.0f));
+            b = Math.min(Math.max((UTools.getWidthPixels(getContext()) - UTools.closeAnimation(getContext(), 300.0f)) / 2, 0), UTools.closeAnimation(getContext(), 100.0f));
         } else {
-            b = dv.b(getContext(), 40.0f);
+            b = UTools.closeAnimation(getContext(), 40.0f);
         }
         layoutParams.rightMargin = b;
         layoutParams.leftMargin = b;
@@ -96,13 +91,13 @@ public class du extends LinearLayout implements iv, iw, cw, eq {
         this.f.addView(this.g);
         this.f.addView(this.h);
         View linearLayout = new LinearLayout(getContext());
-        linearLayout.setPadding(0, 0, 0, dv.b(getContext(), 15.0f));
+        linearLayout.setPadding(0, 0, 0, UTools.closeAnimation(getContext(), 15.0f));
         linearLayout.setGravity(81);
         linearLayout.setBackgroundColor(Color.parseColor("#33666666"));
         linearLayout.addView(this.f);
         LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-1, 1);
-        layoutParams2.leftMargin = dv.b(getContext(), 15.0f);
-        layoutParams2.rightMargin = dv.b(getContext(), 15.0f);
+        layoutParams2.leftMargin = UTools.closeAnimation(getContext(), 15.0f);
+        layoutParams2.rightMargin = UTools.closeAnimation(getContext(), 15.0f);
         addView(linearLayout, new LinearLayout.LayoutParams(-1, 0, 2.0f));
         addView(this.c, new LinearLayout.LayoutParams(-1, 0, 6.0f));
         linearLayout = new View(getContext());
@@ -154,7 +149,7 @@ public class du extends LinearLayout implements iv, iw, cw, eq {
 
     public Rect a(int i) {
         Rect g = this.c.g(i);
-        dv.b(g, this.c);
+        UTools.closeAnimation(g, this.c);
         return g;
     }
 
@@ -192,7 +187,7 @@ public class du extends LinearLayout implements iv, iw, cw, eq {
 
     public void a(Rect rect) {
         rect.set(0, 0, this.c.getWidth(), this.c.getHeight());
-        dv.b(rect, this.c);
+        UTools.closeAnimation(rect, this.c);
     }
 
     public int a(an anVar) {
@@ -299,7 +294,7 @@ public class du extends LinearLayout implements iv, iw, cw, eq {
             be.a(getContext(), getResources().getString(j.bookshelf__category_rename_view__name_exists), 0).show();
             return;
         }
-        dv.a(getContext());
+        UTools.hideSoftInputFromWindow(getContext());
         requestFocus();
         a.b(this.g, 300, new eb(this, z, obj));
         a.a(this.h, 1.0f, 0.0f, 300, Boolean.valueOf(false), null);

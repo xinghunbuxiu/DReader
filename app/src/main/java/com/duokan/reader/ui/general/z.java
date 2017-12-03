@@ -4,9 +4,8 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.Drawable.Callback;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 public abstract class z extends Drawable {
     protected static final int b = ((int) Math.round(76.5d));
@@ -20,7 +19,7 @@ public abstract class z extends Drawable {
 
     public z(Context context, boolean z) {
         this.c = context;
-        int b = dv.b(this.c, 5.0f);
+        int b = UTools.closeAnimation(this.c, 5.0f);
         this.e.set(b, b, b, b);
         this.d = new ab(this);
         this.d.setCallback(this.h);

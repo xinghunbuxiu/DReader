@@ -1,7 +1,6 @@
 package com.duokan.reader.ui.reading;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 import com.duokan.core.sys.j;
 
 class rn implements Runnable {

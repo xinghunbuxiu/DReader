@@ -3,11 +3,11 @@ package com.duokan.reader;
 import android.content.Context;
 
 import com.duokan.c.j;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.bookshelf.BookPackageType;
 import com.duokan.reader.domain.bookshelf.BookType;
 import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.ui.reading.aev;
 import com.duokan.reader.ui.reading.hb;
 import com.duokan.reader.ui.reading.ok;
@@ -17,21 +17,21 @@ import com.duokan.reader.ui.reading.xm;
 import java.io.File;
 
 public class BookOpener {
-    private final y a;
+    private final IFeature a;
 
     interface ErrorHandler {
         void onError(String str);
     }
 
-    private BookOpener(y yVar) {
-        this.a = yVar;
+    private BookOpener(IFeature featrue) {
+        this.a = featrue;
     }
 
-    public static BookOpener with(y yVar) {
-        return new BookOpener(yVar);
+    public static BookOpener with(IFeature featrue) {
+        return new BookOpener(featrue);
     }
 
-    public qh open(c cVar, a aVar, ErrorHandler errorHandler) {
+    public qh open(c cVar, Document_a aVar, ErrorHandler errorHandler) {
         Context context = (Context) this.a;
         if (ReaderEnv.get().isExternalStorageMounted()) {
             if (cVar.s() == BookPackageType.EPUB_OPF || cVar.o() == BookType.SERIAL || cVar.R()) {

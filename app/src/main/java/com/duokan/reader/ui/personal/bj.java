@@ -2,10 +2,9 @@ package com.duokan.reader.ui.personal;
 
 import android.text.TextUtils;
 
-import com.duokan.c.d;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.common.webservices.duokan.DkFeedbackThreadInfo;
 import com.duokan.reader.common.webservices.duokan.ae;
 import com.duokan.reader.domain.account.a;
@@ -24,15 +23,15 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-public class bj extends e implements ae, h {
+public class bj extends ActivatedController implements ae, h {
     private final DkWebListView a;
     private final Map b = new HashMap();
     private final List c = new ArrayList();
     private a d;
     private boolean e = false;
 
-    public bj(y yVar) {
-        super(yVar);
+    public bj(IFeature featrue) {
+        super(featrue);
         if (i.f().b()) {
             this.d = i.f().c();
         }
@@ -41,7 +40,7 @@ public class bj extends e implements ae, h {
         setContentView(this.a);
         this.a.setAdapter(new bk(this));
         this.a.setRowDivider(new dk(getResources().getColor(d.general__shared__cccccc)));
-        this.a.a(dv.b(getContext(), 15.0f), 0, dv.b(getContext(), 15.0f), dv.b(getContext(), 60.0f));
+        this.a.a(UTools.closeAnimation(getContext(), 15.0f), 0, UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 60.0f));
         this.a.b(0, 0, 0, 0);
         c();
         a();

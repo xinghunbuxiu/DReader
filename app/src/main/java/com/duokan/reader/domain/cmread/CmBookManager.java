@@ -7,7 +7,7 @@ import com.duokan.core.a.a;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.common.webservices.duokan.DkCloudPurchasedFictionInfo;
@@ -124,7 +124,7 @@ public class CmBookManager implements ah {
     private void setChapterPurchased(final String str, final String str2, final boolean z) {
         DkCloudPurchasedFictionInfo findPurchaseInfo = findPurchaseInfo(str);
         if (findPurchaseInfo == null) {
-            t.a(new Runnable() {
+            TaskHandler.postTask(new Runnable() {
                 public void run() {
                     DkStoreFictionDetail dkStoreFictionDetail = (DkStoreFictionDetail) CmBookManager.this.mFictionDetailMap.get(str);
                     if (dkStoreFictionDetail != null) {

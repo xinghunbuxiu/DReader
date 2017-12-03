@@ -2,11 +2,11 @@ package com.duokan.reader.ui.surfing;
 
 import android.view.View;
 
+import com.duokan.core.app.FeatureListening;
 import com.duokan.core.app.aa;
-import com.duokan.core.app.k;
 import com.duokan.core.ui.er;
 
-public interface af extends aa, k {
+public interface af extends aa, FeatureListening {
     void a(View view, Runnable runnable);
 
     void a(View view, boolean z, Runnable runnable);

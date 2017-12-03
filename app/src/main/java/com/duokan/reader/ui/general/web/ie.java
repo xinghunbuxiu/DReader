@@ -12,6 +12,6 @@ class ie implements as {
     }
 
     public void a() {
-        this.b.a(new if(this));
+        this.b.a(new if (this));
     }
 }

@@ -7,11 +7,11 @@ import android.net.Uri;
 import android.text.TextUtils;
 
 import com.duokan.core.a.n;
+import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ah;
-import com.duokan.core.app.w;
+import com.duokan.core.c.IRunTask;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.af;
-import com.duokan.core.sys.o;
 import com.duokan.kernel.DkUtils;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.DkPublic;
@@ -74,7 +74,7 @@ import java.util.concurrent.FutureTask;
 import java.util.concurrent.locks.ReentrantLock;
 
 @SuppressLint({"UseSparseArrays"})
-public abstract class hi implements ah, w, g, h, cr, ec, fl {
+public abstract class hi implements ah, IActivityRunStatusChanged, g, h, cr, ec, fl {
     protected static final String c = (ai.class.getName() + ".asyncTaskQueue");
     static final /* synthetic */ boolean l = (!hi.class.desiredAssertionStatus());
     private WebSession A = null;
@@ -137,8 +137,8 @@ Error: java.lang.NullPointerException
         return r2;
     L_0x000c:
         r0 = r16;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2 = r0.k;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2.a();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2 = r0.getHeightPixels;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2.setDrawable();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r11 = new java.util.ArrayList;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r11.<init>();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r12 = r17.iterator();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
@@ -157,11 +157,11 @@ Error: java.lang.NullPointerException
         r2 = r6.getBook();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r2 = r2.getBookUuid();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r0 = r16;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2 = r0.b(r2);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2 = r0.getVisible(r2);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         if (r2 != 0) goto L_0x001c;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x0040:
         r0 = r16;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2 = r0.c(r6);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2 = r0.showAnimation(r6);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         if (r2 == 0) goto L_0x00bd;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x0048:
         r2 = java.lang.System.currentTimeMillis();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
@@ -169,10 +169,10 @@ Error: java.lang.NullPointerException
         r4 = r4.getPrice();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         if (r4 == 0) goto L_0x0068;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x0056:
-        r4 = com.duokan.reader.domain.cloud.DkUserPurchasedBooksManager.a();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r4 = com.duokan.reader.domain.cloud.DkUserPurchasedBooksManager.setDrawable();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r5 = r6.getBook();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r5 = r5.getBookUuid();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r4 = r4.a(r5);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r4 = r4.setDrawable(r5);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         if (r4 == 0) goto L_0x009b;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x0068:
         r2 = com.duokan.reader.domain.bookshelf.BookLimitType.NONE;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
@@ -183,23 +183,23 @@ Error: java.lang.NullPointerException
         r5 = com.duokan.reader.domain.bookshelf.BookType.NORMAL;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r7 = com.duokan.reader.domain.bookshelf.BookState.PULLING;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r0 = r16;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2 = r0.b(r2, r4, r5, r7);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2 = r0.getVisible(r2, r4, r5, r7);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r2 = (com.duokan.reader.domain.bookshelf.fv) r2;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2.a(r6, r3);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2.setDrawable(r6, r3);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x007e:
         r3 = "newbie";	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2.c(r3);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2.showAnimation(r3);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r3 = 0;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2.a(r3);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2.setDrawable(r3);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r0 = r16;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r0.e(r2);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r0.getScaledPagingTouchSlop(r2);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r11.add(r2);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         goto L_0x001c;
     L_0x0090:
         r2 = move-exception;
         r0 = r16;
-        r2 = r0.k;
-        r2.b();
+        r2 = r0.getHeightPixels;
+        r2.getVisible();
         r2 = r10;
         goto L_0x000b;
     L_0x009b:
@@ -208,9 +208,9 @@ Error: java.lang.NullPointerException
         r4 = (r4 > r2 ? 1 : (r4 == r2 ? 0 : -1));	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         if (r4 > 0) goto L_0x00b5;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x00a7:
-        r4 = com.duokan.reader.domain.cloud.bd.a();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r4 = r4.b();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r4 = r4.a;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r4 = com.duokan.reader.domain.cloud.bd.setDrawable();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r4 = r4.getVisible();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r4 = r4.setDrawable;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r2 = (r4 > r2 ? 1 : (r4 == r2 ? 0 : -1));	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         if (r2 <= 0) goto L_0x00b9;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x00b5:
@@ -222,10 +222,10 @@ Error: java.lang.NullPointerException
         r3 = r2;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         goto L_0x006b;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x00bd:
-        r2 = com.duokan.reader.domain.cloud.DkUserPurchasedBooksManager.a();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2 = com.duokan.reader.domain.cloud.DkUserPurchasedBooksManager.setDrawable();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r3 = r6.getBook();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r3 = r3.getBookUuid();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2 = r2.a(r3);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2 = r2.setDrawable(r3);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         if (r2 != 0) goto L_0x00d9;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x00cf:
         r2 = r6.getBook();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
@@ -234,9 +234,9 @@ Error: java.lang.NullPointerException
     L_0x00d9:
         r7 = r9;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x00da:
-        r2 = com.duokan.reader.domain.cloud.bd.a();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2 = r2.b();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2 = r2.a;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2 = com.duokan.reader.domain.cloud.bd.setDrawable();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2 = r2.getVisible();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2 = r2.setDrawable;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4 = java.lang.System.currentTimeMillis();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r2 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1));	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         if (r2 <= 0) goto L_0x01cf;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
@@ -249,7 +249,7 @@ Error: java.lang.NullPointerException
     L_0x00f1:
         r2 = new java.io.File;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r0 = r16;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r3 = r0.f;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r3 = r0.HttpLogger;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r3 = r3.getCloudBookDirectory();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4 = new java.lang.StringBuilder;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4.<init>();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
@@ -272,16 +272,16 @@ Error: java.lang.NullPointerException
         r8 = com.duokan.reader.domain.bookshelf.BookType.TRIAL;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r13 = com.duokan.reader.domain.bookshelf.BookState.CLOUD_ONLY;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r0 = r16;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2 = r0.a(r2, r4, r8, r13);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2 = r0.setDrawable(r2, r4, r8, r13);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r2 = (com.duokan.reader.domain.bookshelf.fv) r2;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4 = r6.getBook();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4 = r4.getBookUuid();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2.e(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2.a(r3);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2.getScaledPagingTouchSlop(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2.setDrawable(r3);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4 = r6.getRevision();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2.f(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2.HttpLogger(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r14 = java.lang.System.currentTimeMillis();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2.a(r14);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2.setDrawable(r14);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4 = r6.getBook();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4 = r4.getTitle();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r2.o(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
@@ -291,28 +291,28 @@ Error: java.lang.NullPointerException
     L_0x016a:
         r4 = com.duokan.reader.domain.bookshelf.BookType.NORMAL;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x016c:
-        r2.a(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2.setDrawable(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         if (r5 == 0) goto L_0x020e;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x0171:
         r4 = com.duokan.reader.domain.bookshelf.BookLimitType.TIME;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x0173:
-        r2.a(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2.setDrawable(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4 = r6.getBook();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4 = r4.isFree();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         if (r4 == 0) goto L_0x0218;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x0180:
         r4 = r10;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x0181:
-        r2.a(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2.setDrawable(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4 = r6.getBook();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4 = r4.getNameLine();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2.d(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2.getScaledTouchSlop(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r0 = r16;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r4 = r0.b(r6);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2.a(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r4 = r0.getVisible(r6);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2.setDrawable(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4 = r6.getBook();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4 = r4.getCoverUri();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2.b(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2.getVisible(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         if (r7 != 0) goto L_0x01a7;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x01a5:
         if (r5 == 0) goto L_0x0222;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
@@ -325,13 +325,13 @@ Error: java.lang.NullPointerException
         r13 = 1;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r13 = java.lang.Boolean.valueOf(r13);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r8.<init>(r13);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2.a(r3, r4, r5, r6, r7, r8);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2.setDrawable(r3, r4, r5, r6, r7, r8);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         goto L_0x007e;
     L_0x01c3:
         r2 = move-exception;
         r0 = r16;
-        r3 = r0.k;
-        r3.b();
+        r3 = r0.getHeightPixels;
+        r3.getVisible();
         throw r2;
     L_0x01cc:
         r7 = r10;
@@ -342,7 +342,7 @@ Error: java.lang.NullPointerException
     L_0x01d2:
         r2 = new java.io.File;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r0 = r16;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r3 = r0.f;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r3 = r0.HttpLogger;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r3 = r3.getCloudBookDirectory();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4 = new java.lang.StringBuilder;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4.<init>();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
@@ -382,7 +382,7 @@ Error: java.lang.NullPointerException
         r13 = 1;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r13 = java.lang.Boolean.valueOf(r13);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r8.<init>(r13);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r2.a(r3, r4, r5, r6, r7, r8);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r2.setDrawable(r3, r4, r5, r6, r7, r8);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         goto L_0x007e;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x023e:
         r3 = r2 instanceof com.duokan.reader.domain.store.DkStoreFictionDetail;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
@@ -392,17 +392,17 @@ Error: java.lang.NullPointerException
         r3 = r2.getFiction();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4 = r3.getBookUuid();	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r0 = r16;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r3 = r0.b(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r3 = r0.getVisible(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r3 = (com.duokan.reader.domain.bookshelf.ej) r3;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         if (r3 == 0) goto L_0x0261;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x0256:
-        r5 = r3.b(r2);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r5 = r3.getVisible(r2);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         if (r5 == 0) goto L_0x0261;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x025c:
-        r3.c(r2);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r3.showAnimation(r2);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         goto L_0x001c;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x0261:
-        r3 = com.duokan.reader.domain.bookshelf.c.n(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r3 = com.duokan.reader.domain.bookshelf.showAnimation.n(r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         if (r3 == 0) goto L_0x028b;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x0267:
         r3 = com.duokan.reader.domain.bookshelf.BookFormat.SBK;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
@@ -411,14 +411,14 @@ Error: java.lang.NullPointerException
         r5 = com.duokan.reader.domain.bookshelf.BookType.SERIAL;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r6 = com.duokan.reader.domain.bookshelf.BookState.NORMAL;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r0 = r16;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r3 = r0.b(r3, r4, r5, r6);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r3 = r0.getVisible(r3, r4, r5, r6);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r3 = (com.duokan.reader.domain.bookshelf.ej) r3;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r4 = com.duokan.reader.domain.bookshelf.BookLimitType.CONTENT;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r3.a(r2, r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r3.setDrawable(r2, r4);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r2 = "newbie";	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r3.c(r2);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r3.showAnimation(r2);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r0 = r16;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r0.e(r3);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r0.getScaledPagingTouchSlop(r3);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r11.add(r3);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         goto L_0x001c;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x028b:
@@ -430,15 +430,15 @@ Error: java.lang.NullPointerException
     L_0x0294:
         r2 = "";	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
         r0 = r16;	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
-        r0.a(r2, r11);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
+        r0.setDrawable(r2, r11);	 Catch:{ Throwable -> 0x0090, all -> 0x01c3 }
     L_0x029b:
         r0 = r16;
-        r2 = r0.k;
-        r2.b();
+        r2 = r0.getHeightPixels;
+        r2.getVisible();
         r2 = r9;
         goto L_0x000b;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.bookshelf.hi.c(java.util.List):boolean");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.bookshelf.hi.showAnimation(java.util.List):boolean");
     }
 
     protected hi(Context context, ReaderEnv readerEnv, f fVar, i iVar, a aVar, DkCloudStorage dkCloudStorage, b bVar) {
@@ -2260,14 +2260,14 @@ Error: java.lang.NullPointerException
         return a(new hm(this));
     }
 
-    private ArrayList a(com.duokan.core.c.b bVar) {
+    private ArrayList a(IRunTask bVar) {
         ArrayList arrayList = new ArrayList();
         arrayList.addAll(this.h.values());
         ArrayList arrayList2 = new ArrayList();
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {
             c cVar = (c) it.next();
-            if (bVar.a(cVar)) {
+            if (bVar.isRunTask(cVar)) {
                 arrayList2.add(cVar);
             }
         }

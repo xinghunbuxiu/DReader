@@ -11,11 +11,10 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 
-import com.duokan.c.g;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.af;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.document.ab;
@@ -67,18 +66,18 @@ abstract class si extends hd {
 
     protected abstract View d();
 
-    public si(y yVar, sh shVar, wl wlVar) {
-        super(yVar);
+    public si(IFeature featrue, sh shVar, wl wlVar) {
+        super(featrue);
         this.a = shVar;
         this.b = wlVar;
         this.k = this.b.findViewById(g.reading__reading_view__search_panel);
         this.e = a();
         this.f = new xz(getContext(), new sj(this));
         this.i = new ss();
-        this.o = new TextSelectionController(yVar, this.a, this.b, this.i);
+        this.o = new TextSelectionController(featrue, this.a, this.b, this.i);
         this.j = new ls(getContext(), this.a, this.b);
         this.h = new mx(getContext(), this.b);
-        this.g = new ai(yVar, this.a, this.b);
+        this.g = new ai(featrue, this.a, this.b);
         a(new j(this.a));
         this.p = new aar(getContext(), this.a, this.b);
         a(new com.duokan.reader.ui.reading.a.g());
@@ -215,7 +214,7 @@ abstract class si extends hd {
             this.a.d(a.a);
         }
         this.k.setVisibility(0);
-        dv.b(this.k, null);
+        UTools.closeAnimation(this.k, null);
         this.a.a(0, 128);
     }
 
@@ -225,7 +224,7 @@ abstract class si extends hd {
             this.a.b(a.a, DecorDrawableStyle.SELECTION_HIGHLIGHT_RECT);
         }
         this.k.setVisibility(8);
-        dv.c(this.k, null);
+        UTools.showAnimation(this.k, null);
         this.a.a(128, 0);
     }
 
@@ -362,8 +361,8 @@ abstract class si extends hd {
         }
         this.c = true;
         showPopup(this.e);
-        dv.e(c(), null);
-        dv.d(b(), null);
+        UTools.getScaledPagingTouchSlop(c(), null);
+        UTools.getScaledTouchSlop(b(), null);
         a(d(), 0.0f, 1.0f, 200, 200);
         if (this.e instanceof hq) {
             a(((hq) this.e).d(), 0.0f, 1.0f, 200, 200);
@@ -387,9 +386,9 @@ abstract class si extends hd {
         return this.c;
     }
 
-    protected boolean onRequestDetach(e eVar) {
-        if (!eVar.contains(this.e)) {
-            return super.onRequestDetach(eVar);
+    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
+        if (!activatedControllerVar.contains(this.e)) {
+            return super.onRequestDetach(activatedControllerVar);
         }
         if (this.e.getContentView().getAnimation() == null) {
             if (k() && ReaderEnv.get().forHd()) {
@@ -404,9 +403,9 @@ abstract class si extends hd {
                 ((on) this.e).d().setVisibility(4);
             }
             if (b().getVisibility() == 0) {
-                dv.f(b(), null);
+                UTools.f(b(), null);
             }
-            dv.g(c(), new sp(this));
+            UTools.g(c(), new sp(this));
         }
         return true;
     }

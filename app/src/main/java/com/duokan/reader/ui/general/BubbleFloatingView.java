@@ -11,7 +11,6 @@ import android.view.animation.AnimationSet;
 import android.view.animation.OvershootInterpolator;
 import android.view.animation.ScaleAnimation;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 
 import org.apache.http.HttpStatus;
 

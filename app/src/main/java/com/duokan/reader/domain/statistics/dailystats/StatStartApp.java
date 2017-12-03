@@ -13,7 +13,7 @@ public class StatStartApp extends StatEventBase {
         try {
             jSONObject.put("ev", this.event);
             jSONObject.put("cold", this.isStartedFromCold);
-            String str = "t";
+            String str = "TaskHandler";
             if (this.startTime >= 0) {
                 j = this.startTime;
             }

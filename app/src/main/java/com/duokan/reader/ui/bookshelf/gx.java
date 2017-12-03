@@ -4,8 +4,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.duokan.core.app.y;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.hd;
 
 import org.apache.http.HttpStatus;
@@ -19,8 +19,8 @@ public class gx extends hd {
     private boolean f = false;
     private boolean g = true;
 
-    public gx(y yVar) {
-        super(yVar);
+    public gx(IFeature featrue) {
+        super(featrue);
         View haVar = new ha(this, getContext());
         setContentView(haVar);
         LayoutInflater.from(getContext()).inflate(g.bookshelf__menu_down_view, haVar, true);
@@ -70,8 +70,8 @@ public class gx extends hd {
             return true;
         }
         this.f = true;
-        dv.a(a(), 0.0f, 0.0f, 0.0f, -1.0f, HttpStatus.SC_OK, true, new gz(this));
-        dv.a(b(), 1.0f, 0.0f, (int) HttpStatus.SC_OK, true, null);
+        UTools.addAnimation(a(), 0.0f, 0.0f, 0.0f, -1.0f, HttpStatus.SC_OK, true, new gz(this));
+        UTools.addAnimation(b(), 1.0f, 0.0f, (int) HttpStatus.SC_OK, true, null);
         return true;
     }
 

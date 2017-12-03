@@ -3,7 +3,7 @@ package com.duokan.reader.ui.personal;
 import android.text.TextUtils;
 
 import com.duokan.common.FileTypeRecognizer.FileType;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.cloud.DkCloudAnnotation;
 import com.duokan.reader.domain.cloud.DkCloudNoteBookInfo;
 import com.duokan.reader.domain.cloud.DkUserReadingNotesManager;
@@ -18,8 +18,8 @@ public class mh extends my implements fl {
     private ArrayList c;
     private final mk d = new mk();
 
-    public mh(y yVar) {
-        super(yVar, true);
+    public mh(IFeature featrue) {
+        super(featrue, true);
         this.a.getNoteSummaryListView().setOnItemClickListener(new mi(this));
         setContentView(this.a);
         this.a.getNoteSummaryListView().setAdapter(this.d);

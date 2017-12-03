@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.general;
 
-public interface do {
-    void a();
+public interface do{
+        void a();
 
-    void a(String str);
-}
+        void a(String str);
+        }

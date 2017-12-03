@@ -7,10 +7,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.duokan.c.d;
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.cloud.DkUserReadBookManager;
 import com.duokan.reader.domain.cloud.DkUserReadBookManager.ReadBook;
@@ -42,7 +39,7 @@ public class hl extends nm {
         this.k = Calendar.getInstance();
         this.k.set(2015, 6, 1);
         this.t = false;
-        this.r = (ReaderFeature) x.a(context).queryFeature(ReaderFeature.class);
+        this.r = (ReaderFeature) MyContextWrapper.getFeature(context).queryFeature(ReaderFeature.class);
         this.q = moVar;
         this.b.setTitleTextColor(getResources().getColor(d.general__shared__ffffff));
         this.b.setBackgroundColor(getResources().getColor(d.general__shared__1b314a));

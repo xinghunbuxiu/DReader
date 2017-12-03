@@ -7,9 +7,9 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.ui.general.BookCoverView;
@@ -22,13 +22,13 @@ public class pw extends wk {
     private final View e;
     private final View f;
     private final FrameLayout g;
-    private e h = null;
+    private ActivatedController h = null;
 
-    public pw(y yVar) {
+    public pw(IFeature featruer) {
         int i;
-        super(yVar);
+        super(featruer);
         ViewGroup viewGroup = (ViewGroup) LayoutInflater.from(getContext()).inflate(this.a.am() ? h.reading__reading_comic_more_horizontal_view : h.reading__reading_comic_more_vertical_view, null);
-        viewGroup.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? dv.b(getContext(), 240.0f) : -1, -2));
+        viewGroup.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? UTools.closeAnimation(getContext(), 240.0f) : -1, -2));
         setContentView((View) viewGroup);
         this.f = findViewById(g.reading__reading_comic_more_view);
         this.g = (FrameLayout) findViewById(g.reading__reading_comic_more_view__sub_menu_frame);

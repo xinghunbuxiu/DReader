@@ -4,7 +4,7 @@ import android.content.Intent;
 
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
@@ -13,7 +13,6 @@ import com.duokan.reader.domain.account.a;
 import com.duokan.reader.domain.account.h;
 import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.cloud.push.MessageWakeupListener;
-import com.duokan.reader.domain.cloud.push.MessageWakeupListener.MessageSubType;
 import com.duokan.reader.domain.cloud.push.b;
 
 import java.util.LinkedList;
@@ -104,7 +103,7 @@ public class d implements ah, h, MessageWakeupListener {
     }
 
     private void e() {
-        t.a(new f(this));
+        TaskHandler.postTask(new f(this));
     }
 
     private void a(MiAccount miAccount) {

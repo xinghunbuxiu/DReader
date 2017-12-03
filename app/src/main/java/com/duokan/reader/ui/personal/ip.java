@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.cloud.fp;
 import com.duokan.reader.ui.bookshelf.gp;
@@ -14,8 +14,8 @@ public class ip extends hd implements gr {
     private final nf b;
     private final gp c = new gp(getContext());
 
-    public ip(y yVar, boolean z) {
-        super(yVar);
+    public ip(IFeature featrue, boolean z) {
+        super(featrue);
         this.b = new nf(getContext(), z);
         this.b.getRedeemView().setOnItemClickListener(new iq(this));
         setContentView(this.b);

@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.e;
+import com.duokan.core.app.ActivatedController;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.ui.general.web.StorePageController;
 
@@ -17,8 +17,8 @@ class fq implements Callable {
         return a();
     }
 
-    public e a() {
-        e createWebPage = StorePageController.createWebPage(this.a.a.getContext());
+    public ActivatedController a() {
+        ActivatedController createWebPage = StorePageController.createWebPage(this.a.a.getContext());
         createWebPage.loadUrl(p.i().B());
         return createWebPage;
     }

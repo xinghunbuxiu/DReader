@@ -1,7 +1,5 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.common.bitmap.a;
-
 class aw implements Runnable {
     final /* synthetic */ aq a;
 

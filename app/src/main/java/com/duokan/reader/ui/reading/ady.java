@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.reading;
 
 import com.duokan.core.sys.ag;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.as;
 
@@ -18,7 +18,7 @@ class ady implements ag {
 
     public void a(as asVar) {
         aej com_duokan_reader_ui_reading_aej;
-        a aVar = null;
+        Document_a aVar = null;
         if (asVar != null) {
             com_duokan_reader_ui_reading_aej = new aej();
             com_duokan_reader_ui_reading_aej.a = this.a;

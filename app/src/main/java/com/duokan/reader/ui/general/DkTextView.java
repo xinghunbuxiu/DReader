@@ -10,7 +10,6 @@ import android.text.TextUtils.TruncateAt;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
-import android.view.View.MeasureSpec;
 
 public class DkTextView extends View implements Callback {
     private final bd a;

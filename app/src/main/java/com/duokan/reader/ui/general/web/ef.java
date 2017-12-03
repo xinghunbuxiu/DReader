@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.general.web;
 
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.as;
-import com.duokan.core.sys.t;
 import com.duokan.reader.common.i;
 
 import org.json.JSONObject;
@@ -25,9 +25,9 @@ class ef implements as {
         Boolean valueOf = Boolean.valueOf(jSONObject.optBoolean("multi", true));
         a egVar = new eg(this, string);
         if (valueOf.booleanValue()) {
-            t.a(new eh(this, b2, b3, b, egVar));
+            TaskHandler.postTask(new eh(this, b2, b3, b, egVar));
         } else {
-            t.a(new el(this, b, b3, b2, egVar));
+            TaskHandler.postTask(new el(this, b, b3, b2, egVar));
         }
     }
 }

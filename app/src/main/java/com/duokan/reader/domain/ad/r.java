@@ -31,7 +31,7 @@ public class r {
             } else {
                 i = 0;
             }
-            Intent intent = new Intent("miui.intent.action.ad.LANDING_PAGE_SERVICE");
+            Intent intent = new Intent("miui.intent.action.MyTask.LANDING_PAGE_SERVICE");
             intent.setPackage("com.miui.systemAdSolution");
             ServiceConnection sVar = new s(this);
             if (i < DkApp.get().supportAdSdkVersion() || !DkApp.get().bindService(intent, sVar, 1)) {

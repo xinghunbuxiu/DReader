@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.ui.bookshelf.FileScanTask.ErrorCode;
 
 import java.util.List;
@@ -14,7 +14,7 @@ class ft implements gm {
 
     public void a(gt gtVar) {
         this.a.c = this.a.a(gtVar);
-        t.a(new fu(this));
+        TaskHandler.postTask(new fu(this));
     }
 
     public void a(List list, ErrorCode errorCode) {

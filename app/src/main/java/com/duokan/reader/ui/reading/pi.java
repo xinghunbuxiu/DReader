@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.m;
+import com.duokan.core.app.BaseActivity;
 import com.duokan.reader.DkApp;
 
 class pi implements Runnable {
@@ -12,6 +12,6 @@ class pi implements Runnable {
 
     public void run() {
         this.a.d.setThumbEnabled(true);
-        ((m) DkApp.get().getTopActivity()).addOnScreenRotationChangedListener(this.a.m);
+        ((BaseActivity) DkApp.get().getTopActivity()).addOnScreenRotationChangedListener(this.a.m);
     }
 }

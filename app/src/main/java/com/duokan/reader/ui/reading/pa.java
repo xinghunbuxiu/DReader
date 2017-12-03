@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.view.View;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class pa extends View {
     final /* synthetic */ ow a;
@@ -18,10 +18,10 @@ class pa extends View {
     }
 
     protected void onDraw(Canvas canvas) {
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         rect.set(0, 0, this.b.f.width(), this.b.f.height());
         canvas.drawBitmap(this.b.d, this.b.f, rect, null);
-        dv.g.a(rect);
+        UTools.g.getRect(rect);
     }
 
     protected void onMeasure(int i, int i2) {

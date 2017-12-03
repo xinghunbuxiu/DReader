@@ -10,15 +10,14 @@ import android.graphics.PorterDuff.Mode;
 import android.graphics.PorterDuffXfermode;
 import android.view.View;
 
-import com.duokan.core.ui.dv;
-import com.duokan.reader.common.bitmap.a;
+import com.duokan.core.ui.UTools;
 
 public class lr extends View {
     private final Bitmap a = a.a(getContext(), f.reading__shared__magnifier);
     private final Bitmap b = a.a(getContext(), f.reading__shared__magnifier_mask);
     private final Bitmap c = a.b(this.a.getWidth(), this.a.getHeight(), Config.ARGB_8888);
-    private final int d = dv.b(getContext(), 115.0f);
-    private final int e = dv.b(getContext(), 100.0f);
+    private final int d = UTools.closeAnimation(getContext(), 115.0f);
+    private final int e = UTools.closeAnimation(getContext(), 100.0f);
     private final Canvas f = new Canvas(this.c);
     private final Paint g = new Paint();
     private View h;

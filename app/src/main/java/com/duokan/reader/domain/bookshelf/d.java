@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.domain.document.av;
 
 class d implements y {
@@ -22,7 +22,7 @@ class d implements y {
     }
 
     public void b(c cVar, boolean z) {
-        t.b(new e(this));
+        TaskHandler.PostTask(new e(this));
     }
 
     public void b(c cVar, String str) {

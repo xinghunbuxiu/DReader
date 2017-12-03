@@ -3,8 +3,8 @@ package com.duokan.reader.ui.bookshelf;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.duokan.core.app.y;
-import com.duokan.core.sys.t;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.a.a;
@@ -44,8 +44,8 @@ public abstract class iv extends jp {
 
     protected abstract void d();
 
-    public iv(y yVar) {
-        super(yVar);
+    public iv(IFeature featrue) {
+        super(featrue);
     }
 
     protected void onActive(boolean z) {
@@ -185,7 +185,7 @@ public abstract class iv extends jp {
                 }
                 file.renameTo(new File(ReaderEnv.get().getWiFiDirectory(), uri));
                 ai.a().a(r4);
-                t.a(new ja(this));
+                TaskHandler.postTask(new ja(this));
                 this.a.c = 1.0f;
                 this.a = null;
                 i();

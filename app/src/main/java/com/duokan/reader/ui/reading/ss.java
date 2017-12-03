@@ -15,9 +15,9 @@ import android.view.View;
 
 import com.duokan.c.j;
 import com.duokan.core.app.BrightnessMode;
-import com.duokan.core.app.e;
+import com.duokan.core.app.ActivatedController;
 import com.duokan.core.sys.o;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.kernel.DkUtils;
 import com.duokan.reader.ReaderEnv;
@@ -27,6 +27,7 @@ import com.duokan.reader.domain.bookshelf.a;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.bookshelf.ef;
 import com.duokan.reader.domain.bookshelf.eg;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ab;
 import com.duokan.reader.domain.document.ae;
 import com.duokan.reader.domain.document.ah;
@@ -85,7 +86,7 @@ class ss implements ac, af, an, aq, i, n, q, t, acv, yn {
         if (f.e()) {
             gsVar.a(((Integer) pair.second).intValue(), new ColorDrawable(-16777216));
         }
-        this.a.j.a(f, dv.b(new Rect(rect), (View) pair.first, this.a.b), new st(this, f, gsVar, pair, a));
+        this.a.j.a(f, UTools.closeAnimation(new Rect(rect), (View) pair.first, this.a.b), new st(this, f, gsVar, pair, a));
         this.a.a.v().setScreenTimeout(Integer.MAX_VALUE);
     }
 
@@ -96,7 +97,7 @@ class ss implements ac, af, an, aq, i, n, q, t, acv, yn {
             if (TextUtils.equals("text/html", aeVar.a()) && aeVar.b().endsWith(".zip")) {
                 InputStream bufferedInputStream = new BufferedInputStream(this.a.a.getDocument().a(aeVar.b()), 8192);
                 File file = new File(ReaderEnv.get().getReadingCacheDirectory(), o.b(aeVar.b(), "md5") + ".lnktar");
-                e storePageController = new StorePageController(this.a.getContext());
+                ActivatedController storePageController = new StorePageController(this.a.getContext());
                 storePageController.setTransparent(true);
                 ((ReaderFeature) this.a.getContext().queryFeature(ReaderFeature.class)).showPopup(storePageController);
                 com.duokan.core.sys.ah.b(new su(this, file, bufferedInputStream, storePageController));
@@ -127,7 +128,7 @@ class ss implements ac, af, an, aq, i, n, q, t, acv, yn {
     public void a(Pair pair) {
         ab e = ((gs) pair.first).getPageDrawable().e(((Integer) pair.second).intValue());
         this.a.a.aU();
-        this.a.a(new sw(this)).a(dv.b(new Rect(((gs) pair.first).getPageDrawable().i(((Integer) pair.second).intValue())), (View) pair.first), e);
+        this.a.a(new sw(this)).a(UTools.closeAnimation(new Rect(((gs) pair.first).getPageDrawable().i(((Integer) pair.second).intValue())), (View) pair.first), e);
     }
 
     public void a(er erVar, View view, a aVar, Rect rect) {
@@ -199,7 +200,7 @@ class ss implements ac, af, an, aq, i, n, q, t, acv, yn {
         efVar.a(str);
         efVar.e(str2);
         efVar.a(eg.a().b());
-        bb bbVar2 = (bb) this.a.a.getDocument().c((com.duokan.reader.domain.document.a) bbVar);
+        bb bbVar2 = (bb) this.a.a.getDocument().c((Document_a) bbVar);
         efVar.a(bbVar2.g());
         efVar.b(bbVar2.h());
         this.a.a.b(efVar);
@@ -209,7 +210,7 @@ class ss implements ac, af, an, aq, i, n, q, t, acv, yn {
     public void a(av avVar, String str) {
         h h = this.a.a.getDocument().h();
         String a = h.a();
-        g b = h.b((com.duokan.reader.domain.document.a) avVar);
+        g b = h.b((Document_a) avVar);
         if (b != null) {
             a = b.e();
         }

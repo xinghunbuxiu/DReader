@@ -14,6 +14,7 @@ import com.duokan.kernel.DkUtils;
 import com.duokan.kernel.epublib.DkeBook;
 import com.duokan.kernel.epublib.DkePage;
 import com.duokan.kernel.epublib.DkeResourceDescriptor;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.FootnoteStyle;
 import com.duokan.reader.domain.document.WritingDirection;
 import com.duokan.reader.domain.document.aa;
@@ -413,14 +414,14 @@ public class s extends n implements at {
 
     public float j(ak akVar) {
         a.c().b(A());
-        if (!d((com.duokan.reader.domain.document.a) akVar) || !akVar.e()) {
+        if (!d((Document_a) akVar) || !akVar.e()) {
             return 0.0f;
         }
         float f;
         float max;
         long chapterPackSize;
         e eVar = this.k;
-        ak akVar2 = (ak) c((com.duokan.reader.domain.document.a) akVar);
+        ak akVar2 = (ak) c((Document_a) akVar);
         c cVar = (c) akVar2.g();
         c cVar2 = (c) akVar2.h();
         long g = cVar.g();
@@ -456,7 +457,7 @@ public class s extends n implements at {
 
     public long b(ak akVar) {
         a.c().b(A());
-        if (!d((com.duokan.reader.domain.document.a) akVar) || !akVar.e()) {
+        if (!d((Document_a) akVar) || !akVar.e()) {
             return -1;
         }
         c cVar = (c) akVar.g();
@@ -515,7 +516,7 @@ public class s extends n implements at {
         }
         ay ayVar = (ay) akVar;
         EpubTypesettingContext j = ayVar.j();
-        if (ayVar.b() || j == L || d((com.duokan.reader.domain.document.a) ayVar)) {
+        if (ayVar.b() || j == L || d((Document_a) ayVar)) {
             return new h(L, ayVar, 0);
         }
         return null;
@@ -526,7 +527,7 @@ public class s extends n implements at {
         return new ay(L(), D() - 1, Long.MAX_VALUE, 0, -1);
     }
 
-    public com.duokan.reader.domain.document.a c(com.duokan.reader.domain.document.a aVar) {
+    public Document_a c(Document_a aVar) {
         a.c().b(A());
         a.c().b(aVar != null);
         if (!p()) {
@@ -607,7 +608,7 @@ public class s extends n implements at {
             if (akVar instanceof h) {
                 h hVar = (h) akVar;
                 j = hVar.j().j();
-                if (hVar.b() || j == L || d((com.duokan.reader.domain.document.a) hVar)) {
+                if (hVar.b() || j == L || d((Document_a) hVar)) {
                     return new h(L, hVar, (long) i);
                 }
                 return null;
@@ -616,7 +617,7 @@ public class s extends n implements at {
             } else {
                 ay ayVar = (ay) akVar;
                 j = ayVar.j();
-                if (ayVar.b() || j == L || d((com.duokan.reader.domain.document.a) ayVar)) {
+                if (ayVar.b() || j == L || d((Document_a) ayVar)) {
                     return new ay(L, ayVar, (long) i);
                 }
                 return null;
@@ -644,7 +645,7 @@ public class s extends n implements at {
                 }
                 return z;
             }
-            if (!(d((com.duokan.reader.domain.document.a) akVar) && akVar.e() && h(akVar))) {
+            if (!(d((Document_a) akVar) && akVar.e() && h(akVar))) {
                 z = false;
             }
             return z;
@@ -677,7 +678,7 @@ public class s extends n implements at {
             } else if (akVar.b == D() - 1 && akVar.e == Long.MAX_VALUE && akVar.g == -1) {
                 return true;
             } else {
-                if (!(d((com.duokan.reader.domain.document.a) akVar) && akVar.e() && i(akVar))) {
+                if (!(d((Document_a) akVar) && akVar.e() && i(akVar))) {
                     z = false;
                 }
                 return z;
@@ -685,7 +686,7 @@ public class s extends n implements at {
         }
     }
 
-    public boolean d(com.duokan.reader.domain.document.a aVar) {
+    public boolean d(Document_a aVar) {
         a.c().b(A());
         if (!i && aVar == null) {
             throw new AssertionError();
@@ -727,7 +728,7 @@ public class s extends n implements at {
         a.c().b(A());
         if (i || akVar != null) {
             au G = mVar == null ? G() : (au) mVar;
-            d((com.duokan.reader.domain.document.a) akVar);
+            d((Document_a) akVar);
             EpubTypesettingContext L = L();
             if (akVar instanceof h) {
                 return new i(L, (h) akVar, G, this.g, this);
@@ -1011,14 +1012,14 @@ public class s extends n implements at {
         r2 = r0.l;	 Catch:{ all -> 0x003b }
         r2 = r2.getFirst();	 Catch:{ all -> 0x003b }
         r0 = r2;
-        r0 = (com.duokan.reader.domain.document.epub.ad) r0;	 Catch:{ all -> 0x003b }
+        r0 = (com.duokan.reader.domain.document.epub.MyTask) r0;	 Catch:{ all -> 0x003b }
         r4 = r0;
-        r2 = r4.c;	 Catch:{ all -> 0x003b }
+        r2 = r4.showAnimation;	 Catch:{ all -> 0x003b }
         if (r2 == 0) goto L_0x002a;
     L_0x001f:
         monitor-exit(r16);	 Catch:{ all -> 0x003b }
         r16.P();
-        r16.x();
+        r16.MyContextWrapper();
     L_0x0026:
         return;
     L_0x0027:
@@ -1029,10 +1030,10 @@ public class s extends n implements at {
         monitor-exit(r16);	 Catch:{ all -> 0x003b }
         if (r6 == r4) goto L_0x04f6;
     L_0x002d:
-        r2 = i;
+        r2 = getPhysicalYPixels;
         if (r2 != 0) goto L_0x003e;
     L_0x0031:
-        r2 = r4.b;
+        r2 = r4.getVisible;
         if (r2 == 0) goto L_0x003e;
     L_0x0035:
         r2 = new java.lang.AssertionError;
@@ -1046,63 +1047,63 @@ public class s extends n implements at {
         if (r6 == 0) goto L_0x0043;
     L_0x0040:
         r2 = 0;
-        r6.b = r2;
+        r6.getVisible = r2;
     L_0x0043:
-        r2 = r4.i();
+        r2 = r4.getPhysicalYPixels();
         if (r2 != 0) goto L_0x0059;
     L_0x0049:
         r0 = r16;
-        r3 = r0.j;
+        r3 = r0.getWidthPixels;
         if (r6 != 0) goto L_0x00be;
     L_0x004f:
         r2 = 0;
     L_0x0050:
         r0 = r16;
-        r2 = r3.a(r0, r2);
-        r4.a(r2);
+        r2 = r3.setDrawable(r0, r2);
+        r4.setDrawable(r2);
     L_0x0059:
         if (r6 != 0) goto L_0x00c8;
     L_0x005b:
-        r2 = r4.i();
+        r2 = r4.getPhysicalYPixels();
         r0 = r16;
-        r2 = r0.a(r2);
+        r2 = r0.setDrawable(r2);
         r0 = r16;
-        r0.k = r2;
+        r0.getHeightPixels = r2;
         r0 = r16;
-        r2 = r0.k;
+        r2 = r0.getHeightPixels;
         if (r2 == 0) goto L_0x00c3;
     L_0x006f:
         r0 = r16;
-        r2 = r0.k;
+        r2 = r0.getHeightPixels;
         r4.p = r2;
         r16.u();
         r2 = 0;
         r2 = (long[][]) r2;
         r0 = r16;
-        r3 = r0.t;
+        r3 = r0.TaskHandler;
         r3.start();
         r5 = r2;
     L_0x0084:
         r0 = r16;
-        r2 = r0.k;
+        r2 = r0.getHeightPixels;
         r8 = r4.p;
         r0 = r16;
-        r0.k = r8;
+        r0.getHeightPixels = r8;
         r0 = r16;
-        r3 = r0.k;
+        r3 = r0.getHeightPixels;
         r3 = r2.equals(r3);
         if (r3 != 0) goto L_0x00a4;
     L_0x009a:
-        r3 = new com.duokan.reader.domain.document.epub.w;
+        r3 = new com.duokan.reader.domain.document.epub.IActivityRunStatusChanged;
         r0 = r16;
         r3.<init>(r0, r2);
-        com.duokan.core.sys.t.a(r3);
+        com.duokan.core.sys.TaskHandler.setDrawable(r3);
     L_0x00a4:
-        r2 = r4.j();
-        r9 = r2.j;
-        r2 = com.duokan.reader.domain.document.epub.ah.e();
-        r10 = r2.d();
-        r2 = i;
+        r2 = r4.getWidthPixels();
+        r9 = r2.getWidthPixels;
+        r2 = com.duokan.reader.domain.document.epub.ah.getScaledPagingTouchSlop();
+        r10 = r2.getScaledTouchSlop();
+        r2 = getPhysicalYPixels;
         if (r2 != 0) goto L_0x02b5;
     L_0x00b6:
         if (r10 != 0) goto L_0x02b5;
@@ -1111,36 +1112,36 @@ public class s extends n implements at {
         r2.<init>();
         throw r2;
     L_0x00be:
-        r2 = r6.i();
+        r2 = r6.getPhysicalYPixels();
         goto L_0x0050;
     L_0x00c3:
         r16.v();
         goto L_0x0026;
     L_0x00c8:
-        r2 = r4.i();
-        r3 = r6.i();
+        r2 = r4.getPhysicalYPixels();
+        r3 = r6.getPhysicalYPixels();
         if (r2 == r3) goto L_0x02a3;
     L_0x00d2:
         r2 = r6.p;
         r2 = (com.duokan.reader.domain.document.epub.ab) r2;
-        r5 = r2.h();
-        r3 = r4.i();
+        r5 = r2.getPhysicalXPixels();
+        r3 = r4.getPhysicalYPixels();
         r3 = r3 instanceof com.duokan.reader.domain.document.epub.al;
         if (r3 == 0) goto L_0x0194;
     L_0x00e4:
-        r2 = r2.c;
+        r2 = r2.showAnimation;
         r2 = (com.duokan.reader.domain.document.epub.al) r2;
-        r8 = r2.b;
-        r2 = r4.i();
+        r8 = r2.getVisible;
+        r2 = r4.getPhysicalYPixels();
         r2 = (com.duokan.reader.domain.document.epub.al) r2;
-        r9 = r2.b;
-        r2 = r9.a(r8);
+        r9 = r2.getVisible;
+        r2 = r9.setDrawable(r8);
         r3 = 2;
         if (r2 != r3) goto L_0x0128;
     L_0x00fb:
-        r2 = r4.i();
+        r2 = r4.getPhysicalYPixels();
         r0 = r16;
-        r2 = r0.a(r2);
+        r2 = r0.setDrawable(r2);
         if (r2 == 0) goto L_0x0110;
     L_0x0107:
         r4.p = r2;
@@ -1150,45 +1151,45 @@ public class s extends n implements at {
         r5 = r2;
         goto L_0x0084;
     L_0x0110:
-        r2 = com.duokan.core.diagnostic.a.c();
+        r2 = com.duokan.core.diagnostic.setDrawable.showAnimation();
         r3 = 0;
-        r2.b(r3);
+        r2.getVisible(r3);
         r2 = r6.p;
         r4.p = r2;
-        r2 = r4.j();
-        r2 = r6.a(r2);
+        r2 = r4.getWidthPixels();
+        r2 = r6.setDrawable(r2);
         goto L_0x010d;
     L_0x0128:
         r3 = 1;
         if (r2 != r3) goto L_0x0183;
     L_0x012b:
         r3 = new com.duokan.reader.domain.document.epub.ab;
-        r10 = r4.i();
-        r2 = r4.i();
+        r10 = r4.getPhysicalYPixels();
+        r2 = r4.getPhysicalYPixels();
         r2 = (com.duokan.reader.domain.document.epub.al) r2;
-        r2 = r2.b;
-        r2 = com.duokan.reader.domain.document.epub.ai.a(r2);
+        r2 = r2.getVisible;
+        r2 = com.duokan.reader.domain.document.epub.ai.setDrawable(r2);
         r0 = r16;
         r3.<init>(r0, r10, r5, r2);
         r4.p = r3;
-        r2 = r4.j();
-        r3 = r6.a(r2);
+        r2 = r4.getWidthPixels();
+        r3 = r6.setDrawable(r2);
         if (r3 == 0) goto L_0x04f8;
     L_0x014f:
         r2 = 0;
     L_0x0150:
-        r10 = r9.a();
+        r10 = r9.setDrawable();
         if (r2 >= r10) goto L_0x0181;
     L_0x0156:
-        r10 = r9.a(r2);
-        r11 = r10.c();
-        r12 = r8.a(r2);
-        r12 = r12.c();
+        r10 = r9.setDrawable(r2);
+        r11 = r10.showAnimation();
+        r12 = r8.setDrawable(r2);
+        r12 = r12.showAnimation();
         r11 = android.text.TextUtils.equals(r11, r12);
         if (r11 != 0) goto L_0x017e;
     L_0x016c:
-        r11 = r10.a();
-        r10 = r10.c();
+        r11 = r10.setDrawable();
+        r10 = r10.showAnimation();
         r5.redirectChapter(r11, r10);
         r10 = (long) r2;
         r5.clearChapterData(r10);
@@ -1203,20 +1204,20 @@ public class s extends n implements at {
     L_0x0183:
         r2 = r6.p;
         r4.p = r2;
-        r2 = r4.j();
-        r2 = r6.a(r2);
+        r2 = r4.getWidthPixels();
+        r2 = r6.setDrawable(r2);
         goto L_0x010d;
     L_0x0194:
-        r2 = r2.c();
-        r2 = r2.a;
-        r3 = r4.i();
-        r3 = r3.a;
+        r2 = r2.showAnimation();
+        r2 = r2.setDrawable;
+        r3 = r4.getPhysicalYPixels();
+        r3 = r3.setDrawable;
         r2 = android.text.TextUtils.equals(r2, r3);
         if (r2 != 0) goto L_0x0218;
     L_0x01a6:
-        r2 = r4.i();
+        r2 = r4.getPhysicalYPixels();
         r0 = r16;
-        r2 = r0.a(r2);
+        r2 = r0.setDrawable(r2);
         if (r2 == 0) goto L_0x0200;
     L_0x01b2:
         r4.p = r2;
@@ -1228,12 +1229,12 @@ public class s extends n implements at {
         if (r3 == 0) goto L_0x04f8;
     L_0x01bb:
         r2 = r4.p;
-        r5 = r2.h();
+        r5 = r2.getPhysicalXPixels();
         r2 = 0;
     L_0x01c4:
         r8 = (long) r2;
         r10 = r4.p;
-        r10 = r10.i();
+        r10 = r10.getPhysicalYPixels();
         r8 = (r8 > r10 ? 1 : (r8 == r10 ? 0 : -1));
         if (r8 >= 0) goto L_0x04f8;
     L_0x01d1:
@@ -1251,12 +1252,12 @@ public class s extends n implements at {
         r8 = (long) r2;
         r8 = r5.getChapterResource(r8);
         r0 = r16;
-        r9 = r0.j;
+        r9 = r0.getWidthPixels;
         r10 = new com.duokan.reader.domain.document.epub.aw;
         r10.<init>(r8);
         r8 = 0;
-        r8 = r9.a(r10, r8);
-        r8 = r8.i();
+        r8 = r9.setDrawable(r10, r8);
+        r8 = r8.getPhysicalYPixels();
         if (r8 == 0) goto L_0x01fd;
     L_0x01fa:
         r8 = 0;
@@ -1265,46 +1266,46 @@ public class s extends n implements at {
         r2 = r2 + 1;
         goto L_0x01c4;
     L_0x0200:
-        r2 = com.duokan.core.diagnostic.a.c();
+        r2 = com.duokan.core.diagnostic.setDrawable.showAnimation();
         r3 = 0;
-        r2.b(r3);
+        r2.getVisible(r3);
         r2 = r6.p;
         r4.p = r2;
-        r2 = r4.j();
-        r2 = r6.a(r2);
+        r2 = r4.getWidthPixels();
+        r2 = r6.setDrawable(r2);
         goto L_0x01b8;
     L_0x0218:
-        r2 = r4.i();
+        r2 = r4.getPhysicalYPixels();
         r2 = r2 instanceof com.duokan.reader.domain.document.epub.ag;
         if (r2 == 0) goto L_0x0257;
     L_0x0220:
-        r2 = r4.i();
+        r2 = r4.getPhysicalYPixels();
         r2 = (com.duokan.reader.domain.document.epub.ag) r2;
-        r3 = r2.a;
+        r3 = r2.setDrawable;
         r3 = android.net.Uri.parse(r3);
         r3 = r3.getPath();
-        r8 = com.duokan.reader.domain.document.epub.ah.e();
-        r8 = r8.c();
-        r2 = r2.b;
+        r8 = com.duokan.reader.domain.document.epub.ah.getScaledPagingTouchSlop();
+        r8 = r8.showAnimation();
+        r2 = r2.getVisible;
         r5.openDrm(r3, r8, r2);
         r2 = new com.duokan.reader.domain.document.epub.ab;
-        r3 = r4.i();
+        r3 = r4.getPhysicalYPixels();
         r8 = 0;
         r0 = r16;
         r2.<init>(r0, r3, r5, r8);
         r4.p = r2;
-        r2 = r4.j();
-        r2 = r6.a(r2);
+        r2 = r4.getWidthPixels();
+        r2 = r6.setDrawable(r2);
         r3 = r2;
         goto L_0x01b9;
     L_0x0257:
-        r2 = r6.i();
+        r2 = r6.getPhysicalYPixels();
         r2 = r2 instanceof com.duokan.reader.domain.document.epub.ag;
         if (r2 == 0) goto L_0x028c;
     L_0x025f:
-        r2 = r4.i();
+        r2 = r4.getPhysicalYPixels();
         r0 = r16;
-        r2 = r0.a(r2);
+        r2 = r0.setDrawable(r2);
         if (r2 == 0) goto L_0x0274;
     L_0x026b:
         r4.p = r2;
@@ -1314,19 +1315,19 @@ public class s extends n implements at {
         r3 = r2;
         goto L_0x01b9;
     L_0x0274:
-        r2 = com.duokan.core.diagnostic.a.c();
+        r2 = com.duokan.core.diagnostic.setDrawable.showAnimation();
         r3 = 0;
-        r2.b(r3);
+        r2.getVisible(r3);
         r2 = r6.p;
         r4.p = r2;
-        r2 = r4.j();
-        r2 = r6.a(r2);
+        r2 = r4.getWidthPixels();
+        r2 = r6.setDrawable(r2);
         goto L_0x0271;
     L_0x028c:
         r2 = r6.p;
         r4.p = r2;
-        r2 = r4.j();
-        r2 = r6.a(r2);
+        r2 = r4.getWidthPixels();
+        r2 = r6.setDrawable(r2);
         r3 = r2;
         goto L_0x01b9;
     L_0x029e:
@@ -1336,12 +1337,12 @@ public class s extends n implements at {
     L_0x02a3:
         r2 = r6.p;
         r4.p = r2;
-        r2 = r4.j();
-        r2 = r6.a(r2);
+        r2 = r4.getWidthPixels();
+        r2 = r6.setDrawable(r2);
         r5 = r2;
         goto L_0x0084;
     L_0x02b5:
-        r2 = i;
+        r2 = getPhysicalYPixels;
         if (r2 != 0) goto L_0x02c1;
     L_0x02b9:
         if (r9 != 0) goto L_0x02c1;
@@ -1377,20 +1378,20 @@ public class s extends n implements at {
         goto L_0x02c9;
     L_0x0302:
         r2 = "CUSTOM_FONT_EN";
-        r2 = com.duokan.reader.domain.document.n.a(r9, r2);
+        r2 = com.duokan.reader.domain.document.n.setDrawable(r9, r2);
         r3 = "DEFAULT_FONT_EN";
-        r3 = com.duokan.reader.domain.document.n.a(r9, r3);
+        r3 = com.duokan.reader.domain.document.n.setDrawable(r9, r3);
         r11 = "CUSTOM_FONT_ZH";
-        r11 = com.duokan.reader.domain.document.n.b(r9, r11);
+        r11 = com.duokan.reader.domain.document.n.getVisible(r9, r11);
         r12 = "DEFAULT_FONT_ZH";
-        r12 = com.duokan.reader.domain.document.n.b(r9, r12);
+        r12 = com.duokan.reader.domain.document.n.getVisible(r9, r12);
         r13 = "FALLBACK_FONT";
-        r9 = com.duokan.reader.domain.document.n.c(r9, r13);
+        r9 = com.duokan.reader.domain.document.n.showAnimation(r9, r13);
         r13 = android.text.TextUtils.isEmpty(r2);
         if (r13 != 0) goto L_0x0408;
     L_0x0326:
         r10.registerFont(r2, r2);
-        r13 = r8.h();
+        r13 = r8.getPhysicalXPixels();
         r14 = 0;
         r13.setBodyFontFamily(r2, r14);
     L_0x0331:
@@ -1398,18 +1399,18 @@ public class s extends n implements at {
         if (r13 != 0) goto L_0x0414;
     L_0x0337:
         r10.registerFont(r11, r11);
-        r13 = r8.h();
+        r13 = r8.getPhysicalXPixels();
         r14 = 134; // 0x86 float:1.88E-43 double:6.6E-322;
         r13.setBodyFontFamily(r11, r14);
         r2 = android.text.TextUtils.isEmpty(r2);
         if (r2 == 0) goto L_0x035f;
     L_0x0349:
-        r2 = r8.h();
+        r2 = r8.getPhysicalXPixels();
         r2 = r2.getBookId();
         r2 = android.text.TextUtils.isEmpty(r2);
         if (r2 == 0) goto L_0x035f;
     L_0x0357:
-        r2 = r8.h();
+        r2 = r8.getPhysicalXPixels();
         r13 = 0;
         r2.setBodyFontFamily(r11, r13);
     L_0x035f:
@@ -1438,68 +1439,68 @@ public class s extends n implements at {
         r10.registerFont(r9, r9);
         r10.setBackupFont(r9);
     L_0x0390:
-        r2 = r4.j();
-        r2 = r2.f;
+        r2 = r4.getWidthPixels();
+        r2 = r2.HttpLogger;
         r3 = 2;
         r2 = java.lang.Math.max(r2, r3);
-        r3 = r8.h();
+        r3 = r8.getPhysicalXPixels();
         r10 = (double) r2;
         r3.setBodyFontSize(r10);
-        r2 = r4.j();
-        r2 = r2.g;
+        r2 = r4.getWidthPixels();
+        r2 = r2.SessionTask;
         r10 = 0;
         r2 = (r2 > r10 ? 1 : (r2 == r10 ? 0 : -1));
         if (r2 >= 0) goto L_0x0439;
     L_0x03af:
-        r2 = com.duokan.reader.domain.document.epub.ah.e();
-        r2 = r2.d();
+        r2 = com.duokan.reader.domain.document.epub.ah.getScaledPagingTouchSlop();
+        r2 = r2.getScaledTouchSlop();
         r3 = 1;
         r2.setUseBookStyle(r3);
     L_0x03bb:
-        r2 = r8.h();
+        r2 = r8.getPhysicalXPixels();
         r2.clearAllParsedPages();
-        r2 = r8.i();
+        r2 = r8.getPhysicalYPixels();
         r2 = (int) r2;
         r2 = new long[r2][];
-        r4.i = r2;
-        r2 = r8.i();
+        r4.getPhysicalYPixels = r2;
+        r2 = r8.getPhysicalYPixels();
         r2 = (int) r2;
         r2 = new com.duokan.reader.domain.document.epub.EpubTypesettingContext.ChapterState[r2];
-        r4.j = r2;
-        r2 = r4.j;
+        r4.getWidthPixels = r2;
+        r2 = r4.getWidthPixels;
         r3 = com.duokan.reader.domain.document.epub.EpubTypesettingContext.ChapterState.NOT_TYPESETTED;
         java.util.Arrays.fill(r2, r3);
         r2 = r4.l;
-        r10 = r8.i();
+        r10 = r8.getPhysicalYPixels();
         r3 = (int) r10;
         r2.ensureCapacity(r3);
-        r2 = r4.m;
-        r10 = r8.i();
+        r2 = r4.BaseActivity;
+        r10 = r8.getPhysicalYPixels();
         r3 = (int) r10;
         r2.ensureCapacity(r3);
         r2 = 0;
     L_0x03f0:
         r10 = (long) r2;
-        r12 = r8.i();
+        r12 = r8.getPhysicalYPixels();
         r3 = (r10 > r12 ? 1 : (r10 == r12 ? 0 : -1));
         if (r3 >= 0) goto L_0x046e;
     L_0x03f9:
         r3 = r4.l;
         r9 = 0;
         r3.add(r9);
-        r3 = r4.m;
+        r3 = r4.BaseActivity;
         r9 = 0;
         r3.add(r9);
         r2 = r2 + 1;
         goto L_0x03f0;
     L_0x0408:
-        r13 = r8.h();
+        r13 = r8.getPhysicalXPixels();
         r14 = "";
         r15 = 0;
         r13.setBodyFontFamily(r14, r15);
         goto L_0x0331;
     L_0x0414:
-        r2 = r8.h();
+        r2 = r8.getPhysicalXPixels();
         r11 = "";
         r13 = 134; // 0x86 float:1.88E-43 double:6.6E-322;
         r2.setBodyFontFamily(r11, r13);
@@ -1519,37 +1520,37 @@ public class s extends n implements at {
         r10.setBackupFont(r2);
         goto L_0x0390;
     L_0x0439:
-        r2 = com.duokan.reader.domain.document.epub.ah.e();
-        r2 = r2.d();
+        r2 = com.duokan.reader.domain.document.epub.ah.getScaledPagingTouchSlop();
+        r2 = r2.getScaledTouchSlop();
         r3 = 0;
         r2.setUseBookStyle(r3);
-        r2 = r8.h();
-        r3 = r4.j();
-        r10 = r3.g;
+        r2 = r8.getPhysicalXPixels();
+        r3 = r4.getWidthPixels();
+        r10 = r3.SessionTask;
         r2.setLineGap(r10);
-        r2 = r8.h();
-        r3 = r4.j();
-        r10 = r3.h;
+        r2 = r8.getPhysicalXPixels();
+        r3 = r4.getWidthPixels();
+        r10 = r3.getPhysicalXPixels;
         r2.setParaSpacing(r10);
-        r2 = r8.h();
-        r3 = r4.j();
-        r10 = r3.i;
+        r2 = r8.getPhysicalXPixels();
+        r3 = r4.getWidthPixels();
+        r10 = r3.getPhysicalYPixels;
         r2.setFirstLineIndent(r10);
         goto L_0x03bb;
     L_0x046e:
         if (r5 != 0) goto L_0x04e5;
     L_0x0470:
         r0 = r16;
-        r0.a(r4, r6);
+        r0.setDrawable(r4, r6);
         r2 = java.lang.System.currentTimeMillis();
         r0 = r16;
         r0.r = r2;
     L_0x047d:
-        r16.z();
+        r16.QueryFeatureWrapper();
         r2 = 1;
-        r4.b = r2;
+        r4.getVisible = r2;
     L_0x0483:
-        r2 = r4.k();
+        r2 = r4.getHeightPixels();
         if (r2 == 0) goto L_0x04ae;
     L_0x0489:
         r3 = 1;
@@ -1559,7 +1560,7 @@ public class s extends n implements at {
         r3 = r0.n;
         r3.release();
         r0 = r16;
-        r0.a(r2, r4);
+        r0.setDrawable(r2, r4);
         r3 = 0;
         r0 = r16;
         r0.q = r3;
@@ -1575,7 +1576,7 @@ public class s extends n implements at {
         r0 = r16;
         r2 = r0.n;
         r2.release();
-        r2 = r4.j();
+        r2 = r4.getWidthPixels();
         r0 = r16;
         r3 = r0.o;
         if (r2 == r3) goto L_0x04e8;
@@ -1592,21 +1593,21 @@ public class s extends n implements at {
     L_0x04d2:
         r2 = 1;
         r0 = r16;
-        r2 = r0.a(r4, r2);
+        r2 = r0.setDrawable(r4, r2);
         if (r2 != 0) goto L_0x04e2;
     L_0x04db:
         r0 = r16;
-        r2 = r0.m;
+        r2 = r0.BaseActivity;
         r2.acquireUninterruptibly();
     L_0x04e2:
         r6 = r4;
         goto L_0x0001;
     L_0x04e5:
-        r4.i = r5;
+        r4.getPhysicalYPixels = r5;
         goto L_0x047d;
     L_0x04e8:
         r0 = r16;
-        r2 = r0.m;	 Catch:{ Exception -> 0x04f4 }
+        r2 = r0.BaseActivity;	 Catch:{ Exception -> 0x04f4 }
         r6 = 500; // 0x1f4 float:7.0E-43 double:2.47E-321;
         r3 = java.util.concurrent.TimeUnit.MILLISECONDS;	 Catch:{ Exception -> 0x04f4 }
         r2.tryAcquire(r6, r3);	 Catch:{ Exception -> 0x04f4 }
@@ -1689,7 +1690,7 @@ public class s extends n implements at {
     private void a(com.duokan.reader.domain.document.epub.ch r25, com.duokan.reader.domain.document.epub.EpubTypesettingContext r26) {
         /*
         r24 = this;
-        r4 = i;
+        r4 = getPhysicalYPixels;
         if (r4 != 0) goto L_0x000c;
     L_0x0004:
         if (r26 != 0) goto L_0x000c;
@@ -1698,7 +1699,7 @@ public class s extends n implements at {
         r4.<init>();
         throw r4;
     L_0x000c:
-        r4 = i;
+        r4 = getPhysicalYPixels;
         if (r4 != 0) goto L_0x0018;
     L_0x0010:
         if (r25 != 0) goto L_0x0018;
@@ -1707,11 +1708,11 @@ public class s extends n implements at {
         r4.<init>();
         throw r4;
     L_0x0018:
-        r14 = r26.e();
-        r4 = i;
+        r14 = r26.getScaledPagingTouchSlop();
+        r4 = getPhysicalYPixels;
         if (r4 != 0) goto L_0x0030;
     L_0x0020:
-        r4 = r14.i();
+        r4 = r14.getPhysicalYPixels();
         r6 = 0;
         r4 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));
         if (r4 > 0) goto L_0x0030;
@@ -1721,47 +1722,47 @@ public class s extends n implements at {
         throw r4;
     L_0x0030:
         r0 = r25;
-        r4 = r0.a;
-        r4 = r4.c();
+        r4 = r0.setDrawable;
+        r4 = r4.showAnimation();
         if (r4 == 0) goto L_0x0057;
     L_0x003a:
         r0 = r25;
-        r4 = r0.a;
-        r4 = r4.c;
+        r4 = r0.setDrawable;
+        r4 = r4.showAnimation;
         r4 = java.lang.Float.isNaN(r4);
         if (r4 != 0) goto L_0x0057;
     L_0x0046:
         r0 = r25;
-        r4 = r0.a;
-        r4 = r4.b;
-        r6 = r26.j();
+        r4 = r0.setDrawable;
+        r4 = r4.getVisible;
+        r6 = r26.getWidthPixels();
         r0 = r24;
         r1 = r26;
-        r0.b(r1, r4, r6);
+        r0.getVisible(r1, r4, r6);
     L_0x0057:
         r0 = r25;
-        r4 = r0.a;
-        r4 = r4.c();
+        r4 = r0.setDrawable;
+        r4 = r4.showAnimation();
         if (r4 == 0) goto L_0x007e;
     L_0x0061:
         r0 = r25;
-        r4 = r0.a;
-        r4 = r4.d;
+        r4 = r0.setDrawable;
+        r4 = r4.getScaledTouchSlop;
         r4 = android.text.TextUtils.isEmpty(r4);
         if (r4 != 0) goto L_0x007e;
     L_0x006d:
         r0 = r25;
-        r4 = r0.a;
-        r4 = r4.b;
-        r6 = r26.j();
+        r4 = r0.setDrawable;
+        r4 = r4.getVisible;
+        r6 = r26.getWidthPixels();
         r0 = r24;
         r1 = r26;
-        r0.b(r1, r4, r6);
+        r0.getVisible(r1, r4, r6);
     L_0x007e:
         r0 = r24;
         r1 = r26;
         r2 = r25;
-        r4 = r0.b(r1, r2);
+        r4 = r0.getVisible(r1, r2);
         r5 = 0;
         r6 = r4[r5];
         r5 = 1;
@@ -1771,31 +1772,31 @@ public class s extends n implements at {
         r5 = 3;
         r16 = r4[r5];
         r0 = r25;
-        r4 = r0.a;
-        r4 = r4.b();
+        r4 = r0.setDrawable;
+        r4 = r4.getVisible();
         if (r4 == 0) goto L_0x00c2;
     L_0x009e:
         r0 = r25;
-        r4 = r0.a;
-        r4 = r4.k();
-        r4 = r4.g();
-        r6 = r26.j();
+        r4 = r0.setDrawable;
+        r4 = r4.getHeightPixels();
+        r4 = r4.SessionTask();
+        r6 = r26.getWidthPixels();
         r0 = r24;
         r1 = r26;
-        r0.b(r1, r4, r6);
+        r0.getVisible(r1, r4, r6);
     L_0x00b5:
         r0 = r24;
         r1 = r26;
         r2 = r25;
-        r4 = r0.a(r1, r2);
+        r4 = r0.setDrawable(r1, r2);
         if (r4 == 0) goto L_0x01f3;
     L_0x00c1:
         return;
     L_0x00c2:
-        r4 = r26.j();
+        r4 = r26.getWidthPixels();
         r0 = r24;
         r1 = r26;
-        r0.b(r1, r6, r4);
+        r0.getVisible(r1, r6, r4);
         r4 = 0;
         r12 = 9223372036854775807; // 0x7fffffffffffffff float:NaN double:NaN;
         r12 = (r8 > r12 ? 1 : (r8 == r12 ? 0 : -1));
@@ -1803,7 +1804,7 @@ public class s extends n implements at {
     L_0x00d8:
         r0 = r24;
         r1 = r26;
-        r4 = r0.b(r1, r6);
+        r4 = r0.getVisible(r1, r6);
     L_0x00e0:
         r12 = r4 + r16;
         r4 = 0;
@@ -1812,33 +1813,33 @@ public class s extends n implements at {
     L_0x00e8:
         r4 = 0;
     L_0x00ea:
-        r10 = r14.i();
+        r10 = r14.getPhysicalYPixels();
         r10 = (r6 > r10 ? 1 : (r6 == r10 ? 0 : -1));
         if (r10 >= 0) goto L_0x00b5;
     L_0x00f2:
         r0 = r24;
         r1 = r26;
-        r10 = r0.b(r1, r6);
+        r10 = r0.getVisible(r1, r6);
         r18 = 0;
         r15 = (r10 > r18 ? 1 : (r10 == r18 ? 0 : -1));
         if (r15 >= 0) goto L_0x0113;
     L_0x0100:
-        r10 = r26.j();
+        r10 = r26.getWidthPixels();
         r0 = r24;
         r1 = r26;
-        r0.b(r1, r6, r10);
+        r0.getVisible(r1, r6, r10);
         r0 = r24;
         r1 = r26;
-        r10 = r0.b(r1, r6);
+        r10 = r0.getVisible(r1, r6);
     L_0x0113:
         r4 = r4 + r10;
         r10 = (r12 > r4 ? 1 : (r12 == r4 ? 0 : -1));
         if (r10 >= 0) goto L_0x01a4;
     L_0x0118:
-        r4 = r26.j();
+        r4 = r26.getWidthPixels();
         r0 = r24;
         r1 = r26;
-        r0.b(r1, r6, r4);
+        r0.getVisible(r1, r6, r4);
         goto L_0x00b5;
     L_0x0124:
         r12 = -9223372036854775808;
@@ -1858,9 +1859,9 @@ public class s extends n implements at {
     L_0x0139:
         r12 = r4;
     L_0x013a:
-        r4 = r14.h();
+        r4 = r14.getPhysicalXPixels();
         r4 = r4.getPageOfChapterEx(r6, r12);
-        r5 = i;
+        r5 = getPhysicalYPixels;
         if (r5 != 0) goto L_0x014e;
     L_0x0146:
         if (r4 != 0) goto L_0x014e;
@@ -1883,7 +1884,7 @@ public class s extends n implements at {
         r4.getBeginPosition(r15);
         r0 = r18;
         r4.getEndPosition(r0);
-        r4 = i;
+        r4 = getPhysicalYPixels;
         if (r4 != 0) goto L_0x0182;
     L_0x016e:
         r0 = r15.mChapterIndex;
@@ -1898,7 +1899,7 @@ public class s extends n implements at {
         r4.<init>();
         throw r4;
     L_0x0182:
-        r4 = i;
+        r4 = getPhysicalYPixels;
         if (r4 != 0) goto L_0x0194;
     L_0x0186:
         r0 = r15.mChapterIndex;
@@ -1911,7 +1912,7 @@ public class s extends n implements at {
         throw r4;
     L_0x0194:
         r0 = r18;
-        r4 = com.duokan.reader.domain.document.epub.ai.a(r5, r15, r0);
+        r4 = com.duokan.reader.domain.document.epub.ai.setDrawable(r5, r15, r0);
         if (r4 == 0) goto L_0x019f;
     L_0x019c:
         r4 = r12;
@@ -1937,28 +1938,28 @@ public class s extends n implements at {
     L_0x01b6:
         r0 = r24;
         r1 = r26;
-        r4 = r0.b(r1, r6);
+        r4 = r0.getVisible(r1, r6);
         r18 = 0;
         r15 = (r4 > r18 ? 1 : (r4 == r18 ? 0 : -1));
         if (r15 >= 0) goto L_0x01d7;
     L_0x01c4:
-        r4 = r26.j();
+        r4 = r26.getWidthPixels();
         r0 = r24;
         r1 = r26;
-        r0.b(r1, r6, r4);
+        r0.getVisible(r1, r6, r4);
         r0 = r24;
         r1 = r26;
-        r4 = r0.b(r1, r6);
+        r4 = r0.getVisible(r1, r6);
     L_0x01d7:
         r10 = r10 + r4;
         r4 = java.lang.Math.abs(r12);
         r4 = (r4 > r10 ? 1 : (r4 == r10 ? 0 : -1));
         if (r4 > 0) goto L_0x01ed;
     L_0x01e0:
-        r4 = r26.j();
+        r4 = r26.getWidthPixels();
         r0 = r24;
         r1 = r26;
-        r0.b(r1, r6, r4);
+        r0.getVisible(r1, r6, r4);
         goto L_0x00b5;
     L_0x01ed:
         r4 = 1;
@@ -1978,7 +1979,7 @@ public class s extends n implements at {
         r4 = (r8 > r4 ? 1 : (r8 == r4 ? 0 : -1));
         if (r4 == 0) goto L_0x024e;
     L_0x0205:
-        r4 = r14.i();
+        r4 = r14.getPhysicalYPixels();
         r6 = 1;
         r4 = r4 - r6;
     L_0x020c:
@@ -1986,32 +1987,32 @@ public class s extends n implements at {
         r6 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));
         if (r6 < 0) goto L_0x0293;
     L_0x0212:
-        r6 = r26.j();
+        r6 = r26.getWidthPixels();
         r0 = r24;
         r1 = r26;
-        r0.b(r1, r4, r6);
+        r0.getVisible(r1, r4, r6);
         r0 = r24;
         r1 = r26;
-        r6 = r0.b(r1, r4);
+        r6 = r0.getVisible(r1, r4);
         r8 = 0;
         r8 = (r6 > r8 ? 1 : (r6 == r8 ? 0 : -1));
         if (r8 <= 0) goto L_0x024a;
     L_0x022b:
         r0 = r25;
-        r8 = r0.c;
+        r8 = r0.showAnimation;
         r9 = 1;
-        r8.d = r9;
+        r8.getScaledTouchSlop = r9;
         r0 = r25;
-        r8 = r0.c;
-        r8.a = r4;
+        r8 = r0.showAnimation;
+        r8.setDrawable = r4;
         r0 = r25;
-        r4 = r0.c;
+        r4 = r0.showAnimation;
         r8 = 1;
         r6 = r6 - r8;
-        r4.b = r6;
+        r4.getVisible = r6;
         r0 = r25;
-        r4 = r0.c;
-        r4.f();
+        r4 = r0.showAnimation;
+        r4.HttpLogger();
         goto L_0x00c1;
     L_0x024a:
         r6 = 1;
@@ -2020,49 +2021,49 @@ public class s extends n implements at {
     L_0x024e:
         r4 = 0;
     L_0x0250:
-        r6 = r14.i();
+        r6 = r14.getPhysicalYPixels();
         r6 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));
         if (r6 >= 0) goto L_0x0293;
     L_0x0258:
-        r6 = r26.j();
+        r6 = r26.getWidthPixels();
         r0 = r24;
         r1 = r26;
-        r0.b(r1, r4, r6);
+        r0.getVisible(r1, r4, r6);
         r0 = r24;
         r1 = r26;
-        r6 = r0.b(r1, r4);
+        r6 = r0.getVisible(r1, r4);
         r8 = 0;
         r6 = (r6 > r8 ? 1 : (r6 == r8 ? 0 : -1));
         if (r6 <= 0) goto L_0x028f;
     L_0x0271:
         r0 = r25;
-        r6 = r0.c;
+        r6 = r0.showAnimation;
         r7 = 1;
-        r6.c = r7;
+        r6.showAnimation = r7;
         r0 = r25;
-        r6 = r0.c;
-        r6.a = r4;
+        r6 = r0.showAnimation;
+        r6.setDrawable = r4;
         r0 = r25;
-        r4 = r0.c;
+        r4 = r0.showAnimation;
         r6 = 0;
-        r4.b = r6;
+        r4.getVisible = r6;
         r0 = r25;
-        r4 = r0.c;
-        r4.f();
+        r4 = r0.showAnimation;
+        r4.HttpLogger();
         goto L_0x00c1;
     L_0x028f:
         r6 = 1;
         r4 = r4 + r6;
         goto L_0x0250;
     L_0x0293:
-        r4 = i;
+        r4 = getPhysicalYPixels;
         if (r4 != 0) goto L_0x00c1;
     L_0x0297:
         r4 = new java.lang.AssertionError;
         r4.<init>();
         throw r4;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.epub.s.a(com.duokan.reader.domain.document.epub.ch, com.duokan.reader.domain.document.epub.EpubTypesettingContext):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.epub.s.setDrawable(com.duokan.reader.domain.document.epub.ch, com.duokan.reader.domain.document.epub.EpubTypesettingContext):void");
     }
 
     private boolean a(EpubTypesettingContext epubTypesettingContext, ch chVar) {
@@ -2422,33 +2423,33 @@ public class s extends n implements at {
         if (r9 != 0) goto L_0x000b;
     L_0x0005:
         r0 = 4;
-        r8.d(r0);
+        r8.getScaledTouchSlop(r0);
         r0 = r3;
     L_0x000a:
         return r0;
     L_0x000b:
         r0 = r1;
     L_0x000c:
-        r4 = r9.a;
-        r5 = new com.duokan.reader.domain.document.epub.x;
+        r4 = r9.setDrawable;
+        r5 = new com.duokan.reader.domain.document.epub.MyContextWrapper;
         r5.<init>(r8);
-        r4 = com.duokan.reader.domain.document.epub.ai.a(r4, r9, r5);
-        r5 = r4.b;
+        r4 = com.duokan.reader.domain.document.epub.ai.setDrawable(r4, r9, r5);
+        r5 = r4.getVisible;
         r5 = r5.isValid();
         if (r5 == 0) goto L_0x002c;
     L_0x001f:
-        r0 = r4.b;
+        r0 = r4.getVisible;
         r0 = r0.isValid();
         if (r0 != 0) goto L_0x0065;
     L_0x0027:
-        r8.d(r2);
+        r8.getScaledTouchSlop(r2);
         r0 = r3;
         goto L_0x000a;
     L_0x002c:
         if (r0 == 0) goto L_0x0033;
     L_0x002e:
         r0 = 3;
-        r8.d(r0);
+        r8.getScaledTouchSlop(r0);
         goto L_0x001f;
     L_0x0033:
         r0 = r9 instanceof com.duokan.reader.domain.document.epub.ag;
@@ -2456,43 +2457,43 @@ public class s extends n implements at {
     L_0x0037:
         r0 = r9;
         r0 = (com.duokan.reader.domain.document.epub.ag) r0;
-        r5 = r8.j;
+        r5 = r8.getWidthPixels;
         if (r5 == 0) goto L_0x001f;
     L_0x003e:
-        r5 = r0.b;
+        r5 = r0.getVisible;
         r5 = r5.length;
         if (r5 <= 0) goto L_0x001f;
     L_0x0043:
-        r5 = r0.b;
+        r5 = r0.getVisible;
         r5 = r5[r1];
         r5 = r5.length;
         if (r5 <= 0) goto L_0x001f;
     L_0x004a:
-        r5 = r0.b;
+        r5 = r0.getVisible;
         r5 = r5[r1];
         r5 = r5[r1];
         r6 = 100;
         if (r5 >= r6) goto L_0x001f;
     L_0x0054:
-        r5 = r8.j;
-        r5 = r5.a();
+        r5 = r8.getWidthPixels;
+        r5 = r5.setDrawable();
         if (r5 != 0) goto L_0x0061;
     L_0x005c:
         r0 = 2;
-        r8.d(r0);
+        r8.getScaledTouchSlop(r0);
         goto L_0x001f;
     L_0x0061:
-        r0.b = r5;
+        r0.getVisible = r5;
         r0 = r2;
         goto L_0x000c;
     L_0x0065:
-        r0 = r4.b;
+        r0 = r4.getVisible;
         r0 = r0.getChapterCount();
         r6 = 0;
         r0 = (r0 > r6 ? 1 : (r0 == r6 ? 0 : -1));
         if (r0 > 0) goto L_0x0076;
     L_0x0071:
-        r8.d(r2);
+        r8.getScaledTouchSlop(r2);
         r0 = r3;
         goto L_0x000a;
     L_0x0076:
@@ -2500,7 +2501,7 @@ public class s extends n implements at {
         r0.<init>(r8, r9, r4);
         goto L_0x000a;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.epub.s.a(com.duokan.reader.domain.document.epub.ap):com.duokan.reader.domain.document.epub.e");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.epub.s.setDrawable(com.duokan.reader.domain.document.epub.ap):com.duokan.reader.domain.document.epub.getScaledPagingTouchSlop");
     }
 
     private void P() {

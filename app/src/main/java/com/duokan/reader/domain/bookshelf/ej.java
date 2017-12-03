@@ -6,19 +6,14 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Pair;
 
-import com.duokan.core.a.u;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
 import com.duokan.core.sys.r;
-import com.duokan.core.sys.t;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.MiuiAssistContent;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.common.webservices.duokan.v;
 import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.cloud.DkCloudFictionChapter;
 import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
 import com.duokan.reader.domain.provider.BookshelfHelper.BooksTable.Column;
@@ -289,9 +284,9 @@ public abstract class ej extends c {
         r4 = this;
         r0 = r4.aT();	 Catch:{ all -> 0x0049 }
         r2 = r4.aF();	 Catch:{ all -> 0x0049 }
-        r0.a(r2);	 Catch:{ all -> 0x0049 }
+        r0.setDrawable(r2);	 Catch:{ all -> 0x0049 }
         r4.aO();	 Catch:{ all -> 0x0049 }
-        r0 = com.duokan.reader.domain.bookshelf.fa.a;	 Catch:{ all -> 0x0049 }
+        r0 = com.duokan.reader.domain.bookshelf.fa.setDrawable;	 Catch:{ all -> 0x0049 }
         r1 = r4.o();	 Catch:{ all -> 0x0049 }
         r1 = r1.ordinal();	 Catch:{ all -> 0x0049 }
         r0 = r0[r1];	 Catch:{ all -> 0x0049 }
@@ -304,7 +299,7 @@ public abstract class ej extends c {
         r0 = 0;
         r1 = r4.aT();
         r2 = r4.aF();
-        r1.b(r2);
+        r1.getVisible(r2);
     L_0x0029:
         return r0;
     L_0x002a:
@@ -313,21 +308,21 @@ public abstract class ej extends c {
         if (r0 != r1) goto L_0x0042;
     L_0x0032:
         r0 = r4.N;	 Catch:{ all -> 0x0049 }
-        r0 = r0.b;	 Catch:{ all -> 0x0049 }
+        r0 = r0.getVisible;	 Catch:{ all -> 0x0049 }
     L_0x0036:
         r1 = r4.aT();
         r2 = r4.aF();
-        r1.b(r2);
+        r1.getVisible(r2);
         goto L_0x0029;
     L_0x0042:
-        r0 = r4.t();	 Catch:{ all -> 0x0049 }
-        r0 = r0.g;	 Catch:{ all -> 0x0049 }
+        r0 = r4.TaskHandler();	 Catch:{ all -> 0x0049 }
+        r0 = r0.SessionTask;	 Catch:{ all -> 0x0049 }
         goto L_0x0036;
     L_0x0049:
         r0 = move-exception;
         r1 = r4.aT();
         r2 = r4.aF();
-        r1.b(r2);
+        r1.getVisible(r2);
         throw r0;
         */
         throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.bookshelf.ej.u():boolean");

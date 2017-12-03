@@ -1,6 +1,5 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.common.b;
 import com.duokan.reader.domain.micloud.i;
 
 class ih implements Runnable {

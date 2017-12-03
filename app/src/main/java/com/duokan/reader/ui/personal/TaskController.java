@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.personal;
 
 import com.duokan.c.j;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.af;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
@@ -11,8 +11,8 @@ import com.duokan.reader.domain.cloud.gn;
 import com.duokan.reader.ui.general.web.StorePageController;
 
 public class TaskController extends StorePageController {
-    public TaskController(y yVar) {
-        super(yVar);
+    public TaskController(IFeature featrue) {
+        super(featrue);
         setPageTitle(getString(j.personal__task_view__title));
         this.mPageLoadingView.setAlpha(0.0f);
     }

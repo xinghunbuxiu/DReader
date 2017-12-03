@@ -3,7 +3,6 @@ package com.duokan.reader.ui.reading;
 import com.duokan.c.j;
 import com.duokan.core.app.af;
 import com.duokan.core.app.ag;
-import com.duokan.d.a;
 
 class adr implements ag {
     final /* synthetic */ adm a;

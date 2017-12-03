@@ -6,10 +6,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.c.j;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.audio.AudioPlayer;
 import com.duokan.reader.domain.audio.e;
 import com.duokan.reader.domain.bookshelf.BookContent;
@@ -32,25 +30,25 @@ class hq extends po implements it {
     private final View q = findViewById(g.reading__reading_menu_bottom_view__options);
     private final View r = findViewById(g.reading__reading_menu_bottom_view__brightness);
     private final View s = findViewById(g.reading__reading_menu_bottom_view__read_mode);
-    private final com.duokan.core.app.e t = new wg(getContext());
+    private final ActivatedController t = new wg(getContext());
     private final AnimationDrawable u = ((AnimationDrawable) this.o.getDrawable());
     private final ImageView v = ((ImageView) findViewById(g.reading__reading_menu_bottom_view_epub__play_audio));
 
-    public hq(y yVar) {
-        super(yVar);
+    public hq(IFeature featrue) {
+        super(featrue);
         this.k.setOnClickListener(new ht(this));
         this.l.setOnClickListener(new hx(this));
         this.m.setOnClickListener(new hz(this));
         this.j.setOnClickListener(new ib(this));
         this.s.setOnClickListener(new id(this));
         this.v.setOnClickListener(new ie(this));
-        this.p.setOnClickListener(new if(this));
+        this.p.setOnClickListener(new if (this));
         this.o.setOnClickListener(new ig(this));
     }
 
-    protected void a(com.duokan.core.app.e eVar) {
+    protected void a(ActivatedController activatedControllerVar) {
         this.v.setVisibility(4);
-        super.a(eVar);
+        super.a(activatedControllerVar);
     }
 
     protected View a() {

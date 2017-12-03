@@ -3,8 +3,8 @@ package com.duokan.reader.ui.account;
 import android.content.Context;
 import android.view.View;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.ui.general.hd;
 
@@ -22,9 +22,9 @@ public class t extends hd {
     private HashMap g;
     private ArrayList h;
 
-    public t(y yVar, c cVar, HashMap hashMap, ArrayList arrayList) {
-        super(yVar);
-        View view = new View((Context) yVar);
+    public t(IFeature featrue, c cVar, HashMap hashMap, ArrayList arrayList) {
+        super(featrue);
+        View view = new View((Context) featrue);
         view.setBackgroundColor(0);
         setContentView(view);
         this.f = cVar;
@@ -32,9 +32,9 @@ public class t extends hd {
         this.h = arrayList;
     }
 
-    public t(y yVar, List list, String str, String str2, String str3) {
-        super(yVar);
-        View view = new View((Context) yVar);
+    public t(IFeature featrue, List list, String str, String str2, String str3) {
+        super(featrue);
+        View view = new View((Context) featrue);
         view.setBackgroundColor(0);
         setContentView(view);
         this.b = str;
@@ -43,8 +43,8 @@ public class t extends hd {
         this.e = list;
     }
 
-    protected boolean onRequestDetach(e eVar) {
-        if (super.onRequestDetach(eVar) && getPopupCount() < 1) {
+    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
+        if (super.onRequestDetach(activatedControllerVar) && getPopupCount() < 1) {
             requestDetach();
         }
         return true;

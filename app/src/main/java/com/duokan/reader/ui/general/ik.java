@@ -9,13 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
-import com.duokan.b.g;
-import com.duokan.core.app.x;
-import com.duokan.core.sys.t;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.ui.s;
 
@@ -34,7 +32,7 @@ public class ik extends LinearLayout {
         setBackgroundColor(getResources().getColor(c.general__shared__ffffff));
         this.d = LayoutInflater.from(getContext()).inflate(g.surfing__surfing_base_view, this, false);
         this.d.setBackgroundDrawable(new il(this));
-        this.d.setPadding(0, ((s) x.a(getContext()).queryFeature(ReaderFeature.class)).getTheme().getPageHeaderPaddingTop(), 0, 0);
+        this.d.setPadding(0, ((s) MyContextWrapper.getFeature(getContext()).queryFeature(ReaderFeature.class)).getTheme().getPageHeaderPaddingTop(), 0, 0);
         this.e = (ViewGroup) this.d.findViewById(f.surfing__surfing_base_view__tabs);
         this.a = (FrameLayout) this.d.findViewById(f.surfing__surfing_base_view__left);
         this.b = (FrameLayout) this.d.findViewById(f.surfing__surfing_base_view__right);
@@ -66,7 +64,7 @@ public class ik extends LinearLayout {
 
     public void a(int i, Runnable runnable) {
         if (this.c == i) {
-            t.b(runnable);
+            TaskHandler.PostTask(runnable);
         } else if (i >= 0 && i < this.f.getChildCount()) {
             this.f.a(i, runnable, null);
         }
@@ -105,7 +103,7 @@ public class ik extends LinearLayout {
 
     protected void a(Canvas canvas) {
         for (int i = 0; i < this.f.getChildCount(); i++) {
-            Rect rect = (Rect) dv.g.a();
+            Rect rect = (Rect) UTools.g.getRect();
             View childAt = this.f.getChildAt(i);
             rect.set(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
             if (this.e.getChildAt(i) instanceof TextView) {
@@ -119,7 +117,7 @@ public class ik extends LinearLayout {
                     ((TextView) this.e.getChildAt(i)).setTextColor(Color.rgb(a(255, 163, r0), a(132, 163, r0), a(0, 163, r0)));
                 } else {
                     ((TextView) this.e.getChildAt(i)).setTextColor(Color.rgb(255, 108, 0));
-                    dv.g.a(rect);
+                    UTools.g.getRect(rect);
                 }
             }
         }

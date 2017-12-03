@@ -2,11 +2,11 @@ package com.duokan.reader.ui.reading;
 
 import android.content.Context;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.domain.document.au;
 
 public class kp extends fy {
-    private final sh b = ((sh) x.a(getContext()).queryFeature(sh.class));
+    private final sh b = ((sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class));
     private final au c;
     private final kq d;
 

@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.view.animation.AlphaAnimation;
 
 import com.duokan.core.sys.ag;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 import org.apache.http.HttpStatus;
 
@@ -28,16 +28,16 @@ class kx implements ag {
             if (this.a.e.getVisibility() == 0) {
                 if (i != null) {
                     this.a.f.setImageBitmap(i);
-                    dv.c(this.a.f, new ky(this, i));
+                    UTools.showAnimation(this.a.f, new ky(this, i));
                     return;
                 }
-                dv.b(this.a.e, null);
+                UTools.closeAnimation(this.a.e, null);
             } else if (this.a.b) {
                 this.a.m = new AlphaAnimation(0.0f, 1.0f);
                 this.a.m.setDuration(500);
                 this.a.e.invalidate();
                 this.a.e.setVisibility(0);
-                dv.a(this.a.e, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, false, new kz(this));
+                UTools.addAnimation(this.a.e, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, false, new kz(this));
             } else if (i != null) {
                 i.recycle();
             }

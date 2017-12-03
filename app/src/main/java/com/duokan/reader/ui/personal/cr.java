@@ -1,20 +1,19 @@
 package com.duokan.reader.ui.personal;
 
 import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.cloud.push.a;
-import com.duokan.reader.domain.cloud.push.b;
 import com.duokan.reader.ui.bookshelf.ho;
 
 import java.util.ArrayList;
 
-public class cr extends e implements a, ho {
+public class cr extends ActivatedController implements a, ho {
     private final ct a = new ct(this, getContext(), this);
     private final ArrayList b = new ArrayList();
 
-    public cr(y yVar) {
-        super(yVar);
+    public cr(IFeature featrue) {
+        super(featrue);
         setContentView(this.a);
     }
 

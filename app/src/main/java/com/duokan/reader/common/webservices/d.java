@@ -3,7 +3,6 @@ package com.duokan.reader.common.webservices;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory.Options;
 
-import com.duokan.reader.common.bitmap.a;
 import com.duokan.reader.common.webservices.duokan.a.c;
 
 import org.apache.http.client.methods.HttpGet;

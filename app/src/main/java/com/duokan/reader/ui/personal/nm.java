@@ -6,11 +6,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.duokan.c.d;
-import com.duokan.c.f;
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.DkEditorView;
 import com.duokan.reader.ui.bookshelf.gw;
 import com.duokan.reader.ui.bookshelf.hn;
@@ -184,8 +180,8 @@ public class nm extends FrameLayout {
         if (this.j == null) {
             getAdapter().a(i, i2, true);
             getAdapter().a(ViewMode.Edit);
-            this.j = new il(x.a(getContext()), this.h);
-            ((e) x.a(getContext()).queryFeature(e.class)).showPopup(this.j, 119, 0);
+            this.j = new il(MyContextWrapper.getFeature(getContext()), this.h);
+            ((e) MyContextWrapper.getFeature(getContext()).queryFeature(e.class)).showPopup(this.j, 119, 0);
         }
     }
 
@@ -202,7 +198,7 @@ public class nm extends FrameLayout {
         dkWebListView.setSeekEnabled(true);
         dkWebListView.setVerticalSeekDrawable(getResources().getDrawable(f.general__shared__thumb_seek_vert));
         eh.a(dkWebListView);
-        s sVar = (s) x.a(getContext()).queryFeature(s.class);
+        s sVar = (s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class);
         dkWebListView.a(0, 0, 0, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
         dkWebListView.setOnItemClickListener(new np(this));
         dkWebListView.setOnItemLongPressListener(new nq(this));

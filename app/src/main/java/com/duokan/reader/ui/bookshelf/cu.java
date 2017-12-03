@@ -1,13 +1,13 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.app.k;
+import com.duokan.core.app.FeatureListening;
 import com.duokan.reader.domain.bookshelf.aa;
 import com.duokan.reader.domain.bookshelf.an;
 import com.duokan.reader.domain.bookshelf.c;
 
 import java.util.List;
 
-interface cu extends k {
+interface cu extends FeatureListening {
     int a();
 
     int a(aa aaVar);

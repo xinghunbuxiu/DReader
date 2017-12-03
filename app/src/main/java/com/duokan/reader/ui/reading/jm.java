@@ -6,12 +6,12 @@ import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 
 import com.duokan.b.e;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.document.ac;
 
 public class jm extends FrameLayout implements jn {
     private final ac a;
-    private final int b = dv.b(getContext(), 2.0f);
+    private final int b = UTools.closeAnimation(getContext(), 2.0f);
     private final Drawable c = getResources().getDrawable(e.general__shared__jindu_02);
     private final Drawable d = getResources().getDrawable(e.general__shared__jindu_01);
 

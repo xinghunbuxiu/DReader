@@ -3,18 +3,17 @@ package com.duokan.reader.common.d;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.app.w;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.common.c.f;
 import com.duokan.reader.common.c.g;
 import com.duokan.reader.common.m;
 import com.duokan.reader.common.n;
 import com.duokan.reader.domain.account.h;
-import com.duokan.reader.domain.account.i;
 
-public class a implements w, g, n, h {
+public class a implements IActivityRunStatusChanged, g, n, h {
     private final Handler a = new Handler(Looper.getMainLooper());
     private final c b;
     private final int c;
@@ -196,10 +195,10 @@ public class a implements w, g, n, h {
     }
 
     private boolean g() {
-        if (b() && ManagedApp.get().getRunningState() == RunningState.UNDERGROUND) {
+        if (b() && ManagedApp.get().getOldRunningState() == RunningState.UNDERGROUND) {
             return false;
         }
-        if (c() && ManagedApp.get().getRunningState() != RunningState.FOREGROUND) {
+        if (c() && ManagedApp.get().getOldRunningState() != RunningState.FOREGROUND) {
             return false;
         }
         if (d() && !f.b().e()) {

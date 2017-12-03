@@ -5,7 +5,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.core.ui.q;
@@ -26,7 +26,7 @@ final class abi extends er {
 
     protected void a(View view, boolean z) {
         this.c.b(view, z);
-        this.c.a(dv.d(view.getContext()));
+        this.c.a(UTools.getScaledTouchSlop(view.getContext()));
         this.c.a(0.0f);
         this.c.b(-50.0f);
         this.c.c(50.0f);
@@ -57,26 +57,26 @@ final class abi extends er {
                     } else if (this.a.d.getDirection() == CurlDirection.PAGE_UP) {
                         if (this.a.a.al()) {
                             if ((-this.f.x) > ((float) a)) {
-                                this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) (-dv.b(view.getContext())), 0.0f));
+                                this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) (-UTools.closeAnimation(view.getContext())), 0.0f));
                             } else {
-                                this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) dv.b(view.getContext()), 0.0f));
+                                this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) UTools.closeAnimation(view.getContext()), 0.0f));
                             }
                         } else if (this.f.x > ((float) a)) {
-                            this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) dv.b(view.getContext()), 0.0f));
+                            this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) UTools.closeAnimation(view.getContext()), 0.0f));
                         } else {
-                            this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) (-dv.b(view.getContext())), 0.0f));
+                            this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) (-UTools.closeAnimation(view.getContext())), 0.0f));
                         }
                     } else if (this.a.d.getDirection() == CurlDirection.PAGE_DOWN) {
                         if (this.a.a.al()) {
                             if (this.f.x > ((float) a)) {
-                                this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) dv.b(view.getContext()), 0.0f));
+                                this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) UTools.closeAnimation(view.getContext()), 0.0f));
                             } else {
-                                this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) (-dv.b(view.getContext())), 0.0f));
+                                this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) (-UTools.closeAnimation(view.getContext())), 0.0f));
                             }
                         } else if ((-this.f.x) > ((float) a)) {
-                            this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) (-dv.b(view.getContext())), 0.0f));
+                            this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) (-UTools.closeAnimation(view.getContext())), 0.0f));
                         } else {
-                            this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) dv.b(view.getContext()), 0.0f));
+                            this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) UTools.closeAnimation(view.getContext()), 0.0f));
                         }
                     }
                     this.h = false;

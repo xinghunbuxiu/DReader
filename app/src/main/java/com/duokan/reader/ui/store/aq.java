@@ -2,7 +2,8 @@ package com.duokan.reader.ui.store;
 
 import android.text.TextUtils;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.common.webservices.duokan.y;
 import com.duokan.reader.domain.bookshelf.BookFormat;
@@ -13,7 +14,7 @@ import com.duokan.reader.domain.cloud.DkCloudPurchasedFiction;
 import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
 import com.duokan.reader.domain.cloud.bd;
 import com.duokan.reader.domain.cloud.bk;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.epub.s;
 import com.duokan.reader.domain.document.sbk.f;
 import com.duokan.reader.domain.store.DkStoreFictionDetail;
@@ -58,11 +59,11 @@ public abstract class aq {
         }
     }
 
-    public static void a(x xVar, ReaderFeature readerFeature, DkStoreFictionDetail dkStoreFictionDetail, long j, j jVar) {
+    public static void a(MyContextWrapper mContext, ReaderFeature readerFeature, DkStoreFictionDetail dkStoreFictionDetail, long j, j jVar) {
         a(readerFeature, dkStoreFictionDetail, j);
     }
 
-    public static void a(x xVar, ho hoVar, long j) {
+    public static void a(MyContextWrapper mContext, ho hoVar, long j) {
         ej ejVar = (ej) hoVar.G();
         CharSequence a = hoVar.a(j);
         if (!TextUtils.isEmpty(a)) {
@@ -70,7 +71,7 @@ public abstract class aq {
             axVar.d.add(a);
             axVar.e += (float) hoVar.g(j);
             axVar.a = hoVar.b(j);
-            new ay(xVar, ejVar.H(), ejVar.aw(), axVar, ejVar.bf(), ejVar.bg(), new ar(xVar, ejVar, axVar)).show();
+            new ay(mContext, ejVar.H(), ejVar.aw(), axVar, ejVar.bf(), ejVar.bg(), new ar(mContext, ejVar, axVar)).show();
         }
     }
 
@@ -86,11 +87,11 @@ public abstract class aq {
     }
 
     public static c a(ReaderFeature readerFeature, DkStoreFictionDetail dkStoreFictionDetail, long j) {
-        a a = j >= 0 ? c.m(dkStoreFictionDetail.getFiction().getBookUuid()) ? s.a(j, 0, 0) : f.a(j, 0, 0) : null;
+        Document_a a = j >= 0 ? c.m(dkStoreFictionDetail.getFiction().getBookUuid()) ? s.a(j, 0, 0) : f.a(j, 0, 0) : null;
         return a(readerFeature, dkStoreFictionDetail, a);
     }
 
-    public static c a(ReaderFeature readerFeature, DkStoreFictionDetail dkStoreFictionDetail, a aVar) {
+    public static c a(ReaderFeature readerFeature, DkStoreFictionDetail dkStoreFictionDetail, Document_a aVar) {
         c b = ai.a().b(dkStoreFictionDetail.getFiction().getBookUuid());
         if (b != null) {
             readerFeature.openBook(b, aVar, null);
@@ -101,7 +102,7 @@ public abstract class aq {
         return b;
     }
 
-    private static void b(com.duokan.core.app.y yVar, DkStoreFictionDetail dkStoreFictionDetail, boolean z, String[] strArr, float f, j jVar) {
-        o.a().a(yVar, dkStoreFictionDetail, z, strArr, f, jVar);
+    private static void b(IFeature featrue, DkStoreFictionDetail dkStoreFictionDetail, boolean z, String[] strArr, float f, j jVar) {
+        o.a().a(featrue, dkStoreFictionDetail, z, strArr, f, jVar);
     }
 }

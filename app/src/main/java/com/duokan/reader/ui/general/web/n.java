@@ -4,7 +4,6 @@ import android.view.MotionEvent;
 import android.view.ViewGroup;
 
 import com.duokan.core.ui.PullDownRefreshBaseView.RefreshState;
-import com.duokan.core.ui.Scrollable.ScrollState;
 import com.duokan.reader.ui.general.jw;
 
 class n extends jw {

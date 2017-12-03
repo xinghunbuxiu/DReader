@@ -1,10 +1,10 @@
 package com.duokan.reader.ui.account;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 
 public class cf extends bz {
-    public cf(y yVar, String str, String str2, String str3, String str4, String str5, ce ceVar) {
-        super(yVar, str, str2, str3, str4, str5, ceVar);
+    public cf(IFeature featrue, String str, String str2, String str3, String str4, String str5, ce ceVar) {
+        super(featrue, str, str2, str3, str4, str5, ceVar);
     }
 
     protected void onActive(boolean z) {

@@ -1,7 +1,6 @@
 package com.duokan.reader.domain.ad;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 
 import java.util.Collection;
 import java.util.List;

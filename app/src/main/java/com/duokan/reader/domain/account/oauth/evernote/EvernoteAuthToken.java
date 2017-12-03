@@ -25,7 +25,7 @@ public class EvernoteAuthToken extends Token {
         if (matcher.find() && matcher.groupCount() >= 1) {
             return OAuthEncoder.decode(matcher.group(1));
         }
-        throw new OAuthException("Response body is incorrect. Can't extract token and secret from this: '" + str + "'", null);
+        throw new OAuthException("Response body is incorrect. Can'TaskHandler extract token and secret from this: '" + str + "'", null);
     }
 
     public String getNoteStoreUrl() {

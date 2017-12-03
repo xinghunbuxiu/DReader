@@ -6,13 +6,9 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.c.h;
-import com.duokan.core.app.x;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.domain.ad.g;
 import com.duokan.reader.domain.cloud.DkCloudRedeemBenefit;
 import com.duokan.reader.domain.document.epub.c;
 
@@ -74,7 +70,7 @@ public class ii extends gs {
         }
         if (this.z.h() && !TextUtils.isEmpty(this.k.K()) && !ReaderEnv.get().isVipDevice()) {
             A = this.k.z();
-            int max = Math.max(dv.b(getContext(), 10.0f), (int) (((double) this.k.p().f) * this.k.p().h));
+            int max = Math.max(UTools.closeAnimation(getContext(), 10.0f), (int) (((double) this.k.p().f) * this.k.p().h));
             this.D = this.z.bk().a(getContext(), (ViewGroup) this, A.height() - max);
             if (this.D != null) {
                 LayoutParams layoutParams = (LayoutParams) this.D.getLayoutParams();

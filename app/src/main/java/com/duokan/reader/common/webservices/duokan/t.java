@@ -16,17 +16,17 @@ public class t extends ad {
 
     public void a(a aVar) {
         ArrayList arrayList = new ArrayList();
-        arrayList.add("c");
+        arrayList.add("showAnimation");
         arrayList.add(aVar.a);
-        arrayList.add("a");
+        arrayList.add("setDrawable");
         arrayList.add(aVar.c);
         arrayList.add("l");
         arrayList.add(aVar.b);
         arrayList.add("v");
         arrayList.add(String.valueOf(aVar.d));
-        arrayList.add("t");
+        arrayList.add("TaskHandler");
         arrayList.add(String.valueOf(aVar.e));
-        arrayList.add("f");
+        arrayList.add("HttpLogger");
         arrayList.add(aVar.f);
         a(b(true, p.i().n() + "/hs/static/_track_", (String[]) arrayList.toArray(new String[0])));
     }

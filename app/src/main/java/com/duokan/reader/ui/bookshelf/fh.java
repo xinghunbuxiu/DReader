@@ -7,12 +7,11 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 
 import com.duokan.c.h;
 import com.duokan.c.j;
 import com.duokan.core.ui.TabBarView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.DkLabelView;
 import com.duokan.reader.ui.general.HeaderView;
 import com.duokan.reader.ui.general.cw;
@@ -88,7 +87,7 @@ public class fh extends FrameLayout {
 
     private View a(String str, int i, int i2) {
         DkLabelView dkLabelView = (DkLabelView) LayoutInflater.from(getContext()).inflate(h.bookshelf__file_explorer_tab_view, null, false);
-        dkLabelView.setPadding(0, dv.b(getContext(), 15.0f), 0, dv.b(getContext(), 15.0f));
+        dkLabelView.setPadding(0, UTools.closeAnimation(getContext(), 15.0f), 0, UTools.closeAnimation(getContext(), 15.0f));
         dkLabelView.setText(str);
         return dkLabelView;
     }

@@ -4,7 +4,7 @@ import android.graphics.PointF;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.ui.reading.DocPageLayout;
@@ -33,7 +33,7 @@ public class u extends er {
             return;
         }
         boolean z2;
-        this.g = dv.e(view.getContext()) * dv.e(view.getContext());
+        this.g = UTools.getScaledPagingTouchSlop(view.getContext()) * UTools.getScaledPagingTouchSlop(view.getContext());
         switch (motionEvent.getAction() & 255) {
             case 0:
                 b(true);
@@ -55,7 +55,7 @@ public class u extends er {
                     int y2 = (int) (motionEvent.getY() - this.f.getY());
                     if (((x2 * x2) + (y2 * y2) > this.g || this.e) && this.k != null) {
                         if (!this.e) {
-                            if (dv.a(new PointF(0.0f, 0.0f), new PointF((float) x2, (float) y2), 75.0d, 105.0d) && y2 > 0) {
+                            if (UTools.addAnimation(new PointF(0.0f, 0.0f), new PointF((float) x2, (float) y2), 75.0d, 105.0d) && y2 > 0) {
                                 if (this.j >= 0) {
                                     int i = this.j + 1;
                                     this.j = i;
@@ -82,7 +82,7 @@ public class u extends er {
                 }
                 b(false);
                 return;
-                break;
+            break;
             default:
                 if (!(this.k == null || !this.e || this.f == null)) {
                     this.k.b(this.f, motionEvent);

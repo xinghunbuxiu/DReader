@@ -16,7 +16,7 @@ class h implements ag {
         Object[] objArr = new Object[3];
         objArr[0] = b.a;
         objArr[1] = "onInit";
-        objArr[2] = String.format("code: %d, id: %s, reason: %s", new Object[]{Long.valueOf(j), str, str2});
+        objArr[2] = String.format("code: %getScaledTouchSlop, id: %s, reason: %s", new Object[]{Long.valueOf(j), str, str2});
         a.c().c(LogLevel.EVENT, "push", String.format("class: %s, method: %s, message: %s", objArr));
         if (str == null) {
             str = "";

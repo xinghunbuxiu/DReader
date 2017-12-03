@@ -3,16 +3,15 @@ package com.duokan.reader.ui.general;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
-import com.duokan.reader.ui.general.PagesController.AnimationType;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 
 public class em extends PagesController {
-    public em(y yVar) {
-        super(yVar);
+    public em(IFeature featrue) {
+        super(featrue);
     }
 
-    protected Animation a(AnimationType animationType, e eVar) {
+    protected Animation a(AnimationType animationType, ActivatedController controller) {
         switch (en.a[animationType.ordinal()]) {
             case 1:
                 return new TranslateAnimation(1, 1.0f, 1, 0.0f, 1, 0.0f, 1, 0.0f);
@@ -23,7 +22,7 @@ public class em extends PagesController {
             case 4:
                 return new TranslateAnimation(1, -1.0f, 1, 0.0f, 1, 0.0f, 1, 0.0f);
             default:
-                return super.a(animationType, eVar);
+                return super.a(animationType, controller);
         }
     }
 

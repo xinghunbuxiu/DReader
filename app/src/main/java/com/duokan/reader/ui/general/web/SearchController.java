@@ -17,13 +17,13 @@ import com.duokan.c.f;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.core.app.x;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.b.a;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.t;
 import com.duokan.core.ui.GridItemsView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.common.webservices.duokan.p;
@@ -72,8 +72,8 @@ public class SearchController extends StorePageController implements iv, iw {
     private Runnable mTimeoutRunnable;
     private final View mWebContentView;
 
-    public SearchController(y yVar) {
-        super(yVar);
+    public SearchController(IFeature featrue) {
+        super(featrue);
         ((TextView) this.mErrorView.findViewById(g.general__emtpy_view__line_1)).setText(j.general__shared__web_error);
         TextView textView = (TextView) this.mErrorView.findViewById(g.general__emtpy_view__line_3);
         textView.setText(j.general__shared__web_refresh);
@@ -82,11 +82,11 @@ public class SearchController extends StorePageController implements iv, iw {
         this.mWebRootView.setPadding(0, 0, 0, 0);
         this.mWebContentView = this.mWebRootView.findViewById(g.general__web_core_view__content);
         View findViewById = findViewById(g.store__store_search_root_view__title);
-        s sVar = (s) x.a(getContext()).queryFeature(s.class);
+        s sVar = (s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class);
         if (sVar != null) {
             findViewById.setPadding(findViewById.getPaddingLeft(), sVar.getTheme().getHeaderPaddingTop() + findViewById.getPaddingTop(), findViewById.getPaddingRight(), findViewById.getPaddingBottom());
         }
-        ReaderFeature readerFeature = (ReaderFeature) x.a(getContext()).queryFeature(ReaderFeature.class);
+        ReaderFeature readerFeature = (ReaderFeature) MyContextWrapper.getFeature(getContext()).queryFeature(ReaderFeature.class);
         if (readerFeature != null) {
             findViewById.setBackgroundDrawable(readerFeature.getHeaderBackground());
         }
@@ -101,12 +101,12 @@ public class SearchController extends StorePageController implements iv, iw {
         this.mPresenterResultView.setOnItemClickListener(new ac(this));
         this.mPresenterResultView.setOnItemLongPressListener(new ad(this));
         this.mPresenterResultView.setNumColumns(ds.a(getContext()));
-        this.mPresenterResultView.setMaxOverScrollHeight(dv.g(getContext()));
+        this.mPresenterResultView.setMaxOverScrollHeight(UTools.g(getContext()));
         this.mSearchHintView.setHatBodyView(this.mLocalSearchResultView);
         this.mEditText = (EditText) findViewById(g.store__store_search_root_view__edittext);
         this.mEditText.addTextChangedListener(new ae(this));
         this.mEditText.setOnEditorActionListener(new ah(this));
-        int b = dv.b(getContext(), 15.0f);
+        int b = UTools.closeAnimation(getContext(), 15.0f);
         this.mSearchHintView.a(b, 0, b, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
         this.mSearchHintView.setPullDownRefreshEnabled(false);
         this.mSearchHintView.setOnItemClickListener(new ai(this));
@@ -170,7 +170,7 @@ public class SearchController extends StorePageController implements iv, iw {
         }
         ai.a().b((iv) this);
         ai.a().b((iw) this);
-        dv.a(getContext());
+        UTools.hideSoftInputFromWindow(getContext());
         super.onDeactive();
     }
 
@@ -233,7 +233,7 @@ public class SearchController extends StorePageController implements iv, iw {
         Drawable dkVar = new dk(getResources().getColor(d.general__shared__eeeeee));
         dkVar.a(1);
         this.mSearchHintView.setRowDivider(dkVar);
-        this.mSearchHintView.a(dv.b(getContext(), 20.0f), 0, dv.b(getContext(), 20.0f), 0);
+        this.mSearchHintView.a(UTools.closeAnimation(getContext(), 20.0f), 0, UTools.closeAnimation(getContext(), 20.0f), 0);
         this.mSearchHintView.setBackgroundColor(getResources().getColor(d.general__shared__ffffff));
         this.mSearchHintView.setAdapter(new r(this));
     }
@@ -247,7 +247,7 @@ public class SearchController extends StorePageController implements iv, iw {
     }
 
     private int getLocalHintSize() {
-        return ReaderUi.c(getContext(), dv.j(getContext()) - (getResources().getDimensionPixelSize(e.general__shared__cover_grid_horz_padding) * 2));
+        return ReaderUi.c(getContext(), UTools.getWidthPixels(getContext()) - (getResources().getDimensionPixelSize(e.general__shared__cover_grid_horz_padding) * 2));
     }
 
     private boolean hasHint() {
@@ -283,7 +283,7 @@ public class SearchController extends StorePageController implements iv, iw {
     private void getHotWord() {
         if (this.mLoadHotWord) {
             this.mLoadHotWord = false;
-            ah.b(new t(this));
+            ah.b(new TaskHandler(this));
         }
     }
 
@@ -311,7 +311,7 @@ public class SearchController extends StorePageController implements iv, iw {
                 this.mLoadingUrl = a.a(a.a(f), "loadingStamp=" + System.currentTimeMillis() + (TextUtils.isEmpty(this.mOpenFrom) ? "" : "&from=" + this.mOpenFrom)).toString();
                 loadUrl(this.mLoadingUrl);
                 this.mTimeoutRunnable = new w(this);
-                t.a(this.mTimeoutRunnable, 3000);
+                TaskHandler.postDelayed(this.mTimeoutRunnable, 3000);
                 return;
             }
             showWebView();
@@ -321,7 +321,7 @@ public class SearchController extends StorePageController implements iv, iw {
     }
 
     private void startLoading() {
-        t.c(this.mTimeoutRunnable);
+        TaskHandler.c(this.mTimeoutRunnable);
         this.mLoadingSucceed = false;
         this.mWebContentView.setVisibility(4);
     }
@@ -359,7 +359,7 @@ public class SearchController extends StorePageController implements iv, iw {
 
     private void search(String str, String str2) {
         if (!TextUtils.isEmpty(str)) {
-            dv.a(getContext());
+            UTools.hideSoftInputFromWindow(getContext());
             this.mLocalSearchResultView.setVisibility(8);
             p i = p.i();
             if (!TextUtils.isEmpty(this.mSearchSource)) {
@@ -423,6 +423,6 @@ public class SearchController extends StorePageController implements iv, iw {
 
     private void loadHistoryForPh() {
         this.mLoadHistory = false;
-        ah.b(new x(this));
+        ah.b(new MyContextWrapper(this));
     }
 }

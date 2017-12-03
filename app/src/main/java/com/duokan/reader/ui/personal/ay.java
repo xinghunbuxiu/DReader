@@ -3,7 +3,7 @@ package com.duokan.reader.ui.personal;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.bookshelf.c;
@@ -32,7 +32,7 @@ class ay implements OnClickListener {
                 if (b.Y()) {
                     this.c.setAction(BookAction.CONNECTING);
                 }
-                ((ReaderFeature) x.a(this.d.a).queryFeature(ReaderFeature.class)).openBook(b);
+                ((ReaderFeature) MyContextWrapper.getFeature(this.d.a).queryFeature(ReaderFeature.class)).openBook(b);
             }
         } else if (this.a == CloudItemStatus.LOCAL_UPLOADING) {
             i iVar = (i) this.b.a();

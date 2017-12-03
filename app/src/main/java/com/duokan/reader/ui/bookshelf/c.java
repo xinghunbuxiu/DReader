@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 
 import com.duokan.core.app.ManagedApp;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.ah;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ReaderEnv;
@@ -41,8 +41,8 @@ public class c extends dg implements OnBookShelfTypeChangedListener, iv, iw, ct 
     private final LoadingCircleView c;
     private boolean d = false;
 
-    public c(y yVar) {
-        super(yVar);
+    public c(IFeature featrue) {
+        super(featrue);
         View frameLayout = new FrameLayout(getContext());
         frameLayout.addView(this.a);
         this.b = new FrameLayout(getContext());

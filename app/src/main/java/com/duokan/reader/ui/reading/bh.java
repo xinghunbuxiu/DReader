@@ -13,11 +13,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.duokan.c.b;
-import com.duokan.c.f;
-import com.duokan.c.g;
-import com.duokan.core.app.x;
-import com.duokan.reader.domain.bookshelf.a;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.domain.bookshelf.ah;
 import com.duokan.reader.ui.reading.a.v;
 import com.duokan.reader.ui.welcome.DkTipManager.UserInput;
@@ -82,7 +78,7 @@ public class bh implements v {
             } else {
                 this.g.setVisibility(4);
             }
-            p pVar = (p) x.a(this.p).queryFeature(p.class);
+            p pVar = (p) MyContextWrapper.getFeature(this.p).queryFeature(p.class);
             if (!a && pVar == null) {
                 throw new AssertionError();
             } else if (pVar != null) {

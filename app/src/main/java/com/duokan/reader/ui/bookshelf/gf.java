@@ -4,13 +4,12 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Pair;
 import android.view.View;
-import android.widget.LinearLayout.LayoutParams;
 
 import com.duokan.c.d;
 import com.duokan.c.e;
 import com.duokan.c.f;
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.DkLabelView;
 
 import java.util.ArrayList;
@@ -38,7 +37,7 @@ public class gf extends LinearScrollView {
 
     private void f() {
         removeAllViews();
-        int b = dv.b(getContext(), 12.0f);
+        int b = UTools.closeAnimation(getContext(), 12.0f);
         int color = getResources().getColor(d.general__shared__333333);
         for (int i = 0; i < this.c.size(); i++) {
             Pair pair = (Pair) this.c.get(i);
@@ -56,7 +55,7 @@ public class gf extends LinearScrollView {
             }
             addView(dkLabelView, new LayoutParams(-2, -2));
         }
-        dv.a((View) this, new gg(this));
+        UTools.addAnimation((View) this, new gg(this));
     }
 
     private void g() {

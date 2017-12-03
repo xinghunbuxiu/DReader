@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.app.e;
+import com.duokan.core.app.ActivatedController;
 import com.duokan.reader.domain.account.a;
 import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.account.u;
@@ -15,7 +15,7 @@ class dk implements u {
     }
 
     public void onQueryAccountOk(a aVar) {
-        e kgVar;
+        ActivatedController kgVar;
         if (i.f().c() == null || i.f().c().i()) {
             kgVar = new kg(this.a.a.a.getContext());
         } else {

@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import android.widget.RelativeLayout;
 
 import com.duokan.core.app.ManagedApp;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.common.webservices.duokan.DkStoreBookSourceType;
@@ -15,7 +15,6 @@ import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.cloud.DkCloudPurchasedBook;
 import com.duokan.reader.domain.cloud.DkCloudStorage;
 import com.duokan.reader.domain.cloud.DkCloudStoreBook;
-import com.duokan.reader.domain.store.a;
 import com.duokan.reader.ui.bookshelf.BookActionAssistant;
 import com.duokan.reader.ui.bookshelf.BookActionAssistant.BookAction;
 import com.duokan.reader.ui.bookshelf.BookActionView;
@@ -130,7 +129,7 @@ public class PurchasedBookItemView extends RelativeLayout {
     }
 
     private static void d(PurchasedBookItemView purchasedBookItemView, DkCloudStoreBook dkCloudStoreBook) {
-        ((ReaderFeature) x.a(DkApp.get()).queryFeature(ReaderFeature.class)).openBook(dkCloudStoreBook.getBookUuid(), null);
+        ((ReaderFeature) MyContextWrapper.getFeature(DkApp.get()).queryFeature(ReaderFeature.class)).openBook(dkCloudStoreBook.getBookUuid(), null);
     }
 
     private static void e(PurchasedBookItemView purchasedBookItemView, DkCloudStoreBook dkCloudStoreBook) {

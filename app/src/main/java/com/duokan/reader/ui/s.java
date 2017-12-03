@@ -1,7 +1,7 @@
 package com.duokan.reader.ui;
 
-import com.duokan.core.app.k;
+import com.duokan.core.app.FeatureListening;
 
-public interface s extends k {
+public interface s extends FeatureListening {
     r getTheme();
 }

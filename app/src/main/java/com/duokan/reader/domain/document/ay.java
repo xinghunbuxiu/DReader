@@ -3,7 +3,7 @@ package com.duokan.reader.domain.document;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public abstract class ay extends a {
+public abstract class ay extends Document_a {
     public abstract av g();
 
     public abstract av h();
@@ -21,12 +21,12 @@ public abstract class ay extends a {
     }
 
     public final boolean b(ay ayVar) {
-        a aVar;
+        Document_a aVar;
         av g = g();
-        a h = h();
+        Document_a h = h();
         av g2 = ayVar.g();
-        a h2 = ayVar.h();
-        if (!g.a((a) g2)) {
+        Document_a h2 = ayVar.h();
+        if (!g.a((Document_a) g2)) {
             g2 = g;
         }
         if (h.a(h2)) {
@@ -37,14 +37,14 @@ public abstract class ay extends a {
         return g2.a(aVar);
     }
 
-    public final boolean a(a aVar) {
+    public final boolean a(Document_a aVar) {
         if (aVar instanceof av) {
-            return g().a((a) (av) aVar);
+            return g().a((Document_a) (av) aVar);
         }
         return g().a(((ay) aVar).g());
     }
 
-    public final boolean c(a aVar) {
+    public final boolean c(Document_a aVar) {
         if (aVar instanceof av) {
             return g().c((av) aVar);
         }

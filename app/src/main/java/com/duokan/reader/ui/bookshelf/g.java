@@ -9,17 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.duokan.c.f;
 import com.duokan.c.h;
-import com.duokan.core.app.e;
-import com.duokan.core.app.x;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.HatGridView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.common.webservices.duokan.DkStoreAdInfo;
@@ -53,18 +51,18 @@ public class g extends FrameLayout implements iu, la, hj, cw, eq {
     private final ImageView k;
     private final View l;
     private Callable m = null;
-    private final int n = dv.b(getContext(), 68.0f);
+    private final int n = UTools.closeAnimation(getContext(), 68.0f);
 
-    public g(y yVar) {
-        super((Context) yVar);
-        this.b = (cr) yVar.queryFeature(cr.class);
-        this.c = (cu) yVar.queryFeature(cu.class);
-        this.a = (ReaderFeature) yVar.queryFeature(ReaderFeature.class);
+    public g(IFeature featrue) {
+        super((Context) featrue);
+        this.b = (cr) featrue.queryFeature(cr.class);
+        this.c = (cu) featrue.queryFeature(cu.class);
+        this.a = (ReaderFeature) featrue.queryFeature(ReaderFeature.class);
         this.e = new h(this, null, getContext());
         this.e.a(new s(this));
         this.i = LayoutInflater.from(getContext()).inflate(h.bookshelf__bookshelf_header_view, this, false);
         View findViewById = this.i.findViewById(com.duokan.c.g.bookshelf__bookshelf_header_view__tab);
-        int pageHeaderPaddingTop = ((s) x.a(getContext()).queryFeature(s.class)).getTheme().getPageHeaderPaddingTop();
+        int pageHeaderPaddingTop = ((s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class)).getTheme().getPageHeaderPaddingTop();
         if (findViewById.getPaddingTop() != pageHeaderPaddingTop) {
             findViewById.setPadding(0, pageHeaderPaddingTop, 0, 0);
         }
@@ -76,7 +74,7 @@ public class g extends FrameLayout implements iu, la, hj, cw, eq {
         findViewById.findViewById(com.duokan.c.g.bookshelf__bookshelf_header_view__menu).setOnClickListener(new w(this));
         this.j = (LinearLayout) this.i.findViewById(com.duokan.c.g.bookshelf__bookshelf_header_view__recent_books);
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        this.f = new x(this, getContext(), findViewById);
+        this.f = new MyContextWrapper(this, getContext(), findViewById);
         this.f.b(this.f.getGridPaddingLeft(), 0, this.f.getGridPaddingRight(), this.f.getGridPaddingBottom());
         this.f.c(0, 0, 0, 0);
         this.f.setBackgroundColor(Color.parseColor("#ffffff"));
@@ -84,7 +82,7 @@ public class g extends FrameLayout implements iu, la, hj, cw, eq {
         this.f.setSeekEnabled(true);
         this.f.setVerticalSeekDrawable(getResources().getDrawable(f.general__shared__thumb_seek_vert));
         this.f.e(0, displayMetrics.heightPixels / 4, 0, displayMetrics.heightPixels / 4);
-        this.f.setOnItemClickListener(new y(this));
+        this.f.setOnItemClickListener(new IFeature(this));
         addView(this.f, new LayoutParams(-1, -1));
         this.k = new ImageView(getContext());
         ViewGroup.LayoutParams layoutParams = new LayoutParams(-2, -2, 53);
@@ -151,7 +149,7 @@ public class g extends FrameLayout implements iu, la, hj, cw, eq {
         }
         if (this.k.getVisibility() != 0) {
             if (z) {
-                dv.b(this.k, runnable);
+                UTools.closeAnimation(this.k, runnable);
             }
             this.k.setVisibility(0);
         }
@@ -160,7 +158,7 @@ public class g extends FrameLayout implements iu, la, hj, cw, eq {
     public void a(boolean z, Runnable runnable) {
         if (this.k.getVisibility() == 0) {
             if (z) {
-                dv.c(this.k, runnable);
+                UTools.showAnimation(this.k, runnable);
             }
             this.k.setVisibility(8);
         }
@@ -172,7 +170,7 @@ public class g extends FrameLayout implements iu, la, hj, cw, eq {
 
     public Rect a(int i) {
         Rect g = this.f.g(i);
-        dv.b(g, this.f);
+        UTools.closeAnimation(g, this.f);
         return g;
     }
 
@@ -215,7 +213,7 @@ public class g extends FrameLayout implements iu, la, hj, cw, eq {
     public void a(Rect rect) {
         rect.set(0, 0, this.f.getWidth(), this.f.getHeight());
         rect.top += this.f.getHatVisibleHeight();
-        dv.b(rect, this.f);
+        UTools.closeAnimation(rect, this.f);
     }
 
     public boolean c_() {
@@ -266,7 +264,7 @@ public class g extends FrameLayout implements iu, la, hj, cw, eq {
     public void e() {
         if (this.m == null) {
             this.m = new m(this);
-            dv.a((View) this, this.m);
+            UTools.addAnimation((View) this, this.m);
             invalidate();
         }
     }
@@ -417,9 +415,9 @@ public class g extends FrameLayout implements iu, la, hj, cw, eq {
 
     public void a(boolean[] zArr, int i, List list, boolean z, boolean z2, boolean z3, boolean z4, int i2, DkStoreAdInfo[] dkStoreAdInfoArr) {
         if (kp.a().b().size() <= 1) {
-            e icVar = new ic(x.a(getContext()), zArr, i, list, z, z2, z3, z4, i2, dkStoreAdInfoArr);
+            ActivatedController icVar = new ic(MyContextWrapper.getFeature(getContext()), zArr, i, list, z, z2, z3, z4, i2, dkStoreAdInfoArr);
             this.a.showPopup(icVar);
-            dv.b(icVar.getContentView(), null);
+            UTools.closeAnimation(icVar.getContentView(), null);
         }
     }
 

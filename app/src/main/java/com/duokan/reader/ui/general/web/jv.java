@@ -2,7 +2,6 @@ package com.duokan.reader.ui.general.web;
 
 import android.content.Intent;
 
-import com.duokan.core.app.b;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.ad.e;
 

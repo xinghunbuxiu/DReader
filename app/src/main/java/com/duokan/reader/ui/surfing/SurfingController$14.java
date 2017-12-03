@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.surfing;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.PullDownRefreshView.RefreshStyle;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.ui.general.web.StorePageController;
@@ -8,9 +8,9 @@ import com.duokan.reader.ui.general.web.StorePageController;
 class SurfingController$14 extends StorePageController {
     final /* synthetic */ f this$0;
 
-    SurfingController$14(f fVar, y yVar) {
+    SurfingController$14(f fVar, IFeature featrue) {
         this.this$0 = fVar;
-        super(yVar);
+        super(featrue);
     }
 
     protected void onActive(boolean z) {

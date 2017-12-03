@@ -1,8 +1,8 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.app.k;
+import com.duokan.core.app.FeatureListening;
 
-public interface ff extends k {
+public interface ff extends FeatureListening {
     void a();
 
     void a(String str);

@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.j;
 import com.duokan.reader.domain.bookshelf.iz;
 import com.duokan.reader.ui.general.be;
@@ -23,7 +23,7 @@ class ev implements ep {
         this.a.dismiss();
         if (size > 0) {
             be.a(this.b.b.getContext(), String.format(this.b.b.getContext().getString(com.duokan.c.j.bookshelf__shared__delete_files_num), new Object[]{Integer.valueOf(size)}), 0).show();
-            t.a(this.b.a);
+            TaskHandler.postTask(this.b.a);
             return;
         }
         be.a(this.b.b.getContext(), this.b.b.getContext().getString(com.duokan.c.j.general__shared__network_error), 0).show();

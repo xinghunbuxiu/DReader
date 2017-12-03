@@ -9,9 +9,8 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.el;
 import com.duokan.reader.ui.reading.FixedPageClipView.ClipIndicator;
 
@@ -22,8 +21,8 @@ class iy extends FrameLayout {
     private final el d;
     private final RectF e = new RectF();
     private final jb f;
-    private final int g = dv.b(getContext(), 150.0f);
-    private final int h = dv.b(getContext(), 180.0f);
+    private final int g = UTools.closeAnimation(getContext(), 150.0f);
+    private final int h = UTools.closeAnimation(getContext(), 180.0f);
 
     public iy(FixedPageClipView fixedPageClipView, Context context, sh shVar) {
         this.a = fixedPageClipView;
@@ -49,7 +48,7 @@ class iy extends FrameLayout {
 
     public ClipIndicator a(PointF pointF) {
         RectF c = c();
-        int b = dv.b(getContext(), 20.0f);
+        int b = UTools.closeAnimation(getContext(), 20.0f);
         if (new RectF(c.left - ((float) b), c.top - ((float) b), c.left + ((float) b), c.top + ((float) b)).contains(pointF.x, pointF.y)) {
             return ClipIndicator.LEFT_TOP;
         }
@@ -205,14 +204,14 @@ class iy extends FrameLayout {
         rect.right += this.a.f.getIntrinsicWidth() / 2;
         rect.top -= this.a.f.getIntrinsicHeight() / 2;
         rect.bottom += this.a.f.getIntrinsicHeight() / 2;
-        dv.a(canvas, this.a.f, rect, 51);
-        dv.a(canvas, this.a.f, rect, 83);
-        dv.a(canvas, this.a.f, rect, 19);
-        dv.a(canvas, this.a.f, rect, 53);
-        dv.a(canvas, this.a.f, rect, 85);
-        dv.a(canvas, this.a.f, rect, 21);
-        dv.a(canvas, this.a.f, rect, 49);
-        dv.a(canvas, this.a.f, rect, 81);
+        UTools.addAnimation(canvas, this.a.f, rect, 51);
+        UTools.addAnimation(canvas, this.a.f, rect, 83);
+        UTools.addAnimation(canvas, this.a.f, rect, 19);
+        UTools.addAnimation(canvas, this.a.f, rect, 53);
+        UTools.addAnimation(canvas, this.a.f, rect, 85);
+        UTools.addAnimation(canvas, this.a.f, rect, 21);
+        UTools.addAnimation(canvas, this.a.f, rect, 49);
+        UTools.addAnimation(canvas, this.a.f, rect, 81);
     }
 
     private void b() {
@@ -230,7 +229,7 @@ class iy extends FrameLayout {
     }
 
     private void d() {
-        int b = dv.b(getContext(), 20.0f);
+        int b = UTools.closeAnimation(getContext(), 20.0f);
         int width = getWidth();
         int height = getHeight();
         Drawable a = this.f.a();

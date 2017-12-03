@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class e implements Runnable {
     final /* synthetic */ d a;
@@ -13,6 +13,6 @@ class e implements Runnable {
         if (this.a.a.a != null) {
             this.a.a.a.e();
         }
-        dv.c(this.a.a.b, new f(this));
+        UTools.showAnimation(this.a.a.b, new f(this));
     }
 }

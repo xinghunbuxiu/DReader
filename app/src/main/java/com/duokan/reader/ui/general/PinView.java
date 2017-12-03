@@ -7,13 +7,12 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils.TruncateAt;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
 import com.duokan.b.e;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 public class PinView extends FrameLayout {
     static final /* synthetic */ boolean a = (!PinView.class.desiredAssertionStatus());
@@ -54,8 +53,8 @@ public class PinView extends FrameLayout {
         this.b.setBackgroundResource(e.general__shared__pin_view_bg);
         this.b.setGravity(119);
         this.b.setLineGap(1.2999999523162842d);
-        this.b.setPadding(dv.b(context, 15.0f), dv.b(context, 15.0f), dv.b(context, 15.0f), dv.b(context, 15.0f));
-        this.c = new Point(dv.b(context, 4.0f), dv.b(context, 7.5f));
+        this.b.setPadding(UTools.closeAnimation(context, 15.0f), UTools.closeAnimation(context, 15.0f), UTools.closeAnimation(context, 15.0f), UTools.closeAnimation(context, 15.0f));
+        this.c = new Point(UTools.closeAnimation(context, 4.0f), UTools.closeAnimation(context, 7.5f));
         LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -2);
         layoutParams.leftMargin = this.c.x;
         layoutParams.topMargin = this.c.y;

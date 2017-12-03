@@ -1,6 +1,5 @@
 package com.duokan.reader.domain.document.txt;
 
-import com.duokan.core.sys.j;
 import com.duokan.reader.domain.document.bc;
 
 import java.util.Iterator;

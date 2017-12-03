@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.document.epub;
 
-import com.duokan.core.diagnostic.a;
 import com.duokan.kernel.epublib.DkeBook;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.av;
 import com.duokan.reader.domain.document.e;
 import com.duokan.reader.domain.document.f;
@@ -34,7 +34,7 @@ class aa extends f {
             return null;
         }
         if (b()[i] == null) {
-            com.duokan.reader.domain.document.a a = this.a.a(this.b.getChapterIndexOfFrame((long) i), 0);
+            Document_a a = this.a.a(this.b.getChapterIndexOfFrame((long) i), 0);
             if (!this.a.d(a) || !a.e()) {
                 return null;
             }

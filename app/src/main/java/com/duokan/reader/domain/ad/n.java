@@ -1,7 +1,6 @@
 package com.duokan.reader.domain.ad;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.common.webservices.duokan.a.d;
@@ -23,7 +22,7 @@ class n extends WebSession {
     }
 
     protected void onSessionTry() {
-        d execute = execute(new q().a("http://api.ad.xiaomi.com/u/api").b(this.b).c("2.0").a(this.c).a());
+        d execute = execute(new q().a("http://api.MyTask.xiaomi.com/u/api").b(this.b).c("2.0").a(this.c).a());
         this.a.a = new com.duokan.reader.common.webservices.d(this).b(execute, HTTP.UTF_8);
     }
 

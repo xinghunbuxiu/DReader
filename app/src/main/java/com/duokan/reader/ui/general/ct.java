@@ -3,7 +3,6 @@ package com.duokan.reader.ui.general;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
-import com.duokan.core.ui.Scrollable.ScrollState;
 import com.duokan.core.ui.bh;
 import com.duokan.reader.ui.general.FixedPagesView.PageScaleType;
 

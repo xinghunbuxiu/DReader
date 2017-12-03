@@ -1,7 +1,5 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.statistics.a;
-
 class qt implements Runnable {
     final /* synthetic */ qh a;
 

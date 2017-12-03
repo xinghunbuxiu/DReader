@@ -10,8 +10,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.InsetDrawable;
 
-import com.duokan.reader.common.bitmap.a;
-
 public class es extends InsetDrawable {
     private Drawable a;
     private Bitmap b;
@@ -58,7 +56,7 @@ public class es extends InsetDrawable {
                     Canvas canvas2 = new Canvas(c);
                     this.a.setBounds(0, 0, bounds.width(), bounds.height());
                     this.a.draw(canvas2);
-                    Paint paint = (Paint) ReaderUi.b.a();
+                    Paint paint = (Paint) ReaderUi.b.getRect();
                     Canvas canvas3 = new Canvas(this.b);
                     canvas3.translate((float) (-bounds.left), (float) (-bounds.top));
                     super.draw(canvas3);
@@ -66,7 +64,7 @@ public class es extends InsetDrawable {
                     canvas3.drawBitmap(c, (float) bounds.left, (float) bounds.top, paint);
                     c.recycle();
                     this.c = true;
-                    ReaderUi.b.a(paint);
+                    ReaderUi.b.getRect(paint);
                 }
                 canvas.drawBitmap(this.b, (float) bounds.left, (float) bounds.top, null);
                 return;

@@ -8,15 +8,13 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.duokan.b.c;
 import com.duokan.core.ui.BoxView;
 import com.duokan.core.ui.TabBarView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 import org.apache.http.HttpStatus;
 
@@ -48,13 +46,13 @@ public class ar extends LinearLayout {
         this.b = new ImageView(getContext());
         this.b.setVisibility(8);
         this.c = new BoxView(getContext());
-        int b = dv.b(getContext(), 10.0f);
+        int b = UTools.closeAnimation(getContext(), 10.0f);
         this.c.setPadding(b, b, b, b);
         this.d = new TabBarView(getContext());
         this.d.setBackgroundResource(e.general__shared__tabs_bg_2);
         b = getResources().getDimensionPixelSize(d.general__shared__tabs_bg_stoke_size);
         this.d.setPadding(b, b, b, b);
-        this.d.setLayoutParams(new LayoutParams(-1, dv.b(getContext(), 29.0f), 17));
+        this.d.setLayoutParams(new LayoutParams(-1, UTools.closeAnimation(getContext(), 29.0f), 17));
         this.d.setSelectionChangeListener(new as(this));
         this.f = new FrameLayout(getContext());
         setOrientation(1);

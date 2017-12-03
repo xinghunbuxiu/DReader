@@ -2,14 +2,14 @@ package com.duokan.reader.ui.reading;
 
 import android.view.View;
 
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.sbk.t;
 import com.duokan.reader.ui.general.gh;
 
 public class xw extends fs {
     final /* synthetic */ xt d;
 
-    public xw(xt xtVar, a aVar) {
+    public xw(xt xtVar, Document_a aVar) {
         this.d = xtVar;
         super(xtVar, aVar);
     }
@@ -24,7 +24,7 @@ public class xw extends fs {
             return super.a(i);
         } else if (this.d.b == null) {
             if (i == this.d.getMaxPageOffset() && (this.a instanceof t) && this.a.b()) {
-                a aVar = (t) b(i);
+                Document_a aVar = (t) b(i);
                 this.d.a.getDocument().d(aVar);
                 if (aVar.e() && ((t) this.a).j().g() != aVar.j().g() && ((t) this.a).j().h() > 0) {
                     View a = this.d.a.a(this.d.getContext());

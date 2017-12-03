@@ -3,8 +3,8 @@ package com.duokan.reader.ui.bookshelf;
 import android.content.BroadcastReceiver;
 import android.content.IntentFilter;
 
-import com.duokan.core.app.m;
-import com.duokan.core.app.y;
+import com.duokan.core.app.BaseActivity;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.common.a.b;
 
 import java.io.InputStream;
@@ -21,21 +21,21 @@ public abstract class jp extends gx {
 
     protected abstract void c();
 
-    public jp(y yVar) {
-        this(yVar, 12121);
+    public jp(IFeature featrue) {
+        this(featrue, 12121);
     }
 
-    public jp(y yVar, int i) {
-        super(yVar);
+    public jp(IFeature featrue, int i) {
+        super(featrue);
         this.d = new ConcurrentHashMap();
         this.e = new jq(this);
         this.f = new jr(this);
         this.g = new js(this);
         this.c = new b(i);
         b(false);
-        m mVar = (m) getActivity();
-        this.a = mVar.getScreenTimeout();
-        mVar.setScreenTimeout(Integer.MAX_VALUE);
+        BaseActivity baseActivityVar = (BaseActivity) getActivity();
+        this.a = baseActivityVar.getScreenTimeout();
+        baseActivityVar.setScreenTimeout(Integer.MAX_VALUE);
     }
 
     protected void onActive(boolean z) {
@@ -50,7 +50,7 @@ public abstract class jp extends gx {
 
     protected boolean onBack() {
         this.c.b();
-        ((m) getActivity()).setScreenTimeout(this.a);
+        ((BaseActivity) getActivity()).setScreenTimeout(this.a);
         return super.onBack();
     }
 

@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 
 import com.duokan.b.e;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 public class et extends Drawable {
     private final Paint a = new Paint();
@@ -19,7 +19,7 @@ public class et extends Drawable {
     public et(Context context) {
         this.a.setColor(-1);
         this.a.setFakeBoldText(true);
-        this.a.setTextSize((float) dv.b(context, 10.0f));
+        this.a.setTextSize((float) UTools.closeAnimation(context, 10.0f));
         this.a.setAntiAlias(true);
         this.a.setSubpixelText(true);
         this.b = context.getResources().getDrawable(e.general__shared__message_bubble);
@@ -31,10 +31,10 @@ public class et extends Drawable {
     }
 
     public int a() {
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         this.b.getPadding(rect);
         float measureText = (this.a.measureText(this.c) + ((float) rect.left)) + ((float) rect.right);
-        dv.g.a(rect);
+        UTools.g.getRect(rect);
         return Math.max(getIntrinsicWidth(), ((int) Math.ceil((double) (measureText / ((float) getIntrinsicWidth())))) * getIntrinsicWidth());
     }
 
@@ -43,7 +43,7 @@ public class et extends Drawable {
             Rect bounds = getBounds();
             this.b.setBounds(bounds);
             this.b.draw(canvas);
-            dv.a(canvas, this.c, bounds, 17, this.a);
+            UTools.addAnimation(canvas, this.c, bounds, 17, this.a);
         }
     }
 

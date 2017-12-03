@@ -5,14 +5,14 @@ import android.graphics.Bitmap.Config;
 import android.graphics.PointF;
 import android.util.DisplayMetrics;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.domain.document.i;
 import com.duokan.reader.ui.general.gd;
 import com.duokan.reader.ui.general.gf;
 
-public class aar extends e {
+public class aar extends ActivatedController {
     private final sh a;
     private final wl b;
     private final fo c;
@@ -25,8 +25,8 @@ public class aar extends e {
     private Runnable j = null;
     private boolean k = false;
 
-    public aar(y yVar, sh shVar, wl wlVar) {
-        super(yVar);
+    public aar(IFeature featrue, sh shVar, wl wlVar) {
+        super(featrue);
         this.a = shVar;
         this.b = wlVar;
         this.c = this.b.getFlowPagesView();

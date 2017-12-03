@@ -2,7 +2,7 @@ package com.duokan.reader.ui.surfing;
 
 import android.widget.FrameLayout;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class ae implements Runnable {
     final /* synthetic */ FrameLayout a;
@@ -18,6 +18,6 @@ class ae implements Runnable {
     public void run() {
         this.c.h.removeView(this.a);
         this.a.removeAllViews();
-        t.a(this.b);
+        TaskHandler.postTask(this.b);
     }
 }

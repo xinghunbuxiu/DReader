@@ -18,8 +18,7 @@ import com.duokan.kernel.epublib.DKFileInfo;
 import com.duokan.kernel.epublib.DkeBook;
 import com.duokan.kernel.pdflib.DkpBook;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.common.bitmap.a;
-import com.duokan.reader.domain.document.a.o;
+import com.duokan.reader.domain.document.Document_a.o;
 
 import org.apache.http.HttpStatus;
 

@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.reading;
 
 import com.duokan.core.sys.ag;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 import java.util.Map;
 
@@ -13,6 +13,6 @@ class zr implements ag {
     }
 
     public void a(Map map) {
-        t.b(this.a.a.c);
+        TaskHandler.PostTask(this.a.a.c);
     }
 }

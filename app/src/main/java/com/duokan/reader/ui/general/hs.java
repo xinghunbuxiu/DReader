@@ -3,7 +3,7 @@ package com.duokan.reader.ui.general;
 import android.content.Context;
 
 import com.duokan.c.j;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.common.k;
@@ -12,17 +12,16 @@ import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.cloud.DkCloudPurchasedBook;
 import com.duokan.reader.domain.cloud.DkUserPurchasedBooksManager;
-import com.duokan.reader.domain.store.a;
 import com.duokan.reader.ui.bookshelf.ay;
 
 public class hs {
-    private final x a;
+    private final MyContextWrapper a;
     private final String b;
     private final String c;
     private final boolean d;
 
-    public hs(x xVar, String str, String str2, boolean z) {
-        this.a = xVar;
+    public hs(MyContextWrapper mContext, String str, String str2, boolean z) {
+        this.a = mContext;
         this.b = str;
         this.c = str2;
         this.d = z;

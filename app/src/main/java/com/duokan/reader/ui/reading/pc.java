@@ -8,24 +8,21 @@ import android.graphics.DrawFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
 import com.duokan.b.e;
-import com.duokan.core.app.b;
-import com.duokan.core.app.m;
+import com.duokan.core.app.BaseActivity;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.app.s;
-import com.duokan.core.app.x;
 import com.duokan.core.ui.ZoomView;
 import com.duokan.core.ui.di;
 import com.duokan.core.ui.dl;
 import com.duokan.core.ui.dn;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.t;
 import com.duokan.kernel.DkUtils;
-import com.duokan.reader.common.bitmap.a;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.domain.document.ax;
 
@@ -44,8 +41,8 @@ class pc extends FrameLayout {
             Rect t = this.a.getPageDrawable().t(i);
             View imageView = new ImageView(getContext());
             Drawable drawable = getResources().getDrawable(e.reading__shared__preformatted_text);
-            int intrinsicWidth = drawable.getIntrinsicWidth() - dv.b(getContext(), 8.0f);
-            int intrinsicHeight = drawable.getIntrinsicHeight() - dv.b(getContext(), 8.0f);
+            int intrinsicWidth = drawable.getIntrinsicWidth() - UTools.closeAnimation(getContext(), 8.0f);
+            int intrinsicHeight = drawable.getIntrinsicHeight() - UTools.closeAnimation(getContext(), 8.0f);
             imageView.setImageDrawable(drawable);
             imageView.setOnClickListener(new pd(this, i));
             LayoutParams layoutParams = new FrameLayout.LayoutParams(-2, -2, 51);
@@ -64,7 +61,7 @@ class pc extends FrameLayout {
     }
 
     private void a(int i) {
-        sh shVar = (sh) x.a(getContext()).queryFeature(sh.class);
+        sh shVar = (sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class);
         as pageDrawable = this.a.getPageDrawable();
         ax s = pageDrawable.s(i);
         Rect t = pageDrawable.t(i);
@@ -85,15 +82,15 @@ class pc extends FrameLayout {
         View xkVar = new xk(getContext(), s.b());
         xkVar.setTextSize(pageDrawable.p().f);
         View zoomView = new ZoomView(getContext());
-        int b = dv.b(getContext(), 5.0f);
-        int b2 = dv.b(getContext(), 10.0f);
+        int b = UTools.closeAnimation(getContext(), 5.0f);
+        int b2 = UTools.closeAnimation(getContext(), 10.0f);
         zoomView.setThumbEnabled(false);
         zoomView.setClipChildren(false);
         zoomView.setClipToPadding(false);
         zoomView.setPadding(b, b2, b, b2);
         zoomView.a(xkVar, true);
-        zoomView.setMaxOverScrollWidth(dv.f(getContext()));
-        zoomView.setMaxOverScrollHeight(dv.g(getContext()));
+        zoomView.setMaxOverScrollWidth(UTools.f(getContext()));
+        zoomView.setMaxOverScrollHeight(UTools.g(getContext()));
         zoomView.addView(xkVar, new LayoutParams(s.a(), s.b().c()));
         View diVar = new di(getContext());
         diVar.addView(imageView, new dn(-1, -1, 17));
@@ -112,7 +109,7 @@ class pc extends FrameLayout {
         this.b = new pn(this, getContext(), pjVar);
         this.b.setCancelOnBack(false);
         this.b.setCancelOnTouchOutside(false);
-        ((m) b.a(getContext())).lockCurrentOrientation();
+        ((BaseActivity) b.a(getContext())).lockCurrentOrientation();
         this.b.setGravity(17);
         this.b.setContentView(diVar, new LayoutParams(shVar.y(), shVar.z()));
         this.b.show();

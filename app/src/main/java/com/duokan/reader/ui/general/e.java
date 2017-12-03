@@ -7,9 +7,8 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.view.View;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.kernel.DkUtils;
-import com.duokan.reader.common.bitmap.a;
 
 public class e extends eu {
     private final Paint a;
@@ -35,10 +34,10 @@ public class e extends eu {
             super.a(canvas, view);
             return;
         }
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         rect.set(0, 0, this.c.getWidth(), this.c.getHeight());
         canvas.drawBitmap(this.c, rect, getBounds(), this.a);
-        dv.g.a(rect);
+        UTools.g.getRect(rect);
     }
 
     protected void a(View view) {

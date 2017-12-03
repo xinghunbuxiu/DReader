@@ -6,8 +6,6 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.RectF;
 
-import com.duokan.reader.common.bitmap.a;
-
 public class ap {
     static final /* synthetic */ boolean a = (!al.class.desiredAssertionStatus());
     final /* synthetic */ al b;

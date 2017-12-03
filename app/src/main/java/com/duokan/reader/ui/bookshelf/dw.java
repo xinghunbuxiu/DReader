@@ -2,7 +2,7 @@ package com.duokan.reader.ui.bookshelf;
 
 import android.view.View;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.HatGridView;
 import com.duokan.core.ui.an;
 import com.duokan.reader.ReaderFeature;
@@ -24,7 +24,7 @@ class dw implements an {
             }
             this.a.e.a(anVar);
         } else if (anVar instanceof c) {
-            ((ReaderFeature) x.a(this.a.getContext()).queryFeature(ReaderFeature.class)).openBook((c) anVar);
+            ((ReaderFeature) MyContextWrapper.getFeature(this.a.getContext()).queryFeature(ReaderFeature.class)).openBook((c) anVar);
         }
     }
 }

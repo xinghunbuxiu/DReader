@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.domain.bookshelf.c;
 
@@ -17,6 +17,6 @@ class h implements Runnable {
                 this.a.k.add(cVar);
             }
         }
-        t.a(new i(this));
+        TaskHandler.postTask(new i(this));
     }
 }

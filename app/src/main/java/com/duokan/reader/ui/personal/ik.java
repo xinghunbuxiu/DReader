@@ -3,7 +3,6 @@ package com.duokan.reader.ui.personal;
 import android.text.TextUtils;
 
 import com.duokan.c.j;
-import com.duokan.reader.ui.general.*;
 import com.duokan.reader.ui.general.be;
 import com.duokan.reader.ui.general.dn;
 

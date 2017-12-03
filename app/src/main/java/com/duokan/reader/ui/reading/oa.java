@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class oa extends Drawable {
     final /* synthetic */ nk a;
@@ -15,7 +15,7 @@ class oa extends Drawable {
 
     public oa(nk nkVar, int i) {
         this.a = nkVar;
-        this.c = dv.b(nkVar.getContext(), 12.0f);
+        this.c = UTools.closeAnimation(nkVar.getContext(), 12.0f);
         this.b.setColor(i);
         this.b.setAntiAlias(true);
     }

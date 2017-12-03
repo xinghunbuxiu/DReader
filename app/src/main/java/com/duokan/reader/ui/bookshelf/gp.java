@@ -11,7 +11,7 @@ import com.duokan.c.f;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.cloud.DkCloudRedeemFund;
 import com.duokan.reader.ui.general.BookCoverView;
 import com.duokan.reader.ui.general.ReaderUi;
@@ -22,7 +22,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class gp extends bo {
-    private y a;
+    private IFeature a;
     private String c = "";
     private List d = new LinkedList();
     private final gr e;
@@ -31,8 +31,8 @@ public class gp extends bo {
         return c(i);
     }
 
-    public gp(y yVar) {
-        this.a = yVar;
+    public gp(IFeature featrue) {
+        this.a = featrue;
         this.e = (gr) this.a.queryFeature(gr.class);
     }
 

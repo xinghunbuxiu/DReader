@@ -87,12 +87,12 @@ public class BookshelfHelper {
                         a.c().c(LogLevel.EVENT, "shelf", "begin creating the database...");
                         x(nVar);
                     } catch (Throwable th) {
-                        a.c().a(LogLevel.DISASTER, "shelf", "a fatal exception occurs while creating or upgrading database!", th);
+                        a.c().a(LogLevel.DISASTER, "shelf", "setDrawable fatal exception occurs while creating or upgrading database!", th);
                     } finally {
                         nVar.c();
                     }
                 } else {
-                    a.c().a(LogLevel.EVENT, "shelf", "begin upgrading the database from v%d to v%d", Integer.valueOf(d), Integer.valueOf(15));
+                    a.c().a(LogLevel.EVENT, "shelf", "begin upgrading the database from v%getScaledTouchSlop to v%getScaledTouchSlop", Integer.valueOf(d), Integer.valueOf(15));
                     if (d < 5) {
                         b(nVar);
                         m(nVar);

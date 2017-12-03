@@ -2,22 +2,22 @@ package com.duokan.reader.ui.general;
 
 import android.view.View;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 
-public class fy extends e {
-    private final e a;
+public class fy extends ActivatedController {
+    private final ActivatedController a;
     final /* synthetic */ PagesController c;
 
-    public fy(PagesController pagesController, y yVar, e eVar) {
+    public fy(PagesController pagesController, IFeature featrue, ActivatedController activatedControllerVar) {
         this.c = pagesController;
-        super(yVar);
-        this.a = eVar;
+        super(featrue);
+        this.a = activatedControllerVar;
         setContentView(this.a.getContentView());
         addSubController(this.a);
     }
 
-    public final e b() {
+    public final ActivatedController b() {
         return this.a;
     }
 

@@ -20,10 +20,7 @@ import android.widget.RelativeLayout.LayoutParams;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.duokan.c.b;
-import com.duokan.c.f;
-import com.duokan.c.g;
-import com.duokan.core.app.m;
+import com.duokan.core.app.BaseActivity;
 import com.duokan.core.ui.et;
 import com.duokan.reader.domain.document.ah;
 import com.duokan.reader.ui.general.ReaderUi;
@@ -62,7 +59,7 @@ public class afh extends lx {
         this.v = new DisplayMetrics();
         ((WindowManager) activity.getSystemService("window")).getDefaultDisplay().getMetrics(this.v);
         this.y = this.c.getRequestedOrientation();
-        this.z = ((m) this.c).getCurrentOrientation();
+        this.z = ((BaseActivity) this.c).getCurrentOrientation();
         this.c.setRequestedOrientation(this.z);
         a(new RectF(e()));
         this.A = new et();
@@ -159,9 +156,9 @@ public class afh extends lx {
     public boolean a(View view, PointF pointF) {
         if (this.t) {
             if (h()) {
-                ((m) this.c).requestHideMenu();
+                ((BaseActivity) this.c).requestHideMenu();
             } else {
-                ((m) this.c).requestShowMenu();
+                ((BaseActivity) this.c).requestShowMenu();
             }
             return true;
         } else if (!e().contains((int) pointF.x, (int) pointF.y)) {

@@ -14,8 +14,7 @@ import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.duokan.c.g;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.document.ah;
 import com.duokan.reader.ui.general.BubbleFloatingView;
 
@@ -39,7 +38,7 @@ public class y extends lx {
         this.j.a(o(), new LayoutParams(Math.min(displayMetrics.widthPixels - i.a(this.c, 20.0f), i.a(this.c, 320.0f)), -2));
         this.j.setUpArrow(f.reading__shared__arrow_top);
         this.j.setDownArrow(f.reading__shared__arrow_bottom);
-        this.j.a(dv.b((Context) activity, 15.0f), 0, dv.b((Context) activity, 15.0f), 0);
+        this.j.a(UTools.closeAnimation((Context) activity, 15.0f), 0, UTools.closeAnimation((Context) activity, 15.0f), 0);
         this.j.a(new Rect[]{e()}, false, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR);
         m();
     }

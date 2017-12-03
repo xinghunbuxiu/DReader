@@ -10,8 +10,8 @@ import android.widget.LinearLayout;
 
 import com.duokan.b.g;
 import com.duokan.common.i;
-import com.duokan.core.app.y;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 
 public class fd extends wk {
@@ -22,10 +22,10 @@ public class fd extends wk {
     private final LinearLayout e;
     private final LinearLayout f;
 
-    public fd(y yVar) {
+    public fd(IFeature featrue) {
         int i;
-        super(yVar);
-        this.b.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? dv.b(getContext(), 400.0f) : -1, -2));
+        super(featrue);
+        this.b.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? UTools.closeAnimation(getContext(), 400.0f) : -1, -2));
         setContentView(this.b);
         this.c = new ReadingTheme[]{ReadingTheme.THEME7, ReadingTheme.THEME1, ReadingTheme.THEME2, ReadingTheme.THEME3, ReadingTheme.THEME4, ReadingTheme.THEME6, ReadingTheme.THEME9, ReadingTheme.THEME8, ReadingTheme.THEME10, ReadingTheme.THEME11, ReadingTheme.THEME12, ReadingTheme.THEME17, ReadingTheme.THEME13, ReadingTheme.THEME15, ReadingTheme.THEME14, ReadingTheme.THEME16, ReadingTheme.THEME18};
         this.d = (LinearLayout) findViewById(f.reading__reading_options_view__theme_bar_1);

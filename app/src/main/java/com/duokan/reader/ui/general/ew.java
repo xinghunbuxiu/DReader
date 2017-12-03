@@ -5,11 +5,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.duokan.b.i;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderEnv;
 
-public class ew extends e implements dl {
+public class ew extends ActivatedController implements dl {
     private final HeaderView a = ((HeaderView) findViewById(f.general__multiline_input_view__header));
     private final DkLabelView b;
     private final View c;
@@ -18,8 +18,8 @@ public class ew extends e implements dl {
     private final DkNumView f;
     private final fc g;
 
-    public ew(y yVar) {
-        super(yVar);
+    public ew(IFeature featrue) {
+        super(featrue);
         setContentView(g.general__multiline_input_view);
         this.a.setHasBackButton(true);
         this.a.setOnBackListener(new ex(this));

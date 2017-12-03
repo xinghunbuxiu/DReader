@@ -1,8 +1,7 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.common.async.work.IAsyncWorkProgressListener;
-import com.duokan.reader.common.async.work.IAsyncWorkProgressListener.CheckErrorResult;
 import com.duokan.reader.common.async.work.e;
 import com.duokan.reader.domain.bookshelf.an;
 import com.duokan.reader.domain.bookshelf.c;
@@ -72,6 +71,6 @@ class dd implements IAsyncWorkProgressListener, it, iv {
     }
 
     private void h(i iVar) {
-        t.b(new de(this, iVar));
+        TaskHandler.PostTask(new de(this, iVar));
     }
 }

@@ -9,8 +9,8 @@ import android.webkit.JsResult;
 import android.webkit.WebBackForwardList;
 
 import com.duokan.c.h;
-import com.duokan.core.app.y;
-import com.duokan.core.sys.t;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.fr;
 import com.duokan.core.ui.j;
 import com.duokan.reader.ReaderEnv;
@@ -24,7 +24,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public abstract class ke extends hd implements g, kd {
     protected static final String BLANK_SCREEN_URL = "about:blank";
-    protected static final String CALL_BACK_JS_FORMAT = "javascript:(function() { try { %s } catch(e) { fictionApi.log(e.message); } }())";
+    protected static final String CALL_BACK_JS_FORMAT = "javascript:(function() { try { %s } catch(getScaledPagingTouchSlop) { fictionApi.log(getScaledPagingTouchSlop.message); } }())";
     protected static final ConcurrentHashMap sParcelMap = new ConcurrentHashMap();
     protected boolean mCallBackSucceed = false;
     protected boolean mPageLoading = false;
@@ -32,16 +32,16 @@ public abstract class ke extends hd implements g, kd {
 
     protected abstract void webPageError(boolean z);
 
-    public ke(y yVar) {
-        super(yVar);
+    public ke(IFeature featrue) {
+        super(featrue);
         if (VERSION.SDK_INT >= 17 && ReaderEnv.get().forHd()) {
-            Configuration configuration = new Configuration(((Context) yVar).getResources().getConfiguration());
+            Configuration configuration = new Configuration(((Context) featrue).getResources().getConfiguration());
             Configuration configuration2 = getContext().getApplicationContext().getResources().getConfiguration();
             if (configuration.densityDpi != configuration2.densityDpi) {
                 configuration.fontScale *= (float) (configuration.densityDpi / configuration2.densityDpi);
                 configuration.densityDpi = configuration2.densityDpi;
             }
-            getContext().a(configuration);
+            getContext().initConfiguration(configuration);
         }
         initContentView();
         this.mWebView = (DkWebView) findViewById(com.duokan.c.g.general__web_core_view__web);
@@ -132,7 +132,7 @@ public abstract class ke extends hd implements g, kd {
     }
 
     public void showDialog(String str, boolean z, JsResult jsResult) {
-        t.a(new kg(this, str, z, jsResult));
+        TaskHandler.postTask(new kg(this, str, z, jsResult));
     }
 
     protected boolean web_isDestroyed() {

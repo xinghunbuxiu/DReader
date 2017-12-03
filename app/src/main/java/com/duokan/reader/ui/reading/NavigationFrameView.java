@@ -4,11 +4,10 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.widget.FrameLayout;
 
-import com.duokan.core.app.x;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.et;
 import com.duokan.reader.ui.general.ReaderUi;
 
@@ -28,7 +27,7 @@ public class NavigationFrameView extends FrameLayout {
         if (isInEditMode()) {
             this.a = null;
         } else {
-            this.a = (sh) x.a(getContext()).queryFeature(sh.class);
+            this.a = (sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class);
         }
     }
 
@@ -60,9 +59,9 @@ public class NavigationFrameView extends FrameLayout {
         if (isInEditMode()) {
             i3 = 0;
         } else if (ReaderUi.m(getContext())) {
-            i3 = (ReaderUi.m(getContext()) && this.a.am()) ? getMeasuredWidth() / 2 : ReaderUi.a(getContext(), MeasureSpec.getMode(i) != 0 ? MeasureSpec.getSize(i) : dv.j(getContext()), 0.618f);
+            i3 = (ReaderUi.m(getContext()) && this.a.am()) ? getMeasuredWidth() / 2 : ReaderUi.a(getContext(), MeasureSpec.getMode(i) != 0 ? MeasureSpec.getSize(i) : UTools.getWidthPixels(getContext()), 0.618f);
         } else {
-            i3 = dv.b(getContext(), 40.0f);
+            i3 = UTools.closeAnimation(getContext(), 40.0f);
         }
         if (getPaddingRight() != i3) {
             setPadding(0, 0, i3, 0);

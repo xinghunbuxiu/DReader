@@ -6,7 +6,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.duokan.core.sys.as;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 import org.json.JSONObject;
 
@@ -47,7 +47,7 @@ class ff implements as {
                     textView.setOnClickListener(new fi(this, view));
                 }
                 if (this.f) {
-                    dv.a(view);
+                    UTools.addAnimation(view);
                     return;
                 }
                 return;

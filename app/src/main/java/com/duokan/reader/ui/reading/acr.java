@@ -9,7 +9,7 @@ import android.view.View;
 import com.duokan.core.ui.as;
 import com.duokan.core.ui.bu;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 
@@ -23,7 +23,7 @@ public class acr extends er {
 
     public acr(TextSelectionController textSelectionController, Activity activity, sh shVar) {
         this.a = textSelectionController;
-        this.d.a(dv.e(activity));
+        this.d.a(UTools.getScaledPagingTouchSlop(activity));
     }
 
     protected void a(View view, boolean z) {

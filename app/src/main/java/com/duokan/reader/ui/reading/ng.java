@@ -5,7 +5,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class ng extends Drawable {
     int a;
@@ -19,10 +19,10 @@ class ng extends Drawable {
     }
 
     public void draw(Canvas canvas) {
-        Paint paint = (Paint) dv.b.a();
+        Paint paint = (Paint) UTools.b.getRect();
         paint.setColor(this.b);
         canvas.drawRect((float) ((-this.a) + this.c.b.getPaddingLeft()), 0.0f, (float) this.c.b.getWidth(), (float) this.c.b.getHeight(), paint);
-        dv.b.a(paint);
+        UTools.b.getRect(paint);
     }
 
     public void a(int i, int i2) {

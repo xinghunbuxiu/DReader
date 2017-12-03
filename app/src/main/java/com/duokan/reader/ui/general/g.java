@@ -3,7 +3,7 @@ package com.duokan.reader.ui.general;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Drawable.Callback;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class g implements Callback {
     final /* synthetic */ f a;
@@ -13,11 +13,11 @@ class g implements Callback {
     }
 
     public void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        t.c(runnable);
+        TaskHandler.c(runnable);
     }
 
     public void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
-        t.a(runnable, j);
+        TaskHandler.postDelayed(runnable, j);
     }
 
     public void invalidateDrawable(Drawable drawable) {

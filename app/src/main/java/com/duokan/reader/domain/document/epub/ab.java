@@ -2,9 +2,9 @@ package com.duokan.reader.domain.document.epub;
 
 import android.net.Uri;
 
-import com.duokan.core.diagnostic.a;
 import com.duokan.kernel.epublib.DkeAudioText;
 import com.duokan.kernel.epublib.DkeBook;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.b;
 import com.duokan.reader.domain.document.f;
 import com.duokan.reader.domain.document.h;
@@ -136,7 +136,7 @@ class ab extends e {
     public b[] a(long j) {
         int i = 0;
         if (this.j[(int) j] == null) {
-            com.duokan.reader.domain.document.a a = this.a.a(0, 0);
+            Document_a a = this.a.a(0, 0);
             if (!this.a.d(a) || !a.e()) {
                 return new b[0];
             }

@@ -2,8 +2,9 @@ package com.duokan.reader.domain.bookshelf;
 
 import android.database.Cursor;
 
-import com.duokan.reader.domain.document.a.d;
-import com.duokan.reader.domain.document.a.r;
+import com.duokan.reader.domain.document.Document_a;
+import com.duokan.reader.domain.document.Document_a.d;
+import com.duokan.reader.domain.document.Document_a.r;
 import com.duokan.reader.domain.document.l;
 import com.duokan.reader.domain.document.n;
 import com.duokan.reader.domain.document.w;
@@ -27,7 +28,7 @@ public class jp extends c {
         this.a.incrementAndGet();
         File d = d();
         am aT = aT();
-        com.duokan.reader.domain.document.a.n nVar = (com.duokan.reader.domain.document.a.n) wVar;
+        Document_a.n nVar = (Document_a.n) wVar;
         d dVar = new d(new jq(this, aT, aT.i(), d));
         dVar.a(new jr(this, nVar));
         dVar.a((r) b());

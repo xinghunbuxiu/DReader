@@ -4,7 +4,7 @@ import android.text.TextUtils;
 
 import com.duokan.c.j;
 import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.g;
 import com.duokan.reader.domain.document.h;
@@ -24,7 +24,7 @@ class qk implements Runnable {
         if (!this.c.a.q) {
             ak Z = this.c.a.c.Z();
             ak c = this.c.a.h.c(this.b.D().a);
-            if (this.c.a.h.d((a) Z) && this.c.a.h.d((a) c)) {
+            if (this.c.a.h.d((Document_a) Z) && this.c.a.h.d((Document_a) c)) {
                 Z.e();
                 c.e();
                 if (!Z.equals(c)) {
@@ -43,7 +43,7 @@ class qk implements Runnable {
                     } else if (this.c.a.h.e() < 0) {
                         h h = this.c.a.h.h();
                         if (h != null) {
-                            g b = h.b((a) c);
+                            g b = h.b((Document_a) c);
                             if (!a && b == null) {
                                 throw new AssertionError();
                             } else if (b != null) {

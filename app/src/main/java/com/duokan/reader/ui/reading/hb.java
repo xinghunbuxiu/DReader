@@ -3,12 +3,9 @@ package com.duokan.reader.ui.reading;
 import android.content.Intent;
 import android.view.View;
 
-import com.duokan.c.j;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.ag;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.common.c.f;
-import com.duokan.reader.domain.ad.g;
 import com.duokan.reader.domain.audio.AudioPlayer;
 import com.duokan.reader.domain.audio.AudioPlayerService;
 import com.duokan.reader.domain.audio.e;
@@ -20,7 +17,7 @@ import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.bookshelf.fv;
 import com.duokan.reader.domain.bookshelf.it;
 import com.duokan.reader.domain.cloud.bd;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.b;
 import com.duokan.reader.domain.document.bb;
@@ -61,8 +58,8 @@ public class hb extends zo implements af {
     private final LinkedList S;
     protected ag a;
 
-    public hb(y yVar, c cVar, a aVar) {
-        super(yVar, cVar, aVar);
+    public hb(IFeature featrue, c cVar, Document_a aVar) {
+        super(featrue, cVar, aVar);
         this.J = null;
         this.K = null;
         this.L = null;
@@ -113,7 +110,7 @@ public class hb extends zo implements af {
     protected void onDeactive() {
         super.onDeactive();
         if (this.p && this.c.h()) {
-            a bk = this.c.bk();
+            Document_a bk = this.c.bk();
             com.duokan.reader.domain.statistics.a.k().a(this.f.H(), this.n, this.N, bk.a(), bk.b(), bk.c(), bk.d(), bk.e(), g.a().d(), g.a().c(), g.a().e(), !this.c.aa().z().isEmpty(), ReaderEnv.get().onMiui());
         }
     }

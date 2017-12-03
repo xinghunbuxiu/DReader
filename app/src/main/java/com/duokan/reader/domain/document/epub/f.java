@@ -4,7 +4,7 @@ import android.text.TextUtils;
 
 import com.duokan.kernel.epublib.DKETocPointWrapper;
 import com.duokan.kernel.epublib.DKFlowPosition;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.av;
 import com.duokan.reader.domain.document.g;
@@ -85,7 +85,7 @@ public class f extends g {
         if (TextUtils.isEmpty(this.h)) {
             return this.g;
         }
-        a g = g();
+        Document_a g = g();
         if (this.b.d(g) && g.e()) {
             return g.g();
         }

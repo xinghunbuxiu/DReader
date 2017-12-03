@@ -3,13 +3,12 @@ package com.duokan.reader.ui.reading;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.core.app.x;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.common.webservices.duokan.CommentBook;
 import com.duokan.reader.common.webservices.duokan.af;
 import com.duokan.reader.domain.bookshelf.BookType;
-import com.duokan.reader.domain.statistics.a;
 
 class dn implements OnClickListener {
     final /* synthetic */ CommentBook a;
@@ -27,7 +26,7 @@ class dn implements OnClickListener {
     public void onClick(View view) {
         boolean z;
         ReaderFeature c = this.d.A;
-        y a = x.a(this.d.getContext());
+        IFeature a = MyContextWrapper.getFeature(this.d.getContext());
         String bookUuid = this.a.getBookUuid();
         String title = this.a.getTitle();
         if (this.d.y.o() != BookType.SERIAL) {

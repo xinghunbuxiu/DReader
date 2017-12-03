@@ -7,7 +7,7 @@ import android.graphics.PorterDuff.Mode;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 public class bc extends Drawable {
     private final Context a;
@@ -53,21 +53,21 @@ public class bc extends Drawable {
 
     public void draw(Canvas canvas) {
         Rect bounds = getBounds();
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         rect.left = bounds.left;
         rect.top = (((bounds.height() - this.e) + 1) / 2) + bounds.top;
         rect.right = rect.left + this.f;
         rect.bottom = rect.top + this.e;
         this.b.setBounds(rect);
         this.b.draw(canvas);
-        bounds = (Rect) dv.g.a();
+        bounds = (Rect) UTools.g.getRect();
         this.c.getPadding(bounds);
         int intrinsicWidth = (this.b.getIntrinsicWidth() - bounds.left) - bounds.right;
         rect.left = (int) ((((float) (intrinsicWidth - Math.min(Math.max((this.c.getIntrinsicWidth() - bounds.left) - bounds.right, Math.round(((float) (this.d * intrinsicWidth)) / 100.0f)), intrinsicWidth))) * (((float) this.e) / ((float) this.b.getIntrinsicHeight()))) + ((float) rect.left));
         this.c.setBounds(rect);
         this.c.draw(canvas);
-        dv.g.a(bounds);
-        dv.g.a(rect);
+        UTools.g.getRect(bounds);
+        UTools.g.getRect(rect);
     }
 
     public int getOpacity() {

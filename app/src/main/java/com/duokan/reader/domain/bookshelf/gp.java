@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.text.TextUtils;
 
 import com.duokan.core.a.n;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.document.epub.ae;
 import com.duokan.reader.domain.document.epub.am;
@@ -152,12 +152,12 @@ class gp implements ae {
     }
 
     public byte[][] a() {
-        if (t.a()) {
+        if (TaskHandler.isCurrentThread()) {
             return (byte[][]) null;
         }
         Semaphore semaphore = new Semaphore(0);
         gw gwVar = new gw(this);
-        t.a(new gq(this, gwVar, semaphore));
+        TaskHandler.postTask(new gq(this, gwVar, semaphore));
         semaphore.acquireUninterruptibly();
         return gwVar.b;
     }

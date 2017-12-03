@@ -1,14 +1,13 @@
 package com.duokan.reader.ui.store;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.PullDownRefreshView.RefreshStyle;
 import com.duokan.reader.common.webservices.duokan.p;
-import com.duokan.reader.domain.statistics.a;
 import com.duokan.reader.ui.general.LoadingCircleView.LoadingStyle;
 
 public class n extends bl {
-    public n(y yVar, bq bqVar) {
-        super(yVar, bqVar);
+    public n(IFeature featrue, bq bqVar) {
+        super(featrue, bqVar);
     }
 
     protected void a() {

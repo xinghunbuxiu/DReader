@@ -7,7 +7,6 @@ import android.text.TextUtils;
 import com.duokan.kernel.DkFileInfo;
 import com.duokan.kernel.epublib.DkeHitTestInfo;
 import com.duokan.reader.DkApp;
-import com.duokan.reader.common.bitmap.a;
 import com.duokan.reader.domain.document.ah;
 import com.duokan.reader.domain.document.ai;
 import com.duokan.reader.domain.document.y;

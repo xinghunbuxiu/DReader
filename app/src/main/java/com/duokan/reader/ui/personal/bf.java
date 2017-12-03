@@ -7,9 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.duokan.c.d;
 import com.duokan.c.h;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.social.message.a;
 import com.duokan.reader.domain.social.message.ac;
 import com.duokan.reader.domain.social.message.b;
@@ -21,7 +20,7 @@ import com.duokan.reader.ui.general.DkSmallFaceView;
 import com.duokan.reader.ui.general.ReaderUi;
 
 class bf {
-    private final y a;
+    private final IFeature a;
     private final k b;
     private final View c;
     private final DkSmallFaceView d;
@@ -29,10 +28,10 @@ class bf {
     private final TextView f;
     private final View g;
 
-    public bf(y yVar, k kVar, View view, ViewGroup viewGroup) {
-        this.a = yVar;
+    public bf(IFeature featrue, k kVar, View view, ViewGroup viewGroup) {
+        this.a = featrue;
         this.b = kVar;
-        Context context = (Context) yVar;
+        Context context = (Context) featrue;
         if (view == null || !(view.getTag() instanceof k)) {
             this.c = LayoutInflater.from(context).inflate(h.personal__feed_message_item_view, viewGroup, false);
         } else {

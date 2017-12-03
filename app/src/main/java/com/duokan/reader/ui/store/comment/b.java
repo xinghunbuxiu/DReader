@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.store.comment;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.common.webservices.duokan.o;
 import com.duokan.reader.common.webservices.duokan.p;
@@ -11,11 +11,11 @@ import com.duokan.reader.ui.general.web.StorePageController;
 final class b extends r {
     com.duokan.reader.common.webservices.b a = new com.duokan.reader.common.webservices.b();
     final /* synthetic */ String b;
-    final /* synthetic */ y c;
+    final /* synthetic */ IFeature c;
 
-    b(String str, y yVar) {
+    b(String str, IFeature featrue) {
         this.b = str;
-        this.c = yVar;
+        this.c = featrue;
     }
 
     protected void onSessionTry() {
@@ -23,7 +23,7 @@ final class b extends r {
     }
 
     protected void onSessionSucceeded() {
-        e storePageController = new StorePageController(this.c);
+        ActivatedController storePageController = new StorePageController(this.c);
         storePageController.loadUrl(p.i().i((String) this.a.a));
         ((ReaderFeature) this.c.queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(storePageController, null);
     }

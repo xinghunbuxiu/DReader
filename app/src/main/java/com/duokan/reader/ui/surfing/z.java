@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.surfing;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class z implements Runnable {
     final /* synthetic */ Runnable a;
@@ -13,6 +13,6 @@ class z implements Runnable {
 
     public void run() {
         this.b.i.setVisibility(4);
-        t.b(this.a);
+        TaskHandler.PostTask(this.a);
     }
 }

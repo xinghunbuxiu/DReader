@@ -3,17 +3,16 @@ package com.duokan.reader.ui.reading;
 import android.content.Context;
 import android.view.View;
 
-import com.duokan.core.app.x;
-import com.duokan.reader.domain.document.a;
-import com.duokan.reader.ui.general.PagesView.PageLayout;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.reader.domain.document.Document_a;
 
 class xt extends fo {
-    private final sh a = ((sh) x.a(getContext()).queryFeature(sh.class));
+    private final sh a = ((sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class));
     private View b = null;
     private int c = -1;
     private boolean d = true;
 
-    protected /* synthetic */ fs b(a aVar) {
+    protected /* synthetic */ fs b(Document_a aVar) {
         return c(aVar);
     }
 
@@ -22,7 +21,7 @@ class xt extends fo {
         setAdapter(new xx());
     }
 
-    protected xw c(a aVar) {
+    protected xw c(Document_a aVar) {
         return new xw(this, aVar);
     }
 
@@ -34,7 +33,7 @@ class xt extends fo {
         }
     }
 
-    public void a(a aVar) {
+    public void a(Document_a aVar) {
         this.d = true;
         super.a(aVar);
     }

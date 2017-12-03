@@ -8,11 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout.LayoutParams;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
-import com.duokan.core.sys.t;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.plugins.dict.q;
 import com.duokan.reader.ui.general.DkLabelView;
@@ -25,7 +25,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.regex.Pattern;
 
-public class TranslationController extends e {
+public class TranslationController extends ActivatedController {
     private final deprecatedDkTextView a;
     private final ViewGroup b;
     private boolean c = false;
@@ -44,8 +44,8 @@ public class TranslationController extends e {
         EXTRA
     }
 
-    public TranslationController(y yVar, adk com_duokan_reader_ui_reading_adk, sh shVar) {
-        super(yVar);
+    public TranslationController(IFeature featrue, adk com_duokan_reader_ui_reading_adk, sh shVar) {
+        super(featrue);
         setContentView(h.reading__translation_view);
         this.a = (deprecatedDkTextView) findViewById(g.reading__translation_view__word);
         this.a.setMaxLines(1);
@@ -96,7 +96,7 @@ public class TranslationController extends e {
         this.g.setVisibility(4);
         this.a.setText(trim);
         this.a.setChsToChtChars(d().T());
-        t.a(new adg(this, com_duokan_reader_ui_reading_adl), 200);
+        TaskHandler.postDelayed(new adg(this, com_duokan_reader_ui_reading_adl), 200);
         j.a().a(this.d, new adh(this, com_duokan_reader_ui_reading_adl));
     }
 
@@ -116,7 +116,7 @@ public class TranslationController extends e {
             View com_duokan_reader_ui_general_deprecatedDkTextView = new deprecatedDkTextView(getContext());
             this.b.addView(com_duokan_reader_ui_general_deprecatedDkTextView, new LayoutParams(-1, -2));
             com_duokan_reader_ui_general_deprecatedDkTextView.setGravity(119);
-            com_duokan_reader_ui_general_deprecatedDkTextView.setPadding(0, dv.b(getContext(), 10.0f), 0, 0);
+            com_duokan_reader_ui_general_deprecatedDkTextView.setPadding(0, UTools.closeAnimation(getContext(), 10.0f), 0, 0);
             com_duokan_reader_ui_general_deprecatedDkTextView.setChsToChtChars(d().T());
             com_duokan_reader_ui_general_deprecatedDkTextView.setTextSize(Math.round(((float) d().C()) * 0.875f));
             int rgb = Color.rgb(HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT);

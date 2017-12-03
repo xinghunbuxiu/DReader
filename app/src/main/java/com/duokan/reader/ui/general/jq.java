@@ -8,11 +8,10 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
-import com.duokan.b.b;
 import com.duokan.b.g;
 import com.duokan.core.app.d;
 import com.duokan.core.diagnostic.a;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.f;
 import com.duokan.reader.ReaderEnv;
 
@@ -82,7 +81,7 @@ public class jq extends f {
         }
         super.show();
         this.e = new jr(this);
-        t.a(this.e, (long) i);
+        TaskHandler.postDelayed(this.e, (long) i);
     }
 
     public void setEnterAnimation(int i) {
@@ -132,7 +131,7 @@ public class jq extends f {
                 this.a.startAnimation(this.d);
                 return;
             }
-            t.b(this.f);
+            TaskHandler.PostTask(this.f);
         } else {
             c = a.c();
             if (this.a.getVisibility() == 0) {

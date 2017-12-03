@@ -8,7 +8,7 @@ import android.graphics.Rect;
 import android.text.format.DateFormat;
 import android.widget.FrameLayout;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.document.k;
 import com.duokan.reader.domain.document.m;
 import com.duokan.reader.ui.general.je;
@@ -67,22 +67,22 @@ public class gp extends FrameLayout {
                 if (k.c.bottom >= l.f) {
                     Rect rect = k.c;
                     int height = (getHeight() - getPaddingBottom()) - rect.bottom;
-                    this.a.c(l.f - dv.g(getContext(), 2.0f));
-                    Rect rect2 = (Rect) dv.g.a();
+                    this.a.c(l.f - UTools.g(getContext(), 2.0f));
+                    Rect rect2 = (Rect) UTools.g.getRect();
                     rect2.set(getPaddingLeft() + rect.left, height, (getPaddingLeft() + rect.left) + this.a.getIntrinsicWidth(), ((int) this.b.a().getTextSize()) + height);
-                    Rect rect3 = (Rect) dv.g.a();
-                    rect3.set(rect2.right + dv.b(getContext(), 8.0f), height, (getWidth() - getPaddingRight()) - rect.right, ((int) this.b.a().getTextSize()) + height);
+                    Rect rect3 = (Rect) UTools.g.getRect();
+                    rect3.set(rect2.right + UTools.closeAnimation(getContext(), 8.0f), height, (getWidth() - getPaddingRight()) - rect.right, ((int) this.b.a().getTextSize()) + height);
                     if (this.c.bf()) {
-                        this.c.a(canvas, getWidth() / 2, height + (((int) this.b.a().getTextSize()) / 2), getHeight() - dv.b(getContext(), 65.0f), getHeight(), this.b.a().getColor());
+                        this.c.a(canvas, getWidth() / 2, height + (((int) this.b.a().getTextSize()) / 2), getHeight() - UTools.closeAnimation(getContext(), 65.0f), getHeight(), this.b.a().getColor());
                     }
                     this.a.setBounds(rect2);
                     this.a.draw(canvas);
                     this.b.setBounds(rect3);
                     this.b.draw(canvas);
-                    dv.g.a(rect3);
-                    dv.g.a(rect2);
+                    UTools.g.getRect(rect3);
+                    UTools.g.getRect(rect2);
                 } else if (this.c.bf()) {
-                    this.c.a(canvas, getWidth() / 2, getHeight() - (k.a().bottom / 2), getHeight() - dv.b(getContext(), 65.0f), getHeight(), this.b.a().getColor());
+                    this.c.a(canvas, getWidth() / 2, getHeight() - (k.a().bottom / 2), getHeight() - UTools.closeAnimation(getContext(), 65.0f), getHeight(), this.b.a().getColor());
                 }
             }
         }

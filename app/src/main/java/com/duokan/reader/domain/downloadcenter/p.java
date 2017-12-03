@@ -7,8 +7,6 @@ import android.util.Pair;
 import com.duokan.reader.common.async.work.c;
 import com.duokan.reader.common.download.DownloadFailCode;
 import com.duokan.reader.common.download.IDownloadTask;
-import com.duokan.reader.common.download.IDownloadTask.TaskState;
-import com.duokan.reader.common.download.IDownloadTask.TaskStatus;
 import com.duokan.reader.common.download.d;
 import com.duokan.reader.domain.micloud.ba;
 import com.duokan.reader.domain.micloud.bi;
@@ -99,7 +97,7 @@ public class p implements IDownloadTask {
         /*
         r5 = this;
         monitor-enter(r5);
-        r0 = r5.j;	 Catch:{ all -> 0x0017 }
+        r0 = r5.getWidthPixels;	 Catch:{ all -> 0x0017 }
         r1 = com.duokan.reader.common.download.IDownloadTask.TaskState.SUCCEEDED;	 Catch:{ all -> 0x0017 }
         if (r0 != r1) goto L_0x0009;
     L_0x0007:
@@ -107,11 +105,11 @@ public class p implements IDownloadTask {
     L_0x0008:
         return;
     L_0x0009:
-        r0 = r5.i;	 Catch:{ all -> 0x0017 }
+        r0 = r5.getPhysicalYPixels;	 Catch:{ all -> 0x0017 }
         r1 = com.duokan.reader.common.download.IDownloadTask.TaskStatus.RUNNING;	 Catch:{ all -> 0x0017 }
         if (r0 == r1) goto L_0x0015;
     L_0x000f:
-        r0 = r5.i;	 Catch:{ all -> 0x0017 }
+        r0 = r5.getPhysicalYPixels;	 Catch:{ all -> 0x0017 }
         r1 = com.duokan.reader.common.download.IDownloadTask.TaskStatus.PENDING;	 Catch:{ all -> 0x0017 }
         if (r0 != r1) goto L_0x001a;
     L_0x0015:
@@ -124,22 +122,22 @@ public class p implements IDownloadTask {
     L_0x001a:
         r0 = com.duokan.reader.common.download.IDownloadTask.TaskStatus.PENDING;	 Catch:{ all -> 0x0017 }
         r1 = com.duokan.reader.common.download.IDownloadTask.TaskState.UNFINISHED;	 Catch:{ all -> 0x0017 }
-        r5.i = r0;	 Catch:{ all -> 0x0017 }
-        r5.j = r1;	 Catch:{ all -> 0x0017 }
+        r5.getPhysicalYPixels = r0;	 Catch:{ all -> 0x0017 }
+        r5.getWidthPixels = r1;	 Catch:{ all -> 0x0017 }
         monitor-exit(r5);	 Catch:{ all -> 0x0017 }
-        r5.a(r0);
-        r5.a(r1);
-        r0 = r5.b;
-        r1 = r5.e;
-        r1 = r1.b();
-        r2 = r5.e;
-        r2 = r2.c();
-        r0 = com.duokan.reader.domain.micloud.ba.a(r0, r1, r2);
-        r1 = r0.b();
-        r0 = r5.h;
+        r5.setDrawable(r0);
+        r5.setDrawable(r1);
+        r0 = r5.getVisible;
+        r1 = r5.getScaledPagingTouchSlop;
+        r1 = r1.getVisible();
+        r2 = r5.getScaledPagingTouchSlop;
+        r2 = r2.showAnimation();
+        r0 = com.duokan.reader.domain.micloud.ba.setDrawable(r0, r1, r2);
+        r1 = r0.getVisible();
+        r0 = r5.getPhysicalXPixels;
         if (r0 != 0) goto L_0x0090;
     L_0x0043:
-        r0 = r5.d;
+        r0 = r5.getScaledTouchSlop;
         r0 = android.net.Uri.parse(r0);
         r0 = r0.getPath();
         r2 = new java.lang.StringBuilder;
@@ -148,31 +146,31 @@ public class p implements IDownloadTask {
         r3 = ".micloud.temp";
         r2 = r2.append(r3);
         r2 = r2.toString();
-        r3 = r5.e;
+        r3 = r5.getScaledPagingTouchSlop;
         r4 = 5;
-        r0 = r1.a(r0, r2, r3, r4);
+        r0 = r1.setDrawable(r0, r2, r3, r4);
     L_0x0067:
         r2 = r0.u();	 Catch:{ JSONException -> 0x009a }
         r3 = "json_tag_idownloadtask_user_value";
-        r4 = r5.f;	 Catch:{ JSONException -> 0x009a }
+        r4 = r5.HttpLogger;	 Catch:{ JSONException -> 0x009a }
         r2.put(r3, r4);	 Catch:{ JSONException -> 0x009a }
         r2 = r0.u();	 Catch:{ JSONException -> 0x009a }
         r3 = "json_tag_idownloadtask_tag";
-        r4 = r5.c;	 Catch:{ JSONException -> 0x009a }
+        r4 = r5.showAnimation;	 Catch:{ JSONException -> 0x009a }
         r2.put(r3, r4);	 Catch:{ JSONException -> 0x009a }
     L_0x007d:
-        r1.a(r0);
+        r1.setDrawable(r0);
         monitor-enter(r5);
-        r5.h = r0;	 Catch:{ all -> 0x0097 }
+        r5.getPhysicalXPixels = r0;	 Catch:{ all -> 0x0097 }
         monitor-exit(r5);	 Catch:{ all -> 0x0097 }
-        r0 = r5.h;
+        r0 = r5.getPhysicalXPixels;
         r2 = new com.duokan.reader.domain.downloadcenter.q;
         r2.<init>(r5, r1);
-        r1.a(r0, r2);
+        r1.setDrawable(r0, r2);
         goto L_0x0008;
     L_0x0090:
-        r0 = r1.c(r0);
-        r0 = (com.duokan.reader.domain.micloud.z) r0;
+        r0 = r1.showAnimation(r0);
+        r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;
         goto L_0x0067;
     L_0x0097:
         r0 = move-exception;
@@ -182,7 +180,7 @@ public class p implements IDownloadTask {
         r2 = move-exception;
         goto L_0x007d;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.downloadcenter.p.c():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.downloadcenter.p.showAnimation():void");
     }
 
     public void a(boolean z) {

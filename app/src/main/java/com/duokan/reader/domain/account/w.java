@@ -15,7 +15,7 @@ import com.duokan.b.f;
 import com.duokan.b.g;
 import com.duokan.b.i;
 import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ui.general.ak;
 import com.duokan.reader.ui.general.hm;
@@ -30,7 +30,7 @@ public class w extends ak {
         setContentView(g.account__choose_login_dialog);
         if (ReaderEnv.get().forHd()) {
             setGravity(17);
-            ((BoxView) getContentView()).setMaxWidth(dv.b(getContext(), 380.0f));
+            ((BoxView) getContentView()).setMaxWidth(UTools.closeAnimation(getContext(), 380.0f));
         } else {
             setGravity(80);
         }
@@ -77,7 +77,7 @@ public class w extends ak {
 
     private TextView a(String str, int i) {
         TextView textView = (TextView) LayoutInflater.from(getContext()).inflate(g.general__common_dialog_view__button, null);
-        int b = dv.b(getContext(), 20.0f);
+        int b = UTools.closeAnimation(getContext(), 20.0f);
         textView.getPaint().setFakeBoldText(true);
         textView.setPadding(0, b, 0, b);
         textView.setBackgroundResource(e.general__shared__dialog_button_background);
@@ -87,7 +87,7 @@ public class w extends ak {
     }
 
     private void a() {
-        int b = dv.b(getContext(), 8.0f);
+        int b = UTools.closeAnimation(getContext(), 8.0f);
         getContentView().setBackgroundDrawable(new hm(new ColorDrawable(getContext().getResources().getColor(c.general__shared__dialog)), (float) b));
         if (ReaderEnv.get().forHd()) {
             setEnterAnimation(b.general__shared__scale_center_in);

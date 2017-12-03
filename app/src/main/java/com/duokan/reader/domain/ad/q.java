@@ -9,7 +9,6 @@ import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.c.f;
 import com.duokan.reader.common.webservices.duokan.a.a;
 import com.duokan.reader.common.webservices.duokan.a.c;
-import com.duokan.reader.domain.account.i;
 
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.cookie.ClientCookie;
@@ -69,7 +68,7 @@ public class q {
                 arrayList.add(new BasicNameValuePair("v", this.c));
                 arrayList.add(new BasicNameValuePair("clientInfo", a.toString()));
                 cVar.a(arrayList);
-                cVar.a().a("Content-Type", "application/x-www-form-urlencoded; UTF-8");
+                cVar.a().a("Content-Type", "application/MyContextWrapper-www-form-urlencoded; UTF-8");
                 aVar = cVar.a();
             } catch (Throwable th) {
             }

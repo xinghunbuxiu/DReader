@@ -4,18 +4,18 @@ import android.content.Intent;
 import android.text.TextUtils;
 
 import com.duokan.c.j;
+import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.app.e;
-import com.duokan.core.app.w;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.common.webservices.duokan.r;
 import com.duokan.reader.ui.general.hd;
 import com.duokan.reader.ui.general.jq;
 
 import org.apache.http.protocol.HTTP;
 
-public abstract class bz extends hd implements w {
+public abstract class bz extends hd implements IActivityRunStatusChanged {
     protected r a;
     protected String b;
     protected String c;
@@ -30,8 +30,8 @@ public abstract class bz extends hd implements w {
 
     protected abstract void a(String str);
 
-    public bz(y yVar, String str, String str2, String str3, String str4, String str5, ce ceVar) {
-        super(yVar);
+    public bz(IFeature featrue, String str, String str2, String str3, String str4, String str5, ce ceVar) {
+        super(featrue);
         this.b = str;
         this.c = str2;
         this.d = str3;
@@ -40,8 +40,8 @@ public abstract class bz extends hd implements w {
         this.h = ceVar;
     }
 
-    protected boolean onRequestDetach(e eVar) {
-        if (super.onRequestDetach(eVar) && getPopupCount() < 1) {
+    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
+        if (super.onRequestDetach(activatedControllerVar) && getPopupCount() < 1) {
             requestDetach();
         }
         return true;

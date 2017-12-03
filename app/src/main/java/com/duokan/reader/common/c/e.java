@@ -31,7 +31,7 @@ public class e {
             return "application/zip";
         }
         if (substring.equalsIgnoreCase("rar")) {
-            return "application/x-rar-compressed";
+            return "application/MyContextWrapper-rar-compressed";
         }
         return null;
     }

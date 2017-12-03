@@ -13,7 +13,7 @@ import com.duokan.reader.domain.bookshelf.fv;
 import com.duokan.reader.domain.bookshelf.it;
 import com.duokan.reader.domain.cloud.bk;
 import com.duokan.reader.domain.cloud.bl;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.domain.document.ay;
@@ -104,7 +104,7 @@ class hj extends aaj implements it, bl, ho {
     }
 
     public long[] a(ak akVar) {
-        if (!this.a.h.d((a) akVar) || !akVar.e()) {
+        if (!this.a.h.d((Document_a) akVar) || !akVar.e()) {
             return new long[0];
         }
         if (((c) akVar.g()).g() == ((c) akVar.h()).g()) {
@@ -209,8 +209,8 @@ class hj extends aaj implements it, bl, ho {
             ay e = AudioPlayer.a().e();
             if (e == null || ayVar == null || !ayVar.a(e)) {
                 int d;
-                a aVar = (c) ayVar.g();
-                a aVar2 = (c) ayVar.h();
+                Document_a aVar = (c) ayVar.g();
+                Document_a aVar2 = (c) ayVar.h();
                 g a = this.a.h.h().a(aVar);
                 g a2 = this.a.h.h().a(aVar2);
                 List arrayList = new ArrayList();

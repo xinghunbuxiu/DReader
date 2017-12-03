@@ -4,7 +4,7 @@ import android.view.View;
 
 import com.duokan.reader.domain.bookshelf.BookType;
 import com.duokan.reader.domain.bookshelf.ej;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.epub.ay;
 import com.duokan.reader.domain.document.n;
 import com.duokan.reader.ui.general.gh;
@@ -14,7 +14,7 @@ import miuipub.date.Calendar;
 public class in extends fs {
     final /* synthetic */ ij d;
 
-    public in(ij ijVar, a aVar) {
+    public in(ij ijVar, Document_a aVar) {
         this.d = ijVar;
         super(ijVar, aVar);
     }

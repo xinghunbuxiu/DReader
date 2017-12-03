@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.net.Uri;
 
 import com.duokan.core.diagnostic.a;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.kernel.DkUtils;
 
 import java.io.File;
@@ -276,7 +276,7 @@ public abstract class n {
     protected void u() {
         this.b = true;
         this.d.countDown();
-        t.a(new o(this));
+        TaskHandler.postTask(new o(this));
     }
 
     protected void v() {
@@ -284,7 +284,7 @@ public abstract class n {
         this.b = true;
         this.d.countDown();
         this.g.a();
-        t.a(new p(this));
+        TaskHandler.postTask(new p(this));
     }
 
     protected boolean w() {
@@ -303,27 +303,27 @@ public abstract class n {
     }
 
     protected void x() {
-        t.b(new q(this));
+        TaskHandler.PostTask(new q(this));
     }
 
     protected void a(as asVar) {
-        t.b(new r(this, asVar));
+        TaskHandler.PostTask(new r(this, asVar));
     }
 
     protected void b(as asVar) {
-        t.b(new s(this, asVar));
+        TaskHandler.PostTask(new s(this, asVar));
     }
 
     protected void y() {
-        t.b(new t(this));
+        TaskHandler.b(new TaskHandler(this));
     }
 
     protected void z() {
-        t.b(new u(this));
+        TaskHandler.PostTask(new u(this));
     }
 
     protected void a(aa aaVar) {
-        t.b(new v(this, aaVar));
+        TaskHandler.PostTask(new v(this, aaVar));
     }
 
     protected static String a(Map map, String str) {
@@ -355,6 +355,6 @@ public abstract class n {
     }
 
     protected boolean A() {
-        return t.a() && !this.a;
+        return TaskHandler.isCurrentThread() && !this.a;
     }
 }

@@ -2,9 +2,8 @@ package com.duokan.reader.ui.personal;
 
 import android.content.Context;
 
-import com.duokan.c.j;
-import com.duokan.core.app.x;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.bookshelf.iz;
 import com.duokan.reader.domain.micloud.bj;
 import com.duokan.reader.domain.micloud.i;
@@ -28,9 +27,9 @@ public class eq extends nm {
     public eq(Context context, ho hoVar) {
         super(context, hoVar);
         this.b.setVisibility(8);
-        this.l = (eo) x.a(context).queryFeature(eo.class);
+        this.l = (eo) MyContextWrapper.getFeature(context).queryFeature(eo.class);
         this.o = new ai(getContext());
-        this.o.setPadding(dv.b(getContext(), 15.0f), 0, 0, 0);
+        this.o.setPadding(UTools.closeAnimation(getContext(), 15.0f), 0, 0, 0);
         this.d.addView(this.o);
         this.d.setVisibility(4);
         this.a = new er(this, getContext());

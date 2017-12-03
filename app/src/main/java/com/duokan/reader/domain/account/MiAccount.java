@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.common.b.a;
 import com.duokan.reader.common.b.e;
@@ -337,7 +337,7 @@ public class MiAccount extends UserAccount {
         if (i2 != null) {
             AccountManagerFuture a2 = a.a(i2, "reader", null, DkApp.get().getTopActivity(), ajVar);
             if (i > 0) {
-                t.a(new am(this, a2), (long) (i * Calendar.MILLISECOND_OF_SECOND));
+                TaskHandler.postDelayed(new am(this, a2), (long) (i * Calendar.MILLISECOND_OF_SECOND));
             }
         } else if (z2) {
             Bundle bundle = null;
@@ -362,7 +362,7 @@ public class MiAccount extends UserAccount {
         bc aoVar = new ao(this, str2, account, bdVar, z, str);
         aoVar.open();
         if (i > 0) {
-            t.a(new ap(this, aoVar, bdVar, account), (long) (i * Calendar.MILLISECOND_OF_SECOND));
+            TaskHandler.postDelayed(new ap(this, aoVar, bdVar, account), (long) (i * Calendar.MILLISECOND_OF_SECOND));
         }
     }
 

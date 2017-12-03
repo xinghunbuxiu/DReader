@@ -18,7 +18,7 @@ public class StatImport extends StatEventBase {
         try {
             jSONObject.put("ev", this.event);
             jSONObject.put("bn", stringBuffer.toString().substring(1));
-            jSONObject.put("t", this.importType);
+            jSONObject.put("TaskHandler", this.importType);
             jSONObject.put("ts", this.timeStamp);
         } catch (Exception e) {
             e.printStackTrace();

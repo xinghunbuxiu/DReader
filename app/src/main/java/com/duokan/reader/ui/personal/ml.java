@@ -8,15 +8,13 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
-import com.duokan.c.d;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.core.app.x;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.bookshelf.eg;
 import com.duokan.reader.domain.cloud.DkCloudComment;
 import com.duokan.reader.ui.general.DkWebListView;
@@ -95,9 +93,9 @@ public abstract class ml extends LinearLayout {
         if (this.c == null) {
             this.c = new DkWebListView(getContext());
             this.c.setBackgroundColor(-1);
-            s sVar = (s) x.a(getContext()).queryFeature(s.class);
+            s sVar = (s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class);
             this.c.a(0, 0, 0, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
-            this.c.setRowDivider(new InsetDrawable(new dk(getResources().getColor(d.general__shared__cccccc)), dv.b(getContext(), 15.0f), 0, dv.b(getContext(), 15.0f), 0));
+            this.c.setRowDivider(new InsetDrawable(new dk(getResources().getColor(d.general__shared__cccccc)), UTools.closeAnimation(getContext(), 15.0f), 0, UTools.closeAnimation(getContext(), 15.0f), 0));
             View inflate = inflate(getContext(), h.personal__notes_info_header_view, null);
             a(inflate);
             this.c.setHatBodyView(inflate);

@@ -3,7 +3,7 @@ package com.duokan.reader.ui.general;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class ac implements Runnable {
     Transformation a = new Transformation();
@@ -27,7 +27,7 @@ class ac implements Runnable {
             this.f.e = Math.round((((float) (this.b - this.c)) * this.a.getAlpha()) + ((float) this.c));
             this.f.f = Math.round((((float) (this.d - this.e)) * this.a.getAlpha()) + ((float) this.e));
             this.f.invalidateSelf();
-            t.b((Runnable) this);
+            TaskHandler.PostTask((Runnable) this);
         } else if (this.f.g && this.c > this.b) {
             this.f.g = this.b > this.c;
             this.f.d();

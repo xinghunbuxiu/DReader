@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.bookshelf;
 
 import com.duokan.core.sys.r;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.common.c.f;
 
 import java.util.HashMap;
@@ -36,7 +36,7 @@ class kc implements Runnable {
         } finally {
             this.a.c.bq();
             ej.E.release();
-            t.b(new kd(this));
+            TaskHandler.PostTask(new kd(this));
         }
     }
 }

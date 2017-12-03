@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.duokan.c.j;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ui.bookshelf.ImportedFileInfo.FileStatus;
 import com.duokan.reader.ui.general.be;
 
@@ -31,7 +31,7 @@ class gb implements OnClickListener {
                     }
                 }
             }
-            ((cu) x.a(this.b.getContext()).queryFeature(cu.class)).c(arrayList, new gc(this), null);
+            ((cu) MyContextWrapper.getFeature(this.b.getContext()).queryFeature(cu.class)).c(arrayList, new gc(this), null);
             return;
         }
         be.a(this.b.getContext(), j.bookshelf__shared__unselect_any_books, 0).show();

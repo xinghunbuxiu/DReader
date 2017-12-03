@@ -3,17 +3,16 @@ package com.duokan.reader.ui.reading;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 
-import com.duokan.c.g;
-import com.duokan.core.app.y;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.document.m;
 
 class xz extends yb {
-    public xz(y yVar, yh yhVar) {
-        super(yVar, yhVar);
+    public xz(IFeature featrue, yh yhVar) {
+        super(featrue, yhVar);
         findViewById(g.reading__search_text_view__cancel).setOnClickListener(new ya(this));
-        findViewById(g.reading__search_text_view__bar).setPadding(dv.b(getContext(), 15.0f), ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).getTheme().getHeaderPaddingTop() + dv.b(getContext(), 10.0f), dv.b(getContext(), 15.0f), dv.b(getContext(), 10.0f));
+        findViewById(g.reading__search_text_view__bar).setPadding(UTools.closeAnimation(getContext(), 15.0f), ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).getTheme().getHeaderPaddingTop() + UTools.closeAnimation(getContext(), 10.0f), UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 10.0f));
     }
 
     protected void onAttachToStub() {

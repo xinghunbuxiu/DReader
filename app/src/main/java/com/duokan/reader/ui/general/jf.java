@@ -6,7 +6,7 @@ import android.widget.EditText;
 
 import com.duokan.b.g;
 import com.duokan.b.i;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 public class jf extends ak {
     final int a;
@@ -41,7 +41,7 @@ public class jf extends ak {
     }
 
     public void dismiss() {
-        dv.a(getContext());
+        UTools.hideSoftInputFromWindow(getContext());
         super.dismiss();
     }
 }

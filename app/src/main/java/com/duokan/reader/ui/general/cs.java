@@ -3,7 +3,6 @@ package com.duokan.reader.ui.general;
 import android.content.Context;
 import android.graphics.Point;
 import android.graphics.Rect;
-import android.view.View.MeasureSpec;
 
 import com.duokan.core.ui.bh;
 import com.duokan.reader.ui.general.PagesView.PageLayout;

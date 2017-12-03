@@ -6,8 +6,6 @@ import android.graphics.PorterDuff.Mode;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
 
-import com.duokan.reader.common.bitmap.a;
-
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;

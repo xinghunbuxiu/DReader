@@ -5,14 +5,14 @@ import android.widget.TextView;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ui.general.HeaderView;
 
-public class a extends e {
-    public a(y yVar) {
-        super(yVar);
+public class a extends ActivatedController {
+    public a(IFeature featrue) {
+        super(featrue);
         setContentView(h.general__about_view);
         ((HeaderView) findViewById(g.general__about_view__title)).setLeftTitle(j.general__shared__about);
         String versionName = ReaderEnv.get().getVersionName();

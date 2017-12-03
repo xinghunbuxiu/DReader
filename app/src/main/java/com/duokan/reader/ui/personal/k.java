@@ -1,19 +1,18 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
-import com.duokan.core.io.a;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderEnv;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedList;
 
-public class k extends e {
+public class k extends ActivatedController {
     private m a = new m(getContext());
 
-    public k(y yVar) {
-        super(yVar);
+    public k(IFeature featrue) {
+        super(featrue);
         this.a.setStorages(a());
         setContentView(this.a);
     }

@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.domain.store.DkStoreBookDetail;
 import com.duokan.reader.domain.store.DkStoreItem;
 import com.duokan.reader.domain.store.h;
@@ -17,12 +17,12 @@ class qw implements h {
     public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
         if (!this.b.q) {
             this.b.a((DkStoreBookDetail) dkStoreItem);
-            t.b(this.a);
+            TaskHandler.PostTask(this.a);
         }
     }
 
     public void onFetchBookDetailError(String str) {
         this.b.a(null);
-        t.b(this.a);
+        TaskHandler.PostTask(this.a);
     }
 }

@@ -7,7 +7,6 @@ import android.os.Bundle;
 import com.duokan.c.j;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.common.c.f;
-import com.duokan.reader.ui.general.*;
 
 do;
 

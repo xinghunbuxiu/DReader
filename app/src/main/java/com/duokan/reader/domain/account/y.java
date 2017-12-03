@@ -3,8 +3,6 @@ package com.duokan.reader.domain.account;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.reader.domain.statistics.dailystats.a;
-
 class y implements OnClickListener {
     final /* synthetic */ PersonalAccount a;
     final /* synthetic */ b b;
@@ -17,7 +15,7 @@ class y implements OnClickListener {
     }
 
     public void onClick(View view) {
-        a.d().a("m");
+        a.d().a("BaseActivity");
         this.a.e(this.b);
         this.c.dismiss();
     }

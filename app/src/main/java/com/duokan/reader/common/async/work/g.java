@@ -1,11 +1,11 @@
 package com.duokan.reader.common.async.work;
 
-import com.duokan.core.diagnostic.f;
+import com.duokan.core.diagnostic.HttpLogger;
 
 import java.io.File;
 
 public class g implements p {
-    private final f a = new f();
+    private final HttpLogger a = new HttpLogger();
 
     public g(File file) {
         this.a.a(file);

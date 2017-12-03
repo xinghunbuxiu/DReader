@@ -3,7 +3,7 @@ package com.duokan.reader.ui.general;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 
 class ec implements OnClickListener {
     final /* synthetic */ ds a;
@@ -13,6 +13,6 @@ class ec implements OnClickListener {
     }
 
     public void onClick(View view) {
-        ((ho) x.a(this.a.getContext()).queryFeature(ho.class)).a("", "", "");
+        ((ho) MyContextWrapper.getFeature(this.a.getContext()).queryFeature(ho.class)).a("", "", "");
     }
 }

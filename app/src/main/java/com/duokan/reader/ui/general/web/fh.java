@@ -6,7 +6,7 @@ import android.view.View.OnTouchListener;
 import android.widget.EditText;
 
 import com.duokan.core.ui.cj;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class fh implements OnTouchListener {
     final /* synthetic */ EditText a;
@@ -21,7 +21,7 @@ class fh implements OnTouchListener {
         if (motionEvent.getActionMasked() != 0 || !this.a.hasFocus() || !cj.a(this.b.g.b.b.getContext()).a()) {
             return false;
         }
-        dv.a(this.b.g.b.b.getContext());
+        UTools.hideSoftInputFromWindow(this.b.g.b.b.getContext());
         return true;
     }
 }

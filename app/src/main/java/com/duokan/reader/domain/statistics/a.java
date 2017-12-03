@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 
 import com.duokan.core.app.ManagedApp;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
@@ -110,7 +110,7 @@ public class a {
                 } catch (Throwable th2) {
                 }
                 h hVar = new h();
-                hVar.a = "e/" + a.getScheme() + "/" + a.getHost() + a.getPath();
+                hVar.a = "getScaledPagingTouchSlop/" + a.getScheme() + "/" + a.getHost() + a.getPath();
                 hVar.b = new String[]{"host-ip", str2, "msg", Uri.encode(th.getMessage())};
                 this.g.add(hVar);
                 l();
@@ -262,7 +262,7 @@ public class a {
         try {
             h hVar = new h();
             hVar.a = "p/store/first";
-            hVar.b = new String[]{"type", "index", "name", "webview_load", "t", "" + j};
+            hVar.b = new String[]{"type", "index", "name", "webview_load", "TaskHandler", "" + j};
             this.g.add(hVar);
             l();
         } catch (Throwable th) {
@@ -273,7 +273,7 @@ public class a {
         try {
             h hVar = new h();
             hVar.a = "p/store/first";
-            hVar.b = new String[]{"type", "index", "name", "webview_start", "t", "" + j, "delta", "" + j2};
+            hVar.b = new String[]{"type", "index", "name", "webview_start", "TaskHandler", "" + j, "delta", "" + j2};
             this.g.add(hVar);
             l();
         } catch (Throwable th) {
@@ -284,7 +284,7 @@ public class a {
         try {
             h hVar = new h();
             hVar.a = "p/store/first";
-            hVar.b = new String[]{"type", "index", "name", "webview_finish", "t", "" + j, "delta", "" + j2};
+            hVar.b = new String[]{"type", "index", "name", "webview_finish", "TaskHandler", "" + j, "delta", "" + j2};
             this.g.add(hVar);
             l();
             this.d.onEvent("P_STORE_FIRSTLOAD_V1", a(j3, 500, 1000, 2000, 4000, 6000, 8000));
@@ -295,7 +295,7 @@ public class a {
     public void f(String str) {
         try {
             h hVar = new h();
-            hVar.a = "c/store/refresh?" + Uri.parse(str).getEncodedFragment();
+            hVar.a = "showAnimation/store/refresh?" + Uri.parse(str).getEncodedFragment();
             this.g.add(hVar);
             l();
         } catch (Throwable th) {
@@ -303,15 +303,15 @@ public class a {
     }
 
     private void l() {
-        t.a(new c(this));
+        TaskHandler.a(new c(this));
     }
 
     public void a() {
-        t.a(new e(this));
+        TaskHandler.postTask(new e(this));
     }
 
     public void a(String str, int i) {
-        t.a(new g(this, i, str));
+        TaskHandler.postTask(new g(this, i, str));
     }
 
     public void b() {
@@ -325,8 +325,8 @@ public class a {
                 z = false;
             }
             h hVar = new h();
-            hVar.a = "m/app/foreground";
-            hVar.b = new String[]{"t", "" + this.k, "reading", "" + z};
+            hVar.a = "BaseActivity/app/foreground";
+            hVar.b = new String[]{"TaskHandler", "" + this.k, "reading", "" + z};
             this.g.add(hVar);
             l();
         } catch (Throwable th2) {
@@ -351,8 +351,8 @@ public class a {
                     z = false;
                 }
                 h hVar = new h();
-                hVar.a = "m/app/background";
-                hVar.b = new String[]{"t", "" + currentTimeMillis, "d", "" + Math.max(0, currentTimeMillis - this.k), "reading", "" + z};
+                hVar.a = "BaseActivity/app/background";
+                hVar.b = new String[]{"TaskHandler", "" + currentTimeMillis, "getScaledTouchSlop", "" + Math.max(0, currentTimeMillis - this.k), "reading", "" + z};
                 this.g.add(hVar);
                 l();
             } catch (Throwable th3) {

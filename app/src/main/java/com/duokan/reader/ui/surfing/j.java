@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.surfing;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.domain.account.MiAccount;
 import com.duokan.reader.domain.account.PersonalAccount;
@@ -25,6 +25,6 @@ class j implements Runnable {
     }
 
     private void a() {
-        t.a(new l(this), 2000);
+        TaskHandler.postDelayed(new l(this), 2000);
     }
 }

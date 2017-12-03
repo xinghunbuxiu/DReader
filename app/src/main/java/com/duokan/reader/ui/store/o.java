@@ -4,9 +4,9 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import com.duokan.b.i;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.app.y;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ReaderEnv;
@@ -83,7 +83,7 @@ public class o implements ah, l {
         this.d.a(cVar.H(), false, new x(this, cVar, flowChargingTransferChoice, aoVar));
     }
 
-    public void a(y yVar, DkStoreFictionDetail dkStoreFictionDetail, boolean z, String[] strArr, float f, j jVar) {
+    public void a(IFeature featrue, DkStoreFictionDetail dkStoreFictionDetail, boolean z, String[] strArr, float f, j jVar) {
         if (!a && jVar == null) {
             throw new AssertionError();
         } else if (new com.duokan.reader.common.webservices.duokan.y(dkStoreFictionDetail.getFiction().getBookUuid()).b() != 1) {

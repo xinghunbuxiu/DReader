@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.personal;
 
 import com.duokan.c.j;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.common.webservices.duokan.k;
 import com.duokan.reader.common.webservices.duokan.r;
@@ -31,7 +31,7 @@ class bs extends r {
             be.a(this.c.getContext(), this.a.c, 0).show();
         }
         this.c.a.getAdapter().a(false);
-        dv.a(this.c.a, new bt(this));
+        UTools.addAnimation(this.c.a, new bt(this));
     }
 
     protected void onSessionFailed() {

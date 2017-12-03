@@ -6,10 +6,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.bookshelf.BookContent;
 import com.duokan.reader.domain.bookshelf.BookState;
@@ -25,12 +23,12 @@ class bx extends tc implements it {
     private final View m = findViewById(g.reading__reading_menu_bottom_view__options__slide_show);
     private final View n = findViewById(g.reading__reading_menu_bottom_view__options);
     private final View o = findViewById(g.reading__reading_menu_bottom_view__brightness);
-    private final e p = new wg(getContext());
+    private final ActivatedController p = new wg(getContext());
     private final AnimationDrawable q = ((AnimationDrawable) this.l.getDrawable());
     private final View r = findViewById(g.reading__reading_menu_view__tip);
 
-    public bx(y yVar) {
-        super(yVar);
+    public bx(IFeature featrue) {
+        super(featrue);
         this.a.setText(j.reading__seek_page_view__comic_next_chapter);
         this.a.setContentDescription(getString(j.reading__seek_page_view__comic_next_chapter));
         this.b.setText(j.reading__seek_page_view__comic_prev_chapter);

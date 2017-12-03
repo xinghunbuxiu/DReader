@@ -6,8 +6,7 @@ import android.webkit.ConsoleMessage;
 import android.webkit.JsResult;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.fl;
 import com.duokan.core.ui.fr;
 
@@ -29,7 +28,7 @@ public class b extends fl {
                 logLevel = LogLevel.INFO;
                 break;
         }
-        a.c().a(logLevel, "webview", "%s(src: %s, line: %d)", consoleMessage.message(), consoleMessage.sourceId(), Integer.valueOf(consoleMessage.lineNumber()));
+        a.c().a(logLevel, "webview", "%s(src: %s, line: %getScaledTouchSlop)", consoleMessage.message(), consoleMessage.sourceId(), Integer.valueOf(consoleMessage.lineNumber()));
         return super.a(consoleMessage);
     }
 
@@ -38,7 +37,7 @@ public class b extends fl {
         Uri a = com.duokan.core.b.a.a(frVar.getCurrentUrl());
         if (a != null && !TextUtils.isEmpty(str)) {
             if (TextUtils.isEmpty(a.getHost()) || !str.contains(a.getHost())) {
-                t.a(new c(this, str));
+                TaskHandler.postTask(new c(this, str));
             }
         }
     }

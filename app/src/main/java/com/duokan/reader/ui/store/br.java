@@ -3,9 +3,9 @@ package com.duokan.reader.ui.store;
 import android.content.res.Configuration;
 import android.view.View;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.ds;
 import com.duokan.reader.ui.surfing.af;
 
@@ -15,14 +15,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-public class br extends e {
+public class br extends ActivatedController {
     private final ds a = new bs(this, getContext());
     private final ArrayList b = new ArrayList();
     private final Set c = new HashSet();
-    private final int d = dv.b(getContext(), 200.0f);
+    private final int d = UTools.closeAnimation(getContext(), 200.0f);
 
-    public br(y yVar) {
-        super(yVar);
+    public br(IFeature featrue) {
+        super(featrue);
         this.a.setOnCurrentPageChangedListener(new bt(this));
         setContentView(this.a);
     }
@@ -47,11 +47,11 @@ public class br extends e {
             return;
         }
         for (int i2 = 0; i2 < this.b.size(); i2++) {
-            e eVar = (e) this.b.get(i2);
+            ActivatedController activatedControllerVar = (ActivatedController) this.b.get(i2);
             if (i2 == max) {
-                activate(eVar);
-            } else if (eVar.isActive()) {
-                deactivate(eVar);
+                activate(activatedControllerVar);
+            } else if (activatedControllerVar.isActive()) {
+                deactivate(activatedControllerVar);
             }
         }
         this.a.a(max, z);
@@ -66,7 +66,7 @@ public class br extends e {
         if (z) {
             af afVar = (af) getContext().queryFeature(af.class);
             if (afVar != null) {
-                afVar.a(true, "m");
+                afVar.a(true, "BaseActivity");
             }
         }
         i();
@@ -80,7 +80,7 @@ public class br extends e {
     public void d() {
         Iterator it = this.b.iterator();
         while (it.hasNext()) {
-            removeSubController((e) it.next());
+            removeSubController((ActivatedController) it.next());
         }
         this.b.clear();
         this.a.d();
@@ -146,7 +146,7 @@ public class br extends e {
     }
 
     public void i() {
-        dv.a(this.a, new bu(this));
+        UTools.addAnimation(this.a, new bu(this));
     }
 
     public bl j() {

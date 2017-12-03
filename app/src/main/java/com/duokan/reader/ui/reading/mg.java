@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.os.AsyncTask;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 
 class mg extends AsyncTask {
     final /* synthetic */ me a;
@@ -23,7 +23,7 @@ class mg extends AsyncTask {
     }
 
     protected Void a(Void... voidArr) {
-        this.b = ((sh) x.a(this.a.getContext()).queryFeature(sh.class)).getDocument().a(this.a.d.k().a(), new Rect(0, 0, this.a.getWidth(), this.a.getHeight()), this.a.getWidth(), this.a.getHeight());
+        this.b = ((sh) MyContextWrapper.getFeature(this.a.getContext()).queryFeature(sh.class)).getDocument().a(this.a.d.k().a(), new Rect(0, 0, this.a.getWidth(), this.a.getHeight()), this.a.getWidth(), this.a.getHeight());
         return null;
     }
 

@@ -12,8 +12,8 @@ import android.widget.ImageView;
 
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.app.w;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.IActivityRunStatusChanged;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.j;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.UmengManager;
@@ -22,7 +22,7 @@ import com.duokan.reader.domain.cloud.PersonalPrefs.UserGender;
 
 import org.apache.http.HttpStatus;
 
-public class a extends j implements w {
+public class a extends j implements IActivityRunStatusChanged {
     private final ViewGroup a;
     private final ImageView b;
     private final View c;
@@ -101,9 +101,9 @@ public class a extends j implements w {
         PersonalPrefs.a().b(z ? UserGender.MALE.ordinal() : UserGender.FEMALE.ordinal(), true);
         this.f.setVisibility(4);
         ImageView imageView = z ? this.b : this.d;
-        dv.a(z ? this.d : this.b, 1.0f, 0.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, null);
-        dv.a(this.c, 1.0f, 0.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, null);
-        Animation translateAnimation = new TranslateAnimation(1, 0.0f, 1, (-((((float) imageView.getRight()) - ((float) (dv.j(getContext()) / 2))) - ((float) (imageView.getWidth() / 2)))) / ((float) imageView.getWidth()), 1, 0.0f, 1, 0.0f);
+        UTools.addAnimation(z ? this.d : this.b, 1.0f, 0.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, null);
+        UTools.addAnimation(this.c, 1.0f, 0.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, null);
+        Animation translateAnimation = new TranslateAnimation(1, 0.0f, 1, (-((((float) imageView.getRight()) - ((float) (UTools.getWidthPixels(getContext()) / 2))) - ((float) (imageView.getWidth() / 2)))) / ((float) imageView.getWidth()), 1, 0.0f, 1, 0.0f);
         translateAnimation.setDuration(800);
         translateAnimation.setAnimationListener(new d(this));
         translateAnimation.setFillEnabled(true);

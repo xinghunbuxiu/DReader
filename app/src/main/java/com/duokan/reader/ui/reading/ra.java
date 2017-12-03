@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.reading;
 
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ag;
-import com.duokan.core.sys.t;
 import com.duokan.reader.domain.store.DkStoreFictionDetail;
 
 class ra implements ag {
@@ -16,7 +16,7 @@ class ra implements ag {
     public void a(DkStoreFictionDetail dkStoreFictionDetail) {
         if (!this.b.q) {
             this.b.a(dkStoreFictionDetail);
-            t.b(this.a);
+            TaskHandler.PostTask(this.a);
         }
     }
 }

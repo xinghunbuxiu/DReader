@@ -12,7 +12,7 @@ import com.duokan.b.i;
 import com.duokan.common.c;
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.kernel.DkUtils;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.UmengManager;
@@ -58,7 +58,7 @@ public class b extends BroadcastReceiver implements ah, k {
     }
 
     public synchronized void a() {
-        t.a(new d(this));
+        TaskHandler.postTask(new d(this));
     }
 
     public void a(DownloadCenterTask downloadCenterTask) {
@@ -118,7 +118,7 @@ public class b extends BroadcastReceiver implements ah, k {
 
     public synchronized void a(boolean z) {
         i();
-        t.a(new f(this, z));
+        TaskHandler.postTask(new f(this, z));
     }
 
     public synchronized boolean d() {

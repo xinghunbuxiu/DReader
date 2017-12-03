@@ -7,7 +7,7 @@ import android.text.TextUtils;
 import com.duokan.core.a.a;
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.ReaderEnv;
 
 import org.json.JSONObject;
@@ -31,7 +31,7 @@ public class DkSharedStorageManager implements ah {
         USER_RECOMMEND_COUNT("USER_RECOMMEND_COUNT"),
         USER_READ_COUNT("USER_READ_COUNT"),
         CART_CACHE("cart_cache");
-        
+
         String mUrl;
 
         private SharedKey(String str) {
@@ -129,14 +129,14 @@ public class DkSharedStorageManager implements ah {
     private void a(SharedKey sharedKey, Serializable serializable) {
         List list = (List) this.d.get(sharedKey);
         if (list != null) {
-            t.a(new at(this, list, sharedKey, serializable));
+            TaskHandler.postTask(new at(this, list, sharedKey, serializable));
         }
     }
 
     private void c(SharedKey sharedKey) {
         List list = (List) this.d.get(sharedKey);
         if (list != null) {
-            t.a(new au(this, list, sharedKey));
+            TaskHandler.postTask(new au(this, list, sharedKey));
         }
     }
 

@@ -4,8 +4,8 @@ import android.view.LayoutInflater;
 
 import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ui.general.ik;
 
 public class ae extends my {
@@ -14,8 +14,8 @@ public class ae extends my {
     private final kg d = new kg(getContext());
     private final ds e;
 
-    public ae(y yVar) {
-        super(yVar, true);
+    public ae(IFeature featrue) {
+        super(featrue, true);
         addSubController(this.d);
         this.e = new ds(getContext());
         addSubController(this.e);
@@ -27,7 +27,7 @@ public class ae extends my {
         setContentView(this.c);
     }
 
-    private e a(int i) {
+    private ActivatedController a(int i) {
         switch (i) {
             case 0:
                 return this.d;

@@ -5,11 +5,9 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.duokan.core.ui.Scrollable.OverScrollMode;
 import com.duokan.core.ui.ZoomView;
 
 public class HangTagView extends ZoomView {

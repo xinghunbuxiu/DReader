@@ -9,11 +9,10 @@ import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 import android.widget.TextView;
 
-import com.duokan.c.d;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.common.async.a.a;
 import com.duokan.reader.ui.general.PageHeaderView;
@@ -71,7 +70,7 @@ public class j extends af {
     protected void initHdContent(FrameLayout frameLayout, LayoutParams layoutParams) {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int b = (displayMetrics.widthPixels > displayMetrics.heightPixels ? displayMetrics.heightPixels : displayMetrics.widthPixels) - dv.b(getActivity(), 30.0f);
+        int b = (displayMetrics.widthPixels > displayMetrics.heightPixels ? displayMetrics.heightPixels : displayMetrics.widthPixels) - UTools.closeAnimation(getActivity(), 30.0f);
         layoutParams.width = (b * 4) / 5;
         layoutParams.height = b;
         layoutParams.gravity = 17;

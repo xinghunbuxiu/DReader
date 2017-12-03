@@ -8,16 +8,15 @@ import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.duokan.core.app.m;
+import com.duokan.core.app.BaseActivity;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.app.s;
-import com.duokan.core.app.x;
 import com.duokan.core.diagnostic.a;
-import com.duokan.core.sys.t;
-import com.duokan.core.ui.*;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.di;
 import com.duokan.core.ui.dl;
 import com.duokan.core.ui.dn;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.et;
 import com.duokan.core.ui.ge;
 import com.duokan.reader.DkApp;
@@ -44,7 +43,7 @@ public abstract class lb extends di implements la {
 
     public lb(Context context) {
         super(context);
-        this.b = (sh) x.a(context).queryFeature(sh.class);
+        this.b = (sh) MyContextWrapper.getFeature(context).queryFeature(sh.class);
         this.c = new lo(this, getContext());
         addView(this.c, getChildCount(), new dn(-1, -1, 17));
         this.d.a(new lj(this));
@@ -93,7 +92,7 @@ public abstract class lb extends di implements la {
             this.h.i();
             this.h.setZoomListener(g());
         }
-        ((m) DkApp.get().getTopActivity()).addOnScreenRotationChangedListener(this.e);
+        ((BaseActivity) DkApp.get().getTopActivity()).addOnScreenRotationChangedListener(this.e);
     }
 
     protected void c() {
@@ -122,16 +121,16 @@ public abstract class lb extends di implements la {
             View view = this.h;
             view.h();
             view.setZoomListener(null);
-            ((m) DkApp.get().getTopActivity()).removeOnScreenRotationChangedListener(this.e);
+            ((BaseActivity) DkApp.get().getTopActivity()).removeOnScreenRotationChangedListener(this.e);
             this.c.d();
             this.b.a(null);
             Runnable lcVar = new lc(this, view);
             if (Float.compare(0.0f, b(view).l()) != 0) {
                 a(0, false);
-                dv.a(view, new lf(this, lcVar));
+                UTools.addAnimation(view, new lf(this, lcVar));
                 return;
             }
-            t.b(lcVar);
+            TaskHandler.PostTask(lcVar);
         }
     }
 
@@ -182,7 +181,7 @@ public abstract class lb extends di implements la {
     private void a(int i, boolean z) {
         View activeImageView = getActiveImageView();
         do b = b(activeImageView);
-        do doVar = new do(b);
+        do doVar = new do (b);
         doVar.d((float) i);
         activeImageView.a((int) ((b.l() + activeImageView.getZoomAngle()) - doVar.l()), z);
         a(activeImageView, doVar);
@@ -230,6 +229,6 @@ public abstract class lb extends di implements la {
 
     protected Point h() {
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        return dv.b(new Point(displayMetrics.widthPixels / 2, displayMetrics.heightPixels / 2), (View) this);
+        return UTools.closeAnimation(new Point(displayMetrics.widthPixels / 2, displayMetrics.heightPixels / 2), (View) this);
     }
 }

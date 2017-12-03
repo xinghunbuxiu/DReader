@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ui.general.fy;
 
 class l extends fy {
@@ -14,9 +14,9 @@ class l extends fy {
     private final FrameLayout b;
     private final float d;
 
-    public l(i iVar, y yVar, e eVar, float f) {
+    public l(i iVar, IFeature featrue, ActivatedController activatedControllerVar, float f) {
         this.a = iVar;
-        super(iVar, yVar, eVar);
+        super(iVar, featrue, activatedControllerVar);
         this.d = f;
         this.b = new m(this, getContext(), iVar);
         this.b.setLayoutParams(new LayoutParams(-1, -1));

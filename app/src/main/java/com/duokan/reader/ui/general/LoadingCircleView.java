@@ -11,7 +11,7 @@ import android.widget.ImageView;
 
 import com.duokan.b.e;
 import com.duokan.b.g;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 public class LoadingCircleView extends FrameLayout {
     private final ImageView a;
@@ -58,7 +58,7 @@ public class LoadingCircleView extends FrameLayout {
         super.onVisibilityChanged(view, i);
         if (this.a != null && (this.a.getDrawable() instanceof AnimationDrawable)) {
             AnimationDrawable animationDrawable = (AnimationDrawable) this.a.getDrawable();
-            if (i == 0 && dv.b(view) == 0) {
+            if (i == 0 && UTools.getVisible(view) == 0) {
                 animationDrawable.start();
             } else {
                 animationDrawable.stop();

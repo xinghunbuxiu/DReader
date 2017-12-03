@@ -2,7 +2,7 @@ package com.duokan.reader.domain.bookshelf;
 
 import com.duokan.core.a.n;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.domain.cloud.DkCloudStorage;
 import com.duokan.reader.domain.downloadcenter.b;
 import com.duokan.reader.domain.store.a;
@@ -72,7 +72,7 @@ class hv implements am {
     }
 
     public void a(an anVar, int i) {
-        t.b(new hx(this, anVar, i));
+        TaskHandler.PostTask(new hx(this, anVar, i));
     }
 
     public void a(c cVar) {

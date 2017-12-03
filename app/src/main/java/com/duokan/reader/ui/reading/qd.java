@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class qd implements Runnable {
     final /* synthetic */ qc a;
@@ -10,6 +10,6 @@ class qd implements Runnable {
     }
 
     public void run() {
-        t.a(new qe(this), 500);
+        TaskHandler.postDelayed(new qe(this), 500);
     }
 }

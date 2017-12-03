@@ -5,11 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.duokan.core.app.e;
-import com.duokan.reader.ui.general.a.a;
+import com.duokan.core.app.ActivatedController;
 
 public class gr implements dr {
-    private final e a;
+    private final ActivatedController a;
     private final ViewGroup b = ((ViewGroup) LayoutInflater.from(this.a.getContext()).inflate(g.general__spirt_menu_view, null));
     private final ViewGroup c = ((ViewGroup) this.b.findViewById(f.general__spirt_menu_view__page));
     private final ViewGroup d = ((ViewGroup) this.b.findViewById(f.general__spirt_menu_view__menu));
@@ -19,13 +18,13 @@ public class gr implements dr {
     private final ClipDrawable h;
     private final boolean i;
 
-    public gr(e eVar, boolean z, boolean z2) {
-        this.a = eVar;
+    public gr(ActivatedController activatedControllerVar, boolean z, boolean z2) {
+        this.a = activatedControllerVar;
         this.f = z ? this.c : this.d;
         this.i = z2;
         if (this.i) {
-            ViewGroup viewGroup = (ViewGroup) ((ViewGroup) eVar.getActivity().getWindow().getDecorView()).getChildAt(0);
-            this.h = new ClipDrawable(new e(viewGroup.getChildAt(viewGroup.getChildCount() - 1)), 80, 2);
+            ViewGroup viewGroup = (ViewGroup) ((ViewGroup) activatedControllerVar.getActivity().getWindow().getDecorView()).getChildAt(0);
+            this.h = new ClipDrawable(new ActivatedController(viewGroup.getChildAt(viewGroup.getChildCount() - 1)), 80, 2);
             this.b.findViewById(f.general__spirt_menu_view__blur_bg).setBackgroundDrawable(this.h);
             this.g.setOnClickListener(new gs(this));
             return;

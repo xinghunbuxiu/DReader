@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.text.TextUtils;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.domain.account.oauth.ThirdWeiXin;
 import com.duokan.reader.ui.reading.sh;
 
@@ -18,7 +18,7 @@ public class AppInstallReceiver extends BroadcastReceiver {
                 if (TextUtils.equals("com.tencent.mm", intent.getData().getSchemeSpecificPart())) {
                     ThirdWeiXin.asyncResetInstalledStatus();
                 }
-                shVar = (sh) x.a(context).queryFeature(sh.class);
+                shVar = (sh) MyContextWrapper.getFeature(context).queryFeature(sh.class);
                 if (shVar != null && shVar.bk() != null) {
                     shVar.bk().a(intent.getData().getSchemeSpecificPart());
                 }
@@ -26,7 +26,7 @@ public class AppInstallReceiver extends BroadcastReceiver {
                 if (TextUtils.equals("com.tencent.mm", intent.getData().getSchemeSpecificPart())) {
                     ThirdWeiXin.asyncResetInstalledStatus();
                 }
-                shVar = (sh) x.a(context).queryFeature(sh.class);
+                shVar = (sh) MyContextWrapper.getFeature(context).queryFeature(sh.class);
                 if (shVar != null && shVar.bk() != null) {
                     shVar.bk().b(intent.getData().getSchemeSpecificPart());
                 }

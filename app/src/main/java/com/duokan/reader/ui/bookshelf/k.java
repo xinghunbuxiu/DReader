@@ -3,8 +3,8 @@ package com.duokan.reader.ui.bookshelf;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.x;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.domain.account.PersonalAccount;
 import com.duokan.reader.domain.account.ab;
@@ -21,7 +21,7 @@ class k implements OnClickListener {
 
     public void onClick(View view) {
         kp.a().a(new ab(i.f().b(PersonalAccount.class)));
-        e storePageController = new StorePageController(x.a(this.a.getContext()));
+        ActivatedController storePageController = new StorePageController(MyContextWrapper.getFeature(this.a.getContext()));
         storePageController.loadUrl(p.i().K());
         this.a.a.showPopup(storePageController);
     }

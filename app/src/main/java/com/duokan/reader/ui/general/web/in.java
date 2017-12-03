@@ -1,7 +1,6 @@
 package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.sys.af;
-import com.duokan.reader.domain.store.a;
 
 class in implements Runnable {
     final /* synthetic */ String a;

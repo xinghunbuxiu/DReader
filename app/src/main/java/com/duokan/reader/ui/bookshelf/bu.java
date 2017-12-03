@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.bookshelf.ai;
 
@@ -17,7 +17,7 @@ class bu implements Runnable {
         if (obj != null) {
             new ij(this.a.c.f.getContext()).a(this.a.c.d);
         } else {
-            t.b(this.a.c.d);
+            TaskHandler.PostTask(this.a.c.d);
         }
     }
 }

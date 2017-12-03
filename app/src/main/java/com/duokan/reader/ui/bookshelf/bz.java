@@ -12,7 +12,7 @@ import android.view.animation.TranslateAnimation;
 import com.duokan.core.ui.as;
 import com.duokan.core.ui.bu;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.domain.bookshelf.an;
@@ -70,7 +70,7 @@ class bz extends er {
         this.f.b(view, z);
         this.f.a((int) HttpStatus.SC_MULTIPLE_CHOICES);
         this.f.b((int) HttpStatus.SC_MULTIPLE_CHOICES);
-        this.e.a(dv.e(this.a.getContext()));
+        this.e.a(UTools.getScaledPagingTouchSlop(this.a.getContext()));
         this.g = false;
         this.k = null;
         this.m = 0;
@@ -144,7 +144,7 @@ class bz extends er {
         } else {
             an b = b(a);
             cz c2 = c(a);
-            if (dv.d(c2.getViewCenter(), c) >= ((double) dv.b(this.a.getContext(), 25.0f)) || this.k == b || !c2.j() || !this.l) {
+            if (UTools.getScaledTouchSlop(c2.getViewCenter(), c) >= ((double) UTools.closeAnimation(this.a.getContext(), 25.0f)) || this.k == b || !c2.j() || !this.l) {
                 a();
                 if (this.j != null) {
                     cz draggingItemView = this.j.getDraggingItemView();
@@ -191,7 +191,7 @@ class bz extends er {
         for (int b : visibleItemIndices) {
             View b2 = this.j.b(b);
             Rect rect = new Rect();
-            dv.a(rect, b2, null);
+            UTools.getRect(rect, b2, null);
             arrayList.add(b2);
             arrayList2.add(rect);
         }
@@ -200,7 +200,7 @@ class bz extends er {
             if (i < this.j.getItemCount()) {
                 Rect a = this.j.a(i);
                 View b3 = this.j.b(i);
-                dv.a(a, b3, null);
+                UTools.getRect(a, b3, null);
                 arrayList.add(b3);
                 arrayList2.add(a);
             }
@@ -219,7 +219,7 @@ class bz extends er {
     }
 
     private Animation a(Rect rect, View view, long j) {
-        dv.a(rect, view);
+        UTools.addAnimation(rect, view);
         Animation translateAnimation = new TranslateAnimation((float) rect.left, 0.0f, (float) rect.top, 0.0f);
         translateAnimation.setDuration(j);
         return translateAnimation;
@@ -228,10 +228,10 @@ class bz extends er {
     private void a(cz czVar, an anVar, an anVar2, int i) {
         this.r = true;
         a();
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         czVar.a(rect, 300);
         this.h.a(rect, 300, new ch(this, anVar, anVar2, i));
-        dv.g.a(rect);
+        UTools.g.getRect(rect);
     }
 
     private void a(an anVar) {
@@ -268,7 +268,7 @@ class bz extends er {
             rectF.setEmpty();
         } else {
             rectF.set(0.0f, 0.0f, (float) c.getWidth(), (float) c.getHeight());
-            dv.c(rectF, c);
+            UTools.showAnimation(rectF, c);
         }
         return c;
     }
@@ -357,8 +357,8 @@ class bz extends er {
 
     private boolean a(cz czVar, float f) {
         boolean z = false;
-        Rect rect = (Rect) dv.g.a();
-        RectF rectF = (RectF) dv.h.a();
+        Rect rect = (Rect) UTools.g.getRect();
+        RectF rectF = (RectF) UTools.h.getRect();
         a(rect);
         rectF.set(rect);
         RectF dragBounds = czVar.getDragBounds();
@@ -367,8 +367,8 @@ class bz extends er {
                 z = true;
             }
         }
-        dv.h.a(rectF);
-        dv.g.a(rect);
+        UTools.h.getRect(rectF);
+        UTools.g.getRect(rect);
         return z;
     }
 }

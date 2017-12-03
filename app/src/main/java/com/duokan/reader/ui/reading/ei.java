@@ -12,13 +12,13 @@ import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.kernel.DkUtils;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.bookshelf.c;
 
-public class ei extends e {
+public class ei extends ActivatedController {
     protected final sh a = ((sh) getContext().queryFeature(sh.class));
     protected final c b = this.a.G();
     protected final wl c;
@@ -28,8 +28,8 @@ public class ei extends e {
     protected final ImageView g;
 
     @TargetApi(11)
-    public ei(y yVar, wl wlVar) {
-        super(yVar);
+    public ei(IFeature featrue, wl wlVar) {
+        super(featrue);
         this.c = wlVar;
         this.d = this.a.S();
         this.e = new FrameLayout(getContext());

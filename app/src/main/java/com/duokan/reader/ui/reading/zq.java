@@ -1,9 +1,8 @@
 package com.duokan.reader.ui.reading;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 import com.duokan.core.sys.af;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.ui.store.an;
 
 import java.util.Arrays;
@@ -16,7 +15,7 @@ class zq implements an {
     }
 
     public void a(String str, String str2) {
-        a.c().a(LogLevel.EVENT, "autopay", "pay-ok(book: %s(%s), chapter: %s(%d|%s))", this.a.d, str, this.a.f, Long.valueOf(this.a.b), str2);
+        a.c().a(LogLevel.EVENT, "autopay", "pay-ok(book: %s(%s), chapter: %s(%getScaledTouchSlop|%s))", this.a.d, str, this.a.f, Long.valueOf(this.a.b), str2);
         this.a.j.a.put(str2, new af(Integer.valueOf(0)));
         zo zoVar = this.a.j;
         zoVar.E++;
@@ -26,7 +25,7 @@ class zq implements an {
     }
 
     public void a(String str, String str2, Integer num) {
-        a.c().a(LogLevel.EVENT, "autopay", "pay-error: %d(book: %s(%s), chapter: %s(%d|%s))", num, this.a.d, str, this.a.f, Long.valueOf(this.a.b), str2);
+        a.c().a(LogLevel.EVENT, "autopay", "pay-error: %getScaledTouchSlop(book: %s(%s), chapter: %s(%getScaledTouchSlop|%s))", num, this.a.d, str, this.a.f, Long.valueOf(this.a.b), str2);
         if (num != null) {
             this.a.j.a.put(str2, new af(num));
         } else {
@@ -35,6 +34,6 @@ class zq implements an {
         if (this.a.a != null) {
             this.a.a.i(false);
         }
-        t.b(this.a.i);
+        TaskHandler.PostTask(this.a.i);
     }
 }

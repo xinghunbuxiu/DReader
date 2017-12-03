@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.PointF;
 import android.view.View;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.ge;
 import com.duokan.reader.domain.document.aj;
 
@@ -90,7 +90,7 @@ public class mv extends fy implements mn {
     }
 
     protected boolean a(PointF pointF) {
-        if (this.e.a(dv.a(new PointF(pointF.x + ((float) getScrollX()), pointF.y + ((float) getScrollY())), (View) this, this.e))) {
+        if (this.e.a(UTools.addAnimation(new PointF(pointF.x + ((float) getScrollX()), pointF.y + ((float) getScrollY())), (View) this, this.e))) {
             return true;
         }
         return super.a(pointF);

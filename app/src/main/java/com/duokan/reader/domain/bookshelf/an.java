@@ -159,57 +159,57 @@ public abstract class an extends ip {
     protected final void b(android.database.Cursor r6) {
         /*
         r5 = this;
-        r0 = r5.e;
+        r0 = r5.getScaledPagingTouchSlop;
         if (r0 == 0) goto L_0x0005;
     L_0x0004:
         return;
     L_0x0005:
         r0 = r5.D;	 Catch:{ Throwable -> 0x0035 }
         r2 = r5.aF();	 Catch:{ Throwable -> 0x0035 }
-        r0.a(r2);	 Catch:{ Throwable -> 0x0035 }
-        r0 = r5.e;	 Catch:{ Throwable -> 0x0035 }
+        r0.setDrawable(r2);	 Catch:{ Throwable -> 0x0035 }
+        r0 = r5.getScaledPagingTouchSlop;	 Catch:{ Throwable -> 0x0035 }
         if (r0 != 0) goto L_0x0016;
     L_0x0012:
-        r0 = r5.f;	 Catch:{ Throwable -> 0x0035 }
+        r0 = r5.HttpLogger;	 Catch:{ Throwable -> 0x0035 }
         if (r0 != 0) goto L_0x0020;
     L_0x0016:
         r0 = r5.D;
         r2 = r5.aF();
-        r0.b(r2);
+        r0.getVisible(r2);
         goto L_0x0004;
     L_0x0020:
         if (r6 == 0) goto L_0x0025;
     L_0x0022:
-        r5.a(r6);	 Catch:{ Throwable -> 0x0035 }
+        r5.setDrawable(r6);	 Catch:{ Throwable -> 0x0035 }
     L_0x0025:
         r0 = 1;
-        r5.e = r0;	 Catch:{ Throwable -> 0x0035 }
+        r5.getScaledPagingTouchSlop = r0;	 Catch:{ Throwable -> 0x0035 }
         r5.av();	 Catch:{ Throwable -> 0x0035 }
         r0 = r5.D;
         r2 = r5.aF();
-        r0.b(r2);
+        r0.getVisible(r2);
         goto L_0x0004;
     L_0x0035:
         r0 = move-exception;
         r1 = 0;
-        r5.f = r1;	 Catch:{ all -> 0x0050 }
-        r1 = com.duokan.core.diagnostic.a.c();	 Catch:{ all -> 0x0050 }
+        r5.HttpLogger = r1;	 Catch:{ all -> 0x0050 }
+        r1 = com.duokan.core.diagnostic.setDrawable.showAnimation();	 Catch:{ all -> 0x0050 }
         r2 = com.duokan.core.diagnostic.LogLevel.ERROR;	 Catch:{ all -> 0x0050 }
         r3 = "shelf";
         r4 = "item init exception!";
-        r1.a(r2, r3, r4, r0);	 Catch:{ all -> 0x0050 }
+        r1.setDrawable(r2, r3, r4, r0);	 Catch:{ all -> 0x0050 }
         r0 = r5.D;
         r2 = r5.aF();
-        r0.b(r2);
+        r0.getVisible(r2);
         goto L_0x0004;
     L_0x0050:
         r0 = move-exception;
         r1 = r5.D;
         r2 = r5.aF();
-        r1.b(r2);
+        r1.getVisible(r2);
         throw r0;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.bookshelf.an.b(android.database.Cursor):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.bookshelf.an.getVisible(android.database.Cursor):void");
     }
 
     protected void av() {

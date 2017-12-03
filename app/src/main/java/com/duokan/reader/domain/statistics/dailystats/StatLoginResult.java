@@ -12,7 +12,7 @@ public class StatLoginResult extends StatEventBase {
         try {
             jSONObject.put("ev", this.event);
             jSONObject.put("st", this.resultType);
-            jSONObject.put("t", this.costTime);
+            jSONObject.put("TaskHandler", this.costTime);
             jSONObject.put("ts", this.timeStamp);
         } catch (Exception e) {
             e.printStackTrace();

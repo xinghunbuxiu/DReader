@@ -3,7 +3,7 @@ package com.duokan.reader.ui.reading;
 import android.content.Context;
 import android.widget.TextView;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class b implements Runnable {
     final /* synthetic */ TextView a;
@@ -18,7 +18,7 @@ class b implements Runnable {
 
     public void run() {
         if (this.a.getLineCount() == 1) {
-            this.a.setPadding(0, dv.b(this.b, 10.0f), 0, 0);
+            this.a.setPadding(0, UTools.closeAnimation(this.b, 10.0f), 0, 0);
         }
     }
 }

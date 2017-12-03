@@ -8,12 +8,9 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.view.View.MeasureSpec;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.duokan.b.c;
 import com.duokan.reader.domain.cloud.DkCloudNoteBookInfo;
 
 public class BookCoverView extends FrameLayout {

@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.aj;
 import com.duokan.reader.domain.bookshelf.aa;
 import com.duokan.reader.domain.bookshelf.an;
@@ -27,9 +27,9 @@ public class cx extends aj {
 
     public cx(List list, Context context) {
         this.a = context;
-        this.e = (cu) x.a(this.a).queryFeature(cu.class);
+        this.e = (cu) MyContextWrapper.getFeature(this.a).queryFeature(cu.class);
         b(list);
-        this.j = (cr) x.a(context).queryFeature(cr.class);
+        this.j = (cr) MyContextWrapper.getFeature(context).queryFeature(cr.class);
     }
 
     public int b() {

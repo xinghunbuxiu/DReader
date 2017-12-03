@@ -3,7 +3,7 @@ package com.duokan.reader.domain.plugins.dict;
 import android.text.TextUtils;
 
 import com.duokan.b.i;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.kingsoft.iciba.sdk2.interfaces.IKSCibaQueryResult;
 import com.mipay.sdk.Mipay;
 
@@ -30,7 +30,7 @@ class o implements IKSCibaQueryResult {
             JSONObject jSONObject2 = jSONObject.getJSONObject(Mipay.KEY_MESSAGE);
             JSONObject optJSONObject = jSONObject2.optJSONObject("baseInfo");
             if (optJSONObject != null) {
-                sVar.c = new t();
+                sVar.c = new TaskHandler();
                 sVar.c.a = optJSONObject.optInt("translate_type");
                 sVar.c.b = optJSONObject.optString("translate_result");
                 sVar.c.c = optJSONObject.optString("translate_msg");
@@ -43,7 +43,7 @@ class o implements IKSCibaQueryResult {
                 jSONObject = optJSONObject.optJSONObject("exchange");
                 if (jSONObject != null) {
                     if (sVar.c == null) {
-                        sVar.c = new t();
+                        sVar.c = new TaskHandler();
                     }
                     sVar.c.e = this.a.a(jSONObject);
                 }
@@ -81,7 +81,7 @@ class o implements IKSCibaQueryResult {
         } catch (Throwable th) {
             th.printStackTrace();
         }
-        t.a(new p(this, sVar));
+        TaskHandler.postTask(new p(this, sVar));
     }
 
     private x a(JSONObject jSONObject) {

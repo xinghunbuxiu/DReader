@@ -17,9 +17,9 @@ import android.widget.FrameLayout.LayoutParams;
 import com.duokan.b.b;
 import com.duokan.b.g;
 import com.duokan.common.i;
-import com.duokan.core.app.e;
-import com.duokan.core.app.x;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.f;
 import com.duokan.reader.domain.account.oauth.ThirdOAuth.OAuthCallback;
 import com.duokan.reader.domain.account.oauth.TokenStore;
@@ -35,7 +35,7 @@ public class EvernoteOAuthDialog extends af {
     private OAuthCallback mCallback = null;
     private String mConsumerKey = null;
     private String mConsumerSecret = null;
-    private e mCurController;
+    private ActivatedController mCurController;
     private Animation mDisAnimation;
     private EvernoteOAuthController mEvernoteController = null;
     private jq mProgressDialog = null;
@@ -43,7 +43,7 @@ public class EvernoteOAuthDialog extends af {
     private Animation mShowAnimation;
     private EvernoteOAuthController mYinxiangController = null;
 
-    public class EvernoteOAuthController extends e {
+    public class EvernoteOAuthController extends ActivatedController {
         static final /* synthetic */ boolean $assertionsDisabled = (!EvernoteOAuthDialog.class.desiredAssertionStatus() ? true : $assertionsDisabled);
         static final String EXTRA_CONSUMER_KEY = "CONSUMER_KEY";
         static final String EXTRA_CONSUMER_SECRET = "CONSUMER_SECRET";
@@ -141,8 +141,8 @@ public class EvernoteOAuthDialog extends af {
             }
         }
 
-        public EvernoteOAuthController(y yVar, Evernote evernote, f fVar, String str) {
-            super(yVar);
+        public EvernoteOAuthController(IFeature featrue, Evernote evernote, f fVar, String str) {
+            super(featrue);
             this.mEvernoteName = str;
             this.mListener = evernote;
             this.mEvernoteHost = getBaseServerUrl();
@@ -232,9 +232,9 @@ public class EvernoteOAuthDialog extends af {
         this.mProgressDialog = new jq(getContext());
         this.mProgressDialog.a(true);
         this.mProgressDialog.a(getContext().getString(com.duokan.b.i.account__oauth__loading));
-        this.mYinxiangController = new EvernoteOAuthController(x.a(getContext()), evernote, this, "yinxiang");
+        this.mYinxiangController = new EvernoteOAuthController(MyContextWrapper.getFeature(getContext()), evernote, this, "yinxiang");
         this.mCurController = this.mYinxiangController;
-        this.mEvernoteController = new EvernoteOAuthController(x.a(getContext()), evernote, this, "evernote");
+        this.mEvernoteController = new EvernoteOAuthController(MyContextWrapper.getFeature(getContext()), evernote, this, "evernote");
         this.mRootView.addView(this.mYinxiangController.getContentView(), new LayoutParams(-1, -1));
         this.mRootView.addView(this.mEvernoteController.getContentView(), new LayoutParams(-1, -1));
         this.mEvernoteController.getContentView().setVisibility(8);
@@ -310,8 +310,8 @@ public class EvernoteOAuthDialog extends af {
         this.mYinxiangController.start();
     }
 
-    private void exit(e eVar, int i) {
-        if (this.mCurController == eVar) {
+    private void exit(ActivatedController activatedControllerVar, int i) {
+        if (this.mCurController == activatedControllerVar) {
             this.mProgressDialog.dismiss();
             switch (i) {
                 case 1:

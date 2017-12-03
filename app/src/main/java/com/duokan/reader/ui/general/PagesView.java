@@ -11,12 +11,9 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Interpolator;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.Scrollable;
-import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.Scrollable.ScrollState;
 import com.duokan.core.ui.cf;
 import com.duokan.core.ui.cg;
 import com.duokan.core.ui.et;
@@ -222,7 +219,7 @@ public abstract class PagesView extends FrameLayout implements Scrollable {
 
     public void a(Runnable runnable) {
         if (runnable != null) {
-            t.b(new gb(this, runnable));
+            TaskHandler.PostTask(new gb(this, runnable));
         }
     }
 

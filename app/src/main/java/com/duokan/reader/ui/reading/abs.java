@@ -10,9 +10,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.bx;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 import org.apache.http.HttpStatus;
 
@@ -22,7 +22,7 @@ public class abs extends View {
     private aca c = null;
     private ValueAnimator d = null;
     private ValueAnimator e = null;
-    private final sh f = ((sh) x.a(getContext()).queryFeature(sh.class));
+    private final sh f = ((sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class));
     private final bx g = new bx(getContext(), new AccelerateDecelerateInterpolator());
     private final Rect h = new Rect();
     private final Rect i = new Rect();
@@ -140,7 +140,7 @@ public class abs extends View {
             float scrollScaleX = f * getScrollScaleX();
             float scrollScaleY = f2 * getScrollScaleY();
             this.g.a(true);
-            this.g.a(this.b.f.x, this.b.f.y, Math.round(scrollScaleX), Math.round(scrollScaleY), getMinScrollX(), getMaxScrollX(), getMinScrollY(), getMaxScrollY(), dv.f(getContext()), dv.g(getContext()));
+            this.g.a(this.b.f.x, this.b.f.y, Math.round(scrollScaleX), Math.round(scrollScaleY), getMinScrollX(), getMaxScrollX(), getMinScrollY(), getMaxScrollY(), UTools.f(getContext()), UTools.g(getContext()));
             invalidate();
         }
     }
@@ -344,19 +344,19 @@ public class abs extends View {
     }
 
     private final int getMinOverScrollX() {
-        return Float.compare(((float) this.b.b.getWidth()) * this.b.h, (float) getWidth()) <= 0 ? getMinScrollX() : getMinScrollX() - dv.f(getContext());
+        return Float.compare(((float) this.b.b.getWidth()) * this.b.h, (float) getWidth()) <= 0 ? getMinScrollX() : getMinScrollX() - UTools.f(getContext());
     }
 
     private final int getMaxOverScrollX() {
-        return Float.compare(((float) this.b.b.getWidth()) * this.b.h, (float) getWidth()) <= 0 ? getMaxScrollX() : getMaxScrollX() + dv.f(getContext());
+        return Float.compare(((float) this.b.b.getWidth()) * this.b.h, (float) getWidth()) <= 0 ? getMaxScrollX() : getMaxScrollX() + UTools.f(getContext());
     }
 
     private final int getMinOverScrollY() {
-        return Float.compare(((float) this.b.b.getHeight()) * this.b.h, (float) getHeight()) <= 0 ? getMinScrollY() : getMinScrollY() - dv.g(getContext());
+        return Float.compare(((float) this.b.b.getHeight()) * this.b.h, (float) getHeight()) <= 0 ? getMinScrollY() : getMinScrollY() - UTools.g(getContext());
     }
 
     private final int getMaxOverScrollY() {
-        return Float.compare(((float) this.b.b.getHeight()) * this.b.h, (float) getHeight()) <= 0 ? getMaxScrollY() : getMaxScrollY() + dv.g(getContext());
+        return Float.compare(((float) this.b.b.getHeight()) * this.b.h, (float) getHeight()) <= 0 ? getMaxScrollY() : getMaxScrollY() + UTools.g(getContext());
     }
 
     private int getMinScrollX() {

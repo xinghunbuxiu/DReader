@@ -11,7 +11,7 @@ import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -47,7 +47,7 @@ public class ReadingStatisticsChartView extends View {
         this.c = new Paint();
         this.c.setAntiAlias(true);
         this.c.setStyle(Style.FILL_AND_STROKE);
-        this.c.setTextSize((float) dv.b(getContext(), 12.0f));
+        this.c.setTextSize((float) UTools.closeAnimation(getContext(), 12.0f));
         this.e = new ArrayList();
         this.f = new ArrayList();
     }
@@ -79,11 +79,11 @@ public class ReadingStatisticsChartView extends View {
     protected void onDraw(Canvas canvas) {
         int i;
         super.onDraw(canvas);
-        int b = dv.b(getContext(), 20.0f);
+        int b = UTools.closeAnimation(getContext(), 20.0f);
         int width = getWidth();
         int measuredHeight = getMeasuredHeight();
-        int b2 = dv.b(getContext(), 20.0f);
-        int b3 = dv.b(getContext(), 20.0f);
+        int b2 = UTools.closeAnimation(getContext(), 20.0f);
+        int b3 = UTools.closeAnimation(getContext(), 20.0f);
         int i2 = (measuredHeight - b2) - b3;
         float f = (1.0f * ((float) width)) / 24.0f;
         float f2 = this.h == 0.0f ? 0.0f : (1.0f * ((float) (i2 - (b * 2)))) / this.h;
@@ -105,7 +105,7 @@ public class ReadingStatisticsChartView extends View {
         }
         List a = a(this.e);
         List a2 = a(this.f);
-        this.a.setStrokeWidth((float) dv.b(getContext(), 4.0f));
+        this.a.setStrokeWidth((float) UTools.closeAnimation(getContext(), 4.0f));
         this.a.setColor(getResources().getColor(c.general__shared__92c182));
         this.d.reset();
         this.d.moveTo(((mn) a.get(0)).a(0.0f), ((mn) a2.get(0)).a(0.0f));
@@ -124,11 +124,11 @@ public class ReadingStatisticsChartView extends View {
         canvas.drawPath(this.d, this.b);
         if (this.h != 0.0f) {
             this.a.setColor(getResources().getColor(c.general__shared__ffffff));
-            this.a.setStrokeWidth((float) dv.b(getContext(), 2.0f));
+            this.a.setStrokeWidth((float) UTools.closeAnimation(getContext(), 2.0f));
             this.b.setColor(getResources().getColor(c.general__shared__92c182));
             for (i = 6; i < 24; i += 6) {
-                canvas.drawCircle(((float) i) * f, f3 - (((float) this.g[i]) * f2), (float) dv.b(getContext(), 4.0f), this.a);
-                canvas.drawCircle(((float) i) * f, f3 - (((float) this.g[i]) * f2), (float) dv.b(getContext(), 3.0f), this.b);
+                canvas.drawCircle(((float) i) * f, f3 - (((float) this.g[i]) * f2), (float) UTools.closeAnimation(getContext(), 4.0f), this.a);
+                canvas.drawCircle(((float) i) * f, f3 - (((float) this.g[i]) * f2), (float) UTools.closeAnimation(getContext(), 3.0f), this.b);
             }
         }
         this.a.setColor(getResources().getColor(c.general__shared__92c182));

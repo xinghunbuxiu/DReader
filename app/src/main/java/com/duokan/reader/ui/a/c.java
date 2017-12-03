@@ -3,7 +3,7 @@ package com.duokan.reader.ui.a;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class c implements OnClickListener {
     final /* synthetic */ a a;
@@ -13,6 +13,6 @@ class c implements OnClickListener {
     }
 
     public void onClick(View view) {
-        dv.a(this.a.e);
+        UTools.addAnimation(this.a.e);
     }
 }

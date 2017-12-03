@@ -3,12 +3,9 @@ package com.duokan.reader.domain.document.epub;
 import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.Rect;
-import android.graphics.drawable.Drawable.Callback;
 import android.text.TextUtils;
 
-import com.duokan.core.diagnostic.a;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.t;
 import com.duokan.reader.domain.document.ab;
 import com.duokan.reader.domain.document.ac;
 import com.duokan.reader.domain.document.ad;
@@ -84,10 +81,10 @@ public class i extends as implements com.duokan.reader.domain.document.i {
         /*
         r4 = this;
         r0 = 1;
-        r1 = com.duokan.core.diagnostic.a.c();
+        r1 = com.duokan.core.diagnostic.setDrawable.showAnimation();
         r2 = r4.N();
-        r1.b(r2);
-        r1 = r4.a();
+        r1.getVisible(r2);
+        r1 = r4.setDrawable();
         if (r1 == 0) goto L_0x0013;
     L_0x0012:
         return r0;
@@ -103,32 +100,32 @@ public class i extends as implements com.duokan.reader.domain.document.i {
         monitor-exit(r4);	 Catch:{ all -> 0x001a }
         throw r0;
     L_0x001d:
-        r0 = r4.t;	 Catch:{ all -> 0x001a }
+        r0 = r4.TaskHandler;	 Catch:{ all -> 0x001a }
         if (r0 != 0) goto L_0x0029;
     L_0x0021:
         r0 = new java.util.concurrent.CountDownLatch;	 Catch:{ all -> 0x001a }
         r1 = 1;
         r0.<init>(r1);	 Catch:{ all -> 0x001a }
-        r4.t = r0;	 Catch:{ all -> 0x001a }
+        r4.TaskHandler = r0;	 Catch:{ all -> 0x001a }
     L_0x0029:
         monitor-exit(r4);	 Catch:{ all -> 0x001a }
     L_0x002a:
         r0 = r4.r;
         if (r0 != 0) goto L_0x0050;
     L_0x002e:
-        r0 = r4.j;
-        r0 = r0.d();
+        r0 = r4.getWidthPixels;
+        r0 = r0.getScaledTouchSlop();
         if (r0 != 0) goto L_0x0050;
     L_0x0036:
-        r0 = r4.d;
-        r0 = r0.a;
+        r0 = r4.getScaledTouchSlop;
+        r0 = r0.setDrawable;
         if (r0 == 0) goto L_0x0050;
     L_0x003c:
-        r0 = r4.d;
-        r0 = r0.c();
+        r0 = r4.getScaledTouchSlop;
+        r0 = r0.showAnimation();
         if (r0 != 0) goto L_0x0050;
     L_0x0044:
-        r0 = r4.t;	 Catch:{ InterruptedException -> 0x004e }
+        r0 = r4.TaskHandler;	 Catch:{ InterruptedException -> 0x004e }
         r2 = 1;
         r1 = java.util.concurrent.TimeUnit.SECONDS;	 Catch:{ InterruptedException -> 0x004e }
         r0.await(r2, r1);	 Catch:{ InterruptedException -> 0x004e }
@@ -137,10 +134,10 @@ public class i extends as implements com.duokan.reader.domain.document.i {
         r0 = move-exception;
         goto L_0x002a;
     L_0x0050:
-        r0 = r4.a();
+        r0 = r4.setDrawable();
         goto L_0x0012;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.epub.i.P():boolean");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.epub.getPhysicalYPixels.P():boolean");
     }
 
     public long j() {

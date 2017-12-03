@@ -9,8 +9,7 @@ import android.graphics.RectF;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.duokan.common.a;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.document.aj;
 import com.duokan.reader.domain.document.c;
 
@@ -65,7 +64,7 @@ public class me extends ViewGroup {
 
     public PointF a(View view, int i) {
         c a = this.d.a(i);
-        return dv.a(new PointF(a.b().x, a.b().y), (View) this, view);
+        return UTools.addAnimation(new PointF(a.b().x, a.b().y), (View) this, view);
     }
 
     public void setShowClearImage(boolean z) {
@@ -80,8 +79,8 @@ public class me extends ViewGroup {
     public boolean a(PointF pointF) {
         for (int i = 0; i < this.d.a(); i++) {
             PointF b = this.d.a(i).b();
-            int b2 = dv.b(getContext(), 40.0f);
-            int b3 = dv.b(getContext(), 40.0f);
+            int b2 = UTools.closeAnimation(getContext(), 40.0f);
+            int b3 = UTools.closeAnimation(getContext(), 40.0f);
             if (new RectF(b.x - ((float) (b2 / 2)), b.y - ((float) (b3 / 2)), ((float) (b2 / 2)) + b.x, b.y + ((float) (b3 / 2))).contains(pointF.x, pointF.y)) {
                 return a(i);
             }

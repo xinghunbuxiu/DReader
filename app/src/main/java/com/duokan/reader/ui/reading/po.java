@@ -1,7 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.c.g;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.af;
 
 public abstract class po extends tc {
@@ -33,8 +32,8 @@ public abstract class po extends tc {
         super.g();
     }
 
-    public po(y yVar) {
-        super(yVar);
+    public po(IFeature featrue) {
+        super(featrue);
         findViewById(g.reading__reading_menu_view__search).setOnClickListener(new pp(this));
         findViewById(g.reading__reading_menu_bottom_view__options).setOnClickListener(new pq(this));
     }

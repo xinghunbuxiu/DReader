@@ -1,6 +1,6 @@
 package com.duokan.reader.common.cache;
 
-import com.duokan.core.c.b;
+import com.duokan.core.c.IRunTask;
 
 import org.json.JSONObject;
 
@@ -153,7 +153,7 @@ public class ListCache {
         return queryItemIds(null, null, null);
     }
 
-    public Collection queryItemIds(b bVar, Comparator comparator, t tVar) {
+    public Collection queryItemIds(IRunTask bVar, Comparator comparator, t tVar) {
         Collection arrayList;
         synchronized (this.i) {
             if (this.k) {
@@ -170,7 +170,7 @@ public class ListCache {
         return queryItems(null, null, null);
     }
 
-    public Collection queryItems(b bVar, Comparator comparator, t tVar) {
+    public Collection queryItems(IRunTask bVar, Comparator comparator, t tVar) {
         Collection arrayList;
         synchronized (this.i) {
             if (this.k) {
@@ -187,7 +187,7 @@ public class ListCache {
         return queryCorePropertiesOfItems(null, null, null);
     }
 
-    public Collection queryCorePropertiesOfItems(b bVar, Comparator comparator, t tVar) {
+    public Collection queryCorePropertiesOfItems(IRunTask bVar, Comparator comparator, t tVar) {
         Collection arrayList;
         synchronized (this.i) {
             if (this.k) {
@@ -332,25 +332,25 @@ public class ListCache {
     private void fetchStore() {
         /*
         r3 = this;
-        r1 = a;
+        r1 = setDrawable;
         monitor-enter(r1);
-        r0 = r3.j;	 Catch:{ all -> 0x0021 }
+        r0 = r3.getWidthPixels;	 Catch:{ all -> 0x0021 }
         if (r0 == 0) goto L_0x0009;
     L_0x0007:
         monitor-exit(r1);	 Catch:{ all -> 0x0021 }
     L_0x0008:
         return;
     L_0x0009:
-        r0 = a;	 Catch:{ all -> 0x0021 }
-        r2 = r3.c;	 Catch:{ all -> 0x0021 }
+        r0 = setDrawable;	 Catch:{ all -> 0x0021 }
+        r2 = r3.showAnimation;	 Catch:{ all -> 0x0021 }
         r0 = r0.containsKey(r2);	 Catch:{ all -> 0x0021 }
         if (r0 == 0) goto L_0x0024;
     L_0x0013:
-        r0 = a;	 Catch:{ all -> 0x0021 }
-        r2 = r3.c;	 Catch:{ all -> 0x0021 }
+        r0 = setDrawable;	 Catch:{ all -> 0x0021 }
+        r2 = r3.showAnimation;	 Catch:{ all -> 0x0021 }
         r0 = r0.get(r2);	 Catch:{ all -> 0x0021 }
         r0 = (com.duokan.reader.common.cache.n) r0;	 Catch:{ all -> 0x0021 }
-        r3.j = r0;	 Catch:{ all -> 0x0021 }
+        r3.getWidthPixels = r0;	 Catch:{ all -> 0x0021 }
     L_0x001f:
         monitor-exit(r1);	 Catch:{ all -> 0x0021 }
         goto L_0x0008;
@@ -360,7 +360,7 @@ public class ListCache {
         throw r0;
     L_0x0024:
         r0 = 0;
-        r3.j = r0;	 Catch:{ all -> 0x0021 }
+        r3.getWidthPixels = r0;	 Catch:{ all -> 0x0021 }
         goto L_0x001f;
         */
         throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.cache.ListCache.fetchStore():void");
@@ -371,29 +371,29 @@ public class ListCache {
     private void createStore() {
         /*
         r6 = this;
-        r1 = a;
+        r1 = setDrawable;
         monitor-enter(r1);
-        r0 = r6.j;	 Catch:{ all -> 0x0029 }
+        r0 = r6.getWidthPixels;	 Catch:{ all -> 0x0029 }
         if (r0 == 0) goto L_0x0011;
     L_0x0007:
-        r0 = r6.j;	 Catch:{ all -> 0x0029 }
-        r0 = r0.b;	 Catch:{ all -> 0x0029 }
+        r0 = r6.getWidthPixels;	 Catch:{ all -> 0x0029 }
+        r0 = r0.getVisible;	 Catch:{ all -> 0x0029 }
         if (r0 != 0) goto L_0x0011;
     L_0x000f:
         monitor-exit(r1);	 Catch:{ all -> 0x0029 }
     L_0x0010:
         return;
     L_0x0011:
-        r0 = a;	 Catch:{ all -> 0x0029 }
-        r2 = r6.c;	 Catch:{ all -> 0x0029 }
+        r0 = setDrawable;	 Catch:{ all -> 0x0029 }
+        r2 = r6.showAnimation;	 Catch:{ all -> 0x0029 }
         r0 = r0.containsKey(r2);	 Catch:{ all -> 0x0029 }
         if (r0 == 0) goto L_0x002c;
     L_0x001b:
-        r0 = a;	 Catch:{ all -> 0x0029 }
-        r2 = r6.c;	 Catch:{ all -> 0x0029 }
+        r0 = setDrawable;	 Catch:{ all -> 0x0029 }
+        r2 = r6.showAnimation;	 Catch:{ all -> 0x0029 }
         r0 = r0.get(r2);	 Catch:{ all -> 0x0029 }
         r0 = (com.duokan.reader.common.cache.n) r0;	 Catch:{ all -> 0x0029 }
-        r6.j = r0;	 Catch:{ all -> 0x0029 }
+        r6.getWidthPixels = r0;	 Catch:{ all -> 0x0029 }
     L_0x0027:
         monitor-exit(r1);	 Catch:{ all -> 0x0029 }
         goto L_0x0010;
@@ -403,16 +403,16 @@ public class ListCache {
         throw r0;
     L_0x002c:
         r0 = new com.duokan.reader.common.cache.n;	 Catch:{ all -> 0x0029 }
-        r2 = r6.g;	 Catch:{ all -> 0x0029 }
-        r3 = r6.c;	 Catch:{ all -> 0x0029 }
-        r4 = r6.f;	 Catch:{ all -> 0x0029 }
-        r5 = r6.h;	 Catch:{ all -> 0x0029 }
-        r2 = r2.a(r3, r4, r5);	 Catch:{ all -> 0x0029 }
+        r2 = r6.SessionTask;	 Catch:{ all -> 0x0029 }
+        r3 = r6.showAnimation;	 Catch:{ all -> 0x0029 }
+        r4 = r6.HttpLogger;	 Catch:{ all -> 0x0029 }
+        r5 = r6.getPhysicalXPixels;	 Catch:{ all -> 0x0029 }
+        r2 = r2.setDrawable(r3, r4, r5);	 Catch:{ all -> 0x0029 }
         r0.<init>(r2);	 Catch:{ all -> 0x0029 }
-        r6.j = r0;	 Catch:{ all -> 0x0029 }
-        r0 = a;	 Catch:{ all -> 0x0029 }
-        r2 = r6.c;	 Catch:{ all -> 0x0029 }
-        r3 = r6.j;	 Catch:{ all -> 0x0029 }
+        r6.getWidthPixels = r0;	 Catch:{ all -> 0x0029 }
+        r0 = setDrawable;	 Catch:{ all -> 0x0029 }
+        r2 = r6.showAnimation;	 Catch:{ all -> 0x0029 }
+        r3 = r6.getWidthPixels;	 Catch:{ all -> 0x0029 }
         r0.put(r2, r3);	 Catch:{ all -> 0x0029 }
         goto L_0x0027;
         */

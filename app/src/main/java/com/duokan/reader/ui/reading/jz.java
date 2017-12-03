@@ -5,9 +5,9 @@ import android.graphics.Rect;
 import android.view.View;
 import android.view.ViewParent;
 
-import com.duokan.core.app.x;
-import com.duokan.core.sys.t;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.document.ad;
 import com.duokan.reader.domain.document.ak;
 
@@ -28,9 +28,9 @@ public class jz extends fy implements tb {
         this.f = adVar;
         this.k = new ka(this);
         this.e = rect;
-        this.h = (sh) x.a(getContext()).queryFeature(sh.class);
+        this.h = (sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class);
         this.j = this.h.b(128);
-        dv.a((View) this, new kb(this));
+        UTools.addAnimation((View) this, new kb(this));
         this.g = new kc(this, getContext());
         a(this.g, null);
         this.h.a((tb) this);
@@ -92,7 +92,7 @@ public class jz extends fy implements tb {
                 this.g.invalidate();
             }
             if (this.f.j()) {
-                t.a(this.k, (long) Math.max(this.f.a(this.c), 20));
+                TaskHandler.postDelayed(this.k, (long) Math.max(this.f.a(this.c), 20));
             }
         }
     }

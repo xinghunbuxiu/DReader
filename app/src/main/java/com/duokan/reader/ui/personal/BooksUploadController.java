@@ -1,12 +1,12 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.e;
+import com.duokan.core.app.ActivatedController;
 import com.duokan.reader.ui.bookshelf.bj;
 import com.duokan.reader.ui.surfing.af;
 
 import java.util.List;
 
-public class BooksUploadController extends e implements bj {
+public class BooksUploadController extends ActivatedController implements bj {
     private final com.duokan.reader.domain.micloud.bj a;
     private t b;
     private final List c;

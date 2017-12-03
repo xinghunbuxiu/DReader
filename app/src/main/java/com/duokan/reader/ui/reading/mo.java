@@ -5,10 +5,8 @@ import android.graphics.PointF;
 import android.view.View;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 
 import com.duokan.reader.domain.document.aj;
-import com.duokan.reader.ui.general.a.a;
 
 public class mo extends FrameLayout implements mq {
     private mn a;

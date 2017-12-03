@@ -1,8 +1,7 @@
 package com.duokan.reader.ui.reading;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.ui.store.o;
 
 class zp implements Runnable {
@@ -33,10 +32,10 @@ class zp implements Runnable {
     public void run() {
         if (!this.j.q) {
             if (this.a.j(this.b).b(Boolean.valueOf(true))) {
-                t.b(this.c);
+                TaskHandler.PostTask(this.c);
                 return;
             }
-            a.c().a(LogLevel.EVENT, "autopay", "pay(book: %s(%s), chapter: %s(%d|%s))", this.d, this.e, this.f, Long.valueOf(this.b), this.g);
+            a.c().a(LogLevel.EVENT, "autopay", "pay(book: %s(%s), chapter: %s(%getScaledTouchSlop|%s))", this.d, this.e, this.f, Long.valueOf(this.b), this.g);
             o.a().a(this.e, this.g, this.h, new zq(this));
         }
     }

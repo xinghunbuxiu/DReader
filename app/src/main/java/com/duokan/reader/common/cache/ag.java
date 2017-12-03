@@ -24,7 +24,7 @@ public class ag {
     private void a(java.lang.String r6, java.util.Collection r7, boolean r8) {
         /* JADX: method processing error */
 /*
-Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offset: 0x005b in list [B:19:0x0056]
+Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find block by offset: 0x005b in list [B:19:0x0056]
 	at jadx.core.utils.BlockUtils.getBlockByOffset(BlockUtils.java:43)
 	at jadx.core.dex.instructions.IfNode.initBlocks(IfNode.java:60)
 	at jadx.core.dex.visitors.blocksmaker.BlockFinish.initBlocksInIfNodes(BlockFinish.java:48)
@@ -41,8 +41,8 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
         r5 = this;
         if (r8 == 0) goto L_0x0007;
     L_0x0002:
-        r0 = r5.d;
-        r0.b();
+        r0 = r5.getScaledTouchSlop;
+        r0.getVisible();
     L_0x0007:
         r1 = r7.iterator();	 Catch:{ all -> 0x0044 }
     L_0x000b:
@@ -50,57 +50,57 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
         if (r0 == 0) goto L_0x004d;	 Catch:{ all -> 0x0044 }
     L_0x0011:
         r0 = r1.next();	 Catch:{ all -> 0x0044 }
-        r0 = (com.duokan.reader.common.cache.z) r0;	 Catch:{ all -> 0x0044 }
+        r0 = (com.duokan.reader.common.cache.QueryFeatureWrapper) r0;	 Catch:{ all -> 0x0044 }
         r2 = new android.content.ContentValues;	 Catch:{ all -> 0x0044 }
         r2.<init>();	 Catch:{ all -> 0x0044 }
-        r3 = r0.b;	 Catch:{ all -> 0x0044 }
+        r3 = r0.getVisible;	 Catch:{ all -> 0x0044 }
         if (r3 == 0) goto L_0x0025;	 Catch:{ all -> 0x0044 }
     L_0x0020:
-        r3 = r0.b;	 Catch:{ all -> 0x0044 }
+        r3 = r0.getVisible;	 Catch:{ all -> 0x0044 }
         r2.putAll(r3);	 Catch:{ all -> 0x0044 }
     L_0x0025:
         r3 = "__ITEM__KEY__";	 Catch:{ all -> 0x0044 }
-        r4 = r0.a;	 Catch:{ all -> 0x0044 }
+        r4 = r0.setDrawable;	 Catch:{ all -> 0x0044 }
         r2.put(r3, r4);	 Catch:{ all -> 0x0044 }
         r3 = "__ITEM__VALUE__";	 Catch:{ all -> 0x0044 }
-        r4 = r0.d;	 Catch:{ all -> 0x0044 }
+        r4 = r0.getScaledTouchSlop;	 Catch:{ all -> 0x0044 }
         r2.put(r3, r4);	 Catch:{ all -> 0x0044 }
         r3 = "__ITEM__CORE__PROPERTIES__";	 Catch:{ all -> 0x0044 }
-        r4 = r0.c;	 Catch:{ all -> 0x0044 }
+        r4 = r0.showAnimation;	 Catch:{ all -> 0x0044 }
         r2.put(r3, r4);	 Catch:{ all -> 0x0044 }
-        r3 = r5.d;	 Catch:{ all -> 0x0044 }
+        r3 = r5.getScaledTouchSlop;	 Catch:{ all -> 0x0044 }
         r4 = 0;	 Catch:{ all -> 0x0044 }
-        r2 = r3.a(r6, r4, r2);	 Catch:{ all -> 0x0044 }
-        r0.e = r2;	 Catch:{ all -> 0x0044 }
+        r2 = r3.setDrawable(r6, r4, r2);	 Catch:{ all -> 0x0044 }
+        r0.getScaledPagingTouchSlop = r2;	 Catch:{ all -> 0x0044 }
         goto L_0x000b;
     L_0x0044:
         r0 = move-exception;
         if (r8 == 0) goto L_0x004c;
     L_0x0047:
-        r1 = r5.d;
-        r1.c();
+        r1 = r5.getScaledTouchSlop;
+        r1.showAnimation();
     L_0x004c:
         throw r0;
     L_0x004d:
         if (r8 == 0) goto L_0x0054;
     L_0x004f:
-        r0 = r5.d;	 Catch:{ all -> 0x0044 }
-        r0.f();	 Catch:{ all -> 0x0044 }
+        r0 = r5.getScaledTouchSlop;	 Catch:{ all -> 0x0044 }
+        r0.HttpLogger();	 Catch:{ all -> 0x0044 }
     L_0x0054:
         if (r8 == 0) goto L_0x005b;
     L_0x0056:
-        r0 = r5.d;
-        r0.c();
+        r0 = r5.getScaledTouchSlop;
+        r0.showAnimation();
     L_0x005b:
         return;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.cache.ag.a(java.lang.String, java.util.Collection, boolean):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.cache.ag.setDrawable(java.lang.String, java.util.Collection, boolean):void");
     }
 
     private void a(java.lang.String r4, boolean r5) {
         /* JADX: method processing error */
 /*
-Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offset: 0x001c in list [B:7:0x0017]
+Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find block by offset: 0x001c in list [B:7:0x0017]
 	at jadx.core.utils.BlockUtils.getBlockByOffset(BlockUtils.java:43)
 	at jadx.core.dex.instructions.IfNode.initBlocks(IfNode.java:60)
 	at jadx.core.dex.visitors.blocksmaker.BlockFinish.initBlocksInIfNodes(BlockFinish.java:48)
@@ -117,40 +117,40 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
         r3 = this;
         if (r5 == 0) goto L_0x0007;
     L_0x0002:
-        r0 = r3.d;
-        r0.b();
+        r0 = r3.getScaledTouchSlop;
+        r0.getVisible();
     L_0x0007:
-        r0 = r3.d;	 Catch:{ all -> 0x001d }
+        r0 = r3.getScaledTouchSlop;	 Catch:{ all -> 0x001d }
         r1 = 0;	 Catch:{ all -> 0x001d }
         r2 = 0;	 Catch:{ all -> 0x001d }
-        r0.a(r4, r1, r2);	 Catch:{ all -> 0x001d }
+        r0.setDrawable(r4, r1, r2);	 Catch:{ all -> 0x001d }
         if (r5 == 0) goto L_0x0015;	 Catch:{ all -> 0x001d }
     L_0x0010:
-        r0 = r3.d;	 Catch:{ all -> 0x001d }
-        r0.f();	 Catch:{ all -> 0x001d }
+        r0 = r3.getScaledTouchSlop;	 Catch:{ all -> 0x001d }
+        r0.HttpLogger();	 Catch:{ all -> 0x001d }
     L_0x0015:
         if (r5 == 0) goto L_0x001c;
     L_0x0017:
-        r0 = r3.d;
-        r0.c();
+        r0 = r3.getScaledTouchSlop;
+        r0.showAnimation();
     L_0x001c:
         return;
     L_0x001d:
         r0 = move-exception;
         if (r5 == 0) goto L_0x0025;
     L_0x0020:
-        r1 = r3.d;
-        r1.c();
+        r1 = r3.getScaledTouchSlop;
+        r1.showAnimation();
     L_0x0025:
         throw r0;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.cache.ag.a(java.lang.String, boolean):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.cache.ag.setDrawable(java.lang.String, boolean):void");
     }
 
     private void b(java.lang.String r8, java.util.Collection r9, boolean r10) {
         /* JADX: method processing error */
 /*
-Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offset: 0x005a in list [B:19:0x0055]
+Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find block by offset: 0x005a in list [B:19:0x0055]
 	at jadx.core.utils.BlockUtils.getBlockByOffset(BlockUtils.java:43)
 	at jadx.core.dex.instructions.IfNode.initBlocks(IfNode.java:60)
 	at jadx.core.dex.visitors.blocksmaker.BlockFinish.initBlocksInIfNodes(BlockFinish.java:48)
@@ -167,8 +167,8 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
         r7 = this;
         if (r10 == 0) goto L_0x0007;
     L_0x0002:
-        r0 = r7.d;
-        r0.b();
+        r0 = r7.getScaledTouchSlop;
+        r0.getVisible();
     L_0x0007:
         r1 = r9.iterator();	 Catch:{ all -> 0x0043 }
     L_0x000b:
@@ -176,58 +176,58 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
         if (r0 == 0) goto L_0x004c;	 Catch:{ all -> 0x0043 }
     L_0x0011:
         r0 = r1.next();	 Catch:{ all -> 0x0043 }
-        r0 = (com.duokan.reader.common.cache.z) r0;	 Catch:{ all -> 0x0043 }
+        r0 = (com.duokan.reader.common.cache.QueryFeatureWrapper) r0;	 Catch:{ all -> 0x0043 }
         r2 = new android.content.ContentValues;	 Catch:{ all -> 0x0043 }
         r2.<init>();	 Catch:{ all -> 0x0043 }
-        r3 = r0.b;	 Catch:{ all -> 0x0043 }
+        r3 = r0.getVisible;	 Catch:{ all -> 0x0043 }
         if (r3 == 0) goto L_0x0025;	 Catch:{ all -> 0x0043 }
     L_0x0020:
-        r3 = r0.b;	 Catch:{ all -> 0x0043 }
+        r3 = r0.getVisible;	 Catch:{ all -> 0x0043 }
         r2.putAll(r3);	 Catch:{ all -> 0x0043 }
     L_0x0025:
         r3 = "__ITEM__VALUE__";	 Catch:{ all -> 0x0043 }
-        r4 = r0.d;	 Catch:{ all -> 0x0043 }
+        r4 = r0.getScaledTouchSlop;	 Catch:{ all -> 0x0043 }
         r2.put(r3, r4);	 Catch:{ all -> 0x0043 }
         r3 = "__ITEM__CORE__PROPERTIES__";	 Catch:{ all -> 0x0043 }
-        r4 = r0.c;	 Catch:{ all -> 0x0043 }
+        r4 = r0.showAnimation;	 Catch:{ all -> 0x0043 }
         r2.put(r3, r4);	 Catch:{ all -> 0x0043 }
-        r3 = r7.d;	 Catch:{ all -> 0x0043 }
+        r3 = r7.getScaledTouchSlop;	 Catch:{ all -> 0x0043 }
         r4 = "__ITEM__KEY__=?";	 Catch:{ all -> 0x0043 }
         r5 = 1;	 Catch:{ all -> 0x0043 }
         r5 = new java.lang.String[r5];	 Catch:{ all -> 0x0043 }
         r6 = 0;	 Catch:{ all -> 0x0043 }
-        r0 = r0.a;	 Catch:{ all -> 0x0043 }
+        r0 = r0.setDrawable;	 Catch:{ all -> 0x0043 }
         r5[r6] = r0;	 Catch:{ all -> 0x0043 }
-        r3.a(r8, r2, r4, r5);	 Catch:{ all -> 0x0043 }
+        r3.setDrawable(r8, r2, r4, r5);	 Catch:{ all -> 0x0043 }
         goto L_0x000b;
     L_0x0043:
         r0 = move-exception;
         if (r10 == 0) goto L_0x004b;
     L_0x0046:
-        r1 = r7.d;
-        r1.c();
+        r1 = r7.getScaledTouchSlop;
+        r1.showAnimation();
     L_0x004b:
         throw r0;
     L_0x004c:
         if (r10 == 0) goto L_0x0053;
     L_0x004e:
-        r0 = r7.d;	 Catch:{ all -> 0x0043 }
-        r0.f();	 Catch:{ all -> 0x0043 }
+        r0 = r7.getScaledTouchSlop;	 Catch:{ all -> 0x0043 }
+        r0.HttpLogger();	 Catch:{ all -> 0x0043 }
     L_0x0053:
         if (r10 == 0) goto L_0x005a;
     L_0x0055:
-        r0 = r7.d;
-        r0.c();
+        r0 = r7.getScaledTouchSlop;
+        r0.showAnimation();
     L_0x005a:
         return;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.cache.ag.b(java.lang.String, java.util.Collection, boolean):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.cache.ag.getVisible(java.lang.String, java.util.Collection, boolean):void");
     }
 
     private void c(java.lang.String r7, java.util.Collection r8, boolean r9) {
         /* JADX: method processing error */
 /*
-Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offset: 0x003c in list [B:16:0x0037]
+Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find block by offset: 0x003c in list [B:16:0x0037]
 	at jadx.core.utils.BlockUtils.getBlockByOffset(BlockUtils.java:43)
 	at jadx.core.dex.instructions.IfNode.initBlocks(IfNode.java:60)
 	at jadx.core.dex.visitors.blocksmaker.BlockFinish.initBlocksInIfNodes(BlockFinish.java:48)
@@ -244,8 +244,8 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
         r6 = this;
         if (r9 == 0) goto L_0x0007;
     L_0x0002:
-        r0 = r6.d;
-        r0.b();
+        r0 = r6.getScaledTouchSlop;
+        r0.getVisible();
     L_0x0007:
         r1 = r8.iterator();	 Catch:{ all -> 0x0025 }
     L_0x000b:
@@ -254,36 +254,36 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
     L_0x0011:
         r0 = r1.next();	 Catch:{ all -> 0x0025 }
         r0 = (java.lang.String) r0;	 Catch:{ all -> 0x0025 }
-        r2 = r6.d;	 Catch:{ all -> 0x0025 }
+        r2 = r6.getScaledTouchSlop;	 Catch:{ all -> 0x0025 }
         r3 = "__ITEM__KEY__=?";	 Catch:{ all -> 0x0025 }
         r4 = 1;	 Catch:{ all -> 0x0025 }
         r4 = new java.lang.String[r4];	 Catch:{ all -> 0x0025 }
         r5 = 0;	 Catch:{ all -> 0x0025 }
         r4[r5] = r0;	 Catch:{ all -> 0x0025 }
-        r2.a(r7, r3, r4);	 Catch:{ all -> 0x0025 }
+        r2.setDrawable(r7, r3, r4);	 Catch:{ all -> 0x0025 }
         goto L_0x000b;
     L_0x0025:
         r0 = move-exception;
         if (r9 == 0) goto L_0x002d;
     L_0x0028:
-        r1 = r6.d;
-        r1.c();
+        r1 = r6.getScaledTouchSlop;
+        r1.showAnimation();
     L_0x002d:
         throw r0;
     L_0x002e:
         if (r9 == 0) goto L_0x0035;
     L_0x0030:
-        r0 = r6.d;	 Catch:{ all -> 0x0025 }
-        r0.f();	 Catch:{ all -> 0x0025 }
+        r0 = r6.getScaledTouchSlop;	 Catch:{ all -> 0x0025 }
+        r0.HttpLogger();	 Catch:{ all -> 0x0025 }
     L_0x0035:
         if (r9 == 0) goto L_0x003c;
     L_0x0037:
-        r0 = r6.d;
-        r0.c();
+        r0 = r6.getScaledTouchSlop;
+        r0.showAnimation();
     L_0x003c:
         return;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.cache.ag.c(java.lang.String, java.util.Collection, boolean):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.cache.ag.showAnimation(java.lang.String, java.util.Collection, boolean):void");
     }
 
     public ag(n nVar) {

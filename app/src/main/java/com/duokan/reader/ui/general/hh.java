@@ -3,7 +3,6 @@ package com.duokan.reader.ui.general;
 import android.content.Context;
 import android.graphics.Point;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.widget.FrameLayout;
 
 import com.duokan.reader.ReaderEnv;

@@ -5,7 +5,6 @@ import android.content.Context;
 
 import com.duokan.b.i;
 import com.duokan.reader.common.c.f;
-import com.duokan.reader.domain.statistics.dailystats.a;
 import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
 import com.duokan.reader.ui.general.ap;
 
@@ -41,7 +40,7 @@ class k extends ap {
 
     protected void onCancel() {
         this.c.a(this.a);
-        a.d().d("c");
+        a.d().d("showAnimation");
         this.b.b();
         super.onCancel();
     }

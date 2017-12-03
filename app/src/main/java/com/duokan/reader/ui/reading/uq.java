@@ -9,9 +9,9 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 
 class uq extends wk {
@@ -23,13 +23,13 @@ class uq extends wk {
     private final FrameLayout f;
     private final View g;
     private final View h;
-    private e i;
+    private ActivatedController i;
     private boolean j = true;
 
     @SuppressLint({"NewApi"})
-    public uq(y yVar) {
-        super(yVar);
-        this.b.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? dv.b(getContext(), 400.0f) : -1, -2));
+    public uq(IFeature featrue) {
+        super(featrue);
+        this.b.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? UTools.closeAnimation(getContext(), 400.0f) : -1, -2));
         setContentView(this.b);
         this.d = findViewById(f.reading__reading_options_view);
         this.f = (FrameLayout) findViewById(f.reading__reading_options_bottom_view__sub_menu_frame);
@@ -57,7 +57,7 @@ class uq extends wk {
         findViewById(f.reading__reading_options_view__typesetting_custom).setOnClickListener(new vc(this));
         findViewById(f.reading__reading_options_view__more_themes).setOnClickListener(new ut(this));
         if (getContext().getResources().getDisplayMetrics().widthPixels < 720) {
-            findViewById(f.reading__reading_options_view__padding_panel).setPadding(dv.b(getContext(), 5.0f), 0, dv.b(getContext(), 5.0f), 0);
+            findViewById(f.reading__reading_options_view__padding_panel).setPadding(UTools.closeAnimation(getContext(), 5.0f), 0, UTools.closeAnimation(getContext(), 5.0f), 0);
         }
         b();
     }
@@ -150,7 +150,7 @@ class uq extends wk {
         if (this.j) {
             this.j = false;
         } else {
-            layoutParams.setMargins(dv.b(getContext(), 15.0f), 0, 0, 0);
+            layoutParams.setMargins(UTools.closeAnimation(getContext(), 15.0f), 0, 0, 0);
             com_duokan_reader_ui_reading_acz.setLayoutParams(layoutParams);
         }
         com_duokan_reader_ui_reading_acz.setOnClickListener(new uu(this, i));
@@ -158,9 +158,9 @@ class uq extends wk {
         return com_duokan_reader_ui_reading_acz;
     }
 
-    protected void a(e eVar, View view) {
+    protected void a(ActivatedController controller, View view) {
         if (!a()) {
-            this.i = eVar;
+            this.i = controller;
             addSubController(this.i);
             this.f.addView(this.i.getContentView(), new FrameLayout.LayoutParams(-1, -2));
             this.f.setVisibility(0);

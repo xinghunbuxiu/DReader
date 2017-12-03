@@ -2,11 +2,11 @@ package com.duokan.reader.ui.b;
 
 import android.content.Context;
 
+import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.app.w;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.common.h;
 import com.duokan.reader.domain.cloud.push.a;
@@ -16,7 +16,7 @@ import com.duokan.reader.domain.social.message.az;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class d implements ah, w, h, a, az {
+public class d implements ah, IActivityRunStatusChanged, h, a, az {
     static final /* synthetic */ boolean a = (!d.class.desiredAssertionStatus());
     private static final ai b = new ai();
     private final Context c;

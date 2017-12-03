@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.micloud;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.common.async.work.IAsyncWorkProgressListener.CheckErrorResult;
 import com.duokan.reader.common.async.work.e;
 
@@ -10,7 +10,7 @@ public class a {
 
     public CheckErrorResult a(e eVar) {
         Object obj = new Object();
-        t.b(new b(this, eVar, obj));
+        TaskHandler.PostTask(new b(this, eVar, obj));
         long currentTimeMillis = System.currentTimeMillis();
         while (true) {
             synchronized (obj) {

@@ -2,7 +2,7 @@ package com.duokan.reader.ui.bookshelf;
 
 import com.duokan.core.app.af;
 import com.duokan.core.app.ag;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.domain.bookshelf.an;
 import com.duokan.reader.domain.bookshelf.c;
 
@@ -27,14 +27,14 @@ class br implements ag {
                 ((c) anVar).af();
             }
         }
-        t.a(this.b);
+        TaskHandler.postTask(this.b);
     }
 
     public void b(af afVar) {
-        t.a(this.c);
+        TaskHandler.postTask(this.c);
     }
 
     public void c(af afVar) {
-        t.a(this.c);
+        TaskHandler.postTask(this.c);
     }
 }

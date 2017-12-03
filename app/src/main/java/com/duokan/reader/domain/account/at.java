@@ -1,7 +1,6 @@
 package com.duokan.reader.domain.account;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 
 class at implements Runnable {
     final /* synthetic */ b a;

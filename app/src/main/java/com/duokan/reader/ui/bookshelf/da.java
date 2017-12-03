@@ -3,7 +3,7 @@ package com.duokan.reader.ui.bookshelf;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Drawable.Callback;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class da implements Callback {
     final /* synthetic */ cz a;
@@ -13,11 +13,11 @@ class da implements Callback {
     }
 
     public void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        t.c(runnable);
+        TaskHandler.c(runnable);
     }
 
     public void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
-        t.b(runnable, j);
+        TaskHandler.PostTask(runnable, j);
     }
 
     public void invalidateDrawable(Drawable drawable) {

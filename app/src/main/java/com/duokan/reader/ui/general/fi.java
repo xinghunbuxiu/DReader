@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import com.duokan.b.g;
 import com.duokan.core.ui.BoxView;
 import com.duokan.core.ui.a;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.j;
 
 class fi implements dq {
@@ -31,7 +31,7 @@ class fi implements dq {
         this.f = (ViewGroup) this.c.findViewById(f.general__spirt_dialog_view__content_extra);
         this.b = new a(context);
         this.b.setGravity(48);
-        this.b.setIndicatorMargin(dv.b(context, 11.0f));
+        this.b.setIndicatorMargin(UTools.closeAnimation(context, 11.0f));
         this.b.setIndicator(e.store__search_hint_view__indicator);
         this.b.setBackgroundDrawable(context.getResources().getDrawable(e.store__search_hint_view__bg));
         this.b.addView(this.c, new LayoutParams(-2, -2));
@@ -39,8 +39,8 @@ class fi implements dq {
     }
 
     public void a(Rect rect) {
-        LayoutParams marginLayoutParams = new MarginLayoutParams(dv.b(this.a.getContext(), 240.0f), -2);
-        int b = dv.b(this.a.getContext(), 10.0f);
+        LayoutParams marginLayoutParams = new MarginLayoutParams(UTools.closeAnimation(this.a.getContext(), 240.0f), -2);
+        int b = UTools.closeAnimation(this.a.getContext(), 10.0f);
         marginLayoutParams.leftMargin = b;
         marginLayoutParams.rightMargin = b;
         this.a.showBalloon(this.b, rect, marginLayoutParams);
@@ -48,8 +48,8 @@ class fi implements dq {
     }
 
     public void a(View view) {
-        LayoutParams marginLayoutParams = new MarginLayoutParams(dv.b(this.a.getContext(), 240.0f), -2);
-        int b = dv.b(this.a.getContext(), 10.0f);
+        LayoutParams marginLayoutParams = new MarginLayoutParams(UTools.closeAnimation(this.a.getContext(), 240.0f), -2);
+        int b = UTools.closeAnimation(this.a.getContext(), 10.0f);
         marginLayoutParams.leftMargin = b;
         marginLayoutParams.rightMargin = b;
         this.a.showBalloon(this.b, view, marginLayoutParams);

@@ -3,9 +3,9 @@ package com.duokan.reader.ui.surfing;
 import android.content.SharedPreferences.Editor;
 import android.text.TextUtils;
 
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.app.ab;
 import com.duokan.core.app.ac;
-import com.duokan.core.app.x;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.cloud.PersonalPrefs;
 import com.duokan.reader.ui.general.web.StorePageController;
@@ -22,7 +22,7 @@ class r implements ac {
     public void a(ab abVar) {
         a();
         if (!TextUtils.isEmpty(this.a)) {
-            ((ReaderFeature) x.a(this.b.getContext()).queryFeature(ReaderFeature.class)).navigate(this.a, null, true, null);
+            ((ReaderFeature) MyContextWrapper.getFeature(this.b.getContext()).queryFeature(ReaderFeature.class)).navigate(this.a, null, true, null);
         }
     }
 

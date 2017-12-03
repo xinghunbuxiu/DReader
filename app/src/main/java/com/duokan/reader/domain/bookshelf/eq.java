@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.domain.store.DkStoreFictionDetail;
 
 class eq implements Runnable {
@@ -14,9 +14,9 @@ class eq implements Runnable {
 
     public void run() {
         if (this.b.d.b(this.a)) {
-            t.a(this.b.a);
+            TaskHandler.postTask(this.b.a);
         } else if (this.b.b != null) {
-            t.a(new er(this));
+            TaskHandler.postTask(new er(this));
         }
     }
 }

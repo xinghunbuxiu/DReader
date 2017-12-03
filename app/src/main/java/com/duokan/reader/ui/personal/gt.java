@@ -1,15 +1,15 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderEnv;
 
-class gt extends e {
+class gt extends ActivatedController {
     final /* synthetic */ fl a;
 
-    gt(fl flVar, y yVar) {
+    gt(fl flVar, IFeature featrue) {
         this.a = flVar;
-        super(yVar);
+        super(featrue);
     }
 
     protected void onDetachFromStub() {

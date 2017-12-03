@@ -3,11 +3,10 @@ package com.duokan.reader.domain.plugins.dict;
 import com.duokan.b.f;
 import com.duokan.b.g;
 import com.duokan.b.i;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.HatGridView;
 import com.duokan.core.ui.aj;
 import com.duokan.reader.domain.downloadcenter.DownloadCenterTask;
-import com.duokan.reader.domain.downloadcenter.b;
 import com.duokan.reader.domain.downloadcenter.k;
 import com.duokan.reader.ui.general.HeaderView;
 import com.duokan.reader.ui.general.hd;
@@ -30,8 +29,8 @@ public class DictDownloadController extends hd implements k {
         DOWNLOADED
     }
 
-    public DictDownloadController(y yVar) {
-        super(yVar);
+    public DictDownloadController(IFeature featrue) {
+        super(featrue);
         setContentView(g.reading__translation_settings__view);
         this.b = (sh) getContext().queryFeature(sh.class);
         ((HeaderView) findViewById(f.reading__translation_settings__header)).setLeftTitle(i.reading__translation_settings__header);

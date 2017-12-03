@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.app.e;
+import com.duokan.core.app.ActivatedController;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.domain.account.PersonalAccount;
 import com.duokan.reader.domain.account.ab;
@@ -18,7 +18,7 @@ class ig implements Runnable {
     public void run() {
         this.a.requestDetach();
         kp.a().a(new ab(i.f().b(PersonalAccount.class)));
-        e storePageController = new StorePageController(this.a.getContext());
+        ActivatedController storePageController = new StorePageController(this.a.getContext());
         storePageController.loadUrl(p.i().K());
         this.a.s.showPopup(storePageController);
     }

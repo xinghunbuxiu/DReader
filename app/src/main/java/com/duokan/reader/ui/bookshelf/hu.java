@@ -3,19 +3,19 @@ package com.duokan.reader.ui.bookshelf;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.core.app.e;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.ui.UTools;
 
 class hu implements OnClickListener {
-    final /* synthetic */ e a;
+    final /* synthetic */ ActivatedController a;
     final /* synthetic */ hp b;
 
-    hu(hp hpVar, e eVar) {
+    hu(hp hpVar, ActivatedController activatedControllerVar) {
         this.b = hpVar;
-        this.a = eVar;
+        this.a = activatedControllerVar;
     }
 
     public void onClick(View view) {
-        dv.c(this.a.getContentView(), new hv(this));
+        UTools.showAnimation(this.a.getContentView(), new hv(this));
     }
 }

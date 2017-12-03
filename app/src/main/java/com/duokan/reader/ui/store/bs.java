@@ -2,7 +2,7 @@ package com.duokan.reader.ui.store;
 
 import android.content.Context;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.ds;
 
 class bs extends ds {
@@ -21,7 +21,7 @@ class bs extends ds {
         float f = 0.0f;
         for (Integer intValue : getVisibleViewIndexMap().keySet()) {
             int intValue2 = intValue.intValue();
-            f = (((Float) getVisibleViewIndexMap().get(Integer.valueOf(intValue2))).floatValue() * dv.a(((float) ((bl) this.c.b.get(intValue2)).e()) / ((float) (this.c.d - getTabView().getHeight())))) + f;
+            f = (((Float) getVisibleViewIndexMap().get(Integer.valueOf(intValue2))).floatValue() * UTools.addAnimation(((float) ((bl) this.c.b.get(intValue2)).e()) / ((float) (this.c.d - getTabView().getHeight())))) + f;
         }
         return f;
     }

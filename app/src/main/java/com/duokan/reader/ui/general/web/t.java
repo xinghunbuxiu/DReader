@@ -1,5 +1,6 @@
 package com.duokan.reader.ui.general.web;
 
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.ReaderEnv;
 
 class t implements Runnable {
@@ -10,6 +11,6 @@ class t implements Runnable {
     }
 
     public void run() {
-        com.duokan.core.sys.t.a(new u(this, ReaderEnv.get().getDb().a("search_hotword")));
+        TaskHandler.postTask(new u(this, ReaderEnv.get().getDb().a("search_hotword")));
     }
 }

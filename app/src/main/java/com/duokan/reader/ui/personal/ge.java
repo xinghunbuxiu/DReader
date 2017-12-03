@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.personal;
 
 import com.duokan.c.j;
-import com.duokan.core.app.e;
+import com.duokan.core.app.ActivatedController;
 import com.duokan.reader.domain.account.PersonalAccount;
 import com.duokan.reader.domain.account.i;
 import com.duokan.reader.ui.general.ja;
@@ -21,11 +21,11 @@ class ge implements Callable {
         return a();
     }
 
-    public e a() {
+    public ActivatedController a() {
         if (!((PersonalAccount) i.f().b(PersonalAccount.class)).q()) {
             return bv.c(this.a.a.getContext());
         }
-        e jaVar = new ja(this.a.a.getContext());
+        ActivatedController jaVar = new ja(this.a.a.getContext());
         StorePageController storePageController = (StorePageController) bv.c(this.a.a.getContext());
         StorePageController storePageController2 = (StorePageController) bv.b(this.a.a.getContext());
         storePageController.setHasTitle(false);

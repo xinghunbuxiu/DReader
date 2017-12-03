@@ -7,9 +7,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 
-import com.duokan.b.e;
 import com.duokan.core.app.BrightnessMode;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
 import com.duokan.reader.UmengManager;
@@ -449,7 +448,7 @@ class ReadingPrefs {
     }
 
     public int w() {
-        return (v() * dv.f(this.p, (float) this.o)) / 10;
+        return (v() * UTools.f(this.p, (float) this.o)) / 10;
     }
 
     public int x() {
@@ -461,11 +460,11 @@ class ReadingPrefs {
     }
 
     public int y() {
-        return (x() * dv.g(this.p, (float) this.a)) / 10;
+        return (x() * UTools.g(this.p, (float) this.a)) / 10;
     }
 
     public int z() {
-        return (x() * dv.g(this.p, (float) this.b)) / 10;
+        return (x() * UTools.g(this.p, (float) this.b)) / 10;
     }
 
     public int A() {
@@ -722,6 +721,6 @@ class ReadingPrefs {
     }
 
     private int a(Context context, float f) {
-        return (dv.e(context, f) / 2) * 2;
+        return (UTools.getScaledPagingTouchSlop(context, f) / 2) * 2;
     }
 }

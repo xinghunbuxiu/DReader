@@ -4,7 +4,7 @@ import android.graphics.Point;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 
 import com.duokan.core.ui.dl;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 import org.apache.http.HttpStatus;
 
@@ -19,9 +19,9 @@ class pf implements OnPreDrawListener {
 
     public boolean onPreDraw() {
         Point point = new Point(0, 0);
-        dv.c(point, this.b.a);
+        UTools.showAnimation(point, this.b.a);
         Point point2 = new Point(this.a.x - point.x, this.a.y - point.y);
-        dv.a(point2, this.b.c);
+        UTools.addAnimation(point2, this.b.c);
         this.b.c.a(this.b.c.getScrollX() - point2.x, this.b.c.getScrollY() - point2.y);
         this.b.c.setThumbEnabled(false);
         this.b.c.m_();

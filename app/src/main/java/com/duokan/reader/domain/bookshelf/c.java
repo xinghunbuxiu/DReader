@@ -10,8 +10,8 @@ import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.diagnostic.a;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.af;
-import com.duokan.core.sys.t;
 import com.duokan.kernel.DkUtils;
 import com.duokan.kernel.epublib.DKEBookInfo;
 import com.duokan.kernel.epublib.DkeBook;
@@ -19,7 +19,6 @@ import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.c.f;
 import com.duokan.reader.common.download.DownloadFailCode;
 import com.duokan.reader.common.webservices.duokan.y;
-import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.cloud.DkCloudAnnotation;
 import com.duokan.reader.domain.cloud.DkCloudBookmark;
 import com.duokan.reader.domain.cloud.DkCloudComment;
@@ -29,7 +28,8 @@ import com.duokan.reader.domain.cloud.DkCloudStorage;
 import com.duokan.reader.domain.cloud.DkCloudStorage.ConflictStrategy;
 import com.duokan.reader.domain.cloud.PersonalPrefs;
 import com.duokan.reader.domain.cloud.g;
-import com.duokan.reader.domain.document.a.d;
+import com.duokan.reader.domain.document.Document_a;
+import com.duokan.reader.domain.document.Document_a.d;
 import com.duokan.reader.domain.document.av;
 import com.duokan.reader.domain.document.epub.ah;
 import com.duokan.reader.domain.document.epub.ai;
@@ -46,7 +46,6 @@ import com.duokan.reader.domain.downloadcenter.DownloadCenterTask;
 import com.duokan.reader.domain.micloud.bi;
 import com.duokan.reader.domain.provider.BookshelfHelper.BooksTable.Column;
 import com.duokan.reader.domain.provider.BookshelfHelper.BooksTable.CommonColumn;
-import com.umeng.analytics.pro.j;
 
 import org.json.JSONObject;
 
@@ -1670,7 +1669,7 @@ public abstract class c extends an {
 
     public void onConnectivityChanged(f fVar) {
         if (aP()) {
-            if (((fVar.e() && ManagedApp.get().getRunningState() == RunningState.FOREGROUND) || fVar.d()) && PersonalPrefs.a().x() && i.f().b()) {
+            if (((fVar.e() && ManagedApp.get().getOldRunningState() == RunningState.FOREGROUND) || fVar.d()) && PersonalPrefs.a().x() && i.f().b()) {
                 ju G = G();
                 if (G.a > 0 || G.b > 0) {
                     a(D().a);
@@ -1961,8 +1960,8 @@ public abstract class c extends an {
         } else if (avVar instanceof b) {
             b bVar = (b) avVar;
             return new g(1, 0, bVar.g(), "", bVar.g());
-        } else if (avVar instanceof com.duokan.reader.domain.document.a.a) {
-            com.duokan.reader.domain.document.a.a aVar = (com.duokan.reader.domain.document.a.a) avVar;
+        } else if (avVar instanceof Document_a.a) {
+            Document_a.a aVar = (Document_a.a) avVar;
             return new g(1 + aVar.g(), aVar.h(), aVar.i(), "", -1);
         } else if (avVar instanceof com.duokan.reader.domain.document.sbk.b) {
             com.duokan.reader.domain.document.sbk.b bVar2 = (com.duokan.reader.domain.document.sbk.b) avVar;
@@ -2246,6 +2245,6 @@ public abstract class c extends an {
     }
 
     private void aW() {
-        t.a(new t(this));
+        t.a(new TaskHandler(this));
     }
 }

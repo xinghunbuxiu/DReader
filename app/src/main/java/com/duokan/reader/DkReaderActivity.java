@@ -9,14 +9,14 @@ import android.text.TextUtils;
 
 import com.duokan.core.app.ad;
 import com.duokan.core.app.ae;
-import com.duokan.core.app.m;
+import com.duokan.core.app.BaseActivity;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.diagnostic.a;
 import com.duokan.core.ui.j;
 import com.duokan.core.ui.l;
 import com.duokan.reader.ui.welcome.r;
 
-public class DkReaderActivity extends m {
+public class DkReaderActivity extends BaseActivity {
     @TargetApi(19)
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);

@@ -14,10 +14,10 @@ import android.os.Process;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
 
+import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.app.m;
-import com.duokan.core.app.w;
+import com.duokan.core.app.BaseActivity;
 import com.duokan.reader.WelcomeDialog.StateListener;
 import com.duokan.reader.domain.bookshelf.BookUploadService;
 import com.duokan.reader.domain.downloadcenter.DownloadService;
@@ -26,9 +26,9 @@ import java.lang.ref.WeakReference;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-public class DkMainActivity extends m {
+public class DkMainActivity extends BaseActivity {
     private static WeakReference b = new WeakReference(null);
-    private static w c = null;
+    private static IActivityRunStatusChanged c = null;
     private static long d = -1;
     private DkReaderController e = null;
     private boolean f = true;
@@ -147,7 +147,7 @@ public class DkMainActivity extends m {
 
     private static void listenRunningState() {
         if (c == null) {
-            c = new w() {
+            c = new IActivityRunStatusChanged() {
                 public void onRunningStateChanged(ManagedApp managedApp, RunningState runningState, RunningState runningState2) {
                     if (runningState2 == RunningState.FOREGROUND) {
                         if (DkReader.get().isReady() && DkMainActivity.d >= 0 && System.currentTimeMillis() - DkMainActivity.d >= TimeUnit.MINUTES.toMillis(5)) {

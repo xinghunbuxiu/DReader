@@ -10,6 +10,7 @@ import com.duokan.kernel.DkUtils;
 import com.duokan.kernel.pdflib.DkpBook;
 import com.duokan.kernel.pdflib.DkpFlowParserOption;
 import com.duokan.kernel.pdflib.DkpPageEx;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.FootnoteStyle;
 import com.duokan.reader.domain.document.WritingDirection;
 import com.duokan.reader.domain.document.aa;
@@ -228,7 +229,7 @@ public class d extends n implements at {
         if (F.g().c()) {
             return p.a(this.k.h(), sVar) - 1;
         }
-        if (!d((com.duokan.reader.domain.document.a) akVar) || !akVar.e()) {
+        if (!d((Document_a) akVar) || !akVar.e()) {
             return -1;
         }
         a aVar = (a) akVar.g();
@@ -295,7 +296,7 @@ public class d extends n implements at {
         return c(a((long) (f() - 1), 0, 0));
     }
 
-    public com.duokan.reader.domain.document.a c(com.duokan.reader.domain.document.a aVar) {
+    public Document_a c(Document_a aVar) {
         a.c().b(A());
         return aVar;
     }
@@ -357,7 +358,7 @@ public class d extends n implements at {
             if (!(akVar instanceof v)) {
                 return null;
             }
-            com.duokan.reader.domain.document.a aVar = (v) akVar;
+            Document_a aVar = (v) akVar;
             ah l = aVar.l();
             if (aVar.b() || l == F || d(aVar)) {
                 return new v(F, aVar, (long) i);
@@ -377,7 +378,7 @@ public class d extends n implements at {
         return false;
     }
 
-    public boolean d(com.duokan.reader.domain.document.a aVar) {
+    public boolean d(Document_a aVar) {
         a.c().b(A());
         if (!i && aVar == null) {
             throw new AssertionError();
@@ -408,7 +409,7 @@ public class d extends n implements at {
         a.c().b(A());
         if (i || akVar != null) {
             u B = mVar == null ? B() : (u) mVar;
-            d((com.duokan.reader.domain.document.a) akVar);
+            d((Document_a) akVar);
             ah F = F();
             if (akVar instanceof v) {
                 return new w(F, (v) akVar, B, this.g, this);
@@ -592,14 +593,14 @@ public class d extends n implements at {
         r2 = r0.l;	 Catch:{ all -> 0x003e }
         r2 = r2.getFirst();	 Catch:{ all -> 0x003e }
         r0 = r2;
-        r0 = (com.duokan.reader.domain.document.a.l) r0;	 Catch:{ all -> 0x003e }
+        r0 = (com.duokan.reader.domain.document.setDrawable.l) r0;	 Catch:{ all -> 0x003e }
         r4 = r0;
-        r2 = r4.c;	 Catch:{ all -> 0x003e }
+        r2 = r4.showAnimation;	 Catch:{ all -> 0x003e }
         if (r2 == 0) goto L_0x002d;
     L_0x0023:
         monitor-exit(r16);	 Catch:{ all -> 0x003e }
         r16.G();
-        r16.x();
+        r16.MyContextWrapper();
     L_0x002a:
         return;
     L_0x002b:
@@ -609,10 +610,10 @@ public class d extends n implements at {
         monitor-exit(r16);	 Catch:{ all -> 0x003e }
         if (r3 == r4) goto L_0x026a;
     L_0x0030:
-        r2 = i;
+        r2 = getPhysicalYPixels;
         if (r2 != 0) goto L_0x0041;
     L_0x0034:
-        r2 = r4.b;
+        r2 = r4.getVisible;
         if (r2 == 0) goto L_0x0041;
     L_0x0038:
         r2 = new java.lang.AssertionError;
@@ -625,21 +626,21 @@ public class d extends n implements at {
     L_0x0041:
         if (r3 == 0) goto L_0x0045;
     L_0x0043:
-        r3.b = r9;
+        r3.getVisible = r9;
     L_0x0045:
         if (r3 != 0) goto L_0x00aa;
     L_0x0047:
-        r2 = r4.f();
+        r2 = r4.HttpLogger();
         r0 = r16;
-        r2 = r0.b(r2);
+        r2 = r0.getVisible(r2);
         r0 = r16;
-        r0.k = r2;
+        r0.getHeightPixels = r2;
         r0 = r16;
-        r2 = r0.k;
+        r2 = r0.getHeightPixels;
         if (r2 == 0) goto L_0x00a6;
     L_0x005b:
         r0 = r16;
-        r2 = r0.k;
+        r2 = r0.getHeightPixels;
         r4.n = r2;
         r16.u();
         r0 = r16;
@@ -647,25 +648,25 @@ public class d extends n implements at {
         r2.start();
     L_0x006c:
         r0 = r16;
-        r2 = r0.k;
+        r2 = r0.getHeightPixels;
         r10 = r4.n;
         r0 = r16;
-        r0.k = r10;
+        r0.getHeightPixels = r10;
         r0 = r16;
-        r3 = r0.k;
+        r3 = r0.getHeightPixels;
         r3 = r2.equals(r3);
         if (r3 != 0) goto L_0x008c;
     L_0x0082:
-        r3 = new com.duokan.reader.domain.document.a.g;
+        r3 = new com.duokan.reader.domain.document.setDrawable.SessionTask;
         r0 = r16;
         r3.<init>(r0, r2);
-        com.duokan.core.sys.t.a(r3);
+        com.duokan.core.sys.TaskHandler.setDrawable(r3);
     L_0x008c:
-        r2 = r4.g();
-        r11 = r2.j;
-        r2 = com.duokan.reader.domain.document.a.o.c();
-        r12 = r2.a();
-        r2 = i;
+        r2 = r4.SessionTask();
+        r11 = r2.getWidthPixels;
+        r2 = com.duokan.reader.domain.document.setDrawable.o.showAnimation();
+        r12 = r2.setDrawable();
+        r2 = getPhysicalYPixels;
         if (r2 != 0) goto L_0x00b2;
     L_0x009e:
         if (r12 != 0) goto L_0x00b2;
@@ -681,7 +682,7 @@ public class d extends n implements at {
         r4.n = r2;
         goto L_0x006c;
     L_0x00b2:
-        r2 = i;
+        r2 = getPhysicalYPixels;
         if (r2 != 0) goto L_0x00be;
     L_0x00b6:
         if (r11 != 0) goto L_0x00be;
@@ -717,15 +718,15 @@ public class d extends n implements at {
         goto L_0x00c6;
     L_0x00ff:
         r2 = "CUSTOM_FONT_EN";
-        r2 = com.duokan.reader.domain.document.n.a(r11, r2);
+        r2 = com.duokan.reader.domain.document.n.setDrawable(r11, r2);
         r3 = "DEFAULT_FONT_EN";
-        r5 = com.duokan.reader.domain.document.n.a(r11, r3);
+        r5 = com.duokan.reader.domain.document.n.setDrawable(r11, r3);
         r3 = "CUSTOM_FONT_ZH";
-        r3 = com.duokan.reader.domain.document.n.b(r11, r3);
+        r3 = com.duokan.reader.domain.document.n.getVisible(r11, r3);
         r6 = "DEFAULT_FONT_ZH";
-        r6 = com.duokan.reader.domain.document.n.b(r11, r6);
+        r6 = com.duokan.reader.domain.document.n.getVisible(r11, r6);
         r13 = "FALLBACK_FONT";
-        com.duokan.reader.domain.document.n.c(r11, r13);
+        com.duokan.reader.domain.document.n.showAnimation(r11, r13);
         r11 = android.text.TextUtils.isEmpty(r2);
         if (r11 != 0) goto L_0x0206;
     L_0x0122:
@@ -733,9 +734,9 @@ public class d extends n implements at {
         if (r5 != 0) goto L_0x0212;
     L_0x0128:
         r12.registerFont(r2, r2);
-        r5 = r10.h();
+        r5 = r10.getPhysicalXPixels();
         r5.setDefaultFont(r2, r9);
-        r5 = r10.i();
+        r5 = r10.getPhysicalYPixels();
         r5.setDefaultFont(r2, r9);
     L_0x0139:
         r5 = android.text.TextUtils.isEmpty(r3);
@@ -745,44 +746,44 @@ public class d extends n implements at {
         if (r5 != 0) goto L_0x0229;
     L_0x0145:
         r12.registerFont(r3, r3);
-        r5 = r10.h();
+        r5 = r10.getPhysicalXPixels();
         r5.setDefaultFont(r3, r15);
-        r5 = r10.i();
+        r5 = r10.getPhysicalYPixels();
         r5.setDefaultFont(r3, r15);
-        r5 = r10.h();
+        r5 = r10.getPhysicalXPixels();
         r5.setDefaultFont(r3, r14);
-        r5 = r10.i();
+        r5 = r10.getPhysicalYPixels();
         r5.setDefaultFont(r3, r14);
         r2 = android.text.TextUtils.isEmpty(r2);
         if (r2 == 0) goto L_0x0178;
     L_0x016a:
-        r2 = r10.h();
+        r2 = r10.getPhysicalXPixels();
         r2.setDefaultFont(r3, r9);
-        r2 = r10.i();
+        r2 = r10.getPhysicalYPixels();
         r2.setDefaultFont(r3, r9);
     L_0x0178:
-        r2 = r10.j();
+        r2 = r10.getWidthPixels();
         r2 = (int) r2;
         r2 = new long[r2][];
-        r4.i = r2;
-        r2 = r4.g();
-        r2 = r2.g;
+        r4.getPhysicalYPixels = r2;
+        r2 = r4.SessionTask();
+        r2 = r2.SessionTask;
         r10 = 0;
         r2 = (r2 > r10 ? 1 : (r2 == r10 ? 0 : -1));
         if (r2 >= 0) goto L_0x024f;
     L_0x018d:
-        r2 = com.duokan.reader.domain.document.a.o.c();
-        r2 = r2.a();
+        r2 = com.duokan.reader.domain.document.setDrawable.o.showAnimation();
+        r2 = r2.setDrawable();
         r2.setUseBookStyle(r8);
     L_0x0198:
         r0 = r16;
-        r0.a(r4);
+        r0.setDrawable(r4);
         r2 = java.lang.System.currentTimeMillis();
         r0 = r16;
         r0.q = r2;
-        r4.b = r8;
+        r4.getVisible = r8;
     L_0x01a7:
-        r2 = r4.h();
+        r2 = r4.getPhysicalXPixels();
         if (r2 == 0) goto L_0x01d0;
     L_0x01ad:
         r0 = r16;
@@ -791,7 +792,7 @@ public class d extends n implements at {
         r3 = r0.n;
         r3.release();
         r0 = r16;
-        r0.a(r2, r4);
+        r0.setDrawable(r2, r4);
         r0 = r16;
         r0.p = r9;
         r10 = java.lang.System.currentTimeMillis();
@@ -806,7 +807,7 @@ public class d extends n implements at {
         r0 = r16;
         r2 = r0.n;
         r2.release();
-        r2 = r4.g();
+        r2 = r4.SessionTask();
         r0 = r16;
         r3 = r0.o;
         if (r2 == r3) goto L_0x025c;
@@ -822,11 +823,11 @@ public class d extends n implements at {
         if (r2 <= 0) goto L_0x025c;
     L_0x01f4:
         r0 = r16;
-        r2 = r0.a(r4, r8);
+        r2 = r0.setDrawable(r4, r8);
         if (r2 != 0) goto L_0x0203;
     L_0x01fc:
         r0 = r16;
-        r2 = r0.m;
+        r2 = r0.BaseActivity;
         r2.acquireUninterruptibly();
     L_0x0203:
         r3 = r4;
@@ -841,10 +842,10 @@ public class d extends n implements at {
         r2 = r5;
         goto L_0x0122;
     L_0x0212:
-        r5 = r10.h();
+        r5 = r10.getPhysicalXPixels();
         r11 = "";
         r5.setDefaultFont(r11, r9);
-        r5 = r10.i();
+        r5 = r10.getPhysicalYPixels();
         r11 = "";
         r5.setDefaultFont(r11, r9);
         goto L_0x0139;
@@ -852,27 +853,27 @@ public class d extends n implements at {
         r3 = r6;
         goto L_0x013f;
     L_0x0229:
-        r2 = r10.h();
+        r2 = r10.getPhysicalXPixels();
         r3 = "";
         r2.setDefaultFont(r3, r15);
-        r2 = r10.i();
+        r2 = r10.getPhysicalYPixels();
         r3 = "";
         r2.setDefaultFont(r3, r15);
-        r2 = r10.h();
+        r2 = r10.getPhysicalXPixels();
         r3 = "";
         r2.setDefaultFont(r3, r14);
-        r2 = r10.i();
+        r2 = r10.getPhysicalYPixels();
         r3 = "";
         r2.setDefaultFont(r3, r14);
         goto L_0x0178;
     L_0x024f:
-        r2 = com.duokan.reader.domain.document.a.o.c();
-        r2 = r2.a();
+        r2 = com.duokan.reader.domain.document.setDrawable.o.showAnimation();
+        r2 = r2.setDrawable();
         r2.setUseBookStyle(r9);
         goto L_0x0198;
     L_0x025c:
         r0 = r16;
-        r2 = r0.m;	 Catch:{ Exception -> 0x0268 }
+        r2 = r0.BaseActivity;	 Catch:{ Exception -> 0x0268 }
         r6 = 500; // 0x1f4 float:7.0E-43 double:2.47E-321;
         r3 = java.util.concurrent.TimeUnit.MILLISECONDS;	 Catch:{ Exception -> 0x0268 }
         r2.tryAcquire(r6, r3);	 Catch:{ Exception -> 0x0268 }
@@ -884,7 +885,7 @@ public class d extends n implements at {
         r4 = r3;
         goto L_0x01a7;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.a.d.E():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.setDrawable.getScaledTouchSlop.E():void");
     }
 
     private void a(ah ahVar) {

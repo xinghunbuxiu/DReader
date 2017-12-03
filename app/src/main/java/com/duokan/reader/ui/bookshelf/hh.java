@@ -3,7 +3,6 @@ package com.duokan.reader.ui.bookshelf;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.FrameLayout.LayoutParams;
 
 import com.duokan.c.g;
 import com.duokan.c.h;

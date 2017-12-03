@@ -13,17 +13,16 @@ import android.util.Pair;
 import android.view.View;
 
 import com.duokan.core.app.BrightnessMode;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.sys.ag;
 import com.duokan.core.sys.j;
-import com.duokan.core.sys.t;
-import com.duokan.core.ui.dv;
+import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.account.PersonalAccount;
 import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.b.b;
 import com.duokan.reader.domain.bookshelf.BookLimitType;
 import com.duokan.reader.domain.bookshelf.BookType;
 import com.duokan.reader.domain.bookshelf.a;
@@ -35,6 +34,7 @@ import com.duokan.reader.domain.bookshelf.hh;
 import com.duokan.reader.domain.bookshelf.iv;
 import com.duokan.reader.domain.cloud.DkCloudRedeemBenefit;
 import com.duokan.reader.domain.cloud.DkUserPurchasedBooksManager;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ac;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.as;
@@ -110,7 +110,7 @@ public abstract class rx implements iv, at, sh {
         return this.c.e.getShowingDocPresenter().getAnnotations();
     }
 
-    public void a(n nVar, com.duokan.reader.domain.document.a aVar) {
+    public void a(n nVar, Document_a aVar) {
     }
 
     public Drawable a(DecorDrawableStyle decorDrawableStyle) {
@@ -320,7 +320,7 @@ public abstract class rx implements iv, at, sh {
             View view2 = (gs) view2;
             Rect a = view2.a(efVar);
             if (!a.isEmpty()) {
-                dv.b(a, view2, this.c.e.getShowingPagesView());
+                UTools.closeAnimation(a, view2, this.c.e.getShowingPagesView());
                 linkedList.add(a);
             }
         }
@@ -624,7 +624,7 @@ public abstract class rx implements iv, at, sh {
 
     public void b(ak akVar, boolean z, ag agVar) {
         if (this.c.q) {
-            t.a(new rz(this, agVar));
+            TaskHandler.postTask(new rz(this, agVar));
             return;
         }
         m a;
@@ -658,7 +658,7 @@ public abstract class rx implements iv, at, sh {
         int i = bo.left;
         rect.right = i;
         rect.left = i;
-        int headerPaddingTop = ((s) x.a(this.c.getContext()).queryFeature(s.class)).getTheme().getHeaderPaddingTop();
+        int headerPaddingTop = ((s) MyContextWrapper.getFeature(this.c.getContext()).queryFeature(s.class)).getTheme().getHeaderPaddingTop();
         int g = this.c.D();
         if (ao()) {
             rect.top = Math.round((((float) bo.top) * 0.6f) + (((float) g) * 0.5f));
@@ -699,37 +699,37 @@ public abstract class rx implements iv, at, sh {
         } else {
             switch (ri.a[ReaderUi.l(this.c.getContext()).ordinal()]) {
                 case 1:
-                    rect.top = dv.g(this.c.getContext(), 110.0f);
-                    rect.bottom = dv.g(this.c.getContext(), 74.0f);
-                    w = dv.f(this.c.getContext(), 54.0f);
+                    rect.top = UTools.g(this.c.getContext(), 110.0f);
+                    rect.bottom = UTools.g(this.c.getContext(), 74.0f);
+                    w = UTools.f(this.c.getContext(), 54.0f);
                     rect.right = w;
                     rect.left = w;
                     break;
                 case 2:
-                    rect.top = dv.g(this.c.getContext(), 100.0f);
-                    rect.bottom = dv.g(this.c.getContext(), 70.0f);
-                    w = dv.f(this.c.getContext(), 44.0f);
+                    rect.top = UTools.g(this.c.getContext(), 100.0f);
+                    rect.bottom = UTools.g(this.c.getContext(), 70.0f);
+                    w = UTools.f(this.c.getContext(), 44.0f);
                     rect.right = w;
                     rect.left = w;
                     break;
                 case 3:
-                    rect.top = dv.g(this.c.getContext(), 46.0f);
-                    rect.bottom = dv.g(this.c.getContext(), 36.0f);
-                    w = dv.f(this.c.getContext(), 20.0f);
+                    rect.top = UTools.g(this.c.getContext(), 46.0f);
+                    rect.bottom = UTools.g(this.c.getContext(), 36.0f);
+                    w = UTools.f(this.c.getContext(), 20.0f);
                     rect.right = w;
                     rect.left = w;
                     break;
                 case 5:
-                    rect.top = dv.g(this.c.getContext(), 66.0f);
-                    rect.bottom = dv.g(this.c.getContext(), 42.0f);
-                    w = dv.f(this.c.getContext(), 30.0f);
+                    rect.top = UTools.g(this.c.getContext(), 66.0f);
+                    rect.bottom = UTools.g(this.c.getContext(), 42.0f);
+                    w = UTools.f(this.c.getContext(), 30.0f);
                     rect.right = w;
                     rect.left = w;
                     break;
                 default:
-                    rect.top = dv.g(this.c.getContext(), 60.0f);
-                    rect.bottom = dv.g(this.c.getContext(), 38.0f);
-                    w = dv.f(this.c.getContext(), 24.0f);
+                    rect.top = UTools.g(this.c.getContext(), 60.0f);
+                    rect.bottom = UTools.g(this.c.getContext(), 38.0f);
+                    w = UTools.f(this.c.getContext(), 24.0f);
                     rect.right = w;
                     rect.left = w;
                     break;
@@ -749,7 +749,7 @@ public abstract class rx implements iv, at, sh {
             }
         }
         if (bf()) {
-            rect.bottom = Math.max(rect.bottom, dv.b(this.c.getContext(), 30.0f));
+            rect.bottom = Math.max(rect.bottom, UTools.closeAnimation(this.c.getContext(), 30.0f));
         }
         return rect;
     }
@@ -925,7 +925,7 @@ public abstract class rx implements iv, at, sh {
         this.c.C = null;
     }
 
-    public int b(com.duokan.reader.domain.document.a aVar) {
+    public int b(Document_a aVar) {
         if (L() < 1) {
             return 0;
         }
@@ -966,7 +966,7 @@ public abstract class rx implements iv, at, sh {
 
     public void a(av avVar) {
         if (this.c.p) {
-            this.c.e.getShowingDocPresenter().a((com.duokan.reader.domain.document.a) avVar);
+            this.c.e.getShowingDocPresenter().a((Document_a) avVar);
         } else {
             this.c.v = avVar;
         }
@@ -974,13 +974,13 @@ public abstract class rx implements iv, at, sh {
 
     public void c(ak akVar) {
         if (this.c.p) {
-            this.c.e.getShowingDocPresenter().a((com.duokan.reader.domain.document.a) akVar);
+            this.c.e.getShowingDocPresenter().a((Document_a) akVar);
         } else {
             this.c.v = akVar;
         }
     }
 
-    public void a(com.duokan.reader.domain.document.a aVar) {
+    public void a(Document_a aVar) {
         if (aVar instanceof ak) {
             c((ak) aVar);
         } else if (aVar instanceof av) {
@@ -1423,13 +1423,13 @@ public abstract class rx implements iv, at, sh {
 
     public void a(Canvas canvas, int i, int i2, int i3, int i4, int i5) {
         g bg = bg();
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         rect.set(i - (bg.getIntrinsicWidth() / 2), i2 - (bg.getIntrinsicHeight() / 2), (bg.getIntrinsicWidth() / 2) + i, (bg.getIntrinsicHeight() / 2) + i2);
         bg.setBounds(rect);
         bg.a(rect.left, i3, rect.right, i4);
         bg.a(i5);
         bg.draw(canvas);
-        dv.g.a(rect);
+        UTools.g.getRect(rect);
     }
 
     public boolean bh() {

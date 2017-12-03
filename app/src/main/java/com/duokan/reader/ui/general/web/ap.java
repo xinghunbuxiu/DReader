@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class ap extends FrameLayout {
     final /* synthetic */ SearchController a;
@@ -15,7 +15,7 @@ class ap extends FrameLayout {
     }
 
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        dv.a(getContext());
+        UTools.hideSoftInputFromWindow(getContext());
         return super.onInterceptTouchEvent(motionEvent);
     }
 }

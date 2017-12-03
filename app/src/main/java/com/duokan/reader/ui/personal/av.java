@@ -6,12 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.duokan.c.d;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
 import com.duokan.common.FileTypeRecognizer;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.bookshelf.iz;
 import com.duokan.reader.domain.micloud.i;
@@ -43,7 +42,7 @@ public class av extends gw {
 
     public av(Context context) {
         this.a = context;
-        this.d = (eo) x.a(context).queryFeature(eo.class);
+        this.d = (eo) MyContextWrapper.getFeature(context).queryFeature(eo.class);
     }
 
     public void a(List list) {

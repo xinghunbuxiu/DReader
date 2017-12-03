@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.duokan.b.i;
 import com.duokan.core.ui.FrameScrollView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.cloud.DkCloudRedeemBenefit;
 import com.duokan.reader.ui.general.DkBigFaceView;
 import com.duokan.reader.ui.general.ReaderUi;
@@ -64,12 +64,12 @@ public class GiftView extends FrameLayout {
         this.d = findViewById(f.reading__gift_view__space);
         this.e = (deprecatedDkTextView) findViewById(f.reading__gift_view__msg);
         this.f = (TextView) findViewById(f.reading__gift_view__from);
-        ((FrameScrollView) findViewById(f.reading__gift_view__scroll)).setMaxOverScrollHeight(dv.g(getContext()));
+        ((FrameScrollView) findViewById(f.reading__gift_view__scroll)).setMaxOverScrollHeight(UTools.g(getContext()));
     }
 
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        int b = dv.b(getContext(), 10.0f);
+        int b = UTools.closeAnimation(getContext(), 10.0f);
         int paddingTop = getPaddingTop();
         int paddingLeft = getPaddingLeft();
         int paddingRight = getPaddingRight();

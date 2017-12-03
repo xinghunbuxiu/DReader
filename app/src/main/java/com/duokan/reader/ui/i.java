@@ -3,93 +3,92 @@ package com.duokan.reader.ui;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.ui.general.PagesController.AnimationType;
 import com.duokan.reader.ui.general.fy;
 import com.duokan.reader.ui.general.ii;
 
 import org.apache.http.HttpStatus;
 
 public class i extends ii {
-    public i(y yVar) {
-        super(yVar);
+    public i(IFeature featrue) {
+        super(featrue);
         e(0);
     }
 
-    public boolean a(e eVar) {
-        if (g(eVar) != null) {
+    public boolean a(ActivatedController activatedControllerVar) {
+        if (g(activatedControllerVar) != null) {
             return false;
         }
-        a(new l(this, getContext(), eVar, ReaderEnv.get().forHd() ? 0.618f : 1.0f), null, 0, null);
+        a(new l(this, getContext(), activatedControllerVar, ReaderEnv.get().forHd() ? 0.618f : 1.0f), null, 0, null);
         h(h());
         return true;
     }
 
-    public boolean a(e eVar, Runnable runnable) {
-        if (g(eVar) != null) {
+    public boolean a(ActivatedController activatedControllerVar, Runnable runnable) {
+        if (g(activatedControllerVar) != null) {
             return false;
         }
-        a(new l(this, getContext(), eVar, ReaderEnv.get().forHd() ? 0.618f : 1.0f), a(AnimationType.IN, eVar), (int) HttpStatus.SC_MULTIPLE_CHOICES, runnable);
+        a(new l(this, getContext(), activatedControllerVar, ReaderEnv.get().forHd() ? 0.618f : 1.0f), a(AnimationType.IN, activatedControllerVar), (int) HttpStatus.SC_MULTIPLE_CHOICES, runnable);
         h(h());
         return true;
     }
 
-    public boolean b(e eVar) {
-        if (g(eVar) != null) {
+    public boolean b(ActivatedController activatedControllerVar) {
+        if (g(activatedControllerVar) != null) {
             return false;
         }
-        a(new o(this, getContext(), eVar, 1.0f), null, 0, null);
+        a(new o(this, getContext(), activatedControllerVar, 1.0f), null, 0, null);
         h(h());
         return true;
     }
 
-    public boolean b(e eVar, Runnable runnable) {
-        if (g(eVar) != null || !super.c(new o(this, getContext(), eVar, 1.0f), runnable)) {
+    public boolean b(ActivatedController activatedControllerVar, Runnable runnable) {
+        if (g(activatedControllerVar) != null || !super.c(new o(this, getContext(), activatedControllerVar, 1.0f), runnable)) {
             return false;
         }
         h(h());
         return true;
     }
 
-    public boolean c(e eVar) {
-        if (g(eVar) != null) {
+    public boolean c(ActivatedController activatedControllerVar) {
+        if (g(activatedControllerVar) != null) {
             return false;
         }
-        a(new l(this, getContext(), eVar, 1.0f), null, 0, null);
+        a(new l(this, getContext(), activatedControllerVar, 1.0f), null, 0, null);
         h(h());
         return true;
     }
 
-    public boolean c(e eVar, Runnable runnable) {
-        if (g(eVar) != null) {
+    public boolean c(ActivatedController activatedControllerVar, Runnable runnable) {
+        if (g(activatedControllerVar) != null) {
             return false;
         }
-        a(new l(this, getContext(), eVar, 1.0f), a(AnimationType.IN, eVar), (int) HttpStatus.SC_MULTIPLE_CHOICES, runnable);
+        a(new l(this, getContext(), activatedControllerVar, 1.0f), a(AnimationType.IN, activatedControllerVar), (int) HttpStatus.SC_MULTIPLE_CHOICES, runnable);
         h(h());
         return true;
     }
 
-    public boolean d(e eVar, Runnable runnable) {
-        if (!super.d(eVar, runnable)) {
+    public boolean d(ActivatedController activatedControllerVar, Runnable runnable) {
+        if (!super.d(activatedControllerVar, runnable)) {
             return false;
         }
-        i(e(eVar));
+        i(e(activatedControllerVar));
         return true;
     }
 
-    protected boolean onRequestDetach(e eVar) {
-        if (eVar instanceof l) {
-            i(((fy) eVar).b());
+    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
+        if (activatedControllerVar instanceof l) {
+            i(((fy) activatedControllerVar).b());
         }
-        return super.onRequestDetach(eVar);
+        return super.onRequestDetach(activatedControllerVar);
     }
 
-    protected Animation a(AnimationType animationType, e eVar) {
-        if (!(g(eVar) instanceof o)) {
-            return super.a(animationType, eVar);
+    protected Animation a(AnimationType animationType, ActivatedController activatedControllerVar) {
+        if (!(g(activatedControllerVar) instanceof o)) {
+            return super.a(animationType, activatedControllerVar);
         }
         switch (k.a[animationType.ordinal()]) {
             case 1:
@@ -115,7 +114,7 @@ public class i extends ii {
 
     protected void a(fy fyVar, float f) {
         super.a(fyVar, f);
-        e d = d(fyVar.b());
+        ActivatedController d = d(fyVar.b());
         if (d == null) {
             g();
             return;
@@ -161,10 +160,10 @@ public class i extends ii {
         }
     }
 
-    private void h(e eVar) {
-        e d = d(eVar);
+    private void h(ActivatedController activatedControllerVar) {
+        ActivatedController d = d(activatedControllerVar);
         if (d != null) {
-            dv.a(d.getContentView(), 1.0f, 0.3f, (int) HttpStatus.SC_MULTIPLE_CHOICES, true, new j(this));
+            UTools.addAnimation(d.getContentView(), 1.0f, 0.3f, (int) HttpStatus.SC_MULTIPLE_CHOICES, true, new j(this));
         }
     }
 
@@ -181,9 +180,9 @@ public class i extends ii {
         }
     }
 
-    private void i(e eVar) {
+    private void i(ActivatedController activatedControllerVar) {
         float f = 0.0f;
-        int f2 = f(eVar);
+        int f2 = f(activatedControllerVar);
         while (f2 >= 0) {
             float a;
             fy g = g(d(f2));
@@ -200,9 +199,9 @@ public class i extends ii {
             f2--;
             f = a;
         }
-        e d = d(eVar);
+        ActivatedController d = d(activatedControllerVar);
         if (d != null) {
-            dv.a(d.getContentView(), 0.3f, 1.0f, (int) HttpStatus.SC_MULTIPLE_CHOICES, false, null);
+            UTools.addAnimation(d.getContentView(), 0.3f, 1.0f, (int) HttpStatus.SC_MULTIPLE_CHOICES, false, null);
         }
     }
 }

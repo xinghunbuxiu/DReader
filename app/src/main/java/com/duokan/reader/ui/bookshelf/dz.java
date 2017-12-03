@@ -3,8 +3,6 @@ package com.duokan.reader.ui.bookshelf;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
 
-import com.duokan.reader.ui.general.a.a;
-
 class dz implements OnFocusChangeListener {
     final /* synthetic */ du a;
 

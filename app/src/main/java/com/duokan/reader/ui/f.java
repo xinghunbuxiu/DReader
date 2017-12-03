@@ -11,11 +11,9 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.SurfaceView;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 import java.util.HashMap;
 
@@ -46,7 +44,7 @@ public class f extends ViewGroup {
             DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
             h hVar = new h();
             hVar.a.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
-            dv.b(hVar.a, (View) this);
+            UTools.closeAnimation(hVar.a, (View) this);
             hVar.a.right = displayMetrics.widthPixels - hVar.a.right;
             hVar.a.bottom = displayMetrics.heightPixels - hVar.a.bottom;
             this.a.put(view, hVar);
@@ -78,11 +76,11 @@ public class f extends ViewGroup {
             h hVar = (h) this.a.get(childAt);
             if (hVar != null) {
                 DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-                Rect rect = (Rect) dv.g.a();
+                Rect rect = (Rect) UTools.g.getRect();
                 rect.set(hVar.a.left, hVar.a.top, displayMetrics.widthPixels - hVar.a.right, displayMetrics.heightPixels - hVar.a.bottom);
-                dv.a(rect, (View) this);
+                UTools.addAnimation(rect, (View) this);
                 childAt.measure(MeasureSpec.makeMeasureSpec(rect.width(), 1073741824), MeasureSpec.makeMeasureSpec(rect.height(), 1073741824));
-                dv.g.a(rect);
+                UTools.g.getRect(rect);
             } else if (childAt.getVisibility() != 8) {
                 childAt.measure(i, i2);
             } else {
@@ -108,11 +106,11 @@ public class f extends ViewGroup {
             h hVar = (h) this.a.get(childAt);
             if (hVar != null) {
                 DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-                Rect rect = (Rect) dv.g.a();
+                Rect rect = (Rect) UTools.g.getRect();
                 rect.set(hVar.a.left, hVar.a.top, displayMetrics.widthPixels - hVar.a.right, displayMetrics.heightPixels - hVar.a.bottom);
-                dv.a(rect, (View) this);
+                UTools.addAnimation(rect, (View) this);
                 childAt.layout(rect.left, rect.top, rect.right, rect.bottom);
-                dv.g.a(rect);
+                UTools.g.getRect(rect);
             } else if (childAt.getVisibility() != 8) {
                 childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
             }

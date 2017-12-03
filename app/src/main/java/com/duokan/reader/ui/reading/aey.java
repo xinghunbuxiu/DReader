@@ -2,14 +2,14 @@ package com.duokan.reader.ui.reading;
 
 import android.view.View;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ui.general.hd;
 
 class aey extends si {
     private aez i;
 
-    public aey(y yVar, sh shVar, wl wlVar) {
-        super(yVar, shVar, wlVar);
+    public aey(IFeature featrue, sh shVar, wl wlVar) {
+        super(featrue, shVar, wlVar);
     }
 
     protected hd a() {

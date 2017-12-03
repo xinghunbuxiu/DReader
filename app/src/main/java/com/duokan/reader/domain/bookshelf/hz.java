@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class hz implements Runnable {
     final /* synthetic */ Runnable a;
@@ -12,6 +12,6 @@ class hz implements Runnable {
     }
 
     public void run() {
-        t.a(this.a);
+        TaskHandler.postTask(this.a);
     }
 }

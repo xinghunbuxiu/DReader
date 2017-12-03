@@ -2,7 +2,6 @@ package com.duokan.reader.ui.personal;
 
 import com.duokan.reader.domain.cloud.DkCloudRedeemFund;
 import com.duokan.reader.domain.cloud.ge;
-import com.duokan.reader.ui.general.*;
 
 do;
 

@@ -5,9 +5,9 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.View;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.au;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.bookshelf.an;
 
 class cd implements au {
@@ -34,8 +34,8 @@ class cd implements au {
             if (g) {
                 z = g;
             } else {
-                Rect rect = (Rect) dv.g.a();
-                RectF rectF = (RectF) dv.h.a();
+                Rect rect = (Rect) UTools.g.getRect();
+                RectF rectF = (RectF) UTools.h.getRect();
                 this.a.a(rect);
                 this.a.h.a(rectF);
                 if (rectF.centerY() < ((float) rect.top) && this.a.i() && !this.a.m()) {
@@ -44,15 +44,15 @@ class cd implements au {
                     this.a.a(this.a.k);
                 } else if (rectF.top < ((float) rect.top) && !this.a.j.c_()) {
                     this.a.o = new cm(this.a, ((int) (rectF.top - ((float) rect.top))) / 2);
-                    t.a(this.a.o);
+                    TaskHandler.postTask(this.a.o);
                 } else if (rectF.bottom <= ((float) rect.bottom) || this.a.j.d_()) {
                     z = g;
                 } else {
                     this.a.o = new cm(this.a, ((int) (rectF.bottom - ((float) rect.bottom))) / 2);
-                    t.a(this.a.o);
+                    TaskHandler.postTask(this.a.o);
                 }
-                dv.g.a(rect);
-                dv.h.a(rectF);
+                UTools.g.getRect(rect);
+                UTools.h.getRect(rectF);
             }
             if (!z) {
                 int a = this.a.a(c);

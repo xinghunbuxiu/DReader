@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.document.sbk;
 
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.d;
 import com.duokan.reader.domain.document.g;
 
@@ -15,7 +15,7 @@ class l extends e {
         this.d = new d[0];
     }
 
-    public /* synthetic */ g b(a aVar) {
+    public /* synthetic */ g b(Document_a aVar) {
         return c(aVar);
     }
 
@@ -50,7 +50,7 @@ class l extends e {
         return this.d[(int) j];
     }
 
-    public d c(a aVar) {
+    public d c(Document_a aVar) {
         if (!this.b.d(aVar) || !aVar.e()) {
             return null;
         }

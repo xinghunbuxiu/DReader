@@ -1,6 +1,5 @@
 package com.duokan.reader.domain.micloud;
 
-import com.duokan.reader.common.async.work.IAsyncWorkProgressListener.CheckErrorResult;
 import com.duokan.reader.common.async.work.c;
 import com.duokan.reader.common.async.work.e;
 import com.duokan.reader.common.async.work.i;

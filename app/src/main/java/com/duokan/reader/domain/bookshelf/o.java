@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class o implements u {
     final /* synthetic */ n a;
@@ -10,14 +10,14 @@ class o implements u {
     }
 
     public void a() {
-        t.a(new p(this));
+        TaskHandler.postTask(new p(this));
     }
 
     public void b() {
-        t.a(new q(this));
+        TaskHandler.postTask(new q(this));
     }
 
     public void c() {
-        t.a(new r(this));
+        TaskHandler.postTask(new r(this));
     }
 }

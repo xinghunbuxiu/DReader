@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class wx implements Runnable {
     final /* synthetic */ Runnable a;
@@ -13,7 +13,7 @@ class wx implements Runnable {
 
     public void run() {
         if (this.b.a()) {
-            t.b(new wy(this));
+            TaskHandler.PostTask(new wy(this));
         }
         this.b.b.addLast(this.a);
     }

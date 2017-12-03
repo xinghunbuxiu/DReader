@@ -189,7 +189,7 @@ public class k extends d {
             String str = (String) jSONObject2.keys().next();
             if ("txt".equals(str)) {
                 str = jSONObject2.getString(str);
-                i = str.indexOf("附件: <a");
+                i = str.indexOf("附件: <setDrawable");
                 if (i != -1) {
                     str = str.substring(0, i);
                 }

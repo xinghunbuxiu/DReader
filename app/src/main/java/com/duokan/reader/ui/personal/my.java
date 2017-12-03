@@ -1,17 +1,17 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.af;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.SystemUiConditioner;
 
-public class my extends e implements SystemUiConditioner {
+public class my extends ActivatedController implements SystemUiConditioner {
     private final boolean a;
     protected final ReaderFeature b = ((ReaderFeature) getContext().queryFeature(ReaderFeature.class));
 
-    public my(y yVar, boolean z) {
-        super(yVar);
+    public my(IFeature featrue, boolean z) {
+        super(featrue);
         this.a = z;
     }
 

@@ -4,7 +4,6 @@ import android.text.TextUtils;
 
 import com.duokan.c.j;
 import com.duokan.reader.domain.account.bb;
-import com.duokan.reader.ui.general.*;
 
 do;
 

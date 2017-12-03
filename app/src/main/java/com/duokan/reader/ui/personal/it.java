@@ -6,11 +6,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.duokan.c.d;
 import com.duokan.c.j;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.app.aa;
-import com.duokan.core.app.y;
-import com.duokan.core.io.a;
 import com.duokan.core.ui.LinearScrollView;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.BookShelfType;
@@ -37,8 +35,8 @@ public class it extends my implements aa, h, com.duokan.reader.domain.account.h 
     private final View g;
     private final View h = findViewById(g.personal__personal_settings_view__anonymous_hint_root);
 
-    public it(y yVar) {
-        super(yVar, true);
+    public it(IFeature featrue) {
+        super(featrue, true);
         setContentView(LayoutInflater.from(getContext()).inflate(com.duokan.c.h.personal__personal_settings_view__v4, null));
         this.h.findViewById(g.personal__personal_settings_view__login).setOnClickListener(new iu(this));
         this.a = (LinearScrollView) findViewById(g.personal__personal_settings_view__scrollerview);

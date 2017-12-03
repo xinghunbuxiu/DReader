@@ -3,11 +3,10 @@ package com.duokan.reader.ui.bookshelf;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.a.a;
-import com.duokan.reader.domain.b.b;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpEntityEnclosingRequest;
@@ -39,8 +38,8 @@ public abstract class jh extends jp {
 
     protected abstract void d();
 
-    public jh(y yVar) {
-        super(yVar);
+    public jh(IFeature featrue) {
+        super(featrue);
     }
 
     protected void onActive(boolean z) {

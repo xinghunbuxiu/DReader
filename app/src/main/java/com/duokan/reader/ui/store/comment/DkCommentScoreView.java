@@ -8,11 +8,10 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.View.MeasureSpec;
 
 import com.duokan.b.e;
 import com.duokan.core.ui.ct;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.et;
 
 public class DkCommentScoreView extends View {
@@ -89,14 +88,14 @@ public class DkCommentScoreView extends View {
         }
         if (((double) (this.h - ((float) i))) >= 0.5d) {
             i = paddingLeft + ((this.e + intrinsicWidth) * i);
-            Rect rect = (Rect) dv.g.a();
+            Rect rect = (Rect) UTools.g.getRect();
             rect.set(i, getPaddingTop(), (this.c.getIntrinsicWidth() / 2) + i, this.c.getIntrinsicHeight() + getPaddingTop());
             canvas.save();
             canvas.clipRect(rect);
             this.c.setBounds(i, getPaddingTop(), this.c.getIntrinsicWidth() + i, getPaddingTop() + this.c.getIntrinsicHeight());
             this.c.draw(canvas);
             canvas.restore();
-            dv.g.a(rect);
+            UTools.g.getRect(rect);
         }
     }
 

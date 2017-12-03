@@ -3,13 +3,10 @@ package com.duokan.reader.domain.bookshelf;
 import android.graphics.Rect;
 import android.text.TextUtils;
 
-import com.duokan.reader.domain.document.a.a;
 import com.duokan.reader.domain.document.av;
 import com.duokan.reader.domain.document.bb;
 import com.duokan.reader.domain.document.epub.ce;
 import com.duokan.reader.domain.document.epub.s;
-import com.duokan.reader.domain.document.sbk.b;
-import com.duokan.reader.domain.document.sbk.f;
 import com.duokan.reader.domain.document.txt.p;
 
 import org.json.JSONArray;

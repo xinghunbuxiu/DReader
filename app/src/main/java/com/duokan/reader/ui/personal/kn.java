@@ -1,11 +1,11 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.k;
+import com.duokan.core.app.FeatureListening;
 import com.duokan.reader.domain.cloud.DkCloudStoreBook;
 
 import java.util.List;
 
-public interface kn extends k {
+public interface kn extends FeatureListening {
     PurchasedSortType a();
 
     void a(DkCloudStoreBook dkCloudStoreBook);

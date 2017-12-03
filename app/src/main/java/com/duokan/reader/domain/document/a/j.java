@@ -2,7 +2,7 @@ package com.duokan.reader.domain.document.a;
 
 import com.duokan.kernel.pdflib.DkpBook;
 import com.duokan.kernel.pdflib.DkpOutlineItem;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.d;
 import com.duokan.reader.domain.document.g;
 import com.duokan.reader.domain.document.h;
@@ -19,7 +19,7 @@ class j extends h {
         this.e = new c[0];
     }
 
-    public /* synthetic */ g b(a aVar) {
+    public /* synthetic */ g b(Document_a aVar) {
         return c(aVar);
     }
 
@@ -54,11 +54,11 @@ class j extends h {
         return this.e.length;
     }
 
-    public c c(a aVar) {
+    public c c(Document_a aVar) {
         if (!this.c.d(aVar) || !aVar.e()) {
             return null;
         }
-        aVar = aVar instanceof a ? (a) aVar : aVar instanceof s ? ((s) aVar).j() : null;
+        aVar = aVar instanceof Document_a ? (Document_a) aVar : aVar instanceof s ? ((s) aVar).j() : null;
         if (aVar == null || this.e.length < 1) {
             return null;
         }

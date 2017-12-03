@@ -11,7 +11,6 @@ import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
 import com.duokan.common.FileTypeRecognizer;
-import com.duokan.common.i;
 import com.duokan.core.ui.aj;
 import com.duokan.reader.ui.bookshelf.ImportedFileInfo.FileStatus;
 import com.duokan.reader.ui.general.eh;

@@ -14,13 +14,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 import android.widget.TextView;
 
-import com.duokan.b.g;
-import com.duokan.core.app.x;
-import com.duokan.core.sys.t;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
@@ -37,9 +35,9 @@ public class ds extends FrameLayout {
     protected final FrameLayout a;
     protected int b = -1;
     private final int c;
-    private final int d = dv.b(getContext(), 52.0f);
-    private final int e = dv.b(getContext(), 2.0f);
-    private final int f = dv.b(getContext(), 5.0f);
+    private final int d = UTools.closeAnimation(getContext(), 52.0f);
+    private final int e = UTools.closeAnimation(getContext(), 2.0f);
+    private final int f = UTools.closeAnimation(getContext(), 5.0f);
     private final int g = 14;
     private final FrameLayout h = ((FrameLayout) LayoutInflater.from(getContext()).inflate(g.surfing__immersive_surfing_view, this, false));
     private final View i;
@@ -63,7 +61,7 @@ public class ds extends FrameLayout {
             this.p.setVisibility(0);
         }
         this.h.setBackgroundDrawable(new dt(this));
-        this.c = ((s) x.a(getContext()).queryFeature(ReaderFeature.class)).getTheme().getPageHeaderPaddingTop();
+        this.c = ((s) MyContextWrapper.getFeature(getContext()).queryFeature(ReaderFeature.class)).getTheme().getPageHeaderPaddingTop();
         a();
         if (ReaderEnv.get().forHd()) {
             viewGroup = (ViewGroup) this.h.findViewById(f.surfing__immersive_surfing_view__tabs_hd);
@@ -113,7 +111,7 @@ public class ds extends FrameLayout {
 
     public void a(int i, boolean z) {
         if ((this.b != i || z) && i >= 0 && i < this.l.getChildCount()) {
-            dv.a(this.l, new dv(this, i));
+            UTools.a(this.l, new UTools(this, i));
         }
     }
 
@@ -123,7 +121,7 @@ public class ds extends FrameLayout {
 
     public void a(int i, Runnable runnable) {
         if (this.b == i) {
-            t.b(runnable);
+            TaskHandler.PostTask(runnable);
         } else if (i >= 0 && i < this.l.getChildCount()) {
             this.l.a(i, runnable, null);
         }
@@ -146,7 +144,7 @@ public class ds extends FrameLayout {
     public void a() {
         int j;
         if (ReaderEnv.get().forHd() && DkPublic.isLandscape(getContext())) {
-            j = (int) (((float) dv.j(getContext())) * 0.1f);
+            j = (int) (((float) UTools.getWidthPixels(getContext())) * 0.1f);
         } else {
             j = 0;
         }
@@ -172,7 +170,7 @@ public class ds extends FrameLayout {
     private void e() {
         this.r.clear();
         for (int i = 0; i < this.l.getChildCount(); i++) {
-            Rect rect = (Rect) dv.g.a();
+            Rect rect = (Rect) UTools.g.getRect();
             View childAt = this.l.getChildAt(i);
             if (childAt.getVisibility() != 0) {
                 this.r.put(Integer.valueOf(i), Float.valueOf(0.0f));
@@ -186,7 +184,7 @@ public class ds extends FrameLayout {
                     this.r.put(Integer.valueOf(i), Float.valueOf(((float) (this.l.getViewportBounds().right - rect.left)) / ((float) rect.width())));
                 } else {
                     this.r.put(Integer.valueOf(i), Float.valueOf(1.0f));
-                    dv.g.a(rect);
+                    UTools.g.getRect(rect);
                 }
             }
         }
@@ -222,7 +220,7 @@ public class ds extends FrameLayout {
             int dimensionPixelSize = getResources().getDimensionPixelSize(d.general_font__shared__c);
             int i = dimensionPixelSize * 2;
             View childAt = this.j.getChildAt(((Integer) visibleList.get(0)).intValue());
-            Rect rect = (Rect) dv.g.a();
+            Rect rect = (Rect) UTools.g.getRect();
             childAt.getGlobalVisibleRect(rect);
             int width = (rect.right - (childAt.getWidth() / 2)) + (i / 2);
             View childAt2 = this.j.getChildAt(((Integer) visibleList.get(visibleList.size() - 1)).intValue());
@@ -235,11 +233,11 @@ public class ds extends FrameLayout {
             }
             paint.setColor(Color.rgb(a(255, (int) HttpStatus.SC_PROCESSING, floatValue, f), a(132, (int) HttpStatus.SC_PROCESSING, floatValue, f), a(0, (int) HttpStatus.SC_PROCESSING, floatValue, f)));
             dimensionPixelSize = this.h.getPaddingTop() + (((childAt.getTop() + childAt.getPaddingTop()) + dimensionPixelSize) + this.f);
-            RectF rectF = (RectF) dv.h.a();
+            RectF rectF = (RectF) UTools.h.getRect();
             rectF.set((float) (contentWidth - i), (float) dimensionPixelSize, (float) contentWidth, (float) (dimensionPixelSize + this.e));
             canvas.drawRoundRect(rectF, (float) (this.e / 2), (float) (this.e / 2), paint);
-            dv.h.a(rectF);
-            dv.g.a(rect);
+            UTools.h.getRect(rectF);
+            UTools.g.getRect(rect);
         }
     }
 
@@ -248,19 +246,19 @@ public class ds extends FrameLayout {
         int rgb = Color.rgb(a(255, 180, c), a(255, 180, c), a(255, 180, c));
         int i = (int) (((c + 1.0f) / 2.0f) * 255.0f);
         int i2 = (int) (c * 255.0f);
-        RectF rectF = (RectF) dv.h.a();
+        RectF rectF = (RectF) UTools.h.getRect();
         rectF.set((float) view.getPaddingLeft(), (float) view.getPaddingTop(), (float) (view.getWidth() - view.getPaddingRight()), (float) (view.getHeight() - view.getPaddingBottom()));
         Paint paint = new Paint();
         paint.setColor(Color.parseColor("#fafafa"));
         paint.setAntiAlias(true);
         paint.setAlpha(i);
-        canvas.drawRoundRect(rectF, (float) dv.b(getContext(), 5.0f), (float) dv.b(getContext(), 5.0f), paint);
+        canvas.drawRoundRect(rectF, (float) UTools.closeAnimation(getContext(), 5.0f), (float) UTools.closeAnimation(getContext(), 5.0f), paint);
         paint.setColor(Color.parseColor("#cccccc"));
         paint.setStrokeWidth(1.0f);
         paint.setAlpha(i2);
         paint.setStyle(Style.STROKE);
-        canvas.drawRoundRect(rectF, (float) dv.b(getContext(), 5.0f), (float) dv.b(getContext(), 5.0f), paint);
-        i2 = (int) (rectF.left + ((float) dv.b(getContext(), 8.0f)));
+        canvas.drawRoundRect(rectF, (float) UTools.closeAnimation(getContext(), 5.0f), (float) UTools.closeAnimation(getContext(), 5.0f), paint);
+        i2 = (int) (rectF.left + ((float) UTools.closeAnimation(getContext(), 8.0f)));
         int intrinsicWidth = this.q.getIntrinsicWidth() + i2;
         int max = (int) Math.max(rectF.top, rectF.centerY() - ((float) (this.q.getIntrinsicHeight() / 2)));
         int min = (int) Math.min(rectF.bottom, (float) (this.q.getIntrinsicHeight() + max));
@@ -272,14 +270,14 @@ public class ds extends FrameLayout {
         esVar.draw(canvas);
         Paint paint2 = new Paint();
         paint2.setAntiAlias(true);
-        paint2.setTextSize((float) dv.a(getContext(), 12.0f));
+        paint2.setTextSize((float) UTools.addAnimation(getContext(), 12.0f));
         paint2.setColor(rgb);
         paint2.setAlpha(i);
-        RectF rectF2 = (RectF) dv.h.a();
-        rectF2.set((float) (dv.b(getContext(), 8.0f) + intrinsicWidth), rectF.top, rectF.right, rectF.bottom);
-        dv.a(canvas, getResources().getString(i.bookshelf__shared__search), rectF2, 19, paint2);
-        dv.h.a(rectF2);
-        dv.h.a(rectF);
+        RectF rectF2 = (RectF) UTools.h.getRect();
+        rectF2.set((float) (UTools.closeAnimation(getContext(), 8.0f) + intrinsicWidth), rectF.top, rectF.right, rectF.bottom);
+        UTools.addAnimation(canvas, getResources().getString(i.bookshelf__shared__search), rectF2, 19, paint2);
+        UTools.h.getRect(rectF2);
+        UTools.h.getRect(rectF);
     }
 
     private int a(int i, int i2, float f, float f2) {
@@ -316,7 +314,7 @@ public class ds extends FrameLayout {
     }
 
     private int getTabTextHeight() {
-        return (dv.a(getContext(), 14.0f) + this.e) + this.f;
+        return (UTools.addAnimation(getContext(), 14.0f) + this.e) + this.f;
     }
 
     public View getTabView() {

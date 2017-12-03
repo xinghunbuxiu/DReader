@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.bookshelf;
 
 import com.duokan.core.sys.o;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.b;
@@ -41,6 +41,6 @@ class gk extends c {
     }
 
     protected void onSessionClosed() {
-        t.b(this.a.b);
+        TaskHandler.PostTask(this.a.b);
     }
 }

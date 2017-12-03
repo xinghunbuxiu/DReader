@@ -23,20 +23,18 @@ import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Toast;
 
-import com.duokan.c.d;
 import com.duokan.common.FileTypeRecognizer;
 import com.duokan.common.FileTypeRecognizer.FileType;
 import com.duokan.core.app.BrightnessMode;
-import com.duokan.core.app.e;
-import com.duokan.core.app.m;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.BaseActivity;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ah;
 import com.duokan.core.sys.s;
-import com.duokan.core.sys.t;
 import com.duokan.core.ui.cv;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.j;
 import com.duokan.reader.ReaderEnv.BookShelfType;
 import com.duokan.reader.ReaderEnv.PrivatePref;
@@ -60,6 +58,7 @@ import com.duokan.reader.domain.cloud.PersonalPrefs;
 import com.duokan.reader.domain.cloud.bd;
 import com.duokan.reader.domain.cloud.push.DkCloudPushMessage;
 import com.duokan.reader.domain.cloud.push.DkCloudPushMessage.ActionType;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.epub.av;
 import com.duokan.reader.domain.store.DkStoreBookDetail;
 import com.duokan.reader.domain.store.DkStoreFictionDetail;
@@ -86,7 +85,6 @@ import com.duokan.reader.ui.r;
 import com.duokan.reader.ui.reading.qh;
 import com.duokan.reader.ui.reading.sh;
 import com.duokan.reader.ui.store.al;
-import com.duokan.reader.ui.store.o;
 import com.duokan.reader.ui.welcome.DkTipManager;
 
 import org.apache.http.HttpStatus;
@@ -102,7 +100,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
+class ReaderController extends ActivatedController implements ReaderFeature, SystemUiConditioner {
     private static boolean a = true;
     private final a b;
     private final f c;
@@ -115,7 +113,7 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
     private boolean j;
     private NightLayer k;
     private boolean l;
-    private e m;
+    private ActivatedController m;
     private long n;
     private long o;
     private j p;
@@ -191,11 +189,11 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
 
         public void showSmoothly() {
             show();
-            dv.a(getContentView(), 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, false, null);
+            UTools.addAnimation(getContentView(), 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, false, null);
         }
 
         public void dismissSmoothly() {
-            dv.a(getContentView(), 1.0f, 0.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, new Runnable(this) {
+            UTools.addAnimation(getContentView(), 1.0f, 0.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, new Runnable(this) {
                 final /* synthetic */ NightLayer a;
 
                 {
@@ -224,9 +222,9 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
     class ReadingSwitcher implements Switcher {
         final /* synthetic */ ReaderController a;
         private final c b;
-        private final com.duokan.reader.domain.document.a c;
+        private final Document_a c;
 
-        public ReadingSwitcher(ReaderController readerController, c cVar, com.duokan.reader.domain.document.a aVar) {
+        public ReadingSwitcher(ReaderController readerController, c cVar, Document_a aVar) {
             this.a = readerController;
             this.b = cVar;
             this.c = aVar;
@@ -256,7 +254,7 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
                         z = false;
                     }
                     this.a.activate(this.a.s);
-                    dv.a(this.a.s.getContentView(), new Runnable(this) {
+                    UTools.addAnimation(this.a.s.getContentView(), new Runnable(this) {
                         final /* synthetic */ ReadingSwitcher c;
 
                         public void run() {
@@ -324,15 +322,15 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
         }
     }
 
-    public ReaderController(final y yVar, final c cVar) {
-        this(yVar, false);
+    public ReaderController(final IFeature featrue, final c cVar) {
+        this(featrue, false);
         this.c.setBackgroundColor(-1);
         DkApp.get().runWhenAppReady(new Runnable(this) {
             final /* synthetic */ ReaderController c;
 
             public void run() {
                 this.c.c.setBackgroundColor(-16777216);
-                this.c.r = this.c.sceneForBook(yVar, cVar);
+                this.c.r = this.c.sceneForBook(featrue, cVar);
                 if (this.c.r instanceof qh) {
                     this.c.s = (qh) this.c.r;
                     this.c.r.a(1);
@@ -342,20 +340,20 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
         });
     }
 
-    public ReaderController(y yVar, Uri uri) {
-        this(yVar, false);
-        this.r = new kk(yVar, uri);
+    public ReaderController(IFeature featrue, Uri uri) {
+        this(featrue, false);
+        this.r = new kk(featrue, uri);
         this.r.a(1);
         this.l = true;
         setupFirstScene();
     }
 
-    public ReaderController(y yVar) {
-        this(yVar, true);
+    public ReaderController(IFeature featrue) {
+        this(featrue, true);
     }
 
-    private ReaderController(y yVar, boolean z) {
-        super(yVar);
+    private ReaderController(IFeature featrue, boolean z) {
+        super(featrue);
         this.d = new LinkedList();
         this.e = new LinkedList();
         this.f = null;
@@ -379,7 +377,7 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
 
             public int getPageHeaderHeight() {
                 if (getPageHeaderPaddingTop() == 0) {
-                    return this.a.getResources().getDimensionPixelSize(com.duokan.c.e.general__shared__page_header_height) - dv.b(this.a.getContext(), 15.0f);
+                    return this.a.getResources().getDimensionPixelSize(com.duokan.c.e.general__shared__page_header_height) - UTools.closeAnimation(this.a.getContext(), 15.0f);
                 }
                 return this.a.getResources().getDimensionPixelSize(com.duokan.c.e.general__shared__page_header_height);
             }
@@ -404,7 +402,7 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
         this.b.setContentView(this.c);
         this.b.setBackgroundColor(-16777216);
         setContentView(this.b);
-        getContext().a(new DkTipManager(getContext(), this.c));
+        getContext().addFirstLocalFeature(new DkTipManager(getContext(), this.c));
         if (z) {
             this.r = new com.duokan.reader.ui.surfing.f(getContext(), this.q);
             setupFirstScene();
@@ -451,58 +449,58 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
         return this.t;
     }
 
-    public boolean pushPage(e eVar) {
-        e activeScene = activeScene();
+    public boolean pushPage(ActivatedController activatedControllerVar) {
+        ActivatedController activeScene = activeScene();
         activate(activeScene);
-        return activeScene.pushPage(eVar);
+        return activeScene.pushPage(activatedControllerVar);
     }
 
-    public boolean pushPageSmoothly(e eVar, Runnable runnable) {
-        e activeScene = activeScene();
+    public boolean pushPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
+        ActivatedController activeScene = activeScene();
         activate(activeScene);
-        return activeScene.pushPageSmoothly(eVar, runnable);
+        return activeScene.pushPageSmoothly(activatedControllerVar, runnable);
     }
 
-    public boolean pushHalfPage(e eVar) {
-        e activeScene = activeScene();
+    public boolean pushHalfPage(ActivatedController activatedControllerVar) {
+        ActivatedController activeScene = activeScene();
         activate(activeScene);
-        return activeScene.a(eVar);
+        return activeScene.a(activatedControllerVar);
     }
 
-    public boolean pushHalfPageSmoothly(e eVar, Runnable runnable) {
-        e activeScene = activeScene();
+    public boolean pushHalfPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
+        ActivatedController activeScene = activeScene();
         activate(activeScene);
-        return activeScene.a(eVar, runnable);
+        return activeScene.a(activatedControllerVar, runnable);
     }
 
-    public boolean pushFloatingPage(e eVar) {
-        e activeScene = activeScene();
+    public boolean pushFloatingPage(ActivatedController activatedControllerVar) {
+        ActivatedController activeScene = activeScene();
         activate(activeScene);
-        return activeScene.b(eVar);
+        return activeScene.b(activatedControllerVar);
     }
 
-    public boolean pushFloatingPageSmoothly(e eVar, Runnable runnable) {
-        e activeScene = activeScene();
+    public boolean pushFloatingPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
+        ActivatedController activeScene = activeScene();
         activate(activeScene);
-        return activeScene.b(eVar, runnable);
+        return activeScene.b(activatedControllerVar, runnable);
     }
 
-    public boolean showPopup(e eVar) {
-        e activeScene = activeScene();
+    public boolean showPopup(ActivatedController activatedControllerVar) {
+        ActivatedController activeScene = activeScene();
         activate(activeScene);
-        return activeScene.showPopup(eVar);
+        return activeScene.showPopup(activatedControllerVar);
     }
 
-    public boolean showPopup(e eVar, int i, int i2) {
-        e activeScene = activeScene();
+    public boolean showPopup(ActivatedController activatedControllerVar, int i, int i2) {
+        ActivatedController activeScene = activeScene();
         activate(activeScene);
-        return activeScene.showPopup(eVar, i, i2);
+        return activeScene.showPopup(activatedControllerVar, i, i2);
     }
 
-    public boolean showPopupSmoothly(e eVar, Runnable runnable) {
-        e activeScene = activeScene();
+    public boolean showPopupSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
+        ActivatedController activeScene = activeScene();
         activate(activeScene);
-        return activeScene.showPopupSmoothly(eVar, runnable);
+        return activeScene.showPopupSmoothly(activatedControllerVar, runnable);
     }
 
     public boolean navigateSmoothly(String str) {
@@ -532,7 +530,7 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
 
                 public void run() {
                     com.duokan.reader.ui.t tVar = (com.duokan.reader.ui.t) this.d.getContext().queryFeature(com.duokan.reader.ui.t.class);
-                    e storePageController = new StorePageController(this.d.getContext());
+                    ActivatedController storePageController = new StorePageController(this.d.getContext());
                     storePageController.loadUrl(toLowerCase);
                     if (z) {
                         tVar.pushPageSmoothly(storePageController, runnable);
@@ -727,7 +725,7 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
         openBook(cVar, null, null);
     }
 
-    public void openBook(final c cVar, com.duokan.reader.domain.document.a aVar, Runnable runnable) {
+    public void openBook(final c cVar, Document_a aVar, Runnable runnable) {
         if (cVar != null) {
             if (cVar.s() == BookPackageType.EPUB_OPF) {
                 switchToReading(cVar, aVar, runnable);
@@ -767,7 +765,7 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
         }
     }
 
-    public void openBook(String str, final com.duokan.reader.domain.document.a aVar) {
+    public void openBook(String str, final Document_a aVar) {
         c b = ai.a().b(str);
         if (b != null) {
             openBook(b, aVar, null);
@@ -807,11 +805,11 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
         }
     }
 
-    public void shareBooks(e eVar, c... cVarArr) {
-        if (eVar != null && cVarArr != null) {
+    public void shareBooks(ActivatedController activatedControllerVar, c... cVarArr) {
+        if (activatedControllerVar != null && cVarArr != null) {
             if (this.m != null) {
-                eVar.deactivate(this.m);
-                eVar.removeSubController(this.m);
+                activatedControllerVar.deactivate(this.m);
+                activatedControllerVar.removeSubController(this.m);
             }
             if (cVarArr.length != 1 || cVarArr[0].ai()) {
                 String aw;
@@ -850,15 +848,15 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
                     }
                     i++;
                 }
-                final e eVar2 = eVar;
+                final ActivatedController activatedControllerVar2 = activatedControllerVar;
                 new ap(getContext(), false, new as(this) {
                     final /* synthetic */ ReaderController g;
 
                     public void onChoiced(String str) {
                         if (!TextUtils.isEmpty(str)) {
                             this.g.m = new bv(this.g.getContext(), true, str, "", aw, str2, str, (String[]) arrayList.toArray(new String[0]), (String[]) arrayList2.toArray(new String[0]), null);
-                            eVar2.addSubController(this.g.m);
-                            eVar2.activate(this.g.m);
+                            activatedControllerVar2.addSubController(this.g.m);
+                            activatedControllerVar2.activate(this.g.m);
                         }
                     }
                 }).show();
@@ -866,8 +864,8 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
             }
             c cVar2 = cVarArr[0];
             this.m = new ShareEntranceController(getContext(), cVar2.t().f, cVar2, null);
-            eVar.addSubController(this.m);
-            eVar.activate(this.m);
+            activatedControllerVar.addSubController(this.m);
+            activatedControllerVar.activate(this.m);
         }
     }
 
@@ -1056,32 +1054,32 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
         }
     }
 
-    public void showBookHomePage(y yVar, String str, String str2, boolean z, String str3) {
-        com.duokan.reader.ui.store.bv.a(yVar, str, str2, str3, z);
+    public void showBookHomePage(IFeature featrue, String str, String str2, boolean z, String str3) {
+        com.duokan.reader.ui.store.bv.a(featrue, str, str2, str3, z);
     }
 
     public void showMenuFromBottom(final hb hbVar) {
         showPopup(hbVar);
-        dv.a(hbVar.a(), 0.0f, 0.0f, 1.0f, 0.0f, HttpStatus.SC_OK, true, new Runnable(this) {
+        UTools.addAnimation(hbVar.a(), 0.0f, 0.0f, 1.0f, 0.0f, HttpStatus.SC_OK, true, new Runnable(this) {
             final /* synthetic */ ReaderController b;
 
             public void run() {
                 hbVar.a(true);
             }
         });
-        dv.a(hbVar.b(), 0.0f, 1.0f, HttpStatus.SC_OK, true, null);
+        UTools.addAnimation(hbVar.b(), 0.0f, 1.0f, HttpStatus.SC_OK, true, null);
     }
 
     public void showMenuFromTop(final gx gxVar) {
         showPopup(gxVar);
-        dv.a(gxVar.a(), 0.0f, 0.0f, -1.0f, 0.0f, HttpStatus.SC_OK, true, new Runnable(this) {
+        UTools.addAnimation(gxVar.a(), 0.0f, 0.0f, -1.0f, 0.0f, HttpStatus.SC_OK, true, new Runnable(this) {
             final /* synthetic */ ReaderController b;
 
             public void run() {
                 gxVar.a(true);
             }
         });
-        dv.a(gxVar.b(), 0.0f, 1.0f, (int) HttpStatus.SC_OK, true, null);
+        UTools.addAnimation(gxVar.b(), 0.0f, 1.0f, (int) HttpStatus.SC_OK, true, null);
     }
 
     public long getTotalActiveTime() {
@@ -1187,12 +1185,12 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
         return true;
     }
 
-    protected boolean onRequestDetach(e eVar) {
-        if (eVar != null && eVar == this.s) {
+    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
+        if (activatedControllerVar != null && activatedControllerVar == this.s) {
             goHome(null);
             return true;
-        } else if (eVar == null || eVar != this.r || !this.l) {
-            return super.onRequestDetach(eVar);
+        } else if (activatedControllerVar == null || activatedControllerVar != this.r || !this.l) {
+            return super.onRequestDetach(activatedControllerVar);
         } else {
             getActivity().finish();
             return true;
@@ -1383,7 +1381,7 @@ class ReaderController extends e implements ReaderFeature, SystemUiConditioner {
                         i = 1;
                     }
                 }
-                com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, store: %d)", action, Integer.valueOf(i));
+                com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, store: %getScaledTouchSlop)", action, Integer.valueOf(i));
                 switch (i) {
                     case 1:
                         navigate("duokan-reader://store", null, false, null);
@@ -1451,76 +1449,76 @@ Error: java.util.NoSuchElementException
                                         r0 = r0;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
                                         if (r0 == 0) goto L_0x0013;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
                                     L_0x0005:
-                                        r0 = r4.b;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
-                                        r0 = r0.d;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
+                                        r0 = r4.getVisible;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
+                                        r0 = r0.getScaledTouchSlop;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
                                         r1 = r0;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
                                         r0.openBook(r1);	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
-                                        r0 = r4.b;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
+                                        r0 = r4.getVisible;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
                                         r1 = 1;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
-                                        r0.a = r1;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
+                                        r0.setDrawable = r1;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
                                     L_0x0013:
-                                        r0 = r4.b;
-                                        r0 = r0.a;
+                                        r0 = r4.getVisible;
+                                        r0 = r0.setDrawable;
                                         if (r0 != 0) goto L_0x002a;
                                     L_0x0019:
-                                        r0 = r4.b;
-                                        r0 = r0.d;
+                                        r0 = r4.getVisible;
+                                        r0 = r0.getScaledTouchSlop;
                                         r0 = r0.getContext();
-                                        r1 = com.duokan.c.j.bookshelf__shared__file_not_exist;
-                                        r0 = com.duokan.reader.ui.general.be.a(r0, r1, r3);
+                                        r1 = com.duokan.showAnimation.getWidthPixels.bookshelf__shared__file_not_exist;
+                                        r0 = com.duokan.reader.ui.general.be.setDrawable(r0, r1, r3);
                                         r0.show();
                                     L_0x002a:
-                                        r0 = r4.b;
+                                        r0 = r4.getVisible;
                                         r0 = r0;
                                         r0 = r0.isShowing();
                                         if (r0 == 0) goto L_0x003b;
                                     L_0x0034:
-                                        r0 = r4.b;
+                                        r0 = r4.getVisible;
                                         r0 = r0;
                                         r0.dismiss();
                                     L_0x003b:
                                         return;
                                     L_0x003c:
                                         r0 = move-exception;
-                                        r0 = r4.b;
-                                        r0 = r0.a;
+                                        r0 = r4.getVisible;
+                                        r0 = r0.setDrawable;
                                         if (r0 != 0) goto L_0x0054;
                                     L_0x0043:
-                                        r0 = r4.b;
-                                        r0 = r0.d;
+                                        r0 = r4.getVisible;
+                                        r0 = r0.getScaledTouchSlop;
                                         r0 = r0.getContext();
-                                        r1 = com.duokan.c.j.bookshelf__shared__file_not_exist;
-                                        r0 = com.duokan.reader.ui.general.be.a(r0, r1, r3);
+                                        r1 = com.duokan.showAnimation.getWidthPixels.bookshelf__shared__file_not_exist;
+                                        r0 = com.duokan.reader.ui.general.be.setDrawable(r0, r1, r3);
                                         r0.show();
                                     L_0x0054:
-                                        r0 = r4.b;
+                                        r0 = r4.getVisible;
                                         r0 = r0;
                                         r0 = r0.isShowing();
                                         if (r0 == 0) goto L_0x003b;
                                     L_0x005e:
-                                        r0 = r4.b;
+                                        r0 = r4.getVisible;
                                         r0 = r0;
                                         r0.dismiss();
                                         goto L_0x003b;
                                     L_0x0066:
                                         r0 = move-exception;
-                                        r1 = r4.b;
-                                        r1 = r1.a;
+                                        r1 = r4.getVisible;
+                                        r1 = r1.setDrawable;
                                         if (r1 != 0) goto L_0x007e;
                                     L_0x006d:
-                                        r1 = r4.b;
-                                        r1 = r1.d;
+                                        r1 = r4.getVisible;
+                                        r1 = r1.getScaledTouchSlop;
                                         r1 = r1.getContext();
-                                        r2 = com.duokan.c.j.bookshelf__shared__file_not_exist;
-                                        r1 = com.duokan.reader.ui.general.be.a(r1, r2, r3);
+                                        r2 = com.duokan.showAnimation.getWidthPixels.bookshelf__shared__file_not_exist;
+                                        r1 = com.duokan.reader.ui.general.be.setDrawable(r1, r2, r3);
                                         r1.show();
                                     L_0x007e:
-                                        r1 = r4.b;
+                                        r1 = r4.getVisible;
                                         r1 = r0;
                                         r1 = r1.isShowing();
                                         if (r1 == 0) goto L_0x008f;
                                     L_0x0088:
-                                        r1 = r4.b;
+                                        r1 = r4.getVisible;
                                         r1 = r0;
                                         r1.dismiss();
                                     L_0x008f:
@@ -1552,7 +1550,7 @@ Error: java.util.NoSuchElementException
         }
     }
 
-    private final void switchToReading(c cVar, com.duokan.reader.domain.document.a aVar, Runnable runnable) {
+    private final void switchToReading(c cVar, Document_a aVar, Runnable runnable) {
         Switcher readingSwitcher = new ReadingSwitcher(this, cVar, aVar);
         if (cVar.w()) {
             com.duokan.reader.domain.statistics.a.k().c(cVar.H());
@@ -1656,11 +1654,11 @@ Error: java.util.NoSuchElementException
         this.d.add(anonymousClass23);
     }
 
-    private p sceneForBook(y yVar, c cVar) {
+    private p sceneForBook(IFeature featrue, c cVar) {
         if (cVar == null) {
             return new com.duokan.reader.ui.surfing.f(getContext(), true);
         }
-        p open = BookOpener.with(yVar).open(cVar, null, null);
+        p open = BookOpener.with(featrue).open(cVar, null, null);
         if (open == null) {
             return new com.duokan.reader.ui.surfing.f(getContext(), true);
         }
@@ -1677,7 +1675,7 @@ Error: java.util.NoSuchElementException
         return null;
     }
 
-    private final m getDkActivity() {
-        return (m) getActivity();
+    private final BaseActivity getDkActivity() {
+        return (BaseActivity) getActivity();
     }
 }

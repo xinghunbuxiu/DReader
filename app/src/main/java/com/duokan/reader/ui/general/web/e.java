@@ -11,7 +11,6 @@ import android.webkit.WebResourceResponse;
 
 import com.duokan.c.j;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 import com.duokan.core.ui.fr;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.UmengManager;
@@ -129,7 +128,7 @@ public class e extends MiuiWebViewClient {
 
     public void onReceivedError(fr frVar, int i, String str, String str2) {
         super.onReceivedError(frVar, i, str, str2);
-        a.c().a(LogLevel.WARNING, "web", "%s(code: %d, url: %s)", str, Integer.valueOf(i), str2);
+        a.c().a(LogLevel.WARNING, "web", "%s(code: %getScaledTouchSlop, url: %s)", str, Integer.valueOf(i), str2);
     }
 
     public void onReceivedSslError(fr frVar, SslErrorHandler sslErrorHandler, SslError sslError) {
@@ -151,7 +150,7 @@ public class e extends MiuiWebViewClient {
             if (j < ((long) (i * 100)) || j >= ((long) ((i + 2) * 100))) {
                 i += 2;
             } else {
-                return String.format("%d-%d", new Object[]{Integer.valueOf(i * 100), Integer.valueOf(((i + 2) * 100) - 1)});
+                return String.format("%getScaledTouchSlop-%getScaledTouchSlop", new Object[]{Integer.valueOf(i * 100), Integer.valueOf(((i + 2) * 100) - 1)});
             }
         }
         return "2000+";

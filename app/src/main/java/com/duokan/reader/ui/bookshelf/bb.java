@@ -5,11 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.domain.bookshelf.an;
@@ -36,7 +34,7 @@ public class bb extends FrameLayout {
 
     public bb(Context context) {
         super(context);
-        setPadding(dv.b(getContext(), 18.0f), 0, dv.b(getContext(), 18.0f), 0);
+        setPadding(UTools.closeAnimation(getContext(), 18.0f), 0, UTools.closeAnimation(getContext(), 18.0f), 0);
         this.i = ReaderUi.d(getContext(), getResources().getDisplayMetrics().widthPixels - (this.h * 2));
         this.j = (int) ((((float) this.i) * 349.0f) / 256.0f);
         this.c = getResources().getDrawable(f.bookshelf__recently_reading_left_shadow);
@@ -111,10 +109,10 @@ public class bb extends FrameLayout {
             a(canvas, b(i), b(i + 1), z);
         }
         View b = b(0);
-        this.e.setBounds(Math.max(b.getLeft() - this.e.getIntrinsicWidth(), dv.b(getContext(), 18.0f)), Math.max(b.getBottom() - this.e.getIntrinsicHeight(), b.getTop()), b.getLeft(), b.getBottom());
+        this.e.setBounds(Math.max(b.getLeft() - this.e.getIntrinsicWidth(), UTools.closeAnimation(getContext(), 18.0f)), Math.max(b.getBottom() - this.e.getIntrinsicHeight(), b.getTop()), b.getLeft(), b.getBottom());
         this.e.draw(canvas);
         b = b(childCount - 1);
-        int min = Math.min(b.getRight() + this.f.getIntrinsicWidth(), getResources().getDisplayMetrics().widthPixels - dv.b(getContext(), 18.0f));
+        int min = Math.min(b.getRight() + this.f.getIntrinsicWidth(), getResources().getDisplayMetrics().widthPixels - UTools.closeAnimation(getContext(), 18.0f));
         this.f.setBounds(b.getRight(), Math.max(b.getBottom() - this.f.getIntrinsicHeight(), b.getTop()), min, b.getBottom());
         this.f.draw(canvas);
     }

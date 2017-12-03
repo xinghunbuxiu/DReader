@@ -160,7 +160,7 @@ public class TEvernoteHttpClient extends TTransport {
         try {
             HttpUriRequest httpPost = new HttpPost(this.url_.toExternalForm());
             this.request = httpPost;
-            httpPost.addHeader("Content-Type", "application/x-thrift");
+            httpPost.addHeader("Content-Type", "application/MyContextWrapper-thrift");
             httpPost.addHeader("Cache-Control", "no-transform");
             if (this.customHeaders_ != null) {
                 for (Entry entry : this.customHeaders_.entrySet()) {
@@ -168,7 +168,7 @@ public class TEvernoteHttpClient extends TTransport {
                 }
             }
             httpPost.setEntity(new InputStreamEntity(this.requestBuffer_.getInputStream(), (long) this.requestBuffer_.getSize()));
-            httpPost.addHeader("Accept", "application/x-thrift");
+            httpPost.addHeader("Accept", "application/MyContextWrapper-thrift");
             httpPost.addHeader(HTTP.USER_AGENT, this.userAgent == null ? "Java/THttpClient" : this.userAgent);
             httpPost.getParams().setBooleanParameter(CoreProtocolPNames.USE_EXPECT_CONTINUE, false);
             HttpResponse execute = getHTTPClient().execute(httpPost);

@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.view.View;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class ej extends View {
     final /* synthetic */ ei a;
@@ -16,10 +16,10 @@ class ej extends View {
     }
 
     protected void onDraw(Canvas canvas) {
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         rect.set(this.a.c.getPaddingLeft(), this.a.c.getPaddingTop(), this.a.c.getWidth() - this.a.c.getPaddingRight(), this.a.c.getHeight() - this.a.c.getPaddingBottom());
         this.a.d.setBounds(rect);
         this.a.d.draw(canvas);
-        dv.g.a(rect);
+        UTools.g.getRect(rect);
     }
 }

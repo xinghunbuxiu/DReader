@@ -1,11 +1,10 @@
 package com.duokan.reader.ui.reading;
 
 import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.m;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.BaseActivity;
 import com.duokan.core.app.s;
-import com.duokan.core.app.y;
-import com.duokan.core.ui.*;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.di;
 import com.duokan.core.ui.dn;
 import com.duokan.core.ui.et;
@@ -20,7 +19,7 @@ import java.util.LinkedList;
 
 do;
 
-class co extends e implements s, abq {
+class co extends ActivatedController implements s, abq {
     private final sh a;
     private final PagesView b;
     private final di c;
@@ -31,8 +30,8 @@ class co extends e implements s, abq {
     private int h = -1;
     private int i = -1;
 
-    public co(y yVar, sh shVar, wl wlVar) {
-        super(yVar);
+    public co(IFeature featrue, sh shVar, wl wlVar) {
+        super(featrue);
         this.a = shVar;
         this.b = wlVar.getShowingPagesView();
         this.c = new di(getContext());
@@ -196,12 +195,12 @@ class co extends e implements s, abq {
 
     protected void onAttachToStub() {
         super.onAttachToStub();
-        ((m) getActivity()).addOnScreenRotationChangedListener(this);
+        ((BaseActivity) getActivity()).addOnScreenRotationChangedListener(this);
     }
 
     protected void onDetachFromStub() {
         super.onDetachFromStub();
-        ((m) getActivity()).removeOnScreenRotationChangedListener(this);
+        ((BaseActivity) getActivity()).removeOnScreenRotationChangedListener(this);
     }
 
     protected boolean onBack() {

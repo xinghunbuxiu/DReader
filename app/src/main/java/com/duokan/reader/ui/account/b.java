@@ -28,7 +28,7 @@ class b implements com.duokan.reader.domain.account.b {
         if (!TextUtils.isEmpty(str)) {
             be.a(this.b.b, (CharSequence) str, 1).show();
         }
-        com.duokan.reader.domain.statistics.dailystats.a.d().b("f");
+        com.duokan.reader.domain.statistics.dailystats.a.d().b("HttpLogger");
         this.b.a(aVar, str);
     }
 }

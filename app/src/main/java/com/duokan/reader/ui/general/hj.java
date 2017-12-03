@@ -2,20 +2,20 @@ package com.duokan.reader.ui.general;
 
 import android.view.View;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 
-abstract class hj extends e {
-    private final e a;
+abstract class hj extends ActivatedController {
+    private final ActivatedController a;
     final /* synthetic */ hd b;
 
-    public hj(hd hdVar, y yVar, e eVar) {
+    public hj(hd hdVar, IFeature featrue, ActivatedController controller) {
         this.b = hdVar;
-        super(yVar);
-        this.a = eVar;
+        super(featrue);
+        this.a = controller;
     }
 
-    public final e a() {
+    public final ActivatedController a() {
         return this.a;
     }
 

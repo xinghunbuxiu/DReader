@@ -7,7 +7,6 @@ import com.duokan.core.app.ai;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.async.a.a;
-import com.duokan.reader.common.async.a.c;
 import com.duokan.reader.common.webservices.duokan.DkStoreBookInfo;
 import com.duokan.reader.domain.account.AccountType;
 import com.duokan.reader.domain.account.ab;

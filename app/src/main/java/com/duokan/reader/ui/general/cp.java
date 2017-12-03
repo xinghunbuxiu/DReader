@@ -8,7 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class cp extends Drawable {
     private final NinePatch a;
@@ -24,10 +24,10 @@ class cp extends Drawable {
         Paint paint = new Paint();
         paint.setAlpha(this.b);
         paint.setFilterBitmap(true);
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         rect.set(getBounds());
         this.a.draw(canvas, rect, paint);
-        dv.g.a(rect);
+        UTools.g.getRect(rect);
     }
 
     public void setAlpha(int i) {

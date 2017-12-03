@@ -2,7 +2,7 @@ package com.duokan.reader.ui.store;
 
 import android.graphics.Bitmap;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.af;
 import com.duokan.core.ui.fr;
 import com.duokan.reader.DkApp;
@@ -12,9 +12,9 @@ import com.duokan.reader.ui.general.web.StorePageController;
 class StoreController$1 extends StorePageController {
     final /* synthetic */ bl this$0;
 
-    StoreController$1(bl blVar, y yVar) {
+    StoreController$1(bl blVar, IFeature featrue) {
         this.this$0 = blVar;
-        super(yVar);
+        super(featrue);
     }
 
     public void onPageStarted(fr frVar, String str, Bitmap bitmap) {

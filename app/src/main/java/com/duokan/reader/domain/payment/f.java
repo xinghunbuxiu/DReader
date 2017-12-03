@@ -5,9 +5,7 @@ import android.os.Bundle;
 
 import com.duokan.b.i;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 
-import miui.payment.PaymentManager;
 import miuipub.payment.IXmsfPaymentListener;
 
 final class f implements IXmsfPaymentListener {

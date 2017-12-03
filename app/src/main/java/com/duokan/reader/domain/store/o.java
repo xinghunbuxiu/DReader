@@ -5,7 +5,6 @@ import android.content.Context;
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
@@ -18,7 +17,6 @@ import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.bookshelf.ej;
 import com.duokan.reader.domain.bookshelf.iw;
 import com.duokan.reader.domain.cloud.push.MessageWakeupListener;
-import com.duokan.reader.domain.cloud.push.MessageWakeupListener.MessageSubType;
 import com.duokan.reader.domain.cloud.push.b;
 import com.mipay.sdk.Mipay;
 
@@ -81,7 +79,7 @@ public class o implements ah, g, iw, MessageWakeupListener {
                 String string = jSONObject.getJSONObject("action_params").getString("fiction_id");
                 String string2 = jSONObject.getString(Mipay.KEY_MESSAGE);
                 c b = com.duokan.reader.domain.bookshelf.ai.a().b(string);
-                a.c().a(LogLevel.EVENT, "push", "a fiction has new chapters(bookUuid:%s, chapterName:%s).", string, string2);
+                a.c().a(LogLevel.EVENT, "push", "setDrawable fiction has new chapters(bookUuid:%s, chapterName:%s).", string, string2);
                 if (b != null && b.k() && b.i() != BookState.CLOUD_ONLY) {
                     com.duokan.reader.domain.bookshelf.ai.a().c(b);
                     ((ej) b).a(false, null, null);

@@ -17,7 +17,7 @@ import com.duokan.b.c;
 import com.duokan.b.d;
 import com.duokan.b.e;
 import com.duokan.core.sys.j;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.f;
 import com.duokan.reader.ReaderEnv;
 
@@ -114,7 +114,7 @@ public class af extends f {
 
     public void setContentBackgroundColor(int i) {
         if (ReaderEnv.get().forHd()) {
-            this.mContentContainer.setBackgroundDrawable(new hn((float) dv.b(getContext(), 7.0f), (float) dv.b(getContext(), 7.0f), i));
+            this.mContentContainer.setBackgroundDrawable(new hn((float) UTools.closeAnimation(getContext(), 7.0f), (float) UTools.closeAnimation(getContext(), 7.0f), i));
             return;
         }
         this.mContentContainer.setBackgroundColor(i);
@@ -166,7 +166,7 @@ public class af extends f {
     public static void initCenterDialogWebViewBg(WebView webView, int i) {
         if (ReaderEnv.get().forHd()) {
             MarginLayoutParams marginLayoutParams = (MarginLayoutParams) webView.getLayoutParams();
-            marginLayoutParams.bottomMargin = dv.b(webView.getContext(), 7.0f);
+            marginLayoutParams.bottomMargin = UTools.closeAnimation(webView.getContext(), 7.0f);
             webView.setLayoutParams(marginLayoutParams);
         }
         webView.setBackgroundColor(i);

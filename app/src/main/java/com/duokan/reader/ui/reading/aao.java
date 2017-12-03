@@ -1,8 +1,7 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.domain.statistics.dailystats.a;
 
 class aao implements Runnable {
     final /* synthetic */ aaj a;
@@ -16,7 +15,7 @@ class aao implements Runnable {
             this.a.d.H();
         } else if (!this.a.d.f.U()) {
             a.d().c(this.a.d.f.H(), this.a.d.f.G().c);
-            ((ReaderFeature) x.a(this.a.d.getContext()).queryFeature(ReaderFeature.class)).downloadBooks(this.a.d.f);
+            ((ReaderFeature) MyContextWrapper.getFeature(this.a.d.getContext()).queryFeature(ReaderFeature.class)).downloadBooks(this.a.d.f);
         }
     }
 }

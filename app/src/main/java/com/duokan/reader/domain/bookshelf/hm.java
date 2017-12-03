@@ -1,8 +1,8 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.c.b;
+import com.duokan.core.c.IRunTask;
 
-class hm implements b {
+class hm implements IRunTask {
     final /* synthetic */ hi a;
 
     hm(hi hiVar) {

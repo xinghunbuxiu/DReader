@@ -3,9 +3,8 @@ package com.duokan.reader.ui.reading;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.document.aj;
 import com.duokan.reader.ui.general.a.a;
 
@@ -17,9 +16,9 @@ public class mc extends FrameLayout {
     public void setMultiCallout(aj ajVar) {
         for (int i = 0; i < ajVar.a(); i++) {
             View xkVar = new xk(getContext(), ajVar.a(i).f());
-            int b = dv.b(getContext(), 10.0f);
+            int b = UTools.closeAnimation(getContext(), 10.0f);
             xkVar.setPadding(b, b, b, b);
-            xkVar.setTextSize(dv.b(getContext(), 18.0f));
+            xkVar.setTextSize(UTools.closeAnimation(getContext(), 18.0f));
             xkVar.setVisibility(4);
             addView(xkVar, new LayoutParams(-1, -2, 80));
         }

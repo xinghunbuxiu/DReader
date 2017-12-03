@@ -11,7 +11,6 @@ import android.graphics.drawable.Drawable;
 import com.duokan.core.sys.AsyncCache;
 import com.duokan.core.sys.e;
 import com.duokan.core.sys.f;
-import com.duokan.reader.common.bitmap.a;
 
 public abstract class b extends Drawable {
     private final Config a;

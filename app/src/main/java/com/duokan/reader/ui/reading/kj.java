@@ -1,14 +1,14 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.e;
+import com.duokan.core.app.ActivatedController;
 
 class kj implements Runnable {
-    final /* synthetic */ e a;
+    final /* synthetic */ ActivatedController a;
     final /* synthetic */ kd b;
 
-    kj(kd kdVar, e eVar) {
+    kj(kd kdVar, ActivatedController activatedControllerVar) {
         this.b = kdVar;
-        this.a = eVar;
+        this.a = activatedControllerVar;
     }
 
     public void run() {

@@ -11,9 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.reader.common.b;
 import com.duokan.reader.common.c.f;
 import com.duokan.reader.common.c.g;
 import com.duokan.reader.domain.account.PersonalAccount;
@@ -51,8 +50,8 @@ public class hw extends my implements g, h, eu, fl, o {
     private final View p;
     private boolean q = false;
 
-    public hw(y yVar) {
-        super(yVar, true);
+    public hw(IFeature featrue) {
+        super(featrue, true);
         setContentView(com.duokan.c.h.personal__personal_info_view);
         a b = i.f().b(PersonalAccount.class);
         this.d = (LinearScrollView) findViewById(com.duokan.c.g.personal__personal_info_view__scroller);

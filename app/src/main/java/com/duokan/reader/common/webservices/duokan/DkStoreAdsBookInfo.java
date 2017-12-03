@@ -46,7 +46,7 @@ public class DkStoreAdsBookInfo extends DkStoreItemInfo {
         PUBLISHER(4),
         FICTION_INFO(100),
         FICTION_TOPIC(HttpStatus.SC_SWITCHING_PROTOCOLS);
-        
+
         private int mTypeValue;
 
         private AdsType(int i) {

@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.duokan.b.i;
-import com.duokan.core.app.k;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.app.FeatureListening;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
 import com.duokan.reader.domain.bookshelf.aa;
@@ -20,13 +20,13 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-class cr implements k {
+class cr implements FeatureListening {
     private Boolean a = Boolean.valueOf(e());
     private final List b = new LinkedList();
     private int c = 0;
     private Runnable d;
 
-    public cr(x xVar, Activity activity) {
+    public cr(MyContextWrapper mContext, Activity activity) {
     }
 
     public List a() {

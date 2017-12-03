@@ -8,7 +8,7 @@ import com.duokan.reader.domain.bookshelf.BookState;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.cloud.DkCloudComment;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.epub.s;
 import com.duokan.reader.ui.general.au;
 
@@ -22,7 +22,7 @@ class mc implements OnClickListener {
     }
 
     public void onClick(View view) {
-        a a = s.a(this.a.getStartPos().b(), this.a.getStartPos().c(), this.a.getStartPos().d());
+        Document_a a = s.a(this.a.getStartPos().b(), this.a.getStartPos().c(), this.a.getStartPos().d());
         c b;
         if (this.b.a.d.isSerial()) {
             b = ai.a().b(this.b.a.d.getBookUuid());

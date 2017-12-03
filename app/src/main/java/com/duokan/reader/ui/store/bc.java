@@ -6,9 +6,9 @@ import android.view.View;
 
 import com.duokan.c.d;
 import com.duokan.c.j;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.HatGridView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.cloud.DkCloudFictionChapter;
 import com.duokan.reader.domain.store.DkStoreFictionDetail;
 import com.duokan.reader.ui.general.PageHeaderView;
@@ -29,10 +29,10 @@ public class bc extends HatGridView {
         setTitleView(pageHeaderView);
         Drawable dkVar = new dk(getResources().getColor(d.general__shared__bcbcbc));
         dkVar.a(0);
-        int b = dv.b(getContext(), 15.0f);
+        int b = UTools.closeAnimation(getContext(), 15.0f);
         dkVar.a(b, b);
         setRowDivider(dkVar);
-        s sVar = (s) x.a(getContext()).queryFeature(s.class);
+        s sVar = (s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class);
         b(0, 0, 0, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
         setOnItemClickListener(new bd(this));
         this.a = new bf(this);
@@ -48,7 +48,7 @@ public class bc extends HatGridView {
 
     public void a(boolean z) {
         if (z) {
-            dv.a((View) this, new bg(this, this.a.a() - 1));
+            UTools.addAnimation((View) this, new bg(this, this.a.a() - 1));
         } else {
             this.a.f(0);
         }

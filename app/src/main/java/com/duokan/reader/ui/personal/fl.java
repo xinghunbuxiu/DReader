@@ -16,11 +16,11 @@ import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.af;
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
@@ -33,7 +33,6 @@ import com.duokan.reader.domain.account.AccountType;
 import com.duokan.reader.domain.account.MiAccount;
 import com.duokan.reader.domain.account.PersonalAccount;
 import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.account.oauth.ThirdWeiXin;
 import com.duokan.reader.domain.cloud.DkCloudAnnotation;
 import com.duokan.reader.domain.cloud.DkCloudNoteBookInfo;
@@ -57,7 +56,6 @@ import com.duokan.reader.domain.cloud.gk;
 import com.duokan.reader.domain.cloud.gl;
 import com.duokan.reader.domain.cloud.hj;
 import com.duokan.reader.domain.cloud.o;
-import com.duokan.reader.ui.b.d;
 import com.duokan.reader.ui.b.f;
 import com.duokan.reader.ui.general.ReaderUi;
 import com.duokan.reader.ui.general.bf;
@@ -71,7 +69,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.Callable;
 
-public class fl extends e implements SystemUiConditioner, g, h, com.duokan.reader.domain.account.h, bc, bl, cr, ec, eu, com.duokan.reader.domain.cloud.fl, gk, hj, o, f {
+public class fl extends ActivatedController implements SystemUiConditioner, g, h, com.duokan.reader.domain.account.h, bc, bl, cr, ec, eu, com.duokan.reader.domain.cloud.fl, gk, hj, o, f {
     private final ReaderFeature a = ((ReaderFeature) getContext().queryFeature(ReaderFeature.class));
     private final StorePageController b;
     private final LinearScrollView c;
@@ -99,8 +97,8 @@ public class fl extends e implements SystemUiConditioner, g, h, com.duokan.reade
     private final int y;
     private int z = 0;
 
-    public fl(y yVar) {
-        super(yVar);
+    public fl(IFeature featrue) {
+        super(featrue);
         setContentView(com.duokan.c.h.personal__personal_center_view);
         this.c = (LinearScrollView) findViewById(com.duokan.c.g.personal__account_summary_view__scroller);
         this.q = (ViewGroup) findViewById(com.duokan.c.g.personal__account_summary_view__task);
@@ -425,14 +423,14 @@ public class fl extends e implements SystemUiConditioner, g, h, com.duokan.reade
             return;
         }
         try {
-            a((e) callable.call(), z, null);
+            a((ActivatedController) callable.call(), z, null);
         } catch (Throwable th) {
         }
     }
 
     private void b(boolean z, Callable callable) {
         try {
-            a((e) callable.call(), z, null);
+            a((ActivatedController) callable.call(), z, null);
         } catch (Throwable th) {
         }
     }
@@ -441,14 +439,14 @@ public class fl extends e implements SystemUiConditioner, g, h, com.duokan.reade
         i.f().a(new gm(this, callable, z));
     }
 
-    private void a(e eVar, boolean z, Runnable runnable) {
-        if (eVar != null) {
-            eVar.runBeforeDetach(new gn(this));
+    private void a(ActivatedController activatedControllerVar, boolean z, Runnable runnable) {
+        if (activatedControllerVar != null) {
+            activatedControllerVar.runBeforeDetach(new gn(this));
             deactivate(this.b);
             if (z) {
-                this.a.pushHalfPageSmoothly(eVar, runnable);
+                this.a.pushHalfPageSmoothly(activatedControllerVar, runnable);
             } else {
-                this.a.pushPageSmoothly(eVar, runnable);
+                this.a.pushPageSmoothly(activatedControllerVar, runnable);
             }
         }
     }
@@ -557,12 +555,12 @@ public class fl extends e implements SystemUiConditioner, g, h, com.duokan.reade
         }
     }
 
-    private void a(e eVar, Runnable runnable) {
+    private void a(ActivatedController activatedControllerVar, Runnable runnable) {
         UmengManager.get().onEvent("V2_PERSONAL_HEADER_BUTTON", "Settings");
-        if (eVar == null) {
-            eVar = new it(getContext());
+        if (activatedControllerVar == null) {
+            activatedControllerVar = new it(getContext());
         }
-        a(eVar, true, runnable);
+        a(activatedControllerVar, true, runnable);
     }
 
     private void g(int i) {
@@ -699,7 +697,7 @@ public class fl extends e implements SystemUiConditioner, g, h, com.duokan.reade
     }
 
     private void u() {
-        dv.a(getContentView(), new gs(this));
+        UTools.addAnimation(getContentView(), new gs(this));
     }
 
     private boolean v() {
@@ -715,7 +713,7 @@ public class fl extends e implements SystemUiConditioner, g, h, com.duokan.reade
     }
 
     private void a(Rect rect) {
-        e gtVar = new gt(this, getContext());
+        ActivatedController gtVar = new gt(this, getContext());
         View gvVar = new gv(this, getContext());
         View imageView = new ImageView(getContext());
         View imageView2 = new ImageView(getContext());

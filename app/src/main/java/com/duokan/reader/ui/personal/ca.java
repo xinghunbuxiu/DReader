@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.domain.cloud.a;
 
 import java.text.Collator;
@@ -25,6 +25,6 @@ class ca implements Runnable {
         a a = a.a(this.a);
         a.a(instance);
         a.b(instance);
-        t.b(new cb(this, a));
+        TaskHandler.PostTask(new cb(this, a));
     }
 }

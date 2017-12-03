@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.j;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.domain.bookshelf.BookState;
@@ -25,9 +25,9 @@ public class kg extends my implements ho {
     private final ko c;
     private final km d = new km();
 
-    public kg(y yVar) {
-        super(yVar, true);
-        getContext().a(this.d);
+    public kg(IFeature featrue) {
+        super(featrue, true);
+        getContext().addFirstLocalFeature(this.d);
         this.c = new ko(getContext(), this.d, this);
         setContentView(this.c);
     }

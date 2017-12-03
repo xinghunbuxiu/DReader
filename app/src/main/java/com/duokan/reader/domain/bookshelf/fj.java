@@ -34,14 +34,14 @@ public class fj extends ad {
         /*
         r12 = this;
         r8 = 0;
-        r3 = new com.duokan.reader.common.webservices.b;
+        r3 = new com.duokan.reader.common.webservices.getVisible;
         r3.<init>();
-        r3.b = r8;
+        r3.getVisible = r8;
         r0 = "";
-        r3.c = r0;
+        r3.showAnimation = r0;
         r4 = new java.util.HashMap;
         r4.<init>();
-        r3.a = r4;
+        r3.setDrawable = r4;
         r5 = new java.util.HashMap;
         r5.<init>();
         r1 = r13.iterator();
@@ -53,28 +53,28 @@ public class fj extends ad {
         r0 = (com.duokan.reader.domain.bookshelf.fo) r0;
         r2 = new com.duokan.reader.domain.bookshelf.fs;
         r2.<init>();
-        r6 = r0.a;
-        r2.a = r6;
+        r6 = r0.setDrawable;
+        r2.setDrawable = r6;
         r6 = new java.util.ArrayList;
         r6.<init>();
-        r2.b = r6;
+        r2.getVisible = r6;
         r6 = 1;
-        r2.c = r6;
+        r2.showAnimation = r6;
         r6 = -1;
-        r2.d = r6;
-        r6 = r0.a;
+        r2.getScaledTouchSlop = r6;
+        r6 = r0.setDrawable;
         r6 = java.lang.Integer.valueOf(r6);
         r4.put(r6, r2);
         r2 = new com.duokan.reader.domain.bookshelf.fn;
         r2.<init>();
-        r6 = r0.a;
-        r2.a = r6;
-        r6 = r0.b;
-        r2.d = r6;
-        r2.b = r8;
+        r6 = r0.setDrawable;
+        r2.setDrawable = r6;
+        r6 = r0.getVisible;
+        r2.getScaledTouchSlop = r6;
+        r2.getVisible = r8;
         r6 = 100;
-        r2.c = r6;
-        r0 = r0.a;
+        r2.showAnimation = r6;
+        r0 = r0.setDrawable;
         r0 = java.lang.Integer.valueOf(r0);
         r5.put(r0, r2);
         goto L_0x001c;
@@ -88,14 +88,14 @@ public class fj extends ad {
     L_0x0074:
         r0 = r6.next();
         r0 = (com.duokan.reader.domain.bookshelf.fo) r0;
-        r1 = r0.a;
+        r1 = r0.setDrawable;
         r1 = java.lang.Integer.valueOf(r1);
         r1 = r4.get(r1);
         r1 = (com.duokan.reader.domain.bookshelf.fs) r1;
-        r1 = r1.c;
+        r1 = r1.showAnimation;
         if (r1 == 0) goto L_0x006e;
     L_0x008a:
-        r0 = r0.a;
+        r0 = r0.setDrawable;
         r0 = java.lang.Integer.valueOf(r0);
         r0 = r5.get(r0);
         r2.add(r0);
@@ -106,11 +106,11 @@ public class fj extends ad {
     L_0x009e:
         return r3;
     L_0x009f:
-        r6 = r12.b(r2);
-        r0 = r6.b;
+        r6 = r12.getVisible(r2);
+        r0 = r6.getVisible;
         if (r0 != 0) goto L_0x00f8;
     L_0x00a7:
-        r0 = r6.a;
+        r0 = r6.setDrawable;
         r0 = (java.util.HashMap) r0;
         r0 = r0.keySet();
         r7 = r0.iterator();
@@ -120,44 +120,44 @@ public class fj extends ad {
     L_0x00b9:
         r0 = r7.next();
         r0 = (java.lang.Integer) r0;
-        r1 = r6.a;
+        r1 = r6.setDrawable;
         r1 = (java.util.HashMap) r1;
         r1 = r1.get(r0);
         r1 = (com.duokan.reader.domain.bookshelf.fs) r1;
         r2 = r4.get(r0);
         r2 = (com.duokan.reader.domain.bookshelf.fs) r2;
-        r8 = r1.c;
-        r2.c = r8;
-        r8 = r2.d;
+        r8 = r1.showAnimation;
+        r2.showAnimation = r8;
+        r8 = r2.getScaledTouchSlop;
         r10 = 0;
         r8 = (r8 > r10 ? 1 : (r8 == r10 ? 0 : -1));
         if (r8 >= 0) goto L_0x00df;
     L_0x00db:
-        r8 = r1.d;
-        r2.d = r8;
+        r8 = r1.getScaledTouchSlop;
+        r2.getScaledTouchSlop = r8;
     L_0x00df:
-        r2 = r2.b;
-        r8 = r1.b;
+        r2 = r2.getVisible;
+        r8 = r1.getVisible;
         r2.addAll(r8);
         r0 = r5.get(r0);
         r0 = (com.duokan.reader.domain.bookshelf.fn) r0;
-        r2 = r0.b;
-        r1 = r1.b;
+        r2 = r0.getVisible;
+        r1 = r1.getVisible;
         r1 = r1.size();
         r1 = r1 + r2;
-        r0.b = r1;
+        r0.getVisible = r1;
         goto L_0x00b3;
     L_0x00f8:
-        r0 = r6.b;
-        r3.b = r0;
-        r0 = r6.c;
-        r3.c = r0;
-        r0 = r3.a;
+        r0 = r6.getVisible;
+        r3.getVisible = r0;
+        r0 = r6.showAnimation;
+        r3.showAnimation = r0;
+        r0 = r3.setDrawable;
         r0 = (java.util.HashMap) r0;
-        r0.clear();
+        r0.addFirst();
         goto L_0x009e;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.bookshelf.fj.a(java.util.List):com.duokan.reader.common.webservices.b");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.bookshelf.fj.setDrawable(java.util.List):com.duokan.reader.common.webservices.getVisible");
     }
 
     public b b(List list) {
@@ -167,7 +167,7 @@ public class fj extends ad {
             jSONObject.put(String.valueOf(fnVar.a), jSONObject2);
             jSONObject2.put("offset", String.valueOf(fnVar.b));
             jSONObject2.put("count", String.valueOf(fnVar.c));
-            jSONObject2.put("t", String.valueOf(fnVar.d));
+            jSONObject2.put("TaskHandler", String.valueOf(fnVar.d));
         }
         JSONObject a = a(a(b(true, a() + "/shelf", "data", URLEncoder.encode(jSONObject.toString()))));
         b bVar = new b();

@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.surfing;
 
-import com.duokan.core.app.e;
-import com.duokan.core.sys.t;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
 import com.duokan.reader.ReaderFeature;
@@ -85,26 +85,26 @@ class ab implements Runnable {
         }
     }
 
-    private void a(Class cls, e eVar, boolean z, boolean z2, Runnable runnable) {
+    private void a(Class cls, ActivatedController activatedControllerVar, boolean z, boolean z2, Runnable runnable) {
         if (cls == null) {
-            a(eVar, z, z2, runnable);
+            a(activatedControllerVar, z, z2, runnable);
         } else {
-            i.f().a(cls, new ac(this, eVar, z, z2, runnable));
+            i.f().a(cls, new ac(this, activatedControllerVar, z, z2, runnable));
         }
     }
 
-    private void a(e eVar, boolean z, boolean z2, Runnable runnable) {
+    private void a(ActivatedController activatedControllerVar, boolean z, boolean z2, Runnable runnable) {
         if (!z) {
             if (z2) {
-                ((ReaderFeature) this.d.getContext().queryFeature(ReaderFeature.class)).pushHalfPage(eVar);
+                ((ReaderFeature) this.d.getContext().queryFeature(ReaderFeature.class)).pushHalfPage(activatedControllerVar);
             } else {
-                ((ReaderFeature) this.d.getContext().queryFeature(ReaderFeature.class)).pushPage(eVar);
+                ((ReaderFeature) this.d.getContext().queryFeature(ReaderFeature.class)).pushPage(activatedControllerVar);
             }
-            t.b(runnable);
+            TaskHandler.PostTask(runnable);
         } else if (z2) {
-            ((ReaderFeature) this.d.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(eVar, runnable);
+            ((ReaderFeature) this.d.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(activatedControllerVar, runnable);
         } else {
-            ((ReaderFeature) this.d.getContext().queryFeature(ReaderFeature.class)).pushPageSmoothly(eVar, runnable);
+            ((ReaderFeature) this.d.getContext().queryFeature(ReaderFeature.class)).pushPageSmoothly(activatedControllerVar, runnable);
         }
     }
 }

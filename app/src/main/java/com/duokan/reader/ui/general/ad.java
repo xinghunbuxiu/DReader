@@ -3,10 +3,8 @@ package com.duokan.reader.ui.general;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 
 class ad extends FrameLayout {

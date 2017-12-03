@@ -1,13 +1,11 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.c.j;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.common.c.f;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.bookshelf.hh;
 import com.duokan.reader.domain.bookshelf.js;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.g;
 import com.duokan.reader.domain.document.k;
@@ -25,8 +23,8 @@ public class xm extends zo implements o {
     private PageAnimationMode J;
     private final boolean b = this.f.u();
 
-    public xm(y yVar, c cVar, a aVar) {
-        super(yVar, cVar, aVar);
+    public xm(IFeature featrue, c cVar, Document_a aVar) {
+        super(featrue, cVar, aVar);
     }
 
     protected si c() {
@@ -95,7 +93,7 @@ public class xm extends zo implements o {
             ((xy) this.e).a(4, "", "");
             return;
         }
-        ((xy) this.e).a(0, String.format(getString(j.reading__comic_view__chapter), new Object[]{Long.valueOf(r4 + 1)}), String.format("%d / %d", new Object[]{Long.valueOf(r2 + 1), Integer.valueOf(r1)}));
+        ((xy) this.e).a(0, String.format(getString(j.reading__comic_view__chapter), new Object[]{Long.valueOf(r4 + 1)}), String.format("%getScaledTouchSlop / %getScaledTouchSlop", new Object[]{Long.valueOf(r2 + 1), Integer.valueOf(r1)}));
     }
 
     protected void a(Runnable runnable, Runnable runnable2) {

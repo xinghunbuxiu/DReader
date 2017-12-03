@@ -1,8 +1,6 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.b.a.b;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.io.a;
 
 import java.io.File;
 

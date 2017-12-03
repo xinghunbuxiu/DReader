@@ -4,7 +4,7 @@ import com.duokan.c.j;
 import com.duokan.core.app.ab;
 import com.duokan.core.app.ac;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.ui.general.ap;
 import com.duokan.reader.ui.general.jq;
 
@@ -33,6 +33,6 @@ class bs implements ac {
 
     public void b(ab abVar) {
         this.a.dismiss();
-        t.b(this.e);
+        TaskHandler.PostTask(this.e);
     }
 }

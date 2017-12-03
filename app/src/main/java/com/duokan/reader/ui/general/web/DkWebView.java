@@ -14,7 +14,6 @@ import android.webkit.DownloadListener;
 import android.webkit.WebBackForwardList;
 import android.webkit.WebSettings;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 
 import com.duokan.core.sys.j;
 import com.duokan.core.ui.PullDownRefreshBaseView.RefreshState;
@@ -27,10 +26,8 @@ import com.duokan.core.ui.fr;
 import com.duokan.core.ui.ft;
 import com.duokan.core.ui.fx;
 import com.duokan.reader.DkApp;
-import com.duokan.reader.common.c.f;
 import com.duokan.reader.common.c.g;
 import com.duokan.reader.common.webservices.duokan.p;
-import com.duokan.reader.domain.statistics.a;
 import com.duokan.reader.ui.general.WebView;
 import com.duokan.reader.ui.general.jw;
 

@@ -3,7 +3,6 @@ package com.duokan.reader.domain.bookshelf;
 import android.text.TextUtils;
 
 import com.duokan.b.i;
-import com.duokan.core.diagnostic.a;
 import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.common.webservices.duokan.DkSignInInfo;
 import com.duokan.reader.common.webservices.duokan.DkStoreAdInfo;

@@ -9,10 +9,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.duokan.c.g;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.common.webservices.duokan.DkSignInReward;
 import com.duokan.reader.common.webservices.duokan.DkStoreAdInfo;
@@ -26,7 +25,7 @@ import org.apache.http.HttpStatus;
 
 import java.util.List;
 
-public class ic extends e {
+public class ic extends ActivatedController {
     private final boolean[] a;
     private final int b;
     private final List c;
@@ -47,8 +46,8 @@ public class ic extends e {
     private final DkStoreAdInfo[] r;
     private final ReaderFeature s;
 
-    public ic(y yVar, boolean[] zArr, int i, List list, boolean z, boolean z2, boolean z3, boolean z4, int i2, DkStoreAdInfo[] dkStoreAdInfoArr) {
-        super(yVar);
+    public ic(IFeature featrue, boolean[] zArr, int i, List list, boolean z, boolean z2, boolean z3, boolean z4, int i2, DkStoreAdInfo[] dkStoreAdInfoArr) {
+        super(featrue);
         this.a = zArr;
         this.b = i;
         this.c = list;
@@ -61,7 +60,7 @@ public class ic extends e {
         this.s = (ReaderFeature) getContext().queryFeature(ReaderFeature.class);
         View inflate = LayoutInflater.from(getContext()).inflate(h.bookshelf__sign_in_succeed_view, null);
         View epVar = new ep(getContext());
-        epVar.setForeground(new hn((float) dv.b(getContext(), 3.0f), (float) dv.b(getContext(), 3.0f), -16777216));
+        epVar.setForeground(new hn((float) UTools.closeAnimation(getContext(), 3.0f), (float) UTools.closeAnimation(getContext(), 3.0f), -16777216));
         epVar.addView(inflate);
         inflate = new FrameLayout(getContext());
         inflate.addView(epVar, new LayoutParams(-2, -2, 17));
@@ -118,7 +117,7 @@ public class ic extends e {
             this.n.setText(getString(j.bookshelf__sign_in_succeed_view__hint_big_reward));
             if (this.e) {
                 this.o.setText(getString(j.bookshelf__sign_in_succeed_view__check_reward));
-                idVar = new if(this);
+                idVar = new if (this) ;
             } else {
                 this.o.setText(getString(j.bookshelf__sign_in_succeed_view__close));
             }
@@ -163,8 +162,8 @@ public class ic extends e {
         }
     }
 
-    private e a(DkStoreAdInfo dkStoreAdInfo) {
-        e storePageController = new StorePageController(getContext());
+    private ActivatedController a(DkStoreAdInfo dkStoreAdInfo) {
+        ActivatedController storePageController = new StorePageController(getContext());
         storePageController.loadUrl(p.i().z() + "/hs/market/channel/" + dkStoreAdInfo.mReferenceId + "?_t=app.checkout");
         return storePageController;
     }

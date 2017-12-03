@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.view.View;
 
 import com.duokan.core.ui.du;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.domain.document.d;
@@ -34,7 +34,7 @@ class aef implements du {
             int a = this.b.a.m.a();
             Rect c = this.b.a.a.c(this.b.a.m.b().b);
             aeg com_duokan_reader_ui_reading_aeg;
-            if (this.b.a.m.c.y >= c.bottom + dv.e(this.b.a.getContext())) {
+            if (this.b.a.m.c.y >= c.bottom + UTools.getScaledPagingTouchSlop(this.b.a.getContext())) {
                 if (a < this.b.a.m.a.length - 1) {
                     this.b.a.m.b = (d) this.b.a.m.a[a + 1].b.g();
                 } else {
@@ -45,7 +45,7 @@ class aef implements du {
                     this.b.a.m = com_duokan_reader_ui_reading_aeg;
                     return;
                 }
-            } else if (this.b.a.m.c.y < c.top - dv.e(this.b.a.getContext())) {
+            } else if (this.b.a.m.c.y < c.top - UTools.getScaledPagingTouchSlop(this.b.a.getContext())) {
                 if (a > 0) {
                     this.b.a.m.b = (d) this.b.a.m.a[a - 1].b.g();
                 } else {

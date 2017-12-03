@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.sys.as;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -25,7 +25,7 @@ class ec implements as {
         }
         if (jSONObject.has("top_banner")) {
             JSONObject jSONObject2 = jSONObject.getJSONObject("top_banner");
-            this.b.b.mBannerInfo.a = dv.b(this.b.b.getContext(), (float) jSONObject2.optInt("height", this.b.b.getHeaderViewOffset()));
+            this.b.b.mBannerInfo.a = UTools.closeAnimation(this.b.b.getContext(), (float) jSONObject2.optInt("height", this.b.b.getHeaderViewOffset()));
         }
         if (jSONObject.has("nav_tabs")) {
             JSONArray jSONArray = jSONObject.getJSONArray("nav_tabs");
@@ -34,7 +34,7 @@ class ec implements as {
             for (int i = 0; i < jSONArray.length(); i++) {
                 JSONObject jSONObject3 = jSONArray.getJSONObject(i);
                 String string = jSONObject3.getString("name");
-                int b = dv.b(this.b.b.getContext(), (float) jSONObject3.getInt("pos"));
+                int b = UTools.closeAnimation(this.b.b.getContext(), (float) jSONObject3.getInt("pos"));
                 if (i == 0) {
                     access$600 = b;
                 }

@@ -268,7 +268,7 @@ class z {
                 throw th;
             }
         }
-        Log.w("", "Can't connect db!");
+        Log.w("", "Can'TaskHandler connect db!");
         return linkedList;
     }
 }

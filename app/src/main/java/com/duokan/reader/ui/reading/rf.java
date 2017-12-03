@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.domain.bookshelf.ai;
 
 class rf implements Runnable {
@@ -12,6 +12,6 @@ class rf implements Runnable {
 
     public void run() {
         ai.a().a(this.a.b.f.d());
-        t.a(this.a.a);
+        TaskHandler.postTask(this.a.a);
     }
 }

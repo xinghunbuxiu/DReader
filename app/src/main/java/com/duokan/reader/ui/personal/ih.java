@@ -9,12 +9,11 @@ import com.duokan.c.f;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.account.oauth.ThirdWeiXin;
 import com.duokan.reader.domain.cloud.DkCloudRedeemFund;
 import com.duokan.reader.domain.cloud.fp;
-import com.duokan.reader.ui.general.*;
 import com.duokan.reader.ui.general.BookCoverView;
 import com.duokan.reader.ui.general.DkBigFaceView;
 import com.duokan.reader.ui.general.HeaderView;
@@ -24,13 +23,13 @@ import com.duokan.reader.ui.s;
 
 do;
 
-public class ih extends e {
+public class ih extends ActivatedController {
     private final DkCloudRedeemFund a;
     private final TextView b;
 
-    public ih(y yVar, DkCloudRedeemFund dkCloudRedeemFund) {
+    public ih(IFeature featrue, DkCloudRedeemFund dkCloudRedeemFund) {
         LayoutParams layoutParams;
-        super(yVar);
+        super(featrue);
         this.a = dkCloudRedeemFund;
         setContentView(h.personal__redeem_info_view);
         ((HeaderView) findViewById(g.personal__redeem_info_view__header)).setLeftTitle(j.personal__personal_redeem_info_view__header);

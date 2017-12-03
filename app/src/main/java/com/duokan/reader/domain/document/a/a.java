@@ -2,6 +2,7 @@ package com.duokan.reader.domain.document.a;
 
 import com.duokan.kernel.DkFlowPosition;
 import com.duokan.kernel.pdflib.DkpBook;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ay;
 import com.duokan.reader.domain.document.d;
 
@@ -80,7 +81,7 @@ public class a extends d {
         return true;
     }
 
-    public boolean a(com.duokan.reader.domain.document.a aVar) {
+    public boolean a(Document_a aVar) {
         if (aVar instanceof ay) {
             return a(((ay) aVar).g());
         }
@@ -97,7 +98,7 @@ public class a extends d {
         return false;
     }
 
-    public boolean c(com.duokan.reader.domain.document.a aVar) {
+    public boolean c(Document_a aVar) {
         if (aVar instanceof ay) {
             return d(((ay) aVar).h());
         }

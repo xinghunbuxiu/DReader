@@ -2,7 +2,7 @@ package com.duokan.reader.ui.bookshelf;
 
 import android.graphics.Rect;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.domain.bookshelf.aa;
 import com.duokan.reader.domain.bookshelf.an;
 
@@ -10,8 +10,8 @@ public class dt extends dg {
     private final aa a;
     private final du b;
 
-    public dt(x xVar, aa aaVar) {
-        super(xVar);
+    public dt(MyContextWrapper mContext, aa aaVar) {
+        super(mContext);
         this.a = aaVar;
         this.b = new du(getContext(), aaVar);
         setContentView(this.b);

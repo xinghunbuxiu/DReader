@@ -7,7 +7,7 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.core.ui.q;
@@ -37,7 +37,7 @@ class fs extends er {
 
     protected void a(View view, boolean z) {
         this.c.b(view, z);
-        this.c.a(dv.d(this.a.getContext()) * Math.round(this.a.getResources().getDisplayMetrics().density * 2.0f));
+        this.c.a(UTools.getScaledTouchSlop(this.a.getContext()) * Math.round(this.a.getResources().getDisplayMetrics().density * 2.0f));
         this.c.a(2.0f);
         this.c.b(135.0f);
         this.c.c(225.0f);

@@ -6,8 +6,8 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.duokan.core.app.x;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.account.oauth.ThirdSina;
 import com.duokan.reader.domain.account.oauth.TokenStore;
@@ -80,10 +80,10 @@ public abstract class bn extends af {
     protected void b() {
         View inflate = LayoutInflater.from(getContext()).inflate(h.account__third_share_view_v4, null);
         if (ReaderEnv.get().forHd()) {
-            inflate.setBackgroundDrawable(new hm(new ColorDrawable(getContext().getResources().getColor(d.general__shared__fefaf8)), (float) dv.b(getContext(), 8.0f)));
+            inflate.setBackgroundDrawable(new hm(new ColorDrawable(getContext().getResources().getColor(d.general__shared__fefaf8)), (float) UTools.closeAnimation(getContext(), 8.0f)));
         }
         setContentView(inflate);
-        inflate.findViewById(g.account__third_share_view__btns).setPadding(dv.b(getContext(), 15.0f), (ReaderEnv.get().forHd() ? 0 : ((s) x.a(getContext()).queryFeature(s.class)).getTheme().getHeaderPaddingTop()) + dv.b(getContext(), 10.0f), dv.b(getContext(), 15.0f), dv.b(getContext(), 10.0f));
+        inflate.findViewById(g.account__third_share_view__btns).setPadding(UTools.closeAnimation(getContext(), 15.0f), (ReaderEnv.get().forHd() ? 0 : ((s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class)).getTheme().getHeaderPaddingTop()) + UTools.closeAnimation(getContext(), 10.0f), UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 10.0f));
         ((DkLabelView) inflate.findViewById(g.account__third_share_view__third_name)).setText(getContext().getString(j.share_name_sina));
         inflate.findViewById(g.account__third_share_view__cancel).setOnClickListener(new bo(this));
         this.b = inflate.findViewById(g.account__third_share_view__send);

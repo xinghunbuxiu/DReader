@@ -3,11 +3,10 @@ package com.duokan.reader.ui.reading;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 public class mh extends LinearLayout implements mu {
     private final mm a;
@@ -27,13 +26,13 @@ public class mh extends LinearLayout implements mu {
         this.a.setOnClickListener(new mk(this));
         this.d.setOrientation(0);
         LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -1);
-        layoutParams.setMargins(dv.b(context, 10.0f), 0, dv.b(context, 10.0f), 0);
+        layoutParams.setMargins(UTools.closeAnimation(context, 10.0f), 0, UTools.closeAnimation(context, 10.0f), 0);
         this.d.addView(this.a, layoutParams);
         for (int i2 = 1; i2 <= i; i2++) {
             View mmVar = new mm(this, context);
             mmVar.a("" + i2);
             LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -1);
-            layoutParams2.setMargins(dv.b(context, 10.0f), 0, dv.b(context, 10.0f), 0);
+            layoutParams2.setMargins(UTools.closeAnimation(context, 10.0f), 0, UTools.closeAnimation(context, 10.0f), 0);
             this.d.addView(mmVar, layoutParams2);
             mmVar.setOnClickListener(new ml(this, i2));
         }
@@ -59,7 +58,7 @@ public class mh extends LinearLayout implements mu {
                 mmVar.a(false);
                 mmVar.b(e.reading__callout_indicator_view__item_bg_1);
             }
-            setPadding(dv.b(getContext(), 10.0f), dv.b(getContext(), 3.0f), dv.b(getContext(), 10.0f), dv.b(getContext(), 3.0f));
+            setPadding(UTools.closeAnimation(getContext(), 10.0f), UTools.closeAnimation(getContext(), 3.0f), UTools.closeAnimation(getContext(), 10.0f), UTools.closeAnimation(getContext(), 3.0f));
             setBackgroundResource(e.reading__callout_indicator_view__bg);
             return;
         }
@@ -72,7 +71,7 @@ public class mh extends LinearLayout implements mu {
             mmVar.b(e.reading__callout_indicator_view__item_bg);
         }
         setBackgroundDrawable(new ColorDrawable(0));
-        setPadding(0, dv.b(getContext(), 1.0f), dv.b(getContext(), 10.0f), dv.b(getContext(), 1.0f));
+        setPadding(0, UTools.closeAnimation(getContext(), 1.0f), UTools.closeAnimation(getContext(), 10.0f), UTools.closeAnimation(getContext(), 1.0f));
     }
 
     public void a(int i) {

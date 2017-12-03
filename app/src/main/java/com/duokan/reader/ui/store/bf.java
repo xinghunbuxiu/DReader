@@ -12,7 +12,6 @@ import com.duokan.reader.common.webservices.duokan.y;
 import com.duokan.reader.domain.cloud.DkCloudFictionChapter;
 import com.duokan.reader.domain.cloud.DkCloudFictionChapter.ChapterState;
 import com.duokan.reader.ui.general.expandable.StateExpandableAdapter;
-import com.duokan.reader.ui.general.expandable.StateExpandableAdapter.ExpandableAdapterState;
 
 class bf extends StateExpandableAdapter {
     static final /* synthetic */ boolean a = (!bc.class.desiredAssertionStatus());

@@ -1,6 +1,6 @@
 package com.duokan.reader.common.cache;
 
-import com.duokan.core.c.b;
+import com.duokan.core.c.IRunTask;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -11,7 +11,7 @@ public interface w {
 
     Collection a(int i);
 
-    Collection a(b bVar, Comparator comparator, t tVar);
+    Collection a(IRunTask bVar, Comparator comparator, t tVar);
 
     Comparator a();
 
@@ -21,11 +21,11 @@ public interface w {
 
     int b();
 
-    Collection b(b bVar, Comparator comparator, t tVar);
+    Collection b(IRunTask bVar, Comparator comparator, t tVar);
 
     int c();
 
-    Collection c(b bVar, Comparator comparator, t tVar);
+    Collection c(IRunTask bVar, Comparator comparator, t tVar);
 
     String d();
 }

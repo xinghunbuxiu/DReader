@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 import org.json.JSONObject;
 
@@ -34,6 +34,6 @@ class fi implements OnClickListener {
         }
         this.a.setText("");
         this.a.clearFocus();
-        dv.a(this.b.g.b.b.getContext());
+        UTools.hideSoftInputFromWindow(this.b.g.b.b.getContext());
     }
 }

@@ -1,10 +1,9 @@
 package com.duokan.reader.ui.general;
 
 import android.content.Context;
-import android.view.View.MeasureSpec;
 import android.widget.TextView;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class dw extends TextView {
     final /* synthetic */ ds a;
@@ -17,7 +16,7 @@ class dw extends TextView {
     protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         if (MeasureSpec.getMode(i) != 1073741824) {
-            super.onMeasure(MeasureSpec.makeMeasureSpec((int) ((((float) getText().length()) * getTextSize()) + ((float) dv.b(getContext(), 30.0f))), 1073741824), i2);
+            super.onMeasure(MeasureSpec.makeMeasureSpec((int) ((((float) getText().length()) * getTextSize()) + ((float) UTools.closeAnimation(getContext(), 30.0f))), 1073741824), i2);
         }
     }
 

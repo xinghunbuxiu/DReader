@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.e;
+import com.duokan.core.app.ActivatedController;
 import com.duokan.reader.ui.store.bv;
 
 import java.util.concurrent.Callable;
@@ -16,7 +16,7 @@ class gc implements Callable {
         return a();
     }
 
-    public e a() {
+    public ActivatedController a() {
         return bv.b(this.a.a.getContext());
     }
 }

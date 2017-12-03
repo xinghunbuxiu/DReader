@@ -11,20 +11,15 @@ import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
-import com.duokan.c.f;
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.DkReader;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
 import com.duokan.reader.common.webservices.WebSession;
-import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.document.epub.as;
-import com.duokan.reader.domain.statistics.a;
 import com.duokan.reader.ui.general.HangTagView;
 import com.duokan.reader.ui.general.gi;
 import com.duokan.reader.ui.general.web.StorePageController;
@@ -38,7 +33,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class kd extends e {
+public class kd extends ActivatedController {
     private static WebSession a = null;
     private static kn b = null;
     private final ho c = ((ho) getContext().queryFeature(ho.class));
@@ -49,8 +44,8 @@ public class kd extends e {
     private long h = 0;
     private StorePageController i = null;
 
-    public kd(y yVar) {
-        super(yVar);
+    public kd(IFeature featrue) {
+        super(featrue);
         setContentView(h.reading__hang_ad_view);
         this.d = (HangTagView) findViewById(g.reading__hang_ad_view__ad);
         this.d.setTagChainDrawable(getContext().getResources().getDrawable(f.reading__shared__hang_ad_chain));
@@ -85,13 +80,13 @@ public class kd extends e {
         }
     }
 
-    protected boolean onRequestDetach(e eVar) {
-        if (eVar != this.i) {
-            return super.onRequestDetach(eVar);
+    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
+        if (activatedControllerVar != this.i) {
+            return super.onRequestDetach(activatedControllerVar);
         }
-        e eVar2 = this.i;
+        ActivatedController activatedControllerVar2 = this.i;
         this.i = null;
-        dv.f(eVar2.getContentView(), new kh(this, eVar2));
+        UTools.f(activatedControllerVar2.getContentView(), new kh(this, activatedControllerVar2));
         return true;
     }
 
@@ -124,8 +119,8 @@ public class kd extends e {
             this.i.loadUrl(str);
             ((ViewGroup) getContentView()).addView(this.i.getContentView(), new LayoutParams(-1, -1));
             addSubController(this.i);
-            e eVar = this.i;
-            dv.d(eVar.getContentView(), new kj(this, eVar));
+            ActivatedController activatedControllerVar = this.i;
+            UTools.getScaledTouchSlop(activatedControllerVar.getContentView(), new kj(this, activatedControllerVar));
             d();
         }
     }
@@ -147,7 +142,7 @@ public class kd extends e {
                     options.inJustDecodeBounds = true;
                     BitmapFactory.decodeFile(knVar.g.getAbsolutePath(), options);
                     Options options2 = new Options();
-                    int b = dv.b(getContext(), 64.0f);
+                    int b = UTools.closeAnimation(getContext(), 64.0f);
                     options2.inSampleSize = Math.min(options.outWidth / b, options.outHeight / b);
                     Bitmap decodeFile = BitmapFactory.decodeFile(knVar.g.getAbsolutePath(), options2);
                     View imageView = new ImageView(getContext());
@@ -167,7 +162,7 @@ public class kd extends e {
             a(this.g.a);
             if (this.d.getVisibility() == 0) {
                 this.d.setVisibility(4);
-                dv.c(this.d, new kk(this));
+                UTools.showAnimation(this.d, new kk(this));
             }
         }
     }
@@ -179,8 +174,8 @@ public class kd extends e {
                 this.h = currentTimeMillis;
                 if (this.d.getVisibility() != 0) {
                     this.d.setVisibility(0);
-                    dv.h(this.d, new kl(this));
-                    a.k().e("reading/hang-ad/" + this.g.a + "/show");
+                    UTools.getPhysicalXPixels(this.d, new kl(this));
+                    a.k().e("reading/hang-MyTask/" + this.g.a + "/show");
                 }
             }
         }
@@ -189,7 +184,7 @@ public class kd extends e {
     private void f() {
         if (this.g != null && this.d.getVisibility() == 0) {
             this.d.setVisibility(4);
-            dv.f(this.d, null);
+            UTools.f(this.d, null);
             h();
         }
     }
@@ -199,8 +194,8 @@ public class kd extends e {
             this.f.setVisibility(0);
             this.e.setVisibility(0);
             this.f.setOnTouchListener(new km(this));
-            dv.b(this.e, null);
-            dv.b(this.f, null);
+            UTools.closeAnimation(this.e, null);
+            UTools.closeAnimation(this.f, null);
         }
     }
 
@@ -209,8 +204,8 @@ public class kd extends e {
         if (this.g != null && this.f.getVisibility() == 0) {
             this.f.setVisibility(4);
             this.e.setVisibility(4);
-            dv.c(this.f, null);
-            dv.c(this.e, null);
+            UTools.showAnimation(this.f, null);
+            UTools.showAnimation(this.e, null);
         }
     }
 
@@ -250,7 +245,7 @@ public class kd extends e {
                     String optString = jSONObject.optString("action", "");
                     int optInt = jSONObject.optInt("timeout");
                     String string = jSONObject.getString("promotion_pic");
-                    File file2 = new File(cacheDir, String.format("hang_ad_pic%d.img", new Object[]{Integer.valueOf(i2)}));
+                    File file2 = new File(cacheDir, String.format("hang_ad_pic%getScaledTouchSlop.img", new Object[]{Integer.valueOf(i2)}));
                     if (currentTimeMillis < j2) {
                         kn knVar = new kn();
                         knVar.a = i2;

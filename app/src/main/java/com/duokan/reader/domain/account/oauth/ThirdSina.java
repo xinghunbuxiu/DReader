@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 
 import com.duokan.b.i;
-import com.duokan.core.app.m;
+import com.duokan.core.app.BaseActivity;
 import com.duokan.core.app.r;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
@@ -15,10 +15,6 @@ import com.duokan.reader.common.webservices.WebSession.SessionState;
 import com.duokan.reader.common.webservices.duokan.a.a;
 import com.duokan.reader.common.webservices.duokan.a.c;
 import com.duokan.reader.common.webservices.duokan.a.d;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth.FetchUserInfoHandler;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth.OAuthCallback;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth.ResponseHandleResult;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth.UpdateHandler;
 import com.duokan.reader.domain.account.oauth.TokenStore.OnAccessTokenBindListener;
 import com.duokan.reader.ui.general.be;
 import com.duokan.reader.ui.general.jq;
@@ -235,11 +231,11 @@ public class ThirdSina extends ThirdOAuth implements r, WeiboAuthListener {
     }
 
     public void onActive() {
-        ((m) getActivity()).addOnActivityResultListener(this);
+        ((BaseActivity) getActivity()).addOnActivityResultListener(this);
     }
 
     public void onDeactive() {
-        ((m) getActivity()).removeOnActivityResultListener(this);
+        ((BaseActivity) getActivity()).removeOnActivityResultListener(this);
     }
 
     public void onActivityResult(int i, int i2, Intent intent) {

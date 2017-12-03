@@ -3,7 +3,7 @@ package com.duokan.reader.ui.general;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class jt implements AnimationListener {
     final /* synthetic */ jq a;
@@ -16,7 +16,7 @@ class jt implements AnimationListener {
     }
 
     public void onAnimationEnd(Animation animation) {
-        t.b(this.a.f);
+        TaskHandler.PostTask(this.a.f);
     }
 
     public void onAnimationRepeat(Animation animation) {

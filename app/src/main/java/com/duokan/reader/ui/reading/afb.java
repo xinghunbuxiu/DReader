@@ -1,7 +1,6 @@
 package com.duokan.reader.ui.reading;
 
 import android.content.Context;
-import android.widget.FrameLayout.LayoutParams;
 
 import com.duokan.reader.ui.general.PagesView;
 

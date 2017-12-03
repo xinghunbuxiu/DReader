@@ -3,7 +3,7 @@ package com.duokan.reader.ui.reading;
 import android.os.Build.VERSION;
 
 import com.duokan.c.e;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.ui.r;
 
@@ -16,7 +16,7 @@ class ry implements r {
 
     public int getPageHeaderHeight() {
         if (getPageHeaderPaddingTop() == 0) {
-            return this.a.c.getResources().getDimensionPixelSize(e.general__shared__page_header_height) - dv.b(this.a.c.getContext(), 15.0f);
+            return this.a.c.getResources().getDimensionPixelSize(e.general__shared__page_header_height) - UTools.closeAnimation(this.a.c.getContext(), 15.0f);
         }
         return this.a.c.getResources().getDimensionPixelSize(e.general__shared__page_header_height);
     }
@@ -29,7 +29,7 @@ class ry implements r {
         if (identifier > 0) {
             return this.a.c.getResources().getDimensionPixelSize(identifier);
         }
-        return dv.b(this.a.c.getContext(), 20.0f);
+        return UTools.closeAnimation(this.a.c.getContext(), 20.0f);
     }
 
     public int getHeaderPaddingTop() {

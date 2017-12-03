@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.sys.t;
-import com.duokan.core.ui.dv;
+import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.ui.UTools;
 
 class cm implements Runnable {
     public final int a;
@@ -9,7 +9,7 @@ class cm implements Runnable {
 
     public cm(bz bzVar, int i) {
         this.b = bzVar;
-        this.a = (i > 0 ? 1 : -1) * dv.b(bzVar.a.getContext(), 7.0f);
+        this.a = (i > 0 ? 1 : -1) * UTools.closeAnimation(bzVar.a.getContext(), 7.0f);
     }
 
     public void run() {
@@ -21,6 +21,6 @@ class cm implements Runnable {
             return;
         }
         this.b.j.a(0, this.a);
-        t.b((Runnable) this);
+        TaskHandler.PostTask((Runnable) this);
     }
 }

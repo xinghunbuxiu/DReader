@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 
 public class gk extends FrameLayout {
     private final gi a;

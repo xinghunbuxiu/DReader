@@ -5,7 +5,7 @@ import android.text.TextUtils;
 
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.j;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
@@ -44,7 +44,7 @@ public class b implements ah, h, ay {
     private final HashMap i = new HashMap();
 
     public DkCloudPushMessage a(String str) {
-        return t.b().a(str);
+        return TaskHandler.getThead().a(str);
     }
 
     protected b(Context context, i iVar, bb bbVar, ReaderEnv readerEnv) {
@@ -106,22 +106,22 @@ public class b implements ah, h, ay {
     }
 
     public void a(DkCloudPushMessage dkCloudPushMessage) {
-        t.b().a(dkCloudPushMessage);
+        TaskHandler.getThead().a(dkCloudPushMessage);
     }
 
     public void b(String str) {
-        t.b().b(str);
+        TaskHandler.getThead().b(str);
         e();
     }
 
     public void b() {
-        t.b().d();
+        TaskHandler.getThead().d();
         e();
         this.f.d();
     }
 
     public int c() {
-        return t.b().c() + this.f.b();
+        return TaskHandler.getThead().c() + this.f.b();
     }
 
     public void a(int i, long j, r rVar) {
@@ -178,7 +178,7 @@ public class b implements ah, h, ay {
     }
 
     private void e() {
-        t.a(new l(this));
+        TaskHandler.postTask(new l(this));
     }
 
     private void a(String str, a aVar, boolean z, Runnable runnable) {
@@ -247,7 +247,7 @@ public class b implements ah, h, ay {
         q[] qVarArr;
         boolean z2;
         int i = 20;
-        DkCloudPushMessage[] a = t.b().a(j);
+        DkCloudPushMessage[] a = TaskHandler.getThead().a(j);
         Collection a2 = q.a(a);
         Collection a3 = q.a(kVarArr);
         LinkedList linkedList = new LinkedList();

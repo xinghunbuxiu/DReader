@@ -7,7 +7,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.Animatable;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.Drawable.Callback;
 
 import com.duokan.b.e;
 

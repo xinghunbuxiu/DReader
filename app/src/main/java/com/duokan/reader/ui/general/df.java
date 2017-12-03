@@ -2,7 +2,7 @@ package com.duokan.reader.ui.general;
 
 import android.graphics.Rect;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 public abstract class df implements gi {
     final /* synthetic */ FlowPagesView a;
@@ -12,9 +12,9 @@ public abstract class df implements gi {
     }
 
     public Rect a() {
-        Rect b = dv.b(new Rect(0, 0, d().getWidth(), d().getHeight()), d(), this.a);
+        Rect b = UTools.closeAnimation(new Rect(0, 0, d().getWidth(), d().getHeight()), d(), this.a);
         if (b.intersect(0, 0, this.a.getWidth(), this.a.getHeight())) {
-            return c(new Rect(dv.b(new Rect(b), this.a, d())));
+            return c(new Rect(UTools.closeAnimation(new Rect(b), this.a, d())));
         }
         return new Rect();
     }
@@ -24,7 +24,7 @@ public abstract class df implements gi {
     }
 
     public void a(Rect rect) {
-        Rect c = this.a.getCellsView().c(new Rect(dv.b(new Rect(b(new Rect(rect))), d(), this.a)));
+        Rect c = this.a.getCellsView().c(new Rect(UTools.closeAnimation(new Rect(b(new Rect(rect))), d(), this.a)));
         this.a.getCellsView().scrollTo(c.left, c.top);
     }
 }

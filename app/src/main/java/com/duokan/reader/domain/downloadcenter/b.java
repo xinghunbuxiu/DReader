@@ -13,7 +13,7 @@ import android.support.v4.app.NotificationCompat.Builder;
 import com.duokan.b.i;
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.DkNotificationManager;
 import com.duokan.reader.DkPublic;
@@ -423,13 +423,13 @@ public class b implements ah, d {
 
     public void a(IDownloadTask iDownloadTask) {
         if (iDownloadTask.b().equals("3D7E8CAD-6534-415F-9484-F69F92B18637")) {
-            t.a(new f(this));
+            TaskHandler.a(new f(this));
         }
     }
 
     public void a(IDownloadTask iDownloadTask, TaskStatus taskStatus) {
         if (iDownloadTask.b().equals("3D7E8CAD-6534-415F-9484-F69F92B18637")) {
-            t.a(new g(this, iDownloadTask));
+            TaskHandler.a(new g(this, iDownloadTask));
         }
     }
 
@@ -441,7 +441,7 @@ public class b implements ah, d {
             } else {
                 b = TaskResult.NONE;
             }
-            t.a(new h(this, iDownloadTask, b));
+            TaskHandler.postTask(new h(this, iDownloadTask, b));
         }
     }
 
@@ -486,7 +486,7 @@ public class b implements ah, d {
                 renameTo = file.renameTo(file2);
             } else if (p.equals("application/epub+zip")) {
                 renameTo = file.renameTo(file2);
-            } else if (p.equals("application/zip") || p.equals("application/x-gzip") || p.equals("application/x-winzip") || p.equals("applicatoin/x-zip") || p.equals("application/x-zip-compressed")) {
+            } else if (p.equals("application/zip") || p.equals("application/MyContextWrapper-gzip") || p.equals("application/MyContextWrapper-winzip") || p.equals("applicatoin/MyContextWrapper-zip") || p.equals("application/MyContextWrapper-zip-compressed")) {
                 DkPublic.unzip(file, file.getParentFile());
                 renameTo = file2.exists();
                 if (renameTo) {
@@ -579,7 +579,7 @@ public class b implements ah, d {
     private void t() {
         if (this.i == null) {
             this.i = new i(this);
-            t.b(this.i);
+            TaskHandler.PostTask(this.i);
         }
     }
 

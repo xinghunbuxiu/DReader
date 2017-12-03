@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.domain.bookshelf.ah;
 import com.duokan.reader.ui.welcome.DkTipManager.UserInput;
 import com.duokan.reader.ui.welcome.p;
@@ -25,7 +25,7 @@ class bi implements Runnable {
                 this.b.b.G().a(Lists.newArrayList(g.toArray(new ah[0])), true);
             } else {
                 this.b.b.G().a(this.b.f());
-                p pVar = (p) x.a(this.b.p).queryFeature(p.class);
+                p pVar = (p) MyContextWrapper.getFeature(this.b.p).queryFeature(p.class);
                 if (!a && pVar == null) {
                     throw new AssertionError();
                 } else if (pVar != null) {

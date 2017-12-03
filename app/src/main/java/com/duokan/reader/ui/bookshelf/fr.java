@@ -1,8 +1,7 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
-import com.duokan.core.io.a;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.ui.bookshelf.ImportedFileInfo.FileStatus;
 import com.duokan.reader.ui.surfing.af;
@@ -13,7 +12,7 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class fr extends e {
+public class fr extends ActivatedController {
     private int a = 0;
     private fy b;
     private gt c = null;
@@ -21,8 +20,8 @@ public class fr extends e {
     private List e = new LinkedList();
     private final Comparator f = new fs(this);
 
-    public fr(y yVar, Runnable runnable) {
-        super(yVar);
+    public fr(IFeature featrue, Runnable runnable) {
+        super(featrue);
         this.b = new fy(getContext(), b(), runnable);
         setContentView(this.b);
     }

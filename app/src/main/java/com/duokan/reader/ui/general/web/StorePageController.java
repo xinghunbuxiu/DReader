@@ -11,18 +11,18 @@ import android.webkit.CookieManager;
 import android.widget.TextView;
 
 import com.duokan.c.g;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ManagedApp;
-import com.duokan.core.app.b;
-import com.duokan.core.app.e;
-import com.duokan.core.app.w;
-import com.duokan.core.app.y;
+import com.duokan.core.app.TansFormUtils;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IActivityRunStatusChanged;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.af;
-import com.duokan.core.sys.t;
 import com.duokan.core.sys.z;
 import com.duokan.core.ui.BoxView;
 import com.duokan.core.ui.PullDownRefreshView.RefreshStyle;
 import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.j;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
@@ -88,7 +88,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     private static h sAccountListener = null;
     private static boolean sCookieSet = false;
     private static StorePageController sPreloadedController = null;
-    private static w sRunningStateListener = null;
+    private static IActivityRunStatusChanged sRunningStateListener = null;
     private a mAdLifecycleManager;
     private r mAdSdkService;
     private cf mBannerInfo;
@@ -122,7 +122,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     private boolean mRequestBack;
     private int mScreenOrientation;
     private boolean mScrollSmoothly;
-    private e mShareController;
+    private ActivatedController mShareController;
     protected ay mShareEntranceContext;
     private int mSurfingBarOffset;
     private final LinkedHashMap mTabsTitle;
@@ -144,12 +144,12 @@ public class StorePageController extends StoreWebController implements SystemUiC
         super.updateStoreMirror(z);
     }
 
-    public static StorePageController createWebPage(y yVar) {
+    public static StorePageController createWebPage(IFeature featrue) {
         StorePageController storePageController;
         com.duokan.core.diagnostic.a.c().a();
         StorePageController storePageController2 = sPreloadedController;
-        if (storePageController2 == null || storePageController2.getActivity() != b.a((Context) yVar)) {
-            storePageController = new StorePageController(yVar);
+        if (storePageController2 == null || storePageController2.getActivity() != TansFormUtils.getContext((Context) featrue)) {
+            storePageController = new StorePageController(featrue);
             storePageController.loadUrl(p.i().a());
         } else {
             storePageController = storePageController2;
@@ -158,8 +158,8 @@ public class StorePageController extends StoreWebController implements SystemUiC
         return storePageController;
     }
 
-    public StorePageController(y yVar) {
-        super(yVar);
+    public StorePageController(IFeature featrue) {
+        super(featrue);
         this.mEventListMap = new ConcurrentHashMap();
         this.mTabsTitle = new LinkedHashMap();
         this.mScreenOrientation = 0;
@@ -205,7 +205,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
         textView.setText(com.duokan.c.j.general__shared__web_refresh);
         textView.setVisibility(0);
         textView.setOnClickListener(new bg(this));
-        getContext().a(this.mDetailFeature);
+        getContext().addFirstLocalFeature(this.mDetailFeature);
         this.mHeaderViewRightButtonConditionMap = new HashMap();
         js_addHeaderViewRightButtonCondition("PUBLISH_FEED", new kj(this, com.duokan.c.f.store__header_view_button__edit, null));
         js_addHeaderViewRightButtonCondition("CART_ADD", new kj(this, com.duokan.c.f.store__header_view_button__cart_add, null));
@@ -352,9 +352,9 @@ public class StorePageController extends StoreWebController implements SystemUiC
             }
             Runnable byVar = new by(this);
             if (z) {
-                t.a(byVar, 300);
+                TaskHandler.postDelayed(byVar, 300);
             } else {
-                t.a(byVar);
+                TaskHandler.postTask(byVar);
             }
             if (!webPageLoading()) {
                 if (com.duokan.reader.common.c.f.b().e()) {
@@ -369,7 +369,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
                         sAccountListener = new cc(this);
                         i.f().a(sAccountListener);
                     }
-                    t.a(new cd(this));
+                    TaskHandler.postTask(new cd(this));
                 }
             }
         }
@@ -474,7 +474,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     private void setWebViewPadding() {
-        int b = dv.b(getContext(), 65.0f);
+        int b = UTools.closeAnimation(getContext(), 65.0f);
         if (this.mHasTitle && this.mImmersive) {
             b = 0;
         } else if (!this.mHasTitle) {
@@ -546,7 +546,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     protected void showFictionToc(String str, boolean z) {
-        t.a(new ar(this, str, z));
+        TaskHandler.postTask(new ar(this, str, z));
     }
 
     private JSONObject jsonSerialDetail(DkStoreFictionDetail dkStoreFictionDetail) {
@@ -674,15 +674,15 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     protected void giving(String str) {
-        t.a(new ba(this, str));
+        TaskHandler.postTask(new ba(this, str));
     }
 
     private void showBookToc(String str) {
-        t.a(new bd(this, str));
+        TaskHandler.postTask(new bd(this, str));
     }
 
     protected void showBookChangeLog(String str) {
-        t.a(new bf(this, str));
+        TaskHandler.postTask(new bf(this, str));
     }
 
     protected void registerEventOnCurrentUrl(String str) {
@@ -731,7 +731,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
         if (!copyOnWriteArrayList.contains(str)) {
             return false;
         }
-        t.a(new bh(this, kl.a(str, "event", 0, obj)));
+        TaskHandler.postTask(new bh(this, kl.a(str, "event", 0, obj)));
         return true;
     }
 
@@ -740,7 +740,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
         if (a == null || a.getPath() == null) {
             return false;
         }
-        t.a(new bi(this, kl.a(str, "event", 0, (Object) str2)));
+        TaskHandler.postTask(new bi(this, kl.a(str, "event", 0, (Object) str2)));
         return true;
     }
 
@@ -760,7 +760,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     protected void web_notifyWeb(String str, int i, JSONObject jSONObject) {
         String str2 = "callback." + str;
         sParcelMap.put(str2, jSONObject.toString());
-        t.a(new bj(this, kl.a(str, "callback", i, str2)));
+        TaskHandler.postTask(new bj(this, kl.a(str, "callback", i, str2)));
     }
 
     protected boolean checkPageError() {
@@ -865,7 +865,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     private int getHeaderViewOffset() {
-        return (this.mHasTitle && this.mImmersive) ? dv.b(getContext(), 65.0f) : 0;
+        return (this.mHasTitle && this.mImmersive) ? UTools.closeAnimation(getContext(), 65.0f) : 0;
     }
 
     protected void onPageCreated(int i, String str) {
@@ -879,12 +879,12 @@ public class StorePageController extends StoreWebController implements SystemUiC
         return isActive();
     }
 
-    protected boolean onRequestDetach(e eVar) {
-        if (this.mShareEntranceContext == null || !this.mShareEntranceContext.a(eVar) || !containsDirectly(eVar)) {
+    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
+        if (this.mShareEntranceContext == null || !this.mShareEntranceContext.a(activatedControllerVar) || !containsDirectly(activatedControllerVar)) {
             return false;
         }
-        removeSubController(eVar);
-        deactivate(eVar);
+        removeSubController(activatedControllerVar);
+        deactivate(activatedControllerVar);
         return true;
     }
 
@@ -903,7 +903,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     protected void js_showWeb(String str, String str2, boolean z) {
-        e createWebPage = createWebPage(getContext());
+        ActivatedController createWebPage = createWebPage(getContext());
         createWebPage.setLoadingStyle(getLoadingStyle());
         createWebPage.setPageTitle(str);
         createWebPage.loadUrl(str2);
@@ -952,10 +952,10 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     protected String currentUrl() {
-        if (t.a()) {
+        if (TaskHandler.isCurrentThread()) {
             return this.mWebView.getCurrentUrl();
         }
-        return (String) t.a(new bp(this));
+        return (String) TaskHandler.postTask(new bp(this));
     }
 
     protected String handleUrl(String str) {
@@ -969,11 +969,11 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     public void js_button(boolean z, String str) {
-        t.a(new bq(this, z, str));
+        TaskHandler.postTask(new bq(this, z, str));
     }
 
     public void js_pay(String str, String str2, d dVar, JSONObject jSONObject) {
-        t.a(new bs(this, jSONObject, str2, dVar, str));
+        TaskHandler.postTask(new bs(this, jSONObject, str2, dVar, str));
     }
 
     protected int js_getPagePaddingBottom() {
@@ -981,7 +981,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
         if (sVar == null) {
             return 0;
         }
-        return Math.max(0, ((int) dv.b(getContext(), sVar.getTheme().getPagePaddingBottom())) - 10);
+        return Math.max(0, ((int) UTools.closeAnimation(getContext(), sVar.getTheme().getPagePaddingBottom())) - 10);
     }
 
     public void setOnScrollListener(com.duokan.core.ui.cg cgVar) {

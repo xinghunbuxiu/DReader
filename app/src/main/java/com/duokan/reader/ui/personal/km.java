@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.personal;
 
 import com.duokan.c.j;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
 import com.duokan.reader.ReaderFeature;
@@ -44,7 +44,7 @@ class km implements kn {
     }
 
     public void a(DkCloudStoreBook dkCloudStoreBook) {
-        e eVar = (e) x.a(this.a.getContext()).queryFeature(e.class);
+        e eVar = (e) MyContextWrapper.getFeature(this.a.getContext()).queryFeature(e.class);
         if (dkCloudStoreBook instanceof DkCloudPurchasedBook) {
             eVar.pushPageSmoothly(bv.a(this.a.getContext(), String.valueOf(0), 1, dkCloudStoreBook.getBookUuid(), "Purchased_" + dkCloudStoreBook.getBookUuid()), null);
         } else if (dkCloudStoreBook instanceof DkCloudPurchasedFiction) {

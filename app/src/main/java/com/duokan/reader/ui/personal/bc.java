@@ -7,17 +7,17 @@ import com.duokan.a.a;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.LinearScrollView;
 import com.duokan.reader.ui.general.PageHeaderView;
 import com.duokan.reader.ui.s;
 
-public class bc extends e {
+public class bc extends ActivatedController {
     a a = null;
 
-    public bc(y yVar) {
-        super(yVar);
+    public bc(IFeature featrue) {
+        super(featrue);
         setContentView(h.personal__diagnostics_view);
         ((PageHeaderView) findViewById(g.personal__diagnostics_view__header)).setLeftTitle(j.personal__personal_settings_view__diagnostics);
         s sVar = (s) getContext().queryFeature(s.class);

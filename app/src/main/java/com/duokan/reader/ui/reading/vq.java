@@ -4,16 +4,16 @@ import android.view.View;
 
 import com.duokan.b.g;
 import com.duokan.b.i;
-import com.duokan.core.app.e;
-import com.duokan.core.app.x;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.bookshelf.BookFormat;
 import com.duokan.reader.ui.general.DkLabelView;
 import com.duokan.reader.ui.general.HeaderView;
 import com.duokan.reader.ui.general.ia;
 
-public class vq extends e {
+public class vq extends ActivatedController {
     private final sh a = ((sh) getContext().queryFeature(sh.class));
     private final HeaderView b;
     private final DkLabelView c;
@@ -21,8 +21,8 @@ public class vq extends e {
     private final DkLabelView e;
     private final DkLabelView f;
 
-    public vq(y yVar) {
-        super(yVar);
+    public vq(IFeature featrue) {
+        super(featrue);
         setContentView(g.reading__reading_prefs_view);
         this.b = (HeaderView) findViewById(f.reading__reading_prefs_view__header);
         this.b.setLeftTitle(getString(i.reading__reading_prefs_view__title));
@@ -64,12 +64,12 @@ public class vq extends e {
 
     protected void onAttachToStub() {
         super.onAttachToStub();
-        ((sh) x.a(getContext()).queryFeature(sh.class)).a(0, 128);
+        ((sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class)).a(0, 128);
     }
 
     protected void onDetachFromStub() {
         this.a.aA();
-        ((sh) x.a(getContext()).queryFeature(sh.class)).a(128, 0);
+        ((sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class)).a(128, 0);
     }
 
     private void a() {

@@ -3,8 +3,7 @@ package com.duokan.reader.domain.ad;
 import android.text.TextUtils;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.common.webservices.d;
@@ -29,7 +28,7 @@ class l extends WebSession {
     protected void onSessionTry() {
         Map hashMap = new HashMap();
         hashMap.put("fictionId", this.b.f);
-        JSONObject a = new d(this).a(execute(new q().a("http://api.ad.xiaomi.com/u/api").b(this.b.c).c("2.0").a(5).a(hashMap).a()));
+        JSONObject a = new d(this).a(execute(new q().a("http://api.MyTask.xiaomi.com/u/api").b(this.b.c).c("2.0").a(5).a(hashMap).a()));
         this.a.b = a.getInt(Mipay.KEY_CODE);
         if (this.a.b == 0) {
             JSONArray jSONArray = a.getJSONArray("adInfos");
@@ -60,7 +59,7 @@ class l extends WebSession {
             this.a.a = arrayList;
             return;
         }
-        a.c().c(LogLevel.ERROR, "ads", String.format("fetching ads errorCode %d", new Object[]{Integer.valueOf(this.a.b)}));
+        a.c().c(LogLevel.ERROR, "ads", String.format("fetching ads errorCode %getScaledTouchSlop", new Object[]{Integer.valueOf(this.a.b)}));
     }
 
     protected boolean onSessionException(Exception exception, int i) {
@@ -69,7 +68,7 @@ class l extends WebSession {
     }
 
     protected void onSessionSucceeded() {
-        t.a(new m(this));
+        TaskHandler.postTask(new m(this));
     }
 
     protected void onSessionFailed() {

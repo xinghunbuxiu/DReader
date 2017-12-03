@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.store;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class bn implements Runnable {
     final /* synthetic */ bl a;
@@ -10,6 +10,6 @@ class bn implements Runnable {
     }
 
     public void run() {
-        t.a(new bo(this));
+        TaskHandler.postTask(new bo(this));
     }
 }

@@ -6,7 +6,7 @@ import android.view.View;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.bookshelf.BookContent;
 import com.duokan.reader.domain.bookshelf.an;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.ba;
 import com.duokan.reader.domain.document.g;
@@ -38,7 +38,7 @@ class xo extends aaj {
     }
 
     public long[] a(ak akVar) {
-        if (!this.a.h.d((a) akVar) || !akVar.e()) {
+        if (!this.a.h.d((Document_a) akVar) || !akVar.e()) {
             return new long[0];
         }
         if (((b) akVar.g()).g() == ((b) akVar.h()).g()) {

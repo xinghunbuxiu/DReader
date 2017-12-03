@@ -6,9 +6,8 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.animation.AlphaAnimation;
 
-import com.duokan.b.e;
-import com.duokan.core.sys.t;
-import com.duokan.core.ui.dv;
+import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.DkSimulationInterpolator.Mode;
 
 final class ab extends Drawable {
@@ -65,12 +64,12 @@ final class ab extends Drawable {
             canvas.save();
             int width = (this.c.width() - i) / 2;
             int height = (this.c.height() - i2) / 2;
-            Rect rect = (Rect) dv.g.a();
+            Rect rect = (Rect) UTools.g.getRect();
             rect.set(width, height, i + width, i2 + height);
             this.b.setBounds(rect);
             this.b.draw(canvas);
             canvas.restore();
-            dv.g.a(rect);
+            UTools.g.getRect(rect);
         }
     }
 
@@ -97,7 +96,7 @@ final class ab extends Drawable {
         this.d.setInterpolator(new DkSimulationInterpolator(Mode.ACCELERATE));
         Runnable acVar = new ac(this, i2, i, i4, i3);
         this.d.start();
-        t.a(acVar);
+        TaskHandler.postTask(acVar);
     }
 
     private void d() {

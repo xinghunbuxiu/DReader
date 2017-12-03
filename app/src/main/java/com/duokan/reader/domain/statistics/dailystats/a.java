@@ -3,11 +3,11 @@ package com.duokan.reader.domain.statistics.dailystats;
 import android.net.Uri;
 import android.telephony.TelephonyManager;
 
+import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.app.w;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.c.f;
@@ -18,7 +18,7 @@ import com.duokan.reader.domain.bookshelf.c;
 import java.io.File;
 import java.io.Serializable;
 
-public class a implements ah, w {
+public class a implements ah, IActivityRunStatusChanged {
     private static final ai h = new ai();
     private final com.duokan.core.a.a a;
     private final ReaderEnv b;
@@ -87,7 +87,7 @@ public class a implements ah, w {
                 this.e.closeTime = System.currentTimeMillis();
                 this.e.bookId = cVar.ai() ? cVar.ap() : cVar.aw();
                 this.e.bookType = cVar.ai() ? "dk" : "lc";
-                this.e.bookStatus = "f";
+                this.e.bookStatus = "HttpLogger";
                 this.e.exit = 0;
                 this.e.autoBuyCount = 0;
                 this.e.autoBuyPrice = 0;
@@ -138,7 +138,7 @@ public class a implements ah, w {
             Serializable statDelete = new StatDelete();
             statDelete.event = "del";
             statDelete.bookName = str;
-            statDelete.deleteType = "c";
+            statDelete.deleteType = "showAnimation";
             statDelete.traceId = str2;
             statDelete.timeStamp = System.currentTimeMillis();
             a(System.currentTimeMillis() + "", statDelete);

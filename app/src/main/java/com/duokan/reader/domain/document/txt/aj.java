@@ -6,9 +6,8 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.text.TextUtils;
 
-import com.duokan.core.diagnostic.a;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.kernel.DkArgbColor;
 import com.duokan.kernel.DkBox;
 import com.duokan.kernel.DkFlowRenderOption;
@@ -74,7 +73,7 @@ public class aj extends ag implements ba, bd, ar {
         } else if (c || (aiVar != null && aiVar.a())) {
             a.c().b(N());
             this.d = auVar;
-            this.d.b((Object) t.b());
+            this.d.b((Object) TaskHandler.getThead());
             this.d.b((Object) this);
             this.e = new ai(this.d, aiVar, 0);
             this.f = ahVar;
@@ -266,7 +265,7 @@ public class aj extends ag implements ba, bd, ar {
             }
             O();
             this.d.b((bd) this);
-            this.d.c(t.b());
+            this.d.c(TaskHandler.getThead());
         }
     }
 
@@ -767,7 +766,7 @@ public class aj extends ag implements ba, bd, ar {
                 return i;
             }
             if (this.o == null && this.m >= 0) {
-                this.o = String.format("%d / %d", new Object[]{Long.valueOf(this.m + 1), Long.valueOf(this.d.b())});
+                this.o = String.format("%getScaledTouchSlop / %getScaledTouchSlop", new Object[]{Long.valueOf(this.m + 1), Long.valueOf(this.d.b())});
             }
             if (TextUtils.isEmpty(this.o)) {
                 return i;

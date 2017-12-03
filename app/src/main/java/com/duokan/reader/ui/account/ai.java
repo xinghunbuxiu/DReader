@@ -6,16 +6,13 @@ import android.text.TextUtils.TruncateAt;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.duokan.c.g;
-import com.duokan.c.h;
 import com.duokan.core.sys.ag;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.domain.account.a;
@@ -80,7 +77,7 @@ public class ai extends RelativeLayout {
         ajVar.addView(this.c, new LayoutParams(0, -2));
         this.d = new TextView(getContext());
         this.d.setTextColor(getResources().getColor(d.general__shared__c7));
-        this.d.setPadding(dv.b(getContext(), 6.0f), 0, dv.b(getContext(), 10.0f), 0);
+        this.d.setPadding(UTools.closeAnimation(getContext(), 6.0f), 0, UTools.closeAnimation(getContext(), 10.0f), 0);
         this.d.setTextSize(1, 12.0f);
         ajVar.addView(this.d);
         this.e = new TextView(getContext());
@@ -89,7 +86,7 @@ public class ai extends RelativeLayout {
         this.e.setGravity(5);
         ajVar.addView(this.e);
         LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, -2);
-        layoutParams.setMargins(dv.b(getContext(), 28.0f), dv.b(getContext(), 40.0f), dv.b(getContext(), 28.0f), dv.b(getContext(), 25.0f));
+        layoutParams.setMargins(UTools.closeAnimation(getContext(), 28.0f), UTools.closeAnimation(getContext(), 40.0f), UTools.closeAnimation(getContext(), 28.0f), UTools.closeAnimation(getContext(), 25.0f));
         linearLayout.addView(ajVar, 0, layoutParams);
     }
 

@@ -16,14 +16,14 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.c.j;
 import com.duokan.core.app.BrightnessMode;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IActivityRunStatusChanged;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.s;
 import com.duokan.core.ui.cv;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.MiuiAssistContent;
 import com.duokan.reader.ReaderEnv;
@@ -34,11 +34,9 @@ import com.duokan.reader.SystemUiMode;
 import com.duokan.reader.UmengManager;
 import com.duokan.reader.common.c.f;
 import com.duokan.reader.common.c.g;
-import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.account.oauth.ThirdOAuth;
 import com.duokan.reader.domain.account.oauth.ThirdYinxiang;
 import com.duokan.reader.domain.account.oauth.TokenStore;
-import com.duokan.reader.domain.b.b;
 import com.duokan.reader.domain.bookshelf.BookFormat;
 import com.duokan.reader.domain.bookshelf.BookLimitType;
 import com.duokan.reader.domain.bookshelf.BookType;
@@ -50,9 +48,8 @@ import com.duokan.reader.domain.bookshelf.js;
 import com.duokan.reader.domain.bookshelf.ju;
 import com.duokan.reader.domain.cloud.DkUserPurchasedBooksManager;
 import com.duokan.reader.domain.cloud.PersonalPrefs;
-import com.duokan.reader.domain.cloud.h;
-import com.duokan.reader.domain.document.a;
-import com.duokan.reader.domain.document.a.d;
+import com.duokan.reader.domain.document.Document_a;
+import com.duokan.reader.domain.document.Document_a.d;
 import com.duokan.reader.domain.document.aa;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.as;
@@ -95,10 +92,10 @@ public abstract class qh extends p implements SystemUiConditioner, g, w, xb {
     private aq L = null;
     private co M = null;
     private com.duokan.reader.domain.bookshelf.w N = null;
-    private com.duokan.core.app.w O = null;
+    private IActivityRunStatusChanged O = null;
     private Callback P = new qi(this);
     private s a = null;
-    private final a b = new a();
+    private final Document_a b = new Document_a();
     protected final rx c;
     protected final ReadingPrefs d;
     protected final wl e;
@@ -118,7 +115,7 @@ public abstract class qh extends p implements SystemUiConditioner, g, w, xb {
     protected BookLimitType s;
     protected Bitmap t = null;
     protected String u = "";
-    protected a v = null;
+    protected Document_a v = null;
     protected boolean w = false;
     protected av x = null;
     protected ak y = null;
@@ -140,8 +137,8 @@ public abstract class qh extends p implements SystemUiConditioner, g, w, xb {
 
     protected abstract void l();
 
-    public qh(y yVar, c cVar, a aVar) {
-        super(yVar);
+    public qh(IFeature featrue, c cVar, Document_a aVar) {
+        super(featrue);
         com.duokan.reader.domain.statistics.dailystats.a.d().a();
         this.l = System.currentTimeMillis();
         this.f = cVar;
@@ -149,7 +146,7 @@ public abstract class qh extends p implements SystemUiConditioner, g, w, xb {
         this.c = e();
         this.r = this.f.o();
         this.s = this.f.p();
-        getContext().a(this.c);
+        getContext().addFirstLocalFeature(this.c);
         getContext().registerGlobalFeature(this.c);
         ai.a().a(this.c);
         w();
@@ -254,12 +251,12 @@ public abstract class qh extends p implements SystemUiConditioner, g, w, xb {
         if (TextUtils.isEmpty(str) || !str.equals("prefs/font")) {
             return false;
         }
-        e etVar = new et(getContext(), true);
+        ActivatedController etVar = new et(getContext(), true);
         if (z) {
             ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(etVar, runnable);
         } else {
             ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).pushHalfPage(etVar);
-            dv.a(etVar.getContentView(), runnable);
+            UTools.addAnimation(etVar.getContentView(), runnable);
         }
         return true;
     }
@@ -731,11 +728,11 @@ public abstract class qh extends p implements SystemUiConditioner, g, w, xb {
         switch (ri.a[ReaderUi.l(getContext()).ordinal()]) {
             case 1:
             case 2:
-                return (dv.g(getContext(), 16.0f) / 2) * 2;
+                return (UTools.g(getContext(), 16.0f) / 2) * 2;
             case 3:
-                return (dv.g(getContext(), 12.0f) / 2) * 2;
+                return (UTools.g(getContext(), 12.0f) / 2) * 2;
             default:
-                return (dv.g(getContext(), 14.0f) / 2) * 2;
+                return (UTools.g(getContext(), 14.0f) / 2) * 2;
         }
     }
 
@@ -785,7 +782,7 @@ public abstract class qh extends p implements SystemUiConditioner, g, w, xb {
             Rect c;
             gn X = this.c.X();
             if (X.e() && X.g().equals(this.A)) {
-                c = X.c(dv.a(new Rect(), this.e.getShowingPagesView(), X.d()));
+                c = X.c(UTools.getRect(new Rect(), this.e.getShowingPagesView(), X.d()));
             } else {
                 c = new Rect(0, 0, 0, 0);
             }

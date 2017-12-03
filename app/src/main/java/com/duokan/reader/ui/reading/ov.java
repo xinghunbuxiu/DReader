@@ -3,7 +3,6 @@ package com.duokan.reader.ui.reading;
 import android.content.Context;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.widget.FrameLayout.LayoutParams;
 
 import com.duokan.reader.domain.bookshelf.hh;
 import com.duokan.reader.ui.general.FixedPagesView.PageScaleType;

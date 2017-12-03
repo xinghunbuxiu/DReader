@@ -4,7 +4,6 @@ import android.text.TextUtils;
 
 import com.duokan.core.sys.af;
 import com.duokan.reader.domain.micloud.bi;
-import com.umeng.analytics.pro.j;
 
 import org.json.JSONObject;
 

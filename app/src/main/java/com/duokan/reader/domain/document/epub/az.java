@@ -8,9 +8,8 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.text.TextUtils;
 
-import com.duokan.core.diagnostic.a;
 import com.duokan.core.sys.ah;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.kernel.DkArgbColor;
 import com.duokan.kernel.DkBox;
 import com.duokan.kernel.DkFlowPosition;
@@ -1172,7 +1171,7 @@ public class az extends as implements ba, bd, cc {
                 return i;
             }
             if (this.v == null && this.s >= 0) {
-                this.v = String.format("%d / %d", new Object[]{Long.valueOf(this.s + 1), Long.valueOf(this.e.b())});
+                this.v = String.format("%getScaledTouchSlop / %getScaledTouchSlop", new Object[]{Long.valueOf(this.s + 1), Long.valueOf(this.e.b())});
             }
             if (this.u == null && this.s >= 0) {
                 long d2 = this.e.d(this.j.a) - this.j.b;
@@ -1187,7 +1186,7 @@ public class az extends as implements ba, bd, cc {
                     }
                 }
                 long j3 = d2;
-                this.u = String.format(!TextUtils.isEmpty(this.g.q) ? this.g.q : "%d", new Object[]{Long.valueOf(j3)});
+                this.u = String.format(!TextUtils.isEmpty(this.g.q) ? this.g.q : "%getScaledTouchSlop", new Object[]{Long.valueOf(j3)});
             }
             if (this.g.r && this.u != null) {
                 a(canvas, this.u, 5, this.a);
@@ -1197,16 +1196,16 @@ public class az extends as implements ba, bd, cc {
             }
             k p = p();
             m q = q();
-            Rect rect = (Rect) dv.g.a();
-            Rect rect2 = (Rect) dv.g.a();
+            Rect rect = (Rect) UTools.g.getRect();
+            Rect rect2 = (Rect) UTools.g.getRect();
             int i3 = p.c.left;
             a = getBounds().height() - p.c.bottom;
             int width2 = getBounds().width() - p.c.right;
-            int width3 = (this.g.n && this.g.r && this.u != null) ? dv.a(rect2, this.a, this.u, (float) (getBounds().width() - p.c.right)).width() + dv.b(DkApp.get().getTopActivity(), 10.0f) : 0;
+            int width3 = (this.g.n && this.g.r && this.u != null) ? UTools.addAnimation(rect2, this.a, this.u, (float) (getBounds().width() - p.c.right)).width() + UTools.closeAnimation(DkApp.get().getTopActivity(), 10.0f) : 0;
             rect.set(i3, a, width2 - width3, (getBounds().height() - p.c.bottom) + q.f);
-            dv.a(canvas, this.v, rect, (this.g.n ? 5 : 1) | 16, this.a);
-            dv.g.a(rect2);
-            dv.g.a(rect);
+            UTools.addAnimation(canvas, this.v, rect, (this.g.n ? 5 : 1) | 16, this.a);
+            UTools.g.getRect(rect2);
+            UTools.g.getRect(rect);
             return i;
         }
     }
@@ -1557,7 +1556,7 @@ public class az extends as implements ba, bd, cc {
                     if ((Y instanceof DkeErrorPage) || !this.l.isEmpty()) {
                         if (!(this.H == 0 || Z().getChapterType(this.j.a) == 2)) {
                             Canvas canvas = new Canvas(bitmap);
-                            Paint paint = (Paint) dv.b.a();
+                            Paint paint = (Paint) UTools.b.getRect();
                             paint.setColor(Color.argb(Math.round(12.75f), 0, 0, 0));
                             for (av avVar : this.l) {
                                 if (avVar.j() || avVar.l() == null) {
@@ -1569,7 +1568,7 @@ public class az extends as implements ba, bd, cc {
                                     }
                                 }
                             }
-                            dv.b.a(paint);
+                            UTools.b.getRect(paint);
                         }
                         if (this.i != null) {
                             this.i.b(null, this);

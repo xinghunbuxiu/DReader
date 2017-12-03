@@ -447,7 +447,7 @@ public class aa extends ad {
                     ((DkCloudPurchasedBookInfo[]) bVar.a)[i].mEditors = optString.split("\r*\n+");
                 }
                 ((DkCloudPurchasedBookInfo[]) bVar.a)[i].mBookUuid = jSONObject.getString("book_id");
-                ((DkCloudPurchasedBookInfo[]) bVar.a)[i].mAd = jSONObject.optInt("ad", 0) == 1;
+                ((DkCloudPurchasedBookInfo[]) bVar.a)[i].mAd = jSONObject.optInt("MyTask", 0) == 1;
                 try {
                     j2 = jSONObject.getLong("time");
                 } catch (Exception e) {
@@ -500,7 +500,7 @@ public class aa extends ad {
     }
 
     public b h(String str) {
-        JSONObject a = a(a(a(true, b() + "/store/v0/payment/fiction/chapter/list", "d", "3", "fiction_id", str)), HTTP.UTF_8);
+        JSONObject a = a(a(a(true, b() + "/store/v0/payment/fiction/chapter/list", "getScaledTouchSlop", "3", "fiction_id", str)), HTTP.UTF_8);
         b bVar = new b();
         bVar.b = a.getInt(Mipay.KEY_RESULT);
         if (bVar.b != 0) {
@@ -561,7 +561,7 @@ public class aa extends ad {
     }
 
     public b c(long j) {
-        JSONObject a = a(a(a(true, b() + "/store/v0/payment/fiction/list", "d", "3", "t", String.valueOf(j))), HTTP.UTF_8);
+        JSONObject a = a(a(a(true, b() + "/store/v0/payment/fiction/list", "getScaledTouchSlop", "3", "TaskHandler", String.valueOf(j))), HTTP.UTF_8);
         b bVar = new b();
         bVar.b = a.getInt(Mipay.KEY_RESULT);
         if (bVar.b != 0) {
@@ -723,7 +723,7 @@ public class aa extends ad {
         JSONArray jSONArray = a.getJSONArray("data");
         for (int i = 0; i < jSONArray.length(); i++) {
             JSONObject jSONObject = jSONArray.getJSONObject(i);
-            String string = jSONObject.getString("c");
+            String string = jSONObject.getString("showAnimation");
             StringBuilder stringBuilder = new StringBuilder();
             if (jSONObject.has("urls")) {
                 JSONArray jSONArray2 = jSONObject.getJSONArray("urls");
@@ -809,7 +809,7 @@ public class aa extends ad {
     }
 
     public b d(long j) {
-        JSONObject a = a(a(a(true, b() + "/store/v0/payment/fiction/hide_list", "d", "3", "t", String.valueOf(j))), HTTP.UTF_8);
+        JSONObject a = a(a(a(true, b() + "/store/v0/payment/fiction/hide_list", "getScaledTouchSlop", "3", "TaskHandler", String.valueOf(j))), HTTP.UTF_8);
         b bVar = new b();
         bVar.b = a.getInt(Mipay.KEY_RESULT);
         if (bVar.b != 0) {
@@ -905,7 +905,7 @@ public class aa extends ad {
         JSONArray jSONArray = a.getJSONArray("data");
         for (int i = 0; i < jSONArray.length(); i++) {
             JSONObject jSONObject = jSONArray.getJSONObject(i);
-            String string = jSONObject.getString("c");
+            String string = jSONObject.getString("showAnimation");
             StringBuilder stringBuilder = new StringBuilder();
             if (jSONObject.has("urls")) {
                 JSONArray jSONArray2 = jSONObject.getJSONArray("urls");
@@ -928,7 +928,7 @@ public class aa extends ad {
     }
 
     public b e(long j) {
-        JSONObject a = a(a(a(true, b() + "/store/v0/payment/comic/list", "d", "3", "t", String.valueOf(j))), HTTP.UTF_8);
+        JSONObject a = a(a(a(true, b() + "/store/v0/payment/comic/list", "getScaledTouchSlop", "3", "TaskHandler", String.valueOf(j))), HTTP.UTF_8);
         b bVar = new b();
         bVar.b = a.getInt(Mipay.KEY_RESULT);
         if (bVar.b != 0) {
@@ -1008,7 +1008,7 @@ public class aa extends ad {
     }
 
     public b i(String str) {
-        JSONObject a = a(a(a(true, b() + "/store/v0/payment/comic/chapter/list", "d", "3", "comic_id", str)), HTTP.UTF_8);
+        JSONObject a = a(a(a(true, b() + "/store/v0/payment/comic/chapter/list", "getScaledTouchSlop", "3", "comic_id", str)), HTTP.UTF_8);
         b bVar = new b();
         bVar.b = a.getInt(Mipay.KEY_RESULT);
         if (bVar.b != 0) {

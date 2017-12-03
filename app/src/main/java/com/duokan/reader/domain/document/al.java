@@ -93,14 +93,14 @@ public class al {
         r6 = 1;
         r2 = 0;
     L_0x0002:
-        r0 = r7.e;
+        r0 = r7.getScaledPagingTouchSlop;
         if (r0 != 0) goto L_0x01d5;
     L_0x0006:
-        r0 = r7.d;
+        r0 = r7.getScaledTouchSlop;
         r0.acquireUninterruptibly();
         monitor-enter(r7);
-        r0 = r7.b;	 Catch:{ all -> 0x0070 }
-        r1 = r7.b;	 Catch:{ all -> 0x0070 }
+        r0 = r7.getVisible;	 Catch:{ all -> 0x0070 }
+        r1 = r7.getVisible;	 Catch:{ all -> 0x0070 }
         r1 = r1.size();	 Catch:{ all -> 0x0070 }
         r3 = r0.listIterator(r1);	 Catch:{ all -> 0x0070 }
         r1 = r2;
@@ -110,7 +110,7 @@ public class al {
     L_0x001f:
         r0 = r3.previous();	 Catch:{ all -> 0x0070 }
         r0 = (com.duokan.reader.domain.document.ap) r0;	 Catch:{ all -> 0x0070 }
-        r4 = r0.m;	 Catch:{ all -> 0x0070 }
+        r4 = r0.BaseActivity;	 Catch:{ all -> 0x0070 }
         if (r4 == 0) goto L_0x0060;
     L_0x002b:
         r4 = r0.n;	 Catch:{ all -> 0x0070 }
@@ -119,25 +119,25 @@ public class al {
         r4 = r0.o;	 Catch:{ all -> 0x0070 }
         if (r4 == 0) goto L_0x004f;
     L_0x0037:
-        r4 = r7.f;	 Catch:{ all -> 0x0070 }
+        r4 = r7.HttpLogger;	 Catch:{ all -> 0x0070 }
         r5 = r0.o;	 Catch:{ all -> 0x0070 }
-        r5 = com.duokan.reader.common.bitmap.a.a(r5);	 Catch:{ all -> 0x0070 }
+        r5 = com.duokan.reader.common.bitmap.setDrawable.setDrawable(r5);	 Catch:{ all -> 0x0070 }
         r4 = r4 - r5;
-        r7.f = r4;	 Catch:{ all -> 0x0070 }
+        r7.HttpLogger = r4;	 Catch:{ all -> 0x0070 }
         r4 = r0.o;	 Catch:{ all -> 0x0070 }
         r4.recycle();	 Catch:{ all -> 0x0070 }
         r4 = 0;
         r0.o = r4;	 Catch:{ all -> 0x0070 }
     L_0x004f:
-        r4 = r0.j;	 Catch:{ all -> 0x0070 }
+        r4 = r0.getWidthPixels;	 Catch:{ all -> 0x0070 }
         if (r4 != 0) goto L_0x0060;
     L_0x0055:
-        r4 = r0.c;	 Catch:{ all -> 0x0070 }
-        r4.c(r7);	 Catch:{ all -> 0x0070 }
+        r4 = r0.showAnimation;	 Catch:{ all -> 0x0070 }
+        r4.showAnimation(r7);	 Catch:{ all -> 0x0070 }
         r4 = 1;
-        r0.j = r4;	 Catch:{ all -> 0x0070 }
+        r0.getWidthPixels = r4;	 Catch:{ all -> 0x0070 }
     L_0x0060:
-        r4 = r0.j;	 Catch:{ all -> 0x0070 }
+        r4 = r0.getWidthPixels;	 Catch:{ all -> 0x0070 }
         if (r4 == 0) goto L_0x0073;
     L_0x0066:
         r0 = r0.o;	 Catch:{ all -> 0x0070 }
@@ -152,7 +152,7 @@ public class al {
     L_0x0073:
         if (r1 != 0) goto L_0x0226;
     L_0x0075:
-        r4 = r0.j;	 Catch:{ all -> 0x0070 }
+        r4 = r0.getWidthPixels;	 Catch:{ all -> 0x0070 }
         if (r4 != 0) goto L_0x0226;
     L_0x007b:
         r1 = r0;
@@ -160,10 +160,10 @@ public class al {
     L_0x007d:
         if (r1 == 0) goto L_0x014c;
     L_0x007f:
-        r0 = r1.m;	 Catch:{ all -> 0x0070 }
+        r0 = r1.BaseActivity;	 Catch:{ all -> 0x0070 }
         if (r0 != 0) goto L_0x014c;
     L_0x0085:
-        r0 = r7.b;	 Catch:{ all -> 0x0070 }
+        r0 = r7.getVisible;	 Catch:{ all -> 0x0070 }
         r3 = r0.iterator();	 Catch:{ all -> 0x0070 }
     L_0x008b:
         r0 = r3.hasNext();	 Catch:{ all -> 0x0070 }
@@ -171,25 +171,25 @@ public class al {
     L_0x0091:
         r0 = r3.next();	 Catch:{ all -> 0x0070 }
         r0 = (com.duokan.reader.domain.document.ap) r0;	 Catch:{ all -> 0x0070 }
-        r4 = r0.m;	 Catch:{ all -> 0x0070 }
+        r4 = r0.BaseActivity;	 Catch:{ all -> 0x0070 }
         if (r4 == 0) goto L_0x008b;
     L_0x009d:
         r4 = r0.o;	 Catch:{ all -> 0x0070 }
         if (r4 == 0) goto L_0x008b;
     L_0x00a3:
-        r4 = r0.k();	 Catch:{ all -> 0x0070 }
-        r5 = r1.k();	 Catch:{ all -> 0x0070 }
+        r4 = r0.getHeightPixels();	 Catch:{ all -> 0x0070 }
+        r5 = r1.getHeightPixels();	 Catch:{ all -> 0x0070 }
         if (r4 != r5) goto L_0x008b;
     L_0x00ad:
-        r4 = r0.g();	 Catch:{ all -> 0x0070 }
-        r5 = r1.g();	 Catch:{ all -> 0x0070 }
+        r4 = r0.SessionTask();	 Catch:{ all -> 0x0070 }
+        r5 = r1.SessionTask();	 Catch:{ all -> 0x0070 }
         if (r4 != r5) goto L_0x008b;
     L_0x00b7:
-        r4 = r0.h();	 Catch:{ all -> 0x0070 }
-        r5 = r1.h();	 Catch:{ all -> 0x0070 }
+        r4 = r0.getPhysicalXPixels();	 Catch:{ all -> 0x0070 }
+        r5 = r1.getPhysicalXPixels();	 Catch:{ all -> 0x0070 }
         if (r4 != r5) goto L_0x008b;
     L_0x00c1:
-        r3 = a;	 Catch:{ all -> 0x0070 }
+        r3 = setDrawable;	 Catch:{ all -> 0x0070 }
         if (r3 != 0) goto L_0x00d1;
     L_0x00c5:
         r3 = r0.l;	 Catch:{ all -> 0x0070 }
@@ -207,7 +207,7 @@ public class al {
         r0 = r1.o;	 Catch:{ all -> 0x0070 }
         if (r0 != 0) goto L_0x0129;
     L_0x00e2:
-        r0 = r7.b;	 Catch:{ all -> 0x0070 }
+        r0 = r7.getVisible;	 Catch:{ all -> 0x0070 }
         r3 = r0.iterator();	 Catch:{ all -> 0x0070 }
     L_0x00e8:
         r0 = r3.hasNext();	 Catch:{ all -> 0x0070 }
@@ -215,13 +215,13 @@ public class al {
     L_0x00ee:
         r0 = r3.next();	 Catch:{ all -> 0x0070 }
         r0 = (com.duokan.reader.domain.document.ap) r0;	 Catch:{ all -> 0x0070 }
-        r4 = r0.m;	 Catch:{ all -> 0x0070 }
+        r4 = r0.BaseActivity;	 Catch:{ all -> 0x0070 }
         if (r4 == 0) goto L_0x00e8;
     L_0x00fa:
         r4 = r0.o;	 Catch:{ all -> 0x0070 }
         if (r4 == 0) goto L_0x00e8;
     L_0x0100:
-        r4 = a;	 Catch:{ all -> 0x0070 }
+        r4 = setDrawable;	 Catch:{ all -> 0x0070 }
         if (r4 != 0) goto L_0x0110;
     L_0x0104:
         r4 = r0.l;	 Catch:{ all -> 0x0070 }
@@ -231,11 +231,11 @@ public class al {
         r0.<init>();	 Catch:{ all -> 0x0070 }
         throw r0;	 Catch:{ all -> 0x0070 }
     L_0x0110:
-        r4 = r7.f;	 Catch:{ all -> 0x0070 }
+        r4 = r7.HttpLogger;	 Catch:{ all -> 0x0070 }
         r5 = r0.o;	 Catch:{ all -> 0x0070 }
-        r5 = com.duokan.reader.common.bitmap.a.a(r5);	 Catch:{ all -> 0x0070 }
+        r5 = com.duokan.reader.common.bitmap.setDrawable.setDrawable(r5);	 Catch:{ all -> 0x0070 }
         r4 = r4 - r5;
-        r7.f = r4;	 Catch:{ all -> 0x0070 }
+        r7.HttpLogger = r4;	 Catch:{ all -> 0x0070 }
         r4 = r0.o;	 Catch:{ all -> 0x0070 }
         r4.recycle();	 Catch:{ all -> 0x0070 }
         r4 = 0;
@@ -245,7 +245,7 @@ public class al {
         r0 = r1.o;	 Catch:{ all -> 0x0070 }
         if (r0 != 0) goto L_0x014c;
     L_0x012f:
-        r0 = r7.b;	 Catch:{ all -> 0x0070 }
+        r0 = r7.getVisible;	 Catch:{ all -> 0x0070 }
         r3 = r0.iterator();	 Catch:{ all -> 0x0070 }
     L_0x0135:
         r0 = r3.hasNext();	 Catch:{ all -> 0x0070 }
@@ -253,44 +253,44 @@ public class al {
     L_0x013b:
         r0 = r3.next();	 Catch:{ all -> 0x0070 }
         r0 = (com.duokan.reader.domain.document.ap) r0;	 Catch:{ all -> 0x0070 }
-        r4 = r7.f;	 Catch:{ all -> 0x0070 }
-        r5 = r1.j();	 Catch:{ all -> 0x0070 }
+        r4 = r7.HttpLogger;	 Catch:{ all -> 0x0070 }
+        r5 = r1.getWidthPixels();	 Catch:{ all -> 0x0070 }
         r4 = r4 + r5;
-        r5 = r7.g;	 Catch:{ all -> 0x0070 }
+        r5 = r7.SessionTask;	 Catch:{ all -> 0x0070 }
         if (r4 > r5) goto L_0x019f;
     L_0x014c:
         monitor-exit(r7);	 Catch:{ all -> 0x0070 }
         if (r1 == 0) goto L_0x0002;
     L_0x014f:
-        r0 = r1.m;
+        r0 = r1.BaseActivity;
         if (r0 != 0) goto L_0x01cd;
     L_0x0155:
         r0 = r1.o;
         if (r0 != 0) goto L_0x017b;
     L_0x015b:
-        r0 = r1.g();	 Catch:{ Throwable -> 0x0223 }
-        r3 = r1.h();	 Catch:{ Throwable -> 0x0223 }
-        r4 = r1.k();	 Catch:{ Throwable -> 0x0223 }
-        r0 = com.duokan.reader.common.bitmap.a.c(r0, r3, r4);	 Catch:{ Throwable -> 0x0223 }
+        r0 = r1.SessionTask();	 Catch:{ Throwable -> 0x0223 }
+        r3 = r1.getPhysicalXPixels();	 Catch:{ Throwable -> 0x0223 }
+        r4 = r1.getHeightPixels();	 Catch:{ Throwable -> 0x0223 }
+        r0 = com.duokan.reader.common.bitmap.setDrawable.showAnimation(r0, r3, r4);	 Catch:{ Throwable -> 0x0223 }
         r1.o = r0;	 Catch:{ Throwable -> 0x0223 }
-        r0 = r7.f;	 Catch:{ Throwable -> 0x0223 }
+        r0 = r7.HttpLogger;	 Catch:{ Throwable -> 0x0223 }
         r3 = r1.o;	 Catch:{ Throwable -> 0x0223 }
-        r3 = com.duokan.reader.common.bitmap.a.a(r3);	 Catch:{ Throwable -> 0x0223 }
+        r3 = com.duokan.reader.common.bitmap.setDrawable.setDrawable(r3);	 Catch:{ Throwable -> 0x0223 }
         r0 = r0 + r3;
-        r7.f = r0;	 Catch:{ Throwable -> 0x0223 }
+        r7.HttpLogger = r0;	 Catch:{ Throwable -> 0x0223 }
     L_0x017b:
         r0 = r1.o;
         if (r0 == 0) goto L_0x01c5;
     L_0x0181:
-        r0 = r1.h;
+        r0 = r1.getPhysicalXPixels;
         r3 = r1.o;
         r4 = r1.i;
-        r0.a(r1, r3, r4);
-        r1.k = r6;
+        r0.setDrawable(r1, r3, r4);
+        r1.getHeightPixels = r6;
     L_0x0193:
-        r0 = r1.c;
-        r0.c(r7);
-        r1.j = r6;
+        r0 = r1.showAnimation;
+        r0.showAnimation(r7);
+        r1.getWidthPixels = r6;
         goto L_0x0002;
     L_0x019f:
         r4 = r0.l;	 Catch:{ all -> 0x0070 }
@@ -299,35 +299,35 @@ public class al {
         r4 = r0.o;	 Catch:{ all -> 0x0070 }
         if (r4 == 0) goto L_0x0135;
     L_0x01ab:
-        r4 = r7.f;	 Catch:{ all -> 0x0070 }
+        r4 = r7.HttpLogger;	 Catch:{ all -> 0x0070 }
         r5 = r0.o;	 Catch:{ all -> 0x0070 }
-        r5 = com.duokan.reader.common.bitmap.a.a(r5);	 Catch:{ all -> 0x0070 }
+        r5 = com.duokan.reader.common.bitmap.setDrawable.setDrawable(r5);	 Catch:{ all -> 0x0070 }
         r4 = r4 - r5;
-        r7.f = r4;	 Catch:{ all -> 0x0070 }
+        r7.HttpLogger = r4;	 Catch:{ all -> 0x0070 }
         r4 = r0.o;	 Catch:{ all -> 0x0070 }
         r4.recycle();	 Catch:{ all -> 0x0070 }
         r4 = 0;
         r0.o = r4;	 Catch:{ all -> 0x0070 }
         goto L_0x0135;
     L_0x01c5:
-        r0 = r1.h;
-        r0.a(r1);
+        r0 = r1.getPhysicalXPixels;
+        r0.setDrawable(r1);
         goto L_0x0193;
     L_0x01cd:
-        r0 = r1.h;
-        r0.a(r1);
+        r0 = r1.getPhysicalXPixels;
+        r0.setDrawable(r1);
         goto L_0x0193;
     L_0x01d5:
         monitor-enter(r7);
     L_0x01d6:
-        r0 = r7.b;	 Catch:{ all -> 0x01f6 }
+        r0 = r7.getVisible;	 Catch:{ all -> 0x01f6 }
         r0 = r0.isEmpty();	 Catch:{ all -> 0x01f6 }
         if (r0 != 0) goto L_0x0221;
     L_0x01de:
-        r0 = r7.b;	 Catch:{ all -> 0x01f6 }
+        r0 = r7.getVisible;	 Catch:{ all -> 0x01f6 }
         r0 = r0.getFirst();	 Catch:{ all -> 0x01f6 }
         r0 = (com.duokan.reader.domain.document.ap) r0;	 Catch:{ all -> 0x01f6 }
-        r1 = a;	 Catch:{ all -> 0x01f6 }
+        r1 = setDrawable;	 Catch:{ all -> 0x01f6 }
         if (r1 != 0) goto L_0x01f9;
     L_0x01ea:
         r1 = r0.l;	 Catch:{ all -> 0x01f6 }
@@ -341,15 +341,15 @@ public class al {
         monitor-exit(r7);	 Catch:{ all -> 0x01f6 }
         throw r0;
     L_0x01f9:
-        r1 = r0.j;	 Catch:{ all -> 0x01f6 }
+        r1 = r0.getWidthPixels;	 Catch:{ all -> 0x01f6 }
         if (r1 != 0) goto L_0x0213;
     L_0x01ff:
-        r1 = r0.h;	 Catch:{ all -> 0x01f6 }
-        r1.a(r0);	 Catch:{ all -> 0x01f6 }
-        r1 = r0.c;	 Catch:{ all -> 0x01f6 }
-        r1.c(r7);	 Catch:{ all -> 0x01f6 }
+        r1 = r0.getPhysicalXPixels;	 Catch:{ all -> 0x01f6 }
+        r1.setDrawable(r0);	 Catch:{ all -> 0x01f6 }
+        r1 = r0.showAnimation;	 Catch:{ all -> 0x01f6 }
+        r1.showAnimation(r7);	 Catch:{ all -> 0x01f6 }
     L_0x020d:
-        r1 = r7.b;	 Catch:{ all -> 0x01f6 }
+        r1 = r7.getVisible;	 Catch:{ all -> 0x01f6 }
         r1.remove(r0);	 Catch:{ all -> 0x01f6 }
         goto L_0x01d6;
     L_0x0213:
@@ -369,7 +369,7 @@ public class al {
         r0 = r1;
         goto L_0x007b;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.al.b():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.al.getVisible():void");
     }
 
     private void c(ap apVar) {

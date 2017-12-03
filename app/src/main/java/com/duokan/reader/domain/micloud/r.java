@@ -1,8 +1,8 @@
 package com.duokan.reader.domain.micloud;
 
-import com.duokan.core.c.b;
+import com.duokan.core.c.IRunTask;
 
-class r implements b {
+class r implements IRunTask {
     final /* synthetic */ String a;
     final /* synthetic */ o b;
 

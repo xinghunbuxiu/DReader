@@ -4,13 +4,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SpirtMenuController extends e {
+public class SpirtMenuController extends ActivatedController {
     private final dr a;
     private final ViewGroup b;
     private final ViewGroup c;
@@ -26,14 +26,14 @@ public class SpirtMenuController extends e {
         HIDE
     }
 
-    public SpirtMenuController(y yVar) {
-        this(yVar, false, true);
+    public SpirtMenuController(IFeature featrue) {
+        this(featrue, false, true);
     }
 
-    public SpirtMenuController(y yVar, boolean z, boolean z2) {
-        super(yVar);
+    public SpirtMenuController(IFeature featrue, boolean z, boolean z2) {
+        super(featrue);
         this.d = MenuState.HIDE;
-        this.a = a((e) this, z, z2);
+        this.a = a((ActivatedController) this, z, z2);
         this.b = this.a.b();
         this.c = this.a.c();
         this.g = new ArrayList();
@@ -66,7 +66,7 @@ public class SpirtMenuController extends e {
         if (MenuState.SHOW != this.d) {
             return super.onHideMenu();
         }
-        this.a.a(new if(this), new ig(this));
+        this.a.a(new if (this),new ig(this));
         return true;
     }
 
@@ -74,7 +74,7 @@ public class SpirtMenuController extends e {
         return MenuState.HIDE != this.d;
     }
 
-    protected dr a(e eVar, boolean z, boolean z2) {
+    protected dr a(ActivatedController activatedControllerVar, boolean z, boolean z2) {
         return hz.a(this, z, z2);
     }
 }

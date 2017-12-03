@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ui.surfing.af;
 
 class ip implements OnClickListener {
@@ -21,7 +21,7 @@ class ip implements OnClickListener {
         if (this.b.c != a) {
             this.b.b(a);
         } else {
-            ((af) x.a(this.b.getContext()).queryFeature(af.class)).k();
+            ((af) MyContextWrapper.getFeature(this.b.getContext()).queryFeature(af.class)).k();
         }
     }
 }

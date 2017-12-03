@@ -5,9 +5,9 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 
 import com.duokan.b.c;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.HatGridView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ui.s;
 
@@ -17,7 +17,7 @@ public class eh {
         dkWebListView.setRowDivider(b(context));
         dkWebListView.setColumnDivider(a(context));
         dkWebListView.setRowBackground(c(context));
-        s sVar = (s) x.a(context).queryFeature(s.class);
+        s sVar = (s) MyContextWrapper.getFeature(context).queryFeature(s.class);
         if (sVar != null) {
             dkWebListView.a(dkWebListView.getListPaddingLeft(), dkWebListView.getListPaddingTop(), dkWebListView.getListPaddingRight(), sVar.getTheme().getPagePaddingBottom());
         }
@@ -28,14 +28,14 @@ public class eh {
         hatGridView.setRowDivider(b(context));
         hatGridView.setColumnDivider(a(context));
         hatGridView.setRowBackground(c(context));
-        s sVar = (s) x.a(context).queryFeature(s.class);
+        s sVar = (s) MyContextWrapper.getFeature(context).queryFeature(s.class);
         if (sVar != null) {
             hatGridView.b(0, 0, 0, sVar.getTheme().getPagePaddingBottom());
         }
     }
 
     public static int a(Context context, int i) {
-        return a(context, i, dv.b(context, 380.0f));
+        return a(context, i, UTools.closeAnimation(context, 380.0f));
     }
 
     public static int a(Context context, int i, int i2) {

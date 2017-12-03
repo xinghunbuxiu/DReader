@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 import java.util.ArrayList;
 
@@ -26,7 +26,7 @@ class ne implements Runnable {
                 z = false;
             }
             mzVar2.a = z;
-            t.b(this.b.d);
+            TaskHandler.PostTask(this.b.d);
         }
     }
 }

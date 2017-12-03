@@ -1,6 +1,5 @@
 package com.duokan.reader.common;
 
-import com.duokan.core.io.a;
 import com.duokan.core.io.d;
 
 import org.apache.http.protocol.HTTP;

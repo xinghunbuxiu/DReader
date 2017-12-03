@@ -17,7 +17,7 @@ class bh implements Runnable {
         for (ip onConnectivityChanged : this.b.h.values()) {
             onConnectivityChanged.onConnectivityChanged(this.a);
         }
-        if ((this.a.e() && ManagedApp.get().getRunningState() == RunningState.FOREGROUND) || this.a.d()) {
+        if ((this.a.e() && ManagedApp.get().getOldRunningState() == RunningState.FOREGROUND) || this.a.d()) {
             try {
                 this.b.k.a();
                 this.b.a(false, false);

@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.bookshelf;
 
 import com.duokan.core.sys.ag;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.domain.document.epub.av;
 
 import java.util.HashMap;
@@ -40,6 +40,6 @@ class ga implements Runnable {
             }
             hashMap.put(put2, Integer.valueOf(i));
         }
-        t.a(new gb(this, hashMap));
+        TaskHandler.postTask(new gb(this, hashMap));
     }
 }

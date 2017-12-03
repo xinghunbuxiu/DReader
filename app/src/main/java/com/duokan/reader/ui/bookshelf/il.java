@@ -7,12 +7,11 @@ import android.widget.TextView;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ui.general.HeaderView;
-import com.duokan.reader.ui.general.a.a;
 
-public class il extends e {
+public class il extends ActivatedController {
     private final HeaderView a;
     private final ViewGroup b;
     private final TextView c;
@@ -20,8 +19,8 @@ public class il extends e {
     private final ho e;
     private boolean f = false;
 
-    public il(y yVar, ho hoVar) {
-        super(yVar);
+    public il(IFeature featrue, ho hoVar) {
+        super(featrue);
         this.e = hoVar;
         setContentView(h.bookshelf__web_list_edit_manager_view);
         this.a = (HeaderView) findViewById(g.bookshelf__web_list_edit_manager_view__header);

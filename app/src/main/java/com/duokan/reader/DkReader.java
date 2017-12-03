@@ -4,10 +4,9 @@ import android.content.Context;
 import android.graphics.Bitmap.Config;
 import android.util.DisplayMetrics;
 
+import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ManagedApp;
-import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.app.w;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.common.async.work.g;
 import com.duokan.reader.common.bitmap.BitmapsRecycler.RecycleReason;
 import com.duokan.reader.common.c.f;
@@ -31,7 +30,7 @@ import com.duokan.reader.domain.cloud.gn;
 import com.duokan.reader.domain.cloud.h;
 import com.duokan.reader.domain.cloud.push.b;
 import com.duokan.reader.domain.cmread.CmBookManager;
-import com.duokan.reader.domain.document.a.o;
+import com.duokan.reader.domain.document.Document_a.o;
 import com.duokan.reader.domain.document.epub.ah;
 import com.duokan.reader.domain.document.txt.aa;
 import com.duokan.reader.domain.downloadcenter.r;
@@ -105,7 +104,7 @@ public abstract class DkReader extends DkApp {
             }
         });
         a.a(ReaderEnv.get(), f.b());
-        addOnRunningStateChangedListener(new w(this) {
+        addOnRunningStateChangedListener(new IActivityRunStatusChanged(this) {
             final /* synthetic */ DkReader a;
 
             {
@@ -119,7 +118,7 @@ public abstract class DkReader extends DkApp {
             }
         });
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        dv.m.a(com.duokan.reader.common.bitmap.a.a(displayMetrics.widthPixels, displayMetrics.heightPixels, Config.ARGB_8888) * 5);
+        UTools.m.a(com.duokan.reader.common.bitmap.a.a(displayMetrics.widthPixels, displayMetrics.heightPixels, Config.ARGB_8888) * 5);
         aa.a(this, ReaderEnv.get());
         ah.a(this, ReaderEnv.get());
         o.a(this, ReaderEnv.get());

@@ -5,10 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.document.az;
 
 public class xk extends View implements OnPreDrawListener {
@@ -87,12 +86,12 @@ public class xk extends View implements OnPreDrawListener {
 
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        RectF rectF = (RectF) dv.h.a();
-        RectF rectF2 = (RectF) dv.h.a();
-        Rect rect = (Rect) dv.g.a();
-        if (dv.a(rectF, (View) this)) {
+        RectF rectF = (RectF) UTools.h.getRect();
+        RectF rectF2 = (RectF) UTools.h.getRect();
+        Rect rect = (Rect) UTools.g.getRect();
+        if (UTools.addAnimation(rectF, (View) this)) {
             rectF2.set(0.0f, 0.0f, (float) getResources().getDisplayMetrics().widthPixels, (float) getResources().getDisplayMetrics().heightPixels);
-            dv.b(rectF2, (View) this);
+            UTools.closeAnimation(rectF2, (View) this);
             int paddingLeft = getPaddingLeft();
             int paddingTop = getPaddingTop();
             rectF.offset((float) (-paddingLeft), (float) (-paddingTop));
@@ -104,9 +103,9 @@ public class xk extends View implements OnPreDrawListener {
             this.c.a(rect);
             this.c.draw(canvas);
         }
-        dv.h.a(rectF);
-        dv.h.a(rectF2);
-        dv.g.a(rect);
+        UTools.h.getRect(rectF);
+        UTools.h.getRect(rectF2);
+        UTools.g.getRect(rect);
     }
 
     protected void onVisibilityChanged(View view, int i) {

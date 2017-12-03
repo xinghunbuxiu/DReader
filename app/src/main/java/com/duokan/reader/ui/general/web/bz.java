@@ -4,7 +4,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class bz implements AnimationListener {
     final /* synthetic */ AlphaAnimation a;
@@ -21,7 +21,7 @@ class bz implements AnimationListener {
     }
 
     public void onAnimationEnd(Animation animation) {
-        t.b(new ca(this));
+        TaskHandler.PostTask(new ca(this));
     }
 
     public void onAnimationRepeat(Animation animation) {

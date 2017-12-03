@@ -19,12 +19,9 @@ import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
-import com.duokan.c.d;
-import com.duokan.c.g;
-import com.duokan.common.i;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
 import com.duokan.reader.domain.account.PersonalAccount;
@@ -32,7 +29,6 @@ import com.duokan.reader.domain.account.oauth.ThirdOAuth;
 import com.duokan.reader.domain.account.oauth.TokenStore;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.cloud.DkCloudNoteBookInfo;
-import com.duokan.reader.domain.statistics.a;
 import com.duokan.reader.domain.store.DkStoreBook;
 import com.duokan.reader.ui.account.ShareEntranceController.ShareType;
 import com.duokan.reader.ui.general.BookCoverView;
@@ -103,10 +99,10 @@ public class ch extends af {
     private void a() {
         View inflate = LayoutInflater.from(getContext()).inflate(h.account__third_share_view, null);
         if (ReaderEnv.get().forHd()) {
-            inflate.setBackgroundDrawable(new hm(new ColorDrawable(getContext().getResources().getColor(d.general__shared__fefaf8)), (float) dv.b(getContext(), 8.0f)));
+            inflate.setBackgroundDrawable(new hm(new ColorDrawable(getContext().getResources().getColor(d.general__shared__fefaf8)), (float) UTools.closeAnimation(getContext(), 8.0f)));
         }
         setContentView(inflate);
-        inflate.findViewById(g.account__third_share_view__btns).setPadding(dv.b(getContext(), 15.0f), (ReaderEnv.get().forHd() ? 0 : ((s) x.a(getContext()).queryFeature(s.class)).getTheme().getHeaderPaddingTop()) + dv.b(getContext(), 10.0f), dv.b(getContext(), 15.0f), dv.b(getContext(), 10.0f));
+        inflate.findViewById(g.account__third_share_view__btns).setPadding(UTools.closeAnimation(getContext(), 15.0f), (ReaderEnv.get().forHd() ? 0 : ((s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class)).getTheme().getHeaderPaddingTop()) + UTools.closeAnimation(getContext(), 10.0f), UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 10.0f));
         ((DkLabelView) inflate.findViewById(g.account__third_share_view__third_name)).setText(k());
         this.j = (EditText) inflate.findViewById(g.account__third_share_view__share_text);
         ((FrameLayout) inflate.findViewById(g.account__third_share_view__content)).addView(b(), new LayoutParams(-1, -2));
@@ -145,7 +141,7 @@ public class ch extends af {
         }
         View boxView = new BoxView(getActivity(), null);
         View imageView = new ImageView(getActivity());
-        imageView.setPadding(0, dv.b(getActivity(), 10.0f), 0, dv.b(getActivity(), 10.0f));
+        imageView.setPadding(0, UTools.closeAnimation(getActivity(), 10.0f), 0, UTools.closeAnimation(getActivity(), 10.0f));
         imageView.setScaleType(ScaleType.CENTER_INSIDE);
         imageView.setImageBitmap(this.e.e);
         boxView.setMaxHeight(i.c(getActivity()) / 3);

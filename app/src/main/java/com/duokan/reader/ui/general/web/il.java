@@ -2,9 +2,9 @@ package com.duokan.reader.ui.general.web;
 
 import android.text.TextUtils;
 
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.as;
-import com.duokan.core.sys.t;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.common.i;
 import com.duokan.reader.domain.bookshelf.BookState;
@@ -27,7 +27,7 @@ class il implements as {
     }
 
     public void a() {
-        jq jqVar = (jq) t.a(new im(this));
+        jq jqVar = (jq) TaskHandler.postTask(new im(this));
         af afVar = new af();
         JSONObject jSONObject = new JSONObject(this.a);
         String string = jSONObject.getString("msgid");
@@ -72,7 +72,7 @@ class il implements as {
                 if (b2 != null) {
                     afVar.a(b2);
                 } else if (dkStoreFictionDetail == null || optInt >= dkStoreFictionDetail.getToc().length) {
-                    t.a(new in(this, b, optString, afVar));
+                    TaskHandler.postTask(new in(this, b, optString, afVar));
                     synchronized (afVar) {
                         afVar.wait();
                     }
@@ -88,10 +88,10 @@ class il implements as {
                     }
                 }
             }
-            t.a(new ip(this, jqVar, afVar, string, optInt));
+            TaskHandler.postTask(new ip(this, jqVar, afVar, string, optInt));
         } catch (Throwable th) {
             Throwable th2 = th;
-            t.a(new ip(this, jqVar, afVar, string, optInt));
+            TaskHandler.postTask(new ip(this, jqVar, afVar, string, optInt));
         }
     }
 }

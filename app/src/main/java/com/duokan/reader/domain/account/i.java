@@ -6,8 +6,8 @@ import android.util.Base64;
 import com.alipay.android.client.Aes;
 import com.alipay.android.client.Rsa;
 import com.duokan.core.a.n;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.o;
-import com.duokan.core.sys.t;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
@@ -78,16 +78,16 @@ public class i {
     }
 
     public void a(c cVar) {
-        t.a(new m(this, cVar));
+        TaskHandler.postTask(new m(this, cVar));
     }
 
     public void a(u uVar) {
-        t.a(new n(this, uVar));
+        TaskHandler.a(new n(this, uVar));
     }
 
     public void a(Class cls, u uVar) {
         if (a || uVar != null) {
-            t.a(new p(this, cls, uVar));
+            TaskHandler.postTask(new p(this, cls, uVar));
             return;
         }
         throw new AssertionError();
@@ -98,7 +98,7 @@ public class i {
     }
 
     public void a(String str, b bVar) {
-        t.a(new t(this, bVar, str));
+        TaskHandler.a(new TaskHandler(this, bVar, str));
     }
 
     public synchronized boolean a(Class cls) {

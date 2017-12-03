@@ -2,7 +2,7 @@ package com.duokan.reader.domain.account;
 
 import com.duokan.core.a.n;
 import com.duokan.core.diagnostic.a;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class j implements e {
     final /* synthetic */ i a;
@@ -12,14 +12,14 @@ class j implements e {
     }
 
     public void a(a aVar) {
-        a.c().b(t.a());
+        a.c().b(TaskHandler.isCurrentThread());
         synchronized (this.a) {
             this.a.i.put(aVar.getClass(), aVar);
         }
     }
 
     public void b(a aVar) {
-        a.c().b(t.a());
+        a.c().b(TaskHandler.isCurrentThread());
         this.a.c(aVar);
     }
 

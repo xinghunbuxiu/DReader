@@ -7,7 +7,6 @@ import android.graphics.Rect;
 import com.duokan.kernel.DkBox;
 import com.duokan.kernel.DkFlowRenderOption;
 import com.duokan.kernel.epublib.DkeHitTestInfo;
-import com.duokan.reader.common.bitmap.a;
 import com.duokan.reader.domain.document.aw;
 
 class bz extends bu implements aw {

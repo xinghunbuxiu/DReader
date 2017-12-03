@@ -6,10 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.duokan.c.d;
-import com.duokan.c.g;
-import com.duokan.core.app.y;
-import com.duokan.reader.common.c.f;
+import com.duokan.core.app.IFeature;
 
 import java.net.InetAddress;
 
@@ -20,8 +17,8 @@ public class jd extends jh {
     private TextView k;
     private TextView l;
 
-    public jd(y yVar) {
-        super(yVar);
+    public jd(IFeature featrue) {
+        super(featrue);
         View inflate = LayoutInflater.from(getContext()).inflate(h.bookshelf__wifi_book_transfer_view, (ViewGroup) getContentView(), false);
         this.h = inflate.findViewById(g.bookshelf__wifi_book_transfer_view__setting);
         this.i = (TextView) inflate.findViewById(g.bookshelf__wifi_book_transfer_view__title);

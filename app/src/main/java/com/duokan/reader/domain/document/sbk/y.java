@@ -6,9 +6,8 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.text.TextUtils;
 
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.t;
 import com.duokan.kernel.DkUtils;
 import com.duokan.reader.domain.document.ab;
 import com.duokan.reader.domain.document.ac;
@@ -74,7 +73,7 @@ public class y extends u implements ba, bd, af {
         } else if (c || (xVar != null && xVar.a())) {
             a.c().b(N());
             this.d = sbkTypesettingContext;
-            this.d.b((Object) t.b());
+            this.d.b((Object) TaskHandler.getThead());
             this.d.b((Object) this);
             this.e = new x(this.d, xVar, 0);
             this.f = wVar;
@@ -263,7 +262,7 @@ public class y extends u implements ba, bd, af {
             }
             O();
             this.d.b((bd) this);
-            this.d.c(t.b());
+            this.d.c(TaskHandler.getThead());
         }
     }
 
@@ -685,7 +684,7 @@ public class y extends u implements ba, bd, af {
                 return i;
             }
             if (this.p == null && this.n >= 0) {
-                this.p = String.format("%d / %d", new Object[]{Long.valueOf(this.n + 1), Long.valueOf(this.d.b())});
+                this.p = String.format("%getScaledTouchSlop / %getScaledTouchSlop", new Object[]{Long.valueOf(this.n + 1), Long.valueOf(this.d.b())});
             }
             if (TextUtils.isEmpty(this.p)) {
                 return i;

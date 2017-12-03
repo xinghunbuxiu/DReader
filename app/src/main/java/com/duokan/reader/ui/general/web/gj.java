@@ -1,7 +1,6 @@
 package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.sys.as;
-import com.duokan.reader.domain.store.a;
 
 import org.json.JSONObject;
 

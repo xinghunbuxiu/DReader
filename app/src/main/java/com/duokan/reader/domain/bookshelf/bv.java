@@ -5,7 +5,7 @@ import android.content.Context;
 
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.domain.account.ab;
 import com.duokan.reader.domain.account.i;
@@ -95,22 +95,22 @@ public class bv implements ah {
         if (str2 == null) {
             str2 = "";
         }
-        t.a(new ci(this, i, str, str2));
+        TaskHandler.postTask(new ci(this, i, str, str2));
     }
 
     public void a(int i, String str) {
-        t.a(new cj(this, i, str));
+        TaskHandler.postTask(new cj(this, i, str));
     }
 
     public void a(String str, Collection collection) {
         if (str == null) {
             str = "";
         }
-        t.a(new ck(this, collection, str));
+        TaskHandler.postTask(new ck(this, collection, str));
     }
 
     public void a(List list) {
-        t.a(new cl(this, list));
+        TaskHandler.postTask(new cl(this, list));
     }
 
     private void a(Collection collection) {

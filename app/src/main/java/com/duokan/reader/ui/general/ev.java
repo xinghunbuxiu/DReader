@@ -2,7 +2,7 @@ package com.duokan.reader.ui.general;
 
 import android.view.View;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 import java.lang.ref.WeakReference;
 import java.util.concurrent.Callable;
@@ -39,7 +39,7 @@ final class ev implements Callable {
             z = false;
         }
         if (z || euVar.f) {
-            dv.a(this.b, (Callable) this);
+            UTools.addAnimation(this.b, (Callable) this);
         }
         if (z) {
             z2 = false;

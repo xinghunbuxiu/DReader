@@ -5,14 +5,14 @@ import android.widget.TextView;
 
 import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.cloud.DkCloudStorage;
 import com.duokan.reader.ui.general.HeaderView;
 import com.duokan.reader.ui.general.ReaderUi;
 
-public class zk extends e {
+public class zk extends ActivatedController {
     private final c a;
     private final com.duokan.reader.domain.document.epub.c b;
     private final String c;
@@ -21,8 +21,8 @@ public class zk extends e {
     private final TextView f;
     private final EditText g = ((EditText) findViewById(g.reading__send_error_view__text));
 
-    public zk(y yVar, c cVar, com.duokan.reader.domain.document.epub.c cVar2, String str, String str2, boolean z) {
-        super(yVar);
+    public zk(IFeature featrue, c cVar, com.duokan.reader.domain.document.epub.c cVar2, String str, String str2, boolean z) {
+        super(featrue);
         this.a = cVar;
         this.b = cVar2;
         this.c = str;

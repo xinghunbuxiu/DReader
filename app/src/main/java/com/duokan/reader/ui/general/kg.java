@@ -11,7 +11,7 @@ import android.webkit.WebViewClient;
 
 import com.duokan.b.i;
 import com.duokan.common.j;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderFeature;
 
 import org.apache.http.HttpHost;
@@ -32,7 +32,7 @@ class kg extends WebViewClient {
             CharSequence scheme = parse.getScheme();
             if (TextUtils.equals("duokan-reader", scheme)) {
                 this.a.dismiss();
-                ((ReaderFeature) x.a(this.a.getContext()).queryFeature(ReaderFeature.class)).navigate(str, "", true, null);
+                ((ReaderFeature) MyContextWrapper.getFeature(this.a.getContext()).queryFeature(ReaderFeature.class)).navigate(str, "", true, null);
                 return true;
             } else if (TextUtils.equals(scheme, "tel")) {
                 String schemeSpecificPart = parse.getSchemeSpecificPart();

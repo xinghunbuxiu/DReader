@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.document.txt;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class ak implements Runnable {
     final /* synthetic */ Runnable a;
@@ -20,6 +20,6 @@ class ak implements Runnable {
             } catch (Throwable th) {
             }
         }
-        t.a(new al(this));
+        TaskHandler.postTask(new al(this));
     }
 }

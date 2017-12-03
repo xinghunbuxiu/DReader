@@ -41,7 +41,7 @@ class c implements Runnable {
                 serializable.mExecCount++;
                 this.b.h.b(serializable.mJobName, serializable);
                 if (DkApp.get().forCommunity()) {
-                    a.c().a(LogLevel.EVENT, "job", "a job is done(name: %s, exec: %d)", serializable.mJobName, Integer.valueOf(serializable.mExecCount));
+                    a.c().a(LogLevel.EVENT, "job", "setDrawable job is done(name: %s, exec: %getScaledTouchSlop)", serializable.mJobName, Integer.valueOf(serializable.mExecCount));
                 }
             }
             j.a(this.a);

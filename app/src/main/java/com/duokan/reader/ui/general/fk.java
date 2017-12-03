@@ -4,13 +4,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.duokan.core.app.e;
+import com.duokan.core.app.ActivatedController;
 import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.dv;
-import com.duokan.reader.ui.general.a.a;
+import com.duokan.core.ui.UTools;
 
 public class fk implements dr {
-    private final e a;
+    private final ActivatedController a;
     private final ViewGroup b = ((ViewGroup) LayoutInflater.from(this.a.getContext()).inflate(g.general__spirt_menu_view_at_hd, null));
     private final BoxView c = ((BoxView) this.b.findViewById(f.general__spirt_mene_view__page));
     private final View d = this.b.findViewById(f.general__spirt_mene_view__dark_bg);
@@ -18,9 +17,9 @@ public class fk implements dr {
     private final ViewGroup f = ((ViewGroup) this.b.findViewById(f.general__spirt_mene_view__content_items));
     private final ViewGroup g = ((ViewGroup) this.b.findViewById(f.general__spirt_mene_view__extra_view));
 
-    public fk(e eVar) {
-        this.a = eVar;
-        this.c.setMaxHeight(Math.round(((float) Math.min(dv.k(this.a.getContext()), dv.j(this.a.getContext()))) * 0.7f));
+    public fk(ActivatedController controller) {
+        this.a = controller;
+        this.c.setMaxHeight(Math.round(((float) Math.min(UTools.getHeightPixels(this.a.getContext()), UTools.getWidthPixels(this.a.getContext()))) * 0.7f));
         this.d.setOnClickListener(new fl(this));
     }
 

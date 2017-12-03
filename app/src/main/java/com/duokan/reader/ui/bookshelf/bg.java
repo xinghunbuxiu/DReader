@@ -2,10 +2,9 @@ package com.duokan.reader.ui.bookshelf;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.view.View.MeasureSpec;
 
 import com.duokan.c.e;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.f;
 
 class bg extends cz {
@@ -36,13 +35,13 @@ class bg extends cz {
 
     protected void a(Rect rect) {
         rect.set(getCoverDrawable().getBounds());
-        Rect rect2 = (Rect) dv.g.a();
+        Rect rect2 = (Rect) UTools.g.getRect();
         getResources().getDrawable(com.duokan.c.f.bookshelf__recently_reading_cover_shadow).getPadding(rect2);
         rect.left += rect2.left;
         rect.top += rect2.top;
         rect.right -= rect2.right;
         rect.bottom -= rect2.bottom;
-        dv.g.a(rect2);
+        UTools.g.getRect(rect2);
     }
 
     protected f getBookCoverDrawable() {

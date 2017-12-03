@@ -9,7 +9,6 @@ import com.duokan.reader.common.webservices.duokan.r;
 import com.duokan.reader.domain.account.MiAccount;
 import com.duokan.reader.domain.account.a.c;
 import com.duokan.reader.domain.account.i;
-import com.duokan.reader.ui.general.*;
 import com.xiaomi.accountsdk.request.AuthenticationFailureException;
 
 do;

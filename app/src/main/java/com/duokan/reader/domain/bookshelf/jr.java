@@ -2,7 +2,7 @@ package com.duokan.reader.domain.bookshelf;
 
 import android.text.TextUtils;
 
-import com.duokan.reader.domain.document.a.n;
+import com.duokan.reader.domain.document.Document_a.n;
 import com.duokan.reader.domain.document.aa;
 
 class jr implements n {

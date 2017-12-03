@@ -6,7 +6,6 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.core.ui.Scrollable.OverScrollMode;
 import com.duokan.core.ui.bj;
 
 import org.apache.http.HttpStatus;

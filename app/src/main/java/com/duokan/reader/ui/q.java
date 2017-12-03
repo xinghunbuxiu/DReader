@@ -1,13 +1,13 @@
 package com.duokan.reader.ui;
 
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 
 class q extends i {
     final /* synthetic */ p a;
 
-    q(p pVar, y yVar) {
+    q(p pVar, IFeature featrue) {
         this.a = pVar;
-        super(yVar);
+        super(featrue);
     }
 
     protected void a(int i) {

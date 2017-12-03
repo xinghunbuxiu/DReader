@@ -6,8 +6,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-import com.duokan.c.f;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.z;
 
 class b extends z {
@@ -24,13 +23,13 @@ class b extends z {
         super.draw(canvas);
         int intrinsicWidth = this.h.getIntrinsicWidth();
         int intrinsicHeight = this.h.getIntrinsicHeight();
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         this.a.a(rect);
         int width = (rect.width() - intrinsicWidth) / 2;
         int height = (rect.height() - intrinsicHeight) / 2;
         this.h.setBounds(width, height, intrinsicWidth + width, intrinsicHeight + height);
         this.h.draw(canvas);
-        dv.g.a(rect);
+        UTools.g.getRect(rect);
     }
 
     public void setAlpha(int i) {

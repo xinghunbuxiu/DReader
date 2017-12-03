@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.n;
 
@@ -17,7 +17,7 @@ class tl implements Runnable {
 
     public void run() {
         if (this.a == this.c.v && this.a.a(2000)) {
-            t.a(new tm(this));
+            TaskHandler.postTask(new tm(this));
         }
     }
 }

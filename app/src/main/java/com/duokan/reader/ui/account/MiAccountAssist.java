@@ -3,12 +3,12 @@ package com.duokan.reader.ui.account;
 import android.content.Context;
 
 import com.duokan.c.j;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.app.e;
-import com.duokan.core.app.x;
-import com.duokan.core.app.y;
-import com.duokan.core.sys.t;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.common.c.f;
@@ -37,8 +37,8 @@ public class MiAccountAssist implements ah, bf {
         private boolean mFinished = false;
         private final b mLoginListener;
 
-        public MergeAccountController(y yVar, a aVar, b bVar) {
-            super(yVar);
+        public MergeAccountController(IFeature featrue, a aVar, b bVar) {
+            super(featrue);
             this.mAccount = aVar;
             this.mLoginListener = bVar;
         }
@@ -155,15 +155,15 @@ public class MiAccountAssist implements ah, bf {
     }
 
     private void b(MiAccount miAccount) {
-        miAccount.g(new e(this));
+        miAccount.g(new ActivatedController(this));
     }
 
     private void a(a aVar) {
-        t.a(new f(this, aVar));
+        TaskHandler.a(new f(this, aVar));
     }
 
     private void a(a aVar, String str) {
-        t.a(new g(this, aVar, str));
+        TaskHandler.postTask(new g(this, aVar, str));
     }
 
     private boolean a(a aVar, boolean z) {
@@ -175,7 +175,7 @@ public class MiAccountAssist implements ah, bf {
         if (topActivity == null) {
             return false;
         }
-        y a = x.a(topActivity);
+        IFeature a = MyContextWrapper.getFeature(topActivity);
         if (a == null) {
             return false;
         }
@@ -183,7 +183,7 @@ public class MiAccountAssist implements ah, bf {
         if (readerFeature == null) {
             return false;
         }
-        e mergeAccountController = new MergeAccountController(a, aVar, bgVar);
+        ActivatedController mergeAccountController = new MergeAccountController(a, aVar, bgVar);
         mergeAccountController.loadUrl(p.i().L() + (z ? "&autoLogin=1" : ""));
         readerFeature.showPopup(mergeAccountController);
         return true;

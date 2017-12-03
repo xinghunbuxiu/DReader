@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.duokan.core.ui.cd;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.core.ui.g;
@@ -35,7 +35,7 @@ public class cy extends er {
         boolean z3 = z || !this.c.c();
         cdVar.b(view, z3);
         this.c.a(0.01f);
-        this.c.a(dv.e(view.getContext()));
+        this.c.a(UTools.getScaledPagingTouchSlop(view.getContext()));
         q qVar = this.d;
         if (z || !this.d.c()) {
             z3 = true;

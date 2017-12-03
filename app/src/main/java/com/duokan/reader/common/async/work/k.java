@@ -2,7 +2,7 @@ package com.duokan.reader.common.async.work;
 
 import android.content.Context;
 
-import com.duokan.core.c.b;
+import com.duokan.core.c.IRunTask;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -173,14 +173,14 @@ public abstract class k {
         return cVar;
     }
 
-    public final c a(b bVar) {
+    public final c a(IRunTask bVar) {
         c cVar;
         synchronized (this) {
             if (!this.j) {
                 Iterator it = this.e.iterator();
                 while (it.hasNext()) {
                     cVar = (c) it.next();
-                    if (bVar.a(cVar)) {
+                    if (bVar.isRunTask(cVar)) {
                         break;
                     }
                 }

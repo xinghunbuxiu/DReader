@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.duokan.c.d;
 import com.duokan.c.g;
 import com.duokan.c.j;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.common.webservices.duokan.DkStoreBookTocInfo;
 import com.duokan.reader.ui.general.DkWebListView;
 import com.duokan.reader.ui.general.PageHeaderView;
@@ -27,7 +27,7 @@ public class h extends DkWebListView {
         super(context, attributeSet);
         this.b = null;
         setBackgroundResource(d.store__shared__bg);
-        s sVar = (s) x.a(getContext()).queryFeature(s.class);
+        s sVar = (s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class);
         a(0, 0, 0, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
         View pageHeaderView = new PageHeaderView(getContext());
         pageHeaderView.setLeftTitle(getContext().getString(j.store__book_toc_view__title));

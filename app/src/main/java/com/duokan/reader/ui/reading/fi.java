@@ -9,11 +9,10 @@ import android.util.AttributeSet;
 import android.util.Pair;
 import android.view.View;
 
-import com.duokan.b.e;
-import com.duokan.core.app.x;
-import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.bookshelf.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ac;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.domain.document.bb;
@@ -90,7 +89,7 @@ public class fi extends FixedPagesView implements gy {
             if (view2.i()) {
                 Rect selectionStartIndicatorBounds = view2.getSelectionStartIndicatorBounds();
                 if (!selectionStartIndicatorBounds.isEmpty()) {
-                    dv.b(selectionStartIndicatorBounds, view2, (View) this);
+                    UTools.closeAnimation(selectionStartIndicatorBounds, view2, (View) this);
                     return selectionStartIndicatorBounds;
                 }
             }
@@ -105,7 +104,7 @@ public class fi extends FixedPagesView implements gy {
             if (view2.i()) {
                 Rect selectionEndIndicatorBounds = view2.getSelectionEndIndicatorBounds();
                 if (!selectionEndIndicatorBounds.isEmpty()) {
-                    dv.b(selectionEndIndicatorBounds, view2, (View) this);
+                    UTools.closeAnimation(selectionEndIndicatorBounds, view2, (View) this);
                     return selectionEndIndicatorBounds;
                 }
             }
@@ -127,7 +126,7 @@ public class fi extends FixedPagesView implements gy {
         c(false);
     }
 
-    public final void a(n nVar, com.duokan.reader.domain.document.a aVar) {
+    public final void a(n nVar, Document_a aVar) {
         this.c = nVar;
         if (this.c != null) {
             this.d = this.c.s();
@@ -152,7 +151,7 @@ public class fi extends FixedPagesView implements gy {
         return this.f;
     }
 
-    public final void a(com.duokan.reader.domain.document.a aVar) {
+    public final void a(Document_a aVar) {
         b(b(aVar));
     }
 
@@ -182,7 +181,7 @@ public class fi extends FixedPagesView implements gy {
             return this.c.s();
         }
         Point point = new Point(i, i2);
-        dv.a(point, (View) this, view);
+        UTools.getTouchPoint(point, (View) this, view);
         return view.i() ? view.getPageDrawable().b(point) : this.c.s();
     }
 
@@ -196,8 +195,8 @@ public class fi extends FixedPagesView implements gy {
             }
             Point point = new Point(i, i2);
             Point point2 = new Point(i3, i4);
-            dv.a(point, (View) this, view2);
-            dv.a(point2, (View) this, view2);
+            UTools.getTouchPoint(point, (View) this, view2);
+            UTools.getTouchPoint(point2, (View) this, view2);
             s = s.a(view2.getPageDrawable().a(point, point2));
         }
         return s;
@@ -235,7 +234,7 @@ public class fi extends FixedPagesView implements gy {
             View view2 = (gs) view2;
             if (view2.i()) {
                 Rect[] e = view2.getPageDrawable().e(bbVar);
-                dv.a(e, view2, (View) this);
+                UTools.addAnimation(e, view2, (View) this);
                 linkedList.addAll(Arrays.asList(e));
             }
         }
@@ -271,11 +270,11 @@ public class fi extends FixedPagesView implements gy {
     }
 
     public boolean c(int i, int i2) {
-        return i2 < dv.b(getContext(), 50.0f);
+        return i2 < UTools.closeAnimation(getContext(), 50.0f);
     }
 
     public boolean d(int i, int i2) {
-        return i2 > getHeight() - dv.b(getContext(), 50.0f);
+        return i2 > getHeight() - UTools.closeAnimation(getContext(), 50.0f);
     }
 
     public void d(bb bbVar) {
@@ -341,7 +340,7 @@ public class fi extends FixedPagesView implements gy {
             as pageDrawable;
             if (this.c.j()) {
                 if (z) {
-                    ((sh) x.a(getContext()).queryFeature(sh.class)).aM();
+                    ((sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class)).aM();
                 }
                 pageViews = getPageViews();
                 while (i < pageViews.length) {
@@ -355,7 +354,7 @@ public class fi extends FixedPagesView implements gy {
                 getProxyAdapter().a().d();
             } else if (((gs) getCurrentPagePresenter().d()).getPageDrawable().q() != this.c.l()) {
                 if (z) {
-                    ((sh) x.a(getContext()).queryFeature(sh.class)).aM();
+                    ((sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class)).aM();
                 }
                 pageViews = getPageViews();
                 while (i < pageViews.length) {
@@ -380,7 +379,7 @@ public class fi extends FixedPagesView implements gy {
         }
     }
 
-    protected fm b(com.duokan.reader.domain.document.a aVar) {
+    protected fm b(Document_a aVar) {
         return new fm(this, aVar);
     }
 

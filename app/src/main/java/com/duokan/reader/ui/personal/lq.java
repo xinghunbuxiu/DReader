@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.duokan.c.g;
 import com.duokan.reader.domain.cloud.DkCloudStoreBook;
 import com.duokan.reader.domain.cloud.a;
 

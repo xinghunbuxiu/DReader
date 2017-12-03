@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.reading;
 
 import com.duokan.core.sys.ag;
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.domain.document.av;
@@ -12,10 +12,10 @@ import java.util.ListIterator;
 class adx implements ag {
     final /* synthetic */ aej a;
     final /* synthetic */ ag b;
-    final /* synthetic */ a c;
+    final /* synthetic */ Document_a c;
     final /* synthetic */ adm d;
 
-    adx(adm com_duokan_reader_ui_reading_adm, aej com_duokan_reader_ui_reading_aej, ag agVar, a aVar) {
+    adx(adm com_duokan_reader_ui_reading_adm, aej com_duokan_reader_ui_reading_aej, ag agVar, Document_a aVar) {
         this.d = com_duokan_reader_ui_reading_adm;
         this.a = com_duokan_reader_ui_reading_aej;
         this.b = agVar;

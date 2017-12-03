@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.app.x;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.s;
 
 import java.util.concurrent.Callable;
@@ -19,9 +19,9 @@ class it implements Callable {
 
     public Integer a() {
         int round;
-        s sVar = (s) x.a(this.a.b.getContext()).queryFeature(s.class);
+        s sVar = (s) MyContextWrapper.getFeature(this.a.b.getContext()).queryFeature(s.class);
         if (sVar != null) {
-            round = Math.round(dv.b(this.a.b.getContext(), sVar.getTheme().getPageHeaderPaddingTop()));
+            round = Math.round(UTools.closeAnimation(this.a.b.getContext(), sVar.getTheme().getPageHeaderPaddingTop()));
         } else {
             round = 0;
         }

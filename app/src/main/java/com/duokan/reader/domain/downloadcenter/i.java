@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.downloadcenter;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 import java.util.Iterator;
 
@@ -23,10 +23,10 @@ class i implements Runnable {
             obj = obj;
         }
         if (obj != null) {
-            t.a((Runnable) this, 1000);
+            TaskHandler.postDelayed((Runnable) this, 1000);
             return;
         }
-        t.c(this.a.i);
+        TaskHandler.c(this.a.i);
         this.a.i = null;
     }
 }

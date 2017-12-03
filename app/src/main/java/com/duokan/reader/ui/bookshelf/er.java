@@ -6,13 +6,11 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 
 import com.duokan.c.j;
 import com.duokan.common.FileTypeRecognizer;
 import com.duokan.common.FileTypeRecognizer.FileType;
-import com.duokan.common.a;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.HatGridView;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
@@ -168,7 +166,7 @@ public class er extends LinearLayout {
             this.f.setPath(file.getAbsolutePath());
             setData(b(file.getAbsolutePath()));
         } else if (file.isFile() && file.canRead()) {
-            ((ff) x.a(getContext()).queryFeature(ff.class)).a(file.getAbsolutePath());
+            ((ff) MyContextWrapper.getFeature(getContext()).queryFeature(ff.class)).a(file.getAbsolutePath());
         }
     }
 

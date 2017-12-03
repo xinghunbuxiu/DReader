@@ -2,7 +2,7 @@ package com.duokan.reader.ui.reading;
 
 import android.os.SystemClock;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class aek implements Runnable {
     public final int a;
@@ -31,11 +31,11 @@ class aek implements Runnable {
             this.d.k.c();
         }
         this.d.k = this;
-        t.b(this, this.b);
+        TaskHandler.PostTask(this, this.b);
     }
 
     public void c() {
-        t.c(this);
+        TaskHandler.c(this);
         if (this.d.k == this) {
             this.d.k = null;
         }
@@ -44,7 +44,7 @@ class aek implements Runnable {
     public void d() {
         if (this.c == 0) {
             this.c = SystemClock.uptimeMillis();
-            t.c(this);
+            TaskHandler.c(this);
         }
     }
 
@@ -53,7 +53,7 @@ class aek implements Runnable {
             this.b += SystemClock.uptimeMillis() - this.c;
             this.c = 0;
             if (this.d.k == this) {
-                t.b(this, this.b);
+                TaskHandler.PostTask(this, this.b);
             }
         }
     }

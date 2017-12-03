@@ -7,14 +7,11 @@ import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.Drawable.Callback;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
 
-import com.duokan.b.d;
-import com.duokan.b.e;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.cloud.DkCloudNoteBookInfo;
 import com.duokan.reader.domain.store.DkStoreAbsBook;
@@ -146,7 +143,7 @@ public class f extends z {
             invalidateSelf();
         }
         Rect bounds = getBounds();
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         rect.set(bounds);
         if (this.u != 0.0f) {
             float f = (float) ((((bounds.left + this.i.left) + bounds.right) - this.i.right) / 2);
@@ -155,10 +152,10 @@ public class f extends z {
             f = (((((float) this.s.centerY()) * f) - (f2 * ((float) this.s.centerX()))) + ((f2 - ((float) this.s.centerY())) * centerX)) / (f - ((float) this.s.centerX()));
             f2 = (((((10.0f * 0.42105263f) - 10.0f) * this.u) + 10.0f) - 0.42105263f) / 9.0f;
             canvas.scale(f2, f2, centerX, f);
-            RectF rectF = (RectF) dv.h.a();
+            RectF rectF = (RectF) UTools.h.getRect();
             rectF.set((centerX - ((float) (this.s.width() / 2))) - ((float) this.i.left), (f - ((float) (this.s.height() / 2))) - ((float) this.i.top), (centerX + ((float) (this.s.width() / 2))) + ((float) this.i.right), (f + ((float) (this.s.height() / 2))) + ((float) this.i.bottom));
             rectF.round(rect);
-            dv.h.a(rectF);
+            UTools.h.getRect(rectF);
         }
         a.set(rect.left + this.i.left, rect.top + this.i.top, rect.right - this.i.right, rect.bottom - this.i.bottom);
         this.j.setBounds(a);
@@ -182,14 +179,14 @@ public class f extends z {
         }
         if (this.o != null) {
             canvas.save();
-            canvas.translate((float) dv.b(a(), 2.0f), (float) (-Math.round(1.5f * ((float) this.o.getIntrinsicHeight()))));
-            dv.a(canvas, this.o, a, 85);
+            canvas.translate((float) UTools.closeAnimation(a(), 2.0f), (float) (-Math.round(1.5f * ((float) this.o.getIntrinsicHeight()))));
+            UTools.addAnimation(canvas, this.o, a, 85);
             canvas.restore();
         }
         if (this.n != null) {
-            dv.a(canvas, this.n, a, 53);
+            UTools.addAnimation(canvas, this.n, a, 53);
         }
-        dv.g.a(rect);
+        UTools.g.getRect(rect);
         canvas.restore();
     }
 

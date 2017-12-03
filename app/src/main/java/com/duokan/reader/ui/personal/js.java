@@ -3,7 +3,7 @@ package com.duokan.reader.ui.personal;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.bookshelf.ai;
@@ -29,7 +29,7 @@ class js implements OnClickListener {
             case 3:
                 c b = ai.a().b(this.c.e.getBookUuid());
                 if (b != null) {
-                    ((ReaderFeature) x.a(DkApp.get()).queryFeature(ReaderFeature.class)).openBook(b);
+                    ((ReaderFeature) MyContextWrapper.getFeature(DkApp.get()).queryFeature(ReaderFeature.class)).openBook(b);
                     return;
                 }
                 return;

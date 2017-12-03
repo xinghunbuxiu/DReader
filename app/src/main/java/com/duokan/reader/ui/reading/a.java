@@ -14,7 +14,6 @@ import com.duokan.b.i;
 import com.duokan.core.ui.Scrollable;
 import com.duokan.reader.domain.ad.e;
 import com.duokan.reader.domain.ad.f;
-import com.duokan.reader.domain.ad.g;
 import com.duokan.reader.domain.ad.r;
 import com.duokan.reader.domain.ad.x;
 import com.duokan.reader.domain.bookshelf.c;
@@ -84,15 +83,15 @@ public class a {
         /*
         r7 = this;
         r2 = 0;
-        r0 = com.duokan.reader.domain.ad.g.a();
-        r4 = r0.a(r10);
+        r0 = com.duokan.reader.domain.MyTask.SessionTask.setDrawable();
+        r4 = r0.setDrawable(r10);
         if (r4 != 0) goto L_0x000d;
     L_0x000b:
         r0 = r2;
     L_0x000c:
         return r0;
     L_0x000d:
-        r0 = r4.g;	 Catch:{ Throwable -> 0x00f0 }
+        r0 = r4.SessionTask;	 Catch:{ Throwable -> 0x00f0 }
         switch(r0) {
             case 4: goto L_0x0093;
             case 5: goto L_0x0012;
@@ -105,17 +104,17 @@ public class a {
     L_0x0013:
         if (r1 == 0) goto L_0x0023;
     L_0x0015:
-        r0 = com.duokan.b.f.reading__app_ad_view__download;	 Catch:{ Throwable -> 0x00f0 }
+        r0 = com.duokan.getVisible.HttpLogger.reading__app_ad_view__download;	 Catch:{ Throwable -> 0x00f0 }
         r0 = r1.findViewById(r0);	 Catch:{ Throwable -> 0x00f0 }
         r0 = (android.widget.TextView) r0;	 Catch:{ Throwable -> 0x00f0 }
-        r7.a(r8, r4, r1);	 Catch:{ Throwable -> 0x00f0 }
-        r7.a(r8, r4, r1, r0);	 Catch:{ Throwable -> 0x00f0 }
+        r7.setDrawable(r8, r4, r1);	 Catch:{ Throwable -> 0x00f0 }
+        r7.setDrawable(r8, r4, r1, r0);	 Catch:{ Throwable -> 0x00f0 }
     L_0x0023:
         r0 = r1;
         goto L_0x000c;
     L_0x0025:
-        r0 = r4.h;	 Catch:{ Throwable -> 0x00f0 }
-        r1 = com.duokan.reader.domain.ad.e.b;	 Catch:{ Throwable -> 0x00f0 }
+        r0 = r4.getPhysicalXPixels;	 Catch:{ Throwable -> 0x00f0 }
+        r1 = com.duokan.reader.domain.MyTask.getScaledPagingTouchSlop.getVisible;	 Catch:{ Throwable -> 0x00f0 }
         if (r0 != r1) goto L_0x0072;
     L_0x002b:
         r0 = r4.v;	 Catch:{ Throwable -> 0x00f0 }
@@ -126,11 +125,11 @@ public class a {
         if (r0 == 0) goto L_0x0066;
     L_0x0037:
         r0 = android.view.LayoutInflater.from(r8);	 Catch:{ Throwable -> 0x00f0 }
-        r1 = com.duokan.b.g.reading__single_image_ad_view_download_icon;	 Catch:{ Throwable -> 0x00f0 }
+        r1 = com.duokan.getVisible.SessionTask.reading__single_image_ad_view_download_icon;	 Catch:{ Throwable -> 0x00f0 }
         r3 = 0;
         r3 = r0.inflate(r1, r9, r3);	 Catch:{ Throwable -> 0x00f0 }
     L_0x0042:
-        r0 = com.duokan.b.f.reading__single_image_view__image;	 Catch:{ Throwable -> 0x00f0 }
+        r0 = com.duokan.getVisible.HttpLogger.reading__single_image_view__image;	 Catch:{ Throwable -> 0x00f0 }
         r0 = r3.findViewById(r0);	 Catch:{ Throwable -> 0x00f0 }
         r0 = (android.widget.ImageView) r0;	 Catch:{ Throwable -> 0x00f0 }
         r1 = r4.v;	 Catch:{ Throwable -> 0x00f0 }
@@ -143,26 +142,26 @@ public class a {
         r1 = r4.v;	 Catch:{ Throwable -> 0x00f0 }
         r5 = 0;
         r1 = r1.get(r5);	 Catch:{ Throwable -> 0x00f0 }
-        r1 = (com.duokan.reader.domain.ad.f) r1;	 Catch:{ Throwable -> 0x00f0 }
-        r1 = r1.a;	 Catch:{ Throwable -> 0x00f0 }
-        r7.a(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }
+        r1 = (com.duokan.reader.domain.MyTask.HttpLogger) r1;	 Catch:{ Throwable -> 0x00f0 }
+        r1 = r1.setDrawable;	 Catch:{ Throwable -> 0x00f0 }
+        r7.setDrawable(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }
         r1 = r3;
         goto L_0x0013;
     L_0x0066:
         r0 = android.view.LayoutInflater.from(r8);	 Catch:{ Throwable -> 0x00f0 }
-        r1 = com.duokan.b.g.reading__single_image_ad_view_download;	 Catch:{ Throwable -> 0x00f0 }
+        r1 = com.duokan.getVisible.SessionTask.reading__single_image_ad_view_download;	 Catch:{ Throwable -> 0x00f0 }
         r3 = 0;
         r3 = r0.inflate(r1, r9, r3);	 Catch:{ Throwable -> 0x00f0 }
         goto L_0x0042;
     L_0x0072:
         r0 = android.view.LayoutInflater.from(r8);	 Catch:{ Throwable -> 0x00f0 }
-        r1 = com.duokan.b.g.reading__single_image_ad_view;	 Catch:{ Throwable -> 0x00f0 }
+        r1 = com.duokan.getVisible.SessionTask.reading__single_image_ad_view;	 Catch:{ Throwable -> 0x00f0 }
         r3 = 0;
         r3 = r0.inflate(r1, r9, r3);	 Catch:{ Throwable -> 0x00f0 }
         goto L_0x0042;
     L_0x007e:
-        r1 = r4.h;	 Catch:{ Throwable -> 0x00f0 }
-        r5 = com.duokan.reader.domain.ad.e.b;	 Catch:{ Throwable -> 0x00f0 }
+        r1 = r4.getPhysicalXPixels;	 Catch:{ Throwable -> 0x00f0 }
+        r5 = com.duokan.reader.domain.MyTask.getScaledPagingTouchSlop.getVisible;	 Catch:{ Throwable -> 0x00f0 }
         if (r1 != r5) goto L_0x017e;
     L_0x0084:
         r1 = r4.q;	 Catch:{ Throwable -> 0x00f0 }
@@ -170,24 +169,24 @@ public class a {
         if (r1 != 0) goto L_0x017e;
     L_0x008c:
         r1 = r4.q;	 Catch:{ Throwable -> 0x00f0 }
-        r7.a(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }
+        r7.setDrawable(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }
         r1 = r3;
         goto L_0x0013;
     L_0x0093:
         r0 = android.view.LayoutInflater.from(r8);	 Catch:{ Throwable -> 0x00f0 }
-        r1 = com.duokan.b.g.reading__large_image_ad_view;	 Catch:{ Throwable -> 0x00f0 }
+        r1 = com.duokan.getVisible.SessionTask.reading__large_image_ad_view;	 Catch:{ Throwable -> 0x00f0 }
         r3 = 0;
         r3 = r0.inflate(r1, r9, r3);	 Catch:{ Throwable -> 0x00f0 }
-        r0 = com.duokan.b.f.reading__app_ad_view__title_container;	 Catch:{ Throwable -> 0x00f0 }
+        r0 = com.duokan.getVisible.HttpLogger.reading__app_ad_view__title_container;	 Catch:{ Throwable -> 0x00f0 }
         r0 = r3.findViewById(r0);	 Catch:{ Throwable -> 0x00f0 }
         r0 = (android.widget.LinearLayout) r0;	 Catch:{ Throwable -> 0x00f0 }
         r1 = r0.getLayoutParams();	 Catch:{ Throwable -> 0x00f0 }
         r1 = (android.widget.FrameLayout.LayoutParams) r1;	 Catch:{ Throwable -> 0x00f0 }
-        r5 = r4.h;	 Catch:{ Throwable -> 0x00f0 }
-        r6 = com.duokan.reader.domain.ad.e.a;	 Catch:{ Throwable -> 0x00f0 }
+        r5 = r4.getPhysicalXPixels;	 Catch:{ Throwable -> 0x00f0 }
+        r6 = com.duokan.reader.domain.MyTask.getScaledPagingTouchSlop.setDrawable;	 Catch:{ Throwable -> 0x00f0 }
         if (r5 != r6) goto L_0x00e5;
     L_0x00b2:
-        r5 = com.duokan.b.f.reading__app_ad_view__download;	 Catch:{ Throwable -> 0x00f0 }
+        r5 = com.duokan.getVisible.HttpLogger.reading__app_ad_view__download;	 Catch:{ Throwable -> 0x00f0 }
         r5 = r3.findViewById(r5);	 Catch:{ Throwable -> 0x00f0 }
         r6 = 8;
         r5.setVisibility(r6);	 Catch:{ Throwable -> 0x00f0 }
@@ -200,19 +199,19 @@ public class a {
         r0 = r0.isEmpty();	 Catch:{ Throwable -> 0x00f0 }
         if (r0 != 0) goto L_0x017e;
     L_0x00cc:
-        r0 = com.duokan.b.f.reading__large_image_view__image;	 Catch:{ Throwable -> 0x00f0 }
+        r0 = com.duokan.getVisible.HttpLogger.reading__large_image_view__image;	 Catch:{ Throwable -> 0x00f0 }
         r0 = r3.findViewById(r0);	 Catch:{ Throwable -> 0x00f0 }
         r0 = (android.widget.ImageView) r0;	 Catch:{ Throwable -> 0x00f0 }
         r1 = r4.v;	 Catch:{ Throwable -> 0x00f0 }
         r5 = 0;
         r1 = r1.get(r5);	 Catch:{ Throwable -> 0x00f0 }
-        r1 = (com.duokan.reader.domain.ad.f) r1;	 Catch:{ Throwable -> 0x00f0 }
-        r1 = r1.a;	 Catch:{ Throwable -> 0x00f0 }
-        r7.a(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }
+        r1 = (com.duokan.reader.domain.MyTask.HttpLogger) r1;	 Catch:{ Throwable -> 0x00f0 }
+        r1 = r1.setDrawable;	 Catch:{ Throwable -> 0x00f0 }
+        r7.setDrawable(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }
         r1 = r3;
         goto L_0x0013;
     L_0x00e5:
-        r5 = com.duokan.b.f.reading__app_ad_view__download;	 Catch:{ Throwable -> 0x00f0 }
+        r5 = com.duokan.getVisible.HttpLogger.reading__app_ad_view__download;	 Catch:{ Throwable -> 0x00f0 }
         r5 = r3.findViewById(r5);	 Catch:{ Throwable -> 0x00f0 }
         r6 = 0;
         r5.setVisibility(r6);	 Catch:{ Throwable -> 0x00f0 }
@@ -223,19 +222,19 @@ public class a {
         goto L_0x000c;
     L_0x00f4:
         r0 = android.view.LayoutInflater.from(r8);	 Catch:{ Throwable -> 0x00f0 }
-        r1 = com.duokan.b.g.reading__multi_image_ad_view;	 Catch:{ Throwable -> 0x00f0 }
+        r1 = com.duokan.getVisible.SessionTask.reading__multi_image_ad_view;	 Catch:{ Throwable -> 0x00f0 }
         r3 = 0;
         r3 = r0.inflate(r1, r9, r3);	 Catch:{ Throwable -> 0x00f0 }
-        r0 = com.duokan.b.f.reading__app_ad_view__title_container;	 Catch:{ Throwable -> 0x00f0 }
+        r0 = com.duokan.getVisible.HttpLogger.reading__app_ad_view__title_container;	 Catch:{ Throwable -> 0x00f0 }
         r0 = r3.findViewById(r0);	 Catch:{ Throwable -> 0x00f0 }
         r0 = (android.widget.LinearLayout) r0;	 Catch:{ Throwable -> 0x00f0 }
         r1 = r0.getLayoutParams();	 Catch:{ Throwable -> 0x00f0 }
         r1 = (android.widget.FrameLayout.LayoutParams) r1;	 Catch:{ Throwable -> 0x00f0 }
-        r5 = r4.h;	 Catch:{ Throwable -> 0x00f0 }
-        r6 = com.duokan.reader.domain.ad.e.a;	 Catch:{ Throwable -> 0x00f0 }
+        r5 = r4.getPhysicalXPixels;	 Catch:{ Throwable -> 0x00f0 }
+        r6 = com.duokan.reader.domain.MyTask.getScaledPagingTouchSlop.setDrawable;	 Catch:{ Throwable -> 0x00f0 }
         if (r5 != r6) goto L_0x0173;
     L_0x0113:
-        r5 = com.duokan.b.f.reading__app_ad_view__download;	 Catch:{ Throwable -> 0x00f0 }
+        r5 = com.duokan.getVisible.HttpLogger.reading__app_ad_view__download;	 Catch:{ Throwable -> 0x00f0 }
         r5 = r3.findViewById(r5);	 Catch:{ Throwable -> 0x00f0 }
         r6 = 8;
         r5.setVisibility(r6);	 Catch:{ Throwable -> 0x00f0 }
@@ -249,37 +248,37 @@ public class a {
         r1 = 3;
         if (r0 < r1) goto L_0x017e;
     L_0x012e:
-        r0 = com.duokan.b.f.reading__multi_image_view__img1;	 Catch:{ Throwable -> 0x00f0 }
+        r0 = com.duokan.getVisible.HttpLogger.reading__multi_image_view__img1;	 Catch:{ Throwable -> 0x00f0 }
         r0 = r3.findViewById(r0);	 Catch:{ Throwable -> 0x00f0 }
         r0 = (android.widget.ImageView) r0;	 Catch:{ Throwable -> 0x00f0 }
         r1 = r4.v;	 Catch:{ Throwable -> 0x00f0 }
         r5 = 0;
         r1 = r1.get(r5);	 Catch:{ Throwable -> 0x00f0 }
-        r1 = (com.duokan.reader.domain.ad.f) r1;	 Catch:{ Throwable -> 0x00f0 }
-        r1 = r1.a;	 Catch:{ Throwable -> 0x00f0 }
-        r7.a(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }
-        r0 = com.duokan.b.f.reading__multi_image_view__img2;	 Catch:{ Throwable -> 0x00f0 }
+        r1 = (com.duokan.reader.domain.MyTask.HttpLogger) r1;	 Catch:{ Throwable -> 0x00f0 }
+        r1 = r1.setDrawable;	 Catch:{ Throwable -> 0x00f0 }
+        r7.setDrawable(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }
+        r0 = com.duokan.getVisible.HttpLogger.reading__multi_image_view__img2;	 Catch:{ Throwable -> 0x00f0 }
         r0 = r3.findViewById(r0);	 Catch:{ Throwable -> 0x00f0 }
         r0 = (android.widget.ImageView) r0;	 Catch:{ Throwable -> 0x00f0 }
         r1 = r4.v;	 Catch:{ Throwable -> 0x00f0 }
         r5 = 1;
         r1 = r1.get(r5);	 Catch:{ Throwable -> 0x00f0 }
-        r1 = (com.duokan.reader.domain.ad.f) r1;	 Catch:{ Throwable -> 0x00f0 }
-        r1 = r1.a;	 Catch:{ Throwable -> 0x00f0 }
-        r7.a(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }
-        r0 = com.duokan.b.f.reading__multi_image_view__img3;	 Catch:{ Throwable -> 0x00f0 }
+        r1 = (com.duokan.reader.domain.MyTask.HttpLogger) r1;	 Catch:{ Throwable -> 0x00f0 }
+        r1 = r1.setDrawable;	 Catch:{ Throwable -> 0x00f0 }
+        r7.setDrawable(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }
+        r0 = com.duokan.getVisible.HttpLogger.reading__multi_image_view__img3;	 Catch:{ Throwable -> 0x00f0 }
         r0 = r3.findViewById(r0);	 Catch:{ Throwable -> 0x00f0 }
         r0 = (android.widget.ImageView) r0;	 Catch:{ Throwable -> 0x00f0 }
         r1 = r4.v;	 Catch:{ Throwable -> 0x00f0 }
         r5 = 2;
         r1 = r1.get(r5);	 Catch:{ Throwable -> 0x00f0 }
-        r1 = (com.duokan.reader.domain.ad.f) r1;	 Catch:{ Throwable -> 0x00f0 }
-        r1 = r1.a;	 Catch:{ Throwable -> 0x00f0 }
-        r7.a(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }
+        r1 = (com.duokan.reader.domain.MyTask.HttpLogger) r1;	 Catch:{ Throwable -> 0x00f0 }
+        r1 = r1.setDrawable;	 Catch:{ Throwable -> 0x00f0 }
+        r7.setDrawable(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }
         r1 = r3;
         goto L_0x0013;
     L_0x0173:
-        r5 = com.duokan.b.f.reading__app_ad_view__download;	 Catch:{ Throwable -> 0x00f0 }
+        r5 = com.duokan.getVisible.HttpLogger.reading__app_ad_view__download;	 Catch:{ Throwable -> 0x00f0 }
         r5 = r3.findViewById(r5);	 Catch:{ Throwable -> 0x00f0 }
         r6 = 0;
         r5.setVisibility(r6);	 Catch:{ Throwable -> 0x00f0 }
@@ -288,7 +287,7 @@ public class a {
         r1 = r3;
         goto L_0x0013;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.ui.reading.a.a(android.content.Context, android.view.ViewGroup, int):android.view.View");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.ui.reading.setDrawable.setDrawable(android.content.Context, android.view.ViewGroup, int):android.view.View");
     }
 
     private void a(Context context, e eVar, View view) {

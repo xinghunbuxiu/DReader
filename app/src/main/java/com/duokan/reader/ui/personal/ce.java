@@ -7,8 +7,8 @@ import android.widget.CheckBox;
 import com.duokan.c.f;
 import com.duokan.c.g;
 import com.duokan.c.j;
-import com.duokan.core.app.x;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.domain.social.message.k;
 import com.duokan.reader.ui.bookshelf.gw;
 import com.duokan.reader.ui.general.cc;
@@ -51,7 +51,7 @@ class ce extends gw {
     }
 
     public View d(int i, View view, ViewGroup viewGroup) {
-        y a = x.a(this.a.getContext());
+        IFeature a = MyContextWrapper.getFeature(this.a.getContext());
         k kVar = (k) this.a.a.get(i);
         View a2 = new bf(a, kVar, view, viewGroup).a();
         CheckBox checkBox = (CheckBox) a2.findViewById(g.personal__feed_message_item_view__checkbox);

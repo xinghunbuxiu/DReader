@@ -2,7 +2,6 @@ package com.duokan.reader.domain.bookshelf;
 
 import android.util.Pair;
 
-import com.duokan.core.b.a;
 import com.duokan.reader.common.webservices.duokan.p;
 
 import org.apache.http.protocol.HTTP;

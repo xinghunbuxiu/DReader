@@ -1,19 +1,18 @@
 package com.duokan.reader.ui.store;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.UmengManager;
-import com.duokan.reader.domain.store.a;
 
 import java.util.LinkedList;
 
-public class j extends e {
+public class j extends ActivatedController {
     private final String a;
     private final LinkedList b = new LinkedList();
     private final l c;
 
-    public j(y yVar, String str) {
-        super(yVar);
+    public j(IFeature featrue, String str) {
+        super(featrue);
         this.a = str;
         this.c = new l(this, getContext());
         setContentView(this.c);

@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class ca implements Runnable {
     final /* synthetic */ bz a;
@@ -14,6 +14,6 @@ class ca implements Runnable {
             this.a.c.a.mPageLoadingView.setVisibility(4);
             this.a.c.a.mPageLoadingView.clearAnimation();
         }
-        t.a(this.a.b);
+        TaskHandler.postTask(this.a.b);
     }
 }

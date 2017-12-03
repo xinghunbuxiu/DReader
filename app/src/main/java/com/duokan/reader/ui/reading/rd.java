@@ -7,7 +7,6 @@ import com.duokan.reader.domain.bookshelf.ej;
 import com.duokan.reader.domain.bookshelf.is;
 import com.duokan.reader.domain.cloud.PersonalPrefs;
 import com.duokan.reader.domain.cloud.gn;
-import com.duokan.reader.domain.statistics.dailystats.a;
 
 class rd implements is {
     final /* synthetic */ ej a;

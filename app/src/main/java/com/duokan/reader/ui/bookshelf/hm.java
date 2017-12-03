@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.bookshelf.an;
 import com.duokan.reader.domain.bookshelf.c;
@@ -13,7 +13,7 @@ import java.util.LinkedList;
 
 public class hm implements hn {
     private Context a;
-    private cr b = ((cr) x.a(this.a).queryFeature(cr.class));
+    private cr b = ((cr) MyContextWrapper.getFeature(this.a).queryFeature(cr.class));
     private cx c = new cx(new LinkedList(), this.a);
     private String d = "";
 
@@ -37,7 +37,7 @@ public class hm implements hn {
     public void a(int i, View view) {
         an anVar = (an) this.c.d(i);
         if (anVar instanceof c) {
-            ((ReaderFeature) x.a(this.a).queryFeature(ReaderFeature.class)).openBook((c) anVar);
+            ((ReaderFeature) MyContextWrapper.getFeature(this.a).queryFeature(ReaderFeature.class)).openBook((c) anVar);
         }
     }
 

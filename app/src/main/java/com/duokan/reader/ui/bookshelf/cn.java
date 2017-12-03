@@ -10,7 +10,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.DkSimulationInterpolator;
 import com.duokan.reader.ui.general.DkSimulationInterpolator.Mode;
 
@@ -36,7 +36,7 @@ class cn extends FrameLayout {
         this.d.b();
         addView(this.d, czVar.getWidth(), czVar.getHeight());
         this.e.set(czVar.getDragBounds().width() / 2.0f, czVar.getDragBounds().height() / 2.0f);
-        dv.d(this.e, (View) czVar);
+        UTools.getScaledTouchSlop(this.e, (View) czVar);
         this.g.set(this.e);
         this.f.set(czVar.getViewCenter());
         setStaticTransformationsEnabled(true);
@@ -98,9 +98,9 @@ class cn extends FrameLayout {
 
     protected boolean getChildStaticTransformation(View view, Transformation transformation) {
         float f;
-        PointF pointF = (PointF) dv.f.a();
+        PointF pointF = (PointF) UTools.f.getRect();
         pointF.set(this.e);
-        dv.b(pointF, (View) this);
+        UTools.closeAnimation(pointF, (View) this);
         transformation.clear();
         transformation.setTransformationType(2);
         if (this.i == null) {
@@ -119,16 +119,16 @@ class cn extends FrameLayout {
             width = pointF.x - (((float) this.d.getWidth()) * f);
             f = pointF.y - (f * ((float) this.d.getHeight()));
         } else {
-            Rect rect = (Rect) dv.g.a();
+            Rect rect = (Rect) UTools.g.getRect();
             this.d.getItemDrawable().getPadding(rect);
             float centerX = (((-width) - ((float) (rect.left / 2))) + this.h.centerX()) - ((this.h.width() * this.j) / 2.0f);
             width = (((-height) - ((float) (rect.top / 2))) + this.h.centerY()) - ((this.h.height() * this.j) / 2.0f);
-            dv.g.a(rect);
+            UTools.g.getRect(rect);
             f = width;
             width = centerX;
         }
         transformation.getMatrix().postTranslate(width, f);
-        dv.f.a(pointF);
+        UTools.f.getRect(pointF);
         return true;
     }
 

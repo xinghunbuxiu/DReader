@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.sys.as;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class eb implements as {
     final /* synthetic */ int a;
@@ -17,6 +17,6 @@ class eb implements as {
     }
 
     public void a() {
-        this.d.b.scrollPosToTop(dv.b(this.d.b.getContext(), (float) this.a), dv.b(this.d.b.getContext(), (float) this.b), this.c);
+        this.d.b.scrollPosToTop(UTools.closeAnimation(this.d.b.getContext(), (float) this.a), UTools.closeAnimation(this.d.b.getContext(), (float) this.b), this.c);
     }
 }

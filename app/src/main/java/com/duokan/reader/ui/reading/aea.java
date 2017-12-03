@@ -3,9 +3,8 @@ package com.duokan.reader.ui.reading;
 import android.media.AudioManager;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 import com.duokan.core.sys.ag;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.domain.tts.SpeakingListener;
 
@@ -24,7 +23,7 @@ class aea implements SpeakingListener {
     }
 
     public void onSpeakingStart(String str) {
-        t.a(new aeb(this), 60000);
+        TaskHandler.postDelayed(new aeb(this), 60000);
         this.d.a.setActiveColorText(this.a.b);
         if (!this.d.a.bh()) {
             if (this.d.a.U() == PageAnimationMode.VSCROLL || this.a.c <= 0) {
@@ -77,7 +76,7 @@ class aea implements SpeakingListener {
     public void onSpeakingError(int i, String str) {
         this.e = true;
         this.d.a.setActiveColorText(null);
-        a.c().c(LogLevel.ERROR, "tts", String.format("errorCode: %d, errorDesc: %s", new Object[]{Integer.valueOf(i), str}));
+        a.c().c(LogLevel.ERROR, "tts", String.format("errorCode: %getScaledTouchSlop, errorDesc: %s", new Object[]{Integer.valueOf(i), str}));
         ((AudioManager) DkApp.get().getSystemService("audio")).abandonAudioFocus(null);
     }
 }

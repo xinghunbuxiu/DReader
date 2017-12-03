@@ -4,7 +4,6 @@ import android.text.TextUtils;
 
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.common.webservices.duokan.DkSignInInfo;
 import com.duokan.reader.common.webservices.duokan.DkSignInReward;
@@ -24,7 +23,7 @@ class gz implements Runnable {
     public void run() {
         if (!PersonalPrefs.a().r()) {
             a.c().c(LogLevel.EVENT, "resign_event", "no pass through message, notify by client");
-            if (this.a == null || this.a.mReward == null || DkApp.get().getRunningState() != RunningState.FOREGROUND) {
+            if (this.a == null || this.a.mReward == null || DkApp.get().getOldRunningState() != RunningState.FOREGROUND) {
                 String str = "";
                 if (!(this.a == null || this.a.mReward == null)) {
                     String str2 = str;

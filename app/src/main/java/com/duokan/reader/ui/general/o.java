@@ -5,10 +5,8 @@ import android.graphics.Bitmap.CompressFormat;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.duokan.b.e;
-import com.duokan.core.io.a;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.t;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.bookshelf.BookFormat;
 import com.duokan.reader.domain.bookshelf.BookState;
@@ -33,7 +31,7 @@ public class o implements gz {
     private x j = null;
 
     public o() {
-        this.a = ReaderEnv.get().forHd() ? "!m" : "!e";
+        this.a = ReaderEnv.get().forHd() ? "!BaseActivity" : "!getScaledPagingTouchSlop";
     }
 
     public o a(v vVar) {
@@ -158,7 +156,7 @@ public class o implements gz {
                     try {
                         e.printStackTrace();
                         if (wVar != null) {
-                            t.a(new s(this, wVar));
+                            TaskHandler.postTask(new s(this, wVar));
                         }
                         try {
                             byteArrayOutputStream2.close();
@@ -194,14 +192,14 @@ public class o implements gz {
                         e32.printStackTrace();
                     }
                     if (wVar != null) {
-                        t.a(new t(this, wVar));
+                        TaskHandler.a(new TaskHandler(this, wVar));
                     }
                 } catch (Exception e5) {
                     e32 = e5;
                     byteArrayOutputStream2 = byteArrayOutputStream;
                     e32.printStackTrace();
                     if (wVar != null) {
-                        t.a(new s(this, wVar));
+                        TaskHandler.postTask(new s(this, wVar));
                     }
                     byteArrayOutputStream2.close();
                     byteArrayInputStream.close();
@@ -217,7 +215,7 @@ public class o implements gz {
                 byteArrayInputStream = null;
                 e32.printStackTrace();
                 if (wVar != null) {
-                    t.a(new s(this, wVar));
+                    TaskHandler.postTask(new s(this, wVar));
                 }
                 byteArrayOutputStream2.close();
                 byteArrayInputStream.close();
@@ -229,7 +227,7 @@ public class o implements gz {
                 throw th;
             }
         } else if (wVar != null) {
-            t.a(new u(this, wVar));
+            TaskHandler.postTask(new u(this, wVar));
         }
     }
 

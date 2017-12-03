@@ -2,7 +2,7 @@ package com.duokan.reader.ui.bookshelf;
 
 import com.duokan.core.app.af;
 import com.duokan.core.app.ag;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.ui.general.ap;
 
@@ -27,14 +27,14 @@ class bq implements ag {
 
     public void a(af afVar) {
         ai.a().b(this.c, this.a >= 0 ? this.b.isChecked(this.a) : false);
-        t.a(this.d);
+        TaskHandler.postTask(this.d);
     }
 
     public void b(af afVar) {
-        t.a(this.e);
+        TaskHandler.postTask(this.e);
     }
 
     public void c(af afVar) {
-        t.a(this.e);
+        TaskHandler.postTask(this.e);
     }
 }

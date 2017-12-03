@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.bookshelf;
 
 import com.duokan.b.i;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.common.async.a.a;
 import com.duokan.reader.common.k;
 import com.duokan.reader.domain.bookshelf.c;
@@ -12,10 +12,10 @@ import com.duokan.reader.ui.general.ak;
 
 public class ej {
     public ep a;
-    private final x b;
+    private final MyContextWrapper b;
 
-    public ej(x xVar) {
-        this.b = xVar;
+    public ej(MyContextWrapper mContext) {
+        this.b = mContext;
     }
 
     public void a(c cVar) {
@@ -35,7 +35,7 @@ public class ej {
         iz.a().a(new eo(this, elVar));
     }
 
-    private x b() {
+    private MyContextWrapper b() {
         return this.b;
     }
 }

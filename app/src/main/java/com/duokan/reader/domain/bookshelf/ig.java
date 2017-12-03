@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.common.async.work.c;
 import com.duokan.reader.common.async.work.i;
 
@@ -18,6 +18,6 @@ class ig extends i {
     public void a(com.duokan.reader.domain.micloud.i iVar) {
         super.e(iVar);
         this.a.a.u();
-        t.b(new ih(this, iVar, new iy(iVar.H())));
+        TaskHandler.PostTask(new ih(this, iVar, new iy(iVar.H())));
     }
 }

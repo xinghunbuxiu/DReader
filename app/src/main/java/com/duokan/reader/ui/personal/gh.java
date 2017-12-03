@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.e;
+import com.duokan.core.app.ActivatedController;
 
 import java.util.concurrent.Callable;
 
@@ -15,7 +15,7 @@ class gh implements Callable {
         return a();
     }
 
-    public e a() {
+    public ActivatedController a() {
         return new mh(this.a.a.getContext());
     }
 }

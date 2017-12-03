@@ -1,13 +1,13 @@
 package com.duokan.reader.ui;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 
 class o extends l {
     final /* synthetic */ i b;
 
-    public o(i iVar, y yVar, e eVar, float f) {
+    public o(i iVar, IFeature featrue, ActivatedController activatedControllerVar, float f) {
         this.b = iVar;
-        super(iVar, yVar, eVar, f);
+        super(iVar, featrue, activatedControllerVar, f);
     }
 }

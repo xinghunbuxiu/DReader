@@ -5,16 +5,13 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
-import com.duokan.core.ui.dv;
-import com.duokan.reader.common.c.f;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.bookshelf.fv;
 import com.duokan.reader.domain.document.epub.at;
 import com.duokan.reader.domain.document.epub.av;
@@ -77,13 +74,13 @@ class kq extends FrameLayout {
         }
         b();
         if (this.b) {
-            dv.a((View) this, new ks(this));
+            UTools.addAnimation((View) this, new ks(this));
             if (this.e.getVisibility() == 0) {
                 this.m = new AlphaAnimation(1.0f, 0.0f);
                 this.m.setDuration(500);
                 this.e.invalidate();
                 this.d.setVisibility(0);
-                dv.a(this.e, 1.0f, 0.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, false, new kt(this));
+                UTools.addAnimation(this.e, 1.0f, 0.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, false, new kt(this));
             }
         }
     }
@@ -177,7 +174,7 @@ class kq extends FrameLayout {
             this.d.invalidate();
             this.f.invalidate();
             this.e.setVisibility(0);
-            dv.a(this.e, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, false, new kw(this));
+            UTools.addAnimation(this.e, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, false, new kw(this));
         }
     }
 

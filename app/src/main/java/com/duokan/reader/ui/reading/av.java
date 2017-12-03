@@ -1,6 +1,5 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.common.bitmap.a;
 import com.duokan.reader.ui.general.PagesView;
 
 class av implements Runnable {

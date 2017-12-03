@@ -6,9 +6,9 @@ import android.text.TextUtils;
 
 import com.duokan.common.FileTypeRecognizer;
 import com.duokan.common.FileTypeRecognizer.FileType;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.t;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
 import com.duokan.reader.common.async.a.c;
@@ -169,7 +169,7 @@ abstract class aq extends hi {
     }
 
     protected void a(int i) {
-        t.b(new aw(this, i));
+        TaskHandler.PostTask(new aw(this, i));
     }
 
     private void b(int i) {
@@ -250,6 +250,6 @@ abstract class aq extends hi {
     }
 
     private void e(List list) {
-        t.b(new bd(this, list));
+        TaskHandler.PostTask(new bd(this, list));
     }
 }

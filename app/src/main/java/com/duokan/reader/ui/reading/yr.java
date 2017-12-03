@@ -18,14 +18,12 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
-import com.duokan.c.g;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
-import com.duokan.reader.common.bitmap.a;
 import com.duokan.reader.domain.bookshelf.BookType;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.bookshelf.eg;
@@ -37,7 +35,7 @@ import org.apache.http.HttpStatus;
 
 import java.util.HashMap;
 
-public class yr extends e {
+public class yr extends ActivatedController {
     protected LayoutParams A;
     protected boolean B = false;
     protected int C;
@@ -74,8 +72,8 @@ public class yr extends e {
     protected final LayoutParams y;
     protected jh z;
 
-    public yr(y yVar, zj zjVar) {
-        super(yVar);
+    public yr(IFeature featrue, zj zjVar) {
+        super(featrue);
         this.F = zjVar;
         this.a = new BubbleFloatingView(getContext());
         this.a.setVisibility(8);
@@ -84,7 +82,7 @@ public class yr extends e {
         this.a.setCenterViewResource(h.reading__selection_bar_view);
         this.a.setUpArrow(f.reading__shared__arrow_top);
         this.a.setDownArrow(f.reading__shared__arrow_bottom);
-        this.a.a(dv.b(getContext(), 15.0f), 0, dv.b(getContext(), 15.0f), 0);
+        this.a.a(UTools.closeAnimation(getContext(), 15.0f), 0, UTools.closeAnimation(getContext(), 15.0f), 0);
         this.z = new jh(getContext(), null);
         this.A = new LayoutParams(-1, -1);
         this.A.gravity = 17;
@@ -92,7 +90,7 @@ public class yr extends e {
         this.z.setScrollRightResource(f.general__shared__arrow_right_13dip_ffffff);
         this.z.setScrollLeftResource(f.general__shared__arrow_left_13dip_ffffff);
         this.b = (BoxView) this.a.getCenterView();
-        this.b.getLayoutParams().width = Math.min(getResources().getDisplayMetrics().widthPixels, dv.b(getContext(), 360.0f));
+        this.b.getLayoutParams().width = Math.min(getResources().getDisplayMetrics().widthPixels, UTools.closeAnimation(getContext(), 360.0f));
         this.d = (LinearLayout) findViewById(g.reading__selection_bar_view__line1);
         this.e = (LinearLayout) findViewById(g.reading__selection_bar_view__line2);
         this.f = (LinearLayout) findViewById(g.reading__selection_bar_view__line_visible);
@@ -127,7 +125,7 @@ public class yr extends e {
         this.p = (ImageView) this.o.getChildAt(0);
         this.g.addView(this.E.getContentView());
         this.y = new LayoutParams(-2, -2);
-        this.y.setMargins(dv.b(getContext(), -25.0f), 0, 0, 0);
+        this.y.setMargins(UTools.closeAnimation(getContext(), -25.0f), 0, 0, 0);
         this.D = new HashMap();
         this.h.setOnClickListener(new zb(this));
         this.k.setOnClickListener(new zc(this));
@@ -286,10 +284,10 @@ public class yr extends e {
     }
 
     private int e(Rect... rectArr) {
-        int b = dv.b(getContext(), 15.0f);
+        int b = UTools.closeAnimation(getContext(), 15.0f);
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
         int i = (displayMetrics.heightPixels / 2) - b;
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         for (Rect rect2 : rectArr) {
             if (rect.isEmpty()) {
                 rect.set(rect2);
@@ -300,7 +298,7 @@ public class yr extends e {
         int i2 = rect.top - b;
         int height = rect.height() - b;
         b = (displayMetrics.heightPixels - rect.bottom) - b;
-        dv.g.a(rect);
+        UTools.g.getRect(rect);
         return Math.min(Math.max(Math.max(i2, height), b), i);
     }
 

@@ -2,7 +2,6 @@ package com.duokan.reader.common.webservices.duokan;
 
 import android.text.TextUtils;
 
-import com.duokan.core.io.a;
 import com.duokan.core.sys.o;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.webservices.WebSession;

@@ -7,13 +7,13 @@ import android.widget.TextView;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.BookShelfType;
 import com.duokan.reader.ui.general.HeaderView;
 
-public class w extends e {
+public class w extends ActivatedController {
     private final LinearLayout a = ((LinearLayout) findViewById(g.personal__bookshelf_style_view__simple));
     private final LinearLayout b = ((LinearLayout) findViewById(g.personal__bookshelf_style_view__classic));
     private final TextView c = ((TextView) findViewById(g.personal__bookshelf_style_view__simple_title));
@@ -21,8 +21,8 @@ public class w extends e {
     private final Button e = ((Button) findViewById(g.personal__bookshelf_style_view__receive));
     private BookShelfType f = ReaderEnv.get().getBookShelfType();
 
-    public w(y yVar) {
-        super(yVar);
+    public w(IFeature featrue) {
+        super(featrue);
         setContentView(h.personal__bookshelf_style_view);
         ((HeaderView) findViewById(g.personal__bookshelf_style_view__header)).setLeftTitle(j.personal__bookshelf_style_view__header);
         if (BookShelfType.Simple == this.f) {
@@ -31,7 +31,7 @@ public class w extends e {
             b();
         }
         this.a.setOnClickListener(new x(this));
-        this.b.setOnClickListener(new y(this));
+        this.b.setOnClickListener(new IFeature(this));
         this.e.setOnClickListener(new z(this));
     }
 

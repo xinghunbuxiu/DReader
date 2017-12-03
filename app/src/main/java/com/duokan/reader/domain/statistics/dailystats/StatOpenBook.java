@@ -20,7 +20,7 @@ public class StatOpenBook extends StatEventBase {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("ev", this.event);
-            jSONObject.put("t", (this.closeTime - this.openTime) / 1000);
+            jSONObject.put("TaskHandler", (this.closeTime - this.openTime) / 1000);
             jSONObject.put("bn", this.bookId);
             jSONObject.put("ty", this.bookType);
             jSONObject.put("bc", this.autoBuyCount);

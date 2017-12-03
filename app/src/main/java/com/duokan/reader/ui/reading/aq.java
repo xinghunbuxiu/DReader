@@ -6,15 +6,13 @@ import android.graphics.Region.Op;
 import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.af;
-import com.duokan.core.sys.t;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.et;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.SystemUiConditioner;
-import com.duokan.reader.common.bitmap.a;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.epub.h;
 import com.duokan.reader.domain.document.i;
@@ -41,10 +39,10 @@ public class aq extends hd implements SystemUiConditioner {
     private int r = 0;
     private float s = 0.0f;
     private float t;
-    private e u = null;
+    private ActivatedController u = null;
 
-    public aq(y yVar, wl wlVar) {
-        super(yVar);
+    public aq(IFeature featrue, wl wlVar) {
+        super(featrue);
         this.f = wlVar;
         this.d = new az();
         this.e = new ax();
@@ -142,7 +140,7 @@ public class aq extends hd implements SystemUiConditioner {
         }
         this.u = new al(getContext());
         showPopup(this.u);
-        dv.b(this.u.getContentView(), null);
+        UTools.closeAnimation(this.u.getContentView(), null);
         return true;
     }
 
@@ -158,12 +156,12 @@ public class aq extends hd implements SystemUiConditioner {
         return this.u != null;
     }
 
-    protected boolean onRequestDetach(e eVar) {
-        if (!eVar.contains(this.u)) {
-            return super.onRequestDetach(eVar);
+    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
+        if (!activatedControllerVar.contains(this.u)) {
+            return super.onRequestDetach(activatedControllerVar);
         }
         if (this.u.getContentView().getAnimation() == null) {
-            dv.c(this.u.getContentView(), new as(this));
+            UTools.showAnimation(this.u.getContentView(), new as(this));
         }
         return true;
     }

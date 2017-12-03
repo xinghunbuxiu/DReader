@@ -10,11 +10,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.sys.ah;
 import com.duokan.core.sys.o;
 import com.duokan.core.ui.cg;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.DkPublic;
@@ -60,7 +60,7 @@ public abstract class wl extends FrameLayout {
     public wl(Context context, xb xbVar) {
         super(context);
         this.d = xbVar;
-        this.a = (sh) x.a(context).queryFeature(sh.class);
+        this.a = (sh) MyContextWrapper.getFeature(context).queryFeature(sh.class);
         inflate(getContext(), h.reading__reading_view, this);
         this.b = (PagesFrameView) findViewById(g.reading__reading_view__page_frame);
         this.c = (CurlPageView) findViewById(g.reading__reading_view__curl);
@@ -229,7 +229,7 @@ public abstract class wl extends FrameLayout {
         super.onAttachedToWindow();
         getViewTreeObserver().addOnPreDrawListener(this.e);
         getViewTreeObserver().addOnPreDrawListener(this.f);
-        dv.a((View) this, new wo(this));
+        UTools.addAnimation((View) this, new wo(this));
         a(new wq(this));
     }
 
@@ -270,7 +270,7 @@ public abstract class wl extends FrameLayout {
 
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (this.m != null) {
-            MotionEvent a = dv.a(motionEvent, (View) this, this.m);
+            MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, this.m);
             boolean dispatchTouchEvent = this.m.dispatchTouchEvent(a);
             a.recycle();
             if (dispatchTouchEvent) {
@@ -387,6 +387,6 @@ public abstract class wl extends FrameLayout {
 
     private final File o() {
         c G = this.a.G();
-        return new File(ReaderEnv.get().getReadingCacheDirectory(), o.b(String.format(Locale.getDefault(), "book=%s;pos=%s;w=%d;h=%d;theme=%s;v=%d;", new Object[]{G.H(), G.D().toString(), Integer.valueOf(getWidth()), Integer.valueOf(getHeight()), this.a.N(), Integer.valueOf(2)}), "md5") + ".snap");
+        return new File(ReaderEnv.get().getReadingCacheDirectory(), o.b(String.format(Locale.getDefault(), "book=%s;pos=%s;IActivityRunStatusChanged=%getScaledTouchSlop;getPhysicalXPixels=%getScaledTouchSlop;theme=%s;v=%getScaledTouchSlop;", new Object[]{G.H(), G.D().toString(), Integer.valueOf(getWidth()), Integer.valueOf(getHeight()), this.a.N(), Integer.valueOf(2)}), "md5") + ".snap");
     }
 }

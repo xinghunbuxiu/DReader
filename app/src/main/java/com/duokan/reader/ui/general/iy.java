@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 final class iy extends View {
     final /* synthetic */ iu a;
@@ -34,7 +34,7 @@ final class iy extends View {
             return null;
         }
         ViewGroup viewGroup = (ViewGroup) parent;
-        dv.c((View) this, new iz(this, viewGroup, viewGroup.indexOfChild(this)));
+        UTools.showAnimation((View) this, new iz(this, viewGroup, viewGroup.indexOfChild(this)));
         return this.b;
     }
 

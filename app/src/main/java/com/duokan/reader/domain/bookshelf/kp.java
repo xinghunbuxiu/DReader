@@ -7,7 +7,6 @@ import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.common.c.f;
 import com.duokan.reader.common.c.g;
@@ -234,7 +233,7 @@ public class kp implements ah, g, h {
     }
 
     public void onConnectivityChanged(f fVar) {
-        if ((!this.c.e() || ManagedApp.get().getRunningState() != RunningState.FOREGROUND) && !this.c.d()) {
+        if ((!this.c.e() || ManagedApp.get().getOldRunningState() != RunningState.FOREGROUND) && !this.c.d()) {
             return;
         }
         if (this.e.m()) {

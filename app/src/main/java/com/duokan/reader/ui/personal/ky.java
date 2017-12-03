@@ -3,7 +3,7 @@ package com.duokan.reader.ui.personal;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ui.general.expandable.ViewMode;
 
 class ky implements OnClickListener {
@@ -21,7 +21,7 @@ class ky implements OnClickListener {
         if (this.c.h.getNormalAdapter().f() == ViewMode.Edit) {
             this.c.h.b(this.a, this.b);
         } else {
-            ((kn) x.a(this.c.o()).queryFeature(kn.class)).a(this.c.j(this.b));
+            ((kn) MyContextWrapper.getFeature(this.c.o()).queryFeature(kn.class)).a(this.c.j(this.b));
         }
     }
 }

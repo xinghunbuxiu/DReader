@@ -4,7 +4,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class by implements Runnable {
     final /* synthetic */ StorePageController a;
@@ -21,7 +21,7 @@ class by implements Runnable {
             }
             if (this.a.webPageLoading() && this.a.mPageLoadingView.getVisibility() != 0) {
                 this.a.mPageLoadingView.setVisibility(0);
-                dv.b(this.a.mPageLoadingView, (Runnable) this);
+                UTools.closeAnimation(this.a.mPageLoadingView, (Runnable) this);
             } else if (!this.a.webPageLoading() && this.a.mPageLoadingView.getVisibility() != 4) {
                 Animation alphaAnimation = new AlphaAnimation(1.0f, 0.0f);
                 alphaAnimation.setFillEnabled(true);

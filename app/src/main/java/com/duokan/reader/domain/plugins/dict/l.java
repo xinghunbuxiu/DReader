@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.plugins.dict;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.kingsoft.iciba.sdk2.KSCibaEngine;
 
 class l implements Runnable {
@@ -20,6 +20,6 @@ class l implements Runnable {
             this.b.d.installEngine(j.a, 65894897);
         } catch (Throwable th) {
         }
-        t.a(this.a);
+        TaskHandler.postTask(this.a);
     }
 }

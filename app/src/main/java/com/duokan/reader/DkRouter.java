@@ -7,9 +7,8 @@ import android.net.Uri;
 import android.os.Build.VERSION;
 import android.text.TextUtils;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.m;
-import com.duokan.core.b.a;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.BaseActivity;
 import com.duokan.core.sys.ah;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.domain.bookshelf.ai;
@@ -25,11 +24,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class DkRouter {
-    private m a;
+    private BaseActivity a;
     private ReaderController b;
 
-    private DkRouter(m mVar) {
-        this.a = mVar;
+    private DkRouter(BaseActivity baseActivityVar) {
+        this.a = baseActivityVar;
     }
 
     public DkRouter(ReaderController readerController) {
@@ -40,8 +39,8 @@ public class DkRouter {
         return new DkRouter(readerController);
     }
 
-    public static DkRouter from(m mVar) {
-        return new DkRouter(mVar);
+    public static DkRouter from(BaseActivity baseActivityVar) {
+        return new DkRouter(baseActivityVar);
     }
 
     public boolean route(String str) {
@@ -120,7 +119,7 @@ public class DkRouter {
 
                             public void run() {
                                 if (a2 != null) {
-                                    e from = DkReaderController.from(this.c.e.a, a2);
+                                    ActivatedController from = DkReaderController.from(this.c.e.a, a2);
                                     from.setQuitOnBack(booleanExtra);
                                     this.c.e.a.setContentController(from);
                                 }
@@ -131,7 +130,7 @@ public class DkRouter {
                             final /* synthetic */ AnonymousClass1 b;
 
                             public void run() {
-                                e from = DkReaderController.from(this.b.e.a, (String) parseUri.get("book"));
+                                ActivatedController from = DkReaderController.from(this.b.e.a, (String) parseUri.get("book"));
                                 if (from != null) {
                                     from.setQuitOnBack(booleanExtra);
                                 }

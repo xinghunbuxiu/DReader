@@ -5,9 +5,9 @@ import com.duokan.reader.common.webservices.WebSession.SessionState;
 import java.util.concurrent.Callable;
 
 class h implements Callable {
-    final /* synthetic */ g a;
+    final /* synthetic */ SessionTask a;
 
-    h(g gVar) {
+    h(SessionTask gVar) {
         this.a = gVar;
     }
 
@@ -16,17 +16,17 @@ class h implements Callable {
     }
 
     public Void a() {
-        if (this.a.e.mIsClosed) {
-            this.a.e.mIsClosed = false;
-            this.a.e.mRetryCount = 0;
-            this.a.e.mSessionException = null;
-            this.a.e.mSessionState = SessionState.UNFINISHED;
-            this.a.e.mCacheStrategy = this.a.d;
-            this.a.e.onSessionOpen();
+        if (this.a.webSession.mIsClosed) {
+            this.a.webSession.mIsClosed = false;
+            this.a.webSession.mRetryCount = 0;
+            this.a.webSession.mSessionException = null;
+            this.a.webSession.mSessionState = SessionState.UNFINISHED;
+            this.a.webSession.mCacheStrategy = this.a.d;
+            this.a.webSession.onSessionOpen();
         }
-        if (this.a.e.mSessionException != null) {
-            WebSession.access$004(this.a.e);
-            this.a.e.mSessionException = null;
+        if (this.a.webSession.mSessionException != null) {
+            WebSession.access$004(this.a.webSession);
+            this.a.webSession.mSessionException = null;
         }
         return null;
     }

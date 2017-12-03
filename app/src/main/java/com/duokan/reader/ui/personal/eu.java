@@ -1,6 +1,5 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.c.j;
 import com.duokan.core.app.ab;
 import com.duokan.core.app.ac;
 import com.duokan.reader.ui.general.be;

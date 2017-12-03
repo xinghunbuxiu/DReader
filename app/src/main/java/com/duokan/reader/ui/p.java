@@ -2,15 +2,15 @@ package com.duokan.reader.ui;
 
 import android.view.View;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
-import com.duokan.core.sys.t;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.sys.TaskHandler;
 
-public abstract class p extends e implements e {
+public abstract class p extends ActivatedController implements ActivatedController {
     private final i a = new q(this, getContext());
 
-    public p(y yVar) {
-        super(yVar);
+    public p(IFeature featrue) {
+        super(featrue);
         setContentView(this.a.getContentView());
         addSubController(this.a);
         activate(this.a);
@@ -32,14 +32,14 @@ public abstract class p extends e implements e {
         this.a.dismissAllPopups();
     }
 
-    public boolean a(e eVar) {
+    public boolean a(ActivatedController activatedControllerVar) {
         activate(this.a);
-        return this.a.a(eVar);
+        return this.a.a(activatedControllerVar);
     }
 
-    public boolean a(e eVar, Runnable runnable) {
+    public boolean a(ActivatedController activatedControllerVar, Runnable runnable) {
         activate(this.a);
-        return this.a.a(eVar, runnable);
+        return this.a.a(activatedControllerVar, runnable);
     }
 
     public boolean i() {
@@ -60,45 +60,45 @@ public abstract class p extends e implements e {
     public void c(int i) {
     }
 
-    public boolean pushPage(e eVar) {
+    public boolean pushPage(ActivatedController activatedControllerVar) {
         activate(this.a);
-        return this.a.c(eVar);
+        return this.a.c(activatedControllerVar);
     }
 
-    public boolean pushPageSmoothly(e eVar, Runnable runnable) {
+    public boolean pushPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
         activate(this.a);
-        return this.a.c(eVar, runnable);
+        return this.a.c(activatedControllerVar, runnable);
     }
 
-    public boolean b(e eVar) {
+    public boolean b(ActivatedController activatedControllerVar) {
         activate(this.a);
-        return this.a.b(eVar);
+        return this.a.b(activatedControllerVar);
     }
 
-    public boolean b(e eVar, Runnable runnable) {
+    public boolean b(ActivatedController controller, Runnable runnable) {
         activate(this.a);
-        return this.a.b(eVar, runnable);
+        return this.a.b(controller, runnable);
     }
 
-    public boolean showPopupSmoothly(e eVar, Runnable runnable) {
-        if (!showPopup(eVar)) {
+    public boolean showPopupSmoothly(ActivatedController controller, Runnable runnable) {
+        if (!showPopup(controller)) {
             return false;
         }
-        t.b(runnable);
+        TaskHandler.PostTask(runnable);
         return true;
     }
 
-    public boolean showPopup(e eVar) {
+    public boolean showPopup(ActivatedController controller) {
         activate(this.a);
-        if (this.a.showPopup(eVar)) {
+        if (this.a.showPopup(controller)) {
             return true;
         }
         return false;
     }
 
-    public boolean showPopup(e eVar, int i, int i2) {
+    public boolean showPopup(ActivatedController controller, int i, int i2) {
         activate(this.a);
-        if (this.a.showPopup(eVar, i, i2)) {
+        if (this.a.showPopup(controller, i, i2)) {
             return true;
         }
         return false;

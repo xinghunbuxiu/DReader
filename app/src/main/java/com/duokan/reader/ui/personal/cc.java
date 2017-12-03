@@ -1,15 +1,15 @@
 package com.duokan.reader.ui.personal;
 
 import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ui.bookshelf.ho;
 
-public class cc extends e implements ho {
+public class cc extends ActivatedController implements ho {
     private final cd a = new cd(getContext(), this);
 
-    public cc(y yVar) {
-        super(yVar);
+    public cc(IFeature featrue) {
+        super(featrue);
         setContentView(this.a);
     }
 

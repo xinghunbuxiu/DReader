@@ -12,8 +12,7 @@ import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
@@ -22,7 +21,6 @@ import com.duokan.reader.common.c.g;
 import com.duokan.reader.common.webservices.duokan.DkSignInReward;
 import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.cloud.push.MessageWakeupListener;
-import com.duokan.reader.domain.cloud.push.MessageWakeupListener.MessageSubType;
 
 import org.json.JSONArray;
 
@@ -71,7 +69,7 @@ public class gn implements ah, g, MessageWakeupListener {
             a.c().c(LogLevel.EVENT, "resign_event", "resign_pass_through");
             try {
                 JSONArray jSONArray = new JSONArray((String) obj);
-                if (DkApp.get().getRunningState() == RunningState.FOREGROUND) {
+                if (DkApp.get().getOldRunningState() == RunningState.FOREGROUND) {
                     a.c().c(LogLevel.EVENT, "resign_event", "pass_through_on_foreground");
                     List arrayList = new ArrayList();
                     while (i < jSONArray.length()) {
@@ -81,7 +79,7 @@ public class gn implements ah, g, MessageWakeupListener {
                         arrayList.add(dkSignInReward);
                         i++;
                     }
-                    t.a(new gp(this, arrayList));
+                    TaskHandler.postTask(new gp(this, arrayList));
                 } else {
                     a.c().c(LogLevel.EVENT, "resign_event", "pass_through_on_background");
                     String str = "";
@@ -91,7 +89,7 @@ public class gn implements ah, g, MessageWakeupListener {
                         i2++;
                         str = str2;
                     }
-                    t.a(new gq(this));
+                    TaskHandler.postTask(new gq(this));
                     if (!TextUtils.isEmpty(str)) {
                         str = str.substring(1);
                     }

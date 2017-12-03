@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.DkApp;
 
 import java.util.Iterator;
@@ -18,8 +18,8 @@ public class g implements ah {
     private final String c;
     private final Context e;
     private String f;
-    private final String g = "http://api.ad.xiaomi.com/u/api";
-    private final String h = "http://api.ad.xiaomi.com/u/getSplashAds";
+    private final String g = "http://api.MyTask.xiaomi.com/u/api";
+    private final String h = "http://api.MyTask.xiaomi.com/u/getSplashAds";
     private final int i;
     private final int j;
     private final int k;
@@ -46,13 +46,13 @@ public class g implements ah {
         this.b = DkApp.get().getSplashAdUpId();
         this.c = DkApp.get().getComicChapterEndAdUpId();
         this.r = new c(context);
-        this.i = dv.b(context, 275.0f);
-        this.j = dv.b(context, 185.0f);
-        this.k = dv.b(context, 120.0f);
-        this.l = dv.b(context, 285.0f);
-        this.m = dv.b(context, 205.0f);
-        this.n = dv.b(context, 155.0f);
-        this.o = dv.b(context, 115.0f);
+        this.i = UTools.closeAnimation(context, 275.0f);
+        this.j = UTools.closeAnimation(context, 185.0f);
+        this.k = UTools.closeAnimation(context, 120.0f);
+        this.l = UTools.closeAnimation(context, 285.0f);
+        this.m = UTools.closeAnimation(context, 205.0f);
+        this.n = UTools.closeAnimation(context, 155.0f);
+        this.o = UTools.closeAnimation(context, 115.0f);
     }
 
     public static void a(Context context) {

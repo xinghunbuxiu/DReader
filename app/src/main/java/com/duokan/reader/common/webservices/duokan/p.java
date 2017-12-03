@@ -4,11 +4,9 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Pair;
 
-import com.duokan.core.b.a;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
 import com.duokan.reader.common.c.f;
-import com.duokan.reader.domain.bookshelf.c;
 
 public final class p {
     static final /* synthetic */ boolean a;
@@ -178,8 +176,8 @@ public final class p {
                 this.s = "http://10.232.46.34/";
                 this.t = "http://www.miui.com/api.php?mod=dkfeedback";
                 this.u = "http://update.n.duokan.com/DuoKanServer/servlet/android";
-                this.v = "http://api.ad.xiaomi.com";
-                this.w = "http://api.ad.xiaomi.com/u/api";
+                this.v = "http://api.MyTask.xiaomi.com";
+                this.w = "http://api.MyTask.xiaomi.com/u/api";
                 this.y = "http://www.n.duokan.com/extra/v0/font";
                 return;
             case 3:
@@ -199,8 +197,8 @@ public final class p {
                 this.s = "http://faq.in.duokan.com/";
                 this.t = "http://10.105.20.20:8080/api.php?mod=dkfeedback";
                 this.u = "http://update.in.duokan.com/DuoKanServer/servlet/android";
-                this.v = "http://api.ad.xiaomi.com";
-                this.w = "http://api.ad.xiaomi.com/u/api";
+                this.v = "http://api.MyTask.xiaomi.com";
+                this.w = "http://api.MyTask.xiaomi.com/u/api";
                 this.y = "http://www.in.duokan.com/extra/v0/font";
                 return;
             default:
@@ -217,11 +215,11 @@ public final class p {
                 this.o = "www.duokan.com/dk_id/api/exchange";
                 this.q = "http://www.duokan.com/pictures4";
                 this.r = "http://www.duokan.com/promotion_day";
-                this.s = "http://dkfaq_v2.a.xiaomi.com/";
+                this.s = "http://dkfaq_v2.setDrawable.xiaomi.com/";
                 this.t = "http://www.miui.com/api.php?mod=dkfeedback";
                 this.u = "http://update.duokan.com/DuoKanServer/servlet/android";
-                this.v = "http://api.ad.xiaomi.com";
-                this.w = "http://api.ad.xiaomi.com/u/api";
+                this.v = "http://api.MyTask.xiaomi.com";
+                this.w = "http://api.MyTask.xiaomi.com/u/api";
                 this.y = "http://www.duokan.com/extra/v0/font";
                 return;
         }

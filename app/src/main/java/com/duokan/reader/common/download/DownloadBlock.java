@@ -3,7 +3,7 @@ package com.duokan.reader.common.download;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.duokan.core.diagnostic.f;
+import com.duokan.core.diagnostic.HttpLogger;
 import com.duokan.reader.common.download.DownloadTask.DownloadingStage;
 
 import java.nio.channels.FileChannel;
@@ -24,7 +24,7 @@ abstract class DownloadBlock {
     protected long k = 0;
     protected final a l;
     protected final SQLiteDatabase m;
-    protected final f n;
+    protected final HttpLogger n;
     protected DownloadingStage o = DownloadingStage.UNKNOWN;
 
     public enum BlockState {
@@ -36,7 +36,7 @@ abstract class DownloadBlock {
     public void a(long r12) {
         /* JADX: method processing error */
 /*
-Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offset: 0x006a in list [B:13:0x005d, B:19:0x0052]
+Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find block by offset: 0x006a in list [B:13:0x005d, B:19:0x0052]
 	at jadx.core.utils.BlockUtils.getBlockByOffset(BlockUtils.java:43)
 	at jadx.core.dex.instructions.IfNode.initBlocks(IfNode.java:60)
 	at jadx.core.dex.visitors.blocksmaker.BlockFinish.initBlocksInIfNodes(BlockFinish.java:48)
@@ -52,7 +52,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
         r0 = p;
         if (r0 != 0) goto L_0x0012;
     L_0x0004:
-        r0 = r11.d;
+        r0 = r11.getScaledTouchSlop;
         r2 = -1;
         r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1));
         if (r0 == 0) goto L_0x0012;
@@ -61,16 +61,16 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
         r0.<init>();
         throw r0;
     L_0x0012:
-        r11.d = r12;
-        r0 = r11.m;
+        r11.getScaledTouchSlop = r12;
+        r0 = r11.BaseActivity;
         r0.beginTransaction();
         r0 = new android.content.ContentValues;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r0.<init>();	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r1 = "block_length";	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
-        r2 = r11.d;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
+        r2 = r11.getScaledTouchSlop;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r2 = java.lang.Long.valueOf(r2);	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r0.put(r1, r2);	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
-        r1 = r11.m;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
+        r1 = r11.BaseActivity;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r2 = "blocks";	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r3 = "block_id=?";	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r4 = 1;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
@@ -80,14 +80,14 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
         r6.<init>();	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r7 = "";	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r6 = r6.append(r7);	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
-        r8 = r11.a;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
+        r8 = r11.setDrawable;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r6 = r6.append(r8);	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r6 = r6.toString();	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r4[r5] = r6;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r1.update(r2, r0, r3, r4);	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
-        r0 = r11.m;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
+        r0 = r11.BaseActivity;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r0.setTransactionSuccessful();	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
-        r0 = r11.m;
+        r0 = r11.BaseActivity;
         r0.endTransaction();
     L_0x0057:
         return;
@@ -101,15 +101,15 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
         throw r0;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
     L_0x0063:
         r0 = move-exception;
-        r1 = r11.m;
+        r1 = r11.BaseActivity;
         r1.endTransaction();
         throw r0;
     L_0x006a:
-        r0 = r11.m;
+        r0 = r11.BaseActivity;
         r0.endTransaction();
         goto L_0x0057;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.DownloadBlock.a(long):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.DownloadBlock.setDrawable(long):void");
     }
 
     protected abstract void b(c cVar);
@@ -119,7 +119,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
     protected void g() {
         /* JADX: method processing error */
 /*
-Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offset: 0x0067 in list [B:7:0x005a, B:13:0x004f]
+Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find block by offset: 0x0067 in list [B:7:0x005a, B:13:0x004f]
 	at jadx.core.utils.BlockUtils.getBlockByOffset(BlockUtils.java:43)
 	at jadx.core.dex.instructions.IfNode.initBlocks(IfNode.java:60)
 	at jadx.core.dex.visitors.blocksmaker.BlockFinish.initBlocksInIfNodes(BlockFinish.java:48)
@@ -132,22 +132,22 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
 */
         /*
         r10 = this;
-        r0 = r10.m;
+        r0 = r10.BaseActivity;
         r0.beginTransaction();
         r0 = new org.json.JSONObject;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r0.<init>();	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r1 = "block_state";	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
-        r2 = r10.f;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
+        r2 = r10.HttpLogger;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r0.put(r1, r2);	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r1 = "downloaded_length";	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
-        r2 = r10.g;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
+        r2 = r10.SessionTask;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r0.put(r1, r2);	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r1 = new android.content.ContentValues;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r1.<init>();	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r2 = "runtime_info";	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r0 = r0.toString();	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r1.put(r2, r0);	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
-        r0 = r10.m;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
+        r0 = r10.BaseActivity;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r2 = "blocks";	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r3 = "block_id=?";	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r4 = 1;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
@@ -157,14 +157,14 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
         r6.<init>();	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r7 = "";	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r6 = r6.append(r7);	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
-        r8 = r10.a;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
+        r8 = r10.setDrawable;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r6 = r6.append(r8);	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r6 = r6.toString();	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r4[r5] = r6;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r0.update(r2, r1, r3, r4);	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
-        r0 = r10.m;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
+        r0 = r10.BaseActivity;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r0.setTransactionSuccessful();	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
-        r0 = r10.m;
+        r0 = r10.BaseActivity;
         r0.endTransaction();
     L_0x0054:
         return;
@@ -178,18 +178,18 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
         throw r0;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
     L_0x0060:
         r0 = move-exception;
-        r1 = r10.m;
+        r1 = r10.BaseActivity;
         r1.endTransaction();
         throw r0;
     L_0x0067:
-        r0 = r10.m;
+        r0 = r10.BaseActivity;
         r0.endTransaction();
         goto L_0x0054;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.DownloadBlock.g():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.DownloadBlock.SessionTask():void");
     }
 
-    public DownloadBlock(long r14, java.lang.String r16, android.database.sqlite.SQLiteDatabase r17, com.duokan.reader.common.download.a r18, com.duokan.core.diagnostic.f r19) {
+    public DownloadBlock(long r14, java.lang.String r16, android.database.sqlite.SQLiteDatabase r17, com.duokan.reader.common.download.a r18, HttpLogger r19) {
         /* JADX: method processing error */
 /*
 Error: java.lang.NullPointerException
@@ -212,17 +212,17 @@ Error: java.lang.NullPointerException
         r13 = this;
         r13.<init>();
         r2 = -1;
-        r13.d = r2;
+        r13.getScaledTouchSlop = r2;
         r2 = com.duokan.reader.common.download.DownloadBlock.BlockState.UNFINISHED;
-        r13.f = r2;
+        r13.HttpLogger = r2;
         r2 = 0;
-        r13.g = r2;
+        r13.SessionTask = r2;
         r2 = 0;
-        r13.h = r2;
+        r13.getPhysicalXPixels = r2;
         r2 = 0;
-        r13.j = r2;
+        r13.getWidthPixels = r2;
         r2 = 0;
-        r13.k = r2;
+        r13.getHeightPixels = r2;
         r2 = com.duokan.reader.common.download.DownloadTask.DownloadingStage.UNKNOWN;
         r13.o = r2;
         r2 = p;
@@ -244,11 +244,11 @@ Error: java.lang.NullPointerException
         throw r2;
     L_0x0036:
         r0 = r17;
-        r13.m = r0;
-        r13.a = r14;
+        r13.BaseActivity = r0;
+        r13.setDrawable = r14;
         r0 = r19;
         r13.n = r0;
-        r2 = r13.m;
+        r2 = r13.BaseActivity;
         r3 = "blocks";
         r4 = 0;
         r5 = "block_id=?";
@@ -259,7 +259,7 @@ Error: java.lang.NullPointerException
         r8.<init>();
         r9 = "";
         r8 = r8.append(r9);
-        r10 = r13.a;
+        r10 = r13.setDrawable;
         r8 = r8.append(r10);
         r8 = r8.toString();
         r6[r7] = r8;
@@ -290,21 +290,21 @@ Error: java.lang.NullPointerException
         r2 = "block_index";
         r2 = r3.getColumnIndex(r2);
         r2 = r3.getInt(r2);
-        r13.b = r2;
+        r13.getVisible = r2;
         r2 = "block_offset";
         r2 = r3.getColumnIndex(r2);
         r4 = r3.getLong(r2);
-        r13.c = r4;
+        r13.showAnimation = r4;
         r2 = "block_length";
         r2 = r3.getColumnIndex(r2);
         r4 = r3.getLong(r2);
-        r13.d = r4;
+        r13.getScaledTouchSlop = r4;
         r2 = "task_id";
         r2 = r3.getColumnIndex(r2);
         r4 = r3.getLong(r2);
-        r13.e = r4;
+        r13.getScaledPagingTouchSlop = r4;
         r0 = r16;
-        r13.i = r0;
+        r13.getPhysicalYPixels = r0;
         r0 = r18;
         r13.l = r0;
         r2 = new org.json.JSONObject;	 Catch:{ Exception -> 0x00ed }
@@ -318,10 +318,10 @@ Error: java.lang.NullPointerException
         r4 = "block_state";	 Catch:{ Exception -> 0x00ed }
         r4 = r2.getString(r4);	 Catch:{ Exception -> 0x00ed }
         r4 = com.duokan.reader.common.download.DownloadBlock.BlockState.valueOf(r4);	 Catch:{ Exception -> 0x00ed }
-        r13.f = r4;	 Catch:{ Exception -> 0x00ed }
+        r13.HttpLogger = r4;	 Catch:{ Exception -> 0x00ed }
         r4 = "downloaded_length";	 Catch:{ Exception -> 0x00ed }
         r4 = r2.getLong(r4);	 Catch:{ Exception -> 0x00ed }
-        r13.g = r4;	 Catch:{ Exception -> 0x00ed }
+        r13.SessionTask = r4;	 Catch:{ Exception -> 0x00ed }
     L_0x00e9:
         r3.close();
     L_0x00ec:
@@ -342,7 +342,7 @@ Error: java.lang.NullPointerException
         r3.close();
         goto L_0x00ec;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.DownloadBlock.<init>(long, java.lang.String, android.database.sqlite.SQLiteDatabase, com.duokan.reader.common.download.a, com.duokan.core.diagnostic.f):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.DownloadBlock.<init>(long, java.lang.String, android.database.sqlite.SQLiteDatabase, com.duokan.reader.common.download.setDrawable, com.duokan.core.diagnostic.HttpLogger):void");
     }
 
     public BlockState a() {
@@ -370,9 +370,9 @@ Error: java.lang.NullPointerException
     }
 
     public void a(c cVar) {
-        Log.i(q, String.format("[%d]-[%d]-[%d]: ENTER_DOWNLOAD", new Object[]{Long.valueOf(this.a), Integer.valueOf(this.b), Long.valueOf(Thread.currentThread().getId())}));
+        Log.i(q, String.format("[%getScaledTouchSlop]-[%getScaledTouchSlop]-[%getScaledTouchSlop]: ENTER_DOWNLOAD", new Object[]{Long.valueOf(this.a), Integer.valueOf(this.b), Long.valueOf(Thread.currentThread().getId())}));
         b(cVar);
-        Log.i(q, String.format("[%d]-[%d]-[%d]: LEAVE_DOWNLOAD", new Object[]{Long.valueOf(this.a), Integer.valueOf(this.b), Long.valueOf(Thread.currentThread().getId())}));
+        Log.i(q, String.format("[%getScaledTouchSlop]-[%getScaledTouchSlop]-[%getScaledTouchSlop]: LEAVE_DOWNLOAD", new Object[]{Long.valueOf(this.a), Integer.valueOf(this.b), Long.valueOf(Thread.currentThread().getId())}));
     }
 
     public void e() {
@@ -401,7 +401,7 @@ Error: java.lang.NullPointerException
 
     protected void b(BlockState blockState) {
         this.f = blockState;
-        Log.i(q, String.format("[%d]-[%d]-[%d]: " + this.f, new Object[]{Long.valueOf(this.a), Integer.valueOf(this.b), Long.valueOf(Thread.currentThread().getId())}));
+        Log.i(q, String.format("[%getScaledTouchSlop]-[%getScaledTouchSlop]-[%getScaledTouchSlop]: " + this.f, new Object[]{Long.valueOf(this.a), Integer.valueOf(this.b), Long.valueOf(Thread.currentThread().getId())}));
         g();
         a(this.f);
     }

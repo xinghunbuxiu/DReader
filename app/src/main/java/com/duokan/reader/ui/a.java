@@ -8,12 +8,11 @@ import android.os.Build.VERSION;
 import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.z;
 import com.duokan.core.ui.cv;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.SystemUiMode;
 
@@ -38,7 +37,7 @@ public class a extends FrameLayout {
             if (identifier > 0) {
                 this.d = getResources().getDimensionPixelSize(identifier);
             } else {
-                this.d = dv.b(getContext(), 20.0f);
+                this.d = UTools.closeAnimation(getContext(), 20.0f);
             }
         } else {
             this.d = 0;
@@ -96,7 +95,7 @@ public class a extends FrameLayout {
         if (this.h != i) {
             this.h = i;
             if (this.f.getVisibility() == 0) {
-                t.a(new c(this, i), 200);
+                TaskHandler.postDelayed(new c(this, i), 200);
             }
         }
     }
@@ -104,14 +103,14 @@ public class a extends FrameLayout {
     private void a() {
         if (this.c.getVisibility() != 0) {
             this.c.setVisibility(0);
-            dv.d(this.c, null);
+            UTools.getScaledTouchSlop(this.c, null);
         }
     }
 
     private void b() {
         if (this.c.getVisibility() != 4) {
             this.c.setVisibility(4);
-            dv.f(this.c, null);
+            UTools.f(this.c, null);
         }
     }
 
@@ -126,14 +125,14 @@ public class a extends FrameLayout {
         if (this.f.getVisibility() != 0) {
             this.f.setBackgroundColor(this.h);
             this.f.setVisibility(0);
-            dv.e(this.f, null);
+            UTools.getScaledPagingTouchSlop(this.f, null);
         }
     }
 
     private void d() {
         if (this.f.getVisibility() != 4) {
             this.f.setVisibility(4);
-            dv.g(this.f, null);
+            UTools.g(this.f, null);
         }
     }
 

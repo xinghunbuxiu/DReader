@@ -10,18 +10,16 @@ import android.util.AttributeSet;
 import android.util.Pair;
 import android.view.View;
 
-import com.duokan.b.e;
-import com.duokan.core.app.x;
-import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.bookshelf.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.ac;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.domain.document.bb;
 import com.duokan.reader.domain.document.n;
 import com.duokan.reader.ui.general.FlowPagesView;
-import com.duokan.reader.ui.general.PagesView.PageLayout;
 import com.duokan.reader.ui.general.el;
 import com.duokan.reader.ui.general.hl;
 
@@ -118,7 +116,7 @@ public class fo extends FlowPagesView implements gy {
             if (view2.i()) {
                 Rect selectionStartIndicatorBounds = view2.getSelectionStartIndicatorBounds();
                 if (!selectionStartIndicatorBounds.isEmpty()) {
-                    dv.b(selectionStartIndicatorBounds, view2, (View) this);
+                    UTools.closeAnimation(selectionStartIndicatorBounds, view2, (View) this);
                     return selectionStartIndicatorBounds;
                 }
             }
@@ -133,7 +131,7 @@ public class fo extends FlowPagesView implements gy {
             if (view2.i()) {
                 Rect selectionEndIndicatorBounds = view2.getSelectionEndIndicatorBounds();
                 if (!selectionEndIndicatorBounds.isEmpty()) {
-                    dv.b(selectionEndIndicatorBounds, view2, (View) this);
+                    UTools.closeAnimation(selectionEndIndicatorBounds, view2, (View) this);
                     return selectionEndIndicatorBounds;
                 }
             }
@@ -155,7 +153,7 @@ public class fo extends FlowPagesView implements gy {
         c(false);
     }
 
-    public final void a(n nVar, com.duokan.reader.domain.document.a aVar) {
+    public final void a(n nVar, Document_a aVar) {
         this.b = nVar;
         if (this.b != null) {
             this.c = this.b.s();
@@ -180,7 +178,7 @@ public class fo extends FlowPagesView implements gy {
         return this.e;
     }
 
-    public void a(com.duokan.reader.domain.document.a aVar) {
+    public void a(Document_a aVar) {
         b(b(aVar));
     }
 
@@ -210,7 +208,7 @@ public class fo extends FlowPagesView implements gy {
             return this.b.s();
         }
         Point point = new Point(i, i2);
-        dv.a(point, (View) this, view);
+        UTools.getTouchPoint(point, (View) this, view);
         return view.i() ? view.getPageDrawable().b(point) : this.b.s();
     }
 
@@ -224,8 +222,8 @@ public class fo extends FlowPagesView implements gy {
             }
             Point point = new Point(i, i2);
             Point point2 = new Point(i3, i4);
-            dv.a(point, (View) this, view2);
-            dv.a(point2, (View) this, view2);
+            UTools.getTouchPoint(point, (View) this, view2);
+            UTools.getTouchPoint(point2, (View) this, view2);
             s = s.a(view2.getPageDrawable().a(point, point2));
         }
         return s;
@@ -242,7 +240,7 @@ public class fo extends FlowPagesView implements gy {
             return null;
         }
         Point point2 = new Point(point);
-        dv.a(point2, (View) this, view);
+        UTools.getTouchPoint(point2, (View) this, view);
         int d = view.i() ? view.getPageDrawable().d(point2) : -1;
         return d < 0 ? null : new Pair(view, Integer.valueOf(d));
     }
@@ -253,7 +251,7 @@ public class fo extends FlowPagesView implements gy {
             return null;
         }
         Point point2 = new Point(point);
-        dv.a(point2, (View) this, view);
+        UTools.getTouchPoint(point2, (View) this, view);
         int a = view.i() ? view.getPageDrawable().a(point2, i) : -1;
         return a < 0 ? null : new Pair(view, Integer.valueOf(a));
     }
@@ -264,7 +262,7 @@ public class fo extends FlowPagesView implements gy {
             return null;
         }
         Point point2 = new Point(point);
-        dv.a(point2, (View) this, view);
+        UTools.getTouchPoint(point2, (View) this, view);
         int g = view.i() ? view.getPageDrawable().g(point2) : -1;
         return g < 0 ? null : new Pair(view, Integer.valueOf(g));
     }
@@ -292,7 +290,7 @@ public class fo extends FlowPagesView implements gy {
             View view2 = (gs) view2;
             if (view2.i()) {
                 Rect[] e = view2.getPageDrawable().e(bbVar);
-                dv.a(e, view2, (View) this);
+                UTools.addAnimation(e, view2, (View) this);
                 linkedList.addAll(Arrays.asList(e));
             }
         }
@@ -329,7 +327,7 @@ public class fo extends FlowPagesView implements gy {
 
     public boolean c(int i, int i2) {
         boolean z = true;
-        int b = dv.b(getContext(), 50.0f);
+        int b = UTools.closeAnimation(getContext(), 50.0f);
         if (p()) {
             boolean z2;
             if (i2 < b) {
@@ -376,7 +374,7 @@ public class fo extends FlowPagesView implements gy {
 
     public boolean d(int i, int i2) {
         boolean z = true;
-        int b = dv.b(getContext(), 50.0f);
+        int b = UTools.closeAnimation(getContext(), 50.0f);
         if (p()) {
             boolean z2;
             if (i2 > getHeight() - b) {
@@ -430,7 +428,7 @@ public class fo extends FlowPagesView implements gy {
                     a(bbVar.g());
                     gnVar = (gn) getCurrentPagePresenter();
                 }
-                com.duokan.reader.domain.document.a g = gnVar.g();
+                Document_a g = gnVar.g();
                 if (!g.a(bbVar.h()) && !g.h().equals(bbVar.h())) {
                     View[] pageViews = getPageViews();
                     int length = pageViews.length;
@@ -525,7 +523,7 @@ public class fo extends FlowPagesView implements gy {
             gs gsVar;
             if (this.b.j()) {
                 if (z) {
-                    ((sh) x.a(getContext()).queryFeature(sh.class)).aM();
+                    ((sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class)).aM();
                 }
                 pageViews = getPageViews();
                 while (i < pageViews.length) {
@@ -540,7 +538,7 @@ public class fo extends FlowPagesView implements gy {
                 getProxyAdapter().b().d();
             } else if (((gs) getCurrentPagePresenter().d()).getPageDrawable().q() != this.b.l()) {
                 if (z) {
-                    ((sh) x.a(getContext()).queryFeature(sh.class)).aM();
+                    ((sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class)).aM();
                 }
                 pageViews = getPageViews();
                 while (i < pageViews.length) {
@@ -584,7 +582,7 @@ public class fo extends FlowPagesView implements gy {
         }
     }
 
-    protected fs b(com.duokan.reader.domain.document.a aVar) {
+    protected fs b(Document_a aVar) {
         return new fs(this, aVar);
     }
 }

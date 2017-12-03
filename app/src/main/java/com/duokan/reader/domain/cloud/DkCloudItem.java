@@ -82,6 +82,6 @@ public abstract class DkCloudItem implements Serializable {
     }
 
     protected void xmlInsertColor(Node node, String str, int i) {
-        a.b(node, str, String.format("%d %d %d", new Object[]{Integer.valueOf(Color.red(i)), Integer.valueOf(Color.green(i)), Integer.valueOf(Color.blue(i))}));
+        a.b(node, str, String.format("%getScaledTouchSlop %getScaledTouchSlop %getScaledTouchSlop", new Object[]{Integer.valueOf(Color.red(i)), Integer.valueOf(Color.green(i)), Integer.valueOf(Color.blue(i))}));
     }
 }

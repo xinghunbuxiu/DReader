@@ -7,9 +7,9 @@ import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.reader.domain.audio.AudioPlayer;
 import com.duokan.reader.domain.document.ak;
@@ -22,13 +22,13 @@ import com.duokan.reader.ui.reading.a.j;
 public class ai extends hd implements tb {
     boolean a = false;
     private FrameLayout b = null;
-    private e c = null;
+    private ActivatedController c = null;
     private wl d;
     private sh e;
     private a f;
 
-    public ai(y yVar, sh shVar, wl wlVar) {
-        super(yVar);
+    public ai(IFeature featrue, sh shVar, wl wlVar) {
+        super(featrue);
         this.d = wlVar;
         this.e = shVar;
         this.f = new a(shVar);
@@ -45,7 +45,7 @@ public class ai extends hd implements tb {
                 imageView.setBackgroundResource(f.general__shared__button_circular_48dip);
                 imageView.setScaleType(ScaleType.CENTER);
                 this.b = new FrameLayout(getContext());
-                this.b.setPadding(0, 0, dv.b(getContext(), 15.0f), dv.b(getContext(), 30.0f));
+                this.b.setPadding(0, 0, UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 30.0f));
                 this.b.addView(imageView, new LayoutParams(-2, -2));
                 this.d.getPagesFrameView().addView(this.b, new LayoutParams(-2, -2, 85));
                 this.b.setOnClickListener(new aj(this));
@@ -80,7 +80,7 @@ public class ai extends hd implements tb {
         }
         this.c = new ab(getContext());
         showPopup(this.c);
-        dv.b(this.c.getContentView(), null);
+        UTools.closeAnimation(this.c.getContentView(), null);
         return true;
     }
 
@@ -96,12 +96,12 @@ public class ai extends hd implements tb {
         return this.c != null;
     }
 
-    protected boolean onRequestDetach(e eVar) {
-        if (!eVar.contains(this.c)) {
-            return super.onRequestDetach(eVar);
+    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
+        if (!activatedControllerVar.contains(this.c)) {
+            return super.onRequestDetach(activatedControllerVar);
         }
         if (this.c.getContentView().getAnimation() == null) {
-            dv.c(this.c.getContentView(), new ak(this));
+            UTools.c(this.c.getContentView(), new ak(this));
         }
         return true;
     }

@@ -6,8 +6,8 @@ import android.webkit.JavascriptInterface;
 
 import com.duokan.c.j;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.as;
-import com.duokan.core.sys.t;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.domain.account.PersonalAccount;
@@ -207,7 +207,7 @@ public class cg {
     }
 
     private void a(String str) {
-        b(new do(this, str));
+        b(new do (this, str));
     }
 
     private void b(String str) {
@@ -559,7 +559,7 @@ public class cg {
     protected final Object b(Callable callable, Object obj) {
         try {
             if (a()) {
-                obj = t.a(callable);
+                obj = TaskHandler.postTask(callable);
             }
         } catch (Throwable th) {
             com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "jscall", "unexpected exception!", th);
@@ -568,7 +568,7 @@ public class cg {
     }
 
     protected void a(as asVar) {
-        t.a(new jy(this, asVar));
+        TaskHandler.postTask(new jy(this, asVar));
     }
 
     protected void b(as asVar) {

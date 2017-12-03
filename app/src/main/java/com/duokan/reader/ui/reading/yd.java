@@ -8,7 +8,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class yd extends Drawable {
     final /* synthetic */ yb a;
@@ -18,8 +18,8 @@ class yd extends Drawable {
     }
 
     public void draw(Canvas canvas) {
-        RectF rectF = (RectF) dv.h.a();
-        Paint paint = (Paint) dv.b.a();
+        RectF rectF = (RectF) UTools.h.getRect();
+        Paint paint = (Paint) UTools.b.getRect();
         rectF.set(getBounds());
         rectF.right -= 1.0f;
         rectF.bottom -= 1.0f;
@@ -28,9 +28,9 @@ class yd extends Drawable {
         paint.setStrokeWidth(1.0f);
         paint.setStyle(Style.STROKE);
         paint.setColor(this.a.g);
-        canvas.drawRoundRect(rectF, (float) dv.b(this.a.getContext(), 5.0f), (float) dv.b(this.a.getContext(), 5.0f), paint);
-        dv.h.a(rectF);
-        dv.b.a(paint);
+        canvas.drawRoundRect(rectF, (float) UTools.closeAnimation(this.a.getContext(), 5.0f), (float) UTools.closeAnimation(this.a.getContext(), 5.0f), paint);
+        UTools.h.getRect(rectF);
+        UTools.b.getRect(paint);
     }
 
     public int getOpacity() {

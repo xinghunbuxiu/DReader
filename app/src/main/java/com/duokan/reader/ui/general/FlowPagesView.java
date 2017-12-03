@@ -8,8 +8,8 @@ import android.util.DisplayMetrics;
 import android.util.SparseIntArray;
 
 import com.duokan.core.diagnostic.a;
-import com.duokan.core.sys.t;
-import com.duokan.core.ui.dv;
+import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.ui.UTools;
 
 import org.apache.http.HttpStatus;
 
@@ -127,7 +127,7 @@ public class FlowPagesView extends PagesView {
                     } else {
                         getCellsView().scrollBy(this.i, 0);
                     }
-                    t.a(runnable);
+                    TaskHandler.postTask(runnable);
                 } else if (n()) {
                     getCellsView().b(-this.i, 0, HttpStatus.SC_MULTIPLE_CHOICES, runnable, runnable2);
                 } else {
@@ -137,7 +137,7 @@ public class FlowPagesView extends PagesView {
                 getCellsView().b(0, this.j / 2, HttpStatus.SC_MULTIPLE_CHOICES, runnable, runnable2);
             } else {
                 getCellsView().scrollBy(0, this.j / 2);
-                t.a(runnable);
+                TaskHandler.postTask(runnable);
             }
         }
     }
@@ -161,7 +161,7 @@ public class FlowPagesView extends PagesView {
                     } else {
                         getCellsView().scrollBy(-this.i, 0);
                     }
-                    t.a(runnable);
+                    TaskHandler.postTask(runnable);
                 } else if (n()) {
                     getCellsView().b(this.i, 0, HttpStatus.SC_MULTIPLE_CHOICES, runnable, runnable2);
                 } else {
@@ -171,7 +171,7 @@ public class FlowPagesView extends PagesView {
                 getCellsView().b(0, (-this.j) / 2, HttpStatus.SC_MULTIPLE_CHOICES, runnable, runnable2);
             } else {
                 getCellsView().scrollBy(0, (-this.j) / 2);
-                t.a(runnable);
+                TaskHandler.postTask(runnable);
             }
         }
     }
@@ -282,7 +282,7 @@ public class FlowPagesView extends PagesView {
     private boolean b(Rect rect) {
         df dfVar = (df) getCurrentPagePresenter();
         if (dfVar != null && dfVar.e()) {
-            Rect rect2 = (Rect) dv.g.a();
+            Rect rect2 = (Rect) UTools.g.getRect();
             int i = this.e;
             while (i <= this.f) {
                 a(rect2, i);
@@ -291,7 +291,7 @@ public class FlowPagesView extends PagesView {
                 }
                 i++;
             }
-            dv.g.a(rect2);
+            UTools.g.getRect(rect2);
             if (i != 0) {
                 int i2;
                 if (i > 0 && !getAdapter().b(dfVar)) {
@@ -352,7 +352,7 @@ public class FlowPagesView extends PagesView {
 
     private boolean c(Rect rect) {
         boolean z = true;
-        Rect rect2 = (Rect) dv.g.a();
+        Rect rect2 = (Rect) UTools.g.getRect();
         rect2.set(f(0), h(0), e(0), g(0));
         if (o()) {
             if (n()) {
@@ -365,7 +365,7 @@ public class FlowPagesView extends PagesView {
         } else if (rect.top >= rect2.top) {
             z = false;
         }
-        dv.g.a(rect2);
+        UTools.g.getRect(rect2);
         return z;
     }
 
@@ -390,7 +390,7 @@ public class FlowPagesView extends PagesView {
 
     private boolean d(Rect rect) {
         boolean z = true;
-        Rect rect2 = (Rect) dv.g.a();
+        Rect rect2 = (Rect) UTools.g.getRect();
         rect2.set(f(0), h(0), e(0), g(0));
         if (o()) {
             if (n()) {
@@ -403,7 +403,7 @@ public class FlowPagesView extends PagesView {
         } else if (rect.bottom <= rect2.bottom) {
             z = false;
         }
-        dv.g.a(rect2);
+        UTools.g.getRect(rect2);
         return z;
     }
 
@@ -428,12 +428,12 @@ public class FlowPagesView extends PagesView {
 
     private void e(Rect rect) {
         if (getCurrentPagePresenter() != null && this.i >= 1 && this.j >= 1) {
-            Rect rect2 = (Rect) dv.g.a();
+            Rect rect2 = (Rect) UTools.g.getRect();
             g(rect2);
             if (rect2.isEmpty() || !Rect.intersects(rect2, rect)) {
-                dv.g.a(rect2);
+                UTools.g.getRect(rect2);
             } else if (rect2.contains(rect)) {
-                dv.g.a(rect2);
+                UTools.g.getRect(rect2);
             } else {
                 while (true) {
                     int i;
@@ -448,7 +448,7 @@ public class FlowPagesView extends PagesView {
                                     obj = null;
                                 }
                             } catch (Throwable th) {
-                                dv.g.a(rect2);
+                                UTools.g.getRect(rect2);
                             }
                         } else {
                             obj = rect.left < rect2.left ? 1 : null;
@@ -499,7 +499,7 @@ public class FlowPagesView extends PagesView {
                                 getCellsView().o();
                             }
                         } else {
-                            dv.g.a(rect2);
+                            UTools.g.getRect(rect2);
                             return;
                         }
                     }
@@ -510,7 +510,7 @@ public class FlowPagesView extends PagesView {
 
     private Rect f(Rect rect) {
         int i;
-        Rect rect2 = (Rect) dv.g.a();
+        Rect rect2 = (Rect) UTools.g.getRect();
         for (i = 0; i >= this.e; i--) {
             df dfVar = (df) this.a.get(n(i));
             if (dfVar != null) {
@@ -529,7 +529,7 @@ public class FlowPagesView extends PagesView {
                 }
             }
         }
-        dv.g.a(rect2);
+        UTools.g.getRect(rect2);
         if (o()) {
             rect.top = 0;
             rect.bottom = getContentHeight();
@@ -541,12 +541,12 @@ public class FlowPagesView extends PagesView {
     }
 
     private Rect g(Rect rect) {
-        Rect rect2 = (Rect) dv.g.a();
+        Rect rect2 = (Rect) UTools.g.getRect();
         a(rect2, this.e);
         rect.set(rect2);
         a(rect2, this.f);
         rect.union(rect2);
-        dv.g.a(rect2);
+        UTools.g.getRect(rect2);
         return rect;
     }
 

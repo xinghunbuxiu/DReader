@@ -1,13 +1,13 @@
 package com.duokan.reader.ui.store.comment;
 
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.ui.general.web.StorePageController;
 
 public class a {
-    public static e a(y yVar, int i, String str) {
-        e storePageController = new StorePageController(yVar);
+    public static ActivatedController a(IFeature featrue, int i, String str) {
+        ActivatedController storePageController = new StorePageController(featrue);
         if (i == 1 || i == 3) {
             storePageController.loadUrl(p.i().h(str));
         } else {
@@ -16,7 +16,7 @@ public class a {
         return storePageController;
     }
 
-    public static void a(y yVar, String str) {
-        new b(str, yVar).open();
+    public static void a(IFeature featrue, String str) {
+        new b(str, featrue).open();
     }
 }

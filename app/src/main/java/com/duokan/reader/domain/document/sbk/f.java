@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 
 import com.duokan.core.diagnostic.a;
+import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.FootnoteStyle;
 import com.duokan.reader.domain.document.WritingDirection;
 import com.duokan.reader.domain.document.aa;
@@ -281,7 +282,7 @@ public class f extends n implements at {
 
     public float j(ak akVar) {
         a.c().b(A());
-        if (!d((com.duokan.reader.domain.document.a) akVar) || !akVar.e()) {
+        if (!d((Document_a) akVar) || !akVar.e()) {
             return 0.0f;
         }
         c cVar = this.k;
@@ -297,7 +298,7 @@ public class f extends n implements at {
 
     public long b(ak akVar) {
         a.c().b(A());
-        if (!d((com.duokan.reader.domain.document.a) akVar) || !akVar.e()) {
+        if (!d((Document_a) akVar) || !akVar.e()) {
             return -1;
         }
         b bVar = (b) akVar.g();
@@ -352,7 +353,7 @@ public class f extends n implements at {
         return c(a((long) (f() - 1), 0, 0));
     }
 
-    public com.duokan.reader.domain.document.a c(com.duokan.reader.domain.document.a aVar) {
+    public Document_a c(Document_a aVar) {
         a.c().b(A());
         return aVar;
     }
@@ -410,7 +411,7 @@ public class f extends n implements at {
             if (!(akVar instanceof x)) {
                 return null;
             }
-            com.duokan.reader.domain.document.a aVar = (x) akVar;
+            Document_a aVar = (x) akVar;
             SbkTypesettingContext l = aVar.l();
             if (aVar.b() || l == I || d(aVar)) {
                 return new x(I, aVar, (long) i);
@@ -425,7 +426,7 @@ public class f extends n implements at {
         if (!(akVar instanceof x)) {
             return false;
         }
-        com.duokan.reader.domain.document.a aVar = (x) akVar;
+        Document_a aVar = (x) akVar;
         if (aVar.b()) {
             if (aVar.j().g() == 0 && a((x) aVar) == 0) {
                 return true;
@@ -443,7 +444,7 @@ public class f extends n implements at {
         if (!(akVar instanceof x)) {
             return false;
         }
-        com.duokan.reader.domain.document.a aVar = (x) akVar;
+        Document_a aVar = (x) akVar;
         if (aVar.b()) {
             long g = aVar.j().g();
             if (g == ((long) (C() - 1)) && a((x) aVar) == aVar.l().b(g) - 1) {
@@ -457,7 +458,7 @@ public class f extends n implements at {
         }
     }
 
-    public boolean d(com.duokan.reader.domain.document.a aVar) {
+    public boolean d(Document_a aVar) {
         a.c().b(A());
         if (!i && aVar == null) {
             throw new AssertionError();
@@ -488,7 +489,7 @@ public class f extends n implements at {
         a.c().b(A());
         if (i || akVar != null) {
             w E = mVar == null ? E() : (w) mVar;
-            d((com.duokan.reader.domain.document.a) akVar);
+            d((Document_a) akVar);
             SbkTypesettingContext I = I();
             if (akVar instanceof x) {
                 return new y(I, (x) akVar, E, this.g, this);
@@ -636,14 +637,14 @@ public class f extends n implements at {
         r2 = r14.l;	 Catch:{ all -> 0x0037 }
         r2 = r2.getFirst();	 Catch:{ all -> 0x0037 }
         r0 = r2;
-        r0 = (com.duokan.reader.domain.document.sbk.m) r0;	 Catch:{ all -> 0x0037 }
+        r0 = (com.duokan.reader.domain.document.sbk.BaseActivity) r0;	 Catch:{ all -> 0x0037 }
         r4 = r0;
-        r2 = r4.c;	 Catch:{ all -> 0x0037 }
+        r2 = r4.showAnimation;	 Catch:{ all -> 0x0037 }
         if (r2 == 0) goto L_0x0026;
     L_0x001c:
         monitor-exit(r14);	 Catch:{ all -> 0x0037 }
         r14.J();
-        r14.x();
+        r14.MyContextWrapper();
     L_0x0023:
         return;
     L_0x0024:
@@ -653,10 +654,10 @@ public class f extends n implements at {
         monitor-exit(r14);	 Catch:{ all -> 0x0037 }
         if (r5 == r4) goto L_0x0181;
     L_0x0029:
-        r2 = i;
+        r2 = getPhysicalYPixels;
         if (r2 != 0) goto L_0x003a;
     L_0x002d:
-        r2 = r4.b;
+        r2 = r4.getVisible;
         if (r2 == 0) goto L_0x003a;
     L_0x0031:
         r2 = new java.lang.AssertionError;
@@ -669,28 +670,28 @@ public class f extends n implements at {
     L_0x003a:
         if (r5 == 0) goto L_0x003e;
     L_0x003c:
-        r5.b = r8;
+        r5.getVisible = r8;
     L_0x003e:
-        r2 = r4.f();
+        r2 = r4.HttpLogger();
         if (r2 != 0) goto L_0x0050;
     L_0x0044:
-        r9 = r14.j;
+        r9 = r14.getWidthPixels;
         if (r5 != 0) goto L_0x00f8;
     L_0x0048:
         r2 = r3;
     L_0x0049:
-        r2 = r9.a(r14, r2);
-        r4.a(r2);
+        r2 = r9.setDrawable(r14, r2);
+        r4.setDrawable(r2);
     L_0x0050:
         if (r5 != 0) goto L_0x0103;
     L_0x0052:
-        r2 = r4.f();
-        r2 = r14.a(r2);
-        r14.k = r2;
-        r2 = r14.k;
+        r2 = r4.HttpLogger();
+        r2 = r14.setDrawable(r2);
+        r14.getHeightPixels = r2;
+        r2 = r14.getHeightPixels;
         if (r2 == 0) goto L_0x00fe;
     L_0x0060:
-        r2 = r14.k;
+        r2 = r14.getHeightPixels;
         r4.n = r2;
         r14.u();
         r2 = r3;
@@ -698,42 +699,42 @@ public class f extends n implements at {
         r9 = r14.s;
         r9.start();
     L_0x0070:
-        r9 = r14.k;
+        r9 = r14.getHeightPixels;
         r10 = r4.n;
-        r14.k = r10;
-        r11 = r14.k;
+        r14.getHeightPixels = r10;
+        r11 = r14.getHeightPixels;
         r11 = r9.equals(r11);
         if (r11 != 0) goto L_0x0088;
     L_0x0080:
-        r11 = new com.duokan.reader.domain.document.sbk.i;
+        r11 = new com.duokan.reader.domain.document.sbk.getPhysicalYPixels;
         r11.<init>(r14, r9);
-        com.duokan.core.sys.t.a(r11);
+        com.duokan.core.sys.TaskHandler.setDrawable(r11);
     L_0x0088:
-        r9 = r10.h();
+        r9 = r10.getPhysicalXPixels();
         r9 = new long[r9][];
-        r4.i = r9;
-        r9 = r10.h();
+        r4.getPhysicalYPixels = r9;
+        r9 = r10.getPhysicalXPixels();
         r9 = new com.duokan.reader.domain.document.sbk.SbkTypesettingContext.ChapterState[r9];
-        r4.j = r9;
-        r9 = r4.j;
+        r4.getWidthPixels = r9;
+        r9 = r4.getWidthPixels;
         r10 = com.duokan.reader.domain.document.sbk.SbkTypesettingContext.ChapterState.NOT_TYPESETTED;
         java.util.Arrays.fill(r9, r10);
         if (r2 != 0) goto L_0x016f;
     L_0x00a1:
-        r14.a(r4, r5);
+        r14.setDrawable(r4, r5);
         r10 = java.lang.System.currentTimeMillis();
         r14.q = r10;
     L_0x00aa:
-        r14.z();
-        r4.b = r7;
+        r14.QueryFeatureWrapper();
+        r4.getVisible = r7;
     L_0x00af:
-        r2 = r4.h();
+        r2 = r4.getPhysicalXPixels();
         if (r2 == 0) goto L_0x00cc;
     L_0x00b5:
         r14.p = r7;
         r5 = r14.n;
         r5.release();
-        r14.a(r2, r4);
+        r14.setDrawable(r2, r4);
         r14.p = r8;
         r10 = java.lang.System.currentTimeMillis();
         r14.q = r10;
@@ -744,7 +745,7 @@ public class f extends n implements at {
     L_0x00ce:
         r2 = r14.n;
         r2.release();
-        r2 = r4.g();
+        r2 = r4.SessionTask();
         r5 = r14.o;
         if (r2 == r5) goto L_0x0173;
     L_0x00db:
@@ -757,36 +758,36 @@ public class f extends n implements at {
         r2 = (r10 > r12 ? 1 : (r10 == r12 ? 0 : -1));
         if (r2 <= 0) goto L_0x0173;
     L_0x00ea:
-        r2 = r14.a(r4, r7);
+        r2 = r14.setDrawable(r4, r7);
         if (r2 != 0) goto L_0x00f5;
     L_0x00f0:
-        r2 = r14.m;
+        r2 = r14.BaseActivity;
         r2.acquireUninterruptibly();
     L_0x00f5:
         r5 = r4;
         goto L_0x0004;
     L_0x00f8:
-        r2 = r5.f();
+        r2 = r5.HttpLogger();
         goto L_0x0049;
     L_0x00fe:
         r14.v();
         goto L_0x0023;
     L_0x0103:
-        r2 = r4.g();
-        r9 = r5.g();
+        r2 = r4.SessionTask();
+        r9 = r5.SessionTask();
         if (r2 != r9) goto L_0x0163;
     L_0x010d:
         r2 = r5.n;
-        r2 = (com.duokan.reader.domain.document.sbk.k) r2;
-        r2 = r2.d;
-        r9 = r4.f();
-        r9 = r9.b;
-        r2 = r9.a(r2);
+        r2 = (com.duokan.reader.domain.document.sbk.getHeightPixels) r2;
+        r2 = r2.getScaledTouchSlop;
+        r9 = r4.HttpLogger();
+        r9 = r9.getVisible;
+        r2 = r9.setDrawable(r2);
         r9 = 2;
         if (r2 != r9) goto L_0x0143;
     L_0x0124:
-        r2 = r4.f();
-        r2 = r14.a(r2);
+        r2 = r4.HttpLogger();
+        r2 = r14.setDrawable(r2);
         if (r2 == 0) goto L_0x0136;
     L_0x012e:
         r4.n = r2;
@@ -796,16 +797,16 @@ public class f extends n implements at {
     L_0x0136:
         r2 = r5.n;
         r4.n = r2;
-        r2 = r5.i();
+        r2 = r5.getPhysicalYPixels();
         goto L_0x0070;
     L_0x0143:
         if (r2 != r7) goto L_0x0157;
     L_0x0145:
-        r2 = new com.duokan.reader.domain.document.sbk.k;
-        r9 = r4.f();
+        r2 = new com.duokan.reader.domain.document.sbk.getHeightPixels;
+        r9 = r4.HttpLogger();
         r2.<init>(r14, r9);
         r4.n = r2;
-        r2 = r5.i();
+        r2 = r5.getPhysicalYPixels();
         goto L_0x0070;
     L_0x0157:
         r2 = r5.n;
@@ -820,10 +821,10 @@ public class f extends n implements at {
         r2 = (long[][]) r2;
         goto L_0x0070;
     L_0x016f:
-        r4.i = r2;
+        r4.getPhysicalYPixels = r2;
         goto L_0x00aa;
     L_0x0173:
-        r2 = r14.m;	 Catch:{ Exception -> 0x017e }
+        r2 = r14.BaseActivity;	 Catch:{ Exception -> 0x017e }
         r10 = 500; // 0x1f4 float:7.0E-43 double:2.47E-321;
         r5 = java.util.concurrent.TimeUnit.MILLISECONDS;	 Catch:{ Exception -> 0x017e }
         r2.tryAcquire(r10, r5);	 Catch:{ Exception -> 0x017e }
@@ -835,7 +836,7 @@ public class f extends n implements at {
         r4 = r5;
         goto L_0x00af;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.sbk.f.H():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.sbk.HttpLogger.H():void");
     }
 
     private void a(SbkTypesettingContext sbkTypesettingContext, SbkTypesettingContext sbkTypesettingContext2) {

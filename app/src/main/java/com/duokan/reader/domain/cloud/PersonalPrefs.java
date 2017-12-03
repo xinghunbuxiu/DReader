@@ -8,7 +8,7 @@ import android.util.Pair;
 
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
 import com.duokan.reader.common.c.f;
@@ -406,7 +406,7 @@ public class PersonalPrefs implements g, h {
     }
 
     public void onConnectivityChanged(f fVar) {
-        if ((fVar.e() && ManagedApp.get().getRunningState() == RunningState.FOREGROUND) || fVar.d()) {
+        if ((fVar.e() && ManagedApp.get().getOldRunningState() == RunningState.FOREGROUND) || fVar.d()) {
             if (E()) {
                 a(b(), b());
             } else {
@@ -559,19 +559,19 @@ public class PersonalPrefs implements g, h {
     }
 
     private void I() {
-        t.b(new he(this));
+        TaskHandler.PostTask(new he(this));
     }
 
     private void J() {
-        t.b(new gu(this));
+        TaskHandler.PostTask(new gu(this));
     }
 
     private void K() {
-        t.b(new gv(this));
+        TaskHandler.PostTask(new gv(this));
     }
 
     private void k(boolean z) {
-        t.b(new gw(this, z));
+        TaskHandler.PostTask(new gw(this, z));
     }
 
     private int L() {

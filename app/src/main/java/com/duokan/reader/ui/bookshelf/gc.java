@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class gc implements Runnable {
     final /* synthetic */ gb a;
@@ -10,6 +10,6 @@ class gc implements Runnable {
     }
 
     public void run() {
-        t.b(this.a.a);
+        TaskHandler.PostTask(this.a.a);
     }
 }

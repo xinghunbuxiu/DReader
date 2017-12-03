@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 
@@ -30,7 +30,7 @@ public class ServerSettingActivity extends Activity {
 
     private void a(String str, int i) {
         this.a.setText(str + "\n" + i + "秒后自动退出～");
-        t.a(new hr(this), TimeUnit.SECONDS.toMillis((long) i));
+        TaskHandler.postDelayed(new hr(this), TimeUnit.SECONDS.toMillis((long) i));
     }
 
     private void a() {

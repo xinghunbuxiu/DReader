@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.view.View;
 
 import com.duokan.core.ui.du;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.domain.document.d;
@@ -35,19 +35,19 @@ class aee implements du {
         if (this.b.a.m != null) {
             Point point = this.b.a.m.c;
             point.y += (int) pointF2.y;
-            if (Math.abs(this.b.a.m.d.y - this.b.a.m.c.y) > dv.d(this.b.a.getContext())) {
+            if (Math.abs(this.b.a.m.d.y - this.b.a.m.c.y) > UTools.getScaledTouchSlop(this.b.a.getContext())) {
                 this.b.a.m.d.set(this.b.a.m.c.x, this.b.a.m.c.y);
                 int a = this.b.a.m.a();
                 d dVar;
                 aeg com_duokan_reader_ui_reading_aeg;
-                if (a == this.b.a.m.a.length - 1 && this.b.a.m.c.y >= this.a.d(this.b.a.m.d().b).bottom + dv.e(this.b.a.getContext())) {
+                if (a == this.b.a.m.a.length - 1 && this.b.a.m.c.y >= this.a.d(this.b.a.m.d().b).bottom + UTools.getScaledPagingTouchSlop(this.b.a.getContext())) {
                     dVar = (d) this.b.a.m.d().b.g();
                     com_duokan_reader_ui_reading_aeg = new aeg();
                     com_duokan_reader_ui_reading_aeg.b = dVar;
                     this.b.a.m = com_duokan_reader_ui_reading_aeg;
                     this.b.a.a.u();
                     return;
-                } else if (a != 0 || this.b.a.m.c.y >= this.a.d(this.b.a.m.c().b).top - dv.e(this.b.a.getContext())) {
+                } else if (a != 0 || this.b.a.m.c.y >= this.a.d(this.b.a.m.c().b).top - UTools.getScaledPagingTouchSlop(this.b.a.getContext())) {
                     as asVar;
                     if (this.a instanceof i) {
                         as b;

@@ -5,8 +5,7 @@ import android.view.LayoutInflater;
 import android.widget.FrameLayout.LayoutParams;
 import android.widget.TextView;
 
-import com.duokan.c.g;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.bookshelf.jn;
 import com.duokan.reader.domain.bookshelf.jo;
 import com.duokan.reader.domain.store.DkStoreBookDetail;
@@ -16,8 +15,8 @@ public class xh extends ei {
     private final jo i;
     private final TextView j = ((TextView) findViewById(g.reading__repair_cert_view__reason));
 
-    public xh(y yVar, wl wlVar, DkStoreBookDetail dkStoreBookDetail, String str, jn jnVar, jo joVar) {
-        super(yVar, wlVar);
+    public xh(IFeature featrue, wl wlVar, DkStoreBookDetail dkStoreBookDetail, String str, jn jnVar, jo joVar) {
+        super(featrue, wlVar);
         this.h = jnVar;
         this.i = joVar;
         this.e.addView(LayoutInflater.from(getContext()).inflate(h.reading__repair_cert_view, null), new LayoutParams(-1, -1));

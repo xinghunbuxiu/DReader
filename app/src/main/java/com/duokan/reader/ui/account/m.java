@@ -4,14 +4,13 @@ import android.accounts.Account;
 import android.text.Html;
 
 import com.duokan.c.j;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.common.b.a;
 import com.duokan.reader.common.b.e;
 import com.duokan.reader.domain.account.MiAccount;
 import com.duokan.reader.domain.account.bh;
 import com.duokan.reader.domain.account.i;
-import com.duokan.reader.ui.general.*;
 import com.duokan.reader.ui.general.dn;
 import com.duokan.reader.ui.general.ew;
 
@@ -20,8 +19,8 @@ do;
 public class m extends ew {
     private dn a = new n(this);
 
-    public m(y yVar) {
-        super(yVar);
+    public m(IFeature featrue) {
+        super(featrue);
         a(j.personal__miaccount_change_nickname_view__title);
         b(20);
         a(((MiAccount) i.f().b(MiAccount.class)).o().e.a.mNickName);

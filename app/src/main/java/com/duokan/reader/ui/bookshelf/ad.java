@@ -5,14 +5,12 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable.Callback;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
 
-import com.duokan.b.e;
-import com.duokan.core.app.x;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.bookshelf.aa;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.ui.general.f;
@@ -33,7 +31,7 @@ public class ad extends z {
 
     public ad(Context context) {
         super(context, true);
-        this.a = (cr) x.a(context).queryFeature(cr.class);
+        this.a = (cr) MyContextWrapper.getFeature(context).queryFeature(cr.class);
         a();
     }
 
@@ -48,7 +46,7 @@ public class ad extends z {
         float f6 = (((f - f5) - ((8.0f * f) / 356.0f)) - (2.0f * f3)) / 3.0f;
         int i2 = i / 2;
         int i3 = i % 2;
-        RectF rectF = (RectF) dv.h.a();
+        RectF rectF = (RectF) UTools.h.getRect();
         rectF.left = (f4 + ((((width - (2.0f * f4)) - (2.0f * f2)) / 3.0f) * ((float) (i3 + 1)))) + (((float) i3) * f2);
         rectF.right = f2 + rectF.left;
         rectF.top = ((((float) (i2 + 1)) * f6) + f5) + (((float) i2) * f3);
@@ -58,7 +56,7 @@ public class ad extends z {
         rect2.top = Math.round(rectF.centerY() - (f / 2.0f));
         rect2.right = Math.round(((float) rect2.left) + width);
         rect2.bottom = Math.round(((float) rect2.top) + f);
-        dv.h.a(rectF);
+        UTools.h.getRect(rectF);
         return rect2;
     }
 
@@ -113,17 +111,17 @@ public class ad extends z {
         for (int i = 0; i < this.h.length; i++) {
             f fVar = this.h[i];
             if (fVar.isVisible()) {
-                Rect rect = (Rect) dv.g.a();
+                Rect rect = (Rect) UTools.g.getRect();
                 b(rect, i);
                 if (i != this.h.length - 1 || this.l == 0.0f) {
                     canvas.save();
                     canvas.scale(0.42105263f, 0.42105263f, (float) rect.centerX(), (float) rect.centerY());
-                    Rect rect2 = (Rect) dv.g.a();
+                    Rect rect2 = (Rect) UTools.g.getRect();
                     rect2.set(fVar.getBounds());
                     fVar.setBounds(rect);
                     fVar.draw(canvas);
                     fVar.setBounds(rect2);
-                    dv.g.a(rect2);
+                    UTools.g.getRect(rect2);
                     canvas.restore();
                 } else {
                     canvas.save();
@@ -133,7 +131,7 @@ public class ad extends z {
                     fVar.draw(canvas);
                     canvas.restore();
                 }
-                dv.g.a(rect);
+                UTools.g.getRect(rect);
             }
         }
     }
@@ -198,12 +196,12 @@ public class ad extends z {
             rect.set(this.h[i].getBounds());
         } else if (i + 1 < this.h.length) {
             f fVar = this.h[i];
-            Rect rect2 = (Rect) dv.g.a();
+            Rect rect2 = (Rect) UTools.g.getRect();
             rect2.set(this.h[i + 1].getBounds());
             float f = (((float) (rect2.left - fVar.getBounds().left)) * ((this.l / 0.9f) - 0.11111111f)) + ((float) fVar.getBounds().left);
             float f2 = (((float) (rect2.top - fVar.getBounds().top)) * ((this.l / 0.9f) - 0.11111111f)) + ((float) fVar.getBounds().top);
             rect.set((int) f, (int) f2, (int) (((float) fVar.getBounds().width()) + f), (int) (((float) fVar.getBounds().height()) + f2));
-            dv.g.a(rect2);
+            UTools.g.getRect(rect2);
         } else {
             rect.set(this.h[i].getBounds());
         }

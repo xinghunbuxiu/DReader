@@ -3,8 +3,6 @@ package com.duokan.reader.domain.b;
 import android.content.IntentFilter;
 import android.os.AsyncTask;
 
-import com.duokan.reader.domain.downloadcenter.b;
-
 class e extends AsyncTask {
     final /* synthetic */ boolean a;
     final /* synthetic */ d b;

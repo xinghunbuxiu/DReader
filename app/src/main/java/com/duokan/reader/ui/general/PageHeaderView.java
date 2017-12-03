@@ -2,12 +2,11 @@ package com.duokan.reader.ui.general;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 import com.duokan.b.c;
 import com.duokan.b.e;
-import com.duokan.core.app.x;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderFeature;
 
 public class PageHeaderView extends HeaderView {
@@ -20,7 +19,7 @@ public class PageHeaderView extends HeaderView {
     public PageHeaderView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.a = true;
-        ReaderFeature readerFeature = (ReaderFeature) x.a(context).queryFeature(ReaderFeature.class);
+        ReaderFeature readerFeature = (ReaderFeature) MyContextWrapper.getFeature(context).queryFeature(ReaderFeature.class);
         if (readerFeature != null) {
             setBackgroundDrawable(readerFeature.getHeaderBackground());
         }

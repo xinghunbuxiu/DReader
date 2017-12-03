@@ -3,7 +3,7 @@ package com.duokan.reader.domain.document.epub;
 import android.graphics.Bitmap;
 
 import com.duokan.core.sys.ag;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 import java.util.concurrent.Callable;
 
@@ -28,7 +28,7 @@ class bx implements Callable {
             bitmap = this.b.a(0, 0, this.b.g.c, this.b.g.d, this.b.g.c, this.b.g.d);
         }
         this.b.l.e.c(this.b.l);
-        t.a(new by(this, bitmap));
+        TaskHandler.postTask(new by(this, bitmap));
         return bitmap;
     }
 }

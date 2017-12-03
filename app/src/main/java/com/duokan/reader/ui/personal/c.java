@@ -1,16 +1,16 @@
 package com.duokan.reader.ui.personal;
 
 import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.ui.bookshelf.ho;
 import com.duokan.reader.ui.general.ap;
 
-public class c extends e implements ho {
-    private final e a = new e(getContext(), this);
+public class c extends ActivatedController implements ho {
+    private final ActivatedController a = new ActivatedController(getContext(), this);
 
-    public c(y yVar) {
-        super(yVar);
+    public c(IFeature featrue) {
+        super(featrue);
         setContentView(this.a);
     }
 

@@ -3,7 +3,7 @@ package com.duokan.reader.ui.reading;
 import android.graphics.Bitmap;
 
 import com.duokan.core.sys.ag;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class ku implements ag {
     final /* synthetic */ kq a;
@@ -25,10 +25,10 @@ class ku implements ag {
             if (this.a.d.getVisibility() == 0) {
                 if (f != null) {
                     this.a.f.setImageBitmap(f);
-                    dv.c(this.a.f, new kv(this, f));
+                    UTools.showAnimation(this.a.f, new kv(this, f));
                     return;
                 }
-                dv.b(this.a.d, null);
+                UTools.closeAnimation(this.a.d, null);
             } else if (f != null) {
                 f.recycle();
             }

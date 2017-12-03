@@ -10,11 +10,10 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.duokan.b.b;
 import com.duokan.b.e;
 import com.duokan.b.f;
 import com.duokan.b.g;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.j;
 
 public class gq implements dq {
@@ -51,7 +50,7 @@ public class gq implements dq {
             this.d = true;
             View dkLabelView = new DkLabelView(this.a.getContext());
             dkLabelView.setGravity(17);
-            dkLabelView.setPadding(0, dv.b(this.a.getContext(), 18.0f), 0, dv.b(this.a.getContext(), 15.0f));
+            dkLabelView.setPadding(0, UTools.closeAnimation(this.a.getContext(), 18.0f), 0, UTools.closeAnimation(this.a.getContext(), 15.0f));
             dkLabelView.setTextColor(this.a.getContext().getResources().getColor(c.general__shared__333333));
             dkLabelView.setTextSize(0, this.a.getContext().getResources().getDimension(d.general_font__shared__b));
             dkLabelView.setText(str);

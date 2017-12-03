@@ -12,11 +12,12 @@ import android.os.Process;
 import android.text.TextUtils;
 
 import com.duokan.core.app.ManagedApp;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.diagnostic.HttpLogger;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.diagnostic.a;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.t;
 import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.domain.cloud.PersonalPrefs;
@@ -80,7 +81,7 @@ public abstract class DkApp extends ManagedApp {
 
     public File getLogFile(String str) {
         String format = new SimpleDateFormat("yyyyMMddkkmm", Locale.getDefault()).format(new Date(System.currentTimeMillis()));
-        return new File(getDiagnosticDirectory(), String.format(Locale.US, "%s.%s.%d.log", new Object[]{str, format, Integer.valueOf(Process.myPid())}));
+        return new File(getDiagnosticDirectory(), String.format(Locale.US, "%s.%s.%getScaledTouchSlop.log", new Object[]{str, format, Integer.valueOf(Process.myPid())}));
     }
 
     public Locale getSystemLocale() {
@@ -91,8 +92,8 @@ public abstract class DkApp extends ManagedApp {
         return 1.0f;
     }
 
-    public y webContext(y yVar) {
-        return yVar;
+    public IFeature webContext(IFeature featrue) {
+        return featrue;
     }
 
     public Context noDensityScaleContext(Context context) {
@@ -137,8 +138,8 @@ public abstract class DkApp extends ManagedApp {
 
     public void runWhenAppReady(final Runnable runnable) {
         if (runnable != null) {
-            t.b(new Runnable(this) {
-                 /* synthetic */
+            TaskHandler.PostTask(new Runnable(this) {
+                /* synthetic */
                 DkApp b;
 
                 public void run() {
@@ -154,7 +155,7 @@ public abstract class DkApp extends ManagedApp {
 
     public void runWhenUiReady(final Runnable runnable) {
         if (runnable != null) {
-            t.b(new Runnable(this) {
+            TaskHandler.PostTask(new Runnable(this) {
                 final /* synthetic */ DkApp b;
 
                 public void run() {
@@ -305,7 +306,7 @@ public abstract class DkApp extends ManagedApp {
         com.duokan.reader.common.c.a.b().a(isWebAccessEnabled());
         p.a(ReaderEnv.get(), f.b());
         if (isDebuggable() || (forCommunity() && p.i().l())) {
-            com.duokan.core.diagnostic.f fVar = new com.duokan.core.diagnostic.f();
+            HttpLogger fVar = new HttpLogger();
             fVar.a(getLogFile(HttpHost.DEFAULT_SCHEME_NAME));
             WebSession.setLogger(fVar);
         }
@@ -339,7 +340,7 @@ public abstract class DkApp extends ManagedApp {
                     try {
                         this.a.onBackgroundInit();
                         com.duokan.reader.domain.statistics.a.k().e();
-                        t.a(new Runnable(this) {
+                        TaskHandler.postTask(new Runnable(this) {
                             final /* synthetic */ AnonymousClass5 a;
 
                             {
@@ -411,7 +412,7 @@ public abstract class DkApp extends ManagedApp {
     }
 
     private void runOnReadyTasks() {
-        t.b(new Runnable(this) {
+        TaskHandler.PostTask(new Runnable(this) {
             final /* synthetic */ DkApp a;
 
             {

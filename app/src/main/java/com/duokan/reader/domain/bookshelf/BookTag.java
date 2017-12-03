@@ -2,7 +2,6 @@ package com.duokan.reader.domain.bookshelf;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.Parcelable.Creator;
 import android.util.Log;
 
 import com.duokan.b.i;

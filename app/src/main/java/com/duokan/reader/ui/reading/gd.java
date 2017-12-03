@@ -2,7 +2,7 @@ package com.duokan.reader.ui.reading;
 
 import android.graphics.Point;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class gd implements Runnable {
     final /* synthetic */ boolean a;
@@ -18,12 +18,12 @@ class gd implements Runnable {
     public void run() {
         if (this.a) {
             Point point = new Point(0, 0);
-            dv.c(point, this.c.c);
+            UTools.showAnimation(point, this.c.c);
             Point point2 = new Point(this.b.x - point.x, this.b.y - point.y);
-            dv.a(point2, this.c);
+            UTools.addAnimation(point2, this.c);
             this.c.a(this.c.getScrollX() - point2.x, this.c.getScrollY() - point2.y);
             this.c.b = new Point(this.c.getScrollX() + (this.c.getWidth() / 2), this.c.getScrollY() + (this.c.getHeight() / 2));
-            dv.a(this.c.b, this.c, this.c.c);
+            UTools.getTouchPoint(this.c.b, this.c, this.c.c);
             this.c.a((float) (this.c.c.getWidth() / 2), (float) (this.c.c.getHeight() / 2), this.c.i(), new ge(this), null);
             return;
         }

@@ -8,15 +8,13 @@ import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.duokan.c.g;
-import com.duokan.c.j;
-import com.duokan.core.app.e;
-import com.duokan.core.app.y;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.ah;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.bookshelf.BookContent;
-import com.duokan.reader.domain.document.a;
-import com.duokan.reader.domain.document.a.d;
+import com.duokan.reader.domain.document.Document_a;
+import com.duokan.reader.domain.document.Document_a.d;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.h;
 import com.duokan.reader.domain.document.n;
@@ -39,11 +37,11 @@ abstract class tc extends to {
     private final TextView r = ((TextView) findViewById(g.reading__reading_menu_bottom_view__seek_bar_progress));
     private final FrameLayout s = ((FrameLayout) findViewById(g.reading__reading_menu_bottom_view__side_button));
     private DkLabelView t;
-    private e u = null;
+    private ActivatedController u = null;
     private ak v = null;
 
-    public tc(y yVar) {
-        super(yVar);
+    public tc(IFeature featrue) {
+        super(featrue);
         findViewById(g.reading__reading_menu_bottom_view__brightness).setOnClickListener(new td(this));
         this.l.setOnSeekBarChangeListener(new te(this));
         this.m.setOnClickListener(new tf(this));
@@ -201,7 +199,7 @@ abstract class tc extends to {
         this.r.setText(String.format(getContext().getString(j.reading__shared__page_num_with_total_pages), new Object[]{Integer.valueOf(i + 1), Integer.valueOf(h())}));
         n document = this.f.getDocument();
         this.v = document.a((long) i);
-        a aVar = this.v;
+        Document_a aVar = this.v;
         document.d(aVar);
         if (this.t != null) {
             this.t.setText(String.format(getContext().getString(j.reading__shared__page_num_with_total_pages), new Object[]{Integer.valueOf(i + 1), Integer.valueOf(h())}));
@@ -209,9 +207,9 @@ abstract class tc extends to {
         ah.a(new tl(this, aVar, document));
     }
 
-    protected void a(e eVar) {
+    protected void a(ActivatedController activatedControllerVar) {
         if (!l() && !this.h) {
-            this.u = eVar;
+            this.u = activatedControllerVar;
             addSubController(this.u);
             this.k.addView(this.u.getContentView(), new LayoutParams(-1, -2));
             this.k.setVisibility(0);
@@ -219,9 +217,9 @@ abstract class tc extends to {
             this.i.setVisibility(4);
             this.j.setVisibility(4);
             o().setVisibility(4);
-            dv.g(this.j, null);
-            dv.f(this.i, null);
-            dv.e(this.k, null);
+            UTools.g(this.j, null);
+            UTools.f(this.i, null);
+            UTools.getScaledPagingTouchSlop(this.k, null);
         }
     }
 

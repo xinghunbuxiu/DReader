@@ -1,11 +1,11 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.document.a;
+import com.duokan.reader.domain.document.Document_a;
 
 import java.util.LinkedList;
 
 class aej {
-    public a a;
+    public Document_a a;
     public final LinkedList b;
     public ael c;
     public boolean d;

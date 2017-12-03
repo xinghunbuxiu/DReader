@@ -3,13 +3,12 @@ package com.duokan.reader.ui.reading;
 import android.graphics.Point;
 import android.widget.ImageView;
 
-import com.duokan.core.app.m;
+import com.duokan.core.app.BaseActivity;
 import com.duokan.core.app.s;
-import com.duokan.core.ui.*;
 import com.duokan.core.ui.ZoomView;
 import com.duokan.core.ui.di;
 import com.duokan.core.ui.dl;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.DkApp;
 
 do;
@@ -43,17 +42,17 @@ class pj implements Runnable {
         if (this.j.b != null && !this.j.c) {
             this.j.c = true;
             Point point = new Point(0, 0);
-            dv.c(point, this.a);
+            UTools.showAnimation(point, this.a);
             do b = this.b.b(this.c);
             dl a = this.b.a(this.c);
             float l = b.l() + a.l();
-            do doVar = new do(b);
+            do doVar = new do (b);
             doVar.d(0.0f);
             this.b.a(this.c, doVar);
             dl dlVar = new dl(a);
             dlVar.d(l - doVar.l());
             this.b.a(this.c, dlVar);
-            ((m) DkApp.get().getTopActivity()).removeOnScreenRotationChangedListener(this.d);
+            ((BaseActivity) DkApp.get().getTopActivity()).removeOnScreenRotationChangedListener(this.d);
             this.b.getViewTreeObserver().addOnPreDrawListener(new pk(this, point));
         }
     }

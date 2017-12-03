@@ -5,8 +5,8 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.View;
 
-import com.duokan.core.app.m;
-import com.duokan.core.app.x;
+import com.duokan.core.app.BaseActivity;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.dl;
 import com.duokan.core.ui.dn;
 import com.duokan.reader.DkApp;
@@ -18,7 +18,7 @@ public class gi extends lb {
 
     public gi(Context context) {
         super(context);
-        this.c = (sh) x.a(context).queryFeature(sh.class);
+        this.c = (sh) MyContextWrapper.getFeature(context).queryFeature(sh.class);
         setClipChildren(false);
     }
 
@@ -38,7 +38,7 @@ public class gi extends lb {
         View activeImageView = getActiveImageView();
         this.c.a(32, 0);
         this.c.aQ();
-        ((m) DkApp.get().getTopActivity()).lockCurrentOrientation();
+        ((BaseActivity) DkApp.get().getTopActivity()).lockCurrentOrientation();
         activeImageView.setLayoutParams(new dn(-1, -1, 17, 0, h().y - (getHeight() / 2)));
         a(activeImageView, new dl());
     }
@@ -51,7 +51,7 @@ public class gi extends lb {
             activeImageView.setLayoutParams(new dn(originBounds.width(), originBounds.height(), 51));
             a((View) activeImageView, a(activeImageView));
             this.c.aR();
-            ((m) DkApp.get().getTopActivity()).unlockCurrentOrientation();
+            ((BaseActivity) DkApp.get().getTopActivity()).unlockCurrentOrientation();
         }
         super.c();
     }

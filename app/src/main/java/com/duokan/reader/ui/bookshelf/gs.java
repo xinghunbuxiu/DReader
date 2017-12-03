@@ -1,7 +1,6 @@
 package com.duokan.reader.ui.bookshelf;
 
 import android.content.Context;
-import android.view.View.MeasureSpec;
 
 import com.duokan.b.d;
 import com.duokan.core.ui.HatGridView;

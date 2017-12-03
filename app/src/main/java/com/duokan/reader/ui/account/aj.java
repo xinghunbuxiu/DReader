@@ -2,10 +2,9 @@ package com.duokan.reader.ui.account;
 
 import android.content.Context;
 import android.text.TextPaint;
-import android.view.View.MeasureSpec;
 import android.widget.LinearLayout;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class aj extends LinearLayout {
     final /* synthetic */ ai a;
@@ -24,7 +23,7 @@ class aj extends LinearLayout {
                 int measuredWidth = (getMeasuredWidth() - this.a.d.getMeasuredWidth()) - this.a.e.getMeasuredWidth();
                 int i3 = 15;
                 while (ceil > measuredWidth && i3 > 12) {
-                    paint.setTextSize((float) dv.b(getContext(), (float) i3));
+                    paint.setTextSize((float) UTools.closeAnimation(getContext(), (float) i3));
                     ceil = (int) Math.ceil((double) paint.measureText(String.valueOf(this.a.c.getText())));
                     i3--;
                 }

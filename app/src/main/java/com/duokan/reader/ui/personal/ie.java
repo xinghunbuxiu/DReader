@@ -17,6 +17,8 @@ class ie implements OnClickListener {
     }
 
     public void onClick(View view) {
-        new if(this, jq.a(this.b.getContext(), "", this.b.getString(j.personal__readed_books_view__opening), true, true)).open();
+        new if (this,
+        jq.a(this.b.getContext(), "", this.b.getString(j.personal__readed_books_view__opening), true, true)).
+        open();
     }
 }

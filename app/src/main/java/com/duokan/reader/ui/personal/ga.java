@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.e;
+import com.duokan.core.app.ActivatedController;
 import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.cloud.PersonalPrefs;
 
@@ -17,7 +17,7 @@ class ga implements Callable {
         return a();
     }
 
-    public e a() {
+    public ActivatedController a() {
         PersonalPrefs.a().g(false);
         if (i.f().c() == null || i.f().c().i()) {
             return new kg(this.a.a.getContext());

@@ -7,8 +7,8 @@ import android.view.ViewGroup.LayoutParams;
 
 import com.duokan.c.g;
 import com.duokan.c.h;
-import com.duokan.core.app.x;
-import com.duokan.core.app.y;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.bookshelf.BookContent;
 
@@ -19,8 +19,8 @@ public class ck extends wk {
     private final View d;
     private boolean e = false;
 
-    public ck(y yVar) {
-        super(yVar);
+    public ck(IFeature featrue) {
+        super(featrue);
         ViewGroup viewGroup = (ViewGroup) LayoutInflater.from(getContext()).inflate(this.a.am() ? h.reading__comic_option_horizontal_view : h.reading__comic_option_vertical_view, null);
         viewGroup.setLayoutParams(new LayoutParams(-1, -2));
         setContentView((View) viewGroup);
@@ -36,7 +36,7 @@ public class ck extends wk {
     protected void onDetachFromStub() {
         if (this.e) {
             this.a.aA();
-            ((sh) x.a(getContext()).queryFeature(sh.class)).a(128, 0);
+            ((sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class)).a(128, 0);
         }
     }
 

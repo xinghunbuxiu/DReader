@@ -6,7 +6,7 @@ import android.widget.TextView;
 import com.duokan.a.a;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 class bd extends a {
     final /* synthetic */ TextView b;
@@ -23,7 +23,7 @@ class bd extends a {
     protected void onSessionProgressUpdate(Object obj) {
         if (obj instanceof String) {
             this.b.append(obj + "\n");
-            dv.a(this.c, new be(this));
+            UTools.addAnimation(this.c, new be(this));
         }
     }
 

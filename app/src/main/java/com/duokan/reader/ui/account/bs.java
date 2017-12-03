@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 
 import com.duokan.c.g;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 
 public class bs extends bn {
     private bf e;
@@ -19,7 +19,7 @@ public class bs extends bn {
 
     public void show() {
         super.show();
-        dv.a(this.e.getReasonEditView());
+        UTools.addAnimation(this.e.getReasonEditView());
     }
 
     protected void a(View view) {

@@ -7,18 +7,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.duokan.b.g;
-import com.duokan.core.app.a;
+import com.duokan.core.app.IActivityLife;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.diagnostic.c;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.aq;
-import com.duokan.core.sys.t;
 import com.duokan.core.ui.BoxView;
 import com.duokan.core.ui.FrameScrollView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
+import com.duokan.d.DownloadUtil;
 import com.duokan.d.d;
 import com.duokan.d.i;
-import com.duokan.reader.common.c.f;
 import com.duokan.reader.domain.umeng.MobclickAgentImpl;
 import com.duokan.reader.domain.umeng.UmengAgent;
 import com.duokan.reader.ui.general.ap;
@@ -35,7 +34,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map.Entry;
 
-public class UmengManager implements a {
+public class UmengManager implements IActivityLife {
     static final /* synthetic */ boolean a = (!UmengManager.class.desiredAssertionStatus());
     private static UmengManager b = null;
     private final boolean c;
@@ -61,7 +60,7 @@ public class UmengManager implements a {
 
                 public void onAnr() {
                     try {
-                        State state = t.b().getState();
+                        State state = TaskHandler.getThead().getState();
                         if (state != State.NEW && state != State.RUNNABLE && state != State.TERMINATED) {
                             Writer stringWriter = new StringWriter();
                             PrintWriter printWriter = new PrintWriter(stringWriter);
@@ -205,7 +204,7 @@ public class UmengManager implements a {
                 super.onOk();
                 be.a(context, com.duokan.b.i.general__update__start_update, 0).show();
                 if (str != null && str.length() > 0) {
-                    com.duokan.d.a.a(context).a(str, this.c.d.getString(com.duokan.b.i.general__update__downloading_dkreadker_apk));
+                    DownloadUtil.downloadAPK(context).downloadAPK(str, this.c.d.getString(com.duokan.b.i.general__update__downloading_dkreadker_apk));
                 }
             }
 
@@ -218,7 +217,7 @@ public class UmengManager implements a {
         int i = context.getResources().getDisplayMetrics().heightPixels;
         boxView.setMaxHeight(i / 2);
         boxView.setMinimumHeight(i / 7);
-        ((FrameScrollView) inflate.findViewById(com.duokan.b.f.general__auto_update_content__scrollview)).setMaxOverScrollHeight(dv.g(context));
+        ((FrameScrollView) inflate.findViewById(com.duokan.b.f.general__auto_update_content__scrollview)).setMaxOverScrollHeight(UTools.g(context));
         ((deprecatedDkTextView) inflate.findViewById(com.duokan.b.f.general__auto_update_content__text)).setText(str2);
         anonymousClass6.setPrompt(com.duokan.b.i.general__update__title);
         anonymousClass6.setExtraContentView(inflate);

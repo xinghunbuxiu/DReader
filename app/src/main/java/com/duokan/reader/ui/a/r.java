@@ -4,7 +4,7 @@ import android.view.View;
 
 import com.duokan.core.ui.HatGridView;
 import com.duokan.core.ui.an;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.domain.store.DkStoreAbsBook;
 
 class r implements an {
@@ -18,7 +18,7 @@ class r implements an {
 
     public void a(HatGridView hatGridView, View view, int i) {
         this.a.a((DkStoreAbsBook) hatGridView.getAdapter().d(i));
-        dv.a(this.b.getContext());
+        UTools.hideSoftInputFromWindow(this.b.getContext());
         this.b.requestDetach();
     }
 }

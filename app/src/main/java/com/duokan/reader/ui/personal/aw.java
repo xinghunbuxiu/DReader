@@ -3,7 +3,6 @@ package com.duokan.reader.ui.personal;
 import android.app.Activity;
 
 import com.duokan.c.j;
-import com.duokan.common.a;
 import com.duokan.reader.UmengManager;
 import com.duokan.reader.domain.micloud.i;
 import com.duokan.reader.ui.bookshelf.BookActionAssistant.BookAction;

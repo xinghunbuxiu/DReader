@@ -3,9 +3,8 @@ package com.duokan.reader.ui.general.web;
 import android.text.TextUtils;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 import com.duokan.core.sys.as;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.common.i;
 import com.duokan.reader.common.webservices.duokan.aa;
 import com.duokan.reader.domain.bookshelf.c;
@@ -28,7 +27,7 @@ class iv implements as {
     }
 
     public void a() {
-        jq jqVar = (jq) t.a(new iw(this));
+        jq jqVar = (jq) TaskHandler.postTask(new iw(this));
         JSONObject jSONObject = new JSONObject(this.a);
         JSONObject jSONObject2 = jSONObject.getJSONObject("params");
         String string = jSONObject.getString("msgid");
@@ -53,16 +52,16 @@ class iv implements as {
                         b2 = "";
                     }
                     if (l) {
-                        a.c().a(LogLevel.EVENT, "store", "purchased a couple of serial chapters(book: %s, chapters: %s)", b, b2);
+                        a.c().a(LogLevel.EVENT, "store", "purchased setDrawable couple of serial chapters(book: %s, chapters: %s)", b, b2);
                     } else {
-                        a.c().a(LogLevel.EVENT, "store", "purchased a book(book: %s)", b);
+                        a.c().a(LogLevel.EVENT, "store", "purchased setDrawable book(book: %s)", b);
                     }
                     com.duokan.core.sys.i iVar = new com.duokan.core.sys.i();
                     this.b.a(new ix(this, l, b2, b, iVar));
                     if (((Boolean) iVar.a()).booleanValue()) {
                         z2 = z;
                     } else {
-                        a.c().a(LogLevel.ERROR, "store", "fail to update a purchased book(%s)", b);
+                        a.c().a(LogLevel.ERROR, "store", "fail to update setDrawable purchased book(%s)", b);
                         z2 = false;
                     }
                 }
@@ -83,11 +82,11 @@ class iv implements as {
                     arrayList.add(a2.getString(i2));
                 }
             }
-            a.c().a(LogLevel.EVENT, "store", "purchased a couple of serial chapters(book: %s, chapters: %s)", b3, aa.a((String[]) arrayList.toArray(new String[0])));
+            a.c().a(LogLevel.EVENT, "store", "purchased setDrawable couple of serial chapters(book: %s, chapters: %s)", b3, aa.a((String[]) arrayList.toArray(new String[0])));
         } else if (TextUtils.equals(b3, WeiboAuthException.DEFAULT_AUTH_ERROR_CODE)) {
-            a.c().c(LogLevel.EVENT, "store", "purchased a couple of books");
+            a.c().c(LogLevel.EVENT, "store", "purchased setDrawable couple of books");
         } else {
-            a.c().a(LogLevel.EVENT, "store", "purchased a book(book: %s)", b3);
+            a.c().a(LogLevel.EVENT, "store", "purchased setDrawable book(book: %s)", b3);
         }
         Semaphore semaphore = new Semaphore(0);
         this.b.a(new je(this, l, b3, semaphore, arrayList));

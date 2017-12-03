@@ -2,7 +2,7 @@ package com.duokan.reader.ui.personal;
 
 import android.text.TextUtils;
 
-import com.duokan.core.app.e;
+import com.duokan.core.app.ActivatedController;
 import com.duokan.reader.domain.account.a;
 import com.duokan.reader.domain.account.u;
 import com.duokan.reader.ui.general.be;
@@ -22,7 +22,7 @@ class gm implements u {
 
     public void onQueryAccountOk(a aVar) {
         try {
-            this.c.a((e) this.a.call(), this.b, null);
+            this.c.a((ActivatedController) this.a.call(), this.b, null);
         } catch (Throwable th) {
         }
     }

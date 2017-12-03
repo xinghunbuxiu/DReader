@@ -3,9 +3,8 @@ package com.duokan.reader.domain.bookshelf;
 import android.text.TextUtils;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
 import com.duokan.core.sys.r;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -29,7 +28,7 @@ class jz implements Runnable {
                 if (fdVar.a != -1) {
                     this.a.b.a.b.put(str, Integer.valueOf(fdVar.a));
                     if (fdVar.a != 1002) {
-                        a.c().a(LogLevel.ERROR, "sbk", "fail to pull the chapter(%s)(error=%d, msg=%s, book=%s, name=%s)", str, Integer.valueOf(fdVar.a), fdVar.b, this.a.b.b.H(), this.a.b.b.aw());
+                        a.c().a(LogLevel.ERROR, "sbk", "fail to pull the chapter(%s)(error=%getScaledTouchSlop, msg=%s, book=%s, name=%s)", str, Integer.valueOf(fdVar.a), fdVar.b, this.a.b.b.H(), this.a.b.b.aw());
                     }
                 } else {
                     a.c().b(!TextUtils.isEmpty(fdVar.c));
@@ -43,7 +42,7 @@ class jz implements Runnable {
         } finally {
             this.a.b.b.bq();
             ej.E.release();
-            t.b(new ka(this));
+            TaskHandler.PostTask(new ka(this));
         }
     }
 }

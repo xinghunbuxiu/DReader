@@ -9,18 +9,15 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.View.MeasureSpec;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.duokan.core.app.x;
-import com.duokan.core.ui.dv;
+import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.s;
 
 public class HeaderView extends FrameLayout {
@@ -130,7 +127,7 @@ public class HeaderView extends FrameLayout {
         View imageView = new ImageView(getContext());
         imageView.setImageDrawable(drawable);
         imageView.setScaleType(ScaleType.CENTER);
-        imageView.setMinimumWidth(dv.b(getContext(), 40.0f));
+        imageView.setMinimumWidth(UTools.closeAnimation(getContext(), 40.0f));
         this.c.addView(imageView, 0, new LinearLayout.LayoutParams(-2, -1));
         return imageView;
     }
@@ -145,7 +142,7 @@ public class HeaderView extends FrameLayout {
         if (!TextUtils.isEmpty(str)) {
             View textView = new TextView(getContext());
             textView.setTextSize(16.0f);
-            textView.setPadding(dv.b(getContext(), 15.0f), 0, dv.b(getContext(), 15.0f), 0);
+            textView.setPadding(UTools.closeAnimation(getContext(), 15.0f), 0, UTools.closeAnimation(getContext(), 15.0f), 0);
             textView.setGravity(17);
             textView.setText(str);
             textView.setSingleLine(true);
@@ -178,8 +175,8 @@ public class HeaderView extends FrameLayout {
     }
 
     protected void onMeasure(int i, int i2) {
-        int pageHeaderHeight = ((s) x.a(getContext()).queryFeature(s.class)).getTheme().getPageHeaderHeight();
-        int pageHeaderPaddingTop = ((s) x.a(getContext()).queryFeature(s.class)).getTheme().getPageHeaderPaddingTop();
+        int pageHeaderHeight = ((s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class)).getTheme().getPageHeaderHeight();
+        int pageHeaderPaddingTop = ((s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class)).getTheme().getPageHeaderPaddingTop();
         if (getPaddingTop() != pageHeaderPaddingTop) {
             setPadding(0, pageHeaderPaddingTop, 0, 0);
         }
@@ -196,7 +193,7 @@ public class HeaderView extends FrameLayout {
         super.draw(canvas);
         if (!TextUtils.isEmpty(this.f.getText())) {
             canvas.save();
-            Rect a = dv.a(new Rect(), this.f, (View) this);
+            Rect a = UTools.getRect(new Rect(), this.f, (View) this);
             this.g.setBounds(new Rect(a.right - (this.g.getIntrinsicWidth() / 2), a.top - (this.g.getIntrinsicHeight() / 2), a.right + (this.g.getIntrinsicWidth() / 2), a.top + (this.g.getIntrinsicHeight() / 2)));
             this.g.draw(canvas);
             canvas.restore();
@@ -209,7 +206,7 @@ public class HeaderView extends FrameLayout {
         textView.setTextColor(getResources().getColor(c.general__shared__c5));
         textView.setText(str);
         textView.setGravity(17);
-        int b = dv.b(getContext(), 15.0f);
+        int b = UTools.closeAnimation(getContext(), 15.0f);
         textView.setPadding(b, 0, b, 0);
         return textView;
     }

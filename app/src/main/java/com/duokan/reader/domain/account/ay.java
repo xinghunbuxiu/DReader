@@ -1,7 +1,6 @@
 package com.duokan.reader.domain.account;
 
 import com.duokan.reader.DkApp;
-import com.duokan.reader.common.b.a;
 
 class ay implements Runnable {
     final /* synthetic */ c a;

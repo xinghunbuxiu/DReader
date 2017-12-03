@@ -18,7 +18,7 @@ class al implements ag {
     public void a(String str) {
         Object a = p.i().a(new String[]{str});
         if (this.a == ShareType.TEXT || this.a == ShareType.COMMENT || this.a == ShareType.NOTE) {
-            a = a + "&a=note";
+            a = a + "&setDrawable=note";
         }
         this.b.a(a);
         this.c.m = false;
