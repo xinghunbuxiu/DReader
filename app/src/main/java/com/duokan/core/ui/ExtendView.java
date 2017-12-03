@@ -48,13 +48,13 @@ public class ExtendView extends FrameLayout {
             } else if (!this.d.hasEnded()) {
                 invalidate(this.b);
             }
-            Transformation transformation = (Transformation) dv.c.a();
+            Transformation transformation = (Transformation) UTools.c.getRect();
             this.d.getTransformation(getDrawingTime(), transformation);
             this.b.left = Math.round((((float) this.c.left) + (((float) (getLeft() - this.c.left)) * transformation.getAlpha())) - ((float) getLeft()));
             this.b.top = Math.round((((float) this.c.top) + (((float) (getTop() - this.c.top)) * transformation.getAlpha())) - ((float) getTop()));
             this.b.right = Math.round((((float) this.c.right) + (((float) (getRight() - this.c.right)) * transformation.getAlpha())) - ((float) getLeft()));
             this.b.bottom = Math.round((((float) this.c.bottom) + (((float) (getBottom() - this.c.bottom)) * transformation.getAlpha())) - ((float) getTop()));
-            dv.c.a(transformation);
+            UTools.c.getRect(transformation);
         } else {
             this.b.set(0, 0, getWidth(), getHeight());
         }

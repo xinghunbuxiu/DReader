@@ -9,18 +9,12 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
-
-import com.duokan.b.e;
-import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.Scrollable.ScrollState;
 
 public class HatGridView extends ViewGroup implements Scrollable {
     private Runnable A;
@@ -87,25 +81,25 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.j = new FrameLayout(context);
         this.d = new y(this, context);
         this.f = new aa(this, context);
-        this.d.addView(this.f, new LayoutParams(-1, -1));
+        this.d.addView(this.f, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
         this.e = new ab(this, context);
-        ViewGroup.LayoutParams layoutParams = new LayoutParams(-1, -2);
+        ViewGroup.LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
         layoutParams.gravity = 80;
-        this.e.setOrientation(1);
+        this.e.setOrientation(LinearLayout.VERTICAL);
         this.e.setClipChildren(false);
         this.e.setClipToPadding(false);
         this.d.addView(this.e, layoutParams);
         this.g = new FrameLayout(context);
         this.g.setClipChildren(false);
         this.g.setClipToPadding(false);
-        this.g.setMinimumHeight(dv.g(getContext()));
-        this.e.addView(this.g, new LinearLayout.LayoutParams(-1, -2));
+        this.g.setMinimumHeight(UTools.g(getContext()));
+        this.e.addView(this.g, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
         this.h = new FrameLayout(context);
         this.h.setClipChildren(false);
         this.h.setClipToPadding(false);
-        this.e.addView(this.h, new LinearLayout.LayoutParams(-1, -1));
+        this.e.addView(this.h, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
         this.i = new FrameLayout(context);
-        this.e.addView(this.i, new LinearLayout.LayoutParams(-1, -2));
+        this.e.addView(this.i, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
         this.c = new ac(this, context);
         this.b = new ad(this, context);
         this.a = new ak(this, context);
@@ -114,18 +108,18 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.a.setRowSpacing(this.t);
         this.a.setNumColumns(this.s);
         this.a.setOnScrollListener(new ae(this));
-        addView(this.a, new ViewGroup.LayoutParams(-1, -1));
-        addView(this.c, new ViewGroup.LayoutParams(-1, -2));
-        addView(this.b, new ViewGroup.LayoutParams(-1, -2));
-        addView(this.d, new ViewGroup.LayoutParams(-1, -2));
-        addView(this.j, new ViewGroup.LayoutParams(-1, -2));
+        addView(this.a, new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+        addView(this.c, new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+        addView(this.b, new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+        addView(this.d, new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+        addView(this.j, new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
         this.m = new ap();
         this.a.setAdapter(this.m);
         this.k = new ImageView(context);
         this.k.setScaleType(ScaleType.CENTER);
         this.k.setImageResource(e.general__hat_grid_view__back_to_top);
         this.k.setBackgroundResource(e.general__shared__button_circular_48dip);
-        addView(this.k, new ViewGroup.LayoutParams(-2, -2));
+        addView(this.k, new ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         this.k.setOnClickListener(new af(this));
         this.k.setEnabled(false);
         this.k.setVisibility(4);
@@ -285,7 +279,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.j.setClickable(false);
         if (view != null) {
             if (view.getLayoutParams() == null) {
-                view.setLayoutParams(new LayoutParams(-1, -2, 17));
+                view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, 17));
             }
             this.j.addView(view);
             this.j.setClickable(true);
@@ -296,7 +290,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.f.removeAllViews();
         if (view != null) {
             if (view.getLayoutParams() == null) {
-                view.setLayoutParams(new LayoutParams(-1, -1));
+                view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
             }
             this.f.addView(view);
         }
@@ -323,7 +317,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.g.removeAllViews();
         if (view != null) {
             if (view.getLayoutParams() == null) {
-                view.setLayoutParams(new LayoutParams(-1, -2));
+                view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
             }
             this.g.addView(view);
         }
@@ -371,7 +365,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.h.removeAllViews();
         if (view != null) {
             if (view.getLayoutParams() == null) {
-                view.setLayoutParams(new LayoutParams(-1, -2));
+                view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
             }
             this.h.addView(view);
         }
@@ -399,7 +393,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.i.removeAllViews();
         if (view != null) {
             if (view.getLayoutParams() == null) {
-                view.setLayoutParams(new LayoutParams(-1, -2));
+                view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
             }
             this.i.addView(view);
         }
@@ -816,7 +810,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         } else if (getScrollState() == ScrollState.IDLE) {
             this.a.scrollBy(0, 0);
         }
-        this.a.b(0, this.j.getHeight() + dv.b(getContext(), 2.0f), dv.b(getContext(), 2.0f), dv.b(getContext(), 6.0f));
+        this.a.b(0, this.j.getHeight() + UTools.closeAnimation(getContext(), 2.0f), UTools.closeAnimation(getContext(), 2.0f), UTools.closeAnimation(getContext(), 6.0f));
     }
 
     protected void a(PointF pointF) {
@@ -870,7 +864,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.c.removeAllViews();
         if (view != null) {
             if (view.getLayoutParams() == null) {
-                view.setLayoutParams(new LayoutParams(-1, -2));
+                view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
             }
             this.c.addView(view);
         }
@@ -887,7 +881,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.b.removeAllViews();
         if (view != null) {
             if (view.getLayoutParams() == null) {
-                view.setLayoutParams(new LayoutParams(-1, -2));
+                view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
             }
             this.b.addView(view);
         }
@@ -939,7 +933,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         if (this.k.isEnabled() && this.k.getVisibility() != 0) {
             this.k.clearAnimation();
             this.k.setVisibility(0);
-            dv.b(this.k, null);
+            UTools.closeAnimation(this.k, null);
         }
     }
 
@@ -947,7 +941,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         if (this.k.isEnabled() && this.k.getVisibility() != 4) {
             this.k.clearAnimation();
             this.k.setVisibility(4);
-            dv.c(this.k, null);
+            UTools.showAnimation(this.k, null);
         }
     }
 

@@ -21,7 +21,7 @@ class q implements Runnable {
         if (this.d.g == this) {
             if (!a && this.d.f) {
                 throw new AssertionError();
-            } else if (!this.d.f && ManagedApp.get().getRunningState().ordinal() <= RunningState.BACKGROUND.ordinal()) {
+            } else if (!this.d.f && ManagedApp.get().getOldRunningState().ordinal() <= RunningState.BACKGROUND.ordinal()) {
                 this.d.f = true;
                 new Thread(new r(this)).start();
             }

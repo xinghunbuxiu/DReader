@@ -3,7 +3,7 @@ package com.duokan.core.diagnostic;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class d extends Thread {
     public boolean a;
@@ -26,7 +26,7 @@ class d extends Thread {
                 if (!eVar.a) {
                     handler.removeCallbacks(eVar);
                     StackTraceElement[] stackTraceElementArr = this.c;
-                    this.c = t.b().getStackTrace();
+                    this.c = TaskHandler.getThead().getStackTrace();
                     if (this.c.length == stackTraceElementArr.length) {
                         Object obj = 1;
                         for (int i = 0; i < this.c.length; i++) {

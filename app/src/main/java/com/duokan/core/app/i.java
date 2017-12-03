@@ -3,14 +3,14 @@ package com.duokan.core.app;
 import android.content.res.Configuration;
 import android.view.KeyEvent;
 
-interface i extends h {
-    boolean onActivityBackPressed(m mVar);
+interface i extends IController {
+    boolean onActivityBackPressed(BaseActivity baseActivityVar);
 
-    void onActivityConfigurationChanged(m mVar, Configuration configuration);
+    void onActivityConfigurationChanged(BaseActivity baseActivityVar, Configuration configuration);
 
-    boolean onActivityKeyDown(m mVar, int i, KeyEvent keyEvent);
+    boolean onActivityKeyDown(BaseActivity baseActivityVar, int i, KeyEvent keyEvent);
 
-    boolean onActivityKeyUp(m mVar, int i, KeyEvent keyEvent);
+    boolean onActivityKeyUp(BaseActivity baseActivityVar, int i, KeyEvent keyEvent);
 
-    void onActivityWindowFocusChanged(m mVar, boolean z);
+    void onActivityWindowFocusChanged(BaseActivity baseActivityVar, boolean z);
 }

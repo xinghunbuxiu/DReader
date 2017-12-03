@@ -17,14 +17,14 @@ import android.view.OrientationEventListener;
 import android.view.View;
 import android.view.WindowManager.LayoutParams;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class m extends Activity implements y {
-    static final /* synthetic */ boolean a = (!m.class.desiredAssertionStatus());
-    private final l b = new l();
+public class BaseActivity extends Activity implements IFeature {
+    static final /* synthetic */ boolean a = (!BaseActivity.class.desiredAssertionStatus());
+    private final FeatureManage b = new FeatureManage();
     private final CopyOnWriteArrayList c = new CopyOnWriteArrayList();
     private final CopyOnWriteArrayList d = new CopyOnWriteArrayList();
     private final CopyOnWriteArrayList e = new CopyOnWriteArrayList();
@@ -33,7 +33,7 @@ public class m extends Activity implements y {
     private int h = 0;
     private int i = 0;
     private SensorManager j = null;
-    private e k = null;
+    private ActivatedController k = null;
     private BrightnessMode l = BrightnessMode.SYSTEM;
     private float m = -1.0f;
     private Runnable n = null;
@@ -148,16 +148,16 @@ public class m extends Activity implements y {
         return this.j;
     }
 
-    public e getContentController() {
+    public ActivatedController getContentController() {
         return this.k;
     }
 
-    public void setContentController(e eVar) {
-        if (this.k != eVar) {
+    public void setContentController(ActivatedController activatedControllerVar) {
+        if (this.k != activatedControllerVar) {
             if (this.k != null) {
                 this.k.setParent(null);
             }
-            this.k = eVar;
+            this.k = activatedControllerVar;
             if (this.k != null) {
                 setContentView(this.k.getContentView());
                 this.k.setParent(controllerStub());
@@ -174,7 +174,7 @@ public class m extends Activity implements y {
     public void addSensorListener(Sensor sensor, SensorEventListener sensorEventListener, int i) {
         if (a || sensor != null) {
             getSensorManager().registerListener(sensorEventListener, sensor, i);
-            this.c.addIfAbsent(new t(sensor, sensorEventListener, i));
+            this.c.addIfAbsent(new TaskHandler(sensor, sensorEventListener, i));
             return;
         }
         throw new AssertionError();
@@ -184,7 +184,7 @@ public class m extends Activity implements y {
         getSensorManager().unregisterListener(sensorEventListener);
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
-            if (((t) it.next()).b == sensorEventListener) {
+            if (((TaskHandler) it.next()).b == sensorEventListener) {
                 it.remove();
             }
         }
@@ -241,38 +241,38 @@ public class m extends Activity implements y {
         }
     }
 
-    public k queryFeature(Class cls) {
-        k queryLocalFeature = queryLocalFeature(cls);
+    public FeatureListening queryFeature(Class cls) {
+        FeatureListening queryLocalFeature = queryLocalFeature(cls);
         if (queryLocalFeature != null) {
             return queryLocalFeature;
         }
         return globalContext().queryFeature(cls);
     }
 
-    public k queryLocalFeature(Class cls) {
+    public FeatureListening queryLocalFeature(Class cls) {
         if (cls == null) {
             return null;
         }
-        return this.b.a(cls);
+        return this.b.addFirst(cls);
     }
 
-    public boolean registerLocalFeature(k kVar) {
-        return this.b.a(kVar);
+    public boolean registerLocalFeature(FeatureListening featurelistening) {
+        return this.b.addFirst(featurelistening);
     }
 
-    public boolean unregisterLocalFeature(k kVar) {
-        return this.b.b(kVar);
+    public boolean unregisterLocalFeature(FeatureListening featurelistening) {
+        return this.b.remove(featurelistening);
     }
 
-    public boolean registerGlobalFeature(k kVar) {
-        if (kVar == null) {
+    public boolean registerGlobalFeature(FeatureListening featurelistening) {
+        if (featurelistening == null) {
             return false;
         }
-        return globalContext().registerGlobalFeature(kVar);
+        return globalContext().registerGlobalFeature(featurelistening);
     }
 
-    public boolean unregisterGlobalFeature(k kVar) {
-        return globalContext().unregisterGlobalFeature(kVar);
+    public boolean unregisterGlobalFeature(FeatureListening featurelistening) {
+        return globalContext().unregisterGlobalFeature(featurelistening);
     }
 
     public void onUserInteraction() {
@@ -307,8 +307,8 @@ public class m extends Activity implements y {
         this.g.enable();
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
-            t tVar = (t) it.next();
-            getSensorManager().registerListener(tVar.b, tVar.a, tVar.c);
+            TaskHandler taskHandler = (TaskHandler) it.next();
+            getSensorManager().registerListener(taskHandler.b, taskHandler.mHandler, taskHandler.c);
         }
     }
 
@@ -318,14 +318,14 @@ public class m extends Activity implements y {
         this.g.disable();
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
-            getSensorManager().unregisterListener(((t) it.next()).b);
+            getSensorManager().unregisterListener(((TaskHandler) it.next()).b);
         }
         this.f = false;
         super.onPause();
     }
 
     protected void onDestroy() {
-        this.b.a();
+        this.b.clear();
         this.c.clear();
         this.d.clear();
         super.onDestroy();
@@ -475,12 +475,12 @@ public class m extends Activity implements y {
         return controllerRoot().onActivityBackPressed(this);
     }
 
-    private final h controllerStub() {
-        return (h) getApplication();
+    private final IController controllerStub() {
+        return (IController) getApplication();
     }
 
-    private final y globalContext() {
-        return (y) getApplication();
+    private final IFeature globalContext() {
+        return (IFeature) getApplication();
     }
 
     private final i controllerRoot() {

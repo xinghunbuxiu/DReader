@@ -15,14 +15,14 @@ class ab extends LinearLayout {
     }
 
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        MotionEvent a = dv.a(motionEvent, (View) this, this.a.a);
+        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, this.a.a);
         boolean onInterceptTouchEvent = this.a.a.onInterceptTouchEvent(a);
         a.recycle();
         return onInterceptTouchEvent;
     }
 
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        MotionEvent a = dv.a(motionEvent, (View) this, this.a.a);
+        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, this.a.a);
         boolean onTouchEvent = this.a.a.onTouchEvent(a);
         a.recycle();
         return onTouchEvent;

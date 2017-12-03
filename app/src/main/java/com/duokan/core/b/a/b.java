@@ -152,7 +152,7 @@ public abstract class b {
                             httpURLConnection2.connect();
                             responseCode = httpURLConnection2.getResponseCode();
                             if ((obj == null || responseCode != HttpStatus.SC_OK) && (obj == null || responseCode != HttpStatus.SC_PARTIAL_CONTENT)) {
-                                inputException2 = new InputException(String.format("unexpected http response code: %d", new Object[]{Integer.valueOf(responseCode)}));
+                                inputException2 = new InputException(String.format("unexpected http response code: %getScaledTouchSlop", new Object[]{Integer.valueOf(responseCode)}));
                                 if (httpURLConnection2 == null) {
                                     httpURLConnection2.disconnect();
                                     inputException = inputException2;
@@ -174,7 +174,7 @@ public abstract class b {
                                 if (j < 0 || ((long) dataOutputStream.size()) == j) {
                                     inputException = null;
                                 } else {
-                                    inputException = new InputException(String.format("unexpected stream size(expected=%d, received=%d)", new Object[]{Long.valueOf(j), Integer.valueOf(dataOutputStream.size())}));
+                                    inputException = new InputException(String.format("unexpected stream size(expected=%getScaledTouchSlop, received=%getScaledTouchSlop)", new Object[]{Long.valueOf(j), Integer.valueOf(dataOutputStream.size())}));
                                 }
                                 if (inputException != null) {
                                     return (long) dataOutputStream.size();
@@ -188,7 +188,7 @@ public abstract class b {
                     responseCode = httpURLConnection2.getResponseCode();
                     if (obj == null) {
                     }
-                    inputException2 = new InputException(String.format("unexpected http response code: %d", new Object[]{Integer.valueOf(responseCode)}));
+                    inputException2 = new InputException(String.format("unexpected http response code: %getScaledTouchSlop", new Object[]{Integer.valueOf(responseCode)}));
                     if (httpURLConnection2 == null) {
                         inputException = inputException2;
                         j2 = j;

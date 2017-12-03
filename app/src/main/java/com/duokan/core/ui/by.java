@@ -254,7 +254,7 @@ class by {
                 return;
             }
         }
-        Log.e("OverScroller", "startAfterEdge called from a valid position");
+        Log.e("OverScroller", "startAfterEdge called from hatGridView valid position");
         this.k = true;
     }
 

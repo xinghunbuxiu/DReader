@@ -14,10 +14,6 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.animation.Interpolator;
 
-import com.duokan.b.e;
-import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.Scrollable.ScrollState;
-
 import org.apache.http.HttpStatus;
 
 import java.lang.ref.WeakReference;
@@ -81,10 +77,10 @@ public abstract class ev implements Scrollable {
         this.h.set(0.0f, 0.0f, (float) displayMetrics.widthPixels, (float) displayMetrics.heightPixels);
         this.h.round(this.i);
         this.j.set(this.i);
-        this.J.set(0, dv.b(this.a.getContext(), 2.0f), dv.b(this.a.getContext(), 2.0f), dv.b(this.a.getContext(), 6.0f));
+        this.J.set(0, UTools.closeAnimation(this.a.getContext(), 2.0f), UTools.closeAnimation(this.a.getContext(), 2.0f), UTools.closeAnimation(this.a.getContext(), 6.0f));
         this.K[0] = this.a.getResources().getDrawable(e.general__shared__thumb_default_vert);
         this.K[1] = this.a.getResources().getDrawable(e.general__shared__thumb_seek_vert);
-        this.M.set(dv.b(this.a.getContext(), 2.0f), 0, dv.b(this.a.getContext(), 6.0f), dv.b(this.a.getContext(), 2.0f));
+        this.M.set(UTools.closeAnimation(this.a.getContext(), 2.0f), 0, UTools.closeAnimation(this.a.getContext(), 6.0f), UTools.closeAnimation(this.a.getContext(), 2.0f));
         this.N[0] = this.a.getResources().getDrawable(e.general__shared__thumb_default_horz);
         this.e.a(this.f);
         this.e.a(this.g);
@@ -133,7 +129,7 @@ public abstract class ev implements Scrollable {
         }
         if (this.D == null) {
             this.D = new ew(this);
-            dv.a(this.a, this.D);
+            UTools.addAnimation(this.a, this.D);
         }
     }
 
@@ -209,7 +205,7 @@ public abstract class ev implements Scrollable {
         int b;
         int c;
         Rect rect2 = new Rect(rect);
-        dv.b(rect2, view, this.a);
+        UTools.closeAnimation(rect2, view, this.a);
         if (rect2.intersect(this.m)) {
             b = b(e, rect2);
             c = c(e, rect2);
@@ -236,7 +232,7 @@ public abstract class ev implements Scrollable {
 
     public Rect e() {
         Rect rect = new Rect();
-        dv.a(rect, this.a.getRootView(), this.a);
+        UTools.getRect(rect, this.a.getRootView(), this.a);
         rect.intersect(getViewportBounds());
         return rect;
     }
@@ -692,7 +688,7 @@ public abstract class ev implements Scrollable {
     }
 
     protected int aa() {
-        return dv.d(this.a.getContext());
+        return UTools.getScaledTouchSlop(this.a.getContext());
     }
 
     protected int ab() {
@@ -1027,7 +1023,7 @@ public abstract class ev implements Scrollable {
         int aC = aC();
         m = Math.max(o, Math.round(f2 * ((float) aC)));
         n = Math.round(f * ((float) aC)) + this.M.left;
-        this.L.set(n, (((int) this.h.height()) - this.M.bottom) - (ay.getIntrinsicHeight() > 0 ? ay.getIntrinsicHeight() : dv.b(this.a.getContext(), 5.0f)), m + n, ((int) this.h.height()) - this.M.bottom);
+        this.L.set(n, (((int) this.h.height()) - this.M.bottom) - (ay.getIntrinsicHeight() > 0 ? ay.getIntrinsicHeight() : UTools.closeAnimation(this.a.getContext(), 5.0f)), m + n, ((int) this.h.height()) - this.M.bottom);
         if (this.L.right > ((int) this.h.width()) - this.M.right) {
             this.L.offset((((int) this.h.width()) - this.M.right) - this.L.right, 0);
         }
@@ -1074,7 +1070,7 @@ public abstract class ev implements Scrollable {
         float f2 = ((float) p) / ((float) r);
         r = ax();
         int aD = aD();
-        int intrinsicWidth = az.getIntrinsicWidth() > 0 ? az.getIntrinsicWidth() : dv.b(this.a.getContext(), 5.0f);
+        int intrinsicWidth = az.getIntrinsicWidth() > 0 ? az.getIntrinsicWidth() : UTools.closeAnimation(this.a.getContext(), 5.0f);
         q = Math.round(f * ((float) aD)) + this.J.top;
         this.I.set((((int) this.h.width()) - intrinsicWidth) - this.J.right, q, ((int) this.h.width()) - this.J.right, Math.max(r, Math.round(f2 * ((float) aD))) + q);
         if (this.I.bottom > ((int) this.h.height()) - this.J.bottom) {
@@ -1084,12 +1080,12 @@ public abstract class ev implements Scrollable {
 
     private final int aw() {
         Drawable ay = ay();
-        return ay.getIntrinsicWidth() > 0 ? ay.getIntrinsicWidth() : dv.b(this.a.getContext(), 5.0f);
+        return ay.getIntrinsicWidth() > 0 ? ay.getIntrinsicWidth() : UTools.closeAnimation(this.a.getContext(), 5.0f);
     }
 
     private final int ax() {
         Drawable az = az();
-        return az.getIntrinsicHeight() > 0 ? az.getIntrinsicHeight() : dv.b(this.a.getContext(), 5.0f);
+        return az.getIntrinsicHeight() > 0 ? az.getIntrinsicHeight() : UTools.closeAnimation(this.a.getContext(), 5.0f);
     }
 
     private final Drawable ay() {

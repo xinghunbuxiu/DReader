@@ -19,7 +19,7 @@ class df extends dd {
         if (super.dispatchTouchEvent(motionEvent)) {
             return true;
         }
-        MotionEvent a = dv.a(motionEvent, (View) this, this.a.b.getWindow().getDecorView());
+        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, this.a.b.getWindow().getDecorView());
         boolean dispatchTouchEvent = this.a.b.getWindow().getDecorView().dispatchTouchEvent(a);
         a.recycle();
         return dispatchTouchEvent;

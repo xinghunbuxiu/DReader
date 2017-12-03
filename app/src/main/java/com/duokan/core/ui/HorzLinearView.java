@@ -6,7 +6,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView.ScaleType;
-import android.widget.LinearLayout.LayoutParams;
 
 public class HorzLinearView extends bt {
     private ScaleType a;

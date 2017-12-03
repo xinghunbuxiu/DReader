@@ -4,11 +4,11 @@ import android.app.Activity;
 import android.app.Application.ActivityLifecycleCallbacks;
 import android.os.Bundle;
 
-class u implements ActivityLifecycleCallbacks {
-    final /* synthetic */ ManagedApp a;
+class MyActivityLife implements ActivityLifecycleCallbacks {
+    final ManagedApp managedApp;
 
-    u(ManagedApp managedApp) {
-        this.a = managedApp;
+    MyActivityLife(ManagedApp managedApp) {
+        this.managedApp = managedApp;
     }
 
     public void onActivityStopped(Activity activity) {
@@ -21,18 +21,18 @@ class u implements ActivityLifecycleCallbacks {
     }
 
     public void onActivityResumed(Activity activity) {
-        this.a.onActivityResumed(activity);
+        this.managedApp.onActivityResumed(activity);
     }
 
     public void onActivityPaused(Activity activity) {
-        this.a.onActivityPaused(activity);
+        this.managedApp.onActivityPaused(activity);
     }
 
     public void onActivityDestroyed(Activity activity) {
-        this.a.onActivityDestroyed(activity);
+        this.managedApp.onActivityDestroyed(activity);
     }
 
     public void onActivityCreated(Activity activity, Bundle bundle) {
-        this.a.onActivityCreated(activity, bundle);
+        this.managedApp.onActivityCreated(activity, bundle);
     }
 }

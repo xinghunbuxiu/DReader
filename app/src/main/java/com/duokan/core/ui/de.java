@@ -8,7 +8,6 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.WindowManager;
 
 import com.duokan.core.sys.z;
-import com.umeng.analytics.pro.j;
 
 class de extends dh {
     static final /* synthetic */ boolean a = (!cv.class.desiredAssertionStatus());

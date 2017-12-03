@@ -18,13 +18,13 @@ import java.util.Map.Entry;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-public class f {
-    private static final String TAG = f.class.getName();
+public class HttpLogger {
+    private static final String TAG = HttpLogger.class.getName();
     private static final ConcurrentLinkedQueue b = new ConcurrentLinkedQueue();
     private File c = null;
     private ConcurrentLinkedQueue d = new ConcurrentLinkedQueue();
 
-    public f() {
+    public HttpLogger() {
         b.add(this);
     }
 
@@ -131,7 +131,7 @@ public class f {
         if (obj3 != null) {
             Iterator it = b.iterator();
             while (it.hasNext()) {
-                ((f) it.next()).e();
+                ((HttpLogger) it.next()).e();
             }
         } else if (obj != null) {
             e();

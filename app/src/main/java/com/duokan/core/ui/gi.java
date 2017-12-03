@@ -28,7 +28,7 @@ class gi implements ce {
             this.b.a.b.a(OverScrollMode.NEVER);
             this.b.a.b.b(OverScrollMode.NEVER);
             this.b.f.set(pointF.x + ((float) this.b.a.getScrollX()), pointF.y + ((float) this.b.a.getScrollY()));
-            dv.a(this.b.f, this.b.a, this.a);
+            UTools.addAnimation(this.b.f, this.b.a, this.a);
             this.b.g = true;
             this.b.j = this.b.a.getZoomAngle();
             this.b.c(true);

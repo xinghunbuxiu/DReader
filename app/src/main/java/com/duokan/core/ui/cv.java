@@ -16,7 +16,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
 
-import com.duokan.core.app.b;
 import com.duokan.core.sys.af;
 
 import java.lang.ref.WeakReference;
@@ -442,16 +441,16 @@ public class cv {
         if (this.m == null) {
             return true;
         }
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         rect.set(this.m.getLeft(), this.m.getTop(), this.m.getRight(), this.m.getBottom());
         try {
             if (rect.contains(i, i2)) {
                 return rect;
             }
-            dv.g.a(rect);
+            UTools.g.getRect(rect);
             return true;
         } finally {
-            dv.g.a(rect);
+            UTools.g.getRect(rect);
         }
     }
 }

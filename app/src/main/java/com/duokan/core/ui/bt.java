@@ -6,7 +6,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 
 public abstract class bt extends LinearLayout {
     public abstract int a(View view, LayoutParams layoutParams);

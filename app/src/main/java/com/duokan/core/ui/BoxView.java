@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.widget.FrameLayout;
 
 public class BoxView extends FrameLayout {
@@ -125,10 +124,10 @@ public class BoxView extends FrameLayout {
         if (this.d) {
             cj a = cj.a(getContext());
             if (a.a()) {
-                Rect rect = (Rect) dv.g.a();
-                dv.a(rect, (View) this, null);
+                Rect rect = (Rect) UTools.g.getRect();
+                UTools.getRect(rect, (View) this, null);
                 int max = Math.max(0, rect.bottom - a.b().top);
-                dv.g.a(rect);
+                UTools.g.getRect(rect);
                 if (max > 0) {
                     int height = getHeight() - max;
                     measure(MeasureSpec.makeMeasureSpec(getWidth(), 1073741824), MeasureSpec.makeMeasureSpec(height, 1073741824));

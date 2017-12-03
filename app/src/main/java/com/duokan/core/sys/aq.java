@@ -8,7 +8,7 @@ import java.util.Map;
 public abstract class aq {
     public static Map a() {
         Map allStackTraces = Thread.getAllStackTraces();
-        Thread b = t.b();
+        Thread b = TaskHandler.getThead();
         if (!allStackTraces.containsKey(b)) {
             allStackTraces.put(b, b.getStackTrace());
         }
@@ -17,7 +17,7 @@ public abstract class aq {
 
     public static List b() {
         List linkedList = new LinkedList(a().entrySet());
-        Collections.sort(linkedList, new ar(t.b()));
+        Collections.sort(linkedList, new ar(TaskHandler.getThead()));
         return linkedList;
     }
 }

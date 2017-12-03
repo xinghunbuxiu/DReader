@@ -6,8 +6,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 
 import com.duokan.core.app.ManagedApp;
-import com.duokan.core.io.a;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 import java.io.File;
 import java.util.List;
@@ -17,7 +16,7 @@ public class n {
     static final /* synthetic */ boolean a = (!n.class.desiredAssertionStatus());
     private final ReentrantLock b;
     private final s c;
-    private final t d;
+    private final TaskHandler d;
     private boolean e;
     private boolean f;
     private Runnable g;
@@ -43,12 +42,12 @@ public class n {
     }
 
     public void b() {
-        this.d.b().beginTransaction();
+        this.d.getThead().beginTransaction();
     }
 
     public int a(String str, String str2, String[] strArr) {
         try {
-            int delete = this.d.b().delete(str, str2, strArr);
+            int delete = this.d.getThead().delete(str, str2, strArr);
             return delete;
         } finally {
             this.d.c();
@@ -57,7 +56,7 @@ public class n {
 
     public void c() {
         try {
-            this.d.a().endTransaction();
+            this.d.isCurrentThread().endTransaction();
         } finally {
             this.d.c();
         }
@@ -65,7 +64,7 @@ public class n {
 
     public void a(String str, Object[] objArr) {
         try {
-            this.d.b().execSQL(str, objArr);
+            this.d.getThead().execSQL(str, objArr);
         } finally {
             this.d.c();
         }
@@ -73,7 +72,7 @@ public class n {
 
     public void a(String str) {
         try {
-            this.d.b().execSQL(str);
+            this.d.getThead().execSQL(str);
         } finally {
             this.d.c();
         }
@@ -81,7 +80,7 @@ public class n {
 
     public int d() {
         try {
-            int version = this.d.b().getVersion();
+            int version = this.d.getThead().getVersion();
             return version;
         } finally {
             this.d.c();
@@ -90,7 +89,7 @@ public class n {
 
     public boolean e() {
         try {
-            boolean inTransaction = this.d.b().inTransaction();
+            boolean inTransaction = this.d.getThead().inTransaction();
             return inTransaction;
         } finally {
             this.d.c();
@@ -99,7 +98,7 @@ public class n {
 
     public long a(String str, String str2, ContentValues contentValues) {
         try {
-            long insert = this.d.b().insert(str, str2, contentValues);
+            long insert = this.d.getThead().insert(str, str2, contentValues);
             return insert;
         } finally {
             this.d.c();
@@ -108,7 +107,7 @@ public class n {
 
     public long b(String str, String str2, ContentValues contentValues) {
         try {
-            long insertOrThrow = this.d.b().insertOrThrow(str, str2, contentValues);
+            long insertOrThrow = this.d.getThead().insertOrThrow(str, str2, contentValues);
             return insertOrThrow;
         } finally {
             this.d.c();
@@ -117,7 +116,7 @@ public class n {
 
     public long a(String str, String str2, ContentValues contentValues, int i) {
         try {
-            long insertWithOnConflict = this.d.b().insertWithOnConflict(str, str2, contentValues, i);
+            long insertWithOnConflict = this.d.getThead().insertWithOnConflict(str, str2, contentValues, i);
             return insertWithOnConflict;
         } finally {
             this.d.c();
@@ -127,7 +126,7 @@ public class n {
     public Cursor a(String str, String[] strArr) {
         Cursor mVar;
         try {
-            mVar = new m(this.d, this.d.b().rawQuery(str, strArr));
+            mVar = new m(this.d, this.d.getThead().rawQuery(str, strArr));
             return mVar;
         } finally {
             mVar = this.d;
@@ -137,7 +136,7 @@ public class n {
 
     public void f() {
         try {
-            this.d.b().setTransactionSuccessful();
+            this.d.getThead().setTransactionSuccessful();
         } finally {
             this.d.c();
         }
@@ -145,7 +144,7 @@ public class n {
 
     public void a(int i) {
         try {
-            this.d.b().setVersion(i);
+            this.d.getThead().setVersion(i);
         } finally {
             this.d.c();
         }
@@ -153,7 +152,7 @@ public class n {
 
     public int a(String str, ContentValues contentValues, String str2, String[] strArr) {
         try {
-            int update = this.d.b().update(str, contentValues, str2, strArr);
+            int update = this.d.getThead().update(str, contentValues, str2, strArr);
             return update;
         } finally {
             this.d.c();
@@ -175,7 +174,7 @@ public class n {
 
     public List b(String str) {
         try {
-            List a = u.a(this.d.b(), str);
+            List a = u.a(this.d.getThead(), str);
             return a;
         } finally {
             this.d.c();
@@ -198,7 +197,7 @@ public class n {
             File file2 = new File(Uri.parse(this.c.b).getPath());
             if (file2.length() != file.length() || file2.lastModified() <= file.lastModified()) {
                 this.g = new q(this, file, file2);
-                t.a(this.g, 15000);
+                TaskHandler.postDelayed(this.g, 15000);
             }
         }
     }
@@ -206,7 +205,7 @@ public class n {
     private void a(File file, File file2) {
         if (!a && !this.b.isHeldByCurrentThread()) {
             throw new AssertionError();
-        } else if (this.d.a() == null) {
+        } else if (this.d.isCurrentThread() == null) {
             try {
                 File file3 = new File(Uri.parse(this.c.b + ".tmp").getPath());
                 if (a.a(file, file3)) {

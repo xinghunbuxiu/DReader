@@ -4,10 +4,10 @@ import android.os.Handler.Callback;
 import android.os.Message;
 
 class o implements Callback {
-    final /* synthetic */ m a;
+    final /* synthetic */ BaseActivity a;
 
-    o(m mVar) {
-        this.a = mVar;
+    o(BaseActivity baseActivityVar) {
+        this.a = baseActivityVar;
     }
 
     public boolean handleMessage(Message message) {

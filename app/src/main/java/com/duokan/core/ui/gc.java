@@ -1,6 +1,6 @@
 package com.duokan.core.ui;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.ZoomView.ZoomState;
 
 class gc implements Runnable {
@@ -15,6 +15,6 @@ class gc implements Runnable {
     public void run() {
         this.b.l = null;
         this.b.a(ZoomState.IDLE);
-        t.b(this.a);
+        TaskHandler.PostTask(this.a);
     }
 }

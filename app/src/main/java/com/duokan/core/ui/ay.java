@@ -10,19 +10,11 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.view.ViewGroup.MarginLayoutParams;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.view.animation.Transformation;
-
-import com.duokan.core.sys.t;
-import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.Scrollable.ScrollState;
-import com.umeng.analytics.pro.j;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -308,10 +300,10 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         if (s(i) && !rect.isEmpty() && rect.width() != 0 && rect.height() != 0) {
             Rect h = h(i);
             if (!h.isEmpty()) {
-                Rect rect2 = (Rect) dv.g.a();
+                Rect rect2 = (Rect) UTools.g.getRect();
                 Gravity.apply(i2, h.width(), h.height(), c(rect), rect2);
                 scrollBy(h.left - rect2.left, h.top - rect2.top);
-                dv.g.a(rect2);
+                UTools.g.getRect(rect2);
                 e();
             }
         }
@@ -804,7 +796,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     private final void a(int i) {
         if (c || this.C == null) {
             this.C = new ba(this, i);
-            t.a(this.C, (long) dv.c());
+            t.a(this.C, (long) UTools.showAnimation());
             return;
         }
         throw new AssertionError();
@@ -820,7 +812,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
                 throw new AssertionError();
             } else if (this.B >= 0) {
                 this.D = new bb(this, runnable);
-                t.a(this.D, (long) dv.e());
+                t.a(this.D, (long) UTools.getScaledPagingTouchSlop());
                 return;
             } else {
                 return;
@@ -1214,8 +1206,8 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
 
     private final void t() {
         if (this.q != null) {
-            Rect rect = (Rect) dv.g.a();
-            Rect rect2 = (Rect) dv.g.a();
+            Rect rect = (Rect) UTools.g.getRect();
+            Rect rect2 = (Rect) UTools.g.getRect();
             rect.set(this.a.k());
             rect.left += getPaddingLeft();
             rect.top += getPaddingTop();
@@ -1246,8 +1238,8 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
                     break;
             }
             this.q.layout(rect2.left, rect2.top, rect2.right, rect2.bottom);
-            dv.g.a(rect2);
-            dv.g.a(rect);
+            UTools.g.getRect(rect2);
+            UTools.g.getRect(rect);
         }
     }
 

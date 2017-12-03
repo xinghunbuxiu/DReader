@@ -33,7 +33,7 @@ public class q extends er {
     protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
         if (esVar instanceof r) {
             r rVar = (r) esVar;
-            MotionEvent a = dv.a(motionEvent, view, null);
+            MotionEvent a = UTools.resetMotionEvent(motionEvent, view, null);
             if (this.c == null) {
                 this.c = VelocityTracker.obtain();
             }
@@ -42,9 +42,9 @@ public class q extends er {
                 this.a.set(a.getX(), a.getY());
             }
             if (motionEvent.getActionMasked() == 1) {
-                if (d(this.a, new PointF(a.getX(), a.getY())) >= ((double) dv.d(view.getContext()))) {
-                    float b = Float.isNaN(this.d) ? (float) dv.b(view.getContext()) : this.d;
-                    this.c.computeCurrentVelocity(Calendar.MILLISECOND_OF_SECOND, Float.isNaN(this.e) ? (float) dv.c(view.getContext()) : this.e);
+                if (d(this.a, new PointF(a.getX(), a.getY())) >= ((double) UTools.getScaledTouchSlop(view.getContext()))) {
+                    float b = Float.isNaN(this.d) ? (float) UTools.closeAnimation(view.getContext()) : this.d;
+                    this.c.computeCurrentVelocity(Calendar.MILLISECOND_OF_SECOND, Float.isNaN(this.e) ? (float) UTools.showAnimation(view.getContext()) : this.e);
                     PointF pointF = new PointF(this.c.getXVelocity(), this.c.getYVelocity());
                     if (Math.abs(pointF.x) < b) {
                         pointF.x = 0.0f;
@@ -52,8 +52,8 @@ public class q extends er {
                     if (Math.abs(pointF.y) < b) {
                         pointF.y = 0.0f;
                     }
-                    dv.a(pointF, view);
-                    if (dv.a(new PointF(0.0f, 0.0f), pointF, (double) this.f, (double) this.g) && !(Float.compare(Math.abs(pointF.x), 0.0f) == 0 && Float.compare(Math.abs(pointF.y), 0.0f) == 0)) {
+                    UTools.addAnimation(pointF, view);
+                    if (UTools.addAnimation(new PointF(0.0f, 0.0f), pointF, (double) this.f, (double) this.g) && !(Float.compare(Math.abs(pointF.x), 0.0f) == 0 && Float.compare(Math.abs(pointF.y), 0.0f) == 0)) {
                         rVar.a(this, view, new PointF(motionEvent.getX(0), motionEvent.getY(0)), pointF);
                     }
                 }

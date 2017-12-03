@@ -1,6 +1,6 @@
 package com.duokan.core.ui;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class gd implements Runnable {
     final /* synthetic */ Runnable a;
@@ -13,6 +13,6 @@ class gd implements Runnable {
 
     public void run() {
         this.b.l = null;
-        t.b(this.a);
+        TaskHandler.PostTask(this.a);
     }
 }

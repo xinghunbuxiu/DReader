@@ -16,11 +16,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.view.animation.Interpolator;
-
-import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.Scrollable.ScrollState;
 
 public class ZoomView extends ViewGroup implements Scrollable, fk {
     static final /* synthetic */ boolean a = (!ZoomView.class.desiredAssertionStatus());
@@ -72,8 +68,8 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         setThumbEnabled(true);
         setHorizontalOverScrollMode(OverScrollMode.STRETCH);
         setVerticalOverScrollMode(OverScrollMode.STRETCH);
-        setMaxOverScrollWidth(dv.f(context));
-        setMaxOverScrollHeight(dv.g(context));
+        setMaxOverScrollWidth(UTools.f(context));
+        setMaxOverScrollHeight(UTools.g(context));
     }
 
     public final ZoomState getZoomState() {
@@ -337,34 +333,34 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
     public void l_() {
         View e = e();
         if (e != null) {
-            PointF pointF = (PointF) dv.f.a();
+            PointF pointF = (PointF) UTools.f.getRect();
             pointF.set(((float) getScrollX()) + (((float) getWidth()) / 2.0f), ((float) getScrollY()) + (((float) getHeight()) / 2.0f));
-            dv.a(pointF, (View) this, e);
-            PointF pointF2 = (PointF) dv.f.a();
+            UTools.addAnimation(pointF, (View) this, e);
+            PointF pointF2 = (PointF) UTools.f.getRect();
             pointF2.set(pointF);
-            dv.a(pointF2, e, (View) this);
+            UTools.addAnimation(pointF2, e, (View) this);
             pointF2.offset((float) (-getScrollX()), (float) (-getScrollY()));
             float[] d = d(pointF.x, pointF.y, pointF2.x, pointF2.y, getZoomFactor(), getZoomAngle());
             b(d[0], d[1], d[2], d[3], d[4], d[5]);
-            dv.f.a(pointF);
-            dv.f.a(pointF2);
+            UTools.f.getRect(pointF);
+            UTools.f.getRect(pointF2);
         }
     }
 
     public void m_() {
         View e = e();
         if (e != null) {
-            PointF pointF = (PointF) dv.f.a();
+            PointF pointF = (PointF) UTools.f.getRect();
             pointF.set(((float) getScrollX()) + (((float) getWidth()) / 2.0f), ((float) getScrollY()) + (((float) getHeight()) / 2.0f));
-            dv.a(pointF, (View) this, e);
-            PointF pointF2 = (PointF) dv.f.a();
+            UTools.addAnimation(pointF, (View) this, e);
+            PointF pointF2 = (PointF) UTools.f.getRect();
             pointF2.set(pointF);
-            dv.a(pointF2, e, (View) this);
+            UTools.addAnimation(pointF2, e, (View) this);
             pointF2.offset((float) (-getScrollX()), (float) (-getScrollY()));
             float[] d = d(pointF.x, pointF.y, pointF2.x, pointF2.y, getZoomFactor(), getZoomAngle());
             b(d[0], d[1], d[2], d[3], d[4], d[5], null, null);
-            dv.f.a(pointF);
-            dv.f.a(pointF2);
+            UTools.f.getRect(pointF);
+            UTools.f.getRect(pointF2);
         }
     }
 
@@ -409,12 +405,12 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
             i5 = (((i5 - paddingTop) - this.e) / 2) + getPaddingTop();
             e.layout(max, i5, e.getMeasuredWidth() + max, e.getMeasuredHeight() + i5);
         }
-        Rect rect = (Rect) dv.g.a();
-        Point point = (Point) dv.e.a();
+        Rect rect = (Rect) UTools.g.getRect();
+        Point point = (Point) UTools.e.getRect();
         a(rect, point, 0.0f, 0.0f, 0.0f, 0.0f, this.g, this.j);
         this.b.a(rect);
-        dv.g.a(rect);
-        dv.e.a(point);
+        UTools.g.getRect(rect);
+        UTools.e.getRect(point);
         this.b.a(z, i, i2, i3, i4);
         l_();
     }
@@ -519,21 +515,21 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
             this.m = null;
         }
         if (motionEvent.getActionMasked() == 0) {
-            PointF pointF = (PointF) dv.f.a();
-            RectF rectF = (RectF) dv.h.a();
+            PointF pointF = (PointF) UTools.f.getRect();
+            RectF rectF = (RectF) UTools.h.getRect();
             this.m = null;
             for (int childCount = getChildCount() - 1; childCount >= 0; childCount--) {
                 View childAt = getChildAt(childCount);
                 pointF.set(((float) getScrollX()) + motionEvent.getX(), ((float) getScrollY()) + motionEvent.getY());
                 rectF.set((float) childAt.getScrollX(), (float) childAt.getScrollY(), (float) (childAt.getScrollX() + childAt.getWidth()), (float) (childAt.getScrollY() + childAt.getHeight()));
-                dv.a(pointF, (View) this, childAt);
+                UTools.addAnimation(pointF, (View) this, childAt);
                 if (rectF.contains(pointF.x, pointF.y) && a(childAt, motionEvent)) {
                     this.m = childAt;
                     break;
                 }
             }
-            dv.f.a(pointF);
-            dv.h.a(rectF);
+            UTools.f.getRect(pointF);
+            UTools.h.getRect(rectF);
             if (this.m != null) {
                 return true;
             }
@@ -551,7 +547,7 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
     }
 
     private boolean a(View view, MotionEvent motionEvent) {
-        MotionEvent a = dv.a(motionEvent, (View) this, view);
+        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, view);
         boolean dispatchTouchEvent = view.dispatchTouchEvent(a);
         a.recycle();
         return dispatchTouchEvent;
@@ -620,13 +616,13 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         this.c.preScale(this.g, this.g);
         this.c.preRotate(-this.j);
         this.c.preTranslate((float) ((-view.getWidth()) / 2), (float) ((-view.getHeight()) / 2));
-        Rect rect = (Rect) dv.g.a();
-        Point point = (Point) dv.e.a();
+        Rect rect = (Rect) UTools.g.getRect();
+        Point point = (Point) UTools.e.getRect();
         a(rect, point, f, f2, f3, f4, f5, f6);
         this.b.a(rect);
         this.b.e(point.x, point.y);
-        dv.g.a(rect);
-        dv.e.a(point);
+        UTools.g.getRect(rect);
+        UTools.e.getRect(point);
         invalidate();
         d();
     }
@@ -635,16 +631,16 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         if (e() == null) {
             return new float[]{f, f2, f3, f4, f5, f6};
         }
-        Rect rect = (Rect) dv.g.a();
-        Point point = (Point) dv.e.a();
+        Rect rect = (Rect) UTools.g.getRect();
+        Point point = (Point) UTools.e.getRect();
         a(rect, point, f, f2, f3, f4, Math.min(Math.max(getMinZoomFactor(), f5), getMaxZoomFactor()), 0.0f);
-        Point point2 = (Point) dv.e.a();
+        Point point2 = (Point) UTools.e.getRect();
         point2.x = Math.min(Math.max(rect.left, point.x), rect.right - getWidth());
         point2.y = Math.min(Math.max(rect.top, point.y), rect.bottom - getHeight());
         float[] fArr = new float[]{f, f2, f3 - ((float) (point2.x - point.x)), f4 - ((float) (point2.y - point.y)), r7, 0.0f};
-        dv.e.a(point2);
-        dv.e.a(point);
-        dv.g.a(rect);
+        UTools.e.getRect(point2);
+        UTools.e.getRect(point);
+        UTools.g.getRect(rect);
         return fArr;
     }
 
@@ -655,10 +651,10 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
             point.set(0, 0);
             return;
         }
-        Matrix matrix = (Matrix) dv.d.a();
+        Matrix matrix = (Matrix) UTools.d.getRect();
         a(matrix, f5, f6);
         rect.set(e.getScrollX(), e.getScrollY(), e.getScrollX() + e.getWidth(), e.getScrollY() + e.getHeight());
-        dv.a(matrix, rect);
+        UTools.addAnimation(matrix, rect);
         rect.left -= getPaddingLeft();
         rect.top -= getPaddingTop();
         rect.right += getPaddingRight();
@@ -673,14 +669,14 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
             rect.top = ((e.getTop() + e.getBottom()) - height) / 2;
             rect.bottom = ((e.getBottom() + e.getTop()) + height) / 2;
         }
-        PointF pointF = (PointF) dv.f.a();
+        PointF pointF = (PointF) UTools.f.getRect();
         pointF.set(f, f2);
-        dv.a(matrix, pointF);
+        UTools.addAnimation(matrix, pointF);
         pointF.offset(-f3, -f4);
         point.x = Math.round(pointF.x);
         point.y = Math.round(pointF.y);
-        dv.d.a(matrix);
-        dv.f.a(pointF);
+        UTools.d.getRect(matrix);
+        UTools.f.getRect(pointF);
     }
 
     @TargetApi(11)

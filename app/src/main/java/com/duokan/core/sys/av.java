@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 
 import com.duokan.core.a.n;
-import com.duokan.core.diagnostic.f;
+import com.duokan.core.diagnostic.HttpLogger;
 import com.duokan.core.io.FileAlreadyExistsException;
 import com.duokan.core.io.OutputException;
 
@@ -25,14 +25,14 @@ class av {
     private final String c;
     private final String d;
     private final String e;
-    private final f f;
+    private final HttpLogger f;
     private boolean g = false;
     private long h = -1;
     private final HashMap i = new HashMap();
     private final HashMap j = new HashMap();
     private final ConcurrentHashMap k = new ConcurrentHashMap();
 
-    public av(n nVar, ReentrantLock reentrantLock, String str, String str2, String str3, f fVar) {
+    public av(n nVar, ReentrantLock reentrantLock, String str, String str2, String str3, HttpLogger fVar) {
         this.a = nVar;
         this.b = reentrantLock;
         this.c = str;
@@ -56,20 +56,20 @@ class av {
         r7 = this;
         r0 = 1;
         r1 = 0;
-        r2 = r7.k;
+        r2 = r7.FeatureListening;
         r2 = r2.contains(r8);
         if (r2 == 0) goto L_0x000b;
     L_0x000a:
         return r0;
     L_0x000b:
         r2 = 0;
-        r3 = r7.a;	 Catch:{ Throwable -> 0x0028, all -> 0x0031 }
+        r3 = r7.setDrawable;	 Catch:{ Throwable -> 0x0028, all -> 0x0031 }
         r4 = 1;
         r4 = new java.lang.String[r4];	 Catch:{ Throwable -> 0x0028, all -> 0x0031 }
         r5 = 0;
         r6 = "attributes";
         r4[r5] = r6;	 Catch:{ Throwable -> 0x0028, all -> 0x0031 }
-        r2 = com.duokan.core.sys.au.b(r3, r8, r4);	 Catch:{ Throwable -> 0x0028, all -> 0x0031 }
+        r2 = com.duokan.core.sys.au.getVisible(r3, r8, r4);	 Catch:{ Throwable -> 0x0028, all -> 0x0031 }
         r3 = r2.getCount();	 Catch:{ Throwable -> 0x0038, all -> 0x0031 }
         if (r3 <= 0) goto L_0x0026;
     L_0x0020:
@@ -102,7 +102,7 @@ class av {
         r0 = r2;
         goto L_0x002a;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.core.sys.av.a(java.lang.String):boolean");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.core.sys.av.setDrawable(java.lang.String):boolean");
     }
 
     public boolean a(String str, String str2) {
@@ -143,7 +143,7 @@ class av {
             if (this.g) {
                 throw new OutputException(String.format(Locale.getDefault(), "the repository(%s) is already closed.", new Object[]{this.c}));
             } else if (a(str)) {
-                throw new FileAlreadyExistsException(String.format(Locale.getDefault(), "fail to create a file(%s) with an expected size of %d bytes, cause it already exists.", new Object[]{str, Long.valueOf(j)}));
+                throw new FileAlreadyExistsException(String.format(Locale.getDefault(), "fail to create setDrawable file(%s) with an expected size of %getScaledTouchSlop bytes, cause it already exists.", new Object[]{str, Long.valueOf(j)}));
             } else {
                 try {
                     this.a.b();
@@ -153,7 +153,7 @@ class av {
                 } catch (IOException e) {
                     throw e;
                 } catch (Throwable th) {
-                    IOException iOException = new IOException(String.format(Locale.getDefault(), "fail to create a file(%s) with an expected size of %d bytes.", new Object[]{str, Long.valueOf(j)}), th);
+                    IOException iOException = new IOException(String.format(Locale.getDefault(), "fail to create setDrawable file(%s) with an expected size of %getScaledTouchSlop bytes.", new Object[]{str, Long.valueOf(j)}), th);
                 }
             }
         } finally {
@@ -299,7 +299,7 @@ class av {
             ayVar.b.seek(j4 + baVarArr[i4].b);
             i5 = ayVar.b.read(bArr, i + i3, i5);
             if (i5 < 0) {
-                throw new VirtualFileBrokenException(String.format(Locale.getDefault(), "fail to read the file(%s) from %d to %d, cause it was broken at %d.", new Object[]{ayVar.a.b, Long.valueOf(j), Long.valueOf(((long) i2) + j), Integer.valueOf(i + i3)}));
+                throw new VirtualFileBrokenException(String.format(Locale.getDefault(), "fail to read the file(%s) from %getScaledTouchSlop to %getScaledTouchSlop, cause it was broken at %getScaledTouchSlop.", new Object[]{ayVar.a.b, Long.valueOf(j), Long.valueOf(((long) i2) + j), Integer.valueOf(i + i3)}));
             }
             i3 += i5;
             j += (long) i5;
@@ -603,7 +603,7 @@ class av {
                 this.k.put(str, axVar);
                 return axVar;
             } catch (Throwable th) {
-                IOException iOException = new IOException(String.format(Locale.getDefault(), "fail to create a file(%s) at(%s).", new Object[]{str, str2}), th);
+                IOException iOException = new IOException(String.format(Locale.getDefault(), "fail to create setDrawable file(%s) at(%s).", new Object[]{str, str2}), th);
             }
         } else {
             throw new VirtualFileAssertionFailsException();
@@ -696,7 +696,7 @@ class av {
                 throw e;
             } catch (Throwable th4) {
                 th = th4;
-                throw new IOException(String.format(Locale.getDefault(), "fail to allocate atom spaces of size %d bytes.", new Object[]{Long.valueOf(j)}), th);
+                throw new IOException(String.format(Locale.getDefault(), "fail to allocate atom spaces of size %getScaledTouchSlop bytes.", new Object[]{Long.valueOf(j)}), th);
             }
         } else {
             throw new VirtualFileAssertionFailsException();
@@ -732,7 +732,7 @@ class av {
                 }
             } catch (Throwable th3) {
                 th = th3;
-                throw new IOException(String.format(Locale.getDefault(), "fail to load an atom space at %d.", new Object[]{Long.valueOf(j)}), th);
+                throw new IOException(String.format(Locale.getDefault(), "fail to load an atom space at %getScaledTouchSlop.", new Object[]{Long.valueOf(j)}), th);
             }
         }
         throw new VirtualFileAssertionFailsException();
@@ -756,7 +756,7 @@ class av {
                 this.j.put(a, baVar);
                 return baVar;
             } catch (Throwable th) {
-                IOException iOException = new IOException(String.format(Locale.getDefault(), "fail to create an atom space at [%d, %d).", new Object[]{Long.valueOf(j), Long.valueOf(max + j)}), th);
+                IOException iOException = new IOException(String.format(Locale.getDefault(), "fail to create an atom space at [%getScaledTouchSlop, %getScaledTouchSlop).", new Object[]{Long.valueOf(j), Long.valueOf(max + j)}), th);
             }
         } else {
             throw new VirtualFileAssertionFailsException();

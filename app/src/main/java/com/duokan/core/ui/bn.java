@@ -3,7 +3,7 @@ package com.duokan.core.ui;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class bn implements AnimationListener {
     final /* synthetic */ bk a;
@@ -19,6 +19,6 @@ class bn implements AnimationListener {
     }
 
     public void onAnimationEnd(Animation animation) {
-        t.b(new bo(this));
+        TaskHandler.PostTask(new bo(this));
     }
 }

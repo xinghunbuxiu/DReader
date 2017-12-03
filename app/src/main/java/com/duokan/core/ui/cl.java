@@ -16,17 +16,17 @@ class cl extends View {
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
-        if (this.a.d.isEmpty() && displayMetrics.heightPixels - getHeight() >= dv.b(getContext(), 100.0f)) {
+        if (this.a.d.isEmpty() && displayMetrics.heightPixels - getHeight() >= UTools.closeAnimation(getContext(), 100.0f)) {
             a(this.a.d);
             this.a.d();
-        } else if (!this.a.d.isEmpty() && displayMetrics.heightPixels - getHeight() >= dv.b(getContext(), 100.0f)) {
-            Rect rect = (Rect) dv.g.a();
+        } else if (!this.a.d.isEmpty() && displayMetrics.heightPixels - getHeight() >= UTools.closeAnimation(getContext(), 100.0f)) {
+            Rect rect = (Rect) UTools.g.getRect();
             a(rect);
             if (!this.a.d.equals(rect)) {
                 this.a.d.set(rect);
                 this.a.f();
             }
-            dv.g.a(rect);
+            UTools.g.getRect(rect);
         } else if (!this.a.d.isEmpty()) {
             this.a.d.setEmpty();
             this.a.e();
@@ -36,7 +36,7 @@ class cl extends View {
     private void a(Rect rect) {
         DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
         rect.set(0, 0, getWidth(), getHeight());
-        dv.b(rect, (View) this);
+        UTools.closeAnimation(rect, (View) this);
         rect.top = rect.bottom;
         rect.bottom = displayMetrics.heightPixels;
     }

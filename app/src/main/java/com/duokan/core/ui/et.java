@@ -91,7 +91,7 @@ public class et implements OnTouchListener {
                 a(view);
             } else if (motionEvent.getActionMasked() == 1 && this.f && this.g == null) {
                 this.g = new eu(this, view, motionEvent, z2);
-                view.postDelayed(this.g, (long) dv.d());
+                view.postDelayed(this.g, (long) UTools.getScaledTouchSlop());
             }
             this.f = false;
             z3 = a(view, motionEvent, z, z2, this.c);

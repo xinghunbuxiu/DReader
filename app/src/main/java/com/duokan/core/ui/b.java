@@ -16,7 +16,7 @@ class b extends InsetDrawable {
     public void draw(Canvas canvas) {
         super.draw(canvas);
         if (this.a.c != null) {
-            Rect rect = (Rect) dv.g.a();
+            Rect rect = (Rect) UTools.g.getRect();
             this.a.a(rect);
             if (!rect.isEmpty()) {
                 canvas.save();
@@ -28,7 +28,7 @@ class b extends InsetDrawable {
                 this.a.c.draw(canvas);
                 canvas.restore();
             }
-            dv.g.a(rect);
+            UTools.g.getRect(rect);
         }
     }
 }

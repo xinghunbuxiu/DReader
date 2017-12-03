@@ -10,7 +10,7 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class ga extends WebViewClient {
     final /* synthetic */ fr a;
@@ -40,7 +40,7 @@ class ga extends WebViewClient {
         this.a.g = 0;
         if (this.a.h > 0) {
             this.a.i = new gb(this);
-            t.a(this.a.i, this.a.h);
+            TaskHandler.postDelayed(this.a.i, this.a.h);
         }
         this.a.a(str, bitmap);
         if (this.a.c != null) {

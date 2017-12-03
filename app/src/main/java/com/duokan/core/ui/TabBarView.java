@@ -16,7 +16,6 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 
@@ -290,7 +289,7 @@ public class TabBarView extends FrameLayout {
             return new Rect(0, 0, 0, 0);
         }
         Rect rect = new Rect();
-        dv.a(new RectF(), b(this.b), (View) this).round(rect);
+        UTools.getRectF(new RectF(), b(this.b), (View) this).round(rect);
         return rect;
     }
 
@@ -386,7 +385,7 @@ public class TabBarView extends FrameLayout {
         } else {
             this.l.set(this.g - (this.h / 2), 0, this.g + ((this.h + 1) / 2), getHeight());
         }
-        dv.a(canvas, this.a, this.l, this.i);
+        UTools.addAnimation(canvas, this.a, this.l, this.i);
         canvas.restore();
     }
 

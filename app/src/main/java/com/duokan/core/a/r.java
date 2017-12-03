@@ -15,7 +15,7 @@ class r implements Runnable {
             } else {
                 this.a.d.d.c();
                 this.a.d.a(this.a.b, this.a.c);
-                this.a.d.d.b();
+                this.a.d.d.getThead();
             }
             this.a.d.b.unlock();
             this.a.d.f = false;

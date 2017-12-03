@@ -11,8 +11,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.Scrollable.ScrollState;
 
 import java.util.concurrent.TimeUnit;
@@ -117,7 +116,7 @@ public class fx extends WebView implements OnPreDrawListener {
     private void a() {
         if (this.a.j == null) {
             this.a.j = new fy(this);
-            t.a(this.a.j, TimeUnit.SECONDS.toMillis(10));
+            TaskHandler.postDelayed(this.a.j, TimeUnit.SECONDS.toMillis(10));
         }
     }
 
@@ -141,9 +140,9 @@ public class fx extends WebView implements OnPreDrawListener {
                 }
                 z = true;
                 if (z) {
-                    RectF rectF = (RectF) dv.h.a();
-                    boolean a = dv.a(rectF, (View) this);
-                    dv.h.a(rectF);
+                    RectF rectF = (RectF) UTools.h.getRect();
+                    boolean a = UTools.addAnimation(rectF, (View) this);
+                    UTools.h.getRect(rectF);
                     z = a;
                 }
                 if (z) {

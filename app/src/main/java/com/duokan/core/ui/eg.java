@@ -3,7 +3,7 @@ package com.duokan.core.ui;
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 final class eg implements AnimationListener {
     final /* synthetic */ Runnable a;
@@ -19,6 +19,6 @@ final class eg implements AnimationListener {
     }
 
     public void onAnimationEnd(Animation animation) {
-        t.b(this.a);
+        TaskHandler.PostTask(this.a);
     }
 }

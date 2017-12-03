@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Rect;
 
-import com.duokan.core.app.b;
-
 import java.lang.ref.WeakReference;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -59,7 +57,7 @@ public class cj {
     }
 
     private void c() {
-        dv.a(this.b.getWindow().getDecorView(), new ck(this));
+        UTools.addAnimation(this.b.getWindow().getDecorView(), new ck(this));
         this.b.getWindow().getDecorView().requestLayout();
     }
 

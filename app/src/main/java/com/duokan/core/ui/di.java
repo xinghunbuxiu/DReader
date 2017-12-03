@@ -15,10 +15,7 @@ import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.view.ViewGroup.OnHierarchyChangeListener;
 import android.view.ViewParent;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 import android.view.animation.AnimationUtils;
@@ -88,7 +85,9 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
         }
     }
 
-    public do b(View view) {
+    public do
+
+    b(View view) {
         ds dsVar = (ds) this.b.get(view);
         if (dsVar == null) {
             return null;
@@ -123,7 +122,7 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
 
     public void a(View view, dl dlVar, int i, Runnable runnable, Runnable runnable2) {
         dl dlVar2 = new dl(a(view));
-        dlVar2.d((float) dv.b((double) dlVar2.l(), (double) (dlVar.l() - 180.0f), (double) (dlVar.l() + 180.0f)));
+        dlVar2.d((float) UTools.closeAnimation((double) dlVar2.l(), (double) (dlVar.l() - 180.0f), (double) (dlVar.l() + 180.0f)));
         a(view, dlVar2, dlVar, i, runnable, runnable2);
     }
 
@@ -236,21 +235,21 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
             this.d = null;
         }
         if (motionEvent.getActionMasked() == 0) {
-            PointF pointF = (PointF) dv.f.a();
-            RectF rectF = (RectF) dv.h.a();
+            PointF pointF = (PointF) UTools.f.getRect();
+            RectF rectF = (RectF) UTools.h.getRect();
             this.d = null;
             for (int childCount = getChildCount() - 1; childCount >= 0; childCount--) {
                 View childAt = getChildAt(childCount);
                 pointF.set(((float) getScrollX()) + motionEvent.getX(), ((float) getScrollY()) + motionEvent.getY());
                 rectF.set((float) childAt.getScrollX(), (float) childAt.getScrollY(), (float) (childAt.getScrollX() + childAt.getWidth()), (float) (childAt.getScrollY() + childAt.getHeight()));
-                dv.a(pointF, (View) this, childAt);
+                UTools.addAnimation(pointF, (View) this, childAt);
                 if (rectF.contains(pointF.x, pointF.y) && a(childAt, motionEvent)) {
                     this.d = childAt;
                     break;
                 }
             }
-            dv.f.a(pointF);
-            dv.h.a(rectF);
+            UTools.f.getRect(pointF);
+            UTools.h.getRect(rectF);
             if (this.d != null) {
                 return true;
             }
@@ -283,9 +282,9 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
     public boolean getChildVisibleRect(View view, Rect rect, Point point) {
         rect.offset(view.getScrollX(), view.getScrollY());
         point.offset(view.getScrollX(), view.getScrollY());
-        dv.b(rect, view, (View) this);
+        UTools.closeAnimation(rect, view, (View) this);
         if (point != null) {
-            dv.a(point, view, (View) this);
+            UTools.getTouchPoint(point, view, (View) this);
         }
         rect.offset(-getScrollX(), -getScrollY());
         point.offset(-getScrollX(), -getScrollY());
@@ -299,7 +298,7 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         rect.set(0, 0, i3 - i, i4 - i2);
         for (int i5 = 0; i5 < getChildCount(); i5++) {
             View childAt = getChildAt(i5);
@@ -309,7 +308,7 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
             d.m.offset(dnVar.b, dnVar.c);
             childAt.layout(d.m.left + ((d.m.width() - childAt.getMeasuredWidth()) / 2), d.m.top + ((d.m.height() - childAt.getMeasuredHeight()) / 2), (d.m.left + ((d.m.width() - childAt.getMeasuredWidth()) / 2)) + childAt.getMeasuredWidth(), (((d.m.height() - childAt.getMeasuredHeight()) / 2) + d.m.top) + childAt.getMeasuredHeight());
         }
-        dv.g.a(rect);
+        UTools.g.getRect(rect);
     }
 
     protected void onMeasure(int i, int i2) {
@@ -326,9 +325,9 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
             if ((d.a & 2) == 2) {
                 d.b.reset();
                 d.b.preScale(d.g.m(), d.g.n());
-                Matrix matrix = (Matrix) dv.d.a();
+                Matrix matrix = (Matrix) UTools.d.getRect();
                 d.b.preConcat(a(matrix, d.g.j(), d.g.k(), d.g.l()));
-                dv.d.a(matrix);
+                UTools.d.getRect(matrix);
                 d.a &= -3;
             }
             a(d.m, size, size2, d.b);
@@ -416,7 +415,7 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
     }
 
     private boolean a(View view, MotionEvent motionEvent) {
-        MotionEvent a = dv.a(motionEvent, (View) this, view);
+        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, view);
         boolean dispatchTouchEvent = view.dispatchTouchEvent(a);
         a.recycle();
         return dispatchTouchEvent;
@@ -446,9 +445,9 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
             dsVar.c.preTranslate((float) dsVar.f.h(), (float) dsVar.f.i());
             dsVar.c.preTranslate(f, g);
             dsVar.c.preScale(dsVar.f.m(), dsVar.f.n());
-            Matrix matrix = (Matrix) dv.d.a();
+            Matrix matrix = (Matrix) UTools.d.getRect();
             dsVar.c.preConcat(a(matrix, dsVar.f.j(), dsVar.f.k(), dsVar.f.l()));
-            dv.d.a(matrix);
+            UTools.d.getRect(matrix);
             dsVar.c.preTranslate(-f, -g);
             dsVar.a &= -5;
         }
@@ -458,9 +457,9 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
         if ((dsVar.a & 2) == 2) {
             dsVar.b.reset();
             dsVar.b.preScale(dsVar.g.m(), dsVar.g.n());
-            Matrix matrix = (Matrix) dv.d.a();
+            Matrix matrix = (Matrix) UTools.d.getRect();
             dsVar.b.preConcat(a(matrix, dsVar.g.j(), dsVar.g.k(), dsVar.g.l()));
-            dv.d.a(matrix);
+            UTools.d.getRect(matrix);
             dsVar.a &= -3;
         }
     }
@@ -490,7 +489,7 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
             rect.setEmpty();
         } else {
             float abs;
-            float[] fArr = (float[]) dv.k.a();
+            float[] fArr = (float[]) UTools.k.getRect();
             matrix.getValues(fArr);
             float f = fArr[0];
             float f2 = fArr[1];
@@ -529,7 +528,7 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
                 f = Math.min(f2, abs2) * 0.5f;
                 abs = Math.min(f3, f4) * 0.5f;
                 if ((Float.compare(abs2, f2) >= 0 && Float.compare(f3, f4) <= 0) || (Float.compare(abs2, f2) <= 0 && Float.compare(f3, f4) >= 0)) {
-                    RectF rectF = (RectF) dv.h.a();
+                    RectF rectF = (RectF) UTools.h.getRect();
                     rectF.set(0.0f, 0.0f, f, abs);
                     matrix.mapRect(rectF);
                     f2 = Math.min(((float) i) / rectF.width(), ((float) i2) / rectF.height());
@@ -537,21 +536,21 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
                         f *= f2;
                         abs *= f2;
                     }
-                    dv.h.a(rectF);
+                    UTools.h.getRect(rectF);
                 }
             }
             rect.set(0, 0, (int) f, (int) abs);
-            dv.k.a(fArr);
+            UTools.k.getRect(fArr);
         }
     }
 
     private Matrix a(Matrix matrix, float f, float f2, float f3) {
-        Camera camera = (Camera) dv.a.a();
+        Camera camera = (Camera) UTools.a.getRect();
         camera.rotateX(f);
         camera.rotateY(f2);
         camera.rotateZ(f3);
         camera.getMatrix(matrix);
-        dv.a.a(camera);
+        UTools.a.getRect(camera);
         return matrix;
     }
 

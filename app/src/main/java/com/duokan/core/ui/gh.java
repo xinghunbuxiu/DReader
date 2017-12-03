@@ -48,7 +48,7 @@ class gh extends er {
         }
         gVar.b(view, z2);
         this.c.a(0.01f);
-        this.c.a(dv.e(view.getContext()));
+        this.c.a(UTools.getScaledPagingTouchSlop(view.getContext()));
         this.f.set(0.0f, 0.0f);
         this.h.set(0.0f, 0.0f);
         this.g = false;

@@ -7,7 +7,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 public class gg implements Runnable {
     static final /* synthetic */ boolean a = (!ZoomView.class.desiredAssertionStatus());
@@ -31,10 +31,10 @@ public class gg implements Runnable {
         if (a || d != null) {
             this.c.set(f, f2);
             this.d.set(f, f2);
-            dv.a(this.d, d, (View) zoomView);
+            UTools.addAnimation(this.d, d, (View) zoomView);
             this.d.offset((float) (-zoomView.getScrollX()), (float) (-zoomView.getScrollY()));
             this.e = zoomView.getZoomFactor();
-            this.f = (float) dv.b((double) zoomView.getZoomAngle(), (double) (f6 - 180.0f), (double) (180.0f + f6));
+            this.f = (float) UTools.closeAnimation((double) zoomView.getZoomAngle(), (double) (f6 - 180.0f), (double) (180.0f + f6));
             this.g.set(f3, f4);
             this.h = f5;
             this.i = f6;
@@ -51,7 +51,7 @@ public class gg implements Runnable {
             this.l.setInterpolator(new AccelerateDecelerateInterpolator());
             this.l.setDuration(300);
             this.l.start();
-            t.b((Runnable) this);
+            TaskHandler.PostTask((Runnable) this);
         }
     }
 
@@ -74,7 +74,7 @@ public class gg implements Runnable {
                     j.a(this.j);
                     return;
                 } else {
-                    t.b((Runnable) this);
+                    TaskHandler.PostTask((Runnable) this);
                     return;
                 }
             }

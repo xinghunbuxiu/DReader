@@ -11,8 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.duokan.core.sys.aa;
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.DelayedRunnableQueue;
+import com.duokan.core.sys.TaskHandler;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -20,54 +20,54 @@ import java.util.Iterator;
 import java.util.ListIterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class e {
-    static final /* synthetic */ boolean $assertionsDisabled = (!e.class.desiredAssertionStatus());
+public class ActivatedController {
+    static final boolean $assertionsDisabled = (!ActivatedController.class.desiredAssertionStatus());
     private final CopyOnWriteArrayList mActivatedControllers;
     private boolean mActive;
     private final Activity mActivity;
     private View mContentView;
-    private final g mContext;
-    private final aa mDelayedRunnableQueue;
+    private final MyWrapper mContext;
+    private final DelayedRunnableQueue mDelayedRunnableQueue;
     private boolean mFirstActive;
     private WeakReference mMenuShownRef;
-    private h mParent;
+    private IController mParent;
     private Runnable mRunBeforeDetach;
-    private final h mSubControllerParent;
+    private final IController mSubControllerParent;
     private final ArrayList mSubControllers;
 
-    public e(y yVar, int i) {
-        this(yVar);
+    public ActivatedController(IFeature featrue, int i) {
+        this(featrue);
         setContentView(i);
     }
 
-    public e(y yVar) {
+    public ActivatedController(IFeature featrue) {
         this.mSubControllers = new ArrayList();
         this.mActivatedControllers = new CopyOnWriteArrayList();
-        this.mDelayedRunnableQueue = new aa();
+        this.mDelayedRunnableQueue = new DelayedRunnableQueue();
         this.mParent = null;
         this.mMenuShownRef = null;
         this.mContentView = null;
         this.mActive = false;
         this.mFirstActive = true;
-        this.mContext = new g(yVar, this);
+        this.mContext = new MyWrapper(featrue, this);
         this.mActivity = (Activity) this.mContext.getBaseContext();
         this.mSubControllerParent = newSubControllerParent();
-        if (this instanceof k) {
-            getContext().a((k) this);
+        if (this instanceof FeatureListening) {
+            getContext().addFirstLocalFeature((FeatureListening) this);
         }
     }
 
-    public final x getContext() {
+    public final MyContextWrapper getContext() {
         return this.mContext;
     }
 
-    public final h getParent() {
+    public final IController getParent() {
         return this.mParent;
     }
 
-    public final void setParent(h hVar) {
-        if (this.mParent != hVar) {
-            this.mParent = hVar;
+    public final void setParent(IController IController) {
+        if (this.mParent != IController) {
+            this.mParent = IController;
             if (this.mParent == null) {
                 dispatchDetachFromStub();
             } else if (isAttached()) {
@@ -97,11 +97,11 @@ public class e {
     }
 
     public final void runLater(Runnable runnable) {
-        t.b(runnable);
+        TaskHandler.PostTask(runnable);
     }
 
     public final void runLater(Runnable runnable, long j) {
-        t.a(runnable, j);
+        TaskHandler.postDelayed(runnable, j);
     }
 
     public final boolean runAfterActive(Runnable runnable) {
@@ -109,7 +109,7 @@ public class e {
             runnable.run();
             return true;
         }
-        this.mDelayedRunnableQueue.a(runnable);
+        this.mDelayedRunnableQueue.offer(runnable);
         return false;
     }
 
@@ -118,7 +118,7 @@ public class e {
             runnable.run();
             return true;
         }
-        this.mDelayedRunnableQueue.b(str, runnable);
+        this.mDelayedRunnableQueue.offerMax(str, runnable);
         return false;
     }
 
@@ -132,7 +132,7 @@ public class e {
     }
 
     public final boolean isDelayedRunnableOnActive(Runnable runnable) {
-        return this.mDelayedRunnableQueue.b(runnable);
+        return this.mDelayedRunnableQueue.offerMax(runnable);
     }
 
     public final boolean isActive() {
@@ -144,8 +144,8 @@ public class e {
     }
 
     public final boolean isAttached() {
-        for (h hVar = this.mParent; hVar != null; hVar = hVar.getParent()) {
-            if (hVar.isStub()) {
+        for (IController IController = this.mParent; IController != null; IController = IController.getParent()) {
+            if (IController.isStub()) {
                 return true;
             }
         }
@@ -153,7 +153,7 @@ public class e {
     }
 
     public final boolean isMenuShowing() {
-        e menuShownController = menuShownController();
+        ActivatedController menuShownController = menuShownController();
         if (menuShownController == this) {
             return onCheckMenuShowing();
         }
@@ -189,45 +189,45 @@ public class e {
         return false;
     }
 
-    public final void activate(e eVar) {
-        if (!$assertionsDisabled && eVar == null) {
+    public final void activate(ActivatedController activatedControllerVar) {
+        if (!$assertionsDisabled && activatedControllerVar == null) {
             throw new AssertionError();
-        } else if (eVar != null && eVar.getParent() == this.mSubControllerParent) {
-            this.mActivatedControllers.remove(eVar);
-            this.mActivatedControllers.add(eVar);
-            if (this.mActive && !eVar.isActive()) {
-                eVar.gotoActive();
+        } else if (activatedControllerVar != null && activatedControllerVar.getParent() == this.mSubControllerParent) {
+            this.mActivatedControllers.remove(activatedControllerVar);
+            this.mActivatedControllers.add(activatedControllerVar);
+            if (this.mActive && !activatedControllerVar.isActive()) {
+                activatedControllerVar.gotoActive();
             }
         }
     }
 
-    public final void deactivate(e eVar) {
-        if (!$assertionsDisabled && eVar == null) {
+    public final void deactivate(ActivatedController activatedControllerVar) {
+        if (!$assertionsDisabled && activatedControllerVar == null) {
             throw new AssertionError();
-        } else if (eVar != null && eVar.getParent() == this.mSubControllerParent) {
-            this.mActivatedControllers.remove(eVar);
-            if (eVar.isActive()) {
-                eVar.gotoDeactive();
+        } else if (activatedControllerVar != null && activatedControllerVar.getParent() == this.mSubControllerParent) {
+            this.mActivatedControllers.remove(activatedControllerVar);
+            if (activatedControllerVar.isActive()) {
+                activatedControllerVar.gotoDeactive();
             } else if (!$assertionsDisabled && !this.mActive) {
                 throw new AssertionError();
             }
         }
     }
 
-    public final boolean containsDirectly(e eVar) {
-        if (eVar.getParent() == this.mSubControllerParent) {
+    public final boolean containsDirectly(ActivatedController activatedControllerVar) {
+        if (activatedControllerVar.getParent() == this.mSubControllerParent) {
             return true;
         }
         return false;
     }
 
-    public final boolean contains(e eVar) {
-        if (containsDirectly(eVar)) {
+    public final boolean contains(ActivatedController activatedControllerVar) {
+        if (containsDirectly(activatedControllerVar)) {
             return true;
         }
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            if (((e) it.next()).contains(eVar)) {
+            if (((ActivatedController) it.next()).contains(activatedControllerVar)) {
                 return true;
             }
         }
@@ -238,39 +238,39 @@ public class e {
         return this.mSubControllers.size();
     }
 
-    public final e[] getSubControllers() {
-        return (e[]) this.mSubControllers.toArray(new e[0]);
+    public final ActivatedController[] getSubControllers() {
+        return (ActivatedController[]) this.mSubControllers.toArray(new ActivatedController[0]);
     }
 
-    public final e getSubController(int i) {
-        return (e) this.mSubControllers.get(i);
+    public final ActivatedController getSubController(int i) {
+        return (ActivatedController) this.mSubControllers.get(i);
     }
 
-    public final boolean addSubController(e eVar) {
-        if (this.mSubControllers.contains(eVar)) {
+    public final boolean addSubController(ActivatedController activatedControllerVar) {
+        if (this.mSubControllers.contains(activatedControllerVar)) {
             return false;
         }
-        this.mSubControllers.add(eVar);
-        eVar.setParent(this.mSubControllerParent);
+        this.mSubControllers.add(activatedControllerVar);
+        activatedControllerVar.setParent(this.mSubControllerParent);
         return true;
     }
 
-    public final boolean removeSubController(e eVar) {
-        if (!this.mSubControllers.contains(eVar)) {
+    public final boolean removeSubController(ActivatedController activatedControllerVar) {
+        if (!this.mSubControllers.contains(activatedControllerVar)) {
             return false;
         }
-        deactivate(eVar);
-        this.mSubControllers.remove(eVar);
-        eVar.setParent(null);
+        deactivate(activatedControllerVar);
+        this.mSubControllers.remove(activatedControllerVar);
+        activatedControllerVar.setParent(null);
         return true;
     }
 
-    public final e findSubController(View view) {
+    public final ActivatedController findSubController(View view) {
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            e eVar = (e) it.next();
-            if (eVar.getContentView() == view) {
-                return eVar;
+            ActivatedController activatedControllerVar = (ActivatedController) it.next();
+            if (activatedControllerVar.getContentView() == view) {
+                return activatedControllerVar;
             }
         }
         return null;
@@ -317,9 +317,9 @@ public class e {
         }
     }
 
-    protected final void onActivityResult(Activity activity, int i, int i2, Intent intent) {
+    protected final void onActivityResult(Activity activity, int requestCode, int resultCode, Intent intent) {
         if (activity == getActivity()) {
-            dispatchActivityResult(i, i2, intent);
+            dispatchActivityResult(requestCode, resultCode, intent);
         }
     }
 
@@ -423,7 +423,7 @@ public class e {
         return true;
     }
 
-    protected boolean onRequestDetach(e eVar) {
+    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
         return requestDetach();
     }
 
@@ -468,12 +468,12 @@ public class e {
     protected void onActivityResult(int i, int i2, Intent intent) {
     }
 
-    protected h newSubControllerParent() {
+    protected IController newSubControllerParent() {
         return new f(this);
     }
 
-    private final e menuShownController() {
-        return this.mMenuShownRef != null ? (e) this.mMenuShownRef.get() : null;
+    private final ActivatedController menuShownController() {
+        return this.mMenuShownRef != null ? (ActivatedController) this.mMenuShownRef.get() : null;
     }
 
     private final void gotoActive() {
@@ -483,12 +483,12 @@ public class e {
             this.mFirstActive = false;
             Iterator it = this.mActivatedControllers.iterator();
             while (it.hasNext()) {
-                e eVar = (e) it.next();
-                if (!eVar.isActive()) {
-                    eVar.gotoActive();
+                ActivatedController activatedControllerVar = (ActivatedController) it.next();
+                if (!activatedControllerVar.isActive()) {
+                    activatedControllerVar.gotoActive();
                 }
             }
-            this.mDelayedRunnableQueue.a();
+            this.mDelayedRunnableQueue.poll();
             return;
         }
         throw new AssertionError();
@@ -498,7 +498,7 @@ public class e {
         if ($assertionsDisabled || this.mActive) {
             ListIterator listIterator = this.mActivatedControllers.listIterator(this.mActivatedControllers.size());
             while (listIterator.hasPrevious()) {
-                ((e) listIterator.previous()).gotoDeactive();
+                ((ActivatedController) listIterator.previous()).gotoDeactive();
             }
             this.mActive = false;
             onDeactive();
@@ -511,14 +511,14 @@ public class e {
         onAttachToStub();
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            ((e) it.next()).dispatchAttachToStub();
+            ((ActivatedController) it.next()).dispatchAttachToStub();
         }
     }
 
     private final void dispatchDetachFromStub() {
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            ((e) it.next()).dispatchDetachFromStub();
+            ((ActivatedController) it.next()).dispatchDetachFromStub();
         }
         if (this.mRunBeforeDetach != null) {
             this.mRunBeforeDetach.run();
@@ -530,15 +530,15 @@ public class e {
         onTrimMemory(i);
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            ((e) it.next()).dispatchTrimMemory(i);
+            ((ActivatedController) it.next()).dispatchTrimMemory(i);
         }
     }
 
-    private final void dispatchActivityResult(int i, int i2, Intent intent) {
-        onActivityResult(i, i2, intent);
+    private final void dispatchActivityResult(int requestCode, int resultCode, Intent intent) {
+        onActivityResult(requestCode, resultCode, intent);
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            ((e) it.next()).dispatchActivityResult(i, i2, intent);
+            ((ActivatedController) it.next()).dispatchActivityResult(requestCode, resultCode, intent);
         }
     }
 
@@ -546,7 +546,7 @@ public class e {
         onActivityConfigurationChanged(configuration);
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            ((e) it.next()).dispatchActivityConfigurationChanged(configuration);
+            ((ActivatedController) it.next()).dispatchActivityConfigurationChanged(configuration);
         }
     }
 
@@ -554,7 +554,7 @@ public class e {
         onActivityCreated(bundle);
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            ((e) it.next()).dispatchActivityCreated(bundle);
+            ((ActivatedController) it.next()).dispatchActivityCreated(bundle);
         }
     }
 
@@ -562,7 +562,7 @@ public class e {
         onActivityPaused();
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            ((e) it.next()).dispatchActivityPaused();
+            ((ActivatedController) it.next()).dispatchActivityPaused();
         }
     }
 
@@ -570,7 +570,7 @@ public class e {
         onActivityResumed();
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            ((e) it.next()).dispatchActivityResumed();
+            ((ActivatedController) it.next()).dispatchActivityResumed();
         }
     }
 
@@ -578,7 +578,7 @@ public class e {
         onActivityDestroyed();
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            ((e) it.next()).dispatchActivityDestroyed();
+            ((ActivatedController) it.next()).dispatchActivityDestroyed();
         }
     }
 
@@ -586,7 +586,7 @@ public class e {
         onWindowFocusChanged(z);
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            ((e) it.next()).dispatchWindowFocusChanged(z);
+            ((ActivatedController) it.next()).dispatchWindowFocusChanged(z);
         }
     }
 
@@ -596,7 +596,7 @@ public class e {
         }
         ListIterator listIterator = this.mActivatedControllers.listIterator(this.mActivatedControllers.size());
         while (listIterator.hasPrevious()) {
-            if (((e) listIterator.previous()).dispatchKeyDown(i, keyEvent)) {
+            if (((ActivatedController) listIterator.previous()).dispatchKeyDown(i, keyEvent)) {
                 return true;
             }
         }
@@ -607,7 +607,7 @@ public class e {
         if (i != 82) {
             ListIterator listIterator = this.mActivatedControllers.listIterator(this.mActivatedControllers.size());
             while (listIterator.hasPrevious()) {
-                if (((e) listIterator.previous()).dispatchKeyUp(i, keyEvent)) {
+                if (((ActivatedController) listIterator.previous()).dispatchKeyUp(i, keyEvent)) {
                     return true;
                 }
             }
@@ -625,9 +625,9 @@ public class e {
         }
         ListIterator listIterator = this.mActivatedControllers.listIterator(this.mActivatedControllers.size());
         while (listIterator.hasPrevious()) {
-            e eVar = (e) listIterator.previous();
-            if (eVar.doShowMenu()) {
-                this.mMenuShownRef = new WeakReference(eVar);
+            ActivatedController activatedControllerVar = (ActivatedController) listIterator.previous();
+            if (activatedControllerVar.doShowMenu()) {
+                this.mMenuShownRef = new WeakReference(activatedControllerVar);
                 return true;
             }
         }
@@ -639,7 +639,7 @@ public class e {
     }
 
     private final boolean doHideMenu() {
-        e menuShownController = menuShownController();
+        ActivatedController menuShownController = menuShownController();
         if (menuShownController != this) {
             return menuShownController.doHideMenu();
         }
@@ -652,7 +652,7 @@ public class e {
         }
         ListIterator listIterator = this.mActivatedControllers.listIterator(this.mActivatedControllers.size());
         while (listIterator.hasPrevious()) {
-            if (((e) listIterator.previous()).doBack()) {
+            if (((ActivatedController) listIterator.previous()).doBack()) {
                 return true;
             }
         }

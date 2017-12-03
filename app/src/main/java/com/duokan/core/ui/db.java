@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class db extends BoxView {
     final /* synthetic */ cv b;
@@ -22,7 +22,7 @@ class db extends BoxView {
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         if (this.b.t != null && !this.b.hasRunningAnimation()) {
-            t.b(this.b.t);
+            TaskHandler.PostTask(this.b.t);
         }
     }
 
@@ -33,10 +33,10 @@ class db extends BoxView {
             if (!this.b.q.hasStarted()) {
                 this.b.q.start();
             }
-            Transformation transformation = (Transformation) dv.c.a();
+            Transformation transformation = (Transformation) UTools.c.getRect();
             this.b.q.getTransformation(AnimationUtils.currentAnimationTimeMillis(), transformation);
             alpha = transformation.getAlpha();
-            dv.c.a(transformation);
+            UTools.c.getRect(transformation);
             if (this.b.q.hasEnded()) {
                 this.b.q = null;
                 i = 0;

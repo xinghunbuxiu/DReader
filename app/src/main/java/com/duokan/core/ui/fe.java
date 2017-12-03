@@ -1,6 +1,6 @@
 package com.duokan.core.ui;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class fe implements Runnable {
     final /* synthetic */ ev a;
@@ -17,7 +17,7 @@ class fe implements Runnable {
 
     public void run() {
         if (this.a.A != this) {
-            t.b(this.d);
+            TaskHandler.PostTask(this.d);
             return;
         }
         this.a.b.h();
@@ -27,7 +27,7 @@ class fe implements Runnable {
         } else if (!this.b && this.a.b.a(Math.round(this.a.h.left), Math.round(this.a.h.top), this.a.al(), this.a.am(), this.a.b(), this.a.an())) {
             this.a.a.post(this);
         } else if (this.c != null) {
-            t.b(this.c);
+            TaskHandler.PostTask(this.c);
         }
     }
 }

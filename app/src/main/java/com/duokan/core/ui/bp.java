@@ -16,7 +16,7 @@ class bp extends InsetDrawable {
 
     public void draw(Canvas canvas) {
         this.b = true;
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         if (this.a.g != null) {
             if (!this.a.g.hasStarted()) {
                 this.a.g.start();
@@ -56,7 +56,7 @@ class bp extends InsetDrawable {
             this.a.c.draw(canvas);
             canvas.restore();
         }
-        dv.g.a(rect);
+        UTools.g.getRect(rect);
         this.b = false;
     }
 

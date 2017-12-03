@@ -11,8 +11,6 @@ import android.webkit.JsResult;
 import android.webkit.PermissionRequest;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
-import android.webkit.WebChromeClient.CustomViewCallback;
-import android.webkit.WebChromeClient.FileChooserParams;
 import android.webkit.WebView;
 
 class fu extends WebChromeClient {

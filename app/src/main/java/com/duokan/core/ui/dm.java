@@ -9,11 +9,15 @@ class dm extends dq {
         return a();
     }
 
-    public do a() {
-        return (do) super.d();
+    public do
+
+    a() {
+        return ( do)super.d();
     }
 
-    public do b() {
-        return (do) super.c();
+    public do
+
+    b() {
+        return ( do)super.c();
     }
 }

@@ -4,14 +4,14 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 class g implements Runnable {
     final /* synthetic */ ConcurrentLinkedQueue a;
-    final /* synthetic */ f b;
+    final /* synthetic */ HttpLogger b;
 
-    g(f fVar, ConcurrentLinkedQueue concurrentLinkedQueue) {
+    g(HttpLogger fVar, ConcurrentLinkedQueue concurrentLinkedQueue) {
         this.b = fVar;
         this.a = concurrentLinkedQueue;
     }
 
     public void run() {
-        f.b(this.a, this.b.c);
+        HttpLogger.b(this.a, this.b.c);
     }
 }

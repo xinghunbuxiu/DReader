@@ -35,7 +35,7 @@ class h implements cu {
             this.e.b(false);
         } else if (this.e.e == this.e.c) {
             long uptimeMillis = SystemClock.uptimeMillis();
-            if (!this.a || uptimeMillis - this.b >= ((long) dv.d())) {
+            if (!this.a || uptimeMillis - this.b >= ((long) UTools.getScaledTouchSlop())) {
                 this.e.b(false);
                 this.c.a(this.e, view, pointF, this.e.c);
             }

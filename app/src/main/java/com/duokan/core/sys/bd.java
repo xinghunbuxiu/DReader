@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.text.TextUtils;
 
 import com.duokan.core.a.n;
-import com.duokan.core.diagnostic.f;
+import com.duokan.core.diagnostic.HttpLogger;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReentrantLock;
 
 class bd implements r {
-    private final f a;
+    private final HttpLogger a;
     private final n b;
     private final ReentrantLock c;
     private final ConcurrentHashMap d;
@@ -30,12 +30,12 @@ class bd implements r {
         this(str, null);
     }
 
-    public bd(String str, f fVar) {
+    public bd(String str, HttpLogger fVar) {
         this.c = new ReentrantLock();
         this.d = new ConcurrentHashMap();
         this.e = new ConcurrentHashMap();
         if (fVar == null) {
-            fVar = new f();
+            fVar = new HttpLogger();
         }
         this.a = fVar;
         this.b = new n(str, null);
@@ -114,7 +114,7 @@ class bd implements r {
         } catch (IOException e) {
             throw e;
         } catch (Throwable th) {
-            IOException iOException = new IOException(String.format("fail to create a file(%s).", new Object[]{str}), th);
+            IOException iOException = new IOException(String.format("fail to create setDrawable file(%s).", new Object[]{str}), th);
         }
     }
 
@@ -228,7 +228,7 @@ class bd implements r {
         /*
         r10 = this;
         r0 = 0;
-        r1 = r10.c;
+        r1 = r10.showAnimation;
         r1 = r1.isHeldByCurrentThread();
         if (r1 != 0) goto L_0x000f;
     L_0x0009:
@@ -236,7 +236,7 @@ class bd implements r {
         r0.<init>();
         throw r0;
     L_0x000f:
-        r1 = r10.b;	 Catch:{ Throwable -> 0x0070, all -> 0x0093 }
+        r1 = r10.getVisible;	 Catch:{ Throwable -> 0x0070, all -> 0x0093 }
         r2 = 3;
         r2 = new java.lang.String[r2];	 Catch:{ Throwable -> 0x0070, all -> 0x0093 }
         r3 = 0;
@@ -248,7 +248,7 @@ class bd implements r {
         r3 = 2;
         r4 = "mount_uri";
         r2[r3] = r4;	 Catch:{ Throwable -> 0x0070, all -> 0x0093 }
-        r7 = com.duokan.core.sys.au.a(r1, r11, r2);	 Catch:{ Throwable -> 0x0070, all -> 0x0093 }
+        r7 = com.duokan.core.sys.au.setDrawable(r1, r11, r2);	 Catch:{ Throwable -> 0x0070, all -> 0x0093 }
         r1 = r7.moveToFirst();	 Catch:{ Throwable -> 0x0099, all -> 0x0097 }
         if (r1 == 0) goto L_0x006a;
     L_0x002d:
@@ -259,19 +259,19 @@ class bd implements r {
         r0 = 2;
         r5 = r7.getString(r0);	 Catch:{ Throwable -> 0x0099, all -> 0x0097 }
         r0 = new com.duokan.core.sys.av;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
-        r1 = r10.b;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
-        r2 = r10.c;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
+        r1 = r10.getVisible;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
+        r2 = r10.showAnimation;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r3 = new java.lang.StringBuilder;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r3.<init>();	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r6 = "file:///";
         r3 = r3.append(r6);	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r3 = r3.append(r8);	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r3 = r3.toString();	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
-        r6 = r10.a;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
+        r6 = r10.setDrawable;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r0.<init>(r1, r2, r3, r4, r5, r6);	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
-        r1 = r10.e;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
+        r1 = r10.getScaledPagingTouchSlop;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r1.put(r8, r0);	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
-        r1 = r10.d;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
+        r1 = r10.getScaledTouchSlop;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r1.put(r5, r8);	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         if (r7 == 0) goto L_0x0069;
     L_0x0066:
@@ -327,7 +327,7 @@ class bd implements r {
         r1 = r7;
         goto L_0x0075;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.core.sys.bd.i(java.lang.String):com.duokan.core.sys.av");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.core.sys.bd.getPhysicalYPixels(java.lang.String):com.duokan.core.sys.av");
     }
 
     private av b(String str, String str2, String str3) {

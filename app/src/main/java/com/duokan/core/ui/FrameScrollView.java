@@ -8,12 +8,8 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
-
-import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.Scrollable.ScrollState;
 
 public class FrameScrollView extends FrameLayout implements Scrollable {
     private final s a;

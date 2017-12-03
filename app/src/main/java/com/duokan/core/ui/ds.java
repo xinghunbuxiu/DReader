@@ -26,7 +26,7 @@ class ds {
         this.d = new Matrix();
         this.e = new Matrix();
         this.f = new dl();
-        this.g = new do();
+        this.g = new do ();
         this.h = null;
         this.i = null;
         this.j = 0;

@@ -4,8 +4,6 @@ import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.PointF;
 
-import com.duokan.core.ui.Scrollable.ScrollState;
-
 public class bh extends ev {
     final /* synthetic */ ay b;
 

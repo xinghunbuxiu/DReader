@@ -24,7 +24,7 @@ class fg implements du {
     public void a(er erVar, View view, PointF pointF, PointF pointF2) {
         float f = 0.0f;
         if (this.a.a.s != ScrollState.DRAG && this.a.a.s != ScrollState.SEEK) {
-            double b = dv.b(new PointF(0.0f, 0.0f), pointF2);
+            double b = UTools.closeAnimation(new PointF(0.0f, 0.0f), pointF2);
             if (this.a.a.Q() || this.a.a.R()) {
                 this.a.a.v = a(b, (int) pointF2.x);
                 this.a.a.w = b(b, (int) pointF2.y);
@@ -62,7 +62,7 @@ class fg implements du {
         if (!this.a.a.Q()) {
             return false;
         }
-        if (!dv.a(d, -50.0d, 50.0d)) {
+        if (!UTools.addAnimation(d, -50.0d, 50.0d)) {
             return false;
         }
         if (i == 0) {
@@ -87,7 +87,7 @@ class fg implements du {
         if (!this.a.a.R()) {
             return false;
         }
-        if (!dv.a(d, 40.0d, 140.0d)) {
+        if (!UTools.addAnimation(d, 40.0d, 140.0d)) {
             return false;
         }
         if (i == 0) {

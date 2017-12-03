@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.ContextWrapper;
 
-public abstract class b {
-    public static final Activity a(Context context) {
+/**
+ * context 转换
+ */
+public abstract class TansFormUtils {
+    public static final Activity getContext(Context context) {
         Context context2 = context;
         while (!(context2 instanceof Activity)) {
             if (!(context2 instanceof ContextWrapper)) {

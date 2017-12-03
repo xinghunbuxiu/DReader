@@ -2,8 +2,6 @@ package com.duokan.core.ui;
 
 import android.graphics.Canvas;
 
-import com.duokan.core.ui.Scrollable.ScrollState;
-
 public class gf extends ev {
     final /* synthetic */ ZoomView a;
 

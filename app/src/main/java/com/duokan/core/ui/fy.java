@@ -1,6 +1,6 @@
 package com.duokan.core.ui;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 class fy implements Runnable {
     final /* synthetic */ fx a;
@@ -10,6 +10,6 @@ class fy implements Runnable {
     }
 
     public void run() {
-        t.a(new fz(this));
+        TaskHandler.postTask(new fz(this));
     }
 }

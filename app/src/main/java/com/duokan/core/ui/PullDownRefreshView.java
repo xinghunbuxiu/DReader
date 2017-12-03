@@ -5,13 +5,10 @@ import android.graphics.drawable.Animatable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.duokan.b.f;
-import com.duokan.core.sys.t;
-import com.duokan.core.ui.PullDownRefreshBaseView.RefreshState;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.ui.general.DkLabelView;
 
 import org.apache.http.HttpStatus;
@@ -42,7 +39,7 @@ public class PullDownRefreshView extends PullDownRefreshBaseView {
         g();
         this.h = new ImageView(getContext());
         LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -2);
-        layoutParams.setMargins(0, dv.b(getContext(), 10.0f), 0, 0);
+        layoutParams.setMargins(0, UTools.closeAnimation(getContext(), 10.0f), 0, 0);
         addView(this.h, layoutParams);
     }
 
@@ -88,7 +85,7 @@ public class PullDownRefreshView extends PullDownRefreshBaseView {
         k();
         this.f.setVisibility(0);
         this.e.setVisibility(4);
-        t.a(new ca(this), 300);
+        TaskHandler.postDelayed(new ca(this), 300);
     }
 
     public void setRefreshStyle(RefreshStyle refreshStyle) {
@@ -103,11 +100,11 @@ public class PullDownRefreshView extends PullDownRefreshBaseView {
             this.g = refreshStyle;
             if (this.g == RefreshStyle.STORE) {
                 this.h.setImageResource(e.general__shared__refresh_background);
-                this.a.setPadding(0, dv.b(getContext(), 10.0f), 0, dv.b(getContext(), 5.0f));
+                this.a.setPadding(0, UTools.closeAnimation(getContext(), 10.0f), 0, UTools.closeAnimation(getContext(), 5.0f));
             } else if (this.g == RefreshStyle.COMIC) {
                 this.a.setPadding(0, 0, 0, 0);
             } else {
-                this.a.setPadding(0, 0, 0, dv.b(getContext(), 10.0f));
+                this.a.setPadding(0, 0, 0, UTools.closeAnimation(getContext(), 10.0f));
             }
         }
     }
@@ -133,11 +130,11 @@ public class PullDownRefreshView extends PullDownRefreshBaseView {
     }
 
     private final void h() {
-        dv.a(this.b, 0.0f, 0.0f, -1.0f, 0.0f, HttpStatus.SC_OK, true, null);
+        UTools.addAnimation(this.b, 0.0f, 0.0f, -1.0f, 0.0f, HttpStatus.SC_OK, true, null);
     }
 
     private final void i() {
-        dv.f(this.b, null);
+        UTools.f(this.b, null);
     }
 
     private final void j() {

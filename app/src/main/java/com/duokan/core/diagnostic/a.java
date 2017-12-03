@@ -1,12 +1,12 @@
 package com.duokan.core.diagnostic;
 
-import com.duokan.core.sys.t;
+import com.duokan.core.sys.TaskHandler;
 
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class a extends f {
+public class a extends HttpLogger {
     private static final Object a = new Object();
     private static a b = null;
     private final AtomicReference c = new AtomicReference();
@@ -34,7 +34,7 @@ public class a extends f {
     }
 
     public void a() {
-        b(t.a());
+        b(TaskHandler.isCurrentThread());
     }
 
     public void b() {

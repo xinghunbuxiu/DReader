@@ -18,9 +18,9 @@ class bs extends AlphaAnimation {
     }
 
     public void a(Rect rect, long j) {
-        Transformation transformation = (Transformation) dv.c.a();
-        Rect rect2 = (Rect) dv.g.a();
-        Rect rect3 = (Rect) dv.g.a();
+        Transformation transformation = (Transformation) UTools.c.getRect();
+        Rect rect2 = (Rect) UTools.g.getRect();
+        Rect rect3 = (Rect) UTools.g.getRect();
         getTransformation(j, transformation);
         if (this.b == null || this.b.getParent() != this.c) {
             rect.setEmpty();
@@ -34,8 +34,8 @@ class bs extends AlphaAnimation {
             rect.right = Math.round(((float) rect2.right) + (((float) (rect3.right - rect2.right)) * transformation.getAlpha()));
             rect.bottom = Math.round(((float) rect2.bottom) + (((float) (rect3.bottom - rect2.bottom)) * transformation.getAlpha()));
         }
-        dv.c.a(transformation);
-        dv.g.a(rect2);
-        dv.g.a(rect3);
+        UTools.c.getRect(transformation);
+        UTools.g.getRect(rect2);
+        UTools.g.getRect(rect3);
     }
 }

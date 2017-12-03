@@ -3,8 +3,8 @@ package com.duokan.core.sys;
 import java.util.ArrayList;
 
 public abstract class ap {
-    static final /* synthetic */ boolean a = (!ap.class.desiredAssertionStatus());
-    private final ArrayList b = new ArrayList(10);
+    static final  boolean a = (!ap.class.desiredAssertionStatus());
+    private final ArrayList list = new ArrayList(10);
     private int c = 0;
     private int d = 0;
 
@@ -12,20 +12,20 @@ public abstract class ap {
 
     protected abstract void b(Object obj);
 
-    public Object a() {
+    public Object getRect() {
         if (this.c >= this.d - 1) {
-            this.b.add(b());
+            this.list.add(b());
             this.d++;
         }
-        ArrayList arrayList = this.b;
+        ArrayList arrayList = this.list;
         int i = this.c;
         this.c = i + 1;
         return arrayList.get(i);
     }
 
-    public void a(Object obj) {
+    public void getRect(Object obj) {
         int i = this.d - 1;
-        while (i >= 0 && this.b.get(i) != obj) {
+        while (i >= 0 && this.list.get(i) != obj) {
             i--;
         }
         if (!a && i < 0) {
@@ -33,9 +33,9 @@ public abstract class ap {
         } else if (i >= 0) {
             b(obj);
             if (i != this.c - 1) {
-                Object obj2 = this.b.get(i);
-                this.b.set(i, this.b.get(this.c - 1));
-                this.b.set(this.c - 1, obj2);
+                Object obj2 = this.list.get(i);
+                this.list.set(i, this.list.get(this.c - 1));
+                this.list.set(this.c - 1, obj2);
             }
             this.c--;
         }

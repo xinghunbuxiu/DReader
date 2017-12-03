@@ -6,8 +6,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 
-import com.umeng.analytics.pro.j;
-
 public class a extends ExtendView {
     private int a;
     private Drawable b;
@@ -58,7 +56,7 @@ public class a extends ExtendView {
 
     public final Point getIndicatorPosition() {
         Point point = new Point();
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         a(rect);
         switch (this.a) {
             case 3:
@@ -78,7 +76,7 @@ public class a extends ExtendView {
                 point.y = rect.bottom;
                 break;
         }
-        dv.g.a(rect);
+        UTools.g.getRect(rect);
         return point;
     }
 
@@ -124,7 +122,7 @@ public class a extends ExtendView {
             super.setBackgroundDrawable(null);
             return;
         }
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         switch (this.a) {
             case 3:
                 rect.left = Math.max(d() - this.d, 0);
@@ -140,7 +138,7 @@ public class a extends ExtendView {
                 break;
         }
         super.setBackgroundDrawable(new b(this, this.b, rect.left, rect.top, rect.right, rect.bottom));
-        dv.g.a(rect);
+        UTools.g.getRect(rect);
     }
 
     private final void a(Rect rect) {

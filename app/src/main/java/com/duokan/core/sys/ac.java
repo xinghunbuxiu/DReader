@@ -1,17 +1,17 @@
 package com.duokan.core.sys;
 
-import com.duokan.core.c.b;
+import com.duokan.core.c.IRunTask;
 
-class ac implements b {
+class ac implements IRunTask {
     final /* synthetic */ Runnable a;
-    final /* synthetic */ aa b;
+    final /* synthetic */ DelayedRunnableQueue b;
 
-    ac(aa aaVar, Runnable runnable) {
+    ac(DelayedRunnableQueue aaVar, Runnable runnable) {
         this.b = aaVar;
         this.a = runnable;
     }
 
-    public boolean a(ae aeVar) {
+    public boolean a(RunTask aeVar) {
         return aeVar.c == this.a;
     }
 }

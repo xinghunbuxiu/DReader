@@ -8,8 +8,6 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
-import android.view.View.MeasureSpec;
-import android.view.ViewGroup.LayoutParams;
 
 import java.util.ArrayList;
 
@@ -185,10 +183,10 @@ public class GridItemsView extends ay {
     public final void a(int i, Rect rect, int i2) {
         if (!rect.isEmpty() && rect.width() != 0 && rect.height() != 0 && i >= 0 && this.r.size() > i) {
             Rect c = c(i);
-            Rect rect2 = (Rect) dv.g.a();
+            Rect rect2 = (Rect) UTools.g.getRect();
             Gravity.apply(i2, c.width(), c.height(), c(rect), rect2);
             scrollBy(c.left - rect2.left, c.top - rect2.top);
-            dv.g.a(rect2);
+            UTools.g.getRect(rect2);
             e();
         }
     }
@@ -266,7 +264,7 @@ public class GridItemsView extends ay {
 
     protected void a(Canvas canvas) {
         super.a(canvas);
-        Rect rect = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
         if (this.j != null) {
             int[] m = m();
             if (m.length > 0) {
@@ -279,7 +277,7 @@ public class GridItemsView extends ay {
                 }
             }
         }
-        dv.g.a(rect);
+        UTools.g.getRect(rect);
     }
 
     protected void b(Canvas canvas) {
@@ -288,8 +286,8 @@ public class GridItemsView extends ay {
         int i;
         int f;
         super.b(canvas);
-        Rect rect = (Rect) dv.g.a();
-        Rect rect2 = (Rect) dv.g.a();
+        Rect rect = (Rect) UTools.g.getRect();
+        Rect rect2 = (Rect) UTools.g.getRect();
         if (this.k != null) {
             int[] m = m();
             if (m.length > 0) {
@@ -331,8 +329,8 @@ public class GridItemsView extends ay {
                 }
             }
         }
-        dv.g.a(rect2);
-        dv.g.a(rect);
+        UTools.g.getRect(rect2);
+        UTools.g.getRect(rect);
     }
 
     protected void a() {

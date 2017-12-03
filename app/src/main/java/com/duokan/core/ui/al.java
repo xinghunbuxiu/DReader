@@ -5,8 +5,6 @@ import android.graphics.RectF;
 import android.view.MotionEvent;
 
 import com.duokan.core.ui.HatGridView.HatTipState;
-import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.Scrollable.ScrollState;
 
 class al extends bh {
     final /* synthetic */ ak a;
@@ -33,14 +31,14 @@ class al extends bh {
     }
 
     protected void a(float f, float f2) {
-        PointF pointF = (PointF) dv.f.a();
+        PointF pointF = (PointF) UTools.f.getRect();
         pointF.set(f, f2);
         this.a.b.a(pointF);
         float f3 = pointF.x;
         float f4 = pointF.y;
-        dv.f.a(pointF);
+        UTools.f.getRect(pointF);
         this.a.b.y = (int) (((float) this.a.b.y) + f4);
-        if (Math.abs(this.a.b.y) > dv.d(this.a.getContext())) {
+        if (Math.abs(this.a.b.y) > UTools.getScaledTouchSlop(this.a.getContext())) {
             if (this.a.b.y > 0) {
                 this.a.b.w();
             } else if (this.a.b.y < 0) {

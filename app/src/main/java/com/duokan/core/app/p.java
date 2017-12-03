@@ -1,10 +1,10 @@
 package com.duokan.core.app;
 
 class p implements Runnable {
-    final /* synthetic */ m a;
+    final /* synthetic */ BaseActivity a;
 
-    p(m mVar) {
-        this.a = mVar;
+    p(BaseActivity baseActivityVar) {
+        this.a = baseActivityVar;
     }
 
     public void run() {

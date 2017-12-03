@@ -11,14 +11,10 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
 import android.view.animation.Interpolator;
 import android.webkit.DownloadListener;
 import android.webkit.WebBackForwardList;
 import android.webkit.WebSettings;
-
-import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.Scrollable.ScrollState;
 
 import java.util.concurrent.TimeUnit;
 
@@ -46,7 +42,7 @@ public class fr extends ViewGroup implements Scrollable {
         setClipChildren(false);
         setClipToPadding(false);
         this.b.c(true);
-        this.b.d(dv.g(getContext()));
+        this.b.d(UTools.g(getContext()));
     }
 
     public final int getContentWidth() {
@@ -255,14 +251,14 @@ public class fr extends ViewGroup implements Scrollable {
     }
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        MotionEvent a = dv.a(motionEvent, (View) this, this.a);
+        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, this.a);
         boolean c = this.b.c(a);
         a.recycle();
         return c;
     }
 
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        MotionEvent a = dv.a(motionEvent, (View) this, this.a);
+        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, this.a);
         boolean b = this.b.b(a);
         a.recycle();
         return b;

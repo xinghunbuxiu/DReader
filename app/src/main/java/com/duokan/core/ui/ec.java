@@ -3,18 +3,23 @@ package com.duokan.core.ui;
 import android.view.View;
 
 final class ec implements Runnable {
-    final /* synthetic */ View a;
-    final /* synthetic */ int b;
+    final  View view;
+    final int flag;
 
-    ec(View view, int i) {
-        this.a = view;
-        this.b = i;
+    /**
+     *
+     * @param view
+     * @param flag  InputMethodManager.Flag
+     */
+    ec(View view, int flag) {
+        this.view = view;
+        this.flag = flag;
     }
 
     public void run() {
         Runnable edVar = new ed(this);
-        if (this.a.getWindowToken() == null || this.a.isLayoutRequested()) {
-            dv.a(this.a, edVar);
+        if (this.view.getWindowToken() == null || this.view.isLayoutRequested()) {
+            UTools.addAnimation(this.view, edVar);
         } else {
             edVar.run();
         }
