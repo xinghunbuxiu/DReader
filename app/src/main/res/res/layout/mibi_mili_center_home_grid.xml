@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <View android:id="@id/discounts_gap" android:background="@color/mibi_color_home_grid_line" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_milicenter_gap" />
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="wrap_content" xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/discounts_gap" android:background="@color/mibi_color_home_grid_line"
+        android:layout_width="fill_parent" android:layout_height="@dimen/mibi_milicenter_gap" />
     <include android:id="@id/discounts" layout="@layout/mibi_home_discounts_item" />
-    <View android:id="@id/guide_gap" android:background="@color/mibi_color_home_grid_line" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_milicenter_gap" />
-    <TextView android:textSize="@dimen/mibi_text_size_small" android:gravity="center_vertical" android:id="@id/guide_title" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_milicenter_guide_item_height" android:layout_marginLeft="@dimen/mibi_milicenter_header_marging" android:text="@string/mibi_is_what" />
-    <View android:background="@color/mibi_color_home_grid_line" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_divider" />
-    <GridView android:gravity="center" android:id="@id/guide" android:padding="@dimen/mibi_milicenter_guide_grid_padding" android:clipToPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:listSelector="@android:color/transparent" android:cacheColorHint="@null" android:numColumns="3" />
-    <View android:id="@id/business_gap" android:background="@color/mibi_color_home_grid_line" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_milicenter_gap" />
-    <com.mipay.common.component.UnevenGrid android:id="@id/business" android:layout_width="fill_parent" android:layout_height="wrap_content" android:numColumns="2" />
+    <View android:id="@id/guide_gap" android:background="@color/mibi_color_home_grid_line"
+        android:layout_width="fill_parent" android:layout_height="@dimen/mibi_milicenter_gap" />
+    <TextView android:textSize="@dimen/mibi_text_size_small" android:gravity="center_vertical"
+        android:id="@id/guide_title" android:layout_width="fill_parent"
+        android:layout_height="@dimen/mibi_milicenter_guide_item_height"
+        android:layout_marginLeft="@dimen/mibi_milicenter_header_marging"
+        android:text="@string/mibi_is_what" />
+    <View android:background="@color/mibi_color_home_grid_line" android:layout_width="fill_parent"
+        android:layout_height="@dimen/mibi_divider" />
+    <GridView android:gravity="center" android:id="@id/guide"
+        android:padding="@dimen/mibi_milicenter_guide_grid_padding" android:clipToPadding="false"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:listSelector="@android:color/transparent" android:cacheColorHint="@null"
+        android:numColumns="3" />
+    <View android:id="@id/business_gap" android:background="@color/mibi_color_home_grid_line"
+        android:layout_width="fill_parent" android:layout_height="@dimen/mibi_milicenter_gap" />
+    <com.mipay.common.component.UnevenGrid android:id="@id/business"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:numColumns="2" />
 </LinearLayout>

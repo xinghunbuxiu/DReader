@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:duokan="http://schemas.android.com/apk/res-auto">
-    <include android:id="@id/store__fiction_recommends_list_view__more1" layout="@layout/store__shared__discript_view" />
-    <com.duokan.reader.ui.store.ListAdView android:id="@id/store__fiction_recommends_list_view__list_ad1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/general__shared__cover_left_shadow_margin_10dip" android:layout_marginTop="15.0dip" android:layout_marginRight="@dimen/general__shared__cover_left_shadow_margin_10dip" duokan:aspectRatio="0.25" />
-    <com.duokan.reader.ui.store.ListAdView android:id="@id/store__fiction_recommends_list_view__list_ad2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/general__shared__cover_left_shadow_margin_10dip" android:layout_marginTop="15.0dip" android:layout_marginRight="@dimen/general__shared__cover_left_shadow_margin_10dip" duokan:aspectRatio="0.25" />
-    <com.duokan.reader.ui.store.ListAdView android:id="@id/store__fiction_recommends_list_view__list_ad3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/general__shared__cover_left_shadow_margin_10dip" android:layout_marginTop="15.0dip" android:layout_marginRight="@dimen/general__shared__cover_left_shadow_margin_10dip" android:layout_marginBottom="10.0dip" duokan:aspectRatio="0.25" />
-    <include android:id="@id/store__fiction_recommends_list_view__more2" layout="@layout/store__shared__discript_view" />
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:layout_marginTop="10.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:duokan="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/store__fiction_recommends_list_view__more1"
+        layout="@layout/store__shared__discript_view" />
+    <com.duokan.reader.ui.store.ListAdView
+        android:id="@id/store__fiction_recommends_list_view__list_ad1"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/general__shared__cover_left_shadow_margin_10dip"
+        android:layout_marginTop="15.0dip"
+        android:layout_marginRight="@dimen/general__shared__cover_left_shadow_margin_10dip"
+        duokan:aspectRatio="0.25" />
+    <com.duokan.reader.ui.store.ListAdView
+        android:id="@id/store__fiction_recommends_list_view__list_ad2"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/general__shared__cover_left_shadow_margin_10dip"
+        android:layout_marginTop="15.0dip"
+        android:layout_marginRight="@dimen/general__shared__cover_left_shadow_margin_10dip"
+        duokan:aspectRatio="0.25" />
+    <com.duokan.reader.ui.store.ListAdView
+        android:id="@id/store__fiction_recommends_list_view__list_ad3"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/general__shared__cover_left_shadow_margin_10dip"
+        android:layout_marginTop="15.0dip"
+        android:layout_marginRight="@dimen/general__shared__cover_left_shadow_margin_10dip"
+        android:layout_marginBottom="10.0dip" duokan:aspectRatio="0.25" />
+    <include android:id="@id/store__fiction_recommends_list_view__more2"
+        layout="@layout/store__shared__discript_view" />
 </LinearLayout>

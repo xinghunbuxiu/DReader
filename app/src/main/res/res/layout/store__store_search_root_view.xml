@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/store__store_search_root_view__title" android:paddingTop="10.0dip" android:paddingRight="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <View android:id="@id/store__store_search_root_view__cancel2" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-        <com.duokan.reader.ui.general.DkWebListView android:id="@id/store__store_search_root_view__history" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-        <LinearLayout android:orientation="horizontal" android:id="@id/store__store_search_root_view__edittext_root" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="15.0dip" android:layout_marginRight="5.0dip" android:layout_weight="1.0">
-            <ImageView android:layout_gravity="center_vertical" android:id="@id/store__store_search_root_view__anchor" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:src="@drawable/surfing__surfing_tab_view__search" android:contentDescription="@null" />
-            <com.duokan.core.ui.DkEditorView android:textSize="@dimen/general_font__shared__c" android:textColor="#cc000000" android:textColorHint="@color/general__shared__cacaca" android:gravity="center|left" android:id="@id/store__store_search_root_view__edittext" android:background="@null" android:layout_width="0.0dip" android:layout_height="fill_parent" android:hint="@string/store__search_title_view__search" android:singleLine="true" android:layout_weight="1.0" android:imeOptions="actionSearch" />
-            <ImageView android:id="@id/store__store_search_root_view__clear" android:paddingLeft="15.0dip" android:paddingRight="10.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/store__store_search_root_view__cancel" android:scaleType="center" />
+<LinearLayout android:orientation="vertical" android:background="@color/general__shared__ffffff"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal"
+        android:id="@id/store__store_search_root_view__title" android:paddingTop="10.0dip"
+        android:paddingRight="10.0dip" android:paddingBottom="10.0dip"
+        android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:id="@id/store__store_search_root_view__cancel2" android:visibility="gone"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.duokan.reader.ui.general.DkWebListView
+            android:id="@id/store__store_search_root_view__history" android:visibility="gone"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <LinearLayout android:orientation="horizontal"
+            android:id="@id/store__store_search_root_view__edittext_root"
+            android:layout_width="0.0dip" android:layout_height="fill_parent"
+            android:layout_marginLeft="15.0dip" android:layout_marginRight="5.0dip"
+            android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center_vertical"
+                android:id="@id/store__store_search_root_view__anchor" android:paddingTop="5.0dip"
+                android:paddingBottom="5.0dip" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_marginLeft="5.0dip"
+                android:layout_marginRight="5.0dip"
+                android:src="@drawable/surfing__surfing_tab_view__search"
+                android:contentDescription="@null" />
+            <com.duokan.core.ui.DkEditorView android:textSize="@dimen/general_font__shared__c"
+                android:textColor="#cc000000" android:textColorHint="@color/general__shared__cacaca"
+                android:gravity="center|left"
+                android:id="@id/store__store_search_root_view__edittext" android:background="@null"
+                android:layout_width="0.0dip" android:layout_height="fill_parent"
+                android:hint="@string/store__search_title_view__search" android:singleLine="true"
+                android:layout_weight="1.0" android:imeOptions="actionSearch" />
+            <ImageView android:id="@id/store__store_search_root_view__clear"
+                android:paddingLeft="15.0dip" android:paddingRight="10.0dip"
+                android:visibility="invisible" android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:src="@drawable/store__store_search_root_view__cancel"
+                android:scaleType="center" />
         </LinearLayout>
     </LinearLayout>
-    <View android:background="@color/general__shared__cccccc" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <View android:background="@color/general__shared__cccccc" android:layout_width="fill_parent"
+        android:layout_height="1.0px" />
 </LinearLayout>

@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="vertical" android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.PageHeaderView android:id="@id/bookshelf__organize_book_view__title_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" />
-    <FrameLayout android:id="@id/bookshelf__organize_book_view__content_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/bookshelf__organize_book_view__title_view" />
-    <LinearLayout android:orientation="horizontal" android:id="@id/bookshelf__organize_book_view__bottom" android:background="@drawable/general__shared__bottom_view_bg" android:padding="10.0dip" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
-        <com.duokan.reader.ui.general.DkLabelView android:id="@id/bookshelf__organize_book_bottom_view__delete" android:layout_width="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/bookshelf__organize_book_bottom_view__delete" android:layout_weight="1.0" style="@style/general__shared__button_43dip_d63737" />
-        <com.duokan.reader.ui.general.DkLabelView android:id="@id/bookshelf__organize_book_bottom_view__move" android:layout_width="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:text="@string/bookshelf__organize_book_bottom_view__move" android:layout_weight="1.0" style="@style/general__shared__button_43dip_ffffff" />
+<RelativeLayout android:orientation="vertical" android:background="@color/general__shared__ffffff"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.reader.ui.general.PageHeaderView
+        android:id="@id/bookshelf__organize_book_view__title_view"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" />
+    <FrameLayout android:id="@id/bookshelf__organize_book_view__content_view"
+        android:layout_width="fill_parent" android:layout_height="fill_parent"
+        android:layout_below="@id/bookshelf__organize_book_view__title_view" />
+    <LinearLayout android:orientation="horizontal"
+        android:id="@id/bookshelf__organize_book_view__bottom"
+        android:background="@drawable/general__shared__bottom_view_bg" android:padding="10.0dip"
+        android:visibility="invisible" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <com.duokan.reader.ui.general.DkLabelView
+            android:id="@id/bookshelf__organize_book_bottom_view__delete"
+            android:layout_width="wrap_content" android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:text="@string/bookshelf__organize_book_bottom_view__delete"
+            android:layout_weight="1.0" style="@style/general__shared__button_43dip_d63737" />
+        <com.duokan.reader.ui.general.DkLabelView
+            android:id="@id/bookshelf__organize_book_bottom_view__move"
+            android:layout_width="wrap_content" android:layout_marginLeft="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:text="@string/bookshelf__organize_book_bottom_view__move"
+            android:layout_weight="1.0" style="@style/general__shared__button_43dip_ffffff" />
     </LinearLayout>
 </RelativeLayout>

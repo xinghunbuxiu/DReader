@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.core.ui.DkEditorView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:ellipsize="end" android:gravity="top" android:id="@id/share__share_book_to_weibo_dialog_view__share_reason_edit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" />
-    <ImageView android:layout_gravity="center_horizontal" android:id="@id/share__share_book_to_weibo_dialog_view__image" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+<LinearLayout android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10.0dip"
+    android:layout_marginRight="10.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.duokan.core.ui.DkEditorView
+        android:textSize="@dimen/general_font__shared__c"
+        android:textColor="@color/general__shared__333333"
+        android:ellipsize="end"
+        android:gravity="top"
+        android:id="@id/share__share_book_to_weibo_dialog_view__share_reason_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginTop="20.0dip"
+        android:layout_marginRight="10.0dip"
+        android:layout_marginBottom="10.0dip" />
+
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:id="@id/share__share_book_to_weibo_dialog_view__image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>

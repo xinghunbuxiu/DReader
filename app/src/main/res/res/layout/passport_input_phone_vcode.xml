@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Passport.LoginRegLayoutPadding"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:id="@id/sms_send_notice" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Passport.TextSecondPrimary" />
-    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_title_content_margin_v">
-        <EditText android:id="@id/ev_verify_code" android:background="@drawable/passport_group_single_item_normal_bg" android:layout_width="0.0dip" android:layout_height="wrap_content" android:hint="@string/passport_input_vcode_hint" android:singleLine="true" android:digits="1234567890" android:layout_weight="1.0" android:inputType="number" style="@style/Passport.EditTextStyle" />
-        <TextView android:gravity="center" android:id="@id/get_vcode_notice" android:background="@drawable/passport_group_single_item_normal_bg" android:layout_width="@dimen/passport_reg_verify_code_notice_width" android:layout_height="fill_parent" android:text="@string/passport_get_verify_code" style="@style/Passport.VCodeNoticeStyle" />
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="wrap_content" style="@style/Passport.LoginRegLayoutPadding"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/sms_send_notice" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" style="@style/Passport.TextSecondPrimary" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/passport_title_content_margin_v">
+        <EditText android:id="@id/ev_verify_code"
+            android:background="@drawable/passport_group_single_item_normal_bg"
+            android:layout_width="0.0dip" android:layout_height="wrap_content"
+            android:hint="@string/passport_input_vcode_hint" android:singleLine="true"
+            android:digits="1234567890" android:layout_weight="1.0" android:inputType="number"
+            style="@style/Passport.EditTextStyle" />
+        <TextView android:gravity="center" android:id="@id/get_vcode_notice"
+            android:background="@drawable/passport_group_single_item_normal_bg"
+            android:layout_width="@dimen/passport_reg_verify_code_notice_width"
+            android:layout_height="fill_parent" android:text="@string/passport_get_verify_code"
+            style="@style/Passport.VCodeNoticeStyle" />
     </LinearLayout>
-    <CheckBox android:id="@id/trust_device" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="@string/passport_trust_device" />
-    <Button android:id="@id/btn_verify" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/passport_reg_content_bottom_margin" android:text="@string/passport_verify" style="@style/Passport.BlueButton" />
+    <CheckBox android:id="@id/trust_device" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:checked="true"
+        android:text="@string/passport_trust_device" />
+    <Button android:id="@id/btn_verify" android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/passport_reg_content_bottom_margin"
+        android:text="@string/passport_verify" style="@style/Passport.BlueButton" />
 </LinearLayout>

@@ -1,32 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.PageHeaderView android:id="@id/personal__asset_privilege_view__header" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <com.duokan.core.ui.LinearScrollView android:orientation="vertical" android:id="@id/personal__asset_privilege_view__scrollerview" android:background="@color/general__shared__f8f8f8" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <com.duokan.reader.ui.general.DkCheckBox android:orientation="horizontal" android:id="@id/personal__asset_privilege_view__share_to_every_one" android:layout_width="fill_parent" android:layout_height="50.0dip">
-            <FrameLayout android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="50.0dip">
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:layout_gravity="center|left" android:id="@id/personal__asset_privilege_view__share_to_every_one_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" />
-                <CheckBox android:layout_gravity="center|right" android:id="@id/general__dk_checkbox_view__checkbox" android:layout_marginRight="15.0dip" style="@style/general__shared__switch" />
+<LinearLayout android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.duokan.reader.ui.general.PageHeaderView
+        android:id="@id/personal__asset_privilege_view__header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <com.duokan.core.ui.LinearScrollView
+        android:orientation="vertical"
+        android:id="@id/personal__asset_privilege_view__scrollerview"
+        android:background="@color/general__shared__f8f8f8"
+        android:scrollbars="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <com.duokan.reader.ui.general.DkCheckBox
+            android:orientation="horizontal"
+            android:id="@id/personal__asset_privilege_view__share_to_every_one"
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip">
+
+            <FrameLayout
+                android:background="@color/general__shared__ffffff"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip">
+
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__333333"
+                    android:layout_gravity="center|left"
+                    android:id="@id/personal__asset_privilege_view__share_to_every_one_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.0dip" />
+
+                <CheckBox
+                    android:layout_gravity="center|right"
+                    android:id="@id/general__dk_checkbox_view__checkbox"
+                    android:layout_marginRight="15.0dip"
+                    style="@style/general__shared__switch" />
             </FrameLayout>
         </com.duokan.reader.ui.general.DkCheckBox>
-        <ImageView android:background="#ffc6c6c6" android:layout_width="fill_parent" android:layout_height="1.0px" android:contentDescription="@null" />
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__666666" android:gravity="center|left" android:id="@id/personal__asset_privilege_view__share_to_some_peoples_label" android:layout_width="fill_parent" android:layout_height="35.0dip" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" />
-        <ImageView android:background="#ffc6c6c6" android:layout_width="fill_parent" android:layout_height="1.0px" android:contentDescription="@null" />
-        <LinearLayout android:orientation="vertical" android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <com.duokan.reader.ui.general.DkCheckBox android:orientation="horizontal" android:id="@id/personal__asset_privilege_view__share_to_followings" android:layout_width="fill_parent" android:layout_height="50.0dip">
-                <FrameLayout android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip">
-                    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:layout_gravity="center|left" android:id="@id/personal__asset_privilege_view__share_to_followings_label" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-                    <CheckBox android:layout_gravity="center|right" android:id="@id/general__dk_checkbox_view__checkbox" style="@style/general__shared__switch" />
+
+        <ImageView
+            android:background="#ffc6c6c6"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:contentDescription="@null" />
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:textSize="@dimen/general_font__shared__d"
+            android:textColor="@color/general__shared__666666"
+            android:gravity="center|left"
+            android:id="@id/personal__asset_privilege_view__share_to_some_peoples_label"
+            android:layout_width="fill_parent"
+            android:layout_height="35.0dip"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginRight="15.0dip" />
+
+        <ImageView
+            android:background="#ffc6c6c6"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:contentDescription="@null" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/general__shared__ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <com.duokan.reader.ui.general.DkCheckBox
+                android:orientation="horizontal"
+                android:id="@id/personal__asset_privilege_view__share_to_followings"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip">
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginRight="15.0dip">
+
+                    <com.duokan.reader.ui.general.DkLabelView
+                        android:textSize="@dimen/general_font__shared__c"
+                        android:textColor="@color/general__shared__333333"
+                        android:layout_gravity="center|left"
+                        android:id="@id/personal__asset_privilege_view__share_to_followings_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:layout_gravity="center|right"
+                        android:id="@id/general__dk_checkbox_view__checkbox"
+                        style="@style/general__shared__switch" />
                 </FrameLayout>
             </com.duokan.reader.ui.general.DkCheckBox>
-            <ImageView android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:contentDescription="@null" />
-            <com.duokan.reader.ui.general.DkCheckBox android:orientation="horizontal" android:id="@id/personal__asset_privilege_view__share_to_followers" android:layout_width="fill_parent" android:layout_height="50.0dip">
-                <FrameLayout android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip">
-                    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:layout_gravity="center|left" android:id="@id/personal__asset_privilege_view__share_to_followers_label" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-                    <CheckBox android:layout_gravity="center|right" android:id="@id/general__dk_checkbox_view__checkbox" style="@style/general__shared__switch" />
+
+            <ImageView
+                android:background="#ffcccccc"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:layout_marginLeft="15.0dip"
+                android:layout_marginRight="15.0dip"
+                android:contentDescription="@null" />
+
+            <com.duokan.reader.ui.general.DkCheckBox
+                android:orientation="horizontal"
+                android:id="@id/personal__asset_privilege_view__share_to_followers"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip">
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="50.0dip"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginRight="15.0dip">
+
+                    <com.duokan.reader.ui.general.DkLabelView
+                        android:textSize="@dimen/general_font__shared__c"
+                        android:textColor="@color/general__shared__333333"
+                        android:layout_gravity="center|left"
+                        android:id="@id/personal__asset_privilege_view__share_to_followers_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <CheckBox
+                        android:layout_gravity="center|right"
+                        android:id="@id/general__dk_checkbox_view__checkbox"
+                        style="@style/general__shared__switch" />
                 </FrameLayout>
             </com.duokan.reader.ui.general.DkCheckBox>
-            <ImageView android:background="#ffc6c6c6" android:layout_width="fill_parent" android:layout_height="1.0px" android:contentDescription="@null" />
+
+            <ImageView
+                android:background="#ffc6c6c6"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:contentDescription="@null" />
         </LinearLayout>
     </com.duokan.core.ui.LinearScrollView>
 </LinearLayout>

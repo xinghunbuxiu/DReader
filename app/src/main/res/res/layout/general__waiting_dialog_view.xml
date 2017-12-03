@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@color/general__shared__ffffff" android:paddingLeft="10.0dip" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/general__waiting_dialog_view__loading" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/general__shared__loading_circle" android:scaleType="center" android:contentDescription="@null" />
-    <TextView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__838280" android:id="@id/general__waiting_dialog_view__text" android:paddingLeft="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal"
+    android:background="@color/general__shared__ffffff" android:paddingLeft="10.0dip"
+    android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent"
+    android:layout_height="wrap_content" xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/general__waiting_dialog_view__loading"
+        android:paddingBottom="10.0dip" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:src="@drawable/general__shared__loading_circle"
+        android:scaleType="center" android:contentDescription="@null" />
+    <TextView android:textSize="@dimen/general_font__shared__b"
+        android:textColor="@color/general__shared__838280"
+        android:id="@id/general__waiting_dialog_view__text" android:paddingLeft="10.0dip"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" />
 </LinearLayout>

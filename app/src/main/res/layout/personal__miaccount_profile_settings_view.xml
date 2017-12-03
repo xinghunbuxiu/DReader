@@ -1,57 +1,345 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.PageHeaderView android:id="@id/personal__miaccount_profile_settings_view__header" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <com.duokan.core.ui.LinearScrollView android:orientation="vertical" android:id="@id/personal__miaccount_profile_settings_view__scrollerview" android:background="@color/general__shared__f8f8f8" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingTop="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="15.0dip">
-            <com.duokan.reader.ui.general.DkBigFaceView android:id="@id/personal__miaccount_profile_settings_view__avatar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" />
-            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="@string/personal__miaccount_profile_settings_view__mi_account_id_label" />
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="#ff666666" android:id="@id/personal__miaccount_profile_settings_view__user_id" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+<LinearLayout android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.duokan.reader.ui.general.PageHeaderView
+        android:id="@id/personal__miaccount_profile_settings_view__header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <com.duokan.core.ui.LinearScrollView
+        android:orientation="vertical"
+        android:id="@id/personal__miaccount_profile_settings_view__scrollerview"
+        android:background="@color/general__shared__f8f8f8"
+        android:scrollbars="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="6.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15.0dip">
+
+            <com.duokan.reader.ui.general.DkBigFaceView
+                android:id="@id/personal__miaccount_profile_settings_view__avatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginRight="8.0dip" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__333333"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/personal__miaccount_profile_settings_view__mi_account_id_label" />
+
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="#ff666666"
+                    android:id="@id/personal__miaccount_profile_settings_view__user_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
         </LinearLayout>
-        <ImageView android:background="#ffc6c6c6" android:layout_width="fill_parent" android:layout_height="1.0px" android:contentDescription="@null" />
-        <LinearLayout android:orientation="vertical" android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/personal__miaccount_profile_settings_view__nickname_container" android:paddingRight="15.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip">
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:id="@id/personal__miaccount_profile_settings_view__nickname_label" android:layout_width="72.0dip" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="10.0dip" android:text="@string/personal__miaccount_profile_settings_view__nickname_label" />
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:id="@id/personal__miaccount_profile_settings_view__user_name_text" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxLines="2" android:layout_weight="1.0" />
-                <ImageView android:id="@id/personal__miaccount_profile_settings_view__user_name_next" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:src="@drawable/general__shared__more" />
+
+        <ImageView
+            android:background="#ffc6c6c6"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:contentDescription="@null" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/general__shared__ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:id="@id/personal__miaccount_profile_settings_view__nickname_container"
+                android:paddingRight="15.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip">
+
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__333333"
+                    android:id="@id/personal__miaccount_profile_settings_view__nickname_label"
+                    android:layout_width="72.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/personal__miaccount_profile_settings_view__nickname_label" />
+
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__333333"
+                    android:id="@id/personal__miaccount_profile_settings_view__user_name_text"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:maxLines="2"
+                    android:layout_weight="1.0" />
+
+                <ImageView
+                    android:id="@id/personal__miaccount_profile_settings_view__user_name_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.0dip"
+                    android:src="@drawable/general__shared__more" />
             </LinearLayout>
-            <ImageView android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:contentDescription="@null" />
-            <RelativeLayout android:id="@id/personal__miaccount_profile_settings_view__email_container" android:layout_width="fill_parent" android:layout_height="50.0dip">
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:id="@id/personal__miaccount_profile_settings_view__email_label" android:layout_width="72.0dip" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="10.0dip" android:text="@string/personal__miaccount_profile_settings_view__email_label" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="#ffb3b3b3" android:id="@id/personal__miaccount_profile_settings_view__email" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:maxLines="2" android:layout_toRightOf="@id/personal__miaccount_profile_settings_view__email_label" android:layout_centerVertical="true" />
-                <ImageView android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:layout_alignParentBottom="true" android:contentDescription="@null" />
+
+            <ImageView
+                android:background="#ffcccccc"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:layout_marginLeft="15.0dip"
+                android:layout_marginRight="15.0dip"
+                android:contentDescription="@null" />
+
+            <RelativeLayout
+                android:id="@id/personal__miaccount_profile_settings_view__email_container"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip">
+
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__333333"
+                    android:id="@id/personal__miaccount_profile_settings_view__email_label"
+                    android:layout_width="72.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/personal__miaccount_profile_settings_view__email_label"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true" />
+
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="#ffb3b3b3"
+                    android:id="@id/personal__miaccount_profile_settings_view__email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15.0dip"
+                    android:maxLines="2"
+                    android:layout_toRightOf="@id/personal__miaccount_profile_settings_view__email_label"
+                    android:layout_centerVertical="true" />
+
+                <ImageView
+                    android:background="#ffcccccc"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginRight="15.0dip"
+                    android:layout_alignParentBottom="true"
+                    android:contentDescription="@null" />
             </RelativeLayout>
-            <RelativeLayout android:id="@id/personal__miaccount_profile_settings_view__phone_container" android:layout_width="fill_parent" android:layout_height="50.0dip">
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:id="@id/personal__miaccount_profile_settings_view__mobile_phone_label" android:layout_width="72.0dip" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="10.0dip" android:text="@string/personal__miaccount_profile_settings_view__mobile_phone_label" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="#ffb3b3b3" android:id="@id/personal__miaccount_profile_settings_view__phone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:layout_toRightOf="@id/personal__miaccount_profile_settings_view__mobile_phone_label" android:layout_centerVertical="true" />
-                <ImageView android:background="#ffc6c6c6" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:layout_alignParentBottom="true" android:contentDescription="@null" />
+
+            <RelativeLayout
+                android:id="@id/personal__miaccount_profile_settings_view__phone_container"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip">
+
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__333333"
+                    android:id="@id/personal__miaccount_profile_settings_view__mobile_phone_label"
+                    android:layout_width="72.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/personal__miaccount_profile_settings_view__mobile_phone_label"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true" />
+
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="#ffb3b3b3"
+                    android:id="@id/personal__miaccount_profile_settings_view__phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15.0dip"
+                    android:layout_toRightOf="@id/personal__miaccount_profile_settings_view__mobile_phone_label"
+                    android:layout_centerVertical="true" />
+
+                <ImageView
+                    android:background="#ffc6c6c6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginRight="15.0dip"
+                    android:layout_alignParentBottom="true"
+                    android:contentDescription="@null" />
             </RelativeLayout>
         </LinearLayout>
-        <LinearLayout android:orientation="vertical" android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <RelativeLayout android:id="@id/personal__miaccount_profile_settings_view__signature_container" android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="50.0dip">
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:id="@id/personal__miaccount_profile_settings_view__signature_label" android:layout_width="72.0dip" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="10.0dip" android:text="@string/personal__miaccount_profile_settings_view__signature_label" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:id="@id/personal__miaccount_profile_settings_view__signature" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:drawableRight="@drawable/general__shared__more" android:drawablePadding="5.0dip" android:layout_toRightOf="@id/personal__miaccount_profile_settings_view__signature_label" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/general__shared__ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@id/personal__miaccount_profile_settings_view__signature_container"
+                android:background="@color/general__shared__ffffff"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip">
+
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__333333"
+                    android:id="@id/personal__miaccount_profile_settings_view__signature_label"
+                    android:layout_width="72.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:text="@string/personal__miaccount_profile_settings_view__signature_label"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true" />
+
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__333333"
+                    android:id="@id/personal__miaccount_profile_settings_view__signature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15.0dip"
+                    android:drawableRight="@drawable/general__shared__more"
+                    android:drawablePadding="5.0dip"
+                    android:layout_toRightOf="@id/personal__miaccount_profile_settings_view__signature_label"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true" />
             </RelativeLayout>
-            <ImageView android:background="#ffc6c6c6" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" android:contentDescription="@null" />
+
+            <ImageView
+                android:background="#ffc6c6c6"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:layout_alignParentBottom="true"
+                android:contentDescription="@null" />
         </LinearLayout>
-        <LinearLayout android:orientation="vertical" android:id="@id/personal__personal_settings_view__mi_milicenter_container" android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <ImageView android:background="@color/general__shared__f8f8f8" android:layout_width="fill_parent" android:layout_height="15.0dip" android:contentDescription="@null" />
-            <ImageView android:background="#ffc6c6c6" android:layout_width="fill_parent" android:layout_height="1.0px" android:contentDescription="@null" />
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:gravity="center|left" android:id="@id/personal__personal_settings_view__mi_milicenter" android:background="@color/general__shared__ffffff" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="@string/personal__personal_settings_view__mi_milicenter" android:drawableRight="@drawable/general__shared__more" />
-            <ImageView android:background="#ffc6c6c6" android:layout_width="fill_parent" android:layout_height="1.0px" android:contentDescription="@null" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@id/personal__personal_settings_view__mi_milicenter_container"
+            android:background="@color/general__shared__ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:background="@color/general__shared__f8f8f8"
+                android:layout_width="fill_parent"
+                android:layout_height="15.0dip"
+                android:contentDescription="@null" />
+
+            <ImageView
+                android:background="#ffc6c6c6"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:contentDescription="@null" />
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textColor="@color/general__shared__333333"
+                android:gravity="center|left"
+                android:id="@id/personal__personal_settings_view__mi_milicenter"
+                android:background="@color/general__shared__ffffff"
+                android:paddingLeft="15.0dip"
+                android:paddingRight="15.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:text="@string/personal__personal_settings_view__mi_milicenter"
+                android:drawableRight="@drawable/general__shared__more" />
+
+            <ImageView
+                android:background="#ffc6c6c6"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:contentDescription="@null" />
         </LinearLayout>
-        <LinearLayout android:orientation="vertical" android:id="@id/personal__miaccount_profile_settings_view__change_password_container" android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <ImageView android:background="@color/general__shared__f8f8f8" android:layout_width="fill_parent" android:layout_height="15.0dip" android:contentDescription="@null" />
-            <ImageView android:background="#ffc6c6c6" android:layout_width="fill_parent" android:layout_height="1.0px" android:contentDescription="@null" />
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:gravity="center|left" android:id="@id/personal__miaccount_profile_settings_view__change_password" android:background="@color/general__shared__ffffff" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="@string/personal__miaccount_profile_settings_view__change_password" android:drawableRight="@drawable/general__shared__more" />
-            <ImageView android:background="#ffc6c6c6" android:layout_width="fill_parent" android:layout_height="1.0px" android:contentDescription="@null" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@id/personal__miaccount_profile_settings_view__change_password_container"
+            android:background="@color/general__shared__ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:background="@color/general__shared__f8f8f8"
+                android:layout_width="fill_parent"
+                android:layout_height="15.0dip"
+                android:contentDescription="@null" />
+
+            <ImageView
+                android:background="#ffc6c6c6"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:contentDescription="@null" />
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textColor="@color/general__shared__333333"
+                android:gravity="center|left"
+                android:id="@id/personal__miaccount_profile_settings_view__change_password"
+                android:background="@color/general__shared__ffffff"
+                android:paddingLeft="15.0dip"
+                android:paddingRight="15.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:text="@string/personal__miaccount_profile_settings_view__change_password"
+                android:drawableRight="@drawable/general__shared__more" />
+
+            <ImageView
+                android:background="#ffc6c6c6"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:contentDescription="@null" />
         </LinearLayout>
-        <LinearLayout android:orientation="vertical" android:id="@id/personal__personal_settings_view__logoff_container" android:background="@color/general__shared__f8f8f8" android:paddingTop="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <ImageView android:background="#ffc6c6c6" android:layout_width="fill_parent" android:layout_height="1.0px" android:contentDescription="@null" />
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textStyle="bold" android:textColor="#ffe70303" android:gravity="center" android:id="@id/personal__personal_settings_view__logoff" android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="@string/personal__personal_settings_view__dk_logoff" />
-            <ImageView android:background="#ffc6c6c6" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginBottom="15.0dip" android:contentDescription="@null" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@id/personal__personal_settings_view__logoff_container"
+            android:background="@color/general__shared__f8f8f8"
+            android:paddingTop="15.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:background="#ffc6c6c6"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:contentDescription="@null" />
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textStyle="bold"
+                android:textColor="#ffe70303"
+                android:gravity="center"
+                android:id="@id/personal__personal_settings_view__logoff"
+                android:background="@color/general__shared__ffffff"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:text="@string/personal__personal_settings_view__dk_logoff" />
+
+            <ImageView
+                android:background="#ffc6c6c6"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:layout_marginBottom="15.0dip"
+                android:contentDescription="@null" />
         </LinearLayout>
     </com.duokan.core.ui.LinearScrollView>
 </LinearLayout>

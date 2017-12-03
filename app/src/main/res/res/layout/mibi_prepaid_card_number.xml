@@ -1,22 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/mibi_recharge_layout_padding_left" android:paddingTop="@dimen/mibi_recharge_layout_padding_top" android:paddingRight="@dimen/mibi_recharge_layout_padding_right" android:paddingBottom="@dimen/mibi_recharge_layout_padding_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <TextView android:textSize="@dimen/mibi_text_size_medium" android:textColor="@color/mibi_text_color_black" android:gravity="center_vertical" android:id="@id/prepaid_card_order_info" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-        <TableLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_recharge_layout_group_gap">
-            <TableRow android:background="@drawable/mibi_group_first_item_bg_light" android:paddingLeft="@dimen/mibi_recharge_table_row_margin_left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/mibi_edit_text_height">
-                <TextView android:ellipsize="end" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/mibi_prepaid_number_edit_hint" android:singleLine="true" style="@style/Mibi.TextAppearance.FormItem.Title" />
-                <com.mipay.common.component.FormattableEditText android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/number_edit" android:background="@null" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/mibi_recharge_format_text_margin_left" android:hint="@string/mibi_prepaid_edit_limit" android:digits="0123456789 " android:layout_weight="1.0" android:inputType="number" style="@style/Mibi.TextAppearance.FormItem.Content" />
-                <ImageView android:layout_gravity="center_vertical" android:id="@id/number_camera_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" android:src="@drawable/mibi_camera" />
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:fillViewport="true" xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical"
+        android:paddingLeft="@dimen/mibi_recharge_layout_padding_left"
+        android:paddingTop="@dimen/mibi_recharge_layout_padding_top"
+        android:paddingRight="@dimen/mibi_recharge_layout_padding_right"
+        android:paddingBottom="@dimen/mibi_recharge_layout_padding_bottom"
+        android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/mibi_text_size_medium"
+            android:textColor="@color/mibi_text_color_black" android:gravity="center_vertical"
+            android:id="@id/prepaid_card_order_info" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TableLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mibi_recharge_layout_group_gap">
+            <TableRow android:background="@drawable/mibi_group_first_item_bg_light"
+                android:paddingLeft="@dimen/mibi_recharge_table_row_margin_left"
+                android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:minHeight="@dimen/mibi_edit_text_height">
+                <TextView android:ellipsize="end" android:gravity="center_vertical"
+                    android:layout_width="wrap_content" android:layout_height="fill_parent"
+                    android:text="@string/mibi_prepaid_number_edit_hint" android:singleLine="true"
+                    style="@style/Mibi.TextAppearance.FormItem.Title" />
+                <com.mipay.common.component.FormattableEditText android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical" android:id="@id/number_edit"
+                    android:background="@null" android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/mibi_recharge_format_text_margin_left"
+                    android:hint="@string/mibi_prepaid_edit_limit" android:digits="0123456789 "
+                    android:layout_weight="1.0" android:inputType="number"
+                    style="@style/Mibi.TextAppearance.FormItem.Content" />
+                <ImageView android:layout_gravity="center_vertical"
+                    android:id="@id/number_camera_btn" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_marginRight="3.0dip"
+                    android:src="@drawable/mibi_camera" />
             </TableRow>
-            <TableRow android:background="@drawable/mibi_group_last_item_bg_light" android:paddingLeft="@dimen/mibi_recharge_table_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/mibi_edit_text_height">
-                <TextView android:ellipsize="end" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/mibi_prepaid_password_edit_hint" android:singleLine="true" style="@style/Mibi.TextAppearance.FormItem.Title" />
-                <com.mipay.common.component.FormattableEditText android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/password_edit" android:background="@null" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/mibi_recharge_format_text_margin_left" android:hint="@string/mibi_prepaid_edit_limit" android:digits="0123456789 " android:layout_weight="1.0" android:inputType="number" style="@style/Mibi.TextAppearance.FormItem.Content" />
-                <ImageView android:layout_gravity="center_vertical" android:id="@id/password_camera_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" android:src="@drawable/mibi_camera" />
+            <TableRow android:background="@drawable/mibi_group_last_item_bg_light"
+                android:paddingLeft="@dimen/mibi_recharge_table_padding"
+                android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:minHeight="@dimen/mibi_edit_text_height">
+                <TextView android:ellipsize="end" android:gravity="center_vertical"
+                    android:layout_width="wrap_content" android:layout_height="fill_parent"
+                    android:text="@string/mibi_prepaid_password_edit_hint" android:singleLine="true"
+                    style="@style/Mibi.TextAppearance.FormItem.Title" />
+                <com.mipay.common.component.FormattableEditText android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical" android:id="@id/password_edit"
+                    android:background="@null" android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/mibi_recharge_format_text_margin_left"
+                    android:hint="@string/mibi_prepaid_edit_limit" android:digits="0123456789 "
+                    android:layout_weight="1.0" android:inputType="number"
+                    style="@style/Mibi.TextAppearance.FormItem.Content" />
+                <ImageView android:layout_gravity="center_vertical"
+                    android:id="@id/password_camera_btn" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_marginRight="3.0dip"
+                    android:src="@drawable/mibi_camera" />
             </TableRow>
         </TableLayout>
-        <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
-        <TextView android:textSize="@dimen/mibi_text_size_content_hint" android:textColor="@color/mibi_text_color_orange" android:gravity="center" android:id="@id/contentHint" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-        <Button android:id="@id/button_recharge" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_recharge_layout_group_gap" android:text="@string/mibi_btn_recharge_large" style="@style/Mibi.Widget.Button.Warning" />
+        <View android:layout_width="fill_parent" android:layout_height="0.0dip"
+            android:layout_weight="1.0" />
+        <TextView android:textSize="@dimen/mibi_text_size_content_hint"
+            android:textColor="@color/mibi_text_color_orange" android:gravity="center"
+            android:id="@id/contentHint" android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <Button android:id="@id/button_recharge" android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mibi_recharge_layout_group_gap"
+            android:text="@string/mibi_btn_recharge_large"
+            style="@style/Mibi.Widget.Button.Warning" />
     </LinearLayout>
 </ScrollView>

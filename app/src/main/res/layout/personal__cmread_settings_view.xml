@@ -1,8 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@color/general__shared__e6e6e6" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.HeaderView android:id="@id/personal__cmread_settings_view__header" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:gravity="center|left" android:id="@id/personal__cmread_settings_view__bind" android:background="@drawable/personal__cmread__bind_account_item_bg" android:paddingLeft="25.0dip" android:paddingRight="15.0dip" android:layout_width="fill_parent" android:layout_height="45.0dip" android:text="@string/personal__cmread_settings_view__bind" />
-    <View android:background="@color/general__shared__bcbcbc" android:layout_width="fill_parent" android:layout_height="1.0px" android:contentDescription="@null" />
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:gravity="center|left" android:id="@id/personal__cmread_settings_view__unbind" android:background="@drawable/personal__cmread__bind_account_item_bg" android:paddingLeft="25.0dip" android:paddingRight="15.0dip" android:layout_width="fill_parent" android:layout_height="45.0dip" android:text="@string/personal__cmread_settings_view__unbind" />
+<LinearLayout android:orientation="vertical"
+    android:background="@color/general__shared__e6e6e6"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.duokan.reader.ui.general.HeaderView
+        android:id="@id/personal__cmread_settings_view__header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <com.duokan.reader.ui.general.DkLabelView
+        android:textSize="@dimen/general_font__shared__c"
+        android:textColor="@color/general__shared__333333"
+        android:gravity="center|left"
+        android:id="@id/personal__cmread_settings_view__bind"
+        android:background="@drawable/personal__cmread__bind_account_item_bg"
+        android:paddingLeft="25.0dip"
+        android:paddingRight="15.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="45.0dip"
+        android:text="@string/personal__cmread_settings_view__bind" />
+
+    <View
+        android:background="@color/general__shared__bcbcbc"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:contentDescription="@null" />
+
+    <com.duokan.reader.ui.general.DkLabelView
+        android:textSize="@dimen/general_font__shared__c"
+        android:textColor="@color/general__shared__333333"
+        android:gravity="center|left"
+        android:id="@id/personal__cmread_settings_view__unbind"
+        android:background="@drawable/personal__cmread__bind_account_item_bg"
+        android:paddingLeft="25.0dip"
+        android:paddingRight="15.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="45.0dip"
+        android:text="@string/personal__cmread_settings_view__unbind" />
 </LinearLayout>

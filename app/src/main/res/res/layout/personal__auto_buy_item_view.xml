@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="vertical" android:id="@id/personal__auto_buy_item_view__root" android:paddingRight="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.duokan.reader.ui.general.BookCoverView android:id="@id/personal__auto_buy_item_view__cover" android:layout_marginLeft="15.0dip" android:layout_marginTop="@dimen/general__shared__cover_bottom_shadow_margin_15dip" android:layout_marginRight="@dimen/general__shared__cover_bottom_shadow_margin_15dip" android:layout_marginBottom="@dimen/general__shared__cover_bottom_shadow_margin_15dip" android:layout_alignParentLeft="true" style="@style/general__shared__cover_list" />
-    <com.duokan.reader.ui.bookshelf.BookActionView android:id="@id/personal__auto_buy_item_view__edit" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-    <TextView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__343434" android:ellipsize="end" android:id="@id/personal__auto_buy_item_view__title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18.0dip" android:singleLine="true" android:includeFontPadding="false" android:layout_toLeftOf="@id/personal__auto_buy_item_view__edit" android:layout_toRightOf="@id/personal__auto_buy_item_view__cover" />
-    <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__a3a3a3" android:ellipsize="end" android:id="@id/personal__auto_buy_item_view__author" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginBottom="12.0dip" android:singleLine="true" android:includeFontPadding="false" android:layout_toLeftOf="@id/personal__auto_buy_item_view__edit" android:layout_toRightOf="@id/personal__auto_buy_item_view__cover" android:layout_below="@id/personal__auto_buy_item_view__title" />
-    <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__a3a3a3" android:id="@id/personal__auto_buy_item_view__last_reading_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_toLeftOf="@id/personal__auto_buy_item_view__edit" android:layout_below="@id/personal__auto_buy_item_view__author" />
+<RelativeLayout android:orientation="vertical" android:id="@id/personal__auto_buy_item_view__root"
+    android:paddingRight="15.0dip" android:layout_width="fill_parent"
+    android:layout_height="wrap_content" xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.reader.ui.general.BookCoverView android:id="@id/personal__auto_buy_item_view__cover"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginTop="@dimen/general__shared__cover_bottom_shadow_margin_15dip"
+        android:layout_marginRight="@dimen/general__shared__cover_bottom_shadow_margin_15dip"
+        android:layout_marginBottom="@dimen/general__shared__cover_bottom_shadow_margin_15dip"
+        android:layout_alignParentLeft="true" style="@style/general__shared__cover_list" />
+    <com.duokan.reader.ui.bookshelf.BookActionView
+        android:id="@id/personal__auto_buy_item_view__edit" android:visibility="gone"
+        android:layout_width="wrap_content" android:layout_height="fill_parent"
+        android:layout_marginLeft="10.0dip" android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" />
+    <TextView android:textSize="@dimen/general_font__shared__b"
+        android:textColor="@color/general__shared__343434" android:ellipsize="end"
+        android:id="@id/personal__auto_buy_item_view__title" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginTop="18.0dip"
+        android:singleLine="true" android:includeFontPadding="false"
+        android:layout_toLeftOf="@id/personal__auto_buy_item_view__edit"
+        android:layout_toRightOf="@id/personal__auto_buy_item_view__cover" />
+    <TextView android:textSize="@dimen/general_font__shared__d"
+        android:textColor="@color/general__shared__a3a3a3" android:ellipsize="end"
+        android:id="@id/personal__auto_buy_item_view__author" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginTop="8.0dip"
+        android:layout_marginBottom="12.0dip" android:singleLine="true"
+        android:includeFontPadding="false"
+        android:layout_toLeftOf="@id/personal__auto_buy_item_view__edit"
+        android:layout_toRightOf="@id/personal__auto_buy_item_view__cover"
+        android:layout_below="@id/personal__auto_buy_item_view__title" />
+    <TextView android:textSize="@dimen/general_font__shared__d"
+        android:textColor="@color/general__shared__a3a3a3"
+        android:id="@id/personal__auto_buy_item_view__last_reading_time"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:singleLine="true" android:layout_toLeftOf="@id/personal__auto_buy_item_view__edit"
+        android:layout_below="@id/personal__auto_buy_item_view__author" />
 </RelativeLayout>

@@ -1,10 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.xiaomi.payment.ui.component.DenominationGridViewEditItem android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/Mibi.Widget.GridItem"
-  xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:payment="http://schemas.android.com/apk/res/com.xiaomi.payment">
-    <ImageView android:layout_gravity="right" android:background="@drawable/mibi_grid_view_item_divide_line" android:layout_width="@dimen/mibi_divider" android:layout_height="fill_parent" />
-    <ImageView android:layout_gravity="bottom" android:background="@drawable/mibi_grid_view_item_divide_line" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_divider" />
-    <com.xiaomi.payment.ui.component.DenominationEditText android:textSize="@dimen/mibi_text_size_denominate_grid_item_edit" android:textColor="@color/mibi_text_color_orange" android:gravity="center" android:id="@id/item_edit" android:background="@drawable/mibi_denomination_edit_bg" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:singleLine="true" android:inputType="numberDecimal" />
-    <TextView android:textSize="@dimen/mibi_text_size_grid_view_edit" android:textColor="@color/mibi_primary_color" android:gravity="center" android:layout_gravity="center" android:id="@id/other_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mibi_other_denomiantion" />
-    <TextView android:textSize="@dimen/mibi_text_size_denominate_grid_item_unit" android:textColor="@color/mibi_primary_color" android:gravity="center|right|top" android:id="@id/item_unit" android:paddingTop="@dimen/mibi_grid_item_unit_padding_top" android:paddingRight="@dimen/mibi_grid_item_unit_padding_right" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+<com.xiaomi.payment.ui.component.DenominationGridViewEditItem android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    style="@style/Mibi.Widget.GridItem"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_gravity="right"
+        android:background="@drawable/mibi_grid_view_item_divide_line"
+        android:layout_width="@dimen/mibi_divider"
+        android:layout_height="fill_parent" />
+
+    <ImageView
+        android:layout_gravity="bottom"
+        android:background="@drawable/mibi_grid_view_item_divide_line"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/mibi_divider" />
+
+    <com.xiaomi.payment.ui.component.DenominationEditText
+        android:textSize="@dimen/mibi_text_size_denominate_grid_item_edit"
+        android:textColor="@color/mibi_text_color_orange"
+        android:gravity="center"
+        android:id="@id/item_edit"
+        android:background="@drawable/mibi_denomination_edit_bg"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:singleLine="true"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:textSize="@dimen/mibi_text_size_grid_view_edit"
+        android:textColor="@color/mibi_primary_color"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:id="@id/other_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mibi_other_denomiantion" />
+
+    <TextView
+        android:textSize="@dimen/mibi_text_size_denominate_grid_item_unit"
+        android:textColor="@color/mibi_primary_color"
+        android:gravity="center|right|top"
+        android:id="@id/item_unit"
+        android:paddingTop="@dimen/mibi_grid_item_unit_padding_top"
+        android:paddingRight="@dimen/mibi_grid_item_unit_padding_right"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
 </com.xiaomi.payment.ui.component.DenominationGridViewEditItem>

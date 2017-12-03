@@ -1,14 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/share__share_book_to_weibo_dialog_view__book_info" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dip" android:layout_marginBottom="20.0dip">
-        <com.duokan.reader.ui.general.BookCoverView android:id="@id/share__share_book_to_weibo_dialog_view__book_cover" android:background="@null" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_centerVertical="true" style="@style/general__shared__store_cover_grid" />
-        <LinearLayout android:orientation="vertical" android:paddingLeft="25.0dip" android:paddingTop="@dimen/general__shared__cover_top_shadow_size" android:paddingBottom="@dimen/general__shared__cover_bottom_shadow_size" android:layout_width="fill_parent" android:layout_height="@dimen/general__shared__store_cover_grid_height" android:layout_toRightOf="@id/share__share_book_to_weibo_dialog_view__book_cover">
-            <TextView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__333333" android:ellipsize="end" android:gravity="top" android:id="@id/share__share_book_to_weibo_dialog_view__book_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" android:includeFontPadding="false" />
-            <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__999999" android:ellipsize="end" android:id="@id/share__share_book_to_weibo_dialog_view__book_summary" android:paddingTop="15.0dip" android:layout_width="fill_parent" android:layout_height="0.0dip" android:maxLines="2" android:includeFontPadding="false" android:layout_weight="1.0" />
-            <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__999999" android:ellipsize="end" android:gravity="bottom" android:layout_gravity="bottom" android:id="@id/share__share_book_to_weibo_dialog_view__book_author" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" />
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="wrap_content" android:layout_marginLeft="10.0dip"
+    android:layout_marginRight="10.0dip" xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/share__share_book_to_weibo_dialog_view__book_info"
+        android:paddingLeft="10.0dip" android:paddingRight="10.0dip"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="25.0dip" android:layout_marginBottom="20.0dip">
+        <com.duokan.reader.ui.general.BookCoverView
+            android:id="@id/share__share_book_to_weibo_dialog_view__book_cover"
+            android:background="@null" android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" android:layout_centerVertical="true"
+            style="@style/general__shared__store_cover_grid" />
+        <LinearLayout android:orientation="vertical" android:paddingLeft="25.0dip"
+            android:paddingTop="@dimen/general__shared__cover_top_shadow_size"
+            android:paddingBottom="@dimen/general__shared__cover_bottom_shadow_size"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/general__shared__store_cover_grid_height"
+            android:layout_toRightOf="@id/share__share_book_to_weibo_dialog_view__book_cover">
+            <TextView android:textSize="@dimen/general_font__shared__b"
+                android:textColor="@color/general__shared__333333" android:ellipsize="end"
+                android:gravity="top"
+                android:id="@id/share__share_book_to_weibo_dialog_view__book_name"
+                android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:maxLines="2" android:includeFontPadding="false" />
+            <TextView android:textSize="@dimen/general_font__shared__c"
+                android:textColor="@color/general__shared__999999" android:ellipsize="end"
+                android:id="@id/share__share_book_to_weibo_dialog_view__book_summary"
+                android:paddingTop="15.0dip" android:layout_width="fill_parent"
+                android:layout_height="0.0dip" android:maxLines="2"
+                android:includeFontPadding="false" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/general_font__shared__c"
+                android:textColor="@color/general__shared__999999" android:ellipsize="end"
+                android:gravity="bottom" android:layout_gravity="bottom"
+                android:id="@id/share__share_book_to_weibo_dialog_view__book_author"
+                android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:singleLine="true" android:includeFontPadding="false" />
         </LinearLayout>
     </RelativeLayout>
-    <View android:id="@id/share__share_book_to_weibo_dialog_view__line" android:background="@drawable/general__shared__dash_line" android:layout_width="wrap_content" android:layout_height="3.0dip" android:layerType="software" />
-    <com.duokan.core.ui.DkEditorView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:ellipsize="end" android:gravity="top" android:id="@id/share__share_book_to_weibo_dialog_view__share_reason_edit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" />
+    <View android:id="@id/share__share_book_to_weibo_dialog_view__line"
+        android:background="@drawable/general__shared__dash_line"
+        android:layout_width="wrap_content" android:layout_height="3.0dip"
+        android:layerType="software" />
+    <com.duokan.core.ui.DkEditorView android:textSize="@dimen/general_font__shared__c"
+        android:textColor="@color/general__shared__333333" android:ellipsize="end"
+        android:gravity="top"
+        android:id="@id/share__share_book_to_weibo_dialog_view__share_reason_edit"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginLeft="10.0dip" android:layout_marginTop="20.0dip"
+        android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" />
 </LinearLayout>

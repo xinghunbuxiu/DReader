@@ -1,11 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.HeaderView android:id="@id/store__coupon_pay_view__header" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <com.duokan.core.ui.HatGridView android:id="@id/store__coupon_pay_view__coupon_list" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
-    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <View android:background="#ff9f9f9f" android:layout_width="fill_parent" android:layout_height="1.0px" />
-        <com.duokan.reader.ui.general.DkLabelView android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/store__coupon_pay_view__coupon_buy" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="25.0dip" android:layout_marginBottom="15.0dip" android:text="@string/store__coupon_pay_view__coupon_buy" style="@style/general__shared__button_43dip_ff6518" />
-        <com.duokan.reader.ui.general.DkLabelView android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/store__coupon_pay_view__mibi_buy" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="25.0dip" android:layout_marginBottom="15.0dip" android:text="@string/store__coupon_pay_view__mibi_buy" style="@style/general__shared__button_43dip_ffffff" />
+<LinearLayout android:orientation="vertical"
+    android:background="@color/general__shared__ffffff"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.duokan.reader.ui.general.HeaderView
+        android:id="@id/store__coupon_pay_view__header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <com.duokan.core.ui.HatGridView
+        android:id="@id/store__coupon_pay_view__coupon_list"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:background="#ff9f9f9f"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px" />
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:id="@id/store__coupon_pay_view__coupon_buy"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25.0dip"
+            android:layout_marginTop="10.0dip"
+            android:layout_marginRight="25.0dip"
+            android:layout_marginBottom="15.0dip"
+            android:text="@string/store__coupon_pay_view__coupon_buy"
+            style="@style/general__shared__button_43dip_ff6518" />
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:id="@id/store__coupon_pay_view__mibi_buy"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25.0dip"
+            android:layout_marginTop="5.0dip"
+            android:layout_marginRight="25.0dip"
+            android:layout_marginBottom="15.0dip"
+            android:text="@string/store__coupon_pay_view__mibi_buy"
+            style="@style/general__shared__button_43dip_ffffff" />
     </LinearLayout>
 </LinearLayout>

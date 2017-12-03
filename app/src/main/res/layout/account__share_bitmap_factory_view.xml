@@ -1,19 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.DkTextView android:textSize="17.0dip" android:textColor="@color/general__shared__343434" android:ellipsize="end" android:id="@id/account__share_bitmap_factory_view__pub_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="28.0dip" android:layout_marginRight="28.0dip" />
-    <View android:id="@id/account__share_bitmap_factory_view__pub_text_gap" android:background="@drawable/general__shared__dash_line_light" android:layout_width="fill_parent" android:layout_height="3.0dip" android:layout_marginLeft="28.0dip" android:layout_marginTop="30.0dip" android:layout_marginRight="28.0dip" android:layout_marginBottom="30.0dip" android:layerType="software" />
-    <com.duokan.reader.ui.general.DkTextView android:textSize="17.0dip" android:textColor="@color/general__shared__343434" android:ellipsize="end" android:id="@id/account__share_bitmap_factory_view__pub_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="28.0dip" android:layout_marginRight="28.0dip" android:layout_marginBottom="30.0dip" />
-    <View android:background="@drawable/general__shared__dash_line_light" android:layout_width="fill_parent" android:layout_height="3.0dip" android:layout_marginLeft="28.0dip" android:layout_marginRight="28.0dip" android:layout_marginBottom="30.0dip" android:layerType="software" />
-    <RelativeLayout android:id="@id/account__share_bitmap_factory_view__content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="28.0dip" android:layout_marginRight="28.0dip">
-        <ImageView android:id="@id/account__share_bitmap_factory_view__cover" android:layout_width="101.0dip" android:layout_height="146.0dip" android:scaleType="fitXY" />
-        <TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="@color/general__shared__c2" android:ellipsize="end" android:id="@id/account__share_bitmap_factory_view__title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:maxLines="2" android:layout_toRightOf="@id/account__share_bitmap_factory_view__cover" android:layout_alignParentTop="true" />
-        <TextView android:textSize="12.0dip" android:textColor="@color/general__shared__c7" android:ellipsize="end" android:id="@id/account__share_bitmap_factory_view__author" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="5.0dip" android:maxLines="2" android:layout_toRightOf="@id/account__share_bitmap_factory_view__cover" android:layout_below="@id/account__share_bitmap_factory_view__title" />
-        <ImageView android:id="@id/account__share_bitmap_factory_view__qrcode" android:layout_width="55.0dip" android:layout_height="55.0dip" android:layout_marginLeft="20.0dip" android:scaleType="fitXY" android:layout_toRightOf="@id/account__share_bitmap_factory_view__cover" android:layout_below="@id/account__share_bitmap_factory_view__author" android:layout_alignParentBottom="true" />
-        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/account__share_bitmap_factory_view__qrcode" android:layout_alignParentBottom="true">
-            <TextView android:textSize="11.0dip" android:textColor="@color/general__shared__c7" android:id="@id/account__share_bitmap_factory_view__hint" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginBottom="-2.0dip" android:includeFontPadding="false" />
+<LinearLayout android:layout_gravity="center"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.duokan.reader.ui.general.DkTextView
+        android:textSize="17.0dip"
+        android:textColor="@color/general__shared__343434"
+        android:ellipsize="end"
+        android:id="@id/account__share_bitmap_factory_view__pub_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28.0dip"
+        android:layout_marginRight="28.0dip" />
+
+    <View
+        android:id="@id/account__share_bitmap_factory_view__pub_text_gap"
+        android:background="@drawable/general__shared__dash_line_light"
+        android:layout_width="fill_parent"
+        android:layout_height="3.0dip"
+        android:layout_marginLeft="28.0dip"
+        android:layout_marginTop="30.0dip"
+        android:layout_marginRight="28.0dip"
+        android:layout_marginBottom="30.0dip"
+        android:layerType="software" />
+
+    <com.duokan.reader.ui.general.DkTextView
+        android:textSize="17.0dip"
+        android:textColor="@color/general__shared__343434"
+        android:ellipsize="end"
+        android:id="@id/account__share_bitmap_factory_view__pub_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28.0dip"
+        android:layout_marginRight="28.0dip"
+        android:layout_marginBottom="30.0dip" />
+
+    <View
+        android:background="@drawable/general__shared__dash_line_light"
+        android:layout_width="fill_parent"
+        android:layout_height="3.0dip"
+        android:layout_marginLeft="28.0dip"
+        android:layout_marginRight="28.0dip"
+        android:layout_marginBottom="30.0dip"
+        android:layerType="software" />
+
+    <RelativeLayout
+        android:id="@id/account__share_bitmap_factory_view__content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28.0dip"
+        android:layout_marginRight="28.0dip">
+
+        <ImageView
+            android:id="@id/account__share_bitmap_factory_view__cover"
+            android:layout_width="101.0dip"
+            android:layout_height="146.0dip"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:textSize="16.0dip"
+            android:textStyle="bold"
+            android:textColor="@color/general__shared__c2"
+            android:ellipsize="end"
+            android:id="@id/account__share_bitmap_factory_view__title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginTop="10.0dip"
+            android:maxLines="2"
+            android:layout_toRightOf="@id/account__share_bitmap_factory_view__cover"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+            android:textSize="12.0dip"
+            android:textColor="@color/general__shared__c7"
+            android:ellipsize="end"
+            android:id="@id/account__share_bitmap_factory_view__author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginTop="5.0dip"
+            android:maxLines="2"
+            android:layout_toRightOf="@id/account__share_bitmap_factory_view__cover"
+            android:layout_below="@id/account__share_bitmap_factory_view__title" />
+
+        <ImageView
+            android:id="@id/account__share_bitmap_factory_view__qrcode"
+            android:layout_width="55.0dip"
+            android:layout_height="55.0dip"
+            android:layout_marginLeft="20.0dip"
+            android:scaleType="fitXY"
+            android:layout_toRightOf="@id/account__share_bitmap_factory_view__cover"
+            android:layout_below="@id/account__share_bitmap_factory_view__author"
+            android:layout_alignParentBottom="true" />
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/account__share_bitmap_factory_view__qrcode"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:textSize="11.0dip"
+                android:textColor="@color/general__shared__c7"
+                android:id="@id/account__share_bitmap_factory_view__hint"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12.0dip"
+                android:layout_marginBottom="-2.0dip"
+                android:includeFontPadding="false" />
         </FrameLayout>
     </RelativeLayout>
-    <View android:background="@drawable/general__shared__dash_line_light" android:layout_width="fill_parent" android:layout_height="3.0dip" android:layout_marginLeft="28.0dip" android:layout_marginTop="30.0dip" android:layout_marginRight="28.0dip" android:layout_marginBottom="20.0dip" android:layerType="software" />
-    <TextView android:textSize="12.0dip" android:textColor="@color/general__shared__c6" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:text="@string/share_copyright" />
+
+    <View
+        android:background="@drawable/general__shared__dash_line_light"
+        android:layout_width="fill_parent"
+        android:layout_height="3.0dip"
+        android:layout_marginLeft="28.0dip"
+        android:layout_marginTop="30.0dip"
+        android:layout_marginRight="28.0dip"
+        android:layout_marginBottom="20.0dip"
+        android:layerType="software" />
+
+    <TextView
+        android:textSize="12.0dip"
+        android:textColor="@color/general__shared__c6"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20.0dip"
+        android:text="@string/share_copyright" />
 </LinearLayout>

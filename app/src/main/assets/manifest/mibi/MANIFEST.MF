@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-Name: mibi
+Bundle-SymbolicName: com.xiaomi.payment
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.xiaomi.payment.Activator
+Require-Bundle: com.mipay.common

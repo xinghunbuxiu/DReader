@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/personal__account_summary_view__random_named_view_1" android:background="@drawable/personal__nav__relations_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" android:layout_centerInParent="true">
-        <com.duokan.reader.ui.general.DkNumView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__ffffff" android:layout_gravity="center_horizontal" android:id="@id/personal__account_summary_item_view__type_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
-        <FrameLayout android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
-            <ImageView android:id="@id/personal__account_summary_item_view__type_icon" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/personal__statistics_publish_comments_icon" android:contentDescription="@null" />
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical"
+        android:id="@id/personal__account_summary_view__random_named_view_1"
+        android:background="@drawable/personal__nav__relations_bg"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip"
+        android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip"
+        android:layout_centerInParent="true">
+        <com.duokan.reader.ui.general.DkNumView android:textSize="@dimen/general_font__shared__c"
+            android:textColor="@color/general__shared__ffffff"
+            android:layout_gravity="center_horizontal"
+            android:id="@id/personal__account_summary_item_view__type_value"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:singleLine="true" />
+        <FrameLayout android:visibility="gone" android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView android:id="@id/personal__account_summary_item_view__type_icon"
+                android:visibility="gone" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/personal__statistics_publish_comments_icon"
+                android:contentDescription="@null" />
         </FrameLayout>
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__ffffff80" android:layout_gravity="center_horizontal" android:id="@id/personal__account_summary_item_view__type_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/personal__account_summary_view__followers" android:singleLine="true" />
+        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d"
+            android:textColor="@color/general__shared__ffffff80"
+            android:layout_gravity="center_horizontal"
+            android:id="@id/personal__account_summary_item_view__type_text"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/personal__account_summary_view__followers"
+            android:singleLine="true" />
     </LinearLayout>
-    <ImageView android:id="@id/personal__account_summary_item_view__type_new_indicator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="-20.0dip" android:layout_marginTop="5.0dip" android:layout_toRightOf="@id/personal__account_summary_view__random_named_view_1" android:contentDescription="@null" />
+    <ImageView android:id="@id/personal__account_summary_item_view__type_new_indicator"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginLeft="-20.0dip" android:layout_marginTop="5.0dip"
+        android:layout_toRightOf="@id/personal__account_summary_view__random_named_view_1"
+        android:contentDescription="@null" />
 </RelativeLayout>

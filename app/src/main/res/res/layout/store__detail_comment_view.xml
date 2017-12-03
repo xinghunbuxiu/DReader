@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:reader="http://schemas.android.com/apk/res-auto">
-    <View android:id="@id/store__detail_comment_view__split1" android:background="@color/general__shared__bcbcbc" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="10.0dip" />
-    <include android:id="@id/store__detail_comment_view__my_score_root" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="18.0dip" layout="@layout/store_comment__comment_purchased_view" />
-    <View android:id="@id/store__detail_comment_view__split2" android:background="@color/general__shared__bcbcbc" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="18.0dip" />
-    <com.duokan.reader.ui.store.ListLayoutView android:id="@id/store__detail_comment_view__list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" />
-    <com.duokan.reader.ui.general.DkLabelView android:id="@id/store__detail_comment_view__state" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="15.0dip" android:text="@string/store__book_detail_score_view__goto_comment" style="@style/general__shared__button_43dip_ffffff" />
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/store__detail_comment_view__split1"
+        android:background="@color/general__shared__bcbcbc" android:visibility="gone"
+        android:layout_width="fill_parent" android:layout_height="1.0px"
+        android:layout_marginTop="10.0dip" />
+    <include android:id="@id/store__detail_comment_view__my_score_root" android:visibility="gone"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="18.0dip" layout="@layout/store_comment__comment_purchased_view" />
+    <View android:id="@id/store__detail_comment_view__split2"
+        android:background="@color/general__shared__bcbcbc" android:visibility="gone"
+        android:layout_width="fill_parent" android:layout_height="1.0px"
+        android:layout_marginTop="18.0dip" />
+    <com.duokan.reader.ui.store.ListLayoutView android:id="@id/store__detail_comment_view__list"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" />
+    <com.duokan.reader.ui.general.DkLabelView android:id="@id/store__detail_comment_view__state"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginLeft="15.0dip" android:layout_marginTop="10.0dip"
+        android:layout_marginRight="15.0dip"
+        android:text="@string/store__book_detail_score_view__goto_comment"
+        style="@style/general__shared__button_43dip_ffffff" />
 </LinearLayout>

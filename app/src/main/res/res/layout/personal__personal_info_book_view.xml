@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/personal__personal_info_book_view__root" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout android:orientation="vertical"
+    android:id="@id/personal__personal_info_book_view__root" android:visibility="invisible"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <FrameLayout style="@style/general__shared__cover_detail">
-        <com.duokan.reader.ui.general.BookCoverView android:id="@id/personal__personal_info_book_view__cover" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-        <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/general__shared__book_category_book_shadow" android:scaleType="fitXY" />
+        <com.duokan.reader.ui.general.BookCoverView
+            android:id="@id/personal__personal_info_book_view__cover"
+            android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ImageView android:layout_width="fill_parent" android:layout_height="fill_parent"
+            android:src="@drawable/general__shared__book_category_book_shadow"
+            android:scaleType="fitXY" />
     </FrameLayout>
-    <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__585858" android:ellipsize="end" android:id="@id/personal__personal_info_book_view__title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:singleLine="true" android:includeFontPadding="false" />
+    <TextView android:textSize="@dimen/general_font__shared__d"
+        android:textColor="@color/general__shared__585858" android:ellipsize="end"
+        android:id="@id/personal__personal_info_book_view__title" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:layout_marginTop="7.0dip"
+        android:singleLine="true" android:includeFontPadding="false" />
 </LinearLayout>

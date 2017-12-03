@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/store__change_log_item_view__time_line" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="25.0dip" />
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__999999" android:id="@id/store__change_log_item_view__time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="15.0dip" android:layout_toRightOf="@id/store__change_log_item_view__time_line" />
-    <com.duokan.reader.ui.general.deprecatedDkTextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__666666" android:id="@id/store__change_log_item_view__detail" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginRight="15.0dip" android:layout_below="@id/store__change_log_item_view__time" android:layout_alignLeft="@id/store__change_log_item_view__time" />
+<RelativeLayout android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@id/store__change_log_item_view__time_line"
+        android:background="@android:color/transparent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginTop="25.0dip" />
+
+    <com.duokan.reader.ui.general.DkLabelView
+        android:textSize="@dimen/general_font__shared__c"
+        android:textColor="@color/general__shared__999999"
+        android:id="@id/store__change_log_item_view__time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20.0dip"
+        android:layout_marginTop="20.0dip"
+        android:layout_marginRight="15.0dip"
+        android:layout_toRightOf="@id/store__change_log_item_view__time_line" />
+
+    <com.duokan.reader.ui.general.deprecatedDkTextView
+        android:textSize="@dimen/general_font__shared__c"
+        android:textColor="@color/general__shared__666666"
+        android:id="@id/store__change_log_item_view__detail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.0dip"
+        android:layout_marginRight="15.0dip"
+        android:layout_below="@id/store__change_log_item_view__time"
+        android:layout_alignLeft="@id/store__change_log_item_view__time" />
 </RelativeLayout>

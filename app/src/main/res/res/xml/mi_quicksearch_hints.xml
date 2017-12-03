@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<misearch
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<misearch>
     <items>
         <item>
             <id>0</id>
@@ -39,28 +38,36 @@
             <id>5</id>
             <title>search_resource_name__book_category</title>
             <intent_action>android.intent.action.VIEW</intent_action>
-            <intent_data>http://www.duokan.com/subtle/event/redirect.html?url=https%3A%2F%2Fwww.duokan.com%2Fhs%2Fmarket%2Fcate%3Ffrom%3Dwrapper&amp;mifb=http%3A%2F%2Fapp.xiaomi.com%2Fdetails%3FappId%3D1108%26back%3Dtrue%26ref%3D%26ref%3Dwrapper%26redirect%3Duniversal&amp;miback=true&amp;miref=wrapper</intent_data>
+            <intent_data>
+                http://www.duokan.com/subtle/event/redirect.html?url=https%3A%2F%2Fwww.duokan.com%2Fhs%2Fmarket%2Fcate%3Ffrom%3Dwrapper&amp;mifb=http%3A%2F%2Fapp.xiaomi.com%2Fdetails%3FappId%3D1108%26back%3Dtrue%26ref%3D%26ref%3Dwrapper%26redirect%3Duniversal&amp;miback=true&amp;miref=wrapper
+            </intent_data>
             <keywords>search_keywords__book_category</keywords>
         </item>
         <item>
             <id>6</id>
             <title>search_resource_name__book_rank</title>
             <intent_action>android.intent.action.VIEW</intent_action>
-            <intent_data>http://www.duokan.com/subtle/event/redirect.html?url=https%3A%2F%2Fwww.duokan.com%2Fhs%2Fmarket%2Frank_publish%3Ffrom%3Dwrapper&amp;mifb=http%3A%2F%2Fapp.xiaomi.com%2Fdetails%3FappId%3D1108%26back%3Dtrue%26ref%3D%26ref%3Dwrapper%26redirect%3Duniversal&amp;miback=true&amp;miref=wrapper</intent_data>
+            <intent_data>
+                http://www.duokan.com/subtle/event/redirect.html?url=https%3A%2F%2Fwww.duokan.com%2Fhs%2Fmarket%2Frank_publish%3Ffrom%3Dwrapper&amp;mifb=http%3A%2F%2Fapp.xiaomi.com%2Fdetails%3FappId%3D1108%26back%3Dtrue%26ref%3D%26ref%3Dwrapper%26redirect%3Duniversal&amp;miback=true&amp;miref=wrapper
+            </intent_data>
             <keywords>search_keywords__book_rank</keywords>
         </item>
         <item>
             <id>7</id>
             <title>search_resource_name__fiction_rank</title>
             <intent_action>android.intent.action.VIEW</intent_action>
-            <intent_data>http://www.duokan.com/subtle/event/redirect.html?url=https%3A%2F%2Fwww.duokan.com%2Fphone%2F%23path%3D%2Fhs%2Fmarket%2Frank_original%26from%3Dwrapper&amp;mifb=http%3A%2F%2Fapp.xiaomi.com%2Fdetails%3FappId%3D1108%26back%3Dtrue%26ref%3D%26ref%3Dwrapper%26redirect%3Duniversal&amp;miback=true&amp;miref=wrapper</intent_data>
+            <intent_data>
+                http://www.duokan.com/subtle/event/redirect.html?url=https%3A%2F%2Fwww.duokan.com%2Fphone%2F%23path%3D%2Fhs%2Fmarket%2Frank_original%26from%3Dwrapper&amp;mifb=http%3A%2F%2Fapp.xiaomi.com%2Fdetails%3FappId%3D1108%26back%3Dtrue%26ref%3D%26ref%3Dwrapper%26redirect%3Duniversal&amp;miback=true&amp;miref=wrapper
+            </intent_data>
             <keywords>search_keywords__fiction_rank</keywords>
         </item>
         <item>
             <id>8</id>
             <title>search_resource_name__magazine</title>
             <intent_action>android.intent.action.VIEW</intent_action>
-            <intent_data>http://www.duokan.com/subtle/event/redirect.html?url=https%3A%2F%2Fwww.duokan.com%2Fhs%2Fmarket%2Fsuper_topic%2Fmagazine%3Ffrom%3Dwrapper&amp;mifb=http%3A%2F%2Fapp.xiaomi.com%2Fdetails%3FappId%3D1108%26back%3Dtrue%26ref%3D%26ref%3Dwrapper%26redirect%3Duniversal&amp;miback=true&amp;miref=wrapper</intent_data>
+            <intent_data>
+                http://www.duokan.com/subtle/event/redirect.html?url=https%3A%2F%2Fwww.duokan.com%2Fhs%2Fmarket%2Fsuper_topic%2Fmagazine%3Ffrom%3Dwrapper&amp;mifb=http%3A%2F%2Fapp.xiaomi.com%2Fdetails%3FappId%3D1108%26back%3Dtrue%26ref%3D%26ref%3Dwrapper%26redirect%3Duniversal&amp;miback=true&amp;miref=wrapper
+            </intent_data>
             <keywords>search_keywords__magazine</keywords>
             <description>search_description__magazine</description>
         </item>
@@ -68,14 +75,18 @@
             <id>9</id>
             <title>search_resource_name__book_list</title>
             <intent_action>android.intent.action.VIEW</intent_action>
-            <intent_data>http://www.duokan.com/subtle/event/redirect.html?url=https%3A%2F%2Fwww.duokan.com%2Fhs%2Ffeed%3Ffrom%3Dwrapper&amp;mifb=http%3A%2F%2Fapp.xiaomi.com%2Fdetails%3FappId%3D1108%26back%3Dtrue%26ref%3D%26ref%3Dwrapper%26redirect%3Duniversal&amp;miback=true&amp;miref=wrapper</intent_data>
+            <intent_data>
+                http://www.duokan.com/subtle/event/redirect.html?url=https%3A%2F%2Fwww.duokan.com%2Fhs%2Ffeed%3Ffrom%3Dwrapper&amp;mifb=http%3A%2F%2Fapp.xiaomi.com%2Fdetails%3FappId%3D1108%26back%3Dtrue%26ref%3D%26ref%3Dwrapper%26redirect%3Duniversal&amp;miback=true&amp;miref=wrapper
+            </intent_data>
             <keywords>search_keywords__book_list</keywords>
         </item>
         <item>
             <id>10</id>
             <title>search_resource_name__wish_list</title>
             <intent_action>android.intent.action.VIEW</intent_action>
-            <intent_data>http://www.duokan.com/subtle/event/redirect.html?url=https%3A%2F%2Fwww.duokan.com%2Fhs%2Fuser%2Fwish%3Ffrom%3Dwrapper&amp;mifb=http%3A%2F%2Fapp.xiaomi.com%2Fdetails%3FappId%3D1108%26back%3Dtrue%26ref%3D%26ref%3Dwrapper%26redirect%3Duniversal&amp;miback=true&amp;miref=wrapper</intent_data>
+            <intent_data>
+                http://www.duokan.com/subtle/event/redirect.html?url=https%3A%2F%2Fwww.duokan.com%2Fhs%2Fuser%2Fwish%3Ffrom%3Dwrapper&amp;mifb=http%3A%2F%2Fapp.xiaomi.com%2Fdetails%3FappId%3D1108%26back%3Dtrue%26ref%3D%26ref%3Dwrapper%26redirect%3Duniversal&amp;miback=true&amp;miref=wrapper
+            </intent_data>
             <keywords>search_keywords__wish_list</keywords>
             <description>search_description__wish_list</description>
         </item>

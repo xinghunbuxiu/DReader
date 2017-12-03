@@ -1,3 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.duokan.reader.ui.general.DkLabelView android:gravity="center" android:background="@drawable/personal__comment_tab_view_bg" android:layout_width="fill_parent" android:layout_height="42.0dip" android:layout_marginLeft="1.0px" android:layout_marginRight="1.0px" android:layout_marginBottom="1.0px" style="@style/general__shared__tab_text_style"
-  xmlns:android="http://schemas.android.com/apk/res/android" />
+<com.duokan.reader.ui.general.DkLabelView android:gravity="center"
+    android:background="@drawable/personal__comment_tab_view_bg"
+    android:layout_width="fill_parent"
+    android:layout_height="42.0dip"
+    android:layout_marginLeft="1.0px"
+    android:layout_marginRight="1.0px"
+    android:layout_marginBottom="1.0px"
+    style="@style/general__shared__tab_text_style"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

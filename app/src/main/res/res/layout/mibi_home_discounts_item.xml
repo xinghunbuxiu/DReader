@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.xiaomi.payment.ui.component.HomeDiscountsView android:gravity="center" android:layout_gravity="center_vertical" android:orientation="vertical" android:background="@drawable/mibi_home_grid_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/mibi_home_banner_min_height"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.mipay.common.component.ViewPagerEx android:id="@id/viewpager" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_home_banner_min_height" />
-    <com.xiaomi.payment.ui.component.ViewPagerIndicatorBar android:layout_gravity="bottom|center" android:id="@id/indicatorBar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" />
+<com.xiaomi.payment.ui.component.HomeDiscountsView android:gravity="center"
+    android:layout_gravity="center_vertical" android:orientation="vertical"
+    android:background="@drawable/mibi_home_grid_item_bg" android:layout_width="fill_parent"
+    android:layout_height="wrap_content" android:minHeight="@dimen/mibi_home_banner_min_height"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.mipay.common.component.ViewPagerEx android:id="@id/viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/mibi_home_banner_min_height" />
+    <com.xiaomi.payment.ui.component.ViewPagerIndicatorBar android:layout_gravity="bottom|center"
+        android:id="@id/indicatorBar" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" />
 </com.xiaomi.payment.ui.component.HomeDiscountsView>

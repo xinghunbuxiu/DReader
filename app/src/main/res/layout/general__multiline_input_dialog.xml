@@ -1,11 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:paddingTop="13.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:reader="http://schemas.android.com/apk/res-auto">
-    <RelativeLayout android:id="@id/general__multiline_input_dialog__header" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <com.duokan.reader.ui.general.DkLabelView android:id="@id/general__multiline_input_dialog__cancel" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/general__shared__cancel" android:layout_alignParentLeft="true" android:layout_centerVertical="true" style="@style/general__shared__button_light_29dip_c9c9c9" />
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:id="@id/general__multiline_input_dialog__title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
-        <com.duokan.reader.ui.general.DkLabelView android:id="@id/general__multiline_input_dialog__save" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/general__shared__button_29dip_e9622d" />
+<LinearLayout android:orientation="vertical"
+    android:paddingTop="13.0dip"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@id/general__multiline_input_dialog__header"
+        android:padding="15.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:id="@id/general__multiline_input_dialog__cancel"
+            android:paddingLeft="15.0dip"
+            android:paddingRight="15.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/general__shared__cancel"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            style="@style/general__shared__button_light_29dip_c9c9c9" />
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:textSize="@dimen/general_font__shared__c"
+            android:textColor="@color/general__shared__333333"
+            android:id="@id/general__multiline_input_dialog__title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:id="@id/general__multiline_input_dialog__save"
+            android:paddingLeft="15.0dip"
+            android:paddingRight="15.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            style="@style/general__shared__button_29dip_e9622d" />
     </RelativeLayout>
-    <View android:background="@color/general__shared__bcbcbc" android:layout_width="fill_parent" android:layout_height="1.0px" />
-    <com.duokan.core.ui.DkEditorView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:gravity="center|left|top" android:id="@id/general__multiline_input_dialog__editor" android:background="@android:color/transparent" android:padding="15.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:singleLine="false" android:textCursorDrawable="@null" />
+
+    <View
+        android:background="@color/general__shared__bcbcbc"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px" />
+
+    <com.duokan.core.ui.DkEditorView
+        android:textSize="@dimen/general_font__shared__c"
+        android:textColor="@color/general__shared__333333"
+        android:gravity="center|left|top"
+        android:id="@id/general__multiline_input_dialog__editor"
+        android:background="@android:color/transparent"
+        android:padding="15.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:singleLine="false"
+        android:textCursorDrawable="@null" />
 </LinearLayout>

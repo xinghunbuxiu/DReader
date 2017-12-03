@@ -8,9 +8,11 @@
         <item name="android:paddingRight">@dimen/passport_activator_phone_info_padding_right</item>
     </style>
     <style name="Passport.ActivatorPhoneNum" parent="@style/Passport">
-        <item name="android:layout_marginLeft">@dimen/passport_activator_phone_num_margin_left</item>
+        <item name="android:layout_marginLeft">@dimen/passport_activator_phone_num_margin_left
+        </item>
     </style>
-    <style name="Passport.AreaCodeItemStyle" parent="@style/Passport.Widget.ListView.Item.SingleLine">
+    <style name="Passport.AreaCodeItemStyle"
+        parent="@style/Passport.Widget.ListView.Item.SingleLine">
         <item name="android:paddingLeft">@dimen/passport_list_item_padding_left</item>
     </style>
     <style name="Passport.AreaCodeStyle" parent="@style/Passport.TextAppearance.List.Secondary">
@@ -20,7 +22,8 @@
         <item name="android:layout_gravity">center|right</item>
         <item name="android:paddingRight">@dimen/passport_arrow_right_padding_h</item>
     </style>
-    <style name="Passport.AreaSectionHeaderStyle" parent="@style/Passport.TextAppearance.List.Secondary.Preference">
+    <style name="Passport.AreaSectionHeaderStyle"
+        parent="@style/Passport.TextAppearance.List.Secondary.Preference">
         <item name="android:paddingLeft">@dimen/passport_list_item_padding_left</item>
     </style>
     <style name="Passport.CaptchaImageMarginLeft" parent="@style/Passport.RightLayoutGravity">
@@ -37,10 +40,15 @@
         <item name="android:paddingBottom">@dimen/passport_dialog_title_vertical_padding</item>
     </style>
     <style name="Passport.DialogMessagePaddingH" parent="@style/Passport">
-        <item name="android:paddingLeft">@dimen/passport_progress_dialog_message_horizontal_padding</item>
-        <item name="android:paddingRight">@dimen/passport_progress_dialog_message_horizontal_padding</item>
+        <item name="android:paddingLeft">
+            @dimen/passport_progress_dialog_message_horizontal_padding
+        </item>
+        <item name="android:paddingRight">
+            @dimen/passport_progress_dialog_message_horizontal_padding
+        </item>
     </style>
-    <style name="Passport.DialogMessageStyle" parent="@style/Passport.TextAppearance.Medium.Dialog.Light">
+    <style name="Passport.DialogMessageStyle"
+        parent="@style/Passport.TextAppearance.Medium.Dialog.Light">
         <item name="android:paddingLeft">@dimen/passport_dialog_message_horizontal_padding</item>
         <item name="android:paddingRight">@dimen/passport_dialog_message_horizontal_padding</item>
     </style>
@@ -49,8 +57,10 @@
         <item name="android:paddingRight">@dimen/passport_dialog_title_horizontal_padding</item>
     </style>
     <style name="Passport.DividerHMargin" parent="@style/Passport">
-        <item name="android:layout_marginLeft">@dimen/passport_section_header_divider_margin_h</item>
-        <item name="android:layout_marginRight">@dimen/passport_section_header_divider_margin_h</item>
+        <item name="android:layout_marginLeft">@dimen/passport_section_header_divider_margin_h
+        </item>
+        <item name="android:layout_marginRight">@dimen/passport_section_header_divider_margin_h
+        </item>
     </style>
     <style name="Passport.EditTextStyle" parent="@style/Passport.TextAppearance.Medium">
         <item name="android:textColorHint">@color/passport_hint_text_color_black</item>
@@ -77,41 +87,62 @@
         <item name="android:paddingBottom">@dimen/passport_login_reg_padding_bottom</item>
     </style>
     <style name="Passport.MiuiProvisionActionBarTitleStyle" parent="@style/Passport">
-        <item name="android:textSize">@dimen/passport_miui_provision_action_bar_title_text_size</item>
+        <item name="android:textSize">@dimen/passport_miui_provision_action_bar_title_text_size
+        </item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@android:color/black</item>
-        <item name="android:layout_marginLeft">@dimen/passport_miui_provision_action_bar_title_margin_left</item>
-        <item name="android:layout_marginTop">@dimen/passport_miui_provision_action_bar_title_margin_top</item>
+        <item name="android:layout_marginLeft">
+            @dimen/passport_miui_provision_action_bar_title_margin_left
+        </item>
+        <item name="android:layout_marginTop">
+            @dimen/passport_miui_provision_action_bar_title_margin_top
+        </item>
     </style>
     <style name="Passport.MiuiProvisionActivatorPhoneNum" parent="@style/Passport">
-        <item name="android:layout_marginLeft">@dimen/passport_miui_provision_activator_phone_num_margin_left</item>
+        <item name="android:layout_marginLeft">
+            @dimen/passport_miui_provision_activator_phone_num_margin_left
+        </item>
     </style>
     <style name="Passport.MiuiProvisionEditViewStyle" parent="@style/Passport.EditTextStyle">
         <item name="android:textSize">@dimen/passport_title_text_size</item>
-        <item name="android:textColorHint">@color/passport_miui_provision_edit_text_hint_color</item>
+        <item name="android:textColorHint">@color/passport_miui_provision_edit_text_hint_color
+        </item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:background">@null</item>
-        <item name="android:paddingRight">@dimen/passport_miui_provision_edit_text_padding_right</item>
+        <item name="android:paddingRight">@dimen/passport_miui_provision_edit_text_padding_right
+        </item>
         <item name="android:layout_height">@dimen/passport_miui_provision_edit_text_height</item>
     </style>
     <style name="Passport.MiuiProvisionLoginRegBottomPanelHorizontalMarin" parent="@style/Passport">
-        <item name="android:layout_marginLeft">@dimen/passport_miui_provision_login_reg_bottom_panel_margin_h</item>
-        <item name="android:layout_marginRight">@dimen/passport_miui_provision_login_reg_bottom_panel_margin_h</item>
+        <item name="android:layout_marginLeft">
+            @dimen/passport_miui_provision_login_reg_bottom_panel_margin_h
+        </item>
+        <item name="android:layout_marginRight">
+            @dimen/passport_miui_provision_login_reg_bottom_panel_margin_h
+        </item>
         <item name="android:layout_marginBottom">@dimen/passport_miui_provision_bottom_margin</item>
     </style>
     <style name="Passport.MiuiProvisionLoginRegHorizontalMargin" parent="@style/Passport">
-        <item name="android:layout_marginLeft">@dimen/passport_miui_provision_login_reg_margin_h</item>
-        <item name="android:layout_marginRight">@dimen/passport_miui_provision_login_reg_margin_h</item>
+        <item name="android:layout_marginLeft">@dimen/passport_miui_provision_login_reg_margin_h
+        </item>
+        <item name="android:layout_marginRight">@dimen/passport_miui_provision_login_reg_margin_h
+        </item>
     </style>
-    <style name="Passport.MiuiProvisionTextViewHasHorizontalMarginStyle" parent="@style/Passport.TextAppearance.Medium">
+    <style name="Passport.MiuiProvisionTextViewHasHorizontalMarginStyle"
+        parent="@style/Passport.TextAppearance.Medium">
         <item name="android:textColor">@color/passport_text_color_alpha_black_40per</item>
-        <item name="android:layout_marginLeft">@dimen/passport_miui_provision_login_reg_text_view_margin_h</item>
-        <item name="android:layout_marginRight">@dimen/passport_miui_provision_login_reg_text_view_margin_h</item>
+        <item name="android:layout_marginLeft">
+            @dimen/passport_miui_provision_login_reg_text_view_margin_h
+        </item>
+        <item name="android:layout_marginRight">
+            @dimen/passport_miui_provision_login_reg_text_view_margin_h
+        </item>
     </style>
     <style name="Passport.ProgressDialogLayoutPadding" parent="@style/Passport">
         <item name="android:paddingLeft">27.299988dip</item>
     </style>
-    <style name="Passport.QuickLoginAccountNameStyle" parent="@style/Passport.TextAppearance.Medium">
+    <style name="Passport.QuickLoginAccountNameStyle"
+        parent="@style/Passport.TextAppearance.Medium">
         <item name="android:layout_marginLeft">5.0dip</item>
         <item name="android:layout_alignParentLeft">true</item>
     </style>
@@ -120,7 +151,8 @@
         <item name="android:layout_marginRight">@dimen/passport_dialog_margin_h</item>
     </style>
     <style name="Passport.RegisterNewAccount" parent="@style/Passport.LoginRegGuideTextStyle">
-        <item name="android:layout_marginLeft">@dimen/passport_register_new_account_margin_left</item>
+        <item name="android:layout_marginLeft">@dimen/passport_register_new_account_margin_left
+        </item>
     </style>
     <style name="Passport.RightLayoutGravity" parent="@style/Passport">
         <item name="android:layout_gravity">center|right</item>
@@ -131,7 +163,8 @@
         <item name="android:paddingRight">@dimen/passport_arrow_right_padding_h</item>
     </style>
     <style name="Passport.SyncFailedWarning" parent="@style/Passport.TextAppearance.Medium">
-        <item name="android:layout_marginLeft">@dimen/passport_sync_failed_warning_margin_left</item>
+        <item name="android:layout_marginLeft">@dimen/passport_sync_failed_warning_margin_left
+        </item>
     </style>
     <style name="Passport.TextAppearance.ProgressDialog" parent="@style/Passport.TextAppearance">
         <item name="android:textSize">@dimen/passport_button_text_size</item>
@@ -157,7 +190,8 @@
         <item name="android:height">?android:actionBarSize</item>
         <item name="android:displayOptions">homeAsUp|showTitle</item>
         <item name="android:titleTextStyle">@style/Passport.TextAppearance.WindowTitle</item>
-        <item name="android:subtitleTextStyle">@style/Passport.TextAppearance.WindowTitle.Subtitle</item>
+        <item name="android:subtitleTextStyle">@style/Passport.TextAppearance.WindowTitle.Subtitle
+        </item>
         <item name="android:itemPadding">0.0dip</item>
     </style>
     <style name="Passport.Widget.EditText" parent="@android:style/Widget.EditText">
@@ -175,7 +209,8 @@
         <item name="android:layout_marginLeft">@dimen/passport_content_horizontal_margin</item>
         <item name="android:layout_marginRight">@dimen/passport_content_horizontal_margin</item>
     </style>
-    <style name="V6.Widget.CompoundButton.CheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
+    <style name="V6.Widget.CompoundButton.CheckBox"
+        parent="@android:style/Widget.CompoundButton.CheckBox">
         <item name="android:textSize">@dimen/v6_secondary_text_size</item>
         <item name="android:textColor">?v6_checkableButtonTextColorSingle</item>
         <item name="android:background">@null</item>
@@ -216,7 +251,9 @@
     </style>
     <style name="Mibi.Giftcard.Item.MarketGiftcard" parent="@style/Mibi.Giftcard.Item">
         <item name="android:textSize">@dimen/mibi_text_size_giftcard_item_market_giftcard</item>
-        <item name="android:paddingTop">@dimen/mibi_text_size_giftcard_item_market_giftcard_name_top_padding</item>
+        <item name="android:paddingTop">
+            @dimen/mibi_text_size_giftcard_item_market_giftcard_name_top_padding
+        </item>
     </style>
     <style name="Mibi.Giftcard.Item.Unit" parent="@style/Mibi.Giftcard.Item">
         <item name="android:textSize">@dimen/mibi_text_size_giftcard_item_unit</item>
@@ -255,7 +292,8 @@
         <item name="android:textSize">@dimen/mibi_text_size_grid_label</item>
         <item name="android:textColor">@color/mibi_text_color_grid_label</item>
     </style>
-    <style name="Mibi.TextAppearance.GridItem.SubLabel" parent="@style/Mibi.TextAppearance.GridItem">
+    <style name="Mibi.TextAppearance.GridItem.SubLabel"
+        parent="@style/Mibi.TextAppearance.GridItem">
         <item name="android:textSize">@dimen/mibi_text_size_grid_sublabel</item>
         <item name="android:textColor">@color/mibi_text_color_grid_sublabel</item>
     </style>
@@ -267,10 +305,13 @@
         <item name="android:textSize">@dimen/mibi_text_size_link</item>
         <item name="android:textColor">@color/mibi_text_color_black</item>
     </style>
-    <style name="Mibi.TextAppearance.List.Category" parent="@style/V6.TextAppearance.PreferenceCategory" />
+    <style name="Mibi.TextAppearance.List.Category"
+        parent="@style/V6.TextAppearance.PreferenceCategory" />
     <style name="Mibi.TextAppearance.List.Primary" parent="@style/V6.TextAppearance.List.Primary" />
-    <style name="Mibi.TextAppearance.List.Secondary" parent="@style/V6.TextAppearance.List.Secondary" />
-    <style name="Mibi.TextAppearance.List.Secondary.Preference" parent="@style/V6.TextAppearance.List.Secondary.Preference" />
+    <style name="Mibi.TextAppearance.List.Secondary"
+        parent="@style/V6.TextAppearance.List.Secondary" />
+    <style name="Mibi.TextAppearance.List.Secondary.Preference"
+        parent="@style/V6.TextAppearance.List.Secondary.Preference" />
     <style name="Mibi.TextAppearance.OrderInfo" parent="@style/Mibi.TextAppearance">
         <item name="android:textSize">@dimen/mibi_text_size_medium</item>
         <item name="android:textColor">@color/mibi_text_color_black</item>
@@ -280,14 +321,18 @@
         <item name="android:textSize">@dimen/mibi_text_size_payment_general</item>
         <item name="android:textColor">@color/mibi_text_color_payment_general</item>
     </style>
-    <style name="Mibi.TextAppearance.Payment.General.Gray" parent="@style/Mibi.TextAppearance.Payment.General">
+    <style name="Mibi.TextAppearance.Payment.General.Gray"
+        parent="@style/Mibi.TextAppearance.Payment.General">
         <item name="android:textColor">@color/mibi_text_color_payment_gray</item>
     </style>
-    <style name="Mibi.TextAppearance.Payment.General.Red" parent="@style/Mibi.TextAppearance.Payment.General">
+    <style name="Mibi.TextAppearance.Payment.General.Red"
+        parent="@style/Mibi.TextAppearance.Payment.General">
         <item name="android:textColor">@color/mibi_text_color_payment_red</item>
     </style>
-    <style name="Mibi.TextAppearance.PreferenceList" parent="@style/V6.TextAppearance.PreferenceList" />
-    <style name="Mibi.TextAppearance.TitleBar.Title" parent="@style/V6.TextAppearance.Widget.ActionMode.Title" />
+    <style name="Mibi.TextAppearance.PreferenceList"
+        parent="@style/V6.TextAppearance.PreferenceList" />
+    <style name="Mibi.TextAppearance.TitleBar.Title"
+        parent="@style/V6.TextAppearance.Widget.ActionMode.Title" />
     <style name="Mibi.Theme.AlertDialog" parent="@style/V6.Theme.Light.Dialog.Alert">
         <item name="android:windowCloseOnTouchOutside">false</item>
     </style>
@@ -306,7 +351,8 @@
         <item name="android:actionBarStyle">@style/Mibi.Widget.ActionBar</item>
     </style>
     <style name="Mibi.Theme.Main.TranslucentStatus" parent="@style/Mibi.Theme.Main" />
-    <style name="Mibi.Theme.Main.TranslucentStatus.Light" parent="@style/Mibi.Theme.Main.TranslucentStatus">
+    <style name="Mibi.Theme.Main.TranslucentStatus.Light"
+        parent="@style/Mibi.Theme.Main.TranslucentStatus">
         <item name="android:actionBarStyle">@style/Mibi.Widget.ActionBar.Transparent.Light</item>
         <item name="android:homeAsUpIndicator">@drawable/mibi_action_bar_back_light</item>
         <item name="v6_windowActionBarOverlay">true</item>
@@ -333,7 +379,8 @@
         <item name="android:displayOptions">homeAsUp|showTitle</item>
     </style>
     <style name="Mibi.Widget.ActionBar.Transparent" parent="@style/Mibi.Widget.ActionBar" />
-    <style name="Mibi.Widget.ActionBar.Transparent.Light" parent="@style/Mibi.Widget.ActionBar.Transparent">
+    <style name="Mibi.Widget.ActionBar.Transparent.Light"
+        parent="@style/Mibi.Widget.ActionBar.Transparent">
         <item name="android:background">@color/v6_transparent</item>
         <item name="android:titleTextStyle">@style/Mibi.TextAppearance.ActionBar.White</item>
     </style>
@@ -358,12 +405,15 @@
         <item name="android:background">@drawable/mibi_grid_view_item_bg_light</item>
         <item name="android:minHeight">@dimen/mibi_grid_item_min_height</item>
     </style>
-    <style name="Mibi.Widget.ListView.Item.DoubleLine" parent="@style/V6.Widget.ListView.Item.DoubleLine" />
-    <style name="Mibi.Widget.ListView.Item.SingleLine" parent="@style/V6.Widget.ListView.Item.SingleLine" />
+    <style name="Mibi.Widget.ListView.Item.DoubleLine"
+        parent="@style/V6.Widget.ListView.Item.DoubleLine" />
+    <style name="Mibi.Widget.ListView.Item.SingleLine"
+        parent="@style/V6.Widget.ListView.Item.SingleLine" />
     <style name="Mibi.Widget.ProgressBar" parent="@style/V6.Widget.ProgressBar" />
     <style name="Mibi.Widget.ProgressBar.Dark" parent="@style/Mibi.Widget.ProgressBar">
         <item name="android:background">@drawable/mibi_progressbar_indeterminate_bg_dark</item>
-        <item name="android:indeterminateDrawable">@drawable/mibi_progressbar_indeterminate_dark</item>
+        <item name="android:indeterminateDrawable">@drawable/mibi_progressbar_indeterminate_dark
+        </item>
     </style>
     <style name="NoteDialog" parent="@android:style/Theme.Dialog">
         <item name="android:backgroundDimAmount">0.0</item>
@@ -377,7 +427,8 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
     <style name="Passport" />
-    <style name="Passport.ActivatorPhoneLicenseStyle" parent="@style/Passport.Widget.CompoundButton.CheckBox" />
+    <style name="Passport.ActivatorPhoneLicenseStyle"
+        parent="@style/Passport.Widget.CompoundButton.CheckBox" />
     <style name="Passport.AlertDialog" parent="@style/Passport">
         <item name="android:fullDark">@android:color/transparent</item>
         <item name="android:topDark">@android:color/transparent</item>
@@ -438,9 +489,12 @@
         <item name="android:layout_gravity">center_horizontal</item>
         <item name="android:layout_width">@dimen/passport_miui_provision_button_width</item>
     </style>
-    <style name="Passport.MiuiProvisionBlueButtonHasHorizontalMarginStyle" parent="@style/Passport.BlueButton">
-        <item name="android:layout_marginLeft">@dimen/passport_miui_provision_login_reg_margin_h</item>
-        <item name="android:layout_marginRight">@dimen/passport_miui_provision_login_reg_margin_h</item>
+    <style name="Passport.MiuiProvisionBlueButtonHasHorizontalMarginStyle"
+        parent="@style/Passport.BlueButton">
+        <item name="android:layout_marginLeft">@dimen/passport_miui_provision_login_reg_margin_h
+        </item>
+        <item name="android:layout_marginRight">@dimen/passport_miui_provision_login_reg_margin_h
+        </item>
     </style>
     <style name="Passport.MiuiProvisionButtonNormal" parent="@style/Passport.ButtonNormal">
         <item name="android:layout_gravity">center_horizontal</item>
@@ -454,14 +508,17 @@
         <item name="android:textColorHint">?android:textColorHint</item>
         <item name="android:textColorLink">?android:textColorLink</item>
     </style>
-    <style name="Passport.TextAppearance.AlertDialogListItem" parent="@style/Passport.TextAppearance">
+    <style name="Passport.TextAppearance.AlertDialogListItem"
+        parent="@style/Passport.TextAppearance">
         <item name="android:textSize">@dimen/passport_button_text_size</item>
         <item name="android:textColor">?android:textColorAlertDialogListItem</item>
     </style>
-    <style name="Passport.TextAppearance.AlertDialogListItem.SingleChoice" parent="@style/Passport.TextAppearance.AlertDialogListItem">
+    <style name="Passport.TextAppearance.AlertDialogListItem.SingleChoice"
+        parent="@style/Passport.TextAppearance.AlertDialogListItem">
         <item name="android:textColor">@color/passport_dialog_list_text_light_single_choice</item>
     </style>
-    <style name="Passport.TextAppearance.DialogTitle" parent="@style/Passport.TextAppearance.WindowTitle">
+    <style name="Passport.TextAppearance.DialogTitle"
+        parent="@style/Passport.TextAppearance.WindowTitle">
         <item name="android:textSize">@dimen/passport_normal_text_size</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -474,7 +531,8 @@
     <style name="Passport.TextAppearance.Large" parent="@style/Passport.TextAppearance">
         <item name="android:textSize">@dimen/passport_normal_text_size</item>
     </style>
-    <style name="Passport.TextAppearance.Large.Inverse" parent="@style/Passport.TextAppearance.Large">
+    <style name="Passport.TextAppearance.Large.Inverse"
+        parent="@style/Passport.TextAppearance.Large">
         <item name="android:textColor">@color/passport_normal_text_dark</item>
         <item name="android:textColorHighlight">?android:textColorHighlightInverse</item>
         <item name="android:textColorHint">?android:textColorHintInverse</item>
@@ -485,23 +543,29 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/passport_list_text_light</item>
     </style>
-    <style name="Passport.TextAppearance.List.Primary" parent="@style/Passport.TextAppearance.List" />
-    <style name="Passport.TextAppearance.List.Secondary" parent="@style/Passport.TextAppearance.List">
+    <style name="Passport.TextAppearance.List.Primary"
+        parent="@style/Passport.TextAppearance.List" />
+    <style name="Passport.TextAppearance.List.Secondary"
+        parent="@style/Passport.TextAppearance.List">
         <item name="android:textSize">@dimen/passport_secondary_text_size</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/passport_list_secondary_text_light</item>
     </style>
-    <style name="Passport.TextAppearance.List.Secondary.Preference" parent="@style/Passport.TextAppearance.List.Secondary">
+    <style name="Passport.TextAppearance.List.Secondary.Preference"
+        parent="@style/Passport.TextAppearance.List.Secondary">
         <item name="android:textColor">@color/passport_preference_secondary_text_light</item>
     </style>
     <style name="Passport.TextAppearance.Medium" parent="@style/Passport.TextAppearance">
         <item name="android:textSize">@dimen/passport_secondary_text_size</item>
     </style>
-    <style name="Passport.TextAppearance.Medium.Dialog" parent="@style/Passport.TextAppearance.Medium" />
-    <style name="Passport.TextAppearance.Medium.Dialog.Light" parent="@style/Passport.TextAppearance.Medium.Dialog">
+    <style name="Passport.TextAppearance.Medium.Dialog"
+        parent="@style/Passport.TextAppearance.Medium" />
+    <style name="Passport.TextAppearance.Medium.Dialog.Light"
+        parent="@style/Passport.TextAppearance.Medium.Dialog">
         <item name="android:textColor">@color/passport_dialog_message_text_color_light</item>
     </style>
-    <style name="Passport.TextAppearance.Medium.Inverse" parent="@style/Passport.TextAppearance.Medium">
+    <style name="Passport.TextAppearance.Medium.Inverse"
+        parent="@style/Passport.TextAppearance.Medium">
         <item name="android:textColor">@color/passport_normal_text_dark</item>
         <item name="android:textColorHighlight">?android:textColorHighlightInverse</item>
         <item name="android:textColorHint">?android:textColorHintInverse</item>
@@ -515,19 +579,22 @@
     <style name="Passport.TextAppearance.Small" parent="@style/Passport.TextAppearance">
         <item name="android:textSize">@dimen/passport_small_text_size</item>
     </style>
-    <style name="Passport.TextAppearance.Small.Inverse" parent="@style/Passport.TextAppearance.Small">
+    <style name="Passport.TextAppearance.Small.Inverse"
+        parent="@style/Passport.TextAppearance.Small">
         <item name="android:textColor">@color/passport_normal_text_dark</item>
         <item name="android:textColorHighlight">?android:textColorHighlightInverse</item>
         <item name="android:textColorHint">?android:textColorHintInverse</item>
         <item name="android:textColorLink">?android:textColorLinkInverse</item>
     </style>
     <style name="Passport.TextAppearance.Widget" parent="@style/Passport.TextAppearance" />
-    <style name="Passport.TextAppearance.Widget.Button" parent="@style/Passport.TextAppearance.Widget">
+    <style name="Passport.TextAppearance.Widget.Button"
+        parent="@style/Passport.TextAppearance.Widget">
         <item name="android:textSize">@dimen/passport_button_text_size</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/passport_button_text_light</item>
     </style>
-    <style name="Passport.TextAppearance.Widget.EditText" parent="@style/Passport.TextAppearance.Widget">
+    <style name="Passport.TextAppearance.Widget.EditText"
+        parent="@style/Passport.TextAppearance.Widget">
         <item name="android:textSize">@dimen/passport_secondary_text_size</item>
         <item name="android:textColor">?android:editTextColor</item>
         <item name="android:textColorHint">@color/passport_hint_edit_text_color_light</item>
@@ -537,7 +604,8 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/passport_action_bar_title_text_light</item>
     </style>
-    <style name="Passport.TextAppearance.WindowTitle.Subtitle" parent="@style/Passport.TextAppearance.WindowTitle">
+    <style name="Passport.TextAppearance.WindowTitle.Subtitle"
+        parent="@style/Passport.TextAppearance.WindowTitle">
         <item name="android:textSize">@dimen/passport_secondary_text_size</item>
         <item name="android:textStyle">normal</item>
     </style>
@@ -558,9 +626,15 @@
         <item name="android:textAppearanceLarge">@style/Passport.TextAppearance.Large</item>
         <item name="android:textAppearanceMedium">@style/Passport.TextAppearance.Medium</item>
         <item name="android:textAppearanceSmall">@style/Passport.TextAppearance.Small</item>
-        <item name="android:textAppearanceLargeInverse">@style/Passport.TextAppearance.Large.Inverse</item>
-        <item name="android:textAppearanceMediumInverse">@style/Passport.TextAppearance.Medium.Inverse</item>
-        <item name="android:textAppearanceSmallInverse">@style/Passport.TextAppearance.Small.Inverse</item>
+        <item name="android:textAppearanceLargeInverse">
+            @style/Passport.TextAppearance.Large.Inverse
+        </item>
+        <item name="android:textAppearanceMediumInverse">
+            @style/Passport.TextAppearance.Medium.Inverse
+        </item>
+        <item name="android:textAppearanceSmallInverse">
+            @style/Passport.TextAppearance.Small.Inverse
+        </item>
         <item name="android:buttonStyle">@style/Passport.Widget.Button</item>
         <item name="android:windowBackground">@drawable/passport_window_bg_light</item>
         <item name="android:windowContentOverlay">@null</item>
@@ -568,9 +642,12 @@
         <item name="android:checkboxStyle">@style/Passport.Widget.CompoundButton.CheckBox</item>
         <item name="android:editTextStyle">@style/Passport.Widget.EditText</item>
         <item name="android:progressBarStyle">@style/Passport.Widget.ProgressBar</item>
-        <item name="android:colorForegroundInverse">@color/passport_bright_foreground_light_inverse</item>
+        <item name="android:colorForegroundInverse">
+            @color/passport_bright_foreground_light_inverse
+        </item>
         <item name="android:listDivider">@null</item>
-        <item name="android:listChoiceIndicatorMultiple">@drawable/passport_btn_checkbox_light</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/passport_btn_checkbox_light
+        </item>
         <item name="android:colorBackgroundCacheHint">?android:colorBackground</item>
         <item name="android:windowActionBar">true</item>
         <item name="android:actionBarStyle">@style/Passport.Widget.ActionBar</item>
@@ -592,7 +669,9 @@
     </style>
     <style name="Passport.Theme.Light" parent="@style/Passport.Theme" />
     <style name="Passport.Theme.Light.Dialog" parent="@style/Passport.Theme.Light">
-        <item name="android:textAppearanceMedium">@style/Passport.TextAppearance.Medium.Dialog.Light</item>
+        <item name="android:textAppearanceMedium">
+            @style/Passport.TextAppearance.Medium.Dialog.Light
+        </item>
         <item name="android:windowBackground">@drawable/passport_dialog_bg_light</item>
         <item name="android:windowFrame">@null</item>
         <item name="android:windowNoTitle">true</item>
@@ -602,15 +681,19 @@
         <item name="android:windowAnimationStyle">@style/Passport.Animation.Dialog</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowSoftInputMode">adjustPan</item>
-        <item name="android:actionModeBackground">@drawable/passport_action_mode_bg_dialog_light</item>
+        <item name="android:actionModeBackground">@drawable/passport_action_mode_bg_dialog_light
+        </item>
         <item name="android:windowCloseOnTouchOutside">true</item>
-        <item name="android:actionModeSplitBackground">@drawable/passport_action_mode_split_bg_dialog_light</item>
+        <item name="android:actionModeSplitBackground">
+            @drawable/passport_action_mode_split_bg_dialog_light
+        </item>
     </style>
     <style name="Passport.Theme.Light.Dialog.Alert" parent="@style/Passport.Theme.Light.Dialog">
         <item name="android:windowMinWidthMajor">@dimen/passport_dialog_min_width_major</item>
         <item name="android:windowMinWidthMinor">@dimen/passport_dialog_min_width_minor</item>
     </style>
-    <style name="Passport.Theme.Light.Dialog.FixedSize" parent="@style/Passport.Theme.Light.Dialog" />
+    <style name="Passport.Theme.Light.Dialog.FixedSize"
+        parent="@style/Passport.Theme.Light.Dialog" />
     <style name="Passport.Theme.Light.Dialog.NoTitle" parent="@style/Passport.Theme.Light.Dialog">
         <item name="android:windowActionBar">false</item>
     </style>
@@ -633,7 +716,8 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:singleLine">true</item>
     </style>
-    <style name="Passport.Widget.Button.Dialog.Default" parent="@style/Passport.Widget.Button.Dialog">
+    <style name="Passport.Widget.Button.Dialog.Default"
+        parent="@style/Passport.Widget.Button.Dialog">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/passport_button_text_color_light_guide</item>
     </style>
@@ -649,7 +733,8 @@
         <item name="android:divider">@null</item>
         <item name="android:dividerPadding">0.0dip</item>
     </style>
-    <style name="Passport.Widget.CompoundButton.CheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
+    <style name="Passport.Widget.CompoundButton.CheckBox"
+        parent="@android:style/Widget.CompoundButton.CheckBox">
         <item name="android:textSize">@dimen/passport_secondary_text_size</item>
         <item name="android:textColor">@color/passport_checkable_btn_text_color_stable_light</item>
         <item name="android:background">@null</item>
@@ -663,7 +748,8 @@
         <item name="android:textColor">@color/passport_dialog_title_text_color</item>
         <item name="android:gravity">center</item>
     </style>
-    <style name="Passport.Widget.ListView.Item.SingleLine" parent="@style/Passport.Widget.ListView.Item">
+    <style name="Passport.Widget.ListView.Item.SingleLine"
+        parent="@style/Passport.Widget.ListView.Item">
         <item name="android:textAppearance">@style/Passport.TextAppearance.List</item>
         <item name="android:layout_height">@dimen/passport_list_preferred_item_height_small</item>
         <item name="android:minHeight">@dimen/passport_list_preferred_item_height_small</item>
@@ -673,7 +759,9 @@
         <item name="android:background">@drawable/passport_progressbar_indeterminate_bg_light</item>
         <item name="android:maxWidth">@dimen/passport_progressbar_size</item>
         <item name="android:maxHeight">@dimen/passport_progressbar_size</item>
-        <item name="android:indeterminateDrawable">@drawable/passport_progressbar_indeterminate_light</item>
+        <item name="android:indeterminateDrawable">
+            @drawable/passport_progressbar_indeterminate_light
+        </item>
         <item name="android:minWidth">@dimen/passport_progressbar_size</item>
         <item name="android:minHeight">@dimen/passport_progressbar_size</item>
     </style>
@@ -730,10 +818,12 @@
         <item name="android:positiveButtonText">@android:string/ok</item>
         <item name="android:negativeButtonText">@android:string/cancel</item>
     </style>
-    <style name="V6.Preference.DialogPreference.EditTextPreference" parent="@style/V6.Preference.DialogPreference">
+    <style name="V6.Preference.DialogPreference.EditTextPreference"
+        parent="@style/V6.Preference.DialogPreference">
         <item name="android:dialogLayout">@layout/v6_preference_dialog_edittext</item>
     </style>
-    <style name="V6.Preference.DialogPreference.YesNoPreference" parent="@style/V6.Preference.DialogPreference">
+    <style name="V6.Preference.DialogPreference.YesNoPreference"
+        parent="@style/V6.Preference.DialogPreference">
         <item name="android:positiveButtonText">@android:string/yes</item>
         <item name="android:negativeButtonText">@android:string/no</item>
     </style>
@@ -757,7 +847,8 @@
         <item name="android:textColorHint">?android:textColorHint</item>
         <item name="android:textColorLink">?android:textColorLink</item>
     </style>
-    <style name="V6.TextAppearance.ActionBar.TabShowTitle" parent="@style/V6.Widget.ActionBar.TabText">
+    <style name="V6.TextAppearance.ActionBar.TabShowTitle"
+        parent="@style/V6.Widget.ActionBar.TabText">
         <item name="android:textSize">@dimen/v6_tab_bar_text_size</item>
         <item name="android:textStyle">normal</item>
     </style>
@@ -765,7 +856,8 @@
         <item name="android:textSize">@dimen/v6_normal_text_size</item>
         <item name="android:textColor">?android:textColorAlertDialogListItem</item>
     </style>
-    <style name="V6.TextAppearance.AlertDialogListItem.SingleChoice" parent="@style/V6.TextAppearance.AlertDialogListItem">
+    <style name="V6.TextAppearance.AlertDialogListItem.SingleChoice"
+        parent="@style/V6.TextAppearance.AlertDialogListItem">
         <item name="android:textColor">@color/v6_dialog_list_text_light_single_choice</item>
     </style>
     <style name="V6.TextAppearance.BlankPage" parent="@style/V6.TextAppearance">
@@ -785,7 +877,8 @@
         <item name="android:textSize">@dimen/v6_normal_text_size</item>
         <item name="android:textColor">?android:textColorAlertDialogListItem</item>
     </style>
-    <style name="V6.TextAppearance.DropDownPopupListItem.SingleChoice" parent="@style/V6.TextAppearance.DropDownPopupListItem">
+    <style name="V6.TextAppearance.DropDownPopupListItem.SingleChoice"
+        parent="@style/V6.TextAppearance.DropDownPopupListItem">
         <item name="android:textColor">@color/v6_dropdown_popup_list_text_light</item>
     </style>
     <style name="V6.TextAppearance.EditItemLabel" parent="@style/V6.TextAppearance">
@@ -830,14 +923,16 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">?v6_textColorListSecondary</item>
     </style>
-    <style name="V6.TextAppearance.List.Secondary.Preference" parent="@style/V6.TextAppearance.List.Secondary">
+    <style name="V6.TextAppearance.List.Secondary.Preference"
+        parent="@style/V6.TextAppearance.List.Secondary">
         <item name="android:textColor">?v6_preferenceSecondaryTextColor</item>
     </style>
     <style name="V6.TextAppearance.Medium" parent="@style/V6.TextAppearance">
         <item name="android:textSize">@dimen/v6_secondary_text_size</item>
     </style>
     <style name="V6.TextAppearance.Medium.Dialog" parent="@style/V6.TextAppearance.Medium" />
-    <style name="V6.TextAppearance.Medium.Dialog.Light" parent="@style/V6.TextAppearance.Medium.Dialog">
+    <style name="V6.TextAppearance.Medium.Dialog.Light"
+        parent="@style/V6.TextAppearance.Medium.Dialog">
         <item name="android:textColor">@color/v6_dialog_message_text_color_light</item>
     </style>
     <style name="V6.TextAppearance.Medium.Inverse" parent="@style/V6.TextAppearance.Medium">
@@ -849,7 +944,8 @@
     <style name="V6.TextAppearance.Medium.MenuList" parent="@style/V6.TextAppearance.Medium">
         <item name="android:textColor">?v6_textColorMenuListItem</item>
     </style>
-    <style name="V6.TextAppearance.Medium.MenuList.Edit" parent="@style/V6.TextAppearance.Medium.MenuList">
+    <style name="V6.TextAppearance.Medium.MenuList.Edit"
+        parent="@style/V6.TextAppearance.Medium.MenuList">
         <item name="android:textColor">?v6_textColorEditMenuListItem</item>
     </style>
     <style name="V6.TextAppearance.Medium.SpinnerList" parent="@style/V6.TextAppearance.Medium">
@@ -879,7 +975,8 @@
     <style name="V6.TextAppearance.Small.MenuList" parent="@style/V6.TextAppearance.Small">
         <item name="android:textColor">?v6_textColorMenuListItem</item>
     </style>
-    <style name="V6.TextAppearance.Small.MenuList.Edit" parent="@style/V6.TextAppearance.Small.MenuList">
+    <style name="V6.TextAppearance.Small.MenuList.Edit"
+        parent="@style/V6.TextAppearance.Small.MenuList">
         <item name="android:textColor">?v6_textColorEditMenuListItem</item>
     </style>
     <style name="V6.TextAppearance.Widget" parent="@style/V6.TextAppearance" />
@@ -891,15 +988,18 @@
         <item name="android:textSize">@dimen/v6_normal_text_size</item>
         <item name="android:textColor">?android:textColorSecondary</item>
     </style>
-    <style name="V6.TextAppearance.Widget.ActionMode.Button" parent="@style/V6.TextAppearance.Widget.ActionMode">
+    <style name="V6.TextAppearance.Widget.ActionMode.Button"
+        parent="@style/V6.TextAppearance.Widget.ActionMode">
         <item name="android:textSize">@dimen/v6_small_text_size</item>
         <item name="android:textColor">@color/v6_action_mode_button_text_light</item>
     </style>
-    <style name="V6.TextAppearance.Widget.ActionMode.Title" parent="@style/V6.TextAppearance.Widget.ActionMode">
+    <style name="V6.TextAppearance.Widget.ActionMode.Title"
+        parent="@style/V6.TextAppearance.Widget.ActionMode">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">?v6_actionModeTitleColor</item>
     </style>
-    <style name="V6.TextAppearance.Widget.ActionMode.Title.Button" parent="@style/V6.TextAppearance.Widget.ActionMode.Title">
+    <style name="V6.TextAppearance.Widget.ActionMode.Title.Button"
+        parent="@style/V6.TextAppearance.Widget.ActionMode.Title">
         <item name="android:textSize">@dimen/v6_button_text_size</item>
     </style>
     <style name="V6.TextAppearance.Widget.Button" parent="@style/V6.TextAppearance.Widget">
@@ -912,7 +1012,8 @@
         <item name="android:textColor">?android:editTextColor</item>
         <item name="android:textColorHint">?v6_editTextColorHint</item>
     </style>
-    <style name="V6.TextAppearance.Widget.EditText.Search" parent="@style/V6.TextAppearance.Widget.EditText">
+    <style name="V6.TextAppearance.Widget.EditText.Search"
+        parent="@style/V6.TextAppearance.Widget.EditText">
         <item name="android:textColorHint">?v6_searchEditTextHintColor</item>
     </style>
     <style name="V6.TextAppearance.Widget.List" parent="@style/V6.TextAppearance.Widget">
@@ -920,8 +1021,10 @@
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">?v6_textColorList</item>
     </style>
-    <style name="V6.TextAppearance.Widget.List.Primary" parent="@style/V6.TextAppearance.Widget.List" />
-    <style name="V6.TextAppearance.Widget.List.Secondary" parent="@style/V6.TextAppearance.Widget.List">
+    <style name="V6.TextAppearance.Widget.List.Primary"
+        parent="@style/V6.TextAppearance.Widget.List" />
+    <style name="V6.TextAppearance.Widget.List.Secondary"
+        parent="@style/V6.TextAppearance.Widget.List">
         <item name="android:textSize">@dimen/v6_secondary_text_size</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">?v6_textColorListSecondary</item>
@@ -930,8 +1033,10 @@
         <item name="android:textSize">@dimen/v6_normal_text_size</item>
         <item name="android:textStyle">normal</item>
     </style>
-    <style name="V6.TextAppearance.Widget.PopupMenu.Large" parent="@style/V6.TextAppearance.Widget.PopupMenu" />
-    <style name="V6.TextAppearance.Widget.PopupMenu.Small" parent="@style/V6.TextAppearance.Widget.PopupMenu">
+    <style name="V6.TextAppearance.Widget.PopupMenu.Large"
+        parent="@style/V6.TextAppearance.Widget.PopupMenu" />
+    <style name="V6.TextAppearance.Widget.PopupMenu.Small"
+        parent="@style/V6.TextAppearance.Widget.PopupMenu">
         <item name="android:textSize">@dimen/v6_secondary_text_size</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/v6_secondary_text_light</item>
@@ -946,11 +1051,13 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/v6_white</item>
     </style>
-    <style name="V6.TextAppearance.WindowTitle.Large.Subtitle" parent="@style/V6.TextAppearance.WindowTitle.Large">
+    <style name="V6.TextAppearance.WindowTitle.Large.Subtitle"
+        parent="@style/V6.TextAppearance.WindowTitle.Large">
         <item name="android:textSize">@dimen/v6_secondary_text_size</item>
         <item name="android:textStyle">normal</item>
     </style>
-    <style name="V6.TextAppearance.WindowTitle.Subtitle" parent="@style/V6.TextAppearance.WindowTitle">
+    <style name="V6.TextAppearance.WindowTitle.Subtitle"
+        parent="@style/V6.TextAppearance.WindowTitle">
         <item name="android:textSize">@dimen/v6_secondary_text_size</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">?v6_actionBarSubtitleColor</item>
@@ -968,24 +1075,35 @@
         <item name="android:textColorPrimaryInverse">@color/v6_primary_text_dark</item>
         <item name="android:textColorSecondaryInverse">@color/v6_secondary_text_dark</item>
         <item name="android:textColorPrimaryNoDisable">@color/v6_primary_text_light_nodisable</item>
-        <item name="android:textColorSecondaryNoDisable">@color/v6_secondary_text_light_nodisable</item>
-        <item name="android:textColorPrimaryInverseNoDisable">@color/v6_primary_text_dark_nodisable</item>
-        <item name="android:textColorSecondaryInverseNoDisable">@color/v6_secondary_text_dark_nodisable</item>
+        <item name="android:textColorSecondaryNoDisable">@color/v6_secondary_text_light_nodisable
+        </item>
+        <item name="android:textColorPrimaryInverseNoDisable">
+            @color/v6_primary_text_dark_nodisable
+        </item>
+        <item name="android:textColorSecondaryInverseNoDisable">
+            @color/v6_secondary_text_dark_nodisable
+        </item>
         <item name="android:textColorHintInverse">@color/v6_hint_foreground_dark</item>
         <item name="android:textAppearanceLarge">@style/V6.TextAppearance.Large</item>
         <item name="android:textAppearanceMedium">@style/V6.TextAppearance.Medium</item>
         <item name="android:textAppearanceSmall">@style/V6.TextAppearance.Small</item>
-        <item name="android:textAppearanceLargeInverse">@style/V6.TextAppearance.Large.Inverse</item>
-        <item name="android:textAppearanceMediumInverse">@style/V6.TextAppearance.Medium.Inverse</item>
-        <item name="android:textAppearanceSmallInverse">@style/V6.TextAppearance.Small.Inverse</item>
+        <item name="android:textAppearanceLargeInverse">@style/V6.TextAppearance.Large.Inverse
+        </item>
+        <item name="android:textAppearanceMediumInverse">@style/V6.TextAppearance.Medium.Inverse
+        </item>
+        <item name="android:textAppearanceSmallInverse">@style/V6.TextAppearance.Small.Inverse
+        </item>
         <item name="android:buttonStyle">@style/V6.Widget.Button</item>
         <item name="android:listPreferredItemHeight">@dimen/v6_list_preferred_item_height</item>
         <item name="android:windowBackground">@drawable/v6_window_bg_light</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:alertDialogStyle">@style/V6.AlertDialog</item>
-        <item name="android:scrollbarThumbHorizontal">@drawable/v6_scrollbar_thumb_horizontal_light</item>
-        <item name="android:scrollbarThumbVertical">@drawable/v6_scrollbar_thumb_vertical_light</item>
+        <item name="android:scrollbarThumbHorizontal">
+            @drawable/v6_scrollbar_thumb_horizontal_light
+        </item>
+        <item name="android:scrollbarThumbVertical">@drawable/v6_scrollbar_thumb_vertical_light
+        </item>
         <item name="android:autoCompleteTextViewStyle">@style/V6.Widget.AutoCompleteTextView</item>
         <item name="android:checkboxStyle">@style/V6.Widget.CompoundButton.CheckBox</item>
         <item name="android:dropDownListViewStyle">@style/V6.Widget.ListView</item>
@@ -993,7 +1111,8 @@
         <item name="android:listViewStyle">@style/V6.Widget.ListView</item>
         <item name="android:popupWindowStyle">@style/V6.Widget.PopupWindow</item>
         <item name="android:progressBarStyle">@style/V6.Widget.ProgressBar</item>
-        <item name="android:progressBarStyleHorizontal">@style/V6.Widget.ProgressBar.Horizontal</item>
+        <item name="android:progressBarStyleHorizontal">@style/V6.Widget.ProgressBar.Horizontal
+        </item>
         <item name="android:progressBarStyleSmall">@style/V6.Widget.ProgressBar.Small</item>
         <item name="android:progressBarStyleLarge">@style/V6.Widget.ProgressBar</item>
         <item name="android:radioButtonStyle">@style/V6.Widget.CompoundButton.RadioButton</item>
@@ -1002,9 +1121,13 @@
         <item name="android:preferenceInformationStyle">@style/V6.Preference.Information</item>
         <item name="android:preferenceStyle">@style/V6.Preference</item>
         <item name="android:checkBoxPreferenceStyle">@style/V6.Preference.CheckBoxPreference</item>
-        <item name="android:yesNoPreferenceStyle">@style/V6.Preference.DialogPreference.YesNoPreference</item>
+        <item name="android:yesNoPreferenceStyle">
+            @style/V6.Preference.DialogPreference.YesNoPreference
+        </item>
         <item name="android:dialogPreferenceStyle">@style/V6.Preference.DialogPreference</item>
-        <item name="android:editTextPreferenceStyle">@style/V6.Preference.DialogPreference.EditTextPreference</item>
+        <item name="android:editTextPreferenceStyle">
+            @style/V6.Preference.DialogPreference.EditTextPreference
+        </item>
         <item name="android:ringtonePreferenceStyle">@style/V6.Preference.RingtonePreference</item>
         <item name="android:preferenceLayoutChild">@layout/v6_preference_child</item>
         <item name="android:textColorHighlight">@color/v6_highlighted_text_light</item>
@@ -1032,8 +1155,12 @@
         <item name="android:actionOverflowButtonStyle">@style/V6.Widget.ActionButton.Overflow</item>
         <item name="android:listPopupWindowStyle">@style/V6.Widget.ListPopupWindow</item>
         <item name="android:popupMenuStyle">@style/V6.Widget.PopupMenu</item>
-        <item name="android:textAppearanceLargePopupMenu">@style/V6.TextAppearance.Widget.PopupMenu.Large</item>
-        <item name="android:textAppearanceSmallPopupMenu">@style/V6.TextAppearance.Widget.PopupMenu.Small</item>
+        <item name="android:textAppearanceLargePopupMenu">
+            @style/V6.TextAppearance.Widget.PopupMenu.Large
+        </item>
+        <item name="android:textAppearanceSmallPopupMenu">
+            @style/V6.TextAppearance.Widget.PopupMenu.Small
+        </item>
         <item name="android:listDividerAlertDialog">@null</item>
         <item name="android:textColorAlertDialogListItem">@color/v6_dialog_list_text_light</item>
         <item name="android:dialogTheme">@style/V6.Theme.Light.Dialog</item>
@@ -1048,8 +1175,12 @@
         <item name="android:editTextColor">@color/v6_edit_text_light</item>
         <item name="android:alertDialogIcon">@null</item>
         <item name="android:textCursorDrawable">@drawable/v6_text_cursor_light</item>
-        <item name="android:listPreferredItemHeightLarge">@dimen/v6_list_preferred_item_height_large</item>
-        <item name="android:listPreferredItemHeightSmall">@dimen/v6_list_preferred_item_height_small</item>
+        <item name="android:listPreferredItemHeightLarge">
+            @dimen/v6_list_preferred_item_height_large
+        </item>
+        <item name="android:listPreferredItemHeightSmall">
+            @dimen/v6_list_preferred_item_height_small
+        </item>
         <item name="android:actionBarSplitStyle">@style/V6.Widget.ActionBar.Split</item>
         <item name="android:colorPressedHighlight">@color/v6_highlighted_text_light</item>
         <item name="android:colorLongPressedHighlight">@color/v6_highlighted_text_light</item>
@@ -1057,30 +1188,41 @@
         <item name="android:colorActivatedHighlight">@color/v6_highlighted_text_light</item>
         <item name="android:colorMultiSelectHighlight">@color/v6_highlighted_text_light</item>
         <item name="android:actionBarItemBackground">@android:color/transparent</item>
-        <item name="android:listPreferredItemPaddingLeft">@dimen/v6_list_preferred_item_padding_left</item>
-        <item name="android:listPreferredItemPaddingRight">@dimen/v6_list_preferred_item_padding_right</item>
+        <item name="android:listPreferredItemPaddingLeft">
+            @dimen/v6_list_preferred_item_padding_left
+        </item>
+        <item name="android:listPreferredItemPaddingRight">
+            @dimen/v6_list_preferred_item_padding_right
+        </item>
         <item name="v6_actionBarBackground">@drawable/v6_action_bar_bg_light</item>
         <item name="v6_actionBarEmbedTabs">@bool/v6_action_bar_embed_tabs</item>
-        <item name="v6_actionBarEmbededTabsBackground">@drawable/v6_action_bar_embeded_tabs_bg_light</item>
-        <item name="v6_actionBarExpandBackground">@drawable/v6_action_bar_split_bg_expanded_light</item>
+        <item name="v6_actionBarEmbededTabsBackground">
+            @drawable/v6_action_bar_embeded_tabs_bg_light
+        </item>
+        <item name="v6_actionBarExpandBackground">@drawable/v6_action_bar_split_bg_expanded_light
+        </item>
         <item name="v6_actionBarIndeterminateProgressStyle">@style/V6.Widget.ProgressBar</item>
         <item name="v6_actionBarMovableLayoutStyle">@style/V6.Widget.ActionBarMovableLayout</item>
         <item name="v6_actionBarProgressStyle">@style/V6.Widget.ProgressBar.Horizontal</item>
         <item name="v6_actionBarSplitBackground">@drawable/v6_action_bar_split_bg_light</item>
         <item name="v6_actionBarSplitTopLine">@drawable/v6_action_bar_split_top_line_light</item>
         <item name="v6_actionBarStackBackground">@drawable/v6_action_bar_stack_bg_light</item>
-        <item name="v6_actionBarStackedBackground">@drawable/v6_action_bar_title_stack_bg_light</item>
+        <item name="v6_actionBarStackedBackground">@drawable/v6_action_bar_title_stack_bg_light
+        </item>
         <item name="v6_actionBarSubtitleColor">@color/v6_action_bar_subtitle_text_light</item>
         <item name="v6_actionBarTightTitle">@bool/v6_action_bar_tight_title</item>
         <item name="v6_actionBarTitleColor">@color/v6_action_bar_title_text_light</item>
         <item name="v6_actionMenuBlurEnabled">@bool/v6_action_menu_blur_enabled</item>
-        <item name="v6_actionModeBackButtonBackground">@drawable/v6_action_bar_back_search_light</item>
+        <item name="v6_actionModeBackButtonBackground">@drawable/v6_action_bar_back_search_light
+        </item>
         <item name="v6_actionModeTitleColor">@color/v6_action_mode_title_text_color_light</item>
         <item name="v6_arrowPopupViewStyle">@style/V6.Widget.ArrowPopupView</item>
         <item name="v6_buttonBackground">@drawable/v6_btn_bg_light</item>
         <item name="v6_buttonBarDefaultButtonStyle">@style/V6.Widget.Button.Dialog.Default</item>
         <item name="v6_checkableButtonTextColorMultiple">@color/v6_checkable_btn_text_light</item>
-        <item name="v6_checkableButtonTextColorSingle">@color/v6_checkable_btn_text_color_stable_light</item>
+        <item name="v6_checkableButtonTextColorSingle">
+            @color/v6_checkable_btn_text_color_stable_light
+        </item>
         <item name="v6_datePickerStyle">@style/V6.Widget.DatePicker</item>
         <item name="v6_dateTimePickerStyle">@style/V6.Widget.DateTimePicker</item>
         <item name="v6_editTextColorHint">@color/v6_hint_edit_text_color_light</item>
@@ -1088,15 +1230,21 @@
         <item name="v6_listMenuBackground">@drawable/v6_list_menu_bg_light</item>
         <item name="v6_listMenuItemStyle">@style/V6.Widget.ListMenuItem</item>
         <item name="v6_listPopupItemBackground">@drawable/v6_list_popup_item_bg_light</item>
-        <item name="v6_listViewGroupHeaderBackground">@drawable/v6_list_view_item_group_header_bg_light</item>
-        <item name="v6_listViewGroupHeaderTextColor">@color/v6_list_view_item_group_header_text_light</item>
+        <item name="v6_listViewGroupHeaderBackground">
+            @drawable/v6_list_view_item_group_header_bg_light
+        </item>
+        <item name="v6_listViewGroupHeaderTextColor">
+            @color/v6_list_view_item_group_header_text_light
+        </item>
         <item name="v6_listViewItemBackground">@drawable/v6_list_item_bg_light</item>
         <item name="v6_miui_version">6</item>
         <item name="v6_navigationLayoutStyle">@style/V6.Widget.NavigationLayout</item>
         <item name="v6_preferenceBackground">@drawable/v6_preference_item_bg</item>
         <item name="v6_preferencePrimaryTextColor">@color/v6_preference_primary_text_light</item>
-        <item name="v6_preferenceScreenPaddingBottom">@dimen/v6_preference_screen_padding_bottom</item>
-        <item name="v6_preferenceSecondaryTextColor">@color/v6_preference_secondary_text_light</item>
+        <item name="v6_preferenceScreenPaddingBottom">@dimen/v6_preference_screen_padding_bottom
+        </item>
+        <item name="v6_preferenceSecondaryTextColor">@color/v6_preference_secondary_text_light
+        </item>
         <item name="v6_searchEditTextColor">@color/v6_edit_text_search_color_light</item>
         <item name="v6_searchEditTextHintColor">@color/v6_edit_text_search_hint_color_light</item>
         <item name="v6_textColorBlankPage">@color/v6_blank_page_text_color_light</item>
@@ -1112,7 +1260,8 @@
         <item name="v6_textColorNormalInverseDisableOnly">@color/v6_normal_text_dark</item>
         <item name="v6_textColorNormalInverseNoDisable">@color/v6_normal_text_dark_nodisable</item>
         <item name="v6_textColorNormalNoDisable">@color/v6_normal_text_light_nodisable</item>
-        <item name="v6_textColorPopupMenuListItem">@color/v6_list_text_light_dialog_single_choice</item>
+        <item name="v6_textColorPopupMenuListItem">@color/v6_list_text_light_dialog_single_choice
+        </item>
         <item name="v6_textColorSecondaryTab">@color/v6_secondary_tab_text_light</item>
         <item name="v6_textColorSpinnerListItem">@color/v6_spinner_list_text_light</item>
         <item name="v6_themeType">holoLight</item>
@@ -1124,9 +1273,15 @@
         <item name="v6_windowTranslucentStatus">transparentLight</item>
         <item name="v6_contentAutoFitSystemWindow">false</item>
         <item name="v6_contentHeaderBackground">@null</item>
-        <item name="v6_immersionButtonMoreBackground">@drawable/v6_action_mode_immersion_more_light</item>
-        <item name="v6_immersionButtonCloseBackground">@drawable/v6_action_mode_immersion_close_light</item>
-        <item name="v6_immersionWindowFooterBackground">@drawable/v6_immersion_window_footer_background_light</item>
+        <item name="v6_immersionButtonMoreBackground">
+            @drawable/v6_action_mode_immersion_more_light
+        </item>
+        <item name="v6_immersionButtonCloseBackground">
+            @drawable/v6_action_mode_immersion_close_light
+        </item>
+        <item name="v6_immersionWindowFooterBackground">
+            @drawable/v6_immersion_window_footer_background_light
+        </item>
         <item name="v6_immersionViewItemBackground">@drawable/v6_immersion_item_bg_light</item>
         <item name="v6_immersionTextColor">@color/v6_immersion_text_light</item>
         <item name="v6_immersionStatusBarStyle">transparentLight</item>
@@ -1143,14 +1298,16 @@
         <item name="android:displayOptions">showTitle</item>
         <item name="android:actionBarTabStyle">@style/V6.Widget.TabView</item>
         <item name="android:actionBarTabBarStyle">@style/V6.Widget.TabBar</item>
-        <item name="android:actionBarTabTextStyle">@style/V6.TextAppearance.ActionBar.TabShowTitle</item>
+        <item name="android:actionBarTabTextStyle">@style/V6.TextAppearance.ActionBar.TabShowTitle
+        </item>
     </style>
     <style name="V6.Theme.Light.ActionBarMovable" parent="@style/V6.Theme.Light">
         <item name="v6_actionBarEmbedTabs">false</item>
         <item name="v6_windowActionBarMovable">true</item>
     </style>
     <style name="V6.Theme.Light.Dialog" parent="@style/V6.Theme.Light">
-        <item name="android:textAppearanceMedium">@style/V6.TextAppearance.Medium.Dialog.Light</item>
+        <item name="android:textAppearanceMedium">@style/V6.TextAppearance.Medium.Dialog.Light
+        </item>
         <item name="android:windowBackground">@drawable/v6_dialog_bg_light</item>
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>
@@ -1188,7 +1345,8 @@
         <item name="android:windowMinWidthMajor">@dimen/v6_dialog_min_width_major</item>
         <item name="android:windowMinWidthMinor">@dimen/v6_dialog_min_width_minor</item>
         <item name="v6_actionModeCancelButtonStyle">@style/V6.Widget.Button.EditDialog</item>
-        <item name="v6_actionModeSelectButtonStyle">@style/V6.Widget.Button.EditDialog.Default</item>
+        <item name="v6_actionModeSelectButtonStyle">@style/V6.Widget.Button.EditDialog.Default
+        </item>
     </style>
     <style name="V6.Theme.Light.Dialog.FixedSize" parent="@style/V6.Theme.Light.Dialog">
         <item name="v6_windowFixedWidthMajor">@dimen/v6_dialog_fixed_width_major</item>
@@ -1196,7 +1354,8 @@
         <item name="v6_windowFixedWidthMinor">@dimen/v6_dialog_fixed_width_minor</item>
         <item name="v6_windowFixedHeightMajor">@dimen/v6_dialog_fixed_height_major</item>
     </style>
-    <style name="V6.Theme.Light.Dialog.FixedSize.Small" parent="@style/V6.Theme.Light.Dialog.FixedSize">
+    <style name="V6.Theme.Light.Dialog.FixedSize.Small"
+        parent="@style/V6.Theme.Light.Dialog.FixedSize">
         <item name="v6_windowFixedWidthMajor">@dimen/v6_dialog_fixed_width_major_small</item>
         <item name="v6_windowFixedHeightMinor">@dimen/v6_dialog_fixed_height_minor_small</item>
         <item name="v6_windowFixedWidthMinor">@dimen/v6_dialog_fixed_width_minor_small</item>
@@ -1219,14 +1378,16 @@
         <item name="android:windowBackground">@drawable/v6_settings_window_bg_light</item>
     </style>
     <style name="V6.Theme.Light.Settings.Navigation" parent="@style/V6.Theme.Light.Settings">
-        <item name="android:windowBackground">@drawable/v6_settings_window_bg_navigation_light</item>
+        <item name="android:windowBackground">@drawable/v6_settings_window_bg_navigation_light
+        </item>
         <item name="v6_actionBarBackground">@drawable/v6_action_bar_bg_navigation_light</item>
     </style>
     <style name="V6.Theme.Light.Settings.NoTitle" parent="@style/V6.Theme.Light.Settings">
         <item name="v6_windowActionBar">false</item>
         <item name="v6_windowActionBarOverlay">false</item>
     </style>
-    <style name="V6.Theme.Light.Settings.TabShowTitle" parent="@style/V6.Theme.Light.ActionBar.TabShowTitle">
+    <style name="V6.Theme.Light.Settings.TabShowTitle"
+        parent="@style/V6.Theme.Light.ActionBar.TabShowTitle">
         <item name="android:windowBackground">@drawable/v6_settings_window_bg_light</item>
     </style>
     <style name="V6.Theme.MenuDialog.Light" parent="@style/V6.Theme.Light" />
@@ -1249,7 +1410,8 @@
         <item name="android:displayOptions">homeAsUp|showTitle</item>
         <item name="android:titleTextStyle">@style/V6.TextAppearance.WindowTitle</item>
         <item name="android:subtitleTextStyle">@style/V6.TextAppearance.WindowTitle.Subtitle</item>
-        <item name="android:progressBarPadding">@dimen/v6_actionbar_progressbar_horizontal_padding</item>
+        <item name="android:progressBarPadding">@dimen/v6_actionbar_progressbar_horizontal_padding
+        </item>
         <item name="android:homeLayout">@layout/v6_action_bar_home</item>
         <item name="android:itemPadding">0.0dip</item>
         <item name="android:backgroundStacked">?v6_actionBarStackBackground</item>
@@ -1331,7 +1493,9 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
     <style name="V6.Widget.ActionMode.Button" parent="@android:style/Widget.Button">
-        <item name="android:textAppearance">@style/V6.TextAppearance.Widget.ActionMode.Title.Button</item>
+        <item name="android:textAppearance">
+            @style/V6.TextAppearance.Widget.ActionMode.Title.Button
+        </item>
         <item name="android:textSize">@dimen/v6_button_text_size</item>
         <item name="android:textColor">@color/v6_action_mode_title_button_text_light</item>
         <item name="android:background">@drawable/v6_action_mode_title_button_bg_light</item>
@@ -1345,9 +1509,13 @@
     <style name="V6.Widget.AlphabetFastIndexer" parent="@style/V6.Widget">
         <item name="v6_indexerTable">@array/v6_alphabet_table</item>
         <item name="v6_indexerTextSize">@dimen/v6_alphabet_indexer_text_size</item>
-        <item name="v6_indexerTextActivatedColor">@color/v6_alphabet_indexer_activated_text_color</item>
-        <item name="v6_indexerTextHighlightColor">@color/v6_alphabet_indexer_highlight_text_color</item>
-        <item name="v6_indexerTextHighligtBackground">@drawable/v6_alphabet_indexer_text_highlight_bg</item>
+        <item name="v6_indexerTextActivatedColor">@color/v6_alphabet_indexer_activated_text_color
+        </item>
+        <item name="v6_indexerTextHighlightColor">@color/v6_alphabet_indexer_highlight_text_color
+        </item>
+        <item name="v6_indexerTextHighligtBackground">
+            @drawable/v6_alphabet_indexer_text_highlight_bg
+        </item>
         <item name="v6_indexerBackground">@drawable/v6_alphabet_indexer_bg</item>
         <item name="v6_overlayBackground">@drawable/v6_alphabet_indexer_overlay</item>
         <item name="v6_overlayMarginLeft">@dimen/v6_alphabet_indexer_overlay_offset</item>
@@ -1355,7 +1523,8 @@
         <item name="v6_overlayTextSize">@dimen/v6_small_text_size</item>
         <item name="v6_overlayTextColor">@color/v6_alphabet_indexer_overlay_text_color</item>
     </style>
-    <style name="V6.Widget.AlphabetFastIndexer.Starred" parent="@style/V6.Widget.AlphabetFastIndexer">
+    <style name="V6.Widget.AlphabetFastIndexer.Starred"
+        parent="@style/V6.Widget.AlphabetFastIndexer">
         <item name="v6_indexerTable">@array/v6_alphabet_table_with_starred</item>
     </style>
     <style name="V6.Widget.ArrowPopupView" parent="@style/V6.Widget">
@@ -1430,7 +1599,8 @@
         <item name="android:dividerPadding">0.0dip</item>
     </style>
     <style name="V6.Widget.CompoundButton" parent="@android:style/Widget.CompoundButton" />
-    <style name="V6.Widget.CompoundButton.RadioButton" parent="@android:style/Widget.CompoundButton.RadioButton">
+    <style name="V6.Widget.CompoundButton.RadioButton"
+        parent="@android:style/Widget.CompoundButton.RadioButton">
         <item name="android:textSize">@dimen/v6_secondary_text_size</item>
         <item name="android:textColor">?v6_checkableButtonTextColorMultiple</item>
         <item name="android:background">@null</item>
@@ -1460,7 +1630,9 @@
         <item name="android:gravity">center</item>
     </style>
     <style name="V6.Widget.DropDownItem" parent="@style/V6.Widget">
-        <item name="android:textAppearance">@style/V6.TextAppearance.AlertDialogListItem.SingleChoice</item>
+        <item name="android:textAppearance">
+            @style/V6.TextAppearance.AlertDialogListItem.SingleChoice
+        </item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:paddingLeft">@dimen/v6_list_preferred_item_padding_left</item>
         <item name="android:paddingRight">@dimen/v6_list_preferred_item_padding_right</item>
@@ -1504,17 +1676,21 @@
         <item name="android:minHeight">@dimen/v6_list_preferred_item_height</item>
         <item name="android:singleLine">true</item>
     </style>
-    <style name="V6.Widget.ListView.Item.DoubleLine.SmallPadding" parent="@style/V6.Widget.ListView.Item.DoubleLine">
+    <style name="V6.Widget.ListView.Item.DoubleLine.SmallPadding"
+        parent="@style/V6.Widget.ListView.Item.DoubleLine">
         <item name="android:background">@drawable/v6_list_small_item_bg_light</item>
     </style>
     <style name="V6.Widget.ListView.Item.GroupHeader" parent="@style/V6.Widget.ListView.Item">
         <item name="android:textAppearance">@style/V6.TextAppearance.List.GroupHeader</item>
         <item name="android:background">?v6_listViewGroupHeaderBackground</item>
     </style>
-    <style name="V6.Widget.ListView.Item.GroupHeader.SmallPadding" parent="@style/V6.Widget.ListView.Item.GroupHeader">
-        <item name="android:background">@drawable/v6_list_small_view_item_group_header_bg_light</item>
+    <style name="V6.Widget.ListView.Item.GroupHeader.SmallPadding"
+        parent="@style/V6.Widget.ListView.Item.GroupHeader">
+        <item name="android:background">@drawable/v6_list_small_view_item_group_header_bg_light
+        </item>
     </style>
-    <style name="V6.Widget.ListView.Item.Immersion" parent="@style/V6.Widget.ListView.Item.SingleLine">
+    <style name="V6.Widget.ListView.Item.Immersion"
+        parent="@style/V6.Widget.ListView.Item.SingleLine">
         <item name="android:textColor">?v6_immersionTextColor</item>
         <item name="android:background">?v6_immersionViewItemBackground</item>
     </style>
@@ -1524,7 +1700,8 @@
         <item name="android:minHeight">@dimen/v6_list_preferred_item_height_small</item>
         <item name="android:singleLine">true</item>
     </style>
-    <style name="V6.Widget.ListView.Item.SingleLine.SmallPadding" parent="@style/V6.Widget.ListView.Item.SingleLine">
+    <style name="V6.Widget.ListView.Item.SingleLine.SmallPadding"
+        parent="@style/V6.Widget.ListView.Item.SingleLine">
         <item name="android:background">@drawable/v6_list_small_item_bg_light</item>
     </style>
     <style name="V6.Widget.ListView.Item.TripleLine" parent="@style/V6.Widget.ListView.Item">
@@ -1533,7 +1710,8 @@
         <item name="android:minHeight">@dimen/v6_list_preferred_item_height_large</item>
         <item name="android:singleLine">true</item>
     </style>
-    <style name="V6.Widget.ListView.Item.TripleLine.SmallPadding" parent="@style/V6.Widget.ListView.Item.TripleLine">
+    <style name="V6.Widget.ListView.Item.TripleLine.SmallPadding"
+        parent="@style/V6.Widget.ListView.Item.TripleLine">
         <item name="android:background">@drawable/v6_list_small_item_bg_light</item>
     </style>
     <style name="V6.Widget.NavigationLayout" parent="@style/V6.Widget">
@@ -1571,29 +1749,38 @@
         <item name="android:background">@drawable/v6_progressbar_indeterminate_bg_light</item>
         <item name="android:maxWidth">@dimen/v6_progressbar_size</item>
         <item name="android:maxHeight">@dimen/v6_progressbar_size</item>
-        <item name="android:indeterminateDrawable">@drawable/v6_progressbar_indeterminate_light</item>
+        <item name="android:indeterminateDrawable">@drawable/v6_progressbar_indeterminate_light
+        </item>
         <item name="android:minWidth">@dimen/v6_progressbar_size</item>
         <item name="android:minHeight">@dimen/v6_progressbar_size</item>
         <item name="v6_indeterminateFramesCount">48</item>
         <item name="v6_indeterminateFramesDuration">25</item>
     </style>
-    <style name="V6.Widget.ProgressBar.Horizontal" parent="@android:style/Widget.ProgressBar.Horizontal">
+    <style name="V6.Widget.ProgressBar.Horizontal"
+        parent="@android:style/Widget.ProgressBar.Horizontal">
         <item name="android:background">@null</item>
         <item name="android:maxHeight">@dimen/v6_progressbar_horizontal_indeterminate_height</item>
-        <item name="android:indeterminateDrawable">@drawable/v6_progressbar_horizontal_indeterminate</item>
+        <item name="android:indeterminateDrawable">
+            @drawable/v6_progressbar_horizontal_indeterminate
+        </item>
         <item name="android:progressDrawable">@drawable/v6_progressbar_horizontal</item>
         <item name="android:minHeight">@dimen/v6_progressbar_horizontal_indeterminate_height</item>
         <item name="v6_progressMask">@drawable/v6_progressbar_progress_indeterminate_mask</item>
     </style>
-    <style name="V6.Widget.ProgressBar.Horizontal.Small" parent="@style/V6.Widget.ProgressBar.Horizontal">
+    <style name="V6.Widget.ProgressBar.Horizontal.Small"
+        parent="@style/V6.Widget.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/v6_progressbar_horizontal_small_light</item>
-        <item name="v6_progressMask">@drawable/v6_progressbar_progress_indeterminate_mask_small_light</item>
+        <item name="v6_progressMask">
+            @drawable/v6_progressbar_progress_indeterminate_mask_small_light
+        </item>
     </style>
     <style name="V6.Widget.ProgressBar.Small" parent="@android:style/Widget.ProgressBar">
         <item name="android:background">@drawable/v6_progressbar_indeterminate_bg_small_light</item>
         <item name="android:maxWidth">@dimen/v6_progressbar_size_small</item>
         <item name="android:maxHeight">@dimen/v6_progressbar_size_small</item>
-        <item name="android:indeterminateDrawable">@drawable/v6_progressbar_indeterminate_small_light</item>
+        <item name="android:indeterminateDrawable">
+            @drawable/v6_progressbar_indeterminate_small_light
+        </item>
         <item name="android:minWidth">@dimen/v6_progressbar_size_small</item>
         <item name="android:minHeight">@dimen/v6_progressbar_size_small</item>
     </style>
@@ -1616,7 +1803,8 @@
         <item name="android:background">@drawable/v6_tab_bg_light</item>
         <item name="android:layout_weight">@integer/v6_tab_layout_weight</item>
     </style>
-    <style name="V6.Widget.TextView.SpinnerItem" parent="@android:style/Widget.TextView.SpinnerItem">
+    <style name="V6.Widget.TextView.SpinnerItem"
+        parent="@android:style/Widget.TextView.SpinnerItem">
         <item name="android:textSize">@dimen/v6_normal_text_size</item>
         <item name="android:textColor">?v6_textColorButton</item>
     </style>
@@ -1674,8 +1862,12 @@
         <item name="android:windowSoftInputMode">adjustNothing</item>
     </style>
     <style name="general__account_dialog_anim" parent="@android:style/Animation">
-        <item name="android:windowEnterAnimation">@anim/bookcity_comment__publish_comment_view__show</item>
-        <item name="android:windowExitAnimation">@anim/bookcity_comment__publish_comment_view__dismiss</item>
+        <item name="android:windowEnterAnimation">
+            @anim/bookcity_comment__publish_comment_view__show
+        </item>
+        <item name="android:windowExitAnimation">
+            @anim/bookcity_comment__publish_comment_view__dismiss
+        </item>
     </style>
     <style name="general__shared__app_theme">
         <item name="android:windowNoTitle">true</item>
@@ -1762,7 +1954,8 @@
         <item name="android:textSize">@dimen/general_font__shared__d</item>
         <item name="android:textColor">@color/general__shared__ffffff</item>
         <item name="android:gravity">center</item>
-        <item name="android:background">@drawable/general__shared__button_light_29dip_ffffff33</item>
+        <item name="android:background">@drawable/general__shared__button_light_29dip_ffffff33
+        </item>
         <item name="android:layout_height">wrap_content</item>
     </style>
     <style name="general__shared__common_dialog">
@@ -1787,7 +1980,8 @@
         <item name="android:windowExitAnimation">@anim/general__shared__push_down_out</item>
     </style>
     <style name="general__shared__digits">
-        <item name="android:digits">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</item>
+        <item name="android:digits">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+        </item>
     </style>
     <style name="general__shared__edit_text_style" parent="@android:style/Widget.EditText">
         <item name="android:textColor">@color/general__shared__edit_text</item>
@@ -1978,7 +2172,8 @@
     </style>
     <style name="refresh_progressbar">
         <item name="android:scaleType">fitCenter</item>
-        <item name="android:indeterminateDrawable">@drawable/general__shared__wheel_progress_24dip</item>
+        <item name="android:indeterminateDrawable">@drawable/general__shared__wheel_progress_24dip
+        </item>
         <item name="android:indeterminateDuration">2000</item>
         <item name="android:indeterminateBehavior">repeat</item>
     </style>

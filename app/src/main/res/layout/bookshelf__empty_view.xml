@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="#ffb3b3b3" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bookshelf__empty_view__shelf_wait_fill" android:drawableTop="@drawable/general__shared__books" android:drawablePadding="14.0dip" />
-        <TextView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__ff8400_pressed" android:gravity="center" android:layout_gravity="center" android:id="@id/bookshelf__empty_view__go_to_store" android:background="@drawable/personal__account_summary_view__add_fund" android:layout_width="160.0dip" android:layout_height="33.0dip" android:layout_marginTop="20.0dip" android:text="@string/bookshelf__empty_view__go_to_store" />
+<FrameLayout android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="@dimen/general_font__shared__c"
+            android:textColor="#ffb3b3b3"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bookshelf__empty_view__shelf_wait_fill"
+            android:drawableTop="@drawable/general__shared__books"
+            android:drawablePadding="14.0dip" />
+
+        <TextView
+            android:textSize="@dimen/general_font__shared__b"
+            android:textColor="@color/general__shared__ff8400_pressed"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@id/bookshelf__empty_view__go_to_store"
+            android:background="@drawable/personal__account_summary_view__add_fund"
+            android:layout_width="160.0dip"
+            android:layout_height="33.0dip"
+            android:layout_marginTop="20.0dip"
+            android:text="@string/bookshelf__empty_view__go_to_store" />
     </LinearLayout>
 </FrameLayout>

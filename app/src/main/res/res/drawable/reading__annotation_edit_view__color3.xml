@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true" android:drawable="@drawable/reading__annotation_edit_view__color3_pressed" />
-    <item android:state_selected="true" android:drawable="@drawable/reading__annotation_edit_view__color3_selected" />
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true"
+        android:drawable="@drawable/reading__annotation_edit_view__color3_pressed" />
+    <item android:state_selected="true"
+        android:drawable="@drawable/reading__annotation_edit_view__color3_selected" />
     <item android:drawable="@drawable/reading__annotation_edit_view__color3_normal" />
 </selector>

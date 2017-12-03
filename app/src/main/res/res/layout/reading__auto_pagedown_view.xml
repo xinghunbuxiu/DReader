@@ -1,17 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="bottom" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:enabled="false" android:background="@color/general__shared__141414f2" android:paddingLeft="20.0dip" android:paddingTop="25.0dip" android:paddingRight="20.0dip" android:paddingBottom="25.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <com.duokan.core.ui.BoxView android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxWidth="360.0dip">
-            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
-                    <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__ffffffcc" android:id="@id/reading__auto_pagedown_menu_view__speed" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/reading__auto_pagedown_menu_view__speed" />
+<LinearLayout android:gravity="bottom" android:orientation="vertical"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:enabled="false" android:background="@color/general__shared__141414f2"
+        android:paddingLeft="20.0dip" android:paddingTop="25.0dip" android:paddingRight="20.0dip"
+        android:paddingBottom="25.0dip" android:clickable="true" android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <com.duokan.core.ui.BoxView android:layout_gravity="center"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:maxWidth="360.0dip">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    <TextView android:textSize="@dimen/general_font__shared__c"
+                        android:textColor="@color/general__shared__ffffffcc"
+                        android:id="@id/reading__auto_pagedown_menu_view__speed"
+                        android:layout_width="fill_parent" android:layout_height="wrap_content"
+                        android:text="@string/reading__auto_pagedown_menu_view__speed" />
                 </LinearLayout>
-                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
-                    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__ffffff_pressed_selected_checked" android:gravity="center" android:id="@id/reading__auto_pagedown_menu_view__decelerate" android:background="@drawable/reading__reading_options_view__text_background" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:text="@string/reading__auto_pagedown_menu_view__decelerate" android:layout_weight="1.0" />
-                    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__ffffff_pressed_selected_checked" android:gravity="center" android:id="@id/reading__auto_pagedown_menu_view__accelerate" android:background="@drawable/reading__reading_options_view__text_background" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/reading__auto_pagedown_menu_view__accelerate" android:layout_weight="1.0" />
+                <LinearLayout android:gravity="center" android:orientation="horizontal"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="20.0dip">
+                    <com.duokan.reader.ui.general.DkLabelView
+                        android:textSize="@dimen/general_font__shared__c"
+                        android:textColor="@color/general__shared__ffffff_pressed_selected_checked"
+                        android:gravity="center"
+                        android:id="@id/reading__auto_pagedown_menu_view__decelerate"
+                        android:background="@drawable/reading__reading_options_view__text_background"
+                        android:layout_width="0.0dip" android:layout_height="wrap_content"
+                        android:layout_marginRight="15.0dip"
+                        android:text="@string/reading__auto_pagedown_menu_view__decelerate"
+                        android:layout_weight="1.0" />
+                    <com.duokan.reader.ui.general.DkLabelView
+                        android:textSize="@dimen/general_font__shared__c"
+                        android:textColor="@color/general__shared__ffffff_pressed_selected_checked"
+                        android:gravity="center"
+                        android:id="@id/reading__auto_pagedown_menu_view__accelerate"
+                        android:background="@drawable/reading__reading_options_view__text_background"
+                        android:layout_width="0.0dip" android:layout_height="wrap_content"
+                        android:text="@string/reading__auto_pagedown_menu_view__accelerate"
+                        android:layout_weight="1.0" />
                 </LinearLayout>
-                <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__ffffffcc" android:gravity="center" android:id="@id/reading__auto_pagedown_menu_view__close" android:background="@drawable/reading__reading_options_view__text_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/reading__auto_pagedown_menu_view__close" />
+                <TextView android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__ffffffcc" android:gravity="center"
+                    android:id="@id/reading__auto_pagedown_menu_view__close"
+                    android:background="@drawable/reading__reading_options_view__text_background"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="20.0dip"
+                    android:text="@string/reading__auto_pagedown_menu_view__close" />
             </LinearLayout>
         </com.duokan.core.ui.BoxView>
     </FrameLayout>

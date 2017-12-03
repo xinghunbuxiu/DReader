@@ -1,16 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:id="@id/general__app_store_guide_view__bg" android:background="@color/general__shared__00000099" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    <FrameLayout android:layout_gravity="center" android:background="@drawable/general__app_store_guide_view__background" android:layout_width="284.0dip" android:layout_height="wrap_content">
-        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
-            <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="#ff666666" android:gravity="center" android:id="@id/general__app_store_guide_view__title" android:layout_width="fill_parent" android:layout_height="78.0dip" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip" android:text="@string/general__shared__app_store_guide_title" />
-            <View android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0px" />
-            <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="#ffef6c2c" android:gravity="center" android:id="@id/general__app_store_guide_view__positive" android:background="@drawable/store__app_store_guide__background" android:layout_width="fill_parent" android:layout_height="54.0dip" android:text="@string/general__shared__app_store_guide_positive" />
-            <View android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0px" />
-            <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="#ff585858" android:gravity="center" android:id="@id/general__app_store_guide_view__negative" android:background="@drawable/store__app_store_guide__background" android:layout_width="fill_parent" android:layout_height="54.0dip" android:text="@string/general__shared__app_store_guide_negative" />
-            <View android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0px" />
-            <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="#ff585858" android:gravity="center" android:id="@id/general__app_store_guide_view__cancel" android:background="@drawable/store__app_store_guide__background_round" android:layout_width="fill_parent" android:layout_height="54.0dip" android:text="@string/general__shared__app_store_guide_cancel" />
+<FrameLayout android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:id="@id/general__app_store_guide_view__bg"
+        android:background="@color/general__shared__00000099"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <FrameLayout
+        android:layout_gravity="center"
+        android:background="@drawable/general__app_store_guide_view__background"
+        android:layout_width="284.0dip"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textColor="#ff666666"
+                android:gravity="center"
+                android:id="@id/general__app_store_guide_view__title"
+                android:layout_width="fill_parent"
+                android:layout_height="78.0dip"
+                android:layout_marginLeft="30.0dip"
+                android:layout_marginRight="30.0dip"
+                android:text="@string/general__shared__app_store_guide_title" />
+
+            <View
+                android:background="#ffcccccc"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px" />
+
+            <TextView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textColor="#ffef6c2c"
+                android:gravity="center"
+                android:id="@id/general__app_store_guide_view__positive"
+                android:background="@drawable/store__app_store_guide__background"
+                android:layout_width="fill_parent"
+                android:layout_height="54.0dip"
+                android:text="@string/general__shared__app_store_guide_positive" />
+
+            <View
+                android:background="#ffcccccc"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px" />
+
+            <TextView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textColor="#ff585858"
+                android:gravity="center"
+                android:id="@id/general__app_store_guide_view__negative"
+                android:background="@drawable/store__app_store_guide__background"
+                android:layout_width="fill_parent"
+                android:layout_height="54.0dip"
+                android:text="@string/general__shared__app_store_guide_negative" />
+
+            <View
+                android:background="#ffcccccc"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px" />
+
+            <TextView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textColor="#ff585858"
+                android:gravity="center"
+                android:id="@id/general__app_store_guide_view__cancel"
+                android:background="@drawable/store__app_store_guide__background_round"
+                android:layout_width="fill_parent"
+                android:layout_height="54.0dip"
+                android:text="@string/general__shared__app_store_guide_cancel" />
         </LinearLayout>
     </FrameLayout>
 </FrameLayout>

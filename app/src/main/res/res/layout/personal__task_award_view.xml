@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <ImageView android:layout_gravity="center_horizontal" android:background="@drawable/personal__task_award_view__icon" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-        <com.duokan.reader.ui.general.DkLabelView android:gravity="center" android:layout_gravity="center" android:id="@id/personal__task_award_view__award" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical"
+        android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="center_horizontal"
+            android:background="@drawable/personal__task_award_view__icon"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.duokan.reader.ui.general.DkLabelView android:gravity="center"
+            android:layout_gravity="center" android:id="@id/personal__task_award_view__award"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
     </LinearLayout>
-    <com.duokan.reader.ui.general.DkLabelView android:layout_gravity="bottom|center" android:id="@id/personal__task_award_view__confirm" android:background="@drawable/personal__task_award_view__confirm" android:paddingLeft="55.0dip" android:paddingTop="10.0dip" android:paddingRight="55.0dip" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="25.0dip" android:text="@string/general__shared__ok" />
+    <com.duokan.reader.ui.general.DkLabelView android:layout_gravity="bottom|center"
+        android:id="@id/personal__task_award_view__confirm"
+        android:background="@drawable/personal__task_award_view__confirm"
+        android:paddingLeft="55.0dip" android:paddingTop="10.0dip" android:paddingRight="55.0dip"
+        android:paddingBottom="10.0dip" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginBottom="25.0dip"
+        android:text="@string/general__shared__ok" />
 </FrameLayout>

@@ -1,16 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_gravity="bottom" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/reading__app_ad__bg" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="70.0dip" android:layout_marginLeft="17.0dip" android:layout_marginTop="17.0dip" android:layout_marginRight="17.0dip" android:layout_marginBottom="10.0dip">
-        <ImageView android:id="@id/reading__single_image_view__image" android:layout_width="52.0dip" android:layout_height="52.0dip" android:layout_marginRight="10.0dip" />
-        <RelativeLayout android:gravity="center_vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
-            <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="#ff333333" android:id="@id/reading__app_ad_view__title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" />
-            <LinearLayout android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/reading__app_ad_view__title" android:layout_alignTop="@id/reading__app_ad_view__title" android:layout_alignBottom="@id/reading__app_ad_view__title">
-                <TextView android:textSize="5.0sp" android:textColor="#ff999999" android:background="@drawable/reading__app_ad_view__ad_border" android:padding="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/general__shared__ad" />
+<FrameLayout android:layout_gravity="bottom"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="@drawable/reading__app_ad__bg"
+        android:padding="10.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="70.0dip"
+        android:layout_marginLeft="17.0dip"
+        android:layout_marginTop="17.0dip"
+        android:layout_marginRight="17.0dip"
+        android:layout_marginBottom="10.0dip">
+
+        <ImageView
+            android:id="@id/reading__single_image_view__image"
+            android:layout_width="52.0dip"
+            android:layout_height="52.0dip"
+            android:layout_marginRight="10.0dip" />
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0">
+
+            <TextView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textColor="#ff333333"
+                android:id="@id/reading__app_ad_view__title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true" />
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5.0dip"
+                android:layout_toRightOf="@id/reading__app_ad_view__title"
+                android:layout_alignTop="@id/reading__app_ad_view__title"
+                android:layout_alignBottom="@id/reading__app_ad_view__title">
+
+                <TextView
+                    android:textSize="5.0sp"
+                    android:textColor="#ff999999"
+                    android:background="@drawable/reading__app_ad_view__ad_border"
+                    android:padding="2.0dip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/general__shared__ad" />
             </LinearLayout>
-            <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="#ff666666" android:gravity="bottom" android:id="@id/reading__app_ad_view__summary" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" android:layout_below="@id/reading__app_ad_view__title" android:layout_alignParentLeft="true" />
+
+            <TextView
+                android:textSize="@dimen/general_font__shared__d"
+                android:textColor="#ff666666"
+                android:gravity="bottom"
+                android:id="@id/reading__app_ad_view__summary"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:layout_below="@id/reading__app_ad_view__title"
+                android:layout_alignParentLeft="true" />
         </RelativeLayout>
-        <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="#ffeeeeee" android:gravity="center" android:id="@id/reading__app_ad_view__download" android:background="@drawable/reading__app_ad_view__button_border_icon" android:layout_width="50.0dip" android:layout_height="28.0dip" android:layout_marginLeft="10.0dip" android:text="@string/general__shared__download" />
+
+        <TextView
+            android:textSize="@dimen/general_font__shared__d"
+            android:textColor="#ffeeeeee"
+            android:gravity="center"
+            android:id="@id/reading__app_ad_view__download"
+            android:background="@drawable/reading__app_ad_view__button_border_icon"
+            android:layout_width="50.0dip"
+            android:layout_height="28.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:text="@string/general__shared__download" />
     </LinearLayout>
-    <ImageView android:layout_gravity="center|right|top" android:id="@id/reading__app_ad_view__close" android:padding="9.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/reading__app_ad_view__close" />
+
+    <ImageView
+        android:layout_gravity="center|right|top"
+        android:id="@id/reading__app_ad_view__close"
+        android:padding="9.0dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/reading__app_ad_view__close" />
 </FrameLayout>

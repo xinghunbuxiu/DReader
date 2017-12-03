@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@drawable/general__shared__menu_item_view__textcolor" android:id="@id/store__fiction_purchase_view__name" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+<LinearLayout android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:textSize="@dimen/general_font__shared__c"
+            android:textColor="@drawable/general__shared__menu_item_view__textcolor"
+            android:id="@id/store__fiction_purchase_view__name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@drawable/general__shared__menu_item_view__textcolor" android:id="@id/store__fiction_purchase_view__chapter_price" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" />
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@drawable/general__shared__menu_item_view__textcolor" android:id="@id/store__fiction_purchase_view__chapter_cmread_prompt" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/store__fiction_purchase_view__cmread" />
-    <com.duokan.reader.ui.general.DkLabelView android:id="@id/store__fiction_purchase_view__purchase" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/store__fiction_purchase_view__purchase" style="@style/general__shared__button_43dip_ff6518" />
-    <RelativeLayout android:id="@id/store__fiction_purchase_view__more" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
-        <View android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentTop="true" />
-        <TableLayout android:id="@id/store__fiction_purchase_view__table" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+    <com.duokan.reader.ui.general.DkLabelView
+        android:textSize="@dimen/general_font__shared__c"
+        android:textColor="@drawable/general__shared__menu_item_view__textcolor"
+        android:id="@id/store__fiction_purchase_view__chapter_price"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.0dip" />
+
+    <com.duokan.reader.ui.general.DkLabelView
+        android:textSize="@dimen/general_font__shared__d"
+        android:textColor="@drawable/general__shared__menu_item_view__textcolor"
+        android:id="@id/store__fiction_purchase_view__chapter_cmread_prompt"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.0dip"
+        android:text="@string/store__fiction_purchase_view__cmread" />
+
+    <com.duokan.reader.ui.general.DkLabelView
+        android:id="@id/store__fiction_purchase_view__purchase"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15.0dip"
+        android:text="@string/store__fiction_purchase_view__purchase"
+        style="@style/general__shared__button_43dip_ff6518" />
+
+    <RelativeLayout
+        android:id="@id/store__fiction_purchase_view__more"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15.0dip">
+
+        <View
+            android:background="#ffcccccc"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:layout_alignParentTop="true" />
+
+        <TableLayout
+            android:id="@id/store__fiction_purchase_view__table"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
     </RelativeLayout>
 </LinearLayout>

@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.duokan.reader.ui.personal.PurchasedBookItemView android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.BookCoverView android:id="@id/bookshelf__purchased_book_item_view__cover" android:layout_marginLeft="15.0dip" android:layout_marginTop="@dimen/general__shared__cover_top_shadow_margin_15dip" android:layout_marginBottom="@dimen/general__shared__cover_bottom_shadow_margin_15dip" android:layout_alignParentLeft="true" style="@style/general__shared__cover_list" />
-    <com.duokan.reader.ui.bookshelf.BookActionView android:id="@id/bookshelf__purchased_book_item_view__action_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-    <LinearLayout android:orientation="vertical" android:id="@id/bookshelf__purchased_book_item_view__center_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/general__shared__cover_right_shadow_margin_15dip" android:layout_marginTop="15.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="15.0dip" android:layout_toLeftOf="@id/bookshelf__purchased_book_item_view__action_view" android:layout_toRightOf="@id/bookshelf__purchased_book_item_view__cover" android:layout_centerVertical="true">
-        <LinearLayout android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <TextView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__343434" android:ellipsize="end" android:layout_gravity="center" android:id="@id/bookshelf__purchased_book_item_view__first_line" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:layout_weight="1.0" />
-            <ImageView android:layout_gravity="center_vertical" android:id="@id/bookshelf__purchased_book_item_view__is_gift" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:src="@drawable/bookshelf__purchased_book_item_view__is_gift" android:scaleType="center" />
+<com.duokan.reader.ui.personal.PurchasedBookItemView android:layout_width="fill_parent"
+    android:layout_height="wrap_content" xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.reader.ui.general.BookCoverView
+        android:id="@id/bookshelf__purchased_book_item_view__cover"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginTop="@dimen/general__shared__cover_top_shadow_margin_15dip"
+        android:layout_marginBottom="@dimen/general__shared__cover_bottom_shadow_margin_15dip"
+        android:layout_alignParentLeft="true" style="@style/general__shared__cover_list" />
+    <com.duokan.reader.ui.bookshelf.BookActionView
+        android:id="@id/bookshelf__purchased_book_item_view__action_view"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginRight="15.0dip" android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" />
+    <LinearLayout android:orientation="vertical"
+        android:id="@id/bookshelf__purchased_book_item_view__center_view"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/general__shared__cover_right_shadow_margin_15dip"
+        android:layout_marginTop="15.0dip" android:layout_marginRight="5.0dip"
+        android:layout_marginBottom="15.0dip"
+        android:layout_toLeftOf="@id/bookshelf__purchased_book_item_view__action_view"
+        android:layout_toRightOf="@id/bookshelf__purchased_book_item_view__cover"
+        android:layout_centerVertical="true">
+        <LinearLayout android:layout_gravity="center_vertical" android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/general_font__shared__b"
+                android:textColor="@color/general__shared__343434" android:ellipsize="end"
+                android:layout_gravity="center"
+                android:id="@id/bookshelf__purchased_book_item_view__first_line"
+                android:layout_width="0.0dip" android:layout_height="wrap_content"
+                android:singleLine="true" android:includeFontPadding="false"
+                android:layout_weight="1.0" />
+            <ImageView android:layout_gravity="center_vertical"
+                android:id="@id/bookshelf__purchased_book_item_view__is_gift"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginLeft="5.0dip"
+                android:src="@drawable/bookshelf__purchased_book_item_view__is_gift"
+                android:scaleType="center" />
         </LinearLayout>
-        <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__a3a3a3" android:ellipsize="end" android:id="@id/bookshelf__purchased_book_item_view__second_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:singleLine="true" android:includeFontPadding="false" />
-        <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__6e6e6e" android:ellipsize="end" android:id="@id/bookshelf__purchased_book_item_view__third_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:singleLine="true" android:includeFontPadding="false" />
+        <TextView android:textSize="@dimen/general_font__shared__d"
+            android:textColor="@color/general__shared__a3a3a3" android:ellipsize="end"
+            android:id="@id/bookshelf__purchased_book_item_view__second_line"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip" android:singleLine="true"
+            android:includeFontPadding="false" />
+        <TextView android:textSize="@dimen/general_font__shared__d"
+            android:textColor="@color/general__shared__6e6e6e" android:ellipsize="end"
+            android:id="@id/bookshelf__purchased_book_item_view__third_line"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="15.0dip" android:singleLine="true"
+            android:includeFontPadding="false" />
     </LinearLayout>
 </com.duokan.reader.ui.personal.PurchasedBookItemView>

@@ -8,7 +8,9 @@
     <string name="passport_account_not_activated">"Account hasn't been activated"</string>
     <string name="passport_account_not_actived">"Your account hasn't been activated"</string>
     <string name="passport_account_set_password">Set password</string>
-    <string name="passport_account_set_password_prompt">Set the password for your account to sign in next time.</string>
+    <string name="passport_account_set_password_prompt">Set the password for your account to sign in
+        next time.
+    </string>
     <string name="passport_account_set_password_title">Set password</string>
     <string name="passport_active_email_visit">Check your inbox at %s</string>
     <string name="passport_activing_account">Activating…</string>
@@ -18,15 +20,20 @@
     <string name="passport_auto_generate_pwd">Generate secure password</string>
     <string name="passport_back">Back</string>
     <string name="passport_bad_authentication">Invalid username or password</string>
-    <string name="passport_barcode_add_account_prompt">To connect an account, scan the QR code again after you sign in.</string>
-    <string name="passport_change_account"><u>Change account</u></string>
+    <string name="passport_barcode_add_account_prompt">To connect an account, scan the QR code again
+        after you sign in.
+    </string>
+    <string name="passport_change_account">
+        <u>Change account</u>
+    </string>
     <string name="passport_change_phone_number">Switch numbers</string>
     <string name="passport_checking_account">Checking password…</string>
     <string name="passport_checking_input">Checking input…</string>
     <string name="passport_click_email_to_valid">"
 
-To activate your account, follow the 
- link we've sent to your inbox."</string>
+        To activate your account, follow the
+        link we've sent to your inbox."
+    </string>
     <string name="passport_completed">Finish</string>
     <string name="passport_confirm_recycle_account">Yes</string>
     <string name="passport_confirm_recycle_account_msg">%s &lt;font color=Red>疑似&lt;/font>是运营商回收后再次收买的号码，该号码下已有小米帐号，这个帐号是你的吗？</string>
@@ -37,10 +44,14 @@ To activate your account, follow the
     <string name="passport_downlink_reg">Create account using phone number</string>
     <string name="passport_email">Email address</string>
     <string name="passport_email_or_id_hint_text">Email address or Mi Account ID</string>
-    <string name="passport_email_reg_success_summary">%1$s has been bound with your account. You can use it to sign in or to reset your password.</string>
+    <string name="passport_email_reg_success_summary">%1$s has been bound with your account. You can
+        use it to sign in or to reset your password.
+    </string>
     <string name="passport_error_auth_fail">Session expired, sign in again later</string>
     <string name="passport_error_device_id">"Can't get device id"</string>
-    <string name="passport_error_dup_email">The email you entered is already associated with another account.</string>
+    <string name="passport_error_dup_email">The email you entered is already associated with another
+        account.
+    </string>
     <string name="passport_error_email">The email address you entered is invalid</string>
     <string name="passport_error_empty_captcha_code">Enter captcha</string>
     <string name="passport_error_empty_email">Enter your email address</string>
@@ -53,18 +64,26 @@ To activate your account, follow the
     <string name="passport_error_invalid_phone_num">Invalid phone number</string>
     <string name="passport_error_login">"Couldn't sign in"</string>
     <string name="passport_error_network">"Can't connect to network"</string>
-    <string name="passport_error_no_password_user">"You haven't set the password yet. Sign in with SMS."</string>
+    <string name="passport_error_no_password_user">"You haven't set the password yet. Sign in with
+        SMS."
+    </string>
     <string name="passport_error_phone_error">Invalid phone number</string>
     <string name="passport_error_server">Server error</string>
     <string name="passport_error_sim_not_ready">"Can't find SIM card"</string>
     <string name="passport_error_ssl_hand_shake">"Couldn't connect to server"</string>
     <string name="passport_error_unknown">"Can't sign in"</string>
     <string name="passport_error_user_name">The username you entered is invalid.</string>
-    <string name="passport_error_verify_activator_phone_message">Make sure your SIM card service is activated and the device is connected to the network.</string>
-    <string name="passport_error_verify_activator_phone_title">"Couldn't verify phone number"</string>
+    <string name="passport_error_verify_activator_phone_message">Make sure your SIM card service is
+        activated and the device is connected to the network.
+    </string>
+    <string name="passport_error_verify_activator_phone_title">"Couldn't verify phone number"
+    </string>
     <string name="passport_failed_to_send_activate_email">"Couldn't send activation email"</string>
-    <string name="passport_find_password_on_web_msg">Visit account.mi.com to reset your password.</string>
-    <string name="passport_forget_password"><u>Forgot password</u></string>
+    <string name="passport_find_password_on_web_msg">Visit account.mi.com to reset your password.
+    </string>
+    <string name="passport_forget_password">
+        <u>Forgot password</u>
+    </string>
     <string name="passport_forget_password_no_underline">Forgot password</string>
     <string name="passport_get_back_pwd">Retrieve account password</string>
     <string name="passport_get_verify_code">Get code</string>
@@ -72,14 +91,21 @@ To activate your account, follow the
     <string name="passport_getting_verify_code">Getting</string>
     <string name="passport_i_know">Got it</string>
     <string name="passport_identification_expired">Verification code expired, start over</string>
-    <string name="passport_imei_permission_denied_message">"We are requesting permission to get your device's IMEI. Mi Account uses IMEI to identify the device on which you sign in / sign up, to help keep your Mi Account safe."</string>
+    <string name="passport_imei_permission_denied_message">"We are requesting permission to get your
+        device's IMEI. Mi Account uses IMEI to identify the device on which you sign in / sign up,
+        to help keep your Mi Account safe."
+    </string>
     <string name="passport_imei_permission_denied_title">Request IMEI Permission</string>
     <string name="passport_input_captcha_hint">Enter code</string>
-    <string name="passport_input_password_for_login">This number is associated with an existing account, enter your password</string>
+    <string name="passport_input_password_for_login">This number is associated with an existing
+        account, enter your password
+    </string>
     <string name="passport_input_password_hint">Enter password</string>
     <string name="passport_input_phone_hint">Enter phone number</string>
     <string name="passport_input_vcode_hint">Enter verification code</string>
-    <string name="passport_license_host_unreachable">"Can't connect to the network. You can view this page at %s."</string>
+    <string name="passport_license_host_unreachable">"Can't connect to the network. You can view
+        this page at %s."
+    </string>
     <string name="passport_loading">Loading…</string>
     <string name="passport_login">Sign in</string>
     <string name="passport_login_failed">"Can't sign in"</string>
@@ -90,13 +116,17 @@ To activate your account, follow the
     <string name="passport_login_recycle_account_no">Nope</string>
     <string name="passport_login_recycle_account_yes">Yes</string>
     <string name="passport_login_title">Sign in to your Mi Account</string>
-    <string name="passport_login_using_other_ways"><u>Other ways to sign in</u></string>
+    <string name="passport_login_using_other_ways">
+        <u>Other ways to sign in</u>
+    </string>
     <string name="passport_message_dialog_title">SMS with verifying codes</string>
     <string name="passport_next">Next</string>
     <string name="passport_no">No</string>
     <string name="passport_notification_title">Sign in error for %1$s</string>
     <string name="passport_password_phone_login">Sign in using Mi Account</string>
-    <string name="passport_password_req_notice">Password must be 8-16 characters in length and include both numbers and letters (case sensitive).</string>
+    <string name="passport_password_req_notice">Password must be 8-16 characters in length and
+        include both numbers and letters (case sensitive).
+    </string>
     <string name="passport_phone_num_hint_text">Phone number</string>
     <string name="passport_phone_ticket_login">Sign in with SMS</string>
     <string name="passport_prev">Back</string>
@@ -110,11 +140,15 @@ To activate your account, follow the
     <string name="passport_quick_login_step2_title">2-step verification</string>
     <string name="passport_quick_login_title">Enter your password</string>
     <string name="passport_quick_register">Sign up</string>
-    <string name="passport_quick_register_notice"><u>"Don't have a Mi Account? Create one."</u></string>
+    <string name="passport_quick_register_notice">
+        <u>"Don't have a Mi Account? Create one."</u>
+    </string>
     <string name="passport_re_get_verify_code">Get code again</string>
     <string name="passport_re_register">Sign up again</string>
     <string name="passport_recycle_account_prompt">Is this your Mi Account?</string>
-    <string name="passport_recycle_login_other_account">"They aren't mine. I'll use a different one."</string>
+    <string name="passport_recycle_login_other_account">"They aren't mine. I'll use a different
+        one."
+    </string>
     <string name="passport_reg_btn_using_other_phone">Use alternate phone number</string>
     <string name="passport_reg_failed">"Can't set up account"</string>
     <string name="passport_reg_new_account">Create account</string>
@@ -122,18 +156,29 @@ To activate your account, follow the
     <string name="passport_reg_recycle_account_no">Nope</string>
     <string name="passport_reg_recycle_account_yes">Yes</string>
     <string name="passport_reg_success">Account created</string>
-    <string name="passport_reg_success_summary">%1$s has been bound with your account. You can use it to sign in or to reset your password.</string>
+    <string name="passport_reg_success_summary">%1$s has been bound with your account. You can use
+        it to sign in or to reset your password.
+    </string>
     <string name="passport_reg_type_email">Use email address</string>
-    <string name="passport_reg_using_other_phone"><u>Use alternate phone number</u></string>
-    <string name="passport_reg_using_other_phone_number_prompt">"Create a new account using "</string>
+    <string name="passport_reg_using_other_phone">
+        <u>Use alternate phone number</u>
+    </string>
+    <string name="passport_reg_using_other_phone_number_prompt">"Create a new account using "
+    </string>
     <string name="passport_reg_using_phone_number_prompt">Create account using phone number</string>
-    <string name="passport_reg_via_sms_alert">An outgoing SMS message may be required to activate this service. Your carrier will charge you for this message.</string>
+    <string name="passport_reg_via_sms_alert">An outgoing SMS message may be required to activate
+        this service. Your carrier will charge you for this message.
+    </string>
     <string name="passport_reging">Creating account…</string>
     <string name="passport_register">Create an account</string>
     <string name="passport_register_account_goto_email">Go to inbox</string>
     <string name="passport_register_account_verified_confirm">Account verified</string>
-    <string name="passport_register_by_email"><u>Create an account using email address</u></string>
-    <string name="passport_register_restricted">Too many accounts have been associated with this number, try a different one</string>
+    <string name="passport_register_by_email">
+        <u>Create an account using email address</u>
+    </string>
+    <string name="passport_register_restricted">Too many accounts have been associated with this
+        number, try a different one
+    </string>
     <string name="passport_register_restricted_title">"Can't use this phone number"</string>
     <string name="passport_registered_phone_num">Phone: %s</string>
     <string name="passport_registered_phone_user_ID">User ID: %s</string>
@@ -142,39 +187,54 @@ To activate your account, follow the
     <string name="passport_relogin">Sign in again</string>
     <string name="passport_relogin_notice">You need to sign in again</string>
     <string name="passport_remove_confirm">Sign out</string>
-    <string name="passport_remove_unactivated_account_notice">"Your account hasn't been activated."</string>
+    <string name="passport_remove_unactivated_account_notice">"Your account hasn't been
+        activated."
+    </string>
     <string name="passport_resend_active_email">Resend email</string>
     <string name="passport_reset_fail_title">"Couldn't reset"</string>
     <string name="passport_reset_password_prompt">Password is incorrect</string>
     <string name="passport_reset_password_title">Reset password</string>
     <string name="passport_restart">Start over</string>
-    <string name="passport_restart_register_prompt">Another verification message may be required to create your account.</string>
+    <string name="passport_restart_register_prompt">Another verification message may be required to
+        create your account.
+    </string>
     <string name="passport_restart_register_title">Create a Mi Account</string>
     <string name="passport_retry">Try again</string>
     <string name="passport_select_reg_ways_title">Other ways to sign up</string>
     <string name="passport_select_the_login_account">Select the account to sign in</string>
     <string name="passport_select_the_recycle_phone_login">Select your account</string>
-    <string name="passport_select_the_register_phone">Select the phone number to create an account</string>
-    <string name="passport_send_too_many_code">Too many verification codes have been sent to this number. Wait 24 hours and try again.</string>
+    <string name="passport_select_the_register_phone">Select the phone number to create an account
+    </string>
+    <string name="passport_send_too_many_code">Too many verification codes have been sent to this
+        number. Wait 24 hours and try again.
+    </string>
     <string name="passport_send_vcode_failed">"Couldn't send code"</string>
     <string name="passport_sending_vcode">Sending code…</string>
     <string name="passport_set">Set</string>
-    <string name="passport_set_password_no_phone_msg">Add your phone number to protect your account.</string>
+    <string name="passport_set_password_no_phone_msg">Add your phone number to protect your
+        account.
+    </string>
     <string name="passport_setting">Setting up…</string>
     <string name="passport_skip_login">Skip</string>
     <string name="passport_skip_register">Skip sign-up</string>
-    <string name="passport_skip_setup_account_msg">You can set up a Mi Account later in Settings.</string>
+    <string name="passport_skip_setup_account_msg">You can set up a Mi Account later in Settings.
+    </string>
     <string name="passport_skip_setup_account_title">Skip setup</string>
     <string name="passport_sms_send_success">Sent</string>
     <string name="passport_sync_account_data">Syncing account info…</string>
-    <string name="passport_sync_account_data_failed_warning">Your account info is being synced now, you can sign in using your Mi Account ID. If you want to sign in using your phone or email, wait until the info is fully synced.</string>
+    <string name="passport_sync_account_data_failed_warning">Your account info is being synced now,
+        you can sign in using your Mi Account ID. If you want to sign in using your phone or email,
+        wait until the info is fully synced.
+    </string>
     <string name="passport_title_reg">Create an account</string>
     <string name="passport_trust_device">Add this device to verified devices</string>
     <string name="passport_trying_read_verify_code_sms">Getting verification code…</string>
     <string name="passport_uplink_reg">Use phone number</string>
     <string name="passport_uplink_slot1_reg">Use SIM 1</string>
     <string name="passport_uplink_slot2_reg">Use SIM 2</string>
-    <string name="passport_use_generated_pwd_message">Make sure you remember your password. You can use it to sign in to other Mi services.</string>
+    <string name="passport_use_generated_pwd_message">Make sure you remember your password. You can
+        use it to sign in to other Mi services.
+    </string>
     <string name="passport_use_generated_pwd_title">Remember your password</string>
     <string name="passport_user_agreement">User Agreement</string>
     <string name="passport_user_agreement_p1">Agree to </string>
@@ -183,16 +243,23 @@ To activate your account, follow the
     <string name="passport_user_agreement_p4">Privacy Policy</string>
     <string name="passport_user_id_notice">Your Mi Account ID is %s.</string>
     <string name="passport_user_reg_region">Country/Region</string>
-    <string name="passport_user_reg_region_warning">"You won't be able to change your country/region once the account is created."</string>
-    <string name="passport_vcode_notification_title">Your sign-in verification is incomplete</string>
+    <string name="passport_user_reg_region_warning">"You won't be able to change your country/region
+        once the account is created."
+    </string>
+    <string name="passport_vcode_notification_title">Your sign-in verification is incomplete
+    </string>
     <string name="passport_vcode_prompt_long">Enter verification code</string>
     <string name="passport_vcode_sms_send_prompt">Send verification code to %s</string>
     <string name="passport_verification_failed">Authentication failed</string>
     <string name="passport_verify">Verify</string>
     <string name="passport_verifying_activator_phone">Verifying phone security…</string>
-    <string name="passport_wait_for_sms_prompt">"Start over now? Verification messages may take to 10 minutes to be delivered when your phone is within range of your carrier's network."</string>
+    <string name="passport_wait_for_sms_prompt">"Start over now? Verification messages may take to
+        10 minutes to be delivered when your phone is within range of your carrier's network."
+    </string>
     <string name="passport_wrong_captcha">The code you entered is incorrect</string>
-    <string name="passport_wrong_phone_number_format">The format of the phone number you entered is invalid</string>
+    <string name="passport_wrong_phone_number_format">The format of the phone number you entered is
+        invalid
+    </string>
     <string name="passport_wrong_vcode">The code you entered is incorrect</string>
     <string name="passport_yes">Yes</string>
     <string name="FrameLayout">发送</string>
@@ -201,7 +268,8 @@ To activate your account, follow the
     <string name="account__anonymous">游客%s</string>
     <string name="account__bad_authentication">用户名密码不匹配</string>
     <string name="account__dk_account_migrated_from_to">"您的多看帐号 %1$s 已经迁移至小米帐号 %2$s。
-为确保帐号财产安全，请您重新用小米帐号登录"</string>
+        为确保帐号财产安全，请您重新用小米帐号登录"
+    </string>
     <string name="account__dk_account_migration_prompt__description">您当前在使用多看帐号，%s</string>
     <string name="account__dk_account_migration_prompt__title">帐号迁移</string>
     <string name="account__dk_account_migration_view__title">帐号迁移</string>
@@ -211,7 +279,9 @@ To activate your account, follow the
     <string name="account__dk_login_view__login">登录</string>
     <string name="account__dk_login_view__password">您的密码</string>
     <string name="account__dk_login_view__title">登录多看帐号</string>
-    <string name="account__dk_migrate_mi_login_view__description">多看帐号登录已经关闭。您可以选择迁移多看帐号到小米帐号，或者登录小米帐号</string>
+    <string name="account__dk_migrate_mi_login_view__description">
+        多看帐号登录已经关闭。您可以选择迁移多看帐号到小米帐号，或者登录小米帐号
+    </string>
     <string name="account__dk_migrate_mi_login_view__dk_migrate">迁移多看帐号</string>
     <string name="account__dk_migrate_mi_login_view__mi_login">立即用小米帐号登录</string>
     <string name="account__dk_migrate_mi_login_view__title">帐号登录</string>
@@ -255,7 +325,8 @@ To activate your account, follow the
     <string name="account__mi_account_migration_prompt__cancel">取消</string>
     <string name="account__mi_account_migration_prompt__migrate">迁移帐号</string>
     <string name="account__mi_dk_login_view__title">登录帐号</string>
-    <string name="account__mi_login_view__error_change_account_for_relogin">重新登录小米帐号时，只能登录当前帐号%s。</string>
+    <string name="account__mi_login_view__error_change_account_for_relogin">重新登录小米帐号时，只能登录当前帐号%s。
+    </string>
     <string name="account__mi_login_view__network_error">呃，页面加载失败，请检查您的网络</string>
     <string name="account__mi_login_view__reload">重新加载</string>
     <string name="account__mi_login_view__title">登录小米帐号</string>
@@ -265,7 +336,8 @@ To activate your account, follow the
     <string name="account__newbie__add_books_to_bookshelf">正在将书籍加入书架...</string>
     <string name="account__newbie__new_user_start">新用户点此开始</string>
     <string name="account__newbie__select_interested_categories">勾选你感兴趣的书类</string>
-    <string name="account__newbie__select_interested_categories_description">读读这些广受好评的精选图书吧!</string>
+    <string name="account__newbie__select_interested_categories_description">读读这些广受好评的精选图书吧!
+    </string>
     <string name="account__newbie__select_your_gender">请选择您的性别</string>
     <string name="account__newbie__select_your_gender_description">将据此为您推荐热门书籍</string>
     <string name="account__newbie__start">点此开始</string>
@@ -293,14 +365,18 @@ To activate your account, follow the
     <string name="account__shared__login_why_2_noob_gift">小米帐号还可享受云空间及购书券双重好礼</string>
     <string name="account__shared__login_why_noob_gift">登录后可购买书籍、同步阅读信息</string>
     <string name="account__shared__logining_system_miaccount">正在用系统小米帐号%s登录...</string>
-    <string name="account__shared__mi_account_bound_to_other_sns">当前小米帐号已经绑定了另一个%1$s帐号 %2$s, 只能将多看阅读和该帐号绑定</string>
+    <string name="account__shared__mi_account_bound_to_other_sns">当前小米帐号已经绑定了另一个%1$s帐号 %2$s,
+        只能将多看阅读和该帐号绑定
+    </string>
     <string name="account__shared__mi_login">小米帐号登录</string>
     <string name="account__shared__migrate_account_from_dk_to_mi">迁移多看帐号至小米帐号</string>
     <string name="account__shared__migrate_logined_dk_account">立即迁移至小米帐号</string>
     <string name="account__shared__no_login_miaccount">你还没有登录小米帐号</string>
     <string name="account__shared__quering_account_status">正在查询当前小米帐号状态...</string>
     <string name="account__shared__share_null_tips">写一段推荐语吧，哪怕是凑点也行啊~</string>
-    <string name="account__shared__sns_bound_to_other_mi_account">该%1$s帐号已经绑定到另一个小米帐号 %2$s，不能与当前小米帐号绑定</string>
+    <string name="account__shared__sns_bound_to_other_mi_account">该%1$s帐号已经绑定到另一个小米帐号
+        %2$s，不能与当前小米帐号绑定
+    </string>
     <string name="account__shared__sns_weibo_name">新浪微博</string>
     <string name="account__shared__unbinding_sns">正在取消绑定</string>
     <string name="account__third_share_view__create_note">同时记录为我的笔记</string>
@@ -320,7 +396,9 @@ To activate your account, follow the
     <string name="app__shared__shortcut_name">阅读</string>
     <string name="bookcity_downloadcenter__shared__download_font_immediately">后台下载</string>
     <string name="bookcity_downloadcenter__shared__download_font_later">以后再说</string>
-    <string name="bookcity_downloadcenter__shared__download_font_prompt">多看精品电子书使用多种专业字体排版，为了保证最佳阅读效果，我们免费为您提供正版字库下载，强烈建议您升级字库。（不消耗任何2G/3G流量）</string>
+    <string name="bookcity_downloadcenter__shared__download_font_prompt">
+        多看精品电子书使用多种专业字体排版，为了保证最佳阅读效果，我们免费为您提供正版字库下载，强烈建议您升级字库。（不消耗任何2G/3G流量）
+    </string>
     <string name="bookcity_downloadcenter__shared__download_font_title">WLAN网络自动下载字库</string>
     <string name="bookcity_store__bookdetailview__freedownload">免费下载</string>
     <string name="bookcity_store__bookdetailview__limitfreedownload">限时免费</string>
@@ -328,19 +406,26 @@ To activate your account, follow the
     <string name="bookcity_store__redemption_code__error">使用兑换码出错，错误码: %d</string>
     <string name="bookcity_store__shared__alipay_checking_update">正在检测安全支付服务版本...</string>
     <string name="bookcity_store__shared__alipay_fail_to_connect">无法连接支付宝</string>
-    <string name="bookcity_store__shared__alipay_installation_confirm">"为保证您的交易安全，需要您安装支付宝安全支付服务，才能进行付款。
+    <string name="bookcity_store__shared__alipay_installation_confirm">
+        "为保证您的交易安全，需要您安装支付宝安全支付服务，才能进行付款。
 
-点击确定，立即安装"</string>
+        点击确定，立即安装"
+    </string>
     <string name="bookcity_store__shared__alipay_installation_title">安装提示</string>
     <string name="bookcity_store__shared__book_price_changed_title">确认购买</string>
     <string name="bookcity_store__shared__creating_order">正在连接服务器...</string>
     <string name="bookcity_store__shared__fail_to_create_order_as_error">创建订单失败，错误代码%d</string>
-    <string name="bookcity_store__shared__fail_to_create_order_as_network_error">创建订单失败，可能是由于网络连接故障，请稍候再试</string>
+    <string name="bookcity_store__shared__fail_to_create_order_as_network_error">
+        创建订单失败，可能是由于网络连接故障，请稍候再试
+    </string>
     <string name="bookcity_store__shared__fail_to_find_book">很抱歉，该图书已经下架</string>
-    <string name="bookcity_store__shared__fail_to_has_unverify_payment">存在未完成订单，可能是由于网络连接故障，请稍候重试</string>
+    <string name="bookcity_store__shared__fail_to_has_unverify_payment">存在未完成订单，可能是由于网络连接故障，请稍候重试
+    </string>
     <string name="bookcity_store__shared__fail_to_pay">未完成支付，订单已取消</string>
     <string name="bookcity_store__shared__fail_to_verify_payment">支付结果验证失败，请联系客服人员</string>
-    <string name="bookcity_store__shared__fail_to_verify_payment_as_network_error">支付结果验证失败，可能是由于网络连接故障，请联系客服人员</string>
+    <string name="bookcity_store__shared__fail_to_verify_payment_as_network_error">
+        支付结果验证失败，可能是由于网络连接故障，请联系客服人员
+    </string>
     <string name="bookcity_store__shared__invalid_order_status">订单状态异常，请联系客服人员</string>
     <string name="bookcity_store__shared__notify_repeat_update">提交支付完成信息失败, 是否重新提交?</string>
     <string name="bookcity_store__shared__payment_ok">订单支付成功！</string>
@@ -348,7 +433,9 @@ To activate your account, follow the
     <string name="bookcity_store__shared__reverify_order_confirm">重试</string>
     <string name="bookroom__clear_invalid_book_view__done">清理完毕</string>
     <string name="bookroom__clear_invalid_book_view__found">发现无效书籍&lt;font color=#ed6c00> %1$d &lt;/font>本</string>
-    <string name="bookroom__clear_invalid_book_view__scanning">已扫描&lt;font color=#ed6c00> %1$d / %2$d &lt;/font>本书籍…</string>
+    <string name="bookroom__clear_invalid_book_view__scanning">已扫描&lt;font color=#ed6c00> %1$d /
+        %2$d &lt;/font>本书籍…
+    </string>
     <string name="bookroom__shared__invalid_book_clear">清理其他无效书籍</string>
     <string name="bookroom__shared__invalid_book_title">书籍不存在，确认从书架删除</string>
     <string name="bookshelf__add_book_menu_view__bookshelf_style">书架风格</string>
@@ -364,9 +451,12 @@ To activate your account, follow the
     <string name="bookshelf__add_book_view__add_book">添加更多书籍</string>
     <string name="bookshelf__auto_upload_books_on_wifi_dlg__no">不启用</string>
     <string name="bookshelf__auto_upload_books_on_wifi_dlg__ok">启用</string>
-    <string name="bookshelf__auto_upload_books_on_wifi_dlg__prompt">开启后，添加的本地书会在WLAN下自动上传到您的云空间，方便您随时随地下载阅读。</string>
+    <string name="bookshelf__auto_upload_books_on_wifi_dlg__prompt">
+        开启后，添加的本地书会在WLAN下自动上传到您的云空间，方便您随时随地下载阅读。
+    </string>
     <string name="bookshelf__auto_upload_books_on_wifi_dlg__title">是否启用自动上传功能？</string>
-    <string name="bookshelf__book__download_dialog__prompt">目前您处于流量环境下，下载所选书籍将消耗%1$sMB流量，是否继续？</string>
+    <string name="bookshelf__book__download_dialog__prompt">目前您处于流量环境下，下载所选书籍将消耗%1$sMB流量，是否继续？
+    </string>
     <string name="bookshelf__book__download_dialog__title">流量下载提醒</string>
     <string name="bookshelf__book__download_prompt__title">书籍下载</string>
     <string name="bookshelf__book__download_prompt_at_data_plan">将要下载书籍，大约%1$s。</string>
@@ -389,11 +479,19 @@ To activate your account, follow the
     <string name="bookshelf__books_upload_progress_view__cancel_upload_prompt">不再上传书籍：%1$s?</string>
     <string name="bookshelf__books_upload_progress_view__pause">暂停</string>
     <string name="bookshelf__books_upload_progress_view__progress_failed">上传失败</string>
-    <string name="bookshelf__books_upload_progress_view__progress_failed_access_denied">上传失败, 访问拒绝</string>
-    <string name="bookshelf__books_upload_progress_view__progress_failed_access_local_file">上传失败, 无法访问请求上传的文件</string>
-    <string name="bookshelf__books_upload_progress_view__progress_failed_kss_server_readonly">上传失败, 服务器维护中</string>
-    <string name="bookshelf__books_upload_progress_view__progress_failed_name_conflicted">上传失败, 云空间已经存在同名文件</string>
-    <string name="bookshelf__books_upload_progress_view__progress_failed_space_over">上传失败, 云空间满</string>
+    <string name="bookshelf__books_upload_progress_view__progress_failed_access_denied">上传失败, 访问拒绝
+    </string>
+    <string name="bookshelf__books_upload_progress_view__progress_failed_access_local_file">上传失败,
+        无法访问请求上传的文件
+    </string>
+    <string name="bookshelf__books_upload_progress_view__progress_failed_kss_server_readonly">上传失败,
+        服务器维护中
+    </string>
+    <string name="bookshelf__books_upload_progress_view__progress_failed_name_conflicted">上传失败,
+        云空间已经存在同名文件
+    </string>
+    <string name="bookshelf__books_upload_progress_view__progress_failed_space_over">上传失败, 云空间满
+    </string>
     <string name="bookshelf__books_upload_progress_view__progress_paused">上传暂停</string>
     <string name="bookshelf__books_upload_progress_view__progress_text">速度%1$S/s，剩余%2$S</string>
     <string name="bookshelf__books_upload_progress_view__progress_waiting">等待中...</string>
@@ -409,7 +507,9 @@ To activate your account, follow the
     <string name="bookshelf__category_selection_view__move_d_books_to">移动%d本图书到...</string>
     <string name="bookshelf__check_serial_updates_view__update_done">更新完成</string>
     <string name="bookshelf__check_serial_updates_view__updated">共有&lt;font color=#ed6c00> %1$d &lt;/font>本书籍更新</string>
-    <string name="bookshelf__check_serial_updates_view__updating">已检查&lt;font color=#ed6c00> %1$d / %2$d &lt;/font>本连载书籍...</string>
+    <string name="bookshelf__check_serial_updates_view__updating">已检查&lt;font color=#ed6c00> %1$d /
+        %2$d &lt;/font>本连载书籍...
+    </string>
     <string name="bookshelf__clear_local_files_dlg__prompt">已选择%1$d本书籍，共下载%2$s数据，是否清理？</string>
     <string name="bookshelf__clear_local_files_dlg__title">清理已下载数据</string>
     <string name="bookshelf__cloud_books_view__deleting">正在删除...</string>
@@ -424,11 +524,15 @@ To activate your account, follow the
     <string name="bookshelf__customshelf_view__show_bookshelf_menu">打开书架菜单</string>
     <string name="bookshelf__delete_book_dialog_view__duokan_tips">您可以通过拥有页面重新下载已删除的文件</string>
     <string name="bookshelf__delete_book_dialog_view__micloud_tips">您可以通过云空间重新下载已删除的文件</string>
-    <string name="bookshelf__delete_category_dialog_view__choose_delete_category_books">是否也同时删除文件夹内的图书？</string>
+    <string name="bookshelf__delete_category_dialog_view__choose_delete_category_books">
+        是否也同时删除文件夹内的图书？
+    </string>
     <string name="bookshelf__delete_category_dialog_view__delete_category">删除分组</string>
     <string name="bookshelf__delete_category_dialog_view__delete_category_books">删除图书</string>
     <string name="bookshelf__delete_category_dialog_view__undelete_category_books">不删除图书</string>
-    <string name="bookshelf__download_book_from_other_miaccount_cloud_storage">本书存储在小米帐号%1$s的云端空间中。若想继续下载，请登录该帐号</string>
+    <string name="bookshelf__download_book_from_other_miaccount_cloud_storage">
+        本书存储在小米帐号%1$s的云端空间中。若想继续下载，请登录该帐号
+    </string>
     <string name="bookshelf__duplicate_category_name">书架上已经存在同名分组</string>
     <string name="bookshelf__empty_view__shelf_wait_fill">空荡荡的书架等您来填满</string>
     <string name="bookshelf__empty_view__to_local">浏览本地书籍</string>
@@ -506,7 +610,8 @@ To activate your account, follow the
     <string name="bookshelf__recommended_books_view__add">加入书架</string>
     <string name="bookshelf__recommended_books_view__recommended_books">以下是给您推荐的热门书籍</string>
     <string name="bookshelf__recommended_books_view__wireless_disable">当前没有网络</string>
-    <string name="bookshelf__recommended_books_view__wireless_disable_detail">当前没有网络,无法获取书籍,请联网后重试</string>
+    <string name="bookshelf__recommended_books_view__wireless_disable_detail">当前没有网络,无法获取书籍,请联网后重试
+    </string>
     <string name="bookshelf__recommended_view__recommend">热门推荐</string>
     <string name="bookshelf__remove_books_dlg__del_src_files">同时删除源文件</string>
     <string name="bookshelf__remove_books_dlg__title">从书架删除所选书籍？</string>
@@ -622,10 +727,14 @@ To activate your account, follow the
     <string name="general__shared__0day_wakeup_uri">duokan-reader://store</string>
     <string name="general__shared__1day_wakeup_msg">每天超过10万人在看的热门好书！</string>
     <string name="general__shared__1day_wakeup_title">最近这些书人气爆棚！</string>
-    <string name="general__shared__1day_wakeup_uri">https://www.duokan.com/hs/market/super_topic/49</string>
+    <string name="general__shared__1day_wakeup_uri">
+        https://www.duokan.com/hs/market/super_topic/49
+    </string>
     <string name="general__shared__7day_wakeup_msg">最近又上了好多好书，去看看吧！</string>
     <string name="general__shared__7day_wakeup_title">很久没见，想你了</string>
-    <string name="general__shared__7day_wakeup_uri">https://www.duokan.com/hs/market/super_topic/48</string>
+    <string name="general__shared__7day_wakeup_uri">
+        https://www.duokan.com/hs/market/super_topic/48
+    </string>
     <string name="general__shared__about">关于</string>
     <string name="general__shared__about_ad">关于广告</string>
     <string name="general__shared__account_change">帐号异常，请重新登录后尝试</string>
@@ -679,7 +788,9 @@ To activate your account, follow the
     <string name="general__shared__followed">已关注</string>
     <string name="general__shared__hard_working">努力工作中，请稍候…</string>
     <string name="general__shared__has_ad">有广告?</string>
-    <string name="general__shared__https_error">建立网络连接失败。关闭https加密传输会改善此情况，但会降低数据传输的安全性。您是否要关闭https加密传输？</string>
+    <string name="general__shared__https_error">
+        建立网络连接失败。关闭https加密传输会改善此情况，但会降低数据传输的安全性。您是否要关闭https加密传输？
+    </string>
     <string name="general__shared__https_error_cancel">不关闭</string>
     <string name="general__shared__https_error_ok">关闭</string>
     <string name="general__shared__icloud">云空间</string>
@@ -744,7 +855,8 @@ To activate your account, follow the
     <string name="general__shared__website">www.duokan.com</string>
     <string name="general__shared__welcome">欢迎</string>
     <string name="general__shared__why_ad">本书包含广告，收益用以补贴版权方，感谢您的理解！</string>
-    <string name="general__shared__why_ad_how_to_close">本书包含广告，收益用以补贴版权方。您可以购买本书来关闭广告。感谢您的理解！</string>
+    <string name="general__shared__why_ad_how_to_close">本书包含广告，收益用以补贴版权方。您可以购买本书来关闭广告。感谢您的理解！
+    </string>
     <string name="general__shared__within_1minutes">1分钟内</string>
     <string name="general__unsupported_intent">未找到合适的应用程序</string>
     <string name="general__update__downloading_dkreadker_apk">多看阅读更新包</string>
@@ -836,29 +948,40 @@ To activate your account, follow the
     <string name="personal__comment_message_item_view__vote_type_text">赞了我的书评</string>
     <string name="personal__custom_cloud_empty_view__no_book">云空间暂时没有书</string>
     <string name="personal__experience_view__finished_books">"读完书籍
- %s 
-本"</string>
+        %s
+        本"
+    </string>
     <string name="personal__experience_view__hour">%d小时</string>
     <string name="personal__experience_view__minute">%d分钟</string>
     <string name="personal__experience_view__percentage_formatter">\##%</string>
     <string name="personal__experience_view__percentage_formatter_precise">\##.##%</string>
-    <string name="personal__experience_view__preference_reading_time">您更喜欢在 %1$d:00 - %2$d:00 看书</string>
+    <string name="personal__experience_view__preference_reading_time">您更喜欢在 %1$d:00 - %2$d:00 看书
+    </string>
     <string name="personal__experience_view__ranking_total">超过了 %s 的读书人</string>
     <string name="personal__experience_view__ranking_total_low">您的读书量太少了，请努力吧!</string>
     <string name="personal__experience_view__readed_books">"读过书籍
- %s 
-本"</string>
-    <string name="personal__experience_view__reading_detail_latest_month">平均每天 %1$s，超过 %2$s 的读书人</string>
+        %s
+        本"
+    </string>
+    <string name="personal__experience_view__reading_detail_latest_month">平均每天 %1$s，超过 %2$s 的读书人
+    </string>
     <string name="personal__experience_view__reading_time_latest_month">过去一个月您阅读了 %s</string>
     <string name="personal__experience_view__reading_time_total">"阅读总时长
- %s 
-小时"</string>
+        %s
+        小时"
+    </string>
     <string name="personal__experience_view__reward">期间您从其他书友那里收获了 %1$s 个赞， %2$s 条评论</string>
     <string name="personal__experience_view__second">%d秒</string>
     <string name="personal__experience_view__share">分享我的阅历</string>
-    <string name="personal__experience_view__share_template">\#多看阅历# 我使用 @多看阅读 超过了%1$s的读书人。总计读过%2$s本书，累计阅读时间%3$s。最近一个月平均每日阅读%4$。</string>
-    <string name="personal__experience_view__share_template_no_latest_month_reading_record">\#多看阅历# 我使用 @多看阅读 超过了%1$s的读书人。总计读过%2$s本书，累计阅读时间%3$s。</string>
-    <string name="personal__experience_view__share_template_ranking_low">\#多看阅历# 我使用 @多看阅读 总计读过%1$s本书，累计阅读时间%2$s。这个阅读量和大家相比太少了，还需努力啊!</string>
+    <string name="personal__experience_view__share_template">\#多看阅历# 我使用 @多看阅读
+        超过了%1$s的读书人。总计读过%2$s本书，累计阅读时间%3$s。最近一个月平均每日阅读%4$。
+    </string>
+    <string name="personal__experience_view__share_template_no_latest_month_reading_record">\#多看阅历#
+        我使用 @多看阅读 超过了%1$s的读书人。总计读过%2$s本书，累计阅读时间%3$s。
+    </string>
+    <string name="personal__experience_view__share_template_ranking_low">\#多看阅历# 我使用 @多看阅读
+        总计读过%1$s本书，累计阅读时间%2$s。这个阅读量和大家相比太少了，还需努力啊!
+    </string>
     <string name="personal__experience_view__time_formatter">%d:00</string>
     <string name="personal__experience_view__title">我的阅历</string>
     <string name="personal__experience_view__using_days">多看已伴您度过 %s 天</string>
@@ -960,13 +1083,18 @@ To activate your account, follow the
     <string name="personal__miaccount_change_nickname_view__failed">修改昵称失败</string>
     <string name="personal__miaccount_change_nickname_view__title">昵称修改</string>
     <string name="personal__miaccount_change_password_view__new_password_hint">请输入新密码</string>
-    <string name="personal__miaccount_change_password_view__new_password_invalid_chars">%s 不是合法的密码字符。密码只能包含数字、英文字母和英文字符</string>
+    <string name="personal__miaccount_change_password_view__new_password_invalid_chars">%s
+        不是合法的密码字符。密码只能包含数字、英文字母和英文字符
+    </string>
     <string name="personal__miaccount_change_password_view__new_password_label">新密码</string>
-    <string name="personal__miaccount_change_password_view__new_password_too_short">新密码太短，最少需要%d个字符</string>
+    <string name="personal__miaccount_change_password_view__new_password_too_short">
+        新密码太短，最少需要%d个字符
+    </string>
     <string name="personal__miaccount_change_password_view__old_password_hint">请输入旧密码</string>
     <string name="personal__miaccount_change_password_view__old_password_label">旧密码</string>
     <string name="personal__miaccount_change_password_view__show_password">显示密码</string>
-    <string name="personal__miaccount_change_password_view__succeed_to_change_password">修改密码成功</string>
+    <string name="personal__miaccount_change_password_view__succeed_to_change_password">修改密码成功
+    </string>
     <string name="personal__miaccount_change_password_view__title">密码修改</string>
     <string name="personal__miaccount_change_signature_view__failed">修改签名失败</string>
     <string name="personal__miaccount_change_signature_view__title">签名修改</string>
@@ -993,7 +1121,8 @@ To activate your account, follow the
     <string name="personal__note_share_view__share_to_some_peoples">向以下人群开放笔记</string>
     <string name="personal__note_share_view__title">设置笔记权限</string>
     <string name="personal__offline_task_view__instruction">"当前无网络
-联网后可领取丰厚奖励"</string>
+        联网后可领取丰厚奖励"
+    </string>
     <string name="personal__output_entrance_view__email">其他</string>
     <string name="personal__output_entrance_view__yingxiang">印象笔记</string>
     <string name="personal__page_view__title">我的动态</string>
@@ -1083,7 +1212,8 @@ To activate your account, follow the
     <string name="personal__personal_settings_view__web_access">需要连接网络时提示</string>
     <string name="personal__personal_settings_view__wifi_sync_evernote">仅用WLAN同步印象笔记</string>
     <string name="personal__personal_settings_view__wifi_upload_download">仅用WLAN上传/下载</string>
-    <string name="personal__personal_settings_view__wifi_upload_download_hint">避免在无WLAN时使用2G/3G流量</string>
+    <string name="personal__personal_settings_view__wifi_upload_download_hint">避免在无WLAN时使用2G/3G流量
+    </string>
     <string name="personal__purchased_book_group_title_view__cloud">我上传的书</string>
     <string name="personal__purchased_book_group_title_view__gift">查看赠送</string>
     <string name="personal__purchased_book_group_title_view__purchase">我购买的图书</string>
@@ -1107,19 +1237,22 @@ To activate your account, follow the
     <string name="personal__readed_books_view__ranking_total">您已经超过了 %s 的读书人</string>
     <string name="personal__readed_books_view__reading_detail_total">累计阅读时长 %1$s，读完 %2$s 本书</string>
     <string name="personal__readed_books_view__remove">从读过中删除</string>
-    <string name="personal__readed_books_view__remove_prompt">将从你的读过记录中删除这本书，您对这本书的书评不会被删除，是否确定？</string>
+    <string name="personal__readed_books_view__remove_prompt">将从你的读过记录中删除这本书，您对这本书的书评不会被删除，是否确定？
+    </string>
     <string name="personal__readed_books_view__remove_title">删除读过书籍</string>
     <string name="personal__readed_books_view__removing">书籍正在从阅历中移除...</string>
     <string name="personal__readed_books_view__sync_closed">自动同步数据功能已关闭，点击开启</string>
     <string name="personal__readed_books_view__title">我读过%d本书</string>
     <string name="personal__reading_note_info_header_view__clear_notes_prompt_ok">清空</string>
-    <string name="personal__reading_note_info_header_view__clear_notes_prompt_text">是否清空这本书的所有笔记？</string>
+    <string name="personal__reading_note_info_header_view__clear_notes_prompt_text">是否清空这本书的所有笔记？
+    </string>
     <string name="personal__reading_note_info_header_view__clear_notes_prompt_title">清空笔记</string>
     <string name="personal__reading_note_info_header_view__clearing_notes">正在清空...</string>
     <string name="personal__reading_note_info_header_view__delete_one_note">删除这条笔记？</string>
     <string name="personal__reading_note_info_header_view__deleting_one_note">正在删除...</string>
     <string name="personal__reading_note_info_header_view__failed_to_clear_notes">清空笔记失败</string>
-    <string name="personal__reading_note_info_header_view__failed_to_delete_one_note">删除笔记失败</string>
+    <string name="personal__reading_note_info_header_view__failed_to_delete_one_note">删除笔记失败
+    </string>
     <string name="personal__reading_note_info_view__title">笔记详情</string>
     <string name="personal__reading_note_item_view__count">%d 条</string>
     <string name="personal__reading_note_item_view__date">上次记录: %s</string>
@@ -1151,7 +1284,8 @@ To activate your account, follow the
     <string name="personal__running_download_tasks_view__detail">%1$s/S，正在下载（已完成%2$.1f%%）</string>
     <string name="personal__running_download_tasks_view__ticker">%s正在下载</string>
     <string name="personal__search_friend_view__empty_line_inexisted_user_1">没有找到符合搜索条件的用户</string>
-    <string name="personal__search_friend_view__empty_line_inexisted_user_2">请重新输入正确的小米帐号ID或昵称</string>
+    <string name="personal__search_friend_view__empty_line_inexisted_user_2">请重新输入正确的小米帐号ID或昵称
+    </string>
     <string name="personal__search_friend_view__empty_line_no_use_1">TA还没有使用过多看阅读</string>
     <string name="personal__search_friend_view__empty_line_no_use_2">快邀请TA来享受精品阅读吧</string>
     <string name="personal__search_friend_view__search">搜索书友</string>
@@ -1174,7 +1308,9 @@ To activate your account, follow the
     <string name="personal__statistics_view__receivedlikes_description">赞的次数</string>
     <string name="personal__statistics_view__seconds"> 秒</string>
     <string name="personal__statistics_view__share">晒晒我的阅历</string>
-    <string name="personal__statistics_view__share_template">\#多看阅历# 我使用 @多看阅读 超过了%1$s的读书人。总计阅读时间%2$d小时，平均每日阅读%3$s。</string>
+    <string name="personal__statistics_view__share_template">\#多看阅历# 我使用 @多看阅读
+        超过了%1$s的读书人。总计阅读时间%2$d小时，平均每日阅读%3$s。
+    </string>
     <string name="personal__statistics_view__time">平均 %s/天</string>
     <string name="personal__statistics_view__time_0">0:00</string>
     <string name="personal__statistics_view__time_12">12:00</string>
@@ -1251,24 +1387,26 @@ To activate your account, follow the
     <string name="reading__chapter_not_purchased_view__pay_to_read">需要购买后阅读</string>
     <string name="reading__chapter_not_purchased_view__pay_to_read_cmbook">"需要购买后阅读
 
-本书由和阅读（中国移动）提供
-如遇到问题，请咨询10086"</string>
+        本书由和阅读（中国移动）提供
+        如遇到问题，请咨询10086"
+    </string>
     <string name="reading__check_error__choice_email">请选择邮件客户端</string>
     <string name="reading__check_error__template">"----修改建议----
- 
- 
- ----原文信息----
- %1$s
- 
- 
- 以下数据用于定位错误，请勿修改。
- ----begin----
- app: 多看阅读 for Android %2$s
- bookid: %3$s
- revision: %4$s
- position: (%5$d,%6$d,%7$d)
- convertcht:%8$b
- %9$s ----end----"</string>
+
+
+        ----原文信息----
+        %1$s
+
+
+        以下数据用于定位错误，请勿修改。
+        ----begin----
+        app: 多看阅读 for Android %2$s
+        bookid: %3$s
+        revision: %4$s
+        position: (%5$d,%6$d,%7$d)
+        convertcht:%8$b
+        %9$s ----end----"
+    </string>
     <string name="reading__close_easteregg_view__close">永久关闭</string>
     <string name="reading__close_easteregg_view__later">一小时后提醒</string>
     <string name="reading__close_easteregg_view__title">您将关闭幸运书签抽奖活动</string>
@@ -1295,7 +1433,9 @@ To activate your account, follow the
     <string name="reading__custom_background_color_tab_view__title">背景</string>
     <string name="reading__custom_font__download">下载</string>
     <string name="reading__custom_font__download_prompt">将要下载字体，大约%1$s。</string>
-    <string name="reading__custom_font__download_prompt_at_data_plan">将要下载字体，大约%1$s。建议您使用WLAN网络自动下载功能，开启后将在WLAN下自动开始下载字体。</string>
+    <string name="reading__custom_font__download_prompt_at_data_plan">
+        将要下载字体，大约%1$s。建议您使用WLAN网络自动下载功能，开启后将在WLAN下自动开始下载字体。
+    </string>
     <string name="reading__custom_font__download_title">字体下载</string>
     <string name="reading__custom_font_list_view__add_font">添加字体</string>
     <string name="reading__custom_font_list_view__auto_download_font">WLAN网络自动下载字库</string>
@@ -1303,7 +1443,9 @@ To activate your account, follow the
     <string name="reading__custom_font_list_view__default">默认（使用书中指定字体）</string>
     <string name="reading__custom_font_list_view__default_en">默认（与中文字体相同）</string>
     <string name="reading__custom_font_list_view__dk_font_package_description">多看字体包（7种字体）</string>
-    <string name="reading__custom_font_list_view__dk_font_package_description_with_progress">多看字体包（已下载%1$s/%2$s）</string>
+    <string name="reading__custom_font_list_view__dk_font_package_description_with_progress">
+        多看字体包（已下载%1$s/%2$s）
+    </string>
     <string name="reading__custom_font_list_view__dk_title">更改正文字体</string>
     <string name="reading__custom_font_list_view__download_all">下载</string>
     <string name="reading__custom_font_list_view__download_setting">字体下载设置</string>
@@ -1323,9 +1465,11 @@ To activate your account, follow the
     <string name="reading__custom_screen_view__title">自定义界面布局</string>
     <string name="reading__custom_text_color_tab_view__title">文字</string>
     <string name="reading__custom_theme_color_view__edit">"长按
-编辑"</string>
+        编辑"
+    </string>
     <string name="reading__custom_typesetting_view__demo">"爱看书的青年，大可以看看本分以外的书，即课外书……
-譬如学理科的，偏看看文学书，学文学的，偏看看科学书，看看别人在那里研究的，究竟是怎么一回事。这样子，对于别人，别事，可以更深的了解。"</string>
+        譬如学理科的，偏看看文学书，学文学的，偏看看科学书，看看别人在那里研究的，究竟是怎么一回事。这样子，对于别人，别事，可以更深的了解。"
+    </string>
     <string name="reading__custom_typesetting_view__indent">首行缩进</string>
     <string name="reading__custom_typesetting_view__indent_hint">手指左右滑动调节缩进</string>
     <string name="reading__custom_typesetting_view__lateral_margin">左右边距</string>
@@ -1351,7 +1495,8 @@ To activate your account, follow the
     <string name="reading__hang_ad_view__help">上滑关闭</string>
     <string name="reading__login_mi_account">"您以游客身份购买的图书仅能保存在本机，更换设备后将无法找回。
 
-建议您尽快登录小米帐号，可永久保存数据记录。"</string>
+        建议您尽快登录小米帐号，可永久保存数据记录。"
+    </string>
     <string name="reading__login_mi_account_no">稍后提醒</string>
     <string name="reading__login_mi_account_ok">马上登录</string>
     <string name="reading__media_loading_failed">多媒体加载失败！</string>
@@ -1370,20 +1515,37 @@ To activate your account, follow the
     <string name="reading__reading_brightness_view__eyes_saving">护眼模式</string>
     <string name="reading__reading_brightness_view__night_mode">夜间模式</string>
     <string name="reading__reading_custom_download_view__font_not_found">指定字体缺失，建议下载</string>
-    <string name="reading__reading_custom_download_view__prompt">为保证最佳阅读体验，多看精品图书均指定使用了“方正兰亭黑”、“方正书宋”等字体排版，暂不支持自定义字体。</string>
+    <string name="reading__reading_custom_download_view__prompt">
+        为保证最佳阅读体验，多看精品图书均指定使用了“方正兰亭黑”、“方正书宋”等字体排版，暂不支持自定义字体。
+    </string>
     <string name="reading__reading_menu_bottom_view__night_mode">进入夜间模式</string>
     <string name="reading__reading_menu_bottom_view__seek_bar">阅读</string>
     <string name="reading__reading_menu_bottom_view_epub__audio_settings">朗读</string>
-    <string name="reading__reading_menu_bottom_view_epub__confirm_disable_wifi_auto_download_font_ok">知道啦</string>
-    <string name="reading__reading_menu_bottom_view_epub__confirm_disable_wifi_auto_download_font_prompt">您今后可以在功能菜单（阅读时点击屏幕中间呼出）->文字->更改字体中手动下载字体。</string>
-    <string name="reading__reading_menu_bottom_view_epub__confirm_disable_wifi_auto_download_font_title">字体下载提示</string>
-    <string name="reading__reading_menu_bottom_view_epub__confirm_download_font_prompt">目前您处于流量环境下,是否继续?</string>
-    <string name="reading__reading_menu_bottom_view_epub__confirm_download_font_title">流量下载提醒</string>
+    <string
+        name="reading__reading_menu_bottom_view_epub__confirm_disable_wifi_auto_download_font_ok">
+        知道啦
+    </string>
+    <string
+        name="reading__reading_menu_bottom_view_epub__confirm_disable_wifi_auto_download_font_prompt">
+        您今后可以在功能菜单（阅读时点击屏幕中间呼出）->文字->更改字体中手动下载字体。
+    </string>
+    <string
+        name="reading__reading_menu_bottom_view_epub__confirm_disable_wifi_auto_download_font_title">
+        字体下载提示
+    </string>
+    <string name="reading__reading_menu_bottom_view_epub__confirm_download_font_prompt">
+        目前您处于流量环境下,是否继续?
+    </string>
+    <string name="reading__reading_menu_bottom_view_epub__confirm_download_font_title">流量下载提醒
+    </string>
     <string name="reading__reading_menu_bottom_view_epub__slide_show">进入漫画模式</string>
     <string name="reading__reading_menu_bottom_view_epub__wifi_auto_download_font_no">不启用</string>
     <string name="reading__reading_menu_bottom_view_epub__wifi_auto_download_font_ok">启用</string>
-    <string name="reading__reading_menu_bottom_view_epub__wifi_auto_download_font_prompt">您缺少本书所需的字体，为达到最佳阅读效果，多看将下载缺少的字体</string>
-    <string name="reading__reading_menu_bottom_view_epub__wifi_auto_download_font_title">下载字体</string>
+    <string name="reading__reading_menu_bottom_view_epub__wifi_auto_download_font_prompt">
+        您缺少本书所需的字体，为达到最佳阅读效果，多看将下载缺少的字体
+    </string>
+    <string name="reading__reading_menu_bottom_view_epub__wifi_auto_download_font_title">下载字体
+    </string>
     <string name="reading__reading_menu_bottom_view_pdf__fixed_mode">退出重排</string>
     <string name="reading__reading_menu_bottom_view_pdf__flow_mode">重排</string>
     <string name="reading__reading_menu_bottom_view_pdf__mode">PDF模式</string>
@@ -1485,7 +1647,8 @@ To activate your account, follow the
     <string name="reading__search_next_view__search_reach_last_match">已搜索至文件末尾！</string>
     <string name="reading__search_text_view__empty_hint">搜索全文</string>
     <string name="reading__search_text_view__nosearch_result">"很抱歉，文中没有此关键词
-试试修改您的关键词？"</string>
+        试试修改您的关键词？"
+    </string>
     <string name="reading__seek_page_view__next_chapter">下一章</string>
     <string name="reading__seek_page_view__paginating">正在分页…</string>
     <string name="reading__seek_page_view__prev_chapter">上一章</string>
@@ -1499,7 +1662,8 @@ To activate your account, follow the
     <string name="reading__selection_bar_view__share">分享</string>
     <string name="reading__send_error_view__hint">请输入修改意见</string>
     <string name="reading__send_error_view__proposal">"\#%s#
-"</string>
+        "
+    </string>
     <string name="reading__send_error_view__thx">纠错已记录，感谢您的帮助~</string>
     <string name="reading__send_error_view__title">纠错</string>
     <string name="reading__send_error_view__toast">修改意见不能为空~</string>
@@ -1546,7 +1710,8 @@ To activate your account, follow the
     <string name="reading__shared__sync_down_reading_progress_ok">跳转</string>
     <string name="reading__shared__sync_down_reading_progress_prompt1">您上次阅读到第%d页，是否跳转继续阅读？</string>
     <string name="reading__shared__sync_down_reading_progress_prompt2">您上次阅读到“%s”，是否跳转继续阅读？</string>
-    <string name="reading__shared__sync_down_reading_progress_prompt3">您上次阅读到%.1f%%，是否跳转继续阅读？</string>
+    <string name="reading__shared__sync_down_reading_progress_prompt3">您上次阅读到%.1f%%，是否跳转继续阅读？
+    </string>
     <string name="reading__shared__sync_down_reading_progress_title">继续上次阅读</string>
     <string name="reading__shared__timeout">畅读时间结束，喜欢就买一本读吧 ^_^</string>
     <string name="reading__shared__toc">目录</string>
@@ -1608,8 +1773,13 @@ To activate your account, follow the
     <string name="reading__tts_notification_view__readbook">《%s》开始朗读</string>
     <string name="remove_bookmark">删除书签</string>
     <string name="report_no_network_error">当前没有可连接网络，请确认后重试！</string>
-    <string name="scanning_info">找到: TXT<font color="#ed6c00">(%1$d)</font> EPUB<font color="#ed6c00">(%2$d)</font> PDF<font color="#ed6c00">(%3$d)</font></string>
-    <string name="scanning_notyfy">已扫描 <font color="#ed6c00">%1$d</font> 个文件...</string>
+    <string name="scanning_info">找到: TXT<font color="#ed6c00">(%1$d)</font> EPUB<font
+        color="#ed6c00">(%2$d)
+    </font> PDF
+        <font color="#ed6c00">(%3$d)</font>
+    </string>
+    <string name="scanning_notyfy">已扫描 <font color="#ed6c00">%1$d</font> 个文件...
+    </string>
     <string name="scanning_write_db">正在添加图书信息，请稍候...</string>
     <string name="scanresult">扫描结果</string>
     <string name="share__book_template1">\#好书推荐# 《%1$s》，%2$s@多看阅读</string>
@@ -1626,7 +1796,8 @@ To activate your account, follow the
     <string name="share__comment_template1">\#多看笔记# %1$s 摘自《%2$s》@多看阅读</string>
     <string name="share__comment_template2">%1$s//#多看笔记# %2$s 摘自《%3$s》@多看阅读</string>
     <string name="share__comment_template3">%1$s 摘自《%2$s》@多看阅读</string>
-    <string name="share__picture_template">%1$s我正在使用多看阅读安卓版看《%2$s》，安卓上的精品阅读时光，与我的朋友共分享。@多看阅读</string>
+    <string name="share__picture_template">%1$s我正在使用多看阅读安卓版看《%2$s》，安卓上的精品阅读时光，与我的朋友共分享。@多看阅读
+    </string>
     <string name="share_cancel">分享取消</string>
     <string name="share_change_account">更换帐号</string>
     <string name="share_failed">分享失败，请检查网络连接</string>
@@ -1774,7 +1945,8 @@ To activate your account, follow the
     <string name="store__inquire_redemption_code_view__success">兑换成功，正在下载</string>
     <string name="store__inquire_redemption_code_view__title">兑换码换书</string>
     <string name="store__kernel_support_view__continue_download">继续下载</string>
-    <string name="store__kernel_support_view__message">该书包含当前客户端不支持的排版样式，建议您升级到最新版客户端以保证最佳阅读体验。</string>
+    <string name="store__kernel_support_view__message">该书包含当前客户端不支持的排版样式，建议您升级到最新版客户端以保证最佳阅读体验。
+    </string>
     <string name="store__kernel_support_view__title">版本兼容提示</string>
     <string name="store__list_item__update">最新章节: %s</string>
     <string name="store__payment_choose_view__book_name_middle">《%s》</string>
@@ -1802,10 +1974,14 @@ To activate your account, follow the
     <string name="store__price_changed_view__title">购物车最新价格</string>
     <string name="store__publisher_intro_view__title">相关图书</string>
     <string name="store__purchase_book_by_auto_selected_coupon__coupon">本次将使用1张%d元购书券</string>
-    <string name="store__purchase_book_by_auto_selected_coupon__coupon_with_price">本次将使用%1$d元购书券兑换一本%2$.2f元的书籍</string>
+    <string name="store__purchase_book_by_auto_selected_coupon__coupon_with_price">
+        本次将使用%1$d元购书券兑换一本%2$.2f元的书籍
+    </string>
     <string name="store__purchase_book_by_auto_selected_coupon__valid_within_s">（剩余%s有效期）</string>
     <string name="store__purchase_book_by_auto_selected_coupon_view__all_coupons">全部购书券</string>
-    <string name="store__purchase_book_by_auto_selected_coupon_view__attention">（一张券只能兑换一本书，不找零，不抵价）</string>
+    <string name="store__purchase_book_by_auto_selected_coupon_view__attention">
+        （一张券只能兑换一本书，不找零，不抵价）
+    </string>
     <string name="store__purchase_book_by_auto_selected_coupon_view__confirm">确认兑换</string>
     <string name="store__purchase_book_by_user_selected_coupon_view__confirm">确认兑换</string>
     <string name="store__purchase_book_by_user_selected_coupon_view__title">选择购书券</string>
@@ -1829,7 +2005,8 @@ To activate your account, follow the
     <string name="store__ranking_view__jingdong_ranking">京东热销</string>
     <string name="store__ranking_view__month_ranking">月度榜</string>
     <string name="store__recommend_app_item_view__icon">"特约
-推荐"</string>
+        推荐"
+    </string>
     <string name="store__recommend_rock_view__changed">换一批</string>
     <string name="store__recommends_view__book_list">经典书单</string>
     <string name="store__recommends_view__fiction_description">专业原创文学阅读器（多看出品）</string>
@@ -1910,7 +2087,8 @@ To activate your account, follow the
     <string name="store__shopping_cart_empty_view__hint">使用购物车可以一次购买多本书籍</string>
     <string name="store__shopping_cart_empty_view__no_book">购物车还是空的哦</string>
     <string name="store__shopping_cart_item_view__invaild_platform">"Android
-未上架"</string>
+        未上架"
+    </string>
     <string name="store__shopping_cart_payment_guide_view__to_pay">去结算</string>
     <string name="store__shopping_cart_payment_guide_view__total_consumption">应付金额:</string>
     <string name="store__shopping_cart_payment_guide_view__total_discount">总计优惠:</string>
@@ -1918,9 +2096,11 @@ To activate your account, follow the
     <string name="store__shopping_cart_payment_view__discount">特价图书 | 优惠￥%.2f</string>
     <string name="store__shopping_cart_payment_view__discount2">特价图书 | 优惠%.2f米币</string>
     <string name="store__shopping_cart_payment_view__discount_template">"%1$s | 优惠￥%2$.2f
-"</string>
+        "
+    </string>
     <string name="store__shopping_cart_payment_view__discount_template2">"%1$s | 优惠%2$.2f米币
-"</string>
+        "
+    </string>
     <string name="store__shopping_cart_payment_view__payment_book">共 %d 本可购买</string>
     <string name="store__shopping_cart_payment_view__special_event">满%1$.2f元减%2$.2f元</string>
     <string name="store__shopping_cart_payment_view__total_consumption">金额总计:</string>
@@ -2001,36 +2181,42 @@ To activate your account, follow the
     <string name="welcome__newbie_interested_categories_view__welcome_message">欢迎来到多看阅读</string>
     <string name="welcome__newbie_view__publication">出版物</string>
     <string name="welcome__newbie_view__publication_names">"三体
-从你的全世界路过
-追风筝的人
-皮囊
-明朝那些事儿
-解忧杂货店"</string>
+        从你的全世界路过
+        追风筝的人
+        皮囊
+        明朝那些事儿
+        解忧杂货店"
+    </string>
     <string name="welcome__newbie_view__quit">退出</string>
     <string name="welcome__newbie_view__receive">确定领取</string>
     <string name="welcome__newbie_view__serialize">网络文学</string>
     <string name="welcome__newbie_view__serialize_names">"七界武神
-鬼夫来临
-我欲封天
-一夜弃妃
-超品相师
-老公，验么"</string>
+        鬼夫来临
+        我欲封天
+        一夜弃妃
+        超品相师
+        老公，验么"
+    </string>
     <string name="welcome__newbie_view__serialize_names_hm">"绝命诱惑
-我的美女老板娘
-一夜弃妃
-异能小农民
-霸道老公，抱一抱
-很纯很暧昧"</string>
+        我的美女老板娘
+        一夜弃妃
+        异能小农民
+        霸道老公，抱一抱
+        很纯很暧昧"
+    </string>
     <string name="welcome__newbie_view__tip">多看阅读在使用过程中可能需要联网</string>
     <string name="welcome__newbie_view__title">请选择您偏好的读物</string>
     <string name="welcome__newbie_welcome_view__login">用户登录</string>
     <string name="welcome__newbie_welcome_view__login_directly">直接登录</string>
-    <string name="welcome__newbie_welcome_view__login_using_system_account">您可以用系统小米帐号%s直接登录</string>
+    <string name="welcome__newbie_welcome_view__login_using_system_account">您可以用系统小米帐号%s直接登录
+    </string>
     <string name="welcome__newbie_welcome_view__switch_account">切换帐号</string>
     <string name="welcome__web_access_view__cancel">取消</string>
     <string name="welcome__web_access_view__dont_show_again">以后不再提醒</string>
     <string name="welcome__web_access_view__ok">同意</string>
-    <string name="welcome__web_access_view__prompt">您正在使用小米公司提供的阅读服务，使用中需要访问网络和获取位置信息，读取和接收短信、彩信，以及读取本地文件和获取拍照权限，是否同意？</string>
+    <string name="welcome__web_access_view__prompt">
+        您正在使用小米公司提供的阅读服务，使用中需要访问网络和获取位置信息，读取和接收短信、彩信，以及读取本地文件和获取拍照权限，是否同意？
+    </string>
     <string name="welcome__web_access_view__title">提示</string>
     <string name="app_name">MiSdk</string>
     <string name="mibi_app_name">Mi Credit</string>
@@ -2093,19 +2279,23 @@ To activate your account, follow the
     <string name="mibi_direct_payment_title">Order info</string>
     <string name="mibi_enter_failed">Open failed</string>
     <string name="mibi_error_account_changed_summary">"Your account info has changed.
-Please log in again."</string>
+        Please log in again."
+    </string>
     <string name="mibi_error_account_changed_title">Account has changed</string>
     <string name="mibi_error_account_throtting">"Your account is not safe.
-Please contact our customer service"</string>
+        Please contact our customer service"
+    </string>
     <string name="mibi_error_auth_summary">Sign in to your Mi Account again</string>
-    <string name="mibi_error_cert_date_summary">"Certificate date error. 
-Please check your local date and try again."</string>
+    <string name="mibi_error_cert_date_summary">"Certificate date error.
+        Please check your local date and try again."
+    </string>
     <string name="mibi_error_common_summary">System error. Please try again later.</string>
     <string name="mibi_error_expired_summary">Your order has expired</string>
     <string name="mibi_error_frozen_service_num">400-100-2234</string>
     <string name="mibi_error_frozen_service_time">Monday to Sunday</string>
-    <string name="mibi_error_frozen_summary">"Your account is frozen. 
-Please contact Xiaomi customer service."</string>
+    <string name="mibi_error_frozen_summary">"Your account is frozen.
+        Please contact Xiaomi customer service."
+    </string>
     <string name="mibi_error_has_bought_summary">You have already purchased this product.</string>
     <string name="mibi_error_illegal_order_summary">Order error. Please try again later</string>
     <string name="mibi_error_invalid_device">Invalid device.</string>
@@ -2117,10 +2307,13 @@ Please contact Xiaomi customer service."</string>
     <string name="mibi_error_recharge_result_uncertain">Recharge result uncertain.</string>
     <string name="mibi_error_recharge_success_pay_fail">Recharge success pay fail.</string>
     <string name="mibi_error_server_summary">Server error. Please try again later</string>
-    <string name="mibi_error_user_id_mismatch_summary">Please check and re-login your account</string>
+    <string name="mibi_error_user_id_mismatch_summary">Please check and re-login your account
+    </string>
     <string name="mibi_error_web_summary">Server error</string>
     <string name="mibi_fee">%1$s Mi Credit</string>
-    <string name="mibi_forget_password"><u>Forgot password</u></string>
+    <string name="mibi_forget_password">
+        <u>Forgot password</u>
+    </string>
     <string name="mibi_format_bill_date">yyyy/M/d</string>
     <string name="mibi_format_date">MMM. dd, yyyy</string>
     <string name="mibi_format_time">MMM dd, yyyy hh:mmaa</string>
@@ -2132,14 +2325,19 @@ Please contact Xiaomi customer service."</string>
     <string name="mibi_get_phone_num_summary">Enter the phone number used for payments</string>
     <string name="mibi_get_phone_num_title">Enter phone number</string>
     <string name="mibi_get_phone_sms_prompt">Verification code sent to %1$s</string>
-    <string name="mibi_giftcard_acitivity_and_denomination">%2$s-Mi Credit gift card from %1$s</string>
-    <string name="mibi_giftcard_define_detail">Use these gift cards just like regular Mi Credits. You may receive gift cards after participating in Xiaomi events and promotions.</string>
+    <string name="mibi_giftcard_acitivity_and_denomination">%2$s-Mi Credit gift card from %1$s
+    </string>
+    <string name="mibi_giftcard_define_detail">Use these gift cards just like regular Mi Credits.
+        You may receive gift cards after participating in Xiaomi events and promotions.
+    </string>
     <string name="mibi_giftcard_denom">Mi Credit</string>
     <string name="mibi_giftcard_denom_available">Mi Credit available</string>
     <string name="mibi_giftcard_denom_frozen">Mi Credit frozen</string>
     <string name="mibi_giftcard_empty">No gift cards.</string>
     <string name="mibi_giftcard_has_expired">Expired on %1$s</string>
-    <string name="mibi_giftcard_hint">Mi Credits added via gift card will be spent first automatically.</string>
+    <string name="mibi_giftcard_hint">Mi Credits added via gift card will be spent first
+        automatically.
+    </string>
     <string name="mibi_giftcard_payment">Gift certificates</string>
     <string name="mibi_giftcard_payment_with_append">Apply gift certificates</string>
     <string name="mibi_giftcard_record">My gift cards</string>
@@ -2151,7 +2349,11 @@ Please contact Xiaomi customer service."</string>
     <string name="mibi_label_balance">Balance</string>
     <string name="mibi_label_giftcard">Giftcard</string>
     <string name="mibi_label_pay_remain">Amount due: %1$s Mi Credits</string>
-    <string name="mibi_license_message">"You're about to use Mi Credit, which is a service provided by Xiaomi Inc. Before you can use this service, you must agree to the Terms of Service stated in %1$s. Touch OK if you agree to the terms and conditions described in the %1$s. You need to connect to the internet, locate you device to use Mi Credit."</string>
+    <string name="mibi_license_message">"You're about to use Mi Credit, which is a service provided
+        by Xiaomi Inc. Before you can use this service, you must agree to the Terms of Service
+        stated in %1$s. Touch OK if you agree to the terms and conditions described in the %1$s. You
+        need to connect to the internet, locate you device to use Mi Credit."
+    </string>
     <string name="mibi_license_message_span">Mi Credit User Agreement</string>
     <string name="mibi_license_title">Terms and conditions</string>
     <string name="mibi_list_item_bottom_hint">"You've reached the bottom of this list"</string>
@@ -2161,20 +2363,34 @@ Please contact Xiaomi customer service."</string>
     <string name="mibi_lockpattern_confirm_button_text">Confirm</string>
     <string name="mibi_lockpattern_continue_button_text">Continue</string>
     <string name="mibi_lockpattern_need_to_confirm">Draw pattern again to confirm:</string>
-    <string name="mibi_lockpattern_need_to_confirm_wrong">"Patterns don't match. Try again:"</string>
-    <string name="mibi_lockpattern_need_to_unlock_wrong">&lt;font color=red>Password wrong,you can enter %d times more&lt;/font></string>
+    <string name="mibi_lockpattern_need_to_confirm_wrong">"Patterns don't match. Try again:"
+    </string>
+    <string name="mibi_lockpattern_need_to_unlock_wrong">&lt;font color=red>Password wrong,you can
+        enter %d times more&lt;/font>
+    </string>
     <string name="mibi_lockpattern_pattern_confirmed_header">Your new unlock pattern:</string>
     <string name="mibi_lockpattern_pattern_entered_header">Pattern recorded.</string>
-    <string name="mibi_lockpattern_recording_incorrect_too_short">Connect at least %d dots. Try again:</string>
+    <string name="mibi_lockpattern_recording_incorrect_too_short">Connect at least %d dots. Try
+        again:
+    </string>
     <string name="mibi_lockpattern_recording_inprogress">Release finger when done.</string>
     <string name="mibi_lockpattern_recording_intro_header">Draw an unlock pattern:</string>
-    <string name="mibi_lockpattern_retry_text"><u>Reset pattern password</u></string>
-    <string name="mibi_lockpattern_settings_help_how_to_record">How to draw an unlock pattern</string>
-    <string name="mibi_lockpattern_too_many_failed_confirmation_attempts_footer">Try again in %d seconds.</string>
-    <string name="mibi_lockpattern_too_many_failed_confirmation_attempts_header">&lt;font color=red>Too many incorrect attempts!&lt;/font></string>
+    <string name="mibi_lockpattern_retry_text">
+        <u>Reset pattern password</u>
+    </string>
+    <string name="mibi_lockpattern_settings_help_how_to_record">How to draw an unlock pattern
+    </string>
+    <string name="mibi_lockpattern_too_many_failed_confirmation_attempts_footer">Try again in %d
+        seconds.
+    </string>
+    <string name="mibi_lockpattern_too_many_failed_confirmation_attempts_header">&lt;font
+        color=red>Too many incorrect attempts!&lt;/font>
+    </string>
     <string name="mibi_lockpattern_tutorial_cancel_label">Cancel</string>
     <string name="mibi_lockpattern_tutorial_continue_label">Next</string>
-    <string name="mibi_lockscreen_forgot_pattern_button_text"><u>Forgot pattern password</u></string>
+    <string name="mibi_lockscreen_forgot_pattern_button_text">
+        <u>Forgot pattern password</u>
+    </string>
     <string name="mibi_login">Login</string>
     <string name="mibi_memu_refresh">Refresh</string>
     <string name="mibi_menu_lock">Pattern lock</string>
@@ -2185,27 +2401,44 @@ Please contact Xiaomi customer service."</string>
     <string name="mibi_mipay_error">Mipay failed</string>
     <string name="mibi_msg_denomination_type">Mi Credit</string>
     <string name="mibi_msg_error">Top-up failed</string>
-    <string name="mibi_msg_order_hint_1_1">After you touch Confirm purchase, your phone will</string>
+    <string name="mibi_msg_order_hint_1_1">After you touch Confirm purchase, your phone will
+    </string>
     <string name="mibi_msg_order_hint_1_2">Automatically contact your service provider.</string>
     <string name="mibi_msg_picker_hint_1_1">1.</string>
-    <string name="mibi_msg_picker_hint_1_2">Topping up via text may be more expensive: &lt;font color=red>￥%1$d = %2$d Mi Credit&lt;/font></string>
+    <string name="mibi_msg_picker_hint_1_2">Topping up via text may be more expensive: &lt;font
+        color=red>￥%1$d = %2$d Mi Credit&lt;/font>
+    </string>
     <string name="mibi_msg_picker_hint_2_1">2.</string>
     <string name="mibi_msg_picker_hint_2_a">Carriers charge a ￥%1$s service fee per top-up</string>
-    <string name="mibi_msg_picker_hint_2_b">An SMS will be sent to your carrier after you tap \"Top up\". Carrier will charge you for a regular SMS.</string>
+    <string name="mibi_msg_picker_hint_2_b">An SMS will be sent to your carrier after you tap \"Top
+        up\". Carrier will charge you for a regular SMS.
+    </string>
     <string name="mibi_msg_picker_hint_3_1">3.</string>
     <string name="mibi_msg_picker_hint_3_2">Maximum monthly top-up: ￥%1$s</string>
-    <string name="mibi_msg_send_no_net_error">"Failed to send message: couldn't connect to network provider."</string>
-    <string name="mibi_msg_send_no_sim_error">Failed to send message: try reinserting your SIM card.</string>
-    <string name="mibi_msg_send_parameter_error">"Failed to send message，there's an error in the content."</string>
+    <string name="mibi_msg_send_no_net_error">"Failed to send message: couldn't connect to network
+        provider."
+    </string>
+    <string name="mibi_msg_send_no_sim_error">Failed to send message: try reinserting your SIM
+        card.
+    </string>
+    <string name="mibi_msg_send_parameter_error">"Failed to send message，there's an error in the
+        content."
+    </string>
     <string name="mibi_msg_send_send_fail_error">Failed to send message</string>
-    <string name="mibi_msg_telecom_order_denom">￥%1s（not including mobile network data fees）</string>
+    <string name="mibi_msg_telecom_order_denom">￥%1s（not including mobile network data fees）
+    </string>
     <string name="mibi_msg_telecom_order_denom_label">Amount</string>
     <string name="mibi_msg_telecom_order_goods">%1s Mi Credits</string>
     <string name="mibi_msg_telecom_order_goods_label">Product</string>
-    <string name="mibi_msg_telecom_picker_hint_1_1">After you touch Confirm purchase, your phone will</string>
-    <string name="mibi_msg_telecom_picker_hint_1_2">Automatically contact your service provider.</string>
-    <string name="mibi_msg_telecom_picker_hint_2_1">Your network provider has been contacted!</string>
-    <string name="mibi_msg_telecom_picker_hint_2_2">You will receive a text confirmation shortly.</string>
+    <string name="mibi_msg_telecom_picker_hint_1_1">After you touch Confirm purchase, your phone
+        will
+    </string>
+    <string name="mibi_msg_telecom_picker_hint_1_2">Automatically contact your service provider.
+    </string>
+    <string name="mibi_msg_telecom_picker_hint_2_1">Your network provider has been contacted!
+    </string>
+    <string name="mibi_msg_telecom_picker_hint_2_2">You will receive a text confirmation shortly.
+    </string>
     <string name="mibi_msg_telecom_sending">Contacting network provider…</string>
     <string name="mibi_other_denomiantion">Select amount</string>
     <string name="mibi_partner_giftcard_payment_with_append">Apply %1$s</string>
@@ -2221,7 +2454,9 @@ Please contact Xiaomi customer service."</string>
     <string name="mibi_paytool_alipay">Alipay</string>
     <string name="mibi_paytool_error_install">Failed to install %1$s mobile security plugin</string>
     <string name="mibi_paytool_error_msp">%1$s failed</string>
-    <string name="mibi_paytool_msp_not_installed">You have not installed %1$s mobile security plugin, install it now?</string>
+    <string name="mibi_paytool_msp_not_installed">You have not installed %1$s mobile security
+        plugin, install it now?
+    </string>
     <string name="mibi_paytool_paypal">Paypal</string>
     <string name="mibi_paytool_tenpay">Tenpay</string>
     <string name="mibi_paytool_weixin">WeChat</string>
@@ -2238,14 +2473,22 @@ Please contact Xiaomi customer service."</string>
     <string name="mibi_prepaid_picker_hint_1_1">1.</string>
     <string name="mibi_prepaid_picker_hint_1_2">Only supports one-time charge;</string>
     <string name="mibi_prepaid_picker_hint_2_1">2.</string>
-    <string name="mibi_prepaid_picker_hint_2_2_a">"Selected nominal value must be consistent with that of the prepaid card. Choosing another value will void the card. This action can't be undone."</string>
-    <string name="mibi_prepaid_picker_hint_2_2_b">If the nominal value of the prepaid card is not &lt;font color=red>￥%1$s&lt;/font>, the card will be void. Xiaomi is not responsible for any monetary loss that occurs as a result of user error.</string>
+    <string name="mibi_prepaid_picker_hint_2_2_a">"Selected nominal value must be consistent with
+        that of the prepaid card. Choosing another value will void the card. This action can't be
+        undone."
+    </string>
+    <string name="mibi_prepaid_picker_hint_2_2_b">If the nominal value of the prepaid card is not
+        &lt;font color=red>￥%1$s&lt;/font>, the card will be void. Xiaomi is not responsible for any
+        monetary loss that occurs as a result of user error.
+    </string>
     <string name="mibi_prepaid_picker_title_default">Select amount</string>
     <string name="mibi_prepaid_picker_title_selected">amount</string>
     <string name="mibi_process_expired">"Where'd you go? This operation has timed out."</string>
     <string name="mibi_progress_creating">Retrieving order info…</string>
     <string name="mibi_progress_downloading">Loading…</string>
-    <string name="mibi_progress_error_pay_summary">%1$s Mi Credits recharged, but payment failed, please retry later.</string>
+    <string name="mibi_progress_error_pay_summary">%1$s Mi Credits recharged, but payment failed,
+        please retry later.
+    </string>
     <string name="mibi_progress_error_pay_title">Payment failed</string>
     <string name="mibi_progress_error_recharge_summary">Top-up failed, please retry later.</string>
     <string name="mibi_progress_error_recharge_title">Top-up failed</string>
@@ -2256,23 +2499,33 @@ Please contact Xiaomi customer service."</string>
     <string name="mibi_progress_paytool_installing">Installing %1$s mobile security plugin…</string>
     <string name="mibi_progress_prepaid_creating">Generating order…</string>
     <string name="mibi_progress_querying">Processing…</string>
-    <string name="mibi_progress_submit_hint">Top-up will be reflected in you account balance within 3 minutes.</string>
+    <string name="mibi_progress_submit_hint">Top-up will be reflected in you account balance within
+        3 minutes.
+    </string>
     <string name="mibi_progress_submit_recharge_summary">Topping up: %1$s Mi Credits.</string>
     <string name="mibi_progress_submit_title">Request submitted</string>
-    <string name="mibi_progress_success_pay_summary">%1$s Mi Credits recharged，%2$s Mi Credits paied</string>
+    <string name="mibi_progress_success_pay_summary">%1$s Mi Credits recharged，%2$s Mi Credits
+        paied
+    </string>
     <string name="mibi_progress_success_pay_title">%1$s Mi Credit payment complete</string>
     <string name="mibi_progress_success_recharge_summary">Account balance: %1$s Mi Credits.</string>
     <string name="mibi_progress_success_recharge_title">%1$s Mi Credit top-up complete</string>
     <string name="mibi_progress_voucher_creating">Topping up Mi Credit card…</string>
-    <string name="mibi_progress_warning_check_with_contact">"Payment hasn't reached your account yet. 
-We will check again within two working days.
-Customer service center：400-100-5678"</string>
+    <string name="mibi_progress_warning_check_with_contact">"Payment hasn't reached your account
+        yet.
+        We will check again within two working days.
+        Customer service center：400-100-5678"
+    </string>
     <string name="mibi_progress_warning_waiting">"Payment hasn't reached your account yet."</string>
     <string name="mibi_prompt_info_button_hint">Attention(%d)</string>
     <string name="mibi_prompt_info_button_text">OK</string>
-    <string name="mibi_prompt_info_for_first_use">"Mi Credit can't be used to buy hardware products on Mi.com."</string>
+    <string name="mibi_prompt_info_for_first_use">"Mi Credit can't be used to buy hardware products
+        on Mi.com."
+    </string>
     <string name="mibi_prompt_info_title">Tips</string>
-    <string name="mibi_recharge_grid_error_denomination">Amount must be between Mi Credits %1$s and %2$s.</string>
+    <string name="mibi_recharge_grid_error_denomination">Amount must be between Mi Credits %1$s and
+        %2$s.
+    </string>
     <string name="mibi_recharge_grid_item_more">More</string>
     <string name="mibi_recharge_grid_mibi_picker_hint">Choose amount</string>
     <string name="mibi_recharge_grid_money_picker_hint">Select amount</string>
@@ -2281,22 +2534,32 @@ Customer service center：400-100-5678"</string>
     <string name="mibi_recharge_novalid_method">No valid top-up method.</string>
     <string name="mibi_recharge_other">View other methods</string>
     <string name="mibi_recharge_value_money">Purchase CNY %s worth of Mi Credits</string>
-    <string name="mibi_recharge_value_money_special_unit">Purchase %1$s %2$s worth of Mi Credits</string>
-    <string name="mibi_recharge_value_money_with_tip">"Purchase CNY %s worth of Mi Credits &lt;font color=red>(Can't spend Mi Credits at Mi.com)&lt;/font>"</string>
-    <string name="mibi_recharge_value_money_with_tip_special_unit">"Purchase %1$s %2$s worth of Mi Credits &lt;font color=red>(Can't spend Mi Credits at Mi.com)&lt;/font>"</string>
+    <string name="mibi_recharge_value_money_special_unit">Purchase %1$s %2$s worth of Mi Credits
+    </string>
+    <string name="mibi_recharge_value_money_with_tip">"Purchase CNY %s worth of Mi Credits &lt;font
+        color=red>(Can't spend Mi Credits at Mi.com)&lt;/font>"
+    </string>
+    <string name="mibi_recharge_value_money_with_tip_special_unit">"Purchase %1$s %2$s worth of Mi
+        Credits &lt;font color=red>(Can't spend Mi Credits at Mi.com)&lt;/font>"
+    </string>
     <string name="mibi_scan_prompt_number">Scan %1$s prepaid card number</string>
     <string name="mibi_scan_prompt_password">Scan %1$s prepaid card password</string>
     <string name="mibi_scan_prompt_voucher">Scan Mi Credit password</string>
     <string name="mibi_security_setting">Settings</string>
     <string name="mibi_shurtcut_create_success">Placed on Home screen</string>
     <string name="mibi_sms_code_empty">Enter the verification code sent to your phone.</string>
-    <string name="mibi_sms_code_error">Mobile phone verification code error, please get again</string>
+    <string name="mibi_sms_code_error">Mobile phone verification code error, please get again
+    </string>
     <string name="mibi_sms_code_hint">Enter 3 ~ 6 digit verification code</string>
     <string name="mibi_string_with_bracket">(%s)</string>
-    <string name="mibi_summary_bind_phone">To ensure the safety of your account, please complete the payment after binding mobile phone No.</string>
+    <string name="mibi_summary_bind_phone">To ensure the safety of your account, please complete the
+        payment after binding mobile phone No.
+    </string>
     <string name="mibi_summary_custom_service_phone">Tel:</string>
     <string name="mibi_summary_lockpattern">Require a unique pattern lock for Mi Credit</string>
-    <string name="mibi_summary_sms_code">Enter the verification code sent to %1$s，and then finish payment</string>
+    <string name="mibi_summary_sms_code">Enter the verification code sent to %1$s，and then finish
+        payment
+    </string>
     <string name="mibi_tianyi_create_order">China Unicom SMS</string>
     <string name="mibi_title_bill_record">Payment history</string>
     <string name="mibi_title_bind_phone">Binding mobile phone No.</string>
@@ -2699,8 +2962,10 @@ Customer service center：400-100-5678"</string>
     <string name="v6_heavenly_stems_yi">乙</string>
     <string name="v6_im">IM</string>
     <string name="v6_label">MIUI SDK</string>
-    <string name="v6_license_host_unreachable">"Can't connect to network. To view this information now, 
-go to %s"</string>
+    <string name="v6_license_host_unreachable">"Can't connect to network. To view this information
+        now,
+        go to %s"
+    </string>
     <string name="v6_loading">Loading…</string>
     <string name="v6_mibi_license">Mi Credit Terms of Service</string>
     <string name="v6_midnight">AM</string>
@@ -2764,10 +3029,16 @@ go to %s"</string>
     <string name="v6_select_all">Select all</string>
     <string name="v6_select_item">Select items</string>
     <string name="v6_send">Send</string>
-    <string name="v6_send_sms_for_sync_notice">Your carrier may charge for an SMS message used to activate this service.</string>
+    <string name="v6_send_sms_for_sync_notice">Your carrier may charge for an SMS message used to
+        activate this service.
+    </string>
     <string name="v6_send_sms_for_sync_title">Data usage warning</string>
-    <string name="v6_sim_changed_reactivate_int_notice">Your carrier may charge for an international SMS message used to reactivate this service.</string>
-    <string name="v6_sim_changed_reactivate_notice">Your carrier may charge for an SMS message used to reactivate this service.</string>
+    <string name="v6_sim_changed_reactivate_int_notice">Your carrier may charge for an international
+        SMS message used to reactivate this service.
+    </string>
+    <string name="v6_sim_changed_reactivate_notice">Your carrier may charge for an SMS message used
+        to reactivate this service.
+    </string>
     <string name="v6_sim_in_airplane_mode">Turn off airplane mode.</string>
     <string name="v6_sim_locked">SIM card is locked.</string>
     <string name="v6_sim_not_ready">SIM card is in use. Try again later.</string>
@@ -2801,7 +3072,8 @@ go to %s"</string>
     <string name="v6_sunday_short">Sun</string>
     <string name="v6_sunday_shortest">S</string>
     <string name="v6_sync_one_time_sync">Touch to sync ( %1$s )</string>
-    <string name="v6_the_anniversary_of_lifting_martial_law">Anniversary of Lifting Martial Law</string>
+    <string name="v6_the_anniversary_of_lifting_martial_law">Anniversary of Lifting Martial Law
+    </string>
     <string name="v6_the_anti_aggression_day">Anti-aggression Day</string>
     <string name="v6_the_arbor_day">Arbor Day</string>
     <string name="v6_the_armed_forces_day">Armed Forces Day</string>
@@ -2861,7 +3133,8 @@ go to %s"</string>
     <string name="v6_wednesday_short">Wed</string>
     <string name="v6_wednesday_shortest">W</string>
     <string name="v6_yesterday">Yesterday</string>
-    <string name="bookshelf__book__download_dialog__serial_prompt">目前您处于流量环境下，下载所选书籍将消耗流量，是否继续？</string>
+    <string name="bookshelf__book__download_dialog__serial_prompt">目前您处于流量环境下，下载所选书籍将消耗流量，是否继续？
+    </string>
     <string name="bookshelf__empty_view__go_to_store">去书城</string>
     <string name="bookshelf__shared__delete_fail">删除失败，请稍后重试</string>
     <string name="bookshelf__shared__search">搜索作者、书名</string>
@@ -2929,7 +3202,8 @@ go to %s"</string>
     <string name="personal__message_center_view__fail">删除评论失败，请稍后重试</string>
     <string name="personal__message_center_view__succeed">成功删除%d条评论</string>
     <string name="personal__message_empty_view__no_message_description">在这里，收割评论与赞</string>
-    <string name="personal__message_empty_view__no_notification_description">在这里，查看系统通知和活动消息</string>
+    <string name="personal__message_empty_view__no_notification_description">在这里，查看系统通知和活动消息
+    </string>
     <string name="personal__message_push_view__delete_multiple">删除所选通知？</string>
     <string name="personal__message_push_view__deleting">正在删除通知...</string>
     <string name="personal__message_push_view__edit_selected">已选择%d条通知</string>
@@ -3000,7 +3274,8 @@ go to %s"</string>
     <string name="reading__comment_view__view_others">前往书评区></string>
     <string name="reading__comment_view__view_topic">查看完整专题></string>
     <string name="reading__comment_view__write_comment">给作品写几句评价吧~</string>
-    <string name="reading__pull_comic_by_mobile_network_dlg__prompt">目前您处于流量环境下，是否允许使用流量下载漫画？</string>
+    <string name="reading__pull_comic_by_mobile_network_dlg__prompt">目前您处于流量环境下，是否允许使用流量下载漫画？
+    </string>
     <string name="reading__pull_comic_by_mobile_network_dlg__title">流量提醒</string>
     <string name="reading__seek_page_view__comic_next_chapter">下一话</string>
     <string name="reading__seek_page_view__comic_prev_chapter">上一话</string>
@@ -3056,15 +3331,37 @@ go to %s"</string>
     <string name="personal__miaccount_change_password_view__enter_captcha">请输入验证码</string>
     <string name="reading__chapter_error_view__network_nowifi">已禁用流量下载，请打开WLAN网络</string>
     <string name="reading__comment_view__no_tip_first_fan">“头号粉丝”徽章</string>
-    <string name="reading__shared__author">&lt;h5 style=\"font-size: 12pt; text-align: right; color: gray;\">%s&lt;/h5></string>
-    <string name="reading__shared__chapter">&lt;div style=\"font-size:14pt; text-align:left; margin-top:0.5em; margin-bottom:0.3em;\"> &lt;span style=\"font-weight: bold; color: #48b4c1;\">%s&lt;/span> &lt;/div></string>
-    <string name="reading__shared__comment">&lt;div style=\"padding-top: 1em; padding-bottom: 1em; %1$s\"> &lt;div style=\"font-size: 10pt; margin-bottom: 1em; padding-left: 8px; border-left: 5px solid rgb(%2$s); color: #888888;\">%3$s&lt;/div> &lt;div style=\"font-size: 12pt;\">&lt;span>%4$s&lt;/span>&lt;/div> %5$s &lt;/div></string>
+    <string name="reading__shared__author">&lt;h5 style=\"font-size: 12pt; text-align: right; color:
+        gray;\">%s&lt;/h5>
+    </string>
+    <string name="reading__shared__chapter">&lt;div style=\"font-size:14pt; text-align:left;
+        margin-top:0.5em; margin-bottom:0.3em;\"> &lt;span style=\"font-weight: bold; color:
+        #48b4c1;\">%s&lt;/span> &lt;/div>
+    </string>
+    <string name="reading__shared__comment">&lt;div style=\"padding-top: 1em; padding-bottom: 1em;
+        %1$s\"> &lt;div style=\"font-size: 10pt; margin-bottom: 1em; padding-left: 8px; border-left:
+        5px solid rgb(%2$s); color: #888888;\">%3$s&lt;/div> &lt;div style=\"font-size: 12pt;\">&lt;span>%4$s&lt;/span>&lt;/div>
+        %5$s &lt;/div>
+    </string>
     <string name="reading__shared__comment_split">border-top:1px dotted lightgray;</string>
-    <string name="reading__shared__foot">&lt;div style=\"margin-top:2em; margin-bottom:1em\"> &lt;hr style=\"height:2px; border:0; background-color:#ddd;\"/> &lt;span style=\"font-size:10pt; color:gray;\">多看笔记 来自多看阅读 for Android&lt;/span> &lt;/div> &lt;/div> &lt;/div> &lt;div style=\"text-align: right; margin-top: -37px; margin-right: auto; margin-left: auto; color: #eeeeee; font-size: 10px;\">duokanbookid:%s&lt;/div></string>
-    <string name="reading__shared__note">&lt;table style=\"font-size: 11pt; margin-top: 0.5em;\">&lt;tbody>&lt;tr>&lt;td style=\"color: #a9a9a9; padding-right: 0.5em; vertical-align: top; width: 2px;\">注&lt;/td>&lt;td style=\"padding-left: 0.5em; width: 10000px; vertical-align: top; color: #555555; border-left: 1px solid #a9a9a9;\">%s&lt;/td>&lt;/tr>&lt;/tbody>&lt;/table></string>
-    <string name="reading__shared__title">&lt;div>&lt;div style=\"margin: 0px auto; padding: 5px; font-size: 12pt;\">&lt;h2 style=\"font-size: 18pt; text-align: right;\"></string>
+    <string name="reading__shared__foot">&lt;div style=\"margin-top:2em; margin-bottom:1em\"> &lt;hr
+        style=\"height:2px; border:0; background-color:#ddd;\"/> &lt;span style=\"font-size:10pt;
+        color:gray;\">多看笔记 来自多看阅读 for Android&lt;/span> &lt;/div> &lt;/div> &lt;/div> &lt;div
+        style=\"text-align: right; margin-top: -37px; margin-right: auto; margin-left: auto; color:
+        #eeeeee; font-size: 10px;\">duokanbookid:%s&lt;/div>
+    </string>
+    <string name="reading__shared__note">&lt;table style=\"font-size: 11pt; margin-top: 0.5em;\">&lt;tbody>&lt;tr>&lt;td
+        style=\"color: #a9a9a9; padding-right: 0.5em; vertical-align: top; width: 2px;\">注&lt;/td>&lt;td
+        style=\"padding-left: 0.5em; width: 10000px; vertical-align: top; color: #555555;
+        border-left: 1px solid #a9a9a9;\">%s&lt;/td>&lt;/tr>&lt;/tbody>&lt;/table>
+    </string>
+    <string name="reading__shared__title">&lt;div>&lt;div style=\"margin: 0px auto; padding: 5px;
+        font-size: 12pt;\">&lt;h2 style=\"font-size: 18pt; text-align: right;\">
+    </string>
     <string name="reading__shared__title_suffix">&lt;/h2></string>
-    <string name="remove__app_description_content">阅读是小米官方出品的正版阅读平台，提供海量免费内容，支持TXT、ePub、PDF等多种文档。请确认您是否要继续卸载系统组件？</string>
+    <string name="remove__app_description_content">
+        阅读是小米官方出品的正版阅读平台，提供海量免费内容，支持TXT、ePub、PDF等多种文档。请确认您是否要继续卸载系统组件？
+    </string>
     <string name="remove__app_description_title">阅读卸载提醒</string>
     <string name="search_app_name">@string/app__shared__shortcut_name</string>
     <string name="search_description__app">小米官方阅读应用</string>
@@ -3073,19 +3370,38 @@ go to %s"</string>
     <string name="search_description__magazine">海量杂志，同步新刊</string>
     <string name="search_description__settings">阅读/我的/设置</string>
     <string name="search_description__wish_list">我的想读书单</string>
-    <string name="search_keywords__book">出版;chuban;出版小说;chubanxiaoshuo;出版图书下载;chubantushuxiazai;</string>
-    <string name="search_keywords__book_category">图书分类;tushufenlei;图书分类有哪些;tushufenleiyounaxie;</string>
-    <string name="search_keywords__book_list">书单;shudan;书单推荐;shudantuijian;推荐书单;tuijianshudan;小说书单;xiaoshuoshudan;精选书单;jingxuanshudan;</string>
-    <string name="search_keywords__book_rank">出版榜单;chubanbangdan;出版图书榜单;chubantushubangdan;图书热销榜;tushurexiaobang;最近热销图书榜;zuijinrexiaotushubang;图书销量排行榜;tushuxiaoliangpaihangbang;最畅销书籍;zuichangxiaoshuji;热销图书;rexiaotushu;图书好评榜;tushuhaopingbang;好评图书;haopingtushu;图书排行榜;tushupaihangbang;潜力新书榜;qianlixinshubang;新书榜单;xinshubangdan;新书排行榜;xinshupaihangbang;新书排行榜小说;xinshupaihangbangxiaoshuo;免费图书榜;mianfeitushubang;</string>
+    <string name="search_keywords__book">出版;chuban;出版小说;chubanxiaoshuo;出版图书下载;chubantushuxiazai;
+    </string>
+    <string name="search_keywords__book_category">图书分类;tushufenlei;图书分类有哪些;tushufenleiyounaxie;
+    </string>
+    <string name="search_keywords__book_list">
+        书单;shudan;书单推荐;shudantuijian;推荐书单;tuijianshudan;小说书单;xiaoshuoshudan;精选书单;jingxuanshudan;
+    </string>
+    <string name="search_keywords__book_rank">
+        出版榜单;chubanbangdan;出版图书榜单;chubantushubangdan;图书热销榜;tushurexiaobang;最近热销图书榜;zuijinrexiaotushubang;图书销量排行榜;tushuxiaoliangpaihangbang;最畅销书籍;zuichangxiaoshuji;热销图书;rexiaotushu;图书好评榜;tushuhaopingbang;好评图书;haopingtushu;图书排行榜;tushupaihangbang;潜力新书榜;qianlixinshubang;新书榜单;xinshubangdan;新书排行榜;xinshupaihangbang;新书排行榜小说;xinshupaihangbangxiaoshuo;免费图书榜;mianfeitushubang;
+    </string>
     <string name="search_keywords__bookshelf">书架;我的书架;我的书架小说阅读;我的书架在哪里找;我的图书;我的图书管理</string>
-    <string name="search_keywords__duokan">多看阅读;duokanyuedu;多看阅读app;多看;duokan;多看阅读下载;duokanyueduxiazai;多看阅读米币;duokanyuedumibi;小说阅读;xiaoshuoyuedu;阅读;yuedu;阅读软件;yueduruanjian;阅读器;yueduqi;阅读工具;yuedugongju;阅读如剑;yuedurujian;小米阅读;xiaomiyuedu;小米阅读器;xiaomiyueduqi;小米读书;xiaomidushu;小米阅读看书;xiaomiyuedukanshu;小说;xiaoshuo;免费小说;mianfeixiaoshuo;看杂志的app;kanzazhide;哪个网文软件好;nagewangwenruanjianhao;</string>
-    <string name="search_keywords__fiction">网文;wangwen;网文推荐;wangwentuijian;好看的网文;haokandewangwen;</string>
-    <string name="search_keywords__fiction_rank">原创榜单;yuanchuangbangdan;原创图书榜单;yuanchuangtushubangdan</string>
-    <string name="search_keywords__magazine">杂志;zazhi;杂志在线阅读;zazhizaixianyuedu;畅销杂志;changxiaozazhi;时尚杂志;shishangzazhi;杂志订阅;zazhidingyue;</string>
-    <string name="search_keywords__notes">笔记;biji;小米阅读怎么做笔记;xiaomiyueduzenmezuobiji;读书笔记;dushubiji;读书笔记大全;dushubijidaquan;</string>
-    <string name="search_keywords__purchased">已购和上传;yigouheshangchuan;已购图书;yigoutushu;本地图书;benditushu;上传图书;shangchuantushu;</string>
+    <string name="search_keywords__duokan">
+        多看阅读;duokanyuedu;多看阅读app;多看;duokan;多看阅读下载;duokanyueduxiazai;多看阅读米币;duokanyuedumibi;小说阅读;xiaoshuoyuedu;阅读;yuedu;阅读软件;yueduruanjian;阅读器;yueduqi;阅读工具;yuedugongju;阅读如剑;yuedurujian;小米阅读;xiaomiyuedu;小米阅读器;xiaomiyueduqi;小米读书;xiaomidushu;小米阅读看书;xiaomiyuedukanshu;小说;xiaoshuo;免费小说;mianfeixiaoshuo;看杂志的app;kanzazhide;哪个网文软件好;nagewangwenruanjianhao;
+    </string>
+    <string name="search_keywords__fiction">网文;wangwen;网文推荐;wangwentuijian;好看的网文;haokandewangwen;
+    </string>
+    <string name="search_keywords__fiction_rank">
+        原创榜单;yuanchuangbangdan;原创图书榜单;yuanchuangtushubangdan
+    </string>
+    <string name="search_keywords__magazine">
+        杂志;zazhi;杂志在线阅读;zazhizaixianyuedu;畅销杂志;changxiaozazhi;时尚杂志;shishangzazhi;杂志订阅;zazhidingyue;
+    </string>
+    <string name="search_keywords__notes">
+        笔记;biji;小米阅读怎么做笔记;xiaomiyueduzenmezuobiji;读书笔记;dushubiji;读书笔记大全;dushubijidaquan;
+    </string>
+    <string name="search_keywords__purchased">
+        已购和上传;yigouheshangchuan;已购图书;yigoutushu;本地图书;benditushu;上传图书;shangchuantushu;
+    </string>
     <string name="search_keywords__settings">小米阅读怎么设置;xiaomiyueduzenmeshezhi;</string>
-    <string name="search_keywords__wish_list">想读;xiangdu;想读书单;xiangdushudan;心愿书单;xinyuanshudan;收藏图书;shoucangtushu;我的图书收藏;wodetushushoucang;</string>
+    <string name="search_keywords__wish_list">
+        想读;xiangdu;想读书单;xiangdushudan;心愿书单;xinyuanshudan;收藏图书;shoucangtushu;我的图书收藏;wodetushushoucang;
+    </string>
     <string name="search_resource_name__book">出版书城</string>
     <string name="search_resource_name__book_category">图书分类</string>
     <string name="search_resource_name__book_list">书单推荐</string>
@@ -3131,12 +3447,18 @@ go to %s"</string>
     <string name="v6_chinese_day_8">初八</string>
     <string name="v6_chinese_day_9">初九</string>
     <string name="v6_chinese_month">月</string>
-    <string name="v6_error_forbidden">Sync has been turned off due to problems with your Mi Account.</string>
+    <string name="v6_error_forbidden">Sync has been turned off due to problems with your Mi
+        Account.
+    </string>
     <string name="v6_error_not_acceptable">Sync has been turned off.</string>
     <string name="v6_error_title">"Couldn't sync"</string>
-    <string name="v6_error_unauthorized">Sync has been turned off due to too many sign-in attempts.</string>
+    <string name="v6_error_unauthorized">Sync has been turned off due to too many sign-in
+        attempts.
+    </string>
     <string name="v6_fmt_chinese_date">N月e</string>
-    <string name="v6_permdesc_sendSmsNoConfirmation">App can send SMS messages without asking your permission. This may result in unexpected charges from your carrier.</string>
+    <string name="v6_permdesc_sendSmsNoConfirmation">App can send SMS messages without asking your
+        permission. This may result in unexpected charges from your carrier.
+    </string>
     <string name="v6_permlab_sendSmsNoConfirmation">Allow SMS messages in background</string>
     <string name="v6_size_byte">B</string>
     <string name="v6_size_giga_byte">GB</string>

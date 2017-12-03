@@ -1,19 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_gravity="center" android:paddingLeft="20.0dip" android:paddingTop="25.0dip" android:paddingRight="20.0dip" android:paddingBottom="25.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.core.ui.BoxView android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxWidth="640.0dip">
+<FrameLayout android:layout_gravity="center" android:paddingLeft="20.0dip"
+    android:paddingTop="25.0dip" android:paddingRight="20.0dip" android:paddingBottom="25.0dip"
+    android:layout_width="fill_parent" android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.core.ui.BoxView android:layout_gravity="center" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:maxWidth="640.0dip">
         <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <LinearLayout android:gravity="left" android:id="@id/reading__comic_option_view__vertical" android:paddingLeft="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
-                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/reading__comic_option_view__vertical" />
-                <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__999999_selected" android:gravity="center" android:paddingLeft="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reading__comic_option_view__vertical" />
+            <LinearLayout android:gravity="left"
+                android:id="@id/reading__comic_option_view__vertical" android:paddingLeft="20.0dip"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_weight="1.0">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:src="@drawable/reading__comic_option_view__vertical" />
+                <TextView android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__999999_selected"
+                    android:gravity="center" android:paddingLeft="10.0dip"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/reading__comic_option_view__vertical" />
             </LinearLayout>
-            <LinearLayout android:gravity="center" android:id="@id/reading__comic_option_view__horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
-                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/reading__comic_option_view__horizontal" />
-                <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__999999_selected" android:gravity="center" android:paddingLeft="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reading__comic_option_view__horizontal" />
+            <LinearLayout android:gravity="center"
+                android:id="@id/reading__comic_option_view__horizontal"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_weight="1.0">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:src="@drawable/reading__comic_option_view__horizontal" />
+                <TextView android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__999999_selected"
+                    android:gravity="center" android:paddingLeft="10.0dip"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/reading__comic_option_view__horizontal" />
             </LinearLayout>
-            <LinearLayout android:gravity="right" android:id="@id/reading__comic_option_view__landscape" android:paddingRight="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
-                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/reading__comic_option_view__landscape" />
-                <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__999999_selected" android:gravity="center" android:paddingLeft="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reading__comic_option_view__landscape" />
+            <LinearLayout android:gravity="right"
+                android:id="@id/reading__comic_option_view__landscape"
+                android:paddingRight="20.0dip" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_weight="1.0">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:src="@drawable/reading__comic_option_view__landscape" />
+                <TextView android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__999999_selected"
+                    android:gravity="center" android:paddingLeft="10.0dip"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/reading__comic_option_view__landscape" />
             </LinearLayout>
         </LinearLayout>
     </com.duokan.core.ui.BoxView>

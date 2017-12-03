@@ -1,13 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
-        <com.duokan.reader.ui.general.DkTextView android:textSize="@dimen/general_font__shared__a" android:id="@id/reading__chapter_not_purchased_view__name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" />
-        <com.duokan.reader.ui.general.DkTextView android:textSize="@dimen/general_font__shared__b" android:ellipsize="end" android:gravity="fill" android:id="@id/reading__chapter_not_purchased_view__tip" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+<LinearLayout android:gravity="center"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0.0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="1.0">
+
+        <com.duokan.reader.ui.general.DkTextView
+            android:textSize="@dimen/general_font__shared__a"
+            android:id="@id/reading__chapter_not_purchased_view__name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20.0dip" />
+
+        <com.duokan.reader.ui.general.DkTextView
+            android:textSize="@dimen/general_font__shared__b"
+            android:ellipsize="end"
+            android:gravity="fill"
+            android:id="@id/reading__chapter_not_purchased_view__tip"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0" />
     </LinearLayout>
-    <View android:id="@id/reading__chapter_not_purchased_view__divider" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_marginTop="25.0dip" android:layout_marginBottom="25.0dip" />
-    <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
-        <TextView android:textSize="@dimen/general_font__shared__b" android:textColor="@android:color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/reading__chapter_not_purchased_view__login_or_buy" android:background="@drawable/general__shared__rounded_button_orange" android:padding="10.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="150.0dip" />
-        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/reading__chapter_not_purchased_view__server_info" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+
+    <View
+        android:id="@id/reading__chapter_not_purchased_view__divider"
+        android:layout_width="1.0px"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="25.0dip"
+        android:layout_marginBottom="25.0dip" />
+
+    <FrameLayout
+        android:layout_width="0.0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="1.0">
+
+        <TextView
+            android:textSize="@dimen/general_font__shared__b"
+            android:textColor="@android:color/white"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@id/reading__chapter_not_purchased_view__login_or_buy"
+            android:background="@drawable/general__shared__rounded_button_orange"
+            android:padding="10.0dip"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="150.0dip" />
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@id/reading__chapter_not_purchased_view__server_info"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
     </FrameLayout>
 </LinearLayout>

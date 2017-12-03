@@ -1,10 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginTop="20.0dip" android:layout_marginBottom="20.0dip" android:layout_weight="1.0"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="10.0sp" android:textColor="#fffb4e53" android:layout_gravity="center_horizontal" android:id="@id/bookshelf__sign_in_succeed_view__ad_item_name" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-    <TextView android:textSize="8.0sp" android:textColor="#ffa7a7a7" android:layout_gravity="center_horizontal" android:id="@id/bookshelf__sign_in_succeed_view__ad_item_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" />
-    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="@dimen/general__shared__cover_list_width" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
-        <com.duokan.reader.ui.general.BookCoverView android:id="@id/bookshelf__sign_in_succeed_view__ad_item_cover" android:background="@drawable/bookshelf__store_book_view__stroke" android:padding="1.0px" android:layout_width="fill_parent" android:layout_height="@dimen/general__shared__cover_list_height" />
-        <ImageView android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/store__store_book_cover_view__shadow" android:scaleType="centerCrop" />
+<LinearLayout android:orientation="vertical"
+    android:layout_width="0.0dip"
+    android:layout_height="fill_parent"
+    android:layout_marginTop="20.0dip"
+    android:layout_marginBottom="20.0dip"
+    android:layout_weight="1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:textSize="10.0sp"
+        android:textColor="#fffb4e53"
+        android:layout_gravity="center_horizontal"
+        android:id="@id/bookshelf__sign_in_succeed_view__ad_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textSize="8.0sp"
+        android:textColor="#ffa7a7a7"
+        android:layout_gravity="center_horizontal"
+        android:id="@id/bookshelf__sign_in_succeed_view__ad_item_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7.0dip" />
+
+    <LinearLayout
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_width="@dimen/general__shared__cover_list_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.0dip">
+
+        <com.duokan.reader.ui.general.BookCoverView
+            android:id="@id/bookshelf__sign_in_succeed_view__ad_item_cover"
+            android:background="@drawable/bookshelf__store_book_view__stroke"
+            android:padding="1.0px"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/general__shared__cover_list_height" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/store__store_book_cover_view__shadow"
+            android:scaleType="centerCrop" />
     </LinearLayout>
 </LinearLayout>

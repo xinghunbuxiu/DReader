@@ -120,7 +120,8 @@
     <item type="id" name="bookshelf__check_serial_updates_view__updated">false</item>
     <item type="id" name="bookshelf__cloud_storage_space_stats_view__querying">false</item>
     <item type="id" name="bookshelf__cloud_storage_space_stats_view__storage_quota">false</item>
-    <item type="id" name="bookshelf__cloud_storage_space_stats_view__storage_quota_tips">false</item>
+    <item type="id" name="bookshelf__cloud_storage_space_stats_view__storage_quota_tips">false
+    </item>
     <item type="id" name="bookshelf__custom_cloud_item_view__cover">false</item>
     <item type="id" name="bookshelf__custom_cloud_item_view__info">false</item>
     <item type="id" name="bookshelf__custom_cloud_item_view__name">false</item>
@@ -135,8 +136,10 @@
     <item type="id" name="bookshelf__delete_book_dialog_view__delete_from_this_device">false</item>
     <item type="id" name="bookshelf__delete_book_dialog_view__delete">false</item>
     <item type="id" name="bookshelf__delete_book_dialog_view__cancel">false</item>
-    <item type="id" name="bookshelf__delete_category_dialog_view__delete_category_books">false</item>
-    <item type="id" name="bookshelf__delete_category_dialog_view__undelete_category_books">false</item>
+    <item type="id" name="bookshelf__delete_category_dialog_view__delete_category_books">false
+    </item>
+    <item type="id" name="bookshelf__delete_category_dialog_view__undelete_category_books">false
+    </item>
     <item type="id" name="bookshelf__delete_category_dialog_view__cancel">false</item>
     <item type="id" name="bookshelf__empty_view__go_to_store">false</item>
     <item type="id" name="bookshelf__file_add_view__text">false</item>
@@ -226,7 +229,8 @@
     <item type="id" name="bookshelf__purchased_category_title_view__top_line">false</item>
     <item type="id" name="bookshelf__purchased_category_title_view__title">false</item>
     <item type="id" name="bookshelf__purchased_category_title_view__bottom_line">false</item>
-    <item type="id" name="bookshelf__purchased_second_category_group_title_view__first_line">false</item>
+    <item type="id" name="bookshelf__purchased_second_category_group_title_view__first_line">false
+    </item>
     <item type="id" name="bookshelf__purchased_second_category_group_title_view__title">false</item>
     <item type="id" name="bookshelf__recommended_books_view_grid">false</item>
     <item type="id" name="bookshelf__recommended_books_view__add">false</item>
@@ -878,7 +882,8 @@
     <item type="id" name="personal__miaccount_profile_settings_view__scrollerview">false</item>
     <item type="id" name="personal__miaccount_profile_settings_view__avatar">false</item>
     <item type="id" name="personal__miaccount_profile_settings_view__user_id">false</item>
-    <item type="id" name="personal__miaccount_profile_settings_view__nickname_container">false</item>
+    <item type="id" name="personal__miaccount_profile_settings_view__nickname_container">false
+    </item>
     <item type="id" name="personal__miaccount_profile_settings_view__nickname_label">false</item>
     <item type="id" name="personal__miaccount_profile_settings_view__user_name_text">false</item>
     <item type="id" name="personal__miaccount_profile_settings_view__user_name_next">false</item>
@@ -886,14 +891,18 @@
     <item type="id" name="personal__miaccount_profile_settings_view__email_label">false</item>
     <item type="id" name="personal__miaccount_profile_settings_view__email">false</item>
     <item type="id" name="personal__miaccount_profile_settings_view__phone_container">false</item>
-    <item type="id" name="personal__miaccount_profile_settings_view__mobile_phone_label">false</item>
+    <item type="id" name="personal__miaccount_profile_settings_view__mobile_phone_label">false
+    </item>
     <item type="id" name="personal__miaccount_profile_settings_view__phone">false</item>
-    <item type="id" name="personal__miaccount_profile_settings_view__signature_container">false</item>
+    <item type="id" name="personal__miaccount_profile_settings_view__signature_container">false
+    </item>
     <item type="id" name="personal__miaccount_profile_settings_view__signature_label">false</item>
     <item type="id" name="personal__miaccount_profile_settings_view__signature">false</item>
     <item type="id" name="personal__personal_settings_view__mi_milicenter_container">false</item>
     <item type="id" name="personal__personal_settings_view__mi_milicenter">false</item>
-    <item type="id" name="personal__miaccount_profile_settings_view__change_password_container">false</item>
+    <item type="id" name="personal__miaccount_profile_settings_view__change_password_container">
+        false
+    </item>
     <item type="id" name="personal__miaccount_profile_settings_view__change_password">false</item>
     <item type="id" name="personal__personal_settings_view__logoff_container">false</item>
     <item type="id" name="personal__personal_settings_view__logoff">false</item>
@@ -1003,7 +1012,8 @@
     <item type="id" name="personal__personal_settings_view__bookshelf_type_more">false</item>
     <item type="id" name="personal__personal_settings_view__show_read_progress">false</item>
     <item type="id" name="personal__personal_settings_view__sync_reading_datas">false</item>
-    <item type="id" name="personal__personal_settings_view__sync_reading_datas_primary_text">false</item>
+    <item type="id" name="personal__personal_settings_view__sync_reading_datas_primary_text">false
+    </item>
     <item type="id" name="personal__personal_settings_view__sync_reading_datas_switch">false</item>
     <item type="id" name="personal__personal_settings_view__auto_upload">false</item>
     <item type="id" name="personal__personal_settings_view__auto_upload_primary_text">false</item>

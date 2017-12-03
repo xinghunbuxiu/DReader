@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-Name: account
+Bundle-SymbolicName: com.mipay.account
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.mipay.account.Activator
+Require-Bundle: com.mipay.common

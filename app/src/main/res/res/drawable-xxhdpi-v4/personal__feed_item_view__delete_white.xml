@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_selected="true" android:drawable="@drawable/personal__feed_item_view__delete_pressed" />
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true"
+        android:drawable="@drawable/personal__feed_item_view__delete_pressed" />
     <item android:drawable="@drawable/personal__feed_item_view__delete_normal_white" />
 </selector>

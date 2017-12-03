@@ -1,14 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@drawable/mibi_dialog_bg_light" android:paddingBottom="@dimen/mibi_payment_padding_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:ellipsize="marquee" android:gravity="center" android:id="@id/title" android:background="@drawable/mibi_payment_action_bar_bg" android:focusable="false" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_payment_action_bar_height" android:singleLine="true" style="@style/V6.TextAppearance.WindowTitle" />
-    <TextView android:id="@id/sms_code_summary" android:paddingTop="@dimen/mibi_payment_general_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/mibi_payment_general_padding" android:layout_marginRight="@dimen/mibi_payment_general_padding" style="@style/Mibi.TextAppearance.Payment.General" />
-    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/mibi_payment_general_padding" android:layout_marginTop="@dimen/mibi_payment_sms_content_margin_top" android:layout_marginRight="@dimen/mibi_payment_general_padding">
-        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/mibi_payment_sms_edit_part_margin_bottom">
-            <EditText android:textSize="@dimen/mibi_text_size_payment_general" android:id="@id/edit_sms_code" android:paddingLeft="@dimen/mibi_payment_verify_sms_code_margin_left" android:paddingRight="@dimen/mibi_payment_verify_sms_code_margin_right" android:layout_width="0.0dip" android:layout_height="fill_parent" android:hint="@string/mibi_sms_code_hint" android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" android:layout_weight="1.0" android:inputType="number" />
-            <com.mipay.common.component.ProgressButton android:textSize="@dimen/mibi_text_size_payment_general" android:textColor="@color/mibi_text_color_payment_get_sms_code" android:gravity="center" android:id="@id/button_reget_sms_code" android:background="@drawable/mibi_common_btn" android:layout_width="@dimen/mibi_payment_button_reget_sms_code_width" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/mibi_payment_button_reget_sms_code_margin_left" android:text="@string/mibi_button_reget" style="@style/Mibi.Widget.Button" />
+<LinearLayout android:orientation="vertical" android:background="@drawable/mibi_dialog_bg_light"
+    android:paddingBottom="@dimen/mibi_payment_padding_bottom" android:layout_width="fill_parent"
+    android:layout_height="wrap_content" xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:ellipsize="marquee" android:gravity="center" android:id="@id/title"
+        android:background="@drawable/mibi_payment_action_bar_bg" android:focusable="false"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/mibi_payment_action_bar_height" android:singleLine="true"
+        style="@style/V6.TextAppearance.WindowTitle" />
+    <TextView android:id="@id/sms_code_summary"
+        android:paddingTop="@dimen/mibi_payment_general_padding" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mibi_payment_general_padding"
+        android:layout_marginRight="@dimen/mibi_payment_general_padding"
+        style="@style/Mibi.TextAppearance.Payment.General" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mibi_payment_general_padding"
+        android:layout_marginTop="@dimen/mibi_payment_sms_content_margin_top"
+        android:layout_marginRight="@dimen/mibi_payment_general_padding">
+        <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mibi_payment_sms_edit_part_margin_bottom">
+            <EditText android:textSize="@dimen/mibi_text_size_payment_general"
+                android:id="@id/edit_sms_code"
+                android:paddingLeft="@dimen/mibi_payment_verify_sms_code_margin_left"
+                android:paddingRight="@dimen/mibi_payment_verify_sms_code_margin_right"
+                android:layout_width="0.0dip" android:layout_height="fill_parent"
+                android:hint="@string/mibi_sms_code_hint"
+                android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:layout_weight="1.0" android:inputType="number" />
+            <com.mipay.common.component.ProgressButton
+                android:textSize="@dimen/mibi_text_size_payment_general"
+                android:textColor="@color/mibi_text_color_payment_get_sms_code"
+                android:gravity="center" android:id="@id/button_reget_sms_code"
+                android:background="@drawable/mibi_common_btn"
+                android:layout_width="@dimen/mibi_payment_button_reget_sms_code_width"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="@dimen/mibi_payment_button_reget_sms_code_margin_left"
+                android:text="@string/mibi_button_reget" style="@style/Mibi.Widget.Button" />
         </LinearLayout>
-        <TextView android:textSize="@dimen/mibi_text_size_payment_general" android:textColor="@color/mibi_text_color_payment_red" android:layout_gravity="bottom" android:id="@id/sms_code_error_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/mibi_payment_verify_sms_code_error_margin_bottom" />
+        <TextView android:textSize="@dimen/mibi_text_size_payment_general"
+            android:textColor="@color/mibi_text_color_payment_red" android:layout_gravity="bottom"
+            android:id="@id/sms_code_error_info" android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mibi_payment_verify_sms_code_error_margin_bottom" />
     </FrameLayout>
-    <com.mipay.common.component.ProgressButton android:layout_gravity="bottom" android:id="@id/button_confirm" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/mibi_payment_general_padding" android:layout_marginRight="@dimen/mibi_payment_general_padding" android:text="@string/mibi_button_confirm" style="@style/Mibi.Widget.Button.Payment" />
+    <com.mipay.common.component.ProgressButton android:layout_gravity="bottom"
+        android:id="@id/button_confirm" android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mibi_payment_general_padding"
+        android:layout_marginRight="@dimen/mibi_payment_general_padding"
+        android:text="@string/mibi_button_confirm" style="@style/Mibi.Widget.Button.Payment" />
 </LinearLayout>

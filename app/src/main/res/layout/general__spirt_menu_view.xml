@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/general__spirt_menu_view__dark_bg" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    <RelativeLayout android:id="@id/general__spirt_menu_view__blur_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    <RelativeLayout android:id="@id/general__spirt_menu_view__page" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
-            <LinearLayout android:orientation="vertical" android:id="@id/general__spirt_menu_view__menu" android:background="@color/general__shared__ffffff80" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-            <FrameLayout android:layout_gravity="bottom|center|right" android:id="@id/general__spirt_menu_view__extra" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+<FrameLayout android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@id/general__spirt_menu_view__dark_bg"
+        android:background="@android:color/black"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <RelativeLayout
+        android:id="@id/general__spirt_menu_view__blur_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <RelativeLayout
+        android:id="@id/general__spirt_menu_view__page"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@id/general__spirt_menu_view__menu"
+                android:background="@color/general__shared__ffffff80"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:layout_gravity="bottom|center|right"
+                android:id="@id/general__spirt_menu_view__extra"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </FrameLayout>
     </RelativeLayout>
 </FrameLayout>

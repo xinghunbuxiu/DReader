@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.duokan.reader.ui.personal.PersonalBookFeedContentView android:orientation="vertical" android:id="@id/personal__note_feed_content_view__root" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.deprecatedDkTextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__555555" android:ellipsize="end" android:gravity="fill" android:id="@id/personal__book_feed_content_view__desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="4" android:singleLine="false" />
+<com.duokan.reader.ui.personal.PersonalBookFeedContentView android:orientation="vertical"
+    android:id="@id/personal__note_feed_content_view__root"
+    android:paddingLeft="5.0dip"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.duokan.reader.ui.general.deprecatedDkTextView
+        android:textSize="@dimen/general_font__shared__c"
+        android:textColor="@color/general__shared__555555"
+        android:ellipsize="end"
+        android:gravity="fill"
+        android:id="@id/personal__book_feed_content_view__desc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="4"
+        android:singleLine="false" />
 </com.duokan.reader.ui.personal.PersonalBookFeedContentView>

@@ -1,8 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.duokan.core.ui.BoxView android:background="@color/general__shared__dialog" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="8.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="@drawable/general__shared__horz_line" android:showDividers="middle">
-        <TextView android:textSize="@dimen/general_font__shared__t3" android:textColor="@color/general__shared__c6" android:ellipsize="end" android:gravity="fill" android:layout_gravity="center_horizontal" android:id="@id/account__choose_login_dialog__title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_marginBottom="20.0dip" android:text="@string/account__choose_login_dialog__prompt" android:maxLines="5" />
-        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/account__choose_login_dialog__container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="@drawable/general__shared__horz_line" android:minWidth="310.0dip" android:showDividers="middle" />
+<com.duokan.core.ui.BoxView android:background="@color/general__shared__dialog"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/general__shared__horz_line"
+        android:showDividers="middle">
+
+        <TextView
+            android:textSize="@dimen/general_font__shared__t3"
+            android:textColor="@color/general__shared__c6"
+            android:ellipsize="end"
+            android:gravity="fill"
+            android:layout_gravity="center_horizontal"
+            android:id="@id/account__choose_login_dialog__title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20.0dip"
+            android:layout_marginBottom="20.0dip"
+            android:text="@string/account__choose_login_dialog__prompt"
+            android:maxLines="5" />
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:id="@id/account__choose_login_dialog__container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/general__shared__horz_line"
+            android:minWidth="310.0dip"
+            android:showDividers="middle" />
     </LinearLayout>
 </com.duokan.core.ui.BoxView>

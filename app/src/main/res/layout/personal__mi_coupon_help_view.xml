@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@color/general__shared__ebebeb" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.PageHeaderView android:id="@id/personal__mi_coupon_help_view__header" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <WebView android:id="@id/personal__mi_coupon_help_view__web" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-        <com.duokan.reader.ui.general.LoadingCircleView android:layout_gravity="center" android:id="@id/personal__mi_coupon_help_view__loading" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+<LinearLayout android:orientation="vertical"
+    android:background="@color/general__shared__ebebeb"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.duokan.reader.ui.general.PageHeaderView
+        android:id="@id/personal__mi_coupon_help_view__header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <WebView
+            android:id="@id/personal__mi_coupon_help_view__web"
+            android:visibility="invisible"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <com.duokan.reader.ui.general.LoadingCircleView
+            android:layout_gravity="center"
+            android:id="@id/personal__mi_coupon_help_view__loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </FrameLayout>
 </LinearLayout>

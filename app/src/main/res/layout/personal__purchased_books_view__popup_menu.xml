@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@id/personal__purchased_books_view__sort_by_time" android:orderInCategory="0" android:title="@string/bookshelf__purchased_books_sort_view__date" />
-    <item android:id="@id/personal__purchased_books_view__sort_by_name" android:orderInCategory="1" android:title="@string/bookshelf__purchased_books_sort_view__name" />
-    <item android:id="@id/personal__purchased_books_view__sort_by_group" android:orderInCategory="2" android:title="@string/bookshelf__purchased_books_sort_view__group" />
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@id/personal__purchased_books_view__sort_by_time"
+        android:orderInCategory="0"
+        android:title="@string/bookshelf__purchased_books_sort_view__date" />
+
+    <item
+        android:id="@id/personal__purchased_books_view__sort_by_name"
+        android:orderInCategory="1"
+        android:title="@string/bookshelf__purchased_books_sort_view__name" />
+
+    <item
+        android:id="@id/personal__purchased_books_view__sort_by_group"
+        android:orderInCategory="2"
+        android:title="@string/bookshelf__purchased_books_sort_view__group" />
 </menu>

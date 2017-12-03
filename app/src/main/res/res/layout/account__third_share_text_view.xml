@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.PinView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__8d6752" android:ellipsize="end" android:id="@id/account__third_share_text_view__sample" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="6.0dip" android:layout_marginRight="15.0dip" android:maxLines="4" />
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.reader.ui.general.PinView android:textSize="@dimen/general_font__shared__c"
+        android:textColor="@color/general__shared__8d6752" android:ellipsize="end"
+        android:id="@id/account__third_share_text_view__sample" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:layout_marginLeft="15.0dip"
+        android:layout_marginTop="6.0dip" android:layout_marginRight="15.0dip"
+        android:maxLines="4" />
 </LinearLayout>

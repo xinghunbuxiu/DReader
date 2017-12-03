@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__666666" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/reading__close_easteregg_view__tips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/reading__close_easteregg_view__title" />
-    <com.duokan.reader.ui.general.DkLabelView android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/reading__close_easteregg_view__close_none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/reading__close_easteregg_view__close" style="@style/general__shared__button_43dip_ffffff" />
-    <com.duokan.reader.ui.general.DkLabelView android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/reading__close_easteregg_view__close_later" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/reading__close_easteregg_view__later" style="@style/general__shared__button_43dip_ffffff" />
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b"
+        android:textColor="@color/general__shared__666666" android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:id="@id/reading__close_easteregg_view__tips" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginTop="10.0dip"
+        android:text="@string/reading__close_easteregg_view__title" />
+    <com.duokan.reader.ui.general.DkLabelView android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:id="@id/reading__close_easteregg_view__close_none"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="15.0dip"
+        android:text="@string/reading__close_easteregg_view__close"
+        style="@style/general__shared__button_43dip_ffffff" />
+    <com.duokan.reader.ui.general.DkLabelView android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:id="@id/reading__close_easteregg_view__close_later"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="15.0dip"
+        android:text="@string/reading__close_easteregg_view__later"
+        style="@style/general__shared__button_43dip_ffffff" />
 </LinearLayout>

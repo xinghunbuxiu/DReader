@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/passport_vcode" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <EditText android:id="@id/ev_verify_code" android:layout_width="fill_parent" android:hint="@string/passport_input_vcode_hint" android:singleLine="true" android:digits="1234567890" android:inputType="number" style="@style/Passport.MiuiProvisionEditViewStyle" />
-    <TextView android:textSize="@dimen/passport_secondary_text_size" android:textColor="@color/passport_miui_provision_secondary_clickable_text_color" android:gravity="center_vertical" android:id="@id/send_vcode_notice" android:layout_width="wrap_content" android:layout_height="@dimen/passport_miui_provision_edit_text_height" android:text="@string/passport_get_verify_code" style="@style/Passport.RightLayoutGravity" />
+<RelativeLayout android:id="@id/passport_vcode"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditText
+        android:id="@id/ev_verify_code"
+        android:layout_width="fill_parent"
+        android:hint="@string/passport_input_vcode_hint"
+        android:singleLine="true"
+        android:digits="1234567890"
+        android:inputType="number"
+        style="@style/Passport.MiuiProvisionEditViewStyle" />
+
+    <TextView
+        android:textSize="@dimen/passport_secondary_text_size"
+        android:textColor="@color/passport_miui_provision_secondary_clickable_text_color"
+        android:gravity="center_vertical"
+        android:id="@id/send_vcode_notice"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/passport_miui_provision_edit_text_height"
+        android:text="@string/passport_get_verify_code"
+        style="@style/Passport.RightLayoutGravity" />
 </RelativeLayout>

@@ -1,20 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:enabled="false" android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/reading__reading_menu_view__top" android:background="@color/general__shared__141414f2" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <LinearLayout android:gravity="center_vertical" android:id="@id/reading__reading_menu_view__top_left_panel" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_alignParentLeft="true">
-            <ImageView android:id="@id/reading__reading_menu_view__back" android:paddingLeft="5.0dip" android:paddingRight="15.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/reading__reading_menu_view__back" android:scaleType="center" android:contentDescription="@string/reading__reading_menu_view__back_to_bookshelf" />
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:enabled="false" android:gravity="center_vertical"
+        android:orientation="horizontal" android:id="@id/reading__reading_menu_view__top"
+        android:background="@color/general__shared__141414f2" android:clickable="true"
+        android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_vertical"
+            android:id="@id/reading__reading_menu_view__top_left_panel"
+            android:layout_width="wrap_content" android:layout_height="50.0dip"
+            android:layout_alignParentLeft="true">
+            <ImageView android:id="@id/reading__reading_menu_view__back"
+                android:paddingLeft="5.0dip" android:paddingRight="15.0dip"
+                android:layout_width="wrap_content" android:layout_height="fill_parent"
+                android:src="@drawable/reading__reading_menu_view__back" android:scaleType="center"
+                android:contentDescription="@string/reading__reading_menu_view__back_to_bookshelf" />
         </LinearLayout>
-        <LinearLayout android:gravity="center" android:id="@id/reading__reading_menu_view__top_right_panel" android:layout_width="wrap_content" android:layout_height="50.0dip" android:layout_alignParentRight="true">
-            <ImageView android:id="@id/reading__reading_menu_view__tip" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/reading__reading_menu_view__tip" android:scaleType="center" android:contentDescription="@null" />
-            <FrameLayout android:id="@id/reading__reading_menu_view__comment" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:scaleType="center" android:contentDescription="@null">
-                <ImageView android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/reading__reading_menu_view__comment" android:scaleType="center" android:contentDescription="@null" />
-                <TextView android:textSize="5.0dip" android:textColor="@color/general__shared__ffffff" android:gravity="center|top" android:layout_gravity="center|right|top" android:id="@id/reading__reading_menu_view__comment_count" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="14.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="3.0dip" android:text="1" />
+        <LinearLayout android:gravity="center"
+            android:id="@id/reading__reading_menu_view__top_right_panel"
+            android:layout_width="wrap_content" android:layout_height="50.0dip"
+            android:layout_alignParentRight="true">
+            <ImageView android:id="@id/reading__reading_menu_view__tip"
+                android:paddingLeft="10.0dip" android:paddingRight="10.0dip"
+                android:layout_width="wrap_content" android:layout_height="fill_parent"
+                android:src="@drawable/reading__reading_menu_view__tip" android:scaleType="center"
+                android:contentDescription="@null" />
+            <FrameLayout android:id="@id/reading__reading_menu_view__comment"
+                android:paddingLeft="10.0dip" android:paddingRight="10.0dip"
+                android:layout_width="wrap_content" android:layout_height="fill_parent"
+                android:scaleType="center" android:contentDescription="@null">
+                <ImageView android:layout_width="wrap_content" android:layout_height="fill_parent"
+                    android:src="@drawable/reading__reading_menu_view__comment"
+                    android:scaleType="center" android:contentDescription="@null" />
+                <TextView android:textSize="5.0dip"
+                    android:textColor="@color/general__shared__ffffff" android:gravity="center|top"
+                    android:layout_gravity="center|right|top"
+                    android:id="@id/reading__reading_menu_view__comment_count"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content"
+                    android:layout_marginLeft="14.0dip" android:layout_marginTop="12.0dip"
+                    android:layout_marginRight="3.0dip" android:text="1" />
             </FrameLayout>
-            <ImageView android:id="@id/reading__reading_menu_view__download" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/reading__reading_menu_view__book_download_arrow" android:scaleType="center" android:contentDescription="@null" />
-            <ImageView android:id="@id/reading__reading_menu_view__buy" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/reading__reading_menu_view__buy" android:scaleType="center" android:contentDescription="@string/reading__reading_menu_view__purchase" />
-            <ImageView android:id="@id/reading__reading_menu_view__search" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/reading__reading_menu_view__search" android:scaleType="center" android:contentDescription="@string/reading__reading_menu_view__search" />
+            <ImageView android:id="@id/reading__reading_menu_view__download"
+                android:paddingLeft="10.0dip" android:paddingRight="10.0dip"
+                android:visibility="gone" android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:src="@drawable/reading__reading_menu_view__book_download_arrow"
+                android:scaleType="center" android:contentDescription="@null" />
+            <ImageView android:id="@id/reading__reading_menu_view__buy"
+                android:paddingLeft="10.0dip" android:paddingRight="10.0dip"
+                android:layout_width="wrap_content" android:layout_height="fill_parent"
+                android:src="@drawable/reading__reading_menu_view__buy" android:scaleType="center"
+                android:contentDescription="@string/reading__reading_menu_view__purchase" />
+            <ImageView android:id="@id/reading__reading_menu_view__search"
+                android:paddingLeft="10.0dip" android:paddingRight="10.0dip"
+                android:layout_width="wrap_content" android:layout_height="fill_parent"
+                android:src="@drawable/reading__reading_menu_view__search"
+                android:scaleType="center"
+                android:contentDescription="@string/reading__reading_menu_view__search" />
         </LinearLayout>
     </RelativeLayout>
-    <include android:visibility="visible" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" layout="@layout/reading__reading_menu_bottom_view_epub" />
+    <include android:visibility="visible" android:layout_width="fill_parent"
+        android:layout_height="0.0dip" android:layout_weight="1.0"
+        layout="@layout/reading__reading_menu_bottom_view_epub" />
 </LinearLayout>

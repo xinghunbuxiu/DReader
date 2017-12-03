@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:background="@drawable/reading__illustration_tip_view__shadow" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <com.duokan.reader.ui.general.deprecatedDkTextView android:textSize="18.0dip" android:textColor="@color/general__shared__ffffff" android:gravity="fill" android:id="@id/reading__illustration_view__main_title" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-        <com.duokan.reader.ui.general.deprecatedDkTextView android:textSize="14.0dip" android:textColor="@color/general__shared__ffffff" android:gravity="fill" android:id="@id/reading__illustration_view__sub_title" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+<FrameLayout android:background="@drawable/reading__illustration_tip_view__shadow"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <com.duokan.reader.ui.general.deprecatedDkTextView
+            android:textSize="18.0dip"
+            android:textColor="@color/general__shared__ffffff"
+            android:gravity="fill"
+            android:id="@id/reading__illustration_view__main_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <com.duokan.reader.ui.general.deprecatedDkTextView
+            android:textSize="14.0dip"
+            android:textColor="@color/general__shared__ffffff"
+            android:gravity="fill"
+            android:id="@id/reading__illustration_view__sub_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </FrameLayout>

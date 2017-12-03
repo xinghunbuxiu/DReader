@@ -1,12 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.PageHeaderView android:id="@id/account__mi_account_choice_view__header" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <ScrollView android:id="@id/account__mi_account_choice_view__scroll" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/general__shared__center_dialog_content_padding" android:paddingRight="@dimen/general__shared__center_dialog_content_padding" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:gravity="left" android:id="@id/account__mi_account_choice_view__text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" />
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@android:color/white" android:gravity="center" android:id="@id/account__mi_account_choice_view__login_system_account" android:background="@drawable/general__shared__button_43dip_ff6518" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/account__mi_account_choice_view__login_system_account" />
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:gravity="center" android:id="@id/account__mi_account_choice_view__switch_account" android:background="@drawable/general__shared__button_43dip_ffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/account__mi_account_choice_view__switch_account" />
+<LinearLayout android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.duokan.reader.ui.general.PageHeaderView
+        android:id="@id/account__mi_account_choice_view__header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:id="@id/account__mi_account_choice_view__scroll"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/general__shared__center_dialog_content_padding"
+            android:paddingRight="@dimen/general__shared__center_dialog_content_padding"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textColor="@color/general__shared__333333"
+                android:gravity="left"
+                android:id="@id/account__mi_account_choice_view__text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20.0dip" />
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:id="@id/account__mi_account_choice_view__login_system_account"
+                android:background="@drawable/general__shared__button_43dip_ff6518"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20.0dip"
+                android:text="@string/account__mi_account_choice_view__login_system_account" />
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textColor="@color/general__shared__333333"
+                android:gravity="center"
+                android:id="@id/account__mi_account_choice_view__switch_account"
+                android:background="@drawable/general__shared__button_43dip_ffffff"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15.0dip"
+                android:text="@string/account__mi_account_choice_view__switch_account" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

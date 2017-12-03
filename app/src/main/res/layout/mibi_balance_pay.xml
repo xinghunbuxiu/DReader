@@ -1,29 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/direct_pay" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/mibi_payment_general_padding" android:layout_marginRight="@dimen/mibi_payment_general_padding" style="@style/Mibi.Payment.Item">
-        <TextView android:ellipsize="marquee" android:id="@id/text_order_name" android:focusable="false" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" style="@style/Mibi.TextAppearance.Payment.General" />
-        <TextView android:gravity="right" android:id="@id/text_order_price_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/mibi_payment_price_unit_gap" style="@style/Mibi.TextAppearance.Payment.General.Red" />
-        <TextView android:gravity="right" android:id="@id/text_order_price_unit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/mibi_unit" style="@style/Mibi.TextAppearance.Payment.General" />
+<LinearLayout android:orientation="vertical"
+    android:id="@id/direct_pay"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mibi_payment_general_padding"
+        android:layout_marginRight="@dimen/mibi_payment_general_padding"
+        style="@style/Mibi.Payment.Item">
+
+        <TextView
+            android:ellipsize="marquee"
+            android:id="@id/text_order_name"
+            android:focusable="false"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_weight="1.0"
+            style="@style/Mibi.TextAppearance.Payment.General" />
+
+        <TextView
+            android:gravity="right"
+            android:id="@id/text_order_price_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mibi_payment_price_unit_gap"
+            style="@style/Mibi.TextAppearance.Payment.General.Red" />
+
+        <TextView
+            android:gravity="right"
+            android:id="@id/text_order_price_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:text="@string/mibi_unit"
+            style="@style/Mibi.TextAppearance.Payment.General" />
     </LinearLayout>
-    <TableLayout android:id="@id/mibi_balance_pay" android:paddingLeft="@dimen/mibi_payment_general_padding" android:paddingRight="@dimen/mibi_payment_general_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:stretchColumns="1" android:shrinkColumns="1">
-        <TableRow android:id="@id/mibi_balance" style="@style/Mibi.Payment.Item">
-            <CheckBox android:enabled="false" android:layout_gravity="center" android:id="@id/checkbox_mibi_balance" android:checked="true" />
-            <TextView android:gravity="left" android:id="@id/text_mibi_balance_name" android:text="@string/mibi_label_balance" style="@style/Mibi.TextAppearance.Payment.General" />
-            <TextView android:gravity="right" android:id="@id/text_mibi_balance_value" style="@style/Mibi.TextAppearance.Payment.General" />
-            <TextView android:gravity="right" android:layout_marginLeft="5.0dip" android:text="@string/mibi_unit" style="@style/Mibi.TextAppearance.Payment.General" />
+
+    <TableLayout
+        android:id="@id/mibi_balance_pay"
+        android:paddingLeft="@dimen/mibi_payment_general_padding"
+        android:paddingRight="@dimen/mibi_payment_general_padding"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1"
+        android:shrinkColumns="1">
+
+        <TableRow
+            android:id="@id/mibi_balance"
+            style="@style/Mibi.Payment.Item">
+
+            <CheckBox
+                android:enabled="false"
+                android:layout_gravity="center"
+                android:id="@id/checkbox_mibi_balance"
+                android:checked="true" />
+
+            <TextView
+                android:gravity="left"
+                android:id="@id/text_mibi_balance_name"
+                android:text="@string/mibi_label_balance"
+                style="@style/Mibi.TextAppearance.Payment.General" />
+
+            <TextView
+                android:gravity="right"
+                android:id="@id/text_mibi_balance_value"
+                style="@style/Mibi.TextAppearance.Payment.General" />
+
+            <TextView
+                android:gravity="right"
+                android:layout_marginLeft="5.0dip"
+                android:text="@string/mibi_unit"
+                style="@style/Mibi.TextAppearance.Payment.General" />
         </TableRow>
-        <TableRow android:id="@id/mibi_giftcard" style="@style/Mibi.Payment.Item">
-            <CheckBox android:layout_gravity="center" android:id="@id/checkbox_mibi_giftcard" android:clickable="false" android:checked="true" />
-            <TextView android:gravity="left" android:id="@id/checkbox_mibi_giftcard_label" android:text="@string/mibi_giftcard_payment" style="@style/Mibi.TextAppearance.Payment.General" />
-            <TextView android:gravity="right" android:id="@id/text_mibi_giftcard_value" style="@style/Mibi.TextAppearance.Payment.General" />
-            <TextView android:gravity="right" android:text="@string/mibi_unit" style="@style/Mibi.TextAppearance.Payment.General" />
+
+        <TableRow
+            android:id="@id/mibi_giftcard"
+            style="@style/Mibi.Payment.Item">
+
+            <CheckBox
+                android:layout_gravity="center"
+                android:id="@id/checkbox_mibi_giftcard"
+                android:clickable="false"
+                android:checked="true" />
+
+            <TextView
+                android:gravity="left"
+                android:id="@id/checkbox_mibi_giftcard_label"
+                android:text="@string/mibi_giftcard_payment"
+                style="@style/Mibi.TextAppearance.Payment.General" />
+
+            <TextView
+                android:gravity="right"
+                android:id="@id/text_mibi_giftcard_value"
+                style="@style/Mibi.TextAppearance.Payment.General" />
+
+            <TextView
+                android:gravity="right"
+                android:text="@string/mibi_unit"
+                style="@style/Mibi.TextAppearance.Payment.General" />
         </TableRow>
-        <TableRow android:id="@id/partner_giftcard" style="@style/Mibi.Payment.Item">
-            <CheckBox android:layout_gravity="center" android:id="@id/checkbox_partner_giftcard" android:clickable="false" android:checked="true" />
-            <TextView android:gravity="left" android:id="@id/text_partner_giftcard_name" style="@style/Mibi.TextAppearance.Payment.General" />
-            <TextView android:gravity="right" android:id="@id/text_partner_giftcard_value" style="@style/Mibi.TextAppearance.Payment.General" />
-            <TextView android:gravity="right" android:layout_marginLeft="5.0dip" android:text="@string/mibi_unit" style="@style/Mibi.TextAppearance.Payment.General" />
+
+        <TableRow
+            android:id="@id/partner_giftcard"
+            style="@style/Mibi.Payment.Item">
+
+            <CheckBox
+                android:layout_gravity="center"
+                android:id="@id/checkbox_partner_giftcard"
+                android:clickable="false"
+                android:checked="true" />
+
+            <TextView
+                android:gravity="left"
+                android:id="@id/text_partner_giftcard_name"
+                style="@style/Mibi.TextAppearance.Payment.General" />
+
+            <TextView
+                android:gravity="right"
+                android:id="@id/text_partner_giftcard_value"
+                style="@style/Mibi.TextAppearance.Payment.General" />
+
+            <TextView
+                android:gravity="right"
+                android:layout_marginLeft="5.0dip"
+                android:text="@string/mibi_unit"
+                style="@style/Mibi.TextAppearance.Payment.General" />
         </TableRow>
     </TableLayout>
 </LinearLayout>

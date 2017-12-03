@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:background="@drawable/store__fiction_purchase_item_view__bg" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__898989" android:gravity="center" android:id="@id/store__fiction_purchase_item_view__label1" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__ffffff" android:gravity="center" android:id="@id/store__fiction_purchase_item_view__label2" android:background="@drawable/store__fiction_purchase_item_view__discount" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="fill_parent" />
+<LinearLayout android:orientation="horizontal"
+    android:background="@drawable/store__fiction_purchase_item_view__bg"
+    android:layout_width="0.0dip"
+    android:layout_height="wrap_content"
+    android:layout_weight="1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.duokan.reader.ui.general.DkLabelView
+        android:textSize="@dimen/general_font__shared__c"
+        android:textColor="@color/general__shared__898989"
+        android:gravity="center"
+        android:id="@id/store__fiction_purchase_item_view__label1"
+        android:layout_width="0.0dip"
+        android:layout_height="fill_parent"
+        android:layout_weight="1.0" />
+
+    <com.duokan.reader.ui.general.DkLabelView
+        android:textSize="@dimen/general_font__shared__d"
+        android:textColor="@color/general__shared__ffffff"
+        android:gravity="center"
+        android:id="@id/store__fiction_purchase_item_view__label2"
+        android:background="@drawable/store__fiction_purchase_item_view__discount"
+        android:visibility="gone"
+        android:layout_width="40.0dip"
+        android:layout_height="fill_parent" />
 </LinearLayout>

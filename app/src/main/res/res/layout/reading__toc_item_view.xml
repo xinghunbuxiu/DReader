@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/reading__toc_item_view__root" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/reading__toc_item_view__padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="50.0dip">
-        <ImageView android:id="@id/reading__toc_item_view__expand" android:layout_width="45.0dip" android:layout_height="45.0dip" android:src="@drawable/general__shared__expandable_group_black_indicator" android:scaleType="centerInside" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:id="@id/reading__toc_item_view__title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:layout_marginBottom="12.0dip" android:layout_toLeftOf="@id/reading__toc_item_view__right" android:layout_toRightOf="@id/reading__toc_item_view__expand" android:layout_centerVertical="true" android:layout_alignWithParentIfMissing="true" />
-        <FrameLayout android:textSize="@dimen/general_font__shared__c" android:id="@id/reading__toc_item_view__right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true">
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__555555" android:gravity="right" android:id="@id/reading__toc_item_view__page_num" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-            <ImageView android:id="@id/reading__toc_item_view__lock" android:background="@android:color/transparent" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" />
+<LinearLayout android:orientation="vertical" android:id="@id/reading__toc_item_view__root"
+    android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent"
+    android:layout_height="wrap_content" xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/reading__toc_item_view__padding"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:minHeight="50.0dip">
+        <ImageView android:id="@id/reading__toc_item_view__expand" android:layout_width="45.0dip"
+            android:layout_height="45.0dip"
+            android:src="@drawable/general__shared__expandable_group_black_indicator"
+            android:scaleType="centerInside" android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" />
+        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c"
+            android:id="@id/reading__toc_item_view__title" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_marginTop="12.0dip"
+            android:layout_marginBottom="12.0dip"
+            android:layout_toLeftOf="@id/reading__toc_item_view__right"
+            android:layout_toRightOf="@id/reading__toc_item_view__expand"
+            android:layout_centerVertical="true" android:layout_alignWithParentIfMissing="true" />
+        <FrameLayout android:textSize="@dimen/general_font__shared__c"
+            android:id="@id/reading__toc_item_view__right" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textColor="@color/general__shared__555555" android:gravity="right"
+                android:id="@id/reading__toc_item_view__page_num"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ImageView android:id="@id/reading__toc_item_view__lock"
+                android:background="@android:color/transparent" android:visibility="gone"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" />
         </FrameLayout>
     </RelativeLayout>
-    <ImageView android:id="@id/reading__toc_item_view__divider" android:layout_width="fill_parent" android:layout_height="1.0px" android:contentDescription="@null" />
+    <ImageView android:id="@id/reading__toc_item_view__divider" android:layout_width="fill_parent"
+        android:layout_height="1.0px" android:contentDescription="@null" />
 </LinearLayout>

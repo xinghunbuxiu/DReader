@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/bookshelf__shared__book_upload_background_normal" />
     <item>
-        <clip android:gravity="bottom" android:drawable="@drawable/bookshelf__shared__book_upload_background_completed" android:clipOrientation="vertical" />
+        <clip
+            android:gravity="bottom"
+            android:drawable="@drawable/bookshelf__shared__book_upload_background_completed"
+            android:clipOrientation="vertical" />
     </item>
 </layer-list>

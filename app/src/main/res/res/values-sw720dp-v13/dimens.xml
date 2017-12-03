@@ -14,8 +14,12 @@
     <dimen name="mibi_detail_content_margin_top_bottom">22.0dip</dimen>
     <dimen name="mibi_divider">1.0px</dimen>
     <dimen name="mibi_edit_text_height">50.0dip</dimen>
-    <item type="dimen" name="mibi_get_phone_num_edit_part_margin_bottom">@dimen/mibi_payment_sms_edit_part_margin_bottom</item>
-    <item type="dimen" name="mibi_get_phone_num_margin_top">@dimen/mibi_payment_sms_content_margin_top</item>
+    <item type="dimen" name="mibi_get_phone_num_edit_part_margin_bottom">
+        @dimen/mibi_payment_sms_edit_part_margin_bottom
+    </item>
+    <item type="dimen" name="mibi_get_phone_num_margin_top">
+        @dimen/mibi_payment_sms_content_margin_top
+    </item>
     <dimen name="mibi_giftcard_define_lineHeight">1.0px</dimen>
     <dimen name="mibi_giftcard_define_marginTop">10.0dip</dimen>
     <dimen name="mibi_giftcard_define_paddingTop">23.0dip</dimen>
@@ -29,7 +33,9 @@
     <dimen name="mibi_giftcard_grid_margin_top">13.0dip</dimen>
     <dimen name="mibi_giftcard_item_describe_margin_top">6.0dip</dimen>
     <dimen name="mibi_giftcard_item_horizontal_spacing">5.0dip</dimen>
-    <item type="dimen" name="mibi_giftcard_item_vertical_spacing">@dimen/mibi_giftcard_item_horizontal_spacing</item>
+    <item type="dimen" name="mibi_giftcard_item_vertical_spacing">
+        @dimen/mibi_giftcard_item_horizontal_spacing
+    </item>
     <dimen name="mibi_giftcard_layout_padding_left">32.0dip</dimen>
     <dimen name="mibi_giftcard_layout_padding_right">32.0dip</dimen>
     <dimen name="mibi_giftcard_logo_marginTop">13.0dip</dimen>
@@ -74,7 +80,9 @@
     <dimen name="mibi_payment_success_height">344.0dip</dimen>
     <dimen name="mibi_payment_success_icon_marging_top">48.0dip</dimen>
     <dimen name="mibi_payment_success_linearlayout_marging_top">23.0dip</dimen>
-    <item type="dimen" name="mibi_payment_success_padding_bottom">@dimen/mibi_payment_general_padding</item>
+    <item type="dimen" name="mibi_payment_success_padding_bottom">
+        @dimen/mibi_payment_general_padding
+    </item>
     <dimen name="mibi_payment_success_text_result_margin_top">20.0dip</dimen>
     <dimen name="mibi_recharge_grid_button_retry_margin_top">30.0dip</dimen>
     <dimen name="mibi_recharge_grid_empty_padding">40.0dip</dimen>
@@ -108,7 +116,9 @@
     <dimen name="mibi_text_size_giftcard_detail_available">100.0sp</dimen>
     <dimen name="mibi_text_size_giftcard_item_activity">9.0sp</dimen>
     <dimen name="mibi_text_size_giftcard_item_available">80.0sp</dimen>
-    <item type="dimen" name="mibi_text_size_giftcard_item_expired_time">@dimen/mibi_text_size_giftcard_item_activity</item>
+    <item type="dimen" name="mibi_text_size_giftcard_item_expired_time">
+        @dimen/mibi_text_size_giftcard_item_activity
+    </item>
     <dimen name="mibi_text_size_giftcard_item_unit">12.0sp</dimen>
     <dimen name="mibi_text_size_grid_label">14.0sp</dimen>
     <dimen name="mibi_text_size_grid_sublabel">10.0sp</dimen>
@@ -117,7 +127,9 @@
     <dimen name="mibi_text_size_medium">18.0sp</dimen>
     <dimen name="mibi_text_size_milicenter_balance">75.0sp</dimen>
     <dimen name="mibi_text_size_milicenter_giftcard">16.0sp</dimen>
-    <item type="dimen" name="mibi_text_size_payment_action_bar">@dimen/mibi_text_size_payment_general</item>
+    <item type="dimen" name="mibi_text_size_payment_action_bar">
+        @dimen/mibi_text_size_payment_general
+    </item>
     <dimen name="mibi_text_size_payment_button">14.0sp</dimen>
     <dimen name="mibi_text_size_payment_general">16.0sp</dimen>
     <dimen name="mibi_text_size_payment_small">12.0sp</dimen>

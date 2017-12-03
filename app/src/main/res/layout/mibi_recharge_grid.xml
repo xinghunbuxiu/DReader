@@ -1,15 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@drawable/mibi_dialog_bg_light" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:ellipsize="marquee" android:gravity="center" android:id="@id/title" android:background="@drawable/mibi_payment_action_bar_bg" android:focusable="false" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_payment_action_bar_height" android:singleLine="true" style="@style/V6.TextAppearance.WindowTitle" />
-    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/mibi_recharge_grid_min_height">
-        <GridView android:gravity="center" android:id="@id/gridview" android:paddingTop="@dimen/mibi_recharge_grid_padding_top" android:paddingBottom="@dimen/mibi_recharge_grid_padding_bottom" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="@null" android:verticalSpacing="@dimen/mibi_recharge_grid_vertical_spacing" android:numColumns="3" android:divider="@null" android:fastScrollEnabled="false" />
-        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/empty" android:padding="@dimen/mibi_recharge_grid_empty_padding" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
-            <ProgressBar android:gravity="center" android:id="@id/progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminateOnly="true" />
-            <TextView android:textSize="@dimen/mibi_text_size_payment_general" android:id="@id/progress_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_recharge_grid_progress_margin_top" android:text="@string/mibi_progress_downloading" />
-            <ImageView android:id="@id/error_icon" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/mibi_content_empty_icon_light" />
-            <TextView android:textSize="@dimen/mibi_text_size_payment_general" android:textColor="@color/mibi_text_color_gray" android:id="@id/error" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-            <Button android:id="@id/button_retry" android:visibility="gone" android:layout_width="@dimen/mibi_min_limited_button_width" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_min_limited_button_margin_top" android:text="@string/mibi_btn_net_connection_retry" style="@style/Mibi.Widget.Button" />
+<LinearLayout android:orientation="vertical"
+    android:background="@drawable/mibi_dialog_bg_light"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:id="@id/title"
+        android:background="@drawable/mibi_payment_action_bar_bg"
+        android:focusable="false"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/mibi_payment_action_bar_height"
+        android:singleLine="true"
+        style="@style/V6.TextAppearance.WindowTitle" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:minHeight="@dimen/mibi_recharge_grid_min_height">
+
+        <GridView
+            android:gravity="center"
+            android:id="@id/gridview"
+            android:paddingTop="@dimen/mibi_recharge_grid_padding_top"
+            android:paddingBottom="@dimen/mibi_recharge_grid_padding_bottom"
+            android:clipToPadding="false"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:listSelector="@android:color/transparent"
+            android:cacheColorHint="@null"
+            android:verticalSpacing="@dimen/mibi_recharge_grid_vertical_spacing"
+            android:numColumns="3"
+            android:divider="@null"
+            android:fastScrollEnabled="false" />
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:id="@id/empty"
+            android:padding="@dimen/mibi_recharge_grid_empty_padding"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ProgressBar
+                android:gravity="center"
+                android:id="@id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateOnly="true" />
+
+            <TextView
+                android:textSize="@dimen/mibi_text_size_payment_general"
+                android:id="@id/progress_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mibi_recharge_grid_progress_margin_top"
+                android:text="@string/mibi_progress_downloading" />
+
+            <ImageView
+                android:id="@id/error_icon"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mibi_content_empty_icon_light" />
+
+            <TextView
+                android:textSize="@dimen/mibi_text_size_payment_general"
+                android:textColor="@color/mibi_text_color_gray"
+                android:id="@id/error"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@id/button_retry"
+                android:visibility="gone"
+                android:layout_width="@dimen/mibi_min_limited_button_width"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mibi_min_limited_button_margin_top"
+                android:text="@string/mibi_btn_net_connection_retry"
+                style="@style/Mibi.Widget.Button" />
         </LinearLayout>
     </FrameLayout>
 </LinearLayout>

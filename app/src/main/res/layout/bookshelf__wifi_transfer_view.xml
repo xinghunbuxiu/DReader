@@ -1,14 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:id="@id/bookshelf__wifi_transfer_view__top" android:background="@drawable/general__shared__header_view_1_background" android:layout_width="fill_parent" android:layout_height="290.0dip">
-        <com.duokan.reader.ui.general.PageHeaderView android:id="@id/bookshelf__wifi_transfer_view__top_title_view" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" />
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__ffffff" android:gravity="center" android:id="@id/bookshelf__wifi_transfer_view__top_second_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="45.0dip" android:layout_alignParentBottom="true" />
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__ffffff" android:gravity="center" android:id="@id/bookshelf__wifi_transfer_view__top_first_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_above="@id/bookshelf__wifi_transfer_view__top_second_line" />
-        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/general__shared__wifi_icon" android:layout_above="@id/bookshelf__wifi_transfer_view__top_first_line" android:layout_centerHorizontal="true" />
+<LinearLayout android:orientation="vertical"
+    android:background="@color/general__shared__ffffff"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@id/bookshelf__wifi_transfer_view__top"
+        android:background="@drawable/general__shared__header_view_1_background"
+        android:layout_width="fill_parent"
+        android:layout_height="290.0dip">
+
+        <com.duokan.reader.ui.general.PageHeaderView
+            android:id="@id/bookshelf__wifi_transfer_view__top_title_view"
+            android:background="@android:color/transparent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" />
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:textSize="@dimen/general_font__shared__c"
+            android:textColor="@color/general__shared__ffffff"
+            android:gravity="center"
+            android:id="@id/bookshelf__wifi_transfer_view__top_second_line"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:layout_marginBottom="45.0dip"
+            android:layout_alignParentBottom="true" />
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:textSize="@dimen/general_font__shared__b"
+            android:textColor="@color/general__shared__ffffff"
+            android:gravity="center"
+            android:id="@id/bookshelf__wifi_transfer_view__top_first_line"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:layout_above="@id/bookshelf__wifi_transfer_view__top_second_line" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/general__shared__wifi_icon"
+            android:layout_above="@id/bookshelf__wifi_transfer_view__top_first_line"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
-    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@android:color/black" android:gravity="center" android:id="@id/bookshelf__wifi_transfer_view__bottom_first_line" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-        <com.duokan.reader.ui.general.DkLabelView android:gravity="center" android:id="@id/bookshelf__wifi_transfer_view__bottom_second_line" android:paddingLeft="40.0dip" android:paddingRight="40.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:minWidth="240.0dip" style="@style/general__shared__button_43dip_ffffff" />
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:textSize="@dimen/general_font__shared__c"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:id="@id/bookshelf__wifi_transfer_view__bottom_first_line"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:gravity="center"
+            android:id="@id/bookshelf__wifi_transfer_view__bottom_second_line"
+            android:paddingLeft="40.0dip"
+            android:paddingRight="40.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20.0dip"
+            android:minWidth="240.0dip"
+            style="@style/general__shared__button_43dip_ffffff" />
     </LinearLayout>
 </LinearLayout>

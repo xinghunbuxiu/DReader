@@ -1,20 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/mibi_recharge_layout_padding_left" android:paddingTop="@dimen/mibi_recharge_layout_padding_top" android:paddingRight="@dimen/mibi_recharge_layout_padding_right" android:paddingBottom="@dimen/mibi_recharge_layout_padding_bottom" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TableLayout android:background="@drawable/mibi_msg_info_bg" android:padding="@dimen/mibi_recharge_table_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:shrinkColumns="1">
+<LinearLayout android:orientation="vertical"
+    android:paddingLeft="@dimen/mibi_recharge_layout_padding_left"
+    android:paddingTop="@dimen/mibi_recharge_layout_padding_top"
+    android:paddingRight="@dimen/mibi_recharge_layout_padding_right"
+    android:paddingBottom="@dimen/mibi_recharge_layout_padding_bottom"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableLayout android:background="@drawable/mibi_msg_info_bg"
+        android:padding="@dimen/mibi_recharge_table_padding" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:shrinkColumns="1">
         <TableRow>
-            <TextView android:text="@string/mibi_msg_telecom_order_goods_label" style="@style/Mibi.TextAppearance.OrderInfo" />
-            <TextView android:id="@id/goods_info" android:layout_marginLeft="@dimen/mibi_recharge_table_row_margin_left" style="@style/Mibi.TextAppearance.OrderInfo" />
+            <TextView android:text="@string/mibi_msg_telecom_order_goods_label"
+                style="@style/Mibi.TextAppearance.OrderInfo" />
+            <TextView android:id="@id/goods_info"
+                android:layout_marginLeft="@dimen/mibi_recharge_table_row_margin_left"
+                style="@style/Mibi.TextAppearance.OrderInfo" />
         </TableRow>
         <TableRow android:layout_marginTop="5.0dip">
-            <TextView android:text="@string/mibi_msg_telecom_order_denom_label" style="@style/Mibi.TextAppearance.OrderInfo" />
-            <TextView android:id="@id/denom" android:layout_marginLeft="@dimen/mibi_recharge_table_row_margin_left" style="@style/Mibi.TextAppearance.OrderInfo" />
+            <TextView android:text="@string/mibi_msg_telecom_order_denom_label"
+                style="@style/Mibi.TextAppearance.OrderInfo" />
+            <TextView android:id="@id/denom"
+                android:layout_marginLeft="@dimen/mibi_recharge_table_row_margin_left"
+                style="@style/Mibi.TextAppearance.OrderInfo" />
         </TableRow>
     </TableLayout>
-    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/hint1" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
-        <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/mibi_recharge_msg_pay_wait_message_margin_bottom" android:src="@drawable/mibi_wait_message_gray" />
-        <TextView android:textSize="@dimen/mibi_text_size_small" android:textColor="@color/mibi_text_color_gray" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mibi_msg_order_hint_1_1" />
-        <TextView android:textSize="@dimen/mibi_text_size_small" android:textColor="@color/mibi_text_color_gray" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mibi_msg_order_hint_1_2" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/hint1"
+        android:layout_width="fill_parent" android:layout_height="0.0dip"
+        android:layout_weight="1.0">
+        <ImageView android:layout_gravity="center" android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/mibi_recharge_msg_pay_wait_message_margin_bottom"
+            android:src="@drawable/mibi_wait_message_gray" />
+        <TextView android:textSize="@dimen/mibi_text_size_small"
+            android:textColor="@color/mibi_text_color_gray" android:gravity="center_horizontal"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:text="@string/mibi_msg_order_hint_1_1" />
+        <TextView android:textSize="@dimen/mibi_text_size_small"
+            android:textColor="@color/mibi_text_color_gray" android:gravity="center_horizontal"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:text="@string/mibi_msg_order_hint_1_2" />
     </LinearLayout>
-    <com.mipay.common.component.ProgressButton android:id="@id/button_confirm" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_recharge_layout_group_gap" android:text="@string/mibi_btn_recharge_confirm" style="@style/Mibi.Widget.Button.Warning" />
+    <com.mipay.common.component.ProgressButton android:id="@id/button_confirm"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mibi_recharge_layout_group_gap"
+        android:text="@string/mibi_btn_recharge_confirm"
+        style="@style/Mibi.Widget.Button.Warning" />
 </LinearLayout>

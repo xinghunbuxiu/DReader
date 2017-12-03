@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:background="@color/general__shared__bcbcbc" android:layout_width="fill_parent" android:layout_height="1.0px" />
-    <CheckBox android:id="@id/bookshelf__file_upload_dir_view__select" android:paddingRight="15.0dip" android:focusable="false" android:layout_width="wrap_content" android:layout_height="fill_parent" android:checked="false" android:button="@drawable/general__shared__multi_checkbox" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:ellipsize="end" android:id="@id/bookshelf__file_upload_dir_view__path" android:paddingLeft="15.0dip" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_toLeftOf="@id/bookshelf__file_upload_dir_view__select" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
-    <ImageView android:background="@color/general__shared__bcbcbc" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" />
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:background="@color/general__shared__bcbcbc"
+        android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <CheckBox android:id="@id/bookshelf__file_upload_dir_view__select"
+        android:paddingRight="15.0dip" android:focusable="false" android:layout_width="wrap_content"
+        android:layout_height="fill_parent" android:checked="false"
+        android:button="@drawable/general__shared__multi_checkbox"
+        android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c"
+        android:textColor="@color/general__shared__333333" android:ellipsize="end"
+        android:id="@id/bookshelf__file_upload_dir_view__path" android:paddingLeft="15.0dip"
+        android:paddingTop="20.0dip" android:paddingBottom="20.0dip"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_toLeftOf="@id/bookshelf__file_upload_dir_view__select"
+        android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <ImageView android:background="@color/general__shared__bcbcbc"
+        android:layout_width="fill_parent" android:layout_height="1.0px"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>

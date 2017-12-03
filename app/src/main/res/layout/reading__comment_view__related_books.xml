@@ -1,12 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <View android:background="@color/general__shared__f2f2f2" android:layout_width="fill_parent" android:layout_height="10.0dip" />
-    <TextView android:textSize="16.0sp" android:textColor="@color/general__shared__343434" android:id="@id/reading__comment_view__related_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="15.0dip" android:layout_marginBottom="12.0dip" />
-    <ImageView android:layout_gravity="center" android:id="@id/reading__comment_view__related_banner" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginBottom="12.0dip" android:scaleType="fitCenter" />
-    <LinearLayout android:orientation="horizontal" android:id="@id/reading__comment_view__related_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="12.0dip" />
-    <FrameLayout android:id="@id/reading__comment_view__view_topic" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <View android:background="#ffe5e5e5" android:layout_width="fill_parent" android:layout_height="1.0px" />
-        <TextView android:textSize="16.0sp" android:textColor="#ff6fa8d9" android:gravity="center" android:layout_gravity="center_horizontal" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/reading__comment_view__view_topic" />
+<LinearLayout android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <View
+        android:background="@color/general__shared__f2f2f2"
+        android:layout_width="fill_parent"
+        android:layout_height="10.0dip" />
+
+    <TextView
+        android:textSize="16.0sp"
+        android:textColor="@color/general__shared__343434"
+        android:id="@id/reading__comment_view__related_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginTop="20.0dip"
+        android:layout_marginRight="15.0dip"
+        android:layout_marginBottom="12.0dip" />
+
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@id/reading__comment_view__related_banner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8.0dip"
+        android:layout_marginBottom="12.0dip"
+        android:scaleType="fitCenter" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@id/reading__comment_view__related_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12.0dip" />
+
+    <FrameLayout
+        android:id="@id/reading__comment_view__view_topic"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:background="#ffe5e5e5"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px" />
+
+        <TextView
+            android:textSize="16.0sp"
+            android:textColor="#ff6fa8d9"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="20.0dip"
+            android:paddingBottom="20.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reading__comment_view__view_topic" />
     </FrameLayout>
 </LinearLayout>

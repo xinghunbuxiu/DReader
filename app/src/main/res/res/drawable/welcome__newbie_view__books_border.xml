@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_selected="true" android:drawable="@drawable/welcome__newbie_view__books_border_selected" />
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true"
+        android:drawable="@drawable/welcome__newbie_view__books_border_selected" />
     <item android:drawable="@drawable/welcome__newbie_view__books_border_normal" />
 </selector>

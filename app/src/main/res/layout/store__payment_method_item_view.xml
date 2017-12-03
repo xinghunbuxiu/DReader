@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.duokan.reader.ui.store.PaymentMethodItemView android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="60.0dip">
-        <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__333333" android:id="@id/store__payment_method_item_view__method_display_name" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__888888" android:id="@id/store__payment_method_item_view__balance_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="@string/store__payment_choose_view__total_price" />
+<com.duokan.reader.ui.store.PaymentMethodItemView android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="60.0dip">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0">
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__b"
+                android:textColor="@color/general__shared__333333"
+                android:id="@id/store__payment_method_item_view__method_display_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textColor="@color/general__shared__888888"
+                android:id="@id/store__payment_method_item_view__balance_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3.0dip"
+                android:text="@string/store__payment_choose_view__total_price" />
         </LinearLayout>
-        <RadioGroup android:id="@id/store__payment_method_item_view__select_container" android:layout_width="wrap_content" android:layout_height="wrap_content">
-            <RadioButton android:id="@id/store__payment_method_item_view__select" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/general__shared__check_box5" />
+
+        <RadioGroup
+            android:id="@id/store__payment_method_item_view__select_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@id/store__payment_method_item_view__select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/general__shared__check_box5" />
         </RadioGroup>
     </LinearLayout>
-    <ImageView android:background="#ffbcbcbc" android:layout_width="fill_parent" android:layout_height="1.0px" android:contentDescription="@null" />
+
+    <ImageView
+        android:background="#ffbcbcbc"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:contentDescription="@null" />
 </com.duokan.reader.ui.store.PaymentMethodItemView>

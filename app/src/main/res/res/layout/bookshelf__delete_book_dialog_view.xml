@@ -1,11 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/general__shared__delete" android:contentDescription="@null" />
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__666666" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/bookshelf__delete_book_dialog_view__tips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/bookshelf__delete_book_dialog_view__duokan_tips" />
-    <CheckBox android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__666666" android:layout_gravity="center" android:id="@id/bookshelf__delete_book_dialog_view__check_box" android:background="@null" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="5.0dip" android:button="@null" android:text="@string/bookshelf__general_shared__delete_book_on_disk" android:drawableLeft="@drawable/general__shared__single_checkbox" android:drawablePadding="10.0dip" />
-    <com.duokan.reader.ui.general.DkLabelView android:id="@id/bookshelf__delete_book_dialog_view__delete_from_all_devices" android:layout_width="fill_parent" android:layout_marginTop="15.0dip" android:text="@string/bookshelf__general_shared__delete_from_all_devices" style="@style/general__shared__button_43dip_d63737" />
-    <com.duokan.reader.ui.general.DkLabelView android:id="@id/bookshelf__delete_book_dialog_view__delete_from_this_device" android:layout_width="fill_parent" android:layout_marginTop="15.0dip" android:text="@string/bookshelf__general_shared__delete_from_this_device" style="@style/general__shared__button_43dip_ffffff" />
-    <com.duokan.reader.ui.general.DkLabelView android:id="@id/bookshelf__delete_book_dialog_view__delete" android:layout_width="fill_parent" android:layout_marginTop="15.0dip" android:text="@string/bookshelf__general_shared__delete" style="@style/general__shared__button_43dip_d63737" />
-    <com.duokan.reader.ui.general.DkLabelView android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/bookshelf__delete_book_dialog_view__cancel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/bookshelf__general_shared__cancel" style="@style/general__shared__button_43dip_ffffff" />
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:src="@drawable/general__shared__delete"
+        android:contentDescription="@null" />
+    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c"
+        android:textColor="@color/general__shared__666666" android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:id="@id/bookshelf__delete_book_dialog_view__tips"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="10.0dip"
+        android:text="@string/bookshelf__delete_book_dialog_view__duokan_tips" />
+    <CheckBox android:textSize="@dimen/general_font__shared__c"
+        android:textColor="@color/general__shared__666666" android:layout_gravity="center"
+        android:id="@id/bookshelf__delete_book_dialog_view__check_box" android:background="@null"
+        android:visibility="visible" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginTop="10.0dip"
+        android:layout_marginBottom="5.0dip" android:button="@null"
+        android:text="@string/bookshelf__general_shared__delete_book_on_disk"
+        android:drawableLeft="@drawable/general__shared__single_checkbox"
+        android:drawablePadding="10.0dip" />
+    <com.duokan.reader.ui.general.DkLabelView
+        android:id="@id/bookshelf__delete_book_dialog_view__delete_from_all_devices"
+        android:layout_width="fill_parent" android:layout_marginTop="15.0dip"
+        android:text="@string/bookshelf__general_shared__delete_from_all_devices"
+        style="@style/general__shared__button_43dip_d63737" />
+    <com.duokan.reader.ui.general.DkLabelView
+        android:id="@id/bookshelf__delete_book_dialog_view__delete_from_this_device"
+        android:layout_width="fill_parent" android:layout_marginTop="15.0dip"
+        android:text="@string/bookshelf__general_shared__delete_from_this_device"
+        style="@style/general__shared__button_43dip_ffffff" />
+    <com.duokan.reader.ui.general.DkLabelView
+        android:id="@id/bookshelf__delete_book_dialog_view__delete"
+        android:layout_width="fill_parent" android:layout_marginTop="15.0dip"
+        android:text="@string/bookshelf__general_shared__delete"
+        style="@style/general__shared__button_43dip_d63737" />
+    <com.duokan.reader.ui.general.DkLabelView android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:id="@id/bookshelf__delete_book_dialog_view__cancel"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="15.0dip" android:text="@string/bookshelf__general_shared__cancel"
+        style="@style/general__shared__button_43dip_ffffff" />
 </LinearLayout>

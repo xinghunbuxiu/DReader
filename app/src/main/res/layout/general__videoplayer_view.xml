@@ -1,18 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/general__videoplayer_view__root" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <SurfaceView android:id="@id/general__videoplayer_view__videoview" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-    <LinearLayout android:id="@id/general__videoplayer_view__load" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <ProgressBar android:id="@id/general__videoplayer_view__loading" android:layout_width="22.0dip" android:layout_height="22.0dip" style="@style/refresh_progressbar" />
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__ffffff" android:id="@id/general__videoplayer_view__loadingmsg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:singleLine="true" />
+<RelativeLayout android:id="@id/general__videoplayer_view__root"
+    android:background="@android:color/transparent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <SurfaceView
+        android:id="@id/general__videoplayer_view__videoview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@id/general__videoplayer_view__load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@id/general__videoplayer_view__loading"
+            android:layout_width="22.0dip"
+            android:layout_height="22.0dip"
+            style="@style/refresh_progressbar" />
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:textSize="@dimen/general_font__shared__b"
+            android:textColor="@color/general__shared__ffffff"
+            android:id="@id/general__videoplayer_view__loadingmsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2.0dip"
+            android:singleLine="true" />
     </LinearLayout>
-    <LinearLayout android:orientation="horizontal" android:id="@id/general__videoplayer_view__videocontroller" android:background="@color/general__shared__000000b2" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <ImageButton android:layout_gravity="center_vertical" android:id="@id/general__videoplayer_view__statusicon" android:background="@android:color/transparent" android:padding="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/general__videoplayer_view__playerschedule" android:padding="12.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@android:color/white" android:id="@id/general__videoplayer_view__playtime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00:00" android:singleLine="true" />
-            <SeekBar android:id="@id/general__videoplayer_view__playerseekbar" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:progressDrawable="@drawable/general__shared__seek_bar" android:thumb="@drawable/general__shared__seek_bar_thumb" android:thumbOffset="10.0dip" android:layout_weight="1.0" />
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@android:color/white" android:id="@id/general__videoplayer_view__lefttime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-00:00" android:singleLine="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@id/general__videoplayer_view__videocontroller"
+        android:background="@color/general__shared__000000b2"
+        android:visibility="invisible"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_gravity="center_vertical"
+            android:id="@id/general__videoplayer_view__statusicon"
+            android:background="@android:color/transparent"
+            android:padding="12.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:id="@id/general__videoplayer_view__playerschedule"
+            android:padding="12.0dip"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0">
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__b"
+                android:textColor="@android:color/white"
+                android:id="@id/general__videoplayer_view__playtime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:singleLine="true" />
+
+            <SeekBar
+                android:id="@id/general__videoplayer_view__playerseekbar"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:progressDrawable="@drawable/general__shared__seek_bar"
+                android:thumb="@drawable/general__shared__seek_bar_thumb"
+                android:thumbOffset="10.0dip"
+                android:layout_weight="1.0" />
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__b"
+                android:textColor="@android:color/white"
+                android:id="@id/general__videoplayer_view__lefttime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-00:00"
+                android:singleLine="true" />
         </LinearLayout>
-        <ImageButton android:layout_gravity="center_vertical" android:id="@id/general__videoplayer_view__sizechange" android:background="@android:color/transparent" android:padding="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:layout_gravity="center_vertical"
+            android:id="@id/general__videoplayer_view__sizechange"
+            android:background="@android:color/transparent"
+            android:padding="12.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 </RelativeLayout>

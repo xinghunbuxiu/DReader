@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-Name: common
+Bundle-SymbolicName: com.mipay.common
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: com.mipay.core

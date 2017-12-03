@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.xiaomi.payment.ui.component.HomeGridCommonOneOneView android:background="@drawable/mibi_home_grid_item_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="90.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:layout_gravity="right" android:background="@color/mibi_color_home_grid_line" android:layout_width="@dimen/mibi_divider" android:layout_height="fill_parent" />
-    <ImageView android:layout_gravity="bottom" android:background="@color/mibi_color_home_grid_line" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_divider" />
-    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <ImageView android:id="@id/image" android:layout_width="@dimen/mibi_home_grid_icon_width" android:layout_height="@dimen/mibi_home_grid_icon_height" android:scaleType="centerCrop" />
-        <TextView android:textSize="@dimen/mibi_text_size_grid_item_one_one_title" android:textColor="@color/mibi_text_color_home_grid_item_title" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+<com.xiaomi.payment.ui.component.HomeGridCommonOneOneView
+    android:background="@drawable/mibi_home_grid_item_bg" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:minHeight="90.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="right" android:background="@color/mibi_color_home_grid_line"
+        android:layout_width="@dimen/mibi_divider" android:layout_height="fill_parent" />
+    <ImageView android:layout_gravity="bottom" android:background="@color/mibi_color_home_grid_line"
+        android:layout_width="fill_parent" android:layout_height="@dimen/mibi_divider" />
+    <LinearLayout android:gravity="center" android:layout_gravity="center"
+        android:orientation="vertical" android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <ImageView android:id="@id/image" android:layout_width="@dimen/mibi_home_grid_icon_width"
+            android:layout_height="@dimen/mibi_home_grid_icon_height"
+            android:scaleType="centerCrop" />
+        <TextView android:textSize="@dimen/mibi_text_size_grid_item_one_one_title"
+            android:textColor="@color/mibi_text_color_home_grid_item_title" android:id="@id/title"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:singleLine="true" />
     </LinearLayout>
 </com.xiaomi.payment.ui.component.HomeGridCommonOneOneView>

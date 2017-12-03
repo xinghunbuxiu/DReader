@@ -1,54 +1,305 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.core.ui.LinearScrollView android:orientation="vertical" android:id="@id/personal__personal_info_view__scroller" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <View android:id="@id/personal__personal_info_view__user_margin" android:background="#ffeeebed" android:layout_width="fill_parent" android:layout_height="50.0dip" />
-        <LinearLayout android:orientation="vertical" android:id="@id/personal__personal_info_view__share_content" android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <LinearLayout android:orientation="vertical" android:id="@id/personal__personal_info_view__user" android:background="#ffeeebed" android:paddingTop="15.0dip" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <FrameLayout android:layout_gravity="center_horizontal" android:id="@id/personal__personal_info_view__personal_info" android:background="@drawable/personal__home_view__avatar_bg" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                    <com.duokan.reader.ui.general.DkBigFaceView android:layout_gravity="center" android:id="@id/personal__personal_info_view__avatar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:contentDescription="@string/personal__account_summary_view__avatar" />
+<FrameLayout android:background="@color/general__shared__ffffff"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.duokan.core.ui.LinearScrollView
+        android:orientation="vertical"
+        android:id="@id/personal__personal_info_view__scroller"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@id/personal__personal_info_view__user_margin"
+            android:background="#ffeeebed"
+            android:layout_width="fill_parent"
+            android:layout_height="50.0dip" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@id/personal__personal_info_view__share_content"
+            android:background="@color/general__shared__ffffff"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@id/personal__personal_info_view__user"
+                android:background="#ffeeebed"
+                android:paddingTop="15.0dip"
+                android:paddingBottom="15.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_gravity="center_horizontal"
+                    android:id="@id/personal__personal_info_view__personal_info"
+                    android:background="@drawable/personal__home_view__avatar_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <com.duokan.reader.ui.general.DkBigFaceView
+                        android:layout_gravity="center"
+                        android:id="@id/personal__personal_info_view__avatar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/personal__account_summary_view__avatar" />
                 </FrameLayout>
-                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                    <TextView android:textSize="18.0sp" android:textStyle="normal" android:textColor="@color/general__shared__181817" android:gravity="center_horizontal" android:id="@id/personal__personal_info_view__mi_login_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" />
-                    <TextView android:textSize="@dimen/general_font__shared__c" android:textStyle="normal" android:textColor="#ff838182" android:gravity="center_horizontal" android:id="@id/personal__personal_info_view__reading_percentage" android:paddingTop="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/personal__personal_info_view__loading" android:singleLine="true" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="18.0sp"
+                        android:textStyle="normal"
+                        android:textColor="@color/general__shared__181817"
+                        android:gravity="center_horizontal"
+                        android:id="@id/personal__personal_info_view__mi_login_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7.0dip" />
+
+                    <TextView
+                        android:textSize="@dimen/general_font__shared__c"
+                        android:textStyle="normal"
+                        android:textColor="#ff838182"
+                        android:gravity="center_horizontal"
+                        android:id="@id/personal__personal_info_view__reading_percentage"
+                        android:paddingTop="5.0dip"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/personal__personal_info_view__loading"
+                        android:singleLine="true" />
                 </LinearLayout>
             </LinearLayout>
-            <LinearLayout android:paddingLeft="15.0dip" android:paddingTop="15.0dip" android:paddingRight="15.0dip" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <LinearLayout android:gravity="left" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
-                    <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__585858" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/personal__personal_info_view__reading_length" />
-                    <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="#ff838182" android:gravity="center" android:id="@id/personal__personal_info_view__reading_length" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:paddingLeft="15.0dip"
+                android:paddingTop="15.0dip"
+                android:paddingRight="15.0dip"
+                android:paddingBottom="15.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:gravity="left"
+                    android:orientation="vertical"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0">
+
+                    <TextView
+                        android:textSize="@dimen/general_font__shared__d"
+                        android:textColor="@color/general__shared__585858"
+                        android:gravity="center"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/personal__personal_info_view__reading_length" />
+
+                    <TextView
+                        android:textSize="@dimen/general_font__shared__d"
+                        android:textColor="#ff838182"
+                        android:gravity="center"
+                        android:id="@id/personal__personal_info_view__reading_length"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
-                <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
-                    <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__585858" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/personal__personal_info_view__finish" />
-                    <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="#ff838182" android:gravity="center" android:id="@id/personal__personal_info_view__finish_count" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0">
+
+                    <TextView
+                        android:textSize="@dimen/general_font__shared__d"
+                        android:textColor="@color/general__shared__585858"
+                        android:gravity="center"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/personal__personal_info_view__finish" />
+
+                    <TextView
+                        android:textSize="@dimen/general_font__shared__d"
+                        android:textColor="#ff838182"
+                        android:gravity="center"
+                        android:id="@id/personal__personal_info_view__finish_count"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
-                <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/personal__personal_info_view__read" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
-                    <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__585858" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/personal__personal_info_view__read" />
-                    <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="#ff838182" android:gravity="center" android:id="@id/personal__personal_info_view__read_count" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:id="@id/personal__personal_info_view__read"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0">
+
+                    <TextView
+                        android:textSize="@dimen/general_font__shared__d"
+                        android:textColor="@color/general__shared__585858"
+                        android:gravity="center"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/personal__personal_info_view__read" />
+
+                    <TextView
+                        android:textSize="@dimen/general_font__shared__d"
+                        android:textColor="#ff838182"
+                        android:gravity="center"
+                        android:id="@id/personal__personal_info_view__read_count"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
-                <LinearLayout android:gravity="right" android:orientation="vertical" android:id="@id/personal__personal_info_view__notes" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
-                    <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__585858" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/personal__personal_info_view__reading_notes" />
-                    <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="#ff838182" android:gravity="center" android:id="@id/personal__personal_info_view__notes_count" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:gravity="right"
+                    android:orientation="vertical"
+                    android:id="@id/personal__personal_info_view__notes"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0">
+
+                    <TextView
+                        android:textSize="@dimen/general_font__shared__d"
+                        android:textColor="@color/general__shared__585858"
+                        android:gravity="center"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/personal__personal_info_view__reading_notes" />
+
+                    <TextView
+                        android:textSize="@dimen/general_font__shared__d"
+                        android:textColor="#ff838182"
+                        android:gravity="center"
+                        android:id="@id/personal__personal_info_view__notes_count"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
             </LinearLayout>
-            <View android:background="@color/general__shared__eeece9" android:layout_width="fill_parent" android:layout_height="10.0dip" />
-            <LinearLayout android:orientation="vertical" android:id="@id/personal__personal_info_view__read_books" android:paddingLeft="15.0dip" android:paddingTop="15.0dip" android:paddingRight="15.0dip" android:paddingBottom="15.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
-                    <TextView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__585858" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/personal__personal_info_view__recent_read" />
-                    <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="#ff2da6de" android:gravity="right" android:layout_gravity="center|right" android:id="@id/personal__personal_info_view__more_read" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/personal__personal_info_view__more" />
+
+            <View
+                android:background="@color/general__shared__eeece9"
+                android:layout_width="fill_parent"
+                android:layout_height="10.0dip" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@id/personal__personal_info_view__read_books"
+                android:paddingLeft="15.0dip"
+                android:paddingTop="15.0dip"
+                android:paddingRight="15.0dip"
+                android:paddingBottom="15.0dip"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="@dimen/general_font__shared__b"
+                        android:textColor="@color/general__shared__585858"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/personal__personal_info_view__recent_read" />
+
+                    <TextView
+                        android:textSize="@dimen/general_font__shared__c"
+                        android:textColor="#ff2da6de"
+                        android:gravity="right"
+                        android:layout_gravity="center|right"
+                        android:id="@id/personal__personal_info_view__more_read"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/personal__personal_info_view__more" />
                 </FrameLayout>
-                <RelativeLayout android:orientation="horizontal" android:id="@id/personal__personal_info_view__read_books_info" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
-                    <include android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" layout="@layout/personal__personal_info_book_view" />
-                    <include android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" layout="@layout/personal__personal_info_book_view" />
-                    <include android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" layout="@layout/personal__personal_info_book_view" />
+
+                <RelativeLayout
+                    android:orientation="horizontal"
+                    android:id="@id/personal__personal_info_view__read_books_info"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip">
+
+                    <include
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        layout="@layout/personal__personal_info_book_view" />
+
+                    <include
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        layout="@layout/personal__personal_info_book_view" />
+
+                    <include
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        layout="@layout/personal__personal_info_book_view" />
                 </RelativeLayout>
             </LinearLayout>
-            <View android:background="@color/general__shared__eeece9" android:layout_width="fill_parent" android:layout_height="10.0dip" />
-            <com.duokan.reader.ui.personal.ReadingStatisticsChartView android:id="@id/personal__personal_info_view__chart" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="180.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="7.0dip" android:layout_marginRight="20.0dip" />
-            <View android:id="@id/personal__personal_info_view__line" android:background="@color/general__shared__cccccc" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="15.0dip" />
-            <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__585858" android:gravity="center" android:id="@id/personal__personal_info_view__using_days" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="15.0dip" android:includeFontPadding="false" />
+
+            <View
+                android:background="@color/general__shared__eeece9"
+                android:layout_width="fill_parent"
+                android:layout_height="10.0dip" />
+
+            <com.duokan.reader.ui.personal.ReadingStatisticsChartView
+                android:id="@id/personal__personal_info_view__chart"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="180.0dip"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginTop="7.0dip"
+                android:layout_marginRight="20.0dip" />
+
+            <View
+                android:id="@id/personal__personal_info_view__line"
+                android:background="@color/general__shared__cccccc"
+                android:visibility="invisible"
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:layout_marginTop="15.0dip" />
+
+            <TextView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textColor="@color/general__shared__585858"
+                android:gravity="center"
+                android:id="@id/personal__personal_info_view__using_days"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:layout_marginBottom="15.0dip"
+                android:includeFontPadding="false" />
         </LinearLayout>
-        <TextView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__ff8400_pressed" android:gravity="center" android:layout_gravity="center" android:id="@id/personal__personal_info_view__share" android:background="@drawable/personal__account_summary_view__add_fund" android:visibility="gone" android:layout_width="160.0dip" android:layout_height="33.0dip" android:layout_marginBottom="15.0dip" android:text="@string/personal__experience_view__share" android:includeFontPadding="false" />
+
+        <TextView
+            android:textSize="@dimen/general_font__shared__b"
+            android:textColor="@color/general__shared__ff8400_pressed"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:id="@id/personal__personal_info_view__share"
+            android:background="@drawable/personal__account_summary_view__add_fund"
+            android:visibility="gone"
+            android:layout_width="160.0dip"
+            android:layout_height="33.0dip"
+            android:layout_marginBottom="15.0dip"
+            android:text="@string/personal__experience_view__share"
+            android:includeFontPadding="false" />
     </com.duokan.core.ui.LinearScrollView>
-    <com.duokan.reader.ui.general.PageHeaderView android:id="@id/personal__personal_info_view__header" android:layout_width="fill_parent" android:layout_height="65.0dip" />
+
+    <com.duokan.reader.ui.general.PageHeaderView
+        android:id="@id/personal__personal_info_view__header"
+        android:layout_width="fill_parent"
+        android:layout_height="65.0dip" />
 </FrameLayout>

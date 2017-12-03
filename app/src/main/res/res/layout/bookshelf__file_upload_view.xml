@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="@color/general__shared__f7f7f7" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.PageHeaderView android:id="@id/bookshelf__file_upload_view__title_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
-        <com.duokan.reader.ui.general.DkLabelView android:gravity="center" android:layout_gravity="center|right" android:id="@id/bookshelf__file_upload_view__title_view__selected" android:layout_width="80.0dip" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="@string/bookshelf__upload_books_view__select_all" android:singleLine="true" style="@style/general__shared__button_light_29dip_c9c9c9" />
+<RelativeLayout android:background="@color/general__shared__f7f7f7"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.reader.ui.general.PageHeaderView
+        android:id="@id/bookshelf__file_upload_view__title_view" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:layout_alignParentTop="true">
+        <com.duokan.reader.ui.general.DkLabelView android:gravity="center"
+            android:layout_gravity="center|right"
+            android:id="@id/bookshelf__file_upload_view__title_view__selected"
+            android:layout_width="80.0dip" android:layout_height="wrap_content"
+            android:layout_marginRight="10.0dip"
+            android:text="@string/bookshelf__upload_books_view__select_all"
+            android:singleLine="true" style="@style/general__shared__button_light_29dip_c9c9c9" />
     </com.duokan.reader.ui.general.PageHeaderView>
-    <LinearLayout android:gravity="center" android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/bookshelf__file_upload_view__bottom_view" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
-        <ImageView android:background="@color/general__shared__bcbcbc" android:layout_width="fill_parent" android:layout_height="1.0px" />
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__ffffff" android:gravity="center" android:id="@id/bookshelf__file_upload_view__upload" android:background="@drawable/general__shared__button_43dip_ff6518" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="15.0dip" />
+    <LinearLayout android:gravity="center" android:layout_gravity="bottom"
+        android:orientation="vertical" android:id="@id/bookshelf__file_upload_view__bottom_view"
+        android:visibility="visible" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <ImageView android:background="@color/general__shared__bcbcbc"
+            android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c"
+            android:textColor="@color/general__shared__ffffff" android:gravity="center"
+            android:id="@id/bookshelf__file_upload_view__upload"
+            android:background="@drawable/general__shared__button_43dip_ff6518"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:layout_margin="15.0dip" />
     </LinearLayout>
-    <com.duokan.reader.ui.general.DkListView android:id="@id/bookshelf__file_upload_view__list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/bookshelf__file_upload_view__bottom_view" android:layout_below="@id/bookshelf__file_upload_view__title_view" />
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="#ffb43b3b" android:gravity="center" android:id="@id/bookshelf__file_upload_view__storage_quota_warning" android:background="@drawable/bookshelf__file_upload_view__storage_quota_warning" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_above="@id/bookshelf__file_upload_view__bottom_view" />
+    <com.duokan.reader.ui.general.DkListView android:id="@id/bookshelf__file_upload_view__list"
+        android:layout_width="fill_parent" android:layout_height="fill_parent"
+        android:layout_above="@id/bookshelf__file_upload_view__bottom_view"
+        android:layout_below="@id/bookshelf__file_upload_view__title_view" />
+    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b"
+        android:textColor="#ffb43b3b" android:gravity="center"
+        android:id="@id/bookshelf__file_upload_view__storage_quota_warning"
+        android:background="@drawable/bookshelf__file_upload_view__storage_quota_warning"
+        android:visibility="invisible" android:layout_width="fill_parent"
+        android:layout_height="45.0dip"
+        android:layout_above="@id/bookshelf__file_upload_view__bottom_view" />
 </RelativeLayout>

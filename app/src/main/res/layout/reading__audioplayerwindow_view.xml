@@ -1,14 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:background="@drawable/reading__shared__black_background" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/reading__audioplayerwindow_view__playercontroller" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true">
-            <ImageButton android:gravity="center" android:layout_gravity="center" android:id="@id/reading__audioplayerwindow_view__status_icon" android:background="@drawable/general__shared__voice_controller_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/general__shared__voice_pause_btn" android:scaleType="centerInside" />
+<FrameLayout android:background="@drawable/reading__shared__black_background"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:id="@id/reading__audioplayerwindow_view__playercontroller"
+            android:paddingRight="10.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <ImageButton
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:id="@id/reading__audioplayerwindow_view__status_icon"
+                android:background="@drawable/general__shared__voice_controller_bg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/general__shared__voice_pause_btn"
+                android:scaleType="centerInside" />
         </LinearLayout>
-        <LinearLayout android:orientation="vertical" android:paddingLeft="15.0dip" android:paddingTop="15.0dip" android:paddingBottom="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/reading__audioplayerwindow_view__playercontroller" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__ffffff" android:ellipsize="end" android:id="@id/reading__audioplayerwindow_view__title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="title" android:singleLine="true" />
-            <SeekBar android:id="@id/reading__audioplayerwindow_view__playerschedule" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:progressDrawable="@drawable/general__shared__seek_bar" android:thumb="@drawable/general__shared__seek_bar_thumb" android:thumbOffset="10.0dip" />
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__ffffff" android:ellipsize="end" android:id="@id/reading__audioplayerwindow_view__time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="playtime" android:singleLine="true" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingLeft="15.0dip"
+            android:paddingTop="15.0dip"
+            android:paddingBottom="15.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/reading__audioplayerwindow_view__playercontroller"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true">
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__b"
+                android:textColor="@color/general__shared__ffffff"
+                android:ellipsize="end"
+                android:id="@id/reading__audioplayerwindow_view__title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="title"
+                android:singleLine="true" />
+
+            <SeekBar
+                android:id="@id/reading__audioplayerwindow_view__playerschedule"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:progressDrawable="@drawable/general__shared__seek_bar"
+                android:thumb="@drawable/general__shared__seek_bar_thumb"
+                android:thumbOffset="10.0dip" />
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__b"
+                android:textColor="@color/general__shared__ffffff"
+                android:ellipsize="end"
+                android:id="@id/reading__audioplayerwindow_view__time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:text="playtime"
+                android:singleLine="true" />
         </LinearLayout>
     </RelativeLayout>
 </FrameLayout>

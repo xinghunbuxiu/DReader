@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <View android:id="@id/reading__export_comments_view__split" android:layout_width="fill_parent" android:layout_height="1.0px" />
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/reading__export_comments_view__text" android:background="@drawable/reading__export_comments_view__bg" android:layout_width="280.0dip" android:layout_height="wrap_content" android:layout_marginLeft="35.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="35.0dip" android:layout_marginBottom="15.0dip" android:text="@string/reading__export_comments_view__export" android:layout_weight="0.0" />
+<LinearLayout android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <View
+        android:id="@id/reading__export_comments_view__split"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px" />
+
+    <com.duokan.reader.ui.general.DkLabelView
+        android:textSize="@dimen/general_font__shared__b"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:id="@id/reading__export_comments_view__text"
+        android:background="@drawable/reading__export_comments_view__bg"
+        android:layout_width="280.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35.0dip"
+        android:layout_marginTop="15.0dip"
+        android:layout_marginRight="35.0dip"
+        android:layout_marginBottom="15.0dip"
+        android:text="@string/reading__export_comments_view__export"
+        android:layout_weight="0.0" />
 </LinearLayout>

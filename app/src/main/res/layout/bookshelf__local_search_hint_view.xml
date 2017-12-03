@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@color/general__shared__ffffff" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__cacaca" android:gravity="center_vertical" android:paddingLeft="20.0dip" android:paddingTop="15.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/bookshelf__search_hint_hat_view__my_bookshelf" android:singleLine="true" />
-    <com.duokan.reader.ui.bookshelf.GridBooksView android:id="@id/store__store_search_root_view__presenter_result" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <ImageView android:layout_gravity="center" android:id="@id/store__store_search_root_view__presenter_load_more" android:paddingLeft="20.0dip" android:paddingTop="10.0dip" android:paddingRight="20.0dip" android:paddingBottom="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bookshelf__book_sort_view__arrow" />
-    <View android:background="@color/general__shared__bcbcbc" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" />
+<LinearLayout android:orientation="vertical"
+    android:background="@color/general__shared__ffffff"
+    android:visibility="gone"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.duokan.reader.ui.general.DkLabelView
+        android:textSize="@dimen/general_font__shared__d"
+        android:textColor="@color/general__shared__cacaca"
+        android:gravity="center_vertical"
+        android:paddingLeft="20.0dip"
+        android:paddingTop="15.0dip"
+        android:paddingBottom="10.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bookshelf__search_hint_hat_view__my_bookshelf"
+        android:singleLine="true" />
+
+    <com.duokan.reader.ui.bookshelf.GridBooksView
+        android:id="@id/store__store_search_root_view__presenter_result"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@id/store__store_search_root_view__presenter_load_more"
+        android:paddingLeft="20.0dip"
+        android:paddingTop="10.0dip"
+        android:paddingRight="20.0dip"
+        android:paddingBottom="20.0dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bookshelf__book_sort_view__arrow" />
+
+    <View
+        android:background="@color/general__shared__bcbcbc"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:layout_marginLeft="20.0dip"
+        android:layout_marginRight="20.0dip" />
 </LinearLayout>

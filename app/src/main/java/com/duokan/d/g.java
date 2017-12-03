@@ -6,9 +6,9 @@ import com.duokan.reader.common.webservices.WebSession;
 import java.io.File;
 
 class g extends WebSession {
-    final /* synthetic */ f a;
+    final /* synthetic */ MyWebSession a;
 
-    g(f fVar) {
+    g(MyWebSession fVar) {
         this.a = fVar;
     }
 

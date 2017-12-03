@@ -1,17 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout android:orientation="vertical"
+    android:background="#ffffffff"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
     <include layout="@layout/hfb_title" />
-    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
-        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <LinearLayout android:orientation="vertical" android:background="@drawable/hfb_info_bg" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <TextView android:textSize="18.0sp" android:textColor="#ff333333" android:id="@id/tv_result" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/hfb_instruct" android:drawableLeft="@drawable/hfb_step1" />
-                <TextView android:textSize="18.0sp" android:textColor="@color/hfb_black" android:id="@id/tv_step2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/hfb_step_2" android:drawableLeft="@drawable/hfb_step2" />
-                <TextView android:textSize="18.0sp" android:textColor="@color/hfb_black" android:id="@id/tv_step3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:text="@string/hfb_step_3" android:drawableLeft="@drawable/hfb_step3" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:background="@drawable/hfb_info_bg"
+                android:paddingLeft="15.0dip"
+                android:paddingRight="15.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="18.0sp"
+                    android:textColor="#ff333333"
+                    android:id="@id/tv_result"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20.0dip"
+                    android:text="@string/hfb_instruct"
+                    android:drawableLeft="@drawable/hfb_step1" />
+
+                <TextView
+                    android:textSize="18.0sp"
+                    android:textColor="@color/hfb_black"
+                    android:id="@id/tv_step2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hfb_step_2"
+                    android:drawableLeft="@drawable/hfb_step2" />
+
+                <TextView
+                    android:textSize="18.0sp"
+                    android:textColor="@color/hfb_black"
+                    android:id="@id/tv_step3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20.0dip"
+                    android:text="@string/hfb_step_3"
+                    android:drawableLeft="@drawable/hfb_step3" />
             </LinearLayout>
-            <Button android:textSize="20.0sp" android:textColor="#ffffffff" android:layout_gravity="center_horizontal" android:id="@id/btn_query" android:background="@drawable/hfb_red_btn" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="40.0dip" android:layout_marginBottom="20.0dip" android:text="@string/hfb_complete" />
-            <com.umpay.huafubao.view.CountDownButton android:textSize="20.0sp" android:textColor="#ffffffff" android:layout_gravity="center_horizontal" android:id="@id/btn_sms" android:background="@drawable/hfb_blue_btn" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginRight="40.0dip" android:text="@string/hfb_retry_receive" />
-            <TextView android:textColor="@color/hfb_gray" android:id="@id/tv_tip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="20.0dip" android:text="@string/hfb_fail_hint" />
+
+            <Button
+                android:textSize="20.0sp"
+                android:textColor="#ffffffff"
+                android:layout_gravity="center_horizontal"
+                android:id="@id/btn_query"
+                android:background="@drawable/hfb_red_btn"
+                android:paddingTop="10.0dip"
+                android:paddingBottom="10.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40.0dip"
+                android:layout_marginTop="20.0dip"
+                android:layout_marginRight="40.0dip"
+                android:layout_marginBottom="20.0dip"
+                android:text="@string/hfb_complete" />
+
+            <com.umpay.huafubao.view.CountDownButton
+                android:textSize="20.0sp"
+                android:textColor="#ffffffff"
+                android:layout_gravity="center_horizontal"
+                android:id="@id/btn_sms"
+                android:background="@drawable/hfb_blue_btn"
+                android:paddingTop="10.0dip"
+                android:paddingBottom="10.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40.0dip"
+                android:layout_marginRight="40.0dip"
+                android:text="@string/hfb_retry_receive" />
+
+            <TextView
+                android:textColor="@color/hfb_gray"
+                android:id="@id/tv_tip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5.0dip"
+                android:layout_marginTop="15.0dip"
+                android:layout_marginRight="5.0dip"
+                android:layout_marginBottom="20.0dip"
+                android:text="@string/hfb_fail_hint" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

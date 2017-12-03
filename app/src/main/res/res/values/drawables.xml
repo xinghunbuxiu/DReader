@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item type="drawable" name="bookshelf__wifi_book_transfer_view__progress_background">#0d000000</item>
-    <item type="drawable" name="bookshelf__wifi_book_transfer_view__progress_primary">#33000000</item>
+    <item type="drawable" name="bookshelf__wifi_book_transfer_view__progress_background">#0d000000
+    </item>
+    <item type="drawable" name="bookshelf__wifi_book_transfer_view__progress_primary">#33000000
+    </item>
     <item type="drawable" name="general__shared__list_item_normal">#ffeeeeee</item>
     <item type="drawable" name="general__shared__list_item_pressed">#ffe2e2e2</item>
 </resources>

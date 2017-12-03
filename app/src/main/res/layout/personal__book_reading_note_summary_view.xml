@@ -1,11 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.BookCoverView android:id="@id/personal__reading_note_item_view__cover" android:layout_marginLeft="15.0dip" android:layout_marginTop="@dimen/general__shared__cover_bottom_shadow_margin_15dip" android:layout_marginBottom="@dimen/general__shared__cover_bottom_shadow_margin_15dip" style="@style/general__shared__cover_list" />
-    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/general__shared__cover_right_shadow_margin_15dip" android:layout_marginTop="15.0dip" android:layout_marginBottom="15.0dip" android:layout_weight="1.0">
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:ellipsize="end" android:id="@id/personal__reading_note_item_view__title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6.0dip" android:maxLines="2" android:singleLine="false" android:includeFontPadding="false" />
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__666666" android:ellipsize="end" android:id="@id/personal__reading_note_item_view__info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6.0dip" android:singleLine="true" android:includeFontPadding="false" />
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__999999" android:id="@id/personal__reading_note_item_view__date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" />
+<LinearLayout android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.duokan.reader.ui.general.BookCoverView
+        android:id="@id/personal__reading_note_item_view__cover"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginTop="@dimen/general__shared__cover_bottom_shadow_margin_15dip"
+        android:layout_marginBottom="@dimen/general__shared__cover_bottom_shadow_margin_15dip"
+        style="@style/general__shared__cover_list" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/general__shared__cover_right_shadow_margin_15dip"
+        android:layout_marginTop="15.0dip"
+        android:layout_marginBottom="15.0dip"
+        android:layout_weight="1.0">
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:textSize="@dimen/general_font__shared__c"
+            android:textColor="@color/general__shared__333333"
+            android:ellipsize="end"
+            android:id="@id/personal__reading_note_item_view__title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6.0dip"
+            android:maxLines="2"
+            android:singleLine="false"
+            android:includeFontPadding="false" />
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:textSize="@dimen/general_font__shared__d"
+            android:textColor="@color/general__shared__666666"
+            android:ellipsize="end"
+            android:id="@id/personal__reading_note_item_view__info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6.0dip"
+            android:singleLine="true"
+            android:includeFontPadding="false" />
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:textSize="@dimen/general_font__shared__d"
+            android:textColor="@color/general__shared__999999"
+            android:id="@id/personal__reading_note_item_view__date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false" />
     </LinearLayout>
-    <com.duokan.reader.ui.general.DkNumView android:textSize="20.0dip" android:textColor="#ff3aac34" android:layout_gravity="center_vertical" android:id="@id/personal__reading_note_item_view__count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="15.0dip" />
+
+    <com.duokan.reader.ui.general.DkNumView
+        android:textSize="20.0dip"
+        android:textColor="#ff3aac34"
+        android:layout_gravity="center_vertical"
+        android:id="@id/personal__reading_note_item_view__count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginRight="15.0dip" />
 </LinearLayout>

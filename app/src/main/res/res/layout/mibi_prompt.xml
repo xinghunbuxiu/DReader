@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/mibi_dialog_bg_light" android:paddingLeft="@dimen/mibi_prompt_info_padding_left" android:paddingRight="@dimen/mibi_prompt_info_padding_right" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/mibi_text_size_prompt_info_title" android:textStyle="bold" android:textColor="@color/mibi_text_color_prompt_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_prompt_info_title_margin_top" android:text="@string/mibi_prompt_info_title" />
-    <TextView android:textSize="@dimen/mibi_text_size_prompt_info_message" android:textColor="@color/mibi_text_color_gray" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_prompt_info_message_margin_top" android:text="@string/mibi_prompt_info_for_first_use" />
-    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_prompt_info_image_margin_top" android:src="@drawable/mibi_prompt_hint_pic" />
-    <com.mipay.common.component.AutoCountDownButton android:id="@id/button_count" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_prompt_info_button_margin_top" android:layout_marginBottom="@dimen/mibi_prompt_info_button_margin_bottom" />
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical"
+    android:background="@drawable/mibi_dialog_bg_light"
+    android:paddingLeft="@dimen/mibi_prompt_info_padding_left"
+    android:paddingRight="@dimen/mibi_prompt_info_padding_right" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/mibi_text_size_prompt_info_title" android:textStyle="bold"
+        android:textColor="@color/mibi_text_color_prompt_title" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mibi_prompt_info_title_margin_top"
+        android:text="@string/mibi_prompt_info_title" />
+    <TextView android:textSize="@dimen/mibi_text_size_prompt_info_message"
+        android:textColor="@color/mibi_text_color_gray" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mibi_prompt_info_message_margin_top"
+        android:text="@string/mibi_prompt_info_for_first_use" />
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mibi_prompt_info_image_margin_top"
+        android:src="@drawable/mibi_prompt_hint_pic" />
+    <com.mipay.common.component.AutoCountDownButton android:id="@id/button_count"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mibi_prompt_info_button_margin_top"
+        android:layout_marginBottom="@dimen/mibi_prompt_info_button_margin_bottom" />
 </LinearLayout>

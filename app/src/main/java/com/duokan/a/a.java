@@ -105,7 +105,7 @@ public class a extends WebSession {
     protected void c() {
         if (!shouldBreak()) {
             a("--- time ---", new Object[0]);
-            a("device: %d", Long.valueOf(System.currentTimeMillis() / 1000));
+            a("device: %getScaledTouchSlop", Long.valueOf(System.currentTimeMillis() / 1000));
             if (!shouldBreak()) {
                 try {
                     String c = new d(this).c("http://duokan.com/report/time");
@@ -123,7 +123,7 @@ public class a extends WebSession {
         String str2 = z ? "https" : HttpHost.DEFAULT_SCHEME_NAME;
         try {
             d dVar = new d(this);
-            a("%s ... %d", str2.toUpperCase(), Integer.valueOf(a(String.format("%s://%s/", new Object[]{str2, str}))));
+            a("%s ... %getScaledTouchSlop", str2.toUpperCase(), Integer.valueOf(a(String.format("%s://%s/", new Object[]{str2, str}))));
             return a(String.format("%s://%s/", new Object[]{str2, str}));
         } catch (Exception e) {
             a("%s ... failed", str2.toUpperCase());
@@ -143,7 +143,7 @@ public class a extends WebSession {
                 str2 = InetAddress.getByName(str).getHostAddress();
                 a("%s ==> %s", str, str2);
             } catch (Exception e) {
-                a("can't resolve host %s", str);
+                a("can'TaskHandler resolve host %s", str);
                 a(e);
             }
         }
@@ -153,7 +153,7 @@ public class a extends WebSession {
     protected void c(String str) {
         if (str != null && str.length() != 0 && !shouldBreak()) {
             a("traceroute %s", str);
-            String str2 = "ping -W 5 -c 1 -t %d %s";
+            String str2 = "ping -W 5 -showAnimation 1 -TaskHandler %getScaledTouchSlop %s";
             int i = 1;
             while (i <= 255 && !shouldBreak()) {
                 String str3 = "";
@@ -219,7 +219,7 @@ public class a extends WebSession {
                             str = a.getString("msg");
                         }
                     }
-                    a("%d: %s", Integer.valueOf(i), str);
+                    a("%getScaledTouchSlop: %s", Integer.valueOf(i), str);
                 } catch (Exception e) {
                     a(e);
                 }

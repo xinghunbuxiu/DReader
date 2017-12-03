@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="@string/mibi_title_gesture">
-        <CheckBoxPreference android:persistent="false" android:title="@string/mibi_title_lockpattern" android:key="enable_pattern" android:summary="@string/mibi_summary_lockpattern" android:defaultValue="false" />
-        <CheckBoxPreference android:title="@string/mibi_title_visible_pattern" android:key="visible_pattern" android:dependency="enable_pattern" />
-        <PreferenceScreen android:title="@string/mibi_title_change_lockpattern" android:key="modify_pattern" android:dependency="enable_pattern" />
+        <CheckBoxPreference android:persistent="false"
+            android:title="@string/mibi_title_lockpattern" android:key="enable_pattern"
+            android:summary="@string/mibi_summary_lockpattern" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/mibi_title_visible_pattern"
+            android:key="visible_pattern" android:dependency="enable_pattern" />
+        <PreferenceScreen android:title="@string/mibi_title_change_lockpattern"
+            android:key="modify_pattern" android:dependency="enable_pattern" />
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/mibi_title_password" android:key="category_password">
-        <CheckBoxPreference android:persistent="false" android:title="@string/mibi_title_nopassword" android:key="enable_no_password" android:defaultValue="false" />
-        <ListPreference android:entries="@array/mibi_nopassword_pay_threshold" android:key="password_threshold" android:dependency="enable_no_password" android:dialogTitle="@string/mibi_title_nopassword_dialog" android:entryValues="@array/mibi_nopassword_pay_threshold_values" />
+        <CheckBoxPreference android:persistent="false" android:title="@string/mibi_title_nopassword"
+            android:key="enable_no_password" android:defaultValue="false" />
+        <ListPreference android:entries="@array/mibi_nopassword_pay_threshold"
+            android:key="password_threshold" android:dependency="enable_no_password"
+            android:dialogTitle="@string/mibi_title_nopassword_dialog"
+            android:entryValues="@array/mibi_nopassword_pay_threshold_values" />
     </PreferenceCategory>
 </PreferenceScreen>

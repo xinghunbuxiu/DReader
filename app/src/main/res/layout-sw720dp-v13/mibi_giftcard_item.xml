@@ -1,11 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.xiaomi.payment.ui.item.GiftcardGridItem android:background="@drawable/mibi_giftcard_item_bg" android:padding="@dimen/mibi_giftcard_item_padding" android:layout_width="fill_parent" android:layout_height="165.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:payment="http://schemas.android.com/apk/res-auto">
-    <com.mipay.common.component.MiuiDigitFontTextView android:id="@id/available" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" payment:mibi_fontStyle="normal_0" style="@style/Mibi.Giftcard.Item.Available" />
-    <TextView android:id="@id/unit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/available" android:layout_alignTop="@id/available" style="@style/Mibi.Giftcard.Item.Unit" />
-    <LinearLayout android:gravity="right" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_giftcard_item_describe_margin_top" android:layout_below="@id/available" android:layout_alignParentRight="true">
-        <TextView android:textStyle="bold" android:id="@id/market_giftcard_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@style/Mibi.Giftcard.Item.MarketGiftcard" />
-        <TextView android:id="@id/activity_and_denomination" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_giftcard_item_activity_margin_top" android:singleLine="true" style="@style/Mibi.Giftcard.Item.Activity" />
-        <TextView android:id="@id/expired_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@style/Mibi.Giftcard.Item.ExpiredTime" />
+<com.xiaomi.payment.ui.item.GiftcardGridItem android:background="@drawable/mibi_giftcard_item_bg"
+    android:padding="@dimen/mibi_giftcard_item_padding"
+    android:layout_width="fill_parent"
+    android:layout_height="165.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:payment="http://schemas.android.com/apk/res-auto">
+
+    <com.mipay.common.component.MiuiDigitFontTextView
+        android:id="@id/available"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        payment:mibi_fontStyle="normal_0"
+        style="@style/Mibi.Giftcard.Item.Available" />
+
+    <TextView
+        android:id="@id/unit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/available"
+        android:layout_alignTop="@id/available"
+        style="@style/Mibi.Giftcard.Item.Unit" />
+
+    <LinearLayout
+        android:gravity="right"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mibi_giftcard_item_describe_margin_top"
+        android:layout_below="@id/available"
+        android:layout_alignParentRight="true">
+
+        <TextView
+            android:textStyle="bold"
+            android:id="@id/market_giftcard_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            style="@style/Mibi.Giftcard.Item.MarketGiftcard" />
+
+        <TextView
+            android:id="@id/activity_and_denomination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mibi_giftcard_item_activity_margin_top"
+            android:singleLine="true"
+            style="@style/Mibi.Giftcard.Item.Activity" />
+
+        <TextView
+            android:id="@id/expired_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            style="@style/Mibi.Giftcard.Item.ExpiredTime" />
     </LinearLayout>
 </com.xiaomi.payment.ui.item.GiftcardGridItem>

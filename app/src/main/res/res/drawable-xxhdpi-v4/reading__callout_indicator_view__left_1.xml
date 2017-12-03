@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true" android:drawable="@drawable/reading__callout_indicator_view__left_pressed_1" />
-    <item android:state_selected="true" android:drawable="@drawable/reading__callout_indicator_view__left_pressed_1" />
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true"
+        android:drawable="@drawable/reading__callout_indicator_view__left_pressed_1" />
+    <item android:state_selected="true"
+        android:drawable="@drawable/reading__callout_indicator_view__left_pressed_1" />
     <item android:drawable="@drawable/reading__callout_indicator_view__left_normal_1" />
 </selector>

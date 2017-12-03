@@ -6,7 +6,7 @@ import com.duokan.kernel.DkFlowPosition;
 import com.duokan.kernel.DkFlowRenderOption;
 import com.duokan.kernel.DkNative;
 import com.duokan.kernel.DkRenderInfo;
-import com.duokan.reader.domain.document.a.o;
+import com.duokan.reader.domain.document.Document_a.o;
 
 import java.util.ArrayList;
 import java.util.Arrays;

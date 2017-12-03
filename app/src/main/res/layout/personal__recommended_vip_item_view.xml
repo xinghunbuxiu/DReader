@@ -1,11 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.DkBigFaceView android:id="@id/personal__recommended_vip_item_view__avatar_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" />
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:id="@id/personal__recommended_vip_item_view__user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:singleLine="true" />
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__888888" android:id="@id/personal__recommended_vip_item_view__user_verification" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:singleLine="true" />
-    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/personal__recommended_vip_item_view__relation" android:background="@drawable/personal__follow_button_bg_2" android:layout_width="60.0dip" android:layout_height="30.0dip" android:layout_marginTop="8.0dip">
-        <ImageView android:id="@id/personal__recommended_vip_item_view__relation_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:src="@drawable/personal__follow_icon_orange" android:scaleType="center" android:contentDescription="@null" />
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__ff6518" android:id="@id/personal__recommended_vip_item_view__relation_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/general__shared__follow" />
+<LinearLayout android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10.0dip"
+    android:layout_marginRight="10.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.duokan.reader.ui.general.DkBigFaceView
+        android:id="@id/personal__recommended_vip_item_view__avatar_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.0dip" />
+
+    <com.duokan.reader.ui.general.DkLabelView
+        android:textSize="@dimen/general_font__shared__c"
+        android:textColor="@color/general__shared__333333"
+        android:id="@id/personal__recommended_vip_item_view__user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5.0dip"
+        android:singleLine="true" />
+
+    <com.duokan.reader.ui.general.DkLabelView
+        android:textSize="@dimen/general_font__shared__d"
+        android:textColor="@color/general__shared__888888"
+        android:id="@id/personal__recommended_vip_item_view__user_verification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5.0dip"
+        android:singleLine="true" />
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:id="@id/personal__recommended_vip_item_view__relation"
+        android:background="@drawable/personal__follow_button_bg_2"
+        android:layout_width="60.0dip"
+        android:layout_height="30.0dip"
+        android:layout_marginTop="8.0dip">
+
+        <ImageView
+            android:id="@id/personal__recommended_vip_item_view__relation_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5.0dip"
+            android:src="@drawable/personal__follow_icon_orange"
+            android:scaleType="center"
+            android:contentDescription="@null" />
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:textSize="@dimen/general_font__shared__c"
+            android:textColor="@color/general__shared__ff6518"
+            android:id="@id/personal__recommended_vip_item_view__relation_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/general__shared__follow" />
     </LinearLayout>
 </LinearLayout>

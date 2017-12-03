@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <LinearLayout android:orientation="vertical" android:id="@id/home_normal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:fillViewport="true" xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:orientation="vertical" android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/home_normal"
+            android:layout_width="fill_parent" android:layout_height="fill_parent">
             <include android:id="@id/header" layout="@layout/mibi_mili_center_header" />
             <include android:id="@id/home_container" layout="@layout/mibi_mili_center_home_grid" />
         </LinearLayout>
         <include android:id="@id/home_frozen" layout="@layout/mibi_mili_center_frozen" />
-        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/progress_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
-            <ProgressBar android:id="@id/progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:indeterminateOnly="true" />
-            <TextView android:id="@id/progress_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mibi_progress_downloading" />
+        <LinearLayout android:gravity="center" android:orientation="vertical"
+            android:id="@id/progress_layout" android:visibility="gone"
+            android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ProgressBar android:id="@id/progress" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:indeterminateOnly="true" />
+            <TextView android:id="@id/progress_text" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mibi_progress_downloading" />
         </LinearLayout>
-        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/error_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
-            <ImageView android:id="@id/warning_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/mibi_content_empty_icon_light" />
-            <TextView android:textSize="@dimen/mibi_text_size_small" android:textColor="@color/mibi_text_color_gray" android:id="@id/error" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-            <Button android:id="@id/button_retry" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:minWidth="@dimen/mibi_min_limited_button_width" android:text="@string/mibi_btn_net_connection_retry" style="@style/Mibi.Widget.Button" />
+        <LinearLayout android:gravity="center" android:orientation="vertical"
+            android:id="@id/error_layout" android:visibility="gone"
+            android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@id/warning_icon" android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mibi_content_empty_icon_light" />
+            <TextView android:textSize="@dimen/mibi_text_size_small"
+                android:textColor="@color/mibi_text_color_gray" android:id="@id/error"
+                android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <Button android:id="@id/button_retry" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_marginTop="20.0dip"
+                android:minWidth="@dimen/mibi_min_limited_button_width"
+                android:text="@string/mibi_btn_net_connection_retry"
+                style="@style/Mibi.Widget.Button" />
         </LinearLayout>
     </FrameLayout>
 </ScrollView>

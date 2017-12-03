@@ -1,152 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="Passport.ActivatorPhoneInfoPadding" parent="@style/Passport">
         <item name="android:paddingStart">@dimen/passport_activator_phone_info_padding_left</item>
         <item name="android:paddingEnd">@dimen/passport_activator_phone_info_padding_right</item>
     </style>
+
     <style name="Passport.ActivatorPhoneNum" parent="@style/Passport">
-        <item name="android:layout_marginStart">@dimen/passport_activator_phone_num_margin_left</item>
+        <item name="android:layout_marginStart">@dimen/passport_activator_phone_num_margin_left
+        </item>
     </style>
+
     <style name="Passport.AreaCodeItemStyle" parent="@style/Passport.Widget.ListView.Item.SingleLine">
         <item name="android:paddingStart">@dimen/passport_list_item_padding_left</item>
     </style>
+
     <style name="Passport.AreaCodeStyle" parent="@style/Passport.TextAppearance.List.Secondary">
         <item name="android:layout_marginEnd">@dimen/passport_list_item_margin_right</item>
     </style>
+
     <style name="Passport.AreaImagePaddingRight" parent="@style/Passport">
         <item name="android:layout_gravity">end|center</item>
         <item name="android:paddingEnd">@dimen/passport_arrow_right_padding_h</item>
     </style>
+
     <style name="Passport.AreaSectionHeaderStyle" parent="@style/Passport.TextAppearance.List.Secondary.Preference">
         <item name="android:paddingStart">@dimen/passport_list_item_padding_left</item>
     </style>
+
     <style name="Passport.CaptchaImageMarginLeft" parent="@style/Passport.RightLayoutGravity">
         <item name="android:layout_marginStart">@dimen/passport_captcha_code_margin_h</item>
     </style>
+
     <style name="Passport.DialogCustomPaddingH" parent="@style/Passport">
         <item name="android:paddingStart">@dimen/passport_dialog_custom_horizontal_padding</item>
         <item name="android:paddingEnd">@dimen/passport_dialog_custom_horizontal_padding</item>
     </style>
+
     <style name="Passport.DialogLayoutPadding" parent="@style/Passport">
         <item name="android:paddingTop">@dimen/passport_dialog_title_vertical_padding</item>
         <item name="android:paddingBottom">@dimen/passport_dialog_title_vertical_padding</item>
         <item name="android:paddingStart">@dimen/passport_dialog_title_horizontal_padding</item>
         <item name="android:paddingEnd">@dimen/passport_dialog_title_horizontal_padding</item>
     </style>
+
     <style name="Passport.DialogMessagePaddingH" parent="@style/Passport">
-        <item name="android:paddingStart">@dimen/passport_progress_dialog_message_horizontal_padding</item>
-        <item name="android:paddingEnd">@dimen/passport_progress_dialog_message_horizontal_padding</item>
+        <item name="android:paddingStart">
+            @dimen/passport_progress_dialog_message_horizontal_padding
+        </item>
+        <item name="android:paddingEnd">@dimen/passport_progress_dialog_message_horizontal_padding
+        </item>
     </style>
+
     <style name="Passport.DialogMessageStyle" parent="@style/Passport.TextAppearance.Medium.Dialog.Light">
         <item name="android:paddingStart">@dimen/passport_dialog_message_horizontal_padding</item>
         <item name="android:paddingEnd">@dimen/passport_dialog_message_horizontal_padding</item>
     </style>
+
     <style name="Passport.DialogTitleStyle" parent="@style/Passport.Widget.DialogTitle">
         <item name="android:paddingStart">@dimen/passport_dialog_title_horizontal_padding</item>
         <item name="android:paddingEnd">@dimen/passport_dialog_title_horizontal_padding</item>
     </style>
+
     <style name="Passport.DividerHMargin" parent="@style/Passport">
-        <item name="android:layout_marginStart">@dimen/passport_section_header_divider_margin_h</item>
+        <item name="android:layout_marginStart">@dimen/passport_section_header_divider_margin_h
+        </item>
         <item name="android:layout_marginEnd">@dimen/passport_section_header_divider_margin_h</item>
     </style>
+
     <style name="Passport.EditTextStyle" parent="@style/Passport.TextAppearance.Medium">
         <item name="android:textColorHint">@color/passport_hint_text_color_black</item>
         <item name="android:textDirection">locale</item>
         <item name="android:textAlignment">viewStart</item>
     </style>
+
     <style name="Passport.ForgotPwdStyle" parent="@style/Passport.TextAppearance.Medium">
         <item name="android:gravity">end</item>
         <item name="android:layout_marginEnd">5.0dip</item>
         <item name="android:layout_alignParentEnd">true</item>
     </style>
+
     <style name="Passport.LayoutPadding" parent="@style/Passport">
         <item name="android:layout_marginTop">@dimen/passport_content_vertical_margin</item>
         <item name="android:layout_marginBottom">@dimen/passport_content_bottom_margin</item>
         <item name="android:layout_marginStart">@dimen/passport_content_horizontal_margin</item>
         <item name="android:layout_marginEnd">@dimen/passport_content_horizontal_margin</item>
     </style>
+
     <style name="Passport.LeftLayoutGravity" parent="@style/Passport">
         <item name="android:layout_gravity">start|center</item>
         <item name="android:layout_alignParentStart">true</item>
     </style>
+
     <style name="Passport.LoginRegLayoutPadding" parent="@style/Passport">
         <item name="android:paddingTop">@dimen/passport_login_reg_padding_top</item>
         <item name="android:paddingBottom">@dimen/passport_login_reg_padding_bottom</item>
         <item name="android:paddingStart">@dimen/passport_login_reg_padding_h</item>
         <item name="android:paddingEnd">@dimen/passport_login_reg_padding_h</item>
     </style>
+
     <style name="Passport.MiuiProvisionActionBarTitleStyle" parent="@style/Passport">
-        <item name="android:textSize">@dimen/passport_miui_provision_action_bar_title_text_size</item>
+        <item name="android:textSize">@dimen/passport_miui_provision_action_bar_title_text_size
+        </item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@android:color/black</item>
-        <item name="android:layout_marginTop">@dimen/passport_miui_provision_action_bar_title_margin_top</item>
-        <item name="android:layout_marginStart">@dimen/passport_miui_provision_action_bar_title_margin_left</item>
+        <item name="android:layout_marginTop">
+            @dimen/passport_miui_provision_action_bar_title_margin_top
+        </item>
+        <item name="android:layout_marginStart">
+            @dimen/passport_miui_provision_action_bar_title_margin_left
+        </item>
     </style>
+
     <style name="Passport.MiuiProvisionActivatorPhoneNum" parent="@style/Passport">
-        <item name="android:layout_marginStart">@dimen/passport_miui_provision_activator_phone_num_margin_left</item>
+        <item name="android:layout_marginStart">
+            @dimen/passport_miui_provision_activator_phone_num_margin_left
+        </item>
     </style>
+
     <style name="Passport.MiuiProvisionEditViewStyle" parent="@style/Passport.EditTextStyle">
         <item name="android:textSize">@dimen/passport_title_text_size</item>
-        <item name="android:textColorHint">@color/passport_miui_provision_edit_text_hint_color</item>
+        <item name="android:textColorHint">@color/passport_miui_provision_edit_text_hint_color
+        </item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:background">@null</item>
         <item name="android:layout_height">@dimen/passport_miui_provision_edit_text_height</item>
-        <item name="android:paddingEnd">@dimen/passport_miui_provision_edit_text_padding_right</item>
+        <item name="android:paddingEnd">@dimen/passport_miui_provision_edit_text_padding_right
+        </item>
     </style>
+
     <style name="Passport.MiuiProvisionLoginRegBottomPanelHorizontalMarin" parent="@style/Passport">
         <item name="android:paddingBottom">@dimen/passport_miui_provision_bottom_margin</item>
-        <item name="android:paddingStart">@dimen/passport_miui_provision_login_reg_bottom_panel_margin_h</item>
-        <item name="android:paddingEnd">@dimen/passport_miui_provision_login_reg_bottom_panel_margin_h</item>
+        <item name="android:paddingStart">
+            @dimen/passport_miui_provision_login_reg_bottom_panel_margin_h
+        </item>
+        <item name="android:paddingEnd">
+            @dimen/passport_miui_provision_login_reg_bottom_panel_margin_h
+        </item>
     </style>
+
     <style name="Passport.MiuiProvisionLoginRegHorizontalMargin" parent="@style/Passport">
-        <item name="android:layout_marginStart">@dimen/passport_miui_provision_login_reg_margin_h</item>
-        <item name="android:layout_marginEnd">@dimen/passport_miui_provision_login_reg_margin_h</item>
+        <item name="android:layout_marginStart">@dimen/passport_miui_provision_login_reg_margin_h
+        </item>
+        <item name="android:layout_marginEnd">@dimen/passport_miui_provision_login_reg_margin_h
+        </item>
     </style>
+
     <style name="Passport.MiuiProvisionTextViewHasHorizontalMarginStyle" parent="@style/Passport.TextAppearance.Medium">
         <item name="android:textColor">@color/passport_text_color_alpha_black_40per</item>
-        <item name="android:layout_marginStart">@dimen/passport_miui_provision_login_reg_text_view_margin_h</item>
-        <item name="android:layout_marginEnd">@dimen/passport_miui_provision_login_reg_text_view_margin_h</item>
+        <item name="android:layout_marginStart">
+            @dimen/passport_miui_provision_login_reg_text_view_margin_h
+        </item>
+        <item name="android:layout_marginEnd">
+            @dimen/passport_miui_provision_login_reg_text_view_margin_h
+        </item>
     </style>
+
     <style name="Passport.ProgressDialogLayoutPadding" parent="@style/Passport">
         <item name="android:paddingStart">27.299988dip</item>
     </style>
+
     <style name="Passport.QuickLoginAccountNameStyle" parent="@style/Passport.TextAppearance.Medium">
         <item name="android:layout_marginStart">5.0dip</item>
         <item name="android:layout_alignParentStart">true</item>
     </style>
+
     <style name="Passport.QuickLoginLayoutHMargin" parent="@style/Passport">
         <item name="android:layout_marginStart">@dimen/passport_dialog_margin_h</item>
         <item name="android:layout_marginEnd">@dimen/passport_dialog_margin_h</item>
     </style>
+
     <style name="Passport.RegisterNewAccount" parent="@style/Passport.LoginRegGuideTextStyle">
-        <item name="android:layout_marginStart">@dimen/passport_register_new_account_margin_left</item>
+        <item name="android:layout_marginStart">@dimen/passport_register_new_account_margin_left
+        </item>
     </style>
+
     <style name="Passport.RightLayoutGravity" parent="@style/Passport">
         <item name="android:layout_gravity">end|center</item>
         <item name="android:layout_alignParentEnd">true</item>
     </style>
+
     <style name="Passport.ShowPwdImgStyle" parent="@style/Passport">
         <item name="android:paddingStart">@dimen/passport_arrow_right_padding_h</item>
         <item name="android:paddingEnd">@dimen/passport_arrow_right_padding_h</item>
     </style>
+
     <style name="Passport.SyncFailedWarning" parent="@style/Passport.TextAppearance.Medium">
-        <item name="android:layout_marginStart">@dimen/passport_sync_failed_warning_margin_left</item>
+        <item name="android:layout_marginStart">@dimen/passport_sync_failed_warning_margin_left
+        </item>
     </style>
+
     <style name="Passport.TextAppearance.ProgressDialog" parent="@style/Passport.TextAppearance">
         <item name="android:textSize">@dimen/passport_button_text_size</item>
         <item name="android:layout_marginStart">13.0dip</item>
     </style>
+
     <style name="Passport.UnactivatedResendButton" parent="@style/Passport.ButtonNormal">
         <item name="android:layout_marginStart">@dimen/passport_buttons_margin_h</item>
         <item name="android:layout_marginEnd">@dimen/passport_buttons_margin_h</item>
     </style>
+
     <style name="Passport.UnactivatedVerifyButton" parent="@style/Passport.ButtonNotice">
         <item name="android:layout_marginStart">@dimen/passport_buttons_margin_h</item>
         <item name="android:layout_marginEnd">@dimen/passport_buttons_margin_h</item>
     </style>
+
     <style name="Passport.VCodeNoticeStyle" parent="@style/Passport.HyperLinkTextStyle">
         <item name="android:layout_marginStart">@dimen/passport_reg_verify_code_margin_h</item>
     </style>
+
     <style name="Passport.Widget.ActionBar" parent="@style/Passport.Widget">
         <item name="android:background">@drawable/passport_action_bar_bg_light</item>
         <item name="android:paddingBottom">0.0dip</item>
@@ -154,26 +216,31 @@
         <item name="android:height">?android:actionBarSize</item>
         <item name="android:displayOptions">homeAsUp|showTitle</item>
         <item name="android:titleTextStyle">@style/Passport.TextAppearance.WindowTitle</item>
-        <item name="android:subtitleTextStyle">@style/Passport.TextAppearance.WindowTitle.Subtitle</item>
+        <item name="android:subtitleTextStyle">@style/Passport.TextAppearance.WindowTitle.Subtitle
+        </item>
         <item name="android:itemPadding">0.0dip</item>
         <item name="android:paddingStart">0.0dip</item>
         <item name="android:paddingEnd">0.0dip</item>
     </style>
+
     <style name="Passport.Widget.EditText" parent="@android:style/Widget.EditText">
         <item name="android:textAppearance">@style/Passport.TextAppearance.Widget.EditText</item>
         <item name="android:gravity">start|center</item>
         <item name="android:background">@drawable/passport_edit_text_bg_light</item>
         <item name="android:singleLine">true</item>
     </style>
+
     <style name="Passport.Widget.ListView.Item" parent="@style/Passport.Widget">
         <item name="android:gravity">start|center</item>
         <item name="android:background">@drawable/passport_list_item_bg_light</item>
         <item name="android:layout_width">fill_parent</item>
     </style>
+
     <style name="Passport.accountRecycleHMargin" parent="@style/Passport">
         <item name="android:layout_marginStart">@dimen/passport_content_horizontal_margin</item>
         <item name="android:layout_marginEnd">@dimen/passport_content_horizontal_margin</item>
     </style>
+
     <style name="V6.Widget.CompoundButton.CheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
         <item name="android:textSize">@dimen/v6_secondary_text_size</item>
         <item name="android:textColor">?v6_checkableButtonTextColorSingle</item>

@@ -8,11 +8,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class d {
-    private final Context a;
+    private final Context context;
     private i b;
+    MyWebSession myWebSession;
 
     public d(Context context) {
-        this.a = context;
+        this.context = context;
     }
 
     public d(Context context, i iVar) {
@@ -21,7 +22,8 @@ public class d {
     }
 
     public void a() {
-        new f().open();
+        myWebSession = new MyWebSession(this);
+        myWebSession.open();
     }
 
     private String b() {
@@ -43,7 +45,7 @@ public class d {
     private int c() {
         int i = 0;
         try {
-            return this.a.getPackageManager().getPackageInfo(this.a.getPackageName(), 0).versionCode;
+            return this.context.getPackageManager().getPackageInfo(this.context.getPackageName(), 0).versionCode;
         } catch (Exception e) {
             e.printStackTrace();
             return i;

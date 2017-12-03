@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="@drawable/personal__comment_left_tab_view_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.DkLabelView android:gravity="center" android:id="@id/personal_comment_tab_text" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_centerHorizontal="true" style="@style/general__shared__tab_text_style_2" />
+<RelativeLayout android:background="@drawable/personal__comment_left_tab_view_bg"
+    android:layout_width="fill_parent" android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.reader.ui.general.DkLabelView android:gravity="center"
+        android:id="@id/personal_comment_tab_text" android:layout_width="wrap_content"
+        android:layout_height="fill_parent" android:layout_centerHorizontal="true"
+        style="@style/general__shared__tab_text_style_2" />
 </RelativeLayout>

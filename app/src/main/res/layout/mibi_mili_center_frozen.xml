@@ -1,20 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/mibi_milicenter_header_frozon_bg" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_milicenter_header_height" android:layout_margin="@dimen/mibi_milicenter_header_marging">
-        <TextView android:textSize="@dimen/mibi_text_size_milicenter_frozen_prim" android:textColor="@color/mibi_text_color_milicenter_frozon_red" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mibi_frozen_prim" android:singleLine="true" />
-        <TextView android:textSize="@dimen/mibi_text_size_milicenter_frozen_sub" android:textColor="@color/mibi_text_color_milicenter_frozon_red" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/mibi_frozen_sub" android:singleLine="true" />
+<LinearLayout android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/mibi_milicenter_header_frozon_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/mibi_milicenter_header_height"
+        android:layout_margin="@dimen/mibi_milicenter_header_marging">
+
+        <TextView
+            android:textSize="@dimen/mibi_text_size_milicenter_frozen_prim"
+            android:textColor="@color/mibi_text_color_milicenter_frozon_red"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mibi_frozen_prim"
+            android:singleLine="true" />
+
+        <TextView
+            android:textSize="@dimen/mibi_text_size_milicenter_frozen_sub"
+            android:textColor="@color/mibi_text_color_milicenter_frozon_red"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5.0dip"
+            android:text="@string/mibi_frozen_sub"
+            android:singleLine="true" />
     </LinearLayout>
-    <View android:background="@color/mibi_color_home_grid_line" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_milicenter_gap" />
-    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:paddingTop="@dimen/mibi_milicenter_frozon_content_padding_top" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/mibi_service_phone_icon" android:scaleType="fitCenter" />
-            <TextView android:textSize="@dimen/mibi_text_size_milicenter_frozen_sub" android:textColor="@color/mibi_text_color_payment_general" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" android:text="@string/mibi_error_frozen_service_num" android:singleLine="true" />
+
+    <View
+        android:background="@color/mibi_color_home_grid_line"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/mibi_milicenter_gap" />
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/mibi_milicenter_frozon_content_padding_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mibi_service_phone_icon"
+                android:scaleType="fitCenter" />
+
+            <TextView
+                android:textSize="@dimen/mibi_text_size_milicenter_frozen_sub"
+                android:textColor="@color/mibi_text_color_payment_general"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7.0dip"
+                android:text="@string/mibi_error_frozen_service_num"
+                android:singleLine="true" />
         </LinearLayout>
-        <TextView android:textSize="@dimen/mibi_text_size_milicenter_frozen_small" android:textColor="@color/mibi_text_color_milicenter_frozon_grey" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/mibi_error_frozen_service_time" android:singleLine="true" />
-        <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip">
-            <Button android:id="@id/button_call" android:layout_width="@dimen/mibi_milicenter_frozon_call_button_width" android:layout_height="wrap_content" android:text="@string/mibi_button_call_frozen_service" style="@style/Mibi.Widget.Button.Payment" />
-            <ImageView android:layout_gravity="center|left" android:background="@drawable/mibi_phone_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:scaleType="fitCenter" />
+
+        <TextView
+            android:textSize="@dimen/mibi_text_size_milicenter_frozen_small"
+            android:textColor="@color/mibi_text_color_milicenter_frozon_grey"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mibi_error_frozen_service_time"
+            android:singleLine="true" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20.0dip">
+
+            <Button
+                android:id="@id/button_call"
+                android:layout_width="@dimen/mibi_milicenter_frozon_call_button_width"
+                android:layout_height="wrap_content"
+                android:text="@string/mibi_button_call_frozen_service"
+                style="@style/Mibi.Widget.Button.Payment" />
+
+            <ImageView
+                android:layout_gravity="center|left"
+                android:background="@drawable/mibi_phone_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25.0dip"
+                android:scaleType="fitCenter" />
         </FrameLayout>
     </LinearLayout>
 </LinearLayout>

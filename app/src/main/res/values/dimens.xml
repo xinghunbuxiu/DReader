@@ -46,8 +46,12 @@
     <dimen name="mibi_detail_content_margin_top_bottom">22.0dip</dimen>
     <dimen name="mibi_divider">1.0px</dimen>
     <dimen name="mibi_edit_text_height">50.0dip</dimen>
-    <item type="dimen" name="mibi_get_phone_num_edit_part_margin_bottom">@dimen/mibi_payment_sms_edit_part_margin_bottom</item>
-    <item type="dimen" name="mibi_get_phone_num_margin_top">@dimen/mibi_payment_sms_content_margin_top</item>
+    <item type="dimen" name="mibi_get_phone_num_edit_part_margin_bottom">
+        @dimen/mibi_payment_sms_edit_part_margin_bottom
+    </item>
+    <item type="dimen" name="mibi_get_phone_num_margin_top">
+        @dimen/mibi_payment_sms_content_margin_top
+    </item>
     <dimen name="mibi_giftcard_define_lineHeight">1.0px</dimen>
     <dimen name="mibi_giftcard_define_marginTop">10.0dip</dimen>
     <dimen name="mibi_giftcard_define_paddingTop">23.0dip</dimen>
@@ -97,23 +101,35 @@
     <dimen name="mibi_payment_success_ad_view_marging_horizontal">30.0dip</dimen>
     <dimen name="mibi_payment_success_auto_count_button_marging_top">20.0dip</dimen>
     <dimen name="mibi_payment_success_banner_height">136.0dip</dimen>
-    <item type="dimen" name="mibi_payment_success_button_margin_left">@dimen/mibi_payment_general_padding</item>
-    <item type="dimen" name="mibi_payment_success_button_margin_right">@dimen/mibi_payment_general_padding</item>
+    <item type="dimen" name="mibi_payment_success_button_margin_left">
+        @dimen/mibi_payment_general_padding
+    </item>
+    <item type="dimen" name="mibi_payment_success_button_margin_right">
+        @dimen/mibi_payment_general_padding
+    </item>
     <dimen name="mibi_payment_success_button_margin_top">15.0dip</dimen>
     <dimen name="mibi_payment_success_corner_close_button_height_width">30.0dip</dimen>
     <dimen name="mibi_payment_success_corner_close_button_margin">10.0dip</dimen>
     <dimen name="mibi_payment_success_framelayout_padding_bottom">20.0dip</dimen>
     <dimen name="mibi_payment_success_height">229.0dip</dimen>
-    <item type="dimen" name="mibi_payment_success_icon_marging_top">@dimen/mibi_payment_general_padding</item>
+    <item type="dimen" name="mibi_payment_success_icon_marging_top">
+        @dimen/mibi_payment_general_padding
+    </item>
     <dimen name="mibi_payment_success_linearlayout_marging_top">15.0dip</dimen>
-    <item type="dimen" name="mibi_payment_success_padding_bottom">@dimen/mibi_payment_padding_bottom</item>
+    <item type="dimen" name="mibi_payment_success_padding_bottom">
+        @dimen/mibi_payment_padding_bottom
+    </item>
     <dimen name="mibi_payment_success_text_result_margin_top">13.0dip</dimen>
     <dimen name="mibi_recharge_grid_button_retry_margin_top">20.0dip</dimen>
     <dimen name="mibi_recharge_grid_empty_padding">23.0dip</dimen>
-    <item type="dimen" name="mibi_recharge_grid_item_icon_height">@dimen/mibi_recharge_grid_item_icon_width</item>
+    <item type="dimen" name="mibi_recharge_grid_item_icon_height">
+        @dimen/mibi_recharge_grid_item_icon_width
+    </item>
     <dimen name="mibi_recharge_grid_item_icon_width">57.0dip</dimen>
     <dimen name="mibi_recharge_grid_min_height">230.0dip</dimen>
-    <item type="dimen" name="mibi_recharge_grid_padding_bottom">@dimen/mibi_recharge_grid_padding_top</item>
+    <item type="dimen" name="mibi_recharge_grid_padding_bottom">
+        @dimen/mibi_recharge_grid_padding_top
+    </item>
     <dimen name="mibi_recharge_grid_padding_top">50.0dip</dimen>
     <dimen name="mibi_recharge_layout_group_gap">22.0dip</dimen>
     <dimen name="mibi_recharge_layout_item_gap">7.0dip</dimen>
@@ -140,7 +156,9 @@
     <dimen name="mibi_text_size_giftcard_detail_available">75.0sp</dimen>
     <dimen name="mibi_text_size_giftcard_item_activity">10.0sp</dimen>
     <dimen name="mibi_text_size_giftcard_item_available">60.0sp</dimen>
-    <item type="dimen" name="mibi_text_size_giftcard_item_expired_time">@dimen/mibi_text_size_giftcard_item_activity</item>
+    <item type="dimen" name="mibi_text_size_giftcard_item_expired_time">
+        @dimen/mibi_text_size_giftcard_item_activity
+    </item>
     <dimen name="mibi_text_size_giftcard_item_unit">12.0sp</dimen>
     <dimen name="mibi_text_size_grid_label">11.0sp</dimen>
     <dimen name="mibi_text_size_grid_sublabel">8.0sp</dimen>
@@ -265,8 +283,12 @@
     <dimen name="mibi_android_notification_layout_height">64.0dip</dimen>
     <dimen name="mibi_android_notification_layout_max_height">64.0dip</dimen>
     <dimen name="mibi_get_phone_num_edit_padding_left">38.0dip</dimen>
-    <item type="dimen" name="mibi_get_phone_num_margin_left">@dimen/mibi_payment_verify_sms_code_margin_left</item>
-    <item type="dimen" name="mibi_get_phone_num_margin_right">@dimen/mibi_payment_verify_sms_code_margin_right</item>
+    <item type="dimen" name="mibi_get_phone_num_margin_left">
+        @dimen/mibi_payment_verify_sms_code_margin_left
+    </item>
+    <item type="dimen" name="mibi_get_phone_num_margin_right">
+        @dimen/mibi_payment_verify_sms_code_margin_right
+    </item>
     <dimen name="mibi_giftcard_define_paddingLeftAndRight">34.0dip</dimen>
     <dimen name="mibi_giftcard_detail_button_package_margin_bottom">15.0dip</dimen>
     <dimen name="mibi_giftcard_detail_button_package_margin_left">15.0dip</dimen>
@@ -286,14 +308,20 @@
     <dimen name="mibi_mili_center_list_item_subtitle_margin_left">10.0dip</dimen>
     <dimen name="mibi_min_limited_button_margin_top">20.0dip</dimen>
     <dimen name="mibi_pattern_info_area_margin_left">15.0dip</dimen>
-    <item type="dimen" name="mibi_pattern_info_area_margin_right">@dimen/mibi_pattern_info_area_margin_left</item>
+    <item type="dimen" name="mibi_pattern_info_area_margin_right">
+        @dimen/mibi_pattern_info_area_margin_left
+    </item>
     <dimen name="mibi_pattern_layout_login_margin_bottom">13.0dip</dimen>
     <dimen name="mibi_pattern_layout_login_margin_left">15.0dip</dimen>
     <dimen name="mibi_pattern_layout_login_margin_right">15.0dip</dimen>
     <dimen name="mibi_pattern_layout_login_margin_top">15.0dip</dimen>
-    <item type="dimen" name="mibi_pattern_layout_margin_bottom">@dimen/mibi_pattern_layout_margin_top</item>
+    <item type="dimen" name="mibi_pattern_layout_margin_bottom">
+        @dimen/mibi_pattern_layout_margin_top
+    </item>
     <dimen name="mibi_pattern_layout_margin_top">7.0dip</dimen>
-    <item type="dimen" name="mibi_pattern_progressbar_height">@dimen/mibi_pattern_progressbar_width</item>
+    <item type="dimen" name="mibi_pattern_progressbar_height">
+        @dimen/mibi_pattern_progressbar_width
+    </item>
     <dimen name="mibi_pattern_progressbar_width">32.0dip</dimen>
     <dimen name="mibi_payment_describe_margin_left">18.0dip</dimen>
     <dimen name="mibi_payment_error_info_margin_top">5.0dip</dimen>
@@ -305,11 +333,14 @@
     <dimen name="mibi_payment_verify_sms_code_margin_left">9.0dip</dimen>
     <dimen name="mibi_payment_verify_sms_code_margin_right">9.0dip</dimen>
     <dimen name="mibi_prompt_info_button_margin_bottom">19.0dip</dimen>
-    <item type="dimen" name="mibi_prompt_info_button_margin_top">@dimen/mibi_prompt_info_button_margin_bottom</item>
+    <item type="dimen" name="mibi_prompt_info_button_margin_top">
+        @dimen/mibi_prompt_info_button_margin_bottom
+    </item>
     <dimen name="mibi_prompt_info_image_margin_top">22.0dip</dimen>
     <dimen name="mibi_prompt_info_message_margin_top">18.0dip</dimen>
     <dimen name="mibi_prompt_info_padding_left">23.0dip</dimen>
-    <item type="dimen" name="mibi_prompt_info_padding_right">@dimen/mibi_prompt_info_padding_left</item>
+    <item type="dimen" name="mibi_prompt_info_padding_right">@dimen/mibi_prompt_info_padding_left
+    </item>
     <dimen name="mibi_prompt_info_title_margin_top">20.0dip</dimen>
     <dimen name="mibi_recharge_format_text_margin_left">10.0dip</dimen>
     <dimen name="mibi_recharge_grid_progress_margin_top">10.0dip</dimen>
@@ -367,11 +398,13 @@
     <dimen name="general__shared__cover_left_shadow_size">7.0dip</dimen>
     <dimen name="general__shared__cover_list_height">88.79999dip</dimen>
     <dimen name="general__shared__cover_list_width">66.599976dip</dimen>
-    <item type="dimen" name="general__shared__cover_progress_size">@dimen/general_font__shared__e</item>
+    <item type="dimen" name="general__shared__cover_progress_size">@dimen/general_font__shared__e
+    </item>
     <dimen name="general__shared__cover_right_shadow_margin_10dip">2.0dip</dimen>
     <dimen name="general__shared__cover_right_shadow_margin_15dip">8.0dip</dimen>
     <dimen name="general__shared__cover_right_shadow_size">7.0dip</dimen>
-    <item type="dimen" name="general__shared__cover_title_size">@dimen/general_font__shared__d</item>
+    <item type="dimen" name="general__shared__cover_title_size">@dimen/general_font__shared__d
+    </item>
     <dimen name="general__shared__cover_top_shadow_margin_10dip">2.0dip</dimen>
     <dimen name="general__shared__cover_top_shadow_margin_15dip">8.0dip</dimen>
     <dimen name="general__shared__cover_top_shadow_size">7.0dip</dimen>
@@ -410,7 +443,9 @@
     <dimen name="mibi_milicenter_guide_grid_item_padding_top_bottom">4.0dip</dimen>
     <dimen name="mibi_milicenter_header_margin_top">13.0dip</dimen>
     <dimen name="mibi_result_sucess_default_size">72.0dip</dimen>
-    <item type="dimen" name="mibi_text_size_giftcard_item_market_giftcard">@dimen/mibi_text_size_giftcard_item_unit</item>
+    <item type="dimen" name="mibi_text_size_giftcard_item_market_giftcard">
+        @dimen/mibi_text_size_giftcard_item_unit
+    </item>
     <dimen name="mibi_text_size_giftcard_item_market_giftcard_name_top_padding">0.0dip</dimen>
     <dimen name="mibi_text_size_grid_item_one_one_title">11.0sp</dimen>
     <dimen name="mibi_text_size_grid_item_two_one_summary">11.0sp</dimen>
@@ -516,7 +551,8 @@
     <dimen name="passport_user_region_warning_margin_bottom">25.0dip</dimen>
     <dimen name="passport_user_region_warning_margin_top">14.0dip</dimen>
     <dimen name="personal__favourite_item_height">98.0dip</dimen>
-    <dimen name="personal__feed_item_content_view__bottom_space_between_delete_reply">33.0dip</dimen>
+    <dimen name="personal__feed_item_content_view__bottom_space_between_delete_reply">33.0dip
+    </dimen>
     <dimen name="personal__feed_item_content_view__bottom_space_between_reply_vote">18.0dip</dimen>
     <dimen name="personal__message_push_item_view__bottom_padding">10.0dip</dimen>
     <dimen name="personal__message_push_item_view__top_padding">10.0dip</dimen>

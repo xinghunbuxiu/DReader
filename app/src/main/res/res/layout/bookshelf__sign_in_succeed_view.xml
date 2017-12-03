@@ -1,20 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/bookshelf__sign_in_succeed_view__label_layout" android:background="#ffd84e43" android:paddingLeft="7.0dip" android:paddingTop="22.0dip" android:paddingRight="7.0dip" android:paddingBottom="23.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <FrameLayout android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-            <ImageView android:layout_gravity="center_horizontal" android:id="@id/bookshelf__sign_in_succeed_view__label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bookshelf__sign_in_succeed_view__label" />
-            <ImageView android:layout_gravity="bottom" android:id="@id/bookshelf__sign_in_succeed_view__count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="67.0dip" android:layout_marginBottom="9.0dip" android:src="@drawable/bookshelf__sign_in_succeed_view__count_6" />
-            <ImageView android:layout_gravity="bottom" android:id="@id/bookshelf__sign_in_succeed_view__resign_count" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="155.0dip" android:layout_marginBottom="9.0dip" android:src="@drawable/bookshelf__sign_in_succeed_view__resign_count_6" />
+<LinearLayout android:layout_gravity="center" android:orientation="vertical"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical"
+        android:id="@id/bookshelf__sign_in_succeed_view__label_layout"
+        android:background="#ffd84e43" android:paddingLeft="7.0dip" android:paddingTop="22.0dip"
+        android:paddingRight="7.0dip" android:paddingBottom="23.0dip"
+        android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <FrameLayout android:layout_gravity="center_horizontal" android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center_horizontal"
+                android:id="@id/bookshelf__sign_in_succeed_view__label"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:src="@drawable/bookshelf__sign_in_succeed_view__label" />
+            <ImageView android:layout_gravity="bottom"
+                android:id="@id/bookshelf__sign_in_succeed_view__count"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginLeft="67.0dip" android:layout_marginBottom="9.0dip"
+                android:src="@drawable/bookshelf__sign_in_succeed_view__count_6" />
+            <ImageView android:layout_gravity="bottom"
+                android:id="@id/bookshelf__sign_in_succeed_view__resign_count"
+                android:visibility="invisible" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_marginLeft="155.0dip"
+                android:layout_marginBottom="9.0dip"
+                android:src="@drawable/bookshelf__sign_in_succeed_view__resign_count_6" />
         </FrameLayout>
-        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/bookshelf__sign_in_succeed_view__reward" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="17.0dip" android:divider="@drawable/bookshelf__sign_in_succeed_view__reward_divider" android:showDividers="middle" />
-        <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="#ffffe2b1" android:layout_gravity="center_horizontal" android:id="@id/bookshelf__sign_in_succeed_view__reward_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" />
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal"
+            android:id="@id/bookshelf__sign_in_succeed_view__reward"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="17.0dip"
+            android:divider="@drawable/bookshelf__sign_in_succeed_view__reward_divider"
+            android:showDividers="middle" />
+        <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="#ffffe2b1"
+            android:layout_gravity="center_horizontal"
+            android:id="@id/bookshelf__sign_in_succeed_view__reward_text"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip" />
     </LinearLayout>
-    <LinearLayout android:orientation="horizontal" android:id="@id/bookshelf__sign_in_succeed_view__hottest" android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="@drawable/bookshelf__sign_in_succeed_view__divider" android:showDividers="middle">
+    <LinearLayout android:orientation="horizontal"
+        android:id="@id/bookshelf__sign_in_succeed_view__hottest"
+        android:background="@color/general__shared__ffffff" android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/bookshelf__sign_in_succeed_view__divider"
+        android:showDividers="middle">
         <include layout="@layout/bookshelf__sign_in_succeed_view__ad_item" />
         <include layout="@layout/bookshelf__sign_in_succeed_view__ad_item" />
         <include layout="@layout/bookshelf__sign_in_succeed_view__ad_item" />
     </LinearLayout>
-    <View android:id="@id/bookshelf__sign_in_succeed_view__line" android:background="#ffcccccc" android:layout_width="fill_parent" android:layout_height="1.0px" />
-    <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="#ffd84e43" android:gravity="center" android:id="@id/bookshelf__sign_in_succeed_view__close" android:background="@drawable/general__shared__button_ffffff" android:layout_width="fill_parent" android:layout_height="54.0dip" android:text="@string/bookshelf__sign_in_succeed_view__close" />
+    <View android:id="@id/bookshelf__sign_in_succeed_view__line" android:background="#ffcccccc"
+        android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="#ffd84e43"
+        android:gravity="center" android:id="@id/bookshelf__sign_in_succeed_view__close"
+        android:background="@drawable/general__shared__button_ffffff"
+        android:layout_width="fill_parent" android:layout_height="54.0dip"
+        android:text="@string/bookshelf__sign_in_succeed_view__close" />
 </LinearLayout>

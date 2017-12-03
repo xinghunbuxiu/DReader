@@ -1,3 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView android:textSize="@dimen/general_font__shared__a" android:textColor="@color/general__shared__888888" android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/personal__auto_buy_view__empty"
-  xmlns:android="http://schemas.android.com/apk/res/android" />
+<TextView android:textSize="@dimen/general_font__shared__a"
+    android:textColor="@color/general__shared__888888" android:gravity="center"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:text="@string/personal__auto_buy_view__empty"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

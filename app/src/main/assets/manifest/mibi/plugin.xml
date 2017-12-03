@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
-    <extension-point
-        id="entry_provider"
-        name="Entry of function"/>
+    <extension-point id="entry_provider" name="Entry of function" />
 
-    <extension
-        id="mibi_entry_provider"
-        name="mibi base entries"
+    <extension id="mibi_entry_provider" name="mibi base entries"
         point="com.xiaomi.payment.entry_provider">
-        <provider id="mibi.billRecord" class="com.xiaomi.payment.entry.BillRecordEntry"/>
-        <provider id="mibi.discounts" class="com.xiaomi.payment.entry.DiscountsEntry"/>
-        <provider id="mibi.giftcardRecord" class="com.xiaomi.payment.entry.GiftcardRecordEntry"/>
-        <provider id="mibi.milicenter" class="com.xiaomi.payment.entry.MiliCenterEntry"/>
-        <provider id="mibi.recharge" class="com.xiaomi.payment.entry.RechargeEntry"/>
+        <provider id="mibi.billRecord" class="com.xiaomi.payment.entry.BillRecordEntry" />
+        <provider id="mibi.discounts" class="com.xiaomi.payment.entry.DiscountsEntry" />
+        <provider id="mibi.giftcardRecord" class="com.xiaomi.payment.entry.GiftcardRecordEntry" />
+        <provider id="mibi.milicenter" class="com.xiaomi.payment.entry.MiliCenterEntry" />
+        <provider id="mibi.recharge" class="com.xiaomi.payment.entry.RechargeEntry" />
     </extension>
 </plugin>
-

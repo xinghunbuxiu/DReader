@@ -1,19 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:id="@id/personal__fav_book_list_item_view__root" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__a" android:textColor="@color/general__shared__181817" android:id="@id/personal__fav_book_list_item_view__title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" />
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__7c7975" android:id="@id/personal__fav_book_list_item_view__summary" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="7.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="7.0dip" android:maxLines="3" />
-        <LinearLayout android:orientation="horizontal" android:id="@id/personal__fav_book_list_item_view__count_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip">
-            <LinearLayout android:orientation="horizontal" android:id="@id/personal__fav_book_list_item_view__creator_container" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
-                <com.duokan.reader.ui.general.DkTinyFaceView android:layout_gravity="center" android:id="@id/personal__fav_book_list_item_view__avatar" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__a3a3a3" android:gravity="center" android:id="@id/personal__fav_book_list_item_view__creator" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="5.0dip" />
+<LinearLayout android:orientation="horizontal"
+    android:id="@id/personal__fav_book_list_item_view__root"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15.0dip">
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:textSize="@dimen/general_font__shared__a"
+            android:textColor="@color/general__shared__181817"
+            android:id="@id/personal__fav_book_list_item_view__title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginRight="20.0dip" />
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:textSize="@dimen/general_font__shared__d"
+            android:textColor="@color/general__shared__7c7975"
+            android:id="@id/personal__fav_book_list_item_view__summary"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginTop="7.0dip"
+            android:layout_marginRight="20.0dip"
+            android:layout_marginBottom="7.0dip"
+            android:maxLines="3" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@id/personal__fav_book_list_item_view__count_container"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginRight="20.0dip">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@id/personal__fav_book_list_item_view__creator_container"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0">
+
+                <com.duokan.reader.ui.general.DkTinyFaceView
+                    android:layout_gravity="center"
+                    android:id="@id/personal__fav_book_list_item_view__avatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__d"
+                    android:textColor="@color/general__shared__a3a3a3"
+                    android:gravity="center"
+                    android:id="@id/personal__fav_book_list_item_view__creator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="5.0dip" />
             </LinearLayout>
-            <LinearLayout android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="0.6">
-                <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__a3a3a3" android:gravity="center|left" android:id="@id/personal__fav_book_list_item_view__fav_count" android:layout_width="0.0dip" android:layout_height="fill_parent" android:drawableLeft="@drawable/store_comment__comment_item_view__like_pressed" android:drawablePadding="5.0dip" android:layout_weight="1.0" />
-                <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__a3a3a3" android:gravity="center|left" android:id="@id/personal__fav_book_list_item_view__comment_count" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:drawableLeft="@drawable/store_comment__comment_item_view__reply" android:drawablePadding="5.0dip" android:layout_weight="0.75" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0.0dip"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.6">
+
+                <TextView
+                    android:textSize="@dimen/general_font__shared__d"
+                    android:textColor="@color/general__shared__a3a3a3"
+                    android:gravity="center|left"
+                    android:id="@id/personal__fav_book_list_item_view__fav_count"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:drawableLeft="@drawable/store_comment__comment_item_view__like_pressed"
+                    android:drawablePadding="5.0dip"
+                    android:layout_weight="1.0" />
+
+                <TextView
+                    android:textSize="@dimen/general_font__shared__d"
+                    android:textColor="@color/general__shared__a3a3a3"
+                    android:gravity="center|left"
+                    android:id="@id/personal__fav_book_list_item_view__comment_count"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="10.0dip"
+                    android:drawableLeft="@drawable/store_comment__comment_item_view__reply"
+                    android:drawablePadding="5.0dip"
+                    android:layout_weight="0.75" />
             </LinearLayout>
         </LinearLayout>
-        <ImageView android:layout_gravity="bottom" android:background="@color/general__shared__e6e6e6" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="12.0dip" />
+
+        <ImageView
+            android:layout_gravity="bottom"
+            android:background="@color/general__shared__e6e6e6"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:layout_marginTop="12.0dip" />
     </LinearLayout>
 </LinearLayout>

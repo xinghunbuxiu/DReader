@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/personal__purchased_book_group_title_view__layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <View android:id="@id/personal__purchased_book_group_title_view__bottom_line" android:background="@color/general__shared__bcbcbc" android:layout_width="fill_parent" android:layout_height="1.0px" />
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical"
+    android:id="@id/personal__purchased_book_group_title_view__layout"
+    android:layout_width="fill_parent" android:layout_height="wrap_content"
+    android:baselineAligned="false" xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/personal__purchased_book_group_title_view__bottom_line"
+        android:background="@color/general__shared__bcbcbc" android:layout_width="fill_parent"
+        android:layout_height="1.0px" />
 </LinearLayout>

@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.PageHeaderView android:id="@id/personal__feedback_thread_view__header" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <com.duokan.reader.ui.general.DkWebListView android:id="@id/personal__feedback_thread_view__replies" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
-    <View android:background="#ffdfdfdf" android:layout_width="fill_parent" android:layout_height="1.0px" />
-    <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="#ff505050" android:gravity="center" android:id="@id/personal__feedback_thread_view__reply" android:background="@drawable/personal__feedback_thread_view__reply" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="15.0dip" android:layout_marginBottom="10.0dip" android:text="@string/general__shared__reply" />
+<LinearLayout android:orientation="vertical" android:background="#ffffffff"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.reader.ui.general.PageHeaderView
+        android:id="@id/personal__feedback_thread_view__header" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    <com.duokan.reader.ui.general.DkWebListView
+        android:id="@id/personal__feedback_thread_view__replies" android:layout_width="fill_parent"
+        android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <View android:background="#ffdfdfdf" android:layout_width="fill_parent"
+        android:layout_height="1.0px" />
+    <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="#ff505050"
+        android:gravity="center" android:id="@id/personal__feedback_thread_view__reply"
+        android:background="@drawable/personal__feedback_thread_view__reply"
+        android:layout_width="fill_parent" android:layout_height="40.0dip"
+        android:layout_marginLeft="15.0dip" android:layout_marginTop="10.0dip"
+        android:layout_marginRight="15.0dip" android:layout_marginBottom="10.0dip"
+        android:text="@string/general__shared__reply" />
 </LinearLayout>

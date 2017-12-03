@@ -1,16 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animation-list android:oneshot="false"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:duration="50" android:drawable="@drawable/general__shared__refreshing_1" />
-    <item android:duration="50" android:drawable="@drawable/general__shared__refreshing_2" />
-    <item android:duration="50" android:drawable="@drawable/general__shared__refreshing_3" />
-    <item android:duration="50" android:drawable="@drawable/general__shared__refreshing_4" />
-    <item android:duration="50" android:drawable="@drawable/general__shared__refreshing_5" />
-    <item android:duration="50" android:drawable="@drawable/general__shared__refreshing_6" />
-    <item android:duration="50" android:drawable="@drawable/general__shared__refreshing_7" />
-    <item android:duration="50" android:drawable="@drawable/general__shared__refreshing_8" />
-    <item android:duration="50" android:drawable="@drawable/general__shared__refreshing_9" />
-    <item android:duration="50" android:drawable="@drawable/general__shared__refreshing_10" />
-    <item android:duration="50" android:drawable="@drawable/general__shared__refreshing_11" />
-    <item android:duration="50" android:drawable="@drawable/general__shared__refreshing_12" />
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:duration="50"
+        android:drawable="@drawable/general__shared__refreshing_1" />
+    <item
+        android:duration="50"
+        android:drawable="@drawable/general__shared__refreshing_2" />
+    <item
+        android:duration="50"
+        android:drawable="@drawable/general__shared__refreshing_3" />
+    <item
+        android:duration="50"
+        android:drawable="@drawable/general__shared__refreshing_4" />
+    <item
+        android:duration="50"
+        android:drawable="@drawable/general__shared__refreshing_5" />
+    <item
+        android:duration="50"
+        android:drawable="@drawable/general__shared__refreshing_6" />
+    <item
+        android:duration="50"
+        android:drawable="@drawable/general__shared__refreshing_7" />
+    <item
+        android:duration="50"
+        android:drawable="@drawable/general__shared__refreshing_8" />
+    <item
+        android:duration="50"
+        android:drawable="@drawable/general__shared__refreshing_9" />
+    <item
+        android:duration="50"
+        android:drawable="@drawable/general__shared__refreshing_10" />
+    <item
+        android:duration="50"
+        android:drawable="@drawable/general__shared__refreshing_11" />
+    <item
+        android:duration="50"
+        android:drawable="@drawable/general__shared__refreshing_12" />
 </animation-list>

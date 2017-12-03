@@ -1,43 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:background="@color/general__shared__ffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.core.ui.LinearScrollView android:orientation="vertical" android:id="@id/personal__account_summary_view__scroller" android:layout_width="fill_parent" android:layout_height="wrap_content">
+<FrameLayout android:background="@color/general__shared__ffffff" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.core.ui.LinearScrollView android:orientation="vertical"
+        android:id="@id/personal__account_summary_view__scroller" android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
         <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <FrameLayout android:id="@id/personal__account_summary_view__my_shopping_cart" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
-                <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__585858" android:gravity="center" android:paddingTop="15.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/personal__account_summary_view__my_shopping_cart" android:drawableTop="@drawable/personal__account_summary_view__my_shopping_cart" android:drawablePadding="5.0dip" />
-                <ImageView android:layout_gravity="center" android:id="@id/personal__account_summary_view__shopping_cart_dot" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="11.0dip" android:layout_marginBottom="18.0dip" android:src="@drawable/bookshelf__header_view__have_new_message" />
+            <FrameLayout android:id="@id/personal__account_summary_view__my_shopping_cart"
+                android:layout_width="0.0dip" android:layout_height="wrap_content"
+                android:layout_weight="1.0">
+                <TextView android:textSize="@dimen/general_font__shared__d"
+                    android:textColor="@color/general__shared__585858" android:gravity="center"
+                    android:paddingTop="15.0dip" android:paddingBottom="10.0dip"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content"
+                    android:text="@string/personal__account_summary_view__my_shopping_cart"
+                    android:drawableTop="@drawable/personal__account_summary_view__my_shopping_cart"
+                    android:drawablePadding="5.0dip" />
+                <ImageView android:layout_gravity="center"
+                    android:id="@id/personal__account_summary_view__shopping_cart_dot"
+                    android:visibility="visible" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_marginLeft="11.0dip"
+                    android:layout_marginBottom="18.0dip"
+                    android:src="@drawable/bookshelf__header_view__have_new_message" />
             </FrameLayout>
-            <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__585858" android:gravity="center" android:id="@id/personal__account_summary_view__my_coupon" android:paddingTop="15.0dip" android:paddingBottom="10.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/personal__account_summary_view__my_coupon" android:drawableTop="@drawable/personal__account_summary_view__my_coupon" android:drawablePadding="5.0dip" android:layout_weight="1.0" />
-            <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__585858" android:gravity="center" android:id="@id/personal__account_summary_view__my_cash" android:paddingTop="15.0dip" android:paddingBottom="10.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/personal__account_summary_view__my_cash" android:drawableTop="@drawable/personal__account_summary_view__my_cash" android:drawablePadding="5.0dip" android:layout_weight="1.0" />
-            <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__585858" android:gravity="center" android:id="@id/personal__account_summary_view__my_reward" android:paddingTop="15.0dip" android:paddingBottom="10.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/personal__account_summary_view__my_reward" android:drawableTop="@drawable/personal__account_summary_view__my_reward" android:drawablePadding="5.0dip" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/general_font__shared__d"
+                android:textColor="@color/general__shared__585858" android:gravity="center"
+                android:id="@id/personal__account_summary_view__my_coupon"
+                android:paddingTop="15.0dip" android:paddingBottom="10.0dip"
+                android:layout_width="0.0dip" android:layout_height="wrap_content"
+                android:text="@string/personal__account_summary_view__my_coupon"
+                android:drawableTop="@drawable/personal__account_summary_view__my_coupon"
+                android:drawablePadding="5.0dip" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/general_font__shared__d"
+                android:textColor="@color/general__shared__585858" android:gravity="center"
+                android:id="@id/personal__account_summary_view__my_cash"
+                android:paddingTop="15.0dip" android:paddingBottom="10.0dip"
+                android:layout_width="0.0dip" android:layout_height="wrap_content"
+                android:text="@string/personal__account_summary_view__my_cash"
+                android:drawableTop="@drawable/personal__account_summary_view__my_cash"
+                android:drawablePadding="5.0dip" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/general_font__shared__d"
+                android:textColor="@color/general__shared__585858" android:gravity="center"
+                android:id="@id/personal__account_summary_view__my_reward"
+                android:paddingTop="15.0dip" android:paddingBottom="10.0dip"
+                android:layout_width="0.0dip" android:layout_height="wrap_content"
+                android:text="@string/personal__account_summary_view__my_reward"
+                android:drawableTop="@drawable/personal__account_summary_view__my_reward"
+                android:drawablePadding="5.0dip" android:layout_weight="1.0" />
         </LinearLayout>
-        <View android:background="@color/general__shared__c9" android:layout_width="fill_parent" android:layout_height="1.0px" />
-        <TextView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__c1" android:gravity="center" android:id="@id/personal__account_summary_view__add_fund" android:background="@drawable/general__shared__text_pressed" android:paddingTop="15.0dip" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/personal__account_summary_view__add_fund" />
-        <LinearLayout android:orientation="vertical" android:id="@id/personal__account_summary_view__task" android:layout_width="fill_parent" android:layout_height="0.0dip">
-            <View android:background="@color/general__shared__eeece9" android:layout_width="fill_parent" android:layout_height="10.0dip" />
+        <View android:background="@color/general__shared__c9" android:layout_width="fill_parent"
+            android:layout_height="1.0px" />
+        <TextView android:textSize="@dimen/general_font__shared__b"
+            android:textColor="@color/general__shared__c1" android:gravity="center"
+            android:id="@id/personal__account_summary_view__add_fund"
+            android:background="@drawable/general__shared__text_pressed"
+            android:paddingTop="15.0dip" android:paddingBottom="15.0dip"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:text="@string/personal__account_summary_view__add_fund" />
+        <LinearLayout android:orientation="vertical"
+            android:id="@id/personal__account_summary_view__task" android:layout_width="fill_parent"
+            android:layout_height="0.0dip">
+            <View android:background="@color/general__shared__eeece9"
+                android:layout_width="fill_parent" android:layout_height="10.0dip" />
         </LinearLayout>
-        <View android:background="@color/general__shared__eeece9" android:layout_width="fill_parent" android:layout_height="10.0dip" />
-        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="@drawable/personal__account_summary_view__divider" android:showDividers="middle" android:dividerPadding="20.0dip">
-            <RelativeLayout android:id="@id/personal__account_summary_view__my_purchased" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip">
-                <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__585858" android:id="@id/personal__account_summary_view__my_purchased_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/personal__account_summary_view__my_purchased_and_cloud" android:drawableLeft="@drawable/personal__account_summary_view__my_purchased" android:drawablePadding="12.0dip" android:layout_centerVertical="true" />
-                <ImageView android:id="@id/personal__account_summary_view__purchased_dot" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="5.0dip" android:src="@drawable/bookshelf__header_view__have_new_message" android:scaleType="center" android:layout_toRightOf="@id/personal__account_summary_view__my_purchased_label" />
-                <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__8d8d8d" android:id="@id/personal__account_summary_view__purchased_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <View android:background="@color/general__shared__eeece9" android:layout_width="fill_parent"
+            android:layout_height="10.0dip" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/personal__account_summary_view__divider"
+            android:showDividers="middle" android:dividerPadding="20.0dip">
+            <RelativeLayout android:id="@id/personal__account_summary_view__my_purchased"
+                android:paddingLeft="20.0dip" android:paddingRight="20.0dip"
+                android:layout_width="fill_parent" android:layout_height="50.0dip">
+                <TextView android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__585858"
+                    android:id="@id/personal__account_summary_view__my_purchased_label"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/personal__account_summary_view__my_purchased_and_cloud"
+                    android:drawableLeft="@drawable/personal__account_summary_view__my_purchased"
+                    android:drawablePadding="12.0dip" android:layout_centerVertical="true" />
+                <ImageView android:id="@id/personal__account_summary_view__purchased_dot"
+                    android:visibility="visible" android:layout_width="wrap_content"
+                    android:layout_height="fill_parent" android:layout_marginLeft="5.0dip"
+                    android:src="@drawable/bookshelf__header_view__have_new_message"
+                    android:scaleType="center"
+                    android:layout_toRightOf="@id/personal__account_summary_view__my_purchased_label" />
+                <TextView android:textSize="@dimen/general_font__shared__d"
+                    android:textColor="@color/general__shared__8d8d8d"
+                    android:id="@id/personal__account_summary_view__purchased_count"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true" android:layout_centerVertical="true" />
             </RelativeLayout>
-            <RelativeLayout android:id="@id/personal__account_summary_view__my_read_books" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip">
-                <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__585858" android:id="@id/personal__account_summary_view__read_books_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/personal__account_summary_view__my_experience" android:drawableLeft="@drawable/personal__account_summary_view__my_experience" android:drawablePadding="12.0dip" android:layout_centerVertical="true" />
-                <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__8d8d8d" android:id="@id/personal__account_summary_view__read_books_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <RelativeLayout android:id="@id/personal__account_summary_view__my_read_books"
+                android:paddingLeft="20.0dip" android:paddingRight="20.0dip"
+                android:layout_width="fill_parent" android:layout_height="50.0dip">
+                <TextView android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__585858"
+                    android:id="@id/personal__account_summary_view__read_books_label"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/personal__account_summary_view__my_experience"
+                    android:drawableLeft="@drawable/personal__account_summary_view__my_experience"
+                    android:drawablePadding="12.0dip" android:layout_centerVertical="true" />
+                <TextView android:textSize="@dimen/general_font__shared__d"
+                    android:textColor="@color/general__shared__8d8d8d"
+                    android:id="@id/personal__account_summary_view__read_books_count"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true" android:layout_centerVertical="true" />
             </RelativeLayout>
-            <RelativeLayout android:id="@id/personal__account_summary_view__my_notes" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip">
-                <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__585858" android:id="@id/personal__account_summary_view__notes_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/personal__account_summary_view__my_notes" android:drawableLeft="@drawable/personal__account_summary_view__my_notes" android:drawablePadding="12.0dip" android:layout_centerVertical="true" />
-                <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__8d8d8d" android:id="@id/personal__account_summary_view__notes_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <RelativeLayout android:id="@id/personal__account_summary_view__my_notes"
+                android:paddingLeft="20.0dip" android:paddingRight="20.0dip"
+                android:layout_width="fill_parent" android:layout_height="50.0dip">
+                <TextView android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__585858"
+                    android:id="@id/personal__account_summary_view__notes_label"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/personal__account_summary_view__my_notes"
+                    android:drawableLeft="@drawable/personal__account_summary_view__my_notes"
+                    android:drawablePadding="12.0dip" android:layout_centerVertical="true" />
+                <TextView android:textSize="@dimen/general_font__shared__d"
+                    android:textColor="@color/general__shared__8d8d8d"
+                    android:id="@id/personal__account_summary_view__notes_count"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true" android:layout_centerVertical="true" />
             </RelativeLayout>
-            <RelativeLayout android:id="@id/personal__account_summary_view__my_wish" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip">
-                <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__585858" android:id="@id/personal__account_summary_view__my_wish_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/personal__account_summary_view__my_wish" android:drawableLeft="@drawable/personal__account_summary_view__my_wish" android:drawablePadding="12.0dip" android:layout_centerVertical="true" />
-                <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__8d8d8d" android:id="@id/personal__account_summary_view__wish_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <RelativeLayout android:id="@id/personal__account_summary_view__my_wish"
+                android:paddingLeft="20.0dip" android:paddingRight="20.0dip"
+                android:layout_width="fill_parent" android:layout_height="50.0dip">
+                <TextView android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__585858"
+                    android:id="@id/personal__account_summary_view__my_wish_label"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/personal__account_summary_view__my_wish"
+                    android:drawableLeft="@drawable/personal__account_summary_view__my_wish"
+                    android:drawablePadding="12.0dip" android:layout_centerVertical="true" />
+                <TextView android:textSize="@dimen/general_font__shared__d"
+                    android:textColor="@color/general__shared__8d8d8d"
+                    android:id="@id/personal__account_summary_view__wish_count"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true" android:layout_centerVertical="true" />
             </RelativeLayout>
-            <RelativeLayout android:id="@id/personal__account_summary_view__my_book_list" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip">
-                <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__585858" android:id="@id/personal__account_summary_view__my_book_list_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/personal__account_summary_view__my_book_list" android:drawableLeft="@drawable/personal__account_summary_view__my_book_list" android:drawablePadding="12.0dip" android:layout_centerVertical="true" />
-                <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__cacaca" android:id="@id/personal__account_summary_view__book_list_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <RelativeLayout android:id="@id/personal__account_summary_view__my_book_list"
+                android:paddingLeft="20.0dip" android:paddingRight="20.0dip"
+                android:layout_width="fill_parent" android:layout_height="50.0dip">
+                <TextView android:textSize="@dimen/general_font__shared__c"
+                    android:textColor="@color/general__shared__585858"
+                    android:id="@id/personal__account_summary_view__my_book_list_label"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/personal__account_summary_view__my_book_list"
+                    android:drawableLeft="@drawable/personal__account_summary_view__my_book_list"
+                    android:drawablePadding="12.0dip" android:layout_centerVertical="true" />
+                <TextView android:textSize="@dimen/general_font__shared__d"
+                    android:textColor="@color/general__shared__cacaca"
+                    android:id="@id/personal__account_summary_view__book_list_count"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true" android:layout_centerVertical="true" />
             </RelativeLayout>
         </LinearLayout>
     </com.duokan.core.ui.LinearScrollView>

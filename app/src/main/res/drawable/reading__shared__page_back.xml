@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <selector>
             <item android:state_enabled="false">
-                <bitmap android:gravity="center" android:src="@drawable/reading__shared__page_back_disabled" />
+                <bitmap
+                    android:gravity="center"
+                    android:src="@drawable/reading__shared__page_back_disabled" />
             </item>
             <item android:state_selected="true">
-                <bitmap android:gravity="center" android:src="@drawable/reading__shared__page_back_selected" />
+                <bitmap
+                    android:gravity="center"
+                    android:src="@drawable/reading__shared__page_back_selected" />
             </item>
             <item>
-                <bitmap android:gravity="center" android:src="@drawable/reading__shared__page_back_normal" />
+                <bitmap
+                    android:gravity="center"
+                    android:src="@drawable/reading__shared__page_back_normal" />
             </item>
         </selector>
     </item>

@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:background="@drawable/general__shared__button_light_29dip_c9c9c9" android:paddingLeft="10.0dip" android:paddingTop="5.0dip" android:paddingRight="10.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:layout_gravity="center_vertical" android:id="@id/bookshelf__book_sort_view__style" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/bookshelf__book_sort_view__grid" android:contentDescription="@string/bookshelf__menu_view__organize_shelf" />
-    <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:src="@drawable/bookshelf__book_sort_view__arrow" />
+<LinearLayout android:orientation="horizontal"
+    android:background="@drawable/general__shared__button_light_29dip_c9c9c9"
+    android:paddingLeft="10.0dip"
+    android:paddingTop="5.0dip"
+    android:paddingRight="10.0dip"
+    android:paddingBottom="5.0dip"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_gravity="center_vertical"
+        android:id="@id/bookshelf__book_sort_view__style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bookshelf__book_sort_view__grid"
+        android:contentDescription="@string/bookshelf__menu_view__organize_shelf" />
+
+    <ImageView
+        android:layout_gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8.0dip"
+        android:src="@drawable/bookshelf__book_sort_view__arrow" />
 </LinearLayout>

@@ -1,13 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.core.ui.BoxView android:id="@id/account__bitmap_factory_content_view__text_box" android:background="#fffff5e4" android:paddingLeft="40.0px" android:paddingTop="30.0px" android:paddingRight="40.0px" android:paddingBottom="30.0px" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <com.duokan.reader.ui.general.deprecatedDkTextView android:textSize="48.0px" android:textColor="@color/general__shared__8d6752" android:ellipsize="end" android:gravity="fill" android:id="@id/account__bitmap_factory_content_view__text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="false" android:layout_alignParentTop="true" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <com.duokan.core.ui.BoxView android:id="@id/account__bitmap_factory_content_view__text_box"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:background="#fffff5e4" android:paddingBottom="30.0px" android:paddingLeft="40.0px"
+        android:paddingRight="40.0px" android:paddingTop="30.0px">
+        <com.duokan.reader.ui.general.deprecatedDkTextView
+            android:id="@id/account__bitmap_factory_content_view__text"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:layout_alignParentTop="true" android:ellipsize="end" android:gravity="fill"
+            android:singleLine="false" android:textColor="@color/general__shared__8d6752"
+            android:textSize="48.0px" />
     </com.duokan.core.ui.BoxView>
-    <RelativeLayout android:layout_gravity="bottom" android:id="@id/account__bitmap_factory_content_view__book_info" android:background="#fff6f6f6" android:paddingLeft="20.0px" android:paddingTop="20.0px" android:paddingRight="20.0px" android:paddingBottom="20.0px" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="30.0px">
-        <com.duokan.reader.ui.general.BookCoverView android:id="@id/account__bitmap_factory_content_view__book_cover" android:background="@null" android:layout_width="204.0px" android:layout_height="278.0px" android:layout_marginLeft="6.0dip" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_centerVertical="true" />
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="48.0px" android:textColor="@color/general__shared__333333" android:ellipsize="end" android:gravity="top" android:id="@id/account__bitmap_factory_content_view__book_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="30.0px" android:layout_marginTop="@dimen/general__shared__cover_top_shadow_size" android:layout_marginRight="30.0px" android:maxLines="2" android:includeFontPadding="false" android:layout_toRightOf="@id/account__bitmap_factory_content_view__book_cover" android:layout_alignTop="@id/account__bitmap_factory_content_view__book_cover" />
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="36.0px" android:textColor="@color/general__shared__666666" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/account__bitmap_factory_content_view__book_author" android:paddingTop="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="30.0px" android:layout_marginRight="30.0px" android:singleLine="true" android:layout_toRightOf="@id/account__bitmap_factory_content_view__book_cover" android:layout_below="@id/account__bitmap_factory_content_view__book_name" />
+    <RelativeLayout android:id="@id/account__bitmap_factory_content_view__book_info"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_gravity="bottom" android:layout_marginTop="30.0px"
+        android:background="#fff6f6f6" android:paddingBottom="20.0px" android:paddingLeft="20.0px"
+        android:paddingRight="20.0px" android:paddingTop="20.0px">
+        <com.duokan.reader.ui.general.BookCoverView
+            android:id="@id/account__bitmap_factory_content_view__book_cover"
+            android:layout_width="204.0px" android:layout_height="278.0px"
+            android:layout_alignParentLeft="true" android:layout_alignParentTop="true"
+            android:layout_centerVertical="true" android:layout_marginLeft="6.0dip"
+            android:background="@null" />
+        <com.duokan.reader.ui.general.DkLabelView
+            android:id="@id/account__bitmap_factory_content_view__book_name"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:layout_alignTop="@id/account__bitmap_factory_content_view__book_cover"
+            android:layout_marginLeft="30.0px" android:layout_marginRight="30.0px"
+            android:layout_marginTop="@dimen/general__shared__cover_top_shadow_size"
+            android:layout_toRightOf="@id/account__bitmap_factory_content_view__book_cover"
+            android:ellipsize="end" android:gravity="top" android:includeFontPadding="false"
+            android:maxLines="2" android:textColor="@color/general__shared__333333"
+            android:textSize="48.0px" />
+        <com.duokan.reader.ui.general.DkLabelView
+            android:id="@id/account__bitmap_factory_content_view__book_author"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:layout_below="@id/account__bitmap_factory_content_view__book_name"
+            android:layout_marginLeft="30.0px" android:layout_marginRight="30.0px"
+            android:layout_toRightOf="@id/account__bitmap_factory_content_view__book_cover"
+            android:ellipsize="end" android:gravity="center_vertical" android:paddingTop="5.0dip"
+            android:singleLine="true" android:textColor="@color/general__shared__666666"
+            android:textSize="36.0px" />
     </RelativeLayout>
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="32.0px" android:textColor="@color/general__shared__999999" android:ellipsize="end" android:gravity="center_vertical" android:layout_gravity="bottom|center|right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0px" android:layout_marginBottom="30.0px" android:text="@string/share_form_app" android:singleLine="true" />
+    <com.duokan.reader.ui.general.DkLabelView android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_gravity="bottom|center|right"
+        android:layout_marginBottom="30.0px" android:layout_marginTop="30.0px"
+        android:ellipsize="end" android:gravity="center_vertical" android:singleLine="true"
+        android:text="@string/share_form_app" android:textColor="@color/general__shared__999999"
+        android:textSize="32.0px" />
 </LinearLayout>

@@ -1,14 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/direct_pay" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/mibi_payment_general_padding" android:layout_marginRight="@dimen/mibi_payment_general_padding" style="@style/Mibi.Payment.Item">
-        <TextView android:ellipsize="marquee" android:id="@id/text_order_name" android:focusable="false" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" style="@style/Mibi.TextAppearance.Payment.General" />
-        <TextView android:gravity="right" android:id="@id/text_order_price_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/mibi_payment_price_unit_gap" style="@style/Mibi.TextAppearance.Payment.General.Red" />
-        <TextView android:gravity="right" android:id="@id/text_order_price_unit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/mibi_unit" style="@style/Mibi.TextAppearance.Payment.General" />
+<LinearLayout android:orientation="vertical"
+    android:id="@id/direct_pay"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/mibi_payment_general_padding"
+        android:layout_marginRight="@dimen/mibi_payment_general_padding"
+        style="@style/Mibi.Payment.Item">
+
+        <TextView
+            android:ellipsize="marquee"
+            android:id="@id/text_order_name"
+            android:focusable="false"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_weight="1.0"
+            style="@style/Mibi.TextAppearance.Payment.General" />
+
+        <TextView
+            android:gravity="right"
+            android:id="@id/text_order_price_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mibi_payment_price_unit_gap"
+            style="@style/Mibi.TextAppearance.Payment.General.Red" />
+
+        <TextView
+            android:gravity="right"
+            android:id="@id/text_order_price_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:text="@string/mibi_unit"
+            style="@style/Mibi.TextAppearance.Payment.General" />
     </LinearLayout>
-    <LinearLayout android:gravity="center_vertical" android:id="@id/direct_pay_type" android:background="@drawable/mibi_last_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <TextView android:ellipsize="end" android:gravity="left" android:id="@id/direct_pay_type_name" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" style="@style/Mibi.TextAppearance.Payment.General" />
-        <ImageView android:gravity="right" android:id="@id/pay_type_choose_arrow_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/mibi_arrow_right" />
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:id="@id/direct_pay_type"
+        android:background="@drawable/mibi_last_item_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:ellipsize="end"
+            android:gravity="left"
+            android:id="@id/direct_pay_type_name"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_weight="1.0"
+            style="@style/Mibi.TextAppearance.Payment.General" />
+
+        <ImageView
+            android:gravity="right"
+            android:id="@id/pay_type_choose_arrow_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/mibi_arrow_right" />
     </LinearLayout>
-    <TextView android:textSize="@dimen/mibi_text_size_payment_small" android:textColor="@color/mibi_text_color_payment_general" android:layout_gravity="center" android:id="@id/discount" android:paddingLeft="@dimen/mibi_payment_general_padding" android:paddingRight="@dimen/mibi_payment_general_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_payment_general_gap" />
+
+    <TextView
+        android:textSize="@dimen/mibi_text_size_payment_small"
+        android:textColor="@color/mibi_text_color_payment_general"
+        android:layout_gravity="center"
+        android:id="@id/discount"
+        android:paddingLeft="@dimen/mibi_payment_general_padding"
+        android:paddingRight="@dimen/mibi_payment_general_padding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mibi_payment_general_gap" />
 </LinearLayout>

@@ -1,29 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__cccccc" android:gravity="center_vertical" android:layout_gravity="center" android:id="@id/reading__translation_after_download" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginBottom="20.0dip" android:text="@string/reading__translation_view__no_result" android:drawableLeft="@drawable/reading__dict_book_not_found" android:drawablePadding="4.0dip" />
-        <com.duokan.core.ui.LinearScrollView android:orientation="vertical" android:id="@id/reading__translation_view__scrollview" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="50.0dip">
-            <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <LinearLayout android:orientation="horizontal" android:paddingRight="30.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                    <com.duokan.reader.ui.general.deprecatedDkTextView android:textSize="@dimen/general_font__shared__a" android:textColor="@color/general__shared__ed6c00" android:id="@id/reading__translation_view__word" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-                    <ImageView android:layout_gravity="center_vertical" android:id="@id/reading__translation_view__voice" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/reading__translation_view__play_audio" />
+<FrameLayout android:paddingLeft="8.0dip"
+    android:paddingRight="8.0dip"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:textSize="@dimen/general_font__shared__c"
+            android:textColor="@color/general__shared__cccccc"
+            android:gravity="center_vertical"
+            android:layout_gravity="center"
+            android:id="@id/reading__translation_after_download"
+            android:layout_width="wrap_content"
+            android:layout_height="30.0dip"
+            android:layout_marginBottom="20.0dip"
+            android:text="@string/reading__translation_view__no_result"
+            android:drawableLeft="@drawable/reading__dict_book_not_found"
+            android:drawablePadding="4.0dip" />
+
+        <com.duokan.core.ui.LinearScrollView
+            android:orientation="vertical"
+            android:id="@id/reading__translation_view__scrollview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50.0dip">
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:paddingRight="30.0dip"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.duokan.reader.ui.general.deprecatedDkTextView
+                        android:textSize="@dimen/general_font__shared__a"
+                        android:textColor="@color/general__shared__ed6c00"
+                        android:id="@id/reading__translation_view__word"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:id="@id/reading__translation_view__voice"
+                        android:paddingLeft="10.0dip"
+                        android:paddingRight="10.0dip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/reading__translation_view__play_audio" />
                 </LinearLayout>
-                <ImageView android:layout_gravity="center|right" android:id="@id/reading__translation_view__settings" android:paddingLeft="10.0dip" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/reading__translation_view__settings" />
+
+                <ImageView
+                    android:layout_gravity="center|right"
+                    android:id="@id/reading__translation_view__settings"
+                    android:paddingLeft="10.0dip"
+                    android:paddingRight="5.0dip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/reading__translation_view__settings" />
             </FrameLayout>
-            <FrameLayout android:gravity="center|left" android:orientation="horizontal" android:id="@id/reading__translation_view__dict_line" android:paddingBottom="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <LinearLayout android:orientation="vertical" android:id="@id/reading__translation_view__meanings" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:gravity="center|left"
+                android:orientation="horizontal"
+                android:id="@id/reading__translation_view__dict_line"
+                android:paddingBottom="6.0dip"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@id/reading__translation_view__meanings"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
             </FrameLayout>
         </com.duokan.core.ui.LinearScrollView>
     </FrameLayout>
-    <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/reading__translation_view__dict_list" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content">
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__ffffff" android:id="@id/reading__translation_view__dict_baidu" android:paddingTop="4.0dip" android:paddingRight="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reading__translation_view__dict_baidu" />
-            <View android:layout_gravity="center_vertical" android:background="#ff909090" android:layout_width="1.0dip" android:layout_height="13.0dip" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" />
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__ffffff" android:id="@id/reading__translation_view__dict_wiki" android:paddingLeft="4.0dip" android:paddingTop="4.0dip" android:paddingRight="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reading__translation_view__dict_wiki" />
-            <View android:layout_gravity="center_vertical" android:background="#ff909090" android:layout_width="1.0dip" android:layout_height="13.0dip" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip" />
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__ffffff" android:id="@id/reading__translation_view__dict_search" android:paddingLeft="4.0dip" android:paddingTop="4.0dip" android:paddingRight="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reading__translation_view__dict_search" />
+
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:id="@id/reading__translation_view__dict_list"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textColor="@color/general__shared__ffffff"
+                android:id="@id/reading__translation_view__dict_baidu"
+                android:paddingTop="4.0dip"
+                android:paddingRight="4.0dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reading__translation_view__dict_baidu" />
+
+            <View
+                android:layout_gravity="center_vertical"
+                android:background="#ff909090"
+                android:layout_width="1.0dip"
+                android:layout_height="13.0dip"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginRight="8.0dip" />
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textColor="@color/general__shared__ffffff"
+                android:id="@id/reading__translation_view__dict_wiki"
+                android:paddingLeft="4.0dip"
+                android:paddingTop="4.0dip"
+                android:paddingRight="4.0dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reading__translation_view__dict_wiki" />
+
+            <View
+                android:layout_gravity="center_vertical"
+                android:background="#ff909090"
+                android:layout_width="1.0dip"
+                android:layout_height="13.0dip"
+                android:layout_marginLeft="8.0dip"
+                android:layout_marginRight="8.0dip" />
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__c"
+                android:textColor="@color/general__shared__ffffff"
+                android:id="@id/reading__translation_view__dict_search"
+                android:paddingLeft="4.0dip"
+                android:paddingTop="4.0dip"
+                android:paddingRight="4.0dip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reading__translation_view__dict_search" />
         </LinearLayout>
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="10.0sp" android:textColor="@color/general__shared__6d6c6c" android:layout_gravity="bottom|center" android:paddingLeft="4.0dip" android:paddingRight="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reading__translation_view__provided_by_iciba" />
+
+        <com.duokan.reader.ui.general.DkLabelView
+            android:textSize="10.0sp"
+            android:textColor="@color/general__shared__6d6c6c"
+            android:layout_gravity="bottom|center"
+            android:paddingLeft="4.0dip"
+            android:paddingRight="4.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reading__translation_view__provided_by_iciba" />
     </LinearLayout>
 </FrameLayout>

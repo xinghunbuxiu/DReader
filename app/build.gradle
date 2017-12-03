@@ -26,8 +26,8 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:multidex:1.0.1'
-    compile 'org.apache.httpcomponents:httpclient:4.5.3'
     testCompile 'junit:junit:4.12'
     compile files('libs/org_apache_http.jar')
     compile files('libs/miuipub.jar')
+    compile files('libs/com.duokan.reader-enjarify.jar')
 }

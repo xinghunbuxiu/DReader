@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@android:id/background" android:drawable="@drawable/bookshelf__cloud_storage_space_stats_view__progress_bg" />
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background"
+        android:drawable="@drawable/bookshelf__cloud_storage_space_stats_view__progress_bg" />
     <item android:id="@android:id/secondaryProgress">
-        <clip android:gravity="left" android:drawable="@drawable/bookshelf__cloud_storage_space_stats_view__progress_fg" android:clipOrientation="horizontal" />
+        <clip android:gravity="left"
+            android:drawable="@drawable/bookshelf__cloud_storage_space_stats_view__progress_fg"
+            android:clipOrientation="horizontal" />
     </item>
     <item android:id="@android:id/progress">
-        <clip android:gravity="left" android:drawable="@drawable/bookshelf__cloud_storage_space_stats_view__progress_fg" android:clipOrientation="horizontal" />
+        <clip android:gravity="left"
+            android:drawable="@drawable/bookshelf__cloud_storage_space_stats_view__progress_fg"
+            android:clipOrientation="horizontal" />
     </item>
 </layer-list>

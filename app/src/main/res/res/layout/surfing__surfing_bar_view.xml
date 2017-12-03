@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_gravity="bottom" android:id="@id/surfing__surfing_view__root" android:background="@drawable/surfing__surfing_view__background" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.core.ui.BoxView android:gravity="center" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:maxWidth="@dimen/home__surfing_indicator_view__max_width">
-        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/surfing__frame_view__indicator" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+<FrameLayout android:layout_gravity="bottom" android:id="@id/surfing__surfing_view__root"
+    android:background="@drawable/surfing__surfing_view__background" android:clickable="true"
+    android:layout_width="fill_parent" android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.core.ui.BoxView android:gravity="center" android:layout_gravity="center"
+        android:layout_width="fill_parent" android:layout_height="fill_parent"
+        android:maxWidth="@dimen/home__surfing_indicator_view__max_width">
+        <LinearLayout android:gravity="center" android:orientation="horizontal"
+            android:id="@id/surfing__frame_view__indicator" android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
     </com.duokan.core.ui.BoxView>
 </FrameLayout>

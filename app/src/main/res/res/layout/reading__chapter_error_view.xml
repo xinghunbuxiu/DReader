@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/general_font__shared__a" android:textColor="#ff000000" android:gravity="center" android:id="@id/reading__chapter_error_view__name" android:layout_width="250.0dip" android:layout_height="wrap_content" />
-    <TextView android:textSize="@dimen/general_font__shared__b" android:gravity="center" android:id="@id/reading__chapter_error_view__tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/reading__chapter_error_view__network_error" />
-    <TextView android:textSize="@dimen/general_font__shared__b" android:textColor="@android:color/white" android:gravity="center" android:id="@id/reading__chapter_error_view__retry" android:background="@drawable/general__shared__rounded_button_orange" android:layout_width="207.0dip" android:layout_height="36.0dip" android:layout_marginTop="25.0dip" android:text="@string/reading__shared__click_to_retry" />
+<LinearLayout android:gravity="center" android:orientation="vertical"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/general_font__shared__a" android:textColor="#ff000000"
+        android:gravity="center" android:id="@id/reading__chapter_error_view__name"
+        android:layout_width="250.0dip" android:layout_height="wrap_content" />
+    <TextView android:textSize="@dimen/general_font__shared__b" android:gravity="center"
+        android:id="@id/reading__chapter_error_view__tip" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginTop="5.0dip"
+        android:text="@string/reading__chapter_error_view__network_error" />
+    <TextView android:textSize="@dimen/general_font__shared__b"
+        android:textColor="@android:color/white" android:gravity="center"
+        android:id="@id/reading__chapter_error_view__retry"
+        android:background="@drawable/general__shared__rounded_button_orange"
+        android:layout_width="207.0dip" android:layout_height="36.0dip"
+        android:layout_marginTop="25.0dip" android:text="@string/reading__shared__click_to_retry" />
 </LinearLayout>

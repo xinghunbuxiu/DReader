@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape
-  xmlns:android="http://schemas.android.com/apk/res/android">
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@color/personal__tag_blue_bg" />
     <corners android:radius="6.0dip" />
-    <padding android:left="3.0dip" android:right="3.0dip" android:bottom="1.0dip" />
+    <padding
+        android:left="3.0dip"
+        android:right="3.0dip"
+        android:bottom="1.0dip" />
 </shape>

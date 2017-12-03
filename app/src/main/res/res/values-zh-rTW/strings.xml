@@ -19,7 +19,9 @@
     <string name="passport_back">返回</string>
     <string name="passport_bad_authentication">用戶名密碼不匹配</string>
     <string name="passport_barcode_add_account_prompt">登入後請再次掃描二維碼確認授權登入</string>
-    <string name="passport_change_account"><u>更改帳號</u></string>
+    <string name="passport_change_account">
+        <u>更改帳號</u>
+    </string>
     <string name="passport_change_phone_number">換個號碼</string>
     <string name="passport_checking_account">正在驗證...</string>
     <string name="passport_checking_input">正在檢查輸入</string>
@@ -35,8 +37,9 @@
     <string name="passport_email">請輸入您的電子信箱地址</string>
     <string name="passport_email_or_id_hint_text">電子信箱/小米ID</string>
     <string name="passport_email_reg_success_summary">"您的小米帳號安全信箱是:
-%1$s
-用於登入小米帳號和找回密碼"</string>
+        %1$s
+        用於登入小米帳號和找回密碼"
+    </string>
     <string name="passport_error_auth_fail">帳號資訊已過期，請重試</string>
     <string name="passport_error_device_id">無法取得裝置號</string>
     <string name="passport_error_dup_email">該電子信箱已被註冊</string>
@@ -63,7 +66,9 @@
     <string name="passport_error_verify_activator_phone_title">手機號碼校驗出現問題</string>
     <string name="passport_failed_to_send_activate_email">發送啟用郵件失敗</string>
     <string name="passport_find_password_on_web_msg">請瀏覽 account.xiaomi.com 找回密碼</string>
-    <string name="passport_forget_password"><u>忘記密碼</u></string>
+    <string name="passport_forget_password">
+        <u>忘記密碼</u>
+    </string>
     <string name="passport_forget_password_no_underline">忘記密碼</string>
     <string name="passport_get_back_pwd">找回帳號密碼</string>
     <string name="passport_get_verify_code">取得驗證碼</string>
@@ -71,14 +76,17 @@
     <string name="passport_getting_verify_code">正在取得</string>
     <string name="passport_i_know">我知道了</string>
     <string name="passport_identification_expired">驗證已過期，請重新開始</string>
-    <string name="passport_imei_permission_denied_message">請求取得IMEI的授權，用於小米帳號的登陸/註冊。 小米帳號使用您的IMEI來説明識別您的常用登陸設備，提高帳號安全性。</string>
+    <string name="passport_imei_permission_denied_message">請求取得IMEI的授權，用於小米帳號的登陸/註冊。
+        小米帳號使用您的IMEI來説明識別您的常用登陸設備，提高帳號安全性。
+    </string>
     <string name="passport_imei_permission_denied_title">請求IMEI授權</string>
     <string name="passport_input_captcha_hint">請輸入圖片驗證碼</string>
     <string name="passport_input_password_for_login">此號碼已經註冊小米帳號，請輸入密碼登錄</string>
     <string name="passport_input_password_hint">請輸入帳號密碼</string>
     <string name="passport_input_phone_hint">輸入手機號碼</string>
     <string name="passport_input_vcode_hint">請輸入簡訊驗證碼</string>
-    <string name="passport_license_host_unreachable">您的手機未連線到資料服務。要立即檢視此訊息，請透過連線到網路的任意電腦瀏覽 %s。</string>
+    <string name="passport_license_host_unreachable">您的手機未連線到資料服務。要立即檢視此訊息，請透過連線到網路的任意電腦瀏覽 %s。
+    </string>
     <string name="passport_loading">讀取中…</string>
     <string name="passport_login">登入</string>
     <string name="passport_login_failed">登入失敗</string>
@@ -89,14 +97,17 @@
     <string name="passport_login_recycle_account_no">不是，去註冊</string>
     <string name="passport_login_recycle_account_yes">是我的</string>
     <string name="passport_login_title">登入小米帳號</string>
-    <string name="passport_login_using_other_ways"><u>使用其他方式登入</u></string>
+    <string name="passport_login_using_other_ways">
+        <u>使用其他方式登入</u>
+    </string>
     <string name="passport_message_dialog_title">驗證碼簡訊</string>
     <string name="passport_next">下一步</string>
     <string name="passport_no">不是</string>
     <string name="passport_notification_title">登入 %1$s 時出錯</string>
     <string name="passport_password_phone_login">帳號密碼登入</string>
     <string name="passport_password_req_notice">"密碼長度8~16位,其中數字,字母和符號至少包含兩種
-(例如:123abc@#或123abc或abc@#)"</string>
+        (例如:123abc@#或123abc或abc@#)"
+    </string>
     <string name="passport_phone_num_hint_text">請輸入手機號碼</string>
     <string name="passport_phone_ticket_login">手機簡訊登入</string>
     <string name="passport_prev">上一步</string>
@@ -109,9 +120,12 @@
     <string name="passport_quick_login_dialog_title">驗證帳號密碼</string>
     <string name="passport_quick_login_step2_title">小米登入保護</string>
     <string name="passport_quick_login_title">"系統需要驗證您的小米帳號，
-請輸入您的帳號密碼"</string>
+        請輸入您的帳號密碼"
+    </string>
     <string name="passport_quick_register">一鍵註冊</string>
-    <string name="passport_quick_register_notice"><u>沒有帳號？ 進行註冊</u></string>
+    <string name="passport_quick_register_notice">
+        <u>沒有帳號？ 進行註冊</u>
+    </string>
     <string name="passport_re_get_verify_code">重新取得</string>
     <string name="passport_re_register">重新註冊</string>
     <string name="passport_recycle_account_prompt">這個小米帳號是你的嗎?</string>
@@ -124,9 +138,12 @@
     <string name="passport_reg_recycle_account_yes">是的，去登入</string>
     <string name="passport_reg_success">註冊成功</string>
     <string name="passport_reg_success_summary">"您的小米帳號密保手機是%1$s
-用於登入和找回密碼"</string>
+        用於登入和找回密碼"
+    </string>
     <string name="passport_reg_type_email">使用信箱註冊</string>
-    <string name="passport_reg_using_other_phone"><u>使用其他手機號碼註冊</u></string>
+    <string name="passport_reg_using_other_phone">
+        <u>使用其他手機號碼註冊</u>
+    </string>
     <string name="passport_reg_using_other_phone_number_prompt">您註冊的手機號碼為</string>
     <string name="passport_reg_using_phone_number_prompt">使用本機號碼註冊</string>
     <string name="passport_reg_via_sms_alert">註冊可能會發送一條普通簡訊，資費由運營商收取</string>
@@ -134,7 +151,9 @@
     <string name="passport_register">註冊</string>
     <string name="passport_register_account_goto_email">去電子信箱</string>
     <string name="passport_register_account_verified_confirm">我已驗證</string>
-    <string name="passport_register_by_email"><u>電子信箱註冊</u></string>
+    <string name="passport_register_by_email">
+        <u>電子信箱註冊</u>
+    </string>
     <string name="passport_register_restricted">此手機號碼近期註冊了太多小米帳號，請換個號碼再試試</string>
     <string name="passport_register_restricted_title">無法使用此手機號碼註冊</string>
     <string name="passport_registered_phone_num">手機號:%s</string>
@@ -169,7 +188,9 @@
     <string name="passport_skip_setup_account_title">跳過帳號設定</string>
     <string name="passport_sms_send_success">發送成功</string>
     <string name="passport_sync_account_data">正在同步您的帳號資料</string>
-    <string name="passport_sync_account_data_failed_warning">您的帳號資料有延遲,將只能使用小米ID登入。 若使用郵箱/手機登 入,請稍等幾分鐘</string>
+    <string name="passport_sync_account_data_failed_warning">您的帳號資料有延遲,將只能使用小米ID登入。 若使用郵箱/手機登
+        入,請稍等幾分鐘
+    </string>
     <string name="passport_title_reg">註冊小米帳號</string>
     <string name="passport_trust_device">將此設備增加至信任設備清單</string>
     <string name="passport_trying_read_verify_code_sms">正在嘗試取得驗證碼</string>
@@ -202,7 +223,8 @@
     <string name="account__account_view__third_part_accounts">第三方帳號設置</string>
     <string name="account__bad_authentication">用戶名密碼不匹配</string>
     <string name="account__dk_account_migrated_from_to">"您的多看帳號 %1$s 已經遷移至小米帳號 %2$s。
-為確保帳號財產安全，請您重新用小米帳號登錄"</string>
+        為確保帳號財產安全，請您重新用小米帳號登錄"
+    </string>
     <string name="account__dk_account_migration_prompt__description">您當前在使用多看帳號，%s</string>
     <string name="account__dk_account_migration_prompt__title">帳號遷移</string>
     <string name="account__dk_account_migration_view__title">帳號遷移</string>
@@ -212,7 +234,9 @@
     <string name="account__dk_login_view__login">登錄</string>
     <string name="account__dk_login_view__password">您的密碼</string>
     <string name="account__dk_login_view__title">登錄多看帳號</string>
-    <string name="account__dk_migrate_mi_login_view__description">多看帳號登錄已經關閉。您可以選擇遷移多看帳號到小米帳號，或者登錄小米帳號</string>
+    <string name="account__dk_migrate_mi_login_view__description">
+        多看帳號登錄已經關閉。您可以選擇遷移多看帳號到小米帳號，或者登錄小米帳號
+    </string>
     <string name="account__dk_migrate_mi_login_view__dk_migrate">遷移多看帳號</string>
     <string name="account__dk_migrate_mi_login_view__mi_login">立即用小米帳號登錄</string>
     <string name="account__dk_migrate_mi_login_view__title">帳號登錄</string>
@@ -256,7 +280,8 @@
     <string name="account__mi_account_migration_prompt__cancel">取消</string>
     <string name="account__mi_account_migration_prompt__migrate">遷移帳號</string>
     <string name="account__mi_dk_login_view__title">登錄帳號</string>
-    <string name="account__mi_login_view__error_change_account_for_relogin">重新登錄小米帳號時，只能登錄當前帳號%s。</string>
+    <string name="account__mi_login_view__error_change_account_for_relogin">重新登錄小米帳號時，只能登錄當前帳號%s。
+    </string>
     <string name="account__mi_login_view__network_error">唉，頁面加載失敗，請檢查您的網絡</string>
     <string name="account__mi_login_view__reload">重新加載</string>
     <string name="account__mi_login_view__title">登錄小米帳號</string>
@@ -266,7 +291,8 @@
     <string name="account__newbie__add_books_to_bookshelf">正在將書籍加入書架...</string>
     <string name="account__newbie__new_user_start">新用戶點此開始</string>
     <string name="account__newbie__select_interested_categories">勾選妳感興趣的書類</string>
-    <string name="account__newbie__select_interested_categories_description">讀讀這些廣受好評的精選圖書吧!</string>
+    <string name="account__newbie__select_interested_categories_description">讀讀這些廣受好評的精選圖書吧!
+    </string>
     <string name="account__newbie__select_your_gender">請選擇您的性別</string>
     <string name="account__newbie__select_your_gender_description">將據此為您推薦熱門書籍</string>
     <string name="account__newbie__start">點此開始</string>
@@ -294,14 +320,18 @@
     <string name="account__shared__login_why_2_noob_gift">小米帳號還可享受雲空間及購書券雙重好禮</string>
     <string name="account__shared__login_why_noob_gift">登錄後可購買書籍、同步閱讀信息</string>
     <string name="account__shared__logining_system_miaccount">正在用系統小米帳號%s登錄...</string>
-    <string name="account__shared__mi_account_bound_to_other_sns">當前小米帳號已經綁定了另壹個%1$s帳號 %2$s, 只能將多看閱讀和該帳號綁定</string>
+    <string name="account__shared__mi_account_bound_to_other_sns">當前小米帳號已經綁定了另壹個%1$s帳號 %2$s,
+        只能將多看閱讀和該帳號綁定
+    </string>
     <string name="account__shared__mi_login">小米帳號登錄</string>
     <string name="account__shared__migrate_account_from_dk_to_mi">遷移多看帳號至小米帳號</string>
     <string name="account__shared__migrate_logined_dk_account">立即遷移至小米帳號</string>
     <string name="account__shared__no_login_miaccount">妳還沒有登錄小米帳號</string>
     <string name="account__shared__quering_account_status">正在查詢當前小米帳號狀態...</string>
     <string name="account__shared__share_null_tips">寫壹段推薦語吧，哪怕是湊點也行啊~</string>
-    <string name="account__shared__sns_bound_to_other_mi_account">該%1$s帳號已經綁定到另壹個小米帳號 %2$s，不能與當前小米帳號綁定</string>
+    <string name="account__shared__sns_bound_to_other_mi_account">該%1$s帳號已經綁定到另壹個小米帳號
+        %2$s，不能與當前小米帳號綁定
+    </string>
     <string name="account__shared__sns_weibo_name">新浪微博</string>
     <string name="account__shared__unbinding_sns">正在取消綁定</string>
     <string name="account__third_share_view__create_note">同時記錄為我的筆記</string>
@@ -321,7 +351,9 @@
     <string name="app__shared__shortcut_name">閱讀</string>
     <string name="bookcity_downloadcenter__shared__download_font_immediately">後臺下載</string>
     <string name="bookcity_downloadcenter__shared__download_font_later">以後再說</string>
-    <string name="bookcity_downloadcenter__shared__download_font_prompt">多看精品電子書使用多種專業字體排版，為了保證最佳閱讀效果，我們免費為您提供正版字庫下載，強烈建議您升級字庫。（不消耗任何2G/3G流量）</string>
+    <string name="bookcity_downloadcenter__shared__download_font_prompt">
+        多看精品電子書使用多種專業字體排版，為了保證最佳閱讀效果，我們免費為您提供正版字庫下載，強烈建議您升級字庫。（不消耗任何2G/3G流量）
+    </string>
     <string name="bookcity_downloadcenter__shared__download_font_title">WLAN網絡自動下載字庫</string>
     <string name="bookcity_store__bookdetailview__freedownload">免費下載</string>
     <string name="bookcity_store__bookdetailview__limitfreedownload">限時免費</string>
@@ -329,19 +361,26 @@
     <string name="bookcity_store__redemption_code__error">使用兌換碼出錯，錯誤碼: %d</string>
     <string name="bookcity_store__shared__alipay_checking_update">正在檢測安全支付服務版本...</string>
     <string name="bookcity_store__shared__alipay_fail_to_connect">無法連接支付寶</string>
-    <string name="bookcity_store__shared__alipay_installation_confirm">"為保證您的交易安全，需要您安裝支付寶安全支付服務，才能進行付款。
+    <string name="bookcity_store__shared__alipay_installation_confirm">
+        "為保證您的交易安全，需要您安裝支付寶安全支付服務，才能進行付款。
 
-點擊確定，立即安裝"</string>
+        點擊確定，立即安裝"
+    </string>
     <string name="bookcity_store__shared__alipay_installation_title">安裝提示</string>
     <string name="bookcity_store__shared__book_price_changed_title">確認購買</string>
     <string name="bookcity_store__shared__creating_order">正在連接服務器...</string>
     <string name="bookcity_store__shared__fail_to_create_order_as_error">創建訂單失敗，錯誤代碼%d</string>
-    <string name="bookcity_store__shared__fail_to_create_order_as_network_error">創建訂單失敗，可能是由於網絡連接故障，請稍候再試</string>
+    <string name="bookcity_store__shared__fail_to_create_order_as_network_error">
+        創建訂單失敗，可能是由於網絡連接故障，請稍候再試
+    </string>
     <string name="bookcity_store__shared__fail_to_find_book">很抱歉，該圖書已經下架</string>
-    <string name="bookcity_store__shared__fail_to_has_unverify_payment">存在未完成訂單，可能是由於網絡連接故障，請稍候重試</string>
+    <string name="bookcity_store__shared__fail_to_has_unverify_payment">存在未完成訂單，可能是由於網絡連接故障，請稍候重試
+    </string>
     <string name="bookcity_store__shared__fail_to_pay">未完成支付，訂單已取消</string>
     <string name="bookcity_store__shared__fail_to_verify_payment">支付結果驗證失敗，請聯系客服人員</string>
-    <string name="bookcity_store__shared__fail_to_verify_payment_as_network_error">支付結果驗證失敗，可能是由於網絡連接故障，請聯系客服人員</string>
+    <string name="bookcity_store__shared__fail_to_verify_payment_as_network_error">
+        支付結果驗證失敗，可能是由於網絡連接故障，請聯系客服人員
+    </string>
     <string name="bookcity_store__shared__invalid_order_status">訂單狀態異常，請聯系客服人員</string>
     <string name="bookcity_store__shared__notify_repeat_update">提交支付完成信息失敗, 是否重新提交?</string>
     <string name="bookcity_store__shared__payment_ok">訂單支付成功！</string>
@@ -349,7 +388,9 @@
     <string name="bookcity_store__shared__reverify_order_confirm">重試</string>
     <string name="bookroom__clear_invalid_book_view__done">清理完畢</string>
     <string name="bookroom__clear_invalid_book_view__found">發現無效書籍&lt;font color=#ed6c00> %1$d &lt;/font>本</string>
-    <string name="bookroom__clear_invalid_book_view__scanning">已掃描&lt;font color=#ed6c00> %1$d / %2$d &lt;/font>本書籍…</string>
+    <string name="bookroom__clear_invalid_book_view__scanning">已掃描&lt;font color=#ed6c00> %1$d /
+        %2$d &lt;/font>本書籍…
+    </string>
     <string name="bookroom__shared__invalid_book_clear">清理其他無效書籍</string>
     <string name="bookroom__shared__invalid_book_title">書籍不存在，確認從書架刪除</string>
     <string name="bookshelf__add_book_menu_view__bookshelf_style">書架風格</string>
@@ -365,9 +406,12 @@
     <string name="bookshelf__add_book_view__add_book">添加更多書籍</string>
     <string name="bookshelf__auto_upload_books_on_wifi_dlg__no">不啟用</string>
     <string name="bookshelf__auto_upload_books_on_wifi_dlg__ok">啟用</string>
-    <string name="bookshelf__auto_upload_books_on_wifi_dlg__prompt">開啟後，添加的本地書會在WLAN下自動上傳到您的雲空間，方便您隨時隨地下載閱讀。</string>
+    <string name="bookshelf__auto_upload_books_on_wifi_dlg__prompt">
+        開啟後，添加的本地書會在WLAN下自動上傳到您的雲空間，方便您隨時隨地下載閱讀。
+    </string>
     <string name="bookshelf__auto_upload_books_on_wifi_dlg__title">是否啟用自動上傳功能？</string>
-    <string name="bookshelf__book__download_dialog__prompt">目前您處於流量環境下，下載所選書籍將消耗%1$sMB流量，是否繼續？</string>
+    <string name="bookshelf__book__download_dialog__prompt">目前您處於流量環境下，下載所選書籍將消耗%1$sMB流量，是否繼續？
+    </string>
     <string name="bookshelf__book__download_dialog__title">流量下載提醒</string>
     <string name="bookshelf__book__download_prompt__title">書籍下載</string>
     <string name="bookshelf__book__download_prompt_at_data_plan">將要下載書籍，大約%1$s。</string>
@@ -390,11 +434,19 @@
     <string name="bookshelf__books_upload_progress_view__cancel_upload_prompt">不再上傳書籍：%1$s?</string>
     <string name="bookshelf__books_upload_progress_view__pause">暫停</string>
     <string name="bookshelf__books_upload_progress_view__progress_failed">上傳失敗</string>
-    <string name="bookshelf__books_upload_progress_view__progress_failed_access_denied">上傳失敗, 訪問拒絕</string>
-    <string name="bookshelf__books_upload_progress_view__progress_failed_access_local_file">上傳失敗, 無法訪問請求上傳的文件</string>
-    <string name="bookshelf__books_upload_progress_view__progress_failed_kss_server_readonly">上傳失敗, 服務器維護中</string>
-    <string name="bookshelf__books_upload_progress_view__progress_failed_name_conflicted">上傳失敗, 雲空間已經存在同名文件</string>
-    <string name="bookshelf__books_upload_progress_view__progress_failed_space_over">上傳失敗, 雲空間滿</string>
+    <string name="bookshelf__books_upload_progress_view__progress_failed_access_denied">上傳失敗, 訪問拒絕
+    </string>
+    <string name="bookshelf__books_upload_progress_view__progress_failed_access_local_file">上傳失敗,
+        無法訪問請求上傳的文件
+    </string>
+    <string name="bookshelf__books_upload_progress_view__progress_failed_kss_server_readonly">上傳失敗,
+        服務器維護中
+    </string>
+    <string name="bookshelf__books_upload_progress_view__progress_failed_name_conflicted">上傳失敗,
+        雲空間已經存在同名文件
+    </string>
+    <string name="bookshelf__books_upload_progress_view__progress_failed_space_over">上傳失敗, 雲空間滿
+    </string>
     <string name="bookshelf__books_upload_progress_view__progress_paused">上傳暫停</string>
     <string name="bookshelf__books_upload_progress_view__progress_text">速度%1$S/s，剩余%2$S</string>
     <string name="bookshelf__books_upload_progress_view__progress_waiting">等待中...</string>
@@ -410,7 +462,9 @@
     <string name="bookshelf__category_selection_view__move_d_books_to">移動%d本圖書到...</string>
     <string name="bookshelf__check_serial_updates_view__update_done">更新完成</string>
     <string name="bookshelf__check_serial_updates_view__updated">共有&lt;font color=#ed6c00> %1$d &lt;/font>本書籍更新</string>
-    <string name="bookshelf__check_serial_updates_view__updating">已檢查&lt;font color=#ed6c00> %1$d / %2$d &lt;/font>本連載書籍...</string>
+    <string name="bookshelf__check_serial_updates_view__updating">已檢查&lt;font color=#ed6c00> %1$d /
+        %2$d &lt;/font>本連載書籍...
+    </string>
     <string name="bookshelf__clear_local_files_dlg__prompt">已選擇%1$d本書籍，共下載%2$s數據，是否清理？</string>
     <string name="bookshelf__clear_local_files_dlg__title">清理已下載數據</string>
     <string name="bookshelf__cloud_books_view__deleting">正在刪除...</string>
@@ -425,11 +479,15 @@
     <string name="bookshelf__customshelf_view__show_bookshelf_menu">打開書架菜單</string>
     <string name="bookshelf__delete_book_dialog_view__duokan_tips">您可以通過擁有頁面重新下載已刪除的文件</string>
     <string name="bookshelf__delete_book_dialog_view__micloud_tips">您可以通過雲空間重新下載已刪除的文件</string>
-    <string name="bookshelf__delete_category_dialog_view__choose_delete_category_books">是否也同時刪除文件夾內的圖書？</string>
+    <string name="bookshelf__delete_category_dialog_view__choose_delete_category_books">
+        是否也同時刪除文件夾內的圖書？
+    </string>
     <string name="bookshelf__delete_category_dialog_view__delete_category">刪除分組</string>
     <string name="bookshelf__delete_category_dialog_view__delete_category_books">刪除圖書</string>
     <string name="bookshelf__delete_category_dialog_view__undelete_category_books">不刪除圖書</string>
-    <string name="bookshelf__download_book_from_other_miaccount_cloud_storage">本書存儲在小米帳號%1$s的雲端空間中。若想繼續下載，請登錄該帳號</string>
+    <string name="bookshelf__download_book_from_other_miaccount_cloud_storage">
+        本書存儲在小米帳號%1$s的雲端空間中。若想繼續下載，請登錄該帳號
+    </string>
     <string name="bookshelf__duplicate_category_name">書架上已經存在同名分組</string>
     <string name="bookshelf__empty_view__shelf_wait_fill">空蕩蕩的書架等您來填滿</string>
     <string name="bookshelf__empty_view__to_local">瀏覽本地書籍</string>
@@ -507,7 +565,8 @@
     <string name="bookshelf__recommended_books_view__add">加入書架</string>
     <string name="bookshelf__recommended_books_view__recommended_books">以下是給您推薦的熱門書籍</string>
     <string name="bookshelf__recommended_books_view__wireless_disable">當前沒有網絡</string>
-    <string name="bookshelf__recommended_books_view__wireless_disable_detail">當前沒有網絡,無法獲取書籍,請聯網後重試</string>
+    <string name="bookshelf__recommended_books_view__wireless_disable_detail">當前沒有網絡,無法獲取書籍,請聯網後重試
+    </string>
     <string name="bookshelf__recommended_view__recommend">熱門推薦</string>
     <string name="bookshelf__remove_books_dlg__del_src_files">同時刪除源文件</string>
     <string name="bookshelf__remove_books_dlg__title">從書架刪除所選書籍？</string>
@@ -623,10 +682,14 @@
     <string name="general__shared__0day_wakeup_uri">duokan-reader://store</string>
     <string name="general__shared__1day_wakeup_msg">每天超過10萬人在看的熱門好書！</string>
     <string name="general__shared__1day_wakeup_title">最近這些書人氣爆棚！</string>
-    <string name="general__shared__1day_wakeup_uri">https://www.duokan.com/hs/market/super_topic/49</string>
+    <string name="general__shared__1day_wakeup_uri">
+        https://www.duokan.com/hs/market/super_topic/49
+    </string>
     <string name="general__shared__7day_wakeup_msg">最近又上了好多好書，去看看吧！</string>
     <string name="general__shared__7day_wakeup_title">很久沒見，想妳了</string>
-    <string name="general__shared__7day_wakeup_uri">https://www.duokan.com/hs/market/super_topic/48</string>
+    <string name="general__shared__7day_wakeup_uri">
+        https://www.duokan.com/hs/market/super_topic/48
+    </string>
     <string name="general__shared__about">關於</string>
     <string name="general__shared__about_ad">關於廣告</string>
     <string name="general__shared__account_change">賬號異常，請重新登錄後嘗試</string>
@@ -680,7 +743,9 @@
     <string name="general__shared__followed">已關註</string>
     <string name="general__shared__hard_working">努力工作中，請稍候…</string>
     <string name="general__shared__has_ad">有廣告?</string>
-    <string name="general__shared__https_error">建立網絡連接失敗。關閉https加密傳輸會改善此情況，但會降低數據傳輸的安全性。您是否要關閉https加密傳輸？</string>
+    <string name="general__shared__https_error">
+        建立網絡連接失敗。關閉https加密傳輸會改善此情況，但會降低數據傳輸的安全性。您是否要關閉https加密傳輸？
+    </string>
     <string name="general__shared__https_error_cancel">不關閉</string>
     <string name="general__shared__https_error_ok">關閉</string>
     <string name="general__shared__icloud">雲空間</string>
@@ -745,7 +810,8 @@
     <string name="general__shared__website">www.duokan.com</string>
     <string name="general__shared__welcome">歡迎</string>
     <string name="general__shared__why_ad">本書包含廣告，收益用以補貼版權方，感謝您的理解！</string>
-    <string name="general__shared__why_ad_how_to_close">本書包含廣告，收益用以補貼版權方。您可以購買本書來關閉廣告。感謝您的理解！</string>
+    <string name="general__shared__why_ad_how_to_close">本書包含廣告，收益用以補貼版權方。您可以購買本書來關閉廣告。感謝您的理解！
+    </string>
     <string name="general__shared__within_1minutes">1分鐘內</string>
     <string name="general__unsupported_intent">未找到合適的應用程序</string>
     <string name="general__update__downloading_dkreadker_apk">多看閱讀更新包</string>
@@ -837,29 +903,40 @@
     <string name="personal__comment_message_item_view__vote_type_text">贊了我的書評</string>
     <string name="personal__custom_cloud_empty_view__no_book">雲空間暫時沒有書</string>
     <string name="personal__experience_view__finished_books">"讀完書籍
- %s 
-本"</string>
+        %s
+        本"
+    </string>
     <string name="personal__experience_view__hour">%d小時</string>
     <string name="personal__experience_view__minute">%d分鐘</string>
     <string name="personal__experience_view__percentage_formatter">\##%</string>
     <string name="personal__experience_view__percentage_formatter_precise">\##.##%</string>
-    <string name="personal__experience_view__preference_reading_time">您更喜歡在 %1$d:00 - %2$d:00 看書</string>
+    <string name="personal__experience_view__preference_reading_time">您更喜歡在 %1$d:00 - %2$d:00 看書
+    </string>
     <string name="personal__experience_view__ranking_total">超過了 %s 的讀書人</string>
     <string name="personal__experience_view__ranking_total_low">您的讀書量太少了，請努力吧!</string>
     <string name="personal__experience_view__readed_books">"讀過書籍
- %s 
-本"</string>
-    <string name="personal__experience_view__reading_detail_latest_month">平均每天 %1$s，超過 %2$s 的讀書人</string>
+        %s
+        本"
+    </string>
+    <string name="personal__experience_view__reading_detail_latest_month">平均每天 %1$s，超過 %2$s 的讀書人
+    </string>
     <string name="personal__experience_view__reading_time_latest_month">過去壹個月您閱讀了 %s</string>
     <string name="personal__experience_view__reading_time_total">"閱讀總時長
- %s 
-小時"</string>
+        %s
+        小時"
+    </string>
     <string name="personal__experience_view__reward">期間您從其他書友那裏收獲了 %1$s 個贊， %2$s 條評論</string>
     <string name="personal__experience_view__second">%d秒</string>
     <string name="personal__experience_view__share">分享我的閱歷</string>
-    <string name="personal__experience_view__share_template">\#多看閱歷# 我使用 @多看閱讀 超過了%1$s的讀書人。總計讀過%2$s本書，累計閱讀時間%3$s。最近壹個月平均每日閱讀%4$。</string>
-    <string name="personal__experience_view__share_template_no_latest_month_reading_record">\#多看閱歷# 我使用 @多看閱讀 超過了%1$s的讀書人。總計讀過%2$s本書，累計閱讀時間%3$s。</string>
-    <string name="personal__experience_view__share_template_ranking_low">\#多看閱歷# 我使用 @多看閱讀 總計讀過%1$s本書，累計閱讀時間%2$s。這個閱讀量和大家相比太少了，還需努力啊!</string>
+    <string name="personal__experience_view__share_template">\#多看閱歷# 我使用 @多看閱讀
+        超過了%1$s的讀書人。總計讀過%2$s本書，累計閱讀時間%3$s。最近壹個月平均每日閱讀%4$。
+    </string>
+    <string name="personal__experience_view__share_template_no_latest_month_reading_record">\#多看閱歷#
+        我使用 @多看閱讀 超過了%1$s的讀書人。總計讀過%2$s本書，累計閱讀時間%3$s。
+    </string>
+    <string name="personal__experience_view__share_template_ranking_low">\#多看閱歷# 我使用 @多看閱讀
+        總計讀過%1$s本書，累計閱讀時間%2$s。這個閱讀量和大家相比太少了，還需努力啊!
+    </string>
     <string name="personal__experience_view__time_formatter">%d:00</string>
     <string name="personal__experience_view__title">我的閱歷</string>
     <string name="personal__experience_view__using_days">多看已伴您度過 %s 天</string>
@@ -961,13 +1038,18 @@
     <string name="personal__miaccount_change_nickname_view__failed">修改昵稱失敗</string>
     <string name="personal__miaccount_change_nickname_view__title">昵稱修改</string>
     <string name="personal__miaccount_change_password_view__new_password_hint">請輸入新密碼</string>
-    <string name="personal__miaccount_change_password_view__new_password_invalid_chars">%s 不是合法的密碼字符。密碼只能包含數字、英文字母和英文字符</string>
+    <string name="personal__miaccount_change_password_view__new_password_invalid_chars">%s
+        不是合法的密碼字符。密碼只能包含數字、英文字母和英文字符
+    </string>
     <string name="personal__miaccount_change_password_view__new_password_label">新密碼</string>
-    <string name="personal__miaccount_change_password_view__new_password_too_short">新密碼太短，最少需要%d個字符</string>
+    <string name="personal__miaccount_change_password_view__new_password_too_short">
+        新密碼太短，最少需要%d個字符
+    </string>
     <string name="personal__miaccount_change_password_view__old_password_hint">請輸入舊密碼</string>
     <string name="personal__miaccount_change_password_view__old_password_label">舊密碼</string>
     <string name="personal__miaccount_change_password_view__show_password">顯示密碼</string>
-    <string name="personal__miaccount_change_password_view__succeed_to_change_password">修改密碼成功</string>
+    <string name="personal__miaccount_change_password_view__succeed_to_change_password">修改密碼成功
+    </string>
     <string name="personal__miaccount_change_password_view__title">密碼修改</string>
     <string name="personal__miaccount_change_signature_view__failed">修改簽名失敗</string>
     <string name="personal__miaccount_change_signature_view__title">簽名修改</string>
@@ -994,7 +1076,8 @@
     <string name="personal__note_share_view__share_to_some_peoples">向以下人群開放筆記</string>
     <string name="personal__note_share_view__title">設置筆記權限</string>
     <string name="personal__offline_task_view__instruction">"當前無網絡
-聯網後可領取豐厚獎勵"</string>
+        聯網後可領取豐厚獎勵"
+    </string>
     <string name="personal__output_entrance_view__email">其他</string>
     <string name="personal__output_entrance_view__yingxiang">印象筆記</string>
     <string name="personal__page_view__title">我的動態</string>
@@ -1084,7 +1167,8 @@
     <string name="personal__personal_settings_view__web_access">需要連接網絡時提示</string>
     <string name="personal__personal_settings_view__wifi_sync_evernote">僅用WLAN同步印象筆記</string>
     <string name="personal__personal_settings_view__wifi_upload_download">僅用WLAN上傳/下載</string>
-    <string name="personal__personal_settings_view__wifi_upload_download_hint">避免在無WLAN時使用2G/3G流量</string>
+    <string name="personal__personal_settings_view__wifi_upload_download_hint">避免在無WLAN時使用2G/3G流量
+    </string>
     <string name="personal__purchased_book_group_title_view__cloud">我上傳的書</string>
     <string name="personal__purchased_book_group_title_view__gift">查看贈送</string>
     <string name="personal__purchased_book_group_title_view__purchase">我購買的圖書</string>
@@ -1108,19 +1192,22 @@
     <string name="personal__readed_books_view__ranking_total">您已經超過了 %s 的讀書人</string>
     <string name="personal__readed_books_view__reading_detail_total">累計閱讀時長 %1$s，讀完 %2$s 本書</string>
     <string name="personal__readed_books_view__remove">從讀過中刪除</string>
-    <string name="personal__readed_books_view__remove_prompt">將從妳的讀過記錄中刪除這本書，您對這本書的書評不會被刪除，是否確定？</string>
+    <string name="personal__readed_books_view__remove_prompt">將從妳的讀過記錄中刪除這本書，您對這本書的書評不會被刪除，是否確定？
+    </string>
     <string name="personal__readed_books_view__remove_title">刪除讀過書籍</string>
     <string name="personal__readed_books_view__removing">書籍正在從閱歷中移除...</string>
     <string name="personal__readed_books_view__sync_closed">自動同步數據功能已關閉，點擊開啟</string>
     <string name="personal__readed_books_view__title">我讀過%d本書</string>
     <string name="personal__reading_note_info_header_view__clear_notes_prompt_ok">清空</string>
-    <string name="personal__reading_note_info_header_view__clear_notes_prompt_text">是否清空這本書的所有筆記？</string>
+    <string name="personal__reading_note_info_header_view__clear_notes_prompt_text">是否清空這本書的所有筆記？
+    </string>
     <string name="personal__reading_note_info_header_view__clear_notes_prompt_title">清空筆記</string>
     <string name="personal__reading_note_info_header_view__clearing_notes">正在清空...</string>
     <string name="personal__reading_note_info_header_view__delete_one_note">刪除這條筆記？</string>
     <string name="personal__reading_note_info_header_view__deleting_one_note">正在刪除...</string>
     <string name="personal__reading_note_info_header_view__failed_to_clear_notes">清空筆記失敗</string>
-    <string name="personal__reading_note_info_header_view__failed_to_delete_one_note">刪除筆記失敗</string>
+    <string name="personal__reading_note_info_header_view__failed_to_delete_one_note">刪除筆記失敗
+    </string>
     <string name="personal__reading_note_info_view__title">筆記詳情</string>
     <string name="personal__reading_note_item_view__count">%d 條</string>
     <string name="personal__reading_note_item_view__date">上次記錄: %s</string>
@@ -1152,7 +1239,8 @@
     <string name="personal__running_download_tasks_view__detail">%1$s/S，正在下載（已完成%2$.1f%%）</string>
     <string name="personal__running_download_tasks_view__ticker">%s正在下載</string>
     <string name="personal__search_friend_view__empty_line_inexisted_user_1">沒有找到符合搜索條件的用戶</string>
-    <string name="personal__search_friend_view__empty_line_inexisted_user_2">請重新輸入正確的小米帳號ID或昵稱</string>
+    <string name="personal__search_friend_view__empty_line_inexisted_user_2">請重新輸入正確的小米帳號ID或昵稱
+    </string>
     <string name="personal__search_friend_view__empty_line_no_use_1">TA還沒有使用過多看閱讀</string>
     <string name="personal__search_friend_view__empty_line_no_use_2">快邀請TA來享受精品閱讀吧</string>
     <string name="personal__search_friend_view__search">搜索書友</string>
@@ -1175,7 +1263,9 @@
     <string name="personal__statistics_view__receivedlikes_description">贊的次數</string>
     <string name="personal__statistics_view__seconds"> 秒</string>
     <string name="personal__statistics_view__share">曬曬我的閱歷</string>
-    <string name="personal__statistics_view__share_template">\#多看閱歷# 我使用 @多看閱讀 超過了%1$s的讀書人。總計閱讀時間%2$d小時，平均每日閱讀%3$s。</string>
+    <string name="personal__statistics_view__share_template">\#多看閱歷# 我使用 @多看閱讀
+        超過了%1$s的讀書人。總計閱讀時間%2$d小時，平均每日閱讀%3$s。
+    </string>
     <string name="personal__statistics_view__time">平均 %s/天</string>
     <string name="personal__statistics_view__time_0">0:00</string>
     <string name="personal__statistics_view__time_12">12:00</string>
@@ -1252,24 +1342,26 @@
     <string name="reading__chapter_not_purchased_view__pay_to_read">需要購買後閱讀</string>
     <string name="reading__chapter_not_purchased_view__pay_to_read_cmbook">"需要購買後閱讀
 
-本書由和閱讀（中國移動）提供
-如遇到問題，請咨詢10086"</string>
+        本書由和閱讀（中國移動）提供
+        如遇到問題，請咨詢10086"
+    </string>
     <string name="reading__check_error__choice_email">請選擇郵件客戶端</string>
     <string name="reading__check_error__template">"----修改建議----
- 
- 
- ----原文信息----
- %1$s
- 
- 
- 以下數據用於定位錯誤，請勿修改。
- ----begin----
- app: 多看閱讀 for Android %2$s
- bookid: %3$s
- revision: %4$s
- position: (%5$d,%6$d,%7$d)
- convertcht:%8$b
- %9$s ----end----"</string>
+
+
+        ----原文信息----
+        %1$s
+
+
+        以下數據用於定位錯誤，請勿修改。
+        ----begin----
+        app: 多看閱讀 for Android %2$s
+        bookid: %3$s
+        revision: %4$s
+        position: (%5$d,%6$d,%7$d)
+        convertcht:%8$b
+        %9$s ----end----"
+    </string>
     <string name="reading__close_easteregg_view__close">永久關閉</string>
     <string name="reading__close_easteregg_view__later">壹小時後提醒</string>
     <string name="reading__close_easteregg_view__title">您將關閉幸運書簽抽獎活動</string>
@@ -1296,7 +1388,9 @@
     <string name="reading__custom_background_color_tab_view__title">背景</string>
     <string name="reading__custom_font__download">下載</string>
     <string name="reading__custom_font__download_prompt">將要下載字體，大約%1$s。</string>
-    <string name="reading__custom_font__download_prompt_at_data_plan">將要下載字體，大約%1$s。建議您使用WLAN網絡自動下載功能，開啟後將在WLAN下自動開始下載字體。</string>
+    <string name="reading__custom_font__download_prompt_at_data_plan">
+        將要下載字體，大約%1$s。建議您使用WLAN網絡自動下載功能，開啟後將在WLAN下自動開始下載字體。
+    </string>
     <string name="reading__custom_font__download_title">字體下載</string>
     <string name="reading__custom_font_list_view__add_font">添加字體</string>
     <string name="reading__custom_font_list_view__auto_download_font">WLAN網絡自動下載字庫</string>
@@ -1304,7 +1398,9 @@
     <string name="reading__custom_font_list_view__default">默認（使用書中指定字體）</string>
     <string name="reading__custom_font_list_view__default_en">默認（與中文字體相同）</string>
     <string name="reading__custom_font_list_view__dk_font_package_description">多看字體包（7種字體）</string>
-    <string name="reading__custom_font_list_view__dk_font_package_description_with_progress">多看字體包（已下載%1$s/%2$s）</string>
+    <string name="reading__custom_font_list_view__dk_font_package_description_with_progress">
+        多看字體包（已下載%1$s/%2$s）
+    </string>
     <string name="reading__custom_font_list_view__dk_title">更改正文字體</string>
     <string name="reading__custom_font_list_view__download_all">下載</string>
     <string name="reading__custom_font_list_view__download_setting">字體下載設置</string>
@@ -1324,9 +1420,11 @@
     <string name="reading__custom_screen_view__title">自定義界面布局</string>
     <string name="reading__custom_text_color_tab_view__title">文字</string>
     <string name="reading__custom_theme_color_view__edit">"長按
-編輯"</string>
+        編輯"
+    </string>
     <string name="reading__custom_typesetting_view__demo">"愛看書的青年，大可以看看本分以外的書，即課外書……
-譬如學理科的，偏看看文學書，學文學的，偏看看科學書，看看別人在那裏研究的，究竟是怎麽壹回事。這樣子，對於別人，別事，可以更深的了解。"</string>
+        譬如學理科的，偏看看文學書，學文學的，偏看看科學書，看看別人在那裏研究的，究竟是怎麽壹回事。這樣子，對於別人，別事，可以更深的了解。"
+    </string>
     <string name="reading__custom_typesetting_view__indent">首行縮進</string>
     <string name="reading__custom_typesetting_view__indent_hint">手指左右滑動調節縮進</string>
     <string name="reading__custom_typesetting_view__lateral_margin">左右邊距</string>
@@ -1352,7 +1450,8 @@
     <string name="reading__hang_ad_view__help">上滑關閉</string>
     <string name="reading__login_mi_account">"您以遊客身份購買的圖書僅能保存在本機，更換設備後將無法找回。
 
-建議您盡快登錄小米帳號，可永久保存數據記錄。"</string>
+        建議您盡快登錄小米帳號，可永久保存數據記錄。"
+    </string>
     <string name="reading__login_mi_account_no">稍後提醒</string>
     <string name="reading__login_mi_account_ok">馬上登錄</string>
     <string name="reading__media_loading_failed">多媒體加載失敗！</string>
@@ -1371,20 +1470,37 @@
     <string name="reading__reading_brightness_view__eyes_saving">護眼模式</string>
     <string name="reading__reading_brightness_view__night_mode">夜間模式</string>
     <string name="reading__reading_custom_download_view__font_not_found">指定字體缺失，建議下載</string>
-    <string name="reading__reading_custom_download_view__prompt">為保證最佳閱讀體驗，多看精品圖書均指定使用了“方正蘭亭黑”、“方正書宋”等字體排版，暫不支持自定義字體。</string>
+    <string name="reading__reading_custom_download_view__prompt">
+        為保證最佳閱讀體驗，多看精品圖書均指定使用了“方正蘭亭黑”、“方正書宋”等字體排版，暫不支持自定義字體。
+    </string>
     <string name="reading__reading_menu_bottom_view__night_mode">進入夜間模式</string>
     <string name="reading__reading_menu_bottom_view__seek_bar">閱讀</string>
     <string name="reading__reading_menu_bottom_view_epub__audio_settings">朗讀</string>
-    <string name="reading__reading_menu_bottom_view_epub__confirm_disable_wifi_auto_download_font_ok">知道啦</string>
-    <string name="reading__reading_menu_bottom_view_epub__confirm_disable_wifi_auto_download_font_prompt">您今後可以在功能菜單（閱讀時點擊屏幕中間呼出）->文字->更改字體中手動下載字體。</string>
-    <string name="reading__reading_menu_bottom_view_epub__confirm_disable_wifi_auto_download_font_title">字體下載提示</string>
-    <string name="reading__reading_menu_bottom_view_epub__confirm_download_font_prompt">目前您處於流量環境下,是否繼續?</string>
-    <string name="reading__reading_menu_bottom_view_epub__confirm_download_font_title">流量下載提醒</string>
+    <string
+        name="reading__reading_menu_bottom_view_epub__confirm_disable_wifi_auto_download_font_ok">
+        知道啦
+    </string>
+    <string
+        name="reading__reading_menu_bottom_view_epub__confirm_disable_wifi_auto_download_font_prompt">
+        您今後可以在功能菜單（閱讀時點擊屏幕中間呼出）->文字->更改字體中手動下載字體。
+    </string>
+    <string
+        name="reading__reading_menu_bottom_view_epub__confirm_disable_wifi_auto_download_font_title">
+        字體下載提示
+    </string>
+    <string name="reading__reading_menu_bottom_view_epub__confirm_download_font_prompt">
+        目前您處於流量環境下,是否繼續?
+    </string>
+    <string name="reading__reading_menu_bottom_view_epub__confirm_download_font_title">流量下載提醒
+    </string>
     <string name="reading__reading_menu_bottom_view_epub__slide_show">進入漫畫模式</string>
     <string name="reading__reading_menu_bottom_view_epub__wifi_auto_download_font_no">不啟用</string>
     <string name="reading__reading_menu_bottom_view_epub__wifi_auto_download_font_ok">啟用</string>
-    <string name="reading__reading_menu_bottom_view_epub__wifi_auto_download_font_prompt">您缺少本書所需的字體，為達到最佳閱讀效果，多看將下載缺少的字體</string>
-    <string name="reading__reading_menu_bottom_view_epub__wifi_auto_download_font_title">下載字體</string>
+    <string name="reading__reading_menu_bottom_view_epub__wifi_auto_download_font_prompt">
+        您缺少本書所需的字體，為達到最佳閱讀效果，多看將下載缺少的字體
+    </string>
+    <string name="reading__reading_menu_bottom_view_epub__wifi_auto_download_font_title">下載字體
+    </string>
     <string name="reading__reading_menu_bottom_view_pdf__fixed_mode">退出重排</string>
     <string name="reading__reading_menu_bottom_view_pdf__flow_mode">重排</string>
     <string name="reading__reading_menu_bottom_view_pdf__mode">PDF模式</string>
@@ -1486,7 +1602,8 @@
     <string name="reading__search_next_view__search_reach_last_match">已搜索至文件末尾！</string>
     <string name="reading__search_text_view__empty_hint">搜索全文</string>
     <string name="reading__search_text_view__nosearch_result">"很抱歉，文中沒有此關鍵詞
-試試修改您的關鍵詞？"</string>
+        試試修改您的關鍵詞？"
+    </string>
     <string name="reading__seek_page_view__next_chapter">下一章</string>
     <string name="reading__seek_page_view__paginating">正在分頁…</string>
     <string name="reading__seek_page_view__prev_chapter">上一章</string>
@@ -1500,7 +1617,8 @@
     <string name="reading__selection_bar_view__share">分享</string>
     <string name="reading__send_error_view__hint">請輸入修改意見</string>
     <string name="reading__send_error_view__proposal">"\#%s#
-"</string>
+        "
+    </string>
     <string name="reading__send_error_view__thx">糾錯已記錄，感謝您的幫助~</string>
     <string name="reading__send_error_view__title">糾錯</string>
     <string name="reading__send_error_view__toast">修改意見不能為空~</string>
@@ -1547,7 +1665,8 @@
     <string name="reading__shared__sync_down_reading_progress_ok">跳轉</string>
     <string name="reading__shared__sync_down_reading_progress_prompt1">您上次閱讀到第%d頁，是否跳轉繼續閱讀？</string>
     <string name="reading__shared__sync_down_reading_progress_prompt2">您上次閱讀到“%s”，是否跳轉繼續閱讀？</string>
-    <string name="reading__shared__sync_down_reading_progress_prompt3">您上次閱讀到%.1f%%，是否跳轉繼續閱讀？</string>
+    <string name="reading__shared__sync_down_reading_progress_prompt3">您上次閱讀到%.1f%%，是否跳轉繼續閱讀？
+    </string>
     <string name="reading__shared__sync_down_reading_progress_title">繼續上次閱讀</string>
     <string name="reading__shared__timeout">暢讀時間結束，喜歡就買壹本讀吧 ^_^</string>
     <string name="reading__shared__toc">目錄</string>
@@ -1609,8 +1728,13 @@
     <string name="reading__tts_notification_view__readbook">《%s》開始朗讀</string>
     <string name="remove_bookmark">刪除書簽</string>
     <string name="report_no_network_error">當前沒有可連接網絡，請確認後重試！</string>
-    <string name="scanning_info">找到: TXT<font color="#ed6c00">(%1$d)</font> EPUB<font color="#ed6c00">(%2$d)</font> PDF<font color="#ed6c00">(%3$d)</font></string>
-    <string name="scanning_notyfy">已掃描 <font color="#ed6c00">%1$d</font> 個文件...</string>
+    <string name="scanning_info">找到: TXT<font color="#ed6c00">(%1$d)</font> EPUB<font
+        color="#ed6c00">(%2$d)
+    </font> PDF
+        <font color="#ed6c00">(%3$d)</font>
+    </string>
+    <string name="scanning_notyfy">已掃描 <font color="#ed6c00">%1$d</font> 個文件...
+    </string>
     <string name="scanning_write_db">正在添加圖書信息，請稍候...</string>
     <string name="scanresult">掃描結果</string>
     <string name="share__book_template1">\#好書推薦# 《%1$s》，%2$s@多看閱讀</string>
@@ -1627,7 +1751,8 @@
     <string name="share__comment_template1">\#多看筆記# %1$s 摘自《%2$s》@多看閱讀</string>
     <string name="share__comment_template2">%1$s//#多看筆記# %2$s 摘自《%3$s》@多看閱讀</string>
     <string name="share__comment_template3">%1$s 摘自《%2$s》@多看閱讀</string>
-    <string name="share__picture_template">%1$s我正在使用多看閱讀安卓版看《%2$s》，安卓上的精品閱讀時光，與我的朋友共分享。@多看閱讀</string>
+    <string name="share__picture_template">%1$s我正在使用多看閱讀安卓版看《%2$s》，安卓上的精品閱讀時光，與我的朋友共分享。@多看閱讀
+    </string>
     <string name="share_cancel">分享取消</string>
     <string name="share_change_account">更換帳號</string>
     <string name="share_failed">分享失敗，請檢查網絡連接</string>
@@ -1775,7 +1900,8 @@
     <string name="store__inquire_redemption_code_view__success">兌換成功，正在下載</string>
     <string name="store__inquire_redemption_code_view__title">兌換碼換書</string>
     <string name="store__kernel_support_view__continue_download">繼續下載</string>
-    <string name="store__kernel_support_view__message">該書包含當前客戶端不支持的排版樣式，建議您升級到最新版客戶端以保證最佳閱讀體驗。</string>
+    <string name="store__kernel_support_view__message">該書包含當前客戶端不支持的排版樣式，建議您升級到最新版客戶端以保證最佳閱讀體驗。
+    </string>
     <string name="store__kernel_support_view__title">版本兼容提示</string>
     <string name="store__list_item__update">最新章節: %s</string>
     <string name="store__payment_choose_view__book_name_middle">《%s》</string>
@@ -1803,10 +1929,14 @@
     <string name="store__price_changed_view__title">購物車最新價格</string>
     <string name="store__publisher_intro_view__title">相關圖書</string>
     <string name="store__purchase_book_by_auto_selected_coupon__coupon">本次將使用1張%d元購書券</string>
-    <string name="store__purchase_book_by_auto_selected_coupon__coupon_with_price">本次將使用%1$d元購書券兌換壹本%2$.2f元的書籍</string>
+    <string name="store__purchase_book_by_auto_selected_coupon__coupon_with_price">
+        本次將使用%1$d元購書券兌換壹本%2$.2f元的書籍
+    </string>
     <string name="store__purchase_book_by_auto_selected_coupon__valid_within_s">（剩余%s有效期）</string>
     <string name="store__purchase_book_by_auto_selected_coupon_view__all_coupons">全部購書券</string>
-    <string name="store__purchase_book_by_auto_selected_coupon_view__attention">（壹張券只能兌換壹本書，不找零，不抵價）</string>
+    <string name="store__purchase_book_by_auto_selected_coupon_view__attention">
+        （壹張券只能兌換壹本書，不找零，不抵價）
+    </string>
     <string name="store__purchase_book_by_auto_selected_coupon_view__confirm">確認兌換</string>
     <string name="store__purchase_book_by_user_selected_coupon_view__confirm">確認兌換</string>
     <string name="store__purchase_book_by_user_selected_coupon_view__title">選擇購書券</string>
@@ -1830,7 +1960,8 @@
     <string name="store__ranking_view__jingdong_ranking">京東熱銷</string>
     <string name="store__ranking_view__month_ranking">月度榜</string>
     <string name="store__recommend_app_item_view__icon">"特約
-推薦"</string>
+        推薦"
+    </string>
     <string name="store__recommend_rock_view__changed">換壹批</string>
     <string name="store__recommends_view__book_list">經典書單</string>
     <string name="store__recommends_view__fiction_description">專業原創文學閱讀器（多看出品）</string>
@@ -1911,7 +2042,8 @@
     <string name="store__shopping_cart_empty_view__hint">使用購物車可以壹次購買多本書籍</string>
     <string name="store__shopping_cart_empty_view__no_book">購物車還是空的哦</string>
     <string name="store__shopping_cart_item_view__invaild_platform">"Android
-未上架"</string>
+        未上架"
+    </string>
     <string name="store__shopping_cart_payment_guide_view__to_pay">去結算</string>
     <string name="store__shopping_cart_payment_guide_view__total_consumption">應付金額:</string>
     <string name="store__shopping_cart_payment_guide_view__total_discount">總計優惠:</string>
@@ -1919,9 +2051,11 @@
     <string name="store__shopping_cart_payment_view__discount">特價圖書 | 優惠￥%.2f</string>
     <string name="store__shopping_cart_payment_view__discount2">特價圖書 | 優惠%.2f米幣</string>
     <string name="store__shopping_cart_payment_view__discount_template">"%1$s | 優惠￥%2$.2f
-"</string>
+        "
+    </string>
     <string name="store__shopping_cart_payment_view__discount_template2">"%1$s | 優惠%2$.2f米幣
-"</string>
+        "
+    </string>
     <string name="store__shopping_cart_payment_view__payment_book">共 %d 本可購買</string>
     <string name="store__shopping_cart_payment_view__special_event">滿%1$.2f元減%2$.2f元</string>
     <string name="store__shopping_cart_payment_view__total_consumption">金額總計:</string>
@@ -2002,38 +2136,45 @@
     <string name="welcome__newbie_interested_categories_view__welcome_message">歡迎來到多看閱讀</string>
     <string name="welcome__newbie_view__publication">出版物</string>
     <string name="welcome__newbie_view__publication_names">"三體
-從妳的全世界路過
-追風箏的人
-皮囊
-明朝那些事兒
-解憂雜貨店"</string>
+        從妳的全世界路過
+        追風箏的人
+        皮囊
+        明朝那些事兒
+        解憂雜貨店"
+    </string>
     <string name="welcome__newbie_view__quit">退出</string>
     <string name="welcome__newbie_view__receive">確定領取</string>
     <string name="welcome__newbie_view__serialize">網絡文學</string>
     <string name="welcome__newbie_view__serialize_names">"七界武神
-鬼夫來臨
-我欲封天
-壹夜棄妃
-超品相師
-老公，驗麽"</string>
+        鬼夫來臨
+        我欲封天
+        壹夜棄妃
+        超品相師
+        老公，驗麽"
+    </string>
     <string name="welcome__newbie_view__serialize_names_hm">"絕命誘惑
-我的美女老板娘
-壹夜棄妃
-異能小農民
-霸道老公，抱壹抱
-很純很曖昧"</string>
+        我的美女老板娘
+        壹夜棄妃
+        異能小農民
+        霸道老公，抱壹抱
+        很純很曖昧"
+    </string>
     <string name="welcome__newbie_view__tip">多看閱讀在使用過程中可能需要聯網</string>
     <string name="welcome__newbie_view__title">請選擇您偏好的讀物</string>
     <string name="welcome__newbie_welcome_view__login">用戶登錄</string>
     <string name="welcome__newbie_welcome_view__login_directly">直接登錄</string>
-    <string name="welcome__newbie_welcome_view__login_using_system_account">您可以用系統小米帳號%s直接登錄</string>
+    <string name="welcome__newbie_welcome_view__login_using_system_account">您可以用系統小米帳號%s直接登錄
+    </string>
     <string name="welcome__newbie_welcome_view__switch_account">切換帳號</string>
     <string name="welcome__web_access_view__cancel">取消</string>
     <string name="welcome__web_access_view__dont_show_again">以後不再提醒</string>
     <string name="welcome__web_access_view__ok">同意</string>
-    <string name="welcome__web_access_view__prompt">您正在使用小米公司提供的閱讀服務，使用中需要訪問網絡和獲取位置信息，讀取和接收短信、彩信，以及讀取本地文件和獲取拍照權限，是否同意？</string>
+    <string name="welcome__web_access_view__prompt">
+        您正在使用小米公司提供的閱讀服務，使用中需要訪問網絡和獲取位置信息，讀取和接收短信、彩信，以及讀取本地文件和獲取拍照權限，是否同意？
+    </string>
     <string name="welcome__web_access_view__title">提示</string>
-    <string name="bookshelf__book__download_dialog__serial_prompt">目前您處於流量環境下，下載所選書籍將消耗流量，是否繼續？</string>
+    <string name="bookshelf__book__download_dialog__serial_prompt">目前您處於流量環境下，下載所選書籍將消耗流量，是否繼續？
+    </string>
     <string name="bookshelf__empty_view__go_to_store">去書城</string>
     <string name="bookshelf__shared__delete_fail">刪除失敗，請稍後重試</string>
     <string name="bookshelf__shared__search">搜索作者、書名</string>
@@ -2101,7 +2242,8 @@
     <string name="personal__message_center_view__fail">刪除評論失敗，請稍後重試</string>
     <string name="personal__message_center_view__succeed">成功刪除%d條評論</string>
     <string name="personal__message_empty_view__no_message_description">在這裏，收割評論與贊</string>
-    <string name="personal__message_empty_view__no_notification_description">在這裏，查看系統通知和活動消息</string>
+    <string name="personal__message_empty_view__no_notification_description">在這裏，查看系統通知和活動消息
+    </string>
     <string name="personal__message_push_view__delete_multiple">刪除所選通知？</string>
     <string name="personal__message_push_view__deleting">正在刪除通知...</string>
     <string name="personal__message_push_view__edit_selected">已選擇%d條通知</string>
@@ -2172,7 +2314,8 @@
     <string name="reading__comment_view__view_others">前往書評區></string>
     <string name="reading__comment_view__view_topic">查看完整專題></string>
     <string name="reading__comment_view__write_comment">給作品寫幾句評價吧~</string>
-    <string name="reading__pull_comic_by_mobile_network_dlg__prompt">目前您處於流量環境下，是否允許使用流量下載漫畫？</string>
+    <string name="reading__pull_comic_by_mobile_network_dlg__prompt">目前您處於流量環境下，是否允許使用流量下載漫畫？
+    </string>
     <string name="reading__pull_comic_by_mobile_network_dlg__title">流量提醒</string>
     <string name="reading__seek_page_view__comic_next_chapter">下一話</string>
     <string name="reading__seek_page_view__comic_prev_chapter">上一話</string>

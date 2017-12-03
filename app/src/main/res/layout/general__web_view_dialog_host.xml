@@ -1,14 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.HeaderView android:id="@id/general__web_view_host__title" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <RelativeLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
-        <WebView android:id="@id/geneal__web_view_host__web" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-        <RelativeLayout android:id="@id/general__web_view_host__error" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip">
-            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
-                <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/general__shared__network_error" />
-                <com.duokan.reader.ui.general.DkLabelView android:text="@string/account__mi_login_view__network_error" style="@style/bookcity__shared__error" />
-                <com.duokan.reader.ui.general.DkLabelView android:layout_gravity="center" android:id="@id/general__web_view_host__reload" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="@string/account__mi_login_view__reload" style="@style/general__shared__button_43dip_ffffff" />
+<LinearLayout android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.duokan.reader.ui.general.HeaderView
+        android:id="@id/general__web_view_host__title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0">
+
+        <WebView
+            android:id="@id/geneal__web_view_host__web"
+            android:visibility="visible"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <RelativeLayout
+            android:id="@id/general__web_view_host__error"
+            android:visibility="invisible"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginTop="10.0dip"
+            android:layout_marginRight="10.0dip"
+            android:layout_marginBottom="10.0dip">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/general__shared__network_error" />
+
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:text="@string/account__mi_login_view__network_error"
+                    style="@style/bookcity__shared__error" />
+
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:layout_gravity="center"
+                    android:id="@id/general__web_view_host__reload"
+                    android:paddingLeft="10.0dip"
+                    android:paddingRight="10.0dip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12.0dip"
+                    android:text="@string/account__mi_login_view__reload"
+                    style="@style/general__shared__button_43dip_ffffff" />
             </LinearLayout>
         </RelativeLayout>
     </RelativeLayout>

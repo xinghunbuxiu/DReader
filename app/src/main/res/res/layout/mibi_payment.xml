@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@drawable/mibi_dialog_bg_light" android:paddingBottom="@dimen/mibi_payment_padding_bottom" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:ellipsize="marquee" android:gravity="center" android:id="@id/title" android:background="@drawable/mibi_payment_action_bar_bg" android:focusable="false" android:layout_width="fill_parent" android:layout_height="@dimen/mibi_payment_action_bar_height" android:singleLine="true" style="@style/V6.TextAppearance.WindowTitle" />
-    <ViewStub android:id="@id/mibi_pay_stub" android:layout="@layout/mibi_balance_pay" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <ViewStub android:id="@id/other_pay_stub" android:layout="@layout/mibi_other_pay" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <TextView android:textSize="@dimen/mibi_text_size_payment_small" android:textColor="@color/mibi_text_color_payment_red" android:layout_gravity="center" android:id="@id/error_info" android:paddingLeft="@dimen/mibi_payment_general_padding" android:paddingRight="@dimen/mibi_payment_general_padding" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_payment_general_gap" />
-    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/mibi_payment_general_padding" android:paddingRight="@dimen/mibi_payment_general_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_payment_general_gap">
-        <Button android:id="@id/button_call" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mibi_button_call" style="@style/Mibi.Widget.Button.Payment" />
-        <com.mipay.common.component.ProgressButton android:id="@id/button_pay" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mibi_button_pay" style="@style/Mibi.Widget.Button.Payment" />
+<LinearLayout android:orientation="vertical" android:background="@drawable/mibi_dialog_bg_light"
+    android:paddingBottom="@dimen/mibi_payment_padding_bottom" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:ellipsize="marquee" android:gravity="center" android:id="@id/title"
+        android:background="@drawable/mibi_payment_action_bar_bg" android:focusable="false"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/mibi_payment_action_bar_height" android:singleLine="true"
+        style="@style/V6.TextAppearance.WindowTitle" />
+    <ViewStub android:id="@id/mibi_pay_stub" android:layout="@layout/mibi_balance_pay"
+        android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <ViewStub android:id="@id/other_pay_stub" android:layout="@layout/mibi_other_pay"
+        android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <TextView android:textSize="@dimen/mibi_text_size_payment_small"
+        android:textColor="@color/mibi_text_color_payment_red" android:layout_gravity="center"
+        android:id="@id/error_info" android:paddingLeft="@dimen/mibi_payment_general_padding"
+        android:paddingRight="@dimen/mibi_payment_general_padding" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mibi_payment_general_gap" />
+    <LinearLayout android:orientation="vertical"
+        android:paddingLeft="@dimen/mibi_payment_general_padding"
+        android:paddingRight="@dimen/mibi_payment_general_padding"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mibi_payment_general_gap">
+        <Button android:id="@id/button_call" android:visibility="gone"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:text="@string/mibi_button_call" style="@style/Mibi.Widget.Button.Payment" />
+        <com.mipay.common.component.ProgressButton android:id="@id/button_pay"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:text="@string/mibi_button_pay" style="@style/Mibi.Widget.Button.Payment" />
     </LinearLayout>
 </LinearLayout>

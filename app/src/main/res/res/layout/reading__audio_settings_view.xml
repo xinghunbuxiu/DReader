@@ -1,12 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="bottom" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:enabled="false" android:background="@color/general__shared__141414f2" android:padding="15.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <com.duokan.core.ui.BoxView android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxWidth="360.0dip">
-            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__ffffffcc" android:gravity="center" android:layout_gravity="right" android:id="@id/reading__audio_settings_view__synchronous" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reading__audio_settings_view__synchronous" android:drawableLeft="@drawable/general__shared__switch_dark" android:drawablePadding="10.0dip" />
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__ffffffcc" android:gravity="center" android:id="@id/reading__audio_settings_view__rollback" android:background="@drawable/reading__reading_options_view__text_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/reading__audio_settings_view__rollback" />
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__ffffffcc" android:gravity="center" android:id="@id/reading__audio_settings_view__pause" android:background="@drawable/reading__reading_options_view__text_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/reading__audio_settings_view__pause" />
+<LinearLayout android:gravity="bottom" android:orientation="vertical"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:enabled="false" android:background="@color/general__shared__141414f2"
+        android:padding="15.0dip" android:clickable="true" android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <com.duokan.core.ui.BoxView android:layout_gravity="center"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:maxWidth="360.0dip">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__b"
+                    android:textColor="@color/general__shared__ffffffcc" android:gravity="center"
+                    android:layout_gravity="right"
+                    android:id="@id/reading__audio_settings_view__synchronous"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/reading__audio_settings_view__synchronous"
+                    android:drawableLeft="@drawable/general__shared__switch_dark"
+                    android:drawablePadding="10.0dip" />
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__b"
+                    android:textColor="@color/general__shared__ffffffcc" android:gravity="center"
+                    android:id="@id/reading__audio_settings_view__rollback"
+                    android:background="@drawable/reading__reading_options_view__text_background"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="20.0dip"
+                    android:text="@string/reading__audio_settings_view__rollback" />
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__b"
+                    android:textColor="@color/general__shared__ffffffcc" android:gravity="center"
+                    android:id="@id/reading__audio_settings_view__pause"
+                    android:background="@drawable/reading__reading_options_view__text_background"
+                    android:layout_width="fill_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="20.0dip"
+                    android:text="@string/reading__audio_settings_view__pause" />
             </LinearLayout>
         </com.duokan.core.ui.BoxView>
     </FrameLayout>

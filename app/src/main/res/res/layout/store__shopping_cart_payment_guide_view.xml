@@ -1,10 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <View android:background="#ff9f9f9f" android:layout_width="fill_parent" android:layout_height="1.0px" />
-    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/store__shopping_cart_payment_guide_view__left_part" android:paddingTop="15.0dip" android:paddingBottom="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
-        <com.duokan.reader.ui.general.deprecatedDkTextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__666666" android:ellipsize="end" android:id="@id/store__shopping_cart_payment_guide_view__first_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/store__shopping_cart_payment_guide_view__total_consumption" android:singleLine="true" />
-        <com.duokan.reader.ui.general.deprecatedDkTextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__ff6518" android:ellipsize="end" android:id="@id/store__shopping_cart_payment_guide_view__second_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/store__shopping_cart_payment_guide_view__total_discount" android:singleLine="true" />
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="#ff9f9f9f" android:layout_width="fill_parent"
+        android:layout_height="1.0px" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical"
+        android:id="@id/store__shopping_cart_payment_guide_view__left_part"
+        android:paddingTop="15.0dip" android:paddingBottom="15.0dip"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginLeft="15.0dip" android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true">
+        <com.duokan.reader.ui.general.deprecatedDkTextView
+            android:textSize="@dimen/general_font__shared__c"
+            android:textColor="@color/general__shared__666666" android:ellipsize="end"
+            android:id="@id/store__shopping_cart_payment_guide_view__first_line"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:text="@string/store__shopping_cart_payment_guide_view__total_consumption"
+            android:singleLine="true" />
+        <com.duokan.reader.ui.general.deprecatedDkTextView
+            android:textSize="@dimen/general_font__shared__d"
+            android:textColor="@color/general__shared__ff6518" android:ellipsize="end"
+            android:id="@id/store__shopping_cart_payment_guide_view__second_line"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:text="@string/store__shopping_cart_payment_guide_view__total_discount"
+            android:singleLine="true" />
     </LinearLayout>
-    <com.duokan.reader.ui.general.DkLabelView android:id="@id/store__shopping_cart_payment_guide_view__pay" android:paddingLeft="25.0dip" android:paddingRight="25.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:text="@string/store__shopping_cart_payment_guide_view__to_pay" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/general__shared__button_29dip_e9622d" />
+    <com.duokan.reader.ui.general.DkLabelView
+        android:id="@id/store__shopping_cart_payment_guide_view__pay" android:paddingLeft="25.0dip"
+        android:paddingRight="25.0dip" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginLeft="15.0dip"
+        android:layout_marginRight="15.0dip"
+        android:text="@string/store__shopping_cart_payment_guide_view__to_pay"
+        android:layout_alignParentRight="true" android:layout_centerVertical="true"
+        style="@style/general__shared__button_29dip_e9622d" />
 </RelativeLayout>

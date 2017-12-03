@@ -1,12 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:enabled="false" android:layout_gravity="bottom" android:background="@color/general__shared__141414f2" android:paddingTop="25.0dip" android:paddingBottom="5.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.core.ui.BoxView android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:maxWidth="400.0dip">
-        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:gravity="center" android:id="@id/reading__reading_menu_bottom_view__go_prev_chapter" android:paddingLeft="20.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="15.0dip" android:text="@string/reading__seek_page_view__prev_chapter" android:contentDescription="@string/reading__seek_page_view__prev_chapter" />
-            <SeekBar android:id="@id/reading__reading_menu_bottom_view__seek_bar" android:padding="10.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:progressDrawable="@drawable/general__shared__seek_bar" android:thumb="@drawable/general__shared__seek_bar_thumb" android:thumbOffset="10.0dip" android:layout_weight="1.0" />
-            <ProgressBar android:id="@id/reading__reading_menu_bottom_view__paginating_progress" android:padding="10.0dip" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:max="100" android:progressDrawable="@drawable/general__shared__seek_bar" android:layout_weight="1.0" style="@android:style/Widget.ProgressBar.Horizontal" />
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:gravity="center" android:id="@id/reading__reading_menu_bottom_view__go_next_chapter" android:paddingRight="20.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="15.0dip" android:text="@string/reading__seek_page_view__next_chapter" android:contentDescription="@string/reading__seek_page_view__next_chapter" />
+<FrameLayout android:enabled="false"
+    android:layout_gravity="bottom"
+    android:background="@color/general__shared__141414f2"
+    android:paddingTop="25.0dip"
+    android:paddingBottom="5.0dip"
+    android:clickable="true"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.duokan.core.ui.BoxView
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:maxWidth="400.0dip">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__b"
+                android:gravity="center"
+                android:id="@id/reading__reading_menu_bottom_view__go_prev_chapter"
+                android:paddingLeft="20.0dip"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginRight="15.0dip"
+                android:text="@string/reading__seek_page_view__prev_chapter"
+                android:contentDescription="@string/reading__seek_page_view__prev_chapter" />
+
+            <SeekBar
+                android:id="@id/reading__reading_menu_bottom_view__seek_bar"
+                android:padding="10.0dip"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:progressDrawable="@drawable/general__shared__seek_bar"
+                android:thumb="@drawable/general__shared__seek_bar_thumb"
+                android:thumbOffset="10.0dip"
+                android:layout_weight="1.0" />
+
+            <ProgressBar
+                android:id="@id/reading__reading_menu_bottom_view__paginating_progress"
+                android:padding="10.0dip"
+                android:visibility="gone"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progressDrawable="@drawable/general__shared__seek_bar"
+                android:layout_weight="1.0"
+                style="@android:style/Widget.ProgressBar.Horizontal" />
+
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__b"
+                android:gravity="center"
+                android:id="@id/reading__reading_menu_bottom_view__go_next_chapter"
+                android:paddingRight="20.0dip"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="15.0dip"
+                android:text="@string/reading__seek_page_view__next_chapter"
+                android:contentDescription="@string/reading__seek_page_view__next_chapter" />
         </LinearLayout>
     </com.duokan.core.ui.BoxView>
 </FrameLayout>

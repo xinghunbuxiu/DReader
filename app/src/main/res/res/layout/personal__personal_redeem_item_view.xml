@@ -1,16 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__cccccc" android:id="@id/personal__personal_redeem_item_view__group_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:text="@string/personal__purchased_book_group_title_view__gift" />
-        <RelativeLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
-            <com.duokan.reader.ui.general.BookCoverView android:id="@id/personal__personal_redeem_item_view__cover" android:layout_marginLeft="15.0dip" android:layout_marginTop="@dimen/general__shared__cover_top_shadow_margin_15dip" android:layout_marginBottom="@dimen/general__shared__cover_bottom_shadow_margin_15dip" android:layout_alignParentLeft="true" style="@style/general__shared__cover_list" />
-            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/general__shared__cover_right_shadow_margin_15dip" android:layout_marginTop="15.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="15.0dip" android:layout_toRightOf="@id/personal__personal_redeem_item_view__cover" android:layout_centerVertical="true">
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__343434" android:ellipsize="end" android:layout_gravity="center_vertical" android:id="@id/personal__personal_redeem_item_view__title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" />
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__a3a3a3" android:ellipsize="end" android:id="@id/personal__personal_redeem_item_view__author" android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:singleLine="true" android:includeFontPadding="false" />
-                <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__6e6e6e" android:ellipsize="end" android:id="@id/personal__personal_redeem_item_view__date" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:singleLine="true" android:includeFontPadding="false" />
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <TextView android:textSize="@dimen/general_font__shared__d"
+            android:textColor="@color/general__shared__cccccc"
+            android:id="@id/personal__personal_redeem_item_view__group_title"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip"
+            android:text="@string/personal__purchased_book_group_title_view__gift" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="0.0dip"
+            android:layout_weight="1.0">
+            <com.duokan.reader.ui.general.BookCoverView
+                android:id="@id/personal__personal_redeem_item_view__cover"
+                android:layout_marginLeft="15.0dip"
+                android:layout_marginTop="@dimen/general__shared__cover_top_shadow_margin_15dip"
+                android:layout_marginBottom="@dimen/general__shared__cover_bottom_shadow_margin_15dip"
+                android:layout_alignParentLeft="true" style="@style/general__shared__cover_list" />
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/general__shared__cover_right_shadow_margin_15dip"
+                android:layout_marginTop="15.0dip" android:layout_marginRight="5.0dip"
+                android:layout_marginBottom="15.0dip"
+                android:layout_toRightOf="@id/personal__personal_redeem_item_view__cover"
+                android:layout_centerVertical="true">
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__b"
+                    android:textColor="@color/general__shared__343434" android:ellipsize="end"
+                    android:layout_gravity="center_vertical"
+                    android:id="@id/personal__personal_redeem_item_view__title"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:singleLine="true" android:includeFontPadding="false" />
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__d"
+                    android:textColor="@color/general__shared__a3a3a3" android:ellipsize="end"
+                    android:id="@id/personal__personal_redeem_item_view__author"
+                    android:layout_width="200.0dip" android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip" android:singleLine="true"
+                    android:includeFontPadding="false" />
+                <com.duokan.reader.ui.general.DkLabelView
+                    android:textSize="@dimen/general_font__shared__d"
+                    android:textColor="@color/general__shared__6e6e6e" android:ellipsize="end"
+                    android:id="@id/personal__personal_redeem_item_view__date"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginTop="15.0dip" android:singleLine="true"
+                    android:includeFontPadding="false" />
             </LinearLayout>
-            <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@android:color/white" android:id="@id/personal__personal_redeem_item_view__state" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="15.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <com.duokan.reader.ui.general.DkLabelView
+                android:textSize="@dimen/general_font__shared__d"
+                android:textColor="@android:color/white"
+                android:id="@id/personal__personal_redeem_item_view__state"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip" android:layout_marginRight="15.0dip"
+                android:layout_alignParentRight="true" android:layout_centerVertical="true" />
         </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>

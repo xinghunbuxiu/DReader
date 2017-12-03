@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_gravity="center" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:layout_gravity="center" android:id="@id/reading__fullscreen_ad_image_view__response_area" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <ImageView android:id="@id/reading__large_image_view__image" android:layout_width="306.0dip" android:layout_height="wrap_content" android:adjustViewBounds="true" />
-        <ImageView android:layout_gravity="center|right|top" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/reading__fullscreen_ad_view__ad_sign" />
+<FrameLayout android:layout_gravity="center"
+    android:background="@android:color/transparent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <FrameLayout
+        android:layout_gravity="center"
+        android:id="@id/reading__fullscreen_ad_image_view__response_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@id/reading__large_image_view__image"
+            android:layout_width="306.0dip"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true" />
+
+        <ImageView
+            android:layout_gravity="center|right|top"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/reading__fullscreen_ad_view__ad_sign" />
     </FrameLayout>
 </FrameLayout>

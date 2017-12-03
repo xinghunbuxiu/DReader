@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:id="@id/bookshelf__menu_popup_view__dark_bg" android:background="@color/general__shared__00000099" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    <com.duokan.core.ui.BoxView android:layout_gravity="bottom|center" android:id="@id/bookshelf__menu_popup_view__content" android:background="@drawable/bookshelf__popup_menu_view__background" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxWidth="615.0dip" />
+<FrameLayout android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/bookshelf__menu_popup_view__dark_bg"
+        android:background="@color/general__shared__00000099" android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+    <com.duokan.core.ui.BoxView android:layout_gravity="bottom|center"
+        android:id="@id/bookshelf__menu_popup_view__content"
+        android:background="@drawable/bookshelf__popup_menu_view__background"
+        android:clickable="true" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:maxWidth="615.0dip" />
 </FrameLayout>

@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout android:orientation="horizontal" android:background="@drawable/personal__comment_left_tab_view_bg" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <com.duokan.reader.ui.general.DkLabelView android:gravity="center" android:layout_gravity="center" android:id="@id/general__shared__tab_view__text" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_centerInParent="true" style="@style/general__shared__tab_text_style_2" />
-        <ImageView android:id="@id/general__shared__tab_view__num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:layout_toRightOf="@id/general__shared__tab_view__text" android:layout_centerVertical="true" />
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal"
+        android:background="@drawable/personal__comment_left_tab_view_bg"
+        android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.duokan.reader.ui.general.DkLabelView android:gravity="center"
+            android:layout_gravity="center" android:id="@id/general__shared__tab_view__text"
+            android:layout_width="wrap_content" android:layout_height="fill_parent"
+            android:layout_centerInParent="true" style="@style/general__shared__tab_text_style_2" />
+        <ImageView android:id="@id/general__shared__tab_view__num"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginLeft="2.0dip"
+            android:layout_toRightOf="@id/general__shared__tab_view__text"
+            android:layout_centerVertical="true" />
     </RelativeLayout>
 </RelativeLayout>

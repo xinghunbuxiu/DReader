@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/store__list_ad_view__root" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__ffffff" android:ellipsize="end" android:id="@id/store__list_item_view__first_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:singleLine="true" />
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__ffffff" android:ellipsize="end" android:id="@id/store__list_item_view__second_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="6.0dip" android:singleLine="false" />
+<LinearLayout android:orientation="vertical" android:id="@id/store__list_ad_view__root"
+    android:layout_width="fill_parent" android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b"
+        android:textColor="@color/general__shared__ffffff" android:ellipsize="end"
+        android:id="@id/store__list_item_view__first_line" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:layout_marginLeft="10.0dip"
+        android:layout_marginTop="10.0dip" android:singleLine="true" />
+    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__d"
+        android:textColor="@color/general__shared__ffffff" android:ellipsize="end"
+        android:id="@id/store__list_item_view__second_line" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:layout_marginLeft="10.0dip"
+        android:layout_marginTop="6.0dip" android:singleLine="false" />
 </LinearLayout>

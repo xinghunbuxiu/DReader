@@ -1,18 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/mibi_recharge_layout_padding_left" android:paddingTop="@dimen/mibi_recharge_layout_padding_top" android:paddingRight="@dimen/mibi_recharge_layout_padding_right" android:paddingBottom="@dimen/mibi_recharge_layout_padding_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/mibi_group_single_item_bg_light" android:paddingLeft="@dimen/mibi_voucher_edit_padding_left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_recharge_layout_item_gap" android:minHeight="@dimen/mibi_voucher_edit_min_height">
-            <com.mipay.common.component.FormattableEditText android:textSize="@dimen/mibi_text_size_small" android:textColor="@color/mibi_text_color_black" android:id="@id/voucher_edit" android:background="@null" android:layout_width="0.0dip" android:layout_height="wrap_content" android:hint="@string/mibi_voucher_input_password_prompt" android:digits="0123456789 " android:layout_weight="1.0" android:inputType="number" />
-            <ImageView android:layout_gravity="center_vertical" android:id="@id/camera_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" android:src="@drawable/mibi_camera" />
+<ScrollView android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/mibi_recharge_layout_padding_left"
+        android:paddingTop="@dimen/mibi_recharge_layout_padding_top"
+        android:paddingRight="@dimen/mibi_recharge_layout_padding_right"
+        android:paddingBottom="@dimen/mibi_recharge_layout_padding_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@drawable/mibi_group_single_item_bg_light"
+            android:paddingLeft="@dimen/mibi_voucher_edit_padding_left"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mibi_recharge_layout_item_gap"
+            android:minHeight="@dimen/mibi_voucher_edit_min_height">
+
+            <com.mipay.common.component.FormattableEditText
+                android:textSize="@dimen/mibi_text_size_small"
+                android:textColor="@color/mibi_text_color_black"
+                android:id="@id/voucher_edit"
+                android:background="@null"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:hint="@string/mibi_voucher_input_password_prompt"
+                android:digits="0123456789 "
+                android:layout_weight="1.0"
+                android:inputType="number" />
+
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:id="@id/camera_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3.0dip"
+                android:src="@drawable/mibi_camera" />
         </LinearLayout>
-        <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
-        <RelativeLayout android:layout_gravity="center" android:background="@drawable/mibi_voucher_card_bg" android:layout_width="@dimen/mibi_voucher_card_width" android:layout_height="@dimen/mibi_voucher_card_height" android:layout_marginTop="@dimen/mibi_recharge_layout_group_gap">
-            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/mibi_voucher_card_logo_margin_left" android:layout_marginTop="@dimen/mibi_voucher_card_logo_margin_top" android:src="@drawable/mibi_voucher_micard_logo" />
-            <TextView android:gravity="center" android:background="@drawable/mibi_voucher_card_text_background" android:paddingTop="@dimen/mibi_voucher_card_text_padding_top" android:paddingBottom="@dimen/mibi_voucher_card_text_padding_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/mibi_voucher_card_text_margin_bottom" android:text="@string/mibi_voucher_card_text" android:layout_alignParentBottom="true" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0" />
+
+        <RelativeLayout
+            android:layout_gravity="center"
+            android:background="@drawable/mibi_voucher_card_bg"
+            android:layout_width="@dimen/mibi_voucher_card_width"
+            android:layout_height="@dimen/mibi_voucher_card_height"
+            android:layout_marginTop="@dimen/mibi_recharge_layout_group_gap">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mibi_voucher_card_logo_margin_left"
+                android:layout_marginTop="@dimen/mibi_voucher_card_logo_margin_top"
+                android:src="@drawable/mibi_voucher_micard_logo" />
+
+            <TextView
+                android:gravity="center"
+                android:background="@drawable/mibi_voucher_card_text_background"
+                android:paddingTop="@dimen/mibi_voucher_card_text_padding_top"
+                android:paddingBottom="@dimen/mibi_voucher_card_text_padding_bottom"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/mibi_voucher_card_text_margin_bottom"
+                android:text="@string/mibi_voucher_card_text"
+                android:layout_alignParentBottom="true" />
         </RelativeLayout>
-        <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
-        <TextView android:gravity="center" android:id="@id/contentHint" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_recharge_layout_group_gap" style="@style/Mibi.TextAppearance.Hint.Link" />
-        <Button android:id="@id/button_recharge" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_recharge_layout_group_gap" android:text="@string/mibi_btn_recharge_large" style="@style/Mibi.Widget.Button.Warning" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0" />
+
+        <TextView
+            android:gravity="center"
+            android:id="@id/contentHint"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mibi_recharge_layout_group_gap"
+            style="@style/Mibi.TextAppearance.Hint.Link" />
+
+        <Button
+            android:id="@id/button_recharge"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mibi_recharge_layout_group_gap"
+            android:text="@string/mibi_btn_recharge_large"
+            style="@style/Mibi.Widget.Button.Warning" />
     </LinearLayout>
 </ScrollView>

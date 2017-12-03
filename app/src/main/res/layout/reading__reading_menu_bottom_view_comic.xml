@@ -1,38 +1,223 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:id="@id/reading__reading_menu_bottom_view__main" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
-            <FrameLayout android:enabled="false" android:layout_gravity="bottom|center" android:id="@id/reading__reading_menu_bottom_view__seek_bar_status" android:background="@drawable/reading__seekbar_view__background" android:visibility="gone" android:clickable="true" android:layout_width="300.0dip" android:layout_height="60.0dip" android:layout_marginBottom="20.0dip">
-                <com.duokan.core.ui.BoxView android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:maxWidth="400.0dip">
-                    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
-                        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:padding="5.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
-                            <TextView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__ffffff" android:id="@id/reading__reading_menu_bottom_view__chapter" android:paddingLeft="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
-                            <TextView android:textSize="@dimen/general_font__shared__d" android:textColor="@color/general__shared__ffffffcc" android:id="@id/reading__reading_menu_bottom_view__seek_bar_progress" android:paddingLeft="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:singleLine="true" />
+<FrameLayout android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@id/reading__reading_menu_bottom_view__main"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0">
+
+            <FrameLayout
+                android:enabled="false"
+                android:layout_gravity="bottom|center"
+                android:id="@id/reading__reading_menu_bottom_view__seek_bar_status"
+                android:background="@drawable/reading__seekbar_view__background"
+                android:visibility="gone"
+                android:clickable="true"
+                android:layout_width="300.0dip"
+                android:layout_height="60.0dip"
+                android:layout_marginBottom="20.0dip">
+
+                <com.duokan.core.ui.BoxView
+                    android:layout_gravity="center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:maxWidth="400.0dip">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <LinearLayout
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:padding="5.0dip"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.0">
+
+                            <TextView
+                                android:textSize="@dimen/general_font__shared__c"
+                                android:textColor="@color/general__shared__ffffff"
+                                android:id="@id/reading__reading_menu_bottom_view__chapter"
+                                android:paddingLeft="5.0dip"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:singleLine="true" />
+
+                            <TextView
+                                android:textSize="@dimen/general_font__shared__d"
+                                android:textColor="@color/general__shared__ffffffcc"
+                                android:id="@id/reading__reading_menu_bottom_view__seek_bar_progress"
+                                android:paddingLeft="5.0dip"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2.0dip"
+                                android:singleLine="true" />
                         </LinearLayout>
-                        <ImageView android:layout_width="1.0px" android:layout_height="fill_parent" android:src="@color/general__shared__ffffff33" android:scaleType="center" />
-                        <ImageView android:id="@id/reading__reading_menu_bottom_view__page_back" android:padding="20.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/reading__reading_menu_bottom_view__page_back" android:scaleType="center" android:contentDescription="@string/reading__reading_menu_view__page_back" />
-                        <ImageView android:id="@id/reading__reading_menu_bottom_view__page_forward" android:padding="20.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/reading__reading_menu_bottom_view__page_forward" android:scaleType="center" android:contentDescription="@string/reading__reading_menu_view__page_forward" />
+
+                        <ImageView
+                            android:layout_width="1.0px"
+                            android:layout_height="fill_parent"
+                            android:src="@color/general__shared__ffffff33"
+                            android:scaleType="center" />
+
+                        <ImageView
+                            android:id="@id/reading__reading_menu_bottom_view__page_back"
+                            android:padding="20.0dip"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:src="@drawable/reading__reading_menu_bottom_view__page_back"
+                            android:scaleType="center"
+                            android:contentDescription="@string/reading__reading_menu_view__page_back" />
+
+                        <ImageView
+                            android:id="@id/reading__reading_menu_bottom_view__page_forward"
+                            android:padding="20.0dip"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:src="@drawable/reading__reading_menu_bottom_view__page_forward"
+                            android:scaleType="center"
+                            android:contentDescription="@string/reading__reading_menu_view__page_forward" />
                     </LinearLayout>
                 </com.duokan.core.ui.BoxView>
             </FrameLayout>
-            <FrameLayout android:layout_gravity="bottom" android:id="@id/reading__reading_menu_bottom_view__side_button" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <ImageView android:layout_gravity="left" android:id="@id/reading__reading_menu_bottom_view_epub__slide_show" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/reading__reading_menu_bottom_view__slide_show" android:scaleType="center" android:contentDescription="@string/reading__reading_menu_bottom_view_epub__slide_show" />
-                <ImageView android:layout_gravity="right" android:id="@id/reading__reading_menu_bottom_view__night_mode" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/reading__reading_menu_bottom_view__night_mode" android:scaleType="center" android:contentDescription="@string/reading__reading_menu_bottom_view__night_mode" />
+
+            <FrameLayout
+                android:layout_gravity="bottom"
+                android:id="@id/reading__reading_menu_bottom_view__side_button"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_gravity="left"
+                    android:id="@id/reading__reading_menu_bottom_view_epub__slide_show"
+                    android:padding="5.0dip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/reading__reading_menu_bottom_view__slide_show"
+                    android:scaleType="center"
+                    android:contentDescription="@string/reading__reading_menu_bottom_view_epub__slide_show" />
+
+                <ImageView
+                    android:layout_gravity="right"
+                    android:id="@id/reading__reading_menu_bottom_view__night_mode"
+                    android:padding="5.0dip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/reading__reading_menu_bottom_view__night_mode"
+                    android:scaleType="center"
+                    android:contentDescription="@string/reading__reading_menu_bottom_view__night_mode" />
             </FrameLayout>
         </FrameLayout>
-        <include android:enabled="false" android:layout_gravity="bottom" android:background="@color/general__shared__141414f2" android:paddingBottom="15.0dip" android:visibility="visible" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/reading__reading_menu_bottom_view__seek_bar" />
-        <FrameLayout android:enabled="false" android:layout_gravity="bottom" android:background="@color/general__shared__141414f2" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <com.duokan.core.ui.BoxView android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:maxWidth="400.0dip">
-                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
-                    <ImageView android:gravity="center" android:id="@id/reading__reading_menu_bottom_view__navigation" android:paddingTop="15.0dip" android:paddingBottom="25.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/reading__reading_menu_bottom_view__navigation" android:layout_weight="1.0" android:contentDescription="@string/reading__reading_menu_view__navigation" />
-                    <ImageView android:gravity="center" android:id="@id/reading__reading_menu_bottom_view__options" android:paddingTop="15.0dip" android:paddingBottom="25.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/reading__reading_menu_bottom_view__comic_options" android:layout_weight="1.0" android:contentDescription="@string/reading__reading_menu_view__options" />
-                    <ImageView android:gravity="center" android:id="@id/reading__reading_menu_bottom_view__brightness" android:paddingTop="15.0dip" android:paddingBottom="25.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/reading__reading_menu_bottom_view__brightness" android:layout_weight="1.0" android:contentDescription="@string/reading__reading_menu_view__brightness" />
-                    <ImageView android:gravity="center" android:id="@id/reading__reading_menu_bottom_view__options__slide_show" android:paddingTop="15.0dip" android:paddingBottom="25.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/reading__reading_menu_bottom_view__brightness" android:layout_weight="1.0" android:contentDescription="@string/reading__reading_menu_view__brightness" />
-                    <ImageView android:gravity="center" android:id="@id/reading__reading_menu_bottom_view__more" android:paddingTop="15.0dip" android:paddingBottom="25.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/reading__reading_menu_bottom_view__more" android:layout_weight="1.0" android:contentDescription="@string/reading__reading_menu_view__more" />
+
+        <include
+            android:enabled="false"
+            android:layout_gravity="bottom"
+            android:background="@color/general__shared__141414f2"
+            android:paddingBottom="15.0dip"
+            android:visibility="visible"
+            android:clickable="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/reading__reading_menu_bottom_view__seek_bar" />
+
+        <FrameLayout
+            android:enabled="false"
+            android:layout_gravity="bottom"
+            android:background="@color/general__shared__141414f2"
+            android:clickable="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <com.duokan.core.ui.BoxView
+                android:layout_gravity="center"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:maxWidth="400.0dip">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                    <ImageView
+                        android:gravity="center"
+                        android:id="@id/reading__reading_menu_bottom_view__navigation"
+                        android:paddingTop="15.0dip"
+                        android:paddingBottom="25.0dip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/reading__reading_menu_bottom_view__navigation"
+                        android:layout_weight="1.0"
+                        android:contentDescription="@string/reading__reading_menu_view__navigation" />
+
+                    <ImageView
+                        android:gravity="center"
+                        android:id="@id/reading__reading_menu_bottom_view__options"
+                        android:paddingTop="15.0dip"
+                        android:paddingBottom="25.0dip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/reading__reading_menu_bottom_view__comic_options"
+                        android:layout_weight="1.0"
+                        android:contentDescription="@string/reading__reading_menu_view__options" />
+
+                    <ImageView
+                        android:gravity="center"
+                        android:id="@id/reading__reading_menu_bottom_view__brightness"
+                        android:paddingTop="15.0dip"
+                        android:paddingBottom="25.0dip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/reading__reading_menu_bottom_view__brightness"
+                        android:layout_weight="1.0"
+                        android:contentDescription="@string/reading__reading_menu_view__brightness" />
+
+                    <ImageView
+                        android:gravity="center"
+                        android:id="@id/reading__reading_menu_bottom_view__options__slide_show"
+                        android:paddingTop="15.0dip"
+                        android:paddingBottom="25.0dip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/reading__reading_menu_bottom_view__brightness"
+                        android:layout_weight="1.0"
+                        android:contentDescription="@string/reading__reading_menu_view__brightness" />
+
+                    <ImageView
+                        android:gravity="center"
+                        android:id="@id/reading__reading_menu_bottom_view__more"
+                        android:paddingTop="15.0dip"
+                        android:paddingBottom="25.0dip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/reading__reading_menu_bottom_view__more"
+                        android:layout_weight="1.0"
+                        android:contentDescription="@string/reading__reading_menu_view__more" />
                 </LinearLayout>
             </com.duokan.core.ui.BoxView>
         </FrameLayout>
     </LinearLayout>
-    <com.duokan.core.ui.ExtendView android:enabled="false" android:layout_gravity="bottom" android:id="@id/reading__reading_menu_bottom_view__sub_menu_frame" android:background="@color/general__shared__141414f2" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+    <com.duokan.core.ui.ExtendView
+        android:enabled="false"
+        android:layout_gravity="bottom"
+        android:id="@id/reading__reading_menu_bottom_view__sub_menu_frame"
+        android:background="@color/general__shared__141414f2"
+        android:visibility="gone"
+        android:clickable="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
 </FrameLayout>

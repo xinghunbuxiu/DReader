@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__ffffff_pressed_selected_checked" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0"
-  xmlns:android="http://schemas.android.com/apk/res/android" />
+<com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b"
+    android:textColor="@color/general__shared__ffffff_pressed_selected_checked"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:layout_weight="1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

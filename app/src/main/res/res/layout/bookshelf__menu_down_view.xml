@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:id="@id/bookshelf__menu_down_view__content" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <FrameLayout android:id="@id/bookshelf__menu_down_view__dark_bg" android:background="@color/general__shared__00000099" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-        <com.duokan.core.ui.BoxView android:layout_gravity="center_horizontal" android:id="@id/bookshelf__menu_down_view__menu" android:background="@color/general__shared__ffffff" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxWidth="640.0dip" />
-        <View android:background="@color/general__shared__cccccc" android:layout_width="fill_parent" android:layout_height="1.0px" />
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/bookshelf__menu_down_view__content"
+        android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:id="@id/bookshelf__menu_down_view__dark_bg"
+            android:background="@color/general__shared__00000099" android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+        <com.duokan.core.ui.BoxView android:layout_gravity="center_horizontal"
+            android:id="@id/bookshelf__menu_down_view__menu"
+            android:background="@color/general__shared__ffffff" android:clickable="true"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:maxWidth="640.0dip" />
+        <View android:background="@color/general__shared__cccccc" android:layout_width="fill_parent"
+            android:layout_height="1.0px" />
     </FrameLayout>
 </LinearLayout>

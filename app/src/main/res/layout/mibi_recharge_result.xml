@@ -1,16 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:paddingLeft="@dimen/mibi_recharge_result_padding_left" android:paddingRight="@dimen/mibi_recharge_result_padding_right" android:paddingBottom="@dimen/mibi_recharge_result_padding_bottom" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/banner" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_recharge_result_banner_margin_top" android:scaleType="fitCenter" />
-    <RelativeLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
-        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
-            <ImageView android:id="@id/icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/mibi_ic_success" />
-            <TextView android:textSize="@dimen/mibi_text_size_large" android:textStyle="bold" android:textColor="@color/mibi_text_color_black" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_recharge_result_title_margin_top" android:singleLine="true" />
-            <TextView android:textSize="@dimen/mibi_text_size_small" android:textColor="@color/mibi_text_color_gray" android:id="@id/summary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mibi_recharge_result_summary_margin_top" android:text="@string/mibi_balance_title" android:singleLine="true" />
+<LinearLayout android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/mibi_recharge_result_padding_left"
+    android:paddingRight="@dimen/mibi_recharge_result_padding_right"
+    android:paddingBottom="@dimen/mibi_recharge_result_padding_bottom"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@id/banner"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mibi_recharge_result_banner_margin_top"
+        android:scaleType="fitCenter" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0">
+
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@id/icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mibi_ic_success" />
+
+            <TextView
+                android:textSize="@dimen/mibi_text_size_large"
+                android:textStyle="bold"
+                android:textColor="@color/mibi_text_color_black"
+                android:id="@id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mibi_recharge_result_title_margin_top"
+                android:singleLine="true" />
+
+            <TextView
+                android:textSize="@dimen/mibi_text_size_small"
+                android:textColor="@color/mibi_text_color_gray"
+                android:id="@id/summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mibi_recharge_result_summary_margin_top"
+                android:text="@string/mibi_balance_title"
+                android:singleLine="true" />
         </LinearLayout>
     </RelativeLayout>
-    <TextView android:textSize="@dimen/mibi_text_size_small" android:textColor="@color/mibi_text_color_red" android:gravity="center" android:id="@id/error" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" />
-    <TextView android:gravity="center" android:id="@id/promotions" android:paddingTop="@dimen/mibi_recharge_result_promotion_padding_top" android:paddingBottom="@dimen/mibi_recharge_result_promotion_padding_top" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/mibi_recharge_result_promotion_margin_bottom" style="@style/Mibi.TextAppearance.Hint.Link" />
-    <Button android:id="@id/button_continue" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/mibi_recharge_result_button_continue_margin_bottom" android:text="@string/mibi_btn_recharge_other" style="@style/Mibi.Widget.Button" />
-    <Button android:id="@id/button_back" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mibi_btn_back" style="@style/Mibi.Widget.Button" />
+
+    <TextView
+        android:textSize="@dimen/mibi_text_size_small"
+        android:textColor="@color/mibi_text_color_red"
+        android:gravity="center"
+        android:id="@id/error"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5.0dip" />
+
+    <TextView
+        android:gravity="center"
+        android:id="@id/promotions"
+        android:paddingTop="@dimen/mibi_recharge_result_promotion_padding_top"
+        android:paddingBottom="@dimen/mibi_recharge_result_promotion_padding_top"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/mibi_recharge_result_promotion_margin_bottom"
+        style="@style/Mibi.TextAppearance.Hint.Link" />
+
+    <Button
+        android:id="@id/button_continue"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/mibi_recharge_result_button_continue_margin_bottom"
+        android:text="@string/mibi_btn_recharge_other"
+        style="@style/Mibi.Widget.Button" />
+
+    <Button
+        android:id="@id/button_back"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mibi_btn_back"
+        style="@style/Mibi.Widget.Button" />
 </LinearLayout>

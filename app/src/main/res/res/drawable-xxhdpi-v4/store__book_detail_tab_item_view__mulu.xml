@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_selected="true" android:drawable="@drawable/store__book_detail_tab_item_view__mulu_pressed" />
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true"
+        android:drawable="@drawable/store__book_detail_tab_item_view__mulu_pressed" />
     <item android:drawable="@drawable/store__book_detail_tab_item_view__mulu_normal" />
 </selector>

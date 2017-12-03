@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b" android:textColor="@color/general__shared__333333" android:gravity="center" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bookshelf__recommended_books_view__recommended_books" android:includeFontPadding="false" />
-    <com.duokan.core.ui.HatGridView android:id="@id/bookshelf__recommended_books_view_grid" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_weight="1.0" />
-    <com.duokan.reader.ui.general.DkLabelView android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/bookshelf__recommended_books_view__add" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" android:text="@string/bookshelf__recommended_books_view__add" style="@style/general__shared__button_43dip_ffffff" />
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__b"
+        android:textColor="@color/general__shared__333333" android:gravity="center"
+        android:layout_gravity="center_horizontal" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bookshelf__recommended_books_view__recommended_books"
+        android:includeFontPadding="false" />
+    <com.duokan.core.ui.HatGridView android:id="@id/bookshelf__recommended_books_view_grid"
+        android:layout_width="wrap_content" android:layout_height="0.0dip"
+        android:layout_weight="1.0" />
+    <com.duokan.reader.ui.general.DkLabelView android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:id="@id/bookshelf__recommended_books_view__add" android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:layout_marginLeft="5.0dip"
+        android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip"
+        android:text="@string/bookshelf__recommended_books_view__add"
+        style="@style/general__shared__button_43dip_ffffff" />
 </LinearLayout>

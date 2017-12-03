@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:layout_gravity="bottom" android:orientation="horizontal" android:background="#cc000000" android:layout_width="fill_parent" android:layout_height="40.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/reading__notification_view__icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:scaleType="center" />
-    <TextView android:textSize="@dimen/general_font__shared__e" android:textColor="#ffffeecc" android:ellipsize="end" android:gravity="center|left" android:id="@id/reading__notification_view__msg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="7.0dip" android:maxLines="1" android:layout_weight="1.0" />
-    <ImageView android:id="@id/reading__notification_view__close" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/reading__notification_view__close" />
+<LinearLayout android:gravity="center"
+    android:layout_gravity="bottom"
+    android:orientation="horizontal"
+    android:background="#cc000000"
+    android:layout_width="fill_parent"
+    android:layout_height="40.0dip"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:id="@id/reading__notification_view__icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10.0dip"
+        android:scaleType="center" />
+
+    <TextView
+        android:textSize="@dimen/general_font__shared__e"
+        android:textColor="#ffffeecc"
+        android:ellipsize="end"
+        android:gravity="center|left"
+        android:id="@id/reading__notification_view__msg"
+        android:layout_width="0.0dip"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="7.0dip"
+        android:maxLines="1"
+        android:layout_weight="1.0" />
+
+    <ImageView
+        android:id="@id/reading__notification_view__close"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:src="@drawable/reading__notification_view__close" />
 </LinearLayout>

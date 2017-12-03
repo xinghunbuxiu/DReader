@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.duokan.reader.ui.general.DkLabelView android:id="@id/store_comment__publish_comment_view__send" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/store_comment__publish_comment_view__send" style="@style/general__shared__button_29dip_e9622d"
-  xmlns:android="http://schemas.android.com/apk/res/android" />
+<com.duokan.reader.ui.general.DkLabelView android:id="@id/store_comment__publish_comment_view__send"
+    android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/store_comment__publish_comment_view__send"
+    style="@style/general__shared__button_29dip_e9622d"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

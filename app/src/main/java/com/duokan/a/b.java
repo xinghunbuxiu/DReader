@@ -16,6 +16,6 @@ class b extends ad {
 
     public JSONObject a() {
         String str = "https://www.duokan.com/store/v0/payment/book/list";
-        return a(a(b(true, "https://www.duokan.com/store/v0/payment/book/list", "t", Long.toString(System.currentTimeMillis() / 1000))));
+        return a(a(b(true, "https://www.duokan.com/store/v0/payment/book/list", "TaskHandler", Long.toString(System.currentTimeMillis() / 1000))));
     }
 }

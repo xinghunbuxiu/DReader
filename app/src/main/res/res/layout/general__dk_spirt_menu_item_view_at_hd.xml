@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout android:layout_width="fill_parent" android:layout_height="55.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@drawable/general__button__bg_white_with_edge" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="7.0dip">
-        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c" android:textColor="@color/general__shared__333333" android:gravity="center" android:id="@id/general__shared_spirt_menu_item_view__text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawablePadding="5.0dip" />
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal"
+        android:background="@drawable/general__button__bg_white_with_edge"
+        android:layout_width="fill_parent" android:layout_height="40.0dip"
+        android:layout_marginTop="8.0dip" android:layout_marginBottom="7.0dip">
+        <com.duokan.reader.ui.general.DkLabelView android:textSize="@dimen/general_font__shared__c"
+            android:textColor="@color/general__shared__333333" android:gravity="center"
+            android:id="@id/general__shared_spirt_menu_item_view__text"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:drawablePadding="5.0dip" />
     </LinearLayout>
 </LinearLayout>

@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<set
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <scale android:interpolator="@android:anim/anticipate_overshoot_interpolator" android:duration="200" android:pivotX="50.0%" android:pivotY="50.0%" android:zAdjustment="top" android:fromXScale="39.999996%" android:toXScale="100.0%" android:fromYScale="39.999996%" android:toYScale="100.0%" />
-    <alpha android:interpolator="@android:anim/linear_interpolator" android:duration="200" android:fromAlpha="0.0" android:toAlpha="1.0" />
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <scale
+        android:interpolator="@android:anim/anticipate_overshoot_interpolator"
+        android:duration="200"
+        android:pivotX="50.0%"
+        android:pivotY="50.0%"
+        android:zAdjustment="top"
+        android:fromXScale="39.999996%"
+        android:toXScale="100.0%"
+        android:fromYScale="39.999996%"
+        android:toYScale="100.0%" />
+    <alpha
+        android:interpolator="@android:anim/linear_interpolator"
+        android:duration="200"
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0" />
 </set>

@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_gravity="center|right" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:gravity="center_vertical" android:id="@id/extra" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/mibi_action_bar_extra_margin_right" />
-    <ImageView android:layout_gravity="center|right|top" android:id="@id/bubble" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_marginRight="8.0dip" android:src="@drawable/mibi_bubble" />
+<FrameLayout android:layout_gravity="center|right"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:gravity="center_vertical"
+        android:id="@id/extra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/mibi_action_bar_extra_margin_right" />
+
+    <ImageView
+        android:layout_gravity="center|right|top"
+        android:id="@id/bubble"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2.0dip"
+        android:layout_marginRight="8.0dip"
+        android:src="@drawable/mibi_bubble" />
 </FrameLayout>
