@@ -26,7 +26,7 @@ public class BaseActivity extends Activity implements IFeature {
     static final boolean a = (!BaseActivity.class.desiredAssertionStatus());
     private final FeatureManage featureManage = new FeatureManage();
     private final CopyOnWriteArrayList<TaskHandler> taskHandlers = new CopyOnWriteArrayList();
-    private final CopyOnWriteArrayList<s> d = new CopyOnWriteArrayList();
+    private final CopyOnWriteArrayList<s> screenChanged = new CopyOnWriteArrayList();
     private final CopyOnWriteArrayList<onActivityResult> activityResults = new CopyOnWriteArrayList();
     private boolean first = false;
     private OrientationEventListener eventListener = null;
@@ -191,11 +191,11 @@ public class BaseActivity extends Activity implements IFeature {
     }
 
     public void addOnScreenRotationChangedListener(s sVar) {
-        this.d.addIfAbsent(sVar);
+        this.screenChanged.addIfAbsent(sVar);
     }
 
     public void removeOnScreenRotationChangedListener(s sVar) {
-        this.d.remove(sVar);
+        this.screenChanged.remove(sVar);
     }
 
     public void addOnActivityResultListener(onActivityResult rVar) {
@@ -327,7 +327,7 @@ public class BaseActivity extends Activity implements IFeature {
     protected void onDestroy() {
         this.featureManage.clear();
         this.taskHandlers.clear();
-        this.d.clear();
+        this.screenChanged.clear();
         super.onDestroy();
         setContentController(null);
     }
@@ -426,7 +426,7 @@ public class BaseActivity extends Activity implements IFeature {
     }
 
     private final void notifyScreenRotationChanged(int i) {
-        Iterator it = this.d.iterator();
+        Iterator it = this.screenChanged.iterator();
         while (it.hasNext()) {
             ((s) it.next()).a(i);
         }
