@@ -2,6 +2,8 @@ package com.duokan.reader.domain.b;
 
 import android.text.TextUtils;
 
+import com.duokan.common.tools;
+
 import java.io.File;
 import java.io.FileFilter;
 
@@ -13,7 +15,7 @@ class i implements FileFilter {
     }
 
     public boolean accept(File file) {
-        String a = com.duokan.common.i.a(file.getName());
+        String a = tools.substringwerCase(file.getName());
         if (TextUtils.isEmpty(a)) {
             return false;
         }

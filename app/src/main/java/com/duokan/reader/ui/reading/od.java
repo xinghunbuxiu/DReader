@@ -17,7 +17,6 @@ import com.duokan.kernel.DkUtils;
 import com.duokan.reader.domain.bookshelf.BookPackageType;
 import com.duokan.reader.domain.bookshelf.fv;
 import com.duokan.reader.domain.document.Document_a;
-import com.duokan.reader.domain.document.Document_a.d;
 import com.duokan.reader.domain.document.epub.av;
 import com.duokan.reader.domain.document.epub.s;
 import com.duokan.reader.domain.document.txt.p;

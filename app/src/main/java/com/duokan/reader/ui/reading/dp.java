@@ -3,8 +3,8 @@ package com.duokan.reader.ui.reading;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.app.IFeature;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.common.webservices.duokan.CommentBook;
 import com.duokan.reader.common.webservices.duokan.af;

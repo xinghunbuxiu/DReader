@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.webkit.JavascriptInterface;
 
 import com.duokan.c.j;
+import com.duokan.core.b.UrlTools;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.as;
@@ -595,7 +596,7 @@ public class cg {
     }
 
     protected boolean a() {
-        Uri a = com.duokan.core.b.a.a(this.b.currentUrl());
+        Uri a = UrlTools.parse(this.b.currentUrl());
         String scheme = (a == null || a.getScheme() == null) ? "" : a.getScheme();
         if (scheme.equalsIgnoreCase(HttpHost.DEFAULT_SCHEME_NAME) || scheme.equalsIgnoreCase("https")) {
             Object host = a.getHost() != null ? a.getHost() : "";

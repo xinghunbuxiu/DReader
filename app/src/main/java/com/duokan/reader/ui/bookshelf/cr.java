@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.duokan.b.i;
-import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.app.FeatureListening;
+import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
 import com.duokan.reader.domain.bookshelf.aa;

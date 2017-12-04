@@ -8,6 +8,6 @@ class di implements Runnable {
     }
 
     public void run() {
-        this.a.c.a(this.a.d);
+        this.a.c.add(this.a.d);
     }
 }

@@ -6,8 +6,8 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.duokan.core.ui.ct;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.ct;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.domain.bookshelf.a;

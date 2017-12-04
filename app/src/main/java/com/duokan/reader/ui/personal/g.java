@@ -8,7 +8,7 @@ import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.ui.general.be;
 import com.duokan.reader.ui.general.jq;
 
-class g implements ac {
+class id implements ac {
     final /* synthetic */ c a;
     final /* synthetic */ f b;
 

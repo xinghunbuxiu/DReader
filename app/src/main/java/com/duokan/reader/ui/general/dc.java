@@ -5,9 +5,9 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.view.View;
 
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.bd;
 import com.duokan.core.ui.bh;
-import com.duokan.core.ui.UTools;
 
 import java.util.ArrayList;
 

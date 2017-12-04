@@ -11,6 +11,6 @@ class bw implements Runnable {
 
     public void run() {
         this.a.c();
-        i.f().a(new bx(this));
+        i.f().add(new bx(this));
     }
 }

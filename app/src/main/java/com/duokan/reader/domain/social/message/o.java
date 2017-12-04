@@ -24,7 +24,7 @@ public class o implements ah, MessageWakeupListener {
 
     private o(Context context, i iVar, int[] iArr) {
         this.b = iVar;
-        this.b.a(new p(this));
+        this.b.add(new p(this));
         this.c = iArr;
         this.f = new ab(this.b.b(PersonalAccount.class));
         if (!this.f.a()) {

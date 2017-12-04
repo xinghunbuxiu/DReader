@@ -7,12 +7,12 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 
 import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.IFeature;
 import com.duokan.core.app.IController;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.a;
 import com.duokan.core.ui.cv;
-import com.duokan.core.ui.UTools;
 
 public class hd extends ActivatedController {
     static final /* synthetic */ boolean $assertionsDisabled = (!hd.class.desiredAssertionStatus() ? true : $assertionsDisabled);

@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.common.i;
+import com.duokan.common.tools;
 import com.duokan.core.sys.as;
 
 class eq implements as {
@@ -13,6 +13,6 @@ class eq implements as {
     }
 
     public void a() {
-        i.a(this.b.b.getContext(), this.a);
+        tools.startActivity(this.b.b.getContext(), this.a);
     }
 }

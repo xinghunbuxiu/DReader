@@ -29,6 +29,6 @@ class qi implements Callback {
     }
 
     public void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        TaskHandler.c(runnable);
+        TaskHandler.removeCallbacks(runnable);
     }
 }

@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.webkit.ConsoleMessage;
 import android.webkit.JsResult;
 
+import com.duokan.core.b.UrlTools;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.fl;
@@ -34,7 +35,7 @@ public class b extends fl {
 
     public void a(fr frVar, String str) {
         super.a(frVar, str);
-        Uri a = com.duokan.core.b.a.a(frVar.getCurrentUrl());
+        Uri a = UrlTools.parse(frVar.getCurrentUrl());
         if (a != null && !TextUtils.isEmpty(str)) {
             if (TextUtils.isEmpty(a.getHost()) || !str.contains(a.getHost())) {
                 TaskHandler.postTask(new c(this, str));

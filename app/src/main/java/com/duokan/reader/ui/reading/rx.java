@@ -14,9 +14,9 @@ import android.view.View;
 
 import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ag;
 import com.duokan.core.sys.j;
-import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.reader.ReaderEnv;

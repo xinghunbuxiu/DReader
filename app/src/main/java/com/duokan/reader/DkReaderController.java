@@ -5,9 +5,9 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.text.TextUtils;
 
+import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.BaseActivity;
 import com.duokan.core.app.BrightnessMode;
-import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.af;
 import com.duokan.reader.domain.bookshelf.ai;

@@ -26,7 +26,7 @@ class i implements Runnable {
             TaskHandler.postDelayed((Runnable) this, 1000);
             return;
         }
-        TaskHandler.c(this.a.i);
+        TaskHandler.removeCallbacks(this.a.i);
         this.a.i = null;
     }
 }

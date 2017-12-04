@@ -1,8 +1,8 @@
 package com.duokan.reader.ui.general.web;
 
+import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.app.IActivityRunStatusChanged;
 
 class cb implements IActivityRunStatusChanged {
     final /* synthetic */ StorePageController a;

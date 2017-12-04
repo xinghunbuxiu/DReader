@@ -132,7 +132,7 @@ class s implements Runnable {
         r2 = "?info=";
         r1 = r1.indexOf(r2);	 Catch:{ Throwable -> 0x0199 }
         r1 = r1 + 6;
-        r1 = r0.substring(r1);	 Catch:{ Throwable -> 0x0199 }
+        r1 = r0.substringToEnd(r1);	 Catch:{ Throwable -> 0x0199 }
         r0 = new com.duokan.reader.domain.bookshelf.iy;	 Catch:{ Throwable -> 0x0199 }
         r2 = new com.duokan.reader.domain.micloud.bi;	 Catch:{ Throwable -> 0x0199 }
         r3 = new org.json.JSONObject;	 Catch:{ Throwable -> 0x0199 }

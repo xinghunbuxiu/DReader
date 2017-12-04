@@ -1,7 +1,5 @@
 package com.duokan.reader.common;
 
-import com.duokan.core.io.d;
-
 import org.apache.http.protocol.HTTP;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -49,7 +47,7 @@ public class i {
             return jSONObject;
         }
         jSONObject = a((InputStream) a, jSONObject);
-        d.a(a);
+        FileUtil1.a(a);
         return jSONObject;
     }
 
@@ -59,7 +57,7 @@ public class i {
 
     public static JSONObject a(InputStream inputStream, String str, JSONObject jSONObject) {
         try {
-            return new JSONObject(new String(d.a(inputStream), str));
+            return new JSONObject(new String(FileUtil1.toBytes(inputStream), str));
         } catch (Throwable th) {
             return jSONObject;
         }

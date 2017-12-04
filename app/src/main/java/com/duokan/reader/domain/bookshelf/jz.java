@@ -3,8 +3,8 @@ package com.duokan.reader.domain.bookshelf;
 import android.text.TextUtils;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.sys.r;
 import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.sys.r;
 
 import java.util.HashMap;
 import java.util.Iterator;

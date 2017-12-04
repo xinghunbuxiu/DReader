@@ -10,7 +10,7 @@ public class FileTypeRecognizer {
     }
 
     public static FileType a(String str) {
-        String a = i.a(str);
+        String a = tools.substringwerCase(str);
         if (a == null) {
             return FileType.UNSUPPORTED;
         }

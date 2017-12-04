@@ -10,7 +10,7 @@ class em implements Runnable {
     }
 
     public void run() {
-        this.a.c.a(this.a.d);
+        this.a.c.add(this.a.d);
         DkSharedStorageManager.a().a(this.a, SharedKey.USER_READ_COUNT);
     }
 }

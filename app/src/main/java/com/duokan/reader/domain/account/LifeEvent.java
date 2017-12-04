@@ -6,10 +6,10 @@ import android.os.Bundle;
 import com.duokan.core.app.IActivityLife;
 import com.duokan.core.sys.TaskHandler;
 
-class k implements IActivityLife {
-    final /* synthetic */ i a;
+class LifeEvent implements IActivityLife {
+    final i a;
 
-    k(i iVar) {
+    LifeEvent(i iVar) {
         this.a = iVar;
     }
 
@@ -25,4 +25,18 @@ class k implements IActivityLife {
 
     public void onActivityDestroyed(Activity activity) {
     }
+//    class l implements Runnable {
+//        final /* synthetic */ LifeEvent parse;
+//
+//        l(LifeEvent kVar) {
+//            this.parse = kVar;
+//        }
+//
+//        public void run() {
+//            Resp resp = new Resp();
+//            resp.code = null;
+//            this.parse.parse.parse(resp);
+//        }
+//    }
+
 }

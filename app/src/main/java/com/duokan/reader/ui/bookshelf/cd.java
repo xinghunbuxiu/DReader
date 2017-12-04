@@ -6,8 +6,8 @@ import android.graphics.RectF;
 import android.view.View;
 
 import com.duokan.core.sys.TaskHandler;
-import com.duokan.core.ui.au;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.au;
 import com.duokan.reader.domain.bookshelf.an;
 
 class cd implements au {

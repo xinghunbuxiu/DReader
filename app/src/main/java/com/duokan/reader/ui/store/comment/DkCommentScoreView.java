@@ -10,8 +10,8 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.duokan.b.e;
-import com.duokan.core.ui.ct;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.ct;
 import com.duokan.core.ui.et;
 
 public class DkCommentScoreView extends View {

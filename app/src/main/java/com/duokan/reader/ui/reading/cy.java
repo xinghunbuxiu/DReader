@@ -6,9 +6,9 @@ import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.cd;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.core.ui.g;

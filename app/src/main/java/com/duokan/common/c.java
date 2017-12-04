@@ -99,7 +99,7 @@ public class c {
             fVar.b = a(bArr[0], bArr[1]);
             fVar.c = a(bArr[2], bArr[3]);
             fVar.a = a(bArr[4], bArr[5]);
-            String a = i.a(str);
+            String a = tools.substringwerCase(str);
             Object obj = null;
             if (a != null && a.equalsIgnoreCase("ttf")) {
                 obj = 1;

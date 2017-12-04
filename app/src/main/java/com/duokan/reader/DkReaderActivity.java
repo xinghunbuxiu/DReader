@@ -7,9 +7,9 @@ import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.text.TextUtils;
 
+import com.duokan.core.app.BaseActivity;
 import com.duokan.core.app.ad;
 import com.duokan.core.app.ae;
-import com.duokan.core.app.BaseActivity;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.diagnostic.a;
 import com.duokan.core.ui.j;

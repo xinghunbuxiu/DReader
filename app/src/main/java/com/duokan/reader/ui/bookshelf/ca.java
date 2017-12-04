@@ -3,8 +3,8 @@ package com.duokan.reader.ui.bookshelf;
 import android.graphics.PointF;
 import android.view.View;
 
-import com.duokan.core.ui.bw;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.bw;
 
 import java.util.Iterator;
 

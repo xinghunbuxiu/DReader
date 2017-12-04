@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.text.TextUtils;
 
 import com.duokan.core.app.ManagedApp;
+import com.duokan.core.b.UrlTools;
+import com.duokan.core.io.FileUtils;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
@@ -102,7 +104,7 @@ public class a {
 
     public void a(String str, Throwable th) {
         try {
-            Uri a = com.duokan.core.b.a.a(str);
+            Uri a = UrlTools.parse(str);
             if (a != null) {
                 String str2 = "";
                 try {
@@ -404,7 +406,7 @@ public class a {
             if (this.p != file) {
                 this.p = file;
                 String str = "";
-                a = com.duokan.core.io.a.a(new File(this.p, "index.html"), "utf-8");
+                a = FileUtils.getBifferedReader(new File(this.p, "index.html"), "utf-8");
                 CharSequence readLine = a.readLine();
                 while (!TextUtils.isEmpty(readLine)) {
                     if (readLine.contains("duokan-version")) {

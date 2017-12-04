@@ -8,6 +8,6 @@ class ez implements Runnable {
     }
 
     public void run() {
-        this.a.b.a(this.a.c);
+        this.a.b.add(this.a.c);
     }
 }

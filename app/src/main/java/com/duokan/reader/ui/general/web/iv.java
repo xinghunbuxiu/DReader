@@ -3,8 +3,8 @@ package com.duokan.reader.ui.general.web;
 import android.text.TextUtils;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.sys.as;
 import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.sys.as;
 import com.duokan.reader.common.i;
 import com.duokan.reader.common.webservices.duokan.aa;
 import com.duokan.reader.domain.bookshelf.c;

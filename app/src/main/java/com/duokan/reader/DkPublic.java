@@ -21,7 +21,7 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 
-import com.duokan.core.io.d;
+import com.duokan.core.io.FileUtils;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
 import com.duokan.core.sys.z;
@@ -37,7 +37,6 @@ import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -69,9 +68,9 @@ public final class DkPublic {
 
     final class AnonymousClass1 extends r {
         b a = new b();
-        final /* synthetic */ String b;
-        final /* synthetic */ ag c;
-        final /* synthetic */ Runnable d;
+        final String b;
+        final ag c;
+        final Runnable d;
 
         AnonymousClass1(String str, ag agVar, Runnable runnable) {
             this.b = str;
@@ -109,34 +108,33 @@ public final class DkPublic {
     }
 
     public static boolean zipFile(File file, File file2) {
-        Closeable zipOutputStream;
-        Closeable closeable = null;
+        ZipOutputStream zipOutputStream;
+        ZipOutputStream closeable = null;
         boolean z = false;
         try {
             zipOutputStream = new ZipOutputStream(new FileOutputStream(file2));
             try {
                 z = zip(file, zipOutputStream);
-                d.a(zipOutputStream);
+                FileUtils.close(zipOutputStream);
             } catch (Throwable th) {
                 closeable = zipOutputStream;
-                d.a(closeable);
+                FileUtils.close(closeable);
                 return z;
             }
         } catch (Throwable th2) {
-            d.a(closeable);
+            FileUtils.close(closeable);
             return z;
         }
         return z;
     }
 
     public static boolean zip(File file, ZipOutputStream zipOutputStream) {
-        Throwable th;
         if (file == null) {
             return false;
         }
         if (file.isFile()) {
-            Closeable closeable = null;
-            Closeable bufferedInputStream;
+            BufferedInputStream closeable = null;
+            BufferedInputStream bufferedInputStream;
             try {
                 byte[] bArr = new byte[1024];
                 zipOutputStream.putNextEntry(new ZipEntry(file.getName()));
@@ -150,10 +148,9 @@ public final class DkPublic {
                         zipOutputStream.write(bArr, 0, read);
                     } catch (Throwable th2) {
                         closeable = bufferedInputStream;
-                        th = th2;
                     }
                 }
-                d.a(bufferedInputStream);
+                FileUtils.close(bufferedInputStream);
                 try {
                     zipOutputStream.closeEntry();
                 } catch (IOException e) {
@@ -161,14 +158,12 @@ public final class DkPublic {
                 }
                 return true;
             } catch (Throwable th3) {
-                th = th3;
-                d.a(closeable);
+                FileUtils.close(closeable);
                 try {
                     zipOutputStream.closeEntry();
                 } catch (IOException e2) {
                     e2.printStackTrace();
                 }
-                throw th;
             }
         }
         File[] listFiles = file.listFiles();
@@ -181,10 +176,11 @@ public final class DkPublic {
     }
 
     public static boolean unzipRawResource(Context context, int i, File file) {
+        boolean unzip = false;
+
         if (!a && context == null) {
             throw new AssertionError();
         } else if (a || file != null) {
-            boolean unzip;
             InputStream inputStream = null;
             try {
                 inputStream = context.getResources().openRawResource(i);
@@ -291,7 +287,7 @@ public final class DkPublic {
         if (!a && context == null) {
             throw new AssertionError();
         } else if (a || file != null) {
-            boolean unzip;
+            boolean unzip = false;
             InputStream inputStream = null;
             try {
                 inputStream = context.getAssets().open(str);
@@ -345,153 +341,8 @@ public final class DkPublic {
         }
     }
 
-    /* JADX WARNING: inconsistent code. */
-    /* Code decompiled incorrectly, please refer to instructions dump. */
-    public static boolean unzip(java.util.zip.ZipInputStream r8, java.io.File r9) {
-        /*
-        r1 = 0;
-        r0 = setDrawable;
-        if (r0 != 0) goto L_0x000d;
-    L_0x0005:
-        if (r8 != 0) goto L_0x000d;
-    L_0x0007:
-        r0 = new java.lang.AssertionError;
-        r0.<init>();
-        throw r0;
-    L_0x000d:
-        r0 = setDrawable;
-        if (r0 != 0) goto L_0x0019;
-    L_0x0011:
-        if (r9 != 0) goto L_0x0019;
-    L_0x0013:
-        r0 = new java.lang.AssertionError;
-        r0.<init>();
-        throw r0;
-    L_0x0019:
-        r4 = new java.util.LinkedList;
-        r4.<init>();
-        r0 = r9.exists();
-        if (r0 != 0) goto L_0x002a;
-    L_0x0024:
-        r9.mkdirs();
-        r4.add(r9);
-    L_0x002a:
-        r0 = r8.getNextEntry();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-    L_0x002e:
-        if (r0 == 0) goto L_0x00e8;
-    L_0x0030:
-        r2 = r0.getName();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        r3 = r0.isDirectory();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        if (r3 == 0) goto L_0x0050;
-    L_0x003a:
-        r0 = new java.io.File;	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        r0.<init>(r9, r2);	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        r2 = r0.exists();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        if (r2 != 0) goto L_0x004b;
-    L_0x0045:
-        r0.mkdirs();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        r4.add(r0);	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-    L_0x004b:
-        r0 = r8.getNextEntry();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        goto L_0x002e;
-    L_0x0050:
-        r5 = new java.io.File;	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        r5.<init>(r9, r2);	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        r4.add(r5);	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        r2 = splitDirctoryPart(r2);	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        if (r2 == 0) goto L_0x006c;
-    L_0x005e:
-        r3 = new java.io.File;	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        r3.<init>(r9, r2);	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        r2 = r3.exists();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        if (r2 != 0) goto L_0x006c;
-    L_0x0069:
-        r3.mkdirs();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-    L_0x006c:
-        r2 = r5.exists();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        if (r2 == 0) goto L_0x007e;
-    L_0x0072:
-        r2 = r5.length();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        r6 = r0.getSize();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        r0 = (r2 > r6 ? 1 : (r2 == r6 ? 0 : -1));
-        if (r0 == 0) goto L_0x004b;
-    L_0x007e:
-        r3 = 0;
-        r0 = 1024; // 0x400 float:1.435E-42 double:5.06E-321;
-        r0 = new byte[r0];	 Catch:{ all -> 0x00ea }
-        r2 = new java.io.FileOutputStream;	 Catch:{ all -> 0x00ea }
-        r2.<init>(r5);	 Catch:{ all -> 0x00ea }
-    L_0x0088:
-        r3 = r8.read(r0);	 Catch:{ all -> 0x0093 }
-        if (r3 <= 0) goto L_0x00b2;
-    L_0x008e:
-        r5 = 0;
-        r2.write(r0, r5, r3);	 Catch:{ all -> 0x0093 }
-        goto L_0x0088;
-    L_0x0093:
-        r0 = move-exception;
-    L_0x0094:
-        if (r2 == 0) goto L_0x0099;
-    L_0x0096:
-        r2.close();	 Catch:{ Exception -> 0x00df, Error -> 0x00c7 }
-    L_0x0099:
-        throw r0;	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-    L_0x009a:
-        r0 = move-exception;
-        r0.printStackTrace();
-        r2 = r4.iterator();
-    L_0x00a2:
-        r0 = r2.hasNext();
-        if (r0 == 0) goto L_0x00e4;
-    L_0x00a8:
-        r0 = r2.next();
-        r0 = (java.io.File) r0;
-        rm(r0);
-        goto L_0x00a2;
-    L_0x00b2:
-        r2.flush();	 Catch:{ all -> 0x0093 }
-        r0 = r2.getFD();	 Catch:{ all -> 0x0093 }
-        r0.sync();	 Catch:{ all -> 0x0093 }
-        if (r2 == 0) goto L_0x004b;
-    L_0x00be:
-        r2.close();	 Catch:{ Exception -> 0x00c2, Error -> 0x00c7 }
-        goto L_0x004b;
-    L_0x00c2:
-        r0 = move-exception;
-        r0.printStackTrace();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        goto L_0x004b;
-    L_0x00c7:
-        r0 = move-exception;
-        r0.printStackTrace();
-        r2 = r4.iterator();
-    L_0x00cf:
-        r0 = r2.hasNext();
-        if (r0 == 0) goto L_0x00e6;
-    L_0x00d5:
-        r0 = r2.next();
-        r0 = (java.io.File) r0;
-        rm(r0);
-        goto L_0x00cf;
-    L_0x00df:
-        r2 = move-exception;
-        r2.printStackTrace();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
-        goto L_0x0099;
-    L_0x00e4:
-        r0 = r1;
-    L_0x00e5:
-        return r0;
-    L_0x00e6:
-        r0 = r1;
-        goto L_0x00e5;
-    L_0x00e8:
-        r0 = 1;
-        goto L_0x00e5;
-    L_0x00ea:
-        r0 = move-exception;
-        r2 = r3;
-        goto L_0x0094;
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.DkPublic.unzip(java.util.zip.ZipInputStream, java.io.File):boolean");
+    public static boolean unzip(ZipInputStream zipInputStream, File file) {
+
     }
 
     public static boolean getBookListFromStorage(File file, Map map) {

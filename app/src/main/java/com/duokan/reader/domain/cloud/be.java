@@ -10,7 +10,7 @@ class be implements Runnable {
     }
 
     public void run() {
-        this.a.c.a(this.a);
+        this.a.c.add(this.a);
         DkSharedStorageManager.a().a(this.a, SharedKey.USER_PRIVILEGE);
         this.a.a(true);
     }

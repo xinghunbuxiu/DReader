@@ -8,7 +8,7 @@ import com.duokan.c.f;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.common.i;
+import com.duokan.common.tools;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.t;
@@ -49,7 +49,7 @@ public class yk extends ActivatedController {
         BubbleFloatingView a = a();
         View jhVar = new jh(getContext(), null);
         jhVar.setScrollRightResource(f.general__shared__arrow_right_13dip_ffffff);
-        jhVar.a(i.a(getContext(), 10.0f), i.a(getContext(), 10.0f), i.a(getContext(), 10.0f), i.a(getContext(), 10.0f));
+        jhVar.a(tools.dip2px(getContext(), 10.0f), tools.dip2px(getContext(), 10.0f), tools.dip2px(getContext(), 10.0f), tools.dip2px(getContext(), 10.0f));
         jhVar.setScrollLeftResource(f.general__shared__arrow_left_13dip_ffffff);
         jhVar.setBackgroundResource(f.reading__annotation_operator_view__bg2);
         View inflate = LayoutInflater.from(getContext()).inflate(h.reading__menu_button_view, null);
@@ -59,7 +59,7 @@ public class yk extends ActivatedController {
         jhVar.a(inflate);
         a.a(jhVar, null);
         a.setBackgroundColor(0);
-        a.a(0, i.a(getContext(), 8.0f), 0, i.a(getContext(), 8.0f));
+        a.a(0, tools.dip2px(getContext(), 8.0f), 0, tools.dip2px(getContext(), 8.0f));
         a.setUpArrow(f.reading__annotation_operator_view__up_arrow2);
         a.setDownArrow(f.reading__annotation_operator_view__down_arrow2);
         a.setOnClickListener(new ym(this));

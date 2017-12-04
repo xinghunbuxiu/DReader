@@ -7,7 +7,7 @@ import android.widget.TextView;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
-import com.duokan.common.i;
+import com.duokan.common.tools;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderEnv;
@@ -68,7 +68,7 @@ public class z extends ActivatedController {
     }
 
     private void b(String str) {
-        if (i.a(getContext())) {
+        if (tools.isHasNet(getContext())) {
             if (this.f != null) {
                 this.f.onDeactive();
             }

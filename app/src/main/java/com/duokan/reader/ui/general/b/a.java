@@ -8,6 +8,7 @@ import com.bumptech.glide.load.data.DataFetcher;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.model.LazyHeaders.Builder;
 import com.bumptech.glide.load.model.stream.StreamModelLoader;
+import com.duokan.core.b.UrlTools;
 import com.duokan.reader.ui.general.n;
 
 import org.apache.http.HttpHost;
@@ -26,7 +27,7 @@ public class a implements StreamModelLoader {
     public DataFetcher a(n nVar, int i, int i2) {
         String b = nVar.b();
         if (!TextUtils.isEmpty(b)) {
-            if (com.duokan.core.b.a.a(b, HttpHost.DEFAULT_SCHEME_NAME, "https")) {
+            if (UrlTools.compScheme(b, HttpHost.DEFAULT_SCHEME_NAME, "https")) {
                 return new b(this, new GlideUrl(b, new Builder().addHeader("Accept-Encoding", "gzip,deflate,sdch").build()), nVar);
             }
         }

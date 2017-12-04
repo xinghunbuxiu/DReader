@@ -25,16 +25,18 @@ import android.widget.Toast;
 
 import com.duokan.common.FileTypeRecognizer;
 import com.duokan.common.FileTypeRecognizer.FileType;
-import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.BaseActivity;
+import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.IFeature;
+import com.duokan.core.b.UrlTools;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.io.FileUtils;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ah;
 import com.duokan.core.sys.s;
-import com.duokan.core.ui.cv;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.cv;
 import com.duokan.core.ui.j;
 import com.duokan.reader.ReaderEnv.BookShelfType;
 import com.duokan.reader.ReaderEnv.PrivatePref;
@@ -1410,7 +1412,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                     navigate(data.toString(), null, false, null);
                 } else if (FileType.UNSUPPORTED == FileTypeRecognizer.a(path)) {
                     be.a(getContext(), com.duokan.c.j.general__shared__unkown_book_format, 1).show();
-                } else if (com.duokan.core.b.a.a(data.toString(), "content", new String[0])) {
+                } else if (UrlTools.compScheme(data.toString(), "content", new String[0])) {
                     final jq jqVar = new jq(getContext());
                     jqVar.show();
                     ah.b(new Runnable(this) {
@@ -1420,7 +1422,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                         public void run() {
                             try {
                                 File file = new File(ReaderEnv.get().getLocalBookDirectory(), data.getLastPathSegment());
-                                com.duokan.core.io.a.a(this.d.getContext().getContentResolver().openInputStream(data), file);
+                                FileUtils.a(this.d.getContext().getContentResolver().openInputStream(data), file);
                                 final c a = ai.a().a(file);
                                 t.a(new Runnable(this) {
                                     final /* synthetic */ AnonymousClass20 b;

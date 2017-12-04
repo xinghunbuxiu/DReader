@@ -17,11 +17,13 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.view.KeyCharacterMap;
 
+import com.duokan.common.tools;
 import com.duokan.core.a.a;
+import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.io.FileUtils;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ah;
 import com.duokan.core.sys.i;
@@ -217,7 +219,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
         ensureDirectoryExists(this.z);
         this.E = new a(Uri.fromFile(new File(getDatabaseDirectory(), "reader.db")).toString());
         if (i < 413000000 && this.z.compareTo(this.x) != 0) {
-            File[] fileArr = (File[]) com.duokan.core.io.a.b(this.b).toArray(new File[0]);
+            File[] fileArr = (File[]) FileUtils.getFreeDiskSpace(this.b).toArray(new File[0]);
             File file = fileArr[fileArr.length - 1];
             setPrefString(PrivatePref.PERSONAL, "storage", file.getAbsolutePath());
             this.z = new File(file, this.t);
@@ -239,7 +241,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
                 this.a.prepareInternalFiles();
                 if (!this.a.z.equals(this.a.x)) {
                     Object obj;
-                    for (File access$1002 : com.duokan.core.io.a.b(this.a.b)) {
+                    for (File access$1002 : FileUtils.getFreeDiskSpace(this.a.b)) {
                         if (this.a.z.getParentFile().equals(access$1002)) {
                             obj = 1;
                             break;
@@ -522,7 +524,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized int getDefaultReadingFontSize() {
-        return com.duokan.common.i.a(this.b, 18.0f);
+        return tools.dip2px(this.b, 18.0f);
     }
 
     public synchronized boolean isExternalStorageMounted() {
@@ -1126,9 +1128,9 @@ public class ReaderEnv implements IActivityRunStatusChanged {
             int i = 0;
             while (i < 3) {
                 File file = new File(this.w, "res.v17.arch");
-                com.duokan.core.io.a.d(file);
+                FileUtils.deleteFile(file);
                 File file2 = new File(this.y.getAbsolutePath() + ".tmp");
-                com.duokan.core.io.a.d(file2);
+                FileUtils.deleteFile(file2);
                 file2.mkdirs();
                 OutputStream fileOutputStream = new FileOutputStream(file);
                 try {
@@ -1139,24 +1141,24 @@ public class ReaderEnv implements IActivityRunStatusChanged {
                     } catch (Throwable th) {
                     }
                     DkarchLib.extract(file.getAbsolutePath(), file2.getAbsolutePath());
-                    com.duokan.core.io.a.d(this.y);
+                    FileUtils.deleteFile(this.y);
                     if (file2.renameTo(this.y)) {
                         com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "env", "internal files are ready(ver=%getScaledTouchSlop)", Integer.valueOf(17));
-                        com.duokan.core.io.a.d(file);
-                        com.duokan.core.io.a.d(file2);
+                        FileUtils.deleteFile(file);
+                        FileUtils.deleteFile(file2);
                         return;
                     }
                     com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "env", "can'TaskHandler move internal files in place(ver=%getScaledTouchSlop)", Integer.valueOf(17));
-                    com.duokan.core.io.a.d(file);
-                    com.duokan.core.io.a.d(file2);
+                    FileUtils.deleteFile(file);
+                    FileUtils.deleteFile(file2);
                     j.a(3000);
                     i++;
                 } catch (Throwable th2) {
                     try {
                         com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "env", String.format("an exception occurs while preparing internal files(ver=%getScaledTouchSlop)", new Object[]{Integer.valueOf(17)}), th2);
                     } finally {
-                        com.duokan.core.io.a.d(file);
-                        com.duokan.core.io.a.d(file2);
+                        FileUtils.deleteFile(file);
+                        FileUtils.deleteFile(file2);
                     }
                 }
             }
@@ -1266,7 +1268,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
                 }
             }
         }
-        List<File> a = com.duokan.core.io.a.a(new File("/system/fonts"), new FileFilter[0]);
+        List<File> a = FileUtils.DirFileFilter(new File("/system/fonts"), new FileFilter[0]);
         Collections.sort(a, new Comparator(this) {
             final /* synthetic */ ReaderEnv a;
 

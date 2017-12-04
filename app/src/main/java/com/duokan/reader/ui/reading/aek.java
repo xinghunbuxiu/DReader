@@ -35,7 +35,7 @@ class aek implements Runnable {
     }
 
     public void c() {
-        TaskHandler.c(this);
+        TaskHandler.removeCallbacks(this);
         if (this.d.k == this) {
             this.d.k = null;
         }
@@ -44,7 +44,7 @@ class aek implements Runnable {
     public void d() {
         if (this.c == 0) {
             this.c = SystemClock.uptimeMillis();
-            TaskHandler.c(this);
+            TaskHandler.removeCallbacks(this);
         }
     }
 

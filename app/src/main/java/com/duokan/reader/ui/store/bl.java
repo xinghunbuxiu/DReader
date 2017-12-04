@@ -4,9 +4,9 @@ import android.net.Uri;
 import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 
+import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.aa;
-import com.duokan.core.app.ActivatedController;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.PullDownRefreshView.RefreshStyle;
 import com.duokan.core.ui.Scrollable;

@@ -2,8 +2,8 @@ package com.duokan.reader.ui.general;
 
 import android.view.View;
 
-import com.duokan.core.ui.bj;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.bj;
 
 import org.apache.http.HttpStatus;
 

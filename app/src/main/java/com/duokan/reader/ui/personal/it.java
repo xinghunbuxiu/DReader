@@ -118,13 +118,13 @@ public class it extends my implements aa, h, com.duokan.reader.domain.account.h 
         if (z) {
             com.duokan.reader.common.d.a().a((h) this);
         }
-        i.f().a((com.duokan.reader.domain.account.h) this);
+        i.f().add((com.duokan.reader.domain.account.h) this);
         a();
     }
 
     protected void onDeactive() {
         super.onDeactive();
-        i.f().b((com.duokan.reader.domain.account.h) this);
+        i.f().remove((com.duokan.reader.domain.account.h) this);
     }
 
     protected void onDetachFromStub() {

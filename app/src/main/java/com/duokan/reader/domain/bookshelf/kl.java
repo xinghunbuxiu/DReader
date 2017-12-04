@@ -5,7 +5,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 
-import com.duokan.core.io.d;
 import com.duokan.core.sys.r;
 import com.duokan.reader.domain.document.sbk.v;
 
@@ -64,7 +63,7 @@ class kl implements v {
                     canvas.drawBitmap(decodeStream, rect, new Rect(0, 0, rect.width(), rect.height()), null);
                     decodeStream.recycle();
                 }
-                d.a(c);
+                FileUtil1.a(c);
                 this.a.bq();
                 return true;
             }

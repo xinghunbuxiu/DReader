@@ -14,9 +14,9 @@ import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
-import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
+import com.duokan.core.app.ManagedApp;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.diagnostic.a;
 import com.duokan.core.sys.TaskHandler;

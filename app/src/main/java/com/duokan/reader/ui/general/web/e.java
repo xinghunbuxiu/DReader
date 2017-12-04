@@ -10,6 +10,7 @@ import android.webkit.SslErrorHandler;
 import android.webkit.WebResourceResponse;
 
 import com.duokan.c.j;
+import com.duokan.common.SysTools;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.ui.fr;
 import com.duokan.reader.ReaderFeature;
@@ -67,7 +68,7 @@ public class e extends MiuiWebViewClient {
             } else if (TextUtils.equals(scheme, "sms")) {
                 Object schemeSpecificPart2 = parse.getSchemeSpecificPart();
                 if (!TextUtils.isEmpty(schemeSpecificPart2)) {
-                    com.duokan.common.j.a(this.a.getContext(), schemeSpecificPart2, "");
+                    SysTools.sendSms(this.a.getContext(), schemeSpecificPart2, "");
                     return true;
                 }
             } else if (TextUtils.equals(scheme, "intent")) {

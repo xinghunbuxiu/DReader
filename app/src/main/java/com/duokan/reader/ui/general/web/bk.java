@@ -7,8 +7,8 @@ import android.widget.TextView;
 
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.cg;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.cg;
 
 import org.apache.http.HttpStatus;
 

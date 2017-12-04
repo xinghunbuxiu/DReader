@@ -5,9 +5,6 @@ import android.database.Cursor;
 
 import com.duokan.core.a.n;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.domain.document.Document_a.d;
-import com.duokan.reader.domain.document.Document_a.m;
-import com.duokan.reader.domain.document.Document_a.q;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

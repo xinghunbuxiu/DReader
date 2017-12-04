@@ -11,11 +11,13 @@ import android.webkit.CookieManager;
 import android.widget.TextView;
 
 import com.duokan.c.g;
+import com.duokan.common.tools;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.TansFormUtils;
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.IActivityRunStatusChanged;
+import com.duokan.core.b.UrlTools;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.z;
@@ -367,7 +369,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
                     }
                     if (sAccountListener == null) {
                         sAccountListener = new cc(this);
-                        i.f().a(sAccountListener);
+                        i.f().add(sAccountListener);
                     }
                     TaskHandler.postTask(new cd(this));
                 }
@@ -622,15 +624,15 @@ public class StorePageController extends StoreWebController implements SystemUiC
             web_notifyWeb(str, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
         } else if (((double) dkStoreBookDetail.getHighSize()) * 0.8d <= ((double) dkStoreBookDetail.getLowSize()) || dkStoreBookDetail.getLowSize() <= 0) {
             ap apVar = new ap(getContext());
-            apVar.setPrompt(String.format(getContext().getResources().getString(com.duokan.c.j.reading__shared__download_prompt), new Object[]{com.duokan.common.i.a(dkStoreBookDetail.getHighSize())}));
+            apVar.setPrompt(String.format(getContext().getResources().getString(com.duokan.c.j.reading__shared__download_prompt), new Object[]{tools.getByteSize(dkStoreBookDetail.getHighSize())}));
             apVar.setCancelLabel(com.duokan.c.j.general__shared__cancel);
             apVar.setOkLabel(com.duokan.c.j.general__shared__ok);
             apVar.open(new av(this, fvVar, str));
         } else {
             ia iaVar = new ia(getContext());
             iaVar.a(getContext().getResources().getString(com.duokan.c.j.reading__shared__download_prompt1));
-            iaVar.b(String.format(getContext().getResources().getString(com.duokan.c.j.reading__shared__low_quality), new Object[]{com.duokan.common.i.a(dkStoreBookDetail.getLowSize())}));
-            iaVar.b(String.format(getContext().getResources().getString(com.duokan.c.j.reading__shared__high_quality), new Object[]{com.duokan.common.i.a(dkStoreBookDetail.getHighSize())}));
+            iaVar.b(String.format(getContext().getResources().getString(com.duokan.c.j.reading__shared__low_quality), new Object[]{tools.getByteSize(dkStoreBookDetail.getLowSize())}));
+            iaVar.b(String.format(getContext().getResources().getString(com.duokan.c.j.reading__shared__high_quality), new Object[]{tools.getByteSize(dkStoreBookDetail.getHighSize())}));
             iaVar.a(new at(this, fvVar, str));
             iaVar.open(new au(this, str));
         }
@@ -687,7 +689,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
 
     protected void registerEventOnCurrentUrl(String str) {
         if (!TextUtils.isEmpty(str)) {
-            Uri a = com.duokan.core.b.a.a(getCurrentUrl());
+            Uri a = UrlTools.parse(getCurrentUrl());
             if (a != null && a.getPath() != null) {
                 String path = a.getPath();
                 if (!this.mEventListMap.containsKey(path)) {
@@ -702,7 +704,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
 
     protected void unregisterEventOnCurrentUrl(String str) {
         if (!TextUtils.isEmpty(str)) {
-            Uri a = com.duokan.core.b.a.a(getCurrentUrl());
+            Uri a = UrlTools.parse(getCurrentUrl());
             if (a != null && a.getPath() != null) {
                 String path = a.getPath();
                 if (this.mEventListMap.containsKey(path)) {
@@ -718,7 +720,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     protected boolean triggerEventOnCurrentUrl(String str, Object obj) {
-        Uri a = com.duokan.core.b.a.a(getCurrentUrl());
+        Uri a = UrlTools.parse(getCurrentUrl());
         if (a == null || a.getPath() == null) {
             return false;
         }
@@ -736,7 +738,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     protected boolean broadcastEvent(String str, String str2) {
-        Uri a = com.duokan.core.b.a.a(getCurrentUrl());
+        Uri a = UrlTools.parse(getCurrentUrl());
         if (a == null || a.getPath() == null) {
             return false;
         }

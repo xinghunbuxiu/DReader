@@ -11,10 +11,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.io.FileUtils;
 import com.duokan.core.sys.ah;
 import com.duokan.core.sys.o;
-import com.duokan.core.ui.cg;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.cg;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.DkPublic;
@@ -375,14 +376,14 @@ public abstract class wl extends FrameLayout {
         if (fileArr.length > 100) {
             Arrays.sort(fileArr, new ws(this));
             while (i < fileArr.length / 2) {
-                com.duokan.core.io.a.d(fileArr[i]);
+                FileUtils.deleteFile(fileArr[i]);
                 i++;
             }
         }
     }
 
     private final List n() {
-        return com.duokan.core.io.a.a(ReaderEnv.get().getReadingCacheDirectory(), new wt(this));
+        return FileUtils.DirFileFilter(ReaderEnv.get().getReadingCacheDirectory(), new wt(this));
     }
 
     private final File o() {

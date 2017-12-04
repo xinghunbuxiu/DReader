@@ -124,7 +124,7 @@ public class AnonymousAccount extends a {
         String str;
         if (ReaderEnv.get().onMiui()) {
             try {
-                Class cls = Class.forName("miui.telephony.TelephonyManagerEx");
+                Class cls = Class.forName("miui.sendSms.TelephonyManagerEx");
                 str = (String) cls.getDeclaredMethod("getMiuiDeviceId", new Class[0]).invoke(cls.getDeclaredMethod("getDefault", new Class[0]).invoke(cls, new Object[0]), new Object[0]);
             } catch (Throwable th) {
                 str = null;
@@ -145,7 +145,7 @@ public class AnonymousAccount extends a {
         } else {
             try {
                 if (ReaderEnv.get().onMiui()) {
-                    Class cls = Class.forName("miui.telephony.TelephonyManagerEx");
+                    Class cls = Class.forName("miui.sendSms.TelephonyManagerEx");
                     for (String b : (List) cls.getDeclaredMethod("getDeviceIdList", new Class[0]).invoke(cls.getDeclaredMethod("getDefault", new Class[0]).invoke(cls, new Object[0]), new Object[0])) {
                         this.f.add(o.b(b, "md5"));
                     }

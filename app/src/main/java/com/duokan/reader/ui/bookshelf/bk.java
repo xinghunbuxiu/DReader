@@ -5,10 +5,10 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.text.format.Formatter;
 
-import com.duokan.core.app.FeatureListening;
-import com.duokan.core.app.aa;
 import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.FeatureListening;
 import com.duokan.core.app.IFeature;
+import com.duokan.core.app.aa;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;

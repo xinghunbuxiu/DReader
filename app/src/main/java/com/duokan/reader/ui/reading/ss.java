@@ -14,8 +14,8 @@ import android.util.Pair;
 import android.view.View;
 
 import com.duokan.c.j;
-import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.sys.o;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;

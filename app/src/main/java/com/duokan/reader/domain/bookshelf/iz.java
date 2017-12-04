@@ -58,7 +58,7 @@ public class iz implements ah, h {
     private iz(Context context, i iVar) {
         this.a = context;
         this.b = iVar;
-        this.b.a((h) this);
+        this.b.add((h) this);
         this.c = new jg(this);
         DkApp.get().runPreReady(new jh(this));
     }

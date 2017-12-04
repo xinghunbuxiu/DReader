@@ -3,8 +3,8 @@ package com.duokan.reader.ui.reading;
 import android.media.AudioManager;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.sys.ag;
 import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.sys.ag;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.domain.tts.SpeakingListener;
 

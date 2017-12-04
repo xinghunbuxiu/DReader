@@ -1,5 +1,6 @@
 package com.duokan.reader.domain.bookshelf;
 
+import com.duokan.core.b.UrlTools;
 import com.duokan.core.sys.r;
 
 import java.util.LinkedList;
@@ -20,7 +21,7 @@ class fb {
     public int h = -1;
     public Throwable i = null;
 
-    private int a(java.lang.String r11, com.duokan.core.b.a.a r12) {
+    private int a(java.lang.String r11, UrlTools.a r12) {
         /* JADX: method processing error */
 /*
 Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find immediate dominator for block B:162:? in {11, 20, 42, 65, 70, 71, 73, 74, 95, 118, 120, 137, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 163, 164} preds:[]

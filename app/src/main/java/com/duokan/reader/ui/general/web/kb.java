@@ -2,6 +2,7 @@ package com.duokan.reader.ui.general.web;
 
 import android.text.TextUtils;
 
+import com.duokan.core.b.UrlTools;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.o;
@@ -36,7 +37,7 @@ class kb implements Runnable {
             File file2 = new File(file, "cache.appcache");
             a.d(file);
             try {
-                com.duokan.core.b.a.a aVar = new com.duokan.core.b.a.a();
+                UrlTools.a aVar = new UrlTools.a();
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.append(String.format("app_id=%s;device_id=%s;build=%getScaledTouchSlop;channel=%s;", new Object[]{ReaderEnv.get().getAppId(), ReaderEnv.get().getDeviceId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel()}));
                 if (!TextUtils.isEmpty(i.f().i())) {

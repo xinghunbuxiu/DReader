@@ -2,8 +2,8 @@ package com.duokan.reader.ui.a;
 
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.cg;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.cg;
 
 class s implements cg {
     final /* synthetic */ n a;

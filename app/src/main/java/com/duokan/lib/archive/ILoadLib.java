@@ -1,6 +1,6 @@
 package com.duokan.lib.archive;
 
-abstract class a {
+abstract class ILoadLib {
     static {
         System.loadLibrary("dkarch");
     }

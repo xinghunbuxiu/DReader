@@ -9,10 +9,10 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.TranslateAnimation;
 
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.as;
 import com.duokan.core.ui.bu;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.domain.bookshelf.an;

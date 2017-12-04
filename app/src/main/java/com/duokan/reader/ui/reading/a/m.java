@@ -5,8 +5,8 @@ import android.graphics.PointF;
 import android.util.Pair;
 import android.view.View;
 
-import com.duokan.core.ui.cu;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.cu;
 import com.duokan.core.ui.er;
 
 class m implements cu {

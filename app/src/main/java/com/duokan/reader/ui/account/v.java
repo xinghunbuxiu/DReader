@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.account;
 
 import com.duokan.c.j;
-import com.duokan.common.i;
+import com.duokan.common.tools;
 import com.duokan.reader.domain.account.oauth.ThirdOAuth;
 import com.duokan.reader.domain.account.oauth.ThirdYinxiang;
 import com.duokan.reader.domain.account.oauth.TokenStore;
@@ -17,7 +17,7 @@ class v implements Runnable {
     }
 
     public void run() {
-        if (i.a(this.b.getContext())) {
+        if (tools.isHasNet(this.b.getContext())) {
             ThirdYinxiang thirdYinxiang;
             if (TokenStore.getInstance().isBindAccessToken(this.b.getContext(), "evernote")) {
                 thirdYinxiang = (ThirdYinxiang) ThirdOAuth.produceThird(this.b.getActivity(), "evernote");

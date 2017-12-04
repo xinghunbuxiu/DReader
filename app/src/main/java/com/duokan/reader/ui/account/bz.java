@@ -4,11 +4,11 @@ import android.content.Intent;
 import android.text.TextUtils;
 
 import com.duokan.c.j;
+import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IActivityRunStatusChanged;
+import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.IFeature;
 import com.duokan.reader.common.webservices.duokan.r;
 import com.duokan.reader.ui.general.hd;
 import com.duokan.reader.ui.general.jq;

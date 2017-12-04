@@ -6,8 +6,8 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.text.TextUtils;
 
-import com.duokan.core.sys.ah;
 import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.sys.ah;
 import com.duokan.kernel.DkArgbColor;
 import com.duokan.kernel.DkBox;
 import com.duokan.kernel.DkFlowRenderOption;

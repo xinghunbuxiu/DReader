@@ -1,11 +1,11 @@
 package com.duokan.reader.domain.bookshelf;
 
-import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
 
 import com.duokan.core.app.ManagedApp;
+import com.duokan.core.b.UrlTools;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
@@ -17,7 +17,6 @@ import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.webservices.duokan.y;
 import com.duokan.reader.common.webservices.duokan.z;
 import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.cloud.DkCloudBookManifest;
 import com.duokan.reader.domain.cloud.DkCloudPurchasedFiction;
 import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
 import com.duokan.reader.domain.document.epub.DkFeature;
@@ -32,7 +31,6 @@ import com.duokan.reader.domain.document.n;
 import com.duokan.reader.domain.document.w;
 import com.duokan.reader.domain.provider.BookshelfHelper.BooksTable.Column;
 import com.duokan.reader.domain.store.DkStoreBookCategory;
-import com.duokan.reader.domain.store.DkStoreBookDetail;
 import com.duokan.reader.domain.store.DkStoreCategory;
 
 import java.io.ByteArrayOutputStream;
@@ -45,7 +43,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
 
@@ -709,7 +706,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                         }
                     } else if (j() && !TextUtils.isEmpty(this.x.b)) {
                         d.getParentFile().mkdirs();
-                        b.a(this.x.b, d, new com.duokan.core.b.a.a().a(1).b(131072));
+                        b.a(this.x.b, d, new UrlTools.a().a(1).b(131072));
                     }
                     if (!d.exists()) {
                         com.duokan.core.diagnostic.a.c().c(LogLevel.ERROR, "epub", "fail to create the book " + d.getAbsolutePath());

@@ -11,8 +11,8 @@ import android.widget.LinearLayout;
 
 import com.duokan.b.g;
 import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.a;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.a;
 import com.duokan.core.ui.j;
 
 class fi implements dq {

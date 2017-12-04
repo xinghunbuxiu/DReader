@@ -5,8 +5,8 @@ import android.view.ViewGroup.MarginLayoutParams;
 
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
-import com.duokan.core.ui.a;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.a;
 
 class hf extends hj {
     final /* synthetic */ hd a;

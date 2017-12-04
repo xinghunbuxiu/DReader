@@ -3,7 +3,7 @@ package com.duokan.reader.ui.personal;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.common.j;
+import com.duokan.common.SysTools;
 
 class il implements OnClickListener {
     final /* synthetic */ String a;
@@ -15,6 +15,6 @@ class il implements OnClickListener {
     }
 
     public void onClick(View view) {
-        j.a(this.b.getContext(), this.a);
+        SysTools.sendMmsSms(this.b.getContext(), this.a);
     }
 }

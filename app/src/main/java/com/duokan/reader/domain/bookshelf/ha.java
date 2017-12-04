@@ -2,8 +2,8 @@ package com.duokan.reader.domain.bookshelf;
 
 import android.util.Pair;
 
-import com.duokan.core.b.a.a;
-import com.duokan.core.b.a.b;
+import com.duokan.core.b.UrlTools.a;
+import com.duokan.core.b.UrlTools.b;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.io.FileAlreadyExistsException;
 import com.duokan.core.sys.j;

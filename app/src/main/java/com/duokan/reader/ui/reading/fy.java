@@ -5,8 +5,8 @@ import android.graphics.Point;
 import android.graphics.PointF;
 import android.view.View;
 
-import com.duokan.core.ui.ZoomView;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.ZoomView;
 
 public abstract class fy extends ZoomView {
     private Point b;

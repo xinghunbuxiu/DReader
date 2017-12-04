@@ -4,6 +4,7 @@ import android.widget.TextView;
 
 import com.duokan.b.f;
 import com.duokan.b.i;
+import com.duokan.common.tools;
 import com.duokan.core.app.IFeature;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.domain.b.a;
@@ -46,7 +47,7 @@ public abstract class ek extends hd implements a, k {
 
     private void e() {
         q c = b.b().c();
-        FileTransferPrompter.a(getContext(), c.b - c.d, getContext().getResources().getString(i.reading__custom_font__download_title), getContext().getString(i.reading__custom_font__download_prompt_at_data_plan, new Object[]{com.duokan.common.i.a(c.b - c.d)}), new em(this));
+        FileTransferPrompter.a(getContext(), c.b - c.d, getContext().getResources().getString(i.reading__custom_font__download_title), getContext().getString(i.reading__custom_font__download_prompt_at_data_plan, new Object[]{tools.getByteSize(c.b - c.d)}), new em(this));
     }
 
     public void a(DownloadCenterTask downloadCenterTask) {

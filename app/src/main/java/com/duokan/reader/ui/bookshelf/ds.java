@@ -3,7 +3,7 @@ package com.duokan.reader.ui.bookshelf;
 import android.content.Context;
 
 import com.duokan.c.e;
-import com.duokan.common.i;
+import com.duokan.common.tools;
 import com.duokan.reader.domain.bookshelf.an;
 
 import java.util.List;
@@ -32,7 +32,7 @@ public class ds {
     }
 
     public static int a(Context context) {
-        return a(context, i.b(context));
+        return a(context, tools.getWidth(context));
     }
 
     public static int a(Context context, int i) {

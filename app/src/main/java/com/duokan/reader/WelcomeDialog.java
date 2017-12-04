@@ -20,9 +20,9 @@ import android.widget.ImageView;
 
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ah;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.ct;
 import com.duokan.core.ui.cu;
-import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.et;
 import com.duokan.core.ui.j;

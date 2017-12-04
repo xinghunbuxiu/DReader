@@ -32,7 +32,7 @@ public class i {
     private String g = null;
     private int h = 0;
     private final HashMap i = new HashMap();
-    private final CopyOnWriteArrayList j = new CopyOnWriteArrayList();
+    private final CopyOnWriteArrayList<h> j = new CopyOnWriteArrayList();
 
     public AccountType a() {
         if (b(PersonalAccount.class) == null && ((PersonalAccount) b(PersonalAccount.class)).i()) {
@@ -66,14 +66,14 @@ public class i {
         this.f = ce.a();
         this.e = f.a();
         this.d = new j(this);
-        DkApp.get().addActivityLifecycleMonitor(new k(this));
+        DkApp.get().addActivityLifecycleMonitor(new LifeEvent(this));
     }
 
-    public void a(h hVar) {
+    public void add(h hVar) {
         this.j.addIfAbsent(hVar);
     }
 
-    public void b(h hVar) {
+    public void remove(h hVar) {
         this.j.remove(hVar);
     }
 

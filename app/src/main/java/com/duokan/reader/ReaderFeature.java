@@ -2,8 +2,8 @@ package com.duokan.reader;
 
 import android.graphics.drawable.Drawable;
 
-import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.document.Document_a;

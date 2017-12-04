@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.duokan.b.f;
 import com.duokan.b.g;
 import com.duokan.b.i;
+import com.duokan.common.tools;
 import com.duokan.reader.domain.micloud.bj;
 
 public class ai extends FrameLayout {
@@ -43,6 +44,6 @@ public class ai extends FrameLayout {
             d = d2;
         }
         d = Math.floor(d * 10.0d) / 10.0d;
-        this.c.setText(getResources().getString(i.bookshelf__upload_books_view__storage_quota_used, new Object[]{com.duokan.common.i.a(bjVar.a)}) + String.format("%1$.1f%%", new Object[]{Double.valueOf(d)}));
+        this.c.setText(getResources().getString(i.bookshelf__upload_books_view__storage_quota_used, new Object[]{tools.getByteSize(bjVar.a)}) + String.format("%1$.1f%%", new Object[]{Double.valueOf(d)}));
     }
 }

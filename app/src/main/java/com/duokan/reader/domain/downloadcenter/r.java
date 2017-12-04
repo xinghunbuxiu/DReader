@@ -48,7 +48,7 @@ public class r implements ah, d, h {
         this.b = context;
         this.c = iVar;
         this.d = strArr;
-        this.c.a((h) this);
+        this.c.add((h) this);
         c();
     }
 

@@ -13,7 +13,7 @@ class r implements Runnable {
             if (this.a.d.e) {
                 this.a.d.a(this.a.b, this.a.c);
             } else {
-                this.a.d.d.c();
+                this.a.d.d.removeCallbacks();
                 this.a.d.a(this.a.b, this.a.c);
                 this.a.d.d.getThead();
             }

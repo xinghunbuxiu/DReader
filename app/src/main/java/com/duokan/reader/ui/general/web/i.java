@@ -2,6 +2,8 @@ package com.duokan.reader.ui.general.web;
 
 import android.webkit.DownloadListener;
 
+import com.duokan.common.tools;
+
 class i implements DownloadListener {
     final /* synthetic */ DkWebView a;
 
@@ -10,6 +12,6 @@ class i implements DownloadListener {
     }
 
     public void onDownloadStart(String str, String str2, String str3, String str4, long j) {
-        com.duokan.common.i.a(this.a.getContext(), str);
+        tools.startActivity(this.a.getContext(), str);
     }
 }

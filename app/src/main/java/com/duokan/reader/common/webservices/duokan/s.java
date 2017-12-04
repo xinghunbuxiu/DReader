@@ -2,6 +2,7 @@ package com.duokan.reader.common.webservices.duokan;
 
 import android.text.TextUtils;
 
+import com.duokan.core.b.UrlTools;
 import com.duokan.core.sys.o;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.webservices.WebSession;
@@ -115,7 +116,7 @@ public class s extends ad {
             if (!TextUtils.isEmpty(optString)) {
                 if (!new File(str).exists()) {
                     a.d(new File(str));
-                    com.duokan.core.b.a.b.b(optString, new File(str), new com.duokan.core.b.a.a());
+                    UrlTools.b.b(optString, new File(str), new UrlTools.a());
                 }
                 bVar.a = str;
             }

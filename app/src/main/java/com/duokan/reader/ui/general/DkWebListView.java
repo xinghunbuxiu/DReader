@@ -17,11 +17,11 @@ import com.duokan.core.ui.PullDownRefreshBaseView;
 import com.duokan.core.ui.PullDownRefreshBaseView.RefreshState;
 import com.duokan.core.ui.PullDownRefreshView;
 import com.duokan.core.ui.Scrollable;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.an;
 import com.duokan.core.ui.ao;
 import com.duokan.core.ui.cf;
 import com.duokan.core.ui.cg;
-import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.et;
 
 public class DkWebListView extends FrameLayout implements Scrollable {

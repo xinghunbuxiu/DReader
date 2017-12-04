@@ -3,6 +3,7 @@ package com.duokan.reader.common.webservices.duokan;
 import android.os.Bundle;
 import android.util.Base64;
 
+import com.duokan.core.io.FileUtils;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ReaderEnv;
@@ -237,8 +238,8 @@ public class k extends d {
             linkedList.add(new BasicNameValuePair((String) arrayList.get(i2), (String) arrayList.get(i2 + 1)));
         }
         String valueOf = String.valueOf(Base64.encode(String.valueOf(Math.random()).getBytes(), 0));
-        File b = com.duokan.core.io.a.b(ReaderEnv.get().getPrivateCacheDirectory());
-        File b2 = com.duokan.core.io.a.b(ReaderEnv.get().getPrivateCacheDirectory());
+        File b = FileUtils.getRealFile(ReaderEnv.get().getPrivateCacheDirectory());
+        File b2 = FileUtils.getRealFile(ReaderEnv.get().getPrivateCacheDirectory());
         Closeable fileOutputStream;
         try {
             fileOutputStream = new FileOutputStream(b);
@@ -257,24 +258,24 @@ public class k extends d {
                     }
                     fileOutputStream.write(("\r\n--" + valueOf + "--\r\n").getBytes());
                 }
-                com.duokan.core.io.d.a(fileOutputStream);
+                FileUtil1.a(fileOutputStream);
                 if (i != 0) {
                     valueOf = a(a(new c().b("http://api.bbs.miui.com/app/upload/forumupload").a(HttpPost.METHOD_NAME).a(linkedList).a(b).c(valueOf).a()), HTTP.UTF_8).getString("aid");
                 } else {
                     valueOf = str;
                 }
-                com.duokan.core.io.a.d(b);
-                com.duokan.core.io.a.d(b2);
+                FileUtils.deleteFile(b);
+                FileUtils.deleteFile(b2);
                 return valueOf;
             } catch (Throwable th2) {
                 th = th2;
-                com.duokan.core.io.d.a(fileOutputStream);
+                FileUtil1.a(fileOutputStream);
                 throw th;
             }
         } catch (Throwable th3) {
             th = th3;
             fileOutputStream = null;
-            com.duokan.core.io.d.a(fileOutputStream);
+            FileUtil1.a(fileOutputStream);
             throw th;
         }
     }

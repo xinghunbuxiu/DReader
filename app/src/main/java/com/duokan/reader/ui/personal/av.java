@@ -6,10 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.c.j;
 import com.duokan.common.FileTypeRecognizer;
+import com.duokan.common.tools;
 import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.bookshelf.iz;
@@ -135,7 +133,7 @@ public class av extends gw {
                                     DkLabelView dkLabelView3 = (DkLabelView) a.findViewById(g.bookshelf__custom_cloud_item_view__right_attr);
                                     dkLabelView3.setVisibility(0);
                                     dkLabelView.setVisibility(0);
-                                    dkLabelView3.setText(com.duokan.common.i.a(iVar2.M()));
+                                    dkLabelView3.setText(tools.getByteSize(iVar2.M()));
                                     dkLabelView2.setText(String.format(this.a.getString(j.bookshelf__cloud_books_view__uploading_schedule), new Object[]{Math.round(a2.c * 100.0f) + "%"}));
                                     return;
                                 } else if (a2.a == BookAction.UPLOAD_FAILED || a2.a == BookAction.UPLOAD_PAUSED) {
@@ -157,8 +155,8 @@ public class av extends gw {
     }
 
     private void a(View view, CustomCloudItem customCloudItem, int i) {
-        BookCoverView bookCoverView = (BookCoverView) view.findViewById(g.bookshelf__custom_cloud_item_view__cover);
-        ((DkLabelView) view.findViewById(g.bookshelf__custom_cloud_item_view__name)).setText(ReaderUi.a(com.duokan.common.i.d(customCloudItem.g()), this.c, this.a.getResources().getColor(d.general__shared__ed6c00)));
+        BookCoverView bookCoverView = (BookCoverView) view.findViewById(R.id.bookshelf__custom_cloud_item_view__cover);
+        ((DkLabelView) view.findViewById(R.id.bookshelf__custom_cloud_item_view__name)).setText(ReaderUi.a(tools.substring(customCloudItem.g()), this.c, this.a.getResources().getColor(d.general__shared__ed6c00)));
         c b = customCloudItem.b();
         if (b == null || BookActionAssistant.a(this.a, b).a != BookAction.READ) {
             bookCoverView.setCoverForegroundDrawable(this.a.getResources().getDrawable(gn.b(FileTypeRecognizer.a(customCloudItem.g()))));
@@ -180,10 +178,10 @@ public class av extends gw {
 
     private void b(View view, CustomCloudItem customCloudItem, int i) {
         ab abVar;
-        DkLabelView dkLabelView = (DkLabelView) view.findViewById(g.bookshelf__custom_cloud_item_view__split);
-        DkLabelView dkLabelView2 = (DkLabelView) view.findViewById(g.bookshelf__custom_cloud_item_view__left_attr);
-        DkLabelView dkLabelView3 = (DkLabelView) view.findViewById(g.bookshelf__custom_cloud_item_view__right_attr);
-        BookActionView bookActionView = (BookActionView) view.findViewById(g.bookshelf__custom_cloud_item_view__action);
+        DkLabelView dkLabelView = (DkLabelView) view.findViewById(R.id.bookshelf__custom_cloud_item_view__split);
+        DkLabelView dkLabelView2 = (DkLabelView) view.findViewById(R.id.bookshelf__custom_cloud_item_view__left_attr);
+        DkLabelView dkLabelView3 = (DkLabelView) view.findViewById(R.id.bookshelf__custom_cloud_item_view__right_attr);
+        BookActionView bookActionView = (BookActionView) view.findViewById(R.id.bookshelf__custom_cloud_item_view__action);
         CloudItemStatus h = customCloudItem.h();
         dkLabelView2.setVisibility(0);
         dkLabelView3.setVisibility(0);
@@ -196,7 +194,7 @@ public class av extends gw {
                 dkLabelView2.setText(a.b);
                 abVar = a;
             } else {
-                dkLabelView2.setText(com.duokan.common.i.a(customCloudItem.e()));
+                dkLabelView2.setText(tools.getByteSize(customCloudItem.e()));
                 dkLabelView3.setText(ReaderUi.a(this.a, customCloudItem.f(), false));
                 abVar = a;
             }
@@ -209,8 +207,8 @@ public class av extends gw {
                 dkLabelView2.setText(a2.b);
                 abVar = a2;
             } else {
-                dkLabelView3.setText(com.duokan.common.i.a(iVar.M()));
-                dkLabelView2.setText(String.format(this.a.getString(j.bookshelf__cloud_books_view__uploading_schedule), new Object[]{Math.round(customCloudItem.d() * 100.0f) + "%"}));
+                dkLabelView3.setText(tools.getByteSize(iVar.M()));
+                dkLabelView2.setText(String.format(this.a.getString(R.string.bookshelf__cloud_books_view__uploading_schedule), new Object[]{Math.round(customCloudItem.d() * 100.0f) + "%"}));
                 abVar = a2;
             }
         }

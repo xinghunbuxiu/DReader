@@ -16,14 +16,14 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.FrameLayout.LayoutParams;
 
+import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.IActivityRunStatusChanged;
-import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.s;
-import com.duokan.core.ui.cv;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.cv;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.MiuiAssistContent;
 import com.duokan.reader.ReaderEnv;

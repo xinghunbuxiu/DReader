@@ -10,7 +10,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.duokan.b.i;
-import com.duokan.common.j;
+import com.duokan.common.SysTools;
 import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderFeature;
 
@@ -48,7 +48,7 @@ class kg extends WebViewClient {
             } else if (TextUtils.equals(scheme, "sms")) {
                 Object schemeSpecificPart2 = parse.getSchemeSpecificPart();
                 if (!TextUtils.isEmpty(schemeSpecificPart2)) {
-                    j.a(this.a.getContext(), schemeSpecificPart2, "");
+                    SysTools.sendSms(this.a.getContext(), schemeSpecificPart2, "");
                     return true;
                 }
             } else {

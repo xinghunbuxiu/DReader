@@ -3,9 +3,9 @@ package com.duokan.reader.ui.reading.a;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.ct;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.core.ui.q;

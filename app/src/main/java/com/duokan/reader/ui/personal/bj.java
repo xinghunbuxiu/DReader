@@ -49,12 +49,12 @@ public class bj extends ActivatedController implements ae, h {
 
     protected void onAttachToStub() {
         super.onAttachToStub();
-        i.f().a((h) this);
+        i.f().add((h) this);
     }
 
     protected void onDetachFromStub() {
         super.onDetachFromStub();
-        i.f().b((h) this);
+        i.f().remove((h) this);
     }
 
     public void a(DkFeedbackThreadInfo dkFeedbackThreadInfo) {

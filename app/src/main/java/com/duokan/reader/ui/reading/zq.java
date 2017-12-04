@@ -1,8 +1,8 @@
 package com.duokan.reader.ui.reading;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.sys.af;
 import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.sys.af;
 import com.duokan.reader.ui.store.an;
 
 import java.util.Arrays;

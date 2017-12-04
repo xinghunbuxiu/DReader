@@ -14,18 +14,18 @@ import android.view.WindowManager;
 
 import java.text.DecimalFormat;
 
-public class i {
-    public static String a(long j) {
-        return a(j, "0.00K");
+public class tools {
+    public static String getByteSize(long bytes) {
+        return getByteSize(bytes, "0.00K");
     }
 
-    public static String a(long j, String str) {
-        if (j == 0) {
-            return str;
+    public static String getByteSize(long bytes, String defaut) {
+        if (bytes == 0) {
+            return defaut;
         }
         String str2;
         DecimalFormat decimalFormat = new DecimalFormat("0.##");
-        float f = ((float) j) / 1024.0f;
+        float f = ((float) bytes) / 1024.0f;
         String str3 = "";
         if (f > 1048576.0f) {
             str2 = decimalFormat.format((double) (f / 1048576.0f)).toString() + "G";
@@ -37,7 +37,7 @@ public class i {
         return str2;
     }
 
-    public static String a(String str) {
+    public static String substringwerCase(String str) {
         int lastIndexOf = str.lastIndexOf(".");
         if (lastIndexOf == -1 || lastIndexOf >= str.length() - 1) {
             return "";
@@ -45,16 +45,16 @@ public class i {
         return str.substring(lastIndexOf + 1).toLowerCase();
     }
 
-    public static String b(String str) {
+    public static String substringToEnd(String str) {
         int lastIndexOf = str.lastIndexOf(".");
         return (lastIndexOf == -1 || lastIndexOf >= str.length() - 1) ? str : str.substring(0, lastIndexOf);
     }
 
-    public static int a(Context context, float f) {
+    public static int dip2px(Context context, float f) {
         return (int) ((context.getResources().getDisplayMetrics().density * f) + 0.5f);
     }
 
-    public static String c(String str) {
+    public static String getHeight(String str) {
         int lastIndexOf = str.lastIndexOf("/");
         int lastIndexOf2 = str.lastIndexOf(".");
         if (lastIndexOf == -1 || lastIndexOf2 == -1 || lastIndexOf2 <= lastIndexOf) {
@@ -63,37 +63,37 @@ public class i {
         return str.substring(lastIndexOf + 1, lastIndexOf2);
     }
 
-    public static String d(String str) {
-        int lastIndexOf = str.lastIndexOf("/") + 1;
-        int lastIndexOf2 = str.lastIndexOf(".");
-        if (lastIndexOf2 == -1 || lastIndexOf2 <= lastIndexOf) {
+    public static String substring(String str) {
+        int begin = str.lastIndexOf("/") + 1;
+        int end = str.lastIndexOf(".");
+        if (end == -1 || end <= begin) {
             return "";
         }
-        return str.substring(lastIndexOf, lastIndexOf2);
+        return str.substring(begin, end);
     }
 
-    public static boolean a(Context context) {
-        if (!ConnectivityManager.isNetworkTypeValid(1)) {
+    public static boolean isHasNet(Context context) {
+        if (!ConnectivityManager.isNetworkTypeValid(ConnectivityManager.TYPE_WIFI)) {
             return false;
         }
-        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService("connectivity");
-        if (a(connectivityManager)) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (isWifi(connectivityManager)) {
             return true;
         }
-        if (b(connectivityManager)) {
-            return true;
-        }
-        return false;
-    }
-
-    public static boolean a(ConnectivityManager connectivityManager) {
-        if (connectivityManager.getNetworkInfo(1).getState() == State.CONNECTED) {
+        if (isConnected(connectivityManager)) {
             return true;
         }
         return false;
     }
 
-    public static boolean b(ConnectivityManager connectivityManager) {
+    public static boolean isWifi(ConnectivityManager connectivityManager) {
+        if (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == State.CONNECTED) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isConnected(ConnectivityManager connectivityManager) {
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         if (activeNetworkInfo != null && activeNetworkInfo.getState() == State.CONNECTED) {
             return true;
@@ -101,21 +101,21 @@ public class i {
         return false;
     }
 
-    public static int b(Context context) {
-        WindowManager windowManager = (WindowManager) context.getSystemService("window");
+    public static int getWidth(Context context) {
+        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         windowManager.getDefaultDisplay().getMetrics(displayMetrics);
         return displayMetrics.widthPixels;
     }
 
-    public static int c(Context context) {
-        WindowManager windowManager = (WindowManager) context.getSystemService("window");
+    public static int getHeight(Context context) {
+        WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         windowManager.getDefaultDisplay().getMetrics(displayMetrics);
         return displayMetrics.heightPixels;
     }
 
-    public static void a(View view) {
+    public static void getLayoutType(View view) {
         if (VERSION.SDK_INT > 10) {
             try {
                 View.class.getMethod("setLayerType", new Class[]{Integer.TYPE, Paint.class}).invoke(view, new Object[]{Integer.valueOf(1), null});
@@ -125,9 +125,15 @@ public class i {
         }
     }
 
-    public static void a(Context context, String str) {
+    /**
+     * 根据url 跳转
+     *
+     * @param context
+     * @param url
+     */
+    public static void startActivity(Context context, String url) {
         try {
-            context.startActivity(new Intent("android.intent.action.VIEW", Uri.parse(str)));
+            context.startActivity(new Intent("android.intent.action.VIEW", Uri.parse(url)));
         } catch (Exception e) {
         }
     }

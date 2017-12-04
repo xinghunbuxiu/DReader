@@ -1,11 +1,11 @@
 package com.duokan.reader.domain.account;
 
-import com.tencent.mm.opensdk.modelmsg.SendAuth.Resp;
+import com.tencent.mm.opensdk.modelmsg.SendAuth.SendAuth$Resp;
 
 class l implements Runnable {
-    final /* synthetic */ k a;
+    final /* synthetic */ LifeEvent a;
 
-    l(k kVar) {
+    l(LifeEvent kVar) {
         this.a = kVar;
     }
 

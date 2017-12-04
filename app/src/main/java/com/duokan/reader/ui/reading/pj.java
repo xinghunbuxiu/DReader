@@ -5,10 +5,10 @@ import android.widget.ImageView;
 
 import com.duokan.core.app.BaseActivity;
 import com.duokan.core.app.s;
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.ZoomView;
 import com.duokan.core.ui.di;
 import com.duokan.core.ui.dl;
-import com.duokan.core.ui.UTools;
 import com.duokan.reader.DkApp;
 
 do;

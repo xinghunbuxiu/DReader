@@ -10,7 +10,7 @@ class gh implements Runnable {
     }
 
     public void run() {
-        this.a.b.a(this.a.c);
+        this.a.b.add(this.a.c);
         DkSharedStorageManager.a().a(this.a, SharedKey.CART_CACHE);
     }
 }

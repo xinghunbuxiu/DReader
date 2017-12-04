@@ -66,7 +66,7 @@ public class PersonalPrefs implements g, h {
         this.c = context;
         this.d = iVar;
         this.b = readerEnv;
-        this.d.a((h) this);
+        this.d.add((h) this);
         fVar.a((g) this);
     }
 

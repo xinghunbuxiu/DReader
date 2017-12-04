@@ -2,6 +2,7 @@ package com.duokan.reader.domain.bookshelf;
 
 import android.util.Pair;
 
+import com.duokan.core.b.UrlTools;
 import com.duokan.reader.common.webservices.duokan.p;
 
 import org.apache.http.protocol.HTTP;
@@ -37,7 +38,7 @@ class fc implements Callable {
                 if (b != null) {
                     List linkedList = new LinkedList();
                     linkedList.add(new Pair(HTTP.TARGET_HOST, a.c((String) b.first)));
-                    this.a.h = this.a.a((String) b.second, new com.duokan.core.b.a.a().a(linkedList));
+                    this.a.h = this.a.a((String) b.second, new UrlTools.a().a(linkedList));
                     if (this.a.i instanceof SocketTimeoutException) {
                         fb.k.incrementAndGet();
                     } else if (this.a.h == 1008 || this.a.h == 1007) {
@@ -52,7 +53,7 @@ class fc implements Callable {
                 Object obj3 = null;
                 while (i2 < this.a.d.length) {
                     String str = this.a.d[i2];
-                    this.a.h = this.a.a(str, new com.duokan.core.b.a.a().a(i2 == 0 ? 2 : 0));
+                    this.a.h = this.a.a(str, new UrlTools.a().a(i2 == 0 ? 2 : 0));
                     if (this.a.h == 0 || this.a.h == 1) {
                         break;
                     }

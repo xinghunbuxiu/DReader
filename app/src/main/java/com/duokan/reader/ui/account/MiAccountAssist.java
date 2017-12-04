@@ -3,11 +3,11 @@ package com.duokan.reader.ui.account;
 import android.content.Context;
 
 import com.duokan.c.j;
+import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.app.ActivatedController;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderFeature;

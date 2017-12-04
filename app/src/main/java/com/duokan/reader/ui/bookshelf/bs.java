@@ -3,8 +3,8 @@ package com.duokan.reader.ui.bookshelf;
 import com.duokan.c.j;
 import com.duokan.core.app.ab;
 import com.duokan.core.app.ac;
-import com.duokan.core.sys.ah;
 import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.sys.ah;
 import com.duokan.reader.ui.general.ap;
 import com.duokan.reader.ui.general.jq;
 

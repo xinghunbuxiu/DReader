@@ -51,7 +51,7 @@ public class kp implements ah, g, h {
         this.d = iVar;
         this.c = fVar;
         this.e = personalPrefs;
-        this.d.a((h) this);
+        this.d.add((h) this);
         this.c.a((g) this);
     }
 

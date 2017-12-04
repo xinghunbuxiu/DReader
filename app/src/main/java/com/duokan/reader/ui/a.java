@@ -11,8 +11,8 @@ import android.widget.FrameLayout;
 
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.z;
-import com.duokan.core.ui.cv;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.cv;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.SystemUiMode;
 

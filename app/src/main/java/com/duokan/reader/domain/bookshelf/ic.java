@@ -16,7 +16,7 @@ class ic implements Runnable {
     public void run() {
         this.a.n.o();
         this.a.n.a(new id(this));
-        this.a.e.a(this.a);
+        this.a.e.add(this.a);
         DkUserPurchasedBooksManager.a().a(this.a);
         DkUserPurchasedFictionsManager.a().a(this.a);
         DkUserReadingNotesManager.a().a(this.a);

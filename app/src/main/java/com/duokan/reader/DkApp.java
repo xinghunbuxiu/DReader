@@ -11,11 +11,12 @@ import android.os.Environment;
 import android.os.Process;
 import android.text.TextUtils;
 
-import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.IFeature;
+import com.duokan.core.app.ManagedApp;
 import com.duokan.core.diagnostic.HttpLogger;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.diagnostic.a;
+import com.duokan.core.io.FileUtils;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ah;
 import com.duokan.reader.common.webservices.WebSession;
@@ -354,14 +355,14 @@ public abstract class DkApp extends ManagedApp {
                             }
                         });
                         final long currentTimeMillis = System.currentTimeMillis() - TimeUnit.DAYS.toMillis(30);
-                        for (File d : com.duokan.core.io.a.a(this.a.getDiagnosticDirectory(), new FileFilter(this) {
+                        for (File d : FileUtils.DirFileFilter(this.a.getDiagnosticDirectory(), new FileFilter(this) {
                             final /* synthetic */ AnonymousClass5 b;
 
                             public boolean accept(File file) {
                                 return file.lastModified() < currentTimeMillis;
                             }
                         })) {
-                            com.duokan.core.io.a.d(d);
+                            FileUtils.deleteFile(d);
                         }
                     } catch (Throwable th) {
                         a.c().a(LogLevel.ERROR, "app", "an exception occurs during background init", th);

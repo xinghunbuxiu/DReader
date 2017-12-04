@@ -2,6 +2,7 @@ package com.duokan.reader.domain.cloud;
 
 import android.text.TextUtils;
 
+import com.duokan.common.Execute;
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
 import com.duokan.reader.DkApp;
@@ -71,7 +72,7 @@ public class DkUserReadingNotesManager implements ah {
         if (this.d.b()) {
             aVar.a(null);
         } else {
-            com.duokan.common.a.a(new fa(this, this.d, aVar), new Void[0]);
+            Execute.run(new fa(this, this.d, aVar), new Void[0]);
         }
     }
 

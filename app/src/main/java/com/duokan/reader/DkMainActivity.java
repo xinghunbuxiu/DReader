@@ -14,10 +14,10 @@ import android.os.Process;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
 
+import com.duokan.core.app.BaseActivity;
 import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.app.BaseActivity;
 import com.duokan.reader.WelcomeDialog.StateListener;
 import com.duokan.reader.domain.bookshelf.BookUploadService;
 import com.duokan.reader.domain.downloadcenter.DownloadService;

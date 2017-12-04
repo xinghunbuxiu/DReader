@@ -6,10 +6,10 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.as;
 import com.duokan.core.ui.bu;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 

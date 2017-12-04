@@ -3,8 +3,6 @@ package com.duokan.reader.domain.bookshelf;
 import android.database.Cursor;
 
 import com.duokan.reader.domain.document.Document_a;
-import com.duokan.reader.domain.document.Document_a.d;
-import com.duokan.reader.domain.document.Document_a.r;
 import com.duokan.reader.domain.document.l;
 import com.duokan.reader.domain.document.n;
 import com.duokan.reader.domain.document.w;

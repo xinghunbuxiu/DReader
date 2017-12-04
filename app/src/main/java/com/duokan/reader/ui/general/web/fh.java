@@ -5,8 +5,8 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.EditText;
 
-import com.duokan.core.ui.cj;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.cj;
 
 class fh implements OnTouchListener {
     final /* synthetic */ EditText a;

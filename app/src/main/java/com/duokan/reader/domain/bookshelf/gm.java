@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.af;
 import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.sys.af;
 import com.duokan.reader.domain.cloud.DkCloudBookManifest;
 import com.duokan.reader.domain.cloud.ao;
 

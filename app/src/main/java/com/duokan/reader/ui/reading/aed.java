@@ -4,8 +4,8 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.duokan.core.ui.dt;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.dt;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.domain.document.as;

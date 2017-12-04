@@ -50,7 +50,7 @@ public class n {
             int delete = this.d.getThead().delete(str, str2, strArr);
             return delete;
         } finally {
-            this.d.c();
+            this.d.removeCallbacks();
         }
     }
 
@@ -58,7 +58,7 @@ public class n {
         try {
             this.d.isCurrentThread().endTransaction();
         } finally {
-            this.d.c();
+            this.d.removeCallbacks();
         }
     }
 
@@ -66,7 +66,7 @@ public class n {
         try {
             this.d.getThead().execSQL(str, objArr);
         } finally {
-            this.d.c();
+            this.d.removeCallbacks();
         }
     }
 
@@ -74,7 +74,7 @@ public class n {
         try {
             this.d.getThead().execSQL(str);
         } finally {
-            this.d.c();
+            this.d.removeCallbacks();
         }
     }
 
@@ -83,7 +83,7 @@ public class n {
             int version = this.d.getThead().getVersion();
             return version;
         } finally {
-            this.d.c();
+            this.d.removeCallbacks();
         }
     }
 
@@ -92,7 +92,7 @@ public class n {
             boolean inTransaction = this.d.getThead().inTransaction();
             return inTransaction;
         } finally {
-            this.d.c();
+            this.d.removeCallbacks();
         }
     }
 
@@ -101,7 +101,7 @@ public class n {
             long insert = this.d.getThead().insert(str, str2, contentValues);
             return insert;
         } finally {
-            this.d.c();
+            this.d.removeCallbacks();
         }
     }
 
@@ -110,7 +110,7 @@ public class n {
             long insertOrThrow = this.d.getThead().insertOrThrow(str, str2, contentValues);
             return insertOrThrow;
         } finally {
-            this.d.c();
+            this.d.removeCallbacks();
         }
     }
 
@@ -119,7 +119,7 @@ public class n {
             long insertWithOnConflict = this.d.getThead().insertWithOnConflict(str, str2, contentValues, i);
             return insertWithOnConflict;
         } finally {
-            this.d.c();
+            this.d.removeCallbacks();
         }
     }
 
@@ -138,7 +138,7 @@ public class n {
         try {
             this.d.getThead().setTransactionSuccessful();
         } finally {
-            this.d.c();
+            this.d.removeCallbacks();
         }
     }
 
@@ -146,7 +146,7 @@ public class n {
         try {
             this.d.getThead().setVersion(i);
         } finally {
-            this.d.c();
+            this.d.removeCallbacks();
         }
     }
 
@@ -155,7 +155,7 @@ public class n {
             int update = this.d.getThead().update(str, contentValues, str2, strArr);
             return update;
         } finally {
-            this.d.c();
+            this.d.removeCallbacks();
         }
     }
 
@@ -165,7 +165,7 @@ public class n {
             Object obj = this.e;
             this.e = true;
             if (obj == null) {
-                this.d.c();
+                this.d.removeCallbacks();
             }
         } finally {
             this.b.unlock();
@@ -177,7 +177,7 @@ public class n {
             List a = u.a(this.d.getThead(), str);
             return a;
         } finally {
-            this.d.c();
+            this.d.removeCallbacks();
         }
     }
 

@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
 import com.duokan.c.g;
-import com.duokan.common.i;
+import com.duokan.common.tools;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.ui.bookshelf.BookActionAssistant;
 import com.duokan.reader.ui.bookshelf.BookActionAssistant.BookAction;
@@ -52,7 +52,7 @@ public class CustomCloudItemView extends LinearLayout {
             if (a.a == BookAction.DOWNLOADING) {
                 dkLabelView3.setVisibility(0);
                 dkLabelView.setVisibility(0);
-                dkLabelView2.setText(i.a(customCloudItem.e()));
+                dkLabelView2.setText(tools.getByteSize(customCloudItem.e()));
                 dkLabelView3.setText(ReaderUi.a(getContext(), customCloudItem.f(), false));
             } else if (a.a == BookAction.DOWNLOAD_FAILED || a.a == BookAction.DOWNLOAD_PAUSED) {
                 dkLabelView3.setVisibility(4);

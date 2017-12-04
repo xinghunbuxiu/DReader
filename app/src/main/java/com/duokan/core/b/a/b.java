@@ -4,9 +4,9 @@ import android.text.TextUtils;
 import android.util.Pair;
 
 import com.duokan.core.io.FileAlreadyExistsException;
+import com.duokan.core.io.FileUtils;
 import com.duokan.core.io.InputException;
 import com.duokan.core.io.OutputException;
-import com.duokan.core.io.a;
 
 import org.apache.http.HttpStatus;
 import org.apache.http.protocol.HTTP;
@@ -20,59 +20,50 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.zip.GZIPInputStream;
+import com.duokan.core.io.FileUtils;
 
 public abstract class b {
-    private static final ThreadLocal a = new ThreadLocal();
+    private static final ThreadLocal localThead = new ThreadLocal();
 
-    public static long a(HttpURLConnection httpURLConnection, OutputStream outputStream, a aVar) {
+    public static long a(HttpURLConnection httpURLConnection, OutputStream outputStream, FileUtils fileUtils) {
         OutputException outputException;
-        Throwable th;
         InputStream inputStream = null;
-        try {
-            InputStream gZIPInputStream;
-            byte[] a = a(aVar.d);
-            if (TextUtils.equals(httpURLConnection.getContentEncoding(), "gzip")) {
-                gZIPInputStream = new GZIPInputStream(httpURLConnection.getInputStream());
-            } else {
-                gZIPInputStream = httpURLConnection.getInputStream();
-            }
-            int i = 0;
-            long j = 0;
-            while (i >= 0) {
-                int i2 = 0;
-                while (i >= 0) {
-                    try {
-                        if (i2 >= a.length) {
-                            break;
-                        }
-                        int read = gZIPInputStream.read(a, i2, a.length - i2);
-                        if (read > 0) {
-                            i2 += read;
-                            i = read;
-                        } else {
-                            i = read;
-                        }
-                    } catch (Throwable th2) {
-                        Throwable th3 = th2;
-                        inputStream = gZIPInputStream;
-                        th = th3;
-                        a(inputStream);
-                        throw th;
-                    }
-                }
-                outputStream.write(a, 0, i2);
-                j = ((long) i2) + j;
-            }
-            a(gZIPInputStream);
-            return j;
-        } catch (Throwable th4) {
-            th = th4;
-            a(inputStream);
-            throw th;
+        InputStream gZIPInputStream;
+        byte[] bytes = a(fileUtils.d);
+        if (TextUtils.equals(httpURLConnection.getContentEncoding(), "gzip")) {
+            gZIPInputStream = new GZIPInputStream(httpURLConnection.getInputStream());
+        } else {
+            gZIPInputStream = httpURLConnection.getInputStream();
         }
+        int i = 0;
+        long j = 0;
+        while (i >= 0) {
+            int i2 = 0;
+            while (i >= 0) {
+                try {
+                    if (i2 >= a.length) {
+                        break;
+                    }
+                    int read = gZIPInputStream.read(a, i2, a.length - i2);
+                    if (read > 0) {
+                        i2 += read;
+                        i = read;
+                    } else {
+                        i = read;
+                    }
+                } catch (Throwable th2) {
+                    inputStream = gZIPInputStream;
+                    a(inputStream);
+                }
+            }
+            outputStream.write(a, 0, i2);
+            j = ((long) i2) + j;
+        }
+        a(gZIPInputStream);
+        return j;
     }
 
-    public static long a(HttpURLConnection httpURLConnection, File file, a aVar) {
+    public static long a(HttpURLConnection httpURLConnection, File file, FileUtils aVar) {
         Throwable th;
         File file2 = null;
         try {
@@ -117,13 +108,13 @@ public abstract class b {
         } catch (Throwable th4) {
             th = th4;
             if (file2 != null) {
-                a.d(file2);
+                localThead.d(file2);
             }
             throw th;
         }
     }
 
-    public static long a(String str, OutputStream outputStream, a aVar) {
+    public static long a(String str, OutputStream outputStream, FileUtils aVar) {
         Throwable th;
         OutputStream dataOutputStream = new DataOutputStream(outputStream);
         long j = -1;
@@ -249,7 +240,7 @@ public abstract class b {
         throw th;
     }
 
-    public static long a(String str, File file, a aVar) {
+    public static long a(String str, File file, FileUtils aVar) {
         FileOutputStream fileOutputStream;
         Throwable th;
         File file2 = null;
@@ -294,13 +285,13 @@ public abstract class b {
         } catch (Throwable th4) {
             th = th4;
             if (file2 != null) {
-                a.d(file2);
+                localThead.d(file2);
             }
             throw th;
         }
     }
 
-    public static long b(String str, File file, a aVar) {
+    public static long b(String str, File file, FileUtils aVar) {
         try {
             return a(str, file, aVar);
         } catch (Throwable th) {
@@ -326,12 +317,12 @@ public abstract class b {
     }
 
     private static d a() {
-        d dVar = (d) a.get();
+        d dVar = (d) localThead.get();
         if (dVar != null) {
             return dVar;
         }
         dVar = new d();
-        a.set(dVar);
+        localThead.set(dVar);
         return dVar;
     }
 }

@@ -6,7 +6,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.View.MeasureSpec;
 
-import com.duokan.common.i;
+import com.duokan.common.tools;
 import com.duokan.reader.domain.bookshelf.a;
 import com.duokan.reader.domain.bookshelf.ef;
 import com.duokan.reader.domain.document.ab;
@@ -53,7 +53,7 @@ public class afe implements bb {
         xkVar.setOnClickListener(this.f);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         this.c.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int min = Math.min(displayMetrics.widthPixels - i.a(this.c, 60.0f), i.a(this.c, 320.0f));
+        int min = Math.min(displayMetrics.widthPixels - tools.dip2px(this.c, 60.0f), tools.dip2px(this.c, 320.0f));
         xkVar.setMaxWidth(min);
         xkVar.measure(MeasureSpec.makeMeasureSpec(min, 1073741824), MeasureSpec.makeMeasureSpec(0, 0));
         this.b.a(xkVar, xkVar.getMeasuredWidth(), xkVar.getMeasuredHeight(), true);
@@ -72,7 +72,7 @@ public class afe implements bb {
         dkTextView.setOnClickListener(this.f);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         this.c.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        dkTextView.measure(MeasureSpec.makeMeasureSpec(Math.min(displayMetrics.widthPixels - i.a(this.c, 60.0f), i.a(this.c, 320.0f)), 1073741824), MeasureSpec.makeMeasureSpec(0, 0));
+        dkTextView.measure(MeasureSpec.makeMeasureSpec(Math.min(displayMetrics.widthPixels - tools.dip2px(this.c, 60.0f), tools.dip2px(this.c, 320.0f)), 1073741824), MeasureSpec.makeMeasureSpec(0, 0));
         this.b.a(dkTextView, dkTextView.getMeasuredWidth(), dkTextView.getMeasuredHeight(), true);
         this.b.a(rect);
     }

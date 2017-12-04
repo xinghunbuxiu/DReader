@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.TansFormUtils;
 import com.duokan.core.app.BaseActivity;
+import com.duokan.core.app.TansFormUtils;
 import com.duokan.core.ui.UTools;
 
 class pl implements Runnable {

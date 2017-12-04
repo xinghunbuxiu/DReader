@@ -6,11 +6,14 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
 
+import com.duokan.common.Md5Util;
+import com.duokan.common.tools;
 import com.duokan.core.a.n;
 import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ah;
 import com.duokan.core.c.IRunTask;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.io.FileUtils;
 import com.duokan.core.sys.af;
 import com.duokan.kernel.DkUtils;
 import com.duokan.reader.DkApp;
@@ -822,9 +825,9 @@ Error: java.lang.NullPointerException
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(str);
         stringBuilder.append(File.separator);
-        stringBuilder.append(com.duokan.common.i.b(iyVar.b()));
+        stringBuilder.append(tools.substring(iyVar.b()));
         stringBuilder.append("_");
-        stringBuilder.append(com.duokan.common.h.a(iyVar.e()));
+        stringBuilder.append(Md5Util.encryption(iyVar.e()));
         stringBuilder.append("_");
         stringBuilder.append(iyVar.d());
         stringBuilder.append(File.separator);
@@ -949,7 +952,7 @@ Error: java.lang.NullPointerException
                 } else {
                     file = new File(this.f.getCloudBookDirectory(), dkStoreBookDetail.getBook().getBookUuid() + "." + dkStoreBookDetail.getRevision() + ".epub");
                 }
-                com.duokan.core.io.a.d(file);
+                FileUtils.deleteFile(file);
                 String uri = Uri.fromFile(file).toString();
                 b = (fv) a(BookFormat.EPUB, BookPackageType.EPUB, BookType.TRIAL, BookState.CLOUD_ONLY);
                 b.e(dkStoreBookDetail.getBook().getBookUuid());
@@ -1198,7 +1201,7 @@ Error: java.lang.NullPointerException
         if (c == null) {
             BookPackageType bookPackageType;
             DkPublic.rm(file);
-            BookFormat q = c.q(com.duokan.common.i.a(iyVar.b()).toUpperCase(Locale.US));
+            BookFormat q = c.q(tools.substringwerCase(iyVar.b()).toUpperCase(Locale.US));
             switch (ib.a[q.ordinal()]) {
                 case 1:
                     bookPackageType = BookPackageType.EPUB;
@@ -1213,7 +1216,7 @@ Error: java.lang.NullPointerException
             c = a(q, bookPackageType, BookType.NORMAL, BookState.CLOUD_ONLY);
             c.a(uri);
             c.a(System.currentTimeMillis());
-            c.o(com.duokan.common.i.c(iyVar.a().l()));
+            c.o(tools.getHeight(iyVar.a().l()));
             c.a(BookType.NORMAL);
             c.b(iyVar.d());
             c.a(new ab());
@@ -1283,7 +1286,7 @@ Error: java.lang.NullPointerException
                 break;
             }
         }
-        BookFormat q = c.q(com.duokan.common.i.a(str).toUpperCase(Locale.US));
+        BookFormat q = c.q(tools.substringwerCase(str).toUpperCase(Locale.US));
         switch (ib.a[q.ordinal()]) {
             case 1:
                 bookPackageType = BookPackageType.EPUB;
@@ -1309,7 +1312,7 @@ Error: java.lang.NullPointerException
         e(cVar);
         cVar.x();
         if (TextUtils.isEmpty(cVar.aw())) {
-            cVar.o(com.duokan.common.i.c(str));
+            cVar.o(tools.getHeight(str));
         }
         cVar.a(new js(cVar.q(), null));
         return cVar;
@@ -1496,7 +1499,7 @@ Error: java.lang.NullPointerException
                 }
                 cVar.ah();
                 if (z && cVar.ad()) {
-                    com.duokan.core.io.a.d(cVar.d());
+                    FileUtils.deleteFile(cVar.d());
                 }
                 aaVar.b(cVar);
                 aaVar.aM();
@@ -2039,7 +2042,7 @@ Error: java.lang.NullPointerException
                 c.aL();
             } else {
                 BookPackageType bookPackageType;
-                BookFormat q = c.q(com.duokan.common.i.a(iyVar.b()).toUpperCase(Locale.US));
+                BookFormat q = c.q(tools.substringwerCase(iyVar.b()).toUpperCase(Locale.US));
                 switch (ib.a[q.ordinal()]) {
                     case 1:
                         bookPackageType = BookPackageType.EPUB;
@@ -2055,7 +2058,7 @@ Error: java.lang.NullPointerException
                 c.a(uri);
                 c.a(buVar.e);
                 c.d(j);
-                c.o(com.duokan.common.i.c(iyVar.a().l()));
+                c.o(tools.getHeight(iyVar.a().l()));
                 c.a(BookType.NORMAL);
                 c.b(iyVar.d());
                 c.a(new ab());

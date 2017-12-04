@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.r;
 import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.sys.r;
 import com.duokan.reader.common.c.f;
 
 import java.util.HashMap;

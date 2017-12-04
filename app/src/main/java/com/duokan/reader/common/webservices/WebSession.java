@@ -2,7 +2,7 @@ package com.duokan.reader.common.webservices;
 
 import android.os.Looper;
 
-import com.duokan.core.b.a.a;
+import com.duokan.core.b.UrlTools.a;
 import com.duokan.core.diagnostic.HttpLogger;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ah;

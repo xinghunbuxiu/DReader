@@ -19,7 +19,7 @@ import com.duokan.c.h;
 import com.duokan.c.j;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.MyContextWrapper;
-import com.duokan.core.b.a;
+import com.duokan.core.b.UrlTools;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ah;
 import com.duokan.core.ui.GridItemsView;
@@ -308,7 +308,7 @@ public class SearchController extends StorePageController implements iv, iw {
                 startLoading();
                 showWebView();
                 this.mWebView.a("about:blank");
-                this.mLoadingUrl = a.a(a.a(f), "loadingStamp=" + System.currentTimeMillis() + (TextUtils.isEmpty(this.mOpenFrom) ? "" : "&from=" + this.mOpenFrom)).toString();
+                this.mLoadingUrl = UrlTools.resetUrl(UrlTools.parse(f), "loadingStamp=" + System.currentTimeMillis() + (TextUtils.isEmpty(this.mOpenFrom) ? "" : "&from=" + this.mOpenFrom)).toString();
                 loadUrl(this.mLoadingUrl);
                 this.mTimeoutRunnable = new w(this);
                 TaskHandler.postDelayed(this.mTimeoutRunnable, 3000);
@@ -321,7 +321,7 @@ public class SearchController extends StorePageController implements iv, iw {
     }
 
     private void startLoading() {
-        TaskHandler.c(this.mTimeoutRunnable);
+        TaskHandler.removeCallbacks(this.mTimeoutRunnable);
         this.mLoadingSucceed = false;
         this.mWebContentView.setVisibility(4);
     }

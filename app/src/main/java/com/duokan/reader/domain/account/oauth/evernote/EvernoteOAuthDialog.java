@@ -16,7 +16,7 @@ import android.widget.FrameLayout.LayoutParams;
 
 import com.duokan.b.b;
 import com.duokan.b.g;
-import com.duokan.common.i;
+import com.duokan.common.tools;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.MyContextWrapper;
@@ -161,7 +161,7 @@ public class EvernoteOAuthDialog extends af {
             this.mWebView = (WebView) findViewById(com.duokan.b.f.account__oauth_web_view__web);
             this.mWebView.setWebViewClient(this.mWebViewClient);
             this.mWebView.getSettings().setJavaScriptEnabled(true);
-            i.a(this.mWebView);
+            tools.getLayoutType(this.mWebView);
             af.initWebViewCenterDialog((af) fVar, this.mWebView);
             if (TextUtils.isEmpty(EvernoteOAuthDialog.this.mConsumerKey) || TextUtils.isEmpty(EvernoteOAuthDialog.this.mConsumerSecret)) {
                 this.mDialog.cancel();

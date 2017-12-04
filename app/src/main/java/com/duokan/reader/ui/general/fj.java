@@ -9,7 +9,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 
 import com.duokan.b.g;
-import com.duokan.common.i;
+import com.duokan.common.tools;
 import com.duokan.core.ui.BoxView;
 import com.duokan.core.ui.j;
 
@@ -25,8 +25,8 @@ public class fj implements dq {
         this.a = jVar;
         Context context = this.a.getContext();
         this.b = LayoutInflater.from(context).inflate(g.general__spirt_dialog_view_at_hd, null);
-        int c = i.c(context);
-        int b = i.b(context);
+        int c = tools.getHeight(context);
+        int b = tools.getWidth(context);
         if (b >= c) {
             b = c;
         }

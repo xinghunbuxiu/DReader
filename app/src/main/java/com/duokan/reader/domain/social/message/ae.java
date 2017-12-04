@@ -9,7 +9,7 @@ class ae implements Runnable {
 
     public void run() {
         this.a.g.a(this.a);
-        this.a.c.a(this.a.h);
+        this.a.c.add(this.a.h);
         this.a.g();
     }
 }

@@ -5,11 +5,13 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
 
+import com.duokan.common.Execute;
 import com.duokan.core.a.u;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.diagnostic.a;
+import com.duokan.core.io.FileUtils;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.af;
 import com.duokan.kernel.DkUtils;
@@ -976,9 +978,9 @@ public abstract class c extends an {
         }
         Collection b;
         if (ai()) {
-            b = com.duokan.core.io.a.b(ManagedApp.get());
+            b = FileUtils.getFreeDiskSpace(ManagedApp.get());
         } else {
-            b = com.duokan.core.io.a.a(ManagedApp.get());
+            b = FileUtils.a(ManagedApp.get());
         }
         for (File d2 : r0) {
             Iterator it = linkedList.iterator();
@@ -1269,7 +1271,7 @@ public abstract class c extends an {
             ab();
             if (ac()) {
                 ah();
-                com.duokan.core.io.a.d(d());
+                FileUtils.deleteFile(d());
                 if (this.d != BookState.CLOUD_ONLY) {
                     this.d = BookState.CLOUD_ONLY;
                     b(8);
@@ -1294,7 +1296,7 @@ public abstract class c extends an {
                 }
                 if (d.isDirectory()) {
                     long j2 = 0;
-                    for (File length : com.duokan.core.io.a.a(d, new FileFilter[0])) {
+                    for (File length : FileUtils.DirFileFilter(d, new FileFilter[0])) {
                         j2 += length.length();
                     }
                     j = j2;
@@ -1317,12 +1319,12 @@ public abstract class c extends an {
             if (ae()) {
                 File d = d();
                 if (j()) {
-                    com.duokan.core.io.a.d(d.getParentFile());
+                    FileUtils.deleteFile(d.getParentFile());
                 } else if (ai()) {
-                    com.duokan.core.io.a.d(d);
+                    FileUtils.deleteFile(d);
                 } else if (am()) {
                     if (d.getAbsolutePath().endsWith(hi.a("", ak()))) {
-                        com.duokan.core.io.a.d(d.getParentFile());
+                        FileUtils.deleteFile(d.getParentFile());
                     }
                 }
                 if (this.d != BookState.CLOUD_ONLY) {
@@ -2045,7 +2047,7 @@ public abstract class c extends an {
         for (int i = 0; i < aq.length; i++) {
             aVarArr[i] = aq[i].l();
         }
-        com.duokan.common.a.a(new n(this, cVar, aVarArr, uVar), new Void[0]);
+        Execute.run(new n(this, cVar, aVarArr, uVar), new Void[0]);
     }
 
     private void a(c cVar, a[] aVarArr, u uVar) {

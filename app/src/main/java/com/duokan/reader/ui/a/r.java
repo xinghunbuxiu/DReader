@@ -3,8 +3,8 @@ package com.duokan.reader.ui.a;
 import android.view.View;
 
 import com.duokan.core.ui.HatGridView;
-import com.duokan.core.ui.an;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.an;
 import com.duokan.reader.domain.store.DkStoreAbsBook;
 
 class r implements an {

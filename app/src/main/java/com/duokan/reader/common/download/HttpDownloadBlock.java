@@ -3,8 +3,8 @@ package com.duokan.reader.common.download;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
 
-import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.diagnostic.HttpLogger;
+import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.reader.common.download.DownloadTask.DownloadingStage;
 
 import org.apache.http.Header;

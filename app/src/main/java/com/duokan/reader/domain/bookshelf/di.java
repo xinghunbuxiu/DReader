@@ -10,7 +10,7 @@ class di implements Runnable {
     }
 
     public void run() {
-        i.f().a(new dj(this));
+        i.f().add(new dj(this));
         this.a.c();
     }
 }

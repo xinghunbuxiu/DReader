@@ -3,6 +3,7 @@ package com.duokan.reader.ui.general.web;
 import android.net.Uri;
 import android.webkit.WebResourceResponse;
 
+import com.duokan.core.b.UrlTools;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.diagnostic.a;
 
@@ -38,7 +39,7 @@ class ka implements g {
         if (!access$200.exists()) {
             return null;
         }
-        Uri a = com.duokan.core.b.a.a(str);
+        Uri a = UrlTools.parse(str);
         if (a == null) {
             return null;
         }

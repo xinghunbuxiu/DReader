@@ -9,6 +9,6 @@ class i implements Runnable {
 
     public void run() {
         this.a.a(this.a.d.c(), true);
-        this.a.d.a(this.a);
+        this.a.d.add(this.a);
     }
 }

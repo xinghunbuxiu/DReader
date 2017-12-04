@@ -3,8 +3,8 @@ package com.duokan.reader.ui.reading;
 import android.graphics.Point;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 
-import com.duokan.core.ui.dl;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.dl;
 
 import org.apache.http.HttpStatus;
 

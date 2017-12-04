@@ -9,6 +9,7 @@ import com.duokan.c.f;
 import com.duokan.c.g;
 import com.duokan.c.h;
 import com.duokan.c.j;
+import com.duokan.common.SysTools;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.account.oauth.ThirdWeiXin;
@@ -85,7 +86,7 @@ public class ih extends ActivatedController {
         this.b.setOnClickListener(new ij(this));
         String format = String.format(getString(j.personal__personal_redeem_info_view__msg), new Object[]{this.a.getTitle(), this.a.getLinkUrl()});
         View findViewById = findViewById(g.personal__redeem_info_view__sms);
-        boolean a = com.duokan.common.j.a(getContext());
+        boolean a = SysTools.isSupportTelephony(getContext());
         findViewById(g.personal__redeem_info_view__sms_icon).setEnabled(a);
         findViewById(g.personal__redeem_info_view__sms_text).setEnabled(a);
         findViewById.setEnabled(a);

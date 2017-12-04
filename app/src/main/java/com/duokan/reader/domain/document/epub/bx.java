@@ -2,8 +2,8 @@ package com.duokan.reader.domain.document.epub;
 
 import android.graphics.Bitmap;
 
-import com.duokan.core.sys.ag;
 import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.sys.ag;
 
 import java.util.concurrent.Callable;
 

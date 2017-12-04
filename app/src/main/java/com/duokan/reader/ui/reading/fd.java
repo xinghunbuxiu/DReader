@@ -9,7 +9,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 
 import com.duokan.b.g;
-import com.duokan.common.i;
+import com.duokan.common.tools;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
@@ -113,7 +113,7 @@ public class fd extends wk {
 
     private View b() {
         View ezVar = new ez(getContext(), this.a.O(), this.a.P());
-        int a = i.a(getContext(), 8.0f);
+        int a = tools.dip2px(getContext(), 8.0f);
         ezVar.setPadding(a, 0, a, 0);
         ezVar.setLayoutParams(new LinearLayout.LayoutParams(-2, -2, 1.0f));
         ezVar.setOnClickListener(new fg(this));

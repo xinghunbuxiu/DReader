@@ -1,8 +1,8 @@
 package com.duokan.core.a;
 
+import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.app.IActivityRunStatusChanged;
 
 class o implements IActivityRunStatusChanged {
     final /* synthetic */ n a;

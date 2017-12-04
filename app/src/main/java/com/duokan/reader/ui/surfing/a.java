@@ -10,9 +10,9 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
+import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.j;
 import com.duokan.reader.DkApp;

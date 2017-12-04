@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 
-import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.IFeature;
+import com.duokan.core.app.ManagedApp;
 import com.duokan.core.sys.ah;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ReaderEnv;

@@ -14,8 +14,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.ZoomView;
 import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.ZoomView;
 import com.duokan.core.ui.et;
 import com.duokan.reader.domain.bookshelf.a;
 import com.duokan.reader.domain.bookshelf.ah;

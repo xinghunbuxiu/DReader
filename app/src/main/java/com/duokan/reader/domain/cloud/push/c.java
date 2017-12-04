@@ -21,6 +21,6 @@ class c implements Runnable {
             this.a.f((String) prefString);
         }
         this.a.f.a(this.a);
-        this.a.e.a(b.a());
+        this.a.e.add(b.a());
     }
 }
