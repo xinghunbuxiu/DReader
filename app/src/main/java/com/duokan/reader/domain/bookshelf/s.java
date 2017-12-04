@@ -168,7 +168,7 @@ class s implements Runnable {
     L_0x013f:
         r0 = com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice.Transfer;	 Catch:{ all -> 0x009a }
         r1.BaseActivity = r0;	 Catch:{ all -> 0x009a }
-        r0 = new com.duokan.reader.domain.downloadcenter.l;	 Catch:{ all -> 0x009a }
+        r0 = new com.duokan.reader.domain.downloadcenter.OnDismissListener;	 Catch:{ all -> 0x009a }
         r0.<init>();	 Catch:{ all -> 0x009a }
         r2 = r4.setDrawable;	 Catch:{ all -> 0x009a }
         r2 = r2.getVisible;	 Catch:{ all -> 0x009a }

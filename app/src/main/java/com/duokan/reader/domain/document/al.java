@@ -192,7 +192,7 @@ public class al {
         r3 = setDrawable;	 Catch:{ all -> 0x0070 }
         if (r3 != 0) goto L_0x00d1;
     L_0x00c5:
-        r3 = r0.l;	 Catch:{ all -> 0x0070 }
+        r3 = r0.OnDismissListener;	 Catch:{ all -> 0x0070 }
         if (r3 == 0) goto L_0x00d1;
     L_0x00cb:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0070 }
@@ -224,7 +224,7 @@ public class al {
         r4 = setDrawable;	 Catch:{ all -> 0x0070 }
         if (r4 != 0) goto L_0x0110;
     L_0x0104:
-        r4 = r0.l;	 Catch:{ all -> 0x0070 }
+        r4 = r0.OnDismissListener;	 Catch:{ all -> 0x0070 }
         if (r4 == 0) goto L_0x0110;
     L_0x010a:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0070 }
@@ -293,7 +293,7 @@ public class al {
         r1.getWidthPixels = r6;
         goto L_0x0002;
     L_0x019f:
-        r4 = r0.l;	 Catch:{ all -> 0x0070 }
+        r4 = r0.OnDismissListener;	 Catch:{ all -> 0x0070 }
         if (r4 != 0) goto L_0x0135;
     L_0x01a5:
         r4 = r0.o;	 Catch:{ all -> 0x0070 }
@@ -330,7 +330,7 @@ public class al {
         r1 = setDrawable;	 Catch:{ all -> 0x01f6 }
         if (r1 != 0) goto L_0x01f9;
     L_0x01ea:
-        r1 = r0.l;	 Catch:{ all -> 0x01f6 }
+        r1 = r0.OnDismissListener;	 Catch:{ all -> 0x01f6 }
         if (r1 == 0) goto L_0x01f9;
     L_0x01f0:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x01f6 }

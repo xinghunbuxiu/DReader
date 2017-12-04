@@ -62,24 +62,24 @@ class ha implements Callable {
                 } else if (this.a.o()) {
                     i2 = 1;
                 } else {
-                    com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-l", "fail to download the resource " + str);
+                    com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the resource " + str);
                     i2 = 1006;
                 }
             } else if (obj == null) {
-                com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-l", "fail to download the resource %s(size error: %s!=%s)", str, Long.valueOf(c.c()), Long.valueOf(j));
+                com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the resource %s(size error: %s!=%s)", str, Long.valueOf(c.c()), Long.valueOf(j));
                 com.duokan.reader.domain.statistics.a.k().a(this.a.b, this.a.c.a, str3, a);
                 i2 = 1007;
             } else {
-                com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-l", "fail to download the resource %s(md5 error: %s!=%s)", str, a, str3);
+                com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the resource %s(md5 error: %s!=%s)", str, a, str3);
                 com.duokan.reader.domain.statistics.a.k().a(this.a.b, this.a.c.a, str3, a);
                 i2 = 1008;
             }
             i = i2;
         } catch (Throwable e3) {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-l", "fail to download the resource " + str, e3);
+            com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the resource " + str, e3);
             i = 1006;
         } catch (Throwable e32) {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-l", "fail to download the resource " + str, e32);
+            com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the resource " + str, e32);
             i = Calendar.MILLISECOND_OF_SECOND;
         }
         if (i == 0 || i == 1) {

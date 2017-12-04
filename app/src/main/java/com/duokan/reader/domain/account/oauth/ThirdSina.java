@@ -8,7 +8,7 @@ import android.text.TextUtils;
 
 import com.duokan.b.i;
 import com.duokan.core.app.BaseActivity;
-import com.duokan.core.app.r;
+import com.duokan.core.app.onActivityResult;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.webservices.WebSession.SessionState;
@@ -30,7 +30,7 @@ import org.apache.http.protocol.HTTP;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ThirdSina extends ThirdOAuth implements r, WeiboAuthListener {
+public class ThirdSina extends ThirdOAuth implements onActivityResult, WeiboAuthListener {
     static final /* synthetic */ boolean $assertionsDisabled;
     private static final int[] INVALID_TOKEN_ERRORS = new int[]{10006, 21301, 21314, 21315, 21316, 21317, 21319, 21327, 21332};
     private OAuthCallback mCallBack;

@@ -628,13 +628,13 @@ public class f extends n implements at {
         r5 = r3;
     L_0x0004:
         monitor-enter(r14);
-        r2 = r14.l;	 Catch:{ all -> 0x0037 }
+        r2 = r14.OnDismissListener;	 Catch:{ all -> 0x0037 }
         r2 = r2.size();	 Catch:{ all -> 0x0037 }
         if (r2 <= r7) goto L_0x0024;
     L_0x000d:
         r6 = r7;
     L_0x000e:
-        r2 = r14.l;	 Catch:{ all -> 0x0037 }
+        r2 = r14.OnDismissListener;	 Catch:{ all -> 0x0037 }
         r2 = r2.getFirst();	 Catch:{ all -> 0x0037 }
         r0 = r2;
         r0 = (com.duokan.reader.domain.document.sbk.BaseActivity) r0;	 Catch:{ all -> 0x0037 }

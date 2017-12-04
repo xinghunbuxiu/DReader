@@ -3,7 +3,7 @@ package com.duokan.core.app;
 import android.content.res.Configuration;
 import android.view.KeyEvent;
 
-interface i extends IController {
+interface Controller extends IController {
     boolean onActivityBackPressed(BaseActivity baseActivityVar);
 
     void onActivityConfigurationChanged(BaseActivity baseActivityVar, Configuration configuration);

@@ -220,7 +220,7 @@ class av {
             if (this.g) {
                 throw new IOException(String.format(Locale.getDefault(), "the repository(%s) is already closed.", new Object[]{this.c}));
             }
-            if (!(a(str) || str2.equals("r"))) {
+            if (!(a(str) || str2.equals("onActivityResult"))) {
                 a(str, 1024);
             }
             ax c = c(str);
@@ -241,7 +241,7 @@ class av {
                     awVar = awVar2;
                 }
                 awVar.c++;
-                if (str2.equals("r")) {
+                if (str2.equals("onActivityResult")) {
                     ayVar = new ay(c, awVar);
                 } else {
                     ayVar = new az(c, awVar);

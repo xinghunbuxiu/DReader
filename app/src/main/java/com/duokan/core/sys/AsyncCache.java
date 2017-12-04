@@ -68,7 +68,7 @@ public class AsyncCache {
             }
             this.j = openOrCreateDatabase;
         }
-        this.c = new Thread(new a(this));
+        this.c = new Thread(new asyncCacheRun(this));
         this.c.start();
     }
 
@@ -484,7 +484,7 @@ public class AsyncCache {
         if (r0 != 0) goto L_0x0273;
     L_0x026a:
         r0 = r1.getVisible;
-        r0.r();
+        r0.onActivityResult();
     L_0x026f:
         r1.showAnimation = r10;
         goto L_0x0001;

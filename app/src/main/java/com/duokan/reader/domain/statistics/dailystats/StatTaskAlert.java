@@ -10,7 +10,7 @@ public class StatTaskAlert extends StatEventBase {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("ev", this.event);
-            jSONObject.put("r", this.result);
+            jSONObject.put("onActivityResult", this.result);
             jSONObject.put("ts", this.timeStamp);
         } catch (Exception e) {
             e.printStackTrace();

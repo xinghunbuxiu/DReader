@@ -21,7 +21,7 @@ class he implements Runnable {
             a.d(this.a);
             b.a(this.c.b.b, this.a, new com.duokan.core.b.a.a().a(this.b).b(131072));
         } catch (Throwable th) {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-l", "fail to download the book " + this.c.b.b, th);
+            com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the book " + this.c.b.b, th);
         }
     }
 }

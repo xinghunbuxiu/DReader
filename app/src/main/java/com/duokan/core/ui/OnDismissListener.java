@@ -1,5 +1,5 @@
 package com.duokan.core.ui;
 
-public interface l {
+public interface OnDismissListener {
     void onDismiss(j jVar);
 }

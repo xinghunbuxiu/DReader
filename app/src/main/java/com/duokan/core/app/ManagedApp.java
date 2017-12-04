@@ -15,7 +15,7 @@ import java.util.Iterator;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class ManagedApp extends MultiDexApplication implements i, IFeature {
+public class ManagedApp extends MultiDexApplication implements Controller, IFeature {
     static final boolean a = (!ManagedApp.class.desiredAssertionStatus());
     private static ManagedApp manage = null;
     private final ConcurrentLinkedQueue<WeakReference<Activity>> activitys = new ConcurrentLinkedQueue();

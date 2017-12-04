@@ -136,7 +136,7 @@ class bd implements r {
             if (g == null) {
                 throw new IllegalArgumentException();
             }
-            return new bg(this, g.a, g.a.b(g.b, "r"));
+            return new bg(this, g.a, g.a.b(g.b, "onActivityResult"));
         } catch (IOException e) {
             throw e;
         } catch (Throwable th) {

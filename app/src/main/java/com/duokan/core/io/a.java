@@ -99,7 +99,7 @@ public class a {
         Throwable th;
         RandomAccessFile randomAccessFile4;
         try {
-            randomAccessFile = new RandomAccessFile(file, "r");
+            randomAccessFile = new RandomAccessFile(file, "onActivityResult");
             try {
                 randomAccessFile4 = new RandomAccessFile(file2, "rws");
             } catch (Throwable th2) {

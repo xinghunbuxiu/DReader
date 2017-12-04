@@ -12,8 +12,8 @@ import com.duokan.core.app.ae;
 import com.duokan.core.app.BaseActivity;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.diagnostic.a;
+import com.duokan.core.ui.OnDismissListener;
 import com.duokan.core.ui.j;
-import com.duokan.core.ui.l;
 import com.duokan.reader.ui.welcome.r;
 
 public class DkReaderActivity extends BaseActivity {
@@ -54,7 +54,7 @@ public class DkReaderActivity extends BaseActivity {
             final /* synthetic */ DkReaderActivity c;
 
             public void onOk(ad adVar) {
-                rVar.setOnDismissListener(new l(this) {
+                rVar.setOnDismissListener(new OnDismissListener(this) {
                     final /* synthetic */ AnonymousClass3 a;
 
                     {

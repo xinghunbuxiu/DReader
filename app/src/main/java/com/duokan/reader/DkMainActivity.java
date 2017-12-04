@@ -14,10 +14,10 @@ import android.os.Process;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
 
+import com.duokan.core.app.BaseActivity;
 import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.app.BaseActivity;
 import com.duokan.reader.WelcomeDialog.StateListener;
 import com.duokan.reader.domain.bookshelf.BookUploadService;
 import com.duokan.reader.domain.downloadcenter.DownloadService;
@@ -27,11 +27,11 @@ import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class DkMainActivity extends BaseActivity {
-    private static WeakReference b = new WeakReference(null);
-    private static IActivityRunStatusChanged c = null;
+    private static WeakReference weakReference = new WeakReference(null);
+    private static IActivityRunStatusChanged runStatusChanged = null;
     private static long d = -1;
-    private DkReaderController e = null;
-    private boolean f = true;
+    private DkReaderController controller = null;
+    private boolean first = true;
 
     @TargetApi(19)
     protected void onCreate(Bundle bundle) {
@@ -39,9 +39,9 @@ public class DkMainActivity extends BaseActivity {
             getWindow().addFlags(67108864);
         }
         d = -1;
-        b = new WeakReference(this);
-        this.e = DkReaderController.from(this);
-        setContentController(this.e);
+        weakReference = new WeakReference(this);
+        this.controller = DkReaderController.from(this);
+        setContentController(this.controller);
         super.onCreate(bundle);
     }
 
@@ -54,8 +54,7 @@ public class DkMainActivity extends BaseActivity {
             applyOverrideConfiguration(configuration);
         } else {
             final Resources resources = new Resources(context.getResources().getAssets(), context.getResources().getDisplayMetrics(), configuration);
-            super.attachBaseContext(new ContextWrapper(this, context) {
-                final /* synthetic */ DkMainActivity b;
+            super.attachBaseContext(new ContextWrapper(context) {
 
                 public Resources getResources() {
                     return resources;
@@ -66,14 +65,9 @@ public class DkMainActivity extends BaseActivity {
 
     protected void onResume() {
         super.onResume();
-        if (this.f) {
+        if (this.first) {
             if (!DkApp.get().isUiReady() || WelcomeDialog.hasNewShowableSplash()) {
-                new WelcomeDialog(this, !TextUtils.equals(getIntent().getAction(), "android.intent.action.MAIN"), new StateListener(this) {
-                    final /* synthetic */ DkMainActivity a;
-
-                    {
-                        this.a = r1;
-                    }
+                new WelcomeDialog(this, !TextUtils.equals(getIntent().getAction(), "android.intent.action.MAIN"), new StateListener() {
 
                     public void onEnd(Uri uri) {
                         if (uri != null) {
@@ -81,7 +75,7 @@ public class DkMainActivity extends BaseActivity {
                             intent.setComponent(new ComponentName(DkApp.get(), DkReader.get().getMainActivityClass()));
                             intent.setAction("android.intent.action.VIEW");
                             intent.setData(uri);
-                            this.a.startActivity(intent);
+                            startActivity(intent);
                         }
                         WelcomeDialog.fetchNewSplash();
                     }
@@ -90,16 +84,16 @@ public class DkMainActivity extends BaseActivity {
                 WelcomeDialog.fetchNewSplash();
             }
             listenRunningState();
-            this.f = false;
+            this.first = false;
         }
     }
 
     protected void onDestroy() {
         super.onDestroy();
-        this.e = null;
+        this.controller = null;
         setContentView(new FrameLayout(this));
-        if (b.get() == this) {
-            b.clear();
+        if (weakReference.get() == this) {
+            weakReference.clear();
         }
         if (DkApp.get().inCtaMode() && !(DkApp.get().isWebAccessEnabled() && DkApp.get().isWebAccessConfirmed())) {
             Process.killProcess(Process.myPid());
@@ -118,10 +112,8 @@ public class DkMainActivity extends BaseActivity {
     protected void onNewIntent(final Intent intent) {
         super.onNewIntent(intent);
         DkApp.get().runWhenAppReady(new Runnable(this) {
-            final /* synthetic */ DkMainActivity b;
-
             public void run() {
-                this.b.e.navigate(intent);
+                this.c.controller.navigate(intent);
             }
         });
     }
@@ -139,15 +131,15 @@ public class DkMainActivity extends BaseActivity {
     }
 
     public static boolean isAlive() {
-        if (b.get() == null || ((DkMainActivity) b.get()).isFinishing()) {
+        if (weakReference.get() == null || ((DkMainActivity) weakReference.get()).isFinishing()) {
             return false;
         }
         return true;
     }
 
     private static void listenRunningState() {
-        if (c == null) {
-            c = new IActivityRunStatusChanged() {
+        if (runStatusChanged == null) {
+            runStatusChanged = new IActivityRunStatusChanged() {
                 public void onRunningStateChanged(ManagedApp managedApp, RunningState runningState, RunningState runningState2) {
                     if (runningState2 == RunningState.FOREGROUND) {
                         if (DkReader.get().isReady() && DkMainActivity.d >= 0 && System.currentTimeMillis() - DkMainActivity.d >= TimeUnit.MINUTES.toMillis(5)) {
@@ -156,7 +148,7 @@ public class DkMainActivity extends BaseActivity {
                                 final ReaderFeature readerFeature = (ReaderFeature) managedApp.getContext().queryFeature(ReaderFeature.class);
                                 if (readerFeature != null && readerFeature.getReadingBook() == null && WelcomeDialog.hasNewShowableSplash()) {
                                     new WelcomeDialog(topActivity, false, new StateListener(this) {
-                                        final /* synthetic */ AnonymousClass4 b;
+                                        final AnonymousClass4 b;
 
                                         public void onEnd(Uri uri) {
                                             if (uri != null) {
@@ -177,7 +169,7 @@ public class DkMainActivity extends BaseActivity {
                     DkMainActivity.d = System.currentTimeMillis();
                 }
             };
-            ManagedApp.get().addOnRunningStateChangedListener(c);
+            ManagedApp.get().addOnRunningStateChangedListener(runStatusChanged);
         }
     }
 

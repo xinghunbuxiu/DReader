@@ -583,17 +583,17 @@ public class d extends n implements at {
     L_0x0007:
         monitor-enter(r16);
         r0 = r16;
-        r2 = r0.l;	 Catch:{ all -> 0x003e }
+        r2 = r0.OnDismissListener;	 Catch:{ all -> 0x003e }
         r2 = r2.size();	 Catch:{ all -> 0x003e }
         if (r2 <= r8) goto L_0x002b;
     L_0x0012:
         r7 = r8;
     L_0x0013:
         r0 = r16;
-        r2 = r0.l;	 Catch:{ all -> 0x003e }
+        r2 = r0.OnDismissListener;	 Catch:{ all -> 0x003e }
         r2 = r2.getFirst();	 Catch:{ all -> 0x003e }
         r0 = r2;
-        r0 = (com.duokan.reader.domain.document.setDrawable.l) r0;	 Catch:{ all -> 0x003e }
+        r0 = (com.duokan.reader.domain.document.setDrawable.OnDismissListener) r0;	 Catch:{ all -> 0x003e }
         r4 = r0;
         r2 = r4.showAnimation;	 Catch:{ all -> 0x003e }
         if (r2 == 0) goto L_0x002d;

@@ -78,7 +78,6 @@ public abstract class TaskHandler {
     }
 
 
-
     public static final void c(Runnable runnable) {
         if (runnable != null) {
             mHandler.removeCallbacks(runnable);

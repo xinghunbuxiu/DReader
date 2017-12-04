@@ -658,14 +658,14 @@ public class p extends n implements at {
     L_0x0005:
         monitor-enter(r16);
         r0 = r16;
-        r2 = r0.l;	 Catch:{ all -> 0x003c }
+        r2 = r0.OnDismissListener;	 Catch:{ all -> 0x003c }
         r2 = r2.size();	 Catch:{ all -> 0x003c }
         if (r2 <= r6) goto L_0x0029;
     L_0x0010:
         r5 = r6;
     L_0x0011:
         r0 = r16;
-        r2 = r0.l;	 Catch:{ all -> 0x003c }
+        r2 = r0.OnDismissListener;	 Catch:{ all -> 0x003c }
         r2 = r2.getFirst();	 Catch:{ all -> 0x003c }
         r0 = r2;
         r0 = (com.duokan.reader.domain.document.txt.MyContextWrapper) r0;	 Catch:{ all -> 0x003c }

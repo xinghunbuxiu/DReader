@@ -64,7 +64,7 @@ class hg implements Runnable {
     L_0x0058:
         r0 = com.duokan.core.diagnostic.setDrawable.showAnimation();	 Catch:{ Throwable -> 0x00af }
         r1 = com.duokan.core.diagnostic.LogLevel.ERROR;	 Catch:{ Throwable -> 0x00af }
-        r2 = "epub-l";
+        r2 = "epub-OnDismissListener";
         r6 = "fail to download the resource %s(size error: %s!=%s)";
         r7 = 3;
         r7 = new java.lang.Object[r7];	 Catch:{ Throwable -> 0x00af }
@@ -96,7 +96,7 @@ class hg implements Runnable {
     L_0x008d:
         r0 = com.duokan.core.diagnostic.setDrawable.showAnimation();	 Catch:{ Throwable -> 0x00af }
         r1 = com.duokan.core.diagnostic.LogLevel.ERROR;	 Catch:{ Throwable -> 0x00af }
-        r2 = "epub-l";
+        r2 = "epub-OnDismissListener";
         r4 = "fail to download the resource %s(md5 error: %s!=%s)";
         r5 = 3;
         r5 = new java.lang.Object[r5];	 Catch:{ Throwable -> 0x00af }
@@ -118,7 +118,7 @@ class hg implements Runnable {
         r1.getScaledPagingTouchSlop = r2;	 Catch:{ all -> 0x00d9 }
         r1 = com.duokan.core.diagnostic.setDrawable.showAnimation();	 Catch:{ all -> 0x00d9 }
         r2 = com.duokan.core.diagnostic.LogLevel.ERROR;	 Catch:{ all -> 0x00d9 }
-        r4 = "epub-l";
+        r4 = "epub-OnDismissListener";
         r5 = new java.lang.StringBuilder;	 Catch:{ all -> 0x00d9 }
         r5.<init>();	 Catch:{ all -> 0x00d9 }
         r6 = "fail to download the resource ";

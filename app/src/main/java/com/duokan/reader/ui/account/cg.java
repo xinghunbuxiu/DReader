@@ -1,9 +1,9 @@
 package com.duokan.reader.ui.account;
 
 import com.duokan.core.ui.j;
-import com.duokan.core.ui.m;
+import com.duokan.core.ui.OnShowListener;
 
-class cg implements m {
+class cg implements OnShowListener {
     final /* synthetic */ cf a;
 
     cg(cf cfVar) {

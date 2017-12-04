@@ -302,7 +302,7 @@ public class e extends Binder implements ah, l {
         monitor-exit(r5);	 Catch:{ all -> 0x005f }
         throw r0;
     L_0x0062:
-        r0.r();
+        r0.onActivityResult();
         r0 = r2;
         goto L_0x000e;
     L_0x0067:
