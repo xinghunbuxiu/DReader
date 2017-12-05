@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 
 public class j {
-    private l mOnDismissListener = null;
-    private m mOnShowListener = null;
+    private OnDismissListener mOnDismissListener = null;
+    private OnShowListener mOnShowListener = null;
     private final cv mWindow;
 
     public j(Context context) {
@@ -89,11 +89,11 @@ public class j {
         this.mWindow.setExitAnimation(i);
     }
 
-    public void setOnShowListener(m mVar) {
+    public void setOnShowListener(OnShowListener mVar) {
         this.mOnShowListener = mVar;
     }
 
-    public void setOnDismissListener(l lVar) {
+    public void setOnDismissListener(OnDismissListener lVar) {
         this.mOnDismissListener = lVar;
     }
 

@@ -1,5 +1,5 @@
 package com.duokan.core.ui;
 
-public interface m {
+public interface OnShowListener {
     void a(j jVar);
 }

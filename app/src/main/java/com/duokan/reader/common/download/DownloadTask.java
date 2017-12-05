@@ -73,7 +73,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
 */
         /*
         r10 = this;
-        r0 = r10.r;
+        r0 = r10.onActivityResult;
         r0.beginTransaction();
         r0 = r10.A();	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r1 = new android.content.ContentValues;	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
@@ -81,7 +81,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r2 = "runtime_info";	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r0 = r0.toString();	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r1.put(r2, r0);	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
-        r0 = r10.r;	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
+        r0 = r10.onActivityResult;	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r2 = "tasks";	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r3 = "task_id=?";	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r4 = 1;	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
@@ -96,9 +96,9 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r6 = r6.toString();	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r4[r5] = r6;	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r0.update(r2, r1, r3, r4);	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
-        r0 = r10.r;	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
+        r0 = r10.onActivityResult;	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r0.setTransactionSuccessful();	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
-        r0 = r10.r;
+        r0 = r10.onActivityResult;
         r0.endTransaction();
     L_0x0045:
         return;
@@ -112,11 +112,11 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         throw r0;	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
     L_0x0051:
         r0 = move-exception;
-        r1 = r10.r;
+        r1 = r10.onActivityResult;
         r1.endTransaction();
         throw r0;
     L_0x0058:
-        r0 = r10.r;
+        r0 = r10.onActivityResult;
         r0.endTransaction();
         goto L_0x0045;
         */
@@ -166,7 +166,7 @@ Error: java.lang.NullPointerException
         r2 = com.duokan.reader.common.download.DownloadTask.DownloadingStage.UNKNOWN;
         r12.getHeightPixels = r2;
         r2 = 0;
-        r12.l = r2;
+        r12.OnDismissListener = r2;
         r2 = com.duokan.reader.common.download.DownloadFailCode.NONE;
         r12.BaseActivity = r2;
         r2 = 0;
@@ -204,9 +204,9 @@ Error: java.lang.NullPointerException
     L_0x0050:
         r12.setDrawable = r13;
         r0 = r16;
-        r12.r = r0;
+        r12.onActivityResult = r0;
         r12.getVisible = r14;
-        r2 = r12.r;
+        r2 = r12.onActivityResult;
         r3 = "tasks";
         r4 = 0;
         r5 = "task_id=?";
@@ -308,7 +308,7 @@ Error: java.lang.NullPointerException
     L_0x013f:
         r3.close();
     L_0x0142:
-        r2 = r12.r;
+        r2 = r12.onActivityResult;
         r3 = "blocks";
         r4 = 1;
         r4 = new java.lang.String[r4];
@@ -392,7 +392,7 @@ Error: java.lang.NullPointerException
         r2 = move-exception;
         goto L_0x00e1;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.DownloadTask.<init>(android.content.Context, long, android.database.sqlite.SQLiteDatabase, com.duokan.reader.common.download.l, java.io.File):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.DownloadTask.<init>(android.content.Context, long, android.database.sqlite.SQLiteDatabase, com.duokan.reader.common.download.OnDismissListener, java.io.File):void");
     }
 
     public long a() {
@@ -725,7 +725,7 @@ Error: java.lang.NullPointerException
         r1.addLast(r0);	 Catch:{ all -> 0x007f }
         goto L_0x00ac;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.DownloadTask.r():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.DownloadTask.onActivityResult():void");
     }
 
     private boolean B() {
@@ -1025,14 +1025,14 @@ Error: java.lang.NullPointerException
         r0 = TaskHandler;
         if (r0 != 0) goto L_0x0010;
     L_0x0006:
-        r0 = r6.r;
+        r0 = r6.onActivityResult;
         if (r0 != 0) goto L_0x0010;
     L_0x000a:
         r0 = new java.lang.AssertionError;
         r0.<init>();
         throw r0;
     L_0x0010:
-        r0 = r6.r;
+        r0 = r6.onActivityResult;
         r0.beginTransaction();
         r0 = new android.content.ContentValues;	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
         r0.<init>();	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
@@ -1058,17 +1058,17 @@ Error: java.lang.NullPointerException
         r4.<init>();	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
         r4 = r4.toString();	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
         r0.put(r1, r4);	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
-        r1 = r6.r;	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
+        r1 = r6.onActivityResult;	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
         r4 = "blocks";
         r5 = 0;
         r0 = r1.insert(r4, r5, r0);	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
         r2 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1));
         if (r2 == 0) goto L_0x006b;
     L_0x0066:
-        r2 = r6.r;	 Catch:{ Exception -> 0x0080, all -> 0x0079 }
+        r2 = r6.onActivityResult;	 Catch:{ Exception -> 0x0080, all -> 0x0079 }
         r2.setTransactionSuccessful();	 Catch:{ Exception -> 0x0080, all -> 0x0079 }
     L_0x006b:
-        r2 = r6.r;
+        r2 = r6.onActivityResult;
         r2.endTransaction();
     L_0x0070:
         return r0;
@@ -1076,12 +1076,12 @@ Error: java.lang.NullPointerException
         r0 = move-exception;
         r0 = r2;
     L_0x0073:
-        r2 = r6.r;
+        r2 = r6.onActivityResult;
         r2.endTransaction();
         goto L_0x0070;
     L_0x0079:
         r0 = move-exception;
-        r1 = r6.r;
+        r1 = r6.onActivityResult;
         r1.endTransaction();
         throw r0;
     L_0x0080:

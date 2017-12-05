@@ -1000,7 +1000,7 @@ public class s extends n implements at {
     L_0x0001:
         monitor-enter(r16);
         r0 = r16;
-        r2 = r0.l;	 Catch:{ all -> 0x003b }
+        r2 = r0.OnDismissListener;	 Catch:{ all -> 0x003b }
         r2 = r2.size();	 Catch:{ all -> 0x003b }
         r3 = 1;
         if (r2 <= r3) goto L_0x0027;
@@ -1009,7 +1009,7 @@ public class s extends n implements at {
         r7 = r2;
     L_0x000f:
         r0 = r16;
-        r2 = r0.l;	 Catch:{ all -> 0x003b }
+        r2 = r0.OnDismissListener;	 Catch:{ all -> 0x003b }
         r2 = r2.getFirst();	 Catch:{ all -> 0x003b }
         r0 = r2;
         r0 = (com.duokan.reader.domain.document.epub.MyTask) r0;	 Catch:{ all -> 0x003b }
@@ -1470,7 +1470,7 @@ public class s extends n implements at {
         r2 = r4.getWidthPixels;
         r3 = com.duokan.reader.domain.document.epub.EpubTypesettingContext.ChapterState.NOT_TYPESETTED;
         java.util.Arrays.fill(r2, r3);
-        r2 = r4.l;
+        r2 = r4.OnDismissListener;
         r10 = r8.getPhysicalYPixels();
         r3 = (int) r10;
         r2.ensureCapacity(r3);
@@ -1485,7 +1485,7 @@ public class s extends n implements at {
         r3 = (r10 > r12 ? 1 : (r10 == r12 ? 0 : -1));
         if (r3 >= 0) goto L_0x046e;
     L_0x03f9:
-        r3 = r4.l;
+        r3 = r4.OnDismissListener;
         r9 = 0;
         r3.add(r9);
         r3 = r4.BaseActivity;
@@ -1544,7 +1544,7 @@ public class s extends n implements at {
         r0.setDrawable(r4, r6);
         r2 = java.lang.System.currentTimeMillis();
         r0 = r16;
-        r0.r = r2;
+        r0.onActivityResult = r2;
     L_0x047d:
         r16.QueryFeatureWrapper();
         r2 = 1;
@@ -1566,7 +1566,7 @@ public class s extends n implements at {
         r0.q = r3;
         r8 = java.lang.System.currentTimeMillis();
         r0 = r16;
-        r0.r = r8;
+        r0.onActivityResult = r8;
         r0 = r16;
         r3 = r0.n;
         r3.release();
@@ -1585,7 +1585,7 @@ public class s extends n implements at {
     L_0x04c3:
         r2 = java.lang.System.currentTimeMillis();
         r0 = r16;
-        r6 = r0.r;
+        r6 = r0.onActivityResult;
         r2 = r2 - r6;
         r6 = 2000; // 0x7d0 float:2.803E-42 double:9.88E-321;
         r2 = (r2 > r6 ? 1 : (r2 == r6 ? 0 : -1));

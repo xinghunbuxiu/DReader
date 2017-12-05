@@ -306,7 +306,7 @@ Error: java.lang.NullPointerException
         r0 = r16;
         r13.getPhysicalYPixels = r0;
         r0 = r18;
-        r13.l = r0;
+        r13.OnDismissListener = r0;
         r2 = new org.json.JSONObject;	 Catch:{ Exception -> 0x00ed }
         r4 = "runtime_info";	 Catch:{ Exception -> 0x00ed }
         r4 = r3.getColumnIndex(r4);	 Catch:{ Exception -> 0x00ed }

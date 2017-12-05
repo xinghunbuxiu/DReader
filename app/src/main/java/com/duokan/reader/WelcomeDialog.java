@@ -51,7 +51,7 @@ public class WelcomeDialog extends j {
     private static WebSession b = null;
     private static long c = 0;
     private final boolean d;
-    private final StateListener e;
+    private final StateListener stateListener;
     private ImageView f;
     private Drawable g = null;
     private Uri h = null;
@@ -65,8 +65,8 @@ public class WelcomeDialog extends j {
     }
 
     final class AnonymousClass5 extends WebSession {
-        final /* synthetic */ ab a;
-        final /* synthetic */ long b;
+        final  ab a;
+        final  long b;
 
         AnonymousClass5(ab abVar, long j) {
             this.a = abVar;
@@ -127,7 +127,7 @@ public class WelcomeDialog extends j {
     public WelcomeDialog(Context context, boolean z, StateListener stateListener) {
         super(context);
         this.d = z;
-        this.e = stateListener;
+        this.stateListener = stateListener;
         setContentView(h.welcome__welcome_view);
         setDimAmount(0.0f);
     }
@@ -137,7 +137,7 @@ public class WelcomeDialog extends j {
         final long currentTimeMillis = System.currentTimeMillis();
         final View findViewById = findViewById(g.welcome__welcome_view__skip);
         findViewById.setOnClickListener(new OnClickListener(this) {
-            final /* synthetic */ WelcomeDialog a;
+            final  WelcomeDialog a;
 
             {
                 this.a = r1;
@@ -156,7 +156,7 @@ public class WelcomeDialog extends j {
         this.f.setDrawingCacheEnabled(true);
         this.f.setWillNotCacheDrawing(true);
         this.f.setBackgroundDrawable(new Drawable(this) {
-            final /* synthetic */ WelcomeDialog a;
+            final  WelcomeDialog a;
 
             {
                 this.a = r1;
@@ -190,7 +190,7 @@ public class WelcomeDialog extends j {
         et etVar = new et();
         etVar.a(new ct());
         etVar.a(new cu(this) {
-            final /* synthetic */ WelcomeDialog a;
+            final  WelcomeDialog a;
 
             {
                 this.a = r1;
@@ -220,7 +220,7 @@ public class WelcomeDialog extends j {
         });
         etVar.b(this.f);
         ah.b(new Runnable(this) {
-            final /* synthetic */ WelcomeDialog d;
+            final  WelcomeDialog d;
 
             public void run() {
                 Drawable drawable;
@@ -266,7 +266,7 @@ public class WelcomeDialog extends j {
                     }
                 }
                 final Runnable anonymousClass1 = new Runnable(this) {
-                    final /* synthetic */ AnonymousClass4 a;
+                    final  AnonymousClass4 a;
 
                     {
                         this.a = r1;
@@ -275,7 +275,7 @@ public class WelcomeDialog extends j {
                     public void run() {
                         com.duokan.core.diagnostic.a.c().a();
                         UTools.a(this.a.d.f, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, new Runnable(this) {
-                            final /* synthetic */ AnonymousClass1 a;
+                            final  AnonymousClass1 a;
 
                             {
                                 this.a = r1;
@@ -283,7 +283,7 @@ public class WelcomeDialog extends j {
 
                             public void run() {
                                 TaskHandler.postTask(new Runnable(this) {
-                                    final /* synthetic */ AnonymousClass1 a;
+                                    final  AnonymousClass1 a;
 
                                     {
                                         this.a = r1;
@@ -300,7 +300,7 @@ public class WelcomeDialog extends j {
                 if (splashInfo == null || splashInfo.a == 0) {
                     long j;
                     Runnable anonymousClass3 = new Runnable(this) {
-                        final /* synthetic */ AnonymousClass4 c;
+                        final  AnonymousClass4 c;
 
                         public void run() {
                             this.c.d.f.setImageDrawable(drawable);
@@ -320,7 +320,7 @@ public class WelcomeDialog extends j {
                     return;
                 }
                 TaskHandler.PostTask(new Runnable(this) {
-                    final /* synthetic */ AnonymousClass4 d;
+                    final  AnonymousClass4 d;
 
                     public void run() {
                         this.d.d.g = drawable;
@@ -380,7 +380,7 @@ public class WelcomeDialog extends j {
         if (this.k) {
             this.k = false;
             DkApp.get().runWhenAppReady(new Runnable(this) {
-                final /* synthetic */ WelcomeDialog a;
+                final  WelcomeDialog a;
 
                 {
                     this.a = r1;
@@ -388,7 +388,7 @@ public class WelcomeDialog extends j {
 
                 public void run() {
                     Runnable anonymousClass1 = new Runnable(this) {
-                        final /* synthetic */ AnonymousClass7 a;
+                        final  AnonymousClass7 a;
                         private boolean b = false;
 
                         {

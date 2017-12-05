@@ -19,211 +19,211 @@ import com.duokan.reader.ui.r;
 import com.duokan.reader.ui.reading.sh;
 
 public class DkReaderController extends ReaderController {
-    public /* bridge */ /* synthetic */ void addSystemUiConditioner(SystemUiConditioner systemUiConditioner) {
+    public  void addSystemUiConditioner(SystemUiConditioner systemUiConditioner) {
         super.addSystemUiConditioner(systemUiConditioner);
     }
 
-    public /* bridge */ /* synthetic */ void chooseNavigationBarColor(af afVar) {
+    public  void chooseNavigationBarColor(af afVar) {
         super.chooseNavigationBarColor(afVar);
     }
 
-    public /* bridge */ /* synthetic */ void chooseNavigationBarMode(af afVar) {
+    public  void chooseNavigationBarMode(af afVar) {
         super.chooseNavigationBarMode(afVar);
     }
 
-    public /* bridge */ /* synthetic */ void chooseStatusBarStyle(af afVar) {
+    public  void chooseStatusBarStyle(af afVar) {
         super.chooseStatusBarStyle(afVar);
     }
 
-    public /* bridge */ /* synthetic */ void downloadBooks(c[] cVarArr) {
+    public  void downloadBooks(c[] cVarArr) {
         super.downloadBooks(cVarArr);
     }
 
-    public /* bridge */ /* synthetic */ float[] getEyesSavingModeDensity() {
+    public  float[] getEyesSavingModeDensity() {
         return super.getEyesSavingModeDensity();
     }
 
-    public /* bridge */ /* synthetic */ Drawable getHeaderBackground() {
+    public  Drawable getHeaderBackground() {
         return super.getHeaderBackground();
     }
 
-    public /* bridge */ /* synthetic */ float getKeyboardBrightness() {
+    public  float getKeyboardBrightness() {
         return super.getKeyboardBrightness();
     }
 
-    public /* bridge */ /* synthetic */ BrightnessMode getKeyboardBrightnessMode() {
+    public  BrightnessMode getKeyboardBrightnessMode() {
         return super.getKeyboardBrightnessMode();
     }
 
-    public /* bridge */ /* synthetic */ int getPageCount() {
+    public  int getPageCount() {
         return super.getPageCount();
     }
 
-    public /* bridge */ /* synthetic */ c getReadingBook() {
+    public  c getReadingBook() {
         return super.getReadingBook();
     }
 
-    public /* bridge */ /* synthetic */ sh getReadingFeature() {
+    public  sh getReadingFeature() {
         return super.getReadingFeature();
     }
 
-    public /* bridge */ /* synthetic */ float getScreenBrightness() {
+    public  float getScreenBrightness() {
         return super.getScreenBrightness();
     }
 
-    public /* bridge */ /* synthetic */ BrightnessMode getScreenBrightnessMode() {
+    public  BrightnessMode getScreenBrightnessMode() {
         return super.getScreenBrightnessMode();
     }
 
-    public /* bridge */ /* synthetic */ float[] getScreenBrightnessRange() {
+    public  float[] getScreenBrightnessRange() {
         return super.getScreenBrightnessRange();
     }
 
-    public /* bridge */ /* synthetic */ int getScreenTimeout() {
+    public  int getScreenTimeout() {
         return super.getScreenTimeout();
     }
 
-    public /* bridge */ /* synthetic */ r getTheme() {
+    public  r getTheme() {
         return super.getTheme();
     }
 
-    public /* bridge */ /* synthetic */ long getTotalActiveTime() {
+    public  long getTotalActiveTime() {
         return super.getTotalActiveTime();
     }
 
-    public /* bridge */ /* synthetic */ void goHome(Runnable runnable) {
+    public  void goHome(Runnable runnable) {
         super.goHome(runnable);
     }
 
-    public /* bridge */ /* synthetic */ boolean inNightMode() {
+    public  boolean inNightMode() {
         return super.inNightMode();
     }
 
-    public /* bridge */ /* synthetic */ void navigate(Intent intent) {
+    public  void navigate(Intent intent) {
         super.navigate(intent);
     }
 
-    public /* bridge */ /* synthetic */ boolean navigate(String str, Object obj, boolean z, Runnable runnable) {
+    public  boolean navigate(String str, Object obj, boolean z, Runnable runnable) {
         return super.navigate(str, obj, z, runnable);
     }
 
-    public /* bridge */ /* synthetic */ boolean navigateSmoothly(String str) {
+    public  boolean navigateSmoothly(String str) {
         return super.navigateSmoothly(str);
     }
 
-    public /* bridge */ /* synthetic */ boolean navigateSmoothly(String str, Runnable runnable) {
+    public  boolean navigateSmoothly(String str, Runnable runnable) {
         return super.navigateSmoothly(str, runnable);
     }
 
-    public /* bridge */ /* synthetic */ void openBook(c cVar) {
+    public  void openBook(c cVar) {
         super.openBook(cVar);
     }
 
-    public /* bridge */ /* synthetic */ void openBook(c cVar, Document_a aVar, Runnable runnable) {
+    public  void openBook(c cVar, Document_a aVar, Runnable runnable) {
         super.openBook(cVar, aVar, runnable);
     }
 
-    public /* bridge */ /* synthetic */ void openBook(String str, Document_a aVar) {
+    public  void openBook(String str, Document_a aVar) {
         super.openBook(str, aVar);
     }
 
-    public /* bridge */ /* synthetic */ void prompt(String str) {
+    public  void prompt(String str) {
         super.prompt(str);
     }
 
-    public /* bridge */ /* synthetic */ void prompt(String str, int i) {
+    public  void prompt(String str, int i) {
         super.prompt(str, i);
     }
 
-    public /* bridge */ /* synthetic */ boolean pushFloatingPage(ActivatedController activatedControllerVar) {
+    public  boolean pushFloatingPage(ActivatedController activatedControllerVar) {
         return super.pushFloatingPage(activatedControllerVar);
     }
 
-    public /* bridge */ /* synthetic */ boolean pushFloatingPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
+    public  boolean pushFloatingPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
         return super.pushFloatingPageSmoothly(activatedControllerVar, runnable);
     }
 
-    public /* bridge */ /* synthetic */ boolean pushHalfPage(ActivatedController activatedControllerVar) {
+    public  boolean pushHalfPage(ActivatedController activatedControllerVar) {
         return super.pushHalfPage(activatedControllerVar);
     }
 
-    public /* bridge */ /* synthetic */ boolean pushHalfPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
+    public  boolean pushHalfPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
         return super.pushHalfPageSmoothly(activatedControllerVar, runnable);
     }
 
-    public /* bridge */ /* synthetic */ boolean pushPage(ActivatedController activatedControllerVar) {
+    public  boolean pushPage(ActivatedController activatedControllerVar) {
         return super.pushPage(activatedControllerVar);
     }
 
-    public /* bridge */ /* synthetic */ boolean pushPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
+    public  boolean pushPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
         return super.pushPageSmoothly(activatedControllerVar, runnable);
     }
 
-    public /* bridge */ /* synthetic */ void removeSystemUiConditioner(SystemUiConditioner systemUiConditioner) {
+    public  void removeSystemUiConditioner(SystemUiConditioner systemUiConditioner) {
         super.removeSystemUiConditioner(systemUiConditioner);
     }
 
-    public /* bridge */ /* synthetic */ void setKeyboardBrightness(float f) {
+    public  void setKeyboardBrightness(float f) {
         super.setKeyboardBrightness(f);
     }
 
-    public /* bridge */ /* synthetic */ void setKeyboardBrightnessMode(BrightnessMode brightnessMode) {
+    public  void setKeyboardBrightnessMode(BrightnessMode brightnessMode) {
         super.setKeyboardBrightnessMode(brightnessMode);
     }
 
-    public /* bridge */ /* synthetic */ void setQuitOnBack(boolean z) {
+    public  void setQuitOnBack(boolean z) {
         super.setQuitOnBack(z);
     }
 
-    public /* bridge */ /* synthetic */ void setScreenBrightness(float f) {
+    public  void setScreenBrightness(float f) {
         super.setScreenBrightness(f);
     }
 
-    public /* bridge */ /* synthetic */ void setScreenBrightnessMode(BrightnessMode brightnessMode) {
+    public  void setScreenBrightnessMode(BrightnessMode brightnessMode) {
         super.setScreenBrightnessMode(brightnessMode);
     }
 
-    public /* bridge */ /* synthetic */ void setScreenTimeout(int i) {
+    public  void setScreenTimeout(int i) {
         super.setScreenTimeout(i);
     }
 
-    public /* bridge */ /* synthetic */ void shareBooks(ActivatedController activatedControllerVar, c[] cVarArr) {
+    public  void shareBooks(ActivatedController activatedControllerVar, c[] cVarArr) {
         super.shareBooks(activatedControllerVar, cVarArr);
     }
 
-    public /* bridge */ /* synthetic */ void showBookHomePage(IFeature featrue, String str, String str2, boolean z, String str3) {
+    public  void showBookHomePage(IFeature featrue, String str, String str2, boolean z, String str3) {
         super.showBookHomePage(featrue, str, str2, z, str3);
     }
 
-    public /* bridge */ /* synthetic */ void showMenuFromBottom(hb hbVar) {
+    public  void showMenuFromBottom(hb hbVar) {
         super.showMenuFromBottom(hbVar);
     }
 
-    public /* bridge */ /* synthetic */ void showMenuFromTop(gx gxVar) {
+    public  void showMenuFromTop(gx gxVar) {
         super.showMenuFromTop(gxVar);
     }
 
-    public /* bridge */ /* synthetic */ boolean showPopup(ActivatedController activatedControllerVar) {
+    public  boolean showPopup(ActivatedController activatedControllerVar) {
         return super.showPopup(activatedControllerVar);
     }
 
-    public /* bridge */ /* synthetic */ boolean showPopup(ActivatedController activatedControllerVar, int i, int i2) {
+    public  boolean showPopup(ActivatedController activatedControllerVar, int i, int i2) {
         return super.showPopup(activatedControllerVar, i, i2);
     }
 
-    public /* bridge */ /* synthetic */ boolean showPopupSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
+    public  boolean showPopupSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
         return super.showPopupSmoothly(activatedControllerVar, runnable);
     }
 
-    public /* bridge */ /* synthetic */ void switchEyesSavingMode(boolean z) {
+    public  void switchEyesSavingMode(boolean z) {
         super.switchEyesSavingMode(z);
     }
 
-    public /* bridge */ /* synthetic */ void switchNightMode(boolean z, boolean z2) {
+    public  void switchNightMode(boolean z, boolean z2) {
         super.switchNightMode(z, z2);
     }
 
-    public /* bridge */ /* synthetic */ void updateSystemUi(boolean z) {
+    public  void updateSystemUi(boolean z) {
         super.updateSystemUi(z);
     }
 

@@ -26,7 +26,7 @@ public class StatOpenBook extends StatEventBase {
             jSONObject.put("bc", this.autoBuyCount);
             jSONObject.put("br", this.autoBuyPrice);
             jSONObject.put("to", this.bookOpenTime);
-            jSONObject.put("r", this.bookStatus);
+            jSONObject.put("onActivityResult", this.bookStatus);
             jSONObject.put("exit", this.exit);
             jSONObject.put("ti", this.traceId);
             jSONObject.put("pre", this.isPreBook);

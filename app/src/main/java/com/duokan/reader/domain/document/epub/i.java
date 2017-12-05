@@ -90,7 +90,7 @@ public class i extends as implements com.duokan.reader.domain.document.i {
         return r0;
     L_0x0013:
         monitor-enter(r4);
-        r1 = r4.r;	 Catch:{ all -> 0x001a }
+        r1 = r4.onActivityResult;	 Catch:{ all -> 0x001a }
         if (r1 == 0) goto L_0x001d;
     L_0x0018:
         monitor-exit(r4);	 Catch:{ all -> 0x001a }
@@ -110,7 +110,7 @@ public class i extends as implements com.duokan.reader.domain.document.i {
     L_0x0029:
         monitor-exit(r4);	 Catch:{ all -> 0x001a }
     L_0x002a:
-        r0 = r4.r;
+        r0 = r4.onActivityResult;
         if (r0 != 0) goto L_0x0050;
     L_0x002e:
         r0 = r4.getWidthPixels;

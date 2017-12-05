@@ -1,9 +1,9 @@
 package com.duokan.reader.ui.account;
 
 import com.duokan.core.ui.j;
-import com.duokan.core.ui.m;
+import com.duokan.core.ui.OnShowListener;
 
-class by implements m {
+class by implements OnShowListener {
     final /* synthetic */ bx a;
 
     by(bx bxVar) {

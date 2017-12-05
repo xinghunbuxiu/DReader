@@ -15,7 +15,7 @@ public class StatPay extends StatEventBase {
         try {
             jSONObject.put("ev", this.event);
             jSONObject.put("tr", this.track);
-            jSONObject.put("r", this.result);
+            jSONObject.put("onActivityResult", this.result);
             jSONObject.put("rs", this.resultFromMipay);
             jSONObject.put("bt", this.bookType);
             jSONObject.put("bi", this.bookId);

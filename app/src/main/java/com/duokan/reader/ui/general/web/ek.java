@@ -1,9 +1,9 @@
 package com.duokan.reader.ui.general.web;
 
+import com.duokan.core.ui.OnDismissListener;
 import com.duokan.core.ui.j;
-import com.duokan.core.ui.l;
 
-class ek implements l {
+class ek implements OnDismissListener {
     final /* synthetic */ eh a;
 
     ek(eh ehVar) {

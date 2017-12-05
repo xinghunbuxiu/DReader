@@ -16,7 +16,7 @@ public class b {
     private String g = null;
 
     public String a(File file) {
-        this.a = new RandomAccessFile(file, "r");
+        this.a = new RandomAccessFile(file, "onActivityResult");
         String a = a();
         if (a.length() != 0) {
             this.a.close();

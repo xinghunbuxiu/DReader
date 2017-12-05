@@ -16,7 +16,7 @@ public class c {
 
     boolean a(String str) {
         try {
-            this.a = new RandomAccessFile(str, "r");
+            this.a = new RandomAccessFile(str, "onActivityResult");
             this.b = new b().a(new File(str));
             return true;
         } catch (FileNotFoundException e) {

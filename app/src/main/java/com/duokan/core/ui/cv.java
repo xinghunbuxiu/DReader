@@ -26,7 +26,7 @@ import java.util.ListIterator;
 
 public class cv {
     private static final LinkedList a = new LinkedList();
-    static final /* synthetic */ boolean b = (!cv.class.desiredAssertionStatus());
+    static final  boolean b = (!cv.class.desiredAssertionStatus());
     private static final LinkedList c = new LinkedList();
     private static int d = Color.argb(255, 255, 255, 255);
     private final Context e;

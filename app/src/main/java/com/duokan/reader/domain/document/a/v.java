@@ -109,13 +109,13 @@ public class v extends s {
         monitor-exit(r5);	 Catch:{ all -> 0x000d }
         throw r0;
     L_0x0010:
-        r1 = r5.l;	 Catch:{ all -> 0x000d }
+        r1 = r5.OnDismissListener;	 Catch:{ all -> 0x000d }
         if (r1 != 0) goto L_0x001c;
     L_0x0014:
         r1 = new java.util.concurrent.CountDownLatch;	 Catch:{ all -> 0x000d }
         r2 = 1;
         r1.<init>(r2);	 Catch:{ all -> 0x000d }
-        r5.l = r1;	 Catch:{ all -> 0x000d }
+        r5.OnDismissListener = r1;	 Catch:{ all -> 0x000d }
     L_0x001c:
         monitor-exit(r5);	 Catch:{ all -> 0x000d }
     L_0x001d:
@@ -130,7 +130,7 @@ public class v extends s {
         r1 = r1.showAnimation();
         if (r1 != 0) goto L_0x003b;
     L_0x002f:
-        r1 = r5.l;	 Catch:{ InterruptedException -> 0x0039 }
+        r1 = r5.OnDismissListener;	 Catch:{ InterruptedException -> 0x0039 }
         r2 = 1;
         r4 = java.util.concurrent.TimeUnit.SECONDS;	 Catch:{ InterruptedException -> 0x0039 }
         r1.await(r2, r4);	 Catch:{ InterruptedException -> 0x0039 }
@@ -170,17 +170,17 @@ public class v extends s {
         monitor-exit(r3);	 Catch:{ all -> 0x000d }
         throw r0;
     L_0x0010:
-        r1 = r3.l;	 Catch:{ all -> 0x000d }
+        r1 = r3.OnDismissListener;	 Catch:{ all -> 0x000d }
         if (r1 != 0) goto L_0x001c;
     L_0x0014:
         r1 = new java.util.concurrent.CountDownLatch;	 Catch:{ all -> 0x000d }
         r2 = 1;
         r1.<init>(r2);	 Catch:{ all -> 0x000d }
-        r3.l = r1;	 Catch:{ all -> 0x000d }
+        r3.OnDismissListener = r1;	 Catch:{ all -> 0x000d }
     L_0x001c:
         monitor-exit(r3);	 Catch:{ all -> 0x000d }
     L_0x001d:
-        r1 = r3.l;	 Catch:{ InterruptedException -> 0x003c }
+        r1 = r3.OnDismissListener;	 Catch:{ InterruptedException -> 0x003c }
         r2 = java.util.concurrent.TimeUnit.MILLISECONDS;	 Catch:{ InterruptedException -> 0x003c }
         r1.await(r4, r2);	 Catch:{ InterruptedException -> 0x003c }
     L_0x0024:

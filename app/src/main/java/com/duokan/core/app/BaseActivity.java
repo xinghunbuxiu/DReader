@@ -23,52 +23,52 @@ import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class BaseActivity extends Activity implements IFeature {
-    static final /* synthetic */ boolean a = (!BaseActivity.class.desiredAssertionStatus());
-    private final FeatureManage b = new FeatureManage();
-    private final CopyOnWriteArrayList c = new CopyOnWriteArrayList();
-    private final CopyOnWriteArrayList d = new CopyOnWriteArrayList();
-    private final CopyOnWriteArrayList e = new CopyOnWriteArrayList();
-    private boolean f = false;
-    private OrientationEventListener g = null;
+    static final boolean a = (!BaseActivity.class.desiredAssertionStatus());
+    private final FeatureManage featureManage = new FeatureManage();
+    private final CopyOnWriteArrayList<TaskHandler> taskHandlers = new CopyOnWriteArrayList();
+    private final CopyOnWriteArrayList<s> screenChanged = new CopyOnWriteArrayList();
+    private final CopyOnWriteArrayList<onActivityResult> activityResults = new CopyOnWriteArrayList();
+    private boolean first = false;
+    private OrientationEventListener eventListener = null;
     private int h = 0;
-    private int i = 0;
-    private SensorManager j = null;
-    private ActivatedController k = null;
-    private BrightnessMode l = BrightnessMode.SYSTEM;
-    private float m = -1.0f;
-    private Runnable n = null;
-    private BrightnessMode o = BrightnessMode.SYSTEM;
-    private float p = -1.0f;
-    private Handler q = null;
-    private int r = 0;
+    private int screenRotation = 0;
+    private SensorManager sensorManager = null;
+    private ActivatedController activatedController = null;
+    private BrightnessMode brightnessMode = BrightnessMode.SYSTEM;
+    private float screenBright = -1.0f;
+    private Runnable runnable = null;
+    private BrightnessMode mode = BrightnessMode.SYSTEM;
+    private float keyboardBright = -1.0f;
+    private Handler handler = null;
+    private int screenTimeout = 0;
     private int s = 0;
     private int t = -1;
 
     public int getScreenTimeout() {
-        return this.r;
+        return this.screenTimeout;
     }
 
-    public void setScreenTimeout(int i) {
-        this.r = i;
+    public void setScreenTimeout(int screenTimeout) {
+        this.screenTimeout = screenTimeout;
         lockScreen();
         resetScreenTimeout();
     }
 
     public BrightnessMode getScreenBrightnessMode() {
-        return this.l;
+        return this.brightnessMode;
     }
 
     public void setScreenBrightnessMode(BrightnessMode brightnessMode) {
-        this.l = brightnessMode;
+        this.brightnessMode = brightnessMode;
         scheduleScreenBrightnessUpdate();
     }
 
     public float getScreenBrightness() {
-        return this.m;
+        return this.screenBright;
     }
 
-    public void setScreenBrightness(float f) {
-        this.m = f;
+    public void setScreenBrightness(float screenBright) {
+        this.screenBright = screenBright;
         scheduleScreenBrightnessUpdate();
     }
 
@@ -108,33 +108,33 @@ public class BaseActivity extends Activity implements IFeature {
     }
 
     public int getScreenRotation() {
-        return this.i;
+        return this.screenRotation;
     }
 
     public BrightnessMode getKeyboardBrightnessMode() {
-        return this.o;
+        return this.mode;
     }
 
     public void setKeyboardBrightnessMode(BrightnessMode brightnessMode) {
-        this.o = brightnessMode;
+        this.mode = brightnessMode;
         adjustKeyboardBrightness();
     }
 
     public float getKeyboardBrightness() {
-        return this.p;
+        return this.keyboardBright;
     }
 
-    public void setKeyboardBrightness(float f) {
-        this.p = f;
+    public void setKeyboardBrightness(float keyboardBright) {
+        this.keyboardBright = keyboardBright;
         adjustKeyboardBrightness();
     }
 
     public Sensor getAccelerometerSensor() {
-        return getSensorManager().getDefaultSensor(1);
+        return getSensorManager().getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     }
 
     public Sensor getMagneticFieldSensor() {
-        return getSensorManager().getDefaultSensor(2);
+        return getSensorManager().getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
     }
 
     public Sensor getLightSensor() {
@@ -142,27 +142,27 @@ public class BaseActivity extends Activity implements IFeature {
     }
 
     public SensorManager getSensorManager() {
-        if (this.j == null) {
-            this.j = (SensorManager) getSystemService("sensor");
+        if (this.sensorManager == null) {
+            this.sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
         }
-        return this.j;
+        return this.sensorManager;
     }
 
     public ActivatedController getContentController() {
-        return this.k;
+        return this.activatedController;
     }
 
     public void setContentController(ActivatedController activatedControllerVar) {
-        if (this.k != activatedControllerVar) {
-            if (this.k != null) {
-                this.k.setParent(null);
+        if (this.activatedController != activatedControllerVar) {
+            if (this.activatedController != null) {
+                this.activatedController.setParent(null);
             }
-            this.k = activatedControllerVar;
-            if (this.k != null) {
-                setContentView(this.k.getContentView());
-                this.k.setParent(controllerStub());
-                if (this.f) {
-                    this.k.onActivityResumed(this);
+            this.activatedController = activatedControllerVar;
+            if (this.activatedController != null) {
+                setContentView(this.activatedController.getContentView());
+                this.activatedController.setParent(controllerStub());
+                if (this.first) {
+                    this.activatedController.onActivityResumed(this);
                     return;
                 }
                 return;
@@ -174,7 +174,7 @@ public class BaseActivity extends Activity implements IFeature {
     public void addSensorListener(Sensor sensor, SensorEventListener sensorEventListener, int i) {
         if (a || sensor != null) {
             getSensorManager().registerListener(sensorEventListener, sensor, i);
-            this.c.addIfAbsent(new TaskHandler(sensor, sensorEventListener, i));
+            this.taskHandlers.addIfAbsent(new TaskHandler(sensor, sensorEventListener, i));
             return;
         }
         throw new AssertionError();
@@ -182,28 +182,28 @@ public class BaseActivity extends Activity implements IFeature {
 
     public void removeSensorListener(SensorEventListener sensorEventListener) {
         getSensorManager().unregisterListener(sensorEventListener);
-        Iterator it = this.c.iterator();
+        Iterator<TaskHandler> it = this.taskHandlers.iterator();
         while (it.hasNext()) {
-            if (((TaskHandler) it.next()).b == sensorEventListener) {
+            if (it.next() == sensorEventListener) {
                 it.remove();
             }
         }
     }
 
     public void addOnScreenRotationChangedListener(s sVar) {
-        this.d.addIfAbsent(sVar);
+        this.screenChanged.addIfAbsent(sVar);
     }
 
     public void removeOnScreenRotationChangedListener(s sVar) {
-        this.d.remove(sVar);
+        this.screenChanged.remove(sVar);
     }
 
-    public void addOnActivityResultListener(r rVar) {
-        this.e.addIfAbsent(rVar);
+    public void addOnActivityResultListener(onActivityResult rVar) {
+        this.activityResults.addIfAbsent(rVar);
     }
 
-    public void removeOnActivityResultListener(r rVar) {
-        this.e.remove(rVar);
+    public void removeOnActivityResultListener(onActivityResult rVar) {
+        this.activityResults.remove(rVar);
     }
 
     @TargetApi(18)
@@ -230,14 +230,14 @@ public class BaseActivity extends Activity implements IFeature {
     }
 
     public void requestShowMenu() {
-        if (this.k != null) {
-            this.k.requestShowMenu();
+        if (this.activatedController != null) {
+            this.activatedController.requestShowMenu();
         }
     }
 
     public void requestHideMenu() {
-        if (this.k != null) {
-            this.k.requestHideMenu();
+        if (this.activatedController != null) {
+            this.activatedController.requestHideMenu();
         }
     }
 
@@ -253,15 +253,15 @@ public class BaseActivity extends Activity implements IFeature {
         if (cls == null) {
             return null;
         }
-        return this.b.addFirst(cls);
+        return this.featureManage.addFirst(cls);
     }
 
     public boolean registerLocalFeature(FeatureListening featurelistening) {
-        return this.b.addFirst(featurelistening);
+        return this.featureManage.addFirst(featurelistening);
     }
 
     public boolean unregisterLocalFeature(FeatureListening featurelistening) {
-        return this.b.remove(featurelistening);
+        return this.featureManage.remove(featurelistening);
     }
 
     public boolean registerGlobalFeature(FeatureListening featurelistening) {
@@ -298,14 +298,14 @@ public class BaseActivity extends Activity implements IFeature {
 
     protected void onResume() {
         super.onResume();
-        this.f = true;
+        this.first = true;
         lockScreen();
         resetScreenTimeout();
-        if (this.g == null) {
-            this.g = new n(this, this, 3);
+        if (this.eventListener == null) {
+            this.eventListener = new n(this, this, 3);
         }
-        this.g.enable();
-        Iterator it = this.c.iterator();
+        this.eventListener.enable();
+        Iterator it = this.taskHandlers.iterator();
         while (it.hasNext()) {
             TaskHandler taskHandler = (TaskHandler) it.next();
             getSensorManager().registerListener(taskHandler.b, taskHandler.mHandler, taskHandler.c);
@@ -315,19 +315,19 @@ public class BaseActivity extends Activity implements IFeature {
     protected void onPause() {
         unlockScreen();
         closeScreenTimeout();
-        this.g.disable();
-        Iterator it = this.c.iterator();
+        this.eventListener.disable();
+        Iterator it = this.taskHandlers.iterator();
         while (it.hasNext()) {
-            getSensorManager().unregisterListener(((TaskHandler) it.next()).b);
+            getSensorManager().unregisterListener(it.next().b);
         }
-        this.f = false;
+        this.first = false;
         super.onPause();
     }
 
     protected void onDestroy() {
-        this.b.clear();
-        this.c.clear();
-        this.d.clear();
+        this.featureManage.clear();
+        this.taskHandlers.clear();
+        this.screenChanged.clear();
         super.onDestroy();
         setContentController(null);
     }
@@ -352,27 +352,27 @@ public class BaseActivity extends Activity implements IFeature {
     }
 
     public void onBackPressed() {
-        if (!notifyActivityBackPressed() && this.f) {
+        if (!notifyActivityBackPressed() && this.first) {
             super.onBackPressed();
         }
     }
 
     private final void resetScreenTimeout() {
-        if (this.q == null) {
-            this.q = new Handler(Looper.getMainLooper(), new o(this));
+        if (this.handler == null) {
+            this.handler = new Handler(Looper.getMainLooper(), new o(this));
         }
-        this.q.removeCallbacksAndMessages(null);
-        if (this.r == 0) {
+        this.handler.removeCallbacksAndMessages(null);
+        if (this.screenTimeout == 0) {
             unlockScreen();
         }
-        if (this.r != 0 && this.r != Integer.MAX_VALUE) {
-            this.q.sendEmptyMessageDelayed(0, (long) this.r);
+        if (this.screenTimeout != 0 && this.screenTimeout != Integer.MAX_VALUE) {
+            this.handler.sendEmptyMessageDelayed(0, (long) this.screenTimeout);
         }
     }
 
     private final void closeScreenTimeout() {
-        if (this.q != null) {
-            this.q.removeCallbacksAndMessages(null);
+        if (this.handler != null) {
+            this.handler.removeCallbacksAndMessages(null);
         }
     }
 
@@ -385,21 +385,21 @@ public class BaseActivity extends Activity implements IFeature {
     }
 
     private final void scheduleScreenBrightnessUpdate() {
-        if (this.n == null) {
-            this.n = new p(this);
-            t.b(this.n);
+        if (this.runnable == null) {
+            this.runnable = new p(this);
+            t.b(this.runnable);
         }
     }
 
     private final void updateScreenBrightness() {
         LayoutParams attributes = getWindow().getAttributes();
         float f = attributes.screenBrightness;
-        switch (q.a[this.l.ordinal()]) {
+        switch (handler.a[this.brightnessMode.ordinal()]) {
             case 1:
                 f = -1.0f;
                 break;
             case 2:
-                f = Math.max(0.02f, Math.min(this.m, 1.0f));
+                f = Math.max(0.02f, Math.min(this.screenBright, 1.0f));
                 break;
         }
         if (Float.compare(attributes.screenBrightness, f) != 0) {
@@ -411,12 +411,12 @@ public class BaseActivity extends Activity implements IFeature {
     private final void adjustKeyboardBrightness() {
         LayoutParams attributes = getWindow().getAttributes();
         float f = attributes.buttonBrightness;
-        switch (q.a[this.o.ordinal()]) {
+        switch (handler.a[this.mode.ordinal()]) {
             case 1:
                 f = -1.0f;
                 break;
             case 2:
-                f = Math.max(0.0f, Math.min(this.p, 1.0f));
+                f = Math.max(0.0f, Math.min(this.keyboardBright, 1.0f));
                 break;
         }
         if (Float.compare(attributes.buttonBrightness, f) != 0) {
@@ -426,7 +426,7 @@ public class BaseActivity extends Activity implements IFeature {
     }
 
     private final void notifyScreenRotationChanged(int i) {
-        Iterator it = this.d.iterator();
+        Iterator it = this.screenChanged.iterator();
         while (it.hasNext()) {
             ((s) it.next()).a(i);
         }
@@ -438,13 +438,13 @@ public class BaseActivity extends Activity implements IFeature {
         }
     }
 
-    private final void notifyActivityResult(int i, int i2, Intent intent) {
-        Iterator it = this.e.iterator();
+    private final void notifyActivityResult(int requestCode, int resultCode,  Intent intent) {
+        Iterator<onActivityResult> it = this.activityResults.iterator();
         while (it.hasNext()) {
-            ((r) it.next()).onActivityResult(i, i2, intent);
+            it.next().onActivityResult(requestCode, resultCode, intent);
         }
         if (getApplication() instanceof ManagedApp) {
-            ((ManagedApp) getApplication()).onActivityResult(this, i, i2, intent);
+            ((ManagedApp) getApplication()).onActivityResult(this, requestCode, resultCode, intent);
         }
     }
 
@@ -483,10 +483,10 @@ public class BaseActivity extends Activity implements IFeature {
         return (IFeature) getApplication();
     }
 
-    private final i controllerRoot() {
+    private final Controller controllerRoot() {
         Application application = getApplication();
-        if (application instanceof i) {
-            return (i) application;
+        if (application instanceof Controller) {
+            return (Controller) application;
         }
         return null;
     }
