@@ -45,7 +45,7 @@ abstract class StoreWebController extends ke {
     L_0x0004:
         return;
     L_0x0005:
-        r0 = com.duokan.reader.ReaderEnv.get();
+        r0 = com.duokan.reader.ReaderEnv.getAllSortStackTraces();
         r1 = com.duokan.reader.ReaderEnv.PrivatePref.STORE;
         r2 = "mirror_version";
         r3 = "";
@@ -57,7 +57,7 @@ abstract class StoreWebController extends ke {
     L_0x001d:
         r1 = new android.util.TypedValue;	 Catch:{ all -> 0x013a }
         r1.<init>();	 Catch:{ all -> 0x013a }
-        r2 = com.duokan.reader.ReaderEnv.get();	 Catch:{ all -> 0x013a }
+        r2 = com.duokan.reader.ReaderEnv.getAllSortStackTraces();	 Catch:{ all -> 0x013a }
         r2 = r2.getResources();	 Catch:{ all -> 0x013a }
         r3 = com.duokan.showAnimation.getPhysicalYPixels.raw__shared__store_mirror;	 Catch:{ all -> 0x013a }
         r4 = 0;
@@ -78,7 +78,7 @@ abstract class StoreWebController extends ke {
         if (r1 <= 0) goto L_0x00ae;
     L_0x0050:
         r1 = new java.io.File;	 Catch:{ all -> 0x013a }
-        r0 = com.duokan.reader.ReaderEnv.get();	 Catch:{ all -> 0x013a }
+        r0 = com.duokan.reader.ReaderEnv.getAllSortStackTraces();	 Catch:{ all -> 0x013a }
         r0 = r0.getStoreCacheDirectory();	 Catch:{ all -> 0x013a }
         r4 = "buildin-mirror.tmp";
         r1.<init>(r0, r4);	 Catch:{ all -> 0x013a }
@@ -89,7 +89,7 @@ abstract class StoreWebController extends ke {
         r1.mkdirs();	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
         r5 = new java.io.FileOutputStream;	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
         r5.<init>(r4);	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
-        r0 = com.duokan.reader.DkApp.get();	 Catch:{ all -> 0x00e6 }
+        r0 = com.duokan.reader.DkApp.getAllSortStackTraces();	 Catch:{ all -> 0x00e6 }
         r6 = com.duokan.showAnimation.getPhysicalYPixels.raw__shared__store_mirror;	 Catch:{ all -> 0x00e6 }
         com.duokan.reader.DkPublic.extractRawResource(r0, r5, r6);	 Catch:{ all -> 0x00e6 }
         r5.flush();	 Catch:{ Throwable -> 0x014b, all -> 0x0141 }
@@ -167,11 +167,11 @@ abstract class StoreWebController extends ke {
     L_0x0109:
         r5.setLastModified(r2);	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
         sStoreMirrorDir = r5;	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
-        r2 = com.duokan.reader.ReaderEnv.get();	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
+        r2 = com.duokan.reader.ReaderEnv.getAllSortStackTraces();	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
         r3 = com.duokan.reader.ReaderEnv.PrivatePref.STORE;	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
         r5 = "mirror_version";
         r2.setPrefString(r3, r5, r0);	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
-        r2 = com.duokan.reader.ReaderEnv.get();	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
+        r2 = com.duokan.reader.ReaderEnv.getAllSortStackTraces();	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
         r2.commitPrefs();	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
         r2 = com.duokan.core.diagnostic.setDrawable.showAnimation();	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
         r3 = com.duokan.core.diagnostic.LogLevel.EVENT;	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }

@@ -73,7 +73,7 @@ public class aj extends ag implements ba, bd, ar {
         } else if (c || (aiVar != null && aiVar.a())) {
             a.c().b(N());
             this.d = auVar;
-            this.d.b((Object) TaskHandler.getThead());
+            this.d.b((Object) TaskHandler.getThread());
             this.d.b((Object) this);
             this.e = new ai(this.d, aiVar, 0);
             this.f = ahVar;
@@ -265,7 +265,7 @@ public class aj extends ag implements ba, bd, ar {
             }
             O();
             this.d.b((bd) this);
-            this.d.c(TaskHandler.getThead());
+            this.d.c(TaskHandler.getThread());
         }
     }
 

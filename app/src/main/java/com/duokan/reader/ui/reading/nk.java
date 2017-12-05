@@ -31,7 +31,7 @@ import com.duokan.reader.ui.general.DkListView;
 import com.duokan.reader.ui.general.cd;
 import com.duokan.reader.ui.general.ir;
 import com.duokan.reader.ui.general.iu;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 import org.apache.http.HttpStatus;
 
@@ -194,7 +194,7 @@ public class nk extends FrameLayout implements it {
     }
 
     private void c() {
-        int headerPaddingTop = ((s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class)).getTheme().getHeaderPaddingTop();
+        int headerPaddingTop = ((ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class)).getTheme().getHeaderPaddingTop();
         if (headerPaddingTop > 0 && this.d.getVisibility() == 8) {
             setPadding(0, headerPaddingTop, 0, 0);
         }

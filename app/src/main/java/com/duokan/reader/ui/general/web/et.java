@@ -19,7 +19,7 @@ class et implements as {
     }
 
     public void a() {
-        ia iaVar = new ia(this.d.b.b.getContext());
+        ia iaVar = new ia(this.d.b.pageController.getContext());
         if (!TextUtils.isEmpty(this.a)) {
             iaVar.a(this.a);
         }

@@ -1,6 +1,6 @@
 package com.duokan.core.sys;
 
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 
 public class i {
     private final Object a = new Object();
@@ -92,7 +92,7 @@ public class i {
         a.c().b(obj != null);
         if (obj != null) {
             synchronized (this.a) {
-                a c = a.c();
+                WebLog c = a.c();
                 if (this.b != null) {
                     z = false;
                 }

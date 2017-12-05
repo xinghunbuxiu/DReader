@@ -8,9 +8,9 @@ import java.util.List;
 import java.util.concurrent.Callable;
 
 class cs implements Callable {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    cs(cg cgVar) {
+    cs(PageController cgVar) {
         this.a = cgVar;
     }
 

@@ -1,16 +1,15 @@
 package com.duokan.reader.domain.downloadcenter;
 
-import com.duokan.reader.common.c.f;
-import com.duokan.reader.common.c.g;
+import com.duokan.reader.common.classc;
 
-class j implements g {
+class j implements classc.IConnectChanged {
     final /* synthetic */ b a;
 
     j(b bVar) {
         this.a = bVar;
     }
 
-    public void onConnectivityChanged(f fVar) {
-        this.a.a(fVar);
+    public void onConnectivityChanged(classc.ConnectivityReceiver connectivity) {
+        this.a.a(connectivity);
     }
 }

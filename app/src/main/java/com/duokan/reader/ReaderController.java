@@ -31,15 +31,18 @@ import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.b.UrlTools;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.io.FileUtils;
+import com.duokan.core.sys.AIdleOperation;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.s;
+import com.duokan.core.sys.IdleStatus;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.cv;
 import com.duokan.core.ui.j;
 import com.duokan.reader.ReaderEnv.BookShelfType;
 import com.duokan.reader.ReaderEnv.PrivatePref;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.common.webservices.duokan.DkCloudMessageInfo;
 import com.duokan.reader.common.webservices.duokan.DkStoreBookDetailInfo;
@@ -66,6 +69,7 @@ import com.duokan.reader.domain.store.DkStoreBookDetail;
 import com.duokan.reader.domain.store.DkStoreFictionDetail;
 import com.duokan.reader.domain.store.DkStoreItem;
 import com.duokan.reader.domain.store.h;
+import com.duokan.reader.ui.PushHalfPage;
 import com.duokan.reader.ui.a;
 import com.duokan.reader.ui.account.ShareEntranceController;
 import com.duokan.reader.ui.account.ap;
@@ -83,7 +87,7 @@ import com.duokan.reader.ui.general.jq;
 import com.duokan.reader.ui.general.web.StorePageController;
 import com.duokan.reader.ui.general.web.kk;
 import com.duokan.reader.ui.p;
-import com.duokan.reader.ui.r;
+import com.duokan.reader.ui.IWindowRecord;
 import com.duokan.reader.ui.reading.qh;
 import com.duokan.reader.ui.reading.sh;
 import com.duokan.reader.ui.store.al;
@@ -122,7 +126,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     private final boolean q;
     private p r;
     private qh s;
-    private final r t;
+    private final IWindowRecord t;
 
     interface Switcher {
         void doSwitch(Runnable runnable);
@@ -301,7 +305,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 this.a.s.a(null);
                 if (this.c != null) {
                     this.a.s.o().a(this.c);
-                    com.duokan.core.sys.j.a(new s(this) {
+                    AIdleOperation.addIdleStatus(new IdleStatus(this) {
                         final /* synthetic */ ReadingSwitcher b;
 
                         public boolean idleRun() {
@@ -370,7 +374,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
         this.o = 0;
         this.r = null;
         this.s = null;
-        this.t = new r(this) {
+        this.t = new IWindowRecord(this) {
             final /* synthetic */ ReaderController a;
 
             {
@@ -447,7 +451,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
         }
     }
 
-    public r getTheme() {
+    public IWindowRecord getTheme() {
         return this.t;
     }
 
@@ -515,7 +519,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
 
     public boolean navigate(String str, Object obj, final boolean z, final Runnable runnable) {
         final String toLowerCase = str.toLowerCase(Locale.US);
-        com.duokan.core.diagnostic.a c = com.duokan.core.diagnostic.a.c();
+        WebLog c = WebLog.c();
         LogLevel logLevel = LogLevel.EVENT;
         String str2 = "nav";
         String str3 = "navigate to %s(params: %s)";
@@ -531,7 +535,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 final /* synthetic */ ReaderController d;
 
                 public void run() {
-                    com.duokan.reader.ui.t tVar = (com.duokan.reader.ui.t) this.d.getContext().queryFeature(com.duokan.reader.ui.t.class);
+                    PushHalfPage tVar = (PushHalfPage) this.d.getContext().queryFeature(PushHalfPage.class);
                     ActivatedController storePageController = new StorePageController(this.d.getContext());
                     storePageController.loadUrl(toLowerCase);
                     if (z) {
@@ -881,7 +885,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
             private boolean g = false;
 
             protected void onSessionOpen() {
-                this.d = com.duokan.reader.common.c.f.b().d();
+                this.d = classc.f.b().d();
                 this.c = new jq(this.b.getContext());
                 this.c.open(new com.duokan.core.app.d(this) {
                     final /* synthetic */ AnonymousClass10 a;
@@ -1013,7 +1017,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 ((ReaderFeature) this.b.getContext().queryFeature(ReaderFeature.class)).prompt(this.b.getString(com.duokan.c.j.general__shared__network_error));
             }
         };
-        if (com.duokan.reader.common.c.f.b().e()) {
+        if (classc.f.b().e()) {
             anonymousClass10.open();
         } else {
             be.a(getContext(), getString(com.duokan.c.j.general__shared__network_error), 0).show();
@@ -1204,11 +1208,11 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     }
 
     private void setupFirstScene() {
-        com.duokan.core.diagnostic.a.c().b(this.r != null);
+        WebLog.c().b(this.r != null);
         this.c.addView(this.r.getContentView(), 0);
         addSubController(this.r);
         if ((this.r instanceof com.duokan.reader.ui.surfing.f) && ReaderEnv.get().isFreshInstall() && PersonalPrefs.a().g() == -1) {
-            com.duokan.core.diagnostic.a.c().a("welcome_timer");
+            WebLog.c().a("welcome_timer");
             this.p = new com.duokan.reader.ui.surfing.a(getContext(), new Runnable(this) {
                 final /* synthetic */ ReaderController a;
 
@@ -1217,7 +1221,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 }
 
                 public void run() {
-                    com.duokan.reader.domain.statistics.a.k().a(com.duokan.core.diagnostic.a.c().a("welcome_timer"));
+                    com.duokan.reader.domain.statistics.a.k().a(WebLog.c().a("welcome_timer"));
                     this.a.p = null;
                     this.a.activate(this.a.r);
                     if (this.a.r instanceof com.duokan.reader.ui.surfing.f) {
@@ -1270,7 +1274,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                     }
                 }
             };
-            com.duokan.core.sys.j.a(new s(this) {
+            AIdleOperation.addIdleStatus(new IdleStatus(this) {
                 final /* synthetic */ ReaderController a;
 
                 {
@@ -1316,7 +1320,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     }
 
     private final void handleIntent(Intent intent) {
-        com.duokan.core.diagnostic.a.c().b(DkApp.get().isReady());
+        WebLog.c().b(DkApp.get().isReady());
         CharSequence action = intent.getAction();
         final Uri data = intent.getData();
         c a;
@@ -1329,19 +1333,19 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 } else {
                     str = "duokan-reader://bookshelf";
                 }
-                com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, uri: %s)", action, str);
+                WebLog.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, uri: %s)", action, str);
                 navigate(str, null, false, null);
             } else if (TextUtils.equals(action, "com.duokan.reader.actions.SHOW_RUNNING_DOWNLOAD_TASKS")) {
-                com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s)", action);
+                WebLog.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s)", action);
             } else if (TextUtils.equals(action, "com.duokan.reader.actions.SHOW_PROMPT")) {
                 String stringExtra = intent.getStringExtra("push_message_target");
                 if (TextUtils.isEmpty(stringExtra)) {
-                    com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, msgId: null)", action);
+                    WebLog.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, msgId: null)", action);
                     navigate("duokan-reader://personal/message/notification", null, false, null);
                     return;
                 }
                 DkCloudPushMessage dkCloudPushMessage;
-                com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, msgId: %s)", action, stringExtra);
+                WebLog.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, msgId: %s)", action, stringExtra);
                 Object stringExtra2 = intent.getStringExtra("push_server_message_id");
                 Object stringExtra3 = intent.getStringExtra("raw_push_message");
                 if (TextUtils.isEmpty(stringExtra2) || TextUtils.isEmpty(stringExtra3)) {
@@ -1357,7 +1361,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                     dkCloudPushMessage = com.duokan.reader.domain.cloud.push.b.a().a(stringExtra);
                 }
                 if (dkCloudPushMessage == null) {
-                    com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "push", "push message not found, msgId: %s", stringExtra);
+                    WebLog.c().print(LogLevel.ERROR, "push", "push message not found, msgId: %s", stringExtra);
                     navigate("duokan-reader://personal/message/notification", null, false, null);
                 } else if ((dkCloudPushMessage.getEndTime() == 0 || dkCloudPushMessage.getEndTime() > System.currentTimeMillis()) && !TextUtils.isEmpty(dkCloudPushMessage.getActionParamString())) {
                     com.duokan.reader.domain.cloud.push.b.a().b(dkCloudPushMessage.getCloudId());
@@ -1370,7 +1374,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                     navigate("duokan-reader://personal/message/notification", null, false, null);
                 }
             } else if (TextUtils.equals(action, "com.duokan.reader.actions.OPEN_REPLY_MESSAGES")) {
-                com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s)", action);
+                WebLog.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s)", action);
                 navigate("duokan-reader://personal/message/feed", null, false, null);
             } else if (TextUtils.equals(action, "com.duokan.reader.actions.SHOW_STORE")) {
                 int i;
@@ -1383,7 +1387,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                         i = 1;
                     }
                 }
-                com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, store: %getScaledTouchSlop)", action, Integer.valueOf(i));
+                WebLog.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, store: %getScaledTouchSlop)", action, Integer.valueOf(i));
                 switch (i) {
                     case 1:
                         navigate("duokan-reader://store", null, false, null);
@@ -1393,13 +1397,13 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                         return;
                 }
             } else if (TextUtils.equals(action, "com.duokan.reader.actions.SHOW_FEEDBACK")) {
-                com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s)", action);
+                WebLog.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s)", action);
                 navigate("duokan-reader://personal/feedback", null, false, null);
             } else if ((TextUtils.equals(action, "android.intent.action.VIEW") || TextUtils.isEmpty(action)) && data != null) {
                 String path = data.getPath();
                 String scheme = data.getScheme();
                 Map parseUri = DkRouter.parseUri(data);
-                com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, uri: %s)", action, data);
+                WebLog.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, uri: %s)", action, data);
                 if (!TextUtils.isEmpty((CharSequence) parseUri.get(ClientCookie.PATH_ATTR))) {
                     if (TextUtils.equals((CharSequence) parseUri.get("miback"), "true")) {
                         this.r.a(1);
@@ -1544,7 +1548,7 @@ Error: java.util.NoSuchElementException
                 }
             }
         } else if (ReaderEnv.get().getKeepReading() && !TextUtils.isEmpty(ReaderEnv.get().getReadingBookUuid())) {
-            com.duokan.core.diagnostic.a.c().c(LogLevel.EVENT, "nav", "keep reading");
+            WebLog.c().c(LogLevel.EVENT, "nav", "keep reading");
             a = ai.a().b(ReaderEnv.get().getReadingBookUuid());
             if (a != null) {
                 openBook(a);
@@ -1625,7 +1629,7 @@ Error: java.util.NoSuchElementException
     }
 
     private final void pendSwitch(final Switcher switcher, final Runnable runnable) {
-        com.duokan.core.diagnostic.a.c().b(switcher != null);
+        WebLog.c().b(switcher != null);
         Runnable anonymousClass23 = new Runnable(this) {
             final /* synthetic */ ReaderController c;
 

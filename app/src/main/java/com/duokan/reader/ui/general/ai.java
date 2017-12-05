@@ -2,10 +2,10 @@ package com.duokan.reader.ui.general;
 
 import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.ui.r;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.IWindowRecord;
+import com.duokan.reader.ui.ITheme;
 
-class ai implements r {
+class ai implements IWindowRecord {
     final /* synthetic */ ah a;
 
     ai(ah ahVar) {
@@ -13,7 +13,7 @@ class ai implements r {
     }
 
     public int getPageHeaderHeight() {
-        s sVar = (s) MyContextWrapper.getFeature(this.a.a).queryFeature(s.class);
+        ITheme sVar = (ITheme) MyContextWrapper.getFeature(this.a.a).queryFeature(ITheme.class);
         if (sVar == null) {
             return 0;
         }
@@ -21,7 +21,7 @@ class ai implements r {
     }
 
     public int getPageHeaderPaddingTop() {
-        s sVar = (s) MyContextWrapper.getFeature(this.a.a).queryFeature(s.class);
+        ITheme sVar = (ITheme) MyContextWrapper.getFeature(this.a.a).queryFeature(ITheme.class);
         if (sVar == null) {
             return 0;
         }
@@ -32,7 +32,7 @@ class ai implements r {
         if (ReaderEnv.get().forHd()) {
             return 0;
         }
-        s sVar = (s) MyContextWrapper.getFeature(this.a.a).queryFeature(s.class);
+        ITheme sVar = (ITheme) MyContextWrapper.getFeature(this.a.a).queryFeature(ITheme.class);
         if (sVar == null) {
             return 0;
         }
@@ -40,7 +40,7 @@ class ai implements r {
     }
 
     public int getPagePaddingBottom() {
-        s sVar = (s) MyContextWrapper.getFeature(this.a.a).queryFeature(s.class);
+        ITheme sVar = (ITheme) MyContextWrapper.getFeature(this.a.a).queryFeature(ITheme.class);
         if (sVar == null) {
             return 0;
         }

@@ -15,7 +15,7 @@ import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.ui.bookshelf.gx;
 import com.duokan.reader.ui.bookshelf.hb;
-import com.duokan.reader.ui.r;
+import com.duokan.reader.ui.IWindowRecord;
 import com.duokan.reader.ui.reading.sh;
 
 public class DkReaderController extends ReaderController {
@@ -83,7 +83,7 @@ public class DkReaderController extends ReaderController {
         return super.getScreenTimeout();
     }
 
-    public  r getTheme() {
+    public IWindowRecord getTheme() {
         return super.getTheme();
     }
 

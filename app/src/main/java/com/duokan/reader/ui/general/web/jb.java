@@ -20,10 +20,10 @@ class jb implements Runnable {
     public void run() {
         this.a.dismiss();
         if (this.b) {
-            this.d.b.b.web_notifyWeb(this.c, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
+            this.d.b.pageController.web_notifyWeb(this.c, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
             ReaderEnv.get().setAdvancedActionTime(System.currentTimeMillis());
             return;
         }
-        this.d.b.b.web_notifyWeb(this.c, 2, new Object[0]);
+        this.d.b.pageController.web_notifyWeb(this.c, 2, new Object[0]);
     }
 }

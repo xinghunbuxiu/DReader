@@ -4,14 +4,14 @@ import com.duokan.core.sys.as;
 
 class fn implements as {
     final /* synthetic */ boolean a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    fn(cg cgVar, boolean z) {
+    fn(PageController cgVar, boolean z) {
         this.b = cgVar;
         this.a = z;
     }
 
     public void a() {
-        this.b.b.mWebView.setPullDownRefreshEnabled(this.a);
+        this.b.pageController.mWebView.setPullDownRefreshEnabled(this.a);
     }
 }

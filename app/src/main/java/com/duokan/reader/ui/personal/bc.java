@@ -11,7 +11,7 @@ import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.LinearScrollView;
 import com.duokan.reader.ui.general.PageHeaderView;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 public class bc extends ActivatedController {
     a a = null;
@@ -20,7 +20,7 @@ public class bc extends ActivatedController {
         super(featrue);
         setContentView(h.personal__diagnostics_view);
         ((PageHeaderView) findViewById(g.personal__diagnostics_view__header)).setLeftTitle(j.personal__personal_settings_view__diagnostics);
-        s sVar = (s) getContext().queryFeature(s.class);
+        ITheme sVar = (ITheme) getContext().queryFeature(ITheme.class);
         int pagePaddingBottom = sVar != null ? sVar.getTheme().getPagePaddingBottom() : 0;
         LayoutParams layoutParams = findViewById(g.personal__diagnostics_view__placeholder).getLayoutParams();
         if (layoutParams == null) {

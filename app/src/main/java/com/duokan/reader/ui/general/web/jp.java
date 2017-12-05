@@ -16,13 +16,13 @@ class jp implements p {
 
     public void a(String str) {
         try {
-            this.b.b.b.web_notifyWeb(this.a, 0, new JSONObject(str));
+            this.b.b.pageController.web_notifyWeb(this.a, 0, new JSONObject(str));
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
 
     public void a() {
-        this.b.b.b.web_notifyWeb(this.a, 2, new Object[0]);
+        this.b.b.pageController.web_notifyWeb(this.a, 2, new Object[0]);
     }
 }

@@ -14,15 +14,14 @@ import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.fr;
 import com.duokan.core.ui.j;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.common.c.f;
-import com.duokan.reader.common.c.g;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.ui.general.be;
 import com.duokan.reader.ui.general.hd;
 
 import java.util.concurrent.ConcurrentHashMap;
 
-public abstract class ke extends hd implements g, kd {
+public abstract class ke extends hd implements classc.IConnectChanged, kd {
     protected static final String BLANK_SCREEN_URL = "about:blank";
     protected static final String CALL_BACK_JS_FORMAT = "javascript:(function() { try { %s } catch(getScaledPagingTouchSlop) { fictionApi.log(getScaledPagingTouchSlop.message); } }())";
     protected static final ConcurrentHashMap sParcelMap = new ConcurrentHashMap();
@@ -58,15 +57,15 @@ public abstract class ke extends hd implements g, kd {
 
     protected void onActive(boolean z) {
         super.onActive(z);
-        f.b().a((g) this);
+        classc.ConnectivityReceiver.b().a((classc.IConnectChanged) this);
     }
 
     protected void onDeactive() {
-        f.b().b(this);
+        classc.ConnectivityReceiver.b().b(this);
         super.onDeactive();
     }
 
-    public void onConnectivityChanged(f fVar) {
+    public void onConnectivityChanged(classc.ConnectivityReceiver connectivity) {
     }
 
     public void refresh() {

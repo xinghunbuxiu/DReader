@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.net.Uri;
 
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.kernel.DkFlowPosition;
 import com.duokan.kernel.DkUtils;
 import com.duokan.kernel.pdflib.DkpBook;
@@ -90,8 +90,8 @@ public class d extends n implements at {
         }
     }
 
-    public static a a(long j, long j2, long j3) {
-        return new a(j, j2, j3);
+    public static WebLog a(long j, long j2, long j3) {
+        return new WebLog(j, j2, j3);
     }
 
     public void a(n nVar, as asVar) {
@@ -232,7 +232,7 @@ public class d extends n implements at {
         if (!d((Document_a) akVar) || !akVar.e()) {
             return -1;
         }
-        a aVar = (a) akVar.g();
+        WebLog aVar = (WebLog) akVar.g();
         return F.a(aVar.g(), aVar.h(), aVar.i());
     }
 
@@ -242,7 +242,7 @@ public class d extends n implements at {
             return -1;
         }
         ah F = F();
-        a aVar = (a) avVar;
+        WebLog aVar = (WebLog) avVar;
         if (F.g().c()) {
             return p.a(this.k.h(), aVar) - 1;
         }
@@ -262,7 +262,7 @@ public class d extends n implements at {
         if (!p()) {
             return -1;
         }
-        return p.a(this.k.h(), (a) avVar) - 1;
+        return p.a(this.k.h(), (WebLog) avVar) - 1;
     }
 
     public int b(int i) {
@@ -281,7 +281,7 @@ public class d extends n implements at {
         return -1;
     }
 
-    public a C() {
+    public WebLog C() {
         a.c().b(A());
         return a(0, 0, 0);
     }
@@ -303,7 +303,7 @@ public class d extends n implements at {
 
     public bb a(com.duokan.reader.domain.document.d dVar, com.duokan.reader.domain.document.d dVar2) {
         a.c().b(A());
-        return new ag((a) dVar, (a) dVar2);
+        return new ag((WebLog) dVar, (WebLog) dVar2);
     }
 
     public bb s() {
@@ -323,7 +323,7 @@ public class d extends n implements at {
     public ak c(av avVar) {
         a.c().b(A());
         ah F = F();
-        a aVar = (a) avVar;
+        WebLog aVar = (WebLog) avVar;
         if (i || aVar != null) {
             return new v(F, aVar.g(), aVar.h(), aVar.i(), true, 0);
         }
@@ -429,7 +429,7 @@ public class d extends n implements at {
         if (!p()) {
             return new aa(str);
         }
-        a a;
+        WebLog a;
         if (avVar == null) {
             a = a(0, 0, 0);
         } else {
@@ -465,7 +465,7 @@ public class d extends n implements at {
         this.m.release();
     }
 
-    private k a(a aVar, String str, int i) {
+    private k a(WebLog aVar, String str, int i) {
         if (i || aVar != null) {
             Object kVar = new k(this, str, aVar, i);
             this.u.execute(kVar);
@@ -1019,7 +1019,7 @@ public class d extends n implements at {
                 long j5 = aiVar.a.f;
                 long j6;
                 if (aiVar.a.a != null && aiVar.a.a.b()) {
-                    a j7 = aiVar.a.a.j();
+                    WebLog j7 = aiVar.a.a.j();
                     j2 = j7.g();
                     j3 = j7.h();
                     j4 = j7.i();

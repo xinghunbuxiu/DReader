@@ -9,7 +9,7 @@ import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ui.bookshelf.ho;
 import com.duokan.reader.ui.general.ap;
 import com.duokan.reader.ui.general.dk;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 class ct extends nm {
     final /* synthetic */ cr a;
@@ -21,7 +21,7 @@ class ct extends nm {
         this.c.setVisibility(8);
         this.e.setRowDivider(new InsetDrawable(new dk(getResources().getColor(d.general__shared__e9e9e9)), UTools.closeAnimation(getContext(), 3.0f), 0, 0, 0));
         setBackgroundColor(getContext().getResources().getColor(d.general__shared__ff6518));
-        s sVar = (s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class);
+        ITheme sVar = (ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class);
         int b;
         if (ReaderEnv.get().forHd()) {
             b = UTools.closeAnimation(getContext(), 15.0f);

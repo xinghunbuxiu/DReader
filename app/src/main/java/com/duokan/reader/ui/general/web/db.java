@@ -7,9 +7,9 @@ import java.util.Iterator;
 class db implements as {
     final /* synthetic */ String a;
     final /* synthetic */ String b;
-    final /* synthetic */ cg c;
+    final /* synthetic */ PageController c;
 
-    db(cg cgVar, String str, String str2) {
+    db(PageController cgVar, String str, String str2) {
         this.c = cgVar;
         this.a = str;
         this.b = str2;

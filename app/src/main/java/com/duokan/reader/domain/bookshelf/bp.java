@@ -3,7 +3,7 @@ package com.duokan.reader.domain.bookshelf;
 import android.text.TextUtils;
 
 import com.duokan.core.sys.TaskHandler;
-import com.duokan.core.sys.j;
+import com.duokan.core.sys.AIdleOperation;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.webservices.duokan.v;
 import com.duokan.reader.domain.account.ab;
@@ -137,7 +137,7 @@ class bp extends ap {
                     this.b.g.c();
                     this.b.k.b();
                     this.b.x();
-                    j.a(200);
+                    AIdleOperation.sleep(200);
                     Semaphore semaphore = new Semaphore(0);
                     TaskHandler.postTask(new bq(this, semaphore), 2000);
                     semaphore.acquireUninterruptibly();

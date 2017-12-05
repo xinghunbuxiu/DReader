@@ -14,6 +14,6 @@ class cq implements as {
     }
 
     public void a() {
-        this.c.b.b.js_button(this.a, this.b);
+        this.c.b.pageController.js_button(this.a, this.b);
     }
 }

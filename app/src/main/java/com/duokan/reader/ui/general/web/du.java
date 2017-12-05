@@ -6,9 +6,9 @@ import org.json.JSONObject;
 
 class du implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    du(cg cgVar, String str) {
+    du(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

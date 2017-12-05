@@ -1,9 +1,9 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.s;
+import com.duokan.core.sys.IdleStatus;
 import com.duokan.core.ui.Scrollable.ScrollState;
 
-class sf implements s {
+class sf implements IdleStatus {
     final /* synthetic */ boolean a;
     final /* synthetic */ rx b;
 

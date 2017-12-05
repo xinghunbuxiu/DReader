@@ -3,6 +3,7 @@ package com.duokan.reader.common.webservices.duokan;
 import android.net.Uri;
 import android.text.TextUtils;
 
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.i;
 import com.duokan.reader.common.webservices.WebSession;
@@ -630,7 +631,7 @@ public class v extends ad {
                     dkStoreBookListInfo.mImage = jSONObject.getString("image");
                     return dkStoreBookListInfo;
                 } else {
-                    com.duokan.core.diagnostic.a.c().b(false);
+                    WebLog.c().b(false);
                     return null;
                 }
             }

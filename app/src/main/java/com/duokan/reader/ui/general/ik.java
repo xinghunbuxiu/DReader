@@ -15,7 +15,7 @@ import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 public class ik extends LinearLayout {
     protected final FrameLayout a;
@@ -32,7 +32,7 @@ public class ik extends LinearLayout {
         setBackgroundColor(getResources().getColor(c.general__shared__ffffff));
         this.d = LayoutInflater.from(getContext()).inflate(g.surfing__surfing_base_view, this, false);
         this.d.setBackgroundDrawable(new il(this));
-        this.d.setPadding(0, ((s) MyContextWrapper.getFeature(getContext()).queryFeature(ReaderFeature.class)).getTheme().getPageHeaderPaddingTop(), 0, 0);
+        this.d.setPadding(0, ((ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ReaderFeature.class)).getTheme().getPageHeaderPaddingTop(), 0, 0);
         this.e = (ViewGroup) this.d.findViewById(f.surfing__surfing_base_view__tabs);
         this.a = (FrameLayout) this.d.findViewById(f.surfing__surfing_base_view__left);
         this.b = (FrameLayout) this.d.findViewById(f.surfing__surfing_base_view__right);

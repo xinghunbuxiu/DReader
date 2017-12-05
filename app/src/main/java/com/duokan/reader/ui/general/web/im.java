@@ -16,7 +16,7 @@ class im implements Callable {
     }
 
     public jq a() {
-        jq jqVar = new jq(this.a.b.b.getContext());
+        jq jqVar = new jq(this.a.b.pageController.getContext());
         jqVar.show();
         return jqVar;
     }

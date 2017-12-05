@@ -35,10 +35,10 @@ class ht implements as {
     }
 
     public void a() {
-        if (this.m.b.b.mShareController != null) {
-            this.m.b.b.deactivate(this.m.b.b.mShareController);
-            this.m.b.b.removeSubController(this.m.b.b.mShareController);
+        if (this.m.b.pageController.mShareController != null) {
+            this.m.b.pageController.deactivate(this.m.b.pageController.mShareController);
+            this.m.b.pageController.removeSubController(this.m.b.pageController.mShareController);
         }
-        new ap(this.m.b.b.getContext(), false, new hv(this, new hu(this))).show();
+        new ap(this.m.b.pageController.getContext(), false, new hv(this, new hu(this))).show();
     }
 }

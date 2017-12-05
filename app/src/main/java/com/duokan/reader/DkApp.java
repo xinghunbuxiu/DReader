@@ -15,10 +15,11 @@ import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.diagnostic.HttpLogger;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.io.FileUtils;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ah;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.domain.cloud.PersonalPrefs;
@@ -71,9 +72,9 @@ public abstract class DkApp extends ManagedApp {
     public abstract boolean supportWxPay();
 
     public DkApp() {
-        a.c().a(getLogFile("debug"));
-        a.c().c(true);
-        a.c().a("app_load_timer");
+        WebLog.c().setFile(getLogFile("debug"));
+        WebLog.c().c(true);
+        WebLog.c().a("app_load_timer");
     }
 
     public File getDiagnosticDirectory() {
@@ -236,7 +237,7 @@ public abstract class DkApp extends ManagedApp {
                 }
 
                 public void run() {
-                    com.duokan.reader.common.c.a.b().a(true);
+                    classc.a.b().a(true);
                     UmengManager.get().setEnabled(true);
                 }
             });
@@ -301,14 +302,14 @@ public abstract class DkApp extends ManagedApp {
         } catch (IOException e) {
         }
         ReaderEnv.startup(this);
-        a.c().c(LogLevel.INFO, "app", "duokan version code: " + ReaderEnv.get().getVersionCode());
+        WebLog.c().c(LogLevel.INFO, "app", "duokan version code: " + ReaderEnv.get().getVersionCode());
         f.a((Context) this);
-        com.duokan.reader.common.c.a.a((Context) this);
-        com.duokan.reader.common.c.a.b().a(isWebAccessEnabled());
+        classc.a.a((Context) this);
+        classc.a.b().a(isWebAccessEnabled());
         p.a(ReaderEnv.get(), f.b());
         if (isDebuggable() || (forCommunity() && p.i().l())) {
             HttpLogger fVar = new HttpLogger();
-            fVar.a(getLogFile(HttpHost.DEFAULT_SCHEME_NAME));
+            fVar.setFile(getLogFile(HttpHost.DEFAULT_SCHEME_NAME));
             WebSession.setLogger(fVar);
         }
         UmengManager.startup(this, isWebAccessEnabled(), isDebuggable());
@@ -329,7 +330,7 @@ public abstract class DkApp extends ManagedApp {
         super.onActivityCreated(activity, bundle);
         if (!this.k) {
             this.k = true;
-            a.c().a("app_bginit_timer");
+            WebLog.c().a("app_bginit_timer");
             ah.b(new Runnable(this) {
                 final /* synthetic */ DkApp a;
 
@@ -385,13 +386,13 @@ public abstract class DkApp extends ManagedApp {
             }
             edit.putLong("user_last_active_time", currentTimeMillis);
             edit.apply();
-            a.c().d(true);
+            WebLog.c().d(true);
             return;
         }
         if (runningState == RunningState.FOREGROUND) {
             com.duokan.reader.domain.statistics.a.k().c();
         }
-        a.c().d(false);
+        WebLog.c().d(false);
     }
 
     public void registerFirstActive() {

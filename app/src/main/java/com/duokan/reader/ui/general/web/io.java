@@ -22,7 +22,7 @@ class io implements h {
     }
 
     public void onFetchBookDetailError(String str) {
-        this.a.d.b.b.doShowToast(str);
+        this.a.d.b.pageController.doShowToast(str);
         synchronized (this.a.c) {
             this.a.c.notify();
         }

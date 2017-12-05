@@ -10,7 +10,6 @@ import android.view.View;
 import android.webkit.CookieManager;
 import android.widget.TextView;
 
-import com.duokan.c.g;
 import com.duokan.common.tools;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IActivityRunStatusChanged;
@@ -18,6 +17,7 @@ import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.TansFormUtils;
 import com.duokan.core.b.UrlTools;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.z;
@@ -30,12 +30,13 @@ import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.SystemUiConditioner;
 import com.duokan.reader.UmengManager;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.duokan.DkSignInInfo;
 import com.duokan.reader.common.webservices.duokan.DkSignInReward;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.domain.account.h;
 import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.ad.a;
+import com.duokan.reader.domain.ad.AdLifecycleManager;
 import com.duokan.reader.domain.ad.r;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.domain.bookshelf.c;
@@ -51,6 +52,7 @@ import com.duokan.reader.domain.store.DkStoreBookDetail;
 import com.duokan.reader.domain.store.DkStoreFiction;
 import com.duokan.reader.domain.store.DkStoreFictionDetail;
 import com.duokan.reader.domain.store.DkStoreItem;
+import com.duokan.reader.ui.ITheme;
 import com.duokan.reader.ui.account.ay;
 import com.duokan.reader.ui.general.LoadingCircleView;
 import com.duokan.reader.ui.general.LoadingCircleView.LoadingStyle;
@@ -62,7 +64,6 @@ import com.duokan.reader.ui.general.cj;
 import com.duokan.reader.ui.general.ia;
 import com.duokan.reader.ui.general.jf;
 import com.duokan.reader.ui.general.jq;
-import com.duokan.reader.ui.s;
 import com.duokan.reader.ui.store.ao;
 import com.duokan.reader.ui.store.comment.f;
 import com.duokan.reader.ui.store.o;
@@ -91,7 +92,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     private static boolean sCookieSet = false;
     private static StorePageController sPreloadedController = null;
     private static IActivityRunStatusChanged sRunningStateListener = null;
-    private a mAdLifecycleManager;
+    private AdLifecycleManager mAdLifecycleManager;
     private r mAdSdkService;
     private cf mBannerInfo;
     protected DkStoreBookDetail mBookCache;
@@ -138,17 +139,17 @@ public class StorePageController extends StoreWebController implements SystemUiC
         OVER_SURFING_BAR
     }
 
-    public /* bridge */ /* synthetic */ void refresh() {
+    public void refresh() {
         super.refresh();
     }
 
-    public /* bridge */ /* synthetic */ void updateStoreMirror(boolean z) {
+    public void updateStoreMirror(boolean z) {
         super.updateStoreMirror(z);
     }
 
     public static StorePageController createWebPage(IFeature featrue) {
         StorePageController storePageController;
-        com.duokan.core.diagnostic.a.c().a();
+        WebLog.c().WebLog();
         StorePageController storePageController2 = sPreloadedController;
         if (storePageController2 == null || storePageController2.getActivity() != TansFormUtils.getContext((Context) featrue)) {
             storePageController = new StorePageController(featrue);
@@ -193,28 +194,28 @@ public class StorePageController extends StoreWebController implements SystemUiC
         this.mEditFeedController = null;
         this.mShareController = null;
         this.mPageHeight = 0;
-        this.mAdLifecycleManager = new a();
+        this.mAdLifecycleManager = new AdLifecycleManager();
         this.mAdSdkService = null;
         this.mEditCommentDialog = null;
         this.mScreenOrientation = getContext().getResources().getConfiguration().orientation;
-        this.mWebRootView = findViewById(g.general__web_core_view__root);
+        this.mWebRootView = findViewById(R.id.general__web_core_view__root);
         setCookie();
-        this.mPageLoadingView = findViewById(g.general__web_core_view__first_load);
+        this.mPageLoadingView = findViewById(R.id.general__web_core_view__first_load);
         this.mPageLoadingDlg = initWaitingDialog();
-        this.mErrorView = findViewById(g.general__web_core_view__error);
-        ((TextView) this.mErrorView.findViewById(g.general__emtpy_view__line_1)).setText(com.duokan.c.j.general__shared__web_error);
+        this.mErrorView = findViewById(R.id.general__web_core_view__error);
+        ((TextView) this.mErrorView.findViewById(R.id.general__emtpy_view__line_1)).setText(com.duokan.c.j.general__shared__web_error);
         TextView textView = (TextView) this.mErrorView.findViewById(g.general__emtpy_view__line_3);
-        textView.setText(com.duokan.c.j.general__shared__web_refresh);
-        textView.setVisibility(0);
+        textView.setText(R.String.general__shared__web_refresh);
+        textView.setVisibility(View.VISIBLE);
         textView.setOnClickListener(new bg(this));
         getContext().addFirstLocalFeature(this.mDetailFeature);
         this.mHeaderViewRightButtonConditionMap = new HashMap();
-        js_addHeaderViewRightButtonCondition("PUBLISH_FEED", new kj(this, com.duokan.c.f.store__header_view_button__edit, null));
-        js_addHeaderViewRightButtonCondition("CART_ADD", new kj(this, com.duokan.c.f.store__header_view_button__cart_add, null));
-        js_addHeaderViewRightButtonCondition("CART_REMOVE", new kj(this, com.duokan.c.f.store__header_view_button__cart_remove, null));
-        js_addHeaderViewRightButtonCondition("SEARCH", new kj(this, com.duokan.c.f.surfing__surfing_tab_view__search, new bv(this)));
-        this.mPageHeaderView = (PageHeaderView) findViewById(g.general__web_view__header);
-        this.mInputBoxView = (BoxView) findViewById(g.general__web_view__input_box);
+        js_addHeaderViewRightButtonCondition("PUBLISH_FEED", new kj(this, R.drawable.store__header_view_button__edit, null));
+        js_addHeaderViewRightButtonCondition("CART_ADD", new kj(this, R.drawable.store__header_view_button__cart_add, null));
+        js_addHeaderViewRightButtonCondition("CART_REMOVE", new kj(this, R.drawable.store__header_view_button__cart_remove, null));
+        js_addHeaderViewRightButtonCondition("SEARCH", new kj(this, R.drawable.surfing__surfing_tab_view__search, new bv(this)));
+        this.mPageHeaderView = (PageHeaderView) findViewById(R.id.general__web_view__header);
+        this.mInputBoxView = (BoxView) findViewById(R.id.general__web_view__input_box);
         if (this.mPageHeaderView != null) {
             this.mPageHeaderView.setClickable(true);
         }
@@ -322,7 +323,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     public void onStoreMirrorUpdated() {
-        com.duokan.core.diagnostic.a.c().a();
+        WebLog.c().WebLog();
         if (sPreloadedController != null) {
             sPreloadedController.mWebView.f();
             sPreloadedController = null;
@@ -359,7 +360,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
                 TaskHandler.postTask(byVar);
             }
             if (!webPageLoading()) {
-                if (com.duokan.reader.common.c.f.b().e()) {
+                if (classc.f.b().e()) {
                     updateStoreMirror(false);
                 }
                 if (sPreloadedController == null) {
@@ -371,7 +372,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
                         sAccountListener = new cc(this);
                         i.f().add(sAccountListener);
                     }
-                    TaskHandler.postTask(new cd(this));
+                    TaskHandler.requstIdleStatusListening(new cd(this));
                 }
             }
         }
@@ -613,10 +614,10 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     protected void downloadChapter(fv fvVar, String str, DkStoreBookDetail dkStoreBookDetail) {
-        if (!com.duokan.reader.common.c.f.b().e()) {
+        if (!classc.f.b().e()) {
             be.a(getContext(), getContext().getString(com.duokan.c.j.general__shared__network_error), 1).show();
             web_notifyWeb(str, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, r0);
-        } else if (com.duokan.reader.common.c.f.b().d()) {
+        } else if (classc.f.b().d()) {
             fvVar.a(true, new af(Boolean.valueOf(false)));
             web_notifyWeb(str, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
         } else if (dkStoreBookDetail.getHighSize() == 0 && dkStoreBookDetail.getLowSize() == 0) {
@@ -696,7 +697,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
                     this.mEventListMap.putIfAbsent(path, new CopyOnWriteArrayList());
                 }
                 CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) this.mEventListMap.get(path);
-                com.duokan.core.diagnostic.a.c().b(copyOnWriteArrayList != null);
+                WebLog.c().b(copyOnWriteArrayList != null);
                 copyOnWriteArrayList.add(str);
             }
         }
@@ -709,7 +710,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
                 String path = a.getPath();
                 if (this.mEventListMap.containsKey(path)) {
                     CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) this.mEventListMap.get(path);
-                    com.duokan.core.diagnostic.a.c().b(copyOnWriteArrayList != null);
+                    WebLog.c().b(copyOnWriteArrayList != null);
                     copyOnWriteArrayList.remove(str);
                     if (TextUtils.equals(str, "adAppInstallStatus")) {
                         this.mAdLifecycleManager.g(path);
@@ -729,7 +730,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
             return false;
         }
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) this.mEventListMap.get(path);
-        com.duokan.core.diagnostic.a.c().b(copyOnWriteArrayList != null);
+        WebLog.c().b(copyOnWriteArrayList != null);
         if (!copyOnWriteArrayList.contains(str)) {
             return false;
         }
@@ -957,7 +958,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
         if (TaskHandler.isCurrentThread()) {
             return this.mWebView.getCurrentUrl();
         }
-        return (String) TaskHandler.postTask(new bp(this));
+        return (String) TaskHandler.getTaskHandler(new bp(this));
     }
 
     protected String handleUrl(String str) {
@@ -979,7 +980,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     protected int js_getPagePaddingBottom() {
-        s sVar = (s) getContext().queryFeature(s.class);
+        ITheme sVar = (ITheme) getContext().queryFeature(ITheme.class);
         if (sVar == null) {
             return 0;
         }

@@ -10,9 +10,9 @@ import java.util.LinkedHashMap;
 
 class ec implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    ec(cg cgVar, String str) {
+    ec(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
@@ -20,21 +20,21 @@ class ec implements as {
     public void a() {
         JSONObject jSONObject = new JSONObject(this.a);
         if (jSONObject.has("page_height")) {
-            this.b.b.mPageHeight = jSONObject.getInt("page_height");
+            this.b.pageController.mPageHeight = jSONObject.getInt("page_height");
             this.b.a(new ed(this));
         }
         if (jSONObject.has("top_banner")) {
             JSONObject jSONObject2 = jSONObject.getJSONObject("top_banner");
-            this.b.b.mBannerInfo.a = UTools.closeAnimation(this.b.b.getContext(), (float) jSONObject2.optInt("height", this.b.b.getHeaderViewOffset()));
+            this.b.pageController.mBannerInfo.a = UTools.closeAnimation(this.b.pageController.getContext(), (float) jSONObject2.optInt("height", this.b.pageController.getHeaderViewOffset()));
         }
         if (jSONObject.has("nav_tabs")) {
             JSONArray jSONArray = jSONObject.getJSONArray("nav_tabs");
             LinkedHashMap linkedHashMap = new LinkedHashMap();
-            int access$600 = this.b.b.mSurfingBarOffset;
+            int access$600 = this.b.pageController.mSurfingBarOffset;
             for (int i = 0; i < jSONArray.length(); i++) {
                 JSONObject jSONObject3 = jSONArray.getJSONObject(i);
                 String string = jSONObject3.getString("name");
-                int b = UTools.closeAnimation(this.b.b.getContext(), (float) jSONObject3.getInt("pos"));
+                int b = UTools.closeAnimation(this.b.pageController.getContext(), (float) jSONObject3.getInt("pos"));
                 if (i == 0) {
                     access$600 = b;
                 }

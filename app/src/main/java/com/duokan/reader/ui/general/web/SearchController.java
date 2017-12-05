@@ -26,6 +26,7 @@ import com.duokan.core.ui.GridItemsView;
 import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.domain.bookshelf.an;
@@ -37,7 +38,7 @@ import com.duokan.reader.ui.general.DkWebListView;
 import com.duokan.reader.ui.general.ReaderUi;
 import com.duokan.reader.ui.general.bo;
 import com.duokan.reader.ui.general.dk;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 import com.duokan.reader.ui.surfing.af;
 
 import java.util.LinkedList;
@@ -82,7 +83,7 @@ public class SearchController extends StorePageController implements iv, iw {
         this.mWebRootView.setPadding(0, 0, 0, 0);
         this.mWebContentView = this.mWebRootView.findViewById(g.general__web_core_view__content);
         View findViewById = findViewById(g.store__store_search_root_view__title);
-        s sVar = (s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class);
+        ITheme sVar = (ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class);
         if (sVar != null) {
             findViewById.setPadding(findViewById.getPaddingLeft(), sVar.getTheme().getHeaderPaddingTop() + findViewById.getPaddingTop(), findViewById.getPaddingRight(), findViewById.getPaddingBottom());
         }
@@ -277,7 +278,7 @@ public class SearchController extends StorePageController implements iv, iw {
         textView.setText(str);
         View findViewById = view.findViewById(g.store__hot_word_item_view__close);
         findViewById.setVisibility(0);
-        findViewById.setOnClickListener(new s(this, i));
+        findViewById.setOnClickListener(new ITheme(this, i));
     }
 
     private void getHotWord() {
@@ -302,7 +303,7 @@ public class SearchController extends StorePageController implements iv, iw {
     }
 
     private void updateAllViews() {
-        if (com.duokan.reader.common.c.f.b().e()) {
+        if (classc.f.b().e()) {
             String f = p.i().f();
             if (isPageChanged(f)) {
                 startLoading();

@@ -10,6 +10,6 @@ class ez implements ib {
     }
 
     public void a(int i) {
-        this.a.b.b.b.b.triggerEventOnCurrentUrl("dropdownButton", Integer.valueOf(i));
+        this.a.b.b.b.pageController.triggerEventOnCurrentUrl("dropdownButton", Integer.valueOf(i));
     }
 }

@@ -10,6 +10,6 @@ class ed implements as {
     }
 
     public void a() {
-        this.a.b.b.onPageHeightChange(this.a.b.b.mPageHeight);
+        this.a.b.pageController.onPageHeightChange(this.a.b.pageController.mPageHeight);
     }
 }

@@ -7,9 +7,9 @@ import org.json.JSONObject;
 
 class ew implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    ew(cg cgVar, String str) {
+    ew(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

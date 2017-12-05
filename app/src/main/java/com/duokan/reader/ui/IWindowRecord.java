@@ -1,6 +1,6 @@
 package com.duokan.reader.ui;
 
-public interface r {
+public interface IWindowRecord {
     int getHeaderPaddingTop();
 
     int getPageHeaderHeight();

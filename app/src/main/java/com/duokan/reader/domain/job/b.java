@@ -11,6 +11,7 @@ import com.duokan.core.a.a;
 import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.ReaderEnv;
 
 import java.io.File;
@@ -36,11 +37,11 @@ public class b implements ah {
         this.h = new a(Uri.fromFile(new File(this.g.getDatabaseDirectory(), "jobs.db")).toString());
         try {
             if (a(b)) {
-                com.duokan.core.diagnostic.a.c().c(LogLevel.INFO, "job", "the manager service has been already scheduled");
+                WebLog.c().c(LogLevel.INFO, "job", "the manager service has been already scheduled");
             } else if (f().schedule(new Builder(b, new ComponentName(this.g.getApplication().getPackageName(), JobManagerService.class.getName())).setPeriodic(c).setPersisted(true).build()) > 0) {
-                com.duokan.core.diagnostic.a.c().c(LogLevel.INFO, "job", "the manager service is scheduled");
+                WebLog.c().c(LogLevel.INFO, "job", "the manager service is scheduled");
             } else {
-                com.duokan.core.diagnostic.a.c().c(LogLevel.ERROR, "job", "fail to schedule the manager service");
+                WebLog.c().c(LogLevel.ERROR, "job", "fail to schedule the manager service");
             }
         } catch (Throwable th) {
         }

@@ -15,9 +15,9 @@ class hk implements cm {
     public void onChoice(boolean z, FlowChargingTransferChoice flowChargingTransferChoice) {
         if (z) {
             ai.a().a(this.a.a, flowChargingTransferChoice.wifiOnly()).j(this.a.b.a.e);
-            this.a.b.a.f.b.b.web_notifyWeb(this.a.b.a.b, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
+            this.a.b.a.f.b.pageController.web_notifyWeb(this.a.b.a.b, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
             return;
         }
-        this.a.b.a.f.b.b.web_notifyWeb(this.a.b.a.b, 4, new Object[0]);
+        this.a.b.a.f.b.pageController.web_notifyWeb(this.a.b.a.b, 4, new Object[0]);
     }
 }

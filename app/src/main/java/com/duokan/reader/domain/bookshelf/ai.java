@@ -11,7 +11,7 @@ import com.duokan.reader.DkApp;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.UmengManager;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.duokan.z;
 import com.duokan.reader.domain.account.a;
 import com.duokan.reader.domain.account.i;
@@ -46,17 +46,17 @@ public class ai extends aq {
         super.d(aVar);
     }
 
-    public /* bridge */ /* synthetic */ void onConnectivityChanged(f fVar) {
-        super.onConnectivityChanged(fVar);
+    public /* bridge */ /* synthetic */ void onConnectivityChanged(classc.ConnectivityReceiver connectivity) {
+        super.onConnectivityChanged(connectivity);
     }
 
-    protected ai(Context context, ReaderEnv readerEnv, f fVar, i iVar, iz izVar, com.duokan.reader.domain.store.a aVar, DkCloudStorage dkCloudStorage, b bVar) {
-        super(context, readerEnv, fVar, iVar, izVar, aVar, dkCloudStorage, bVar);
+    protected ai(Context context, ReaderEnv readerEnv, classc.ConnectivityReceiver connectivity, i iVar, iz izVar, com.duokan.reader.domain.store.a aVar, DkCloudStorage dkCloudStorage, b bVar) {
+        super(context, readerEnv, connectivity, iVar, izVar, aVar, dkCloudStorage, bVar);
         DkApp.get().runPreReady(new aj(this));
     }
 
-    public static void a(Context context, ReaderEnv readerEnv, f fVar, i iVar, iz izVar, com.duokan.reader.domain.store.a aVar, DkCloudStorage dkCloudStorage, b bVar) {
-        m.a(new ai(context, readerEnv, fVar, iVar, izVar, aVar, dkCloudStorage, bVar));
+    public static void a(Context context, ReaderEnv readerEnv, classc.ConnectivityReceiver connectivity, i iVar, iz izVar, com.duokan.reader.domain.store.a aVar, DkCloudStorage dkCloudStorage, b bVar) {
+        m.a(new ai(context, readerEnv, connectivity, iVar, izVar, aVar, dkCloudStorage, bVar));
     }
 
     public static ai a() {

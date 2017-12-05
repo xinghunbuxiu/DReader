@@ -6,9 +6,9 @@ import com.duokan.reader.domain.ad.g;
 
 class jn implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    jn(cg cgVar, String str) {
+    jn(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

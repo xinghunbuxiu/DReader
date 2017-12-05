@@ -21,7 +21,7 @@ import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
@@ -30,6 +30,7 @@ import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.UmengManager;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.domain.account.PersonalAccount;
 import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.bookshelf.ai;
@@ -136,7 +137,7 @@ public class f extends p implements OnPrimaryClipChangedListener, iu, gk, gs, hg
         this.v = this.r.findViewById(g.surfing__surfing_navigate_view__personal_task_count_image);
         this.j.addView(frameLayout);
         this.s = (ClipboardManager) getContext().getApplicationContext().getSystemService("clipboard");
-        if (!com.duokan.reader.common.c.f.b().e()) {
+        if (!classc.f.b().e()) {
             e(2);
         } else if (ReaderEnv.get().getLastShowStoreDay() != ReaderEnv.get().updateLastShowStoreDay()) {
             e(0);
@@ -228,7 +229,7 @@ public class f extends p implements OnPrimaryClipChangedListener, iu, gk, gs, hg
     }
 
     private void a(int i, Runnable runnable, Runnable runnable2) {
-        a c = a.c();
+        WebLog c = a.c();
         boolean z = i < 0 || i > this.r.getChildCount() - 1;
         c.a(z);
         if (i >= 0 && i <= this.r.getChildCount() - 1) {
@@ -657,7 +658,7 @@ public class f extends p implements OnPrimaryClipChangedListener, iu, gk, gs, hg
             try {
                 String b = b(this.s.getPrimaryClip().getItemAt(0).coerceToText(getContext()).toString());
                 if (!TextUtils.isEmpty(b) && b.length() == 8) {
-                    if (com.duokan.reader.common.c.f.b().e()) {
+                    if (classc.f.b().e()) {
                         StorePageController storePageController = new StorePageController(getContext());
                         storePageController.loadUrl(com.duokan.reader.common.webservices.duokan.p.i().z() + "/hs/user/redeem/" + b + "?native_transparent=1");
                         this.s.setPrimaryClip(ClipData.newPlainText(null, null));

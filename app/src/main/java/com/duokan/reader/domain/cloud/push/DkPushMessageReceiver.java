@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.UmengManager;
 import com.xiaomi.mipush.sdk.MiPushCommandMessage;
 import com.xiaomi.mipush.sdk.MiPushMessage;
@@ -18,12 +18,12 @@ public class DkPushMessageReceiver extends PushMessageReceiver {
     private static final String TAG = DkPushMessageReceiver.class.getName();
 
     public void onReceivePassThroughMessage(Context context, MiPushMessage miPushMessage) {
-        a.c().c(LogLevel.EVENT, "push", String.format("class: %s, method: %s, message: %s", new Object[]{TAG, "onReceivePassThroughMessage", miPushMessage.toString()}));
+        WebLog.c().c(LogLevel.EVENT, "push", String.format("class: %s, method: %s, message: %s", new Object[]{TAG, "onReceivePassThroughMessage", miPushMessage.toString()}));
         z.a().a(miPushMessage);
     }
 
     public void onNotificationMessageClicked(Context context, MiPushMessage miPushMessage) {
-        a.c().c(LogLevel.EVENT, "push", String.format("class: %s, method: %s, message: %s", new Object[]{TAG, "onNotificationMessageClicked", miPushMessage.toString()}));
+        WebLog.c().c(LogLevel.EVENT, "push", String.format("class: %s, method: %s, message: %s", new Object[]{TAG, "onNotificationMessageClicked", miPushMessage.toString()}));
         z.a().a(miPushMessage);
         try {
             if (z.b(miPushMessage)) {
@@ -38,7 +38,7 @@ public class DkPushMessageReceiver extends PushMessageReceiver {
     }
 
     public void onNotificationMessageArrived(Context context, MiPushMessage miPushMessage) {
-        a.c().c(LogLevel.EVENT, "push", String.format("class: %s, method: %s, message: %s", new Object[]{TAG, "onNotificationMessageArrived", miPushMessage.toString()}));
+        WebLog.c().c(LogLevel.EVENT, "push", String.format("class: %s, method: %s, message: %s", new Object[]{TAG, "onNotificationMessageArrived", miPushMessage.toString()}));
         String str = "notify_foreground";
         int i = (miPushMessage.getExtra().containsKey("notify_foreground") && TextUtils.equals((CharSequence) miPushMessage.getExtra().get("notify_foreground"), "0")) ? 1 : 0;
         if (ManagedApp.get().getOldRunningState() == RunningState.FOREGROUND && i != 0) {
@@ -47,11 +47,11 @@ public class DkPushMessageReceiver extends PushMessageReceiver {
     }
 
     public void onCommandResult(Context context, MiPushCommandMessage miPushCommandMessage) {
-        a.c().c(LogLevel.EVENT, "push", String.format("class: %s, method: %s, message: %s", new Object[]{TAG, "onCommandResult", miPushCommandMessage.toString()}));
+        WebLog.c().c(LogLevel.EVENT, "push", String.format("class: %s, method: %s, message: %s", new Object[]{TAG, "onCommandResult", miPushCommandMessage.toString()}));
     }
 
     public void onReceiveRegisterResult(Context context, MiPushCommandMessage miPushCommandMessage) {
-        a.c().c(LogLevel.EVENT, "push", String.format("class: %s, method: %s, message: %s", new Object[]{TAG, "onReceiveRegisterResult", miPushCommandMessage.toString()}));
+        WebLog.c().c(LogLevel.EVENT, "push", String.format("class: %s, method: %s, message: %s", new Object[]{TAG, "onReceiveRegisterResult", miPushCommandMessage.toString()}));
         String command = miPushCommandMessage.getCommand();
         List commandArguments = miPushCommandMessage.getCommandArguments();
         String str = (commandArguments == null || commandArguments.size() <= 0) ? null : (String) commandArguments.get(0);
@@ -59,7 +59,7 @@ public class DkPushMessageReceiver extends PushMessageReceiver {
             String str2 = (String) commandArguments.get(1);
         }
         if ("register".equals(command) && miPushCommandMessage.getResultCode() == 0) {
-            a.c().c(LogLevel.EVENT, "push", "register success");
+            WebLog.c().c(LogLevel.EVENT, "push", "register success");
             z.a().a(miPushCommandMessage.getResultCode(), str, miPushCommandMessage.getReason());
         }
     }

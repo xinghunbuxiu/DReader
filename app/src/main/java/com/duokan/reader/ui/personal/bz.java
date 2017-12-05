@@ -5,7 +5,7 @@ import android.view.View.OnClickListener;
 
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.ui.e;
+import com.duokan.reader.ui.InavOperater;
 import com.duokan.reader.ui.general.expandable.ViewMode;
 
 class bz implements OnClickListener {
@@ -22,7 +22,7 @@ class bz implements OnClickListener {
     public void onClick(View view) {
         if (this.c.c.f() != ViewMode.Edit) {
             IFeature a = MyContextWrapper.getFeature(this.c.f);
-            e eVar = (e) a.queryFeature(e.class);
+            InavOperater eVar = (InavOperater) a.queryFeature(InavOperater.class);
             this.c.k = new lk(a, this.c.g, new String[]{this.a, this.b});
             eVar.pushPageSmoothly(this.c.k, null);
         }

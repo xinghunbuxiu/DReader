@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 
 import java.util.Collection;
 
@@ -24,7 +24,7 @@ class c extends Handler {
             if (collection.size() > 0) {
                 downloadCenterTask = (DownloadCenterTask) collection.iterator().next();
                 collection.remove(downloadCenterTask);
-                if (downloadCenterTask.c() && (f.b().d() || this.a.h(downloadCenterTask))) {
+                if (downloadCenterTask.c() && (classc.ConnectivityReceiver.b().d() || this.a.h(downloadCenterTask))) {
                     this.a.b(downloadCenterTask);
                 }
                 if (collection.size() > 0) {
@@ -36,7 +36,7 @@ class c extends Handler {
             if (collection.size() > 0) {
                 downloadCenterTask = (DownloadCenterTask) collection.iterator().next();
                 collection.remove(downloadCenterTask);
-                if (downloadCenterTask.e() && f.b().c() && !this.a.h(downloadCenterTask)) {
+                if (downloadCenterTask.e() && classc.ConnectivityReceiver.b().c() && !this.a.h(downloadCenterTask)) {
                     this.a.g(downloadCenterTask);
                 }
                 if (collection.size() > 0) {

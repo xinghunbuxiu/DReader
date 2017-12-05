@@ -5,9 +5,9 @@ import com.duokan.reader.domain.cloud.PersonalPrefs;
 import java.util.concurrent.Callable;
 
 class gu implements Callable {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    gu(cg cgVar) {
+    gu(PageController cgVar) {
         this.a = cgVar;
     }
 

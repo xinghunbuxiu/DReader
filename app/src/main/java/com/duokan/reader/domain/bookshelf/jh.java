@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 
 class jh implements Runnable {
     final /* synthetic */ iz a;
@@ -11,7 +11,7 @@ class jh implements Runnable {
 
     public void run() {
         this.a.h();
-        this.a.a(f.b());
-        f.b().a(this.a.c);
+        this.a.a(classc.ConnectivityReceiver.b());
+        classc.ConnectivityReceiver.b().a(this.a.c);
     }
 }

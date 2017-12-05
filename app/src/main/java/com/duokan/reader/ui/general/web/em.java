@@ -14,6 +14,6 @@ class em implements Runnable {
     }
 
     public void run() {
-        ReaderUi.a(this.b.e.b.b.getContext(), this.a);
+        ReaderUi.a(this.b.e.b.pageController.getContext(), this.a);
     }
 }

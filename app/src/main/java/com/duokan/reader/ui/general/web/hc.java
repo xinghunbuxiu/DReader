@@ -19,7 +19,7 @@ class hc implements as {
                 kp.a().b(true);
                 return;
             }
-            DkSignInInfo jsonToDkSignInInfo = this.a.b.b.jsonToDkSignInInfo(this.a.a);
+            DkSignInInfo jsonToDkSignInInfo = this.a.b.pageController.jsonToDkSignInInfo(this.a.a);
             if (jsonToDkSignInInfo != null) {
                 kp.a().a(jsonToDkSignInInfo);
             }

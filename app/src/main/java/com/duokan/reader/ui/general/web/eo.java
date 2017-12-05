@@ -1,13 +1,13 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 
 import java.util.concurrent.Callable;
 
 class eo implements Callable {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    eo(cg cgVar) {
+    eo(PageController cgVar) {
         this.a = cgVar;
     }
 
@@ -16,6 +16,6 @@ class eo implements Callable {
     }
 
     public Boolean a() {
-        return Boolean.valueOf(f.b().e());
+        return Boolean.valueOf(classc.ConnectivityReceiver.b().e());
     }
 }

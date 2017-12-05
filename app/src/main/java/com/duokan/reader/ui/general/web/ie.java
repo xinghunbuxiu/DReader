@@ -4,9 +4,9 @@ import com.duokan.core.sys.as;
 
 class ie implements as {
     final /* synthetic */ int a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    ie(cg cgVar, int i) {
+    ie(PageController cgVar, int i) {
         this.b = cgVar;
         this.a = i;
     }

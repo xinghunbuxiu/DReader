@@ -24,7 +24,7 @@ class SessionTask implements Runnable {
 
     public void run() {
         this.c = Thread.currentThread().getId();
-        TaskHandler.postTask(new h(this));
+        TaskHandler.getTaskHandler(new h(this));
         Iterator it;
         try {
             if (a.b().a()) {
@@ -33,14 +33,14 @@ class SessionTask implements Runnable {
                 while (it.hasNext()) {
                     ((d) it.next()).d();
                 }
-                TaskHandler.postTask(new i(this));
+                TaskHandler.getTaskHandler(new i(this));
                 return;
             }
             throw new WebSessionException();
         } catch (Throwable e) {
             HttpLogger access$400 = WebSession.sHttpLogger;
             if (access$400 != null) {
-                access$400.a(LogLevel.ERROR, HttpHost.DEFAULT_SCHEME_NAME, "an exception occurs!", e);
+                access$400.printStackTrace(LogLevel.ERROR, HttpHost.DEFAULT_SCHEME_NAME, "an exception occurs!", e);
             }
             this.webSession.mSessionException = e;
             it = this.webSession.mResponseList.iterator();

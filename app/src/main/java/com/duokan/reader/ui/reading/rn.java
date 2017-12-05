@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.reading;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.sys.j;
+import com.duokan.core.sys.AIdleOperation;
 
 class rn implements Runnable {
     final /* synthetic */ qh a;
@@ -16,7 +16,7 @@ class rn implements Runnable {
                 this.a.o = true;
                 this.a.a();
                 this.a.p = true;
-                j.a(new ro(this));
+                AIdleOperation.addIdleStatus(new ro(this));
             } catch (Throwable e) {
                 a.c().a(LogLevel.ERROR, "reading", "an exception occurs during init", e);
                 throw e;

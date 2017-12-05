@@ -9,7 +9,7 @@ import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.HatGridView;
 import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 public class eh {
     public static void a(DkWebListView dkWebListView) {
@@ -17,7 +17,7 @@ public class eh {
         dkWebListView.setRowDivider(b(context));
         dkWebListView.setColumnDivider(a(context));
         dkWebListView.setRowBackground(c(context));
-        s sVar = (s) MyContextWrapper.getFeature(context).queryFeature(s.class);
+        ITheme sVar = (ITheme) MyContextWrapper.getFeature(context).queryFeature(ITheme.class);
         if (sVar != null) {
             dkWebListView.a(dkWebListView.getListPaddingLeft(), dkWebListView.getListPaddingTop(), dkWebListView.getListPaddingRight(), sVar.getTheme().getPagePaddingBottom());
         }
@@ -28,7 +28,7 @@ public class eh {
         hatGridView.setRowDivider(b(context));
         hatGridView.setColumnDivider(a(context));
         hatGridView.setRowBackground(c(context));
-        s sVar = (s) MyContextWrapper.getFeature(context).queryFeature(s.class);
+        ITheme sVar = (ITheme) MyContextWrapper.getFeature(context).queryFeature(ITheme.class);
         if (sVar != null) {
             hatGridView.b(0, 0, 0, sVar.getTheme().getPagePaddingBottom());
         }

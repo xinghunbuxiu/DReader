@@ -19,15 +19,15 @@ import org.json.JSONObject;
 
 class il implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    il(cg cgVar, String str) {
+    il(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
 
     public void a() {
-        jq jqVar = (jq) TaskHandler.postTask(new im(this));
+        jq jqVar = (jq) TaskHandler.getTaskHandler(new im(this));
         af afVar = new af();
         JSONObject jSONObject = new JSONObject(this.a);
         String string = jSONObject.getString("msgid");
@@ -53,7 +53,7 @@ class il implements as {
                 } else if (b2 != null) {
                     afVar.a(b2);
                 } else {
-                    readerFeature = (ReaderFeature) this.b.b.getContext().queryFeature(ReaderFeature.class);
+                    readerFeature = (ReaderFeature) this.b.pageController.getContext().queryFeature(ReaderFeature.class);
                     if (readerFeature == null || readerFeature.getReadingBook() == null || !TextUtils.equals(dkStoreBookDetail.getBook().getBookUuid(), readerFeature.getReadingBook().H())) {
                         a = ai.a().a(dkStoreBookDetail);
                         a.j(optString);
@@ -77,7 +77,7 @@ class il implements as {
                         afVar.wait();
                     }
                 } else {
-                    readerFeature = (ReaderFeature) this.b.b.getContext().queryFeature(ReaderFeature.class);
+                    readerFeature = (ReaderFeature) this.b.pageController.getContext().queryFeature(ReaderFeature.class);
                     if (readerFeature == null || readerFeature.getReadingBook() == null || !TextUtils.equals(dkStoreFictionDetail.getFiction().getBookUuid(), readerFeature.getReadingBook().H())) {
                         a = (ej) ai.a().a(dkStoreFictionDetail);
                         a.j(optString);

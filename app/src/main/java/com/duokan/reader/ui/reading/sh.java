@@ -26,11 +26,11 @@ import com.duokan.reader.domain.document.g;
 import com.duokan.reader.domain.document.n;
 import com.duokan.reader.domain.store.DkStoreItemDetail;
 import com.duokan.reader.ui.general.FixedPagesView.PageScaleType;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 import java.util.LinkedList;
 
-public interface sh extends gy, s {
+public interface sh extends gy, ITheme {
     int A();
 
     double B();

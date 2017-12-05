@@ -4,9 +4,9 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.webkit.JavascriptInterface;
 
-import com.duokan.c.j;
 import com.duokan.core.b.UrlTools;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.as;
 import com.duokan.reader.DkApp;
@@ -29,12 +29,12 @@ import java.util.regex.Pattern;
 
 import miui.webkit.UrlResolverHelper;
 
-public class cg {
-    private final Pattern a = Pattern.compile("www\\.(.+\\.)*duokan\\.com", 2);
-    final /* synthetic */ StorePageController b;
+public class PageController {
+    private final Pattern pattern = Pattern.compile("www\\.(.+\\.)*duokan\\.com", Pattern.CASE_INSENSITIVE);
+    final StorePageController pageController;
 
-    public cg(StorePageController storePageController) {
-        this.b = storePageController;
+    public PageController(StorePageController storePageController) {
+        this.pageController = storePageController;
     }
 
     @JavascriptInterface
@@ -119,7 +119,7 @@ public class cg {
 
     @JavascriptInterface
     public int getScreenOrientation() {
-        return this.b.mScreenOrientation;
+        return this.pageController.mScreenOrientation;
     }
 
     @JavascriptInterface
@@ -242,7 +242,7 @@ public class cg {
             arrayList.add("serviceToken");
             arrayList.add(((bh) aVar.f()).b);
         }
-        this.b.web_notifyWeb(str, 0, arrayList.toArray(new Object[0]));
+        this.pageController.web_notifyWeb(str, 0, arrayList.toArray(new Object[0]));
     }
 
     @JavascriptInterface
@@ -442,12 +442,12 @@ public class cg {
 
     @JavascriptInterface
     public void share(String str) {
-        a(new hs(this, str), this.b.getContext().getString(j.share_failed));
+        a(new hs(this, str), this.pageController.getContext().getString(j.share_failed));
     }
 
     @JavascriptInterface
     public void shareBook(String str) {
-        a(new hw(this, str), this.b.getContext().getString(j.share_failed));
+        a(new hw(this, str), this.pageController.getContext().getString(j.share_failed));
     }
 
     @JavascriptInterface
@@ -527,7 +527,7 @@ public class cg {
 
     @JavascriptInterface
     public boolean downloadAdApp(String str) {
-        com.duokan.core.diagnostic.a.c().c(LogLevel.INFO, "task_wall", "download called");
+        WebLog.c().c(LogLevel.INFO, "task_wall", "download called");
         return ((Boolean) a(new jt(this, str), Boolean.valueOf(false))).booleanValue();
     }
 
@@ -552,7 +552,7 @@ public class cg {
                 obj = callable.call();
             }
         } catch (Throwable th) {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "jscall", "unexpected exception!", th);
+            WebLog.c().printStackTrace(LogLevel.ERROR, "jscall", "unexpected exception!", th);
         }
         return obj;
     }
@@ -560,10 +560,10 @@ public class cg {
     protected final Object b(Callable callable, Object obj) {
         try {
             if (a()) {
-                obj = TaskHandler.postTask(callable);
+                obj = TaskHandler.getTaskHandler(callable);
             }
         } catch (Throwable th) {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "jscall", "unexpected exception!", th);
+            WebLog.c().printStackTrace(LogLevel.ERROR, "jscall", "unexpected exception!", th);
         }
         return obj;
     }
@@ -578,7 +578,7 @@ public class cg {
                 asVar.a();
             }
         } catch (Throwable th) {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "jscall", "unexpected exception!", th);
+            WebLog.c().printStackTrace(LogLevel.ERROR, "jscall", "unexpected exception!", th);
         }
     }
 
@@ -588,19 +588,19 @@ public class cg {
                 asVar.a();
             }
         } catch (Throwable th) {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "jscall", "unexpected exception!", th);
+            WebLog.c().printStackTrace(LogLevel.ERROR, "jscall", "unexpected exception!", th);
             if (!TextUtils.isEmpty(str)) {
-                be.a(this.b.getContext(), (CharSequence) str, 1).show();
+                be.a(this.pageController.getContext(), (CharSequence) str, 1).show();
             }
         }
     }
 
     protected boolean a() {
-        Uri a = UrlTools.parse(this.b.currentUrl());
+        Uri a = UrlTools.parse(this.pageController.currentUrl());
         String scheme = (a == null || a.getScheme() == null) ? "" : a.getScheme();
         if (scheme.equalsIgnoreCase(HttpHost.DEFAULT_SCHEME_NAME) || scheme.equalsIgnoreCase("https")) {
             Object host = a.getHost() != null ? a.getHost() : "";
-            if (this.a.matcher(host).matches()) {
+            if (this.pattern.matcher(host).matches()) {
                 return true;
             }
             if (UrlResolverHelper.isMiHost(host)) {

@@ -3,9 +3,9 @@ package com.duokan.reader.ui.general.web;
 import com.duokan.core.sys.as;
 
 class gv implements as {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    gv(cg cgVar) {
+    gv(PageController cgVar) {
         this.a = cgVar;
     }
 

@@ -8,8 +8,7 @@ import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
-import com.duokan.reader.common.c.f;
-import com.duokan.reader.common.c.g;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.common.webservices.duokan.y;
 import com.duokan.reader.domain.bookshelf.BookState;
@@ -24,7 +23,7 @@ import org.json.JSONObject;
 
 import java.util.List;
 
-public class o implements ah, g, iw, MessageWakeupListener {
+public class o implements ah, classc.IConnectChanged, iw, MessageWakeupListener {
     private static final ai a = new ai();
     private final Context b;
     private final b c;
@@ -64,7 +63,7 @@ public class o implements ah, g, iw, MessageWakeupListener {
         }
     }
 
-    public void onConnectivityChanged(f fVar) {
+    public void onConnectivityChanged(classc.ConnectivityReceiver connectivity) {
         c();
     }
 

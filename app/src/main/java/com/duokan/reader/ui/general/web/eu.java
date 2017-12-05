@@ -10,6 +10,6 @@ class eu implements ib {
     }
 
     public void a(int i) {
-        this.a.d.b.b.web_notifyWeb(this.a.c, 0, "index", Integer.valueOf(i));
+        this.a.d.b.pageController.web_notifyWeb(this.a.c, 0, "index", Integer.valueOf(i));
     }
 }

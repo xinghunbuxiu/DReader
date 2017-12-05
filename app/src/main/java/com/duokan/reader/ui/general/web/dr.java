@@ -6,9 +6,9 @@ import org.json.JSONObject;
 
 class dr implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    dr(cg cgVar, String str) {
+    dr(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

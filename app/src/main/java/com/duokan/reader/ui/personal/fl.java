@@ -26,7 +26,7 @@ import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.SystemUiConditioner;
 import com.duokan.reader.UmengManager;
-import com.duokan.reader.common.c.g;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.h;
 import com.duokan.reader.common.webservices.duokan.r;
 import com.duokan.reader.domain.account.AccountType;
@@ -60,7 +60,7 @@ import com.duokan.reader.ui.b.f;
 import com.duokan.reader.ui.general.ReaderUi;
 import com.duokan.reader.ui.general.bf;
 import com.duokan.reader.ui.general.web.StorePageController;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 import org.apache.http.HttpStatus;
 
@@ -69,7 +69,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.Callable;
 
-public class fl extends ActivatedController implements SystemUiConditioner, g, h, com.duokan.reader.domain.account.h, bc, bl, cr, ec, eu, com.duokan.reader.domain.cloud.fl, gk, hj, o, f {
+public class fl extends ActivatedController implements SystemUiConditioner, classc.IConnectChanged, h, com.duokan.reader.domain.account.h, bc, bl, cr, ec, eu, com.duokan.reader.domain.cloud.fl, gk, hj, o, f {
     private final ReaderFeature a = ((ReaderFeature) getContext().queryFeature(ReaderFeature.class));
     private final StorePageController b;
     private final LinearScrollView c;
@@ -106,7 +106,7 @@ public class fl extends ActivatedController implements SystemUiConditioner, g, h
         this.b.setHasTitle(false);
         addSubController(this.b);
         this.t = new gi(this);
-        this.y = ((s) x.a(getContext()).queryFeature(s.class)).getTheme().getPageHeaderPaddingTop();
+        this.y = ((ITheme) x.a(getContext()).queryFeature(ITheme.class)).getTheme().getPageHeaderPaddingTop();
         this.z = this.y;
         View guVar = new gu(this, getContext());
         ((ViewGroup) getContentView()).addView(guVar, new LayoutParams(-1, this.y));
@@ -170,7 +170,7 @@ public class fl extends ActivatedController implements SystemUiConditioner, g, h
         bd.a().b((bl) this);
         gf.a().b((gk) this);
         DkUserReadingNotesManager.a().b((com.duokan.reader.domain.cloud.fl) this);
-        com.duokan.reader.common.c.f.b().b(this);
+        classc.f.b().b(this);
         ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).removeSystemUiConditioner(this);
     }
 
@@ -187,7 +187,7 @@ public class fl extends ActivatedController implements SystemUiConditioner, g, h
             bd.a().a((bl) this);
             gf.a().a((gk) this);
             DkUserReadingNotesManager.a().a((com.duokan.reader.domain.cloud.fl) this);
-            com.duokan.reader.common.c.f.b().a((g) this);
+            classc.f.b().a((classc.IConnectChanged) this);
             ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).addSystemUiConditioner(this);
         }
         if (this.a.getPageCount() <= 0) {
@@ -241,8 +241,8 @@ public class fl extends ActivatedController implements SystemUiConditioner, g, h
         }
     }
 
-    public void onConnectivityChanged(com.duokan.reader.common.c.f fVar) {
-        if (com.duokan.reader.common.c.f.b().e() && isActive() && this.a.getPageCount() <= 0) {
+    public void onConnectivityChanged(classc.f fVar) {
+        if (classc.f.b().e() && isActive() && this.a.getPageCount() <= 0) {
             c(false);
             this.b.wakeUp();
         }

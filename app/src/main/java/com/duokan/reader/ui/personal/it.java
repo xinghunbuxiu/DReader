@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.duokan.c.j;
 import com.duokan.core.app.IFeature;
-import com.duokan.core.app.aa;
+import com.duokan.core.app.Inavigate;
 import com.duokan.core.ui.LinearScrollView;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.BookShelfType;
@@ -26,7 +26,7 @@ import com.duokan.reader.ui.general.ReaderUi;
 
 import java.io.File;
 
-public class it extends my implements aa, h, com.duokan.reader.domain.account.h {
+public class it extends my implements Inavigate, h, com.duokan.reader.domain.account.h {
     private final LinearScrollView a;
     private final View c;
     private final View d;

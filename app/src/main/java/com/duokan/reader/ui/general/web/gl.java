@@ -21,11 +21,11 @@ class gl implements Runnable {
         if ((b instanceof ej) && ((ej) b).b(this.a)) {
             ((ej) b).c(this.a);
         }
-        JSONObject access$2900 = this.b.c.b.b.jsonSerialDetail(this.a);
+        JSONObject access$2900 = this.b.c.b.pageController.jsonSerialDetail(this.a);
         if (access$2900 != null) {
-            this.b.c.b.b.web_notifyWeb(this.b.b, 0, access$2900);
+            this.b.c.b.pageController.web_notifyWeb(this.b.b, 0, access$2900);
         } else {
-            this.b.c.b.b.web_notifyWeb(this.b.b, 2, new Object[0]);
+            this.b.c.b.pageController.web_notifyWeb(this.b.b, 2, new Object[0]);
         }
     }
 }

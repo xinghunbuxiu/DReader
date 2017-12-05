@@ -2,14 +2,14 @@ package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.UTools;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 import java.util.concurrent.Callable;
 
 class it implements Callable {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    it(cg cgVar) {
+    it(PageController cgVar) {
         this.a = cgVar;
     }
 
@@ -19,9 +19,9 @@ class it implements Callable {
 
     public Integer a() {
         int round;
-        s sVar = (s) MyContextWrapper.getFeature(this.a.b.getContext()).queryFeature(s.class);
+        ITheme sVar = (ITheme) MyContextWrapper.getFeature(this.a.pageController.getContext()).queryFeature(ITheme.class);
         if (sVar != null) {
-            round = Math.round(UTools.closeAnimation(this.a.b.getContext(), sVar.getTheme().getPageHeaderPaddingTop()));
+            round = Math.round(UTools.closeAnimation(this.a.pageController.getContext(), sVar.getTheme().getPageHeaderPaddingTop()));
         } else {
             round = 0;
         }

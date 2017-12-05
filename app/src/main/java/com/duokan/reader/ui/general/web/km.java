@@ -4,7 +4,7 @@ import android.os.Build.VERSION;
 import android.webkit.WebSettings;
 
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.duokan.p;
 
 public class km {
@@ -24,7 +24,7 @@ public class km {
             if (VERSION.SDK_INT >= 16) {
                 webSettings.setAllowFileAccessFromFileURLs(true);
             }
-            if (f.b().e()) {
+            if (classc.ConnectivityReceiver.b().e()) {
                 webSettings.setCacheMode(-1);
             } else {
                 webSettings.setCacheMode(1);

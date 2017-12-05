@@ -14,7 +14,7 @@ class ft implements a {
     }
 
     public void a(n nVar) {
-        this.c.a.b.b.web_notifyWeb(this.b, 0, "operation", Boolean.valueOf(nVar.d), "score", Integer.valueOf(nVar.a), "title", nVar.b, "content", nVar.c);
+        this.c.a.b.pageController.web_notifyWeb(this.b, 0, "operation", Boolean.valueOf(nVar.d), "score", Integer.valueOf(nVar.a), "title", nVar.b, "content", nVar.c);
     }
 
     public void a(int i, String str) {

@@ -4,9 +4,9 @@ import com.duokan.core.sys.as;
 
 class gn implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    gn(cg cgVar, String str) {
+    gn(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

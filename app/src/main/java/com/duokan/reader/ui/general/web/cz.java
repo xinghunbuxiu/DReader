@@ -4,14 +4,14 @@ import com.duokan.core.sys.as;
 
 class cz implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    cz(cg cgVar, String str) {
+    cz(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
 
     public void a() {
-        this.b.b.registerEventOnCurrentUrl(this.a);
+        this.b.pageController.registerEventOnCurrentUrl(this.a);
     }
 }

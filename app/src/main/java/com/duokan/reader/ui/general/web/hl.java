@@ -17,6 +17,6 @@ class hl implements cm {
             o.a().a(ai.a().b(this.a.a.d), new hm(this), flowChargingTransferChoice);
             return;
         }
-        this.a.a.f.b.b.web_notifyWeb(this.a.a.b, 4, new Object[0]);
+        this.a.a.f.b.pageController.web_notifyWeb(this.a.a.b, 4, new Object[0]);
     }
 }

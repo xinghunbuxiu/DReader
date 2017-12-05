@@ -3,9 +3,9 @@ package com.duokan.reader.ui.general.web;
 import com.duokan.core.sys.as;
 
 class ha implements as {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    ha(cg cgVar) {
+    ha(PageController cgVar) {
         this.a = cgVar;
     }
 

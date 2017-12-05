@@ -279,7 +279,7 @@ public class o extends ad {
     }
 
     public b c() {
-        JSONObject a = a(a(a(true, p.i().n() + "/rock/user/preference/get", new String[0])), HTTP.UTF_8);
+        JSONObject a = a(a(a(true, p.i().n() + "/rock/user/preference/getAllSortStackTraces", new String[0])), HTTP.UTF_8);
         b bVar = new b();
         bVar.b = a.getInt(Mipay.KEY_RESULT);
         if (bVar.b == 0) {

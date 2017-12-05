@@ -7,14 +7,15 @@ import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.reader.DkApp;
-import com.duokan.reader.common.c.f;
-import com.duokan.reader.common.c.g;
+import com.duokan.reader.common.c.ConnectivityReceiver;
+import com.duokan.reader.common.c.IConnectChanged;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.m;
 import com.duokan.reader.common.n;
 import com.duokan.reader.domain.account.h;
 
-public class a implements IActivityRunStatusChanged, g, n, h {
-    private final Handler a = new Handler(Looper.getMainLooper());
+public class a implements IActivityRunStatusChanged, IConnectChanged, n, h {
+    private final Handler handler = new Handler(Looper.getMainLooper());
     private final c b;
     private final int c;
     private long d;
@@ -58,33 +59,36 @@ public class a implements IActivityRunStatusChanged, g, n, h {
             }
         }
     }
-
-    public void onConnectivityChanged(f fVar) {
+    @Override
+    public void onConnectivityChanged(ConnectivityReceiver connectivity) {
         if (!d()) {
             return;
         }
-        if (fVar.e()) {
+        if (connectivity.e()) {
             b(false, true);
         } else {
             a(false, true);
         }
     }
-
+    @Override
     public void a(com.duokan.reader.domain.account.a aVar) {
     }
 
+    @Override
     public void b(com.duokan.reader.domain.account.a aVar) {
         if (f()) {
             b(true, true);
         }
     }
 
+    @Override
     public void c(com.duokan.reader.domain.account.a aVar) {
         if (f()) {
             a(true, true);
         }
     }
 
+    @Override
     public void d(com.duokan.reader.domain.account.a aVar) {
     }
 
@@ -97,7 +101,7 @@ public class a implements IActivityRunStatusChanged, g, n, h {
                 i.f().a((h) this);
             }
             if (d()) {
-                f.b().a((g) this);
+                f.b().a((classc.IConnectChanged) this);
             }
             if (b() || c()) {
                 DkApp.get().addOnRunningStateChangedListener(this);
@@ -179,13 +183,13 @@ public class a implements IActivityRunStatusChanged, g, n, h {
                 currentTimeMillis = 0;
             }
             this.j = new b(this);
-            this.a.postDelayed(this.j, currentTimeMillis);
+            this.handler.postDelayed(this.j, currentTimeMillis);
         }
     }
 
     private void b(boolean z) {
         if (z) {
-            this.a.removeCallbacksAndMessages(null);
+            this.handler.removeCallbacksAndMessages(null);
             this.j = null;
         }
     }
@@ -201,7 +205,7 @@ public class a implements IActivityRunStatusChanged, g, n, h {
         if (c() && ManagedApp.get().getOldRunningState() != RunningState.FOREGROUND) {
             return false;
         }
-        if (d() && !f.b().e()) {
+        if (d() && !ConnectivityReceiver.getConnectReceive().isNetConnected()) {
             return false;
         }
         if (e() && !m.a().b()) {

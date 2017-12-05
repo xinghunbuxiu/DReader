@@ -1,8 +1,8 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.s;
+import com.duokan.core.sys.IdleStatus;
 
-class oe implements s {
+class oe implements IdleStatus {
     final /* synthetic */ od a;
 
     oe(od odVar) {

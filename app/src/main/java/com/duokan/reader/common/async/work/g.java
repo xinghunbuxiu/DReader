@@ -8,7 +8,7 @@ public class g implements p {
     private final HttpLogger a = new HttpLogger();
 
     public g(File file) {
-        this.a.a(file);
+        this.a.setFile(file);
     }
 
     public void a(String str, String str2, Throwable th) {

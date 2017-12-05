@@ -14,7 +14,7 @@ import com.duokan.reader.ui.general.DkLabelView;
 import com.duokan.reader.ui.general.PinView;
 import com.duokan.reader.ui.general.af;
 import com.duokan.reader.ui.general.ap;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 public class k {
     private Context a;
@@ -26,7 +26,7 @@ public class k {
         this.b = new l(this, context, str2);
         this.b.setContentView(h.reading__add_note_view);
         ((BoxView) this.b.getContentView()).setResizeLayoutForSoftInput(true);
-        this.b.findViewById(g.reading__addnotedlg_view__btns).setPadding(UTools.closeAnimation(context, 15.0f), (ReaderEnv.get().forHd() ? 0 : ((s) MyContextWrapper.getFeature(context).queryFeature(s.class)).getTheme().getHeaderPaddingTop()) + UTools.closeAnimation(context, 10.0f), UTools.closeAnimation(context, 15.0f), UTools.closeAnimation(context, 10.0f));
+        this.b.findViewById(g.reading__addnotedlg_view__btns).setPadding(UTools.closeAnimation(context, 15.0f), (ReaderEnv.get().forHd() ? 0 : ((ITheme) MyContextWrapper.getFeature(context).queryFeature(ITheme.class)).getTheme().getHeaderPaddingTop()) + UTools.closeAnimation(context, 10.0f), UTools.closeAnimation(context, 15.0f), UTools.closeAnimation(context, 10.0f));
         ((PinView) this.b.findViewById(g.reading__addnotedlg_view__sample)).setText(str);
         this.c = (EditText) this.b.findViewById(g.reading__addnotedlg_view__note);
         this.c.setText(str2);

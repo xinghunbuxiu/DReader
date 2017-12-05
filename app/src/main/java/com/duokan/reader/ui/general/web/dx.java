@@ -6,9 +6,9 @@ import org.json.JSONObject;
 
 class dx implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    dx(cg cgVar, String str) {
+    dx(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

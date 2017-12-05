@@ -2,8 +2,8 @@ package com.duokan.core.diagnostic;
 
 import android.util.Log;
 
+import com.duokan.core.sys.StackTracesInfo;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.aq;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -20,19 +20,19 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class HttpLogger {
     private static final String TAG = HttpLogger.class.getName();
-    private static final ConcurrentLinkedQueue b = new ConcurrentLinkedQueue();
-    private File c = null;
-    private ConcurrentLinkedQueue d = new ConcurrentLinkedQueue();
+    private static final ConcurrentLinkedQueue<HttpLogger> loggers = new ConcurrentLinkedQueue();
+    private File file = null;
+    private ConcurrentLinkedQueue linkedQueue = new ConcurrentLinkedQueue();
 
     public HttpLogger() {
-        b.add(this);
+        loggers.add(this);
     }
 
-    public void a(File file) {
-        this.c = file;
+    public void setFile(File file) {
+        this.file = file;
     }
 
-    public void a(LogLevel logLevel, String str, String str2) {
+    public void printStackTraceString(LogLevel logLevel, String tag, String message) {
         Writer stringWriter = new StringWriter();
         PrintWriter printWriter = new PrintWriter(stringWriter);
         Thread currentThread = Thread.currentThread();
@@ -44,13 +44,13 @@ public class HttpLogger {
         }
         printWriter.flush();
         printWriter.close();
-        a(logLevel, str, str2, stringWriter.toString());
+        print(logLevel, tag, message, stringWriter.toString());
     }
 
-    public void b(LogLevel logLevel, String str, String str2) {
+    public void printAllStackTraceString(LogLevel logLevel, String tag, String message) {
         Writer stringWriter = new StringWriter();
         PrintWriter printWriter = new PrintWriter(stringWriter);
-        for (Entry entry : aq.b()) {
+        for (Entry entry : StackTracesInfo.getAllSortStackTraces()) {
             Thread thread = (Thread) entry.getKey();
             StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) entry.getValue();
             printWriter.println(thread.toString());
@@ -61,25 +61,25 @@ public class HttpLogger {
         }
         printWriter.flush();
         printWriter.close();
-        a(logLevel, str, str2, stringWriter.toString());
+        print(logLevel, tag, message, stringWriter.toString());
     }
 
-    public void a(LogLevel logLevel, String str, String str2, Throwable th) {
+    public void printStackTrace(LogLevel logLevel, String tag, String message, Throwable th) {
         Writer stringWriter = new StringWriter();
         PrintWriter printWriter = new PrintWriter(stringWriter);
         th.printStackTrace(printWriter);
         printWriter.flush();
         printWriter.close();
-        a(logLevel, str, str2, stringWriter.toString());
+        print(logLevel, tag, message, stringWriter.toString());
     }
 
-    public void a(LogLevel logLevel, String str, String str2, String str3) {
-        c(logLevel, str, String.format(Locale.getDefault(), ">>>%s\n%s\n<<<", new Object[]{str2, str3}));
+    public void print(LogLevel logLevel, String tag, String message, String message2) {
+        c(logLevel, tag, String.format(Locale.getDefault(), ">>>%s\n%s\n<<<", new Object[]{message, message2}));
     }
 
     public void c(LogLevel logLevel, String str, String str2) {
-        i iVar = new i(logLevel, str, str2);
-        this.d.add(iVar);
+        Logger iVar = new Logger(logLevel, str, str2);
+        this.linkedQueue.add(iVar);
         a(iVar);
         a(logLevel);
     }
@@ -91,24 +91,24 @@ public class HttpLogger {
         } catch (Throwable th) {
             str3 = th.toString();
         }
-        i iVar = new i(logLevel, str, str3);
-        this.d.add(iVar);
+        Logger iVar = new Logger(logLevel, str, str3);
+        this.linkedQueue.add(iVar);
         a(iVar);
         a(logLevel);
     }
 
     public void d() {
-        if (!this.d.isEmpty()) {
-            ConcurrentLinkedQueue concurrentLinkedQueue = this.d;
-            this.d = new ConcurrentLinkedQueue();
+        if (!this.linkedQueue.isEmpty()) {
+            ConcurrentLinkedQueue concurrentLinkedQueue = this.linkedQueue;
+            this.linkedQueue = new ConcurrentLinkedQueue();
             ah.a(new g(this, concurrentLinkedQueue), TAG);
         }
     }
 
     public void e() {
-        if (!this.d.isEmpty()) {
-            ConcurrentLinkedQueue concurrentLinkedQueue = this.d;
-            this.d = new ConcurrentLinkedQueue();
+        if (!this.linkedQueue.isEmpty()) {
+            ConcurrentLinkedQueue concurrentLinkedQueue = this.linkedQueue;
+            this.linkedQueue = new ConcurrentLinkedQueue();
             try {
                 ah.a(new h(this, concurrentLinkedQueue), TAG).get();
             } catch (Throwable th) {
@@ -129,7 +129,7 @@ public class HttpLogger {
             obj2 = null;
         }
         if (obj3 != null) {
-            Iterator it = b.iterator();
+            Iterator it = loggers.iterator();
             while (it.hasNext()) {
                 ((HttpLogger) it.next()).e();
             }
@@ -153,7 +153,7 @@ public class HttpLogger {
                 fileOutputStream = new FileOutputStream(file, true);
                 try {
                     PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(new BufferedOutputStream(fileOutputStream), "utf-8"), false);
-                    for (i iVar : queue) {
+                    for (Logger iVar : queue) {
                         printWriter.println(iVar.toString());
                     }
                     printWriter.flush();
@@ -186,12 +186,12 @@ public class HttpLogger {
         }
     }
 
-    private static void a(i iVar) {
-        String[] split = iVar.toString().split("[\r\n\\u0085\\u2028\\u2029]+");
+    private static void a(Logger logger) {
+        String[] split = logger.toString().split("[\r\n\\u0085\\u2028\\u2029]+");
         int i = 0;
         while (i < split.length) {
-            String str = i < 1 ? split[i] : iVar.g + split[i];
-            if (iVar.d.ordinal() >= LogLevel.WARNING.ordinal()) {
+            String str = i < 1 ? split[i] : logger.g + split[i];
+            if (logger.d.ordinal() >= LogLevel.WARNING.ordinal()) {
                 Log.e("logger", str);
             } else {
                 Log.i("logger", str);

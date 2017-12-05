@@ -27,16 +27,16 @@ class hv implements as {
                 str4 = this.b.g;
             }
             if (TextUtils.isEmpty(this.b.h)) {
-                this.b.m.b.b.mShareController = new bv(this.b.m.b.b.getContext(), false, str, this.b.i, str2, str3, str4, this.b.j, this.b.k, this.a);
+                this.b.m.b.pageController.mShareController = new bv(this.b.m.b.pageController.getContext(), false, str, this.b.i, str2, str3, str4, this.b.j, this.b.k, this.a);
             } else {
                 if (str.equals("sina")) {
                     str3 = this.b.l;
                     str4 = this.b.h;
                 }
-                this.b.m.b.b.mShareController = new cf(this.b.m.b.b.getContext(), str, this.b.i, str2, str3, str4, this.a);
+                this.b.m.b.pageController.mShareController = new cf(this.b.m.b.pageController.getContext(), str, this.b.i, str2, str3, str4, this.a);
             }
-            this.b.m.b.b.addSubController(this.b.m.b.b.mShareController);
-            this.b.m.b.b.activate(this.b.m.b.b.mShareController);
+            this.b.m.b.pageController.addSubController(this.b.m.b.pageController.mShareController);
+            this.b.m.b.pageController.activate(this.b.m.b.pageController.mShareController);
         }
     }
 }

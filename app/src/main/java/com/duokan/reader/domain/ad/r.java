@@ -6,10 +6,10 @@ import android.os.Bundle;
 
 import com.duokan.b.i;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.ui.general.be;
 import com.miui.systemAdSolution.landingPage.ILandingPageService;
 
@@ -20,9 +20,9 @@ public class r {
     private boolean a = false;
     private final String b = "com.miui.systemAdSolution";
     private ILandingPageService c = null;
-    private final a d;
+    private final WebLog d;
 
-    public r(a aVar) {
+    public r(WebLog aVar) {
         boolean z = true;
         try {
             int i;
@@ -57,7 +57,7 @@ public class r {
             }
         }
         if (!eVar.u) {
-            if (f.b().d()) {
+            if (classc.ConnectivityReceiver.b().d()) {
                 be.a(DkApp.get(), i.general__shared__start_download, 0).show();
                 a.c().c(LogLevel.INFO, "task_wall", "wifi connected");
             }

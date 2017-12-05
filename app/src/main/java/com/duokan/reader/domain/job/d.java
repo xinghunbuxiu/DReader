@@ -5,7 +5,7 @@ import android.app.job.JobScheduler;
 import android.content.ComponentName;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.sys.j;
+import com.duokan.core.sys.AIdleOperation;
 
 class d implements Runnable {
     final /* synthetic */ Runnable a;
@@ -47,7 +47,7 @@ class d implements Runnable {
             }
         } catch (Throwable th) {
         } finally {
-            j.a(this.a);
+            AIdleOperation.postRunnable(this.a);
         }
     }
 }

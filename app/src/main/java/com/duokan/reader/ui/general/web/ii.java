@@ -10,6 +10,6 @@ class ii implements Runnable {
     }
 
     public void run() {
-        this.b.b.b.web_notifyWeb(this.a, 2, new Object[0]);
+        this.b.b.pageController.web_notifyWeb(this.a, 2, new Object[0]);
     }
 }

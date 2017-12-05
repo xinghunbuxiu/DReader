@@ -8,7 +8,7 @@ import android.text.format.Formatter;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.FeatureListening;
 import com.duokan.core.app.IFeature;
-import com.duokan.core.app.aa;
+import com.duokan.core.app.Inavigate;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
@@ -29,7 +29,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class bk extends em implements aa, SystemUiConditioner, cu {
+public class bk extends em implements Inavigate, SystemUiConditioner, cu {
     private final BookshelfPrefs a = new BookshelfPrefs();
     private final c b;
     private final cr c = new cr(getContext(), getActivity());

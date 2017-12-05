@@ -8,8 +8,7 @@ import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.reader.DkApp;
-import com.duokan.reader.common.c.f;
-import com.duokan.reader.common.c.g;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.duokan.DkSignInInfo;
 import com.duokan.reader.common.webservices.duokan.DkStoreAdInfo;
 import com.duokan.reader.common.webservices.duokan.r;
@@ -26,10 +25,10 @@ import java.util.List;
 import java.util.TimeZone;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class kp implements ah, g, h {
+public class kp implements ah, classc.IConnectChanged, h {
     private static final ai a = new ai();
     private Context b;
-    private final f c;
+    private final classc.ConnectivityReceiver c;
     private final i d;
     private final PersonalPrefs e;
     private final CopyOnWriteArrayList f = new CopyOnWriteArrayList();
@@ -38,21 +37,21 @@ public class kp implements ah, g, h {
     private r i;
     private eo j = null;
 
-    public static void a(Context context, i iVar, f fVar, PersonalPrefs personalPrefs) {
-        a.a(new kp(context, iVar, fVar, personalPrefs));
+    public static void a(Context context, i iVar, classc.ConnectivityReceiver connectivity, PersonalPrefs personalPrefs) {
+        a.a(new kp(context, iVar, connectivity, personalPrefs));
     }
 
     public static kp a() {
         return (kp) a.a();
     }
 
-    private kp(Context context, i iVar, f fVar, PersonalPrefs personalPrefs) {
+    private kp(Context context, i iVar, classc.ConnectivityReceiver connectivity, PersonalPrefs personalPrefs) {
         this.b = context;
         this.d = iVar;
-        this.c = fVar;
+        this.c = connectivity;
         this.e = personalPrefs;
         this.d.add((h) this);
-        this.c.a((g) this);
+        this.c.a((classc.IConnectChanged) this);
     }
 
     public void a(la laVar) {
@@ -232,7 +231,7 @@ public class kp implements ah, g, h {
     public void d(com.duokan.reader.domain.account.a aVar) {
     }
 
-    public void onConnectivityChanged(f fVar) {
+    public void onConnectivityChanged(classc.ConnectivityReceiver connectivity) {
         if ((!this.c.e() || ManagedApp.get().getOldRunningState() != RunningState.FOREGROUND) && !this.c.d()) {
             return;
         }

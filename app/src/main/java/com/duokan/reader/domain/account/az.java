@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 import com.duokan.b.i;
 import com.duokan.reader.DkApp;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 
 class az implements AccountManagerCallback {
     final /* synthetic */ Account a;
@@ -29,7 +29,7 @@ class az implements AccountManagerCallback {
         } catch (Exception e) {
             e.printStackTrace();
             String str = "";
-            if (!f.b().e()) {
+            if (!classc.ConnectivityReceiver.b().e()) {
                 str = DkApp.get().getApplicationContext().getResources().getString(i.general__shared__network_error);
             }
             this.c.a(this.d, str);

@@ -16,7 +16,7 @@ class go implements as {
     }
 
     public void a() {
-        sh shVar = (sh) this.a.b.b.getContext().queryFeature(sh.class);
+        sh shVar = (sh) this.a.b.pageController.getContext().queryFeature(sh.class);
         if (shVar != null) {
             c G = shVar.G();
             if (TextUtils.equals(G.H(), this.a.a) && G.k()) {

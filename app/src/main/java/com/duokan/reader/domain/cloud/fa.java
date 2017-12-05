@@ -29,7 +29,7 @@ class fa extends AsyncTask {
         /* JADX: method processing error */
 /*
 Error: java.lang.IndexOutOfBoundsException: bitIndex < 0: -1
-	at java.util.BitSet.get(BitSet.java:623)
+	at java.util.BitSet.getAllSortStackTraces(BitSet.java:623)
 	at jadx.core.dex.visitors.CodeShrinker$ArgsInfo.usedArgAssign(CodeShrinker.java:138)
 	at jadx.core.dex.visitors.CodeShrinker$ArgsInfo.access$300(CodeShrinker.java:43)
 	at jadx.core.dex.visitors.CodeShrinker.canMoveBetweenBlocks(CodeShrinker.java:282)

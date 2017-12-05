@@ -9,7 +9,7 @@ import com.duokan.core.app.ManagedApp;
 import com.duokan.core.ui.UTools;
 import com.duokan.reader.common.async.work.g;
 import com.duokan.reader.common.bitmap.BitmapsRecycler.RecycleReason;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.d;
 import com.duokan.reader.common.download.e;
 import com.duokan.reader.common.m;
@@ -103,7 +103,7 @@ public abstract class DkReader extends DkApp {
                 this.b = i.f().c().j();
             }
         });
-        a.a(ReaderEnv.get(), f.b());
+        a.a(ReaderEnv.get(), classc.ConnectivityReceiver.b());
         addOnRunningStateChangedListener(new IActivityRunStatusChanged(this) {
             final /* synthetic */ DkReader a;
 
@@ -149,15 +149,15 @@ public abstract class DkReader extends DkApp {
         com.duokan.reader.domain.downloadcenter.b.a(this, r.a(), e.b(), DkNotificationManager.get());
         bv.a((Context) this);
         dh.a((Context) this);
-        ai.a(this, ReaderEnv.get(), f.b(), i.f(), iz.a(), com.duokan.reader.domain.store.a.a(), DkCloudStorage.a(), com.duokan.reader.domain.downloadcenter.b.n());
+        ai.a(this, ReaderEnv.get(), classc.ConnectivityReceiver.b(), i.f(), iz.a(), com.duokan.reader.domain.store.a.a(), DkCloudStorage.a(), com.duokan.reader.domain.downloadcenter.b.n());
         com.duokan.reader.domain.store.o.a((Context) this, b.a(), ai.a());
-        com.duokan.reader.ui.store.o.a((Context) this, com.duokan.reader.domain.store.a.a(), DkCloudStorage.a(), f.b(), com.duokan.reader.domain.downloadcenter.b.n(), ai.a());
+        com.duokan.reader.ui.store.o.a((Context) this, com.duokan.reader.domain.store.a.a(), DkCloudStorage.a(), classc.ConnectivityReceiver.b(), com.duokan.reader.domain.downloadcenter.b.n(), ai.a());
         AudioPlayer.a((Context) this);
         com.duokan.reader.domain.b.b.a((Context) this);
         j.a((Context) this);
         d.a(this, isWebAccessEnabled(), ReaderEnv.get(), b.a(), i.f());
         com.duokan.reader.ui.b.d.a(this, b.a(), com.duokan.reader.domain.social.message.h.a(), d.a());
-        kp.a((Context) this, i.f(), f.b(), PersonalPrefs.a());
+        kp.a((Context) this, i.f(), classc.ConnectivityReceiver.b(), PersonalPrefs.a());
         com.duokan.reader.domain.ad.g.a((Context) this);
         runPreReady(new Runnable(this) {
             final /* synthetic */ DkReader a;

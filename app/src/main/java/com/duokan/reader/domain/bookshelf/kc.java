@@ -2,7 +2,7 @@ package com.duokan.reader.domain.bookshelf;
 
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.r;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -23,7 +23,7 @@ class kc implements Runnable {
                 int i;
                 String str = (String) it.next();
                 km y = this.a.c.y(str);
-                if (this.a.b && f.b().c()) {
+                if (this.a.b && classc.ConnectivityReceiver.b().c()) {
                     i = 1004;
                 } else {
                     Map hashMap = new HashMap();

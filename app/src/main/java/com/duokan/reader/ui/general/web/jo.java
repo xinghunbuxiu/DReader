@@ -9,9 +9,9 @@ import org.json.JSONObject;
 
 class jo implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    jo(cg cgVar, String str) {
+    jo(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
@@ -23,7 +23,7 @@ class jo implements as {
         String b = i.b(jSONObject2, "upId");
         int optInt = jSONObject2.optInt("count", 5);
         if (ReaderEnv.get().isVipDevice()) {
-            this.b.b.web_notifyWeb(string, 0, new JSONObject());
+            this.b.pageController.web_notifyWeb(string, 0, new JSONObject());
         } else {
             g.a().a(b, optInt, new jp(this, string));
         }

@@ -5,6 +5,7 @@ import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.common.webservices.duokan.p;
+import com.duokan.reader.ui.InavOperater;
 import com.duokan.reader.ui.general.web.StorePageController;
 
 public abstract class bv {
@@ -15,7 +16,7 @@ public abstract class bv {
     }
 
     public static void a(IFeature featrue, String str, String str2, String str3, boolean z) {
-        ((com.duokan.reader.ui.e) featrue.queryFeature(com.duokan.reader.ui.e.class)).pushPageSmoothly(a(featrue, String.valueOf(0), z ? 1 : 2, str, str3), null);
+        ((InavOperater) featrue.queryFeature(InavOperater.class)).pushPageSmoothly(a(featrue, String.valueOf(0), z ? 1 : 2, str, str3), null);
     }
 
     public static ActivatedController a(IFeature featrue) {

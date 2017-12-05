@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.duokan.c.j;
 import com.duokan.reader.DkApp;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 
 do;
 
@@ -27,7 +27,7 @@ class o implements AccountManagerCallback {
         } catch (Exception e) {
             e.printStackTrace();
             String str = "";
-            if (f.b().e()) {
+            if (classc.ConnectivityReceiver.b().e()) {
                 str = this.c.getContext().getResources().getString(j.personal__miaccount_change_nickname_view__failed);
             } else {
                 str = DkApp.get().getApplicationContext().getResources().getString(j.general__shared__network_error);

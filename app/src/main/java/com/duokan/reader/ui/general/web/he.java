@@ -5,9 +5,9 @@ import com.duokan.reader.DkPublic;
 import java.util.concurrent.Callable;
 
 class he implements Callable {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    he(cg cgVar) {
+    he(PageController cgVar) {
         this.a = cgVar;
     }
 

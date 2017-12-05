@@ -6,16 +6,16 @@ import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class a extends HttpLogger {
+public class WebLog extends HttpLogger {
     private static final Object a = new Object();
-    private static a b = null;
-    private final AtomicReference c = new AtomicReference();
-    private final UncaughtExceptionHandler d = Thread.getDefaultUncaughtExceptionHandler();
+    private static WebLog webLog = null;
+    private final AtomicReference atomicReference = new AtomicReference();
+    private final UncaughtExceptionHandler exceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
     private final HashMap e = new HashMap();
     private boolean f = false;
     private c g = null;
 
-    public a() {
+    public WebLog() {
         Thread.setDefaultUncaughtExceptionHandler(new b(this));
     }
 
@@ -25,11 +25,7 @@ public class a extends HttpLogger {
 
     public void b(boolean z) {
         if (!z) {
-            try {
-                throw new AssertionError();
-            } catch (Throwable th) {
-                a(LogLevel.WARNING, "assert", "assertion error!");
-            }
+            printStackTraceString(LogLevel.WARNING, "assert", "assertion error!");
         }
     }
 
@@ -56,17 +52,17 @@ public class a extends HttpLogger {
         this.g = cVar;
     }
 
-    public static a c() {
-        if (b != null) {
-            return b;
+    public static WebLog c() {
+        if (webLog != null) {
+            return webLog;
         }
         synchronized (a) {
-            if (b != null) {
-                a aVar = b;
+            if (webLog != null) {
+                WebLog aVar = webLog;
                 return aVar;
             }
-            b = new a();
-            return b;
+            webLog = new WebLog();
+            return webLog;
         }
     }
 
@@ -78,13 +74,13 @@ public class a extends HttpLogger {
         d dVar;
         if (z) {
             d dVar2 = new d();
-            dVar = (d) this.c.getAndSet(dVar2);
+            dVar = (d) this.atomicReference.getAndSet(dVar2);
             dVar2.start();
         } else {
-            dVar = (d) this.c.getAndSet(null);
+            dVar = (d) this.atomicReference.getAndSet(null);
         }
         if (dVar != null) {
-            dVar.a = true;
+            dVar.isStop = true;
         }
     }
 }

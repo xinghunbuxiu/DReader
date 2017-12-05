@@ -10,9 +10,9 @@ import com.duokan.reader.domain.cloud.PersonalPrefs;
 
 class gx implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    gx(cg cgVar, String str) {
+    gx(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
@@ -23,7 +23,7 @@ class gx implements as {
         TaskHandler.postTask(new gy(this));
         DkSignInInfo dkSignInInfo = null;
         if (!TextUtils.isEmpty(this.a)) {
-            dkSignInInfo = this.b.b.jsonToDkSignInInfo(this.a);
+            dkSignInInfo = this.b.pageController.jsonToDkSignInInfo(this.a);
         }
         TaskHandler.postDelayed(new gz(this, dkSignInInfo), 5000);
     }

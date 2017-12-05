@@ -8,9 +8,9 @@ import org.json.JSONObject;
 import java.util.concurrent.Callable;
 
 class dc implements Callable {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    dc(cg cgVar) {
+    dc(PageController cgVar) {
         this.a = cgVar;
     }
 

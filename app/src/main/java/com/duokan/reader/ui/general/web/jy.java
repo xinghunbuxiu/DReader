@@ -4,15 +4,15 @@ import com.duokan.core.sys.as;
 
 class jy implements Runnable {
     final /* synthetic */ as a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    jy(cg cgVar, as asVar) {
+    jy(PageController cgVar, as asVar) {
         this.b = cgVar;
         this.a = asVar;
     }
 
     public void run() {
-        if (this.b.b.isAttached()) {
+        if (this.b.pageController.isAttached()) {
             this.b.b(this.a);
         }
     }

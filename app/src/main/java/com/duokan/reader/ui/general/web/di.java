@@ -6,9 +6,9 @@ import org.json.JSONObject;
 
 class di implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    di(cg cgVar, String str) {
+    di(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

@@ -6,7 +6,7 @@ import android.widget.FrameLayout.LayoutParams;
 
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
-import com.duokan.core.app.aa;
+import com.duokan.core.app.Inavigate;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.PullDownRefreshView.RefreshStyle;
 import com.duokan.core.ui.Scrollable;
@@ -22,6 +22,7 @@ import com.duokan.reader.domain.cloud.PersonalPrefs;
 import com.duokan.reader.domain.cloud.hi;
 import com.duokan.reader.domain.cloud.push.DkCloudPushMessage;
 import com.duokan.reader.domain.cloud.push.DkCloudPushMessage.ActionType;
+import com.duokan.reader.ui.InavOperater;
 import com.duokan.reader.ui.general.LoadingCircleView.LoadingStyle;
 import com.duokan.reader.ui.general.em;
 import com.duokan.reader.ui.general.web.StorePageController;
@@ -30,7 +31,7 @@ import org.json.JSONObject;
 
 import java.util.concurrent.TimeUnit;
 
-public abstract class bl extends em implements aa, hi {
+public abstract class bl extends em implements Inavigate, hi {
     static final /* synthetic */ boolean b = (!bl.class.desiredAssertionStatus());
     StorePageController a = null;
     private final FrameLayout c = new FrameLayout(getContext());
@@ -176,40 +177,40 @@ public abstract class bl extends em implements aa, hi {
     private void a(String str, String str2, boolean z, Runnable runnable) {
         ActivatedController a = a(getContext(), "", p.i().e(str, str2));
         if (z) {
-            ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPageSmoothly(a, runnable);
+            ((InavOperater) getContext().queryFeature(InavOperater.class)).pushPageSmoothly(a, runnable);
             return;
         }
-        ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPage(a);
+        ((InavOperater) getContext().queryFeature(InavOperater.class)).pushPage(a);
         TaskHandler.PostTask(runnable);
     }
 
     private void a(IFeature featrue, String str, String str2, boolean z, Runnable runnable) {
         ActivatedController a = a(a(featrue), "", p.i().b(str, str2));
         if (z) {
-            ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPageSmoothly(a, runnable);
+            ((InavOperater) getContext().queryFeature(InavOperater.class)).pushPageSmoothly(a, runnable);
             return;
         }
-        ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPage(a);
+        ((InavOperater) getContext().queryFeature(InavOperater.class)).pushPage(a);
         TaskHandler.PostTask(runnable);
     }
 
     private void a(IFeature featrue, int i, String str, String str2, boolean z, Runnable runnable) {
         ActivatedController a = a(a(featrue), "", p.i().a("0", i, str, str2));
         if (z) {
-            ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPageSmoothly(a, runnable);
+            ((InavOperater) getContext().queryFeature(InavOperater.class)).pushPageSmoothly(a, runnable);
             return;
         }
-        ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPage(a);
+        ((InavOperater) getContext().queryFeature(InavOperater.class)).pushPage(a);
         TaskHandler.PostTask(runnable);
     }
 
     private void b(IFeature featrue, String str, String str2, boolean z, Runnable runnable) {
         ActivatedController a = a(a(featrue), "", p.i().c(str, str2));
         if (z) {
-            ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPageSmoothly(a, runnable);
+            ((InavOperater) getContext().queryFeature(InavOperater.class)).pushPageSmoothly(a, runnable);
             return;
         }
-        ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPage(a);
+        ((InavOperater) getContext().queryFeature(InavOperater.class)).pushPage(a);
         TaskHandler.PostTask(runnable);
     }
 
@@ -243,10 +244,10 @@ public abstract class bl extends em implements aa, hi {
     private void c(IFeature featrue, String str, String str2, boolean z, Runnable runnable) {
         ActivatedController a = a(featrue, str, str2);
         if (z) {
-            ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPageSmoothly(a, runnable);
+            ((InavOperater) getContext().queryFeature(InavOperater.class)).pushPageSmoothly(a, runnable);
             return;
         }
-        ((com.duokan.reader.ui.e) getContext().queryFeature(com.duokan.reader.ui.e.class)).pushPage(a);
+        ((InavOperater) getContext().queryFeature(InavOperater.class)).pushPage(a);
         TaskHandler.PostTask(runnable);
     }
 

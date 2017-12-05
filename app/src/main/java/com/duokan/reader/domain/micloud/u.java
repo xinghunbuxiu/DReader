@@ -5,7 +5,7 @@ import android.util.Log;
 
 import com.duokan.reader.common.async.work.e;
 import com.duokan.reader.common.async.work.q;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.j;
 import com.duokan.reader.domain.micloud.a.a;
 import com.duokan.reader.domain.micloud.a.l;
@@ -24,7 +24,7 @@ public class u extends be {
     }
 
     protected int b(e eVar) {
-        if (f.b().e()) {
+        if (classc.ConnectivityReceiver.b().e()) {
             return 6;
         }
         return 3;
@@ -518,6 +518,6 @@ public class u extends be {
     }
 
     private boolean p() {
-        return f.b().c();
+        return classc.ConnectivityReceiver.b().c();
     }
 }

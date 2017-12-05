@@ -1,6 +1,6 @@
 package com.duokan.core.ui;
 
-import com.duokan.core.sys.j;
+import com.duokan.core.sys.AIdleOperation;
 
 class ed implements Runnable {
     final ec a;
@@ -11,7 +11,7 @@ class ed implements Runnable {
 
     public void run() {
         if (this.a.view.requestFocus()) {
-            j.a(new ee(this));
+            AIdleOperation.addIdleStatus(new ee(this));
         }
     }
 }

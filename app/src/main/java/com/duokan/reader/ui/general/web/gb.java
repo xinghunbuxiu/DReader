@@ -12,7 +12,7 @@ class gb implements ag {
     }
 
     public void a(JSONObject jSONObject) {
-        this.a.b.b.triggerEventOnCurrentUrl("feedCommit", jSONObject);
-        this.a.b.b.mEditFeedController = null;
+        this.a.b.pageController.triggerEventOnCurrentUrl("feedCommit", jSONObject);
+        this.a.b.pageController.mEditFeedController = null;
     }
 }

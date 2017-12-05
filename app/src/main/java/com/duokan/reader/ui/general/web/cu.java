@@ -10,9 +10,9 @@ import org.json.JSONObject;
 
 class cu implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    cu(cg cgVar, String str) {
+    cu(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
@@ -31,9 +31,9 @@ class cu implements as {
             }
             d a = d.a(string2, optString);
             if (a != null) {
-                this.b.b.js_pay(string, b, a, jSONObject2);
+                this.b.pageController.js_pay(string, b, a, jSONObject2);
             } else {
-                this.b.b.web_notifyWeb(string, 1, new Object[0]);
+                this.b.pageController.web_notifyWeb(string, 1, new Object[0]);
             }
         }
     }

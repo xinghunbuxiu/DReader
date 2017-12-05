@@ -243,7 +243,7 @@ public class z implements af {
         DkCloudPushMessage dkCloudPushMessage = null;
         DkCloudMessageInfo fromJson = DkCloudMessageInfo.fromJson(jSONObject);
         if (fromJson != null) {
-            dkCloudPushMessage = (DkCloudPushMessage) TaskHandler.getThead().a(str, z, fromJson).first;
+            dkCloudPushMessage = (DkCloudPushMessage) TaskHandler.getThread().a(str, z, fromJson).first;
             if (this.j != null) {
                 this.j.a(dkCloudPushMessage);
             } else {

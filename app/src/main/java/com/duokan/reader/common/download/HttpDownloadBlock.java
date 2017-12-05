@@ -405,11 +405,11 @@ class HttpDownloadBlock extends DownloadBlock {
                     }
                     if (nVar.f.getAttribute(ExecutionContext.HTTP_CONNECTION) instanceof HttpInetConnection) {
                         HttpInetConnection httpInetConnection = (HttpInetConnection) nVar.f.getAttribute(ExecutionContext.HTTP_CONNECTION);
-                        this.n.a(LogLevel.EVENT, "" + this.b, "connection established", String.format(Locale.getDefault(), "local ip: %s\nremote ip: %s", new Object[]{httpInetConnection.getLocalAddress().getHostAddress(), httpInetConnection.getRemoteAddress().getHostAddress()}));
+                        this.n.print(LogLevel.EVENT, "" + this.b, "connection established", String.format(Locale.getDefault(), "local ip: %s\nremote ip: %s", new Object[]{httpInetConnection.getLocalAddress().getHostAddress(), httpInetConnection.getRemoteAddress().getHostAddress()}));
                     }
                     return RetryableResult.SUCCEEDED;
                 } catch (Throwable e) {
-                    this.n.a(LogLevel.WARNING, "" + this.b, "connection failed", e);
+                    this.n.printStackTrace(LogLevel.WARNING, "" + this.b, "connection failed", e);
                     return RetryableResult.RETRY;
                 }
             } catch (Exception e2) {
@@ -558,7 +558,7 @@ class HttpDownloadBlock extends DownloadBlock {
                     }
                 }
             } catch (Throwable e8) {
-                this.n.a(LogLevel.WARNING, "" + this.b, "response exception", e8);
+                this.n.printStackTrace(LogLevel.WARNING, "" + this.b, "response exception", e8);
                 retryableResult = RetryableResult.RETRY;
                 try {
                     nVar.d.abort();
@@ -572,7 +572,7 @@ class HttpDownloadBlock extends DownloadBlock {
                 } catch (Exception e9) {
                 }
             } catch (Throwable e82) {
-                this.n.a(LogLevel.WARNING, "" + this.b, "response exception", e82);
+                this.n.printStackTrace(LogLevel.WARNING, "" + this.b, "response exception", e82);
                 retryableResult = RetryableResult.FAILED;
                 try {
                     nVar.d.abort();

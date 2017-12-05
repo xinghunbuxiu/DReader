@@ -15,7 +15,7 @@ import android.webkit.WebBackForwardList;
 import android.webkit.WebSettings;
 import android.widget.LinearLayout;
 
-import com.duokan.core.sys.j;
+import com.duokan.core.sys.AIdleOperation;
 import com.duokan.core.ui.PullDownRefreshBaseView.RefreshState;
 import com.duokan.core.ui.PullDownRefreshView;
 import com.duokan.core.ui.PullDownRefreshView.RefreshStyle;
@@ -26,7 +26,7 @@ import com.duokan.core.ui.fr;
 import com.duokan.core.ui.ft;
 import com.duokan.core.ui.fx;
 import com.duokan.reader.DkApp;
-import com.duokan.reader.common.c.g;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.ui.general.WebView;
 import com.duokan.reader.ui.general.jw;
@@ -34,7 +34,7 @@ import com.duokan.reader.ui.general.jw;
 public class DkWebView extends WebView {
     public static final String b = DkWebView.class.getName();
     private final WebSettings c;
-    private final g d = new h(this);
+    private final classc.IConnectChanged d = new h(this);
     private final LinearLayout e;
     private final PullDownRefreshView f;
     private cg g = null;
@@ -65,7 +65,7 @@ public class DkWebView extends WebView {
         this.f = new PullDownRefreshView(getContext());
         this.e.addView(this.f, new LayoutParams(-1, -2));
         setPullDownHeaderView(this.e);
-        super.setOnScrollListener(new j(this));
+        super.setOnScrollListener(new AIdleOperation(this));
     }
 
     public boolean k() {
@@ -267,7 +267,7 @@ public class DkWebView extends WebView {
     protected void onDetachedFromWindow() {
         f.b().b(this.d);
         super.onDetachedFromWindow();
-        j.a(new l(this));
+        AIdleOperation.addIdleStatus(new l(this));
     }
 
     protected void b(String str) {

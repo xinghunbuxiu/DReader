@@ -5,6 +5,7 @@ import android.widget.TextView;
 
 import com.duokan.a.a;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.ui.LinearScrollView;
 import com.duokan.core.ui.UTools;
 
@@ -28,6 +29,6 @@ class bd extends a {
     }
 
     protected void onSessionSucceeded() {
-        com.duokan.core.diagnostic.a.c().c(LogLevel.EVENT, "DIAGNOSTICS", this.b.getText().toString());
+        WebLog.c().c(LogLevel.EVENT, "DIAGNOSTICS", this.b.getText().toString());
     }
 }

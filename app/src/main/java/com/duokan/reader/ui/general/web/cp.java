@@ -7,9 +7,9 @@ import org.json.JSONObject;
 
 class cp implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    cp(cg cgVar, String str) {
+    cp(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

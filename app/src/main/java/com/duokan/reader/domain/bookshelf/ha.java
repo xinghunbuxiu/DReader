@@ -5,11 +5,12 @@ import android.util.Pair;
 import com.duokan.core.b.UrlTools.a;
 import com.duokan.core.b.UrlTools.b;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.io.FileAlreadyExistsException;
-import com.duokan.core.sys.j;
+import com.duokan.core.sys.AIdleOperation;
 import com.duokan.core.sys.o;
 import com.duokan.core.sys.r;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -30,7 +31,7 @@ class ha implements Callable {
 
     public Pair a() {
         OutputStream d;
-        long id = j.a().getId();
+        long id = AIdleOperation.getCurrentThread().getId();
         if (this.a.o()) {
             this.a.g = true;
             return new Pair(Integer.valueOf(1), Long.valueOf(id));
@@ -45,7 +46,7 @@ class ha implements Callable {
                 e.a(str2, this.a.e ? this.a.c.h : this.a.c.e);
             } catch (FileAlreadyExistsException e2) {
             }
-            i = f.b().d() ? 20 : 10;
+            i = classc.ConnectivityReceiver.b().d() ? 20 : 10;
             d = e.d(str2);
             b.a(str, d, new a().a(i).b(131072));
             d.close();
@@ -62,24 +63,24 @@ class ha implements Callable {
                 } else if (this.a.o()) {
                     i2 = 1;
                 } else {
-                    com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the resource " + str);
+                    WebLog.c().printStackTraceString(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the resource " + str);
                     i2 = 1006;
                 }
             } else if (obj == null) {
-                com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the resource %s(size error: %s!=%s)", str, Long.valueOf(c.c()), Long.valueOf(j));
+                WebLog.c().a(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the resource %s(size error: %s!=%s)", str, Long.valueOf(c.c()), Long.valueOf(j));
                 com.duokan.reader.domain.statistics.a.k().a(this.a.b, this.a.c.a, str3, a);
                 i2 = 1007;
             } else {
-                com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the resource %s(md5 error: %s!=%s)", str, a, str3);
+                WebLog.c().a(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the resource %s(md5 error: %s!=%s)", str, a, str3);
                 com.duokan.reader.domain.statistics.a.k().a(this.a.b, this.a.c.a, str3, a);
                 i2 = 1008;
             }
             i = i2;
         } catch (Throwable e3) {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the resource " + str, e3);
+            WebLog.c().printStackTrace(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the resource " + str, e3);
             i = 1006;
         } catch (Throwable e32) {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the resource " + str, e32);
+            WebLog.c().printStackTrace(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the resource " + str, e32);
             i = Calendar.MILLISECOND_OF_SECOND;
         }
         if (i == 0 || i == 1) {

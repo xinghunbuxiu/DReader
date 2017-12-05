@@ -10,7 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class DownloadCenterTask {
-    static final /* synthetic */ boolean b = (!DownloadCenterTask.class.desiredAssertionStatus());
+    static final boolean b = (!DownloadCenterTask.class.desiredAssertionStatus());
     protected final IDownloadTask a;
     private TaskResult c = TaskResult.NONE;
     private m d = null;

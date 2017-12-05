@@ -12,7 +12,7 @@ class ji implements a {
     }
 
     public void a(DkCloudPurchasedFiction dkCloudPurchasedFiction) {
-        ((ao) this.a.e.b.b.getContext().queryFeature(ao.class)).a(null);
+        ((ao) this.a.e.b.pageController.getContext().queryFeature(ao.class)).a(null);
         this.a.c.release();
     }
 

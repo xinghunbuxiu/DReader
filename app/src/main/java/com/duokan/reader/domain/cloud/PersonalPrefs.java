@@ -11,8 +11,7 @@ import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
-import com.duokan.reader.common.c.f;
-import com.duokan.reader.common.c.g;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.domain.account.AccountType;
 import com.duokan.reader.domain.account.PersonalAccount;
 import com.duokan.reader.domain.account.a;
@@ -32,7 +31,7 @@ import java.util.TimeZone;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class PersonalPrefs implements g, h {
+public class PersonalPrefs implements classc.IConnectChanged, h {
     private static PersonalPrefs a;
     private final ReaderEnv b;
     private final Context c;
@@ -62,16 +61,16 @@ public class PersonalPrefs implements g, h {
         FEMALE
     }
 
-    private PersonalPrefs(Context context, i iVar, f fVar, ReaderEnv readerEnv) {
+    private PersonalPrefs(Context context, i iVar, classc.ConnectivityReceiver connectivity, ReaderEnv readerEnv) {
         this.c = context;
         this.d = iVar;
         this.b = readerEnv;
         this.d.add((h) this);
-        fVar.a((g) this);
+        connectivity.a((classc.IConnectChanged) this);
     }
 
-    public static void a(Context context, i iVar, f fVar, ReaderEnv readerEnv) {
-        a = new PersonalPrefs(context, iVar, fVar, readerEnv);
+    public static void a(Context context, i iVar, classc.ConnectivityReceiver connectivity, ReaderEnv readerEnv) {
+        a = new PersonalPrefs(context, iVar, connectivity, readerEnv);
     }
 
     public static PersonalPrefs a() {
@@ -405,8 +404,8 @@ public class PersonalPrefs implements g, h {
     public void d(a aVar) {
     }
 
-    public void onConnectivityChanged(f fVar) {
-        if ((fVar.e() && ManagedApp.get().getOldRunningState() == RunningState.FOREGROUND) || fVar.d()) {
+    public void onConnectivityChanged(classc.ConnectivityReceiver connectivity) {
+        if ((connectivity.e() && ManagedApp.get().getOldRunningState() == RunningState.FOREGROUND) || connectivity.d()) {
             if (E()) {
                 a(b(), b());
             } else {

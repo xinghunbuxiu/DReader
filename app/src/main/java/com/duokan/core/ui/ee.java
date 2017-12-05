@@ -3,9 +3,9 @@ package com.duokan.core.ui;
 import android.content.Context;
 import android.view.inputmethod.InputMethodManager;
 
-import com.duokan.core.sys.s;
+import com.duokan.core.sys.IdleStatus;
 
-class ee implements s {
+class ee implements IdleStatus {
     final  ed a;
 
     ee(ed edVar) {

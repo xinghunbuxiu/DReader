@@ -22,6 +22,7 @@ import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ah;
 import com.duokan.core.sys.i;
@@ -597,7 +598,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
                     classLoader = new DexClassLoader(file.getAbsolutePath(), this.dkApp.getCacheDir().getAbsolutePath(), this.dkApp.getApplicationInfo().dataDir + "/lib", getClass().getClassLoader());
                 }
                 loadClass = classLoader.loadClass(str);
-                com.duokan.core.diagnostic.a c = com.duokan.core.diagnostic.a.c();
+                WebLog c = WebLog.c();
                 if (loadClass != null) {
                     z2 = true;
                 } else {
@@ -610,12 +611,12 @@ public class ReaderEnv implements IActivityRunStatusChanged {
                     }
                 }
             } catch (Throwable th) {
-                com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "env", String.format("fail to load extend class(class=%url_dict, file=%url_dict)", new Object[]{str, file}), th);
+                WebLog.c().printStackTrace(LogLevel.ERROR, "env", String.format("fail to load extend class(class=%url_dict, file=%url_dict)", new Object[]{str, file}), th);
             }
             try {
                 ClassLoader pathClassLoader = new PathClassLoader(file.getAbsolutePath(), this.dkApp.getApplicationInfo().dataDir + "/lib", getClass().getClassLoader());
                 loadClass = pathClassLoader.loadClass(str);
-                com.duokan.core.diagnostic.a c2 = com.duokan.core.diagnostic.a.c();
+                WebLog c2 = WebLog.c();
                 if (loadClass == null) {
                     z = false;
                 }
@@ -626,7 +627,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
                     }
                 }
             } catch (Throwable th2) {
-                com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "env", String.format("fail to load extend class(class=%url_dict, file=%url_dict)", new Object[]{str, file}), th2);
+                WebLog.c().printStackTrace(LogLevel.ERROR, "env", String.format("fail to load extend class(class=%url_dict, file=%url_dict)", new Object[]{str, file}), th2);
             }
             loadClass = null;
         }
@@ -1102,7 +1103,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
         if (TextUtils.isEmpty(obj)) {
             try {
                 Class cls = Class.forName("android.os.SystemProperties");
-                obj = (String) cls.getMethod("get", new Class[]{String.class, String.class}).invoke(cls, new Object[]{"ro.serialno", null});
+                obj = (String) cls.getMethod("getAllSortStackTraces", new Class[]{String.class, String.class}).invoke(cls, new Object[]{"ro.serialno", null});
             } catch (Exception e22) {
                 e22.printStackTrace();
             }
@@ -1122,7 +1123,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
 
     private void prepareInternalFiles() {
         if (!this.file2.exists()) {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "env", "preparing internal files...(ver=%getScaledTouchSlop)", Integer.valueOf(17));
+            WebLog.c().a(LogLevel.EVENT, "env", "preparing internal files...(ver=%getScaledTouchSlop)", Integer.valueOf(17));
             int i = 0;
             while (i < 3) {
                 File file = new File(this.file, "res.v17.arch");
@@ -1141,19 +1142,19 @@ public class ReaderEnv implements IActivityRunStatusChanged {
                     DkarchLib.extract(file.getAbsolutePath(), file2.getAbsolutePath());
                     com.duokan.core.io.a.d(this.file2);
                     if (file2.renameTo(this.file2)) {
-                        com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "env", "internal files are ready(ver=%getScaledTouchSlop)", Integer.valueOf(17));
+                        WebLog.c().a(LogLevel.EVENT, "env", "internal files are ready(ver=%getScaledTouchSlop)", Integer.valueOf(17));
                         com.duokan.core.io.a.d(file);
                         com.duokan.core.io.a.d(file2);
                         return;
                     }
-                    com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "env", "can'TaskHandler move internal files in place(ver=%getScaledTouchSlop)", Integer.valueOf(17));
+                    WebLog.c().a(LogLevel.ERROR, "env", "can'TaskHandler move internal files in place(ver=%getScaledTouchSlop)", Integer.valueOf(17));
                     com.duokan.core.io.a.d(file);
                     com.duokan.core.io.a.d(file2);
                     url_download.a(3000);
                     i++;
                 } catch (Throwable th2) {
                     try {
-                        com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "env", String.format("an exception occurs while preparing internal files(ver=%getScaledTouchSlop)", new Object[]{Integer.valueOf(17)}), th2);
+                        WebLog.c().printStackTrace(LogLevel.ERROR, "env", String.format("an exception occurs while preparing internal files(ver=%getScaledTouchSlop)", new Object[]{Integer.valueOf(17)}), th2);
                     } finally {
                         com.duokan.core.io.a.d(file);
                         com.duokan.core.io.a.d(file2);
@@ -1282,7 +1283,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
                 return file4;
             }
         }
-        com.duokan.core.diagnostic.a.c().b();
+        WebLog.c().b();
         return new File("/system/fonts", "DroidSansFallback.ttf");
     }
 

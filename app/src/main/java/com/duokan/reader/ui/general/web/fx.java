@@ -12,6 +12,6 @@ class fx implements ag {
     }
 
     public void a(JSONObject jSONObject) {
-        this.a.a.b.b.triggerEventOnCurrentUrl("commentCommit", jSONObject);
+        this.a.a.b.pageController.triggerEventOnCurrentUrl("commentCommit", jSONObject);
     }
 }

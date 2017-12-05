@@ -10,6 +10,6 @@ class ia implements as {
     }
 
     public void a() {
-        this.a.b.b.queryBookDetail(this.a.a, new ib(this), true);
+        this.a.b.pageController.queryBookDetail(this.a.a, new ib(this), true);
     }
 }

@@ -18,12 +18,12 @@ class eh implements Runnable {
     }
 
     public void run() {
-        fa faVar = new fa(this.e.b.b.getContext());
-        faVar.a(this.e.b.b.mPageTitle);
+        fa faVar = new fa(this.e.b.pageController.getContext());
+        faVar.a(this.e.b.pageController.mPageTitle);
         faVar.b(this.a);
         faVar.d(this.b);
         faVar.c(this.c);
-        this.e.b.b.mCallBackSucceed = false;
+        this.e.b.pageController.mCallBackSucceed = false;
         faVar.a(new ei(this));
         faVar.a(new ej(this));
         faVar.setOnDismissListener(new ek(this));

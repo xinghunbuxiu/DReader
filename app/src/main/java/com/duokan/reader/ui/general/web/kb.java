@@ -4,6 +4,7 @@ import android.text.TextUtils;
 
 import com.duokan.core.b.UrlTools;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.o;
 import com.duokan.core.sys.z;
@@ -60,7 +61,7 @@ class kb implements Runnable {
                 if (!TextUtils.isEmpty(a)) {
                     File access$600 = StoreWebController.storeMirrorDirectory(a);
                     if (this.a || !TextUtils.equals(StoreWebController.sStoreMirrorDir.getAbsolutePath(), access$600.getAbsolutePath())) {
-                        com.duokan.core.diagnostic.a.c().c(LogLevel.EVENT, "store", "updating store mirror");
+                        WebLog.c().c(LogLevel.EVENT, "store", "updating store mirror");
                         File file3 = new File(file, "index.html");
                         if (b.b(p.i().z() + "/phone/", file3, aVar) < 0) {
                             com.duokan.reader.domain.statistics.a.k().a(str, -1);
@@ -69,7 +70,7 @@ class kb implements Runnable {
                         }
                         try {
                             if (new Scanner(file3).findWithinHorizon("\\<body\\>", 0) == null) {
-                                com.duokan.core.diagnostic.a.c().c(LogLevel.WARNING, "store", "bad store mirror index file");
+                                WebLog.c().c(LogLevel.WARNING, "store", "bad store mirror index file");
                                 if (DkApp.get().forCommunity()) {
                                     a.a(file3, new File(DkApp.get().getDiagnosticDirectory(), "index.html.bad"));
                                 }
@@ -101,8 +102,8 @@ class kb implements Runnable {
                                 StoreWebController.sStoreMirrorDir = access$600;
                                 ReaderEnv.get().setPrefString(PrivatePref.STORE, "mirror_version", a);
                                 ReaderEnv.get().commitPrefs();
-                                com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "store", "store mirror updated(ver=%s)", a);
-                                TaskHandler.postTask(new kc(this));
+                                WebLog.c().print(LogLevel.EVENT, "store", "store mirror updated(ver=%s)", a);
+                                TaskHandler.getTaskHandler(new kc(this));
                                 com.duokan.reader.domain.statistics.a.k().a(str, j);
                                 a.d(file);
                                 return;

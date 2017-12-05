@@ -19,12 +19,12 @@ class hp implements cm {
             c a = ai.a().a(this.a.b.a, (z) this.a.d.a, flowChargingTransferChoice.wifiOnly());
             if (a != null) {
                 a.j(this.a.b.b.a.e);
-                this.a.b.b.a.f.b.b.web_notifyWeb(this.a.b.b.a.b, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
+                this.a.b.b.a.f.b.pageController.web_notifyWeb(this.a.b.b.a.b, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
                 return;
             }
-            this.a.b.b.a.f.b.b.web_notifyWeb(this.a.b.b.a.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2));
+            this.a.b.b.a.f.b.pageController.web_notifyWeb(this.a.b.b.a.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2));
             return;
         }
-        this.a.b.b.a.f.b.b.web_notifyWeb(this.a.b.b.a.b, 4, new Object[0]);
+        this.a.b.b.a.f.b.pageController.web_notifyWeb(this.a.b.b.a.b, 4, new Object[0]);
     }
 }

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.duokan.b.i;
 import com.duokan.core.ui.Scrollable;
+import com.duokan.reader.domain.ad.AdLifecycleManager;
 import com.duokan.reader.domain.ad.e;
 import com.duokan.reader.domain.ad.f;
 import com.duokan.reader.domain.ad.r;
@@ -27,7 +28,7 @@ public class a {
     private int c = 0;
     private int d = 0;
     private int e = 0;
-    private final com.duokan.reader.domain.ad.a f = new com.duokan.reader.domain.ad.a();
+    private final AdLifecycleManager f = new AdLifecycleManager();
     private final r g = new r(this.f);
 
     static /* synthetic */ int a(a aVar) {
@@ -141,7 +142,7 @@ public class a {
     L_0x0056:
         r1 = r4.v;	 Catch:{ Throwable -> 0x00f0 }
         r5 = 0;
-        r1 = r1.get(r5);	 Catch:{ Throwable -> 0x00f0 }
+        r1 = r1.getAllSortStackTraces(r5);	 Catch:{ Throwable -> 0x00f0 }
         r1 = (com.duokan.reader.domain.MyTask.HttpLogger) r1;	 Catch:{ Throwable -> 0x00f0 }
         r1 = r1.setDrawable;	 Catch:{ Throwable -> 0x00f0 }
         r7.setDrawable(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }
@@ -204,7 +205,7 @@ public class a {
         r0 = (android.widget.ImageView) r0;	 Catch:{ Throwable -> 0x00f0 }
         r1 = r4.v;	 Catch:{ Throwable -> 0x00f0 }
         r5 = 0;
-        r1 = r1.get(r5);	 Catch:{ Throwable -> 0x00f0 }
+        r1 = r1.getAllSortStackTraces(r5);	 Catch:{ Throwable -> 0x00f0 }
         r1 = (com.duokan.reader.domain.MyTask.HttpLogger) r1;	 Catch:{ Throwable -> 0x00f0 }
         r1 = r1.setDrawable;	 Catch:{ Throwable -> 0x00f0 }
         r7.setDrawable(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }
@@ -253,7 +254,7 @@ public class a {
         r0 = (android.widget.ImageView) r0;	 Catch:{ Throwable -> 0x00f0 }
         r1 = r4.v;	 Catch:{ Throwable -> 0x00f0 }
         r5 = 0;
-        r1 = r1.get(r5);	 Catch:{ Throwable -> 0x00f0 }
+        r1 = r1.getAllSortStackTraces(r5);	 Catch:{ Throwable -> 0x00f0 }
         r1 = (com.duokan.reader.domain.MyTask.HttpLogger) r1;	 Catch:{ Throwable -> 0x00f0 }
         r1 = r1.setDrawable;	 Catch:{ Throwable -> 0x00f0 }
         r7.setDrawable(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }
@@ -262,7 +263,7 @@ public class a {
         r0 = (android.widget.ImageView) r0;	 Catch:{ Throwable -> 0x00f0 }
         r1 = r4.v;	 Catch:{ Throwable -> 0x00f0 }
         r5 = 1;
-        r1 = r1.get(r5);	 Catch:{ Throwable -> 0x00f0 }
+        r1 = r1.getAllSortStackTraces(r5);	 Catch:{ Throwable -> 0x00f0 }
         r1 = (com.duokan.reader.domain.MyTask.HttpLogger) r1;	 Catch:{ Throwable -> 0x00f0 }
         r1 = r1.setDrawable;	 Catch:{ Throwable -> 0x00f0 }
         r7.setDrawable(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }
@@ -271,7 +272,7 @@ public class a {
         r0 = (android.widget.ImageView) r0;	 Catch:{ Throwable -> 0x00f0 }
         r1 = r4.v;	 Catch:{ Throwable -> 0x00f0 }
         r5 = 2;
-        r1 = r1.get(r5);	 Catch:{ Throwable -> 0x00f0 }
+        r1 = r1.getAllSortStackTraces(r5);	 Catch:{ Throwable -> 0x00f0 }
         r1 = (com.duokan.reader.domain.MyTask.HttpLogger) r1;	 Catch:{ Throwable -> 0x00f0 }
         r1 = r1.setDrawable;	 Catch:{ Throwable -> 0x00f0 }
         r7.setDrawable(r8, r0, r1);	 Catch:{ Throwable -> 0x00f0 }

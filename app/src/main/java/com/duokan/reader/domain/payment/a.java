@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Looper;
 
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.DkApp;
 
 import org.apache.http.protocol.HTTP;
@@ -21,7 +22,7 @@ public class a extends q {
     }
 
     public void a(s sVar, r rVar) {
-        com.duokan.core.diagnostic.a.c().c(LogLevel.EVENT, "pay", String.format("method: %s, order_id: %s", new Object[]{sVar.d(), a(sVar.b()).get("out_trade_no")}));
+        WebLog.c().c(LogLevel.EVENT, "pay", String.format("method: %s, order_id: %s", new Object[]{sVar.d(), a(sVar.b()).get("out_trade_no")}));
         if (a || rVar != null) {
             Context applicationContext = DkApp.get().getApplicationContext();
             new Thread(new c(this, sVar, new b(this, Looper.getMainLooper(), sVar, rVar, applicationContext), rVar, applicationContext)).start();

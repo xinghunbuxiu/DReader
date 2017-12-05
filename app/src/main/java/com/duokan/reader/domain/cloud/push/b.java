@@ -44,7 +44,7 @@ public class b implements ah, h, ay {
     private final HashMap i = new HashMap();
 
     public DkCloudPushMessage a(String str) {
-        return TaskHandler.getThead().a(str);
+        return TaskHandler.getThread().a(str);
     }
 
     protected b(Context context, i iVar, bb bbVar, ReaderEnv readerEnv) {
@@ -106,22 +106,22 @@ public class b implements ah, h, ay {
     }
 
     public void a(DkCloudPushMessage dkCloudPushMessage) {
-        TaskHandler.getThead().a(dkCloudPushMessage);
+        TaskHandler.getThread().a(dkCloudPushMessage);
     }
 
     public void b(String str) {
-        TaskHandler.getThead().b(str);
+        TaskHandler.getThread().b(str);
         e();
     }
 
     public void b() {
-        TaskHandler.getThead().d();
+        TaskHandler.getThread().d();
         e();
         this.f.d();
     }
 
     public int c() {
-        return TaskHandler.getThead().c() + this.f.b();
+        return TaskHandler.getThread().c() + this.f.b();
     }
 
     public void a(int i, long j, r rVar) {
@@ -247,7 +247,7 @@ public class b implements ah, h, ay {
         q[] qVarArr;
         boolean z2;
         int i = 20;
-        DkCloudPushMessage[] a = TaskHandler.getThead().a(j);
+        DkCloudPushMessage[] a = TaskHandler.getThread().a(j);
         Collection a2 = q.a(a);
         Collection a3 = q.a(kVarArr);
         LinkedList linkedList = new LinkedList();

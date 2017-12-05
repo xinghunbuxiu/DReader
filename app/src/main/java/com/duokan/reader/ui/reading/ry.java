@@ -5,9 +5,9 @@ import android.os.Build.VERSION;
 import com.duokan.c.e;
 import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.ui.r;
+import com.duokan.reader.ui.IWindowRecord;
 
-class ry implements r {
+class ry implements IWindowRecord {
     final /* synthetic */ rx a;
 
     ry(rx rxVar) {

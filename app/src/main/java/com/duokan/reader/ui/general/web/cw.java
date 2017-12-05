@@ -3,14 +3,14 @@ package com.duokan.reader.ui.general.web;
 import com.duokan.core.sys.as;
 
 class cw implements as {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    cw(cg cgVar) {
+    cw(PageController cgVar) {
         this.a = cgVar;
     }
 
     public void a() {
-        this.a.b.mRequestBack = true;
-        this.a.b.requestBack();
+        this.a.pageController.mRequestBack = true;
+        this.a.pageController.requestBack();
     }
 }

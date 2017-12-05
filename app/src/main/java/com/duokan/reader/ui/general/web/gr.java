@@ -5,9 +5,9 @@ import android.os.Handler;
 import com.duokan.core.sys.as;
 
 class gr implements as {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    gr(cg cgVar) {
+    gr(PageController cgVar) {
         this.a = cgVar;
     }
 

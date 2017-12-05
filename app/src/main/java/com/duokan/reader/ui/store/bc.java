@@ -14,7 +14,7 @@ import com.duokan.reader.domain.store.DkStoreFictionDetail;
 import com.duokan.reader.ui.general.PageHeaderView;
 import com.duokan.reader.ui.general.dk;
 import com.duokan.reader.ui.general.expandable.StateExpandableAdapter;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 public class bc extends HatGridView {
     private StateExpandableAdapter a;
@@ -32,7 +32,7 @@ public class bc extends HatGridView {
         int b = UTools.closeAnimation(getContext(), 15.0f);
         dkVar.a(b, b);
         setRowDivider(dkVar);
-        s sVar = (s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class);
+        ITheme sVar = (ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class);
         b(0, 0, 0, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
         setOnItemClickListener(new bd(this));
         this.a = new bf(this);

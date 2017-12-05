@@ -17,14 +17,14 @@ class hi implements al {
         if (b != null) {
             b.j(this.a.a.e);
         }
-        this.a.a.f.b.b.web_notifyWeb(this.a.a.b, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
+        this.a.a.f.b.pageController.web_notifyWeb(this.a.a.b, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
     }
 
     public void onDownloadCloudBookError(String str) {
-        this.a.a.f.b.b.web_notifyWeb(this.a.a.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str);
+        this.a.a.f.b.pageController.web_notifyWeb(this.a.a.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str);
     }
 
     public void onDownloadCloudBookCanceled() {
-        this.a.a.f.b.b.web_notifyWeb(this.a.a.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2));
+        this.a.a.f.b.pageController.web_notifyWeb(this.a.a.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2));
     }
 }

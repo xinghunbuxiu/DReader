@@ -11,7 +11,7 @@ import android.view.View;
 import com.duokan.core.app.BaseActivity;
 import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.app.s;
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.di;
@@ -196,7 +196,7 @@ public abstract class lb extends di implements la {
     }
 
     private void k() {
-        a.c().b(this.h != null);
+        WebLog.c().b(this.h != null);
         this.c.c();
         Rect originBounds = this.h.getOriginBounds();
         float min = Math.min((((float) getWidth()) * 1.0f) / ((float) originBounds.width()), (((float) getHeight()) * 1.0f) / ((float) originBounds.height()));
@@ -212,7 +212,7 @@ public abstract class lb extends di implements la {
     }
 
     private void a(PointF pointF, float f, float f2) {
-        a.c().b(this.h != null);
+        WebLog.c().b(this.h != null);
         Rect originBounds = this.h.getOriginBounds();
         a(this.h, new dl(1.0f, Math.round(((float) originBounds.left) + pointF.x), Math.round(((float) originBounds.top) + pointF.y), f, f2, f2));
         float f3 = this.g;

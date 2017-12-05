@@ -14,6 +14,6 @@ class ih implements ag {
     }
 
     public void a(DkStoreFictionDetail dkStoreFictionDetail) {
-        this.b.b.b.web_notifyWeb(this.a, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
+        this.b.b.pageController.web_notifyWeb(this.a, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
     }
 }

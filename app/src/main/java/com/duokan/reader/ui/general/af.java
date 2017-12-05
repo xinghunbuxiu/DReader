@@ -16,7 +16,7 @@ import com.duokan.b.b;
 import com.duokan.b.c;
 import com.duokan.b.d;
 import com.duokan.b.e;
-import com.duokan.core.sys.j;
+import com.duokan.core.sys.AIdleOperation;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.f;
 import com.duokan.reader.ReaderEnv;
@@ -61,7 +61,7 @@ public class af extends f {
 
     public void show() {
         super.show();
-        j.a(new ag(this));
+        AIdleOperation.addIdleStatus(new ag(this));
     }
 
     public void dismiss() {

@@ -2,9 +2,9 @@ package com.duokan.reader.ui.general.web;
 
 import android.view.ViewGroup;
 
-import com.duokan.core.sys.s;
+import com.duokan.core.sys.IdleStatus;
 
-class l implements s {
+class l implements IdleStatus {
     final /* synthetic */ DkWebView a;
 
     l(DkWebView dkWebView) {

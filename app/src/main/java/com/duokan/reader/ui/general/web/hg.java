@@ -30,9 +30,9 @@ class hg implements as {
             dkStoreBookDetail = null;
         }
         if (dkStoreBookDetail != null) {
-            this.f.b.b.downloadLinearBook(this.b, this.c, this.d, dkStoreBookDetail, this.e);
+            this.f.b.pageController.downloadLinearBook(this.b, this.c, this.d, dkStoreBookDetail, this.e);
         } else {
-            this.f.b.b.queryBookDetail(this.d, new hh(this), true);
+            this.f.b.pageController.queryBookDetail(this.d, new hh(this), true);
         }
     }
 }

@@ -14,8 +14,7 @@ import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.async.work.IAsyncWorkProgressListener;
 import com.duokan.reader.common.async.work.c;
 import com.duokan.reader.common.async.work.r;
-import com.duokan.reader.common.c.f;
-import com.duokan.reader.common.c.g;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.domain.account.a;
 import com.duokan.reader.domain.account.h;
 import com.duokan.reader.domain.account.i;
@@ -41,7 +40,7 @@ public class iz implements ah, h {
     private static final ai o = new ai();
     private Context a;
     private i b;
-    private final g c;
+    private final classc.IConnectChanged c;
     private final List d = new LinkedList();
     private final List e = new LinkedList();
     private final List f = new LinkedList();
@@ -415,15 +414,15 @@ public class iz implements ah, h {
         return null;
     }
 
-    private void a(f fVar) {
+    private void a(classc.ConnectivityReceiver connectivity) {
         if (this.j == null) {
             return;
         }
-        if (!fVar.e()) {
+        if (!connectivity.e()) {
             j();
-        } else if (fVar.d()) {
+        } else if (connectivity.d()) {
             i();
-        } else if (fVar.c()) {
+        } else if (connectivity.c()) {
             k();
             l();
         }

@@ -3,14 +3,14 @@ package com.duokan.reader.ui.account;
 import android.webkit.JavascriptInterface;
 
 import com.duokan.reader.ui.account.MiAccountAssist.MergeAccountController;
-import com.duokan.reader.ui.general.web.cg;
+import com.duokan.reader.ui.general.web.PageController;
 
-class i extends cg {
-    final /* synthetic */ MergeAccountController a;
+class i extends PageController {
+    final MergeAccountController ccountController;
 
     private i(MergeAccountController mergeAccountController) {
-        this.a = mergeAccountController;
         super(mergeAccountController);
+        this.ccountController = mergeAccountController;
     }
 
     @JavascriptInterface

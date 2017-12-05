@@ -3,7 +3,7 @@ package com.duokan.core.ui;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 
-import com.duokan.core.sys.j;
+import com.duokan.core.sys.AIdleOperation;
 
 public abstract class c {
     public static Bitmap a(int i, int i2, Config config) {
@@ -23,7 +23,7 @@ public abstract class c {
                 i3++;
             } catch (OutOfMemoryError e) {
                 System.gc();
-                j.a(200);
+                AIdleOperation.sleep(200);
             } catch (Throwable th) {
             }
         }

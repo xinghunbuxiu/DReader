@@ -3,15 +3,15 @@ package com.duokan.core.diagnostic;
 import java.lang.Thread.UncaughtExceptionHandler;
 
 class b implements UncaughtExceptionHandler {
-    final /* synthetic */ a a;
+    final /* synthetic */ WebLog a;
 
-    b(a aVar) {
+    b(WebLog aVar) {
         this.a = aVar;
     }
 
     public void uncaughtException(Thread thread, Throwable th) {
         if (this.a.f) {
-            this.a.a(LogLevel.DISASTER, "crash", "crash detected!", th);
+            this.a.printStackTrace(LogLevel.DISASTER, "crash", "crash detected!", th);
         }
         if (this.a.d != null) {
             this.a.d.uncaughtException(thread, th);

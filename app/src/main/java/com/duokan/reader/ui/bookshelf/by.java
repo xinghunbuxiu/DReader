@@ -3,7 +3,7 @@ package com.duokan.reader.ui.bookshelf;
 import android.text.TextUtils;
 
 import com.duokan.core.sys.af;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.domain.bookshelf.BookPackageType;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.domain.bookshelf.c;
@@ -26,7 +26,7 @@ class by implements h {
         }
         if (!a.az() || a.s() == BookPackageType.EPUB_OPF) {
             this.a.c.openBook(a);
-        } else if (f.b().d() && (dkStoreItem instanceof DkStoreBookDetail)) {
+        } else if (classc.ConnectivityReceiver.b().d() && (dkStoreItem instanceof DkStoreBookDetail)) {
             DkStoreBookDetail dkStoreBookDetail = (DkStoreBookDetail) dkStoreItem;
             if (!TextUtils.isEmpty(dkStoreBookDetail.getTrialUri())) {
                 a.a(a.f(), dkStoreBookDetail.getTrialUri(), dkStoreBookDetail.getRevision(), dkStoreBookDetail.getTrialMd5(), false, new af(Boolean.valueOf(true)));

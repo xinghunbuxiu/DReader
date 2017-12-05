@@ -9,9 +9,9 @@ import java.util.concurrent.Callable;
 
 class jv implements Callable {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    jv(cg cgVar, String str) {
+    jv(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
@@ -28,11 +28,11 @@ class jv implements Callable {
         if (a == null) {
             return Boolean.valueOf(false);
         }
-        Intent launchIntentForPackage = this.b.b.getContext().getPackageManager().getLaunchIntentForPackage(a.r);
+        Intent launchIntentForPackage = this.b.pageController.getContext().getPackageManager().getLaunchIntentForPackage(a.r);
         if (launchIntentForPackage == null) {
             return Boolean.valueOf(false);
         }
-        b.a(this.b.b.getContext()).startActivity(launchIntentForPackage);
+        b.a(this.b.pageController.getContext()).startActivity(launchIntentForPackage);
         return Boolean.valueOf(true);
     }
 }

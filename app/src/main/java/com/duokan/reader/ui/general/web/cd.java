@@ -2,10 +2,10 @@ package com.duokan.reader.ui.general.web;
 
 import android.app.Activity;
 
-import com.duokan.core.sys.s;
+import com.duokan.core.sys.IdleStatus;
 import com.duokan.reader.common.webservices.duokan.p;
 
-class cd implements s {
+class cd implements IdleStatus {
     final /* synthetic */ StorePageController a;
 
     cd(StorePageController storePageController) {

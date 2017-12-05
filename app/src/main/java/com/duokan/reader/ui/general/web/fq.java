@@ -4,14 +4,14 @@ import com.duokan.core.sys.as;
 
 class fq implements as {
     final /* synthetic */ boolean a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    fq(cg cgVar, boolean z) {
+    fq(PageController cgVar, boolean z) {
         this.b = cgVar;
         this.a = z;
     }
 
     public void a() {
-        this.b.b.mWebView.requestDisallowInterceptTouchEvent(this.a);
+        this.b.pageController.mWebView.requestDisallowInterceptTouchEvent(this.a);
     }
 }

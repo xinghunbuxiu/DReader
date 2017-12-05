@@ -26,13 +26,13 @@ class hh implements h {
         } else if (TextUtils.equals(this.a.c, "TRIED")) {
             o.a(dkStoreBookDetail.getMinKernelVersion(), new hj(this, dkStoreBookDetail));
         } else if (TextUtils.equals(this.a.c, "UPDATING")) {
-            ay.a(this.a.f.b.b.getContext(), dkStoreBookDetail.getEpubSize(), new hl(this));
+            ay.a(this.a.f.b.pageController.getContext(), dkStoreBookDetail.getEpubSize(), new hl(this));
         } else if (TextUtils.equals(this.a.c, "TIME")) {
             i.f().a(PersonalAccount.class, new hn(this, dkStoreBookDetail));
         }
     }
 
     public void onFetchBookDetailError(String str) {
-        this.a.f.b.b.web_notifyWeb(this.a.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str);
+        this.a.f.b.pageController.web_notifyWeb(this.a.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str);
     }
 }

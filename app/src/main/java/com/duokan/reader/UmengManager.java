@@ -9,9 +9,10 @@ import android.view.View;
 
 import com.duokan.core.app.IActivityLife;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.c;
 import com.duokan.core.sys.TaskHandler;
-import com.duokan.core.sys.aq;
+import com.duokan.core.sys.StackTracesInfo;
 import com.duokan.core.ui.BoxView;
 import com.duokan.core.ui.FrameScrollView;
 import com.duokan.core.ui.UTools;
@@ -51,7 +52,7 @@ public class UmengManager implements IActivityLife {
         this.d.addActivityLifecycleMonitor(this);
         initMobclickAgent();
         if (!this.c) {
-            com.duokan.core.diagnostic.a.c().a(new c(this) {
+            WebLog.c().a(new c(this) {
                 final /* synthetic */ UmengManager a;
 
                 {
@@ -60,11 +61,11 @@ public class UmengManager implements IActivityLife {
 
                 public void onAnr() {
                     try {
-                        State state = TaskHandler.getThead().getState();
+                        State state = TaskHandler.getThread().getState();
                         if (state != State.NEW && state != State.RUNNABLE && state != State.TERMINATED) {
                             Writer stringWriter = new StringWriter();
                             PrintWriter printWriter = new PrintWriter(stringWriter);
-                            for (Entry entry : aq.b()) {
+                            for (Entry entry : StackTracesInfo.b()) {
                                 Object obj;
                                 Thread thread = (Thread) entry.getKey();
                                 StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) entry.getValue();
@@ -319,7 +320,7 @@ public class UmengManager implements IActivityLife {
         } else if (!initMobclickAgent() || this.e.isEmpty()) {
             z = false;
         } else {
-            com.duokan.core.diagnostic.a.c().c(LogLevel.INFO, "umeng", "send delayed events.");
+            WebLog.c().c(LogLevel.INFO, "umeng", "send delayed events.");
             Iterator it = this.e.iterator();
             while (it.hasNext()) {
                 ((Runnable) it.next()).run();

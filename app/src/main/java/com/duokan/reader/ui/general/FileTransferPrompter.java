@@ -5,7 +5,7 @@ import android.content.Context;
 import com.duokan.b.i;
 import com.duokan.core.sys.af;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 
 public class FileTransferPrompter {
 
@@ -26,7 +26,7 @@ public class FileTransferPrompter {
     }
 
     public static void a(Context context, long j, String str, String str2, cm cmVar) {
-        if (!f.b().c()) {
+        if (!classc.ConnectivityReceiver.b().c()) {
             cmVar.onChoice(true, FlowChargingTransferChoice.NoTransfer);
         } else if (ReaderEnv.get().getIsOnlyWifiUploadDownload()) {
             ap ckVar = new ck(context, cmVar);
@@ -41,7 +41,7 @@ public class FileTransferPrompter {
     }
 
     public static void b(Context context, long j, String str, String str2, cm cmVar) {
-        if (!f.b().c()) {
+        if (!classc.ConnectivityReceiver.b().c()) {
             cmVar.onChoice(true, FlowChargingTransferChoice.NoTransfer);
         } else if (ReaderEnv.get().getIsOnlyWifiUploadDownload()) {
             ap clVar = new cl(context, cmVar);

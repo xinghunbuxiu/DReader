@@ -5,15 +5,15 @@ import com.duokan.reader.ui.general.ho;
 
 class hd implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    hd(cg cgVar, String str) {
+    hd(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
 
     public void a() {
-        ho hoVar = (ho) this.b.b.getContext().queryFeature(ho.class);
+        ho hoVar = (ho) this.b.pageController.getContext().queryFeature(ho.class);
         if (hoVar != null) {
             hoVar.a("", this.a, "");
         }

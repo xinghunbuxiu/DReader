@@ -2,7 +2,7 @@ package com.duokan.reader.domain.statistics.dailystats;
 
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.ReaderEnv.PrivatePref;
 import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.common.webservices.duokan.r;
@@ -17,10 +17,10 @@ import java.util.Collections;
 import java.util.List;
 
 class c extends r {
-    final /* synthetic */ a a;
+    final /* synthetic */ WebLog a;
     private b b = null;
 
-    c(a aVar) {
+    c(WebLog aVar) {
         this.a = aVar;
     }
 

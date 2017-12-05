@@ -4,6 +4,7 @@ import android.text.TextUtils;
 import android.util.Pair;
 
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.common.webservices.duokan.aa;
@@ -103,12 +104,12 @@ class ex extends c {
             fdVar.b = TextUtils.isEmpty(exception.getMessage()) ? "" : exception.getMessage();
             this.a.d.put(str, fdVar);
         }
-        com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "dkbook", String.format("fail to get chapter links(book=%s, name=%s)", new Object[]{this.a.b, this.a.f.aw()}), (Throwable) exception);
+        WebLog.c().printStackTrace(LogLevel.ERROR, "dkbook", String.format("fail to getAllSortStackTraces chapter links(book=%s, name=%s)", new Object[]{this.a.b, this.a.f.aw()}), (Throwable) exception);
         return super.onSessionException(exception, i);
     }
 
     protected void onSessionFailed() {
-        com.duokan.core.diagnostic.a.c().b(this.a.d.size() == this.a.c.size());
+        WebLog.c().b(this.a.d.size() == this.a.c.size());
         if (this.a.d.size() != this.a.c.size()) {
             for (String str : this.a.c) {
                 if (!this.a.d.containsKey(str)) {

@@ -21,11 +21,11 @@ class fg implements TextWatcher {
 
     public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
         if (TextUtils.isEmpty(charSequence)) {
-            this.a.setTextColor(this.b.g.b.b.getResources().getColor(d.general__shared__publish_button_cancel));
+            this.a.setTextColor(this.b.g.b.pageController.getResources().getColor(d.general__shared__publish_button_cancel));
             this.a.setEnabled(false);
             return;
         }
-        this.a.setTextColor(this.b.g.b.b.getResources().getColor(d.general__shared__publish_button_confirm));
+        this.a.setTextColor(this.b.g.b.pageController.getResources().getColor(d.general__shared__publish_button_confirm));
         this.a.setEnabled(true);
     }
 

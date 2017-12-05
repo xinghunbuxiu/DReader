@@ -4,15 +4,15 @@ import com.duokan.core.sys.as;
 
 class cx implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    cx(cg cgVar, String str) {
+    cx(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
 
     public void a() {
         StorePageController.mBackParam = this.a;
-        this.b.b.requestDetach();
+        this.b.pageController.requestDetach();
     }
 }

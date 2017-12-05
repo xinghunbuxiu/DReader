@@ -4,11 +4,11 @@ import android.content.ContentValues;
 import android.database.Cursor;
 
 import com.duokan.core.a.n;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.c.ConnectivityReceiver;
 
 import java.io.File;
 
-public abstract class an extends ip {
+public abstract class an extends BaseConnect {
     protected final am D;
     private final long a;
     private long b;
@@ -127,7 +127,7 @@ public abstract class an extends ip {
         }
     }
 
-    public void onConnectivityChanged(f fVar) {
+    public void onConnectivityChanged(ConnectivityReceiver connectivity) {
     }
 
     protected void aN() {

@@ -4,9 +4,10 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Pair;
 
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 
 public final class p {
     static final /* synthetic */ boolean a;
@@ -34,7 +35,7 @@ public final class p {
     private String w = null;
     private String x = null;
     private String y = null;
-    private final f z;
+    private final classc.ConnectivityReceiver z;
 
     static {
         boolean z;
@@ -46,9 +47,9 @@ public final class p {
         a = z;
     }
 
-    private p(ReaderEnv readerEnv, f fVar) {
+    private p(ReaderEnv readerEnv, classc.ConnectivityReceiver connectivity) {
         this.d = readerEnv;
-        this.z = fVar;
+        this.z = connectivity;
         this.e = this.d.getPrefInt(PrivatePref.STORE, "server_config_key", 1);
         a(this.e);
     }
@@ -115,9 +116,9 @@ public final class p {
         return T() + "www.duokan.com/download/";
     }
 
-    public static void a(ReaderEnv readerEnv, f fVar) {
+    public static void a(ReaderEnv readerEnv, classc.ConnectivityReceiver connectivity) {
         if (a || c == null) {
-            c = new p(readerEnv, fVar);
+            c = new p(readerEnv, connectivity);
             return;
         }
         throw new AssertionError();
@@ -450,14 +451,14 @@ public final class p {
     private String g(String str, String str2) {
         boolean z;
         boolean z2 = true;
-        com.duokan.core.diagnostic.a c = com.duokan.core.diagnostic.a.c();
+        WebLog c = WebLog.c();
         if (TextUtils.isEmpty(str)) {
             z = false;
         } else {
             z = true;
         }
         c.b(z);
-        com.duokan.core.diagnostic.a c2 = com.duokan.core.diagnostic.a.c();
+        WebLog c2 = WebLog.c();
         if (TextUtils.isEmpty(str2)) {
             z2 = false;
         }

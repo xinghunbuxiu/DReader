@@ -7,7 +7,7 @@ import org.json.JSONArray;
 
 import java.util.List;
 
-public class aj extends cg {
+public class aj extends PageController {
     final /* synthetic */ SearchController a;
 
     protected aj(SearchController searchController) {

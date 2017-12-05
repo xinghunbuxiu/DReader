@@ -64,7 +64,7 @@ public class f extends ag implements i {
         } else if (c || (eVar != null && eVar.a())) {
             a.c().b(N());
             this.d = auVar;
-            this.d.b((Object) TaskHandler.getThead());
+            this.d.b((Object) TaskHandler.getThread());
             this.e = new e(this.d, eVar, 0);
             this.f = ahVar;
             this.g = alVar;
@@ -348,7 +348,7 @@ public class f extends ag implements i {
                 this.l.H();
                 this.m.H();
             }
-            this.d.c(TaskHandler.getThead());
+            this.d.c(TaskHandler.getThread());
         }
     }
 

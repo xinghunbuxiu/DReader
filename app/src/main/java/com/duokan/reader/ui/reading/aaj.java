@@ -3,10 +3,11 @@ package com.duokan.reader.ui.reading;
 import android.text.TextUtils;
 
 import com.duokan.c.j;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.domain.bookshelf.BookType;
 import com.duokan.reader.domain.bookshelf.ej;
 import com.duokan.reader.domain.cloud.DkCloudPurchasedFiction;
@@ -191,7 +192,7 @@ public abstract class aaj extends rx implements ec, aaq {
     }
 
     public void c() {
-        if (f.b().e()) {
+        if (classc.ConnectivityReceiver.b().e()) {
             Runnable com_duokan_reader_ui_reading_aao = new aao(this);
             if (this.d.f.aG()) {
                 ((ej) this.d.f).a(new aap(this, com_duokan_reader_ui_reading_aao));
@@ -205,7 +206,7 @@ public abstract class aaj extends rx implements ec, aaq {
     }
 
     public boolean b(ba baVar) {
-        com.duokan.core.diagnostic.a.c().b(TaskHandler.isCurrentThread());
+        WebLog.c().b(TaskHandler.isCurrentThread());
         if (this.d.K.contains(a(a(baVar)))) {
             return true;
         }
@@ -222,7 +223,7 @@ public abstract class aaj extends rx implements ec, aaq {
     }
 
     public int c(ba baVar) {
-        com.duokan.core.diagnostic.a.c().b(TaskHandler.isCurrentThread());
+        WebLog.c().b(TaskHandler.isCurrentThread());
         if (this.d.L.isEmpty() && this.d.Q.isEmpty()) {
             return -1;
         }

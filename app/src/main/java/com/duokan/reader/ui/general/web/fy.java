@@ -3,16 +3,16 @@ package com.duokan.reader.ui.general.web;
 import com.duokan.core.sys.as;
 
 class fy implements as {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    fy(cg cgVar) {
+    fy(PageController cgVar) {
         this.a = cgVar;
     }
 
     public void a() {
-        if (this.a.b.mEditCommentDialog != null) {
-            this.a.b.mEditCommentDialog.dismiss();
-            this.a.b.mEditCommentDialog = null;
+        if (this.a.pageController.mEditCommentDialog != null) {
+            this.a.pageController.mEditCommentDialog.dismiss();
+            this.a.pageController.mEditCommentDialog = null;
         }
     }
 }

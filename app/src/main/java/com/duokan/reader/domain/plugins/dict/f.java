@@ -4,6 +4,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.duokan.b.i;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.ui.general.be;
 
 class f implements OnClickListener {
@@ -16,7 +17,7 @@ class f implements OnClickListener {
     }
 
     public void onClick(View view) {
-        if (com.duokan.reader.common.c.f.b().e()) {
+        if (classc.f.b().e()) {
             this.b.a(this.a);
             view.setClickable(false);
             return;

@@ -14,7 +14,7 @@ class hj implements am {
     }
 
     public void a() {
-        ay.a(this.b.a.f.b.b.getContext(), 0, new hk(this));
+        ay.a(this.b.a.f.b.pageController.getContext(), 0, new hk(this));
     }
 
     public void b() {

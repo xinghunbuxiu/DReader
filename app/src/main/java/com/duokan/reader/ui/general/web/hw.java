@@ -8,9 +8,9 @@ import org.json.JSONObject;
 
 class hw implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    hw(cg cgVar, String str) {
+    hw(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

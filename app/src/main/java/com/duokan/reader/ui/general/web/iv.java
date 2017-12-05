@@ -19,15 +19,15 @@ import java.util.concurrent.Semaphore;
 
 class iv implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    iv(cg cgVar, String str) {
+    iv(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
 
     public void a() {
-        jq jqVar = (jq) TaskHandler.postTask(new iw(this));
+        jq jqVar = (jq) TaskHandler.getTaskHandler(new iw(this));
         JSONObject jSONObject = new JSONObject(this.a);
         JSONObject jSONObject2 = jSONObject.getJSONObject("params");
         String string = jSONObject.getString("msgid");

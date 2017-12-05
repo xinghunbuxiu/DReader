@@ -20,8 +20,8 @@ class fb implements as {
 
     public void a() {
         int i = 0;
-        this.a.offset(0, this.d.b.b.mPageHeaderView == null ? 0 : this.d.b.b.mPageHeaderView.getHeight());
-        bx bxVar = new bx(this.d.b.b.getContext(), true);
+        this.a.offset(0, this.d.b.pageController.mPageHeaderView == null ? 0 : this.d.b.pageController.mPageHeaderView.getHeight());
+        bx bxVar = new bx(this.d.b.pageController.getContext(), true);
         while (i < this.b.length) {
             bxVar.a(this.b[i]);
             i++;

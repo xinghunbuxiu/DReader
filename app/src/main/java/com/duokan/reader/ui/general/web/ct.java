@@ -5,9 +5,9 @@ import com.duokan.reader.domain.account.MiAccount;
 import java.util.concurrent.Callable;
 
 class ct implements Callable {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    ct(cg cgVar) {
+    ct(PageController cgVar) {
         this.a = cgVar;
     }
 
@@ -16,6 +16,6 @@ class ct implements Callable {
     }
 
     public String a() {
-        return MiAccount.a(this.a.b.getContext()) ? MiAccount.b(this.a.b.getContext()).name : "";
+        return MiAccount.a(this.a.pageController.getContext()) ? MiAccount.b(this.a.pageController.getContext()).name : "";
     }
 }

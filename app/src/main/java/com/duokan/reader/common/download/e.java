@@ -105,7 +105,7 @@ public class e extends Binder implements ah, l {
         long a = a(HttpDownloadTask.class.getName(), kVar.e, kVar.a, kVar.b, kVar.c, kVar.d, kVar.f);
         if (a || a != -1) {
             DownloadTask a2 = a(this.c, a, this.g, this);
-            a2.q().a(LogLevel.EVENT, "", "download task created", String.format("title: %s\nsource uri: %s\ntarget uri: %s\nmd5: %s", new Object[]{a2.c(), a2.i(), a2.j(), a2.k()}));
+            a2.q().print(LogLevel.EVENT, "", "download task created", String.format("title: %s\nsource uri: %s\ntarget uri: %s\nmd5: %s", new Object[]{a2.c(), a2.i(), a2.j(), a2.k()}));
             synchronized (this) {
                 this.e.addLast(a2);
                 Iterator it = this.f.iterator();

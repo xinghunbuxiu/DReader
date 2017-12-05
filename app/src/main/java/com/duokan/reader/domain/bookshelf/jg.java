@@ -1,16 +1,15 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.common.c.f;
-import com.duokan.reader.common.c.g;
+import com.duokan.reader.common.classc;
 
-class jg implements g {
+class jg implements classc.IConnectChanged {
     final /* synthetic */ iz a;
 
     jg(iz izVar) {
         this.a = izVar;
     }
 
-    public void onConnectivityChanged(f fVar) {
-        this.a.a(fVar);
+    public void onConnectivityChanged(classc.ConnectivityReceiver connectivity) {
+        this.a.a(connectivity);
     }
 }

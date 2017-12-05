@@ -13,6 +13,7 @@ import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.ah;
 import com.duokan.core.c.IRunTask;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.io.FileUtils;
 import com.duokan.core.sys.af;
 import com.duokan.kernel.DkUtils;
@@ -23,8 +24,7 @@ import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.BookShelfType;
 import com.duokan.reader.ReaderEnv.PrivatePref;
 import com.duokan.reader.UmengManager;
-import com.duokan.reader.common.c.f;
-import com.duokan.reader.common.c.g;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.duokan.z;
 import com.duokan.reader.domain.account.ab;
@@ -77,7 +77,7 @@ import java.util.concurrent.FutureTask;
 import java.util.concurrent.locks.ReentrantLock;
 
 @SuppressLint({"UseSparseArrays"})
-public abstract class hi implements ah, IActivityRunStatusChanged, g, h, cr, ec, fl {
+public abstract class hi implements ah, IActivityRunStatusChanged, classc.IConnectChanged, h, cr, ec, fl {
     protected static final String c = (ai.class.getName() + ".asyncTaskQueue");
     static final /* synthetic */ boolean l = (!hi.class.desiredAssertionStatus());
     private WebSession A = null;
@@ -90,7 +90,7 @@ public abstract class hi implements ah, IActivityRunStatusChanged, g, h, cr, ec,
     private final BookOrderHelper H;
     private final Context a;
     private final a b;
-    protected final f d;
+    protected final classc.ConnectivityReceiver d;
     protected final i e;
     protected final ReaderEnv f;
     protected final n g;
@@ -444,9 +444,9 @@ Error: java.lang.NullPointerException
         throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.bookshelf.hi.showAnimation(java.util.List):boolean");
     }
 
-    protected hi(Context context, ReaderEnv readerEnv, f fVar, i iVar, a aVar, DkCloudStorage dkCloudStorage, b bVar) {
+    protected hi(Context context, ReaderEnv readerEnv, classc.ConnectivityReceiver connectivity, i iVar, a aVar, DkCloudStorage dkCloudStorage, b bVar) {
         this.a = context;
-        this.d = fVar;
+        this.d = connectivity;
         this.e = iVar;
         this.f = readerEnv;
         this.b = aVar;
@@ -1414,7 +1414,7 @@ Error: java.lang.NullPointerException
             this.g.f();
             this.g.c();
         } catch (Throwable e) {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "shelf", "an exception occurs", e);
+            WebLog.c().printStackTrace(LogLevel.ERROR, "shelf", "an exception occurs", e);
             this.g.c();
         } catch (Throwable th) {
             this.k.b();
@@ -2358,7 +2358,7 @@ Error: java.lang.NullPointerException
     private void G() {
         ListIterator listIterator = this.u.listIterator();
         while (listIterator.hasNext()) {
-            ip ipVar = (c) listIterator.next();
+            BaseConnect ipVar = (c) listIterator.next();
             while (this.w < 3) {
                 FutureTask aD = ipVar.aD();
                 if (aD == null) {

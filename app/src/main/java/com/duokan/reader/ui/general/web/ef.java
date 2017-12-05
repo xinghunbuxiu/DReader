@@ -8,9 +8,9 @@ import org.json.JSONObject;
 
 class ef implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    ef(cg cgVar, String str) {
+    ef(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

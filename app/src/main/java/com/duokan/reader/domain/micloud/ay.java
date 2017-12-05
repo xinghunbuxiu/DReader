@@ -2,7 +2,7 @@ package com.duokan.reader.domain.micloud;
 
 import android.content.Context;
 
-import com.duokan.reader.common.c;
+import com.duokan.reader.common.classc;
 import com.google.android.collect.Maps;
 
 import java.io.File;
@@ -11,7 +11,7 @@ import java.util.Map;
 
 import cn.kuaipan.android.exception.KscException;
 
-public class ay extends c {
+public class ay extends classc {
     private static Map a = Maps.newHashMap();
     private static Map b = Maps.newHashMap();
     private static Map c = Maps.newHashMap();

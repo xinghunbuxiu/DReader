@@ -60,10 +60,10 @@ class co extends WebSession {
     }
 
     protected void onSessionSucceeded() {
-        this.f.b.b.web_notifyWeb(this.e, 2, Mipay.KEY_RESULT, Integer.valueOf(0), "data", this.g);
+        this.f.b.pageController.web_notifyWeb(this.e, 2, Mipay.KEY_RESULT, Integer.valueOf(0), "data", this.g);
     }
 
     protected void onSessionFailed() {
-        this.f.b.b.web_notifyWeb(this.e, 2, Mipay.KEY_RESULT, Integer.valueOf(2));
+        this.f.b.pageController.web_notifyWeb(this.e, 2, Mipay.KEY_RESULT, Integer.valueOf(2));
     }
 }

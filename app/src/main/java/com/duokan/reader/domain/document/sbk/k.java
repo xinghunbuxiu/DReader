@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.document.sbk;
 
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.domain.document.f;
 import com.duokan.reader.domain.document.h;
 import com.duokan.reader.domain.document.l;
@@ -78,7 +78,7 @@ class k extends c {
         return this.d.a();
     }
 
-    public a a(long j) {
+    public WebLog a(long j) {
         return this.d.a((int) j);
     }
 
@@ -91,7 +91,7 @@ class k extends c {
         if (j < 0 || j >= ((long) this.d.a())) {
             return null;
         }
-        a a = this.d.a((int) j);
+        WebLog a = this.d.a((int) j);
         if (a != null) {
             return a.a((int) j2);
         }

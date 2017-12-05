@@ -1,13 +1,13 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 
 import java.util.concurrent.Callable;
 
 class fp implements Callable {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    fp(cg cgVar) {
+    fp(PageController cgVar) {
         this.a = cgVar;
     }
 
@@ -16,6 +16,6 @@ class fp implements Callable {
     }
 
     public Boolean a() {
-        return Boolean.valueOf(f.b().d());
+        return Boolean.valueOf(classc.ConnectivityReceiver.b().d());
     }
 }

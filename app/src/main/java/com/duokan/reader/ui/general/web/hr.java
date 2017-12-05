@@ -14,9 +14,9 @@ import java.util.concurrent.Callable;
 
 class hr implements Callable {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    hr(cg cgVar, String str) {
+    hr(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

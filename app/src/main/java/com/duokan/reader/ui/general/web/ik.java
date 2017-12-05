@@ -3,9 +3,9 @@ package com.duokan.reader.ui.general.web;
 import java.util.concurrent.Callable;
 
 class ik implements Callable {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    ik(cg cgVar) {
+    ik(PageController cgVar) {
         this.a = cgVar;
     }
 
@@ -14,6 +14,6 @@ class ik implements Callable {
     }
 
     public Integer a() {
-        return Integer.valueOf(this.a.b.js_getPagePaddingBottom());
+        return Integer.valueOf(this.a.pageController.js_getPagePaddingBottom());
     }
 }

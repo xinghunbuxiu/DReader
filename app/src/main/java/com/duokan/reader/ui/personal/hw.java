@@ -13,8 +13,7 @@ import android.widget.TextView;
 
 import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.reader.common.c.f;
-import com.duokan.reader.common.c.g;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.domain.account.PersonalAccount;
 import com.duokan.reader.domain.account.a;
 import com.duokan.reader.domain.account.h;
@@ -32,7 +31,7 @@ import com.duokan.reader.ui.general.DkBigFaceView;
 import com.duokan.reader.ui.general.PageHeaderView;
 import com.duokan.reader.ui.general.be;
 
-public class hw extends my implements g, h, eu, fl, o {
+public class hw extends my implements classc.IConnectChanged, h, eu, fl, o {
     private final ay a = new ay(this);
     private final mo c = new fa();
     private final LinearScrollView d;
@@ -91,7 +90,7 @@ public class hw extends my implements g, h, eu, fl, o {
     protected void onAttachToStub() {
         super.onAttachToStub();
         i.f().a((h) this);
-        f.b().a((g) this);
+        f.b().a((classc.IConnectChanged) this);
         DkUserReadingNotesManager.a().a((fl) this);
         DkUserReadBookManager.a().a((eu) this);
     }
@@ -129,7 +128,7 @@ public class hw extends my implements g, h, eu, fl, o {
     public void d(a aVar) {
     }
 
-    public void onConnectivityChanged(f fVar) {
+    public void onConnectivityChanged(classc.ConnectivityReceiver connectivity) {
         if (f.b().e()) {
             a(false);
         }

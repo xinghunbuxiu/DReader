@@ -4,9 +4,9 @@ import com.duokan.core.sys.as;
 
 class fr implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    fr(cg cgVar, String str) {
+    fr(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

@@ -5,9 +5,9 @@ import com.duokan.reader.common.webservices.duokan.p;
 import java.util.concurrent.Callable;
 
 class gm implements Callable {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    gm(cg cgVar) {
+    gm(PageController cgVar) {
         this.a = cgVar;
     }
 

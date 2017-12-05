@@ -1,6 +1,7 @@
 package com.duokan.reader.domain.cloud.push;
 
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.ReaderEnv.PrivatePref;
 import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.common.webservices.duokan.n;
@@ -28,7 +29,7 @@ class m extends n {
     }
 
     protected void onSessionSucceeded() {
-        com.duokan.core.diagnostic.a.c().c(LogLevel.EVENT, "push", "add push token to DkServer succeed");
+        WebLog.c().c(LogLevel.EVENT, "push", "add push token to DkServer succeed");
         if (((Boolean) this.f.a).booleanValue()) {
             this.e.g.setPrefString(PrivatePref.PERSONAL, "mi_push_token", this.b);
             this.e.g.setPrefString(PrivatePref.PERSONAL, "mi_push_account", this.c);

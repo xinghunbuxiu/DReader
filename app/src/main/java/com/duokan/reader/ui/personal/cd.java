@@ -11,7 +11,7 @@ import com.duokan.reader.ui.bookshelf.gw;
 import com.duokan.reader.ui.bookshelf.ho;
 import com.duokan.reader.ui.general.ap;
 import com.duokan.reader.ui.general.dk;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 import java.util.ArrayList;
 
@@ -26,7 +26,7 @@ public class cd extends nm {
         setAdapter(this.k);
         this.e.setRowDivider(new InsetDrawable(new dk(getResources().getColor(d.general__shared__e9e9e9)), UTools.closeAnimation(getContext(), 3.0f), 0, 0, 0));
         setBackgroundColor(getContext().getResources().getColor(d.general__shared__ffffff));
-        s sVar = (s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class);
+        ITheme sVar = (ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class);
         if (ReaderEnv.get().forHd()) {
             int b = UTools.closeAnimation(getContext(), 15.0f);
             this.e.a(b, 0, b, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());

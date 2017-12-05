@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.j;
+import com.duokan.core.sys.AIdleOperation;
 import com.duokan.reader.domain.bookshelf.jn;
 import com.duokan.reader.domain.bookshelf.jo;
 
@@ -18,6 +18,6 @@ class qy implements Runnable {
     }
 
     public void run() {
-        j.a(new qz(this));
+        AIdleOperation.addIdleStatus(new qz(this));
     }
 }

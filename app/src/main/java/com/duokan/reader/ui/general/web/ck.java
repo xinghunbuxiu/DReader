@@ -7,9 +7,9 @@ class ck implements as {
     final /* synthetic */ String a;
     final /* synthetic */ String b;
     final /* synthetic */ boolean c;
-    final /* synthetic */ cg d;
+    final /* synthetic */ PageController d;
 
-    ck(cg cgVar, String str, String str2, boolean z) {
+    ck(PageController cgVar, String str, String str2, boolean z) {
         this.d = cgVar;
         this.a = str;
         this.b = str2;

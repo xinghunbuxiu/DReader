@@ -4,14 +4,14 @@ import com.duokan.core.sys.as;
 
 class cv implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    cv(cg cgVar, String str) {
+    cv(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
 
     public void a() {
-        this.b.b.doShowToast(this.a);
+        this.b.pageController.doShowToast(this.a);
     }
 }

@@ -3,9 +3,9 @@ package com.duokan.reader.ui.reading;
 import android.view.View;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.TaskHandler;
-import com.duokan.core.sys.j;
+import com.duokan.core.sys.AIdleOperation;
 import com.duokan.core.ui.Scrollable.ScrollState;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.ui.general.PagesView;
@@ -39,18 +39,18 @@ class ww implements OnPreDrawListener {
     }
 
     protected void b(boolean z) {
-        a.c().b(TaskHandler.isCurrentThread());
+        WebLog.c().b(TaskHandler.isCurrentThread());
         try {
             if (this.b.isEmpty()) {
                 if (!this.b.isEmpty()) {
-                    j.a(new xa(this));
+                    AIdleOperation.addIdleStatus(new xa(this));
                 }
             } else if (!this.c.a.J()) {
             } else {
                 if (this.c.a.getDocument().b()) {
                     this.b.clear();
                     if (!this.b.isEmpty()) {
-                        j.a(new xa(this));
+                        AIdleOperation.addIdleStatus(new xa(this));
                     }
                 } else if (!this.c.a.getDocument().i()) {
                     PagesView showingPagesView = this.c.getShowingPagesView();
@@ -64,7 +64,7 @@ class ww implements OnPreDrawListener {
                             if (pageDrawable != null) {
                                 if (!(pageDrawable.F() || pageDrawable.G())) {
                                     if (!this.b.isEmpty()) {
-                                        j.a(new xa(this));
+                                        AIdleOperation.addIdleStatus(new xa(this));
                                         return;
                                     }
                                     return;
@@ -72,7 +72,7 @@ class ww implements OnPreDrawListener {
                             }
                             i++;
                         } else if (!this.b.isEmpty()) {
-                            j.a(new xa(this));
+                            AIdleOperation.addIdleStatus(new xa(this));
                             return;
                         } else {
                             return;
@@ -81,18 +81,18 @@ class ww implements OnPreDrawListener {
                     if (showingPagesView.getScrollState() == ScrollState.IDLE) {
                         a(z);
                         if (!this.b.isEmpty()) {
-                            j.a(new xa(this));
+                            AIdleOperation.addIdleStatus(new xa(this));
                         }
                     } else if (!this.b.isEmpty()) {
-                        j.a(new xa(this));
+                        AIdleOperation.addIdleStatus(new xa(this));
                     }
                 } else if (!this.b.isEmpty()) {
-                    j.a(new xa(this));
+                    AIdleOperation.addIdleStatus(new xa(this));
                 }
             }
         } finally {
             if (!this.b.isEmpty()) {
-                j.a(new xa(this));
+                AIdleOperation.addIdleStatus(new xa(this));
             }
         }
     }

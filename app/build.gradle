@@ -30,4 +30,5 @@ dependencies {
     compile files('libs/org_apache_http.jar')
     compile files('libs/miuipub.jar')
     compile files('libs/com.duokan.reader-enjarify.jar')
+    compile files('libs/duokan_core.jar')
 }

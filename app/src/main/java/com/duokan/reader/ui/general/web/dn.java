@@ -8,9 +8,9 @@ import org.json.JSONObject;
 
 class dn implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    dn(cg cgVar, String str) {
+    dn(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

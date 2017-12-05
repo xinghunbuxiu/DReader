@@ -12,7 +12,7 @@ import com.duokan.core.sys.ah;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
 import com.duokan.reader.common.async.a.c;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.k;
 import com.duokan.reader.domain.account.AccountType;
 import com.duokan.reader.domain.account.ab;
@@ -34,8 +34,8 @@ import java.util.Map;
 abstract class aq extends hi {
     protected final iz b;
 
-    protected aq(Context context, ReaderEnv readerEnv, f fVar, i iVar, iz izVar, a aVar, DkCloudStorage dkCloudStorage, b bVar) {
-        super(context, readerEnv, fVar, iVar, aVar, dkCloudStorage, bVar);
+    protected aq(Context context, ReaderEnv readerEnv, classc.ConnectivityReceiver connectivity, i iVar, iz izVar, a aVar, DkCloudStorage dkCloudStorage, b bVar) {
+        super(context, readerEnv, connectivity, iVar, aVar, dkCloudStorage, bVar);
         this.b = izVar;
         this.b.a(new ar(this));
     }
@@ -109,8 +109,8 @@ abstract class aq extends hi {
     public void d(com.duokan.reader.domain.account.a aVar) {
     }
 
-    public void onConnectivityChanged(f fVar) {
-        ah.a(new bh(this, fVar), c);
+    public void onConnectivityChanged(classc.ConnectivityReceiver connectivity) {
+        ah.a(new bh(this, connectivity), c);
     }
 
     public List a(List list, boolean z) {

@@ -13,7 +13,7 @@ import com.duokan.reader.common.webservices.duokan.DkStoreBookTocInfo;
 import com.duokan.reader.ui.general.DkWebListView;
 import com.duokan.reader.ui.general.PageHeaderView;
 import com.duokan.reader.ui.general.bo;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 public class h extends DkWebListView {
     private final bo a;
@@ -27,7 +27,7 @@ public class h extends DkWebListView {
         super(context, attributeSet);
         this.b = null;
         setBackgroundResource(d.store__shared__bg);
-        s sVar = (s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class);
+        ITheme sVar = (ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class);
         a(0, 0, 0, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
         View pageHeaderView = new PageHeaderView(getContext());
         pageHeaderView.setLeftTitle(getContext().getString(j.store__book_toc_view__title));

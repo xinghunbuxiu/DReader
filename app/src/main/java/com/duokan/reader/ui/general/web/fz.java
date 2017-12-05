@@ -5,7 +5,7 @@ import com.duokan.reader.common.i;
 import com.duokan.reader.common.webservices.duokan.DkStoreAbsBookInfo;
 import com.duokan.reader.domain.store.DkStoreAbsBook;
 import com.duokan.reader.ui.a.a;
-import com.duokan.reader.ui.t;
+import com.duokan.reader.ui.PushHalfPage;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -14,15 +14,15 @@ import java.util.LinkedList;
 
 class fz implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    fz(cg cgVar, String str) {
+    fz(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
 
     public void a() {
-        if (this.b.b.mEditFeedController == null) {
+        if (this.b.pageController.mEditFeedController == null) {
             String str;
             String str2;
             String str3 = "";
@@ -78,8 +78,8 @@ class fz implements as {
                 str2 = str3;
                 th2.printStackTrace();
             }
-            this.b.b.mEditFeedController = new a(this.b.b.getContext(), str2, str, linkedList, linkedList2, new ga(this), new gb(this));
-            ((t) this.b.b.getContext().queryFeature(t.class)).showPopup(this.b.b.mEditFeedController);
+            this.b.pageController.mEditFeedController = new a(this.b.pageController.getContext(), str2, str, linkedList, linkedList2, new ga(this), new gb(this));
+            ((PushHalfPage) this.b.pageController.getContext().queryFeature(PushHalfPage.class)).showPopup(this.b.pageController.mEditFeedController);
         }
     }
 }

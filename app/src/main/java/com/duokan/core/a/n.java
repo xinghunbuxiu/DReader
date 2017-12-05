@@ -42,12 +42,12 @@ public class n {
     }
 
     public void b() {
-        this.d.getThead().beginTransaction();
+        this.d.getThread().beginTransaction();
     }
 
     public int a(String str, String str2, String[] strArr) {
         try {
-            int delete = this.d.getThead().delete(str, str2, strArr);
+            int delete = this.d.getThread().delete(str, str2, strArr);
             return delete;
         } finally {
             this.d.removeCallbacks();
@@ -64,7 +64,7 @@ public class n {
 
     public void a(String str, Object[] objArr) {
         try {
-            this.d.getThead().execSQL(str, objArr);
+            this.d.getThread().execSQL(str, objArr);
         } finally {
             this.d.removeCallbacks();
         }
@@ -72,7 +72,7 @@ public class n {
 
     public void a(String str) {
         try {
-            this.d.getThead().execSQL(str);
+            this.d.getThread().execSQL(str);
         } finally {
             this.d.removeCallbacks();
         }
@@ -80,7 +80,7 @@ public class n {
 
     public int d() {
         try {
-            int version = this.d.getThead().getVersion();
+            int version = this.d.getThread().getVersion();
             return version;
         } finally {
             this.d.removeCallbacks();
@@ -89,7 +89,7 @@ public class n {
 
     public boolean e() {
         try {
-            boolean inTransaction = this.d.getThead().inTransaction();
+            boolean inTransaction = this.d.getThread().inTransaction();
             return inTransaction;
         } finally {
             this.d.removeCallbacks();
@@ -98,7 +98,7 @@ public class n {
 
     public long a(String str, String str2, ContentValues contentValues) {
         try {
-            long insert = this.d.getThead().insert(str, str2, contentValues);
+            long insert = this.d.getThread().insert(str, str2, contentValues);
             return insert;
         } finally {
             this.d.removeCallbacks();
@@ -107,7 +107,7 @@ public class n {
 
     public long b(String str, String str2, ContentValues contentValues) {
         try {
-            long insertOrThrow = this.d.getThead().insertOrThrow(str, str2, contentValues);
+            long insertOrThrow = this.d.getThread().insertOrThrow(str, str2, contentValues);
             return insertOrThrow;
         } finally {
             this.d.removeCallbacks();
@@ -116,7 +116,7 @@ public class n {
 
     public long a(String str, String str2, ContentValues contentValues, int i) {
         try {
-            long insertWithOnConflict = this.d.getThead().insertWithOnConflict(str, str2, contentValues, i);
+            long insertWithOnConflict = this.d.getThread().insertWithOnConflict(str, str2, contentValues, i);
             return insertWithOnConflict;
         } finally {
             this.d.removeCallbacks();
@@ -126,7 +126,7 @@ public class n {
     public Cursor a(String str, String[] strArr) {
         Cursor mVar;
         try {
-            mVar = new m(this.d, this.d.getThead().rawQuery(str, strArr));
+            mVar = new m(this.d, this.d.getThread().rawQuery(str, strArr));
             return mVar;
         } finally {
             mVar = this.d;
@@ -136,7 +136,7 @@ public class n {
 
     public void f() {
         try {
-            this.d.getThead().setTransactionSuccessful();
+            this.d.getThread().setTransactionSuccessful();
         } finally {
             this.d.removeCallbacks();
         }
@@ -144,7 +144,7 @@ public class n {
 
     public void a(int i) {
         try {
-            this.d.getThead().setVersion(i);
+            this.d.getThread().setVersion(i);
         } finally {
             this.d.removeCallbacks();
         }
@@ -152,7 +152,7 @@ public class n {
 
     public int a(String str, ContentValues contentValues, String str2, String[] strArr) {
         try {
-            int update = this.d.getThead().update(str, contentValues, str2, strArr);
+            int update = this.d.getThread().update(str, contentValues, str2, strArr);
             return update;
         } finally {
             this.d.removeCallbacks();
@@ -174,7 +174,7 @@ public class n {
 
     public List b(String str) {
         try {
-            List a = u.a(this.d.getThead(), str);
+            List a = u.a(this.d.getThread(), str);
             return a;
         } finally {
             this.d.removeCallbacks();

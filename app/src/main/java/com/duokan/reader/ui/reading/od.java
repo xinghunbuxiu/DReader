@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.duokan.c.f;
 import com.duokan.c.g;
 import com.duokan.c.h;
-import com.duokan.core.sys.j;
+import com.duokan.core.sys.AIdleOperation;
 import com.duokan.core.ui.UTools;
 import com.duokan.kernel.DkUtils;
 import com.duokan.reader.domain.bookshelf.BookPackageType;
@@ -203,7 +203,7 @@ class od extends cd {
                     this.d.getDocument().d(g);
                     if (!this.e) {
                         this.e = true;
-                        j.a(new oe(this));
+                        AIdleOperation.addIdleStatus(new oe(this));
                     }
                 }
             } else {

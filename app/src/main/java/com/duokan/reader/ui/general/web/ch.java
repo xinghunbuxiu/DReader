@@ -4,9 +4,9 @@ import com.duokan.core.sys.as;
 
 class ch implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    ch(cg cgVar, String str) {
+    ch(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

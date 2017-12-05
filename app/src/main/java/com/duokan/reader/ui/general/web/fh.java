@@ -18,10 +18,10 @@ class fh implements OnTouchListener {
     }
 
     public boolean onTouch(View view, MotionEvent motionEvent) {
-        if (motionEvent.getActionMasked() != 0 || !this.a.hasFocus() || !cj.a(this.b.g.b.b.getContext()).a()) {
+        if (motionEvent.getActionMasked() != 0 || !this.a.hasFocus() || !cj.a(this.b.g.b.pageController.getContext()).a()) {
             return false;
         }
-        UTools.hideSoftInputFromWindow(this.b.g.b.b.getContext());
+        UTools.hideSoftInputFromWindow(this.b.g.b.pageController.getContext());
         return true;
     }
 }

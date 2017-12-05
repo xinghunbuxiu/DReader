@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.duokan.c.j;
 import com.duokan.reader.DkApp;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 
 class de implements AccountManagerCallback {
     final /* synthetic */ da a;
@@ -21,7 +21,7 @@ class de implements AccountManagerCallback {
         } catch (Exception e) {
             e.printStackTrace();
             String str = "";
-            if (!f.b().e()) {
+            if (!classc.ConnectivityReceiver.b().e()) {
                 str = DkApp.get().getApplicationContext().getResources().getString(j.general__shared__network_error);
             }
             this.a.f.a(str);

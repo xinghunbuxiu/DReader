@@ -10,7 +10,7 @@ import com.duokan.core.a.u;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.io.FileUtils;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.af;
@@ -18,7 +18,7 @@ import com.duokan.kernel.DkUtils;
 import com.duokan.kernel.epublib.DKEBookInfo;
 import com.duokan.kernel.epublib.DkeBook;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.download.DownloadFailCode;
 import com.duokan.reader.common.webservices.duokan.y;
 import com.duokan.reader.domain.cloud.DkCloudAnnotation;
@@ -68,23 +68,21 @@ import java.util.concurrent.FutureTask;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public abstract class c extends an {
-    static final /* synthetic */ boolean C = (!c.class.desiredAssertionStatus());
-    protected LinkedList A = null;
-    protected boolean B = false;
-    private String E = "";
-    private String F = "";
+    static final boolean assertionStatus = (!c.class.desiredAssertionStatus());
+    protected final AtomicInteger a = new AtomicInteger(0);
+    protected final BookPackageType b;
     private final ao G = new ao();
     private final ao H = new ao();
     private final ao I = new ao();
     private final ao J = new ao();
     private final ArrayList K = new ArrayList();
     private final Set L = new HashSet();
-    protected final AtomicInteger a = new AtomicInteger(0);
-    protected final BookPackageType b;
+    protected LinkedList linkedList = null;
+    protected boolean B = false;
     protected String c = "";
-    protected BookState d = BookState.NORMAL;
-    protected BookType e = BookType.NORMAL;
-    protected BookLimitType f = BookLimitType.NONE;
+    protected BookState bookState = BookState.NORMAL;
+    protected BookType bookType = BookType.NORMAL;
+    protected BookLimitType bookLimitType = BookLimitType.NONE;
     protected String g = null;
     protected ab h = null;
     protected long i = 0;
@@ -105,14 +103,14 @@ public abstract class c extends an {
     protected ac x = new ac();
     protected DownloadCenterTask y = null;
     protected z z = null;
-
-    public abstract n a(jn jnVar, w wVar);
+    private String E = "";
+    private String F = "";
 
     protected c(am amVar, long j, BookPackageType bookPackageType, BookType bookType, BookState bookState, boolean z, boolean z2) {
         super(amVar, j, z, z2);
         this.b = bookPackageType;
-        this.e = bookType;
-        this.d = bookState;
+        this.bookType = bookType;
+        this.bookState = bookState;
         this.H.a(BookContent.UNKNOWN);
     }
 
@@ -132,11 +130,11 @@ public abstract class c extends an {
         String a6 = u.a(cursor, CommonColumn.BOOK_CONTENT.ordinal(), null);
         String a7 = u.a(cursor, CommonColumn.MICLOUD.ordinal(), null);
         this.b = a;
-        this.f = b;
-        this.e = p;
+        this.bookLimitType = b;
+        this.bookType = p;
         this.q = c;
         this.c = c2;
-        this.d = s;
+        this.bookState = s;
         this.r = c3;
         this.s = a2;
         this.E = a3;
@@ -145,6 +143,119 @@ public abstract class c extends an {
         this.H.c(a6);
         this.I.c(a7);
     }
+
+    public static boolean k(String str) {
+        return new y(str).a().length() == 32;
+    }
+
+    public static boolean l(String str) {
+        if (TextUtils.isDigitsOnly(new y(str).a())) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean m(String str) {
+        y yVar = new y(str);
+        if (TextUtils.isDigitsOnly(yVar.a()) && Long.parseLong(yVar.a()) < 10000000) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean n(String str) {
+        y yVar = new y(str);
+        if (!TextUtils.isDigitsOnly(yVar.a())) {
+            return false;
+        }
+        long parseLong = Long.parseLong(yVar.a());
+        if (parseLong < 10000000 || parseLong >= 50000000) {
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean a(boolean z, String str) {
+        if (z) {
+            return true;
+        }
+        if (TextUtils.isEmpty(str) || (str.charAt(0) >= 'g' && str.charAt(0) <= 'w' && str.charAt(0) != 'q')) {
+            return false;
+        }
+        return true;
+    }
+
+    protected static final BookType p(String str) {
+        try {
+            if (TextUtils.equals(str, "TIMED")) {
+                return BookType.NORMAL;
+            }
+            return TextUtils.isEmpty(str) ? BookType.NORMAL : BookType.valueOf(str);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return BookType.NORMAL;
+        }
+    }
+
+    protected static final BookLimitType b(String str, String str2) {
+        try {
+            if (TextUtils.equals(str2, "TIMED")) {
+                return BookLimitType.TIME;
+            }
+            return TextUtils.isEmpty(str) ? BookLimitType.NONE : BookLimitType.valueOf(str);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return BookLimitType.NONE;
+        }
+    }
+
+    protected static final BookFormat q(String str) {
+        try {
+            return TextUtils.isEmpty(str) ? BookFormat.TXT : BookFormat.valueOf(str);
+        } catch (Exception e) {
+            return BookFormat.UNKNOWN;
+        }
+    }
+
+    private static final BookContent r(String str) {
+        try {
+            return TextUtils.isEmpty(str) ? BookContent.NORMAL : BookContent.valueOf(str);
+        } catch (Throwable th) {
+            return BookContent.NORMAL;
+        }
+    }
+
+    private static final BookState s(String str) {
+        try {
+            return TextUtils.isEmpty(str) ? BookState.NORMAL : BookState.valueOf(str);
+        } catch (Exception e) {
+            return BookState.NORMAL;
+        }
+    }
+
+    private static BookPackageType a(String str, BookFormat bookFormat, BookType bookType) {
+        try {
+            if (TextUtils.isEmpty(str)) {
+                switch (bookLimitType.c[bookFormat.ordinal()]) {
+                    case 1:
+                        return bookType == BookType.SERIAL ? BookPackageType.DIRECTORY : BookPackageType.EPUB;
+                    case 2:
+                        return BookPackageType.PDF;
+                    default:
+                        return BookPackageType.TXT;
+                }
+            } else if (bookType == BookType.SERIAL && str.equals("EPUB")) {
+                return BookPackageType.DIRECTORY;
+            } else {
+                return BookPackageType.valueOf(str);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return BookPackageType.UNKNOWN;
+        }
+    }
+
+    public abstract n a(jn jnVar, w wVar);
 
     public boolean a() {
         return this.a.get() > 0;
@@ -238,7 +349,7 @@ public abstract class c extends an {
     }
 
     public final BookState i() {
-        return this.d;
+        return this.bookState;
     }
 
     public boolean j() {
@@ -250,7 +361,7 @@ public abstract class c extends an {
     }
 
     public boolean l() {
-        switch (f.a[r().ordinal()]) {
+        switch (bookLimitType.a[r().ordinal()]) {
             case 1:
             case 2:
             case 3:
@@ -291,12 +402,12 @@ public abstract class c extends an {
         try {
             BookType bookType;
             aT().a(aF());
-            if (BookType.TRIAL == this.e) {
+            if (BookType.TRIAL == this.bookType) {
                 aO();
                 bookType = TextUtils.isEmpty(this.q) ? BookType.NORMAL : BookType.TRIAL;
                 aT().b(aF());
             } else {
-                bookType = this.e;
+                bookType = this.bookType;
                 aT().b(aF());
             }
             return bookType;
@@ -309,8 +420,8 @@ public abstract class c extends an {
         try {
             aT().a(aF());
             aO();
-            if (bookType != this.e) {
-                this.e = bookType;
+            if (bookType != this.bookType) {
+                this.bookType = bookType;
                 b(4);
             }
             aT().b(aF());
@@ -322,7 +433,7 @@ public abstract class c extends an {
     public final BookLimitType p() {
         try {
             aT().a(aF());
-            BookLimitType bookLimitType = this.f;
+            BookLimitType bookLimitType = this.bookLimitType;
             return bookLimitType;
         } finally {
             aT().b(aF());
@@ -333,8 +444,8 @@ public abstract class c extends an {
         try {
             aT().a(aF());
             aO();
-            if (bookLimitType != this.f) {
-                this.f = bookLimitType;
+            if (bookLimitType != this.bookLimitType) {
+                this.bookLimitType = bookLimitType;
                 b(32);
             }
             aT().b(aF());
@@ -917,14 +1028,14 @@ public abstract class c extends an {
             String H;
             aT().a(aF());
             aO();
-            if (this.d == BookState.PULLING || this.d == BookState.UPDATING) {
+            if (this.bookState == BookState.PULLING || this.bookState == BookState.UPDATING) {
                 this.x.d(128);
                 aC();
             }
             if (TextUtils.equals(this.r, str3) && TextUtils.equals(f(), str)) {
-                this.d = BookState.PULLING;
+                this.bookState = BookState.PULLING;
             } else {
-                this.d = BookState.UPDATING;
+                this.bookState = BookState.UPDATING;
             }
             ac acVar = new ac(str, str2, str3, str4);
             acVar.a(z, afVar);
@@ -997,7 +1108,7 @@ public abstract class c extends an {
     }
 
     public final boolean S() {
-        switch (f.b[this.d.ordinal()]) {
+        switch (bookLimitType.b[this.bookState.ordinal()]) {
             case 1:
             case 2:
             case 3:
@@ -1038,7 +1149,7 @@ public abstract class c extends an {
     public final boolean V() {
         try {
             aT().a(aF());
-            if (this.d == BookState.NORMAL || this.d == BookState.CLOUD_ONLY) {
+            if (this.bookState == BookState.NORMAL || this.bookState == BookState.CLOUD_ONLY) {
                 aT().b(aF());
                 return false;
             }
@@ -1112,7 +1223,7 @@ public abstract class c extends an {
         try {
             aT().a(aF());
             aO();
-            if (this.d == BookState.NORMAL || this.d == BookState.CLOUD_ONLY) {
+            if (this.bookState == BookState.NORMAL || this.bookState == BookState.CLOUD_ONLY) {
                 aT().b(aF());
                 return false;
             } else if (this.x.a()) {
@@ -1188,7 +1299,7 @@ public abstract class c extends an {
             aT().a(aF());
             aO();
             if (V()) {
-                this.d = BookState.CLOUD_ONLY;
+                this.bookState = BookState.CLOUD_ONLY;
                 this.x.c(240);
                 this.x.d(128);
                 b(72);
@@ -1272,8 +1383,8 @@ public abstract class c extends an {
             if (ac()) {
                 ah();
                 FileUtils.deleteFile(d());
-                if (this.d != BookState.CLOUD_ONLY) {
-                    this.d = BookState.CLOUD_ONLY;
+                if (this.bookState != BookState.CLOUD_ONLY) {
+                    this.bookState = BookState.CLOUD_ONLY;
                     b(8);
                 }
                 aL();
@@ -1327,8 +1438,8 @@ public abstract class c extends an {
                         FileUtils.deleteFile(d.getParentFile());
                     }
                 }
-                if (this.d != BookState.CLOUD_ONLY) {
-                    this.d = BookState.CLOUD_ONLY;
+                if (this.bookState != BookState.CLOUD_ONLY) {
+                    this.bookState = BookState.CLOUD_ONLY;
                     b(8);
                 }
                 this.x.c(240);
@@ -1350,47 +1461,6 @@ public abstract class c extends an {
 
     public boolean aj() {
         return false;
-    }
-
-    public static boolean k(String str) {
-        return new y(str).a().length() == 32;
-    }
-
-    public static boolean l(String str) {
-        if (TextUtils.isDigitsOnly(new y(str).a())) {
-            return true;
-        }
-        return false;
-    }
-
-    public static boolean m(String str) {
-        y yVar = new y(str);
-        if (TextUtils.isDigitsOnly(yVar.a()) && Long.parseLong(yVar.a()) < 10000000) {
-            return true;
-        }
-        return false;
-    }
-
-    public static boolean n(String str) {
-        y yVar = new y(str);
-        if (!TextUtils.isDigitsOnly(yVar.a())) {
-            return false;
-        }
-        long parseLong = Long.parseLong(yVar.a());
-        if (parseLong < 10000000 || parseLong >= 50000000) {
-            return false;
-        }
-        return true;
-    }
-
-    public static boolean a(boolean z, String str) {
-        if (z) {
-            return true;
-        }
-        if (TextUtils.isEmpty(str) || (str.charAt(0) >= 'g' && str.charAt(0) <= 'w' && str.charAt(0) != 'q')) {
-            return false;
-        }
-        return true;
     }
 
     public final iy ak() {
@@ -1497,18 +1567,18 @@ public abstract class c extends an {
         }
     }
 
-    public final a[] aq() {
+    public final WebLog[] aq() {
         return aV().a();
     }
 
-    public final void a(a aVar) {
+    public final void a(WebLog aVar) {
         aV().a(aVar);
         a(L(), UUID.randomUUID().toString());
         aW();
     }
 
     public final void a(List list, boolean z) {
-        for (a b : list) {
+        for (WebLog b : list) {
             aV().b(b);
         }
         a(L(), UUID.randomUUID().toString());
@@ -1517,13 +1587,13 @@ public abstract class c extends an {
         }
     }
 
-    public final void b(a aVar) {
+    public final void b(WebLog aVar) {
         aV().b(aVar);
         a(L(), UUID.randomUUID().toString());
         aW();
     }
 
-    public final void c(a aVar) {
+    public final void c(WebLog aVar) {
         aV().c(aVar);
         a(L(), UUID.randomUUID().toString());
         aW();
@@ -1535,7 +1605,7 @@ public abstract class c extends an {
             aT().a(aF());
             aR = aR();
             aR.b();
-            for (a c : list) {
+            for (WebLog c : list) {
                 aV().c(c);
             }
             a(L(), UUID.randomUUID().toString());
@@ -1583,17 +1653,17 @@ public abstract class c extends an {
     }
 
     public void a(w wVar) {
-        if (this.A == null) {
-            this.A = new LinkedList();
+        if (this.linkedList == null) {
+            this.linkedList = new LinkedList();
         }
-        this.A.add(wVar);
+        this.linkedList.add(wVar);
     }
 
     public void b(w wVar) {
-        if (this.A == null) {
-            this.A = new LinkedList();
+        if (this.linkedList == null) {
+            this.linkedList = new LinkedList();
         }
-        this.A.remove(wVar);
+        this.linkedList.remove(wVar);
     }
 
     public void b(boolean z) {
@@ -1622,11 +1692,11 @@ public abstract class c extends an {
                 dkCloudReadingProgress = new DkCloudReadingProgress(c(D().a));
             }
             DkCloudAnnotation[] dkCloudAnnotationArr = new DkCloudAnnotation[0];
-            a[] aq = aq();
+            WebLog[] aq = aq();
             if (aq != null) {
                 LinkedList linkedList = new LinkedList();
                 String a = ah.e().a();
-                for (a a2 : aq) {
+                for (WebLog a2 : aq) {
                     linkedList.add(a(I(), a, a2, L()));
                 }
                 dkCloudAnnotationArr = (DkCloudAnnotation[]) linkedList.toArray(new DkCloudAnnotation[0]);
@@ -1669,9 +1739,9 @@ public abstract class c extends an {
         aB();
     }
 
-    public void onConnectivityChanged(f fVar) {
+    public void onConnectivityChanged(classc.ConnectivityReceiver connectivity) {
         if (aP()) {
-            if (((fVar.e() && ManagedApp.get().getOldRunningState() == RunningState.FOREGROUND) || fVar.d()) && PersonalPrefs.a().x() && i.f().b()) {
+            if (((connectivity.e() && ManagedApp.get().getOldRunningState() == RunningState.FOREGROUND) || connectivity.d()) && PersonalPrefs.a().x() && i.f().b()) {
                 ju G = G();
                 if (G.a > 0 || G.b > 0) {
                     a(D().a);
@@ -1701,20 +1771,20 @@ public abstract class c extends an {
         try {
             aT().a(aF());
             aO();
-            if (this.d == BookState.PULLING) {
+            if (this.bookState == BookState.PULLING) {
                 x();
                 this.m = downloadCenterTask.l();
                 if (this.m < 0) {
                     this.m = d().length();
                 }
-                this.d = BookState.NORMAL;
+                this.bookState = BookState.NORMAL;
                 this.x.c(240);
                 this.x.d(64);
                 this.x.d(1);
                 b(74);
                 aL();
                 aC();
-            } else if (this.d == BookState.UPDATING) {
+            } else if (this.bookState == BookState.UPDATING) {
                 File d = d();
                 this.m = downloadCenterTask.l();
                 if (this.m < 0) {
@@ -1724,7 +1794,7 @@ public abstract class c extends an {
                 a(BookType.NORMAL);
                 this.r = this.x.c;
                 this.s = "";
-                this.d = BookState.NORMAL;
+                this.bookState = BookState.NORMAL;
                 this.x.c(240);
                 this.x.d(64);
                 this.x.d(2);
@@ -1745,7 +1815,7 @@ public abstract class c extends an {
         try {
             aT().a(aF());
             aO();
-            if (this.d == BookState.PULLING || this.d == BookState.UPDATING) {
+            if (this.bookState == BookState.PULLING || this.bookState == BookState.UPDATING) {
                 this.x.d(2);
                 b(64);
                 aL();
@@ -1800,7 +1870,7 @@ public abstract class c extends an {
     }
 
     public boolean az() {
-        return this.d == BookState.CLOUD_ONLY;
+        return this.bookState == BookState.CLOUD_ONLY;
     }
 
     protected void a(Cursor cursor) {
@@ -1858,7 +1928,7 @@ public abstract class c extends an {
             contentValues.put(Column.LIMIT_TYPE.toString(), p().toString());
         }
         if (c(8)) {
-            contentValues.put(Column.BOOK_STATE.toString(), this.d.toString());
+            contentValues.put(Column.BOOK_STATE.toString(), this.bookState.toString());
         }
         if (c(536870912)) {
             contentValues.put(Column.TASK_PRIORITY.toString(), Long.valueOf(this.w));
@@ -1904,9 +1974,9 @@ public abstract class c extends an {
             dkCloudAnnotationArr = null;
         } else {
             Object linkedList = new LinkedList();
-            a[] aq = aq();
+            WebLog[] aq = aq();
             String a = ah.e().a();
-            for (a a2 : aq) {
+            for (WebLog a2 : aq) {
                 linkedList.add(a(I(), a, a2, L()));
             }
             Collections.sort(linkedList, new j(this));
@@ -1917,7 +1987,7 @@ public abstract class c extends an {
         DkCloudStorage.a().a((int) (D().e * 100.0f), G(), new DkCloudReadingInfo(H(), stringBuffer.toString(), ai(), L(), ReaderEnv.get().getDeviceId(), I(), ah.e().a(), dkCloudReadingProgress, dkCloudAnnotationArr), ConflictStrategy.MERGE, N(), new k(this, avVar));
     }
 
-    private a a(BookFormat bookFormat, DkCloudAnnotation dkCloudAnnotation) {
+    private WebLog a(BookFormat bookFormat, DkCloudAnnotation dkCloudAnnotation) {
         av a;
         if (dkCloudAnnotation instanceof DkCloudComment) {
             a = a(bookFormat, dkCloudAnnotation.getStartPos(), dkCloudAnnotation.getBookRevision(), dkCloudAnnotation.getKernelVersion());
@@ -1945,7 +2015,7 @@ public abstract class c extends an {
         }
     }
 
-    private DkCloudAnnotation a(String str, String str2, a aVar, long j) {
+    private DkCloudAnnotation a(String str, String str2, WebLog aVar, long j) {
         if (aVar instanceof ef) {
             return new DkCloudComment(str, str2, aVar.i(), j, new Date(aVar.g()), new Date(aVar.h()), c(aVar.d()), c(aVar.e()), aVar.f(), ((ef) aVar).m(), ((ef) aVar).n());
         } else if (!(aVar instanceof ah)) {
@@ -1968,7 +2038,7 @@ public abstract class c extends an {
         } else if (avVar instanceof com.duokan.reader.domain.document.sbk.b) {
             com.duokan.reader.domain.document.sbk.b bVar2 = (com.duokan.reader.domain.document.sbk.b) avVar;
             return new g(bVar2.g(), bVar2.h(), bVar2.i(), "", -1);
-        } else if (C) {
+        } else if (assertionStatus) {
             return null;
         } else {
             throw new AssertionError();
@@ -1982,12 +2052,12 @@ public abstract class c extends an {
             return p.b(gVar.d());
         } else {
             if (bookFormat == BookFormat.PDF) {
-                return d.a(gVar.b() - 1, gVar.c(), gVar.d());
+                return bookState.a(gVar.b() - 1, gVar.c(), gVar.d());
             }
             if (bookFormat == BookFormat.SBK) {
                 return com.duokan.reader.domain.document.sbk.f.a(gVar.b(), gVar.c(), gVar.d());
             }
-            if (C) {
+            if (assertionStatus) {
                 return null;
             }
             throw new AssertionError();
@@ -2042,18 +2112,18 @@ public abstract class c extends an {
 
     private void a(v vVar, u uVar) {
         c cVar = vVar.a;
-        a[] aq = cVar.aq();
-        a[] aVarArr = new a[aq.length];
+        WebLog[] aq = cVar.aq();
+        WebLog[] aVarArr = new WebLog[aq.length];
         for (int i = 0; i < aq.length; i++) {
             aVarArr[i] = aq[i].l();
         }
         Execute.run(new n(this, cVar, aVarArr, uVar), new Void[0]);
     }
 
-    private void a(c cVar, a[] aVarArr, u uVar) {
+    private void a(c cVar, WebLog[] aVarArr, u uVar) {
         List arrayList = new ArrayList(aVarArr.length);
         HashMap hashMap = new HashMap();
-        for (a aVar : aVarArr) {
+        for (WebLog aVar : aVarArr) {
             x xVar = new x(ai.a((com.duokan.reader.domain.document.epub.c) aVar.d(), (com.duokan.reader.domain.document.epub.c) aVar.e()), aVar.f());
             arrayList.add(xVar);
             hashMap.put(xVar, aVar);
@@ -2067,7 +2137,7 @@ public abstract class c extends an {
                 Iterator it = arrayList.iterator();
                 while (it.hasNext()) {
                     x xVar2 = (x) it.next();
-                    a aVar2 = (a) hashMap.get(xVar2);
+                    WebLog aVar2 = (WebLog) hashMap.get(xVar2);
                     aVar2.a(((ce) xVar2.a()).j());
                     aVar2.b(((ce) xVar2.a()).k());
                     aVar2.a(xVar2.b());
@@ -2083,20 +2153,20 @@ public abstract class c extends an {
     }
 
     protected final void aB() {
-        if (this.d == BookState.PULLING || this.d == BookState.UPDATING) {
+        if (this.bookState == BookState.PULLING || this.bookState == BookState.UPDATING) {
             if ((o() == BookType.SERIAL || !this.x.a()) && !this.x.b(211)) {
                 ac acVar = new ac(this.x);
                 if (acVar.b(2048)) {
                     acVar.c(32);
                 } else if (acVar.b(1024)) {
-                    if (f.b().d()) {
+                    if (bookLimitType.b().d()) {
                         acVar.c(32);
                     } else {
                         acVar.d(32);
                     }
                 } else if (!ReaderEnv.get().getIsOnlyWifiUploadDownload()) {
                     acVar.c(32);
-                } else if (f.b().d()) {
+                } else if (bookLimitType.b().d()) {
                     acVar.c(32);
                 } else {
                     acVar.d(32);
@@ -2129,12 +2199,12 @@ public abstract class c extends an {
         if (!am() || !name.equals(ak().b())) {
             return;
         }
-        if (this.d != BookState.NORMAL || !R()) {
+        if (this.bookState != BookState.NORMAL || !R()) {
             ab();
             e(str2);
             a(Uri.fromFile(file).toString());
             x();
-            this.d = BookState.NORMAL;
+            this.bookState = BookState.NORMAL;
             b(10);
             aL();
         }
@@ -2143,7 +2213,7 @@ public abstract class c extends an {
     protected final void aE() {
         if (ao() != -1) {
             ab();
-            this.d = BookState.CLOUD_ONLY;
+            this.bookState = BookState.CLOUD_ONLY;
             b(8);
             aL();
         }
@@ -2159,76 +2229,6 @@ public abstract class c extends an {
             e.printStackTrace();
         } finally {
             aS().c();
-        }
-    }
-
-    protected static final BookType p(String str) {
-        try {
-            if (TextUtils.equals(str, "TIMED")) {
-                return BookType.NORMAL;
-            }
-            return TextUtils.isEmpty(str) ? BookType.NORMAL : BookType.valueOf(str);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return BookType.NORMAL;
-        }
-    }
-
-    protected static final BookLimitType b(String str, String str2) {
-        try {
-            if (TextUtils.equals(str2, "TIMED")) {
-                return BookLimitType.TIME;
-            }
-            return TextUtils.isEmpty(str) ? BookLimitType.NONE : BookLimitType.valueOf(str);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return BookLimitType.NONE;
-        }
-    }
-
-    protected static final BookFormat q(String str) {
-        try {
-            return TextUtils.isEmpty(str) ? BookFormat.TXT : BookFormat.valueOf(str);
-        } catch (Exception e) {
-            return BookFormat.UNKNOWN;
-        }
-    }
-
-    private static final BookContent r(String str) {
-        try {
-            return TextUtils.isEmpty(str) ? BookContent.NORMAL : BookContent.valueOf(str);
-        } catch (Throwable th) {
-            return BookContent.NORMAL;
-        }
-    }
-
-    private static final BookState s(String str) {
-        try {
-            return TextUtils.isEmpty(str) ? BookState.NORMAL : BookState.valueOf(str);
-        } catch (Exception e) {
-            return BookState.NORMAL;
-        }
-    }
-
-    private static BookPackageType a(String str, BookFormat bookFormat, BookType bookType) {
-        try {
-            if (TextUtils.isEmpty(str)) {
-                switch (f.c[bookFormat.ordinal()]) {
-                    case 1:
-                        return bookType == BookType.SERIAL ? BookPackageType.DIRECTORY : BookPackageType.EPUB;
-                    case 2:
-                        return BookPackageType.PDF;
-                    default:
-                        return BookPackageType.TXT;
-                }
-            } else if (bookType == BookType.SERIAL && str.equals("EPUB")) {
-                return BookPackageType.DIRECTORY;
-            } else {
-                return BookPackageType.valueOf(str);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return BookPackageType.UNKNOWN;
         }
     }
 

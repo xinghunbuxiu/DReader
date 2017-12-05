@@ -6,7 +6,7 @@ import android.util.Pair;
 
 import com.duokan.reader.common.async.work.e;
 import com.duokan.reader.common.async.work.q;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.j;
 import com.duokan.reader.domain.micloud.a.a;
 import com.duokan.reader.domain.micloud.a.i;
@@ -324,7 +324,7 @@ public class d extends be {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("sha1", ((i) b()).D());
             jSONObject.put("block_infos", ((i) b()).A().a().getJSONObject("kss").getJSONArray("block_infos"));
-            kssMaster.upload(file, new g(), new UploadFileInfo(jSONObject.toString()), new f());
+            kssMaster.upload(file, new g(), new UploadFileInfo(jSONObject.toString()), new classc.ConnectivityReceiver());
             b(true);
             j();
             return e.a(0, true, true);

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class a {
+public class AdLifecycleManager {
     private final HashMap a = new HashMap();
     private final HashMap b = new HashMap();
 

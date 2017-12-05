@@ -10,6 +10,6 @@ class bn implements Runnable {
     }
 
     public void run() {
-        TaskHandler.postTask(new bo(this));
+        TaskHandler.requstIdleStatusListening(new bo(this));
     }
 }

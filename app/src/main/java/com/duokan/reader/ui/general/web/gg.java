@@ -15,9 +15,9 @@ import java.util.concurrent.Semaphore;
 
 class gg implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    gg(cg cgVar, String str) {
+    gg(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

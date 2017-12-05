@@ -1,8 +1,8 @@
 package com.duokan.reader.domain.job;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
-import com.duokan.core.sys.j;
+import com.duokan.core.diagnostic.WebLog;
+import com.duokan.core.sys.AIdleOperation;
 import com.duokan.reader.DkApp;
 
 import java.io.Serializable;
@@ -37,16 +37,16 @@ class c implements Runnable {
             Iterator it = linkedList.iterator();
             while (it.hasNext()) {
                 serializable = (JobInfo) it.next();
-                ((a) serializable.mJobClass.newInstance()).exec(this.b.g.getApplication(), serializable);
+                ((WebLog) serializable.mJobClass.newInstance()).exec(this.b.g.getApplication(), serializable);
                 serializable.mExecCount++;
                 this.b.h.b(serializable.mJobName, serializable);
                 if (DkApp.get().forCommunity()) {
                     a.c().a(LogLevel.EVENT, "job", "setDrawable job is done(name: %s, exec: %getScaledTouchSlop)", serializable.mJobName, Integer.valueOf(serializable.mExecCount));
                 }
             }
-            j.a(this.a);
+            AIdleOperation.postRunnable(this.a);
         } catch (Throwable th) {
-            j.a(this.a);
+            AIdleOperation.postRunnable(this.a);
         }
     }
 }

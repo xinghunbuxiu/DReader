@@ -16,9 +16,9 @@ import java.util.ArrayList;
 
 class cn implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    cn(cg cgVar, String str) {
+    cn(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

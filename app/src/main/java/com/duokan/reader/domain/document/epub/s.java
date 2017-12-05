@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.text.TextUtils;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.kernel.DkBox;
 import com.duokan.kernel.DkFlowPosition;
 import com.duokan.kernel.DkFlowRenderOption;
@@ -1635,7 +1635,7 @@ public class s extends n implements at {
         }
         if (a != null) {
             boolean z;
-            a c = a.c();
+            WebLog c = a.c();
             if (((long) a.length) == epubTypesettingContext.e().i()) {
                 z = true;
             } else {

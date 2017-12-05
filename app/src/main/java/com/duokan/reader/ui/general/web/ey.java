@@ -15,7 +15,7 @@ class ey implements OnClickListener {
     }
 
     public void onClick(View view) {
-        bx bxVar = new bx(this.b.b.b.b.getContext());
+        bx bxVar = new bx(this.b.b.b.pageController.getContext());
         for (String a : this.b.a) {
             bxVar.a(a);
         }

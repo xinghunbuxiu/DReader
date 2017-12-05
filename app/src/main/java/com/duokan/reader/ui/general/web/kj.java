@@ -5,7 +5,7 @@ import android.view.View.OnClickListener;
 public class kj {
     public OnClickListener a;
     public int b;
-    final /* synthetic */ ke c;
+    final ke c;
 
     public kj(ke keVar, int i, OnClickListener onClickListener) {
         this.c = keVar;

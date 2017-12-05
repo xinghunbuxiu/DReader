@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.duokan.b.g;
 import com.duokan.core.app.d;
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.f;
 import com.duokan.reader.ReaderEnv;
@@ -104,7 +104,7 @@ public class jq extends f {
 
     public void dismiss() {
         boolean z = true;
-        a c;
+        WebLog c;
         if (!isShowing()) {
             a.c().b(this.e == null);
             c = a.c();

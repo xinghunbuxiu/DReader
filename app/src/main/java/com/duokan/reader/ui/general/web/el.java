@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.duokan.c.g;
 import com.duokan.c.h;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 class el implements Runnable {
     final /* synthetic */ String a;
@@ -28,7 +28,7 @@ class el implements Runnable {
     }
 
     public void run() {
-        View inflate = LayoutInflater.from(this.e.b.b.getContext()).inflate(h.general__dk_text_input_dialog_view, null);
+        View inflate = LayoutInflater.from(this.e.b.pageController.getContext()).inflate(h.general__dk_text_input_dialog_view, null);
         EditText editText = (EditText) inflate.findViewById(g.general__shared_text_input_dialog_view__edit);
         TextView textView = (TextView) inflate.findViewById(g.general__shared_text_input_dialog_view__confirm);
         PopupWindow popupWindow = new PopupWindow(inflate, -1, -2, true);
@@ -44,8 +44,8 @@ class el implements Runnable {
         if (!TextUtils.isEmpty(this.c)) {
             textView.setText(this.c);
         }
-        s sVar = (s) this.e.b.b.getContext().queryFeature(s.class);
-        popupWindow.showAtLocation(this.e.b.b.js_getContentView(), 80, 0, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
+        ITheme sVar = (ITheme) this.e.b.pageController.getContext().queryFeature(ITheme.class);
+        popupWindow.showAtLocation(this.e.b.pageController.js_getContentView(), 80, 0, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
         editText.postDelayed(new em(this, editText), 200);
         textView.setOnClickListener(new en(this, editText, popupWindow));
     }

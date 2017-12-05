@@ -1,12 +1,10 @@
 package com.duokan.reader.domain.bookshelf;
 
-import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.sys.ag;
 import com.duokan.core.sys.ah;
 import com.duokan.core.sys.bb;
 import com.duokan.core.sys.r;
@@ -32,7 +30,6 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
 
@@ -263,12 +260,12 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
         }
 
         protected void bi () {
-            if (this.d == BookState.CLOUD_ONLY) {
+            if (this.bookState == BookState.CLOUD_ONLY) {
                 try {
                     aT().a(aF());
                     aO();
-                    if (this.d == BookState.CLOUD_ONLY) {
-                        this.d = BookState.NORMAL;
+                    if (this.bookState == BookState.CLOUD_ONLY) {
+                        this.bookState = BookState.NORMAL;
                         this.x.c(240);
                         this.x.c(3);
                         this.x.d(64);
@@ -303,7 +300,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                 r0 = r18;
                 r2 = r0.K;
                 r0 = r19;
-                r2 = r2.get(r0);
+                r2 = r2.getAllSortStackTraces(r0);
                 r2 = (java.util.List) r2;
                 if (r2 == 0) goto L_0x000f;
             L_0x000e:
@@ -393,7 +390,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                 r0 = r18;
                 r2 = r0.K;	 Catch:{ all -> 0x00f2 }
                 r0 = r19;
-                r2 = r2.get(r0);	 Catch:{ all -> 0x00f2 }
+                r2 = r2.getAllSortStackTraces(r0);	 Catch:{ all -> 0x00f2 }
                 r2 = (java.util.List) r2;	 Catch:{ all -> 0x00f2 }
                 com.duokan.core.io.getScaledTouchSlop.setDrawable(r13);	 Catch:{ Throwable -> 0x0106, all -> 0x0101 }
                 com.duokan.core.io.getScaledTouchSlop.setDrawable(r14);	 Catch:{ Throwable -> 0x0106, all -> 0x0101 }

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 
 import com.duokan.b.i;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
 import com.duokan.reader.ui.general.ap;
 
@@ -21,7 +21,7 @@ class k extends ap {
     }
 
     protected void onOk() {
-        if (f.b().d()) {
+        if (classc.ConnectivityReceiver.b().d()) {
             this.c.a(FlowChargingTransferChoice.NoTransfer);
             this.c.a(this.a);
         } else {

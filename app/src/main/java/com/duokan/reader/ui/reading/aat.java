@@ -12,11 +12,11 @@ class aat implements PageProvider {
     }
 
     public CurlAnchor nextPageAnchor(CurlAnchor curlAnchor) {
-        return (CurlAnchor) TaskHandler.postTask(new aau(this, curlAnchor));
+        return (CurlAnchor) TaskHandler.getTaskHandler(new aau(this, curlAnchor));
     }
 
     public CurlAnchor prevPageAnchor(CurlAnchor curlAnchor) {
-        return (CurlAnchor) TaskHandler.postTask(new aav(this));
+        return (CurlAnchor) TaskHandler.getTaskHandler(new aav(this));
     }
 
     public Bitmap getPageBitmap(CurlAnchor curlAnchor) {

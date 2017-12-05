@@ -7,7 +7,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.text.TextUtils;
 
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ah;
 import com.duokan.kernel.DkArgbColor;
@@ -78,7 +78,7 @@ public class w extends TaskHandler implements ae, ba, bd {
         } else if (c || (vVar != null && vVar.a())) {
             mHandler.c().b(N());
             this.d = ahVar;
-            this.d.b((Object) TaskHandler.getThead());
+            this.d.b((Object) TaskHandler.getThread());
             this.d.b((Object) this);
             this.e = new v(this.d, vVar, 0);
             this.f = uVar;
@@ -153,11 +153,11 @@ public class w extends TaskHandler implements ae, ba, bd {
         return new ag();
     }
 
-    public a[] c() {
+    public WebLog[] c() {
         int i = 0;
         mHandler.c().b(N());
         if (!E()) {
-            return new a[0];
+            return new WebLog[0];
         }
         DkFlowPosition[] charPositions;
         if (this.d.g().c()) {
@@ -167,7 +167,7 @@ public class w extends TaskHandler implements ae, ba, bd {
             charPositions = S().getCharPositions();
             T();
         }
-        a[] aVarArr = new a[charPositions.length];
+        WebLog[] aVarArr = new WebLog[charPositions.length];
         while (i < aVarArr.length) {
             aVarArr[i] = p.a(charPositions[i]);
             i++;
@@ -295,7 +295,7 @@ public class w extends TaskHandler implements ae, ba, bd {
             }
             O();
             this.d.b((bd) this);
-            this.d.c(TaskHandler.getThead());
+            this.d.c(TaskHandler.getThread());
         }
     }
 

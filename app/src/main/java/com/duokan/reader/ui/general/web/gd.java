@@ -3,15 +3,15 @@ package com.duokan.reader.ui.general.web;
 import com.duokan.core.sys.as;
 
 class gd implements as {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    gd(cg cgVar) {
+    gd(PageController cgVar) {
         this.a = cgVar;
     }
 
     public void a() {
-        if (this.a.b.mEditFeedController != null) {
-            this.a.b.mEditFeedController.a();
+        if (this.a.pageController.mEditFeedController != null) {
+            this.a.pageController.mEditFeedController.a();
         }
     }
 }

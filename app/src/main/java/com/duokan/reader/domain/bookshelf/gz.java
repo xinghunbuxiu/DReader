@@ -3,7 +3,7 @@ package com.duokan.reader.domain.bookshelf;
 import android.text.TextUtils;
 import android.util.Pair;
 
-import com.duokan.core.sys.j;
+import com.duokan.core.sys.AIdleOperation;
 import com.duokan.core.sys.o;
 import com.duokan.core.sys.r;
 import com.duokan.reader.domain.document.epub.av;
@@ -51,7 +51,7 @@ class gz implements av {
         if (intValue != 0) {
             return intValue;
         }
-        return j.a().getId() == longValue ? 0 : 1;
+        return AIdleOperation.getCurrentThread().getId() == longValue ? 0 : 1;
     }
 
     public boolean c() {

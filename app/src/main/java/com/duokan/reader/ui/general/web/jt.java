@@ -14,9 +14,9 @@ import java.util.concurrent.Callable;
 
 class jt implements Callable {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    jt(cg cgVar, String str) {
+    jt(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
@@ -33,17 +33,17 @@ class jt implements Callable {
         if (a == null || TextUtils.isEmpty(a.r)) {
             return Boolean.valueOf(false);
         }
-        this.b.b.mAdLifecycleManager.b(a.r, new ju(this, a));
-        if (Intent.parseUri(new c(this.b.b.getContext()).a(a.r), 0) == null) {
+        this.b.pageController.mAdLifecycleManager.b(a.r, new ju(this, a));
+        if (Intent.parseUri(new c(this.b.pageController.getContext()).a(a.r), 0) == null) {
             return Boolean.valueOf(false);
         }
         g.a().b(a);
-        if (!x.a(this.b.b.getContext(), a.r)) {
-            this.b.b.mAdLifecycleManager.a(a);
-            if (this.b.b.mAdSdkService == null) {
-                this.b.b.mAdSdkService = new r(this.b.b.mAdLifecycleManager);
+        if (!x.a(this.b.pageController.getContext(), a.r)) {
+            this.b.pageController.mAdLifecycleManager.a(a);
+            if (this.b.pageController.mAdSdkService == null) {
+                this.b.pageController.mAdSdkService = new r(this.b.pageController.mAdLifecycleManager);
             }
-            this.b.b.mAdSdkService.a(a);
+            this.b.pageController.mAdSdkService.a(a);
         }
         return Boolean.valueOf(true);
     }

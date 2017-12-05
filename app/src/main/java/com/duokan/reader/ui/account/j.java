@@ -10,10 +10,10 @@ class j implements as {
     }
 
     public void a() {
-        if (!this.a.a.mFinished) {
-            this.a.a.mFinished = true;
-            if (this.a.a.mLoginListener != null) {
-                this.a.a.mLoginListener.a(this.a.a.mAccount);
+        if (!this.a.ccountController.mFinished) {
+            this.a.ccountController.mFinished = true;
+            if (this.a.ccountController.mLoginListener != null) {
+                this.a.ccountController.mLoginListener.a(this.a.ccountController.mAccount);
             }
         }
     }

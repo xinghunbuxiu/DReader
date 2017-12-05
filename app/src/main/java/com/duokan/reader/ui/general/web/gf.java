@@ -11,7 +11,7 @@ class gf implements as {
     }
 
     public void a() {
-        sh shVar = (sh) this.a.a.b.getContext().queryFeature(sh.class);
+        sh shVar = (sh) this.a.a.pageController.getContext().queryFeature(sh.class);
         if (shVar != null) {
             shVar.j(true);
         }

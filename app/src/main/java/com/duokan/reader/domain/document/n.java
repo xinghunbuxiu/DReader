@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.net.Uri;
 
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.kernel.DkUtils;
 
@@ -60,7 +60,7 @@ public abstract class n {
 
     public abstract WritingDirection c();
 
-    public abstract a c(a aVar);
+    public abstract WebLog c(WebLog aVar);
 
     public abstract ak c(av avVar);
 
@@ -68,7 +68,7 @@ public abstract class n {
 
     public abstract ak d(ak akVar);
 
-    public abstract boolean d(a aVar);
+    public abstract boolean d(WebLog aVar);
 
     public abstract long e();
 
@@ -121,7 +121,7 @@ public abstract class n {
         return this.a;
     }
 
-    public final ak a(a aVar) {
+    public final ak a(WebLog aVar) {
         if (aVar instanceof av) {
             return c((av) aVar);
         }
@@ -131,7 +131,7 @@ public abstract class n {
         return null;
     }
 
-    public final ak b(a aVar) {
+    public final ak b(WebLog aVar) {
         if (aVar instanceof av) {
             return d(c((av) aVar));
         }
@@ -141,7 +141,7 @@ public abstract class n {
         return null;
     }
 
-    public void a(a... aVarArr) {
+    public void a(WebLog... aVarArr) {
         if (aVarArr != null) {
             synchronized (this) {
                 for (int length = aVarArr.length - 1; length >= 0; length--) {

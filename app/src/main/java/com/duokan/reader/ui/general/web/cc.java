@@ -1,5 +1,6 @@
 package com.duokan.reader.ui.general.web;
 
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.domain.account.a;
 import com.duokan.reader.domain.account.h;
 
@@ -14,7 +15,7 @@ class cc implements h {
     }
 
     public void b(a aVar) {
-        com.duokan.core.diagnostic.a.c().a();
+        WebLog.c().WebLog();
         if (StorePageController.sPreloadedController != null) {
             StorePageController.sPreloadedController.mWebView.f();
             StorePageController.sPreloadedController = null;
@@ -22,7 +23,7 @@ class cc implements h {
     }
 
     public void c(a aVar) {
-        com.duokan.core.diagnostic.a.c().a();
+        WebLog.c().WebLog();
         if (StorePageController.sPreloadedController != null) {
             StorePageController.sPreloadedController.mWebView.f();
             StorePageController.sPreloadedController = null;

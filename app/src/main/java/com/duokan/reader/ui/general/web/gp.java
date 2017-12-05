@@ -12,9 +12,9 @@ import java.util.concurrent.Callable;
 class gp implements Callable {
     final /* synthetic */ String a;
     final /* synthetic */ String b;
-    final /* synthetic */ cg c;
+    final /* synthetic */ PageController c;
 
-    gp(cg cgVar, String str, String str2) {
+    gp(PageController cgVar, String str, String str2) {
         this.c = cgVar;
         this.a = str;
         this.b = str2;

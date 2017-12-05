@@ -16,7 +16,7 @@ import com.duokan.reader.ui.general.DkLabelView;
 import com.duokan.reader.ui.general.HeaderView;
 import com.duokan.reader.ui.general.bf;
 import com.duokan.reader.ui.general.web.StorePageController;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 public class MiAccountProfileSettingsController extends my {
     private final HeaderView a = ((HeaderView) findViewById(g.personal__miaccount_profile_settings_view__header));
@@ -80,7 +80,7 @@ public class MiAccountProfileSettingsController extends my {
         a b = i.f().b(PersonalAccount.class);
         b.a(getActivity(), new do (this));
         findViewById(g.personal__personal_settings_view__logoff_container).setOnClickListener(new dp(this, b));
-        s sVar = (s) getContext().queryFeature(s.class);
+        ITheme sVar = (ITheme) getContext().queryFeature(ITheme.class);
         findViewById(g.personal__miaccount_profile_settings_view__scrollerview).setPadding(0, 0, 0, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
     }
 

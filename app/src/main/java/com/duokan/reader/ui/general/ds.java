@@ -22,7 +22,7 @@ import com.duokan.core.ui.UTools;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 import org.apache.http.HttpStatus;
 
@@ -61,7 +61,7 @@ public class ds extends FrameLayout {
             this.p.setVisibility(0);
         }
         this.h.setBackgroundDrawable(new dt(this));
-        this.c = ((s) MyContextWrapper.getFeature(getContext()).queryFeature(ReaderFeature.class)).getTheme().getPageHeaderPaddingTop();
+        this.c = ((ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ReaderFeature.class)).getTheme().getPageHeaderPaddingTop();
         a();
         if (ReaderEnv.get().forHd()) {
             viewGroup = (ViewGroup) this.h.findViewById(f.surfing__immersive_surfing_view__tabs_hd);

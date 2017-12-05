@@ -16,6 +16,6 @@ class ir implements as {
     }
 
     public void a() {
-        this.d.b.b.js_showWeb(this.a, this.d.b.b.handleUrl(this.b), this.c);
+        this.d.b.pageController.js_showWeb(this.a, this.d.b.pageController.handleUrl(this.b), this.c);
     }
 }

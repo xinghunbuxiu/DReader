@@ -11,7 +11,7 @@ import com.duokan.core.app.BaseActivity;
 import com.duokan.core.app.ad;
 import com.duokan.core.app.ae;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.ui.OnDismissListener;
 import com.duokan.core.ui.j;
 import com.duokan.reader.ui.welcome.r;
@@ -27,7 +27,7 @@ public class DkReaderActivity extends BaseActivity {
         }
         final Intent intent = getIntent();
         if (!TextUtils.equals(intent.getAction(), "android.intent.action.MAIN")) {
-            a.c().a(LogLevel.EVENT, "nav", "got an intent(action=%s, data=%s)", intent.getAction(), intent.getData());
+            WebLog.c().a(LogLevel.EVENT, "nav", "got an intent(action=%s, data=%s)", intent.getAction(), intent.getData());
         }
         DkApp.get().runWhenAppReady(new Runnable(this) {
             final /* synthetic */ DkReaderActivity b;

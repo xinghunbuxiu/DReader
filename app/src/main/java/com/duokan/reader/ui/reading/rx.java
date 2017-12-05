@@ -14,9 +14,10 @@ import android.view.View;
 
 import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ag;
-import com.duokan.core.sys.j;
+import com.duokan.core.sys.AIdleOperation;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
 import com.duokan.reader.ReaderEnv;
@@ -53,8 +54,8 @@ import com.duokan.reader.ui.bookshelf.jd;
 import com.duokan.reader.ui.general.FixedPagesView.PageScaleType;
 import com.duokan.reader.ui.general.PagesView.PageLayout;
 import com.duokan.reader.ui.general.ReaderUi;
-import com.duokan.reader.ui.r;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.IWindowRecord;
+import com.duokan.reader.ui.ITheme;
 import com.duokan.reader.ui.store.bv;
 import com.duokan.reader.ui.welcome.DkTipManager.UserInput;
 import com.duokan.reader.ui.welcome.p;
@@ -71,7 +72,7 @@ public abstract class rx implements iv, at, sh {
     final /* synthetic */ qh c;
     private boolean d = false;
     private g e;
-    private final r f = new ry(this);
+    private final IWindowRecord f = new ry(this);
     private int g = 0;
 
     protected rx(qh qhVar) {
@@ -82,7 +83,7 @@ public abstract class rx implements iv, at, sh {
         v().showMenuFromTop(new jd(this.c.getContext()));
     }
 
-    public r getTheme() {
+    public IWindowRecord getTheme() {
         return this.f;
     }
 
@@ -255,7 +256,7 @@ public abstract class rx implements iv, at, sh {
         if (this.c.M != null) {
             return this.c.M;
         }
-        com.duokan.core.diagnostic.a.c().b();
+        WebLog.c().b();
         return new cx();
     }
 
@@ -601,7 +602,7 @@ public abstract class rx implements iv, at, sh {
             return null;
         }
         gs gsVar = (gs) X.d();
-        com.duokan.core.diagnostic.a.c().b(gsVar != null);
+        WebLog.c().b(gsVar != null);
         if (gsVar == null) {
             return null;
         }
@@ -658,7 +659,7 @@ public abstract class rx implements iv, at, sh {
         int i = bo.left;
         rect.right = i;
         rect.left = i;
-        int headerPaddingTop = ((s) MyContextWrapper.getFeature(this.c.getContext()).queryFeature(s.class)).getTheme().getHeaderPaddingTop();
+        int headerPaddingTop = ((ITheme) MyContextWrapper.getFeature(this.c.getContext()).queryFeature(ITheme.class)).getTheme().getHeaderPaddingTop();
         int g = this.c.D();
         if (ao()) {
             rect.top = Math.round((((float) bo.top) * 0.6f) + (((float) g) * 0.5f));
@@ -1093,7 +1094,7 @@ public abstract class rx implements iv, at, sh {
         if (z) {
             this.c.L();
         } else {
-            j.a(new se(this));
+            AIdleOperation.addIdleStatus(new se(this));
         }
     }
 
@@ -1198,7 +1199,7 @@ public abstract class rx implements iv, at, sh {
 
     public void j(boolean z) {
         this.c.a = new sf(this, z);
-        j.a(this.c.a);
+        AIdleOperation.addIdleStatus(this.c.a);
     }
 
     public Rect a(Rect rect) {

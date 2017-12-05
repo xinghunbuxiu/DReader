@@ -4,13 +4,13 @@ import com.duokan.core.sys.as;
 import com.duokan.reader.common.b.e;
 
 class er implements as {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    er(cg cgVar) {
+    er(PageController cgVar) {
         this.a = cgVar;
     }
 
     public void a() {
-        e.a(this.a.b.getContext()).a(this.a.b.getActivity());
+        e.a(this.a.pageController.getContext()).a(this.a.pageController.getActivity());
     }
 }

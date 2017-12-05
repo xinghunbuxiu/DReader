@@ -4,7 +4,7 @@ import android.net.Uri;
 
 import com.duokan.core.app.IFeature;
 import com.duokan.reader.ui.p;
-import com.duokan.reader.ui.t;
+import com.duokan.reader.ui.PushHalfPage;
 
 public class kk extends p {
     private final Uri a;
@@ -27,7 +27,7 @@ public class kk extends p {
         super.onActive(z);
         if (z) {
             a.k().a("single_page", 3);
-            ((t) getContext().queryFeature(t.class)).pushPage(this.b);
+            ((PushHalfPage) getContext().queryFeature(PushHalfPage.class)).pushPage(this.b);
             this.b.loadUrl(this.a.toString());
         }
     }

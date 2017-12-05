@@ -1,5 +1,6 @@
 package com.duokan.reader.domain.cloud;
 
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.duokan.aa;
 import com.duokan.reader.common.webservices.duokan.b;
@@ -46,7 +47,7 @@ class bi extends b {
                 this.c.b.a(this.d.b, this.d.c);
             }
         } else if (this.d.b == 0) {
-            com.duokan.core.diagnostic.a.c().b(this.f != null);
+            WebLog.c().b(this.f != null);
             this.c.d.e = this.e;
             DkSharedStorageManager.a().a(SharedKey.USER_PRIVILEGE, this.f.toString(), false);
             if (this.c.b != null) {

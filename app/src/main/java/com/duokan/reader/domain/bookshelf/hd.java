@@ -4,7 +4,7 @@ import android.net.Uri;
 
 import com.duokan.core.sys.ah;
 import com.duokan.core.sys.r;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.domain.document.epub.av;
 
 import java.io.File;
@@ -34,7 +34,7 @@ class hd implements Callable {
         this.a.bu();
         r e = this.a.bt();
         try {
-            int i = f.b().d() ? 20 : 10;
+            int i = classc.ConnectivityReceiver.b().d() ? 20 : 10;
             if (Thread.interrupted()) {
                 throw new InterruptedException();
             }
@@ -158,7 +158,7 @@ class hd implements Callable {
                 this.a.b(268435456);
                 if (!this.a.x.b(3)) {
                     if (obj != null) {
-                        this.a.d = BookState.NORMAL;
+                        this.a.bookState = BookState.NORMAL;
                         this.a.x.d(1);
                         this.a.b(8);
                     } else {
@@ -200,7 +200,7 @@ class hd implements Callable {
             this.a.b(268435456);
             if (!this.a.x.b(3)) {
                 if (obj != null) {
-                    this.a.d = BookState.NORMAL;
+                    this.a.bookState = BookState.NORMAL;
                     this.a.x.d(1);
                     this.a.b(8);
                 } else {

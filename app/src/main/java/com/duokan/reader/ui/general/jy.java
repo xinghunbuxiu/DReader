@@ -21,7 +21,7 @@ import com.duokan.core.ui.f;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.SystemUiConditioner;
 import com.duokan.reader.ui.general.web.km;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 public class jy extends f implements SystemUiConditioner {
     protected final View a;
@@ -44,7 +44,7 @@ public class jy extends f implements SystemUiConditioner {
         this.d.setOnClickListener(new kb(this));
         this.e = findViewById(com.duokan.b.f.general__web_window_view__refresh);
         this.e.setOnClickListener(new kc(this));
-        int headerPaddingTop = ((s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class)).getTheme().getHeaderPaddingTop();
+        int headerPaddingTop = ((ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class)).getTheme().getHeaderPaddingTop();
         View findViewById = findViewById(com.duokan.b.f.general__web_window_view__title);
         findViewById.setPadding(findViewById.getPaddingLeft(), headerPaddingTop, findViewById.getPaddingRight(), findViewById.getPaddingBottom());
         this.a = findViewById(com.duokan.b.f.general__web_window_view__menu);

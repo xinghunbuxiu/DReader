@@ -1,5 +1,5 @@
 package com.duokan.core.sys;
 
-public interface s {
+public interface IdleStatus {
     boolean idleRun();
 }

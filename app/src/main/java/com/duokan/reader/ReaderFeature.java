@@ -10,10 +10,10 @@ import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.ui.bookshelf.gx;
 import com.duokan.reader.ui.bookshelf.hb;
 import com.duokan.reader.ui.reading.sh;
-import com.duokan.reader.ui.s;
-import com.duokan.reader.ui.t;
+import com.duokan.reader.ui.ITheme;
+import com.duokan.reader.ui.PushHalfPage;
 
-public interface ReaderFeature extends s, t {
+public interface ReaderFeature extends ITheme, PushHalfPage {
     void addSystemUiConditioner(SystemUiConditioner systemUiConditioner);
 
     void downloadBooks(c... cVarArr);

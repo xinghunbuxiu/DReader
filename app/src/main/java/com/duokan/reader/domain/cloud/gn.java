@@ -16,8 +16,7 @@ import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
-import com.duokan.reader.common.c.f;
-import com.duokan.reader.common.c.g;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.duokan.DkSignInReward;
 import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.cloud.push.MessageWakeupListener;
@@ -29,7 +28,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class gn implements ah, g, MessageWakeupListener {
+public class gn implements ah, classc.IConnectChanged, MessageWakeupListener {
     private static final ai a = new ai();
     private final Context b;
     private final i c;
@@ -58,7 +57,7 @@ public class gn implements ah, g, MessageWakeupListener {
         this.d.remove(gsVar);
     }
 
-    public void onConnectivityChanged(f fVar) {
+    public void onConnectivityChanged(classc.ConnectivityReceiver connectivity) {
     }
 
     public void a(MessageSubType messageSubType, Object obj, boolean z) {

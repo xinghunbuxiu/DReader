@@ -276,7 +276,7 @@ class n {
         if (r2 < 0) goto L_0x004e;
     L_0x0013:
         r0 = r6.getScaledTouchSlop;	 Catch:{ all -> 0x004b }
-        r0 = r0.get(r2);	 Catch:{ all -> 0x004b }
+        r0 = r0.getAllSortStackTraces(r2);	 Catch:{ all -> 0x004b }
         r0 = (com.duokan.reader.common.cache.MyContextWrapper) r0;	 Catch:{ all -> 0x004b }
         r4 = r0.setDrawable;	 Catch:{ all -> 0x004b }
         r5 = com.duokan.reader.common.cache.ListCache.ListCacheStoreChangeType.UpdateInfo;	 Catch:{ all -> 0x004b }
@@ -331,7 +331,7 @@ class n {
         if (r2 < 0) goto L_0x0095;
     L_0x005d:
         r0 = r6.getScaledPagingTouchSlop;	 Catch:{ all -> 0x004b }
-        r0 = r0.get(r2);	 Catch:{ all -> 0x004b }
+        r0 = r0.getAllSortStackTraces(r2);	 Catch:{ all -> 0x004b }
         r0 = (com.duokan.reader.common.cache.MyContextWrapper) r0;	 Catch:{ all -> 0x004b }
         r4 = r0.setDrawable;	 Catch:{ all -> 0x004b }
         r5 = com.duokan.reader.common.cache.ListCache.ListCacheStoreChangeType.UpdateInfo;	 Catch:{ all -> 0x004b }

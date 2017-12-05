@@ -598,7 +598,7 @@ public abstract class ej extends c {
 
     protected void a(Cursor cursor) {
         super.a(cursor);
-        if (this.e == BookType.SERIAL) {
+        if (this.bookType == BookType.SERIAL) {
             this.N = new ko(u.c(cursor, Column.SERIAL_DETAIL.ordinal()));
         }
     }
@@ -628,7 +628,7 @@ public abstract class ej extends c {
     }
 
     protected void a(ac acVar) {
-        if (this.e == BookType.SERIAL) {
+        if (this.bookType == BookType.SERIAL) {
             try {
                 aT().a(aF());
                 aO();
@@ -776,7 +776,7 @@ public abstract class ej extends c {
             return this.G;
         }
         this.G = new String[0];
-        if (this.e == BookType.SERIAL) {
+        if (this.bookType == BookType.SERIAL) {
             Cursor a = aR().a(String.format("SELECT %1$s FROM %2$s WHERE _id IS '%3$s'", new Object[]{Column.SERIAL_CHAPTERS, "books", Long.valueOf(aF())}), null);
             if (a != null) {
                 try {
@@ -807,7 +807,7 @@ public abstract class ej extends c {
             return this.H;
         }
         this.H = new short[0];
-        if (this.e == BookType.SERIAL) {
+        if (this.bookType == BookType.SERIAL) {
             Cursor a = aR().a(String.format("SELECT %1$s FROM %2$s WHERE _id IS '%3$s'", new Object[]{Column.SERIAL_PRICES, "books", Long.valueOf(aF())}), null);
             if (a != null) {
                 try {
@@ -838,7 +838,7 @@ public abstract class ej extends c {
             return this.I;
         }
         this.I = new String[0];
-        if (this.e == BookType.SERIAL) {
+        if (this.bookType == BookType.SERIAL) {
             Cursor a = aR().a(String.format("SELECT %1$s FROM %2$s WHERE _id IS '%3$s'", new Object[]{Column.SERIAL_SHA1S, "books", Long.valueOf(aF())}), null);
             if (a != null) {
                 try {

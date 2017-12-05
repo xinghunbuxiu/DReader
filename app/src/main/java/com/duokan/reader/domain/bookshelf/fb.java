@@ -115,7 +115,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         r2 = r0.showAnimation(r1);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = r10.getScaledPagingTouchSlop;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r3 = "md5";	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
-        r0 = r0.get(r3);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        r0 = r0.getAllSortStackTraces(r3);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = (java.lang.CharSequence) r0;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = android.text.TextUtils.isEmpty(r0);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         if (r0 != 0) goto L_0x00d8;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
@@ -124,7 +124,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         r3 = com.duokan.core.sys.o.setDrawable(r2, r0);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = r10.getScaledPagingTouchSlop;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r4 = "md5";	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
-        r0 = r0.get(r4);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        r0 = r0.getAllSortStackTraces(r4);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = (java.lang.String) r0;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = r3.startsWith(r0);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         if (r0 != 0) goto L_0x010a;
@@ -152,7 +152,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
     L_0x00d8:
         r0 = r10.getScaledPagingTouchSlop;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r3 = "sha1";	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
-        r0 = r0.get(r3);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        r0 = r0.getAllSortStackTraces(r3);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = (java.lang.CharSequence) r0;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = android.text.TextUtils.isEmpty(r0);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         if (r0 != 0) goto L_0x010a;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
@@ -161,7 +161,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         r3 = com.duokan.core.sys.o.setDrawable(r2, r0);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = r10.getScaledPagingTouchSlop;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r4 = "sha1";	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
-        r0 = r0.get(r4);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        r0 = r0.getAllSortStackTraces(r4);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = (java.lang.String) r0;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = r3.startsWith(r0);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         if (r0 != 0) goto L_0x010a;
@@ -296,7 +296,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
     L_0x01f3:
         r0 = r10.getScaledPagingTouchSlop;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r3 = "md5";	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
-        r0 = r0.get(r3);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
+        r0 = r0.getAllSortStackTraces(r3);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r0 = (java.lang.CharSequence) r0;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r0 = android.text.TextUtils.isEmpty(r0);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         if (r0 != 0) goto L_0x0220;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
@@ -305,7 +305,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         r3 = com.duokan.core.sys.o.setDrawable(r2, r0);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r0 = r10.getScaledPagingTouchSlop;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r4 = "md5";	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
-        r0 = r0.get(r4);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
+        r0 = r0.getAllSortStackTraces(r4);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r0 = (java.lang.String) r0;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r0 = r3.startsWith(r0);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         if (r0 != 0) goto L_0x024d;
@@ -316,7 +316,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
     L_0x0220:
         r0 = r10.getScaledPagingTouchSlop;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r3 = "sha1";	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
-        r0 = r0.get(r3);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
+        r0 = r0.getAllSortStackTraces(r3);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r0 = (java.lang.CharSequence) r0;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r0 = android.text.TextUtils.isEmpty(r0);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         if (r0 != 0) goto L_0x024d;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
@@ -325,7 +325,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         r3 = com.duokan.core.sys.o.setDrawable(r2, r0);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r0 = r10.getScaledPagingTouchSlop;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r4 = "sha1";	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
-        r0 = r0.get(r4);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
+        r0 = r0.getAllSortStackTraces(r4);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r0 = (java.lang.String) r0;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r0 = r3.startsWith(r0);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         if (r0 != 0) goto L_0x024d;

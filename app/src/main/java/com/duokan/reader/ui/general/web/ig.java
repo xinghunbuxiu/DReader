@@ -10,9 +10,9 @@ import org.json.JSONObject;
 
 class ig implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    ig(cg cgVar, String str) {
+    ig(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
@@ -25,6 +25,6 @@ class ig implements as {
             ((ej) b).a(true, new ih(this, string), new ii(this, string));
             return;
         }
-        this.b.b.web_notifyWeb(string, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
+        this.b.pageController.web_notifyWeb(string, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
     }
 }

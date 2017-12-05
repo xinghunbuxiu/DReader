@@ -10,10 +10,10 @@ class eg implements a {
     }
 
     public void a(Object... objArr) {
-        this.b.b.b.web_notifyWeb(this.a, 0, "operation", Integer.valueOf(1), "text", (String) objArr[0]);
+        this.b.b.pageController.web_notifyWeb(this.a, 0, "operation", Integer.valueOf(1), "text", (String) objArr[0]);
     }
 
     public void b(Object... objArr) {
-        this.b.b.b.web_notifyWeb(this.a, 0, "operation", Integer.valueOf(0), "text", "");
+        this.b.b.pageController.web_notifyWeb(this.a, 0, "operation", Integer.valueOf(0), "text", "");
     }
 }

@@ -10,7 +10,7 @@ import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.domain.account.PersonalAccount;
 import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.bookshelf.c;
@@ -22,16 +22,16 @@ public class a implements ah, IActivityRunStatusChanged {
     private static final ai h = new ai();
     private final com.duokan.core.a.a a;
     private final ReaderEnv b;
-    private final f c;
+    private final classc.ConnectivityReceiver c;
     private StatStartApp d = null;
     private StatOpenBook e = null;
     private StatLoginResult f = null;
     private long g = 0;
 
-    public a(ReaderEnv readerEnv, f fVar) {
+    public a(ReaderEnv readerEnv, classc.ConnectivityReceiver connectivity) {
         this.b = readerEnv;
         this.a = new com.duokan.core.a.a(Uri.fromFile(new File(readerEnv.getDatabaseDirectory(), "statistics.db")).toString());
-        this.c = fVar;
+        this.c = connectivity;
         if (this.b.getIsSendNow()) {
             this.g = System.currentTimeMillis();
             this.b.setIsSendNow(false);
@@ -230,9 +230,9 @@ public class a implements ah, IActivityRunStatusChanged {
         return (a) h.a();
     }
 
-    public static void a(ReaderEnv readerEnv, f fVar) {
+    public static void a(ReaderEnv readerEnv, classc.ConnectivityReceiver connectivity) {
         try {
-            h.a(new a(readerEnv, fVar));
+            h.a(new a(readerEnv, connectivity));
             ManagedApp.get().addOnRunningStateChangedListener(d());
         } catch (Throwable th) {
         }

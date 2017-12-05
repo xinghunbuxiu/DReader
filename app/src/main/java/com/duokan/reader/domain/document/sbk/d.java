@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.document.sbk;
 
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.av;
 import com.duokan.reader.domain.document.g;
@@ -15,7 +15,7 @@ public class d extends g {
     private final av g;
     private ak h = null;
 
-    protected d(f fVar, int i, int i2, int i3, a aVar) {
+    protected d(f fVar, int i, int i2, int i3, WebLog aVar) {
         a.c().b(aVar != null);
         this.a = fVar;
         this.e = i;

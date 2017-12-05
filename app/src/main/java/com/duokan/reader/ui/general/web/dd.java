@@ -20,9 +20,9 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 
 class dd implements Callable {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    dd(cg cgVar) {
+    dd(PageController cgVar) {
         this.a = cgVar;
     }
 

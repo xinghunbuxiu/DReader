@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.b.UrlTools;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
 import com.duokan.core.sys.ah;
@@ -202,7 +203,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                         if (!TextUtils.isEmpty(bookUri)) {
                             a(Uri.fromFile(new File(new File(e()).getParent(), "book." + dkCloudBookManifest.getBookRevision() + ".epub")).toString(), dkCloudBookManifest.getOpfUri(), dkCloudBookManifest.getBookRevision(), dkCloudBookManifest.getOpfMd5(), false, afVar);
                         } else if (i() == BookState.NORMAL && p() == BookLimitType.CONTENT) {
-                            this.d = BookState.PULLING;
+                            this.bookState = BookState.PULLING;
                             this.x.c(3);
                             this.x.c(64);
                             b(72);
@@ -363,7 +364,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
         }
 
         public boolean k () {
-            return this.e == BookType.SERIAL;
+            return this.bookType == BookType.SERIAL;
         }
 
         protected void a (ContentValues contentValues){
@@ -678,12 +679,12 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
         }
 
         protected void bi () {
-            if (this.d == BookState.CLOUD_ONLY) {
+            if (this.bookState == BookState.CLOUD_ONLY) {
                 try {
                     aT().a(aF());
                     aO();
-                    if (this.d == BookState.CLOUD_ONLY) {
-                        this.d = j() ? BookState.PULLING : BookState.NORMAL;
+                    if (this.bookState == BookState.CLOUD_ONLY) {
+                        this.bookState = j() ? BookState.PULLING : BookState.NORMAL;
                         this.x.c(240);
                         this.x.c(3);
                         this.x.d(64);
@@ -709,11 +710,11 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                         b.a(this.x.b, d, new UrlTools.a().a(1).b(131072));
                     }
                     if (!d.exists()) {
-                        com.duokan.core.diagnostic.a.c().c(LogLevel.ERROR, "epub", "fail to create the book " + d.getAbsolutePath());
+                        WebLog.c().c(LogLevel.ERROR, "epub", "fail to create the book " + d.getAbsolutePath());
                         throw new IOException();
                     }
                 } catch (Throwable th2) {
-                    com.duokan.core.diagnostic.a.c().a(LogLevel.ERROR, "epub", "fail to create the book " + d.getAbsolutePath(), th2);
+                    WebLog.c().printStackTrace(LogLevel.ERROR, "epub", "fail to create the book " + d.getAbsolutePath(), th2);
                     IOException iOException = new IOException();
                 }
             }

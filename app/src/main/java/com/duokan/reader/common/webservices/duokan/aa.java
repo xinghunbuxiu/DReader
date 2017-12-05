@@ -5,6 +5,7 @@ import android.util.Pair;
 
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.o;
 import com.duokan.kernel.filterlib.DkfLib;
 import com.duokan.reader.ReaderEnv;
@@ -169,7 +170,7 @@ public class aa extends ad {
     }
 
     public b a() {
-        JSONObject a = a(a(a(true, b() + "/store/v0/time_limited/get", new String[0])), HTTP.UTF_8);
+        JSONObject a = a(a(a(true, b() + "/store/v0/time_limited/getAllSortStackTraces", new String[0])), HTTP.UTF_8);
         b bVar = new b();
         bVar.b = a.getInt(Mipay.KEY_RESULT);
         bVar.c = i.a(a, "msg", "");
@@ -568,7 +569,7 @@ public class aa extends ad {
             return bVar;
         }
         if (ManagedApp.get().isDebuggable()) {
-            com.duokan.core.diagnostic.a.c().c(LogLevel.INFO, Mipay.KEY_ORDER, "list fictions: " + a.toString());
+            WebLog.c().c(LogLevel.INFO, Mipay.KEY_ORDER, "list fictions: " + a.toString());
         }
         JSONArray jSONArray = a.getJSONArray("items");
         LinkedList linkedList = new LinkedList();
@@ -935,7 +936,7 @@ public class aa extends ad {
             return bVar;
         }
         if (ManagedApp.get().isDebuggable()) {
-            com.duokan.core.diagnostic.a.c().c(LogLevel.INFO, Mipay.KEY_ORDER, "list fictions: " + a.toString());
+            WebLog.c().c(LogLevel.INFO, Mipay.KEY_ORDER, "list fictions: " + a.toString());
         }
         JSONArray jSONArray = a.getJSONArray("items");
         LinkedList linkedList = new LinkedList();

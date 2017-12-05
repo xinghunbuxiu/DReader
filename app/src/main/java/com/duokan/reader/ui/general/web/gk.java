@@ -21,6 +21,6 @@ class gk implements h {
     }
 
     public void onFetchBookDetailError(String str) {
-        this.c.b.b.web_notifyWeb(this.b, 2, new Object[0]);
+        this.c.b.pageController.web_notifyWeb(this.b, 2, new Object[0]);
     }
 }

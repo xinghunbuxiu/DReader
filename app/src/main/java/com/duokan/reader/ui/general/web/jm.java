@@ -8,9 +8,9 @@ import java.util.concurrent.Callable;
 
 class jm implements Callable {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    jm(cg cgVar, String str) {
+    jm(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
@@ -21,7 +21,7 @@ class jm implements Callable {
 
     public String a() {
         try {
-            PackageInfo packageInfo = this.b.b.getContext().getPackageManager().getPackageInfo(this.a, 0);
+            PackageInfo packageInfo = this.b.pageController.getContext().getPackageManager().getPackageInfo(this.a, 0);
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("version_name", packageInfo.versionName);
             jSONObject.put("version_code", packageInfo.versionCode);

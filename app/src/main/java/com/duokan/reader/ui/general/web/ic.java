@@ -4,9 +4,9 @@ import com.duokan.core.sys.as;
 
 class ic implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    ic(cg cgVar, String str) {
+    ic(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

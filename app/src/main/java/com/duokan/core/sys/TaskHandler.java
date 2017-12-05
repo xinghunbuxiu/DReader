@@ -11,15 +11,15 @@ public abstract class TaskHandler {
     public static final Handler mHandler = new Handler(Looper.getMainLooper());
 
     public static final boolean isCurrentThread() {
-        return Thread.currentThread() == getThead();
+        return Thread.currentThread() == getThread();
     }
 
-    public static final Thread getThead() {
+    public static final Thread getThread() {
         return Looper.getMainLooper().getThread();
     }
 
     public static final void postTask(Runnable runnable) {
-        PostTask(new u(runnable));
+        PostTask(new MyCall(runnable));
     }
 
     public static final void PostTask(Runnable runnable) {
@@ -28,27 +28,33 @@ public abstract class TaskHandler {
         }
     }
 
-    public static final void postDelayed(Runnable runnable, long j) {
+    public static final void postDelayed(Runnable runnable, long delayMillis) {
         if (runnable != null) {
-            mHandler.postDelayed(runnable, j);
+            mHandler.postDelayed(runnable, delayMillis);
         }
     }
 
-    public static final void PostTask(Runnable runnable, long j) {
+    public static final void PostTask(Runnable runnable, long uptimeMillis) {
         if (runnable != null) {
-            mHandler.postAtTime(runnable, j);
+            mHandler.postAtTime(runnable, uptimeMillis);
         }
     }
 
-    public static final void postTask(s sVar, int i) {
-        mHandler.post(new v(sVar, i));
+    public static final void postTask(final IdleStatus idleStatus, final int delayMillis) {
+        mHandler.post(new Runnable() {
+
+            @Override
+            public void run() {
+                AIdleOperation.ShowOrHide(idleStatus, delayMillis);
+            }
+        });
     }
 
-    public static final void postTask(s sVar) {
-        mHandler.post(new w(sVar));
+    public static final void requstIdleStatusListening(IdleStatus sVar) {
+        mHandler.post(new addIdleStatus(sVar));
     }
 
-    public static final <T> T postTask(Callable<T> callable) {
+    public static final <T> T getTaskHandler(Callable<T> callable) {
         Future<T> b = PostTask((Callable) callable);
         while (true) {
             try {
@@ -62,23 +68,23 @@ public abstract class TaskHandler {
 
     public static final <T> Future<T> PostTask(Callable<T> callable) {
         if (callable == null) {
-            return new x();
+            return new MyFuture<T>();
         }
-        if (a()) {
-            Object obj = null;
+        if (isCurrentThread()) {
+            T obj = null;
             try {
                 obj = callable.call();
             } catch (Throwable th) {
             }
-            return new y(obj);
+            return new TaskFuture(obj);
         }
-        Future<T> futureTask = new FutureTask(callable);
-        mHandler.post((Runnable) futureTask);
+        FutureTask futureTask = new FutureTask(callable);
+        mHandler.post(futureTask);
         return futureTask;
     }
 
 
-    public static final void c(Runnable runnable) {
+    public static final void removeCallbacks(Runnable runnable) {
         if (runnable != null) {
             mHandler.removeCallbacks(runnable);
         }

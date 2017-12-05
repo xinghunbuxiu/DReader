@@ -20,6 +20,6 @@ class fk implements as {
     }
 
     public void a() {
-        this.f.b.b.js_showDialog(this.a, this.b, this.c, this.d, new fl(this), new fm(this));
+        this.f.b.pageController.js_showDialog(this.a, this.b, this.c, this.d, new fl(this), new fm(this));
     }
 }

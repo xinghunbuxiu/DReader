@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.cloud.push;
 
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.domain.account.PersonalAccount;
 import com.duokan.reader.domain.cloud.push.MessageWakeupListener.MessageSubType;
 
@@ -32,7 +32,7 @@ class h implements ag {
     }
 
     public void a(DkCloudPushMessage dkCloudPushMessage) {
-        a c = a.c();
+        WebLog c = a.c();
         LogLevel logLevel = LogLevel.EVENT;
         String str = "push";
         String str2 = "class: %s, method: %s, message: %s";

@@ -20,8 +20,9 @@ import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.IActivityRunStatusChanged;
 import com.duokan.core.app.IFeature;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.af;
-import com.duokan.core.sys.s;
+import com.duokan.core.sys.IdleStatus;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.cv;
 import com.duokan.reader.DkApp;
@@ -32,8 +33,7 @@ import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.SystemUiConditioner;
 import com.duokan.reader.SystemUiMode;
 import com.duokan.reader.UmengManager;
-import com.duokan.reader.common.c.f;
-import com.duokan.reader.common.c.g;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.domain.account.oauth.ThirdOAuth;
 import com.duokan.reader.domain.account.oauth.ThirdYinxiang;
 import com.duokan.reader.domain.account.oauth.TokenStore;
@@ -77,7 +77,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.concurrent.TimeUnit;
 
-public abstract class qh extends p implements SystemUiConditioner, g, w, xb {
+public abstract class qh extends p implements SystemUiConditioner, classc.IConnectChanged, w, xb {
     static final /* synthetic */ boolean I = (!qh.class.desiredAssertionStatus());
     protected ak A = null;
     protected ak B = null;
@@ -94,7 +94,7 @@ public abstract class qh extends p implements SystemUiConditioner, g, w, xb {
     private com.duokan.reader.domain.bookshelf.w N = null;
     private IActivityRunStatusChanged O = null;
     private Callback P = new qi(this);
-    private s a = null;
+    private IdleStatus a = null;
     private final Document_a b = new Document_a();
     protected final rx c;
     protected final ReadingPrefs d;
@@ -271,7 +271,7 @@ public abstract class qh extends p implements SystemUiConditioner, g, w, xb {
     }
 
     public void a(n nVar) {
-        com.duokan.core.diagnostic.a.c().a(this.h.b());
+        WebLog.c().a(this.h.b());
         runAfterActive(new rn(this));
     }
 
@@ -285,7 +285,7 @@ public abstract class qh extends p implements SystemUiConditioner, g, w, xb {
     public void d(n nVar) {
     }
 
-    public void onConnectivityChanged(f fVar) {
+    public void onConnectivityChanged(classc.ConnectivityReceiver connectivity) {
     }
 
     protected void onTrimMemory(int i) {
@@ -315,7 +315,7 @@ public abstract class qh extends p implements SystemUiConditioner, g, w, xb {
         N();
         this.O = new rr(this);
         DkApp.get().addOnRunningStateChangedListener(this.O);
-        f.b().a((g) this);
+        f.b().a((classc.IConnectChanged) this);
     }
 
     protected void onDetachFromStub() {

@@ -17,11 +17,11 @@ class ee implements as {
     }
 
     public void a() {
-        if (!Arrays.asList(this.c.b.b.mTabsTitle.keySet().toArray()).equals(Arrays.asList(this.a.keySet().toArray()))) {
-            this.c.b.b.mTabsTitle.clear();
-            this.c.b.b.mHasTabsTitleChange = true;
+        if (!Arrays.asList(this.c.b.pageController.mTabsTitle.keySet().toArray()).equals(Arrays.asList(this.a.keySet().toArray()))) {
+            this.c.b.pageController.mTabsTitle.clear();
+            this.c.b.pageController.mHasTabsTitleChange = true;
         }
-        this.c.b.b.mTabsTitle.putAll(this.a);
-        this.c.b.b.mSurfingBarOffset = this.b;
+        this.c.b.pageController.mTabsTitle.putAll(this.a);
+        this.c.b.pageController.mSurfingBarOffset = this.b;
     }
 }

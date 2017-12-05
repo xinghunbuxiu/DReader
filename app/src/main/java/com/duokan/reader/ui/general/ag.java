@@ -2,9 +2,9 @@ package com.duokan.reader.ui.general;
 
 import android.widget.EditText;
 
-import com.duokan.core.sys.s;
+import com.duokan.core.sys.IdleStatus;
 
-class ag implements s {
+class ag implements IdleStatus {
     final /* synthetic */ af a;
 
     ag(af afVar) {

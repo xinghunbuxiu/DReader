@@ -75,7 +75,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r10 = this;
         r0 = r10.onActivityResult;
         r0.beginTransaction();
-        r0 = r10.A();	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
+        r0 = r10.linkedList();	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r1 = new android.content.ContentValues;	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r1.<init>();	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r2 = "runtime_info";	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
@@ -764,7 +764,7 @@ Error: java.lang.NullPointerException
         if (this.j == TaskState.SUCCEEDED) {
             this.s.c(LogLevel.EVENT, "", "download succeeded");
         } else {
-            this.s.a(LogLevel.ERROR, "", "download failed(%s)", this.m.name());
+            this.s.print(LogLevel.ERROR, "", "download failed(%s)", this.m.name());
         }
         this.l = System.currentTimeMillis();
         z();

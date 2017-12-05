@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.ui.t;
+import com.duokan.reader.ui.PushHalfPage;
 
 class os implements Runnable {
     final /* synthetic */ or a;
@@ -10,6 +10,6 @@ class os implements Runnable {
     }
 
     public void run() {
-        ((t) this.a.a.getContext().queryFeature(t.class)).pushHalfPageSmoothly(new ip(this.a.a.getContext(), this.a.a.f, new ot(this)), null);
+        ((PushHalfPage) this.a.a.getContext().queryFeature(PushHalfPage.class)).pushHalfPageSmoothly(new ip(this.a.a.getContext(), this.a.a.f, new ot(this)), null);
     }
 }

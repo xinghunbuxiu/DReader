@@ -20,6 +20,7 @@ import com.duokan.core.ui.HatGridView;
 import com.duokan.core.ui.UTools;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderFeature;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.duokan.DkStoreAdInfo;
 import com.duokan.reader.domain.account.MiAccount;
 import com.duokan.reader.domain.account.PersonalAccount;
@@ -32,7 +33,7 @@ import com.duokan.reader.domain.bookshelf.kp;
 import com.duokan.reader.domain.bookshelf.la;
 import com.duokan.reader.domain.cloud.PersonalPrefs;
 import com.duokan.reader.domain.cloud.hj;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -59,10 +60,10 @@ public class g extends FrameLayout implements iu, la, hj, cw, eq {
         this.c = (cu) featrue.queryFeature(cu.class);
         this.a = (ReaderFeature) featrue.queryFeature(ReaderFeature.class);
         this.e = new h(this, null, getContext());
-        this.e.a(new s(this));
+        this.e.a(new ITheme(this));
         this.i = LayoutInflater.from(getContext()).inflate(h.bookshelf__bookshelf_header_view, this, false);
         View findViewById = this.i.findViewById(com.duokan.c.g.bookshelf__bookshelf_header_view__tab);
-        int pageHeaderPaddingTop = ((s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class)).getTheme().getPageHeaderPaddingTop();
+        int pageHeaderPaddingTop = ((ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class)).getTheme().getPageHeaderPaddingTop();
         if (findViewById.getPaddingTop() != pageHeaderPaddingTop) {
             findViewById.setPadding(0, pageHeaderPaddingTop, 0, 0);
         }
@@ -394,7 +395,7 @@ public class g extends FrameLayout implements iu, la, hj, cw, eq {
     }
 
     public void a(boolean z, boolean z2) {
-        if (!com.duokan.reader.common.c.f.b().e()) {
+        if (!classc.f.b().e()) {
             a(z, null);
         } else if (!PersonalPrefs.a().j()) {
             a(z, null);

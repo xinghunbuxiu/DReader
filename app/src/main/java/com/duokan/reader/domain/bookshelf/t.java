@@ -10,8 +10,8 @@ class t implements Runnable {
     }
 
     public void run() {
-        if (this.a.A != null) {
-            Iterator it = this.a.A.iterator();
+        if (this.a.linkedList != null) {
+            Iterator it = this.a.linkedList.iterator();
             while (it.hasNext()) {
                 ((w) it.next()).a(this.a.aq());
             }

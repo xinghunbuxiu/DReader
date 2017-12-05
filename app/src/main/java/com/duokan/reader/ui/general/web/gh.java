@@ -3,7 +3,7 @@ package com.duokan.reader.ui.general.web;
 import com.duokan.c.j;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.as;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.ui.general.ap;
 
@@ -23,8 +23,8 @@ class gh implements as {
     }
 
     public void a() {
-        if (f.b().c()) {
-            ap apVar = new ap(this.d.b.b.getContext());
+        if (classc.ConnectivityReceiver.b().c()) {
+            ap apVar = new ap(this.d.b.pageController.getContext());
             apVar.setOkLabel(j.general__shared__continue);
             apVar.setCancelLabel(j.general__shared__cancel);
             apVar.setTitle(j.bookshelf__book__download_dialog__title);

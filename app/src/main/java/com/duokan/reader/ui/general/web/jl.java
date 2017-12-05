@@ -17,7 +17,7 @@ class jl implements as {
     }
 
     public void a() {
-        this.c.b.b.web_notifyWeb(this.a, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
+        this.c.b.pageController.web_notifyWeb(this.a, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
         this.b.dismiss();
         ReaderEnv.get().setAdvancedActionTime(System.currentTimeMillis());
     }

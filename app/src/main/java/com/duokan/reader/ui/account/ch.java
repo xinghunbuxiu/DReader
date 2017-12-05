@@ -39,7 +39,7 @@ import com.duokan.reader.ui.general.af;
 import com.duokan.reader.ui.general.be;
 import com.duokan.reader.ui.general.hm;
 import com.duokan.reader.ui.general.jq;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 public class ch extends af {
     static final /* synthetic */ boolean a = (!ch.class.desiredAssertionStatus());
@@ -102,7 +102,7 @@ public class ch extends af {
             inflate.setBackgroundDrawable(new hm(new ColorDrawable(getContext().getResources().getColor(d.general__shared__fefaf8)), (float) UTools.closeAnimation(getContext(), 8.0f)));
         }
         setContentView(inflate);
-        inflate.findViewById(g.account__third_share_view__btns).setPadding(UTools.closeAnimation(getContext(), 15.0f), (ReaderEnv.get().forHd() ? 0 : ((s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class)).getTheme().getHeaderPaddingTop()) + UTools.closeAnimation(getContext(), 10.0f), UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 10.0f));
+        inflate.findViewById(g.account__third_share_view__btns).setPadding(UTools.closeAnimation(getContext(), 15.0f), (ReaderEnv.get().forHd() ? 0 : ((ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class)).getTheme().getHeaderPaddingTop()) + UTools.closeAnimation(getContext(), 10.0f), UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 10.0f));
         ((DkLabelView) inflate.findViewById(g.account__third_share_view__third_name)).setText(k());
         this.j = (EditText) inflate.findViewById(g.account__third_share_view__share_text);
         ((FrameLayout) inflate.findViewById(g.account__third_share_view__content)).addView(b(), new LayoutParams(-1, -2));

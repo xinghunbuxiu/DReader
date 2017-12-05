@@ -7,7 +7,7 @@ import android.os.Message;
 
 import com.duokan.b.i;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,9 +16,9 @@ class b extends Handler {
     final /* synthetic */ s a;
     final /* synthetic */ r b;
     final /* synthetic */ Context c;
-    final /* synthetic */ a d;
+    final /* synthetic */ WebLog d;
 
-    b(a aVar, Looper looper, s sVar, r rVar, Context context) {
+    b(WebLog aVar, Looper looper, s sVar, r rVar, Context context) {
         this.d = aVar;
         this.a = sVar;
         this.b = rVar;

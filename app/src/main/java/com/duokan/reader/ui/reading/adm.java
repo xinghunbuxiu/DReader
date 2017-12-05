@@ -18,7 +18,7 @@ import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
@@ -533,7 +533,7 @@ public class adm extends hd implements SystemUiConditioner {
             try {
                 boolean z;
                 this.i = (TtsEngine) ReaderEnv.get().loadExtendCompatClass("com.duokan.reader.domain.tts.TtsEngineImpl").getConstructor(new Class[]{Context.class}).newInstance(new Object[]{ManagedApp.get()});
-                a c = a.c();
+                WebLog c = a.c();
                 if (this.i != null) {
                     z = true;
                 } else {

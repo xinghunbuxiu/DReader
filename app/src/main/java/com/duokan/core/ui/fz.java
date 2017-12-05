@@ -1,8 +1,8 @@
 package com.duokan.core.ui;
 
-import com.duokan.core.sys.s;
+import com.duokan.core.sys.IdleStatus;
 
-class fz implements s {
+class fz implements IdleStatus {
     final /* synthetic */ fy a;
 
     fz(fy fyVar) {

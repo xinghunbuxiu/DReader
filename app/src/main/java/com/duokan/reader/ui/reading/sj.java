@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.j;
+import com.duokan.core.sys.AIdleOperation;
 
 class sj implements yh {
     final /* synthetic */ si a;
@@ -12,6 +12,6 @@ class sj implements yh {
     public void a(int i) {
         this.a.f.requestDetach();
         this.a.l = i;
-        j.a(new sk(this));
+        AIdleOperation.addIdleStatus(new sk(this));
     }
 }

@@ -153,7 +153,7 @@ public class a extends WebSession {
     protected void c(String str) {
         if (str != null && str.length() != 0 && !shouldBreak()) {
             a("traceroute %s", str);
-            String str2 = "ping -W 5 -showAnimation 1 -TaskHandler %getScaledTouchSlop %s";
+            String str2 = "ping -printAllStackTraceString 5 -showAnimation 1 -TaskHandler %getScaledTouchSlop %s";
             int i = 1;
             while (i <= 255 && !shouldBreak()) {
                 String str3 = "";

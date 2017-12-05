@@ -6,6 +6,8 @@ import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.diagnostic.HttpLogger;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.WebSession.CacheStrategy;
 import com.duokan.reader.common.webservices.duokan.a.a;
 import com.duokan.reader.common.webservices.duokan.a.d;
@@ -124,11 +126,11 @@ class f implements d {
             }
             WebSession.sHttpCountingMap.put(b, Long.valueOf((WebSession.HTTP_COUNTING_TIME * currentTimeMillis) + ((long) i)));
             if (i > 20) {
-                com.duokan.core.diagnostic.a.c().a(LogLevel.WARNING, HttpHost.DEFAULT_SCHEME_NAME, "too frequent requests(%getScaledTouchSlop times within 100s) on %s", Integer.valueOf(i), this.a.b());
+                WebLog.c().a(LogLevel.WARNING, HttpHost.DEFAULT_SCHEME_NAME, "too frequent requests(%getScaledTouchSlop times within 100s) on %s", Integer.valueOf(i), this.a.b());
             }
         }
-        if (ManagedApp.get().getOldRunningState() != RunningState.FOREGROUND && ManagedApp.get().getRunningStateMillis() > TimeUnit.MINUTES.toMillis(1) && com.duokan.reader.common.c.f.b().c()) {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.WARNING, HttpHost.DEFAULT_SCHEME_NAME, "background request through setDrawable mobile network on %s", this.a.b());
+        if (ManagedApp.get().getOldRunningState() != RunningState.FOREGROUND && ManagedApp.get().getRunningStateMillis() > TimeUnit.MINUTES.toMillis(1) && classc.f.b().c()) {
+            WebLog.c().print(LogLevel.WARNING, HttpHost.DEFAULT_SCHEME_NAME, "background request through setDrawable mobile network on %s", this.a.b());
         }
         URL url = new URL(this.a.b());
         if (Thread.interrupted()) {
@@ -254,7 +256,7 @@ class f implements d {
         }
         this.b.connect();
         if (this.b.getResponseCode() >= HttpStatus.SC_BAD_REQUEST) {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.WARNING, HttpHost.DEFAULT_SCHEME_NAME, "bad request(%getScaledTouchSlop) on %s", Integer.valueOf(this.b.getResponseCode()), this.a.b());
+            WebLog.c().a(LogLevel.WARNING, HttpHost.DEFAULT_SCHEME_NAME, "bad request(%getScaledTouchSlop) on %s", Integer.valueOf(this.b.getResponseCode()), this.a.b());
             return;
         }
         this.c = this.b.getInputStream();

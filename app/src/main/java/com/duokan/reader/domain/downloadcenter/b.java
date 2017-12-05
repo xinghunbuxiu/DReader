@@ -19,8 +19,7 @@ import com.duokan.reader.DkNotificationManager;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
-import com.duokan.reader.common.c.f;
-import com.duokan.reader.common.c.g;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.download.DownloadTask;
 import com.duokan.reader.common.download.IDownloadTask;
 import com.duokan.reader.common.download.IDownloadTask.TaskState;
@@ -56,7 +55,7 @@ public class b implements ah, d {
     private Intent j = null;
     private Intent k = null;
     private Intent l = null;
-    private g m;
+    private classc.IConnectChanged m;
     @SuppressLint({"HandlerLeak"})
     private Handler n = new c(this, Looper.getMainLooper());
 
@@ -423,13 +422,13 @@ public class b implements ah, d {
 
     public void a(IDownloadTask iDownloadTask) {
         if (iDownloadTask.b().equals("3D7E8CAD-6534-415F-9484-F69F92B18637")) {
-            TaskHandler.a(new f(this));
+            TaskHandler.a(new classc.ConnectivityReceiver(this));
         }
     }
 
     public void a(IDownloadTask iDownloadTask, TaskStatus taskStatus) {
         if (iDownloadTask.b().equals("3D7E8CAD-6534-415F-9484-F69F92B18637")) {
-            TaskHandler.a(new g(this, iDownloadTask));
+            TaskHandler.a(new classc.IConnectChanged(this, iDownloadTask));
         }
     }
 
@@ -716,10 +715,10 @@ public class b implements ah, d {
         f.b().a(this.m);
     }
 
-    private void a(f fVar) {
-        if (fVar.d()) {
+    private void a(classc.ConnectivityReceiver connectivity) {
+        if (connectivity.d()) {
             y();
-        } else if (fVar.c()) {
+        } else if (connectivity.c()) {
             z();
             A();
         }

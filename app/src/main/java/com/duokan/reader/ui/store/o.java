@@ -10,7 +10,7 @@ import com.duokan.core.app.ai;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.duokan.DkStoreBookPrice;
 import com.duokan.reader.domain.account.PersonalAccount;
 import com.duokan.reader.domain.bookshelf.BookState;
@@ -50,7 +50,7 @@ public class o implements ah, l {
     private final com.duokan.reader.domain.bookshelf.ai f;
     private final HashSet g = new HashSet();
 
-    private o(Context context, a aVar, DkCloudStorage dkCloudStorage, f fVar, b bVar, com.duokan.reader.domain.bookshelf.ai aiVar) {
+    private o(Context context, a aVar, DkCloudStorage dkCloudStorage, classc.ConnectivityReceiver connectivity, b bVar, com.duokan.reader.domain.bookshelf.ai aiVar) {
         this.c = context;
         this.d = aVar;
         this.e = dkCloudStorage;
@@ -58,8 +58,8 @@ public class o implements ah, l {
         DkApp.get().runPreReady(new p(this));
     }
 
-    public static void a(Context context, a aVar, DkCloudStorage dkCloudStorage, f fVar, b bVar, com.duokan.reader.domain.bookshelf.ai aiVar) {
-        b.a(new o(context, aVar, dkCloudStorage, fVar, bVar, aiVar));
+    public static void a(Context context, a aVar, DkCloudStorage dkCloudStorage, classc.ConnectivityReceiver connectivity, b bVar, com.duokan.reader.domain.bookshelf.ai aiVar) {
+        b.a(new o(context, aVar, dkCloudStorage, connectivity, bVar, aiVar));
     }
 
     public static o a() {

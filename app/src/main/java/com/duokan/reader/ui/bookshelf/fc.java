@@ -6,6 +6,7 @@ import com.duokan.core.app.MyContextWrapper;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.domain.bookshelf.c;
+import com.duokan.reader.ui.InavOperater;
 import com.duokan.reader.ui.surfing.af;
 
 import java.io.File;
@@ -42,6 +43,6 @@ public class fc extends ActivatedController implements ff {
     }
 
     public void a() {
-        ((com.duokan.reader.ui.e) MyContextWrapper.getFeature(getContext()).queryFeature(com.duokan.reader.ui.e.class)).pushPageSmoothly(new fr(getContext(), new fe(this)), null);
+        ((InavOperater) MyContextWrapper.getFeature(getContext()).queryFeature(InavOperater.class)).pushPageSmoothly(new fr(getContext(), new fe(this)), null);
     }
 }

@@ -11,7 +11,7 @@ import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.UTools;
 import com.duokan.reader.ui.general.DkWebListView;
 import com.duokan.reader.ui.general.PageHeaderView;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 import org.apache.http.HttpStatus;
 
@@ -25,7 +25,7 @@ class l extends DkWebListView {
         this.a = jVar;
         super(context);
         setBackgroundResource(d.store__shared__bg);
-        s sVar = (s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class);
+        ITheme sVar = (ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class);
         a(0, 0, 0, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
         this.c = new Paint();
         this.c.setStrokeWidth(0.0f);

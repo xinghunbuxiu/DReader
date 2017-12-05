@@ -20,20 +20,20 @@ class js implements as {
 
     public void a() {
         if (this.a) {
-            if (this.e.b.b.mProgressDialog == null) {
-                this.e.b.b.mProgressDialog = new jq(this.e.b.b.getContext());
+            if (this.e.b.pageController.mProgressDialog == null) {
+                this.e.b.pageController.mProgressDialog = new jq(this.e.b.pageController.getContext());
             }
-            this.e.b.b.mProgressDialog.a(this.b);
-            this.e.b.b.mProgressDialog.a(true);
-            this.e.b.b.mProgressDialog.setCancelOnBack(this.c);
-            this.e.b.b.mProgressDialog.setCancelOnTouchOutside(this.c);
+            this.e.b.pageController.mProgressDialog.a(this.b);
+            this.e.b.pageController.mProgressDialog.a(true);
+            this.e.b.pageController.mProgressDialog.setCancelOnBack(this.c);
+            this.e.b.pageController.mProgressDialog.setCancelOnTouchOutside(this.c);
             if (this.d) {
-                this.e.b.b.mProgressDialog.a(0);
+                this.e.b.pageController.mProgressDialog.a(0);
             } else {
-                this.e.b.b.mProgressDialog.show();
+                this.e.b.pageController.mProgressDialog.show();
             }
-        } else if (this.e.b.b.mProgressDialog != null) {
-            this.e.b.b.mProgressDialog.dismiss();
+        } else if (this.e.b.pageController.mProgressDialog != null) {
+            this.e.b.pageController.mProgressDialog.dismiss();
         }
     }
 }

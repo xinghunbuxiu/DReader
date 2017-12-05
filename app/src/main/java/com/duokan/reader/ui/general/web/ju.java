@@ -42,7 +42,7 @@ class ju implements b {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("status", str);
             jSONObject.put("packageName", this.a.r);
-            this.b.b.b.triggerEventOnCurrentUrl("adAppInstallStatus", jSONObject.toString());
+            this.b.b.pageController.triggerEventOnCurrentUrl("adAppInstallStatus", jSONObject.toString());
         } catch (Throwable th) {
         }
     }
@@ -53,7 +53,7 @@ class ju implements b {
             jSONObject.put("status", str);
             jSONObject.put("packageName", this.a.r);
             jSONObject.put("progress", i);
-            this.b.b.b.triggerEventOnCurrentUrl("adAppInstallStatus", jSONObject.toString());
+            this.b.b.pageController.triggerEventOnCurrentUrl("adAppInstallStatus", jSONObject.toString());
         } catch (Throwable th) {
         }
     }

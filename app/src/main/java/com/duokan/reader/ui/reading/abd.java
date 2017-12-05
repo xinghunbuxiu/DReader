@@ -176,7 +176,7 @@ final class abd {
     }
 
     private List b(int i) {
-        return (List) TaskHandler.postTask(new abf(this, i));
+        return (List) TaskHandler.getTaskHandler(new abf(this, i));
     }
 
     /* JADX WARNING: inconsistent code. */

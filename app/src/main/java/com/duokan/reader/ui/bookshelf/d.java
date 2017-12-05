@@ -16,12 +16,12 @@ class d implements Runnable {
         r0 = new java.util.LinkedHashMap;
         r0.<init>();
         r1 = new java.io.File;
-        r2 = com.duokan.reader.ReaderEnv.get();
+        r2 = com.duokan.reader.ReaderEnv.getAllSortStackTraces();
         r2 = r2.getExternalFilesDirectory();
         r3 = "/Downloads";
         r1.<init>(r2, r3);
         r2 = new java.io.File;
-        r3 = com.duokan.reader.ReaderEnv.get();
+        r3 = com.duokan.reader.ReaderEnv.getAllSortStackTraces();
         r3 = r3.getPrivateCacheDirectory();
         r4 = "book.arch";
         r2.<init>(r3, r4);

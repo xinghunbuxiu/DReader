@@ -4,9 +4,9 @@ import com.duokan.core.sys.as;
 
 class hb implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    hb(cg cgVar, String str) {
+    hb(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

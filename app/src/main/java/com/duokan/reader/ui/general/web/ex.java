@@ -19,11 +19,11 @@ class ex implements as {
     }
 
     public void a() {
-        if (this.b.b.b.mPageHeaderView != null) {
-            this.b.b.b.mPageHeaderView.a();
-            View inflate = LayoutInflater.from(this.b.b.b.getContext()).inflate(h.store__header_view__right_button_container, this.b.b.b.mPageHeaderView, false);
+        if (this.b.b.pageController.mPageHeaderView != null) {
+            this.b.b.pageController.mPageHeaderView.a();
+            View inflate = LayoutInflater.from(this.b.b.pageController.getContext()).inflate(h.store__header_view__right_button_container, this.b.b.pageController.mPageHeaderView, false);
             ((ImageView) inflate.findViewById(g.store__title_view__right_button)).setImageResource(f.store__shared__more);
-            this.b.b.b.mPageHeaderView.a(inflate);
+            this.b.b.pageController.mPageHeaderView.a(inflate);
             inflate.setOnClickListener(new ey(this, inflate));
         }
     }

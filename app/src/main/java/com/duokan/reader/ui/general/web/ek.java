@@ -11,7 +11,7 @@ class ek implements OnDismissListener {
     }
 
     public void onDismiss(j jVar) {
-        if (!this.a.e.b.b.mCallBackSucceed) {
+        if (!this.a.e.b.pageController.mCallBackSucceed) {
             this.a.d.b(new Object[0]);
         }
     }

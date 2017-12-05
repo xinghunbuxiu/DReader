@@ -8,6 +8,6 @@ class fm implements Runnable {
     }
 
     public void run() {
-        this.a.f.b.b.web_notifyWeb(this.a.e, 0, "operation", Integer.valueOf(0));
+        this.a.f.b.pageController.web_notifyWeb(this.a.e, 0, "operation", Integer.valueOf(0));
     }
 }

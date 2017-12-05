@@ -20,7 +20,7 @@ import com.duokan.reader.ui.general.DkBigFaceView;
 import com.duokan.reader.ui.general.HeaderView;
 import com.duokan.reader.ui.general.ReaderUi;
 import com.duokan.reader.ui.general.deprecatedDkTextView;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 do;
 
@@ -53,7 +53,7 @@ public class ih extends ActivatedController {
         } else {
             layoutParams = layoutParams2;
         }
-        s sVar = (s) getContext().queryFeature(s.class);
+        ITheme sVar = (ITheme) getContext().queryFeature(ITheme.class);
         if (sVar != null) {
             layoutParams.height = sVar.getTheme().getPagePaddingBottom();
         } else {

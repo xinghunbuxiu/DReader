@@ -73,7 +73,7 @@ public class y extends u implements ba, bd, af {
         } else if (c || (xVar != null && xVar.a())) {
             a.c().b(N());
             this.d = sbkTypesettingContext;
-            this.d.b((Object) TaskHandler.getThead());
+            this.d.b((Object) TaskHandler.getThread());
             this.d.b((Object) this);
             this.e = new x(this.d, xVar, 0);
             this.f = wVar;
@@ -262,7 +262,7 @@ public class y extends u implements ba, bd, af {
             }
             O();
             this.d.b((bd) this);
-            this.d.c(TaskHandler.getThead());
+            this.d.c(TaskHandler.getThread());
         }
     }
 

@@ -14,9 +14,9 @@ import org.json.JSONObject;
 
 class jw implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    jw(cg cgVar, String str) {
+    jw(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
@@ -28,7 +28,7 @@ class jw implements as {
         CharSequence optString2 = jSONObject.optString("content");
         Object optString3 = jSONObject.optString("url");
         int optInt = jSONObject.optInt("id", 23);
-        Builder builder = new Builder(this.b.b.getContext());
+        Builder builder = new Builder(this.b.pageController.getContext());
         builder.setSmallIcon(f.mipush_small_notification);
         builder.setContentTitle(optString);
         builder.setTicker(optString);
@@ -42,11 +42,11 @@ class jw implements as {
             }
         }
         if (intent == null) {
-            intent = new Intent(this.b.b.getContext(), DkApp.get().getReaderActivityClass());
+            intent = new Intent(this.b.pageController.getContext(), DkApp.get().getReaderActivityClass());
             intent.setAction("android.intent.action.VIEW");
             intent.setFlags(268468224);
         }
-        builder.setContentIntent(PendingIntent.getActivity(this.b.b.getContext(), 0, intent, 268435456));
-        ((NotificationManager) this.b.b.getContext().getSystemService("notification")).notify(getClass().getName(), optInt, builder.build());
+        builder.setContentIntent(PendingIntent.getActivity(this.b.pageController.getContext(), 0, intent, 268435456));
+        ((NotificationManager) this.b.pageController.getContext().getSystemService("notification")).notify(getClass().getName(), optInt, builder.build());
     }
 }

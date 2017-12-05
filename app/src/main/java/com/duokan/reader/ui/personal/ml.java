@@ -25,7 +25,7 @@ import com.duokan.reader.ui.general.bo;
 import com.duokan.reader.ui.general.deprecatedDkTextView;
 import com.duokan.reader.ui.general.dk;
 import com.duokan.reader.ui.general.hn;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
@@ -93,7 +93,7 @@ public abstract class ml extends LinearLayout {
         if (this.c == null) {
             this.c = new DkWebListView(getContext());
             this.c.setBackgroundColor(-1);
-            s sVar = (s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class);
+            ITheme sVar = (ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class);
             this.c.a(0, 0, 0, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
             this.c.setRowDivider(new InsetDrawable(new dk(getResources().getColor(d.general__shared__cccccc)), UTools.closeAnimation(getContext(), 15.0f), 0, UTools.closeAnimation(getContext(), 15.0f), 0));
             View inflate = inflate(getContext(), h.personal__notes_info_header_view, null);

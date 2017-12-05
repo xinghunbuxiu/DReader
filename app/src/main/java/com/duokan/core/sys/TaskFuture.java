@@ -3,14 +3,14 @@ package com.duokan.core.sys;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
-final class y implements Future {
-    final /* synthetic */ Object a;
+final class TaskFuture implements Future {
+    final Object task;
 
-    y(Object obj) {
-        this.a = obj;
+    TaskFuture(Object obj) {
+        this.task = obj;
     }
 
-    public boolean cancel(boolean z) {
+    public boolean cancel(boolean cancel) {
         return false;
     }
 
@@ -23,10 +23,10 @@ final class y implements Future {
     }
 
     public Object get() {
-        return this.a;
+        return this.task;
     }
 
     public Object get(long j, TimeUnit timeUnit) {
-        return this.a;
+        return this.task;
     }
 }

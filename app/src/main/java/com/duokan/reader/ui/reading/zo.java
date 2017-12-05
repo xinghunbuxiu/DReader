@@ -4,11 +4,12 @@ import android.view.View;
 
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
 import com.duokan.core.sys.ah;
 import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.bookshelf.ej;
 import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
@@ -84,9 +85,9 @@ public abstract class zo extends qh {
         }
     }
 
-    public void onConnectivityChanged(f fVar) {
-        super.onConnectivityChanged(fVar);
-        if (this.f.k() && fVar.d()) {
+    public void onConnectivityChanged(classc.ConnectivityReceiver connectivity) {
+        super.onConnectivityChanged(connectivity);
+        if (this.f.k() && connectivity.d()) {
             this.N.c();
         }
     }
@@ -112,7 +113,7 @@ public abstract class zo extends qh {
         Iterator it = this.a.keySet().iterator();
         while (it.hasNext()) {
             af afVar = (af) this.a.get((String) it.next());
-            com.duokan.core.diagnostic.a.c().b(afVar != null);
+            WebLog.c().b(afVar != null);
             if (afVar.b() && ((Integer) afVar.a()).intValue() != 0) {
                 it.remove();
             }
@@ -181,7 +182,7 @@ public abstract class zo extends qh {
     }
 
     private final void b(List list, ag agVar) {
-        com.duokan.core.diagnostic.a.c().b(t.a());
+        WebLog.c().b(t.a());
         aaq com_duokan_reader_ui_reading_aaq = (aaq) this.c;
         ej ejVar = (ej) this.c.G();
         this.K.addAll(list);
@@ -292,7 +293,7 @@ public abstract class zo extends qh {
     }
 
     protected void a(List list, ag agVar) {
-        com.duokan.core.diagnostic.a.c().b(t.a());
+        WebLog.c().b(t.a());
         Runnable com_duokan_reader_ui_reading_aaf = new aaf(this, list, (ej) this.f, agVar);
         if (this.N.b() || !f.b().c()) {
             com_duokan_reader_ui_reading_aaf.run();

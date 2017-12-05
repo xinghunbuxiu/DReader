@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.duokan.a.a;
 import com.duokan.reader.common.webservices.duokan.a.c;
 
@@ -92,7 +92,7 @@ public class q {
             JSONObject jSONObject3 = new JSONObject();
             jSONObject3.put("imei", i.f().i());
             jSONObject3.put("ip", DkPublic.getLocalIpAddress());
-            jSONObject3.put("connectionType", f.b().d() ? "wifi" : "4g");
+            jSONObject3.put("connectionType", classc.ConnectivityReceiver.b().d() ? "wifi" : "4g");
             JSONObject jSONObject4 = new JSONObject();
             jSONObject4.put("packageName", DkApp.get().getPackageName());
             jSONObject4.put(ClientCookie.VERSION_ATTR, ReaderEnv.get().getVersionCode());

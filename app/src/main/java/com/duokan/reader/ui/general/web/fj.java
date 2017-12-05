@@ -8,9 +8,9 @@ import org.json.JSONObject;
 
 class fj implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    fj(cg cgVar, String str) {
+    fj(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
@@ -21,7 +21,7 @@ class fj implements as {
         jSONObject = jSONObject.getJSONObject("params");
         String b = i.b(jSONObject, "title");
         String b2 = i.b(jSONObject, "prompt");
-        String a = i.a(jSONObject, "cancel", this.b.b.getContext().getString(j.general__shared__cancel));
-        this.b.a(new fk(this, b, b2, i.a(jSONObject, "confirm", this.b.b.getContext().getString(j.general__shared__confirm)), a, string));
+        String a = i.a(jSONObject, "cancel", this.b.pageController.getContext().getString(j.general__shared__cancel));
+        this.b.a(new fk(this, b, b2, i.a(jSONObject, "confirm", this.b.pageController.getContext().getString(j.general__shared__confirm)), a, string));
     }
 }

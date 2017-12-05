@@ -90,8 +90,8 @@ public class ManagedApp extends MultiDexApplication implements Controller, IFeat
         throw new AssertionError();
     }
 
-    public final void removeOnRunningStateChangedListener(IActivityRunStatusChanged IActivityRunStatusChangedVar) {
-        this.runStatusChangeds.remove(IActivityRunStatusChangedVar);
+    public final void removeOnRunningStateChangedListener(IActivityRunStatusChanged runStatusChanged) {
+        this.runStatusChangeds.remove(runStatusChanged);
     }
 
     public static ManagedApp get() {
@@ -210,13 +210,13 @@ public class ManagedApp extends MultiDexApplication implements Controller, IFeat
         if (i == 20) {
             runningState(RunningState.BACKGROUND);
         }
-        Iterator it = this.activitys.iterator();
+        Iterator<WeakReference<Activity>> it = this.activitys.iterator();
         while (it.hasNext()) {
-            Activity activity = (Activity) ((WeakReference) it.next()).get();
+            Activity activity = it.next().get();
             if (!(activity == null || activity.isFinishing())) {
-                activity = managedActivity(activity);
+                BaseActivity baseActivity = managedActivity(activity);
                 if (activity != null) {
-                    ActivatedController contentController = activity.getContentController();
+                    ActivatedController contentController = baseActivity.getContentController();
                     if (contentController != null) {
                         contentController.onActivityTrimMemory(activity, i);
                     }
@@ -231,12 +231,12 @@ public class ManagedApp extends MultiDexApplication implements Controller, IFeat
 
     protected void onActivityCreated(Activity activity, Bundle bundle) {
         if (a || activity != null) {
-            this.activitys.add(new WeakReference(activity));
-            Iterator it = this.d.iterator();
+            activitys.add(new WeakReference(activity));
+            Iterator<IActivityLife> it = activityLifes.iterator();
             while (it.hasNext()) {
-                ((IActivityLife) it.next()).onActivityCreated(activity, bundle);
+                it.next().onActivityCreated(activity, bundle);
             }
-            if (this.oldRunningState == RunningState.UNDERGROUND) {
+            if (oldRunningState == RunningState.UNDERGROUND) {
                 runningState(RunningState.BACKGROUND);
             }
             BaseActivity managedActivity = managedActivity(activity);
@@ -251,7 +251,7 @@ public class ManagedApp extends MultiDexApplication implements Controller, IFeat
 
     protected void onActivityPaused(Activity activity) {
         if (a || activity != null) {
-            Iterator<IActivityLife> it = this.activityLifes.iterator();
+            Iterator<IActivityLife> it = activityLifes.iterator();
             while (it.hasNext()) {
                 it.next().onActivityPaused(activity);
             }
@@ -268,15 +268,15 @@ public class ManagedApp extends MultiDexApplication implements Controller, IFeat
 
     protected void onActivityResumed(Activity activity) {
         if (a || activity != null) {
-            Iterator<WeakReference<Activity>> it = this.activitys.iterator();
+            Iterator<WeakReference<Activity>> it = activitys.iterator();
             while (it.hasNext()) {
                 Activity activity2 = it.next().get();
                 if (activity2 == null || activity2 == activity) {
                     it.remove();
                 }
             }
-            this.activitys.add(new WeakReference(activity));
-            Iterator<IActivityLife> lifeIterator = this.activityLifes.iterator();
+            activitys.add(new WeakReference(activity));
+            Iterator<IActivityLife> lifeIterator = activityLifes.iterator();
             while (lifeIterator.hasNext()) {
                 lifeIterator.next().onActivityResumed(activity);
             }
@@ -293,18 +293,18 @@ public class ManagedApp extends MultiDexApplication implements Controller, IFeat
 
     protected void onActivityDestroyed(Activity activity) {
         if (a || activity != null) {
-            Iterator<WeakReference<Activity>> it = this.activitys.iterator();
+            Iterator<WeakReference<Activity>> it = activitys.iterator();
             while (it.hasNext()) {
                 Activity activity2 = it.next().get();
                 if (activity2 == null || activity2 == activity) {
                     it.remove();
                 }
             }
-            Iterator<IActivityLife> lifeIterator = this.activityLifes.iterator();
+            Iterator<IActivityLife> lifeIterator = activityLifes.iterator();
             while (lifeIterator.hasNext()) {
                 ((IActivityLife) it.next()).onActivityDestroyed(activity);
             }
-            if (this.activitys.isEmpty()) {
+            if (activitys.isEmpty()) {
                 runningState(RunningState.UNDERGROUND);
             }
             BaseActivity managedActivity = managedActivity(activity);
@@ -324,9 +324,9 @@ public class ManagedApp extends MultiDexApplication implements Controller, IFeat
         return null;
     }
 
-    private void runningState(final RunningState runningState, final int i) {
-        this.runnable = new RunTask(this, runningState);
-        TaskHandler.postDelayed(this.runnable, (long) i);
+    private void runningState(final RunningState runningState, final int time) {
+        runnable = new RunTask(this, runningState);
+        TaskHandler.postDelayed(runnable, (long) time);
     }
 
     class RunTask implements Runnable {

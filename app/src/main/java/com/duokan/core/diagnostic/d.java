@@ -6,31 +6,31 @@ import android.os.Looper;
 import com.duokan.core.sys.TaskHandler;
 
 class d extends Thread {
-    public boolean a;
-    final /* synthetic */ a b;
-    private StackTraceElement[] c;
+    public boolean isStop;
+    final WebLog log;
+    private StackTraceElement[] stackTrace;
 
-    private d(a aVar) {
-        this.b = aVar;
-        this.a = false;
-        this.c = new StackTraceElement[0];
+    private d(WebLog aVar) {
+        this.log = aVar;
+        this.isStop = false;
+        this.stackTrace = new StackTraceElement[0];
     }
 
     public void run() {
         Handler handler = new Handler(Looper.getMainLooper());
-        while (!this.a) {
-            Runnable eVar = new e(this);
+        while (!this.isStop) {
+            e eVar = new e(this);
             handler.post(eVar);
             try {
                 Thread.sleep(5000);
                 if (!eVar.a) {
                     handler.removeCallbacks(eVar);
-                    StackTraceElement[] stackTraceElementArr = this.c;
-                    this.c = TaskHandler.getThead().getStackTrace();
-                    if (this.c.length == stackTraceElementArr.length) {
+                    StackTraceElement[] stackTraceElementArr = this.stackTrace;
+                    this.stackTrace = TaskHandler.getThread().getStackTrace();
+                    if (this.stackTrace.length == stackTraceElementArr.length) {
                         Object obj = 1;
-                        for (int i = 0; i < this.c.length; i++) {
-                            if (!this.c[i].equals(stackTraceElementArr[i])) {
+                        for (int i = 0; i < this.stackTrace.length; i++) {
+                            if (!this.stackTrace[i].equals(stackTraceElementArr[i])) {
                                 obj = null;
                                 break;
                             }

@@ -1,8 +1,8 @@
 package com.duokan.reader.ui.surfing;
 
-import com.duokan.core.sys.s;
+import com.duokan.core.sys.IdleStatus;
 
-class m implements s {
+class m implements IdleStatus {
     final /* synthetic */ l a;
 
     m(l lVar) {

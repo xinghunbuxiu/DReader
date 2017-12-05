@@ -5,9 +5,9 @@ import com.duokan.reader.domain.cloud.DkSharedStorageManager;
 
 class cm implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    cm(cg cgVar, String str) {
+    cm(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

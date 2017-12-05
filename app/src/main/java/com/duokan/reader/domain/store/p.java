@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.store;
 
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.domain.bookshelf.ai;
 
 class p implements Runnable {
@@ -12,7 +12,7 @@ class p implements Runnable {
 
     public void run() {
         this.a.c();
-        f.b().a(this.a);
+        classc.ConnectivityReceiver.b().a(this.a);
         ai.a().a(this.a);
     }
 }

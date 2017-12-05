@@ -13,7 +13,7 @@ class ei implements dn {
 
     public void a(String str, do doVar) {
         this.a.d.a(str);
-        this.a.e.b.b.mCallBackSucceed = true;
+        this.a.e.b.pageController.mCallBackSucceed = true;
         doVar.a();
     }
 }

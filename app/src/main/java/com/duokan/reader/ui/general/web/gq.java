@@ -5,9 +5,9 @@ import com.duokan.reader.domain.bookshelf.ai;
 import java.util.concurrent.Callable;
 
 class gq implements Callable {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    gq(cg cgVar) {
+    gq(PageController cgVar) {
         this.a = cgVar;
     }
 

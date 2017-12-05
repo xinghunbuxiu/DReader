@@ -5,7 +5,7 @@ import android.webkit.WebResourceResponse;
 
 import com.duokan.core.b.UrlTools;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,7 +26,7 @@ class ka implements g {
         boolean z;
         StoreWebController.waitForStoreMirrorReady();
         File access$200 = StoreWebController.sStoreMirrorDir;
-        a c = a.c();
+        WebLog c = a.c();
         if (access$200 != null) {
             z = true;
         } else {

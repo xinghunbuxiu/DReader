@@ -2,6 +2,7 @@ package com.duokan.reader.ui.reading;
 
 import com.duokan.core.app.IFeature;
 import com.duokan.reader.ReaderEnv;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.domain.bookshelf.c;
 import com.duokan.reader.domain.bookshelf.hh;
 import com.duokan.reader.domain.bookshelf.js;
@@ -111,7 +112,7 @@ public class xm extends zo implements o {
 
     protected void onAttachToStub() {
         super.onAttachToStub();
-        f.b().a((com.duokan.reader.common.c.g) this);
+        f.b().a((classc.g) this);
     }
 
     protected void onDetachFromStub() {

@@ -23,10 +23,10 @@ class hx implements as {
     }
 
     public void a() {
-        if (this.g.b.b.mShareController != null) {
-            this.g.b.b.deactivate(this.g.b.b.mShareController);
-            this.g.b.b.removeSubController(this.g.b.b.mShareController);
+        if (this.g.b.pageController.mShareController != null) {
+            this.g.b.pageController.deactivate(this.g.b.pageController.mShareController);
+            this.g.b.pageController.removeSubController(this.g.b.pageController.mShareController);
         }
-        new ap(this.g.b.b.getContext(), false, new hy(this)).show();
+        new ap(this.g.b.pageController.getContext(), false, new hy(this)).show();
     }
 }

@@ -1,10 +1,10 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.s;
+import com.duokan.core.sys.IdleStatus;
 
 import java.util.concurrent.Semaphore;
 
-class bq implements s {
+class bq implements IdleStatus {
     final /* synthetic */ Semaphore a;
     final /* synthetic */ bp b;
 

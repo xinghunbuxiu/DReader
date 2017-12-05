@@ -5,9 +5,9 @@ import com.duokan.reader.domain.ad.r;
 import java.util.concurrent.Callable;
 
 class jq implements Callable {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    jq(cg cgVar) {
+    jq(PageController cgVar) {
         this.a = cgVar;
     }
 
@@ -16,9 +16,9 @@ class jq implements Callable {
     }
 
     public Boolean a() {
-        if (this.a.b.mAdSdkService == null) {
-            this.a.b.mAdSdkService = new r(this.a.b.mAdLifecycleManager);
+        if (this.a.pageController.mAdSdkService == null) {
+            this.a.pageController.mAdSdkService = new r(this.a.pageController.mAdLifecycleManager);
         }
-        return Boolean.valueOf(this.a.b.mAdSdkService.a());
+        return Boolean.valueOf(this.a.pageController.mAdSdkService.a());
     }
 }

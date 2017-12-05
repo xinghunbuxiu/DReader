@@ -12,14 +12,14 @@ import com.duokan.reader.ui.bookshelf.gw;
 import com.duokan.reader.ui.bookshelf.hn;
 import com.duokan.reader.ui.bookshelf.ho;
 import com.duokan.reader.ui.bookshelf.il;
-import com.duokan.reader.ui.e;
+import com.duokan.reader.ui.InavOperater;
 import com.duokan.reader.ui.general.DkWebListView;
 import com.duokan.reader.ui.general.HeaderView;
 import com.duokan.reader.ui.general.PageHeaderView;
 import com.duokan.reader.ui.general.ReaderUi;
 import com.duokan.reader.ui.general.eh;
 import com.duokan.reader.ui.general.expandable.ViewMode;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 public class nm extends FrameLayout {
     private gw a;
@@ -181,7 +181,7 @@ public class nm extends FrameLayout {
             getAdapter().a(i, i2, true);
             getAdapter().a(ViewMode.Edit);
             this.j = new il(MyContextWrapper.getFeature(getContext()), this.h);
-            ((e) MyContextWrapper.getFeature(getContext()).queryFeature(e.class)).showPopup(this.j, 119, 0);
+            ((InavOperater) MyContextWrapper.getFeature(getContext()).queryFeature(InavOperater.class)).showPopup(this.j, 119, 0);
         }
     }
 
@@ -198,7 +198,7 @@ public class nm extends FrameLayout {
         dkWebListView.setSeekEnabled(true);
         dkWebListView.setVerticalSeekDrawable(getResources().getDrawable(f.general__shared__thumb_seek_vert));
         eh.a(dkWebListView);
-        s sVar = (s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class);
+        ITheme sVar = (ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class);
         dkWebListView.a(0, 0, 0, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
         dkWebListView.setOnItemClickListener(new np(this));
         dkWebListView.setOnItemLongPressListener(new nq(this));

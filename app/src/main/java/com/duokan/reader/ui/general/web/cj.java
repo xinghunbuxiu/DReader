@@ -10,6 +10,6 @@ class cj implements as {
     }
 
     public void a() {
-        this.a.b.b.webPageLoading(this.a.a);
+        this.a.b.pageController.webPageLoading(this.a.a);
     }
 }

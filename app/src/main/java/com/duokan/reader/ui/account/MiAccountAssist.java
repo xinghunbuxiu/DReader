@@ -11,7 +11,7 @@ import com.duokan.core.app.ai;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.duokan.p;
 import com.duokan.reader.domain.account.MiAccount;
 import com.duokan.reader.domain.account.MiGuestAccount;
@@ -22,7 +22,7 @@ import com.duokan.reader.domain.account.bg;
 import com.duokan.reader.domain.account.i;
 import com.duokan.reader.ui.general.jq;
 import com.duokan.reader.ui.general.web.StorePageController;
-import com.duokan.reader.ui.general.web.cg;
+import com.duokan.reader.ui.general.web.PageController;
 
 import java.util.LinkedList;
 
@@ -59,7 +59,7 @@ public class MiAccountAssist implements ah, bf {
             return jqVar;
         }
 
-        protected cg newJavascriptImpl() {
+        protected PageController newJavascriptImpl() {
             return new i();
         }
     }
@@ -82,7 +82,7 @@ public class MiAccountAssist implements ah, bf {
     public void a(a aVar, b bVar) {
         this.d.add(bVar);
         if (this.d.size() <= 1) {
-            if (!f.b().e()) {
+            if (!classc.ConnectivityReceiver.b().e()) {
                 a(aVar, this.b.getString(j.report_no_network_error));
             } else if (MiAccount.a(this.b)) {
                 ((MiAccount) aVar).a(new a(this), 0);
@@ -94,7 +94,7 @@ public class MiAccountAssist implements ah, bf {
 
     public void a(MiAccount miAccount, b bVar) {
         this.d.add(bVar);
-        if (!f.b().e()) {
+        if (!classc.ConnectivityReceiver.b().e()) {
             a((a) miAccount, this.b.getString(j.report_no_network_error));
         } else if (MiAccount.a(this.b)) {
             jq jqVar = new jq(DkApp.get().getTopActivity());
@@ -111,7 +111,7 @@ public class MiAccountAssist implements ah, bf {
 
     public void b(MiAccount miAccount, b bVar) {
         this.d.add(bVar);
-        if (f.b().e()) {
+        if (classc.ConnectivityReceiver.b().e()) {
             try {
                 com.duokan.reader.domain.statistics.a.k().b("login", "mi_account", "login_local");
             } catch (Throwable th) {
@@ -125,7 +125,7 @@ public class MiAccountAssist implements ah, bf {
     private void c(a aVar, b bVar) {
         this.d.add(bVar);
         if (this.d.size() <= 1) {
-            if (f.b().e()) {
+            if (classc.ConnectivityReceiver.b().e()) {
                 MiAccount miAccount = (MiAccount) aVar;
                 if (miAccount.n()) {
                     a(miAccount);
@@ -159,7 +159,7 @@ public class MiAccountAssist implements ah, bf {
     }
 
     private void a(a aVar) {
-        TaskHandler.a(new f(this, aVar));
+        TaskHandler.a(new classc.ConnectivityReceiver(this, aVar));
     }
 
     private void a(a aVar, String str) {

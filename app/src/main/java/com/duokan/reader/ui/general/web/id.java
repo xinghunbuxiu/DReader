@@ -25,17 +25,17 @@ class id implements as {
                 jSONObject = optJSONArray.getJSONObject(0);
                 String optString = jSONObject.optString("title", "");
                 String optString2 = jSONObject.optString("url");
-                ActivatedController storePageController = new StorePageController(this.a.b.b.getContext());
+                ActivatedController storePageController = new StorePageController(this.a.b.pageController.getContext());
                 storePageController.loadUrl(optString2);
                 storePageController.setPageTitle(optString);
                 activatedControllerVar = storePageController;
             } else {
-                ActivatedController jaVar = new ja(this.a.b.b.getContext());
+                ActivatedController jaVar = new ja(this.a.b.pageController.getContext());
                 for (int i = 0; i < optJSONArray.length(); i++) {
                     JSONObject jSONObject2 = optJSONArray.getJSONObject(i);
                     String optString3 = jSONObject2.optString("title", "");
                     String optString4 = jSONObject2.optString("url");
-                    ActivatedController storePageController2 = new StorePageController(this.a.b.b.getContext());
+                    ActivatedController storePageController2 = new StorePageController(this.a.b.pageController.getContext());
                     storePageController2.loadUrl(optString4);
                     storePageController2.setHasTitle(false);
                     jaVar.a(storePageController2, optString3);
@@ -43,7 +43,7 @@ class id implements as {
                 jaVar.a(optInt);
                 activatedControllerVar = jaVar;
             }
-            ((ReaderFeature) this.a.b.b.getContext().queryFeature(ReaderFeature.class)).pushPageSmoothly(activatedControllerVar, null);
+            ((ReaderFeature) this.a.b.pageController.getContext().queryFeature(ReaderFeature.class)).pushPageSmoothly(activatedControllerVar, null);
         }
     }
 }

@@ -5,6 +5,7 @@ import android.util.Base64;
 
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.b;
 import com.duokan.reader.common.webservices.duokan.a.c;
@@ -36,11 +37,11 @@ public class d extends ad {
     @SuppressLint({"TrulyRandom"})
     public b e(String str) {
         if (ManagedApp.get().isDebuggable()) {
-            com.duokan.core.diagnostic.a.c().c(LogLevel.INFO, "stats", "send: " + str);
+            WebLog.c().c(LogLevel.INFO, "stats", "send: " + str);
         }
         com.duokan.reader.common.webservices.duokan.a.d a = a(new c().a(HttpPost.METHOD_NAME).b(a(false, a() + "/noop")).a(f(str).getBytes()).a());
         if (ManagedApp.get().isDebuggable()) {
-            com.duokan.core.diagnostic.a.c().c(LogLevel.INFO, "stats", "response: " + a.a());
+            WebLog.c().c(LogLevel.INFO, "stats", "response: " + a.a());
         }
         b bVar = new b();
         bVar.b = a.a();

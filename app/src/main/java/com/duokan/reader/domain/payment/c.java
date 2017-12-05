@@ -7,7 +7,7 @@ import android.os.Message;
 import com.alipay.sdk.app.PayTask;
 import com.duokan.b.i;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.DkApp;
 
 class c implements Runnable {
@@ -15,9 +15,9 @@ class c implements Runnable {
     final /* synthetic */ Handler b;
     final /* synthetic */ r c;
     final /* synthetic */ Context d;
-    final /* synthetic */ a e;
+    final /* synthetic */ WebLog e;
 
-    c(a aVar, s sVar, Handler handler, r rVar, Context context) {
+    c(WebLog aVar, s sVar, Handler handler, r rVar, Context context) {
         this.e = aVar;
         this.a = sVar;
         this.b = handler;

@@ -16,6 +16,6 @@ class dg implements b {
     }
 
     public void a(a aVar, String str) {
-        this.a.b.b.b.web_notifyWeb(this.a.a, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str);
+        this.a.b.b.pageController.web_notifyWeb(this.a.a, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str);
     }
 }

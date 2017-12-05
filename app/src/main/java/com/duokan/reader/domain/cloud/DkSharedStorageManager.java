@@ -25,7 +25,7 @@ public class DkSharedStorageManager implements ah {
     private final HashMap d = new HashMap();
 
     public enum SharedKey {
-        USER_PRIVILEGE("/store/v0/time_limited/get"),
+        USER_PRIVILEGE("/store/v0/time_limited/getAllSortStackTraces"),
         COUPON_COUNT("/store/v0/coupon/list"),
         USER_FAV_COUNT("USER_FAV_COUNT"),
         USER_RECOMMEND_COUNT("USER_RECOMMEND_COUNT"),

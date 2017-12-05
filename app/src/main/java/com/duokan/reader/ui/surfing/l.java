@@ -1,15 +1,15 @@
 package com.duokan.reader.ui.surfing;
 
-import com.duokan.core.sys.j;
+import com.duokan.core.sys.AIdleOperation;
 
 class l implements Runnable {
-    final /* synthetic */ j a;
+    final /* synthetic */ AIdleOperation a;
 
-    l(j jVar) {
+    l(AIdleOperation jVar) {
         this.a = jVar;
     }
 
     public void run() {
-        j.a(new m(this), 2000);
+        AIdleOperation.ShowOrHide(new m(this), 2000);
     }
 }

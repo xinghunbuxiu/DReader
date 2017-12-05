@@ -3,7 +3,7 @@ package com.duokan.reader.domain.document.sbk;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.domain.document.Document_a;
 import com.duokan.reader.domain.document.FootnoteStyle;
 import com.duokan.reader.domain.document.WritingDirection;
@@ -100,7 +100,7 @@ public class f extends n implements at {
         if (!p()) {
             return "";
         }
-        a a = this.k.a(j);
+        WebLog a = this.k.a(j);
         return a != null ? a.c() : "";
     }
 
@@ -121,11 +121,11 @@ public class f extends n implements at {
         if (!p()) {
             return true;
         }
-        a a = this.k.a(j);
+        WebLog a = this.k.a(j);
         if (a == null) {
             return false;
         }
-        return a.a();
+        return a.WebLog();
     }
 
     public static b a(long j, long j2, long j3) {
@@ -291,8 +291,8 @@ public class f extends n implements at {
         long h = (long) cVar.h();
         float f = 1.0f / ((float) h);
         float max = ((float) Math.max(0, g - 1)) / ((float) h);
-        a a = cVar.a(g);
-        g = (a == null || a.a()) ? 1 : (long) a.b();
+        WebLog a = cVar.a(g);
+        g = (a == null || a.WebLog()) ? 1 : (long) a.b();
         return (Math.max(0.0f, Math.min(g == 0 ? 1.0f : ((float) (bVar.h() + 1)) / ((float) g), 1.0f)) * f) + max;
     }
 
@@ -531,8 +531,8 @@ public class f extends n implements at {
         q qVar = sbkTypesettingContext.f().b;
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < qVar.a(); i++) {
-            a a = qVar.a(i);
-            stringBuilder.append(a.a() ? "" : a.e()).append(';');
+            WebLog a = qVar.a(i);
+            stringBuilder.append(a.WebLog() ? "" : a.e()).append(';');
         }
         return o.b(stringBuilder.toString(), "md5");
     }
@@ -899,7 +899,7 @@ public class f extends n implements at {
                 long j3 = aiVar.a.d;
                 long j4 = aiVar.a.e;
                 if (aiVar.a.a == null || !aiVar.a.a.b()) {
-                    a c = a.c();
+                    WebLog c = a.c();
                     boolean z = aiVar.a.a == null || aiVar.a.a.l() == aiVar.a.l();
                     c.b(z);
                 } else {
@@ -945,13 +945,13 @@ public class f extends n implements at {
         c e = sbkTypesettingContext.e();
         if (j >= 0 && j < ((long) e.h()) && sbkTypesettingContext.j[(int) j] != ChapterState.TYPESETTED) {
             sbkTypesettingContext.j[(int) j] = ChapterState.TYPESETTING;
-            a a = e.a(j);
+            WebLog a = e.a(j);
             LinkedList linkedList = new LinkedList();
             while (true) {
                 if (linkedList.isEmpty()) {
                     linkedList.push(new long[]{j, 0, 0});
                 }
-                if (!a.a()) {
+                if (!a.WebLog()) {
                     long[] jArr = (long[]) linkedList.getLast();
                     Object a2 = a(sbkTypesettingContext, jArr[0], jArr[1], jArr[2], 1);
                     if (a2[0] != jArr[0]) {

@@ -7,13 +7,14 @@ import android.text.TextUtils;
 
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.b.UrlTools;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.io.FileUtils;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.UmengManager;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.domain.bookshelf.c;
 import com.xiaomi.mistatistic.sdk.MiStatInterface;
 import com.xiaomi.mistatistic.sdk.URLStatsRecorder;
@@ -30,7 +31,7 @@ public class a {
     private static a b = null;
     private final ReaderEnv c;
     private final UmengManager d;
-    private final f e;
+    private final classc.ConnectivityReceiver e;
     private final ConcurrentLinkedQueue f = new ConcurrentLinkedQueue();
     private final ConcurrentLinkedQueue g = new ConcurrentLinkedQueue();
     private final ConcurrentLinkedQueue h = new ConcurrentLinkedQueue();
@@ -43,10 +44,10 @@ public class a {
     private long o = 0;
     private File p = null;
 
-    public a(ReaderEnv readerEnv, UmengManager umengManager, f fVar) {
+    public a(ReaderEnv readerEnv, UmengManager umengManager, classc.ConnectivityReceiver connectivity) {
         this.c = readerEnv;
         this.d = umengManager;
-        this.e = fVar;
+        this.e = connectivity;
         this.e.a(new b(this));
         try {
             Context context = DkApp.get();
@@ -364,20 +365,20 @@ public class a {
 
     public void d() {
         if (this.l <= 0) {
-            this.l = com.duokan.core.diagnostic.a.c().a("app_load_timer");
+            this.l = WebLog.c().a("app_load_timer");
         }
     }
 
     public void e() {
         if (this.m <= 0) {
-            this.m = com.duokan.core.diagnostic.a.c().a("app_bginit_timer");
+            this.m = WebLog.c().a("app_bginit_timer");
         }
     }
 
     public void f() {
         try {
             if (this.n <= 0) {
-                this.n = com.duokan.core.diagnostic.a.c().a("app_load_timer");
+                this.n = WebLog.c().a("app_load_timer");
                 try {
                     if (DkApp.get().isWebAccessEnabled()) {
                         MiStatInterface.triggerUploadManually();
@@ -462,9 +463,9 @@ public class a {
         throw new AssertionError();
     }
 
-    public static void a(ReaderEnv readerEnv, UmengManager umengManager, f fVar) {
+    public static void a(ReaderEnv readerEnv, UmengManager umengManager, classc.ConnectivityReceiver connectivity) {
         try {
-            b = new a(readerEnv, umengManager, fVar);
+            b = new a(readerEnv, umengManager, connectivity);
         } catch (Throwable th) {
             th.printStackTrace();
         }

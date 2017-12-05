@@ -24,15 +24,15 @@ class ip implements Runnable {
     public void run() {
         this.a.dismiss();
         if (this.b.b()) {
-            ReaderFeature readerFeature = (ReaderFeature) this.e.b.b.getContext().queryFeature(ReaderFeature.class);
+            ReaderFeature readerFeature = (ReaderFeature) this.e.b.pageController.getContext().queryFeature(ReaderFeature.class);
             if (((c) this.b.a()).k()) {
                 aq.a(readerFeature, (c) this.b.a(), (long) this.d);
             } else {
                 readerFeature.openBook((c) this.b.a());
             }
-            this.e.b.b.web_notifyWeb(this.c, 0, "open", Boolean.valueOf(true));
+            this.e.b.pageController.web_notifyWeb(this.c, 0, "open", Boolean.valueOf(true));
             return;
         }
-        this.e.b.b.web_notifyWeb(this.c, 0, "open", Boolean.valueOf(false));
+        this.e.b.pageController.web_notifyWeb(this.c, 0, "open", Boolean.valueOf(false));
     }
 }

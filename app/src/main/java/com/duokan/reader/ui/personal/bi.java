@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.personal;
 
 import com.duokan.c.j;
-import com.duokan.reader.common.c.f;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.domain.account.a;
 import com.duokan.reader.domain.account.u;
 import com.duokan.reader.ui.general.be;
@@ -14,7 +14,7 @@ class bi implements u {
     }
 
     public void onQueryAccountOk(a aVar) {
-        if (f.b().e()) {
+        if (classc.ConnectivityReceiver.b().e()) {
             new am(this.a.a.getContext(), aVar, this.a.a).show();
         } else {
             be.a(this.a.a.getContext(), j.general__shared__network_error, 0).show();

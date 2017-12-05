@@ -1,6 +1,6 @@
 package com.duokan.core.ui;
 
-import com.duokan.core.sys.j;
+import com.duokan.core.sys.AIdleOperation;
 
 class bb implements Runnable {
     final /* synthetic */ Runnable a;
@@ -18,7 +18,7 @@ class bb implements Runnable {
                 if (r.b != null) {
                     r.b.setPressed(false);
                 }
-                j.a(this.a);
+                AIdleOperation.postRunnable(this.a);
             }
             this.b.B = -1;
             this.b.D = null;

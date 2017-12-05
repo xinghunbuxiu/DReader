@@ -10,6 +10,6 @@ class fy implements Runnable {
     }
 
     public void run() {
-        TaskHandler.postTask(new fz(this));
+        TaskHandler.requstIdleStatusListening(new fz(this));
     }
 }

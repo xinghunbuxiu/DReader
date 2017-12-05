@@ -18,6 +18,7 @@ import com.duokan.reader.DkApp;
 import com.duokan.reader.DkReader;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.domain.document.epub.as;
 import com.duokan.reader.ui.general.HangTagView;
@@ -91,7 +92,7 @@ public class kd extends ActivatedController {
     }
 
     public static void a() {
-        if (com.duokan.reader.common.c.f.b().e() && a == null) {
+        if (classc.f.b().e() && a == null) {
             a = new ki(i.f().e());
             a.open();
         }

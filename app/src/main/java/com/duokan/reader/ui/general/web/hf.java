@@ -6,9 +6,9 @@ import org.json.JSONObject;
 
 class hf implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    hf(cg cgVar, String str) {
+    hf(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

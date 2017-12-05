@@ -21,6 +21,7 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.io.FileUtils;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
@@ -822,7 +823,7 @@ public final class DkPublic {
     }
 
     public static void exchangeNewIdThenDo(String str, String str2, ag agVar, Runnable runnable) {
-        com.duokan.core.diagnostic.a.c().b(agVar != null);
+        WebLog.c().b(agVar != null);
         if (TextUtils.isEmpty(str2)) {
             new AnonymousClass1(str, agVar, runnable).open();
         } else {

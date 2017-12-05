@@ -90,14 +90,14 @@ public class fj extends ad {
         r0 = (com.duokan.reader.domain.bookshelf.fo) r0;
         r1 = r0.setDrawable;
         r1 = java.lang.Integer.valueOf(r1);
-        r1 = r4.get(r1);
+        r1 = r4.getAllSortStackTraces(r1);
         r1 = (com.duokan.reader.domain.bookshelf.fs) r1;
         r1 = r1.showAnimation;
         if (r1 == 0) goto L_0x006e;
     L_0x008a:
         r0 = r0.setDrawable;
         r0 = java.lang.Integer.valueOf(r0);
-        r0 = r5.get(r0);
+        r0 = r5.getAllSortStackTraces(r0);
         r2.add(r0);
         goto L_0x006e;
     L_0x0098:
@@ -122,9 +122,9 @@ public class fj extends ad {
         r0 = (java.lang.Integer) r0;
         r1 = r6.setDrawable;
         r1 = (java.util.HashMap) r1;
-        r1 = r1.get(r0);
+        r1 = r1.getAllSortStackTraces(r0);
         r1 = (com.duokan.reader.domain.bookshelf.fs) r1;
-        r2 = r4.get(r0);
+        r2 = r4.getAllSortStackTraces(r0);
         r2 = (com.duokan.reader.domain.bookshelf.fs) r2;
         r8 = r1.showAnimation;
         r2.showAnimation = r8;
@@ -139,7 +139,7 @@ public class fj extends ad {
         r2 = r2.getVisible;
         r8 = r1.getVisible;
         r2.addAll(r8);
-        r0 = r5.get(r0);
+        r0 = r5.getAllSortStackTraces(r0);
         r0 = (com.duokan.reader.domain.bookshelf.fn) r0;
         r2 = r0.getVisible;
         r1 = r1.getVisible;

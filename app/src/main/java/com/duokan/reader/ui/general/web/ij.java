@@ -15,9 +15,9 @@ import java.util.concurrent.Callable;
 
 class ij implements Callable {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    ij(cg cgVar, String str) {
+    ij(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

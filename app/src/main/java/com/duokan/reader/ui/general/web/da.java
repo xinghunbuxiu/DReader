@@ -4,14 +4,14 @@ import com.duokan.core.sys.as;
 
 class da implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    da(cg cgVar, String str) {
+    da(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
 
     public void a() {
-        this.b.b.unregisterEventOnCurrentUrl(this.a);
+        this.b.pageController.unregisterEventOnCurrentUrl(this.a);
     }
 }

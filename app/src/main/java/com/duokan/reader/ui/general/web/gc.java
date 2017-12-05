@@ -3,16 +3,16 @@ package com.duokan.reader.ui.general.web;
 import com.duokan.core.sys.as;
 
 class gc implements as {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    gc(cg cgVar) {
+    gc(PageController cgVar) {
         this.a = cgVar;
     }
 
     public void a() {
-        if (this.a.b.mEditFeedController != null) {
-            this.a.b.mEditFeedController.requestDetach();
-            this.a.b.mEditFeedController = null;
+        if (this.a.pageController.mEditFeedController != null) {
+            this.a.pageController.mEditFeedController.requestDetach();
+            this.a.pageController.mEditFeedController = null;
         }
     }
 }

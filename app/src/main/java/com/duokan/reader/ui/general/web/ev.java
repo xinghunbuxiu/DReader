@@ -11,6 +11,6 @@ class ev implements d {
     }
 
     public void onCancel(c cVar) {
-        this.a.d.b.b.web_notifyWeb(this.a.c, 2, new Object[0]);
+        this.a.d.b.pageController.web_notifyWeb(this.a.c, 2, new Object[0]);
     }
 }

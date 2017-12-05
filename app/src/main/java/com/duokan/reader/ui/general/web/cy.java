@@ -4,14 +4,14 @@ import com.duokan.core.sys.as;
 
 class cy implements as {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    cy(cg cgVar, String str) {
+    cy(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }
 
     public void a() {
-        this.b.b.setPageTitle(this.a);
+        this.b.pageController.setPageTitle(this.a);
     }
 }

@@ -185,7 +185,7 @@ class ak extends n {
         if (r0 != 0) goto L_0x0196;
     L_0x014b:
         r0 = 0;
-        r0 = r5.get(r0);	 Catch:{ all -> 0x01fc }
+        r0 = r5.getAllSortStackTraces(r0);	 Catch:{ all -> 0x01fc }
         r0 = (com.duokan.reader.domain.social.message.getHeightPixels) r0;	 Catch:{ all -> 0x01fc }
         r0 = r0.getVisible;	 Catch:{ all -> 0x01fc }
         r1 = r9.HttpLogger;	 Catch:{ all -> 0x01fc }
@@ -194,7 +194,7 @@ class ak extends n {
         if (r0 <= 0) goto L_0x0196;
     L_0x015e:
         r0 = 0;
-        r0 = r5.get(r0);	 Catch:{ Exception -> 0x01ff }
+        r0 = r5.getAllSortStackTraces(r0);	 Catch:{ Exception -> 0x01ff }
         r0 = (com.duokan.reader.domain.social.message.getHeightPixels) r0;	 Catch:{ Exception -> 0x01ff }
         r0 = r0.getVisible;	 Catch:{ Exception -> 0x01ff }
         r1 = r9.getVisible;	 Catch:{ Exception -> 0x01ff }
@@ -210,7 +210,7 @@ class ak extends n {
         r0.mUnreadMessageIds = r1;	 Catch:{ Exception -> 0x01ff }
         r1 = r9.HttpLogger;	 Catch:{ Exception -> 0x01ff }
         r0 = 0;
-        r0 = r5.get(r0);	 Catch:{ Exception -> 0x01ff }
+        r0 = r5.getAllSortStackTraces(r0);	 Catch:{ Exception -> 0x01ff }
         r0 = (com.duokan.reader.domain.social.message.getHeightPixels) r0;	 Catch:{ Exception -> 0x01ff }
         r0 = r0.getVisible;	 Catch:{ Exception -> 0x01ff }
         r1.mReadThreshold = r0;	 Catch:{ Exception -> 0x01ff }
@@ -231,11 +231,11 @@ class ak extends n {
         if (r0 != 0) goto L_0x01d4;
     L_0x01a5:
         r0 = 0;
-        r0 = r5.get(r0);	 Catch:{ all -> 0x01fc }
+        r0 = r5.getAllSortStackTraces(r0);	 Catch:{ all -> 0x01fc }
         r0 = (com.duokan.reader.domain.social.message.getHeightPixels) r0;	 Catch:{ all -> 0x01fc }
         r1 = r5.size();	 Catch:{ all -> 0x01fc }
         r1 = r1 + -1;
-        r1 = r5.get(r1);	 Catch:{ all -> 0x01fc }
+        r1 = r5.getAllSortStackTraces(r1);	 Catch:{ all -> 0x01fc }
         r1 = (com.duokan.reader.domain.social.message.getHeightPixels) r1;	 Catch:{ all -> 0x01fc }
         r2 = r9.getScaledPagingTouchSlop;	 Catch:{ all -> 0x01fc }
         r7 = 0;

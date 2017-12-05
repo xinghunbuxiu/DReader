@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.ui.UTools;
-import com.duokan.reader.ui.s;
+import com.duokan.reader.ui.ITheme;
 
 public class HeaderView extends FrameLayout {
     private final ImageView a;
@@ -175,8 +175,8 @@ public class HeaderView extends FrameLayout {
     }
 
     protected void onMeasure(int i, int i2) {
-        int pageHeaderHeight = ((s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class)).getTheme().getPageHeaderHeight();
-        int pageHeaderPaddingTop = ((s) MyContextWrapper.getFeature(getContext()).queryFeature(s.class)).getTheme().getPageHeaderPaddingTop();
+        int pageHeaderHeight = ((ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class)).getTheme().getPageHeaderHeight();
+        int pageHeaderPaddingTop = ((ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class)).getTheme().getPageHeaderPaddingTop();
         if (getPaddingTop() != pageHeaderPaddingTop) {
             setPadding(0, pageHeaderPaddingTop, 0, 0);
         }

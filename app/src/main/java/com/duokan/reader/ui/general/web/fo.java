@@ -4,9 +4,9 @@ import java.util.concurrent.Callable;
 
 class fo implements Callable {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    fo(cg cgVar, String str) {
+    fo(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

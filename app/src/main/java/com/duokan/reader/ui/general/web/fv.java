@@ -22,16 +22,16 @@ class fv implements as {
         String optString4 = jSONObject.optString("contentPlaceholder");
         boolean optBoolean = jSONObject.optBoolean("showTitle", true);
         boolean optBoolean2 = jSONObject.optBoolean("showScore", true);
-        String optString5 = jSONObject.optString("header", this.a.b.b.getContext().getResources().getString(j.store_comment__publish_comment_view__title));
-        String optString6 = jSONObject.optString("cancel", this.a.b.b.getContext().getResources().getString(j.general__shared__cancel));
-        String optString7 = jSONObject.optString("send", this.a.b.b.getContext().getResources().getString(j.general__shared__send));
+        String optString5 = jSONObject.optString("header", this.a.b.pageController.getContext().getResources().getString(j.store_comment__publish_comment_view__title));
+        String optString6 = jSONObject.optString("cancel", this.a.b.pageController.getContext().getResources().getString(j.general__shared__cancel));
+        String optString7 = jSONObject.optString("send", this.a.b.pageController.getContext().getResources().getString(j.general__shared__send));
         int optInt2 = jSONObject.optInt("wordCount", -1);
-        String optString8 = jSONObject.optString("wordCountErrorMsg", this.a.b.b.getString(j.store_comment__publish_comment_view__content_too_long));
+        String optString8 = jSONObject.optString("wordCountErrorMsg", this.a.b.pageController.getString(j.store_comment__publish_comment_view__content_too_long));
         boolean optBoolean3 = jSONObject.optBoolean("instantClose", true);
-        if (this.a.b.b.mEditCommentDialog != null) {
-            this.a.b.b.mEditCommentDialog.dismiss();
+        if (this.a.b.pageController.mEditCommentDialog != null) {
+            this.a.b.pageController.mEditCommentDialog.dismiss();
         }
-        this.a.b.b.mEditCommentDialog = new f(this.a.b.b.getContext(), optInt, optString, optString2, optString3, optString4, optBoolean, optBoolean2, optString5, optString6, optString7, optInt2, optString8, optBoolean3, new fw(this), new fx(this));
-        this.a.b.b.mEditCommentDialog.show();
+        this.a.b.pageController.mEditCommentDialog = new f(this.a.b.pageController.getContext(), optInt, optString, optString2, optString3, optString4, optBoolean, optBoolean2, optString5, optString6, optString7, optInt2, optString8, optBoolean3, new fw(this), new fx(this));
+        this.a.b.pageController.mEditCommentDialog.show();
     }
 }

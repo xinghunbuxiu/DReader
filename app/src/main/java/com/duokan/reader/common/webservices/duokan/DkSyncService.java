@@ -127,7 +127,7 @@ public class DkSyncService extends ad {
     }
 
     public b a() {
-        JSONObject a = a(a(a(true, b() + "/readstat/get", new String[0])));
+        JSONObject a = a(a(a(true, b() + "/readstat/getAllSortStackTraces", new String[0])));
         b bVar = new b();
         bVar.b = a.getInt(Mipay.KEY_RESULT);
         bVar.a = a.optJSONObject("data");

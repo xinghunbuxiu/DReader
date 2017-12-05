@@ -30,18 +30,18 @@ class ff implements as {
     }
 
     public void a() {
-        if (this.g.b.b.mInputBoxView != null) {
-            View view = (EditText) this.g.b.b.mInputBoxView.findViewById(g.general__web_view__edit);
-            TextView textView = (TextView) this.g.b.b.mInputBoxView.findViewById(g.general__web_view__confirm);
+        if (this.g.b.pageController.mInputBoxView != null) {
+            View view = (EditText) this.g.b.pageController.mInputBoxView.findViewById(g.general__web_view__edit);
+            TextView textView = (TextView) this.g.b.pageController.mInputBoxView.findViewById(g.general__web_view__confirm);
             textView.setClickable(false);
             if (this.a) {
-                this.g.b.b.mInputFlag = this.b;
-                this.g.b.b.mInputBoxView.setVisibility(0);
-                this.g.b.b.mInputBoxView.setResizeLayoutForSoftInput(true);
+                this.g.b.pageController.mInputFlag = this.b;
+                this.g.b.pageController.mInputBoxView.setVisibility(0);
+                this.g.b.pageController.mInputBoxView.setResizeLayoutForSoftInput(true);
                 view.setHint(TextUtils.isEmpty(this.c) ? "" : this.c);
                 view.setText(TextUtils.isEmpty(this.d) ? "" : this.d);
                 view.addTextChangedListener(new fg(this, textView));
-                this.g.b.b.mInputBoxView.setOnTouchListener(new fh(this, view));
+                this.g.b.pageController.mInputBoxView.setOnTouchListener(new fh(this, view));
                 if (!TextUtils.isEmpty(this.e)) {
                     textView.setText(this.e);
                     textView.setOnClickListener(new fi(this, view));
@@ -52,7 +52,7 @@ class ff implements as {
                 }
                 return;
             }
-            this.g.b.b.mInputBoxView.setVisibility(8);
+            this.g.b.pageController.mInputBoxView.setVisibility(8);
         }
     }
 }

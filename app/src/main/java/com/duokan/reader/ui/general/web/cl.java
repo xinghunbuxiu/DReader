@@ -6,9 +6,9 @@ import java.util.concurrent.Callable;
 
 class cl implements Callable {
     final /* synthetic */ String a;
-    final /* synthetic */ cg b;
+    final /* synthetic */ PageController b;
 
-    cl(cg cgVar, String str) {
+    cl(PageController cgVar, String str) {
         this.b = cgVar;
         this.a = str;
     }

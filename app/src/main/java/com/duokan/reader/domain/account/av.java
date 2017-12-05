@@ -1,6 +1,7 @@
 package com.duokan.reader.domain.account;
 
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.common.b.a;
 
 class av implements Runnable {
@@ -16,7 +17,7 @@ class av implements Runnable {
 
     public void run() {
         this.a.d();
-        com.duokan.core.diagnostic.a.c().c(LogLevel.EVENT, "miaccount", "login(system)");
+        WebLog.c().c(LogLevel.EVENT, "miaccount", "login(system)");
         MiAccount.e.a(this.c, this.b);
     }
 }

@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 public class DkMainActivity extends BaseActivity {
     private static WeakReference weakReference = new WeakReference(null);
     private static IActivityRunStatusChanged runStatusChanged = null;
-    private static long d = -1;
+    private static long cTime = -1;
     private DkReaderController controller = null;
     private boolean first = true;
 
@@ -38,7 +38,7 @@ public class DkMainActivity extends BaseActivity {
         if (VERSION.SDK_INT >= 19) {
             getWindow().addFlags(67108864);
         }
-        d = -1;
+        cTime = -1;
         weakReference = new WeakReference(this);
         this.controller = DkReaderController.from(this);
         setContentController(this.controller);
@@ -72,7 +72,7 @@ public class DkMainActivity extends BaseActivity {
                     public void onEnd(Uri uri) {
                         if (uri != null) {
                             Intent intent = new Intent();
-                            intent.setComponent(new ComponentName(DkApp.get(), DkReader.get().getMainActivityClass()));
+                            intent.setComponent(new ComponentName(getApplication(), DkReader.get().getMainActivityClass()));
                             intent.setAction("android.intent.action.VIEW");
                             intent.setData(uri);
                             startActivity(intent);
@@ -111,9 +111,10 @@ public class DkMainActivity extends BaseActivity {
 
     protected void onNewIntent(final Intent intent) {
         super.onNewIntent(intent);
-        DkApp.get().runWhenAppReady(new Runnable(this) {
+        DkApp.get().runWhenAppReady(new Runnable() {
+
             public void run() {
-                this.c.controller.navigate(intent);
+                controller.navigate(intent);
             }
         });
     }
@@ -142,14 +143,12 @@ public class DkMainActivity extends BaseActivity {
             runStatusChanged = new IActivityRunStatusChanged() {
                 public void onRunningStateChanged(ManagedApp managedApp, RunningState runningState, RunningState runningState2) {
                     if (runningState2 == RunningState.FOREGROUND) {
-                        if (DkReader.get().isReady() && DkMainActivity.d >= 0 && System.currentTimeMillis() - DkMainActivity.d >= TimeUnit.MINUTES.toMillis(5)) {
+                        if (DkReader.get().isReady() && cTime >= 0 && System.currentTimeMillis() - cTime >= TimeUnit.MINUTES.toMillis(5)) {
                             Context topActivity = managedApp.getTopActivity();
                             if (topActivity != null) {
-                                final ReaderFeature readerFeature = (ReaderFeature) managedApp.getContext().queryFeature(ReaderFeature.class);
+                                final ReaderFeature readerFeature = managedApp.getContext().queryFeature(ReaderFeature.class);
                                 if (readerFeature != null && readerFeature.getReadingBook() == null && WelcomeDialog.hasNewShowableSplash()) {
-                                    new WelcomeDialog(topActivity, false, new StateListener(this) {
-                                        final AnonymousClass4 b;
-
+                                    new WelcomeDialog(topActivity, false, new StateListener() {
                                         public void onEnd(Uri uri) {
                                             if (uri != null) {
                                                 readerFeature.navigateSmoothly(uri.toString());
@@ -160,13 +159,13 @@ public class DkMainActivity extends BaseActivity {
                                 }
                             }
                         }
-                        if (DkMainActivity.d > 0) {
+                        if (cTime > 0) {
                             WelcomeDialog.fetchNewSplash();
                             return;
                         }
                         return;
                     }
-                    DkMainActivity.d = System.currentTimeMillis();
+                    cTime = System.currentTimeMillis();
                 }
             };
             ManagedApp.get().addOnRunningStateChangedListener(runStatusChanged);

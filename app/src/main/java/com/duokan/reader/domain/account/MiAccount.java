@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.common.b.a;
@@ -135,7 +136,7 @@ public class MiAccount extends UserAccount {
         if (i()) {
             a.a(new at(this, bVar));
         } else {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "miaccount", "relogin(name: %s, invalid token prefix: %s)", this.f, this.g.substring(0, this.g.length() / 4));
+            WebLog.c().a(LogLevel.EVENT, "miaccount", "relogin(name: %s, invalid token prefix: %s)", this.f, this.g.substring(0, this.g.length() / 4));
             e.b((a) this, bVar);
         }
     }
@@ -145,7 +146,7 @@ public class MiAccount extends UserAccount {
         if (i()) {
             a.a(new av(this, a, bVar));
         } else {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "miaccount", "relogin(name: %s, invalid token prefix: %s)", this.f, this.g.substring(0, this.g.length() / 4));
+            WebLog.c().a(LogLevel.EVENT, "miaccount", "relogin(name: %s, invalid token prefix: %s)", this.f, this.g.substring(0, this.g.length() / 4));
             e.b((a) this, bVar);
         }
     }
@@ -155,7 +156,7 @@ public class MiAccount extends UserAccount {
         if (i()) {
             a.a(new aw(this, bVar));
         } else {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "miaccount", "relogin(name: %s, invalid token prefix: %s)", this.f, this.g.substring(0, this.g.length() / 4));
+            WebLog.c().a(LogLevel.EVENT, "miaccount", "relogin(name: %s, invalid token prefix: %s)", this.f, this.g.substring(0, this.g.length() / 4));
             e.b((a) this, bVar);
         }
     }
@@ -165,13 +166,13 @@ public class MiAccount extends UserAccount {
         if (i()) {
             a.a(new ax(this, bVar));
         } else {
-            com.duokan.core.diagnostic.a.c().a(LogLevel.EVENT, "miaccount", "relogin(name: %s, invalid token prefix: %s)", this.f, this.g.substring(0, this.g.length() / 4));
+            WebLog.c().a(LogLevel.EVENT, "miaccount", "relogin(name: %s, invalid token prefix: %s)", this.f, this.g.substring(0, this.g.length() / 4));
             e.b((a) this, bVar);
         }
     }
 
     public void a(c cVar) {
-        com.duokan.core.diagnostic.a.c().c(LogLevel.EVENT, "miaccount", "log off");
+        WebLog.c().c(LogLevel.EVENT, "miaccount", "log off");
         this.g = "";
         this.h = new bh(this.f);
         l();

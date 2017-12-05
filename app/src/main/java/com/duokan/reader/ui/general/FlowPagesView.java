@@ -7,7 +7,7 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.SparseIntArray;
 
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.UTools;
 
@@ -96,7 +96,7 @@ public class FlowPagesView extends PagesView {
                 getCellsView().g(n);
                 getCellsView().a(n, false);
             }
-            a c = a.c();
+            WebLog c = a.c();
             if (this.a.get(n) == null) {
                 z = false;
             }
@@ -318,7 +318,7 @@ public class FlowPagesView extends PagesView {
         this.g = i(0);
         this.h = j(0);
         df dfVar = (df) this.a.get(n(0));
-        a c = a.c();
+        WebLog c = a.c();
         if (dfVar != null) {
             z = true;
         }
@@ -339,7 +339,7 @@ public class FlowPagesView extends PagesView {
         this.g = i(0);
         this.h = j(0);
         df dfVar = (df) this.a.get(n(0));
-        a c = a.c();
+        WebLog c = a.c();
         if (dfVar != null) {
             z = true;
         }
@@ -614,7 +614,7 @@ public class FlowPagesView extends PagesView {
     }
 
     private int n(int i) {
-        a c = a.c();
+        WebLog c = a.c();
         boolean z = i >= this.e && i <= this.f;
         c.b(z);
         return this.b.get(i);

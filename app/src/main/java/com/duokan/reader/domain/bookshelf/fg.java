@@ -43,7 +43,7 @@ class fg implements Callable {
                     this.a.aO();
                     this.a.b(268435456);
                     if (!this.b.b(3)) {
-                        this.a.d = BookState.NORMAL;
+                        this.a.bookState = BookState.NORMAL;
                         this.b.d(1);
                         this.a.b(8);
                         this.b.c(240);
@@ -83,7 +83,7 @@ class fg implements Callable {
                     this.a.aO();
                     this.a.b(268435456);
                     if (!this.b.b(3)) {
-                        this.a.d = BookState.NORMAL;
+                        this.a.bookState = BookState.NORMAL;
                         this.b.d(1);
                         this.a.b(8);
                         this.b.c(240);
@@ -115,7 +115,7 @@ class fg implements Callable {
                 this.a.aO();
                 this.a.b(268435456);
                 if (!this.b.b(3)) {
-                    this.a.d = BookState.NORMAL;
+                    this.a.bookState = BookState.NORMAL;
                     this.b.d(1);
                     this.a.b(8);
                     this.b.c(240);

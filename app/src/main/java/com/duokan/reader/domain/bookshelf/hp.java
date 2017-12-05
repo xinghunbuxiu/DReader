@@ -6,10 +6,10 @@ import java.util.concurrent.FutureTask;
 
 class hp implements Runnable {
     final /* synthetic */ FutureTask a;
-    final /* synthetic */ ip b;
+    final /* synthetic */ BaseConnect b;
     final /* synthetic */ hi c;
 
-    hp(hi hiVar, FutureTask futureTask, ip ipVar) {
+    hp(hi hiVar, FutureTask futureTask, BaseConnect ipVar) {
         this.c = hiVar;
         this.a = futureTask;
         this.b = ipVar;

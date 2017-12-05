@@ -2,9 +2,9 @@ package com.duokan.reader.ui;
 
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.FeatureListening;
-import com.duokan.core.app.aa;
+import com.duokan.core.app.Inavigate;
 
-public interface e extends aa, FeatureListening {
+public interface InavOperater extends Inavigate, FeatureListening {
     boolean pushPage(ActivatedController activatedControllerVar);
 
     boolean pushPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable);

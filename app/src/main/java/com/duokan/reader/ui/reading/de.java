@@ -16,11 +16,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.af;
 import com.duokan.core.ui.LinearScrollView;
 import com.duokan.core.ui.Scrollable.ScrollState;
 import com.duokan.core.ui.UTools;
 import com.duokan.reader.ReaderFeature;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.duokan.CommentBook;
 import com.duokan.reader.common.webservices.duokan.a;
 import com.duokan.reader.common.webservices.duokan.ag;
@@ -289,7 +291,7 @@ public class de extends FrameLayout {
     }
 
     protected void a(eh ehVar) {
-        com.duokan.core.diagnostic.a.c().b(ehVar != null);
+        WebLog.c().b(ehVar != null);
         LinkedList linkedList = ehVar.f;
         this.t.removeAllViews();
         if (linkedList != null) {
@@ -423,7 +425,7 @@ public class de extends FrameLayout {
     }
 
     private void c(eh ehVar) {
-        com.duokan.core.diagnostic.a.c().b(ehVar != null);
+        WebLog.c().b(ehVar != null);
         if (this.y.k() && i() && (!((ej) this.y).bc().j || DkUserPurchasedFictionsManager.a().a(this.y.H()) == null)) {
             this.o.setVisibility(8);
             this.n.setVisibility(8);
@@ -482,7 +484,7 @@ public class de extends FrameLayout {
             }
             this.x.clearAnimation();
             this.w.setVisibility(4);
-        } else if (!com.duokan.reader.common.c.f.b().e() || this.H) {
+        } else if (!classc.f.b().e() || this.H) {
             this.x.clearAnimation();
             this.w.setVisibility(4);
         }

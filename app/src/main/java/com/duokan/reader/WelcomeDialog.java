@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ah;
 import com.duokan.core.ui.UTools;
@@ -27,6 +28,7 @@ import com.duokan.core.ui.er;
 import com.duokan.core.ui.et;
 import com.duokan.core.ui.j;
 import com.duokan.reader.ReaderEnv.PrivatePref;
+import com.duokan.reader.common.classc;
 import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.duokan.ad;
 import com.duokan.reader.common.webservices.duokan.p;
@@ -273,7 +275,7 @@ public class WelcomeDialog extends j {
                     }
 
                     public void run() {
-                        com.duokan.core.diagnostic.a.c().a();
+                        WebLog.c().WebLog();
                         UTools.a(this.a.d.f, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, new Runnable(this) {
                             final  AnonymousClass1 a;
 
@@ -363,7 +365,7 @@ public class WelcomeDialog extends j {
     }
 
     public static void fetchNewSplash() {
-        if (com.duokan.reader.common.c.f.b().e() && b == null) {
+        if (classc.f.b().e() && b == null) {
             long currentTimeMillis = System.currentTimeMillis();
             if (currentTimeMillis - c >= a) {
                 b = new AnonymousClass5(i.f().e(), currentTimeMillis);

@@ -17,7 +17,7 @@ class jj implements as {
     }
 
     public void a() {
-        ReaderFeature readerFeature = (ReaderFeature) this.b.b.b.getContext().queryFeature(ReaderFeature.class);
+        ReaderFeature readerFeature = (ReaderFeature) this.b.b.pageController.getContext().queryFeature(ReaderFeature.class);
         if (readerFeature != null) {
             c readingBook = readerFeature.getReadingBook();
             if (readingBook instanceof fv) {

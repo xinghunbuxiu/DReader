@@ -9,9 +9,9 @@ import org.json.JSONArray;
 import java.util.concurrent.Callable;
 
 class cr implements Callable {
-    final /* synthetic */ cg a;
+    final /* synthetic */ PageController a;
 
-    cr(cg cgVar) {
+    cr(PageController cgVar) {
         this.a = cgVar;
     }
 

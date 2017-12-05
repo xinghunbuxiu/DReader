@@ -201,7 +201,7 @@ public abstract class WebSession {
         if (!$assertionsDisabled && this.mSessionTask == null) {
             throw new AssertionError();
         } else if ($assertionsDisabled || this.mSessionTask.c == Thread.currentThread().getId()) {
-            TaskHandler.postTask(new e(this, obj));
+            TaskHandler.getTaskHandler(new e(this, obj));
         } else {
             throw new AssertionError();
         }

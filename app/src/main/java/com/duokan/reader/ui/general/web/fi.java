@@ -25,15 +25,15 @@ class fi implements OnClickListener {
                 JSONObject jSONObject = new JSONObject();
                 jSONObject.put("operation", 1);
                 jSONObject.put("text", obj);
-                if (this.b.g.b.b.mInputFlag != null) {
-                    jSONObject.put("flag", this.b.g.b.b.mInputFlag);
+                if (this.b.g.b.pageController.mInputFlag != null) {
+                    jSONObject.put("flag", this.b.g.b.pageController.mInputFlag);
                 }
-                this.b.g.b.b.triggerEventOnCurrentUrl("input", jSONObject.toString());
+                this.b.g.b.pageController.triggerEventOnCurrentUrl("input", jSONObject.toString());
             } catch (Throwable th) {
             }
         }
         this.a.setText("");
         this.a.clearFocus();
-        UTools.hideSoftInputFromWindow(this.b.g.b.b.getContext());
+        UTools.hideSoftInputFromWindow(this.b.g.b.pageController.getContext());
     }
 }

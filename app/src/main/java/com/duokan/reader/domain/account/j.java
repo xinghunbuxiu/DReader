@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.account;
 
 import com.duokan.core.a.n;
-import com.duokan.core.diagnostic.a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.TaskHandler;
 
 class j implements e {
@@ -11,19 +11,19 @@ class j implements e {
         this.a = iVar;
     }
 
-    public void a(a aVar) {
+    public void a(WebLog aVar) {
         a.c().b(TaskHandler.isCurrentThread());
         synchronized (this.a) {
             this.a.i.put(aVar.getClass(), aVar);
         }
     }
 
-    public void b(a aVar) {
+    public void b(WebLog aVar) {
         a.c().b(TaskHandler.isCurrentThread());
         this.a.c(aVar);
     }
 
-    public void c(a aVar) {
+    public void c(WebLog aVar) {
         this.a.d(aVar);
     }
 
@@ -39,7 +39,7 @@ class j implements e {
         return this.a.c.getString(i);
     }
 
-    public a a(Class cls) {
+    public WebLog a(Class cls) {
         return this.a.b(cls);
     }
 }
