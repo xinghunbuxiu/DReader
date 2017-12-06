@@ -25,7 +25,7 @@ class cb implements du {
 
     public void a(er erVar, View view, PointF pointF, PointF pointF2) {
         if (this.a.g) {
-            UTools.showAnimation(pointF2, view);
+            UTools.getTempPointF(pointF2, view);
             this.a.h.a((int) pointF2.x, (int) pointF2.y);
             this.a.g(true);
         }

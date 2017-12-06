@@ -124,7 +124,7 @@ public abstract class UTools {
     }
 
     public static RectF getRectF(RectF rectF, View view, View view2) {
-        rectF.set((float) view.getScrollX(), (float) view.getScrollY(), (float) (view.getScrollX() + view.getWidth()), (float) (view.getScrollY() + view.getHeight()));
+        rectF.set(view.getScrollX(), view.getScrollY(), view.getScrollX() + view.getWidth(), view.getScrollY() + view.getHeight());
         getMatrixPoint(rectF, view, view2);
         return rectF;
     }
@@ -320,7 +320,7 @@ public abstract class UTools {
         fArr2[1] = rectF.bottom;
         fArr2[2] = rectF.right;
         fArr2[3] = rectF.bottom;
-        addAnimation(matrix, view);
+        getTranslateMatrix(matrix, view);
         matrix.invert(matrix2);
         matrix2.mapPoints(fArr);
         matrix2.mapPoints(fArr2);
@@ -349,7 +349,7 @@ public abstract class UTools {
         Matrix matrix = (Matrix) d.getRect();
         Matrix matrix2 = (Matrix) d.getRect();
         float[] fArr = (float[]) i.getRect();
-        addAnimation(matrix, view);
+        getTranslateMatrix(matrix, view);
         matrix.invert(matrix2);
         fArr[0] = pointF.x;
         fArr[1] = pointF.y;
@@ -394,7 +394,7 @@ public abstract class UTools {
         fArr2[1] = rectF.bottom;
         fArr2[2] = rectF.right;
         fArr2[3] = rectF.bottom;
-        addAnimation(matrix, view);
+        getTranslateMatrix(matrix, view);
         matrix.mapPoints(fArr);
         matrix.mapPoints(fArr2);
         rectF.left = Math.min(Math.min(fArr[0], fArr[2]), Math.min(fArr2[0], fArr2[2]));
@@ -407,7 +407,7 @@ public abstract class UTools {
         return rectF;
     }
 
-    public static PointF showAnimation(PointF pointF, View view) {
+    public static PointF getTempPointF(PointF pointF, View view) {
         PointF pointF2 = (PointF) f.getRect();
         getScaledTouchSlop(pointF, view);
         getScaledTouchSlop(pointF2, view);
@@ -420,7 +420,7 @@ public abstract class UTools {
     public static PointF getScaledTouchSlop(PointF pointF, View view) {
         Matrix matrix = (Matrix) d.getRect();
         float[] fArr = (float[]) i.getRect();
-        addAnimation(matrix, view);
+        getTranslateMatrix(matrix, view);
         fArr[0] = pointF.x;
         fArr[1] = pointF.y;
         matrix.mapPoints(fArr);
@@ -434,8 +434,8 @@ public abstract class UTools {
     public static Matrix getTempMatrix(Matrix matrix, View view, View view2) {
         Matrix matrix2 = (Matrix) d.getRect();
         Matrix matrix3 = (Matrix) d.getRect();
-        addAnimation(matrix2, view);
-        addAnimation(matrix3, view2);
+        getTranslateMatrix(matrix2, view);
+        getTranslateMatrix(matrix3, view2);
         matrix3.invert(matrix);
         matrix.preConcat(matrix2);
         d.getRect(matrix3);
@@ -444,10 +444,10 @@ public abstract class UTools {
     }
 
     @TargetApi(11)
-    public static Matrix addAnimation(Matrix matrix, View view) {
+    public static Matrix getTranslateMatrix(Matrix matrix, View view) {
         if (view != null) {
             while (true) {
-                matrix.postTranslate((float) (-view.getScrollX()), (float) (-view.getScrollY()));
+                matrix.postTranslate(-view.getScrollX(), -view.getScrollY());
                 if (VERSION.SDK_INT >= 11) {
                     matrix.postConcat(view.getMatrix());
                 }
@@ -455,7 +455,7 @@ public abstract class UTools {
                 if (parent instanceof fk) {
                     matrix.postConcat(((fk) parent).c(view));
                 }
-                matrix.postTranslate((float) view.getLeft(), (float) view.getTop());
+                matrix.postTranslate(view.getLeft(), view.getTop());
                 if (!(parent instanceof View)) {
                     break;
                 }
@@ -465,7 +465,7 @@ public abstract class UTools {
             iArr[0] = 0;
             iArr[1] = 0;
             view.getLocationOnScreen(iArr);
-            matrix.postTranslate((float) iArr[0], (float) iArr[1]);
+            matrix.postTranslate(iArr[0], iArr[1]);
             l.getRect(iArr);
         }
         return matrix;
