@@ -3,6 +3,7 @@ package com.duokan.core.app;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.hardware.Sensor;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.view.WindowManager.LayoutParams;
 
 import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.ui.UTools;
 
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -302,7 +304,7 @@ public class BaseActivity extends Activity implements IFeature {
         lockScreen();
         resetScreenTimeout();
         if (this.eventListener == null) {
-            this.eventListener = new n(this, this, 3);
+            this.eventListener = new MyOrientationEventListener(this, this, 3);
         }
         this.eventListener.enable();
         Iterator it = this.taskHandlers.iterator();
@@ -490,4 +492,24 @@ public class BaseActivity extends Activity implements IFeature {
         }
         return null;
     }
+
+    class MyOrientationEventListener extends OrientationEventListener {
+        final BaseActivity a;
+
+        MyOrientationEventListener(BaseActivity baseActivityVar, Context context, int i) {
+            super(context, i);
+            this.a = baseActivityVar;
+        }
+
+        public void onOrientationChanged(int i) {
+            if (i >= 0 && i < 360 && Math.abs(this.a.h - i) >= 75) {
+                int i2 = i < 45 ? 0 : i < 135 ? 90 : i < 225 ? 180 : i < 315 ? 270 : 0;
+                this.a.h = i2;
+                i2 = this.a.h - UTools.get_Angle((-this.a.getWindowManager().getDefaultDisplay().getRotation()) * 90, 0, 360);
+                if (this.a.i != i2) {
+                    this.a.i = i2;
+                    this.a.notifyScreenRotationChanged(this.a.i);
+                }
+            }
+        }
 }
