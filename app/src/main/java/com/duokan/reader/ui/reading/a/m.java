@@ -6,10 +6,10 @@ import android.util.Pair;
 import android.view.View;
 
 import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.cu;
+import com.duokan.core.ui.onTapListener;
 import com.duokan.core.ui.er;
 
-class m implements cu {
+class m implements onTapListener {
     final /* synthetic */ n a;
     final /* synthetic */ l b;
 

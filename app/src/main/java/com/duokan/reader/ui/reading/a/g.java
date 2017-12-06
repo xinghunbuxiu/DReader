@@ -6,7 +6,7 @@ import android.view.View;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.dt;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 
 public class g extends er {
     private final dt a = new dt();
@@ -18,7 +18,7 @@ public class g extends er {
         this.a.a(UTools.getScaledPagingTouchSlop(view.getContext()));
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         if (esVar instanceof i) {
             this.a.b(view, motionEvent, z, new h(this, motionEvent, (i) esVar));
             return;

@@ -13,7 +13,7 @@ public abstract class er {
     private boolean e = false;
     private boolean f = true;
 
-    protected abstract void a(View view, MotionEvent motionEvent, boolean z, es esVar);
+    protected abstract void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar);
 
     protected abstract void a(View view, boolean z);
 
@@ -33,11 +33,11 @@ public abstract class er {
         a(view, z);
     }
 
-    public final void b(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    public final void b(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         a(view, motionEvent, z, false, esVar);
     }
 
-    public final void a(View view, MotionEvent motionEvent, boolean z, boolean z2, es esVar) {
+    public final void a(View view, MotionEvent motionEvent, boolean z, boolean z2, OnTouchChangeListener esVar) {
         if (this.f) {
             this.d = false;
             if (!this.a) {
@@ -102,7 +102,7 @@ public abstract class er {
         this.e = z;
     }
 
-    protected void c(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void c(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
     }
 
     protected boolean a(PointF pointF, PointF pointF2, double d, double d2) {

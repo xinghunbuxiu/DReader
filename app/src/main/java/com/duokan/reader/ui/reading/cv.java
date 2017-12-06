@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 import com.duokan.core.ui.g;
 
 public class cv extends er {
@@ -24,7 +24,7 @@ public class cv extends er {
         gVar.b(view, z2);
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         if (!this.a.a.w().f() && c() && !e() && this.c.c()) {
             if (motionEvent.getAction() == 0) {
                 this.d = this.a.a.c(new Point((int) motionEvent.getX(), (int) motionEvent.getY()));

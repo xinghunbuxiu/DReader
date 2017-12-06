@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.duokan.core.ui.ct;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 import com.duokan.reader.domain.document.ae;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.ui.reading.sh;
@@ -23,7 +23,7 @@ public class o extends er {
         this.c.b(view, z);
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         if (esVar instanceof q) {
             q qVar = (q) esVar;
             if (this.a.X().e()) {

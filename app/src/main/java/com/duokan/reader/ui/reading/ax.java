@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.duokan.core.ui.dt;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 
 class ax extends er {
     final /* synthetic */ aq a;
@@ -20,7 +20,7 @@ class ax extends er {
         this.c.b(view, z);
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         if (!this.a.d()) {
             b(false);
         } else if (motionEvent.getActionMasked() == 0) {

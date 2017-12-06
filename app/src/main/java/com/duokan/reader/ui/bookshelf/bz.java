@@ -14,7 +14,7 @@ import com.duokan.core.ui.as;
 import com.duokan.core.ui.bu;
 import com.duokan.core.ui.dt;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 import com.duokan.reader.domain.bookshelf.an;
 
 import org.apache.http.HttpStatus;
@@ -81,11 +81,11 @@ class bz extends er {
         this.s = false;
     }
 
-    protected void c(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void c(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         this.c.b(view, motionEvent, z, new ca(this));
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         boolean z2 = true;
         this.d.b(view, motionEvent, z, new cb(this));
         if ((m() || l() || j()) && !k()) {

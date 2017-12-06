@@ -3,12 +3,12 @@ package com.duokan.reader.ui.reading;
 import android.graphics.PointF;
 import android.view.View;
 
-import com.duokan.core.ui.cu;
+import com.duokan.core.ui.onTapListener;
 import com.duokan.core.ui.er;
 import com.duokan.reader.domain.document.bb;
 import com.duokan.reader.domain.document.d;
 
-class aei implements cu {
+class aei implements onTapListener {
     final /* synthetic */ aeh a;
 
     aei(aeh com_duokan_reader_ui_reading_aeh) {

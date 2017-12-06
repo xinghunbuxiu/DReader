@@ -37,7 +37,7 @@ public class g extends er {
         }
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         boolean z2 = true;
         if (motionEvent.getActionMasked() == 3) {
             b(false);

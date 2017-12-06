@@ -25,7 +25,7 @@ public class cd extends er {
         this.e = false;
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         jn jnVar = new jn(view, motionEvent);
         if (esVar instanceof ce) {
             ce ceVar = (ce) esVar;

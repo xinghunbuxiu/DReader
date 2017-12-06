@@ -23,7 +23,7 @@ import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.ah;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.ct;
-import com.duokan.core.ui.cu;
+import com.duokan.core.ui.onTapListener;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.et;
 import com.duokan.core.ui.j;
@@ -191,7 +191,7 @@ public class WelcomeDialog extends j {
         });
         et etVar = new et();
         etVar.a(new ct());
-        etVar.a(new cu(this) {
+        etVar.a(new onTapListener(this) {
             final  WelcomeDialog a;
 
             {

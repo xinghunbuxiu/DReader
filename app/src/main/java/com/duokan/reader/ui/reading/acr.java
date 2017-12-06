@@ -11,7 +11,7 @@ import com.duokan.core.ui.as;
 import com.duokan.core.ui.bu;
 import com.duokan.core.ui.dt;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 
 import org.apache.http.HttpStatus;
 
@@ -36,8 +36,8 @@ public class acr extends er {
         }
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
-        if (!(esVar instanceof es)) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
+        if (!(esVar instanceof OnTouchChangeListener)) {
             b(false);
         } else if (this.a.e.aE()) {
             b(false);

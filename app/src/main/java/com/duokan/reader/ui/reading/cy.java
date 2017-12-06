@@ -10,7 +10,7 @@ import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.cd;
 import com.duokan.core.ui.dt;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 import com.duokan.core.ui.g;
 import com.duokan.core.ui.q;
 
@@ -70,7 +70,7 @@ public class cy extends er {
         this.h.set(displayMetrics.widthPixels / 4, displayMetrics.heightPixels / 4, view.getRight() - (displayMetrics.widthPixels / 4), view.getBottom() - (displayMetrics.heightPixels / 4));
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         boolean z2 = true;
         if (this.a.a.w().f()) {
             if (motionEvent.getAction() == 0 && Float.compare(this.a.d.getFrameScale(), 1.0f) >= 0) {

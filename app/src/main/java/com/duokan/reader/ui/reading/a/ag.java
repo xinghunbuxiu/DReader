@@ -7,7 +7,7 @@ import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.ct;
 import com.duokan.core.ui.dt;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 import com.duokan.core.ui.q;
 
 public class ag extends er {
@@ -21,11 +21,11 @@ public class ag extends er {
         this.a = akVar;
     }
 
-    protected void c(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void c(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         a(view, motionEvent, z, esVar);
     }
 
-    public void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    public void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         boolean z2 = true;
         if (this.f) {
             this.d.b(view, motionEvent, z, new ah(this));

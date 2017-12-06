@@ -11,7 +11,7 @@ import java.util.LinkedList;
 public class et implements OnTouchListener {
     static final /* synthetic */ boolean a = (!et.class.desiredAssertionStatus());
     private final LinkedList b = new LinkedList();
-    private es c = null;
+    private OnTouchChangeListener c = null;
     private er d = null;
     private boolean e = true;
     private boolean f = false;
@@ -21,7 +21,7 @@ public class et implements OnTouchListener {
         this.e = z;
     }
 
-    public void a(es esVar) {
+    public void a(OnTouchChangeListener esVar) {
         this.c = esVar;
     }
 
@@ -107,7 +107,7 @@ public class et implements OnTouchListener {
         return z3;
     }
 
-    private boolean a(View view, MotionEvent motionEvent, boolean z, boolean z2, es esVar) {
+    private boolean a(View view, MotionEvent motionEvent, boolean z, boolean z2, OnTouchChangeListener esVar) {
         er erVar;
         boolean z3;
         Object obj = null;

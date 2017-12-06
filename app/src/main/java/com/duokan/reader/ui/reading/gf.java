@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.duokan.core.ui.dt;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 import com.duokan.core.ui.g;
 
 class gf extends er {
@@ -35,7 +35,7 @@ class gf extends er {
         gVar.b(view, z2);
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         boolean z2 = true;
         if (this.d && motionEvent.getAction() == 1) {
             if (!this.a.f) {

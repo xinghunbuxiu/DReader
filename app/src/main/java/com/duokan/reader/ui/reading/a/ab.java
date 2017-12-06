@@ -5,11 +5,11 @@ import android.graphics.PointF;
 import android.util.Pair;
 import android.view.View;
 
-import com.duokan.core.ui.cu;
+import com.duokan.core.ui.onTapListener;
 import com.duokan.core.ui.er;
 import com.duokan.reader.ui.reading.gs;
 
-class ab implements cu {
+class ab implements onTapListener {
     final /* synthetic */ ac a;
     final /* synthetic */ aa b;
 

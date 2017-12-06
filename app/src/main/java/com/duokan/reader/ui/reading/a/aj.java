@@ -3,10 +3,10 @@ package com.duokan.reader.ui.reading.a;
 import android.graphics.PointF;
 import android.view.View;
 
-import com.duokan.core.ui.cu;
+import com.duokan.core.ui.onTapListener;
 import com.duokan.core.ui.er;
 
-class aj implements cu {
+class aj implements onTapListener {
     final /* synthetic */ ag a;
 
     aj(ag agVar) {

@@ -6,7 +6,7 @@ import android.view.View;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.dt;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 import com.duokan.reader.ui.reading.DocPageLayout;
 import com.duokan.reader.ui.reading.sh;
 
@@ -28,11 +28,11 @@ public class al extends er {
         this.c.a(UTools.getMinimumHeight(view.getContext(), 15.0f));
     }
 
-    protected void c(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void c(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         a(view, motionEvent, z, esVar);
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         if (this.a.M() == DocPageLayout.TOP_TO_BOTTOM || this.a.g()) {
             b(false);
             return;

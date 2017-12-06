@@ -9,7 +9,7 @@ import android.view.animation.Animation.AnimationListener;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.dt;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 import com.duokan.core.ui.q;
 
 class fs extends er {
@@ -31,7 +31,7 @@ class fs extends er {
         this.h = false;
     }
 
-    protected void c(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void c(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         a(view, motionEvent, z, esVar);
     }
 
@@ -48,7 +48,7 @@ class fs extends er {
         this.g = false;
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         if (this.a.i() <= this.a.f) {
             b(false);
         } else if (this.g) {

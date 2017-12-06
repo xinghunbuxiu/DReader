@@ -14,7 +14,7 @@ public class cb extends er {
         a(null);
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         jn jnVar = new jn(view, motionEvent);
         if (esVar instanceof cc) {
             cc ccVar = (cc) esVar;

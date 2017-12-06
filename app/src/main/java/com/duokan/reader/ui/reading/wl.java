@@ -17,7 +17,7 @@ import com.duokan.core.sys.o;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.OnScrollListener;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.bookshelf.c;
@@ -198,7 +198,7 @@ public abstract class wl extends FrameLayout {
         return getFlowPagesView().getScrollDetector().a(clsArr);
     }
 
-    public void setReadingGestureListener(es esVar) {
+    public void setReadingGestureListener(OnTouchChangeListener esVar) {
         if (getFixedPagesView() != null) {
             getFixedPagesView().getScrollDetector().a(esVar);
         }

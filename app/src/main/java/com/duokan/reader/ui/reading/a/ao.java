@@ -9,7 +9,7 @@ import android.view.View;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.ct;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 import com.duokan.reader.domain.bookshelf.a;
 import com.duokan.reader.domain.bookshelf.ef;
 import com.duokan.reader.domain.document.d;
@@ -29,7 +29,7 @@ public class ao extends er {
         this.c.b(view, z);
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         if (!(esVar instanceof aq)) {
             b(false);
         } else if (this.a.X().e()) {
@@ -37,7 +37,7 @@ public class ao extends er {
         }
     }
 
-    private boolean a(View view, es esVar, MotionEvent motionEvent) {
+    private boolean a(View view, OnTouchChangeListener esVar, MotionEvent motionEvent) {
         View e = this.a.e((int) motionEvent.getX(), (int) motionEvent.getY());
         if (e == null) {
             return false;

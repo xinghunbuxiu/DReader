@@ -6,7 +6,7 @@ import android.view.View;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.dt;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 import com.duokan.core.ui.q;
 
 public class c extends er {
@@ -19,7 +19,7 @@ public class c extends er {
         this.a = fVar;
     }
 
-    protected void c(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void c(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         if (motionEvent.getX() < ((float) UTools.getMinimumHeight(view.getContext(), 23.0f))) {
             c(true);
         } else if (!(this.a.a() || this.e)) {
@@ -28,7 +28,7 @@ public class c extends er {
         a(view, motionEvent, z, esVar);
     }
 
-    public void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    public void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         boolean z2 = true;
         this.d.b(view, motionEvent, z, new d(this));
         if (this.e) {

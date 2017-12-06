@@ -34,11 +34,11 @@ class ff extends er {
         this.d.b(this.a.ab());
     }
 
-    protected void c(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void c(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         a(view, motionEvent, z, esVar);
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         if (motionEvent.getPointerCount() <= 1 || this.a.s != ScrollState.IDLE) {
             if (motionEvent.getActionMasked() == 0) {
                 if (this.a.s != ScrollState.DRAG && this.a.s != ScrollState.SEEK && this.a.G && this.a.f()) {

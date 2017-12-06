@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.reading.a;
 
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 
-public interface af extends es {
+public interface af extends OnTouchChangeListener {
     void a();
 }

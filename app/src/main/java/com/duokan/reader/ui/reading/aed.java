@@ -7,7 +7,7 @@ import android.view.View;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.dt;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 import com.duokan.reader.domain.document.as;
 import com.duokan.reader.domain.document.d;
 
@@ -26,7 +26,7 @@ class aed extends er {
         this.c.b(view, z);
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         if (this.a.m == null && !this.a.e()) {
             b(false);
         } else if (this.a.m != null && motionEvent.getActionMasked() == 1) {
@@ -40,7 +40,7 @@ class aed extends er {
         }
     }
 
-    private void d(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    private void d(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         as aa = this.a.a.aa();
         if (aa != null && aa.G()) {
             if (this.a.m != null && this.a.m.a == null) {
@@ -70,7 +70,7 @@ class aed extends er {
         }
     }
 
-    private void e(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    private void e(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         int i;
         int i2 = 0;
         gs[] ay = this.a.a.ay();

@@ -56,7 +56,7 @@ class gh extends er {
         this.j = 0.0f;
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         View d = this.a.e();
         if (d == null) {
             b(false);

@@ -55,7 +55,7 @@ public class dt extends er {
         this.h = -1;
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         jn jnVar = new jn(view, motionEvent);
         if (esVar instanceof du) {
             du duVar = (du) esVar;

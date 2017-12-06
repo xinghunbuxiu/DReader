@@ -4,16 +4,16 @@ import android.graphics.PointF;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.duokan.core.ui.cu;
+import com.duokan.core.ui.onTapListener;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 
-class ap implements cu {
-    final /* synthetic */ es a;
+class ap implements onTapListener {
+    final /* synthetic */ OnTouchChangeListener a;
     final /* synthetic */ MotionEvent b;
     final /* synthetic */ ao c;
 
-    ap(ao aoVar, es esVar, MotionEvent motionEvent) {
+    ap(ao aoVar, OnTouchChangeListener esVar, MotionEvent motionEvent) {
         this.c = aoVar;
         this.a = esVar;
         this.b = motionEvent;

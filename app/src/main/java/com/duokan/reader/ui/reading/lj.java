@@ -9,7 +9,7 @@ import com.duokan.core.ui.cb;
 import com.duokan.core.ui.cd;
 import com.duokan.core.ui.ct;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 
 import java.util.Iterator;
 
@@ -35,7 +35,7 @@ class lj extends er {
         this.i.b(view, z);
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         this.i.b(view, motionEvent, z, new lk(this));
         if (this.a.h == null) {
             d(view, motionEvent, z, esVar);
@@ -66,7 +66,7 @@ class lj extends er {
         }
     }
 
-    private boolean d(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    private boolean d(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         boolean z2 = true;
         if (motionEvent.getPointerCount() > 2) {
             b(false);

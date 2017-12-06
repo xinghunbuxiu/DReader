@@ -30,7 +30,7 @@ public class q extends er {
         }
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         if (esVar instanceof r) {
             r rVar = (r) esVar;
             MotionEvent a = UTools.resetMotionEvent(motionEvent, view, null);

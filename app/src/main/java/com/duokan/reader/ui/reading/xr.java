@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 import com.duokan.core.ui.et;
 
 class xr extends er {
@@ -23,7 +23,7 @@ class xr extends er {
         }
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         if (!this.a.a.K()) {
             et zoomDetector = ((gs) this.a.a.X().d()).getZoomDetector();
             if (zoomDetector != null) {

@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import android.view.MotionEvent;
 import android.view.View;
 
-class h implements cu {
+class h implements onTapListener {
     final /* synthetic */ boolean a;
     final /* synthetic */ long b;
     final /* synthetic */ i c;

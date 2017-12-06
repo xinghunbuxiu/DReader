@@ -3,7 +3,7 @@ package com.duokan.core.ui;
 import android.graphics.PointF;
 import android.view.View;
 
-class fd implements bw, cu {
+class fd implements bw, onTapListener {
     final ev a;
 
     private fd(ev evVar) {

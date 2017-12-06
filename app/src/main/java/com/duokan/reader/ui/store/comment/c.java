@@ -3,11 +3,11 @@ package com.duokan.reader.ui.store.comment;
 import android.graphics.PointF;
 import android.view.View;
 
-import com.duokan.core.ui.cu;
+import com.duokan.core.ui.onTapListener;
 import com.duokan.core.ui.er;
 import com.duokan.reader.domain.account.i;
 
-class c implements cu {
+class c implements onTapListener {
     final /* synthetic */ boolean a;
     final /* synthetic */ DkCommentScoreView b;
 

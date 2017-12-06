@@ -3,15 +3,15 @@ package com.duokan.reader.ui.reading.a;
 import android.graphics.PointF;
 import android.view.View;
 
-import com.duokan.core.ui.cu;
+import com.duokan.core.ui.onTapListener;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 
-class b implements cu {
-    final /* synthetic */ es a;
+class b implements onTapListener {
+    final /* synthetic */ OnTouchChangeListener a;
     final /* synthetic */ a b;
 
-    b(a aVar, es esVar) {
+    b(a aVar, OnTouchChangeListener esVar) {
         this.b = aVar;
         this.a = esVar;
     }

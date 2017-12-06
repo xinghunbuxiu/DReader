@@ -3,10 +3,10 @@ package com.duokan.reader.ui.reading;
 import android.graphics.PointF;
 import android.view.View;
 
-import com.duokan.core.ui.cu;
+import com.duokan.core.ui.onTapListener;
 import com.duokan.core.ui.er;
 
-class ln implements cu {
+class ln implements onTapListener {
     final /* synthetic */ boolean[] a;
     final /* synthetic */ lj b;
 

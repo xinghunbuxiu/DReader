@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.duokan.core.ui.ct;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 import com.duokan.reader.domain.document.b;
 import com.duokan.reader.domain.document.bb;
 import com.duokan.reader.domain.document.epub.c;
@@ -30,13 +30,13 @@ public class a extends er {
         this.c.b(view, z);
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         if (this.a.X().e()) {
             this.c.b(view, motionEvent, z, new b(this, esVar));
         }
     }
 
-    private boolean a(View view, es esVar, PointF pointF) {
+    private boolean a(View view, OnTouchChangeListener esVar, PointF pointF) {
         gs e = this.a.e((int) pointF.x, (int) pointF.y);
         if (e == null || !e.i()) {
             return false;

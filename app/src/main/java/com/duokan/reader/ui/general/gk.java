@@ -7,7 +7,7 @@ import android.view.View;
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.cd;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 import com.duokan.core.ui.g;
 
 public class gk extends er {
@@ -35,7 +35,7 @@ public class gk extends er {
         this.e = null;
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         boolean z2 = true;
         this.c.b(view, motionEvent, z, new gl(this));
         this.d.b(view, motionEvent, z, new gm(this));

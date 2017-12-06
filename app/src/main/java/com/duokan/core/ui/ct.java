@@ -11,9 +11,9 @@ public class ct extends er {
         a(null);
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
-        if (esVar instanceof cu) {
-            cu cuVar = (cu) esVar;
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
+        if (esVar instanceof onTapListener) {
+            onTapListener cuVar = (onTapListener) esVar;
             if (this.a == null) {
                 if (motionEvent.getPointerCount() == 1) {
                     a(motionEvent);

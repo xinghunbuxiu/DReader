@@ -39,7 +39,7 @@ public class as extends er {
         this.e = 0;
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         if (esVar instanceof au) {
             au auVar = (au) esVar;
             if (motionEvent.getPointerCount() > 1) {

@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.es;
+import com.duokan.core.ui.OnTouchChangeListener;
 import com.duokan.reader.ui.reading.DocPageLayout;
 import com.duokan.reader.ui.reading.sh;
 
@@ -27,7 +27,7 @@ public class u extends er {
         this.k = vVar;
     }
 
-    public void a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    public void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         if (this.a.M() == DocPageLayout.TOP_TO_BOTTOM || this.a.g() || !this.a.aa().A().isEmpty()) {
             b(false);
             return;
@@ -98,7 +98,7 @@ public class u extends er {
         b(z2);
     }
 
-    protected void c(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    protected void c(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
         a(view, motionEvent, z, esVar);
     }
 
