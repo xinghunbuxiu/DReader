@@ -36,7 +36,7 @@ class l extends DkWebListView {
         this.b.setLeftTitle(jVar.getString(j.store__change_log_view__title));
         setTitleView(this.b);
         setAdapter(new m(this, jVar));
-        this.d = (UTools.closeAnimation(getContext(), 15.0f) + (getResources().getDrawable(f.store__change_log_view__icon1).getIntrinsicWidth() / 2)) - 1;
+        this.d = (UTools.getMinimumHeight(getContext(), 15.0f) + (getResources().getDrawable(f.store__change_log_view__icon1).getIntrinsicWidth() / 2)) - 1;
     }
 
     protected void dispatchDraw(Canvas canvas) {

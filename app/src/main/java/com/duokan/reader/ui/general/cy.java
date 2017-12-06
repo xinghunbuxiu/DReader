@@ -35,11 +35,11 @@ public class cy extends bj {
             return;
         }
         int min = Math.min(this.d.b, this.d.getChildCount() - 1);
-        if (Float.compare(Math.abs(f), (float) UTools.closeAnimation(this.d.getContext(), 30.0f)) < 0) {
+        if (Float.compare(Math.abs(f), (float) UTools.getMinimumHeight(this.d.getContext(), 30.0f)) < 0) {
             if (min >= 0) {
                 if (e(this.d.b)) {
                     int left = (this.d.getChildAt(min).getLeft() + this.d.getChildAt(min).getRight()) / 2;
-                    if (Math.abs(left - getViewportBounds().centerX()) >= UTools.closeAnimation(this.d.getContext(), 30.0f)) {
+                    if (Math.abs(left - getViewportBounds().centerX()) >= UTools.getMinimumHeight(this.d.getContext(), 30.0f)) {
                         if (left - getViewportBounds().centerX() <= 0) {
                             a = b;
                         }

@@ -124,7 +124,7 @@ public class by extends fj {
     private Drawable c(int i) {
         if (this.h == null) {
             this.h = new Drawable[8];
-            int b = UTools.closeAnimation(this.f, 5.0f);
+            int b = UTools.getMinimumHeight(this.f, 5.0f);
             this.h[0] = new hn((float) b, (float) b, this.f.getResources().getColor(d.general__shared__f6bc7e));
             this.h[1] = new hn((float) b, (float) b, this.f.getResources().getColor(d.general__shared__e49baa));
             this.h[2] = new hn((float) b, (float) b, this.f.getResources().getColor(d.general__shared__98d4db));

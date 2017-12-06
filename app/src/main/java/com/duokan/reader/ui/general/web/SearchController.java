@@ -102,12 +102,12 @@ public class SearchController extends StorePageController implements iv, iw {
         this.mPresenterResultView.setOnItemClickListener(new ac(this));
         this.mPresenterResultView.setOnItemLongPressListener(new ad(this));
         this.mPresenterResultView.setNumColumns(ds.a(getContext()));
-        this.mPresenterResultView.setMaxOverScrollHeight(UTools.g(getContext()));
+        this.mPresenterResultView.setMaxOverScrollHeight(UTools.getMinimumHeight(getContext()));
         this.mSearchHintView.setHatBodyView(this.mLocalSearchResultView);
         this.mEditText = (EditText) findViewById(g.store__store_search_root_view__edittext);
         this.mEditText.addTextChangedListener(new ae(this));
         this.mEditText.setOnEditorActionListener(new ah(this));
-        int b = UTools.closeAnimation(getContext(), 15.0f);
+        int b = UTools.getMinimumHeight(getContext(), 15.0f);
         this.mSearchHintView.a(b, 0, b, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
         this.mSearchHintView.setPullDownRefreshEnabled(false);
         this.mSearchHintView.setOnItemClickListener(new ai(this));
@@ -234,7 +234,7 @@ public class SearchController extends StorePageController implements iv, iw {
         Drawable dkVar = new dk(getResources().getColor(d.general__shared__eeeeee));
         dkVar.a(1);
         this.mSearchHintView.setRowDivider(dkVar);
-        this.mSearchHintView.a(UTools.closeAnimation(getContext(), 20.0f), 0, UTools.closeAnimation(getContext(), 20.0f), 0);
+        this.mSearchHintView.a(UTools.getMinimumHeight(getContext(), 20.0f), 0, UTools.getMinimumHeight(getContext(), 20.0f), 0);
         this.mSearchHintView.setBackgroundColor(getResources().getColor(d.general__shared__ffffff));
         this.mSearchHintView.setAdapter(new r(this));
     }

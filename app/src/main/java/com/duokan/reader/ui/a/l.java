@@ -30,7 +30,7 @@ class l implements OnClickListener {
         } else if (this.b < this.d.f.size()) {
             bzVar.a(String.format(this.d.getString(j.discovery__edit_feed_item_view__desc_default), new Object[]{((DkStoreAbsBook) this.d.f.get(this.b)).getTitle()}));
         }
-        bzVar.getDecorView().setPadding(0, UTools.closeAnimation(this.d.getContext(), 50.0f), 0, 0);
+        bzVar.getDecorView().setPadding(0, UTools.getMinimumHeight(this.d.getContext(), 50.0f), 0, 0);
         bzVar.setGravity(119);
         bzVar.a(new m(this, bzVar));
     }

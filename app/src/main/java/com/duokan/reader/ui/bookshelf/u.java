@@ -30,12 +30,12 @@ class u extends Drawable {
         Paint paint = new Paint();
         paint.setColor(Color.parseColor("#fafafa"));
         paint.setAntiAlias(true);
-        canvas.drawRoundRect(rectF, (float) UTools.closeAnimation(this.c.getContext(), 5.0f), (float) UTools.closeAnimation(this.c.getContext(), 5.0f), paint);
+        canvas.drawRoundRect(rectF, (float) UTools.getMinimumHeight(this.c.getContext(), 5.0f), (float) UTools.getMinimumHeight(this.c.getContext(), 5.0f), paint);
         paint.setColor(Color.parseColor("#cccccc"));
         paint.setStrokeWidth(1.0f);
         paint.setStyle(Style.STROKE);
-        canvas.drawRoundRect(rectF, (float) UTools.closeAnimation(this.c.getContext(), 5.0f), (float) UTools.closeAnimation(this.c.getContext(), 5.0f), paint);
-        int b = (int) (rectF.left + ((float) UTools.closeAnimation(this.c.getContext(), 8.0f)));
+        canvas.drawRoundRect(rectF, (float) UTools.getMinimumHeight(this.c.getContext(), 5.0f), (float) UTools.getMinimumHeight(this.c.getContext(), 5.0f), paint);
+        int b = (int) (rectF.left + ((float) UTools.getMinimumHeight(this.c.getContext(), 8.0f)));
         int intrinsicWidth = this.b.getIntrinsicWidth() + b;
         int max = (int) Math.max(rectF.top, rectF.centerY() - ((float) (this.b.getIntrinsicHeight() / 2)));
         this.b.setBounds(b, max, intrinsicWidth, (int) Math.min(rectF.bottom, (float) (this.b.getIntrinsicHeight() + max)));
@@ -45,7 +45,7 @@ class u extends Drawable {
         paint.setTextSize((float) UTools.addAnimation(this.c.getContext(), 12.0f));
         paint.setColor(parseColor);
         RectF rectF2 = (RectF) UTools.h.getRect();
-        rectF2.set((float) (intrinsicWidth + UTools.closeAnimation(this.c.getContext(), 8.0f)), rectF.top, rectF.right, rectF.bottom);
+        rectF2.set((float) (intrinsicWidth + UTools.getMinimumHeight(this.c.getContext(), 8.0f)), rectF.top, rectF.right, rectF.bottom);
         UTools.addAnimation(canvas, this.c.getResources().getString(j.bookshelf__shared__search), rectF2, 19, paint);
         UTools.h.getRect(rectF2);
         UTools.h.getRect(rectF);

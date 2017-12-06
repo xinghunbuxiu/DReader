@@ -42,7 +42,7 @@ public class DotProgressBar extends View {
         this.n = null;
         this.o = null;
         this.p = true;
-        this.k = UTools.closeAnimation(getContext(), 2.0f);
+        this.k = UTools.getMinimumHeight(getContext(), 2.0f);
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, j.DotProgressBar);
         this.b = obtainStyledAttributes.getBoolean(j.DotProgressBar_draw_continous, true);
         this.d = getResources().getDrawable(obtainStyledAttributes.getResourceId(j.DotProgressBar_highlight_resource, e.general__shared__jindu_01));
@@ -52,10 +52,10 @@ public class DotProgressBar extends View {
         obtainStyledAttributes.recycle();
         if (this.b) {
             this.f = new bs();
-            this.l = UTools.closeAnimation(getContext(), 5.0f);
+            this.l = UTools.getMinimumHeight(getContext(), 5.0f);
         } else {
             this.f = new bu();
-            this.l = UTools.closeAnimation(getContext(), 9.0f);
+            this.l = UTools.getMinimumHeight(getContext(), 9.0f);
         }
         this.o = new Paint();
         this.o.setAntiAlias(true);

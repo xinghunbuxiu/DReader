@@ -34,7 +34,7 @@ public class bo extends ActivatedController {
         this.a.setAdapter(new bq(this));
         this.a.setRowDivider(new dk(getResources().getColor(d.general__shared__cccccc)));
         this.a.setBackgroundColor(-1);
-        this.a.a(UTools.closeAnimation(getContext(), 15.0f), 0, UTools.closeAnimation(getContext(), 15.0f), 0);
+        this.a.a(UTools.getMinimumHeight(getContext(), 15.0f), 0, UTools.getMinimumHeight(getContext(), 15.0f), 0);
         this.a.b(0, 0, 0, 0);
         this.c = new eo(getContext());
         this.d = str;

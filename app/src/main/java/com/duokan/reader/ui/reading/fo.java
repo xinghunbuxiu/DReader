@@ -327,7 +327,7 @@ public class fo extends FlowPagesView implements gy {
 
     public boolean c(int i, int i2) {
         boolean z = true;
-        int b = UTools.closeAnimation(getContext(), 50.0f);
+        int b = UTools.getMinimumHeight(getContext(), 50.0f);
         if (p()) {
             boolean z2;
             if (i2 < b) {
@@ -374,7 +374,7 @@ public class fo extends FlowPagesView implements gy {
 
     public boolean d(int i, int i2) {
         boolean z = true;
-        int b = UTools.closeAnimation(getContext(), 50.0f);
+        int b = UTools.getMinimumHeight(getContext(), 50.0f);
         if (p()) {
             boolean z2;
             if (i2 > getHeight() - b) {

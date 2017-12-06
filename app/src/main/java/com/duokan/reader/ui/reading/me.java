@@ -79,8 +79,8 @@ public class me extends ViewGroup {
     public boolean a(PointF pointF) {
         for (int i = 0; i < this.d.a(); i++) {
             PointF b = this.d.a(i).b();
-            int b2 = UTools.closeAnimation(getContext(), 40.0f);
-            int b3 = UTools.closeAnimation(getContext(), 40.0f);
+            int b2 = UTools.getMinimumHeight(getContext(), 40.0f);
+            int b3 = UTools.getMinimumHeight(getContext(), 40.0f);
             if (new RectF(b.x - ((float) (b2 / 2)), b.y - ((float) (b3 / 2)), ((float) (b2 / 2)) + b.x, b.y + ((float) (b3 / 2))).contains(pointF.x, pointF.y)) {
                 return a(i);
             }

@@ -46,7 +46,7 @@ abstract class yb extends ActivatedController implements w {
         this.e.setBackgroundDrawable(new yd(this));
         this.e.setOnItemClickListener(new ye(this));
         this.e.setOnScrollListener(new yf(this));
-        getContentView().setLayoutParams(new LayoutParams(UTools.closeAnimation(getContext(), 320.0f), -2));
+        getContentView().setLayoutParams(new LayoutParams(UTools.getMinimumHeight(getContext(), 320.0f), -2));
     }
 
     public void a() {

@@ -17,7 +17,7 @@ class hf extends hj {
         super(hdVar, featrue, activatedControllerVar);
         this.c.setIndicator(com.duokan.b.e.general__shared__balloon_indicator);
         this.c.setBackgroundResource(com.duokan.b.e.general__shared__balloon_background);
-        this.c.setIndicatorMargin(UTools.closeAnimation(getContext(), 5.0f));
+        this.c.setIndicatorMargin(UTools.getMinimumHeight(getContext(), 5.0f));
         this.c.addView(b());
         LayoutParams marginLayoutParams = new MarginLayoutParams(-2, -2);
         switch (i) {

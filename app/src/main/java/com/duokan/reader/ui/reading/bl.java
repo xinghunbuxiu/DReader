@@ -26,12 +26,12 @@ class bl extends FrameLayout {
         setWillNotDraw(false);
         setClipChildren(false);
         this.e = a(cVar);
-        this.d = UTools.closeAnimation(context, 6.0f);
-        this.c = UTools.closeAnimation(context, 20.0f);
+        this.d = UTools.getMinimumHeight(context, 6.0f);
+        this.c = UTools.getMinimumHeight(context, 20.0f);
         this.f = new xk(context, cVar.e());
         this.f.setMaxWidth((int) cVar.c());
-        int b = UTools.closeAnimation(context, 10.0f);
-        this.f.setTextSize(UTools.closeAnimation(context, 18.0f));
+        int b = UTools.getMinimumHeight(context, 10.0f);
+        this.f.setTextSize(UTools.getMinimumHeight(context, 18.0f));
         this.f.setPadding(b, b, b, b);
         this.f.setBackgroundDrawable(new hn((float) (b / 2), (float) (b / 2), -1));
         addView(this.f, new LayoutParams(-2, -2));
@@ -82,7 +82,7 @@ class bl extends FrameLayout {
         paint.setAntiAlias(true);
         paint.setColor(-1);
         paint.setStyle(Style.FILL);
-        paint.setStrokeWidth((float) UTools.closeAnimation(getContext(), 1.5f));
+        paint.setStrokeWidth((float) UTools.getMinimumHeight(getContext(), 1.5f));
         return paint;
     }
 

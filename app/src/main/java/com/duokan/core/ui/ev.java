@@ -30,7 +30,7 @@ public abstract class ev implements Scrollable {
     private long C = 0;
     private Runnable D = null;
     private cf E = null;
-    private cg F = null;
+    private OnScrollListener scrollListener = null;
     private boolean G = false;
     private boolean H = false;
     private final Rect I = new Rect();
@@ -77,11 +77,11 @@ public abstract class ev implements Scrollable {
         this.h.set(0.0f, 0.0f, (float) displayMetrics.widthPixels, (float) displayMetrics.heightPixels);
         this.h.round(this.i);
         this.j.set(this.i);
-        this.J.set(0, UTools.closeAnimation(this.a.getContext(), 2.0f), UTools.closeAnimation(this.a.getContext(), 2.0f), UTools.closeAnimation(this.a.getContext(), 6.0f));
-        this.K[0] = this.a.getResources().getDrawable(e.general__shared__thumb_default_vert);
-        this.K[1] = this.a.getResources().getDrawable(e.general__shared__thumb_seek_vert);
-        this.M.set(UTools.closeAnimation(this.a.getContext(), 2.0f), 0, UTools.closeAnimation(this.a.getContext(), 6.0f), UTools.closeAnimation(this.a.getContext(), 2.0f));
-        this.N[0] = this.a.getResources().getDrawable(e.general__shared__thumb_default_horz);
+        this.J.set(0, UTools.getMinimumHeight(this.a.getContext(), 2.0f), UTools.getMinimumHeight(this.a.getContext(), 2.0f), UTools.getMinimumHeight(this.a.getContext(), 6.0f));
+        this.K[0] = this.a.getResources().getDrawable(R.drawable.general__shared__thumb_default_vert);
+        this.K[1] = this.a.getResources().getDrawable(R.drawable.general__shared__thumb_seek_vert);
+        this.M.set(UTools.getMinimumHeight(this.a.getContext(), 2.0f), 0, UTools.getMinimumHeight(this.a.getContext(), 6.0f), UTools.getMinimumHeight(this.a.getContext(), 2.0f));
+        this.N[0] = this.a.getResources().getDrawable(R.drawable.general__shared__thumb_default_horz);
         this.e.a(this.f);
         this.e.a(this.g);
         this.e.a(new fd());
@@ -512,8 +512,8 @@ public abstract class ev implements Scrollable {
         this.E = cfVar;
     }
 
-    public void a(cg cgVar) {
-        this.F = cgVar;
+    public void a(OnScrollListener cgVar) {
+        this.scrollListener = cgVar;
     }
 
     public boolean Q() {
@@ -1023,7 +1023,7 @@ public abstract class ev implements Scrollable {
         int aC = aC();
         m = Math.max(o, Math.round(f2 * ((float) aC)));
         n = Math.round(f * ((float) aC)) + this.M.left;
-        this.L.set(n, (((int) this.h.height()) - this.M.bottom) - (ay.getIntrinsicHeight() > 0 ? ay.getIntrinsicHeight() : UTools.closeAnimation(this.a.getContext(), 5.0f)), m + n, ((int) this.h.height()) - this.M.bottom);
+        this.L.set(n, (((int) this.h.height()) - this.M.bottom) - (ay.getIntrinsicHeight() > 0 ? ay.getIntrinsicHeight() : UTools.getMinimumHeight(this.a.getContext(), 5.0f)), m + n, ((int) this.h.height()) - this.M.bottom);
         if (this.L.right > ((int) this.h.width()) - this.M.right) {
             this.L.offset((((int) this.h.width()) - this.M.right) - this.L.right, 0);
         }
@@ -1070,7 +1070,7 @@ public abstract class ev implements Scrollable {
         float f2 = ((float) p) / ((float) r);
         r = ax();
         int aD = aD();
-        int intrinsicWidth = az.getIntrinsicWidth() > 0 ? az.getIntrinsicWidth() : UTools.closeAnimation(this.a.getContext(), 5.0f);
+        int intrinsicWidth = az.getIntrinsicWidth() > 0 ? az.getIntrinsicWidth() : UTools.getMinimumHeight(this.a.getContext(), 5.0f);
         q = Math.round(f * ((float) aD)) + this.J.top;
         this.I.set((((int) this.h.width()) - intrinsicWidth) - this.J.right, q, ((int) this.h.width()) - this.J.right, Math.max(r, Math.round(f2 * ((float) aD))) + q);
         if (this.I.bottom > ((int) this.h.height()) - this.J.bottom) {
@@ -1080,12 +1080,12 @@ public abstract class ev implements Scrollable {
 
     private final int aw() {
         Drawable ay = ay();
-        return ay.getIntrinsicWidth() > 0 ? ay.getIntrinsicWidth() : UTools.closeAnimation(this.a.getContext(), 5.0f);
+        return ay.getIntrinsicWidth() > 0 ? ay.getIntrinsicWidth() : UTools.getMinimumHeight(this.a.getContext(), 5.0f);
     }
 
     private final int ax() {
         Drawable az = az();
-        return az.getIntrinsicHeight() > 0 ? az.getIntrinsicHeight() : UTools.closeAnimation(this.a.getContext(), 5.0f);
+        return az.getIntrinsicHeight() > 0 ? az.getIntrinsicHeight() : UTools.getMinimumHeight(this.a.getContext(), 5.0f);
     }
 
     private final Drawable ay() {
@@ -1172,8 +1172,8 @@ public abstract class ev implements Scrollable {
     }
 
     private final void b(ScrollState scrollState, ScrollState scrollState2) {
-        if (this.F != null) {
-            this.F.a(this, scrollState, scrollState2);
+        if (this.scrollListener != null) {
+            this.scrollListener.a(this, scrollState, scrollState2);
         }
         Iterator it = this.l.iterator();
         while (it.hasNext()) {
@@ -1182,8 +1182,8 @@ public abstract class ev implements Scrollable {
     }
 
     private final void g(boolean z) {
-        if (this.F != null) {
-            this.F.a(this, z);
+        if (this.scrollListener != null) {
+            this.scrollListener.a(this, z);
         }
         Iterator it = this.l.iterator();
         while (it.hasNext()) {

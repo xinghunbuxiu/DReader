@@ -60,7 +60,7 @@ public class ic extends ActivatedController {
         this.s = (ReaderFeature) getContext().queryFeature(ReaderFeature.class);
         View inflate = LayoutInflater.from(getContext()).inflate(h.bookshelf__sign_in_succeed_view, null);
         View epVar = new ep(getContext());
-        epVar.setForeground(new hn((float) UTools.closeAnimation(getContext(), 3.0f), (float) UTools.closeAnimation(getContext(), 3.0f), -16777216));
+        epVar.setForeground(new hn((float) UTools.getMinimumHeight(getContext(), 3.0f), (float) UTools.getMinimumHeight(getContext(), 3.0f), -16777216));
         epVar.addView(inflate);
         inflate = new FrameLayout(getContext());
         inflate.addView(epVar, new LayoutParams(-2, -2, 17));

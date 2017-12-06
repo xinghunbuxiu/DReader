@@ -53,8 +53,8 @@ public class PinView extends FrameLayout {
         this.b.setBackgroundResource(e.general__shared__pin_view_bg);
         this.b.setGravity(119);
         this.b.setLineGap(1.2999999523162842d);
-        this.b.setPadding(UTools.closeAnimation(context, 15.0f), UTools.closeAnimation(context, 15.0f), UTools.closeAnimation(context, 15.0f), UTools.closeAnimation(context, 15.0f));
-        this.c = new Point(UTools.closeAnimation(context, 4.0f), UTools.closeAnimation(context, 7.5f));
+        this.b.setPadding(UTools.getMinimumHeight(context, 15.0f), UTools.getMinimumHeight(context, 15.0f), UTools.getMinimumHeight(context, 15.0f), UTools.getMinimumHeight(context, 15.0f));
+        this.c = new Point(UTools.getMinimumHeight(context, 4.0f), UTools.getMinimumHeight(context, 7.5f));
         LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -2);
         layoutParams.leftMargin = this.c.x;
         layoutParams.topMargin = this.c.y;

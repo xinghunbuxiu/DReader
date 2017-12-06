@@ -16,7 +16,7 @@ class dw extends TextView {
     protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         if (MeasureSpec.getMode(i) != 1073741824) {
-            super.onMeasure(MeasureSpec.makeMeasureSpec((int) ((((float) getText().length()) * getTextSize()) + ((float) UTools.closeAnimation(getContext(), 30.0f))), 1073741824), i2);
+            super.onMeasure(MeasureSpec.makeMeasureSpec((int) ((((float) getText().length()) * getTextSize()) + ((float) UTools.getMinimumHeight(getContext(), 30.0f))), 1073741824), i2);
         }
     }
 

@@ -58,8 +58,8 @@ public abstract class ReaderUi extends UTools {
         if (DkPublic.isLandscape(context)) {
             return i / 2;
         }
-        int max = Math.max(Math.round(((float) i) * f), UTools.closeAnimation(context, 420.0f));
-        return max > i - UTools.closeAnimation(context, 40.0f) ? UTools.closeAnimation(context, 40.0f) : i - max;
+        int max = Math.max(Math.round(((float) i) * f), UTools.getMinimumHeight(context, 420.0f));
+        return max > i - UTools.getMinimumHeight(context, 40.0f) ? UTools.getMinimumHeight(context, 40.0f) : i - max;
     }
 
     public static int c(Context context, int i) {
@@ -185,7 +185,7 @@ public abstract class ReaderUi extends UTools {
         }
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int b = (displayMetrics.widthPixels > displayMetrics.heightPixels ? displayMetrics.heightPixels : displayMetrics.widthPixels) - UTools.closeAnimation((Context) activity, 30.0f);
+        int b = (displayMetrics.widthPixels > displayMetrics.heightPixels ? displayMetrics.heightPixels : displayMetrics.widthPixels) - UTools.getMinimumHeight((Context) activity, 30.0f);
         int dimensionPixelSize = activity.getResources().getDimensionPixelSize(d.general__shared__max_center_dialog_width_at_hd);
         if (dimensionPixelSize > b) {
             dimensionPixelSize = b;

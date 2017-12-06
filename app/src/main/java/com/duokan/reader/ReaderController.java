@@ -383,7 +383,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
 
             public int getPageHeaderHeight() {
                 if (getPageHeaderPaddingTop() == 0) {
-                    return this.a.getResources().getDimensionPixelSize(com.duokan.c.e.general__shared__page_header_height) - UTools.closeAnimation(this.a.getContext(), 15.0f);
+                    return this.a.getResources().getDimensionPixelSize(com.duokan.c.e.general__shared__page_header_height) - UTools.getMinimumHeight(this.a.getContext(), 15.0f);
                 }
                 return this.a.getResources().getDimensionPixelSize(com.duokan.c.e.general__shared__page_header_height);
             }

@@ -29,7 +29,7 @@ public class eq extends nm {
         this.b.setVisibility(8);
         this.l = (eo) MyContextWrapper.getFeature(context).queryFeature(eo.class);
         this.o = new ai(getContext());
-        this.o.setPadding(UTools.closeAnimation(getContext(), 15.0f), 0, 0, 0);
+        this.o.setPadding(UTools.getMinimumHeight(getContext(), 15.0f), 0, 0, 0);
         this.d.addView(this.o);
         this.d.setVisibility(4);
         this.a = new er(this, getContext());

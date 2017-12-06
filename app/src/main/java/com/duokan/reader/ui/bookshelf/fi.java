@@ -19,8 +19,8 @@ class fi extends Drawable {
         Rect bounds = getBounds();
         Paint paint = (Paint) UTools.b.getRect();
         paint.setColor(fh.e);
-        paint.setStrokeWidth((float) UTools.closeAnimation(this.a.getContext(), 2.0f));
-        canvas.drawLine(((float) (bounds.width() - UTools.closeAnimation(this.a.getContext(), 100.0f))) / 2.0f, ((float) (bounds.bottom - 1)) - (((float) UTools.closeAnimation(this.a.getContext(), 2.0f)) / 2.0f), ((float) (bounds.width() + UTools.closeAnimation(this.a.getContext(), 100.0f))) / 2.0f, ((float) (bounds.bottom - 1)) - (((float) UTools.closeAnimation(this.a.getContext(), 2.0f)) / 2.0f), paint);
+        paint.setStrokeWidth((float) UTools.getMinimumHeight(this.a.getContext(), 2.0f));
+        canvas.drawLine(((float) (bounds.width() - UTools.getMinimumHeight(this.a.getContext(), 100.0f))) / 2.0f, ((float) (bounds.bottom - 1)) - (((float) UTools.getMinimumHeight(this.a.getContext(), 2.0f)) / 2.0f), ((float) (bounds.width() + UTools.getMinimumHeight(this.a.getContext(), 100.0f))) / 2.0f, ((float) (bounds.bottom - 1)) - (((float) UTools.getMinimumHeight(this.a.getContext(), 2.0f)) / 2.0f), paint);
         paint.setColor(fh.f);
         paint.setStrokeWidth(2.0f);
         canvas.drawLine(0.0f, ((float) (bounds.bottom - 1)) - 1.0f, (float) bounds.right, ((float) (bounds.bottom - 1)) - 1.0f, paint);

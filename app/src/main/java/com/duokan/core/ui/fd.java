@@ -4,7 +4,7 @@ import android.graphics.PointF;
 import android.view.View;
 
 class fd implements bw, cu {
-    final /* synthetic */ ev a;
+    final ev a;
 
     private fd(ev evVar) {
         this.a = evVar;

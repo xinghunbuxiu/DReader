@@ -22,9 +22,9 @@ class yv implements OnClickListener {
                 rectArr[toolCount] = UTools.getRect(new Rect(), this.a.z.a(toolCount), null);
             }
             LayoutParams layoutParams = this.a.s.getLayoutParams();
-            layoutParams.width = UTools.closeAnimation(this.a.getContext(), 200.0f);
+            layoutParams.width = UTools.getMinimumHeight(this.a.getContext(), 200.0f);
             this.a.s.setLayoutParams(layoutParams);
-            this.a.y.leftMargin = UTools.closeAnimation(this.a.getContext(), 15.0f);
+            this.a.y.leftMargin = UTools.getMinimumHeight(this.a.getContext(), 15.0f);
             for (toolCount = 1; toolCount < this.a.s.getChildCount(); toolCount++) {
                 this.a.s.getChildAt(toolCount).setLayoutParams(this.a.y);
             }

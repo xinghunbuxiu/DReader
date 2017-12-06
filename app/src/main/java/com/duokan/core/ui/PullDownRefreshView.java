@@ -39,7 +39,7 @@ public class PullDownRefreshView extends PullDownRefreshBaseView {
         g();
         this.h = new ImageView(getContext());
         LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -2);
-        layoutParams.setMargins(0, UTools.closeAnimation(getContext(), 10.0f), 0, 0);
+        layoutParams.setMargins(0, UTools.getMinimumHeight(getContext(), 10.0f), 0, 0);
         addView(this.h, layoutParams);
     }
 
@@ -100,11 +100,11 @@ public class PullDownRefreshView extends PullDownRefreshBaseView {
             this.g = refreshStyle;
             if (this.g == RefreshStyle.STORE) {
                 this.h.setImageResource(e.general__shared__refresh_background);
-                this.a.setPadding(0, UTools.closeAnimation(getContext(), 10.0f), 0, UTools.closeAnimation(getContext(), 5.0f));
+                this.a.setPadding(0, UTools.getMinimumHeight(getContext(), 10.0f), 0, UTools.getMinimumHeight(getContext(), 5.0f));
             } else if (this.g == RefreshStyle.COMIC) {
                 this.a.setPadding(0, 0, 0, 0);
             } else {
-                this.a.setPadding(0, 0, 0, UTools.closeAnimation(getContext(), 10.0f));
+                this.a.setPadding(0, 0, 0, UTools.getMinimumHeight(getContext(), 10.0f));
             }
         }
     }

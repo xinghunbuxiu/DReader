@@ -195,7 +195,7 @@ public class FrameScrollView extends FrameLayout implements Scrollable {
         this.a.a(cfVar);
     }
 
-    public final void setOnScrollListener(cg cgVar) {
+    public final void setOnScrollListener(OnScrollListener cgVar) {
         this.a.a(cgVar);
     }
 

@@ -34,8 +34,8 @@ class bu extends af {
         pageHeaderView.setLeftTitle(j.personal__feedback_thread_view__title);
         View findViewById = findViewById(g.personal__feedback_reply_view__container);
         if (ReaderEnv.get().forHd()) {
-            pageHeaderView.setBackgroundDrawable(new hm(new ColorDrawable(Color.parseColor("#ffffff")), (float) UTools.closeAnimation(getContext(), 6.0f), 3));
-            findViewById.setBackgroundDrawable(new hm(new ColorDrawable(Color.parseColor("#efeff1")), (float) UTools.closeAnimation(getContext(), 6.0f), 12));
+            pageHeaderView.setBackgroundDrawable(new hm(new ColorDrawable(Color.parseColor("#ffffff")), (float) UTools.getMinimumHeight(getContext(), 6.0f), 3));
+            findViewById.setBackgroundDrawable(new hm(new ColorDrawable(Color.parseColor("#efeff1")), (float) UTools.getMinimumHeight(getContext(), 6.0f), 12));
         } else {
             pageHeaderView.setBackgroundColor(Color.parseColor("#ffffff"));
             findViewById.setBackgroundColor(Color.parseColor("#efeff1"));

@@ -70,7 +70,7 @@ public class ii extends gs {
         }
         if (this.z.h() && !TextUtils.isEmpty(this.k.K()) && !ReaderEnv.get().isVipDevice()) {
             A = this.k.z();
-            int max = Math.max(UTools.closeAnimation(getContext(), 10.0f), (int) (((double) this.k.p().f) * this.k.p().h));
+            int max = Math.max(UTools.getMinimumHeight(getContext(), 10.0f), (int) (((double) this.k.p().f) * this.k.p().h));
             this.D = this.z.bk().a(getContext(), (ViewGroup) this, A.height() - max);
             if (this.D != null) {
                 LayoutParams layoutParams = (LayoutParams) this.D.getLayoutParams();

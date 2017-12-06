@@ -21,8 +21,8 @@ class iy extends FrameLayout {
     private final el d;
     private final RectF e = new RectF();
     private final jb f;
-    private final int g = UTools.closeAnimation(getContext(), 150.0f);
-    private final int h = UTools.closeAnimation(getContext(), 180.0f);
+    private final int g = UTools.getMinimumHeight(getContext(), 150.0f);
+    private final int h = UTools.getMinimumHeight(getContext(), 180.0f);
 
     public iy(FixedPageClipView fixedPageClipView, Context context, sh shVar) {
         this.a = fixedPageClipView;
@@ -48,7 +48,7 @@ class iy extends FrameLayout {
 
     public ClipIndicator a(PointF pointF) {
         RectF c = c();
-        int b = UTools.closeAnimation(getContext(), 20.0f);
+        int b = UTools.getMinimumHeight(getContext(), 20.0f);
         if (new RectF(c.left - ((float) b), c.top - ((float) b), c.left + ((float) b), c.top + ((float) b)).contains(pointF.x, pointF.y)) {
             return ClipIndicator.LEFT_TOP;
         }
@@ -229,7 +229,7 @@ class iy extends FrameLayout {
     }
 
     private void d() {
-        int b = UTools.closeAnimation(getContext(), 20.0f);
+        int b = UTools.getMinimumHeight(getContext(), 20.0f);
         int width = getWidth();
         int height = getHeight();
         Drawable a = this.f.a();

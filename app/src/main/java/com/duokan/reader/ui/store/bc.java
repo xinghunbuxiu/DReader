@@ -29,7 +29,7 @@ public class bc extends HatGridView {
         setTitleView(pageHeaderView);
         Drawable dkVar = new dk(getResources().getColor(d.general__shared__bcbcbc));
         dkVar.a(0);
-        int b = UTools.closeAnimation(getContext(), 15.0f);
+        int b = UTools.getMinimumHeight(getContext(), 15.0f);
         dkVar.a(b, b);
         setRowDivider(dkVar);
         ITheme sVar = (ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class);

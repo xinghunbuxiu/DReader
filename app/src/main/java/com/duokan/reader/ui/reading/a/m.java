@@ -28,7 +28,7 @@ class m implements cu {
     }
 
     public void onTap(er erVar, View view, PointF pointF) {
-        Pair a = this.b.a.a(new Point((int) pointF.x, (int) pointF.y), UTools.closeAnimation(view.getContext(), 20.0f));
+        Pair a = this.b.a.a(new Point((int) pointF.x, (int) pointF.y), UTools.getMinimumHeight(view.getContext(), 20.0f));
         if (a != null) {
             this.a.a(a);
             this.b.d(true);

@@ -23,7 +23,7 @@ public class pr extends wk {
     public pr(IFeature featrue) {
         super(featrue);
         ViewGroup viewGroup = (ViewGroup) LayoutInflater.from(getContext()).inflate(g.reading__reading_brightness_view, null);
-        viewGroup.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? UTools.closeAnimation(getContext(), 400.0f) : -1, -2));
+        viewGroup.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? UTools.getMinimumHeight(getContext(), 400.0f) : -1, -2));
         setContentView((View) viewGroup);
         this.a = (sh) getContext().queryFeature(sh.class);
         this.b = (SeekBar) findViewById(f.reading__reading_brightness_view__seek_brightness);

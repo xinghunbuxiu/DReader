@@ -3,8 +3,8 @@ package com.duokan.core.ui;
 import com.duokan.core.ui.HatGridView.HatTipState;
 import com.duokan.core.ui.Scrollable.ScrollState;
 
-class ae implements cg {
-    final /* synthetic */ HatGridView a;
+class ae implements OnScrollListener {
+    final  HatGridView a;
 
     ae(HatGridView hatGridView) {
         this.a = hatGridView;

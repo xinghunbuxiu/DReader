@@ -17,7 +17,7 @@ class ak implements ag {
 
     public void a(String str) {
         try {
-            Bitmap a = l.a(str, UTools.closeAnimation(this.b.getContext(), 55.0f));
+            Bitmap a = l.a(str, UTools.getMinimumHeight(this.b.getContext(), 55.0f));
             if (a != null) {
                 this.b.i.setImageBitmap(a);
                 this.b.j.setText(this.a);

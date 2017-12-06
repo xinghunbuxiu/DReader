@@ -22,7 +22,7 @@ public class wg extends wk {
 
     public wg(IFeature featrue) {
         super(featrue);
-        this.b.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? UTools.closeAnimation(getContext(), 400.0f) : -1, -2));
+        this.b.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? UTools.getMinimumHeight(getContext(), 400.0f) : -1, -2));
         setContentView(this.b);
         this.d = (SeekBar) findViewById(f.reading__reading_options_view__seek_brightness);
         if (ReaderEnv.get().forHd()) {

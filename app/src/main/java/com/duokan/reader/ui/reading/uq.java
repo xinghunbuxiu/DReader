@@ -29,7 +29,7 @@ class uq extends wk {
     @SuppressLint({"NewApi"})
     public uq(IFeature featrue) {
         super(featrue);
-        this.b.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? UTools.closeAnimation(getContext(), 400.0f) : -1, -2));
+        this.b.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? UTools.getMinimumHeight(getContext(), 400.0f) : -1, -2));
         setContentView(this.b);
         this.d = findViewById(f.reading__reading_options_view);
         this.f = (FrameLayout) findViewById(f.reading__reading_options_bottom_view__sub_menu_frame);
@@ -57,7 +57,7 @@ class uq extends wk {
         findViewById(f.reading__reading_options_view__typesetting_custom).setOnClickListener(new vc(this));
         findViewById(f.reading__reading_options_view__more_themes).setOnClickListener(new ut(this));
         if (getContext().getResources().getDisplayMetrics().widthPixels < 720) {
-            findViewById(f.reading__reading_options_view__padding_panel).setPadding(UTools.closeAnimation(getContext(), 5.0f), 0, UTools.closeAnimation(getContext(), 5.0f), 0);
+            findViewById(f.reading__reading_options_view__padding_panel).setPadding(UTools.getMinimumHeight(getContext(), 5.0f), 0, UTools.getMinimumHeight(getContext(), 5.0f), 0);
         }
         b();
     }
@@ -150,7 +150,7 @@ class uq extends wk {
         if (this.j) {
             this.j = false;
         } else {
-            layoutParams.setMargins(UTools.closeAnimation(getContext(), 15.0f), 0, 0, 0);
+            layoutParams.setMargins(UTools.getMinimumHeight(getContext(), 15.0f), 0, 0, 0);
             com_duokan_reader_ui_reading_acz.setLayoutParams(layoutParams);
         }
         com_duokan_reader_ui_reading_acz.setOnClickListener(new uu(this, i));

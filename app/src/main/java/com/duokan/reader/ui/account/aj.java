@@ -23,7 +23,7 @@ class aj extends LinearLayout {
                 int measuredWidth = (getMeasuredWidth() - this.a.d.getMeasuredWidth()) - this.a.e.getMeasuredWidth();
                 int i3 = 15;
                 while (ceil > measuredWidth && i3 > 12) {
-                    paint.setTextSize((float) UTools.closeAnimation(getContext(), (float) i3));
+                    paint.setTextSize((float) UTools.getMinimumHeight(getContext(), (float) i3));
                     ceil = (int) Math.ceil((double) paint.measureText(String.valueOf(this.a.c.getText())));
                     i3--;
                 }

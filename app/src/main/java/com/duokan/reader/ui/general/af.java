@@ -114,7 +114,7 @@ public class af extends f {
 
     public void setContentBackgroundColor(int i) {
         if (ReaderEnv.get().forHd()) {
-            this.mContentContainer.setBackgroundDrawable(new hn((float) UTools.closeAnimation(getContext(), 7.0f), (float) UTools.closeAnimation(getContext(), 7.0f), i));
+            this.mContentContainer.setBackgroundDrawable(new hn((float) UTools.getMinimumHeight(getContext(), 7.0f), (float) UTools.getMinimumHeight(getContext(), 7.0f), i));
             return;
         }
         this.mContentContainer.setBackgroundColor(i);
@@ -166,7 +166,7 @@ public class af extends f {
     public static void initCenterDialogWebViewBg(WebView webView, int i) {
         if (ReaderEnv.get().forHd()) {
             MarginLayoutParams marginLayoutParams = (MarginLayoutParams) webView.getLayoutParams();
-            marginLayoutParams.bottomMargin = UTools.closeAnimation(webView.getContext(), 7.0f);
+            marginLayoutParams.bottomMargin = UTools.getMinimumHeight(webView.getContext(), 7.0f);
             webView.setLayoutParams(marginLayoutParams);
         }
         webView.setBackgroundColor(i);

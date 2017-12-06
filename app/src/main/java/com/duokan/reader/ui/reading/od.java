@@ -114,7 +114,7 @@ class od extends cd {
             z2 = imageView.getVisibility() != 0 && gVar.k();
             int h = gVar.h();
             if (h > 0) {
-                dkLabelView.setPadding((h * ((int) dkLabelView.getTextSize())) + UTools.closeAnimation(this.d.getContext(), 45.0f), 0, 0, 0);
+                dkLabelView.setPadding((h * ((int) dkLabelView.getTextSize())) + UTools.getMinimumHeight(this.d.getContext(), 45.0f), 0, 0, 0);
             } else {
                 dkLabelView.setPadding(0, 0, 0, 0);
             }
@@ -135,7 +135,7 @@ class od extends cd {
         } else if (this.d.getDocument() instanceof d) {
             r1 = gVar.h();
             if (r1 > 0) {
-                dkLabelView.setPadding((r1 * ((int) dkLabelView.getTextSize())) + UTools.closeAnimation(this.d.getContext(), 45.0f), 0, 0, 0);
+                dkLabelView.setPadding((r1 * ((int) dkLabelView.getTextSize())) + UTools.getMinimumHeight(this.d.getContext(), 45.0f), 0, 0, 0);
             } else {
                 dkLabelView.setPadding(0, 0, 0, 0);
             }
@@ -162,7 +162,7 @@ class od extends cd {
             boolean z3 = imageView.getVisibility() != 0 && gVar.k();
             r1 = gVar.h();
             if (r1 > 0) {
-                dkLabelView.setPadding((r1 * ((int) dkLabelView.getTextSize())) + UTools.closeAnimation(this.d.getContext(), 45.0f), 0, 0, 0);
+                dkLabelView.setPadding((r1 * ((int) dkLabelView.getTextSize())) + UTools.getMinimumHeight(this.d.getContext(), 45.0f), 0, 0, 0);
             } else {
                 dkLabelView.setPadding(0, 0, 0, 0);
             }

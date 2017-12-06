@@ -94,7 +94,7 @@ public class hp extends gx implements la {
         this.d.removeAllViews();
         for (int i2 = 0; i2 < zArr.length; i2++) {
             LayoutParams layoutParams = new LinearLayout.LayoutParams(0, -2, 1.0f);
-            layoutParams.setMargins(UTools.closeAnimation(getContext(), 2.0f), 0, UTools.closeAnimation(getContext(), 2.0f), 0);
+            layoutParams.setMargins(UTools.getMinimumHeight(getContext(), 2.0f), 0, UTools.getMinimumHeight(getContext(), 2.0f), 0);
             this.d.addView(a(i2, zArr[i2], i), layoutParams);
         }
         if (!this.a.a(PersonalAccount.class)) {

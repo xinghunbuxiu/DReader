@@ -320,7 +320,7 @@ public abstract class UTools {
         fArr2[1] = rectF.bottom;
         fArr2[2] = rectF.right;
         fArr2[3] = rectF.bottom;
-        getTranslateMatrix(matrix, view);
+        translate(matrix, view);
         matrix.invert(matrix2);
         matrix2.mapPoints(fArr);
         matrix2.mapPoints(fArr2);
@@ -349,7 +349,7 @@ public abstract class UTools {
         Matrix matrix = (Matrix) d.getRect();
         Matrix matrix2 = (Matrix) d.getRect();
         float[] fArr = (float[]) i.getRect();
-        getTranslateMatrix(matrix, view);
+        translate(matrix, view);
         matrix.invert(matrix2);
         fArr[0] = pointF.x;
         fArr[1] = pointF.y;
@@ -394,7 +394,7 @@ public abstract class UTools {
         fArr2[1] = rectF.bottom;
         fArr2[2] = rectF.right;
         fArr2[3] = rectF.bottom;
-        getTranslateMatrix(matrix, view);
+        translate(matrix, view);
         matrix.mapPoints(fArr);
         matrix.mapPoints(fArr2);
         rectF.left = Math.min(Math.min(fArr[0], fArr[2]), Math.min(fArr2[0], fArr2[2]));
@@ -420,7 +420,7 @@ public abstract class UTools {
     public static PointF getScaledTouchSlop(PointF pointF, View view) {
         Matrix matrix = (Matrix) d.getRect();
         float[] fArr = (float[]) i.getRect();
-        getTranslateMatrix(matrix, view);
+        translate(matrix, view);
         fArr[0] = pointF.x;
         fArr[1] = pointF.y;
         matrix.mapPoints(fArr);
@@ -434,8 +434,8 @@ public abstract class UTools {
     public static Matrix getTempMatrix(Matrix matrix, View view, View view2) {
         Matrix matrix2 = (Matrix) d.getRect();
         Matrix matrix3 = (Matrix) d.getRect();
-        getTranslateMatrix(matrix2, view);
-        getTranslateMatrix(matrix3, view2);
+        translate(matrix2, view);
+        translate(matrix3, view2);
         matrix3.invert(matrix);
         matrix.preConcat(matrix2);
         d.getRect(matrix3);
@@ -444,7 +444,7 @@ public abstract class UTools {
     }
 
     @TargetApi(11)
-    public static Matrix getTranslateMatrix(Matrix matrix, View view) {
+    public static Matrix translate(Matrix matrix, View view) {
         if (view != null) {
             while (true) {
                 matrix.postTranslate(-view.getScrollX(), -view.getScrollY());
@@ -554,7 +554,7 @@ public abstract class UTools {
             } else {
                 d -= 360.0d;
             }
-
+            return d;
         } else {
             throw new AssertionError();
         }
@@ -663,18 +663,18 @@ public abstract class UTools {
     }
 
     public static int defaultClose(Context context) {
-        return closeAnimation(context, 40.0f);
+        return getMinimumHeight(context, 40.0f);
     }
 
-    public static int g(Context context) {
-        return closeAnimation(context, 40.0f);
+    public static int getMinimumHeight(Context context) {
+        return getMinimumHeight(context, 40.0f);
     }
 
     public static int addAnimation(Context context, float f) {
         return Math.round(context.getResources().getDisplayMetrics().scaledDensity * f);
     }
 
-    public static int closeAnimation(Context context, float f) {
+    public static int getMinimumHeight(Context context, float f) {
         return Math.round(context.getResources().getDisplayMetrics().density * f);
     }
 

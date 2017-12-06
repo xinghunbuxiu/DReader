@@ -8,11 +8,11 @@ import android.widget.TextView;
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
 import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 
 import org.apache.http.HttpStatus;
 
-class bk implements cg {
+class bk implements OnScrollListener {
     final /* synthetic */ StorePageController a;
 
     bk(StorePageController storePageController) {
@@ -29,7 +29,7 @@ class bk implements cg {
             int a = this.a.mImmersive ? this.a.mWebView.getContentHeight() - this.a.mBannerInfo.a <= UTools.getHeightPixels(this.a.getContext()) - this.a.getHeaderViewOffset() ? 0 : (int) (UTools.addAnimation(((((float) max) - ((float) this.a.mBannerInfo.a)) / ((float) Math.min(this.a.mBannerInfo.a - this.a.getHeaderViewOffset(), this.a.getHeaderViewOffset()))) + 1.0f) * 255.0f) : 255;
             this.a.mPageHeaderView.setBackgroundColor(Color.argb(a, 248, 248, 248));
             this.a.mPageHeaderView.setBottomLineColor(Color.argb(a, HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT));
-            int b = UTools.closeAnimation(this.a.getContext(), 40.0f);
+            int b = UTools.getMinimumHeight(this.a.getContext(), 40.0f);
             if (a != 255 || this.a.mTabsTitle.isEmpty() || this.a.mWebView.getContentHeight() - this.a.mSurfingBarOffset <= UTools.getHeightPixels(this.a.getContext()) - this.a.getHeaderViewOffset()) {
                 tabState = TabState.DEFAULT;
             } else if (max >= this.a.mSurfingBarOffset - b && max < this.a.mSurfingBarOffset - (b / 2)) {
@@ -67,7 +67,7 @@ class bk implements cg {
                     centerTitleView.setVisibility(4);
                     float a2 = 1.0f - UTools.addAnimation((((float) (((b / 2) + max) - this.a.mSurfingBarOffset)) / ((float) b)) * 2.0f);
                     centerButtonView.setAlpha(1.0f - a2);
-                    centerButtonView.setPadding(0, (int) (a2 * ((float) UTools.closeAnimation(this.a.getContext(), 20.0f))), 0, 0);
+                    centerButtonView.setPadding(0, (int) (a2 * ((float) UTools.getMinimumHeight(this.a.getContext(), 20.0f))), 0, 0);
                     break;
                 default:
                     centerButtonView.setAlpha(1.0f);

@@ -19,7 +19,7 @@ class hc extends Drawable {
     }
 
     public void draw(Canvas canvas) {
-        float width = (float) ((this.a.getWidth() / 2) - UTools.closeAnimation(this.b.getContext(), 3.0f));
+        float width = (float) ((this.a.getWidth() / 2) - UTools.getMinimumHeight(this.b.getContext(), 3.0f));
         Paint paint = new Paint();
         paint.setColor(Color.parseColor("#cccccc"));
         paint.setAntiAlias(true);

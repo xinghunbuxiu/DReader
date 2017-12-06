@@ -24,10 +24,10 @@ class kg extends Drawable {
         Rect rect2 = (Rect) UTools.g.getRect();
         rect.set(this.a.d.getLeft() + this.a.d.getPaddingLeft(), this.a.d.getTop(), this.a.d.getRight() - this.a.d.getPaddingRight(), this.a.d.getBottom());
         rect2.set(rect);
-        rect2.offset(0, -UTools.closeAnimation(this.a.getContext(), 10.0f));
+        rect2.offset(0, -UTools.getMinimumHeight(this.a.getContext(), 10.0f));
         UTools.addAnimation(canvas, this.a.getResources().getDrawable(f.guide__shared__finger_01), rect2, 85);
         rect2.set(rect);
-        rect2.inset(-UTools.closeAnimation(this.a.getContext(), 30.0f), 0);
+        rect2.inset(-UTools.getMinimumHeight(this.a.getContext(), 30.0f), 0);
         paint.setColor(-1);
         paint.setSubpixelText(true);
         paint.setTextSize((float) this.a.getResources().getDimensionPixelSize(e.general_font__shared__d));

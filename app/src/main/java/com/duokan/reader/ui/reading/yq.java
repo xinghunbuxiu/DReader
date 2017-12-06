@@ -33,12 +33,12 @@ class yq implements OnClickListener {
                 this.a.z.a(this.a.k);
             }
             for (i = 0; i < this.a.z.getToolCount(); i++) {
-                this.a.z.a(i).setPadding(0, 0, UTools.closeAnimation(this.a.getContext(), 20.0f), 0);
+                this.a.z.a(i).setPadding(0, 0, UTools.getMinimumHeight(this.a.getContext(), 20.0f), 0);
             }
-            this.a.z.a(UTools.closeAnimation(this.a.getContext(), 10.0f), 0, UTools.closeAnimation(this.a.getContext(), 10.0f), 0);
+            this.a.z.a(UTools.getMinimumHeight(this.a.getContext(), 10.0f), 0, UTools.getMinimumHeight(this.a.getContext(), 10.0f), 0);
         }
         this.a.d();
-        this.a.y.leftMargin = UTools.closeAnimation(this.a.getContext(), -25.0f);
+        this.a.y.leftMargin = UTools.getMinimumHeight(this.a.getContext(), -25.0f);
         for (i = 1; i < this.a.s.getChildCount(); i++) {
             this.a.s.getChildAt(i).setLayoutParams(this.a.y);
         }

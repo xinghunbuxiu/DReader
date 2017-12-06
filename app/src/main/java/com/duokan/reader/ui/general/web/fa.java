@@ -30,7 +30,7 @@ class fa implements as {
         Rect rect = new Rect();
         int i2 = jSONArray2.getInt(0);
         int i3 = jSONArray2.getInt(1);
-        rect.set(UTools.closeAnimation(this.b.pageController.getContext(), (float) i2), UTools.closeAnimation(this.b.pageController.getContext(), (float) i3), UTools.closeAnimation(this.b.pageController.getContext(), (float) (i2 + jSONArray2.getInt(2))), UTools.closeAnimation(this.b.pageController.getContext(), (float) (i3 + jSONArray2.getInt(3))));
+        rect.set(UTools.getMinimumHeight(this.b.pageController.getContext(), (float) i2), UTools.getMinimumHeight(this.b.pageController.getContext(), (float) i3), UTools.getMinimumHeight(this.b.pageController.getContext(), (float) (i2 + jSONArray2.getInt(2))), UTools.getMinimumHeight(this.b.pageController.getContext(), (float) (i3 + jSONArray2.getInt(3))));
         this.b.a(new fb(this, rect, strArr, string));
     }
 }

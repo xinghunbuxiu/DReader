@@ -20,7 +20,7 @@ public class c extends er {
     }
 
     protected void c(View view, MotionEvent motionEvent, boolean z, es esVar) {
-        if (motionEvent.getX() < ((float) UTools.closeAnimation(view.getContext(), 23.0f))) {
+        if (motionEvent.getX() < ((float) UTools.getMinimumHeight(view.getContext(), 23.0f))) {
             c(true);
         } else if (!(this.a.a() || this.e)) {
             b(false);

@@ -24,7 +24,7 @@ class acz extends FrameLayout {
         View epVar = new ep(getContext());
         epVar.setBackgroundDrawable(drawable);
         epVar.setForeground(getResources().getDrawable(e.reading__color_view__mask_small));
-        this.a.addView(epVar, new LayoutParams(UTools.closeAnimation(getContext(), 32.0f), UTools.closeAnimation(getContext(), 32.0f), 17));
+        this.a.addView(epVar, new LayoutParams(UTools.getMinimumHeight(getContext(), 32.0f), UTools.getMinimumHeight(getContext(), 32.0f), 17));
         this.a.setForeground(getResources().getDrawable(e.reading__reading_options_view__icon_border_selected));
         this.a.setForegroundGravity(17);
         addView(this.a);
@@ -32,7 +32,7 @@ class acz extends FrameLayout {
         epVar = new ep(getContext());
         epVar.setBackgroundDrawable(drawable);
         epVar.setForeground(getResources().getDrawable(e.reading__color_view__mask));
-        this.b.addView(epVar, new LayoutParams(UTools.closeAnimation(getContext(), 32.0f), UTools.closeAnimation(getContext(), 32.0f), 17));
+        this.b.addView(epVar, new LayoutParams(UTools.getMinimumHeight(getContext(), 32.0f), UTools.getMinimumHeight(getContext(), 32.0f), 17));
         addView(this.b);
     }
 

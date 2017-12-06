@@ -750,7 +750,7 @@ public abstract class rx implements iv, at, sh {
             }
         }
         if (bf()) {
-            rect.bottom = Math.max(rect.bottom, UTools.closeAnimation(this.c.getContext(), 30.0f));
+            rect.bottom = Math.max(rect.bottom, UTools.getMinimumHeight(this.c.getContext(), 30.0f));
         }
         return rect;
     }

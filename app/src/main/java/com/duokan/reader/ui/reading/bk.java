@@ -57,7 +57,7 @@ public class bk extends FrameLayout {
         DkNumView dkNumView = new DkNumView(context, null);
         dkNumView.setTextColor(-1);
         dkNumView.setGravity(17);
-        dkNumView.setTextSize((float) UTools.closeAnimation(context, 8.0f));
+        dkNumView.setTextSize((float) UTools.getMinimumHeight(context, 8.0f));
         dkNumView.setBackgroundResource(e.reading__callout_indicator_view__item_bg_1);
         return dkNumView;
     }

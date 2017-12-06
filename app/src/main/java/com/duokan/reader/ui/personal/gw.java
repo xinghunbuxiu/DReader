@@ -26,8 +26,8 @@ class gw extends FrameLayout {
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         this.a.layout(i, this.b.top, i3, this.b.bottom);
-        int b = UTools.closeAnimation(getContext(), 78.0f);
-        int b2 = UTools.closeAnimation(getContext(), 5.0f);
+        int b = UTools.getMinimumHeight(getContext(), 78.0f);
+        int b2 = UTools.getMinimumHeight(getContext(), 5.0f);
         this.c.layout(i + b, (this.a.getTop() - this.c.getMeasuredHeight()) - b2, b + this.c.getMeasuredWidth(), this.a.getTop() - b2);
         this.d.layout(this.c.getRight() + b2, (this.c.getTop() - this.d.getMeasuredHeight()) - b2, (this.c.getRight() + this.d.getMeasuredWidth()) + b2, this.c.getTop() - b2);
     }

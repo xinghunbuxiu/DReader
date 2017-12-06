@@ -72,7 +72,7 @@ public class adm extends hd implements SystemUiConditioner {
         imageView.setContentDescription(getResources().getString(j.reading__tts_menu_view__open));
         imageView.setBackgroundResource(f.general__shared__button_circular_48dip);
         this.f = new FrameLayout(getContext());
-        this.f.setPadding(0, 0, UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 30.0f));
+        this.f.setPadding(0, 0, UTools.getMinimumHeight(getContext(), 15.0f), UTools.getMinimumHeight(getContext(), 30.0f));
         this.f.setOnClickListener(new adt(this));
         this.f.addView(imageView, new LayoutParams(-2, -2));
         this.c.addView(this.f, new LayoutParams(-2, -2, 85));
@@ -341,7 +341,7 @@ public class adm extends hd implements SystemUiConditioner {
                         aa = iVar.c();
                     }
                 }
-                int b = UTools.closeAnimation(getContext(), 3.0f);
+                int b = UTools.getMinimumHeight(getContext(), 3.0f);
                 rect.left = aa.getBounds().left;
                 rect.top = this.m.c.y - (b / 2);
                 rect.right = aa.getBounds().right;

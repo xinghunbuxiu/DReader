@@ -24,15 +24,15 @@ public class cd extends nm {
         this.b.setVisibility(8);
         this.c.setVisibility(8);
         setAdapter(this.k);
-        this.e.setRowDivider(new InsetDrawable(new dk(getResources().getColor(d.general__shared__e9e9e9)), UTools.closeAnimation(getContext(), 3.0f), 0, 0, 0));
+        this.e.setRowDivider(new InsetDrawable(new dk(getResources().getColor(d.general__shared__e9e9e9)), UTools.getMinimumHeight(getContext(), 3.0f), 0, 0, 0));
         setBackgroundColor(getContext().getResources().getColor(d.general__shared__ffffff));
         ITheme sVar = (ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class);
         if (ReaderEnv.get().forHd()) {
-            int b = UTools.closeAnimation(getContext(), 15.0f);
+            int b = UTools.getMinimumHeight(getContext(), 15.0f);
             this.e.a(b, 0, b, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
             return;
         }
-        b = UTools.closeAnimation(getContext(), 10.0f);
+        b = UTools.getMinimumHeight(getContext(), 10.0f);
         this.e.a(b, 0, b, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
     }
 

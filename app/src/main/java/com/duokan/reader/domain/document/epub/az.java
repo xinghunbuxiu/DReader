@@ -1201,7 +1201,7 @@ public class az extends as implements ba, bd, cc {
             int i3 = p.c.left;
             a = getBounds().height() - p.c.bottom;
             int width2 = getBounds().width() - p.c.right;
-            int width3 = (this.g.n && this.g.r && this.u != null) ? UTools.addAnimation(rect2, this.a, this.u, (float) (getBounds().width() - p.c.right)).width() + UTools.closeAnimation(DkApp.get().getTopActivity(), 10.0f) : 0;
+            int width3 = (this.g.n && this.g.r && this.u != null) ? UTools.addAnimation(rect2, this.a, this.u, (float) (getBounds().width() - p.c.right)).width() + UTools.getMinimumHeight(DkApp.get().getTopActivity(), 10.0f) : 0;
             rect.set(i3, a, width2 - width3, (getBounds().height() - p.c.bottom) + q.f);
             UTools.addAnimation(canvas, this.v, rect, (this.g.n ? 5 : 1) | 16, this.a);
             UTools.g.getRect(rect2);

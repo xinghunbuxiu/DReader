@@ -84,7 +84,7 @@ public class PagesFrameView extends FrameLayout {
         this.c = new bc(getContext());
         this.d = new je(getContext());
         this.d.a().setSubpixelText(true);
-        this.d.a().setTextSize((float) UTools.closeAnimation(getContext(), 14.0f));
+        this.d.a().setTextSize((float) UTools.getMinimumHeight(getContext(), 14.0f));
         this.d.a().setAntiAlias(true);
         this.d.a(19);
         getContext().registerReceiver(this.l, new IntentFilter("android.intent.action.BATTERY_CHANGED"));
@@ -262,13 +262,13 @@ public class PagesFrameView extends FrameLayout {
                         this.c.setBounds(rect2);
                         this.c.draw(canvas);
                         Rect rect3 = (Rect) UTools.g.getRect();
-                        rect3.set(rect2.right + UTools.closeAnimation(getContext(), 8.0f), getHeight() - rect.bottom, getWidth() - rect.right, (getHeight() - rect.bottom) + this.c.getIntrinsicHeight());
+                        rect3.set(rect2.right + UTools.getMinimumHeight(getContext(), 8.0f), getHeight() - rect.bottom, getWidth() - rect.right, (getHeight() - rect.bottom) + this.c.getIntrinsicHeight());
                         this.d.setBounds(rect3);
                         this.d.draw(canvas);
                         UTools.g.getRect(rect3);
                         UTools.g.getRect(rect2);
                         if (this.a.bf()) {
-                            this.a.a(canvas, getWidth() / 2, (this.c.getIntrinsicHeight() / 2) + (getHeight() - rect.bottom), getHeight() - UTools.closeAnimation(getContext(), 65.0f), getHeight(), this.d.a().getColor());
+                            this.a.a(canvas, getWidth() / 2, (this.c.getIntrinsicHeight() / 2) + (getHeight() - rect.bottom), getHeight() - UTools.getMinimumHeight(getContext(), 65.0f), getHeight(), this.d.a().getColor());
                         }
                         if (!TextUtils.isEmpty(this.h)) {
                             this.b.setColor(this.e);
@@ -276,7 +276,7 @@ public class PagesFrameView extends FrameLayout {
                             a(canvas, this.g, 53, this.b);
                         }
                     } else if (this.a.bf()) {
-                        this.a.a(canvas, getWidth() / 2, getHeight() - (this.j.getHeight() / 2), getHeight() - UTools.closeAnimation(getContext(), 65.0f), getHeight(), this.d.a().getColor());
+                        this.a.a(canvas, getWidth() / 2, getHeight() - (this.j.getHeight() / 2), getHeight() - UTools.getMinimumHeight(getContext(), 65.0f), getHeight(), this.d.a().getColor());
                     }
                 }
             }
@@ -307,7 +307,7 @@ public class PagesFrameView extends FrameLayout {
                     canvas.drawRect(0.0f, 0.0f, (float) this.i.getWidth(), (float) this.i.getHeight(), paint);
                 }
             }
-            int b = (k.c.bottom + k.d.bottom) + UTools.closeAnimation(getContext(), 5.0f);
+            int b = (k.c.bottom + k.d.bottom) + UTools.getMinimumHeight(getContext(), 5.0f);
             if (this.j == null || this.j.getWidth() != getWidth() || this.j.getHeight() != b) {
                 int intrinsicHeight;
                 if (this.j != null) {

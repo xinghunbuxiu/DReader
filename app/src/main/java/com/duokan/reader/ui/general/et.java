@@ -19,7 +19,7 @@ public class et extends Drawable {
     public et(Context context) {
         this.a.setColor(-1);
         this.a.setFakeBoldText(true);
-        this.a.setTextSize((float) UTools.closeAnimation(context, 10.0f));
+        this.a.setTextSize((float) UTools.getMinimumHeight(context, 10.0f));
         this.a.setAntiAlias(true);
         this.a.setSubpixelText(true);
         this.b = context.getResources().getDrawable(e.general__shared__message_bubble);

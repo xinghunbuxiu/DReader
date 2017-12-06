@@ -35,17 +35,17 @@ public class g extends Drawable {
     public g(Context context, sh shVar) {
         this.a = context;
         this.b = shVar;
-        this.c = UTools.closeAnimation(context, 80.0f);
-        this.d = UTools.closeAnimation(context, 25.0f);
+        this.c = UTools.getMinimumHeight(context, 80.0f);
+        this.d = UTools.getMinimumHeight(context, 25.0f);
         this.k = context.getResources().getString(i.reading__shared__add_to_bookshelf_ok_plus);
         this.g = (ej) shVar.G();
         this.e = new Paint();
         this.e.setColor(Color.parseColor("#cccccc"));
         this.e.setAntiAlias(true);
         this.f = new Paint(this.e);
-        this.f.setTextSize((float) UTools.closeAnimation(context, 14.0f));
+        this.f.setTextSize((float) UTools.getMinimumHeight(context, 14.0f));
         this.f.setSubpixelText(true);
-        this.e.setStrokeWidth((float) UTools.closeAnimation(context, 1.0f));
+        this.e.setStrokeWidth((float) UTools.getMinimumHeight(context, 1.0f));
         this.e.setStyle(Style.STROKE);
     }
 

@@ -9,7 +9,7 @@ class cm implements Runnable {
 
     public cm(bz bzVar, int i) {
         this.b = bzVar;
-        this.a = (i > 0 ? 1 : -1) * UTools.closeAnimation(bzVar.a.getContext(), 7.0f);
+        this.a = (i > 0 ? 1 : -1) * UTools.getMinimumHeight(bzVar.a.getContext(), 7.0f);
     }
 
     public void run() {

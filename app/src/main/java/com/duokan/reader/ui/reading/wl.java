@@ -15,7 +15,7 @@ import com.duokan.core.io.FileUtils;
 import com.duokan.core.sys.ah;
 import com.duokan.core.sys.o;
 import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.DkPublic;
@@ -205,7 +205,7 @@ public abstract class wl extends FrameLayout {
         getFlowPagesView().getScrollDetector().a(esVar);
     }
 
-    public void setOnScrollListener(cg cgVar) {
+    public void setOnScrollListener(OnScrollListener cgVar) {
         if (getFixedPagesView() != null) {
             getFixedPagesView().setOnScrollListener(cgVar);
         }

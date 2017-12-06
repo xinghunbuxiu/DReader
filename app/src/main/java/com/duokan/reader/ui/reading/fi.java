@@ -270,11 +270,11 @@ public class fi extends FixedPagesView implements gy {
     }
 
     public boolean c(int i, int i2) {
-        return i2 < UTools.closeAnimation(getContext(), 50.0f);
+        return i2 < UTools.getMinimumHeight(getContext(), 50.0f);
     }
 
     public boolean d(int i, int i2) {
-        return i2 > getHeight() - UTools.closeAnimation(getContext(), 50.0f);
+        return i2 > getHeight() - UTools.getMinimumHeight(getContext(), 50.0f);
     }
 
     public void d(bb bbVar) {

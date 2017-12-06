@@ -205,7 +205,7 @@ public class LinearScrollView extends LinearLayout implements Scrollable {
         this.a.a(cfVar);
     }
 
-    public void setOnScrollListener(cg cgVar) {
+    public void setOnScrollListener(OnScrollListener cgVar) {
         this.a.a(cgVar);
     }
 
@@ -315,7 +315,7 @@ public class LinearScrollView extends LinearLayout implements Scrollable {
                 setMaxOverScrollWidth(UTools.defaultClose(getContext()));
             } else {
                 setMaxOverScrollWidth(0);
-                setMaxOverScrollHeight(UTools.g(getContext()));
+                setMaxOverScrollHeight(UTools.getMinimumHeight(getContext()));
             }
         }
         this.a.a(z, i, i2, i3, i4);

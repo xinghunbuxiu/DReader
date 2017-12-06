@@ -116,7 +116,7 @@ public class TranslationController extends ActivatedController {
             View com_duokan_reader_ui_general_deprecatedDkTextView = new deprecatedDkTextView(getContext());
             this.b.addView(com_duokan_reader_ui_general_deprecatedDkTextView, new LayoutParams(-1, -2));
             com_duokan_reader_ui_general_deprecatedDkTextView.setGravity(119);
-            com_duokan_reader_ui_general_deprecatedDkTextView.setPadding(0, UTools.closeAnimation(getContext(), 10.0f), 0, 0);
+            com_duokan_reader_ui_general_deprecatedDkTextView.setPadding(0, UTools.getMinimumHeight(getContext(), 10.0f), 0, 0);
             com_duokan_reader_ui_general_deprecatedDkTextView.setChsToChtChars(d().T());
             com_duokan_reader_ui_general_deprecatedDkTextView.setTextSize(Math.round(((float) d().C()) * 0.875f));
             int rgb = Color.rgb(HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT);

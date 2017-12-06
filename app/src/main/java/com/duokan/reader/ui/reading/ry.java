@@ -16,7 +16,7 @@ class ry implements IWindowRecord {
 
     public int getPageHeaderHeight() {
         if (getPageHeaderPaddingTop() == 0) {
-            return this.a.c.getResources().getDimensionPixelSize(e.general__shared__page_header_height) - UTools.closeAnimation(this.a.c.getContext(), 15.0f);
+            return this.a.c.getResources().getDimensionPixelSize(e.general__shared__page_header_height) - UTools.getMinimumHeight(this.a.c.getContext(), 15.0f);
         }
         return this.a.c.getResources().getDimensionPixelSize(e.general__shared__page_header_height);
     }
@@ -29,7 +29,7 @@ class ry implements IWindowRecord {
         if (identifier > 0) {
             return this.a.c.getResources().getDimensionPixelSize(identifier);
         }
-        return UTools.closeAnimation(this.a.c.getContext(), 20.0f);
+        return UTools.getMinimumHeight(this.a.c.getContext(), 20.0f);
     }
 
     public int getHeaderPaddingTop() {

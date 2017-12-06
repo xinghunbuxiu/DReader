@@ -143,7 +143,7 @@ public class kd extends ActivatedController {
                     options.inJustDecodeBounds = true;
                     BitmapFactory.decodeFile(knVar.g.getAbsolutePath(), options);
                     Options options2 = new Options();
-                    int b = UTools.closeAnimation(getContext(), 64.0f);
+                    int b = UTools.getMinimumHeight(getContext(), 64.0f);
                     options2.inSampleSize = Math.min(options.outWidth / b, options.outHeight / b);
                     Bitmap decodeFile = BitmapFactory.decodeFile(knVar.g.getAbsolutePath(), options2);
                     View imageView = new ImageView(getContext());

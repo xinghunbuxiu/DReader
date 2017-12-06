@@ -25,7 +25,7 @@ public class fd extends wk {
     public fd(IFeature featrue) {
         int i;
         super(featrue);
-        this.b.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? UTools.closeAnimation(getContext(), 400.0f) : -1, -2));
+        this.b.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? UTools.getMinimumHeight(getContext(), 400.0f) : -1, -2));
         setContentView(this.b);
         this.c = new ReadingTheme[]{ReadingTheme.THEME7, ReadingTheme.THEME1, ReadingTheme.THEME2, ReadingTheme.THEME3, ReadingTheme.THEME4, ReadingTheme.THEME6, ReadingTheme.THEME9, ReadingTheme.THEME8, ReadingTheme.THEME10, ReadingTheme.THEME11, ReadingTheme.THEME12, ReadingTheme.THEME17, ReadingTheme.THEME13, ReadingTheme.THEME15, ReadingTheme.THEME14, ReadingTheme.THEME16, ReadingTheme.THEME18};
         this.d = (LinearLayout) findViewById(f.reading__reading_options_view__theme_bar_1);

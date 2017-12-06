@@ -25,7 +25,7 @@ public class al extends er {
         dtVar.b(view, z2);
         this.c.b(75.0f);
         this.c.c(105.0f);
-        this.c.a(UTools.closeAnimation(view.getContext(), 15.0f));
+        this.c.a(UTools.getMinimumHeight(view.getContext(), 15.0f));
     }
 
     protected void c(View view, MotionEvent motionEvent, boolean z, es esVar) {

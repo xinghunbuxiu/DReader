@@ -35,7 +35,7 @@ public class eh {
     }
 
     public static int a(Context context, int i) {
-        return a(context, i, UTools.closeAnimation(context, 380.0f));
+        return a(context, i, UTools.getMinimumHeight(context, 380.0f));
     }
 
     public static int a(Context context, int i, int i2) {

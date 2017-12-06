@@ -485,7 +485,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         this.a.a(cfVar);
     }
 
-    public final void setOnScrollListener(cg cgVar) {
+    public final void setOnScrollListener(OnScrollListener cgVar) {
         this.a.a(cgVar);
     }
 

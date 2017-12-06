@@ -19,7 +19,7 @@ public class br extends ActivatedController {
     private final ds a = new bs(this, getContext());
     private final ArrayList b = new ArrayList();
     private final Set c = new HashSet();
-    private final int d = UTools.closeAnimation(getContext(), 200.0f);
+    private final int d = UTools.getMinimumHeight(getContext(), 200.0f);
 
     public br(IFeature featrue) {
         super(featrue);

@@ -42,7 +42,7 @@ public class fr extends ViewGroup implements Scrollable {
         setClipChildren(false);
         setClipToPadding(false);
         this.b.c(true);
-        this.b.d(UTools.g(getContext()));
+        this.b.d(UTools.getMinimumHeight(getContext()));
     }
 
     public final int getContentWidth() {
@@ -205,7 +205,7 @@ public class fr extends ViewGroup implements Scrollable {
         this.b.a(cfVar);
     }
 
-    public void setOnScrollListener(cg cgVar) {
+    public void setOnScrollListener(OnScrollListener cgVar) {
         this.b.a(cgVar);
     }
 

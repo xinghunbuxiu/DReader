@@ -127,7 +127,7 @@ public class HeaderView extends FrameLayout {
         View imageView = new ImageView(getContext());
         imageView.setImageDrawable(drawable);
         imageView.setScaleType(ScaleType.CENTER);
-        imageView.setMinimumWidth(UTools.closeAnimation(getContext(), 40.0f));
+        imageView.setMinimumWidth(UTools.getMinimumHeight(getContext(), 40.0f));
         this.c.addView(imageView, 0, new LinearLayout.LayoutParams(-2, -1));
         return imageView;
     }
@@ -142,7 +142,7 @@ public class HeaderView extends FrameLayout {
         if (!TextUtils.isEmpty(str)) {
             View textView = new TextView(getContext());
             textView.setTextSize(16.0f);
-            textView.setPadding(UTools.closeAnimation(getContext(), 15.0f), 0, UTools.closeAnimation(getContext(), 15.0f), 0);
+            textView.setPadding(UTools.getMinimumHeight(getContext(), 15.0f), 0, UTools.getMinimumHeight(getContext(), 15.0f), 0);
             textView.setGravity(17);
             textView.setText(str);
             textView.setSingleLine(true);
@@ -206,7 +206,7 @@ public class HeaderView extends FrameLayout {
         textView.setTextColor(getResources().getColor(c.general__shared__c5));
         textView.setText(str);
         textView.setGravity(17);
-        int b = UTools.closeAnimation(getContext(), 15.0f);
+        int b = UTools.getMinimumHeight(getContext(), 15.0f);
         textView.setPadding(b, 0, b, 0);
         return textView;
     }

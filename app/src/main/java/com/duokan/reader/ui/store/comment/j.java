@@ -70,7 +70,7 @@ public class j extends af {
     protected void initHdContent(FrameLayout frameLayout, LayoutParams layoutParams) {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int b = (displayMetrics.widthPixels > displayMetrics.heightPixels ? displayMetrics.heightPixels : displayMetrics.widthPixels) - UTools.closeAnimation(getActivity(), 30.0f);
+        int b = (displayMetrics.widthPixels > displayMetrics.heightPixels ? displayMetrics.heightPixels : displayMetrics.widthPixels) - UTools.getMinimumHeight(getActivity(), 30.0f);
         layoutParams.width = (b * 4) / 5;
         layoutParams.height = b;
         layoutParams.gravity = 17;

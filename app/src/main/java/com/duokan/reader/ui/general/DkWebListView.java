@@ -21,7 +21,7 @@ import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.an;
 import com.duokan.core.ui.ao;
 import com.duokan.core.ui.cf;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 import com.duokan.core.ui.et;
 
 public class DkWebListView extends FrameLayout implements Scrollable {
@@ -31,7 +31,7 @@ public class DkWebListView extends FrameLayout implements Scrollable {
     private final bp d;
     private View e;
     private boolean f;
-    private cg g;
+    private OnScrollListener g;
     private an h;
     private ao i;
 
@@ -63,7 +63,7 @@ public class DkWebListView extends FrameLayout implements Scrollable {
         this.c = new PullDownRefreshView(getContext());
         this.b.addView(this.c, new LayoutParams(-1, -2));
         this.a.setHatTipView(this.b);
-        this.a.a(0, UTools.closeAnimation(getContext(), 60.0f), 0, 0);
+        this.a.a(0, UTools.getMinimumHeight(getContext(), 60.0f), 0, 0);
         this.a.setOnScrollListener(new bg(this));
         addView(this.a, new FrameLayout.LayoutParams(-1, -1));
         setBackgroundColor(getResources().getColor(c.general__shared__eeeeee));
@@ -504,7 +504,7 @@ public class DkWebListView extends FrameLayout implements Scrollable {
         this.a.setOnContentBoundsChangedListener(cfVar);
     }
 
-    public final void setOnScrollListener(cg cgVar) {
+    public final void setOnScrollListener(OnScrollListener cgVar) {
         this.g = cgVar;
     }
 

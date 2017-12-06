@@ -218,7 +218,7 @@ public class UmengManager implements IActivityLife {
         int i = context.getResources().getDisplayMetrics().heightPixels;
         boxView.setMaxHeight(i / 2);
         boxView.setMinimumHeight(i / 7);
-        ((FrameScrollView) inflate.findViewById(com.duokan.b.f.general__auto_update_content__scrollview)).setMaxOverScrollHeight(UTools.g(context));
+        ((FrameScrollView) inflate.findViewById(com.duokan.b.f.general__auto_update_content__scrollview)).setMaxOverScrollHeight(UTools.getMinimumHeight(context));
         ((deprecatedDkTextView) inflate.findViewById(com.duokan.b.f.general__auto_update_content__text)).setText(str2);
         anonymousClass6.setPrompt(com.duokan.b.i.general__update__title);
         anonymousClass6.setExtraContentView(inflate);

@@ -39,7 +39,7 @@ public class hd extends ActivatedController {
                     this.mPopupWindow = new he(this, getContext(), $assertionsDisabled);
                     this.mPopupRootView = new FrameLayout(getContext());
                     this.mPopupWindow.setContentView(this.mPopupRootView, new LayoutParams(-1, -1));
-                    int b = UTools.closeAnimation(getContext(), 5.0f);
+                    int b = UTools.getMinimumHeight(getContext(), 5.0f);
                     this.mPopupWindow.setBalloonPadding(b, b, b, b);
                 } else {
                     throw new AssertionError();

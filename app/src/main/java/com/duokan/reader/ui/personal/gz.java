@@ -4,10 +4,10 @@ import android.view.View;
 
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 import com.duokan.reader.ReaderFeature;
 
-class gz implements cg {
+class gz implements OnScrollListener {
     boolean a = false;
     final /* synthetic */ View b;
     final /* synthetic */ fl c;

@@ -19,7 +19,7 @@ public abstract class z extends Drawable {
 
     public z(Context context, boolean z) {
         this.c = context;
-        int b = UTools.closeAnimation(this.c, 5.0f);
+        int b = UTools.getMinimumHeight(this.c, 5.0f);
         this.e.set(b, b, b, b);
         this.d = new ab(this);
         this.d.setCallback(this.h);

@@ -4,11 +4,11 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 
 public class iu extends cw {
     private ix a;
-    private cg b;
+    private OnScrollListener b;
     private cx c;
 
     public iu(Context context) {
@@ -39,7 +39,7 @@ public class iu extends cw {
         this.c = cxVar;
     }
 
-    public void setOnScrollListener(cg cgVar) {
+    public void setOnScrollListener(OnScrollListener cgVar) {
         this.b = cgVar;
     }
 }

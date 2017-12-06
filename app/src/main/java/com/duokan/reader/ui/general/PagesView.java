@@ -15,7 +15,7 @@ import android.widget.FrameLayout;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.cf;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 import com.duokan.core.ui.et;
 import com.duokan.reader.ui.reading.gs;
 
@@ -32,7 +32,7 @@ public abstract class PagesView extends FrameLayout implements Scrollable {
     private PageLayout h = PageLayout.LEFT_TO_RIGHT;
     private gi i = null;
     private gh j = null;
-    private cg k = null;
+    private OnScrollListener k = null;
     private gc l = null;
     private gd m = null;
     private gf n = null;
@@ -387,7 +387,7 @@ public abstract class PagesView extends FrameLayout implements Scrollable {
         this.b.setOnContentBoundsChangedListener(cfVar);
     }
 
-    public final void setOnScrollListener(cg cgVar) {
+    public final void setOnScrollListener(OnScrollListener cgVar) {
         this.k = cgVar;
     }
 

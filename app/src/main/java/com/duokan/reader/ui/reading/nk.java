@@ -71,9 +71,9 @@ public class nk extends FrameLayout implements it {
         this.c = ocVar;
         this.e = new iu(getContext());
         addView(this.e, new LayoutParams(-1, -1));
-        this.o = UTools.closeAnimation(context, 65.0f);
+        this.o = UTools.getMinimumHeight(context, 65.0f);
         this.d = new ni(context);
-        this.d.setPadding(UTools.closeAnimation(getContext(), 45.0f), UTools.closeAnimation(getContext(), 20.0f), UTools.closeAnimation(getContext(), 45.0f), 0);
+        this.d.setPadding(UTools.getMinimumHeight(getContext(), 45.0f), UTools.getMinimumHeight(getContext(), 20.0f), UTools.getMinimumHeight(getContext(), 45.0f), 0);
         this.d.setLayoutParams(new ViewGroup.LayoutParams(-1, this.o));
         addView(this.d);
         LayoutInflater from = LayoutInflater.from(getContext());
@@ -201,14 +201,14 @@ public class nk extends FrameLayout implements it {
         headerPaddingTop = this.d.getVisibility() == 0 ? this.o : 0;
         this.g.b(0, headerPaddingTop, 0, 0);
         if (ReaderEnv.get().forHd()) {
-            int b = UTools.closeAnimation(getContext(), 25.0f);
-            int b2 = UTools.closeAnimation(getContext(), 30.0f);
+            int b = UTools.getMinimumHeight(getContext(), 25.0f);
+            int b2 = UTools.getMinimumHeight(getContext(), 30.0f);
             this.g.setPadding(0, headerPaddingTop, 0, b2);
             this.i.setPadding(b, headerPaddingTop, b, b2);
             this.j.setPadding(b, headerPaddingTop, b, b2);
             return;
         }
-        b = UTools.closeAnimation(getContext(), 15.0f);
+        b = UTools.getMinimumHeight(getContext(), 15.0f);
         this.g.setPadding(0, headerPaddingTop, 0, b);
         this.i.setPadding(b, headerPaddingTop, b, b);
         this.j.setPadding(b, headerPaddingTop, b, b);

@@ -99,10 +99,10 @@ public class ch extends af {
     private void a() {
         View inflate = LayoutInflater.from(getContext()).inflate(h.account__third_share_view, null);
         if (ReaderEnv.get().forHd()) {
-            inflate.setBackgroundDrawable(new hm(new ColorDrawable(getContext().getResources().getColor(d.general__shared__fefaf8)), (float) UTools.closeAnimation(getContext(), 8.0f)));
+            inflate.setBackgroundDrawable(new hm(new ColorDrawable(getContext().getResources().getColor(d.general__shared__fefaf8)), (float) UTools.getMinimumHeight(getContext(), 8.0f)));
         }
         setContentView(inflate);
-        inflate.findViewById(g.account__third_share_view__btns).setPadding(UTools.closeAnimation(getContext(), 15.0f), (ReaderEnv.get().forHd() ? 0 : ((ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class)).getTheme().getHeaderPaddingTop()) + UTools.closeAnimation(getContext(), 10.0f), UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 10.0f));
+        inflate.findViewById(g.account__third_share_view__btns).setPadding(UTools.getMinimumHeight(getContext(), 15.0f), (ReaderEnv.get().forHd() ? 0 : ((ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class)).getTheme().getHeaderPaddingTop()) + UTools.getMinimumHeight(getContext(), 10.0f), UTools.getMinimumHeight(getContext(), 15.0f), UTools.getMinimumHeight(getContext(), 10.0f));
         ((DkLabelView) inflate.findViewById(g.account__third_share_view__third_name)).setText(k());
         this.j = (EditText) inflate.findViewById(g.account__third_share_view__share_text);
         ((FrameLayout) inflate.findViewById(g.account__third_share_view__content)).addView(b(), new LayoutParams(-1, -2));
@@ -141,7 +141,7 @@ public class ch extends af {
         }
         View boxView = new BoxView(getActivity(), null);
         View imageView = new ImageView(getActivity());
-        imageView.setPadding(0, UTools.closeAnimation(getActivity(), 10.0f), 0, UTools.closeAnimation(getActivity(), 10.0f));
+        imageView.setPadding(0, UTools.getMinimumHeight(getActivity(), 10.0f), 0, UTools.getMinimumHeight(getActivity(), 10.0f));
         imageView.setScaleType(ScaleType.CENTER_INSIDE);
         imageView.setImageBitmap(this.e.e);
         boxView.setMaxHeight(i.c(getActivity()) / 3);

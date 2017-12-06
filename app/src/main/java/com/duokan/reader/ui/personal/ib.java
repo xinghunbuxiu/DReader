@@ -5,12 +5,12 @@ import android.graphics.Color;
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
 import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 import com.duokan.reader.ui.general.PageHeaderView;
 
 import org.apache.http.HttpStatus;
 
-class ib implements cg {
+class ib implements OnScrollListener {
     final /* synthetic */ PageHeaderView a;
     final /* synthetic */ hw b;
 

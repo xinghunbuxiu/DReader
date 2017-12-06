@@ -18,7 +18,7 @@ class b implements Runnable {
 
     public void run() {
         if (this.a.getLineCount() == 1) {
-            this.a.setPadding(0, UTools.closeAnimation(this.b, 10.0f), 0, 0);
+            this.a.setPadding(0, UTools.getMinimumHeight(this.b, 10.0f), 0, 0);
         }
     }
 }

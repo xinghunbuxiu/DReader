@@ -44,12 +44,12 @@ public class du extends LinearLayout implements iv, iw, cw, eq {
         this.e = (cu) MyContextWrapper.getFeature(context).queryFeature(cu.class);
         this.b.a(new UTools(this));
         this.c = new gs(getContext());
-        this.c.b(this.c.getGridPaddingLeft(), UTools.closeAnimation(getContext(), 20.0f), this.c.getGridPaddingRight(), UTools.closeAnimation(getContext(), 20.0f));
+        this.c.b(this.c.getGridPaddingLeft(), UTools.getMinimumHeight(getContext(), 20.0f), this.c.getGridPaddingRight(), UTools.getMinimumHeight(getContext(), 20.0f));
         this.c.setAdapter(this.b);
         this.c.b(h.bookshelf__category_expand_tip_view);
         this.c.setNumColumns(ds.a(getContext()));
         this.c.setOnItemClickListener(new dw(this));
-        int b = UTools.closeAnimation(getContext(), 10.0f);
+        int b = UTools.getMinimumHeight(getContext(), 10.0f);
         LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams.addRule(11);
         layoutParams.addRule(15);
@@ -60,7 +60,7 @@ public class du extends LinearLayout implements iv, iw, cw, eq {
         this.h.setVisibility(8);
         this.h.setOnClickListener(new dx(this));
         layoutParams = new RelativeLayout.LayoutParams(-2, -2);
-        int b2 = UTools.closeAnimation(getContext(), 30.0f);
+        int b2 = UTools.getMinimumHeight(getContext(), 30.0f);
         layoutParams.leftMargin = b2;
         layoutParams.rightMargin = b2;
         layoutParams.addRule(14);
@@ -79,9 +79,9 @@ public class du extends LinearLayout implements iv, iw, cw, eq {
         this.g.setOnFocusChangeListener(new dz(this));
         layoutParams = new LinearLayout.LayoutParams(-1, -2);
         if (DkApp.get().forHd()) {
-            b = Math.min(Math.max((UTools.getWidthPixels(getContext()) - UTools.closeAnimation(getContext(), 300.0f)) / 2, 0), UTools.closeAnimation(getContext(), 100.0f));
+            b = Math.min(Math.max((UTools.getWidthPixels(getContext()) - UTools.getMinimumHeight(getContext(), 300.0f)) / 2, 0), UTools.getMinimumHeight(getContext(), 100.0f));
         } else {
-            b = UTools.closeAnimation(getContext(), 40.0f);
+            b = UTools.getMinimumHeight(getContext(), 40.0f);
         }
         layoutParams.rightMargin = b;
         layoutParams.leftMargin = b;
@@ -91,13 +91,13 @@ public class du extends LinearLayout implements iv, iw, cw, eq {
         this.f.addView(this.g);
         this.f.addView(this.h);
         View linearLayout = new LinearLayout(getContext());
-        linearLayout.setPadding(0, 0, 0, UTools.closeAnimation(getContext(), 15.0f));
+        linearLayout.setPadding(0, 0, 0, UTools.getMinimumHeight(getContext(), 15.0f));
         linearLayout.setGravity(81);
         linearLayout.setBackgroundColor(Color.parseColor("#33666666"));
         linearLayout.addView(this.f);
         LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-1, 1);
-        layoutParams2.leftMargin = UTools.closeAnimation(getContext(), 15.0f);
-        layoutParams2.rightMargin = UTools.closeAnimation(getContext(), 15.0f);
+        layoutParams2.leftMargin = UTools.getMinimumHeight(getContext(), 15.0f);
+        layoutParams2.rightMargin = UTools.getMinimumHeight(getContext(), 15.0f);
         addView(linearLayout, new LinearLayout.LayoutParams(-1, 0, 2.0f));
         addView(this.c, new LinearLayout.LayoutParams(-1, 0, 6.0f));
         linearLayout = new View(getContext());

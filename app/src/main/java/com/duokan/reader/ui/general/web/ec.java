@@ -25,7 +25,7 @@ class ec implements as {
         }
         if (jSONObject.has("top_banner")) {
             JSONObject jSONObject2 = jSONObject.getJSONObject("top_banner");
-            this.b.pageController.mBannerInfo.a = UTools.closeAnimation(this.b.pageController.getContext(), (float) jSONObject2.optInt("height", this.b.pageController.getHeaderViewOffset()));
+            this.b.pageController.mBannerInfo.a = UTools.getMinimumHeight(this.b.pageController.getContext(), (float) jSONObject2.optInt("height", this.b.pageController.getHeaderViewOffset()));
         }
         if (jSONObject.has("nav_tabs")) {
             JSONArray jSONArray = jSONObject.getJSONArray("nav_tabs");
@@ -34,7 +34,7 @@ class ec implements as {
             for (int i = 0; i < jSONArray.length(); i++) {
                 JSONObject jSONObject3 = jSONArray.getJSONObject(i);
                 String string = jSONObject3.getString("name");
-                int b = UTools.closeAnimation(this.b.pageController.getContext(), (float) jSONObject3.getInt("pos"));
+                int b = UTools.getMinimumHeight(this.b.pageController.getContext(), (float) jSONObject3.getInt("pos"));
                 if (i == 0) {
                     access$600 = b;
                 }

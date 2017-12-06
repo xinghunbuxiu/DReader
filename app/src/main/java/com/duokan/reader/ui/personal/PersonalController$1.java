@@ -29,7 +29,7 @@ class PersonalController$1 extends TaskController {
         }
         this.this$0.q.setVisibility(0);
         LayoutParams layoutParams = this.this$0.q.getLayoutParams();
-        int b = UTools.closeAnimation(getContext(), (float) (i + 10));
+        int b = UTools.getMinimumHeight(getContext(), (float) (i + 10));
         if (layoutParams.height != b) {
             layoutParams.height = b;
             this.this$0.q.setLayoutParams(layoutParams);

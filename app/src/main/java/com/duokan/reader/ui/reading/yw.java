@@ -16,7 +16,7 @@ class yw implements Runnable {
 
     public void run() {
         for (int i = 1; i < this.b.a.s.getChildCount(); i++) {
-            this.b.a.a(this.b.a.s.getChildAt(i), UTools.closeAnimation(this.b.a.getContext(), 40.0f) * i);
+            this.b.a.a(this.b.a.s.getChildAt(i), UTools.getMinimumHeight(this.b.a.getContext(), 40.0f) * i);
         }
         for (int toolCount = this.b.a.z.getToolCount() - 1; toolCount > 0; toolCount--) {
             this.b.a.b((View) this.b.a.z.a(toolCount).getParent(), UTools.getRect(new Rect(), this.b.a.z.a(toolCount), null).left - this.a[toolCount].left);

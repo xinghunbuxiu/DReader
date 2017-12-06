@@ -9,18 +9,18 @@ import com.duokan.core.ui.UTools;
 
 public class DkBigFaceView extends bf {
     public DkBigFaceView(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, UTools.closeAnimation(context, 72.0f), UTools.closeAnimation(context, 72.0f));
+        super(context, attributeSet, UTools.getMinimumHeight(context, 72.0f), UTools.getMinimumHeight(context, 72.0f));
         this.a.a(getResources().getDrawable(e.personal__shared__avatar));
         LayoutParams layoutParams = (LayoutParams) this.d.getLayoutParams();
-        layoutParams.leftMargin = UTools.closeAnimation(context, 5.0f);
-        layoutParams.rightMargin = UTools.closeAnimation(context, 5.0f);
-        layoutParams.topMargin = UTools.closeAnimation(context, 5.0f);
-        layoutParams.bottomMargin = UTools.closeAnimation(context, 5.0f);
+        layoutParams.leftMargin = UTools.getMinimumHeight(context, 5.0f);
+        layoutParams.rightMargin = UTools.getMinimumHeight(context, 5.0f);
+        layoutParams.topMargin = UTools.getMinimumHeight(context, 5.0f);
+        layoutParams.bottomMargin = UTools.getMinimumHeight(context, 5.0f);
         this.d.setLayoutParams(layoutParams);
         this.b.a(e.personal__shared__avatar);
         layoutParams = (LayoutParams) this.c.getLayoutParams();
-        layoutParams.rightMargin = UTools.closeAnimation(context, 2.0f);
-        layoutParams.bottomMargin = UTools.closeAnimation(context, 4.0f);
+        layoutParams.rightMargin = UTools.getMinimumHeight(context, 2.0f);
+        layoutParams.bottomMargin = UTools.getMinimumHeight(context, 4.0f);
         this.c.setLayoutParams(layoutParams);
     }
 

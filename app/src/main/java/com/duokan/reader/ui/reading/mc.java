@@ -16,9 +16,9 @@ public class mc extends FrameLayout {
     public void setMultiCallout(aj ajVar) {
         for (int i = 0; i < ajVar.a(); i++) {
             View xkVar = new xk(getContext(), ajVar.a(i).f());
-            int b = UTools.closeAnimation(getContext(), 10.0f);
+            int b = UTools.getMinimumHeight(getContext(), 10.0f);
             xkVar.setPadding(b, b, b, b);
-            xkVar.setTextSize(UTools.closeAnimation(getContext(), 18.0f));
+            xkVar.setTextSize(UTools.getMinimumHeight(getContext(), 18.0f));
             xkVar.setVisibility(4);
             addView(xkVar, new LayoutParams(-1, -2, 80));
         }

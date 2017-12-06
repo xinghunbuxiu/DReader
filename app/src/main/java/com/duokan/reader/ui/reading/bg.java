@@ -25,7 +25,7 @@ public class bg implements bb {
         this.b.a(runnable);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         this.c.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        this.d = displayMetrics.widthPixels - UTools.closeAnimation(this.c, 115.0f);
+        this.d = displayMetrics.widthPixels - UTools.getMinimumHeight(this.c, 115.0f);
     }
 
     public void a(Rect rect, ab abVar) {

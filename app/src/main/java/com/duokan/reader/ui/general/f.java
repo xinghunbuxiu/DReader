@@ -179,7 +179,7 @@ public class f extends z {
         }
         if (this.o != null) {
             canvas.save();
-            canvas.translate((float) UTools.closeAnimation(a(), 2.0f), (float) (-Math.round(1.5f * ((float) this.o.getIntrinsicHeight()))));
+            canvas.translate((float) UTools.getMinimumHeight(a(), 2.0f), (float) (-Math.round(1.5f * ((float) this.o.getIntrinsicHeight()))));
             UTools.addAnimation(canvas, this.o, a, 85);
             canvas.restore();
         }

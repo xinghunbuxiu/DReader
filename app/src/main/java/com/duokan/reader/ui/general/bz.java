@@ -21,17 +21,17 @@ public class bz extends ak implements j {
     public bz(Context context) {
         super(context);
         setContentView(g.general__edit_dialog_view);
-        int b = UTools.closeAnimation(getContext(), 6.0f);
+        int b = UTools.getMinimumHeight(getContext(), 6.0f);
         getContentView().setBackgroundDrawable(new hm(new ColorDrawable(getContext().getResources().getColor(c.general__shared__dialog)), (float) b));
         this.a = (EditText) findViewById(f.general__edit_dialog_view__edit);
         setResizeForSoftInput(true);
         TextView textView = (TextView) findViewById(f.general__edit_dialog_view__cancel);
         textView.getPaint().setFakeBoldText(true);
-        textView.setBackgroundDrawable(new hm(getContext().getResources().getDrawable(e.general__shared__dialog_button_background), (float) UTools.closeAnimation(getContext(), 6.0f), 4));
+        textView.setBackgroundDrawable(new hm(getContext().getResources().getDrawable(e.general__shared__dialog_button_background), (float) UTools.getMinimumHeight(getContext(), 6.0f), 4));
         textView.setOnClickListener(new ca(this));
         textView = (TextView) findViewById(f.general__edit_dialog_view__ok);
         textView.getPaint().setFakeBoldText(true);
-        textView.setBackgroundDrawable(new hm(getContext().getResources().getDrawable(e.general__shared__dialog_button_background), (float) UTools.closeAnimation(getContext(), 6.0f), 8));
+        textView.setBackgroundDrawable(new hm(getContext().getResources().getDrawable(e.general__shared__dialog_button_background), (float) UTools.getMinimumHeight(getContext(), 6.0f), 8));
         textView.setOnClickListener(new cb(this));
         setEnterAnimation(b.general__shared__scale_center_in);
         setExitAnimation(b.general__shared__scale_center_out);

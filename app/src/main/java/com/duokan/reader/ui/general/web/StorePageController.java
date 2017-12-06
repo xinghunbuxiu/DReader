@@ -22,6 +22,7 @@ import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.z;
 import com.duokan.core.ui.BoxView;
+import com.duokan.core.ui.OnScrollListener;
 import com.duokan.core.ui.PullDownRefreshView.RefreshStyle;
 import com.duokan.core.ui.Scrollable.OverScrollMode;
 import com.duokan.core.ui.UTools;
@@ -477,7 +478,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     private void setWebViewPadding() {
-        int b = UTools.closeAnimation(getContext(), 65.0f);
+        int b = UTools.getMinimumHeight(getContext(), 65.0f);
         if (this.mHasTitle && this.mImmersive) {
             b = 0;
         } else if (!this.mHasTitle) {
@@ -868,7 +869,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     private int getHeaderViewOffset() {
-        return (this.mHasTitle && this.mImmersive) ? UTools.closeAnimation(getContext(), 65.0f) : 0;
+        return (this.mHasTitle && this.mImmersive) ? UTools.getMinimumHeight(getContext(), 65.0f) : 0;
     }
 
     protected void onPageCreated(int i, String str) {
@@ -987,7 +988,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
         return Math.max(0, ((int) UTools.closeAnimation(getContext(), sVar.getTheme().getPagePaddingBottom())) - 10);
     }
 
-    public void setOnScrollListener(com.duokan.core.ui.cg cgVar) {
+    public void setOnScrollListener(OnScrollListener cgVar) {
         this.mWebView.setOnScrollListener(cgVar);
     }
 

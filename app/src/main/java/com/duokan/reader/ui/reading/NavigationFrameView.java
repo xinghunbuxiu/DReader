@@ -61,7 +61,7 @@ public class NavigationFrameView extends FrameLayout {
         } else if (ReaderUi.m(getContext())) {
             i3 = (ReaderUi.m(getContext()) && this.a.am()) ? getMeasuredWidth() / 2 : ReaderUi.a(getContext(), MeasureSpec.getMode(i) != 0 ? MeasureSpec.getSize(i) : UTools.getWidthPixels(getContext()), 0.618f);
         } else {
-            i3 = UTools.closeAnimation(getContext(), 40.0f);
+            i3 = UTools.getMinimumHeight(getContext(), 40.0f);
         }
         if (getPaddingRight() != i3) {
             setPadding(0, 0, i3, 0);

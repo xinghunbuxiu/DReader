@@ -24,14 +24,14 @@ public class fa extends ActivatedController {
         ColorPickerView colorPickerView = (ColorPickerView) findViewById(f.reading__custom_theme_view__picker);
         TabBarView tabBarView = (TabBarView) findViewById(f.reading__custom_theme_view__tab_bar);
         LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -2);
-        layoutParams.setMargins(0, 0, UTools.closeAnimation(getContext(), 5.0f), 0);
+        layoutParams.setMargins(0, 0, UTools.getMinimumHeight(getContext(), 5.0f), 0);
         TextView textView = (TextView) tabBarView.c(g.reading__custom_theme_tab_view);
         textView.setText(getString(i.reading__custom_background_color_tab_view__title));
         textView.setLayoutParams(layoutParams);
         textView = (TextView) tabBarView.c(g.reading__custom_theme_tab_view);
         textView.setText(getString(i.reading__custom_text_color_tab_view__title));
         layoutParams = new FrameLayout.LayoutParams(-1, -2);
-        layoutParams.setMargins(UTools.closeAnimation(getContext(), 5.0f), 0, 0, 0);
+        layoutParams.setMargins(UTools.getMinimumHeight(getContext(), 5.0f), 0, 0, 0);
         textView.setLayoutParams(layoutParams);
         tabBarView.setMiddleDividerDrawable(new jm(getResources().getColor(c.general__shared__ffffff33)));
         tabBarView.setDividerScaleType(ScaleType.CENTER);

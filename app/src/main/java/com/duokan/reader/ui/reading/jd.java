@@ -89,7 +89,7 @@ public class jd extends FrameLayout {
             int i5 = (int) ((this.c.top - ((float) this.h.top)) - ((float) this.d));
             int i6 = (int) ((((float) this.h.bottom) - this.c.bottom) - ((float) this.d));
             int measuredHeight = this.a.getMeasuredHeight();
-            int b = UTools.closeAnimation(getContext(), 50.0f);
+            int b = UTools.getMinimumHeight(getContext(), 50.0f);
             if (i5 <= measuredHeight && i6 < measuredHeight) {
                 i5 = ((i4 - i2) / 2) - (this.a.getMeasuredHeight() / 2);
                 this.g.top = i5;

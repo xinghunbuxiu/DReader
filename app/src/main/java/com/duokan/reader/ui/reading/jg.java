@@ -134,15 +134,15 @@ class jg extends FrameLayout {
     public void a(int i) {
         this.b = i;
         if (i == 0) {
-            this.d.setPadding(UTools.closeAnimation(getContext(), 20.0f), UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 25.0f), UTools.closeAnimation(getContext(), 15.0f));
+            this.d.setPadding(UTools.getMinimumHeight(getContext(), 20.0f), UTools.getMinimumHeight(getContext(), 15.0f), UTools.getMinimumHeight(getContext(), 25.0f), UTools.getMinimumHeight(getContext(), 15.0f));
         } else {
-            this.d.setPadding(UTools.closeAnimation(getContext(), 35.0f), UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 5.0f), UTools.closeAnimation(getContext(), 15.0f));
+            this.d.setPadding(UTools.getMinimumHeight(getContext(), 35.0f), UTools.getMinimumHeight(getContext(), 15.0f), UTools.getMinimumHeight(getContext(), 5.0f), UTools.getMinimumHeight(getContext(), 15.0f));
         }
     }
 
     private Bitmap a(Bitmap bitmap) {
         Paint paint = new Paint();
-        paint.setMaskFilter(new BlurMaskFilter((float) UTools.closeAnimation(getContext(), 4.0f), Blur.SOLID));
+        paint.setMaskFilter(new BlurMaskFilter((float) UTools.getMinimumHeight(getContext(), 4.0f), Blur.SOLID));
         int[] iArr = new int[2];
         Bitmap extractAlpha = bitmap.extractAlpha(paint, iArr);
         Bitmap createBitmap = Bitmap.createBitmap(extractAlpha.getWidth(), extractAlpha.getHeight(), Config.ARGB_8888);

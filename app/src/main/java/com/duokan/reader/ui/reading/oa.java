@@ -15,7 +15,7 @@ class oa extends Drawable {
 
     public oa(nk nkVar, int i) {
         this.a = nkVar;
-        this.c = UTools.closeAnimation(nkVar.getContext(), 12.0f);
+        this.c = UTools.getMinimumHeight(nkVar.getContext(), 12.0f);
         this.b.setColor(i);
         this.b.setAntiAlias(true);
     }

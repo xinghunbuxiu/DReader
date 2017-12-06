@@ -719,7 +719,7 @@ public class gs extends FrameLayout implements OnPreDrawListener {
         if (this.q) {
             Rect rect = (Rect) UTools.g.getRect();
             rect.set(0, 0, getWidth(), getHeight());
-            rect.right -= UTools.closeAnimation(getContext(), 15.0f);
+            rect.right -= UTools.getMinimumHeight(getContext(), 15.0f);
             UTools.addAnimation(canvas, this.a.a(DecorDrawableStyle.BOOK_MARK), rect, 53);
             UTools.g.getRect(rect);
         }

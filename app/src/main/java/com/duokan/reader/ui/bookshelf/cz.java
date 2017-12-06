@@ -299,7 +299,7 @@ public class cz extends ViewGroup {
                 canvas.restore();
             } else if (this.v > 0) {
                 canvas.save();
-                canvas.translate((float) (rect.left + UTools.closeAnimation(getContext(), 2.0f)), (float) (rect.top + UTools.closeAnimation(getContext(), 3.0f)));
+                canvas.translate((float) (rect.left + UTools.getMinimumHeight(getContext(), 2.0f)), (float) (rect.top + UTools.getMinimumHeight(getContext(), 3.0f)));
                 this.A.a(String.format(getResources().getString(j.bookshelf__shared__d_new_chapters), new Object[]{Integer.valueOf(this.v)}));
                 this.A.setBounds(0, 0, this.A.a(), this.A.getIntrinsicHeight());
                 this.A.draw(canvas);
@@ -383,10 +383,10 @@ public class cz extends ViewGroup {
                 } else {
                     this.p.stop();
                 }
-                canvas.translate((float) UTools.closeAnimation(getContext(), 4.0f), (float) (-UTools.closeAnimation(getContext(), 5.0f)));
+                canvas.translate((float) UTools.getMinimumHeight(getContext(), 4.0f), (float) (-UTools.getMinimumHeight(getContext(), 5.0f)));
                 this.p.setLevel(Math.round(10000.0f * f3));
                 UTools.addAnimation(canvas, this.p, rect, 83);
-                canvas.translate((float) (-UTools.closeAnimation(getContext(), 4.0f)), (float) UTools.closeAnimation(getContext(), 5.0f));
+                canvas.translate((float) (-UTools.getMinimumHeight(getContext(), 4.0f)), (float) UTools.getMinimumHeight(getContext(), 5.0f));
             } else if (this.p != null) {
                 this.p.stop();
                 this.p = null;
@@ -414,10 +414,10 @@ public class cz extends ViewGroup {
                 } else {
                     this.s.start();
                 }
-                canvas.translate((float) UTools.closeAnimation(getContext(), 4.0f), (float) (-UTools.closeAnimation(getContext(), 5.0f)));
+                canvas.translate((float) UTools.getMinimumHeight(getContext(), 4.0f), (float) (-UTools.getMinimumHeight(getContext(), 5.0f)));
                 this.s.setLevel(Math.round(10000.0f * f));
                 UTools.addAnimation(canvas, this.s, rect, 83);
-                canvas.translate((float) (-UTools.closeAnimation(getContext(), 4.0f)), (float) UTools.closeAnimation(getContext(), 5.0f));
+                canvas.translate((float) (-UTools.getMinimumHeight(getContext(), 4.0f)), (float) UTools.getMinimumHeight(getContext(), 5.0f));
             } else if (this.s != null) {
                 this.s.stop();
                 this.s = null;

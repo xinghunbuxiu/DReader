@@ -77,7 +77,7 @@ public class ai extends RelativeLayout {
         ajVar.addView(this.c, new LayoutParams(0, -2));
         this.d = new TextView(getContext());
         this.d.setTextColor(getResources().getColor(d.general__shared__c7));
-        this.d.setPadding(UTools.closeAnimation(getContext(), 6.0f), 0, UTools.closeAnimation(getContext(), 10.0f), 0);
+        this.d.setPadding(UTools.getMinimumHeight(getContext(), 6.0f), 0, UTools.getMinimumHeight(getContext(), 10.0f), 0);
         this.d.setTextSize(1, 12.0f);
         ajVar.addView(this.d);
         this.e = new TextView(getContext());
@@ -86,7 +86,7 @@ public class ai extends RelativeLayout {
         this.e.setGravity(5);
         ajVar.addView(this.e);
         LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, -2);
-        layoutParams.setMargins(UTools.closeAnimation(getContext(), 28.0f), UTools.closeAnimation(getContext(), 40.0f), UTools.closeAnimation(getContext(), 28.0f), UTools.closeAnimation(getContext(), 25.0f));
+        layoutParams.setMargins(UTools.getMinimumHeight(getContext(), 28.0f), UTools.getMinimumHeight(getContext(), 40.0f), UTools.getMinimumHeight(getContext(), 28.0f), UTools.getMinimumHeight(getContext(), 25.0f));
         linearLayout.addView(ajVar, 0, layoutParams);
     }
 

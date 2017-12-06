@@ -19,7 +19,7 @@ import com.duokan.core.sys.AIdleOperation;
 import com.duokan.core.ui.PullDownRefreshBaseView.RefreshState;
 import com.duokan.core.ui.PullDownRefreshView;
 import com.duokan.core.ui.PullDownRefreshView.RefreshStyle;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 import com.duokan.core.ui.fl;
 import com.duokan.core.ui.fq;
 import com.duokan.core.ui.fr;
@@ -37,7 +37,7 @@ public class DkWebView extends WebView {
     private final classc.IConnectChanged d = new h(this);
     private final LinearLayout e;
     private final PullDownRefreshView f;
-    private cg g = null;
+    private OnScrollListener g = null;
     private o h = null;
     private boolean i = false;
 
@@ -84,11 +84,11 @@ public class DkWebView extends WebView {
         return new n(this, fxVar);
     }
 
-    public void setOnScrollListener(cg cgVar) {
+    public void setOnScrollListener(OnScrollListener cgVar) {
         this.g = cgVar;
     }
 
-    public cg getOnScrollerListener() {
+    public OnScrollListener getOnScrollerListener() {
         return this.g;
     }
 

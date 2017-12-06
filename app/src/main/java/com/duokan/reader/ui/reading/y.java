@@ -38,7 +38,7 @@ public class y extends lx {
         this.j.a(o(), new LayoutParams(Math.min(displayMetrics.widthPixels - i.a(this.c, 20.0f), i.a(this.c, 320.0f)), -2));
         this.j.setUpArrow(f.reading__shared__arrow_top);
         this.j.setDownArrow(f.reading__shared__arrow_bottom);
-        this.j.a(UTools.closeAnimation((Context) activity, 15.0f), 0, UTools.closeAnimation((Context) activity, 15.0f), 0);
+        this.j.a(UTools.getMinimumHeight((Context) activity, 15.0f), 0, UTools.getMinimumHeight((Context) activity, 15.0f), 0);
         this.j.a(new Rect[]{e()}, false, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR);
         m();
     }

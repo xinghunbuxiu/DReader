@@ -37,7 +37,7 @@ public class a extends FrameLayout {
             if (identifier > 0) {
                 this.d = getResources().getDimensionPixelSize(identifier);
             } else {
-                this.d = UTools.closeAnimation(getContext(), 20.0f);
+                this.d = UTools.getMinimumHeight(getContext(), 20.0f);
             }
         } else {
             this.d = 0;

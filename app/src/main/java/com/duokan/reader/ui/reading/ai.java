@@ -45,7 +45,7 @@ public class ai extends hd implements tb {
                 imageView.setBackgroundResource(f.general__shared__button_circular_48dip);
                 imageView.setScaleType(ScaleType.CENTER);
                 this.b = new FrameLayout(getContext());
-                this.b.setPadding(0, 0, UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 30.0f));
+                this.b.setPadding(0, 0, UTools.getMinimumHeight(getContext(), 15.0f), UTools.getMinimumHeight(getContext(), 30.0f));
                 this.b.addView(imageView, new LayoutParams(-2, -2));
                 this.d.getPagesFrameView().addView(this.b, new LayoutParams(-2, -2, 85));
                 this.b.setOnClickListener(new aj(this));

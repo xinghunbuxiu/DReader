@@ -69,7 +69,7 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         setHorizontalOverScrollMode(OverScrollMode.STRETCH);
         setVerticalOverScrollMode(OverScrollMode.STRETCH);
         setMaxOverScrollWidth(UTools.defaultClose(context));
-        setMaxOverScrollHeight(UTools.g(context));
+        setMaxOverScrollHeight(UTools.getMinimumHeight(context));
     }
 
     public final ZoomState getZoomState() {
@@ -322,7 +322,7 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         this.b.a(cfVar);
     }
 
-    public final void setOnScrollListener(cg cgVar) {
+    public final void setOnScrollListener(OnScrollListener cgVar) {
         this.b.a(cgVar);
     }
 

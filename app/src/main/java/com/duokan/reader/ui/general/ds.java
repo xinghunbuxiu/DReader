@@ -35,9 +35,9 @@ public class ds extends FrameLayout {
     protected final FrameLayout a;
     protected int b = -1;
     private final int c;
-    private final int d = UTools.closeAnimation(getContext(), 52.0f);
-    private final int e = UTools.closeAnimation(getContext(), 2.0f);
-    private final int f = UTools.closeAnimation(getContext(), 5.0f);
+    private final int d = UTools.getMinimumHeight(getContext(), 52.0f);
+    private final int e = UTools.getMinimumHeight(getContext(), 2.0f);
+    private final int f = UTools.getMinimumHeight(getContext(), 5.0f);
     private final int g = 14;
     private final FrameLayout h = ((FrameLayout) LayoutInflater.from(getContext()).inflate(g.surfing__immersive_surfing_view, this, false));
     private final View i;
@@ -252,13 +252,13 @@ public class ds extends FrameLayout {
         paint.setColor(Color.parseColor("#fafafa"));
         paint.setAntiAlias(true);
         paint.setAlpha(i);
-        canvas.drawRoundRect(rectF, (float) UTools.closeAnimation(getContext(), 5.0f), (float) UTools.closeAnimation(getContext(), 5.0f), paint);
+        canvas.drawRoundRect(rectF, (float) UTools.getMinimumHeight(getContext(), 5.0f), (float) UTools.getMinimumHeight(getContext(), 5.0f), paint);
         paint.setColor(Color.parseColor("#cccccc"));
         paint.setStrokeWidth(1.0f);
         paint.setAlpha(i2);
         paint.setStyle(Style.STROKE);
-        canvas.drawRoundRect(rectF, (float) UTools.closeAnimation(getContext(), 5.0f), (float) UTools.closeAnimation(getContext(), 5.0f), paint);
-        i2 = (int) (rectF.left + ((float) UTools.closeAnimation(getContext(), 8.0f)));
+        canvas.drawRoundRect(rectF, (float) UTools.getMinimumHeight(getContext(), 5.0f), (float) UTools.getMinimumHeight(getContext(), 5.0f), paint);
+        i2 = (int) (rectF.left + ((float) UTools.getMinimumHeight(getContext(), 8.0f)));
         int intrinsicWidth = this.q.getIntrinsicWidth() + i2;
         int max = (int) Math.max(rectF.top, rectF.centerY() - ((float) (this.q.getIntrinsicHeight() / 2)));
         int min = (int) Math.min(rectF.bottom, (float) (this.q.getIntrinsicHeight() + max));
@@ -274,7 +274,7 @@ public class ds extends FrameLayout {
         paint2.setColor(rgb);
         paint2.setAlpha(i);
         RectF rectF2 = (RectF) UTools.h.getRect();
-        rectF2.set((float) (UTools.closeAnimation(getContext(), 8.0f) + intrinsicWidth), rectF.top, rectF.right, rectF.bottom);
+        rectF2.set((float) (UTools.getMinimumHeight(getContext(), 8.0f) + intrinsicWidth), rectF.top, rectF.right, rectF.bottom);
         UTools.addAnimation(canvas, getResources().getString(i.bookshelf__shared__search), rectF2, 19, paint2);
         UTools.h.getRect(rectF2);
         UTools.h.getRect(rectF);

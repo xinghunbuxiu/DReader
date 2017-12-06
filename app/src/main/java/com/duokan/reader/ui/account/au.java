@@ -25,18 +25,18 @@ public class au extends FrameLayout {
     public au(Context context, as asVar) {
         super(context);
         View inflate = LayoutInflater.from(getContext()).inflate(h.account__share_choice_view, this, false);
-        inflate.setBackgroundDrawable(new hm(new ColorDrawable(getContext().getResources().getColor(d.general__shared__dialog)), (float) UTools.closeAnimation(getContext(), 6.0f)));
+        inflate.setBackgroundDrawable(new hm(new ColorDrawable(getContext().getResources().getColor(d.general__shared__dialog)), (float) UTools.getMinimumHeight(getContext(), 6.0f)));
         addView(inflate);
         ((TextView) findViewById(g.account__share_choice_view__title)).getPaint().setFakeBoldText(true);
-        this.c.setDesiredColumnWidth(UTools.closeAnimation(getContext(), 80.0f));
+        this.c.setDesiredColumnWidth(UTools.getMinimumHeight(getContext(), 80.0f));
         this.b = new ax();
         this.c.setAdapter(this.b);
         this.c.setThumbEnabled(true);
-        this.c.setMaxOverScrollHeight(UTools.g(getContext()));
+        this.c.setMaxOverScrollHeight(UTools.getMinimumHeight(getContext()));
         this.c.setOnItemClickListener(new av(this, asVar));
         TextView textView = (TextView) findViewById(g.account__share_choice_view__cancel);
         textView.getPaint().setFakeBoldText(true);
-        textView.setBackgroundDrawable(new hm(getContext().getResources().getDrawable(f.general__shared__dialog_button_background), (float) UTools.closeAnimation(getContext(), 8.0f), 12));
+        textView.setBackgroundDrawable(new hm(getContext().getResources().getDrawable(f.general__shared__dialog_button_background), (float) UTools.getMinimumHeight(getContext(), 8.0f), 12));
         textView.setOnClickListener(new aw(this, asVar));
     }
 

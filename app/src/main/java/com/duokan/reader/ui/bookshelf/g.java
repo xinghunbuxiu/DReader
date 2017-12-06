@@ -52,7 +52,7 @@ public class g extends FrameLayout implements iu, la, hj, cw, eq {
     private final ImageView k;
     private final View l;
     private Callable m = null;
-    private final int n = UTools.closeAnimation(getContext(), 68.0f);
+    private final int n = UTools.getMinimumHeight(getContext(), 68.0f);
 
     public g(IFeature featrue) {
         super((Context) featrue);

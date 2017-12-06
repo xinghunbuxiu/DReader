@@ -26,7 +26,7 @@ public class ow extends fu {
         imageView.setImageDrawable(getResources().getDrawable(e.reading__shared__expand_poster));
         imageView.setOnClickListener(new ox(this));
         Rect a = gnVar.h().a(this.a);
-        int b = UTools.closeAnimation(context, 15.0f);
+        int b = UTools.getMinimumHeight(context, 15.0f);
         View frameLayout = new FrameLayout(context);
         frameLayout.setPadding(b, b, (rect.right - a.right) + b, (rect.bottom - a.bottom) + b);
         frameLayout.addView(imageView, new LayoutParams(-2, -2));

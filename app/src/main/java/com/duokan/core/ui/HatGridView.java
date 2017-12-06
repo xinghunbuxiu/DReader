@@ -19,7 +19,7 @@ import android.widget.LinearLayout;
 
 public class HatGridView extends ViewGroup implements Scrollable {
     private Runnable A;
-    private cg B;
+    private OnScrollListener B;
     private am C;
     private final ak a;
     private final FrameLayout b;
@@ -93,7 +93,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.g = new FrameLayout(context);
         this.g.setClipChildren(false);
         this.g.setClipToPadding(false);
-        this.g.setMinimumHeight(UTools.g(getContext()));
+        this.g.setMinimumHeight(UTools.getMinimumHeight(getContext()));
         this.e.addView(this.g, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
         this.h = new FrameLayout(context);
         this.h.setClipChildren(false);
@@ -124,6 +124,53 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.k.setOnClickListener(new af(this));
         this.k.setEnabled(false);
         this.k.setVisibility(INVISIBLE);
+    }
+
+    class ae implements OnScrollListener {
+        final  HatGridView a;
+
+        ae(HatGridView hatGridView) {
+            this.a = hatGridView;
+        }
+
+        public void a(Scrollable scrollable, ScrollState scrollState, ScrollState scrollState2) {
+            if (scrollState2 == ScrollState.IDLE) {
+                if (this.a.x == HatTipState.DOCKING) {
+                    this.a.a(HatTipState.DOCKED);
+                } else if (this.a.x == HatTipState.UNDOCKING) {
+                    this.a.a(HatTipState.UNDOCKED);
+                }
+            }
+            if (scrollState == ScrollState.DRAG) {
+                this.a.y = 0;
+                if (!this.a.b()) {
+                    this.a.a(HatTipState.UNDOCKING);
+                }
+            }
+            this.a.a(scrollState, scrollState2);
+            if (this.a.B != null) {
+                this.a.B.a(scrollable, scrollState, scrollState2);
+            }
+        }
+
+        public void a(Scrollable scrollable, boolean z) {
+            int i = this.a.a.getViewportBounds().top;
+            int height = this.a.a.getViewportBounds().bottom - this.a.a.getHeight();
+            int scrollY = this.a.d.getScrollY() + this.a.t();
+            if (this.a.r || i < scrollY) {
+                scrollY = Math.max(0, Math.min((-this.a.t()) + i, (-this.a.t()) + this.a.s()));
+                this.a.d.scrollTo(0, scrollY);
+                this.a.f.scrollTo(0, (-scrollY) / 2);
+                this.a.e.invalidate();
+            } else {
+                this.a.d.invalidate();
+            }
+            this.a.c.offsetTopAndBottom((((this.a.a.getPaddingTop() - this.a.j()) + this.a.h()) - i) - this.a.c.getTop());
+            this.a.b.offsetTopAndBottom(((((this.a.a.getContentHeight() - this.a.l.bottom) - this.a.k()) - this.a.i()) - height) - this.a.b.getTop());
+            if (this.a.B != null) {
+                this.a.B.a(scrollable, z);
+            }
+        }
     }
     class aa extends FrameLayout {
         final HatGridView a;
@@ -721,7 +768,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.a.setOnContentBoundsChangedListener(cfVar);
     }
 
-    public final void setOnScrollListener(cg cgVar) {
+    public final void setOnScrollListener(OnScrollListener cgVar) {
         this.B = cgVar;
     }
 
@@ -823,7 +870,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         } else if (getScrollState() == ScrollState.IDLE) {
             this.a.scrollBy(0, 0);
         }
-        this.a.b(0, this.j.getHeight() + UTools.closeAnimation(getContext(), 2.0f), UTools.closeAnimation(getContext(), 2.0f), UTools.closeAnimation(getContext(), 6.0f));
+        this.a.b(0, this.j.getHeight() + UTools.getMinimumHeight(getContext(), 2.0f), UTools.getMinimumHeight(getContext(), 2.0f), UTools.getMinimumHeight(getContext(), 6.0f));
     }
 
     protected void a(PointF pointF) {

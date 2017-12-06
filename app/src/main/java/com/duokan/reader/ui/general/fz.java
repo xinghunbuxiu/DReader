@@ -2,9 +2,9 @@ package com.duokan.reader.ui.general;
 
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 
-class fz implements cg {
+class fz implements OnScrollListener {
     final /* synthetic */ PagesView a;
 
     fz(PagesView pagesView) {

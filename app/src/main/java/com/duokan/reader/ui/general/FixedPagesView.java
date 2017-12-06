@@ -41,7 +41,7 @@ public class FixedPagesView extends PagesView {
     public FixedPagesView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        this.b = UTools.closeAnimation(getContext(), 5.0f);
+        this.b = UTools.getMinimumHeight(getContext(), 5.0f);
         this.g = displayMetrics.widthPixels;
         this.h = displayMetrics.heightPixels;
         setPageLayout(PageLayout.TOP_TO_BOTTOM);

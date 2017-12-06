@@ -87,7 +87,7 @@ public class fh extends FrameLayout {
 
     private View a(String str, int i, int i2) {
         DkLabelView dkLabelView = (DkLabelView) LayoutInflater.from(getContext()).inflate(h.bookshelf__file_explorer_tab_view, null, false);
-        dkLabelView.setPadding(0, UTools.closeAnimation(getContext(), 15.0f), 0, UTools.closeAnimation(getContext(), 15.0f));
+        dkLabelView.setPadding(0, UTools.getMinimumHeight(getContext(), 15.0f), 0, UTools.getMinimumHeight(getContext(), 15.0f));
         dkLabelView.setText(str);
         return dkLabelView;
     }

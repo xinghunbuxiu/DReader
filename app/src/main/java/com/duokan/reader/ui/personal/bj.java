@@ -40,7 +40,7 @@ public class bj extends ActivatedController implements ae, h {
         setContentView(this.a);
         this.a.setAdapter(new bk(this));
         this.a.setRowDivider(new dk(getResources().getColor(d.general__shared__cccccc)));
-        this.a.a(UTools.closeAnimation(getContext(), 15.0f), 0, UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 60.0f));
+        this.a.a(UTools.getMinimumHeight(getContext(), 15.0f), 0, UTools.getMinimumHeight(getContext(), 15.0f), UTools.getMinimumHeight(getContext(), 60.0f));
         this.a.b(0, 0, 0, 0);
         c();
         a();

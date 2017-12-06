@@ -15,6 +15,6 @@ public class DkListView extends GridItemsView {
         super(context, attributeSet);
         setNumColumns(1);
         setThumbEnabled(true);
-        setMaxOverScrollHeight(UTools.g(getContext()));
+        setMaxOverScrollHeight(UTools.getMinimumHeight(getContext()));
     }
 }

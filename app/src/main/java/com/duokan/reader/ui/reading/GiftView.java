@@ -64,12 +64,12 @@ public class GiftView extends FrameLayout {
         this.d = findViewById(f.reading__gift_view__space);
         this.e = (deprecatedDkTextView) findViewById(f.reading__gift_view__msg);
         this.f = (TextView) findViewById(f.reading__gift_view__from);
-        ((FrameScrollView) findViewById(f.reading__gift_view__scroll)).setMaxOverScrollHeight(UTools.g(getContext()));
+        ((FrameScrollView) findViewById(f.reading__gift_view__scroll)).setMaxOverScrollHeight(UTools.getMinimumHeight(getContext()));
     }
 
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        int b = UTools.closeAnimation(getContext(), 10.0f);
+        int b = UTools.getMinimumHeight(getContext(), 10.0f);
         int paddingTop = getPaddingTop();
         int paddingLeft = getPaddingLeft();
         int paddingRight = getPaddingRight();

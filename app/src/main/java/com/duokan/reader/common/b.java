@@ -69,7 +69,7 @@ public abstract class b {
             spannableStringBuilder.delete(indexOf - 1, indexOf);
             indexOf--;
             spannableStringBuilder.setSpan(new ForegroundColorSpan(DkApp.get().getResources().getColor(classc.general__shared__ff6c00)), i4, indexOf, 17);
-            spannableStringBuilder.setSpan(new AbsoluteSizeSpan(UTools.closeAnimation(DkApp.get(), (float) i2)), i4, indexOf, 17);
+            spannableStringBuilder.setSpan(new AbsoluteSizeSpan(UTools.getMinimumHeight(DkApp.get(), (float) i2)), i4, indexOf, 17);
             i4 = indexOf + 1;
             i3++;
         }

@@ -16,10 +16,10 @@ class cl extends View {
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
-        if (this.a.d.isEmpty() && displayMetrics.heightPixels - getHeight() >= UTools.closeAnimation(getContext(), 100.0f)) {
+        if (this.a.d.isEmpty() && displayMetrics.heightPixels - getHeight() >= UTools.getMinimumHeight(getContext(), 100.0f)) {
             a(this.a.d);
             this.a.d();
-        } else if (!this.a.d.isEmpty() && displayMetrics.heightPixels - getHeight() >= UTools.closeAnimation(getContext(), 100.0f)) {
+        } else if (!this.a.d.isEmpty() && displayMetrics.heightPixels - getHeight() >= UTools.getMinimumHeight(getContext(), 100.0f)) {
             Rect rect = (Rect) UTools.g.getRect();
             a(rect);
             if (!this.a.d.equals(rect)) {

@@ -261,9 +261,9 @@ public class de extends FrameLayout {
         ((TextView) this.r.findViewById(g.reading__comment_view__fans_title)).getPaint().setFakeBoldText(true);
         ((TextView) this.r.findViewById(g.reading__comment_view__fans_count)).setText(String.format(getResources().getString(j.reading__comment_view__tip_count), new Object[]{Integer.valueOf(agVar.i)}));
         LinearLayout linearLayout = (LinearLayout) this.r.findViewById(g.reading__comment_view__fans_avatars);
-        ViewGroup.LayoutParams layoutParams = new LinearLayout.LayoutParams(UTools.closeAnimation(getContext(), 40.0f), UTools.closeAnimation(getContext(), 40.0f));
-        layoutParams.leftMargin = UTools.closeAnimation(getContext(), 7.5f);
-        layoutParams.rightMargin = UTools.closeAnimation(getContext(), 7.5f);
+        ViewGroup.LayoutParams layoutParams = new LinearLayout.LayoutParams(UTools.getMinimumHeight(getContext(), 40.0f), UTools.getMinimumHeight(getContext(), 40.0f));
+        layoutParams.leftMargin = UTools.getMinimumHeight(getContext(), 7.5f);
+        layoutParams.rightMargin = UTools.getMinimumHeight(getContext(), 7.5f);
         linearLayout.removeAllViews();
         for (int i = 0; i < Math.min(agVar.h.size(), 6); i++) {
             View dkGeneralFaceView = new DkGeneralFaceView(getContext());
@@ -275,7 +275,7 @@ public class de extends FrameLayout {
             imageView.setImageDrawable(getResources().getDrawable(f.reading__comment_view__more));
             imageView.setScaleType(ScaleType.CENTER);
             imageView.setOnClickListener(new di(this));
-            imageView.setPadding(UTools.closeAnimation(getContext(), 5.0f), 0, UTools.closeAnimation(getContext(), 5.0f), 0);
+            imageView.setPadding(UTools.getMinimumHeight(getContext(), 5.0f), 0, UTools.getMinimumHeight(getContext(), 5.0f), 0);
             linearLayout.addView(imageView, new ViewGroup.LayoutParams(-2, -1));
         }
         this.r.findViewById(g.reading__comment_view__tip_author).setOnClickListener(this.D);
@@ -367,11 +367,11 @@ public class de extends FrameLayout {
                 findViewById = new LinearScrollView(getContext());
                 findViewById.setOnScrollListener(new do (this));
                 linearLayout.addView(findViewById, new ViewGroup.LayoutParams(-1, -1));
-                findViewById.setPadding(UTools.closeAnimation(getContext(), 15.0f), 0, UTools.closeAnimation(getContext(), 15.0f), 0);
+                findViewById.setPadding(UTools.getMinimumHeight(getContext(), 15.0f), 0, UTools.getMinimumHeight(getContext(), 15.0f), 0);
                 linearLayout2 = findViewById;
-                i2 = UTools.closeAnimation(getContext(), 20.0f);
+                i2 = UTools.getMinimumHeight(getContext(), 20.0f);
             } else {
-                linearLayout.setPadding(UTools.closeAnimation(getContext(), 15.0f), 0, UTools.closeAnimation(getContext(), 15.0f), 0);
+                linearLayout.setPadding(UTools.getMinimumHeight(getContext(), 15.0f), 0, UTools.getMinimumHeight(getContext(), 15.0f), 0);
                 i2 = (((UTools.getWidthPixels(getContext()) - linearLayout.getPaddingLeft()) - linearLayout.getPaddingRight()) - (getResources().getDimensionPixelSize(e.general__shared__cover_detail_width) * 3)) / 2;
                 linearLayout2 = linearLayout;
             }

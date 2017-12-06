@@ -22,7 +22,7 @@ public final class bd extends f {
         super(context);
         this.a = new jd(context, new be(this));
         this.a.setOnTouchListener(new bf(this));
-        this.a.setVerticalOffset(UTools.closeAnimation(getContext(), 10.0f));
+        this.a.setVerticalOffset(UTools.getMinimumHeight(getContext(), 10.0f));
         setDimAmount(0.0f);
         setContentView(this.a, new LayoutParams(-1, -1));
     }

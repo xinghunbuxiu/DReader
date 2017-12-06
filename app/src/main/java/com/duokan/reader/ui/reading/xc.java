@@ -20,7 +20,7 @@ public class xc extends wk {
     public xc(IFeature featrue) {
         super(featrue);
         View inflate = LayoutInflater.from(getContext()).inflate(g.reading__reading_viewtype_view, null);
-        inflate.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? UTools.closeAnimation(getContext(), 240.0f) : -1, -2));
+        inflate.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? UTools.getMinimumHeight(getContext(), 240.0f) : -1, -2));
         setContentView(inflate);
         this.a = findViewById(f.reading__reading_viewtype_view__single_page);
         this.b = findViewById(f.reading__reading_viewtype_view__scroll);

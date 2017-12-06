@@ -25,9 +25,9 @@ public class yj extends yr {
             this.z.a(this.h);
         }
         for (int i = 0; i < this.z.getToolCount(); i++) {
-            this.z.a(i).setPadding(0, 0, UTools.closeAnimation(getContext(), 20.0f), 0);
+            this.z.a(i).setPadding(0, 0, UTools.getMinimumHeight(getContext(), 20.0f), 0);
         }
-        this.z.a(UTools.closeAnimation(getContext(), 10.0f), 0, UTools.closeAnimation(getContext(), 10.0f), 0);
+        this.z.a(UTools.getMinimumHeight(getContext(), 10.0f), 0, UTools.getMinimumHeight(getContext(), 10.0f), 0);
         this.d.addView(this.z);
     }
 }

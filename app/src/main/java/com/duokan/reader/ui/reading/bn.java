@@ -269,7 +269,7 @@ public class bn extends go {
             this.o = (LinearLayout) this.j.findViewById(g.reading__chapter_not_purchased_view__server_info);
             addView(this.j);
         }
-        this.j.setPadding(0, k.a().top + UTools.closeAnimation(getContext(), 10.0f), 0, k.a().bottom + UTools.closeAnimation(getContext(), 10.0f));
+        this.j.setPadding(0, k.a().top + UTools.getMinimumHeight(getContext(), 10.0f), 0, k.a().bottom + UTools.getMinimumHeight(getContext(), 10.0f));
         this.k.setPadding(k.a().left, 0, k.a().right, 0);
         this.k.setChsToChtChars(l.k);
         this.k.setText(r());
@@ -341,7 +341,7 @@ public class bn extends go {
                 String optString4 = jSONObject.optString("divider", "br");
                 CharSequence optString5 = jSONObject.optString("style", "");
                 View textView = new TextView(getContext());
-                textView.setPadding(UTools.closeAnimation(getContext(), 5.0f), 0, UTools.closeAnimation(getContext(), 5.0f), UTools.closeAnimation(getContext(), 5.0f));
+                textView.setPadding(UTools.getMinimumHeight(getContext(), 5.0f), 0, UTools.getMinimumHeight(getContext(), 5.0f), UTools.getMinimumHeight(getContext(), 5.0f));
                 textView.setText(Html.fromHtml(optString2));
                 textView.setTextColor(o());
                 textView.setTextSize(0, (float) getResources().getDimensionPixelSize(e.general_font__shared__c));
@@ -352,12 +352,12 @@ public class bn extends go {
                     textView.setPadding(0, 0, 0, 0);
                     textView.setGravity(17);
                     textView.setTextSize(0, (float) getResources().getDimensionPixelSize(e.general_font__shared__b));
-                    int b = UTools.closeAnimation(getContext(), 10.0f);
+                    int b = UTools.getMinimumHeight(getContext(), 10.0f);
                     layoutParams.bottomMargin = b;
                     layoutParams.rightMargin = b;
                     layoutParams.leftMargin = b;
-                    layoutParams.width = UTools.closeAnimation(getContext(), 207.0f);
-                    layoutParams.height = UTools.closeAnimation(getContext(), 36.0f);
+                    layoutParams.width = UTools.getMinimumHeight(getContext(), 207.0f);
+                    layoutParams.height = UTools.getMinimumHeight(getContext(), 36.0f);
                     if (TextUtils.equals(optString5, "hollow")) {
                         textView.setBackgroundResource(f.general__shared__rounded_hollow_button_orange);
                         textView.setTextColor(getResources().getColor(d.general__shared__orange));
@@ -366,11 +366,11 @@ public class bn extends go {
                         textView.setTextColor(-1);
                     }
                     if (linkedList.size() > 0 && ((View) linkedList.getLast()).findViewWithTag("button") == null) {
-                        layoutParams.topMargin = UTools.closeAnimation(getContext(), 25.0f);
+                        layoutParams.topMargin = UTools.getMinimumHeight(getContext(), 25.0f);
                     }
                 } else if (TextUtils.equals(optString, "autopay")) {
                     textView.setCompoundDrawablesWithIntrinsicBounds(f.general__shared__small_checkbox, 0, 0, 0);
-                    textView.setCompoundDrawablePadding(UTools.closeAnimation(getContext(), 5.0f));
+                    textView.setCompoundDrawablePadding(UTools.getMinimumHeight(getContext(), 5.0f));
                     textView.setSelected(this.b.ag());
                 }
                 ej ejVar = (ej) this.b.G();

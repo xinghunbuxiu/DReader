@@ -12,7 +12,7 @@ class xz extends yb {
     public xz(IFeature featrue, yh yhVar) {
         super(featrue, yhVar);
         findViewById(g.reading__search_text_view__cancel).setOnClickListener(new ya(this));
-        findViewById(g.reading__search_text_view__bar).setPadding(UTools.closeAnimation(getContext(), 15.0f), ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).getTheme().getHeaderPaddingTop() + UTools.closeAnimation(getContext(), 10.0f), UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 10.0f));
+        findViewById(g.reading__search_text_view__bar).setPadding(UTools.getMinimumHeight(getContext(), 15.0f), ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).getTheme().getHeaderPaddingTop() + UTools.getMinimumHeight(getContext(), 10.0f), UTools.getMinimumHeight(getContext(), 15.0f), UTools.getMinimumHeight(getContext(), 10.0f));
     }
 
     protected void onAttachToStub() {

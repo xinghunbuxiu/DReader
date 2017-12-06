@@ -82,7 +82,7 @@ public class yr extends ActivatedController {
         this.a.setCenterViewResource(h.reading__selection_bar_view);
         this.a.setUpArrow(f.reading__shared__arrow_top);
         this.a.setDownArrow(f.reading__shared__arrow_bottom);
-        this.a.a(UTools.closeAnimation(getContext(), 15.0f), 0, UTools.closeAnimation(getContext(), 15.0f), 0);
+        this.a.a(UTools.getMinimumHeight(getContext(), 15.0f), 0, UTools.getMinimumHeight(getContext(), 15.0f), 0);
         this.z = new jh(getContext(), null);
         this.A = new LayoutParams(-1, -1);
         this.A.gravity = 17;
@@ -90,7 +90,7 @@ public class yr extends ActivatedController {
         this.z.setScrollRightResource(f.general__shared__arrow_right_13dip_ffffff);
         this.z.setScrollLeftResource(f.general__shared__arrow_left_13dip_ffffff);
         this.b = (BoxView) this.a.getCenterView();
-        this.b.getLayoutParams().width = Math.min(getResources().getDisplayMetrics().widthPixels, UTools.closeAnimation(getContext(), 360.0f));
+        this.b.getLayoutParams().width = Math.min(getResources().getDisplayMetrics().widthPixels, UTools.getMinimumHeight(getContext(), 360.0f));
         this.d = (LinearLayout) findViewById(g.reading__selection_bar_view__line1);
         this.e = (LinearLayout) findViewById(g.reading__selection_bar_view__line2);
         this.f = (LinearLayout) findViewById(g.reading__selection_bar_view__line_visible);
@@ -125,7 +125,7 @@ public class yr extends ActivatedController {
         this.p = (ImageView) this.o.getChildAt(0);
         this.g.addView(this.E.getContentView());
         this.y = new LayoutParams(-2, -2);
-        this.y.setMargins(UTools.closeAnimation(getContext(), -25.0f), 0, 0, 0);
+        this.y.setMargins(UTools.getMinimumHeight(getContext(), -25.0f), 0, 0, 0);
         this.D = new HashMap();
         this.h.setOnClickListener(new zb(this));
         this.k.setOnClickListener(new zc(this));
@@ -284,7 +284,7 @@ public class yr extends ActivatedController {
     }
 
     private int e(Rect... rectArr) {
-        int b = UTools.closeAnimation(getContext(), 15.0f);
+        int b = UTools.getMinimumHeight(getContext(), 15.0f);
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
         int i = (displayMetrics.heightPixels / 2) - b;
         Rect rect = (Rect) UTools.g.getRect();

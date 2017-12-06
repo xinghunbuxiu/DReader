@@ -37,7 +37,7 @@ public class gf extends LinearScrollView {
 
     private void f() {
         removeAllViews();
-        int b = UTools.closeAnimation(getContext(), 12.0f);
+        int b = UTools.getMinimumHeight(getContext(), 12.0f);
         int color = getResources().getColor(d.general__shared__333333);
         for (int i = 0; i < this.c.size(); i++) {
             Pair pair = (Pair) this.c.get(i);

@@ -45,7 +45,7 @@ public class dh extends gx {
         textView.setOnClickListener(new dp(this));
         inflate.findViewById(g.bookshelf__bookshelf_menu_view__bookshelf_style).setOnClickListener(new dq(this));
         a(inflate);
-        a(UTools.closeAnimation(getContext(), 65.0f));
+        a(UTools.getMinimumHeight(getContext(), 65.0f));
     }
 
     private void c() {

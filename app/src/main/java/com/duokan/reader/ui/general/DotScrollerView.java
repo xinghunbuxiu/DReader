@@ -8,12 +8,12 @@ import android.widget.LinearLayout;
 import com.duokan.b.f;
 import com.duokan.b.g;
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 
 public class DotScrollerView extends LinearLayout {
     private final LinearScrollView a;
     private final DotProgressBar b;
-    private cg c;
+    private OnScrollListener c;
     private boolean d;
 
     public DotScrollerView(Context context) {
@@ -34,7 +34,7 @@ public class DotScrollerView extends LinearLayout {
         this.a.setOnHierarchyChangeListener(new bw(this));
     }
 
-    public void setOnScrollListener(cg cgVar) {
+    public void setOnScrollListener(OnScrollListener cgVar) {
         this.c = cgVar;
     }
 

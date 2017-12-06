@@ -45,7 +45,7 @@ public class FixedPageClipView extends FrameLayout {
         this.b = new iy(this, context, shVar);
         addView(this.b, new LayoutParams(-1, -1));
         this.c = new BubbleFloatingView(context);
-        this.c.a(LayoutInflater.from(context).inflate(g.reading__page_clip_tool_view, null), new LayoutParams(-2, UTools.closeAnimation(getContext(), 40.0f)));
+        this.c.a(LayoutInflater.from(context).inflate(g.reading__page_clip_tool_view, null), new LayoutParams(-2, UTools.getMinimumHeight(getContext(), 40.0f)));
         addView(this.c);
         a();
     }

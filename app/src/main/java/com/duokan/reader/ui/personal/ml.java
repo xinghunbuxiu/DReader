@@ -95,7 +95,7 @@ public abstract class ml extends LinearLayout {
             this.c.setBackgroundColor(-1);
             ITheme sVar = (ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class);
             this.c.a(0, 0, 0, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
-            this.c.setRowDivider(new InsetDrawable(new dk(getResources().getColor(d.general__shared__cccccc)), UTools.closeAnimation(getContext(), 15.0f), 0, UTools.closeAnimation(getContext(), 15.0f), 0));
+            this.c.setRowDivider(new InsetDrawable(new dk(getResources().getColor(d.general__shared__cccccc)), UTools.getMinimumHeight(getContext(), 15.0f), 0, UTools.getMinimumHeight(getContext(), 15.0f), 0));
             View inflate = inflate(getContext(), h.personal__notes_info_header_view, null);
             a(inflate);
             this.c.setHatBodyView(inflate);

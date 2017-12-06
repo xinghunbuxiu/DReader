@@ -71,9 +71,9 @@ public class gp extends FrameLayout {
                     Rect rect2 = (Rect) UTools.g.getRect();
                     rect2.set(getPaddingLeft() + rect.left, height, (getPaddingLeft() + rect.left) + this.a.getIntrinsicWidth(), ((int) this.b.a().getTextSize()) + height);
                     Rect rect3 = (Rect) UTools.g.getRect();
-                    rect3.set(rect2.right + UTools.closeAnimation(getContext(), 8.0f), height, (getWidth() - getPaddingRight()) - rect.right, ((int) this.b.a().getTextSize()) + height);
+                    rect3.set(rect2.right + UTools.getMinimumHeight(getContext(), 8.0f), height, (getWidth() - getPaddingRight()) - rect.right, ((int) this.b.a().getTextSize()) + height);
                     if (this.c.bf()) {
-                        this.c.a(canvas, getWidth() / 2, height + (((int) this.b.a().getTextSize()) / 2), getHeight() - UTools.closeAnimation(getContext(), 65.0f), getHeight(), this.b.a().getColor());
+                        this.c.a(canvas, getWidth() / 2, height + (((int) this.b.a().getTextSize()) / 2), getHeight() - UTools.getMinimumHeight(getContext(), 65.0f), getHeight(), this.b.a().getColor());
                     }
                     this.a.setBounds(rect2);
                     this.a.draw(canvas);
@@ -82,7 +82,7 @@ public class gp extends FrameLayout {
                     UTools.g.getRect(rect3);
                     UTools.g.getRect(rect2);
                 } else if (this.c.bf()) {
-                    this.c.a(canvas, getWidth() / 2, getHeight() - (k.a().bottom / 2), getHeight() - UTools.closeAnimation(getContext(), 65.0f), getHeight(), this.b.a().getColor());
+                    this.c.a(canvas, getWidth() / 2, getHeight() - (k.a().bottom / 2), getHeight() - UTools.getMinimumHeight(getContext(), 65.0f), getHeight(), this.b.a().getColor());
                 }
             }
         }

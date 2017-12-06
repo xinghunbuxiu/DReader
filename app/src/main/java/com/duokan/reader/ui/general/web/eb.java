@@ -17,6 +17,6 @@ class eb implements as {
     }
 
     public void a() {
-        this.d.pageController.scrollPosToTop(UTools.closeAnimation(this.d.pageController.getContext(), (float) this.a), UTools.closeAnimation(this.d.pageController.getContext(), (float) this.b), this.c);
+        this.d.pageController.scrollPosToTop(UTools.getMinimumHeight(this.d.pageController.getContext(), (float) this.a), UTools.getMinimumHeight(this.d.pageController.getContext(), (float) this.b), this.c);
     }
 }

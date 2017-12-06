@@ -80,10 +80,10 @@ public abstract class bn extends af {
     protected void b() {
         View inflate = LayoutInflater.from(getContext()).inflate(h.account__third_share_view_v4, null);
         if (ReaderEnv.get().forHd()) {
-            inflate.setBackgroundDrawable(new hm(new ColorDrawable(getContext().getResources().getColor(d.general__shared__fefaf8)), (float) UTools.closeAnimation(getContext(), 8.0f)));
+            inflate.setBackgroundDrawable(new hm(new ColorDrawable(getContext().getResources().getColor(d.general__shared__fefaf8)), (float) UTools.getMinimumHeight(getContext(), 8.0f)));
         }
         setContentView(inflate);
-        inflate.findViewById(g.account__third_share_view__btns).setPadding(UTools.closeAnimation(getContext(), 15.0f), (ReaderEnv.get().forHd() ? 0 : ((ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class)).getTheme().getHeaderPaddingTop()) + UTools.closeAnimation(getContext(), 10.0f), UTools.closeAnimation(getContext(), 15.0f), UTools.closeAnimation(getContext(), 10.0f));
+        inflate.findViewById(g.account__third_share_view__btns).setPadding(UTools.getMinimumHeight(getContext(), 15.0f), (ReaderEnv.get().forHd() ? 0 : ((ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class)).getTheme().getHeaderPaddingTop()) + UTools.getMinimumHeight(getContext(), 10.0f), UTools.getMinimumHeight(getContext(), 15.0f), UTools.getMinimumHeight(getContext(), 10.0f));
         ((DkLabelView) inflate.findViewById(g.account__third_share_view__third_name)).setText(getContext().getString(j.share_name_sina));
         inflate.findViewById(g.account__third_share_view__cancel).setOnClickListener(new bo(this));
         this.b = inflate.findViewById(g.account__third_share_view__send);

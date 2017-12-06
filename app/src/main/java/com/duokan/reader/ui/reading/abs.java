@@ -140,7 +140,7 @@ public class abs extends View {
             float scrollScaleX = f * getScrollScaleX();
             float scrollScaleY = f2 * getScrollScaleY();
             this.g.a(true);
-            this.g.a(this.b.f.x, this.b.f.y, Math.round(scrollScaleX), Math.round(scrollScaleY), getMinScrollX(), getMaxScrollX(), getMinScrollY(), getMaxScrollY(), UTools.defaultClose(getContext()), UTools.g(getContext()));
+            this.g.a(this.b.f.x, this.b.f.y, Math.round(scrollScaleX), Math.round(scrollScaleY), getMinScrollX(), getMaxScrollX(), getMinScrollY(), getMaxScrollY(), UTools.defaultClose(getContext()), UTools.getMinimumHeight(getContext()));
             invalidate();
         }
     }
@@ -352,11 +352,11 @@ public class abs extends View {
     }
 
     private final int getMinOverScrollY() {
-        return Float.compare(((float) this.b.b.getHeight()) * this.b.h, (float) getHeight()) <= 0 ? getMinScrollY() : getMinScrollY() - UTools.g(getContext());
+        return Float.compare(((float) this.b.b.getHeight()) * this.b.h, (float) getHeight()) <= 0 ? getMinScrollY() : getMinScrollY() - UTools.getMinimumHeight(getContext());
     }
 
     private final int getMaxOverScrollY() {
-        return Float.compare(((float) this.b.b.getHeight()) * this.b.h, (float) getHeight()) <= 0 ? getMaxScrollY() : getMaxScrollY() + UTools.g(getContext());
+        return Float.compare(((float) this.b.b.getHeight()) * this.b.h, (float) getHeight()) <= 0 ? getMaxScrollY() : getMaxScrollY() + UTools.getMinimumHeight(getContext());
     }
 
     private int getMinScrollX() {

@@ -28,7 +28,7 @@ class yd extends Drawable {
         paint.setStrokeWidth(1.0f);
         paint.setStyle(Style.STROKE);
         paint.setColor(this.a.g);
-        canvas.drawRoundRect(rectF, (float) UTools.closeAnimation(this.a.getContext(), 5.0f), (float) UTools.closeAnimation(this.a.getContext(), 5.0f), paint);
+        canvas.drawRoundRect(rectF, (float) UTools.getMinimumHeight(this.a.getContext(), 5.0f), (float) UTools.getMinimumHeight(this.a.getContext(), 5.0f), paint);
         UTools.h.getRect(rectF);
         UTools.b.getRect(paint);
     }

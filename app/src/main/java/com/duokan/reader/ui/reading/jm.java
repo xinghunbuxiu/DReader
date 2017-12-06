@@ -11,7 +11,7 @@ import com.duokan.reader.domain.document.ac;
 
 public class jm extends FrameLayout implements jn {
     private final ac a;
-    private final int b = UTools.closeAnimation(getContext(), 2.0f);
+    private final int b = UTools.getMinimumHeight(getContext(), 2.0f);
     private final Drawable c = getResources().getDrawable(e.general__shared__jindu_02);
     private final Drawable d = getResources().getDrawable(e.general__shared__jindu_01);
 
