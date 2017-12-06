@@ -30,7 +30,7 @@ class pe implements s {
         dl a = this.b.a(this.c);
         float l = b.l() + a.l();
         do doVar = new do (b);
-        doVar.d((float) UTools.addAnimation(i, 0, 360));
+        doVar.d((float) UTools.get_Angle(i, 0, 360));
         this.b.a(this.c, doVar);
         dl dlVar = new dl(a);
         dlVar.d(l - doVar.l());

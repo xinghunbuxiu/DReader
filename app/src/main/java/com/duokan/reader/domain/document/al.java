@@ -96,7 +96,7 @@ public class al {
         r0 = r7.getScaledPagingTouchSlop;
         if (r0 != 0) goto L_0x01d5;
     L_0x0006:
-        r0 = r7.getScaledTouchSlop;
+        r0 = r7.getTriangleEdge;
         r0.acquireUninterruptibly();
         monitor-enter(r7);
         r0 = r7.getVisible;	 Catch:{ all -> 0x0070 }
@@ -132,8 +132,8 @@ public class al {
         r4 = r0.getWidthPixels;	 Catch:{ all -> 0x0070 }
         if (r4 != 0) goto L_0x0060;
     L_0x0055:
-        r4 = r0.showAnimation;	 Catch:{ all -> 0x0070 }
-        r4.showAnimation(r7);	 Catch:{ all -> 0x0070 }
+        r4 = r0.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0070 }
+        r4.getScaledMaximumFlingVelocity(r7);	 Catch:{ all -> 0x0070 }
         r4 = 1;
         r0.getWidthPixels = r4;	 Catch:{ all -> 0x0070 }
     L_0x0060:
@@ -196,7 +196,7 @@ public class al {
         if (r3 == 0) goto L_0x00d1;
     L_0x00cb:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0070 }
-        r0.<init>();	 Catch:{ all -> 0x0070 }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x0070 }
         throw r0;	 Catch:{ all -> 0x0070 }
     L_0x00d1:
         r3 = r0.o;	 Catch:{ all -> 0x0070 }
@@ -228,7 +228,7 @@ public class al {
         if (r4 == 0) goto L_0x0110;
     L_0x010a:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0070 }
-        r0.<init>();	 Catch:{ all -> 0x0070 }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x0070 }
         throw r0;	 Catch:{ all -> 0x0070 }
     L_0x0110:
         r4 = r7.HttpLogger;	 Catch:{ all -> 0x0070 }
@@ -271,7 +271,7 @@ public class al {
         r0 = r1.SessionTask();	 Catch:{ Throwable -> 0x0223 }
         r3 = r1.getPhysicalXPixels();	 Catch:{ Throwable -> 0x0223 }
         r4 = r1.getHeightPixels();	 Catch:{ Throwable -> 0x0223 }
-        r0 = com.duokan.reader.common.bitmap.setDrawable.showAnimation(r0, r3, r4);	 Catch:{ Throwable -> 0x0223 }
+        r0 = com.duokan.reader.common.bitmap.setDrawable.getScaledMaximumFlingVelocity(r0, r3, r4);	 Catch:{ Throwable -> 0x0223 }
         r1.o = r0;	 Catch:{ Throwable -> 0x0223 }
         r0 = r7.HttpLogger;	 Catch:{ Throwable -> 0x0223 }
         r3 = r1.o;	 Catch:{ Throwable -> 0x0223 }
@@ -288,8 +288,8 @@ public class al {
         r0.setDrawable(r1, r3, r4);
         r1.getHeightPixels = r6;
     L_0x0193:
-        r0 = r1.showAnimation;
-        r0.showAnimation(r7);
+        r0 = r1.getScaledMaximumFlingVelocity;
+        r0.getScaledMaximumFlingVelocity(r7);
         r1.getWidthPixels = r6;
         goto L_0x0002;
     L_0x019f:
@@ -334,7 +334,7 @@ public class al {
         if (r1 == 0) goto L_0x01f9;
     L_0x01f0:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x01f6 }
-        r0.<init>();	 Catch:{ all -> 0x01f6 }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x01f6 }
         throw r0;	 Catch:{ all -> 0x01f6 }
     L_0x01f6:
         r0 = move-exception;
@@ -346,8 +346,8 @@ public class al {
     L_0x01ff:
         r1 = r0.getPhysicalXPixels;	 Catch:{ all -> 0x01f6 }
         r1.setDrawable(r0);	 Catch:{ all -> 0x01f6 }
-        r1 = r0.showAnimation;	 Catch:{ all -> 0x01f6 }
-        r1.showAnimation(r7);	 Catch:{ all -> 0x01f6 }
+        r1 = r0.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x01f6 }
+        r1.getScaledMaximumFlingVelocity(r7);	 Catch:{ all -> 0x01f6 }
     L_0x020d:
         r1 = r7.getVisible;	 Catch:{ all -> 0x01f6 }
         r1.remove(r0);	 Catch:{ all -> 0x01f6 }

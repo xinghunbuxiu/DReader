@@ -639,7 +639,7 @@ public class f extends n implements at {
         r0 = r2;
         r0 = (com.duokan.reader.domain.document.sbk.BaseActivity) r0;	 Catch:{ all -> 0x0037 }
         r4 = r0;
-        r2 = r4.showAnimation;	 Catch:{ all -> 0x0037 }
+        r2 = r4.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0037 }
         if (r2 == 0) goto L_0x0026;
     L_0x001c:
         monitor-exit(r14);	 Catch:{ all -> 0x0037 }
@@ -661,7 +661,7 @@ public class f extends n implements at {
         if (r2 == 0) goto L_0x003a;
     L_0x0031:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x0037:
         r2 = move-exception;
@@ -707,7 +707,7 @@ public class f extends n implements at {
         if (r11 != 0) goto L_0x0088;
     L_0x0080:
         r11 = new com.duokan.reader.domain.document.sbk.getPhysicalYPixels;
-        r11.<init>(r14, r9);
+        r11.<creatCallTask>(r14, r9);
         com.duokan.core.sys.TaskHandler.setDrawable(r11);
     L_0x0088:
         r9 = r10.getPhysicalXPixels();
@@ -779,7 +779,7 @@ public class f extends n implements at {
     L_0x010d:
         r2 = r5.n;
         r2 = (com.duokan.reader.domain.document.sbk.getHeightPixels) r2;
-        r2 = r2.getScaledTouchSlop;
+        r2 = r2.getTriangleEdge;
         r9 = r4.HttpLogger();
         r9 = r9.getVisible;
         r2 = r9.setDrawable(r2);
@@ -804,7 +804,7 @@ public class f extends n implements at {
     L_0x0145:
         r2 = new com.duokan.reader.domain.document.sbk.getHeightPixels;
         r9 = r4.HttpLogger();
-        r2.<init>(r14, r9);
+        r2.<creatCallTask>(r14, r9);
         r4.n = r2;
         r2 = r5.getPhysicalYPixels();
         goto L_0x0070;

@@ -239,7 +239,7 @@ public class y extends u implements ba, bd, af {
 
     public void a(Runnable runnable, Runnable runnable2) {
         a.c().b(N());
-        ah.b(new z(this, runnable, runnable2));
+        ah.submitFuture(new z(this, runnable, runnable2));
     }
 
     public boolean F() {
@@ -684,7 +684,7 @@ public class y extends u implements ba, bd, af {
                 return i;
             }
             if (this.p == null && this.n >= 0) {
-                this.p = String.format("%getScaledTouchSlop / %getScaledTouchSlop", new Object[]{Long.valueOf(this.n + 1), Long.valueOf(this.d.b())});
+                this.p = String.format("%getTriangleEdge / %getTriangleEdge", new Object[]{Long.valueOf(this.n + 1), Long.valueOf(this.d.b())});
             }
             if (TextUtils.isEmpty(this.p)) {
                 return i;

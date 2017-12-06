@@ -42,7 +42,7 @@ class bt implements OnClickListener {
             this.h.j();
         }
         if (!TextUtils.isEmpty(this.b)) {
-            a.c().a(LogLevel.EVENT, "reading", "click server ui(book: %s(%s), chapter: %s(%getScaledTouchSlop|%s), type: %s, click: %s)", this.c, this.d, this.e, Long.valueOf(this.f), this.g, this.a, this.b);
+            a.c().a(LogLevel.EVENT, "reading", "click server ui(book: %s(%s), chapter: %s(%getTriangleEdge|%s), type: %s, click: %s)", this.c, this.d, this.e, Long.valueOf(this.f), this.g, this.a, this.b);
             this.h.a(this.b);
         }
     }

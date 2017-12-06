@@ -100,7 +100,7 @@ class ss implements ac, af, an, aq, i, n, q, t, acv, yn {
                 ActivatedController storePageController = new StorePageController(this.a.getContext());
                 storePageController.setTransparent(true);
                 ((ReaderFeature) this.a.getContext().queryFeature(ReaderFeature.class)).showPopup(storePageController);
-                com.duokan.core.sys.ah.b(new su(this, file, bufferedInputStream, storePageController));
+                com.duokan.core.sys.ah.submitFuture(new su(this, file, bufferedInputStream, storePageController));
             } else if ("duokan-reader".equalsIgnoreCase(scheme)) {
                 ((ReaderFeature) this.a.getContext().queryFeature(ReaderFeature.class)).navigate(parse.toString(), "reading_" + this.a.a.G().H(), true, null);
             } else {

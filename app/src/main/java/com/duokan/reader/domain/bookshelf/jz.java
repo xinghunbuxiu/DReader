@@ -28,7 +28,7 @@ class jz implements Runnable {
                 if (fdVar.a != -1) {
                     this.a.b.a.b.put(str, Integer.valueOf(fdVar.a));
                     if (fdVar.a != 1002) {
-                        a.c().a(LogLevel.ERROR, "sbk", "fail to pull the chapter(%s)(error=%getScaledTouchSlop, msg=%s, book=%s, name=%s)", str, Integer.valueOf(fdVar.a), fdVar.b, this.a.b.b.H(), this.a.b.b.aw());
+                        a.c().a(LogLevel.ERROR, "sbk", "fail to pull the chapter(%s)(error=%getTriangleEdge, msg=%s, book=%s, name=%s)", str, Integer.valueOf(fdVar.a), fdVar.b, this.a.b.b.H(), this.a.b.b.aw());
                     }
                 } else {
                     a.c().b(!TextUtils.isEmpty(fdVar.c));

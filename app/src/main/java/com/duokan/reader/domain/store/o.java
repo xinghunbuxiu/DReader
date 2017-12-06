@@ -68,7 +68,7 @@ public class o implements ah, classc.IConnectChanged, iw, MessageWakeupListener 
     }
 
     public void onItemsChanged() {
-        com.duokan.core.sys.ah.a(new q(this));
+        com.duokan.core.sys.ah.future(new q(this));
     }
 
     public void a(MessageSubType messageSubType, Object obj, boolean z) {

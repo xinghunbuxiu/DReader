@@ -1,17 +1,24 @@
 package com.duokan.core.diagnostic;
 
+import android.text.TextUtils;
 import android.util.Log;
 
+import com.duokan.core.sys.AIdleOperation;
 import com.duokan.core.sys.StackTracesInfo;
 import com.duokan.core.sys.ah;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
 import java.io.Writer;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.Map.Entry;
@@ -19,10 +26,11 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class HttpLogger {
+    private static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault());
     private static final String TAG = HttpLogger.class.getName();
     private static final ConcurrentLinkedQueue<HttpLogger> loggers = new ConcurrentLinkedQueue();
+    private ConcurrentLinkedQueue<Logger> linkedQueue = new ConcurrentLinkedQueue();
     private File file = null;
-    private ConcurrentLinkedQueue linkedQueue = new ConcurrentLinkedQueue();
 
     public HttpLogger() {
         loggers.add(this);
@@ -77,11 +85,11 @@ public class HttpLogger {
         c(logLevel, tag, String.format(Locale.getDefault(), ">>>%s\n%s\n<<<", new Object[]{message, message2}));
     }
 
-    public void c(LogLevel logLevel, String str, String str2) {
-        Logger iVar = new Logger(logLevel, str, str2);
-        this.linkedQueue.add(iVar);
-        a(iVar);
-        a(logLevel);
+    public void c(LogLevel logLevel, String tag, String message) {
+        Logger logger = new Logger(logLevel, tag, message);
+        this.linkedQueue.add(logger);
+        printLogger(logger);
+        pringtLogLevel(logLevel);
     }
 
     public void a(LogLevel logLevel, String str, String str2, Object... objArr) {
@@ -93,110 +101,129 @@ public class HttpLogger {
         }
         Logger iVar = new Logger(logLevel, str, str3);
         this.linkedQueue.add(iVar);
-        a(iVar);
-        a(logLevel);
+        printLogger(iVar);
+        pringtLogLevel(logLevel);
     }
 
     public void d() {
         if (!this.linkedQueue.isEmpty()) {
             ConcurrentLinkedQueue concurrentLinkedQueue = this.linkedQueue;
             this.linkedQueue = new ConcurrentLinkedQueue();
-            ah.a(new g(this, concurrentLinkedQueue), TAG);
+            ah.future(new g(this, concurrentLinkedQueue), TAG);
         }
     }
 
     public void e() {
         if (!this.linkedQueue.isEmpty()) {
-            ConcurrentLinkedQueue concurrentLinkedQueue = this.linkedQueue;
+           final ConcurrentLinkedQueue concurrentLinkedQueue = this.linkedQueue;
             this.linkedQueue = new ConcurrentLinkedQueue();
             try {
-                ah.a(new h(this, concurrentLinkedQueue), TAG).get();
+                ah.future(new Runnable() {
+                    @Override
+                    public void run() {
+                        printFile(concurrentLinkedQueue,file);
+                    }
+                }, TAG).get();
             } catch (Throwable th) {
             }
         }
     }
-
-    private void a(LogLevel logLevel) {
-        Object obj;
-        Object obj2 = 1;
-        Object obj3 = logLevel.ordinal() >= LogLevel.DISASTER.ordinal() ? 1 : null;
-        if (logLevel.ordinal() >= LogLevel.ERROR.ordinal()) {
-            obj = 1;
-        } else {
-            obj = null;
-        }
-        if (logLevel.ordinal() < LogLevel.EVENT.ordinal()) {
-            obj2 = null;
-        }
-        if (obj3 != null) {
-            Iterator it = loggers.iterator();
-            while (it.hasNext()) {
-                ((HttpLogger) it.next()).e();
+    private void pringtLogLevel(LogLevel logLevel) {
+        int obj = logLevel.ordinal() >= LogLevel.ERROR.ordinal() ? 1 : 0;
+        int obj2 = logLevel.ordinal() < LogLevel.EVENT.ordinal() ? 0 : 1;
+        int obj3 = logLevel.ordinal() >= LogLevel.DISASTER.ordinal() ? 1 : 0;
+        if (obj3 != 0) {
+            Iterator<HttpLogger> loggerIterator = loggers.iterator();
+            while (loggerIterator.hasNext()) {
+                loggerIterator.next().e();
             }
-        } else if (obj != null) {
+        } else if (obj != 0) {
             e();
-        } else if (obj2 != null) {
+        } else if (obj2 != 0) {
             d();
         }
     }
 
-    private static void b(Queue queue, File file) {
-        FileOutputStream fileOutputStream;
-        FileOutputStream fileOutputStream2;
-        Throwable th;
-        if (file != null) {
-            try {
+    private static void printFile(Queue<Logger> queue, File file) {
+        FileOutputStream fileOutputStream = null;
+        try {
+            if (file != null) {
                 File parentFile = file.getParentFile();
                 if (parentFile != null) {
                     parentFile.mkdirs();
                 }
                 fileOutputStream = new FileOutputStream(file, true);
-                try {
-                    PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(new BufferedOutputStream(fileOutputStream), "utf-8"), false);
-                    for (Logger iVar : queue) {
-                        printWriter.println(iVar.toString());
-                    }
-                    printWriter.flush();
-                    printWriter.close();
-                    fileOutputStream2 = null;
-                    if (null != null) {
-                        try {
-                            fileOutputStream2.close();
-                        } catch (Throwable th2) {
-                        }
-                    }
-                } catch (Throwable th3) {
-                    th = th3;
-                    if (fileOutputStream != null) {
-                        try {
-                            fileOutputStream.close();
-                        } catch (Throwable th4) {
-                        }
-                    }
-                    throw th;
+                PrintWriter printWriter = new PrintWriter(new OutputStreamWriter(new BufferedOutputStream(fileOutputStream), "utf-8"), false);
+                for (Logger logger : queue) {
+                    printWriter.println(logger.toString());
                 }
-            } catch (Throwable th5) {
-                th = th5;
-                fileOutputStream = null;
-                if (fileOutputStream != null) {
+                printWriter.flush();
+                printWriter.close();
+
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (fileOutputStream != null)
                     fileOutputStream.close();
-                }
-                throw th;
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }
 
-    private static void a(Logger logger) {
+
+    private static void printLogger(Logger logger) {
         String[] split = logger.toString().split("[\r\n\\u0085\\u2028\\u2029]+");
         int i = 0;
         while (i < split.length) {
-            String str = i < 1 ? split[i] : logger.g + split[i];
-            if (logger.d.ordinal() >= LogLevel.WARNING.ordinal()) {
+            String str = i < 1 ? split[i] : logger.logInfo + split[i];
+            if (logger.logLevel.ordinal() >= LogLevel.WARNING.ordinal()) {
                 Log.e("logger", str);
             } else {
                 Log.i("logger", str);
             }
             i++;
+        }
+    }
+
+    class Logger {
+        private final Thread currentThread = AIdleOperation.getCurrentThread();
+        private final long timeMillis = System.currentTimeMillis();
+        private final LogLevel logLevel;
+        private final String error;
+        private final String msg;
+        private final String logInfo;
+
+        /**
+         * @param logLevel
+         * @param error
+         * @param msg
+         */
+        public Logger(LogLevel logLevel, String error, String msg) {
+            String arg3;
+            this.logLevel = logLevel;
+            this.error = error;
+            this.msg = msg;
+            Locale locale = Locale.getDefault();
+            String format = "[%s]%s";
+            Object[] args = new Object[2];
+            args[0] = this.logLevel.name();
+            if (TextUtils.isEmpty(this.error)) {
+                arg3 = "";
+            } else {
+                arg3 = String.format(Locale.getDefault(), "[%s]", new Object[]{this.error});
+            }
+            args[1] = arg3;
+            this.logInfo = String.format(locale, format, args);
+        }
+
+        public String toString() {
+            String format = SIMPLE_DATE_FORMAT.format(new Date(this.timeMillis));
+            return String.format(Locale.getDefault(), "%s%s //@%s, %s", new Object[]{this.logInfo, this.msg, this.currentThread.toString(), format});
         }
     }
 }

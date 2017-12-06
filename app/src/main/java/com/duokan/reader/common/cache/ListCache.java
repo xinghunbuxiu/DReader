@@ -342,12 +342,12 @@ public class ListCache {
         return;
     L_0x0009:
         r0 = setDrawable;	 Catch:{ all -> 0x0021 }
-        r2 = r3.showAnimation;	 Catch:{ all -> 0x0021 }
+        r2 = r3.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0021 }
         r0 = r0.containsKey(r2);	 Catch:{ all -> 0x0021 }
         if (r0 == 0) goto L_0x0024;
     L_0x0013:
         r0 = setDrawable;	 Catch:{ all -> 0x0021 }
-        r2 = r3.showAnimation;	 Catch:{ all -> 0x0021 }
+        r2 = r3.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0021 }
         r0 = r0.getAllSortStackTraces(r2);	 Catch:{ all -> 0x0021 }
         r0 = (com.duokan.reader.common.cache.n) r0;	 Catch:{ all -> 0x0021 }
         r3.getWidthPixels = r0;	 Catch:{ all -> 0x0021 }
@@ -385,12 +385,12 @@ public class ListCache {
         return;
     L_0x0011:
         r0 = setDrawable;	 Catch:{ all -> 0x0029 }
-        r2 = r6.showAnimation;	 Catch:{ all -> 0x0029 }
+        r2 = r6.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0029 }
         r0 = r0.containsKey(r2);	 Catch:{ all -> 0x0029 }
         if (r0 == 0) goto L_0x002c;
     L_0x001b:
         r0 = setDrawable;	 Catch:{ all -> 0x0029 }
-        r2 = r6.showAnimation;	 Catch:{ all -> 0x0029 }
+        r2 = r6.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0029 }
         r0 = r0.getAllSortStackTraces(r2);	 Catch:{ all -> 0x0029 }
         r0 = (com.duokan.reader.common.cache.n) r0;	 Catch:{ all -> 0x0029 }
         r6.getWidthPixels = r0;	 Catch:{ all -> 0x0029 }
@@ -404,14 +404,14 @@ public class ListCache {
     L_0x002c:
         r0 = new com.duokan.reader.common.cache.n;	 Catch:{ all -> 0x0029 }
         r2 = r6.SessionTask;	 Catch:{ all -> 0x0029 }
-        r3 = r6.showAnimation;	 Catch:{ all -> 0x0029 }
+        r3 = r6.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0029 }
         r4 = r6.HttpLogger;	 Catch:{ all -> 0x0029 }
         r5 = r6.getPhysicalXPixels;	 Catch:{ all -> 0x0029 }
         r2 = r2.setDrawable(r3, r4, r5);	 Catch:{ all -> 0x0029 }
         r0.<init>(r2);	 Catch:{ all -> 0x0029 }
         r6.getWidthPixels = r0;	 Catch:{ all -> 0x0029 }
         r0 = setDrawable;	 Catch:{ all -> 0x0029 }
-        r2 = r6.showAnimation;	 Catch:{ all -> 0x0029 }
+        r2 = r6.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0029 }
         r3 = r6.getWidthPixels;	 Catch:{ all -> 0x0029 }
         r0.put(r2, r3);	 Catch:{ all -> 0x0029 }
         goto L_0x0027;

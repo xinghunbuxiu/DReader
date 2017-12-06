@@ -284,7 +284,7 @@ public class SearchController extends StorePageController implements iv, iw {
     private void getHotWord() {
         if (this.mLoadHotWord) {
             this.mLoadHotWord = false;
-            ah.b(new TaskHandler(this));
+            ah.submitFuture(new TaskHandler(this));
         }
     }
 
@@ -424,6 +424,6 @@ public class SearchController extends StorePageController implements iv, iw {
 
     private void loadHistoryForPh() {
         this.mLoadHistory = false;
-        ah.b(new MyContextWrapper(this));
+        ah.submitFuture(new MyContextWrapper(this));
     }
 }

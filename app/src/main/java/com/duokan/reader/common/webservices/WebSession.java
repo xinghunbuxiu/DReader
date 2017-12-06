@@ -242,9 +242,9 @@ public abstract class WebSession {
     private void scheduleSessionTask(CacheStrategy cacheStrategy, long j) {
         this.mSessionTask = new SessionTask(this, cacheStrategy);
         if (this.mParallel) {
-            this.mSessionFuture = j > 0 ? ah.a(this.mSessionTask, j) : ah.b(this.mSessionTask);
+            this.mSessionFuture = j > 0 ? ah.submitScheduledFuture(this.mSessionTask, j) : ah.submitFuture(this.mSessionTask);
         } else {
-            this.mSessionFuture = j > 0 ? ah.a(this.mSessionTask, this.mSeqQueueName, j) : ah.a(this.mSessionTask, this.mSeqQueueName);
+            this.mSessionFuture = j > 0 ? ah.scheduledFuture(this.mSessionTask, this.mSeqQueueName, j) : ah.future(this.mSessionTask, this.mSeqQueueName);
         }
     }
 

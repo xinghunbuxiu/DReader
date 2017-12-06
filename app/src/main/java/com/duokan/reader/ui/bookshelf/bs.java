@@ -28,7 +28,7 @@ class bs implements ac {
     }
 
     public void a(ab abVar) {
-        ah.b(new bt(this, this.a.isChecked(this.b), jq.a(this.f.getContext(), null, this.f.getString(j.importing))));
+        ah.submitFuture(new bt(this, this.a.isChecked(this.b), jq.a(this.f.getContext(), null, this.f.getString(j.importing))));
     }
 
     public void b(ab abVar) {

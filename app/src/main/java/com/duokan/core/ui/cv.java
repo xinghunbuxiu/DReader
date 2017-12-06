@@ -292,31 +292,31 @@ public class cv {
         return this.h.findViewById(i);
     }
 
-    public final void showBalloon(a aVar, View view) {
+    public final void showBalloon(MyExtendView aVar, View view) {
         showBalloon(aVar, view, aVar.getLayoutParams());
     }
 
-    public final void showBalloon(a aVar, View view, LayoutParams layoutParams) {
+    public final void showBalloon(MyExtendView aVar, View view, LayoutParams layoutParams) {
         LayoutParams a = layoutParams == null ? this.i.a() : this.i.a(layoutParams);
         this.i.addView(aVar, a);
         a.b = new WeakReference(view);
     }
 
-    public void showBalloon(a aVar, Rect rect) {
+    public void showBalloon(MyExtendView aVar, Rect rect) {
         showBalloon(aVar, rect, aVar.getLayoutParams());
     }
 
-    public void showBalloon(a aVar, Rect rect, LayoutParams layoutParams) {
+    public void showBalloon(MyExtendView aVar, Rect rect, LayoutParams layoutParams) {
         LayoutParams a = layoutParams == null ? this.i.a() : this.i.a(layoutParams);
         this.i.addView(aVar, a);
         a.a.set(rect);
     }
 
-    public final a getBalloon(int i) {
-        return (a) this.i.getChildAt(i);
+    public final MyExtendView getBalloon(int i) {
+        return (MyExtendView) this.i.getChildAt(i);
     }
 
-    public final void removeBalloon(a aVar) {
+    public final void removeBalloon(MyExtendView aVar) {
         this.i.removeView(aVar);
     }
 

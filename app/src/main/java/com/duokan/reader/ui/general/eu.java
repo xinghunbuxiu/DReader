@@ -108,7 +108,7 @@ public class eu extends Drawable {
 
     private static void a(WeakReference weakReference, View view) {
         if (weakReference != null && view != null) {
-            UTools.addAnimation(view, new ev(weakReference, view));
+            UTools.creatCallTask(view, new ev(weakReference, view));
             view.invalidate();
         }
     }

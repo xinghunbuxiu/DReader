@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 class ap extends aj implements ax {
-    final /* synthetic */ HatGridView a;
+    final HatGridView a;
     private aj c;
 
     private ap(HatGridView hatGridView) {

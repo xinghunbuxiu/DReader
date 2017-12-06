@@ -144,7 +144,7 @@ class ko extends nm {
 
     private void a(kc kcVar) {
         if (kcVar != null && !kcVar.f && !kcVar.g) {
-            ah.b(new lg(this, new LinkedList(), new LinkedList(), new LinkedList(), kcVar));
+            ah.submitFuture(new lg(this, new LinkedList(), new LinkedList(), new LinkedList(), kcVar));
         }
     }
 

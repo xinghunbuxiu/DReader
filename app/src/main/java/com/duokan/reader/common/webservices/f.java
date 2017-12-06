@@ -126,7 +126,7 @@ class f implements d {
             }
             WebSession.sHttpCountingMap.put(b, Long.valueOf((WebSession.HTTP_COUNTING_TIME * currentTimeMillis) + ((long) i)));
             if (i > 20) {
-                WebLog.c().a(LogLevel.WARNING, HttpHost.DEFAULT_SCHEME_NAME, "too frequent requests(%getScaledTouchSlop times within 100s) on %s", Integer.valueOf(i), this.a.b());
+                WebLog.c().a(LogLevel.WARNING, HttpHost.DEFAULT_SCHEME_NAME, "too frequent requests(%getTriangleEdge times within 100s) on %s", Integer.valueOf(i), this.a.b());
             }
         }
         if (ManagedApp.get().getOldRunningState() != RunningState.FOREGROUND && ManagedApp.get().getRunningStateMillis() > TimeUnit.MINUTES.toMillis(1) && classc.f.b().c()) {
@@ -256,7 +256,7 @@ class f implements d {
         }
         this.b.connect();
         if (this.b.getResponseCode() >= HttpStatus.SC_BAD_REQUEST) {
-            WebLog.c().a(LogLevel.WARNING, HttpHost.DEFAULT_SCHEME_NAME, "bad request(%getScaledTouchSlop) on %s", Integer.valueOf(this.b.getResponseCode()), this.a.b());
+            WebLog.c().a(LogLevel.WARNING, HttpHost.DEFAULT_SCHEME_NAME, "bad request(%getTriangleEdge) on %s", Integer.valueOf(this.b.getResponseCode()), this.a.b());
             return;
         }
         this.c = this.b.getInputStream();

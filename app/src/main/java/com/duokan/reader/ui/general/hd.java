@@ -11,7 +11,7 @@ import com.duokan.core.app.IController;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.a;
+import com.duokan.core.ui.MyExtendView;
 import com.duokan.core.ui.cv;
 
 public class hd extends ActivatedController {
@@ -108,7 +108,7 @@ public class hd extends ActivatedController {
             addSubController(hfVar);
             getPopupWindow();
             if ($assertionsDisabled || this.mPopupWindow != null) {
-                this.mPopupWindow.showBalloon((a) hfVar.getContentView(), view);
+                this.mPopupWindow.showBalloon((MyExtendView) hfVar.getContentView(), view);
                 activate(hfVar);
                 if (!this.mPopupWindow.isShowing()) {
                     this.mPopupWindow.show();
@@ -142,7 +142,7 @@ public class hd extends ActivatedController {
         deactivate(popupHolder);
         if (popupHolder instanceof hf) {
             if ($assertionsDisabled || this.mPopupWindow != null) {
-                this.mPopupWindow.removeBalloon((a) popupHolder.getContentView());
+                this.mPopupWindow.removeBalloon((MyExtendView) popupHolder.getContentView());
             } else {
                 throw new AssertionError();
             }

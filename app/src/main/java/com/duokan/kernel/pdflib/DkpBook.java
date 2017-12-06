@@ -54,7 +54,7 @@ public class DkpBook extends DkNative {
 
     public void close() {
         if (this.mDkpHandle != 0) {
-            ah.a(new Runnable() {
+            ah.future(new Runnable() {
                 public void run() {
                     Iterator it = DkpBook.this.mDkpFixedPages.iterator();
                     while (it.hasNext()) {
@@ -117,7 +117,7 @@ public class DkpBook extends DkNative {
         WebLog.c().b(dkpPage.mRefCount > 0);
         dkpPage.mRefCount--;
         if (dkpPage.mRefCount == 0) {
-            ah.a(new Runnable() {
+            ah.future(new Runnable() {
                 public void run() {
                     if (!dkpPage.mReleased && dkpPage.mRefCount <= 0) {
                         synchronized (dkpPage) {

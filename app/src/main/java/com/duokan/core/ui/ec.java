@@ -19,7 +19,7 @@ final class ec implements Runnable {
     public void run() {
         Runnable edVar = new ed(this);
         if (this.view.getWindowToken() == null || this.view.isLayoutRequested()) {
-            UTools.addAnimation(this.view, edVar);
+            UTools.creatCallTask(this.view, edVar);
         } else {
             edVar.run();
         }

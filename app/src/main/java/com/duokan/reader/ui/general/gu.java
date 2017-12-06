@@ -37,7 +37,7 @@ class gu implements Runnable {
                 this.b.c.run();
             }
             if (1.0f == duration) {
-                UTools.addAnimation(this.b.a.d, new gv(this));
+                UTools.creatCallTask(this.b.a.d, new gv(this));
                 return;
             }
             return;

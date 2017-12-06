@@ -242,7 +242,7 @@ public class aj extends ag implements ba, bd, ar {
 
     public void a(Runnable runnable, Runnable runnable2) {
         a.c().b(N());
-        ah.b(new ak(this, runnable, runnable2));
+        ah.submitFuture(new ak(this, runnable, runnable2));
     }
 
     public boolean F() {
@@ -766,7 +766,7 @@ public class aj extends ag implements ba, bd, ar {
                 return i;
             }
             if (this.o == null && this.m >= 0) {
-                this.o = String.format("%getScaledTouchSlop / %getScaledTouchSlop", new Object[]{Long.valueOf(this.m + 1), Long.valueOf(this.d.b())});
+                this.o = String.format("%getTriangleEdge / %getTriangleEdge", new Object[]{Long.valueOf(this.m + 1), Long.valueOf(this.d.b())});
             }
             if (TextUtils.isEmpty(this.o)) {
                 return i;

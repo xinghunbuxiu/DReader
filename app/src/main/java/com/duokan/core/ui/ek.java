@@ -8,11 +8,11 @@ final class ek extends ap {
     ek() {
     }
 
-    protected /* synthetic */ Object b() {
+    protected Object b() {
         return c();
     }
 
-    protected /* synthetic */ void b(Object obj) {
+    protected void b(Object obj) {
         a((Point) obj);
     }
 

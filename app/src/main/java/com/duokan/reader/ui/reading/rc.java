@@ -22,7 +22,7 @@ class rc implements ag {
             ej ejVar = (ej) this.b.f;
             ejVar.a(new rd(this, ejVar));
         } else if (this.b.f.R() && this.b.f.ao() == -1) {
-            ah.b(new rf(this));
+            ah.submitFuture(new rf(this));
         }
     }
 

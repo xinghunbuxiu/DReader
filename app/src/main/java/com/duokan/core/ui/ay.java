@@ -796,7 +796,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     private final void a(int i) {
         if (c || this.C == null) {
             this.C = new ba(this, i);
-            t.a(this.C, (long) UTools.showAnimation());
+            t.a(this.C, (long) UTools.getTapTimeout());
             return;
         }
         throw new AssertionError();

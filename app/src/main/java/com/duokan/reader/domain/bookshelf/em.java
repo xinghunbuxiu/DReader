@@ -14,7 +14,7 @@ class em implements h {
     }
 
     public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
-        ah.b(new en(this, (DkStoreFictionDetail) dkStoreItem));
+        ah.submitFuture(new en(this, (DkStoreFictionDetail) dkStoreItem));
     }
 
     public void onFetchBookDetailError(String str) {

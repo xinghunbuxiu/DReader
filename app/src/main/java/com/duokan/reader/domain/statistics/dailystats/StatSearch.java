@@ -16,7 +16,7 @@ public class StatSearch extends StatEventBase {
             jSONObject.put("ev", this.event);
             jSONObject.put("ctx", this.searchType);
             jSONObject.put("key", this.keyword);
-            jSONObject.put("showAnimation", this.resultCount);
+            jSONObject.put("getScaledMaximumFlingVelocity", this.resultCount);
             jSONObject.put("onActivityResult", this.field);
             jSONObject.put("cc", this.clickResult);
             jSONObject.put("ts", this.timeStamp);

@@ -15,7 +15,7 @@ class h implements u {
         this.a.a.g.add("");
         this.a.a.c();
         this.a.a.b();
-        UTools.addAnimation(this.a.a.c, new i(this));
+        UTools.creatCallTask(this.a.a.c, new i(this));
     }
 
     public void a() {

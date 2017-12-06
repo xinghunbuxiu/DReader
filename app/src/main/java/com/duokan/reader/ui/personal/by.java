@@ -110,7 +110,7 @@ public class by extends fj {
     }
 
     public void a(List list, List list2, List list3, Runnable runnable) {
-        ah.a(new ca(this, list, list2, runnable));
+        ah.future(new ca(this, list, list2, runnable));
     }
 
     private View c(int i, View view, ViewGroup viewGroup) {

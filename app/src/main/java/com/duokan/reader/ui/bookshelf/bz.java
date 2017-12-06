@@ -144,7 +144,7 @@ class bz extends er {
         } else {
             an b = b(a);
             cz c2 = c(a);
-            if (UTools.getScaledTouchSlop(c2.getViewCenter(), c) >= ((double) UTools.closeAnimation(this.a.getContext(), 25.0f)) || this.k == b || !c2.j() || !this.l) {
+            if (UTools.getTriangleEdge(c2.getViewCenter(), c) >= ((double) UTools.closeAnimation(this.a.getContext(), 25.0f)) || this.k == b || !c2.j() || !this.l) {
                 a();
                 if (this.j != null) {
                     cz draggingItemView = this.j.getDraggingItemView();

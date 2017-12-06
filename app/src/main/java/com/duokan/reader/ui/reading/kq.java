@@ -74,7 +74,7 @@ class kq extends FrameLayout {
         }
         b();
         if (this.b) {
-            UTools.addAnimation((View) this, new ks(this));
+            UTools.creatCallTask((View) this, new ks(this));
             if (this.e.getVisibility() == 0) {
                 this.m = new AlphaAnimation(1.0f, 0.0f);
                 this.m.setDuration(500);

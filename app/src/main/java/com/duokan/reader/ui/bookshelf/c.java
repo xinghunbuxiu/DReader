@@ -161,7 +161,7 @@ public class c extends dg implements OnBookShelfTypeChangedListener, iv, iw, ct 
             ReaderEnv.get().setNeedAddNewbieBook(false);
             this.d = true;
             this.b.setVisibility(0);
-            ah.b(new d(this));
+            ah.submitFuture(new d(this));
             return;
         }
         this.c.clearAnimation();

@@ -33,7 +33,7 @@ class ah extends WebSession {
     }
 
     protected void onSessionTry() {
-        this.a = new j(this, this.b).a(this.j.c.getString(i.app__shared__build_name) + " " + ReaderEnv.get().getVersionName(), this.d.H(), this.d.aw(), this.d.o() == BookType.SERIAL ? "LianZai" : this.d.I(), String.format("(%getScaledTouchSlop, %getScaledTouchSlop, %getScaledTouchSlop)", new Object[]{Long.valueOf(this.c.g()), Long.valueOf(this.c.h()), Long.valueOf(this.c.i())}), this.e, this.f, this.g, this.h, this.b.c);
+        this.a = new j(this, this.b).a(this.j.c.getString(i.app__shared__build_name) + " " + ReaderEnv.get().getVersionName(), this.d.H(), this.d.aw(), this.d.o() == BookType.SERIAL ? "LianZai" : this.d.I(), String.format("(%getTriangleEdge, %getTriangleEdge, %getTriangleEdge)", new Object[]{Long.valueOf(this.c.g()), Long.valueOf(this.c.h()), Long.valueOf(this.c.i())}), this.e, this.f, this.g, this.h, this.b.c);
     }
 
     protected void onSessionSucceeded() {

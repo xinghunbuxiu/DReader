@@ -57,26 +57,26 @@ final class abi extends er {
                     } else if (this.a.d.getDirection() == CurlDirection.PAGE_UP) {
                         if (this.a.a.al()) {
                             if ((-this.f.x) > ((float) a)) {
-                                this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) (-UTools.closeAnimation(view.getContext())), 0.0f));
+                                this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) (-UTools.getScaledMinimumFlingVelocity(view.getContext())), 0.0f));
                             } else {
-                                this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) UTools.closeAnimation(view.getContext()), 0.0f));
+                                this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) UTools.getScaledMinimumFlingVelocity(view.getContext()), 0.0f));
                             }
                         } else if (this.f.x > ((float) a)) {
-                            this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) UTools.closeAnimation(view.getContext()), 0.0f));
+                            this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) UTools.getScaledMinimumFlingVelocity(view.getContext()), 0.0f));
                         } else {
-                            this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) (-UTools.closeAnimation(view.getContext())), 0.0f));
+                            this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) (-UTools.getScaledMinimumFlingVelocity(view.getContext())), 0.0f));
                         }
                     } else if (this.a.d.getDirection() == CurlDirection.PAGE_DOWN) {
                         if (this.a.a.al()) {
                             if (this.f.x > ((float) a)) {
-                                this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) UTools.closeAnimation(view.getContext()), 0.0f));
+                                this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) UTools.getScaledMinimumFlingVelocity(view.getContext()), 0.0f));
                             } else {
-                                this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) (-UTools.closeAnimation(view.getContext())), 0.0f));
+                                this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) (-UTools.getScaledMinimumFlingVelocity(view.getContext())), 0.0f));
                             }
                         } else if ((-this.f.x) > ((float) a)) {
-                            this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) (-UTools.closeAnimation(view.getContext())), 0.0f));
+                            this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) (-UTools.getScaledMinimumFlingVelocity(view.getContext())), 0.0f));
                         } else {
-                            this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) UTools.closeAnimation(view.getContext()), 0.0f));
+                            this.a.d.onDragEnd(new jn(view, motionEvent).a(0, new PointF()), new PointF((float) UTools.getScaledMinimumFlingVelocity(view.getContext()), 0.0f));
                         }
                     }
                     this.h = false;

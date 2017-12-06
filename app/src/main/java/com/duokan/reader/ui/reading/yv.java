@@ -28,7 +28,7 @@ class yv implements OnClickListener {
             for (toolCount = 1; toolCount < this.a.s.getChildCount(); toolCount++) {
                 this.a.s.getChildAt(toolCount).setLayoutParams(this.a.y);
             }
-            UTools.addAnimation(this.a.s, new yw(this, rectArr));
+            UTools.creatCallTask(this.a.s, new yw(this, rectArr));
             this.a.u.setClickable(true);
             this.a.v.setClickable(true);
             this.a.w.setClickable(true);

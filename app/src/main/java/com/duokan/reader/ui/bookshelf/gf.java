@@ -55,7 +55,7 @@ public class gf extends LinearScrollView {
             }
             addView(dkLabelView, new LayoutParams(-2, -2));
         }
-        UTools.addAnimation((View) this, new gg(this));
+        UTools.creatCallTask((View) this, new gg(this));
     }
 
     private void g() {

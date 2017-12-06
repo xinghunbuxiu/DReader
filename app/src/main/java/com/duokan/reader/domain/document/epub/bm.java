@@ -59,7 +59,7 @@ class bm implements ad {
 
     public Future a(com.duokan.core.sys.ag agVar) {
         Runnable futureTask = new FutureTask(new bo(this, agVar));
-        ah.b(futureTask);
+        ah.submitFuture(futureTask);
         return futureTask;
     }
 

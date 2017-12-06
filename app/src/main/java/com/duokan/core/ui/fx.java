@@ -141,7 +141,7 @@ public class fx extends WebView implements OnPreDrawListener {
                 z = true;
                 if (z) {
                     RectF rectF = (RectF) UTools.h.getRect();
-                    boolean a = UTools.addAnimation(rectF, (View) this);
+                    boolean a = UTools.isInRange(rectF, (View) this);
                     UTools.h.getRect(rectF);
                     z = a;
                 }

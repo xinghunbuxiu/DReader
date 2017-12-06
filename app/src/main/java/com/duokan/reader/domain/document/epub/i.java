@@ -81,7 +81,7 @@ public class i extends as implements com.duokan.reader.domain.document.i {
         /*
         r4 = this;
         r0 = 1;
-        r1 = com.duokan.core.diagnostic.setDrawable.showAnimation();
+        r1 = com.duokan.core.diagnostic.setDrawable.getScaledMaximumFlingVelocity();
         r2 = r4.N();
         r1.getVisible(r2);
         r1 = r4.setDrawable();
@@ -105,7 +105,7 @@ public class i extends as implements com.duokan.reader.domain.document.i {
     L_0x0021:
         r0 = new java.util.concurrent.CountDownLatch;	 Catch:{ all -> 0x001a }
         r1 = 1;
-        r0.<init>(r1);	 Catch:{ all -> 0x001a }
+        r0.<creatCallTask>(r1);	 Catch:{ all -> 0x001a }
         r4.TaskHandler = r0;	 Catch:{ all -> 0x001a }
     L_0x0029:
         monitor-exit(r4);	 Catch:{ all -> 0x001a }
@@ -114,15 +114,15 @@ public class i extends as implements com.duokan.reader.domain.document.i {
         if (r0 != 0) goto L_0x0050;
     L_0x002e:
         r0 = r4.getWidthPixels;
-        r0 = r0.getScaledTouchSlop();
+        r0 = r0.getTriangleEdge();
         if (r0 != 0) goto L_0x0050;
     L_0x0036:
-        r0 = r4.getScaledTouchSlop;
+        r0 = r4.getTriangleEdge;
         r0 = r0.setDrawable;
         if (r0 == 0) goto L_0x0050;
     L_0x003c:
-        r0 = r4.getScaledTouchSlop;
-        r0 = r0.showAnimation();
+        r0 = r4.getTriangleEdge;
+        r0 = r0.getScaledMaximumFlingVelocity();
         if (r0 != 0) goto L_0x0050;
     L_0x0044:
         r0 = r4.TaskHandler;	 Catch:{ InterruptedException -> 0x004e }
@@ -360,7 +360,7 @@ public class i extends as implements com.duokan.reader.domain.document.i {
 
     public void a(Runnable runnable, Runnable runnable2) {
         a.c().b(N());
-        ah.b(new n(this, runnable2, runnable));
+        ah.submitFuture(new n(this, runnable2, runnable));
     }
 
     public boolean F() {

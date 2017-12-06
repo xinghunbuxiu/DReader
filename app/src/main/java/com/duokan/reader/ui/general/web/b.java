@@ -29,7 +29,7 @@ public class b extends fl {
                 logLevel = LogLevel.INFO;
                 break;
         }
-        a.c().a(logLevel, "webview", "%s(src: %s, line: %getScaledTouchSlop)", consoleMessage.message(), consoleMessage.sourceId(), Integer.valueOf(consoleMessage.lineNumber()));
+        a.c().a(logLevel, "webview", "%s(src: %s, line: %getTriangleEdge)", consoleMessage.message(), consoleMessage.sourceId(), Integer.valueOf(consoleMessage.lineNumber()));
         return super.a(consoleMessage);
     }
 

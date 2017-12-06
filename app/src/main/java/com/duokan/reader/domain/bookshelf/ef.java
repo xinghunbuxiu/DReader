@@ -51,7 +51,7 @@ public class ef extends a {
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("note_text", this.b);
-            jSONObject.put("highlight_color", String.format("%getScaledTouchSlop %getScaledTouchSlop %getScaledTouchSlop", new Object[]{Integer.valueOf(Color.red(this.a)), Integer.valueOf(Color.green(this.a)), Integer.valueOf(Color.blue(this.a))}));
+            jSONObject.put("highlight_color", String.format("%getTriangleEdge %getTriangleEdge %getTriangleEdge", new Object[]{Integer.valueOf(Color.red(this.a)), Integer.valueOf(Color.green(this.a)), Integer.valueOf(Color.blue(this.a))}));
             return jSONObject.toString();
         } catch (JSONException e) {
             return "";

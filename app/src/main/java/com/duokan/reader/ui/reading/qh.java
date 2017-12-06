@@ -256,7 +256,7 @@ public abstract class qh extends p implements SystemUiConditioner, classc.IConne
             ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(etVar, runnable);
         } else {
             ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).pushHalfPage(etVar);
-            UTools.addAnimation(etVar.getContentView(), runnable);
+            UTools.creatCallTask(etVar.getContentView(), runnable);
         }
         return true;
     }

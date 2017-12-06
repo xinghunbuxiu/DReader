@@ -39,7 +39,7 @@ public class bz extends ak implements j {
 
     protected void onShow() {
         super.onShow();
-        UTools.addAnimation(this.a, 1);
+        UTools.PostTask(this.a, 1);
     }
 
     protected void onDismiss() {

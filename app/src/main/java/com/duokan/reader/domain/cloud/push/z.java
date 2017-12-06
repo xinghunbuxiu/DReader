@@ -133,7 +133,7 @@ public class z implements af {
         Object[] objArr = new Object[3];
         objArr[0] = a;
         objArr[1] = "onInited";
-        objArr[2] = String.format("code: %getScaledTouchSlop, id: %s, reason: %s", new Object[]{Long.valueOf(j), str, str2});
+        objArr[2] = String.format("code: %getTriangleEdge, id: %s, reason: %s", new Object[]{Long.valueOf(j), str, str2});
         a.c().c(LogLevel.EVENT, "push", String.format("class: %s, method: %s, message: %s", objArr));
         this.f = !TextUtils.isEmpty(str);
         if (!TextUtils.isEmpty(str)) {

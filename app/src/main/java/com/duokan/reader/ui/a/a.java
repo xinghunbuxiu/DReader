@@ -68,7 +68,7 @@ public class a extends ActivatedController {
         this.j = (LinkedList) this.f.clone();
         this.k = (LinkedList) this.g.clone();
         b();
-        UTools.addAnimation(this.d);
+        UTools.PostTask(this.d);
     }
 
     protected void onDetachFromStub() {
@@ -96,11 +96,11 @@ public class a extends ActivatedController {
             JSONObject jSONObject2 = new JSONObject();
             jSONObject.put("content", jSONObject2);
             JSONArray jSONArray = new JSONArray();
-            jSONObject2.put("getScaledTouchSlop", jSONArray);
+            jSONObject2.put("getTriangleEdge", jSONArray);
             jSONObject2 = new JSONObject();
             jSONArray.put(jSONObject2);
             jSONObject2.put("TaskHandler", "p");
-            jSONObject2.put("showAnimation", this.e.getText().toString());
+            jSONObject2.put("getScaledMaximumFlingVelocity", this.e.getText().toString());
             jSONObject.put("operation", z);
             for (int i = 0; i < this.f.size(); i++) {
                 jSONArray.put(a(i));
@@ -126,14 +126,14 @@ public class a extends ActivatedController {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("TaskHandler", "getVisible");
-            jSONObject.put("showAnimation", ((DkStoreAbsBook) this.f.get(i)).getBookUuid());
+            jSONObject.put("getScaledMaximumFlingVelocity", ((DkStoreAbsBook) this.f.get(i)).getBookUuid());
             if (!TextUtils.isEmpty((CharSequence) this.g.get(i))) {
                 JSONArray jSONArray = new JSONArray();
-                jSONObject.put("getScaledTouchSlop", jSONArray);
+                jSONObject.put("getTriangleEdge", jSONArray);
                 JSONObject jSONObject2 = new JSONObject();
                 jSONArray.put(jSONObject2);
                 jSONObject2.put("TaskHandler", "p");
-                jSONObject2.put("showAnimation", this.g.get(i));
+                jSONObject2.put("getScaledMaximumFlingVelocity", this.g.get(i));
             }
         } catch (Exception e) {
         }

@@ -65,7 +65,7 @@ public abstract class fy extends ZoomView {
 
     public void a(Runnable runnable) {
         if (this.c != null) {
-            UTools.addAnimation(this.c, new fz(this, runnable));
+            UTools.creatCallTask(this.c, new fz(this, runnable));
         }
     }
 
@@ -74,7 +74,7 @@ public abstract class fy extends ZoomView {
             View view = this.c;
             Point point = new Point(getScrollX() + (getWidth() / 2), getScrollY() + (getHeight() / 2));
             UTools.getTouchPoint(point, (View) this, view);
-            UTools.addAnimation(view, new ga(this, z, point, getZoomFactor(), i, view));
+            UTools.creatCallTask(view, new ga(this, z, point, getZoomFactor(), i, view));
         }
     }
 
@@ -112,14 +112,14 @@ public abstract class fy extends ZoomView {
     }
 
     protected void a(boolean z) {
-        UTools.addAnimation(this.c, new gc(this, z));
+        UTools.creatCallTask(this.c, new gc(this, z));
     }
 
     protected void b(boolean z) {
         if (this.c != null) {
             Point point = new Point(0, 0);
             UTools.showAnimation(point, this.c);
-            UTools.addAnimation((View) this, new gd(this, z, point));
+            UTools.creatCallTask((View) this, new gd(this, z, point));
         }
     }
 

@@ -1014,7 +1014,7 @@ public class s extends n implements at {
         r0 = r2;
         r0 = (com.duokan.reader.domain.document.epub.MyTask) r0;	 Catch:{ all -> 0x003b }
         r4 = r0;
-        r2 = r4.showAnimation;	 Catch:{ all -> 0x003b }
+        r2 = r4.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x003b }
         if (r2 == 0) goto L_0x002a;
     L_0x001f:
         monitor-exit(r16);	 Catch:{ all -> 0x003b }
@@ -1037,7 +1037,7 @@ public class s extends n implements at {
         if (r2 == 0) goto L_0x003e;
     L_0x0035:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x003b:
         r2 = move-exception;
@@ -1096,20 +1096,20 @@ public class s extends n implements at {
     L_0x009a:
         r3 = new com.duokan.reader.domain.document.epub.IActivityRunStatusChanged;
         r0 = r16;
-        r3.<init>(r0, r2);
+        r3.<creatCallTask>(r0, r2);
         com.duokan.core.sys.TaskHandler.setDrawable(r3);
     L_0x00a4:
         r2 = r4.getWidthPixels();
         r9 = r2.getWidthPixels;
         r2 = com.duokan.reader.domain.document.epub.ah.getScaledPagingTouchSlop();
-        r10 = r2.getScaledTouchSlop();
+        r10 = r2.getTriangleEdge();
         r2 = getPhysicalYPixels;
         if (r2 != 0) goto L_0x02b5;
     L_0x00b6:
         if (r10 != 0) goto L_0x02b5;
     L_0x00b8:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x00be:
         r2 = r6.getPhysicalYPixels();
@@ -1129,7 +1129,7 @@ public class s extends n implements at {
         r3 = r3 instanceof com.duokan.reader.domain.document.epub.al;
         if (r3 == 0) goto L_0x0194;
     L_0x00e4:
-        r2 = r2.showAnimation;
+        r2 = r2.getScaledMaximumFlingVelocity;
         r2 = (com.duokan.reader.domain.document.epub.al) r2;
         r8 = r2.getVisible;
         r2 = r4.getPhysicalYPixels();
@@ -1151,7 +1151,7 @@ public class s extends n implements at {
         r5 = r2;
         goto L_0x0084;
     L_0x0110:
-        r2 = com.duokan.core.diagnostic.setDrawable.showAnimation();
+        r2 = com.duokan.core.diagnostic.setDrawable.getScaledMaximumFlingVelocity();
         r3 = 0;
         r2.getVisible(r3);
         r2 = r6.p;
@@ -1170,7 +1170,7 @@ public class s extends n implements at {
         r2 = r2.getVisible;
         r2 = com.duokan.reader.domain.document.epub.ai.setDrawable(r2);
         r0 = r16;
-        r3.<init>(r0, r10, r5, r2);
+        r3.<creatCallTask>(r0, r10, r5, r2);
         r4.p = r3;
         r2 = r4.getWidthPixels();
         r3 = r6.setDrawable(r2);
@@ -1182,14 +1182,14 @@ public class s extends n implements at {
         if (r2 >= r10) goto L_0x0181;
     L_0x0156:
         r10 = r9.setDrawable(r2);
-        r11 = r10.showAnimation();
+        r11 = r10.getScaledMaximumFlingVelocity();
         r12 = r8.setDrawable(r2);
-        r12 = r12.showAnimation();
+        r12 = r12.getScaledMaximumFlingVelocity();
         r11 = android.text.TextUtils.equals(r11, r12);
         if (r11 != 0) goto L_0x017e;
     L_0x016c:
         r11 = r10.setDrawable();
-        r10 = r10.showAnimation();
+        r10 = r10.getScaledMaximumFlingVelocity();
         r5.redirectChapter(r11, r10);
         r10 = (long) r2;
         r5.clearChapterData(r10);
@@ -1208,7 +1208,7 @@ public class s extends n implements at {
         r2 = r6.setDrawable(r2);
         goto L_0x010d;
     L_0x0194:
-        r2 = r2.showAnimation();
+        r2 = r2.getScaledMaximumFlingVelocity();
         r2 = r2.setDrawable;
         r3 = r4.getPhysicalYPixels();
         r3 = r3.setDrawable;
@@ -1254,7 +1254,7 @@ public class s extends n implements at {
         r0 = r16;
         r9 = r0.getWidthPixels;
         r10 = new com.duokan.reader.domain.document.epub.aw;
-        r10.<init>(r8);
+        r10.<creatCallTask>(r8);
         r8 = 0;
         r8 = r9.setDrawable(r10, r8);
         r8 = r8.getPhysicalYPixels();
@@ -1266,7 +1266,7 @@ public class s extends n implements at {
         r2 = r2 + 1;
         goto L_0x01c4;
     L_0x0200:
-        r2 = com.duokan.core.diagnostic.setDrawable.showAnimation();
+        r2 = com.duokan.core.diagnostic.setDrawable.getScaledMaximumFlingVelocity();
         r3 = 0;
         r2.getVisible(r3);
         r2 = r6.p;
@@ -1285,14 +1285,14 @@ public class s extends n implements at {
         r3 = android.net.Uri.parse(r3);
         r3 = r3.getPath();
         r8 = com.duokan.reader.domain.document.epub.ah.getScaledPagingTouchSlop();
-        r8 = r8.showAnimation();
+        r8 = r8.getScaledMaximumFlingVelocity();
         r2 = r2.getVisible;
         r5.openDrm(r3, r8, r2);
         r2 = new com.duokan.reader.domain.document.epub.ab;
         r3 = r4.getPhysicalYPixels();
         r8 = 0;
         r0 = r16;
-        r2.<init>(r0, r3, r5, r8);
+        r2.<creatCallTask>(r0, r3, r5, r8);
         r4.p = r2;
         r2 = r4.getWidthPixels();
         r2 = r6.setDrawable(r2);
@@ -1315,7 +1315,7 @@ public class s extends n implements at {
         r3 = r2;
         goto L_0x01b9;
     L_0x0274:
-        r2 = com.duokan.core.diagnostic.setDrawable.showAnimation();
+        r2 = com.duokan.core.diagnostic.setDrawable.getScaledMaximumFlingVelocity();
         r3 = 0;
         r2.getVisible(r3);
         r2 = r6.p;
@@ -1348,7 +1348,7 @@ public class s extends n implements at {
         if (r9 != 0) goto L_0x02c1;
     L_0x02bb:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x02c1:
         r2 = r9.entrySet();
@@ -1369,7 +1369,7 @@ public class s extends n implements at {
         r2 = (java.lang.String) r2;
         r2 = android.net.Uri.parse(r2);
         r2 = r2.getPath();
-        r12.<init>(r2);
+        r12.<creatCallTask>(r2);
         r2 = r12.exists();
         if (r2 == 0) goto L_0x02c9;
     L_0x02fa:
@@ -1386,7 +1386,7 @@ public class s extends n implements at {
         r12 = "DEFAULT_FONT_ZH";
         r12 = com.duokan.reader.domain.document.n.getVisible(r9, r12);
         r13 = "FALLBACK_FONT";
-        r9 = com.duokan.reader.domain.document.n.showAnimation(r9, r13);
+        r9 = com.duokan.reader.domain.document.n.getScaledMaximumFlingVelocity(r9, r13);
         r13 = android.text.TextUtils.isEmpty(r2);
         if (r13 != 0) goto L_0x0408;
     L_0x0326:
@@ -1453,7 +1453,7 @@ public class s extends n implements at {
         if (r2 >= 0) goto L_0x0439;
     L_0x03af:
         r2 = com.duokan.reader.domain.document.epub.ah.getScaledPagingTouchSlop();
-        r2 = r2.getScaledTouchSlop();
+        r2 = r2.getTriangleEdge();
         r3 = 1;
         r2.setUseBookStyle(r3);
     L_0x03bb:
@@ -1521,7 +1521,7 @@ public class s extends n implements at {
         goto L_0x0390;
     L_0x0439:
         r2 = com.duokan.reader.domain.document.epub.ah.getScaledPagingTouchSlop();
-        r2 = r2.getScaledTouchSlop();
+        r2 = r2.getTriangleEdge();
         r3 = 0;
         r2.setUseBookStyle(r3);
         r2 = r8.getPhysicalXPixels();
@@ -1696,7 +1696,7 @@ public class s extends n implements at {
         if (r26 != 0) goto L_0x000c;
     L_0x0006:
         r4 = new java.lang.AssertionError;
-        r4.<init>();
+        r4.<creatCallTask>();
         throw r4;
     L_0x000c:
         r4 = getPhysicalYPixels;
@@ -1705,7 +1705,7 @@ public class s extends n implements at {
         if (r25 != 0) goto L_0x0018;
     L_0x0012:
         r4 = new java.lang.AssertionError;
-        r4.<init>();
+        r4.<creatCallTask>();
         throw r4;
     L_0x0018:
         r14 = r26.getScaledPagingTouchSlop();
@@ -1718,17 +1718,17 @@ public class s extends n implements at {
         if (r4 > 0) goto L_0x0030;
     L_0x002a:
         r4 = new java.lang.AssertionError;
-        r4.<init>();
+        r4.<creatCallTask>();
         throw r4;
     L_0x0030:
         r0 = r25;
         r4 = r0.setDrawable;
-        r4 = r4.showAnimation();
+        r4 = r4.getScaledMaximumFlingVelocity();
         if (r4 == 0) goto L_0x0057;
     L_0x003a:
         r0 = r25;
         r4 = r0.setDrawable;
-        r4 = r4.showAnimation;
+        r4 = r4.getScaledMaximumFlingVelocity;
         r4 = java.lang.Float.isNaN(r4);
         if (r4 != 0) goto L_0x0057;
     L_0x0046:
@@ -1742,12 +1742,12 @@ public class s extends n implements at {
     L_0x0057:
         r0 = r25;
         r4 = r0.setDrawable;
-        r4 = r4.showAnimation();
+        r4 = r4.getScaledMaximumFlingVelocity();
         if (r4 == 0) goto L_0x007e;
     L_0x0061:
         r0 = r25;
         r4 = r0.setDrawable;
-        r4 = r4.getScaledTouchSlop;
+        r4 = r4.getTriangleEdge;
         r4 = android.text.TextUtils.isEmpty(r4);
         if (r4 != 0) goto L_0x007e;
     L_0x006d:
@@ -1867,7 +1867,7 @@ public class s extends n implements at {
         if (r4 != 0) goto L_0x014e;
     L_0x0148:
         r4 = new java.lang.AssertionError;
-        r4.<init>();
+        r4.<creatCallTask>();
         throw r4;
     L_0x014e:
         if (r4 != 0) goto L_0x0153;
@@ -1876,11 +1876,11 @@ public class s extends n implements at {
         goto L_0x00e0;
     L_0x0153:
         r5 = new com.duokan.kernel.DkFlowPosition;
-        r5.<init>(r6, r8, r10);
+        r5.<creatCallTask>(r6, r8, r10);
         r15 = new com.duokan.kernel.DkFlowPosition;
-        r15.<init>();
+        r15.<creatCallTask>();
         r18 = new com.duokan.kernel.DkFlowPosition;
-        r18.<init>();
+        r18.<creatCallTask>();
         r4.getBeginPosition(r15);
         r0 = r18;
         r4.getEndPosition(r0);
@@ -1896,7 +1896,7 @@ public class s extends n implements at {
         if (r4 == 0) goto L_0x0182;
     L_0x017c:
         r4 = new java.lang.AssertionError;
-        r4.<init>();
+        r4.<creatCallTask>();
         throw r4;
     L_0x0182:
         r4 = getPhysicalYPixels;
@@ -1908,7 +1908,7 @@ public class s extends n implements at {
         if (r4 == 0) goto L_0x0194;
     L_0x018e:
         r4 = new java.lang.AssertionError;
-        r4.<init>();
+        r4.<creatCallTask>();
         throw r4;
     L_0x0194:
         r0 = r18;
@@ -1999,19 +1999,19 @@ public class s extends n implements at {
         if (r8 <= 0) goto L_0x024a;
     L_0x022b:
         r0 = r25;
-        r8 = r0.showAnimation;
+        r8 = r0.getScaledMaximumFlingVelocity;
         r9 = 1;
-        r8.getScaledTouchSlop = r9;
+        r8.getTriangleEdge = r9;
         r0 = r25;
-        r8 = r0.showAnimation;
+        r8 = r0.getScaledMaximumFlingVelocity;
         r8.setDrawable = r4;
         r0 = r25;
-        r4 = r0.showAnimation;
+        r4 = r0.getScaledMaximumFlingVelocity;
         r8 = 1;
         r6 = r6 - r8;
         r4.getVisible = r6;
         r0 = r25;
-        r4 = r0.showAnimation;
+        r4 = r0.getScaledMaximumFlingVelocity;
         r4.HttpLogger();
         goto L_0x00c1;
     L_0x024a:
@@ -2037,18 +2037,18 @@ public class s extends n implements at {
         if (r6 <= 0) goto L_0x028f;
     L_0x0271:
         r0 = r25;
-        r6 = r0.showAnimation;
+        r6 = r0.getScaledMaximumFlingVelocity;
         r7 = 1;
-        r6.showAnimation = r7;
+        r6.getScaledMaximumFlingVelocity = r7;
         r0 = r25;
-        r6 = r0.showAnimation;
+        r6 = r0.getScaledMaximumFlingVelocity;
         r6.setDrawable = r4;
         r0 = r25;
-        r4 = r0.showAnimation;
+        r4 = r0.getScaledMaximumFlingVelocity;
         r6 = 0;
         r4.getVisible = r6;
         r0 = r25;
-        r4 = r0.showAnimation;
+        r4 = r0.getScaledMaximumFlingVelocity;
         r4.HttpLogger();
         goto L_0x00c1;
     L_0x028f:
@@ -2060,7 +2060,7 @@ public class s extends n implements at {
         if (r4 != 0) goto L_0x00c1;
     L_0x0297:
         r4 = new java.lang.AssertionError;
-        r4.<init>();
+        r4.<creatCallTask>();
         throw r4;
         */
         throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.epub.s.setDrawable(com.duokan.reader.domain.document.epub.ch, com.duokan.reader.domain.document.epub.EpubTypesettingContext):void");
@@ -2423,7 +2423,7 @@ public class s extends n implements at {
         if (r9 != 0) goto L_0x000b;
     L_0x0005:
         r0 = 4;
-        r8.getScaledTouchSlop(r0);
+        r8.getTriangleEdge(r0);
         r0 = r3;
     L_0x000a:
         return r0;
@@ -2432,7 +2432,7 @@ public class s extends n implements at {
     L_0x000c:
         r4 = r9.setDrawable;
         r5 = new com.duokan.reader.domain.document.epub.MyContextWrapper;
-        r5.<init>(r8);
+        r5.<creatCallTask>(r8);
         r4 = com.duokan.reader.domain.document.epub.ai.setDrawable(r4, r9, r5);
         r5 = r4.getVisible;
         r5 = r5.isValid();
@@ -2442,14 +2442,14 @@ public class s extends n implements at {
         r0 = r0.isValid();
         if (r0 != 0) goto L_0x0065;
     L_0x0027:
-        r8.getScaledTouchSlop(r2);
+        r8.getTriangleEdge(r2);
         r0 = r3;
         goto L_0x000a;
     L_0x002c:
         if (r0 == 0) goto L_0x0033;
     L_0x002e:
         r0 = 3;
-        r8.getScaledTouchSlop(r0);
+        r8.getTriangleEdge(r0);
         goto L_0x001f;
     L_0x0033:
         r0 = r9 instanceof com.duokan.reader.domain.document.epub.ag;
@@ -2480,7 +2480,7 @@ public class s extends n implements at {
         if (r5 != 0) goto L_0x0061;
     L_0x005c:
         r0 = 2;
-        r8.getScaledTouchSlop(r0);
+        r8.getTriangleEdge(r0);
         goto L_0x001f;
     L_0x0061:
         r0.getVisible = r5;
@@ -2493,12 +2493,12 @@ public class s extends n implements at {
         r0 = (r0 > r6 ? 1 : (r0 == r6 ? 0 : -1));
         if (r0 > 0) goto L_0x0076;
     L_0x0071:
-        r8.getScaledTouchSlop(r2);
+        r8.getTriangleEdge(r2);
         r0 = r3;
         goto L_0x000a;
     L_0x0076:
         r0 = new com.duokan.reader.domain.document.epub.ab;
-        r0.<init>(r8, r9, r4);
+        r0.<creatCallTask>(r8, r9, r4);
         goto L_0x000a;
         */
         throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.document.epub.s.setDrawable(com.duokan.reader.domain.document.epub.ap):com.duokan.reader.domain.document.epub.getScaledPagingTouchSlop");

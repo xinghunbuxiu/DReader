@@ -31,7 +31,7 @@ public class AnonymousAccount extends a {
         /*
         r7 = this;
         r0 = 0;
-        r1 = r7.showAnimation;	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }
+        r1 = r7.getScaledMaximumFlingVelocity;	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }
         r2 = "SELECT * FROM %1$s WHERE %2$s IS '%3$s'";
         r3 = 3;
         r3 = new java.lang.Object[r3];	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }

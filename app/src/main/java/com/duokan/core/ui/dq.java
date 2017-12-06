@@ -5,7 +5,7 @@ import android.view.animation.Transformation;
 
 class dq {
     private final dp a;
-    final /* synthetic */ di b;
+    final di b;
     private final dp c;
     private final AlphaAnimation d = new AlphaAnimation(0.0f, 1.0f);
     private final Transformation e = new Transformation();

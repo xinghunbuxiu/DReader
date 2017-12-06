@@ -232,7 +232,7 @@ public class o implements gz {
     }
 
     private void a(Runnable runnable) {
-        ah.a(runnable, l.a, 0);
+        ah.scheduledFuture(runnable, l.a, 0);
     }
 
     public o b(String str) {

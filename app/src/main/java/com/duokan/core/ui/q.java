@@ -43,8 +43,8 @@ public class q extends er {
             }
             if (motionEvent.getActionMasked() == 1) {
                 if (d(this.a, new PointF(a.getX(), a.getY())) >= ((double) UTools.getScaledTouchSlop(view.getContext()))) {
-                    float b = Float.isNaN(this.d) ? (float) UTools.closeAnimation(view.getContext()) : this.d;
-                    this.c.computeCurrentVelocity(Calendar.MILLISECOND_OF_SECOND, Float.isNaN(this.e) ? (float) UTools.showAnimation(view.getContext()) : this.e);
+                    float b = Float.isNaN(this.d) ? (float) UTools.getScaledMinimumFlingVelocity(view.getContext()) : this.d;
+                    this.c.computeCurrentVelocity(Calendar.MILLISECOND_OF_SECOND, Float.isNaN(this.e) ? (float) UTools.getScaledMaximumFlingVelocity(view.getContext()) : this.e);
                     PointF pointF = new PointF(this.c.getXVelocity(), this.c.getYVelocity());
                     if (Math.abs(pointF.x) < b) {
                         pointF.x = 0.0f;

@@ -133,7 +133,7 @@ public class PagesFrameView extends FrameLayout {
                 this.h = DkUtils.chs2chtText(this.h);
             }
             if (document.e() > 0 && h.j() >= 0) {
-                this.g = String.format("%getScaledTouchSlop / %getScaledTouchSlop", new Object[]{Long.valueOf(h.j() + 1), Long.valueOf(r6)});
+                this.g = String.format("%getTriangleEdge / %getTriangleEdge", new Object[]{Long.valueOf(h.j() + 1), Long.valueOf(r6)});
             }
             if (X.g().f()) {
                 z = false;

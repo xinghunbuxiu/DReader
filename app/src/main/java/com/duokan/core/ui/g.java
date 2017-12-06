@@ -44,7 +44,7 @@ public class g extends er {
         } else if (esVar instanceof i) {
             i iVar = (i) esVar;
             long eventTime = motionEvent.getEventTime();
-            if (this.e <= 0 || (eventTime - this.g < ((long) UTools.getScaledTouchSlop()) && UTools.getScaledTouchSlop(new PointF(motionEvent.getX(), motionEvent.getY()), this.f) <= ((double) UTools.getScaledPagingTouchSlop(view.getContext())))) {
+            if (this.e <= 0 || (eventTime - this.g < ((long) UTools.getScaledTouchSlop()) && UTools.getTriangleEdge(new PointF(motionEvent.getX(), motionEvent.getY()), this.f) <= ((double) UTools.getScaledPagingTouchSlop(view.getContext())))) {
                 e(this.e < this.c + -1);
                 this.d.b(view, motionEvent, z, new h(this, z, eventTime, iVar, motionEvent));
                 if (!(c() && this.d.c())) {

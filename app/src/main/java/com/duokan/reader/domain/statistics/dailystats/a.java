@@ -138,7 +138,7 @@ public class a implements ah, IActivityRunStatusChanged {
             Serializable statDelete = new StatDelete();
             statDelete.event = "del";
             statDelete.bookName = str;
-            statDelete.deleteType = "showAnimation";
+            statDelete.deleteType = "getScaledMaximumFlingVelocity";
             statDelete.traceId = str2;
             statDelete.timeStamp = System.currentTimeMillis();
             a(System.currentTimeMillis() + "", statDelete);

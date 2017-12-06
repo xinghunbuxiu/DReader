@@ -52,22 +52,22 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r0 = p;
         if (r0 != 0) goto L_0x0012;
     L_0x0004:
-        r0 = r11.getScaledTouchSlop;
+        r0 = r11.getTriangleEdge;
         r2 = -1;
         r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1));
         if (r0 == 0) goto L_0x0012;
     L_0x000c:
         r0 = new java.lang.AssertionError;
-        r0.<init>();
+        r0.<creatCallTask>();
         throw r0;
     L_0x0012:
-        r11.getScaledTouchSlop = r12;
+        r11.getTriangleEdge = r12;
         r0 = r11.BaseActivity;
         r0.beginTransaction();
         r0 = new android.content.ContentValues;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
-        r0.<init>();	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
+        r0.<creatCallTask>();	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r1 = "block_length";	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
-        r2 = r11.getScaledTouchSlop;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
+        r2 = r11.getTriangleEdge;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r2 = java.lang.Long.valueOf(r2);	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r0.put(r1, r2);	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r1 = r11.BaseActivity;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
@@ -77,7 +77,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r4 = new java.lang.String[r4];	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r5 = 0;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r6 = new java.lang.StringBuilder;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
-        r6.<init>();	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
+        r6.<creatCallTask>();	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r7 = "";	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r6 = r6.append(r7);	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         r8 = r11.setDrawable;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
@@ -97,7 +97,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         if (r0 != 0) goto L_0x006a;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
     L_0x005d:
         r0 = new java.lang.AssertionError;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
-        r0.<init>();	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
+        r0.<creatCallTask>();	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
         throw r0;	 Catch:{ Exception -> 0x0058, all -> 0x0063 }
     L_0x0063:
         r0 = move-exception;
@@ -135,7 +135,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r0 = r10.BaseActivity;
         r0.beginTransaction();
         r0 = new org.json.JSONObject;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
-        r0.<init>();	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
+        r0.<creatCallTask>();	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r1 = "block_state";	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r2 = r10.HttpLogger;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r0.put(r1, r2);	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
@@ -143,7 +143,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r2 = r10.SessionTask;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r0.put(r1, r2);	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r1 = new android.content.ContentValues;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
-        r1.<init>();	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
+        r1.<creatCallTask>();	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r2 = "runtime_info";	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r0 = r0.toString();	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r1.put(r2, r0);	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
@@ -154,7 +154,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r4 = new java.lang.String[r4];	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r5 = 0;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r6 = new java.lang.StringBuilder;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
-        r6.<init>();	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
+        r6.<creatCallTask>();	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r7 = "";	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r6 = r6.append(r7);	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         r8 = r10.setDrawable;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
@@ -174,7 +174,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         if (r0 != 0) goto L_0x0067;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
     L_0x005a:
         r0 = new java.lang.AssertionError;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
-        r0.<init>();	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
+        r0.<creatCallTask>();	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
         throw r0;	 Catch:{ Exception -> 0x0055, all -> 0x0060 }
     L_0x0060:
         r0 = move-exception;
@@ -210,9 +210,9 @@ Error: java.lang.NullPointerException
 */
         /*
         r13 = this;
-        r13.<init>();
+        r13.<creatCallTask>();
         r2 = -1;
-        r13.getScaledTouchSlop = r2;
+        r13.getTriangleEdge = r2;
         r2 = com.duokan.reader.common.download.DownloadBlock.BlockState.UNFINISHED;
         r13.HttpLogger = r2;
         r2 = 0;
@@ -231,7 +231,7 @@ Error: java.lang.NullPointerException
         if (r16 != 0) goto L_0x002a;
     L_0x0024:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x002a:
         r2 = p;
@@ -240,7 +240,7 @@ Error: java.lang.NullPointerException
         if (r17 != 0) goto L_0x0036;
     L_0x0030:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x0036:
         r0 = r17;
@@ -256,7 +256,7 @@ Error: java.lang.NullPointerException
         r6 = new java.lang.String[r6];
         r7 = 0;
         r8 = new java.lang.StringBuilder;
-        r8.<init>();
+        r8.<creatCallTask>();
         r9 = "";
         r8 = r8.append(r9);
         r10 = r13.setDrawable;
@@ -273,7 +273,7 @@ Error: java.lang.NullPointerException
         if (r3 != 0) goto L_0x0075;
     L_0x006f:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x0075:
         r2 = p;
@@ -283,7 +283,7 @@ Error: java.lang.NullPointerException
         if (r2 == 0) goto L_0x0085;
     L_0x007f:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x0085:
         r3.moveToNext();
@@ -294,11 +294,11 @@ Error: java.lang.NullPointerException
         r2 = "block_offset";
         r2 = r3.getColumnIndex(r2);
         r4 = r3.getLong(r2);
-        r13.showAnimation = r4;
+        r13.getScaledMaximumFlingVelocity = r4;
         r2 = "block_length";
         r2 = r3.getColumnIndex(r2);
         r4 = r3.getLong(r2);
-        r13.getScaledTouchSlop = r4;
+        r13.getTriangleEdge = r4;
         r2 = "task_id";
         r2 = r3.getColumnIndex(r2);
         r4 = r3.getLong(r2);
@@ -311,7 +311,7 @@ Error: java.lang.NullPointerException
         r4 = "runtime_info";	 Catch:{ Exception -> 0x00ed }
         r4 = r3.getColumnIndex(r4);	 Catch:{ Exception -> 0x00ed }
         r4 = r3.getString(r4);	 Catch:{ Exception -> 0x00ed }
-        r2.<init>(r4);	 Catch:{ Exception -> 0x00ed }
+        r2.<creatCallTask>(r4);	 Catch:{ Exception -> 0x00ed }
         r4 = r2.length();	 Catch:{ Exception -> 0x00ed }
         if (r4 <= 0) goto L_0x00e9;	 Catch:{ Exception -> 0x00ed }
     L_0x00d5:
@@ -332,7 +332,7 @@ Error: java.lang.NullPointerException
         if (r2 != 0) goto L_0x00fd;	 Catch:{ all -> 0x00f8 }
     L_0x00f2:
         r2 = new java.lang.AssertionError;	 Catch:{ all -> 0x00f8 }
-        r2.<init>();	 Catch:{ all -> 0x00f8 }
+        r2.<creatCallTask>();	 Catch:{ all -> 0x00f8 }
         throw r2;	 Catch:{ all -> 0x00f8 }
     L_0x00f8:
         r2 = move-exception;
@@ -342,7 +342,7 @@ Error: java.lang.NullPointerException
         r3.close();
         goto L_0x00ec;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.DownloadBlock.<init>(long, java.lang.String, android.database.sqlite.SQLiteDatabase, com.duokan.reader.common.download.setDrawable, com.duokan.core.diagnostic.HttpLogger):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.DownloadBlock.<creatCallTask>(long, java.lang.String, android.database.sqlite.SQLiteDatabase, com.duokan.reader.common.download.setDrawable, com.duokan.core.diagnostic.HttpLogger):void");
     }
 
     public BlockState a() {
@@ -370,9 +370,9 @@ Error: java.lang.NullPointerException
     }
 
     public void a(c cVar) {
-        Log.i(q, String.format("[%getScaledTouchSlop]-[%getScaledTouchSlop]-[%getScaledTouchSlop]: ENTER_DOWNLOAD", new Object[]{Long.valueOf(this.a), Integer.valueOf(this.b), Long.valueOf(Thread.currentThread().getId())}));
+        Log.i(q, String.format("[%getTriangleEdge]-[%getTriangleEdge]-[%getTriangleEdge]: ENTER_DOWNLOAD", new Object[]{Long.valueOf(this.a), Integer.valueOf(this.b), Long.valueOf(Thread.currentThread().getId())}));
         b(cVar);
-        Log.i(q, String.format("[%getScaledTouchSlop]-[%getScaledTouchSlop]-[%getScaledTouchSlop]: LEAVE_DOWNLOAD", new Object[]{Long.valueOf(this.a), Integer.valueOf(this.b), Long.valueOf(Thread.currentThread().getId())}));
+        Log.i(q, String.format("[%getTriangleEdge]-[%getTriangleEdge]-[%getTriangleEdge]: LEAVE_DOWNLOAD", new Object[]{Long.valueOf(this.a), Integer.valueOf(this.b), Long.valueOf(Thread.currentThread().getId())}));
     }
 
     public void e() {
@@ -401,7 +401,7 @@ Error: java.lang.NullPointerException
 
     protected void b(BlockState blockState) {
         this.f = blockState;
-        Log.i(q, String.format("[%getScaledTouchSlop]-[%getScaledTouchSlop]-[%getScaledTouchSlop]: " + this.f, new Object[]{Long.valueOf(this.a), Integer.valueOf(this.b), Long.valueOf(Thread.currentThread().getId())}));
+        Log.i(q, String.format("[%getTriangleEdge]-[%getTriangleEdge]-[%getTriangleEdge]: " + this.f, new Object[]{Long.valueOf(this.a), Integer.valueOf(this.b), Long.valueOf(Thread.currentThread().getId())}));
         g();
         a(this.f);
     }

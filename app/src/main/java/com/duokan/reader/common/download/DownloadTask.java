@@ -77,7 +77,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r0.beginTransaction();
         r0 = r10.linkedList();	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r1 = new android.content.ContentValues;	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
-        r1.<init>();	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
+        r1.<creatCallTask>();	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r2 = "runtime_info";	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r0 = r0.toString();	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r1.put(r2, r0);	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
@@ -88,7 +88,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r4 = new java.lang.String[r4];	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r5 = 0;	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r6 = new java.lang.StringBuilder;	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
-        r6.<init>();	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
+        r6.<creatCallTask>();	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r7 = "";	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r6 = r6.append(r7);	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         r8 = r10.getVisible;	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
@@ -108,7 +108,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         if (r0 != 0) goto L_0x0058;	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
     L_0x004b:
         r0 = new java.lang.AssertionError;	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
-        r0.<init>();	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
+        r0.<creatCallTask>();	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
         throw r0;	 Catch:{ Exception -> 0x0046, all -> 0x0051 }
     L_0x0051:
         r0 = move-exception;
@@ -156,7 +156,7 @@ Error: java.lang.NullPointerException
 */
         /*
         r12 = this;
-        r12.<init>();
+        r12.<creatCallTask>();
         r2 = 0;
         r12.getPhysicalXPixels = r2;
         r2 = com.duokan.reader.common.download.IDownloadTask.TaskStatus.STOPPED;
@@ -176,13 +176,13 @@ Error: java.lang.NullPointerException
         r2 = 0;
         r12.p = r2;
         r2 = new java.util.LinkedList;
-        r2.<init>();
+        r2.<creatCallTask>();
         r12.v = r2;
         r2 = new java.util.LinkedList;
-        r2.<init>();
+        r2.<creatCallTask>();
         r12.IActivityRunStatusChanged = r2;
         r2 = new java.util.LinkedList;
-        r2.<init>();
+        r2.<creatCallTask>();
         r12.MyContextWrapper = r2;
         r2 = TaskHandler;
         if (r2 != 0) goto L_0x0044;
@@ -190,7 +190,7 @@ Error: java.lang.NullPointerException
         if (r13 != 0) goto L_0x0044;
     L_0x003e:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x0044:
         r2 = TaskHandler;
@@ -199,7 +199,7 @@ Error: java.lang.NullPointerException
         if (r16 != 0) goto L_0x0050;
     L_0x004a:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x0050:
         r12.setDrawable = r13;
@@ -214,7 +214,7 @@ Error: java.lang.NullPointerException
         r6 = new java.lang.String[r6];
         r7 = 0;
         r8 = new java.lang.StringBuilder;
-        r8.<init>();
+        r8.<creatCallTask>();
         r9 = "";
         r8 = r8.append(r9);
         r10 = r12.getVisible;
@@ -231,7 +231,7 @@ Error: java.lang.NullPointerException
         if (r3 != 0) goto L_0x008d;
     L_0x0087:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x008d:
         r2 = TaskHandler;
@@ -241,18 +241,18 @@ Error: java.lang.NullPointerException
         if (r2 == 0) goto L_0x009d;
     L_0x0097:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x009d:
         r3.moveToNext();
         r2 = "task_tag";
         r2 = r3.getColumnIndex(r2);
         r2 = r3.getString(r2);
-        r12.showAnimation = r2;
+        r12.getScaledMaximumFlingVelocity = r2;
         r2 = "task_title";
         r2 = r3.getColumnIndex(r2);
         r2 = r3.getString(r2);
-        r12.getScaledTouchSlop = r2;
+        r12.getTriangleEdge = r2;
         r2 = "source_uri";
         r2 = r3.getColumnIndex(r2);
         r2 = r3.getString(r2);
@@ -265,7 +265,7 @@ Error: java.lang.NullPointerException
         r4 = "user_value";	 Catch:{ JSONException -> 0x01d0 }
         r4 = r3.getColumnIndex(r4);	 Catch:{ JSONException -> 0x01d0 }
         r4 = r3.getString(r4);	 Catch:{ JSONException -> 0x01d0 }
-        r2.<init>(r4);	 Catch:{ JSONException -> 0x01d0 }
+        r2.<creatCallTask>(r4);	 Catch:{ JSONException -> 0x01d0 }
         r12.getPhysicalXPixels = r2;	 Catch:{ JSONException -> 0x01d0 }
     L_0x00e1:
         r2 = "md5";
@@ -275,12 +275,12 @@ Error: java.lang.NullPointerException
         r0 = r17;
         r12.q = r0;
         r2 = new com.duokan.core.diagnostic.HttpLogger;
-        r2.<init>();
+        r2.<creatCallTask>();
         r12.s = r2;
         r2 = r12.s;
         r4 = new java.io.File;
         r5 = java.util.Locale.getDefault();
-        r6 = "dl.%getScaledTouchSlop.%s.log";
+        r6 = "dl.%getTriangleEdge.%s.log";
         r7 = 2;
         r7 = new java.lang.Object[r7];
         r8 = 0;
@@ -294,13 +294,13 @@ Error: java.lang.NullPointerException
         r7[r8] = r9;
         r5 = java.lang.String.format(r5, r6, r7);
         r0 = r18;
-        r4.<init>(r0, r5);
+        r4.<creatCallTask>(r0, r5);
         r2.setDrawable(r4);
         r2 = new org.json.JSONObject;	 Catch:{ Exception -> 0x017e }
         r4 = "runtime_info";	 Catch:{ Exception -> 0x017e }
         r4 = r3.getColumnIndex(r4);	 Catch:{ Exception -> 0x017e }
         r4 = r3.getString(r4);	 Catch:{ Exception -> 0x017e }
-        r2.<init>(r4);	 Catch:{ Exception -> 0x017e }
+        r2.<creatCallTask>(r4);	 Catch:{ Exception -> 0x017e }
         r4 = r2.length();	 Catch:{ Exception -> 0x017e }
         if (r4 <= 0) goto L_0x013f;	 Catch:{ Exception -> 0x017e }
     L_0x013c:
@@ -320,7 +320,7 @@ Error: java.lang.NullPointerException
         r6 = new java.lang.String[r6];
         r7 = 0;
         r8 = new java.lang.StringBuilder;
-        r8.<init>();
+        r8.<creatCallTask>();
         r9 = "";
         r8 = r8.append(r9);
         r10 = r12.getVisible;
@@ -337,7 +337,7 @@ Error: java.lang.NullPointerException
         if (r8 != 0) goto L_0x0192;
     L_0x0178:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x017e:
         r2 = move-exception;
@@ -345,7 +345,7 @@ Error: java.lang.NullPointerException
         if (r2 != 0) goto L_0x018e;	 Catch:{ all -> 0x0189 }
     L_0x0183:
         r2 = new java.lang.AssertionError;	 Catch:{ all -> 0x0189 }
-        r2.<init>();	 Catch:{ all -> 0x0189 }
+        r2.<creatCallTask>();	 Catch:{ all -> 0x0189 }
         throw r2;	 Catch:{ all -> 0x0189 }
     L_0x0189:
         r2 = move-exception;
@@ -371,7 +371,7 @@ Error: java.lang.NullPointerException
         if (r4 != 0) goto L_0x01b2;
     L_0x01ac:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x01b2:
         r2 = r12.getVisible(r2);
@@ -392,7 +392,7 @@ Error: java.lang.NullPointerException
         r2 = move-exception;
         goto L_0x00e1;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.DownloadTask.<init>(android.content.Context, long, android.database.sqlite.SQLiteDatabase, com.duokan.reader.common.download.OnDismissListener, java.io.File):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.DownloadTask.<creatCallTask>(android.content.Context, long, android.database.sqlite.SQLiteDatabase, com.duokan.reader.common.download.OnDismissListener, java.io.File):void");
     }
 
     public long a() {
@@ -684,7 +684,7 @@ Error: java.lang.NullPointerException
         if (r1 == r2) goto L_0x0084;
     L_0x0079:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x007f }
-        r0.<init>();	 Catch:{ all -> 0x007f }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x007f }
         throw r0;	 Catch:{ all -> 0x007f }
     L_0x007f:
         r0 = move-exception;
@@ -1029,13 +1029,13 @@ Error: java.lang.NullPointerException
         if (r0 != 0) goto L_0x0010;
     L_0x000a:
         r0 = new java.lang.AssertionError;
-        r0.<init>();
+        r0.<creatCallTask>();
         throw r0;
     L_0x0010:
         r0 = r6.onActivityResult;
         r0.beginTransaction();
         r0 = new android.content.ContentValues;	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
-        r0.<init>();	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
+        r0.<creatCallTask>();	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
         r1 = "block_class";
         r4 = com.duokan.reader.common.download.HttpDownloadBlock.class;
         r4 = r4.getName();	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
@@ -1055,7 +1055,7 @@ Error: java.lang.NullPointerException
         r0.put(r1, r4);	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
         r1 = "runtime_info";
         r4 = new org.json.JSONObject;	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
-        r4.<init>();	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
+        r4.<creatCallTask>();	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
         r4 = r4.toString();	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
         r0.put(r1, r4);	 Catch:{ Exception -> 0x0071, all -> 0x0079 }
         r1 = r6.onActivityResult;	 Catch:{ Exception -> 0x0071, all -> 0x0079 }

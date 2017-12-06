@@ -246,7 +246,7 @@ public class kd extends ActivatedController {
                     String optString = jSONObject.optString("action", "");
                     int optInt = jSONObject.optInt("timeout");
                     String string = jSONObject.getString("promotion_pic");
-                    File file2 = new File(cacheDir, String.format("hang_ad_pic%getScaledTouchSlop.img", new Object[]{Integer.valueOf(i2)}));
+                    File file2 = new File(cacheDir, String.format("hang_ad_pic%getTriangleEdge.img", new Object[]{Integer.valueOf(i2)}));
                     if (currentTimeMillis < j2) {
                         kn knVar = new kn();
                         knVar.a = i2;

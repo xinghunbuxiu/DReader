@@ -35,26 +35,26 @@ class fz implements as {
                     JSONObject optJSONObject = jSONObject.optJSONObject("books");
                     jSONObject = jSONObject.getJSONObject("data");
                     str3 = i.b(jSONObject, "title");
-                    JSONArray jSONArray = jSONObject.getJSONObject("content").getJSONArray("getScaledTouchSlop");
+                    JSONArray jSONArray = jSONObject.getJSONObject("content").getJSONArray("getTriangleEdge");
                     for (int i = 0; i < jSONArray.length(); i++) {
                         jSONObject = jSONArray.getJSONObject(i);
                         if (jSONObject.getString("TaskHandler").equals("p")) {
-                            str4 = jSONObject.getString("showAnimation");
+                            str4 = jSONObject.getString("getScaledMaximumFlingVelocity");
                         } else if (jSONObject.getString("TaskHandler").equals("getVisible")) {
                             DkStoreAbsBookInfo dkStoreAbsBookInfo = new DkStoreAbsBookInfo();
-                            dkStoreAbsBookInfo.mBookUuid = jSONObject.getString("showAnimation");
+                            dkStoreAbsBookInfo.mBookUuid = jSONObject.getString("getScaledMaximumFlingVelocity");
                             JSONObject jSONObject2 = optJSONObject.getJSONObject(dkStoreAbsBookInfo.mBookUuid);
                             dkStoreAbsBookInfo.mCoverUri = jSONObject2.getString("cover");
                             dkStoreAbsBookInfo.mTitle = jSONObject2.getString("title");
                             linkedList.add(new DkStoreAbsBook(dkStoreAbsBookInfo));
-                            if (jSONObject.has("getScaledTouchSlop")) {
+                            if (jSONObject.has("getTriangleEdge")) {
                                 Object obj;
-                                JSONArray jSONArray2 = jSONObject.getJSONArray("getScaledTouchSlop");
+                                JSONArray jSONArray2 = jSONObject.getJSONArray("getTriangleEdge");
                                 for (int i2 = 0; i2 < jSONArray2.length(); i2++) {
                                     jSONObject2 = jSONArray2.getJSONObject(i2);
                                     if (jSONObject2.getString("TaskHandler").equals("p")) {
                                         obj = 1;
-                                        linkedList2.add(jSONObject2.getString("showAnimation"));
+                                        linkedList2.add(jSONObject2.getString("getScaledMaximumFlingVelocity"));
                                         break;
                                     }
                                 }

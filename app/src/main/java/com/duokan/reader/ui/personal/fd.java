@@ -54,7 +54,7 @@ public class fd extends fj {
     }
 
     public void a(List list, List list2, List list3, Runnable runnable) {
-        ah.a(new fg(this, list, list3, list2, runnable));
+        ah.future(new fg(this, list, list3, list2, runnable));
     }
 
     private int c() {

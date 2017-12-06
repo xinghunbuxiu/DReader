@@ -21,7 +21,7 @@ class ep implements h {
     }
 
     public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
-        ah.b(new eq(this, (DkStoreFictionDetail) dkStoreItem));
+        ah.submitFuture(new eq(this, (DkStoreFictionDetail) dkStoreItem));
     }
 
     public void onFetchBookDetailError(String str) {

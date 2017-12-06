@@ -85,7 +85,7 @@ class s implements Runnable {
         r0 = r0.SessionTask();	 Catch:{ all -> 0x009a }
         r1 = r4.getVisible;	 Catch:{ all -> 0x009a }
         r1 = r1.IFeature;	 Catch:{ all -> 0x009a }
-        r0.showAnimation(r1);	 Catch:{ all -> 0x009a }
+        r0.getScaledMaximumFlingVelocity(r1);	 Catch:{ all -> 0x009a }
         goto L_0x005f;
     L_0x009a:
         r0 = move-exception;
@@ -136,12 +136,12 @@ class s implements Runnable {
         r0 = new com.duokan.reader.domain.bookshelf.iy;	 Catch:{ Throwable -> 0x0199 }
         r2 = new com.duokan.reader.domain.micloud.bi;	 Catch:{ Throwable -> 0x0199 }
         r3 = new org.json.JSONObject;	 Catch:{ Throwable -> 0x0199 }
-        r3.<init>(r1);	 Catch:{ Throwable -> 0x0199 }
-        r2.<init>(r3);	 Catch:{ Throwable -> 0x0199 }
-        r0.<init>(r2);	 Catch:{ Throwable -> 0x0199 }
+        r3.<creatCallTask>(r1);	 Catch:{ Throwable -> 0x0199 }
+        r2.<creatCallTask>(r3);	 Catch:{ Throwable -> 0x0199 }
+        r0.<creatCallTask>(r2);	 Catch:{ Throwable -> 0x0199 }
     L_0x0106:
         r1 = new com.duokan.reader.domain.downloadcenter.setDrawable;	 Catch:{ all -> 0x009a }
-        r1.<init>();	 Catch:{ all -> 0x009a }
+        r1.<creatCallTask>();	 Catch:{ all -> 0x009a }
         r2 = r4.getVisible;	 Catch:{ all -> 0x009a }
         r2 = r2.aF();	 Catch:{ all -> 0x009a }
         r1.setDrawable = r2;	 Catch:{ all -> 0x009a }
@@ -149,7 +149,7 @@ class s implements Runnable {
     L_0x0115:
         r1.i = r0;	 Catch:{ all -> 0x009a }
         r0 = r0.getVisible();	 Catch:{ all -> 0x009a }
-        r1.getScaledTouchSlop = r0;	 Catch:{ all -> 0x009a }
+        r1.getTriangleEdge = r0;	 Catch:{ all -> 0x009a }
         r0 = "";
         r1.HttpLogger = r0;	 Catch:{ all -> 0x009a }
         r0 = "";
@@ -161,27 +161,27 @@ class s implements Runnable {
         r1.getVisible = r0;	 Catch:{ all -> 0x009a }
         r0 = r4.getVisible;	 Catch:{ all -> 0x009a }
         r0 = r0.H();	 Catch:{ all -> 0x009a }
-        r1.showAnimation = r0;	 Catch:{ all -> 0x009a }
+        r1.getScaledMaximumFlingVelocity = r0;	 Catch:{ all -> 0x009a }
         r0 = r4.setDrawable;	 Catch:{ all -> 0x009a }
-        r0 = r0.showAnimation;	 Catch:{ all -> 0x009a }
+        r0 = r0.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x009a }
         r1.getScaledPagingTouchSlop = r0;	 Catch:{ all -> 0x009a }
     L_0x013f:
         r0 = com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice.Transfer;	 Catch:{ all -> 0x009a }
         r1.BaseActivity = r0;	 Catch:{ all -> 0x009a }
         r0 = new com.duokan.reader.domain.downloadcenter.OnDismissListener;	 Catch:{ all -> 0x009a }
-        r0.<init>();	 Catch:{ all -> 0x009a }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x009a }
         r2 = r4.setDrawable;	 Catch:{ all -> 0x009a }
         r2 = r2.getVisible;	 Catch:{ all -> 0x009a }
         r0.getVisible = r2;	 Catch:{ all -> 0x009a }
         r2 = r4.setDrawable;	 Catch:{ all -> 0x009a }
         r2 = r2.setDrawable;	 Catch:{ all -> 0x009a }
-        r0.showAnimation = r2;	 Catch:{ all -> 0x009a }
+        r0.getScaledMaximumFlingVelocity = r2;	 Catch:{ all -> 0x009a }
         r2 = r4.getVisible;	 Catch:{ all -> 0x009a }
         r2 = r2.aw();	 Catch:{ all -> 0x009a }
         r0.setDrawable = r2;	 Catch:{ all -> 0x009a }
         r2 = r4.setDrawable;	 Catch:{ all -> 0x009a }
-        r2 = r2.getScaledTouchSlop;	 Catch:{ all -> 0x009a }
-        r0.getScaledTouchSlop = r2;	 Catch:{ all -> 0x009a }
+        r2 = r2.getTriangleEdge;	 Catch:{ all -> 0x009a }
+        r0.getTriangleEdge = r2;	 Catch:{ all -> 0x009a }
         r0.getScaledPagingTouchSlop = r1;	 Catch:{ all -> 0x009a }
         r1 = r4.getVisible;	 Catch:{ all -> 0x009a }
         r2 = r4.getVisible;	 Catch:{ all -> 0x009a }
@@ -195,7 +195,7 @@ class s implements Runnable {
     L_0x017c:
         r0 = r4.getVisible;	 Catch:{ all -> 0x009a }
         r0 = r0.IFeature;	 Catch:{ all -> 0x009a }
-        r0 = r0.getScaledTouchSlop();	 Catch:{ all -> 0x009a }
+        r0 = r0.getTriangleEdge();	 Catch:{ all -> 0x009a }
         if (r0 != 0) goto L_0x005f;
     L_0x0186:
         r0 = r4.getVisible;	 Catch:{ all -> 0x009a }
@@ -217,7 +217,7 @@ class s implements Runnable {
     L_0x01ae:
         r0 = r4.getVisible;	 Catch:{ all -> 0x009a }
         r0 = r0.aw();	 Catch:{ all -> 0x009a }
-        r1.getScaledTouchSlop = r0;	 Catch:{ all -> 0x009a }
+        r1.getTriangleEdge = r0;	 Catch:{ all -> 0x009a }
         r0 = r4.getVisible;	 Catch:{ all -> 0x009a }
         r0 = r0.B();	 Catch:{ all -> 0x009a }
         r1.HttpLogger = r0;	 Catch:{ all -> 0x009a }
@@ -226,16 +226,16 @@ class s implements Runnable {
         r1.getPhysicalXPixels = r0;	 Catch:{ all -> 0x009a }
         r0 = r4.getVisible;	 Catch:{ all -> 0x009a }
         r0 = r0.TaskHandler();	 Catch:{ all -> 0x009a }
-        r0 = r0.getScaledTouchSlop;	 Catch:{ all -> 0x009a }
+        r0 = r0.getTriangleEdge;	 Catch:{ all -> 0x009a }
         r1.SessionTask = r0;	 Catch:{ all -> 0x009a }
         r0 = r4.getVisible;	 Catch:{ all -> 0x009a }
         r0 = r0.H();	 Catch:{ all -> 0x009a }
         r1.getVisible = r0;	 Catch:{ all -> 0x009a }
         r0 = r4.getVisible;	 Catch:{ all -> 0x009a }
         r0 = r0.H();	 Catch:{ all -> 0x009a }
-        r1.showAnimation = r0;	 Catch:{ all -> 0x009a }
+        r1.getScaledMaximumFlingVelocity = r0;	 Catch:{ all -> 0x009a }
         r0 = r4.setDrawable;	 Catch:{ all -> 0x009a }
-        r0 = r0.showAnimation;	 Catch:{ all -> 0x009a }
+        r0 = r0.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x009a }
         r1.getScaledPagingTouchSlop = r0;	 Catch:{ all -> 0x009a }
         goto L_0x013f;
         */

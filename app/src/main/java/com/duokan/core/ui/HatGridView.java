@@ -7,6 +7,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,8 +84,8 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.f = new aa(this, context);
         this.d.addView(this.f, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
         this.e = new ab(this, context);
-        ViewGroup.LayoutParams layoutParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        layoutParams.gravity = 80;
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+        layoutParams.gravity = Gravity.BOTTOM;
         this.e.setOrientation(LinearLayout.VERTICAL);
         this.e.setClipChildren(false);
         this.e.setClipToPadding(false);
@@ -117,14 +118,26 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.a.setAdapter(this.m);
         this.k = new ImageView(context);
         this.k.setScaleType(ScaleType.CENTER);
-        this.k.setImageResource(e.general__hat_grid_view__back_to_top);
-        this.k.setBackgroundResource(e.general__shared__button_circular_48dip);
+        this.k.setImageResource(R.drawable.general__hat_grid_view__back_to_top);
+        this.k.setBackgroundResource(R.drawable.general__shared__button_circular_48dip);
         addView(this.k, new ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         this.k.setOnClickListener(new af(this));
         this.k.setEnabled(false);
-        this.k.setVisibility(4);
+        this.k.setVisibility(INVISIBLE);
     }
+    class aa extends FrameLayout {
+        final HatGridView a;
 
+        public aa(HatGridView hatGridView, Context context) {
+            super(context);
+            this.a = hatGridView;
+        }
+
+        protected void dispatchDraw(Canvas canvas) {
+            canvas.clipRect(0, getScrollY(), getWidth(), (getScrollY() + getHeight()) - this.a.i.getHeight());
+            super.dispatchDraw(canvas);
+        }
+    }
     public final av getAdapter() {
         return this.m.b();
     }
@@ -776,7 +789,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         int measuredHeight = this.j.getMeasuredHeight();
         int measuredHeight2 = this.h.getMeasuredHeight();
         int measuredHeight3 = this.i.getMeasuredHeight();
-        paddingLeft = l() == null ? 0 : l().getMeasuredHeight();
+        paddingLeft = getFirstChild() == null ? 0 : getFirstChild().getMeasuredHeight();
         if (m() != null) {
             i3 = m().getMeasuredHeight();
         }
@@ -838,22 +851,22 @@ public class HatGridView extends ViewGroup implements Scrollable {
     }
 
     private int h() {
-        return l() == null ? 0 : this.o;
+        return getFirstChild() == null ? 0 : this.o;
     }
 
     private int i() {
         return m() == null ? 0 : this.p;
     }
 
-    private final int j() {
-        return l() == null ? 0 : l().getHeight();
+    private final int getFirsChildHeight() {
+        return getFirstChild() == null ? 0 : getFirstChild().getHeight();
     }
 
     private final int k() {
         return m() == null ? 0 : m().getHeight();
     }
 
-    private final View l() {
+    private final View getFirstChild() {
         if (this.c.getChildCount() > 0) {
             return this.c.getChildAt(0);
         }

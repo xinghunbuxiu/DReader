@@ -36,7 +36,7 @@ public class i {
         r3 = com.duokan.core.sys.TaskHandler.setDrawable();	 Catch:{ all -> 0x0014 }
         if (r3 == 0) goto L_0x0030;
     L_0x001d:
-        r3 = com.duokan.core.diagnostic.setDrawable.showAnimation();	 Catch:{ all -> 0x0014 }
+        r3 = com.duokan.core.diagnostic.setDrawable.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x0014 }
         r4 = com.duokan.core.diagnostic.LogLevel.WARNING;	 Catch:{ all -> 0x0014 }
         r5 = r12.getClass();	 Catch:{ all -> 0x0014 }
         r5 = r5.getSimpleName();	 Catch:{ all -> 0x0014 }
@@ -47,7 +47,7 @@ public class i {
         r3 = r12.setDrawable;	 Catch:{ InterruptedException -> 0x0080 }
         r3.wait();	 Catch:{ InterruptedException -> 0x0080 }
     L_0x0039:
-        r3 = com.duokan.core.diagnostic.setDrawable.showAnimation();	 Catch:{ all -> 0x0014 }
+        r3 = com.duokan.core.diagnostic.setDrawable.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x0014 }
         r6 = r12.getVisible;	 Catch:{ all -> 0x0014 }
         if (r6 == 0) goto L_0x007e;
     L_0x0041:
@@ -55,7 +55,7 @@ public class i {
         r0 = com.duokan.core.sys.TaskHandler.setDrawable();	 Catch:{ all -> 0x0014 }
         if (r0 == 0) goto L_0x007a;
     L_0x004a:
-        r0 = com.duokan.core.diagnostic.setDrawable.showAnimation();	 Catch:{ all -> 0x0014 }
+        r0 = com.duokan.core.diagnostic.setDrawable.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x0014 }
         r1 = com.duokan.core.diagnostic.LogLevel.WARNING;	 Catch:{ all -> 0x0014 }
         r3 = r12.getClass();	 Catch:{ all -> 0x0014 }
         r3 = r3.getSimpleName();	 Catch:{ all -> 0x0014 }

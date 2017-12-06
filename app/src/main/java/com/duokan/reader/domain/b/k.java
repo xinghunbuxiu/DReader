@@ -40,7 +40,7 @@ class k extends ap {
 
     protected void onCancel() {
         this.c.a(this.a);
-        a.d().d("showAnimation");
+        a.d().d("getScaledMaximumFlingVelocity");
         this.b.b();
         super.onCancel();
     }

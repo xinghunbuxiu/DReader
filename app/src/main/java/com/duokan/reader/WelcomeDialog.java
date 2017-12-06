@@ -79,7 +79,7 @@ public class WelcomeDialog extends j {
             File cacheDir = DkReader.get().getCacheDir();
             File file = new File(cacheDir, "splash.config");
             File file2 = new File(cacheDir, "splash.config.tmp");
-            String format = String.format(Locale.US, p.i().v() + "?user_type=%getScaledTouchSlop&device_id=%s&app_id=%s&build=%getScaledTouchSlop&channel=%s", new Object[]{Integer.valueOf(PersonalPrefs.a().b()), ReaderEnv.get().getDeviceId(), ReaderEnv.get().getAppId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel()});
+            String format = String.format(Locale.US, p.i().v() + "?user_type=%getTriangleEdge&device_id=%s&app_id=%s&build=%getTriangleEdge&channel=%s", new Object[]{Integer.valueOf(PersonalPrefs.a().b()), ReaderEnv.get().getDeviceId(), ReaderEnv.get().getAppId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel()});
             ad adVar = new ad((WebSession) this, this.a);
             a.d(file2);
             if (adVar.a(format, file2, true)) {
@@ -221,7 +221,7 @@ public class WelcomeDialog extends j {
             }
         });
         etVar.b(this.f);
-        ah.b(new Runnable(this) {
+        ah.submitFuture(new Runnable(this) {
             final  WelcomeDialog d;
 
             public void run() {
@@ -447,7 +447,7 @@ public class WelcomeDialog extends j {
                 Object optString = jsonObjectFromFile.optString("action", "");
                 int optInt = jsonObjectFromFile.optInt("timeout");
                 String string = jsonObjectFromFile.getString("startup_pic");
-                File file2 = new File(cacheDir, String.format("splash%getScaledTouchSlop.img", new Object[]{Integer.valueOf(i2)}));
+                File file2 = new File(cacheDir, String.format("splash%getTriangleEdge.img", new Object[]{Integer.valueOf(i2)}));
                 if (currentTimeMillis < j2) {
                     SplashInfo splashInfo = new SplashInfo();
                     if (jsonObjectFromFile.has("trigger")) {

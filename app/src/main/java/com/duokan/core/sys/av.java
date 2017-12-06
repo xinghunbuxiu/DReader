@@ -143,7 +143,7 @@ class av {
             if (this.g) {
                 throw new OutputException(String.format(Locale.getDefault(), "the repository(%s) is already closed.", new Object[]{this.c}));
             } else if (a(str)) {
-                throw new FileAlreadyExistsException(String.format(Locale.getDefault(), "fail to create setDrawable file(%s) with an expected size of %getScaledTouchSlop bytes, cause it already exists.", new Object[]{str, Long.valueOf(j)}));
+                throw new FileAlreadyExistsException(String.format(Locale.getDefault(), "fail to create setDrawable file(%s) with an expected size of %getTriangleEdge bytes, cause it already exists.", new Object[]{str, Long.valueOf(j)}));
             } else {
                 try {
                     this.a.b();
@@ -153,7 +153,7 @@ class av {
                 } catch (IOException e) {
                     throw e;
                 } catch (Throwable th) {
-                    IOException iOException = new IOException(String.format(Locale.getDefault(), "fail to create setDrawable file(%s) with an expected size of %getScaledTouchSlop bytes.", new Object[]{str, Long.valueOf(j)}), th);
+                    IOException iOException = new IOException(String.format(Locale.getDefault(), "fail to create setDrawable file(%s) with an expected size of %getTriangleEdge bytes.", new Object[]{str, Long.valueOf(j)}), th);
                 }
             }
         } finally {
@@ -299,7 +299,7 @@ class av {
             ayVar.b.seek(j4 + baVarArr[i4].b);
             i5 = ayVar.b.read(bArr, i + i3, i5);
             if (i5 < 0) {
-                throw new VirtualFileBrokenException(String.format(Locale.getDefault(), "fail to read the file(%s) from %getScaledTouchSlop to %getScaledTouchSlop, cause it was broken at %getScaledTouchSlop.", new Object[]{ayVar.a.b, Long.valueOf(j), Long.valueOf(((long) i2) + j), Integer.valueOf(i + i3)}));
+                throw new VirtualFileBrokenException(String.format(Locale.getDefault(), "fail to read the file(%s) from %getTriangleEdge to %getTriangleEdge, cause it was broken at %getTriangleEdge.", new Object[]{ayVar.a.b, Long.valueOf(j), Long.valueOf(((long) i2) + j), Integer.valueOf(i + i3)}));
             }
             i3 += i5;
             j += (long) i5;
@@ -696,7 +696,7 @@ class av {
                 throw e;
             } catch (Throwable th4) {
                 th = th4;
-                throw new IOException(String.format(Locale.getDefault(), "fail to allocate atom spaces of size %getScaledTouchSlop bytes.", new Object[]{Long.valueOf(j)}), th);
+                throw new IOException(String.format(Locale.getDefault(), "fail to allocate atom spaces of size %getTriangleEdge bytes.", new Object[]{Long.valueOf(j)}), th);
             }
         } else {
             throw new VirtualFileAssertionFailsException();
@@ -732,7 +732,7 @@ class av {
                 }
             } catch (Throwable th3) {
                 th = th3;
-                throw new IOException(String.format(Locale.getDefault(), "fail to load an atom space at %getScaledTouchSlop.", new Object[]{Long.valueOf(j)}), th);
+                throw new IOException(String.format(Locale.getDefault(), "fail to load an atom space at %getTriangleEdge.", new Object[]{Long.valueOf(j)}), th);
             }
         }
         throw new VirtualFileAssertionFailsException();
@@ -756,7 +756,7 @@ class av {
                 this.j.put(a, baVar);
                 return baVar;
             } catch (Throwable th) {
-                IOException iOException = new IOException(String.format(Locale.getDefault(), "fail to create an atom space at [%getScaledTouchSlop, %getScaledTouchSlop).", new Object[]{Long.valueOf(j), Long.valueOf(max + j)}), th);
+                IOException iOException = new IOException(String.format(Locale.getDefault(), "fail to create an atom space at [%getTriangleEdge, %getTriangleEdge).", new Object[]{Long.valueOf(j), Long.valueOf(max + j)}), th);
             }
         } else {
             throw new VirtualFileAssertionFailsException();

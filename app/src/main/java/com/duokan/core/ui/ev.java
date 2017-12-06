@@ -129,7 +129,7 @@ public abstract class ev implements Scrollable {
         }
         if (this.D == null) {
             this.D = new ew(this);
-            UTools.addAnimation(this.a, this.D);
+            UTools.creatCallTask(this.a, this.D);
         }
     }
 

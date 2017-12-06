@@ -19,7 +19,7 @@ class hp implements Runnable {
         try {
             this.a.run();
         } finally {
-            ah.a(new hq(this), hi.c);
+            ah.future(new hq(this), hi.c);
         }
     }
 }

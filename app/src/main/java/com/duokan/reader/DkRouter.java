@@ -69,7 +69,7 @@ public class DkRouter {
         final boolean z = a.a(data.toString(), "file", "content") && TextUtils.equals(intent.getAction(), "android.intent.action.VIEW");
         if (parseUri.containsKey("book") || z) {
             final Intent intent2 = intent;
-            ah.b(new Runnable(this) {
+            ah.submitFuture(new Runnable(this) {
                 final /* synthetic */ DkRouter e;
 
                 public void run() {

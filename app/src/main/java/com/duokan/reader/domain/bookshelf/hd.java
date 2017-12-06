@@ -40,7 +40,7 @@ class hd implements Callable {
             }
             File file = new File(Uri.parse(this.b.a).getPath());
             if (!file.exists()) {
-                ah.b(new he(this, file, i)).get();
+                ah.submitFuture(new he(this, file, i)).get();
             }
             this.a.t = Calendar.MILLISECOND_OF_SECOND;
             this.a.aT().a(this.a);
@@ -108,7 +108,7 @@ class hd implements Callable {
                                 j = currentTimeMillis;
                             } else {
                                 semaphore.acquire();
-                                ah.b(new hg(this, hfVar, i, semaphore));
+                                ah.submitFuture(new hg(this, hfVar, i, semaphore));
                                 this.a.t = (((i2 + 1) * 7000) / size) + 2000;
                                 if (System.currentTimeMillis() - currentTimeMillis > 2000) {
                                     this.a.aT().a(this.a);

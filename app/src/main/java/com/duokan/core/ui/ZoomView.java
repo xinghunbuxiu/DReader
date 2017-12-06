@@ -68,7 +68,7 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         setThumbEnabled(true);
         setHorizontalOverScrollMode(OverScrollMode.STRETCH);
         setVerticalOverScrollMode(OverScrollMode.STRETCH);
-        setMaxOverScrollWidth(UTools.f(context));
+        setMaxOverScrollWidth(UTools.defaultClose(context));
         setMaxOverScrollHeight(UTools.g(context));
     }
 

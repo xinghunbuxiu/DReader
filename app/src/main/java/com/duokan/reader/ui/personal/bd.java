@@ -24,7 +24,7 @@ class bd extends a {
     protected void onSessionProgressUpdate(Object obj) {
         if (obj instanceof String) {
             this.b.append(obj + "\n");
-            UTools.addAnimation(this.c, new be(this));
+            UTools.creatCallTask(this.c, new be(this));
         }
     }
 

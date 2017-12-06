@@ -40,7 +40,7 @@ class y extends v {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("tag_new_store", true);
-            jSONObject.put("init", dkCloudPushMessagesInfo.mInit);
+            jSONObject.put("creatCallTask", dkCloudPushMessagesInfo.mInit);
             jSONObject.put("account_uuid", dkCloudPushMessagesInfo.mAccountUuid);
             jSONObject.put("account_name", dkCloudPushMessagesInfo.mAccountName);
             jSONObject.put("unread_broadcast_messageIds", i.a(dkCloudPushMessagesInfo.mUnreadBroadcastMessageIds));
@@ -55,7 +55,7 @@ class y extends v {
         if (jSONObject.has("tag_new_store")) {
             DkCloudPushMessagesInfo dkCloudPushMessagesInfo = new DkCloudPushMessagesInfo();
             dkCloudPushMessagesInfo.mFromLegacyStore = false;
-            dkCloudPushMessagesInfo.mInit = jSONObject.optBoolean("init", false);
+            dkCloudPushMessagesInfo.mInit = jSONObject.optBoolean("creatCallTask", false);
             dkCloudPushMessagesInfo.mAccountUuid = jSONObject.optString("account_uuid", "");
             dkCloudPushMessagesInfo.mAccountName = jSONObject.optString("account_name", "");
             dkCloudPushMessagesInfo.mUnreadBroadcastMessageIds = i.c(jSONObject, "unread_broadcast_messageIds");

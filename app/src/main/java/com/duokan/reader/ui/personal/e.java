@@ -31,7 +31,7 @@ public class e extends nm {
 
     public void e_() {
         this.e.setPullDownRefreshEnabled(false);
-        ah.b(new h(this));
+        ah.submitFuture(new h(this));
     }
 
     public List getSelectedItems() {

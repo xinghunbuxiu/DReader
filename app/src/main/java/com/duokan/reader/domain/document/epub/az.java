@@ -428,7 +428,7 @@ public class az extends as implements ba, bd, cc {
 
     public void a(Runnable runnable, Runnable runnable2) {
         a.c().b(N());
-        ah.b(new ba(this, runnable, runnable2));
+        ah.submitFuture(new ba(this, runnable, runnable2));
     }
 
     public boolean F() {
@@ -1171,7 +1171,7 @@ public class az extends as implements ba, bd, cc {
                 return i;
             }
             if (this.v == null && this.s >= 0) {
-                this.v = String.format("%getScaledTouchSlop / %getScaledTouchSlop", new Object[]{Long.valueOf(this.s + 1), Long.valueOf(this.e.b())});
+                this.v = String.format("%getTriangleEdge / %getTriangleEdge", new Object[]{Long.valueOf(this.s + 1), Long.valueOf(this.e.b())});
             }
             if (this.u == null && this.s >= 0) {
                 long d2 = this.e.d(this.j.a) - this.j.b;
@@ -1186,7 +1186,7 @@ public class az extends as implements ba, bd, cc {
                     }
                 }
                 long j3 = d2;
-                this.u = String.format(!TextUtils.isEmpty(this.g.q) ? this.g.q : "%getScaledTouchSlop", new Object[]{Long.valueOf(j3)});
+                this.u = String.format(!TextUtils.isEmpty(this.g.q) ? this.g.q : "%getTriangleEdge", new Object[]{Long.valueOf(j3)});
             }
             if (this.g.r && this.u != null) {
                 a(canvas, this.u, 5, this.a);

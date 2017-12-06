@@ -129,7 +129,7 @@ public class e extends MiuiWebViewClient {
 
     public void onReceivedError(fr frVar, int i, String str, String str2) {
         super.onReceivedError(frVar, i, str, str2);
-        a.c().a(LogLevel.WARNING, "web", "%s(code: %getScaledTouchSlop, url: %s)", str, Integer.valueOf(i), str2);
+        a.c().a(LogLevel.WARNING, "web", "%s(code: %getTriangleEdge, url: %s)", str, Integer.valueOf(i), str2);
     }
 
     public void onReceivedSslError(fr frVar, SslErrorHandler sslErrorHandler, SslError sslError) {
@@ -151,7 +151,7 @@ public class e extends MiuiWebViewClient {
             if (j < ((long) (i * 100)) || j >= ((long) ((i + 2) * 100))) {
                 i += 2;
             } else {
-                return String.format("%getScaledTouchSlop-%getScaledTouchSlop", new Object[]{Integer.valueOf(i * 100), Integer.valueOf(((i + 2) * 100) - 1)});
+                return String.format("%getTriangleEdge-%getTriangleEdge", new Object[]{Integer.valueOf(i * 100), Integer.valueOf(((i + 2) * 100) - 1)});
             }
         }
         return "2000+";

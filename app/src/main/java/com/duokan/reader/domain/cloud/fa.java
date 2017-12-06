@@ -59,31 +59,31 @@ Error: java.lang.IndexOutOfBoundsException: bitIndex < 0: -1
         r1.getVisible();
         r2 = r1.setDrawable();
         r4 = r2.mReadingNoteCount;
-        r8.getScaledTouchSlop = r4;
-        r4 = r8.getScaledTouchSlop;
+        r8.getTriangleEdge = r4;
+        r4 = r8.getTriangleEdge;
         r6 = -1;
         r0 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));
         if (r0 != 0) goto L_0x003e;
     L_0x001a:
         r4 = 0;
-        r8.getScaledTouchSlop = r4;
-        r0 = r8.showAnimation;
+        r8.getTriangleEdge = r4;
+        r0 = r8.getScaledMaximumFlingVelocity;
         r3 = r0.setDrawable(r1);
         r0 = 0;
     L_0x0025:
         r4 = r3.length;
         if (r0 >= r4) goto L_0x0037;
     L_0x0028:
-        r4 = r8.getScaledTouchSlop;
+        r4 = r8.getTriangleEdge;
         r6 = r3[r0];
         r6 = r6.getNoteCount();
         r6 = (long) r6;
         r4 = r4 + r6;
-        r8.getScaledTouchSlop = r4;
+        r8.getTriangleEdge = r4;
         r0 = r0 + 1;
         goto L_0x0025;
     L_0x0037:
-        r4 = r8.getScaledTouchSlop;
+        r4 = r8.getTriangleEdge;
         r2.mReadingNoteCount = r4;
         r1.updateInfo(r2);
     L_0x003e:

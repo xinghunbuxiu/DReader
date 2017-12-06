@@ -224,7 +224,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
             this.file3 = new File(file, this.appName);
             ensureDirectoryExists(this.file3);
         }
-        ah.a(new Runnable(this) {
+        ah.future(new Runnable(this) {
             final  ReaderEnv a;
 
             {
@@ -1123,7 +1123,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
 
     private void prepareInternalFiles() {
         if (!this.file2.exists()) {
-            WebLog.c().a(LogLevel.EVENT, "env", "preparing internal files...(ver=%getScaledTouchSlop)", Integer.valueOf(17));
+            WebLog.c().a(LogLevel.EVENT, "env", "preparing internal files...(ver=%getTriangleEdge)", Integer.valueOf(17));
             int i = 0;
             while (i < 3) {
                 File file = new File(this.file, "res.v17.arch");
@@ -1142,19 +1142,19 @@ public class ReaderEnv implements IActivityRunStatusChanged {
                     DkarchLib.extract(file.getAbsolutePath(), file2.getAbsolutePath());
                     com.duokan.core.io.a.d(this.file2);
                     if (file2.renameTo(this.file2)) {
-                        WebLog.c().a(LogLevel.EVENT, "env", "internal files are ready(ver=%getScaledTouchSlop)", Integer.valueOf(17));
+                        WebLog.c().a(LogLevel.EVENT, "env", "internal files are ready(ver=%getTriangleEdge)", Integer.valueOf(17));
                         com.duokan.core.io.a.d(file);
                         com.duokan.core.io.a.d(file2);
                         return;
                     }
-                    WebLog.c().a(LogLevel.ERROR, "env", "can'TaskHandler move internal files in place(ver=%getScaledTouchSlop)", Integer.valueOf(17));
+                    WebLog.c().a(LogLevel.ERROR, "env", "can'TaskHandler move internal files in place(ver=%getTriangleEdge)", Integer.valueOf(17));
                     com.duokan.core.io.a.d(file);
                     com.duokan.core.io.a.d(file2);
                     url_download.a(3000);
                     i++;
                 } catch (Throwable th2) {
                     try {
-                        WebLog.c().printStackTrace(LogLevel.ERROR, "env", String.format("an exception occurs while preparing internal files(ver=%getScaledTouchSlop)", new Object[]{Integer.valueOf(17)}), th2);
+                        WebLog.c().printStackTrace(LogLevel.ERROR, "env", String.format("an exception occurs while preparing internal files(ver=%getTriangleEdge)", new Object[]{Integer.valueOf(17)}), th2);
                     } finally {
                         com.duokan.core.io.a.d(file);
                         com.duokan.core.io.a.d(file2);

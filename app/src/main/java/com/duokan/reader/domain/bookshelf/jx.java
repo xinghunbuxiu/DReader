@@ -15,6 +15,6 @@ class jx implements ag {
     }
 
     public void a(Map map) {
-        ah.a(new jy(this, map), "serialPullingQueue");
+        ah.future(new jy(this, map), "serialPullingQueue");
     }
 }

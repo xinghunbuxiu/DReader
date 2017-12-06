@@ -12,12 +12,12 @@ import android.widget.LinearLayout;
 import com.duokan.b.g;
 import com.duokan.core.ui.BoxView;
 import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.a;
+import com.duokan.core.ui.MyExtendView;
 import com.duokan.core.ui.j;
 
 class fi implements dq {
     private final j a;
-    private final a b;
+    private final MyExtendView b;
     private final View c;
     private final LinearLayout d = ((LinearLayout) this.c.findViewById(f.general__spirt_dialog_view__content_items));
     private final BoxView e = ((BoxView) this.c.findViewById(f.general__spirt_dialog_view__content));
@@ -29,7 +29,7 @@ class fi implements dq {
         this.c = LayoutInflater.from(context).inflate(g.general__spirt_dialog_view_at_hd, null);
         this.e.setBackgroundDrawable(null);
         this.f = (ViewGroup) this.c.findViewById(f.general__spirt_dialog_view__content_extra);
-        this.b = new a(context);
+        this.b = new MyExtendView(context);
         this.b.setGravity(48);
         this.b.setIndicatorMargin(UTools.closeAnimation(context, 11.0f));
         this.b.setIndicator(e.store__search_hint_view__indicator);

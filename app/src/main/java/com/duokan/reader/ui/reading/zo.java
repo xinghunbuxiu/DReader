@@ -121,7 +121,7 @@ public abstract class zo extends qh {
     }
 
     private void D() {
-        ah.a(new zs(this));
+        ah.future(new zs(this));
     }
 
     private void E() {

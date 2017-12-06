@@ -57,7 +57,7 @@ public class cj {
     }
 
     private void c() {
-        UTools.addAnimation(this.b.getWindow().getDecorView(), new ck(this));
+        UTools.creatCallTask(this.b.getWindow().getDecorView(), new ck(this));
         this.b.getWindow().getDecorView().requestLayout();
     }
 

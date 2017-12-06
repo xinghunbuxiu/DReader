@@ -53,7 +53,7 @@ abstract class aq extends hi {
     public void a(boolean z) {
         ReaderEnv.get().setPrefBoolean(PrivatePref.BOOKSHELF, "auto_upload_books_on_wifi", z);
         ReaderEnv.get().commitPrefs();
-        ah.a(new be(this, z), c);
+        ah.future(new be(this, z), c);
     }
 
     public void a(boolean z, boolean z2) {
@@ -110,7 +110,7 @@ abstract class aq extends hi {
     }
 
     public void onConnectivityChanged(classc.ConnectivityReceiver connectivity) {
-        ah.a(new bh(this, connectivity), c);
+        ah.future(new bh(this, connectivity), c);
     }
 
     public List a(List list, boolean z) {
@@ -127,7 +127,7 @@ abstract class aq extends hi {
     }
 
     private void a() {
-        ah.a(new bi(this), c);
+        ah.future(new bi(this), c);
     }
 
     private void a(boolean z, boolean z2, int i) {

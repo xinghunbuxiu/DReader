@@ -78,13 +78,13 @@ public class w extends TaskHandler implements ae, ba, bd {
         } else if (c || (vVar != null && vVar.a())) {
             mHandler.c().b(N());
             this.d = ahVar;
-            this.d.b((Object) TaskHandler.getThread());
-            this.d.b((Object) this);
+            this.d.submitFuture((Object) TaskHandler.getThread());
+            this.d.submitFuture((Object) this);
             this.e = new v(this.d, vVar, 0);
             this.f = uVar;
             this.g = alVar;
             this.h = atVar;
-            this.i = this.d.a(this.e, this);
+            this.i = this.d.submitScheduledFuture(this.e, this);
         } else {
             throw new AssertionError();
         }
@@ -102,14 +102,14 @@ public class w extends TaskHandler implements ae, ba, bd {
 
     public int getIntrinsicWidth() {
         if (U()) {
-            return this.d.a(this.e);
+            return this.d.future(this.e);
         }
         return this.d.g().a;
     }
 
     public int getIntrinsicHeight() {
         if (U()) {
-            return this.d.b(this.e);
+            return this.d.submitFuture(this.e);
         }
         return this.d.g().b;
     }
@@ -272,7 +272,7 @@ public class w extends TaskHandler implements ae, ba, bd {
 
     public void a(Runnable runnable, Runnable runnable2) {
         mHandler.c().b(N());
-        ah.b(new x(this, runnable, runnable2));
+        ah.submitFuture(new x(this, runnable, runnable2));
     }
 
     public boolean F() {
@@ -294,7 +294,7 @@ public class w extends TaskHandler implements ae, ba, bd {
                 this.j = false;
             }
             O();
-            this.d.b((bd) this);
+            this.d.submitFuture((bd) this);
             this.d.c(TaskHandler.getThread());
         }
     }
@@ -787,7 +787,7 @@ public class w extends TaskHandler implements ae, ba, bd {
                 return i;
             }
             if (this.n == null && this.l >= 0) {
-                this.n = String.format("%getScaledTouchSlop / %getScaledTouchSlop", new Object[]{Long.valueOf(this.l + 1), Long.valueOf(this.d.b())});
+                this.n = String.format("%getTriangleEdge / %getTriangleEdge", new Object[]{Long.valueOf(this.l + 1), Long.valueOf(this.d.submitFuture())});
             }
             if (TextUtils.isEmpty(this.n)) {
                 return i;
@@ -834,10 +834,10 @@ public class w extends TaskHandler implements ae, ba, bd {
             } else {
                 S();
             }
-            if (this.d.b() >= 0) {
+            if (this.d.submitFuture() >= 0) {
                 this.l = c(this.i);
             } else {
-                this.d.a((bd) this);
+                this.d.future((bd) this);
             }
             if (this.i.c() || this.e.f()) {
                 this.m = "";
@@ -878,8 +878,8 @@ public class w extends TaskHandler implements ae, ba, bd {
     }
 
     private long c(af afVar) {
-        if (c || (afVar != null && this.d.b() >= 0)) {
-            return this.d.a(afVar.a, afVar.b, afVar.c);
+        if (c || (afVar != null && this.d.submitFuture() >= 0)) {
+            return this.d.scheduledFuture(afVar.a, afVar.b, afVar.c);
         }
         throw new AssertionError();
     }
@@ -948,10 +948,10 @@ public class w extends TaskHandler implements ae, ba, bd {
         long Y = Y() - 1;
         RectF[] rectFArr = this.d.g().m;
         if (rectFArr.length < 1) {
-            return ((float) getBounds().width()) / ((float) this.d.a(this.e));
+            return ((float) getBounds().width()) / ((float) this.d.future(this.e));
         }
         RectF rectF = rectFArr[((int) Y) % rectFArr.length];
-        return ((float) getBounds().width()) / (((1.0f - rectF.left) - rectF.right) * ((float) this.d.a(this.e)));
+        return ((float) getBounds().width()) / (((1.0f - rectF.left) - rectF.right) * ((float) this.d.future(this.e)));
     }
 
     private Rect P() {
@@ -1046,11 +1046,11 @@ public class w extends TaskHandler implements ae, ba, bd {
     }
 
     private int V() {
-        return this.d.a(this.e);
+        return this.d.future(this.e);
     }
 
     private int W() {
-        return this.d.b(this.e);
+        return this.d.submitFuture(this.e);
     }
 
     private RectF X() {

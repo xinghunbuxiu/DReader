@@ -89,7 +89,7 @@ public class xk extends View implements OnPreDrawListener {
         RectF rectF = (RectF) UTools.h.getRect();
         RectF rectF2 = (RectF) UTools.h.getRect();
         Rect rect = (Rect) UTools.g.getRect();
-        if (UTools.addAnimation(rectF, (View) this)) {
+        if (UTools.isInRange(rectF, (View) this)) {
             rectF2.set(0.0f, 0.0f, (float) getResources().getDisplayMetrics().widthPixels, (float) getResources().getDisplayMetrics().heightPixels);
             UTools.closeAnimation(rectF2, (View) this);
             int paddingLeft = getPaddingLeft();

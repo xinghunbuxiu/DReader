@@ -31,7 +31,7 @@ class bs extends r {
             be.a(this.c.getContext(), this.a.c, 0).show();
         }
         this.c.a.getAdapter().a(false);
-        UTools.addAnimation(this.c.a, new bt(this));
+        UTools.creatCallTask(this.c.a, new bt(this));
     }
 
     protected void onSessionFailed() {

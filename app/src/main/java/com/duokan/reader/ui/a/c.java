@@ -13,6 +13,6 @@ class c implements OnClickListener {
     }
 
     public void onClick(View view) {
-        UTools.addAnimation(this.a.e);
+        UTools.PostTask(this.a.e);
     }
 }

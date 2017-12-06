@@ -64,7 +64,7 @@ class HttpDownloadBlock extends DownloadBlock {
         if (r0 != 0) goto L_0x0012;
     L_0x000c:
         r0 = new java.lang.AssertionError;
-        r0.<init>();
+        r0.<creatCallTask>();
         throw r0;
     L_0x0012:
         r0 = q;
@@ -74,10 +74,10 @@ class HttpDownloadBlock extends DownloadBlock {
         if (r0 == 0) goto L_0x0020;
     L_0x001a:
         r0 = new java.lang.AssertionError;
-        r0.<init>();
+        r0.<creatCallTask>();
         throw r0;
     L_0x0020:
-        r0 = r8.getScaledTouchSlop;
+        r0 = r8.getTriangleEdge;
         r0 = (r0 > r4 ? 1 : (r0 == r4 ? 0 : -1));
         if (r0 != 0) goto L_0x0027;
     L_0x0026:
@@ -86,25 +86,25 @@ class HttpDownloadBlock extends DownloadBlock {
         r0 = q;
         if (r0 != 0) goto L_0x003f;
     L_0x002b:
-        r0 = r8.getScaledTouchSlop;
+        r0 = r8.getTriangleEdge;
         r0 = (r0 > r4 ? 1 : (r0 == r4 ? 0 : -1));
         if (r0 < 0) goto L_0x003f;
     L_0x0031:
         r0 = r8.SessionTask;
-        r2 = r8.getScaledTouchSlop;
+        r2 = r8.getTriangleEdge;
         r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1));
         if (r0 <= 0) goto L_0x003f;
     L_0x0039:
         r0 = new java.lang.AssertionError;
-        r0.<init>();
+        r0.<creatCallTask>();
         throw r0;
     L_0x003f:
-        r0 = r8.getScaledTouchSlop;
+        r0 = r8.getTriangleEdge;
         r0 = (r0 > r4 ? 1 : (r0 == r4 ? 0 : -1));
         if (r0 <= 0) goto L_0x0053;
     L_0x0045:
         r0 = r8.SessionTask;
-        r2 = r8.getScaledTouchSlop;
+        r2 = r8.getTriangleEdge;
         r0 = (r0 > r2 ? 1 : (r0 == r2 ? 0 : -1));
         if (r0 != 0) goto L_0x0053;
     L_0x004d:
@@ -113,7 +113,7 @@ class HttpDownloadBlock extends DownloadBlock {
         goto L_0x0026;
     L_0x0053:
         r0 = new com.duokan.reader.common.download.n;
-        r0.<init>();
+        r0.<creatCallTask>();
         r8.u = r0;
         r0 = r8.u;
         r1 = java.lang.Thread.currentThread();
@@ -144,7 +144,7 @@ class HttpDownloadBlock extends DownloadBlock {
         if (r0 == 0) goto L_0x0094;
     L_0x008e:
         r0 = new java.lang.AssertionError;
-        r0.<init>();
+        r0.<creatCallTask>();
         throw r0;
     L_0x0094:
         r8.SessionTask = r4;
@@ -155,7 +155,7 @@ class HttpDownloadBlock extends DownloadBlock {
         if (r0 <= 0) goto L_0x00df;
     L_0x009c:
         r0 = r1.getPhysicalYPixels;
-        r2 = r8.getScaledTouchSlop();
+        r2 = r8.getTriangleEdge();
         if (r0 <= r2) goto L_0x00ab;
     L_0x00a4:
         r0 = com.duokan.reader.common.download.DownloadBlock.BlockState.FAILED;
@@ -173,7 +173,7 @@ class HttpDownloadBlock extends DownloadBlock {
         if (r0 != 0) goto L_0x00bf;
     L_0x00b9:
         r0 = new java.lang.AssertionError;
-        r0.<init>();
+        r0.<creatCallTask>();
         throw r0;
     L_0x00bf:
         r2 = r8.SessionTask;
@@ -202,7 +202,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r2 = com.duokan.reader.common.download.HttpDownloadBlock.RetryableResult.FAILED;
         if (r0 != r2) goto L_0x00fb;
     L_0x00ed:
-        r0 = r1.showAnimation;
+        r0 = r1.getScaledMaximumFlingVelocity;
         if (r0 == 0) goto L_0x00f8;
     L_0x00f1:
         r0 = com.duokan.reader.common.download.DownloadBlock.BlockState.UNFINISHED;
@@ -225,7 +225,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r2 = com.duokan.reader.common.download.HttpDownloadBlock.RetryableResult.FAILED;
         if (r0 != r2) goto L_0x011c;
     L_0x010e:
-        r0 = r1.showAnimation;
+        r0 = r1.getScaledMaximumFlingVelocity;
         if (r0 == 0) goto L_0x0119;
     L_0x0112:
         r0 = com.duokan.reader.common.download.DownloadBlock.BlockState.UNFINISHED;
@@ -248,13 +248,13 @@ class HttpDownloadBlock extends DownloadBlock {
         if (r0 == r1) goto L_0x0133;
     L_0x012d:
         r0 = new java.lang.AssertionError;
-        r0.<init>();
+        r0.<creatCallTask>();
         throw r0;
     L_0x0133:
         r8.u = r6;
         goto L_0x0026;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.HttpDownloadBlock.getVisible(com.duokan.reader.common.download.showAnimation):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.HttpDownloadBlock.getVisible(com.duokan.reader.common.download.getScaledMaximumFlingVelocity):void");
     }
 
     protected void f() {
@@ -488,7 +488,7 @@ class HttpDownloadBlock extends DownloadBlock {
                             this.u.j = 0;
                             break;
                         default:
-                            this.n.a(LogLevel.ERROR, "" + this.b, "response invalid(%getScaledTouchSlop)", Integer.valueOf(statusLine.getStatusCode()));
+                            this.n.a(LogLevel.ERROR, "" + this.b, "response invalid(%getTriangleEdge)", Integer.valueOf(statusLine.getStatusCode()));
                             retryableResult = RetryableResult.FAILED;
                             try {
                                 nVar.d.abort();
@@ -618,18 +618,18 @@ class HttpDownloadBlock extends DownloadBlock {
         if (r0 != 0) goto L_0x0011;
     L_0x000b:
         r0 = new java.lang.AssertionError;
-        r0.<init>();
+        r0.<creatCallTask>();
         throw r0;
     L_0x0011:
         r0 = q;
         if (r0 != 0) goto L_0x0021;
     L_0x0015:
-        r2 = r12.getScaledTouchSlop;
+        r2 = r12.getTriangleEdge;
         r0 = (r2 > r10 ? 1 : (r2 == r10 ? 0 : -1));
         if (r0 != 0) goto L_0x0021;
     L_0x001b:
         r0 = new java.lang.AssertionError;
-        r0.<init>();
+        r0.<creatCallTask>();
         throw r0;
     L_0x0021:
         r0 = r13.SessionTask;
@@ -647,7 +647,7 @@ class HttpDownloadBlock extends DownloadBlock {
         return r0;
     L_0x0032:
         r0 = r12.getWidthPixels;	 Catch:{ Exception -> 0x03f3 }
-        r4 = r12.showAnimation;	 Catch:{ Exception -> 0x03f3 }
+        r4 = r12.getScaledMaximumFlingVelocity;	 Catch:{ Exception -> 0x03f3 }
         r6 = r12.SessionTask;	 Catch:{ Exception -> 0x03f3 }
         r4 = r4 + r6;
         r0.write(r3, r4);	 Catch:{ Exception -> 0x03f3 }
@@ -660,7 +660,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r4 = r4 + r6;
         r12.getPhysicalXPixels = r4;	 Catch:{ all -> 0x008d }
         r12.SessionTask();	 Catch:{ all -> 0x008d }
-        r4 = r12.showAnimation;	 Catch:{ all -> 0x008d }
+        r4 = r12.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x008d }
         r6 = r12.SessionTask;	 Catch:{ all -> 0x008d }
         r4 = r4 + r6;
         r6 = (long) r2;	 Catch:{ all -> 0x008d }
@@ -681,7 +681,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r0 = (r6 > r8 ? 1 : (r6 == r8 ? 0 : -1));
         if (r0 >= 0) goto L_0x03ba;
     L_0x006b:
-        r0 = r13.showAnimation;	 Catch:{ Exception -> 0x0445 }
+        r0 = r13.getScaledMaximumFlingVelocity;	 Catch:{ Exception -> 0x0445 }
         if (r0 == 0) goto L_0x013b;
     L_0x006f:
         r0 = com.duokan.reader.common.download.HttpDownloadBlock.RetryableResult.FAILED;	 Catch:{ Exception -> 0x0445 }
@@ -690,19 +690,19 @@ class HttpDownloadBlock extends DownloadBlock {
         r1 = q;	 Catch:{ all -> 0x008d }
         if (r1 != 0) goto L_0x0098;
     L_0x0077:
-        r4 = r12.getScaledTouchSlop;	 Catch:{ all -> 0x008d }
+        r4 = r12.getTriangleEdge;	 Catch:{ all -> 0x008d }
         r1 = (r4 > r10 ? 1 : (r4 == r10 ? 0 : -1));
         if (r1 < 0) goto L_0x0098;
     L_0x007d:
         r4 = r12.SessionTask;	 Catch:{ all -> 0x008d }
         r6 = (long) r2;	 Catch:{ all -> 0x008d }
         r4 = r4 + r6;
-        r6 = r12.getScaledTouchSlop;	 Catch:{ all -> 0x008d }
+        r6 = r12.getTriangleEdge;	 Catch:{ all -> 0x008d }
         r1 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));
         if (r1 <= 0) goto L_0x0098;
     L_0x0087:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x008d }
-        r0.<init>();	 Catch:{ all -> 0x008d }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x008d }
         throw r0;	 Catch:{ all -> 0x008d }
     L_0x008d:
         r0 = move-exception;
@@ -717,7 +717,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r3 = 0;
         r3 = java.nio.ByteBuffer.wrap(r1, r3, r2);	 Catch:{ all -> 0x008d }
     L_0x009f:
-        r1 = r13.showAnimation;	 Catch:{ all -> 0x008d }
+        r1 = r13.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x008d }
         if (r1 == 0) goto L_0x00b4;
     L_0x00a3:
         r0 = com.duokan.reader.common.download.HttpDownloadBlock.RetryableResult.FAILED;	 Catch:{ all -> 0x008d }
@@ -733,7 +733,7 @@ class HttpDownloadBlock extends DownloadBlock {
         goto L_0x00ab;
     L_0x00b4:
         r1 = r12.getWidthPixels;	 Catch:{ Exception -> 0x00e3 }
-        r4 = r12.showAnimation;	 Catch:{ Exception -> 0x00e3 }
+        r4 = r12.getScaledMaximumFlingVelocity;	 Catch:{ Exception -> 0x00e3 }
         r6 = r12.SessionTask;	 Catch:{ Exception -> 0x00e3 }
         r4 = r4 + r6;
         r1.write(r3, r4);	 Catch:{ Exception -> 0x00e3 }
@@ -746,7 +746,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r4 = r4 + r6;
         r12.getPhysicalXPixels = r4;	 Catch:{ all -> 0x008d }
         r12.SessionTask();	 Catch:{ all -> 0x008d }
-        r4 = r12.showAnimation;	 Catch:{ all -> 0x008d }
+        r4 = r12.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x008d }
         r6 = r12.SessionTask;	 Catch:{ all -> 0x008d }
         r4 = r4 + r6;
         r6 = (long) r2;	 Catch:{ all -> 0x008d }
@@ -765,7 +765,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r4 = r12.n;	 Catch:{ all -> 0x008d }
         r5 = com.duokan.core.diagnostic.LogLevel.WARNING;	 Catch:{ all -> 0x008d }
         r6 = new java.lang.StringBuilder;	 Catch:{ all -> 0x008d }
-        r6.<init>();	 Catch:{ all -> 0x008d }
+        r6.<creatCallTask>();	 Catch:{ all -> 0x008d }
         r7 = "";
         r6 = r6.append(r7);	 Catch:{ all -> 0x008d }
         r7 = r12.getVisible;	 Catch:{ all -> 0x008d }
@@ -774,7 +774,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r7 = "failed to write bytes";
         r4.setDrawable(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
         r1 = r13.getPhysicalYPixels;	 Catch:{ all -> 0x008d }
-        r4 = r12.getScaledTouchSlop();	 Catch:{ all -> 0x008d }
+        r4 = r12.getTriangleEdge();	 Catch:{ all -> 0x008d }
         if (r1 <= r4) goto L_0x0121;
     L_0x010a:
         r0 = com.duokan.reader.common.download.DownloadBlock.BlockState.FAILED;	 Catch:{ all -> 0x008d }
@@ -809,11 +809,11 @@ class HttpDownloadBlock extends DownloadBlock {
         r3 = com.duokan.reader.common.download.DownloadTask.DownloadingStage.MULTI_BLOCK_PARALLEL_DOWNLOADING;	 Catch:{ Exception -> 0x0445 }
         if (r0 != r3) goto L_0x0141;
     L_0x0141:
-        r6 = r12.getScaledTouchSlop;	 Catch:{ Exception -> 0x0445 }
+        r6 = r12.getTriangleEdge;	 Catch:{ Exception -> 0x0445 }
         r0 = (r6 > r10 ? 1 : (r6 == r10 ? 0 : -1));
         if (r0 <= 0) goto L_0x0177;
     L_0x0147:
-        r6 = r12.getScaledTouchSlop;	 Catch:{ Exception -> 0x0445 }
+        r6 = r12.getTriangleEdge;	 Catch:{ Exception -> 0x0445 }
         r8 = r12.SessionTask;	 Catch:{ Exception -> 0x0445 }
         r6 = r6 - r8;
         r8 = (long) r2;	 Catch:{ Exception -> 0x0445 }
@@ -832,19 +832,19 @@ class HttpDownloadBlock extends DownloadBlock {
         r1 = q;	 Catch:{ all -> 0x008d }
         if (r1 != 0) goto L_0x017c;
     L_0x0161:
-        r4 = r12.getScaledTouchSlop;	 Catch:{ all -> 0x008d }
+        r4 = r12.getTriangleEdge;	 Catch:{ all -> 0x008d }
         r1 = (r4 > r10 ? 1 : (r4 == r10 ? 0 : -1));
         if (r1 < 0) goto L_0x017c;
     L_0x0167:
         r4 = r12.SessionTask;	 Catch:{ all -> 0x008d }
         r6 = (long) r2;	 Catch:{ all -> 0x008d }
         r4 = r4 + r6;
-        r6 = r12.getScaledTouchSlop;	 Catch:{ all -> 0x008d }
+        r6 = r12.getTriangleEdge;	 Catch:{ all -> 0x008d }
         r1 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));
         if (r1 <= 0) goto L_0x017c;
     L_0x0171:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x008d }
-        r0.<init>();	 Catch:{ all -> 0x008d }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x008d }
         throw r0;	 Catch:{ all -> 0x008d }
     L_0x0177:
         r0 = r13.SessionTask;	 Catch:{ Exception -> 0x0445 }
@@ -856,7 +856,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r3 = 0;
         r3 = java.nio.ByteBuffer.wrap(r1, r3, r2);	 Catch:{ all -> 0x008d }
     L_0x0183:
-        r1 = r13.showAnimation;	 Catch:{ all -> 0x008d }
+        r1 = r13.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x008d }
         if (r1 == 0) goto L_0x0199;
     L_0x0187:
         r0 = com.duokan.reader.common.download.HttpDownloadBlock.RetryableResult.FAILED;	 Catch:{ all -> 0x008d }
@@ -872,7 +872,7 @@ class HttpDownloadBlock extends DownloadBlock {
         goto L_0x018f;
     L_0x0199:
         r1 = r12.getWidthPixels;	 Catch:{ Exception -> 0x01c8 }
-        r4 = r12.showAnimation;	 Catch:{ Exception -> 0x01c8 }
+        r4 = r12.getScaledMaximumFlingVelocity;	 Catch:{ Exception -> 0x01c8 }
         r6 = r12.SessionTask;	 Catch:{ Exception -> 0x01c8 }
         r4 = r4 + r6;
         r1.write(r3, r4);	 Catch:{ Exception -> 0x01c8 }
@@ -885,7 +885,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r4 = r4 + r6;
         r12.getPhysicalXPixels = r4;	 Catch:{ all -> 0x008d }
         r12.SessionTask();	 Catch:{ all -> 0x008d }
-        r4 = r12.showAnimation;	 Catch:{ all -> 0x008d }
+        r4 = r12.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x008d }
         r6 = r12.SessionTask;	 Catch:{ all -> 0x008d }
         r4 = r4 + r6;
         r6 = (long) r2;	 Catch:{ all -> 0x008d }
@@ -904,7 +904,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r4 = r12.n;	 Catch:{ all -> 0x008d }
         r5 = com.duokan.core.diagnostic.LogLevel.WARNING;	 Catch:{ all -> 0x008d }
         r6 = new java.lang.StringBuilder;	 Catch:{ all -> 0x008d }
-        r6.<init>();	 Catch:{ all -> 0x008d }
+        r6.<creatCallTask>();	 Catch:{ all -> 0x008d }
         r7 = "";
         r6 = r6.append(r7);	 Catch:{ all -> 0x008d }
         r7 = r12.getVisible;	 Catch:{ all -> 0x008d }
@@ -913,7 +913,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r7 = "failed to write bytes";
         r4.setDrawable(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
         r1 = r13.getPhysicalYPixels;	 Catch:{ all -> 0x008d }
-        r4 = r12.getScaledTouchSlop();	 Catch:{ all -> 0x008d }
+        r4 = r12.getTriangleEdge();	 Catch:{ all -> 0x008d }
         if (r1 <= r4) goto L_0x0206;
     L_0x01ef:
         r0 = com.duokan.reader.common.download.DownloadBlock.BlockState.FAILED;	 Catch:{ all -> 0x008d }
@@ -949,7 +949,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r0 = r3.read(r6, r2, r0);	 Catch:{ Exception -> 0x0445 }
         if (r0 >= 0) goto L_0x03b6;
     L_0x022a:
-        r0 = r12.getScaledTouchSlop;	 Catch:{ Exception -> 0x0445 }
+        r0 = r12.getTriangleEdge;	 Catch:{ Exception -> 0x0445 }
         r4 = -1;
         r0 = (r0 > r4 ? 1 : (r0 == r4 ? 0 : -1));
         if (r0 != 0) goto L_0x02f4;
@@ -960,26 +960,26 @@ class HttpDownloadBlock extends DownloadBlock {
         r1 = q;	 Catch:{ all -> 0x008d }
         if (r1 != 0) goto L_0x0250;
     L_0x023a:
-        r4 = r12.getScaledTouchSlop;	 Catch:{ all -> 0x008d }
+        r4 = r12.getTriangleEdge;	 Catch:{ all -> 0x008d }
         r1 = (r4 > r10 ? 1 : (r4 == r10 ? 0 : -1));
         if (r1 < 0) goto L_0x0250;
     L_0x0240:
         r4 = r12.SessionTask;	 Catch:{ all -> 0x008d }
         r6 = (long) r2;	 Catch:{ all -> 0x008d }
         r4 = r4 + r6;
-        r6 = r12.getScaledTouchSlop;	 Catch:{ all -> 0x008d }
+        r6 = r12.getTriangleEdge;	 Catch:{ all -> 0x008d }
         r1 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));
         if (r1 <= 0) goto L_0x0250;
     L_0x024a:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x008d }
-        r0.<init>();	 Catch:{ all -> 0x008d }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x008d }
         throw r0;	 Catch:{ all -> 0x008d }
     L_0x0250:
         r1 = r13.SessionTask;	 Catch:{ all -> 0x008d }
         r3 = 0;
         r3 = java.nio.ByteBuffer.wrap(r1, r3, r2);	 Catch:{ all -> 0x008d }
     L_0x0257:
-        r1 = r13.showAnimation;	 Catch:{ all -> 0x008d }
+        r1 = r13.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x008d }
         if (r1 == 0) goto L_0x026d;
     L_0x025b:
         r0 = com.duokan.reader.common.download.HttpDownloadBlock.RetryableResult.FAILED;	 Catch:{ all -> 0x008d }
@@ -995,7 +995,7 @@ class HttpDownloadBlock extends DownloadBlock {
         goto L_0x0263;
     L_0x026d:
         r1 = r12.getWidthPixels;	 Catch:{ Exception -> 0x029c }
-        r4 = r12.showAnimation;	 Catch:{ Exception -> 0x029c }
+        r4 = r12.getScaledMaximumFlingVelocity;	 Catch:{ Exception -> 0x029c }
         r6 = r12.SessionTask;	 Catch:{ Exception -> 0x029c }
         r4 = r4 + r6;
         r1.write(r3, r4);	 Catch:{ Exception -> 0x029c }
@@ -1008,7 +1008,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r4 = r4 + r6;
         r12.getPhysicalXPixels = r4;	 Catch:{ all -> 0x008d }
         r12.SessionTask();	 Catch:{ all -> 0x008d }
-        r4 = r12.showAnimation;	 Catch:{ all -> 0x008d }
+        r4 = r12.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x008d }
         r6 = r12.SessionTask;	 Catch:{ all -> 0x008d }
         r4 = r4 + r6;
         r6 = (long) r2;	 Catch:{ all -> 0x008d }
@@ -1027,7 +1027,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r4 = r12.n;	 Catch:{ all -> 0x008d }
         r5 = com.duokan.core.diagnostic.LogLevel.WARNING;	 Catch:{ all -> 0x008d }
         r6 = new java.lang.StringBuilder;	 Catch:{ all -> 0x008d }
-        r6.<init>();	 Catch:{ all -> 0x008d }
+        r6.<creatCallTask>();	 Catch:{ all -> 0x008d }
         r7 = "";
         r6 = r6.append(r7);	 Catch:{ all -> 0x008d }
         r7 = r12.getVisible;	 Catch:{ all -> 0x008d }
@@ -1036,7 +1036,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r7 = "failed to write bytes";
         r4.setDrawable(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
         r1 = r13.getPhysicalYPixels;	 Catch:{ all -> 0x008d }
-        r4 = r12.getScaledTouchSlop();	 Catch:{ all -> 0x008d }
+        r4 = r12.getTriangleEdge();	 Catch:{ all -> 0x008d }
         if (r1 <= r4) goto L_0x02da;
     L_0x02c3:
         r0 = com.duokan.reader.common.download.DownloadBlock.BlockState.FAILED;	 Catch:{ all -> 0x008d }
@@ -1073,26 +1073,26 @@ class HttpDownloadBlock extends DownloadBlock {
         r1 = q;	 Catch:{ all -> 0x008d }
         if (r1 != 0) goto L_0x0312;
     L_0x02fc:
-        r4 = r12.getScaledTouchSlop;	 Catch:{ all -> 0x008d }
+        r4 = r12.getTriangleEdge;	 Catch:{ all -> 0x008d }
         r1 = (r4 > r10 ? 1 : (r4 == r10 ? 0 : -1));
         if (r1 < 0) goto L_0x0312;
     L_0x0302:
         r4 = r12.SessionTask;	 Catch:{ all -> 0x008d }
         r6 = (long) r2;	 Catch:{ all -> 0x008d }
         r4 = r4 + r6;
-        r6 = r12.getScaledTouchSlop;	 Catch:{ all -> 0x008d }
+        r6 = r12.getTriangleEdge;	 Catch:{ all -> 0x008d }
         r1 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));
         if (r1 <= 0) goto L_0x0312;
     L_0x030c:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x008d }
-        r0.<init>();	 Catch:{ all -> 0x008d }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x008d }
         throw r0;	 Catch:{ all -> 0x008d }
     L_0x0312:
         r1 = r13.SessionTask;	 Catch:{ all -> 0x008d }
         r3 = 0;
         r3 = java.nio.ByteBuffer.wrap(r1, r3, r2);	 Catch:{ all -> 0x008d }
     L_0x0319:
-        r1 = r13.showAnimation;	 Catch:{ all -> 0x008d }
+        r1 = r13.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x008d }
         if (r1 == 0) goto L_0x032f;
     L_0x031d:
         r0 = com.duokan.reader.common.download.HttpDownloadBlock.RetryableResult.FAILED;	 Catch:{ all -> 0x008d }
@@ -1108,7 +1108,7 @@ class HttpDownloadBlock extends DownloadBlock {
         goto L_0x0325;
     L_0x032f:
         r1 = r12.getWidthPixels;	 Catch:{ Exception -> 0x035e }
-        r4 = r12.showAnimation;	 Catch:{ Exception -> 0x035e }
+        r4 = r12.getScaledMaximumFlingVelocity;	 Catch:{ Exception -> 0x035e }
         r6 = r12.SessionTask;	 Catch:{ Exception -> 0x035e }
         r4 = r4 + r6;
         r1.write(r3, r4);	 Catch:{ Exception -> 0x035e }
@@ -1121,7 +1121,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r4 = r4 + r6;
         r12.getPhysicalXPixels = r4;	 Catch:{ all -> 0x008d }
         r12.SessionTask();	 Catch:{ all -> 0x008d }
-        r4 = r12.showAnimation;	 Catch:{ all -> 0x008d }
+        r4 = r12.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x008d }
         r6 = r12.SessionTask;	 Catch:{ all -> 0x008d }
         r4 = r4 + r6;
         r6 = (long) r2;	 Catch:{ all -> 0x008d }
@@ -1140,7 +1140,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r4 = r12.n;	 Catch:{ all -> 0x008d }
         r5 = com.duokan.core.diagnostic.LogLevel.WARNING;	 Catch:{ all -> 0x008d }
         r6 = new java.lang.StringBuilder;	 Catch:{ all -> 0x008d }
-        r6.<init>();	 Catch:{ all -> 0x008d }
+        r6.<creatCallTask>();	 Catch:{ all -> 0x008d }
         r7 = "";
         r6 = r6.append(r7);	 Catch:{ all -> 0x008d }
         r7 = r12.getVisible;	 Catch:{ all -> 0x008d }
@@ -1149,7 +1149,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r7 = "failed to write bytes";
         r4.setDrawable(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
         r1 = r13.getPhysicalYPixels;	 Catch:{ all -> 0x008d }
-        r4 = r12.getScaledTouchSlop();	 Catch:{ all -> 0x008d }
+        r4 = r12.getTriangleEdge();	 Catch:{ all -> 0x008d }
         if (r1 <= r4) goto L_0x039c;
     L_0x0385:
         r0 = com.duokan.reader.common.download.DownloadBlock.BlockState.FAILED;	 Catch:{ all -> 0x008d }
@@ -1189,26 +1189,26 @@ class HttpDownloadBlock extends DownloadBlock {
         r0 = q;	 Catch:{ all -> 0x008d }
         if (r0 != 0) goto L_0x03d6;
     L_0x03c0:
-        r4 = r12.getScaledTouchSlop;	 Catch:{ all -> 0x008d }
+        r4 = r12.getTriangleEdge;	 Catch:{ all -> 0x008d }
         r0 = (r4 > r10 ? 1 : (r4 == r10 ? 0 : -1));
         if (r0 < 0) goto L_0x03d6;
     L_0x03c6:
         r4 = r12.SessionTask;	 Catch:{ all -> 0x008d }
         r6 = (long) r2;	 Catch:{ all -> 0x008d }
         r4 = r4 + r6;
-        r6 = r12.getScaledTouchSlop;	 Catch:{ all -> 0x008d }
+        r6 = r12.getTriangleEdge;	 Catch:{ all -> 0x008d }
         r0 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));
         if (r0 <= 0) goto L_0x03d6;
     L_0x03d0:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x008d }
-        r0.<init>();	 Catch:{ all -> 0x008d }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x008d }
         throw r0;	 Catch:{ all -> 0x008d }
     L_0x03d6:
         r0 = r13.SessionTask;	 Catch:{ all -> 0x008d }
         r3 = 0;
         r3 = java.nio.ByteBuffer.wrap(r0, r3, r2);	 Catch:{ all -> 0x008d }
     L_0x03dd:
-        r0 = r13.showAnimation;	 Catch:{ all -> 0x008d }
+        r0 = r13.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x008d }
         if (r0 == 0) goto L_0x0032;
     L_0x03e1:
         r0 = com.duokan.reader.common.download.HttpDownloadBlock.RetryableResult.FAILED;	 Catch:{ all -> 0x008d }
@@ -1227,7 +1227,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r4 = r12.n;	 Catch:{ all -> 0x008d }
         r5 = com.duokan.core.diagnostic.LogLevel.WARNING;	 Catch:{ all -> 0x008d }
         r6 = new java.lang.StringBuilder;	 Catch:{ all -> 0x008d }
-        r6.<init>();	 Catch:{ all -> 0x008d }
+        r6.<creatCallTask>();	 Catch:{ all -> 0x008d }
         r7 = "";
         r6 = r6.append(r7);	 Catch:{ all -> 0x008d }
         r7 = r12.getVisible;	 Catch:{ all -> 0x008d }
@@ -1236,7 +1236,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r7 = "failed to write bytes";
         r4.setDrawable(r5, r6, r7, r0);	 Catch:{ all -> 0x008d }
         r0 = r13.getPhysicalYPixels;	 Catch:{ all -> 0x008d }
-        r4 = r12.getScaledTouchSlop();	 Catch:{ all -> 0x008d }
+        r4 = r12.getTriangleEdge();	 Catch:{ all -> 0x008d }
         if (r0 <= r4) goto L_0x0431;
     L_0x041a:
         r0 = com.duokan.reader.common.download.DownloadBlock.BlockState.FAILED;	 Catch:{ all -> 0x008d }
@@ -1267,7 +1267,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r1 = r12.n;	 Catch:{ all -> 0x0526 }
         r3 = com.duokan.core.diagnostic.LogLevel.WARNING;	 Catch:{ all -> 0x0526 }
         r4 = new java.lang.StringBuilder;	 Catch:{ all -> 0x0526 }
-        r4.<init>();	 Catch:{ all -> 0x0526 }
+        r4.<creatCallTask>();	 Catch:{ all -> 0x0526 }
         r5 = "";
         r4 = r4.append(r5);	 Catch:{ all -> 0x0526 }
         r5 = r12.getVisible;	 Catch:{ all -> 0x0526 }
@@ -1281,26 +1281,26 @@ class HttpDownloadBlock extends DownloadBlock {
         r1 = q;	 Catch:{ all -> 0x008d }
         if (r1 != 0) goto L_0x0482;
     L_0x046c:
-        r4 = r12.getScaledTouchSlop;	 Catch:{ all -> 0x008d }
+        r4 = r12.getTriangleEdge;	 Catch:{ all -> 0x008d }
         r1 = (r4 > r10 ? 1 : (r4 == r10 ? 0 : -1));
         if (r1 < 0) goto L_0x0482;
     L_0x0472:
         r4 = r12.SessionTask;	 Catch:{ all -> 0x008d }
         r6 = (long) r2;	 Catch:{ all -> 0x008d }
         r4 = r4 + r6;
-        r6 = r12.getScaledTouchSlop;	 Catch:{ all -> 0x008d }
+        r6 = r12.getTriangleEdge;	 Catch:{ all -> 0x008d }
         r1 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));
         if (r1 <= 0) goto L_0x0482;
     L_0x047c:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x008d }
-        r0.<init>();	 Catch:{ all -> 0x008d }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x008d }
         throw r0;	 Catch:{ all -> 0x008d }
     L_0x0482:
         r1 = r13.SessionTask;	 Catch:{ all -> 0x008d }
         r3 = 0;
         r3 = java.nio.ByteBuffer.wrap(r1, r3, r2);	 Catch:{ all -> 0x008d }
     L_0x0489:
-        r1 = r13.showAnimation;	 Catch:{ all -> 0x008d }
+        r1 = r13.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x008d }
         if (r1 == 0) goto L_0x049f;
     L_0x048d:
         r0 = com.duokan.reader.common.download.HttpDownloadBlock.RetryableResult.FAILED;	 Catch:{ all -> 0x008d }
@@ -1316,7 +1316,7 @@ class HttpDownloadBlock extends DownloadBlock {
         goto L_0x0495;
     L_0x049f:
         r1 = r12.getWidthPixels;	 Catch:{ Exception -> 0x04ce }
-        r4 = r12.showAnimation;	 Catch:{ Exception -> 0x04ce }
+        r4 = r12.getScaledMaximumFlingVelocity;	 Catch:{ Exception -> 0x04ce }
         r6 = r12.SessionTask;	 Catch:{ Exception -> 0x04ce }
         r4 = r4 + r6;
         r1.write(r3, r4);	 Catch:{ Exception -> 0x04ce }
@@ -1329,7 +1329,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r4 = r4 + r6;
         r12.getPhysicalXPixels = r4;	 Catch:{ all -> 0x008d }
         r12.SessionTask();	 Catch:{ all -> 0x008d }
-        r4 = r12.showAnimation;	 Catch:{ all -> 0x008d }
+        r4 = r12.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x008d }
         r6 = r12.SessionTask;	 Catch:{ all -> 0x008d }
         r4 = r4 + r6;
         r6 = (long) r2;	 Catch:{ all -> 0x008d }
@@ -1348,7 +1348,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r4 = r12.n;	 Catch:{ all -> 0x008d }
         r5 = com.duokan.core.diagnostic.LogLevel.WARNING;	 Catch:{ all -> 0x008d }
         r6 = new java.lang.StringBuilder;	 Catch:{ all -> 0x008d }
-        r6.<init>();	 Catch:{ all -> 0x008d }
+        r6.<creatCallTask>();	 Catch:{ all -> 0x008d }
         r7 = "";
         r6 = r6.append(r7);	 Catch:{ all -> 0x008d }
         r7 = r12.getVisible;	 Catch:{ all -> 0x008d }
@@ -1357,7 +1357,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r7 = "failed to write bytes";
         r4.setDrawable(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
         r1 = r13.getPhysicalYPixels;	 Catch:{ all -> 0x008d }
-        r4 = r12.getScaledTouchSlop();	 Catch:{ all -> 0x008d }
+        r4 = r12.getTriangleEdge();	 Catch:{ all -> 0x008d }
         if (r1 <= r4) goto L_0x050c;
     L_0x04f5:
         r0 = com.duokan.reader.common.download.DownloadBlock.BlockState.FAILED;	 Catch:{ all -> 0x008d }
@@ -1394,26 +1394,26 @@ class HttpDownloadBlock extends DownloadBlock {
         r1 = q;	 Catch:{ all -> 0x008d }
         if (r1 != 0) goto L_0x0543;
     L_0x052d:
-        r4 = r12.getScaledTouchSlop;	 Catch:{ all -> 0x008d }
+        r4 = r12.getTriangleEdge;	 Catch:{ all -> 0x008d }
         r1 = (r4 > r10 ? 1 : (r4 == r10 ? 0 : -1));
         if (r1 < 0) goto L_0x0543;
     L_0x0533:
         r4 = r12.SessionTask;	 Catch:{ all -> 0x008d }
         r6 = (long) r2;	 Catch:{ all -> 0x008d }
         r4 = r4 + r6;
-        r6 = r12.getScaledTouchSlop;	 Catch:{ all -> 0x008d }
+        r6 = r12.getTriangleEdge;	 Catch:{ all -> 0x008d }
         r1 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));
         if (r1 <= 0) goto L_0x0543;
     L_0x053d:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x008d }
-        r0.<init>();	 Catch:{ all -> 0x008d }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x008d }
         throw r0;	 Catch:{ all -> 0x008d }
     L_0x0543:
         r1 = r13.SessionTask;	 Catch:{ all -> 0x008d }
         r3 = 0;
         r3 = java.nio.ByteBuffer.wrap(r1, r3, r2);	 Catch:{ all -> 0x008d }
     L_0x054a:
-        r1 = r13.showAnimation;	 Catch:{ all -> 0x008d }
+        r1 = r13.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x008d }
         if (r1 == 0) goto L_0x0560;
     L_0x054e:
         r0 = com.duokan.reader.common.download.HttpDownloadBlock.RetryableResult.FAILED;	 Catch:{ all -> 0x008d }
@@ -1429,7 +1429,7 @@ class HttpDownloadBlock extends DownloadBlock {
         goto L_0x0556;
     L_0x0560:
         r1 = r12.getWidthPixels;	 Catch:{ Exception -> 0x0585 }
-        r4 = r12.showAnimation;	 Catch:{ Exception -> 0x0585 }
+        r4 = r12.getScaledMaximumFlingVelocity;	 Catch:{ Exception -> 0x0585 }
         r6 = r12.SessionTask;	 Catch:{ Exception -> 0x0585 }
         r4 = r4 + r6;
         r1.write(r3, r4);	 Catch:{ Exception -> 0x0585 }
@@ -1442,7 +1442,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r4 = r4 + r6;
         r12.getPhysicalXPixels = r4;	 Catch:{ all -> 0x008d }
         r12.SessionTask();	 Catch:{ all -> 0x008d }
-        r4 = r12.showAnimation;	 Catch:{ all -> 0x008d }
+        r4 = r12.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x008d }
         r6 = r12.SessionTask;	 Catch:{ all -> 0x008d }
         r4 = r4 + r6;
         r6 = (long) r2;	 Catch:{ all -> 0x008d }
@@ -1456,7 +1456,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r4 = r12.n;	 Catch:{ all -> 0x008d }
         r5 = com.duokan.core.diagnostic.LogLevel.WARNING;	 Catch:{ all -> 0x008d }
         r6 = new java.lang.StringBuilder;	 Catch:{ all -> 0x008d }
-        r6.<init>();	 Catch:{ all -> 0x008d }
+        r6.<creatCallTask>();	 Catch:{ all -> 0x008d }
         r7 = "";
         r6 = r6.append(r7);	 Catch:{ all -> 0x008d }
         r7 = r12.getVisible;	 Catch:{ all -> 0x008d }
@@ -1465,7 +1465,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r7 = "failed to write bytes";
         r4.setDrawable(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
         r1 = r13.getPhysicalYPixels;	 Catch:{ all -> 0x008d }
-        r4 = r12.getScaledTouchSlop();	 Catch:{ all -> 0x008d }
+        r4 = r12.getTriangleEdge();	 Catch:{ all -> 0x008d }
         if (r1 <= r4) goto L_0x05c3;
     L_0x05ac:
         r0 = com.duokan.reader.common.download.DownloadBlock.BlockState.FAILED;	 Catch:{ all -> 0x008d }
@@ -1496,7 +1496,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r1.printStackTrace();
         goto L_0x0094;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.HttpDownloadBlock.showAnimation(com.duokan.reader.common.download.n):com.duokan.reader.common.download.HttpDownloadBlock$RetryableResult");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.HttpDownloadBlock.getScaledMaximumFlingVelocity(com.duokan.reader.common.download.n):com.duokan.reader.common.download.HttpDownloadBlock$RetryableResult");
     }
 
     protected void a(int i, long j) {

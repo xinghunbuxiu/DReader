@@ -15,6 +15,6 @@ class zt implements Runnable {
     }
 
     public void run() {
-        ah.a(new zu(this));
+        ah.future(new zu(this));
     }
 }

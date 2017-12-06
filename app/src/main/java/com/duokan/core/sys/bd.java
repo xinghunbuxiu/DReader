@@ -228,12 +228,12 @@ class bd implements r {
         /*
         r10 = this;
         r0 = 0;
-        r1 = r10.showAnimation;
+        r1 = r10.getScaledMaximumFlingVelocity;
         r1 = r1.isHeldByCurrentThread();
         if (r1 != 0) goto L_0x000f;
     L_0x0009:
         r0 = new com.duokan.core.sys.VirtualFileAssertionFailsException;
-        r0.<init>();
+        r0.<creatCallTask>();
         throw r0;
     L_0x000f:
         r1 = r10.getVisible;	 Catch:{ Throwable -> 0x0070, all -> 0x0093 }
@@ -260,18 +260,18 @@ class bd implements r {
         r5 = r7.getString(r0);	 Catch:{ Throwable -> 0x0099, all -> 0x0097 }
         r0 = new com.duokan.core.sys.av;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r1 = r10.getVisible;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
-        r2 = r10.showAnimation;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
+        r2 = r10.getScaledMaximumFlingVelocity;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r3 = new java.lang.StringBuilder;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
-        r3.<init>();	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
+        r3.<creatCallTask>();	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r6 = "file:///";
         r3 = r3.append(r6);	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r3 = r3.append(r8);	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r3 = r3.toString();	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r6 = r10.setDrawable;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
-        r0.<init>(r1, r2, r3, r4, r5, r6);	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
+        r0.<creatCallTask>(r1, r2, r3, r4, r5, r6);	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r1 = r10.getScaledPagingTouchSlop;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r1.put(r8, r0);	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
-        r1 = r10.getScaledTouchSlop;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
+        r1 = r10.getTriangleEdge;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r1.put(r5, r8);	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         if (r7 == 0) goto L_0x0069;
     L_0x0066:
@@ -298,7 +298,7 @@ class bd implements r {
         r4[r6] = r5;	 Catch:{ all -> 0x008b }
         r2 = java.lang.String.format(r2, r3, r4);	 Catch:{ all -> 0x008b }
         r3 = new java.io.IOException;	 Catch:{ all -> 0x008b }
-        r3.<init>(r2, r0);	 Catch:{ all -> 0x008b }
+        r3.<creatCallTask>(r2, r0);	 Catch:{ all -> 0x008b }
         throw r3;	 Catch:{ all -> 0x008b }
     L_0x008b:
         r0 = move-exception;

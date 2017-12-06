@@ -122,7 +122,7 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
 
     public void a(View view, dl dlVar, int i, Runnable runnable, Runnable runnable2) {
         dl dlVar2 = new dl(a(view));
-        dlVar2.d((float) UTools.closeAnimation((double) dlVar2.l(), (double) (dlVar.l() - 180.0f), (double) (dlVar.l() + 180.0f)));
+        dlVar2.d((float) UTools.getAngle((double) dlVar2.l(), (double) (dlVar.l() - 180.0f), (double) (dlVar.l() + 180.0f)));
         a(view, dlVar2, dlVar, i, runnable, runnable2);
     }
 

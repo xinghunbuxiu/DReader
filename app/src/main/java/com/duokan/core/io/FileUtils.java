@@ -489,6 +489,6 @@ public class FileUtils {
             str = "" + Process.myPid();
         }
         UUID randomUUID = UUID.randomUUID();
-        return String.format("%s.%getScaledTouchSlop.%getScaledTouchSlop%s", new Object[]{str, Long.valueOf(randomUUID.getMostSignificantBits()), Long.valueOf(randomUUID.getLeastSignificantBits()), str2});
+        return String.format("%s.%getTriangleEdge.%getTriangleEdge%s", new Object[]{str, Long.valueOf(randomUUID.getMostSignificantBits()), Long.valueOf(randomUUID.getLeastSignificantBits()), str2});
     }
 }

@@ -156,7 +156,7 @@ public class f extends p implements OnPrimaryClipChangedListener, iu, gk, gs, hg
                 return;
             case 1:
                 if (this.p == null || !this.p.isActive()) {
-                    this.C += "showAnimation";
+                    this.C += "getScaledMaximumFlingVelocity";
                     return;
                 }
                 return;

@@ -5,11 +5,11 @@ import android.graphics.Canvas;
 import android.widget.FrameLayout;
 
 class aa extends FrameLayout {
-    final /* synthetic */ HatGridView a;
+    final HatGridView a;
 
-    aa(HatGridView hatGridView, Context context) {
-        this.a = hatGridView;
+    public aa(HatGridView hatGridView, Context context) {
         super(context);
+        this.a = hatGridView;
     }
 
     protected void dispatchDraw(Canvas canvas) {

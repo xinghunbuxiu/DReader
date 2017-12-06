@@ -74,11 +74,11 @@ public class fv extends ej {
     }
 
     public final Future b(List list, ag agVar) {
-        return ah.b(new ga(this, list, agVar));
+        return ah.submitFuture(new ga(this, list, agVar));
     }
 
     public final Future a(av avVar, String str, ag agVar) {
-        return ah.a(new gc(this, avVar, agVar), str);
+        return ah.future(new gc(this, avVar, agVar), str);
     }
 
     public final boolean a(an anVar) {
@@ -423,7 +423,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                 r2 = r1;
             L_0x001e:
                 r3 = r6.q;	 Catch:{ all -> 0x0035 }
-                r2 = com.duokan.reader.domain.bookshelf.showAnimation.setDrawable(r2, r3);	 Catch:{ all -> 0x0035 }
+                r2 = com.duokan.reader.domain.bookshelf.getScaledMaximumFlingVelocity.setDrawable(r2, r3);	 Catch:{ all -> 0x0035 }
                 if (r2 == 0) goto L_0x0027;
             L_0x0026:
                 r0 = r1;

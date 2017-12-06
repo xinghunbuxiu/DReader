@@ -118,7 +118,7 @@ public abstract class DkReader extends DkApp {
             }
         });
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        UTools.m.a(com.duokan.reader.common.bitmap.a.a(displayMetrics.widthPixels, displayMetrics.heightPixels, Config.ARGB_8888) * 5);
+        UTools.async.a(com.duokan.reader.common.bitmap.a.a(displayMetrics.widthPixels, displayMetrics.heightPixels, Config.ARGB_8888) * 5);
         aa.a(this, ReaderEnv.get());
         ah.a(this, ReaderEnv.get());
         o.a(this, ReaderEnv.get());

@@ -38,7 +38,7 @@ public class jp extends fy {
     public void g() {
         this.b = true;
         this.d.setHorizontalOverScrollMode(OverScrollMode.STRETCH);
-        this.d.setMaxOverScrollWidth(UTools.f(getContext()));
+        this.d.setMaxOverScrollWidth(UTools.defaultClose(getContext()));
         for (int i = 0; i < this.d.getChildCount(); i++) {
             ko koVar = (ko) this.d.getChildAt(i);
             koVar.i();

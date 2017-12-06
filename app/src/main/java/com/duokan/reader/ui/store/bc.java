@@ -48,7 +48,7 @@ public class bc extends HatGridView {
 
     public void a(boolean z) {
         if (z) {
-            UTools.addAnimation((View) this, new bg(this, this.a.a() - 1));
+            UTools.creatCallTask((View) this, new bg(this, this.a.a() - 1));
         } else {
             this.a.f(0);
         }

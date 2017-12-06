@@ -187,7 +187,7 @@ public class h extends ar implements a {
         if (r0 == 0) goto L_0x003b;
     L_0x0027:
         r0 = r4.getVisible;
-        r0 = r0.showAnimation();
+        r0 = r0.getScaledMaximumFlingVelocity();
         if (r0 != 0) goto L_0x003b;
     L_0x002f:
         r0 = r4.getPhysicalYPixels;	 Catch:{ InterruptedException -> 0x0039 }
@@ -249,7 +249,7 @@ public class h extends ar implements a {
         if (r0 == 0) goto L_0x0036;
     L_0x002e:
         r0 = r3.getVisible;
-        r0 = r0.showAnimation();
+        r0 = r0.getScaledMaximumFlingVelocity();
         if (r0 == 0) goto L_0x001d;
     L_0x0036:
         r0 = r3.getPhysicalXPixels;

@@ -64,7 +64,7 @@ class hv implements am {
             cVar.g(j);
             cVar.aL();
             if (this.b.x) {
-                ah.a(new hw(this, cVar, j), hi.c);
+                ah.future(new hw(this, cVar, j), hi.c);
             } else {
                 this.b.a(cVar, j);
             }

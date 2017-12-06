@@ -193,7 +193,7 @@ public abstract class an extends BaseConnect {
         r0 = move-exception;
         r1 = 0;
         r5.HttpLogger = r1;	 Catch:{ all -> 0x0050 }
-        r1 = com.duokan.core.diagnostic.setDrawable.showAnimation();	 Catch:{ all -> 0x0050 }
+        r1 = com.duokan.core.diagnostic.setDrawable.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x0050 }
         r2 = com.duokan.core.diagnostic.LogLevel.ERROR;	 Catch:{ all -> 0x0050 }
         r3 = "shelf";
         r4 = "item init exception!";

@@ -27,7 +27,7 @@ class ak extends n {
         r1 = 0;
         r2 = new com.duokan.reader.common.webservices.duokan.BaseActivity;
         r0 = r9.setDrawable;
-        r2.<init>(r9, r0);
+        r2.<creatCallTask>(r9, r0);
         r3 = com.duokan.reader.domain.social.message.DkMessagesManager.setDrawable;
         monitor-enter(r3);
         r4 = new com.duokan.reader.domain.social.message.av;	 Catch:{ all -> 0x01fc }
@@ -38,7 +38,7 @@ class ak extends n {
         r6 = r9.getVisible;	 Catch:{ all -> 0x01fc }
         r6 = r6.getScaledPagingTouchSlop;	 Catch:{ all -> 0x01fc }
         r6 = r6.HttpLogger;	 Catch:{ all -> 0x01fc }
-        r4.<init>(r0, r5, r6);	 Catch:{ all -> 0x01fc }
+        r4.<creatCallTask>(r0, r5, r6);	 Catch:{ all -> 0x01fc }
         r4.setDrawable();	 Catch:{ all -> 0x01fc }
         r0 = r4.getVisible();	 Catch:{ all -> 0x01fc }
         r9.HttpLogger = r0;	 Catch:{ all -> 0x01fc }
@@ -58,7 +58,7 @@ class ak extends n {
         r7 = r7.setDrawable;	 Catch:{ all -> 0x01fc }
         r8 = r9.getVisible;	 Catch:{ all -> 0x01fc }
         r8 = r8.getVisible;	 Catch:{ all -> 0x01fc }
-        r6.<init>(r7, r8);	 Catch:{ all -> 0x01fc }
+        r6.<creatCallTask>(r7, r8);	 Catch:{ all -> 0x01fc }
         r0 = r4.queryItems(r0, r5, r6);	 Catch:{ all -> 0x01fc }
         r5 = r9.getScaledPagingTouchSlop;	 Catch:{ all -> 0x01fc }
         r0 = r0.toArray(r5);	 Catch:{ all -> 0x01fc }
@@ -73,10 +73,10 @@ class ak extends n {
         r0 = r0.mUnreadThreshold;	 Catch:{ all -> 0x01fc }
         r5 = r9.getVisible;	 Catch:{ all -> 0x01fc }
         r5 = r5.getScaledPagingTouchSlop;	 Catch:{ all -> 0x01fc }
-        r5 = r5.getScaledTouchSlop;	 Catch:{ all -> 0x01fc }
+        r5 = r5.getTriangleEdge;	 Catch:{ all -> 0x01fc }
         r0 = r2.setDrawable(r0, r5);	 Catch:{ all -> 0x01fc }
-        r9.getScaledTouchSlop = r0;	 Catch:{ all -> 0x01fc }
-        r0 = r9.getScaledTouchSlop;	 Catch:{ all -> 0x01fc }
+        r9.getTriangleEdge = r0;	 Catch:{ all -> 0x01fc }
+        r0 = r9.getTriangleEdge;	 Catch:{ all -> 0x01fc }
         r0 = r0.getVisible;	 Catch:{ all -> 0x01fc }
         if (r0 == 0) goto L_0x007a;
     L_0x0078:
@@ -101,9 +101,9 @@ class ak extends n {
         r4.updateInfo(r0);	 Catch:{ all -> 0x01fc }
         r0 = new android.os.Handler;	 Catch:{ all -> 0x01fc }
         r5 = android.os.Looper.getMainLooper();	 Catch:{ all -> 0x01fc }
-        r0.<init>(r5);	 Catch:{ all -> 0x01fc }
+        r0.<creatCallTask>(r5);	 Catch:{ all -> 0x01fc }
         r5 = new com.duokan.reader.domain.social.message.al;	 Catch:{ all -> 0x01fc }
-        r5.<init>(r9);	 Catch:{ all -> 0x01fc }
+        r5.<creatCallTask>(r9);	 Catch:{ all -> 0x01fc }
         r0.post(r5);	 Catch:{ all -> 0x01fc }
     L_0x00ab:
         r0 = r9.SessionTask;	 Catch:{ all -> 0x01fc }
@@ -124,29 +124,29 @@ class ak extends n {
         r5 = r5.getVisible;	 Catch:{ all -> 0x01fc }
         r6 = r9.getVisible;	 Catch:{ all -> 0x01fc }
         r6 = r6.getScaledPagingTouchSlop;	 Catch:{ all -> 0x01fc }
-        r6 = r6.getScaledTouchSlop;	 Catch:{ all -> 0x01fc }
+        r6 = r6.getTriangleEdge;	 Catch:{ all -> 0x01fc }
         r0 = r2.setDrawable(r0, r5, r6);	 Catch:{ all -> 0x01fc }
-        r9.showAnimation = r0;	 Catch:{ all -> 0x01fc }
-        r0 = r9.showAnimation;	 Catch:{ all -> 0x01fc }
+        r9.getScaledMaximumFlingVelocity = r0;	 Catch:{ all -> 0x01fc }
+        r0 = r9.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x01fc }
         r0 = r0.getVisible;	 Catch:{ all -> 0x01fc }
         if (r0 != 0) goto L_0x01f9;
     L_0x00d8:
         r5 = new java.util.ArrayList;	 Catch:{ all -> 0x01fc }
-        r0 = r9.showAnimation;	 Catch:{ all -> 0x01fc }
+        r0 = r9.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x01fc }
         r0 = r0.setDrawable;	 Catch:{ all -> 0x01fc }
         r0 = (org.json.JSONArray) r0;	 Catch:{ all -> 0x01fc }
         r0 = r0.length();	 Catch:{ all -> 0x01fc }
-        r5.<init>(r0);	 Catch:{ all -> 0x01fc }
+        r5.<creatCallTask>(r0);	 Catch:{ all -> 0x01fc }
         r6 = new java.util.HashMap;	 Catch:{ all -> 0x01fc }
-        r6.<init>();	 Catch:{ all -> 0x01fc }
+        r6.<creatCallTask>();	 Catch:{ all -> 0x01fc }
     L_0x00ec:
-        r0 = r9.showAnimation;	 Catch:{ all -> 0x01fc }
+        r0 = r9.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x01fc }
         r0 = r0.setDrawable;	 Catch:{ all -> 0x01fc }
         r0 = (org.json.JSONArray) r0;	 Catch:{ all -> 0x01fc }
         r0 = r0.length();	 Catch:{ all -> 0x01fc }
         if (r1 >= r0) goto L_0x011e;
     L_0x00f8:
-        r0 = r9.showAnimation;	 Catch:{ JSONException -> 0x0201 }
+        r0 = r9.getScaledMaximumFlingVelocity;	 Catch:{ JSONException -> 0x0201 }
         r0 = r0.setDrawable;	 Catch:{ JSONException -> 0x0201 }
         r0 = (org.json.JSONArray) r0;	 Catch:{ JSONException -> 0x0201 }
         r0 = r0.getJSONObject(r1);	 Catch:{ JSONException -> 0x0201 }
@@ -155,7 +155,7 @@ class ak extends n {
     L_0x0108:
         r5.add(r0);	 Catch:{ JSONException -> 0x0201 }
         r7 = r0.getVisible;	 Catch:{ JSONException -> 0x0201 }
-        r0 = r9.showAnimation;	 Catch:{ JSONException -> 0x0201 }
+        r0 = r9.getScaledMaximumFlingVelocity;	 Catch:{ JSONException -> 0x0201 }
         r0 = r0.setDrawable;	 Catch:{ JSONException -> 0x0201 }
         r0 = (org.json.JSONArray) r0;	 Catch:{ JSONException -> 0x0201 }
         r0 = r0.getJSONObject(r1);	 Catch:{ JSONException -> 0x0201 }
@@ -167,10 +167,10 @@ class ak extends n {
     L_0x011e:
         r0 = new com.duokan.reader.domain.social.message.au;	 Catch:{ all -> 0x01fc }
         r1 = 0;
-        r0.<init>(r1);	 Catch:{ all -> 0x01fc }
+        r0.<creatCallTask>(r1);	 Catch:{ all -> 0x01fc }
         java.util.Collections.sort(r5, r0);	 Catch:{ all -> 0x01fc }
-        r0 = r9.showAnimation;	 Catch:{ all -> 0x01fc }
-        r0 = r0.showAnimation;	 Catch:{ all -> 0x01fc }
+        r0 = r9.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x01fc }
+        r0 = r0.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x01fc }
         r0 = java.lang.Boolean.valueOf(r0);	 Catch:{ all -> 0x01fc }
         r0 = r0.booleanValue();	 Catch:{ all -> 0x01fc }
         r9.getPhysicalXPixels = r0;	 Catch:{ all -> 0x01fc }
@@ -199,7 +199,7 @@ class ak extends n {
         r0 = r0.getVisible;	 Catch:{ Exception -> 0x01ff }
         r1 = r9.getVisible;	 Catch:{ Exception -> 0x01ff }
         r1 = r1.getScaledPagingTouchSlop;	 Catch:{ Exception -> 0x01ff }
-        r1 = r1.getScaledTouchSlop;	 Catch:{ Exception -> 0x01ff }
+        r1 = r1.getTriangleEdge;	 Catch:{ Exception -> 0x01ff }
         r0 = r2.setDrawable(r0, r1);	 Catch:{ Exception -> 0x01ff }
         r0 = r0.getVisible;	 Catch:{ Exception -> 0x01ff }
         if (r0 != 0) goto L_0x0196;

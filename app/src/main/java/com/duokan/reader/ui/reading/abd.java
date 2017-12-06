@@ -184,9 +184,9 @@ final class abd {
     public android.graphics.Bitmap a(com.duokan.reader.domain.document.as r5) {
         /*
         r4 = this;
-        r2 = r4.getScaledTouchSlop;
+        r2 = r4.getTriangleEdge;
         monitor-enter(r2);
-        r0 = r4.getScaledTouchSlop;	 Catch:{ all -> 0x0043 }
+        r0 = r4.getTriangleEdge;	 Catch:{ all -> 0x0043 }
         r0 = r0.entrySet();	 Catch:{ all -> 0x0043 }
         r3 = r0.iterator();	 Catch:{ all -> 0x0043 }
     L_0x000d:

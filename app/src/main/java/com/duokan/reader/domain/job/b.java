@@ -75,12 +75,12 @@ public class b implements ah {
     }
 
     protected void a(Runnable runnable) {
-        com.duokan.core.sys.ah.a(new c(this, runnable), a);
+        com.duokan.core.sys.ah.future(new c(this, runnable), a);
     }
 
     @TargetApi(21)
     protected void b(Runnable runnable) {
-        com.duokan.core.sys.ah.a(new d(this, runnable), a);
+        com.duokan.core.sys.ah.future(new d(this, runnable), a);
     }
 
     private boolean a(JobInfo jobInfo) {

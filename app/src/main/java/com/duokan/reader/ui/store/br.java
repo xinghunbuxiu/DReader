@@ -146,7 +146,7 @@ public class br extends ActivatedController {
     }
 
     public void i() {
-        UTools.addAnimation(this.a, new bu(this));
+        UTools.creatCallTask(this.a, new bu(this));
     }
 
     public bl j() {

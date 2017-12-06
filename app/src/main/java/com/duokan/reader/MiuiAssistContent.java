@@ -164,16 +164,16 @@ public final class MiuiAssistContent {
 
     public static void insert(List list) {
         if (list.size() >= 1) {
-            ah.a(new AnonymousClass1(list), "miuiAssist");
+            ah.future(new AnonymousClass1(list), "miuiAssist");
         }
     }
 
     public static void insert(c cVar, String str) {
-        ah.a(new AnonymousClass2(cVar, str), "miuiAssist");
+        ah.future(new AnonymousClass2(cVar, str), "miuiAssist");
     }
 
     public static void delete(c cVar) {
-        ah.a(new AnonymousClass3(cVar), "miuiAssist");
+        ah.future(new AnonymousClass3(cVar), "miuiAssist");
     }
 
     private static AssistContentItem from(c cVar) {

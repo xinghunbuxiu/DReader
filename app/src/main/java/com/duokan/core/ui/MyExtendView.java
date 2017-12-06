@@ -1,28 +1,30 @@
 package com.duokan.core.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.InsetDrawable;
 import android.util.AttributeSet;
 
-public class a extends ExtendView {
+public class MyExtendView extends ExtendView {
     private int a;
-    private Drawable b;
-    private Drawable c;
+    private Drawable drawable1;
+    private Drawable drawable;
     private int d;
     private int e;
     private int f;
 
-    public a(Context context) {
+    public MyExtendView(Context context) {
         this(context, null);
     }
 
-    public a(Context context, AttributeSet attributeSet) {
+    public MyExtendView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.a = 80;
-        this.b = null;
-        this.c = null;
+        this.drawable1 = null;
+        this.drawable = null;
         this.d = 0;
         this.e = 0;
         this.f = 0;
@@ -35,12 +37,12 @@ public class a extends ExtendView {
     public final void setGravity(int i) {
         if (this.a != i) {
             this.a = i;
-            a();
+            setBackground();
         }
     }
 
     public final Drawable getIndicator() {
-        return this.c;
+        return this.drawable;
     }
 
     public final void setIndicator(int i) {
@@ -48,9 +50,9 @@ public class a extends ExtendView {
     }
 
     public final void setIndicator(Drawable drawable) {
-        if (this.c != drawable) {
-            this.c = drawable;
-            a();
+        if (this.drawable != drawable) {
+            this.drawable = drawable;
+            setBackground();
         }
     }
 
@@ -67,7 +69,7 @@ public class a extends ExtendView {
                 point.x = rect.right;
                 point.y = rect.centerY();
                 break;
-            case j.a /*48*/:
+            case 48:
                 point.x = rect.centerX();
                 point.y = rect.top;
                 break;
@@ -87,7 +89,7 @@ public class a extends ExtendView {
     public final void setIndicatorInset(int i) {
         if (this.d != i) {
             this.d = i;
-            a();
+            setBackground();
         }
     }
 
@@ -107,53 +109,82 @@ public class a extends ExtendView {
     }
 
     public Drawable getBackground() {
-        return this.b;
+        return this.drawable1;
     }
 
     public void setBackgroundDrawable(Drawable drawable) {
-        if (this.b != drawable) {
-            this.b = drawable;
-            a();
+        if (this.drawable1 != drawable) {
+            this.drawable1 = drawable;
+            setBackground();
         }
     }
 
-    private final void a() {
-        if (this.b == null) {
+    private final void setBackground() {
+        if (this.drawable1 == null) {
             super.setBackgroundDrawable(null);
             return;
         }
         Rect rect = (Rect) UTools.g.getRect();
         switch (this.a) {
             case 3:
-                rect.left = Math.max(d() - this.d, 0);
+                rect.left = Math.max(getDrawableHeight() - this.d, 0);
                 break;
             case 5:
-                rect.right = Math.max(d() - this.d, 0);
+                rect.right = Math.max(getDrawableHeight() - this.d, 0);
                 break;
-            case j.a /*48*/:
+            case 48:
                 rect.top = Math.max(h() - this.d, 0);
                 break;
             case 80:
                 rect.bottom = Math.max(h() - this.d, 0);
                 break;
         }
-        super.setBackgroundDrawable(new b(this, this.b, rect.left, rect.top, rect.right, rect.bottom));
+        super.setBackgroundDrawable(new b(this, this.drawable1, rect.left, rect.top, rect.right, rect.bottom));
         UTools.g.getRect(rect);
+    }
+
+    class b extends InsetDrawable {
+        final MyExtendView a;
+
+        public b(MyExtendView aVar, Drawable drawable, int i, int i2, int i3, int i4) {
+            super(drawable, i, i2, i3, i4);
+            this.a = aVar;
+
+        }
+
+        public void draw(Canvas canvas) {
+            super.draw(canvas);
+            if (drawable!= null) {
+                Rect rect = (Rect) UTools.g.getRect();
+                this.a.a(rect);
+                if (!rect.isEmpty()) {
+                    canvas.save();
+                    canvas.translate(rect.exactCenterX(), rect.exactCenterY());
+                    canvas.rotate((float) this.a.b());
+                    canvas.translate(-rect.exactCenterX(), -rect.exactCenterY());
+                    drawable.setFilterBitmap(true);
+                    drawable.setBounds(rect);
+                    drawable.draw(canvas);
+                    canvas.restore();
+                }
+                UTools.g.getRect(rect);
+            }
+        }
     }
 
     private final void a(Rect rect) {
         rect.setEmpty();
-        if (this.c != null) {
+        if (this.drawable != null) {
             switch (this.a) {
                 case 3:
-                    rect.set(0, 0, d(), e());
+                    rect.set(0, 0, getDrawableHeight(), getDrawableWidth());
                     rect.offset(-this.d, c());
                     return;
                 case 5:
-                    rect.set(0, 0, d(), e());
+                    rect.set(0, 0, getDrawableHeight(), getDrawableWidth());
                     rect.offset((getWidth() - rect.width()) - this.d, c());
                     return;
-                case j.a /*48*/:
+                case 48:
                     rect.set(0, 0, g(), h());
                     rect.offset(f(), -this.d);
                     return;
@@ -173,7 +204,7 @@ public class a extends ExtendView {
                 return 90;
             case 5:
                 return -90;
-            case j.a /*48*/:
+            case 48:
                 return 180;
             default:
                 return 0;
@@ -181,15 +212,15 @@ public class a extends ExtendView {
     }
 
     private final int c() {
-        return Math.min(this.f + this.e, (getHeight() - e()) - this.f);
+        return Math.min(this.f + this.e, (getHeight() - getDrawableWidth()) - this.f);
     }
 
-    private final int d() {
-        return this.c == null ? 0 : this.c.getIntrinsicHeight();
+    private final int getDrawableHeight() {
+        return this.drawable == null ? 0 : this.drawable.getIntrinsicHeight();
     }
 
-    private final int e() {
-        return this.c == null ? 0 : this.c.getIntrinsicWidth();
+    private final int getDrawableWidth() {
+        return this.drawable == null ? 0 : this.drawable.getIntrinsicWidth();
     }
 
     private final int f() {
@@ -197,10 +228,10 @@ public class a extends ExtendView {
     }
 
     private final int g() {
-        return this.c == null ? 0 : this.c.getIntrinsicWidth();
+        return this.drawable == null ? 0 : this.drawable.getIntrinsicWidth();
     }
 
     private final int h() {
-        return this.c == null ? 0 : this.c.getIntrinsicHeight();
+        return this.drawable == null ? 0 : this.drawable.getIntrinsicHeight();
     }
 }

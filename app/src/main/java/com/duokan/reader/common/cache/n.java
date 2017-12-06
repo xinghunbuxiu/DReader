@@ -265,17 +265,17 @@ class n {
         r1 = 0;
         r3 = r6.SessionTask;
         monitor-enter(r3);
-        r0 = r6.getScaledTouchSlop;	 Catch:{ all -> 0x004b }
+        r0 = r6.getTriangleEdge;	 Catch:{ all -> 0x004b }
         if (r0 == 0) goto L_0x004e;
     L_0x0008:
-        r0 = r6.getScaledTouchSlop;	 Catch:{ all -> 0x004b }
+        r0 = r6.getTriangleEdge;	 Catch:{ all -> 0x004b }
         r0 = r0.size();	 Catch:{ all -> 0x004b }
         r0 = r0 + -1;
         r2 = r0;
     L_0x0011:
         if (r2 < 0) goto L_0x004e;
     L_0x0013:
-        r0 = r6.getScaledTouchSlop;	 Catch:{ all -> 0x004b }
+        r0 = r6.getTriangleEdge;	 Catch:{ all -> 0x004b }
         r0 = r0.getAllSortStackTraces(r2);	 Catch:{ all -> 0x004b }
         r0 = (com.duokan.reader.common.cache.MyContextWrapper) r0;	 Catch:{ all -> 0x004b }
         r4 = r0.setDrawable;	 Catch:{ all -> 0x004b }
@@ -371,7 +371,7 @@ class n {
         goto L_0x0033;
     L_0x0095:
         monitor-exit(r3);	 Catch:{ all -> 0x004b }
-        r0 = r6.showAnimation;
+        r0 = r6.getScaledMaximumFlingVelocity;
         r0 = r0.setDrawable(r7);
         goto L_0x0033;
         */

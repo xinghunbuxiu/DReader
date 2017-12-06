@@ -101,27 +101,27 @@ public class j {
         return this.mWindow.getBalloonCount();
     }
 
-    public void showBalloon(a aVar, View view) {
+    public void showBalloon(MyExtendView aVar, View view) {
         this.mWindow.showBalloon(aVar, view);
     }
 
-    public void showBalloon(a aVar, View view, LayoutParams layoutParams) {
+    public void showBalloon(MyExtendView aVar, View view, LayoutParams layoutParams) {
         this.mWindow.showBalloon(aVar, view, layoutParams);
     }
 
-    public void showBalloon(a aVar, Rect rect) {
+    public void showBalloon(MyExtendView aVar, Rect rect) {
         this.mWindow.showBalloon(aVar, rect);
     }
 
-    public void showBalloon(a aVar, Rect rect, LayoutParams layoutParams) {
+    public void showBalloon(MyExtendView aVar, Rect rect, LayoutParams layoutParams) {
         this.mWindow.showBalloon(aVar, rect, layoutParams);
     }
 
-    public a getBalloon(int i) {
+    public MyExtendView getBalloon(int i) {
         return this.mWindow.getBalloon(i);
     }
 
-    public void removeBalloon(a aVar) {
+    public void removeBalloon(MyExtendView aVar) {
         this.mWindow.removeBalloon(aVar);
     }
 

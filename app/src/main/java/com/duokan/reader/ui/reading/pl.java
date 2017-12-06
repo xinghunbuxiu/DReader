@@ -17,6 +17,6 @@ class pl implements Runnable {
         this.a.b.j.b.dismiss();
         this.a.b.j.b = null;
         this.a.b.j.c = false;
-        UTools.m.a(true);
+        UTools.async.a(true);
     }
 }

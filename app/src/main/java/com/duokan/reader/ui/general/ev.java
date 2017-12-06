@@ -39,7 +39,7 @@ final class ev implements Callable {
             z = false;
         }
         if (z || euVar.f) {
-            UTools.addAnimation(this.b, (Callable) this);
+            UTools.creatCallTask(this.b, (Callable) this);
         }
         if (z) {
             z2 = false;

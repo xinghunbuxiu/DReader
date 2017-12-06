@@ -94,7 +94,7 @@ public class xm extends zo implements o {
             ((xy) this.e).a(4, "", "");
             return;
         }
-        ((xy) this.e).a(0, String.format(getString(j.reading__comic_view__chapter), new Object[]{Long.valueOf(r4 + 1)}), String.format("%getScaledTouchSlop / %getScaledTouchSlop", new Object[]{Long.valueOf(r2 + 1), Integer.valueOf(r1)}));
+        ((xy) this.e).a(0, String.format(getString(j.reading__comic_view__chapter), new Object[]{Long.valueOf(r4 + 1)}), String.format("%getTriangleEdge / %getTriangleEdge", new Object[]{Long.valueOf(r2 + 1), Integer.valueOf(r1)}));
     }
 
     protected void a(Runnable runnable, Runnable runnable2) {

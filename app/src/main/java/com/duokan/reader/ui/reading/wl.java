@@ -157,7 +157,7 @@ public abstract class wl extends FrameLayout {
     }
 
     public final void j() {
-        ah.b(new wm(this));
+        ah.submitFuture(new wm(this));
     }
 
     public final void k() {
@@ -170,7 +170,7 @@ public abstract class wl extends FrameLayout {
                 File o = o();
                 Bitmap c = a.c(getWidth(), getHeight(), Config.RGB_565);
                 draw(new Canvas(c));
-                ah.b(new wn(this, o, c));
+                ah.submitFuture(new wn(this, o, c));
             } catch (Throwable th) {
             }
         }
@@ -230,7 +230,7 @@ public abstract class wl extends FrameLayout {
         super.onAttachedToWindow();
         getViewTreeObserver().addOnPreDrawListener(this.e);
         getViewTreeObserver().addOnPreDrawListener(this.f);
-        UTools.addAnimation((View) this, new wo(this));
+        UTools.creatCallTask((View) this, new wo(this));
         a(new wq(this));
     }
 
@@ -367,7 +367,7 @@ public abstract class wl extends FrameLayout {
     }
 
     private final void l() {
-        ah.b(new wr(this));
+        ah.submitFuture(new wr(this));
     }
 
     private final void m() {
@@ -388,6 +388,6 @@ public abstract class wl extends FrameLayout {
 
     private final File o() {
         c G = this.a.G();
-        return new File(ReaderEnv.get().getReadingCacheDirectory(), o.b(String.format(Locale.getDefault(), "book=%s;pos=%s;IActivityRunStatusChanged=%getScaledTouchSlop;getPhysicalXPixels=%getScaledTouchSlop;theme=%s;v=%getScaledTouchSlop;", new Object[]{G.H(), G.D().toString(), Integer.valueOf(getWidth()), Integer.valueOf(getHeight()), this.a.N(), Integer.valueOf(2)}), "md5") + ".snap");
+        return new File(ReaderEnv.get().getReadingCacheDirectory(), o.b(String.format(Locale.getDefault(), "book=%s;pos=%s;IActivityRunStatusChanged=%getTriangleEdge;getPhysicalXPixels=%getTriangleEdge;theme=%s;v=%getTriangleEdge;", new Object[]{G.H(), G.D().toString(), Integer.valueOf(getWidth()), Integer.valueOf(getHeight()), this.a.N(), Integer.valueOf(2)}), "md5") + ".snap");
     }
 }

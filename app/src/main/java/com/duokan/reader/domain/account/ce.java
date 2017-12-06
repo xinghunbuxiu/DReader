@@ -26,7 +26,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
 */
         /*
         r0 = 1;
-        r1 = r2.getScaledTouchSlop();
+        r1 = r2.getTriangleEdge();
         if (r1 < r0) goto L_0x0008;
     L_0x0007:
         return r0;
@@ -37,17 +37,17 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         r2.getVisible();
         setDrawable(r2, r1);	 Catch:{ Exception -> 0x001a, all -> 0x0023 }
         r2.HttpLogger();	 Catch:{ Exception -> 0x001a, all -> 0x0023 }
-        r2.showAnimation();
+        r2.getScaledMaximumFlingVelocity();
         goto L_0x0007;
     L_0x001a:
         r0 = move-exception;
         r0.printStackTrace();	 Catch:{ Exception -> 0x001a, all -> 0x0023 }
         r0 = 0;
-        r2.showAnimation();
+        r2.getScaledMaximumFlingVelocity();
         goto L_0x0007;
     L_0x0023:
         r0 = move-exception;
-        r2.showAnimation();
+        r2.getScaledMaximumFlingVelocity();
         throw r0;
         */
         throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.account.ce.setDrawable(com.duokan.core.setDrawable.n):boolean");

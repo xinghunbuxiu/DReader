@@ -697,7 +697,7 @@ public class fl extends ActivatedController implements SystemUiConditioner, clas
     }
 
     private void u() {
-        UTools.addAnimation(getContentView(), new gs(this));
+        UTools.creatCallTask(getContentView(), new gs(this));
     }
 
     private boolean v() {

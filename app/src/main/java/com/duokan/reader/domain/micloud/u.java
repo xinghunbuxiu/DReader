@@ -147,7 +147,7 @@ public class u extends be {
         r0 = r12.getVisible();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = r0.MyContextWrapper();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r4.<init>(r0);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r4.<creatCallTask>(r0);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = r4.exists();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         if (r0 != 0) goto L_0x002d;
     L_0x0023:
@@ -159,15 +159,15 @@ public class u extends be {
         r3 = r12.setDrawable();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r5 = new com.duokan.reader.domain.micloud.IFeature;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r6 = 0;
-        r5.<init>(r12, r6);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r5.<creatCallTask>(r12, r6);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r6 = 0;
-        r0.<init>(r3, r5, r6);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0.<creatCallTask>(r3, r5, r6);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r3 = new com.duokan.reader.domain.micloud.MyContextWrapper;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r5 = 0;
-        r3.<init>(r12, r5);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r3.<creatCallTask>(r12, r5);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r5 = new com.duokan.reader.domain.micloud.IActivityRunStatusChanged;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r6 = 0;
-        r5.<init>(r12, r6);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r5.<creatCallTask>(r12, r6);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r6 = 1;
         r0.download(r3, r4, r5, r6);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r12.BaseActivity();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
@@ -197,7 +197,7 @@ public class u extends be {
     L_0x008b:
         r0 = r1;
     L_0x008c:
-        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r4, r0);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getScaledMaximumFlingVelocity(r3, r4, r0);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
     L_0x0090:
         return r0;
     L_0x0091:
@@ -208,10 +208,10 @@ public class u extends be {
         r0 = r12.getVisible();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = r0.IActivityRunStatusChanged();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
-        r5.<init>(r0);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r5.<creatCallTask>(r0);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = -1;
     L_0x00a3:
-        r3 = r12.getScaledTouchSlop;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r3 = r12.getTriangleEdge;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r6 = 3;
         if (r3 > r6) goto L_0x0267;
     L_0x00a8:
@@ -230,16 +230,16 @@ public class u extends be {
     L_0x00c2:
         r0 = 0;
         r4 = 0;
-        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r0, r4);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getScaledMaximumFlingVelocity(r3, r0, r4);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         goto L_0x0090;
     L_0x00c9:
         r0 = r5.exists();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         if (r0 != 0) goto L_0x0109;
     L_0x00cf:
         r3 = -10003; // 0xffffffffffffd8ed float:NaN double:NaN;
-        r0 = r12.getScaledTouchSlop;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r12.getTriangleEdge;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = r0 + 1;
-        r12.getScaledTouchSlop = r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r12.getTriangleEdge = r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = r12.getVisible();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         r0 = r0.o();	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
@@ -251,7 +251,7 @@ public class u extends be {
         r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getVisible(r0, r3, r4);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         goto L_0x0090;
     L_0x00eb:
-        r0 = r12.getScaledTouchSlop;	 Catch:{ InterruptedException -> 0x0264, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = r12.getTriangleEdge;	 Catch:{ InterruptedException -> 0x0264, KscException -> 0x0157, Exception -> 0x024c }
         r0 = r0 * 20;
         r0 = r0 * 1000;
         r6 = (long) r0;	 Catch:{ InterruptedException -> 0x0264, KscException -> 0x0157, Exception -> 0x024c }
@@ -287,7 +287,7 @@ public class u extends be {
     L_0x0125:
         r0 = r1;
     L_0x0126:
-        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r4, r0);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getScaledMaximumFlingVelocity(r3, r4, r0);	 Catch:{ InterruptedException -> 0x0137, KscException -> 0x0157, Exception -> 0x024c }
         goto L_0x0090;
     L_0x012c:
         r0 = r2;
@@ -328,7 +328,7 @@ public class u extends be {
     L_0x0171:
         r0 = r1;
     L_0x0172:
-        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r1, r0);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getScaledMaximumFlingVelocity(r3, r1, r0);
         goto L_0x0090;
     L_0x0178:
         r0 = r2;
@@ -340,13 +340,13 @@ public class u extends be {
         r0 = r12.p();
         if (r0 != 0) goto L_0x01cf;
     L_0x0184:
-        r0 = r12.showAnimation;
+        r0 = r12.getScaledMaximumFlingVelocity;
         r4 = 3;
         if (r0 >= r4) goto L_0x01cf;
     L_0x0189:
-        r0 = r12.showAnimation;
+        r0 = r12.getScaledMaximumFlingVelocity;
         r0 = r0 + 1;
-        r12.showAnimation = r0;
+        r12.getScaledMaximumFlingVelocity = r0;
         r0 = r12.getVisible();
         r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;
         r0 = r0.o();
@@ -355,7 +355,7 @@ public class u extends be {
         r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getVisible(r10, r1, r1);
         goto L_0x0090;
     L_0x01a1:
-        r0 = r12.showAnimation;	 Catch:{ InterruptedException -> 0x0261 }
+        r0 = r12.getScaledMaximumFlingVelocity;	 Catch:{ InterruptedException -> 0x0261 }
         r0 = r0 * 20;
         r0 = r0 * 1000;
         r4 = (long) r0;	 Catch:{ InterruptedException -> 0x0261 }
@@ -372,7 +372,7 @@ public class u extends be {
         r0 = r12.p();
         if (r0 == 0) goto L_0x01c9;
     L_0x01c3:
-        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r1, r2);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getScaledMaximumFlingVelocity(r3, r1, r2);
         goto L_0x0090;
     L_0x01c9:
         r0 = r12.getScaledPagingTouchSlop(r13);
@@ -383,7 +383,7 @@ public class u extends be {
     L_0x01d5:
         r2 = r1;
     L_0x01d6:
-        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r1, r2);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getScaledMaximumFlingVelocity(r3, r1, r2);
         goto L_0x0090;
     L_0x01dc:
         r0 = -30004; // 0xffffffffffff8acc float:NaN double:NaN;
@@ -411,25 +411,25 @@ public class u extends be {
     L_0x0208:
         r2 = r1;
     L_0x0209:
-        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r0, r1, r2);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getScaledMaximumFlingVelocity(r0, r1, r2);
         goto L_0x0090;
     L_0x020f:
         r0 = -30011; // 0xffffffffffff8ac5 float:NaN double:NaN;
         if (r3 != r0) goto L_0x0219;
     L_0x0213:
-        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r2, r2);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getScaledMaximumFlingVelocity(r3, r2, r2);
         goto L_0x0090;
     L_0x0219:
         r0 = -30007; // 0xffffffffffff8ac9 float:NaN double:NaN;
         if (r3 != r0) goto L_0x0223;
     L_0x021d:
-        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r1, r2);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getScaledMaximumFlingVelocity(r3, r1, r2);
         goto L_0x0090;
     L_0x0223:
         r0 = -30008; // 0xffffffffffff8ac8 float:NaN double:NaN;
         if (r3 != r0) goto L_0x022d;
     L_0x0227:
-        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r3, r2, r2);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getScaledMaximumFlingVelocity(r3, r2, r2);
         goto L_0x0090;
     L_0x022d:
         r0 = r12.getVisible();
@@ -445,7 +445,7 @@ public class u extends be {
     L_0x0245:
         r2 = r1;
     L_0x0246:
-        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r11, r1, r2);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getScaledMaximumFlingVelocity(r11, r1, r2);
         goto L_0x0090;
     L_0x024c:
         r0 = move-exception;
@@ -457,7 +457,7 @@ public class u extends be {
     L_0x025a:
         r2 = r1;
     L_0x025b:
-        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.showAnimation(r11, r1, r2);
+        r0 = com.duokan.reader.common.async.work.getScaledPagingTouchSlop.getScaledMaximumFlingVelocity(r11, r1, r2);
         goto L_0x0090;
     L_0x0261:
         r0 = move-exception;

@@ -15,6 +15,6 @@ class gf implements ag {
     }
 
     public void a(Map map) {
-        ah.a(new gg(this, map), "serialPullingQueue");
+        ah.future(new gg(this, map), "serialPullingQueue");
     }
 }

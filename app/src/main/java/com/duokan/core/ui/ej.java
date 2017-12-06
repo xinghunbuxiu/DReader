@@ -8,11 +8,11 @@ final class ej extends ap {
     ej() {
     }
 
-    protected /* synthetic */ Object b() {
+    protected Object b() {
         return c();
     }
 
-    protected /* synthetic */ void b(Object obj) {
+    protected void b(Object obj) {
         a((Matrix) obj);
     }
 

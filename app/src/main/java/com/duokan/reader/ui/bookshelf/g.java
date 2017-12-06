@@ -265,7 +265,7 @@ public class g extends FrameLayout implements iu, la, hj, cw, eq {
     public void e() {
         if (this.m == null) {
             this.m = new m(this);
-            UTools.addAnimation((View) this, this.m);
+            UTools.creatCallTask((View) this, this.m);
             invalidate();
         }
     }

@@ -28,7 +28,7 @@ class cy extends ViewGroup {
 
     @SuppressLint({"DrawAllocation"})
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        UTools.addAnimation((View) this, new cz(this, z, i, i2, i3, i4));
+        UTools.creatCallTask((View) this, new cz(this, z, i, i2, i3, i4));
     }
 
     protected void onMeasure(int i, int i2) {
@@ -65,7 +65,7 @@ class cy extends ViewGroup {
             int[] iArr;
             int i6;
             int max;
-            a aVar = (a) getChildAt(i5);
+            MyExtendView aVar = (MyExtendView) getChildAt(i5);
             da daVar = (da) aVar.getLayoutParams();
             Rect rect = daVar.a;
             View view = daVar.b == null ? null : (View) daVar.b.get();
@@ -138,7 +138,7 @@ class cy extends ViewGroup {
         this.a = false;
     }
 
-    private void a(a aVar, int[] iArr) {
+    private void a(MyExtendView aVar, int[] iArr) {
         int i;
         int i2;
         da daVar = (da) aVar.getLayoutParams();
@@ -179,7 +179,7 @@ class cy extends ViewGroup {
         measureChildWithMargins(aVar, MeasureSpec.makeMeasureSpec(getWidth(), Integer.MIN_VALUE), i3, MeasureSpec.makeMeasureSpec(getHeight(), Integer.MIN_VALUE), i2);
     }
 
-    private int a(a aVar, int i, int i2) {
+    private int a(MyExtendView aVar, int i, int i2) {
         int width;
         da daVar = (da) aVar.getLayoutParams();
         aVar.setGravity(i);

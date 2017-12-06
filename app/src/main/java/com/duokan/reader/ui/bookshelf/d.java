@@ -14,25 +14,25 @@ class d implements Runnable {
         r7 = this;
         r6 = 1;
         r0 = new java.util.LinkedHashMap;
-        r0.<init>();
+        r0.<creatCallTask>();
         r1 = new java.io.File;
         r2 = com.duokan.reader.ReaderEnv.getAllSortStackTraces();
         r2 = r2.getExternalFilesDirectory();
         r3 = "/Downloads";
-        r1.<init>(r2, r3);
+        r1.<creatCallTask>(r2, r3);
         r2 = new java.io.File;
         r3 = com.duokan.reader.ReaderEnv.getAllSortStackTraces();
         r3 = r3.getPrivateCacheDirectory();
         r4 = "book.arch";
-        r2.<init>(r3, r4);
-        com.duokan.core.io.setDrawable.getScaledTouchSlop(r1);	 Catch:{ Throwable -> 0x0080, all -> 0x009b }
+        r2.<creatCallTask>(r3, r4);
+        com.duokan.core.io.setDrawable.getTriangleEdge(r1);	 Catch:{ Throwable -> 0x0080, all -> 0x009b }
         r1.mkdirs();	 Catch:{ Throwable -> 0x0080, all -> 0x009b }
         r3 = new java.io.FileOutputStream;	 Catch:{ Throwable -> 0x0080, all -> 0x009b }
-        r3.<init>(r2);	 Catch:{ Throwable -> 0x0080, all -> 0x009b }
+        r3.<creatCallTask>(r2);	 Catch:{ Throwable -> 0x0080, all -> 0x009b }
         r4 = r7.setDrawable;	 Catch:{ all -> 0x0078 }
         r4 = r4.getContext();	 Catch:{ all -> 0x0078 }
         r5 = r7.setDrawable;	 Catch:{ all -> 0x0078 }
-        r5 = r5.getScaledTouchSlop();	 Catch:{ all -> 0x0078 }
+        r5 = r5.getTriangleEdge();	 Catch:{ all -> 0x0078 }
         com.duokan.reader.DkPublic.extractRawResource(r4, r3, r5);	 Catch:{ all -> 0x0078 }
         r3.flush();	 Catch:{ Throwable -> 0x00b8, all -> 0x009b }
         r3.close();	 Catch:{ Throwable -> 0x00b8, all -> 0x009b }
@@ -55,7 +55,7 @@ class d implements Runnable {
         r0.setDrawable(r6, r6);
     L_0x006f:
         r0 = new com.duokan.reader.ui.bookshelf.getScaledPagingTouchSlop;
-        r0.<init>(r7);
+        r0.<creatCallTask>(r7);
         com.duokan.core.sys.TaskHandler.setDrawable(r0);
     L_0x0077:
         return;
@@ -75,7 +75,7 @@ class d implements Runnable {
         r0.setDrawable(r6, r6);
     L_0x0092:
         r0 = new com.duokan.reader.ui.bookshelf.getScaledPagingTouchSlop;
-        r0.<init>(r7);
+        r0.<creatCallTask>(r7);
         com.duokan.core.sys.TaskHandler.setDrawable(r0);
         goto L_0x0077;
     L_0x009b:
@@ -88,7 +88,7 @@ class d implements Runnable {
         r1.setDrawable(r6, r6);
     L_0x00ad:
         r1 = new com.duokan.reader.ui.bookshelf.getScaledPagingTouchSlop;
-        r1.<init>(r7);
+        r1.<creatCallTask>(r7);
         com.duokan.core.sys.TaskHandler.setDrawable(r1);
         throw r0;
     L_0x00b6:
@@ -98,6 +98,6 @@ class d implements Runnable {
         r3 = move-exception;
         goto L_0x0044;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.ui.bookshelf.getScaledTouchSlop.run():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.ui.bookshelf.getTriangleEdge.run():void");
     }
 }

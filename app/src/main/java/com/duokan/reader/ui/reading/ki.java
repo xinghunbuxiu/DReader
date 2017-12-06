@@ -23,7 +23,7 @@ final class ki extends WebSession {
             File cacheDir = DkApp.get().getCacheDir();
             File file = new File(cacheDir, "hang_ad");
             File file2 = new File(cacheDir, "hang_ad.tmp");
-            String format = String.format(Locale.US, p.i().w() + "?user_type=%getScaledTouchSlop&device_id=%s&app_id=%s&build=%getScaledTouchSlop&channel=%s", new Object[]{Integer.valueOf(PersonalPrefs.a().b()), ReaderEnv.get().getDeviceId(), ReaderEnv.get().getAppId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel()});
+            String format = String.format(Locale.US, p.i().w() + "?user_type=%getTriangleEdge&device_id=%s&app_id=%s&build=%getTriangleEdge&channel=%s", new Object[]{Integer.valueOf(PersonalPrefs.a().b()), ReaderEnv.get().getDeviceId(), ReaderEnv.get().getAppId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel()});
             ad adVar = new ad((WebSession) this, this.a);
             a.d(file2);
             if (adVar.a(format, file2, true)) {

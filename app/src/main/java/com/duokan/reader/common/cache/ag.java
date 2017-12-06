@@ -41,7 +41,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r5 = this;
         if (r8 == 0) goto L_0x0007;
     L_0x0002:
-        r0 = r5.getScaledTouchSlop;
+        r0 = r5.getTriangleEdge;
         r0.getVisible();
     L_0x0007:
         r1 = r7.iterator();	 Catch:{ all -> 0x0044 }
@@ -63,12 +63,12 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r4 = r0.setDrawable;	 Catch:{ all -> 0x0044 }
         r2.put(r3, r4);	 Catch:{ all -> 0x0044 }
         r3 = "__ITEM__VALUE__";	 Catch:{ all -> 0x0044 }
-        r4 = r0.getScaledTouchSlop;	 Catch:{ all -> 0x0044 }
+        r4 = r0.getTriangleEdge;	 Catch:{ all -> 0x0044 }
         r2.put(r3, r4);	 Catch:{ all -> 0x0044 }
         r3 = "__ITEM__CORE__PROPERTIES__";	 Catch:{ all -> 0x0044 }
-        r4 = r0.showAnimation;	 Catch:{ all -> 0x0044 }
+        r4 = r0.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0044 }
         r2.put(r3, r4);	 Catch:{ all -> 0x0044 }
-        r3 = r5.getScaledTouchSlop;	 Catch:{ all -> 0x0044 }
+        r3 = r5.getTriangleEdge;	 Catch:{ all -> 0x0044 }
         r4 = 0;	 Catch:{ all -> 0x0044 }
         r2 = r3.setDrawable(r6, r4, r2);	 Catch:{ all -> 0x0044 }
         r0.getScaledPagingTouchSlop = r2;	 Catch:{ all -> 0x0044 }
@@ -77,20 +77,20 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r0 = move-exception;
         if (r8 == 0) goto L_0x004c;
     L_0x0047:
-        r1 = r5.getScaledTouchSlop;
-        r1.showAnimation();
+        r1 = r5.getTriangleEdge;
+        r1.getScaledMaximumFlingVelocity();
     L_0x004c:
         throw r0;
     L_0x004d:
         if (r8 == 0) goto L_0x0054;
     L_0x004f:
-        r0 = r5.getScaledTouchSlop;	 Catch:{ all -> 0x0044 }
+        r0 = r5.getTriangleEdge;	 Catch:{ all -> 0x0044 }
         r0.HttpLogger();	 Catch:{ all -> 0x0044 }
     L_0x0054:
         if (r8 == 0) goto L_0x005b;
     L_0x0056:
-        r0 = r5.getScaledTouchSlop;
-        r0.showAnimation();
+        r0 = r5.getTriangleEdge;
+        r0.getScaledMaximumFlingVelocity();
     L_0x005b:
         return;
         */
@@ -117,30 +117,30 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r3 = this;
         if (r5 == 0) goto L_0x0007;
     L_0x0002:
-        r0 = r3.getScaledTouchSlop;
+        r0 = r3.getTriangleEdge;
         r0.getVisible();
     L_0x0007:
-        r0 = r3.getScaledTouchSlop;	 Catch:{ all -> 0x001d }
+        r0 = r3.getTriangleEdge;	 Catch:{ all -> 0x001d }
         r1 = 0;	 Catch:{ all -> 0x001d }
         r2 = 0;	 Catch:{ all -> 0x001d }
         r0.setDrawable(r4, r1, r2);	 Catch:{ all -> 0x001d }
         if (r5 == 0) goto L_0x0015;	 Catch:{ all -> 0x001d }
     L_0x0010:
-        r0 = r3.getScaledTouchSlop;	 Catch:{ all -> 0x001d }
+        r0 = r3.getTriangleEdge;	 Catch:{ all -> 0x001d }
         r0.HttpLogger();	 Catch:{ all -> 0x001d }
     L_0x0015:
         if (r5 == 0) goto L_0x001c;
     L_0x0017:
-        r0 = r3.getScaledTouchSlop;
-        r0.showAnimation();
+        r0 = r3.getTriangleEdge;
+        r0.getScaledMaximumFlingVelocity();
     L_0x001c:
         return;
     L_0x001d:
         r0 = move-exception;
         if (r5 == 0) goto L_0x0025;
     L_0x0020:
-        r1 = r3.getScaledTouchSlop;
-        r1.showAnimation();
+        r1 = r3.getTriangleEdge;
+        r1.getScaledMaximumFlingVelocity();
     L_0x0025:
         throw r0;
         */
@@ -167,7 +167,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r7 = this;
         if (r10 == 0) goto L_0x0007;
     L_0x0002:
-        r0 = r7.getScaledTouchSlop;
+        r0 = r7.getTriangleEdge;
         r0.getVisible();
     L_0x0007:
         r1 = r9.iterator();	 Catch:{ all -> 0x0043 }
@@ -186,12 +186,12 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r2.putAll(r3);	 Catch:{ all -> 0x0043 }
     L_0x0025:
         r3 = "__ITEM__VALUE__";	 Catch:{ all -> 0x0043 }
-        r4 = r0.getScaledTouchSlop;	 Catch:{ all -> 0x0043 }
+        r4 = r0.getTriangleEdge;	 Catch:{ all -> 0x0043 }
         r2.put(r3, r4);	 Catch:{ all -> 0x0043 }
         r3 = "__ITEM__CORE__PROPERTIES__";	 Catch:{ all -> 0x0043 }
-        r4 = r0.showAnimation;	 Catch:{ all -> 0x0043 }
+        r4 = r0.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0043 }
         r2.put(r3, r4);	 Catch:{ all -> 0x0043 }
-        r3 = r7.getScaledTouchSlop;	 Catch:{ all -> 0x0043 }
+        r3 = r7.getTriangleEdge;	 Catch:{ all -> 0x0043 }
         r4 = "__ITEM__KEY__=?";	 Catch:{ all -> 0x0043 }
         r5 = 1;	 Catch:{ all -> 0x0043 }
         r5 = new java.lang.String[r5];	 Catch:{ all -> 0x0043 }
@@ -204,20 +204,20 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r0 = move-exception;
         if (r10 == 0) goto L_0x004b;
     L_0x0046:
-        r1 = r7.getScaledTouchSlop;
-        r1.showAnimation();
+        r1 = r7.getTriangleEdge;
+        r1.getScaledMaximumFlingVelocity();
     L_0x004b:
         throw r0;
     L_0x004c:
         if (r10 == 0) goto L_0x0053;
     L_0x004e:
-        r0 = r7.getScaledTouchSlop;	 Catch:{ all -> 0x0043 }
+        r0 = r7.getTriangleEdge;	 Catch:{ all -> 0x0043 }
         r0.HttpLogger();	 Catch:{ all -> 0x0043 }
     L_0x0053:
         if (r10 == 0) goto L_0x005a;
     L_0x0055:
-        r0 = r7.getScaledTouchSlop;
-        r0.showAnimation();
+        r0 = r7.getTriangleEdge;
+        r0.getScaledMaximumFlingVelocity();
     L_0x005a:
         return;
         */
@@ -244,7 +244,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r6 = this;
         if (r9 == 0) goto L_0x0007;
     L_0x0002:
-        r0 = r6.getScaledTouchSlop;
+        r0 = r6.getTriangleEdge;
         r0.getVisible();
     L_0x0007:
         r1 = r8.iterator();	 Catch:{ all -> 0x0025 }
@@ -254,7 +254,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
     L_0x0011:
         r0 = r1.next();	 Catch:{ all -> 0x0025 }
         r0 = (java.lang.String) r0;	 Catch:{ all -> 0x0025 }
-        r2 = r6.getScaledTouchSlop;	 Catch:{ all -> 0x0025 }
+        r2 = r6.getTriangleEdge;	 Catch:{ all -> 0x0025 }
         r3 = "__ITEM__KEY__=?";	 Catch:{ all -> 0x0025 }
         r4 = 1;	 Catch:{ all -> 0x0025 }
         r4 = new java.lang.String[r4];	 Catch:{ all -> 0x0025 }
@@ -266,24 +266,24 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find blo
         r0 = move-exception;
         if (r9 == 0) goto L_0x002d;
     L_0x0028:
-        r1 = r6.getScaledTouchSlop;
-        r1.showAnimation();
+        r1 = r6.getTriangleEdge;
+        r1.getScaledMaximumFlingVelocity();
     L_0x002d:
         throw r0;
     L_0x002e:
         if (r9 == 0) goto L_0x0035;
     L_0x0030:
-        r0 = r6.getScaledTouchSlop;	 Catch:{ all -> 0x0025 }
+        r0 = r6.getTriangleEdge;	 Catch:{ all -> 0x0025 }
         r0.HttpLogger();	 Catch:{ all -> 0x0025 }
     L_0x0035:
         if (r9 == 0) goto L_0x003c;
     L_0x0037:
-        r0 = r6.getScaledTouchSlop;
-        r0.showAnimation();
+        r0 = r6.getTriangleEdge;
+        r0.getScaledMaximumFlingVelocity();
     L_0x003c:
         return;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.cache.ag.showAnimation(java.lang.String, java.util.Collection, boolean):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.cache.ag.getScaledMaximumFlingVelocity(java.lang.String, java.util.Collection, boolean):void");
     }
 
     public ag(n nVar) {

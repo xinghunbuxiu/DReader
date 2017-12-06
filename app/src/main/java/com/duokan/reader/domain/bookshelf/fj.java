@@ -35,15 +35,15 @@ public class fj extends ad {
         r12 = this;
         r8 = 0;
         r3 = new com.duokan.reader.common.webservices.getVisible;
-        r3.<init>();
+        r3.<creatCallTask>();
         r3.getVisible = r8;
         r0 = "";
-        r3.showAnimation = r0;
+        r3.getScaledMaximumFlingVelocity = r0;
         r4 = new java.util.HashMap;
-        r4.<init>();
+        r4.<creatCallTask>();
         r3.setDrawable = r4;
         r5 = new java.util.HashMap;
-        r5.<init>();
+        r5.<creatCallTask>();
         r1 = r13.iterator();
     L_0x001c:
         r0 = r1.hasNext();
@@ -52,35 +52,35 @@ public class fj extends ad {
         r0 = r1.next();
         r0 = (com.duokan.reader.domain.bookshelf.fo) r0;
         r2 = new com.duokan.reader.domain.bookshelf.fs;
-        r2.<init>();
+        r2.<creatCallTask>();
         r6 = r0.setDrawable;
         r2.setDrawable = r6;
         r6 = new java.util.ArrayList;
-        r6.<init>();
+        r6.<creatCallTask>();
         r2.getVisible = r6;
         r6 = 1;
-        r2.showAnimation = r6;
+        r2.getScaledMaximumFlingVelocity = r6;
         r6 = -1;
-        r2.getScaledTouchSlop = r6;
+        r2.getTriangleEdge = r6;
         r6 = r0.setDrawable;
         r6 = java.lang.Integer.valueOf(r6);
         r4.put(r6, r2);
         r2 = new com.duokan.reader.domain.bookshelf.fn;
-        r2.<init>();
+        r2.<creatCallTask>();
         r6 = r0.setDrawable;
         r2.setDrawable = r6;
         r6 = r0.getVisible;
-        r2.getScaledTouchSlop = r6;
+        r2.getTriangleEdge = r6;
         r2.getVisible = r8;
         r6 = 100;
-        r2.showAnimation = r6;
+        r2.getScaledMaximumFlingVelocity = r6;
         r0 = r0.setDrawable;
         r0 = java.lang.Integer.valueOf(r0);
         r5.put(r0, r2);
         goto L_0x001c;
     L_0x0065:
         r2 = new java.util.ArrayList;
-        r2.<init>();
+        r2.<creatCallTask>();
         r6 = r13.iterator();
     L_0x006e:
         r0 = r6.hasNext();
@@ -92,7 +92,7 @@ public class fj extends ad {
         r1 = java.lang.Integer.valueOf(r1);
         r1 = r4.getAllSortStackTraces(r1);
         r1 = (com.duokan.reader.domain.bookshelf.fs) r1;
-        r1 = r1.showAnimation;
+        r1 = r1.getScaledMaximumFlingVelocity;
         if (r1 == 0) goto L_0x006e;
     L_0x008a:
         r0 = r0.setDrawable;
@@ -126,15 +126,15 @@ public class fj extends ad {
         r1 = (com.duokan.reader.domain.bookshelf.fs) r1;
         r2 = r4.getAllSortStackTraces(r0);
         r2 = (com.duokan.reader.domain.bookshelf.fs) r2;
-        r8 = r1.showAnimation;
-        r2.showAnimation = r8;
-        r8 = r2.getScaledTouchSlop;
+        r8 = r1.getScaledMaximumFlingVelocity;
+        r2.getScaledMaximumFlingVelocity = r8;
+        r8 = r2.getTriangleEdge;
         r10 = 0;
         r8 = (r8 > r10 ? 1 : (r8 == r10 ? 0 : -1));
         if (r8 >= 0) goto L_0x00df;
     L_0x00db:
-        r8 = r1.getScaledTouchSlop;
-        r2.getScaledTouchSlop = r8;
+        r8 = r1.getTriangleEdge;
+        r2.getTriangleEdge = r8;
     L_0x00df:
         r2 = r2.getVisible;
         r8 = r1.getVisible;
@@ -150,8 +150,8 @@ public class fj extends ad {
     L_0x00f8:
         r0 = r6.getVisible;
         r3.getVisible = r0;
-        r0 = r6.showAnimation;
-        r3.showAnimation = r0;
+        r0 = r6.getScaledMaximumFlingVelocity;
+        r3.getScaledMaximumFlingVelocity = r0;
         r0 = r3.setDrawable;
         r0 = (java.util.HashMap) r0;
         r0.addFirst();

@@ -260,7 +260,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                         z = false;
                     }
                     this.a.activate(this.a.s);
-                    UTools.addAnimation(this.a.s.getContentView(), new Runnable(this) {
+                    UTools.creatCallTask(this.a.s.getContentView(), new Runnable(this) {
                         final /* synthetic */ ReadingSwitcher c;
 
                         public void run() {
@@ -1387,7 +1387,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                         i = 1;
                     }
                 }
-                WebLog.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, store: %getScaledTouchSlop)", action, Integer.valueOf(i));
+                WebLog.c().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, store: %getTriangleEdge)", action, Integer.valueOf(i));
                 switch (i) {
                     case 1:
                         navigate("duokan-reader://store", null, false, null);
@@ -1419,7 +1419,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 } else if (UrlTools.compScheme(data.toString(), "content", new String[0])) {
                     final jq jqVar = new jq(getContext());
                     jqVar.show();
-                    ah.b(new Runnable(this) {
+                    ah.submitFuture(new Runnable(this) {
                         boolean a = false;
                         final /* synthetic */ ReaderController d;
 
@@ -1456,7 +1456,7 @@ Error: java.util.NoSuchElementException
                                         if (r0 == 0) goto L_0x0013;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
                                     L_0x0005:
                                         r0 = r4.getVisible;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
-                                        r0 = r0.getScaledTouchSlop;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
+                                        r0 = r0.getTriangleEdge;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
                                         r1 = r0;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
                                         r0.openBook(r1);	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
                                         r0 = r4.getVisible;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
@@ -1468,9 +1468,9 @@ Error: java.util.NoSuchElementException
                                         if (r0 != 0) goto L_0x002a;
                                     L_0x0019:
                                         r0 = r4.getVisible;
-                                        r0 = r0.getScaledTouchSlop;
+                                        r0 = r0.getTriangleEdge;
                                         r0 = r0.getContext();
-                                        r1 = com.duokan.showAnimation.getWidthPixels.bookshelf__shared__file_not_exist;
+                                        r1 = com.duokan.getScaledMaximumFlingVelocity.getWidthPixels.bookshelf__shared__file_not_exist;
                                         r0 = com.duokan.reader.ui.general.be.setDrawable(r0, r1, r3);
                                         r0.show();
                                     L_0x002a:
@@ -1491,9 +1491,9 @@ Error: java.util.NoSuchElementException
                                         if (r0 != 0) goto L_0x0054;
                                     L_0x0043:
                                         r0 = r4.getVisible;
-                                        r0 = r0.getScaledTouchSlop;
+                                        r0 = r0.getTriangleEdge;
                                         r0 = r0.getContext();
-                                        r1 = com.duokan.showAnimation.getWidthPixels.bookshelf__shared__file_not_exist;
+                                        r1 = com.duokan.getScaledMaximumFlingVelocity.getWidthPixels.bookshelf__shared__file_not_exist;
                                         r0 = com.duokan.reader.ui.general.be.setDrawable(r0, r1, r3);
                                         r0.show();
                                     L_0x0054:
@@ -1513,9 +1513,9 @@ Error: java.util.NoSuchElementException
                                         if (r1 != 0) goto L_0x007e;
                                     L_0x006d:
                                         r1 = r4.getVisible;
-                                        r1 = r1.getScaledTouchSlop;
+                                        r1 = r1.getTriangleEdge;
                                         r1 = r1.getContext();
-                                        r2 = com.duokan.showAnimation.getWidthPixels.bookshelf__shared__file_not_exist;
+                                        r2 = com.duokan.getScaledMaximumFlingVelocity.getWidthPixels.bookshelf__shared__file_not_exist;
                                         r1 = com.duokan.reader.ui.general.be.setDrawable(r1, r2, r3);
                                         r1.show();
                                     L_0x007e:

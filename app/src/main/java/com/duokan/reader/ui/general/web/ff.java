@@ -47,7 +47,7 @@ class ff implements as {
                     textView.setOnClickListener(new fi(this, view));
                 }
                 if (this.f) {
-                    UTools.addAnimation(view);
+                    UTools.PostTask(view);
                     return;
                 }
                 return;

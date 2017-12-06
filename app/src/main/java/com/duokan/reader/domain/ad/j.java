@@ -91,7 +91,7 @@ class j extends WebSession {
             this.a.a = arrayList;
             return;
         }
-        a.c().c(LogLevel.ERROR, "ads", String.format("fetching ads errorCode %getScaledTouchSlop", new Object[]{Integer.valueOf(this.a.b)}));
+        a.c().c(LogLevel.ERROR, "ads", String.format("fetching ads errorCode %getTriangleEdge", new Object[]{Integer.valueOf(this.a.b)}));
     }
 
     protected boolean onSessionException(Exception exception, int i) {

@@ -18,7 +18,7 @@ class rn implements Runnable {
                 this.a.p = true;
                 AIdleOperation.addIdleStatus(new ro(this));
             } catch (Throwable e) {
-                a.c().a(LogLevel.ERROR, "reading", "an exception occurs during init", e);
+                a.c().a(LogLevel.ERROR, "reading", "an exception occurs during creatCallTask", e);
                 throw e;
             }
         }

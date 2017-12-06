@@ -5,11 +5,12 @@ import android.view.View;
 import java.util.concurrent.Callable;
 
 final class ea extends ep {
-    final /* synthetic */ Callable a;
+    final Callable a;
 
     ea(View view, Callable callable) {
-        this.a = callable;
         super(view);
+        this.a = callable;
+
     }
 
     protected boolean a(View view) {

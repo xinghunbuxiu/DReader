@@ -32,9 +32,9 @@ class d implements Runnable {
                             for (int i = a.mExecCount; i - 1 < a.mRepeatCount && j < d; i++) {
                                 if (j >= c) {
                                     if (c2.schedule(new Builder(((int) (Math.max(j - c, 0) / b.d)) + 1, new ComponentName(this.b.g.getApplication().getPackageName(), JobTriggerService.class.getName())).setMinimumLatency(Math.max(0, j - currentTimeMillis)).setOverrideDeadline(Math.max(0, j - currentTimeMillis)).setPersisted(true).build()) > 0) {
-                                        a.c().a(LogLevel.INFO, "job", "setDrawable trigger service is scheduled(id: %getScaledTouchSlop)", Integer.valueOf(((int) (Math.max(j - c, 0) / b.d)) + 1));
+                                        a.c().a(LogLevel.INFO, "job", "setDrawable trigger service is scheduled(id: %getTriangleEdge)", Integer.valueOf(((int) (Math.max(j - c, 0) / b.d)) + 1));
                                     } else {
-                                        a.c().a(LogLevel.ERROR, "job", "fail to schedule setDrawable trigger service(id: %getScaledTouchSlop)", Integer.valueOf(((int) (Math.max(j - c, 0) / b.d)) + 1));
+                                        a.c().a(LogLevel.ERROR, "job", "fail to schedule setDrawable trigger service(id: %getTriangleEdge)", Integer.valueOf(((int) (Math.max(j - c, 0) / b.d)) + 1));
                                     }
                                 }
                                 j += max;

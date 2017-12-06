@@ -33,7 +33,7 @@ public class bu extends er {
             } else if (this.a == null && motionEvent.getActionMasked() == 0) {
                 this.a = MotionEvent.obtainNoHistory(motionEvent);
                 this.d = new bv(this, view);
-                view.postDelayed(this.d, (long) UTools.addAnimation());
+                view.postDelayed(this.d, (long) UTools.getLongPressTimeout());
                 return;
             } else if (this.a == null) {
                 b(false);

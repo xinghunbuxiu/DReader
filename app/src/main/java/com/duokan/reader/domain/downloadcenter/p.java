@@ -131,17 +131,17 @@ public class p implements IDownloadTask {
         r1 = r5.getScaledPagingTouchSlop;
         r1 = r1.getVisible();
         r2 = r5.getScaledPagingTouchSlop;
-        r2 = r2.showAnimation();
+        r2 = r2.getScaledMaximumFlingVelocity();
         r0 = com.duokan.reader.domain.micloud.ba.setDrawable(r0, r1, r2);
         r1 = r0.getVisible();
         r0 = r5.getPhysicalXPixels;
         if (r0 != 0) goto L_0x0090;
     L_0x0043:
-        r0 = r5.getScaledTouchSlop;
+        r0 = r5.getTriangleEdge;
         r0 = android.net.Uri.parse(r0);
         r0 = r0.getPath();
         r2 = new java.lang.StringBuilder;
-        r2.<init>();
+        r2.<creatCallTask>();
         r2 = r2.append(r0);
         r3 = ".micloud.temp";
         r2 = r2.append(r3);
@@ -156,7 +156,7 @@ public class p implements IDownloadTask {
         r2.put(r3, r4);	 Catch:{ JSONException -> 0x009a }
         r2 = r0.u();	 Catch:{ JSONException -> 0x009a }
         r3 = "json_tag_idownloadtask_tag";
-        r4 = r5.showAnimation;	 Catch:{ JSONException -> 0x009a }
+        r4 = r5.getScaledMaximumFlingVelocity;	 Catch:{ JSONException -> 0x009a }
         r2.put(r3, r4);	 Catch:{ JSONException -> 0x009a }
     L_0x007d:
         r1.setDrawable(r0);
@@ -165,11 +165,11 @@ public class p implements IDownloadTask {
         monitor-exit(r5);	 Catch:{ all -> 0x0097 }
         r0 = r5.getPhysicalXPixels;
         r2 = new com.duokan.reader.domain.downloadcenter.q;
-        r2.<init>(r5, r1);
+        r2.<creatCallTask>(r5, r1);
         r1.setDrawable(r0, r2);
         goto L_0x0008;
     L_0x0090:
-        r0 = r1.showAnimation(r0);
+        r0 = r1.getScaledMaximumFlingVelocity(r0);
         r0 = (com.duokan.reader.domain.micloud.QueryFeatureWrapper) r0;
         goto L_0x0067;
     L_0x0097:
@@ -180,7 +180,7 @@ public class p implements IDownloadTask {
         r2 = move-exception;
         goto L_0x007d;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.downloadcenter.p.showAnimation():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.downloadcenter.p.getScaledMaximumFlingVelocity():void");
     }
 
     public void a(boolean z) {

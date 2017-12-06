@@ -52,31 +52,31 @@ public abstract class UTools {
     public static final ap j = new dx();
     public static final ap k = new dy();
     public static final ap l = new dz();
-    public static final AsyncCache m = new AsyncCache();
-    static final /* synthetic */ boolean n = (!UTools.class.desiredAssertionStatus());
+    public static final AsyncCache async = new AsyncCache();
+    static final boolean assertionStatus = (!UTools.class.desiredAssertionStatus());
     private static float xPixels = Float.NaN;
     private static float yPixels = Float.NaN;
 
-    public static final void addAnimation(View view, Callable callable) {
+    public static final void creatCallTask(View view, Callable callable) {
         if (view != null && callable != null) {
             ea eaVar = new ea(view, callable);
         }
     }
 
-    public static final void addAnimation(View view, Runnable runnable) {
+    public static final void creatCallTask(View view, Runnable runnable) {
         if (view != null && runnable != null) {
-            addAnimation(view, new eb(runnable));
+            creatCallTask(view, new MyCallable(runnable));
         }
     }
 
-    public static void addAnimation(View view, int i) {
+    public static void PostTask(View view, int i) {
         if (view != null) {
             TaskHandler.PostTask(new ec(view, i));
         }
     }
 
-    public static void addAnimation(View view) {
-        addAnimation(view, 1);
+    public static void PostTask(View view) {
+        PostTask(view, 1);
     }
 
     public static void hideSoftInputFromWindow(Context context, int flag) {
@@ -95,7 +95,7 @@ public abstract class UTools {
 
     public static int getVisible(View view) {
         if (view.getWindowToken() == null || view.getWindowVisibility() == 8) {
-            return 8;
+            return View.GONE;
         }
         int visibility = view.getVisibility();
         if (visibility == View.GONE) {
@@ -125,18 +125,25 @@ public abstract class UTools {
 
     public static RectF getRectF(RectF rectF, View view, View view2) {
         rectF.set((float) view.getScrollX(), (float) view.getScrollY(), (float) (view.getScrollX() + view.getWidth()), (float) (view.getScrollY() + view.getHeight()));
-        closeAnimation(rectF, view, view2);
+        getMatrixPoint(rectF, view, view2);
         return rectF;
     }
 
-    public static boolean addAnimation(RectF rectF, View view) {
+    /**
+     * 是否在当前范围
+     *
+     * @param rectF
+     * @param view
+     * @return
+     */
+    public static boolean isInRange(RectF rectF, View view) {
         RectF rectF2 = (RectF) h.getRect();
-        rectF.set((float) view.getScrollX(), (float) view.getScrollY(), (float) (view.getScrollX() + view.getWidth()), (float) (view.getScrollY() + view.getHeight()));
+        rectF.set(view.getScrollX(), view.getScrollY(), (view.getScrollX() + view.getWidth()), view.getScrollY() + view.getHeight());
         ViewParent parent = view.getParent();
         while (parent != null && (parent instanceof View)) {
             View view2 = (View) parent;
-            rectF2.set((float) view2.getScrollX(), (float) view2.getScrollY(), (float) (view2.getScrollX() + view2.getWidth()), (float) (view2.getScrollY() + view2.getHeight()));
-            closeAnimation(rectF2, view2, view);
+            rectF2.set(view2.getScrollX(), view2.getScrollY(), view2.getScrollX() + view2.getWidth(), view2.getScrollY() + view2.getHeight());
+            getMatrixPoint(rectF2, view2, view);
             if (!rectF.intersect(rectF2)) {
                 rectF.setEmpty();
                 break;
@@ -152,7 +159,7 @@ public abstract class UTools {
 
     public static MotionEvent resetMotionEvent(MotionEvent motionEvent, View view, View view2) {
         Matrix matrix = (Matrix) d.getRect();
-        addAnimation(matrix, view, view2);
+        getTempMatrix(matrix, view, view2);
         matrix.preTranslate((float) view.getScrollX(), (float) view.getScrollY());
         if (view2 != null) {
             matrix.postTranslate((float) (-view2.getScrollX()), (float) (-view2.getScrollY()));
@@ -200,12 +207,19 @@ public abstract class UTools {
     public static Rect closeAnimation(Rect rect, View view, View view2) {
         RectF rectF = (RectF) h.getRect();
         rectF.set(rect);
-        closeAnimation(rectF, view, view2);
+        getMatrixPoint(rectF, view, view2);
         rectF.round(rect);
         h.getRect(rectF);
         return rect;
     }
 
+    /**
+     * 获取单次触及
+     * @param point
+     * @param view
+     * @param view2
+     * @return
+     */
     public static Point getTouchPoint(Point point, View view, View view2) {
         PointF pointF = (PointF) f.getRect();
         pointF.set((float) point.x, (float) point.y);
@@ -216,11 +230,18 @@ public abstract class UTools {
         return point;
     }
 
-    public static RectF closeAnimation(RectF rectF, View view, View view2) {
+    /**
+     *  获取多点选择点
+     * @param rectF
+     * @param view
+     * @param view2
+     * @return
+     */
+    public static RectF getMatrixPoint(RectF rectF, View view, View view2) {
         Matrix matrix = (Matrix) d.getRect();
         float[] fArr = (float[]) j.getRect();
         float[] fArr2 = (float[]) j.getRect();
-        addAnimation(matrix, view, view2);
+        getTempMatrix(matrix, view, view2);
         fArr[0] = rectF.left;
         fArr[1] = rectF.top;
         fArr[2] = rectF.right;
@@ -244,7 +265,7 @@ public abstract class UTools {
     public static PointF addAnimation(PointF pointF, View view, View view2) {
         Matrix matrix = (Matrix) d.getRect();
         float[] fArr = (float[]) i.getRect();
-        addAnimation(matrix, view, view2);
+        getTempMatrix(matrix, view, view2);
         fArr[0] = pointF.x;
         fArr[1] = pointF.y;
         matrix.mapPoints(fArr);
@@ -410,7 +431,7 @@ public abstract class UTools {
         return pointF;
     }
 
-    public static Matrix addAnimation(Matrix matrix, View view, View view2) {
+    public static Matrix getTempMatrix(Matrix matrix, View view, View view2) {
         Matrix matrix2 = (Matrix) d.getRect();
         Matrix matrix3 = (Matrix) d.getRect();
         addAnimation(matrix2, view);
@@ -493,58 +514,81 @@ public abstract class UTools {
     }
 
     public static boolean addAnimation(PointF pointF, PointF pointF2, double d, double d2) {
-        return addAnimation(closeAnimation(addAnimation(pointF, pointF2), d, d + 360.0d), d, d2);
+        return addAnimation(getAngle(getDegrees(pointF, pointF2), d, d + 360.0d), d, d2);
     }
 
     public static boolean addAnimation(double d, double d2, double d3) {
-        double b = closeAnimation(d, d2, d2 + 360.0d);
+        double b = getAngle(d, d2, d2 + 360.0d);
         if (Double.compare(b, d2) >= 0 && Double.compare(b, d3) < 0) {
             return true;
         }
-        b = closeAnimation(180.0d + d, d2, d2 + 360.0d);
+        b = getAngle(180.0d + d, d2, d2 + 360.0d);
         if (Double.compare(b, d2) < 0 || Double.compare(b, d3) >= 0) {
             return false;
         }
         return true;
     }
 
-    public static int addAnimation(int i, int i2, int i3) {
-        return (int) closeAnimation((double) i, (double) i2, (double) i3);
+    public static int get_Angle(int i, int i2, int i3) {
+        return (int) getAngle(i, i2, i3);
     }
 
-    public static double closeAnimation(double d, double d2, double d3) {
-        if (!n && d2 >= d3) {
+    /**
+     * 获取角度
+     *
+     * @param d
+     * @param d2
+     * @param d3
+     * @return
+     */
+    public static double getAngle(double d, double d2, double d3) {
+        if (!assertionStatus && d2 >= d3) {
             throw new AssertionError();
-        } else if (n || Double.compare(Math.abs(d3 - d2), 360.0d) == 0) {
-            while (true) {
-                if (Double.compare(d, d2) >= 0 && Double.compare(d, d3) < 0) {
-                    return d;
-                }
-                if (Double.compare(d, d2) < 0) {
-                    d += 360.0d;
-                } else {
-                    d -= 360.0d;
-                }
+        } else if (assertionStatus || Double.compare(Math.abs(d3 - d2), 360.0d) == 0) {
+
+            if (Double.compare(d, d2) >= 0 && Double.compare(d, d3) < 0) {
+                return d;
             }
+            if (Double.compare(d, d2) < 0) {
+                d += 360.0d;
+            } else {
+                d -= 360.0d;
+            }
+
         } else {
             throw new AssertionError();
         }
     }
 
-    public static double addAnimation(PointF pointF, PointF pointF2) {
-        double b = closeAnimation(pointF, pointF2);
+    /**
+     * 获取两点之间的角度
+     *
+     * @param pointF
+     * @param pointF2
+     * @return
+     */
+    public static double getDegrees(PointF pointF, PointF pointF2) {
+        double b = toDegrees(pointF, pointF2);
         if (Double.compare(b, 180.0d) > 0) {
             return b - 180.0d;
         }
         return b;
     }
 
-    public static double closeAnimation(PointF pointF, PointF pointF2) {
-        return Math.toDegrees(showAnimation(pointF, pointF2));
+    //参数转化为角度
+    public static double toDegrees(PointF pointF, PointF pointF2) {
+        return Math.toDegrees(getScale(pointF, pointF2));
     }
 
-    public static double showAnimation(PointF pointF, PointF pointF2) {
-        if (n || !(pointF == null || pointF2 == null)) {
+    /**
+     * 获取系数
+     *
+     * @param pointF
+     * @param pointF2
+     * @return
+     */
+    public static double getScale(PointF pointF, PointF pointF2) {
+        if (assertionStatus || !(pointF == null || pointF2 == null)) {
             PointF pointF3 = new PointF(pointF.x, -pointF.y);
             PointF pointF4 = new PointF(pointF2.x, -pointF2.y);
             if (pointF4.x == pointF3.x) {
@@ -555,35 +599,42 @@ public abstract class UTools {
             } else if (pointF4.y != pointF3.y) {
                 double atan = Math.atan(((double) (pointF4.y - pointF3.y)) / ((double) (pointF4.x - pointF3.x)));
                 if (pointF4.x < pointF3.x && pointF4.y > pointF3.y) {
-                    return 3.141592653589793d + atan;
+                    return Math.PI + atan;
                 }
                 if (pointF4.x >= pointF3.x || pointF4.y >= pointF3.y) {
                     return (pointF4.x <= pointF3.x || pointF4.y >= pointF3.y) ? atan : 6.283185307179586d + atan;
                 } else {
-                    return 3.141592653589793d + atan;
+                    return Math.PI + atan;
                 }
             } else if (pointF4.x > pointF3.x) {
                 return 0.0d;
             } else {
-                return 3.141592653589793d;
+                return Math.PI;
             }
         }
         throw new AssertionError();
     }
 
-    public static double getScaledTouchSlop(PointF pointF, PointF pointF2) {
-        return Math.sqrt(Math.pow((double) (pointF.x - pointF2.x), 2.0d) + Math.pow((double) (pointF.y - pointF2.y), 2.0d));
+    /**
+     * 获取两点之间的距离
+     *
+     * @param pointF
+     * @param pointF2
+     * @return
+     */
+    public static double getTriangleEdge(PointF pointF, PointF pointF2) {
+        return Math.sqrt(Math.pow((pointF.x - pointF2.x), 2.0d) + Math.pow((pointF.y - pointF2.y), 2.0d));
     }
 
-    public static int closeAnimation(Context context) {
+    public static int getScaledMinimumFlingVelocity(Context context) {
         return ViewConfiguration.get(context).getScaledMinimumFlingVelocity();
     }
 
-    public static int showAnimation(Context context) {
+    public static int getScaledMaximumFlingVelocity(Context context) {
         return ViewConfiguration.get(context).getScaledMaximumFlingVelocity();
     }
 
-    public static int addAnimation() {
+    public static int getLongPressTimeout() {
         return ViewConfiguration.getLongPressTimeout();
     }
 
@@ -595,11 +646,11 @@ public abstract class UTools {
         return ViewConfiguration.get(context).getScaledPagingTouchSlop();
     }
 
-    public static int closeAnimation() {
+    public static int getJumpTapTimeout() {
         return ViewConfiguration.getJumpTapTimeout();
     }
 
-    public static int showAnimation() {
+    public static int getTapTimeout() {
         return ViewConfiguration.getTapTimeout();
     }
 
@@ -611,7 +662,7 @@ public abstract class UTools {
         return ViewConfiguration.getPressedStateDuration();
     }
 
-    public static int f(Context context) {
+    public static int defaultClose(Context context) {
         return closeAnimation(context, 40.0f);
     }
 
@@ -691,35 +742,35 @@ public abstract class UTools {
     }
 
     public static void addAnimation(Canvas canvas, String str, RectF rectF, int i, Paint paint) {
-        float fromAlpha;
-        float f2;
+        float x;
+        float y;
         Align textAlign = paint.getTextAlign();
         paint.setTextAlign(Align.LEFT);
         Rect rect = (Rect) g.getRect();
         addAnimation(rect, paint, str, rectF.width());
         switch (i & 7) {
             case 3:
-                fromAlpha = rectF.left - ((float) rect.left);
+                x = rectF.left - ((float) rect.left);
                 break;
             case 5:
-                fromAlpha = rectF.right - ((float) rect.right);
+                x = rectF.right - ((float) rect.right);
                 break;
             default:
-                fromAlpha = rectF.centerX() - rect.exactCenterX();
+                x = rectF.centerX() - rect.exactCenterX();
                 break;
         }
         switch (i & 112) {
-            case j.a /*48*/:
-                f2 = rectF.top - ((float) rect.top);
+            case 48 /*48*/:
+                y = rectF.top - ((float) rect.top);
                 break;
             case 80:
-                f2 = rectF.bottom - ((float) rect.bottom);
+                y = rectF.bottom - ((float) rect.bottom);
                 break;
             default:
-                f2 = rectF.centerY() - rect.exactCenterY();
+                y = rectF.centerY() - rect.exactCenterY();
                 break;
         }
-        canvas.drawText(str, fromAlpha, f2, paint);
+        canvas.drawText(str, x, y, paint);
         g.getRect(rect);
         paint.setTextAlign(textAlign);
     }
@@ -740,7 +791,7 @@ public abstract class UTools {
                 break;
             }
             String str2 = text.substring(0, breakText) + "…";
-            if (Float.compare(paint.measureText(str2), f) <= 0) {
+            if (Float.compare(paint.measureText(str2), maxWidth) <= 0) {
                 text = str2;
                 break;
             }

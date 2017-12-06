@@ -119,7 +119,7 @@ public abstract class fu extends FrameLayout {
         this.h.a(i, z);
         if (this.f != null) {
             this.f.setVisibility(4);
-            UTools.addAnimation(this.f, new fw(this));
+            UTools.creatCallTask(this.f, new fw(this));
         }
     }
 

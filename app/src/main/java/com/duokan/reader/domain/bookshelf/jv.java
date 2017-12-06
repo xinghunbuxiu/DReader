@@ -138,7 +138,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
             knVar.c = agVar;
             knVar.a.addAll(list);
             if (!knVar.a.isEmpty()) {
-                ah.a(new kb(this, knVar, z), "serialPullingQueue");
+                ah.future(new kb(this, knVar, z), "serialPullingQueue");
             } else if (knVar.c != null) {
                 knVar.c.a(knVar.b);
             }
@@ -316,22 +316,22 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                 r2 = r12;
                 goto L_0x000e;
             L_0x0026:
-                r13 = r2.showAnimation(r3);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
+                r13 = r2.getScaledMaximumFlingVelocity(r3);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
                 r14 = new java.io.ByteArrayOutputStream;	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
                 r2 = 2048; // 0x800 float:2.87E-42 double:1.0118E-320;
-                r14.<init>(r2);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
-                com.duokan.core.io.getScaledTouchSlop.setDrawable(r13, r14);	 Catch:{ all -> 0x00f2 }
+                r14.<creatCallTask>(r2);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
+                com.duokan.core.io.getTriangleEdge.setDrawable(r13, r14);	 Catch:{ all -> 0x00f2 }
                 r2 = r14.toByteArray();	 Catch:{ all -> 0x00f2 }
                 r2 = com.duokan.kernel.DkUtils.decodeSimpleDrm(r2);	 Catch:{ all -> 0x00f2 }
                 r3 = new java.lang.String;	 Catch:{ all -> 0x00f2 }
                 r4 = "UTF-8";
-                r3.<init>(r2, r4);	 Catch:{ all -> 0x00f2 }
+                r3.<creatCallTask>(r2, r4);	 Catch:{ all -> 0x00f2 }
                 r2 = new org.json.JSONObject;	 Catch:{ all -> 0x00f2 }
-                r2.<init>(r3);	 Catch:{ all -> 0x00f2 }
+                r2.<creatCallTask>(r3);	 Catch:{ all -> 0x00f2 }
                 if (r2 != 0) goto L_0x0055;
             L_0x004a:
-                com.duokan.core.io.getScaledTouchSlop.setDrawable(r13);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
-                com.duokan.core.io.getScaledTouchSlop.setDrawable(r14);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
+                com.duokan.core.io.getTriangleEdge.setDrawable(r13);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
+                com.duokan.core.io.getTriangleEdge.setDrawable(r14);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
                 r18.bq();
                 r2 = r12;
                 goto L_0x000e;
@@ -341,7 +341,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                 r16 = new java.util.ArrayList;	 Catch:{ all -> 0x00f2 }
                 r2 = r15.length();	 Catch:{ all -> 0x00f2 }
                 r0 = r16;
-                r0.<init>(r2);	 Catch:{ all -> 0x00f2 }
+                r0.<creatCallTask>(r2);	 Catch:{ all -> 0x00f2 }
                 r2 = 0;
             L_0x0067:
                 r3 = r15.length();	 Catch:{ all -> 0x00f2 }
@@ -359,7 +359,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                 r4 = "height";
                 r11 = r3.getInt(r4);	 Catch:{ all -> 0x00f2 }
                 r3 = new java.lang.StringBuilder;	 Catch:{ all -> 0x00f2 }
-                r3.<init>();	 Catch:{ all -> 0x00f2 }
+                r3.<creatCallTask>();	 Catch:{ all -> 0x00f2 }
                 r0 = r19;
                 r3 = r3.append(r0);	 Catch:{ all -> 0x00f2 }
                 r4 = ".";
@@ -368,13 +368,13 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                 r4 = r3.toString();	 Catch:{ all -> 0x00f2 }
                 r5 = new java.lang.String;	 Catch:{ all -> 0x00f2 }
                 r3 = new java.lang.StringBuilder;	 Catch:{ all -> 0x00f2 }
-                r3.<init>();	 Catch:{ all -> 0x00f2 }
+                r3.<creatCallTask>();	 Catch:{ all -> 0x00f2 }
                 r17 = "file:///stuffs/";
                 r0 = r17;
                 r3 = r3.append(r0);	 Catch:{ all -> 0x00f2 }
                 r3 = r3.append(r7);	 Catch:{ all -> 0x00f2 }
                 r3 = r3.toString();	 Catch:{ all -> 0x00f2 }
-                r5.<init>(r3);	 Catch:{ all -> 0x00f2 }
+                r5.<creatCallTask>(r3);	 Catch:{ all -> 0x00f2 }
                 r3 = r18;
                 r3 = r3.setDrawable(r4, r5, r6, r7, r8, r10, r11);	 Catch:{ all -> 0x00f2 }
                 r0 = r16;
@@ -392,14 +392,14 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                 r0 = r19;
                 r2 = r2.getAllSortStackTraces(r0);	 Catch:{ all -> 0x00f2 }
                 r2 = (java.util.List) r2;	 Catch:{ all -> 0x00f2 }
-                com.duokan.core.io.getScaledTouchSlop.setDrawable(r13);	 Catch:{ Throwable -> 0x0106, all -> 0x0101 }
-                com.duokan.core.io.getScaledTouchSlop.setDrawable(r14);	 Catch:{ Throwable -> 0x0106, all -> 0x0101 }
+                com.duokan.core.io.getTriangleEdge.setDrawable(r13);	 Catch:{ Throwable -> 0x0106, all -> 0x0101 }
+                com.duokan.core.io.getTriangleEdge.setDrawable(r14);	 Catch:{ Throwable -> 0x0106, all -> 0x0101 }
                 r18.bq();
                 goto L_0x000e;
             L_0x00f2:
                 r2 = move-exception;
-                com.duokan.core.io.getScaledTouchSlop.setDrawable(r13);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
-                com.duokan.core.io.getScaledTouchSlop.setDrawable(r14);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
+                com.duokan.core.io.getTriangleEdge.setDrawable(r13);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
+                com.duokan.core.io.getTriangleEdge.setDrawable(r14);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
                 throw r2;	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
             L_0x00fa:
                 r2 = move-exception;

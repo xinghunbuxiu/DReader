@@ -166,7 +166,7 @@ public class ay extends ar {
         if (r1 == 0) goto L_0x003b;
     L_0x0027:
         r1 = r5.getPhysicalYPixels;
-        r1 = r1.showAnimation();
+        r1 = r1.getScaledMaximumFlingVelocity();
         if (r1 != 0) goto L_0x003b;
     L_0x002f:
         r1 = r5.BaseActivity;	 Catch:{ InterruptedException -> 0x0039 }
@@ -231,7 +231,7 @@ public class ay extends ar {
         if (r1 == 0) goto L_0x0036;
     L_0x002e:
         r1 = r3.getPhysicalYPixels;
-        r1 = r1.showAnimation();
+        r1 = r1.getScaledMaximumFlingVelocity();
         if (r1 == 0) goto L_0x001d;
     L_0x0036:
         r1 = r3.getWidthPixels;

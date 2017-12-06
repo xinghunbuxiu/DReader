@@ -19,7 +19,7 @@ public class bs extends bn {
 
     public void show() {
         super.show();
-        UTools.addAnimation(this.e.getReasonEditView());
+        UTools.PostTask(this.e.getReasonEditView());
     }
 
     protected void a(View view) {

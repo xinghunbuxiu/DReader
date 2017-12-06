@@ -127,7 +127,7 @@ public class ad extends d {
 
     public com.duokan.reader.common.webservices.duokan.a.d a(com.duokan.reader.common.webservices.duokan.a.a aVar) {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(String.format("device_id=%s;app_id=%s;build=%s;channel=%s;user_type=%getScaledTouchSlop;", new Object[]{ReaderEnv.get().getDeviceId(), ReaderEnv.get().getAppId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel(), Integer.valueOf(PersonalPrefs.a().b())}));
+        stringBuilder.append(String.format("device_id=%s;app_id=%s;build=%s;channel=%s;user_type=%getTriangleEdge;", new Object[]{ReaderEnv.get().getDeviceId(), ReaderEnv.get().getAppId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel(), Integer.valueOf(PersonalPrefs.a().b())}));
         if (!TextUtils.isEmpty(i.f().i())) {
             stringBuilder.append(String.format("device_hash=%s;", new Object[]{i.f().i()}));
         }

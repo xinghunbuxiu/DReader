@@ -298,7 +298,7 @@ public class a {
     public void f(String str) {
         try {
             h hVar = new h();
-            hVar.a = "showAnimation/store/refresh?" + Uri.parse(str).getEncodedFragment();
+            hVar.a = "getScaledMaximumFlingVelocity/store/refresh?" + Uri.parse(str).getEncodedFragment();
             this.g.add(hVar);
             l();
         } catch (Throwable th) {
@@ -355,7 +355,7 @@ public class a {
                 }
                 h hVar = new h();
                 hVar.a = "BaseActivity/app/background";
-                hVar.b = new String[]{"TaskHandler", "" + currentTimeMillis, "getScaledTouchSlop", "" + Math.max(0, currentTimeMillis - this.k), "reading", "" + z};
+                hVar.b = new String[]{"TaskHandler", "" + currentTimeMillis, "getTriangleEdge", "" + Math.max(0, currentTimeMillis - this.k), "reading", "" + z};
                 this.g.add(hVar);
                 l();
             } catch (Throwable th3) {

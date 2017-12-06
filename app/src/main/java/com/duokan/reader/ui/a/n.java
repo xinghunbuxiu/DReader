@@ -34,7 +34,7 @@ public class n extends ActivatedController {
         this.a.setOnItemClickListener(new r(this, uVar));
         this.a.setOnScrollListener(new s(this));
         this.a.a();
-        UTools.addAnimation(this.b);
+        UTools.PostTask(this.b);
     }
 
     protected void onDetachFromStub() {

@@ -127,7 +127,7 @@ public abstract class lb extends di implements la {
             Runnable lcVar = new lc(this, view);
             if (Float.compare(0.0f, b(view).l()) != 0) {
                 a(0, false);
-                UTools.addAnimation(view, new lf(this, lcVar));
+                UTools.creatCallTask(view, new lf(this, lcVar));
                 return;
             }
             TaskHandler.PostTask(lcVar);

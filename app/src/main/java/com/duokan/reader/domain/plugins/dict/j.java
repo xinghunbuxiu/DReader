@@ -38,11 +38,11 @@ public class j implements ah, k {
     }
 
     public synchronized void b() {
-        com.duokan.core.sys.ah.a(new k(this));
+        com.duokan.core.sys.ah.future(new k(this));
     }
 
     public synchronized void a(Runnable runnable) {
-        com.duokan.core.sys.ah.a(new l(this, runnable));
+        com.duokan.core.sys.ah.future(new l(this, runnable));
     }
 
     public void a(String str, r rVar) {

@@ -12,7 +12,7 @@ class xl extends b {
 
     public xl(xk xkVar, int i, int i2) {
         this.a = xkVar;
-        super(Config.ARGB_8888, UTools.m);
+        super(Config.ARGB_8888, UTools.async);
     }
 
     public int getIntrinsicWidth() {

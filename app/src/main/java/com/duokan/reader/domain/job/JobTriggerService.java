@@ -12,7 +12,7 @@ import com.duokan.reader.DkApp;
 public class JobTriggerService extends JobService {
     public boolean onStartJob(JobParameters jobParameters) {
         if (DkApp.get().forCommunity()) {
-            WebLog.c().a(LogLevel.EVENT, "job", "setDrawable trigger service started(id: %getScaledTouchSlop)", Integer.valueOf(jobParameters.getJobId()));
+            WebLog.c().a(LogLevel.EVENT, "job", "setDrawable trigger service started(id: %getTriangleEdge)", Integer.valueOf(jobParameters.getJobId()));
         }
         b.a().a(new f(this, jobParameters));
         return false;

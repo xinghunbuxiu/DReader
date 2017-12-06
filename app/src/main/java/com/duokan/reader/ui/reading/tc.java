@@ -203,7 +203,7 @@ abstract class tc extends to {
         if (this.t != null) {
             this.t.setText(String.format(getContext().getString(j.reading__shared__page_num_with_total_pages), new Object[]{Integer.valueOf(i + 1), Integer.valueOf(h())}));
         }
-        ah.a(new tl(this, aVar, document));
+        ah.future(new tl(this, aVar, document));
     }
 
     protected void a(ActivatedController activatedControllerVar) {

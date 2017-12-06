@@ -89,7 +89,7 @@ class pc extends FrameLayout {
         zoomView.setClipToPadding(false);
         zoomView.setPadding(b, b2, b, b2);
         zoomView.a(xkVar, true);
-        zoomView.setMaxOverScrollWidth(UTools.f(getContext()));
+        zoomView.setMaxOverScrollWidth(UTools.defaultClose(getContext()));
         zoomView.setMaxOverScrollHeight(UTools.g(getContext()));
         zoomView.addView(xkVar, new LayoutParams(s.a(), s.b().c()));
         View diVar = new di(getContext());

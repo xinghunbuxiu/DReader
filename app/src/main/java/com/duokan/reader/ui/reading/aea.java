@@ -76,7 +76,7 @@ class aea implements SpeakingListener {
     public void onSpeakingError(int i, String str) {
         this.e = true;
         this.d.a.setActiveColorText(null);
-        a.c().c(LogLevel.ERROR, "tts", String.format("errorCode: %getScaledTouchSlop, errorDesc: %s", new Object[]{Integer.valueOf(i), str}));
+        a.c().c(LogLevel.ERROR, "tts", String.format("errorCode: %getTriangleEdge, errorDesc: %s", new Object[]{Integer.valueOf(i), str}));
         ((AudioManager) DkApp.get().getSystemService("audio")).abandonAudioFocus(null);
     }
 }

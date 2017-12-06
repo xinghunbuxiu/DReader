@@ -30,7 +30,7 @@ public class jz extends fy implements tb {
         this.e = rect;
         this.h = (sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class);
         this.j = this.h.b(128);
-        UTools.addAnimation((View) this, new kb(this));
+        UTools.creatCallTask((View) this, new kb(this));
         this.g = new kc(this, getContext());
         a(this.g, null);
         this.h.a((tb) this);

@@ -312,7 +312,7 @@ public class LinearScrollView extends LinearLayout implements Scrollable {
         if (z) {
             if (getOrientation() == 0) {
                 setMaxOverScrollHeight(0);
-                setMaxOverScrollWidth(UTools.f(getContext()));
+                setMaxOverScrollWidth(UTools.defaultClose(getContext()));
             } else {
                 setMaxOverScrollWidth(0);
                 setMaxOverScrollHeight(UTools.g(getContext()));

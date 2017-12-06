@@ -17,7 +17,7 @@ class gk implements h {
     }
 
     public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
-        ah.b(new gl(this, (DkStoreFictionDetail) dkStoreItem));
+        ah.submitFuture(new gl(this, (DkStoreFictionDetail) dkStoreItem));
     }
 
     public void onFetchBookDetailError(String str) {

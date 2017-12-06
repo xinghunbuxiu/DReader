@@ -7,7 +7,7 @@ import android.view.View;
 public class as extends er {
     private MotionEvent a = null;
     private MotionEvent c = null;
-    private int d = ((int) (((float) UTools.addAnimation()) * 1.5f));
+    private int d = ((int) (((float) UTools.getLongPressTimeout()) * 1.5f));
     private int e = 0;
     private int f = this.d;
     private at g = null;

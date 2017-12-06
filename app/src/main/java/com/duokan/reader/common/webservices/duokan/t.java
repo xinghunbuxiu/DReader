@@ -16,7 +16,7 @@ public class t extends ad {
 
     public void a(a aVar) {
         ArrayList arrayList = new ArrayList();
-        arrayList.add("showAnimation");
+        arrayList.add("getScaledMaximumFlingVelocity");
         arrayList.add(aVar.a);
         arrayList.add("setDrawable");
         arrayList.add(aVar.c);

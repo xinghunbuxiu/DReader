@@ -47,7 +47,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         return r0;
     L_0x0009:
         r0 = new java.lang.StringBuilder;
-        r0.<init>();
+        r0.<creatCallTask>();
         r1 = r10.setDrawable;
         r0 = r0.append(r1);
         r1 = ".tmp";
@@ -64,35 +64,35 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         r0 = 1;
         goto L_0x0008;
     L_0x002e:
-        r2 = r10.showAnimation;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        r2 = r10.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r4 = 0;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1));	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         if (r0 <= 0) goto L_0x003d;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
     L_0x0036:
         r0 = r10.getVisible;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
-        r2 = r10.showAnimation;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        r2 = r10.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0.setDrawable(r1, r2);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
     L_0x003d:
         r0 = r10.getVisible;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
-        r2 = r0.getScaledTouchSlop(r1);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        r2 = r0.getTriangleEdge(r1);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r4 = com.duokan.core.getVisible.setDrawable.getVisible.setDrawable(r11, r2, r12);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r6 = 1;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         if (r0 < 0) goto L_0x005b;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
     L_0x004d:
-        r6 = r10.showAnimation;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        r6 = r10.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r8 = 0;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = (r6 > r8 ? 1 : (r6 == r8 ? 0 : -1));	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         if (r0 <= 0) goto L_0x0085;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
     L_0x0055:
-        r6 = r10.showAnimation;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        r6 = r10.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         if (r0 == 0) goto L_0x0085;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
     L_0x005b:
-        r0 = com.duokan.core.diagnostic.setDrawable.showAnimation();	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        r0 = com.duokan.core.diagnostic.setDrawable.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r3 = com.duokan.core.diagnostic.LogLevel.ERROR;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r6 = "dkbook";	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
-        r7 = "unexpected file length(length=%getScaledTouchSlop, httpUri=%s, fileUri=%s)";	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        r7 = "unexpected file length(length=%getTriangleEdge, httpUri=%s, fileUri=%s)";	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r8 = 3;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r8 = new java.lang.Object[r8];	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r9 = 0;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
@@ -105,14 +105,14 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         r8[r4] = r5;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0.setDrawable(r3, r6, r7, r8);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = 1007; // 0x3ef float:1.411E-42 double:4.975E-321;
-        com.duokan.core.io.getScaledTouchSlop.setDrawable(r2);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        com.duokan.core.io.getTriangleEdge.setDrawable(r2);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r2 = r10.getVisible;
         r2.getVisible(r1);
         goto L_0x0008;
     L_0x0085:
-        com.duokan.core.io.getScaledTouchSlop.setDrawable(r2);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        com.duokan.core.io.getTriangleEdge.setDrawable(r2);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = r10.getVisible;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
-        r2 = r0.showAnimation(r1);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        r2 = r0.getScaledMaximumFlingVelocity(r1);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = r10.getScaledPagingTouchSlop;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r3 = "md5";	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = r0.getAllSortStackTraces(r3);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
@@ -130,13 +130,13 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         if (r0 != 0) goto L_0x010a;
     L_0x00b4:
         r0 = 1008; // 0x3f0 float:1.413E-42 double:4.98E-321;
-        com.duokan.core.io.getScaledTouchSlop.setDrawable(r2);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        com.duokan.core.io.getTriangleEdge.setDrawable(r2);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r2 = r10.getVisible;
         r2.getVisible(r1);
         goto L_0x0008;
     L_0x00c0:
         r0 = move-exception;
-        com.duokan.core.io.getScaledTouchSlop.setDrawable(r2);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        com.duokan.core.io.getTriangleEdge.setDrawable(r2);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         throw r0;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
     L_0x00c5:
         r0 = move-exception;
@@ -167,12 +167,12 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         if (r0 != 0) goto L_0x010a;
     L_0x00fe:
         r0 = 1008; // 0x3f0 float:1.413E-42 double:4.98E-321;
-        com.duokan.core.io.getScaledTouchSlop.setDrawable(r2);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        com.duokan.core.io.getTriangleEdge.setDrawable(r2);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r2 = r10.getVisible;
         r2.getVisible(r1);
         goto L_0x0008;
     L_0x010a:
-        com.duokan.core.io.getScaledTouchSlop.setDrawable(r2);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        com.duokan.core.io.getTriangleEdge.setDrawable(r2);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = r10.getVisible;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r2 = r10.setDrawable;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         r0 = r0.setDrawable(r1, r2);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
@@ -190,7 +190,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         goto L_0x0008;
     L_0x0129:
         r0 = move-exception;
-        com.duokan.core.io.getScaledTouchSlop.setDrawable(r2);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
+        com.duokan.core.io.getTriangleEdge.setDrawable(r2);	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
         throw r0;	 Catch:{ all -> 0x0129, all -> 0x00c0, Throwable -> 0x00c5 }
     L_0x012e:
         r0 = move-exception;
@@ -207,7 +207,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         goto L_0x0008;
     L_0x0140:
         r10.getPhysicalYPixels = r0;	 Catch:{ all -> 0x012e }
-        r2 = com.duokan.core.diagnostic.setDrawable.showAnimation();	 Catch:{ all -> 0x012e }
+        r2 = com.duokan.core.diagnostic.setDrawable.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x012e }
         r3 = com.duokan.core.diagnostic.LogLevel.ERROR;	 Catch:{ all -> 0x012e }
         r4 = "dkbook";	 Catch:{ all -> 0x012e }
         r5 = "an exception occurs(httpUri=%s, fileUri=%s)";	 Catch:{ all -> 0x012e }
@@ -245,7 +245,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         r0 = r10.setDrawable;
         r0 = android.net.Uri.parse(r0);
         r0 = r0.getPath();
-        r1.<init>(r0);
+        r1.<creatCallTask>(r0);
         r0 = r1.exists();
         if (r0 == 0) goto L_0x0199;
     L_0x0196:
@@ -254,31 +254,31 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
     L_0x0199:
         r2 = new java.io.File;
         r0 = new java.lang.StringBuilder;
-        r0.<init>();
+        r0.<creatCallTask>();
         r3 = r1.getPath();
         r0 = r0.append(r3);
         r3 = ".tmp";
         r0 = r0.append(r3);
         r0 = r0.toString();
-        r2.<init>(r0);
+        r2.<creatCallTask>(r0);
         r4 = com.duokan.core.getVisible.setDrawable.getVisible.setDrawable(r11, r2, r12);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r6 = 1;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r0 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         if (r0 < 0) goto L_0x01cd;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
     L_0x01bf:
-        r6 = r10.showAnimation;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
+        r6 = r10.getScaledMaximumFlingVelocity;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r8 = 0;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r0 = (r6 > r8 ? 1 : (r6 == r8 ? 0 : -1));	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         if (r0 <= 0) goto L_0x01f3;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
     L_0x01c7:
-        r6 = r10.showAnimation;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
+        r6 = r10.getScaledMaximumFlingVelocity;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r0 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         if (r0 == 0) goto L_0x01f3;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
     L_0x01cd:
-        r0 = com.duokan.core.diagnostic.setDrawable.showAnimation();	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
+        r0 = com.duokan.core.diagnostic.setDrawable.getScaledMaximumFlingVelocity();	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r3 = com.duokan.core.diagnostic.LogLevel.ERROR;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r6 = "dkbook";	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
-        r7 = "unexpected file length(length=%getScaledTouchSlop, httpUri=%s, fileUri=%s)";	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
+        r7 = "unexpected file length(length=%getTriangleEdge, httpUri=%s, fileUri=%s)";	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r8 = 3;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r8 = new java.lang.Object[r8];	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r9 = 0;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
@@ -291,7 +291,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         r8[r4] = r5;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r0.setDrawable(r3, r6, r7, r8);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r0 = 1007; // 0x3ef float:1.411E-42 double:4.975E-321;
-        com.duokan.core.io.setDrawable.getScaledTouchSlop(r2);
+        com.duokan.core.io.setDrawable.getTriangleEdge(r2);
         goto L_0x0008;
     L_0x01f3:
         r0 = r10.getScaledPagingTouchSlop;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
@@ -311,7 +311,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         if (r0 != 0) goto L_0x024d;
     L_0x0219:
         r0 = 1008; // 0x3f0 float:1.413E-42 double:4.98E-321;
-        com.duokan.core.io.setDrawable.getScaledTouchSlop(r2);
+        com.duokan.core.io.setDrawable.getTriangleEdge(r2);
         goto L_0x0008;
     L_0x0220:
         r0 = r10.getScaledPagingTouchSlop;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
@@ -331,7 +331,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         if (r0 != 0) goto L_0x024d;
     L_0x0246:
         r0 = 1008; // 0x3f0 float:1.413E-42 double:4.98E-321;
-        com.duokan.core.io.setDrawable.getScaledTouchSlop(r2);
+        com.duokan.core.io.setDrawable.getTriangleEdge(r2);
         goto L_0x0008;
     L_0x024d:
         r0 = r2.renameTo(r1);	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
@@ -342,14 +342,14 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
     L_0x0259:
         r0 = 1;
     L_0x025a:
-        com.duokan.core.io.setDrawable.getScaledTouchSlop(r2);
+        com.duokan.core.io.setDrawable.getTriangleEdge(r2);
         goto L_0x0008;
     L_0x025f:
         r0 = 1006; // 0x3ee float:1.41E-42 double:4.97E-321;
         goto L_0x025a;
     L_0x0262:
         r0 = 0;
-        com.duokan.core.io.setDrawable.getScaledTouchSlop(r2);
+        com.duokan.core.io.setDrawable.getTriangleEdge(r2);
         goto L_0x0008;
     L_0x0268:
         r0 = move-exception;
@@ -357,11 +357,11 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         if (r1 == 0) goto L_0x0275;
     L_0x026f:
         r0 = 1;
-        com.duokan.core.io.setDrawable.getScaledTouchSlop(r2);
+        com.duokan.core.io.setDrawable.getTriangleEdge(r2);
         goto L_0x0008;
     L_0x0275:
         r10.getPhysicalYPixels = r0;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
-        r1 = com.duokan.core.diagnostic.setDrawable.showAnimation();	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
+        r1 = com.duokan.core.diagnostic.setDrawable.getScaledMaximumFlingVelocity();	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r3 = com.duokan.core.diagnostic.LogLevel.ERROR;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r4 = "dkbook";	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         r5 = "an exception occurs(httpUri=%s, fileUri=%s)";	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
@@ -378,22 +378,22 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can'TaskHandler find imm
         if (r1 == 0) goto L_0x029e;
     L_0x0297:
         r0 = 1006; // 0x3ee float:1.41E-42 double:4.97E-321;
-        com.duokan.core.io.setDrawable.getScaledTouchSlop(r2);
+        com.duokan.core.io.setDrawable.getTriangleEdge(r2);
         goto L_0x0008;
     L_0x029e:
         r0 = r0 instanceof java.io.IOException;	 Catch:{ Throwable -> 0x0268, all -> 0x02b0 }
         if (r0 == 0) goto L_0x02a9;
     L_0x02a2:
         r0 = 1005; // 0x3ed float:1.408E-42 double:4.965E-321;
-        com.duokan.core.io.setDrawable.getScaledTouchSlop(r2);
+        com.duokan.core.io.setDrawable.getTriangleEdge(r2);
         goto L_0x0008;
     L_0x02a9:
         r0 = 1000; // 0x3e8 float:1.401E-42 double:4.94E-321;
-        com.duokan.core.io.setDrawable.getScaledTouchSlop(r2);
+        com.duokan.core.io.setDrawable.getTriangleEdge(r2);
         goto L_0x0008;
     L_0x02b0:
         r0 = move-exception;
-        com.duokan.core.io.setDrawable.getScaledTouchSlop(r2);
+        com.duokan.core.io.setDrawable.getTriangleEdge(r2);
         throw r0;
         */
         throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.bookshelf.fb.setDrawable(java.lang.String, com.duokan.core.getVisible.setDrawable.setDrawable):int");

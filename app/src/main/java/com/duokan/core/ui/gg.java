@@ -34,7 +34,7 @@ public class gg implements Runnable {
             UTools.addAnimation(this.d, d, (View) zoomView);
             this.d.offset((float) (-zoomView.getScrollX()), (float) (-zoomView.getScrollY()));
             this.e = zoomView.getZoomFactor();
-            this.f = (float) UTools.closeAnimation((double) zoomView.getZoomAngle(), (double) (f6 - 180.0f), (double) (180.0f + f6));
+            this.f = (float) UTools.getAngle((double) zoomView.getZoomAngle(), (double) (f6 - 180.0f), (double) (180.0f + f6));
             this.g.set(f3, f4);
             this.h = f5;
             this.i = f6;

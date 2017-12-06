@@ -6,11 +6,11 @@ import android.view.ViewGroup.MarginLayoutParams;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.a;
+import com.duokan.core.ui.MyExtendView;
 
 class hf extends hj {
     final /* synthetic */ hd a;
-    private final a c = new a(getContext());
+    private final MyExtendView c = new MyExtendView(getContext());
 
     public hf(hd hdVar, IFeature featrue, ActivatedController activatedControllerVar, int i, int i2) {
         this.a = hdVar;

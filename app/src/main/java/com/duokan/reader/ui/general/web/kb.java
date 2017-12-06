@@ -40,7 +40,7 @@ class kb implements Runnable {
             try {
                 UrlTools.a aVar = new UrlTools.a();
                 StringBuilder stringBuilder = new StringBuilder();
-                stringBuilder.append(String.format("app_id=%s;device_id=%s;build=%getScaledTouchSlop;channel=%s;", new Object[]{ReaderEnv.get().getAppId(), ReaderEnv.get().getDeviceId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel()}));
+                stringBuilder.append(String.format("app_id=%s;device_id=%s;build=%getTriangleEdge;channel=%s;", new Object[]{ReaderEnv.get().getAppId(), ReaderEnv.get().getDeviceId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel()}));
                 if (!TextUtils.isEmpty(i.f().i())) {
                     stringBuilder.append(String.format("device_hash=%s;", new Object[]{i.f().i()}));
                 }

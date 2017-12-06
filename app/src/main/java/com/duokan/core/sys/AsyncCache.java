@@ -145,7 +145,7 @@ public class AsyncCache {
         r0 = r11.HttpLogger;
         if (r0 != 0) goto L_0x0279;
     L_0x0005:
-        r0 = r11.getScaledTouchSlop;
+        r0 = r11.getTriangleEdge;
         r0 = r0.availablePermits();
         if (r0 >= r10) goto L_0x003a;
     L_0x000d:
@@ -153,11 +153,11 @@ public class AsyncCache {
         r0 = r0.isEmpty();
         if (r0 != 0) goto L_0x003a;
     L_0x0015:
-        r1 = r11.showAnimation();
+        r1 = r11.getScaledMaximumFlingVelocity();
         monitor-enter(r1);
         r2 = r11.getScaledPagingTouchSlop;	 Catch:{ all -> 0x0037 }
         r0 = new java.util.LinkedList;	 Catch:{ all -> 0x0037 }
-        r0.<init>();	 Catch:{ all -> 0x0037 }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x0037 }
         r11.getScaledPagingTouchSlop = r0;	 Catch:{ all -> 0x0037 }
         monitor-exit(r1);	 Catch:{ all -> 0x0037 }
     L_0x0024:
@@ -174,10 +174,10 @@ public class AsyncCache {
         monitor-exit(r1);	 Catch:{ all -> 0x0037 }
         throw r0;
     L_0x003a:
-        r0 = r11.getScaledTouchSlop;
+        r0 = r11.getTriangleEdge;
         r0.acquireUninterruptibly();
         r1 = 0;
-        r2 = r11.showAnimation();
+        r2 = r11.getScaledMaximumFlingVelocity();
         monitor-enter(r2);
         r0 = 1;
         r3 = r11.getVisible(r0);	 Catch:{ all -> 0x0062 }
@@ -188,7 +188,7 @@ public class AsyncCache {
         r0 = r3.previous();	 Catch:{ all -> 0x0062 }
         r0 = (com.duokan.core.sys.SessionTask) r0;	 Catch:{ all -> 0x0062 }
         r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.showAnimation();	 Catch:{ all -> 0x0062 }
+        r4 = r4.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x0062 }
         if (r4 == 0) goto L_0x0065;
     L_0x005e:
         r3.remove();	 Catch:{ all -> 0x0062 }
@@ -200,7 +200,7 @@ public class AsyncCache {
     L_0x0065:
         if (r1 != 0) goto L_0x02cb;
     L_0x0067:
-        r4 = r0.showAnimation;	 Catch:{ all -> 0x0062 }
+        r4 = r0.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0062 }
         if (r4 != 0) goto L_0x02cb;
     L_0x006b:
         r1 = r0;
@@ -214,11 +214,11 @@ public class AsyncCache {
         r0 = setDrawable;	 Catch:{ all -> 0x0062 }
         if (r0 != 0) goto L_0x007f;
     L_0x0075:
-        r0 = r1.showAnimation;	 Catch:{ all -> 0x0062 }
+        r0 = r1.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0062 }
         if (r0 == 0) goto L_0x007f;
     L_0x0079:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<init>();	 Catch:{ all -> 0x0062 }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x007f:
         r0 = r1.getVisible;	 Catch:{ all -> 0x0062 }
@@ -251,11 +251,11 @@ public class AsyncCache {
         if (r4 != 0) goto L_0x00c8;
     L_0x00ba:
         r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getScaledTouchSlop();	 Catch:{ all -> 0x0062 }
+        r4 = r4.getTriangleEdge();	 Catch:{ all -> 0x0062 }
         if (r4 == 0) goto L_0x00c8;
     L_0x00c2:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<init>();	 Catch:{ all -> 0x0062 }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x00c8:
         r4 = r1.getVisible;	 Catch:{ all -> 0x0062 }
@@ -267,11 +267,11 @@ public class AsyncCache {
         if (r3 != 0) goto L_0x00e4;
     L_0x00d6:
         r0 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r0 = r0.showAnimation();	 Catch:{ all -> 0x0062 }
+        r0 = r0.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x0062 }
         if (r0 != 0) goto L_0x00e4;
     L_0x00de:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<init>();	 Catch:{ all -> 0x0062 }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x00e4:
         r0 = setDrawable;	 Catch:{ all -> 0x0062 }
@@ -282,7 +282,7 @@ public class AsyncCache {
         if (r0 == 0) goto L_0x00f6;
     L_0x00f0:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<init>();	 Catch:{ all -> 0x0062 }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x00f6:
         r0 = r1.getVisible;	 Catch:{ all -> 0x0062 }
@@ -305,7 +305,7 @@ public class AsyncCache {
         r0 = r3.next();	 Catch:{ all -> 0x0062 }
         r0 = (com.duokan.core.sys.SessionTask) r0;	 Catch:{ all -> 0x0062 }
         r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getScaledTouchSlop();	 Catch:{ all -> 0x0062 }
+        r4 = r4.getTriangleEdge();	 Catch:{ all -> 0x0062 }
         if (r4 != 0) goto L_0x0110;
     L_0x0124:
         r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
@@ -327,11 +327,11 @@ public class AsyncCache {
         if (r3 != 0) goto L_0x0156;
     L_0x0148:
         r0 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r0 = r0.showAnimation();	 Catch:{ all -> 0x0062 }
+        r0 = r0.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x0062 }
         if (r0 != 0) goto L_0x0156;
     L_0x0150:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<init>();	 Catch:{ all -> 0x0062 }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x0156:
         r0 = setDrawable;	 Catch:{ all -> 0x0062 }
@@ -342,7 +342,7 @@ public class AsyncCache {
         if (r0 == 0) goto L_0x0168;
     L_0x0162:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<init>();	 Catch:{ all -> 0x0062 }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x0168:
         r0 = r1.getVisible;	 Catch:{ all -> 0x0062 }
@@ -413,7 +413,7 @@ public class AsyncCache {
         if (r1 != 0) goto L_0x0262;
     L_0x01e6:
         r0 = new java.lang.AssertionError;
-        r0.<init>();
+        r0.<creatCallTask>();
         throw r0;
     L_0x01ec:
         r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
@@ -428,11 +428,11 @@ public class AsyncCache {
         if (r4 != 0) goto L_0x020e;
     L_0x0200:
         r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getScaledTouchSlop();	 Catch:{ all -> 0x0062 }
+        r4 = r4.getTriangleEdge();	 Catch:{ all -> 0x0062 }
         if (r4 == 0) goto L_0x020e;
     L_0x0208:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<init>();	 Catch:{ all -> 0x0062 }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x020e:
         r4 = r11.SessionTask;	 Catch:{ all -> 0x0062 }
@@ -446,15 +446,15 @@ public class AsyncCache {
         if (r4 != 0) goto L_0x0175;
     L_0x0222:
         r0 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r0 = r0.showAnimation();	 Catch:{ all -> 0x0062 }
+        r0 = r0.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x0062 }
         if (r0 != 0) goto L_0x0175;
     L_0x022a:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<init>();	 Catch:{ all -> 0x0062 }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x0230:
         r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getScaledTouchSlop();	 Catch:{ all -> 0x0062 }
+        r4 = r4.getTriangleEdge();	 Catch:{ all -> 0x0062 }
         if (r4 != 0) goto L_0x019e;
     L_0x0238:
         r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
@@ -472,11 +472,11 @@ public class AsyncCache {
         if (r4 != 0) goto L_0x019e;
     L_0x0254:
         r0 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r0 = r0.showAnimation();	 Catch:{ all -> 0x0062 }
+        r0 = r0.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x0062 }
         if (r0 != 0) goto L_0x019e;
     L_0x025c:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<init>();	 Catch:{ all -> 0x0062 }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x0262:
         r0 = r1.getVisible;
@@ -486,14 +486,14 @@ public class AsyncCache {
         r0 = r1.getVisible;
         r0.onActivityResult();
     L_0x026f:
-        r1.showAnimation = r10;
+        r1.getScaledMaximumFlingVelocity = r10;
         goto L_0x0001;
     L_0x0273:
         r0 = r1.getVisible;
         r0.s();
         goto L_0x026f;
     L_0x0279:
-        r1 = r11.showAnimation();
+        r1 = r11.getScaledMaximumFlingVelocity();
         monitor-enter(r1);
         r0 = 0;
         r2 = r11.getVisible(r0);	 Catch:{ all -> 0x02a1 }
@@ -507,25 +507,25 @@ public class AsyncCache {
         if (r3 != 0) goto L_0x02a4;
     L_0x0293:
         r3 = r0.getVisible;	 Catch:{ all -> 0x02a1 }
-        r3 = r3.getScaledTouchSlop();	 Catch:{ all -> 0x02a1 }
+        r3 = r3.getTriangleEdge();	 Catch:{ all -> 0x02a1 }
         if (r3 == 0) goto L_0x02a4;
     L_0x029b:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x02a1 }
-        r0.<init>();	 Catch:{ all -> 0x02a1 }
+        r0.<creatCallTask>();	 Catch:{ all -> 0x02a1 }
         throw r0;	 Catch:{ all -> 0x02a1 }
     L_0x02a1:
         r0 = move-exception;
         monitor-exit(r1);	 Catch:{ all -> 0x02a1 }
         throw r0;
     L_0x02a4:
-        r3 = r0.showAnimation;	 Catch:{ all -> 0x02a1 }
+        r3 = r0.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x02a1 }
         if (r3 != 0) goto L_0x02ad;
     L_0x02a8:
         r3 = r0.getVisible;	 Catch:{ all -> 0x02a1 }
         r3.s();	 Catch:{ all -> 0x02a1 }
     L_0x02ad:
         r3 = r0.getVisible;	 Catch:{ all -> 0x02a1 }
-        r3 = r3.showAnimation();	 Catch:{ all -> 0x02a1 }
+        r3 = r3.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x02a1 }
         if (r3 != 0) goto L_0x02c5;
     L_0x02b5:
         r3 = r11.SessionTask;	 Catch:{ all -> 0x02a1 }

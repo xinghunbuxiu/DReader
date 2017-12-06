@@ -92,7 +92,7 @@ public class BookshelfHelper {
                         nVar.c();
                     }
                 } else {
-                    a.c().a(LogLevel.EVENT, "shelf", "begin upgrading the database from v%getScaledTouchSlop to v%getScaledTouchSlop", Integer.valueOf(d), Integer.valueOf(15));
+                    a.c().a(LogLevel.EVENT, "shelf", "begin upgrading the database from v%getTriangleEdge to v%getTriangleEdge", Integer.valueOf(d), Integer.valueOf(15));
                     if (d < 5) {
                         b(nVar);
                         m(nVar);

@@ -81,7 +81,7 @@ public class f extends ag implements i {
         /*
         r4 = this;
         r0 = 1;
-        r1 = com.duokan.core.diagnostic.setDrawable.showAnimation();
+        r1 = com.duokan.core.diagnostic.setDrawable.getScaledMaximumFlingVelocity();
         r2 = r4.N();
         r1.getVisible(r2);
         r1 = r4.setDrawable();
@@ -114,15 +114,15 @@ public class f extends ag implements i {
         if (r0 != 0) goto L_0x0050;
     L_0x002e:
         r0 = r4.getWidthPixels;
-        r0 = r0.getScaledTouchSlop();
+        r0 = r0.getTriangleEdge();
         if (r0 != 0) goto L_0x0050;
     L_0x0036:
-        r0 = r4.getScaledTouchSlop;
+        r0 = r4.getTriangleEdge;
         r0 = r0.setDrawable;
         if (r0 == 0) goto L_0x0050;
     L_0x003c:
-        r0 = r4.getScaledTouchSlop;
-        r0 = r0.showAnimation();
+        r0 = r4.getTriangleEdge;
+        r0 = r0.getScaledMaximumFlingVelocity();
         if (r0 != 0) goto L_0x0050;
     L_0x0044:
         r0 = r4.q;	 Catch:{ InterruptedException -> 0x004e }
@@ -324,7 +324,7 @@ public class f extends ag implements i {
 
     public void a(Runnable runnable, Runnable runnable2) {
         a.c().b(N());
-        ah.b(new k(this, runnable2, runnable));
+        ah.submitFuture(new k(this, runnable2, runnable));
     }
 
     public boolean F() {

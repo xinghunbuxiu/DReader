@@ -144,7 +144,7 @@ public class mx extends ActivatedController implements ak {
         alphaAnimation.setAnimationListener(new ne(this, runnable));
         Runnable nfVar = new nf(this, alphaAnimation, i, i2, i3, i4);
         if (this.c.isLayoutRequested()) {
-            UTools.addAnimation(this.c, nfVar);
+            UTools.creatCallTask(this.c, nfVar);
         } else {
             nfVar.run();
         }

@@ -83,7 +83,7 @@ public abstract class DkApp extends ManagedApp {
 
     public File getLogFile(String str) {
         String format = new SimpleDateFormat("yyyyMMddkkmm", Locale.getDefault()).format(new Date(System.currentTimeMillis()));
-        return new File(getDiagnosticDirectory(), String.format(Locale.US, "%s.%s.%getScaledTouchSlop.log", new Object[]{str, format, Integer.valueOf(Process.myPid())}));
+        return new File(getDiagnosticDirectory(), String.format(Locale.US, "%s.%s.%getTriangleEdge.log", new Object[]{str, format, Integer.valueOf(Process.myPid())}));
     }
 
     public Locale getSystemLocale() {
@@ -331,7 +331,7 @@ public abstract class DkApp extends ManagedApp {
         if (!this.k) {
             this.k = true;
             WebLog.c().a("app_bginit_timer");
-            ah.b(new Runnable(this) {
+            ah.submitFuture(new Runnable(this) {
                 final /* synthetic */ DkApp a;
 
                 {
@@ -366,7 +366,7 @@ public abstract class DkApp extends ManagedApp {
                             FileUtils.deleteFile(d);
                         }
                     } catch (Throwable th) {
-                        a.c().a(LogLevel.ERROR, "app", "an exception occurs during background init", th);
+                        a.c().a(LogLevel.ERROR, "app", "an exception occurs during background creatCallTask", th);
                     }
                 }
             });

@@ -670,7 +670,7 @@ public class p extends n implements at {
         r0 = r2;
         r0 = (com.duokan.reader.domain.document.txt.MyContextWrapper) r0;	 Catch:{ all -> 0x003c }
         r4 = r0;
-        r2 = r4.showAnimation;	 Catch:{ all -> 0x003c }
+        r2 = r4.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x003c }
         if (r2 == 0) goto L_0x002b;
     L_0x0021:
         monitor-exit(r16);	 Catch:{ all -> 0x003c }
@@ -692,7 +692,7 @@ public class p extends n implements at {
         if (r2 == 0) goto L_0x003f;
     L_0x0036:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x003c:
         r2 = move-exception;
@@ -734,12 +734,12 @@ public class p extends n implements at {
     L_0x0080:
         r3 = new com.duokan.reader.domain.document.txt.TaskHandler;
         r0 = r16;
-        r3.<init>(r0, r2);
+        r3.<creatCallTask>(r0, r2);
         com.duokan.core.sys.TaskHandler.setDrawable(r3);
     L_0x008a:
         r2 = r4.getPhysicalXPixels();
         r9 = r2.getWidthPixels;
-        r2 = com.duokan.reader.domain.document.txt.DelayedRunnableQueue.showAnimation();
+        r2 = com.duokan.reader.domain.document.txt.DelayedRunnableQueue.getScaledMaximumFlingVelocity();
         r10 = r2.setDrawable();
         r2 = getPhysicalYPixels;
         if (r2 != 0) goto L_0x00b0;
@@ -747,7 +747,7 @@ public class p extends n implements at {
         if (r10 != 0) goto L_0x00b0;
     L_0x009e:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x00a4:
         r16.v();
@@ -763,7 +763,7 @@ public class p extends n implements at {
         if (r9 != 0) goto L_0x00bc;
     L_0x00b6:
         r2 = new java.lang.AssertionError;
-        r2.<init>();
+        r2.<creatCallTask>();
         throw r2;
     L_0x00bc:
         r2 = r9.entrySet();
@@ -784,7 +784,7 @@ public class p extends n implements at {
         r2 = (java.lang.String) r2;
         r2 = android.net.Uri.parse(r2);
         r2 = r2.getPath();
-        r12.<init>(r2);
+        r12.<creatCallTask>(r2);
         r2 = r12.exists();
         if (r2 == 0) goto L_0x00c4;
     L_0x00f5:
@@ -801,7 +801,7 @@ public class p extends n implements at {
         r12 = "DEFAULT_FONT_ZH";
         r12 = com.duokan.reader.domain.document.n.getVisible(r9, r12);
         r13 = "FALLBACK_FONT";
-        r9 = com.duokan.reader.domain.document.n.showAnimation(r9, r13);
+        r9 = com.duokan.reader.domain.document.n.getScaledMaximumFlingVelocity(r9, r13);
         r13 = android.text.TextUtils.isEmpty(r2);
         if (r13 != 0) goto L_0x0210;
     L_0x0121:
@@ -856,7 +856,7 @@ public class p extends n implements at {
         r2 = (r2 > r10 ? 1 : (r2 == r10 ? 0 : -1));
         if (r2 >= 0) goto L_0x023b;
     L_0x0194:
-        r2 = com.duokan.reader.domain.document.txt.DelayedRunnableQueue.showAnimation();
+        r2 = com.duokan.reader.domain.document.txt.DelayedRunnableQueue.getScaledMaximumFlingVelocity();
         r2 = r2.setDrawable();
         r2.setUseBookStyle(r6);
     L_0x019f:
@@ -940,7 +940,7 @@ public class p extends n implements at {
         r10.setBackupFont(r2);
         goto L_0x0175;
     L_0x023b:
-        r2 = com.duokan.reader.domain.document.txt.DelayedRunnableQueue.showAnimation();
+        r2 = com.duokan.reader.domain.document.txt.DelayedRunnableQueue.getScaledMaximumFlingVelocity();
         r2 = r2.setDrawable();
         r2.setUseBookStyle(r7);
         r2 = r8.getPhysicalXPixels();

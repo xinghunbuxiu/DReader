@@ -23,7 +23,7 @@ public class ct extends er {
             } else if (motionEvent.getPointerCount() > 1) {
                 b(false);
                 return;
-            } else if (motionEvent.getEventTime() - this.a.getEventTime() > ((long) UTools.closeAnimation())) {
+            } else if (motionEvent.getEventTime() - this.a.getEventTime() > ((long) UTools.getJumpTapTimeout())) {
                 b(false);
                 return;
             } else {

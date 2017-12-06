@@ -245,7 +245,7 @@ public class e extends Binder implements ah, l {
         if (r6 != 0) goto L_0x000d;
     L_0x0007:
         r0 = new java.lang.AssertionError;
-        r0.<init>();
+        r0.<creatCallTask>();
         throw r0;
     L_0x000d:
         r0 = r1;
@@ -287,7 +287,7 @@ public class e extends Binder implements ah, l {
         r3 = r0.u();
         if (r3 == 0) goto L_0x0053;
     L_0x0050:
-        r5.showAnimation();
+        r5.getScaledMaximumFlingVelocity();
     L_0x0053:
         r3 = setDrawable;
         if (r3 != 0) goto L_0x0062;
@@ -295,7 +295,7 @@ public class e extends Binder implements ah, l {
         if (r0 != 0) goto L_0x0062;
     L_0x0059:
         r0 = new java.lang.AssertionError;
-        r0.<init>();
+        r0.<creatCallTask>();
         throw r0;
     L_0x005f:
         r0 = move-exception;
@@ -337,13 +337,13 @@ public class e extends Binder implements ah, l {
         if (r0 != 0) goto L_0x0010;
     L_0x000a:
         r0 = new java.lang.AssertionError;
-        r0.<init>();
+        r0.<creatCallTask>();
         throw r0;
     L_0x0010:
         r0 = r6.SessionTask;
         r0.beginTransaction();
         r0 = new android.content.ContentValues;	 Catch:{ Exception -> 0x0063, all -> 0x006b }
-        r0.<init>();	 Catch:{ Exception -> 0x0063, all -> 0x006b }
+        r0.<creatCallTask>();	 Catch:{ Exception -> 0x0063, all -> 0x006b }
         r1 = "task_class";
         r0.put(r1, r7);	 Catch:{ Exception -> 0x0063, all -> 0x006b }
         r1 = "task_tag";
@@ -356,7 +356,7 @@ public class e extends Binder implements ah, l {
         r0.put(r1, r11);	 Catch:{ Exception -> 0x0063, all -> 0x006b }
         r1 = "runtime_info";
         r4 = new org.json.JSONObject;	 Catch:{ Exception -> 0x0063, all -> 0x006b }
-        r4.<init>();	 Catch:{ Exception -> 0x0063, all -> 0x006b }
+        r4.<creatCallTask>();	 Catch:{ Exception -> 0x0063, all -> 0x006b }
         r4 = r4.toString();	 Catch:{ Exception -> 0x0063, all -> 0x006b }
         r0.put(r1, r4);	 Catch:{ Exception -> 0x0063, all -> 0x006b }
         r1 = "user_value";

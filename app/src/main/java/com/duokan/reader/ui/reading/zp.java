@@ -35,7 +35,7 @@ class zp implements Runnable {
                 TaskHandler.PostTask(this.c);
                 return;
             }
-            a.c().a(LogLevel.EVENT, "autopay", "pay(book: %s(%s), chapter: %s(%getScaledTouchSlop|%s))", this.d, this.e, this.f, Long.valueOf(this.b), this.g);
+            a.c().a(LogLevel.EVENT, "autopay", "pay(book: %s(%s), chapter: %s(%getTriangleEdge|%s))", this.d, this.e, this.f, Long.valueOf(this.b), this.g);
             o.a().a(this.e, this.g, this.h, new zq(this));
         }
     }
