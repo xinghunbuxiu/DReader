@@ -58,9 +58,9 @@ class fs extends er {
                     int a = a(view, 20);
                     this.e.x = Float.compare(this.e.x, 0.0f) == 0 ? this.f : this.e.x;
                     if (this.e.x > ((float) a)) {
-                        e(this.e, new PointF((float) a(view), 0.0f));
+                        e(this.e, new PointF((float) getScaledMinimumFlingVelocity(view), 0.0f));
                     } else {
-                        e(this.e, new PointF((float) (a(view) * -1), 0.0f));
+                        e(this.e, new PointF((float) (getScaledMinimumFlingVelocity(view) * -1), 0.0f));
                     }
                     this.g = false;
                     return;

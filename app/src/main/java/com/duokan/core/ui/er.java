@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 
 public abstract class er {
-    static final /* synthetic */ boolean b = (!er.class.desiredAssertionStatus());
+    static final boolean b = (!er.class.desiredAssertionStatus());
     private boolean a = true;
     private boolean c = false;
     private boolean d = false;
@@ -180,11 +180,11 @@ public abstract class er {
         return Math.sqrt(Math.pow((double) (pointF.x - pointF2.x), 2.0d) + Math.pow((double) (pointF.y - pointF2.y), 2.0d));
     }
 
-    protected int a(View view) {
+    protected int getScaledMinimumFlingVelocity(View view) {
         return ViewConfiguration.get(view.getContext()).getScaledMinimumFlingVelocity();
     }
 
-    protected int g() {
+    protected int getLongPressTimeout() {
         return ViewConfiguration.getLongPressTimeout();
     }
 

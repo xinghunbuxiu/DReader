@@ -47,7 +47,7 @@ public class u extends er {
                 if (this.f == null) {
                     return;
                 }
-                if (this.i != 0 || System.currentTimeMillis() - this.h <= ((long) g())) {
+                if (this.i != 0 || System.currentTimeMillis() - this.h <= ((long) getLongPressTimeout())) {
                     this.i++;
                     float x = motionEvent.getX() - this.c;
                     float y = motionEvent.getY() - this.d;
