@@ -22,7 +22,7 @@ import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.diagnostic.C0328a;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.io.C0336a;
+import com.duokan.core.io.FileUtil;
 import com.duokan.core.p026a.C0272a;
 import com.duokan.core.sys.C0299i;
 import com.duokan.core.sys.UIdleHandler;
@@ -184,7 +184,7 @@ public class ReaderEnv implements C0286x {
             this.f1594a.prepareInternalFiles();
             if (!this.f1594a.f1634z.equals(this.f1594a.f1632x)) {
                 Object obj;
-                for (File access$1002 : C0336a.m782b(this.f1594a.f1627b)) {
+                for (File access$1002 : FileUtil.m782b(this.f1594a.f1627b)) {
                     if (this.f1594a.f1634z.getParentFile().equals(access$1002)) {
                         obj = 1;
                         break;
@@ -354,7 +354,7 @@ public class ReaderEnv implements C0286x {
         ensureDirectoryExists(this.f1634z);
         this.f1619E = new C0272a(Uri.fromFile(new File(getDatabaseDirectory(), "reader.db")).toString());
         if (i < 413000000 && this.f1634z.compareTo(this.f1632x) != 0) {
-            File[] fileArr = (File[]) C0336a.m782b(this.f1627b).toArray(new File[0]);
+            File[] fileArr = (File[]) FileUtil.m782b(this.f1627b).toArray(new File[0]);
             File file = fileArr[fileArr.length - 1];
             setPrefString(PrivatePref.PERSONAL, "storage", file.getAbsolutePath());
             this.f1634z = new File(file, this.f1628t);
@@ -1239,9 +1239,9 @@ public class ReaderEnv implements C0286x {
             int i = 0;
             while (i < 3) {
                 File file = new File(this.f1631w, "res.v17.arch");
-                C0336a.m793f(file);
+                FileUtil.m793f(file);
                 File file2 = new File(this.f1633y.getAbsolutePath() + ".tmp");
-                C0336a.m793f(file2);
+                FileUtil.m793f(file2);
                 file2.mkdirs();
                 OutputStream fileOutputStream = new FileOutputStream(file);
                 try {
@@ -1252,24 +1252,24 @@ public class ReaderEnv implements C0286x {
                     } catch (Throwable th) {
                     }
                     DkarchLib.extract(file.getAbsolutePath(), file2.getAbsolutePath());
-                    C0336a.m793f(this.f1633y);
+                    FileUtil.m793f(this.f1633y);
                     if (file2.renameTo(this.f1633y)) {
                         C0328a.m757c().m749a(LogLevel.EVENT, "env", "internal files are ready(ver=%d)", Integer.valueOf(17));
-                        C0336a.m793f(file);
-                        C0336a.m793f(file2);
+                        FileUtil.m793f(file);
+                        FileUtil.m793f(file2);
                         return;
                     }
                     C0328a.m757c().m749a(LogLevel.ERROR, "env", "can't move internal files in place(ver=%d)", Integer.valueOf(17));
-                    C0336a.m793f(file);
-                    C0336a.m793f(file2);
+                    FileUtil.m793f(file);
+                    FileUtil.m793f(file2);
                     UIdleHandler.sleep(3000);
                     i++;
                 } catch (Throwable th2) {
                     try {
                         C0328a.m757c().m748a(LogLevel.ERROR, "env", String.format("an exception occurs while preparing internal files(ver=%d)", new Object[]{Integer.valueOf(17)}), th2);
                     } finally {
-                        C0336a.m793f(file);
-                        C0336a.m793f(file2);
+                        FileUtil.m793f(file);
+                        FileUtil.m793f(file2);
                     }
                 }
             }
@@ -1379,7 +1379,7 @@ public class ReaderEnv implements C0286x {
                 }
             }
         }
-        List<File> a = C0336a.m776a(new File("/system/fonts"), new FileFilter[0]);
+        List<File> a = FileUtil.m776a(new File("/system/fonts"), new FileFilter[0]);
         Collections.sort(a, new C04824(this));
         for (File file4 : a) {
             if (DkUtils.isZhFont(file4.getAbsolutePath())) {

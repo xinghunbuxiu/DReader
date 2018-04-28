@@ -8,15 +8,15 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 public class BoxView extends FrameLayout {
-    /* renamed from: a */
-    static final /* synthetic */ boolean f744a = (!BoxView.class.desiredAssertionStatus());
-    /* renamed from: b */
+    
+    static final  boolean desiredAssertionStatus = (!BoxView.class.desiredAssertionStatus());
+    
     private int f745b;
-    /* renamed from: c */
+    
     private int f746c;
-    /* renamed from: d */
+    
     private boolean f747d;
-    /* renamed from: e */
+    
     private cm f748e;
 
     public BoxView(Context context) {
@@ -25,10 +25,6 @@ public class BoxView extends FrameLayout {
 
     public BoxView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f745b = -1;
-        this.f746c = -1;
-        this.f747d = false;
-        this.f748e = null;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, new int[]{16843039, 16843040});
         this.f745b = obtainStyledAttributes.getDimensionPixelSize(0, -1);
         this.f746c = obtainStyledAttributes.getDimensionPixelSize(1, -1);
@@ -75,24 +71,24 @@ public class BoxView extends FrameLayout {
         switch (MeasureSpec.getMode(i)) {
             case Integer.MIN_VALUE:
                 if (this.f745b >= 0) {
-                    i = MeasureSpec.makeMeasureSpec(Math.min(this.f745b, size), Integer.MIN_VALUE);
+                    i = MeasureSpec.makeMeasureSpec(Math.min(this.f745b, size), MeasureSpec.AT_MOST);
                     break;
                 }
                 break;
             case 0:
                 if (this.f745b >= 0) {
-                    i = MeasureSpec.makeMeasureSpec(this.f745b, Integer.MIN_VALUE);
+                    i = MeasureSpec.makeMeasureSpec(this.f745b, MeasureSpec.AT_MOST);
                     break;
                 }
                 break;
             case 1073741824:
                 if (this.f745b >= 0) {
-                    i = MeasureSpec.makeMeasureSpec(Math.min(this.f745b, size), 1073741824);
+                    i = MeasureSpec.makeMeasureSpec(Math.min(this.f745b, size), MeasureSpec.EXACTLY);
                     break;
                 }
                 break;
             default:
-                if (!f744a) {
+                if (!desiredAssertionStatus) {
                     throw new AssertionError();
                 }
                 break;
@@ -100,24 +96,24 @@ public class BoxView extends FrameLayout {
         switch (MeasureSpec.getMode(i2)) {
             case Integer.MIN_VALUE:
                 if (this.f746c >= 0) {
-                    i2 = MeasureSpec.makeMeasureSpec(Math.min(this.f746c, size2), Integer.MIN_VALUE);
+                    i2 = MeasureSpec.makeMeasureSpec(Math.min(this.f746c, size2), MeasureSpec.AT_MOST);
                     break;
                 }
                 break;
             case 0:
                 if (this.f746c >= 0) {
-                    i2 = MeasureSpec.makeMeasureSpec(this.f746c, Integer.MIN_VALUE);
+                    i2 = MeasureSpec.makeMeasureSpec(this.f746c, MeasureSpec.AT_MOST);
                     break;
                 }
                 break;
             case 1073741824:
                 if (this.f746c >= 0) {
-                    i2 = MeasureSpec.makeMeasureSpec(Math.min(this.f746c, size2), 1073741824);
+                    i2 = MeasureSpec.makeMeasureSpec(Math.min(this.f746c, size2), MeasureSpec.EXACTLY);
                     break;
                 }
                 break;
             default:
-                if (!f744a) {
+                if (!desiredAssertionStatus) {
                     throw new AssertionError();
                 }
                 break;

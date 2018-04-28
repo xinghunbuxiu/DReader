@@ -12,7 +12,7 @@ class xy extends C1326b {
 
     public xy(xx xxVar, int i, int i2) {
         this.f11169a = xxVar;
-        super(Config.ARGB_8888, dv.f1204m);
+        super(Config.ARGB_8888, dv.cathe);
     }
 
     public int getIntrinsicWidth() {

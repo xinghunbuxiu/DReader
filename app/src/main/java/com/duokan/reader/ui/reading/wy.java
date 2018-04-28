@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.io.C0336a;
+import com.duokan.core.io.FileUtil;
 import com.duokan.core.sys.C0366o;
 import com.duokan.core.sys.ah;
 import com.duokan.core.ui.cg;
@@ -413,7 +413,7 @@ public abstract class wy extends FrameLayout {
         if (fileArr.length > 100) {
             Arrays.sort(fileArr, new xf(this));
             while (i < fileArr.length / 2) {
-                C0336a.m793f(fileArr[i]);
+                FileUtil.m793f(fileArr[i]);
                 i++;
             }
         }
@@ -421,7 +421,7 @@ public abstract class wy extends FrameLayout {
 
     /* renamed from: n */
     private final List<File> m13645n() {
-        return C0336a.m776a(ReaderEnv.get().getReadingCacheDirectory(), new xg(this));
+        return FileUtil.m776a(ReaderEnv.get().getReadingCacheDirectory(), new xg(this));
     }
 
     /* renamed from: o */

@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Rect;
-import com.duokan.core.io.C0339d;
+import com.duokan.core.io.IOUtils;
 import com.duokan.core.sys.C0352r;
 import com.duokan.reader.domain.document.sbk.C0824v;
 import java.io.Closeable;
@@ -72,7 +72,7 @@ class kx implements C0824v {
                     canvas.drawBitmap(decodeStream, rect, new Rect(0, 0, rect.width(), rect.height()), null);
                     decodeStream.recycle();
                 }
-                C0339d.m795a(c);
+                IOUtils.close(c);
                 this.f3494a.bs();
                 return true;
             }

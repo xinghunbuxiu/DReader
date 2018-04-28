@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import com.duokan.core.io.C0336a;
+import com.duokan.core.io.FileUtil;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
 import com.duokan.p024c.C0258j;
@@ -96,7 +96,7 @@ public class hg extends ap implements C0780k {
     /* renamed from: a */
     public boolean m14320a() {
         try {
-            if (!C0336a.m793f(this.f10319b.getTtsDir())) {
+            if (!FileUtil.m793f(this.f10319b.getTtsDir())) {
                 return false;
             }
             long defaultPackSize = this.f10319b.getDefaultPackSize();
@@ -117,7 +117,7 @@ public class hg extends ap implements C0780k {
         if (this.f10324g != null) {
             C1016b.m7857p().m7871a(this.f10324g);
         }
-        C0336a.m793f(this.f10319b.getTtsDir());
+        FileUtil.m793f(this.f10319b.getTtsDir());
         dismiss();
     }
 
@@ -140,7 +140,7 @@ public class hg extends ap implements C0780k {
                 this.f10324g = null;
                 if (downloadCenterTask.m7794h()) {
                     be.m10286a(getContext(), C0258j.bookshelf__general_shared__download_failed, 0).show();
-                    C0336a.m793f(this.f10319b.getTtsDir());
+                    FileUtil.m793f(this.f10319b.getTtsDir());
                     dismiss();
                     return;
                 }

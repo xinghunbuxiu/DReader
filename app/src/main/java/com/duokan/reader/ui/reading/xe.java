@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.io.C0336a;
+import com.duokan.core.io.FileUtil;
 
 class xe implements Runnable {
     /* renamed from: a */
@@ -11,6 +11,6 @@ class xe implements Runnable {
     }
 
     public void run() {
-        C0336a.m793f(this.f11140a.m13646o());
+        FileUtil.m793f(this.f11140a.m13646o());
     }
 }

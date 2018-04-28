@@ -21,7 +21,7 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import com.duokan.core.diagnostic.C0328a;
-import com.duokan.core.io.C0339d;
+import com.duokan.core.io.IOUtils;
 import com.duokan.core.sys.C0373z;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
@@ -126,14 +126,14 @@ public final class DkPublic {
             zipOutputStream = new ZipOutputStream(new FileOutputStream(file2));
             try {
                 z = zip(file, zipOutputStream);
-                C0339d.m795a(zipOutputStream);
+                IOUtils.close(zipOutputStream);
             } catch (Throwable th) {
                 closeable = zipOutputStream;
-                C0339d.m795a(closeable);
+                IOUtils.close(closeable);
                 return z;
             }
         } catch (Throwable th2) {
-            C0339d.m795a(closeable);
+            IOUtils.close(closeable);
             return z;
         }
         return z;
@@ -163,7 +163,7 @@ public final class DkPublic {
                         th = th2;
                     }
                 }
-                C0339d.m795a(bufferedInputStream);
+                IOUtils.close(bufferedInputStream);
                 try {
                     zipOutputStream.closeEntry();
                 } catch (IOException e) {
@@ -172,7 +172,7 @@ public final class DkPublic {
                 return true;
             } catch (Throwable th3) {
                 th = th3;
-                C0339d.m795a(closeable);
+                IOUtils.close(closeable);
                 try {
                     zipOutputStream.closeEntry();
                 } catch (IOException e2) {

@@ -4,8 +4,8 @@ import android.net.Uri;
 import android.text.TextUtils;
 import com.duokan.core.diagnostic.C0328a;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.io.C0336a;
-import com.duokan.core.io.C0339d;
+import com.duokan.core.io.FileUtil;
+import com.duokan.core.io.IOUtils;
 import com.duokan.core.io.OutputException;
 import com.duokan.core.p027b.p028a.C0320a;
 import com.duokan.core.p027b.p028a.C0321b;
@@ -73,21 +73,21 @@ class ev {
             a = C0321b.m725a(str, file2, c0320a);
             if (a < 1 || (this.f3134c > 0 && a != this.f3134c)) {
                 C0328a.m757c().m749a(LogLevel.ERROR, "dkbook", "unexpected file length(length=%d, httpUri=%s, fileUri=%s)", Long.valueOf(a), str, this.f3132a);
-                C0336a.m793f(file2);
+                FileUtil.m793f(file2);
                 return 1007;
             }
             try {
                 if (TextUtils.isEmpty((CharSequence) this.f3136e.get("md5"))) {
                     if (!(TextUtils.isEmpty((CharSequence) this.f3136e.get("sha1")) || C0366o.m1028a(file2, "sha1").startsWith((String) this.f3136e.get("sha1")))) {
-                        C0336a.m793f(file2);
+                        FileUtil.m793f(file2);
                         return 1008;
                     }
                 } else if (!C0366o.m1028a(file2, "md5").startsWith((String) this.f3136e.get("md5"))) {
-                    C0336a.m793f(file2);
+                    FileUtil.m793f(file2);
                     return 1008;
                 }
                 if (file2.renameTo(file)) {
-                    C0336a.m793f(file2);
+                    FileUtil.m793f(file2);
                     return 0;
                 }
                 if (file.exists()) {
@@ -95,10 +95,10 @@ class ev {
                 } else {
                     i = 1006;
                 }
-                C0336a.m793f(file2);
+                FileUtil.m793f(file2);
                 return i;
             } catch (Throwable th) {
-                C0336a.m793f(file2);
+                FileUtil.m793f(file2);
                 throw th;
             }
         } else if (this.f3133b.mo418a(this.f3132a)) {
@@ -112,24 +112,24 @@ class ev {
                 a = C0321b.m726a(str, (OutputStream) d, c0320a);
                 if (a < 1 || (this.f3134c > 0 && a != this.f3134c)) {
                     C0328a.m757c().m749a(LogLevel.ERROR, "dkbook", "unexpected file length(length=%d, httpUri=%s, fileUri=%s)", Long.valueOf(a), str, this.f3132a);
-                    C0339d.m795a(d);
+                    IOUtils.close(d);
                     this.f3133b.mo421b(str2);
                     return 1007;
                 }
-                C0339d.m795a(d);
+                IOUtils.close(d);
                 d = this.f3133b.mo422c(str2);
                 if (TextUtils.isEmpty((CharSequence) this.f3136e.get("md5"))) {
                     if (!(TextUtils.isEmpty((CharSequence) this.f3136e.get("sha1")) || C0366o.m1029a((InputStream) d, "sha1").startsWith((String) this.f3136e.get("sha1")))) {
-                        C0339d.m795a(d);
+                        IOUtils.close(d);
                         this.f3133b.mo421b(str2);
                         return 1008;
                     }
                 } else if (!C0366o.m1029a((InputStream) d, "md5").startsWith((String) this.f3136e.get("md5"))) {
-                    C0339d.m795a(d);
+                    IOUtils.close(d);
                     this.f3133b.mo421b(str2);
                     return 1008;
                 }
-                C0339d.m795a(d);
+                IOUtils.close(d);
                 if (this.f3133b.mo419a(str2, this.f3132a)) {
                     this.f3133b.mo421b(str2);
                     return 0;

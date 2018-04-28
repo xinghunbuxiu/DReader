@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.io.C0336a;
+import com.duokan.core.io.FileUtil;
 import com.duokan.core.sys.UThread;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ui.general.web.StorePageController;
@@ -26,7 +26,7 @@ class th implements Runnable {
     }
 
     public void run() {
-        C0336a.m793f(this.f10975a);
+        FileUtil.m793f(this.f10975a);
         UThread.runOnThread(new ti(this, DkPublic.unzip(new ZipInputStream(this.f10976b), this.f10975a)));
     }
 }

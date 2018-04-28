@@ -343,7 +343,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                 r14 = new java.io.ByteArrayOutputStream;	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
                 r2 = 2048; // 0x800 float:2.87E-42 double:1.0118E-320;
                 r14.<init>(r2);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
-                com.duokan.core.io.C0339d.m796a(r13, r14);	 Catch:{ all -> 0x00f2 }
+                com.duokan.core.io.C0339d.read(r13, r14);	 Catch:{ all -> 0x00f2 }
                 r2 = r14.toByteArray();	 Catch:{ all -> 0x00f2 }
                 r2 = com.duokan.kernel.DkUtils.decodeSimpleDrm(r2);	 Catch:{ all -> 0x00f2 }
                 r3 = new java.lang.String;	 Catch:{ all -> 0x00f2 }
@@ -353,8 +353,8 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                 r2.<init>(r3);	 Catch:{ all -> 0x00f2 }
                 if (r2 != 0) goto L_0x0055;
             L_0x004a:
-                com.duokan.core.io.C0339d.m795a(r13);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
-                com.duokan.core.io.C0339d.m795a(r14);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
+                com.duokan.core.io.C0339d.close(r13);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
+                com.duokan.core.io.C0339d.close(r14);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
                 r18.bs();
                 r2 = r12;
                 goto L_0x000e;
@@ -415,14 +415,14 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                 r0 = r19;
                 r2 = r2.get(r0);	 Catch:{ all -> 0x00f2 }
                 r2 = (java.util.List) r2;	 Catch:{ all -> 0x00f2 }
-                com.duokan.core.io.C0339d.m795a(r13);	 Catch:{ Throwable -> 0x0106, all -> 0x0101 }
-                com.duokan.core.io.C0339d.m795a(r14);	 Catch:{ Throwable -> 0x0106, all -> 0x0101 }
+                com.duokan.core.io.C0339d.close(r13);	 Catch:{ Throwable -> 0x0106, all -> 0x0101 }
+                com.duokan.core.io.C0339d.close(r14);	 Catch:{ Throwable -> 0x0106, all -> 0x0101 }
                 r18.bs();
                 goto L_0x000e;
             L_0x00f2:
                 r2 = move-exception;
-                com.duokan.core.io.C0339d.m795a(r13);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
-                com.duokan.core.io.C0339d.m795a(r14);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
+                com.duokan.core.io.C0339d.close(r13);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
+                com.duokan.core.io.C0339d.close(r14);	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
                 throw r2;	 Catch:{ Throwable -> 0x00fa, all -> 0x0101 }
             L_0x00fa:
                 r2 = move-exception;

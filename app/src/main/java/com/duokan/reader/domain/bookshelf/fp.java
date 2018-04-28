@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.diagnostic.C0328a;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.io.C0336a;
+import com.duokan.core.io.FileUtil;
 import com.duokan.core.p027b.p028a.C0320a;
 import com.duokan.core.p027b.p028a.C0321b;
 import com.duokan.core.sys.C0352r;
@@ -189,7 +189,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
             /* renamed from: b */
             public final void mo1034b(List<String> list) {
                 for (String y : list) {
-                    C0336a.m793f(m4500y(y));
+                    FileUtil.m793f(m4500y(y));
                 }
                 bs();
             }

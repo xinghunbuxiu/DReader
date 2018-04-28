@@ -2,7 +2,7 @@ package com.duokan.reader.ui.bookshelf;
 
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
-import com.duokan.core.io.C0336a;
+import com.duokan.core.io.FileUtil;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.ui.bookshelf.ImportedFileInfo.FileStatus;
 import com.duokan.reader.ui.surfing.al;
@@ -36,7 +36,7 @@ public class fy extends ActivatedController {
     private void m9646a() {
         FileScanTask fileScanTask = new FileScanTask();
         this.f6476d.clear();
-        fileScanTask.m9080a(getContext(), new ga(this), (File[]) C0336a.m774a(getContext()).toArray(new File[0]));
+        fileScanTask.m9080a(getContext(), new ga(this), (File[]) FileUtil.m774a(getContext()).toArray(new File[0]));
         fileScanTask.execute(new String[0]);
     }
 

@@ -32,7 +32,7 @@ import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.BaseActivity;
 import com.duokan.core.diagnostic.C0328a;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.io.C0336a;
+import com.duokan.core.io.FileUtil;
 import com.duokan.core.p027b.C0324a;
 import com.duokan.core.sys.UIdleHandler;
 import com.duokan.core.sys.IdleHandlerListener;
@@ -1504,7 +1504,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                         public void run() {
                             try {
                                 File file = new File(ReaderEnv.get().getLocalBookDirectory(), data.getLastPathSegment());
-                                C0336a.m778a(this.f1529d.getContext().getContentResolver().openInputStream(data), file);
+                                FileUtil.m778a(this.f1529d.getContext().getContentResolver().openInputStream(data), file);
                                 final C0800c a = ai.m3980a().m3876a(file);
                                 UThread.runOnThread(new Runnable(this) {
                                     /* renamed from: b */

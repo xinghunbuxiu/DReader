@@ -18,6 +18,6 @@ class pv implements Runnable {
         this.f10836a.f10835b.f10833j.f10798b.dismiss();
         this.f10836a.f10835b.f10833j.f10798b = null;
         this.f10836a.f10835b.f10833j.f10799c = false;
-        dv.f1204m.m816a(true);
+        dv.cathe.m816a(true);
     }
 }

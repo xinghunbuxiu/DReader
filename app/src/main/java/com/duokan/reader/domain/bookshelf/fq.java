@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.io.C0336a;
+import com.duokan.core.io.FileUtil;
 import com.duokan.core.sys.af;
 import java.io.File;
 import java.io.FileFilter;
@@ -20,7 +20,7 @@ class fq implements Runnable {
     public void run() {
         if (this.f3194b.f3186L == this.f3193a) {
             Object concurrentHashMap = new ConcurrentHashMap();
-            for (File name : C0336a.m776a(this.f3194b.m4219d(), new FileFilter[0])) {
+            for (File name : FileUtil.m776a(this.f3194b.m4219d(), new FileFilter[0])) {
                 String name2 = name.getName();
                 concurrentHashMap.put(name2, name2);
             }

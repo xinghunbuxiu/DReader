@@ -15,7 +15,7 @@ import com.duokan.core.app.ManagedApp;
 import com.duokan.core.diagnostic.C0327f;
 import com.duokan.core.diagnostic.C0328a;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.io.C0336a;
+import com.duokan.core.io.FileUtil;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ah;
 import com.duokan.reader.common.p037c.C0554a;
@@ -131,7 +131,7 @@ public abstract class DkApp extends ManagedApp {
                 C1163a.m8627k().m8658e();
                 UThread.runOnThread(new C04151(this));
                 final long currentTimeMillis = System.currentTimeMillis() - TimeUnit.DAYS.toMillis(30);
-                for (File f : C0336a.m776a(this.f1371a.getDiagnosticDirectory(), new FileFilter(this) {
+                for (File f : FileUtil.m776a(this.f1371a.getDiagnosticDirectory(), new FileFilter(this) {
                     /* renamed from: b */
                     final /* synthetic */ C04175 f1370b;
 
@@ -139,7 +139,7 @@ public abstract class DkApp extends ManagedApp {
                         return file.lastModified() < currentTimeMillis;
                     }
                 })) {
-                    C0336a.m793f(f);
+                    FileUtil.m793f(f);
                 }
             } catch (Throwable th) {
                 C0328a.m757c().m748a(LogLevel.ERROR, "app", "an exception occurs during background init", th);

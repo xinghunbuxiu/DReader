@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ab;
-import com.duokan.core.io.C0336a;
+import com.duokan.core.io.FileUtil;
 import com.duokan.core.ui.LinearScrollView;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0255g;
@@ -77,7 +77,7 @@ public class jg extends nm implements ab, C0610h, C0586j {
         findViewById(C0255g.personal__personal_settings_view__subscription).setOnClickListener(new jn(this));
         findViewById(C0255g.personal__personal_settings_view__auto_buy).setOnClickListener(new jo(this));
         DkLabelView dkLabelView = (DkLabelView) findViewById(C0255g.personal__personal_settings_view__storage);
-        if (((File[]) C0336a.m782b(getContext()).toArray(new File[0])).length <= 1) {
+        if (((File[]) FileUtil.m782b(getContext()).toArray(new File[0])).length <= 1) {
             dkLabelView.setTextColor(getResources().getColor(C0252d.general__shared__888888));
             dkLabelView.setEnabled(false);
         }
