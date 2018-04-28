@@ -1,21 +1,19 @@
 package com.duokan.reader.domain.cloud.push;
 
 class ad implements Runnable {
-    final /* synthetic */ String a;
-    final /* synthetic */ String b;
-    final /* synthetic */ boolean c;
-    final /* synthetic */ z d;
+    /* renamed from: a */
+    final /* synthetic */ DkCloudPushMessage f4098a;
+    /* renamed from: b */
+    final /* synthetic */ C0880y f4099b;
 
-    ad(z zVar, String str, String str2, boolean z) {
-        this.d = zVar;
-        this.a = str;
-        this.b = str2;
-        this.c = z;
+    ad(C0880y c0880y, DkCloudPushMessage dkCloudPushMessage) {
+        this.f4099b = c0880y;
+        this.f4098a = dkCloudPushMessage;
     }
 
     public void run() {
-        if (this.d.j != null) {
-            this.d.j.a(this.a, this.b, this.c);
+        if (this.f4099b.f4169j != null) {
+            this.f4099b.f4169j.mo1176a(this.f4098a);
         }
     }
 }

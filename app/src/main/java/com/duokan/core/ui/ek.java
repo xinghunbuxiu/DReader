@@ -1,26 +1,29 @@
 package com.duokan.core.ui;
 
 import android.graphics.Point;
+import com.duokan.core.sys.BaseAnimation;
 
-import com.duokan.core.sys.ap;
-
-final class ek extends ap {
+final class ek extends BaseAnimation<Point> {
     ek() {
     }
 
-    protected Object b() {
-        return c();
+    /* renamed from: b */
+    protected /* synthetic */ Object createAnimation() {
+        return m2008c();
     }
 
-    protected void b(Object obj) {
-        a((Point) obj);
+    /* renamed from: b */
+    protected /* synthetic */ void mo516b(Object obj) {
+        m2005a((Point) obj);
     }
 
-    protected Point c() {
+    /* renamed from: c */
+    protected Point m2008c() {
         return new Point();
     }
 
-    protected void a(Point point) {
+    /* renamed from: a */
+    protected void m2005a(Point point) {
         point.y = 0;
         point.x = 0;
     }

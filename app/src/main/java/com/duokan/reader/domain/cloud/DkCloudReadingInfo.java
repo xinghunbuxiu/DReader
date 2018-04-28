@@ -1,17 +1,14 @@
 package com.duokan.reader.domain.cloud;
 
 import android.text.TextUtils;
-
-import com.duokan.reader.common.e.a;
-import com.duokan.reader.common.webservices.duokan.y;
-
-import org.json.JSONObject;
-import org.w3c.dom.Node;
-
+import com.duokan.reader.common.p039e.C0606a;
+import com.duokan.reader.common.webservices.duokan.C0650x;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
+import org.json.JSONObject;
+import org.w3c.dom.Node;
 
 public class DkCloudReadingInfo extends DkCloudItemGroup {
     static final /* synthetic */ boolean $assertionsDisabled = (!DkCloudReadingInfo.class.desiredAssertionStatus() ? true : $assertionsDisabled);
@@ -27,7 +24,7 @@ public class DkCloudReadingInfo extends DkCloudItemGroup {
 
     public DkCloudReadingInfo(String str, String str2, boolean z, long j, String str3, String str4, String str5, DkCloudReadingProgress dkCloudReadingProgress, DkCloudAnnotation[] dkCloudAnnotationArr) {
         super(j);
-        this.mInfoId = new y(str).a();
+        this.mInfoId = new C0650x(str).m3046a();
         this.mBookName = str2;
         this.mDeviceId = str3;
         this.mBookRevision = str4;
@@ -40,13 +37,13 @@ public class DkCloudReadingInfo extends DkCloudItemGroup {
     public DkCloudReadingInfo(boolean z, String str, Node node, long j) {
         DkCloudReadingProgress dkCloudReadingProgress = null;
         super(node, j);
-        this.mInfoId = a.c(node, "BookID");
-        this.mDeviceId = a.c(node, "DeviceID");
-        this.mBookRevision = a.c(node, "BookRevision");
-        this.mKernelVersion = a.c(node, "KernelVersion");
+        this.mInfoId = C0606a.m2780c(node, "BookID");
+        this.mDeviceId = C0606a.m2780c(node, "DeviceID");
+        this.mBookRevision = C0606a.m2780c(node, "BookRevision");
+        this.mKernelVersion = C0606a.m2780c(node, "KernelVersion");
         this.mBookName = str;
         this.mIsDuokanBook = z;
-        Node f = a.f(node, "ReadingData");
+        Node f = C0606a.m2783f(node, "ReadingData");
         if (f == null) {
             this.mReadingProgress = null;
             this.mAnnotations = new DkCloudAnnotation[0];
@@ -56,7 +53,7 @@ public class DkCloudReadingInfo extends DkCloudItemGroup {
         Node firstChild = f.getFirstChild();
         while (firstChild != null) {
             DkCloudReadingProgress dkCloudReadingProgress2;
-            String c = a.c(firstChild, "Type");
+            String c = C0606a.m2780c(firstChild, "Type");
             if (TextUtils.isEmpty(c)) {
                 dkCloudReadingProgress2 = dkCloudReadingProgress;
             } else if (c.equals("BOOKMARK")) {
@@ -127,27 +124,27 @@ public class DkCloudReadingInfo extends DkCloudItemGroup {
     }
 
     protected void fillXmlNodeWithReadingProgress(Node node) {
-        a.b(node, "Version", READNIG_INFO_VERSION);
-        a.b(node, "BookID", this.mInfoId);
-        a.b(node, "DeviceID", this.mDeviceId);
-        a.b(node, "BookRevision", this.mBookRevision);
-        a.b(node, "KernelVersion", this.mKernelVersion);
-        Node d = a.d(node, "ReadingData");
+        C0606a.m2779b(node, "Version", READNIG_INFO_VERSION);
+        C0606a.m2779b(node, "BookID", this.mInfoId);
+        C0606a.m2779b(node, "DeviceID", this.mDeviceId);
+        C0606a.m2779b(node, "BookRevision", this.mBookRevision);
+        C0606a.m2779b(node, "KernelVersion", this.mKernelVersion);
+        Node d = C0606a.m2781d(node, "ReadingData");
         if (this.mReadingProgress != null) {
-            this.mReadingProgress.fillXmlNode(a.d(d, "ReadingDataItem"));
+            this.mReadingProgress.fillXmlNode(C0606a.m2781d(d, "ReadingDataItem"));
         }
     }
 
     protected void fillXmlNodeWithAnnotations(Node node) {
-        a.b(node, "Version", READNIG_INFO_VERSION);
-        a.b(node, "BookID", this.mInfoId);
-        a.b(node, "DeviceID", this.mDeviceId);
-        a.b(node, "BookRevision", this.mBookRevision);
-        a.b(node, "KernelVersion", this.mKernelVersion);
-        Node d = a.d(node, "ReadingData");
+        C0606a.m2779b(node, "Version", READNIG_INFO_VERSION);
+        C0606a.m2779b(node, "BookID", this.mInfoId);
+        C0606a.m2779b(node, "DeviceID", this.mDeviceId);
+        C0606a.m2779b(node, "BookRevision", this.mBookRevision);
+        C0606a.m2779b(node, "KernelVersion", this.mKernelVersion);
+        Node d = C0606a.m2781d(node, "ReadingData");
         if (this.mAnnotations != null) {
             for (DkCloudAnnotation fillXmlNode : this.mAnnotations) {
-                fillXmlNode.fillXmlNode(a.d(d, "ReadingDataItem"));
+                fillXmlNode.fillXmlNode(C0606a.m2781d(d, "ReadingDataItem"));
             }
         }
     }
@@ -205,18 +202,18 @@ public class DkCloudReadingInfo extends DkCloudItemGroup {
     }
 
     protected void fillXmlNode(Node node) {
-        a.b(node, "Version", READNIG_INFO_VERSION);
-        a.b(node, "BookID", this.mInfoId);
-        a.b(node, "DeviceID", this.mDeviceId);
-        a.b(node, "BookRevision", this.mBookRevision);
-        a.b(node, "KernelVersion", this.mKernelVersion);
-        Node d = a.d(node, "ReadingData");
+        C0606a.m2779b(node, "Version", READNIG_INFO_VERSION);
+        C0606a.m2779b(node, "BookID", this.mInfoId);
+        C0606a.m2779b(node, "DeviceID", this.mDeviceId);
+        C0606a.m2779b(node, "BookRevision", this.mBookRevision);
+        C0606a.m2779b(node, "KernelVersion", this.mKernelVersion);
+        Node d = C0606a.m2781d(node, "ReadingData");
         if (this.mReadingProgress != null) {
-            this.mReadingProgress.fillXmlNode(a.d(d, "ReadingDataItem"));
+            this.mReadingProgress.fillXmlNode(C0606a.m2781d(d, "ReadingDataItem"));
         }
         if (this.mAnnotations != null) {
             for (DkCloudAnnotation fillXmlNode : this.mAnnotations) {
-                fillXmlNode.fillXmlNode(a.d(d, "ReadingDataItem"));
+                fillXmlNode.fillXmlNode(C0606a.m2781d(d, "ReadingDataItem"));
             }
         }
     }

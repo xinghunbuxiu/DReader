@@ -1,50 +1,33 @@
 package com.duokan.reader.ui.personal;
 
-import android.text.TextUtils;
+import com.duokan.reader.domain.cloud.DkCloudPurchasedBook;
+import com.duokan.reader.domain.store.DkStoreBookDetail;
+import com.duokan.reader.domain.store.DkStoreItem;
+import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
+import com.duokan.reader.ui.general.cm;
+import com.duokan.reader.ui.store.C1502o;
 
-import com.duokan.core.ui.j;
-import com.duokan.reader.common.async.a.a;
-import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
-import com.duokan.reader.ui.general.be;
+class kj implements cm {
+    /* renamed from: a */
+    final /* synthetic */ DkStoreItem f8812a;
+    /* renamed from: b */
+    final /* synthetic */ ki f8813b;
 
-import java.util.LinkedList;
-import java.util.List;
-
-class kj implements a {
-    final /* synthetic */ LinkedList a;
-    final /* synthetic */ j b;
-    final /* synthetic */ List c;
-    final /* synthetic */ Runnable d;
-    final /* synthetic */ kg e;
-
-    kj(kg kgVar, LinkedList linkedList, j jVar, List list, Runnable runnable) {
-        this.e = kgVar;
-        this.a = linkedList;
-        this.b = jVar;
-        this.c = list;
-        this.d = runnable;
+    kj(ki kiVar, DkStoreItem dkStoreItem) {
+        this.f8813b = kiVar;
+        this.f8812a = dkStoreItem;
     }
 
-    public void a(Void voidR) {
-        if (this.a.size() > 0) {
-            DkUserPurchasedFictionsManager.a().a(new kk(this), (String[]) this.a.toArray(new String[0]));
+    public void onChoice(boolean z, FlowChargingTransferChoice flowChargingTransferChoice) {
+        if (z) {
+            DkCloudPurchasedBook dkCloudPurchasedBook = (DkCloudPurchasedBook) this.f8813b.f8810a;
+            C1502o.m15410a().m15431a(dkCloudPurchasedBook.getBookUuid(), (DkStoreBookDetail) this.f8812a, new kk(this, dkCloudPurchasedBook), flowChargingTransferChoice);
             return;
         }
-        this.b.dismiss();
-        be.a(this.e.getContext(), String.format(this.e.getString(com.duokan.c.j.bookshelf__shared__delete_files_num), new Object[]{Integer.valueOf(this.c.size())}), 1).show();
-        if (this.d != null) {
-            this.d.run();
-        }
-        this.e.c.a(this.c);
-    }
-
-    public void a(int i, String str) {
-        this.b.dismiss();
-        if (!TextUtils.isEmpty(str)) {
-            be.a(this.e.getContext(), (CharSequence) str, 1).show();
-        }
-        if (this.d != null) {
-            this.d.run();
+        C1502o.m15410a().m15436c(this.f8813b.f8810a.getBookUuid());
+        if (this.f8813b.f8811b.f8227e == this.f8813b.f8810a) {
+            this.f8813b.f8811b.f8226d.setEnabled(true);
+            this.f8813b.f8811b.m11363b();
         }
     }
 }

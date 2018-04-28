@@ -1,20 +1,39 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.ui.Scrollable;
-import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.OnScrollListener;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import com.duokan.core.ui.dv;
 
-class fp implements OnScrollListener {
-    final /* synthetic */ fh a;
+class fp extends Drawable {
+    /* renamed from: a */
+    final /* synthetic */ fo f6463a;
 
-    fp(fh fhVar) {
-        this.a = fhVar;
+    fp(fo foVar) {
+        this.f6463a = foVar;
     }
 
-    public void a(Scrollable scrollable, ScrollState scrollState, ScrollState scrollState2) {
+    public void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        Paint paint = (Paint) dv.f1193b.addAnimation();
+        paint.setColor(fo.f6456e);
+        paint.setStrokeWidth((float) dv.m1932b(this.f6463a.getContext(), 2.0f));
+        canvas.drawLine(((float) (bounds.width() - dv.m1932b(this.f6463a.getContext(), 100.0f))) / 2.0f, ((float) (bounds.bottom - 1)) - (((float) dv.m1932b(this.f6463a.getContext(), 2.0f)) / 2.0f), ((float) (bounds.width() + dv.m1932b(this.f6463a.getContext(), 100.0f))) / 2.0f, ((float) (bounds.bottom - 1)) - (((float) dv.m1932b(this.f6463a.getContext(), 2.0f)) / 2.0f), paint);
+        paint.setColor(fo.f6457f);
+        paint.setStrokeWidth(2.0f);
+        canvas.drawLine(0.0f, ((float) (bounds.bottom - 1)) - 1.0f, (float) bounds.right, ((float) (bounds.bottom - 1)) - 1.0f, paint);
+        dv.f1193b.clearAnimation(paint);
     }
 
-    public void a(Scrollable scrollable, boolean z) {
-        this.a.c.invalidate();
+    public void setAlpha(int i) {
+    }
+
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
+
+    public int getOpacity() {
+        return 0;
     }
 }

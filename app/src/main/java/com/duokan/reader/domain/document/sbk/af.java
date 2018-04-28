@@ -1,7 +1,9 @@
 package com.duokan.reader.domain.document.sbk;
 
 public interface af {
-    void a(ag agVar);
+    /* renamed from: a */
+    void mo1457a(ag agVar);
 
-    void b(ag agVar);
+    /* renamed from: b */
+    void mo1458b(ag agVar);
 }

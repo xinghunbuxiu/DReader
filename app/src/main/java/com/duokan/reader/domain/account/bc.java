@@ -1,19 +1,10 @@
 package com.duokan.reader.domain.account;
 
-import com.duokan.reader.common.webservices.WebSession;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.C0659k;
+import com.duokan.reader.common.webservices.WebSession.CacheStrategy;
 
-abstract class bc extends WebSession {
-    private static final String a = bc.class.getName();
-
-    public bc() {
-        super(a);
-    }
-
-    public void open() {
-        open(CacheStrategy.DISABLE_CACHE);
-    }
-
-    public void open(long j) {
-        open(CacheStrategy.DISABLE_CACHE, j);
-    }
+public class bc {
+    /* renamed from: a */
+    public static final C0657i f2400a = new C0659k().m3095a(CacheStrategy.DISABLE_CACHE).m3098b(CacheStrategy.DISABLE_CACHE).m3096a(bc.class.getName()).m3094a();
 }

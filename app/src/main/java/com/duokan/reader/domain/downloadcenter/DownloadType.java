@@ -4,5 +4,6 @@ public enum DownloadType {
     BOOK,
     FONT,
     PLUGIN,
-    DICT
+    DICT,
+    TTS_PACK
 }

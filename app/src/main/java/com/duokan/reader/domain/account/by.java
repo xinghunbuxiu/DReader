@@ -1,27 +1,20 @@
 package com.duokan.reader.domain.account;
 
-class by implements b {
-    final /* synthetic */ b a;
-    final /* synthetic */ PersonalAccount b;
+class by extends C0705g {
+    /* renamed from: a */
+    final /* synthetic */ PersonalAccount f2453a;
 
-    by(PersonalAccount personalAccount, b bVar) {
-        this.b = personalAccount;
-        this.a = bVar;
+    by(PersonalAccount personalAccount) {
+        this.f2453a = personalAccount;
     }
 
-    public void a(a aVar) {
-        if (this.a != null) {
-            this.a.a(aVar);
-        }
-        this.b.k = false;
+    /* renamed from: a */
+    public String mo871a() {
+        return "";
     }
 
-    public void a(a aVar, String str) {
-        this.b.g.u();
-        this.b.o();
-        if (this.a != null) {
-            this.a.a(aVar, str);
-        }
-        this.b.k = false;
+    /* renamed from: b */
+    public String mo872b() {
+        return "";
     }
 }

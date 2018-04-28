@@ -1,30 +1,32 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.os.AsyncTask;
-import android.os.AsyncTask.Status;
+import android.text.TextUtils;
+import com.duokan.p024c.C0251c;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.domain.bookshelf.ai;
+import com.duokan.reader.ui.general.be;
+import com.duokan.reader.ui.general.iq;
+import java.util.Arrays;
 
-import com.duokan.reader.ui.general.ak;
-import com.duokan.reader.ui.general.an;
+class en implements iq {
+    /* renamed from: a */
+    final /* synthetic */ em f6397a;
 
-class en implements an {
-    final /* synthetic */ AsyncTask a;
-    final /* synthetic */ ak b;
-    final /* synthetic */ el c;
-
-    en(el elVar, AsyncTask asyncTask, ak akVar) {
-        this.c = elVar;
-        this.a = asyncTask;
-        this.b = akVar;
+    en(em emVar) {
+        this.f6397a = emVar;
     }
 
-    public void a(int i) {
-        if (this.c.b.a != null) {
-            this.c.b.a.a();
-        }
-        if (this.a.getStatus() == Status.FINISHED) {
-            this.b.dismiss();
+    /* renamed from: a */
+    public boolean mo1688a(String str) {
+        if (TextUtils.isEmpty(str)) {
+            be.m10286a(this.f6397a.f6396a.getContext(), C0258j.bookshelf__category_selection_view__enter_name, 0).show();
+            return false;
+        } else if (ai.m3980a().m3929g(str) != null || Arrays.asList(this.f6397a.f6396a.getResources().getStringArray(C0251c.bookshelf__general_shared__main_categories)).contains(str)) {
+            be.m10287a(this.f6397a.f6396a.getContext(), this.f6397a.f6396a.getResources().getString(C0258j.bookshelf__category_rename_view__name_exists), 0).show();
+            return false;
         } else {
-            this.a.cancel(false);
+            this.f6397a.f6396a.f6387a.mo1633a(ai.m3980a().m3932h(str));
+            return true;
         }
     }
 }

@@ -1,39 +1,20 @@
 package com.duokan.reader.domain.bookshelf;
 
-import android.text.TextUtils;
+class ao implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ an f2769a;
 
-import com.duokan.core.sys.af;
-
-public class ao extends af {
-    private Object a;
-
-    protected ao() {
+    ao(an anVar) {
+        this.f2769a = anVar;
     }
 
-    public void a(Object obj) {
-        super.a(obj);
-        this.a = null;
-    }
-
-    public boolean d() {
-        boolean z = true;
-        if (!(this.a instanceof String)) {
-            if (this.a == null) {
-                z = false;
-            }
-            return z;
-        } else if (TextUtils.isEmpty((String) this.a)) {
-            return false;
-        } else {
-            return true;
+    public void run() {
+        try {
+            this.f2769a.f2688D.mo1091a(this.f2769a.aH());
+            this.f2769a.aO();
+        } catch (Throwable th) {
+            this.f2769a.f2688D.mo1097b(this.f2769a.aH());
         }
-    }
-
-    public Object e() {
-        return this.a;
-    }
-
-    public void c(Object obj) {
-        this.a = obj;
+        this.f2769a.f2688D.mo1097b(this.f2769a.aH());
     }
 }

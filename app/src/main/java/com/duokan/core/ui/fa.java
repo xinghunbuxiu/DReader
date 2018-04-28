@@ -1,17 +1,19 @@
 package com.duokan.core.ui;
 
 class fa implements Runnable {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ ev b;
+    /* renamed from: a */
+    final /* synthetic */ Runnable f1238a;
+    /* renamed from: b */
+    final /* synthetic */ ev f1239b;
 
     fa(ev evVar, Runnable runnable) {
-        this.b = evVar;
-        this.a = runnable;
+        this.f1239b = evVar;
+        this.f1238a = runnable;
     }
 
     public void run() {
-        if (this.a != null) {
-            this.b.a.post(this.a);
+        if (this.f1238a != null) {
+            this.f1239b.f935a.post(this.f1238a);
         }
     }
 }

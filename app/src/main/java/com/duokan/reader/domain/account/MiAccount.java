@@ -1,419 +1,361 @@
 package com.duokan.reader.domain.account;
 
 import android.accounts.Account;
-import android.accounts.AccountManagerCallback;
-import android.accounts.AccountManagerFuture;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.IntentFilter;
-import android.os.Bundle;
 import android.text.TextUtils;
-
+import com.duokan.core.diagnostic.C0328a;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.WebLog;
-import com.duokan.core.sys.TaskHandler;
 import com.duokan.reader.DkApp;
-import com.duokan.reader.common.b.a;
-import com.duokan.reader.common.b.e;
-import com.duokan.reader.domain.social.b.b;
+import com.duokan.reader.common.p036b.C0538a;
+import com.duokan.reader.common.p036b.C0542e;
+import com.duokan.reader.domain.social.p048b.C1135b;
 import com.xiaomi.accountsdk.account.data.ExtendedAuthToken;
 import com.xiaomi.micloudsdk.request.Request.RequestEnv;
-
+import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Map;
-
-import miuipub.date.Calendar;
-
 public class MiAccount extends UserAccount {
-    private static bf e = null;
-    private String f = "";
-    private String g = "";
-    private bh h = new bh("");
-    private final RequestEnv i = new an(this);
-    private cf j = null;
-    private final BroadcastReceiver k = new ac(this);
+    /* renamed from: e */
+    private String f2252e;
+    /* renamed from: f */
+    private String f2253f;
+    /* renamed from: g */
+    private bd f2254g;
+    /* renamed from: h */
+    private final RequestEnv f2255h;
+    /* renamed from: i */
+    private cm<bd> f2256i;
+    /* renamed from: j */
+    private final BroadcastReceiver f2257j;
 
-    public /* synthetic */ g f() {
-        return o();
+    /* renamed from: f */
+    public /* synthetic */ C0705g mo836f() {
+        return mo848r();
     }
 
-    public MiAccount(e eVar) {
-        super(eVar);
+    private MiAccount(C0706e c0706e) {
+        super(c0706e);
+        this.f2252e = "";
+        this.f2253f = "";
+        this.f2254g = new bd("");
+        this.f2256i = null;
+        this.f2257j = new ar(this);
+        this.f2255h = new as(this);
     }
 
-    private void x() {
+    /* renamed from: w */
+    private void m3190w() {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("android.accounts.LOGIN_ACCOUNTS_CHANGED");
         intentFilter.addAction("android.intent.action.DEVICE_STORAGE_OK");
-        DkApp.get().getApplicationContext().registerReceiver(this.k, intentFilter);
+        DkApp.get().getApplicationContext().registerReceiver(this.f2257j, intentFilter);
     }
 
-    private void y() {
+    /* renamed from: x */
+    private void m3191x() {
         try {
-            DkApp.get().getApplicationContext().unregisterReceiver(this.k);
+            DkApp.get().getApplicationContext().unregisterReceiver(this.f2257j);
         } catch (Exception e) {
         }
     }
 
-    private void z() {
-        if (!i()) {
-            e.b(DkApp.get().getApplicationContext());
+    /* renamed from: y */
+    private void m3192y() {
+        if (!mo839i()) {
+            C0542e.m2413b(DkApp.get().getApplicationContext());
         }
     }
 
-    public boolean n() {
-        Account b = b(DkApp.get().getApplicationContext());
-        if (b == null || TextUtils.isEmpty(this.f)) {
+    /* renamed from: n */
+    public boolean mo843n() {
+        Account c = m3187c(DkApp.get().getApplicationContext());
+        if (c == null || TextUtils.isEmpty(this.f2252e)) {
             return false;
         }
-        return this.f.equals(b.name);
+        return this.f2252e.equals(c.name);
     }
 
-    public static boolean a(Context context) {
-        return b(context) != null;
+    /* renamed from: a */
+    public static boolean m3184a(Context context) {
+        return C0538a.m2388a(context).m2399a();
     }
 
-    public static Account b(Context context) {
-        return a.a(context).j();
+    /* renamed from: b */
+    public static boolean m3186b(Context context) {
+        return m3187c(context) != null;
     }
 
-    public static void a(bf bfVar) {
-        e = bfVar;
+    /* renamed from: c */
+    public static Account m3187c(Context context) {
+        return C0538a.m2388a(context).m2410j();
     }
 
-    public String b() {
-        return this.f;
+    /* renamed from: b */
+    public String mo832b() {
+        return this.f2252e;
     }
 
-    public String c() {
-        return this.f;
+    /* renamed from: c */
+    public String mo833c() {
+        return this.f2252e;
     }
 
-    public String d() {
-        return this.g;
+    /* renamed from: d */
+    public String mo834d() {
+        return this.f2253f;
     }
 
-    public AccountType e() {
+    /* renamed from: e */
+    public AccountType mo835e() {
         return AccountType.XIAO_MI;
     }
 
-    public bh o() {
-        return this.h;
+    /* renamed from: r */
+    public bd mo848r() {
+        return this.f2254g;
     }
 
-    public synchronized Map g() {
-        return UserAccount.a(null, this.g);
+    /* renamed from: g */
+    public synchronized Map<String, String> mo837g() {
+        return UserAccount.m3175a(null, this.f2253f);
     }
 
-    public Map h() {
-        return UserAccount.a(this.f, this.g);
+    /* renamed from: h */
+    public Map<String, String> mo838h() {
+        return UserAccount.m3175a(this.f2252e, this.f2253f);
     }
 
-    public void d(String str) {
-        this.h.e.a.mIconUrl = str;
-        l();
-        this.a.c(this);
+    /* renamed from: d */
+    public void m3202d(String str) {
+        this.f2254g.f2405e.f5458a.mIconUrl = str;
+        m3155l();
+        this.a.mo881c(this);
     }
 
-    public void e(String str) {
+    /* renamed from: e */
+    public void m3204e(String str) {
         if (!str.startsWith("file://")) {
             str = "file://" + str;
         }
-        d(str);
+        m3202d(str);
     }
 
-    public void f(String str) {
-        this.h.e.a.mNickName = str;
-        l();
-        this.a.c(this);
+    /* renamed from: f */
+    public void m3206f(String str) {
+        this.f2254g.f2405e.f5458a.mNickName = str;
+        m3155l();
+        this.a.mo881c(this);
     }
 
-    public synchronized void a(b bVar) {
-        a a = e.a(DkApp.get(), true);
-        if (i()) {
-            a.a(new at(this, bVar));
-        } else {
-            WebLog.c().a(LogLevel.EVENT, "miaccount", "relogin(name: %s, invalid token prefix: %s)", this.f, this.g.substring(0, this.g.length() / 4));
-            e.b((a) this, bVar);
-        }
+    /* renamed from: a */
+    public void mo830a(C0699c c0699c) {
+        C0328a.m757c().m752c(LogLevel.EVENT, "miaccount", "log off");
+        this.f2253f = "";
+        this.f2254g = new bd(this.f2252e);
+        m3155l();
+        C0538a.m2388a(DkApp.get()).m2396a(this.f2252e, new at(this, c0699c));
     }
 
-    public synchronized void b(b bVar) {
-        a a = e.a(DkApp.get(), true);
-        if (i()) {
-            a.a(new av(this, a, bVar));
-        } else {
-            WebLog.c().a(LogLevel.EVENT, "miaccount", "relogin(name: %s, invalid token prefix: %s)", this.f, this.g.substring(0, this.g.length() / 4));
-            e.b((a) this, bVar);
-        }
-    }
-
-    protected synchronized void c(b bVar) {
-        a a = e.a(DkApp.get(), true);
-        if (i()) {
-            a.a(new aw(this, bVar));
-        } else {
-            WebLog.c().a(LogLevel.EVENT, "miaccount", "relogin(name: %s, invalid token prefix: %s)", this.f, this.g.substring(0, this.g.length() / 4));
-            e.b((a) this, bVar);
-        }
-    }
-
-    protected synchronized void d(b bVar) {
-        a a = e.a(DkApp.get(), true);
-        if (i()) {
-            a.a(new ax(this, bVar));
-        } else {
-            WebLog.c().a(LogLevel.EVENT, "miaccount", "relogin(name: %s, invalid token prefix: %s)", this.f, this.g.substring(0, this.g.length() / 4));
-            e.b((a) this, bVar);
-        }
-    }
-
-    public void a(c cVar) {
-        WebLog.c().c(LogLevel.EVENT, "miaccount", "log off");
-        this.g = "";
-        this.h = new bh(this.f);
-        l();
-        a.a(DkApp.get()).a(this.f, new ay(this, cVar));
-    }
-
-    public void a(Activity activity, d dVar) {
-        a a = e.a(DkApp.get().getApplicationContext());
-        Account i = a.i();
+    /* renamed from: a */
+    public void mo829a(Activity activity, C0700d c0700d) {
+        C0538a a = C0542e.m2411a(DkApp.get().getApplicationContext());
+        Account i = a.m2409i();
         if (i != null) {
             if (activity != null) {
-                a.a(i, "passportapi", null, activity, new az(this, i, activity, dVar));
+                a.m2391a(i, "passportapi", null, activity, new au(this, i, activity, c0700d));
                 return;
             }
-            a(i, activity, null, dVar);
+            m3181a(i, activity, null, c0700d);
         }
     }
 
-    public boolean i() {
-        return TextUtils.isEmpty(c()) || TextUtils.isEmpty(d());
+    /* renamed from: i */
+    public boolean mo839i() {
+        return TextUtils.isEmpty(mo833c()) || TextUtils.isEmpty(mo834d());
     }
 
-    private void a(Account account, Activity activity, String str, d dVar) {
-        new ba(this, str, e.a(DkApp.get().getApplicationContext()), account, dVar, activity).open();
+    /* renamed from: a */
+    private void m3181a(Account account, Activity activity, String str, C0700d c0700d) {
+        new av(this, bc.f2400a, str, C0542e.m2411a(DkApp.get().getApplicationContext()), account, c0700d, activity).open();
     }
 
-    protected void a(String str, String str2, String str3) {
+    /* renamed from: a */
+    protected void mo831a(String str, String str2, String str3) {
         JSONObject jSONObject;
         JSONException e;
-        a a;
-        this.f = str;
+        C0538a a;
+        this.f2252e = str;
         if (TextUtils.isEmpty(str3)) {
-            this.g = "";
+            this.f2253f = "";
             jSONObject = null;
         } else {
             try {
                 jSONObject = new JSONObject(str3);
                 try {
-                    this.g = jSONObject.optString("login_token");
+                    this.f2253f = jSONObject.optString("login_token");
                 } catch (JSONException e2) {
                     e = e2;
                     e.printStackTrace();
-                    a = e.a(DkApp.get(), true);
-                    if (i()) {
-                        this.h = new bh(this.f);
-                        a.a(new ad(this, a));
+                    a = C0542e.m2412a(DkApp.get(), true);
+                    if (mo839i()) {
+                        this.f2254g = new bd(this.f2252e);
+                        a.m2395a(new aw(this, a));
                         return;
                     }
                     try {
-                        this.h = bh.a(this.f, new JSONObject(str2), jSONObject);
+                        this.f2254g = bd.m3400a(this.f2252e, new JSONObject(str2), jSONObject);
                     } catch (Throwable th) {
-                        this.h = new bh(this.f);
+                        this.f2254g = new bd(this.f2252e);
                     }
-                    if (!i()) {
+                    if (!mo839i()) {
                     }
-                    a.f();
-                    a.a(new Account(this.f, "com.xiaomi"), ExtendedAuthToken.build(this.h.a, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789").toPlain(), null);
-                    if (i()) {
-                        x();
-                        z();
+                    a.m2406f();
+                    a.m2400a(new Account(this.f2252e, "com.xiaomi"), ExtendedAuthToken.build(this.f2254g.f2401a, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789").toPlain(), null);
+                    if (mo839i()) {
+                        m3190w();
+                        m3192y();
                     }
                 }
             } catch (JSONException e3) {
                 e = e3;
                 jSONObject = null;
                 e.printStackTrace();
-                a = e.a(DkApp.get(), true);
-                if (i()) {
-                    this.h = bh.a(this.f, new JSONObject(str2), jSONObject);
-                    if (i()) {
+                a = C0542e.m2412a(DkApp.get(), true);
+                if (mo839i()) {
+                    this.f2254g = bd.m3400a(this.f2252e, new JSONObject(str2), jSONObject);
+                    if (mo839i()) {
                     }
-                    a.f();
-                    a.a(new Account(this.f, "com.xiaomi"), ExtendedAuthToken.build(this.h.a, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789").toPlain(), null);
-                    if (i()) {
-                        x();
-                        z();
+                    a.m2406f();
+                    a.m2400a(new Account(this.f2252e, "com.xiaomi"), ExtendedAuthToken.build(this.f2254g.f2401a, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789").toPlain(), null);
+                    if (mo839i()) {
+                        m3190w();
+                        m3192y();
                     }
                 }
-                this.h = new bh(this.f);
-                a.a(new ad(this, a));
+                this.f2254g = new bd(this.f2252e);
+                a.m2395a(new aw(this, a));
                 return;
             }
         }
-        a = e.a(DkApp.get(), true);
-        if (i()) {
-            this.h = new bh(this.f);
-            a.a(new ad(this, a));
+        a = C0542e.m2412a(DkApp.get(), true);
+        if (mo839i()) {
+            this.f2254g = new bd(this.f2252e);
+            a.m2395a(new aw(this, a));
             return;
         }
-        this.h = bh.a(this.f, new JSONObject(str2), jSONObject);
-        if (i() || !TextUtils.isEmpty(o().a)) {
-            a.f();
-            if (a.a("com.xiaomi") == null || a.a("com.xiaomi").length == 0) {
-                a.a(new Account(this.f, "com.xiaomi"), ExtendedAuthToken.build(this.h.a, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789").toPlain(), null);
+        this.f2254g = bd.m3400a(this.f2252e, new JSONObject(str2), jSONObject);
+        if (mo839i() || !TextUtils.isEmpty(mo848r().f2401a)) {
+            a.m2406f();
+            if (a.m2401a("com.xiaomi") == null || a.m2401a("com.xiaomi").length == 0) {
+                a.m2400a(new Account(this.f2252e, "com.xiaomi"), ExtendedAuthToken.build(this.f2254g.f2401a, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789").toPlain(), null);
             }
         } else {
-            a.g();
+            a.m2407g();
         }
-        if (i()) {
-            x();
-            z();
+        if (mo839i()) {
+            m3190w();
+            m3192y();
         }
     }
 
-    protected String m() {
+    /* renamed from: m */
+    protected String mo842m() {
         JSONObject jSONObject = new JSONObject();
-        bh o = o();
-        if (o != null) {
+        bd r = mo848r();
+        if (r != null) {
             try {
-                jSONObject.put("miPassToken", o.a);
-                jSONObject.put("dushuServiceToken", o.b);
+                jSONObject.put("miPassToken", r.f2401a);
+                jSONObject.put("dushuServiceToken", r.f2402b);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
         try {
-            jSONObject.put("login_token", this.g);
+            jSONObject.put("login_token", this.f2253f);
         } catch (JSONException e2) {
             e2.printStackTrace();
         }
         return jSONObject.toString();
     }
 
-    protected void k() {
-        super.k();
-        if (!i() && TextUtils.isEmpty(o().a) && !n()) {
-            a(new ae(this));
+    /* renamed from: k */
+    protected void mo841k() {
+        super.mo841k();
+        if (!mo839i() && TextUtils.isEmpty(mo848r().f2401a) && !mo843n()) {
+            mo830a(new ax(this));
         }
     }
 
-    public void a(b bVar, int i) {
-        a a = e.a(DkApp.get().getApplicationContext());
-        com.duokan.reader.domain.statistics.dailystats.a.d().c();
-        a.c();
-        a(false, false, false, new af(this, a, bVar), 0);
+    /* renamed from: a */
+    public void mo847a(Context context, String str, ba baVar) {
+        new ay(this, this.f2252e, bc.f2400a, str, baVar).open();
     }
 
-    public void e(b bVar) {
-        a a = e.a(DkApp.get().getApplicationContext());
-        com.duokan.reader.domain.statistics.dailystats.a.d().c();
-        a.d();
-        a(true, true, false, new ag(this, a, bVar), 0);
+    /* renamed from: a */
+    public void m3195a(C0672a c0672a) {
+        this.a.mo878a(c0672a);
     }
 
-    public void f(b bVar) {
-        a a = e.a(DkApp.get().getApplicationContext());
-        com.duokan.reader.domain.statistics.dailystats.a.d().c();
-        a.c();
-        a(false, false, false, new ah(this, a, bVar), 0);
-    }
-
-    public void g(b bVar) {
-        a a = e.a(DkApp.get().getApplicationContext());
-        com.duokan.reader.domain.statistics.dailystats.a.d().c();
-        a.d();
-        a(true, false, false, new ai(this, a, bVar), 0);
-    }
-
-    private void a(boolean z, boolean z2, boolean z3, be beVar, int i) {
-        a a = e.a(DkApp.get().getApplicationContext(), true);
-        Account i2 = a.i();
-        AccountManagerCallback ajVar = new aj(this, z, beVar, a, i2);
-        if (i2 != null) {
-            AccountManagerFuture a2 = a.a(i2, "reader", null, DkApp.get().getTopActivity(), ajVar);
-            if (i > 0) {
-                TaskHandler.postDelayed(new am(this, a2), (long) (i * Calendar.MILLISECOND_OF_SECOND));
-            }
-        } else if (z2) {
-            Bundle bundle = null;
-            if (z3) {
-                bundle = new Bundle();
-                bundle.putBoolean("add_option_register_account", true);
-            }
-            a.a("reader", null, bundle, DkApp.get().getTopActivity(), new al(this, a, ajVar, beVar));
-        } else {
-            beVar.b(i2, "");
-        }
-    }
-
-    private void a(String str, boolean z, bd bdVar, int i) {
-        int i2 = 1;
-        String[] split = str.split("ABCDFGXYZ");
-        if (split.length == 1) {
-            i2 = 0;
-        }
-        String str2 = split[i2].split(",")[0];
-        Account account = new Account(split[0], "com.xiaomi");
-        bc aoVar = new ao(this, str2, account, bdVar, z, str);
-        aoVar.open();
-        if (i > 0) {
-            TaskHandler.postDelayed(new ap(this, aoVar, bdVar, account), (long) (i * Calendar.MILLISECOND_OF_SECOND));
-        }
-    }
-
-    public void a(Context context, String str, bb bbVar) {
-        new aq(this, str, bbVar, context).open();
-    }
-
-    public b s() {
-        if (this.h == null || this.h.e == null) {
+    /* renamed from: s */
+    public C1135b mo849s() {
+        if (this.f2254g == null || this.f2254g.f2405e == null) {
             return null;
         }
-        return this.h.e;
+        return this.f2254g.f2405e;
     }
 
-    public synchronized void t() {
-        if (this.j != null) {
-            this.f = this.j.b();
-            this.g = this.j.c();
-            this.h = (bh) this.j.d();
-            l();
-            if (!i()) {
-                x();
-                z();
+    /* renamed from: t */
+    public synchronized void mo850t() {
+        if (this.f2256i != null) {
+            this.f2252e = this.f2256i.m3447b();
+            this.f2253f = this.f2256i.m3448c();
+            this.f2254g = (bd) this.f2256i.m3449d();
+            m3155l();
+            if (!mo839i()) {
+                m3190w();
+                m3192y();
             }
-            a(null, new as(this));
-            this.j = null;
+            mo829a(null, new az(this));
+            this.f2256i = null;
         }
     }
 
-    public synchronized void u() {
-        this.j = null;
+    /* renamed from: u */
+    public synchronized void mo851u() {
+        this.f2256i = null;
     }
 
-    public synchronized cf v() {
-        return this.j;
+    /* renamed from: v */
+    public synchronized cm mo852v() {
+        return this.f2256i;
     }
 
-    public boolean p() {
+    /* renamed from: a */
+    public synchronized void m3197a(cm cmVar) {
+        this.f2256i = cmVar;
+    }
+
+    /* renamed from: o */
+    public boolean mo844o() {
         return true;
     }
 
-    public boolean q() {
+    /* renamed from: p */
+    public boolean mo845p() {
         return true;
     }
 
-    public boolean r() {
+    /* renamed from: q */
+    public boolean mo846q() {
         return true;
     }
 
-    public RequestEnv j() {
-        return this.i;
+    /* renamed from: j */
+    public RequestEnv mo840j() {
+        return this.f2255h;
     }
 }

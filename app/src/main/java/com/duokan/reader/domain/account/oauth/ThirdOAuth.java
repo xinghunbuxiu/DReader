@@ -3,17 +3,14 @@ package com.duokan.reader.domain.account.oauth;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
-
-import com.duokan.reader.common.webservices.duokan.a.a;
-import com.duokan.reader.common.webservices.duokan.a.c;
-
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.message.BasicNameValuePair;
-
+import com.duokan.reader.common.webservices.duokan.p040a.C0624a;
+import com.duokan.reader.common.webservices.duokan.p040a.C0626c;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.util.LinkedList;
 import java.util.List;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.message.BasicNameValuePair;
 
 public abstract class ThirdOAuth {
     protected final Activity mActivity;
@@ -44,16 +41,16 @@ public abstract class ThirdOAuth {
         void onQueryAccountOk(String... strArr);
     }
 
-    public class ResponseHandleResult {
+    public class ResponseHandleResult<T> {
         public final boolean mNeedReauth;
-        public final Object mValue;
+        public final T mValue;
 
-        public ResponseHandleResult(Object obj) {
-            this(obj, false);
+        public ResponseHandleResult(T t) {
+            this(t, false);
         }
 
-        public ResponseHandleResult(Object obj, boolean z) {
-            this.mValue = obj;
+        public ResponseHandleResult(T t, boolean z) {
+            this.mValue = t;
             this.mNeedReauth = z;
         }
     }
@@ -66,13 +63,13 @@ public abstract class ThirdOAuth {
         void onUpdateOk();
     }
 
-    protected abstract ResponseHandleResult handleUpdateResponse(String str);
+    protected abstract ResponseHandleResult<Boolean> handleUpdateResponse(String str);
 
     protected abstract boolean handleUserInfoResponse(String str);
 
-    protected abstract a makeFetchUserInfoRequest();
+    protected abstract C0624a makeFetchUserInfoRequest();
 
-    protected abstract a makeUpdateRequest(String str, Bitmap bitmap);
+    protected abstract C0624a makeUpdateRequest(String str, Bitmap bitmap);
 
     public abstract void oauth(OAuthCallback oAuthCallback);
 
@@ -84,7 +81,7 @@ public abstract class ThirdOAuth {
     }
 
     public static ThirdOAuth produceThird(Activity activity, String str) {
-        if (str.equals("sina")) {
+        if (str.equals("weibo")) {
             return new ThirdSina(activity);
         }
         return new ThirdYinxiang(activity, str);
@@ -96,7 +93,7 @@ public abstract class ThirdOAuth {
     public void onDeactive() {
     }
 
-    protected a makePostRequest(String str, String str2, Bitmap bitmap, String... strArr) {
+    protected C0624a makePostRequest(String str, String str2, Bitmap bitmap, String... strArr) {
         OutputStream byteArrayOutputStream = new ByteArrayOutputStream(1024);
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("--7cd4a6d158c").append("\r\n");
@@ -114,17 +111,17 @@ public abstract class ThirdOAuth {
             byteArrayOutputStream.write(stringBuilder2.toString().getBytes());
         }
         byteArrayOutputStream.write("\r\n--7cd4a6d158c--".getBytes());
-        a a = new c().a(HttpPost.METHOD_NAME).b(str).a(byteArrayOutputStream.toByteArray()).a();
-        a.a("Content-Type", "multipart/form-data; boundary=7cd4a6d158c");
+        C0624a a = new C0626c().m2853a(HttpPost.METHOD_NAME).m2856b(str).m2855a(byteArrayOutputStream.toByteArray()).m2851a();
+        a.m2835a("Content-Type", "multipart/form-data; boundary=7cd4a6d158c");
         return a;
     }
 
-    protected a makePostRequest(String str, String... strArr) {
+    protected C0624a makePostRequest(String str, String... strArr) {
         List linkedList = new LinkedList();
         for (int i = 0; i < strArr.length; i += 2) {
             linkedList.add(new BasicNameValuePair(strArr[i], strArr[i + 1]));
         }
-        return new c().b(str).a(linkedList).a(HttpPost.METHOD_NAME).a();
+        return new C0626c().m2856b(str).m2854a(linkedList).m2853a(HttpPost.METHOD_NAME).m2851a();
     }
 
     protected String makeGetUrl(String str, String... strArr) {

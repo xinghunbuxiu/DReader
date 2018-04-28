@@ -1,33 +1,28 @@
 package com.duokan.reader.domain.account;
 
-import com.duokan.reader.ReaderEnv;
+import com.duokan.reader.common.webservices.C0237c;
+import com.duokan.reader.common.webservices.WebSession;
+import com.duokan.reader.common.webservices.duokan.p040a.C0627d;
 import com.xiaomi.accountsdk.account.data.ExtendedAuthToken;
-import com.xiaomi.micloudsdk.request.Request.RequestEnv;
+import org.json.JSONObject;
 
-class bi implements RequestEnv {
-    final /* synthetic */ MiGuestAccount a;
+class bi extends WebSession {
+    /* renamed from: a */
+    final /* synthetic */ MiGuestAccount f2422a;
 
     bi(MiGuestAccount miGuestAccount) {
-        this.a = miGuestAccount;
+        this.f2422a = miGuestAccount;
     }
 
-    public synchronized String getAccountName() {
-        return this.a.c();
+    protected void onSessionTry() {
+        C0627d execute = execute(this.f2422a.m3225d("micloud"));
+        JSONObject a = new C0237c(this).m547a(execute);
+        this.f2422a.f2258e = ExtendedAuthToken.build(a.getJSONObject("data").optString("micloud_serviceToken"), new JSONObject((String) execute.mo815a("extension-pragma").get(0)).getString("ssecurity"));
     }
 
-    public String queryEncryptedAccountName() {
-        return this.a.j.b.g;
+    protected void onSessionSucceeded() {
     }
 
-    public synchronized ExtendedAuthToken queryAuthToken() {
-        return this.a.e;
-    }
-
-    public synchronized void invalidateAuthToken() {
-        this.a.o();
-    }
-
-    public String getUserAgent() {
-        return "DUOKANREADER; Android/" + ReaderEnv.get().getVersionName();
+    protected void onSessionFailed() {
     }
 }

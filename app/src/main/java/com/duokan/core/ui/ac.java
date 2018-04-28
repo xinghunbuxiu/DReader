@@ -1,33 +1,29 @@
 package com.duokan.core.ui;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
 class ac extends FrameLayout {
-    HatGridView hatGridView;
+    /* renamed from: a */
+    final /* synthetic */ HatGridView f894a;
 
     ac(HatGridView hatGridView, Context context) {
-        this.hatGridView = hatGridView;
-        super(context);
-    }
-
-    public ac(@NonNull Context context) {
+        this.f894a = hatGridView;
         super(context);
     }
 
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, this.hatGridView.a);
-        boolean onInterceptTouchEvent = this.hatGridView.a.onInterceptTouchEvent(a);
+        MotionEvent a = dv.m1908a(motionEvent, (View) this, this.f894a.f811a);
+        boolean onInterceptTouchEvent = this.f894a.f811a.onInterceptTouchEvent(a);
         a.recycle();
         return onInterceptTouchEvent;
     }
 
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, this.hatGridView.a);
-        boolean onTouchEvent = this.hatGridView.a.onTouchEvent(a);
+        MotionEvent a = dv.m1908a(motionEvent, (View) this, this.f894a.f811a);
+        boolean onTouchEvent = this.f894a.f811a.onTouchEvent(a);
         a.recycle();
         return onTouchEvent;
     }

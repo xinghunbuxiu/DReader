@@ -1,21 +1,15 @@
 package com.duokan.reader.ui.general;
 
-import com.duokan.core.ui.Scrollable;
-import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.OnScrollListener;
+class dy implements cx {
+    /* renamed from: a */
+    final /* synthetic */ dr f7129a;
 
-class dy implements OnScrollListener {
-    final /* synthetic */ ds a;
-
-    dy(ds dsVar) {
-        this.a = dsVar;
+    dy(dr drVar) {
+        this.f7129a = drVar;
     }
 
-    public void a(Scrollable scrollable, ScrollState scrollState, ScrollState scrollState2) {
-    }
-
-    public void a(Scrollable scrollable, boolean z) {
-        this.a.h.invalidate();
-        this.a.i.invalidate();
+    /* renamed from: a */
+    public void mo1699a(int i, int i2) {
+        this.f7129a.m10509d(i2);
     }
 }

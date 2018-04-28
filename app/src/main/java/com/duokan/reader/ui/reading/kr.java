@@ -1,29 +1,21 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.ag;
-import com.duokan.reader.domain.document.epub.av;
+import android.view.ViewGroup;
+import com.duokan.core.app.ActivatedController;
 
-import java.util.Map;
+class kr implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ ActivatedController f10525a;
+    /* renamed from: b */
+    final /* synthetic */ kn f10526b;
 
-class kr implements ag {
-    final /* synthetic */ av a;
-    final /* synthetic */ kq b;
-
-    kr(kq kqVar, av avVar) {
-        this.b = kqVar;
-        this.a = avVar;
+    kr(kn knVar, ActivatedController c0303e) {
+        this.f10526b = knVar;
+        this.f10525a = c0303e;
     }
 
-    public void a(Map map) {
-        this.b.i = false;
-        this.b.j = false;
-        if (this.b.n == this.a) {
-            this.b.n = null;
-        }
-        if (this.b.b) {
-            this.b.c();
-        } else {
-            this.b.b();
-        }
+    public void run() {
+        this.f10526b.removeSubController(this.f10525a);
+        ((ViewGroup) this.f10526b.getContentView()).removeView(this.f10525a.getContentView());
     }
 }

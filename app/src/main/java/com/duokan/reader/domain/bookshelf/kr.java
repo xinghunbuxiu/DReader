@@ -1,28 +1,26 @@
 package com.duokan.reader.domain.bookshelf;
 
-import android.text.TextUtils;
+import com.duokan.core.sys.ag;
+import java.util.Map;
+import java.util.concurrent.Semaphore;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.u;
-import com.duokan.reader.ui.general.be;
+class kr implements ag<Map<String, Integer>> {
+    /* renamed from: a */
+    final /* synthetic */ Semaphore f3476a;
+    /* renamed from: b */
+    final /* synthetic */ kq f3477b;
 
-class kr implements u {
-    final /* synthetic */ kp a;
-
-    kr(kp kpVar) {
-        this.a = kpVar;
+    kr(kq kqVar, Semaphore semaphore) {
+        this.f3477b = kqVar;
+        this.f3476a = semaphore;
     }
 
-    public void onQueryAccountOk(a aVar) {
-        this.a.h = new ks(this, new ab(aVar));
-        this.a.h.open();
+    public /* synthetic */ void run(Object obj) {
+        m4850a((Map) obj);
     }
 
-    public void onQueryAccountError(a aVar, String str) {
-        this.a.e();
-        if (!TextUtils.isEmpty(str)) {
-            be.a(this.a.b, (CharSequence) str, 0).show();
-        }
+    /* renamed from: a */
+    public void m4850a(Map<String, Integer> map) {
+        this.f3476a.release();
     }
 }

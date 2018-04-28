@@ -1,23 +1,25 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.cache.ab;
+public class fo extends fr {
+    /* renamed from: a */
+    final /* synthetic */ fl f4011a;
 
-class fo implements ab {
-    final /* synthetic */ fn a;
-
-    fo(fn fnVar) {
-        this.a = fnVar;
+    public fo(fl flVar) {
+        this.f4011a = flVar;
+        super(flVar);
     }
 
-    public void a(int i) {
-        if (i < 1) {
-            this.a.clearItems();
-            this.a.updateInfo(null);
-            return;
-        }
-        this.a.replaceWithItems(this.a.queryItems());
-        DkUserReadingNotesCacheInfo a = this.a.a();
-        a.mReadingNoteCount = -1;
-        this.a.updateInfo(a);
+    /* renamed from: a */
+    void mo1167a(fl flVar, int i) {
+        flVar.m5557a(i > 0 ? new fo(this.f4011a) : new fp(this.f4011a));
+    }
+
+    /* renamed from: a */
+    void mo1166a(fl flVar) {
+        flVar.m5557a(new fp(this.f4011a));
+    }
+
+    public boolean equals(Object obj) {
+        return obj instanceof fo;
     }
 }

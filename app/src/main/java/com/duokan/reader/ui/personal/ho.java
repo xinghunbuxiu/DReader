@@ -1,24 +1,34 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.domain.cloud.DkUserReadBookManager.ReadBook;
-import com.duokan.reader.domain.cloud.ev;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.ClipDrawable;
+import android.graphics.drawable.Drawable;
 
-class ho implements ev {
-    final /* synthetic */ int a;
-    final /* synthetic */ hl b;
+class ho extends Drawable {
+    /* renamed from: a */
+    final /* synthetic */ ClipDrawable f8665a;
+    /* renamed from: b */
+    final /* synthetic */ fz f8666b;
 
-    ho(hl hlVar, int i) {
-        this.b = hlVar;
-        this.a = i;
+    ho(fz fzVar, ClipDrawable clipDrawable) {
+        this.f8666b = fzVar;
+        this.f8665a = clipDrawable;
     }
 
-    public void a(ReadBook[] readBookArr, boolean z, boolean z2) {
-        this.b.t = !z;
-        this.b.a(new hp(this, readBookArr, z));
+    public void draw(Canvas canvas) {
+        this.f8665a.setBounds(0, 0, this.f8666b.f8577d.getWidth(), this.f8666b.f8577d.getHeight());
+        this.f8665a.setLevel((this.f8666b.f8577d.getHeight() * 10000) / this.f8666b.f8577d.getHeight());
+        this.f8665a.draw(canvas);
     }
 
-    public void a(String str) {
-        this.b.t = false;
-        this.b.getAdapter().m();
+    public void setAlpha(int i) {
+    }
+
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
+
+    public int getOpacity() {
+        return 0;
     }
 }

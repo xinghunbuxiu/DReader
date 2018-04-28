@@ -1,57 +1,22 @@
 package com.duokan.reader.domain.bookshelf;
 
-import android.text.TextUtils;
+class id implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ C0800c f3341a;
+    /* renamed from: b */
+    final /* synthetic */ String f3342b;
+    /* renamed from: c */
+    final /* synthetic */ hc f3343c;
 
-import com.duokan.reader.domain.downloadcenter.DownloadCenterTask;
-import com.duokan.reader.domain.downloadcenter.DownloadType;
-import com.duokan.reader.domain.downloadcenter.a;
-import com.duokan.reader.domain.downloadcenter.k;
-
-class id implements k {
-    final /* synthetic */ ic a;
-
-    id(ic icVar) {
-        this.a = icVar;
+    id(hc hcVar, C0800c c0800c, String str) {
+        this.f3343c = hcVar;
+        this.f3341a = c0800c;
+        this.f3342b = str;
     }
 
-    public void a(DownloadCenterTask downloadCenterTask) {
-        if (downloadCenterTask.o().a() == DownloadType.BOOK) {
-            c c;
-            a aVar = (a) downloadCenterTask.o();
-            if (TextUtils.isEmpty(aVar.c)) {
-                c = this.a.a.c(downloadCenterTask.i());
-            } else {
-                c = this.a.a.b(aVar.c);
-            }
-            if (c != null) {
-                c.a(downloadCenterTask);
-                this.a.a.j(c);
-            }
-        }
-    }
-
-    public void b(DownloadCenterTask downloadCenterTask) {
-        if (downloadCenterTask.o().a() == DownloadType.BOOK && !downloadCenterTask.p()) {
-            c c;
-            a aVar = (a) downloadCenterTask.o();
-            if (TextUtils.isEmpty(aVar.c)) {
-                c = this.a.a.c(downloadCenterTask.i());
-            } else {
-                c = this.a.a.b(aVar.c);
-            }
-            if (c == null) {
-                this.a.a.n.d(downloadCenterTask);
-                return;
-            }
-            c.a(downloadCenterTask);
-            this.a.a.j(c);
-            if (downloadCenterTask.g()) {
-                c.b(downloadCenterTask);
-                this.a.a.n.d(downloadCenterTask);
-            } else if (downloadCenterTask.h()) {
-                c.c(downloadCenterTask);
-                this.a.a.n.d(downloadCenterTask);
-            }
+    public void run() {
+        if (this.f3343c.m3847g(this.f3341a)) {
+            bu.m4077a().m4106a(this.f3341a.aq(), this.f3341a.ar(), this.f3342b);
         }
     }
 }

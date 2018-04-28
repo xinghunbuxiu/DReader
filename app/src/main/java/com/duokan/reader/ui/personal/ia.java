@@ -1,27 +1,31 @@
 package com.duokan.reader.ui.personal;
 
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
-
-import com.duokan.c.j;
-import com.duokan.reader.common.b;
+import com.duokan.reader.domain.bookshelf.ai;
+import com.duokan.reader.domain.cloud.PersonalPrefs;
 
 class ia implements OnClickListener {
-    final /* synthetic */ hw a;
+    /* renamed from: a */
+    final /* synthetic */ Handler f8696a;
+    /* renamed from: b */
+    final /* synthetic */ hy f8697b;
 
-    ia(hw hwVar) {
-        this.a = hwVar;
+    ia(hy hyVar, Handler handler) {
+        this.f8697b = hyVar;
+        this.f8696a = handler;
     }
 
     public void onClick(View view) {
-        String format;
-        if (this.a.c.f() == 0.0d) {
-            format = String.format(this.a.getString(j.personal__experience_view__share_template_ranking_low), new Object[]{Long.valueOf(this.a.c.b()), b.a(this.a.c.c())});
-        } else if (this.a.c.g() <= 0) {
-            format = String.format(this.a.getString(j.personal__experience_view__share_template_no_latest_month_reading_record), new Object[]{b.a(this.a.c.f()), Long.valueOf(this.a.c.b()), b.a(this.a.c.c())});
-        } else {
-            format = String.format(this.a.getString(j.personal__experience_view__share_template), new Object[]{b.a(this.a.c.f()), Long.valueOf(this.a.c.b()), b.a(this.a.c.c()), b.a(this.a.c.g() / 30)});
+        PersonalPrefs.m5175a().m5232h(!PersonalPrefs.m5175a().m5249y());
+        this.f8697b.m11966d();
+        if (PersonalPrefs.m5175a().m5250z()) {
+            this.f8696a.sendMessageDelayed(Message.obtain(this.f8696a, 0), 1000);
+            return;
         }
-        this.a.a.a(this.a.getContext(), format, this.a.d());
+        this.f8696a.removeMessages(0);
+        ai.m3980a().m3944s();
     }
 }

@@ -1,21 +1,16 @@
 package com.duokan.reader.domain.bookshelf;
 
-public class km {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final long e;
-    public final int f;
-    public final int g;
+class km implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ kl f3468a;
 
-    public km(String str, String str2, String str3, String str4, long j, int i, int i2) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
-        this.d = str4;
-        this.e = j;
-        this.f = i;
-        this.g = i2;
+    km(kl klVar) {
+        this.f3468a = klVar;
+    }
+
+    public void run() {
+        if (this.f3468a.f3467a.f3466b.f3463a.f3148c != null) {
+            this.f3468a.f3467a.f3466b.f3463a.f3148c.run(this.f3468a.f3467a.f3466b.f3463a.f3147b);
+        }
     }
 }

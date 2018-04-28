@@ -3,29 +3,35 @@ package com.duokan.reader.domain.document.epub;
 import com.duokan.reader.domain.document.ag;
 
 class bn extends ag {
-    final /* synthetic */ bm a;
+    /* renamed from: a */
+    final /* synthetic */ bm f4577a;
 
     bn(bm bmVar) {
-        this.a = bmVar;
+        this.f4577a = bmVar;
     }
 
-    public String e() {
-        return this.a.c.getSubTitle();
+    /* renamed from: e */
+    public String mo1405e() {
+        return this.f4577a.f4575c.getSubTitle();
     }
 
-    public int b() {
-        return this.a.e();
+    /* renamed from: b */
+    public int mo1402b() {
+        return this.f4577a.mo1390e();
     }
 
-    public String a() {
+    /* renamed from: a */
+    public String mo1401a() {
         return "";
     }
 
-    public int c() {
-        return this.a.f();
+    /* renamed from: c */
+    public int mo1403c() {
+        return this.f4577a.mo1391f();
     }
 
-    public String d() {
-        return this.a.c.getMainTitle();
+    /* renamed from: d */
+    public String mo1404d() {
+        return this.f4577a.f4575c.getMainTitle();
     }
 }

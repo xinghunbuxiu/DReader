@@ -1,56 +1,28 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.account.ab;
+import java.util.List;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+class cm implements cv {
+    /* renamed from: a */
+    final /* synthetic */ bs f2969a;
+    /* renamed from: b */
+    final /* synthetic */ cu f2970b;
+    /* renamed from: c */
+    final /* synthetic */ bu f2971c;
 
-class cm extends ap {
-    final /* synthetic */ ab a;
-    final /* synthetic */ boolean b;
-    final /* synthetic */ ArrayList c;
-    final /* synthetic */ bv d;
-    private final cs e = new cs();
-
-    cm(bv bvVar, ab abVar, boolean z, ArrayList arrayList) {
-        this.d = bvVar;
-        this.a = abVar;
-        this.b = z;
-        this.c = arrayList;
+    cm(bu buVar, bs bsVar, cu cuVar) {
+        this.f2971c = buVar;
+        this.f2969a = bsVar;
+        this.f2970b = cuVar;
     }
 
-    protected void onSessionTry() {
-        br brVar = new br(this.a);
-        brVar.a();
-        if (this.b) {
-            this.e.a(brVar);
-            Collection arrayList = new ArrayList(this.c.size());
-            Iterator it = this.c.iterator();
-            while (it.hasNext()) {
-                bu buVar = (bu) it.next();
-                int i = buVar.a;
-                String str = buVar.b;
-                if (buVar.h == 1) {
-                    arrayList.add(this.d.a(this.e, i, str, buVar.c, buVar.i));
-                } else if (buVar.h == 2) {
-                    arrayList.add(this.d.b(this.e, i, str, buVar.c, buVar.i));
-                } else if (buVar.h == 3) {
-                    arrayList.add(this.d.a(this.e, i, str, buVar.i));
-                }
-            }
-            brVar.updateItems(arrayList);
-            return;
-        }
-        brVar.updateItems(this.c);
+    /* renamed from: a */
+    public void mo997a(bs bsVar, List<bt> list) {
+        new cn(this, aq.f2771a, list, this.f2971c.f2868c, bsVar).open();
     }
 
-    protected void onSessionSucceeded() {
-        if (this.a.a(this.d.c) && this.b) {
-            this.d.a(this.e);
-        }
-    }
-
-    protected void onSessionFailed() {
+    /* renamed from: a */
+    public void mo998a(String str) {
+        this.f2970b.mo986a("");
     }
 }

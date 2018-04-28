@@ -1,112 +1,40 @@
 package com.duokan.reader.ui.personal;
 
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.TextView;
+import com.duokan.core.app.AppContext;
+import com.duokan.core.ui.C0342j;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.common.webservices.C0621a;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.WebSession;
+import com.duokan.reader.common.webservices.duokan.C0640n;
+import com.duokan.reader.ui.general.be;
+import com.duokan.reader.ui.store.bv;
 
-import com.duokan.c.f;
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.c.j;
-import com.duokan.common.SysTools;
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.IFeature;
-import com.duokan.reader.domain.account.oauth.ThirdWeiXin;
-import com.duokan.reader.domain.cloud.DkCloudRedeemFund;
-import com.duokan.reader.domain.cloud.fp;
-import com.duokan.reader.ui.general.BookCoverView;
-import com.duokan.reader.ui.general.DkBigFaceView;
-import com.duokan.reader.ui.general.HeaderView;
-import com.duokan.reader.ui.general.ReaderUi;
-import com.duokan.reader.ui.general.deprecatedDkTextView;
-import com.duokan.reader.ui.ITheme;
+class ih extends WebSession {
+    /* renamed from: a */
+    final /* synthetic */ C0342j f8712a;
+    /* renamed from: b */
+    final /* synthetic */ ig f8713b;
+    /* renamed from: c */
+    private C0621a<String[]> f8714c = null;
 
-do;
-
-public class ih extends ActivatedController {
-    private final DkCloudRedeemFund a;
-    private final TextView b;
-
-    public ih(IFeature featrue, DkCloudRedeemFund dkCloudRedeemFund) {
-        LayoutParams layoutParams;
-        super(featrue);
-        this.a = dkCloudRedeemFund;
-        setContentView(h.personal__redeem_info_view);
-        ((HeaderView) findViewById(g.personal__redeem_info_view__header)).setLeftTitle(j.personal__personal_redeem_info_view__header);
-        BookCoverView bookCoverView = (BookCoverView) findViewById(g.personal__redeem_info_view__book_cover);
-        bookCoverView.setOnlineCoverUri(dkCloudRedeemFund.getBookCoverUrl());
-        bookCoverView.setCoverBackgroundResource(f.general__book_cover_view__duokan_cover);
-        bookCoverView.a();
-        bookCoverView.setOnClickListener(new ii(this));
-        ((TextView) findViewById(g.personal__redeem_info_view__title)).setText(getResources().getString(j.personal__personal_redeem_info_view__title, new Object[]{dkCloudRedeemFund.getTitle()}));
-        TextView textView = (TextView) findViewById(g.personal__redeem_info_view__author);
-        if (!TextUtils.isEmpty(dkCloudRedeemFund.getBookAuthor())) {
-            textView.setText(getResources().getString(j.personal__personal_redeem_info_view__author, new Object[]{dkCloudRedeemFund.getBookAuthor()}));
-        } else if (!TextUtils.isEmpty(dkCloudRedeemFund.getBookEditor())) {
-            textView.setText(getResources().getString(j.personal__personal_redeem_info_view__editor, new Object[]{dkCloudRedeemFund.getBookEditor()}));
-        }
-        this.b = (TextView) findViewById(g.personal__redeem_info_view__msg);
-        LayoutParams layoutParams2 = findViewById(g.personal__redeem_info_view__placeholder).getLayoutParams();
-        if (layoutParams2 == null) {
-            layoutParams = new LayoutParams(-1, -2);
-        } else {
-            layoutParams = layoutParams2;
-        }
-        ITheme sVar = (ITheme) getContext().queryFeature(ITheme.class);
-        if (sVar != null) {
-            layoutParams.height = sVar.getTheme().getPagePaddingBottom();
-        } else {
-            layoutParams.height = 0;
-        }
-        if (this.a.isUsed()) {
-            findViewById(g.personal__redeem_info_view__unused).setVisibility(8);
-            findViewById(g.personal__redeem_info_view__useded).setVisibility(0);
-            findViewById(g.personal__redeem_info_view__arrow).setVisibility(0);
-            if (TextUtils.isEmpty(this.a.getMessage())) {
-                findViewById(g.personal__redeem_info_view__msg_root).setVisibility(8);
-            } else {
-                findViewById(g.personal__redeem_info_view__msg_root).setVisibility(0);
-                ((deprecatedDkTextView) findViewById(g.personal__redeem_info_view__msg_content)).setText(this.a.getMessage());
-                ((TextView) findViewById(g.personal__redeem_info_view__msg_from)).setText(getResources().getString(j.personal__personal_redeem_info_view__word_time, new Object[]{ReaderUi.a(getContext(), this.a.getWordUpdatedTime().getTime(), false)}));
-            }
-            ((DkBigFaceView) findViewById(g.personal__redeem_info_view__received_face)).setUser(this.a.getReceivedUser());
-            textView = (TextView) findViewById(g.personal__redeem_info_view__received_name);
-            String str = TextUtils.isEmpty(this.a.getReceivedUser().mNickName) ? this.a.getReceivedUser().mUserId : this.a.getReceivedUser().mNickName;
-            textView.setText(getResources().getString(j.personal__personal_redeem_info_view__received_name, new Object[]{str}));
-            ((TextView) findViewById(g.personal__redeem_info_view__received_time)).setText(ReaderUi.a(getContext(), this.a.getReceivedTime().getTime(), false));
-            return;
-        }
-        findViewById(g.personal__redeem_info_view__unused).setVisibility(0);
-        findViewById(g.personal__redeem_info_view__useded).setVisibility(8);
-        findViewById(g.personal__redeem_info_view__arrow).setVisibility(8);
-        if (!TextUtils.isEmpty(dkCloudRedeemFund.getMessage())) {
-            this.b.setText(dkCloudRedeemFund.getMessage());
-        }
-        this.b.setOnClickListener(new ij(this));
-        String format = String.format(getString(j.personal__personal_redeem_info_view__msg), new Object[]{this.a.getTitle(), this.a.getLinkUrl()});
-        View findViewById = findViewById(g.personal__redeem_info_view__sms);
-        boolean a = SysTools.isSupportTelephony(getContext());
-        findViewById(g.personal__redeem_info_view__sms_icon).setEnabled(a);
-        findViewById(g.personal__redeem_info_view__sms_text).setEnabled(a);
-        findViewById.setEnabled(a);
-        findViewById.setOnClickListener(new il(this, format));
-        findViewById = findViewById(g.personal__redeem_info_view__wx);
-        a = ThirdWeiXin.isSupportShareWeiXinFriends(getContext());
-        findViewById(g.personal__redeem_info_view__wx_icon).setEnabled(a);
-        findViewById(g.personal__redeem_info_view__wx_text).setEnabled(a);
-        findViewById.setEnabled(a);
-        findViewById.setOnClickListener(new im(this, format));
-        findViewById(g.personal__redeem_info_view__more).setOnClickListener(new in(this, format));
+    ih(ig igVar, C0657i c0657i, C0342j c0342j) {
+        this.f8713b = igVar;
+        this.f8712a = c0342j;
+        super(c0657i);
     }
 
-    protected void onActive(boolean z) {
-        super.onActive(z);
-        if (!z) {
-        }
+    protected void onSessionTry() {
+        this.f8714c = new C0640n(this, null).m2922e(this.f8713b.f8710c.getBookUuid());
     }
 
-    private void a(String str, do doVar) {
-        fp.a().a(this.a, str, new io(this, str, doVar));
+    protected void onSessionSucceeded() {
+        this.f8712a.dismiss();
+        this.f8713b.f8711d.f8707a.f8691s.pushPageSmoothly(bv.m15355a(AppContext.getAppContext(this.f8713b.f8711d.f8707a.getContext()), "0", Integer.parseInt(((String[]) this.f8714c.f2058a)[0]), ((String[]) this.f8714c.f2058a)[1], null), null);
+    }
+
+    protected void onSessionFailed() {
+        this.f8712a.dismiss();
+        be.m10287a(this.f8713b.f8711d.f8707a.getContext(), this.f8713b.f8711d.f8707a.f8683a.getString(C0258j.general__shared__network_error), 1).show();
     }
 }

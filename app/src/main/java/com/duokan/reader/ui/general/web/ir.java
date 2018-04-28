@@ -3,19 +3,18 @@ package com.duokan.reader.ui.general.web;
 import com.duokan.core.sys.as;
 
 class ir implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ String b;
-    final /* synthetic */ boolean c;
-    final /* synthetic */ iq d;
+    /* renamed from: a */
+    final /* synthetic */ int f8010a;
+    /* renamed from: b */
+    final /* synthetic */ ci f8011b;
 
-    ir(iq iqVar, String str, String str2, boolean z) {
-        this.d = iqVar;
-        this.a = str;
-        this.b = str2;
-        this.c = z;
+    ir(ci ciVar, int i) {
+        this.f8011b = ciVar;
+        this.f8010a = i;
     }
 
-    public void a() {
-        this.d.b.pageController.js_showWeb(this.a, this.d.b.pageController.handleUrl(this.b), this.c);
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f8011b.m11016a(new is(this));
     }
 }

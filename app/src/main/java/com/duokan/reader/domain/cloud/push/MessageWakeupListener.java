@@ -35,5 +35,6 @@ public interface MessageWakeupListener {
         }
     }
 
-    void a(MessageSubType messageSubType, Object obj, boolean z);
+    /* renamed from: a */
+    void mo785a(MessageSubType messageSubType, Object obj, boolean z);
 }

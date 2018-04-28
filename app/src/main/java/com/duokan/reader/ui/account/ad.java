@@ -1,20 +1,17 @@
 package com.duokan.reader.ui.account;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.OnDismissListener;
 
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.ui.personal.aj;
+class ad implements OnDismissListener {
+    /* renamed from: a */
+    final /* synthetic */ ab f5778a;
 
-class ad implements OnClickListener {
-    final /* synthetic */ z a;
-
-    ad(z zVar) {
-        this.a = zVar;
+    ad(ab abVar) {
+        this.f5778a = abVar;
     }
 
-    public void onClick(View view) {
-        ((ReaderFeature) MyContextWrapper.getFeature(this.a.getContext()).queryFeature(ReaderFeature.class)).pushHalfPage(new aj(this.a.getContext()));
+    public void onDismiss(C0342j c0342j) {
+        this.f5778a.f5774a.onChoiced(this.f5778a.f5776c);
     }
 }

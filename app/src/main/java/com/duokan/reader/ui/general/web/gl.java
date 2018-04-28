@@ -1,31 +1,23 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.domain.bookshelf.ai;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.bookshelf.ej;
-import com.duokan.reader.domain.store.DkStoreFictionDetail;
-
+import com.duokan.core.sys.ag;
 import org.json.JSONObject;
 
-class gl implements Runnable {
-    final /* synthetic */ DkStoreFictionDetail a;
-    final /* synthetic */ gk b;
+class gl implements ag<JSONObject> {
+    /* renamed from: a */
+    final /* synthetic */ gj f7891a;
 
-    gl(gk gkVar, DkStoreFictionDetail dkStoreFictionDetail) {
-        this.b = gkVar;
-        this.a = dkStoreFictionDetail;
+    gl(gj gjVar) {
+        this.f7891a = gjVar;
     }
 
-    public void run() {
-        c b = ai.a().b(this.b.a);
-        if ((b instanceof ej) && ((ej) b).b(this.a)) {
-            ((ej) b).c(this.a);
-        }
-        JSONObject access$2900 = this.b.c.b.pageController.jsonSerialDetail(this.a);
-        if (access$2900 != null) {
-            this.b.c.b.pageController.web_notifyWeb(this.b.b, 0, access$2900);
-        } else {
-            this.b.c.b.pageController.web_notifyWeb(this.b.b, 2, new Object[0]);
-        }
+    public /* synthetic */ void run(Object obj) {
+        m11151a((JSONObject) obj);
+    }
+
+    /* renamed from: a */
+    public void m11151a(JSONObject jSONObject) {
+        this.f7891a.f7889b.f7581b.triggerEventOnCurrentUrl("feedCommit", jSONObject);
+        this.f7891a.f7889b.f7581b.mEditFeedController = null;
     }
 }

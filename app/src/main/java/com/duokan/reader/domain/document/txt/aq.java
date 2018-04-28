@@ -1,23 +1,25 @@
 package com.duokan.reader.domain.document.txt;
 
 import android.graphics.Bitmap;
-
 import com.duokan.reader.domain.document.ap;
 import com.duokan.reader.domain.document.ar;
 
 class aq implements ar {
-    final /* synthetic */ aj a;
+    /* renamed from: a */
+    final /* synthetic */ aj f4911a;
 
     aq(aj ajVar) {
-        this.a = ajVar;
+        this.f4911a = ajVar;
     }
 
-    public void a(ap apVar, Bitmap bitmap, Object obj) {
-        this.a.a(bitmap, (Bitmap) obj);
-        this.a.R();
+    /* renamed from: a */
+    public void mo1195a(ap apVar, Bitmap bitmap, Object obj) {
+        this.f4911a.m7404a(bitmap, (Bitmap) obj);
+        this.f4911a.m7403Q();
     }
 
-    public void a(ap apVar) {
-        this.a.R();
+    /* renamed from: a */
+    public void mo1194a(ap apVar) {
+        this.f4911a.m7403Q();
     }
 }

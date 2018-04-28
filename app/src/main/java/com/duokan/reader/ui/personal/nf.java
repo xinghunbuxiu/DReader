@@ -1,25 +1,27 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.c.j;
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.ui.general.DkWebListView;
-import com.duokan.reader.ui.general.PageHeaderView;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.core.app.AppContext;
+import com.duokan.reader.domain.cloud.DkCloudStoreBook;
+import com.duokan.reader.ui.general.expandable.ViewMode;
 
-public class nf extends jr {
-    private final PageHeaderView a = new PageHeaderView(getContext());
+class nf implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ int f8982a;
+    /* renamed from: b */
+    final /* synthetic */ ne f8983b;
 
-    public nf(MyContextWrapper mContext, boolean z) {
-        super(mContext);
-        this.a.setLeftTitle(j.personal__personal_redeems_view__title);
-        this.a.setHasBackButton(true);
-        setTitleView(this.a);
+    nf(ne neVar, int i) {
+        this.f8983b = neVar;
+        this.f8982a = i;
     }
 
-    public PageHeaderView getHeaderView() {
-        return this.a;
-    }
-
-    public DkWebListView getRedeemView() {
-        return this;
+    public void onClick(View view) {
+        if (this.f8983b.mo1714f() == ViewMode.Edit) {
+            this.f8983b.f8867c.mo1881b(0, this.f8982a);
+        } else {
+            ((lb) AppContext.getAppContext(this.f8983b.f8866a).queryFeature(lb.class)).mo1933a((DkCloudStoreBook) this.f8983b.mo509d(this.f8982a));
+        }
     }
 }

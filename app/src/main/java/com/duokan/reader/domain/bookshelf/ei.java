@@ -1,41 +1,24 @@
 package com.duokan.reader.domain.bookshelf;
 
-import android.os.AsyncTask;
+import com.duokan.core.sys.UThread;
+import com.duokan.reader.domain.store.DkStoreFictionDetail;
 
-import java.util.ArrayList;
-import java.util.List;
+class ei implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ DkStoreFictionDetail f3102a;
+    /* renamed from: b */
+    final /* synthetic */ eh f3103b;
 
-public class ei extends AsyncTask {
-    private List a = new ArrayList();
-    private eh b;
-
-    protected /* synthetic */ Object doInBackground(Object[] objArr) {
-        return a((Void[]) objArr);
+    ei(eh ehVar, DkStoreFictionDetail dkStoreFictionDetail) {
+        this.f3103b = ehVar;
+        this.f3102a = dkStoreFictionDetail;
     }
 
-    protected /* synthetic */ void onPostExecute(Object obj) {
-        a((Void) obj);
-    }
-
-    public ei(List list, eh ehVar) {
-        this.b = ehVar;
-        for (an anVar : list) {
-            if (anVar instanceof c) {
-                this.a.add((c) anVar);
-            }
-        }
-    }
-
-    protected Void a(Void... voidArr) {
-        if (!this.a.isEmpty()) {
-            ai.a().b(this.a, false);
-        }
-        return null;
-    }
-
-    protected void a(Void voidR) {
-        if (this.b != null) {
-            this.b.a(false);
+    public void run() {
+        this.f3103b.f3101a.f3100c.m4418c(this.f3102a);
+        this.f3103b.f3101a.f3100c.aN();
+        if (this.f3103b.f3101a.f3098a != null) {
+            UThread.runOnThread(new ej(this));
         }
     }
 }

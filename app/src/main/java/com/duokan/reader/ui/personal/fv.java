@@ -1,22 +1,26 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.reader.ui.store.bv;
+import com.duokan.reader.domain.cloud.DkCloudStoreBook;
+import java.text.Collator;
+import java.util.Comparator;
 
-import java.util.concurrent.Callable;
+class fv implements Comparator<DkCloudStoreBook> {
+    /* renamed from: a */
+    final /* synthetic */ Collator f8570a;
+    /* renamed from: b */
+    final /* synthetic */ fu f8571b;
 
-class fv implements Callable {
-    final /* synthetic */ fu a;
-
-    fv(fu fuVar) {
-        this.a = fuVar;
+    fv(fu fuVar, Collator collator) {
+        this.f8571b = fuVar;
+        this.f8570a = collator;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
+    public /* synthetic */ int compare(Object obj, Object obj2) {
+        return m11834a((DkCloudStoreBook) obj, (DkCloudStoreBook) obj2);
     }
 
-    public ActivatedController a() {
-        return bv.a(this.a.a.getContext());
+    /* renamed from: a */
+    public int m11834a(DkCloudStoreBook dkCloudStoreBook, DkCloudStoreBook dkCloudStoreBook2) {
+        return dkCloudStoreBook.compareNameTo(this.f8570a, dkCloudStoreBook2);
     }
 }

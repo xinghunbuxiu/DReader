@@ -1,21 +1,46 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import com.duokan.core.ui.dv;
 
-import com.duokan.reader.domain.document.g;
-import com.duokan.reader.ui.general.cd;
-import com.duokan.reader.ui.general.cf;
+class nq extends Drawable {
+    /* renamed from: a */
+    int f10693a;
+    /* renamed from: b */
+    int f10694b;
+    /* renamed from: c */
+    final /* synthetic */ nh f10695c;
 
-class nq implements cf {
-    final /* synthetic */ nk a;
-
-    nq(nk nkVar) {
-        this.a = nkVar;
+    private nq(nh nhVar) {
+        this.f10695c = nhVar;
+        this.f10693a = 0;
+        this.f10694b = 0;
     }
 
-    public boolean a(View view, int i) {
-        this.a.b.aP();
-        this.a.a((g) ((cd) this.a.g.getAdapter()).i(i));
-        return true;
+    public void draw(Canvas canvas) {
+        Paint paint = (Paint) dv.f1193b.addAnimation();
+        paint.setColor(this.f10694b);
+        canvas.drawRect((float) ((-this.f10693a) + this.f10695c.f10668b.getPaddingLeft()), 0.0f, (float) this.f10695c.f10668b.getWidth(), (float) this.f10695c.f10668b.getHeight(), paint);
+        dv.f1193b.clearAnimation(paint);
+    }
+
+    /* renamed from: a */
+    public void m14762a(int i, int i2) {
+        this.f10693a = i;
+        this.f10694b = i2;
+        invalidateSelf();
+    }
+
+    public void setAlpha(int i) {
+    }
+
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
+
+    public int getOpacity() {
+        return 0;
     }
 }

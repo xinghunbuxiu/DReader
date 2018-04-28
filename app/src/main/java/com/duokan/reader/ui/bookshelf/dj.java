@@ -1,18 +1,23 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.cloud.PersonalPrefs;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
 
-class dj implements Runnable {
-    final /* synthetic */ di a;
+class dj implements AnimationListener {
+    /* renamed from: a */
+    final /* synthetic */ de f6338a;
 
-    dj(di diVar) {
-        this.a = diVar;
+    dj(de deVar) {
+        this.f6338a = deVar;
     }
 
-    public void run() {
-        PersonalPrefs.a().g(false);
-        i.f().a(PersonalAccount.class, new dk(this));
+    public void onAnimationStart(Animation animation) {
+    }
+
+    public void onAnimationRepeat(Animation animation) {
+    }
+
+    public void onAnimationEnd(Animation animation) {
+        this.f6338a.f6055C = null;
     }
 }

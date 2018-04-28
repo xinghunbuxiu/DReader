@@ -1,67 +1,46 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Rect;
-import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import com.duokan.reader.ui.general.PagesView.PageLayout;
+import com.duokan.reader.ui.general.gb;
+import com.duokan.reader.ui.general.gc;
 
-import com.duokan.c.f;
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.c.j;
-import com.duokan.common.tools;
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.IFeature;
-import com.duokan.core.ui.t;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.document.au;
-import com.duokan.reader.ui.general.BubbleFloatingView;
-import com.duokan.reader.ui.general.DkLabelView;
-import com.duokan.reader.ui.general.jh;
+class yk extends fv {
+    /* renamed from: c */
+    final /* synthetic */ yg f11195c;
 
-import org.apache.http.HttpStatus;
-
-public class yk extends ActivatedController {
-    private final t a = new t(getContext());
-    private final c b;
-    private final au c;
-    private final yn d;
-
-    public yk(IFeature featrue, c cVar, au auVar, yn ynVar) {
-        super(featrue);
-        setContentView(new BubbleFloatingView(getContext(), null));
-        b();
-        this.a.setContentView(a());
-        this.b = cVar;
-        this.c = auVar;
-        this.d = ynVar;
+    private yk(yg ygVar) {
+        this.f11195c = ygVar;
+        super(ygVar);
     }
 
-    public void a(Rect rect) {
-        this.a.show();
-        a().a(new Rect[]{rect}, true, (int) HttpStatus.SC_MULTIPLE_CHOICES);
+    /* renamed from: a */
+    protected gx mo2393a() {
+        return new yf(this.f11195c.getContext(), this.f11195c);
     }
 
-    private BubbleFloatingView a() {
-        return (BubbleFloatingView) getContentView();
+    /* renamed from: b */
+    public boolean mo2322b(gc gcVar) {
+        return this.f11195c.f11188a.mo2139e(((gs) gcVar).mo2331g());
     }
 
-    private void b() {
-        BubbleFloatingView a = a();
-        View jhVar = new jh(getContext(), null);
-        jhVar.setScrollRightResource(f.general__shared__arrow_right_13dip_ffffff);
-        jhVar.a(tools.dip2px(getContext(), 10.0f), tools.dip2px(getContext(), 10.0f), tools.dip2px(getContext(), 10.0f), tools.dip2px(getContext(), 10.0f));
-        jhVar.setScrollLeftResource(f.general__shared__arrow_left_13dip_ffffff);
-        jhVar.setBackgroundResource(f.reading__annotation_operator_view__bg2);
-        View inflate = LayoutInflater.from(getContext()).inflate(h.reading__menu_button_view, null);
-        DkLabelView dkLabelView = (DkLabelView) inflate.findViewById(g.reading__menu_button_view__button);
-        dkLabelView.setText(j.reading__textinteract_view___share);
-        dkLabelView.setOnClickListener(new yl(this));
-        jhVar.a(inflate);
-        a.a(jhVar, null);
-        a.setBackgroundColor(0);
-        a.a(0, tools.dip2px(getContext(), 8.0f), 0, tools.dip2px(getContext(), 8.0f));
-        a.setUpArrow(f.reading__annotation_operator_view__up_arrow2);
-        a.setDownArrow(f.reading__annotation_operator_view__down_arrow2);
-        a.setOnClickListener(new ym(this));
+    /* renamed from: a */
+    protected gc mo2319a(gb gbVar, View view, ViewGroup viewGroup) {
+        gc a = super.mo2319a(gbVar, view, viewGroup);
+        ((gx) a.mo2328d()).setZoomEnabled(this.f11195c.getPageLayout() != PageLayout.TOP_TO_BOTTOM);
+        return a;
+    }
+
+    /* renamed from: h */
+    public void mo2519h(int i, int i2) {
+        if (this.f11195c.f11189b != null && i <= this.f11195c.f11190c && i + i2 > this.f11195c.f11190c) {
+            this.f11195c.f11189b = null;
+            this.f11195c.f11190c = -1;
+        }
+        super.mo2519h(i, i2);
+        if (i2 == 1) {
+            this.f11195c.f11191d = false;
+        }
     }
 }

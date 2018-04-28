@@ -1,71 +1,85 @@
 package com.duokan.reader.ui.general;
 
 import android.content.Context;
-
-import com.duokan.core.app.ab;
 import com.duokan.core.app.ac;
 import com.duokan.core.app.ad;
 import com.duokan.core.app.ae;
 import com.duokan.core.app.af;
 import com.duokan.core.app.ag;
+import com.duokan.core.app.ah;
+import com.duokan.p023b.C0241c;
 
-public class ap extends ak implements ab, ad, af {
-    private int a = -1;
-    private int b = -1;
-    private String c = null;
-    private int d = -1;
-    private int e = -1;
-    private int f = -1;
-    private String g = null;
-    private ae h = null;
-    private ac i = null;
-    private ag j = null;
+public class ap extends ak implements ac, ae, ag {
+    /* renamed from: a */
+    private int f603a = -1;
+    /* renamed from: b */
+    private int okLabelResid = -1;
+    /* renamed from: c */
+    private String okLabelStr = null;
+    /* renamed from: d */
+    private int f606d = -1;
+    /* renamed from: e */
+    private int f607e = -1;
+    /* renamed from: f */
+    private int f608f = -1;
+    /* renamed from: g */
+    private String f609g = null;
+    /* renamed from: h */
+    private af f610h = null;
+    /* renamed from: i */
+    private ad f611i = null;
+    /* renamed from: j */
+    private ah f612j = null;
 
     public ap(Context context) {
         super(context);
     }
 
-    public final void setOkLabel(int i) {
-        this.b = i;
+    public final void setOkLabelResid(int resid) {
+        this.okLabelResid = resid;
     }
 
-    public final void setOkLabel(String str) {
-        this.c = str;
+    public final void setOkLabel(String okLabel) {
+        this.okLabelStr = okLabel;
     }
 
-    public final void setNoLabel(int i) {
-        this.d = addButtonView(getContext().getString(i), getContext().getResources().getColor(c.general__shared__c6));
+    public final void setNoLabel(int resid) {
+        this.f606d = addButtonView(getContext().getString(resid), getContext().getResources().getColor(C0241c.general__shared__c6));
+    }
+
+    public final void setNoLabel(String str) {
+        this.f606d = addButtonView(str, getContext().getResources().getColor(C0241c.general__shared__c6));
     }
 
     public final void setCancelLabel(int i) {
-        this.f = i;
+        this.f608f = i;
     }
 
     public final void setCancelLabel(String str) {
-        this.g = str;
+        this.f609g = str;
     }
 
-    public void open(ae aeVar) {
+    public void open(af afVar) {
         if (!isOpened()) {
             setCancelOnBack(false);
             setCancelOnTouchOutside(false);
-            this.h = aeVar;
+            this.f610h = afVar;
             show();
         }
     }
 
-    public void open(ac acVar) {
+    public void open(ad adVar) {
         if (!isOpened()) {
             setCancelOnBack(true);
             setCancelOnTouchOutside(false);
-            this.i = acVar;
+            this.f611i = adVar;
             show();
         }
     }
 
-    public void open(ag agVar) {
+    public void open(ah ahVar) {
         if (!isOpened()) {
-            this.j = agVar;
+            this.f612j = ahVar;
             show();
         }
     }
@@ -74,15 +88,15 @@ public class ap extends ak implements ab, ad, af {
         if (!isShowing()) {
             return;
         }
-        if (i == this.a) {
+        if (i == this.f603a) {
             onOk();
             notifyOk();
             dismiss();
-        } else if (i == this.d) {
+        } else if (i == this.f606d) {
             onNo();
             notifyNo();
             dismiss();
-        } else if (i == this.e) {
+        } else if (i == this.f607e) {
             cancel();
         }
     }
@@ -90,49 +104,49 @@ public class ap extends ak implements ab, ad, af {
     protected void onCancel() {
         notifyCancel();
         super.onCancel();
-        this.h = null;
-        this.i = null;
-        this.j = null;
+        this.f610h = null;
+        this.f611i = null;
+        this.f612j = null;
     }
 
     public void show() {
-        if (-1 != this.f) {
-            this.e = addButtonView(getContext().getString(this.f), getContext().getResources().getColor(c.general__shared__c6));
-        } else if (this.g != null) {
-            this.e = addButtonView(this.g, getContext().getResources().getColor(c.general__shared__c6));
+        if (-1 != this.f608f) {
+            this.f607e = addButtonView(getContext().getString(this.f608f), getContext().getResources().getColor(C0241c.general__shared__c6));
+        } else if (this.f609g != null) {
+            this.f607e = addButtonView(this.f609g, getContext().getResources().getColor(C0241c.general__shared__c6));
         }
-        if (-1 != this.b) {
-            this.a = addButtonView(getContext().getString(this.b), getContext().getResources().getColor(c.general__shared__c1));
-        } else if (this.c != null) {
-            this.a = addButtonView(this.c, getContext().getResources().getColor(c.general__shared__c1));
+        if (-1 != this.okLabelResid) {
+            this.f603a = addButtonView(getContext().getString(this.okLabelResid), getContext().getResources().getColor(C0241c.general__shared__c1));
+        } else if (this.okLabelStr != null) {
+            this.f603a = addButtonView(this.okLabelStr, getContext().getResources().getColor(C0241c.general__shared__c1));
         }
         super.show();
     }
 
     private void notifyOk() {
-        if (this.h != null) {
-            this.h.onOk(this);
+        if (this.f610h != null) {
+            this.f610h.onOk(this);
         }
-        if (this.i != null) {
-            this.i.a(this);
+        if (this.f611i != null) {
+            this.f611i.mo1553a(this);
         }
-        if (this.j != null) {
-            this.j.a(this);
+        if (this.f612j != null) {
+            this.f612j.mo1562a(this);
         }
     }
 
     private void notifyNo() {
-        if (this.j != null) {
-            this.j.b(this);
+        if (this.f612j != null) {
+            this.f612j.mo1567b(this);
         }
     }
 
     private void notifyCancel() {
-        if (this.i != null) {
-            this.i.b(this);
+        if (this.f611i != null) {
+            this.f611i.mo1554b(this);
         }
-        if (this.j != null) {
-            this.j.c(this);
+        if (this.f612j != null) {
+            this.f612j.mo1565c(this);
         }
     }
 

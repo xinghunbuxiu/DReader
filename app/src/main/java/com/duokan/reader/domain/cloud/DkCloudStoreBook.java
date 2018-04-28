@@ -1,9 +1,7 @@
 package com.duokan.reader.domain.cloud;
 
 import android.text.TextUtils;
-
 import com.duokan.reader.common.webservices.duokan.DkStoreBookSourceType;
-
 import java.text.Collator;
 
 public abstract class DkCloudStoreBook extends DkCloudBook {

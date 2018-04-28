@@ -1,9 +1,7 @@
 package com.duokan.reader.domain.store;
 
 import android.text.TextUtils;
-
 import com.duokan.reader.common.webservices.duokan.DkStoreFictionInfo;
-
 import java.util.Date;
 
 public class DkStoreFiction extends DkStoreAbsBook {

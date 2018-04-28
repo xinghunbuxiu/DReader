@@ -1,26 +1,30 @@
 package com.duokan.reader.ui.reading;
 
-import java.io.File;
-import java.util.Comparator;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class ws implements Comparator {
-    final /* synthetic */ wl a;
+class ws implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ wd f11123a;
 
-    ws(wl wlVar) {
-        this.a = wlVar;
+    ws(wd wdVar) {
+        this.f11123a = wdVar;
     }
 
-    public /* synthetic */ int compare(Object obj, Object obj2) {
-        return a((File) obj, (File) obj2);
-    }
-
-    public int a(File file, File file2) {
-        if (file.lastModified() == file2.lastModified()) {
-            return 0;
+    public void onClick(View view) {
+        boolean z;
+        boolean z2 = true;
+        if (view.isSelected()) {
+            z = false;
+        } else {
+            z = true;
         }
-        if (file.lastModified() > file2.lastModified()) {
-            return 1;
+        view.setSelected(z);
+        ReadingPrefs ae = this.f11123a.f11102a.ae();
+        if (this.f11123a.f11102a.ae().m12448I()) {
+            z2 = false;
         }
-        return -1;
+        ae.m12494d(z2);
+        this.f11123a.f11102a.ae().m12463X();
     }
 }

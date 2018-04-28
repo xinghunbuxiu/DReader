@@ -1,22 +1,18 @@
 package com.duokan.reader.ui.account;
 
-import android.view.View;
+import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.OnShowListener;
 
-import com.duokan.core.ui.ay;
-import com.duokan.core.ui.bf;
+class av implements OnShowListener {
+    /* renamed from: a */
+    final /* synthetic */ ar f5837a;
 
-class av implements bf {
-    final /* synthetic */ as a;
-    final /* synthetic */ au b;
-
-    av(au auVar, as asVar) {
-        this.b = auVar;
-        this.a = asVar;
+    av(ar arVar) {
+        this.f5837a = arVar;
     }
 
-    public void a(ay ayVar, View view, int i) {
-        if (this.a != null) {
-            this.a.onChoiced(this.b.b.a(i).b);
-        }
+    /* renamed from: a */
+    public void OnShow(C0342j c0342j) {
+        this.f5837a.m8885e();
     }
 }

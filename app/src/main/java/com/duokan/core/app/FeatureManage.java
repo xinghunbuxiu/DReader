@@ -6,39 +6,50 @@ import java.util.LinkedList;
 class FeatureManage {
     private final LinkedList<FeatureListening> featureListenings = new LinkedList();
 
-    public final synchronized FeatureListening addFirst(Class cls) {
-        FeatureListening featurelistening = null;
-        if (cls != null) {
+    public final synchronized <T extends FeatureListening> T isContainsListener(Class<T> cls) {
+        T t;
+        if (cls == null) {
+            t = null;
+        } else {
             Iterator<FeatureListening> it = this.featureListenings.iterator();
             while (it.hasNext()) {
-                featurelistening = it.next();
-                if (cls.isAssignableFrom(featurelistening.getClass())) {
-                    featurelistening = (FeatureListening) cls.cast(featurelistening);
+                FeatureListening featureListening = it.next();
+                if (cls.isAssignableFrom(featureListening.getClass())) {
+                    featureListening = cls.cast(featureListening);
                     break;
                 }
             }
+            t = null;
         }
-        return featurelistening;
+        return t;
     }
 
-    public final synchronized boolean addFirst(FeatureListening featurelistening) {
-        if (featurelistening != null) {
-            this.featureListenings.remove(featurelistening);
-            this.featureListenings.addFirst(featurelistening);
-            return true;
-        }
-        return false;
-    }
-
-    public final synchronized boolean remove(FeatureListening featurelistening) {
-        boolean z = true;
-        if (featurelistening != null) {
-            z = this.featureListenings.remove(featurelistening);
+    /* renamed from: a */
+    public final synchronized boolean addFeatureListener(FeatureListening featureListening) {
+        boolean z;
+        if (featureListening == null) {
+            z = false;
+        } else {
+            this.featureListenings.remove(featureListening);
+            this.featureListenings.addFirst(featureListening);
+            z = true;
         }
         return z;
     }
 
-    public final synchronized void clear() {
+    /* renamed from: b */
+    public final synchronized boolean removeFeatureListener(FeatureListening featureListening) {
+        boolean z;
+        if (featureListening == null) {
+            z = true;
+        } else {
+            z = this.featureListenings.remove(featureListening);
+        }
+        return z;
+    }
+
+    /* renamed from: a */
+    public final synchronized void clearFeatureListener() {
         this.featureListenings.clear();
     }
 }

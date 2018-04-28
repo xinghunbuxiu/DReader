@@ -1,13 +1,14 @@
 package com.duokan.reader.ui.reading;
 
 class ld implements Runnable {
-    final /* synthetic */ lc a;
+    /* renamed from: a */
+    final /* synthetic */ la f10563a;
 
-    ld(lc lcVar) {
-        this.a = lcVar;
+    ld(la laVar) {
+        this.f10563a = laVar;
     }
 
     public void run() {
-        this.a.b.c();
+        this.f10563a.f10550e.setVisibility(4);
     }
 }

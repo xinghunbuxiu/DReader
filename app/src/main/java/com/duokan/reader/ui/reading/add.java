@@ -1,24 +1,25 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+/* synthetic */ class add {
+    /* renamed from: a */
+    static final /* synthetic */ int[] f9506a = new int[SelectionStyle.values().length];
 
-import com.duokan.reader.UmengManager;
-
-class add implements OnClickListener {
-    final /* synthetic */ sh a;
-    final /* synthetic */ adk b;
-    final /* synthetic */ TranslationController c;
-
-    add(TranslationController translationController, sh shVar, adk com_duokan_reader_ui_reading_adk) {
-        this.c = translationController;
-        this.a = shVar;
-        this.b = com_duokan_reader_ui_reading_adk;
-    }
-
-    public void onClick(View view) {
-        UmengManager.get().onEvent("V2_READING_POPMENU", "DictIciba");
-        this.a.a(this.c.d);
-        this.b.a();
+    static {
+        try {
+            f9506a[SelectionStyle.UNKNOW.ordinal()] = 1;
+        } catch (NoSuchFieldError e) {
+        }
+        try {
+            f9506a[SelectionStyle.RAPID_SLIDE.ordinal()] = 2;
+        } catch (NoSuchFieldError e2) {
+        }
+        try {
+            f9506a[SelectionStyle.FAST_SELECTING.ordinal()] = 3;
+        } catch (NoSuchFieldError e3) {
+        }
+        try {
+            f9506a[SelectionStyle.DRAG_INDICATOR.ordinal()] = 4;
+        } catch (NoSuchFieldError e4) {
+        }
     }
 }

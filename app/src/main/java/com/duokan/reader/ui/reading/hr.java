@@ -1,23 +1,20 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.audio.AudioPlayer.PlayerStatus;
-import com.duokan.reader.domain.audio.e;
-import com.duokan.reader.domain.document.bb;
+import java.util.Map;
 
-class hr implements e {
-    final /* synthetic */ hq a;
+class hr implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ Map f10348a;
+    /* renamed from: b */
+    final /* synthetic */ hq f10349b;
 
-    hr(hq hqVar) {
-        this.a = hqVar;
+    hr(hq hqVar, Map map) {
+        this.f10349b = hqVar;
+        this.f10348a = map;
     }
 
-    public void a(PlayerStatus playerStatus) {
-        this.a.q();
-    }
-
-    public void a(bb bbVar) {
-    }
-
-    public void a(int i) {
+    public void run() {
+        this.f10349b.f10347b.j_();
+        this.f10349b.f10347b.c.mo2103b(new hs(this));
     }
 }

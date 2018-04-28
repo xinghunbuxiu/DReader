@@ -8,40 +8,47 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
 public class dk extends Drawable {
-    private final Paint a = new Paint();
-    private float b = 1.0f;
-    private int c = 0;
-    private int d = 0;
-    private int e = 0;
+    /* renamed from: a */
+    private final Paint f7098a = new Paint();
+    /* renamed from: b */
+    private float f7099b = 1.0f;
+    /* renamed from: c */
+    private int f7100c = 0;
+    /* renamed from: d */
+    private int f7101d = 0;
+    /* renamed from: e */
+    private int f7102e = 0;
 
     public dk(int i) {
-        this.e = i;
+        this.f7102e = i;
     }
 
-    public void a(int i, int i2) {
-        this.c = i;
-        this.d = i2;
+    /* renamed from: a */
+    public void m10477a(int i, int i2) {
+        this.f7100c = i;
+        this.f7101d = i2;
     }
 
-    public void a(int i) {
-        this.b = (float) i;
+    /* renamed from: a */
+    public void m10476a(int i) {
+        this.f7099b = (float) i;
     }
 
     public void draw(Canvas canvas) {
-        this.a.setStyle(Style.STROKE);
-        this.a.setStrokeWidth(this.b);
-        this.a.setColor(this.e);
-        this.a.setAntiAlias(true);
+        this.f7098a.setStyle(Style.STROKE);
+        this.f7098a.setStrokeWidth(this.f7099b);
+        this.f7098a.setColor(this.f7102e);
+        this.f7098a.setAntiAlias(true);
         Rect bounds = getBounds();
-        float f = (float) (bounds.left + this.c);
-        float f2 = ((float) bounds.top) + (this.b / 2.0f);
-        float f3 = (float) (bounds.right - this.d);
+        float f = (float) (bounds.left + this.f7100c);
+        float f2 = ((float) bounds.top) + (this.f7099b / 2.0f);
+        float f3 = (float) (bounds.right - this.f7101d);
         float f4 = (float) bounds.top;
-        canvas.drawLine(f, f2, f3, (this.b / 2.0f) + f4, this.a);
+        canvas.drawLine(f, f2, f3, (this.f7099b / 2.0f) + f4, this.f7098a);
     }
 
     public int getIntrinsicHeight() {
-        return (int) this.b;
+        return (int) this.f7099b;
     }
 
     public int getIntrinsicWidth() {
@@ -53,10 +60,10 @@ public class dk extends Drawable {
     }
 
     public void setAlpha(int i) {
-        this.a.setAlpha(i);
+        this.f7098a.setAlpha(i);
     }
 
     public void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
+        this.f7098a.setColorFilter(colorFilter);
     }
 }

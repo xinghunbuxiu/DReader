@@ -1,30 +1,30 @@
 package com.duokan.reader.ui.general;
 
-import android.graphics.drawable.Animatable;
-import android.text.TextUtils;
-import android.widget.ImageView;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 
-import com.duokan.b.f;
-import com.duokan.b.i;
+class jr extends ap {
+    /* renamed from: a */
+    final /* synthetic */ String f7455a;
+    /* renamed from: b */
+    final /* synthetic */ jq f7456b;
 
-class jr implements Runnable {
-    final /* synthetic */ jq a;
-
-    jr(jq jqVar) {
-        this.a = jqVar;
+    jr(jq jqVar, Context context, String str) {
+        this.f7456b = jqVar;
+        this.f7455a = str;
+        super(context);
     }
 
-    public void run() {
-        if (this.a.e == this) {
-            ((Animatable) ((ImageView) this.a.findViewById(f.general__waiting_dialog_view__loading)).getDrawable()).start();
-            if (TextUtils.isEmpty(this.a.b.getText())) {
-                this.a.a(this.a.getContext().getResources().getString(i.general__shared__hard_working));
-            }
-            this.a.a.setVisibility(0);
-            if (this.a.c != null) {
-                this.a.a.startAnimation(this.a.c);
-            }
-            this.a.e = null;
+    protected void onOk() {
+        super.onOk();
+        try {
+            getActivity().startActivity(new Intent("android.intent.action.CALL", Uri.parse("tel:" + this.f7455a)));
+        } catch (Exception e) {
         }
+    }
+
+    protected void onNo() {
+        super.onNo();
     }
 }

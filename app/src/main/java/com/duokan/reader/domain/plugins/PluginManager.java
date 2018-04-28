@@ -1,7 +1,8 @@
 package com.duokan.reader.domain.plugins;
 
 public abstract class PluginManager {
-    static final /* synthetic */ boolean a = (!PluginManager.class.desiredAssertionStatus());
+    /* renamed from: a */
+    static final /* synthetic */ boolean f5381a = (!PluginManager.class.desiredAssertionStatus());
 
     public enum PluginState {
         INSTALLED,

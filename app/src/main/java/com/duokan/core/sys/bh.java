@@ -1,63 +1,70 @@
 package com.duokan.core.sys;
 
-public class bh extends q {
-    final /* synthetic */ bd a;
-    private final av b;
-    private final at c;
-    private long d = 0;
+public class bh extends C0354q {
+    /* renamed from: a */
+    final /* synthetic */ bd f704a;
+    /* renamed from: b */
+    private final av f705b;
+    /* renamed from: c */
+    private final at f706c;
+    /* renamed from: d */
+    private long f707d = 0;
 
-    public /* synthetic */ q a() {
-        return c();
+    /* renamed from: a */
+    public /* synthetic */ C0354q mo430a() {
+        return m988c();
     }
 
     public /* synthetic */ Object clone() {
-        return c();
+        return m988c();
     }
 
     public bh(bd bdVar, av avVar, at atVar) {
-        this.a = bdVar;
-        this.b = avVar;
-        this.c = atVar;
+        this.f704a = bdVar;
+        this.f705b = avVar;
+        this.f706c = atVar;
     }
 
     public void close() {
-        this.b.c(this.c);
+        this.f705b.m926c(this.f706c);
     }
 
     public void flush() {
-        this.b.b(this.c);
+        this.f705b.m923b(this.f706c);
     }
 
     public void write(int i) {
-        long j = this.d;
+        long j = this.f707d;
         byte[] bArr = new byte[]{(byte) i};
-        this.d = ((long) this.b.b(this.c, j, bArr, 0, bArr.length)) + j;
+        this.f707d = ((long) this.f705b.m920b(this.f706c, j, bArr, 0, bArr.length)) + j;
     }
 
     public void write(byte[] bArr) {
-        long j = this.d;
-        this.d = ((long) this.b.b(this.c, j, bArr, 0, bArr.length)) + j;
+        long j = this.f707d;
+        this.f707d = ((long) this.f705b.m920b(this.f706c, j, bArr, 0, bArr.length)) + j;
     }
 
     public void write(byte[] bArr, int i, int i2) {
-        long j = this.d;
-        this.d = ((long) this.b.b(this.c, j, bArr, i, i2)) + j;
+        long j = this.f707d;
+        this.f707d = ((long) this.f705b.m920b(this.f706c, j, bArr, i, i2)) + j;
     }
 
     protected void finalize() {
         super.finalize();
-        if (this.c.a()) {
+        if (this.f706c.mo412a()) {
             close();
         }
     }
 
-    public bh c() {
-        bh bhVar = new bh(this.a, this.b, this.b.a(this.c));
-        bhVar.d = this.d;
+    /* renamed from: c */
+    public bh m988c() {
+        bh bhVar = new bh(this.f704a, this.f705b, this.f705b.m915a(this.f706c));
+        bhVar.f707d = this.f707d;
         return bhVar;
     }
 
-    public long b() {
-        return this.c.b();
+    /* renamed from: b */
+    public long mo431b() {
+        return this.f706c.mo413b();
     }
 }

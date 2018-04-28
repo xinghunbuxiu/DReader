@@ -1,17 +1,21 @@
 package com.duokan.reader.ui.reading;
 
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 
-class ee implements OnClickListener {
-    final /* synthetic */ de a;
+class ee implements OnTouchListener {
+    /* renamed from: a */
+    final /* synthetic */ dg f10069a;
 
-    ee(de deVar) {
-        this.a = deVar;
+    ee(dg dgVar) {
+        this.f10069a = dgVar;
     }
 
-    public void onClick(View view) {
-        this.a.A.navigate("duokan-reader://store", null, false, null);
-        a.k().a("ending_page_recommendation_v3", "click", this.a.getLabelPrefix() + "related_to_store_button", false);
+    public boolean onTouch(View view, MotionEvent motionEvent) {
+        if (motionEvent.getActionMasked() == 0) {
+            this.f10069a.f10003d.set(motionEvent.getX(), motionEvent.getY());
+        }
+        return false;
     }
 }

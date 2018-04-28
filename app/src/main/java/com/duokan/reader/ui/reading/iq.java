@@ -1,33 +1,19 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.RectF;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.UmengManager;
 
-class iq implements ja {
-    final /* synthetic */ is a;
-    final /* synthetic */ ip b;
+class iq implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ia f10396a;
 
-    iq(ip ipVar, is isVar) {
-        this.b = ipVar;
-        this.a = isVar;
+    iq(ia iaVar) {
+        this.f10396a = iaVar;
     }
 
-    public void a() {
-        this.b.requestBack();
-    }
-
-    public void b() {
-        this.b.requestBack();
-        this.a.a();
-    }
-
-    public void a(RectF rectF, boolean z) {
-        this.b.requestBack();
-        RectF[] rectFArr = new RectF[2];
-        rectFArr[0] = rectF;
-        if (!z) {
-            rectF = new RectF(rectF.right, rectF.top, rectF.left, rectF.bottom);
-        }
-        rectFArr[1] = rectF;
-        this.a.a(rectFArr);
+    public void onClick(View view) {
+        UmengManager.get().onEvent("V2_READING_MENU", "Download");
+        this.f10396a.m13598a(new ir(this));
     }
 }

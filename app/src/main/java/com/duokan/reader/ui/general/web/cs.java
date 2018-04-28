@@ -1,29 +1,88 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.domain.account.i;
-
+import android.net.Uri;
+import android.text.TextUtils;
+import com.duokan.core.sys.as;
+import com.duokan.reader.common.C0611i;
+import com.duokan.reader.common.webservices.WebSession;
+import com.duokan.reader.common.webservices.WebSession.CacheStrategy;
+import com.duokan.reader.common.webservices.duokan.C0641o;
+import java.util.ArrayList;
+import org.apache.http.client.methods.HttpGet;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
-import java.util.List;
-import java.util.concurrent.Callable;
+class cs implements as {
+    /* renamed from: a */
+    final /* synthetic */ String f7694a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7695b;
 
-class cs implements Callable {
-    final /* synthetic */ PageController a;
-
-    cs(PageController cgVar) {
-        this.a = cgVar;
+    cs(ci ciVar, String str) {
+        this.f7695b = ciVar;
+        this.f7694a = str;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
-    }
-
-    public String a() {
-        JSONArray jSONArray = new JSONArray();
-        List d = i.f().d();
-        for (int i = 0; i < d.size(); i++) {
-            jSONArray.put((String) d.get(i));
+    /* renamed from: a */
+    public void mo1831a() {
+        int i;
+        String str;
+        int i2 = 0;
+        JSONObject jSONObject = new JSONObject(this.f7694a);
+        String string = jSONObject.getString("msgid");
+        JSONObject jSONObject2 = jSONObject.getJSONObject("params");
+        String toUpperCase = C0611i.m2786a(jSONObject2, "method", HttpGet.METHOD_NAME).toUpperCase();
+        String string2 = jSONObject2.getString("url");
+        Uri parse = Uri.parse(string2);
+        if (TextUtils.isEmpty(parse.getAuthority())) {
+            string2 = C0641o.m2934i().m2998y() + string2;
         }
-        return jSONArray.toString();
+        if (TextUtils.isEmpty(parse.getScheme())) {
+            string2 = (C0641o.m2934i().m2984k() ? "https://" : "http://") + string2;
+        }
+        JSONObject optJSONObject = jSONObject2.optJSONObject("params");
+        if (optJSONObject != null) {
+            JSONArray names = optJSONObject.names();
+            String str2 = string2;
+            i = 0;
+            while (i < names.length()) {
+                String string3 = names.getString(i);
+                str2 = (str2 + (i == 0 ? "?" : "&")) + Uri.encode(string3) + "=" + Uri.encode(String.valueOf(optJSONObject.get(string3)));
+                i++;
+            }
+            str = str2;
+        } else {
+            str = string2;
+        }
+        JSONObject optJSONObject2 = jSONObject2.optJSONObject("data");
+        ArrayList arrayList = new ArrayList();
+        if (optJSONObject2 != null) {
+            JSONArray names2 = optJSONObject2.names();
+            for (i = 0; i < names2.length(); i++) {
+                String string4 = names2.getString(i);
+                arrayList.add(string4);
+                arrayList.add(String.valueOf(optJSONObject2.get(string4)));
+            }
+        }
+        jSONObject = jSONObject2.optJSONObject("header");
+        ArrayList arrayList2 = new ArrayList();
+        if (jSONObject != null) {
+            JSONArray names3 = jSONObject.names();
+            while (i2 < names3.length()) {
+                string4 = names3.getString(i2);
+                arrayList2.add(string4);
+                arrayList2.add(String.valueOf(jSONObject.get(string4)));
+                i2++;
+            }
+        }
+        i2 = jSONObject2.optInt("timeout", 20000);
+        boolean optBoolean = jSONObject2.optBoolean("cache", true);
+        WebSession ctVar = new ct(this, toUpperCase, arrayList, str, arrayList2, string);
+        if (i2 > 0) {
+            int max = Math.max(5000, i2);
+            ctVar.setConnectTimeout(max);
+            ctVar.setReadTimeout(max);
+        }
+        ctVar.open(optBoolean ? CacheStrategy.USE_CACHE_IF_FRESH : CacheStrategy.DO_NOT_USE_CACHE);
     }
 }

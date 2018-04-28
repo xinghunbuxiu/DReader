@@ -1,78 +1,87 @@
 package com.duokan.core.ui;
 
 import android.widget.FrameLayout.LayoutParams;
-
 import java.util.Iterator;
 import java.util.LinkedList;
 
 class dg extends dh {
-    private final dd a;
-    private final LinkedList b = new LinkedList();
+    /* renamed from: a */
+    private final dd f1141a;
+    /* renamed from: b */
+    private final LinkedList<cv> f1142b = new LinkedList();
 
     public dg(dd ddVar) {
         super();
-        this.a = ddVar;
+        this.f1141a = ddVar;
     }
 
-    public boolean a(boolean z) {
-        Iterator it = this.b.iterator();
+    /* renamed from: a */
+    public boolean m1811a(boolean z) {
+        Iterator it = this.f1142b.iterator();
         while (it.hasNext()) {
             cv cvVar = (cv) it.next();
-            if (cvVar.j.b()) {
-                z = ((Boolean) cvVar.j.a()).booleanValue();
+            if (cvVar.f1102j.m861b()) {
+                z = ((Boolean) cvVar.f1102j.m858a()).booleanValue();
             }
         }
         return z;
     }
 
-    public boolean b(boolean z) {
-        Iterator it = this.b.iterator();
+    /* renamed from: b */
+    public boolean m1814b(boolean z) {
+        Iterator it = this.f1142b.iterator();
         while (it.hasNext()) {
             cv cvVar = (cv) it.next();
-            if (cvVar.k.b()) {
-                z = ((Boolean) cvVar.k.a()).booleanValue();
+            if (cvVar.f1103k.m861b()) {
+                z = ((Boolean) cvVar.f1103k.m858a()).booleanValue();
             }
         }
         return z;
     }
 
-    public boolean a() {
-        Iterator it = this.b.iterator();
+    /* renamed from: a */
+    public boolean m1810a() {
+        Iterator it = this.f1142b.iterator();
         while (it.hasNext()) {
-            if (((cv) it.next()).n) {
+            if (((cv) it.next()).f1106n) {
                 return true;
             }
         }
         return false;
     }
 
-    public int b() {
-        return this.b.size();
+    /* renamed from: b */
+    public int m1812b() {
+        return this.f1142b.size();
     }
 
-    public cv a(int i) {
-        return (cv) this.b.get(i);
+    /* renamed from: a */
+    public cv m1808a(int i) {
+        return (cv) this.f1142b.get(i);
     }
 
-    public void a(cv cvVar) {
-        if (!this.b.contains(cvVar)) {
-            this.b.add(cvVar);
-            this.a.addView(cvVar.h, new LayoutParams(-1, -1));
-            this.a.setVisibility(0);
+    /* renamed from: a */
+    public void m1809a(cv cvVar) {
+        if (!this.f1142b.contains(cvVar)) {
+            this.f1142b.add(cvVar);
+            this.f1141a.addView(cvVar.f1100h, new LayoutParams(-1, -1));
+            this.f1141a.setVisibility(0);
         }
     }
 
-    public void b(cv cvVar) {
-        if (this.b.contains(cvVar)) {
-            this.a.removeView(cvVar.h);
-            this.b.remove(cvVar);
-            if (this.b.size() < 1) {
-                this.a.setVisibility(8);
+    /* renamed from: b */
+    public void m1813b(cv cvVar) {
+        if (this.f1142b.contains(cvVar)) {
+            this.f1141a.removeView(cvVar.f1100h);
+            this.f1142b.remove(cvVar);
+            if (this.f1142b.size() < 1) {
+                this.f1141a.setVisibility(8);
             }
         }
     }
 
-    public void c() {
-        this.a.invalidate();
+    /* renamed from: c */
+    public void m1815c() {
+        this.f1141a.invalidate();
     }
 }

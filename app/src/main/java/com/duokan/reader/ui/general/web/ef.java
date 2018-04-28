@@ -1,33 +1,21 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.TaskHandler;
 import com.duokan.core.sys.as;
-import com.duokan.reader.common.i;
-
-import org.json.JSONObject;
+import com.duokan.reader.domain.account.C0709k;
 
 class ef implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
+    /* renamed from: a */
+    final /* synthetic */ String f7768a;
+    /* renamed from: b */
+    final /* synthetic */ ee f7769b;
 
-    ef(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    ef(ee eeVar, String str) {
+        this.f7769b = eeVar;
+        this.f7768a = str;
     }
 
-    public void a() {
-        JSONObject jSONObject = new JSONObject(this.a);
-        String string = jSONObject.getString("msgid");
-        jSONObject = jSONObject.getJSONObject("params");
-        String b = i.b(jSONObject, "hint");
-        String b2 = i.b(jSONObject, "confirm");
-        String b3 = i.b(jSONObject, "inputted");
-        Boolean valueOf = Boolean.valueOf(jSONObject.optBoolean("multi", true));
-        a egVar = new eg(this, string);
-        if (valueOf.booleanValue()) {
-            TaskHandler.postTask(new eh(this, b2, b3, b, egVar));
-        } else {
-            TaskHandler.postTask(new el(this, b, b3, b2, egVar));
-        }
+    /* renamed from: a */
+    public void mo1831a() {
+        C0709k.m3476a().m3509d(new eg(this));
     }
 }

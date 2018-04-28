@@ -1,36 +1,37 @@
 package com.duokan.reader.domain.micloud;
 
 import android.content.Context;
-
-import com.duokan.reader.common.classc;
+import cn.kuaipan.android.exception.KscException;
+import com.duokan.reader.common.C0564c;
 import com.google.android.collect.Maps;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
-import cn.kuaipan.android.exception.KscException;
-
-public class ay extends classc {
-    private static Map a = Maps.newHashMap();
-    private static Map b = Maps.newHashMap();
-    private static Map c = Maps.newHashMap();
+public class ay extends C0564c {
+    /* renamed from: a */
+    private static Map<Class<?>, Integer> f5206a = Maps.newHashMap();
+    /* renamed from: b */
+    private static Map<Class<?>, Integer> f5207b = Maps.newHashMap();
+    /* renamed from: c */
+    private static Map<Class<?>, Integer> f5208c = Maps.newHashMap();
 
     static {
-        b.put(IOException.class, Integer.valueOf(-10003));
-        c.put(IOException.class, Integer.valueOf(-20001));
+        f5207b.put(IOException.class, Integer.valueOf(-10003));
+        f5208c.put(IOException.class, Integer.valueOf(-20001));
     }
 
-    public static int a(Exception exception) {
+    /* renamed from: a */
+    public static int m8101a(Exception exception) {
         Class cls;
         for (cls = exception.getClass(); cls != Object.class; cls = cls.getSuperclass()) {
-            Integer num = (Integer) b.get(exception.getClass());
+            Integer num = (Integer) f5207b.get(exception.getClass());
             if (num != null) {
                 return num.intValue();
             }
         }
         for (cls = exception.getClass(); cls != Object.class; cls = cls.getSuperclass()) {
-            num = (Integer) a.get(exception.getClass());
+            num = (Integer) f5206a.get(exception.getClass());
             if (num != null) {
                 return num.intValue();
             }
@@ -38,16 +39,17 @@ public class ay extends classc {
         return -1;
     }
 
-    public static int b(Exception exception) {
+    /* renamed from: b */
+    public static int m8102b(Exception exception) {
         Class cls;
         for (cls = exception.getClass(); cls != Object.class; cls = cls.getSuperclass()) {
-            Integer num = (Integer) c.get(exception.getClass());
+            Integer num = (Integer) f5208c.get(exception.getClass());
             if (num != null) {
                 return num.intValue();
             }
         }
         for (cls = exception.getClass(); cls != Object.class; cls = cls.getSuperclass()) {
-            num = (Integer) a.get(exception.getClass());
+            num = (Integer) f5206a.get(exception.getClass());
             if (num != null) {
                 return num.intValue();
             }
@@ -55,7 +57,8 @@ public class ay extends classc {
         return -1;
     }
 
-    public static int a(Context context, File file, KscException kscException) {
+    /* renamed from: a */
+    public static int m8100a(Context context, File file, KscException kscException) {
         switch (kscException.getErrorCode()) {
             case 200000:
             case 220011:
@@ -104,7 +107,8 @@ public class ay extends classc {
         }
     }
 
-    public static int a(Context context, KscException kscException) {
+    /* renamed from: a */
+    public static int m8099a(Context context, KscException kscException) {
         switch (kscException.getErrorCode()) {
             case 220011:
             case 220208:

@@ -1,16 +1,17 @@
 package com.duokan.core.ui;
 
 class bo implements Runnable {
-    final /* synthetic */ bn a;
+    /* renamed from: a */
+    final /* synthetic */ bn f1027a;
 
     bo(bn bnVar) {
-        this.a = bnVar;
+        this.f1027a = bnVar;
     }
 
     public void run() {
-        if (this.a.a.g.a != this.a.a.g.b) {
-            this.a.a.b(this.a.a.g.a, this.a.a.g.b, this.a.a.e);
+        if (this.f1027a.f1026a.f1021g.f1030a != this.f1027a.f1026a.f1021g.f1031b) {
+            this.f1027a.f1026a.m1691b(this.f1027a.f1026a.f1021g.f1030a, this.f1027a.f1026a.f1021g.f1031b, this.f1027a.f1026a.f1019e);
         }
-        this.a.a.g = null;
+        this.f1027a.f1026a.f1021g = null;
     }
 }

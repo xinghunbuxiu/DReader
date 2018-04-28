@@ -1,16 +1,19 @@
 package com.duokan.reader.ui.reading;
 
-class aay implements Runnable {
-    final /* synthetic */ aat a;
+import com.duokan.reader.domain.document.ak;
 
-    aay(aat com_duokan_reader_ui_reading_aat) {
-        this.a = com_duokan_reader_ui_reading_aat;
+class aay implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ ak f9367a;
+    /* renamed from: b */
+    final /* synthetic */ aax f9368b;
+
+    aay(aax aax, ak akVar) {
+        this.f9368b = aax;
+        this.f9367a = akVar;
     }
 
     public void run() {
-        if (this.a.a.j != null) {
-            this.a.a.j.run();
-            this.a.a.j = null;
-        }
+        this.f9368b.f9366c.mo2022a(this.f9367a, this.f9368b.f9365b, this.f9368b.f9364a);
     }
 }

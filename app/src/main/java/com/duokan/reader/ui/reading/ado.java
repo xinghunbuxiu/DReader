@@ -1,19 +1,25 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.ag;
+/* synthetic */ class ado {
+    /* renamed from: a */
+    static final /* synthetic */ int[] f9526a = new int[LineType.values().length];
 
-class ado implements Runnable {
-    final /* synthetic */ ag a;
-    final /* synthetic */ aej b;
-    final /* synthetic */ adm c;
-
-    ado(adm com_duokan_reader_ui_reading_adm, ag agVar, aej com_duokan_reader_ui_reading_aej) {
-        this.c = com_duokan_reader_ui_reading_adm;
-        this.a = agVar;
-        this.b = com_duokan_reader_ui_reading_aej;
-    }
-
-    public void run() {
-        this.a.a(this.b);
+    static {
+        try {
+            f9526a[LineType.PRONOUN.ordinal()] = 1;
+        } catch (NoSuchFieldError e) {
+        }
+        try {
+            f9526a[LineType.MEANING.ordinal()] = 2;
+        } catch (NoSuchFieldError e2) {
+        }
+        try {
+            f9526a[LineType.ATTR.ordinal()] = 3;
+        } catch (NoSuchFieldError e3) {
+        }
+        try {
+            f9526a[LineType.EXTRA.ordinal()] = 4;
+        } catch (NoSuchFieldError e4) {
+        }
     }
 }

@@ -1,41 +1,26 @@
 package com.duokan.reader.ui.general.web;
 
-import android.text.TextUtils;
-
 import com.duokan.core.sys.as;
-import com.duokan.reader.domain.cloud.DkUserPurchasedBooksManager;
-import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
-import com.sina.weibo.sdk.exception.WeiboAuthException;
-
-import java.util.ArrayList;
-import java.util.concurrent.Semaphore;
 
 class je implements as {
-    final /* synthetic */ boolean a;
-    final /* synthetic */ String b;
-    final /* synthetic */ Semaphore c;
-    final /* synthetic */ ArrayList d;
-    final /* synthetic */ iv e;
+    /* renamed from: a */
+    final /* synthetic */ String f8039a;
+    /* renamed from: b */
+    final /* synthetic */ String f8040b;
+    /* renamed from: c */
+    final /* synthetic */ boolean f8041c;
+    /* renamed from: d */
+    final /* synthetic */ jc f8042d;
 
-    je(iv ivVar, boolean z, String str, Semaphore semaphore, ArrayList arrayList) {
-        this.e = ivVar;
-        this.a = z;
-        this.b = str;
-        this.c = semaphore;
-        this.d = arrayList;
+    je(jc jcVar, String str, String str2, boolean z) {
+        this.f8042d = jcVar;
+        this.f8039a = str;
+        this.f8040b = str2;
+        this.f8041c = z;
     }
 
-    public void a() {
-        if (this.a) {
-            if (this.d.isEmpty()) {
-                DkUserPurchasedFictionsManager.a().a(this.b, new ji(this));
-            } else {
-                DkUserPurchasedFictionsManager.a().a(this.b, this.d, new jh(this));
-            }
-        } else if (TextUtils.equals(this.b, WeiboAuthException.DEFAULT_AUTH_ERROR_CODE)) {
-            DkUserPurchasedBooksManager.a().b(true, true, new jf(this));
-        } else {
-            DkUserPurchasedBooksManager.a().a(this.b, new jg(this));
-        }
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f8042d.f8037b.f7581b.js_showWeb(this.f8039a, this.f8042d.f8037b.f7581b.handleUrl(this.f8040b), this.f8041c);
     }
 }

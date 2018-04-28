@@ -1,28 +1,16 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.reader.domain.store.DkStoreBookDetail;
-import com.duokan.reader.domain.store.DkStoreItem;
-import com.duokan.reader.domain.store.h;
+class qw implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ qt f10879a;
 
-class qw implements h {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ qh b;
-
-    qw(qh qhVar, Runnable runnable) {
-        this.b = qhVar;
-        this.a = runnable;
+    qw(qt qtVar) {
+        this.f10879a = qtVar;
     }
 
-    public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
-        if (!this.b.q) {
-            this.b.a((DkStoreBookDetail) dkStoreItem);
-            TaskHandler.PostTask(this.a);
+    public void run() {
+        if (!this.f10879a.f10873a.f9293q && this.f10879a.f10873a.f9270J != null) {
+            this.f10879a.f10873a.f9270J.mo2379j();
         }
-    }
-
-    public void onFetchBookDetailError(String str) {
-        this.b.a(null);
-        TaskHandler.PostTask(this.a);
     }
 }

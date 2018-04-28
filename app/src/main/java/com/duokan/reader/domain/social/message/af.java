@@ -1,32 +1,18 @@
 package com.duokan.reader.domain.social.message;
 
-import com.duokan.reader.common.j;
-import com.duokan.reader.domain.account.ab;
+class af implements as {
+    /* renamed from: a */
+    final /* synthetic */ DkMessagesManager f5496a;
 
-class af extends j {
-    final /* synthetic */ ab a;
-    final /* synthetic */ DkMessagesManager b;
-    private DkMessagesInfo c = null;
-
-    af(DkMessagesManager dkMessagesManager, ab abVar) {
-        this.b = dkMessagesManager;
-        this.a = abVar;
+    af(DkMessagesManager dkMessagesManager) {
+        this.f5496a = dkMessagesManager;
     }
 
-    protected void onSessionTry() {
-        synchronized (DkMessagesManager.a) {
-            av avVar = new av(this.b.e, this.a, this.b.f);
-            avVar.a();
-            this.c = avVar.b();
-        }
+    /* renamed from: a */
+    public void mo1180a(C1151k[] c1151kArr, boolean z) {
     }
 
-    protected void onSessionSucceeded() {
-        if (this.b.k.a(this.a)) {
-            this.b.a(this.c.mUnreadMessageIds);
-        }
-    }
-
-    protected void onSessionFailed() {
+    /* renamed from: a */
+    public void mo1179a(C1151k[] c1151kArr, String str) {
     }
 }

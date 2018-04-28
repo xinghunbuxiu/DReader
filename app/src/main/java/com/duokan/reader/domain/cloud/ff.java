@@ -1,87 +1,49 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.webservices.WebSession;
-import com.duokan.reader.common.webservices.duokan.DkAnnotationBookInfo;
-import com.duokan.reader.common.webservices.duokan.DkAnnotationsInfo;
-import com.duokan.reader.common.webservices.duokan.DkSyncService;
-import com.duokan.reader.common.webservices.duokan.DkSyncService.NoteType;
-import com.duokan.reader.common.webservices.duokan.b;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.i;
+import com.duokan.p023b.C0247i;
+import com.duokan.reader.common.webservices.duokan.DkStoreOrderInfo;
+import com.duokan.reader.common.webservices.duokan.DkStoreRedeemFundInfo;
+import com.duokan.reader.domain.payment.C1089s;
+import com.duokan.reader.domain.payment.PaymentResult;
+import com.duokan.reader.domain.store.DkStoreCallback;
+import com.duokan.reader.domain.store.DkStoreCallback.AbortPayErrorCode;
 
-import java.util.Arrays;
-import java.util.LinkedList;
+class ff implements DkStoreCallback {
+    /* renamed from: a */
+    static final /* synthetic */ boolean f3992a = (!ex.class.desiredAssertionStatus());
+    /* renamed from: b */
+    final /* synthetic */ fe f3993b;
 
-class ff extends b {
-    final /* synthetic */ ab a;
-    final /* synthetic */ fe b;
-    private com.duokan.reader.common.webservices.b c = null;
-    private com.duokan.reader.common.webservices.b d = null;
-    private com.duokan.reader.common.webservices.b e = null;
-    private DkCloudNoteBookInfo[] f = new DkCloudNoteBookInfo[0];
-    private long g = -1;
-
-    ff(fe feVar, ab abVar) {
-        this.b = feVar;
-        this.a = abVar;
+    ff(fe feVar) {
+        this.f3993b = feVar;
     }
 
-    protected void onSessionTry() {
-        fn fnVar = new fn(this.a);
-        fnVar.b();
-        DkUserReadingNotesCacheInfo a = fnVar.a();
-        DkSyncService dkSyncService = new DkSyncService((WebSession) this, this.a);
-        this.c = dkSyncService.a(NoteType.DUOKAN_BOOK_NOTE);
-        this.d = dkSyncService.a(NoteType.DUOKAN_FICTION_NOTE);
-        this.e = dkSyncService.a(NoteType.LOCAL_NOTE);
-        LinkedList linkedList = new LinkedList();
-        if (this.c.b == 0 && this.d.b == 0 && this.e.b == 0) {
-            for (DkAnnotationBookInfo dkCloudNoteBookInfo : ((DkAnnotationsInfo) this.c.a).mBookInfos) {
-                linkedList.add(new DkCloudNoteBookInfo(dkCloudNoteBookInfo, true));
-            }
-            for (DkAnnotationBookInfo dkCloudNoteBookInfo2 : ((DkAnnotationsInfo) this.d.a).mBookInfos) {
-                linkedList.add(new DkCloudNoteBookInfo(dkCloudNoteBookInfo2, true));
-            }
-            for (DkAnnotationBookInfo dkCloudNoteBookInfo22 : ((DkAnnotationsInfo) this.e.a).mBookInfos) {
-                linkedList.add(new DkCloudNoteBookInfo(dkCloudNoteBookInfo22, false));
-            }
-            this.f = (DkCloudNoteBookInfo[]) linkedList.toArray(new DkCloudNoteBookInfo[0]);
-            Arrays.sort(this.f, new fj());
-            fnVar.replaceWithItems((Object[]) this.f);
-            a.mLatestFullRefreshTime = System.currentTimeMillis();
-            a.mReadingNoteCount = 0;
-            for (DkCloudNoteBookInfo noteCount : this.f) {
-                a.mReadingNoteCount += (long) noteCount.getNoteCount();
-            }
-            fnVar.updateInfo(a);
-            this.g = a.mReadingNoteCount;
+    /* renamed from: a */
+    public void mo1163a(C1089s c1089s, PaymentResult paymentResult) {
+        if (paymentResult == PaymentResult.VERIFIED_OK) {
+            DkStoreRedeemFundInfo dkStoreRedeemFundInfo = new DkStoreRedeemFundInfo();
+            dkStoreRedeemFundInfo.mBookUuid = this.f3993b.f3990b.f3988d.f3982b.getBook().getBookUuid();
+            dkStoreRedeemFundInfo.mBookCover = this.f3993b.f3990b.f3988d.f3982b.getBook().getCoverUri();
+            dkStoreRedeemFundInfo.mBookTitle = this.f3993b.f3990b.f3988d.f3982b.getBook().getTitle();
+            dkStoreRedeemFundInfo.mAuthor = this.f3993b.f3990b.f3988d.f3982b.getBook().getAuthorLine();
+            dkStoreRedeemFundInfo.mEditor = this.f3993b.f3990b.f3988d.f3982b.getBook().getEditorLine();
+            dkStoreRedeemFundInfo.mWords = this.f3993b.f3991c.c;
+            dkStoreRedeemFundInfo.mLinkUrl = ((DkStoreOrderInfo) this.f3993b.f3991c.f2058a).mBookUuid;
+            this.f3993b.f3990b.f3988d.f3983c.mo1160a(new DkCloudRedeemFund(dkStoreRedeemFundInfo));
+        } else if (paymentResult == PaymentResult.VERIFIED_NOT_ENOUGH) {
+            this.f3993b.f3990b.f3988d.f3983c.mo1161a(this.f3993b.f3990b.f3988d.f3984d.f3957c.getString(C0247i.store__shared__pay_not_enough));
+        } else if (!f3992a) {
+            throw new AssertionError();
         }
     }
 
-    protected void onSessionSucceeded() {
-        if (!this.a.a(this.b.c.d)) {
-            this.b.a.a("");
-        } else if (this.c.b == 1 || this.d.b == 1 || this.e.b == 1) {
-            if (this.b.b) {
-                i.f().a(this.a.a, new fg(this));
-            } else {
-                this.b.a.a("");
-            }
-        } else if (this.c.b == 0 && this.d.b == 0 && this.e.b == 0) {
-            this.b.c.e = this.g;
-            this.b.c.d();
-            this.b.c.a(this.f);
-            this.b.a.a(this.f, false);
-        } else {
-            this.b.a.a("");
-        }
+    /* renamed from: a */
+    public void mo1164a(C1089s c1089s, String str) {
+        this.f3993b.f3990b.f3988d.f3983c.mo1161a(str);
     }
 
-    protected void onSessionFailed() {
-        if (this.a.a(this.b.c.d)) {
-            this.b.a.a("");
-        } else {
-            this.b.a.a("");
-        }
+    /* renamed from: a */
+    public void mo1165a(C1089s c1089s, String str, AbortPayErrorCode abortPayErrorCode) {
+        this.f3993b.f3990b.f3988d.f3983c.mo1161a(str);
     }
 }

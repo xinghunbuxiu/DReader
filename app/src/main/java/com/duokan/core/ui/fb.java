@@ -3,18 +3,20 @@ package com.duokan.core.ui;
 import com.duokan.core.ui.Scrollable.ScrollState;
 
 class fb implements Runnable {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ ev b;
+    /* renamed from: a */
+    final /* synthetic */ Runnable f1240a;
+    /* renamed from: b */
+    final /* synthetic */ ev f1241b;
 
     fb(ev evVar, Runnable runnable) {
-        this.b = evVar;
-        this.a = runnable;
+        this.f1241b = evVar;
+        this.f1240a = runnable;
     }
 
     public void run() {
-        this.b.a(ScrollState.IDLE);
-        if (this.a != null) {
-            this.b.a.post(this.a);
+        this.f1241b.m1416a(ScrollState.IDLE);
+        if (this.f1240a != null) {
+            this.f1241b.f935a.post(this.f1240a);
         }
     }
 }

@@ -4,11 +4,14 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 
 public interface aw extends au {
-    Rect a();
+    /* renamed from: a */
+    Rect mo1418a();
 
-    boolean b_();
+    /* renamed from: c */
+    boolean mo1419c();
 
-    boolean c();
+    boolean c_();
 
-    Bitmap d();
+    /* renamed from: d */
+    Bitmap mo1421d();
 }

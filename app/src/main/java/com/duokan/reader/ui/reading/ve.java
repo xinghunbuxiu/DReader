@@ -4,16 +4,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 class ve implements OnClickListener {
-    final /* synthetic */ vd a;
+    /* renamed from: a */
+    final /* synthetic */ vd f11053a;
 
     ve(vd vdVar) {
-        this.a = vdVar;
+        this.f11053a = vdVar;
     }
 
     public void onClick(View view) {
-        this.a.a.ae().c(Math.max(this.a.a.ae().e, Math.min(this.a.a.ae().s() + 0.1f, this.a.a.ae().f)));
-        this.a.a.ae().Y();
-        this.a.a.aB();
-        this.a.a();
+        this.f11053a.m13847a(new vf(this));
     }
 }

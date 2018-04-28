@@ -1,13 +1,11 @@
 package com.duokan.reader.domain.cloud.push;
 
-import com.duokan.reader.common.cache.i;
-import com.duokan.reader.common.cache.k;
-
+import com.duokan.reader.common.cache.C0449k;
+import com.duokan.reader.common.cache.C0576i;
+import java.io.Serializable;
 import org.apache.http.HttpStatus;
 
-import java.io.Serializable;
-
-public class MessageListCache extends k {
+public class MessageListCache extends C0449k<DkCloudPushMessagesInfo, DkCloudPushMessage, String> {
 
     public class DkCloudPushMessagesInfo implements Serializable {
         public String mAccountName = null;
@@ -20,18 +18,20 @@ public class MessageListCache extends k {
     }
 
     public /* synthetic */ Object queryInfo() {
-        return b();
+        return m5639b();
     }
 
     public MessageListCache() {
-        super("PushMessageCachePrefix", i.a, new y(), HttpStatus.SC_OK);
+        super("PushMessageCachePrefix", C0576i.f1884a, new C0878w(), HttpStatus.SC_OK);
     }
 
-    public void a() {
+    /* renamed from: a */
+    public void m5638a() {
         upgradeVersion(3);
     }
 
-    public DkCloudPushMessagesInfo b() {
+    /* renamed from: b */
+    public DkCloudPushMessagesInfo m5639b() {
         DkCloudPushMessagesInfo dkCloudPushMessagesInfo = (DkCloudPushMessagesInfo) super.queryInfo();
         if (!dkCloudPushMessagesInfo.mInit) {
             dkCloudPushMessagesInfo.mInit = true;

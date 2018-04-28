@@ -1,27 +1,23 @@
 package com.duokan.reader.domain.account;
 
-class bz implements b {
-    final /* synthetic */ b a;
-    final /* synthetic */ PersonalAccount b;
+class bz implements C0700d {
+    /* renamed from: a */
+    final /* synthetic */ C0700d f2454a;
+    /* renamed from: b */
+    final /* synthetic */ PersonalAccount f2455b;
 
-    bz(PersonalAccount personalAccount, b bVar) {
-        this.b = personalAccount;
-        this.a = bVar;
+    bz(PersonalAccount personalAccount, C0700d c0700d) {
+        this.f2455b = personalAccount;
+        this.f2454a = c0700d;
     }
 
-    public void a(a aVar) {
-        if (this.a != null) {
-            this.a.a(aVar);
-        }
-        this.b.k = false;
+    /* renamed from: a */
+    public void mo868a(C0672a c0672a) {
+        this.f2454a.mo868a(this.f2455b);
     }
 
-    public void a(a aVar, String str) {
-        this.b.g.u();
-        this.b.o();
-        if (this.a != null) {
-            this.a.a(aVar, str);
-        }
-        this.b.k = false;
+    /* renamed from: a */
+    public void mo869a(C0672a c0672a, String str) {
+        this.f2454a.mo869a(this.f2455b, str);
     }
 }

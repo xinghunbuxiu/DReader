@@ -1,43 +1,43 @@
 package com.duokan.reader.ui.account;
 
 import android.graphics.Bitmap;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.common.webservices.C0237c;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.WebSession;
 
-import com.duokan.reader.common.webservices.d;
-import com.duokan.reader.common.webservices.duokan.r;
+class cb extends WebSession {
+    /* renamed from: a */
+    Bitmap f5914a = null;
+    /* renamed from: b */
+    final /* synthetic */ String f5915b;
+    /* renamed from: c */
+    final /* synthetic */ co f5916c;
+    /* renamed from: d */
+    final /* synthetic */ bx f5917d;
 
-class cb extends r {
-    Bitmap a = null;
-    final /* synthetic */ String b;
-    final /* synthetic */ cd c;
-    final /* synthetic */ bz d;
-
-    cb(bz bzVar, String str, cd cdVar) {
-        this.d = bzVar;
-        this.b = str;
-        this.c = cdVar;
+    cb(bx bxVar, C0657i c0657i, String str, co coVar) {
+        this.f5917d = bxVar;
+        this.f5915b = str;
+        this.f5916c = coVar;
+        super(c0657i);
     }
 
     protected void onSessionTry() {
-        this.a = new d(this).a(this.b);
+        this.f5914a = new C0237c(this).m545a(this.f5915b);
     }
 
     protected void onSessionSucceeded() {
-        if (!this.d.g) {
-            if (this.a != null) {
-                this.c.a(this.a, true);
-            } else {
-                onSessionFailed();
-            }
+        this.f5917d.f5901m = false;
+        if (this.f5914a != null) {
+            this.f5916c.mo1586a(this.f5914a, true);
+        } else {
+            onSessionFailed();
         }
     }
 
     protected void onSessionFailed() {
-        if (!this.d.g) {
-            this.c.a();
-        }
-    }
-
-    protected void onSessionClosed() {
-        this.d.g = false;
+        this.f5917d.f5901m = false;
+        this.f5916c.mo1587a(this.f5917d.getContext().getResources().getString(C0258j.gen_bitmap_fail));
     }
 }

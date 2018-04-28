@@ -1,27 +1,32 @@
 package com.duokan.reader.ui.reading;
 
+import android.graphics.Rect;
 import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.ui.dv;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.common.webservices.duokan.p;
-import com.duokan.reader.ui.general.web.StorePageController;
+class dl implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ dg f10030a;
 
-class dl implements OnClickListener {
-    final /* synthetic */ dk a;
-
-    dl(dk dkVar) {
-        this.a = dkVar;
+    dl(dg dgVar) {
+        this.f10030a = dgVar;
     }
 
-    public void onClick(View view) {
-        ActivatedController storePageController = new StorePageController(MyContextWrapper.getFeature(this.a.c.getContext()));
-        String d = p.i().d(this.a.b.e, null);
-        if (this.a.c.e.U() != PageAnimationMode.VSCROLL) {
-            a.k().a("ending_page_recommendation_v3", "click", this.a.c.getLabelPrefix() + this.a.b.d + "_banner", false);
+    public void run() {
+        try {
+            Rect rect = new Rect();
+            if (this.f10030a.getLocalVisibleRect(rect) && this.f10030a.f10005f.mo2004U() != PageAnimationMode.VSCROLL) {
+                long currentTimeMillis = System.currentTimeMillis();
+                for (View view : this.f10030a.f10022w.keySet()) {
+                    if (view.getVisibility() == 0 && view.getLocalVisibleRect(rect) && rect.height() > dv.m1932b(this.f10030a.getContext(), 50.0f)) {
+                        this.f10030a.f10002c.put(this.f10030a.f10022w.get(view), Long.valueOf(currentTimeMillis));
+                    }
+                }
+                if (this.f10030a.f10021v.getVisibility() == 0 && this.f10030a.f10021v.getLocalVisibleRect(rect) && rect.height() > dv.m1932b(this.f10030a.getContext(), 50.0f)) {
+                    this.f10030a.f10002c.put("related_to_store_button", Long.valueOf(System.currentTimeMillis()));
+                }
+            }
+        } catch (Throwable th) {
         }
-        storePageController.loadUrl(d);
-        this.a.c.A.pushHalfPageSmoothly(storePageController, null);
     }
 }

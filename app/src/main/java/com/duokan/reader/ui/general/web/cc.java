@@ -1,35 +1,20 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.diagnostic.WebLog;
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.h;
+class cc implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ String f7663a;
+    /* renamed from: b */
+    final /* synthetic */ boolean f7664b;
+    /* renamed from: c */
+    final /* synthetic */ StorePageController f7665c;
 
-class cc implements h {
-    final /* synthetic */ StorePageController a;
-
-    cc(StorePageController storePageController) {
-        this.a = storePageController;
+    cc(StorePageController storePageController, String str, boolean z) {
+        this.f7665c = storePageController;
+        this.f7663a = str;
+        this.f7664b = z;
     }
 
-    public void a(a aVar) {
-    }
-
-    public void b(a aVar) {
-        WebLog.c().WebLog();
-        if (StorePageController.sPreloadedController != null) {
-            StorePageController.sPreloadedController.mWebView.f();
-            StorePageController.sPreloadedController = null;
-        }
-    }
-
-    public void c(a aVar) {
-        WebLog.c().WebLog();
-        if (StorePageController.sPreloadedController != null) {
-            StorePageController.sPreloadedController.mWebView.f();
-            StorePageController.sPreloadedController = null;
-        }
-    }
-
-    public void d(a aVar) {
+    public void run() {
+        this.f7665c.queryFictionDetail(this.f7663a, new cd(this), true);
     }
 }

@@ -1,28 +1,28 @@
 package com.duokan.reader.ui.general;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.TextView;
+import com.duokan.core.app.AppContext;
+import com.duokan.reader.ui.surfing.al;
 
-class dt extends Drawable {
-    final /* synthetic */ ds a;
+class dt implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ TextView f7122a;
+    /* renamed from: b */
+    final /* synthetic */ dr f7123b;
 
-    dt(ds dsVar) {
-        this.a = dsVar;
+    dt(dr drVar, TextView textView) {
+        this.f7123b = drVar;
+        this.f7122a = textView;
     }
 
-    public void draw(Canvas canvas) {
-        this.a.e();
-        this.a.a(canvas);
-    }
-
-    public void setAlpha(int i) {
-    }
-
-    public void setColorFilter(ColorFilter colorFilter) {
-    }
-
-    public int getOpacity() {
-        return -3;
+    public void onClick(View view) {
+        int a = this.f7123b.m10495a(this.f7122a);
+        if (this.f7123b.f7104b != a) {
+            this.f7123b.m10515a(a);
+        } else {
+            ((al) AppContext.getAppContext(this.f7123b.getContext()).queryFeature(al.class)).mo2556k();
+        }
     }
 }

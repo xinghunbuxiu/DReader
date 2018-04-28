@@ -2,18 +2,21 @@ package com.duokan.reader.ui.personal;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-
-import com.duokan.reader.domain.store.o;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.domain.account.oauth.ThirdWeiXin;
 
 class iz implements OnClickListener {
-    final /* synthetic */ it a;
+    /* renamed from: a */
+    final /* synthetic */ String f8755a;
+    /* renamed from: b */
+    final /* synthetic */ iu f8756b;
 
-    iz(it itVar) {
-        this.a = itVar;
+    iz(iu iuVar, String str) {
+        this.f8756b = iuVar;
+        this.f8755a = str;
     }
 
     public void onClick(View view) {
-        o.a().a(!o.a().b());
-        this.a.a();
+        new ThirdWeiXin().send2Friend(this.f8756b.getString(C0258j.personal__personal_redeem_info_view__send_title), this.f8755a);
     }
 }

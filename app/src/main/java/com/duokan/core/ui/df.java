@@ -8,10 +8,11 @@ import android.view.View;
 import android.view.WindowInsets;
 
 class df extends dd {
-    final /* synthetic */ de a;
+    /* renamed from: a */
+    final /* synthetic */ de f1140a;
 
     df(de deVar, Context context) {
-        this.a = deVar;
+        this.f1140a = deVar;
         super(context);
     }
 
@@ -19,8 +20,8 @@ class df extends dd {
         if (super.dispatchTouchEvent(motionEvent)) {
             return true;
         }
-        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, this.a.b.getWindow().getDecorView());
-        boolean dispatchTouchEvent = this.a.b.getWindow().getDecorView().dispatchTouchEvent(a);
+        MotionEvent a = dv.m1908a(motionEvent, (View) this, this.f1140a.f1136b.getWindow().getDecorView());
+        boolean dispatchTouchEvent = this.f1140a.f1136b.getWindow().getDecorView().dispatchTouchEvent(a);
         a.recycle();
         return dispatchTouchEvent;
     }
@@ -32,9 +33,9 @@ class df extends dd {
             }
         }
         if (hasFocus()) {
-            return keyEvent.dispatch(this.a.b, getKeyDispatcherState(), this.a.b);
+            return keyEvent.dispatch(this.f1140a.f1136b, getKeyDispatcherState(), this.f1140a.f1136b);
         }
-        return this.a.b.dispatchKeyEvent(keyEvent);
+        return this.f1140a.f1136b.dispatchKeyEvent(keyEvent);
     }
 
     public WindowInsets onApplyWindowInsets(WindowInsets windowInsets) {

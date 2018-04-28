@@ -1,13 +1,12 @@
 package com.duokan.reader.domain.cloud;
 
-public abstract class gl {
-    final /* synthetic */ gf b;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.C0659k;
 
-    abstract void a(gf gfVar);
+class gl {
+    /* renamed from: a */
+    public static final C0657i f4061a = new C0659k().m3096a(gl.class.getName()).m3094a();
 
-    abstract void a(gf gfVar, int i);
-
-    public gl(gf gfVar) {
-        this.b = gfVar;
+    private gl() {
     }
 }

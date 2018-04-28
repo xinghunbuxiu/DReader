@@ -1,21 +1,20 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.common.classc;
+import com.duokan.core.sys.as;
 
-import java.util.concurrent.Callable;
+class eo implements as {
+    /* renamed from: a */
+    final /* synthetic */ String f7787a;
+    /* renamed from: b */
+    final /* synthetic */ ek f7788b;
 
-class eo implements Callable {
-    final /* synthetic */ PageController a;
-
-    eo(PageController cgVar) {
-        this.a = cgVar;
+    eo(ek ekVar, String str) {
+        this.f7788b = ekVar;
+        this.f7787a = str;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
-    }
-
-    public Boolean a() {
-        return Boolean.valueOf(classc.ConnectivityReceiver.b().e());
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7788b.f7780b.f7581b.onSearchWordChange(this.f7787a);
     }
 }

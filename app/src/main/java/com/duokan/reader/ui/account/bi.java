@@ -1,93 +1,55 @@
 package com.duokan.reader.ui.account;
 
 import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
-import android.graphics.Canvas;
-import android.os.Handler;
-import android.os.Looper;
-import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.MeasureSpec;
+import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
+import android.widget.ImageView;
+import com.bumptech.glide.Glide;
+import com.duokan.p024c.C0255g;
+import com.duokan.p024c.C0256h;
 
-import com.duokan.c.j;
-import com.duokan.core.ui.UTools;
-import com.duokan.reader.domain.store.DkShareBook;
+public class bi extends bd {
+    /* renamed from: a */
+    private final String f5832a;
+    /* renamed from: b */
+    private ImageView f5833b;
 
-import java.util.ArrayList;
-import java.util.List;
+    public bi(Activity activity, String str, String str2, String str3, bu buVar) {
+        super(activity, str, str2, buVar);
+        this.f5832a = str3;
+        m8908b();
+    }
 
-public class bi extends bn {
-    private final ao e;
-    private final Handler f = new Handler(Looper.getMainLooper());
-    private List g = new ArrayList();
+    /* renamed from: a */
+    protected void mo1574a(View view) {
+        LayoutInflater.from(getContext()).inflate(C0256h.share__share_event_to_weibo_dialog_view, (FrameLayout) view.findViewById(C0255g.account__third_share_view__share_content), true);
+        this.g = (EditText) findViewById(C0255g.share__share_book_to_weibo_dialog_view__share_reason_edit);
+        this.f5833b = (ImageView) findViewById(C0255g.share__share_book_to_weibo_dialog_view__image);
+        this.g.setText(this.f5832a);
+        this.d.setOnClickListener(new bj(this));
+    }
 
-    public bi(Activity activity, String str, List list, ce ceVar) {
-        super(activity, str, null, ceVar);
-        this.g = list;
-        this.e = new ao(getContext(), this.g);
-        b();
+    /* renamed from: a */
+    protected void mo1575a(bt btVar) {
+        if (!this.e.isShowing()) {
+            this.e.open(new bk(this));
+        }
+        btVar.mo1573a(null, false);
     }
 
     public void show() {
         super.show();
-        UTools.PostTask(this.e.getReasonEditView());
+        mo1577a(this.f5833b);
     }
 
-    protected void a(View view) {
-        ((FrameLayout) view.findViewById(g.account__third_share_view__share_content)).addView(this.e, new LayoutParams(-1, -2));
-        this.b.setOnClickListener(new bj(this));
+    /* renamed from: a */
+    protected void mo1576a(String str) {
     }
 
-    protected void a(cd cdVar) {
-        CharSequence string;
-        an bhVar;
-        List list = this.g;
-        CharSequence valueOf = String.valueOf(this.e.getReasonEditView().getText());
-        if (TextUtils.isEmpty(valueOf)) {
-            string = getContext().getString(j.share_reason_default);
-        } else {
-            string = valueOf;
-        }
-        if (list.size() == 1) {
-            bhVar = new bh(getContext(), (DkShareBook) list.get(0));
-        } else {
-            bhVar = new bg(getContext(), list);
-        }
-        bhVar.getReasonView().setText(string);
-        bhVar.setLayoutParams(new LayoutParams(-2, -2));
-        bhVar.measure(MeasureSpec.makeMeasureSpec(1080, 1073741824), MeasureSpec.makeMeasureSpec(0, 0));
-        bhVar.layout(0, 0, bhVar.getMeasuredWidth(), bhVar.getMeasuredHeight());
-        try {
-            Bitmap c = a.c(bhVar.getMeasuredWidth(), bhVar.getMeasuredHeight(), Config.ARGB_8888);
-            Canvas canvas = new Canvas(c);
-            long currentTimeMillis = System.currentTimeMillis();
-            this.d = true;
-            if (!this.c.isShowing()) {
-                this.c.open(new bk(this));
-            }
-            this.f.post(new bl(this, bhVar, canvas, currentTimeMillis, cdVar, c));
-        } catch (Throwable th) {
-            this.f.post(new bm(this, cdVar));
-        }
-    }
-
-    protected String a() {
-        List list = this.g;
-        if (list.size() > 1) {
-            return String.format(getContext().getString(j.share__book_template3_multi), new Object[]{Integer.valueOf(list.size())});
-        } else if (list.size() != 1) {
-            return "";
-        } else {
-            return String.format(getContext().getString(j.share__book_template3), new Object[]{((DkShareBook) list.get(0)).getTitle(), ((DkShareBook) list.get(0)).getIntro()});
-        }
-    }
-
-    protected void a(String str) {
-        for (DkShareBook dkShareBook : this.g) {
-            com.duokan.reader.domain.statistics.dailystats.a.d().a(dkShareBook.getBookUuid(), dkShareBook.getTraceId(), str);
-        }
+    /* renamed from: a */
+    protected void mo1577a(ImageView imageView) {
+        Glide.with(getContext().getApplicationContext()).load(this.h).into(imageView);
     }
 }

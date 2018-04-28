@@ -1,52 +1,37 @@
 package com.duokan.reader.domain.bookshelf;
 
-import android.os.Handler;
-import android.os.Looper;
+import com.duokan.reader.common.async.work.C0523c;
+import com.duokan.reader.domain.micloud.C1068i;
+import java.util.Iterator;
+import java.util.LinkedList;
 
-import com.duokan.reader.domain.micloud.bi;
-import com.duokan.reader.domain.micloud.o;
-import com.duokan.reader.domain.micloud.t;
+class ja implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ it f3379a;
 
-class ja implements t {
-    final /* synthetic */ iz a;
-
-    ja(iz izVar) {
-        this.a = izVar;
+    ja(it itVar) {
+        this.f3379a = itVar;
     }
 
-    public void b(o oVar, bi biVar) {
-        synchronized (this.a.m) {
-            iy iyVar = new iy(biVar);
-            String f = iyVar.f();
-            boolean z = !this.a.l;
-            new Handler(Looper.getMainLooper()).post(new jb(this, oVar, z, a(oVar, z), f, iyVar));
+    public void run() {
+        jp b = this.f3379a.f3365i;
+        if (b != null) {
+            C1068i c1068i;
+            LinkedList linkedList = new LinkedList();
+            Iterator it = b.f3405b.m8112a().m2368c().iterator();
+            while (it.hasNext()) {
+                c1068i = (C1068i) it.next();
+                if (c1068i.m2296k()) {
+                    linkedList.add(c1068i);
+                }
+            }
+            Iterator it2 = linkedList.iterator();
+            while (it2.hasNext()) {
+                c1068i = (C1068i) it2.next();
+                if (c1068i.m2296k()) {
+                    b.f3405b.m8112a().m2367c((C0523c) c1068i);
+                }
+            }
         }
-    }
-
-    public void a(o oVar, bi biVar) {
-        synchronized (this.a.m) {
-            String f = new iy(biVar).f();
-            boolean z = !this.a.l;
-            new Handler(Looper.getMainLooper()).post(new jc(this, oVar, z, a(oVar, z), f));
-        }
-    }
-
-    public void a(o oVar) {
-        new Handler(Looper.getMainLooper()).post(new jd(this, oVar, oVar.i()));
-    }
-
-    public void b(o oVar) {
-        synchronized (this.a.m) {
-            new Handler(Looper.getMainLooper()).post(new je(this, oVar, a(oVar, true)));
-        }
-    }
-
-    private jj a(o oVar, boolean z) {
-        jj jjVar = new jj();
-        jjVar.a = oVar.i();
-        if (z) {
-            jjVar.a(oVar.b("/Books"));
-        }
-        return jjVar;
     }
 }

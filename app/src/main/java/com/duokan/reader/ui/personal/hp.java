@@ -1,33 +1,39 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.domain.cloud.DkUserReadBookManager.ReadBook;
-import com.duokan.reader.ui.general.expandable.ViewMode;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import com.duokan.core.ui.dv;
 
-import java.util.Arrays;
+class hp extends Drawable {
+    /* renamed from: a */
+    final /* synthetic */ View f8667a;
+    /* renamed from: b */
+    final /* synthetic */ fz f8668b;
 
-class hp implements Runnable {
-    final /* synthetic */ ReadBook[] a;
-    final /* synthetic */ boolean b;
-    final /* synthetic */ ho c;
-
-    hp(ho hoVar, ReadBook[] readBookArr, boolean z) {
-        this.c = hoVar;
-        this.a = readBookArr;
-        this.b = z;
+    hp(fz fzVar, View view) {
+        this.f8668b = fzVar;
+        this.f8667a = view;
     }
 
-    public void run() {
-        if (this.c.a == 0) {
-            this.c.b.l.clear();
-        }
-        if (this.a.length > 0) {
-            this.c.b.l.addAll(Arrays.asList(this.a));
-            this.c.b.g();
-        }
-        if (this.c.b.s.f() == ViewMode.Edit && this.c.b.j != null) {
-            this.c.b.j.c();
-        }
-        this.c.b.getAdapter().a(this.b);
-        this.c.b.d();
+    public void draw(Canvas canvas) {
+        float width = (float) ((this.f8667a.getWidth() / 2) - dv.m1932b(this.f8668b.getContext(), 3.0f));
+        Paint paint = new Paint();
+        paint.setColor(Color.parseColor("#cccccc"));
+        paint.setAntiAlias(true);
+        canvas.drawCircle((float) (this.f8667a.getWidth() / 2), (float) (this.f8667a.getHeight() / 2), width, paint);
+    }
+
+    public void setAlpha(int i) {
+    }
+
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
+
+    public int getOpacity() {
+        return 0;
     }
 }

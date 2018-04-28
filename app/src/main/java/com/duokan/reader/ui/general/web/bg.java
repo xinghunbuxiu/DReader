@@ -1,24 +1,17 @@
 package com.duokan.reader.ui.general.web;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+class bg implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ String f7625a;
+    /* renamed from: b */
+    final /* synthetic */ StorePageController f7626b;
 
-import com.duokan.c.j;
-import com.duokan.reader.common.classc;
-import com.duokan.reader.ui.general.be;
-
-class bg implements OnClickListener {
-    final /* synthetic */ StorePageController a;
-
-    bg(StorePageController storePageController) {
-        this.a = storePageController;
+    bg(StorePageController storePageController, String str) {
+        this.f7626b = storePageController;
+        this.f7625a = str;
     }
 
-    public void onClick(View view) {
-        if (classc.ConnectivityReceiver.b().e()) {
-            this.a.refresh();
-        } else {
-            be.a(this.a.getContext(), j.general__shared__network_error, 1).show();
-        }
+    public void run() {
+        this.f7626b.mWebView.mo1815a(String.format("javascript:(function() { try { %s } catch(e) { fictionApi.log(e.message); } }())", new Object[]{this.f7625a}));
     }
 }

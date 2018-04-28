@@ -1,60 +1,35 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.Drawable.Callback;
+import android.graphics.PointF;
 import android.view.View;
+import com.duokan.core.ui.du;
+import com.duokan.core.ui.er;
+import com.duokan.reader.ui.reading.FixedPageClipView.ClipIndicator;
 
-import com.duokan.reader.domain.document.as;
+class jb implements du {
+    /* renamed from: a */
+    final /* synthetic */ iz f10421a;
 
-class jb extends View {
-    final /* synthetic */ FixedPageClipView a;
-    private as b;
-    private RectF c;
-    private final Callback d;
-
-    public jb(FixedPageClipView fixedPageClipView, Context context) {
-        this.a = fixedPageClipView;
-        super(context);
-        this.b = fixedPageClipView.e.getDocument().a(fixedPageClipView.e.Z());
-        this.d = new jc(this, fixedPageClipView);
-        this.b.setCallback(this.d);
-        setWillNotDraw(false);
+    jb(iz izVar) {
+        this.f10421a = izVar;
     }
 
-    public Drawable a() {
-        return this.b;
+    public void onTouchUp(View view, PointF pointF) {
+        this.f10421a.f10417d = ClipIndicator.UNKNOW;
+        this.f10421a.f10416c.m12417a(this.f10421a.f10417d, pointF, 1);
     }
 
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        RectF b = b();
-        this.b.setBounds((int) b.left, (int) b.top, getWidth() - ((int) b.right), getHeight() - ((int) b.bottom));
-        this.b.a(new Rect(-((int) b.left), -((int) b.top), getWidth(), getHeight()));
-        this.b.a(getWidth());
-        this.b.b(getHeight());
-        this.b.draw(canvas);
+    public void onTouchDown(View view, PointF pointF) {
+        this.f10421a.f10416c.requestDisallowInterceptTouchEvent(true);
+        this.f10421a.f10417d = this.f10421a.f10416c.m12416a(pointF);
+        this.f10421a.f10416c.m12417a(this.f10421a.f10417d, pointF, 1);
     }
 
-    protected void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        if (this.b != null) {
-            this.b.H();
-        }
+    public void onTouchCancel(View view, PointF pointF) {
     }
 
-    private RectF b() {
-        if (this.c == null) {
-            this.c = new RectF();
-            RectF rectF = this.a.d.d()[0];
-            this.c.left = rectF.left * ((float) getWidth());
-            this.c.right = rectF.right * ((float) getWidth());
-            this.c.top = rectF.top * ((float) getHeight());
-            this.c.bottom = rectF.bottom * ((float) getHeight());
-        }
-        return this.c;
+    /* renamed from: a */
+    public void mo527a(er erVar, View view, PointF pointF, PointF pointF2) {
+        this.f10421a.f10416c.m12417a(this.f10421a.f10417d, pointF2, 2);
     }
 }

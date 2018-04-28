@@ -1,114 +1,87 @@
 package com.duokan.reader.ui.account;
 
-import android.app.Activity;
-import android.graphics.drawable.ColorDrawable;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
-import android.view.View;
-
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.core.ui.UTools;
-import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.domain.account.oauth.ThirdSina;
-import com.duokan.reader.domain.account.oauth.TokenStore;
-import com.duokan.reader.ui.general.DkLabelView;
-import com.duokan.reader.ui.general.af;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.common.webservices.C0621a;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.WebSession;
+import com.duokan.reader.common.webservices.duokan.C0647u;
+import com.duokan.reader.domain.account.C0709k;
+import com.duokan.reader.domain.account.PersonalAccount;
+import com.duokan.reader.domain.store.DkShareBook;
 import com.duokan.reader.ui.general.be;
-import com.duokan.reader.ui.general.hm;
-import com.duokan.reader.ui.general.jq;
-import com.duokan.reader.ui.ITheme;
+import java.util.List;
 
-public abstract class bn extends af {
-    protected ThirdSina a;
-    protected View b;
-    protected jq c;
-    protected boolean d = false;
-    private TokenStore e;
-    private boolean f;
-    private int g = 2;
-    private String h = getContext().getString(j.share_cancel);
-    private final ce i;
-    private final String j;
-    private final String k;
+class bn extends WebSession {
+    /* renamed from: a */
+    C0621a<DkShareBook> f5878a = new C0621a();
+    /* renamed from: b */
+    final /* synthetic */ List f5879b;
+    /* renamed from: c */
+    final /* synthetic */ bl f5880c;
 
-    protected abstract String a();
-
-    protected abstract void a(View view);
-
-    protected abstract void a(cd cdVar);
-
-    protected abstract void a(String str);
-
-    public bn(Activity activity, String str, String str2, ce ceVar) {
-        super(activity);
-        this.i = ceVar;
-        this.j = str;
-        this.k = str2;
-        this.e = TokenStore.getInstance();
-        this.a = new ThirdSina(activity);
-        this.a.onActive();
-        this.f = this.e.isBindAccessToken(activity, "sina");
-        this.c = new jq(getActivity());
-        this.c.setCancelOnBack(true);
-        this.c.setCancelOnTouchOutside(false);
-        this.c.a(getActivity().getString(j.general__shared__sending));
-        setCancelOnTouchOutside(false);
-        setResizeForSoftInput(true);
+    bn(bl blVar, C0657i c0657i, List list) {
+        this.f5880c = blVar;
+        this.f5879b = list;
+        super(c0657i);
     }
 
-    public void dismiss() {
-        if (!this.d) {
-            if (this.c != null && this.c.isShowing()) {
-                this.c.dismiss();
+    protected void onSessionTry() {
+        C0647u c0647u = new C0647u(this, C0709k.m3476a().m3502b(PersonalAccount.class));
+        int i = 0;
+        while (i < this.f5880c.f5872i.length) {
+            this.f5878a = c0647u.m3040e(this.f5880c.f5872i[i].trim());
+            if (this.f5878a.b == 0) {
+                DkShareBook dkShareBook = (DkShareBook) this.f5878a.f2058a;
+                dkShareBook.mTraceId = this.f5880c.f5873j.length > i ? this.f5880c.f5873j[i] : "";
+                this.f5879b.add(dkShareBook);
             }
-            if (this.a != null) {
-                this.a.onDeactive();
-            }
-            if (this.i == null) {
-                be.a(getContext(), this.h, 0).show();
-            } else if (this.g == 0) {
-                this.i.a(this.h);
-            } else if (this.g == 1) {
-                this.i.b(this.h);
-            } else {
-                this.i.c(this.h);
-            }
-            super.dismiss();
+            i++;
         }
     }
 
-    protected void b() {
-        View inflate = LayoutInflater.from(getContext()).inflate(h.account__third_share_view_v4, null);
-        if (ReaderEnv.get().forHd()) {
-            inflate.setBackgroundDrawable(new hm(new ColorDrawable(getContext().getResources().getColor(d.general__shared__fefaf8)), (float) UTools.getMinimumHeight(getContext(), 8.0f)));
-        }
-        setContentView(inflate);
-        inflate.findViewById(g.account__third_share_view__btns).setPadding(UTools.getMinimumHeight(getContext(), 15.0f), (ReaderEnv.get().forHd() ? 0 : ((ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class)).getTheme().getHeaderPaddingTop()) + UTools.getMinimumHeight(getContext(), 10.0f), UTools.getMinimumHeight(getContext(), 15.0f), UTools.getMinimumHeight(getContext(), 10.0f));
-        ((DkLabelView) inflate.findViewById(g.account__third_share_view__third_name)).setText(getContext().getString(j.share_name_sina));
-        inflate.findViewById(g.account__third_share_view__cancel).setOnClickListener(new bo(this));
-        this.b = inflate.findViewById(g.account__third_share_view__send);
-        a(inflate);
-    }
-
-    protected void c() {
-        if (!i.a(getActivity())) {
-            be.a(getContext(), j.report_no_network_error, 0).show();
-        } else if (this.f) {
-            String a = a();
-            if (a.length() > 140) {
-                a = a.substring(0, 136) + "...";
+    protected void onSessionSucceeded() {
+        if (!this.f5880c.g) {
+            if (this.f5879b.size() == this.f5880c.f5872i.length) {
+                this.f5880c.m8931a(this.f5879b);
+                if (this.f5880c.b.equals("system")) {
+                    this.f5880c.m8885e();
+                    this.f5880c.m8937c(this.f5879b);
+                    return;
+                } else if (this.f5880c.b.equals("weibo")) {
+                    bd ayVar = new ay(this.f5880c.getActivity(), this.f5880c.c, this.f5879b, this.f5880c.h);
+                    ayVar.setOnShowListener(new bo(this));
+                    ayVar.show();
+                    return;
+                } else {
+                    this.f5880c.m8883c();
+                    return;
+                }
             }
-            if (!TextUtils.isEmpty(this.j)) {
-                a = a + " " + this.j;
+            this.f5880c.m8885e();
+            CharSequence string = this.f5880c.getString(C0258j.get_book_detail_fail);
+            if (this.f5880c.h != null) {
+                this.f5880c.h.mo1845b(string);
+                this.f5880c.h = null;
+                return;
             }
-            a(new bp(this, a));
-            this.b.setEnabled(false);
-        } else {
-            d();
+            be.m10287a(this.f5880c.getContext(), string, 0).show();
         }
     }
 
-    private void d() {
-        this.a.oauth(new br(this));
+    protected void onSessionFailed() {
+        if (!this.f5880c.g) {
+            this.f5880c.m8885e();
+            CharSequence string = this.f5880c.getString(C0258j.get_book_detail_fail);
+            if (this.f5880c.h != null) {
+                this.f5880c.h.mo1845b(string);
+                this.f5880c.h = null;
+                return;
+            }
+            be.m10287a(this.f5880c.getContext(), string, 0).show();
+        }
+    }
+
+    protected void onSessionClosed() {
+        this.f5880c.g = false;
     }
 }

@@ -1,29 +1,18 @@
 package com.duokan.reader.ui.account;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.content.Context;
+import android.graphics.Color;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth;
-import com.duokan.reader.domain.account.oauth.ThirdYinxiang;
-import com.duokan.reader.domain.account.oauth.TokenStore;
+public abstract class aa extends FrameLayout {
+    /* renamed from: a */
+    public abstract boolean mo1579a();
 
-class aa implements OnClickListener {
-    final /* synthetic */ z a;
+    public abstract TextView getReasonView();
 
-    aa(z zVar) {
-        this.a = zVar;
-    }
-
-    public void onClick(View view) {
-        if (ReaderEnv.get().getSyncEvernoteEnabled()) {
-            ReaderEnv.get().setSyncEvernoteEnabled(false);
-            this.a.a();
-        } else if (TokenStore.getInstance().hasLoginEvernote(this.a.getContext())) {
-            ReaderEnv.get().setSyncEvernoteEnabled(true);
-            this.a.a();
-        } else {
-            ((ThirdYinxiang) ThirdOAuth.produceThird(this.a.getActivity(), "evernote")).queryAccount(new ab(this));
-        }
+    public aa(Context context) {
+        super(context);
+        setBackgroundColor(Color.rgb(250, 247, 242));
     }
 }

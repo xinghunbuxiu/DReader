@@ -1,21 +1,23 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.common.webservices.duokan.y;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.UmengManager;
 
-class uf implements Runnable {
-    final /* synthetic */ ue a;
+class uf implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ub f11007a;
 
-    uf(ue ueVar) {
-        this.a = ueVar;
+    uf(ub ubVar) {
+        this.f11007a = ubVar;
     }
 
-    public void run() {
-        String H = this.a.a.H();
-        if (this.a.a.aj()) {
-            H = new y(this.a.a.H()).a();
+    public void onClick(View view) {
+        UmengManager.get().onEvent("V2_READING_MENU", "Navigation");
+        if (this.f11007a.mo2251l()) {
+            this.f11007a.dismissTopPopup();
         }
-        sh a = this.a.b.a;
-        int i = this.a.a.aj() ? 4 : this.a.a.k() ? 2 : 1;
-        a.a(H, i);
+        this.f11007a.f9677h = true;
+        this.f11007a.m13598a(new ug(this));
     }
 }

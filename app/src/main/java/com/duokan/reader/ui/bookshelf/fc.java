@@ -1,48 +1,37 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.IFeature;
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.domain.bookshelf.ai;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.ui.InavOperater;
-import com.duokan.reader.ui.surfing.af;
-
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.core.app.AppContext;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.ui.bookshelf.ImportedFileInfo.FileStatus;
+import com.duokan.reader.ui.general.be;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
-public class fc extends ActivatedController implements ff {
-    public fc(IFeature featrue) {
-        super(featrue);
-        setContentView(new fh(getContext(), new fd(this)));
+class fc implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f6432a;
+    /* renamed from: b */
+    final /* synthetic */ ey f6433b;
+
+    fc(ey eyVar, Runnable runnable) {
+        this.f6433b = eyVar;
+        this.f6432a = runnable;
     }
 
-    protected void onActive(boolean z) {
-        super.onActive(z);
-        ((af) getContext().queryFeature(af.class)).n();
-    }
-
-    protected void onDeactive() {
-        super.onDeactive();
-        ((af) getContext().queryFeature(af.class)).m();
-    }
-
-    protected boolean onBack() {
-        if (((fh) getContentView()).a()) {
-            return true;
+    public void onClick(View view) {
+        if (this.f6433b.f6421b.m9599e() > 0) {
+            List arrayList = new ArrayList();
+            for (ImportedFileInfo importedFileInfo : this.f6433b.f6421b.m9605b()) {
+                if (importedFileInfo.m9087f() == FileStatus.SELECTED) {
+                    arrayList.add(new File(importedFileInfo.m9084c()));
+                }
+            }
+            ((cz) AppContext.getAppContext(this.f6433b.getContext()).queryFeature(cz.class)).mo1659c(arrayList, this.f6432a, null);
+            return;
         }
-        return super.onBack();
-    }
-
-    public void a(String str) {
-        List a = ai.a().a(new File(str));
-        if (!a.isEmpty()) {
-            ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).openBook((c) a.get(0));
-        }
-    }
-
-    public void a() {
-        ((InavOperater) MyContextWrapper.getFeature(getContext()).queryFeature(InavOperater.class)).pushPageSmoothly(new fr(getContext(), new fe(this)), null);
+        be.m10286a(this.f6433b.getContext(), C0258j.bookshelf__shared__unselect_any_books, 0).show();
     }
 }

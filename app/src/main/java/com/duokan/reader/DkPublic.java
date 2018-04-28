@@ -20,24 +20,21 @@ import android.os.Environment;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-
-import com.duokan.core.diagnostic.WebLog;
-import com.duokan.core.io.FileUtils;
+import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.io.C0339d;
+import com.duokan.core.sys.C0373z;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
-import com.duokan.core.sys.z;
-import com.duokan.reader.common.webservices.b;
-import com.duokan.reader.common.webservices.duokan.o;
-import com.duokan.reader.common.webservices.duokan.r;
+import com.duokan.reader.common.bitmap.C0544a;
+import com.duokan.reader.common.webservices.C0621a;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.WebSession;
+import com.duokan.reader.common.webservices.duokan.C0640n;
+import com.duokan.reader.common.webservices.duokan.C0643q;
 import com.google.gson.Gson;
-
-import org.apache.http.HttpStatus;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -61,39 +58,52 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
+import org.apache.http.HttpStatus;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public final class DkPublic {
-    static final /* synthetic */ boolean a;
-    private static int b = HttpStatus.SC_SWITCHING_PROTOCOLS;
-    private static Object c = new Object();
+    /* renamed from: a */
+    static final /* synthetic */ boolean f1407a;
+    /* renamed from: b */
+    private static int f1408b = HttpStatus.SC_SWITCHING_PROTOCOLS;
+    /* renamed from: c */
+    private static Object f1409c = new Object();
 
-    final class AnonymousClass1 extends r {
-        b a = new b();
-        final String b;
-        final ag c;
-        final Runnable d;
+    /* renamed from: com.duokan.reader.DkPublic$1 */
+    final class C04271 extends WebSession {
+        /* renamed from: a */
+        C0621a<String> f1403a = new C0621a();
+        /* renamed from: b */
+        final /* synthetic */ String f1404b;
+        /* renamed from: c */
+        final /* synthetic */ ag f1405c;
+        /* renamed from: d */
+        final /* synthetic */ Runnable f1406d;
 
-        AnonymousClass1(String str, ag agVar, Runnable runnable) {
-            this.b = str;
-            this.c = agVar;
-            this.d = runnable;
+        C04271(C0657i c0657i, String str, ag agVar, Runnable runnable) {
+            this.f1404b = str;
+            this.f1405c = agVar;
+            this.f1406d = runnable;
+            super(c0657i);
         }
 
         protected void onSessionTry() {
-            this.a = new o(this, null).g(this.b);
+            this.f1403a = new C0640n(this, null).m2924g(this.f1404b);
         }
 
         protected void onSessionSucceeded() {
-            if (this.a.b == 0) {
-                this.c.a(this.a.a);
-            } else if (this.d != null) {
-                this.d.run();
+            if (this.f1403a.b == 0) {
+                this.f1405c.run(this.f1403a.f2058a);
+            } else if (this.f1406d != null) {
+                this.f1406d.run();
             }
         }
 
         protected void onSessionFailed() {
-            if (this.d != null) {
-                this.d.run();
+            if (this.f1406d != null) {
+                this.f1406d.run();
             }
         }
     }
@@ -105,37 +115,38 @@ public final class DkPublic {
         } else {
             z = true;
         }
-        a = z;
+        f1407a = z;
     }
 
     public static boolean zipFile(File file, File file2) {
-        ZipOutputStream zipOutputStream;
-        ZipOutputStream closeable = null;
+        Closeable closeable = null;
         boolean z = false;
+        Closeable zipOutputStream;
         try {
             zipOutputStream = new ZipOutputStream(new FileOutputStream(file2));
             try {
                 z = zip(file, zipOutputStream);
-                FileUtils.close(zipOutputStream);
+                C0339d.m795a(zipOutputStream);
             } catch (Throwable th) {
                 closeable = zipOutputStream;
-                FileUtils.close(closeable);
+                C0339d.m795a(closeable);
                 return z;
             }
         } catch (Throwable th2) {
-            FileUtils.close(closeable);
+            C0339d.m795a(closeable);
             return z;
         }
         return z;
     }
 
     public static boolean zip(File file, ZipOutputStream zipOutputStream) {
+        Throwable th;
         if (file == null) {
             return false;
         }
         if (file.isFile()) {
-            BufferedInputStream closeable = null;
-            BufferedInputStream bufferedInputStream;
+            Closeable closeable = null;
+            Closeable bufferedInputStream;
             try {
                 byte[] bArr = new byte[1024];
                 zipOutputStream.putNextEntry(new ZipEntry(file.getName()));
@@ -149,9 +160,10 @@ public final class DkPublic {
                         zipOutputStream.write(bArr, 0, read);
                     } catch (Throwable th2) {
                         closeable = bufferedInputStream;
+                        th = th2;
                     }
                 }
-                FileUtils.close(bufferedInputStream);
+                C0339d.m795a(bufferedInputStream);
                 try {
                     zipOutputStream.closeEntry();
                 } catch (IOException e) {
@@ -159,12 +171,14 @@ public final class DkPublic {
                 }
                 return true;
             } catch (Throwable th3) {
-                FileUtils.close(closeable);
+                th = th3;
+                C0339d.m795a(closeable);
                 try {
                     zipOutputStream.closeEntry();
                 } catch (IOException e2) {
                     e2.printStackTrace();
                 }
+                throw th;
             }
         }
         File[] listFiles = file.listFiles();
@@ -177,11 +191,10 @@ public final class DkPublic {
     }
 
     public static boolean unzipRawResource(Context context, int i, File file) {
-        boolean unzip = false;
-
-        if (!a && context == null) {
+        if (!f1407a && context == null) {
             throw new AssertionError();
-        } else if (a || file != null) {
+        } else if (f1407a || file != null) {
+            boolean unzip;
             InputStream inputStream = null;
             try {
                 inputStream = context.getResources().openRawResource(i);
@@ -224,11 +237,11 @@ public final class DkPublic {
         int length;
         InputStream inputStream;
         int i = 0;
-        if (!a && context == null) {
+        if (!f1407a && context == null) {
             throw new AssertionError();
-        } else if (!a && (strArr == null || strArr.length <= 0)) {
+        } else if (!f1407a && (strArr == null || strArr.length <= 0)) {
             throw new AssertionError();
-        } else if (a || file != null) {
+        } else if (f1407a || file != null) {
             AssetManager assets = context.getAssets();
             InputStream[] inputStreamArr = new InputStream[strArr.length];
             int i2 = 0;
@@ -285,10 +298,10 @@ public final class DkPublic {
     }
 
     public static boolean unzipAsset(Context context, String str, File file) {
-        if (!a && context == null) {
+        if (!f1407a && context == null) {
             throw new AssertionError();
-        } else if (a || file != null) {
-            boolean unzip = false;
+        } else if (f1407a || file != null) {
+            boolean unzip;
             InputStream inputStream = null;
             try {
                 inputStream = context.getAssets().open(str);
@@ -342,11 +355,156 @@ public final class DkPublic {
         }
     }
 
-    public static boolean unzip(ZipInputStream zipInputStream, File file) {
-
+    /* JADX WARNING: inconsistent code. */
+    /* Code decompiled incorrectly, please refer to instructions dump. */
+    public static boolean unzip(java.util.zip.ZipInputStream r8, java.io.File r9) {
+        /*
+        r1 = 0;
+        r0 = f1407a;
+        if (r0 != 0) goto L_0x000d;
+    L_0x0005:
+        if (r8 != 0) goto L_0x000d;
+    L_0x0007:
+        r0 = new java.lang.AssertionError;
+        r0.<init>();
+        throw r0;
+    L_0x000d:
+        r0 = f1407a;
+        if (r0 != 0) goto L_0x0019;
+    L_0x0011:
+        if (r9 != 0) goto L_0x0019;
+    L_0x0013:
+        r0 = new java.lang.AssertionError;
+        r0.<init>();
+        throw r0;
+    L_0x0019:
+        r4 = new java.util.LinkedList;
+        r4.<init>();
+        r0 = r9.exists();
+        if (r0 != 0) goto L_0x002a;
+    L_0x0024:
+        r9.mkdirs();
+        r4.add(r9);
+    L_0x002a:
+        r0 = r8.getNextEntry();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+    L_0x002e:
+        if (r0 == 0) goto L_0x00e8;
+    L_0x0030:
+        r2 = r0.getName();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        r3 = r0.isDirectory();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        if (r3 == 0) goto L_0x0050;
+    L_0x003a:
+        r0 = new java.io.File;	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        r0.<init>(r9, r2);	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        r2 = r0.exists();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        if (r2 != 0) goto L_0x004b;
+    L_0x0045:
+        r0.mkdirs();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        r4.add(r0);	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+    L_0x004b:
+        r0 = r8.getNextEntry();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        goto L_0x002e;
+    L_0x0050:
+        r5 = new java.io.File;	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        r5.<init>(r9, r2);	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        r4.add(r5);	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        r2 = splitDirctoryPart(r2);	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        if (r2 == 0) goto L_0x006c;
+    L_0x005e:
+        r3 = new java.io.File;	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        r3.<init>(r9, r2);	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        r2 = r3.exists();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        if (r2 != 0) goto L_0x006c;
+    L_0x0069:
+        r3.mkdirs();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+    L_0x006c:
+        r2 = r5.exists();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        if (r2 == 0) goto L_0x007e;
+    L_0x0072:
+        r2 = r5.length();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        r6 = r0.getSize();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        r0 = (r2 > r6 ? 1 : (r2 == r6 ? 0 : -1));
+        if (r0 == 0) goto L_0x004b;
+    L_0x007e:
+        r3 = 0;
+        r0 = 1024; // 0x400 float:1.435E-42 double:5.06E-321;
+        r0 = new byte[r0];	 Catch:{ all -> 0x00ea }
+        r2 = new java.io.FileOutputStream;	 Catch:{ all -> 0x00ea }
+        r2.<init>(r5);	 Catch:{ all -> 0x00ea }
+    L_0x0088:
+        r3 = r8.read(r0);	 Catch:{ all -> 0x0093 }
+        if (r3 <= 0) goto L_0x00b2;
+    L_0x008e:
+        r5 = 0;
+        r2.write(r0, r5, r3);	 Catch:{ all -> 0x0093 }
+        goto L_0x0088;
+    L_0x0093:
+        r0 = move-exception;
+    L_0x0094:
+        if (r2 == 0) goto L_0x0099;
+    L_0x0096:
+        r2.close();	 Catch:{ Exception -> 0x00df, Error -> 0x00c7 }
+    L_0x0099:
+        throw r0;	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+    L_0x009a:
+        r0 = move-exception;
+        r0.printStackTrace();
+        r2 = r4.iterator();
+    L_0x00a2:
+        r0 = r2.hasNext();
+        if (r0 == 0) goto L_0x00e4;
+    L_0x00a8:
+        r0 = r2.next();
+        r0 = (java.io.File) r0;
+        rm(r0);
+        goto L_0x00a2;
+    L_0x00b2:
+        r2.flush();	 Catch:{ all -> 0x0093 }
+        r0 = r2.getFD();	 Catch:{ all -> 0x0093 }
+        r0.sync();	 Catch:{ all -> 0x0093 }
+        if (r2 == 0) goto L_0x004b;
+    L_0x00be:
+        r2.close();	 Catch:{ Exception -> 0x00c2, Error -> 0x00c7 }
+        goto L_0x004b;
+    L_0x00c2:
+        r0 = move-exception;
+        r0.printStackTrace();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        goto L_0x004b;
+    L_0x00c7:
+        r0 = move-exception;
+        r0.printStackTrace();
+        r2 = r4.iterator();
+    L_0x00cf:
+        r0 = r2.hasNext();
+        if (r0 == 0) goto L_0x00e6;
+    L_0x00d5:
+        r0 = r2.next();
+        r0 = (java.io.File) r0;
+        rm(r0);
+        goto L_0x00cf;
+    L_0x00df:
+        r2 = move-exception;
+        r2.printStackTrace();	 Catch:{ Exception -> 0x009a, Error -> 0x00c7 }
+        goto L_0x0099;
+    L_0x00e4:
+        r0 = r1;
+    L_0x00e5:
+        return r0;
+    L_0x00e6:
+        r0 = r1;
+        goto L_0x00e5;
+    L_0x00e8:
+        r0 = 1;
+        goto L_0x00e5;
+    L_0x00ea:
+        r0 = move-exception;
+        r2 = r3;
+        goto L_0x0094;
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.DkPublic.unzip(java.util.zip.ZipInputStream, java.io.File):boolean");
     }
 
-    public static boolean getBookListFromStorage(File file, Map map) {
+    public static boolean getBookListFromStorage(File file, Map<String, Integer> map) {
         if (file == null || !file.isDirectory()) {
             return false;
         }
@@ -397,11 +555,11 @@ public final class DkPublic {
     }
 
     public static String readFile(File file) {
-        BufferedReader bufferedReader;
         String str;
         Throwable th;
         Throwable th2;
         String str2 = "";
+        BufferedReader bufferedReader;
         try {
             bufferedReader = new BufferedReader(new FileReader(file));
             str = str2;
@@ -434,7 +592,7 @@ public final class DkPublic {
     }
 
     public static boolean addFavorite(Context context, Intent intent, String str, Drawable drawable) {
-        Parcelable c = a.c(90, 90, Config.ARGB_8888);
+        Parcelable c = C0544a.m2447c(90, 90, Config.ARGB_8888);
         c.eraseColor(Color.argb(HttpStatus.SC_OK, 255, 0, 0));
         Intent intent2 = new Intent("com.android.launcher.action.INSTALL_SHORTCUT");
         intent2.putExtra("duplicate", true);
@@ -455,7 +613,7 @@ public final class DkPublic {
         return true;
     }
 
-    public static af hasFavorite(Context context, String str) {
+    public static af<Boolean> hasFavorite(Context context, String str) {
         Throwable th;
         Object authorityOfPermission = authorityOfPermission(context, "com.android.launcher.permission.READ_SETTINGS");
         if (TextUtils.isEmpty(authorityOfPermission)) {
@@ -465,8 +623,8 @@ public final class DkPublic {
         ContentResolver contentResolver = context.getContentResolver();
         Cursor query;
         try {
-            af afVar;
-            if (z.a()) {
+            af<Boolean> afVar;
+            if (C0373z.m1052a()) {
                 query = contentResolver.query(Uri.parse(str2), new String[]{"title", "container"}, "title=?", new String[]{str}, null);
                 while (query != null) {
                     try {
@@ -584,7 +742,7 @@ public final class DkPublic {
     }
 
     public static void rm(File file) {
-        if (!a && file == null) {
+        if (!f1407a && file == null) {
             throw new AssertionError();
         } else if (file != null) {
             try {
@@ -720,32 +878,32 @@ public final class DkPublic {
 
     public static int getActivityRequestCode() {
         int i;
-        synchronized (c) {
-            i = b;
-            b = i + 1;
+        synchronized (f1409c) {
+            i = f1408b;
+            f1408b = i + 1;
         }
         return i;
     }
 
-    public static String serializeToJsonText(Serializable serializable) {
-        if (serializable == null) {
+    public static <T extends Serializable> String serializeToJsonText(T t) {
+        if (t == null) {
             return new JSONObject().toString();
         }
-        return new Gson().toJson((Object) serializable).toString();
+        return new Gson().toJson((Object) t).toString();
     }
 
-    public static Serializable deserializeFromJsonText(String str, Class cls) {
+    public static <T extends Serializable> T deserializeFromJsonText(String str, Class<T> cls) {
         return deserializeFromJsonText(str, null, cls);
     }
 
-    public static Serializable deserializeFromJsonText(String str, Serializable serializable, Class cls) {
+    public static <T extends Serializable> T deserializeFromJsonText(String str, T t, Class<T> cls) {
         if (TextUtils.isEmpty(str)) {
-            return serializable;
+            return t;
         }
         try {
-            return (Serializable) new Gson().fromJson(str, cls);
+            return (Serializable) new Gson().fromJson(str, (Class) cls);
         } catch (Exception e) {
-            return serializable;
+            return t;
         }
     }
 
@@ -753,29 +911,29 @@ public final class DkPublic {
         return jSONObject == null || jSONObject.length() == 0;
     }
 
-    public static JSONObject serializeToJson(Serializable serializable) {
-        if (serializable == null) {
+    public static <T extends Serializable> JSONObject serializeToJson(T t) {
+        if (t == null) {
             return new JSONObject();
         }
         try {
-            return new JSONObject(new Gson().toJson((Object) serializable).toString());
+            return new JSONObject(new Gson().toJson((Object) t).toString());
         } catch (JSONException e) {
             return new JSONObject();
         }
     }
 
-    public static Serializable deserializeFromJson(JSONObject jSONObject, Class cls) {
+    public static <T extends Serializable> T deserializeFromJson(JSONObject jSONObject, Class<T> cls) {
         return deserializeFromJson(jSONObject, null, cls);
     }
 
-    public static Serializable deserializeFromJson(JSONObject jSONObject, Serializable serializable, Class cls) {
+    public static <T extends Serializable> T deserializeFromJson(JSONObject jSONObject, T t, Class<T> cls) {
         if (jSONObject == null || jSONObject.length() == 0) {
-            return serializable;
+            return t;
         }
         try {
-            return (Serializable) new Gson().fromJson(jSONObject.toString(), cls);
+            return (Serializable) new Gson().fromJson(jSONObject.toString(), (Class) cls);
         } catch (Exception e) {
-            return serializable;
+            return t;
         }
     }
 
@@ -822,12 +980,12 @@ public final class DkPublic {
         return displayMetrics.heightPixels < displayMetrics.widthPixels;
     }
 
-    public static void exchangeNewIdThenDo(String str, String str2, ag agVar, Runnable runnable) {
-        WebLog.c().b(agVar != null);
+    public static void exchangeNewIdThenDo(String str, String str2, ag<String> agVar, Runnable runnable) {
+        C0328a.m757c().m764b(agVar != null);
         if (TextUtils.isEmpty(str2)) {
-            new AnonymousClass1(str, agVar, runnable).open();
+            new C04271(C0643q.f2173a, str, agVar, runnable).open();
         } else {
-            agVar.a(str2);
+            agVar.run(str2);
         }
     }
 }

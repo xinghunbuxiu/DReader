@@ -1,94 +1,83 @@
 package com.duokan.reader.ui.personal;
 
-import android.text.TextUtils;
-
-import com.duokan.common.FileTypeRecognizer.FileType;
 import com.duokan.core.app.IFeature;
-import com.duokan.reader.domain.cloud.DkCloudAnnotation;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.p024c.C0255g;
+import com.duokan.reader.ReaderFeature;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.bookshelf.ai;
+import com.duokan.reader.domain.bookshelf.an;
+import com.duokan.reader.domain.bookshelf.ip;
+import com.duokan.reader.domain.bookshelf.iq;
 import com.duokan.reader.domain.cloud.DkCloudNoteBookInfo;
-import com.duokan.reader.domain.cloud.DkUserReadingNotesManager;
-import com.duokan.reader.domain.cloud.fl;
-import com.duokan.reader.ui.general.DkWebListView.ListState;
+import com.duokan.reader.domain.cloud.DkCloudReadingInfo;
+import com.duokan.reader.domain.cloud.DkCloudStoreBook;
+import com.duokan.reader.ui.account.ak;
+import com.duokan.reader.ui.general.DkLabelView;
+import com.duokan.reader.ui.general.hh;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+public class mh extends ActivatedController implements ip, iq {
+    /* renamed from: a */
+    private final ReaderFeature f8939a = ((ReaderFeature) getContext().queryFeature(ReaderFeature.class));
+    /* renamed from: b */
+    private final mj f8940b;
+    /* renamed from: c */
+    private final ak f8941c = new ak(this);
+    /* renamed from: d */
+    private final DkCloudNoteBookInfo f8942d;
+    /* renamed from: e */
+    private final DkCloudStoreBook f8943e;
+    /* renamed from: f */
+    private DkCloudReadingInfo f8944f;
+    /* renamed from: g */
+    private DkCloudReadingInfo f8945g;
 
-public class mh extends my implements fl {
-    private final mg a = new mg(getContext());
-    private ArrayList c;
-    private final mk d = new mk();
-
-    public mh(IFeature featrue) {
-        super(featrue, true);
-        this.a.getNoteSummaryListView().setOnItemClickListener(new mi(this));
-        setContentView(this.a);
-        this.a.getNoteSummaryListView().setAdapter(this.d);
-    }
-
-    protected void onAttachToStub() {
-        super.onAttachToStub();
-        DkUserReadingNotesManager.a().a((fl) this);
-    }
-
-    protected void onDetachFromStub() {
-        DkUserReadingNotesManager.a().b((fl) this);
-        super.onDetachFromStub();
+    public mh(IFeature mFeature, DkCloudNoteBookInfo dkCloudNoteBookInfo, DkCloudStoreBook dkCloudStoreBook) {
+        super(mFeature);
+        this.f8942d = dkCloudNoteBookInfo;
+        this.f8943e = dkCloudStoreBook;
+        this.f8940b = new mj(this, getContext());
+        setContentView(this.f8940b);
     }
 
     protected void onActive(boolean z) {
         super.onActive(z);
         if (z) {
-            a(true);
-        } else {
-            this.d.d();
+            this.f8940b.m12291b();
         }
     }
 
-    public void f() {
+    protected void onAttachToStub() {
+        super.onAttachToStub();
+        ai.m3980a().m3890a((iq) this);
+        ai.m3980a().m3889a((ip) this);
     }
 
-    public void a(DkCloudNoteBookInfo dkCloudNoteBookInfo) {
-        if (dkCloudNoteBookInfo != null) {
-            Object obj;
-            Iterator it = this.c.iterator();
-            while (it.hasNext()) {
-                obj = (DkCloudNoteBookInfo) it.next();
-                if (TextUtils.equals(dkCloudNoteBookInfo.getBookUuid(), obj.getBookUuid())) {
-                    break;
-                }
+    protected void onDetachFromStub() {
+        ai.m3980a().m3913b((iq) this);
+        ai.m3980a().m3912b((ip) this);
+        super.onDetachFromStub();
+    }
+
+    protected boolean onRequestDetach(ActivatedController c0303e) {
+        if (!this.f8941c.m8873a(c0303e) || !containsDirectly(c0303e)) {
+            return super.onRequestDetach(c0303e);
+        }
+        removeSubController(c0303e);
+        deactivate(c0303e);
+        return true;
+    }
+
+    public void onItemsChanged() {
+    }
+
+    public void onItemChanged(an anVar, int i) {
+        if ((anVar instanceof C0800c) && (i & 72) != 0) {
+            C0800c c0800c = (C0800c) anVar;
+            if (this.f8943e != null && c0800c.m4156I().equals(this.f8943e.getBookUuid())) {
+                new hh(getContext(), this.f8943e.getBookUuid(), this.f8943e.getTitle(), this.f8942d.isSerial()).m10750a((DkLabelView) this.f8940b.findViewById(C0255g.personal__notes_info_header_view__read));
+                runFirstOnActive("redisplay_list", new mi(this));
             }
-            obj = null;
-            if (obj != null) {
-                this.c.remove(obj);
-                if (dkCloudNoteBookInfo.getNoteCount() > 0) {
-                    this.c.add(0, dkCloudNoteBookInfo);
-                }
-            }
-            if (this.c.size() != 0 || this.d.l() == ListState.EMPTY) {
-                this.d.d();
-            } else {
-                this.d.a(false);
-            }
         }
-    }
-
-    public void a(String str, DkCloudAnnotation[] dkCloudAnnotationArr) {
-    }
-
-    private void a(boolean z) {
-        DkUserReadingNotesManager.a().a(true, z, new mj(this));
-    }
-
-    private FileType a(String str) {
-        if (str.equals("EPUB") || str.equals("epub")) {
-            return FileType.EPUB;
-        }
-        if (str.equals("TXT") || str.equals("txt")) {
-            return FileType.TXT;
-        }
-        if (str.equals("PDF") || str.equals("pdf")) {
-            return FileType.PDF;
-        }
-        return FileType.UNSUPPORTED;
     }
 }

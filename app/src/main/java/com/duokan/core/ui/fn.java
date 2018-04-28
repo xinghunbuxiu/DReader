@@ -4,35 +4,37 @@ import android.content.Intent;
 import android.webkit.WebChromeClient.FileChooserParams;
 
 class fn extends FileChooserParams {
-    final /* synthetic */ fp a;
-    final /* synthetic */ fl b;
+    /* renamed from: a */
+    final /* synthetic */ fp f1259a;
+    /* renamed from: b */
+    final /* synthetic */ fl f1260b;
 
     fn(fl flVar, fp fpVar) {
-        this.b = flVar;
-        this.a = fpVar;
+        this.f1260b = flVar;
+        this.f1259a = fpVar;
     }
 
     public boolean isCaptureEnabled() {
-        return this.a.c();
+        return this.f1259a.mo533c();
     }
 
     public CharSequence getTitle() {
-        return this.a.d();
+        return this.f1259a.mo534d();
     }
 
     public int getMode() {
-        return this.a.a();
+        return this.f1259a.mo531a();
     }
 
     public String getFilenameHint() {
-        return this.a.e();
+        return this.f1259a.mo535e();
     }
 
     public String[] getAcceptTypes() {
-        return this.a.b();
+        return this.f1259a.mo532b();
     }
 
     public Intent createIntent() {
-        return this.a.f();
+        return this.f1259a.mo536f();
     }
 }

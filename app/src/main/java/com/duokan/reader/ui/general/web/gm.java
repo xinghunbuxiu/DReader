@@ -1,21 +1,20 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.common.webservices.duokan.p;
+import com.duokan.core.sys.as;
 
-import java.util.concurrent.Callable;
+class gm implements as {
+    /* renamed from: a */
+    final /* synthetic */ ci f7892a;
 
-class gm implements Callable {
-    final /* synthetic */ PageController a;
-
-    gm(PageController cgVar) {
-        this.a = cgVar;
+    gm(ci ciVar) {
+        this.f7892a = ciVar;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
-    }
-
-    public Integer a() {
-        return Integer.valueOf(p.i().m());
+    /* renamed from: a */
+    public void mo1831a() {
+        if (this.f7892a.f7581b.mEditFeedController != null) {
+            this.f7892a.f7581b.mEditFeedController.requestDetach();
+            this.f7892a.f7581b.mEditFeedController = null;
+        }
     }
 }

@@ -1,19 +1,24 @@
 package com.duokan.reader.ui.general;
 
-import com.duokan.core.app.ActivatedController;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import com.duokan.core.sys.UThread;
 
-class jd implements iq {
-    final /* synthetic */ ja a;
+class jd implements AnimationListener {
+    /* renamed from: a */
+    final /* synthetic */ ja f7430a;
 
     jd(ja jaVar) {
-        this.a = jaVar;
+        this.f7430a = jaVar;
     }
 
-    public void a(int i, int i2) {
-        if (i >= 0 && i2 >= 0) {
-            ActivatedController controller = (ActivatedController) this.a.b.get(i2);
-            this.a.deactivate((ActivatedController) this.a.b.get(i));
-            this.a.activate(controller);
-        }
+    public void onAnimationStart(Animation animation) {
+    }
+
+    public void onAnimationEnd(Animation animation) {
+        UThread.post(this.f7430a.f7427f);
+    }
+
+    public void onAnimationRepeat(Animation animation) {
     }
 }

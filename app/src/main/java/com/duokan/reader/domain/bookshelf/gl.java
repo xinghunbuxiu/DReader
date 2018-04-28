@@ -1,15 +1,17 @@
 package com.duokan.reader.domain.bookshelf;
 
-class gl implements Runnable {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ fv b;
+import com.duokan.reader.domain.account.C0709k;
+import com.duokan.reader.domain.account.PersonalAccount;
 
-    gl(fv fvVar, Runnable runnable) {
-        this.b = fvVar;
-        this.a = runnable;
+class gl implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ gk f3240a;
+
+    gl(gk gkVar) {
+        this.f3240a = gkVar;
     }
 
     public void run() {
-        this.b.aT().f().a(this.b.H(), new gm(this));
+        C0709k.m3476a().m3497a(PersonalAccount.class, new gm(this));
     }
 }

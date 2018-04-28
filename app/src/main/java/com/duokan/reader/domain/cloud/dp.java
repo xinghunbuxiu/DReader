@@ -1,26 +1,23 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.async.a.a;
-import com.duokan.reader.domain.account.u;
+import com.duokan.reader.common.cache.ab;
 
-class dp implements u {
-    final /* synthetic */ boolean a;
-    final /* synthetic */ a b;
-    final /* synthetic */ boolean c;
-    final /* synthetic */ DkUserPurchasedFictionsManager d;
+class dp implements ab {
+    /* renamed from: a */
+    final /* synthetic */ C0844do f3886a;
 
-    dp(DkUserPurchasedFictionsManager dkUserPurchasedFictionsManager, boolean z, a aVar, boolean z2) {
-        this.d = dkUserPurchasedFictionsManager;
-        this.a = z;
-        this.b = aVar;
-        this.c = z2;
+    dp(C0844do c0844do) {
+        this.f3886a = c0844do;
     }
 
-    public void onQueryAccountOk(com.duokan.reader.domain.account.a aVar) {
-        this.d.a(new dq(this));
-    }
-
-    public void onQueryAccountError(com.duokan.reader.domain.account.a aVar, String str) {
-        this.b.a(-1, "");
+    /* renamed from: a */
+    public void mo1155a(int i) {
+        if (i < 1) {
+            this.f3886a.clearItems();
+            this.f3886a.updateInfo(null);
+        }
+        if (i < 3) {
+            this.f3886a.replaceWithItems(this.f3886a.queryItems());
+        }
     }
 }

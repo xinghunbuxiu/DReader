@@ -2,152 +2,161 @@ package com.duokan.reader.domain.bookshelf;
 
 import android.content.Context;
 import android.net.Uri;
-
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
+import com.duokan.core.app.aj;
+import com.duokan.core.sys.C0366o;
 import com.duokan.core.sys.af;
-import com.duokan.core.sys.o;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.DkPublic;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.UmengManager;
-import com.duokan.reader.common.classc;
-import com.duokan.reader.common.webservices.duokan.z;
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.i;
+import com.duokan.reader.common.p037c.C0559f;
+import com.duokan.reader.common.webservices.duokan.C0651y;
+import com.duokan.reader.domain.account.C0672a;
+import com.duokan.reader.domain.account.C0709k;
 import com.duokan.reader.domain.cloud.DkCloudBookManifest;
 import com.duokan.reader.domain.cloud.DkCloudStorage;
-import com.duokan.reader.domain.downloadcenter.b;
+import com.duokan.reader.domain.downloadcenter.C1016b;
+import com.duokan.reader.domain.store.C1176a;
 import com.duokan.reader.domain.store.DkStoreBookDetail;
-
 import java.io.File;
 
-public class ai extends aq {
-    static final /* synthetic */ boolean a = (!ai.class.desiredAssertionStatus());
-    private static final com.duokan.core.app.ai m = new com.duokan.core.app.ai();
+public class ai extends ar {
+    /* renamed from: a */
+    static final /* synthetic */ boolean f2763a = (!ai.class.desiredAssertionStatus());
+    /* renamed from: m */
+    private static final aj<ai> f2764m = new aj();
 
-    public /* bridge */ /* synthetic */ void b() {
-        super.b();
+    /* renamed from: b */
+    public /* bridge */ /* synthetic */ void mo962b() {
+        super.mo962b();
     }
 
-    public /* bridge */ /* synthetic */ void b(a aVar) {
-        super.b(aVar);
+    /* renamed from: c */
+    public /* bridge */ /* synthetic */ af mo971c() {
+        return super.mo971c();
     }
 
-    public /* bridge */ /* synthetic */ af c() {
-        return super.c();
+    public /* bridge */ /* synthetic */ void onAccountDetailChanged(C0672a c0672a) {
+        super.onAccountDetailChanged(c0672a);
     }
 
-    public /* bridge */ /* synthetic */ void c(a aVar) {
-        super.c(aVar);
+    public /* bridge */ /* synthetic */ void onAccountLoginedBottomHalf(C0672a c0672a) {
+        super.onAccountLoginedBottomHalf(c0672a);
     }
 
-    public /* bridge */ /* synthetic */ void d(a aVar) {
-        super.d(aVar);
+    public /* bridge */ /* synthetic */ void onAccountLoginedTopHalf(C0672a c0672a) {
+        super.onAccountLoginedTopHalf(c0672a);
     }
 
-    public /* bridge */ /* synthetic */ void onConnectivityChanged(classc.ConnectivityReceiver connectivity) {
-        super.onConnectivityChanged(connectivity);
+    public /* bridge */ /* synthetic */ void onAccountLogoff(C0672a c0672a) {
+        super.onAccountLogoff(c0672a);
     }
 
-    protected ai(Context context, ReaderEnv readerEnv, classc.ConnectivityReceiver connectivity, i iVar, iz izVar, com.duokan.reader.domain.store.a aVar, DkCloudStorage dkCloudStorage, b bVar) {
-        super(context, readerEnv, connectivity, iVar, izVar, aVar, dkCloudStorage, bVar);
+    protected ai(Context context, ReaderEnv readerEnv, C0559f c0559f, C0709k c0709k, it itVar, C1176a c1176a, DkCloudStorage dkCloudStorage, C1016b c1016b) {
+        super(context, readerEnv, c0559f, c0709k, itVar, c1176a, dkCloudStorage, c1016b);
         DkApp.get().runPreReady(new aj(this));
     }
 
-    public static void a(Context context, ReaderEnv readerEnv, classc.ConnectivityReceiver connectivity, i iVar, iz izVar, com.duokan.reader.domain.store.a aVar, DkCloudStorage dkCloudStorage, b bVar) {
-        m.a(new ai(context, readerEnv, connectivity, iVar, izVar, aVar, dkCloudStorage, bVar));
+    /* renamed from: a */
+    public static void m3981a(Context context, ReaderEnv readerEnv, C0559f c0559f, C0709k c0709k, it itVar, C1176a c1176a, DkCloudStorage dkCloudStorage, C1016b c1016b) {
+        f2764m.m709a(new ai(context, readerEnv, c0559f, c0709k, itVar, c1176a, dkCloudStorage, c1016b));
     }
 
-    public static ai a() {
-        return (ai) m.a();
+    /* renamed from: a */
+    public static ai m3980a() {
+        return (ai) f2764m.m707a();
     }
 
-    public c a(DkStoreBookDetail dkStoreBookDetail, DkCloudBookManifest dkCloudBookManifest, af afVar) {
+    /* renamed from: a */
+    public C0800c m3984a(DkStoreBookDetail dkStoreBookDetail, DkCloudBookManifest dkCloudBookManifest, af<Boolean> afVar) {
         try {
-            this.k.a();
-            if (!a && dkStoreBookDetail == null) {
+            this.k.mo1090a();
+            if (!f2763a && dkStoreBookDetail == null) {
                 throw new AssertionError();
-            } else if (a || dkCloudBookManifest != null) {
+            } else if (f2763a || dkCloudBookManifest != null) {
                 UmengManager.get().onEvent("V2_SHELF_IMPORT_BOOK", "DuokanBook");
-                a(dkStoreBookDetail, dkCloudBookManifest);
-                c c = c(dkStoreBookDetail, dkCloudBookManifest, afVar);
+                m3873a(dkStoreBookDetail, dkCloudBookManifest);
+                C0800c c = m3982c(dkStoreBookDetail, dkCloudBookManifest, afVar);
                 return c;
             } else {
                 throw new AssertionError();
             }
         } finally {
-            this.k.b();
+            this.k.mo1096b();
         }
     }
 
-    public c b(DkStoreBookDetail dkStoreBookDetail, DkCloudBookManifest dkCloudBookManifest, af afVar) {
+    /* renamed from: b */
+    public C0800c m3989b(DkStoreBookDetail dkStoreBookDetail, DkCloudBookManifest dkCloudBookManifest, af<Boolean> afVar) {
         try {
-            this.k.a();
-            if (!a && dkStoreBookDetail == null) {
+            this.k.mo1090a();
+            if (!f2763a && dkStoreBookDetail == null) {
                 throw new AssertionError();
-            } else if (a || dkCloudBookManifest != null) {
+            } else if (f2763a || dkCloudBookManifest != null) {
                 UmengManager.get().onEvent("V2_SHELF_IMPORT_BOOK", "DuokanBook");
-                c c = c(dkStoreBookDetail, dkCloudBookManifest, afVar);
+                C0800c c = m3982c(dkStoreBookDetail, dkCloudBookManifest, afVar);
                 return c;
             } else {
                 throw new AssertionError();
             }
         } finally {
-            this.k.b();
+            this.k.mo1096b();
         }
     }
 
     public void onRunningStateChanged(ManagedApp managedApp, RunningState runningState, RunningState runningState2) {
         if (runningState2 == RunningState.UNDERGROUND) {
-            t();
-            a(0);
+            m3945t();
+            m3973a(0);
         }
     }
 
-    private c c(DkStoreBookDetail dkStoreBookDetail, DkCloudBookManifest dkCloudBookManifest, af afVar) {
+    /* renamed from: c */
+    private C0800c m3982c(DkStoreBookDetail dkStoreBookDetail, DkCloudBookManifest dkCloudBookManifest, af<Boolean> afVar) {
         try {
-            this.k.a();
-            c b = b(dkStoreBookDetail.getBook().getBookUuid());
+            this.k.mo1090a();
+            C0800c b = m3906b(dkStoreBookDetail.getBook().getBookUuid());
             if (b == null) {
-                this.k.b();
+                this.k.mo1096b();
                 return b;
             }
             int i;
             File file = new File(this.f.getCloudBookDirectory(), dkStoreBookDetail.getBook().getBookUuid() + "." + dkCloudBookManifest.getBookRevision() + ".epub");
             DkPublic.rm(file);
-            b.a(Uri.fromFile(file).toString());
-            b.b(dkStoreBookDetail.getEpubSize());
-            b.f(dkCloudBookManifest.getBookRevision());
+            b.m4196a(Uri.fromFile(file).toString());
+            b.m4207b(dkStoreBookDetail.getEpubSize());
+            b.m4227f(dkCloudBookManifest.getBookRevision());
             if (dkStoreBookDetail.getBook().isFree()) {
                 i = 0;
             } else {
                 i = dkStoreBookDetail.getBook().getNewPrice();
             }
-            b.a(i);
-            b.d(dkStoreBookDetail.getBook().getNameLine());
-            b.a(b(dkStoreBookDetail));
-            f(b);
-            z bookCertification = dkCloudBookManifest.getBookCertification();
-            if (bookCertification != null && bookCertification.b.length > 0 && bookCertification.c.length > 0) {
-                b.a(new ad(this.f.getDeviceIdVersion(), bookCertification.a, o.a(bookCertification.b) + "\n" + o.a(bookCertification.c), 0));
-                b.a(BookLimitType.NONE);
+            b.m4175a(i);
+            b.m4221d(dkStoreBookDetail.getBook().getNameLine());
+            b.m4186a(m3905b(dkStoreBookDetail));
+            m3928f(b);
+            C0651y bookCertification = dkCloudBookManifest.getBookCertification();
+            if (bookCertification != null && bookCertification.f2184b.length > 0 && bookCertification.f2185c.length > 0) {
+                b.mo1011a(new ad(this.f.getDeviceIdVersion(), bookCertification.f2183a, C0366o.m1031a(bookCertification.f2184b) + "\n" + C0366o.m1031a(bookCertification.f2185c), 0));
+                b.m4183a(BookLimitType.NONE);
             }
-            this.g.b();
-            b.aM();
-            this.g.f();
-            this.g.c();
-            b.a(b.f(), dkCloudBookManifest.getBookUri(), dkCloudBookManifest.getBookRevision(), dkCloudBookManifest.getBookMd5(), true, afVar);
-            x();
-            this.k.b();
+            this.g.m677b();
+            b.aO();
+            this.g.m681f();
+            this.g.m678c();
+            b.m4198a(b.m4225f(), dkCloudBookManifest.getBookUri(), dkCloudBookManifest.getBookRevision(), dkCloudBookManifest.getBookMd5(), true, afVar);
+            m3949x();
+            this.k.mo1096b();
             return b;
         } catch (Exception e) {
             e.printStackTrace();
-            this.g.c();
-            this.k.b();
+            this.g.m678c();
+            this.k.mo1096b();
             return null;
         } catch (Throwable th) {
-            this.k.b();
+            this.k.mo1096b();
         }
     }
 }

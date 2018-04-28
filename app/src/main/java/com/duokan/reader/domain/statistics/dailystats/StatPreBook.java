@@ -1,12 +1,11 @@
 package com.duokan.reader.domain.statistics.dailystats;
 
-import org.json.JSONObject;
-
 import java.util.List;
+import org.json.JSONObject;
 
 public class StatPreBook extends StatEventBase {
     private static final long serialVersionUID = 1;
-    public List bookIds;
+    public List<String> bookIds;
 
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer();

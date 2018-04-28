@@ -1,30 +1,17 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.u;
+import java.util.Comparator;
 
-class er implements u {
-    final /* synthetic */ long a;
-    final /* synthetic */ int b;
-    final /* synthetic */ ev c;
-    final /* synthetic */ boolean d;
-    final /* synthetic */ DkUserReadBookManager e;
-
-    er(DkUserReadBookManager dkUserReadBookManager, long j, int i, ev evVar, boolean z) {
-        this.e = dkUserReadBookManager;
-        this.a = j;
-        this.b = i;
-        this.c = evVar;
-        this.d = z;
+class er implements Comparator<DkCloudNoteBookInfo> {
+    private er() {
     }
 
-    public void onQueryAccountOk(a aVar) {
-        this.e.f = new ab(aVar);
-        new es(this, this.e.f).open();
+    public /* synthetic */ int compare(Object obj, Object obj2) {
+        return m5506a((DkCloudNoteBookInfo) obj, (DkCloudNoteBookInfo) obj2);
     }
 
-    public void onQueryAccountError(a aVar, String str) {
-        this.c.a(str);
+    /* renamed from: a */
+    public int m5506a(DkCloudNoteBookInfo dkCloudNoteBookInfo, DkCloudNoteBookInfo dkCloudNoteBookInfo2) {
+        return dkCloudNoteBookInfo2.getLastDate().compareTo(dkCloudNoteBookInfo.getLastDate());
     }
 }

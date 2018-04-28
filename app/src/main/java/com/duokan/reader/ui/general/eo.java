@@ -1,15 +1,21 @@
 package com.duokan.reader.ui.general;
 
-import android.content.Context;
-import android.view.ViewGroup.LayoutParams;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.InsetDrawable;
 
-import com.duokan.core.ui.j;
+class eo extends InsetDrawable {
+    /* renamed from: a */
+    final /* synthetic */ en f7160a;
 
-public class eo extends j {
-    public eo(Context context) {
-        super(context);
-        setContentView(new LoadingCircleView(context), new LayoutParams(-2, -2));
-        setGravity(17);
-        setDimAmount(0.0f);
+    eo(en enVar, Drawable drawable, int i) {
+        this.f7160a = enVar;
+        super(drawable, i);
+    }
+
+    public void draw(Canvas canvas) {
+        if ((this.f7160a.f7155a & 1) != 1) {
+            super.draw(canvas);
+        }
     }
 }

@@ -1,22 +1,37 @@
 package com.duokan.reader.ui.general.web;
 
-import android.text.TextUtils;
+import com.duokan.reader.domain.cloud.DkUserPurchasedBooksManager;
+import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
+import java.util.concurrent.Callable;
+import org.json.JSONArray;
 
-import com.duokan.reader.ui.account.as;
-import com.duokan.reader.ui.account.bv;
+class hy implements Callable<String> {
+    /* renamed from: a */
+    final /* synthetic */ String f7958a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7959b;
 
-class hy implements as {
-    final /* synthetic */ hx a;
-
-    hy(hx hxVar) {
-        this.a = hxVar;
+    hy(ci ciVar, String str) {
+        this.f7959b = ciVar;
+        this.f7958a = str;
     }
 
-    public void onChoiced(String str) {
-        if (!TextUtils.isEmpty(str)) {
-            this.a.g.b.pageController.mShareController = new bv(this.a.g.b.pageController.getContext(), false, str, this.a.a, this.a.b, this.a.c, this.a.d, this.a.e, this.a.f, null);
-            this.a.g.b.pageController.addSubController(this.a.g.b.pageController.mShareController);
-            this.a.g.b.pageController.activate(this.a.g.b.pageController.mShareController);
+    public /* synthetic */ Object call() {
+        return m11184a();
+    }
+
+    /* renamed from: a */
+    public String m11184a() {
+        JSONArray jSONArray = new JSONArray();
+        JSONArray jSONArray2 = new JSONArray(this.f7958a);
+        for (int i = 0; i < jSONArray2.length(); i++) {
+            String optString = jSONArray2.optString(i);
+            if (DkUserPurchasedBooksManager.m5029a().m5052a(optString) != null) {
+                jSONArray.put(optString);
+            } else if (DkUserPurchasedFictionsManager.m5072a().m5093a(optString) != null) {
+                jSONArray.put(optString);
+            }
         }
+        return jSONArray.toString();
     }
 }

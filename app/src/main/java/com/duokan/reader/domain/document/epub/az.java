@@ -7,9 +7,10 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.text.TextUtils;
-
+import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ah;
-import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.dv;
 import com.duokan.kernel.DkArgbColor;
 import com.duokan.kernel.DkBox;
 import com.duokan.kernel.DkFlowPosition;
@@ -28,6 +29,11 @@ import com.duokan.kernel.epublib.DkePage;
 import com.duokan.kernel.epublib.DkePreText;
 import com.duokan.kernel.epublib.DkeStuffingPage;
 import com.duokan.reader.DkApp;
+import com.duokan.reader.domain.document.C0897d;
+import com.duokan.reader.domain.document.C0901g;
+import com.duokan.reader.domain.document.C0911h;
+import com.duokan.reader.domain.document.C0917k;
+import com.duokan.reader.domain.document.C0923m;
 import com.duokan.reader.domain.document.ab;
 import com.duokan.reader.domain.document.ac;
 import com.duokan.reader.domain.document.ad;
@@ -45,12 +51,6 @@ import com.duokan.reader.domain.document.ba;
 import com.duokan.reader.domain.document.bb;
 import com.duokan.reader.domain.document.bc;
 import com.duokan.reader.domain.document.bd;
-import com.duokan.reader.domain.document.d;
-import com.duokan.reader.domain.document.g;
-import com.duokan.reader.domain.document.h;
-import com.duokan.reader.domain.document.k;
-import com.duokan.reader.domain.document.m;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -60,325 +60,388 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class az extends as implements ba, bd, cc {
-    static final /* synthetic */ boolean c = (!az.class.desiredAssertionStatus());
-    private static final String d = (az.class.getName() + ".loadPic");
-    private bs[] A = null;
-    private bk[] B = null;
-    private bt[] C = null;
-    private bm[] D = null;
-    private ca[] E = null;
-    private ap F = null;
-    private ap G = null;
-    private long H = 0;
-    private final EpubTypesettingContext e;
-    private final ay f;
-    private au g = null;
-    private final al h;
-    private final at i;
-    private cd j = null;
-    private List k = Collections.emptyList();
-    private List l = Collections.emptyList();
-    private boolean m = false;
-    private boolean n = false;
-    private boolean o = false;
-    private boolean p = false;
-    private boolean q = false;
-    private int r = -1;
-    private long s = -1;
-    private String t = null;
-    private String u = null;
-    private String v = null;
-    private DkeHitTestInfo[] w = null;
-    private bz x = null;
-    private bq[] y = null;
-    private bj[] z = null;
+    /* renamed from: c */
+    static final /* synthetic */ boolean f4514c = (!az.class.desiredAssertionStatus());
+    /* renamed from: d */
+    private static final String f4515d = (az.class.getName() + ".loadPic");
+    /* renamed from: A */
+    private bs[] f4516A = null;
+    /* renamed from: B */
+    private bk[] f4517B = null;
+    /* renamed from: C */
+    private bt[] f4518C = null;
+    /* renamed from: D */
+    private bm[] f4519D = null;
+    /* renamed from: E */
+    private ca[] f4520E = null;
+    /* renamed from: F */
+    private ap f4521F = null;
+    /* renamed from: G */
+    private ap f4522G = null;
+    /* renamed from: H */
+    private long f4523H = 0;
+    /* renamed from: e */
+    private final EpubTypesettingContext f4524e;
+    /* renamed from: f */
+    private final ay f4525f;
+    /* renamed from: g */
+    private au f4526g = null;
+    /* renamed from: h */
+    private final al f4527h;
+    /* renamed from: i */
+    private final at f4528i;
+    /* renamed from: j */
+    private cd f4529j = null;
+    /* renamed from: k */
+    private List<av> f4530k = Collections.emptyList();
+    /* renamed from: l */
+    private List<av> f4531l = Collections.emptyList();
+    /* renamed from: m */
+    private boolean f4532m = false;
+    /* renamed from: n */
+    private boolean f4533n = false;
+    /* renamed from: o */
+    private boolean f4534o = false;
+    /* renamed from: p */
+    private boolean f4535p = false;
+    /* renamed from: q */
+    private boolean f4536q = false;
+    /* renamed from: r */
+    private int f4537r = -1;
+    /* renamed from: s */
+    private long f4538s = -1;
+    /* renamed from: t */
+    private String f4539t = null;
+    /* renamed from: u */
+    private String f4540u = null;
+    /* renamed from: v */
+    private String f4541v = null;
+    /* renamed from: w */
+    private DkeHitTestInfo[] f4542w = null;
+    /* renamed from: x */
+    private bz f4543x = null;
+    /* renamed from: y */
+    private bq[] f4544y = null;
+    /* renamed from: z */
+    private bj[] f4545z = null;
 
-    public /* synthetic */ bb a(Point point, Point point2) {
-        return b(point, point2);
+    /* renamed from: a */
+    public /* synthetic */ bb mo1293a(Point point, Point point2) {
+        return m6609b(point, point2);
     }
 
-    public /* synthetic */ bb b(Point point) {
-        return h(point);
+    /* renamed from: b */
+    public /* synthetic */ bb mo1302b(Point point) {
+        return m6634h(point);
     }
 
-    public /* synthetic */ d[] n() {
-        return e();
+    /* renamed from: n */
+    public /* synthetic */ C0897d[] mo1336n() {
+        return m6626e();
     }
 
-    public /* synthetic */ ad q(int i) {
-        return w(i);
+    /* renamed from: q */
+    public /* synthetic */ ad mo1341q(int i) {
+        return m6663w(i);
     }
 
     public az(EpubTypesettingContext epubTypesettingContext, ay ayVar, au auVar, al alVar, at atVar) {
-        if (!c && (epubTypesettingContext == null || auVar == null)) {
+        if (!f4514c && (epubTypesettingContext == null || auVar == null)) {
             throw new AssertionError();
-        } else if (c || (ayVar != null && ayVar.a())) {
-            a.c().b(N());
-            this.e = epubTypesettingContext;
-            this.e.b((Object) t.b());
-            this.e.b((Object) this);
-            this.f = new ay(this.e, ayVar, 0);
-            this.g = auVar;
-            this.h = alVar;
-            this.i = atVar;
-            this.r = this.e.j().b;
-            this.j = this.e.a(this.f, (cc) this);
+        } else if (f4514c || (ayVar != null && ayVar.mo1186a())) {
+            C0328a.m757c().m764b(m6108M());
+            this.f4524e = epubTypesettingContext;
+            this.f4524e.m5841b((Object) UThread.getCurrentThread());
+            this.f4524e.m5841b((Object) this);
+            this.f4525f = new ay(this.f4524e, ayVar, 0);
+            this.f4526g = auVar;
+            this.f4527h = alVar;
+            this.f4528i = atVar;
+            this.f4537r = this.f4524e.m6455j().b;
+            this.f4529j = this.f4524e.m6443a(this.f4525f, (cc) this);
         } else {
             throw new AssertionError();
         }
     }
 
-    public long c() {
-        return this.j.a;
+    /* renamed from: c */
+    public long m6615c() {
+        return this.f4529j.f4647a;
     }
 
-    public long d() {
-        return this.j.b;
+    /* renamed from: d */
+    public long m6620d() {
+        return this.f4529j.f4648b;
     }
 
-    public boolean a() {
-        a.c().b(N());
-        if (E()) {
-            return this.o;
+    /* renamed from: a */
+    public boolean mo1299a() {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4534o;
         }
         return false;
     }
 
-    public boolean b() {
-        a.c().b(N());
-        if (E()) {
-            return this.p;
+    /* renamed from: b */
+    public boolean mo1305b() {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4535p;
         }
         return false;
     }
 
-    public long j() {
-        a.c().b(N());
-        return this.s;
+    /* renamed from: j */
+    public long mo1327j() {
+        C0328a.m757c().m764b(m6108M());
+        return this.f4538s;
     }
 
-    public boolean k() {
-        a.c().b(N());
-        if (E() && !this.f.f() && !this.p && !this.o && Z().getChapterType(this.j.a) == 2 && A().isEmpty()) {
+    /* renamed from: k */
+    public boolean mo1330k() {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E() && !this.f4525f.m5817f() && !this.f4535p && !this.f4534o && m6544Y().getChapterType(this.f4529j.f4647a) == 2 && mo1280A().isEmpty()) {
             return true;
         }
         return false;
     }
 
-    public ak l() {
-        a.c().b(N());
-        return this.f;
+    /* renamed from: l */
+    public ak mo1332l() {
+        C0328a.m757c().m764b(m6108M());
+        return this.f4525f;
     }
 
-    public bb m() {
-        a.c().b(N());
-        if (E()) {
-            return new ce(this.f.k(), this.f.l());
+    /* renamed from: m */
+    public bb mo1334m() {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return new ce(this.f4525f.m6533k(), this.f4525f.m6534l());
         }
         return new ce();
     }
 
-    public c[] e() {
-        a.c().b(N());
-        if (!E()) {
-            return new c[0];
+    /* renamed from: e */
+    public C0936c[] m6626e() {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1282E()) {
+            return new C0936c[0];
         }
-        if (this.f.f()) {
-            return new c[0];
+        if (this.f4525f.m5817f()) {
+            return new C0936c[0];
         }
-        DkFlowPosition[] charPositions = Y().getCharPositions();
-        c[] cVarArr = new c[charPositions.length];
-        for (int i = 0; i < cVarArr.length; i++) {
-            cVarArr[i] = ai.a(charPositions[i].mChapterIndex, charPositions[i].mParaIndex, charPositions[i].mAtomIndex);
+        DkFlowPosition[] charPositions = m6543X().getCharPositions();
+        C0936c[] c0936cArr = new C0936c[charPositions.length];
+        for (int i = 0; i < c0936cArr.length; i++) {
+            c0936cArr[i] = ai.m6508a(charPositions[i].mChapterIndex, charPositions[i].mParaIndex, charPositions[i].mAtomIndex);
         }
-        return cVarArr;
+        return c0936cArr;
     }
 
-    public CharSequence o() {
-        a.c().b(N());
-        if (!E()) {
+    /* renamed from: o */
+    public CharSequence mo1338o() {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1282E()) {
             return "";
         }
-        if (this.f.f()) {
+        if (this.f4525f.m5817f()) {
             return "";
         }
-        return Y().getChars();
+        return m6543X().getChars();
     }
 
-    public k p() {
-        a.c().b(N());
-        return this.e.j();
+    /* renamed from: p */
+    public C0917k mo1340p() {
+        C0328a.m757c().m764b(m6108M());
+        return this.f4524e.m6455j();
     }
 
-    public m q() {
-        a.c().b(N());
-        return this.g;
+    /* renamed from: q */
+    public C0923m mo1342q() {
+        C0328a.m757c().m764b(m6108M());
+        return this.f4526g;
     }
 
-    public void a(m mVar) {
-        a.c().b(N());
-        O();
-        this.g = (au) mVar;
-        if (this.B != null) {
-            for (bk a : this.B) {
-                a.m();
+    /* renamed from: a */
+    public void mo1296a(C0923m c0923m) {
+        C0328a.m757c().m764b(m6108M());
+        mo1288N();
+        this.f4526g = (au) c0923m;
+        if (this.f4517B != null) {
+            for (bk a : this.f4517B) {
+                a.m6682m();
             }
         }
         invalidateSelf();
     }
 
-    public int r() {
-        a.c().b(N());
-        if (!c && !G()) {
+    /* renamed from: r */
+    public int mo1343r() {
+        C0328a.m757c().m764b(m6108M());
+        if (!f4514c && !mo1284G()) {
             throw new AssertionError();
-        } else if (G()) {
-            return this.y.length;
+        } else if (mo1284G()) {
+            return this.f4544y.length;
         } else {
             return 0;
         }
     }
 
-    public int s() {
-        return this.x != null ? 1 : 0;
+    /* renamed from: s */
+    public int mo1345s() {
+        return this.f4543x != null ? 1 : 0;
     }
 
-    public int t() {
-        a.c().b(N());
-        if (G()) {
-            return this.z.length;
+    /* renamed from: t */
+    public int mo1347t() {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1284G()) {
+            return this.f4545z.length;
         }
         return 0;
     }
 
-    public int u() {
-        a.c().b(N());
-        if (G()) {
-            return this.A.length;
+    /* renamed from: u */
+    public int mo1349u() {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1284G()) {
+            return this.f4516A.length;
         }
         return 0;
     }
 
-    public int v() {
-        a.c().b(N());
-        if (G()) {
-            return this.B.length;
+    /* renamed from: v */
+    public int mo1351v() {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1284G()) {
+            return this.f4517B.length;
         }
         return 0;
     }
 
-    public int w() {
-        a.c().b(N());
-        if (G()) {
-            return this.C.length;
+    /* renamed from: w */
+    public int mo1353w() {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1284G()) {
+            return this.f4518C.length;
         }
         return 0;
     }
 
-    public int x() {
-        a.c().b(N());
-        if (G()) {
-            return this.D.length;
+    /* renamed from: x */
+    public int mo1354x() {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1284G()) {
+            return this.f4519D.length;
         }
         return 0;
     }
 
-    public int y() {
-        a.c().b(N());
-        if (G()) {
-            return this.E.length;
+    /* renamed from: y */
+    public int mo1355y() {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1284G()) {
+            return this.f4520E.length;
         }
         return 0;
     }
 
-    public Rect z() {
-        a.c().b(N());
-        if (!G()) {
+    /* renamed from: z */
+    public Rect mo1356z() {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1284G()) {
             return new Rect(0, 0, 0, 0);
         }
-        if (this.f.f()) {
+        if (this.f4525f.m5817f()) {
             return new Rect(0, 0, 0, 0);
         }
-        k p = p();
-        Rect a = p.a();
-        Rect rect = new Rect(a.left, d(m()).bottom, getIntrinsicWidth() - a.right, getIntrinsicHeight() - a.bottom);
-        if (rect.height() < p.f * 2) {
+        C0917k p = mo1340p();
+        Rect a = p.m6083a();
+        Rect rect = new Rect(a.left, mo1311d(mo1334m()).bottom, getIntrinsicWidth() - a.right, getIntrinsicHeight() - a.bottom);
+        if (rect.height() < p.f4335f * 2) {
             return new Rect(0, 0, 0, 0);
         }
         return rect;
     }
 
-    public Rect A() {
-        a.c().b(N());
-        if (!G()) {
+    /* renamed from: A */
+    public Rect mo1280A() {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1284G()) {
             return new Rect(0, 0, 0, 0);
         }
-        if (this.f.f()) {
+        if (this.f4525f.m5817f()) {
             return new Rect(0, 0, 0, 0);
         }
-        if (Y() instanceof DkeStuffingPage) {
+        if (m6543X() instanceof DkeStuffingPage) {
             return getBounds();
         }
         return new Rect(0, 0, 0, 0);
     }
 
-    public int B() {
-        if (G()) {
-            return (int) Y().getFrameCount();
+    /* renamed from: B */
+    public int mo1281B() {
+        if (mo1284G()) {
+            return (int) m6543X().getFrameCount();
         }
         return 0;
     }
 
-    public boolean P() {
-        if (G()) {
-            return Z().isDrmChapter(this.j.a);
+    /* renamed from: O */
+    public boolean m6591O() {
+        if (mo1284G()) {
+            return m6544Y().isDrmChapter(this.f4529j.f4647a);
         }
         return false;
     }
 
-    public Rect a(au auVar) {
-        a.c().b(N());
-        if (!G()) {
+    /* renamed from: a */
+    public Rect mo1291a(au auVar) {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1284G()) {
             return new Rect();
         }
-        if (b(auVar)) {
+        if (m6613b(auVar)) {
             return new Rect(0, 0, getBounds().width(), getBounds().height());
         }
         return new Rect();
     }
 
-    public boolean b(au auVar) {
-        a.c().b(N());
-        if (!G() || auVar == null) {
+    /* renamed from: b */
+    public boolean m6613b(au auVar) {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1284G() || auVar == null) {
             return false;
         }
-        if (this.x == auVar) {
+        if (this.f4543x == auVar) {
             return true;
         }
-        if (this.y != null) {
-            for (au auVar2 : this.y) {
+        if (this.f4544y != null) {
+            for (au auVar2 : this.f4544y) {
                 if (auVar2 == auVar) {
                     return true;
                 }
             }
         }
-        if (this.B != null) {
-            for (au auVar22 : this.B) {
+        if (this.f4517B != null) {
+            for (au auVar22 : this.f4517B) {
                 if (auVar22 == auVar) {
                     return true;
                 }
             }
         }
-        if (this.C != null) {
-            for (au auVar222 : this.C) {
+        if (this.f4518C != null) {
+            for (au auVar222 : this.f4518C) {
                 if (auVar222 == auVar) {
                     return true;
                 }
             }
         }
-        if (this.D == null) {
+        if (this.f4519D == null) {
             return false;
         }
-        for (au auVar2222 : this.D) {
+        for (au auVar2222 : this.f4519D) {
             if (auVar2222 == auVar) {
                 return true;
             }
@@ -386,74 +449,81 @@ public class az extends as implements ba, bd, cc {
         return false;
     }
 
-    public void H() {
-        a.c().b(N());
-        if (!this.j.d()) {
-            this.j.a();
-            if (this.n) {
-                V();
-                this.m = false;
+    /* renamed from: H */
+    public void mo1285H() {
+        C0328a.m757c().m764b(m6108M());
+        if (!this.f4529j.m6797d()) {
+            this.f4529j.mo1440a();
+            if (this.f4533n) {
+                m6540U();
+                this.f4532m = false;
             }
-            O();
-            this.e.b((bd) this);
-            this.e.c(t.b());
+            mo1288N();
+            this.f4524e.m5840b((bd) this);
+            this.f4524e.m5842c(UThread.getCurrentThread());
         }
     }
 
-    public void a(boolean z) {
-        a.c().b(N());
-        if (this.F != null) {
+    /* renamed from: a */
+    public void mo1298a(boolean z) {
+        C0328a.m757c().m764b(m6108M());
+        if (this.f4521F != null) {
             if (z) {
-                this.h.a(this.F, true);
+                this.f4527h.m6360a(this.f4521F, true);
             } else {
-                this.h.a(this.F);
+                this.f4527h.m6359a(this.f4521F);
             }
-            this.F = null;
+            this.f4521F = null;
         }
     }
 
-    public boolean E() {
-        a.c().b(N());
-        if (G()) {
+    /* renamed from: E */
+    public boolean mo1282E() {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1284G()) {
             return true;
         }
-        while (!this.m && !this.j.d() && this.e.a && !this.e.c()) {
+        while (!this.f4532m && !this.f4529j.m6797d() && this.f4524e.a && !this.f4524e.mo1272c()) {
             try {
                 Thread.sleep(50);
             } catch (Throwable th) {
             }
         }
-        return G();
+        return mo1284G();
     }
 
-    public void a(Runnable runnable, Runnable runnable2) {
-        a.c().b(N());
-        ah.submitFuture(new ba(this, runnable, runnable2));
+    /* renamed from: a */
+    public void mo1297a(Runnable runnable, Runnable runnable2) {
+        C0328a.m757c().m764b(m6108M());
+        ah.m871b(new ba(this, runnable, runnable2));
     }
 
-    public boolean F() {
-        a.c().b(N());
-        return this.j.d();
+    /* renamed from: F */
+    public boolean mo1283F() {
+        C0328a.m757c().m764b(m6108M());
+        return this.f4529j.m6797d();
     }
 
-    public boolean G() {
-        a.c().b(N());
-        return !this.j.d() && this.m;
+    /* renamed from: G */
+    public boolean mo1284G() {
+        C0328a.m757c().m764b(m6108M());
+        return !this.f4529j.m6797d() && this.f4532m;
     }
 
-    public ae a(Point point) {
-        a.c().b(N());
-        if (!G() || this.f.f()) {
+    /* renamed from: a */
+    public ae mo1292a(Point point) {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1284G() || this.f4525f.m5817f()) {
             return null;
         }
-        bk i = i(point);
+        bk i = m6569i(point);
         DkeLinkInfo hitTestLink;
         if (i != null) {
             ae aeVar;
             DkPos dkPos = new DkPos();
             dkPos.mX = (float) point.x;
             dkPos.mY = (float) point.y;
-            hitTestLink = i.b.hitTestLink(dkPos);
+            hitTestLink = i.f4564b.hitTestLink(dkPos);
             if (hitTestLink == null || hitTestLink.mLinkType != 1) {
                 aeVar = null;
             } else {
@@ -464,73 +534,77 @@ public class az extends as implements ba, bd, cc {
         DkPos dkPos2 = new DkPos();
         dkPos2.mX = (float) point.x;
         dkPos2.mY = (float) point.y;
-        hitTestLink = Y().hitTestLink(dkPos2);
+        hitTestLink = m6543X().hitTestLink(dkPos2);
         if (hitTestLink == null || hitTestLink.mLinkType != 1) {
             return null;
         }
         return new bp(this, hitTestLink, null);
     }
 
-    public ce b(Point point, Point point2) {
-        a.c().b(N());
-        if (!G() || this.f.f()) {
+    /* renamed from: b */
+    public ce m6609b(Point point, Point point2) {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1284G() || this.f4525f.m5817f()) {
             return new ce();
         }
-        DkFlowPosition[] selectionRange = Y().getSelectionRange(new DkPos((float) point.x, (float) point.y), new DkPos((float) point2.x, (float) point2.y));
+        DkFlowPosition[] selectionRange = m6543X().getSelectionRange(new DkPos((float) point.x, (float) point.y), new DkPos((float) point2.x, (float) point2.y));
         if (selectionRange.length < 2) {
             return new ce();
         }
-        return ai.a(ai.a(selectionRange[0].mChapterIndex, selectionRange[0].mParaIndex, selectionRange[0].mAtomIndex), ai.a(selectionRange[1].mChapterIndex, selectionRange[1].mParaIndex, selectionRange[1].mAtomIndex));
+        return ai.m6509a(ai.m6508a(selectionRange[0].mChapterIndex, selectionRange[0].mParaIndex, selectionRange[0].mAtomIndex), ai.m6508a(selectionRange[1].mChapterIndex, selectionRange[1].mParaIndex, selectionRange[1].mAtomIndex));
     }
 
-    public ce h(Point point) {
-        a.c().b(N());
-        if (!G() || this.f.f()) {
+    /* renamed from: h */
+    public ce m6634h(Point point) {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1284G() || this.f4525f.m5817f()) {
             return new ce();
         }
-        bk i = i(point);
+        bk i = m6569i(point);
         DkFlowPosition[] hitTestTextRange;
         if (i != null) {
             DkPos dkPos = new DkPos();
             dkPos.mX = (float) point.x;
             dkPos.mY = (float) point.y;
-            hitTestTextRange = i.b.hitTestTextRange(dkPos);
+            hitTestTextRange = i.f4564b.hitTestTextRange(dkPos);
             if (hitTestTextRange.length < 2) {
                 return new ce();
             }
-            return ai.a(ai.a(hitTestTextRange[0].mChapterIndex, hitTestTextRange[0].mParaIndex, hitTestTextRange[0].mAtomIndex), ai.a(hitTestTextRange[1].mChapterIndex, hitTestTextRange[1].mParaIndex, hitTestTextRange[1].mAtomIndex));
+            return ai.m6509a(ai.m6508a(hitTestTextRange[0].mChapterIndex, hitTestTextRange[0].mParaIndex, hitTestTextRange[0].mAtomIndex), ai.m6508a(hitTestTextRange[1].mChapterIndex, hitTestTextRange[1].mParaIndex, hitTestTextRange[1].mAtomIndex));
         }
         DkPos dkPos2 = new DkPos();
         dkPos2.mX = (float) point.x;
         dkPos2.mY = (float) point.y;
-        hitTestTextRange = Y().hitTestTextRangeByMode(dkPos2, 2);
+        hitTestTextRange = m6543X().hitTestTextRangeByMode(dkPos2, 2);
         if (hitTestTextRange.length < 2) {
             return new ce();
         }
-        return (ce) ai.a(ai.a(hitTestTextRange[0].mChapterIndex, hitTestTextRange[0].mParaIndex, hitTestTextRange[0].mAtomIndex), ai.a(hitTestTextRange[1].mChapterIndex, hitTestTextRange[1].mParaIndex, hitTestTextRange[1].mAtomIndex)).b(m());
+        return (ce) ai.m6509a(ai.m6508a(hitTestTextRange[0].mChapterIndex, hitTestTextRange[0].mParaIndex, hitTestTextRange[0].mAtomIndex), ai.m6508a(hitTestTextRange[1].mChapterIndex, hitTestTextRange[1].mParaIndex, hitTestTextRange[1].mAtomIndex)).mo1197b(mo1334m());
     }
 
-    public int c(Point point) {
-        a.c().b(N());
-        if (!G()) {
+    /* renamed from: c */
+    public int mo1306c(Point point) {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1284G()) {
             return -1;
         }
-        for (int i = 0; i < this.y.length; i++) {
-            if (this.y[i].c.contains(point.x, point.y)) {
+        for (int i = 0; i < this.f4544y.length; i++) {
+            if (this.f4544y[i].c.contains(point.x, point.y)) {
                 return i;
             }
         }
         return -1;
     }
 
-    public int a(Point point, int i) {
-        a.c().b(N());
-        if (!G()) {
+    /* renamed from: a */
+    public int mo1289a(Point point, int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1284G()) {
             return -1;
         }
         int i2 = 0;
-        while (i2 < this.z.length) {
-            if ((this.z[i2].d < 0 || this.z[i2].e == this.B[this.z[i2].d].a()) && this.z[i2].c.intersects(point.x - i, point.y - i, point.x + i, point.y + i)) {
+        while (i2 < this.f4545z.length) {
+            if ((this.f4545z[i2].f4560d < 0 || this.f4545z[i2].f4561e == this.f4517B[this.f4545z[i2].f4560d].mo1381a()) && this.f4545z[i2].f4559c.intersects(point.x - i, point.y - i, point.x + i, point.y + i)) {
                 return i2;
             }
             i2++;
@@ -538,200 +612,216 @@ public class az extends as implements ba, bd, cc {
         return -1;
     }
 
-    public int d(Point point) {
-        a.c().b(N());
-        if (!G()) {
+    /* renamed from: d */
+    public int mo1310d(Point point) {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1284G()) {
             return -1;
         }
-        for (int i = 0; i < this.A.length; i++) {
-            if (this.A[i].d.contains(point.x, point.y)) {
+        for (int i = 0; i < this.f4516A.length; i++) {
+            if (this.f4516A[i].f4606d.contains(point.x, point.y)) {
                 return i;
             }
         }
         return -1;
     }
 
-    public int e(Point point) {
-        a.c().b(N());
-        if (!G()) {
+    /* renamed from: e */
+    public int mo1314e(Point point) {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1284G()) {
             return -1;
         }
-        for (int i = 0; i < this.B.length; i++) {
-            if (this.B[i].c.contains(point.x, point.y)) {
+        for (int i = 0; i < this.f4517B.length; i++) {
+            if (this.f4517B[i].f4565c.contains(point.x, point.y)) {
                 return i;
             }
         }
         return -1;
     }
 
-    public int a(bb bbVar) {
-        a.c().b(N());
-        if (!G()) {
+    /* renamed from: a */
+    public int mo1290a(bb bbVar) {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1284G()) {
             return -1;
         }
-        for (int i = 0; i < this.B.length; i++) {
-            if (this.B[i].a(bbVar)) {
+        for (int i = 0; i < this.f4517B.length; i++) {
+            if (this.f4517B[i].m6675a(bbVar)) {
                 return i;
             }
         }
         return -1;
     }
 
-    public int f(Point point) {
-        a.c().b(N());
-        return this.x == null ? -1 : 0;
+    /* renamed from: f */
+    public int mo1317f(Point point) {
+        C0328a.m757c().m764b(m6108M());
+        return this.f4543x == null ? -1 : 0;
     }
 
-    public int g(Point point) {
-        a.c().b(N());
-        if (!G()) {
+    /* renamed from: g */
+    public int mo1320g(Point point) {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1284G()) {
             return -1;
         }
-        for (int i = 0; i < B(); i++) {
-            if (u(i).contains(point.x, point.y)) {
+        for (int i = 0; i < mo1281B(); i++) {
+            if (mo1350u(i).contains(point.x, point.y)) {
                 return i;
             }
         }
         return -1;
     }
 
-    public Rect b(Rect rect) {
-        a.c().b(N());
+    /* renamed from: b */
+    public Rect mo1301b(Rect rect) {
+        C0328a.m757c().m764b(m6108M());
         return new Rect(rect);
     }
 
-    public Rect c(Rect rect) {
-        a.c().b(N());
+    /* renamed from: c */
+    public Rect mo1307c(Rect rect) {
+        C0328a.m757c().m764b(m6108M());
         return new Rect(rect);
     }
 
-    public af c(int i) {
-        a.c().b(N());
-        if (E()) {
-            return this.y[i];
+    /* renamed from: c */
+    public af mo1308c(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4544y[i];
         }
         return null;
     }
 
-    public aw d(int i) {
-        return i == 0 ? this.x : null;
+    /* renamed from: d */
+    public aw mo1312d(int i) {
+        return i == 0 ? this.f4543x : null;
     }
 
-    public ab e(int i) {
-        a.c().b(N());
-        if (E()) {
-            return this.z[i];
+    /* renamed from: e */
+    public ab mo1315e(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4545z[i];
         }
         return null;
     }
 
-    public com.duokan.reader.domain.document.ah f(int i) {
-        a.c().b(N());
-        if (E()) {
-            return this.A[i];
+    /* renamed from: f */
+    public com.duokan.reader.domain.document.ah mo1319f(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4516A[i];
         }
         return null;
     }
 
-    public Rect g(int i) {
-        a.c().b(N());
-        if (E()) {
-            return this.y[i].c;
+    /* renamed from: g */
+    public Rect mo1322g(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4544y[i].c;
         }
         return new Rect();
     }
 
-    public Rect h(int i) {
-        a.c().b(N());
-        if (E()) {
-            return (this.x == null || i != 0) ? new Rect() : this.x.c;
+    /* renamed from: h */
+    public Rect mo1325h(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return (this.f4543x == null || i != 0) ? new Rect() : this.f4543x.c;
         } else {
             return new Rect();
         }
     }
 
-    public Rect i(int i) {
-        a.c().b(N());
-        if (E()) {
-            return this.z[i].c;
+    /* renamed from: i */
+    public Rect mo1326i(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4545z[i].f4559c;
         }
         return new Rect();
     }
 
-    public Rect j(int i) {
-        a.c().b(N());
-        if (E()) {
-            return this.A[i].d;
+    /* renamed from: j */
+    public Rect mo1328j(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4516A[i].f4606d;
         }
         return new Rect();
     }
 
-    public String I() {
-        return this.t == null ? "" : this.t;
-    }
-
-    public String J() {
-        a.c().b(N());
-        if (E()) {
-            return Y().getTextContent();
+    /* renamed from: I */
+    public String mo1286I() {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return m6543X().getTextContent();
         }
         return "";
     }
 
-    public String b(bb bbVar) {
-        a.c().b(N());
-        if (!c && bbVar == null) {
+    /* renamed from: b */
+    public String mo1303b(bb bbVar) {
+        C0328a.m757c().m764b(m6108M());
+        if (!f4514c && bbVar == null) {
             throw new AssertionError();
-        } else if (!E()) {
+        } else if (!mo1282E()) {
             return "";
         } else {
             String str = "";
-            ce ceVar = (ce) bbVar.b(m());
-            return Y().getTextContentOfRange(ceVar.j().b(Z()), ceVar.k().b(Z()));
+            ce ceVar = (ce) bbVar.mo1197b(mo1334m());
+            return m6543X().getTextContentOfRange(ceVar.m6813j().m6774b(m6544Y()), ceVar.m6814k().m6774b(m6544Y()));
         }
     }
 
-    public String K() {
-        a.c().b(N());
-        if (!c && !G()) {
+    /* renamed from: J */
+    public String mo1287J() {
+        C0328a.m757c().m764b(m6108M());
+        if (!f4514c && !mo1284G()) {
             throw new AssertionError();
-        } else if (this.g.k) {
-            return DkUtils.chs2chtText(J());
+        } else if (this.f4526g.k) {
+            return DkUtils.chs2chtText(mo1286I());
         } else {
-            return J();
+            return mo1286I();
         }
     }
 
-    public String c(bb bbVar) {
-        a.c().b(N());
-        if (!c && !G()) {
+    /* renamed from: c */
+    public String mo1309c(bb bbVar) {
+        C0328a.m757c().m764b(m6108M());
+        if (!f4514c && !mo1284G()) {
             throw new AssertionError();
-        } else if (this.g.k) {
-            return DkUtils.chs2chtText(b(bbVar));
+        } else if (this.f4526g.k) {
+            return DkUtils.chs2chtText(mo1303b(bbVar));
         } else {
-            return b(bbVar);
+            return mo1303b(bbVar);
         }
     }
 
-    public Rect d(bb bbVar) {
+    /* renamed from: d */
+    public Rect mo1311d(bb bbVar) {
         int i = 0;
-        a.c().b(N());
-        if (!c && !G()) {
+        C0328a.m757c().m764b(m6108M());
+        if (!f4514c && !mo1284G()) {
             throw new AssertionError();
-        } else if (!c && bbVar == null) {
+        } else if (!f4514c && bbVar == null) {
             throw new AssertionError();
-        } else if (!G() || this.f.f()) {
+        } else if (!mo1284G() || this.f4525f.m5817f()) {
             return new Rect();
         } else {
-            if (bbVar == null || bbVar.f()) {
+            if (bbVar == null || bbVar.m5817f()) {
                 return new Rect();
             }
             ce ceVar = (ce) bbVar;
-            bk a = a(ceVar);
+            bk a = m6545a(ceVar);
             DkBox[] textRects;
             Rect rect;
             if (a != null) {
-                textRects = a.b.getTextRects(ceVar.j().b(Z()), ceVar.k().b(Z()));
+                textRects = a.f4564b.getTextRects(ceVar.m6813j().m6774b(m6544Y()), ceVar.m6814k().m6774b(m6544Y()));
                 rect = new Rect();
                 while (i < textRects.length) {
                     rect.union(new Rect(Math.round(textRects[i].mX0), Math.round(textRects[i].mY0), Math.round(textRects[i].mX1), Math.round(textRects[i].mY1)));
@@ -739,7 +829,7 @@ public class az extends as implements ba, bd, cc {
                 }
                 return rect;
             }
-            textRects = Y().getTextRects(ceVar.j().b(Z()), ceVar.k().b(Z()));
+            textRects = m6543X().getTextRects(ceVar.m6813j().m6774b(m6544Y()), ceVar.m6814k().m6774b(m6544Y()));
             rect = new Rect();
             while (i < textRects.length) {
                 rect.union(new Rect(Math.round(textRects[i].mX0), Math.round(textRects[i].mY0), Math.round(textRects[i].mX1), Math.round(textRects[i].mY1)));
@@ -749,51 +839,53 @@ public class az extends as implements ba, bd, cc {
         }
     }
 
-    public Rect[] e(bb bbVar) {
+    /* renamed from: e */
+    public Rect[] mo1316e(bb bbVar) {
         int i = 0;
-        a.c().b(N());
-        if (!c && !G()) {
+        C0328a.m757c().m764b(m6108M());
+        if (!f4514c && !mo1284G()) {
             throw new AssertionError();
-        } else if (!c && bbVar == null) {
+        } else if (!f4514c && bbVar == null) {
             throw new AssertionError();
-        } else if (!E() || this.f.f()) {
+        } else if (!mo1282E() || this.f4525f.m5817f()) {
             return new Rect[0];
         } else {
-            if (bbVar == null || bbVar.f()) {
+            if (bbVar == null || bbVar.m5817f()) {
                 return new Rect[0];
             }
             ce ceVar = (ce) bbVar;
-            bk a = a(ceVar);
+            bk a = m6545a(ceVar);
             DkBox[] textRects;
             Rect[] rectArr;
             if (a != null) {
-                textRects = a.b.getTextRects(ceVar.j().b(Z()), ceVar.k().b(Z()));
+                textRects = a.f4564b.getTextRects(ceVar.m6813j().m6774b(m6544Y()), ceVar.m6814k().m6774b(m6544Y()));
                 rectArr = new Rect[textRects.length];
                 while (i < rectArr.length) {
                     rectArr[i] = new Rect(Math.round(textRects[i].mX0), Math.round(textRects[i].mY0), Math.round(textRects[i].mX1), Math.round(textRects[i].mY1));
                     i++;
                 }
-                a(rectArr);
+                m6551a(rectArr);
                 return rectArr;
             }
-            textRects = Y().getTextRects(ceVar.j().b(Z()), ceVar.k().b(Z()));
+            textRects = m6543X().getTextRects(ceVar.m6813j().m6774b(m6544Y()), ceVar.m6814k().m6774b(m6544Y()));
             rectArr = new Rect[textRects.length];
             while (i < rectArr.length) {
                 rectArr[i] = new Rect(Math.round(textRects[i].mX0), Math.round(textRects[i].mY0), Math.round(textRects[i].mX1), Math.round(textRects[i].mY1));
                 i++;
             }
-            a(rectArr);
+            m6551a(rectArr);
             return rectArr;
         }
     }
 
-    public Point f(bb bbVar) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: f */
+    public Point mo1318f(bb bbVar) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4514c || mo1284G()) {
             Point point = new Point();
-            Rect[] e = e(bbVar);
+            Rect[] e = mo1316e(bbVar);
             if (e.length >= 1) {
-                switch (Z().getWritingMode()) {
+                switch (m6544Y().getWritingMode()) {
                     case 1:
                         point.x = e[0].right;
                         point.y = e[0].top;
@@ -813,13 +905,14 @@ public class az extends as implements ba, bd, cc {
         throw new AssertionError();
     }
 
-    public Point g(bb bbVar) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: g */
+    public Point mo1321g(bb bbVar) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4514c || mo1284G()) {
             Point point = new Point();
-            Rect[] e = e(bbVar);
+            Rect[] e = mo1316e(bbVar);
             if (e.length >= 1) {
-                switch (Z().getWritingMode()) {
+                switch (m6544Y().getWritingMode()) {
                     case 1:
                         point.x = e[e.length - 1].left;
                         point.y = e[e.length - 1].bottom;
@@ -839,261 +932,279 @@ public class az extends as implements ba, bd, cc {
         throw new AssertionError();
     }
 
-    public ac k(int i) {
-        a.c().b(N());
-        if (E()) {
-            return this.B[i];
+    /* renamed from: k */
+    public ac mo1329k(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4517B[i];
         }
         return null;
     }
 
-    public Rect l(int i) {
-        a.c().b(N());
-        if (E()) {
-            return this.B[i].c;
+    /* renamed from: l */
+    public Rect mo1331l(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4517B[i].f4565c;
         }
         return new Rect();
     }
 
-    public Rect m(int i) {
-        a.c().b(N());
-        if (!E()) {
+    /* renamed from: m */
+    public Rect mo1333m(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1282E()) {
             return new Rect();
         }
-        Rect rect = new Rect(this.B[i].b());
-        rect.offset(this.B[i].c.left, this.B[i].c.top);
+        Rect rect = new Rect(this.f4517B[i].mo1385b());
+        rect.offset(this.f4517B[i].f4565c.left, this.f4517B[i].f4565c.top);
         return rect;
     }
 
-    public aj n(int i) {
-        a.c().b(N());
-        if (E()) {
-            return this.C[i];
+    /* renamed from: n */
+    public aj mo1335n(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4518C[i];
         }
         return null;
     }
 
-    public Rect p(int i) {
-        a.c().b(N());
-        if (E()) {
-            return this.C[i].n;
+    /* renamed from: p */
+    public Rect mo1339p(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4518C[i].f4610n;
         }
         return new Rect();
     }
 
-    public Rect o(int i) {
-        a.c().b(N());
-        if (E()) {
-            return this.C[i].c();
+    /* renamed from: o */
+    public Rect mo1337o(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4518C[i].m6760c();
         }
         return new Rect();
     }
 
-    public bm w(int i) {
-        a.c().b(N());
-        if (E()) {
-            return this.D[i];
+    /* renamed from: w */
+    public bm m6663w(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4519D[i];
         }
         return null;
     }
 
-    public Rect r(int i) {
-        a.c().b(N());
-        if (E()) {
-            return this.D[i].b;
+    /* renamed from: r */
+    public Rect mo1344r(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4519D[i].f4574b;
         }
         return new Rect();
     }
 
-    public ax s(int i) {
-        a.c().b(N());
-        if (E()) {
-            return this.E[i];
+    /* renamed from: s */
+    public ax mo1346s(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4520E[i];
         }
         return null;
     }
 
-    public Rect t(int i) {
-        a.c().b(N());
-        if (E()) {
-            return this.E[i].c;
+    /* renamed from: t */
+    public Rect mo1348t(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return this.f4520E[i].f4637c;
         }
         return new Rect();
     }
 
-    public Rect u(int i) {
-        a.c().b(N());
-        if (E()) {
-            return Y().getFrameBoxOnPage((long) i).toRect();
+    /* renamed from: u */
+    public Rect mo1350u(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return m6543X().getFrameBoxOnPage((long) i).toRect();
         }
         return new Rect();
     }
 
-    public int v(int i) {
-        a.c().b(N());
-        if (E()) {
-            return (int) Y().getGlobalFrameIndex((long) i);
+    /* renamed from: v */
+    public int mo1352v(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1282E()) {
+            return (int) m6543X().getGlobalFrameIndex((long) i);
         }
         return -1;
     }
 
-    public List Q() {
-        a.c().b(N());
-        if (!E()) {
+    /* renamed from: P */
+    public List<av> mo1374P() {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1282E()) {
             return Collections.emptyList();
         }
-        Collection b = this.e.b(this.j.a);
-        Collection collection = this.k;
-        List arrayList = new ArrayList(b.size() + collection.size());
+        Collection b = this.f4524e.m6447b(this.f4529j.f4647a);
+        Collection collection = this.f4530k;
+        List<av> arrayList = new ArrayList(b.size() + collection.size());
         arrayList.addAll(b);
         arrayList.addAll(collection);
         return arrayList;
     }
 
-    public List R() {
-        a.c().b(N());
-        if (!E()) {
+    /* renamed from: Q */
+    public List<av> mo1375Q() {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1282E()) {
             return Collections.emptyList();
         }
-        Collection c = this.e.c(this.j.a);
-        Collection collection = this.l;
-        List arrayList = new ArrayList(c.size() + collection.size());
+        Collection c = this.f4524e.m6448c(this.f4529j.f4647a);
+        Collection collection = this.f4531l;
+        List<av> arrayList = new ArrayList(c.size() + collection.size());
         arrayList.addAll(c);
         arrayList.addAll(collection);
         return arrayList;
     }
 
-    public void a(bc bcVar, long j, long j2) {
-        if (j2 > 0 && this.j != null) {
-            this.s = c(this.j);
+    /* renamed from: a */
+    public void mo1295a(bc bcVar, long j, long j2) {
+        if (j2 > 0 && this.f4529j != null) {
+            this.f4538s = m6557c(this.f4529j);
         }
-        a(new bc(this));
+        m6122a(new bc(this));
     }
 
-    public void a(cd cdVar) {
-        if (!c && (this.e == null || !this.e.a)) {
+    /* renamed from: a */
+    public void mo1377a(cd cdVar) {
+        if (!f4514c && (this.f4524e == null || !this.f4524e.a)) {
             throw new AssertionError();
-        } else if (c || (this.f != null && this.f.b())) {
+        } else if (f4514c || (this.f4525f != null && this.f4525f.m5777b())) {
             DkePage dkePage;
-            this.j = cdVar;
-            if (this.e.b() >= 0) {
-                this.s = c(this.j);
+            this.f4529j = cdVar;
+            if (this.f4524e.m5839b() >= 0) {
+                this.f4538s = m6557c(this.f4529j);
             } else {
-                this.e.a((bd) this);
+                this.f4524e.m5836a((bd) this);
             }
-            if (this.j.d() || this.f.f()) {
+            if (this.f4529j.m6797d() || this.f4525f.m5817f()) {
                 dkePage = null;
             } else {
                 boolean z;
-                DkePage Y = Y();
-                this.o = Y instanceof DkeDummyPage;
-                if (!(Y instanceof DkeErrorPage) || TextUtils.equals(Z().getChapterPackUri(this.j.a), "/")) {
+                DkePage X = m6543X();
+                this.f4534o = X instanceof DkeDummyPage;
+                if (!(X instanceof DkeErrorPage) || TextUtils.equals(m6544Y().getChapterPackUri(this.f4529j.f4647a), "/")) {
                     z = false;
                 } else {
                     z = true;
                 }
-                this.p = z;
-                this.q = Y instanceof DkeStuffingPage;
-                if (!Y.checkPageElements()) {
-                    Y.setInvisible(5);
-                    Y.setInvisible(13);
-                    Y.setInvisible(14);
-                    Y.setInvisible(7);
-                    Y.setInvisible(20);
-                    Y.buildPageElements();
+                this.f4535p = z;
+                this.f4536q = X instanceof DkeStuffingPage;
+                if (!X.checkPageElements()) {
+                    X.setInvisible(5);
+                    X.setInvisible(13);
+                    X.setInvisible(14);
+                    X.setInvisible(7);
+                    X.setInvisible(20);
+                    X.buildPageElements();
                 }
-                if (!this.e.j().e) {
-                    dkePage = Y;
-                } else if (T()) {
-                    this.r = (int) Y.getPageHeight();
-                    dkePage = Y;
+                if (!this.f4524e.m6455j().e) {
+                    dkePage = X;
+                } else if (m6538S()) {
+                    this.f4537r = (int) X.getPageHeight();
+                    dkePage = X;
                 } else {
-                    this.r = Math.max(this.r, (int) Y.getPageHeight());
-                    dkePage = Y;
+                    this.f4537r = Math.max(this.f4537r, (int) X.getPageHeight());
+                    dkePage = X;
                 }
             }
-            if (dkePage == null || this.g.o) {
-                this.w = new DkeHitTestInfo[0];
-                this.t = "";
-                this.y = new bq[0];
-                this.B = new bk[0];
-                this.C = new bt[0];
-                this.z = new bj[0];
-                this.A = new bs[0];
-                this.D = new bm[0];
-                this.E = new ca[0];
+            if (dkePage == null || this.f4526g.o) {
+                this.f4542w = new DkeHitTestInfo[0];
+                this.f4539t = "";
+                this.f4544y = new bq[0];
+                this.f4517B = new bk[0];
+                this.f4518C = new bt[0];
+                this.f4545z = new bj[0];
+                this.f4516A = new bs[0];
+                this.f4519D = new bm[0];
+                this.f4520E = new ca[0];
             } else {
-                this.w = dkePage.getImages();
-                if (!this.f.f()) {
-                    if (!c && this.G != null) {
+                this.f4542w = dkePage.getImages();
+                if (!this.f4525f.m5817f()) {
+                    if (!f4514c && this.f4522G != null) {
                         throw new AssertionError();
-                    } else if (this.G == null) {
-                        this.G = X();
+                    } else if (this.f4522G == null) {
+                        this.f4522G = m6542W();
                     }
                 }
-                f(dkePage);
-                e(dkePage);
-                g(dkePage);
-                b(dkePage);
-                a(dkePage);
-                c(dkePage);
-                d(dkePage);
+                m6565f(dkePage);
+                m6563e(dkePage);
+                m6566g(dkePage);
+                m6555b(dkePage);
+                m6548a(dkePage);
+                m6559c(dkePage);
+                m6560d(dkePage);
             }
-            this.m = true;
-            a(new bd(this));
-            this.e.c(this);
+            this.f4532m = true;
+            m6122a(new bd(this));
+            this.f4524e.m5842c(this);
         } else {
             throw new AssertionError();
         }
     }
 
-    public void b(cd cdVar) {
-        if (c || this.j.d()) {
-            this.m = false;
-            a(new be(this));
-            this.e.c(this);
+    /* renamed from: b */
+    public void mo1378b(cd cdVar) {
+        if (f4514c || this.f4529j.m6797d()) {
+            this.f4532m = false;
+            m6122a(new be(this));
+            this.f4524e.m5842c(this);
             return;
         }
         throw new AssertionError();
     }
 
-    protected int b(Canvas canvas, long j) {
-        if (!c && this.f == null) {
+    /* renamed from: b */
+    protected int mo1300b(Canvas canvas, long j) {
+        if (!f4514c && this.f4525f == null) {
             throw new AssertionError();
-        } else if (!this.n) {
-            a(canvas);
+        } else if (!this.f4533n) {
+            mo1376a(canvas);
             return 2;
-        } else if (this.f.f()) {
-            this.g.a.setBounds(0, 0, getBounds().width(), getBounds().height());
-            this.g.a.draw(canvas);
+        } else if (this.f4525f.m5817f()) {
+            this.f4526g.a.setBounds(0, 0, getBounds().width(), getBounds().height());
+            this.f4526g.a.draw(canvas);
             return 1;
         } else {
             int a;
             int i;
-            Rect W = W();
-            if (M()) {
-                O();
+            Rect V = m6541V();
+            if (m6107L()) {
+                mo1288N();
             }
-            if (this.F != null && (this.F.b() != this.g || this.F.d() != L() || this.F.f() || this.F.a(W, 1.0f) == 0)) {
-                this.h.b(this.F);
-                this.F = null;
+            if (this.f4521F != null && (this.f4521F.m6384b() != this.f4526g || this.f4521F.m6386d() != m6106K() || this.f4521F.m6388f() || this.f4521F.m6381a(V, 1.0f) == 0)) {
+                this.f4527h.m6361b(this.f4521F);
+                this.f4521F = null;
             }
-            if (this.G != null && (this.G.b() != this.g || this.G.d() != L() || this.G.f() || this.G.a(W, 1.0f) == 0)) {
-                this.h.b(this.G);
-                this.G = null;
+            if (this.f4522G != null && (this.f4522G.m6384b() != this.f4526g || this.f4522G.m6386d() != m6106K() || this.f4522G.m6388f() || this.f4522G.m6381a(V, 1.0f) == 0)) {
+                this.f4527h.m6361b(this.f4522G);
+                this.f4522G = null;
             }
-            if (this.F == null) {
-                this.F = this.h.a(this.e, this.f, W, this.g, 1.0f, L());
+            if (this.f4521F == null) {
+                this.f4521F = this.f4527h.m6354a(this.f4524e, this.f4525f, V, this.f4526g, 1.0f, m6106K());
             } else {
-                a = this.F.a(W, 1.0f);
+                a = this.f4521F.m6381a(V, 1.0f);
                 if (a < Integer.MAX_VALUE) {
-                    ap a2 = this.h.a(this.e, this.f, W, this.g, 1.0f, L(), a + 1);
+                    ap a2 = this.f4527h.m6355a(this.f4524e, this.f4525f, V, this.f4526g, 1.0f, m6106K(), a + 1);
                     if (a2 != null) {
-                        if (!a2.e()) {
-                            this.h.a(a2);
-                        } else if (c || !a2.f()) {
-                            this.h.b(this.F);
-                            this.F = a2;
+                        if (!a2.m6387e()) {
+                            this.f4527h.m6359a(a2);
+                        } else if (f4514c || !a2.m6388f()) {
+                            this.f4527h.m6361b(this.f4521F);
+                            this.f4521F = a2;
                         } else {
                             throw new AssertionError();
                         }
@@ -1101,198 +1212,205 @@ public class az extends as implements ba, bd, cc {
                 }
             }
             Object obj;
-            if (this.F != null) {
-                obj = this.F.a(W, 1.0f) == Integer.MAX_VALUE ? 1 : null;
-                if (!this.F.a(canvas, 0.0f, 0.0f, 1.0f)) {
-                    a(canvas);
+            if (this.f4521F != null) {
+                obj = this.f4521F.m6381a(V, 1.0f) == Integer.MAX_VALUE ? 1 : null;
+                if (!this.f4521F.m6383a(canvas, 0.0f, 0.0f, 1.0f)) {
+                    mo1376a(canvas);
                     i = 2;
                 } else if (obj == null) {
                     invalidateSelf();
                     i = 3;
-                } else if (!k() || this.H == 0) {
+                } else if (!mo1330k() || this.f4523H == 0) {
                     i = 1;
                 } else {
                     i = 2;
                 }
             } else {
-                a(canvas);
+                mo1376a(canvas);
                 obj = null;
                 i = 2;
             }
-            if (this.G == this.F) {
-                this.G = null;
+            if (this.f4522G == this.f4521F) {
+                this.f4522G = null;
             }
-            if (this.G != null && this.G.e()) {
-                this.G = null;
+            if (this.f4522G != null && this.f4522G.m6387e()) {
+                this.f4522G = null;
             }
-            if (this.G == null && r0 == null) {
-                this.G = X();
+            if (this.f4522G == null && obj == null) {
+                this.f4522G = m6542W();
             }
-            if (k() || this.e.d()) {
+            if (mo1330k() || this.f4524e.m5844d()) {
                 return i;
             }
-            g b;
-            this.a.setTextSize((float) this.g.f);
-            h d = this.e.e().d();
-            if (this.e.j().c.top >= this.g.f) {
+            C0901g b;
+            this.a.setTextSize((float) this.f4526g.f);
+            C0911h d = this.f4524e.mo1369e().mo1258d();
+            if (this.f4524e.m6455j().c.top >= this.f4526g.f) {
                 float length;
                 float f;
-                if (this.g.m && this.t == null) {
-                    this.t = d.a();
-                    b = d.b(this.f);
-                    if (!(b == null || b.f().equals(this.f.k()))) {
-                        this.t = b.e();
+                if (this.f4526g.m && this.f4539t == null) {
+                    this.f4539t = d.mo1264a();
+                    b = d.mo1267b(this.f4525f);
+                    if (!(b == null || b.mo1203f().equals(this.f4525f.m6533k()))) {
+                        this.f4539t = b.mo1202e();
                     }
-                    if (this.g.k) {
-                        this.t = DkUtils.chs2chtText(this.t);
+                    if (this.f4526g.k) {
+                        this.f4539t = DkUtils.chs2chtText(this.f4539t);
                     }
                 }
-                if (this.g.l) {
-                    length = (float) d.a().length();
+                if (this.f4526g.l) {
+                    length = (float) d.mo1264a().length();
                 } else {
                     length = 0.0f;
                 }
-                if (!this.g.m || TextUtils.isEmpty(this.t) || (this.g.l && this.t == d.a())) {
+                if (!this.f4526g.m || TextUtils.isEmpty(this.f4539t) || (this.f4526g.l && this.f4539t == d.mo1264a())) {
                     f = 0.0f;
                 } else {
-                    f = (float) this.t.length();
+                    f = (float) this.f4539t.length();
                 }
-                int width = getBounds().width() - (p().c.left + p().c.right);
+                int width = getBounds().width() - (mo1340p().f4332c.left + mo1340p().f4332c.right);
                 if (Float.compare(length, 1.0f) >= 0) {
-                    a(canvas, d.a(), 3, Math.round((((float) width) * length) / (length + f)), this.a);
+                    m6118a(canvas, d.mo1264a(), 3, Math.round((((float) width) * length) / (length + f)), this.a);
                 }
                 if (Float.compare(f, 1.0f) >= 0) {
-                    String str = this.t;
-                    int i2 = (!this.g.n || this.g.l) ? 5 : 3;
-                    a(canvas, str, i2, Math.round((((float) width) * f) / (length + f)), this.a);
+                    String str = this.f4539t;
+                    int i2 = (!this.f4526g.n || this.f4526g.l) ? 5 : 3;
+                    m6118a(canvas, str, i2, Math.round((((float) width) * f) / (length + f)), this.a);
                 }
             }
-            if (this.e.j().c.bottom < this.g.f) {
+            if (this.f4524e.m6455j().c.bottom < this.f4526g.f) {
                 return i;
             }
-            if (this.v == null && this.s >= 0) {
-                this.v = String.format("%getTriangleEdge / %getTriangleEdge", new Object[]{Long.valueOf(this.s + 1), Long.valueOf(this.e.b())});
+            if (this.f4541v == null && this.f4538s >= 0) {
+                this.f4541v = String.format("%d / %d", new Object[]{Long.valueOf(this.f4538s + 1), Long.valueOf(this.f4524e.m5839b())});
             }
-            if (this.u == null && this.s >= 0) {
-                long d2 = this.e.d(this.j.a) - this.j.b;
-                b = (f) d.b(this.f);
+            if (this.f4540u == null && this.f4538s >= 0) {
+                long d2 = this.f4524e.m6449d(this.f4529j.f4647a) - this.f4529j.f4648b;
+                b = (C0938f) d.mo1267b(this.f4525f);
                 if (b != null) {
-                    f fVar = (f) d.a(b);
-                    long j2 = this.j.a + 1;
-                    while (j2 < (fVar == null ? b.l() + 1 : fVar.l())) {
-                        long d3 = this.e.d(j2) + d2;
+                    C0938f c0938f = (C0938f) d.m6047a(b);
+                    long j2 = this.f4529j.f4647a + 1;
+                    while (j2 < (c0938f == null ? b.mo1432l() + 1 : c0938f.mo1432l())) {
+                        long d3 = this.f4524e.m6449d(j2) + d2;
                         j2 = 1 + j2;
                         d2 = d3;
                     }
                 }
                 long j3 = d2;
-                this.u = String.format(!TextUtils.isEmpty(this.g.q) ? this.g.q : "%getTriangleEdge", new Object[]{Long.valueOf(j3)});
+                this.f4540u = String.format(!TextUtils.isEmpty(this.f4526g.f4490q) ? this.f4526g.f4490q : "%d", new Object[]{Long.valueOf(j3)});
             }
-            if (this.g.r && this.u != null) {
-                a(canvas, this.u, 5, this.a);
+            if (this.f4526g.f4491r && this.f4540u != null) {
+                m6119a(canvas, this.f4540u, 5, this.a);
             }
-            if (TextUtils.isEmpty(this.v)) {
+            if (TextUtils.isEmpty(this.f4541v)) {
                 return i;
             }
-            k p = p();
-            m q = q();
-            Rect rect = (Rect) UTools.g.getRect();
-            Rect rect2 = (Rect) UTools.g.getRect();
-            int i3 = p.c.left;
-            a = getBounds().height() - p.c.bottom;
-            int width2 = getBounds().width() - p.c.right;
-            int width3 = (this.g.n && this.g.r && this.u != null) ? UTools.addAnimation(rect2, this.a, this.u, (float) (getBounds().width() - p.c.right)).width() + UTools.getMinimumHeight(DkApp.get().getTopActivity(), 10.0f) : 0;
-            rect.set(i3, a, width2 - width3, (getBounds().height() - p.c.bottom) + q.f);
-            UTools.addAnimation(canvas, this.v, rect, (this.g.n ? 5 : 1) | 16, this.a);
-            UTools.g.getRect(rect2);
-            UTools.g.getRect(rect);
+            C0917k p = mo1340p();
+            C0923m q = mo1342q();
+            Rect rect = (Rect) dv.f1198g.addAnimation();
+            Rect rect2 = (Rect) dv.f1198g.addAnimation();
+            int i3 = p.f4332c.left;
+            a = getBounds().height() - p.f4332c.bottom;
+            int width2 = getBounds().width() - p.f4332c.right;
+            int width3 = (this.f4526g.n && this.f4526g.f4491r && this.f4540u != null) ? dv.getTextBounds(rect2, this.a, this.f4540u, (float) (getBounds().width() - p.f4332c.right)).width() + dv.m1932b(DkApp.get().getTopActivity(), 10.0f) : 0;
+            rect.set(i3, a, width2 - width3, (getBounds().height() - p.f4332c.bottom) + q.f4358f);
+            dv.m1913a(canvas, this.f4541v, rect, (this.f4526g.n ? 5 : 1) | 16, this.a);
+            dv.f1198g.clearAnimation(rect2);
+            dv.f1198g.clearAnimation(rect);
             return i;
         }
     }
 
-    protected void O() {
-        if (this.F != null) {
-            this.h.b(this.F);
-            this.F = null;
+    /* renamed from: N */
+    protected void mo1288N() {
+        if (this.f4521F != null) {
+            this.f4527h.m6361b(this.f4521F);
+            this.f4521F = null;
         }
-        if (this.G != null) {
-            this.h.b(this.G);
-            this.G = null;
+        if (this.f4522G != null) {
+            this.f4527h.m6361b(this.f4522G);
+            this.f4522G = null;
         }
     }
 
     public int getIntrinsicHeight() {
-        return this.r;
+        return this.f4537r;
     }
 
-    protected void a(Canvas canvas) {
-        super.a(canvas);
-        if (this.e.e() != null && U()) {
+    /* renamed from: a */
+    protected void mo1376a(Canvas canvas) {
+        super.mo1376a(canvas);
+        if (this.f4524e.mo1369e() != null && m6539T()) {
             canvas.drawColor(-16777216);
         }
     }
 
-    private boolean T() {
-        return U() && TextUtils.isEmpty(Y().getTextContent());
+    /* renamed from: S */
+    private boolean m6538S() {
+        return m6539T() && TextUtils.isEmpty(m6543X().getTextContent());
     }
 
-    private boolean U() {
-        int layoutType = Z().getLayoutType();
+    /* renamed from: T */
+    private boolean m6539T() {
+        int layoutType = m6544Y().getLayoutType();
         return layoutType == 2 || layoutType == 3 || layoutType == 4;
     }
 
-    private void V() {
+    /* renamed from: U */
+    private void m6540U() {
         int i = 0;
-        if (this.x != null) {
-            this.x.b();
-            this.x = null;
+        if (this.f4543x != null) {
+            this.f4543x.mo1417b();
+            this.f4543x = null;
         }
-        if (this.y != null) {
-            for (bu b : this.y) {
-                b.b();
+        if (this.f4544y != null) {
+            for (bu b : this.f4544y) {
+                b.mo1417b();
             }
-            this.y = null;
+            this.f4544y = null;
         }
-        if (this.B != null) {
-            for (bk d : this.B) {
-                d.n();
+        if (this.f4517B != null) {
+            for (bk d : this.f4517B) {
+                d.m6683n();
             }
-            this.B = null;
+            this.f4517B = null;
         }
-        if (this.C != null) {
-            for (bt b2 : this.C) {
-                b2.b();
+        if (this.f4518C != null) {
+            for (bt b2 : this.f4518C) {
+                b2.mo1417b();
             }
         }
-        if (this.D != null) {
-            bm[] bmVarArr = this.D;
+        if (this.f4519D != null) {
+            bm[] bmVarArr = this.f4519D;
             int length = bmVarArr.length;
             while (i < length) {
-                bmVarArr[i].b();
+                bmVarArr[i].m6708b();
                 i++;
             }
         }
-        if (this.z != null) {
-            this.z = null;
+        if (this.f4545z != null) {
+            this.f4545z = null;
         }
-        if (this.E != null) {
-            this.E = null;
+        if (this.f4520E != null) {
+            this.f4520E = null;
         }
     }
 
-    private Rect W() {
-        Rect rect = new Rect(0, 0, this.e.j().a, this.r);
+    /* renamed from: V */
+    private Rect m6541V() {
+        Rect rect = new Rect(0, 0, this.f4524e.m6455j().a, this.f4537r);
         if (rect.width() % 2 != 0) {
             rect.right++;
         }
         return rect;
     }
 
-    private bk i(Point point) {
-        if (c || this.B != null) {
-            for (int i = 0; i < this.B.length; i++) {
-                if (this.B[i].c.contains(point.x, point.y)) {
-                    return this.B[i];
+    /* renamed from: i */
+    private bk m6569i(Point point) {
+        if (f4514c || this.f4517B != null) {
+            for (int i = 0; i < this.f4517B.length; i++) {
+                if (this.f4517B[i].f4565c.contains(point.x, point.y)) {
+                    return this.f4517B[i];
                 }
             }
             return null;
@@ -1300,11 +1418,12 @@ public class az extends as implements ba, bd, cc {
         throw new AssertionError();
     }
 
-    private bk a(ce ceVar) {
-        if (c || this.B != null) {
-            for (int i = 0; i < this.B.length; i++) {
-                if (this.B[i].a((bb) ceVar)) {
-                    return this.B[i];
+    /* renamed from: a */
+    private bk m6545a(ce ceVar) {
+        if (f4514c || this.f4517B != null) {
+            for (int i = 0; i < this.f4517B.length; i++) {
+                if (this.f4517B[i].m6675a((bb) ceVar)) {
+                    return this.f4517B[i];
                 }
             }
             return null;
@@ -1312,33 +1431,35 @@ public class az extends as implements ba, bd, cc {
         throw new AssertionError();
     }
 
-    private long c(cd cdVar) {
+    /* renamed from: c */
+    private long m6557c(cd cdVar) {
         long j = 0;
-        if (c || (cdVar != null && this.e.b() >= 0)) {
+        if (f4514c || (cdVar != null && this.f4524e.m5839b() >= 0)) {
             long j2 = 0;
-            while (j < cdVar.a) {
-                j2 += (long) this.e.i[(int) j].length;
+            while (j < cdVar.f4647a) {
+                j2 += (long) this.f4524e.f4451i[(int) j].length;
                 j++;
             }
-            return cdVar.b + j2;
+            return cdVar.f4648b + j2;
         }
         throw new AssertionError();
     }
 
-    private void a(DkePage dkePage) {
-        if (!c && this.z != null) {
+    /* renamed from: a */
+    private void m6548a(DkePage dkePage) {
+        if (!f4514c && this.f4545z != null) {
             throw new AssertionError();
-        } else if (this.f.f()) {
-            this.z = new bj[0];
+        } else if (this.f4525f.m5817f()) {
+            this.f4545z = new bj[0];
         } else {
             LinkedList linkedList = new LinkedList();
-            for (int i = 0; i < this.B.length; i++) {
-                int curActiveCell = this.B[i].b.getCurActiveCell();
+            for (int i = 0; i < this.f4517B.length; i++) {
+                int curActiveCell = this.f4517B[i].f4564b.getCurActiveCell();
                 int i2 = 0;
-                while (i2 < this.B[i].b.getCellCount()) {
-                    this.B[i].b.setCurActiveCell(i2);
-                    DkeHitTestInfo[] footnotes = this.B[i].b.getFootnotes();
-                    if (c || footnotes != null) {
+                while (i2 < this.f4517B[i].f4564b.getCellCount()) {
+                    this.f4517B[i].f4564b.setCurActiveCell(i2);
+                    DkeHitTestInfo[] footnotes = this.f4517B[i].f4564b.getFootnotes();
+                    if (f4514c || footnotes != null) {
                         for (DkeHitTestInfo bjVar : footnotes) {
                             linkedList.add(new bj(this, bjVar, i, i2));
                         }
@@ -1347,188 +1468,197 @@ public class az extends as implements ba, bd, cc {
                         throw new AssertionError();
                     }
                 }
-                this.B[i].b.setCurActiveCell(curActiveCell);
+                this.f4517B[i].f4564b.setCurActiveCell(curActiveCell);
             }
             DkeHitTestInfo[] footnotes2 = dkePage.getFootnotes();
-            if (c || footnotes2 != null) {
+            if (f4514c || footnotes2 != null) {
                 for (DkeHitTestInfo bjVar2 : footnotes2) {
                     linkedList.add(new bj(this, bjVar2, -1, -1));
                 }
-                this.z = (bj[]) linkedList.toArray(new bj[0]);
+                this.f4545z = (bj[]) linkedList.toArray(new bj[0]);
                 return;
             }
             throw new AssertionError();
         }
     }
 
-    private void b(DkePage dkePage) {
-        if (!c && this.y != null) {
+    /* renamed from: b */
+    private void m6555b(DkePage dkePage) {
+        if (!f4514c && this.f4544y != null) {
             throw new AssertionError();
-        } else if (this.y == null) {
-            if (this.f.f()) {
-                this.y = new bq[0];
+        } else if (this.f4544y == null) {
+            if (this.f4525f.m5817f()) {
+                this.f4544y = new bq[0];
                 return;
             }
-            int chapterType = Z().getChapterType(this.j.a);
-            if ((chapterType == 5 || chapterType == 6) && this.w.length > 0) {
-                this.x = new bz(this, this.w[0], chapterType);
-                this.y = new bq[0];
+            int chapterType = m6544Y().getChapterType(this.f4529j.f4647a);
+            if ((chapterType == 5 || chapterType == 6) && this.f4542w.length > 0) {
+                this.f4543x = new bz(this, this.f4542w[0], chapterType);
+                this.f4544y = new bq[0];
                 return;
             }
-            ArrayList arrayList = new ArrayList(this.w.length);
+            ArrayList arrayList = new ArrayList(this.f4542w.length);
             chapterType = 0;
-            while (chapterType < this.w.length) {
-                if (this.w[chapterType].mObjType == 2 || this.w[chapterType].mObjType == 3 || this.w[chapterType].mObjType == 5) {
-                    arrayList.add(new bq(this, this.w[chapterType]));
+            while (chapterType < this.f4542w.length) {
+                if (this.f4542w[chapterType].mObjType == 2 || this.f4542w[chapterType].mObjType == 3 || this.f4542w[chapterType].mObjType == 5) {
+                    arrayList.add(new bq(this, this.f4542w[chapterType]));
                 }
                 chapterType++;
             }
-            this.y = (bq[]) arrayList.toArray(new bq[0]);
+            this.f4544y = (bq[]) arrayList.toArray(new bq[0]);
         }
     }
 
-    private void c(DkePage dkePage) {
+    /* renamed from: c */
+    private void m6559c(DkePage dkePage) {
         int i = 0;
-        if (!c && this.A != null) {
+        if (!f4514c && this.f4516A != null) {
             throw new AssertionError();
-        } else if (this.A == null) {
-            if (this.f.f()) {
-                this.A = new bs[0];
+        } else if (this.f4516A == null) {
+            if (this.f4525f.m5817f()) {
+                this.f4516A = new bs[0];
                 return;
             }
             DkeHitTestInfo[] medias = dkePage.getMedias();
-            if (c || medias != null) {
+            if (f4514c || medias != null) {
                 bs[] bsVarArr = new bs[medias.length];
                 while (i < bsVarArr.length) {
                     bsVarArr[i] = new bs(this, medias[i]);
                     i++;
                 }
-                this.A = bsVarArr;
+                this.f4516A = bsVarArr;
                 return;
             }
             throw new AssertionError();
         }
     }
 
-    private void d(DkePage dkePage) {
+    /* renamed from: d */
+    private void m6560d(DkePage dkePage) {
         int i = 0;
-        if (!c && this.E != null) {
+        if (!f4514c && this.f4520E != null) {
             throw new AssertionError();
-        } else if (this.E == null) {
-            if (this.f.f()) {
-                this.E = new ca[0];
+        } else if (this.f4520E == null) {
+            if (this.f4525f.m5817f()) {
+                this.f4520E = new ca[0];
                 return;
             }
             DkePreText[] preTexts = dkePage.getPreTexts();
-            if (c || preTexts != null) {
+            if (f4514c || preTexts != null) {
                 ca[] caVarArr = new ca[preTexts.length];
                 while (i < caVarArr.length) {
                     caVarArr[i] = new ca(this, preTexts[i]);
                     i++;
                 }
-                this.E = caVarArr;
+                this.f4520E = caVarArr;
                 return;
             }
             throw new AssertionError();
         }
     }
 
-    private void e(DkePage dkePage) {
+    /* renamed from: e */
+    private void m6563e(DkePage dkePage) {
         int i = 0;
-        if (!c && this.C != null) {
+        if (!f4514c && this.f4518C != null) {
             throw new AssertionError();
-        } else if (this.C == null) {
-            if (this.f.f()) {
-                this.C = new bt[0];
+        } else if (this.f4518C == null) {
+            if (this.f4525f.m5817f()) {
+                this.f4518C = new bt[0];
                 return;
             }
             DkeMultiCallout[] multiCallouts = dkePage.getMultiCallouts();
-            if (c || multiCallouts != null) {
+            if (f4514c || multiCallouts != null) {
                 bt[] btVarArr = new bt[multiCallouts.length];
                 while (i < multiCallouts.length) {
                     btVarArr[i] = new bt(this, multiCallouts[i]);
                     i++;
                 }
-                this.C = btVarArr;
+                this.f4518C = btVarArr;
                 return;
             }
             throw new AssertionError();
         }
     }
 
-    private void f(DkePage dkePage) {
+    /* renamed from: f */
+    private void m6565f(DkePage dkePage) {
         int i = 0;
-        if (!c && this.D != null) {
+        if (!f4514c && this.f4519D != null) {
             throw new AssertionError();
-        } else if (this.D == null) {
-            if (this.f.f()) {
-                this.D = new bm[0];
+        } else if (this.f4519D == null) {
+            if (this.f4525f.m5817f()) {
+                this.f4519D = new bm[0];
                 return;
             }
             DkeInteractiveGifImage[] interactiveGifImages = dkePage.getInteractiveGifImages();
-            if (c || interactiveGifImages != null) {
+            if (f4514c || interactiveGifImages != null) {
                 bm[] bmVarArr = new bm[interactiveGifImages.length];
                 while (i < interactiveGifImages.length) {
                     bmVarArr[i] = new bm(this, interactiveGifImages[i]);
                     i++;
                 }
-                this.D = bmVarArr;
+                this.f4519D = bmVarArr;
                 return;
             }
             throw new AssertionError();
         }
     }
 
-    private void g(DkePage dkePage) {
+    /* renamed from: g */
+    private void m6566g(DkePage dkePage) {
         int i = 0;
-        if (!c && this.B != null) {
+        if (!f4514c && this.f4517B != null) {
             throw new AssertionError();
-        } else if (this.B == null) {
-            if (this.f.f()) {
-                this.B = new bk[0];
+        } else if (this.f4517B == null) {
+            if (this.f4525f.m5817f()) {
+                this.f4517B = new bk[0];
                 return;
             }
             DkeGallery[] galleries = dkePage.getGalleries();
-            if (c || galleries != null) {
+            if (f4514c || galleries != null) {
                 bk[] bkVarArr = new bk[galleries.length];
                 while (i < bkVarArr.length) {
                     bkVarArr[i] = new bk(this, galleries[i]);
                     i++;
                 }
-                this.B = bkVarArr;
+                this.f4517B = bkVarArr;
                 return;
             }
             throw new AssertionError();
         }
     }
 
-    private void a(Rect[] rectArr) {
-        int writingMode = Z().getWritingMode();
+    /* renamed from: a */
+    private void m6551a(Rect[] rectArr) {
+        int writingMode = m6544Y().getWritingMode();
         Comparator bfVar = writingMode == 2 ? new bf(this) : writingMode == 1 ? new bg(this) : new bh(this);
         Arrays.sort(rectArr, bfVar);
     }
 
-    private ap X() {
-        Rect W = W();
-        ap a = this.h.a(this.e, this.f, W, this.g, 1.0f, L());
+    /* renamed from: W */
+    private ap m6542W() {
+        Rect V = m6541V();
+        ap a = this.f4527h.m6354a(this.f4524e, this.f4525f, V, this.f4526g, 1.0f, m6106K());
         if (a != null) {
-            this.h.a(a);
-            if (a.a(W, 1.0f) == Integer.MAX_VALUE) {
+            this.f4527h.m6359a(a);
+            if (a.m6381a(V, 1.0f) == Integer.MAX_VALUE) {
                 return a;
             }
         }
-        a = this.h.a(this.e, this.f, W, this.g, 1.0f, L(), new bi(this));
-        this.h.a(a);
+        a = this.f4527h.m6356a(this.f4524e, this.f4525f, V, this.f4526g, 1.0f, m6106K(), new bi(this));
+        this.f4527h.m6359a(a);
         return a;
     }
 
-    private void a(Bitmap bitmap, Bitmap bitmap2) {
-        if (!c && bitmap == null) {
+    /* renamed from: a */
+    private void m6546a(Bitmap bitmap, Bitmap bitmap2) {
+        if (!f4514c && bitmap == null) {
             throw new AssertionError();
-        } else if (!c && this.g == null) {
+        } else if (!f4514c && this.f4526g == null) {
             throw new AssertionError();
-        } else if (c || this.e.a) {
-            if (T()) {
+        } else if (f4514c || this.f4524e.a) {
+            if (m6538S()) {
                 bitmap.eraseColor(-16777216);
             } else if (bitmap2 != null) {
                 synchronized (bitmap2) {
@@ -1539,39 +1669,39 @@ public class az extends as implements ba, bd, cc {
             } else {
                 bitmap.eraseColor(0);
             }
-            int chapterType = Z().getChapterType(this.j.a);
+            int chapterType = m6544Y().getChapterType(this.f4529j.f4647a);
             if (chapterType != 5 && chapterType != 6) {
-                ah.e().d().setChsToCht(this.g.k);
-                DkePage Y = Y();
-                if (!c && Y == null) {
+                ah.m6500e().m6504d().setChsToCht(this.f4526g.k);
+                DkePage X = m6543X();
+                if (!f4514c && X == null) {
                     throw new AssertionError();
-                } else if (Y != null) {
+                } else if (X != null) {
                     DkFlowRenderOption dkFlowRenderOption = new DkFlowRenderOption();
-                    a(dkFlowRenderOption, bitmap, this.g);
-                    this.e.f();
-                    Y.render(dkFlowRenderOption);
-                    this.k = this.e.g();
-                    this.l = this.e.h();
-                    this.H = Y.checkRenderStatus() & -2;
-                    if ((Y instanceof DkeErrorPage) || !this.l.isEmpty()) {
-                        if (!(this.H == 0 || Z().getChapterType(this.j.a) == 2)) {
+                    m6547a(dkFlowRenderOption, bitmap, this.f4526g);
+                    this.f4524e.mo1370f();
+                    X.render(dkFlowRenderOption);
+                    this.f4530k = this.f4524e.mo1371g();
+                    this.f4531l = this.f4524e.mo1372h();
+                    this.f4523H = X.checkRenderStatus() & -2;
+                    if ((X instanceof DkeErrorPage) || !this.f4531l.isEmpty()) {
+                        if (!(this.f4523H == 0 || m6544Y().getChapterType(this.f4529j.f4647a) == 2)) {
                             Canvas canvas = new Canvas(bitmap);
-                            Paint paint = (Paint) UTools.b.getRect();
+                            Paint paint = (Paint) dv.f1193b.addAnimation();
                             paint.setColor(Color.argb(Math.round(12.75f), 0, 0, 0));
-                            for (av avVar : this.l) {
-                                if (avVar.j() || avVar.l() == null) {
-                                    for (DkeHitTestInfo dkeHitTestInfo : this.w) {
-                                        if (dkeHitTestInfo.mSrcImagePath.equals(avVar.g().a)) {
+                            for (av avVar : this.f4531l) {
+                                if (avVar.mo1074j() || avVar.mo1076l() == null) {
+                                    for (DkeHitTestInfo dkeHitTestInfo : this.f4542w) {
+                                        if (dkeHitTestInfo.mSrcImagePath.equals(avVar.mo1071g().f4492a)) {
                                             canvas.drawRect(dkeHitTestInfo.mBoundingBox.toRect(), paint);
                                             break;
                                         }
                                     }
                                 }
                             }
-                            UTools.b.getRect(paint);
+                            dv.f1193b.clearAnimation(paint);
                         }
-                        if (this.i != null) {
-                            this.i.b(null, this);
+                        if (this.f4528i != null) {
+                            this.f4528i.mo1225b(null, this);
                         }
                     }
                 }
@@ -1581,12 +1711,13 @@ public class az extends as implements ba, bd, cc {
         }
     }
 
-    private void a(DkFlowRenderOption dkFlowRenderOption, Bitmap bitmap, au auVar) {
+    /* renamed from: a */
+    private void m6547a(DkFlowRenderOption dkFlowRenderOption, Bitmap bitmap, au auVar) {
         dkFlowRenderOption.mWidth = bitmap.getWidth();
         dkFlowRenderOption.mHeight = bitmap.getHeight();
         dkFlowRenderOption.mBitmap = bitmap;
         dkFlowRenderOption.mNightColor = new DkArgbColor(auVar.d);
-        if (Z().getChapterType(this.j.a) != 2) {
+        if (m6544Y().getChapterType(this.f4529j.f4647a) != 2) {
             dkFlowRenderOption.mOptimizeForNight = auVar.i;
             dkFlowRenderOption.mOptimizeForDarkBackground = auVar.j;
         } else {
@@ -1600,11 +1731,13 @@ public class az extends as implements ba, bd, cc {
         }
     }
 
-    private DkePage Y() {
-        return Z().getPageOfChapterEx(this.j.a, this.j.b);
+    /* renamed from: X */
+    private DkePage m6543X() {
+        return m6544Y().getPageOfChapterEx(this.f4529j.f4647a, this.f4529j.f4648b);
     }
 
-    private DkeBook Z() {
-        return this.e.e().h();
+    /* renamed from: Y */
+    private DkeBook m6544Y() {
+        return this.f4524e.mo1369e().mo1365h();
     }
 }

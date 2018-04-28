@@ -1,86 +1,23 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
 import android.graphics.Point;
-import android.graphics.Rect;
 import android.view.View;
-import android.widget.FrameLayout;
 
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.DkApp;
-import com.duokan.reader.UmengManager;
-import com.duokan.reader.domain.document.as;
-import com.duokan.reader.domain.document.ay;
-import com.duokan.reader.domain.document.bb;
+class acw implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ Point f9489a;
+    /* renamed from: b */
+    final /* synthetic */ View f9490b;
+    /* renamed from: c */
+    final /* synthetic */ TextSelectionController f9491c;
 
-import java.util.HashMap;
-
-public class acw extends FrameLayout {
-    private boolean a = false;
-    private final lr b;
-    private final yo c;
-
-    public acw(Context context, MyContextWrapper mContext) {
-        super(context);
-        this.b = new lr(DkApp.get().noDensityScaleContext(context));
-        this.c = new yo(MyContextWrapper.getFeature(context), new acx(this, mContext));
-        addView(this.b);
-        addView(this.c.getContentView());
-        this.b.setVisibility(4);
-        setBackgroundColor(0);
+    acw(TextSelectionController textSelectionController, Point point, View view) {
+        this.f9491c = textSelectionController;
+        this.f9489a = point;
+        this.f9490b = view;
     }
 
-    protected void onDetachedFromWindow() {
-        try {
-            HashMap i = this.c.i();
-            if (i.get("Action1") == "MARK" && !i.containsKey("Action2")) {
-                i.put("Action2", "NONE");
-            }
-            if (i.containsKey("Action1")) {
-                UmengManager.get().onEvent("READING_TEXT_MENU_STATS_V1", i);
-            }
-            this.c.i().clear();
-        } catch (Throwable th) {
-        }
-        super.onDetachedFromWindow();
-    }
-
-    public void a(View view, Point point, Point point2) {
-        this.b.setVisibility(0);
-        this.b.setSourceView(view);
-        this.b.a(point, point2);
-        this.b.invalidate();
-        this.c.e();
-    }
-
-    public void a(Rect[] rectArr) {
-        String b;
-        this.b.setVisibility(4);
-        sh readingFeature = getReadingFeature();
-        as aa = readingFeature.aa();
-        bb selection = getReadingFeature().getSelection();
-        if (aa.l().a((ay) selection)) {
-            b = aa.b(selection);
-        } else {
-            b = readingFeature.getDocument().a(selection);
-        }
-        this.c.a(b, this.a, new acy(this, rectArr));
-    }
-
-    public void a(boolean z) {
-        this.a = z;
-    }
-
-    public void a() {
-        this.b.setVisibility(4);
-        this.c.e();
-    }
-
-    public boolean b() {
-        return getParent() != null;
-    }
-
-    private sh getReadingFeature() {
-        return (sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class);
+    public void run() {
+        this.f9491c.f9156e.mo2103b(new acx(this));
     }
 }

@@ -6,37 +6,39 @@ import android.util.DisplayMetrics;
 import android.view.View;
 
 class cl extends View {
-    final /* synthetic */ cj a;
+    /* renamed from: a */
+    final /* synthetic */ cj f1083a;
 
     public cl(cj cjVar, Context context) {
-        this.a = cjVar;
+        this.f1083a = cjVar;
         super(context);
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
-        if (this.a.d.isEmpty() && displayMetrics.heightPixels - getHeight() >= UTools.getMinimumHeight(getContext(), 100.0f)) {
-            a(this.a.d);
-            this.a.d();
-        } else if (!this.a.d.isEmpty() && displayMetrics.heightPixels - getHeight() >= UTools.getMinimumHeight(getContext(), 100.0f)) {
-            Rect rect = (Rect) UTools.g.getRect();
-            a(rect);
-            if (!this.a.d.equals(rect)) {
-                this.a.d.set(rect);
-                this.a.f();
+        if (this.f1083a.f1080d.isEmpty() && displayMetrics.heightPixels - getHeight() >= dv.m1932b(getContext(), 100.0f)) {
+            m1778a(this.f1083a.f1080d);
+            this.f1083a.m1768d();
+        } else if (!this.f1083a.f1080d.isEmpty() && displayMetrics.heightPixels - getHeight() >= dv.m1932b(getContext(), 100.0f)) {
+            Rect rect = (Rect) dv.f1198g.addAnimation();
+            m1778a(rect);
+            if (!this.f1083a.f1080d.equals(rect)) {
+                this.f1083a.f1080d.set(rect);
+                this.f1083a.m1772f();
             }
-            UTools.g.getRect(rect);
-        } else if (!this.a.d.isEmpty()) {
-            this.a.d.setEmpty();
-            this.a.e();
+            dv.f1198g.clearAnimation(rect);
+        } else if (!this.f1083a.f1080d.isEmpty()) {
+            this.f1083a.f1080d.setEmpty();
+            this.f1083a.m1770e();
         }
     }
 
-    private void a(Rect rect) {
+    /* renamed from: a */
+    private void m1778a(Rect rect) {
         DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
         rect.set(0, 0, getWidth(), getHeight());
-        UTools.closeAnimation(rect, (View) this);
+        dv.m1936b(rect, (View) this);
         rect.top = rect.bottom;
         rect.bottom = displayMetrics.heightPixels;
     }

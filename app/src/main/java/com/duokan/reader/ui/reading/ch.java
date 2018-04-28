@@ -1,16 +1,26 @@
 package com.duokan.reader.ui.reading;
 
 import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.UmengManager;
 
-class ch implements OnClickListener {
-    final /* synthetic */ bx a;
+class ch implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ View f9934a;
+    /* renamed from: b */
+    final /* synthetic */ cg f9935b;
 
-    ch(bx bxVar) {
-        this.a = bxVar;
+    ch(cg cgVar, View view) {
+        this.f9935b = cgVar;
+        this.f9934a = view;
     }
 
-    public void onClick(View view) {
-        this.a.a(this.a.p);
+    public void run() {
+        if (this.f9934a.isSelected()) {
+            UmengManager.get().onEvent("V2_READING_MENU", "Comics-Frame-Out");
+            this.f9935b.f9933a.f.mo2181w().mo2290b();
+            return;
+        }
+        UmengManager.get().onEvent("V2_READING_MENU", "Comics-Frame-In");
+        this.f9935b.f9933a.f.mo2181w().mo2286a();
     }
 }

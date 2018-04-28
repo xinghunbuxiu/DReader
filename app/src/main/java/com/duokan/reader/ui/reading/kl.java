@@ -1,15 +1,15 @@
 package com.duokan.reader.ui.reading;
 
 class kl implements Runnable {
-    final /* synthetic */ kd a;
+    /* renamed from: a */
+    final /* synthetic */ kj f10510a;
 
-    kl(kd kdVar) {
-        this.a = kdVar;
+    kl(kj kjVar) {
+        this.f10510a = kjVar;
     }
 
     public void run() {
-        if (this.a.d.getVisibility() == 0) {
-            this.a.g();
-        }
+        GifFrameLoader.m12418a().m12423a(this.f10510a.f10503f, 0, this.f10510a.f10502e.width(), this.f10510a.f10502e.height());
+        this.f10510a.f10508k.run();
     }
 }

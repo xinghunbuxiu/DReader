@@ -1,19 +1,21 @@
 package com.duokan.reader.ui.personal;
 
 import android.view.View;
-import android.view.View.OnLongClickListener;
+import android.view.View.OnClickListener;
+import com.duokan.reader.domain.cloud.DkCloudComment;
 
-class ms implements OnLongClickListener {
-    final /* synthetic */ int a;
-    final /* synthetic */ mq b;
+class ms implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ DkCloudComment f8963a;
+    /* renamed from: b */
+    final /* synthetic */ mj f8964b;
 
-    ms(mq mqVar, int i) {
-        this.b = mqVar;
-        this.a = i;
+    ms(mj mjVar, DkCloudComment dkCloudComment) {
+        this.f8964b = mjVar;
+        this.f8963a = dkCloudComment;
     }
 
-    public boolean onLongClick(View view) {
-        this.b.c.a(0, this.a);
-        return true;
+    public void onClick(View view) {
+        this.f8964b.m12293a(this.f8963a);
     }
 }

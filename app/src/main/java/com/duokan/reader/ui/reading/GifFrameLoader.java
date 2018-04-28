@@ -1,18 +1,21 @@
 package com.duokan.reader.ui.reading;
 
 import android.graphics.Bitmap.Config;
-
+import com.duokan.reader.common.bitmap.C0544a;
 import com.duokan.reader.domain.document.ad;
-
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.concurrent.Semaphore;
 
 public class GifFrameLoader {
-    private static GifFrameLoader b = null;
-    private boolean a = false;
-    private final Semaphore c = new Semaphore(0, true);
-    private final LinkedList d = new LinkedList();
+    /* renamed from: b */
+    private static GifFrameLoader f9095b = null;
+    /* renamed from: a */
+    private boolean f9096a = false;
+    /* renamed from: c */
+    private final Semaphore f9097c = new Semaphore(0, true);
+    /* renamed from: d */
+    private final LinkedList<kf> f9098d = new LinkedList();
 
     enum FrameStatus {
         DIRTY,
@@ -22,67 +25,71 @@ public class GifFrameLoader {
         DELETE
     }
 
-    public static GifFrameLoader a() {
-        if (b == null) {
-            b = new GifFrameLoader();
+    /* renamed from: a */
+    public static GifFrameLoader m12418a() {
+        if (f9095b == null) {
+            f9095b = new GifFrameLoader();
         }
-        return b;
+        return f9095b;
     }
 
-    public void a(ad adVar, int i, int i2, int i3) {
+    /* renamed from: a */
+    public void m12423a(ad adVar, int i, int i2, int i3) {
         synchronized (this) {
-            jv jvVar;
-            for (int i4 = 0; i4 < this.d.size(); i4++) {
-                jvVar = (jv) this.d.get(i4);
-                if (jvVar.d == FrameStatus.DIRTY && jvVar.b.getWidth() == i2 && jvVar.b.getHeight() == i3) {
-                    jvVar.a = i;
-                    jvVar.c = adVar;
-                    jvVar.d = FrameStatus.MARKED;
+            kf kfVar;
+            for (int i4 = 0; i4 < this.f9098d.size(); i4++) {
+                kfVar = (kf) this.f9098d.get(i4);
+                if (kfVar.f10495d == FrameStatus.DIRTY && kfVar.f10493b.getWidth() == i2 && kfVar.f10493b.getHeight() == i3) {
+                    kfVar.f10492a = i;
+                    kfVar.f10494c = adVar;
+                    kfVar.f10495d = FrameStatus.MARKED;
                     break;
                 }
             }
-            jvVar = null;
-            if (jvVar == null) {
-                jvVar = new jv(this);
-                jvVar.a = i;
-                jvVar.c = adVar;
-                jvVar.b = a.c(i2, i3, Config.ARGB_8888);
-                jvVar.d = FrameStatus.MARKED;
-                this.d.addFirst(jvVar);
+            kfVar = null;
+            if (kfVar == null) {
+                kfVar = new kf(this);
+                kfVar.f10492a = i;
+                kfVar.f10494c = adVar;
+                kfVar.f10493b = C0544a.m2447c(i2, i3, Config.ARGB_8888);
+                kfVar.f10495d = FrameStatus.MARKED;
+                this.f9098d.addFirst(kfVar);
             }
-            if (!this.a) {
-                this.a = true;
-                new jw().start();
+            if (!this.f9096a) {
+                this.f9096a = true;
+                new kg().start();
             }
-            this.c.release();
+            this.f9097c.release();
         }
     }
 
-    public void a(ad adVar) {
+    /* renamed from: a */
+    public void m12422a(ad adVar) {
         synchronized (this) {
             Collection linkedList = new LinkedList();
-            for (int i = 0; i < this.d.size(); i++) {
-                jv jvVar = (jv) this.d.get(i);
-                if (jvVar.c == adVar || !jvVar.c.j()) {
-                    jvVar.d = FrameStatus.DELETE;
-                    jvVar.b.recycle();
-                    linkedList.add(jvVar);
+            for (int i = 0; i < this.f9098d.size(); i++) {
+                kf kfVar = (kf) this.f9098d.get(i);
+                if (kfVar.f10494c == adVar || !kfVar.f10494c.mo1395j()) {
+                    kfVar.f10495d = FrameStatus.DELETE;
+                    kfVar.f10493b.recycle();
+                    linkedList.add(kfVar);
                 }
             }
-            this.d.removeAll(linkedList);
-            if (this.d.size() == 0) {
-                this.a = false;
-                this.c.release();
+            this.f9098d.removeAll(linkedList);
+            if (this.f9098d.size() == 0) {
+                this.f9096a = false;
+                this.f9097c.release();
             }
         }
     }
 
-    public jv b(ad adVar, int i, int i2, int i3) {
+    /* renamed from: b */
+    public kf m12424b(ad adVar, int i, int i2, int i3) {
         synchronized (this) {
-            for (int i4 = 0; i4 < this.d.size(); i4++) {
-                jv jvVar = (jv) this.d.get(i4);
-                if (jvVar.d == FrameStatus.READY && jvVar.b.getWidth() == i2 && jvVar.b.getHeight() == i3) {
-                    return jvVar;
+            for (int i4 = 0; i4 < this.f9098d.size(); i4++) {
+                kf kfVar = (kf) this.f9098d.get(i4);
+                if (kfVar.f10495d == FrameStatus.READY && kfVar.f10493b.getWidth() == i2 && kfVar.f10493b.getHeight() == i3) {
+                    return kfVar;
                 }
             }
             return null;

@@ -1,20 +1,24 @@
 package com.duokan.reader.ui.personal;
 
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.ui.store.bv;
+class ii implements OnLongClickListener {
+    /* renamed from: a */
+    final /* synthetic */ int f8715a;
+    /* renamed from: b */
+    final /* synthetic */ int f8716b;
+    /* renamed from: c */
+    final /* synthetic */ C1401if f8717c;
 
-class ii implements OnClickListener {
-    final /* synthetic */ ih a;
-
-    ii(ih ihVar) {
-        this.a = ihVar;
+    ii(C1401if c1401if, int i, int i2) {
+        this.f8717c = c1401if;
+        this.f8715a = i;
+        this.f8716b = i2;
     }
 
-    public void onClick(View view) {
-        ((ReaderFeature) this.a.getContext().queryFeature(ReaderFeature.class)).pushPageSmoothly(bv.a(MyContextWrapper.getFeature(this.a.getContext()), String.valueOf(0), 1, this.a.a.getBookUuid(), "redeem_" + this.a.a.getBookUuid()), null);
+    public boolean onLongClick(View view) {
+        this.f8717c.f8707a.mo2231c(this.f8715a, this.f8716b);
+        return true;
     }
 }

@@ -1,40 +1,19 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Point;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.UmengManager;
 
-import com.duokan.core.app.s;
-import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.ZoomView;
-import com.duokan.core.ui.di;
-import com.duokan.core.ui.dl;
+class pe implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ox f10775a;
 
-do;
-
-class pe implements s {
-    final /* synthetic */ xk a;
-    final /* synthetic */ di b;
-    final /* synthetic */ ZoomView c;
-    final /* synthetic */ pc d;
-
-    pe(pc pcVar, xk xkVar, di diVar, ZoomView zoomView) {
-        this.d = pcVar;
-        this.a = xkVar;
-        this.b = diVar;
-        this.c = zoomView;
+    pe(ox oxVar) {
+        this.f10775a = oxVar;
     }
 
-    public void a(int i) {
-        Point point = new Point(0, 0);
-        UTools.showAnimation(point, this.a);
-        do b = this.b.b(this.c);
-        dl a = this.b.a(this.c);
-        float l = b.l() + a.l();
-        do doVar = new do (b);
-        doVar.d((float) UTools.get_Angle(i, 0, 360));
-        this.b.a(this.c, doVar);
-        dl dlVar = new dl(a);
-        dlVar.d(l - doVar.l());
-        this.b.a(this.c, dlVar);
-        this.b.getViewTreeObserver().addOnPreDrawListener(new pf(this, point));
+    public void onClick(View view) {
+        this.f10775a.mo2248a(this.f10775a.f10767n);
+        UmengManager.get().onEvent("V2_READING_MENU", "PDF-View-Type");
     }
 }

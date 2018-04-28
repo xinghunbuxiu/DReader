@@ -1,19 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.core.sys.ag;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.domain.account.C0709k;
 
-class du implements ag {
-    final /* synthetic */ dt a;
+class du implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ dg f10048a;
 
-    du(dt dtVar) {
-        this.a = dtVar;
+    du(dg dgVar) {
+        this.f10048a = dgVar;
     }
 
-    public void a(String str) {
-        ActivatedController commentView$2$1$1$1 = new CommentView$2$1$1$1(this, MyContextWrapper.getFeature(this.a.a.a.getContext()));
-        a.k().a("tip", "click", "reading_comment_page_tip_entrance", false);
-        this.a.a.a.A.showPopupSmoothly(commentView$2$1$1$1, null);
+    public void onClick(View view) {
+        C0709k.m3476a().m3495a(new dv(this));
     }
 }

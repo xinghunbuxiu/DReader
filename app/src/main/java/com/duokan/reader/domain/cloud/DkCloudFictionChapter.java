@@ -1,7 +1,6 @@
 package com.duokan.reader.domain.cloud;
 
 import com.duokan.reader.common.webservices.duokan.DkStoreFictionChapterInfo;
-
 import java.util.Date;
 
 public class DkCloudFictionChapter extends DkCloudJsonItem {

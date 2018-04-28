@@ -1,48 +1,51 @@
 package com.duokan.reader.ui.personal;
 
 import android.text.TextUtils;
-import android.view.View;
-
-import com.duokan.c.j;
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.core.ui.HatGridView;
-import com.duokan.core.ui.an;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.domain.cloud.push.DkCloudPushMessage;
-import com.duokan.reader.domain.cloud.push.DkCloudPushMessage.ActionType;
-import com.duokan.reader.domain.cloud.push.q;
+import com.duokan.p024c.C0258j;
 import com.duokan.reader.ui.general.be;
-import com.duokan.reader.ui.general.expandable.ViewMode;
+import com.duokan.reader.ui.general.ja;
 
-class cu implements an {
-    final /* synthetic */ cr a;
-    final /* synthetic */ ct b;
+class cu implements db {
+    /* renamed from: a */
+    ja f8430a = null;
+    /* renamed from: b */
+    final /* synthetic */ db f8431b;
+    /* renamed from: c */
+    final /* synthetic */ ct f8432c;
 
-    cu(ct ctVar, cr crVar) {
-        this.b = ctVar;
-        this.a = crVar;
+    cu(ct ctVar, db dbVar) {
+        this.f8432c = ctVar;
+        this.f8431b = dbVar;
     }
 
-    public void a(HatGridView hatGridView, View view, int i) {
-        if (this.b.getViewMode() == ViewMode.Edit) {
-            this.b.b(0, i);
-            return;
+    /* renamed from: a */
+    public boolean mo1896a() {
+        this.f8430a = new ja(this.f8432c.f8423a);
+        this.f8430a.setCancelOnBack(false);
+        this.f8430a.setCancelOnTouchOutside(false);
+        this.f8430a.m10843a(this.f8432c.f8423a.getString(C0258j.personal__miaccount_profile_settings_view__uploading_avatar));
+        this.f8430a.show();
+        return this.f8431b.mo1896a();
+    }
+
+    /* renamed from: a */
+    public void mo1895a(String str) {
+        if (this.f8430a != null) {
+            this.f8430a.dismiss();
+            this.f8430a = null;
         }
-        q qVar = (q) this.b.getAdapter().d(i);
-        if (qVar.b != null) {
-            DkCloudPushMessage dkCloudPushMessage = qVar.b;
-            if ((dkCloudPushMessage.getEndTime() == 0 || dkCloudPushMessage.getEndTime() > System.currentTimeMillis()) && !TextUtils.isEmpty(dkCloudPushMessage.getActionParamString())) {
-                b.a().a(dkCloudPushMessage);
-                ReaderFeature readerFeature = (ReaderFeature) MyContextWrapper.getFeature(this.b.getContext()).queryFeature(ReaderFeature.class);
-                if (dkCloudPushMessage.getMessageType() == ActionType.URL) {
-                    readerFeature.navigate(dkCloudPushMessage.getActionUrl(), null, true, null);
-                    return;
-                } else {
-                    readerFeature.navigate("duokan-reader://store/action/message", dkCloudPushMessage, true, null);
-                    return;
-                }
-            }
-            be.a(this.b.getContext(), j.personal__message_push_view__expired, 0).show();
+        if (!TextUtils.isEmpty(str)) {
+            be.m10287a(this.f8432c.f8423a, (CharSequence) str, 0).show();
         }
+        this.f8431b.mo1895a(str);
+    }
+
+    /* renamed from: b */
+    public void mo1897b() {
+        if (this.f8430a != null) {
+            this.f8430a.dismiss();
+            this.f8430a = null;
+        }
+        this.f8431b.mo1897b();
     }
 }

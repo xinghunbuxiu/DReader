@@ -1,19 +1,23 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.ag;
+import com.duokan.core.sys.ah;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
+class kn implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ kz f3469a;
+    /* renamed from: b */
+    final /* synthetic */ boolean f3470b;
+    /* renamed from: c */
+    final /* synthetic */ kh f3471c;
 
-class kn {
-    public final LinkedList a;
-    public final Map b;
-    public ag c;
+    kn(kh khVar, kz kzVar, boolean z) {
+        this.f3471c = khVar;
+        this.f3469a = kzVar;
+        this.f3470b = z;
+    }
 
-    private kn() {
-        this.a = new LinkedList();
-        this.b = new HashMap();
-        this.c = null;
+    public void run() {
+        ee.f3084E.acquireUninterruptibly();
+        ah.m871b(new ko(this));
     }
 }

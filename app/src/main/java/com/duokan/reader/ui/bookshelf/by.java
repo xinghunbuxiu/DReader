@@ -1,42 +1,25 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.text.TextUtils;
-
-import com.duokan.core.sys.af;
-import com.duokan.reader.common.classc;
-import com.duokan.reader.domain.bookshelf.BookPackageType;
+import com.duokan.core.sys.UThread;
 import com.duokan.reader.domain.bookshelf.ai;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.store.DkStoreBookDetail;
-import com.duokan.reader.domain.store.DkStoreItem;
-import com.duokan.reader.domain.store.h;
-import com.duokan.reader.ui.general.be;
+import com.duokan.reader.ui.general.ja;
 
-class by implements h {
-    final /* synthetic */ bx a;
+class by implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ boolean f6233a;
+    /* renamed from: b */
+    final /* synthetic */ ja f6234b;
+    /* renamed from: c */
+    final /* synthetic */ bx f6235c;
 
-    by(bx bxVar) {
-        this.a = bxVar;
+    by(bx bxVar, boolean z, ja jaVar) {
+        this.f6235c = bxVar;
+        this.f6233a = z;
+        this.f6234b = jaVar;
     }
 
-    public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
-        c a = ai.a().a(dkStoreItem);
-        if (a == null) {
-            return;
-        }
-        if (!a.az() || a.s() == BookPackageType.EPUB_OPF) {
-            this.a.c.openBook(a);
-        } else if (classc.ConnectivityReceiver.b().d() && (dkStoreItem instanceof DkStoreBookDetail)) {
-            DkStoreBookDetail dkStoreBookDetail = (DkStoreBookDetail) dkStoreItem;
-            if (!TextUtils.isEmpty(dkStoreBookDetail.getTrialUri())) {
-                a.a(a.f(), dkStoreBookDetail.getTrialUri(), dkStoreBookDetail.getRevision(), dkStoreBookDetail.getTrialMd5(), false, new af(Boolean.valueOf(true)));
-            }
-        }
-    }
-
-    public void onFetchBookDetailError(String str) {
-        if (!TextUtils.isEmpty(str)) {
-            be.a(this.a.d.getContext(), (CharSequence) str, 0).show();
-        }
+    public void run() {
+        ai.m3980a().mo969a(this.f6235c.f6229c, this.f6233a);
+        UThread.runOnThread(new bz(this));
     }
 }

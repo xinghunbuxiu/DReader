@@ -1,22 +1,24 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.domain.cloud.fp;
-import com.duokan.reader.domain.store.DkStoreBookDetail;
-import com.duokan.reader.domain.store.DkStoreItem;
-import com.duokan.reader.domain.store.h;
+import com.duokan.reader.ReaderFeature;
+import com.duokan.reader.domain.cloud.DkCloudRedeemFund;
+import com.duokan.reader.domain.cloud.fj;
+import com.duokan.reader.ui.personal.iu;
 
-class bb implements h {
-    final /* synthetic */ ba a;
+class bb implements fj {
+    /* renamed from: a */
+    final /* synthetic */ ba f7617a;
 
     bb(ba baVar) {
-        this.a = baVar;
+        this.f7617a = baVar;
     }
 
-    public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
-        fp.a().a((DkStoreBookDetail) dkStoreItem, new bc(this));
+    /* renamed from: a */
+    public void mo1160a(DkCloudRedeemFund dkCloudRedeemFund) {
+        ((ReaderFeature) this.f7617a.f7616a.f7614b.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new iu(this.f7617a.f7616a.f7614b.getContext(), dkCloudRedeemFund), null);
     }
 
-    public void onFetchBookDetailError(String str) {
-        this.a.b.doShowToast(str);
+    /* renamed from: a */
+    public void mo1161a(String str) {
     }
 }

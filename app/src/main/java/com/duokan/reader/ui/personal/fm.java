@@ -1,13 +1,17 @@
 package com.duokan.reader.ui.personal;
 
-class fm implements Runnable {
-    final /* synthetic */ PersonalController$1 a;
+import com.duokan.reader.ReaderEnv;
 
-    fm(PersonalController$1 personalController$1) {
-        this.a = personalController$1;
+class fm implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ eu f8546a;
+
+    fm(eu euVar) {
+        this.f8546a = euVar;
     }
 
     public void run() {
-        this.a.this$0.b(true);
+        ReaderEnv.get().setMiLiveUser("");
+        this.f8546a.m11781c();
     }
 }

@@ -2,50 +2,31 @@ package com.duokan.reader.ui.personal;
 
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.duokan.reader.domain.cloud.DkCloudStoreBook;
-import com.duokan.reader.ui.bookshelf.hn;
-
-import java.util.LinkedList;
 import java.util.List;
 
-class kt implements hn {
-    final /* synthetic */ ko a;
+public abstract class kt {
+    /* renamed from: a */
+    private boolean f8345a = false;
 
-    kt(ko koVar) {
-        this.a = koVar;
-    }
+    /* renamed from: a */
+    public abstract int mo1871a();
 
-    public int a() {
-        return 0;
-    }
+    /* renamed from: a */
+    public abstract View mo1872a(int i, View view, ViewGroup viewGroup);
 
-    public void a(String str) {
-        if (str == null || str.length() == 0) {
-            this.a.f();
-            return;
-        }
-        List<DkCloudStoreBook> r = this.a.d().r();
-        List linkedList = new LinkedList();
-        if (str != null && str.length() > 0) {
-            for (DkCloudStoreBook dkCloudStoreBook : r) {
-                if (this.a.a(dkCloudStoreBook, str)) {
-                    linkedList.add(dkCloudStoreBook);
-                }
-            }
-        }
-        this.a.k.a(linkedList, str);
-        this.a.e();
-    }
+    /* renamed from: a */
+    public abstract Object mo1873a(int i);
 
-    public View a(int i, View view, ViewGroup viewGroup) {
-        return null;
-    }
+    /* renamed from: a */
+    public abstract void mo1874a(List<DkCloudStoreBook> list, List<DkCloudStoreBook> list2, List<DkCloudStoreBook> list3, Runnable runnable);
 
-    public void a(int i, View view) {
-    }
+    /* renamed from: b */
+    public abstract int mo1875b();
 
-    public boolean b(int i, View view) {
-        return false;
-    }
+    /* renamed from: b */
+    public abstract int mo1876b(int i);
+
+    /* renamed from: b */
+    public abstract View mo1877b(int i, View view, ViewGroup viewGroup);
 }

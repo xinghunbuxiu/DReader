@@ -1,26 +1,29 @@
 package com.duokan.core.ui;
 
 import android.graphics.PointF;
+import com.duokan.core.sys.BaseAnimation;
 
-import com.duokan.core.sys.ap;
-
-final class el extends ap {
+final class el extends BaseAnimation<PointF> {
     el() {
     }
 
-    protected Object b() {
-        return c();
+    /* renamed from: b */
+    protected /* synthetic */ Object createAnimation() {
+        return m2012c();
     }
 
-    protected  void b(Object obj) {
-        a((PointF) obj);
+    /* renamed from: b */
+    protected /* synthetic */ void mo516b(Object obj) {
+        m2009a((PointF) obj);
     }
 
-    protected PointF c() {
+    /* renamed from: c */
+    protected PointF m2012c() {
         return new PointF();
     }
 
-    protected void a(PointF pointF) {
+    /* renamed from: a */
+    protected void m2009a(PointF pointF) {
         pointF.y = 0.0f;
         pointF.x = 0.0f;
     }

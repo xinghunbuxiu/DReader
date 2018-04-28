@@ -1,20 +1,17 @@
 package com.duokan.reader.ui.personal;
 
-import android.content.Context;
-import android.graphics.Canvas;
 import android.view.View;
+import android.view.View.OnClickListener;
 
-class gv extends View {
-    final /* synthetic */ fl a;
+class gv implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ fz f8623a;
 
-    gv(fl flVar, Context context) {
-        this.a = flVar;
-        super(context);
+    gv(fz fzVar) {
+        this.f8623a = fzVar;
     }
 
-    public void draw(Canvas canvas) {
-        super.draw(canvas);
-        canvas.drawColor(-1);
-        this.a.u.draw(canvas);
+    public void onClick(View view) {
+        this.f8623a.m11845a(null, null);
     }
 }

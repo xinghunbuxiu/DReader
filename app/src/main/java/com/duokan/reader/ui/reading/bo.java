@@ -2,43 +2,44 @@ package com.duokan.reader.ui.reading;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-
+import com.duokan.reader.domain.account.C0709k;
 import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.bookshelf.ej;
-import com.duokan.reader.domain.bookshelf.fv;
-
+import com.duokan.reader.domain.bookshelf.ee;
+import com.duokan.reader.domain.bookshelf.fp;
 import java.util.Arrays;
 
 class bo implements OnClickListener {
-    final /* synthetic */ int a;
-    final /* synthetic */ String b;
-    final /* synthetic */ bn c;
+    /* renamed from: a */
+    final /* synthetic */ int f9881a;
+    /* renamed from: b */
+    final /* synthetic */ String f9882b;
+    /* renamed from: c */
+    final /* synthetic */ bn f9883c;
 
     bo(bn bnVar, int i, String str) {
-        this.c = bnVar;
-        this.a = i;
-        this.b = str;
+        this.f9883c = bnVar;
+        this.f9881a = i;
+        this.f9882b = str;
     }
 
     public void onClick(View view) {
-        if (!this.c.b.K()) {
-            if (this.a == 11) {
-                ((fv) this.c.b.G()).a(null);
-            } else if (this.a == 11001) {
-                i.f().a(PersonalAccount.class, new bp(this));
+        if (!this.f9883c.b.mo1994K()) {
+            if (this.f9881a == 11) {
+                ((fp) this.f9883c.b.mo1992G()).m4483a(null);
+            } else if (this.f9881a == 11001) {
+                C0709k.m3476a().m3497a(PersonalAccount.class, new bp(this));
             } else {
-                if (this.a == 13) {
+                if (this.f9881a == 13) {
                     boolean z;
-                    if (ej.aV()) {
+                    if (ee.aX()) {
                         z = false;
                     } else {
                         z = true;
                     }
-                    ej.c(z);
-                    ((ej) this.c.b.G()).b(Arrays.asList(new String[]{this.b}));
+                    ee.m4397d(z);
+                    ((ee) this.f9883c.b.mo1992G()).mo1034b(Arrays.asList(new String[]{this.f9882b}));
                 }
-                this.c.b.j(false);
+                this.f9883c.b.mo2159j(false);
             }
         }
     }

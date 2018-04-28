@@ -9,28 +9,31 @@ class az extends ay {
         super(azVar);
     }
 
-    public long d() {
-        return this.a.e.get();
+    /* renamed from: d */
+    public long m934d() {
+        return this.a.f674e.get();
     }
 
-    public void b(long j) {
+    /* renamed from: b */
+    public void m932b(long j) {
         long j2;
         do {
-            j2 = this.a.f.get();
+            j2 = this.a.f675f.get();
             if (j2 >= j) {
                 return;
             }
-        } while (!this.a.f.compareAndSet(j2, j));
+        } while (!this.a.f675f.compareAndSet(j2, j));
     }
 
-    public void c(long j) {
-        a(j);
+    /* renamed from: c */
+    public void m933c(long j) {
+        m928a(j);
         long j2;
         do {
-            j2 = this.a.e.get();
+            j2 = this.a.f674e.get();
             if (j2 >= j) {
                 return;
             }
-        } while (!this.a.e.compareAndSet(j2, j));
+        } while (!this.a.f674e.compareAndSet(j2, j));
     }
 }

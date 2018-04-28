@@ -1,18 +1,24 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
-import android.view.View.OnClickListener;
-
-import com.duokan.reader.ui.account.q;
-
-class dl implements OnClickListener {
-    final /* synthetic */ MiAccountProfileSettingsController a;
+class dl implements db {
+    /* renamed from: a */
+    final /* synthetic */ MiAccountProfileSettingsController f8455a;
 
     dl(MiAccountProfileSettingsController miAccountProfileSettingsController) {
-        this.a = miAccountProfileSettingsController;
+        this.f8455a = miAccountProfileSettingsController;
     }
 
-    public void onClick(View view) {
-        this.a.b.pushHalfPageSmoothly(new q(this.a.getContext()), null);
+    /* renamed from: a */
+    public boolean mo1896a() {
+        return true;
+    }
+
+    /* renamed from: b */
+    public void mo1897b() {
+        this.f8455a.m11355c();
+    }
+
+    /* renamed from: a */
+    public void mo1895a(String str) {
     }
 }

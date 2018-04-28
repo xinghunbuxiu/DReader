@@ -1,42 +1,36 @@
 package com.duokan.reader.ui.general.web;
 
-import android.text.TextUtils;
+import com.duokan.reader.domain.store.C0466h;
+import com.duokan.reader.domain.store.DkStoreBookDetail;
+import com.duokan.reader.domain.store.DkStoreItem;
+import com.duokan.reader.ui.general.ja;
 
-import com.duokan.core.sys.o;
-import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.domain.bookshelf.BookLimitType;
-import com.duokan.reader.domain.bookshelf.ad;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.bookshelf.fv;
-import com.duokan.reader.domain.cloud.DkCloudBookManifest;
-import com.duokan.reader.domain.cloud.ao;
-import com.duokan.reader.ui.general.be;
-import com.mipay.sdk.Mipay;
+class ay implements C0466h {
+    /* renamed from: a */
+    final /* synthetic */ ja f7610a;
+    /* renamed from: b */
+    final /* synthetic */ C0466h f7611b;
+    /* renamed from: c */
+    final /* synthetic */ StorePageController f7612c;
 
-class ay implements ao {
-    final /* synthetic */ c a;
-    final /* synthetic */ ax b;
-
-    ay(ax axVar, c cVar) {
-        this.b = axVar;
-        this.a = cVar;
+    ay(StorePageController storePageController, ja jaVar, C0466h c0466h) {
+        this.f7612c = storePageController;
+        this.f7610a = jaVar;
+        this.f7611b = c0466h;
     }
 
-    public void a(String str, DkCloudBookManifest dkCloudBookManifest) {
-        this.b.a.dismiss();
-        if (dkCloudBookManifest.getBookCertification() != null && dkCloudBookManifest.getBookCertification().b.length > 0 && dkCloudBookManifest.getBookCertification().c.length > 0) {
-            this.a.a(new ad(ReaderEnv.get().getDeviceIdVersion(), dkCloudBookManifest.getBookCertification().a, o.a(dkCloudBookManifest.getBookCertification().b) + "\n" + o.a(dkCloudBookManifest.getBookCertification().c), 0));
-            this.a.a(BookLimitType.NONE);
-            this.a.aL();
+    public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
+        this.f7612c.mBookCache = (DkStoreBookDetail) dkStoreItem;
+        if (this.f7610a != null) {
+            this.f7610a.dismiss();
         }
-        this.b.d.downloadChapter((fv) this.a, this.b.b, this.b.c);
+        this.f7611b.onFetchBookDetailOk(dkStoreItem);
     }
 
-    public void a(String str, String str2) {
-        this.b.a.dismiss();
-        this.b.d.web_notifyWeb(this.b.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str2);
-        if (!TextUtils.isEmpty(str2)) {
-            be.a(this.b.d.getContext(), (CharSequence) str2, 1).show();
+    public void onFetchBookDetailError(String str) {
+        if (this.f7610a != null) {
+            this.f7610a.dismiss();
         }
+        this.f7611b.onFetchBookDetailError(str);
     }
 }

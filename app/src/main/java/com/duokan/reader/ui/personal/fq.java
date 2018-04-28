@@ -1,25 +1,26 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.reader.common.webservices.duokan.p;
-import com.duokan.reader.ui.general.web.StorePageController;
+import com.duokan.reader.domain.account.C0672a;
+import com.duokan.reader.domain.account.C0700d;
 
-import java.util.concurrent.Callable;
+class fq implements C0700d {
+    /* renamed from: a */
+    final /* synthetic */ nd f8555a;
+    /* renamed from: b */
+    final /* synthetic */ fo f8556b;
 
-class fq implements Callable {
-    final /* synthetic */ fp a;
-
-    fq(fp fpVar) {
-        this.a = fpVar;
+    fq(fo foVar, nd ndVar) {
+        this.f8556b = foVar;
+        this.f8555a = ndVar;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
+    /* renamed from: a */
+    public void mo868a(C0672a c0672a) {
+        this.f8555a.mo1925a();
     }
 
-    public ActivatedController a() {
-        ActivatedController createWebPage = StorePageController.createWebPage(this.a.a.getContext());
-        createWebPage.loadUrl(p.i().B());
-        return createWebPage;
+    /* renamed from: a */
+    public void mo869a(C0672a c0672a, String str) {
+        this.f8555a.mo1926a(str);
     }
 }

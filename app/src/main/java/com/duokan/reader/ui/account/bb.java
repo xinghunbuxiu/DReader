@@ -1,35 +1,40 @@
 package com.duokan.reader.ui.account;
 
-import android.text.TextUtils;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 
-class bb implements as {
-    final /* synthetic */ bd a;
-    final /* synthetic */ be b;
-    final /* synthetic */ cz c;
-    final /* synthetic */ ShareEntranceController d;
+class bb implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ aa f5855a;
+    /* renamed from: b */
+    final /* synthetic */ Canvas f5856b;
+    /* renamed from: c */
+    final /* synthetic */ long f5857c;
+    /* renamed from: d */
+    final /* synthetic */ bt f5858d;
+    /* renamed from: e */
+    final /* synthetic */ Bitmap f5859e;
+    /* renamed from: f */
+    final /* synthetic */ ay f5860f;
 
-    bb(ShareEntranceController shareEntranceController, bd bdVar, be beVar, cz czVar) {
-        this.d = shareEntranceController;
-        this.a = bdVar;
-        this.b = beVar;
-        this.c = czVar;
+    bb(ay ayVar, aa aaVar, Canvas canvas, long j, bt btVar, Bitmap bitmap) {
+        this.f5860f = ayVar;
+        this.f5855a = aaVar;
+        this.f5856b = canvas;
+        this.f5857c = j;
+        this.f5858d = btVar;
+        this.f5859e = bitmap;
     }
 
-    public void onChoiced(String str) {
-        if (!TextUtils.isEmpty(str)) {
-            if (str.equals("system")) {
-                String str2 = "";
-                if (this.a.d.length == 3) {
-                    str2 = this.d.a(this.a.d);
-                } else {
-                    for (String str3 : this.a.d) {
-                        str2 = str2 + str3;
-                    }
-                }
-                this.d.a(str2);
+    public void run() {
+        if (this.f5860f.f) {
+            this.f5855a.draw(this.f5856b);
+            if (!this.f5855a.mo1579a() || System.currentTimeMillis() - this.f5857c >= 5000) {
+                this.f5860f.f = false;
+                this.f5858d.mo1573a(this.f5859e, true);
                 return;
             }
-            this.d.a(str, this.a, this.b, this.c);
+            this.f5860f.f5850a.postDelayed(this, 1000);
         }
     }
 }

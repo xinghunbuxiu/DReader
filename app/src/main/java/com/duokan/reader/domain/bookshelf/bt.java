@@ -1,152 +1,109 @@
 package com.duokan.reader.domain.bookshelf;
 
-import android.text.TextUtils;
-
-import org.apache.http.cookie.ClientCookie;
+import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
+public class bt implements Cloneable {
+    /* renamed from: a */
+    public int f2857a;
+    /* renamed from: b */
+    public String f2858b;
+    /* renamed from: c */
+    public String f2859c;
+    /* renamed from: d */
+    public long f2860d;
+    /* renamed from: e */
+    public long f2861e;
+    /* renamed from: f */
+    public int f2862f;
+    /* renamed from: g */
+    public boolean f2863g;
+    /* renamed from: h */
+    public int f2864h;
+    /* renamed from: i */
+    public long f2865i;
 
-public class bt {
-    public String a;
-    private HashMap b;
-    private HashMap c;
-
-    public bt() {
-        this.a = "";
-        this.b = new HashMap();
-        this.c = new HashMap();
+    public /* synthetic */ Object clone() {
+        return m4068a();
     }
 
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (!(obj instanceof bt)) {
-            return false;
-        }
-        if (obj == this) {
-            return true;
-        }
-        bt btVar = (bt) obj;
-        if (!TextUtils.equals(this.a, btVar.a)) {
-            return false;
-        }
-        if (this.c.size() != btVar.c.size()) {
-            return false;
-        }
-        for (Integer intValue : this.c.keySet()) {
-            int intValue2 = intValue.intValue();
-            if (!btVar.c.containsKey(Integer.valueOf(intValue2))) {
-                return false;
-            }
-            if (this.c.get(Integer.valueOf(intValue2)) != btVar.c.get(Integer.valueOf(intValue2))) {
-                return false;
-            }
-        }
-        if (this.b.size() != btVar.b.size()) {
-            return false;
-        }
-        for (Integer intValue3 : this.b.keySet()) {
-            intValue2 = intValue3.intValue();
-            if (!btVar.b.containsKey(Integer.valueOf(intValue2))) {
-                return false;
-            }
-            if (this.b.get(Integer.valueOf(intValue2)) != btVar.b.get(Integer.valueOf(intValue2))) {
-                return false;
-            }
-        }
-        return true;
+    public bt(int i, String str, String str2) {
+        this.f2857a = i;
+        this.f2858b = str;
+        this.f2859c = str2;
+        this.f2860d = 0;
+        this.f2861e = 0;
+        this.f2862f = 0;
+        this.f2863g = false;
+        this.f2864h = 0;
+        this.f2865i = 0;
     }
 
-    public boolean a() {
-        return this.b.isEmpty() && this.c.isEmpty();
-    }
-
-    public long a(int i) {
-        if (this.b.containsKey(Integer.valueOf(i))) {
-            return ((Long) this.b.get(Integer.valueOf(i))).longValue();
-        }
-        return 0;
-    }
-
-    public void a(int i, long j) {
-        this.b.put(Integer.valueOf(i), Long.valueOf(j));
-    }
-
-    public long b(int i) {
-        if (this.c.containsKey(Integer.valueOf(i))) {
-            return ((Long) this.c.get(Integer.valueOf(i))).longValue();
-        }
-        return 0;
-    }
-
-    public void b(int i, long j) {
-        this.c.put(Integer.valueOf(i), Long.valueOf(j));
+    public bt(int i, JSONObject jSONObject) {
+        this.f2857a = i;
+        m4067a(jSONObject);
     }
 
     public bt(JSONObject jSONObject) {
-        int i = 0;
-        if (jSONObject == null) {
-            this.a = "";
-            this.b = new HashMap();
-            this.c = new HashMap();
-            return;
-        }
-        this.a = jSONObject.optString("account_uuid");
-        this.b = new HashMap();
-        JSONArray optJSONArray = jSONObject.optJSONArray("latest_modified_times");
-        if (optJSONArray != null) {
-            for (int i2 = 0; i2 < optJSONArray.length(); i2++) {
-                try {
-                    JSONObject jSONObject2 = optJSONArray.getJSONObject(i2);
-                    this.b.put(Integer.valueOf(jSONObject2.getInt("book_source")), Long.valueOf(jSONObject2.getLong("latest_modified_time")));
-                } catch (JSONException e) {
-                }
-            }
-        }
-        this.c = new HashMap();
-        JSONArray optJSONArray2 = jSONObject.optJSONArray("versions");
-        if (optJSONArray2 != null) {
-            while (i < optJSONArray2.length()) {
-                try {
-                    JSONObject jSONObject3 = optJSONArray2.getJSONObject(i);
-                    this.c.put(Integer.valueOf(jSONObject3.getInt("book_source")), Long.valueOf(jSONObject3.getLong(ClientCookie.VERSION_ATTR)));
-                } catch (JSONException e2) {
-                }
-                i++;
-            }
+        this.f2857a = jSONObject.optInt("book_source");
+        m4067a(jSONObject);
+    }
+
+    /* renamed from: a */
+    public bt m4068a() {
+        try {
+            return (bt) super.clone();
+        } catch (CloneNotSupportedException e) {
+            return null;
         }
     }
 
-    public JSONObject b() {
+    /* renamed from: a */
+    private void m4067a(JSONObject jSONObject) {
+        this.f2858b = jSONObject.optString("book_id");
+        this.f2859c = jSONObject.optString("group");
+        this.f2860d = jSONObject.optLong("server_change_time");
+        this.f2861e = jSONObject.optLong("client_change_time");
+        this.f2862f = jSONObject.optInt("status");
+        this.f2863g = jSONObject.optBoolean("is_local_dirty", false);
+        this.f2864h = jSONObject.optInt("local_operation_type", 0);
+        this.f2865i = jSONObject.optLong("local_operation_time");
+    }
+
+    /* renamed from: b */
+    public JSONObject m4069b() {
         JSONObject jSONObject = new JSONObject();
         try {
-            int intValue;
-            JSONObject jSONObject2;
-            jSONObject.put("account_uuid", this.a);
-            JSONArray jSONArray = new JSONArray();
-            for (Integer intValue2 : this.b.keySet()) {
-                intValue = intValue2.intValue();
-                jSONObject2 = new JSONObject();
-                jSONObject2.put("book_source", intValue);
-                jSONObject2.put("latest_modified_time", this.b.get(Integer.valueOf(intValue)));
-                jSONArray.put(jSONObject2);
-            }
-            jSONObject.put("latest_modified_times", jSONArray);
-            jSONArray = new JSONArray();
-            for (Integer intValue22 : this.c.keySet()) {
-                intValue = intValue22.intValue();
-                jSONObject2 = new JSONObject();
-                jSONObject2.put("book_source", intValue);
-                jSONObject2.put(ClientCookie.VERSION_ATTR, this.c.get(Integer.valueOf(intValue)));
-                jSONArray.put(jSONObject2);
-            }
-            jSONObject.put("versions", jSONArray);
+            jSONObject.put("book_source", this.f2857a);
+            jSONObject.put("book_id", this.f2858b);
+            jSONObject.put("group", this.f2859c);
+            jSONObject.put("server_change_time", this.f2860d);
+            jSONObject.put("client_change_time", this.f2861e);
+            jSONObject.put("status", this.f2862f);
+            jSONObject.put("is_local_dirty", this.f2863g);
+            jSONObject.put("local_operation_type", this.f2864h);
+            jSONObject.put("local_operation_time", this.f2865i);
         } catch (JSONException e) {
         }
         return jSONObject;
+    }
+
+    /* renamed from: c */
+    public boolean m4070c() {
+        return this.f2862f == 1;
+    }
+
+    /* renamed from: a */
+    public static ArrayList<bt> m4066a(int i, JSONArray jSONArray) {
+        ArrayList<bt> arrayList = new ArrayList(jSONArray.length());
+        for (int i2 = 0; i2 < jSONArray.length(); i2++) {
+            try {
+                arrayList.add(new bt(i, jSONArray.getJSONObject(i2)));
+            } catch (JSONException e) {
+            }
+        }
+        return arrayList;
     }
 }

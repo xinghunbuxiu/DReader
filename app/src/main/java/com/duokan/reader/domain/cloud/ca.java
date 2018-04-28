@@ -1,49 +1,31 @@
 package com.duokan.reader.domain.cloud;
 
-import android.text.TextUtils;
+import com.duokan.reader.common.async.p035a.C0517a;
+import com.duokan.reader.domain.account.C0666x;
+import com.duokan.reader.domain.account.C0672a;
 
-import com.duokan.reader.DkPublic;
-import com.duokan.reader.common.webservices.WebSession;
-import com.duokan.reader.common.webservices.b;
-import com.duokan.reader.common.webservices.duokan.DkStoreRedeemBenefitInfo;
-import com.duokan.reader.common.webservices.duokan.aa;
-import com.duokan.reader.domain.account.ab;
+class ca implements C0666x {
+    /* renamed from: a */
+    final /* synthetic */ boolean f3800a;
+    /* renamed from: b */
+    final /* synthetic */ C0517a f3801b;
+    /* renamed from: c */
+    final /* synthetic */ boolean f3802c;
+    /* renamed from: d */
+    final /* synthetic */ DkUserPurchasedBooksManager f3803d;
 
-class ca extends cs {
-    final /* synthetic */ ab a;
-    final /* synthetic */ bz b;
-    private DkCloudPurchasedBook d = null;
-    private DkCloudRedeemBenefit e = null;
-
-    ca(bz bzVar, ab abVar) {
-        this.b = bzVar;
-        this.a = abVar;
-        super(bzVar.b);
+    ca(DkUserPurchasedBooksManager dkUserPurchasedBooksManager, boolean z, C0517a c0517a, boolean z2) {
+        this.f3803d = dkUserPurchasedBooksManager;
+        this.f3800a = z;
+        this.f3801b = c0517a;
+        this.f3802c = z2;
     }
 
-    protected void onSessionTry() {
-        cv cvVar = new cv(this.a);
-        cvVar.a();
-        this.d = (DkCloudPurchasedBook) cvVar.queryItem(this.b.a);
-        if (this.d == null) {
-            return;
-        }
-        if (this.d.getRedeemMessage() == null || (DkPublic.isXiaomiId(this.d.getRedeemMessage().getGiver().mUserId) && TextUtils.isEmpty(this.d.getRedeemMessage().getGiver().mNickName))) {
-            b g = new aa((WebSession) this, this.a).g(this.d.getBookUuid());
-            if (g.b == 0) {
-                this.e = new DkCloudRedeemBenefit((DkStoreRedeemBenefitInfo) g.a);
-                this.d.setRedeemMessage(this.e);
-                cvVar.updateItem(this.d);
-            }
-        }
+    public void onQueryAccountOk(C0672a c0672a) {
+        this.f3803d.m5053a(new cb(this));
     }
 
-    protected void onSessionSucceeded() {
-        if (this.a.a(DkUserPurchasedBooksManager.h()) && this.d != null) {
-            this.b.b.h.a(this.d);
-        }
-    }
-
-    protected void onSessionFailed() {
+    public void onQueryAccountError(C0672a c0672a, String str) {
+        this.f3801b.mo729a(-1, str);
     }
 }

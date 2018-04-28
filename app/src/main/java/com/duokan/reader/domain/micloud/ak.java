@@ -3,13 +3,15 @@ package com.duokan.reader.domain.micloud;
 import org.json.JSONObject;
 
 public class ak {
-    private JSONObject a;
+    /* renamed from: a */
+    private JSONObject f5192a;
 
     public ak(JSONObject jSONObject) {
-        this.a = jSONObject;
+        this.f5192a = jSONObject;
     }
 
-    public JSONObject a() {
-        return this.a;
+    /* renamed from: a */
+    public JSONObject m8063a() {
+        return this.f5192a;
     }
 }

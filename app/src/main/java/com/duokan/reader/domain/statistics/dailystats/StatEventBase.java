@@ -1,8 +1,7 @@
 package com.duokan.reader.domain.statistics.dailystats;
 
-import org.json.JSONObject;
-
 import java.io.Serializable;
+import org.json.JSONObject;
 
 public class StatEventBase implements Serializable {
     private static final long serialVersionUID = 1;

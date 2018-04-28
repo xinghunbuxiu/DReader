@@ -1,13 +1,14 @@
 package com.duokan.reader.ui.reading;
 
 class au implements Runnable {
-    final /* synthetic */ aq a;
+    /* renamed from: a */
+    final /* synthetic */ aq f9806a;
 
     au(aq aqVar) {
-        this.a = aqVar;
+        this.f9806a = aqVar;
     }
 
     public void run() {
-        this.a.h();
+        this.f9806a.m13745h();
     }
 }

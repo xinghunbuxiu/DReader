@@ -1,32 +1,35 @@
 package com.duokan.reader.ui.general;
 
 import android.graphics.Rect;
+import com.duokan.core.ui.dv;
 
-import com.duokan.core.ui.UTools;
-
-public abstract class cu implements gi {
-    final /* synthetic */ FixedPagesView a;
+public abstract class cu implements gc {
+    /* renamed from: a */
+    final /* synthetic */ FixedPagesView f7048a;
 
     public cu(FixedPagesView fixedPagesView) {
-        this.a = fixedPagesView;
+        this.f7048a = fixedPagesView;
     }
 
-    public Rect a() {
-        Rect b = UTools.closeAnimation(new Rect(0, 0, d().getWidth(), d().getHeight()), d(), this.a);
-        if (!b.intersect(0, 0, this.a.getWidth(), this.a.getHeight())) {
+    /* renamed from: a */
+    public Rect mo1762a() {
+        Rect b = dv.m1937b(new Rect(0, 0, mo2328d().getWidth(), mo2328d().getHeight()), mo2328d(), this.f7048a);
+        if (!b.intersect(0, 0, this.f7048a.getWidth(), this.f7048a.getHeight())) {
             return new Rect();
         }
         if (b.isEmpty()) {
             return new Rect();
         }
-        return c(new Rect(UTools.closeAnimation(new Rect(b), this.a, d())));
+        return mo2326c(new Rect(dv.m1937b(new Rect(b), this.f7048a, mo2328d())));
     }
 
-    public void b() {
+    /* renamed from: b */
+    public void mo1764b() {
     }
 
-    public void a(Rect rect) {
-        Rect c = this.a.getCellsView().c(new Rect(UTools.closeAnimation(new Rect(b(new Rect(rect))), d(), this.a)));
-        this.a.getCellsView().scrollTo(c.left, c.top);
+    /* renamed from: a */
+    public void mo1763a(Rect rect) {
+        Rect c = this.f7048a.getCellsView().m1130c(new Rect(dv.m1937b(new Rect(mo2325b(new Rect(rect))), mo2328d(), this.f7048a)));
+        this.f7048a.getCellsView().scrollTo(c.left, c.top);
     }
 }

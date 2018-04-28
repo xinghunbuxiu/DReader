@@ -1,13 +1,19 @@
 package com.duokan.reader.ui.reading;
 
-class ui implements Runnable {
-    final /* synthetic */ uh a;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.UmengManager;
 
-    ui(uh uhVar) {
-        this.a = uhVar;
+class ui implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ub f11010a;
+
+    ui(ub ubVar) {
+        this.f11010a = ubVar;
     }
 
-    public void run() {
-        this.a.a.a.af();
+    public void onClick(View view) {
+        this.f11010a.mo2253b();
+        UmengManager.get().onEvent("V2_READING_MENU", "More");
     }
 }

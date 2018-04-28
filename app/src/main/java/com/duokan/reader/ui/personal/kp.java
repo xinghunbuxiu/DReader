@@ -1,25 +1,39 @@
 package com.duokan.reader.ui.personal;
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.bookshelf.an;
+import com.duokan.reader.domain.bookshelf.in;
+import com.duokan.reader.domain.bookshelf.ip;
+import com.duokan.reader.domain.cloud.DkCloudPurchasedBook;
+import java.util.Iterator;
 
-import com.duokan.c.h;
-import com.duokan.reader.ui.bookshelf.ho;
-
-class kp extends mq {
-    final /* synthetic */ ko a;
-
-    kp(ko koVar, Context context, ho hoVar) {
-        this.a = koVar;
-        super(context, hoVar);
+class kp implements in, ip {
+    private kp() {
     }
 
-    public View a(View view, ViewGroup viewGroup) {
-        if (this.a.getNormalAdapter().c() == 0) {
-            return this.a.getNormalAdapter().a(view, viewGroup);
+    public void onItemChanged(an anVar, int i) {
+        if ((anVar instanceof C0800c) && (i & 72) != 0) {
+            C0800c c0800c = (C0800c) anVar;
+            Iterator it = PurchasedBookItemView.f8224b.iterator();
+            while (it.hasNext()) {
+                PurchasedBookItemView purchasedBookItemView = (PurchasedBookItemView) it.next();
+                if ((purchasedBookItemView.f8227e instanceof DkCloudPurchasedBook) && ((DkCloudPurchasedBook) purchasedBookItemView.f8227e).getBookUuid().equals(c0800c.m4156I())) {
+                    purchasedBookItemView.m11361a(true);
+                    return;
+                }
+            }
         }
-        return LayoutInflater.from(this.a.getContext()).inflate(h.personal__search_empty_view, viewGroup, false);
+    }
+
+    /* renamed from: a */
+    public void mo1683a(C0800c c0800c) {
+        Iterator it = PurchasedBookItemView.f8224b.iterator();
+        while (it.hasNext()) {
+            PurchasedBookItemView purchasedBookItemView = (PurchasedBookItemView) it.next();
+            if ((purchasedBookItemView.f8227e instanceof DkCloudPurchasedBook) && ((DkCloudPurchasedBook) purchasedBookItemView.f8227e).getBookUuid().equals(c0800c.m4156I())) {
+                purchasedBookItemView.m11361a(false);
+                return;
+            }
+        }
     }
 }

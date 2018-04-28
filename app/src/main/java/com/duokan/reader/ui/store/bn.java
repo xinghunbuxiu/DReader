@@ -1,15 +1,16 @@
 package com.duokan.reader.ui.store;
 
-import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.sys.UThread;
 
 class bn implements Runnable {
-    final /* synthetic */ bl a;
+    /* renamed from: a */
+    final /* synthetic */ bl f11377a;
 
     bn(bl blVar) {
-        this.a = blVar;
+        this.f11377a = blVar;
     }
 
     public void run() {
-        TaskHandler.requstIdleStatusListening(new bo(this));
+        UThread.addIdleHandlerListener(new bo(this));
     }
 }

@@ -1,22 +1,34 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.content.Context;
+import com.duokan.common.FileTypeRecognizer.FileType;
+import com.duokan.p024c.C0254f;
 
-import com.duokan.c.j;
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.domain.bookshelf.an;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.ui.general.ia;
+public class gu {
+    /* renamed from: a */
+    public static int m9742a(FileType fileType) {
+        switch (gv.f6529a[fileType.ordinal()]) {
+            case 1:
+                return C0254f.general__shared__epub_icon;
+            case 2:
+                return C0254f.general__shared__txt_icon;
+            case 3:
+                return C0254f.general__shared__pdf_icon;
+            default:
+                return C0254f.general__shared__unsupported_book_icon;
+        }
+    }
 
-public class gu extends ia {
-    private c a;
-    private cu b = ((cu) MyContextWrapper.getFeature(getContext()).queryFeature(cu.class));
-
-    public gu(Context context, an anVar) {
-        super(context);
-        this.a = (c) anVar;
-        b(j.bookshelf__list_item_menu_view__delete);
-        b(j.bookshelf__list_item_menu_view__change_group);
-        a(new gv(this));
+    /* renamed from: b */
+    public static int m9743b(FileType fileType) {
+        switch (gv.f6529a[fileType.ordinal()]) {
+            case 1:
+                return C0254f.general__shared__cover_epub;
+            case 2:
+                return C0254f.general__shared__cover_txt;
+            case 3:
+                return C0254f.general__shared__cover_pdf;
+            default:
+                return C0254f.general__shared__unsupported_book_icon;
+        }
     }
 }

@@ -1,19 +1,21 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
-import android.view.View.OnLongClickListener;
+import com.duokan.reader.ui.general.at;
 
-class cg implements OnLongClickListener {
-    final /* synthetic */ int a;
-    final /* synthetic */ ce b;
+class cg implements at {
+    /* renamed from: a */
+    final /* synthetic */ cd f8404a;
 
-    cg(ce ceVar, int i) {
-        this.b = ceVar;
-        this.a = i;
+    cg(cd cdVar) {
+        this.f8404a = cdVar;
     }
 
-    public boolean onLongClick(View view) {
-        this.b.a.h.a(0, this.a);
-        return true;
+    /* renamed from: a */
+    public void mo1893a(int i) {
+        if (i == 0) {
+            this.f8404a.m11576c();
+        } else {
+            this.f8404a.m11578d();
+        }
     }
 }

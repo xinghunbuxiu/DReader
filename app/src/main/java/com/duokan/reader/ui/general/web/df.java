@@ -1,23 +1,20 @@
 package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.sys.as;
-import com.duokan.reader.domain.account.MiAccount;
-import com.duokan.reader.domain.account.i;
 
 class df implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ de b;
+    /* renamed from: a */
+    final /* synthetic */ String f7722a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7723b;
 
-    df(de deVar, String str) {
-        this.b = deVar;
-        this.a = str;
+    df(ci ciVar, String str) {
+        this.f7723b = ciVar;
+        this.f7722a = str;
     }
 
-    public void a() {
-        if (i.f().a(MiAccount.class)) {
-            i.f().a(i.f().b(MiAccount.class).b(), new dg(this));
-            return;
-        }
-        i.f().a(new dh(this));
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7723b.f7581b.registerEventOnCurrentUrl(this.f7722a);
     }
 }

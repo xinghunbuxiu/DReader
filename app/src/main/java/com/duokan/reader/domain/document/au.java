@@ -1,29 +1,38 @@
 package com.duokan.reader.domain.document;
 
+import android.graphics.Bitmap;
 import android.graphics.Rect;
-
 import com.duokan.core.sys.ag;
-
 import java.util.concurrent.Future;
 
 public interface au {
-    Future a(ag agVar);
+    /* renamed from: a */
+    Future<Bitmap> mo1383a(ag<Bitmap> agVar);
 
-    Future b(ag agVar);
+    /* renamed from: b */
+    Future<Bitmap> mo1387b(ag<Bitmap> agVar);
 
-    int e();
+    /* renamed from: e */
+    int mo1390e();
 
-    int f();
+    /* renamed from: f */
+    int mo1391f();
 
-    float g();
+    /* renamed from: g */
+    float mo1392g();
 
-    float h();
+    /* renamed from: h */
+    float mo1393h();
 
-    float i();
+    /* renamed from: i */
+    float mo1394i();
 
-    boolean j();
+    /* renamed from: j */
+    boolean mo1395j();
 
-    ag k();
+    /* renamed from: k */
+    ag mo1396k();
 
-    Rect l();
+    /* renamed from: l */
+    Rect mo1397l();
 }

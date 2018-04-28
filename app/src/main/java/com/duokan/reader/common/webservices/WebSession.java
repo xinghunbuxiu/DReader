@@ -1,37 +1,36 @@
 package com.duokan.reader.common.webservices;
 
 import android.os.Looper;
-
-import com.duokan.core.b.UrlTools.a;
-import com.duokan.core.diagnostic.HttpLogger;
-import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.diagnostic.C0327f;
+import com.duokan.core.p027b.p028a.C0320a;
+import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ah;
-import com.duokan.reader.common.webservices.duokan.a.d;
-
+import com.duokan.reader.common.webservices.duokan.p040a.C0624a;
+import com.duokan.reader.common.webservices.duokan.p040a.C0627d;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 public abstract class WebSession {
-    static final  boolean $assertionsDisabled = (!WebSession.class.desiredAssertionStatus() ? true : $assertionsDisabled);
-    private static final String DEFAULT_SEQ_QUEUE = WebSession.class.getName();
+    static final /* synthetic */ boolean $assertionsDisabled = (!WebSession.class.desiredAssertionStatus() ? true : $assertionsDisabled);
+    public static final String DEFAULT_SEQ_QUEUE = WebSession.class.getName();
+    private static final C0657i DEFAULT_WEBSESSION_CONFIG = new C0659k().m3094a();
     private static final long HTTP_COUNTING_TIME = TimeUnit.SECONDS.toMillis(100);
     private static final int HTTP_COUNT_TO_WARN = 20;
-    private static final HashMap sHttpCountingMap = new HashMap();
-    private static HttpLogger sHttpLogger = null;
+    private static final HashMap<String, Long> sHttpCountingMap = new HashMap();
+    private static C0327f sHttpLogger = null;
     private CacheStrategy mCacheStrategy;
-    private final a mHttpConfig;
+    private final C0320a mHttpConfig;
     protected boolean mIsClosed;
     private int mMaxRetryCount;
-    private final boolean mParallel;
-    private final LinkedList mResponseList;
+    private final LinkedList<C0653e> mResponseList;
     private int mRetryCount;
-    private final String mSeqQueueName;
     private Exception mSessionException;
-    private Future mSessionFuture;
+    private Future<?> mSessionFuture;
     private SessionState mSessionState;
-    private SessionTask mSessionTask;
+    private C0654f mSessionTask;
+    private C0657i mWebSessionConfig;
 
     public enum CacheStrategy {
         DISABLE_CACHE,
@@ -60,42 +59,31 @@ public abstract class WebSession {
         return i;
     }
 
+    public WebSession(C0657i c0657i) {
+        this.mIsClosed = true;
+        this.mSessionState = SessionState.UNFINISHED;
+        this.mRetryCount = 0;
+        this.mMaxRetryCount = 0;
+        this.mSessionException = null;
+        this.mSessionTask = null;
+        this.mSessionFuture = null;
+        this.mResponseList = new LinkedList();
+        this.mCacheStrategy = CacheStrategy.DISABLE_CACHE;
+        this.mHttpConfig = new C0320a();
+        this.mWebSessionConfig = DEFAULT_WEBSESSION_CONFIG;
+        this.mWebSessionConfig = c0657i;
+    }
+
+    protected int getRetryDelay(int i) {
+        return (i * 2) * 1000;
+    }
+
     public WebSession() {
-        this(DEFAULT_SEQ_QUEUE);
-    }
-
-    protected WebSession(String str) {
-        this.mIsClosed = true;
-        this.mSessionState = SessionState.UNFINISHED;
-        this.mRetryCount = 0;
-        this.mMaxRetryCount = 0;
-        this.mSessionException = null;
-        this.mSessionTask = null;
-        this.mSessionFuture = null;
-        this.mResponseList = new LinkedList();
-        this.mCacheStrategy = CacheStrategy.DISABLE_CACHE;
-        this.mHttpConfig = new a();
-        this.mParallel = $assertionsDisabled;
-        this.mSeqQueueName = str;
-    }
-
-    protected WebSession(boolean z) {
-        this.mIsClosed = true;
-        this.mSessionState = SessionState.UNFINISHED;
-        this.mRetryCount = 0;
-        this.mMaxRetryCount = 0;
-        this.mSessionException = null;
-        this.mSessionTask = null;
-        this.mSessionFuture = null;
-        this.mResponseList = new LinkedList();
-        this.mCacheStrategy = CacheStrategy.DISABLE_CACHE;
-        this.mHttpConfig = new a();
-        this.mParallel = z;
-        this.mSeqQueueName = DEFAULT_SEQ_QUEUE;
+        this(DEFAULT_WEBSESSION_CONFIG);
     }
 
     public boolean getIsParallel() {
-        return this.mParallel;
+        return this.mWebSessionConfig.f2205b;
     }
 
     public boolean getIsClosed() {
@@ -104,11 +92,11 @@ public abstract class WebSession {
     }
 
     public void setReadTimeout(int i) {
-        this.mHttpConfig.b = i;
+        this.mHttpConfig.f546b = i;
     }
 
     public void setConnectTimeout(int i) {
-        this.mHttpConfig.a = i;
+        this.mHttpConfig.f545a = i;
     }
 
     public void setMaxRetryCount(int i) {
@@ -121,25 +109,12 @@ public abstract class WebSession {
         return this.mSessionState;
     }
 
-    protected CacheStrategy getCacheStrategy() {
-        return this.mCacheStrategy;
-    }
-
-    public static void setLogger(HttpLogger fVar) {
-        sHttpLogger = fVar;
-    }
-
-    public void refresh() {
-        if ($assertionsDisabled || checkAccess()) {
-            close();
-            open(CacheStrategy.DO_NOT_USE_CACHE);
-            return;
-        }
-        throw new AssertionError();
+    public static void setLogger(C0327f c0327f) {
+        sHttpLogger = c0327f;
     }
 
     public void open() {
-        open(CacheStrategy.DISABLE_CACHE);
+        open(this.mWebSessionConfig.f2206c);
     }
 
     public void open(CacheStrategy cacheStrategy) {
@@ -147,13 +122,13 @@ public abstract class WebSession {
     }
 
     public void open(long j) {
-        open(CacheStrategy.DISABLE_CACHE, j);
+        open(this.mWebSessionConfig.f2207d, j);
     }
 
     public void open(CacheStrategy cacheStrategy, long j) {
         if (!$assertionsDisabled && !checkAccess()) {
             throw new AssertionError();
-        } else if (this.mSessionTask == null || this.mSessionTask.a) {
+        } else if (this.mSessionTask == null || this.mSessionTask.f2196a) {
             scheduleSessionTask(cacheStrategy, j);
         }
     }
@@ -161,9 +136,9 @@ public abstract class WebSession {
     public void close() {
         if (!$assertionsDisabled && !checkAccess()) {
             throw new AssertionError();
-        } else if (this.mSessionTask != null && !this.mSessionTask.a) {
+        } else if (this.mSessionTask != null && !this.mSessionTask.f2196a) {
             if ($assertionsDisabled || this.mSessionFuture != null) {
-                this.mSessionTask.a = true;
+                this.mSessionTask.f2196a = true;
                 this.mSessionFuture.cancel(true);
                 return;
             }
@@ -172,36 +147,36 @@ public abstract class WebSession {
     }
 
     public boolean isCancelling() {
-        return (this.mSessionTask == null || !this.mSessionTask.a) ? $assertionsDisabled : true;
+        return (this.mSessionTask == null || !this.mSessionTask.f2196a) ? $assertionsDisabled : true;
     }
 
-    protected d execute(com.duokan.reader.common.webservices.duokan.a.a aVar) {
+    protected C0627d execute(C0624a c0624a) {
         if (!$assertionsDisabled && this.mSessionTask == null) {
             throw new AssertionError();
-        } else if (!$assertionsDisabled && this.mSessionTask.c != Thread.currentThread().getId()) {
+        } else if (!$assertionsDisabled && this.mSessionTask.f2198c != Thread.currentThread().getId()) {
             throw new AssertionError();
-        } else if ($assertionsDisabled || aVar != null) {
-            d fVar = new HttpLogger(this, aVar);
-            this.mResponseList.add(fVar);
-            fVar.e();
-            return fVar;
+        } else if ($assertionsDisabled || c0624a != null) {
+            C0627d c0653e = new C0653e(this, c0624a);
+            this.mResponseList.add(c0653e);
+            c0653e.m3091e();
+            return c0653e;
         } else {
             throw new AssertionError();
         }
     }
 
     protected void fail() {
-        if ($assertionsDisabled || this.mSessionTask.c == Thread.currentThread().getId()) {
+        if ($assertionsDisabled || this.mSessionTask.f2198c == Thread.currentThread().getId()) {
             throw new WebSessionFailException();
         }
         throw new AssertionError();
     }
 
-    protected void publishProgress(Object obj) {
+    protected <T> void publishProgress(T t) {
         if (!$assertionsDisabled && this.mSessionTask == null) {
             throw new AssertionError();
-        } else if ($assertionsDisabled || this.mSessionTask.c == Thread.currentThread().getId()) {
-            TaskHandler.getTaskHandler(new e(this, obj));
+        } else if ($assertionsDisabled || this.mSessionTask.f2198c == Thread.currentThread().getId()) {
+            UThread.m1035a(new C0622d(this, t));
         } else {
             throw new AssertionError();
         }
@@ -210,8 +185,8 @@ public abstract class WebSession {
     protected boolean shouldBreak() {
         if (!$assertionsDisabled && this.mSessionTask == null) {
             throw new AssertionError();
-        } else if ($assertionsDisabled || this.mSessionTask.c == Thread.currentThread().getId()) {
-            return this.mSessionTask.a;
+        } else if ($assertionsDisabled || this.mSessionTask.f2198c == Thread.currentThread().getId()) {
+            return this.mSessionTask.f2196a;
         } else {
             throw new AssertionError();
         }
@@ -236,15 +211,15 @@ public abstract class WebSession {
     protected void onSessionProgressUpdate() {
     }
 
-    protected void onSessionProgressUpdate(Object obj) {
+    protected <T> void onSessionProgressUpdate(T t) {
     }
 
     private void scheduleSessionTask(CacheStrategy cacheStrategy, long j) {
-        this.mSessionTask = new SessionTask(this, cacheStrategy);
-        if (this.mParallel) {
-            this.mSessionFuture = j > 0 ? ah.submitScheduledFuture(this.mSessionTask, j) : ah.submitFuture(this.mSessionTask);
+        this.mSessionTask = new C0654f(this, cacheStrategy);
+        if (this.mWebSessionConfig.f2205b) {
+            this.mSessionFuture = j > 0 ? ah.m867a(this.mSessionTask, j) : ah.m871b(this.mSessionTask);
         } else {
-            this.mSessionFuture = j > 0 ? ah.scheduledFuture(this.mSessionTask, this.mSeqQueueName, j) : ah.future(this.mSessionTask, this.mSeqQueueName);
+            this.mSessionFuture = j > 0 ? ah.m868a(this.mSessionTask, this.mWebSessionConfig.f2204a, j) : ah.m866a(this.mSessionTask, this.mWebSessionConfig.f2204a);
         }
     }
 

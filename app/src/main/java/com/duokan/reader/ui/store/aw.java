@@ -1,7 +1,9 @@
 package com.duokan.reader.ui.store;
 
 public interface aw {
-    int a();
+    /* renamed from: a */
+    int mo2525a();
 
-    String a(int i);
+    /* renamed from: a */
+    String mo2526a(int i);
 }

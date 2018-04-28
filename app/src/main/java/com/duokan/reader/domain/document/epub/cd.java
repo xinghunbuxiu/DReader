@@ -1,10 +1,14 @@
 package com.duokan.reader.domain.document.epub;
 
 class cd extends ci {
-    public long a = -1;
-    public long b = -1;
-    public boolean c = false;
-    public boolean d = false;
+    /* renamed from: a */
+    public long f4647a = -1;
+    /* renamed from: b */
+    public long f4648b = -1;
+    /* renamed from: c */
+    public boolean f4649c = false;
+    /* renamed from: d */
+    public boolean f4650d = false;
 
     cd() {
     }

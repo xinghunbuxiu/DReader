@@ -1,18 +1,17 @@
 package com.duokan.reader.ui.bookshelf;
 
-import org.apache.http.HttpRequest;
-import org.apache.http.HttpResponse;
-import org.apache.http.protocol.HttpContext;
-import org.apache.http.protocol.HttpRequestHandler;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class iy implements HttpRequestHandler {
-    final /* synthetic */ iv a;
+class iy implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ie f6645a;
 
-    iy(iv ivVar) {
-        this.a = ivVar;
+    iy(ie ieVar) {
+        this.f6645a = ieVar;
     }
 
-    public void handle(HttpRequest httpRequest, HttpResponse httpResponse, HttpContext httpContext) {
-        this.a.c(httpRequest, httpResponse, httpContext);
+    public void onClick(View view) {
+        this.f6645a.f6590b.m4928h();
     }
 }

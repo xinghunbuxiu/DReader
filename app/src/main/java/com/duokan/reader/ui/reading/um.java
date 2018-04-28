@@ -1,15 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.TaskHandler;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class um implements Runnable {
-    final /* synthetic */ ul a;
+class um implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ul f11016a;
 
     um(ul ulVar) {
-        this.a = ulVar;
+        this.f11016a = ulVar;
     }
 
-    public void run() {
-        TaskHandler.postDelayed(new un(this), 500);
+    public void onClick(View view) {
+        this.f11016a.m13847a(new un(this));
     }
 }

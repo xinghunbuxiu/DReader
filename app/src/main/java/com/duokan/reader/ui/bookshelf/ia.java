@@ -1,24 +1,17 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.text.TextUtils;
+class ia implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ ie f6584a;
+    /* renamed from: b */
+    final /* synthetic */ hz f6585b;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.u;
-import com.duokan.reader.ui.general.be;
-
-class ia implements u {
-    final /* synthetic */ hp a;
-
-    ia(hp hpVar) {
-        this.a = hpVar;
+    ia(hz hzVar, ie ieVar) {
+        this.f6585b = hzVar;
+        this.f6584a = ieVar;
     }
 
-    public void onQueryAccountOk(a aVar) {
-    }
-
-    public void onQueryAccountError(a aVar, String str) {
-        if (!TextUtils.isEmpty(str)) {
-            be.a(this.a.getContext(), (CharSequence) str, 0).show();
-        }
+    public void run() {
+        this.f6584a.m9849a();
     }
 }

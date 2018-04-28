@@ -2,14 +2,14 @@ package com.duokan.core.ui;
 
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
-
-import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.sys.UThread;
 
 final class eg implements AnimationListener {
-    final /* synthetic */ Runnable a;
+    /* renamed from: a */
+    final /* synthetic */ Runnable f1217a;
 
     eg(Runnable runnable) {
-        this.a = runnable;
+        this.f1217a = runnable;
     }
 
     public void onAnimationStart(Animation animation) {
@@ -19,6 +19,6 @@ final class eg implements AnimationListener {
     }
 
     public void onAnimationEnd(Animation animation) {
-        TaskHandler.PostTask(this.a);
+        UThread.post(this.f1217a);
     }
 }

@@ -2,18 +2,19 @@ package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.sys.as;
 
-import org.json.JSONObject;
-
 class de implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
+    /* renamed from: a */
+    final /* synthetic */ String f7720a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7721b;
 
-    de(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    de(ci ciVar, String str) {
+        this.f7721b = ciVar;
+        this.f7720a = str;
     }
 
-    public void a() {
-        this.b.a(new df(this, new JSONObject(this.a).getString("msgid")));
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7721b.f7581b.setPageTitle(this.f7720a);
     }
 }

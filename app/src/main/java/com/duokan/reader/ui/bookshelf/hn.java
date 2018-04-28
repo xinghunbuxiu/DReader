@@ -1,16 +1,16 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.view.View;
-import android.view.ViewGroup;
+import android.widget.TextView;
 
-public interface hn {
-    int a();
+class hn {
+    /* renamed from: a */
+    public TextView f6559a;
+    /* renamed from: b */
+    public TextView f6560b;
+    /* renamed from: c */
+    final /* synthetic */ hm f6561c;
 
-    View a(int i, View view, ViewGroup viewGroup);
-
-    void a(int i, View view);
-
-    void a(String str);
-
-    boolean b(int i, View view);
+    private hn(hm hmVar) {
+        this.f6561c = hmVar;
+    }
 }

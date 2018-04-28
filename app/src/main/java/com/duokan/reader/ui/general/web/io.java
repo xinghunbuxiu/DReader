@@ -1,30 +1,20 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.domain.bookshelf.ai;
-import com.duokan.reader.domain.store.DkStoreFictionDetail;
-import com.duokan.reader.domain.store.DkStoreItem;
-import com.duokan.reader.domain.store.h;
+import com.duokan.core.sys.as;
 
-class io implements h {
-    final /* synthetic */ in a;
+class io implements as {
+    /* renamed from: a */
+    final /* synthetic */ String f8006a;
+    /* renamed from: b */
+    final /* synthetic */ ci f8007b;
 
-    io(in inVar) {
-        this.a = inVar;
+    io(ci ciVar, String str) {
+        this.f8007b = ciVar;
+        this.f8006a = str;
     }
 
-    public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
-        Object a = ai.a().a((DkStoreFictionDetail) dkStoreItem);
-        a.j(this.a.b);
-        this.a.c.a(a);
-        synchronized (this.a.c) {
-            this.a.c.notify();
-        }
-    }
-
-    public void onFetchBookDetailError(String str) {
-        this.a.d.b.pageController.doShowToast(str);
-        synchronized (this.a.c) {
-            this.a.c.notify();
-        }
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f8007b.m11016a(new ip(this));
     }
 }

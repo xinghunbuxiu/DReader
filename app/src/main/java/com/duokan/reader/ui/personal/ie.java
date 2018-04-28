@@ -1,24 +1,21 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import java.util.ArrayList;
 
-import com.duokan.c.j;
-import com.duokan.reader.domain.cloud.DkUserReadBookManager.ReadBook;
-import com.duokan.reader.ui.general.jq;
+class ie implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ ArrayList f8705a;
+    /* renamed from: b */
+    final /* synthetic */ hy f8706b;
 
-class ie implements OnClickListener {
-    final /* synthetic */ ReadBook a;
-    final /* synthetic */ hw b;
-
-    ie(hw hwVar, ReadBook readBook) {
-        this.b = hwVar;
-        this.a = readBook;
+    ie(hy hyVar, ArrayList arrayList) {
+        this.f8706b = hyVar;
+        this.f8705a = arrayList;
     }
 
-    public void onClick(View view) {
-        new if (this,
-        jq.a(this.b.getContext(), "", this.b.getString(j.personal__readed_books_view__opening), true, true)).
-        open();
+    public void run() {
+        this.f8706b.f8685m.removeAll(this.f8705a);
+        this.f8706b.m11970g();
+        this.f8706b.f8692t.m8785a(!this.f8706b.f8693u);
     }
 }

@@ -1,14 +1,12 @@
 package com.duokan.reader.ui.reading;
 
-class adv implements Runnable {
-    final /* synthetic */ adm a;
+import com.duokan.reader.domain.plugins.dict.C1119n;
 
-    adv(adm com_duokan_reader_ui_reading_adm) {
-        this.a = com_duokan_reader_ui_reading_adm;
-    }
+class adv implements C1119n {
+    /* renamed from: a */
+    final /* synthetic */ TranslationController f9539a;
 
-    public void run() {
-        this.a.dismissPopup(this.a.l);
-        this.a.l = null;
+    adv(TranslationController translationController) {
+        this.f9539a = translationController;
     }
 }

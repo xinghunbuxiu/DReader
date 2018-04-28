@@ -1,15 +1,16 @@
 package com.duokan.reader.domain.document.epub;
 
 class be implements Runnable {
-    final /* synthetic */ az a;
+    /* renamed from: a */
+    final /* synthetic */ az f4552a;
 
     be(az azVar) {
-        this.a = azVar;
+        this.f4552a = azVar;
     }
 
     public void run() {
-        this.a.n = true;
-        this.a.V();
-        this.a.invalidateSelf();
+        this.f4552a.f4533n = true;
+        this.f4552a.m6540U();
+        this.f4552a.invalidateSelf();
     }
 }

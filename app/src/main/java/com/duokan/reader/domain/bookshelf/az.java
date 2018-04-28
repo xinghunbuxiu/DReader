@@ -1,49 +1,22 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.reader.common.async.work.c;
-import com.duokan.reader.common.async.work.i;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.micloud.bl;
+import com.duokan.reader.common.async.work.IAsyncWorkProgressListener;
 
-class az extends i {
-    final /* synthetic */ iq a;
-    final /* synthetic */ boolean b;
-    final /* synthetic */ boolean c;
-    final /* synthetic */ int d;
-    final /* synthetic */ ab e;
-    final /* synthetic */ aq f;
+class az implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ IAsyncWorkProgressListener f2798a;
+    /* renamed from: b */
+    final /* synthetic */ aw f2799b;
 
-    az(aq aqVar, iq iqVar, boolean z, boolean z2, int i, ab abVar) {
-        this.f = aqVar;
-        this.a = iqVar;
-        this.b = z;
-        this.c = z2;
-        this.d = i;
-        this.e = abVar;
+    az(aw awVar, IAsyncWorkProgressListener iAsyncWorkProgressListener) {
+        this.f2799b = awVar;
+        this.f2798a = iAsyncWorkProgressListener;
     }
 
-    public /* synthetic */ void e(c cVar) {
-        a((bl) cVar);
-    }
-
-    public /* synthetic */ void f(c cVar) {
-        b((bl) cVar);
-    }
-
-    public /* synthetic */ void g(c cVar) {
-        c((bl) cVar);
-    }
-
-    public void a(bl blVar) {
-        TaskHandler.PostTask(new ba(this, this));
-    }
-
-    public void b(bl blVar) {
-        TaskHandler.PostTask(new bb(this, this));
-    }
-
-    public void c(bl blVar) {
-        TaskHandler.PostTask(new bc(this, this));
+    public void run() {
+        it.m4692a().m4727b(this.f2798a);
+        if (!this.f2799b.f2788a.isCancelled()) {
+            this.f2799b.f2793f.m3933i("");
+        }
     }
 }

@@ -1,19 +1,20 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.ag;
-import com.duokan.reader.domain.store.DkStoreFictionDetail;
-import com.mipay.sdk.Mipay;
+import com.duokan.core.sys.as;
 
-class ih implements ag {
-    final /* synthetic */ String a;
-    final /* synthetic */ ig b;
+class ih implements as {
+    /* renamed from: a */
+    final /* synthetic */ String f7991a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7992b;
 
-    ih(ig igVar, String str) {
-        this.b = igVar;
-        this.a = str;
+    ih(ci ciVar, String str) {
+        this.f7992b = ciVar;
+        this.f7991a = str;
     }
 
-    public void a(DkStoreFictionDetail dkStoreFictionDetail) {
-        this.b.b.pageController.web_notifyWeb(this.a, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7992b.m11016a(new ii(this));
     }
 }

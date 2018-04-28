@@ -11,29 +11,41 @@ import android.view.View;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-
+import android.widget.LinearLayout.LayoutParams;
 import com.duokan.core.ui.HatGridView;
 import com.duokan.core.ui.PullDownRefreshBaseView;
 import com.duokan.core.ui.PullDownRefreshBaseView.RefreshState;
 import com.duokan.core.ui.PullDownRefreshView;
 import com.duokan.core.ui.Scrollable;
-import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.Scrollable.OverScrollMode;
+import com.duokan.core.ui.Scrollable.ScrollState;
 import com.duokan.core.ui.an;
 import com.duokan.core.ui.ao;
 import com.duokan.core.ui.cf;
-import com.duokan.core.ui.OnScrollListener;
+import com.duokan.core.ui.cg;
+import com.duokan.core.ui.dv;
 import com.duokan.core.ui.et;
+import com.duokan.p023b.C0241c;
 
 public class DkWebListView extends FrameLayout implements Scrollable {
-    private final HatGridView a;
-    private final LinearLayout b;
-    private final PullDownRefreshBaseView c;
-    private final bp d;
-    private View e;
-    private boolean f;
-    private OnScrollListener g;
-    private an h;
-    private ao i;
+    /* renamed from: a */
+    private final HatGridView f6792a;
+    /* renamed from: b */
+    private final LinearLayout f6793b;
+    /* renamed from: c */
+    private final PullDownRefreshBaseView f6794c;
+    /* renamed from: d */
+    private final bp f6795d;
+    /* renamed from: e */
+    private View f6796e;
+    /* renamed from: f */
+    private boolean f6797f;
+    /* renamed from: g */
+    private cg f6798g;
+    /* renamed from: h */
+    private an f6799h;
+    /* renamed from: i */
+    private ao f6800i;
 
     public enum ListState {
         UNKNOWN,
@@ -52,493 +64,508 @@ public class DkWebListView extends FrameLayout implements Scrollable {
 
     public DkWebListView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.e = null;
-        this.f = false;
-        this.g = null;
-        this.h = null;
-        this.i = null;
-        this.a = a(context);
-        this.b = new LinearLayout(getContext());
-        this.b.setOrientation(1);
-        this.c = new PullDownRefreshView(getContext());
-        this.b.addView(this.c, new LayoutParams(-1, -2));
-        this.a.setHatTipView(this.b);
-        this.a.a(0, UTools.getMinimumHeight(getContext(), 60.0f), 0, 0);
-        this.a.setOnScrollListener(new bg(this));
-        addView(this.a, new FrameLayout.LayoutParams(-1, -1));
-        setBackgroundColor(getResources().getColor(c.general__shared__eeeeee));
-        this.d = new bp();
-        this.a.setAdapter(this.d);
+        this.f6796e = null;
+        this.f6797f = false;
+        this.f6798g = null;
+        this.f6799h = null;
+        this.f6800i = null;
+        this.f6792a = m9953a(context);
+        this.f6793b = new LinearLayout(getContext());
+        this.f6793b.setOrientation(1);
+        this.f6794c = new PullDownRefreshView(getContext());
+        this.f6793b.addView(this.f6794c, new LayoutParams(-1, -2));
+        this.f6792a.setHatTipView(this.f6793b);
+        this.f6792a.m1242a(0, dv.m1932b(getContext(), 60.0f), 0, 0);
+        this.f6792a.setOnScrollListener(new bg(this));
+        addView(this.f6792a, new FrameLayout.LayoutParams(-1, -1));
+        setBackgroundColor(getResources().getColor(C0241c.general__shared__eeeeee));
+        this.f6795d = new bp();
+        this.f6792a.setAdapter(this.f6795d);
     }
 
-    protected HatGridView a(Context context) {
+    /* renamed from: a */
+    protected HatGridView m9953a(Context context) {
         return new bj(this, context);
     }
 
     public final bo getAdapter() {
-        return this.d.b();
+        return this.f6795d.m10302b();
     }
 
     public final void setAdapter(bo boVar) {
-        this.d.a(boVar);
-        this.c.setRefreshState(RefreshState.NO_REFRESH);
+        this.f6795d.m10299a(boVar);
+        this.f6794c.setRefreshState(RefreshState.NO_REFRESH);
     }
 
     public final int getStretchMode() {
-        return this.a.getStretchMode();
+        return this.f6792a.getStretchMode();
     }
 
     public final void setStretchMode(int i) {
-        this.a.setStretchMode(i);
+        this.f6792a.setStretchMode(i);
     }
 
     public final Drawable getItemsBackground() {
-        return this.a.getItemsBackground();
+        return this.f6792a.getItemsBackground();
     }
 
     public final void setItemsBackground(int i) {
-        this.a.setItemsBackground(i);
+        this.f6792a.setItemsBackground(i);
     }
 
     public final void setItemsBackground(Drawable drawable) {
-        this.a.setItemsBackground(drawable);
+        this.f6792a.setItemsBackground(drawable);
     }
 
-    public final View a(int i) {
-        return this.a.a(i);
+    /* renamed from: a */
+    public final View m9952a(int i) {
+        return this.f6792a.m1241a(i);
     }
 
     public final int getNumColumns() {
-        return this.a.getNumColumns();
+        return this.f6792a.getNumColumns();
     }
 
     public final void setNumColumns(int i) {
-        this.a.setNumColumns(i);
+        this.f6792a.setNumColumns(i);
     }
 
     public final int getColumnCount() {
-        return this.a.getColumnCount();
+        return this.f6792a.getColumnCount();
     }
 
     public final Drawable getColumnDivider() {
-        return this.a.getColumnDivider();
+        return this.f6792a.getColumnDivider();
     }
 
     public final void setColumnDivider(Drawable drawable) {
-        this.a.setColumnDivider(drawable);
+        this.f6792a.setColumnDivider(drawable);
     }
 
     public final int getColumnSpacing() {
-        return this.a.getColumnSpacing();
+        return this.f6792a.getColumnSpacing();
     }
 
     public final void setColumnSpacing(int i) {
-        this.a.setColumnSpacing(i);
+        this.f6792a.setColumnSpacing(i);
     }
 
     public final int getRowCount() {
-        return this.a.getRowCount();
+        return this.f6792a.getRowCount();
     }
 
     public final Drawable getRowBackground() {
-        return this.a.getRowBackground();
+        return this.f6792a.getRowBackground();
     }
 
     public final void setRowBackground(int i) {
-        this.a.setRowBackground(getResources().getDrawable(i));
+        this.f6792a.setRowBackground(getResources().getDrawable(i));
     }
 
     public final void setRowBackground(Drawable drawable) {
-        this.a.setRowBackground(drawable);
+        this.f6792a.setRowBackground(drawable);
     }
 
     public final Drawable getRowDivider() {
-        return this.a.getRowDivider();
+        return this.f6792a.getRowDivider();
     }
 
     public final void setRowDivider(int i) {
-        this.a.setRowDivider(i);
+        this.f6792a.setRowDivider(i);
     }
 
     public final void setRowDivider(Drawable drawable) {
-        this.a.setRowDivider(drawable);
+        this.f6792a.setRowDivider(drawable);
     }
 
     public final int getRowSpacing() {
-        return this.a.getRowSpacing();
+        return this.f6792a.getRowSpacing();
     }
 
     public final void setRowSpacing(int i) {
-        this.a.setRowSpacing(i);
+        this.f6792a.setRowSpacing(i);
     }
 
     public final ListState getListState() {
-        return this.d.h();
+        return this.f6795d.m10311h();
     }
 
     public final void setPullDownRefreshEnabled(boolean z) {
-        this.c.setVisibility(z ? 0 : 4);
+        this.f6794c.setVisibility(z ? 0 : 4);
     }
 
     public final int getHeaderSink() {
-        return this.a.getHeaderSink();
+        return this.f6792a.getHeaderSink();
     }
 
     public final void setHeaderSink(int i) {
-        this.a.setHeaderSink(i);
+        this.f6792a.setHeaderSink(i);
     }
 
     public final int getFooterRise() {
-        return this.a.getFooterRise();
+        return this.f6792a.getFooterRise();
     }
 
     public final void setFooterRise(int i) {
-        this.a.setFooterRise(i);
+        this.f6792a.setFooterRise(i);
     }
 
     public final void setTitleView(View view) {
-        this.a.setTitleView(view);
+        this.f6792a.setTitleView(view);
     }
 
     public final void setHatBackgroundView(View view) {
-        this.a.setHatBackgroundView(view);
+        this.f6792a.setHatBackgroundView(view);
     }
 
     public final View getHatBackgroundView() {
-        return this.a.getHatBackgroundView();
+        return this.f6792a.getHatBackgroundView();
     }
 
     public final void setHatTipView(View view) {
-        if (this.e != view) {
-            if (this.e != null) {
-                this.b.removeView(this.e);
+        if (this.f6796e != view) {
+            if (this.f6796e != null) {
+                this.f6793b.removeView(this.f6796e);
             }
-            this.e = view;
-            if (this.e != null) {
-                if (this.e.getLayoutParams() == null) {
-                    this.e.setLayoutParams(new FrameLayout.LayoutParams(-1, -2));
+            this.f6796e = view;
+            if (this.f6796e != null) {
+                if (this.f6796e.getLayoutParams() == null) {
+                    this.f6796e.setLayoutParams(new FrameLayout.LayoutParams(-1, -2));
                 }
-                this.b.addView(this.e);
+                this.f6793b.addView(this.f6796e);
             }
         }
     }
 
     public final boolean getHatTipDockable() {
-        return this.f;
+        return this.f6797f;
     }
 
     public final void setHatTipDockable(boolean z) {
-        if (this.f != z) {
-            this.f = z;
-            if (!this.f && this.a.getScrollState() != ScrollState.DRAG) {
-                c();
+        if (this.f6797f != z) {
+            this.f6797f = z;
+            if (!this.f6797f && this.f6792a.getScrollState() != ScrollState.DRAG) {
+                m9964c();
             }
         }
     }
 
-    public final View b(int i) {
-        return this.a.c(i);
+    /* renamed from: b */
+    public final View m9961b(int i) {
+        return this.f6792a.m1253c(i);
     }
 
     public final void setHatBodyView(View view) {
-        this.a.setHatBodyView(view);
+        this.f6792a.setHatBodyView(view);
     }
 
     public final View getHatBodyView() {
-        return this.a.getHatBodyView();
+        return this.f6792a.getHatBodyView();
     }
 
     public final int getHatBodyVisibleHeight() {
-        return this.a.getHatBodyVisibleHeight();
+        return this.f6792a.getHatBodyVisibleHeight();
     }
 
     public final View getBrimView() {
-        return this.a.getBrimView();
+        return this.f6792a.getBrimView();
     }
 
     public final void setBrimView(View view) {
-        this.a.setBrimView(view);
+        this.f6792a.setBrimView(view);
     }
 
     public final void setClipGridToBrim(boolean z) {
-        this.a.setClipGridToBrim(z);
+        this.f6792a.setClipGridToBrim(z);
     }
 
     public final int getHatVisibleHeight() {
-        return this.a.getHatVisibleHeight();
+        return this.f6792a.getHatVisibleHeight();
     }
 
     public final void setFastToTopEnable(boolean z) {
-        this.a.setFastToTopEnabled(z);
+        this.f6792a.setFastToTopEnabled(z);
     }
 
     public final int getListPaddingLeft() {
-        return this.a.getGridPaddingLeft();
+        return this.f6792a.getGridPaddingLeft();
     }
 
     public final int getListPaddingRight() {
-        return this.a.getGridPaddingRight();
+        return this.f6792a.getGridPaddingRight();
     }
 
     public final int getListPaddingTop() {
-        return this.a.getGridPaddingTop();
+        return this.f6792a.getGridPaddingTop();
     }
 
     public final int getListPaddingBottom() {
-        return this.a.getGridPaddingBottom();
+        return this.f6792a.getGridPaddingBottom();
     }
 
-    public final void a(int i, int i2, int i3, int i4) {
-        this.a.b(i, i2, i3, i4);
+    /* renamed from: a */
+    public final void m9955a(int i, int i2, int i3, int i4) {
+        this.f6792a.m1250b(i, i2, i3, i4);
     }
 
-    public final void b(int i, int i2, int i3, int i4) {
-        this.a.d(i, i2, i3, i4);
+    /* renamed from: b */
+    public final void m9962b(int i, int i2, int i3, int i4) {
+        this.f6792a.m1257d(i, i2, i3, i4);
     }
 
     public final int getItemCount() {
-        return this.a.getItemCount();
+        return this.f6792a.getItemCount();
     }
 
-    public final void a() {
-        a(false);
+    /* renamed from: a */
+    public final void m9954a() {
+        m9960a(false);
     }
 
-    public final void a(boolean z) {
-        if (this.c.getRefreshState() != RefreshState.REFRESHING) {
-            b(z);
+    /* renamed from: a */
+    public final void m9960a(boolean z) {
+        if (this.f6794c.getRefreshState() != RefreshState.REFRESHING) {
+            m9942b(z);
         }
     }
 
     public final RefreshState getPullRefreshState() {
-        return this.c.getRefreshState();
+        return this.f6794c.getRefreshState();
     }
 
-    public final boolean b() {
-        return this.d.e();
+    /* renamed from: b */
+    public final boolean m9963b() {
+        return this.f6795d.m10308e();
     }
 
     public final int getListScrollX() {
-        return this.a.getGridScrollX();
+        return this.f6792a.getGridScrollX();
     }
 
     public final int getListScrollY() {
-        return this.a.getGridScrollY();
+        return this.f6792a.getGridScrollY();
     }
 
     public final void setOnItemClickListener(an anVar) {
-        this.h = anVar;
-        this.a.setOnItemClickListener(new bk(this));
+        this.f6799h = anVar;
+        this.f6792a.setOnItemClickListener(new bk(this));
     }
 
     public final void setOnItemLongPressListener(ao aoVar) {
-        this.i = aoVar;
-        this.a.setOnItemLongPressListener(new bl(this));
+        this.f6800i = aoVar;
+        this.f6792a.setOnItemLongPressListener(new bl(this));
     }
 
     public final int getGroupCount() {
-        return this.a.getGroupCount();
+        return this.f6792a.getGroupCount();
     }
 
     public final View getTitleView() {
-        return this.a.getTitleView();
+        return this.f6792a.getTitleView();
     }
 
     public int getContentWidth() {
-        return this.a.getContentWidth();
+        return this.f6792a.getContentWidth();
     }
 
     public int getContentHeight() {
-        return this.a.getContentHeight();
+        return this.f6792a.getContentHeight();
     }
 
     public boolean getThumbEnabled() {
-        return this.a.getThumbEnabled();
+        return this.f6792a.getThumbEnabled();
     }
 
     public void setThumbEnabled(boolean z) {
-        this.a.setThumbEnabled(z);
+        this.f6792a.setThumbEnabled(z);
     }
 
     public boolean getSeekEnabled() {
-        return this.a.getSeekEnabled();
+        return this.f6792a.getSeekEnabled();
     }
 
     public void setSeekEnabled(boolean z) {
-        this.a.setSeekEnabled(z);
+        this.f6792a.setSeekEnabled(z);
     }
 
     public int getHorizontalThumbMarginLeft() {
-        return this.a.getHorizontalThumbMarginLeft();
+        return this.f6792a.getHorizontalThumbMarginLeft();
     }
 
     public int getHorizontalThumbMarginTop() {
-        return this.a.getHorizontalThumbMarginTop();
+        return this.f6792a.getHorizontalThumbMarginTop();
     }
 
     public int getHorizontalThumbMarginRight() {
-        return this.a.getHorizontalThumbMarginRight();
+        return this.f6792a.getHorizontalThumbMarginRight();
     }
 
     public int getHorizontalThumbMarginBottom() {
-        return this.a.getHorizontalThumbMarginBottom();
+        return this.f6792a.getHorizontalThumbMarginBottom();
     }
 
     public int getVerticalThumbMarginLeft() {
-        return this.a.getVerticalThumbMarginLeft();
+        return this.f6792a.getVerticalThumbMarginLeft();
     }
 
     public int getVerticalThumbMarginTop() {
-        return this.a.getVerticalThumbMarginTop();
+        return this.f6792a.getVerticalThumbMarginTop();
     }
 
     public int getVerticalThumbMarginRight() {
-        return this.a.getVerticalThumbMarginRight();
+        return this.f6792a.getVerticalThumbMarginRight();
     }
 
     public int getVerticalThumbMarginBottom() {
-        return this.a.getVerticalThumbMarginBottom();
+        return this.f6792a.getVerticalThumbMarginBottom();
     }
 
     public Drawable getHorizontalThumbDrawable() {
-        return this.a.getHorizontalThumbDrawable();
+        return this.f6792a.getHorizontalThumbDrawable();
     }
 
     public void setHorizontalThumbDrawable(Drawable drawable) {
-        this.a.setHorizontalThumbDrawable(drawable);
+        this.f6792a.setHorizontalThumbDrawable(drawable);
     }
 
     public Drawable getVerticalThumbDrawable() {
-        return this.a.getVerticalThumbDrawable();
+        return this.f6792a.getVerticalThumbDrawable();
     }
 
     public void setVerticalThumbDrawable(Drawable drawable) {
-        this.a.setVerticalThumbDrawable(drawable);
+        this.f6792a.setVerticalThumbDrawable(drawable);
     }
 
     public Drawable getHorizontalSeekDrawable() {
-        return this.a.getHorizontalSeekDrawable();
+        return this.f6792a.getHorizontalSeekDrawable();
     }
 
     public void setHorizontalSeekDrawable(Drawable drawable) {
-        this.a.setHorizontalSeekDrawable(drawable);
+        this.f6792a.setHorizontalSeekDrawable(drawable);
     }
 
     public Drawable getVerticalSeekDrawable() {
-        return this.a.getVerticalSeekDrawable();
+        return this.f6792a.getVerticalSeekDrawable();
     }
 
     public void setVerticalSeekDrawable(Drawable drawable) {
-        this.a.setVerticalSeekDrawable(drawable);
+        this.f6792a.setVerticalSeekDrawable(drawable);
     }
 
     public et getScrollDetector() {
-        return this.a.getScrollDetector();
+        return this.f6792a.getScrollDetector();
     }
 
     public final ScrollState getScrollState() {
-        return this.a.getScrollState();
+        return this.f6792a.getScrollState();
     }
 
     public final int getIdleTime() {
-        return this.a.getIdleTime();
+        return this.f6792a.getIdleTime();
     }
 
     public final int getScrollTime() {
-        return this.a.getScrollTime();
+        return this.f6792a.getScrollTime();
     }
 
     public int getScrollFinalX() {
-        return this.a.getScrollFinalX();
+        return this.f6792a.getScrollFinalX();
     }
 
     public int getScrollFinalY() {
-        return this.a.getScrollFinalY();
+        return this.f6792a.getScrollFinalY();
     }
 
     public final void setScrollInterpolator(Interpolator interpolator) {
-        this.a.setScrollInterpolator(interpolator);
+        this.f6792a.setScrollInterpolator(interpolator);
     }
 
-    public void a(View view, boolean z) {
-        this.a.a(view, z);
+    /* renamed from: a */
+    public void mo435a(View view, boolean z) {
+        this.f6792a.mo435a(view, z);
     }
 
     public OverScrollMode getHorizontalOverScrollMode() {
-        return this.a.getHorizontalOverScrollMode();
+        return this.f6792a.getHorizontalOverScrollMode();
     }
 
     public void setHorizontalOverScrollMode(OverScrollMode overScrollMode) {
-        this.a.setHorizontalOverScrollMode(overScrollMode);
+        this.f6792a.setHorizontalOverScrollMode(overScrollMode);
     }
 
     public OverScrollMode getVerticalOverScrollMode() {
-        return this.a.getVerticalOverScrollMode();
+        return this.f6792a.getVerticalOverScrollMode();
     }
 
     public void setVerticalOverScrollMode(OverScrollMode overScrollMode) {
-        this.a.setVerticalOverScrollMode(overScrollMode);
+        this.f6792a.setVerticalOverScrollMode(overScrollMode);
     }
 
     public final int getMaxOverScrollWidth() {
-        return this.a.getMaxOverScrollWidth();
+        return this.f6792a.getMaxOverScrollWidth();
     }
 
     public final void setMaxOverScrollWidth(int i) {
-        this.a.setMaxOverScrollWidth(i);
+        this.f6792a.setMaxOverScrollWidth(i);
     }
 
     public int getMaxOverScrollHeight() {
-        return this.a.getMaxOverScrollHeight();
+        return this.f6792a.getMaxOverScrollHeight();
     }
 
     public final void setMaxOverScrollHeight(int i) {
-        this.a.setMaxOverScrollHeight(i);
+        this.f6792a.setMaxOverScrollHeight(i);
     }
 
     public final Rect getViewportBounds() {
-        return this.a.getViewportBounds();
+        return this.f6792a.getViewportBounds();
     }
 
     public void setOnContentBoundsChangedListener(cf cfVar) {
-        this.a.setOnContentBoundsChangedListener(cfVar);
+        this.f6792a.setOnContentBoundsChangedListener(cfVar);
     }
 
-    public final void setOnScrollListener(OnScrollListener cgVar) {
-        this.g = cgVar;
+    public final void setOnScrollListener(cg cgVar) {
+        this.f6798g = cgVar;
     }
 
-    public void c() {
-        this.a.g();
+    /* renamed from: a */
+    public final void mo434a(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
+        this.f6792a.mo434a(i, i2, i3, runnable, runnable2);
+    }
+
+    /* renamed from: c */
+    public void m9964c() {
+        this.f6792a.m1266g();
     }
 
     public void scrollBy(int i, int i2) {
-        this.a.scrollBy(i, i2);
+        this.f6792a.scrollBy(i, i2);
     }
 
     public void scrollTo(int i, int i2) {
-        this.a.scrollTo(i, i2);
+        this.f6792a.scrollTo(i, i2);
     }
 
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getActionMasked() == 0) {
-            if (!f() || getScrollState() != ScrollState.IDLE) {
-                this.c.setRefreshState(RefreshState.NO_REFRESH);
-            } else if (this.c.getRefreshState() != RefreshState.REFRESHING) {
-                if (this.d.e()) {
-                    this.c.setRefreshState(RefreshState.NO_REFRESH);
+            if (!m9949f() || getScrollState() != ScrollState.IDLE) {
+                this.f6794c.setRefreshState(RefreshState.NO_REFRESH);
+            } else if (this.f6794c.getRefreshState() != RefreshState.REFRESHING) {
+                if (this.f6795d.m10308e()) {
+                    this.f6794c.setRefreshState(RefreshState.NO_REFRESH);
                 } else {
-                    this.c.setRefreshState(RefreshState.DOWN_TO_REFRESH);
+                    this.f6794c.setRefreshState(RefreshState.DOWN_TO_REFRESH);
                 }
             }
-            if (this.e != null && this.f) {
-                this.a.setHatTipDockable(true);
-                this.a.setHatTipDockableHeight(this.b.getHeight() - this.c.getHeight());
-            } else if (this.c.getRefreshState() != RefreshState.NO_REFRESH) {
-                this.a.setHatTipDockable(true);
-                this.a.setHatTipDockableHeight(-1);
+            if (this.f6796e != null && this.f6797f) {
+                this.f6792a.setHatTipDockable(true);
+                this.f6792a.setHatTipDockableHeight(this.f6793b.getHeight() - this.f6794c.getHeight());
+            } else if (this.f6794c.getRefreshState() != RefreshState.NO_REFRESH) {
+                this.f6792a.setHatTipDockable(true);
+                this.f6792a.setHatTipDockableHeight(-1);
             } else {
-                this.a.setHatTipDockable(false);
+                this.f6792a.setHatTipDockable(false);
             }
         }
         return super.onInterceptTouchEvent(motionEvent);
@@ -546,43 +573,50 @@ public class DkWebListView extends FrameLayout implements Scrollable {
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
-        e();
+        m9946e();
     }
 
-    protected void a(PointF pointF) {
+    /* renamed from: a */
+    protected void m9957a(PointF pointF) {
     }
 
-    protected void a(ScrollState scrollState, RectF rectF) {
+    /* renamed from: a */
+    protected void m9959a(ScrollState scrollState, RectF rectF) {
     }
 
-    protected boolean d() {
+    /* renamed from: d */
+    protected boolean m9965d() {
         return false;
     }
 
-    private final void c(int i) {
-        e();
-        if (this.c.getRefreshState() == RefreshState.REFRESHING && getListState() != ListState.LOADING_UPDATES) {
-            this.c.setOnRefreshDone(new bm(this));
-            this.c.setRefreshState(RefreshState.REFRESH_DONE);
+    /* renamed from: c */
+    private final void m9944c(int i) {
+        m9946e();
+        if (this.f6794c.getRefreshState() == RefreshState.REFRESHING && getListState() != ListState.LOADING_UPDATES) {
+            this.f6794c.setOnRefreshDone(new bm(this));
+            this.f6794c.setRefreshState(RefreshState.REFRESH_DONE);
         }
     }
 
-    private final void b(boolean z) {
-        bp bpVar = this.d;
-        boolean z2 = z || ((getListState() == ListState.UNKNOWN || getListState() == ListState.EMPTY) && this.c.getRefreshState() != RefreshState.REFRESHING);
-        bpVar.a(z2);
+    /* renamed from: b */
+    private final void m9942b(boolean z) {
+        bp bpVar = this.f6795d;
+        boolean z2 = z || ((getListState() == ListState.UNKNOWN || getListState() == ListState.EMPTY) && this.f6794c.getRefreshState() != RefreshState.REFRESHING);
+        bpVar.m10300a(z2);
     }
 
-    private final void e() {
+    /* renamed from: e */
+    private final void m9946e() {
         if (getListState() == ListState.MORE_TO_LOAD) {
-            int lastVisibleItemIndex = this.a.getLastVisibleItemIndex() + 1;
-            if (d() || this.a.getItemCount() - lastVisibleItemIndex <= (this.a.getVisibleItemCount() + 1) * 3) {
-                this.d.i();
+            int lastVisibleItemIndex = this.f6792a.getLastVisibleItemIndex() + 1;
+            if (m9965d() || this.f6792a.getItemCount() - lastVisibleItemIndex <= (this.f6792a.getVisibleItemCount() + 1) * 3) {
+                this.f6795d.m10312i();
             }
         }
     }
 
-    private final boolean f() {
-        return this.c.getVisibility() == 0;
+    /* renamed from: f */
+    private final boolean m9949f() {
+        return this.f6794c.getVisibility() == 0;
     }
 }

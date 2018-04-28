@@ -1,30 +1,20 @@
 package com.duokan.reader.ui.bookshelf;
 
 import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.domain.statistics.C1163a;
 
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.core.ui.HatGridView;
-import com.duokan.core.ui.an;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.domain.bookshelf.c;
+class dw implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ C1287do f6361a;
 
-class dw implements an {
-    final /* synthetic */ du a;
-
-    dw(du duVar) {
-        this.a = duVar;
+    dw(C1287do c1287do) {
+        this.f6361a = c1287do;
     }
 
-    public void a(HatGridView hatGridView, View view, int i) {
-        com.duokan.reader.domain.bookshelf.an anVar = (com.duokan.reader.domain.bookshelf.an) this.a.b.d(i);
-        if (this.a.e.b()) {
-            if (this.a.e.a(anVar)) {
-                this.a.e.b(anVar);
-                return;
-            }
-            this.a.e.a(anVar);
-        } else if (anVar instanceof c) {
-            ((ReaderFeature) MyContextWrapper.getFeature(this.a.getContext()).queryFeature(ReaderFeature.class)).openBook((c) anVar);
-        }
+    public void onClick(View view) {
+        C1163a.m8627k().m8655c("bookshelf_menu", "click", "check_in");
+        this.f6361a.m9491a(new dx(this));
+        this.f6361a.requestBack();
     }
 }

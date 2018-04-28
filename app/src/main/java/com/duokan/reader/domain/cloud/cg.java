@@ -1,24 +1,12 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.async.a.a;
-import com.duokan.reader.domain.account.u;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.C0659k;
 
-class cg implements u {
-    final /* synthetic */ String a;
-    final /* synthetic */ a b;
-    final /* synthetic */ DkUserPurchasedBooksManager c;
+class cg {
+    /* renamed from: a */
+    private static final C0657i f3811a = new C0659k().m3096a(cg.class.getName()).m3094a();
 
-    cg(DkUserPurchasedBooksManager dkUserPurchasedBooksManager, String str, a aVar) {
-        this.c = dkUserPurchasedBooksManager;
-        this.a = str;
-        this.b = aVar;
-    }
-
-    public void onQueryAccountOk(com.duokan.reader.domain.account.a aVar) {
-        this.c.a(new ch(this));
-    }
-
-    public void onQueryAccountError(com.duokan.reader.domain.account.a aVar, String str) {
-        this.b.a(-1, "");
+    private cg() {
     }
 }

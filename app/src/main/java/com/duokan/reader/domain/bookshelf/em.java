@@ -1,23 +1,14 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.core.sys.ah;
-import com.duokan.reader.domain.store.DkStoreFictionDetail;
-import com.duokan.reader.domain.store.DkStoreItem;
-import com.duokan.reader.domain.store.h;
-
-class em implements h {
-    final /* synthetic */ el a;
+class em implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ el f3111a;
 
     em(el elVar) {
-        this.a = elVar;
+        this.f3111a = elVar;
     }
 
-    public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
-        ah.submitFuture(new en(this, (DkStoreFictionDetail) dkStoreItem));
-    }
-
-    public void onFetchBookDetailError(String str) {
-        TaskHandler.postTask(this.a.b);
+    public void run() {
+        this.f3111a.f3110b.f3106b.run(this.f3111a.f3109a);
     }
 }

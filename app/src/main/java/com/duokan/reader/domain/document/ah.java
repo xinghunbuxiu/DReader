@@ -3,13 +3,18 @@ package com.duokan.reader.domain.document;
 import android.graphics.Bitmap;
 
 public abstract class ah {
-    public abstract String a();
+    /* renamed from: a */
+    public abstract String mo1410a();
 
-    public abstract ai[] b();
+    /* renamed from: b */
+    public abstract ai[] mo1411b();
 
-    public abstract Bitmap[] c();
+    /* renamed from: c */
+    public abstract Bitmap[] mo1412c();
 
-    public abstract boolean d();
+    /* renamed from: d */
+    public abstract boolean mo1413d();
 
-    public abstract boolean e();
+    /* renamed from: e */
+    public abstract boolean mo1414e();
 }

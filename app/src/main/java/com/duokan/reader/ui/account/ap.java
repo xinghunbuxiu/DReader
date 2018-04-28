@@ -1,40 +1,28 @@
 package com.duokan.reader.ui.account;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
+import android.graphics.Bitmap;
+import com.duokan.reader.ui.account.ShareEntranceController.ShareType;
 
-import com.duokan.c.f;
-import com.duokan.reader.domain.account.oauth.ThirdWeiXin;
-import com.duokan.reader.ui.general.ak;
+public class ap {
+    /* renamed from: a */
+    String f5800a;
+    /* renamed from: b */
+    String f5801b;
+    /* renamed from: c */
+    String f5802c;
+    /* renamed from: d */
+    String[] f5803d;
+    /* renamed from: e */
+    Bitmap f5804e;
+    /* renamed from: f */
+    ShareType f5805f;
 
-import java.util.LinkedList;
-import java.util.List;
-
-public class ap extends ak {
-    private final as a;
-    private List b = new LinkedList();
-    private String c;
-
-    public ap(Context context, boolean z, as asVar) {
-        super(context);
-        this.a = asVar;
-        String[] stringArray = getContext().getResources().getStringArray(c.share_title_array);
-        this.b.add(new at(this, stringArray[0], "sina", f.general__shared__sina_icon));
-        if (ThirdWeiXin.isWeiXinInstalled(getContext())) {
-            this.b.add(new at(this, stringArray[2], "wenxin_friend", f.general__shared__weichat_icon));
-            if (ThirdWeiXin.isSupportShareWeiXinFriends(getContext())) {
-                this.b.add(new at(this, stringArray[3], "wenxin_friends", f.general__shared__penyouquan_icon));
-            }
-        }
-        if (z) {
-            this.b.add(new at(this, stringArray[4], "system", f.general__shared__other_icon));
-        }
-        View auVar = new au(getContext(), new aq(this));
-        setOnDismissListener(new ar(this));
-        auVar.setSharePlatforms(this.b);
-        ViewGroup viewGroup = (ViewGroup) getContentView();
-        viewGroup.removeAllViews();
-        viewGroup.addView(auVar);
+    ap(ShareType shareType, String[] strArr, String str, String str2, Bitmap bitmap, String str3) {
+        this.f5800a = str;
+        this.f5802c = str2;
+        this.f5803d = strArr;
+        this.f5804e = bitmap;
+        this.f5805f = shareType;
+        this.f5801b = str3;
     }
 }

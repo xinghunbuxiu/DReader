@@ -1,13 +1,16 @@
 package com.duokan.reader.ui.personal;
 
 class dz implements Runnable {
-    final /* synthetic */ dy a;
+    /* renamed from: a */
+    final /* synthetic */ dm f8477a;
 
-    dz(dy dyVar) {
-        this.a = dyVar;
+    dz(dm dmVar) {
+        this.f8477a = dmVar;
     }
 
     public void run() {
-        this.a.a.l();
+        if (this.f8477a.f8457b != null && this.f8477a.isDelayedRunnableOnActive(this)) {
+            this.f8477a.f8457b.m11528i();
+        }
     }
 }

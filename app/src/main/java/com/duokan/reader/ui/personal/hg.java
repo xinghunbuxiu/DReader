@@ -1,24 +1,18 @@
 package com.duokan.reader.ui.personal;
 
-import android.text.TextUtils;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.ActivatedController;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.u;
-import com.duokan.reader.ui.general.be;
+class hg extends ActivatedController {
+    /* renamed from: a */
+    final /* synthetic */ fz f8650a;
 
-class hg implements u {
-    final /* synthetic */ hf a;
-
-    hg(hf hfVar) {
-        this.a = hfVar;
+    hg(fz fzVar, IFeature mFeature) {
+        this.f8650a = fzVar;
+        super(mFeature);
     }
 
-    public void onQueryAccountOk(a aVar) {
-    }
-
-    public void onQueryAccountError(a aVar, String str) {
-        if (!TextUtils.isEmpty(str)) {
-            be.a(this.a.a.getContext(), (CharSequence) str, 0).show();
-        }
+    protected void onDetachFromStub() {
+        this.f8650a.activate(this.f8650a.f8575b);
     }
 }

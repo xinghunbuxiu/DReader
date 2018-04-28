@@ -1,36 +1,36 @@
 package com.duokan.reader.ui.account;
 
+import android.content.Context;
 import android.graphics.Bitmap;
+import android.text.TextUtils;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.ui.general.be;
 
-import com.duokan.c.j;
-import com.duokan.reader.common.webservices.d;
-import com.duokan.reader.common.webservices.duokan.r;
+class ck implements co {
+    /* renamed from: a */
+    final /* synthetic */ String f5926a;
+    /* renamed from: b */
+    final /* synthetic */ bx f5927b;
 
-class ck extends r {
-    Bitmap a = null;
-    final /* synthetic */ cy b;
-    final /* synthetic */ ch c;
-
-    ck(ch chVar, cy cyVar) {
-        this.c = chVar;
-        this.b = cyVar;
+    ck(bx bxVar, String str) {
+        this.f5927b = bxVar;
+        this.f5926a = str;
     }
 
-    protected void onSessionTry() {
-        this.a = new d(this).a(this.c.e.b);
+    /* renamed from: a */
+    public void mo1586a(Bitmap bitmap, boolean z) {
+        this.f5927b.f5895g.update(this.f5926a, bitmap, this.f5927b.f5893e.f5801b, new cl(this, bitmap, z));
     }
 
-    protected void onSessionSucceeded() {
-        this.c.m = false;
-        if (this.a != null) {
-            this.b.a(this.a, true);
-        } else {
-            onSessionFailed();
+    /* renamed from: a */
+    public void mo1587a(String str) {
+        CharSequence str2;
+        this.f5927b.f5900l.dismiss();
+        Context activity = this.f5927b.getActivity();
+        if (TextUtils.isEmpty(str2)) {
+            str2 = this.f5927b.getActivity().getString(C0258j.sina_send_failed);
         }
-    }
-
-    protected void onSessionFailed() {
-        this.c.m = false;
-        this.b.a(this.c.getContext().getResources().getString(j.gen_bitmap_fail));
+        be.m10287a(activity, str2, 1).show();
+        this.f5927b.f5897i.setEnabled(true);
     }
 }

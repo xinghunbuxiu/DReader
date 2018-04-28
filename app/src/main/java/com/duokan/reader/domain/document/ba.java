@@ -1,7 +1,9 @@
 package com.duokan.reader.domain.document;
 
 public interface ba {
-    boolean a();
+    /* renamed from: a */
+    boolean mo1299a();
 
-    boolean b();
+    /* renamed from: b */
+    boolean mo1305b();
 }

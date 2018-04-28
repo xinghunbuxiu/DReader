@@ -4,14 +4,15 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 
 class aa implements OnSeekBarChangeListener {
-    final /* synthetic */ y a;
+    /* renamed from: a */
+    final /* synthetic */ C1473y f9259a;
 
-    aa(y yVar) {
-        this.a = yVar;
+    aa(C1473y c1473y) {
+        this.f9259a = c1473y;
     }
 
     public void onStopTrackingTouch(SeekBar seekBar) {
-        this.a.n().seekTo(seekBar.getProgress());
+        this.f9259a.m13689n().seekTo(seekBar.getProgress());
     }
 
     public void onStartTrackingTouch(SeekBar seekBar) {

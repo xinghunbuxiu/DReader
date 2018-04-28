@@ -8,23 +8,39 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.view.View.MeasureSpec;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-
+import com.duokan.p023b.C0241c;
+import com.duokan.p023b.C0242d;
+import com.duokan.p023b.C0243e;
+import com.duokan.reader.domain.bookshelf.C0800c;
 import com.duokan.reader.domain.cloud.DkCloudNoteBookInfo;
 
 public class BookCoverView extends FrameLayout {
-    private String a = null;
-    private String b = null;
-    private String c = null;
-    private Drawable d;
-    private Drawable e;
-    private Drawable f = null;
-    private Drawable g = null;
-    private final PicView h;
-    private final TextView i;
-    private int j = 0;
-    private o k = null;
+    /* renamed from: a */
+    private String f6757a = null;
+    /* renamed from: b */
+    private String f6758b = null;
+    /* renamed from: c */
+    private String f6759c = null;
+    /* renamed from: d */
+    private Drawable f6760d;
+    /* renamed from: e */
+    private Drawable f6761e;
+    /* renamed from: f */
+    private Drawable f6762f = null;
+    /* renamed from: g */
+    private Drawable f6763g = null;
+    /* renamed from: h */
+    private final PicView f6764h;
+    /* renamed from: i */
+    private final TextView f6765i;
+    /* renamed from: j */
+    private int f6766j = 0;
+    /* renamed from: k */
+    private C1343o f6767k = null;
 
     public enum CoverFrameStatus {
         NORMAL,
@@ -47,76 +63,77 @@ public class BookCoverView extends FrameLayout {
     public BookCoverView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         context.obtainStyledAttributes(attributeSet, new int[]{16842964}).recycle();
-        this.h = new PicView(context);
-        this.h.setPicStretch(PicStretch.SCALE_FILL);
-        this.i = new DkLabelView(context, null);
-        this.i.setTextSize(0, getResources().getDimension(d.general_font__shared__e));
-        this.i.setTextColor(-1);
-        this.i.setMaxLines(2);
-        this.i.setGravity(49);
-        this.i.setBackgroundColor(getResources().getColor(c.general__shared__book_cover_bg));
-        this.k = l.a(getContext()).a().a(new y(this));
+        this.f6764h = new PicView(context);
+        this.f6764h.setPicStretch(PicStretch.SCALE_FILL);
+        this.f6765i = new DkLabelView(context, null);
+        this.f6765i.setTextSize(0, getResources().getDimension(C0242d.general_font__shared__e));
+        this.f6765i.setTextColor(-1);
+        this.f6765i.setMaxLines(2);
+        this.f6765i.setGravity(49);
+        this.f6765i.setBackgroundColor(getResources().getColor(C0241c.general__shared__book_cover_bg));
+        this.f6767k = C1340l.m10931a(getContext()).m10935a().m10956a(new C1382y(this));
         LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
-        addView(this.h, layoutParams);
-        addView(this.i, layoutParams);
-        c();
+        addView(this.f6764h, layoutParams);
+        addView(this.f6765i, layoutParams);
+        m9918c();
         setWillNotDraw(false);
         setAddStatesFromChildren(true);
     }
 
     public void setBookName(String str) {
-        if (!TextUtils.equals(this.a, str)) {
-            this.a = str;
-            this.i.setText(this.a);
+        if (!TextUtils.equals(this.f6757a, str)) {
+            this.f6757a = str;
+            this.f6765i.setText(this.f6757a);
             requestLayout();
         }
     }
 
     public void setCoverStatusDrawable(Drawable drawable) {
-        this.g = drawable;
+        this.f6763g = drawable;
     }
 
     public void setCoverBackgroundResource(int i) {
-        this.h.setDefaultPic(i);
+        this.f6764h.setDefaultPic(i);
     }
 
     public void setCoverForegroundDrawable(Drawable drawable) {
         if (drawable != null) {
-            this.d = drawable;
+            this.f6760d = drawable;
             invalidate();
         }
     }
 
     public void setCoverUri(String str) {
-        if (!TextUtils.equals(this.b, str)) {
-            this.b = str;
-            this.i.setVisibility(8);
-            this.k.a(str).a(this.h.getDrawable());
+        if (!TextUtils.equals(this.f6758b, str)) {
+            this.f6758b = str;
+            this.f6765i.setVisibility(8);
+            this.f6767k.m10958a(str).m10960a(this.f6764h.getDrawable());
             requestLayout();
         }
     }
 
     public void setOnlineCoverUri(String str) {
-        if (!TextUtils.equals(this.c, str)) {
-            this.c = str;
-            this.i.setVisibility(8);
-            this.k.b(str).a(this.h.getDrawable());
+        if (!TextUtils.equals(this.f6759c, str)) {
+            this.f6759c = str;
+            this.f6765i.setVisibility(8);
+            this.f6767k.m10961b(str).m10960a(this.f6764h.getDrawable());
             requestLayout();
         }
     }
 
-    public void a() {
-        c();
+    /* renamed from: a */
+    public void m9919a() {
+        m9918c();
     }
 
-    public void setCover(com.duokan.reader.domain.bookshelf.c cVar) {
-        this.f = l.a(getContext()).a(cVar);
-        this.g = l.a(getContext()).b(cVar);
-        setBookName(cVar.aw());
-        c();
-        this.i.setBackgroundResource(l.a(getContext()).c(cVar));
-        setCoverBackgroundResource(e.general__book_cover_view__duokan_cover);
-        this.k.a(cVar).a(this.h.getDrawable());
+    public void setCover(C0800c c0800c) {
+        this.f6762f = C1340l.m10931a(getContext()).m10934a(c0800c);
+        this.f6763g = C1340l.m10931a(getContext()).m10937c(c0800c);
+        setBookName(c0800c.ay());
+        m9918c();
+        this.f6765i.setBackgroundResource(C1340l.m10931a(getContext()).m10938d(c0800c));
+        setCoverBackgroundResource(C0243e.general__book_cover_view__duokan_cover);
+        this.f6767k.m10955a(c0800c).m10960a(this.f6764h.getDrawable());
     }
 
     public void setCover(DkCloudNoteBookInfo dkCloudNoteBookInfo) {
@@ -124,9 +141,9 @@ public class BookCoverView extends FrameLayout {
             Object bookCoverUrl = dkCloudNoteBookInfo.getBookCoverUrl();
             if (TextUtils.isEmpty(bookCoverUrl)) {
                 setBookName(dkCloudNoteBookInfo.getTitle());
-                c();
-                this.i.setBackgroundResource(l.a(getContext()).a(dkCloudNoteBookInfo.getBookFormat()));
-                setCoverBackgroundResource(e.general__book_cover_view__duokan_cover);
+                m9918c();
+                this.f6765i.setBackgroundResource(C1340l.m10931a(getContext()).m10933a(dkCloudNoteBookInfo.getBookFormat()));
+                setCoverBackgroundResource(C0243e.general__book_cover_view__duokan_cover);
                 requestLayout();
                 return;
             }
@@ -135,46 +152,47 @@ public class BookCoverView extends FrameLayout {
     }
 
     public void setDefaultCoverTitleColor(int i) {
-        this.i.setTextColor(i);
+        this.f6765i.setTextColor(i);
     }
 
     public void setDefaultCoverTitleSize(float f) {
-        this.i.setTextSize(f);
+        this.f6765i.setTextSize(f);
     }
 
     public void setDefaultCover(int i) {
-        this.i.setBackgroundResource(i);
+        this.f6765i.setBackgroundResource(i);
     }
 
     public void setDefaultCoverColor(int i) {
-        this.i.setBackgroundColor(i);
+        this.f6765i.setBackgroundColor(i);
     }
 
-    public final boolean b() {
-        return this.h.a();
+    /* renamed from: b */
+    public final boolean m9920b() {
+        return this.f6764h.m10152a();
     }
 
     protected void drawableStateChanged() {
         super.drawableStateChanged();
-        this.d.setState(getDrawableState());
+        this.f6760d.setState(getDrawableState());
         invalidate();
     }
 
     public void draw(Canvas canvas) {
         super.draw(canvas);
-        if (this.f != null) {
-            Rect rect = new Rect(0, 0, this.f.getIntrinsicWidth(), this.f.getIntrinsicHeight());
+        if (this.f6762f != null) {
+            Rect rect = new Rect(0, 0, this.f6762f.getIntrinsicWidth(), this.f6762f.getIntrinsicHeight());
             canvas.save();
-            canvas.translate((float) ((this.h.getRight() - rect.width()) + 6), (float) (((long) this.h.getBottom()) - Math.round(1.5d * ((double) rect.height()))));
-            this.f.setBounds(rect);
-            this.f.draw(canvas);
+            canvas.translate((float) ((this.f6764h.getRight() - rect.width()) + 6), (float) (((long) this.f6764h.getBottom()) - Math.round(1.5d * ((double) rect.height()))));
+            this.f6762f.setBounds(rect);
+            this.f6762f.draw(canvas);
             canvas.restore();
         }
-        if (this.g != null) {
-            Rect rect2 = new Rect(this.h.getLeft(), this.h.getTop(), this.h.getRight(), this.h.getBottom());
+        if (this.f6763g != null) {
+            Rect rect2 = new Rect(this.f6764h.getLeft(), this.f6764h.getTop(), this.f6764h.getRight(), this.f6764h.getBottom());
             canvas.save();
-            int intrinsicWidth = this.g.getIntrinsicWidth();
-            int intrinsicHeight = this.g.getIntrinsicHeight();
+            int intrinsicWidth = this.f6763g.getIntrinsicWidth();
+            int intrinsicHeight = this.f6763g.getIntrinsicHeight();
             if (intrinsicWidth > getWidth() / 2 || intrinsicHeight > getHeight() / 2) {
                 intrinsicHeight = Math.min(getWidth() / 2, getHeight() / 2);
                 intrinsicWidth = intrinsicHeight;
@@ -182,23 +200,23 @@ public class BookCoverView extends FrameLayout {
             rect2.top--;
             rect2.left = (rect2.right - intrinsicWidth) + 1;
             rect2.bottom = intrinsicHeight + rect2.top;
-            this.g.setBounds(rect2);
-            this.g.draw(canvas);
+            this.f6763g.setBounds(rect2);
+            this.f6763g.draw(canvas);
             canvas.restore();
         }
-        if (this.j != 0) {
+        if (this.f6766j != 0) {
             canvas.save();
             canvas.clipRect(new Rect(getPaddingLeft(), getPaddingRight(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom()));
-            canvas.drawColor(this.j);
+            canvas.drawColor(this.f6766j);
             canvas.restore();
         }
-        if (this.d != null && isEnabled()) {
-            rect = new Rect(0, 0, this.h.getWidth(), this.h.getHeight());
+        if (this.f6760d != null && isEnabled()) {
+            rect = new Rect(0, 0, this.f6764h.getWidth(), this.f6764h.getHeight());
             canvas.save();
             canvas.translate((float) getPaddingLeft(), (float) getPaddingTop());
             canvas.clipRect(rect);
-            this.d.setBounds(rect);
-            this.d.draw(canvas);
+            this.f6760d.setBounds(rect);
+            this.f6760d.draw(canvas);
             canvas.restore();
         }
     }
@@ -207,27 +225,28 @@ public class BookCoverView extends FrameLayout {
         int mode = MeasureSpec.getMode(i);
         int size = MeasureSpec.getSize(i);
         if (mode == 0) {
-            size = getResources().getDimensionPixelSize(d.general__shared__cover_list_width);
+            size = getResources().getDimensionPixelSize(C0242d.general__shared__cover_list_width);
         }
         mode = Math.round(((float) size) * 1.3333334f);
         int i3 = (int) (((double) size) * 0.15d);
         int i4 = (int) (((double) mode) * 0.2d);
         int i5 = (int) (((double) size) * 0.15d);
-        if (!(this.i.getPaddingLeft() == i3 && this.i.getPaddingTop() == i4 && this.i.getPaddingRight() == i5 && this.i.getPaddingBottom() == 0)) {
-            this.i.setPadding(i3, i4, i5, 0);
+        if (!(this.f6765i.getPaddingLeft() == i3 && this.f6765i.getPaddingTop() == i4 && this.f6765i.getPaddingRight() == i5 && this.f6765i.getPaddingBottom() == 0)) {
+            this.f6765i.setPadding(i3, i4, i5, 0);
         }
         super.onMeasure(MeasureSpec.makeMeasureSpec(size, 1073741824), MeasureSpec.makeMeasureSpec(mode, 1073741824));
     }
 
-    private void c() {
-        if (this.e == null) {
+    /* renamed from: c */
+    private void m9918c() {
+        if (this.f6761e == null) {
             Drawable stateListDrawable = new StateListDrawable();
-            Drawable colorDrawable = new ColorDrawable(getContext().getResources().getColor(c.general__shared__00000066));
+            Drawable colorDrawable = new ColorDrawable(getContext().getResources().getColor(C0241c.general__shared__00000066));
             stateListDrawable.addState(new int[]{16842919}, colorDrawable);
             stateListDrawable.addState(new int[]{16842913}, colorDrawable);
             stateListDrawable.addState(new int[0], new ColorDrawable(0));
-            this.e = stateListDrawable;
+            this.f6761e = stateListDrawable;
         }
-        this.d = this.e;
+        this.f6760d = this.f6761e;
     }
 }

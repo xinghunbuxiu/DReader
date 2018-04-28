@@ -1,20 +1,23 @@
 package com.duokan.reader.ui.store;
 
-import com.duokan.reader.common.async.a.a;
+import com.duokan.reader.common.async.p035a.C0517a;
 import com.duokan.reader.domain.cloud.DkCloudPurchasedFiction;
 
-class af implements a {
-    final /* synthetic */ ae a;
+class af implements C0517a<DkCloudPurchasedFiction> {
+    /* renamed from: a */
+    final /* synthetic */ ae f11314a;
 
     af(ae aeVar) {
-        this.a = aeVar;
+        this.f11314a = aeVar;
     }
 
-    public void a(DkCloudPurchasedFiction dkCloudPurchasedFiction) {
-        this.a.b.c.a(this.a.b.a, this.a.b.b);
+    /* renamed from: a */
+    public void m15241a(DkCloudPurchasedFiction dkCloudPurchasedFiction) {
+        this.f11314a.f11312b.f11309c.mo1982a(this.f11314a.f11312b.f11307a, this.f11314a.f11312b.f11308b);
     }
 
-    public void a(int i, String str) {
-        this.a.b.c.a(this.a.b.a, this.a.b.b, null);
+    /* renamed from: a */
+    public void mo729a(int i, String str) {
+        this.f11314a.f11312b.f11309c.mo1983a(this.f11314a.f11312b.f11307a, this.f11314a.f11312b.f11308b, null);
     }
 }

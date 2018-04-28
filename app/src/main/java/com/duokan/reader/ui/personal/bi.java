@@ -1,27 +1,17 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.c.j;
-import com.duokan.reader.common.classc;
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.u;
-import com.duokan.reader.ui.general.be;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class bi implements u {
-    final /* synthetic */ bh a;
+class bi implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ bh f8327a;
 
     bi(bh bhVar) {
-        this.a = bhVar;
+        this.f8327a = bhVar;
     }
 
-    public void onQueryAccountOk(a aVar) {
-        if (classc.ConnectivityReceiver.b().e()) {
-            new am(this.a.a.getContext(), aVar, this.a.a).show();
-        } else {
-            be.a(this.a.a.getContext(), j.general__shared__network_error, 0).show();
-        }
-    }
-
-    public void onQueryAccountError(a aVar, String str) {
-        be.a(this.a.a.getContext(), j.personal__create_feedback_view__no_account, 0).show();
+    public void onClick(View view) {
+        this.f8327a.m11459a("");
     }
 }

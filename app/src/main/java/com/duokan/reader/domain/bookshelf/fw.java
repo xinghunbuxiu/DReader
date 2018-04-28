@@ -1,28 +1,40 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.af;
-
-import java.io.File;
-import java.io.FileFilter;
-import java.util.concurrent.ConcurrentHashMap;
+import com.duokan.core.sys.UThread;
+import com.duokan.core.sys.ag;
+import com.duokan.reader.domain.document.epub.av;
+import java.util.HashMap;
 
 class fw implements Runnable {
-    final /* synthetic */ af a;
-    final /* synthetic */ fv b;
+    /* renamed from: a */
+    final /* synthetic */ av f3205a;
+    /* renamed from: b */
+    final /* synthetic */ ag f3206b;
+    /* renamed from: c */
+    final /* synthetic */ fp f3207c;
 
-    fw(fv fvVar, af afVar) {
-        this.b = fvVar;
-        this.a = afVar;
+    fw(fp fpVar, av avVar, ag agVar) {
+        this.f3207c = fpVar;
+        this.f3205a = avVar;
+        this.f3206b = agVar;
     }
 
     public void run() {
-        if (this.b.L == this.a) {
-            Object concurrentHashMap = new ConcurrentHashMap();
-            for (File name : a.a(this.b.d(), new FileFilter[0])) {
-                String name2 = name.getName();
-                concurrentHashMap.put(name2, name2);
-            }
-            this.a.a(concurrentHashMap);
+        int i;
+        HashMap hashMap = new HashMap();
+        hashMap.put(this.f3205a, Integer.valueOf(-1));
+        int i2 = 1000;
+        try {
+            gt gtVar = (gt) this.f3205a;
+            i2 = gtVar.m4578b();
+            gtVar.m4579c();
+            i = i2;
+        } catch (InterruptedException e) {
+            i = -1;
+        } catch (Throwable th) {
+            i = i2;
         }
+        hashMap.put(this.f3205a, Integer.valueOf(i));
+        UThread.runOnThread(new fx(this, hashMap));
     }
 }

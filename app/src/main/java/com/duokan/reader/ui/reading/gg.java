@@ -1,28 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.PointF;
-import android.view.View;
+class gg implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ float f10235a;
+    /* renamed from: b */
+    final /* synthetic */ gf f10236b;
 
-import com.duokan.core.ui.er;
-import com.duokan.core.ui.i;
-
-class gg implements i {
-    final /* synthetic */ gf a;
-
-    gg(gf gfVar) {
-        this.a = gfVar;
+    gg(gf gfVar, float f) {
+        this.f10236b = gfVar;
+        this.f10235a = f;
     }
 
-    public void onTouchUp(View view, PointF pointF) {
-    }
-
-    public void onTouchDown(View view, PointF pointF) {
-    }
-
-    public void onTouchCancel(View view, PointF pointF) {
-    }
-
-    public void a(er erVar, View view, PointF pointF, int i) {
-        this.a.a.a(pointF);
+    public void run() {
+        this.f10236b.f10234f.setMinZoomFactor(this.f10235a);
     }
 }

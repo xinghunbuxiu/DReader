@@ -1,70 +1,60 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.c.j;
-import com.duokan.reader.domain.bookshelf.BookLimitType;
-import com.duokan.reader.domain.bookshelf.BookType;
-import com.duokan.reader.domain.bookshelf.an;
-import com.duokan.reader.domain.bookshelf.fv;
-import com.duokan.reader.domain.document.epub.ag;
-import com.duokan.reader.domain.document.epub.ap;
-import com.duokan.reader.domain.document.epub.s;
-import com.duokan.reader.domain.document.l;
+import com.duokan.reader.domain.audio.AudioPlayer;
+import com.duokan.reader.domain.audio.AudioPlayer.PlayerStatus;
+import com.duokan.reader.domain.audio.C0774e;
+import com.duokan.reader.domain.document.C0901g;
+import com.duokan.reader.domain.document.C0930b;
+import com.duokan.reader.domain.document.ak;
+import com.duokan.reader.domain.document.bb;
 
-class hn implements Runnable {
-    final /* synthetic */ int a;
-    final /* synthetic */ hj b;
+class hn implements C0774e {
+    /* renamed from: a */
+    final /* synthetic */ hm f10343a;
 
-    hn(hj hjVar, int i) {
-        this.b = hjVar;
-        this.a = i;
+    hn(hm hmVar) {
+        this.f10343a = hmVar;
     }
 
-    public void run() {
-        if (!this.b.a.q) {
-            s h = this.b.a.C();
-            BookType H = this.b.H();
-            BookLimitType I = this.b.I();
-            this.b.a.r = this.b.a.f.o();
-            this.b.a.s = this.b.a.f.p();
-            if (H == BookType.SERIAL) {
-                if (an.a(this.a, 2048) && ((fv) this.b.a.f).a(h.C())) {
-                    if (h.D() != ((long) ((fv) this.b.a.f).aZ())) {
-                        h.a(null);
-                        this.b.a(true);
-                    } else {
-                        this.b.j(true);
-                    }
-                }
-                if (an.a(this.a, 16)) {
-                    this.b.j(true);
-                }
-            } else if (H == BookType.NORMAL) {
-                if (I != this.b.a.s || (this.a & 128) == 128) {
-                    l lVar = (ap) this.b.a.f.b();
-                    if (h.F().equals(lVar)) {
-                        this.b.j(true);
-                        return;
-                    }
-                    if (this.b.a.f.Q() && !((fv) this.b.a.f).aX() && (h.F() instanceof ag) && !(lVar instanceof ag)) {
-                        com.duokan.reader.ui.general.ap apVar = new com.duokan.reader.ui.general.ap(this.b.a.getContext());
-                        apVar.setOkLabel(j.general__shared__iknow);
-                        apVar.setCancelOnBack(false);
-                        apVar.setCancelOnTouchOutside(false);
-                        apVar.setPrompt(j.reading__shared__timeout);
-                        apVar.show();
-                    }
-                    h.a(lVar);
-                    this.b.a(true);
-                }
-            } else if (H != BookType.TRIAL) {
+    /* renamed from: a */
+    public void mo2276a(PlayerStatus playerStatus) {
+        if (playerStatus == PlayerStatus.IDLE || playerStatus == PlayerStatus.PAUSE) {
+            this.f10343a.f10342a.c.setActiveColorText(null);
+            this.f10343a.f10342a.c.mo2040a(0, 16);
+            return;
+        }
+        this.f10343a.f10342a.c.mo2040a(16, 0);
+    }
+
+    /* renamed from: a */
+    public void mo2277a(bb bbVar) {
+        int i = 0;
+        this.f10343a.f10342a.c.mo2040a(16, 0);
+        this.f10343a.f10342a.c.setActiveColorText(bbVar);
+        ak Z = this.f10343a.f10342a.c.mo2009Z();
+        if (this.f10343a.f10342a.c.aT() || !(Z == null || Z.mo1189c() || this.f10343a.f10342a.f10331J == null || !Z.m5814b(this.f10343a.f10342a.f10331J))) {
+            i = 1;
+        }
+        if (i != 0) {
+            this.f10343a.f10342a.c.mo2131d(bbVar);
+        }
+        this.f10343a.f10342a.f10331J = bbVar;
+    }
+
+    /* renamed from: a */
+    public void mo2275a(int i) {
+        C0901g[] b = this.f10343a.f10342a.h.mo1240h().mo1268b();
+        int i2 = i + 1;
+        while (i2 < b.length) {
+            C0930b[] a = this.f10343a.f10342a.m14340d(i2);
+            if (a == null || a.length <= 0) {
+                i2++;
             } else {
-                if (this.b.a.r == BookType.NORMAL) {
-                    h.a(null);
-                    this.b.a(true);
-                } else if (an.a(this.a, 128)) {
-                    this.b.a(true);
-                }
+                AudioPlayer.m3613a().m3639a(a, Integer.valueOf(i2), this.f10343a.f10342a.m12849n().aH());
+                AudioPlayer.m3613a().m3638a(a[0].mo1443a(), new Integer[]{Integer.valueOf(i2)});
+                return;
             }
         }
+        this.f10343a.f10342a.f10331J = null;
     }
 }

@@ -1,24 +1,16 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.ui.general.ReaderUi;
 
-class ux implements OnClickListener {
-    final /* synthetic */ uq a;
+class ux implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ uw f11036a;
 
-    ux(uq uqVar) {
-        this.a = uqVar;
+    ux(uw uwVar) {
+        this.f11036a = uwVar;
     }
 
-    public void onClick(View view) {
-        boolean z = true;
-        boolean T = this.a.a.T();
-        this.a.a.a(1, 0);
-        sh a = this.a.a;
-        if (T) {
-            z = false;
-        }
-        a.d(z);
-        this.a.b();
+    public void run() {
+        ReaderUi.m10153a(this.f11036a.f11035a.getActivity(), this.f11036a.f11035a.f11020a.am() ? 1 : 11);
     }
 }

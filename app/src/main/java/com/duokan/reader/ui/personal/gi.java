@@ -1,18 +1,23 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.reader.ui.store.bv;
+import java.util.concurrent.Callable;
 
-import com.duokan.reader.domain.account.i;
+class gi implements Callable<ActivatedController> {
+    /* renamed from: a */
+    final /* synthetic */ gh f8610a;
 
-class gi implements OnClickListener {
-    final /* synthetic */ fl a;
-
-    gi(fl flVar) {
-        this.a = flVar;
+    gi(gh ghVar) {
+        this.f8610a = ghVar;
     }
 
-    public void onClick(View view) {
-        i.f().a(new gj(this));
+    public /* synthetic */ Object call() {
+        return m11932a();
+    }
+
+    /* renamed from: a */
+    public ActivatedController m11932a() {
+        return bv.m15353a(this.f8610a.f8609a.getContext());
     }
 }

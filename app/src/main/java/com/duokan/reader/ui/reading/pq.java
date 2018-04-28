@@ -1,16 +1,14 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+class pq implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ pp f10808a;
 
-class pq implements OnClickListener {
-    final /* synthetic */ po a;
-
-    pq(po poVar) {
-        this.a = poVar;
+    pq(pp ppVar) {
+        this.f10808a = ppVar;
     }
 
-    public void onClick(View view) {
-        this.a.a(new uq(this.a.getContext()));
+    public void run() {
+        this.f10808a.f10807b.f10804c.setThumbEnabled(true);
     }
 }

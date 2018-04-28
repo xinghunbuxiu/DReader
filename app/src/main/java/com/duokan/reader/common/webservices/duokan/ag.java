@@ -1,18 +1,26 @@
 package com.duokan.reader.common.webservices.duokan;
 
 import com.duokan.reader.domain.account.User;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class ag {
-    public User a = new User();
-    public int b = 0;
-    public int c = -1;
-    public int d = 0;
-    public String e = "";
-    public int f = 0;
-    public long g = 0;
-    public List h = new ArrayList();
-    public int i = 0;
+    /* renamed from: a */
+    public User f2108a = new User();
+    /* renamed from: b */
+    public int f2109b = 0;
+    /* renamed from: c */
+    public int f2110c = -1;
+    /* renamed from: d */
+    public int f2111d = 0;
+    /* renamed from: e */
+    public String f2112e = "";
+    /* renamed from: f */
+    public int f2113f = 0;
+    /* renamed from: g */
+    public long f2114g = 0;
+    /* renamed from: h */
+    public List<User> f2115h = new ArrayList();
+    /* renamed from: i */
+    public int f2116i = 0;
 }

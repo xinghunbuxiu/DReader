@@ -1,56 +1,25 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.account.ab;
+import java.util.List;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+class dm implements dw {
+    /* renamed from: a */
+    final /* synthetic */ dw f3035a;
+    /* renamed from: b */
+    final /* synthetic */ de f3036b;
 
-class dm extends ap {
-    final /* synthetic */ ab a;
-    final /* synthetic */ boolean b;
-    final /* synthetic */ ArrayList c;
-    final /* synthetic */ dh d;
-    private final ea e = new ea();
-
-    dm(dh dhVar, ab abVar, boolean z, ArrayList arrayList) {
-        this.d = dhVar;
-        this.a = abVar;
-        this.b = z;
-        this.c = arrayList;
+    dm(de deVar, dw dwVar) {
+        this.f3036b = deVar;
+        this.f3035a = dwVar;
     }
 
-    protected void onSessionTry() {
-        dd ddVar = new dd(this.a);
-        ddVar.a();
-        if (this.b) {
-            this.e.a(ddVar);
-            Collection arrayList = new ArrayList(this.c.size());
-            Iterator it = this.c.iterator();
-            while (it.hasNext()) {
-                dg dgVar = (dg) it.next();
-                int i = dgVar.a;
-                String str = dgVar.b;
-                long j = dgVar.g;
-                if (dgVar.d) {
-                    arrayList.add(this.d.a(this.e, i, str, j));
-                } else {
-                    arrayList = arrayList;
-                    arrayList.add(this.d.a(this.e, i, str, dgVar.c, j));
-                }
-            }
-            ddVar.updateItems(arrayList);
-            return;
-        }
-        ddVar.updateItems(this.c);
+    /* renamed from: a */
+    public void mo983a(List<dd> list) {
+        new dn(this, aq.f2771a, list, this.f3036b.f3011c).open();
     }
 
-    protected void onSessionSucceeded() {
-        if (this.a.a(this.d.c) && this.b) {
-            this.d.a(this.e);
-        }
-    }
-
-    protected void onSessionFailed() {
+    /* renamed from: a */
+    public void mo982a(String str) {
+        this.f3035a.mo982a(str);
     }
 }

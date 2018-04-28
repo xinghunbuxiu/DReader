@@ -3,9 +3,11 @@ package com.duokan.core.sys;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
-final class MyFuture<V> implements Future {
+final class MyFuture<T> implements Future {
+    MyFuture() {
+    }
 
-    public boolean cancel(boolean mayInterruptIfRunning) {
+    public boolean cancel(boolean z) {
         return false;
     }
 
@@ -17,11 +19,11 @@ final class MyFuture<V> implements Future {
         return true;
     }
 
-    public V get() {
+    public T get() {
         return null;
     }
 
-    public V get(long timeout, TimeUnit timeUnit) {
+    public T get(long timeout, TimeUnit timeUnit) {
         return null;
     }
 }

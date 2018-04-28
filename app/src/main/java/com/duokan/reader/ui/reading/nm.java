@@ -1,17 +1,29 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
 
-class nm implements OnClickListener {
-    final /* synthetic */ nk a;
+class nm implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ nh f10683a;
 
-    nm(nk nkVar) {
-        this.a = nkVar;
+    nm(nh nhVar) {
+        this.f10683a = nhVar;
     }
 
-    public void onClick(View view) {
-        ny nyVar = (ny) this.a.j.getAdapter();
-        this.a.c.a(nyVar.a, nyVar.c);
+    public void run() {
+        if (this.f10683a.f10673g) {
+            this.f10683a.f10672f.m2043a(true);
+            this.f10683a.f10669c.setVisibility(0);
+            this.f10683a.f10667a.mo2040a(0, 128);
+            if (this.f10683a.f10674h && this.f10683a.f10667a.mo1992G().ak() && this.f10683a.f10667a.mo1992G().mo1038k()) {
+                DkUserPurchasedFictionsManager.m5072a().m5105b(false, new nn(this));
+                return;
+            }
+            return;
+        }
+        this.f10683a.f10672f.m2043a(false);
+        this.f10683a.f10668b.setForeground(null);
+        this.f10683a.f10669c.setVisibility(4);
+        this.f10683a.f10667a.mo2040a(128, 0);
     }
 }

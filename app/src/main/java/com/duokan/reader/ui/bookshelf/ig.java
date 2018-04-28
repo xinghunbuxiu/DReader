@@ -1,25 +1,17 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.reader.common.webservices.duokan.p;
-import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.bookshelf.kp;
-import com.duokan.reader.ui.general.web.StorePageController;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class ig implements Runnable {
-    final /* synthetic */ ic a;
+class ig implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ie f6609a;
 
-    ig(ic icVar) {
-        this.a = icVar;
+    ig(ie ieVar) {
+        this.f6609a = ieVar;
     }
 
-    public void run() {
-        this.a.requestDetach();
-        kp.a().a(new ab(i.f().b(PersonalAccount.class)));
-        ActivatedController storePageController = new StorePageController(this.a.getContext());
-        storePageController.loadUrl(p.i().K());
-        this.a.s.showPopup(storePageController);
+    public void onClick(View view) {
+        this.f6609a.f6590b.m4923c();
     }
 }

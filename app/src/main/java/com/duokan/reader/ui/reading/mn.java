@@ -1,16 +1,19 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.PointF;
 import android.view.View;
 
-public interface mn {
-    PointF a(View view, int i);
+class mn implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ View f10629a;
+    /* renamed from: b */
+    final /* synthetic */ mm f10630b;
 
-    void a();
+    mn(mm mmVar, View view) {
+        this.f10630b = mmVar;
+        this.f10629a = view;
+    }
 
-    void a(int i);
-
-    void a(int i, float f, float f2, float f3);
-
-    void b();
+    public void run() {
+        this.f10629a.setVisibility(4);
+    }
 }

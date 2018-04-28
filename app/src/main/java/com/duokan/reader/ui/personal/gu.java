@@ -1,31 +1,22 @@
 package com.duokan.reader.ui.personal;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.view.View;
+import com.duokan.core.app.ActivatedController;
+import java.util.concurrent.Callable;
 
-import com.duokan.core.ui.UTools;
+class gu implements Callable<ActivatedController> {
+    /* renamed from: a */
+    final /* synthetic */ gs f8622a;
 
-class gu extends View {
-    final /* synthetic */ fl a;
-
-    gu(fl flVar, Context context) {
-        this.a = flVar;
-        super(context);
+    gu(gs gsVar) {
+        this.f8622a = gsVar;
     }
 
-    protected void onDraw(Canvas canvas) {
-        Rect rect = (Rect) UTools.g.getRect();
-        rect.set(0, 0, getMeasuredWidth(), this.a.z);
-        Paint paint = new Paint();
-        paint.setColor(0);
-        canvas.drawRect(rect, paint);
-        paint.setColor(-1);
-        rect.top = this.a.z;
-        rect.bottom = getMeasuredHeight();
-        canvas.drawRect(rect, paint);
-        UTools.g.getRect(rect);
+    public /* synthetic */ Object call() {
+        return m11939a();
+    }
+
+    /* renamed from: a */
+    public ActivatedController m11939a() {
+        return new mv(this.f8622a.f8620a.getContext());
     }
 }

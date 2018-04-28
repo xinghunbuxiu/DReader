@@ -1,16 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.sys.IdleHandlerListener;
+import com.duokan.reader.ui.general.ReaderUi;
 
-class yt implements OnClickListener {
-    final /* synthetic */ yr a;
+class yt implements IdleHandlerListener {
+    /* renamed from: a */
+    final /* synthetic */ yo f11217a;
 
-    yt(yr yrVar) {
-        this.a = yrVar;
+    yt(yo yoVar) {
+        this.f11217a = yoVar;
     }
 
-    public void onClick(View view) {
-        this.a.c();
+    public boolean idleRun() {
+        ReaderUi.m10162a(this.f11217a.getContext(), this.f11217a.f11203c);
+        return false;
     }
 }

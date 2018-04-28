@@ -1,14 +1,14 @@
 package com.duokan.reader.ui.reading;
 
 class aeq implements Runnable {
-    final /* synthetic */ aep a;
+    /* renamed from: a */
+    final /* synthetic */ adz f9592a;
 
-    aeq(aep com_duokan_reader_ui_reading_aep) {
-        this.a = com_duokan_reader_ui_reading_aep;
+    aeq(adz adz) {
+        this.f9592a = adz;
     }
 
     public void run() {
-        this.a.a.a.c("");
-        this.a.a.a();
+        this.f9592a.m13436i();
     }
 }

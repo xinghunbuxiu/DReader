@@ -1,30 +1,19 @@
 package com.duokan.reader.ui.personal;
 
-import android.text.TextUtils;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.domain.store.C1189o;
 
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.u;
-import com.duokan.reader.ui.general.be;
+class jn implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ jg f8786a;
 
-class jn implements u {
-    final /* synthetic */ jm a;
-
-    jn(jm jmVar) {
-        this.a = jmVar;
+    jn(jg jgVar) {
+        this.f8786a = jgVar;
     }
 
-    public void onQueryAccountOk(a aVar) {
-        try {
-            ((ReaderFeature) this.a.a.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new MiAccountProfileSettingsController(this.a.a.getContext()), null);
-        } catch (Throwable th) {
-            th.printStackTrace();
-        }
-    }
-
-    public void onQueryAccountError(a aVar, String str) {
-        if (!TextUtils.isEmpty(str)) {
-            be.a(this.a.a.getContext(), (CharSequence) str, 0).show();
-        }
+    public void onClick(View view) {
+        C1189o.m8727a().m8737a(!C1189o.m8727a().m8738b());
+        this.f8786a.m12047a();
     }
 }

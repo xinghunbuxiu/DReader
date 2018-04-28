@@ -1,39 +1,24 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.af;
-import com.duokan.core.app.ag;
-import com.duokan.core.sys.ah;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.UmengManager;
-import com.duokan.reader.domain.bookshelf.ej;
+import android.graphics.drawable.ColorDrawable;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
 
-class rc implements ag {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ qh b;
+class rc implements AnimationListener {
+    /* renamed from: a */
+    final /* synthetic */ qr f10885a;
 
-    rc(qh qhVar, Runnable runnable) {
-        this.b = qhVar;
-        this.a = runnable;
+    rc(qr qrVar) {
+        this.f10885a = qrVar;
     }
 
-    public void a(af afVar) {
-        UmengManager.get().onEvent("READING_ADD_BOOKA", "YES");
-        if (this.b.f.ai() && (this.b.f instanceof ej)) {
-            ej ejVar = (ej) this.b.f;
-            ejVar.a(new rd(this, ejVar));
-        } else if (this.b.f.R() && this.b.f.ao() == -1) {
-            ah.submitFuture(new rf(this));
-        }
+    public void onAnimationStart(Animation animation) {
     }
 
-    public void b(af afVar) {
-        ((ReaderFeature) this.b.getContext().queryFeature(ReaderFeature.class)).setQuitOnBack(true);
-        UmengManager.get().onEvent("READING_ADD_BOOKA", "NO");
-        this.a.run();
+    public void onAnimationRepeat(Animation animation) {
     }
 
-    public void c(af afVar) {
-        UmengManager.get().onEvent("READING_ADD_BOOKA", "NO");
-        this.a.run();
+    public void onAnimationEnd(Animation animation) {
+        this.f10885a.f9281e.getPagesFrameView().setForeground(new ColorDrawable(-16777216));
     }
 }

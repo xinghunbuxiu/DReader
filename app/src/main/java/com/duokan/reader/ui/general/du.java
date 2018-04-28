@@ -1,27 +1,17 @@
 package com.duokan.reader.ui.general;
 
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.TextView;
+class du implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ int f7124a;
+    /* renamed from: b */
+    final /* synthetic */ dr f7125b;
 
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.ui.surfing.af;
-
-class du implements OnClickListener {
-    final /* synthetic */ TextView a;
-    final /* synthetic */ ds b;
-
-    du(ds dsVar, TextView textView) {
-        this.b = dsVar;
-        this.a = textView;
+    du(dr drVar, int i) {
+        this.f7125b = drVar;
+        this.f7124a = i;
     }
 
-    public void onClick(View view) {
-        int a = this.b.a(this.a);
-        if (this.b.b != a) {
-            this.b.a(a);
-        } else {
-            ((af) MyContextWrapper.getFeature(this.b.getContext()).queryFeature(af.class)).k();
-        }
+    public void run() {
+        this.f7125b.f7114l.m9070b(this.f7124a);
     }
 }

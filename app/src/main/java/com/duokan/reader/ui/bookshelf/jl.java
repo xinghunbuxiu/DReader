@@ -1,23 +1,23 @@
 package com.duokan.reader.ui.bookshelf;
 
-import org.apache.http.entity.ContentProducer;
-import org.json.JSONObject;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+class jl implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ jj f6671a;
 
-class jl implements ContentProducer {
-    final /* synthetic */ JSONObject a;
-    final /* synthetic */ jh b;
-
-    jl(jh jhVar, JSONObject jSONObject) {
-        this.b = jhVar;
-        this.a = jSONObject;
+    jl(jj jjVar) {
+        this.f6671a = jjVar;
     }
 
-    public void writeTo(OutputStream outputStream) {
-        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "utf-8");
-        outputStreamWriter.write(this.a.toString());
-        outputStreamWriter.flush();
+    public void onClick(View view) {
+        if (this.f6671a.f6668e.mo1886g()) {
+            this.f6671a.f6668e.mo1883d();
+            this.f6671a.m9875c();
+            return;
+        }
+        this.f6671a.f6668e.mo1882c();
+        this.f6671a.m9875c();
     }
 }

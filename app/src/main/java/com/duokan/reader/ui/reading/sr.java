@@ -1,22 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.document.FootnoteStyle;
+import com.duokan.core.sys.IdleHandlerListener;
 
-/* synthetic */ class sr {
-    static final /* synthetic */ int[] a = new int[FootnoteStyle.values().length];
+class sr implements IdleHandlerListener {
+    /* renamed from: a */
+    final /* synthetic */ si f10953a;
 
-    static {
-        try {
-            a[FootnoteStyle.BUBBLE.ordinal()] = 1;
-        } catch (NoSuchFieldError e) {
-        }
-        try {
-            a[FootnoteStyle.PAPERTAPE.ordinal()] = 2;
-        } catch (NoSuchFieldError e2) {
-        }
-        try {
-            a[FootnoteStyle.NONE.ordinal()] = 3;
-        } catch (NoSuchFieldError e3) {
-        }
+    sr(si siVar) {
+        this.f10953a = siVar;
+    }
+
+    public boolean idleRun() {
+        this.f10953a.f9358c.m12779L();
+        return false;
     }
 }

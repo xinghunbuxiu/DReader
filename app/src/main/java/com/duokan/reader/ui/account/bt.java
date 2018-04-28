@@ -1,19 +1,11 @@
 package com.duokan.reader.ui.account;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.graphics.Bitmap;
 
-import com.duokan.reader.ui.general.ReaderUi;
+public interface bt {
+    /* renamed from: a */
+    void mo1572a();
 
-class bt implements OnClickListener {
-    final /* synthetic */ bs a;
-
-    bt(bs bsVar) {
-        this.a = bsVar;
-    }
-
-    public void onClick(View view) {
-        ReaderUi.a(this.a.getContext(), this.a.e.getReasonEditView());
-        this.a.c();
-    }
+    /* renamed from: a */
+    void mo1573a(Bitmap bitmap, boolean z);
 }

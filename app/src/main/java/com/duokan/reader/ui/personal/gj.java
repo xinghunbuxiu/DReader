@@ -1,29 +1,24 @@
 package com.duokan.reader.ui.personal;
 
-import android.text.TextUtils;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.domain.account.C0709k;
+import com.duokan.reader.domain.account.PersonalAccount;
 
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.u;
-import com.duokan.reader.ui.general.be;
+class gj implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ fz f8611a;
 
-class gj implements u {
-    final /* synthetic */ gi a;
-
-    gj(gi giVar) {
-        this.a = giVar;
+    gj(fz fzVar) {
+        this.f8611a = fzVar;
     }
 
-    public void onQueryAccountOk(a aVar) {
-        try {
-            ((ReaderFeature) this.a.a.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new MiAccountProfileSettingsController(this.a.a.getContext()), null);
-        } catch (Throwable th) {
-        }
-    }
-
-    public void onQueryAccountError(a aVar, String str) {
-        if (!TextUtils.isEmpty(str)) {
-            be.a(this.a.a.getContext(), (CharSequence) str, 0).show();
+    public void onClick(View view) {
+        this.f8611a.m11853a("reading_info");
+        if (((PersonalAccount) C0709k.m3476a().m3502b(PersonalAccount.class)).mo846q()) {
+            this.f8611a.m11869c(false, new gl(this));
+        } else {
+            this.f8611a.m11862b(false, new gk(this));
         }
     }
 }

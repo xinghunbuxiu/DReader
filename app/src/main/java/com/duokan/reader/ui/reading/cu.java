@@ -1,17 +1,15 @@
 package com.duokan.reader.ui.reading;
 
-do;
-
 class cu implements Runnable {
-    final /* synthetic */ ct a;
+    /* renamed from: a */
+    final /* synthetic */ ct f9964a;
 
     cu(ct ctVar) {
-        this.a = ctVar;
+        this.f9964a = ctVar;
     }
 
     public void run() {
-        this.a.a.c.setVisibility(4);
-        this.a.a.a.a(0, 2);
-        this.a.a.c.a(this.a.a.d, new do (0.0f));
+        this.f9964a.f9963c.f9949a.aR();
+        this.f9964a.f9963c.f9950b.m10018f();
     }
 }

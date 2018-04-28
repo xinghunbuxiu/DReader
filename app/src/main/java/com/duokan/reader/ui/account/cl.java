@@ -1,38 +1,43 @@
 package com.duokan.reader.ui.account;
 
 import android.graphics.Bitmap;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.domain.account.oauth.ThirdOAuth.UpdateHandler;
+import com.duokan.reader.ui.general.be;
 
-import com.duokan.c.j;
-import com.duokan.reader.common.webservices.d;
-import com.duokan.reader.common.webservices.duokan.r;
+class cl implements UpdateHandler {
+    /* renamed from: a */
+    final /* synthetic */ Bitmap f5928a;
+    /* renamed from: b */
+    final /* synthetic */ boolean f5929b;
+    /* renamed from: c */
+    final /* synthetic */ ck f5930c;
 
-class cl extends r {
-    Bitmap a = null;
-    final /* synthetic */ String b;
-    final /* synthetic */ cy c;
-    final /* synthetic */ ch d;
-
-    cl(ch chVar, String str, cy cyVar) {
-        this.d = chVar;
-        this.b = str;
-        this.c = cyVar;
+    cl(ck ckVar, Bitmap bitmap, boolean z) {
+        this.f5930c = ckVar;
+        this.f5928a = bitmap;
+        this.f5929b = z;
     }
 
-    protected void onSessionTry() {
-        this.a = new d(this).a(this.b);
-    }
-
-    protected void onSessionSucceeded() {
-        this.d.m = false;
-        if (this.a != null) {
-            this.c.a(this.a, true);
-        } else {
-            onSessionFailed();
+    public void onUpdateOk() {
+        this.f5930c.f5927b.f5900l.dismiss();
+        be.m10286a(this.f5930c.f5927b.getActivity(), C0258j.sina_send_sucess, 1).show();
+        this.f5930c.f5927b.dismiss();
+        this.f5930c.f5927b.m8953a(this.f5930c.f5927b.f5892d);
+        if (this.f5928a != null && !this.f5928a.isRecycled() && this.f5929b) {
+            this.f5928a.recycle();
         }
     }
 
-    protected void onSessionFailed() {
-        this.d.m = false;
-        this.c.a(this.d.getContext().getResources().getString(j.gen_bitmap_fail));
+    public void onUpdateError() {
+        this.f5930c.f5927b.f5900l.dismiss();
+        be.m10287a(this.f5930c.f5927b.getActivity(), this.f5930c.f5927b.getActivity().getString(C0258j.sina_send_failed), 1).show();
+        this.f5930c.f5927b.f5897i.setEnabled(true);
+        if (this.f5928a != null && !this.f5928a.isRecycled() && this.f5929b) {
+            this.f5928a.recycle();
+        }
+    }
+
+    public void onUpdateCancel() {
     }
 }

@@ -1,32 +1,24 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.domain.cloud.DkCloudRedeemFund;
-import com.duokan.reader.domain.cloud.gc;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.common.webservices.duokan.C0643q;
+import com.duokan.reader.domain.cloud.DkUserReadBookManager.ReadBook;
+import com.duokan.reader.ui.general.ja;
 
-import java.util.Arrays;
-import java.util.List;
+class ir implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ReadBook f8742a;
+    /* renamed from: b */
+    final /* synthetic */ ij f8743b;
 
-class ir implements gc {
-    final /* synthetic */ int a;
-    final /* synthetic */ List b;
-    final /* synthetic */ ip c;
-
-    ir(ip ipVar, int i, List list) {
-        this.c = ipVar;
-        this.a = i;
-        this.b = list;
+    ir(ij ijVar, ReadBook readBook) {
+        this.f8743b = ijVar;
+        this.f8742a = readBook;
     }
 
-    public void a(DkCloudRedeemFund[] dkCloudRedeemFundArr, boolean z) {
-        if (this.a == 0) {
-            this.b.clear();
-        }
-        Arrays.sort(dkCloudRedeemFundArr, new is(this));
-        this.b.addAll(Arrays.asList(dkCloudRedeemFundArr));
-        this.c.c.a(z);
-    }
-
-    public void a(String str) {
-        this.c.c.m();
+    public void onClick(View view) {
+        new is(this, C0643q.f2173a, ja.m10832a(this.f8743b.getContext(), "", this.f8743b.getString(C0258j.personal__readed_books_view__opening), true, true)).open();
     }
 }

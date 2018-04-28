@@ -8,14 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-
-import com.duokan.b.e;
-import com.duokan.b.g;
-import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.dv;
+import com.duokan.p023b.C0243e;
+import com.duokan.p023b.C0245g;
 
 public class LoadingCircleView extends FrameLayout {
-    private final ImageView a;
-    private LoadingStyle b;
+    /* renamed from: a */
+    private final ImageView f6875a;
+    /* renamed from: b */
+    private LoadingStyle f6876b;
 
     public enum LoadingStyle {
         NORMAL,
@@ -28,37 +29,37 @@ public class LoadingCircleView extends FrameLayout {
 
     public LoadingCircleView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.b = null;
-        this.a = (ImageView) LayoutInflater.from(getContext()).inflate(g.general__loading_circle_view, this, false);
-        addView(this.a);
+        this.f6876b = null;
+        this.f6875a = (ImageView) LayoutInflater.from(getContext()).inflate(C0245g.general__loading_circle_view, this, false);
+        addView(this.f6875a);
         setLoadingStyle(LoadingStyle.NORMAL);
     }
 
     public void setLoadingStyle(LoadingStyle loadingStyle) {
-        if (this.b == null || this.b != loadingStyle) {
+        if (this.f6876b == null || this.f6876b != loadingStyle) {
             Drawable drawable;
-            this.a.clearAnimation();
-            this.b = loadingStyle;
+            this.f6875a.clearAnimation();
+            this.f6876b = loadingStyle;
             if (loadingStyle == LoadingStyle.COMIC) {
-                this.a.setBackgroundDrawable(null);
-                drawable = (AnimationDrawable) getResources().getDrawable(e.general__shared__comic_loading);
+                this.f6875a.setBackgroundDrawable(null);
+                drawable = (AnimationDrawable) getResources().getDrawable(C0243e.general__shared__comic_loading);
             } else {
-                this.a.setBackgroundDrawable(getResources().getDrawable(e.general__shared__loading_circle_background));
-                AnimationDrawable animationDrawable = (AnimationDrawable) getResources().getDrawable(e.general__shared__loading_circle);
+                this.f6875a.setBackgroundDrawable(getResources().getDrawable(C0243e.general__shared__loading_circle_background));
+                AnimationDrawable drawable2 = (AnimationDrawable) getResources().getDrawable(C0243e.general__shared__loading_circle);
             }
-            this.a.setImageDrawable(drawable);
+            this.f6875a.setImageDrawable(drawable2);
         }
     }
 
     public LoadingStyle getLoadingStyle() {
-        return this.b;
+        return this.f6876b;
     }
 
     protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
-        if (this.a != null && (this.a.getDrawable() instanceof AnimationDrawable)) {
-            AnimationDrawable animationDrawable = (AnimationDrawable) this.a.getDrawable();
-            if (i == 0 && UTools.getVisible(view) == 0) {
+        if (this.f6875a != null && (this.f6875a.getDrawable() instanceof AnimationDrawable)) {
+            AnimationDrawable animationDrawable = (AnimationDrawable) this.f6875a.getDrawable();
+            if (i == 0 && dv.m1933b(view) == 0) {
                 animationDrawable.start();
             } else {
                 animationDrawable.stop();
@@ -68,8 +69,8 @@ public class LoadingCircleView extends FrameLayout {
 
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        if (this.a != null && (this.a.getDrawable() instanceof AnimationDrawable)) {
-            ((AnimationDrawable) this.a.getDrawable()).stop();
+        if (this.f6875a != null && (this.f6875a.getDrawable() instanceof AnimationDrawable)) {
+            ((AnimationDrawable) this.f6875a.getDrawable()).stop();
         }
     }
 }

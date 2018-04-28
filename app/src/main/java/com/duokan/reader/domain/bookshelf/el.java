@@ -1,19 +1,24 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.ag;
+import com.duokan.core.sys.UThread;
+import com.duokan.reader.domain.store.DkStoreFictionDetail;
 
 class el implements Runnable {
-    final /* synthetic */ ag a;
-    final /* synthetic */ Runnable b;
-    final /* synthetic */ ej c;
+    /* renamed from: a */
+    final /* synthetic */ DkStoreFictionDetail f3109a;
+    /* renamed from: b */
+    final /* synthetic */ ek f3110b;
 
-    el(ej ejVar, ag agVar, Runnable runnable) {
-        this.c = ejVar;
-        this.a = agVar;
-        this.b = runnable;
+    el(ek ekVar, DkStoreFictionDetail dkStoreFictionDetail) {
+        this.f3110b = ekVar;
+        this.f3109a = dkStoreFictionDetail;
     }
 
     public void run() {
-        this.c.aT().e().a(this.c.H(), false, false, -1, -1, -1, new em(this));
+        if (this.f3110b.f3108d.m4417b(this.f3109a)) {
+            UThread.runOnThread(this.f3110b.f3105a);
+        } else if (this.f3110b.f3106b != null) {
+            UThread.runOnThread(new em(this));
+        }
     }
 }

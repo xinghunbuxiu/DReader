@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.text.TextUtils;
-
 import com.duokan.reader.domain.account.oauth.evernote.EvernoteTokenDao;
 
 public class TokenStore {
@@ -33,7 +32,7 @@ public class TokenStore {
     }
 
     public boolean canAccessTokenSyncToCloud(String str) {
-        return str.equals("sina");
+        return str.equals("weibo");
     }
 
     public void bindAccessToken(Context context, String str, String str2, String str3, String str4, String str5, String str6, OnAccessTokenBindListener onAccessTokenBindListener) {

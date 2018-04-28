@@ -1,19 +1,27 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.as;
+import android.provider.Settings.Secure;
+import com.duokan.reader.DkApp;
+import java.util.concurrent.Callable;
 
-import org.json.JSONObject;
+class du implements Callable<Boolean> {
+    /* renamed from: a */
+    final /* synthetic */ ci f7747a;
 
-class du implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
-
-    du(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    du(ci ciVar) {
+        this.f7747a = ciVar;
     }
 
-    public void a() {
-        this.b.a(new dv(this, new JSONObject(this.a).getString("msgid")));
+    public /* synthetic */ Object call() {
+        return m11092a();
+    }
+
+    /* renamed from: a */
+    public Boolean m11092a() {
+        boolean z = true;
+        if (Secure.getInt(DkApp.get().getContentResolver(), "accessibility_enabled") != 1) {
+            z = false;
+        }
+        return Boolean.valueOf(z);
     }
 }

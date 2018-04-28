@@ -1,26 +1,22 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.ah;
-import com.duokan.reader.domain.store.DkStoreFictionDetail;
-import com.duokan.reader.domain.store.DkStoreItem;
-import com.duokan.reader.domain.store.h;
+import com.duokan.core.sys.ag;
+import org.json.JSONObject;
 
-class gk implements h {
-    final /* synthetic */ String a;
-    final /* synthetic */ String b;
-    final /* synthetic */ gj c;
+class gk implements ag<JSONObject> {
+    /* renamed from: a */
+    final /* synthetic */ gj f7890a;
 
-    gk(gj gjVar, String str, String str2) {
-        this.c = gjVar;
-        this.a = str;
-        this.b = str2;
+    gk(gj gjVar) {
+        this.f7890a = gjVar;
     }
 
-    public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
-        ah.submitFuture(new gl(this, (DkStoreFictionDetail) dkStoreItem));
+    public /* synthetic */ void run(Object obj) {
+        m11150a((JSONObject) obj);
     }
 
-    public void onFetchBookDetailError(String str) {
-        this.c.b.pageController.web_notifyWeb(this.b, 2, new Object[0]);
+    /* renamed from: a */
+    public void m11150a(JSONObject jSONObject) {
+        this.f7890a.f7889b.f7581b.triggerEventOnCurrentUrl("feedCommit", jSONObject);
     }
 }

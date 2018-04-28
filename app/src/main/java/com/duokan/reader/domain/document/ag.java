@@ -1,13 +1,18 @@
 package com.duokan.reader.domain.document;
 
 public abstract class ag {
-    public abstract String a();
+    /* renamed from: a */
+    public abstract String mo1401a();
 
-    public abstract int b();
+    /* renamed from: b */
+    public abstract int mo1402b();
 
-    public abstract int c();
+    /* renamed from: c */
+    public abstract int mo1403c();
 
-    public abstract String d();
+    /* renamed from: d */
+    public abstract String mo1404d();
 
-    public abstract String e();
+    /* renamed from: e */
+    public abstract String mo1405e();
 }

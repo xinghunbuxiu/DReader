@@ -1,26 +1,29 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.u;
+public class fs extends fr {
+    /* renamed from: a */
+    final /* synthetic */ fl f4013a;
 
-class fs implements u {
-    final /* synthetic */ DkCloudRedeemFund a;
-    final /* synthetic */ String b;
-    final /* synthetic */ ge c;
-    final /* synthetic */ fp d;
-
-    fs(fp fpVar, DkCloudRedeemFund dkCloudRedeemFund, String str, ge geVar) {
-        this.d = fpVar;
-        this.a = dkCloudRedeemFund;
-        this.b = str;
-        this.c = geVar;
+    public fs(fl flVar) {
+        this.f4013a = flVar;
+        super(flVar);
     }
 
-    public void onQueryAccountOk(a aVar) {
-        new ft(this, aVar, aVar.b()).open();
+    /* renamed from: a */
+    void mo1167a(fl flVar, int i) {
+        if (i < 1) {
+            flVar.m5557a(new fp(this.f4013a));
+        } else {
+            flVar.m5557a(new fo(this.f4013a));
+        }
     }
 
-    public void onQueryAccountError(a aVar, String str) {
-        this.c.a(str);
+    /* renamed from: a */
+    void mo1166a(fl flVar) {
+        flVar.m5557a(new fp(this.f4013a));
+    }
+
+    public boolean equals(Object obj) {
+        return obj instanceof fs;
     }
 }

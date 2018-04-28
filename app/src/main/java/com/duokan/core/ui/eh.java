@@ -1,26 +1,29 @@
 package com.duokan.core.ui;
 
 import android.graphics.Paint;
+import com.duokan.core.sys.BaseAnimation;
 
-import com.duokan.core.sys.ap;
-
-final class eh extends ap {
+final class eh extends BaseAnimation<Paint> {
     eh() {
     }
 
-    protected Object b() {
-        return c();
+    /* renamed from: b */
+    protected /* synthetic */ Object createAnimation() {
+        return m1996c();
     }
 
-    protected  void b(Object obj) {
-        a((Paint) obj);
+    /* renamed from: b */
+    protected /* synthetic */ void mo516b(Object obj) {
+        m1993a((Paint) obj);
     }
 
-    protected Paint c() {
+    /* renamed from: c */
+    protected Paint m1996c() {
         return new Paint();
     }
 
-    protected void a(Paint paint) {
+    /* renamed from: a */
+    protected void m1993a(Paint paint) {
         paint.reset();
     }
 }

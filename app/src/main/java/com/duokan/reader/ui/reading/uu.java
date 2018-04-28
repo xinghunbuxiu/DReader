@@ -2,19 +2,18 @@ package com.duokan.reader.ui.reading;
 
 import android.view.View;
 import android.view.View.OnClickListener;
+import com.duokan.reader.UmengManager;
 
 class uu implements OnClickListener {
-    final /* synthetic */ int a;
-    final /* synthetic */ uq b;
+    /* renamed from: a */
+    final /* synthetic */ uq f11033a;
 
-    uu(uq uqVar, int i) {
-        this.b = uqVar;
-        this.a = i;
+    uu(uq uqVar) {
+        this.f11033a = uqVar;
     }
 
     public void onClick(View view) {
-        this.b.a.a(1, 0);
-        this.b.a.a(this.b.e[this.a]);
-        this.b.b();
+        UmengManager.get().onEvent("V2_READING_TOP_TOOLBUTTON", "Bookmark");
+        this.f11033a.m13847a(new uv(this));
     }
 }

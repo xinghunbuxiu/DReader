@@ -14,8 +14,8 @@ public class StatStartReadFromDetail extends StatEventBase {
         try {
             jSONObject.put("ev", this.event);
             jSONObject.put("bi", this.bookId);
-            jSONObject.put("TaskHandler", this.bookType);
-            jSONObject.put("onActivityResult", this.result);
+            jSONObject.put("t", this.bookType);
+            jSONObject.put("r", this.result);
             jSONObject.put("tr", this.track);
             jSONObject.put("ts", this.timeStamp);
         } catch (Exception e) {

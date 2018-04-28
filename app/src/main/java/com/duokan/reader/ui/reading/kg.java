@@ -1,49 +1,26 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+class kg extends Thread {
+    /* renamed from: a */
+    final /* synthetic */ GifFrameLoader f10497a;
 
-import com.duokan.c.e;
-import com.duokan.c.f;
-import com.duokan.c.j;
-import com.duokan.core.ui.UTools;
-
-class kg extends Drawable {
-    final /* synthetic */ kd a;
-
-    kg(kd kdVar) {
-        this.a = kdVar;
+    private kg(GifFrameLoader gifFrameLoader) {
+        this.f10497a = gifFrameLoader;
     }
 
-    public void draw(Canvas canvas) {
-        Paint paint = (Paint) UTools.b.getRect();
-        Rect rect = (Rect) UTools.g.getRect();
-        Rect rect2 = (Rect) UTools.g.getRect();
-        rect.set(this.a.d.getLeft() + this.a.d.getPaddingLeft(), this.a.d.getTop(), this.a.d.getRight() - this.a.d.getPaddingRight(), this.a.d.getBottom());
-        rect2.set(rect);
-        rect2.offset(0, -UTools.getMinimumHeight(this.a.getContext(), 10.0f));
-        UTools.addAnimation(canvas, this.a.getResources().getDrawable(f.guide__shared__finger_01), rect2, 85);
-        rect2.set(rect);
-        rect2.inset(-UTools.getMinimumHeight(this.a.getContext(), 30.0f), 0);
-        paint.setColor(-1);
-        paint.setSubpixelText(true);
-        paint.setTextSize((float) this.a.getResources().getDimensionPixelSize(e.general_font__shared__d));
-        UTools.addAnimation(canvas, this.a.getString(j.reading__hang_ad_view__help), rect2, 81, paint);
-        UTools.g.getRect(rect2);
-        UTools.g.getRect(rect);
-        UTools.b.getRect(paint);
-    }
-
-    public void setAlpha(int i) {
-    }
-
-    public void setColorFilter(ColorFilter colorFilter) {
-    }
-
-    public int getOpacity() {
-        return 0;
+    public void run() {
+        while (this.f10497a.f9096a) {
+            this.f10497a.f9097c.acquireUninterruptibly();
+            synchronized (this.f10497a) {
+                for (int i = 0; i < this.f10497a.f9098d.size(); i++) {
+                    kf kfVar = (kf) this.f10497a.f9098d.get(i);
+                    if (kfVar.f10495d == FrameStatus.MARKED && kfVar.f10494c.mo1395j()) {
+                        kfVar.f10493b.eraseColor(0);
+                        kfVar.f10494c.mo1400a(kfVar.f10492a, kfVar.f10493b);
+                        kfVar.f10495d = FrameStatus.READY;
+                    }
+                }
+            }
+        }
     }
 }

@@ -1,19 +1,21 @@
 package com.duokan.reader.ui.general;
 
-import android.view.View;
+import com.duokan.core.app.C0301c;
+import com.duokan.core.app.OnCancelListener;
+import com.duokan.reader.common.C0613k;
 
-final class hk implements eg {
-    final /* synthetic */ DkWebListView a;
+class hk implements OnCancelListener {
+    /* renamed from: a */
+    final /* synthetic */ C0613k f7338a;
+    /* renamed from: b */
+    final /* synthetic */ hh f7339b;
 
-    hk(DkWebListView dkWebListView) {
-        this.a = dkWebListView;
+    hk(hh hhVar, C0613k c0613k) {
+        this.f7339b = hhVar;
+        this.f7338a = c0613k;
     }
 
-    public View a(int i) {
-        return this.a.a(i);
-    }
-
-    public int a() {
-        return this.a.getItemCount();
+    public void onCancel(C0301c c0301c) {
+        this.f7338a.m2796a(Boolean.valueOf(true));
     }
 }

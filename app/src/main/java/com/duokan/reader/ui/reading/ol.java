@@ -1,131 +1,36 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.Color;
+import android.graphics.PorterDuff.Mode;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import com.duokan.p024c.C0255g;
+import com.duokan.p024c.C0256h;
 
-import com.duokan.reader.domain.bookshelf.hh;
-import com.duokan.reader.domain.document.Document_a;
-import com.duokan.reader.domain.document.ak;
-import com.duokan.reader.ui.general.FixedPagesView.PageScaleType;
+class ol extends oi {
+    /* renamed from: e */
+    final /* synthetic */ nu f10744e;
 
-class ol extends rx {
-    final /* synthetic */ ok a;
-    private boolean d = true;
-
-    public ol(ok okVar) {
-        this.a = okVar;
-        super(okVar);
-        this.d = okVar.f.D().b().a();
+    private ol(nu nuVar) {
+        this.f10744e = nuVar;
+        super(nuVar);
     }
 
-    public int j_() {
-        if (g()) {
-            return -16777216;
-        }
-        return 0;
+    /* renamed from: d */
+    public void mo1691d() {
+        this.f10744e.m14779f();
+        super.mo1691d();
     }
 
-    public void b(boolean z) {
-        if (this.d != z) {
-            Document_a Z = Z();
-            this.a.B().getShowingDocPresenter().a(null, null);
-            this.d = z;
-            if (this.d) {
-                this.a.B().c();
-            } else {
-                this.a.B().b();
-            }
-            this.a.a(this.a.f(), this.a.k());
-            if (this.a.B().getShowingDocPresenter().getDocument() == null) {
-                this.a.B().getShowingDocPresenter().a(this.a.h, Z);
-                this.a.B().getShowingDocPresenter().setAnnotations(this.a.f.aq());
-            } else {
-                c((ak) Z);
-            }
-            this.a.f.D().b().a(z);
-            this.a.z();
-        }
-    }
-
-    public boolean g() {
-        return this.d;
-    }
-
-    public hh b() {
-        ov ovVar = (ov) this.a.e;
-        hh b = G().D().b();
-        b.a(ovVar.getZoomFactor());
-        if (g()) {
-            Rect currentPageVisiableRect = ovVar.getCurrentPageVisiableRect();
-            b.a((float) currentPageVisiableRect.left, (float) currentPageVisiableRect.top);
-        }
-        return b;
-    }
-
-    public void a(RectF[] rectFArr) {
-        this.a.f.D().b().a(rectFArr);
-        this.a.B().setPageContentMargins(this.a.C());
-        this.a.a(this.a.f(), null);
-        aN();
-    }
-
-    public void a(PageScaleType pageScaleType) {
-        this.a.f.D().b().a(pageScaleType);
-        this.a.B().setPageScaleType(pageScaleType);
-        aN();
-    }
-
-    public boolean h_() {
-        return false;
-    }
-
-    public boolean d() {
-        return false;
-    }
-
-    public boolean k_() {
-        hh b = G().D().b();
-        int b2 = b.b();
-        int a = this.a.d.a(b2);
-        if (a <= b2) {
-            return false;
-        }
-        b.a(a);
-        this.a.a(this.a.f(), null);
-        aN();
-        return true;
-    }
-
-    public boolean l() {
-        hh b = G().D().b();
-        int b2 = b.b();
-        int b3 = this.a.d.b(b2);
-        if (b3 >= b2) {
-            return false;
-        }
-        b.a(b3);
-        this.a.a(this.a.f(), null);
-        aN();
-        return true;
-    }
-
-    public boolean m() {
-        int b = G().D().b().b();
-        if (this.a.d.a(b) <= b) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean n() {
-        int b = G().D().b().b();
-        if (this.a.d.b(b) >= b) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean o() {
-        return false;
+    /* renamed from: a */
+    public View mo482a(View view, ViewGroup viewGroup) {
+        View inflate = LayoutInflater.from(this.f10744e.getContext()).inflate(C0256h.reading__comment_empty_view, viewGroup, false);
+        ((ImageView) inflate.findViewById(C0255g.reading__comment_empty_view__icon)).setColorFilter(Color.argb((int) Math.round(25.5d), Color.red(this.f10744e.f10719u), Color.green(this.f10744e.f10719u), Color.blue(this.f10744e.f10719u)), Mode.SRC_IN);
+        ((TextView) inflate.findViewById(C0255g.reading__comment_empty_view__no_comment)).setTextColor(Color.argb((int) Math.round(102.0d), Color.red(this.f10744e.f10719u), Color.green(this.f10744e.f10719u), Color.blue(this.f10744e.f10719u)));
+        ((TextView) inflate.findViewById(C0255g.reading__comment_empty_view__hint)).setTextColor(Color.argb((int) Math.round(102.0d), Color.red(this.f10744e.f10719u), Color.green(this.f10744e.f10719u), Color.blue(this.f10744e.f10719u)));
+        return inflate;
     }
 }

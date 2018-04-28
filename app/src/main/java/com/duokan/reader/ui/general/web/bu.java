@@ -1,44 +1,41 @@
 package com.duokan.reader.ui.general.web;
 
-import android.content.SharedPreferences.Editor;
+import com.duokan.reader.domain.bookshelf.BookState;
 
-import com.duokan.reader.domain.cloud.PersonalPrefs;
-import com.duokan.reader.domain.payment.PaymentResult;
-import com.duokan.reader.domain.payment.s;
-import com.duokan.reader.domain.store.DkStoreCallback;
-import com.mipay.sdk.Mipay;
+/* synthetic */ class bu {
+    /* renamed from: a */
+    static final /* synthetic */ int[] f7648a = new int[TabState.values().length];
+    /* renamed from: b */
+    static final /* synthetic */ int[] f7649b = new int[BookState.values().length];
 
-class bu implements DkStoreCallback {
-    final /* synthetic */ bt a;
-
-    bu(bt btVar) {
-        this.a = btVar;
-    }
-
-    public void a(s sVar, PaymentResult paymentResult) {
-        if (paymentResult == PaymentResult.VERIFIED_OK) {
-            this.a.a.e.web_notifyWeb(this.a.a.d, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
-        } else {
-            this.a.a.e.web_notifyWeb(this.a.a.d, 0, Mipay.KEY_RESULT, Integer.valueOf(12));
+    static {
+        try {
+            f7649b[BookState.UPDATING.ordinal()] = 1;
+        } catch (NoSuchFieldError e) {
         }
-        a(true, true);
-    }
-
-    public void a(s sVar, String str) {
-        this.a.a.e.web_notifyWeb(this.a.a.d, 2, Mipay.KEY_RESULT, Integer.valueOf(11));
-        a(true, false);
-    }
-
-    public void a(s sVar, String str, AbortPayErrorCode abortPayErrorCode) {
-        this.a.a.e.web_notifyWeb(this.a.a.d, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str);
-        a(true, false);
-    }
-
-    private void a(boolean z, boolean z2) {
-        if (z) {
-            Editor edit = PersonalPrefs.a().t().edit();
-            edit.remove(StorePageController.PAY_CONTINUE);
-            edit.apply();
+        try {
+            f7649b[BookState.PULLING.ordinal()] = 2;
+        } catch (NoSuchFieldError e2) {
+        }
+        try {
+            f7649b[BookState.CLOUD_ONLY.ordinal()] = 3;
+        } catch (NoSuchFieldError e3) {
+        }
+        try {
+            f7649b[BookState.NORMAL.ordinal()] = 4;
+        } catch (NoSuchFieldError e4) {
+        }
+        try {
+            f7648a[TabState.OVER_SURFING_BAR_HEAD.ordinal()] = 1;
+        } catch (NoSuchFieldError e5) {
+        }
+        try {
+            f7648a[TabState.OVER_HALF_SURFING_BAR.ordinal()] = 2;
+        } catch (NoSuchFieldError e6) {
+        }
+        try {
+            f7648a[TabState.OVER_SURFING_BAR.ordinal()] = 3;
+        } catch (NoSuchFieldError e7) {
         }
     }
 }

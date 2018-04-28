@@ -1,15 +1,16 @@
 package com.duokan.reader.ui.store;
 
 class bu implements Runnable {
-    final /* synthetic */ br a;
+    /* renamed from: a */
+    final /* synthetic */ br f11386a;
 
     bu(br brVar) {
-        this.a = brVar;
+        this.f11386a = brVar;
     }
 
     public void run() {
-        if (this.a.c() < 0 && this.a.b.size() > 0) {
-            this.a.a(0, false);
+        if (this.f11386a.m15338c() < 0 && this.f11386a.f11381b.size() > 0) {
+            this.f11386a.m15333a(0, false);
         }
     }
 }

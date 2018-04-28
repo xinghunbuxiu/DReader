@@ -1,32 +1,14 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.c.f;
-import com.duokan.common.FileTypeRecognizer.FileType;
+class gn implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ gm f6523a;
 
-public class gn {
-    public static int a(FileType fileType) {
-        switch (go.a[fileType.ordinal()]) {
-            case 1:
-                return f.general__shared__epub_icon;
-            case 2:
-                return f.general__shared__txt_icon;
-            case 3:
-                return f.general__shared__pdf_icon;
-            default:
-                return f.general__shared__unsupported_book_icon;
-        }
+    gn(gm gmVar) {
+        this.f6523a = gmVar;
     }
 
-    public static int b(FileType fileType) {
-        switch (go.a[fileType.ordinal()]) {
-            case 1:
-                return f.general__shared__cover_epub;
-            case 2:
-                return f.general__shared__cover_txt;
-            case 3:
-                return f.general__shared__cover_pdf;
-            default:
-                return f.general__shared__unsupported_book_icon;
-        }
+    public void run() {
+        this.f6523a.mo434a(this.f6523a.getContentWidth() - this.f6523a.getWidth(), 0, 0, null, null);
     }
 }

@@ -1,15 +1,16 @@
 package com.duokan.reader.domain.document.sbk;
 
 class ad implements Runnable {
-    final /* synthetic */ y a;
+    /* renamed from: a */
+    final /* synthetic */ C0983y f4775a;
 
-    ad(y yVar) {
-        this.a = yVar;
+    ad(C0983y c0983y) {
+        this.f4775a = c0983y;
     }
 
     public void run() {
-        this.a.k = true;
-        this.a.e();
-        this.a.invalidateSelf();
+        this.f4775a.f4861k = true;
+        this.f4775a.m7295e();
+        this.f4775a.invalidateSelf();
     }
 }

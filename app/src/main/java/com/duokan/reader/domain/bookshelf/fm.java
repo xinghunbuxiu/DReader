@@ -1,7 +1,14 @@
 package com.duokan.reader.domain.bookshelf;
 
-import org.json.JSONObject;
+import java.util.List;
 
-interface fm {
-    JSONObject a(bu buVar);
+public class fm {
+    /* renamed from: a */
+    public int f3176a;
+    /* renamed from: b */
+    public List<bt> f3177b;
+    /* renamed from: c */
+    public boolean f3178c;
+    /* renamed from: d */
+    public long f3179d;
 }

@@ -1,37 +1,19 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
-import android.graphics.Point;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.UmengManager;
 
-public class pb extends fy {
-    final /* synthetic */ ow b;
+class pb implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ox f10772a;
 
-    public pb(ow owVar, Context context) {
-        this.b = owVar;
-        super(context);
+    pb(ox oxVar) {
+        this.f10772a = oxVar;
     }
 
-    public void g() {
-        b(true);
-        this.b.b.a();
-    }
-
-    public void f() {
-        super.f();
-        this.b.b.b();
-        this.b.k();
-    }
-
-    public void e() {
-        super.e();
-        this.b.l();
-    }
-
-    protected float getContentStaticScale() {
-        return ((float) this.b.a.e()) / ((float) this.b.a.l().width());
-    }
-
-    protected Point getContentStaticCenter() {
-        return new Point(this.b.a.l().centerX(), this.b.a.l().centerY());
+    public void onClick(View view) {
+        UmengManager.get().onEvent("V2_READING_MENU", "PDF-Crop");
+        this.f10772a.m13598a(new pc(this));
     }
 }

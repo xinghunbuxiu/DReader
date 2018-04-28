@@ -1,22 +1,21 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.PointF;
+import com.duokan.core.app.AppContext;
+import com.duokan.reader.ReaderFeature;
 
 class abb implements Runnable {
-    final /* synthetic */ PointF a;
-    final /* synthetic */ Runnable b;
-    final /* synthetic */ Runnable c;
-    final /* synthetic */ aar d;
+    /* renamed from: a */
+    final /* synthetic */ aaw f9376a;
 
-    abb(aar com_duokan_reader_ui_reading_aar, PointF pointF, Runnable runnable, Runnable runnable2) {
-        this.d = com_duokan_reader_ui_reading_aar;
-        this.a = pointF;
-        this.b = runnable;
-        this.c = runnable2;
+    abb(aaw aaw) {
+        this.f9376a = aaw;
     }
 
     public void run() {
-        this.d.d.pageUpSmoothly(this.a, this.b, this.c);
-        this.d.i = null;
+        if (this.f9376a.f9363d.f.mo1038k()) {
+            this.f9376a.f9363d.m12867H();
+        } else if (!this.f9376a.f9363d.f.m4170W()) {
+            ((ReaderFeature) AppContext.getAppContext(this.f9376a.f9363d.getContext()).queryFeature(ReaderFeature.class)).downloadBooks(this.f9376a.f9363d.f);
+        }
     }
 }

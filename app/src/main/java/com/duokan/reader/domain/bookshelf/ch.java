@@ -1,39 +1,33 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.account.ab;
+import android.util.Pair;
+import java.util.ArrayList;
+import java.util.Collection;
 
-class ch extends ap {
-    final /* synthetic */ ab a;
-    final /* synthetic */ cw b;
-    final /* synthetic */ bv c;
-    private final cs d = new cs();
+class ch implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ Collection f2955a;
+    /* renamed from: b */
+    final /* synthetic */ String f2956b;
+    /* renamed from: c */
+    final /* synthetic */ bu f2957c;
 
-    ch(bv bvVar, ab abVar, cw cwVar) {
-        this.c = bvVar;
-        this.a = abVar;
-        this.b = cwVar;
+    ch(bu buVar, Collection collection, String str) {
+        this.f2957c = buVar;
+        this.f2955a = collection;
+        this.f2956b = str;
     }
 
-    protected void onSessionTry() {
-        br brVar = new br(this.a);
-        brVar.a();
-        this.d.a(brVar);
-    }
-
-    protected void onSessionSucceeded() {
-        if (this.a.a(this.c.c)) {
-            this.c.a(this.d);
-            if (this.b != null) {
-                this.b.a();
+    public void run() {
+        if (this.f2957c.f2868c.m3367c()) {
+            Collection arrayList = new ArrayList(this.f2955a.size());
+            for (Pair pair : this.f2955a) {
+                int intValue = ((Integer) pair.first).intValue();
+                if (intValue != -1) {
+                    arrayList.add(this.f2957c.m4094b(this.f2957c.f2869d, intValue, (String) pair.second, this.f2956b, System.currentTimeMillis()));
+                }
             }
-        } else if (this.b != null) {
-            this.b.b();
-        }
-    }
-
-    protected void onSessionFailed() {
-        if (this.b != null) {
-            this.b.b();
+            this.f2957c.m4090a(arrayList);
         }
     }
 }

@@ -1,21 +1,23 @@
 package com.duokan.reader.ui.general;
 
-import com.duokan.reader.domain.store.DkStoreBookDetail;
-import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
-import com.duokan.reader.ui.store.o;
+import com.duokan.core.ui.Scrollable;
+import com.duokan.core.ui.Scrollable.ScrollState;
+import com.duokan.core.ui.cg;
 
-class hx implements cm {
-    final /* synthetic */ DkStoreBookDetail a;
-    final /* synthetic */ hw b;
+class hx implements cg {
+    /* renamed from: a */
+    final /* synthetic */ hu f7359a;
 
-    hx(hw hwVar, DkStoreBookDetail dkStoreBookDetail) {
-        this.b = hwVar;
-        this.a = dkStoreBookDetail;
+    hx(hu huVar) {
+        this.f7359a = huVar;
     }
 
-    public void onChoice(boolean z, FlowChargingTransferChoice flowChargingTransferChoice) {
-        if (z) {
-            o.a().a(this.b.c.getBookUuid(), this.a, new hy(this), flowChargingTransferChoice);
-        }
+    /* renamed from: a */
+    public void mo478a(Scrollable scrollable, ScrollState scrollState, ScrollState scrollState2) {
+    }
+
+    /* renamed from: a */
+    public void mo479a(Scrollable scrollable, boolean z) {
+        this.f7359a.f7353d.invalidate();
     }
 }

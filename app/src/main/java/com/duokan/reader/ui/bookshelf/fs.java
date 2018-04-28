@@ -1,22 +1,18 @@
 package com.duokan.reader.ui.bookshelf;
 
-import java.text.Collator;
-import java.util.Comparator;
-import java.util.Locale;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.core.app.AppContext;
 
-class fs implements Comparator {
-    final /* synthetic */ fr a;
-    private Collator b = Collator.getInstance(Locale.CHINESE);
+class fs implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ fo f6467a;
 
-    fs(fr frVar) {
-        this.a = frVar;
+    fs(fo foVar) {
+        this.f6467a = foVar;
     }
 
-    public /* synthetic */ int compare(Object obj, Object obj2) {
-        return a((ImportedFileInfo) obj, (ImportedFileInfo) obj2);
-    }
-
-    public int a(ImportedFileInfo importedFileInfo, ImportedFileInfo importedFileInfo2) {
-        return this.b.compare(importedFileInfo.d(), importedFileInfo2.d());
+    public void onClick(View view) {
+        ((fm) AppContext.getAppContext(this.f6467a.getContext()).queryFeature(fm.class)).mo1692a();
     }
 }

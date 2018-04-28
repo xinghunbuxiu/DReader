@@ -5,33 +5,45 @@ import android.media.AudioManager;
 import android.media.AudioManager.OnAudioFocusChangeListener;
 import android.media.MediaPlayer;
 import android.os.Binder;
-
-import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
+import com.duokan.core.app.aj;
+import com.duokan.reader.domain.document.C0930b;
 import com.duokan.reader.domain.document.ay;
-import com.duokan.reader.domain.document.b;
 import com.duokan.reader.domain.document.bb;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
 
-public class AudioPlayer extends Binder implements ah {
-    private static final ai i = new ai();
-    private final AudioManager a;
-    private MediaPlayer b = null;
-    private String c;
-    private final String d;
-    private b e;
-    private b f;
-    private int g = -1;
-    private Map h;
-    private PlayerStatus j = PlayerStatus.IDLE;
-    private LinkedList k;
-    private final OnAudioFocusChangeListener l = new a(this);
-    private f m;
-    private long n = -1;
+public class AudioPlayer extends Binder implements ai {
+    /* renamed from: i */
+    private static final aj<AudioPlayer> f2593i = new aj();
+    /* renamed from: a */
+    private final AudioManager f2594a;
+    /* renamed from: b */
+    private MediaPlayer f2595b = null;
+    /* renamed from: c */
+    private String f2596c;
+    /* renamed from: d */
+    private final String f2597d;
+    /* renamed from: e */
+    private C0930b f2598e;
+    /* renamed from: f */
+    private C0930b f2599f;
+    /* renamed from: g */
+    private int f2600g = -1;
+    /* renamed from: h */
+    private Map<Integer, C0930b[]> f2601h;
+    /* renamed from: j */
+    private PlayerStatus f2602j = PlayerStatus.IDLE;
+    /* renamed from: k */
+    private LinkedList<C0774e> f2603k;
+    /* renamed from: l */
+    private final OnAudioFocusChangeListener f2604l = new C0770a(this);
+    /* renamed from: m */
+    private C0775f f2605m;
+    /* renamed from: n */
+    private long f2606n = -1;
 
     public enum PlayerStatus {
         IDLE,
@@ -41,274 +53,297 @@ public class AudioPlayer extends Binder implements ah {
     }
 
     public AudioPlayer(Context context) {
-        this.a = (AudioManager) context.getSystemService("audio");
-        this.c = "";
-        this.m = new f(this);
-        this.h = new HashMap();
-        this.k = new LinkedList();
-        this.d = "http://127.0.0.1:9090/";
+        this.f2594a = (AudioManager) context.getSystemService("audio");
+        this.f2596c = "";
+        this.f2605m = new C0775f(this);
+        this.f2601h = new HashMap();
+        this.f2603k = new LinkedList();
+        this.f2597d = "http://127.0.0.1:9090/";
     }
 
-    public static void a(Context context) {
-        i.a(new AudioPlayer(context));
+    /* renamed from: a */
+    public static void m3618a(Context context) {
+        f2593i.m709a(new AudioPlayer(context));
     }
 
-    public static AudioPlayer a() {
-        return (AudioPlayer) i.a();
+    /* renamed from: a */
+    public static AudioPlayer m3613a() {
+        return (AudioPlayer) f2593i.m707a();
     }
 
-    public void a(b[] bVarArr, Integer num, long j) {
-        if (bVarArr != null && bVarArr.length > 0) {
-            if (this.n != j) {
-                this.h.clear();
-                this.n = j;
+    /* renamed from: a */
+    public void m3639a(C0930b[] c0930bArr, Integer num, long j) {
+        if (c0930bArr != null && c0930bArr.length > 0) {
+            if (this.f2606n != j) {
+                this.f2601h.clear();
+                this.f2606n = j;
             }
-            if (!this.h.containsKey(num)) {
-                g.c().a(bVarArr, j);
-                this.h.put(num, bVarArr);
+            if (!this.f2601h.containsKey(num)) {
+                C0776g.m3650c().m3652a(c0930bArr, j);
+                this.f2601h.put(num, c0930bArr);
             }
         }
     }
 
-    public void a(e eVar) {
+    /* renamed from: a */
+    public void m3637a(C0774e c0774e) {
         synchronized (this) {
-            this.k.add(eVar);
+            this.f2603k.add(c0774e);
         }
     }
 
-    public void b(e eVar) {
+    /* renamed from: b */
+    public void m3640b(C0774e c0774e) {
         synchronized (this) {
-            Iterator it = this.k.iterator();
+            Iterator it = this.f2603k.iterator();
             while (it.hasNext()) {
-                if (((e) it.next()) == eVar) {
-                    this.k.remove(eVar);
+                if (((C0774e) it.next()) == c0774e) {
+                    this.f2603k.remove(c0774e);
                     break;
                 }
             }
         }
     }
 
-    public void a(ay ayVar, Integer[] numArr) {
-        if (numArr != null && ayVar != null && !ayVar.f()) {
-            b bVar;
+    /* renamed from: a */
+    public void m3638a(ay ayVar, Integer[] numArr) {
+        if (numArr != null && ayVar != null && !ayVar.m5817f()) {
+            C0930b c0930b;
             int i;
             int length = numArr.length;
             int i2 = 0;
-            b bVar2 = null;
+            C0930b c0930b2 = null;
             int i3 = -1;
             while (i2 < length) {
                 Integer num = numArr[i2];
-                b[] bVarArr = (b[]) this.h.get(num);
-                if (bVarArr == null) {
-                    bVar = bVar2;
+                C0930b[] c0930bArr = (C0930b[]) this.f2601h.get(num);
+                if (c0930bArr == null) {
+                    c0930b = c0930b2;
                     i = i3;
-                } else if (bVarArr.length == 0) {
-                    bVar = bVar2;
+                } else if (c0930bArr.length == 0) {
+                    c0930b = c0930b2;
                     i = i3;
                 } else {
-                    for (int i4 = 0; i4 < bVarArr.length; i4++) {
-                        if (bVarArr[i4].a().b(ayVar)) {
-                            bVar = bVarArr[i4];
+                    for (int i4 = 0; i4 < c0930bArr.length; i4++) {
+                        if (c0930bArr[i4].mo1443a().m5814b(ayVar)) {
+                            c0930b = c0930bArr[i4];
                             i = num.intValue();
                             break;
                         }
                     }
-                    bVar = bVar2;
+                    c0930b = c0930b2;
                     i = i3;
-                    if (bVar != null) {
+                    if (c0930b != null) {
                         break;
                     }
                 }
                 i2++;
                 i3 = i;
-                bVar2 = bVar;
+                c0930b2 = c0930b;
             }
-            bVar = bVar2;
+            c0930b = c0930b2;
             i = i3;
-            if (bVar == null) {
-                if (this.b != null) {
-                    this.b.stop();
+            if (c0930b == null) {
+                if (this.f2595b != null) {
+                    this.f2595b.stop();
                 }
-                this.e = null;
-                this.c = "";
-                this.f = null;
-                this.g = -1;
-                a(PlayerStatus.IDLE);
-            } else if (this.a.requestAudioFocus(this.l, 3, 1) == 1) {
-                a(bVar);
-                this.g = i;
+                this.f2598e = null;
+                this.f2596c = "";
+                this.f2599f = null;
+                this.f2600g = -1;
+                m3619a(PlayerStatus.IDLE);
+            } else if (this.f2594a.requestAudioFocus(this.f2604l, 3, 1) == 1) {
+                m3623a(c0930b);
+                this.f2600g = i;
             }
         }
     }
 
-    public boolean b() {
-        return this.j == PlayerStatus.PREPARING || this.j == PlayerStatus.PLAYING;
+    /* renamed from: b */
+    public boolean m3641b() {
+        return this.f2602j == PlayerStatus.PREPARING || this.f2602j == PlayerStatus.PLAYING;
     }
 
-    public void c() {
-        this.a.abandonAudioFocus(this.l);
-        g();
+    /* renamed from: c */
+    public void m3642c() {
+        this.f2594a.abandonAudioFocus(this.f2604l);
+        m3634g();
     }
 
-    public void d() {
-        if (this.a.requestAudioFocus(this.l, 3, 1) == 1) {
-            h();
+    /* renamed from: d */
+    public void m3643d() {
+        if (this.f2594a.requestAudioFocus(this.f2604l, 3, 1) == 1) {
+            m3635h();
         }
     }
 
-    public bb e() {
-        if (this.e == null || this.b == null || (this.j != PlayerStatus.PAUSE && !b())) {
+    /* renamed from: e */
+    public bb m3644e() {
+        if (this.f2598e == null || this.f2595b == null || (this.f2602j != PlayerStatus.PAUSE && !m3641b())) {
             return null;
         }
-        return this.e.a();
+        return this.f2598e.mo1443a();
     }
 
-    public void f() {
-        this.a.abandonAudioFocus(this.l);
-        if (this.b != null) {
-            this.b.stop();
-            this.b.release();
-            this.b = null;
+    /* renamed from: f */
+    public void m3645f() {
+        this.f2594a.abandonAudioFocus(this.f2604l);
+        if (this.f2595b != null) {
+            this.f2595b.stop();
+            this.f2595b.release();
+            this.f2595b = null;
         }
-        this.n = -1;
-        this.e = null;
-        this.c = "";
-        this.h.clear();
-        this.g = -1;
-        this.f = null;
-        a(PlayerStatus.IDLE);
-        this.k.clear();
-        g.c().b();
+        this.f2606n = -1;
+        this.f2598e = null;
+        this.f2596c = "";
+        this.f2601h.clear();
+        this.f2600g = -1;
+        this.f2599f = null;
+        m3619a(PlayerStatus.IDLE);
+        this.f2603k.clear();
+        C0776g.m3650c().m3653b();
     }
 
-    private void g() {
-        if (b()) {
-            a(PlayerStatus.PAUSE);
-            this.b.pause();
-        }
-    }
-
-    private void h() {
-        if (this.j == PlayerStatus.PAUSE && this.b != null) {
-            this.b.start();
-            a(PlayerStatus.PLAYING);
+    /* renamed from: g */
+    private void m3634g() {
+        if (m3641b()) {
+            m3619a(PlayerStatus.PAUSE);
+            this.f2595b.pause();
         }
     }
 
-    private void a(b bVar) {
-        if (this.b == null) {
-            this.b = new MediaPlayer();
+    /* renamed from: h */
+    private void m3635h() {
+        if (this.f2602j == PlayerStatus.PAUSE && this.f2595b != null) {
+            this.f2595b.start();
+            m3619a(PlayerStatus.PLAYING);
         }
-        this.f = bVar;
-        g.c().a();
-        if (this.c.equals(bVar.d())) {
-            if (this.j == PlayerStatus.PLAYING) {
-                this.b.seekTo(Math.round(bVar.b() * 1000.0f));
+    }
+
+    /* renamed from: a */
+    private void m3623a(C0930b c0930b) {
+        if (this.f2595b == null) {
+            this.f2595b = new MediaPlayer();
+        }
+        this.f2599f = c0930b;
+        C0776g.m3650c().m3651a();
+        if (this.f2596c.equals(c0930b.mo1446d())) {
+            if (this.f2602j == PlayerStatus.PLAYING) {
+                this.f2595b.seekTo(Math.round(c0930b.mo1444b() * 1000.0f));
                 return;
-            } else if (this.j == PlayerStatus.PAUSE) {
-                a(PlayerStatus.PLAYING);
-                this.b.start();
-                this.b.seekTo(Math.round(bVar.b() * 1000.0f));
+            } else if (this.f2602j == PlayerStatus.PAUSE) {
+                m3619a(PlayerStatus.PLAYING);
+                this.f2595b.start();
+                this.f2595b.seekTo(Math.round(c0930b.mo1444b() * 1000.0f));
                 return;
             }
         }
-        this.b.reset();
-        a(PlayerStatus.PREPARING);
-        this.c = bVar.d();
-        this.b.setAudioStreamType(3);
-        this.b.setOnSeekCompleteListener(new b(this));
-        this.b.setOnCompletionListener(new c(this));
+        this.f2595b.reset();
+        m3619a(PlayerStatus.PREPARING);
+        this.f2596c = c0930b.mo1446d();
+        this.f2595b.setAudioStreamType(3);
+        this.f2595b.setOnSeekCompleteListener(new C0771b(this));
+        this.f2595b.setOnCompletionListener(new C0772c(this));
         try {
-            this.b.setDataSource(a(bVar.d()));
-            this.b.setOnPreparedListener(new d(this, bVar));
-            this.b.prepareAsync();
+            this.f2595b.setDataSource(m3616a(c0930b.mo1446d()));
+            this.f2595b.setOnPreparedListener(new C0773d(this, c0930b));
+            this.f2595b.prepareAsync();
         } catch (Exception e) {
         }
     }
 
-    private String a(String str) {
-        return this.d + str;
+    /* renamed from: a */
+    private String m3616a(String str) {
+        return this.f2597d + str;
     }
 
-    private void a(PlayerStatus playerStatus) {
-        if (playerStatus != this.j) {
-            this.j = playerStatus;
-            b(this.j);
-            if (b()) {
-                this.m.sendEmptyMessage(0);
+    /* renamed from: a */
+    private void m3619a(PlayerStatus playerStatus) {
+        if (playerStatus != this.f2602j) {
+            this.f2602j = playerStatus;
+            m3628b(this.f2602j);
+            if (m3641b()) {
+                this.f2605m.sendEmptyMessage(0);
             } else {
-                this.m.removeMessages(0);
+                this.f2605m.removeMessages(0);
             }
         }
     }
 
-    private void i() {
-        b b = b(this.e);
-        a(PlayerStatus.IDLE);
+    /* renamed from: i */
+    private void m3636i() {
+        C0930b b = m3627b(this.f2598e);
+        m3619a(PlayerStatus.IDLE);
         if (b != null) {
-            a(b);
+            m3623a(b);
         } else {
-            a(this.g);
+            m3617a(this.f2600g);
         }
     }
 
-    private void a(int i) {
+    /* renamed from: a */
+    private void m3617a(int i) {
         synchronized (this) {
-            Iterator it = this.k.iterator();
+            Iterator it = this.f2603k.iterator();
             while (it.hasNext()) {
-                ((e) it.next()).a(i);
+                ((C0774e) it.next()).mo2275a(i);
             }
         }
     }
 
-    private void b(PlayerStatus playerStatus) {
+    /* renamed from: b */
+    private void m3628b(PlayerStatus playerStatus) {
         synchronized (this) {
-            Iterator it = this.k.iterator();
+            Iterator it = this.f2603k.iterator();
             while (it.hasNext()) {
-                ((e) it.next()).a(playerStatus);
+                ((C0774e) it.next()).mo2276a(playerStatus);
             }
         }
     }
 
-    private void a(bb bbVar) {
+    /* renamed from: a */
+    private void m3624a(bb bbVar) {
         synchronized (this) {
-            Iterator it = this.k.iterator();
+            Iterator it = this.f2603k.iterator();
             while (it.hasNext()) {
-                ((e) it.next()).a(bbVar);
+                ((C0774e) it.next()).mo2277a(bbVar);
             }
         }
     }
 
-    private b b(int i) {
-        for (b[] bVarArr : this.h.values()) {
-            for (b bVar : (b[]) r3.next()) {
-                if (a(bVar, i, this.c)) {
-                    return bVar;
+    /* renamed from: b */
+    private C0930b m3626b(int i) {
+        for (C0930b[] c0930bArr : this.f2601h.values()) {
+            for (C0930b c0930b : (C0930b[]) r3.next()) {
+                if (m3625a(c0930b, i, this.f2596c)) {
+                    return c0930b;
                 }
             }
         }
         return null;
     }
 
-    private boolean a(b bVar, int i, String str) {
+    /* renamed from: a */
+    private boolean m3625a(C0930b c0930b, int i, String str) {
         float f = ((float) i) / 1000.0f;
-        if ((this.f == null || !bVar.a().a(this.f.a())) && bVar.d().equals(str) && f >= bVar.b() && f <= bVar.c()) {
+        if ((this.f2599f == null || !c0930b.mo1443a().mo1188a(this.f2599f.mo1443a())) && c0930b.mo1446d().equals(str) && f >= c0930b.mo1444b() && f <= c0930b.mo1445c()) {
             return true;
         }
         return false;
     }
 
-    private b b(b bVar) {
-        if (bVar == null || this.g < 0) {
+    /* renamed from: b */
+    private C0930b m3627b(C0930b c0930b) {
+        if (c0930b == null || this.f2600g < 0) {
             return null;
         }
-        b[] bVarArr = (b[]) this.h.get(Integer.valueOf(this.g));
-        if (bVarArr == null) {
+        C0930b[] c0930bArr = (C0930b[]) this.f2601h.get(Integer.valueOf(this.f2600g));
+        if (c0930bArr == null) {
             return null;
         }
-        for (b bVar2 : bVarArr) {
-            if (bVar2.a().c(bVar.a())) {
-                return bVar2;
+        for (C0930b c0930b2 : c0930bArr) {
+            if (c0930b2.mo1443a().mo1190c(c0930b.mo1443a())) {
+                return c0930b2;
             }
         }
         return null;

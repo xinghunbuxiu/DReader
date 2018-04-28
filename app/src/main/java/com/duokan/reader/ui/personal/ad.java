@@ -3,18 +3,14 @@ package com.duokan.reader.ui.personal;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.ReaderEnv.BookshelfItemStyle;
-
 class ad implements OnClickListener {
-    final /* synthetic */ aa a;
+    /* renamed from: a */
+    final /* synthetic */ ac f8244a;
 
-    ad(aa aaVar) {
-        this.a = aaVar;
+    ad(ac acVar) {
+        this.f8244a = acVar;
     }
 
     public void onClick(View view) {
-        ReaderEnv.get().setBookshelfItemStyle(ReaderEnv.get().getBookshelfItemStyle() == BookshelfItemStyle.SIMPLE ? BookshelfItemStyle.TRADITIONAL : BookshelfItemStyle.SIMPLE);
-        this.a.e.setSelected(ReaderEnv.get().getBookshelfItemStyle() != BookshelfItemStyle.SIMPLE);
     }
 }

@@ -1,26 +1,15 @@
 package com.duokan.reader.ui.general;
 
-import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
+import android.graphics.PointF;
 
-class iz implements Runnable {
-    final /* synthetic */ ViewGroup a;
-    final /* synthetic */ int b;
-    final /* synthetic */ iy c;
+class iz {
+    /* renamed from: a */
+    public int f7419a;
+    /* renamed from: b */
+    public final PointF f7420b;
 
-    iz(iy iyVar, ViewGroup viewGroup, int i) {
-        this.c = iyVar;
-        this.a = viewGroup;
-        this.b = i;
-    }
-
-    public void run() {
-        this.a.removeViewInLayout(this.c);
-        LayoutParams layoutParams = this.c.getLayoutParams();
-        if (layoutParams != null) {
-            this.a.addView(this.c.b, this.b, layoutParams);
-        } else {
-            this.a.addView(this.c.b, this.b);
-        }
+    private iz() {
+        this.f7419a = 0;
+        this.f7420b = new PointF();
     }
 }

@@ -1,22 +1,16 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.af;
-import com.duokan.reader.domain.document.as;
+class aaq implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ aap f9345a;
 
-import java.util.List;
+    aaq(aap aap) {
+        this.f9345a = aap;
+    }
 
-public interface aaq extends bm {
-    List c(as asVar);
-
-    List d(as asVar);
-
-    boolean d(String str);
-
-    boolean e(long j);
-
-    short g(long j);
-
-    af i(long j);
-
-    af j(long j);
+    public void run() {
+        if (this.f9345a.f9344b.f9341d != null) {
+            this.f9345a.f9344b.f9341d.run(this.f9345a.f9343a);
+        }
+    }
 }

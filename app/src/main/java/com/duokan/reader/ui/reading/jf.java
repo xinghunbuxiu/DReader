@@ -1,14 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-class jf implements Runnable {
-    final /* synthetic */ je a;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-    jf(je jeVar) {
-        this.a = jeVar;
+class jf implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ FixedPageClipView f10425a;
+
+    jf(FixedPageClipView fixedPageClipView) {
+        this.f10425a = fixedPageClipView;
     }
 
-    public void run() {
-        this.a.a.f.run();
-        this.a.a.e = false;
+    public void onClick(View view) {
+        this.f10425a.f9094g.mo2394a();
     }
 }

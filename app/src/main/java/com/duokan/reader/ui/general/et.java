@@ -1,67 +1,52 @@
 package com.duokan.reader.ui.general;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
+import android.view.View;
+import com.duokan.core.ui.dv;
+import java.lang.ref.WeakReference;
+import java.util.concurrent.Callable;
 
-import com.duokan.b.e;
-import com.duokan.core.ui.UTools;
+final class et implements Callable<Boolean> {
+    /* renamed from: a */
+    final /* synthetic */ WeakReference f7168a;
+    /* renamed from: b */
+    final /* synthetic */ View f7169b;
 
-public class et extends Drawable {
-    private final Paint a = new Paint();
-    private final Drawable b;
-    private String c = "";
-
-    public et(Context context) {
-        this.a.setColor(-1);
-        this.a.setFakeBoldText(true);
-        this.a.setTextSize((float) UTools.getMinimumHeight(context, 10.0f));
-        this.a.setAntiAlias(true);
-        this.a.setSubpixelText(true);
-        this.b = context.getResources().getDrawable(e.general__shared__message_bubble);
+    et(WeakReference weakReference, View view) {
+        this.f7168a = weakReference;
+        this.f7169b = view;
     }
 
-    public void a(String str) {
-        this.c = str;
-        invalidateSelf();
+    public /* synthetic */ Object call() {
+        return m10571a();
     }
 
-    public int a() {
-        Rect rect = (Rect) UTools.g.getRect();
-        this.b.getPadding(rect);
-        float measureText = (this.a.measureText(this.c) + ((float) rect.left)) + ((float) rect.right);
-        UTools.g.getRect(rect);
-        return Math.max(getIntrinsicWidth(), ((int) Math.ceil((double) (measureText / ((float) getIntrinsicWidth())))) * getIntrinsicWidth());
-    }
-
-    public void draw(Canvas canvas) {
-        if (!TextUtils.isEmpty(this.c)) {
-            Rect bounds = getBounds();
-            this.b.setBounds(bounds);
-            this.b.draw(canvas);
-            UTools.addAnimation(canvas, this.c, bounds, 17, this.a);
+    /* renamed from: a */
+    public Boolean m10571a() {
+        es esVar = (es) this.f7168a.get();
+        if (esVar == null || esVar.f7131a != this.f7169b) {
+            return Boolean.valueOf(true);
         }
-    }
-
-    public int getIntrinsicWidth() {
-        return Math.round((float) this.b.getIntrinsicWidth());
-    }
-
-    public int getIntrinsicHeight() {
-        return Math.round((float) this.b.getIntrinsicHeight());
-    }
-
-    public int getOpacity() {
-        return 0;
-    }
-
-    public void setAlpha(int i) {
-    }
-
-    public void setColorFilter(ColorFilter colorFilter) {
+        boolean z;
+        boolean z2;
+        if (esVar.f7134d != this.f7169b.getWidth() || esVar.f7135e != this.f7169b.getHeight()) {
+            esVar.f7134d = this.f7169b.getWidth();
+            esVar.f7135e = this.f7169b.getHeight();
+            esVar.invalidateSelf();
+            z = true;
+        } else if (esVar.f7132b && this.f7169b.isDirty()) {
+            esVar.invalidateSelf();
+            z = true;
+        } else {
+            z = false;
+        }
+        if (z || esVar.f7136f) {
+            dv.m1922a(this.f7169b, (Callable) this);
+        }
+        if (z) {
+            z2 = false;
+        } else {
+            z2 = true;
+        }
+        return Boolean.valueOf(z2);
     }
 }

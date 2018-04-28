@@ -1,22 +1,13 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.ag;
+import java.util.concurrent.FutureTask;
 
-import java.util.Iterator;
+class ez extends FutureTask<Void> {
+    /* renamed from: a */
+    final /* synthetic */ ee f3149a;
 
-class ez implements Runnable {
-    final /* synthetic */ fb a;
-    final /* synthetic */ ej b;
-
-    ez(ej ejVar, fb fbVar) {
-        this.b = ejVar;
-        this.a = fbVar;
-    }
-
-    public void run() {
-        Iterator it = this.a.f.iterator();
-        while (it.hasNext()) {
-            ((ag) it.next()).a(Integer.valueOf(this.a.h));
-        }
+    public ez(ee eeVar, ac acVar) {
+        this.f3149a = eeVar;
+        super(new fa(eeVar, acVar));
     }
 }

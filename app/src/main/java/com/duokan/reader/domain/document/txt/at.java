@@ -4,72 +4,86 @@ import com.duokan.reader.domain.document.av;
 import com.duokan.reader.domain.document.bb;
 
 public class at extends bb {
-    private final b a;
-    private final b b;
+    /* renamed from: a */
+    private final C0986b f4917a;
+    /* renamed from: b */
+    private final C0986b f4918b;
 
-    public /* synthetic */ av g() {
-        return j();
+    /* renamed from: g */
+    public /* synthetic */ av mo1198g() {
+        return m7513j();
     }
 
-    public /* synthetic */ av h() {
-        return k();
+    /* renamed from: h */
+    public /* synthetic */ av mo1199h() {
+        return m7514k();
     }
 
     protected at() {
-        this(new b(0), new b(0));
+        this(new C0986b(0), new C0986b(0));
     }
 
-    protected at(b bVar, b bVar2) {
-        this.a = bVar;
-        this.b = bVar2;
+    protected at(C0986b c0986b, C0986b c0986b2) {
+        this.f4917a = c0986b;
+        this.f4918b = c0986b2;
     }
 
-    protected static at a(at atVar, at atVar2) {
-        if (atVar.f()) {
+    /* renamed from: a */
+    protected static at m7503a(at atVar, at atVar2) {
+        if (atVar.m5817f()) {
             return atVar2;
         }
-        if (atVar2.f()) {
+        if (atVar2.m5817f()) {
             return atVar;
         }
-        return new at(atVar.j().a(atVar2.j()) ? atVar.j() : atVar2.j(), atVar.k().c(atVar2.k()) ? atVar.k() : atVar2.k());
+        return new at(atVar.m7513j().mo1188a(atVar2.m7513j()) ? atVar.m7513j() : atVar2.m7513j(), atVar.m7514k().mo1190c(atVar2.m7514k()) ? atVar.m7514k() : atVar2.m7514k());
     }
 
-    static at b(at atVar, at atVar2) {
-        if (atVar.f() || atVar2.f()) {
+    /* renamed from: b */
+    static at m7504b(at atVar, at atVar2) {
+        if (atVar.m5817f() || atVar2.m5817f()) {
             return atVar;
         }
-        return new at(atVar.j().a(atVar2.j()) ? atVar2.j() : atVar.j(), atVar.k().a(atVar2.k()) ? atVar.k() : atVar2.k());
+        return new at(atVar.m7513j().mo1188a(atVar2.m7513j()) ? atVar2.m7513j() : atVar.m7513j(), atVar.m7514k().mo1188a(atVar2.m7514k()) ? atVar.m7514k() : atVar2.m7514k());
     }
 
-    public boolean a() {
+    /* renamed from: a */
+    public boolean mo1186a() {
         return true;
     }
 
-    public boolean c() {
+    /* renamed from: c */
+    public boolean mo1189c() {
         return false;
     }
 
-    public boolean e() {
+    /* renamed from: e */
+    public boolean mo1192e() {
         return true;
     }
 
-    public boolean a(long j) {
+    /* renamed from: a */
+    public boolean mo1187a(long j) {
         return true;
     }
 
-    public b j() {
-        return this.a;
+    /* renamed from: j */
+    public C0986b m7513j() {
+        return this.f4917a;
     }
 
-    public b k() {
-        return this.b;
+    /* renamed from: k */
+    public C0986b m7514k() {
+        return this.f4918b;
     }
 
-    public bb a(bb bbVar) {
-        return a(this, (at) bbVar);
+    /* renamed from: a */
+    public bb mo1196a(bb bbVar) {
+        return m7503a(this, (at) bbVar);
     }
 
-    public bb b(bb bbVar) {
-        return b(this, (at) bbVar);
+    /* renamed from: b */
+    public bb mo1197b(bb bbVar) {
+        return m7504b(this, (at) bbVar);
     }
 }

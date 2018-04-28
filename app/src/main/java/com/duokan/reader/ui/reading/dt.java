@@ -1,30 +1,46 @@
 package com.duokan.reader.ui.reading;
 
-import android.text.TextUtils;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.AppContext;
+import com.duokan.reader.ReaderFeature;
+import com.duokan.reader.common.webservices.duokan.CommentBook;
+import com.duokan.reader.common.webservices.duokan.af;
+import com.duokan.reader.domain.bookshelf.BookType;
+import com.duokan.reader.domain.statistics.C1163a;
 
-import com.duokan.c.j;
-import com.duokan.reader.DkPublic;
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.u;
-import com.duokan.reader.ui.general.be;
+class dt implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ CommentBook f10044a;
+    /* renamed from: b */
+    final /* synthetic */ af f10045b;
+    /* renamed from: c */
+    final /* synthetic */ int f10046c;
+    /* renamed from: d */
+    final /* synthetic */ dg f10047d;
 
-class dt implements u {
-    final /* synthetic */ ds a;
-
-    dt(ds dsVar) {
-        this.a = dsVar;
+    dt(dg dgVar, CommentBook commentBook, af afVar, int i) {
+        this.f10047d = dgVar;
+        this.f10044a = commentBook;
+        this.f10045b = afVar;
+        this.f10046c = i;
     }
 
-    public void onQueryAccountOk(a aVar) {
-        this.a.a.k();
-        DkPublic.exchangeNewIdThenDo(this.a.a.y.H(), this.a.a.F, new du(this), null);
-    }
-
-    public void onQueryAccountError(a aVar, String str) {
-        CharSequence string;
-        if (TextUtils.isEmpty(str)) {
-            string = this.a.a.getResources().getString(j.reading__comment_view__tip_no_account);
+    public void onClick(View view) {
+        boolean z;
+        ReaderFeature c = this.f10047d.f9993B;
+        IFeature a = AppContext.getAppContext(this.f10047d.getContext());
+        String bookUuid = this.f10044a.getBookUuid();
+        String title = this.f10044a.getTitle();
+        if (this.f10047d.f10025z.m4242o() != BookType.SERIAL) {
+            z = true;
+        } else {
+            z = false;
         }
-        be.a(this.a.a.getContext(), string, 0).show();
+        c.showBookHomePage(a, bookUuid, title, z, null);
+        if (this.f10047d.f10005f.mo2004U() != PageAnimationMode.VSCROLL) {
+            C1163a.m8627k().m8648a("ending_page_recommendation_v3", "click", this.f10047d.getLabelPrefix() + this.f10045b.f2105d + "_related_book_" + this.f10046c, false);
+        }
     }
 }

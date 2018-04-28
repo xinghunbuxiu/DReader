@@ -1,32 +1,37 @@
 package com.duokan.reader.domain.cloud;
 
 import android.content.Context;
-
-import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
+import com.duokan.core.app.aj;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.common.async.a.a;
+import com.duokan.reader.common.async.p035a.C0517a;
+import com.duokan.reader.common.async.p035a.C0519c;
 import com.duokan.reader.common.webservices.duokan.DkStoreBookInfo;
 import com.duokan.reader.domain.account.AccountType;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.h;
-import com.duokan.reader.domain.account.i;
+import com.duokan.reader.domain.account.C0586j;
+import com.duokan.reader.domain.account.C0709k;
+import com.duokan.reader.domain.account.al;
 import com.duokan.reader.domain.cloud.DkSharedStorageManager.SharedKey;
 import com.duokan.reader.domain.store.DkStoreBook;
-
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class DkUserReadBookManager implements ah, av {
-    private static final ai a = new ai();
-    private final Context b;
-    private final i c;
-    private final h d;
-    private final LinkedList e = new LinkedList();
-    private ab f;
+public class DkUserReadBookManager implements ai, ao {
+    /* renamed from: a */
+    private static final aj<DkUserReadBookManager> f3617a = new aj();
+    /* renamed from: b */
+    private final Context f3618b;
+    /* renamed from: c */
+    private final C0709k f3619c;
+    /* renamed from: d */
+    private final C0586j f3620d;
+    /* renamed from: e */
+    private final LinkedList<ed> f3621e = new LinkedList();
+    /* renamed from: f */
+    private al f3622f;
 
     public class ReadBook extends DkStoreBook {
         private static final long serialVersionUID = 1;
@@ -57,76 +62,89 @@ public class DkUserReadBookManager implements ah, av {
         public Calendar mReadTime;
     }
 
-    private DkUserReadBookManager(Context context, i iVar, ReaderEnv readerEnv) {
-        this.b = context;
-        this.c = iVar;
-        this.d = new el(this);
-        this.f = new ab(this.c.c());
-        DkApp.get().runPreReady(new em(this));
+    private DkUserReadBookManager(Context context, C0709k c0709k, ReaderEnv readerEnv) {
+        this.f3618b = context;
+        this.f3619c = c0709k;
+        this.f3620d = new dw(this);
+        this.f3622f = new al(this.f3619c.m3508d());
+        DkApp.get().runPreReady(new dx(this));
     }
 
-    public static void a(Context context, i iVar, ReaderEnv readerEnv) {
-        a.a(new DkUserReadBookManager(context, iVar, readerEnv));
+    /* renamed from: a */
+    public static void m5116a(Context context, C0709k c0709k, ReaderEnv readerEnv) {
+        f3617a.m709a(new DkUserReadBookManager(context, c0709k, readerEnv));
     }
 
-    public static DkUserReadBookManager a() {
-        return (DkUserReadBookManager) a.a();
+    /* renamed from: a */
+    public static DkUserReadBookManager m5115a() {
+        return (DkUserReadBookManager) f3617a.m707a();
     }
 
-    public void a(eu euVar) {
-        this.e.add(euVar);
+    /* renamed from: a */
+    public void m5129a(ed edVar) {
+        this.f3621e.add(edVar);
     }
 
-    public void b(eu euVar) {
-        this.e.remove(euVar);
+    /* renamed from: b */
+    public void m5132b(ed edVar) {
+        this.f3621e.remove(edVar);
     }
 
-    public void a(String str, ew ewVar) {
-        this.c.a(new en(this, ewVar, str));
+    /* renamed from: a */
+    public void m5130a(String str, ef efVar) {
+        this.f3619c.m3495a(new dy(this, efVar, str));
     }
 
-    public void a(a aVar) {
-        a(false, new eq(this, aVar), 0, 0);
+    /* renamed from: a */
+    public void m5126a(C0517a<Void> c0517a) {
+        m5131a(false, new ea(this, c0517a), 0, 0);
     }
 
-    public void a(boolean z, ev evVar, long j, int i) {
-        if (!z && this.f.b()) {
-            evVar.a("");
-        } else if (!this.f.b.equals(AccountType.ANONYMOUS)) {
-            b(z, evVar, j, i);
+    /* renamed from: a */
+    public void m5131a(boolean z, ee eeVar, long j, int i) {
+        if (!z && this.f3622f.m3366b()) {
+            eeVar.mo1156a("");
+        } else if (!this.f3622f.f2361b.equals(AccountType.ANONYMOUS)) {
+            m5122b(z, eeVar, j, i);
         }
     }
 
-    private void b(boolean z, ev evVar, long j, int i) {
-        this.c.a(new er(this, j, i, evVar, z));
+    /* renamed from: b */
+    private void m5122b(boolean z, ee eeVar, long j, int i) {
+        this.f3619c.m3495a(new eb(this, j, i, eeVar, z));
     }
 
-    private void b() {
-        Iterator it = this.e.iterator();
+    /* renamed from: b */
+    private void m5119b() {
+        Iterator it = this.f3621e.iterator();
         while (it.hasNext()) {
-            ((eu) it.next()).g();
+            ((ed) it.next()).mo1920g();
         }
     }
 
-    private void a(ReadBook[] readBookArr) {
-        Iterator it = this.e.iterator();
+    /* renamed from: a */
+    private void m5118a(ReadBook[] readBookArr) {
+        Iterator it = this.f3621e.iterator();
         while (it.hasNext()) {
-            ((eu) it.next()).a(readBookArr);
+            ((ed) it.next()).mo1916a(readBookArr);
         }
     }
 
-    private void b(ReadBook[] readBookArr) {
-        Iterator it = this.e.iterator();
+    /* renamed from: b */
+    private void m5123b(ReadBook[] readBookArr) {
+        Iterator it = this.f3621e.iterator();
         while (it.hasNext()) {
-            ((eu) it.next()).b(readBookArr);
+            ((ed) it.next()).mo1918b(readBookArr);
         }
     }
 
-    public void a(SharedKey sharedKey, Serializable serializable) {
-        a(c.a);
+    /* renamed from: a */
+    public void mo1154a(SharedKey sharedKey, Serializable serializable) {
+        m5126a(C0519c.f1752a);
     }
 
-    public void a(SharedKey sharedKey) {
-        a(c.a);
+    /* renamed from: a */
+    public void mo1153a(SharedKey sharedKey) {
+        m5126a(C0519c.f1752a);
     }
 }

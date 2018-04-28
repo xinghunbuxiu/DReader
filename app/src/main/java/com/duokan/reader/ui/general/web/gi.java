@@ -1,22 +1,20 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.app.ab;
-import com.duokan.core.app.ac;
-import com.duokan.core.sys.af;
+import com.duokan.core.sys.as;
 
-class gi implements ac {
-    final /* synthetic */ gh a;
+class gi implements as {
+    /* renamed from: a */
+    final /* synthetic */ ci f7887a;
 
-    gi(gh ghVar) {
-        this.a = ghVar;
+    gi(ci ciVar) {
+        this.f7887a = ciVar;
     }
 
-    public void a(ab abVar) {
-        this.a.a.a(this.a.a.f(), this.a.b, "", "", false, new af(Boolean.valueOf(false)));
-        this.a.c.release();
-    }
-
-    public void b(ab abVar) {
-        this.a.c.release();
+    /* renamed from: a */
+    public void mo1831a() {
+        if (this.f7887a.f7581b.mEditCommentDialog != null) {
+            this.f7887a.f7581b.mEditCommentDialog.dismiss();
+            this.f7887a.f7581b.mEditCommentDialog = null;
+        }
     }
 }

@@ -1,17 +1,18 @@
 package com.duokan.reader.ui.general;
 
 import android.content.Context;
+import com.duokan.core.app.aa;
+import com.duokan.reader.ui.C0457r;
 
-import com.duokan.core.app.QueryFeatureWrapper;
-import com.duokan.reader.ui.IWindowRecord;
-
-class ah extends QueryFeatureWrapper {
-    private final Context a;
-    private final IWindowRecord b = new ai(this);
+class ah extends aa {
+    /* renamed from: a */
+    private final Context f6930a;
+    /* renamed from: b */
+    private final C0457r f6931b = new ai(this);
 
     public ah(Context context) {
         super(context);
-        this.a = context;
-        addFirstLocalFeature(new aj(this));
+        this.f6930a = context;
+        addFeatureListener(new aj(this));
     }
 }

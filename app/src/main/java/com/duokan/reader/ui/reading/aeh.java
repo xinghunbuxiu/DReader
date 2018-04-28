@@ -1,30 +1,26 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.MotionEvent;
-import android.view.View;
+import com.duokan.core.app.ag;
+import com.duokan.core.app.ah;
 
-import com.duokan.core.ui.ct;
-import com.duokan.core.ui.er;
-import com.duokan.core.ui.OnTouchChangeListener;
+class aeh implements ah {
+    /* renamed from: a */
+    final /* synthetic */ aee f9578a;
 
-class aeh extends er {
-    final /* synthetic */ adm a;
-    private final ct c;
-
-    private aeh(adm com_duokan_reader_ui_reading_adm) {
-        this.a = com_duokan_reader_ui_reading_adm;
-        this.c = new ct();
+    aeh(aee aee) {
+        this.f9578a = aee;
     }
 
-    protected void a(View view, boolean z) {
-        this.c.b(view, z);
+    /* renamed from: a */
+    public void mo1562a(ag agVar) {
+        this.f9578a.f9574d.f9541a.be();
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
-        if (this.a.e()) {
-            this.c.b(view, motionEvent, z, new aei(this));
-        } else {
-            b(false);
-        }
+    /* renamed from: b */
+    public void mo1567b(ag agVar) {
+    }
+
+    /* renamed from: c */
+    public void mo1565c(ag agVar) {
     }
 }

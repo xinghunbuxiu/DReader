@@ -1,45 +1,60 @@
 package com.duokan.reader.ui.general;
 
-import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
-final class ej extends Drawable {
-    final /* synthetic */ Context a;
-    final /* synthetic */ DkListView b;
-    final /* synthetic */ int c;
-    private Drawable d = this.a.getResources().getDrawable(e.general__shared__list_item_view__bg1);
-    private Drawable e = this.a.getResources().getDrawable(e.general__shared__list_item_view__bg2);
+public class ej extends Drawable {
+    /* renamed from: a */
+    private Paint f7152a = new Paint();
+    /* renamed from: b */
+    private int f7153b = 80;
 
-    ej(Context context, DkListView dkListView, int i) {
-        this.a = context;
-        this.b = dkListView;
-        this.c = i;
+    public ej() {
+        this.f7152a.setAntiAlias(true);
+    }
+
+    /* renamed from: a */
+    public void m10559a(float f) {
+        this.f7152a.setStrokeWidth(f);
+    }
+
+    /* renamed from: a */
+    public void m10560a(int i) {
+        this.f7152a.setColor(i);
+    }
+
+    /* renamed from: b */
+    public void m10562b(int i) {
+        this.f7153b = i;
+    }
+
+    /* renamed from: a */
+    public void m10561a(Canvas canvas, Rect rect, int i) {
+        setBounds(rect);
+        m10562b(i);
+        draw(canvas);
     }
 
     public void draw(Canvas canvas) {
-        int i = 0;
-        if (this.b.getNumColumns() != 0) {
-            int i2 = 0;
-            while (i < this.c) {
-                int a = this.b.a(i) % this.b.getNumColumns();
-                if (a == 0) {
-                    a = this.b.a(i) / this.b.getNumColumns();
-                } else {
-                    a = ((this.b.a(i) - a) / this.b.getNumColumns()) + 1;
-                }
-                i2 += a + 1;
-                i++;
-            }
-            Drawable drawable = i2 % 2 == 0 ? this.e : this.d;
-            drawable.setState(getState());
-            drawable.setBounds(getBounds());
-            drawable.draw(canvas);
+        Rect bounds = getBounds();
+        if ((this.f7153b & 80) == 80) {
+            canvas.drawLine((float) bounds.left, (float) bounds.bottom, (float) bounds.right, (float) bounds.bottom, this.f7152a);
+        } else if ((this.f7153b & 48) == 48) {
+            canvas.drawLine((float) bounds.left, (float) bounds.top, (float) bounds.right, (float) bounds.top, this.f7152a);
+        } else if ((this.f7153b & 3) == 3) {
+            canvas.drawLine((float) bounds.left, (float) bounds.top, (float) bounds.left, (float) bounds.bottom, this.f7152a);
+        } else if ((this.f7153b & 5) == 5) {
+            canvas.drawLine((float) bounds.right, (float) bounds.top, (float) bounds.right, (float) bounds.bottom, this.f7152a);
+        } else {
+            canvas.drawLine((float) bounds.left, (float) bounds.top, (float) bounds.right, (float) bounds.bottom, this.f7152a);
         }
     }
 
     public void setAlpha(int i) {
+        this.f7152a.setAlpha(i);
     }
 
     public void setColorFilter(ColorFilter colorFilter) {

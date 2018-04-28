@@ -3,7 +3,6 @@ package com.duokan.core.sys;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.text.TextUtils;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -12,16 +11,26 @@ import java.util.ListIterator;
 import java.util.concurrent.Semaphore;
 
 public class AsyncCache {
-    static final /* synthetic */ boolean a = (!AsyncCache.class.desiredAssertionStatus());
-    private final LinkedHashMap b;
-    private final Thread c;
-    private final Semaphore d;
-    private LinkedList e;
-    private boolean f;
-    private int g;
-    private int h;
-    private final String i;
-    private final SQLiteDatabase j;
+    /* renamed from: a */
+    static final /* synthetic */ boolean f582a = (!AsyncCache.class.desiredAssertionStatus());
+    /* renamed from: b */
+    private final LinkedHashMap<Integer, RecordList> f583b;
+    /* renamed from: c */
+    private final Thread f584c;
+    /* renamed from: d */
+    private final Semaphore f585d;
+    /* renamed from: e */
+    private LinkedList<Runnable> f586e;
+    /* renamed from: f */
+    private boolean f587f;
+    /* renamed from: g */
+    private int f588g;
+    /* renamed from: h */
+    private int f589h;
+    /* renamed from: i */
+    private final String f590i;
+    /* renamed from: j */
+    private final SQLiteDatabase f591j;
 
     public enum DataState {
         NULL,
@@ -30,7 +39,7 @@ public class AsyncCache {
         EMPTY
     }
 
-    public class RecordList extends LinkedList {
+    public class RecordList extends LinkedList<C0359g> {
         protected RecordList() {
         }
     }
@@ -40,15 +49,15 @@ public class AsyncCache {
     }
 
     public AsyncCache(String str) {
-        this.b = new LinkedHashMap();
-        this.d = new Semaphore(0);
-        this.e = new LinkedList();
-        this.f = false;
-        this.g = 0;
-        this.h = 3145728;
-        this.i = str;
-        if (TextUtils.isEmpty(this.i)) {
-            this.j = null;
+        this.f583b = new LinkedHashMap();
+        this.f585d = new Semaphore(0);
+        this.f586e = new LinkedList();
+        this.f587f = false;
+        this.f588g = 0;
+        this.f589h = 3145728;
+        this.f590i = str;
+        if (TextUtils.isEmpty(this.f590i)) {
+            this.f591j = null;
         } else {
             SQLiteDatabase openOrCreateDatabase;
             try {
@@ -66,99 +75,107 @@ public class AsyncCache {
             } catch (Throwable th) {
                 openOrCreateDatabase.endTransaction();
             }
-            this.j = openOrCreateDatabase;
+            this.f591j = openOrCreateDatabase;
         }
-        this.c = new Thread(new asyncCacheRun(this));
-        this.c.start();
+        this.f584c = new Thread(new C0349a(this));
+        this.f584c.start();
     }
 
-    public void a(int i) {
-        this.h = i;
+    /* renamed from: a */
+    public void m814a(int i) {
+        this.f589h = i;
     }
 
-    public final e a(f fVar, e eVar) {
-        e eVar2;
-        synchronized (c()) {
-            g gVar = new g(fVar, eVar);
-            gVar.b.p();
-            b(gVar);
-            this.d.release();
-            eVar2 = gVar.b;
+    /* renamed from: a */
+    public final C0357e m813a(C0358f c0358f, C0357e c0357e) {
+        C0357e c0357e2;
+        synchronized (m811c()) {
+            C0359g c0359g = new C0359g(c0358f, c0357e);
+            c0359g.f726b.m1003p();
+            m808b(c0359g);
+            this.f585d.release();
+            c0357e2 = c0359g.f726b;
         }
-        return eVar2;
+        return c0357e2;
     }
 
-    public final e a(f fVar, int i) {
-        e eVar;
-        synchronized (c()) {
-            g a = a(fVar, i, new b(this));
+    /* renamed from: a */
+    public final C0357e m812a(C0358f c0358f, int i) {
+        C0357e c0357e;
+        synchronized (m811c()) {
+            C0359g a = m799a(c0358f, i, new C0351b(this));
             if (a != null) {
-                a(a);
-                a.b.p();
-                eVar = a.b;
+                m803a(a);
+                a.f726b.m1003p();
+                c0357e = a.f726b;
             } else {
-                eVar = null;
+                c0357e = null;
             }
         }
-        return eVar;
+        return c0357e;
     }
 
-    public final void a(e eVar) {
-        synchronized (c()) {
-            eVar.q();
+    /* renamed from: a */
+    public final void m815a(C0357e c0357e) {
+        synchronized (m811c()) {
+            c0357e.m1004q();
         }
     }
 
-    public final void b(e eVar) {
-        synchronized (c()) {
-            eVar.q();
-            eVar.f();
+    /* renamed from: b */
+    public final void m818b(C0357e c0357e) {
+        synchronized (m811c()) {
+            c0357e.m1004q();
+            c0357e.m1013f();
         }
     }
 
-    public final void a(boolean z) {
+    /* renamed from: a */
+    public final void m816a(boolean z) {
         Semaphore semaphore = new Semaphore(0);
-        a(new c(this, semaphore));
+        m817a(new C0355c(this, semaphore));
         if (z) {
             semaphore.acquireUninterruptibly();
         }
     }
 
-    public final boolean a(Runnable runnable) {
-        if (this.f || runnable == null) {
+    /* renamed from: a */
+    public final boolean m817a(Runnable runnable) {
+        if (this.f587f || runnable == null) {
             return false;
         }
-        synchronized (c()) {
-            this.e.push(runnable);
+        synchronized (m811c()) {
+            this.f586e.push(runnable);
         }
-        this.d.release();
+        this.f585d.release();
         return true;
     }
 
     /* JADX WARNING: inconsistent code. */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    private void a() {
+    /* renamed from: a */
+    private void m801a() {
         /*
         r11 = this;
         r10 = 1;
     L_0x0001:
-        r0 = r11.HttpLogger;
+        r0 = r11.f587f;
         if (r0 != 0) goto L_0x0279;
     L_0x0005:
-        r0 = r11.getTriangleEdge;
+        r0 = r11.f585d;
         r0 = r0.availablePermits();
         if (r0 >= r10) goto L_0x003a;
     L_0x000d:
-        r0 = r11.getScaledPagingTouchSlop;
+        r0 = r11.f586e;
         r0 = r0.isEmpty();
         if (r0 != 0) goto L_0x003a;
     L_0x0015:
-        r1 = r11.getScaledMaximumFlingVelocity();
+        r1 = r11.m811c();
         monitor-enter(r1);
-        r2 = r11.getScaledPagingTouchSlop;	 Catch:{ all -> 0x0037 }
+        r2 = r11.f586e;	 Catch:{ all -> 0x0037 }
         r0 = new java.util.LinkedList;	 Catch:{ all -> 0x0037 }
-        r0.<creatCallTask>();	 Catch:{ all -> 0x0037 }
-        r11.getScaledPagingTouchSlop = r0;	 Catch:{ all -> 0x0037 }
+        r0.<init>();	 Catch:{ all -> 0x0037 }
+        r11.f586e = r0;	 Catch:{ all -> 0x0037 }
         monitor-exit(r1);	 Catch:{ all -> 0x0037 }
     L_0x0024:
         r0 = r2.isEmpty();
@@ -174,21 +191,21 @@ public class AsyncCache {
         monitor-exit(r1);	 Catch:{ all -> 0x0037 }
         throw r0;
     L_0x003a:
-        r0 = r11.getTriangleEdge;
+        r0 = r11.f585d;
         r0.acquireUninterruptibly();
         r1 = 0;
-        r2 = r11.getScaledMaximumFlingVelocity();
+        r2 = r11.m811c();
         monitor-enter(r2);
         r0 = 1;
-        r3 = r11.getVisible(r0);	 Catch:{ all -> 0x0062 }
+        r3 = r11.m807b(r0);	 Catch:{ all -> 0x0062 }
     L_0x004a:
         r0 = r3.hasPrevious();	 Catch:{ all -> 0x0062 }
         if (r0 == 0) goto L_0x006d;
     L_0x0050:
         r0 = r3.previous();	 Catch:{ all -> 0x0062 }
-        r0 = (com.duokan.core.sys.SessionTask) r0;	 Catch:{ all -> 0x0062 }
-        r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x0062 }
+        r0 = (com.duokan.core.sys.C0359g) r0;	 Catch:{ all -> 0x0062 }
+        r4 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4 = r4.m1010c();	 Catch:{ all -> 0x0062 }
         if (r4 == 0) goto L_0x0065;
     L_0x005e:
         r3.remove();	 Catch:{ all -> 0x0062 }
@@ -200,7 +217,7 @@ public class AsyncCache {
     L_0x0065:
         if (r1 != 0) goto L_0x02cb;
     L_0x0067:
-        r4 = r0.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0062 }
+        r4 = r0.f727c;	 Catch:{ all -> 0x0062 }
         if (r4 != 0) goto L_0x02cb;
     L_0x006b:
         r1 = r0;
@@ -211,330 +228,330 @@ public class AsyncCache {
         monitor-exit(r2);	 Catch:{ all -> 0x0062 }
         goto L_0x0001;
     L_0x0071:
-        r0 = setDrawable;	 Catch:{ all -> 0x0062 }
+        r0 = f582a;	 Catch:{ all -> 0x0062 }
         if (r0 != 0) goto L_0x007f;
     L_0x0075:
-        r0 = r1.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x0062 }
+        r0 = r1.f727c;	 Catch:{ all -> 0x0062 }
         if (r0 == 0) goto L_0x007f;
     L_0x0079:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
+        r0.<init>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x007f:
-        r0 = r1.getVisible;	 Catch:{ all -> 0x0062 }
-        r0 = r0.setDrawable();	 Catch:{ all -> 0x0062 }
+        r0 = r1.f726b;	 Catch:{ all -> 0x0062 }
+        r0 = r0.m1007a();	 Catch:{ all -> 0x0062 }
         if (r0 != 0) goto L_0x01b7;
     L_0x0087:
         r0 = 0;
-        r3 = r11.getVisible(r0);	 Catch:{ all -> 0x0062 }
+        r3 = r11.m807b(r0);	 Catch:{ all -> 0x0062 }
     L_0x008c:
         r0 = r3.hasNext();	 Catch:{ all -> 0x0062 }
         if (r0 == 0) goto L_0x00f6;
     L_0x0092:
         r0 = r3.next();	 Catch:{ all -> 0x0062 }
-        r0 = (com.duokan.core.sys.SessionTask) r0;	 Catch:{ all -> 0x0062 }
-        r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.setDrawable();	 Catch:{ all -> 0x0062 }
+        r0 = (com.duokan.core.sys.C0359g) r0;	 Catch:{ all -> 0x0062 }
+        r4 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4 = r4.m1007a();	 Catch:{ all -> 0x0062 }
         if (r4 == 0) goto L_0x008c;
     L_0x00a0:
-        r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getScaledPagingTouchSlop();	 Catch:{ all -> 0x0062 }
+        r4 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4 = r4.m1012e();	 Catch:{ all -> 0x0062 }
         if (r4 == 0) goto L_0x008c;
     L_0x00a8:
-        r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getPhysicalYPixels();	 Catch:{ all -> 0x0062 }
-        r5 = r1.getVisible;	 Catch:{ all -> 0x0062 }
-        r5 = r5.getPhysicalXPixels();	 Catch:{ all -> 0x0062 }
+        r4 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4 = r4.mo771i();	 Catch:{ all -> 0x0062 }
+        r5 = r1.f726b;	 Catch:{ all -> 0x0062 }
+        r5 = r5.mo770h();	 Catch:{ all -> 0x0062 }
         if (r4 < r5) goto L_0x008c;
     L_0x00b6:
-        r4 = setDrawable;	 Catch:{ all -> 0x0062 }
+        r4 = f582a;	 Catch:{ all -> 0x0062 }
         if (r4 != 0) goto L_0x00c8;
     L_0x00ba:
-        r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getTriangleEdge();	 Catch:{ all -> 0x0062 }
+        r4 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4 = r4.m1011d();	 Catch:{ all -> 0x0062 }
         if (r4 == 0) goto L_0x00c8;
     L_0x00c2:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
+        r0.<init>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x00c8:
-        r4 = r1.getVisible;	 Catch:{ all -> 0x0062 }
-        r5 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getPhysicalXPixels(r5);	 Catch:{ all -> 0x0062 }
+        r4 = r1.f726b;	 Catch:{ all -> 0x0062 }
+        r5 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4 = r4.m1000h(r5);	 Catch:{ all -> 0x0062 }
         if (r4 == 0) goto L_0x008c;
     L_0x00d2:
-        r3 = setDrawable;	 Catch:{ all -> 0x0062 }
+        r3 = f582a;	 Catch:{ all -> 0x0062 }
         if (r3 != 0) goto L_0x00e4;
     L_0x00d6:
-        r0 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r0 = r0.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x0062 }
+        r0 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r0 = r0.m1010c();	 Catch:{ all -> 0x0062 }
         if (r0 != 0) goto L_0x00e4;
     L_0x00de:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
+        r0.<init>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x00e4:
-        r0 = setDrawable;	 Catch:{ all -> 0x0062 }
+        r0 = f582a;	 Catch:{ all -> 0x0062 }
         if (r0 != 0) goto L_0x00f6;
     L_0x00e8:
-        r0 = r1.getVisible;	 Catch:{ all -> 0x0062 }
-        r0 = r0.getVisible();	 Catch:{ all -> 0x0062 }
+        r0 = r1.f726b;	 Catch:{ all -> 0x0062 }
+        r0 = r0.m1009b();	 Catch:{ all -> 0x0062 }
         if (r0 == 0) goto L_0x00f6;
     L_0x00f0:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
+        r0.<init>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x00f6:
-        r0 = r1.getVisible;	 Catch:{ all -> 0x0062 }
-        r0 = r0.getVisible();	 Catch:{ all -> 0x0062 }
+        r0 = r1.f726b;	 Catch:{ all -> 0x0062 }
+        r0 = r0.m1009b();	 Catch:{ all -> 0x0062 }
         if (r0 == 0) goto L_0x0168;
     L_0x00fe:
-        r0 = r11.SessionTask;	 Catch:{ all -> 0x0062 }
-        r3 = r1.getVisible;	 Catch:{ all -> 0x0062 }
-        r3 = r3.getPhysicalXPixels();	 Catch:{ all -> 0x0062 }
+        r0 = r11.f588g;	 Catch:{ all -> 0x0062 }
+        r3 = r1.f726b;	 Catch:{ all -> 0x0062 }
+        r3 = r3.mo770h();	 Catch:{ all -> 0x0062 }
         r0 = r0 + r3;
-        r3 = r11.getPhysicalXPixels;	 Catch:{ all -> 0x0062 }
+        r3 = r11.f589h;	 Catch:{ all -> 0x0062 }
         if (r0 <= r3) goto L_0x0168;
     L_0x010b:
         r0 = 0;
-        r3 = r11.getVisible(r0);	 Catch:{ all -> 0x0062 }
+        r3 = r11.m807b(r0);	 Catch:{ all -> 0x0062 }
     L_0x0110:
         r0 = r3.hasNext();	 Catch:{ all -> 0x0062 }
         if (r0 == 0) goto L_0x0168;
     L_0x0116:
         r0 = r3.next();	 Catch:{ all -> 0x0062 }
-        r0 = (com.duokan.core.sys.SessionTask) r0;	 Catch:{ all -> 0x0062 }
-        r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getTriangleEdge();	 Catch:{ all -> 0x0062 }
+        r0 = (com.duokan.core.sys.C0359g) r0;	 Catch:{ all -> 0x0062 }
+        r4 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4 = r4.m1011d();	 Catch:{ all -> 0x0062 }
         if (r4 != 0) goto L_0x0110;
     L_0x0124:
-        r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getScaledPagingTouchSlop();	 Catch:{ all -> 0x0062 }
+        r4 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4 = r4.m1012e();	 Catch:{ all -> 0x0062 }
         if (r4 == 0) goto L_0x0110;
     L_0x012c:
-        r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getPhysicalYPixels();	 Catch:{ all -> 0x0062 }
-        r5 = r1.getVisible;	 Catch:{ all -> 0x0062 }
-        r5 = r5.getPhysicalXPixels();	 Catch:{ all -> 0x0062 }
+        r4 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4 = r4.mo771i();	 Catch:{ all -> 0x0062 }
+        r5 = r1.f726b;	 Catch:{ all -> 0x0062 }
+        r5 = r5.mo770h();	 Catch:{ all -> 0x0062 }
         if (r4 < r5) goto L_0x0110;
     L_0x013a:
-        r4 = r1.getVisible;	 Catch:{ all -> 0x0062 }
-        r5 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getPhysicalXPixels(r5);	 Catch:{ all -> 0x0062 }
+        r4 = r1.f726b;	 Catch:{ all -> 0x0062 }
+        r5 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4 = r4.m1000h(r5);	 Catch:{ all -> 0x0062 }
         if (r4 == 0) goto L_0x0110;
     L_0x0144:
-        r3 = setDrawable;	 Catch:{ all -> 0x0062 }
+        r3 = f582a;	 Catch:{ all -> 0x0062 }
         if (r3 != 0) goto L_0x0156;
     L_0x0148:
-        r0 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r0 = r0.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x0062 }
+        r0 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r0 = r0.m1010c();	 Catch:{ all -> 0x0062 }
         if (r0 != 0) goto L_0x0156;
     L_0x0150:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
+        r0.<init>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x0156:
-        r0 = setDrawable;	 Catch:{ all -> 0x0062 }
+        r0 = f582a;	 Catch:{ all -> 0x0062 }
         if (r0 != 0) goto L_0x0168;
     L_0x015a:
-        r0 = r1.getVisible;	 Catch:{ all -> 0x0062 }
-        r0 = r0.getVisible();	 Catch:{ all -> 0x0062 }
+        r0 = r1.f726b;	 Catch:{ all -> 0x0062 }
+        r0 = r0.m1009b();	 Catch:{ all -> 0x0062 }
         if (r0 == 0) goto L_0x0168;
     L_0x0162:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
+        r0.<init>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x0168:
-        r0 = r1.getVisible;	 Catch:{ all -> 0x0062 }
-        r0 = r0.getVisible();	 Catch:{ all -> 0x0062 }
+        r0 = r1.f726b;	 Catch:{ all -> 0x0062 }
+        r0 = r0.m1009b();	 Catch:{ all -> 0x0062 }
         if (r0 == 0) goto L_0x0191;
     L_0x0170:
         r0 = 0;
-        r3 = r11.getVisible(r0);	 Catch:{ all -> 0x0062 }
+        r3 = r11.m807b(r0);	 Catch:{ all -> 0x0062 }
     L_0x0175:
         r0 = r3.hasNext();	 Catch:{ all -> 0x0062 }
         if (r0 == 0) goto L_0x0191;
     L_0x017b:
         r0 = r3.next();	 Catch:{ all -> 0x0062 }
-        r0 = (com.duokan.core.sys.SessionTask) r0;	 Catch:{ all -> 0x0062 }
-        r4 = r11.SessionTask;	 Catch:{ all -> 0x0062 }
+        r0 = (com.duokan.core.sys.C0359g) r0;	 Catch:{ all -> 0x0062 }
+        r4 = r11.f588g;	 Catch:{ all -> 0x0062 }
         r4 = (double) r4;	 Catch:{ all -> 0x0062 }
-        r6 = r11.getPhysicalXPixels;	 Catch:{ all -> 0x0062 }
+        r6 = r11.f589h;	 Catch:{ all -> 0x0062 }
         r6 = (double) r6;	 Catch:{ all -> 0x0062 }
         r8 = 4603579539098121011; // 0x3fe3333333333333 float:4.172325E-8 double:0.6;
         r6 = r6 * r8;
         r4 = (r4 > r6 ? 1 : (r4 == r6 ? 0 : -1));
         if (r4 > 0) goto L_0x01ec;
     L_0x0191:
-        r0 = r1.getVisible;	 Catch:{ all -> 0x0062 }
-        r0 = r0.getVisible();	 Catch:{ all -> 0x0062 }
+        r0 = r1.f726b;	 Catch:{ all -> 0x0062 }
+        r0 = r0.m1009b();	 Catch:{ all -> 0x0062 }
         if (r0 == 0) goto L_0x01b7;
     L_0x0199:
         r0 = 0;
-        r3 = r11.getVisible(r0);	 Catch:{ all -> 0x0062 }
+        r3 = r11.m807b(r0);	 Catch:{ all -> 0x0062 }
     L_0x019e:
         r0 = r3.hasNext();	 Catch:{ all -> 0x0062 }
         if (r0 == 0) goto L_0x01b7;
     L_0x01a4:
         r0 = r3.next();	 Catch:{ all -> 0x0062 }
-        r0 = (com.duokan.core.sys.SessionTask) r0;	 Catch:{ all -> 0x0062 }
-        r4 = r11.SessionTask;	 Catch:{ all -> 0x0062 }
-        r5 = r1.getVisible;	 Catch:{ all -> 0x0062 }
-        r5 = r5.getPhysicalXPixels();	 Catch:{ all -> 0x0062 }
+        r0 = (com.duokan.core.sys.C0359g) r0;	 Catch:{ all -> 0x0062 }
+        r4 = r11.f588g;	 Catch:{ all -> 0x0062 }
+        r5 = r1.f726b;	 Catch:{ all -> 0x0062 }
+        r5 = r5.mo770h();	 Catch:{ all -> 0x0062 }
         r4 = r4 + r5;
-        r5 = r11.getPhysicalXPixels;	 Catch:{ all -> 0x0062 }
+        r5 = r11.f589h;	 Catch:{ all -> 0x0062 }
         if (r4 > r5) goto L_0x0230;
     L_0x01b7:
-        r0 = r1.getVisible;	 Catch:{ all -> 0x0062 }
-        r0 = r0.getVisible();	 Catch:{ all -> 0x0062 }
+        r0 = r1.f726b;	 Catch:{ all -> 0x0062 }
+        r0 = r0.m1009b();	 Catch:{ all -> 0x0062 }
         if (r0 == 0) goto L_0x01df;
     L_0x01bf:
-        r0 = r11.SessionTask;	 Catch:{ all -> 0x0062 }
-        r3 = r1.getVisible;	 Catch:{ all -> 0x0062 }
-        r3 = r3.getPhysicalXPixels();	 Catch:{ all -> 0x0062 }
+        r0 = r11.f588g;	 Catch:{ all -> 0x0062 }
+        r3 = r1.f726b;	 Catch:{ all -> 0x0062 }
+        r3 = r3.mo770h();	 Catch:{ all -> 0x0062 }
         r0 = r0 + r3;
-        r3 = r11.getPhysicalXPixels;	 Catch:{ all -> 0x0062 }
+        r3 = r11.f589h;	 Catch:{ all -> 0x0062 }
         if (r0 > r3) goto L_0x01df;
     L_0x01cc:
-        r0 = r1.getVisible;	 Catch:{ all -> 0x0062 }
-        r0 = r0.n();	 Catch:{ all -> 0x0062 }
+        r0 = r1.f726b;	 Catch:{ all -> 0x0062 }
+        r0 = r0.m1001n();	 Catch:{ all -> 0x0062 }
         if (r0 == 0) goto L_0x01df;
     L_0x01d4:
-        r0 = r11.SessionTask;	 Catch:{ all -> 0x0062 }
-        r3 = r1.getVisible;	 Catch:{ all -> 0x0062 }
-        r3 = r3.getPhysicalYPixels();	 Catch:{ all -> 0x0062 }
+        r0 = r11.f588g;	 Catch:{ all -> 0x0062 }
+        r3 = r1.f726b;	 Catch:{ all -> 0x0062 }
+        r3 = r3.mo771i();	 Catch:{ all -> 0x0062 }
         r0 = r0 + r3;
-        r11.SessionTask = r0;	 Catch:{ all -> 0x0062 }
+        r11.f588g = r0;	 Catch:{ all -> 0x0062 }
     L_0x01df:
         monitor-exit(r2);	 Catch:{ all -> 0x0062 }
-        r0 = setDrawable;
+        r0 = f582a;
         if (r0 != 0) goto L_0x0262;
     L_0x01e4:
         if (r1 != 0) goto L_0x0262;
     L_0x01e6:
         r0 = new java.lang.AssertionError;
-        r0.<creatCallTask>();
+        r0.<init>();
         throw r0;
     L_0x01ec:
-        r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.setDrawable();	 Catch:{ all -> 0x0062 }
+        r4 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4 = r4.m1007a();	 Catch:{ all -> 0x0062 }
         if (r4 == 0) goto L_0x0175;
     L_0x01f4:
-        r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getScaledPagingTouchSlop();	 Catch:{ all -> 0x0062 }
+        r4 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4 = r4.m1012e();	 Catch:{ all -> 0x0062 }
         if (r4 == 0) goto L_0x0175;
     L_0x01fc:
-        r4 = setDrawable;	 Catch:{ all -> 0x0062 }
+        r4 = f582a;	 Catch:{ all -> 0x0062 }
         if (r4 != 0) goto L_0x020e;
     L_0x0200:
-        r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getTriangleEdge();	 Catch:{ all -> 0x0062 }
+        r4 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4 = r4.m1011d();	 Catch:{ all -> 0x0062 }
         if (r4 == 0) goto L_0x020e;
     L_0x0208:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
+        r0.<init>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x020e:
-        r4 = r11.SessionTask;	 Catch:{ all -> 0x0062 }
-        r5 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r5 = r5.getPhysicalYPixels();	 Catch:{ all -> 0x0062 }
+        r4 = r11.f588g;	 Catch:{ all -> 0x0062 }
+        r5 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r5 = r5.mo771i();	 Catch:{ all -> 0x0062 }
         r4 = r4 - r5;
-        r11.SessionTask = r4;	 Catch:{ all -> 0x0062 }
-        r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4.o();	 Catch:{ all -> 0x0062 }
-        r4 = setDrawable;	 Catch:{ all -> 0x0062 }
+        r11.f588g = r4;	 Catch:{ all -> 0x0062 }
+        r4 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4.m1002o();	 Catch:{ all -> 0x0062 }
+        r4 = f582a;	 Catch:{ all -> 0x0062 }
         if (r4 != 0) goto L_0x0175;
     L_0x0222:
-        r0 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r0 = r0.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x0062 }
+        r0 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r0 = r0.m1010c();	 Catch:{ all -> 0x0062 }
         if (r0 != 0) goto L_0x0175;
     L_0x022a:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
+        r0.<init>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x0230:
-        r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getTriangleEdge();	 Catch:{ all -> 0x0062 }
+        r4 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4 = r4.m1011d();	 Catch:{ all -> 0x0062 }
         if (r4 != 0) goto L_0x019e;
     L_0x0238:
-        r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4 = r4.getScaledPagingTouchSlop();	 Catch:{ all -> 0x0062 }
+        r4 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4 = r4.m1012e();	 Catch:{ all -> 0x0062 }
         if (r4 == 0) goto L_0x019e;
     L_0x0240:
-        r4 = r11.SessionTask;	 Catch:{ all -> 0x0062 }
-        r5 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r5 = r5.getPhysicalYPixels();	 Catch:{ all -> 0x0062 }
+        r4 = r11.f588g;	 Catch:{ all -> 0x0062 }
+        r5 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r5 = r5.mo771i();	 Catch:{ all -> 0x0062 }
         r4 = r4 - r5;
-        r11.SessionTask = r4;	 Catch:{ all -> 0x0062 }
-        r4 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r4.o();	 Catch:{ all -> 0x0062 }
-        r4 = setDrawable;	 Catch:{ all -> 0x0062 }
+        r11.f588g = r4;	 Catch:{ all -> 0x0062 }
+        r4 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r4.m1002o();	 Catch:{ all -> 0x0062 }
+        r4 = f582a;	 Catch:{ all -> 0x0062 }
         if (r4 != 0) goto L_0x019e;
     L_0x0254:
-        r0 = r0.getVisible;	 Catch:{ all -> 0x0062 }
-        r0 = r0.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x0062 }
+        r0 = r0.f726b;	 Catch:{ all -> 0x0062 }
+        r0 = r0.m1010c();	 Catch:{ all -> 0x0062 }
         if (r0 != 0) goto L_0x019e;
     L_0x025c:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x0062 }
-        r0.<creatCallTask>();	 Catch:{ all -> 0x0062 }
+        r0.<init>();	 Catch:{ all -> 0x0062 }
         throw r0;	 Catch:{ all -> 0x0062 }
     L_0x0262:
-        r0 = r1.getVisible;
-        r0 = r0.getVisible();
+        r0 = r1.f726b;
+        r0 = r0.m1009b();
         if (r0 != 0) goto L_0x0273;
     L_0x026a:
-        r0 = r1.getVisible;
-        r0.onActivityResult();
+        r0 = r1.f726b;
+        r0.m1005r();
     L_0x026f:
-        r1.getScaledMaximumFlingVelocity = r10;
+        r1.f727c = r10;
         goto L_0x0001;
     L_0x0273:
-        r0 = r1.getVisible;
-        r0.s();
+        r0 = r1.f726b;
+        r0.m1006s();
         goto L_0x026f;
     L_0x0279:
-        r1 = r11.getScaledMaximumFlingVelocity();
+        r1 = r11.m811c();
         monitor-enter(r1);
         r0 = 0;
-        r2 = r11.getVisible(r0);	 Catch:{ all -> 0x02a1 }
+        r2 = r11.m807b(r0);	 Catch:{ all -> 0x02a1 }
     L_0x0283:
         r0 = r2.hasNext();	 Catch:{ all -> 0x02a1 }
         if (r0 == 0) goto L_0x02c9;
     L_0x0289:
         r0 = r2.next();	 Catch:{ all -> 0x02a1 }
-        r0 = (com.duokan.core.sys.SessionTask) r0;	 Catch:{ all -> 0x02a1 }
-        r3 = setDrawable;	 Catch:{ all -> 0x02a1 }
+        r0 = (com.duokan.core.sys.C0359g) r0;	 Catch:{ all -> 0x02a1 }
+        r3 = f582a;	 Catch:{ all -> 0x02a1 }
         if (r3 != 0) goto L_0x02a4;
     L_0x0293:
-        r3 = r0.getVisible;	 Catch:{ all -> 0x02a1 }
-        r3 = r3.getTriangleEdge();	 Catch:{ all -> 0x02a1 }
+        r3 = r0.f726b;	 Catch:{ all -> 0x02a1 }
+        r3 = r3.m1011d();	 Catch:{ all -> 0x02a1 }
         if (r3 == 0) goto L_0x02a4;
     L_0x029b:
         r0 = new java.lang.AssertionError;	 Catch:{ all -> 0x02a1 }
-        r0.<creatCallTask>();	 Catch:{ all -> 0x02a1 }
+        r0.<init>();	 Catch:{ all -> 0x02a1 }
         throw r0;	 Catch:{ all -> 0x02a1 }
     L_0x02a1:
         r0 = move-exception;
         monitor-exit(r1);	 Catch:{ all -> 0x02a1 }
         throw r0;
     L_0x02a4:
-        r3 = r0.getScaledMaximumFlingVelocity;	 Catch:{ all -> 0x02a1 }
+        r3 = r0.f727c;	 Catch:{ all -> 0x02a1 }
         if (r3 != 0) goto L_0x02ad;
     L_0x02a8:
-        r3 = r0.getVisible;	 Catch:{ all -> 0x02a1 }
-        r3.s();	 Catch:{ all -> 0x02a1 }
+        r3 = r0.f726b;	 Catch:{ all -> 0x02a1 }
+        r3.m1006s();	 Catch:{ all -> 0x02a1 }
     L_0x02ad:
-        r3 = r0.getVisible;	 Catch:{ all -> 0x02a1 }
-        r3 = r3.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x02a1 }
+        r3 = r0.f726b;	 Catch:{ all -> 0x02a1 }
+        r3 = r3.m1010c();	 Catch:{ all -> 0x02a1 }
         if (r3 != 0) goto L_0x02c5;
     L_0x02b5:
-        r3 = r11.SessionTask;	 Catch:{ all -> 0x02a1 }
-        r4 = r0.getVisible;	 Catch:{ all -> 0x02a1 }
-        r4 = r4.getPhysicalYPixels();	 Catch:{ all -> 0x02a1 }
+        r3 = r11.f588g;	 Catch:{ all -> 0x02a1 }
+        r4 = r0.f726b;	 Catch:{ all -> 0x02a1 }
+        r4 = r4.mo771i();	 Catch:{ all -> 0x02a1 }
         r3 = r3 - r4;
-        r11.SessionTask = r3;	 Catch:{ all -> 0x02a1 }
-        r0 = r0.getVisible;	 Catch:{ all -> 0x02a1 }
-        r0.o();	 Catch:{ all -> 0x02a1 }
+        r11.f588g = r3;	 Catch:{ all -> 0x02a1 }
+        r0 = r0.f726b;	 Catch:{ all -> 0x02a1 }
+        r0.m1002o();	 Catch:{ all -> 0x02a1 }
     L_0x02c5:
         r2.remove();	 Catch:{ all -> 0x02a1 }
         goto L_0x0283;
@@ -545,94 +562,102 @@ public class AsyncCache {
         r0 = r1;
         goto L_0x006b;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.core.sys.AsyncCache.setDrawable():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.core.sys.AsyncCache.a():void");
     }
 
-    private ListIterator b(boolean z) {
-        int b = b();
-        ArrayList arrayList = new ArrayList(this.b.size());
-        for (RecordList recordList : this.b.values()) {
+    /* renamed from: b */
+    private ListIterator<C0359g> m807b(boolean z) {
+        int b = m804b();
+        ArrayList arrayList = new ArrayList(this.f583b.size());
+        for (RecordList recordList : this.f583b.values()) {
             if (recordList != null) {
                 arrayList.add(recordList.listIterator(z ? recordList.size() : 0));
             }
         }
-        return new d(this, b, z, arrayList);
+        return new C0356d(this, b, z, arrayList);
     }
 
-    private int b() {
+    /* renamed from: b */
+    private int m804b() {
         int i = 0;
-        for (RecordList size : this.b.values()) {
+        for (RecordList size : this.f583b.values()) {
             i = size.size() + i;
         }
         return i;
     }
 
-    private g a(f fVar, int i, h hVar) {
-        if (a || Thread.holdsLock(this)) {
-            ListIterator b = b(true);
-            g gVar = null;
+    /* renamed from: a */
+    private C0359g m799a(C0358f c0358f, int i, C0350h c0350h) {
+        if (f582a || Thread.holdsLock(this)) {
+            ListIterator b = m807b(true);
+            C0359g c0359g = null;
             int i2 = 0;
             while (b.hasPrevious()) {
-                g gVar2 = (g) b.previous();
-                int a = gVar2.a.a(fVar);
-                if (a >= i && (hVar == null || hVar.a(gVar2))) {
-                    g gVar3;
+                C0359g c0359g2 = (C0359g) b.previous();
+                int a = c0359g2.f725a.mo775a(c0358f);
+                if (a >= i && (c0350h == null || c0350h.mo414a(c0359g2))) {
+                    C0359g c0359g3;
                     int i3;
-                    if (gVar == null || i2 < a) {
-                        gVar3 = gVar2;
+                    if (c0359g == null || i2 < a) {
+                        c0359g3 = c0359g2;
                         i3 = a;
                     } else {
                         i3 = i2;
-                        gVar3 = gVar;
+                        c0359g3 = c0359g;
                     }
                     if (i3 == Integer.MAX_VALUE) {
-                        return gVar3;
+                        return c0359g3;
                     }
-                    gVar = gVar3;
+                    c0359g = c0359g3;
                     i2 = i3;
                 }
             }
-            return gVar;
+            return c0359g;
         }
         throw new AssertionError();
     }
 
-    private void a(g gVar) {
-        if (a || Thread.holdsLock(this)) {
-            RecordList c = c(gVar.hashCode());
-            c.remove(gVar);
-            c.addLast(gVar);
-            this.b.remove(c);
-            this.b.put(Integer.valueOf(gVar.hashCode()), c);
+    /* renamed from: a */
+    private void m803a(C0359g c0359g) {
+        if (f582a || Thread.holdsLock(this)) {
+            RecordList c = m810c(c0359g.hashCode());
+            c.remove(c0359g);
+            c.addLast(c0359g);
+            this.f583b.remove(c);
+            this.f583b.put(Integer.valueOf(c0359g.hashCode()), c);
             return;
         }
         throw new AssertionError();
     }
 
-    private void b(g gVar) {
-        RecordList b = b(gVar.hashCode());
-        if (a || b != null) {
-            b.add(gVar);
+    /* renamed from: b */
+    private void m808b(C0359g c0359g) {
+        RecordList b = m805b(c0359g.hashCode());
+        if (f582a || b != null) {
+            b.add(c0359g);
             return;
         }
         throw new AssertionError();
     }
 
-    private RecordList b(int i) {
-        RecordList c = c(i);
+    /* renamed from: b */
+    private RecordList m805b(int i) {
+        RecordList c = m810c(i);
         if (c != null) {
             return c;
         }
         c = new RecordList();
-        this.b.put(Integer.valueOf(i), c);
+        this.f583b.put(Integer.valueOf(i), c);
         return c;
     }
 
-    private RecordList c(int i) {
-        return (RecordList) this.b.get(Integer.valueOf(i));
+    /* renamed from: c */
+    private RecordList m810c(int i) {
+        return (RecordList) this.f583b.get(Integer.valueOf(i));
     }
 
-    private Object c() {
+    /* renamed from: c */
+    private Object m811c() {
         return this;
     }
 }

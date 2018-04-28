@@ -1,13 +1,18 @@
 package com.duokan.reader.domain.bookshelf;
 
-class ii implements Runnable {
-    final /* synthetic */ hi a;
+class ii implements dz {
+    /* renamed from: a */
+    final /* synthetic */ ih f3351a;
 
-    ii(hi hiVar) {
-        this.a = hiVar;
+    ii(ih ihVar) {
+        this.f3351a = ihVar;
     }
 
-    public void run() {
-        this.a.G();
+    /* renamed from: a */
+    public void mo1004a() {
+    }
+
+    /* renamed from: a */
+    public void mo1005a(String str) {
     }
 }

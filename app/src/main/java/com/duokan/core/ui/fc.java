@@ -1,17 +1,19 @@
 package com.duokan.core.ui;
 
 class fc implements Runnable {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ ev b;
+    /* renamed from: a */
+    final /* synthetic */ Runnable f1242a;
+    /* renamed from: b */
+    final /* synthetic */ ev f1243b;
 
     fc(ev evVar, Runnable runnable) {
-        this.b = evVar;
-        this.a = runnable;
+        this.f1243b = evVar;
+        this.f1242a = runnable;
     }
 
     public void run() {
-        if (this.a != null) {
-            this.b.a.post(this.a);
+        if (this.f1242a != null) {
+            this.f1243b.f935a.post(this.f1242a);
         }
     }
 }

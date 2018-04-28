@@ -1,27 +1,17 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.c.j;
-import com.duokan.core.sys.as;
-import com.duokan.reader.common.i;
+import com.duokan.reader.ui.general.hq;
 
-import org.json.JSONObject;
+class fj implements hq {
+    /* renamed from: a */
+    final /* synthetic */ fi f7835a;
 
-class fj implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
-
-    fj(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    fj(fi fiVar) {
+        this.f7835a = fiVar;
     }
 
-    public void a() {
-        JSONObject jSONObject = new JSONObject(this.a);
-        String string = jSONObject.getString("msgid");
-        jSONObject = jSONObject.getJSONObject("params");
-        String b = i.b(jSONObject, "title");
-        String b2 = i.b(jSONObject, "prompt");
-        String a = i.a(jSONObject, "cancel", this.b.pageController.getContext().getString(j.general__shared__cancel));
-        this.b.a(new fk(this, b, b2, i.a(jSONObject, "confirm", this.b.pageController.getContext().getString(j.general__shared__confirm)), a, string));
+    /* renamed from: a */
+    public void mo1590a(int i) {
+        this.f7835a.f7834b.f7832b.f7830b.f7581b.triggerEventOnCurrentUrl("dropdownButton", Integer.valueOf(i));
     }
 }

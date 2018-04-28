@@ -1,10 +1,15 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.IFeature;
+class dg implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ de f6330a;
 
-public abstract class dg extends ActivatedController implements eq {
-    public dg(IFeature featrue) {
-        super(featrue);
+    dg(de deVar) {
+        this.f6330a = deVar;
+    }
+
+    public void run() {
+        this.f6330a.f6071t = true;
+        this.f6330a.invalidate();
     }
 }

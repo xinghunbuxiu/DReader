@@ -1,22 +1,25 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.b;
+import java.util.Arrays;
 
-class cg implements b {
-    final /* synthetic */ cf a;
+class cg implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ int f2952a;
+    /* renamed from: b */
+    final /* synthetic */ String f2953b;
+    /* renamed from: c */
+    final /* synthetic */ bu f2954c;
 
-    cg(cf cfVar) {
-        this.a = cfVar;
+    cg(bu buVar, int i, String str) {
+        this.f2954c = buVar;
+        this.f2952a = i;
+        this.f2953b = str;
     }
 
-    public void a(a aVar) {
-        this.a.e.c = new ab(aVar);
-        this.a.e.a(this.a.c, this.a.b, this.a.d);
-    }
-
-    public void a(a aVar, String str) {
-        this.a.d.a("");
+    public void run() {
+        if (this.f2954c.f2868c.m3367c() && this.f2952a != -1) {
+            bt a = this.f2954c.m4075a(this.f2954c.f2869d, this.f2952a, this.f2953b, System.currentTimeMillis());
+            this.f2954c.m4090a(Arrays.asList(new bt[]{a}));
+        }
     }
 }

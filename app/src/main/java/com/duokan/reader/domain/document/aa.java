@@ -1,15 +1,19 @@
 package com.duokan.reader.domain.document;
 
 public class aa {
-    public String a = "";
-    public z[] b = new z[0];
-    protected boolean c = false;
+    /* renamed from: a */
+    public String f4314a = "";
+    /* renamed from: b */
+    public C1013z[] f4315b = new C1013z[0];
+    /* renamed from: c */
+    protected boolean f4316c = false;
 
     public aa(String str) {
-        this.a = str;
+        this.f4314a = str;
     }
 
-    public void a() {
-        this.c = true;
+    /* renamed from: a */
+    public void m6066a() {
+        this.f4316c = true;
     }
 }

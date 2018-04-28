@@ -1,27 +1,17 @@
 package com.duokan.reader.ui.general;
 
 import android.content.Context;
-import android.widget.TextView;
 
-import com.duokan.core.ui.UTools;
+class dw extends cw {
+    /* renamed from: a */
+    final /* synthetic */ dr f7127a;
 
-class dw extends TextView {
-    final /* synthetic */ ds a;
-
-    dw(ds dsVar, Context context) {
-        this.a = dsVar;
+    dw(dr drVar, Context context) {
+        this.f7127a = drVar;
         super(context);
     }
 
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        if (MeasureSpec.getMode(i) != 1073741824) {
-            super.onMeasure(MeasureSpec.makeMeasureSpec((int) ((((float) getText().length()) * getTextSize()) + ((float) UTools.getMinimumHeight(getContext(), 30.0f))), 1073741824), i2);
-        }
-    }
-
-    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        super.onLayout(z, i, i2, i3, i4);
-        setPadding(getPaddingLeft(), Math.max(0, (this.a.d - this.a.c) - this.a.getTabTextHeight()), getPaddingRight(), getPaddingBottom());
+    public boolean isEnabled() {
+        return this.f7127a.mo2530b();
     }
 }

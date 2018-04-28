@@ -1,29 +1,45 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.content.Context;
+import com.duokan.common.FileTypeRecognizer;
+import com.duokan.common.FileTypeRecognizer.FileType;
+import java.io.File;
+import java.io.FileFilter;
+import java.util.List;
+import org.apache.http.protocol.HTTP;
 
-import com.duokan.b.d;
-import com.duokan.core.ui.HatGridView;
-import com.duokan.reader.ui.general.ReaderUi;
+class gs implements FileFilter {
+    /* renamed from: a */
+    final /* synthetic */ FileScanTask f6527a;
+    /* renamed from: b */
+    private final List<String> f6528b = this.f6527a.m9076a();
 
-public class gs extends HatGridView {
-    public gs(Context context) {
-        super(context);
-        int dimensionPixelSize = getResources().getDimensionPixelSize(d.general__shared__cover_grid_horz_padding);
-        int dimensionPixelSize2 = getResources().getDimensionPixelSize(d.general__shared__cover_grid_vert_padding);
-        setColumnSpacing(getResources().getDimensionPixelSize(d.general__shared__cover_grid_space));
-        setRowSpacing(getResources().getDimensionPixelSize(d.general__shared__cover_grid_row_space));
-        b(dimensionPixelSize, dimensionPixelSize2, dimensionPixelSize, dimensionPixelSize2);
+    gs(FileScanTask fileScanTask) {
+        this.f6527a = fileScanTask;
     }
 
-    protected void onMeasure(int i, int i2) {
-        int mode = MeasureSpec.getMode(i);
-        int size = MeasureSpec.getSize(i);
-        if (mode != 0) {
-            setNumColumns(ReaderUi.c(getContext(), (size - getGridPaddingLeft()) - getGridPaddingRight()));
-        } else {
-            setNumColumns(3);
+    public boolean accept(File file) {
+        if (file.isHidden()) {
+            return false;
         }
-        super.onMeasure(i, i2);
+        String absolutePath = file.getAbsolutePath();
+        FileType a = FileTypeRecognizer.m567a(absolutePath);
+        if (a == FileType.UNSUPPORTED) {
+            return false;
+        }
+        if (a == FileType.TXT) {
+            try {
+                if (file.length() < 51200 && absolutePath.getBytes(HTTP.UTF_8).length <= absolutePath.length()) {
+                    return false;
+                }
+            } catch (Throwable th) {
+                return false;
+            }
+        }
+        for (String startsWith : this.f6528b) {
+            if (absolutePath.startsWith(startsWith)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

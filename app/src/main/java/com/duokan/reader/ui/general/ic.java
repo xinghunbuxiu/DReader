@@ -1,21 +1,32 @@
 package com.duokan.reader.ui.general;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.ui.TabBarView;
 
-class ic implements OnClickListener {
-    final /* synthetic */ ia a;
-    private int b;
+class ic implements ih {
+    /* renamed from: a */
+    final /* synthetic */ TabBarView f7369a;
+    /* renamed from: b */
+    final /* synthetic */ ib f7370b;
 
-    ic(ia iaVar, int i) {
-        this.a = iaVar;
-        this.b = i;
+    ic(ib ibVar, TabBarView tabBarView) {
+        this.f7370b = ibVar;
+        this.f7369a = tabBarView;
     }
 
-    public void onClick(View view) {
-        if (this.a.b != null) {
-            this.a.b.a(this.b);
+    /* renamed from: a */
+    public void mo1794a(float f, int i) {
+        this.f7370b.m10772a(i, false);
+        if (this.f7370b.f7367d != null) {
+            this.f7370b.f7367d.mo1794a(f, i);
         }
-        this.a.dismiss();
+    }
+
+    /* renamed from: a */
+    public void mo1699a(int i, int i2) {
+        this.f7369a.m1319a(i2);
+        this.f7370b.m10772a(i2, false);
+        if (this.f7370b.f7367d != null) {
+            this.f7370b.f7367d.mo1699a(i, i2);
+        }
     }
 }

@@ -1,48 +1,48 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.SeekBar;
+import com.duokan.reader.ui.general.hq;
 
-import com.duokan.b.e;
-import com.duokan.b.f;
-import com.duokan.b.g;
-import com.duokan.core.app.BrightnessMode;
-import com.duokan.core.app.IFeature;
-import com.duokan.core.ui.UTools;
-import com.duokan.reader.ReaderEnv;
+class wg implements hq {
+    /* renamed from: a */
+    final /* synthetic */ wd f11110a;
 
-public class wg extends wk {
-    private final sh a = ((sh) getContext().queryFeature(sh.class));
-    private final ViewGroup b = ((ViewGroup) LayoutInflater.from(getContext()).inflate(g.reading__reading_options_view_slide_show, null));
-    private final View c;
-    private final SeekBar d;
-
-    public wg(IFeature featrue) {
-        super(featrue);
-        this.b.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? UTools.getMinimumHeight(getContext(), 400.0f) : -1, -2));
-        setContentView(this.b);
-        this.d = (SeekBar) findViewById(f.reading__reading_options_view__seek_brightness);
-        if (ReaderEnv.get().forHd()) {
-            this.d.setProgressDrawable(getDrawable(e.general__shared__seek_bar_dark));
-        }
-        this.c = findViewById(f.reading__reading_options_view__slide_show_anim);
-        this.c.setOnClickListener(new wh(this));
-        this.d.setOnSeekBarChangeListener(new wi(this));
-        findViewById(f.reading__reading_options_view__auto_brightness).setOnClickListener(new wj(this));
-        a();
+    wg(wd wdVar) {
+        this.f11110a = wdVar;
     }
 
-    private final void a() {
-        this.c.setSelected(this.a.V() == SlideShowEffect.SIMPLE);
-        if (this.a.E() == BrightnessMode.MANUAL) {
-            this.d.setProgressDrawable(getDrawable(e.reading__reading_options_view__seek_brightness_normal));
-        } else {
-            this.d.setProgressDrawable(getDrawable(e.reading__reading_options_view__seek_brightness_disabled));
+    /* renamed from: a */
+    public void mo1590a(int i) {
+        switch (i) {
+            case 1:
+                this.f11110a.f11102a.ae().m12469a(PageAnimationMode.THREE_DIMEN);
+                this.f11110a.f11102a.ae().m12463X();
+                this.f11110a.m15054e();
+                return;
+            case 2:
+                this.f11110a.f11102a.ae().m12469a(PageAnimationMode.HSCROLL);
+                this.f11110a.f11102a.ae().m12463X();
+                this.f11110a.m15054e();
+                return;
+            case 3:
+                this.f11110a.f11102a.ae().m12469a(PageAnimationMode.VSCROLL);
+                this.f11110a.f11102a.ae().m12463X();
+                this.f11110a.m15054e();
+                return;
+            case 4:
+                this.f11110a.f11102a.ae().m12469a(PageAnimationMode.FADE_IN);
+                this.f11110a.f11102a.ae().m12463X();
+                this.f11110a.m15054e();
+                return;
+            case 5:
+                this.f11110a.f11102a.ae().m12469a(PageAnimationMode.NONE);
+                this.f11110a.f11102a.ae().m12463X();
+                this.f11110a.m15054e();
+                return;
+            default:
+                this.f11110a.f11102a.ae().m12469a(PageAnimationMode.OVERLAP);
+                this.f11110a.f11102a.ae().m12463X();
+                this.f11110a.m15054e();
+                return;
         }
-        float[] D = this.a.D();
-        this.d.setProgress(Math.round(((this.a.F() - D[0]) / (D[1] - D[0])) * 1000.0f));
     }
 }

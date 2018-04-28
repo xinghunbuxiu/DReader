@@ -1,24 +1,12 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.af;
-import com.duokan.core.sys.ag;
-
-import java.util.Map;
-import java.util.concurrent.Semaphore;
-
-class fh implements ag {
-    final /* synthetic */ af a;
-    final /* synthetic */ Semaphore b;
-    final /* synthetic */ fg c;
-
-    fh(fg fgVar, af afVar, Semaphore semaphore) {
-        this.c = fgVar;
-        this.a = afVar;
-        this.b = semaphore;
-    }
-
-    public void a(Map map) {
-        this.a.a((Object) map);
-        this.b.release();
-    }
+public class fh {
+    /* renamed from: a */
+    public int f3163a;
+    /* renamed from: b */
+    public int f3164b;
+    /* renamed from: c */
+    public int f3165c;
+    /* renamed from: d */
+    public long f3166d;
 }

@@ -1,19 +1,23 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.as;
-import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.i;
+import com.duokan.reader.domain.account.AccountType;
+import com.duokan.reader.domain.account.C0709k;
+import java.util.concurrent.Callable;
 
-class ds implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ dr b;
+class ds implements Callable<Boolean> {
+    /* renamed from: a */
+    final /* synthetic */ ci f7744a;
 
-    ds(dr drVar, String str) {
-        this.b = drVar;
-        this.a = str;
+    ds(ci ciVar) {
+        this.f7744a = ciVar;
     }
 
-    public void a() {
-        ((PersonalAccount) i.f().b(PersonalAccount.class)).d(new dt(this));
+    public /* synthetic */ Object call() {
+        return m11090a();
+    }
+
+    /* renamed from: a */
+    public Boolean m11090a() {
+        return Boolean.valueOf(AccountType.XIAOMI_GUEST.equals(C0709k.m3476a().m3501b()));
     }
 }

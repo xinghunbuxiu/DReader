@@ -1,32 +1,17 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.text.TextUtils;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-import com.duokan.c.c;
-import com.duokan.c.j;
-import com.duokan.reader.domain.bookshelf.ai;
-import com.duokan.reader.ui.general.be;
-import com.duokan.reader.ui.general.jg;
+class ef implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ec f6380a;
 
-import java.util.Arrays;
-
-class ef implements jg {
-    final /* synthetic */ ee a;
-
-    ef(ee eeVar) {
-        this.a = eeVar;
+    ef(ec ecVar) {
+        this.f6380a = ecVar;
     }
 
-    public boolean a(String str) {
-        if (TextUtils.isEmpty(str)) {
-            be.a(this.a.a.getContext(), j.bookshelf__category_selection_view__enter_name, 0).show();
-            return false;
-        } else if (ai.a().g(str) != null || Arrays.asList(this.a.a.getResources().getStringArray(c.bookshelf__general_shared__main_categories)).contains(str)) {
-            be.a(this.a.a.getContext(), this.a.a.getResources().getString(j.bookshelf__category_rename_view__name_exists), 0).show();
-            return false;
-        } else {
-            this.a.a.a.a(ai.a().h(str));
-            return true;
-        }
+    public void onClick(View view) {
+        this.f6380a.f6375g.setText(null);
     }
 }

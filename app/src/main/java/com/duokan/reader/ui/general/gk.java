@@ -1,55 +1,102 @@
 package com.duokan.reader.ui.general;
 
-import android.graphics.PointF;
-import android.view.MotionEvent;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import com.duokan.common.C0267i;
+import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.dv;
+import com.duokan.p023b.C0240b;
+import com.duokan.p023b.C0241c;
+import com.duokan.p023b.C0242d;
+import com.duokan.p023b.C0243e;
+import com.duokan.p023b.C0244f;
+import com.duokan.p023b.C0245g;
 
-import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.cd;
-import com.duokan.core.ui.er;
-import com.duokan.core.ui.OnTouchChangeListener;
-import com.duokan.core.ui.g;
+public class gk implements dq {
+    /* renamed from: a */
+    private final C0342j f7281a;
+    /* renamed from: b */
+    private FrameLayout f7282b;
+    /* renamed from: c */
+    private LinearLayout f7283c;
+    /* renamed from: d */
+    private boolean f7284d = false;
 
-public class gk extends er {
-    final /* synthetic */ PagesView a;
-    private final cd c = new cd();
-    private final g d = new g(2);
-    private PointF e = null;
-
-    protected gk(PagesView pagesView) {
-        this.a = pagesView;
+    public gk(C0342j c0342j) {
+        this.f7281a = c0342j;
+        Context context = this.f7281a.getContext();
+        this.f7283c = new LinearLayout(context);
+        this.f7283c.setBackgroundResource(C0243e.general__shared__menu_bg);
+        this.f7283c.setOrientation(1);
+        this.f7283c.setGravity(80);
+        this.f7282b = new FrameLayout(context);
+        this.f7282b.setBackgroundColor(context.getResources().getColor(C0241c.general__shared__f7f7f7));
+        View frameLayout = new FrameLayout(context);
+        frameLayout.addView(this.f7283c, new LayoutParams(-1, -2));
+        frameLayout.addView(this.f7282b, new LayoutParams(-1, -2));
+        new RelativeLayout.LayoutParams(-1, -2).addRule(12);
+        c0342j.setContentView(frameLayout);
+        c0342j.setEnterAnimation(C0240b.general__shared__push_down_in);
+        c0342j.setExitAnimation(C0240b.general__shared__push_down_out);
+        c0342j.setGravity(80);
+        c0342j.setDimAmount(0.75f);
     }
 
-    protected void a(View view, boolean z) {
-        boolean z2 = false;
-        cd cdVar = this.c;
-        boolean z3 = z || !this.c.c();
-        cdVar.b(view, z3);
-        g gVar = this.d;
-        if (z || !this.d.c()) {
-            z2 = true;
-        }
-        gVar.b(view, z2);
-        this.c.a(0.01f);
-        this.c.a(UTools.getScaledPagingTouchSlop(view.getContext()));
-        this.e = null;
+    /* renamed from: a */
+    public void mo1785a(boolean z) {
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
-        boolean z2 = true;
-        this.c.b(view, motionEvent, z, new gl(this));
-        this.d.b(view, motionEvent, z, new gm(this));
-        if (this.e != null && motionEvent.getActionMasked() == 1) {
-            if (Float.compare(this.a.getZoomFactor(), 1.0f) < 0) {
-                this.a.b((int) this.e.x, (int) this.e.y, 1.0f);
-            } else if (Float.compare(this.a.getZoomFactor(), 3.0f) > 0) {
-                this.a.b((int) this.e.x, (int) this.e.y, 3.0f);
-            }
+    /* renamed from: a */
+    public void mo1784a(String str) {
+        if (!TextUtils.isEmpty(str)) {
+            this.f7284d = true;
+            View dkLabelView = new DkLabelView(this.f7281a.getContext());
+            dkLabelView.setGravity(17);
+            dkLabelView.setPadding(0, dv.m1932b(this.f7281a.getContext(), 18.0f), 0, dv.m1932b(this.f7281a.getContext(), 15.0f));
+            dkLabelView.setTextColor(this.f7281a.getContext().getResources().getColor(C0241c.general__shared__333333));
+            dkLabelView.setTextSize(0, this.f7281a.getContext().getResources().getDimension(C0242d.general_font__shared__b));
+            dkLabelView.setText(str);
+            this.f7283c.addView(dkLabelView, 0);
         }
-        e(this.d.f());
-        if (!(this.c.c() || this.d.c())) {
-            z2 = false;
+    }
+
+    /* renamed from: a */
+    public LinearLayout mo1783a() {
+        return this.f7283c;
+    }
+
+    /* renamed from: b */
+    public ViewGroup mo1786b() {
+        return this.f7282b;
+    }
+
+    /* renamed from: a */
+    public View mo1782a(String str, int i, boolean z) {
+        View inflate = LayoutInflater.from(this.f7281a.getContext()).inflate(C0245g.general__dk_spirt_menu_item_view, null);
+        DkLabelView dkLabelView = (DkLabelView) inflate.findViewById(C0244f.general__shared_spirt_menu_item_view__text);
+        if (i != 0) {
+            dkLabelView.setCompoundDrawablesWithIntrinsicBounds(this.f7281a.getContext().getResources().getDrawable(i), null, null, null);
+            dkLabelView.setCompoundDrawablePadding(C0267i.m598a(this.f7281a.getContext(), 10.0f));
         }
-        b(z2);
+        if (!z) {
+            inflate.findViewById(C0244f.general__shared_spirt_menu_item_view__top_line).setVisibility(8);
+        }
+        dkLabelView.setText(str);
+        return inflate;
+    }
+
+    /* renamed from: c */
+    public int mo1787c() {
+        if (this.f7284d) {
+            return this.f7283c.getChildCount() - 1;
+        }
+        return this.f7283c.getChildCount();
     }
 }

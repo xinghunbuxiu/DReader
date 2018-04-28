@@ -1,30 +1,18 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.core.ui.UTools;
-import com.duokan.reader.ui.ITheme;
+import com.duokan.core.sys.as;
+import com.duokan.reader.domain.cloud.PersonalPrefs;
 
-import java.util.concurrent.Callable;
+class is implements as {
+    /* renamed from: a */
+    final /* synthetic */ ir f8012a;
 
-class is implements Callable {
-    final /* synthetic */ PageController a;
-
-    is(PageController cgVar) {
-        this.a = cgVar;
+    is(ir irVar) {
+        this.f8012a = irVar;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
-    }
-
-    public Integer a() {
-        int round;
-        ITheme sVar = (ITheme) MyContextWrapper.getFeature(this.a.pageController.getContext()).queryFeature(ITheme.class);
-        if (sVar != null) {
-            round = Math.round(UTools.closeAnimation(this.a.pageController.getContext(), sVar.getTheme().getPageHeaderHeight()));
-        } else {
-            round = 0;
-        }
-        return Integer.valueOf(round);
+    /* renamed from: a */
+    public void mo1831a() {
+        PersonalPrefs.m5175a().m5199a(this.f8012a.f8010a, true);
     }
 }

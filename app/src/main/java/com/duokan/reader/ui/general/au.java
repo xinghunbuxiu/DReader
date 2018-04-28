@@ -1,15 +1,17 @@
 package com.duokan.reader.ui.general;
 
-import com.duokan.core.app.MyContextWrapper;
+import com.duokan.core.app.AppContext;
 import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.domain.document.Document_a;
+import com.duokan.reader.domain.document.C0896a;
 
 public class au {
-    public static void a(MyContextWrapper mContext, String str) {
-        a(mContext, str, null);
+    /* renamed from: a */
+    public static void m10239a(AppContext appContext, String str) {
+        m10240a(appContext, str, null);
     }
 
-    public static void a(MyContextWrapper mContext, String str, Document_a aVar) {
-        ((ReaderFeature) mContext.queryFeature(ReaderFeature.class)).openBook(str, aVar);
+    /* renamed from: a */
+    public static void m10240a(AppContext appContext, String str, C0896a c0896a) {
+        ((ReaderFeature) appContext.queryFeature(ReaderFeature.class)).openBook(str, c0896a);
     }
 }

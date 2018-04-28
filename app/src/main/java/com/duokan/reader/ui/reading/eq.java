@@ -1,21 +1,20 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.domain.p044b.C0781b;
+import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
+import com.duokan.reader.ui.general.cm;
 
-class eq implements OnClickListener {
-    final /* synthetic */ en a;
+class eq implements cm {
+    /* renamed from: a */
+    final /* synthetic */ eo f10097a;
 
-    eq(en enVar) {
-        this.a = enVar;
+    eq(eo eoVar) {
+        this.f10097a = eoVar;
     }
 
-    public void onClick(View view) {
-        if (this.a.a) {
-            this.a.a("FONT_URI_DEFAULT");
-        } else {
-            this.a.b("FONT_URI_DEFAULT");
+    public void onChoice(boolean z, FlowChargingTransferChoice flowChargingTransferChoice) {
+        if (z) {
+            C0781b.m3667b().m3687a(flowChargingTransferChoice);
         }
-        this.a.b();
     }
 }

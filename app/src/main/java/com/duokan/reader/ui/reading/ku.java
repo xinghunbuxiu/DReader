@@ -1,37 +1,14 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Bitmap;
+class ku implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ kn f10530a;
 
-import com.duokan.core.sys.ag;
-import com.duokan.core.ui.UTools;
-
-class ku implements ag {
-    final /* synthetic */ kq a;
-
-    ku(kq kqVar) {
-        this.a = kqVar;
+    ku(kn knVar) {
+        this.f10530a = knVar;
     }
 
-    public void a(Bitmap bitmap) {
-        if (this.a.getWindowToken() == null) {
-            if (bitmap != null) {
-                bitmap.recycle();
-            }
-        } else if (bitmap != null) {
-            Bitmap f = this.a.g;
-            this.a.g = bitmap;
-            this.a.i = true;
-            this.a.d.setImageBitmap(this.a.g);
-            if (this.a.d.getVisibility() == 0) {
-                if (f != null) {
-                    this.a.f.setImageBitmap(f);
-                    UTools.showAnimation(this.a.f, new kv(this, f));
-                    return;
-                }
-                UTools.closeAnimation(this.a.d, null);
-            } else if (f != null) {
-                f.recycle();
-            }
-        }
+    public void run() {
+        this.f10530a.m14566b(null);
     }
 }

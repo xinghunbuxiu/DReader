@@ -1,20 +1,33 @@
 package com.duokan.reader.ui.bookshelf;
 
-import java.io.File;
-import java.util.List;
+import android.os.AsyncTask;
+import android.os.AsyncTask.Status;
+import com.duokan.reader.ui.general.ak;
+import com.duokan.reader.ui.general.an;
 
-class eu implements gi {
-    final /* synthetic */ er a;
+class eu implements an {
+    /* renamed from: a */
+    final /* synthetic */ AsyncTask f6414a;
+    /* renamed from: b */
+    final /* synthetic */ ak f6415b;
+    /* renamed from: c */
+    final /* synthetic */ es f6416c;
 
-    eu(er erVar) {
-        this.a = erVar;
+    eu(es esVar, AsyncTask asyncTask, ak akVar) {
+        this.f6416c = esVar;
+        this.f6414a = asyncTask;
+        this.f6415b = akVar;
     }
 
-    public void a(String str) {
-        List a = this.a.b(str);
-        if (new File(str).canRead() && a != null && !a.isEmpty()) {
-            this.a.f.setPath(str);
-            this.a.setData(this.a.b(str));
+    /* renamed from: a */
+    public void mo1689a(int i) {
+        if (this.f6416c.f6405b.f6399a != null) {
+            this.f6416c.f6405b.f6399a.m9573a();
+        }
+        if (this.f6414a.getStatus() == Status.FINISHED) {
+            this.f6415b.dismiss();
+        } else {
+            this.f6414a.cancel(false);
         }
     }
 }

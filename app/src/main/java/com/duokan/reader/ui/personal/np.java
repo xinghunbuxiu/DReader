@@ -1,18 +1,21 @@
 package com.duokan.reader.ui.personal;
 
 import android.view.View;
+import android.view.View.OnLongClickListener;
 
-import com.duokan.core.ui.HatGridView;
-import com.duokan.core.ui.an;
+class np implements OnLongClickListener {
+    /* renamed from: a */
+    final /* synthetic */ int f9008a;
+    /* renamed from: b */
+    final /* synthetic */ nn f9009b;
 
-class np implements an {
-    final /* synthetic */ nm a;
-
-    np(nm nmVar) {
-        this.a = nmVar;
+    np(nn nnVar, int i) {
+        this.f9009b = nnVar;
+        this.f9008a = i;
     }
 
-    public void a(HatGridView hatGridView, View view, int i) {
-        this.a.b(0, i);
+    public boolean onLongClick(View view) {
+        this.f9009b.e.mo1878a(this.f9009b.m12354c(), this.f9008a);
+        return true;
     }
 }

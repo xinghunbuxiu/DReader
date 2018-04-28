@@ -1,43 +1,33 @@
 package com.duokan.reader.ui.personal;
 
-import android.text.TextUtils;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.core.app.AppContext;
+import com.duokan.reader.domain.cloud.DkCloudStoreBook;
+import com.duokan.reader.ui.general.expandable.ViewMode;
 
-import com.duokan.reader.domain.cloud.DkCloudReadingInfo;
-import com.duokan.reader.domain.cloud.as;
-import com.duokan.reader.ui.general.be;
-import com.duokan.reader.ui.general.eo;
+class mf implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ int f8932a;
+    /* renamed from: b */
+    final /* synthetic */ int f8933b;
+    /* renamed from: c */
+    final /* synthetic */ DkCloudStoreBook f8934c;
+    /* renamed from: d */
+    final /* synthetic */ me f8935d;
 
-class mf implements as {
-    final /* synthetic */ eo a;
-    final /* synthetic */ int b;
-    final /* synthetic */ lv c;
-
-    mf(lv lvVar, eo eoVar, int i) {
-        this.c = lvVar;
-        this.a = eoVar;
-        this.b = i;
+    mf(me meVar, int i, int i2, DkCloudStoreBook dkCloudStoreBook) {
+        this.f8935d = meVar;
+        this.f8932a = i;
+        this.f8933b = i2;
+        this.f8934c = dkCloudStoreBook;
     }
 
-    public void a(DkCloudReadingInfo dkCloudReadingInfo, DkCloudReadingInfo dkCloudReadingInfo2, String str) {
-    }
-
-    public void a(DkCloudReadingInfo dkCloudReadingInfo, String str, String str2) {
-    }
-
-    public void b(DkCloudReadingInfo dkCloudReadingInfo, DkCloudReadingInfo dkCloudReadingInfo2, String str) {
-        this.c.a.g = dkCloudReadingInfo2;
-        this.a.dismiss();
-        this.c.c.a();
-    }
-
-    public void b(DkCloudReadingInfo dkCloudReadingInfo, String str, String str2) {
-        this.a.dismiss();
-        this.c.a.g = dkCloudReadingInfo;
-        if (TextUtils.isEmpty(str)) {
-            be.a(this.c.getContext(), this.b, 0).show();
+    public void onClick(View view) {
+        if (this.f8935d.mo1714f() == ViewMode.Edit) {
+            this.f8935d.f8930i.m11522b(this.f8932a, this.f8933b);
         } else {
-            be.a(this.c.getContext(), (CharSequence) str, 0).show();
+            ((lb) AppContext.getAppContext(this.f8935d.m12080o()).queryFeature(lb.class)).mo1933a(this.f8934c);
         }
-        this.c.c.a();
     }
 }

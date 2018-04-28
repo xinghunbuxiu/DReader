@@ -1,16 +1,17 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.ui.general.dj;
 
-class ag implements OnClickListener {
-    final /* synthetic */ ae a;
+class ag implements dj {
+    /* renamed from: a */
+    final /* synthetic */ af f8257a;
 
-    ag(ae aeVar) {
-        this.a = aeVar;
+    ag(af afVar) {
+        this.f8257a = afVar;
     }
 
-    public void onClick(View view) {
-        this.a.requestDetach();
+    public boolean onBack() {
+        this.f8257a.dismiss();
+        return true;
     }
 }

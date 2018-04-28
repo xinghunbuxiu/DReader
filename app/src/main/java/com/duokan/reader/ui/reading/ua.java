@@ -1,25 +1,25 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.UmengManager;
-import com.duokan.reader.domain.audio.AudioPlayer;
-import com.duokan.reader.domain.bookshelf.BookContent;
+import com.duokan.reader.domain.p041a.C0670f;
+import java.lang.ref.WeakReference;
 
-class ua implements Runnable {
-    final /* synthetic */ tz a;
+class ua implements C0670f {
+    /* renamed from: a */
+    private final WeakReference<tp> f11003a;
 
-    ua(tz tzVar) {
-        this.a = tzVar;
+    ua(tp tpVar) {
+        this.f11003a = new WeakReference(tpVar);
     }
 
-    public void run() {
-        if (this.a.a.a.G().r() != BookContent.AUDIO_TEXT) {
-            this.a.a.a.aX();
-        } else if (AudioPlayer.a().b()) {
-            UmengManager.get().onEvent("V2_READING_TOP_TOOLBUTTON", "Pron-Pause");
-            this.a.a.a.i();
-        } else {
-            UmengManager.get().onEvent("V2_READING_TOP_TOOLBUTTON", "Pron-Start");
-            this.a.a.a.a(this.a.a.a.Z(), false);
+    /* renamed from: a */
+    public void mo2509a(int i) {
+        tp tpVar = (tp) this.f11003a.get();
+        if (tpVar != null) {
+            tpVar.m13606b(i);
         }
+    }
+
+    /* renamed from: a */
+    public void mo2510a(String str) {
     }
 }

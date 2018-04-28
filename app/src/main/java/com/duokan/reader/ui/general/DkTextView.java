@@ -10,10 +10,14 @@ import android.text.TextUtils.TruncateAt;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
+import android.view.View.MeasureSpec;
+import java.io.File;
 
 public class DkTextView extends View implements Callback {
-    private final bd a;
-    private final Rect b;
+    /* renamed from: a */
+    private final bd f6790a;
+    /* renamed from: b */
+    private final Rect f6791b;
 
     public DkTextView(Context context) {
         this(context, null);
@@ -22,8 +26,8 @@ public class DkTextView extends View implements Callback {
     public DkTextView(Context context, AttributeSet attributeSet) {
         TruncateAt truncateAt;
         super(context, attributeSet);
-        this.a = new bd();
-        this.b = new Rect();
+        this.f6790a = new bd();
+        this.f6791b = new Rect();
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, new int[]{16842901, 16842904, 16842923, 16842927, 16843087, 16843091});
         int integer = obtainStyledAttributes.getInteger(3, 3);
         int integer2 = obtainStyledAttributes.getInteger(5, Integer.MAX_VALUE);
@@ -42,25 +46,25 @@ public class DkTextView extends View implements Callback {
                 break;
         }
         obtainStyledAttributes.recycle();
-        this.a.c(integer);
-        this.a.d(integer2);
-        this.a.b(dimensionPixelSize);
-        this.a.a(color);
-        this.a.a(string);
-        this.a.a(truncateAt);
-        this.a.getIntrinsicWidth();
-        this.a.setCallback(this);
+        this.f6790a.m10276c(integer);
+        this.f6790a.m10280d(integer2);
+        this.f6790a.m10274b(dimensionPixelSize);
+        this.f6790a.m10267a(color);
+        this.f6790a.m10270a(string);
+        this.f6790a.m10268a(truncateAt);
+        this.f6790a.getIntrinsicWidth();
+        this.f6790a.setCallback(this);
         setDrawingCacheEnabled(true);
         setWillNotDraw(false);
         setWillNotCacheDrawing(true);
     }
 
     public void setGravity(int i) {
-        this.a.c(i);
+        this.f6790a.m10276c(i);
     }
 
     public String getText() {
-        return this.a.a();
+        return this.f6790a.m10265a();
     }
 
     public void setText(int i) {
@@ -68,97 +72,111 @@ public class DkTextView extends View implements Callback {
     }
 
     public void setText(String str) {
-        this.a.a(str);
-        if (!this.a.i()) {
+        this.f6790a.m10270a(str);
+        if (!this.f6790a.m10285i()) {
             requestLayout();
         }
     }
 
     public void setTextColor(int i) {
-        this.a.a(i);
+        this.f6790a.m10267a(i);
     }
 
     public float getTextSize() {
-        return this.a.b();
+        return this.f6790a.m10272b();
     }
 
     public void setTextSize(float f) {
-        this.a.b(Math.round(TypedValue.applyDimension(2, f, getResources().getDisplayMetrics())));
-        if (!this.a.i()) {
+        this.f6790a.m10274b(Math.round(TypedValue.applyDimension(2, f, getResources().getDisplayMetrics())));
+        if (!this.f6790a.m10285i()) {
             requestLayout();
         }
     }
 
     public void setTextPixelSize(int i) {
-        this.a.b(i);
-        if (!this.a.i()) {
+        this.f6790a.m10274b(i);
+        if (!this.f6790a.m10285i()) {
             requestLayout();
         }
     }
 
     public boolean getChsToChtChars() {
-        return this.a.c();
+        return this.f6790a.m10277c();
     }
 
     public void setChsToChtChars(boolean z) {
-        this.a.a(z);
+        this.f6790a.m10271a(z);
     }
 
     public double getFirstLineIndent() {
-        return this.a.d();
+        return this.f6790a.m10278d();
     }
 
     public void setFirstLineIndent(double d) {
-        this.a.a(d);
-        if (!this.a.i()) {
+        this.f6790a.m10266a(d);
+        if (!this.f6790a.m10285i()) {
+            requestLayout();
+        }
+    }
+
+    public void setEllipsize(TruncateAt truncateAt) {
+        this.f6790a.m10268a(truncateAt);
+        if (!this.f6790a.m10285i()) {
+            requestLayout();
+        }
+    }
+
+    public void setEnTypefaceFile(File file) {
+        this.f6790a.m10269a(file);
+        if (!this.f6790a.m10285i()) {
             requestLayout();
         }
     }
 
     public double getLineGap() {
-        return this.a.e();
+        return this.f6790a.m10281e();
     }
 
     public void setLineGap(double d) {
-        this.a.b(d);
-        if (!this.a.i()) {
+        this.f6790a.m10273b(d);
+        if (!this.f6790a.m10285i()) {
             requestLayout();
         }
     }
 
     public double getParaSpacing() {
-        return this.a.f();
+        return this.f6790a.m10282f();
     }
 
     public void setParaSpacing(double d) {
-        this.a.c(d);
-        if (!this.a.i()) {
+        this.f6790a.m10275c(d);
+        if (!this.f6790a.m10285i()) {
             requestLayout();
         }
     }
 
     public double getTabStop() {
-        return this.a.g();
+        return this.f6790a.m10283g();
     }
 
     public void setTabStop(double d) {
-        this.a.d(d);
-        if (!this.a.i()) {
+        this.f6790a.m10279d(d);
+        if (!this.f6790a.m10285i()) {
             requestLayout();
         }
     }
 
     public void setMaxLines(int i) {
-        this.a.d(i);
-        if (!this.a.i()) {
+        this.f6790a.m10280d(i);
+        if (!this.f6790a.m10285i()) {
             requestLayout();
         }
     }
 
     public Rect getTextBounds() {
-        this.b.set(this.a.h());
-        this.b.offset(this.a.getBounds().left, this.a.h().top);
-        return this.b;
+        this.f6791b.set(this.f6790a.m10284h());
+        this.f6791b.offset(this.f6790a.getBounds().left, this.f6790a.m10284h().top);
+        return this.f6791b;
     }
 
     protected void onMeasure(int i, int i2) {
@@ -169,14 +187,14 @@ public class DkTextView extends View implements Callback {
         if (MeasureSpec.getMode(i2) != 0) {
             i3 = MeasureSpec.getSize(i2);
         }
-        this.a.setBounds(getPaddingLeft(), getPaddingTop(), size - getPaddingRight(), i3 - getPaddingBottom());
-        setMeasuredDimension(resolveSize(Math.max(getSuggestedMinimumWidth(), this.a.getIntrinsicWidth() + paddingRight), i), resolveSize(Math.max(getSuggestedMinimumHeight(), this.a.getIntrinsicHeight() + paddingBottom), i2));
-        this.a.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
+        this.f6790a.setBounds(getPaddingLeft(), getPaddingTop(), size - getPaddingRight(), i3 - getPaddingBottom());
+        setMeasuredDimension(resolveSize(Math.max(getSuggestedMinimumWidth(), this.f6790a.getIntrinsicWidth() + paddingRight), i), resolveSize(Math.max(getSuggestedMinimumHeight(), this.f6790a.getIntrinsicHeight() + paddingBottom), i2));
+        this.f6790a.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
     }
 
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        this.a.draw(canvas);
+        this.f6790a.draw(canvas);
     }
 
     public void invalidateDrawable(Drawable drawable) {

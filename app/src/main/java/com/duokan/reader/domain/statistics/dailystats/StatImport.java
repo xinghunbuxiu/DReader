@@ -1,12 +1,11 @@
 package com.duokan.reader.domain.statistics.dailystats;
 
-import org.json.JSONObject;
-
 import java.util.List;
+import org.json.JSONObject;
 
 public class StatImport extends StatEventBase {
     private static final long serialVersionUID = 1;
-    public List bookNames;
+    public List<String> bookNames;
     public String importType;
 
     public String toString() {
@@ -18,7 +17,7 @@ public class StatImport extends StatEventBase {
         try {
             jSONObject.put("ev", this.event);
             jSONObject.put("bn", stringBuffer.toString().substring(1));
-            jSONObject.put("TaskHandler", this.importType);
+            jSONObject.put("t", this.importType);
             jSONObject.put("ts", this.timeStamp);
         } catch (Exception e) {
             e.printStackTrace();

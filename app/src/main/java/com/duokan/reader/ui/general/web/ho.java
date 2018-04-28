@@ -1,57 +1,44 @@
 package com.duokan.reader.ui.general.web;
 
-import android.text.TextUtils;
+import com.duokan.core.sys.as;
+import com.duokan.reader.domain.store.DkStoreBookDetail;
+import org.json.JSONObject;
 
-import com.duokan.c.j;
-import com.duokan.reader.common.webservices.WebSession;
-import com.duokan.reader.common.webservices.duokan.aa;
-import com.duokan.reader.common.webservices.duokan.b;
-import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.ui.bookshelf.ay;
-import com.duokan.reader.ui.general.ap;
-import com.duokan.reader.ui.general.jq;
-import com.mipay.sdk.Mipay;
+class ho implements as {
+    /* renamed from: a */
+    final /* synthetic */ JSONObject f7938a;
+    /* renamed from: b */
+    final /* synthetic */ String f7939b;
+    /* renamed from: c */
+    final /* synthetic */ String f7940c;
+    /* renamed from: d */
+    final /* synthetic */ String f7941d;
+    /* renamed from: e */
+    final /* synthetic */ String f7942e;
+    /* renamed from: f */
+    final /* synthetic */ hn f7943f;
 
-import java.util.UUID;
-
-class ho extends b {
-    final /* synthetic */ jq a;
-    final /* synthetic */ hn b;
-    private a c = i.f().b(PersonalAccount.class);
-    private com.duokan.reader.common.webservices.b d;
-
-    ho(hn hnVar, jq jqVar) {
-        this.b = hnVar;
-        this.a = jqVar;
+    ho(hn hnVar, JSONObject jSONObject, String str, String str2, String str3, String str4) {
+        this.f7943f = hnVar;
+        this.f7938a = jSONObject;
+        this.f7939b = str;
+        this.f7940c = str2;
+        this.f7941d = str3;
+        this.f7942e = str4;
     }
 
-    protected void onSessionTry() {
-        this.d = new aa((WebSession) this, this.c).a(this.b.a.getBook().getBookUuid(), this.b.a.getRevision(), UUID.randomUUID().toString());
-    }
-
-    protected void onSessionSucceeded() {
-        if (this.d.b == 0) {
-            ay.a(this.b.b.a.f.b.pageController.getContext(), this.b.a.getEpubSize(), new hp(this));
-            return;
+    /* renamed from: a */
+    public void mo1831a() {
+        DkStoreBookDetail dkStoreBookDetail;
+        if (this.f7938a.has("detail")) {
+            dkStoreBookDetail = new DkStoreBookDetail(this.f7938a.getJSONObject("detail"));
+        } else {
+            dkStoreBookDetail = null;
         }
-        this.b.b.a.f.b.pageController.web_notifyWeb(this.b.b.a.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, this.d.c);
-    }
-
-    protected void onSessionFailed() {
-        this.b.b.a.f.b.pageController.doShowToast(this.b.b.a.f.b.pageController.getContext().getString(j.general__shared__network_error));
-    }
-
-    protected void onSessionClosed() {
-        this.a.dismiss();
-        if (this.d != null && !TextUtils.isEmpty(this.d.c)) {
-            ap apVar = new ap(this.b.b.a.f.b.pageController.getContext());
-            apVar.setOkLabel(j.general__shared__iknow);
-            apVar.setCancelOnBack(false);
-            apVar.setCancelOnTouchOutside(false);
-            apVar.setPrompt(this.d.c);
-            apVar.show();
+        if (dkStoreBookDetail != null) {
+            this.f7943f.f7937b.f7581b.downloadLinearBook(this.f7939b, this.f7940c, this.f7941d, dkStoreBookDetail, this.f7942e);
+        } else {
+            this.f7943f.f7937b.f7581b.queryBookDetail(this.f7941d, new hp(this), true);
         }
     }
 }

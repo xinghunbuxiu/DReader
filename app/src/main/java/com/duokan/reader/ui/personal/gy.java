@@ -1,26 +1,24 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.domain.account.AccountType;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.UmengManager;
+import com.duokan.reader.domain.account.C0709k;
 
-/* synthetic */ class gy {
-    static final /* synthetic */ int[] a = new int[AccountType.values().length];
+class gy implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ fz f8626a;
 
-    static {
-        try {
-            a[AccountType.XIAO_MI.ordinal()] = 1;
-        } catch (NoSuchFieldError e) {
-        }
-        try {
-            a[AccountType.XIAOMI_GUEST.ordinal()] = 2;
-        } catch (NoSuchFieldError e2) {
-        }
-        try {
-            a[AccountType.ANONYMOUS.ordinal()] = 3;
-        } catch (NoSuchFieldError e3) {
-        }
-        try {
-            a[AccountType.NONE.ordinal()] = 4;
-        } catch (NoSuchFieldError e4) {
+    gy(fz fzVar) {
+        this.f8626a = fzVar;
+    }
+
+    public void onClick(View view) {
+        UmengManager.get().onEvent("V2_PERSONAL_HEADER_BUTTON", "Messages");
+        if (C0709k.m3476a().m3507c()) {
+            this.f8626a.m11881g(true);
+        } else {
+            this.f8626a.m11879f(true);
         }
     }
 }

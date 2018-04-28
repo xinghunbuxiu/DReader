@@ -1,33 +1,17 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.domain.store.DkStoreBookDetail;
-import com.duokan.reader.domain.store.DkStoreItem;
-import com.duokan.reader.domain.store.h;
-import com.duokan.reader.ui.general.jq;
+class az implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ String f7613a;
+    /* renamed from: b */
+    final /* synthetic */ StorePageController f7614b;
 
-class az implements h {
-    final /* synthetic */ jq a;
-    final /* synthetic */ h b;
-    final /* synthetic */ StorePageController c;
-
-    az(StorePageController storePageController, jq jqVar, h hVar) {
-        this.c = storePageController;
-        this.a = jqVar;
-        this.b = hVar;
+    az(StorePageController storePageController, String str) {
+        this.f7614b = storePageController;
+        this.f7613a = str;
     }
 
-    public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
-        this.c.mBookCache = (DkStoreBookDetail) dkStoreItem;
-        if (this.a != null) {
-            this.a.dismiss();
-        }
-        this.b.onFetchBookDetailOk(dkStoreItem);
-    }
-
-    public void onFetchBookDetailError(String str) {
-        if (this.a != null) {
-            this.a.dismiss();
-        }
-        this.b.onFetchBookDetailError(str);
+    public void run() {
+        this.f7614b.queryBookDetail(this.f7613a, new ba(this), true);
     }
 }

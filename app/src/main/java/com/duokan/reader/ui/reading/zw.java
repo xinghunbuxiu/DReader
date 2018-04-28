@@ -1,29 +1,36 @@
 package com.duokan.reader.ui.reading;
 
-import java.util.Arrays;
-import java.util.concurrent.Callable;
+public interface zw {
+    /* renamed from: a */
+    void mo2208a();
 
-class zw implements Callable {
-    final /* synthetic */ String a;
-    final /* synthetic */ zu b;
+    /* renamed from: b */
+    void mo2209b();
 
-    zw(zu zuVar, String str) {
-        this.b = zuVar;
-        this.a = str;
-    }
+    /* renamed from: c */
+    void mo2210c();
 
-    public /* synthetic */ Object call() {
-        return a();
-    }
+    /* renamed from: d */
+    void mo2211d();
 
-    public Boolean a() {
-        if (this.b.a.c.q) {
-            return Boolean.valueOf(false);
-        }
-        if (this.b.a.c.L.containsKey(this.a)) {
-            return Boolean.valueOf(false);
-        }
-        this.b.a.c.b(Arrays.asList(new String[]{this.a}), new zx(this));
-        return Boolean.valueOf(true);
-    }
+    /* renamed from: e */
+    void mo2212e();
+
+    /* renamed from: f */
+    void mo2213f();
+
+    /* renamed from: g */
+    void mo2214g();
+
+    /* renamed from: h */
+    void mo2215h();
+
+    /* renamed from: i */
+    void mo2216i();
+
+    /* renamed from: j */
+    void mo2217j();
+
+    /* renamed from: k */
+    void mo2218k();
 }

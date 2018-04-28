@@ -1,22 +1,25 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.reader.domain.store.DkStoreFictionDetail;
+import com.duokan.core.sys.ag;
+import java.util.Map;
 
 class eq implements Runnable {
-    final /* synthetic */ DkStoreFictionDetail a;
-    final /* synthetic */ ep b;
+    /* renamed from: a */
+    final /* synthetic */ ag f3116a;
+    /* renamed from: b */
+    final /* synthetic */ Map f3117b;
+    /* renamed from: c */
+    final /* synthetic */ ee f3118c;
 
-    eq(ep epVar, DkStoreFictionDetail dkStoreFictionDetail) {
-        this.b = epVar;
-        this.a = dkStoreFictionDetail;
+    eq(ee eeVar, ag agVar, Map map) {
+        this.f3118c = eeVar;
+        this.f3116a = agVar;
+        this.f3117b = map;
     }
 
     public void run() {
-        if (this.b.d.b(this.a)) {
-            TaskHandler.postTask(this.b.a);
-        } else if (this.b.b != null) {
-            TaskHandler.postTask(new er(this));
+        if (this.f3116a != null) {
+            this.f3116a.run(this.f3117b);
         }
     }
 }

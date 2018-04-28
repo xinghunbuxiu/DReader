@@ -1,5 +1,11 @@
 package com.duokan.reader.ui.general;
 
+import android.view.View;
+
 public interface ef {
-    void a(int i, int i2);
+    /* renamed from: a */
+    int mo1791a();
+
+    /* renamed from: a */
+    View mo1792a(int i);
 }

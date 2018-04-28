@@ -1,23 +1,17 @@
 package com.duokan.reader.ui.personal;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-import com.duokan.core.ui.PullDownRefreshBaseView.RefreshState;
+class lj implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ lc f8886a;
 
-class lj extends FrameLayout {
-    final /* synthetic */ ko a;
-
-    public lj(ko koVar, Context context) {
-        this.a = koVar;
-        super(context);
+    lj(lc lcVar) {
+        this.f8886a = lcVar;
     }
 
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (!isEnabled() || this.a.e.getPullRefreshState() == RefreshState.REFRESHING) {
-            return true;
-        }
-        return super.dispatchTouchEvent(motionEvent);
+    public void onClick(View view) {
+        this.f8886a.f8857a.mo1938d();
     }
 }

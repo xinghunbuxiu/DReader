@@ -2,15 +2,15 @@ package com.duokan.reader.ui.reading;
 
 import android.graphics.PointF;
 import android.view.View;
-
-import com.duokan.core.ui.onTapListener;
+import com.duokan.core.ui.cu;
 import com.duokan.core.ui.er;
 
-class ba implements onTapListener {
-    final /* synthetic */ az a;
+class ba implements cu {
+    /* renamed from: a */
+    final /* synthetic */ az f9817a;
 
     ba(az azVar) {
-        this.a = azVar;
+        this.f9817a = azVar;
     }
 
     public void onTouchUp(View view, PointF pointF) {
@@ -23,7 +23,7 @@ class ba implements onTapListener {
     }
 
     public void onTap(er erVar, View view, PointF pointF) {
-        this.a.a.requestShowMenu();
-        this.a.d(true);
+        this.f9817a.f9812a.requestShowMenu();
+        this.f9817a.m1620d(true);
     }
 }

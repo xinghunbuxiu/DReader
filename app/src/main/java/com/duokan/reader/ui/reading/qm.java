@@ -1,15 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-class qm implements Runnable {
-    final /* synthetic */ qj a;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-    qm(qj qjVar) {
-        this.a = qjVar;
+class qm implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ qg f10867a;
+
+    qm(qg qgVar) {
+        this.f10867a = qgVar;
     }
 
-    public void run() {
-        if (!this.a.a.q && this.a.a.J != null) {
-            this.a.a.J.j();
-        }
+    public void onClick(View view) {
+        this.f10867a.m13847a(new qn(this));
     }
 }

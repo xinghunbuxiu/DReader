@@ -2,25 +2,26 @@ package com.duokan.reader.ui.reading;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-
+import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ui.general.ReaderUi;
 
 class cn implements OnClickListener {
-    final /* synthetic */ ck a;
+    /* renamed from: a */
+    final /* synthetic */ cm f9946a;
 
-    cn(ck ckVar) {
-        this.a = ckVar;
+    cn(cm cmVar) {
+        this.f9946a = cmVar;
     }
 
     public void onClick(View view) {
-        if (!this.a.a.am()) {
-            ReaderUi.a(this.a.getActivity(), 11);
-            this.a.e = true;
+        if (!ReaderEnv.get().forHd() && this.f9946a.f9941a.am()) {
+            ReaderUi.m10153a(this.f9946a.getActivity(), 1);
+            this.f9946a.f9945e = true;
         }
-        if (this.a.a.U() != PageAnimationMode.VSCROLL) {
-            this.a.a.a(PageAnimationMode.VSCROLL);
-            this.a.e = true;
+        if (this.f9946a.f9941a.mo2004U() != PageAnimationMode.HSCROLL) {
+            this.f9946a.f9941a.mo2030a(PageAnimationMode.HSCROLL);
+            this.f9946a.f9945e = true;
         }
-        this.a.requestDetach();
+        this.f9946a.requestDetach();
     }
 }

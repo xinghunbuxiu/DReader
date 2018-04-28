@@ -1,19 +1,15 @@
 package com.duokan.reader.ui.account;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+class ac implements ae {
+    /* renamed from: a */
+    final /* synthetic */ ab f5777a;
 
-import com.duokan.reader.ReaderEnv;
-
-class ac implements OnClickListener {
-    final /* synthetic */ z a;
-
-    ac(z zVar) {
-        this.a = zVar;
+    ac(ab abVar) {
+        this.f5777a = abVar;
     }
 
-    public void onClick(View view) {
-        ReaderEnv.get().setIsOnlyWifiSyncEvernote(!ReaderEnv.get().getIsOnlyWifiSyncEvernote());
-        this.a.a();
+    public void onChoiced(String str) {
+        this.f5777a.f5776c = str;
+        this.f5777a.dismiss();
     }
 }

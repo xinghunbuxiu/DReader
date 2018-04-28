@@ -1,5 +1,6 @@
 package com.duokan.reader.ui.general;
 
 public interface iq {
-    void a(int i, int i2);
+    /* renamed from: a */
+    boolean mo1688a(String str);
 }

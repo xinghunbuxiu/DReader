@@ -2,10 +2,8 @@ package com.duokan.reader.domain.bookshelf;
 
 import android.content.ContentValues;
 import android.database.Cursor;
-
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.BookShelfType;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectInputStream;
@@ -18,102 +16,115 @@ import java.util.Iterator;
 import java.util.List;
 
 public class aa extends an {
-    static final /* synthetic */ boolean a = (!aa.class.desiredAssertionStatus());
-    private final ArrayList b = new ArrayList();
-    private an[] c = null;
-    private c[] d = null;
-    private BookCategoryType e = BookCategoryType.CUSTOM;
-    private String f = "";
+    /* renamed from: a */
+    static final /* synthetic */ boolean f2697a = (!aa.class.desiredAssertionStatus());
+    /* renamed from: b */
+    private final ArrayList<an> f2698b = new ArrayList();
+    /* renamed from: c */
+    private an[] f2699c = null;
+    /* renamed from: d */
+    private C0800c[] f2700d = null;
+    /* renamed from: e */
+    private BookCategoryType f2701e = BookCategoryType.CUSTOM;
+    /* renamed from: f */
+    private String f2702f = "";
 
     protected aa(am amVar, long j, boolean z) {
         super(amVar, j, false, z);
     }
 
-    public final void a() {
+    /* renamed from: a */
+    public final void m3752a() {
         try {
-            aT().a(aF());
-            aO();
+            aV().mo1091a(aH());
+            aQ();
         } finally {
-            aT().b(aF());
+            aV().mo1097b(aH());
         }
     }
 
-    public BookCategoryType b() {
+    /* renamed from: b */
+    public BookCategoryType m3759b() {
         try {
-            aT().a(aF());
-            aO();
-            BookCategoryType bookCategoryType = this.e;
+            aV().mo1091a(aH());
+            aQ();
+            BookCategoryType bookCategoryType = this.f2701e;
             return bookCategoryType;
         } finally {
-            aT().b(aF());
+            aV().mo1097b(aH());
         }
     }
 
-    public boolean c() {
-        return f() < 1;
+    /* renamed from: c */
+    public boolean m3761c() {
+        return m3765f() < 1;
     }
 
-    public c[] d() {
+    /* renamed from: d */
+    public C0800c[] m3763d() {
         try {
-            aT().a(aF());
-            aO();
-            if (this.d == null) {
-                ArrayList arrayList = new ArrayList(this.b.size());
-                Iterator it = this.b.iterator();
+            aV().mo1091a(aH());
+            aQ();
+            if (this.f2700d == null) {
+                ArrayList arrayList = new ArrayList(this.f2698b.size());
+                Iterator it = this.f2698b.iterator();
                 while (it.hasNext()) {
                     an anVar = (an) it.next();
-                    if (anVar instanceof c) {
-                        arrayList.add((c) anVar);
+                    if (anVar instanceof C0800c) {
+                        arrayList.add((C0800c) anVar);
                     }
                 }
-                this.d = (c[]) arrayList.toArray(new c[0]);
+                this.f2700d = (C0800c[]) arrayList.toArray(new C0800c[0]);
             }
-            c[] cVarArr = this.d;
-            return cVarArr;
+            C0800c[] c0800cArr = this.f2700d;
+            return c0800cArr;
         } finally {
-            aT().b(aF());
+            aV().mo1097b(aH());
         }
     }
 
-    public an[] e() {
+    /* renamed from: e */
+    public an[] m3764e() {
         try {
-            aT().a(aF());
-            aO();
-            if (this.c == null) {
-                this.c = (an[]) this.b.toArray(new an[0]);
+            aV().mo1091a(aH());
+            aQ();
+            if (this.f2699c == null) {
+                this.f2699c = (an[]) this.f2698b.toArray(new an[0]);
             }
-            an[] anVarArr = this.c;
+            an[] anVarArr = this.f2699c;
             return anVarArr;
         } finally {
-            aT().b(aF());
+            aV().mo1097b(aH());
         }
     }
 
-    public int f() {
+    /* renamed from: f */
+    public int m3765f() {
         try {
-            aT().a(aF());
-            aO();
-            int size = this.b.size();
+            aV().mo1091a(aH());
+            aQ();
+            int size = this.f2698b.size();
             return size;
         } finally {
-            aT().b(aF());
+            aV().mo1097b(aH());
         }
     }
 
-    public int g() {
+    /* renamed from: g */
+    public int m3766g() {
         try {
-            aT().a(aF());
-            aO();
-            if (this.b == null || this.b.size() == 0) {
-                aT().b(aF());
+            aV().mo1091a(aH());
+            aQ();
+            if (this.f2698b == null || this.f2698b.size() == 0) {
+                aV().mo1097b(aH());
                 return 0;
             }
             int i = 0;
             int i2 = 0;
-            while (i < this.b.size()) {
+            while (i < this.f2698b.size()) {
                 int i3;
-                if (((an) this.b.get(i)).ay()) {
-                    if (((an) this.b.get(i)).az()) {
+                if (((an) this.f2698b.get(i)).aA()) {
+                    if (((an) this.f2698b.get(i)).aB()) {
                         i3 = 1;
                     } else {
                         i3 = 0;
@@ -125,175 +136,188 @@ public class aa extends an {
                 i++;
                 i2 = i3;
             }
-            aT().b(aF());
+            aV().mo1097b(aH());
             return i2;
         } catch (Throwable th) {
-            aT().b(aF());
+            aV().mo1097b(aH());
         }
     }
 
-    public boolean h() {
-        return aF() == -9;
+    /* renamed from: h */
+    public boolean m3767h() {
+        return aH() == -9;
     }
 
-    public void a(an anVar) {
-        a(anVar, 0);
+    /* renamed from: a */
+    public void m3756a(an anVar) {
+        m3757a(anVar, 0);
     }
 
-    public void a(an anVar, int i) {
+    /* renamed from: a */
+    public void m3757a(an anVar, int i) {
         try {
-            aT().a(aF());
-            aO();
-            b(anVar);
-            a(i, anVar);
-            aL();
+            aV().mo1091a(aH());
+            aQ();
+            m3760b(anVar);
+            m3753a(i, anVar);
+            aN();
         } finally {
-            aT().b(aF());
+            aV().mo1097b(aH());
         }
     }
 
-    public List i() {
+    /* renamed from: i */
+    public List<an> m3768i() {
         if (ReaderEnv.get().getBookShelfType() == BookShelfType.Simple) {
-            return l();
+            return m3751l();
         }
-        List arrayList = new ArrayList();
-        arrayList.addAll(Arrays.asList(e()));
+        List<an> arrayList = new ArrayList();
+        arrayList.addAll(Arrays.asList(m3764e()));
         return arrayList;
     }
 
-    private List l() {
-        return this.D.j().listItemsByReadingOrder(this);
+    /* renamed from: l */
+    private List<an> m3751l() {
+        return this.D.mo1107j().listItemsByReadingOrder(this);
     }
 
-    protected void a(int i, an anVar) {
+    /* renamed from: a */
+    protected void m3753a(int i, an anVar) {
         try {
-            aT().a(aF());
-            aO();
-            this.b.add(i, anVar);
-            anVar.h(aF());
-            this.c = null;
-            this.d = null;
-            b(65536);
-            this.D.j().addCategory(this, anVar, i);
+            aV().mo1091a(aH());
+            aQ();
+            this.f2698b.add(i, anVar);
+            anVar.m3748h(aH());
+            this.f2699c = null;
+            this.f2700d = null;
+            m3744b(65536);
+            this.D.mo1107j().addCategory(this, anVar, i);
         } finally {
-            aT().b(aF());
+            aV().mo1097b(aH());
         }
     }
 
-    protected boolean b(an anVar) {
+    /* renamed from: b */
+    protected boolean m3760b(an anVar) {
         try {
-            aT().a(aF());
-            aO();
-            boolean remove = this.b.remove(anVar);
+            aV().mo1091a(aH());
+            aQ();
+            boolean remove = this.f2698b.remove(anVar);
             if (remove) {
-                anVar.aJ();
-                this.c = null;
-                this.d = null;
-                b(65536);
-                this.D.j().deleteFromCategory(this, anVar);
-                aT().b(aF());
+                anVar.aL();
+                this.f2699c = null;
+                this.f2700d = null;
+                m3744b(65536);
+                this.D.mo1107j().deleteFromCategory(this, anVar);
+                aV().mo1097b(aH());
             }
             return remove;
         } finally {
-            aT().b(aF());
+            aV().mo1097b(aH());
         }
     }
 
-    protected void j() {
+    /* renamed from: j */
+    protected void m3769j() {
         try {
-            aT().a(aF());
-            aO();
-            Iterator it = this.b.iterator();
+            aV().mo1091a(aH());
+            aQ();
+            Iterator it = this.f2698b.iterator();
             while (it.hasNext()) {
-                ((an) it.next()).aJ();
+                ((an) it.next()).aL();
             }
-            this.D.j().deleteFromCategory(this, this.b);
-            this.b.clear();
-            this.c = null;
-            this.d = null;
-            b(65536);
+            this.D.mo1107j().deleteFromCategory(this, this.f2698b);
+            this.f2698b.clear();
+            this.f2699c = null;
+            this.f2700d = null;
+            m3744b(65536);
         } finally {
-            aT().b(aF());
+            aV().mo1097b(aH());
         }
     }
 
-    public boolean c(an anVar) {
+    /* renamed from: c */
+    public boolean m3762c(an anVar) {
         try {
-            aT().a(aF());
-            aO();
-            boolean contains = this.b.contains(anVar);
+            aV().mo1091a(aH());
+            aQ();
+            boolean contains = this.f2698b.contains(anVar);
             return contains;
         } finally {
-            aT().b(aF());
+            aV().mo1097b(aH());
         }
     }
 
-    public boolean a(Collection collection) {
+    /* renamed from: a */
+    public boolean m3758a(Collection<? extends an> collection) {
         try {
-            aT().a(aF());
-            aO();
-            boolean containsAll = this.b.containsAll(collection);
+            aV().mo1091a(aH());
+            aQ();
+            boolean containsAll = this.f2698b.containsAll(collection);
             return containsAll;
         } finally {
-            aT().b(aF());
+            aV().mo1097b(aH());
         }
     }
 
-    public final String k() {
+    /* renamed from: k */
+    public final String m3770k() {
         try {
-            aT().a(aF());
-            aO();
-            String str = this.f;
+            aV().mo1091a(aH());
+            aQ();
+            String str = this.f2702f;
             return str;
         } finally {
-            aT().b(aF());
+            aV().mo1097b(aH());
         }
     }
 
-    protected final void o(String str) {
+    /* renamed from: p */
+    protected final void mo955p(String str) {
         try {
-            aT().a(aF());
-            aO();
-            this.f = str;
-            b(2);
+            aV().mo1091a(aH());
+            aQ();
+            this.f2702f = str;
+            m3744b(2);
         } finally {
-            aT().b(aF());
+            aV().mo1097b(aH());
         }
     }
 
-    public boolean ay() {
+    public boolean aA() {
         return false;
     }
 
-    public boolean az() {
-        if (h()) {
-            c[] d = d();
-            for (c az : d) {
-                if (!az.az()) {
+    public boolean aB() {
+        if (m3767h()) {
+            C0800c[] d = m3763d();
+            for (C0800c aB : d) {
+                if (!aB.aB()) {
                     return false;
                 }
             }
             return true;
-        } else if (g() == f()) {
+        } else if (m3766g() == m3765f()) {
             return true;
         } else {
             return false;
         }
     }
 
-    protected void a(Cursor cursor) {
-        this.f = cursor.getString(cursor.getColumnIndex("category_name"));
-        this.e = BookCategoryType.valueOf(cursor.getString(cursor.getColumnIndex("category_type")));
+    /* renamed from: a */
+    protected void mo951a(Cursor cursor) {
+        this.f2702f = cursor.getString(cursor.getColumnIndex("category_name"));
+        this.f2701e = BookCategoryType.valueOf(cursor.getString(cursor.getColumnIndex("category_type")));
         try {
             int[] iArr = (int[]) new ObjectInputStream(new ByteArrayInputStream(cursor.getBlob(cursor.getColumnIndex("category_items")))).readObject();
-            this.b.ensureCapacity(iArr.length);
+            this.f2698b.ensureCapacity(iArr.length);
             int i = 0;
             while (i < iArr.length) {
-                an i2 = i((long) iArr[i]);
-                if (a || i2 != null) {
+                an i2 = m3749i((long) iArr[i]);
+                if (f2697a || i2 != null) {
                     if (i2 != null) {
-                        i2.h(aF());
-                        this.b.add(i2);
+                        i2.m3748h(aH());
+                        this.f2698b.add(i2);
                     }
                     i++;
                 } else {
@@ -305,15 +329,16 @@ public class aa extends an {
         }
     }
 
-    protected void a(ContentValues contentValues) {
-        if (c(2)) {
-            contentValues.put("category_name", k());
-            contentValues.put("category_type", b().name());
+    /* renamed from: a */
+    protected void mo950a(ContentValues contentValues) {
+        if (m3747c(2)) {
+            contentValues.put("category_name", m3770k());
+            contentValues.put("category_type", m3759b().name());
         }
-        if (c(65536)) {
-            Object obj = new int[this.b.size()];
+        if (m3747c(65536)) {
+            Object obj = new int[this.f2698b.size()];
             for (int i = 0; i < obj.length; i++) {
-                obj[i] = (int) ((an) this.b.get(i)).aF();
+                obj[i] = (int) ((an) this.f2698b.get(i)).aH();
             }
             OutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             new ObjectOutputStream(byteArrayOutputStream).writeObject(obj);
@@ -321,7 +346,7 @@ public class aa extends an {
         }
     }
 
-    protected String aA() {
+    protected String aC() {
         return "book_categories";
     }
 }

@@ -1,43 +1,33 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
+import com.duokan.core.ui.ZoomView;
+import com.duokan.core.ui.ZoomView.ZoomState;
+import com.duokan.core.ui.ge;
 
-import com.duokan.core.ui.UTools;
+class ng implements ge {
+    /* renamed from: a */
+    final /* synthetic */ nf f10666a;
 
-class ng extends Drawable {
-    int a;
-    int b;
-    final /* synthetic */ mx c;
-
-    private ng(mx mxVar) {
-        this.c = mxVar;
-        this.a = 0;
-        this.b = 0;
+    ng(nf nfVar) {
+        this.f10666a = nfVar;
     }
 
-    public void draw(Canvas canvas) {
-        Paint paint = (Paint) UTools.b.getRect();
-        paint.setColor(this.b);
-        canvas.drawRect((float) ((-this.a) + this.c.b.getPaddingLeft()), 0.0f, (float) this.c.b.getWidth(), (float) this.c.b.getHeight(), paint);
-        UTools.b.getRect(paint);
+    /* renamed from: a */
+    public void mo2424a(ZoomView zoomView, ZoomState zoomState, ZoomState zoomState2) {
+        if (this.f10666a.f10662d != null) {
+            this.f10666a.f10662d.mo2424a(zoomView, zoomState, zoomState2);
+        }
+        if (zoomState2 == ZoomState.PINCH && zoomState == ZoomState.IDLE) {
+            this.f10666a.f10664f.mo2433b();
+        } else if (!this.f10666a.f10661b) {
+            this.f10666a.f10664f.mo2431a();
+        }
     }
 
-    public void a(int i, int i2) {
-        this.a = i;
-        this.b = i2;
-        invalidateSelf();
-    }
-
-    public void setAlpha(int i) {
-    }
-
-    public void setColorFilter(ColorFilter colorFilter) {
-    }
-
-    public int getOpacity() {
-        return 0;
+    /* renamed from: a */
+    public void mo2423a(ZoomView zoomView) {
+        if (this.f10666a.f10662d != null) {
+            this.f10666a.f10662d.mo2423a(zoomView);
+        }
     }
 }

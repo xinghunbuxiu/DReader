@@ -1,20 +1,12 @@
 package com.duokan.reader.ui.account;
 
-import com.duokan.core.app.c;
-import com.duokan.core.app.d;
+public interface bu {
+    /* renamed from: a */
+    void mo1844a(String str);
 
-class bu implements d {
-    final /* synthetic */ bs a;
+    /* renamed from: b */
+    void mo1845b(String str);
 
-    bu(bs bsVar) {
-        this.a = bsVar;
-    }
-
-    public void onCancel(c cVar) {
-        if (!this.a.a.isShareFinish()) {
-            this.a.d = false;
-            this.a.b.setEnabled(true);
-            this.a.a.updateShareCancel();
-        }
-    }
+    /* renamed from: c */
+    void mo1846c(String str);
 }

@@ -6,121 +6,145 @@ import android.view.View;
 import android.view.ViewConfiguration;
 
 public abstract class er {
-    static final boolean b = (!er.class.desiredAssertionStatus());
-    private boolean a = true;
-    private boolean c = false;
-    private boolean d = false;
-    private boolean e = false;
-    private boolean f = true;
+    /* renamed from: b */
+    static final /* synthetic */ boolean f972b = (!er.class.desiredAssertionStatus());
+    /* renamed from: a */
+    private boolean f973a = true;
+    /* renamed from: c */
+    private boolean f974c = false;
+    /* renamed from: d */
+    private boolean f975d = false;
+    /* renamed from: e */
+    private boolean f976e = false;
+    /* renamed from: f */
+    private boolean f977f = true;
 
-    protected abstract void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar);
+    /* renamed from: a */
+    protected abstract void mo510a(View view, MotionEvent motionEvent, boolean z, es esVar);
 
-    protected abstract void a(View view, boolean z);
+    /* renamed from: a */
+    protected abstract void mo511a(View view, boolean z);
 
-    public final boolean b() {
-        return this.f;
+    /* renamed from: b */
+    public final boolean m1614b() {
+        return this.f977f;
     }
 
-    public final void a(boolean z) {
-        this.f = z;
+    /* renamed from: a */
+    public final void m1607a(boolean z) {
+        this.f977f = z;
     }
 
-    public final void b(View view, boolean z) {
-        this.a = true;
-        this.d = false;
-        this.c = false;
-        this.e = false;
-        a(view, z);
+    /* renamed from: b */
+    public final void m1612b(View view, boolean z) {
+        this.f973a = true;
+        this.f975d = false;
+        this.f974c = false;
+        this.f976e = false;
+        mo511a(view, z);
     }
 
-    public final void b(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
-        a(view, motionEvent, z, false, esVar);
+    /* renamed from: b */
+    public final void m1611b(View view, MotionEvent motionEvent, boolean z, es esVar) {
+        m1605a(view, motionEvent, z, false, esVar);
     }
 
-    public final void a(View view, MotionEvent motionEvent, boolean z, boolean z2, OnTouchChangeListener esVar) {
-        if (this.f) {
-            this.d = false;
-            if (!this.a) {
+    /* renamed from: a */
+    public final void m1605a(View view, MotionEvent motionEvent, boolean z, boolean z2, es esVar) {
+        if (this.f977f) {
+            this.f975d = false;
+            if (!this.f973a) {
                 return;
             }
             if (z2) {
-                c(view, motionEvent, z, esVar);
+                mo526c(view, motionEvent, z, esVar);
             } else {
-                a(view, motionEvent, z, esVar);
+                mo510a(view, motionEvent, z, esVar);
             }
         }
     }
 
-    public final boolean c() {
-        if (this.f) {
-            return this.a;
+    /* renamed from: c */
+    public final boolean m1618c() {
+        if (this.f977f) {
+            return this.f973a;
         }
         return false;
     }
 
-    protected final void b(boolean z) {
-        this.a = z;
-        if (!this.a) {
-            this.c = false;
-            this.e = false;
+    /* renamed from: b */
+    protected final void m1613b(boolean z) {
+        this.f973a = z;
+        if (!this.f973a) {
+            this.f974c = false;
+            this.f976e = false;
         }
     }
 
-    public final boolean d() {
-        if (this.f) {
-            return this.c;
-        }
-        return false;
-    }
-
-    protected final void c(boolean z) {
-        this.c = z;
-        if (this.c) {
-            this.a = true;
-        }
-    }
-
-    public final boolean e() {
-        if (this.f) {
-            return this.d;
+    /* renamed from: d */
+    public final boolean m1621d() {
+        if (this.f977f) {
+            return this.f974c;
         }
         return false;
     }
 
-    protected final void d(boolean z) {
-        this.d = z;
+    /* renamed from: c */
+    protected final void m1617c(boolean z) {
+        this.f974c = z;
+        if (this.f974c) {
+            this.f973a = true;
+        }
     }
 
-    public final boolean f() {
-        if (this.f) {
-            return this.e;
+    /* renamed from: e */
+    public final boolean m1623e() {
+        if (this.f977f) {
+            return this.f975d;
         }
         return false;
     }
 
-    protected final void e(boolean z) {
-        this.e = z;
+    /* renamed from: d */
+    protected final void m1620d(boolean z) {
+        this.f975d = z;
     }
 
-    protected void c(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
+    /* renamed from: f */
+    public final boolean m1624f() {
+        if (this.f977f) {
+            return this.f976e;
+        }
+        return false;
     }
 
-    protected boolean a(PointF pointF, PointF pointF2, double d, double d2) {
-        double a = a(a(pointF, pointF2), d, d + 360.0d);
+    /* renamed from: e */
+    protected final void m1622e(boolean z) {
+        this.f976e = z;
+    }
+
+    /* renamed from: c */
+    protected void mo526c(View view, MotionEvent motionEvent, boolean z, es esVar) {
+    }
+
+    /* renamed from: a */
+    protected boolean m1608a(PointF pointF, PointF pointF2, double d, double d2) {
+        double a = m1600a(m1601a(pointF, pointF2), d, d + 360.0d);
         if (Double.compare(a, d) >= 0 && Double.compare(a, d2) <= 0) {
             return true;
         }
-        a = a(180.0d - a(pointF, pointF2), d, d + 360.0d);
+        a = m1600a(180.0d - m1601a(pointF, pointF2), d, d + 360.0d);
         if (Double.compare(a, d) < 0 || Double.compare(a, d2) > 0) {
             return false;
         }
         return true;
     }
 
-    protected double a(double d, double d2, double d3) {
-        if (!b && d2 >= d3) {
+    /* renamed from: a */
+    protected double m1600a(double d, double d2, double d3) {
+        if (!f972b && d2 >= d3) {
             throw new AssertionError();
-        } else if (b || Double.compare(Math.abs(d3 - d2), 360.0d) == 0) {
+        } else if (f972b || Double.compare(Math.abs(d3 - d2), 360.0d) == 0) {
             while (true) {
                 if (d >= d2 && d <= d3) {
                     return d;
@@ -136,20 +160,23 @@ public abstract class er {
         }
     }
 
-    protected double a(PointF pointF, PointF pointF2) {
-        double b = b(pointF, pointF2);
+    /* renamed from: a */
+    protected double m1601a(PointF pointF, PointF pointF2) {
+        double b = m1609b(pointF, pointF2);
         if (Double.compare(b, 180.0d) > 0) {
             return b - 180.0d;
         }
         return b;
     }
 
-    protected double b(PointF pointF, PointF pointF2) {
-        return Math.toDegrees(c(pointF, pointF2));
+    /* renamed from: b */
+    protected double m1609b(PointF pointF, PointF pointF2) {
+        return Math.toDegrees(m1615c(pointF, pointF2));
     }
 
-    protected double c(PointF pointF, PointF pointF2) {
-        if (b || !(pointF == null || pointF2 == null)) {
+    /* renamed from: c */
+    protected double m1615c(PointF pointF, PointF pointF2) {
+        if (f972b || !(pointF == null || pointF2 == null)) {
             PointF pointF3 = new PointF(pointF.x, -pointF.y);
             PointF pointF4 = new PointF(pointF2.x, -pointF2.y);
             if (pointF4.x == pointF3.x) {
@@ -176,23 +203,28 @@ public abstract class er {
         throw new AssertionError();
     }
 
-    protected double d(PointF pointF, PointF pointF2) {
+    /* renamed from: d */
+    protected double m1619d(PointF pointF, PointF pointF2) {
         return Math.sqrt(Math.pow((double) (pointF.x - pointF2.x), 2.0d) + Math.pow((double) (pointF.y - pointF2.y), 2.0d));
     }
 
-    protected int getScaledMinimumFlingVelocity(View view) {
+    /* renamed from: a */
+    protected int m1602a(View view) {
         return ViewConfiguration.get(view.getContext()).getScaledMinimumFlingVelocity();
     }
 
-    protected int getLongPressTimeout() {
+    /* renamed from: g */
+    protected int m1625g() {
         return ViewConfiguration.getLongPressTimeout();
     }
 
-    protected int b(View view) {
+    /* renamed from: b */
+    protected int m1610b(View view) {
         return ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
     }
 
-    protected int a(View view, int i) {
+    /* renamed from: a */
+    protected int m1603a(View view, int i) {
         return Math.round(view.getContext().getResources().getDisplayMetrics().density * ((float) i));
     }
 }

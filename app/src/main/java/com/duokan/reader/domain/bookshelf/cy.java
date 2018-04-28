@@ -1,9 +1,12 @@
 package com.duokan.reader.domain.bookshelf;
 
-import java.util.List;
-
 interface cy {
-    void a(bt btVar, List list);
+    /* renamed from: a */
+    void mo994a();
 
-    void a(String str);
+    /* renamed from: a */
+    void mo995a(bs bsVar);
+
+    /* renamed from: a */
+    void mo996a(String str);
 }

@@ -2,14 +2,14 @@ package com.duokan.core.ui;
 
 import android.graphics.PointF;
 import android.view.View;
-
 import com.duokan.core.ui.Scrollable.ScrollState;
 
-class fh implements r {
-    final /* synthetic */ ff a;
+class fh implements C0382r {
+    /* renamed from: a */
+    final /* synthetic */ ff f1253a;
 
     fh(ff ffVar) {
-        this.a = ffVar;
+        this.f1253a = ffVar;
     }
 
     public void onTouchUp(View view, PointF pointF) {
@@ -21,22 +21,23 @@ class fh implements r {
     public void onTouchCancel(View view, PointF pointF) {
     }
 
-    public void a(er erVar, View view, PointF pointF, PointF pointF2) {
+    /* renamed from: a */
+    public void mo528a(er erVar, View view, PointF pointF, PointF pointF2) {
         float f = 0.0f;
-        if (this.a.a.s == ScrollState.SEEK) {
-            this.a.a.a(ScrollState.IDLE);
-            this.a.a.ad();
-        } else if (this.a.a.s == ScrollState.DRAG) {
-            this.a.a.a(ScrollState.FLING);
-            ev evVar = this.a.a;
+        if (this.f1253a.f1249a.f952s == ScrollState.SEEK) {
+            this.f1253a.f1249a.m1416a(ScrollState.IDLE);
+            this.f1253a.f1249a.ad();
+        } else if (this.f1253a.f1249a.f952s == ScrollState.DRAG) {
+            this.f1253a.f1249a.m1416a(ScrollState.FLING);
+            ev evVar = this.f1253a.f1249a;
             float f2 = pointF.x;
             float f3 = pointF.y;
-            float f4 = this.a.a.v ? pointF2.x : 0.0f;
-            if (this.a.a.w) {
+            float f4 = this.f1253a.f1249a.f955v ? pointF2.x : 0.0f;
+            if (this.f1253a.f1249a.f956w) {
                 f = pointF2.y;
             }
-            evVar.a(f2, f3, f4, f, new fi(this), null);
-            this.a.a.b(this.a.a.s, pointF.x, pointF.y);
+            evVar.mo1768a(f2, f3, f4, f, new fi(this), null);
+            this.f1253a.f1249a.mo1761b(this.f1253a.f1249a.f952s, pointF.x, pointF.y);
         }
     }
 }

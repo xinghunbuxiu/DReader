@@ -1,16 +1,17 @@
 package com.duokan.reader.ui.general;
 
-import android.content.Context;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class im extends cw {
-    final /* synthetic */ ik a;
+class im implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ik f7387a;
 
-    im(ik ikVar, Context context) {
-        this.a = ikVar;
-        super(context);
+    im(ik ikVar) {
+        this.f7387a = ikVar;
     }
 
-    public boolean isEnabled() {
-        return this.a.a();
+    public void onClick(View view) {
+        this.f7387a.requestDetach();
     }
 }

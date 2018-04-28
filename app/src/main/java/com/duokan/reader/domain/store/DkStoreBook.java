@@ -1,7 +1,6 @@
 package com.duokan.reader.domain.store;
 
 import com.duokan.reader.common.webservices.duokan.DkStoreBookInfo;
-
 import java.util.Date;
 
 public class DkStoreBook extends DkStoreAbsBook {

@@ -1,34 +1,25 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.graphics.PointF;
-import android.graphics.Rect;
-
-import com.duokan.core.ui.UTools;
-import com.duokan.reader.domain.bookshelf.aa;
 import com.duokan.reader.domain.bookshelf.an;
 
 class cj implements Runnable {
-    final /* synthetic */ aa a;
-    final /* synthetic */ an b;
-    final /* synthetic */ bz c;
+    /* renamed from: a */
+    final /* synthetic */ boolean f6272a;
+    /* renamed from: b */
+    final /* synthetic */ an f6273b;
+    /* renamed from: c */
+    final /* synthetic */ ce f6274c;
 
-    cj(bz bzVar, aa aaVar, an anVar) {
-        this.c = bzVar;
-        this.a = aaVar;
-        this.b = anVar;
+    cj(ce ceVar, boolean z, an anVar) {
+        this.f6274c = ceVar;
+        this.f6272a = z;
+        this.f6273b = anVar;
     }
 
     public void run() {
-        this.c.s = true;
-        this.c.j = this.c.a.b;
-        this.c.j.a(this.c.k, true);
-        this.c.n = 0;
-        this.c.m = 0;
-        Rect a = this.c.j.a(0);
-        PointF pointF = (PointF) UTools.f.getRect();
-        pointF.set((float) a.centerX(), (float) a.centerY());
-        this.c.h.a(pointF);
-        UTools.f.getRect(pointF);
-        this.c.a(300, new ck(this));
+        if (!this.f6272a) {
+            this.f6274c.f6250a.m9275b(this.f6273b);
+        }
+        this.f6274c.m9391f(false);
     }
 }

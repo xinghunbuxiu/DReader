@@ -1,27 +1,25 @@
 package com.duokan.reader.domain.account;
 
-import com.duokan.reader.common.webservices.WebSession;
-import com.duokan.reader.common.webservices.duokan.a.d;
-import com.xiaomi.accountsdk.account.data.ExtendedAuthToken;
+import com.duokan.p023b.C0247i;
+import com.duokan.reader.DkApp;
+import com.duokan.reader.ui.general.ja;
 
-import org.json.JSONObject;
+public class bo implements am {
+    /* renamed from: a */
+    private final C0420b f2443a;
 
-class bo extends WebSession {
-    final /* synthetic */ MiGuestAccount a;
-
-    bo(MiGuestAccount miGuestAccount) {
-        this.a = miGuestAccount;
+    public bo(C0420b c0420b) {
+        this.f2443a = c0420b;
     }
 
-    protected void onSessionTry() {
-        d execute = execute(this.a.d("micloud"));
-        JSONObject a = new com.duokan.reader.common.webservices.d(this).a(execute);
-        this.a.e = ExtendedAuthToken.build(a.getJSONObject("data").optString("micloud_serviceToken"), new JSONObject((String) execute.a("extension-pragma").get(0)).getString("ssecurity"));
-    }
-
-    protected void onSessionSucceeded() {
-    }
-
-    protected void onSessionFailed() {
+    /* renamed from: a */
+    public void mo873a() {
+        ja jaVar = new ja(DkApp.get().getTopActivity());
+        jaVar.m10843a(DkApp.get().getString(C0247i.account__shared__duokan_logging_in));
+        jaVar.m10844a(true);
+        jaVar.setCancelOnBack(false);
+        jaVar.setCancelOnTouchOutside(false);
+        jaVar.show();
+        C0709k.m3476a().m3509d(new bp(this, jaVar));
     }
 }

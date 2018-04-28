@@ -1,39 +1,23 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.content.Context;
+import android.util.AttributeSet;
+import com.duokan.core.ui.TabBarView;
+import com.duokan.p024c.C0254f;
 
-import com.duokan.c.j;
-import com.duokan.core.sys.af;
-import com.duokan.reader.common.classc;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.ui.general.ap;
-
-class ns implements OnClickListener {
-    final /* synthetic */ nk a;
-
-    ns(nk nkVar) {
-        this.a = nkVar;
+public class ns extends TabBarView {
+    public ns(Context context) {
+        this(context, null);
     }
 
-    public void onClick(View view) {
-        c G = this.a.b.G();
-        if (G.ai() && !G.aj()) {
-            if (G.U()) {
-                G.aa();
-            } else if (!G.k() || (!G.W() && !G.X())) {
-                ((bm) this.a.b).c();
-            } else if (classc.ConnectivityReceiver.b().c()) {
-                ap apVar = new ap(this.a.getContext());
-                apVar.setOkLabel(j.general__shared__continue);
-                apVar.setCancelLabel(j.general__shared__cancel);
-                apVar.setTitle(j.bookshelf__book__download_dialog__title);
-                apVar.setPrompt(j.bookshelf__book__download_dialog__serial_prompt);
-                apVar.open(new nt(this, G));
-            } else {
-                G.a(true, new af(Boolean.valueOf(true)));
-            }
-            this.a.f();
-        }
+    public ns(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet);
+        setIndicatorGravity(119);
+        setIndicatorDrawable(new nt(this, getResources().getDrawable(C0254f.reading__toc_view__bg2), getResources().getDrawable(C0254f.reading__toc_view__bg)));
+    }
+
+    /* renamed from: a */
+    public void m14763a(float f) {
+        super.m1323d(Math.round(((float) getPaddingLeft()) + (((float) ((getWidth() - getPaddingLeft()) - getPaddingRight())) * f)));
     }
 }

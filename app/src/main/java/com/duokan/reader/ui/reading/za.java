@@ -1,17 +1,9 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.document.au;
 
-class za implements OnClickListener {
-    final /* synthetic */ yr a;
-
-    za(yr yrVar) {
-        this.a = yrVar;
-    }
-
-    public void onClick(View view) {
-        this.a.D.put("Action2", "COLOR");
-        this.a.F.k();
-    }
+public interface za {
+    /* renamed from: a */
+    void mo2495a(C0800c c0800c, au auVar);
 }

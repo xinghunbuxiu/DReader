@@ -1,21 +1,30 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.ag;
+import android.text.TextUtils;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.domain.cloud.aj;
+import com.duokan.reader.ui.general.be;
 
-import java.util.Map;
+class aaa implements aj {
+    /* renamed from: a */
+    final /* synthetic */ zx f9260a;
 
-class aaa implements ag {
-    final /* synthetic */ zo a;
-
-    aaa(zo zoVar) {
-        this.a = zoVar;
+    aaa(zx zxVar) {
+        this.f9260a = zxVar;
     }
 
-    public void a(Map map) {
-        if (this.a.q) {
-            this.a.J = false;
-        } else {
-            this.a.G();
+    /* renamed from: a */
+    public void mo1974a() {
+        be.m10286a(this.f9260a.getContext(), C0258j.reading__send_error_view__thx, 1).show();
+        this.f9260a.requestBack();
+    }
+
+    /* renamed from: a */
+    public void mo1975a(String str) {
+        this.f9260a.f11287f.setEnabled(true);
+        if (!TextUtils.isEmpty(str)) {
+            be.m10287a(this.f9260a.getContext(), (CharSequence) str, 1).show();
         }
+        this.f9260a.requestBack();
     }
 }

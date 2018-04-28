@@ -1,243 +1,190 @@
 package com.duokan.reader.domain.account;
 
 import android.app.Activity;
-import android.text.TextUtils;
-
 import com.duokan.reader.DkApp;
-import com.duokan.reader.domain.account.oauth.ThirdWeiXin;
-import com.duokan.reader.domain.social.b.b;
-import com.duokan.reader.domain.statistics.a;
-import com.duokan.reader.ui.general.jq;
-import com.tencent.mm.opensdk.modelmsg.SendAuth.Resp;
+import com.duokan.reader.domain.social.p048b.C1135b;
 import com.xiaomi.micloudsdk.request.Request.RequestEnv;
-
-import java.util.List;
 import java.util.Map;
 
-public class PersonalAccount extends a {
-    static final /* synthetic */ boolean e = (!PersonalAccount.class.desiredAssertionStatus());
-    private a f = null;
-    private final MiAccount g = ((MiAccount) this.a.a(MiAccount.class));
-    private final MiGuestAccount h = ((MiGuestAccount) this.a.a(MiGuestAccount.class));
-    private final AnonymousAccount i = ((AnonymousAccount) this.a.a(AnonymousAccount.class));
-    private b j;
-    private boolean k = false;
+public class PersonalAccount extends C0672a {
+    /* renamed from: e */
+    static final /* synthetic */ boolean f2265e = (!PersonalAccount.class.desiredAssertionStatus());
+    /* renamed from: f */
+    private C0672a f2266f;
+    /* renamed from: g */
+    private final MiAccount f2267g;
+    /* renamed from: h */
+    private final MiGuestAccount f2268h;
+    /* renamed from: i */
+    private final AnonymousAccount f2269i;
 
-    public PersonalAccount(e eVar) {
-        super(eVar);
+    private PersonalAccount(C0706e c0706e) {
+        super(c0706e);
+        this.f2266f = null;
+        this.f2267g = (MiAccount) this.a.mo876a(MiAccount.class);
+        this.f2268h = (MiGuestAccount) this.a.mo876a(MiGuestAccount.class);
+        this.f2269i = (AnonymousAccount) this.a.mo876a(AnonymousAccount.class);
     }
 
-    protected void k() {
+    /* renamed from: k */
+    protected void mo841k() {
     }
 
-    protected void a(String str, String str2, String str3) {
+    /* renamed from: a */
+    protected void mo831a(String str, String str2, String str3) {
     }
 
-    protected String m() {
+    /* renamed from: m */
+    protected String mo842m() {
         return "";
     }
 
-    public AccountType e() {
-        if (t() == null) {
+    /* renamed from: e */
+    public AccountType mo835e() {
+        if (m3252t() == null) {
             return AccountType.NONE;
         }
-        return t().e();
+        return m3252t().mo835e();
     }
 
-    public long a() {
-        if (t() == null) {
+    /* renamed from: a */
+    public long mo853a() {
+        if (m3252t() == null) {
             return -1;
         }
-        return t().a();
+        return m3252t().mo853a();
     }
 
-    public String b() {
-        if (t() == null) {
+    /* renamed from: b */
+    public String mo832b() {
+        if (m3252t() == null) {
             return "";
         }
-        return t().b();
+        return m3252t().mo832b();
     }
 
-    public String c() {
-        if (t() == null) {
+    /* renamed from: c */
+    public String mo833c() {
+        if (m3252t() == null) {
             return "";
         }
-        return t().c();
+        return m3252t().mo833c();
     }
 
-    public String d() {
-        if (t() == null) {
+    /* renamed from: d */
+    public String mo834d() {
+        if (m3252t() == null) {
             return "";
         }
-        return t().d();
+        return m3252t().mo834d();
     }
 
-    public g f() {
-        if (t() != null) {
-            return t().f();
+    /* renamed from: f */
+    public C0705g mo836f() {
+        if (m3252t() != null) {
+            return m3252t().mo836f();
         }
-        if (e) {
-            return new bu(this);
+        if (f2265e) {
+            return new by(this);
         }
         throw new AssertionError();
     }
 
-    public Map g() {
-        if (t() == null) {
+    /* renamed from: g */
+    public Map<String, String> mo837g() {
+        if (m3252t() == null) {
             return null;
         }
-        return t().g();
+        return m3252t().mo837g();
     }
 
-    public Map h() {
-        if (t() == null) {
+    /* renamed from: h */
+    public Map<String, String> mo838h() {
+        if (m3252t() == null) {
             return null;
         }
-        return t().h();
+        return m3252t().mo838h();
     }
 
-    public void a(Activity activity, d dVar) {
-        if (t() == null) {
-            dVar.a(this);
+    /* renamed from: a */
+    public void mo829a(Activity activity, C0700d c0700d) {
+        if (m3252t() == null) {
+            c0700d.mo868a(this);
         } else {
-            t().a(activity, new bv(this, dVar));
+            m3252t().mo829a(activity, new bz(this, c0700d));
         }
     }
 
-    public boolean n() {
-        o();
-        return this.f != null && ((this.f.e().equals(AccountType.XIAO_MI) || this.f.e().equals(AccountType.XIAOMI_GUEST)) && !this.f.i());
+    /* renamed from: n */
+    public boolean mo843n() {
+        mo848r();
+        return this.f2266f != null && ((this.f2266f.mo835e().equals(AccountType.XIAO_MI) || this.f2266f.mo835e().equals(AccountType.XIAOMI_GUEST)) && !this.f2266f.mo839i());
     }
 
-    public synchronized void a(b bVar) {
-        if (!(n() || this.k)) {
-            this.k = true;
-            this.f = this.g;
-            this.g.b(new bw(this, bVar));
+    /* renamed from: a */
+    public void mo830a(C0699c c0699c) {
+        if (this.f2266f instanceof UserAccount) {
+            this.f2266f.mo830a(new ca(this, c0699c));
         }
     }
 
-    public void b(b bVar) {
-        a(null, i.f().d(), bVar);
+    /* renamed from: j */
+    public RequestEnv mo840j() {
+        return m3252t().mo840j();
     }
 
-    public void c(b bVar) {
-        List d = i.f().d();
-        d.remove("WX_LOGIN");
-        a(DkApp.get().getString(i.account__mi_login_view__title), d, bVar);
+    /* renamed from: t */
+    private C0672a m3252t() {
+        if (this.f2266f != null) {
+            return this.f2266f;
+        }
+        mo848r();
+        return this.f2266f;
     }
 
-    private void a(String str, List list, b bVar) {
-        if (list.size() == 1) {
-            e(bVar);
+    /* renamed from: r */
+    public void mo848r() {
+        if (!this.f2267g.mo839i()) {
+            this.f2266f = this.f2267g;
+        } else if (!this.f2268h.mo839i()) {
+            this.f2266f = this.f2268h;
+        } else if (this.f2269i.mo839i() || (DkApp.get().getAutoLogin() && MiAccount.m3186b(DkApp.get()))) {
+            this.f2266f = null;
         } else {
-            new w(DkApp.get().getTopActivity(), str, list, new bx(this, bVar)).show();
+            this.f2266f = this.f2269i;
         }
     }
 
-    public synchronized void d(b bVar) {
-        if (!(n() || this.k)) {
-            this.k = true;
-            this.f = this.g;
-            this.g.c(new by(this, bVar));
-        }
+    /* renamed from: a */
+    public void m3255a(C0672a c0672a) {
+        this.f2266f = c0672a;
     }
 
-    public synchronized void e(b bVar) {
-        if (!(n() || this.k)) {
-            this.k = true;
-            this.f = this.g;
-            this.g.d(new bz(this, bVar));
-        }
+    /* renamed from: i */
+    public boolean mo839i() {
+        mo848r();
+        return m3252t() == null || m3252t().mo839i();
     }
 
-    public synchronized void f(b bVar) {
-        if (!this.k) {
-            this.k = true;
-            jq jqVar = new jq(DkApp.get().getTopActivity());
-            jqVar.a(DkApp.get().getString(i.account__shared__duokan_logging_in));
-            jqVar.a(true);
-            jqVar.setCancelOnBack(false);
-            jqVar.setCancelOnTouchOutside(false);
-            jqVar.show();
-            new ThirdWeiXin().login();
-            a.k().b("login", "wechat", "click");
-            this.j = new ca(this, jqVar, bVar);
-        }
+    /* renamed from: o */
+    public boolean mo844o() {
+        return m3252t() != null && m3252t().mo844o();
     }
 
-    public synchronized void g(b bVar) {
-        if (!n()) {
-            f(bVar);
-        }
+    /* renamed from: p */
+    public boolean mo845p() {
+        return m3252t() != null && m3252t().mo845p();
     }
 
-    public synchronized void a(Resp resp) {
-        if (this.j != null) {
-            b bVar = this.j;
-            this.j = null;
-            if (resp == null || TextUtils.isEmpty(resp.code)) {
-                this.k = false;
-                o();
-                a.k().b("login", "wechat", "canceled");
-                bVar.a(i.f().b(MiGuestAccount.class), "");
-            } else {
-                this.f = this.h;
-                this.h.a(new cb(this, bVar), resp.code);
-            }
-        }
+    /* renamed from: q */
+    public boolean mo846q() {
+        return m3252t() != null && m3252t().mo846q();
     }
 
-    public void a(c cVar) {
-        if (this.f instanceof UserAccount) {
-            this.f.a(new cc(this, cVar));
-        }
-    }
-
-    public RequestEnv j() {
-        return t().j();
-    }
-
-    private a t() {
-        if (this.f != null) {
-            return this.f;
-        }
-        o();
-        return this.f;
-    }
-
-    public void o() {
-        if (!this.g.i()) {
-            this.f = this.g;
-        } else if (!this.h.i()) {
-            this.f = this.h;
-        } else if (this.i.i() || (DkApp.get().getAutoLogin() && MiAccount.a(DkApp.get()))) {
-            this.f = null;
-        } else {
-            this.f = this.i;
-        }
-    }
-
-    public boolean i() {
-        o();
-        return t() == null || t().i();
-    }
-
-    public boolean p() {
-        return t() != null && t().p();
-    }
-
-    public boolean q() {
-        return t() != null && t().q();
-    }
-
-    public boolean r() {
-        return t() != null && t().r();
-    }
-
-    public b s() {
-        if (t() instanceof UserAccount) {
-            return ((UserAccount) t()).s();
+    /* renamed from: s */
+    public C1135b m3274s() {
+        if (m3252t() instanceof UserAccount) {
+            return ((UserAccount) m3252t()).mo849s();
         }
         return null;
     }

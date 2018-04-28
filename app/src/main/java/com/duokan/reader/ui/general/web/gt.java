@@ -1,22 +1,25 @@
 package com.duokan.reader.ui.general.web;
 
-import android.os.Handler;
-import android.os.Message;
+import com.duokan.core.app.ac;
+import com.duokan.core.app.ad;
+import com.duokan.core.sys.af;
 
-import com.duokan.core.sys.as;
-import com.duokan.reader.domain.cloud.PersonalPrefs;
+class gt implements ad {
+    /* renamed from: a */
+    final /* synthetic */ gs f7903a;
 
-class gt implements as {
-    final /* synthetic */ Handler a;
-    final /* synthetic */ gr b;
-
-    gt(gr grVar, Handler handler) {
-        this.b = grVar;
-        this.a = handler;
+    gt(gs gsVar) {
+        this.f7903a = gsVar;
     }
 
-    public void a() {
-        PersonalPrefs.a().h(true);
-        this.a.sendMessageDelayed(Message.obtain(this.a, 0), 5000);
+    /* renamed from: a */
+    public void mo1553a(ac acVar) {
+        this.f7903a.f7899a.m4198a(this.f7903a.f7899a.m4225f(), this.f7903a.f7900b, "", "", false, new af(Boolean.valueOf(false)));
+        this.f7903a.f7901c.release();
+    }
+
+    /* renamed from: b */
+    public void mo1554b(ac acVar) {
+        this.f7903a.f7901c.release();
     }
 }

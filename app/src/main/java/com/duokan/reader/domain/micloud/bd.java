@@ -1,31 +1,34 @@
 package com.duokan.reader.domain.micloud;
 
+import com.duokan.reader.common.async.work.C0523c;
+import com.duokan.reader.common.async.work.C0532j;
 import com.duokan.reader.common.async.work.IAsyncWorkProgressListener;
-import com.duokan.reader.common.async.work.c;
-import com.duokan.reader.common.async.work.j;
-
 import java.util.HashSet;
 
-class bd extends j {
-    final /* synthetic */ ba a;
-    private HashSet b = new HashSet();
+class bd extends C0532j<C1073n, C1073n> {
+    /* renamed from: a */
+    final /* synthetic */ ba f5229a;
+    /* renamed from: b */
+    private HashSet<String> f5230b = new HashSet();
 
     bd(ba baVar, IAsyncWorkProgressListener iAsyncWorkProgressListener) {
-        this.a = baVar;
+        this.f5229a = baVar;
         super(iAsyncWorkProgressListener);
     }
 
-    public /* synthetic */ void c(c cVar) {
-        a((n) cVar);
+    /* renamed from: c */
+    public /* synthetic */ void mo747c(C0523c c0523c) {
+        m8135a((C1073n) c0523c);
     }
 
-    public void a(n nVar) {
-        for (bi biVar : nVar.y()) {
-            if (!this.b.contains(biVar.d())) {
-                this.a.m.b(biVar);
-                this.b.add(biVar.d());
+    /* renamed from: a */
+    public void m8135a(C1073n c1073n) {
+        for (bi biVar : c1073n.m8255y()) {
+            if (!this.f5230b.contains(biVar.m8154d())) {
+                this.f5229a.f5226m.m8263b(biVar);
+                this.f5230b.add(biVar.m8154d());
             }
         }
-        super.c(nVar);
+        super.mo747c(c1073n);
     }
 }

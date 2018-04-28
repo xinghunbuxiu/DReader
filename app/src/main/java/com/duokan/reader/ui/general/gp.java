@@ -1,22 +1,26 @@
 package com.duokan.reader.ui.general;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Drawable.Callback;
+import com.duokan.core.sys.UThread;
 
-import com.duokan.core.ui.f;
+class gp implements Callback {
+    /* renamed from: a */
+    final /* synthetic */ PicView f7300a;
 
-class gp implements OnClickListener {
-    final /* synthetic */ gn a;
-
-    gp(gn gnVar) {
-        this.a = gnVar;
+    gp(PicView picView) {
+        this.f7300a = picView;
     }
 
-    public void onClick(View view) {
-        if (this.a.a instanceof f) {
-            ((f) this.a.a).cancel();
-        } else {
-            this.a.a.dismiss();
-        }
+    public void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        UThread.removeCallbacks(runnable);
+    }
+
+    public void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
+        UThread.postDelayed(runnable, j);
+    }
+
+    public void invalidateDrawable(Drawable drawable) {
+        this.f7300a.invalidate();
     }
 }

@@ -1,20 +1,16 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+class dp implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ dn f8463a;
 
-import com.duokan.reader.domain.account.a;
-
-class dp implements OnClickListener {
-    final /* synthetic */ a a;
-    final /* synthetic */ MiAccountProfileSettingsController b;
-
-    dp(MiAccountProfileSettingsController miAccountProfileSettingsController, a aVar) {
-        this.b = miAccountProfileSettingsController;
-        this.a = aVar;
+    dp(dn dnVar) {
+        this.f8463a = dnVar;
     }
 
-    public void onClick(View view) {
-        this.a.a(new dq(this));
+    public void run() {
+        if (this.f8463a.f8461a.f8457b != null) {
+            this.f8463a.f8461a.f8457b.mo1901a(true);
+        }
     }
 }

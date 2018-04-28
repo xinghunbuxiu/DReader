@@ -1,22 +1,18 @@
 package com.duokan.reader.ui.reading;
 
 import android.view.View;
+import android.view.View.OnClickListener;
 
-import com.duokan.core.ui.ay;
-import com.duokan.core.ui.bf;
-import com.duokan.reader.domain.bookshelf.a;
-import com.duokan.reader.domain.document.d;
+class nw implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ nu f10723a;
 
-class nw implements bf {
-    final /* synthetic */ nk a;
-
-    nw(nk nkVar) {
-        this.a = nkVar;
+    nw(nu nuVar) {
+        this.f10723a = nuVar;
     }
 
-    public void a(ay ayVar, View view, int i) {
-        this.a.b.aP();
-        a aVar = (a) ayVar.getAdapter().d(i);
-        this.a.b.d(this.a.b.getDocument().a((d) aVar.d(), (d) aVar.e()));
+    public void onClick(View view) {
+        oi oiVar = (oi) this.f10723a.f10708j.getAdapter();
+        this.f10723a.f10701c.mo2452a(oiVar.f10737a, oiVar.f10738c);
     }
 }

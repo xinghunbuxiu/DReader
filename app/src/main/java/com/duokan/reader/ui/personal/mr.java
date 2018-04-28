@@ -2,25 +2,20 @@ package com.duokan.reader.ui.personal;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.domain.cloud.DkCloudStoreBook;
-import com.duokan.reader.ui.general.expandable.ViewMode;
+import com.duokan.reader.domain.cloud.DkCloudComment;
 
 class mr implements OnClickListener {
-    final /* synthetic */ int a;
-    final /* synthetic */ mq b;
+    /* renamed from: a */
+    final /* synthetic */ DkCloudComment f8961a;
+    /* renamed from: b */
+    final /* synthetic */ mj f8962b;
 
-    mr(mq mqVar, int i) {
-        this.b = mqVar;
-        this.a = i;
+    mr(mj mjVar, DkCloudComment dkCloudComment) {
+        this.f8962b = mjVar;
+        this.f8961a = dkCloudComment;
     }
 
     public void onClick(View view) {
-        if (this.b.f() == ViewMode.Edit) {
-            this.b.c.b(0, this.a);
-        } else {
-            ((kn) MyContextWrapper.getFeature(this.b.a).queryFeature(kn.class)).a((DkCloudStoreBook) this.b.d(this.a));
-        }
+        this.f8962b.f8951a.f8941c.m8870a(this.f8962b.f8951a.getContext(), this.f8962b.f8951a.f8942d, this.f8961a);
     }
 }

@@ -1,23 +1,50 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.SurfaceHolder;
-import android.view.SurfaceHolder.Callback;
+import android.content.Context;
+import android.os.Binder;
+import android.os.PowerManager;
+import android.os.PowerManager.WakeLock;
+import com.duokan.p024c.C0255g;
 
-class afl implements Callback {
-    final /* synthetic */ afh a;
+public class afl extends Binder {
+    /* renamed from: a */
+    final /* synthetic */ TtsNotificationService f9636a;
+    /* renamed from: b */
+    private final WakeLock f9637b;
 
-    afl(afh com_duokan_reader_ui_reading_afh) {
-        this.a = com_duokan_reader_ui_reading_afh;
+    public afl(TtsNotificationService ttsNotificationService, Context context) {
+        this.f9636a = ttsNotificationService;
+        this.f9637b = ((PowerManager) context.getSystemService("power")).newWakeLock(1, "TTS");
+        this.f9637b.setReferenceCounted(false);
     }
 
-    public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
+    /* renamed from: a */
+    public void m13496a() {
+        this.f9636a.f9178b.contentView.setViewVisibility(C0255g.reading__tts_notification_view__resume, 8);
+        this.f9636a.f9178b.contentView.setViewVisibility(C0255g.reading__tts_notification_view__pause, 0);
+        this.f9636a.startForeground(1, this.f9636a.f9178b);
+        this.f9637b.acquire();
     }
 
-    public void surfaceCreated(SurfaceHolder surfaceHolder) {
-        this.a.n().setDisplay(this.a.j.getHolder());
-        this.a.m();
+    /* renamed from: b */
+    public void m13497b() {
+        this.f9636a.f9178b.contentView.setViewVisibility(C0255g.reading__tts_notification_view__resume, 0);
+        this.f9636a.f9178b.contentView.setViewVisibility(C0255g.reading__tts_notification_view__pause, 8);
+        this.f9636a.startForeground(1, this.f9636a.f9178b);
+        this.f9637b.release();
     }
 
-    public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i2, int i3) {
+    /* renamed from: c */
+    public void m13498c() {
+        this.f9636a.f9178b.contentView.setViewVisibility(C0255g.reading__tts_notification_view__resume, 8);
+        this.f9636a.f9178b.contentView.setViewVisibility(C0255g.reading__tts_notification_view__pause, 0);
+        this.f9636a.startForeground(1, this.f9636a.f9178b);
+        this.f9637b.acquire();
+    }
+
+    /* renamed from: d */
+    public void m13499d() {
+        this.f9636a.stopForeground(true);
+        this.f9637b.release();
     }
 }

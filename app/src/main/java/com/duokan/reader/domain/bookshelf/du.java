@@ -1,19 +1,9 @@
 package com.duokan.reader.domain.bookshelf;
 
-class du implements ee {
-    final /* synthetic */ dt a;
+public interface du {
+    /* renamed from: a */
+    void mo980a();
 
-    du(dt dtVar) {
-        this.a = dtVar;
-    }
-
-    public void a() {
-        this.a.d.a();
-        this.a.a();
-    }
-
-    public void a(String str) {
-        this.a.d.a(str);
-        this.a.a();
-    }
+    /* renamed from: b */
+    void mo981b();
 }

@@ -3,32 +3,34 @@ package com.duokan.reader.domain.micloud;
 import android.accounts.Account;
 import android.content.Context;
 import android.text.TextUtils;
-
-import com.duokan.reader.common.async.work.a;
-import com.duokan.reader.common.async.work.e;
-import com.duokan.reader.common.async.work.q;
+import com.duokan.reader.common.async.work.C0521a;
+import com.duokan.reader.common.async.work.C0525e;
+import com.duokan.reader.common.async.work.C0529q;
+import com.duokan.reader.common.p036b.C0538a;
+import com.duokan.reader.common.p036b.C0542e;
 import com.duokan.reader.domain.account.AccountType;
+import com.duokan.reader.domain.account.C0672a;
+import com.duokan.reader.domain.account.C0709k;
 import com.duokan.reader.domain.account.MiGuestAccount;
-import com.duokan.reader.domain.account.i;
 import com.xiaomi.accountsdk.account.data.ExtendedAuthToken;
-
 import org.apache.http.HttpStatus;
 
-import miuipub.date.Calendar;
+public abstract class be<T extends bf> extends C0521a<T> implements af<T> {
+    /* renamed from: a */
+    private boolean f5231a;
 
-public abstract class be extends a implements af {
-    private boolean a;
+    /* renamed from: a */
+    protected abstract C0525e mo1491a(ExtendedAuthToken extendedAuthToken);
 
-    protected abstract e a(ExtendedAuthToken extendedAuthToken);
-
-    public be(Context context, bf bfVar, q qVar) {
-        super(context, bfVar, qVar);
+    public be(Context context, T t, C0529q<T> c0529q) {
+        super(context, t, c0529q);
     }
 
-    protected final e a(int i) {
-        this.a = false;
-        if (!((bf) b()).o()) {
-            return e.b(-2, true, true);
+    /* renamed from: a */
+    protected final C0525e mo1488a(int i) {
+        this.f5231a = false;
+        if (!((bf) mo734b()).m2300o()) {
+            return C0525e.m2310b(-2, true, true);
         }
         if (i > 0) {
             int i2;
@@ -38,74 +40,75 @@ public abstract class be extends a implements af {
                 i2 = HttpStatus.SC_MULTIPLE_CHOICES;
             }
             try {
-                Thread.sleep((long) (i2 * Calendar.MILLISECOND_OF_SECOND));
+                Thread.sleep((long) (i2 * 1000));
             } catch (InterruptedException e) {
             }
         }
-        return k();
+        return m8137k();
     }
 
-    private e k() {
-        if (!((bf) b()).o()) {
-            return e.b(-2, true, true);
+    /* renamed from: k */
+    private C0525e m8137k() {
+        if (!((bf) mo734b()).m2300o()) {
+            return C0525e.m2310b(-2, true, true);
         }
-        com.duokan.reader.domain.account.a c = i.f().c();
-        if (c == null) {
-            return e.c(-10005, true, true);
+        C0672a d = C0709k.m3476a().m3508d();
+        if (d == null) {
+            return C0525e.m2311c(-10005, true, true);
         }
-        if (c.e().equals(AccountType.XIAO_MI)) {
-            com.duokan.reader.common.b.a a = com.duokan.reader.common.b.e.a(a(), true);
-            Account i = a.i();
+        if (d.mo835e().equals(AccountType.XIAO_MI)) {
+            C0538a a = C0542e.m2412a(m2258a(), true);
+            Account i = a.m2409i();
             if (i == null) {
-                return e.c(-10005, true, true);
+                return C0525e.m2311c(-10005, true, true);
             }
-            if (!i.name.equals(((bf) b()).N())) {
-                return e.c(-10006, true, true);
+            if (!i.name.equals(((bf) mo734b()).m8140N())) {
+                return C0525e.m2311c(-10006, true, true);
             }
             try {
-                String a2 = a.a(i, "micloud", false);
-                if (!((bf) b()).o()) {
-                    return e.b(-2, true, true);
+                String a2 = a.m2392a(i, "micloud", false);
+                if (!((bf) mo734b()).m2300o()) {
+                    return C0525e.m2310b(-2, true, true);
                 }
                 if (TextUtils.isEmpty(a2)) {
-                    return e.c(-10007, true, false);
+                    return C0525e.m2311c(-10007, true, false);
                 }
-                e a3 = a(ExtendedAuthToken.parse(a2));
-                if (!((bf) b()).o() || a3.a || a3.b || a3.c != -40003 || this.a) {
+                C0525e a3 = mo1491a(ExtendedAuthToken.parse(a2));
+                if (!((bf) mo734b()).m2300o() || a3.f1773a || a3.f1774b || a3.f1775c != -40003 || this.f5231a) {
                     return a3;
                 }
-                a.a("com.xiaomi", a2);
-                this.a = true;
-                return k();
+                a.m2397a("com.xiaomi", a2);
+                this.f5231a = true;
+                return m8137k();
             } catch (Exception e) {
-                return e.c(-10007, true, false);
+                return C0525e.m2311c(-10007, true, false);
             }
-        } else if (!c.e().equals(AccountType.XIAOMI_GUEST)) {
-            return e.c(-10005, true, true);
+        } else if (!d.mo835e().equals(AccountType.XIAOMI_GUEST)) {
+            return C0525e.m2311c(-10005, true, true);
         } else {
-            if (!((bf) b()).o()) {
-                return e.b(-2, true, true);
+            if (!((bf) mo734b()).m2300o()) {
+                return C0525e.m2310b(-2, true, true);
             }
-            if (!c.c().equals(((bf) b()).N())) {
-                return e.c(-10006, true, true);
+            if (!d.mo833c().equals(((bf) mo734b()).m8140N())) {
+                return C0525e.m2311c(-10006, true, true);
             }
             try {
-                ((MiGuestAccount) c).o();
-                if (!((bf) b()).o()) {
-                    return e.b(-2, true, true);
+                ((MiGuestAccount) d).mo848r();
+                if (!((bf) mo734b()).m2300o()) {
+                    return C0525e.m2310b(-2, true, true);
                 }
-                if (((MiGuestAccount) c).e == null) {
-                    return e.c(-10007, true, false);
+                if (((MiGuestAccount) d).f2258e == null) {
+                    return C0525e.m2311c(-10007, true, false);
                 }
-                e a4 = a(((MiGuestAccount) c).e);
-                if (!((bf) b()).o() || a4.a || a4.b || a4.c != -40003 || this.a) {
+                C0525e a4 = mo1491a(((MiGuestAccount) d).f2258e);
+                if (!((bf) mo734b()).m2300o() || a4.f1773a || a4.f1774b || a4.f1775c != -40003 || this.f5231a) {
                     return a4;
                 }
-                ((MiGuestAccount) c).o();
-                this.a = true;
-                return k();
+                ((MiGuestAccount) d).mo848r();
+                this.f5231a = true;
+                return m8137k();
             } catch (Exception e2) {
-                return e.c(-10007, true, false);
+                return C0525e.m2311c(-10007, true, false);
             }
         }
     }

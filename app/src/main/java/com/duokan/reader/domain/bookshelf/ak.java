@@ -1,18 +1,20 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.common.d.a;
-import com.duokan.reader.common.d.c;
+import com.duokan.reader.common.p038d.C0587a;
+import com.duokan.reader.common.p038d.C0589c;
 
-class ak implements c {
-    final /* synthetic */ aj a;
+class ak implements C0589c {
+    /* renamed from: a */
+    final /* synthetic */ aj f2766a;
 
     ak(aj ajVar) {
-        this.a = ajVar;
+        this.f2766a = ajVar;
     }
 
-    public void a(a aVar) {
-        this.a.a.t();
-        this.a.a.a(0);
-        aVar.a(600000);
+    /* renamed from: a */
+    public void mo974a(C0587a c0587a) {
+        this.f2766a.f2765a.m3945t();
+        this.f2766a.f2765a.m3973a(0);
+        c0587a.m2638a(600000);
     }
 }

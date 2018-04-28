@@ -1,28 +1,24 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
+import com.duokan.core.ui.Scrollable;
+import com.duokan.core.ui.Scrollable.ScrollState;
+import com.duokan.core.ui.cg;
 
-class nc implements Runnable {
-    final /* synthetic */ mx a;
+class nc implements cg {
+    /* renamed from: a */
+    final /* synthetic */ nb f10659a;
 
-    nc(mx mxVar) {
-        this.a = mxVar;
+    nc(nb nbVar) {
+        this.f10659a = nbVar;
     }
 
-    public void run() {
-        if (this.a.g) {
-            this.a.f.a(true);
-            this.a.c.setVisibility(0);
-            this.a.a.a(0, 128);
-            if (this.a.h && this.a.a.G().ai() && this.a.a.G().k()) {
-                DkUserPurchasedFictionsManager.a().b(false, new nd(this));
-                return;
-            }
-            return;
-        }
-        this.a.f.a(false);
-        this.a.b.setForeground(null);
-        this.a.c.setVisibility(4);
-        this.a.a.a(128, 0);
+    /* renamed from: a */
+    public void mo478a(Scrollable scrollable, ScrollState scrollState, ScrollState scrollState2) {
+        this.f10659a.f10655a.invalidate();
+    }
+
+    /* renamed from: a */
+    public void mo479a(Scrollable scrollable, boolean z) {
+        this.f10659a.f10655a.invalidate();
     }
 }

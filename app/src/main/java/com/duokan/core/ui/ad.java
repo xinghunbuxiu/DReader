@@ -6,23 +6,24 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 class ad extends FrameLayout {
-    final /* synthetic */ HatGridView a;
+    /* renamed from: a */
+    final /* synthetic */ HatGridView f895a;
 
     ad(HatGridView hatGridView, Context context) {
-        this.a = hatGridView;
+        this.f895a = hatGridView;
         super(context);
     }
 
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, this.a.a);
-        boolean onInterceptTouchEvent = this.a.a.onInterceptTouchEvent(a);
+        MotionEvent a = dv.m1908a(motionEvent, (View) this, this.f895a.f811a);
+        boolean onInterceptTouchEvent = this.f895a.f811a.onInterceptTouchEvent(a);
         a.recycle();
         return onInterceptTouchEvent;
     }
 
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, this.a.a);
-        boolean onTouchEvent = this.a.a.onTouchEvent(a);
+        MotionEvent a = dv.m1908a(motionEvent, (View) this, this.f895a.f811a);
+        boolean onTouchEvent = this.f895a.f811a.onTouchEvent(a);
         a.recycle();
         return onTouchEvent;
     }

@@ -1,22 +1,22 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.app.ActivatedController;
+import java.util.concurrent.Callable;
 
-import com.duokan.reader.domain.account.i;
+class gl implements Callable<ActivatedController> {
+    /* renamed from: a */
+    final /* synthetic */ gj f8613a;
 
-class gl implements OnClickListener {
-    final /* synthetic */ fl a;
-
-    gl(fl flVar) {
-        this.a = flVar;
+    gl(gj gjVar) {
+        this.f8613a = gjVar;
     }
 
-    public void onClick(View view) {
-        if (i.f().b()) {
-            this.a.g(true);
-        } else {
-            this.a.f(true);
-        }
+    public /* synthetic */ Object call() {
+        return m11934a();
+    }
+
+    /* renamed from: a */
+    public ActivatedController m11934a() {
+        return new ij(this.f8613a.f8611a.getContext());
     }
 }

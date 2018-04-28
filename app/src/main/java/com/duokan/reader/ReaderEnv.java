@@ -16,19 +16,27 @@ import android.provider.Settings.Secure;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.view.KeyCharacterMap;
-
-import com.duokan.core.a.a;
+import com.duokan.common.C0267i;
+import com.duokan.core.app.C0286x;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.app.IActivityRunStatusChanged;
+import com.duokan.core.diagnostic.C0328a;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.WebLog;
+import com.duokan.core.io.C0336a;
+import com.duokan.core.p026a.C0272a;
+import com.duokan.core.sys.C0299i;
+import com.duokan.core.sys.UIdleHandler;
+import com.duokan.core.sys.C0366o;
+import com.duokan.core.sys.C0373z;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ah;
-import com.duokan.core.sys.i;
 import com.duokan.kernel.DkUtils;
 import com.duokan.lib.archive.DkarchLib;
-
+import com.duokan.p023b.C0243e;
+import com.duokan.p023b.C0246h;
+import com.duokan.p023b.C0247i;
+import dalvik.system.DexClassLoader;
+import dalvik.system.PathClassLoader;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileOutputStream;
@@ -46,57 +54,207 @@ import java.util.Set;
 import java.util.TimeZone;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
-
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
-
-import dalvik.system.DexClassLoader;
-import dalvik.system.PathClassLoader;
 import miuipub.os.SystemProperties;
 
-public class ReaderEnv implements IActivityRunStatusChanged {
-    protected static ReaderEnv a = null;
-    static final  boolean c;
-    private static final String url_lib = (File.separator + "lib");
-    private static final String url_www = (File.separator + "www");
-    private static final String wordSeg = ("DkKernel" + File.separator + "Resource" + File.separator + "WordSeg");
-    private static final String font = ("DkKernel" + File.separator + "Resource" + File.separator + "Font");
-    private static final String url_cache = (File.separator + "Cache");
-    private static final String url_temp = (url_cache + File.separator + "temp");
-    private static final String url_download = (File.separator + "Downloads");
-    private static final String url_cloud = (url_download + File.separator + "Cloud");
-    private static final String url_Local = (url_download + File.separator + "Local");
-    private static final String url_wifi = (url_download + File.separator + "WiFi");
-    private static final String url_covers = (url_download + File.separator + "Covers");
-    private static final String url_cloudPrivateBooks = (url_download + File.separator + "CloudPrivateBooks");
-    private static final String url_miCloudBooks = (url_download + File.separator + "MiCloudBooks");
-    private static final String url_font = (File.separator + "Resource" + File.separator + "Font");
-    private static final String url_plugin = (File.separator + "Plugins");
-    private static final String url_dict = (url_plugin + File.separator + "Dict");
-    private File file4 = null;
-    private File file5 = null;
-    private File file6 = null;
-    private Editor editor = null;
-    private final a E;
-    private final HashMap map = new HashMap();
-    private final i G = new i();
-    private final i H = new i();
-    private final i I = new i();
-    private final ConcurrentHashMap J = new ConcurrentHashMap();
-    private final CopyOnWriteArrayList K = new CopyOnWriteArrayList();
-    private OnBookshelfItemStyleChangedListener styleChangedListener = null;
-    protected final DkApp dkApp;
-    private final String appName;
-    private final SharedPreferences sharedPreferences;
-    private final af v = new af();
-    private final File file;
-    private final File file1;
-    private final File file2;
-    private File file3 = null;
+public class ReaderEnv implements C0286x {
+    /* renamed from: a */
+    protected static ReaderEnv f1597a = null;
+    /* renamed from: c */
+    static final /* synthetic */ boolean f1598c;
+    /* renamed from: d */
+    private static final String f1599d = (File.separator + "lib");
+    /* renamed from: e */
+    private static final String f1600e = (File.separator + "www");
+    /* renamed from: f */
+    private static final String f1601f = ("DkKernel" + File.separator + "Resource" + File.separator + "WordSeg");
+    /* renamed from: g */
+    private static final String f1602g = ("DkKernel" + File.separator + "Resource" + File.separator + "Font");
+    /* renamed from: h */
+    private static final String f1603h = (File.separator + "Cache");
+    /* renamed from: i */
+    private static final String f1604i = (f1603h + File.separator + "temp");
+    /* renamed from: j */
+    private static final String f1605j = (File.separator + "Downloads");
+    /* renamed from: k */
+    private static final String f1606k = (f1605j + File.separator + "Cloud");
+    /* renamed from: l */
+    private static final String f1607l = (f1605j + File.separator + "Local");
+    /* renamed from: m */
+    private static final String f1608m = (f1605j + File.separator + "WiFi");
+    /* renamed from: n */
+    private static final String f1609n = (f1605j + File.separator + "Covers");
+    /* renamed from: o */
+    private static final String f1610o = (f1605j + File.separator + "CloudPrivateBooks");
+    /* renamed from: p */
+    private static final String f1611p = (f1605j + File.separator + "MiCloudBooks");
+    /* renamed from: q */
+    private static final String f1612q = (File.separator + "Resource" + File.separator + "Font");
+    /* renamed from: r */
+    private static final String f1613r = (File.separator + "Plugins");
+    /* renamed from: s */
+    private static final String f1614s = (f1613r + File.separator + "Dict");
+    /* renamed from: A */
+    private File f1615A = null;
+    /* renamed from: B */
+    private File f1616B = null;
+    /* renamed from: C */
+    private File f1617C = null;
+    /* renamed from: D */
+    private Editor f1618D = null;
+    /* renamed from: E */
+    private final C0272a f1619E;
+    /* renamed from: F */
+    private final HashMap<File, ClassLoader> f1620F = new HashMap();
+    /* renamed from: G */
+    private final C0299i<File> f1621G = new C0299i();
+    /* renamed from: H */
+    private final C0299i<File> f1622H = new C0299i();
+    /* renamed from: I */
+    private final C0299i<Drawable> f1623I = new C0299i();
+    /* renamed from: J */
+    private final ConcurrentHashMap<PrivatePref, CopyOnWriteArrayList<OnReaderPrefChangedListener>> f1624J = new ConcurrentHashMap();
+    /* renamed from: K */
+    private final CopyOnWriteArrayList<OnBookShelfTypeChangedListener> f1625K = new CopyOnWriteArrayList();
+    /* renamed from: L */
+    private OnBookshelfItemStyleChangedListener f1626L = null;
+    /* renamed from: b */
+    protected final DkApp f1627b;
+    /* renamed from: t */
+    private final String f1628t;
+    /* renamed from: u */
+    private final SharedPreferences f1629u;
+    /* renamed from: v */
+    private final af<Boolean> f1630v = new af();
+    /* renamed from: w */
+    private final File f1631w;
+    /* renamed from: x */
+    private final File f1632x;
+    /* renamed from: y */
+    private final File f1633y;
+    /* renamed from: z */
+    private File f1634z = null;
+
+    /* renamed from: com.duokan.reader.ReaderEnv$1 */
+    class C04791 implements OnSharedPreferenceChangeListener {
+        /* renamed from: a */
+        final /* synthetic */ ReaderEnv f1593a;
+
+        C04791(ReaderEnv readerEnv) {
+            this.f1593a = readerEnv;
+        }
+
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String str) {
+            try {
+                String[] split = str.split("__");
+                PrivatePref valueOf = PrivatePref.valueOf(split[0].toUpperCase(Locale.US));
+                String str2 = split[1];
+                CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) this.f1593a.f1624J.get(valueOf);
+                if (copyOnWriteArrayList != null) {
+                    Iterator it = copyOnWriteArrayList.iterator();
+                    while (it.hasNext()) {
+                        ((OnReaderPrefChangedListener) it.next()).onReaderPrefChanged(valueOf, str2);
+                    }
+                }
+            } catch (Throwable th) {
+            }
+        }
+    }
+
+    /* renamed from: com.duokan.reader.ReaderEnv$2 */
+    class C04802 implements Runnable {
+        /* renamed from: a */
+        final /* synthetic */ ReaderEnv f1594a;
+
+        C04802(ReaderEnv readerEnv) {
+            this.f1594a = readerEnv;
+        }
+
+        public void run() {
+            File access$100 = this.f1594a.sysFontFileZh();
+            File access$200 = this.f1594a.sysFontFileEn();
+            this.f1594a.f1621G.m708a(access$100);
+            this.f1594a.f1622H.m708a(access$200);
+            this.f1594a.f1623I.m708a(this.f1594a.f1627b.getResources().getDrawable(C0243e.reading__reading_themes_vine_yellow_shadow));
+            this.f1594a.prepareInternalFiles();
+            if (!this.f1594a.f1634z.equals(this.f1594a.f1632x)) {
+                Object obj;
+                for (File access$1002 : C0336a.m782b(this.f1594a.f1627b)) {
+                    if (this.f1594a.f1634z.getParentFile().equals(access$1002)) {
+                        obj = 1;
+                        break;
+                    }
+                }
+                obj = null;
+                if (obj == null) {
+                    this.f1594a.setSecondaryStorageDirectory(this.f1594a.f1632x.getParentFile());
+                }
+            }
+        }
+    }
+
+    /* renamed from: com.duokan.reader.ReaderEnv$3 */
+    class C04813 implements Runnable {
+        /* renamed from: a */
+        final /* synthetic */ ReaderEnv f1595a;
+
+        C04813(ReaderEnv readerEnv) {
+            this.f1595a = readerEnv;
+        }
+
+        public void run() {
+            this.f1595a.f1627b.addOnRunningStateChangedListener(this.f1595a);
+        }
+    }
+
+    /* renamed from: com.duokan.reader.ReaderEnv$4 */
+    class C04824 implements Comparator<File> {
+        /* renamed from: a */
+        final /* synthetic */ ReaderEnv f1596a;
+
+        C04824(ReaderEnv readerEnv) {
+            this.f1596a = readerEnv;
+        }
+
+        public int compare(File file, File file2) {
+            long length = file.length() - file2.length();
+            if (length > 0) {
+                return -1;
+            }
+            return length < 0 ? 1 : 0;
+        }
+    }
+
+    /* renamed from: com.duokan.reader.ReaderEnv$5 */
+    final class C04835 implements X509TrustManager {
+        C04835() {
+        }
+
+        public X509Certificate[] getAcceptedIssuers() {
+            return null;
+        }
+
+        public void checkClientTrusted(X509Certificate[] x509CertificateArr, String str) {
+        }
+
+        public void checkServerTrusted(X509Certificate[] x509CertificateArr, String str) {
+        }
+    }
+
+    /* renamed from: com.duokan.reader.ReaderEnv$6 */
+    final class C04846 implements HostnameVerifier {
+        C04846() {
+        }
+
+        public boolean verify(String str, SSLSession sSLSession) {
+            return true;
+        }
+    }
 
     public enum BookShelfType {
         Simple,
@@ -142,52 +300,30 @@ public class ReaderEnv implements IActivityRunStatusChanged {
         } else {
             z = true;
         }
-        c = z;
+        f1598c = z;
     }
 
     public ReaderEnv(DkApp dkApp) {
         configHttps();
-        this.dkApp = dkApp;
-        this.appName = this.dkApp.getAppName();
-        this.sharedPreferences = dkApp.getSharedPreferences("env", 0);
-        this.sharedPreferences.registerOnSharedPreferenceChangeListener(new OnSharedPreferenceChangeListener(this) {
-            final  ReaderEnv a;
-
-            {
-                this.a = r1;
-            }
-
-            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String str) {
-                try {
-                    String[] split = str.split("__");
-                    PrivatePref valueOf = PrivatePref.valueOf(split[0].toUpperCase(Locale.US));
-                    String str2 = split[1];
-                    CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) this.a.J.get(valueOf);
-                    if (copyOnWriteArrayList != null) {
-                        Iterator it = copyOnWriteArrayList.iterator();
-                        while (it.hasNext()) {
-                            ((OnReaderPrefChangedListener) it.next()).onReaderPrefChanged(valueOf, str2);
-                        }
-                    }
-                } catch (Throwable th) {
-                }
-            }
-        });
-        this.file = this.dkApp.getFilesDir();
-        this.file1 = new File(Environment.getExternalStorageDirectory(), this.appName);
-        this.file2 = new File(this.file, "res.v17");
-        this.file3 = secondaryFilesDir(this.file1);
-        int i = this.sharedPreferences.getInt("global__version_code", 0);
-        if (this.sharedPreferences.contains("global__app_activated")) {
+        this.f1627b = dkApp;
+        this.f1628t = this.f1627b.getAppName();
+        this.f1629u = dkApp.getSharedPreferences("env", 0);
+        this.f1629u.registerOnSharedPreferenceChangeListener(new C04791(this));
+        this.f1631w = this.f1627b.getFilesDir();
+        this.f1632x = new File(Environment.getExternalStorageDirectory(), this.f1628t);
+        this.f1633y = new File(this.f1631w, "res.v17");
+        this.f1634z = secondaryFilesDir(this.f1632x);
+        int i = this.f1629u.getInt("global__version_code", 0);
+        if (this.f1629u.contains("global__app_activated")) {
             getPrefsEditor().putBoolean("global__fresh_install", false);
         } else {
             boolean z;
-            if (!this.sharedPreferences.contains("global__first_version_code")) {
+            if (!this.f1629u.contains("global__first_version_code")) {
                 getPrefsEditor().putInt("global__first_version_code", i == 0 ? getVersionCode() : i);
             }
             Editor prefsEditor = getPrefsEditor();
             String str = "global__fresh_install";
-            if (new File(this.file1, url_download).exists()) {
+            if (new File(this.f1632x, f1605j).exists()) {
                 z = false;
             } else {
                 z = true;
@@ -204,101 +340,63 @@ public class ReaderEnv implements IActivityRunStatusChanged {
             }
             if (getUpdateDownloadTaskId() != -1) {
                 try {
-                    ((DownloadManager) this.dkApp.getSystemService("download")).remove(new long[]{getUpdateDownloadTaskId()});
+                    ((DownloadManager) this.f1627b.getSystemService("download")).remove(new long[]{getUpdateDownloadTaskId()});
                 } catch (Exception e) {
                 }
                 setUpdateDownloadTaskId(-1);
             }
         }
-        if (!TextUtils.isEmpty(DkPublic.getDkDistChannel(this.dkApp)) && TextUtils.isEmpty(this.sharedPreferences.getString("global__dist_channel", ""))) {
-            getPrefsEditor().putString("global__dist_channel", DkPublic.getDkDistChannel(this.dkApp));
+        if (!TextUtils.isEmpty(DkPublic.getDkDistChannel(this.f1627b)) && TextUtils.isEmpty(this.f1629u.getString("global__dist_channel", ""))) {
+            getPrefsEditor().putString("global__dist_channel", DkPublic.getDkDistChannel(this.f1627b));
         }
-        ensureDirectoryExists(this.file);
-        ensureDirectoryExists(this.file1);
-        ensureDirectoryExists(this.file3);
-        this.E = new a(Uri.fromFile(new File(getDatabaseDirectory(), "reader.db")).toString());
-        if (i < 413000000 && this.file3.compareTo(this.file1) != 0) {
-            File[] fileArr = (File[]) com.duokan.core.io.a.b(this.dkApp).toArray(new File[0]);
+        ensureDirectoryExists(this.f1631w);
+        ensureDirectoryExists(this.f1632x);
+        ensureDirectoryExists(this.f1634z);
+        this.f1619E = new C0272a(Uri.fromFile(new File(getDatabaseDirectory(), "reader.db")).toString());
+        if (i < 413000000 && this.f1634z.compareTo(this.f1632x) != 0) {
+            File[] fileArr = (File[]) C0336a.m782b(this.f1627b).toArray(new File[0]);
             File file = fileArr[fileArr.length - 1];
             setPrefString(PrivatePref.PERSONAL, "storage", file.getAbsolutePath());
-            this.file3 = new File(file, this.appName);
-            ensureDirectoryExists(this.file3);
+            this.f1634z = new File(file, this.f1628t);
+            ensureDirectoryExists(this.f1634z);
         }
-        ah.future(new Runnable(this) {
-            final  ReaderEnv a;
-
-            {
-                this.a = r1;
-            }
-
-            public void run() {
-                File access$100 = this.a.sysFontFileZh();
-                File access$200 = this.a.sysFontFileEn();
-                this.a.G.a(access$100);
-                this.a.H.a(access$200);
-                this.a.I.a(this.a.dkApp.getResources().getDrawable(url_www.reading__reading_themes_vine_yellow_shadow));
-                this.a.prepareInternalFiles();
-                if (!this.a.file3.equals(this.a.file1)) {
-                    Object obj;
-                    for (File access$1002 : com.duokan.core.io.a.b(this.a.dkApp)) {
-                        if (this.a.file3.getParentFile().equals(access$1002)) {
-                            obj = 1;
-                            break;
-                        }
-                    }
-                    obj = null;
-                    if (obj == null) {
-                        this.a.setSecondaryStorageDirectory(this.a.file1.getParentFile());
-                    }
-                }
-            }
-        });
+        ah.m865a(new C04802(this));
         commitPrefs();
-        this.dkApp.runPreReady(new Runnable(this) {
-            final  ReaderEnv a;
-
-            {
-                this.a = r1;
-            }
-
-            public void run() {
-                this.a.dkApp.addOnRunningStateChangedListener(this.a);
-            }
-        });
+        this.f1627b.runPreReady(new C04813(this));
     }
 
     public Application getApplication() {
-        return this.dkApp;
+        return this.f1627b;
     }
 
     public Resources getResources() {
-        return this.dkApp.getApplicationContext().getResources();
+        return this.f1627b.getApplicationContext().getResources();
     }
 
     public boolean isWebAccessEnabled() {
-        return this.dkApp.isWebAccessEnabled();
+        return this.f1627b.isWebAccessEnabled();
     }
 
     public File getWwwDirectory() {
-        return new File(this.file2, url_www);
+        return new File(this.f1633y, f1600e);
     }
 
     public File getDatabaseDirectory() {
-        File parentFile = this.dkApp.getDatabasePath("name").getParentFile();
+        File parentFile = this.f1627b.getDatabasePath("name").getParentFile();
         ensureDirectoryExists(parentFile);
         return parentFile;
     }
 
     public File getKernelDirectory() {
-        return new File(this.file2, "DkKernel");
+        return new File(this.f1633y, "DkKernel");
     }
 
     public File getKernelFontDirectory() {
-        return new File(this.file2, font);
+        return new File(this.f1633y, f1602g);
     }
 
     public File getCacheDirectory() {
-        File file = new File(this.file1, url_cache);
+        File file = new File(this.f1632x, f1603h);
         ensureDirectoryExists(file);
         return file;
     }
@@ -316,25 +414,25 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public File getPrivateCacheDirectory() {
-        File cacheDir = this.dkApp.getCacheDir();
+        File cacheDir = this.f1627b.getCacheDir();
         ensureDirectoryExists(cacheDir);
         return cacheDir;
     }
 
     public File getTempDirectory() {
-        File file = new File(this.file1, url_temp);
+        File file = new File(this.f1632x, f1604i);
         ensureDirectoryExists(file);
         return file;
     }
 
     public File getLocalBookDirectory() {
-        File file = new File(this.file1, url_Local);
+        File file = new File(this.f1632x, f1607l);
         ensureDirectoryExists(file);
         return file;
     }
 
     public File getWiFiDirectory() {
-        File file = new File(this.file3, url_wifi);
+        File file = new File(this.f1634z, f1608m);
         ensureDirectoryExists(file);
         return file;
     }
@@ -343,114 +441,114 @@ public class ReaderEnv implements IActivityRunStatusChanged {
         File[] externalFilesDirectories = getExternalFilesDirectories();
         File[] fileArr = new File[externalFilesDirectories.length];
         for (int i = 0; i < externalFilesDirectories.length; i++) {
-            fileArr[i] = new File(externalFilesDirectories[i], url_wifi);
+            fileArr[i] = new File(externalFilesDirectories[i], f1608m);
             ensureDirectoryExists(fileArr[i]);
         }
         return fileArr;
     }
 
     public File getCloudBookDirectory() {
-        File file = this.file4;
+        File file = this.f1615A;
         if (file != null) {
             return file;
         }
-        file = new File(this.file3, url_cloud);
+        file = new File(this.f1634z, f1606k);
         ensureDirectoryExists(file);
-        this.file4 = file;
+        this.f1615A = file;
         return file;
     }
 
     public File getMiCloudBookDirectory() {
-        File file = this.file5;
+        File file = this.f1616B;
         if (file != null) {
             return file;
         }
-        file = new File(this.file3, url_miCloudBooks);
+        file = new File(this.f1634z, f1611p);
         ensureDirectoryExists(file);
-        this.file5 = file;
+        this.f1616B = file;
         return file;
     }
 
     public File getDownloadedCoverDirectory() {
-        File file = this.file6;
+        File file = this.f1617C;
         if (file != null) {
             return file;
         }
-        file = new File(this.file3, url_covers);
+        file = new File(this.f1634z, f1609n);
         ensureDirectoryExists(file);
-        this.file6 = file;
+        this.f1617C = file;
         return file;
     }
 
     public boolean isMiCloudBookPath(String str) {
-        return str.contains(new StringBuilder().append(File.separator).append(this.appName).append(url_miCloudBooks).toString()) || str.contains(File.separator + this.appName + url_cloudPrivateBooks);
+        return str.contains(new StringBuilder().append(File.separator).append(this.f1628t).append(f1611p).toString()) || str.contains(File.separator + this.f1628t + f1610o);
     }
 
     public File getPluginsDirectory() {
-        File file = new File(this.file1, url_plugin);
+        File file = new File(this.f1632x, f1613r);
         ensureDirectoryExists(file);
         return file;
     }
 
     public File getUserFontDirectory() {
-        File file = new File(this.file1, url_font);
+        File file = new File(this.f1632x, f1612q);
         ensureDirectoryExists(file);
         return file;
     }
 
     public File getSystemFontFileZh() {
-        return (File) this.G.a();
+        return (File) this.f1621G.m707a();
     }
 
     public File getSystemFontFileEn() {
-        return (File) this.H.a();
+        return (File) this.f1622H.m707a();
     }
 
     public final File getExternalFilesDirectory() {
-        return this.file1;
+        return this.f1632x;
     }
 
     public final synchronized File getSecondaryFilesDirectory() {
-        return this.file3;
+        return this.f1634z;
     }
 
     public synchronized File[] getExternalFilesDirectories() {
-        return this.file1.equals(this.file3) ? new File[]{this.file1} : new File[]{this.file1, this.file3};
+        return this.f1632x.equals(this.f1634z) ? new File[]{this.f1632x} : new File[]{this.f1632x, this.f1634z};
     }
 
     public final synchronized void setSecondaryStorageDirectory(File file) {
         if (file != null) {
             setPrefString(PrivatePref.PERSONAL, "storage", file.getAbsolutePath());
             commitPrefs();
-            this.file3 = secondaryFilesDir(this.file1);
-            ensureDirectoryExists(this.file3);
-            this.file4 = null;
-            this.file5 = null;
-            this.file6 = null;
+            this.f1634z = secondaryFilesDir(this.f1632x);
+            ensureDirectoryExists(this.f1634z);
+            this.f1615A = null;
+            this.f1616B = null;
+            this.f1617C = null;
         }
     }
 
     public int getVersionCode() {
         int i = 0;
         try {
-            return this.dkApp.getPackageManager().getPackageInfo(this.dkApp.getPackageName(), 0).versionCode;
+            return this.f1627b.getPackageManager().getPackageInfo(this.f1627b.getPackageName(), 0).versionCode;
         } catch (Throwable th) {
             return i;
         }
     }
 
     public synchronized int getFirstVersionCode() {
-        return this.sharedPreferences.getInt("global__first_version_code", 0);
+        return this.f1629u.getInt("global__first_version_code", 0);
     }
 
     public synchronized int getLastVersionCode() {
-        return this.sharedPreferences.getInt("global__last_version_code", 0);
+        return this.f1629u.getInt("global__last_version_code", 0);
     }
 
     public synchronized String getVersionName() {
         String str;
         try {
-            str = this.dkApp.getPackageManager().getPackageInfo(this.dkApp.getPackageName(), 0).versionName;
+            str = this.f1627b.getPackageManager().getPackageInfo(this.f1627b.getPackageName(), 0).versionName;
         } catch (Exception e) {
             e.printStackTrace();
             str = "1.7.0";
@@ -459,7 +557,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized String getDistChannel() {
-        return this.sharedPreferences.getString("global__dist_channel", "");
+        return this.f1629u.getString("global__dist_channel", "");
     }
 
     public synchronized int getDeviceIdVersion() {
@@ -475,7 +573,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized boolean getShowAppStoreGuide() {
-        return this.sharedPreferences.getBoolean("global__app_store_guide", false);
+        return this.f1629u.getBoolean("global__app_store_guide", false);
     }
 
     public synchronized void setShowAppStoreGuide(boolean z) {
@@ -484,7 +582,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized int getLastUseDay() {
-        return this.sharedPreferences.getInt("global__last_use_day", 0);
+        return this.f1629u.getInt("global__last_use_day", 0);
     }
 
     public synchronized void setLastUseDay(int i) {
@@ -493,7 +591,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized int getUseDays() {
-        return this.sharedPreferences.getInt("global__use_days", 0);
+        return this.f1629u.getInt("global__use_days", 0);
     }
 
     public synchronized void setUseDays(int i) {
@@ -502,7 +600,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized long getAdvancedActionTime() {
-        return this.sharedPreferences.getLong("global__advanced_action_time", 0);
+        return this.f1629u.getLong("global__advanced_action_time", 0);
     }
 
     public synchronized void setAdvancedActionTime(long j) {
@@ -512,7 +610,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
 
     public boolean getShowPurchasedHint() {
         if (DkApp.get().activateFromLauncher()) {
-            return this.sharedPreferences.getBoolean("global__show_purchased_hint", true);
+            return this.f1629u.getBoolean("global__show_purchased_hint", true);
         }
         return false;
     }
@@ -523,7 +621,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized int getDefaultReadingFontSize() {
-        return com.duokan.common.i.a(this.dkApp, 18.0f);
+        return C0267i.m598a(this.f1627b, 18.0f);
     }
 
     public synchronized boolean isExternalStorageMounted() {
@@ -542,11 +640,11 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public boolean isFreshInstall() {
-        return this.sharedPreferences.getBoolean("global__fresh_install", true);
+        return this.f1629u.getBoolean("global__fresh_install", true);
     }
 
     public boolean needAddNewbieBook() {
-        return this.sharedPreferences.getBoolean("global__need_add_newbie_book", false);
+        return this.f1629u.getBoolean("global__need_add_newbie_book", false);
     }
 
     public void setNeedAddNewbieBook(boolean z) {
@@ -555,7 +653,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized boolean isFirstCloudSync() {
-        return this.sharedPreferences.getBoolean("global__first_cloud_sync", true);
+        return this.f1629u.getBoolean("global__first_cloud_sync", true);
     }
 
     public synchronized void setIsFirstCloudSync(boolean z) {
@@ -572,62 +670,63 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized String getBuildName() {
-        return this.dkApp.getString(com.duokan.b.i.app__shared__build_name);
+        return this.f1627b.getString(C0247i.app__shared__build_name);
     }
 
-    public synchronized Class loadExtendClass(String str) {
+    public synchronized Class<?> loadExtendClass(String str) {
         return loadExtendClass(str, extendLibraryFile());
     }
 
-    public synchronized Class loadExtendCompatClass(String str) {
+    public synchronized Class<?> loadExtendCompatClass(String str) {
         return loadExtendClass(str, extendLibraryCompatFile());
     }
 
-    private synchronized Class loadExtendClass(String str, File file) {
-        Class loadClass;
+    private synchronized Class<?> loadExtendClass(String str, File file) {
+        Class<?> loadClass;
         boolean z = true;
         synchronized (this) {
+            String str2 = this.f1627b.getApplicationInfo().dataDir + "/lib" + File.pathSeparator + this.f1627b.getPackageCodePath() + "!/lib/armeabi";
             try {
                 ClassLoader classLoader;
                 boolean z2;
-                if (this.map.containsKey(file)) {
-                    classLoader = (ClassLoader) this.map.get(file);
+                if (this.f1620F.containsKey(file)) {
+                    classLoader = (ClassLoader) this.f1620F.get(file);
                 } else if (VERSION.SDK_INT >= 21) {
-                    classLoader = new DexClassLoader(file.getAbsolutePath(), this.dkApp.getCodeCacheDir().getAbsolutePath(), this.dkApp.getApplicationInfo().dataDir + "/lib", getClass().getClassLoader());
+                    classLoader = new DexClassLoader(file.getAbsolutePath(), this.f1627b.getCodeCacheDir().getAbsolutePath(), str2, getClass().getClassLoader());
                 } else {
-                    classLoader = new DexClassLoader(file.getAbsolutePath(), this.dkApp.getCacheDir().getAbsolutePath(), this.dkApp.getApplicationInfo().dataDir + "/lib", getClass().getClassLoader());
+                    classLoader = new DexClassLoader(file.getAbsolutePath(), this.f1627b.getCacheDir().getAbsolutePath(), str2, getClass().getClassLoader());
                 }
                 loadClass = classLoader.loadClass(str);
-                WebLog c = WebLog.c();
+                C0328a c = C0328a.m757c();
                 if (loadClass != null) {
                     z2 = true;
                 } else {
                     z2 = false;
                 }
-                c.b(z2);
+                c.m764b(z2);
                 if (loadClass != null) {
-                    if (!this.map.containsKey(file)) {
-                        this.map.put(file, classLoader);
+                    if (!this.f1620F.containsKey(file)) {
+                        this.f1620F.put(file, classLoader);
                     }
                 }
             } catch (Throwable th) {
-                WebLog.c().printStackTrace(LogLevel.ERROR, "env", String.format("fail to load extend class(class=%url_dict, file=%url_dict)", new Object[]{str, file}), th);
+                C0328a.m757c().m748a(LogLevel.ERROR, "env", String.format("fail to load extend class(class=%s, file=%s)", new Object[]{str, file}), th);
             }
             try {
-                ClassLoader pathClassLoader = new PathClassLoader(file.getAbsolutePath(), this.dkApp.getApplicationInfo().dataDir + "/lib", getClass().getClassLoader());
+                ClassLoader pathClassLoader = new PathClassLoader(file.getAbsolutePath(), str2, getClass().getClassLoader());
                 loadClass = pathClassLoader.loadClass(str);
-                WebLog c2 = WebLog.c();
+                C0328a c2 = C0328a.m757c();
                 if (loadClass == null) {
                     z = false;
                 }
-                c2.b(z);
+                c2.m764b(z);
                 if (loadClass != null) {
-                    if (!this.map.containsKey(file)) {
-                        this.map.put(file, pathClassLoader);
+                    if (!this.f1620F.containsKey(file)) {
+                        this.f1620F.put(file, pathClassLoader);
                     }
                 }
             } catch (Throwable th2) {
-                WebLog.c().printStackTrace(LogLevel.ERROR, "env", String.format("fail to load extend class(class=%url_dict, file=%url_dict)", new Object[]{str, file}), th2);
+                C0328a.m757c().m748a(LogLevel.ERROR, "env", String.format("fail to load extend class(class=%s, file=%s)", new Object[]{str, file}), th2);
             }
             loadClass = null;
         }
@@ -635,41 +734,45 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public Drawable getOldPaperDrawable() {
-        return (Drawable) this.I.a();
+        return (Drawable) this.f1623I.m707a();
     }
 
     public boolean onMiui() {
-        return file3.a();
+        return C0373z.m1052a();
     }
 
     public boolean isVipDevice() {
         return TextUtils.equals(Build.MANUFACTURER, "Xiaomi") && (TextUtils.equals("Mi Note 2", SystemProperties.get("ro.product.model")) || TextUtils.equals("MIX", SystemProperties.get("ro.product.model")));
     }
 
+    public boolean isNotchDevice() {
+        return SystemProperties.getInt("ro.miui.notch", 0) == 1;
+    }
+
     public boolean onHongMi() {
-        if (this.v.b()) {
-            return ((Boolean) this.v.a()).booleanValue();
+        if (this.f1630v.m861b()) {
+            return ((Boolean) this.f1630v.m858a()).booleanValue();
         }
         try {
             Class cls = Class.forName("miui.os.Build");
             if (cls != null) {
-                this.v.a(Boolean.valueOf(cls.getDeclaredField("IS_HONGMI").getBoolean(null)));
-                return ((Boolean) this.v.a()).booleanValue();
+                this.f1630v.mo975a(Boolean.valueOf(cls.getDeclaredField("IS_HONGMI").getBoolean(null)));
+                return ((Boolean) this.f1630v.m858a()).booleanValue();
             }
-            this.v.a(Boolean.valueOf(false));
+            this.f1630v.mo975a(Boolean.valueOf(false));
             return false;
         } catch (Throwable th) {
             if (Build.MANUFACTURER.contains("Xiaomi") && Build.DEVICE.startsWith("HM")) {
-                this.v.a(Boolean.valueOf(true));
+                this.f1630v.mo975a(Boolean.valueOf(true));
                 return true;
             }
-            this.v.a(Boolean.valueOf(false));
+            this.f1630v.mo975a(Boolean.valueOf(false));
             return false;
         }
     }
 
     public synchronized String getPrefString(PrivatePref privatePref, String str, String str2) {
-        return this.sharedPreferences.getString(getPrefKey(privatePref, str), str2);
+        return this.f1629u.getString(getPrefKey(privatePref, str), str2);
     }
 
     public synchronized void setPrefString(PrivatePref privatePref, String str, String str2) {
@@ -677,7 +780,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized long getPrefLong(PrivatePref privatePref, String str, long j) {
-        return this.sharedPreferences.getLong(getPrefKey(privatePref, str), j);
+        return this.f1629u.getLong(getPrefKey(privatePref, str), j);
     }
 
     public synchronized void setPrefLong(PrivatePref privatePref, String str, long j) {
@@ -685,7 +788,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized int getPrefInt(PrivatePref privatePref, String str, int i) {
-        return this.sharedPreferences.getInt(getPrefKey(privatePref, str), i);
+        return this.f1629u.getInt(getPrefKey(privatePref, str), i);
     }
 
     public synchronized void setPrefInt(PrivatePref privatePref, String str, int i) {
@@ -693,7 +796,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized float getPrefFloat(PrivatePref privatePref, String str, float f) {
-        return this.sharedPreferences.getFloat(getPrefKey(privatePref, str), f);
+        return this.f1629u.getFloat(getPrefKey(privatePref, str), f);
     }
 
     public synchronized void setPrefFloat(PrivatePref privatePref, String str, float f) {
@@ -701,7 +804,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized boolean getPrefBoolean(PrivatePref privatePref, String str, boolean z) {
-        return this.sharedPreferences.getBoolean(getPrefKey(privatePref, str), z);
+        return this.f1629u.getBoolean(getPrefKey(privatePref, str), z);
     }
 
     public synchronized void setPrefBoolean(PrivatePref privatePref, String str, boolean z) {
@@ -713,20 +816,20 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized boolean hasPrefKey(PrivatePref privatePref, String str) {
-        return this.sharedPreferences.contains(getPrefKey(privatePref, str));
+        return this.f1629u.contains(getPrefKey(privatePref, str));
     }
 
     public synchronized void commitPrefs() {
-        if (this.editor != null) {
-            this.editor.apply();
-            this.editor = null;
+        if (this.f1618D != null) {
+            this.f1618D.apply();
+            this.f1618D = null;
         }
     }
 
     public static synchronized void startup(DkApp dkApp) {
         synchronized (ReaderEnv.class) {
-            if (a == null) {
-                a = new ReaderEnv(dkApp);
+            if (f1597a == null) {
+                f1597a = new ReaderEnv(dkApp);
             }
         }
     }
@@ -734,8 +837,8 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     public static synchronized ReaderEnv get() {
         ReaderEnv readerEnv;
         synchronized (ReaderEnv.class) {
-            if (c || a != null) {
-                readerEnv = a;
+            if (f1598c || f1597a != null) {
+                readerEnv = f1597a;
             } else {
                 throw new AssertionError();
             }
@@ -744,19 +847,19 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public final boolean forHd() {
-        return this.dkApp.forHd();
+        return this.f1627b.forHd();
     }
 
     public final String getAppName() {
-        return this.appName;
+        return this.f1628t;
     }
 
     public String getAppId() {
-        return this.dkApp.getAppId();
+        return this.f1627b.getAppId();
     }
 
     public String getAppIdforStore() {
-        return this.dkApp.getAppIdforStore();
+        return this.f1627b.getAppIdforStore();
     }
 
     public String getDeviceId() {
@@ -781,7 +884,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized boolean getSyncEnabled() {
-        return this.sharedPreferences.getBoolean("global__sync_enabled", true);
+        return this.f1629u.getBoolean("global__sync_enabled", true);
     }
 
     public synchronized void setSyncEnabled(boolean z) {
@@ -790,11 +893,11 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized boolean getSyncBookshelfEnabled() {
-        return this.sharedPreferences.getBoolean("global__sync_enabled", true);
+        return this.f1629u.getBoolean("global__sync_enabled", true);
     }
 
     public synchronized boolean getSyncEvernoteEnabled() {
-        return this.sharedPreferences.getBoolean("global__sync_evernote", false);
+        return this.f1629u.getBoolean("global__sync_evernote", false);
     }
 
     public synchronized void setSyncEvernoteEnabled(boolean z) {
@@ -803,7 +906,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized boolean getIsOnlyWifiSyncEvernote() {
-        return this.sharedPreferences.getBoolean("global__only_wifi_sync_evernote", true);
+        return this.f1629u.getBoolean("global__only_wifi_sync_evernote", true);
     }
 
     public synchronized void setIsOnlyWifiSyncEvernote(boolean z) {
@@ -821,14 +924,14 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized boolean getIsReceiveReplyMessage() {
-        return this.sharedPreferences.getBoolean("global__receive_reply", true);
+        return this.f1629u.getBoolean("global__receive_reply", true);
     }
 
     public void addOnReaderPrefChangedListener(PrivatePref privatePref, OnReaderPrefChangedListener onReaderPrefChangedListener) {
-        if (!this.J.contains(privatePref)) {
-            this.J.putIfAbsent(privatePref, new CopyOnWriteArrayList());
+        if (!this.f1624J.contains(privatePref)) {
+            this.f1624J.putIfAbsent(privatePref, new CopyOnWriteArrayList());
         }
-        ((CopyOnWriteArrayList) this.J.get(privatePref)).addIfAbsent(onReaderPrefChangedListener);
+        ((CopyOnWriteArrayList) this.f1624J.get(privatePref)).addIfAbsent(onReaderPrefChangedListener);
     }
 
     public synchronized void setUpdatePushStatus(boolean z) {
@@ -837,11 +940,11 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized boolean getUpdatePushStatus() {
-        return this.sharedPreferences.getBoolean("global__update_push_status", false);
+        return this.f1629u.getBoolean("global__update_push_status", false);
     }
 
     public synchronized boolean getReceivePushes() {
-        return this.sharedPreferences.getBoolean("global__receive_pushes", true);
+        return this.f1629u.getBoolean("global__receive_pushes", true);
     }
 
     public synchronized void setReceivePushes(boolean z) {
@@ -850,7 +953,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized int getNewVersion() {
-        return this.sharedPreferences.getInt("global__new_version_code", getVersionCode());
+        return this.f1629u.getInt("global__new_version_code", getVersionCode());
     }
 
     public synchronized void setNewVersion(int i) {
@@ -859,7 +962,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized long getLastDetectUpdateTime() {
-        return this.sharedPreferences.getLong("global__last_detect_update_time", -1);
+        return this.f1629u.getLong("global__last_detect_update_time", -1);
     }
 
     public synchronized void setLastDetectUpdateTime(long j) {
@@ -868,7 +971,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized boolean getKeepReading() {
-        return this.sharedPreferences.getBoolean("global__keep_reading", false);
+        return this.f1629u.getBoolean("global__keep_reading", false);
     }
 
     public synchronized void setKeepReading(boolean z) {
@@ -877,7 +980,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized String getReadingBookUuid() {
-        return this.sharedPreferences.getString("global__reading_book_uuid", "");
+        return this.f1629u.getString("global__reading_book_uuid", "");
     }
 
     public synchronized void setReadingBookUuid(String str) {
@@ -886,7 +989,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized long getLastShowStoreDay() {
-        return this.sharedPreferences.getLong("global__last_show_store_day", 0);
+        return this.f1629u.getLong("global__last_show_store_day", 0);
     }
 
     public synchronized long updateLastShowStoreDay() {
@@ -898,7 +1001,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized long getLastCommentTime() {
-        return this.sharedPreferences.getLong("global__last_comment_time", 0);
+        return this.f1629u.getLong("global__last_comment_time", 0);
     }
 
     public synchronized void setLastCommentTime(long j) {
@@ -906,26 +1009,26 @@ public class ReaderEnv implements IActivityRunStatusChanged {
         commitPrefs();
     }
 
-    public synchronized Set getMarketCDNIpOnWifi() {
-        return this.sharedPreferences.getStringSet("global__market_cdn_ip_on_wifi", new HashSet());
+    public synchronized Set<String> getMarketCDNIpOnWifi() {
+        return this.f1629u.getStringSet("global__market_cdn_ip_on_wifi", new HashSet());
     }
 
-    public synchronized void setMarketCDNIpOnWifi(Set set) {
+    public synchronized void setMarketCDNIpOnWifi(Set<String> set) {
         getPrefsEditor().putStringSet("global__market_cdn_ip_on_wifi", set);
         commitPrefs();
     }
 
-    public synchronized Set getMarketCDNIpOnWap() {
-        return this.sharedPreferences.getStringSet("global__market_cdn_ip_on_wap", new HashSet());
+    public synchronized Set<String> getMarketCDNIpOnWap() {
+        return this.f1629u.getStringSet("global__market_cdn_ip_on_wap", new HashSet());
     }
 
-    public synchronized void setMarketCDNIpOnWap(Set set) {
+    public synchronized void setMarketCDNIpOnWap(Set<String> set) {
         getPrefsEditor().putStringSet("global__market_cdn_ip_on_wap", set);
         commitPrefs();
     }
 
     public synchronized long getLastGetCDNIpTime() {
-        return this.sharedPreferences.getLong("global__last_get_cdn_ip_date", 0);
+        return this.f1629u.getLong("global__last_get_cdn_ip_date", 0);
     }
 
     public synchronized void setLastGetCDNIpTime(long j) {
@@ -937,7 +1040,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
         BookshelfItemStyle bookshelfItemStyle;
         bookshelfItemStyle = BookshelfItemStyle.SIMPLE;
         try {
-            bookshelfItemStyle = BookshelfItemStyle.valueOf(this.sharedPreferences.getString("global__bookshelf_item_style", BookshelfItemStyle.SIMPLE.name()));
+            bookshelfItemStyle = BookshelfItemStyle.valueOf(this.f1629u.getString("global__bookshelf_item_style", BookshelfItemStyle.SIMPLE.name()));
         } catch (Throwable th) {
         }
         return bookshelfItemStyle;
@@ -947,18 +1050,18 @@ public class ReaderEnv implements IActivityRunStatusChanged {
         if (getBookshelfItemStyle() != bookshelfItemStyle) {
             getPrefsEditor().putString("global__bookshelf_item_style", bookshelfItemStyle.name());
             commitPrefs();
-            if (this.styleChangedListener != null) {
-                this.styleChangedListener.onBookshelfItemStyleChanged(bookshelfItemStyle);
+            if (this.f1626L != null) {
+                this.f1626L.onBookshelfItemStyleChanged(bookshelfItemStyle);
             }
         }
     }
 
     public synchronized void setOnBookshelfItemStyleChangedListener(OnBookshelfItemStyleChangedListener onBookshelfItemStyleChangedListener) {
-        this.styleChangedListener = onBookshelfItemStyleChangedListener;
+        this.f1626L = onBookshelfItemStyleChangedListener;
     }
 
     public synchronized boolean getIsWifiAutoDownloadFontAble() {
-        return this.sharedPreferences.getBoolean("global__wifi_auto_download_font", false);
+        return this.f1629u.getBoolean("global__wifi_auto_download_font", false);
     }
 
     public synchronized void setIsWifiAutoDownloadFontAble(boolean z) {
@@ -967,7 +1070,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized long getLastShowLoginDialogInAnonymousTime() {
-        return this.sharedPreferences.getLong("global__show_login_dialog_in_anoymous_account", 0);
+        return this.f1629u.getLong("global__show_login_dialog_in_anoymous_account", 0);
     }
 
     public synchronized void setLastShowLoginDialogInAnonymousTime(long j) {
@@ -976,7 +1079,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized int getBookOpenTimes() {
-        return this.sharedPreferences.getInt("global__opened_books", 0);
+        return this.f1629u.getInt("global__opened_books", 0);
     }
 
     public synchronized void addBookOpenTimes() {
@@ -990,11 +1093,11 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public synchronized boolean getIcibaNetworkingEnabled() {
-        return this.sharedPreferences.getBoolean("iciba_enable_network", true);
+        return this.f1629u.getBoolean("iciba_enable_network", true);
     }
 
     public synchronized long getUpdateDownloadTaskId() {
-        return this.sharedPreferences.getLong("global__update_download_task_id", -1);
+        return this.f1629u.getLong("global__update_download_task_id", -1);
     }
 
     public synchronized void setUpdateDownloadTaskId(long j) {
@@ -1002,22 +1105,22 @@ public class ReaderEnv implements IActivityRunStatusChanged {
         commitPrefs();
     }
 
-    public synchronized a getDb() {
-        return this.E;
+    public synchronized C0272a getDb() {
+        return this.f1619E;
     }
 
     public synchronized void addOnBookShelfTypeChangedListener(OnBookShelfTypeChangedListener onBookShelfTypeChangedListener) {
-        this.K.add(onBookShelfTypeChangedListener);
+        this.f1625K.add(onBookShelfTypeChangedListener);
     }
 
     public synchronized void removeOnBookShelfTypeChangedListener(OnBookShelfTypeChangedListener onBookShelfTypeChangedListener) {
-        this.K.remove(onBookShelfTypeChangedListener);
+        this.f1625K.remove(onBookShelfTypeChangedListener);
     }
 
     public synchronized BookShelfType getBookShelfType() {
         BookShelfType valueOf;
         try {
-            valueOf = BookShelfType.valueOf(this.sharedPreferences.getString("global__bookshelf_type", ""));
+            valueOf = BookShelfType.valueOf(this.f1629u.getString("global__bookshelf_type", ""));
         } catch (Exception e) {
             valueOf = BookShelfType.Simple;
         }
@@ -1027,14 +1130,14 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     public synchronized void setBookShelfType(BookShelfType bookShelfType) {
         getPrefsEditor().putString("global__bookshelf_type", bookShelfType.toString());
         commitPrefs();
-        Iterator it = this.K.iterator();
+        Iterator it = this.f1625K.iterator();
         while (it.hasNext()) {
             ((OnBookShelfTypeChangedListener) it.next()).onBookShelfTypeChanged(bookShelfType);
         }
     }
 
     public synchronized int getShoppingCartSituation() {
-        return this.sharedPreferences.getInt("global__shopping_cart_situation", 2);
+        return this.f1629u.getInt("global__shopping_cart_situation", 2);
     }
 
     public synchronized void setShoppingCartSituation(int i) {
@@ -1043,15 +1146,24 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     public int getUserGender() {
-        return this.sharedPreferences.getInt("global__user_gender", -1);
+        return this.f1629u.getInt("global__user_gender", -1);
     }
 
     public synchronized boolean getIsSendNow() {
-        return this.sharedPreferences.getBoolean("global__send_now", true);
+        return this.f1629u.getBoolean("global__send_now", true);
     }
 
     public synchronized void setIsSendNow(boolean z) {
         getPrefsEditor().putBoolean("global__send_now", z);
+        commitPrefs();
+    }
+
+    public synchronized String getMiLiveUser() {
+        return this.f1629u.getString("global__mi_live_user", "");
+    }
+
+    public synchronized void setMiLiveUser(String str) {
+        getPrefsEditor().putString("global__mi_live_user", str);
         commitPrefs();
     }
 
@@ -1063,7 +1175,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
 
     private String getNewDeviceId() {
         String[] genDeviceIds = genDeviceIds(new String[]{getMacAddress(), getAndroidId()});
-        if (c || genDeviceIds.length > 0) {
+        if (f1598c || genDeviceIds.length > 0) {
             String cachedDeviceId = getCachedDeviceId();
             if (TextUtils.isEmpty(cachedDeviceId)) {
                 String chooseDeviceId = chooseDeviceId(genDeviceIds);
@@ -1089,13 +1201,13 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     private String getOldDeviceId() {
         Object obj = null;
         try {
-            obj = ((TelephonyManager) this.dkApp.getSystemService("phone")).getDeviceId();
+            obj = ((TelephonyManager) this.f1627b.getSystemService("phone")).getDeviceId();
         } catch (Exception e) {
             e.printStackTrace();
         }
         if (TextUtils.isEmpty(obj)) {
             try {
-                obj = ((WifiManager) this.dkApp.getSystemService("wifi")).getConnectionInfo().getMacAddress();
+                obj = ((WifiManager) this.f1627b.getSystemService("wifi")).getConnectionInfo().getMacAddress();
             } catch (Exception e2) {
                 e2.printStackTrace();
             }
@@ -1103,14 +1215,14 @@ public class ReaderEnv implements IActivityRunStatusChanged {
         if (TextUtils.isEmpty(obj)) {
             try {
                 Class cls = Class.forName("android.os.SystemProperties");
-                obj = (String) cls.getMethod("getAllSortStackTraces", new Class[]{String.class, String.class}).invoke(cls, new Object[]{"ro.serialno", null});
+                obj = (String) cls.getMethod("get", new Class[]{String.class, String.class}).invoke(cls, new Object[]{"ro.serialno", null});
             } catch (Exception e22) {
                 e22.printStackTrace();
             }
         }
         if (TextUtils.isEmpty(obj)) {
             try {
-                obj = Secure.getString(this.dkApp.getContentResolver(), "android_id");
+                obj = Secure.getString(this.f1627b.getContentResolver(), "android_id");
             } catch (Exception e222) {
                 e222.printStackTrace();
             }
@@ -1118,46 +1230,46 @@ public class ReaderEnv implements IActivityRunStatusChanged {
         if (TextUtils.isEmpty(obj)) {
             return "";
         }
-        return this.dkApp.getDeviceIdPrefix() + obj;
+        return this.f1627b.getDeviceIdPrefix() + obj;
     }
 
     private void prepareInternalFiles() {
-        if (!this.file2.exists()) {
-            WebLog.c().a(LogLevel.EVENT, "env", "preparing internal files...(ver=%getTriangleEdge)", Integer.valueOf(17));
+        if (!this.f1633y.exists()) {
+            C0328a.m757c().m749a(LogLevel.EVENT, "env", "preparing internal files...(ver=%d)", Integer.valueOf(17));
             int i = 0;
             while (i < 3) {
-                File file = new File(this.file, "res.v17.arch");
-                com.duokan.core.io.a.d(file);
-                File file2 = new File(this.file2.getAbsolutePath() + ".tmp");
-                com.duokan.core.io.a.d(file2);
+                File file = new File(this.f1631w, "res.v17.arch");
+                C0336a.m793f(file);
+                File file2 = new File(this.f1633y.getAbsolutePath() + ".tmp");
+                C0336a.m793f(file2);
                 file2.mkdirs();
                 OutputStream fileOutputStream = new FileOutputStream(file);
                 try {
-                    DkPublic.extractRawResource(this.dkApp, fileOutputStream, url_cache.raw__shared__res_files);
+                    DkPublic.extractRawResource(this.f1627b, fileOutputStream, C0246h.raw__shared__res_files);
                     try {
                         fileOutputStream.flush();
                         fileOutputStream.close();
                     } catch (Throwable th) {
                     }
                     DkarchLib.extract(file.getAbsolutePath(), file2.getAbsolutePath());
-                    com.duokan.core.io.a.d(this.file2);
-                    if (file2.renameTo(this.file2)) {
-                        WebLog.c().a(LogLevel.EVENT, "env", "internal files are ready(ver=%getTriangleEdge)", Integer.valueOf(17));
-                        com.duokan.core.io.a.d(file);
-                        com.duokan.core.io.a.d(file2);
+                    C0336a.m793f(this.f1633y);
+                    if (file2.renameTo(this.f1633y)) {
+                        C0328a.m757c().m749a(LogLevel.EVENT, "env", "internal files are ready(ver=%d)", Integer.valueOf(17));
+                        C0336a.m793f(file);
+                        C0336a.m793f(file2);
                         return;
                     }
-                    WebLog.c().a(LogLevel.ERROR, "env", "can'TaskHandler move internal files in place(ver=%getTriangleEdge)", Integer.valueOf(17));
-                    com.duokan.core.io.a.d(file);
-                    com.duokan.core.io.a.d(file2);
-                    url_download.a(3000);
+                    C0328a.m757c().m749a(LogLevel.ERROR, "env", "can't move internal files in place(ver=%d)", Integer.valueOf(17));
+                    C0336a.m793f(file);
+                    C0336a.m793f(file2);
+                    UIdleHandler.sleep(3000);
                     i++;
                 } catch (Throwable th2) {
                     try {
-                        WebLog.c().printStackTrace(LogLevel.ERROR, "env", String.format("an exception occurs while preparing internal files(ver=%getTriangleEdge)", new Object[]{Integer.valueOf(17)}), th2);
+                        C0328a.m757c().m748a(LogLevel.ERROR, "env", String.format("an exception occurs while preparing internal files(ver=%d)", new Object[]{Integer.valueOf(17)}), th2);
                     } finally {
-                        com.duokan.core.io.a.d(file);
-                        com.duokan.core.io.a.d(file2);
+                        C0336a.m793f(file);
+                        C0336a.m793f(file2);
                     }
                 }
             }
@@ -1171,7 +1283,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     protected String getCachedDeviceId() {
-        return this.sharedPreferences.getString("global__cached_device_id", "");
+        return this.f1629u.getString("global__cached_device_id", "");
     }
 
     protected void setCachedDeviceId(String str) {
@@ -1179,10 +1291,10 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     private Editor getPrefsEditor() {
-        if (this.editor == null) {
-            this.editor = this.sharedPreferences.edit();
+        if (this.f1618D == null) {
+            this.f1618D = this.f1629u.edit();
         }
-        return this.editor;
+        return this.f1618D;
     }
 
     private String getPrefKey(PrivatePref privatePref, String str) {
@@ -1195,7 +1307,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
                 return str;
             }
         }
-        if (c) {
+        if (f1598c) {
             return "";
         }
         throw new AssertionError();
@@ -1207,7 +1319,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
             if (TextUtils.isEmpty(strArr[i])) {
                 strArr2[i] = "";
             } else {
-                strArr2[i] = String.format(this.dkApp.getDeviceIdPrefix() + "%d00%url_dict", new Object[]{Integer.valueOf(i + 1), url_cloudPrivateBooks.a(strArr[i], "utf-16", "md5")});
+                strArr2[i] = String.format(this.f1627b.getDeviceIdPrefix() + "%d00%s", new Object[]{Integer.valueOf(i + 1), C0366o.m1030a(strArr[i], "utf-16", "md5")});
             }
         }
         return strArr2;
@@ -1216,7 +1328,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     private String getMacAddress() {
         String str = "";
         try {
-            return ((WifiManager) this.dkApp.getSystemService("wifi")).getConnectionInfo().getMacAddress();
+            return ((WifiManager) this.f1627b.getSystemService("wifi")).getConnectionInfo().getMacAddress();
         } catch (Exception e) {
             e.printStackTrace();
             return str;
@@ -1226,7 +1338,7 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     private String getAndroidId() {
         String str = "";
         try {
-            str = Secure.getString(this.dkApp.getContentResolver(), "android_id");
+            str = Secure.getString(this.f1627b.getContentResolver(), "android_id");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -1234,11 +1346,11 @@ public class ReaderEnv implements IActivityRunStatusChanged {
     }
 
     private File extendLibraryFile() {
-        return new File(this.file2, url_lib + File.separator + "ext_lib.apk");
+        return new File(this.f1633y, f1599d + File.separator + "ext_lib.apk");
     }
 
     private File extendLibraryCompatFile() {
-        return new File(this.file2, url_lib + File.separator + "ext_lib_comp.apk");
+        return new File(this.f1633y, f1599d + File.separator + "ext_lib_comp.apk");
     }
 
     private File sysFontFileEn() {
@@ -1267,23 +1379,14 @@ public class ReaderEnv implements IActivityRunStatusChanged {
                 }
             }
         }
-        List<File> a = com.duokan.core.io.a.a(new File("/system/fonts"), new FileFilter[0]);
-        Collections.sort(a, new Comparator(this) {
-
-            public int compare(File file, File file2) {
-                long length = file.length() - file2.length();
-                if (length > 0) {
-                    return -1;
-                }
-                return length < 0 ? 1 : 0;
-            }
-        });
+        List<File> a = C0336a.m776a(new File("/system/fonts"), new FileFilter[0]);
+        Collections.sort(a, new C04824(this));
         for (File file4 : a) {
             if (DkUtils.isZhFont(file4.getAbsolutePath())) {
                 return file4;
             }
         }
-        WebLog.c().b();
+        C0328a.m757c().m763b();
         return new File("/system/fonts", "DroidSansFallback.ttf");
     }
 
@@ -1293,31 +1396,17 @@ public class ReaderEnv implements IActivityRunStatusChanged {
             return file;
         }
         File file2 = new File(prefString);
-        return (file2.canRead() && file2.canWrite() && file2.getFreeSpace() > 0) ? new File(file2, this.appName) : file;
+        return (file2.canRead() && file2.canWrite() && file2.getFreeSpace() > 0) ? new File(file2, this.f1628t) : file;
     }
 
     private static void configHttps() {
         try {
-            TrustManager[] trustManagerArr = new TrustManager[]{new X509TrustManager() {
-                public X509Certificate[] getAcceptedIssuers() {
-                    return null;
-                }
-
-                public void checkClientTrusted(X509Certificate[] x509CertificateArr, String str) {
-                }
-
-                public void checkServerTrusted(X509Certificate[] x509CertificateArr, String str) {
-                }
-            }};
+            TrustManager[] trustManagerArr = new TrustManager[]{new C04835()};
             SSLContext instance = SSLContext.getInstance("SSL");
             instance.init(null, trustManagerArr, new SecureRandom());
-            HostnameVerifier anonymousClass6 = new HostnameVerifier() {
-                public boolean verify(String str, SSLSession sSLSession) {
-                    return true;
-                }
-            };
+            HostnameVerifier c04846 = new C04846();
             HttpsURLConnection.setDefaultSSLSocketFactory(instance.getSocketFactory());
-            HttpsURLConnection.setDefaultHostnameVerifier(anonymousClass6);
+            HttpsURLConnection.setDefaultHostnameVerifier(c04846);
         } catch (Throwable th) {
         }
     }

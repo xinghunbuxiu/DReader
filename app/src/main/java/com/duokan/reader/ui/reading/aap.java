@@ -1,24 +1,20 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.c.j;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.bookshelf.is;
-import com.duokan.reader.ui.general.be;
+import java.util.Map;
 
-class aap implements is {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ aaj b;
+class aap implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ Map f9343a;
+    /* renamed from: b */
+    final /* synthetic */ aao f9344b;
 
-    aap(aaj com_duokan_reader_ui_reading_aaj, Runnable runnable) {
-        this.b = com_duokan_reader_ui_reading_aaj;
-        this.a = runnable;
+    aap(aao aao, Map map) {
+        this.f9344b = aao;
+        this.f9343a = map;
     }
 
-    public void a(c cVar) {
-        this.a.run();
-    }
-
-    public void a(String str) {
-        be.a(this.b.d.getContext(), j.general__shared__network_error, 1).show();
+    public void run() {
+        this.f9344b.f9342e.j_();
+        this.f9344b.f9342e.c.mo2103b(new aaq(this));
     }
 }

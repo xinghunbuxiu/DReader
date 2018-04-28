@@ -1,23 +1,14 @@
 package com.duokan.reader.ui.general.web;
 
-import android.text.TextUtils;
-
-import com.duokan.core.sys.TaskHandler;
-
 class ag implements Runnable {
-    final /* synthetic */ String a;
-    final /* synthetic */ Runnable b;
-    final /* synthetic */ ae c;
+    /* renamed from: a */
+    final /* synthetic */ af f7573a;
 
-    ag(ae aeVar, String str, Runnable runnable) {
-        this.c = aeVar;
-        this.a = str;
-        this.b = runnable;
+    ag(af afVar) {
+        this.f7573a = afVar;
     }
 
     public void run() {
-        if (TextUtils.equals(this.c.a.mEditText.getText(), this.a)) {
-            TaskHandler.postTask(this.b);
-        }
+        this.f7573a.f7572a.showHintView();
     }
 }

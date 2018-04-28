@@ -1,58 +1,108 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
+import android.graphics.PointF;
 import android.graphics.Rect;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
-
-import com.duokan.b.e;
-import com.duokan.core.ui.UTools;
+import com.duokan.core.app.IFeature;
 import com.duokan.reader.domain.document.au;
-import com.duokan.reader.domain.document.aw;
+import com.duokan.reader.ui.general.gs;
 
-public class ow extends fu {
-    private final aw a;
-    private final oy b = new oy(this, getContext());
+public class ow extends sv {
+    /* renamed from: i */
+    private ox f10761i;
 
-    public ow(Context context, gn gnVar, aw awVar, Rect rect) {
-        super(context, gnVar, rect, awVar);
-        this.a = awVar;
-        getWatchingView().a(this.b, new LayoutParams(-2, -2));
-        setDrawBorder(false);
-        View imageView = new ImageView(getContext());
-        imageView.setScaleType(ScaleType.CENTER);
-        imageView.setImageDrawable(getResources().getDrawable(e.reading__shared__expand_poster));
-        imageView.setOnClickListener(new ox(this));
-        Rect a = gnVar.h().a(this.a);
-        int b = UTools.getMinimumHeight(context, 15.0f);
-        View frameLayout = new FrameLayout(context);
-        frameLayout.setPadding(b, b, (rect.right - a.right) + b, (rect.bottom - a.bottom) + b);
-        frameLayout.addView(imageView, new LayoutParams(-2, -2));
-        a(frameLayout, new LayoutParams(-2, -2, 85));
-        n();
+    /* renamed from: a */
+    public /* bridge */ /* synthetic */ void mo2365a(au auVar, Rect rect) {
+        super.mo2365a(auVar, rect);
     }
 
-    public fy a(au auVar) {
-        return new pb(this, getContext());
+    /* renamed from: a */
+    public /* bridge */ /* synthetic */ boolean mo2371a(PointF pointF, Runnable runnable, Runnable runnable2) {
+        return super.mo2371a(pointF, runnable, runnable2);
     }
 
-    public boolean a() {
-        return false;
+    /* renamed from: b */
+    public /* bridge */ /* synthetic */ boolean mo2373b(PointF pointF, Runnable runnable, Runnable runnable2) {
+        return super.mo2373b(pointF, runnable, runnable2);
     }
 
-    public boolean b() {
-        return false;
+    /* renamed from: e */
+    public /* bridge */ /* synthetic */ boolean mo2374e() {
+        return super.mo2374e();
     }
 
-    public boolean c() {
-        return false;
+    /* renamed from: f */
+    public /* bridge */ /* synthetic */ boolean mo2375f() {
+        return super.mo2375f();
     }
 
-    public void d() {
+    /* renamed from: g */
+    public /* bridge */ /* synthetic */ void mo2376g() {
+        super.mo2376g();
     }
 
-    public void e() {
+    /* renamed from: h */
+    public /* bridge */ /* synthetic */ void mo2377h() {
+        super.mo2377h();
+    }
+
+    /* renamed from: i */
+    public /* bridge */ /* synthetic */ void mo2378i() {
+        super.mo2378i();
+    }
+
+    /* renamed from: j */
+    public /* bridge */ /* synthetic */ void mo2379j() {
+        super.mo2379j();
+    }
+
+    /* renamed from: k */
+    public /* bridge */ /* synthetic */ boolean mo2380k() {
+        return super.mo2380k();
+    }
+
+    /* renamed from: l */
+    public /* bridge */ /* synthetic */ void mo2381l() {
+        super.mo2381l();
+    }
+
+    /* renamed from: m */
+    public /* bridge */ /* synthetic */ boolean mo2382m() {
+        return super.mo2382m();
+    }
+
+    /* renamed from: n */
+    public /* bridge */ /* synthetic */ void mo2383n() {
+        super.mo2383n();
+    }
+
+    /* renamed from: o */
+    public /* bridge */ /* synthetic */ void mo2384o() {
+        super.mo2384o();
+    }
+
+    public ow(IFeature mFeature, su suVar, wy wyVar) {
+        super(mFeature, suVar, wyVar);
+    }
+
+    /* renamed from: a */
+    protected gs mo2244a() {
+        this.f10761i = new ox(getContext());
+        return this.f10761i;
+    }
+
+    /* renamed from: b */
+    protected View mo2245b() {
+        return this.f10761i.m13626m();
+    }
+
+    /* renamed from: c */
+    protected View mo2246c() {
+        return this.f10761i.m13627n();
+    }
+
+    /* renamed from: d */
+    protected View mo2247d() {
+        return this.f10761i.m13628o();
     }
 }

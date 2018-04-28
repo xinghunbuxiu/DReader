@@ -1,59 +1,31 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Point;
-import android.widget.ImageView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.view.View;
+import com.duokan.core.ui.dv;
 
-import com.duokan.core.app.BaseActivity;
-import com.duokan.core.app.s;
-import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.ZoomView;
-import com.duokan.core.ui.di;
-import com.duokan.core.ui.dl;
-import com.duokan.reader.DkApp;
+class pj extends View {
+    /* renamed from: a */
+    final /* synthetic */ pg f10792a;
+    /* renamed from: b */
+    final /* synthetic */ pi f10793b;
 
-do;
-
-class pj implements Runnable {
-    final /* synthetic */ xk a;
-    final /* synthetic */ di b;
-    final /* synthetic */ ZoomView c;
-    final /* synthetic */ s d;
-    final /* synthetic */ ImageView e;
-    final /* synthetic */ dl f;
-    final /* synthetic */ ImageView g;
-    final /* synthetic */ dl h;
-    final /* synthetic */ dl i;
-    final /* synthetic */ pc j;
-
-    pj(pc pcVar, xk xkVar, di diVar, ZoomView zoomView, s sVar, ImageView imageView, dl dlVar, ImageView imageView2, dl dlVar2, dl dlVar3) {
-        this.j = pcVar;
-        this.a = xkVar;
-        this.b = diVar;
-        this.c = zoomView;
-        this.d = sVar;
-        this.e = imageView;
-        this.f = dlVar;
-        this.g = imageView2;
-        this.h = dlVar2;
-        this.i = dlVar3;
+    pj(pi piVar, Context context, pg pgVar) {
+        this.f10793b = piVar;
+        this.f10792a = pgVar;
+        super(context);
     }
 
-    public void run() {
-        if (this.j.b != null && !this.j.c) {
-            this.j.c = true;
-            Point point = new Point(0, 0);
-            UTools.showAnimation(point, this.a);
-            do b = this.b.b(this.c);
-            dl a = this.b.a(this.c);
-            float l = b.l() + a.l();
-            do doVar = new do (b);
-            doVar.d(0.0f);
-            this.b.a(this.c, doVar);
-            dl dlVar = new dl(a);
-            dlVar.d(l - doVar.l());
-            this.b.a(this.c, dlVar);
-            ((BaseActivity) DkApp.get().getTopActivity()).removeOnScreenRotationChangedListener(this.d);
-            this.b.getViewTreeObserver().addOnPreDrawListener(new pk(this, point));
-        }
+    protected void onDraw(Canvas canvas) {
+        Rect rect = (Rect) dv.f1198g.addAnimation();
+        rect.set(0, 0, this.f10793b.f10786e.width(), this.f10793b.f10786e.height());
+        canvas.drawBitmap(this.f10793b.f10785d, this.f10793b.f10786e, rect, null);
+        dv.f1198g.clearAnimation(rect);
+    }
+
+    protected void onMeasure(int i, int i2) {
+        setMeasuredDimension(this.f10793b.f10786e.width(), this.f10793b.f10786e.height());
     }
 }

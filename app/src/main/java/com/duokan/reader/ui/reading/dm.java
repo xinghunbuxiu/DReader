@@ -2,29 +2,18 @@ package com.duokan.reader.ui.reading;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.common.webservices.duokan.af;
-import com.duokan.reader.common.webservices.duokan.p;
-import com.duokan.reader.ui.general.web.StorePageController;
+import com.duokan.reader.domain.statistics.C1163a;
 
 class dm implements OnClickListener {
-    final /* synthetic */ af a;
-    final /* synthetic */ de b;
+    /* renamed from: a */
+    final /* synthetic */ dg f10031a;
 
-    dm(de deVar, af afVar) {
-        this.b = deVar;
-        this.a = afVar;
+    dm(dg dgVar) {
+        this.f10031a = dgVar;
     }
 
     public void onClick(View view) {
-        ActivatedController storePageController = new StorePageController(MyContextWrapper.getFeature(this.b.getContext()));
-        String d = p.i().d(this.a.e, null);
-        if (this.b.e.U() != PageAnimationMode.VSCROLL) {
-            a.k().a("ending_page_recommendation_v3", "click", this.b.getLabelPrefix() + this.a.d + "_topic_view_more", false);
-        }
-        storePageController.loadUrl(d);
-        this.b.A.pushHalfPageSmoothly(storePageController, null);
+        this.f10031a.f9997F.run();
+        C1163a.m8627k().m8648a("tip", "click", "reading_comment_page_tip_list_entrance_arrow", false);
     }
 }

@@ -1,32 +1,22 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.ui.general.fa;
+import com.duokan.reader.domain.account.C0709k;
+import java.util.concurrent.Callable;
 
-class eh implements Runnable {
-    final /* synthetic */ String a;
-    final /* synthetic */ String b;
-    final /* synthetic */ String c;
-    final /* synthetic */ a d;
-    final /* synthetic */ ef e;
+class eh implements Callable<Boolean> {
+    /* renamed from: a */
+    final /* synthetic */ ci f7771a;
 
-    eh(ef efVar, String str, String str2, String str3, a aVar) {
-        this.e = efVar;
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
-        this.d = aVar;
+    eh(ci ciVar) {
+        this.f7771a = ciVar;
     }
 
-    public void run() {
-        fa faVar = new fa(this.e.b.pageController.getContext());
-        faVar.a(this.e.b.pageController.mPageTitle);
-        faVar.b(this.a);
-        faVar.d(this.b);
-        faVar.c(this.c);
-        this.e.b.pageController.mCallBackSucceed = false;
-        faVar.a(new ei(this));
-        faVar.a(new ej(this));
-        faVar.setOnDismissListener(new ek(this));
-        faVar.show();
+    public /* synthetic */ Object call() {
+        return m11104a();
+    }
+
+    /* renamed from: a */
+    public Boolean m11104a() {
+        return Boolean.valueOf(C0709k.m3476a().m3507c());
     }
 }

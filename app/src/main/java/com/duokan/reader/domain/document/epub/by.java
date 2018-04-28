@@ -3,17 +3,19 @@ package com.duokan.reader.domain.document.epub;
 import android.graphics.Bitmap;
 
 class by implements Runnable {
-    final /* synthetic */ Bitmap a;
-    final /* synthetic */ bx b;
+    /* renamed from: a */
+    final /* synthetic */ Bitmap f4618a;
+    /* renamed from: b */
+    final /* synthetic */ bx f4619b;
 
     by(bx bxVar, Bitmap bitmap) {
-        this.b = bxVar;
-        this.a = bitmap;
+        this.f4619b = bxVar;
+        this.f4618a = bitmap;
     }
 
     public void run() {
-        if (this.b.a != null) {
-            this.b.a.a(this.a);
+        if (this.f4619b.f4616a != null) {
+            this.f4619b.f4616a.run(this.f4618a);
         }
     }
 }

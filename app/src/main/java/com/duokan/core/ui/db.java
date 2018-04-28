@@ -7,45 +7,45 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
-
-import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.sys.UThread;
 
 class db extends BoxView {
-    final /* synthetic */ cv b;
+    /* renamed from: b */
+    final /* synthetic */ cv f1128b;
 
     public db(cv cvVar, Context context) {
-        this.b = cvVar;
+        this.f1128b = cvVar;
         super(context);
         setWillNotDraw(false);
     }
 
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        if (this.b.t != null && !this.b.hasRunningAnimation()) {
-            TaskHandler.PostTask(this.b.t);
+        if (this.f1128b.f1112t != null && !this.f1128b.hasRunningAnimation()) {
+            UThread.post(this.f1128b.f1112t);
         }
     }
 
     public void draw(Canvas canvas) {
         float alpha;
         int i;
-        if (this.b.q != null) {
-            if (!this.b.q.hasStarted()) {
-                this.b.q.start();
+        if (this.f1128b.f1109q != null) {
+            if (!this.f1128b.f1109q.hasStarted()) {
+                this.f1128b.f1109q.start();
             }
-            Transformation transformation = (Transformation) UTools.c.getRect();
-            this.b.q.getTransformation(AnimationUtils.currentAnimationTimeMillis(), transformation);
+            Transformation transformation = (Transformation) dv.f1194c.addAnimation();
+            this.f1128b.f1109q.getTransformation(AnimationUtils.currentAnimationTimeMillis(), transformation);
             alpha = transformation.getAlpha();
-            UTools.c.getRect(transformation);
-            if (this.b.q.hasEnded()) {
-                this.b.q = null;
+            dv.f1194c.clearAnimation(transformation);
+            if (this.f1128b.f1109q.hasEnded()) {
+                this.f1128b.f1109q = null;
                 i = 0;
             } else {
                 i = 1;
             }
         } else {
-            this.b.q = null;
-            alpha = this.b.p;
+            this.f1128b.f1109q = null;
+            alpha = this.f1128b.f1108p;
             i = 0;
         }
         if (Float.compare(alpha, 0.0f) > 0) {
@@ -61,7 +61,7 @@ class db extends BoxView {
         if (super.dispatchTouchEvent(motionEvent)) {
             return true;
         }
-        if ((motionEvent.getActionMasked() == 0 && this.b.checkTouchOutside((int) motionEvent.getX(), (int) motionEvent.getY()) && this.b.onTouchOutside()) || this.b.w) {
+        if ((motionEvent.getActionMasked() == 0 && this.f1128b.checkTouchOutside((int) motionEvent.getX(), (int) motionEvent.getY()) && this.f1128b.onTouchOutside()) || this.f1128b.f1115w) {
             return true;
         }
         return false;
@@ -69,21 +69,21 @@ class db extends BoxView {
 
     public boolean dispatchKeyEvent(KeyEvent keyEvent) {
         if (keyEvent.getKeyCode() != 4) {
-            this.b.x = false;
+            this.f1128b.f1116x = false;
         } else if (keyEvent.getAction() == 0) {
-            this.b.x = true;
+            this.f1128b.f1116x = true;
         }
         if (super.dispatchKeyEvent(keyEvent)) {
-            this.b.x = false;
+            this.f1128b.f1116x = false;
             return true;
         }
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getAction() == 1 && this.b.x) {
-            this.b.x = false;
-            if (this.b.onBack()) {
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getAction() == 1 && this.f1128b.f1116x) {
+            this.f1128b.f1116x = false;
+            if (this.f1128b.onBack()) {
                 return true;
             }
         }
-        if (this.b.v) {
+        if (this.f1128b.f1114v) {
             return true;
         }
         return false;

@@ -6,102 +6,110 @@ import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
-
-import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
-import com.duokan.core.ui.UTools;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.ui.dv;
 import com.duokan.core.ui.er;
+import com.duokan.p024c.C0254f;
 import com.duokan.reader.domain.audio.AudioPlayer;
 import com.duokan.reader.domain.document.ak;
-import com.duokan.reader.ui.general.hd;
-import com.duokan.reader.ui.reading.a.a;
-import com.duokan.reader.ui.reading.a.ad;
-import com.duokan.reader.ui.reading.a.ao;
-import com.duokan.reader.ui.reading.a.j;
+import com.duokan.reader.ui.general.gs;
+import com.duokan.reader.ui.reading.p054a.C1420a;
+import com.duokan.reader.ui.reading.p054a.C1429j;
+import com.duokan.reader.ui.reading.p054a.ad;
+import com.duokan.reader.ui.reading.p054a.ao;
 
-public class ai extends hd implements tb {
-    boolean a = false;
-    private FrameLayout b = null;
-    private ActivatedController c = null;
-    private wl d;
-    private sh e;
-    private a f;
+public class ai extends gs implements to {
+    /* renamed from: a */
+    boolean f9764a = false;
+    /* renamed from: b */
+    private FrameLayout f9765b = null;
+    /* renamed from: c */
+    private ActivatedController f9766c = null;
+    /* renamed from: d */
+    private wy f9767d;
+    /* renamed from: e */
+    private su f9768e;
+    /* renamed from: f */
+    private C1420a f9769f;
 
-    public ai(IFeature featrue, sh shVar, wl wlVar) {
-        super(featrue);
-        this.d = wlVar;
-        this.e = shVar;
-        this.f = new a(shVar);
-        this.f.a(false);
-        this.d.a(this.f);
-        this.e.a((tb) this);
+    public ai(IFeature mFeature, su suVar, wy wyVar) {
+        super(mFeature);
+        this.f9767d = wyVar;
+        this.f9768e = suVar;
+        this.f9769f = new C1420a(suVar);
+        this.f9769f.m1607a(false);
+        this.f9767d.m13649a(this.f9769f);
+        this.f9768e.mo2033a((to) this);
     }
 
-    public void a(sh shVar, int i, int i2) {
-        if (this.e.b(16)) {
-            if (this.b == null) {
+    /* renamed from: a */
+    public void mo2198a(su suVar, int i, int i2) {
+        if (this.f9768e.mo2106b(16)) {
+            if (this.f9765b == null) {
                 View imageView = new ImageView(getContext());
-                imageView.setImageResource(f.reading__shared__tts_show_menu);
-                imageView.setBackgroundResource(f.general__shared__button_circular_48dip);
+                imageView.setImageResource(C0254f.reading__shared__tts_show_menu);
+                imageView.setBackgroundResource(C0254f.general__shared__button_circular_48dip);
                 imageView.setScaleType(ScaleType.CENTER);
-                this.b = new FrameLayout(getContext());
-                this.b.setPadding(0, 0, UTools.getMinimumHeight(getContext(), 15.0f), UTools.getMinimumHeight(getContext(), 30.0f));
-                this.b.addView(imageView, new LayoutParams(-2, -2));
-                this.d.getPagesFrameView().addView(this.b, new LayoutParams(-2, -2, 85));
-                this.b.setOnClickListener(new aj(this));
+                this.f9765b = new FrameLayout(getContext());
+                this.f9765b.setPadding(0, 0, dv.m1932b(getContext(), 15.0f), dv.m1932b(getContext(), 30.0f));
+                this.f9765b.addView(imageView, new LayoutParams(-2, -2));
+                this.f9767d.getPagesFrameView().addView(this.f9765b, new LayoutParams(-2, -2, 85));
+                this.f9765b.setOnClickListener(new aj(this));
             }
-            this.b.setVisibility(0);
-            a();
+            this.f9765b.setVisibility(0);
+            m13721a();
             return;
         }
-        if (this.b != null) {
-            this.b.setVisibility(4);
+        if (this.f9765b != null) {
+            this.f9765b.setVisibility(4);
         }
-        b();
+        m13722b();
     }
 
-    public void a(sh shVar, ak akVar, ak akVar2) {
+    /* renamed from: a */
+    public void mo2199a(su suVar, ak akVar, ak akVar2) {
     }
 
     protected boolean onBack() {
         if (super.onBack()) {
             return true;
         }
-        if (!AudioPlayer.a().b()) {
+        if (!AudioPlayer.m3613a().m3641b()) {
             return false;
         }
-        this.e.i();
+        this.f9768e.mo2156i();
         return true;
     }
 
     protected boolean onShowMenu() {
-        if (!AudioPlayer.a().b() || this.c != null) {
+        if (!AudioPlayer.m3613a().m3641b() || this.f9766c != null) {
             return false;
         }
-        this.c = new ab(getContext());
-        showPopup(this.c);
-        UTools.closeAnimation(this.c.getContentView(), null);
+        this.f9766c = new ab(getContext());
+        showPopup(this.f9766c);
+        dv.showAnimation(this.f9766c.getContentView(), null);
         return true;
     }
 
     protected boolean onHideMenu() {
-        if (this.c == null) {
+        if (this.f9766c == null) {
             return false;
         }
-        this.c.requestDetach();
+        this.f9766c.requestDetach();
         return true;
     }
 
     protected boolean onCheckMenuShowing() {
-        return this.c != null;
+        return this.f9766c != null;
     }
 
-    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
-        if (!activatedControllerVar.contains(this.c)) {
-            return super.onRequestDetach(activatedControllerVar);
+    protected boolean onRequestDetach(ActivatedController c0303e) {
+        if (!c0303e.contains(this.f9766c)) {
+            return super.onRequestDetach(c0303e);
         }
-        if (this.c.getContentView().getAnimation() == null) {
-            UTools.c(this.c.getContentView(), new ak(this));
+        if (this.f9766c.getContentView().getAnimation() == null) {
+            dv.hideAnimation(this.f9766c.getContentView(), new ak(this));
         }
         return true;
     }
@@ -110,25 +118,27 @@ public class ai extends hd implements tb {
         super.onActivityResult(i, i2, intent);
     }
 
-    private void a() {
-        if (!this.a) {
-            this.a = true;
-            this.f.a(true);
-            er[] a = this.e.a(ad.class, j.class, ao.class);
+    /* renamed from: a */
+    private void m13721a() {
+        if (!this.f9764a) {
+            this.f9764a = true;
+            this.f9769f.m1607a(true);
+            er[] a = this.f9768e.mo2042a(ad.class, C1429j.class, ao.class);
             for (er a2 : a) {
-                a2.a(false);
+                a2.m1607a(false);
             }
         }
     }
 
-    private void b() {
+    /* renamed from: b */
+    private void m13722b() {
         int i = 0;
-        if (this.a) {
-            this.a = false;
-            this.f.a(false);
-            er[] a = this.e.a(ad.class, j.class, ao.class);
+        if (this.f9764a) {
+            this.f9764a = false;
+            this.f9769f.m1607a(false);
+            er[] a = this.f9768e.mo2042a(ad.class, C1429j.class, ao.class);
             while (i < a.length) {
-                a[i].a(true);
+                a[i].m1607a(true);
                 i++;
             }
         }

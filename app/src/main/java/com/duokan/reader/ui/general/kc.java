@@ -1,16 +1,17 @@
 package com.duokan.reader.ui.general;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import java.util.LinkedList;
 
-class kc implements OnClickListener {
-    final /* synthetic */ jy a;
+class kc {
+    /* renamed from: a */
+    public final int f7522a;
+    /* renamed from: b */
+    public final LinkedList<kb> f7523b = new LinkedList();
+    /* renamed from: c */
+    final /* synthetic */ ka f7524c;
 
-    kc(jy jyVar) {
-        this.a = jyVar;
-    }
-
-    public void onClick(View view) {
-        this.a.e();
+    public kc(ka kaVar, int i) {
+        this.f7524c = kaVar;
+        this.f7522a = i;
     }
 }

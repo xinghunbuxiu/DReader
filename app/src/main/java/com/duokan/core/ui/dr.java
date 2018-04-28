@@ -4,12 +4,14 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 
 class dr implements AnimationListener {
-    final /* synthetic */ di a;
-    final /* synthetic */ dq b;
+    /* renamed from: a */
+    final /* synthetic */ di f1170a;
+    /* renamed from: b */
+    final /* synthetic */ dq f1171b;
 
     dr(dq dqVar, di diVar) {
-        this.b = dqVar;
-        this.a = diVar;
+        this.f1171b = dqVar;
+        this.f1170a = diVar;
     }
 
     public void onAnimationStart(Animation animation) {
@@ -19,12 +21,12 @@ class dr implements AnimationListener {
     }
 
     public void onAnimationEnd(Animation animation) {
-        if (this.b.h) {
-            if (this.b.g != null) {
-                this.b.b.post(this.b.g);
+        if (this.f1171b.f1156h) {
+            if (this.f1171b.f1155g != null) {
+                this.f1171b.f1150b.post(this.f1171b.f1155g);
             }
-        } else if (this.b.f != null) {
-            this.b.b.post(this.b.f);
+        } else if (this.f1171b.f1154f != null) {
+            this.f1171b.f1150b.post(this.f1171b.f1154f);
         }
     }
 }

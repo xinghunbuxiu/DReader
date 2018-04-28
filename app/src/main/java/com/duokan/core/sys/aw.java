@@ -5,12 +5,15 @@ import java.io.RandomAccessFile;
 import java.util.concurrent.atomic.AtomicReference;
 
 class aw extends RandomAccessFile {
-    public final String a;
-    public final AtomicReference b = new AtomicReference();
-    public int c = 0;
+    /* renamed from: a */
+    public final String f667a;
+    /* renamed from: b */
+    public final AtomicReference<Thread> f668b = new AtomicReference();
+    /* renamed from: c */
+    public int f669c = 0;
 
     public aw(File file, String str) {
         super(file, str);
-        this.a = str;
+        this.f667a = str;
     }
 }

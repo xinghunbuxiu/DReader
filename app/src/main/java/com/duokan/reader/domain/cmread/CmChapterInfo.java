@@ -6,10 +6,10 @@ public class CmChapterInfo {
     private String mChapterID;
     private String mChapterName;
     private String mPageContent;
-    private List mPageList;
+    private List<CmPageInfo> mPageList;
     private int mType;
 
-    public CmChapterInfo(List list, String str, String str2, int i, String str3) {
+    public CmChapterInfo(List<CmPageInfo> list, String str, String str2, int i, String str3) {
         this.mPageList = list;
         this.mChapterName = str;
         this.mPageContent = str2;
@@ -17,7 +17,7 @@ public class CmChapterInfo {
         this.mChapterID = str3;
     }
 
-    public List getPageList() {
+    public List<CmPageInfo> getPageList() {
         return this.mPageList;
     }
 

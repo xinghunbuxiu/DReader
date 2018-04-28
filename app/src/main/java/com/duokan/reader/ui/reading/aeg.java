@@ -1,41 +1,27 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Point;
+import com.duokan.core.app.ag;
+import com.duokan.core.app.ah;
 
-import com.duokan.reader.domain.document.d;
+class aeg implements ah {
+    /* renamed from: a */
+    final /* synthetic */ aee f9577a;
 
-class aeg {
-    public ael[] a;
-    public d b;
-    public final Point c;
-    public final Point d;
-
-    private aeg() {
-        this.a = null;
-        this.b = null;
-        this.c = new Point();
-        this.d = new Point();
+    aeg(aee aee) {
+        this.f9577a = aee;
     }
 
-    public int a() {
-        int i = 0;
-        int i2 = 0;
-        while (i < this.a.length && !this.a[i].b.c(this.b)) {
-            i2 = i;
-            i++;
-        }
-        return i2;
+    /* renamed from: a */
+    public void mo1562a(ag agVar) {
+        this.f9577a.f9574d.f9541a.bf();
     }
 
-    public ael b() {
-        return this.a[a()];
+    /* renamed from: b */
+    public void mo1567b(ag agVar) {
+        this.f9577a.f9574d.f9541a.be();
     }
 
-    public ael c() {
-        return this.a[0];
-    }
-
-    public ael d() {
-        return this.a[this.a.length - 1];
+    /* renamed from: c */
+    public void mo1565c(ag agVar) {
     }
 }

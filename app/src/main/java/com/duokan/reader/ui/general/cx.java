@@ -1,5 +1,6 @@
 package com.duokan.reader.ui.general;
 
 public interface cx {
-    void a(int i, int i2);
+    /* renamed from: a */
+    void mo1699a(int i, int i2);
 }

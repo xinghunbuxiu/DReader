@@ -1,32 +1,20 @@
 package com.duokan.reader.ui.general.web;
 
-import android.text.TextUtils;
+import com.duokan.reader.ui.general.C1329do;
+import com.duokan.reader.ui.general.dn;
 
-import com.duokan.core.sys.as;
-import com.duokan.reader.ui.general.ia;
+class et implements dn {
+    /* renamed from: a */
+    final /* synthetic */ es f7801a;
 
-class et implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ String[] b;
-    final /* synthetic */ String c;
-    final /* synthetic */ es d;
-
-    et(es esVar, String str, String[] strArr, String str2) {
-        this.d = esVar;
-        this.a = str;
-        this.b = strArr;
-        this.c = str2;
+    et(es esVar) {
+        this.f7801a = esVar;
     }
 
-    public void a() {
-        ia iaVar = new ia(this.d.b.pageController.getContext());
-        if (!TextUtils.isEmpty(this.a)) {
-            iaVar.a(this.a);
-        }
-        for (String b : this.b) {
-            iaVar.b(b);
-        }
-        iaVar.a(new eu(this));
-        iaVar.open(new ev(this));
+    /* renamed from: a */
+    public void mo1582a(String str, C1329do c1329do) {
+        this.f7801a.f7799d.mo1839a(str);
+        this.f7801a.f7800e.f7793b.f7581b.mCallBackSucceed = true;
+        c1329do.mo1780a();
     }
 }

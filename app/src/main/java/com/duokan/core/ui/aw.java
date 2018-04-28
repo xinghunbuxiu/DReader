@@ -2,70 +2,80 @@ package com.duokan.core.ui;
 
 import android.view.View;
 import android.view.ViewGroup;
-
 import java.util.Iterator;
 import java.util.LinkedList;
 
 public abstract class aw implements av {
-    static final /* synthetic */ boolean b = (!aw.class.desiredAssertionStatus());
-    private final LinkedList a = new LinkedList();
+    /* renamed from: b */
+    static final /* synthetic */ boolean f917b = (!aw.class.desiredAssertionStatus());
+    /* renamed from: a */
+    private final LinkedList<ax> f918a = new LinkedList();
 
-    public void f(int i, int i2) {
-        Iterator it = this.a.iterator();
+    /* renamed from: f */
+    public void m1397f(int i, int i2) {
+        Iterator it = this.f918a.iterator();
         while (it.hasNext()) {
             ((ax) it.next()).a_(i, i2);
         }
     }
 
-    public void g(int i, int i2) {
-        Iterator it = this.a.iterator();
+    /* renamed from: g */
+    public void m1398g(int i, int i2) {
+        Iterator it = this.f918a.iterator();
         while (it.hasNext()) {
             ((ax) it.next()).b_(i, i2);
         }
     }
 
-    public void b(int i, int i2, int i3) {
-        Iterator it = this.a.iterator();
+    /* renamed from: b */
+    public void m1393b(int i, int i2, int i3) {
+        Iterator it = this.f918a.iterator();
         while (it.hasNext()) {
-            ((ax) it.next()).a(i, i2, i3);
+            ((ax) it.next()).mo440a(i, i2, i3);
         }
     }
 
-    public void h(int i, int i2) {
-        Iterator it = this.a.iterator();
+    /* renamed from: h */
+    public void mo2519h(int i, int i2) {
+        Iterator it = this.f918a.iterator();
         while (it.hasNext()) {
-            ((ax) it.next()).d(i, i2);
+            ((ax) it.next()).mo444d(i, i2);
         }
     }
 
-    public void d() {
-        Iterator it = this.a.iterator();
+    /* renamed from: d */
+    public void mo1691d() {
+        Iterator it = this.f918a.iterator();
         while (it.hasNext()) {
-            ((ax) it.next()).a_(c());
+            ((ax) it.next()).a_(mo506c());
         }
     }
 
-    public int e(int i, int i2) {
+    /* renamed from: e */
+    public int mo485e(int i, int i2) {
         return i - i2;
     }
 
-    public void a(ax axVar) {
-        if (!b && axVar == null) {
+    /* renamed from: a */
+    public void mo483a(ax axVar) {
+        if (!f917b && axVar == null) {
             throw new AssertionError();
-        } else if (!this.a.contains(axVar)) {
-            this.a.add(axVar);
+        } else if (!this.f918a.contains(axVar)) {
+            this.f918a.add(axVar);
         }
     }
 
-    public void b(ax axVar) {
-        if (b || axVar != null) {
-            this.a.remove(axVar);
+    /* renamed from: b */
+    public void mo484b(ax axVar) {
+        if (f917b || axVar != null) {
+            this.f918a.remove(axVar);
             return;
         }
         throw new AssertionError();
     }
 
-    public View a(View view, ViewGroup viewGroup) {
+    /* renamed from: a */
+    public View mo482a(View view, ViewGroup viewGroup) {
         return null;
     }
 }

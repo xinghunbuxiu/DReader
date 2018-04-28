@@ -5,21 +5,25 @@ import java.util.concurrent.FutureTask;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-class ao extends FutureTask implements ScheduledFuture {
-    private final long time;
+class ao<T> extends FutureTask<T> implements ScheduledFuture<T> {
+    /* renamed from: a */
+    private final long f649a;
 
+    public /* synthetic */ int compareTo(Object obj) {
+        return m877a((Delayed) obj);
+    }
 
-    public ao(Runnable runnable, long time) {
+    public ao(Runnable runnable, long j) {
         super(runnable, null);
-        this.time = time;
+        this.f649a = j;
     }
 
     public long getDelay(TimeUnit timeUnit) {
-        return timeUnit.convert(Math.max(0, this.time - System.currentTimeMillis()), TimeUnit.MILLISECONDS);
+        return timeUnit.convert(Math.max(0, this.f649a - System.currentTimeMillis()), TimeUnit.MILLISECONDS);
     }
 
-    @Override
-    public int compareTo(Delayed delayed) {
+    /* renamed from: a */
+    public int m877a(Delayed delayed) {
         long delay = getDelay(TimeUnit.MILLISECONDS) - delayed.getDelay(TimeUnit.MILLISECONDS);
         if (delay == 0) {
             return 0;

@@ -1,18 +1,16 @@
 package com.duokan.reader.domain.cloud;
 
 import android.text.TextUtils;
-
 import com.duokan.reader.common.webservices.duokan.DkAnnotationBookInfo;
 import com.duokan.reader.common.webservices.duokan.DkAnnotationsInfo;
-
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 
 public class DkCloudNotesInfo extends DkCloudJsonItem {
-    private static Comparator mComp = new d();
+    private static Comparator<DkCloudNoteBookInfo> mComp = new C0843d();
     private final String mAccountLoginName;
-    private final LinkedList mNoteBookInfos;
+    private final LinkedList<DkCloudNoteBookInfo> mNoteBookInfos;
     private int mNoteCount = 0;
 
     public DkCloudNotesInfo(String str, DkAnnotationsInfo dkAnnotationsInfo, DkCloudStoreBook[] dkCloudStoreBookArr, boolean z) {
@@ -41,7 +39,7 @@ public class DkCloudNotesInfo extends DkCloudJsonItem {
         this.mNoteCount = i;
     }
 
-    public LinkedList getCloudNoteBookInfo() {
+    public LinkedList<DkCloudNoteBookInfo> getCloudNoteBookInfo() {
         return this.mNoteBookInfos;
     }
 

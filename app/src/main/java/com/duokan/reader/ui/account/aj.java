@@ -1,37 +1,48 @@
 package com.duokan.reader.ui.account;
 
-import android.content.Context;
-import android.text.TextPaint;
-import android.widget.LinearLayout;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import com.duokan.core.ui.aw;
+import com.duokan.p024c.C0255g;
+import com.duokan.p024c.C0256h;
 
-import com.duokan.core.ui.UTools;
+class aj extends aw {
+    /* renamed from: a */
+    final /* synthetic */ ag f5790a;
 
-class aj extends LinearLayout {
-    final /* synthetic */ ai a;
-
-    aj(ai aiVar, Context context) {
-        this.a = aiVar;
-        super(context);
+    private aj(ag agVar) {
+        this.f5790a = agVar;
     }
 
-    protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, i2);
-        if (this.a.c.getMeasuredWidth() == 0) {
-            TextPaint paint = this.a.c.getPaint();
-            int ceil = (int) Math.ceil((double) paint.measureText(String.valueOf(this.a.c.getText())));
-            if ((this.a.d.getMeasuredWidth() + ceil) + this.a.e.getMeasuredWidth() > getMeasuredWidth()) {
-                int measuredWidth = (getMeasuredWidth() - this.a.d.getMeasuredWidth()) - this.a.e.getMeasuredWidth();
-                int i3 = 15;
-                while (ceil > measuredWidth && i3 > 12) {
-                    paint.setTextSize((float) UTools.getMinimumHeight(getContext(), (float) i3));
-                    ceil = (int) Math.ceil((double) paint.measureText(String.valueOf(this.a.c.getText())));
-                    i3--;
-                }
-                this.a.c.measure(MeasureSpec.makeMeasureSpec((getMeasuredWidth() - this.a.d.getMeasuredWidth()) - this.a.e.getMeasuredWidth(), 1073741824), i2);
-                return;
-            }
-            this.a.c.measure(MeasureSpec.makeMeasureSpec(ceil, 1073741824), i2);
-            this.a.e.measure(MeasureSpec.makeMeasureSpec((getMeasuredWidth() - this.a.d.getMeasuredWidth()) - ceil, 1073741824), MeasureSpec.makeMeasureSpec(this.a.e.getMeasuredHeight(), Integer.MIN_VALUE));
+    /* renamed from: d */
+    public /* synthetic */ Object mo509d(int i) {
+        return m8864a(i);
+    }
+
+    /* renamed from: c */
+    public int mo506c() {
+        return this.f5790a.f5783a == null ? 0 : this.f5790a.f5783a.size();
+    }
+
+    /* renamed from: a */
+    public af m8864a(int i) {
+        return this.f5790a.f5783a == null ? null : (af) this.f5790a.f5783a.get(i);
+    }
+
+    /* renamed from: d */
+    public View mo508d(int i, View view, ViewGroup viewGroup) {
+        if (view == null) {
+            view = LayoutInflater.from(this.f5790a.getContext()).inflate(C0256h.account__share_choice_item_view, viewGroup, false);
         }
+        ImageView imageView = (ImageView) view.findViewById(C0255g.account__share_choice_item_view__icon);
+        TextView textView = (TextView) view.findViewById(C0255g.account__share_choice_item_view__text);
+        af a = m8864a(i);
+        imageView.setImageResource(a.f5781c);
+        textView.setText(a.f5779a);
+        imageView.setContentDescription(a.f5779a);
+        return view;
     }
 }

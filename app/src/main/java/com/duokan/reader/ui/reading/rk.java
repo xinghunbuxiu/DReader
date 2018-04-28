@@ -1,23 +1,29 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.ui.general.PagesView;
-import com.duokan.reader.ui.general.gc;
-import com.duokan.reader.ui.general.gi;
+import com.duokan.core.sys.UThread;
+import com.duokan.core.sys.ag;
+import com.duokan.reader.domain.store.DkStoreFictionDetail;
 
-class rk implements gc {
-    final /* synthetic */ qh a;
+class rk implements ag<DkStoreFictionDetail> {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f10898a;
+    /* renamed from: b */
+    final /* synthetic */ qr f10899b;
 
-    rk(qh qhVar) {
-        this.a = qhVar;
+    rk(qr qrVar, Runnable runnable) {
+        this.f10899b = qrVar;
+        this.f10898a = runnable;
     }
 
-    public void a(PagesView pagesView, gi giVar, gi giVar2) {
-        if (giVar2 != null) {
-            this.a.C = null;
-            this.a.z = this.a.y;
-            this.a.y = ((gn) giVar2).g();
-            this.a.a((gn) giVar, (gn) giVar2);
-            this.a.a(this.a.z, this.a.c.Z());
+    public /* synthetic */ void run(Object obj) {
+        m14947a((DkStoreFictionDetail) obj);
+    }
+
+    /* renamed from: a */
+    public void m14947a(DkStoreFictionDetail dkStoreFictionDetail) {
+        if (!this.f10899b.f9293q) {
+            this.f10899b.m12790a(dkStoreFictionDetail);
+            UThread.post(this.f10898a);
         }
     }
 }

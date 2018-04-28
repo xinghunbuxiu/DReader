@@ -6,147 +6,162 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
-
-import com.duokan.core.ui.UTools;
-
+import com.duokan.core.ui.dv;
+import com.duokan.reader.ui.general.PagesView.PageLayout;
 import org.apache.http.HttpStatus;
 
 public class FixedPagesView extends PagesView {
-    static final /* synthetic */ boolean a = (!FixedPagesView.class.desiredAssertionStatus());
-    private final int b;
-    private PageScaleType c = PageScaleType.MATCH_WIDTH;
-    private boolean d = false;
-    private int e = 0;
-    private int f = 0;
-    private int g = 0;
-    private int h = 0;
-    private cu[] i = new cu[0];
-    private RectF[] j = new RectF[0];
-    private int k = -1;
-    private final Point l = new Point();
+    /* renamed from: a */
+    static final /* synthetic */ boolean f6836a = (!FixedPagesView.class.desiredAssertionStatus());
+    /* renamed from: b */
+    private final int f6837b;
+    /* renamed from: c */
+    private PageScaleType f6838c = PageScaleType.MATCH_WIDTH;
+    /* renamed from: d */
+    private boolean f6839d = false;
+    /* renamed from: e */
+    private int f6840e = 0;
+    /* renamed from: f */
+    private int f6841f = 0;
+    /* renamed from: g */
+    private int f6842g = 0;
+    /* renamed from: h */
+    private int f6843h = 0;
+    /* renamed from: i */
+    private cu[] f6844i = new cu[0];
+    /* renamed from: j */
+    private RectF[] f6845j = new RectF[0];
+    /* renamed from: k */
+    private int f6846k = -1;
+    /* renamed from: l */
+    private final Point f6847l = new Point();
 
     public enum PageScaleType {
         MATCH_WIDTH,
         MATCH_INSIDE
     }
 
-    protected /* synthetic */ gg d() {
-        return c();
+    /* renamed from: d */
+    protected /* synthetic */ ga mo1740d() {
+        return m10070c();
     }
 
-    protected /* synthetic */ gj e() {
-        return b();
+    /* renamed from: e */
+    protected /* synthetic */ gd mo1741e() {
+        return m10067b();
     }
 
     public FixedPagesView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        this.b = UTools.getMinimumHeight(getContext(), 5.0f);
-        this.g = displayMetrics.widthPixels;
-        this.h = displayMetrics.heightPixels;
+        this.f6837b = dv.m1932b(getContext(), 5.0f);
+        this.f6842g = displayMetrics.widthPixels;
+        this.f6843h = displayMetrics.heightPixels;
         setPageLayout(PageLayout.TOP_TO_BOTTOM);
-        getCellsView().a(displayMetrics.widthPixels / 2, displayMetrics.heightPixels / 2, displayMetrics.widthPixels / 2, displayMetrics.heightPixels);
+        getCellsView().m1111a(displayMetrics.widthPixels / 2, displayMetrics.heightPixels / 2, displayMetrics.widthPixels / 2, displayMetrics.heightPixels);
         setZoomEnabled(true);
     }
 
     public final PageScaleType getPageScaleType() {
-        return this.c;
+        return this.f6838c;
     }
 
     public final void setPageScaleType(PageScaleType pageScaleType) {
         Rect rect = null;
-        if (this.c != pageScaleType) {
-            gh c;
+        if (this.f6838c != pageScaleType) {
+            gb c;
             cu cuVar = (cu) getCurrentPagePresenter();
             if (cuVar != null) {
-                c = cuVar.c();
-                rect = cuVar.a();
+                c = cuVar.mo2327c();
+                rect = cuVar.mo1762a();
             } else {
                 c = null;
             }
             DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-            this.c = pageScaleType;
-            if (this.c == PageScaleType.MATCH_INSIDE) {
+            this.f6838c = pageScaleType;
+            if (this.f6838c == PageScaleType.MATCH_INSIDE) {
                 setPageLayout(PageLayout.LEFT_TO_RIGHT);
-                getCellsView().a(displayMetrics.widthPixels, 0, displayMetrics.widthPixels, 0);
+                getCellsView().m1111a(displayMetrics.widthPixels, 0, displayMetrics.widthPixels, 0);
             } else {
                 setPageLayout(PageLayout.TOP_TO_BOTTOM);
-                getCellsView().a(0, displayMetrics.heightPixels, 0, displayMetrics.heightPixels);
+                getCellsView().m1111a(0, displayMetrics.heightPixels, 0, displayMetrics.heightPixels);
             }
-            getCellsView().p();
+            getCellsView().mo1757p();
             getCellsView().scrollBy(0, 0);
             if (cuVar != null) {
-                b(c);
-                ((cu) getCurrentPagePresenter()).a(rect);
+                m10006b(c);
+                ((cu) getCurrentPagePresenter()).mo1763a(rect);
             }
         }
     }
 
     public final RectF[] getContentMargins() {
-        return this.j;
+        return this.f6845j;
     }
 
     public final void setContentMargins(RectF[] rectFArr) {
-        this.j = rectFArr;
-        if (this.d) {
-            getCellsView().p();
+        this.f6845j = rectFArr;
+        if (this.f6839d) {
+            getCellsView().mo1757p();
             getCellsView().scrollBy(0, 0);
         }
     }
 
     public final boolean getClipToContent() {
-        return this.d;
+        return this.f6839d;
     }
 
     public final void setClipToContent(boolean z) {
-        this.d = z;
-        getCellsView().p();
+        this.f6839d = z;
+        getCellsView().mo1757p();
         getCellsView().scrollBy(0, 0);
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        gh ghVar;
+        gb gbVar;
         Rect rect = null;
         cu cuVar = (cu) getCurrentPagePresenter();
         if (!z || cuVar == null) {
-            ghVar = null;
+            gbVar = null;
         } else {
-            ghVar = getCurrentPageIndicator();
-            rect = cuVar.a();
+            gbVar = getCurrentPageIndicator();
+            rect = cuVar.mo1762a();
         }
         super.onLayout(z, i, i2, i3, i4);
         if (z && cuVar != null) {
-            b(ghVar);
-            getCurrentPagePresenter().a(rect);
+            m10006b(gbVar);
+            getCurrentPagePresenter().mo1763a(rect);
         }
     }
 
-    protected void a(boolean z) {
-        super.a(z);
+    /* renamed from: a */
+    protected void mo1736a(boolean z) {
+        super.mo1736a(z);
         int[] visibleItemIndices = getCellsView().getVisibleItemIndices();
         if (visibleItemIndices.length >= 1) {
             int i = visibleItemIndices[(visibleItemIndices.length - 1) / 2];
-            if (i >= 0 && i < this.i.length && this.i[i] != null) {
-                setCurrentPageIndicator(this.i[i].c());
-                setCurrentPagePresenter(this.i[i]);
+            if (i >= 0 && i < this.f6844i.length && this.f6844i[i] != null) {
+                setCurrentPageIndicator(this.f6844i[i].mo2327c());
+                setCurrentPagePresenter(this.f6844i[i]);
             }
         }
     }
 
-    protected void a(gh ghVar) {
-        setCurrentPageIndicator(ghVar);
-        getProxyAdapter().a().d();
-        getCellsView().q();
-        int a = getProxyAdapter().a().a(ghVar);
-        getCellsView().i(a);
+    /* renamed from: a */
+    protected void mo1735a(gb gbVar) {
+        setCurrentPageIndicator(gbVar);
+        getProxyAdapter().m10415a().mo1691d();
+        getCellsView().mo1758q();
+        int a = getProxyAdapter().m10415a().mo2318a(gbVar);
+        getCellsView().m1148i(a);
         if (getCurrentPageIndicator() != null) {
-            if (this.i[a] == null) {
-                getCellsView().a(a, true);
-                getCellsView().g(a);
-                getCellsView().a(a, false);
+            if (this.f6844i[a] == null) {
+                getCellsView().m1119a(a, true);
+                getCellsView().m1141g(a);
+                getCellsView().m1119a(a, false);
             }
-            if (a || this.i[a] != null) {
-                setCurrentPagePresenter(this.i[a]);
+            if (f6836a || this.f6844i[a] != null) {
+                setCurrentPagePresenter(this.f6844i[a]);
                 return;
             }
             throw new AssertionError();
@@ -154,37 +169,43 @@ public class FixedPagesView extends PagesView {
         setCurrentPagePresenter(null);
     }
 
-    protected void a(boolean z, Runnable runnable, Runnable runnable2) {
+    /* renamed from: a */
+    protected void mo1737a(boolean z, Runnable runnable, Runnable runnable2) {
         if (getPageLayout() == PageLayout.TOP_TO_BOTTOM) {
-            getCellsView().b(0, getCellsView().getViewportBounds().height(), HttpStatus.SC_MULTIPLE_CHOICES, runnable, runnable2);
+            getCellsView().m1125b(0, getCellsView().getViewportBounds().height(), HttpStatus.SC_MULTIPLE_CHOICES, runnable, runnable2);
         } else if (getPageLayout() == PageLayout.LEFT_TO_RIGHT) {
-            getCellsView().b(getCellsView().getViewportBounds().width(), 0, HttpStatus.SC_MULTIPLE_CHOICES, runnable, runnable2);
-        } else if (!a) {
+            getCellsView().m1125b(getCellsView().getViewportBounds().width(), 0, HttpStatus.SC_MULTIPLE_CHOICES, runnable, runnable2);
+        } else if (!f6836a) {
             throw new AssertionError();
         }
     }
 
-    protected void b(boolean z, Runnable runnable, Runnable runnable2) {
+    /* renamed from: b */
+    protected void mo1739b(boolean z, Runnable runnable, Runnable runnable2) {
         if (getPageLayout() == PageLayout.TOP_TO_BOTTOM) {
-            getCellsView().b(0, -getCellsView().getViewportBounds().height(), HttpStatus.SC_MULTIPLE_CHOICES, runnable, runnable2);
+            getCellsView().m1125b(0, -getCellsView().getViewportBounds().height(), HttpStatus.SC_MULTIPLE_CHOICES, runnable, runnable2);
         } else if (getPageLayout() == PageLayout.LEFT_TO_RIGHT) {
-            getCellsView().b(-getCellsView().getViewportBounds().width(), 0, HttpStatus.SC_MULTIPLE_CHOICES, runnable, runnable2);
-        } else if (!a) {
+            getCellsView().m1125b(-getCellsView().getViewportBounds().width(), 0, HttpStatus.SC_MULTIPLE_CHOICES, runnable, runnable2);
+        } else if (!f6836a) {
             throw new AssertionError();
         }
     }
 
-    protected void b(boolean z) {
+    /* renamed from: b */
+    protected void mo1738b(boolean z) {
     }
 
-    protected void a() {
+    /* renamed from: a */
+    protected void mo1734a() {
     }
 
-    protected cv b() {
+    /* renamed from: b */
+    protected cv m10067b() {
         return new cv(this);
     }
 
-    protected cs c() {
+    /* renamed from: c */
+    protected cs m10070c() {
         return new cs(this, getContext());
     }
 
@@ -192,37 +213,40 @@ public class FixedPagesView extends PagesView {
         return (cv) super.getProxyAdapter();
     }
 
-    private boolean a(int i) {
+    /* renamed from: a */
+    private boolean mo2015a(int i) {
         if (i - 1 < 0) {
             return false;
         }
         Rect viewportBounds = getViewportBounds();
-        if (viewportBounds.left < a(i, viewportBounds.width(), viewportBounds.height()).left) {
+        if (viewportBounds.left < m10034a(i, viewportBounds.width(), viewportBounds.height()).left) {
             return true;
         }
         return false;
     }
 
-    private boolean b(int i) {
+    /* renamed from: b */
+    private boolean m10043b(int i) {
         if (i + 1 >= getPageCount()) {
             return false;
         }
         Rect viewportBounds = getViewportBounds();
-        if (viewportBounds.left > a(i, viewportBounds.width(), viewportBounds.height()).right - viewportBounds.width()) {
+        if (viewportBounds.left > m10034a(i, viewportBounds.width(), viewportBounds.height()).right - viewportBounds.width()) {
             return true;
         }
         return false;
     }
 
     private int getCurrPageIndex() {
-        if (getCurrentPageIndicator() == null || getProxyAdapter().a() == null) {
+        if (getCurrentPageIndicator() == null || getProxyAdapter().m10415a() == null) {
             return -1;
         }
-        return getProxyAdapter().a().a(getCurrentPageIndicator());
+        return getProxyAdapter().m10415a().mo2318a(getCurrentPageIndicator());
     }
 
-    private Rect a(int i, int i2, int i3) {
-        Rect rect = new Rect(c(i));
+    /* renamed from: a */
+    private Rect m10034a(int i, int i2, int i3) {
+        Rect rect = new Rect(m10048c(i));
         if (rect.width() < i2) {
             rect.left -= (i2 - rect.width()) / 2;
             rect.right = rect.left + i2;
@@ -234,8 +258,9 @@ public class FixedPagesView extends PagesView {
         return rect;
     }
 
-    private RectF a(int i, float f, float f2) {
-        RectF rectF = new RectF(c(i));
+    /* renamed from: a */
+    private RectF m10036a(int i, float f, float f2) {
+        RectF rectF = new RectF(m10048c(i));
         if (Float.compare(rectF.width(), f) < 0) {
             rectF.inset((-(f - rectF.width())) / 2.0f, 0.0f);
         }
@@ -249,28 +274,33 @@ public class FixedPagesView extends PagesView {
         return getCellsView().getItemCount();
     }
 
-    private Rect c(int i) {
-        return getCellsView().h(i);
+    /* renamed from: c */
+    private Rect m10048c(int i) {
+        return getCellsView().m1144h(i);
     }
 
-    private int b(int i, float f, float f2) {
+    /* renamed from: b */
+    private int m10040b(int i, float f, float f2) {
         return (int) ((((float) i) * f) * f2);
     }
 
-    private int c(int i, float f, float f2) {
+    /* renamed from: c */
+    private int m10045c(int i, float f, float f2) {
         return (int) ((((float) i) * f) * f2);
     }
 
-    private float a(int i, int i2, int i3, int i4, PageScaleType pageScaleType) {
-        switch (cq.a[pageScaleType.ordinal()]) {
+    /* renamed from: a */
+    private float m10029a(int i, int i2, int i3, int i4, PageScaleType pageScaleType) {
+        switch (cq.f7042a[pageScaleType.ordinal()]) {
             case 1:
-                return a(i, i3, pageScaleType);
+                return m10030a(i, i3, pageScaleType);
             default:
-                return Math.min(a(i, i3, pageScaleType), a(i2, i4, pageScaleType));
+                return Math.min(m10030a(i, i3, pageScaleType), m10030a(i2, i4, pageScaleType));
         }
     }
 
-    private float a(int i, int i2, PageScaleType pageScaleType) {
+    /* renamed from: a */
+    private float m10030a(int i, int i2, PageScaleType pageScaleType) {
         return i2 == Integer.MAX_VALUE ? 1.0f : ((float) i2) / ((float) i);
     }
 }

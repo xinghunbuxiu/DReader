@@ -2,32 +2,37 @@ package com.duokan.core.sys;
 
 import java.nio.ByteBuffer;
 
-class bg extends p {
-    final /* synthetic */ bd a;
-    private final av b;
-    private final at c;
-    private long d = 0;
+class bg extends C0353p {
+    /* renamed from: a */
+    final /* synthetic */ bd f700a;
+    /* renamed from: b */
+    private final av f701b;
+    /* renamed from: c */
+    private final at f702c;
+    /* renamed from: d */
+    private long f703d = 0;
 
-    public /* synthetic */ p a() {
-        return d();
+    /* renamed from: a */
+    public /* synthetic */ C0353p mo425a() {
+        return m983d();
     }
 
     public /* synthetic */ Object clone() {
-        return d();
+        return m983d();
     }
 
     public bg(bd bdVar, av avVar, at atVar) {
-        this.a = bdVar;
-        this.b = avVar;
-        this.c = atVar;
+        this.f700a = bdVar;
+        this.f701b = avVar;
+        this.f702c = atVar;
     }
 
     public int available() {
-        return (int) (this.c.b() - this.d);
+        return (int) (this.f702c.mo413b() - this.f703d);
     }
 
     public void close() {
-        this.b.c(this.c);
+        this.f701b.m926c(this.f702c);
     }
 
     public void mark(int i) {
@@ -38,25 +43,25 @@ class bg extends p {
     }
 
     public int read() {
-        long j = this.d;
+        long j = this.f703d;
         byte[] bArr = new byte[1];
-        int a = this.b.a(this.c, j, bArr, 0, bArr.length);
-        this.d = j + ((long) a);
+        int a = this.f701b.m914a(this.f702c, j, bArr, 0, bArr.length);
+        this.f703d = j + ((long) a);
         return a;
     }
 
     public int read(byte[] bArr) {
-        long j = this.d;
-        int a = this.b.a(this.c, j, bArr, 0, bArr.length);
-        this.d = j + ((long) a);
+        long j = this.f703d;
+        int a = this.f701b.m914a(this.f702c, j, bArr, 0, bArr.length);
+        this.f703d = j + ((long) a);
         return a;
     }
 
     public int read(byte[] bArr, int i, int i2) {
-        long j = this.d;
+        long j = this.f703d;
         ByteBuffer.wrap(bArr, i, i2);
-        int a = this.b.a(this.c, j, bArr, i, i2);
-        this.d = j + ((long) a);
+        int a = this.f701b.m914a(this.f702c, j, bArr, i, i2);
+        this.f703d = j + ((long) a);
         return a;
     }
 
@@ -64,34 +69,38 @@ class bg extends p {
     }
 
     public long skip(long j) {
-        long j2 = this.d;
-        long min = Math.min(j2 + j, this.c.b());
-        this.d = min;
+        long j2 = this.f703d;
+        long min = Math.min(j2 + j, this.f702c.mo413b());
+        this.f703d = min;
         return min - j2;
     }
 
     protected void finalize() {
         super.finalize();
-        if (this.c.a()) {
+        if (this.f702c.mo412a()) {
             close();
         }
     }
 
-    public bg d() {
-        bg bgVar = new bg(this.a, this.b, this.b.a(this.c));
-        bgVar.d = this.d;
+    /* renamed from: d */
+    public bg m983d() {
+        bg bgVar = new bg(this.f700a, this.f701b, this.f701b.m915a(this.f702c));
+        bgVar.f703d = this.f703d;
         return bgVar;
     }
 
-    public boolean b() {
-        return this.c.a();
+    /* renamed from: b */
+    public boolean mo427b() {
+        return this.f702c.mo412a();
     }
 
-    public long c() {
-        return this.c.b();
+    /* renamed from: c */
+    public long mo428c() {
+        return this.f702c.mo413b();
     }
 
-    public void a(long j) {
-        this.d = Math.max(0, Math.min(j, this.c.b()));
+    /* renamed from: a */
+    public void mo426a(long j) {
+        this.f703d = Math.max(0, Math.min(j, this.f702c.mo413b()));
     }
 }

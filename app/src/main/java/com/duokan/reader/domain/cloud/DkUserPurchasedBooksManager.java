@@ -1,33 +1,40 @@
 package com.duokan.reader.domain.cloud;
 
 import android.content.Context;
-
-import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.app.aj;
+import com.duokan.core.sys.UThread;
 import com.duokan.reader.DkApp;
-import com.duokan.reader.common.async.a.a;
-import com.duokan.reader.common.async.a.b;
+import com.duokan.reader.common.async.p035a.C0517a;
+import com.duokan.reader.common.async.p035a.C0518b;
+import com.duokan.reader.common.async.p035a.C0519c;
+import com.duokan.reader.domain.account.C0586j;
+import com.duokan.reader.domain.account.C0709k;
 import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.h;
-import com.duokan.reader.domain.account.i;
-
+import com.duokan.reader.domain.account.al;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class DkUserPurchasedBooksManager implements ah {
-    private static final ai a = new ai();
-    private final Context b;
-    private final i c;
-    private final h d;
-    private final CopyOnWriteArrayList e = new CopyOnWriteArrayList();
-    private final b f = new b();
-    private final b g = new b();
-    private ct h = new ct();
+public class DkUserPurchasedBooksManager implements ai {
+    /* renamed from: a */
+    private static final aj<DkUserPurchasedBooksManager> f3601a = new aj();
+    /* renamed from: b */
+    private final Context f3602b;
+    /* renamed from: c */
+    private final C0709k f3603c;
+    /* renamed from: d */
+    private final C0586j f3604d;
+    /* renamed from: e */
+    private final CopyOnWriteArrayList<cf> f3605e = new CopyOnWriteArrayList();
+    /* renamed from: f */
+    private final C0518b<Void> f3606f = new C0518b();
+    /* renamed from: g */
+    private final C0518b<Void> f3607g = new C0518b();
+    /* renamed from: h */
+    private ch f3608h = new ch();
 
     class DkUserPurchasedBooksInfo implements Serializable {
         public String mAccountName;
@@ -43,167 +50,197 @@ public class DkUserPurchasedBooksManager implements ah {
         }
     }
 
-    private DkUserPurchasedBooksManager(Context context, i iVar) {
-        this.b = context;
-        this.c = iVar;
-        this.d = new bm(this);
-        DkApp.get().runWhenAppReady(new bv(this));
+    private DkUserPurchasedBooksManager(Context context, C0709k c0709k) {
+        this.f3602b = context;
+        this.f3603c = c0709k;
+        this.f3604d = new bd(this);
+        DkApp.get().runWhenAppReady(new bk(this));
     }
 
-    public static void a(Context context, i iVar) {
-        a.a(new DkUserPurchasedBooksManager(context, iVar));
+    /* renamed from: a */
+    public static void m5033a(Context context, C0709k c0709k) {
+        f3601a.m709a(new DkUserPurchasedBooksManager(context, c0709k));
     }
 
-    public static DkUserPurchasedBooksManager a() {
-        return (DkUserPurchasedBooksManager) a.a();
+    /* renamed from: a */
+    public static DkUserPurchasedBooksManager m5029a() {
+        return (DkUserPurchasedBooksManager) f3601a.m707a();
     }
 
-    public void a(cr crVar) {
-        if (crVar != null && !this.e.contains(crVar)) {
-            this.e.add(crVar);
+    /* renamed from: a */
+    public void m5056a(cf cfVar) {
+        if (cfVar != null && !this.f3605e.contains(cfVar)) {
+            this.f3605e.add(cfVar);
         }
     }
 
-    public void b(cr crVar) {
-        if (crVar != null) {
-            this.e.remove(crVar);
+    /* renamed from: b */
+    public void m5065b(cf cfVar) {
+        if (cfVar != null) {
+            this.f3605e.remove(cfVar);
         }
     }
 
-    public List b() {
-        return this.h.a();
+    /* renamed from: b */
+    public List<DkCloudPurchasedBook> m5063b() {
+        return this.f3608h.m5396a();
     }
 
-    public List c() {
-        return this.h.b();
+    /* renamed from: c */
+    public List<DkCloudPurchasedBook> m5068c() {
+        return this.f3608h.m5400b();
     }
 
-    public boolean d() {
-        return this.h.d();
+    /* renamed from: d */
+    public boolean m5070d() {
+        return this.f3608h.m5403d();
     }
 
-    public DkCloudPurchasedBook a(String str) {
-        return this.h.a(str);
+    /* renamed from: a */
+    public DkCloudPurchasedBook m5052a(String str) {
+        return this.f3608h.m5395a(str);
     }
 
-    public DkCloudPurchasedBook b(String str) {
-        return this.h.b(str);
+    /* renamed from: b */
+    public DkCloudPurchasedBook m5062b(String str) {
+        return this.f3608h.m5399b(str);
     }
 
-    public void a(DkCloudPurchasedBook dkCloudPurchasedBook) {
-        this.c.a(PersonalAccount.class, new bw(this, dkCloudPurchasedBook));
+    /* renamed from: a */
+    public void m5055a(DkCloudPurchasedBook dkCloudPurchasedBook) {
+        this.f3603c.m3497a(PersonalAccount.class, new bl(this, dkCloudPurchasedBook));
     }
 
-    public DkCloudRedeemBenefit c(String str) {
-        DkCloudPurchasedBook a = a(str);
+    /* renamed from: c */
+    public DkCloudRedeemBenefit m5067c(String str) {
+        DkCloudPurchasedBook a = m5052a(str);
         if (a != null) {
             return a.getRedeemMessage();
         }
         return null;
     }
 
-    public void d(String str) {
-        a(new bz(this, str));
+    /* renamed from: d */
+    public void m5069d(String str) {
+        m5053a(new bo(this, str));
     }
 
-    public void a(a aVar) {
-        TaskHandler.PostTask(new cb(this, aVar));
+    /* renamed from: a */
+    public void m5053a(C0517a<Void> c0517a) {
+        UThread.post(new bq(this, c0517a));
     }
 
-    public void b(a aVar) {
-        TaskHandler.PostTask(new cd(this, aVar));
+    /* renamed from: b */
+    public void m5064b(C0517a<Void> c0517a) {
+        UThread.post(new bs(this, c0517a));
     }
 
-    public void a(boolean z, a aVar) {
+    /* renamed from: a */
+    public void m5059a(boolean z, C0517a<Void> c0517a) {
         if (z) {
-            a(aVar);
+            m5053a((C0517a) c0517a);
         } else {
-            b(aVar);
+            m5064b((C0517a) c0517a);
         }
     }
 
-    public void a(String str, a aVar) {
-        if (!this.c.a(PersonalAccount.class)) {
-            aVar.a(-1, "");
+    /* renamed from: a */
+    public void m5057a(String str, C0517a<Void> c0517a) {
+        if (!this.f3603c.m3500a(PersonalAccount.class)) {
+            c0517a.mo729a(-1, "");
         }
-        this.c.a(PersonalAccount.class, new cg(this, str, aVar));
+        this.f3603c.m3497a(PersonalAccount.class, new bv(this, str, c0517a));
     }
 
-    public void a(boolean z, boolean z2, a aVar) {
-        if (z || this.c.a(PersonalAccount.class)) {
-            this.c.a(PersonalAccount.class, new cj(this, z, z2, aVar));
+    /* renamed from: a */
+    public void m5061a(boolean z, boolean z2, C0517a<Void> c0517a) {
+        if (z || this.f3603c.m3500a(PersonalAccount.class)) {
+            this.f3603c.m3497a(PersonalAccount.class, new by(this, z, z2, c0517a));
         } else {
-            aVar.a(-1, "");
+            c0517a.mo729a(-1, "");
         }
     }
 
-    public void a(boolean z) {
-        a(z, true);
+    /* renamed from: a */
+    public void m5058a(boolean z) {
+        m5060a(z, true);
     }
 
-    public void a(boolean z, boolean z2) {
-        b(z, z2, c.a);
+    /* renamed from: a */
+    public void m5060a(boolean z, boolean z2) {
+        m5066b(z, z2, C0519c.f1752a);
     }
 
-    public void b(boolean z, boolean z2, a aVar) {
-        if (z || this.c.a(PersonalAccount.class)) {
-            this.c.a(PersonalAccount.class, new cl(this, z2, aVar, z));
+    /* renamed from: b */
+    public void m5066b(boolean z, boolean z2, C0517a c0517a) {
+        if (z || this.f3603c.m3500a(PersonalAccount.class)) {
+            this.f3603c.m3497a(PersonalAccount.class, new ca(this, z2, c0517a, z));
         } else {
-            aVar.a(-1, "");
+            c0517a.mo729a(-1, "");
         }
     }
 
-    public void a(a aVar, String... strArr) {
-        this.c.a(PersonalAccount.class, new bn(this, strArr, aVar));
+    /* renamed from: a */
+    public void m5054a(C0517a<Void> c0517a, String... strArr) {
+        this.f3603c.m3497a(PersonalAccount.class, new be(this, strArr, c0517a));
     }
 
-    public void e(String str) {
-        if (this.c.a(PersonalAccount.class) && this.h.c(str)) {
-            b(str, c.a);
+    /* renamed from: e */
+    public void m5071e(String str) {
+        if (this.f3603c.m3500a(PersonalAccount.class) && this.f3608h.m5402c(str)) {
+            m5042b(str, C0519c.f1752a);
         }
     }
 
-    private void b(String str, a aVar) {
-        this.c.a(PersonalAccount.class, new br(this, str, aVar));
+    /* renamed from: b */
+    private void m5042b(String str, C0517a<Void> c0517a) {
+        this.f3603c.m3497a(PersonalAccount.class, new bh(this, str, c0517a));
     }
 
-    private List a(cv cvVar) {
-        List arrayList = new ArrayList(cvVar.queryItems());
-        Collections.sort(arrayList, new cp());
+    /* renamed from: a */
+    private List<DkCloudPurchasedBook> m5032a(cj cjVar) {
+        List<DkCloudPurchasedBook> arrayList = new ArrayList(cjVar.queryItems());
+        Collections.sort(arrayList, new cd());
         return arrayList;
     }
 
-    private List b(cv cvVar) {
-        List arrayList = new ArrayList(cvVar.queryCorePropertiesOfItems());
-        Collections.sort(arrayList, new cp());
+    /* renamed from: b */
+    private List<DkCloudPurchasedBook> m5041b(cj cjVar) {
+        List<DkCloudPurchasedBook> arrayList = new ArrayList(cjVar.queryCorePropertiesOfItems());
+        Collections.sort(arrayList, new cd());
         return arrayList;
     }
 
-    private void f() {
-        for (int i = 0; i < this.e.size(); i++) {
-            ((cr) this.e.get(i)).b();
+    /* renamed from: f */
+    private void m5048f() {
+        for (int i = 0; i < this.f3605e.size(); i++) {
+            ((cf) this.f3605e.get(i)).mo962b();
         }
     }
 
-    private void a(List list) {
-        for (int i = 0; i < this.e.size(); i++) {
-            ((cr) this.e.get(i)).a(list);
+    /* renamed from: a */
+    private void m5037a(List<DkCloudStoreBook> list) {
+        for (int i = 0; i < this.f3605e.size(); i++) {
+            ((cf) this.f3605e.get(i)).mo960a((List) list);
         }
     }
 
-    private void g() {
-        for (int i = 0; i < this.e.size(); i++) {
-            ((cr) this.e.get(i)).d();
+    /* renamed from: g */
+    private void m5050g() {
+        for (int i = 0; i < this.f3605e.size(); i++) {
+            ((cf) this.f3605e.get(i)).mo965d();
         }
     }
 
-    private void a(String[] strArr) {
-        for (int i = 0; i < this.e.size(); i++) {
-            ((cr) this.e.get(i)).a(strArr);
+    /* renamed from: a */
+    private void m5038a(String[] strArr) {
+        for (int i = 0; i < this.f3605e.size(); i++) {
+            ((cf) this.f3605e.get(i)).mo961a(strArr);
         }
     }
 
-    private static ab h() {
-        return new ab(i.f().b(PersonalAccount.class));
+    /* renamed from: h */
+    private static al m5051h() {
+        return new al(C0709k.m3476a().m3502b(PersonalAccount.class));
     }
 }

@@ -1,36 +1,23 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.c.j;
-import com.duokan.reader.common.webservices.b;
-import com.duokan.reader.common.webservices.duokan.o;
-import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.cloud.PersonalPrefs;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.reader.ui.store.bv;
+import java.util.concurrent.Callable;
 
-class gp extends hh {
-    final ab a = new ab(i.f().b(PersonalAccount.class));
-    int b = 0;
-    final /* synthetic */ fl c;
-    private b e = null;
+class gp implements Callable<ActivatedController> {
+    /* renamed from: a */
+    final /* synthetic */ go f8617a;
 
-    gp(fl flVar) {
-        this.c = flVar;
-        super(flVar);
+    gp(go goVar) {
+        this.f8617a = goVar;
     }
 
-    protected void onSessionTry() {
-        this.e = new o(this, this.a).a();
+    public /* synthetic */ Object call() {
+        return m11936a();
     }
 
-    protected void onSessionSucceeded() {
-        if (PersonalPrefs.a().a(this.a) && this.e.b == 0) {
-            this.b = ((Integer) this.e.a).intValue();
-        }
-        this.c.o.setText(this.c.getString(j.personal__account_summary_view__my_reward) + this.b);
-    }
-
-    protected void onSessionFailed() {
-        this.c.o.setText(this.c.getString(j.personal__account_summary_view__my_reward) + this.b);
+    /* renamed from: a */
+    public ActivatedController m11936a() {
+        return bv.m15357b(this.f8617a.f8616a.getContext());
     }
 }

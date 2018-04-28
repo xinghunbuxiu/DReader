@@ -1,23 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
-import android.util.AttributeSet;
+class ni implements nr {
+    /* renamed from: a */
+    final /* synthetic */ nh f10677a;
 
-import com.duokan.c.f;
-import com.duokan.core.ui.TabBarView;
-
-public class ni extends TabBarView {
-    public ni(Context context) {
-        this(context, null);
+    ni(nh nhVar) {
+        this.f10677a = nhVar;
     }
 
-    public ni(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet);
-        setIndicatorGravity(119);
-        setIndicatorDrawable(new nj(this, getResources().getDrawable(f.reading__toc_view__bg2), getResources().getDrawable(f.reading__toc_view__bg)));
-    }
-
-    public void a(float f) {
-        super.d(Math.round(((float) getPaddingLeft()) + (((float) ((getWidth() - getPaddingLeft()) - getPaddingRight())) * f)));
+    /* renamed from: a */
+    public void mo2449a() {
+        if (this.f10677a.mo2447e()) {
+            this.f10677a.f10668b.getPagesFrameView().scrollTo(-this.f10677a.f10671e.getWidth(), 0);
+            this.f10677a.m14729a(this.f10677a.f10668b.getPagesFrameView().getScrollX());
+        }
     }
 }

@@ -1,60 +1,27 @@
 package com.duokan.reader.ui.general;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import com.duokan.reader.ui.general.PagesController.AnimationType;
 
-public class el extends Drawable {
-    private Paint a = new Paint();
-    private int b = 80;
+/* synthetic */ class el {
+    /* renamed from: a */
+    static final /* synthetic */ int[] f7154a = new int[AnimationType.values().length];
 
-    public el() {
-        this.a.setAntiAlias(true);
-    }
-
-    public void a(float f) {
-        this.a.setStrokeWidth(f);
-    }
-
-    public void a(int i) {
-        this.a.setColor(i);
-    }
-
-    public void b(int i) {
-        this.b = i;
-    }
-
-    public void a(Canvas canvas, Rect rect, int i) {
-        setBounds(rect);
-        b(i);
-        draw(canvas);
-    }
-
-    public void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        if ((this.b & 80) == 80) {
-            canvas.drawLine((float) bounds.left, (float) bounds.bottom, (float) bounds.right, (float) bounds.bottom, this.a);
-        } else if ((this.b & 48) == 48) {
-            canvas.drawLine((float) bounds.left, (float) bounds.top, (float) bounds.right, (float) bounds.top, this.a);
-        } else if ((this.b & 3) == 3) {
-            canvas.drawLine((float) bounds.left, (float) bounds.top, (float) bounds.left, (float) bounds.bottom, this.a);
-        } else if ((this.b & 5) == 5) {
-            canvas.drawLine((float) bounds.right, (float) bounds.top, (float) bounds.right, (float) bounds.bottom, this.a);
-        } else {
-            canvas.drawLine((float) bounds.left, (float) bounds.top, (float) bounds.right, (float) bounds.bottom, this.a);
+    static {
+        try {
+            f7154a[AnimationType.IN.ordinal()] = 1;
+        } catch (NoSuchFieldError e) {
         }
-    }
-
-    public void setAlpha(int i) {
-        this.a.setAlpha(i);
-    }
-
-    public void setColorFilter(ColorFilter colorFilter) {
-    }
-
-    public int getOpacity() {
-        return 0;
+        try {
+            f7154a[AnimationType.OUT.ordinal()] = 2;
+        } catch (NoSuchFieldError e2) {
+        }
+        try {
+            f7154a[AnimationType.DOWN.ordinal()] = 3;
+        } catch (NoSuchFieldError e3) {
+        }
+        try {
+            f7154a[AnimationType.UP.ordinal()] = 4;
+        } catch (NoSuchFieldError e4) {
+        }
     }
 }

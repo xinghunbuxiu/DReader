@@ -1,20 +1,22 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.b;
+import com.duokan.reader.common.async.p035a.C0517a;
 
-class dh implements b {
-    final /* synthetic */ dg a;
+class dh implements C0517a<Void> {
+    /* renamed from: a */
+    final /* synthetic */ dg f3876a;
 
     dh(dg dgVar) {
-        this.a = dgVar;
+        this.f3876a = dgVar;
     }
 
-    public void a(a aVar) {
-        this.a.b.a.c.b(this.a.b.a.a, this.a.b.a.b);
+    /* renamed from: a */
+    public void m5434a(Void voidR) {
+        this.f3876a.f3875d.m5100a(this.f3876a.f3872a, this.f3876a.f3873b, this.f3876a.f3874c);
     }
 
-    public void a(a aVar, String str) {
-        this.a.b.a.b.a(-1, "");
+    /* renamed from: a */
+    public void mo729a(int i, String str) {
+        this.f3876a.f3874c.mo729a(i, str);
     }
 }

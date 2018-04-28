@@ -1,86 +1,39 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.TextView;
+import com.duokan.core.sys.UThread;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.bookshelf.it;
+import com.duokan.reader.domain.micloud.C1068i;
 
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.c.j;
-import com.duokan.core.app.IFeature;
-import com.duokan.core.ui.UTools;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.domain.account.AccountType;
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.cloud.PersonalPrefs;
+class dh implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ C0800c f6331a;
+    /* renamed from: b */
+    final /* synthetic */ boolean f6332b;
+    /* renamed from: c */
+    final /* synthetic */ int f6333c;
+    /* renamed from: d */
+    final /* synthetic */ de f6334d;
 
-public class dh extends gx {
-    private final ReaderFeature a = ((ReaderFeature) getContext().queryFeature(ReaderFeature.class));
-    private final cr b = ((cr) getContext().queryFeature(cr.class));
-    private final cu c = ((cu) getContext().queryFeature(cu.class));
-    private final TextView d;
-    private final TextView e;
-    private final View f;
-
-    public dh(IFeature featrue) {
-        super(featrue);
-        View inflate = LayoutInflater.from(getContext()).inflate(h.bookshelf__bookshelf_menu_view, null);
-        this.d = (TextView) inflate.findViewById(g.bookshelf__bookshelf_menu_view__show_books);
-        TextView textView = (TextView) inflate.findViewById(g.bookshelf__bookshelf_menu_view__show_sign_in);
-        this.e = (TextView) inflate.findViewById(g.bookshelf__bookshelf_menu_view__purchased_books_text);
-        this.f = inflate.findViewById(g.bookshelf__bookshelf_menu_view__purchased_books_dot);
-        inflate.findViewById(g.bookshelf__bookshelf_menu_view__purchased_books).setOnClickListener(new di(this));
-        if (this.b.e()) {
-            Drawable drawable = getResources().getDrawable(f.bookshelf__bookshelf_menu_view__show);
-            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-            this.d.setCompoundDrawables(null, drawable, null, null);
-            this.d.setTextColor(Color.rgb(240, 130, 24));
-        }
-        this.d.setOnClickListener(new dl(this));
-        inflate.findViewById(g.bookshelf__bookshelf_menu_view__import_local_books).setOnClickListener(new dm(this));
-        inflate.findViewById(g.bookshelf__bookshelf_menu_view__show_wifi).setOnClickListener(new
-        do (this));
-        textView.setOnClickListener(new dp(this));
-        inflate.findViewById(g.bookshelf__bookshelf_menu_view__bookshelf_style).setOnClickListener(new dq(this));
-        a(inflate);
-        a(UTools.getMinimumHeight(getContext(), 65.0f));
+    dh(de deVar, C0800c c0800c, boolean z, int i) {
+        this.f6334d = deVar;
+        this.f6331a = c0800c;
+        this.f6332b = z;
+        this.f6333c = i;
     }
 
-    private void c() {
-        if (this.b.e()) {
-            Drawable drawable = getResources().getDrawable(f.bookshelf__bookshelf_menu_view__show);
-            drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-            this.d.setCompoundDrawables(null, drawable, null, null);
-            this.d.setTextColor(Color.rgb(240, 130, 24));
-            return;
-        }
-        drawable = getResources().getDrawable(f.bookshelf__bookshelf_menu_view__hide);
-        drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-        this.d.setCompoundDrawables(null, drawable, null, null);
-        this.d.setTextColor(Color.rgb(141, 141, 141));
-    }
-
-    protected void onActive(boolean z) {
-        super.onActive(z);
-        if (z && !PersonalPrefs.a().q()) {
-            PersonalPrefs.a().e(true);
-        }
-        if (i.f().a().equals(AccountType.ANONYMOUS)) {
-            this.e.setText(j.surfing__shared__purchased);
+    public void run() {
+        boolean h;
+        int i = 0;
+        C1068i b = it.m4692a().m4726b(this.f6331a.m4222e());
+        if (b != null) {
+            h = b.m2293h();
+            i = Math.round((((float) b.m8210F()) / ((float) b.m8207C())) * 10000.0f);
         } else {
-            this.e.setText(j.bookshelf__add_book_menu_view__to_own);
+            h = false;
         }
-        if (PersonalPrefs.a().w()) {
-            this.f.setVisibility(0);
+        if (this.f6332b != h || this.f6333c != i) {
+            UThread.runOnThread(new di(this, h, i));
         }
-    }
-
-    public void a(gx gxVar) {
-        gxVar.a(f());
-        gxVar.a(e());
-        a(new dr(this, gxVar));
-        requestBack();
     }
 }

@@ -1,17 +1,17 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.p;
-import com.duokan.core.sys.q;
+import com.duokan.core.p029c.C0326b;
 
-class hf {
-    public gz a = null;
-    public String b = null;
-    public q c = null;
-    public p d = null;
-    public boolean e = false;
-    final /* synthetic */ hd f;
+class hf implements C0326b<C0800c> {
+    /* renamed from: a */
+    final /* synthetic */ hc f3299a;
 
-    hf(hd hdVar) {
-        this.f = hdVar;
+    hf(hc hcVar) {
+        this.f3299a = hcVar;
+    }
+
+    /* renamed from: a */
+    public boolean m4632a(C0800c c0800c) {
+        return c0800c.aq() == 3;
     }
 }

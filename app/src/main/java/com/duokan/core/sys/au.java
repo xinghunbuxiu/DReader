@@ -3,66 +3,78 @@ package com.duokan.core.sys;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.text.TextUtils;
-
-import com.duokan.core.a.n;
-
+import com.duokan.core.p026a.C0285n;
 import java.util.Locale;
 import java.util.regex.Pattern;
 
 abstract class au {
-    private static final Pattern a = Pattern.compile("-");
+    /* renamed from: a */
+    private static final Pattern f655a = Pattern.compile("-");
 
-    public static Cursor a(n nVar, String str, String... strArr) {
-        return nVar.a(String.format(Locale.getDefault(), "SELECT %2$s FROM %1$s WHERE %3$s='%4$s' ORDER BY %5$s ASC", new Object[]{"repositories", a(strArr), "mount_uri", str, "repo_name"}), new String[0]);
+    /* renamed from: a */
+    public static Cursor m888a(C0285n c0285n, String str, String... strArr) {
+        return c0285n.m670a(String.format(Locale.getDefault(), "SELECT %2$s FROM %1$s WHERE %3$s='%4$s' ORDER BY %5$s ASC", new Object[]{"repositories", m890a(strArr), "mount_uri", str, "repo_name"}), new String[0]);
     }
 
-    public static void a(n nVar, ContentValues contentValues) {
-        nVar.a("repositories", null, contentValues, 5);
+    /* renamed from: a */
+    public static void m892a(C0285n c0285n, ContentValues contentValues) {
+        c0285n.m669a("repositories", null, contentValues, 5);
     }
 
-    public static void a(n nVar) {
-        nVar.a(String.format(Locale.getDefault(), "CREATE TABLE IF NOT EXISTS %1$s(%2$s TEXT PRIMARY KEY, %3$s TEXT, %4$s TEXT UNIQUE)", new Object[]{"repositories", "repo_name", "physical_uri", "mount_uri"}));
+    /* renamed from: a */
+    public static void m891a(C0285n c0285n) {
+        c0285n.m673a(String.format(Locale.getDefault(), "CREATE TABLE IF NOT EXISTS %1$s(%2$s TEXT PRIMARY KEY, %3$s TEXT, %4$s TEXT UNIQUE)", new Object[]{"repositories", "repo_name", "physical_uri", "mount_uri"}));
     }
 
-    public static void b(n nVar) {
-        nVar.a(String.format(Locale.getDefault(), "CREATE TABLE IF NOT EXISTS %1$s(%2$s TEXT PRIMARY KEY, %3$s TEXT UNIQUE, %4$s INTEGER, %5$s INTEGER, %6$s INTEGER, %7$s INTEGER, %8$s TEXT, %9$s INTEGER, %10$s TEXT)", new Object[]{"files", "storage_uri", "space_uri", "file_size", "creation_time", "last_access_time", "last_write_time", "owner", "attributes", "metadata"}));
+    /* renamed from: b */
+    public static void m897b(C0285n c0285n) {
+        c0285n.m673a(String.format(Locale.getDefault(), "CREATE TABLE IF NOT EXISTS %1$s(%2$s TEXT PRIMARY KEY, %3$s TEXT UNIQUE, %4$s INTEGER, %5$s INTEGER, %6$s INTEGER, %7$s INTEGER, %8$s TEXT, %9$s INTEGER, %10$s TEXT)", new Object[]{"files", "storage_uri", "space_uri", "file_size", "creation_time", "last_access_time", "last_write_time", "owner", "attributes", "metadata"}));
     }
 
-    public static Cursor b(n nVar, String str, String... strArr) {
-        return nVar.a(String.format(Locale.getDefault(), "SELECT %2$s FROM %1$s WHERE %3$s='%4$s' ORDER BY %5$s ASC", new Object[]{"files", a(strArr), "storage_uri", str, "storage_uri"}), new String[0]);
+    /* renamed from: b */
+    public static Cursor m896b(C0285n c0285n, String str, String... strArr) {
+        return c0285n.m670a(String.format(Locale.getDefault(), "SELECT %2$s FROM %1$s WHERE %3$s='%4$s' ORDER BY %5$s ASC", new Object[]{"files", m890a(strArr), "storage_uri", str, "storage_uri"}), new String[0]);
     }
 
-    public static Cursor c(n nVar, String str, String... strArr) {
-        return nVar.a(String.format(Locale.getDefault(), "SELECT %2$s FROM %1$s WHERE %3$s GLOB '%4$s' ORDER BY %5$s ASC", new Object[]{"files", a(strArr), "storage_uri", str, "storage_uri"}), new String[0]);
+    /* renamed from: c */
+    public static Cursor m899c(C0285n c0285n, String str, String... strArr) {
+        return c0285n.m670a(String.format(Locale.getDefault(), "SELECT %2$s FROM %1$s WHERE %3$s GLOB '%4$s' ORDER BY %5$s ASC", new Object[]{"files", m890a(strArr), "storage_uri", str, "storage_uri"}), new String[0]);
     }
 
-    public static void a(n nVar, String str) {
-        nVar.a(String.format(Locale.getDefault(), "DELETE FROM %1$s WHERE %2$s='%3$s'", new Object[]{"files", "storage_uri", str}));
+    /* renamed from: a */
+    public static void m893a(C0285n c0285n, String str) {
+        c0285n.m673a(String.format(Locale.getDefault(), "DELETE FROM %1$s WHERE %2$s='%3$s'", new Object[]{"files", "storage_uri", str}));
     }
 
-    public static void b(n nVar, ContentValues contentValues) {
-        nVar.b("files", null, contentValues);
+    /* renamed from: b */
+    public static void m898b(C0285n c0285n, ContentValues contentValues) {
+        c0285n.m675b("files", null, contentValues);
     }
 
-    public static void a(n nVar, String str, ContentValues contentValues) {
-        if (nVar.a("files", contentValues, String.format(Locale.getDefault(), "%1$s='%2$s'", new Object[]{"storage_uri", str}), null) != 1) {
+    /* renamed from: a */
+    public static void m894a(C0285n c0285n, String str, ContentValues contentValues) {
+        if (c0285n.m666a("files", contentValues, String.format(Locale.getDefault(), "%1$s='%2$s'", new Object[]{"storage_uri", str}), null) != 1) {
             throw new IllegalArgumentException();
         }
     }
 
-    public static void c(n nVar) {
-        nVar.a(String.format(Locale.getDefault(), "CREATE TABLE IF NOT EXISTS %1$s(%2$s TEXT PRIMARY KEY, %3$s INTEGER, %4$s INTEGER, %5$s INTEGER)", new Object[]{"spaces", "uri", "offset", "size", "state"}));
+    /* renamed from: c */
+    public static void m900c(C0285n c0285n) {
+        c0285n.m673a(String.format(Locale.getDefault(), "CREATE TABLE IF NOT EXISTS %1$s(%2$s TEXT PRIMARY KEY, %3$s INTEGER, %4$s INTEGER, %5$s INTEGER)", new Object[]{"spaces", "uri", "offset", "size", "state"}));
     }
 
-    public static Cursor d(n nVar, String str, String... strArr) {
-        return nVar.a(String.format(Locale.getDefault(), "SELECT %2$s FROM %1$s WHERE %3$s GLOB '%4$s' ORDER BY %5$s ASC", new Object[]{"spaces", a(strArr), "uri", str, "offset"}), new String[0]);
+    /* renamed from: d */
+    public static Cursor m902d(C0285n c0285n, String str, String... strArr) {
+        return c0285n.m670a(String.format(Locale.getDefault(), "SELECT %2$s FROM %1$s WHERE %3$s GLOB '%4$s' ORDER BY %5$s ASC", new Object[]{"spaces", m890a(strArr), "uri", str, "offset"}), new String[0]);
     }
 
-    public static void c(n nVar, ContentValues contentValues) {
-        nVar.b("spaces", null, contentValues);
+    /* renamed from: c */
+    public static void m901c(C0285n c0285n, ContentValues contentValues) {
+        c0285n.m675b("spaces", null, contentValues);
     }
 
-    public static long[] a(String str) {
+    /* renamed from: a */
+    public static long[] m895a(String str) {
         int i = 0;
         if (TextUtils.isEmpty(str)) {
             return new long[0];
@@ -71,7 +83,7 @@ abstract class au {
         if (TextUtils.isEmpty(substring)) {
             return new long[0];
         }
-        String[] split = a.split(substring);
+        String[] split = f655a.split(substring);
         long[] jArr = new long[split.length];
         while (i < split.length) {
             jArr[i] = Long.parseLong(split[i]);
@@ -80,7 +92,8 @@ abstract class au {
         return jArr;
     }
 
-    public static String a(String str, long... jArr) {
+    /* renamed from: a */
+    public static String m889a(String str, long... jArr) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(str);
         stringBuilder.append('/');
@@ -97,7 +110,8 @@ abstract class au {
         return stringBuilder.toString();
     }
 
-    private static String a(String... strArr) {
+    /* renamed from: a */
+    private static String m890a(String... strArr) {
         if (strArr.length < 1) {
             return "*";
         }

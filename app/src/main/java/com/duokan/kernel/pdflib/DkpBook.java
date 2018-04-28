@@ -1,25 +1,41 @@
 package com.duokan.kernel.pdflib;
 
-import com.duokan.core.diagnostic.WebLog;
+import com.duokan.core.diagnostic.C0328a;
 import com.duokan.core.sys.ah;
 import com.duokan.kernel.DkFlowPosition;
 import com.duokan.kernel.DkFlowRenderOption;
 import com.duokan.kernel.DkNative;
 import com.duokan.kernel.DkRenderInfo;
-import com.duokan.reader.domain.document.Document_a.o;
-
+import com.duokan.reader.domain.document.p045a.C0915o;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
 
 public class DkpBook extends DkNative {
-    private final ArrayList mDkpFixedPages = new ArrayList();
-    private final LinkedList mDkpFlowPageList = new LinkedList();
+    private final ArrayList<DkpPage> mDkpFixedPages = new ArrayList();
+    private final LinkedList<DkpPageEx> mDkpFlowPageList = new LinkedList();
     private final long mDkpHandle;
     private final int[] mPageHeights;
     private final int[] mPageWidths;
     private final Object mParseLock = new Object();
+
+    /* renamed from: com.duokan.kernel.pdflib.DkpBook$1 */
+    class C04071 implements Runnable {
+        C04071() {
+        }
+
+        public void run() {
+            Iterator it = DkpBook.this.mDkpFixedPages.iterator();
+            while (it.hasNext()) {
+                DkpPage dkpPage = (DkpPage) it.next();
+                C0328a c = C0328a.m757c();
+                boolean z = dkpPage == null || (dkpPage.mRefCount == 0 && dkpPage.mReleased);
+                c.m764b(z);
+            }
+            C0915o.m6074c().m6075a().closeBook(DkpBook.this);
+        }
+    }
 
     private native DkpPage getPage(long j);
 
@@ -54,18 +70,7 @@ public class DkpBook extends DkNative {
 
     public void close() {
         if (this.mDkpHandle != 0) {
-            ah.future(new Runnable() {
-                public void run() {
-                    Iterator it = DkpBook.this.mDkpFixedPages.iterator();
-                    while (it.hasNext()) {
-                        DkpPage dkpPage = (DkpPage) it.next();
-                        WebLog c = WebLog.c();
-                        boolean z = dkpPage == null || (dkpPage.mRefCount == 0 && dkpPage.mReleased);
-                        c.b(z);
-                    }
-                    o.c().a().closeBook(DkpBook.this);
-                }
-            }, DkpBook.class.toString());
+            ah.m866a(new C04071(), DkpBook.class.toString());
         }
     }
 
@@ -108,16 +113,16 @@ public class DkpBook extends DkNative {
                 return dkpPage;
             }
         }
-        WebLog.c().a(dkpPage.mReleased);
+        C0328a.m757c().m762a(dkpPage.mReleased);
         return dkpPage;
     }
 
     public synchronized void releaseFixedPage(long j) {
         final DkpPage dkpPage = (DkpPage) this.mDkpFixedPages.get(((int) j) - 1);
-        WebLog.c().b(dkpPage.mRefCount > 0);
+        C0328a.m757c().m764b(dkpPage.mRefCount > 0);
         dkpPage.mRefCount--;
         if (dkpPage.mRefCount == 0) {
-            ah.future(new Runnable() {
+            ah.m866a(new Runnable() {
                 public void run() {
                     if (!dkpPage.mReleased && dkpPage.mRefCount <= 0) {
                         synchronized (dkpPage) {

@@ -6,17 +6,18 @@ import android.view.View.OnTouchListener;
 import android.widget.FrameLayout;
 
 class cr implements OnTouchListener {
-    final /* synthetic */ TabBarView a;
+    /* renamed from: a */
+    final /* synthetic */ TabBarView f1091a;
 
     cr(TabBarView tabBarView) {
-        this.a = tabBarView;
+        this.f1091a = tabBarView;
     }
 
     public boolean onTouch(View view, MotionEvent motionEvent) {
         if (motionEvent.getActionMasked() == 0) {
-            this.a.b(this.a.a((FrameLayout) view)).setPressed(true);
+            this.f1091a.m1321b(this.f1091a.m1304a((FrameLayout) view)).setPressed(true);
         } else if (motionEvent.getActionMasked() == 1) {
-            this.a.b(this.a.a((FrameLayout) view)).setPressed(false);
+            this.f1091a.m1321b(this.f1091a.m1304a((FrameLayout) view)).setPressed(false);
         }
         return false;
     }

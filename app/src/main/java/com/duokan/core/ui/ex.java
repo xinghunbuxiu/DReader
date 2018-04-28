@@ -3,13 +3,14 @@ package com.duokan.core.ui;
 import com.duokan.core.ui.Scrollable.ScrollState;
 
 class ex implements Runnable {
-    final /* synthetic */ ev a;
+    /* renamed from: a */
+    final /* synthetic */ ev f1234a;
 
     ex(ev evVar) {
-        this.a = evVar;
+        this.f1234a = evVar;
     }
 
     public void run() {
-        this.a.a(ScrollState.IDLE);
+        this.f1234a.m1416a(ScrollState.IDLE);
     }
 }

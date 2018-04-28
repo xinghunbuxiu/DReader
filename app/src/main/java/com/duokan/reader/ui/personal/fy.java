@@ -1,21 +1,9 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.ActivatedController;
+public interface fy {
+    /* renamed from: a */
+    int mo1942a();
 
-import java.util.concurrent.Callable;
-
-class fy implements Callable {
-    final /* synthetic */ fw a;
-
-    fy(fw fwVar) {
-        this.a = fwVar;
-    }
-
-    public /* synthetic */ Object call() {
-        return a();
-    }
-
-    public ActivatedController a() {
-        return new hw(this.a.a.getContext());
-    }
+    /* renamed from: a */
+    void mo1943a(int i);
 }

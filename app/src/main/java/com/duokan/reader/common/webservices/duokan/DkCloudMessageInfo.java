@@ -1,7 +1,6 @@
 package com.duokan.reader.common.webservices.duokan;
 
 import com.mipay.sdk.Mipay;
-
 import org.json.JSONObject;
 
 public class DkCloudMessageInfo extends DkStoreItemInfo {

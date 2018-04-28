@@ -1,15 +1,21 @@
 package com.duokan.reader.domain.document.epub;
 
 public interface ae {
-    ap a(s sVar, ap apVar);
+    /* renamed from: a */
+    ap mo1059a(C0952s c0952s, ap apVar);
 
-    av a(aw awVar, boolean z);
+    /* renamed from: a */
+    av mo1060a(aw awVar, boolean z);
 
-    void a(s sVar, String str, am amVar, long[][] jArr);
+    /* renamed from: a */
+    void mo1061a(C0952s c0952s, String str, am amVar, long[][] jArr);
 
-    byte[][] a();
+    /* renamed from: a */
+    byte[][] mo1062a();
 
-    byte[][] a(String str);
+    /* renamed from: a */
+    byte[][] mo1063a(String str);
 
-    long[][] a(s sVar, String str, am amVar);
+    /* renamed from: a */
+    long[][] mo1064a(C0952s c0952s, String str, am amVar);
 }

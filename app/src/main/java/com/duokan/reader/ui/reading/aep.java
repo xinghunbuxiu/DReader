@@ -1,16 +1,27 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.sys.ag;
 
-class aep implements OnClickListener {
-    final /* synthetic */ aem a;
+class aep implements ag<afa> {
+    /* renamed from: a */
+    final /* synthetic */ adz f9591a;
 
-    aep(aem com_duokan_reader_ui_reading_aem) {
-        this.a = com_duokan_reader_ui_reading_aem;
+    aep(adz adz) {
+        this.f9591a = adz;
     }
 
-    public void onClick(View view) {
-        this.a.a.c(new aeq(this));
+    public /* synthetic */ void run(Object obj) {
+        m13469a((afa) obj);
+    }
+
+    /* renamed from: a */
+    public void m13469a(afa afa) {
+        if (this.f9591a.f9549i == afa) {
+            this.f9591a.f9549i = null;
+            this.f9591a.f9543c.setVisibility(4);
+            if (this.f9591a.f9556p != null) {
+                this.f9591a.f9556p.m13499d();
+            }
+        }
     }
 }

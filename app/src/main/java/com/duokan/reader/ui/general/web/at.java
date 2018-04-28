@@ -1,27 +1,21 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.af;
-import com.duokan.reader.domain.bookshelf.fv;
-import com.duokan.reader.ui.general.ib;
+import com.duokan.core.app.C0301c;
+import com.duokan.core.app.OnCancelListener;
 import com.mipay.sdk.Mipay;
 
-class at implements ib {
-    final /* synthetic */ fv a;
-    final /* synthetic */ String b;
-    final /* synthetic */ StorePageController c;
+class at implements OnCancelListener {
+    /* renamed from: a */
+    final /* synthetic */ String f7596a;
+    /* renamed from: b */
+    final /* synthetic */ StorePageController f7597b;
 
-    at(StorePageController storePageController, fv fvVar, String str) {
-        this.c = storePageController;
-        this.a = fvVar;
-        this.b = str;
+    at(StorePageController storePageController, String str) {
+        this.f7597b = storePageController;
+        this.f7596a = str;
     }
 
-    public void a(int i) {
-        if (i == 0) {
-            this.a.a(false, new af(Boolean.valueOf(false)));
-        } else {
-            this.a.a(true, new af(Boolean.valueOf(false)));
-        }
-        this.c.web_notifyWeb(this.b, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
+    public void onCancel(C0301c c0301c) {
+        this.f7597b.web_notifyWeb(this.f7596a, 2, Mipay.KEY_RESULT, Integer.valueOf(2));
     }
 }

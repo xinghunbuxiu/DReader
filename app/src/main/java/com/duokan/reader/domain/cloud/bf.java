@@ -1,31 +1,24 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.j;
-import com.duokan.reader.domain.account.ab;
+import com.duokan.reader.common.async.p035a.C0517a;
+import com.duokan.reader.domain.account.al;
 
-import java.io.Serializable;
+class bf implements C0517a<Void> {
+    /* renamed from: a */
+    final /* synthetic */ be f3747a;
 
-class bf extends j {
-    final ab a = this.c.f;
-    final /* synthetic */ Serializable b;
-    final /* synthetic */ bd c;
-    private bk d = new bk();
-
-    bf(bd bdVar, Serializable serializable) {
-        this.c = bdVar;
-        this.b = serializable;
+    bf(be beVar) {
+        this.f3747a = beVar;
     }
 
-    protected void onSessionTry() {
-        this.d = this.c.a(this.a.a, (String) this.b);
+    /* renamed from: a */
+    public void m5346a(Void voidR) {
+        al e = DkUserPurchasedBooksManager.m5051h();
+        new bg(this, e.f2360a, cg.f3811a, e).open();
     }
 
-    protected void onSessionSucceeded() {
-        if (this.a.a(this.c.f) && !this.c.e.equals(this.d)) {
-            this.c.a(false, false, null);
-        }
-    }
-
-    protected void onSessionFailed() {
+    /* renamed from: a */
+    public void mo729a(int i, String str) {
+        this.f3747a.f3745b.mo729a(i, str);
     }
 }

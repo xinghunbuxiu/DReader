@@ -1,22 +1,22 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.domain.store.DkStoreBookDetail;
-import com.duokan.reader.ui.bookshelf.ay;
-import com.duokan.reader.ui.store.am;
+import com.duokan.reader.common.webservices.duokan.C0641o;
+import java.util.concurrent.Callable;
 
-class hj implements am {
-    final /* synthetic */ DkStoreBookDetail a;
-    final /* synthetic */ hh b;
+class hj implements Callable<Integer> {
+    /* renamed from: a */
+    final /* synthetic */ ci f7930a;
 
-    hj(hh hhVar, DkStoreBookDetail dkStoreBookDetail) {
-        this.b = hhVar;
-        this.a = dkStoreBookDetail;
+    hj(ci ciVar) {
+        this.f7930a = ciVar;
     }
 
-    public void a() {
-        ay.a(this.b.a.f.b.pageController.getContext(), 0, new hk(this));
+    public /* synthetic */ Object call() {
+        return m11171a();
     }
 
-    public void b() {
+    /* renamed from: a */
+    public Integer m11171a() {
+        return Integer.valueOf(C0641o.m2934i().m2986m());
     }
 }

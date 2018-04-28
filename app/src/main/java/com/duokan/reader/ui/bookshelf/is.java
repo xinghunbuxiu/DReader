@@ -1,17 +1,21 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
 
 class is implements OnClickListener {
-    final /* synthetic */ ir a;
+    /* renamed from: a */
+    final /* synthetic */ je f6635a;
+    /* renamed from: b */
+    final /* synthetic */ ie f6636b;
 
-    is(ir irVar) {
-        this.a = irVar;
+    is(ie ieVar, je jeVar) {
+        this.f6636b = ieVar;
+        this.f6635a = jeVar;
     }
 
     public void onClick(View view) {
-        this.a.getContext().startActivity(new Intent("android.settings.WIFI_SETTINGS"));
+        this.f6635a.requestBack();
+        this.f6636b.f6590b.m4923c();
     }
 }

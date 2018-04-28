@@ -1,72 +1,21 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.common.async.work.IAsyncWorkProgressListener;
-import com.duokan.reader.common.async.work.c;
-import com.duokan.reader.common.async.work.e;
-import com.duokan.reader.domain.bookshelf.iz;
-import com.duokan.reader.domain.micloud.bl;
+import com.duokan.reader.domain.micloud.C1068i;
 
-class dt implements IAsyncWorkProgressListener {
-    final /* synthetic */ ds a;
+class dt implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ C1068i f8467a;
+    /* renamed from: b */
+    final /* synthetic */ dr f8468b;
 
-    dt(ds dsVar) {
-        this.a = dsVar;
+    dt(dr drVar, C1068i c1068i) {
+        this.f8468b = drVar;
+        this.f8467a = c1068i;
     }
 
-    public /* synthetic */ void d(c cVar) {
-        g((bl) cVar);
-    }
-
-    public /* synthetic */ void e(c cVar) {
-        d((bl) cVar);
-    }
-
-    public /* synthetic */ void g(c cVar) {
-        e((bl) cVar);
-    }
-
-    public void a(bl blVar) {
-    }
-
-    public void b(bl blVar) {
-    }
-
-    public void c(bl blVar) {
-        iz.a();
-        if (iz.a(blVar)) {
-            this.a.c.post(new du(this));
-        }
-    }
-
-    public void d(bl blVar) {
-        iz.a();
-        if (iz.a(blVar)) {
-            this.a.l();
-        }
-    }
-
-    public CheckErrorResult a(bl blVar, e eVar) {
-        return CheckErrorResult.Ignored;
-    }
-
-    public void e(bl blVar) {
-        iz.a();
-        if (iz.a(blVar)) {
-            this.a.l();
-        }
-    }
-
-    public void f(bl blVar) {
-        iz.a();
-        if (iz.a(blVar)) {
-            this.a.c.post(new dv(this));
-        }
-    }
-
-    public void g(bl blVar) {
-        iz.a();
-        if (iz.a(blVar)) {
-            this.a.c.post(new dw(this));
+    public void run() {
+        if (this.f8468b.f8465a.f8457b != null) {
+            this.f8468b.f8465a.f8457b.m11751a(this.f8467a, false);
         }
     }
 }

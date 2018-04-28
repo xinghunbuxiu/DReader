@@ -1,11 +1,13 @@
 package com.duokan.reader.common.cache;
 
 public class aa {
-    public final String a;
-    public final String b;
+    /* renamed from: a */
+    public final String f1854a;
+    /* renamed from: b */
+    public final String f1855b;
 
     public aa(String str, String str2) {
-        this.a = str;
-        this.b = str2;
+        this.f1854a = str;
+        this.f1855b = str2;
     }
 }

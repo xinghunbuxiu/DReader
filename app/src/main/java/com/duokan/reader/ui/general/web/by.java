@@ -2,36 +2,30 @@ package com.duokan.reader.ui.general.web;
 
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
+import android.view.animation.Animation.AnimationListener;
+import com.duokan.core.sys.UThread;
 
-import com.duokan.core.ui.UTools;
+class by implements AnimationListener {
+    /* renamed from: a */
+    final /* synthetic */ AlphaAnimation f7653a;
+    /* renamed from: b */
+    final /* synthetic */ Runnable f7654b;
+    /* renamed from: c */
+    final /* synthetic */ bx f7655c;
 
-class by implements Runnable {
-    final /* synthetic */ StorePageController a;
-
-    by(StorePageController storePageController) {
-        this.a = storePageController;
+    by(bx bxVar, AlphaAnimation alphaAnimation, Runnable runnable) {
+        this.f7655c = bxVar;
+        this.f7653a = alphaAnimation;
+        this.f7654b = runnable;
     }
 
-    public void run() {
-        if (!this.a.mTransparent) {
-            this.a.mPageLoadingDlg.dismiss();
-            if (this.a.mPageLoadingView.getAnimation() != null && this.a.mPageLoadingView.getAnimation().hasStarted() && !this.a.mPageLoadingView.getAnimation().hasEnded()) {
-                return;
-            }
-            if (this.a.webPageLoading() && this.a.mPageLoadingView.getVisibility() != 0) {
-                this.a.mPageLoadingView.setVisibility(0);
-                UTools.closeAnimation(this.a.mPageLoadingView, (Runnable) this);
-            } else if (!this.a.webPageLoading() && this.a.mPageLoadingView.getVisibility() != 4) {
-                Animation alphaAnimation = new AlphaAnimation(1.0f, 0.0f);
-                alphaAnimation.setFillEnabled(true);
-                alphaAnimation.setFillBefore(true);
-                alphaAnimation.setFillAfter(true);
-                alphaAnimation.setDuration(500);
-                alphaAnimation.setStartTime(AnimationUtils.currentAnimationTimeMillis() + 300);
-                this.a.mPageLoadingView.startAnimation(alphaAnimation);
-                alphaAnimation.setAnimationListener(new bz(this, alphaAnimation, this));
-            }
-        }
+    public void onAnimationStart(Animation animation) {
+    }
+
+    public void onAnimationEnd(Animation animation) {
+        UThread.post(new bz(this));
+    }
+
+    public void onAnimationRepeat(Animation animation) {
     }
 }

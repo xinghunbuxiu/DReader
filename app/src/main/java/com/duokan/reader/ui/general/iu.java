@@ -1,45 +1,31 @@
 package com.duokan.reader.ui.general;
 
-import android.content.Context;
-import android.util.AttributeSet;
-import android.view.View;
+import com.duokan.core.ui.Scrollable;
+import com.duokan.core.ui.Scrollable.ScrollState;
+import com.duokan.core.ui.cg;
 
-import com.duokan.core.ui.OnScrollListener;
+class iu implements cg {
+    /* renamed from: a */
+    final /* synthetic */ ir f7409a;
 
-public class iu extends cw {
-    private ix a;
-    private OnScrollListener b;
-    private cx c;
-
-    public iu(Context context) {
-        this(context, null);
+    iu(ir irVar) {
+        this.f7409a = irVar;
     }
 
-    public iu(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet);
-        this.b = null;
-        this.c = null;
-        super.setOnScrollListener(new iv(this));
-        super.setOnFlipListener(new iw(this));
-    }
-
-    public void setTabListener(ix ixVar) {
-        this.a = ixVar;
-    }
-
-    public void addView(View view, LayoutParams layoutParams) {
-        if (getChildCount() > 0) {
-            super.addView(new iy(this, getContext(), view), layoutParams);
-        } else {
-            super.addView(view, layoutParams);
+    /* renamed from: a */
+    public void mo478a(Scrollable scrollable, ScrollState scrollState, ScrollState scrollState2) {
+        if (scrollState2 == ScrollState.IDLE) {
+            if (this.f7409a.f7402e.m1282c() && !this.f7409a.f7402e.m1283d()) {
+                this.f7409a.f7400c.setVisibility(4);
+                this.f7409a.f7401d.setVisibility(0);
+            } else if (this.f7409a.f7402e.m1283d() && !this.f7409a.f7402e.m1282c()) {
+                this.f7409a.f7400c.setVisibility(0);
+                this.f7409a.f7401d.setVisibility(4);
+            }
         }
     }
 
-    public void setOnFlipListener(cx cxVar) {
-        this.c = cxVar;
-    }
-
-    public void setOnScrollListener(OnScrollListener cgVar) {
-        this.b = cgVar;
+    /* renamed from: a */
+    public void mo479a(Scrollable scrollable, boolean z) {
     }
 }

@@ -1,30 +1,19 @@
 package com.duokan.reader.ui.personal;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.ui.HatGridView;
+import com.duokan.core.ui.an;
 
-import com.duokan.reader.DkPublic;
+class jd implements an {
+    /* renamed from: a */
+    final /* synthetic */ jc f8766a;
 
-class jd implements OnClickListener {
-    final /* synthetic */ it a;
-
-    jd(it itVar) {
-        this.a = itVar;
+    jd(jc jcVar) {
+        this.f8766a = jcVar;
     }
 
-    public void onClick(View view) {
-        String str;
-        if (DkPublic.isMiui()) {
-            str = "http://app.xiaomi.com/comments?id=" + this.a.getContext().getPackageName() + "&back=true";
-        } else {
-            str = "market://details?id=" + this.a.getContext().getPackageName();
-        }
-        try {
-            this.a.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse(str)));
-        } catch (Throwable th) {
-            th.printStackTrace();
-        }
+    /* renamed from: a */
+    public void mo1558a(HatGridView hatGridView, View view, int i) {
+        this.f8766a.f8763a.pushHalfPageSmoothly(new iu(this.f8766a.getContext(), this.f8766a.f8765c.mo1556c(i)), null);
     }
 }

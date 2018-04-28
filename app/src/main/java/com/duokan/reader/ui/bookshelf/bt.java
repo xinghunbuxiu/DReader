@@ -1,22 +1,19 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.reader.domain.bookshelf.ai;
-import com.duokan.reader.ui.general.jq;
+import com.duokan.core.app.C0301c;
+import com.duokan.core.app.OnCancelListener;
 
-class bt implements Runnable {
-    final /* synthetic */ boolean a;
-    final /* synthetic */ jq b;
-    final /* synthetic */ bs c;
+class bt implements OnCancelListener {
+    /* renamed from: a */
+    final /* synthetic */ bs f6215a;
 
-    bt(bs bsVar, boolean z, jq jqVar) {
-        this.c = bsVar;
-        this.a = z;
-        this.b = jqVar;
+    bt(bs bsVar) {
+        this.f6215a = bsVar;
     }
 
-    public void run() {
-        ai.a().a(this.c.c, this.a);
-        TaskHandler.postTask(new bu(this));
+    public void onCancel(C0301c c0301c) {
+        this.f6215a.f6214f = true;
+        this.f6215a.close();
+        this.f6215a.f6211c.dismiss();
     }
 }

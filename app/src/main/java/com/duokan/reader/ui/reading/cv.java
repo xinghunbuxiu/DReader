@@ -1,40 +1,19 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Point;
-import android.util.Pair;
-import android.view.MotionEvent;
-import android.view.View;
+import com.duokan.reader.domain.document.as;
 
-import com.duokan.core.ui.er;
-import com.duokan.core.ui.OnTouchChangeListener;
-import com.duokan.core.ui.g;
+class cv implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ cq f9965a;
 
-public class cv extends er {
-    final /* synthetic */ co a;
-    private final g c = new g(2);
-    private Pair d = null;
-
-    public cv(co coVar) {
-        this.a = coVar;
+    cv(cq cqVar) {
+        this.f9965a = cqVar;
     }
 
-    protected void a(View view, boolean z) {
-        g gVar = this.c;
-        boolean z2 = z || !this.c.c();
-        gVar.b(view, z2);
-    }
-
-    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
-        if (!this.a.a.w().f() && c() && !e() && this.c.c()) {
-            if (motionEvent.getAction() == 0) {
-                this.d = this.a.a.c(new Point((int) motionEvent.getX(), (int) motionEvent.getY()));
-            }
-            if (this.d != null) {
-                e(true);
-                this.c.b(view, motionEvent, z, new cw(this));
-                return;
-            }
-            b(false);
-        }
+    public void run() {
+        as aa = this.f9965a.f9949a.aa();
+        int f = this.f9965a.f9955g - aa.mo1352v(0);
+        this.f9965a.f9950b.m10019g();
+        this.f9965a.f9952d.m13309a(aa.mo1350u(f), new cw(this));
     }
 }

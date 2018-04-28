@@ -1,49 +1,21 @@
 package com.duokan.reader.domain.bookshelf;
 
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
+import com.duokan.core.diagnostic.C0328a;
+import com.duokan.reader.domain.account.UserAccount;
 
-import com.duokan.reader.common.async.work.c;
-import com.duokan.reader.domain.micloud.i;
+class jf implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ UserAccount f3384a;
+    /* renamed from: b */
+    final /* synthetic */ it f3385b;
 
-import java.util.Collection;
-
-class jf extends Handler {
-    final /* synthetic */ iz a;
-
-    jf(iz izVar, Looper looper) {
-        this.a = izVar;
-        super(looper);
+    jf(it itVar, UserAccount userAccount) {
+        this.f3385b = itVar;
+        this.f3384a = userAccount;
     }
 
-    public void handleMessage(Message message) {
-        Collection collection;
-        i iVar;
-        if (message.what == 0) {
-            collection = (Collection) message.obj;
-            if (collection.size() > 0) {
-                iVar = (i) collection.iterator().next();
-                collection.remove(iVar);
-                if (iVar.k()) {
-                    this.a.j.a().c((c) iVar);
-                }
-                if (collection.size() > 0) {
-                    sendMessageDelayed(this.a.n.obtainMessage(0, collection), 0);
-                }
-            }
-        } else if (message.what == 1) {
-            collection = (Collection) message.obj;
-            if (collection.size() > 0) {
-                iVar = (i) collection.iterator().next();
-                collection.remove(iVar);
-                if (iVar.o()) {
-                    this.a.j.a().a((c) iVar, false);
-                }
-                if (collection.size() > 0) {
-                    sendMessageDelayed(this.a.n.obtainMessage(1, collection), 0);
-                }
-            }
-        }
+    public void run() {
+        C0328a.m757c().m764b(this.f3385b.f3365i == null);
+        this.f3385b.f3365i = new jp(this.f3385b, this.f3385b.f3363g, this.f3384a.mo833c());
     }
 }

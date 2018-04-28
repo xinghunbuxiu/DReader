@@ -1,9 +1,17 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.app.FeatureListening;
+import com.duokan.core.app.C0301c;
+import com.duokan.core.app.OnCancelListener;
 
-import java.util.List;
+class gr implements OnCancelListener {
+    /* renamed from: a */
+    final /* synthetic */ FileScanTask f6526a;
 
-public interface gr extends FeatureListening {
-    void a(int i, int i2, List list);
+    gr(FileScanTask fileScanTask) {
+        this.f6526a = fileScanTask;
+    }
+
+    public void onCancel(C0301c c0301c) {
+        this.f6526a.cancel(true);
+    }
 }

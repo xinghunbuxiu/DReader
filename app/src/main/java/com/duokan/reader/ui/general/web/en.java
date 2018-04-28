@@ -1,26 +1,20 @@
 package com.duokan.reader.ui.general.web;
 
-import android.text.TextUtils;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.EditText;
-import android.widget.PopupWindow;
+import com.duokan.core.sys.as;
 
-class en implements OnClickListener {
-    final /* synthetic */ EditText a;
-    final /* synthetic */ PopupWindow b;
-    final /* synthetic */ el c;
+class en implements as {
+    /* renamed from: a */
+    final /* synthetic */ int f7785a;
+    /* renamed from: b */
+    final /* synthetic */ ek f7786b;
 
-    en(el elVar, EditText editText, PopupWindow popupWindow) {
-        this.c = elVar;
-        this.a = editText;
-        this.b = popupWindow;
+    en(ek ekVar, int i) {
+        this.f7786b = ekVar;
+        this.f7785a = i;
     }
 
-    public void onClick(View view) {
-        if (!TextUtils.isEmpty(this.a.getText().toString())) {
-            this.c.d.a(r0);
-        }
-        this.b.dismiss();
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7786b.f7780b.f7581b.onSearchBarPosChange(this.f7785a);
     }
 }

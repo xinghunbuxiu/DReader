@@ -1,24 +1,32 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.j;
-import com.duokan.reader.domain.account.ab;
+import com.duokan.reader.ui.general.ja;
+import com.duokan.reader.ui.store.C1502o;
 
-class ey extends j {
-    final /* synthetic */ ab a;
-    final /* synthetic */ ex b;
+class ey implements fj {
+    /* renamed from: a */
+    final /* synthetic */ ja f3960a;
+    /* renamed from: b */
+    final /* synthetic */ fj f3961b;
+    /* renamed from: c */
+    final /* synthetic */ ex f3962c;
 
-    ey(ex exVar, ab abVar) {
-        this.b = exVar;
-        this.a = abVar;
+    ey(ex exVar, ja jaVar, fj fjVar) {
+        this.f3962c = exVar;
+        this.f3960a = jaVar;
+        this.f3961b = fjVar;
     }
 
-    protected void onSessionTry() {
-        new fn(this.a).destroy();
+    /* renamed from: a */
+    public void mo1160a(DkCloudRedeemFund dkCloudRedeemFund) {
+        this.f3960a.dismiss();
+        this.f3961b.mo1160a(dkCloudRedeemFund);
     }
 
-    protected void onSessionSucceeded() {
-    }
-
-    protected void onSessionFailed() {
+    /* renamed from: a */
+    public void mo1161a(String str) {
+        this.f3960a.dismiss();
+        this.f3961b.mo1161a(str);
+        C1502o.m15426d(str);
     }
 }

@@ -1,37 +1,20 @@
 package com.duokan.reader.ui.reading;
 
-/* synthetic */ class vx {
-    static final /* synthetic */ int[] a = new int[PageAnimationMode.values().length];
-    static final /* synthetic */ int[] b = new int[AnnotationStyle.values().length];
+import android.view.View;
+import android.view.View.OnClickListener;
 
-    static {
-        try {
-            b[AnnotationStyle.BUBBLE.ordinal()] = 1;
-        } catch (NoSuchFieldError e) {
-        }
-        try {
-            a[PageAnimationMode.THREE_DIMEN.ordinal()] = 1;
-        } catch (NoSuchFieldError e2) {
-        }
-        try {
-            a[PageAnimationMode.HSCROLL.ordinal()] = 2;
-        } catch (NoSuchFieldError e3) {
-        }
-        try {
-            a[PageAnimationMode.VSCROLL.ordinal()] = 3;
-        } catch (NoSuchFieldError e4) {
-        }
-        try {
-            a[PageAnimationMode.FADE_IN.ordinal()] = 4;
-        } catch (NoSuchFieldError e5) {
-        }
-        try {
-            a[PageAnimationMode.NONE.ordinal()] = 5;
-        } catch (NoSuchFieldError e6) {
-        }
-        try {
-            a[PageAnimationMode.OVERLAP.ordinal()] = 6;
-        } catch (NoSuchFieldError e7) {
-        }
+class vx implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ vq f11093a;
+
+    vx(vq vqVar) {
+        this.f11093a = vqVar;
+    }
+
+    public void onClick(View view) {
+        this.f11093a.f11066a.ae().m12496e(Math.max(this.f11093a.f11066a.ae().f9135i, Math.min(this.f11093a.f11066a.ae().m12527u() - 1.0f, this.f11093a.f11066a.ae().f9136j)));
+        this.f11093a.f11066a.ae().m12463X();
+        this.f11093a.f11066a.aB();
+        this.f11093a.m15039a();
     }
 }

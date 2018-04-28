@@ -1,22 +1,26 @@
 package com.duokan.reader.domain.bookshelf;
 
 import android.text.TextUtils;
-
 import org.apache.http.cookie.ClientCookie;
 import org.json.JSONObject;
 
 public class ad {
-    public static final ad a = new ad();
-    public final int b;
-    public final int c;
-    public final String d;
-    public final long e;
+    /* renamed from: a */
+    public static final ad f2722a = new ad();
+    /* renamed from: b */
+    public final int f2723b;
+    /* renamed from: c */
+    public final int f2724c;
+    /* renamed from: d */
+    public final String f2725d;
+    /* renamed from: e */
+    public final long f2726e;
 
     private ad() {
-        this.b = 0;
-        this.c = 0;
-        this.d = "";
-        this.e = 0;
+        this.f2723b = 0;
+        this.f2724c = 0;
+        this.f2725d = "";
+        this.f2726e = 0;
     }
 
     public ad(String str) {
@@ -40,36 +44,39 @@ public class ad {
                 i = 0;
             }
         }
-        this.b = i;
-        this.c = i2;
-        this.d = str2;
-        this.e = j;
+        this.f2723b = i;
+        this.f2724c = i2;
+        this.f2725d = str2;
+        this.f2726e = j;
     }
 
     public ad(int i, int i2, String str, long j) {
-        this.b = i;
-        this.c = i2;
-        this.d = str;
-        this.e = j;
+        this.f2723b = i;
+        this.f2724c = i2;
+        this.f2725d = str;
+        this.f2726e = j;
     }
 
-    public boolean a() {
-        if (!b() && this.c >= 100) {
+    /* renamed from: a */
+    public boolean m3780a() {
+        if (!m3781b() && this.f2724c >= 100) {
             return true;
         }
         return false;
     }
 
-    public boolean b() {
-        return this.c < 1 && TextUtils.isEmpty(this.d);
+    /* renamed from: b */
+    public boolean m3781b() {
+        return this.f2724c < 1 && TextUtils.isEmpty(this.f2725d);
     }
 
-    public JSONObject c() {
+    /* renamed from: c */
+    public JSONObject m3782c() {
         JSONObject jSONObject = new JSONObject();
-        jSONObject.put("devid_ver", this.b);
-        jSONObject.put("cert_ver", this.c);
-        jSONObject.put("cert", this.d);
-        jSONObject.put("expiry_time", this.e);
+        jSONObject.put("devid_ver", this.f2723b);
+        jSONObject.put("cert_ver", this.f2724c);
+        jSONObject.put("cert", this.f2725d);
+        jSONObject.put("expiry_time", this.f2726e);
         return jSONObject;
     }
 }

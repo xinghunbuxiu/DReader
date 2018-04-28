@@ -1,63 +1,53 @@
 package com.duokan.reader.domain.cloud;
 
+import android.text.TextUtils;
+import com.duokan.reader.DkPublic;
+import com.duokan.reader.common.webservices.C0621a;
+import com.duokan.reader.common.webservices.C0657i;
 import com.duokan.reader.common.webservices.WebSession;
-import com.duokan.reader.common.webservices.b;
-import com.duokan.reader.common.webservices.duokan.aa;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.i;
+import com.duokan.reader.common.webservices.duokan.C0652z;
+import com.duokan.reader.common.webservices.duokan.DkStoreRedeemBenefitInfo;
+import com.duokan.reader.domain.account.al;
 
-import java.util.LinkedList;
+class bp extends WebSession {
+    /* renamed from: a */
+    final /* synthetic */ al f3769a;
+    /* renamed from: b */
+    final /* synthetic */ bo f3770b;
+    /* renamed from: c */
+    private DkCloudPurchasedBook f3771c = null;
+    /* renamed from: d */
+    private DkCloudRedeemBenefit f3772d = null;
 
-class bp extends cs {
-    final /* synthetic */ ab a;
-    final /* synthetic */ bo b;
-    private b d = null;
-    private LinkedList e = new LinkedList();
-
-    bp(bo boVar, ab abVar) {
-        this.b = boVar;
-        this.a = abVar;
-        super(boVar.a.c);
+    bp(bo boVar, C0657i c0657i, al alVar) {
+        this.f3770b = boVar;
+        this.f3769a = alVar;
+        super(c0657i);
     }
 
     protected void onSessionTry() {
-        this.d = new aa((WebSession) this, this.a).a(true, this.b.a.a);
-        if (this.d.b == 0) {
-            cv cvVar = new cv(this.a);
-            cvVar.a();
-            for (String queryItem : this.b.a.a) {
-                DkCloudPurchasedBook dkCloudPurchasedBook = (DkCloudPurchasedBook) cvVar.queryItem(queryItem);
-                if (dkCloudPurchasedBook != null) {
-                    dkCloudPurchasedBook.setHidden(true);
-                    cvVar.updateItem(dkCloudPurchasedBook);
-                    this.e.add(dkCloudPurchasedBook);
-                }
+        cj cjVar = new cj(this.f3769a);
+        cjVar.m5406a();
+        this.f3771c = (DkCloudPurchasedBook) cjVar.queryItem(this.f3770b.f3767a);
+        if (this.f3771c == null) {
+            return;
+        }
+        if (this.f3771c.getRedeemMessage() == null || (DkPublic.isXiaomiId(this.f3771c.getRedeemMessage().getGiver().mUserId) && TextUtils.isEmpty(this.f3771c.getRedeemMessage().getGiver().mNickName))) {
+            C0621a g = new C0652z((WebSession) this, this.f3769a).m3077g(this.f3771c.getBookUuid());
+            if (g.b == 0) {
+                this.f3772d = new DkCloudRedeemBenefit((DkStoreRedeemBenefitInfo) g.f2058a);
+                this.f3771c.setRedeemMessage(this.f3772d);
+                cjVar.updateItem(this.f3771c);
             }
         }
     }
 
     protected void onSessionSucceeded() {
-        if (!this.a.a(DkUserPurchasedBooksManager.h())) {
-            this.b.a.b.a(-1, "");
-        } else if (this.d.b == 1001 || this.d.b == 1002 || this.d.b == 1003) {
-            i.f().a(this.a.a, new bq(this));
-        } else if (this.d.b != 0) {
-            this.b.a.b.a(this.d.b, this.d.c);
-        } else {
-            if (!this.e.isEmpty()) {
-                this.b.a.c.h.a(this.e);
-                this.b.a.c.f();
-                this.b.a.c.a(this.b.a.a);
-            }
-            this.b.a.b.a(null);
+        if (this.f3769a.m3365a(DkUserPurchasedBooksManager.m5051h()) && this.f3771c != null) {
+            this.f3770b.f3768b.f3608h.m5397a(this.f3771c);
         }
     }
 
     protected void onSessionFailed() {
-        if (this.a.a(DkUserPurchasedBooksManager.h())) {
-            this.b.a.b.a(-1, this.b.a.c.b.getString(com.duokan.b.i.general__shared__network_error));
-        } else {
-            this.b.a.b.a(-1, "");
-        }
     }
 }

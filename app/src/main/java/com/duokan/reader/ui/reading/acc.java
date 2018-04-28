@@ -1,19 +1,14 @@
 package com.duokan.reader.ui.reading;
 
-import java.io.File;
-import java.io.FileFilter;
+import android.graphics.Bitmap;
 
-class acc implements FileFilter {
-    final /* synthetic */ acb a;
+public abstract class acc {
+    /* renamed from: a */
+    public abstract int mo2304a();
 
-    acc(acb com_duokan_reader_ui_reading_acb) {
-        this.a = com_duokan_reader_ui_reading_acb;
-    }
+    /* renamed from: a */
+    public abstract Bitmap mo2305a(int i, int i2);
 
-    public boolean accept(File file) {
-        if (!file.isFile() || file.getName().equalsIgnoreCase(".") || file.getName().equalsIgnoreCase("..")) {
-            return false;
-        }
-        return true;
-    }
+    /* renamed from: b */
+    public abstract int mo2306b();
 }

@@ -1,71 +1,80 @@
 package com.duokan.reader.domain.document.epub;
 
+import com.duokan.core.diagnostic.C0328a;
 import com.duokan.kernel.epublib.DkeBook;
-import com.duokan.reader.domain.document.Document_a;
+import com.duokan.reader.domain.document.C0896a;
+import com.duokan.reader.domain.document.C0908f;
+import com.duokan.reader.domain.document.C0932e;
 import com.duokan.reader.domain.document.av;
-import com.duokan.reader.domain.document.e;
-import com.duokan.reader.domain.document.f;
 
-class aa extends f {
-    final /* synthetic */ s a;
-    private final DkeBook b;
-    private d[] c = null;
+class aa extends C0908f {
+    /* renamed from: a */
+    final /* synthetic */ C0952s f4458a;
+    /* renamed from: b */
+    private final DkeBook f4459b;
+    /* renamed from: c */
+    private C0937d[] f4460c = null;
 
-    public /* synthetic */ e a(int i) {
-        return b(i);
+    /* renamed from: a */
+    public /* synthetic */ C0932e mo1254a(int i) {
+        return m6461b(i);
     }
 
-    public aa(s sVar, DkeBook dkeBook) {
-        this.a = sVar;
-        this.b = dkeBook;
+    public aa(C0952s c0952s, DkeBook dkeBook) {
+        this.f4458a = c0952s;
+        this.f4459b = dkeBook;
     }
 
-    public int a() {
-        a.c().b(this.a.A());
-        if (this.a.p()) {
-            return b().length;
+    /* renamed from: a */
+    public int mo1252a() {
+        C0328a.m757c().m764b(this.f4458a.m5889A());
+        if (this.f4458a.m5945p()) {
+            return m6457b().length;
         }
         return 0;
     }
 
-    public d b(int i) {
-        a.c().b(this.a.A());
-        if (!this.a.p() || i < 0 || i >= a()) {
+    /* renamed from: b */
+    public C0937d m6461b(int i) {
+        C0328a.m757c().m764b(this.f4458a.m5889A());
+        if (!this.f4458a.m5945p() || i < 0 || i >= mo1252a()) {
             return null;
         }
-        if (b()[i] == null) {
-            Document_a a = this.a.a(this.b.getChapterIndexOfFrame((long) i), 0);
-            if (!this.a.d(a) || !a.e()) {
+        if (m6457b()[i] == null) {
+            C0896a a = this.f4458a.m7041a(this.f4459b.getChapterIndexOfFrame((long) i), 0);
+            if (!this.f4458a.mo1233d(a) || !a.mo1192e()) {
                 return null;
             }
-            b()[i] = new d(this.b, i);
+            m6457b()[i] = new C0937d(this.f4459b, i);
         }
-        return b()[i];
+        return m6457b()[i];
     }
 
-    public int a(av avVar) {
-        a.c().b(this.a.A());
-        if (!this.a.p()) {
+    /* renamed from: a */
+    public int mo1253a(av avVar) {
+        C0328a.m757c().m764b(this.f4458a.m5889A());
+        if (!this.f4458a.m5945p()) {
             return -1;
         }
-        e p = this.a.k;
-        c cVar = (c) avVar;
-        for (int i = 0; i < a(); i++) {
-            if (p.h().getChapterIndexOfFrame((long) i) >= cVar.g()) {
+        C0934e p = this.f4458a.f4724k;
+        C0936c c0936c = (C0936c) avVar;
+        for (int i = 0; i < mo1252a(); i++) {
+            if (p.mo1365h().getChapterIndexOfFrame((long) i) >= c0936c.m6780g()) {
                 return i;
             }
         }
         return -1;
     }
 
-    private d[] b() {
-        a.c().b(this.a.A());
-        if (!this.a.p()) {
-            return new d[0];
+    /* renamed from: b */
+    private C0937d[] m6457b() {
+        C0328a.m757c().m764b(this.f4458a.m5889A());
+        if (!this.f4458a.m5945p()) {
+            return new C0937d[0];
         }
-        if (this.c == null) {
-            this.c = new d[((int) this.b.getComicsFrameCount())];
+        if (this.f4460c == null) {
+            this.f4460c = new C0937d[((int) this.f4459b.getComicsFrameCount())];
         }
-        return this.c;
+        return this.f4460c;
     }
 }

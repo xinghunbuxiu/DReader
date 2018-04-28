@@ -1,30 +1,29 @@
 package com.duokan.reader.domain.cloud;
 
-import android.text.TextUtils;
+import com.duokan.reader.common.async.p035a.C0517a;
 
-import com.duokan.reader.common.cache.d;
-import com.duokan.reader.common.cache.i;
-import com.duokan.reader.domain.account.ab;
+class cw implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ C0517a f3842a;
+    /* renamed from: b */
+    final /* synthetic */ DkUserPurchasedFictionsManager f3843b;
 
-abstract class cw extends d {
-    private final ab a;
-
-    public /* synthetic */ Object queryInfo() {
-        return b();
+    cw(DkUserPurchasedFictionsManager dkUserPurchasedFictionsManager, C0517a c0517a) {
+        this.f3843b = dkUserPurchasedFictionsManager;
+        this.f3842a = c0517a;
     }
 
-    protected cw(ab abVar, String str) {
-        super(str + "_" + abVar.a, i.a, new cq(), 0);
-        this.a = abVar;
-    }
-
-    public DkUserPurchasedBooksInfo b() {
-        DkUserPurchasedBooksInfo dkUserPurchasedBooksInfo = (DkUserPurchasedBooksInfo) super.queryInfo();
-        if (TextUtils.isEmpty(dkUserPurchasedBooksInfo.mAccountUuid)) {
-            dkUserPurchasedBooksInfo.mAccountUuid = this.a.a;
-            dkUserPurchasedBooksInfo.mAccountName = this.a.c;
-            updateInfo(dkUserPurchasedBooksInfo);
+    public void run() {
+        if (this.f3843b.f3614f.m2233a()) {
+            this.f3843b.f3614f.m2231a(this.f3842a);
+            if (this.f3843b.f3616h.f3888a) {
+                this.f3843b.f3614f.mo730a(null);
+                this.f3843b.f3614f.m2234b();
+                return;
+            }
+            new cx(this, dq.f3887a, DkUserPurchasedFictionsManager.m5092g()).open();
+            return;
         }
-        return dkUserPurchasedBooksInfo;
+        this.f3843b.f3614f.m2231a(this.f3842a);
     }
 }

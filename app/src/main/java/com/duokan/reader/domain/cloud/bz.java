@@ -1,28 +1,22 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.async.a.a;
-import com.duokan.reader.common.webservices.duokan.DkStoreBookSourceType;
-import com.duokan.reader.domain.account.ab;
+import com.duokan.reader.common.async.p035a.C0517a;
 
-class bz implements a {
-    final /* synthetic */ String a;
-    final /* synthetic */ DkUserPurchasedBooksManager b;
+class bz implements C0517a<Void> {
+    /* renamed from: a */
+    final /* synthetic */ by f3797a;
 
-    bz(DkUserPurchasedBooksManager dkUserPurchasedBooksManager, String str) {
-        this.b = dkUserPurchasedBooksManager;
-        this.a = str;
+    bz(by byVar) {
+        this.f3797a = byVar;
     }
 
-    public void a(Void voidR) {
-        ab e = DkUserPurchasedBooksManager.h();
-        DkCloudPurchasedBook a = this.b.h.a(this.a);
-        if (a != null) {
-            if ((a.getBookSourceType() == DkStoreBookSourceType.GIFT || a.getBookSourceType() == DkStoreBookSourceType.GIFTED) && e.c()) {
-                new ca(this, e).open();
-            }
-        }
+    /* renamed from: a */
+    public void m5372a(Void voidR) {
+        this.f3797a.f3796d.m5066b(this.f3797a.f3793a, this.f3797a.f3794b, this.f3797a.f3795c);
     }
 
-    public void a(int i, String str) {
+    /* renamed from: a */
+    public void mo729a(int i, String str) {
+        this.f3797a.f3795c.mo729a(i, str);
     }
 }

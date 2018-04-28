@@ -1,33 +1,31 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Point;
-import android.view.ViewTreeObserver.OnPreDrawListener;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.view.View;
+import com.duokan.core.ui.dv;
 
-import com.duokan.core.ui.UTools;
+class pk extends View {
+    /* renamed from: a */
+    final /* synthetic */ pg f10794a;
+    /* renamed from: b */
+    final /* synthetic */ pi f10795b;
 
-import org.apache.http.HttpStatus;
-
-class pk implements OnPreDrawListener {
-    final /* synthetic */ Point a;
-    final /* synthetic */ pj b;
-
-    pk(pj pjVar, Point point) {
-        this.b = pjVar;
-        this.a = point;
+    pk(pi piVar, Context context, pg pgVar) {
+        this.f10795b = piVar;
+        this.f10794a = pgVar;
+        super(context);
     }
 
-    public boolean onPreDraw() {
-        Point point = new Point(0, 0);
-        UTools.showAnimation(point, this.b.a);
-        Point point2 = new Point(this.a.x - point.x, this.a.y - point.y);
-        UTools.addAnimation(point2, this.b.c);
-        this.b.c.a(this.b.c.getScrollX() - point2.x, this.b.c.getScrollY() - point2.y);
-        this.b.c.setThumbEnabled(false);
-        this.b.c.b(0.0f, 0.0f, 1.0f, null, null);
-        this.b.b.a(this.b.e, this.b.f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR);
-        this.b.b.a(this.b.g, this.b.h, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR);
-        this.b.b.a(this.b.c, this.b.i, HttpStatus.SC_INTERNAL_SERVER_ERROR, new pl(this), null);
-        this.b.b.getViewTreeObserver().removeOnPreDrawListener(this);
-        return false;
+    protected void onDraw(Canvas canvas) {
+        Rect rect = (Rect) dv.f1198g.addAnimation();
+        rect.set(0, 0, this.f10795b.f10787f.width(), this.f10795b.f10787f.height());
+        canvas.drawBitmap(this.f10795b.f10785d, this.f10795b.f10787f, rect, null);
+        dv.f1198g.clearAnimation(rect);
+    }
+
+    protected void onMeasure(int i, int i2) {
+        setMeasuredDimension(this.f10795b.f10787f.width(), this.f10795b.f10787f.height());
     }
 }

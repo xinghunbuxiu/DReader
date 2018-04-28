@@ -2,14 +2,14 @@ package com.duokan.reader.ui.general;
 
 import com.bumptech.glide.load.engine.cache.DiskLruCacheFactory.CacheDirectoryGetter;
 import com.duokan.reader.ReaderEnv;
-
 import java.io.File;
 
 class aq implements CacheDirectoryGetter {
-    final /* synthetic */ CustomGlideModule a;
+    /* renamed from: a */
+    final /* synthetic */ CustomGlideModule f6936a;
 
     aq(CustomGlideModule customGlideModule) {
-        this.a = customGlideModule;
+        this.f6936a = customGlideModule;
     }
 
     public File getCacheDirectory() {

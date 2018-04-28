@@ -1,29 +1,28 @@
 package com.duokan.reader.ui.reading;
 
-import java.util.Arrays;
-import java.util.concurrent.Callable;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.ui.general.ReaderUi;
+import com.duokan.reader.ui.general.be;
 
-class zy implements Callable {
-    final /* synthetic */ String a;
-    final /* synthetic */ zu b;
+class zy implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ zx f11289a;
 
-    zy(zu zuVar, String str) {
-        this.b = zuVar;
-        this.a = str;
+    zy(zx zxVar) {
+        this.f11289a = zxVar;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
-    }
-
-    public Boolean a() {
-        if (this.b.a.c.q) {
-            return Boolean.valueOf(false);
+    public void onClick(View view) {
+        Object trim = this.f11289a.f11288g.getEditableText().toString().trim();
+        if (TextUtils.isEmpty(trim)) {
+            be.m10286a(this.f11289a.getContext(), C0258j.reading__send_error_view__toast, 1).show();
+            return;
         }
-        if (this.b.a.c.Q.containsKey(this.a)) {
-            return Boolean.valueOf(false);
-        }
-        this.b.a.c.a(Arrays.asList(new String[]{this.a}), new zz(this));
-        return Boolean.valueOf(true);
+        ReaderUi.m10161a(this.f11289a.getContext(), this.f11289a.f11288g);
+        this.f11289a.m15234a((String) trim);
+        this.f11289a.f11287f.setEnabled(false);
     }
 }

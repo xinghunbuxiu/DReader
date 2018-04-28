@@ -1,30 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.reader.common.classc;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-import java.util.Collections;
-import java.util.List;
+class zu implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ze f11280a;
 
-class zu implements Runnable {
-    final /* synthetic */ zt a;
-
-    zu(zt ztVar) {
-        this.a = ztVar;
+    zu(ze zeVar) {
+        this.f11280a = zeVar;
     }
 
-    public void run() {
-        for (String str : (List) TaskHandler.getTaskHandler(new zv(this))) {
-            if (this.a.b.u(str) || !((Boolean) TaskHandler.getTaskHandler(new zw(this, str))).booleanValue()) {
-                for (String str2 : classc.ConnectivityReceiver.b().d() ? this.a.b.v(str2) : Collections.emptyList()) {
-                    if (!this.a.b.w(str2) && ((Boolean) TaskHandler.getTaskHandler(new zy(this, str2))).booleanValue()) {
-                        return;
-                    }
-                }
-            } else {
-                return;
-            }
-        }
-        this.a.c.b = false;
+    public void onClick(View view) {
+        this.f11280a.f11222D.put("Action2", "NOTE");
+        this.f11280a.f11224F.mo2213f();
     }
 }

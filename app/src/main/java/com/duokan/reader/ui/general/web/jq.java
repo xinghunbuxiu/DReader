@@ -1,24 +1,14 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.domain.ad.r;
+class jq implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ jp f8064a;
 
-import java.util.concurrent.Callable;
-
-class jq implements Callable {
-    final /* synthetic */ PageController a;
-
-    jq(PageController cgVar) {
-        this.a = cgVar;
+    jq(jp jpVar) {
+        this.f8064a = jpVar;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
-    }
-
-    public Boolean a() {
-        if (this.a.pageController.mAdSdkService == null) {
-            this.a.pageController.mAdSdkService = new r(this.a.pageController.mAdLifecycleManager);
-        }
-        return Boolean.valueOf(this.a.pageController.mAdSdkService.a());
+    public void run() {
+        this.f8064a.f8062a.run();
     }
 }

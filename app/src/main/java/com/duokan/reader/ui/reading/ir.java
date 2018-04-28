@@ -1,34 +1,24 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.PointF;
-import android.view.View;
+import com.duokan.reader.domain.bookshelf.C0800c;
 
-import com.duokan.core.ui.du;
-import com.duokan.core.ui.er;
-import com.duokan.reader.ui.reading.FixedPageClipView.ClipIndicator;
+class ir implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ iq f10397a;
 
-class ir implements du {
-    final /* synthetic */ ip a;
-
-    ir(ip ipVar) {
-        this.a = ipVar;
+    ir(iq iqVar) {
+        this.f10397a = iqVar;
     }
 
-    public void onTouchUp(View view, PointF pointF) {
-        this.a.d = ClipIndicator.UNKNOW;
-        this.a.c.a(this.a.d, pointF, 1);
-    }
-
-    public void onTouchDown(View view, PointF pointF) {
-        this.a.c.requestDisallowInterceptTouchEvent(true);
-        this.a.d = this.a.c.a(pointF);
-        this.a.c.a(this.a.d, pointF, 1);
-    }
-
-    public void onTouchCancel(View view, PointF pointF) {
-    }
-
-    public void a(er erVar, View view, PointF pointF, PointF pointF2) {
-        this.a.c.a(this.a.d, pointF2, 2);
+    public void run() {
+        C0800c G = this.f10397a.f10396a.f.mo1992G();
+        if (!G.ak() || G.al()) {
+            return;
+        }
+        if (G.m4170W()) {
+            G.ac();
+        } else {
+            ((hy) this.f10397a.f10396a.f).mo2190c();
+        }
     }
 }

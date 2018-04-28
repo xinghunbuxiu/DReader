@@ -1,25 +1,22 @@
 package com.duokan.reader.ui.general;
 
-import android.view.View;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.IFeature;
+class hj implements cm {
+    /* renamed from: a */
+    final /* synthetic */ C0800c f7336a;
+    /* renamed from: b */
+    final /* synthetic */ hh f7337b;
 
-abstract class hj extends ActivatedController {
-    private final ActivatedController a;
-    final /* synthetic */ hd b;
-
-    public hj(hd hdVar, IFeature featrue, ActivatedController controller) {
-        this.b = hdVar;
-        super(featrue);
-        this.a = controller;
+    hj(hh hhVar, C0800c c0800c) {
+        this.f7337b = hhVar;
+        this.f7336a = c0800c;
     }
 
-    public final ActivatedController a() {
-        return this.a;
-    }
-
-    public final View b() {
-        return this.a.getContentView();
+    public void onChoice(boolean z, FlowChargingTransferChoice flowChargingTransferChoice) {
+        if (z) {
+            this.f7336a.m4208b(flowChargingTransferChoice.wifiOnly());
+        }
     }
 }

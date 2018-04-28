@@ -1,28 +1,17 @@
 package com.duokan.reader.ui.general;
 
-import com.duokan.core.ui.TabBarView;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class is implements ix {
-    final /* synthetic */ TabBarView a;
-    final /* synthetic */ ir b;
+class is implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ir f7407a;
 
-    is(ir irVar, TabBarView tabBarView) {
-        this.b = irVar;
-        this.a = tabBarView;
+    is(ir irVar) {
+        this.f7407a = irVar;
     }
 
-    public void a(float f, int i) {
-        this.b.a(i, false);
-        if (this.b.d != null) {
-            this.b.d.a(f, i);
-        }
-    }
-
-    public void a(int i, int i2) {
-        this.a.a(i2);
-        this.b.a(i2, false);
-        if (this.b.d != null) {
-            this.b.d.a(i, i2);
-        }
+    public void onClick(View view) {
+        this.f7407a.m10811b();
     }
 }

@@ -1,18 +1,21 @@
 package com.duokan.reader.domain.document.epub;
 
-import com.duokan.reader.domain.document.m;
+import com.duokan.reader.domain.document.C0923m;
 
-public class au extends m {
-    public String q = null;
-    public boolean r = false;
+public class au extends C0923m {
+    /* renamed from: q */
+    public String f4490q = null;
+    /* renamed from: r */
+    public boolean f4491r = false;
 
     public au(au auVar) {
         super(auVar);
-        this.q = auVar.q;
-        this.r = auVar.r;
+        this.f4490q = auVar.f4490q;
+        this.f4491r = auVar.f4491r;
     }
 
-    public m a() {
+    /* renamed from: a */
+    public C0923m mo1277a() {
         return new au(this);
     }
 }

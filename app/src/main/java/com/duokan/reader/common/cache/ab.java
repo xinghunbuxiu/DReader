@@ -1,5 +1,6 @@
 package com.duokan.reader.common.cache;
 
 public interface ab {
-    void a(int i);
+    /* renamed from: a */
+    void mo1155a(int i);
 }

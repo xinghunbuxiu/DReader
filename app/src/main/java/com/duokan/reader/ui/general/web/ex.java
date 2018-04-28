@@ -1,30 +1,20 @@
 package com.duokan.reader.ui.general.web;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.ImageView;
+import android.widget.EditText;
+import com.duokan.reader.ui.general.ReaderUi;
 
-import com.duokan.c.f;
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.core.sys.as;
+class ex implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ EditText f7809a;
+    /* renamed from: b */
+    final /* synthetic */ ew f7810b;
 
-class ex implements as {
-    final /* synthetic */ String[] a;
-    final /* synthetic */ ew b;
-
-    ex(ew ewVar, String[] strArr) {
-        this.b = ewVar;
-        this.a = strArr;
+    ex(ew ewVar, EditText editText) {
+        this.f7810b = ewVar;
+        this.f7809a = editText;
     }
 
-    public void a() {
-        if (this.b.b.pageController.mPageHeaderView != null) {
-            this.b.b.pageController.mPageHeaderView.a();
-            View inflate = LayoutInflater.from(this.b.b.pageController.getContext()).inflate(h.store__header_view__right_button_container, this.b.b.pageController.mPageHeaderView, false);
-            ((ImageView) inflate.findViewById(g.store__title_view__right_button)).setImageResource(f.store__shared__more);
-            this.b.b.pageController.mPageHeaderView.a(inflate);
-            inflate.setOnClickListener(new ey(this, inflate));
-        }
+    public void run() {
+        ReaderUi.m10162a(this.f7810b.f7808e.f7793b.f7581b.getContext(), this.f7809a);
     }
 }

@@ -2,15 +2,15 @@ package com.duokan.reader.ui.reading;
 
 import android.graphics.PointF;
 import android.view.View;
-
 import com.duokan.core.ui.du;
 import com.duokan.core.ui.er;
 
 class ay implements du {
-    final /* synthetic */ ax a;
+    /* renamed from: a */
+    final /* synthetic */ ax f9811a;
 
     ay(ax axVar) {
-        this.a = axVar;
+        this.f9811a = axVar;
     }
 
     public void onTouchUp(View view, PointF pointF) {
@@ -22,13 +22,14 @@ class ay implements du {
     public void onTouchCancel(View view, PointF pointF) {
     }
 
-    public void a(er erVar, View view, PointF pointF, PointF pointF2) {
-        this.a.a.t = this.a.a.t + pointF2.y;
-        if (this.a.a.t < ((float) this.a.a.i)) {
-            this.a.a.i();
-        } else if (this.a.a.t >= ((float) (this.a.a.l.getHeight() - this.a.a.j))) {
-            this.a.a.j();
+    /* renamed from: a */
+    public void mo527a(er erVar, View view, PointF pointF, PointF pointF2) {
+        this.f9811a.f9809a.f9801t = this.f9811a.f9809a.f9801t + pointF2.y;
+        if (this.f9811a.f9809a.f9801t < ((float) this.f9811a.f9809a.f9790i)) {
+            this.f9811a.f9809a.m13747i();
+        } else if (this.f9811a.f9809a.f9801t >= ((float) (this.f9811a.f9809a.f9793l.getHeight() - this.f9811a.f9809a.f9791j))) {
+            this.f9811a.f9809a.m13748j();
         }
-        this.a.a.c.invalidate();
+        this.f9811a.f9809a.f9784c.invalidate();
     }
 }

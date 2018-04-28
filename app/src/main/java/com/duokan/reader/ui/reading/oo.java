@@ -1,24 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.sys.IdleHandlerListener;
 
-import com.duokan.reader.UmengManager;
-
-class oo implements OnClickListener {
-    final /* synthetic */ on a;
+class oo implements IdleHandlerListener {
+    /* renamed from: a */
+    final /* synthetic */ on f10749a;
 
     oo(on onVar) {
-        this.a = onVar;
+        this.f10749a = onVar;
     }
 
-    public void onClick(View view) {
-        if (this.a.f.g()) {
-            UmengManager.get().onEvent("V2_READING_FLOAT_TOOLBUTTON", "PDF-Reflow");
-            this.a.a(new op(this));
-            return;
-        }
-        UmengManager.get().onEvent("V2_READING_FLOAT_TOOLBUTTON", "PDF-Exit-Reflow");
-        this.a.a(new oq(this));
+    public boolean idleRun() {
+        this.f10749a.f10747d.f10700b.mo2103b(new op(this));
+        return false;
     }
 }

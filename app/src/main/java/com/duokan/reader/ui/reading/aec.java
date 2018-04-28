@@ -1,28 +1,44 @@
 package com.duokan.reader.ui.reading;
 
-import android.bluetooth.BluetoothAdapter;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
+import com.duokan.core.sys.ag;
+import com.duokan.reader.domain.document.C0896a;
+import com.duokan.reader.domain.document.ak;
+import com.duokan.reader.domain.document.as;
+import java.util.Arrays;
 
-class aec extends BroadcastReceiver {
-    final /* synthetic */ adm a;
+class aec implements ag<as> {
+    /* renamed from: a */
+    final /* synthetic */ ak f9566a;
+    /* renamed from: b */
+    final /* synthetic */ aeb f9567b;
 
-    private aec(adm com_duokan_reader_ui_reading_adm) {
-        this.a = com_duokan_reader_ui_reading_adm;
+    aec(aeb aeb, ak akVar) {
+        this.f9567b = aeb;
+        this.f9566a = akVar;
     }
 
-    public void onReceive(Context context, Intent intent) {
-        String action = intent.getAction();
-        if ("android.intent.action.HEADSET_PLUG".equals(action)) {
-            if (intent.hasExtra("state") && intent.getIntExtra("state", 0) == 0) {
-                this.a.b();
-            }
-        } else if ("android.bluetooth.headset.profile.action.CONNECTION_STATE_CHANGED".equals(action)) {
-            BluetoothAdapter defaultAdapter = BluetoothAdapter.getDefaultAdapter();
-            if (defaultAdapter != null && defaultAdapter.getProfileConnectionState(1) == 0) {
-                this.a.b();
-            }
+    public /* synthetic */ void run(Object obj) {
+        m13454a((as) obj);
+    }
+
+    /* renamed from: a */
+    public void m13454a(as asVar) {
+        afa afa;
+        C0896a c0896a = null;
+        if (asVar != null) {
+            afa = new afa();
+            afa.f9612a = this.f9566a;
+            afa.f9613b.addAll(Arrays.asList(this.f9567b.f9565d.m13416a(asVar)));
+            asVar.mo1285H();
+            this.f9567b.f9565d.m13406a(afa);
+            this.f9567b.f9562a.f9614c = afa.f9614c;
         }
+        afa = this.f9567b.f9562a;
+        if (!this.f9567b.f9565d.f9541a.mo2139e(this.f9566a)) {
+            c0896a = this.f9567b.f9565d.f9542b.mo1237f(this.f9566a);
+        }
+        afa.f9612a = c0896a;
+        this.f9567b.f9565d.m13406a(this.f9567b.f9562a);
+        this.f9567b.f9563b.run(this.f9567b.f9562a);
     }
 }

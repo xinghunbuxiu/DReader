@@ -4,91 +4,106 @@ import android.view.View;
 import android.view.ViewGroup;
 
 class ap extends aj implements ax {
-    final HatGridView a;
-    private aj c;
+    /* renamed from: a */
+    final /* synthetic */ HatGridView f962a;
+    /* renamed from: c */
+    private aj f963c;
 
     private ap(HatGridView hatGridView) {
-        this.a = hatGridView;
-        this.c = null;
+        this.f962a = hatGridView;
+        this.f963c = null;
     }
 
-    public final aj b() {
-        return this.c;
+    /* renamed from: b */
+    public final aj m1593b() {
+        return this.f963c;
     }
 
-    public final void a(aj ajVar) {
-        if (this.c != null) {
-            this.c.b(this);
+    /* renamed from: a */
+    public final void m1591a(aj ajVar) {
+        if (this.f963c != null) {
+            this.f963c.mo484b(this);
         }
-        this.c = ajVar;
-        if (this.c != null) {
-            this.c.a(this);
+        this.f963c = ajVar;
+        if (this.f963c != null) {
+            this.f963c.mo483a(this);
         }
     }
 
-    public int a() {
-        return this.c == null ? 0 : this.c.a();
+    /* renamed from: a */
+    public int mo486a() {
+        return this.f963c == null ? 0 : this.f963c.mo486a();
     }
 
-    public int a(int i) {
-        return this.c == null ? 0 : this.c.a(i);
+    /* renamed from: a */
+    public int mo487a(int i) {
+        return this.f963c == null ? 0 : this.f963c.mo487a(i);
     }
 
-    public View a(int i, View view, ViewGroup viewGroup) {
-        return this.c == null ? null : this.c.a(i, view, viewGroup);
+    /* renamed from: a */
+    public View mo488a(int i, View view, ViewGroup viewGroup) {
+        return this.f963c == null ? null : this.f963c.mo488a(i, view, viewGroup);
     }
 
-    public int c() {
-        return this.c == null ? 0 : this.c.c();
+    /* renamed from: c */
+    public int mo506c() {
+        return this.f963c == null ? 0 : this.f963c.mo506c();
     }
 
-    public View a(View view, ViewGroup viewGroup) {
-        return this.c == null ? null : this.c.a(null, viewGroup);
+    /* renamed from: a */
+    public View mo482a(View view, ViewGroup viewGroup) {
+        return this.f963c == null ? null : this.f963c.mo482a(null, viewGroup);
     }
 
-    public View b(int i, View view, ViewGroup viewGroup) {
-        return this.c == null ? null : this.c.b(i, view, viewGroup);
+    /* renamed from: b */
+    public View mo505b(int i, View view, ViewGroup viewGroup) {
+        return this.f963c == null ? null : this.f963c.mo505b(i, view, viewGroup);
     }
 
-    public View c(int i, View view, ViewGroup viewGroup) {
-        return this.c == null ? null : this.c.c(i, view, viewGroup);
+    /* renamed from: c */
+    public View mo507c(int i, View view, ViewGroup viewGroup) {
+        return this.f963c == null ? null : this.f963c.mo507c(i, view, viewGroup);
     }
 
-    public View d(int i, View view, ViewGroup viewGroup) {
-        return this.c == null ? null : this.c.d(i, view, viewGroup);
+    /* renamed from: d */
+    public View mo508d(int i, View view, ViewGroup viewGroup) {
+        return this.f963c == null ? null : this.f963c.mo508d(i, view, viewGroup);
     }
 
     public void a_(int i, int i2) {
-        f(i, i2);
+        m1397f(i, i2);
     }
 
     public void b_(int i, int i2) {
-        g(i, i2);
+        m1398g(i, i2);
     }
 
-    public void a(int i, int i2, int i3) {
-        b(i, i2, i3);
+    /* renamed from: a */
+    public void mo440a(int i, int i2, int i3) {
+        m1393b(i, i2, i3);
     }
 
-    public void d(int i, int i2) {
-        h(i, i2);
+    /* renamed from: d */
+    public void mo444d(int i, int i2) {
+        mo2519h(i, i2);
     }
 
     public void a_(int i) {
-        View z = this.a.l();
-        View b = b(i, z, this.a.c);
-        if (z != b) {
-            this.a.a(b);
+        View A = this.f962a.m1214l();
+        View b = mo505b(i, A, this.f962a.f813c);
+        if (A != b) {
+            this.f962a.m1190a(b);
         }
-        z = this.a.m();
-        b = c(i, z, this.a.b);
-        if (z != b) {
-            this.a.b(b);
+        A = this.f962a.m1216m();
+        b = mo507c(i, A, this.f962a.f812b);
+        if (A != b) {
+            this.f962a.m1198b(b);
         }
-        d();
+        mo1691d();
     }
 
-    public Object d(int i) {
-        return this.c == null ? null : this.c.d(i);
+    /* renamed from: d */
+    public Object mo509d(int i) {
+        return this.f963c == null ? null : this.f963c.mo509d(i);
     }
 }

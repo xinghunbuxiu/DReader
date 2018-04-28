@@ -1,30 +1,18 @@
 package com.duokan.reader.domain.cloud;
 
-import android.text.TextUtils;
+class ek implements eu {
+    /* renamed from: a */
+    final /* synthetic */ DkUserReadingNotesManager f3930a;
 
-import com.duokan.reader.common.cache.d;
-import com.duokan.reader.common.cache.i;
-import com.duokan.reader.domain.account.ab;
-
-abstract class ek extends d {
-    protected final ab a;
-
-    public /* synthetic */ Object queryInfo() {
-        return b();
+    ek(DkUserReadingNotesManager dkUserReadingNotesManager) {
+        this.f3930a = dkUserReadingNotesManager;
     }
 
-    protected ek(ab abVar, String str) {
-        super(str + "_" + abVar.a, i.a, new ea(), 0);
-        this.a = abVar;
+    /* renamed from: a */
+    public void mo1159a(DkCloudNoteBookInfo[] dkCloudNoteBookInfoArr, boolean z) {
     }
 
-    public DkUserPurchasedFictionsInfo b() {
-        DkUserPurchasedFictionsInfo dkUserPurchasedFictionsInfo = (DkUserPurchasedFictionsInfo) super.queryInfo();
-        if (TextUtils.isEmpty(dkUserPurchasedFictionsInfo.mAccountUuid)) {
-            dkUserPurchasedFictionsInfo.mAccountUuid = this.a.a;
-            dkUserPurchasedFictionsInfo.mAccountName = this.a.c;
-            updateInfo(dkUserPurchasedFictionsInfo);
-        }
-        return dkUserPurchasedFictionsInfo;
+    /* renamed from: a */
+    public void mo1158a(String str) {
     }
 }

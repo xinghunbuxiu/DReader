@@ -1,15 +1,14 @@
 package com.duokan.reader.ui.general;
 
-class ex implements dj {
-    final /* synthetic */ ew a;
+class ex implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ eu f7172a;
 
-    ex(ew ewVar) {
-        this.a = ewVar;
+    ex(eu euVar) {
+        this.f7172a = euVar;
     }
 
-    public boolean onBack() {
-        this.a.e.clearFocus();
-        this.a.g.c();
-        return true;
+    public void run() {
+        ReaderUi.m10162a(this.f7172a.getContext(), this.f7172a.f5770e);
     }
 }

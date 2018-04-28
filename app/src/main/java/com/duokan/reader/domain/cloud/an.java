@@ -1,20 +1,25 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.b;
+import com.duokan.reader.domain.cloud.DkSharedStorageManager.SharedKey;
+import java.util.List;
 
-class an implements b {
-    final /* synthetic */ am a;
+class an implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ List f3692a;
+    /* renamed from: b */
+    final /* synthetic */ SharedKey f3693b;
+    /* renamed from: c */
+    final /* synthetic */ DkSharedStorageManager f3694c;
 
-    an(am amVar) {
-        this.a = amVar;
+    an(DkSharedStorageManager dkSharedStorageManager, List list, SharedKey sharedKey) {
+        this.f3694c = dkSharedStorageManager;
+        this.f3692a = list;
+        this.f3693b = sharedKey;
     }
 
-    public void a(a aVar) {
-        this.a.i.a(this.a.e, aVar, this.a.c, this.a.f, this.a.g, this.a.h);
-    }
-
-    public void a(a aVar, String str) {
-        this.a.h.b(this.a.c, str, this.a.g);
+    public void run() {
+        for (ao a : this.f3692a) {
+            a.mo1153a(this.f3693b);
+        }
     }
 }

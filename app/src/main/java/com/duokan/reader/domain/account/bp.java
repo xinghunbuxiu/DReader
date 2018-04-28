@@ -1,15 +1,25 @@
 package com.duokan.reader.domain.account;
 
-class bp implements d {
-    final /* synthetic */ MiGuestAccount a;
+import com.duokan.reader.ui.general.ja;
 
-    bp(MiGuestAccount miGuestAccount) {
-        this.a = miGuestAccount;
+class bp implements C0420b {
+    /* renamed from: a */
+    final /* synthetic */ ja f2444a;
+    /* renamed from: b */
+    final /* synthetic */ bo f2445b;
+
+    bp(bo boVar, ja jaVar) {
+        this.f2445b = boVar;
+        this.f2444a = jaVar;
     }
 
-    public void a(a aVar) {
+    public void onLoginOk(C0672a c0672a) {
+        this.f2445b.f2443a.onLoginOk(c0672a);
+        this.f2444a.dismiss();
     }
 
-    public void a(a aVar, String str) {
+    public void onLoginError(C0672a c0672a, String str) {
+        this.f2445b.f2443a.onLoginError(c0672a, str);
+        this.f2444a.dismiss();
     }
 }

@@ -1,28 +1,17 @@
 package com.duokan.reader.domain.bookshelf;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.duokan.reader.domain.account.C0709k;
 
-public class df {
-    public String a;
-    public long b;
+class df implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ de f3017a;
 
-    public df(JSONObject jSONObject) {
-        if (jSONObject == null) {
-            this.a = "";
-            return;
-        }
-        this.a = jSONObject.optString("account_uuid");
-        this.b = jSONObject.optLong("latest_sync_down_time");
+    df(de deVar) {
+        this.f3017a = deVar;
     }
 
-    public JSONObject a() {
-        JSONObject jSONObject = new JSONObject();
-        try {
-            jSONObject.put("account_uuid", this.a);
-            jSONObject.put("latest_sync_down_time", this.b);
-        } catch (JSONException e) {
-        }
-        return jSONObject;
+    public void run() {
+        C0709k.m3476a().m3494a(new dg(this));
+        this.f3017a.m4330c();
     }
 }

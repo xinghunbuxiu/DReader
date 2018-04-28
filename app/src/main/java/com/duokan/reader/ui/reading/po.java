@@ -1,44 +1,43 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.IFeature;
-import com.duokan.core.sys.af;
+import android.graphics.Point;
+import com.duokan.core.app.IScreenRotationChangedListener;
+import com.duokan.core.ui.C0380do;
+import com.duokan.core.ui.ZoomView;
+import com.duokan.core.ui.di;
+import com.duokan.core.ui.dl;
+import com.duokan.core.ui.dv;
 
-public abstract class po extends tc {
-    public /* bridge */ /* synthetic */ void a(long j) {
-        super.a(j);
+class po implements IScreenRotationChangedListener {
+    /* renamed from: a */
+    final /* synthetic */ xx f10802a;
+    /* renamed from: b */
+    final /* synthetic */ di f10803b;
+    /* renamed from: c */
+    final /* synthetic */ ZoomView f10804c;
+    /* renamed from: d */
+    final /* synthetic */ pm f10805d;
+
+    po(pm pmVar, xx xxVar, di diVar, ZoomView zoomView) {
+        this.f10805d = pmVar;
+        this.f10802a = xxVar;
+        this.f10803b = diVar;
+        this.f10804c = zoomView;
     }
 
-    public /* bridge */ /* synthetic */ void chooseNavigationBarColor(af afVar) {
-        super.chooseNavigationBarColor(afVar);
-    }
-
-    public /* bridge */ /* synthetic */ void chooseNavigationBarMode(af afVar) {
-        super.chooseNavigationBarMode(afVar);
-    }
-
-    public /* bridge */ /* synthetic */ void chooseStatusBarStyle(af afVar) {
-        super.chooseStatusBarStyle(afVar);
-    }
-
-    public /* bridge */ /* synthetic */ boolean dismissTopPopup() {
-        return super.dismissTopPopup();
-    }
-
-    public /* bridge */ /* synthetic */ void f() {
-        super.f();
-    }
-
-    public /* bridge */ /* synthetic */ void g() {
-        super.g();
-    }
-
-    public po(IFeature featrue) {
-        super(featrue);
-        findViewById(g.reading__reading_menu_view__search).setOnClickListener(new pp(this));
-        findViewById(g.reading__reading_menu_bottom_view__options).setOnClickListener(new pq(this));
-    }
-
-    protected void b() {
-        a(new ud(getContext()));
+    /* renamed from: a */
+    public void ScreenRotationChanged(int i) {
+        Point point = new Point(0, 0);
+        dv.m1945c(point, this.f10802a);
+        C0380do b = this.f10803b.m1836b(this.f10804c);
+        dl a = this.f10803b.m1826a(this.f10804c);
+        float l = b.m1865l() + a.m1865l();
+        C0380do c0380do = new C0380do(b);
+        c0380do.m1858d((float) dv.m1892a(i, 0, 360));
+        this.f10803b.m1835a(this.f10804c, c0380do);
+        dl dlVar = new dl(a);
+        dlVar.m1858d(l - c0380do.m1865l());
+        this.f10803b.m1830a(this.f10804c, dlVar);
+        this.f10803b.getViewTreeObserver().addOnPreDrawListener(new pp(this, point));
     }
 }

@@ -1,5 +1,6 @@
 package com.duokan.reader.ui.general;
 
 public class cj {
-    public String a;
+    /* renamed from: a */
+    public String f7033a;
 }

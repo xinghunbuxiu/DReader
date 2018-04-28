@@ -4,13 +4,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 class ca implements OnClickListener {
-    final /* synthetic */ bz a;
+    /* renamed from: a */
+    final /* synthetic */ bz f7020a;
 
     ca(bz bzVar) {
-        this.a = bzVar;
+        this.f7020a = bzVar;
     }
 
     public void onClick(View view) {
-        this.a.cancel();
+        this.f7020a.cancel();
     }
 }

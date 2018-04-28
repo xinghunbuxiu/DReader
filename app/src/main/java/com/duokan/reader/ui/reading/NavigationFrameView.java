@@ -5,16 +5,18 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.core.ui.UTools;
+import com.duokan.core.app.AppContext;
+import com.duokan.core.ui.dv;
 import com.duokan.core.ui.et;
 import com.duokan.reader.ui.general.ReaderUi;
 
 public class NavigationFrameView extends FrameLayout {
-    private final sh a;
-    private et b;
-    private nh c;
+    /* renamed from: a */
+    private final su f9105a;
+    /* renamed from: b */
+    private et f9106b;
+    /* renamed from: c */
+    private nr f9107c;
 
     public NavigationFrameView(Context context) {
         this(context, null);
@@ -22,33 +24,33 @@ public class NavigationFrameView extends FrameLayout {
 
     public NavigationFrameView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.b = null;
-        this.c = null;
+        this.f9106b = null;
+        this.f9107c = null;
         if (isInEditMode()) {
-            this.a = null;
+            this.f9105a = null;
         } else {
-            this.a = (sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class);
+            this.f9105a = (su) AppContext.getAppContext(getContext()).queryFeature(su.class);
         }
     }
 
     public void setViewGestureDetector(et etVar) {
-        this.b = etVar;
+        this.f9106b = etVar;
     }
 
-    public void setSizeChangedListener(nh nhVar) {
-        this.c = nhVar;
+    public void setSizeChangedListener(nr nrVar) {
+        this.f9107c = nrVar;
     }
 
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.b != null) {
-            return this.b.a((View) this, motionEvent);
+        if (this.f9106b != null) {
+            return this.f9106b.m2044a((View) this, motionEvent);
         }
         return super.onInterceptTouchEvent(motionEvent);
     }
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.b != null) {
-            return this.b.onTouch(this, motionEvent);
+        if (this.f9106b != null) {
+            return this.f9106b.onTouch(this, motionEvent);
         }
         return super.onTouchEvent(motionEvent);
     }
@@ -58,10 +60,10 @@ public class NavigationFrameView extends FrameLayout {
         super.onMeasure(i, i2);
         if (isInEditMode()) {
             i3 = 0;
-        } else if (ReaderUi.m(getContext())) {
-            i3 = (ReaderUi.m(getContext()) && this.a.am()) ? getMeasuredWidth() / 2 : ReaderUi.a(getContext(), MeasureSpec.getMode(i) != 0 ? MeasureSpec.getSize(i) : UTools.getWidthPixels(getContext()), 0.618f);
+        } else if (ReaderUi.m10170m(getContext())) {
+            i3 = (ReaderUi.m10170m(getContext()) && this.f9105a.am()) ? getMeasuredWidth() / 2 : ReaderUi.m10154a(getContext(), MeasureSpec.getMode(i) != 0 ? MeasureSpec.getSize(i) : dv.getWidthPixels(getContext()), 0.618f);
         } else {
-            i3 = UTools.getMinimumHeight(getContext(), 40.0f);
+            i3 = dv.m1932b(getContext(), 40.0f);
         }
         if (getPaddingRight() != i3) {
             setPadding(0, 0, i3, 0);
@@ -71,8 +73,8 @@ public class NavigationFrameView extends FrameLayout {
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
-        if (z && this.c != null) {
-            this.c.a();
+        if (z && this.f9107c != null) {
+            this.f9107c.mo2449a();
         }
     }
 }

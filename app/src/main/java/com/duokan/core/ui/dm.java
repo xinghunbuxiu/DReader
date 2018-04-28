@@ -1,23 +1,23 @@
 package com.duokan.core.ui;
 
 class dm extends dq {
-    public dm(di diVar, dp dpVar, dp dpVar2, long j, Runnable runnable, Runnable runnable2) {
-        super(diVar, dpVar, dpVar2, j, runnable, runnable2);
+    /* renamed from: c */
+    public /* synthetic */ dp mo513c() {
+        return m1877b();
     }
 
-    public dos c() {
-        return b();
+    /* renamed from: d */
+    public /* synthetic */ dp mo514d() {
+        return m1876a();
     }
 
-    public dp d() {
-        return a();
+    /* renamed from: a */
+    public C0380do m1876a() {
+        return (C0380do) super.mo514d();
     }
 
-    public dos a() {
-        return (dos) super.d();
-    }
-
-    public dos b() {
-        return (dos) super.c();
+    /* renamed from: b */
+    public C0380do m1877b() {
+        return (C0380do) super.mo513c();
     }
 }

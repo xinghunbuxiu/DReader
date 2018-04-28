@@ -1,90 +1,31 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.c.j;
-import com.duokan.core.app.IFeature;
-import com.duokan.reader.ui.bookshelf.ho;
-import com.duokan.reader.ui.general.ap;
-import com.duokan.reader.ui.general.hd;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.view.View;
+import com.duokan.core.ui.dv;
 
-public class hi extends hd implements ho {
-    private final hl a = new hl(getContext(), this.b, this);
-    private final mo b = new fa();
+class hi extends View {
+    /* renamed from: a */
+    final /* synthetic */ fz f8652a;
 
-    public hi(IFeature featrue) {
-        super(featrue);
-        setContentView(this.a);
+    hi(fz fzVar, Context context) {
+        this.f8652a = fzVar;
+        super(context);
     }
 
-    protected void onActive(boolean z) {
-        super.onActive(z);
-        if (z) {
-            this.a.a(0, 30);
-        }
-    }
-
-    protected boolean onBack() {
-        if (this.a == null || !this.a.j()) {
-            return super.onBack();
-        }
-        return true;
-    }
-
-    public void a(int i, int i2) {
-        this.a.c(i, i2);
-    }
-
-    public void b() {
-        this.a.q();
-    }
-
-    public void c() {
-        this.a.m();
-    }
-
-    public void d() {
-        this.a.n();
-    }
-
-    public void a(Runnable runnable) {
-        if (getPopupCount() <= 0) {
-            ap apVar = new ap(getContext());
-            apVar.setPrompt(j.personal__statistics_view__delete);
-            apVar.setCancelLabel(j.general__shared__cancel);
-            apVar.setOkLabel(j.general__shared__remove);
-            apVar.setCancelOnBack(true);
-            apVar.setCancelOnTouchOutside(false);
-            apVar.open(new hj(this, runnable));
-        }
-    }
-
-    public int e() {
-        return this.a.getSelectedCount();
-    }
-
-    public void f() {
-        this.a.a();
-    }
-
-    public boolean g() {
-        return this.a.c();
-    }
-
-    public void h() {
-        this.a.b();
-    }
-
-    public void b(int i, int i2) {
-    }
-
-    public String i() {
-        return null;
-    }
-
-    public String j() {
-        return null;
-    }
-
-    public String k() {
-        return null;
+    protected void onDraw(Canvas canvas) {
+        Rect rect = (Rect) dv.f1198g.addAnimation();
+        rect.set(0, 0, getMeasuredWidth(), this.f8652a.f8599z);
+        Paint paint = new Paint();
+        paint.setColor(0);
+        canvas.drawRect(rect, paint);
+        paint.setColor(-1);
+        rect.top = this.f8652a.f8599z;
+        rect.bottom = getMeasuredHeight();
+        canvas.drawRect(rect, paint);
+        dv.f1198g.clearAnimation(rect);
     }
 }

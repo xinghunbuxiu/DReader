@@ -1,19 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.RectF;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 
-class ot implements is {
-    final /* synthetic */ os a;
+class ot extends BroadcastReceiver {
+    /* renamed from: a */
+    final /* synthetic */ PagesFrameView f10757a;
 
-    ot(os osVar) {
-        this.a = osVar;
+    ot(PagesFrameView pagesFrameView) {
+        this.f10757a = pagesFrameView;
     }
 
-    public void a() {
-        this.a.a.a.f.a(new RectF[]{new RectF()});
-    }
-
-    public void a(RectF[] rectFArr) {
-        this.a.a.a.f.a(rectFArr);
+    public void onReceive(Context context, Intent intent) {
+        this.f10757a.m12432a(this.f10757a.getSystemTime());
     }
 }

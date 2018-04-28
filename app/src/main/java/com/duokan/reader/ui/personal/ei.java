@@ -1,19 +1,16 @@
 package com.duokan.reader.ui.personal;
 
+import com.duokan.core.app.FeatureListening;
+import com.duokan.reader.domain.bookshelf.im;
 import java.util.List;
 
-class ei implements ep {
-    final /* synthetic */ ep a;
-    final /* synthetic */ List b;
-    final /* synthetic */ ds c;
+public interface ei extends FeatureListening {
+    /* renamed from: a */
+    void mo1898a(CustomCloudItem customCloudItem);
 
-    ei(ds dsVar, ep epVar, List list) {
-        this.c = dsVar;
-        this.a = epVar;
-        this.b = list;
-    }
+    /* renamed from: a */
+    void mo1899a(CustomCloudItem customCloudItem, im imVar);
 
-    public void a(List list, List list2) {
-        this.a.a(list, this.b);
-    }
+    /* renamed from: a */
+    void mo1900a(List<CustomCloudItem> list, ej ejVar);
 }

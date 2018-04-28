@@ -1,11 +1,9 @@
 package com.duokan.reader.domain.cloud;
 
 import android.text.TextUtils;
-
 import com.duokan.core.sys.af;
 import com.duokan.reader.common.webservices.duokan.DkCloudPurchasedFictionInfo;
 import com.duokan.reader.common.webservices.duokan.DkStoreBookSourceType;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -26,17 +24,17 @@ public class DkCloudPurchasedFiction extends DkCloudStoreBook {
         this.mIsFullData = true;
     }
 
-    protected DkCloudPurchasedFiction(f fVar) {
-        super(fVar.a);
+    protected DkCloudPurchasedFiction(C0846f c0846f) {
+        super(c0846f.f3967a);
         this.mLabels = (String[][]) null;
         this.mOrderInfo = new DkCloudPurchasedFictionInfo();
-        this.mOrderInfo.mBookUuid = fVar.a;
-        this.mOrderInfo.mTitle = fVar.b;
-        this.mOrderInfo.mAuthors = fVar.c;
-        this.mOrderInfo.mEditors = fVar.d;
-        this.mOrderInfo.setPurchaseTimeInSeconds(fVar.e);
-        this.mOrderInfo.mCoverUri = fVar.f;
-        this.mOrderInfo.mIsHide = fVar.g;
+        this.mOrderInfo.mBookUuid = c0846f.f3967a;
+        this.mOrderInfo.mTitle = c0846f.f3968b;
+        this.mOrderInfo.mAuthors = c0846f.f3969c;
+        this.mOrderInfo.mEditors = c0846f.f3970d;
+        this.mOrderInfo.setPurchaseTimeInSeconds(c0846f.f3971e);
+        this.mOrderInfo.mCoverUri = c0846f.f3972f;
+        this.mOrderInfo.mIsHide = c0846f.f3973g;
         this.mIsFullData = false;
     }
 
@@ -48,15 +46,15 @@ public class DkCloudPurchasedFiction extends DkCloudStoreBook {
         this.mIsFullData = dkCloudPurchasedFiction.mIsFullData;
     }
 
-    public List getNotPurchasedChapterIds() {
+    public List<String> getNotPurchasedChapterIds() {
         return this.mOrderInfo.mNotPurchasedChapterIds;
     }
 
-    public List getPurchasedChapterIds() {
+    public List<String> getPurchasedChapterIds() {
         return this.mOrderInfo.mPurchasedChapterIds;
     }
 
-    public af checkChapterPurchased(String str) {
+    public af<Boolean> checkChapterPurchased(String str) {
         if (!this.mIsFullData) {
             return new af();
         }
@@ -129,7 +127,7 @@ public class DkCloudPurchasedFiction extends DkCloudStoreBook {
         return this.mOrderInfo.mAuthors;
     }
 
-    public void addPurchasedChapterIds(List list) {
+    public void addPurchasedChapterIds(List<String> list) {
         if (!list.isEmpty()) {
             HashSet hashSet = new HashSet(Arrays.asList(this.mOrderInfo.mPaidChapterId));
             if (hashSet.addAll(list)) {

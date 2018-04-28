@@ -1,31 +1,21 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.h;
+import com.duokan.reader.common.async.p035a.C0517a;
 
-class bm implements h {
-    final /* synthetic */ DkUserPurchasedBooksManager a;
+class bm implements C0517a<Void> {
+    /* renamed from: a */
+    final /* synthetic */ bl f3763a;
 
-    bm(DkUserPurchasedBooksManager dkUserPurchasedBooksManager) {
-        this.a = dkUserPurchasedBooksManager;
+    bm(bl blVar) {
+        this.f3763a = blVar;
     }
 
-    public void a(a aVar) {
-        this.a.h = new ct();
+    /* renamed from: a */
+    public void m5360a(Void voidR) {
+        new bn(this, cg.f3811a, DkUserPurchasedBooksManager.m5051h()).open();
     }
 
-    public void b(a aVar) {
-        this.a.a(false, false);
-    }
-
-    public void c(a aVar) {
-        ct ctVar = new ct();
-        ctVar.a = true;
-        ctVar.b = true;
-        this.a.h = ctVar;
-        this.a.f();
-    }
-
-    public void d(a aVar) {
+    /* renamed from: a */
+    public void mo729a(int i, String str) {
     }
 }

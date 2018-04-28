@@ -6,18 +6,21 @@ import android.util.AttributeSet;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-
-import com.duokan.b.e;
-import com.duokan.b.f;
-import com.duokan.b.g;
-import com.duokan.b.i;
+import com.duokan.p023b.C0241c;
+import com.duokan.p023b.C0243e;
+import com.duokan.p023b.C0244f;
+import com.duokan.p023b.C0245g;
+import com.duokan.p023b.C0247i;
 import com.duokan.reader.ui.bookshelf.BookActionAssistant.BookAction;
 import com.duokan.reader.ui.general.ReaderUi;
 
 public class BookActionView extends FrameLayout {
-    private final TextView a;
-    private final CheckBox b;
-    private BookAction c;
+    /* renamed from: a */
+    private final TextView f6015a;
+    /* renamed from: b */
+    private final CheckBox f6016b;
+    /* renamed from: c */
+    private BookAction f6017c;
 
     public BookActionView(Context context) {
         this(context, null);
@@ -29,9 +32,9 @@ public class BookActionView extends FrameLayout {
 
     public BookActionView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        inflate(context, g.bookshelf__book_action_view, this);
-        this.a = (TextView) findViewById(f.bookshelf__book_action_view_v4__text);
-        this.b = (CheckBox) findViewById(f.bookshelf__book_action_view__edit);
+        inflate(context, C0245g.bookshelf__book_action_view, this);
+        this.f6015a = (TextView) findViewById(C0244f.bookshelf__book_action_view_v4__text);
+        this.f6016b = (CheckBox) findViewById(C0244f.bookshelf__book_action_view__edit);
     }
 
     public void setEnabled(boolean z) {
@@ -42,127 +45,124 @@ public class BookActionView extends FrameLayout {
     }
 
     public void setAction(BookAction bookAction) {
-        a(bookAction, -1.0f, false);
+        m9058a(bookAction, -1.0f, false);
     }
 
-    public void a(BookAction bookAction, float f) {
-        a(bookAction, f, false);
+    /* renamed from: a */
+    public void m9063a(BookAction bookAction, float f) {
+        m9058a(bookAction, f, false);
     }
 
-    public void a(BookAction bookAction, boolean z) {
-        a(bookAction, -1.0f, z);
+    /* renamed from: a */
+    public void m9064a(BookAction bookAction, boolean z) {
+        m9058a(bookAction, -1.0f, z);
     }
 
-    public void a(float f, boolean z, boolean z2) {
+    /* renamed from: a */
+    public void m9062a(float f, boolean z) {
         if (z) {
-            this.a.setText(getResources().getString(i.bookshelf__book_action_view__download_paused));
+            this.f6015a.setText(getResources().getString(C0247i.bookshelf__book_action_view__download_paused));
         } else {
-            this.a.setText(((int) (100.0f * f)) + "%");
+            this.f6015a.setText(((int) (100.0f * f)) + "%");
         }
     }
 
-    private boolean a() {
-        return this.c == BookAction.EDIT;
+    /* renamed from: a */
+    private boolean m9059a() {
+        return this.f6017c == BookAction.EDIT;
     }
 
-    private boolean b() {
-        return this.c != BookAction.EDIT;
+    /* renamed from: b */
+    private boolean m9060b() {
+        return this.f6017c != BookAction.EDIT;
     }
 
-    private boolean c() {
-        return this.c == BookAction.DOWNLOAD_PAUSED || this.c == BookAction.UPLOAD_PAUSED || this.c == BookAction.READ || this.c == BookAction.CAN_UPDATE || this.c == BookAction.DOWNLOAD || this.c == BookAction.DOWNLOADING || this.c == BookAction.DOWNLOAD_FAILED || this.c == BookAction.CAN_UPLOAD || this.c == BookAction.UPLOADING || this.c == BookAction.UPLOAD_FAILED || this.c == BookAction.GIFI;
+    /* renamed from: c */
+    private boolean m9061c() {
+        return this.f6017c == BookAction.DOWNLOAD_PAUSED || this.f6017c == BookAction.UPLOAD_PAUSED || this.f6017c == BookAction.READ || this.f6017c == BookAction.CAN_UPDATE || this.f6017c == BookAction.DOWNLOAD || this.f6017c == BookAction.DOWNLOADING || this.f6017c == BookAction.DOWNLOAD_FAILED || this.f6017c == BookAction.CAN_UPLOAD || this.f6017c == BookAction.UPLOADING || this.f6017c == BookAction.UPLOAD_FAILED || this.f6017c == BookAction.GIFI;
     }
 
-    private void a(BookAction bookAction, float f, boolean z) {
+    /* renamed from: a */
+    private void m9058a(BookAction bookAction, float f, boolean z) {
         int i;
-        boolean z2 = true;
         int i2 = 0;
-        switch (ac.a[bookAction.ordinal()]) {
+        switch (ai.f6096a[bookAction.ordinal()]) {
             case 1:
-                this.b.setChecked(z);
+                this.f6016b.setChecked(z);
                 break;
             case 2:
-                this.a.setText(i.bookshelf__book_action_view__upload_paused);
-                ReaderUi.b(this.a, e.personal__purchased_book_download_button_bg);
-                this.a.setTextColor(Color.parseColor("#ff8400"));
+                this.f6015a.setText(C0247i.bookshelf__book_action_view__upload_paused);
+                ReaderUi.m10164b(this.f6015a, C0243e.personal__purchased_book_download_button_bg);
+                this.f6015a.setTextColor(Color.parseColor("#ff8400"));
                 break;
             case 3:
-                boolean z3;
-                if (bookAction == BookAction.DOWNLOAD_PAUSED) {
-                    z3 = true;
-                } else {
-                    z3 = false;
-                }
-                a(f, true, z3);
-                ReaderUi.b(this.a, e.personal__purchased_book_download_button_bg);
-                this.a.setTextColor(Color.parseColor("#3aac34"));
+                m9062a(f, true);
+                ReaderUi.m10164b(this.f6015a, C0243e.personal__purchased_book_download_button_bg);
+                this.f6015a.setTextColor(Color.parseColor("#3aac34"));
                 break;
             case 4:
-                this.a.setText(i.bookshelf__book_action_view__uploading);
-                ReaderUi.b(this.a, e.personal__purchased_book_download_button_bg);
-                this.a.setTextColor(Color.parseColor("#ff8400"));
+                this.f6015a.setText(C0247i.bookshelf__book_action_view__uploading);
+                ReaderUi.m10164b(this.f6015a, C0243e.personal__purchased_book_download_button_bg);
+                this.f6015a.setTextColor(Color.parseColor("#ff8400"));
                 break;
             case 5:
-                if (bookAction != BookAction.DOWNLOADING) {
-                    z2 = false;
-                }
-                a(f, false, z2);
-                ReaderUi.b(this.a, e.personal__purchased_book_download_button_bg);
-                this.a.setTextColor(Color.parseColor("#3aac34"));
+                m9062a(f, false);
+                ReaderUi.m10164b(this.f6015a, C0243e.personal__purchased_book_download_button_bg);
+                this.f6015a.setTextColor(Color.parseColor("#3aac34"));
                 break;
             case 6:
-                this.a.setText(i.bookshelf__book_action_view__read);
-                ReaderUi.b(this.a, e.personal__purchased_book_download_button_bg);
-                this.a.setTextColor(Color.parseColor("#4fabf1"));
+                this.f6015a.setText(C0247i.bookshelf__book_action_view__read);
+                ReaderUi.m10164b(this.f6015a, C0243e.personal__purchased_book_download_button_bg);
+                this.f6015a.setTextColor(Color.parseColor("#4fabf1"));
                 break;
             case 7:
-                this.a.setText(i.bookshelf__shared__retry_upload);
-                ReaderUi.b(this.a, e.personal__purchased_book_download_button_bg);
-                this.a.setTextColor(Color.parseColor("#d63737"));
+                this.f6015a.setText(C0247i.bookshelf__shared__retry_upload);
+                ReaderUi.m10164b(this.f6015a, C0243e.personal__purchased_book_download_button_bg);
+                this.f6015a.setTextColor(Color.parseColor("#d63737"));
                 break;
             case 8:
-                this.a.setText(i.bookshelf__book_action_view__update);
-                ReaderUi.b(this.a, e.personal__purchased_book_download_button_bg);
-                this.a.setTextColor(Color.parseColor("#ff8400"));
+                this.f6015a.setText(C0247i.bookshelf__book_action_view__update);
+                ReaderUi.m10164b(this.f6015a, C0243e.personal__purchased_book_download_button_bg);
+                this.f6015a.setTextColor(Color.parseColor("#ff8400"));
                 break;
             case 9:
-                this.a.setText(i.bookshelf__shared__retry_download);
-                ReaderUi.b(this.a, e.personal__purchased_book_download_button_bg);
-                this.a.setTextColor(Color.parseColor("#d63737"));
+                this.f6015a.setText(C0247i.bookshelf__shared__retry_download);
+                ReaderUi.m10164b(this.f6015a, C0243e.personal__purchased_book_download_button_bg);
+                this.f6015a.setTextColor(Color.parseColor("#d63737"));
                 break;
             case 10:
-                this.a.setText(i.bookshelf__book_action_view__connecting);
-                ReaderUi.b(this.a, e.personal__purchased_book_download_button_bg);
-                this.a.setTextColor(getContext().getResources().getColor(c.general__shared__888888));
+                this.f6015a.setText(C0247i.bookshelf__book_action_view__connecting);
+                ReaderUi.m10164b(this.f6015a, C0243e.personal__purchased_book_download_button_bg);
+                this.f6015a.setTextColor(getContext().getResources().getColor(C0241c.general__shared__888888));
                 break;
             case 11:
-                this.a.setText(i.bookshelf__book_action_view__upload);
-                ReaderUi.b(this.a, e.personal__purchased_book_download_button_bg);
-                this.a.setTextColor(Color.parseColor("#ff8400"));
+                this.f6015a.setText(C0247i.bookshelf__book_action_view__upload);
+                ReaderUi.m10164b(this.f6015a, C0243e.personal__purchased_book_download_button_bg);
+                this.f6015a.setTextColor(Color.parseColor("#ff8400"));
                 break;
             case 12:
-                this.a.setText(i.bookshelf__book_action_view__download_book);
-                ReaderUi.b(this.a, e.personal__purchased_book_download_button_bg);
-                this.a.setTextColor(Color.parseColor("#3aac34"));
+                this.f6015a.setText(C0247i.bookshelf__book_action_view__download_book);
+                ReaderUi.m10164b(this.f6015a, C0243e.personal__purchased_book_download_button_bg);
+                this.f6015a.setTextColor(Color.parseColor("#3aac34"));
                 break;
             case 13:
-                this.a.setText(i.bookshelf__book_action_view__download_book);
-                ReaderUi.b(this.a, e.personal__purchased_book_download_button_bg);
-                this.a.setTextColor(Color.parseColor("#3aac34"));
+                this.f6015a.setText(C0247i.bookshelf__book_action_view__download_book);
+                ReaderUi.m10164b(this.f6015a, C0243e.personal__purchased_book_download_button_bg);
+                this.f6015a.setTextColor(Color.parseColor("#3aac34"));
                 break;
         }
-        this.c = bookAction;
-        setEnabled(c());
-        setClickable(c());
-        TextView textView = this.a;
-        if (b()) {
+        this.f6017c = bookAction;
+        setEnabled(m9061c());
+        setClickable(m9061c());
+        TextView textView = this.f6015a;
+        if (m9060b()) {
             i = 0;
         } else {
             i = 4;
         }
         textView.setVisibility(i);
-        CheckBox checkBox = this.b;
-        if (!a()) {
+        CheckBox checkBox = this.f6016b;
+        if (!m9059a()) {
             i2 = 4;
         }
         checkBox.setVisibility(i2);

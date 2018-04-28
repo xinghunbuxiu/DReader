@@ -1,19 +1,14 @@
 package com.duokan.reader.ui.personal;
 
-import java.util.Comparator;
+class ey implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ ev f8529a;
 
-class ey implements Comparator {
-    final /* synthetic */ ex a;
-
-    ey(ex exVar) {
-        this.a = exVar;
+    ey(ev evVar) {
+        this.f8529a = evVar;
     }
 
-    public /* synthetic */ int compare(Object obj, Object obj2) {
-        return a((CustomCloudItem) obj, (CustomCloudItem) obj2);
-    }
-
-    public int a(CustomCloudItem customCloudItem, CustomCloudItem customCloudItem2) {
-        return Long.valueOf(customCloudItem.f()).compareTo(Long.valueOf(customCloudItem.f())) * -1;
+    public void run() {
+        this.f8529a.f8526a.m11783d();
     }
 }

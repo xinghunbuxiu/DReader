@@ -3,23 +3,25 @@ package com.duokan.reader.domain.bookshelf;
 import android.os.Parcel;
 import android.os.Parcelable.Creator;
 
-final class ag implements Creator {
+final class ag implements Creator<BookTag> {
     ag() {
     }
 
     public /* synthetic */ Object createFromParcel(Parcel parcel) {
-        return a(parcel);
+        return m3787a(parcel);
     }
 
     public /* synthetic */ Object[] newArray(int i) {
-        return a(i);
+        return m3788a(i);
     }
 
-    public BookTag a(Parcel parcel) {
+    /* renamed from: a */
+    public BookTag m3787a(Parcel parcel) {
         return new BookTag(parcel);
     }
 
-    public BookTag[] a(int i) {
+    /* renamed from: a */
+    public BookTag[] m3788a(int i) {
         return new BookTag[i];
     }
 }

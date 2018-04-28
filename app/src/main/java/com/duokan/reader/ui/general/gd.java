@@ -1,11 +1,32 @@
 package com.duokan.reader.ui.general;
 
-public interface gd {
-    void a(PagesView pagesView);
+import com.duokan.core.ui.aw;
+import com.duokan.core.ui.ax;
 
-    void a(PagesView pagesView, gi giVar);
+public abstract class gd extends aw implements ax {
+    /* renamed from: c */
+    protected fy f7049c = null;
+    /* renamed from: d */
+    final /* synthetic */ PagesView f7050d;
 
-    void b(PagesView pagesView);
+    protected gd(PagesView pagesView) {
+        this.f7050d = pagesView;
+    }
 
-    void b(PagesView pagesView, gi giVar);
+    /* renamed from: b */
+    public fy mo1765b() {
+        return this.f7049c;
+    }
+
+    /* renamed from: a */
+    public void m10412a(fy fyVar) {
+        if (this.f7049c != null) {
+            this.f7049c.mo484b(this);
+        }
+        this.f7049c = fyVar;
+        if (this.f7049c != null) {
+            this.f7049c.mo483a(this);
+        }
+        this.f7050d.m9995a(fyVar);
+    }
 }

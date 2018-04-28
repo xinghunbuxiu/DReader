@@ -1,18 +1,14 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+class fl implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ fj f6453a;
 
-import com.duokan.core.app.MyContextWrapper;
-
-class fl implements OnClickListener {
-    final /* synthetic */ fh a;
-
-    fl(fh fhVar) {
-        this.a = fhVar;
+    fl(fj fjVar) {
+        this.f6453a = fjVar;
     }
 
-    public void onClick(View view) {
-        ((ff) MyContextWrapper.getFeature(this.a.getContext()).queryFeature(ff.class)).a();
+    public void run() {
+        this.f6453a.requestDetach();
     }
 }

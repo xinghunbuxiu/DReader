@@ -1,11 +1,12 @@
 package com.duokan.reader.ui.store;
 
-import com.duokan.reader.domain.store.j;
+import com.duokan.reader.domain.store.C1184j;
 
-class au implements j {
-    final /* synthetic */ at a;
+class au implements C1184j {
+    /* renamed from: a */
+    final /* synthetic */ at f11330a;
 
     au(at atVar) {
-        this.a = atVar;
+        this.f11330a = atVar;
     }
 }

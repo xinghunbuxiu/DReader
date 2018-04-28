@@ -1,15 +1,17 @@
 package com.duokan.reader.ui.account;
 
-class am implements Runnable {
-    final /* synthetic */ ai a;
+import com.duokan.reader.domain.store.DkStoreBook;
 
-    am(ai aiVar) {
-        this.a = aiVar;
+class am implements aq {
+    /* renamed from: a */
+    final /* synthetic */ DkStoreBook f5794a;
+
+    am(DkStoreBook dkStoreBook) {
+        this.f5794a = dkStoreBook;
     }
 
-    public void run() {
-        this.a.i.setVisibility(8);
-        this.a.j.setVisibility(8);
-        this.a.m = false;
+    /* renamed from: a */
+    public Object mo1569a() {
+        return this.f5794a;
     }
 }

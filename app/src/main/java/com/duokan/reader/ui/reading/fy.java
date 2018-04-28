@@ -1,133 +1,67 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.graphics.PointF;
+import android.graphics.Rect;
 import android.view.View;
+import com.duokan.reader.domain.document.ak;
+import com.duokan.reader.domain.document.as;
+import com.duokan.reader.ui.general.df;
+import com.duokan.reader.ui.general.gb;
 
-import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.ZoomView;
+public class fy extends df implements gs {
+    /* renamed from: b */
+    final /* synthetic */ fs f10193b;
+    /* renamed from: c */
+    private final fx f10194c;
+    /* renamed from: d */
+    private final gx f10195d;
+    /* renamed from: e */
+    private final as f10196e;
 
-public abstract class fy extends ZoomView {
-    private Point b;
-    private View c;
-    private Runnable d;
-    private boolean e = false;
-    private boolean f = false;
-
-    public fy(Context context) {
-        super(context);
-        setClipChildren(true);
-        getScrollDetector().a(new gf(this));
-        setThumbEnabled(false);
+    public fy(fs fsVar, fx fxVar, as asVar, gx gxVar) {
+        this.f10193b = fsVar;
+        super(fsVar);
+        this.f10194c = fxVar;
+        this.f10196e = asVar;
+        this.f10195d = gxVar;
     }
 
-    public void d() {
+    /* renamed from: c */
+    public gb mo2327c() {
+        return this.f10194c;
     }
 
-    public void e() {
+    /* renamed from: d */
+    public View mo2328d() {
+        return this.f10195d;
     }
 
-    public void f() {
+    /* renamed from: e */
+    public boolean mo2329e() {
+        return this.f10195d.m14303i();
     }
 
-    public void g() {
-        b(false);
+    /* renamed from: f */
+    public boolean mo2330f() {
+        return this.f10196e.mo1283F();
     }
 
-    public void h() {
-        this.b = null;
-        a(false);
+    /* renamed from: b */
+    public Rect mo2325b(Rect rect) {
+        return this.f10196e.mo1307c(rect);
     }
 
-    public float i() {
-        return Math.min(((float) getWidth()) / ((float) this.c.getWidth()), ((float) getHeight()) / ((float) this.c.getHeight()));
+    /* renamed from: c */
+    public Rect mo2326c(Rect rect) {
+        return this.f10196e.mo1301b(rect);
     }
 
-    public void j() {
-        if (this.c != null) {
-            b((float) (this.c.getWidth() / 2), (float) (this.c.getHeight() / 2), i(), 0.0f, null, null);
-        }
+    /* renamed from: g */
+    public ak mo2331g() {
+        return this.f10196e.mo1332l();
     }
 
-    public void a(View view, LayoutParams layoutParams) {
-        removeAllViews();
-        this.c = view;
-        if (this.c != null) {
-            View view2 = this.c;
-            if (layoutParams == null) {
-                layoutParams = new LayoutParams(-1, -1);
-            }
-            addView(view2, layoutParams);
-            a(false);
-        }
-    }
-
-    public void a(Runnable runnable) {
-        if (this.c != null) {
-            UTools.creatCallTask(this.c, new fz(this, runnable));
-        }
-    }
-
-    public void a(int i, boolean z) {
-        if (this.c != null) {
-            View view = this.c;
-            Point point = new Point(getScrollX() + (getWidth() / 2), getScrollY() + (getHeight() / 2));
-            UTools.getTouchPoint(point, (View) this, view);
-            UTools.creatCallTask(view, new ga(this, z, point, getZoomFactor(), i, view));
-        }
-    }
-
-    public boolean k() {
-        return this.e;
-    }
-
-    public void setToBeQuit(boolean z) {
-        this.f = z;
-    }
-
-    public void setQuitRunnable(Runnable runnable) {
-        this.d = runnable;
-    }
-
-    protected float getContentStaticScale() {
-        return i();
-    }
-
-    protected Point getContentStaticCenter() {
-        Point point = new Point(0, 0);
-        if (this.c != null) {
-            point.set(this.c.getWidth() / 2, this.c.getHeight() / 2);
-        }
-        return point;
-    }
-
-    protected boolean a(PointF pointF) {
-        if (Float.compare(i(), getZoomFactor()) != 0) {
-            j();
-        } else if (this.d != null) {
-            this.d.run();
-        }
-        return true;
-    }
-
-    protected void a(boolean z) {
-        UTools.creatCallTask(this.c, new gc(this, z));
-    }
-
-    protected void b(boolean z) {
-        if (this.c != null) {
-            Point point = new Point(0, 0);
-            UTools.showAnimation(point, this.c);
-            UTools.creatCallTask((View) this, new gd(this, z, point));
-        }
-    }
-
-    private void setPullingDown(boolean z) {
-        this.e = z;
-        if (this.e) {
-            setHorizontalOverScrollMode(OverScrollMode.AUTO);
-            setVerticalOverScrollMode(OverScrollMode.AUTO);
-        }
+    /* renamed from: h */
+    public as mo2332h() {
+        return this.f10196e;
     }
 }

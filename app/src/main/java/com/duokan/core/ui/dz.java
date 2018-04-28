@@ -1,28 +1,31 @@
 package com.duokan.core.ui;
 
-import com.duokan.core.sys.ap;
-
+import com.duokan.core.sys.BaseAnimation;
 import java.util.Arrays;
 
-final class dz extends ap {
+final class dz extends BaseAnimation<int[]> {
     dz() {
     }
 
-    protected Object b() {
-        return c();
+    /* renamed from: b */
+    protected /* synthetic */ Object createAnimation() {
+        return m1986c();
     }
 
-    protected void b(Object obj) {
-        a((int[]) obj);
+    /* renamed from: b */
+    protected /* synthetic */ void mo516b(Object obj) {
+        m1983a((int[]) obj);
     }
 
-    protected int[] c() {
+    /* renamed from: c */
+    protected int[] m1986c() {
         int[] iArr = new int[2];
         Arrays.fill(iArr, 0);
         return iArr;
     }
 
-    protected void a(int[] iArr) {
+    /* renamed from: a */
+    protected void m1983a(int[] iArr) {
         Arrays.fill(iArr, 0);
     }
 }

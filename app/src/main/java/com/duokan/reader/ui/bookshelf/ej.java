@@ -1,41 +1,29 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.b.i;
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.common.async.a.a;
-import com.duokan.reader.common.k;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.bookshelf.iz;
-import com.duokan.reader.domain.cloud.DkUserPurchasedBooksManager;
-import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
-import com.duokan.reader.ui.general.ak;
+import com.duokan.reader.domain.bookshelf.ai;
 
-public class ej {
-    public ep a;
-    private final MyContextWrapper b;
+class ej implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ boolean f6384a;
+    /* renamed from: b */
+    final /* synthetic */ String f6385b;
+    /* renamed from: c */
+    final /* synthetic */ ec f6386c;
 
-    public ej(MyContextWrapper mContext) {
-        this.b = mContext;
+    ej(ec ecVar, boolean z, String str) {
+        this.f6386c = ecVar;
+        this.f6384a = z;
+        this.f6385b = str;
     }
 
-    public void a(c cVar) {
-        ak akVar = new ak(b());
-        akVar.setTitle(i.bookroom__shared__invalid_book_title);
-        akVar.addCheckBoxView(i.bookroom__shared__invalid_book_clear);
-        akVar.addButtonView(i.general__shared__remove, b().getResources().getColor(com.duokan.b.c.general__shared__c1));
-        akVar.addButtonView(i.general__shared__cancel, b().getResources().getColor(com.duokan.b.c.general__shared__c6));
-        akVar.setOnButtonClickedListener(new ek(this, akVar, cVar));
-        akVar.show();
-    }
-
-    public void a() {
-        a elVar = new el(this, new k(Integer.valueOf(0)));
-        DkUserPurchasedBooksManager.a().a(elVar);
-        DkUserPurchasedFictionsManager.a().b(elVar);
-        iz.a().a(new eo(this, elVar));
-    }
-
-    private MyContextWrapper b() {
-        return this.b;
+    public void run() {
+        this.f6386c.f6376h.setVisibility(8);
+        if (this.f6384a) {
+            ai.m3980a().m3902a(this.f6386c.f6369a, this.f6385b);
+            this.f6386c.f6375g.setText(this.f6385b);
+            this.f6386c.f6369a.aN();
+            return;
+        }
+        this.f6386c.f6375g.setText(this.f6386c.f6369a.m3770k());
     }
 }

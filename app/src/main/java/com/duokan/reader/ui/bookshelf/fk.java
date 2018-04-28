@@ -1,18 +1,14 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+class fk implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ fj f6452a;
 
-import com.duokan.c.j;
-
-class fk implements OnClickListener {
-    final /* synthetic */ fh a;
-
-    fk(fh fhVar) {
-        this.a = fhVar;
+    fk(fj fjVar) {
+        this.f6452a = fjVar;
     }
 
-    public void onClick(View view) {
-        this.a.a.setSelectBrowserFiles(this.a.b.getText().toString().equals(this.a.getContext().getString(j.bookshelf__shared__select_all)));
+    public void run() {
+        this.f6452a.requestDetach();
     }
 }

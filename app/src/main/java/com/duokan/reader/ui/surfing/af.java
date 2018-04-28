@@ -1,31 +1,21 @@
 package com.duokan.reader.ui.surfing;
 
-import android.view.View;
+import com.duokan.core.app.IFeature;
+import com.duokan.reader.ui.store.ba;
+import com.duokan.reader.ui.store.bq;
 
-import com.duokan.core.app.FeatureListening;
-import com.duokan.core.app.Inavigate;
-import com.duokan.core.ui.er;
+class af extends ba {
+    /* renamed from: c */
+    final /* synthetic */ C1522i f11510c;
 
-public interface af extends Inavigate, FeatureListening {
-    void a(View view, Runnable runnable);
+    af(C1522i c1522i, IFeature mFeature, bq bqVar) {
+        this.f11510c = c1522i;
+        super(mFeature, bqVar);
+    }
 
-    void a(View view, boolean z, Runnable runnable);
-
-    void a(er erVar);
-
-    void a(boolean z, String str);
-
-    void b(View view);
-
-    void c(View view);
-
-    void k();
-
-    void m();
-
-    void n();
-
-    void o();
-
-    void p();
+    /* renamed from: g */
+    protected void mo2544g(int i) {
+        super.mo2544g(i);
+        this.f11510c.f11549q.getContentView().invalidate();
+    }
 }

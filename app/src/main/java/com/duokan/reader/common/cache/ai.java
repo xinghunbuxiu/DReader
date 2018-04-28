@@ -1,11 +1,13 @@
 package com.duokan.reader.common.cache;
 
 public class ai {
-    public String a;
-    public boolean b;
+    /* renamed from: a */
+    public String f1869a;
+    /* renamed from: b */
+    public boolean f1870b;
 
     public ai(String str, boolean z) {
-        this.a = str;
-        this.b = z;
+        this.f1869a = str;
+        this.f1870b = z;
     }
 }

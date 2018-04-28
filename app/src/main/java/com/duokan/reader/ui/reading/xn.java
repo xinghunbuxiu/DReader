@@ -1,24 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.ab;
-import com.duokan.core.app.ac;
+import com.duokan.core.sys.IdleHandlerListener;
 
-class xn implements ac {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ Runnable b;
-    final /* synthetic */ xm c;
+class xn implements IdleHandlerListener {
+    /* renamed from: a */
+    final /* synthetic */ xj f11151a;
 
-    xn(xm xmVar, Runnable runnable, Runnable runnable2) {
-        this.c = xmVar;
-        this.a = runnable;
-        this.b = runnable2;
+    xn(xj xjVar) {
+        this.f11151a = xjVar;
     }
 
-    public void a(ab abVar) {
-        this.a.run();
-    }
-
-    public void b(ab abVar) {
-        this.b.run();
+    public boolean idleRun() {
+        this.f11151a.m15067b(true);
+        return false;
     }
 }

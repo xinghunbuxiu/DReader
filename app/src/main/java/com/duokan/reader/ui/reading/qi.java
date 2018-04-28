@@ -1,34 +1,22 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.Drawable.Callback;
+import com.duokan.reader.common.webservices.duokan.C0650x;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.reader.domain.document.as;
-
-class qi implements Callback {
-    final /* synthetic */ qh a;
+class qi implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ qh f10863a;
 
     qi(qh qhVar) {
-        this.a = qhVar;
+        this.f10863a = qhVar;
     }
 
-    public void invalidateDrawable(Drawable drawable) {
-        if (this.a.c.U() == PageAnimationMode.VSCROLL) {
-            this.a.e.getPagesFrameView().invalidate();
-            return;
+    public void run() {
+        String I = this.f10863a.f10861a.m4156I();
+        if (this.f10863a.f10861a.al()) {
+            I = new C0650x(this.f10863a.f10861a.m4156I()).m3046a();
         }
-        as aa = this.a.c.aa();
-        if (aa != null) {
-            aa.invalidateSelf();
-        }
-    }
-
-    public void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
-        TaskHandler.PostTask(runnable, j);
-    }
-
-    public void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        TaskHandler.removeCallbacks(runnable);
+        su a = this.f10863a.f10862b.f10853a;
+        int i = this.f10863a.f10861a.al() ? 4 : this.f10863a.f10861a.mo1038k() ? 2 : 1;
+        a.mo2037a(I, i);
     }
 }

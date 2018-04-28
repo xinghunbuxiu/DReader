@@ -1,22 +1,23 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.app.AppManage;
+import com.duokan.core.app.BaseActivity;
+import com.duokan.core.ui.dv;
 
-import com.duokan.b.i;
-import com.duokan.reader.ReaderFeature;
+class pv implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ pu f10836a;
 
-class pv implements OnClickListener {
-    final /* synthetic */ pr a;
-
-    pv(pr prVar) {
-        this.a = prVar;
+    pv(pu puVar) {
+        this.f10836a = puVar;
     }
 
-    public void onClick(View view) {
-        boolean aK = this.a.a.aK();
-        this.a.a.g(!aK);
-        ((ReaderFeature) this.a.getContext().queryFeature(ReaderFeature.class)).prompt(this.a.getString(aK ? i.reading__shared__eyes_saving_off : i.reading__shared__eyes_saving_on));
-        this.a.a();
+    public void run() {
+        ((BaseActivity) AppManage.getCurrentActivity(this.f10836a.f10835b.f10833j.getContext())).unlockCurrentOrientation();
+        this.f10836a.f10835b.f10825b.setVisibility(4);
+        this.f10836a.f10835b.f10833j.f10798b.dismiss();
+        this.f10836a.f10835b.f10833j.f10798b = null;
+        this.f10836a.f10835b.f10833j.f10799c = false;
+        dv.f1204m.m816a(true);
     }
 }

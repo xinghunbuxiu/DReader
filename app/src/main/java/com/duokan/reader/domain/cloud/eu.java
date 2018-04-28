@@ -1,11 +1,9 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.domain.cloud.DkUserReadBookManager.ReadBook;
-
 public interface eu {
-    void a(ReadBook[] readBookArr);
+    /* renamed from: a */
+    void mo1158a(String str);
 
-    void b(ReadBook[] readBookArr);
-
-    void g();
+    /* renamed from: a */
+    void mo1159a(DkCloudNoteBookInfo[] dkCloudNoteBookInfoArr, boolean z);
 }

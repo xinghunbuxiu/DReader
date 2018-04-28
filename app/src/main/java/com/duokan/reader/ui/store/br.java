@@ -2,161 +2,174 @@ package com.duokan.reader.ui.store;
 
 import android.content.res.Configuration;
 import android.view.View;
-
-import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
-import com.duokan.core.ui.UTools;
-import com.duokan.reader.ui.general.ds;
-import com.duokan.reader.ui.surfing.af;
-
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.ui.dv;
+import com.duokan.reader.ui.general.dr;
+import com.duokan.reader.ui.surfing.al;
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
 public class br extends ActivatedController {
-    private final ds a = new bs(this, getContext());
-    private final ArrayList b = new ArrayList();
-    private final Set c = new HashSet();
-    private final int d = UTools.getMinimumHeight(getContext(), 200.0f);
+    /* renamed from: a */
+    private final dr f11380a = new bs(this, getContext());
+    /* renamed from: b */
+    private final ArrayList<bl> f11381b = new ArrayList();
+    /* renamed from: c */
+    private final Set<Integer> f11382c = new HashSet();
+    /* renamed from: d */
+    private final int f11383d = 520;
 
-    public br(IFeature featrue) {
-        super(featrue);
-        this.a.setOnCurrentPageChangedListener(new bt(this));
-        setContentView(this.a);
+    public br(IFeature mFeature) {
+        super(mFeature);
+        this.f11380a.setOnCurrentPageChangedListener(new bt(this));
+        setContentView(this.f11380a);
     }
 
-    protected void a() {
+    /* renamed from: a */
+    protected void mo2562a() {
     }
 
-    protected boolean b() {
+    /* renamed from: b */
+    protected boolean mo2563b() {
         return true;
     }
 
-    public void a(bl blVar, String str) {
-        this.b.add(blVar);
-        addSubController(blVar);
-        this.a.a(str, blVar.getContentView());
+    /* renamed from: a */
+    public void m15334a(bl blVar, String str) {
+        this.f11381b.add(blVar);
+        if (!getSubControllers().contains(blVar)) {
+            addSubController(blVar);
+        }
+        this.f11380a.m10518a(str, blVar.getContentView());
     }
 
-    public void a(int i, boolean z) {
-        int max = Math.max(0, Math.min(i, this.b.size() - 1));
-        if (this.c.contains(Integer.valueOf(max))) {
-            k();
+    /* renamed from: a */
+    public void m15333a(int i, boolean z) {
+        int max = Math.max(0, Math.min(i, this.f11381b.size() - 1));
+        if (this.f11382c.contains(Integer.valueOf(max))) {
+            m15330k();
             return;
         }
-        for (int i2 = 0; i2 < this.b.size(); i2++) {
-            ActivatedController activatedControllerVar = (ActivatedController) this.b.get(i2);
+        for (int i2 = 0; i2 < this.f11381b.size(); i2++) {
+            ActivatedController c0303e = (ActivatedController) this.f11381b.get(i2);
             if (i2 == max) {
-                activate(activatedControllerVar);
-            } else if (activatedControllerVar.isActive()) {
-                deactivate(activatedControllerVar);
+                activate(c0303e);
+            } else if (c0303e.isActive()) {
+                deactivate(c0303e);
             }
         }
-        this.a.a(max, z);
+        this.f11380a.m10517a(max, z);
     }
 
-    public int c() {
-        return this.a.getCurrentPageIndex();
+    /* renamed from: c */
+    public int m15338c() {
+        return this.f11380a.getCurrentPageIndex();
     }
 
     protected void onActive(boolean z) {
         super.onActive(z);
         if (z) {
-            af afVar = (af) getContext().queryFeature(af.class);
-            if (afVar != null) {
-                afVar.a(true, "BaseActivity");
+            al alVar = (al) getContext().queryFeature(al.class);
+            if (alVar != null) {
+                alVar.mo2549a(true, "m");
             }
         }
-        i();
+        m15344i();
     }
 
     protected void onActivityConfigurationChanged(Configuration configuration) {
         super.onActivityConfigurationChanged(configuration);
-        this.a.a();
+        this.f11380a.m10514a();
     }
 
-    public void d() {
-        Iterator it = this.b.iterator();
-        while (it.hasNext()) {
-            removeSubController((ActivatedController) it.next());
-        }
-        this.b.clear();
-        this.a.d();
-        i();
+    /* renamed from: d */
+    public void m15339d() {
+        this.f11381b.clear();
+        this.f11380a.m10526g();
     }
 
-    public View e() {
-        return this.a.getStatusView();
+    /* renamed from: e */
+    public View m15340e() {
+        return this.f11380a.getStatusView();
     }
 
-    public View f() {
-        return this.a.getTabView();
+    /* renamed from: f */
+    public View m15341f() {
+        return this.f11380a.getTabView();
     }
 
-    public void a(int i) {
-        int top = f().getTop();
+    /* renamed from: a */
+    public void m15332a(int i) {
+        int top = m15341f().getTop();
         if (top != i) {
-            f().offsetTopAndBottom(i - top);
-        } else {
-            f().invalidate();
+            m15341f().offsetTopAndBottom(i - top);
         }
+        m15341f().invalidate();
     }
 
-    public int g() {
-        return f().getTop();
+    /* renamed from: g */
+    public int m15342g() {
+        return m15341f().getTop();
     }
 
-    public int h() {
-        return this.d;
+    /* renamed from: h */
+    public int m15343h() {
+        return this.f11383d;
     }
 
-    public void a(List list) {
+    /* renamed from: a */
+    public void m15335a(List<Integer> list) {
         for (Integer intValue : list) {
-            this.a.b(intValue.intValue());
+            this.f11380a.m10519b(intValue.intValue());
         }
-        this.c.addAll(list);
-        if (list.contains(Integer.valueOf(c()))) {
-            k();
+        this.f11382c.addAll(list);
+        if (list.contains(Integer.valueOf(m15338c()))) {
+            m15330k();
         } else {
-            a(c(), true);
+            m15333a(m15338c(), true);
         }
     }
 
-    public void b(List list) {
+    /* renamed from: b */
+    public void m15336b(List<Integer> list) {
         for (Integer intValue : list) {
             int intValue2 = intValue.intValue();
-            this.a.c(intValue2);
-            this.c.remove(Integer.valueOf(intValue2));
+            this.f11380a.m10522c(intValue2);
+            this.f11382c.remove(Integer.valueOf(intValue2));
         }
-        a(c(), true);
+        m15333a(m15338c(), true);
     }
 
-    private void k() {
+    /* renamed from: k */
+    private void m15330k() {
         int i = 0;
-        while (i < this.b.size()) {
-            if (this.c.contains(Integer.valueOf(i))) {
+        while (i < this.f11381b.size()) {
+            if (this.f11382c.contains(Integer.valueOf(i))) {
                 i++;
             } else {
-                a(i, true);
+                m15333a(i, true);
                 return;
             }
         }
     }
 
-    public void i() {
-        UTools.creatCallTask(this.a, new bu(this));
+    /* renamed from: i */
+    public void m15344i() {
+        dv.m1921a(this.f11380a, new bu(this));
     }
 
-    public bl j() {
-        int c = c();
+    /* renamed from: j */
+    public bl m15345j() {
+        int c = m15338c();
         if (c < 0) {
             c = 0;
         }
-        if (this.b.size() == 0) {
+        if (this.f11381b.size() == 0) {
             return null;
         }
-        return (bl) this.b.get(c);
+        return (bl) this.f11381b.get(c);
     }
 }

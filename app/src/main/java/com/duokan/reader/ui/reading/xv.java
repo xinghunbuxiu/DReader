@@ -1,25 +1,18 @@
 package com.duokan.reader.ui.reading;
 
 import android.view.View;
+import android.view.View.OnClickListener;
 
-import com.duokan.reader.domain.document.Document_a;
-import com.duokan.reader.ui.general.gh;
+class xv implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ xu f11162a;
 
-public class xv extends xw {
-    final /* synthetic */ xt c;
-    private final View e;
-
-    public /* bridge */ /* synthetic */ gh a(int i) {
-        return super.a(i);
+    xv(xu xuVar) {
+        this.f11162a = xuVar;
     }
 
-    public xv(xt xtVar, Document_a aVar, View view) {
-        this.c = xtVar;
-        super(xtVar, aVar);
-        this.e = view;
-    }
-
-    public View b() {
-        return this.e;
+    public void onClick(View view) {
+        this.f11162a.f11160i.mo1065a(this.f11162a.f11159h);
+        this.f11162a.requestDetach();
     }
 }

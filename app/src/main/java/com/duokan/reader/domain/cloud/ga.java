@@ -1,27 +1,19 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.u;
+import java.util.Iterator;
 
-class ga implements u {
-    final /* synthetic */ int a;
-    final /* synthetic */ int b;
-    final /* synthetic */ gc c;
-    final /* synthetic */ fp d;
+class ga implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ PersonalPrefs f4032a;
 
-    ga(fp fpVar, int i, int i2, gc gcVar) {
-        this.d = fpVar;
-        this.a = i;
-        this.b = i2;
-        this.c = gcVar;
+    ga(PersonalPrefs personalPrefs) {
+        this.f4032a = personalPrefs;
     }
 
-    public void onQueryAccountOk(a aVar) {
-        new gb(this, new ab(aVar)).open();
-    }
-
-    public void onQueryAccountError(a aVar, String str) {
-        this.c.a(str);
+    public void run() {
+        Iterator it = this.f4032a.f3635g.iterator();
+        while (it.hasNext()) {
+            ((gm) it.next()).mo2527d();
+        }
     }
 }

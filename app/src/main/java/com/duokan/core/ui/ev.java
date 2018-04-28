@@ -14,185 +14,235 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.animation.Interpolator;
 
-import org.apache.http.HttpStatus;
-
+import com.duokan.p023b.C0243e;
+import com.wali.live.sdk.manager.IMiLiveSdk.ICallback;
 import java.lang.ref.WeakReference;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.ListIterator;
-
-import miuipub.date.Calendar;
+import org.apache.http.HttpStatus;
 
 public abstract class ev implements Scrollable {
-    static final /* synthetic */ boolean c = (!ev.class.desiredAssertionStatus());
-    private fe A = null;
-    private long B = SystemClock.elapsedRealtime();
-    private long C = 0;
-    private Runnable D = null;
-    private cf E = null;
-    private OnScrollListener scrollListener = null;
-    private boolean G = false;
-    private boolean H = false;
-    private final Rect I = new Rect();
-    private final Rect J = new Rect();
-    private final Drawable[] K = new Drawable[2];
-    private final Rect L = new Rect();
-    private final Rect M = new Rect();
-    private final Drawable[] N = new Drawable[2];
-    private final ViewGroup a;
-    private final bx b;
-    private final et d = new et();
-    private final et e = new et();
-    private final ct f = new ct();
-    private final bu g = new bu();
-    private final RectF h = new RectF();
-    private final Rect i = new Rect();
-    private final Rect j = new Rect();
-    private final LinkedList k = new LinkedList();
-    private final LinkedList l = new LinkedList();
-    private final Rect m = new Rect();
-    private final Rect n = new Rect();
-    private OverScrollMode o = OverScrollMode.STRETCH;
-    private OverScrollMode p = OverScrollMode.STRETCH;
-    private int q = 0;
-    private int r = 0;
-    private ScrollState s = ScrollState.IDLE;
-    private boolean t = false;
-    private boolean u = false;
-    private boolean v = false;
-    private boolean w = false;
-    private boolean x = true;
-    private boolean y = true;
-    private boolean z = true;
+    /* renamed from: c */
+    static final /* synthetic */ boolean f920c = (!ev.class.desiredAssertionStatus());
+    /* renamed from: A */
+    private fe f921A = null;
+    /* renamed from: B */
+    private long f922B = SystemClock.elapsedRealtime();
+    /* renamed from: C */
+    private long f923C = 0;
+    /* renamed from: D */
+    private Runnable f924D = null;
+    /* renamed from: E */
+    private cf f925E = null;
+    /* renamed from: F */
+    private cg f926F = null;
+    /* renamed from: G */
+    private boolean f927G = false;
+    /* renamed from: H */
+    private boolean f928H = false;
+    /* renamed from: I */
+    private final Rect f929I = new Rect();
+    /* renamed from: J */
+    private final Rect f930J = new Rect();
+    /* renamed from: K */
+    private final Drawable[] f931K = new Drawable[2];
+    /* renamed from: L */
+    private final Rect f932L = new Rect();
+    /* renamed from: M */
+    private final Rect f933M = new Rect();
+    /* renamed from: N */
+    private final Drawable[] f934N = new Drawable[2];
+    /* renamed from: a */
+    private final ViewGroup f935a;
+    /* renamed from: b */
+    private final bx f936b;
+    /* renamed from: d */
+    private final et f937d = new et();
+    /* renamed from: e */
+    private final et f938e = new et();
+    /* renamed from: f */
+    private final ct f939f = new ct();
+    /* renamed from: g */
+    private final bu f940g = new bu();
+    /* renamed from: h */
+    private final RectF f941h = new RectF();
+    /* renamed from: i */
+    private final Rect f942i = new Rect();
+    /* renamed from: j */
+    private final Rect f943j = new Rect();
+    /* renamed from: k */
+    private final LinkedList<WeakReference<View>> f944k = new LinkedList();
+    /* renamed from: l */
+    private final LinkedList<ch> f945l = new LinkedList();
+    /* renamed from: m */
+    private final Rect f946m = new Rect();
+    /* renamed from: n */
+    private final Rect f947n = new Rect();
+    /* renamed from: o */
+    private OverScrollMode f948o = OverScrollMode.STRETCH;
+    /* renamed from: p */
+    private OverScrollMode f949p = OverScrollMode.STRETCH;
+    /* renamed from: q */
+    private int f950q = 0;
+    /* renamed from: r */
+    private int f951r = 0;
+    /* renamed from: s */
+    private ScrollState f952s = ScrollState.IDLE;
+    /* renamed from: t */
+    private boolean f953t = false;
+    /* renamed from: u */
+    private boolean f954u = false;
+    /* renamed from: v */
+    private boolean f955v = false;
+    /* renamed from: w */
+    private boolean f956w = false;
+    /* renamed from: x */
+    private boolean f957x = true;
+    /* renamed from: y */
+    private boolean f958y = true;
+    /* renamed from: z */
+    private boolean f959z = true;
 
-    protected abstract void a(int i, int i2);
+    /* renamed from: a */
+    protected abstract void mo491a(int i, int i2);
 
-    protected abstract void a(Canvas canvas);
+    /* renamed from: a */
+    protected abstract void mo492a(Canvas canvas);
 
     protected ev(ViewGroup viewGroup) {
-        this.a = viewGroup;
-        this.b = new bx(this.a.getContext());
-        this.d.a(new ff(this));
-        DisplayMetrics displayMetrics = this.a.getResources().getDisplayMetrics();
-        this.h.set(0.0f, 0.0f, (float) displayMetrics.widthPixels, (float) displayMetrics.heightPixels);
-        this.h.round(this.i);
-        this.j.set(this.i);
-        this.J.set(0, UTools.getMinimumHeight(this.a.getContext(), 2.0f), UTools.getMinimumHeight(this.a.getContext(), 2.0f), UTools.getMinimumHeight(this.a.getContext(), 6.0f));
-        this.K[0] = this.a.getResources().getDrawable(R.drawable.general__shared__thumb_default_vert);
-        this.K[1] = this.a.getResources().getDrawable(R.drawable.general__shared__thumb_seek_vert);
-        this.M.set(UTools.getMinimumHeight(this.a.getContext(), 2.0f), 0, UTools.getMinimumHeight(this.a.getContext(), 6.0f), UTools.getMinimumHeight(this.a.getContext(), 2.0f));
-        this.N[0] = this.a.getResources().getDrawable(R.drawable.general__shared__thumb_default_horz);
-        this.e.a(this.f);
-        this.e.a(this.g);
-        this.e.a(new fd());
+        this.f935a = viewGroup;
+        this.f936b = new bx(this.f935a.getContext());
+        this.f937d.m2041a(new ff(this));
+        DisplayMetrics displayMetrics = this.f935a.getResources().getDisplayMetrics();
+        this.f941h.set(0.0f, 0.0f, (float) displayMetrics.widthPixels, (float) displayMetrics.heightPixels);
+        this.f941h.round(this.f942i);
+        this.f943j.set(this.f942i);
+        this.f930J.set(0, dv.m1932b(this.f935a.getContext(), 2.0f), dv.m1932b(this.f935a.getContext(), 2.0f), dv.m1932b(this.f935a.getContext(), 6.0f));
+        this.f931K[0] = this.f935a.getResources().getDrawable(C0243e.general__shared__thumb_default_vert);
+        this.f931K[1] = this.f935a.getResources().getDrawable(C0243e.general__shared__thumb_seek_vert);
+        this.f933M.set(dv.m1932b(this.f935a.getContext(), 2.0f), 0, dv.m1932b(this.f935a.getContext(), 6.0f), dv.m1932b(this.f935a.getContext(), 2.0f));
+        this.f934N[0] = this.f935a.getResources().getDrawable(C0243e.general__shared__thumb_default_horz);
+        this.f938e.m2041a(this.f939f);
+        this.f938e.m2041a(this.f940g);
+        this.f938e.m2042a(new fd());
     }
 
-    public boolean b(MotionEvent motionEvent) {
-        if (!this.a.isEnabled()) {
+    /* renamed from: b */
+    public boolean mo2419b(MotionEvent motionEvent) {
+        if (!this.f935a.isEnabled()) {
             return false;
         }
-        a(motionEvent);
-        return this.d.a(this.a, motionEvent);
+        mo502a(motionEvent);
+        return this.f937d.m2044a(this.f935a, motionEvent);
     }
 
-    public boolean c(MotionEvent motionEvent) {
-        if (!this.a.isEnabled()) {
+    /* renamed from: c */
+    public boolean mo2420c(MotionEvent motionEvent) {
+        if (!this.f935a.isEnabled()) {
             return false;
         }
-        a(motionEvent);
-        this.d.onTouch(this.a, motionEvent);
-        if (this.s == ScrollState.IDLE) {
-            this.e.onTouch(this.a, motionEvent);
+        mo502a(motionEvent);
+        this.f937d.onTouch(this.f935a, motionEvent);
+        if (this.f952s == ScrollState.IDLE) {
+            this.f938e.onTouch(this.f935a, motionEvent);
         } else {
-            this.e.a(this.a);
+            this.f938e.m2040a(this.f935a);
         }
         return true;
     }
 
-    public void c() {
-        for (ViewParent parent = this.a.getParent(); parent != null; parent = parent.getParent()) {
+    /* renamed from: c */
+    public void m1523c() {
+        for (ViewParent parent = this.f935a.getParent(); parent != null; parent = parent.getParent()) {
             if (parent instanceof ch) {
-                this.l.add((ch) parent);
+                this.f945l.add((ch) parent);
             }
         }
     }
 
-    public void d() {
+    /* renamed from: d */
+    public void m1532d() {
         ao();
-        a(ScrollState.IDLE);
-        this.l.clear();
+        m1416a(ScrollState.IDLE);
+        this.f945l.clear();
     }
 
-    public void a(boolean z, int i, int i2, int i3, int i4) {
+    /* renamed from: a */
+    public void m1504a(boolean z, int i, int i2, int i3, int i4) {
         if (z) {
-            f(0.0f, 0.0f);
+            m1545f(0.0f, 0.0f);
         }
-        if (this.D == null) {
-            this.D = new ew(this);
-            UTools.creatCallTask(this.a, this.D);
+        if (this.f924D == null) {
+            this.f924D = new ew(this);
+            dv.m1921a(this.f935a, this.f924D);
         }
     }
 
-    public void b(Canvas canvas) {
+    /* renamed from: b */
+    public void mo529b(Canvas canvas) {
         int ae = ae();
         int af = af();
         if (ae > 0 || af > 0) {
-            float width = this.h.width() / ((float) this.i.width());
-            float height = this.h.height() / ((float) this.i.height());
+            float width = this.f941h.width() / ((float) this.f942i.width());
+            float height = this.f941h.height() / ((float) this.f942i.height());
             canvas.save();
             if (canvas.isHardwareAccelerated()) {
-                canvas.translate((float) this.i.left, (float) this.i.top);
+                canvas.translate((float) this.f942i.left, (float) this.f942i.top);
                 canvas.scale(width, height);
-                canvas.translate((float) (-this.i.left), (float) (-this.i.top));
+                canvas.translate((float) (-this.f942i.left), (float) (-this.f942i.top));
             } else {
                 canvas.scale(width, height);
             }
-            a(canvas);
+            mo492a(canvas);
             canvas.restore();
             return;
         }
-        a(canvas);
+        mo492a(canvas);
     }
 
-    public void c(Canvas canvas) {
-        if (this.H) {
+    /* renamed from: c */
+    public void m1527c(Canvas canvas) {
+        if (this.f928H) {
             Drawable ay;
             int ap = ap();
-            if (!this.L.isEmpty()) {
+            if (!this.f932L.isEmpty()) {
                 ay = ay();
                 canvas.save();
-                canvas.translate((float) this.i.left, (float) this.i.top);
-                canvas.clipRect(this.L);
-                ay.setBounds(this.L);
+                canvas.translate((float) this.f942i.left, (float) this.f942i.top);
+                canvas.clipRect(this.f932L);
+                ay.setBounds(this.f932L);
                 ay.setAlpha(ap);
                 ay.draw(canvas);
                 canvas.restore();
             }
-            if (!this.I.isEmpty()) {
+            if (!this.f929I.isEmpty()) {
                 ay = az();
                 canvas.save();
-                canvas.translate((float) this.i.left, (float) this.i.top);
-                canvas.clipRect(this.I);
-                ay.setBounds(this.I);
+                canvas.translate((float) this.f942i.left, (float) this.f942i.top);
+                canvas.clipRect(this.f929I);
+                ay.setBounds(this.f929I);
                 ay.setAlpha(ap);
                 ay.draw(canvas);
                 canvas.restore();
             }
             if (ap > 0) {
-                this.a.invalidate();
+                this.f935a.invalidate();
             }
         }
     }
 
-    public void b(boolean z) {
+    /* renamed from: b */
+    public void m1520b(boolean z) {
         if (z) {
-            this.d.a(this.a);
+            this.f937d.m2040a(this.f935a);
         }
     }
 
-    public boolean a(View view, Rect rect, boolean z) {
+    /* renamed from: a */
+    public boolean m1505a(View view, Rect rect, boolean z) {
         boolean z2;
-        Rect e = e();
+        Rect e = m1539e();
         if (e.isEmpty()) {
             e.set(getViewportBounds());
             z2 = true;
@@ -205,19 +255,19 @@ public abstract class ev implements Scrollable {
         int b;
         int c;
         Rect rect2 = new Rect(rect);
-        UTools.closeAnimation(rect2, view, this.a);
-        if (rect2.intersect(this.m)) {
-            b = b(e, rect2);
-            c = c(e, rect2);
+        dv.m1937b(rect2, view, this.f935a);
+        if (rect2.intersect(this.f946m)) {
+            b = m1420b(e, rect2);
+            c = m1424c(e, rect2);
         } else {
             c = 0;
             b = 0;
         }
         if (!(b == 0 && c == 0)) {
             if (z) {
-                c(b, c);
+                m1526c(b, c);
             } else {
-                b(b, c, HttpStatus.SC_OK, null, null);
+                m1514b(b, c, HttpStatus.SC_OK, null, null);
             }
         }
         if (z2) {
@@ -226,231 +276,281 @@ public abstract class ev implements Scrollable {
         return true;
     }
 
-    public boolean b(View view, boolean z) {
-        return a(view, new Rect(0, 0, view.getWidth(), view.getHeight()), z);
+    /* renamed from: b */
+    public boolean m1522b(View view, boolean z) {
+        return m1505a(view, new Rect(0, 0, view.getWidth(), view.getHeight()), z);
     }
 
-    public Rect e() {
+    /* renamed from: e */
+    public Rect m1539e() {
         Rect rect = new Rect();
-        UTools.getRect(rect, this.a.getRootView(), this.a);
+        dv.m1904a(rect, this.f935a.getRootView(), this.f935a);
         rect.intersect(getViewportBounds());
         return rect;
     }
 
-    public boolean f() {
+    /* renamed from: f */
+    public boolean m1546f() {
         return ap() > 0;
     }
 
-    public boolean g() {
+    /* renamed from: g */
+    public boolean m1548g() {
         return false;
     }
 
-    public boolean h() {
+    /* renamed from: h */
+    public boolean m1550h() {
         return false;
     }
 
-    public boolean i() {
+    /* renamed from: i */
+    public boolean m1551i() {
         return false;
     }
 
-    public boolean j() {
+    /* renamed from: j */
+    public boolean m1552j() {
         return false;
     }
 
-    public void b(int i, int i2) {
-        a(this.m.left, this.m.top, this.m.left + i, this.m.top + i2);
+    /* renamed from: b */
+    public void m1512b(int i, int i2) {
+        m1487a(this.f946m.left, this.f946m.top, this.f946m.left + i, this.f946m.top + i2);
     }
 
-    public void a(int i) {
-        a(this.m.left, this.m.top, this.m.left + i, this.m.bottom);
+    /* renamed from: a */
+    public void m1485a(int i) {
+        m1487a(this.f946m.left, this.f946m.top, this.f946m.left + i, this.f946m.bottom);
     }
 
-    public void b(int i) {
-        a(this.m.left, this.m.top, this.m.right, this.m.top + i);
+    /* renamed from: b */
+    public void m1511b(int i) {
+        m1487a(this.f946m.left, this.f946m.top, this.f946m.right, this.f946m.top + i);
     }
 
-    public Rect k() {
-        return this.m;
+    /* renamed from: k */
+    public Rect m1553k() {
+        return this.f946m;
     }
 
-    public void a(Rect rect) {
-        a(rect.left, rect.top, rect.right, rect.bottom);
+    /* renamed from: a */
+    public void m1491a(Rect rect) {
+        m1487a(rect.left, rect.top, rect.right, rect.bottom);
     }
 
-    public void a(int i, int i2, int i3, int i4) {
-        if (this.m.left != i || this.m.top != i2 || this.m.right != i3 || this.m.bottom != i4) {
-            this.n.set(this.m);
-            this.m.set(i, i2, i3, i4);
-            if (this.E != null) {
-                this.E.a(this, this.n, this.m);
+    /* renamed from: a */
+    public void m1487a(int i, int i2, int i3, int i4) {
+        if (this.f946m.left != i || this.f946m.top != i2 || this.f946m.right != i3 || this.f946m.bottom != i4) {
+            this.f947n.set(this.f946m);
+            this.f946m.set(i, i2, i3, i4);
+            if (this.f925E != null) {
+                this.f925E.m1761a(this, this.f947n, this.f946m);
             }
-            if (this.s == ScrollState.FLING) {
-                this.b.a(this.i.left, this.i.top, Math.round(Math.signum(this.b.d())), Math.round(Math.signum(this.b.e())), al(), am(), b(), an(), ak(), a());
+            if (this.f952s == ScrollState.FLING) {
+                this.f936b.m1709a(this.f942i.left, this.f942i.top, Math.round(Math.signum(this.f936b.m1717d())), Math.round(Math.signum(this.f936b.m1718e())), al(), am(), mo504b(), an(), ak(), mo500a());
             }
         }
     }
 
-    public boolean l() {
+    /* renamed from: l */
+    public boolean m1554l() {
         return true;
     }
 
-    public int m() {
-        return Math.max(0, Math.min(this.i.right, this.m.right) - Math.max(this.m.left, this.i.left));
+    /* renamed from: m */
+    public int m1555m() {
+        return Math.max(0, Math.min(this.f942i.right, this.f946m.right) - Math.max(this.f946m.left, this.f942i.left));
     }
 
-    public int n() {
-        return Math.max(0, Math.min(this.i.left - this.m.left, this.m.width()));
+    /* renamed from: n */
+    public int m1556n() {
+        return Math.max(0, Math.min(this.f942i.left - this.f946m.left, this.f946m.width()));
     }
 
-    public int o() {
-        return this.m.width();
+    /* renamed from: o */
+    public int m1557o() {
+        return this.f946m.width();
     }
 
-    public int p() {
-        return Math.max(0, Math.min(this.i.bottom, this.m.bottom) - Math.max(this.m.top, this.i.top));
+    /* renamed from: p */
+    public int m1558p() {
+        return Math.max(0, Math.min(this.f942i.bottom, this.f946m.bottom) - Math.max(this.f946m.top, this.f942i.top));
     }
 
-    public int q() {
-        return Math.max(0, Math.min(this.i.top - this.m.top, this.m.height()));
+    /* renamed from: q */
+    public int m1559q() {
+        return Math.max(0, Math.min(this.f942i.top - this.f946m.top, this.f946m.height()));
     }
 
-    public int r() {
-        return this.m.height();
+    /* renamed from: r */
+    public int m1560r() {
+        return this.f946m.height();
     }
 
-    public int s() {
-        return this.m.width();
+    /* renamed from: s */
+    public int m1561s() {
+        return this.f946m.width();
     }
 
-    public int t() {
-        return this.m.height();
+    /* renamed from: t */
+    public int m1562t() {
+        return this.f946m.height();
     }
 
-    public boolean u() {
-        return this.H;
+    /* renamed from: u */
+    public boolean m1563u() {
+        return this.f928H;
     }
 
-    public void c(boolean z) {
-        this.H = z;
-        this.a.invalidate();
+    /* renamed from: c */
+    public void m1530c(boolean z) {
+        this.f928H = z;
+        this.f935a.invalidate();
     }
 
-    public boolean v() {
-        return this.G;
+    /* renamed from: v */
+    public boolean m1564v() {
+        return this.f927G;
     }
 
-    public void d(boolean z) {
-        this.G = z;
+    /* renamed from: d */
+    public void m1538d(boolean z) {
+        this.f927G = z;
     }
 
-    public void e(boolean z) {
-        this.z = z;
+    /* renamed from: e */
+    public void m1543e(boolean z) {
+        this.f959z = z;
     }
 
-    public int w() {
-        return this.M.left;
+    /* renamed from: w */
+    public int m1565w() {
+        return this.f933M.left;
     }
 
-    public int x() {
-        return this.M.top;
+    /* renamed from: x */
+    public int m1566x() {
+        return this.f933M.top;
     }
 
-    public int y() {
-        return this.M.right;
+    /* renamed from: y */
+    public int m1567y() {
+        return this.f933M.right;
     }
 
-    public int z() {
-        return this.M.bottom;
+    /* renamed from: z */
+    public int m1568z() {
+        return this.f933M.bottom;
     }
 
-    public int A() {
-        return this.J.left;
+    /* renamed from: A */
+    public int m1449A() {
+        return this.f930J.left;
     }
 
-    public int B() {
-        return this.J.top;
+    /* renamed from: B */
+    public int m1450B() {
+        return this.f930J.top;
     }
 
-    public int C() {
-        return this.J.right;
+    /* renamed from: C */
+    public int m1451C() {
+        return this.f930J.right;
     }
 
-    public int D() {
-        return this.J.bottom;
+    /* renamed from: D */
+    public int m1452D() {
+        return this.f930J.bottom;
     }
 
-    public void b(int i, int i2, int i3, int i4) {
-        this.J.set(i, i2, i3, i4);
+    /* renamed from: b */
+    public void m1513b(int i, int i2, int i3, int i4) {
+        this.f930J.set(i, i2, i3, i4);
     }
 
-    public Drawable E() {
-        return this.N[0];
+    /* renamed from: E */
+    public Drawable m1453E() {
+        return this.f934N[0];
     }
 
-    public void a(Drawable drawable) {
-        this.N[0] = drawable;
+    /* renamed from: a */
+    public void m1493a(Drawable drawable) {
+        this.f934N[0] = drawable;
     }
 
-    public Drawable F() {
-        return this.K[0];
+    /* renamed from: F */
+    public Drawable m1454F() {
+        return this.f931K[0];
     }
 
-    public void b(Drawable drawable) {
-        this.K[0] = drawable;
+    /* renamed from: b */
+    public void m1517b(Drawable drawable) {
+        this.f931K[0] = drawable;
     }
 
-    public Drawable G() {
-        return this.N[1];
+    /* renamed from: G */
+    public Drawable m1455G() {
+        return this.f934N[1];
     }
 
-    public void c(Drawable drawable) {
-        this.N[1] = drawable;
+    /* renamed from: c */
+    public void m1529c(Drawable drawable) {
+        this.f934N[1] = drawable;
     }
 
-    public Drawable H() {
-        return this.K[1];
+    /* renamed from: H */
+    public Drawable m1456H() {
+        return this.f931K[1];
     }
 
-    public void d(Drawable drawable) {
-        this.K[1] = drawable;
+    /* renamed from: d */
+    public void m1537d(Drawable drawable) {
+        this.f931K[1] = drawable;
     }
 
-    public et I() {
-        return this.d;
+    /* renamed from: I */
+    public et m1457I() {
+        return this.f937d;
     }
 
     public ScrollState getScrollState() {
-        return this.s;
+        return this.f952s;
     }
 
     public int getIdleTime() {
-        if (this.s == ScrollState.IDLE) {
-            return (int) (SystemClock.elapsedRealtime() - this.B);
+        if (this.f952s == ScrollState.IDLE) {
+            return (int) (SystemClock.elapsedRealtime() - this.f922B);
         }
         return 0;
     }
 
-    public int J() {
-        if (this.s != ScrollState.IDLE) {
-            return (int) (SystemClock.elapsedRealtime() - this.C);
+    /* renamed from: J */
+    public int m1458J() {
+        if (this.f952s != ScrollState.IDLE) {
+            return (int) (SystemClock.elapsedRealtime() - this.f923C);
         }
         return 0;
     }
 
-    public int K() {
-        return this.b.f();
+    /* renamed from: K */
+    public int m1459K() {
+        return this.f936b.m1719f();
     }
 
-    public int L() {
-        return this.b.g();
+    /* renamed from: L */
+    public int m1460L() {
+        return this.f936b.m1720g();
     }
 
-    public void a(Interpolator interpolator) {
-        this.b.a(interpolator);
+    /* renamed from: a */
+    public void m1496a(Interpolator interpolator) {
+        this.f936b.m1710a(interpolator);
     }
 
-    public void a(View view, boolean z) {
-        ListIterator listIterator = this.k.listIterator();
+    /* renamed from: a */
+    public void mo435a(View view, boolean z) {
+        ListIterator listIterator = this.f944k.listIterator();
         while (listIterator.hasNext()) {
             View view2 = (View) ((WeakReference) listIterator.next()).get();
             if (view2 == null) {
@@ -464,65 +564,76 @@ public abstract class ev implements Scrollable {
             }
         }
         if (z) {
-            this.k.add(new WeakReference(view));
+            this.f944k.add(new WeakReference(view));
         }
     }
 
-    public OverScrollMode M() {
-        return this.o;
+    /* renamed from: M */
+    public OverScrollMode m1461M() {
+        return this.f948o;
     }
 
-    public void a(OverScrollMode overScrollMode) {
-        this.o = overScrollMode;
+    /* renamed from: a */
+    public void m1497a(OverScrollMode overScrollMode) {
+        this.f948o = overScrollMode;
     }
 
-    public OverScrollMode N() {
-        return this.p;
+    /* renamed from: N */
+    public OverScrollMode m1462N() {
+        return this.f949p;
     }
 
-    public void b(OverScrollMode overScrollMode) {
-        this.p = overScrollMode;
+    /* renamed from: b */
+    public void m1518b(OverScrollMode overScrollMode) {
+        this.f949p = overScrollMode;
     }
 
-    public int O() {
-        return this.q;
+    /* renamed from: O */
+    public int m1463O() {
+        return this.f950q;
     }
 
-    public void c(int i) {
-        this.q = i;
+    /* renamed from: c */
+    public void m1525c(int i) {
+        this.f950q = i;
     }
 
     public int getMaxOverScrollHeight() {
-        return this.r;
+        return this.f951r;
     }
 
-    public void d(int i) {
-        this.r = i;
+    /* renamed from: d */
+    public void m1534d(int i) {
+        this.f951r = i;
     }
 
     public Rect getViewportBounds() {
-        return this.i;
+        return this.f942i;
     }
 
-    public Rect P() {
-        return new Rect(this.i);
+    /* renamed from: P */
+    public Rect m1464P() {
+        return new Rect(this.f942i);
     }
 
-    public void a(cf cfVar) {
-        this.E = cfVar;
+    /* renamed from: a */
+    public void m1501a(cf cfVar) {
+        this.f925E = cfVar;
     }
 
-    public void a(OnScrollListener cgVar) {
-        this.scrollListener = cgVar;
+    /* renamed from: a */
+    public void m1502a(cg cgVar) {
+        this.f926F = cgVar;
     }
 
-    public boolean Q() {
-        if (this.m.width() > ((int) this.h.width())) {
+    /* renamed from: Q */
+    public boolean m1465Q() {
+        if (this.f946m.width() > ((int) this.f941h.width())) {
             return true;
         }
-        switch (ey.a[this.o.ordinal()]) {
+        switch (ey.f1235a[this.f948o.ordinal()]) {
             case 1:
-                if (this.q <= 0) {
+                if (this.f950q <= 0) {
                     return false;
                 }
                 return true;
@@ -531,13 +642,14 @@ public abstract class ev implements Scrollable {
         }
     }
 
-    public boolean R() {
-        if (this.m.height() > ((int) this.h.height())) {
+    /* renamed from: R */
+    public boolean m1466R() {
+        if (this.f946m.height() > ((int) this.f941h.height())) {
             return true;
         }
-        switch (ey.a[this.p.ordinal()]) {
+        switch (ey.f1235a[this.f949p.ordinal()]) {
             case 1:
-                if (this.r <= 0) {
+                if (this.f951r <= 0) {
                     return false;
                 }
                 return true;
@@ -546,325 +658,369 @@ public abstract class ev implements Scrollable {
         }
     }
 
-    public boolean S() {
+    /* renamed from: S */
+    public boolean m1467S() {
         return ak() > 0;
     }
 
-    public boolean T() {
-        return a() > 0;
+    /* renamed from: T */
+    public boolean m1468T() {
+        return mo500a() > 0;
     }
 
-    public boolean U() {
-        return this.a.getScrollX() <= al();
+    /* renamed from: U */
+    public boolean m1469U() {
+        return this.f935a.getScrollX() <= al();
     }
 
-    public boolean V() {
-        return this.a.getScrollX() >= am();
+    /* renamed from: V */
+    public boolean m1470V() {
+        return this.f935a.getScrollX() >= am();
     }
 
-    public boolean W() {
-        return this.a.getScrollY() <= b();
+    /* renamed from: W */
+    public boolean m1471W() {
+        return this.f935a.getScrollY() <= mo504b();
     }
 
-    public boolean X() {
-        return this.a.getScrollY() >= an();
+    /* renamed from: X */
+    public boolean m1472X() {
+        return this.f935a.getScrollY() >= an();
     }
 
-    public boolean e(int i) {
-        if (i < 0 || i >= this.a.getChildCount()) {
+    /* renamed from: e */
+    public boolean m1544e(int i) {
+        if (i < 0 || i >= this.f935a.getChildCount()) {
             return false;
         }
-        View childAt = this.a.getChildAt(i);
+        View childAt = this.f935a.getChildAt(i);
         if (childAt.getVisibility() != 8) {
-            return this.i.intersects(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
+            return this.f942i.intersects(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
         }
         return false;
     }
 
-    public void c(int i, int i2) {
+    /* renamed from: c */
+    public void m1526c(int i, int i2) {
         ao();
-        a(ScrollState.IDLE);
-        b((float) i, (float) i2);
+        m1416a(ScrollState.IDLE);
+        m1510b((float) i, (float) i2);
     }
 
-    public void d(int i, int i2) {
+    /* renamed from: d */
+    public void m1535d(int i, int i2) {
         ao();
-        a(ScrollState.IDLE);
-        c((float) i, (float) i2);
+        m1416a(ScrollState.IDLE);
+        m1524c((float) i, (float) i2);
     }
 
-    public void a(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
+    /* renamed from: a */
+    public void mo434a(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
         ao();
-        this.b.a(true);
-        a(ScrollState.SMOOTH);
-        a(((float) i) - this.h.left, ((float) i2) - this.h.top, i3, false, new ez(this, runnable), new fa(this, runnable2));
+        this.f936b.m1711a(true);
+        m1416a(ScrollState.SMOOTH);
+        mo1759a(((float) i) - this.f941h.left, ((float) i2) - this.f941h.top, i3, false, new ez(this, runnable), new fa(this, runnable2));
     }
 
-    public void b(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
+    /* renamed from: b */
+    public void m1514b(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
         ao();
-        this.b.a(true);
-        a(ScrollState.SMOOTH);
-        a((float) i, (float) i2, i3, false, new fb(this, runnable), new fc(this, runnable2));
+        this.f936b.m1711a(true);
+        m1416a(ScrollState.SMOOTH);
+        mo1759a((float) i, (float) i2, i3, false, new fb(this, runnable), new fc(this, runnable2));
     }
 
-    public void e(int i, int i2) {
+    /* renamed from: e */
+    public void m1541e(int i, int i2) {
         ao();
-        a(ScrollState.IDLE);
-        g((float) i, (float) i2);
+        m1416a(ScrollState.IDLE);
+        m1547g((float) i, (float) i2);
     }
 
-    public void Y() {
+    /* renamed from: Y */
+    public void m1473Y() {
         int al = al();
         int am = am();
-        int b = b();
+        int b = mo504b();
         int an = an();
-        al = Math.max(al, Math.min(this.i.left, am));
-        am = Math.max(b, Math.min(this.i.top, an));
-        if (this.i.left != al || this.i.top != am) {
-            d(al, am);
+        al = Math.max(al, Math.min(this.f942i.left, am));
+        am = Math.max(b, Math.min(this.f942i.top, an));
+        if (this.f942i.left != al || this.f942i.top != am) {
+            m1535d(al, am);
         }
     }
 
-    public void Z() {
+    /* renamed from: Z */
+    public void m1474Z() {
         int al = al();
         int am = am();
-        int b = b();
+        int b = mo504b();
         int an = an();
-        al = Math.max(al, Math.min(this.i.left, am));
-        am = Math.max(b, Math.min(this.i.top, an));
-        if (this.i.left != al || this.i.top != am) {
+        al = Math.max(al, Math.min(this.f942i.left, am));
+        am = Math.max(b, Math.min(this.f942i.top, an));
+        if (this.f942i.left != al || this.f942i.top != am) {
             ao();
-            a(ScrollState.SMOOTH);
-            a(0.0f, 0.0f, new ex(this), null);
+            m1416a(ScrollState.SMOOTH);
+            mo1694a(0.0f, 0.0f, new ex(this), null);
         }
     }
 
-    public void a(Rect rect, Rect rect2, int i, Runnable runnable, Runnable runnable2) {
-        Point a = a(rect, rect2);
-        b(a.x, a.y, i, runnable, runnable2);
+    /* renamed from: a */
+    public void m1492a(Rect rect, Rect rect2, int i, Runnable runnable, Runnable runnable2) {
+        Point a = m1478a(rect, rect2);
+        m1514b(a.x, a.y, i, runnable, runnable2);
     }
 
-    public Point a(Point point) {
-        point.x -= this.i.left;
-        point.y -= this.i.top;
+    /* renamed from: a */
+    public Point m1477a(Point point) {
+        point.x -= this.f942i.left;
+        point.y -= this.f942i.top;
         return point;
     }
 
-    public Point b(Point point) {
-        point.x += this.i.left;
-        point.y += this.i.top;
+    /* renamed from: b */
+    public Point m1508b(Point point) {
+        point.x += this.f942i.left;
+        point.y += this.f942i.top;
         return point;
     }
 
-    public Rect b(Rect rect) {
-        rect.offset(this.i.left, this.i.top);
+    /* renamed from: b */
+    public Rect m1509b(Rect rect) {
+        rect.offset(this.f942i.left, this.f942i.top);
         return rect;
     }
 
-    protected void a(ScrollState scrollState, ScrollState scrollState2) {
+    /* renamed from: a */
+    protected void mo494a(ScrollState scrollState, ScrollState scrollState2) {
     }
 
-    protected void a(boolean z) {
+    /* renamed from: a */
+    protected void mo495a(boolean z) {
     }
 
-    protected void a(MotionEvent motionEvent) {
+    /* renamed from: a */
+    protected void mo502a(MotionEvent motionEvent) {
     }
 
-    protected void a(PointF pointF) {
+    /* renamed from: a */
+    protected void mo493a(PointF pointF) {
     }
 
-    protected void b(PointF pointF) {
+    /* renamed from: b */
+    protected void mo496b(PointF pointF) {
     }
 
-    protected void c(PointF pointF) {
+    /* renamed from: c */
+    protected void mo497c(PointF pointF) {
     }
 
-    protected void d(PointF pointF) {
-        this.a.performClick();
+    /* renamed from: d */
+    protected void mo498d(PointF pointF) {
+        this.f935a.performClick();
     }
 
-    protected void e(PointF pointF) {
-        this.a.performLongClick();
+    /* renamed from: e */
+    protected void mo499e(PointF pointF) {
+        this.f935a.performLongClick();
     }
 
     protected int aa() {
-        return UTools.getScaledTouchSlop(this.a.getContext());
+        return dv.getScaledTouchSlop(this.f935a.getContext());
     }
 
     protected int ab() {
         return 0;
     }
 
-    protected final void b(float f, float f2) {
+    /* renamed from: b */
+    protected final void m1510b(float f, float f2) {
         ao();
-        d(f, f2);
+        m1533d(f, f2);
     }
 
-    protected final void c(float f, float f2) {
+    /* renamed from: c */
+    protected final void m1524c(float f, float f2) {
         ao();
-        e(f, f2);
+        m1540e(f, f2);
     }
 
-    protected final void d(float f, float f2) {
-        e(this.h.left + f, this.h.top + f2);
+    /* renamed from: d */
+    protected final void m1533d(float f, float f2) {
+        m1540e(this.f941h.left + f, this.f941h.top + f2);
     }
 
-    protected final void e(float f, float f2) {
-        g(Math.max((float) ag(), Math.min(f, (float) ah())), Math.max((float) ai(), Math.min(f2, (float) aj())));
+    /* renamed from: e */
+    protected final void m1540e(float f, float f2) {
+        m1547g(Math.max((float) ag(), Math.min(f, (float) ah())), Math.max((float) ai(), Math.min(f2, (float) aj())));
     }
 
-    protected final void f(float f, float f2) {
-        g(this.h.left + f, this.h.top + f2);
+    /* renamed from: f */
+    protected final void m1545f(float f, float f2) {
+        m1547g(this.f941h.left + f, this.f941h.top + f2);
     }
 
-    protected final void g(float f, float f2) {
+    /* renamed from: g */
+    protected final void m1547g(float f, float f2) {
         boolean z;
-        this.h.set(f, f2, ((float) this.a.getWidth()) + f, ((float) this.a.getHeight()) + f2);
-        this.h.round(this.i);
-        a(this.s, this.h);
-        this.h.round(this.i);
-        if (this.o == OverScrollMode.STRETCH) {
-            if (this.i.left < al() && this.j.left >= al()) {
-                this.i.left = al();
+        this.f941h.set(f, f2, ((float) this.f935a.getWidth()) + f, ((float) this.f935a.getHeight()) + f2);
+        this.f941h.round(this.f942i);
+        mo503a(this.f952s, this.f941h);
+        this.f941h.round(this.f942i);
+        if (this.f948o == OverScrollMode.STRETCH) {
+            if (this.f942i.left < al() && this.f943j.left >= al()) {
+                this.f942i.left = al();
             }
-            if (this.i.left > am() && this.j.right <= am() + ((int) this.h.width())) {
-                this.i.right = am() + ((int) this.h.width());
-            }
-        }
-        if (this.p == OverScrollMode.STRETCH) {
-            if (this.i.top < b() && this.j.top >= b()) {
-                this.i.top = b();
-            }
-            if (this.i.top > an() && this.j.bottom <= an() + ((int) this.h.height())) {
-                this.i.bottom = an() + ((int) this.h.height());
+            if (this.f942i.left > am() && this.f943j.right <= am() + ((int) this.f941h.width())) {
+                this.f942i.right = am() + ((int) this.f941h.width());
             }
         }
-        if (this.i.equals(this.j)) {
+        if (this.f949p == OverScrollMode.STRETCH) {
+            if (this.f942i.top < mo504b() && this.f943j.top >= mo504b()) {
+                this.f942i.top = mo504b();
+            }
+            if (this.f942i.top > an() && this.f943j.bottom <= an() + ((int) this.f941h.height())) {
+                this.f942i.bottom = an() + ((int) this.f941h.height());
+            }
+        }
+        if (this.f942i.equals(this.f943j)) {
             z = false;
         } else {
             z = true;
         }
-        this.j.set(this.i);
-        a(this.i.left, this.i.top);
+        this.f943j.set(this.f942i);
+        mo491a(this.f942i.left, this.f942i.top);
         if (z) {
-            this.a.invalidate();
+            this.f935a.invalidate();
         }
         av();
         as();
-        Iterator it = this.k.iterator();
+        Iterator it = this.f944k.iterator();
         while (it.hasNext()) {
             View view = (View) ((WeakReference) it.next()).get();
             if (view != null) {
                 view.invalidate();
             }
         }
-        a(z);
-        g(z);
+        mo495a(z);
+        m1436g(z);
     }
 
-    protected void a(ScrollState scrollState, RectF rectF) {
+    /* renamed from: a */
+    protected void mo503a(ScrollState scrollState, RectF rectF) {
     }
 
-    protected void a(float f, float f2, float f3, float f4, Runnable runnable, Runnable runnable2) {
-        a((-f3) * a(-f3), (-f4) * b(-f4), runnable, runnable2);
+    /* renamed from: a */
+    protected void mo1768a(float f, float f2, float f3, float f4, Runnable runnable, Runnable runnable2) {
+        mo1694a((-f3) * mo1695a(-f3), (-f4) * m1506b(-f4), runnable, runnable2);
     }
 
     protected void ac() {
     }
 
-    protected void h(float f, float f2) {
-        c(((float) al()) + (((float) (am() - al())) * f), ((float) b()) + (((float) (an() - b())) * f2));
+    /* renamed from: h */
+    protected void m1549h(float f, float f2) {
+        m1524c(((float) al()) + (((float) (am() - al())) * f), ((float) mo504b()) + (((float) (an() - mo504b())) * f2));
     }
 
     protected void ad() {
     }
 
-    protected void a(ScrollState scrollState, float f, float f2) {
+    /* renamed from: a */
+    protected void mo1760a(ScrollState scrollState, float f, float f2) {
     }
 
-    protected void a(float f, float f2) {
-        c(((-f) * a(-f)) + this.h.left, ((-f2) * b(-f2)) + this.h.top);
+    /* renamed from: a */
+    protected void mo501a(float f, float f2) {
+        m1524c(((-f) * mo1695a(-f)) + this.f941h.left, ((-f2) * m1506b(-f2)) + this.f941h.top);
     }
 
-    protected void b(ScrollState scrollState, float f, float f2) {
+    /* renamed from: b */
+    protected void mo1761b(ScrollState scrollState, float f, float f2) {
     }
 
-    protected void a(float f, float f2, Runnable runnable, Runnable runnable2) {
-        a(f, f2, al(), am(), b(), an(), runnable, runnable2);
+    /* renamed from: a */
+    protected void mo1694a(float f, float f2, Runnable runnable, Runnable runnable2) {
+        m1481a(f, f2, al(), am(), mo504b(), an(), runnable, runnable2);
     }
 
-    protected final void a(float f, float f2, int i, int i2, int i3, int i4, Runnable runnable, Runnable runnable2) {
-        this.b.a(Math.round(this.h.left), Math.round(this.h.top), Math.round(f), Math.round(f2), i, i2, i3, i4, ak(), a());
-        this.A = new fe(this, false, runnable, runnable2);
-        this.a.post(this.A);
+    /* renamed from: a */
+    protected final void m1481a(float f, float f2, int i, int i2, int i3, int i4, Runnable runnable, Runnable runnable2) {
+        this.f936b.m1709a(Math.round(this.f941h.left), Math.round(this.f941h.top), Math.round(f), Math.round(f2), i, i2, i3, i4, ak(), mo500a());
+        this.f921A = new fe(this, false, runnable, runnable2);
+        this.f935a.post(this.f921A);
     }
 
-    protected void a(float f, float f2, int i, boolean z, Runnable runnable, Runnable runnable2) {
+    /* renamed from: a */
+    protected void mo1759a(float f, float f2, int i, boolean z, Runnable runnable, Runnable runnable2) {
         if (!z) {
-            f = Math.max((float) (ag() - this.i.left), Math.min(f, (float) (ah() - this.i.left)));
-            f2 = Math.max((float) (ai() - this.i.top), Math.min(f2, (float) (aj() - this.i.top)));
+            f = Math.max((float) (ag() - this.f942i.left), Math.min(f, (float) (ah() - this.f942i.left)));
+            f2 = Math.max((float) (ai() - this.f942i.top), Math.min(f2, (float) (aj() - this.f942i.top)));
         }
-        this.b.a(Math.round(this.h.left), Math.round(this.h.top), Math.round(f), Math.round(f2), i);
-        this.A = new fe(this, z, runnable, runnable2);
-        this.a.post(this.A);
+        this.f936b.m1708a(Math.round(this.f941h.left), Math.round(this.f941h.top), Math.round(f), Math.round(f2), i);
+        this.f921A = new fe(this, z, runnable, runnable2);
+        this.f935a.post(this.f921A);
     }
 
-    protected final void a(float f, float f2, int i, int i2, Runnable runnable, Runnable runnable2) {
-        this.b.b(Math.round(this.h.left), Math.round(this.h.top), i, i2, Math.round(f), Math.round(f2));
-        this.A = new fe(this, false, runnable, runnable2);
-        this.a.post(this.A);
+    /* renamed from: a */
+    protected final void m1482a(float f, float f2, int i, int i2, Runnable runnable, Runnable runnable2) {
+        this.f936b.m1715b(Math.round(this.f941h.left), Math.round(this.f941h.top), i, i2, Math.round(f), Math.round(f2));
+        this.f921A = new fe(this, false, runnable, runnable2);
+        this.f935a.post(this.f921A);
     }
 
     protected final int ae() {
-        return ((int) this.h.width()) - this.i.width();
+        return ((int) this.f941h.width()) - this.f942i.width();
     }
 
     protected final int af() {
-        return ((int) this.h.height()) - this.i.height();
+        return ((int) this.f941h.height()) - this.f942i.height();
     }
 
     private final void ao() {
-        this.b.a(true);
-        this.A = null;
+        this.f936b.m1711a(true);
+        this.f921A = null;
     }
 
-    private final void a(ScrollState scrollState) {
-        if (this.s != scrollState) {
-            ScrollState scrollState2 = this.s;
-            this.s = scrollState;
-            if (this.s == ScrollState.IDLE) {
-                this.B = SystemClock.elapsedRealtime();
+    /* renamed from: a */
+    private final void m1416a(ScrollState scrollState) {
+        if (this.f952s != scrollState) {
+            ScrollState scrollState2 = this.f952s;
+            this.f952s = scrollState;
+            if (this.f952s == ScrollState.IDLE) {
+                this.f922B = SystemClock.elapsedRealtime();
             } else {
-                this.C = SystemClock.elapsedRealtime();
+                this.f923C = SystemClock.elapsedRealtime();
             }
-            if (this.s == ScrollState.IDLE || this.s == ScrollState.SMOOTH) {
-                this.t = false;
-                this.u = false;
-                this.v = false;
-                this.w = false;
+            if (this.f952s == ScrollState.IDLE || this.f952s == ScrollState.SMOOTH) {
+                this.f953t = false;
+                this.f954u = false;
+                this.f955v = false;
+                this.f956w = false;
             }
-            a(scrollState2, this.s);
-            b(scrollState2, this.s);
+            mo494a(scrollState2, this.f952s);
+            m1422b(scrollState2, this.f952s);
         }
     }
 
     private final int ap() {
         float f = 1.0f;
-        if (!this.H) {
+        if (!this.f928H) {
             f = 0.0f;
         } else if (getScrollState() == ScrollState.IDLE) {
             int idleTime = getIdleTime();
-            if (idleTime > Calendar.MILLISECOND_OF_SECOND) {
-                f = idleTime < 1200 ? ((float) (1200 - idleTime)) / 200.0f : 0.0f;
+            if (idleTime > 1000) {
+                f = idleTime < ICallback.NOTIFY_SHARE_AIDL ? ((float) (1200 - idleTime)) / 200.0f : 0.0f;
             }
         }
         return (int) (f * 255.0f);
     }
 
-    protected Point a(Rect rect, Rect rect2) {
+    /* renamed from: a */
+    protected Point m1478a(Rect rect, Rect rect2) {
         int i;
         int i2 = 0;
-        Rect b = b(new Rect(rect2));
+        Rect b = m1509b(new Rect(rect2));
         if (rect.left < b.left) {
             i = (rect.left - b.left) + 0;
         } else if (rect.right > b.right) {
@@ -880,59 +1036,61 @@ public abstract class ev implements Scrollable {
         return new Point(i, i2);
     }
 
-    protected float a(float f) {
+    /* renamed from: a */
+    protected float mo1695a(float f) {
         float ag = (float) ag();
         float ah = (float) ah();
         float al = (float) al();
         float am = (float) am();
-        float f2 = this.h.left;
+        float f2 = this.f941h.left;
         if (Float.compare(f2, al) > 0 || Float.compare(f, 0.0f) >= 0) {
             if (Float.compare(f2, am) < 0 || Float.compare(f, 0.0f) <= 0) {
                 ag = 1.0f;
-            } else if (Float.compare(ah, (float) this.m.right) == 0) {
+            } else if (Float.compare(ah, (float) this.f946m.right) == 0) {
                 ag = 0.0f;
             } else if (Float.compare(f2, ah) >= 0) {
                 ag = 0.0f;
             } else {
                 ag = Math.abs((f2 - ah) / (am - ah));
             }
-        } else if (Float.compare(ag, (float) this.m.left) == 0) {
+        } else if (Float.compare(ag, (float) this.f946m.left) == 0) {
             ag = 0.0f;
         } else if (Float.compare(f2, ag) <= 0) {
             ag = 0.0f;
         } else {
             ag = Math.abs((f2 - ag) / (al - ag));
         }
-        if (c || Float.compare(ag, 0.0f) >= 0) {
+        if (f920c || Float.compare(ag, 0.0f) >= 0) {
             return ag;
         }
         throw new AssertionError();
     }
 
-    protected float b(float f) {
+    /* renamed from: b */
+    protected float m1506b(float f) {
         float ai = (float) ai();
         float aj = (float) aj();
-        float b = (float) b();
+        float b = (float) mo504b();
         float an = (float) an();
-        float f2 = this.h.top;
+        float f2 = this.f941h.top;
         if (Float.compare(f2, b) > 0 || Float.compare(f, 0.0f) >= 0) {
             if (Float.compare(f2, an) < 0 || Float.compare(f, 0.0f) <= 0) {
                 ai = 1.0f;
-            } else if (Float.compare(aj, (float) this.m.bottom) == 0) {
+            } else if (Float.compare(aj, (float) this.f946m.bottom) == 0) {
                 ai = 0.0f;
             } else if (Float.compare(f2, aj) >= 0) {
                 ai = 0.0f;
             } else {
                 ai = Math.abs((f2 - aj) / (an - aj));
             }
-        } else if (Float.compare(ai, (float) this.m.top) == 0) {
+        } else if (Float.compare(ai, (float) this.f946m.top) == 0) {
             ai = 0.0f;
         } else if (Float.compare(f2, ai) <= 0) {
             ai = 0.0f;
         } else {
             ai = Math.abs((f2 - ai) / (b - ai));
         }
-        if (c || Float.compare(ai, 0.0f) >= 0) {
+        if (f920c || Float.compare(ai, 0.0f) >= 0) {
             return ai;
         }
         throw new AssertionError();
@@ -942,14 +1100,14 @@ public abstract class ev implements Scrollable {
         if (am() - al() == 0) {
             return 0.0f;
         }
-        return (this.h.left - ((float) al())) / ((float) (am() - al()));
+        return (this.f941h.left - ((float) al())) / ((float) (am() - al()));
     }
 
     private float ar() {
-        if (an() - b() == 0) {
+        if (an() - mo504b() == 0) {
             return 0.0f;
         }
-        return (this.h.top - ((float) b())) / ((float) (an() - b()));
+        return (this.f941h.top - ((float) mo504b())) / ((float) (an() - mo504b()));
     }
 
     protected int ag() {
@@ -961,60 +1119,62 @@ public abstract class ev implements Scrollable {
     }
 
     protected int ai() {
-        return b() - a();
+        return mo504b() - mo500a();
     }
 
     protected int aj() {
-        return an() + a();
+        return an() + mo500a();
     }
 
     protected int ak() {
-        switch (ey.a[this.o.ordinal()]) {
+        switch (ey.f1235a[this.f948o.ordinal()]) {
             case 1:
-                return this.q;
+                return this.f950q;
             case 2:
             case 3:
-                return this.m.width() > ((int) this.h.width()) ? this.q : 0;
+                return this.f946m.width() > ((int) this.f941h.width()) ? this.f950q : 0;
             default:
                 return 0;
         }
     }
 
-    protected int a() {
-        switch (ey.a[this.p.ordinal()]) {
+    /* renamed from: a */
+    protected int mo500a() {
+        switch (ey.f1235a[this.f949p.ordinal()]) {
             case 1:
-                return this.r;
+                return this.f951r;
             case 2:
             case 3:
-                return this.m.height() > ((int) this.h.height()) ? this.r : 0;
+                return this.f946m.height() > ((int) this.f941h.height()) ? this.f951r : 0;
             default:
                 return 0;
         }
     }
 
     protected int al() {
-        return Math.min(0, this.m.left);
+        return Math.min(0, this.f946m.left);
     }
 
-    protected int b() {
-        return Math.min(0, this.m.top);
+    /* renamed from: b */
+    protected int mo504b() {
+        return Math.min(0, this.f946m.top);
     }
 
     protected int am() {
-        return Math.max(al(), this.m.right - ((int) this.h.width()));
+        return Math.max(al(), this.f946m.right - ((int) this.f941h.width()));
     }
 
     protected int an() {
-        return Math.max(b(), this.m.bottom - ((int) this.h.height()));
+        return Math.max(mo504b(), this.f946m.bottom - ((int) this.f941h.height()));
     }
 
     private final void as() {
         Drawable ay = ay();
-        int n = n();
-        int m = m();
-        int o = o();
+        int n = m1556n();
+        int m = m1555m();
+        int o = m1557o();
         if (ay == null || o == 0 || o <= m) {
-            this.L.setEmpty();
+            this.f932L.setEmpty();
             return;
         }
         float f = ((float) n) / ((float) o);
@@ -1022,21 +1182,23 @@ public abstract class ev implements Scrollable {
         o = aw();
         int aC = aC();
         m = Math.max(o, Math.round(f2 * ((float) aC)));
-        n = Math.round(f * ((float) aC)) + this.M.left;
-        this.L.set(n, (((int) this.h.height()) - this.M.bottom) - (ay.getIntrinsicHeight() > 0 ? ay.getIntrinsicHeight() : UTools.getMinimumHeight(this.a.getContext(), 5.0f)), m + n, ((int) this.h.height()) - this.M.bottom);
-        if (this.L.right > ((int) this.h.width()) - this.M.right) {
-            this.L.offset((((int) this.h.width()) - this.M.right) - this.L.right, 0);
+        n = Math.round(f * ((float) aC)) + this.f933M.left;
+        this.f932L.set(n, (((int) this.f941h.height()) - this.f933M.bottom) - (ay.getIntrinsicHeight() > 0 ? ay.getIntrinsicHeight() : dv.m1932b(this.f935a.getContext(), 5.0f)), m + n, ((int) this.f941h.height()) - this.f933M.bottom);
+        if (this.f932L.right > ((int) this.f941h.width()) - this.f933M.right) {
+            this.f932L.offset((((int) this.f941h.width()) - this.f933M.right) - this.f932L.right, 0);
         }
     }
 
-    private final float f(int i) {
+    /* renamed from: f */
+    private final float m1431f(int i) {
         if (at() == 0) {
             return 0.0f;
         }
         return ((float) i) / ((float) at());
     }
 
-    private final float g(int i) {
+    /* renamed from: g */
+    private final float m1434g(int i) {
         if (au() == 0) {
             return 0.0f;
         }
@@ -1059,93 +1221,95 @@ public abstract class ev implements Scrollable {
 
     private final void av() {
         Drawable az = az();
-        int q = q();
-        int p = p();
-        int r = r();
+        int q = m1559q();
+        int p = m1558p();
+        int r = m1560r();
         if (az == null || r == 0 || r <= p) {
-            this.I.setEmpty();
+            this.f929I.setEmpty();
             return;
         }
         float f = ((float) q) / ((float) r);
         float f2 = ((float) p) / ((float) r);
         r = ax();
         int aD = aD();
-        int intrinsicWidth = az.getIntrinsicWidth() > 0 ? az.getIntrinsicWidth() : UTools.getMinimumHeight(this.a.getContext(), 5.0f);
-        q = Math.round(f * ((float) aD)) + this.J.top;
-        this.I.set((((int) this.h.width()) - intrinsicWidth) - this.J.right, q, ((int) this.h.width()) - this.J.right, Math.max(r, Math.round(f2 * ((float) aD))) + q);
-        if (this.I.bottom > ((int) this.h.height()) - this.J.bottom) {
-            this.I.offset(0, (((int) this.h.height()) - this.J.bottom) - this.I.bottom);
+        int intrinsicWidth = az.getIntrinsicWidth() > 0 ? az.getIntrinsicWidth() : dv.m1932b(this.f935a.getContext(), 5.0f);
+        q = Math.round(f * ((float) aD)) + this.f930J.top;
+        this.f929I.set((((int) this.f941h.width()) - intrinsicWidth) - this.f930J.right, q, ((int) this.f941h.width()) - this.f930J.right, Math.max(r, Math.round(f2 * ((float) aD))) + q);
+        if (this.f929I.bottom > ((int) this.f941h.height()) - this.f930J.bottom) {
+            this.f929I.offset(0, (((int) this.f941h.height()) - this.f930J.bottom) - this.f929I.bottom);
         }
     }
 
     private final int aw() {
         Drawable ay = ay();
-        return ay.getIntrinsicWidth() > 0 ? ay.getIntrinsicWidth() : UTools.getMinimumHeight(this.a.getContext(), 5.0f);
+        return ay.getIntrinsicWidth() > 0 ? ay.getIntrinsicWidth() : dv.m1932b(this.f935a.getContext(), 5.0f);
     }
 
     private final int ax() {
         Drawable az = az();
-        return az.getIntrinsicHeight() > 0 ? az.getIntrinsicHeight() : UTools.getMinimumHeight(this.a.getContext(), 5.0f);
+        return az.getIntrinsicHeight() > 0 ? az.getIntrinsicHeight() : dv.m1932b(this.f935a.getContext(), 5.0f);
     }
 
     private final Drawable ay() {
-        return this.N[aA()];
+        return this.f934N[aA()];
     }
 
     private final Drawable az() {
-        return this.K[aB()];
+        return this.f931K[aB()];
     }
 
     private final int aA() {
-        if (!this.G || s() == 0 || aC() == 0) {
+        if (!this.f927G || m1561s() == 0 || aC() == 0) {
             return 0;
         }
-        Drawable drawable = this.N[1];
+        Drawable drawable = this.f934N[1];
         if (drawable == null) {
             return 0;
         }
-        if (this.t) {
+        if (this.f953t) {
             return 1;
         }
-        if (Float.compare(((float) this.i.width()) / ((float) s()), ((float) drawable.getIntrinsicWidth()) / ((float) aC())) <= 0) {
+        if (Float.compare(((float) this.f942i.width()) / ((float) m1561s()), ((float) drawable.getIntrinsicWidth()) / ((float) aC())) <= 0) {
             return 1;
         }
         return 0;
     }
 
     private final int aB() {
-        if (!this.G || t() == 0 || aD() == 0) {
+        if (!this.f927G || m1562t() == 0 || aD() == 0) {
             return 0;
         }
-        Drawable drawable = this.K[1];
+        Drawable drawable = this.f931K[1];
         if (drawable == null) {
             return 0;
         }
-        if (this.u) {
+        if (this.f954u) {
             return 1;
         }
-        if (Float.compare(((float) this.i.height()) / ((float) t()), ((float) drawable.getIntrinsicHeight()) / ((float) aD())) <= 0) {
+        if (Float.compare(((float) this.f942i.height()) / ((float) m1562t()), ((float) drawable.getIntrinsicHeight()) / ((float) aD())) <= 0) {
             return 1;
         }
         return 0;
     }
 
     private final int aC() {
-        return (((int) this.h.width()) - this.M.left) - this.M.right;
+        return (((int) this.f941h.width()) - this.f933M.left) - this.f933M.right;
     }
 
     private final int aD() {
-        return (((int) this.h.height()) - this.J.top) - this.J.bottom;
+        return (((int) this.f941h.height()) - this.f930J.top) - this.f930J.bottom;
     }
 
-    private final void f(boolean z) {
-        ViewParent parent = this.a.getParent();
+    /* renamed from: f */
+    private final void m1432f(boolean z) {
+        ViewParent parent = this.f935a.getParent();
         if (parent != null) {
             parent.requestDisallowInterceptTouchEvent(z);
         }
     }
 
-    protected static int b(Rect rect, Rect rect2) {
+    /* renamed from: b */
+    protected static int m1420b(Rect rect, Rect rect2) {
         if (rect.left <= rect2.left && rect.right >= rect2.right) {
             return 0;
         }
@@ -1158,7 +1322,8 @@ public abstract class ev implements Scrollable {
         return -Math.min(rect.left - rect2.left, rect.right - rect2.right);
     }
 
-    protected static int c(Rect rect, Rect rect2) {
+    /* renamed from: c */
+    protected static int m1424c(Rect rect, Rect rect2) {
         if (rect.top <= rect2.top && rect.bottom >= rect2.bottom) {
             return 0;
         }
@@ -1171,23 +1336,25 @@ public abstract class ev implements Scrollable {
         return -Math.min(rect.top - rect2.top, rect.bottom - rect2.bottom);
     }
 
-    private final void b(ScrollState scrollState, ScrollState scrollState2) {
-        if (this.scrollListener != null) {
-            this.scrollListener.a(this, scrollState, scrollState2);
+    /* renamed from: b */
+    private final void m1422b(ScrollState scrollState, ScrollState scrollState2) {
+        if (this.f926F != null) {
+            this.f926F.mo478a(this, scrollState, scrollState2);
         }
-        Iterator it = this.l.iterator();
+        Iterator it = this.f945l.iterator();
         while (it.hasNext()) {
-            ((ch) it.next()).a(this, scrollState, scrollState2);
+            ((ch) it.next()).mo478a(this, scrollState, scrollState2);
         }
     }
 
-    private final void g(boolean z) {
-        if (this.scrollListener != null) {
-            this.scrollListener.a(this, z);
+    /* renamed from: g */
+    private final void m1436g(boolean z) {
+        if (this.f926F != null) {
+            this.f926F.mo479a(this, z);
         }
-        Iterator it = this.l.iterator();
+        Iterator it = this.f945l.iterator();
         while (it.hasNext()) {
-            ((ch) it.next()).a(this, z);
+            ((ch) it.next()).mo479a(this, z);
         }
     }
 }

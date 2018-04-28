@@ -1,15 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.ui.general.FixedPagesView.PageScaleType;
+import java.io.File;
+import java.io.FileFilter;
 
-class xg implements Runnable {
-    final /* synthetic */ xf a;
+class xg implements FileFilter {
+    /* renamed from: a */
+    final /* synthetic */ wy f11142a;
 
-    xg(xf xfVar) {
-        this.a = xfVar;
+    xg(wy wyVar) {
+        this.f11142a = wyVar;
     }
 
-    public void run() {
-        this.a.a.c.a(PageScaleType.MATCH_WIDTH);
+    public boolean accept(File file) {
+        return file.getPath().endsWith(".snap");
     }
 }

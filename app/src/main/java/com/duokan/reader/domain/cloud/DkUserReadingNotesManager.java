@@ -1,29 +1,34 @@
 package com.duokan.reader.domain.cloud;
 
 import android.text.TextUtils;
-
-import com.duokan.common.Execute;
-import com.duokan.core.app.ah;
+import com.duokan.common.C0259a;
 import com.duokan.core.app.ai;
+import com.duokan.core.app.aj;
 import com.duokan.reader.DkApp;
-import com.duokan.reader.common.async.a.a;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.h;
-import com.duokan.reader.domain.account.i;
-
+import com.duokan.reader.common.async.p035a.C0517a;
+import com.duokan.reader.domain.account.C0586j;
+import com.duokan.reader.domain.account.C0672a;
+import com.duokan.reader.domain.account.C0709k;
+import com.duokan.reader.domain.account.al;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public class DkUserReadingNotesManager implements ah {
-    private static final ai a = new ai();
-    private final i b;
-    private final h c;
-    private ab d;
-    private long e = 0;
-    private final LinkedList f = new LinkedList();
+public class DkUserReadingNotesManager implements ai {
+    /* renamed from: a */
+    private static final aj<DkUserReadingNotesManager> f3623a = new aj();
+    /* renamed from: b */
+    private final C0709k f3624b;
+    /* renamed from: c */
+    private final C0586j f3625c;
+    /* renamed from: d */
+    private al f3626d;
+    /* renamed from: e */
+    private long f3627e = 0;
+    /* renamed from: f */
+    private final LinkedList<et> f3628f = new LinkedList();
 
     class DkUserReadingNotesCacheInfo implements Serializable {
         public String mAccountName;
@@ -37,106 +42,119 @@ public class DkUserReadingNotesManager implements ah {
         }
     }
 
-    private DkUserReadingNotesManager(i iVar) {
-        this.b = iVar;
-        this.c = new ex(this);
-        this.d = new ab(i.f().c());
-        DkApp.get().runPreReady(new ez(this));
+    private DkUserReadingNotesManager(C0709k c0709k) {
+        this.f3624b = c0709k;
+        this.f3625c = new eg(this);
+        this.f3626d = new al(C0709k.m3476a().m3508d());
+        DkApp.get().runPreReady(new ei(this));
     }
 
-    public static void a(i iVar) {
-        a.a(new DkUserReadingNotesManager(iVar));
+    /* renamed from: a */
+    public static void m5137a(C0709k c0709k) {
+        f3623a.m709a(new DkUserReadingNotesManager(c0709k));
     }
 
-    public static DkUserReadingNotesManager a() {
-        return (DkUserReadingNotesManager) a.a();
+    /* renamed from: a */
+    public static DkUserReadingNotesManager m5136a() {
+        return (DkUserReadingNotesManager) f3623a.m707a();
     }
 
-    public void a(fl flVar) {
-        if (flVar != null && !this.f.contains(flVar)) {
-            this.f.add(flVar);
+    /* renamed from: a */
+    public void m5152a(et etVar) {
+        if (etVar != null && !this.f3628f.contains(etVar)) {
+            this.f3628f.add(etVar);
         }
     }
 
-    public void b(fl flVar) {
-        if (flVar != null) {
-            this.f.remove(flVar);
+    /* renamed from: b */
+    public void m5157b(et etVar) {
+        if (etVar != null) {
+            this.f3628f.remove(etVar);
         }
     }
 
-    public long b() {
-        return this.e;
+    /* renamed from: b */
+    public long m5156b() {
+        return this.f3627e;
     }
 
-    public void a(a aVar) {
-        if (this.d.b()) {
-            aVar.a(null);
+    /* renamed from: a */
+    public void m5151a(C0517a<Void> c0517a) {
+        if (this.f3626d.m3366b()) {
+            c0517a.mo730a(null);
         } else {
-            Execute.run(new fa(this, this.d, aVar), new Void[0]);
+            C0259a.m568a(new ej(this, this.f3626d, c0517a), new Void[0]);
         }
     }
 
-    public void a(String str, int i) {
-        fn fnVar = new fn(this.d);
-        fnVar.b();
-        DkCloudNoteBookInfo dkCloudNoteBookInfo = (DkCloudNoteBookInfo) fnVar.queryItem(str);
+    /* renamed from: a */
+    public void m5153a(String str, int i) {
+        ev evVar = new ev(this.f3626d);
+        evVar.m5513b();
+        DkCloudNoteBookInfo dkCloudNoteBookInfo = (DkCloudNoteBookInfo) evVar.queryItem(str);
         if (dkCloudNoteBookInfo != null) {
             dkCloudNoteBookInfo.setNoteCount(i);
             dkCloudNoteBookInfo.setLastDate(new Date());
-            a(dkCloudNoteBookInfo);
+            m5142a(dkCloudNoteBookInfo);
             int noteCount = i - dkCloudNoteBookInfo.getNoteCount();
             if (i == 0) {
-                fnVar.deleteItemWithKey(str);
+                evVar.deleteItemWithKey(str);
             } else {
-                fnVar.updateItem(dkCloudNoteBookInfo);
+                evVar.updateItem(dkCloudNoteBookInfo);
             }
-            DkUserReadingNotesCacheInfo a = fnVar.a();
+            DkUserReadingNotesCacheInfo a = evVar.m5512a();
             if (a.mReadingNoteCount >= 0) {
                 a.mReadingNoteCount += (long) noteCount;
-                fnVar.updateInfo(a);
+                evVar.updateInfo(a);
             }
-            this.e = ((long) noteCount) + this.e;
-            d();
-            a(dkCloudNoteBookInfo);
+            this.f3627e = ((long) noteCount) + this.f3627e;
+            m5150d();
+            m5138a(dkCloudNoteBookInfo);
         }
     }
 
-    public void c() {
-        a(false, false, new fb(this));
+    /* renamed from: c */
+    public void m5158c() {
+        m5155a(false, false, new ek(this));
     }
 
-    public void a(boolean z, boolean z2, fm fmVar) {
-        com.duokan.reader.domain.account.a c = this.b.c();
-        if (z || c == null || !c.i()) {
-            DkUserPurchasedBooksManager.a().a(new fc(this, z2, z, fmVar));
+    /* renamed from: a */
+    public void m5155a(boolean z, boolean z2, eu euVar) {
+        C0672a d = this.f3624b.m3508d();
+        if (z || d == null || !d.mo839i()) {
+            DkUserPurchasedBooksManager.m5029a().m5053a(new el(this, z2, z, euVar));
         } else {
-            fmVar.a("");
+            euVar.mo1158a("");
         }
     }
 
-    private void a(boolean z, fm fmVar) {
-        this.b.a(new fe(this, fmVar, z));
+    /* renamed from: a */
+    private void m5141a(boolean z, eu euVar) {
+        this.f3624b.m3495a(new en(this, euVar, z));
     }
 
-    private void b(boolean z, fm fmVar) {
-        if (z || this.b.b()) {
-            this.b.a(new fh(this, fmVar, z));
+    /* renamed from: b */
+    private void m5147b(boolean z, eu euVar) {
+        if (z || this.f3624b.m3507c()) {
+            this.f3624b.m3495a(new ep(this, euVar, z));
         } else {
-            fmVar.a("");
+            euVar.mo1158a("");
         }
     }
 
-    private DkCloudNoteBookInfo[] a(fn fnVar) {
-        DkCloudNoteBookInfo[] dkCloudNoteBookInfoArr = (DkCloudNoteBookInfo[]) fnVar.queryItems().toArray(new DkCloudNoteBookInfo[0]);
-        Arrays.sort(dkCloudNoteBookInfoArr, new fj());
+    /* renamed from: a */
+    private DkCloudNoteBookInfo[] m5144a(ev evVar) {
+        DkCloudNoteBookInfo[] dkCloudNoteBookInfoArr = (DkCloudNoteBookInfo[]) evVar.queryItems().toArray(new DkCloudNoteBookInfo[0]);
+        Arrays.sort(dkCloudNoteBookInfoArr, new er());
         return dkCloudNoteBookInfoArr;
     }
 
-    private void a(DkCloudNoteBookInfo... dkCloudNoteBookInfoArr) {
+    /* renamed from: a */
+    private void m5142a(DkCloudNoteBookInfo... dkCloudNoteBookInfoArr) {
         for (DkCloudNoteBookInfo dkCloudNoteBookInfo : dkCloudNoteBookInfoArr) {
             if (dkCloudNoteBookInfo.isDuokanBookNote() && TextUtils.isEmpty(dkCloudNoteBookInfo.getBookName())) {
-                DkCloudPurchasedBook a = DkUserPurchasedBooksManager.a().a(dkCloudNoteBookInfo.getBookUuid());
-                DkCloudPurchasedFiction a2 = DkUserPurchasedFictionsManager.a().a(dkCloudNoteBookInfo.getBookUuid());
+                DkCloudPurchasedBook a = DkUserPurchasedBooksManager.m5029a().m5052a(dkCloudNoteBookInfo.getBookUuid());
+                DkCloudPurchasedFiction a2 = DkUserPurchasedFictionsManager.m5072a().m5093a(dkCloudNoteBookInfo.getBookUuid());
                 if (a != null) {
                     dkCloudNoteBookInfo.setTitle(a.getTitle());
                     dkCloudNoteBookInfo.setBookEditor(a.getEditorLine());
@@ -152,24 +170,27 @@ public class DkUserReadingNotesManager implements ah {
         }
     }
 
-    protected void a(String str, DkCloudAnnotation[] dkCloudAnnotationArr) {
-        Iterator it = this.f.iterator();
+    /* renamed from: a */
+    protected void m5154a(String str, DkCloudAnnotation[] dkCloudAnnotationArr) {
+        Iterator it = this.f3628f.iterator();
         while (it.hasNext()) {
-            ((fl) it.next()).a(str, dkCloudAnnotationArr);
+            ((et) it.next()).mo959a(str, dkCloudAnnotationArr);
         }
     }
 
-    private void d() {
-        Iterator it = this.f.iterator();
+    /* renamed from: d */
+    private void m5150d() {
+        Iterator it = this.f3628f.iterator();
         while (it.hasNext()) {
-            ((fl) it.next()).f();
+            ((et) it.next()).mo967f();
         }
     }
 
-    private void a(DkCloudNoteBookInfo dkCloudNoteBookInfo) {
-        Iterator it = this.f.iterator();
+    /* renamed from: a */
+    private void m5138a(DkCloudNoteBookInfo dkCloudNoteBookInfo) {
+        Iterator it = this.f3628f.iterator();
         while (it.hasNext()) {
-            ((fl) it.next()).a(dkCloudNoteBookInfo);
+            ((et) it.next()).mo958a(dkCloudNoteBookInfo);
         }
     }
 }

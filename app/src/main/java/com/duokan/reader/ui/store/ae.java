@@ -1,36 +1,41 @@
 package com.duokan.reader.ui.store;
 
+import com.duokan.reader.common.webservices.C0621a;
+import com.duokan.reader.common.webservices.C0657i;
 import com.duokan.reader.common.webservices.WebSession;
-import com.duokan.reader.common.webservices.duokan.aa;
-import com.duokan.reader.common.webservices.duokan.b;
-import com.duokan.reader.domain.account.a;
+import com.duokan.reader.common.webservices.duokan.C0652z;
+import com.duokan.reader.common.webservices.duokan.DkStoreOrderInfo;
+import com.duokan.reader.domain.account.C0672a;
 import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
-
 import java.util.Arrays;
 
-class ae extends b {
-    final /* synthetic */ a a;
-    final /* synthetic */ ad b;
-    private com.duokan.reader.common.webservices.b c;
+class ae extends WebSession {
+    /* renamed from: a */
+    final /* synthetic */ C0672a f11311a;
+    /* renamed from: b */
+    final /* synthetic */ ad f11312b;
+    /* renamed from: c */
+    private C0621a<DkStoreOrderInfo> f11313c;
 
-    ae(ad adVar, a aVar) {
-        this.b = adVar;
-        this.a = aVar;
+    ae(ad adVar, C0657i c0657i, C0672a c0672a) {
+        this.f11312b = adVar;
+        this.f11311a = c0672a;
+        super(c0657i);
     }
 
     protected void onSessionTry() {
-        this.c = new aa((WebSession) this, this.a).b(this.b.a, this.b.b);
+        this.f11313c = new C0652z((WebSession) this, this.f11311a).m3064b(this.f11312b.f11307a, this.f11312b.f11308b);
     }
 
     protected void onSessionSucceeded() {
-        if (this.c.b == 0) {
-            DkUserPurchasedFictionsManager.a().a(this.b.a, Arrays.asList(new String[]{this.b.b}), new af(this));
+        if (this.f11313c.b == 0) {
+            DkUserPurchasedFictionsManager.m5072a().m5098a(this.f11312b.f11307a, Arrays.asList(new String[]{this.f11312b.f11308b}), new af(this));
             return;
         }
-        this.b.c.a(this.b.a, this.b.b, Integer.valueOf(this.c.b));
+        this.f11312b.f11309c.mo1983a(this.f11312b.f11307a, this.f11312b.f11308b, Integer.valueOf(this.f11313c.b));
     }
 
     protected void onSessionFailed() {
-        this.b.c.a(this.b.a, this.b.b, null);
+        this.f11312b.f11309c.mo1983a(this.f11312b.f11307a, this.f11312b.f11308b, null);
     }
 }

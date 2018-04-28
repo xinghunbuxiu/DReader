@@ -1,15 +1,20 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.ui.PushHalfPage;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 
-class os implements Runnable {
-    final /* synthetic */ or a;
+class os extends BroadcastReceiver {
+    /* renamed from: a */
+    final /* synthetic */ PagesFrameView f10756a;
 
-    os(or orVar) {
-        this.a = orVar;
+    os(PagesFrameView pagesFrameView) {
+        this.f10756a = pagesFrameView;
     }
 
-    public void run() {
-        ((PushHalfPage) this.a.a.getContext().queryFeature(PushHalfPage.class)).pushHalfPageSmoothly(new ip(this.a.a.getContext(), this.a.a.f, new ot(this)), null);
+    public void onReceive(Context context, Intent intent) {
+        if ("android.intent.action.BATTERY_CHANGED".equals(intent.getAction())) {
+            this.f10756a.m12426a(intent.getIntExtra("level", 0));
+        }
     }
 }

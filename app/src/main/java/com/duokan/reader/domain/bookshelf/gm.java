@@ -1,25 +1,22 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.core.sys.af;
-import com.duokan.reader.domain.cloud.DkCloudBookManifest;
-import com.duokan.reader.domain.cloud.ao;
+import com.duokan.reader.common.webservices.duokan.C0629b;
+import com.duokan.reader.domain.account.C0666x;
+import com.duokan.reader.domain.account.C0672a;
 
-class gm implements ao {
-    final /* synthetic */ gl a;
+class gm implements C0666x {
+    /* renamed from: a */
+    final /* synthetic */ gl f3241a;
 
     gm(gl glVar) {
-        this.a = glVar;
+        this.f3241a = glVar;
     }
 
-    public void a(String str, DkCloudBookManifest dkCloudBookManifest) {
-        if (!this.a.b.aX()) {
-            this.a.b.a(dkCloudBookManifest, new af(Boolean.valueOf(true)));
-        }
-        TaskHandler.PostTask(this.a.a);
+    public void onQueryAccountOk(C0672a c0672a) {
+        new gn(this, C0629b.f2117a).open();
     }
 
-    public void a(String str, String str2) {
-        this.a.b.b(this.a.a);
+    public void onQueryAccountError(C0672a c0672a, String str) {
+        this.f3241a.f3240a.f3238b.release();
     }
 }

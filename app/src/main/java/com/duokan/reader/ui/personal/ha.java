@@ -1,23 +1,21 @@
 package com.duokan.reader.ui.personal;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
+import com.duokan.reader.ReaderEnv;
 
-class ha extends FrameLayout {
-    final /* synthetic */ fl a;
+class ha implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ fz f8631a;
 
-    ha(fl flVar, Context context) {
-        this.a = flVar;
-        super(context);
+    ha(fz fzVar) {
+        this.f8631a = fzVar;
     }
 
-    protected boolean drawChild(Canvas canvas, View view, long j) {
-        canvas.save();
-        canvas.clipRect(0, Math.min(this.a.c.getViewportBounds().top + this.a.y, getMeasuredHeight()), getMeasuredWidth(), getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j);
-        canvas.restore();
-        return drawChild;
+    public void run() {
+        this.f8631a.m11868c(true);
+        if (!ReaderEnv.get().getShowPurchasedHint()) {
+            this.f8631a.activate(this.f8631a.f8575b);
+        } else if (!this.f8631a.m11903u()) {
+            this.f8631a.m11902t();
+        }
     }
 }

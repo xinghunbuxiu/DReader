@@ -2,18 +2,18 @@ package com.duokan.reader.ui.reading;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-
 import com.duokan.reader.UmengManager;
 
 class tq implements OnClickListener {
-    final /* synthetic */ to a;
+    /* renamed from: a */
+    final /* synthetic */ tp f10990a;
 
-    tq(to toVar) {
-        this.a = toVar;
+    tq(tp tpVar) {
+        this.f10990a = tpVar;
     }
 
     public void onClick(View view) {
-        UmengManager.get().onEvent("V2_READING_TOP_TOOLBUTTON", "Back");
-        this.a.a(new tr(this));
+        this.f10990a.mo2248a(new qb(this.f10990a.getContext()));
+        UmengManager.get().onEvent("V2_READING_MENU", "Brightness");
     }
 }

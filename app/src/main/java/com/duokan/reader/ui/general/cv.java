@@ -5,74 +5,84 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout.LayoutParams;
 
-public class cv extends gj {
-    final /* synthetic */ FixedPagesView a;
+public class cv extends gd {
+    /* renamed from: a */
+    final /* synthetic */ FixedPagesView f7051a;
 
     protected cv(FixedPagesView fixedPagesView) {
-        this.a = fixedPagesView;
+        this.f7051a = fixedPagesView;
         super(fixedPagesView);
     }
 
-    public /* synthetic */ ge b() {
-        return a();
+    /* renamed from: b */
+    public /* synthetic */ fy mo1765b() {
+        return m10415a();
     }
 
-    public int a(int i) {
-        if (this.a.j.length < 1) {
-            return a().a(i);
+    /* renamed from: a */
+    public int m10414a(int i) {
+        if (this.f7051a.f6845j.length < 1) {
+            return m10415a().mo2317a(i);
         }
-        RectF rectF = this.a.j[i % this.a.j.length];
-        return (int) (((1.0f - rectF.left) - rectF.right) * ((float) a().a(i)));
+        RectF rectF = this.f7051a.f6845j[i % this.f7051a.f6845j.length];
+        return (int) (((1.0f - rectF.left) - rectF.right) * ((float) m10415a().mo2317a(i)));
     }
 
-    public int b(int i) {
-        if (this.a.j.length < 1) {
-            return a().b(i);
+    /* renamed from: b */
+    public int m10417b(int i) {
+        if (this.f7051a.f6845j.length < 1) {
+            return m10415a().mo2321b(i);
         }
-        RectF rectF = this.a.j[i % this.a.j.length];
-        return (int) (((1.0f - rectF.top) - rectF.bottom) * ((float) a().b(i)));
+        RectF rectF = this.f7051a.f6845j[i % this.f7051a.f6845j.length];
+        return (int) (((1.0f - rectF.top) - rectF.bottom) * ((float) m10415a().mo2321b(i)));
     }
 
-    public int c() {
-        return this.c != null ? a().a() : 0;
+    /* renamed from: c */
+    public int mo506c() {
+        return this.c != null ? m10415a().mo2316a() : 0;
     }
 
-    public Object d(int i) {
+    /* renamed from: d */
+    public Object mo509d(int i) {
         return null;
     }
 
-    public View d(int i, View view, ViewGroup viewGroup) {
-        cu cuVar = (cu) this.c.a(a().c(i), view, viewGroup);
-        View d = cuVar.d();
+    /* renamed from: d */
+    public View mo508d(int i, View view, ViewGroup viewGroup) {
+        cu cuVar = (cu) this.c.mo2319a(m10415a().mo2323c(i), view, viewGroup);
+        View d = cuVar.mo2328d();
         d.setLayoutParams(new LayoutParams(-1, -1));
-        this.a.getCellsView().a(d, true);
-        this.a.i[i] = cuVar;
-        this.a.c((gi) cuVar);
+        this.f7051a.getCellsView().mo435a(d, true);
+        this.f7051a.f6844i[i] = cuVar;
+        this.f7051a.m10012c((gc) cuVar);
         return d;
     }
 
     public void a_(int i, int i2) {
-        a_(c());
+        a_(mo506c());
     }
 
     public void b_(int i, int i2) {
-        a_(c());
+        a_(mo506c());
     }
 
-    public void a(int i, int i2, int i3) {
-        a_(c());
+    /* renamed from: a */
+    public void mo440a(int i, int i2, int i3) {
+        a_(mo506c());
     }
 
-    public void d(int i, int i2) {
-        a_(c());
+    /* renamed from: d */
+    public void mo444d(int i, int i2) {
+        a_(mo506c());
     }
 
     public void a_(int i) {
-        this.a.i = new cu[c()];
-        super.d();
+        this.f7051a.f6844i = new cu[mo506c()];
+        super.mo1691d();
     }
 
-    public final cr a() {
-        return (cr) super.b();
+    /* renamed from: a */
+    public final cr m10415a() {
+        return (cr) super.mo1765b();
     }
 }

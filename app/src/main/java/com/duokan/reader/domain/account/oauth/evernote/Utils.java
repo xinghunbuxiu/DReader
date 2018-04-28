@@ -3,7 +3,6 @@ package com.duokan.reader.domain.account.oauth.evernote;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
-
 import com.evernote.edam.notestore.NoteFilter;
 import com.evernote.edam.notestore.NoteMetadata;
 import com.evernote.edam.notestore.NoteStore.Client;
@@ -13,16 +12,14 @@ import com.evernote.edam.type.Note;
 import com.evernote.edam.type.Notebook;
 import com.evernote.edam.type.User;
 import com.evernote.edam.userstore.UserStore;
-
+import java.util.LinkedList;
+import java.util.List;
 import org.scribe.builder.ServiceBuilder;
 import org.scribe.builder.api.EvernoteApi;
 import org.scribe.builder.api.EvernoteApi.Sandbox;
 import org.scribe.model.Token;
 import org.scribe.model.Verifier;
 import org.scribe.oauth.OAuthService;
-
-import java.util.LinkedList;
-import java.util.List;
 
 public abstract class Utils implements Evernote {
     private static final String TAG = "";

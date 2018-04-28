@@ -3,9 +3,12 @@ package com.duokan.reader.domain.document;
 import android.graphics.Bitmap;
 
 public interface ad extends au {
-    int a();
+    /* renamed from: a */
+    int mo1398a();
 
-    int a(int i);
+    /* renamed from: a */
+    int mo1399a(int i);
 
-    void a(int i, Bitmap bitmap);
+    /* renamed from: a */
+    void mo1400a(int i, Bitmap bitmap);
 }

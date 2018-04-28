@@ -1,45 +1,38 @@
 package com.duokan.reader.ui.account;
 
 import android.graphics.Bitmap;
-
-import com.duokan.c.j;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth.UpdateHandler;
+import android.text.TextUtils;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.domain.account.oauth.ThirdWeiXin;
 import com.duokan.reader.ui.general.be;
 
-class bq implements UpdateHandler {
-    final /* synthetic */ Bitmap a;
-    final /* synthetic */ boolean b;
-    final /* synthetic */ bp c;
+class bq implements bt {
+    /* renamed from: a */
+    final /* synthetic */ bp f5882a;
 
-    bq(bp bpVar, Bitmap bitmap, boolean z) {
-        this.c = bpVar;
-        this.a = bitmap;
-        this.b = z;
+    bq(bp bpVar) {
+        this.f5882a = bpVar;
     }
 
-    public void onUpdateOk() {
-        this.c.b.c.dismiss();
-        this.c.b.a("sina");
-        this.c.b.g = 0;
-        this.c.b.h = this.c.b.getContext().getString(j.sina_send_sucess);
-        this.c.b.dismiss();
-        if (this.a != null && !this.a.isRecycled() && this.b) {
-            this.a.recycle();
+    /* renamed from: a */
+    public void mo1573a(Bitmap bitmap, boolean z) {
+        new ThirdWeiXin().share(!TextUtils.isEmpty(this.f5882a.f5809d) ? this.f5882a.f5809d : " ", !TextUtils.isEmpty(this.f5882a.f5810e) ? this.f5882a.f5810e : " ", !TextUtils.isEmpty(this.f5882a.f5808c) ? this.f5882a.f5808c : " ", bitmap, true, this.f5882a.f5807b.equals("weixin_timeline"));
+        this.f5882a.mo1571a(this.f5882a.f5807b);
+        this.f5882a.m8885e();
+        if (bitmap != null && !bitmap.isRecycled() && z) {
+            bitmap.recycle();
         }
     }
 
-    public void onUpdateError() {
-        this.c.b.c.dismiss();
-        be.a(this.c.b.getContext(), j.sina_send_failed, 0).show();
-        this.c.b.b.setEnabled(true);
-        if (this.a != null && !this.a.isRecycled() && this.b) {
-            this.a.recycle();
+    /* renamed from: a */
+    public void mo1572a() {
+        this.f5882a.m8885e();
+        CharSequence string = this.f5882a.getString(C0258j.gen_bitmap_fail);
+        if (this.f5882a.f5813h != null) {
+            this.f5882a.f5813h.mo1845b(string);
+            this.f5882a.f5813h = null;
+            return;
         }
-    }
-
-    public void onUpdateCancel() {
-        if (this.a != null && !this.a.isRecycled() && this.b) {
-            this.a.recycle();
-        }
+        be.m10287a(this.f5882a.getContext(), string, 0).show();
     }
 }

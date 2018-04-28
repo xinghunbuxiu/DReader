@@ -1,19 +1,20 @@
 package com.duokan.reader.ui.general.web;
 
-import android.widget.EditText;
+import com.duokan.core.sys.as;
 
-import com.duokan.reader.ui.general.ReaderUi;
+class em implements as {
+    /* renamed from: a */
+    final /* synthetic */ String f7783a;
+    /* renamed from: b */
+    final /* synthetic */ ek f7784b;
 
-class em implements Runnable {
-    final /* synthetic */ EditText a;
-    final /* synthetic */ el b;
-
-    em(el elVar, EditText editText) {
-        this.b = elVar;
-        this.a = editText;
+    em(ek ekVar, String str) {
+        this.f7784b = ekVar;
+        this.f7783a = str;
     }
 
-    public void run() {
-        ReaderUi.a(this.b.e.b.pageController.getContext(), this.a);
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7784b.f7780b.f7581b.onAdWallStatusChange(this.f7783a);
     }
 }

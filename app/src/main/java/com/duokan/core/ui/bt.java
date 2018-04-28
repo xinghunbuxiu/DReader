@@ -6,11 +6,14 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 
 public abstract class bt extends LinearLayout {
-    public abstract int a(View view, LayoutParams layoutParams);
+    /* renamed from: a */
+    public abstract int mo455a(View view, LayoutParams layoutParams);
 
-    public abstract View a(int i);
+    /* renamed from: a */
+    public abstract View mo456a(int i);
 
     public abstract int getCellCount();
 

@@ -1,36 +1,18 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.c.j;
-import com.duokan.reader.common.webservices.b;
-import com.duokan.reader.common.webservices.duokan.o;
-import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.cloud.PersonalPrefs;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class gq extends hh {
-    final ab a = new ab(i.f().b(PersonalAccount.class));
-    int b = 0;
-    final /* synthetic */ fl c;
-    private b e = null;
+class gq implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ fz f8618a;
 
-    gq(fl flVar) {
-        this.c = flVar;
-        super(flVar);
+    gq(fz fzVar) {
+        this.f8618a = fzVar;
     }
 
-    protected void onSessionTry() {
-        this.e = new o(this, this.a).b(2);
-    }
-
-    protected void onSessionSucceeded() {
-        if (PersonalPrefs.a().a(this.a) && this.e.b == 0) {
-            this.b = ((Integer) this.e.a).intValue();
-        }
-        this.c.n.setText(this.c.getString(j.personal__account_summary_view__my_cash) + this.b);
-    }
-
-    protected void onSessionFailed() {
-        this.c.n.setText(this.c.getString(j.personal__account_summary_view__my_cash) + this.b);
+    public void onClick(View view) {
+        this.f8618a.m11853a("book_list");
+        this.f8618a.m11862b(false, new gr(this));
     }
 }

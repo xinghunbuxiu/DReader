@@ -1,21 +1,21 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.u;
-import com.mipay.sdk.Mipay;
+import com.duokan.core.sys.as;
+import com.duokan.reader.domain.account.C0709k;
 
-class dq implements u {
-    final /* synthetic */ dp a;
+class dq implements as {
+    /* renamed from: a */
+    final /* synthetic */ String f7741a;
+    /* renamed from: b */
+    final /* synthetic */ dp f7742b;
 
-    dq(dp dpVar) {
-        this.a = dpVar;
+    dq(dp dpVar, String str) {
+        this.f7742b = dpVar;
+        this.f7741a = str;
     }
 
-    public void onQueryAccountOk(a aVar) {
-        this.a.b.b.a(this.a.a, aVar);
-    }
-
-    public void onQueryAccountError(a aVar, String str) {
-        this.a.b.b.b.web_notifyWeb(this.a.a, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str);
+    /* renamed from: a */
+    public void mo1831a() {
+        C0709k.m3476a().m3498a(C0709k.m3476a().m3508d().mo832b(), new dr(this));
     }
 }

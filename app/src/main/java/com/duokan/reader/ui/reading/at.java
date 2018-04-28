@@ -1,15 +1,16 @@
 package com.duokan.reader.ui.reading;
 
 class at implements Runnable {
-    final /* synthetic */ aq a;
+    /* renamed from: a */
+    final /* synthetic */ aq f9805a;
 
     at(aq aqVar) {
-        this.a = aqVar;
+        this.f9805a = aqVar;
     }
 
     public void run() {
-        if (!this.a.a.K()) {
-            this.a.h();
+        if (!this.f9805a.f9782a.mo1994K()) {
+            this.f9805a.m13745h();
         }
     }
 }

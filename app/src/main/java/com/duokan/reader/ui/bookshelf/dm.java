@@ -1,17 +1,21 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.ReaderEnv.BookshelfItemStyle;
+import com.duokan.reader.ReaderEnv.OnBookshelfItemStyleChangedListener;
+import java.lang.ref.WeakReference;
+import java.util.Iterator;
 
-class dm implements OnClickListener {
-    final /* synthetic */ dh a;
-
-    dm(dh dhVar) {
-        this.a = dhVar;
+class dm implements OnBookshelfItemStyleChangedListener {
+    private dm() {
     }
 
-    public void onClick(View view) {
-        this.a.a(new dn(this));
-        this.a.requestBack();
+    public void onBookshelfItemStyleChanged(BookshelfItemStyle bookshelfItemStyle) {
+        Iterator it = de.f6048d.iterator();
+        while (it.hasNext()) {
+            de deVar = (de) ((WeakReference) it.next()).get();
+            if (deVar != null) {
+                deVar.mo1635a();
+            }
+        }
     }
 }

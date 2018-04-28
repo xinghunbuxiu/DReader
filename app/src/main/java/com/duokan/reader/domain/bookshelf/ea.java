@@ -1,104 +1,91 @@
 package com.duokan.reader.domain.bookshelf;
 
-import android.annotation.SuppressLint;
+import android.graphics.Color;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
+public class ea extends C0798a {
+    /* renamed from: a */
+    private int f3075a = Color.rgb(237, 88, 0);
+    /* renamed from: b */
+    private String f3076b;
 
-class ea {
-    public final ArrayList a;
-    public final ArrayList b;
-    @SuppressLint({"UseSparseArrays"})
-    public final HashMap c;
-    public final HashMap d;
-
-    private ea() {
-        this.a = new ArrayList();
-        this.b = new ArrayList();
-        this.c = new HashMap();
-        this.d = new HashMap();
+    protected ea() {
     }
 
-    public void a(dd ddVar) {
-        a(ddVar.queryItems());
+    /* renamed from: a */
+    public AnnotationType mo956a() {
+        return AnnotationType.COMMENT;
     }
 
-    public void a(Collection collection) {
-        this.a.clear();
-        this.c.clear();
-        this.b.clear();
-        this.d.clear();
-        this.a.addAll(collection);
-        Iterator it = this.a.iterator();
-        while (it.hasNext()) {
-            dg dgVar = (dg) it.next();
-            HashMap hashMap = (HashMap) this.c.get(Integer.valueOf(dgVar.a));
-            if (hashMap == null) {
-                hashMap = new HashMap();
-                this.c.put(Integer.valueOf(dgVar.a), hashMap);
-            }
-            hashMap.put(dgVar.b, dgVar);
-            if (!dgVar.d) {
-                this.b.add(dgVar);
-                hashMap = (HashMap) this.d.get(Integer.valueOf(dgVar.a));
-                if (hashMap == null) {
-                    hashMap = new HashMap();
-                    this.d.put(Integer.valueOf(dgVar.a), hashMap);
-                }
-                hashMap.put(dgVar.b, dgVar);
-            }
-        }
+    /* renamed from: m */
+    public String m4384m() {
+        return this.f3076b;
     }
 
-    public void a(dg dgVar) {
-        this.a.add(dgVar);
-        HashMap hashMap = (HashMap) this.c.get(Integer.valueOf(dgVar.a));
-        if (hashMap == null) {
-            hashMap = new HashMap();
-            this.c.put(Integer.valueOf(dgVar.a), hashMap);
-        }
-        hashMap.put(dgVar.b, dgVar);
-        if (!dgVar.d) {
-            this.b.add(dgVar);
-            hashMap = (HashMap) this.d.get(Integer.valueOf(dgVar.a));
-            if (hashMap == null) {
-                hashMap = new HashMap();
-                this.d.put(Integer.valueOf(dgVar.a), hashMap);
-            }
-            hashMap.put(dgVar.b, dgVar);
+    /* renamed from: e */
+    public void m4380e(String str) {
+        this.f3076b = str;
+    }
+
+    /* renamed from: n */
+    public int m4385n() {
+        return this.f3075a;
+    }
+
+    /* renamed from: a */
+    public void m4379a(int i) {
+        this.f3075a = i;
+    }
+
+    /* renamed from: l */
+    public C0798a mo957l() {
+        C0798a eaVar = new ea();
+        eaVar.m3716a(m3720b());
+        eaVar.m3721b(m3724c());
+        eaVar.m3719a(m3729f());
+        eaVar.m3725c(m3730g());
+        eaVar.m3727d(m3731h());
+        eaVar.m3722b(m3728e());
+        eaVar.m3718a(m3726d());
+        eaVar.m4379a(m4385n());
+        eaVar.m4380e(m4384m());
+        eaVar.m3723b(m3732i());
+        return eaVar;
+    }
+
+    /* renamed from: j */
+    public String mo1008j() {
+        try {
+            JSONObject jSONObject = new JSONObject();
+            jSONObject.put("note_text", this.f3076b);
+            jSONObject.put("highlight_color", String.format("%d %d %d", new Object[]{Integer.valueOf(Color.red(this.f3075a)), Integer.valueOf(Color.green(this.f3075a)), Integer.valueOf(Color.blue(this.f3075a))}));
+            return jSONObject.toString();
+        } catch (JSONException e) {
+            return "";
         }
     }
 
-    public void b(dg dgVar) {
-        this.a.remove(dgVar);
-        HashMap hashMap = (HashMap) this.c.get(Integer.valueOf(dgVar.a));
-        if (hashMap != null) {
-            hashMap.remove(dgVar.b);
-        }
-        if (!dgVar.d) {
-            this.b.remove(dgVar);
-            hashMap = (HashMap) this.d.get(Integer.valueOf(dgVar.a));
-            if (hashMap != null) {
-                hashMap.remove(dgVar.b);
-            }
+    /* renamed from: f */
+    public void m4381f(String str) {
+        try {
+            JSONObject jSONObject = new JSONObject(str);
+            this.f3076b = jSONObject.optString("note_text");
+            String[] split = jSONObject.optString("highlight_color", "237 88 0").split(" ");
+            this.f3075a = Color.rgb(Integer.valueOf(split[0]).intValue(), Integer.valueOf(split[1]).intValue(), Integer.valueOf(split[2]).intValue());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
-    public dg a(int i, String str) {
-        HashMap hashMap = (HashMap) this.c.get(Integer.valueOf(i));
-        if (hashMap == null) {
-            return null;
+    /* renamed from: g */
+    public static String m4377g(String str) {
+        try {
+            JSONObject jSONObject = new JSONObject();
+            jSONObject.put("note_text", str);
+            return jSONObject.toString();
+        } catch (JSONException e) {
+            return "";
         }
-        return (dg) hashMap.get(str);
-    }
-
-    public dg b(int i, String str) {
-        HashMap hashMap = (HashMap) this.d.get(Integer.valueOf(i));
-        if (hashMap == null) {
-            return null;
-        }
-        return (dg) hashMap.get(str);
     }
 }

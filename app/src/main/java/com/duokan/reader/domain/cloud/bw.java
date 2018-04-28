@@ -1,23 +1,22 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.u;
+import com.duokan.reader.common.async.p035a.C0517a;
 
-class bw implements u {
-    final /* synthetic */ DkCloudPurchasedBook a;
-    final /* synthetic */ DkUserPurchasedBooksManager b;
+class bw implements C0517a<Void> {
+    /* renamed from: a */
+    final /* synthetic */ bv f3789a;
 
-    bw(DkUserPurchasedBooksManager dkUserPurchasedBooksManager, DkCloudPurchasedBook dkCloudPurchasedBook) {
-        this.b = dkUserPurchasedBooksManager;
-        this.a = dkCloudPurchasedBook;
+    bw(bv bvVar) {
+        this.f3789a = bvVar;
     }
 
-    public void onQueryAccountOk(a aVar) {
-        if (this.a.markGifted()) {
-            this.b.a(new bx(this));
-        }
+    /* renamed from: a */
+    public void m5369a(Void voidR) {
+        new bx(this, cg.f3811a, DkUserPurchasedBooksManager.m5051h()).open();
     }
 
-    public void onQueryAccountError(a aVar, String str) {
+    /* renamed from: a */
+    public void mo729a(int i, String str) {
+        this.f3789a.f3787b.mo729a(i, str);
     }
 }

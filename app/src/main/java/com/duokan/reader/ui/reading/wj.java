@@ -1,24 +1,38 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.ui.general.hq;
 
-import com.duokan.core.app.BrightnessMode;
+class wj implements hq {
+    /* renamed from: a */
+    final /* synthetic */ wd f11113a;
 
-class wj implements OnClickListener {
-    final /* synthetic */ wg a;
-
-    wj(wg wgVar) {
-        this.a = wgVar;
+    wj(wd wdVar) {
+        this.f11113a = wdVar;
     }
 
-    public void onClick(View view) {
-        if (view.isSelected()) {
-            this.a.a.a(BrightnessMode.MANUAL);
-            this.a.a();
-            return;
+    /* renamed from: a */
+    public void mo1590a(int i) {
+        switch (i) {
+            case 0:
+                this.f11113a.f11102a.ae().m12491d(120000);
+                this.f11113a.f11102a.ae().m12463X();
+                this.f11113a.m15054e();
+                return;
+            case 2:
+                this.f11113a.f11102a.ae().m12491d(600000);
+                this.f11113a.f11102a.ae().m12463X();
+                this.f11113a.m15054e();
+                return;
+            case 3:
+                this.f11113a.f11102a.ae().m12491d(Integer.MAX_VALUE);
+                this.f11113a.f11102a.ae().m12463X();
+                this.f11113a.m15054e();
+                return;
+            default:
+                this.f11113a.f11102a.ae().m12491d(300000);
+                this.f11113a.f11102a.ae().m12463X();
+                this.f11113a.m15054e();
+                return;
         }
-        this.a.a.a(BrightnessMode.SYSTEM);
-        this.a.a();
     }
 }

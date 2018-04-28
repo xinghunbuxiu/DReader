@@ -1,57 +1,20 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.content.Context;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.domain.statistics.C1163a;
 
-import com.duokan.c.e;
-import com.duokan.common.tools;
-import com.duokan.reader.domain.bookshelf.an;
+class ds implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ C1287do f6357a;
 
-import java.util.List;
-
-public class ds {
-    public static boolean a(List list, List list2) {
-        if (list == null && list2 == null) {
-            return true;
-        }
-        if (list != null && list2 == null) {
-            return false;
-        }
-        if (list == null && list2 != null) {
-            return false;
-        }
-        if (list.size() != list2.size()) {
-            return false;
-        }
-        int size = list.size();
-        for (int i = 0; i < size; i++) {
-            if (((an) list.get(i)).aF() != ((an) list2.get(i)).aF()) {
-                return false;
-            }
-        }
-        return true;
+    ds(C1287do c1287do) {
+        this.f6357a = c1287do;
     }
 
-    public static int a(Context context) {
-        return a(context, tools.getWidth(context));
-    }
-
-    public static int a(Context context, int i) {
-        int i2 = 0;
-        int a = i.a(context, 15.0f);
-        int dimension = ((int) context.getResources().getDimension(e.general__shared__cover_grid_width)) + a;
-        int i3 = i - (a * 2);
-        int i4 = 0;
-        while (i4 < i3) {
-            i4 += dimension;
-            if (i4 >= i3) {
-                break;
-            }
-            i4 += a;
-            i2++;
-        }
-        if (i2 < 3) {
-            return 3;
-        }
-        return i2;
+    public void onClick(View view) {
+        C1163a.m8627k().m8655c("bookshelf_menu", "click", "on_shelf_book");
+        this.f6357a.f6349b.m9440a(!this.f6357a.f6349b.m9445e());
+        this.f6357a.m9501e();
     }
 }

@@ -1,14 +1,15 @@
 package com.duokan.reader.ui.bookshelf;
 
-class db implements Runnable {
-    final /* synthetic */ cz a;
+import com.duokan.reader.domain.bookshelf.an;
+import java.util.List;
 
-    db(cz czVar) {
-        this.a = czVar;
-    }
+public interface db {
+    /* renamed from: a */
+    void mo1627a(cz czVar, List<an> list);
 
-    public void run() {
-        this.a.t = true;
-        this.a.invalidate();
-    }
+    /* renamed from: a */
+    void mo1628a(cz czVar, boolean z);
+
+    /* renamed from: b */
+    void mo1629b(cz czVar, List<an> list);
 }

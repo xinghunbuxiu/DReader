@@ -1,34 +1,27 @@
 package com.duokan.reader.ui.general.web;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.widget.TextView;
+import com.duokan.core.sys.as;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-import com.duokan.c.d;
+class fg implements as {
+    /* renamed from: a */
+    final /* synthetic */ String f7829a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7830b;
 
-class fg implements TextWatcher {
-    final /* synthetic */ TextView a;
-    final /* synthetic */ ff b;
-
-    fg(ff ffVar, TextView textView) {
-        this.b = ffVar;
-        this.a = textView;
+    fg(ci ciVar, String str) {
+        this.f7830b = ciVar;
+        this.f7829a = str;
     }
 
-    public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-    }
-
-    public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-        if (TextUtils.isEmpty(charSequence)) {
-            this.a.setTextColor(this.b.g.b.pageController.getResources().getColor(d.general__shared__publish_button_cancel));
-            this.a.setEnabled(false);
-            return;
+    /* renamed from: a */
+    public void mo1831a() {
+        JSONArray jSONArray = new JSONObject(this.f7829a).getJSONArray("items");
+        String[] strArr = new String[jSONArray.length()];
+        for (int i = 0; i < jSONArray.length(); i++) {
+            strArr[i] = jSONArray.getString(i);
         }
-        this.a.setTextColor(this.b.g.b.pageController.getResources().getColor(d.general__shared__publish_button_confirm));
-        this.a.setEnabled(true);
-    }
-
-    public void afterTextChanged(Editable editable) {
+        this.f7830b.m11016a(new fh(this, strArr));
     }
 }

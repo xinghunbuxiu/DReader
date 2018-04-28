@@ -1,25 +1,24 @@
 package com.duokan.reader.ui.general.web;
 
-import android.app.Activity;
+import com.duokan.reader.ReaderFeature;
+import com.duokan.reader.domain.store.C0466h;
+import com.duokan.reader.domain.store.DkStoreFictionDetail;
+import com.duokan.reader.domain.store.DkStoreItem;
+import com.duokan.reader.ui.store.bb;
 
-import com.duokan.core.sys.IdleStatus;
-import com.duokan.reader.common.webservices.duokan.p;
+class cd implements C0466h {
+    /* renamed from: a */
+    final /* synthetic */ cc f7666a;
 
-class cd implements IdleStatus {
-    final /* synthetic */ StorePageController a;
-
-    cd(StorePageController storePageController) {
-        this.a = storePageController;
+    cd(cc ccVar) {
+        this.f7666a = ccVar;
     }
 
-    public boolean idleRun() {
-        if (StorePageController.sPreloadedController == null) {
-            Activity activity = this.a.getActivity();
-            if (!(activity == null || activity.isFinishing())) {
-                StorePageController.sPreloadedController = new StorePageController(this.a.getContext());
-                StorePageController.sPreloadedController.loadUrl(p.i().a());
-            }
-        }
-        return false;
+    public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
+        ((ReaderFeature) this.f7666a.f7665c.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new bb(this.f7666a.f7665c.getContext(), (DkStoreFictionDetail) dkStoreItem, this.f7666a.f7664b), null);
+    }
+
+    public void onFetchBookDetailError(String str) {
+        this.f7666a.f7665c.doShowToast(str);
     }
 }

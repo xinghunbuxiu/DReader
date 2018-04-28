@@ -1,21 +1,37 @@
 package com.duokan.reader.ui.reading;
 
+import android.graphics.Bitmap;
 import android.graphics.Point;
-import android.view.View;
 
-class acn implements Runnable {
-    final /* synthetic */ Point a;
-    final /* synthetic */ View b;
-    final /* synthetic */ TextSelectionController c;
+class acn {
+    /* renamed from: a */
+    public acc f9460a;
+    /* renamed from: b */
+    public Bitmap f9461b;
+    /* renamed from: c */
+    public float f9462c;
+    /* renamed from: d */
+    public float f9463d;
+    /* renamed from: e */
+    public Point f9464e;
+    /* renamed from: f */
+    public Point f9465f;
+    /* renamed from: g */
+    public float f9466g;
+    /* renamed from: h */
+    public float f9467h;
+    /* renamed from: i */
+    final /* synthetic */ acf f9468i;
 
-    acn(TextSelectionController textSelectionController, Point point, View view) {
-        this.c = textSelectionController;
-        this.a = point;
-        this.b = view;
-    }
-
-    public void run() {
-        this.c.c(this.a.x, this.a.y, this.c.a, this.b);
-        this.c.a(false);
+    private acn(acf acf) {
+        this.f9468i = acf;
+        this.f9460a = null;
+        this.f9461b = null;
+        this.f9462c = 0.0f;
+        this.f9463d = 0.0f;
+        this.f9464e = new Point();
+        this.f9465f = new Point();
+        this.f9466g = 0.0f;
+        this.f9467h = 0.0f;
     }
 }

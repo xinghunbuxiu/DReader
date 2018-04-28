@@ -1,21 +1,38 @@
 package com.duokan.reader.domain.social.message;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.b;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
 
-class am implements b {
-    final /* synthetic */ ak a;
+public class am implements at {
+    /* renamed from: a */
+    private LinkedList<at> f5523a = new LinkedList();
 
-    am(ak akVar) {
-        this.a = akVar;
+    /* renamed from: a */
+    public void m8519a(at atVar) {
+        if (atVar != null && !this.f5523a.contains(atVar)) {
+            this.f5523a.add(atVar);
+        }
     }
 
-    public void a(a aVar) {
-        this.a.b.e.a(this.a.b.a, this.a.b.b, this.a.b.d, this.a.b.c);
+    /* renamed from: a */
+    public void mo1173a(DkMessagesManager dkMessagesManager) {
+        Iterator it = this.f5523a.iterator();
+        while (it.hasNext()) {
+            ((at) it.next()).mo1173a(dkMessagesManager);
+        }
     }
 
-    public void a(a aVar, String str) {
-        this.a.b.e.a(this.a.f.mUnreadMessageIds);
-        this.a.b.c.a(this.a.e, "");
+    /* renamed from: a */
+    public void mo1174a(DkMessagesManager dkMessagesManager, ArrayList<C1151k> arrayList, C1140y c1140y) {
+        if (arrayList.size() == 0 || this.f5523a.size() == 0) {
+            c1140y.mo1519a(true);
+            return;
+        }
+        int[] iArr = new int[]{0, 0};
+        Iterator it = this.f5523a.iterator();
+        while (it.hasNext()) {
+            ((at) it.next()).mo1174a(dkMessagesManager, arrayList, new an(this, iArr, c1140y));
+        }
     }
 }

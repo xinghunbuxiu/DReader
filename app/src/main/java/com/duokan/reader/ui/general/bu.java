@@ -3,16 +3,18 @@ package com.duokan.reader.ui.general;
 import android.graphics.Canvas;
 
 final class bu implements bt {
-    final /* synthetic */ DotProgressBar a;
+    /* renamed from: a */
+    final /* synthetic */ DotProgressBar f7009a;
 
     private bu(DotProgressBar dotProgressBar) {
-        this.a = dotProgressBar;
+        this.f7009a = dotProgressBar;
     }
 
-    public void a(Canvas canvas) {
-        float paddingLeft = ((float) this.a.getPaddingLeft()) + this.a.h;
-        this.a.a(canvas, true, paddingLeft, 0, this.a.m);
-        this.a.a(canvas, false, paddingLeft, this.a.m, this.a.m + 1);
-        this.a.a(canvas, true, paddingLeft, this.a.m + 1, this.a.g);
+    /* renamed from: a */
+    public void mo1752a(Canvas canvas) {
+        float paddingLeft = ((float) this.f7009a.getPaddingLeft()) + this.f7009a.f6808h;
+        this.f7009a.m9969a(canvas, true, paddingLeft, 0, this.f7009a.f6813m);
+        this.f7009a.m9969a(canvas, false, paddingLeft, this.f7009a.f6813m, this.f7009a.f6813m + 1);
+        this.f7009a.m9969a(canvas, true, paddingLeft, this.f7009a.f6813m + 1, this.f7009a.f6807g);
     }
 }

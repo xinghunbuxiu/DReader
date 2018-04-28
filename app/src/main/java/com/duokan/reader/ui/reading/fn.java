@@ -1,56 +1,26 @@
 package com.duokan.reader.ui.reading;
 
 import android.graphics.Rect;
-import android.view.View;
+import com.duokan.reader.domain.document.bb;
+import org.apache.http.HttpStatus;
 
-import com.duokan.reader.domain.document.ak;
-import com.duokan.reader.domain.document.as;
-import com.duokan.reader.ui.general.cu;
-import com.duokan.reader.ui.general.gh;
+class fn implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ bb f10162a;
+    /* renamed from: b */
+    final /* synthetic */ fm f10163b;
 
-public class fn extends cu implements gn {
-    final /* synthetic */ fi b;
-    private final fm c;
-    private final gs d;
-    private final as e;
-
-    public fn(fi fiVar, fm fmVar, as asVar, gs gsVar) {
-        this.b = fiVar;
-        super(fiVar);
-        this.c = fmVar;
-        this.e = asVar;
-        this.d = gsVar;
+    fn(fm fmVar, bb bbVar) {
+        this.f10163b = fmVar;
+        this.f10162a = bbVar;
     }
 
-    public gh c() {
-        return this.c;
-    }
-
-    public View d() {
-        return this.d;
-    }
-
-    public boolean e() {
-        return this.d.i();
-    }
-
-    public boolean f() {
-        return this.d.j();
-    }
-
-    public Rect b(Rect rect) {
-        return this.e.c(rect);
-    }
-
-    public Rect c(Rect rect) {
-        return this.e.b(rect);
-    }
-
-    public ak g() {
-        return this.e.l();
-    }
-
-    public as h() {
-        return this.e;
+    public void run() {
+        Rect[] b = this.f10163b.mo2107b(this.f10162a);
+        Rect rect = new Rect();
+        for (Rect union : b) {
+            rect.union(union);
+        }
+        this.f10163b.m9992a(this.f10163b.m9986a(rect), this.f10163b.getViewableBounds(), (int) HttpStatus.SC_OK, null, null);
     }
 }

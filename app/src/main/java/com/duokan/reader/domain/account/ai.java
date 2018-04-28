@@ -1,29 +1,21 @@
 package com.duokan.reader.domain.account;
 
-import android.accounts.Account;
+import com.duokan.reader.domain.account.p042a.C0682h;
+import com.duokan.reader.domain.account.p042a.C0698z;
 
-import com.duokan.reader.common.b.a;
+public class ai implements aq<MiAccount> {
+    /* renamed from: a */
+    private final MiAccount f2357a;
+    /* renamed from: b */
+    private final C0420b f2358b;
 
-class ai implements be {
-    final /* synthetic */ a a;
-    final /* synthetic */ b b;
-    final /* synthetic */ MiAccount c;
-
-    ai(MiAccount miAccount, a aVar, b bVar) {
-        this.c = miAccount;
-        this.a = aVar;
-        this.b = bVar;
+    private ai(MiAccount miAccount, C0420b c0420b) {
+        this.f2357a = miAccount;
+        this.f2358b = c0420b;
     }
 
-    public void a(Account account, String str) {
-        this.a.a("com.xiaomi", str);
-        this.c.a.a(this.c);
-        this.b.a(this.c);
-        com.duokan.reader.domain.statistics.dailystats.a.d().b("s");
-    }
-
-    public void b(Account account, String str) {
-        this.b.a(this.c, str);
-        com.duokan.reader.domain.statistics.dailystats.a.d().b("HttpLogger");
+    /* renamed from: a */
+    public void mo866a() {
+        new C0682h(this.f2357a, this.f2358b, new C0698z()).m3305a();
     }
 }

@@ -4,14 +4,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 class gd implements OnClickListener {
-    final /* synthetic */ fl a;
+    /* renamed from: a */
+    final /* synthetic */ fz f8605a;
 
-    gd(fl flVar) {
-        this.a = flVar;
+    gd(fz fzVar) {
+        this.f8605a = fzVar;
     }
 
     public void onClick(View view) {
-        this.a.a("book_list");
-        this.a.b(false, new ge(this));
+        this.f8605a.m11853a("cash");
+        this.f8605a.m11862b(false, new ge(this));
     }
 }

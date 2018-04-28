@@ -1,56 +1,22 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
+import com.duokan.reader.ui.reading.TextSelectionAssistant.IndicatorStatus;
 
-import com.duokan.b.e;
-import com.duokan.core.ui.UTools;
-import com.duokan.reader.ui.general.ep;
+class acz implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ acy f9497a;
 
-class acz extends FrameLayout {
-    private final FrameLayout a;
-    private final FrameLayout b;
-
-    public acz(Context context, int i) {
-        this(context, new ColorDrawable(i));
+    acz(acy acy) {
+        this.f9497a = acy;
     }
 
-    public acz(Context context, Drawable drawable) {
-        super(context);
-        this.a = new FrameLayout(context);
-        View epVar = new ep(getContext());
-        epVar.setBackgroundDrawable(drawable);
-        epVar.setForeground(getResources().getDrawable(e.reading__color_view__mask_small));
-        this.a.addView(epVar, new LayoutParams(UTools.getMinimumHeight(getContext(), 32.0f), UTools.getMinimumHeight(getContext(), 32.0f), 17));
-        this.a.setForeground(getResources().getDrawable(e.reading__reading_options_view__icon_border_selected));
-        this.a.setForegroundGravity(17);
-        addView(this.a);
-        this.b = new FrameLayout(context);
-        epVar = new ep(getContext());
-        epVar.setBackgroundDrawable(drawable);
-        epVar.setForeground(getResources().getDrawable(e.reading__color_view__mask));
-        this.b.addView(epVar, new LayoutParams(UTools.getMinimumHeight(getContext(), 32.0f), UTools.getMinimumHeight(getContext(), 32.0f), 17));
-        addView(this.b);
-    }
-
-    public void setSelected(boolean z) {
-        int i;
-        int i2 = 4;
-        super.setSelected(z);
-        FrameLayout frameLayout = this.a;
-        if (z) {
-            i = 0;
-        } else {
-            i = 4;
+    public void run() {
+        if (!this.f9497a.f9496d.f9156e.mo1994K()) {
+            TextSelectionAssistant textSelectionAssistant = new TextSelectionAssistant(this.f9497a.f9496d.f9156e, -1);
+            textSelectionAssistant.m12539a(this.f9497a.f9493a, this.f9497a.f9494b, IndicatorStatus.HEADER_DRAGGED);
+            this.f9497a.f9496d.f9158g.add(textSelectionAssistant);
+            this.f9497a.f9496d.m12567c(this.f9497a.f9493a.x, this.f9497a.f9493a.y, this.f9497a.f9496d.f9152a, this.f9497a.f9495c);
+            this.f9497a.f9496d.m12558a(false);
         }
-        frameLayout.setVisibility(i);
-        FrameLayout frameLayout2 = this.b;
-        if (!z) {
-            i2 = 0;
-        }
-        frameLayout2.setVisibility(i2);
     }
 }

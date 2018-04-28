@@ -1,22 +1,16 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.IFeature;
+import com.duokan.reader.domain.cloud.push.C0857b;
 
-class cl extends cc {
-    final /* synthetic */ ck a;
+class cl implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ ck f8407a;
 
-    cl(ck ckVar, IFeature featrue) {
-        this.a = ckVar;
-        super(featrue);
+    cl(ck ckVar) {
+        this.f8407a = ckVar;
     }
 
-    public void a(int i, int i2) {
-        super.a(i, i2);
-        this.a.d.getPagerView().setTabEnabled(false);
-    }
-
-    public void b() {
-        super.b();
-        this.a.d.getPagerView().setTabEnabled(true);
+    public void run() {
+        C0857b.m5649a().m5686b();
     }
 }

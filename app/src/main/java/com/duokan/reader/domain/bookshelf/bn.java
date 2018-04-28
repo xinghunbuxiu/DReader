@@ -1,38 +1,30 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.account.ab;
-
+import com.duokan.reader.domain.account.al;
 import java.util.List;
 
-class bn implements eb {
-    final /* synthetic */ iq a;
-    final /* synthetic */ ab b;
-    final /* synthetic */ boolean c;
-    final /* synthetic */ boolean d;
-    final /* synthetic */ int e;
-    final /* synthetic */ aq f;
+class bn extends bo {
+    /* renamed from: a */
+    final /* synthetic */ bm f2850a;
 
-    bn(aq aqVar, iq iqVar, ab abVar, boolean z, boolean z2, int i) {
-        this.f = aqVar;
-        this.a = iqVar;
-        this.b = abVar;
-        this.c = z;
-        this.d = z2;
-        this.e = i;
+    bn(bm bmVar, al alVar, List list, boolean z, ik ikVar) {
+        this.f2850a = bmVar;
+        super(bmVar.f2849f, alVar, list, z, ikVar);
     }
 
-    public void a(List list) {
-        if (this.a.isCancelled()) {
-            this.f.x();
-        } else {
-            new bo(this, this.b, list, this.a).open();
+    protected void onSessionSucceeded() {
+        super.onSessionSucceeded();
+        if (!this.f2850a.f2844a.isCancelled()) {
+            this.f2850a.f2849f.m3973a(this.f2850a.f2848e);
+            this.f2850a.f2849f.m3941p();
         }
     }
 
-    public void a(String str) {
-        this.f.x();
-        if (!this.a.isCancelled()) {
-            this.f.i(str);
+    protected void onSessionFailed() {
+        super.onSessionFailed();
+        this.f2850a.f2849f.m3949x();
+        if (!this.f2850a.f2844a.isCancelled()) {
+            this.f2850a.f2849f.m3933i("");
         }
     }
 }

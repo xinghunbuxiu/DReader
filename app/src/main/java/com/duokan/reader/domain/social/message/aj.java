@@ -1,30 +1,31 @@
 package com.duokan.reader.domain.social.message;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.u;
+import com.duokan.reader.common.webservices.duokan.ae;
+import com.duokan.reader.domain.account.C0666x;
+import com.duokan.reader.domain.account.C0672a;
+import com.duokan.reader.domain.account.al;
+import java.util.List;
 
-class aj implements u {
-    final /* synthetic */ int a;
-    final /* synthetic */ int b;
-    final /* synthetic */ ax c;
-    final /* synthetic */ boolean d;
-    final /* synthetic */ DkMessagesManager e;
+class aj implements C0666x {
+    /* renamed from: a */
+    final /* synthetic */ List f5511a;
+    /* renamed from: b */
+    final /* synthetic */ ar f5512b;
+    /* renamed from: c */
+    final /* synthetic */ DkMessagesManager f5513c;
 
-    aj(DkMessagesManager dkMessagesManager, int i, int i2, ax axVar, boolean z) {
-        this.e = dkMessagesManager;
-        this.a = i;
-        this.b = i2;
-        this.c = axVar;
-        this.d = z;
+    aj(DkMessagesManager dkMessagesManager, List list, ar arVar) {
+        this.f5513c = dkMessagesManager;
+        this.f5511a = list;
+        this.f5512b = arVar;
     }
 
-    public void onQueryAccountOk(a aVar) {
-        this.e.k = new ab(aVar);
-        new ak(this, this.e.k).open();
+    public void onQueryAccountOk(C0672a c0672a) {
+        this.f5513c.f5479j = new al(c0672a);
+        new ak(this, this.f5513c.f5479j.f2360a, ae.f2100a, this.f5513c.f5479j).open();
     }
 
-    public void onQueryAccountError(a aVar, String str) {
-        this.c.a(new k[0], "");
+    public void onQueryAccountError(C0672a c0672a, String str) {
+        this.f5512b.mo1182a("");
     }
 }

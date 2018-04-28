@@ -1,57 +1,29 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.common.FileTypeRecognizer;
-import com.duokan.common.FileTypeRecognizer.FileType;
-import com.duokan.reader.domain.micloud.bi;
-import com.duokan.reader.domain.micloud.bj;
+import android.content.Context;
+import com.duokan.core.app.ManagedApp;
+import com.duokan.reader.common.p036b.C0542e;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
+class jj implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ boolean f3390a;
+    /* renamed from: b */
+    final /* synthetic */ it f3391b;
 
-class jj {
-    public bj a;
-    public final ArrayList b;
-    public final HashMap c;
-
-    private jj() {
-        this.a = new bj();
-        this.b = new ArrayList();
-        this.c = new HashMap();
+    jj(it itVar, boolean z) {
+        this.f3391b = itVar;
+        this.f3390a = z;
     }
 
-    public void a(Collection collection) {
-        this.b.clear();
-        this.c.clear();
-        for (bi biVar : collection) {
-            if (FileTypeRecognizer.a(biVar.e()) != FileType.UNSUPPORTED) {
-                this.b.add(new iy(biVar));
+    public void run() {
+        jp b = this.f3391b.f3365i;
+        if (b != null) {
+            Context topActivity = ManagedApp.get().getTopActivity();
+            if (topActivity == null) {
+                topActivity = this.f3391b.f3363g;
             }
+            C0542e.m2413b(topActivity);
+            b.f3405b.m8115c().m8259a("/Books", this.f3390a, true, true, 1);
         }
-        Iterator it = this.b.iterator();
-        while (it.hasNext()) {
-            iy iyVar = (iy) it.next();
-            this.c.put(iyVar.f(), iyVar);
-        }
-    }
-
-    public void a(iy iyVar) {
-        if (FileTypeRecognizer.a(iyVar.b()) != FileType.UNSUPPORTED) {
-            this.b.add(iyVar);
-            this.c.put(iyVar.f(), iyVar);
-        }
-    }
-
-    public void a(String str) {
-        iy iyVar = (iy) this.c.get(str);
-        if (iyVar != null) {
-            this.b.remove(iyVar);
-            this.c.remove(str);
-        }
-    }
-
-    public iy b(String str) {
-        return (iy) this.c.get(str);
     }
 }

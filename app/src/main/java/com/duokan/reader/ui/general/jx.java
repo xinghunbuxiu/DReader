@@ -1,21 +1,23 @@
 package com.duokan.reader.ui.general;
 
-import android.view.View;
-
-import com.duokan.reader.ui.general.WebView.PullDownHeaderState;
+import android.graphics.Rect;
+import java.util.ArrayList;
 
 class jx {
-    public View a;
-    public PullDownHeaderState b;
-    public boolean c;
-    public int d;
-    public jv e;
+    /* renamed from: a */
+    public final Rect f7479a;
+    /* renamed from: b */
+    public int[] f7480b;
+    /* renamed from: c */
+    public int f7481c;
+    /* renamed from: d */
+    public final ArrayList<jz> f7482d;
+    /* renamed from: e */
+    final /* synthetic */ jw f7483e;
 
-    private jx() {
-        this.a = null;
-        this.b = PullDownHeaderState.NONE;
-        this.c = false;
-        this.d = -1;
-        this.e = null;
+    private jx(jw jwVar) {
+        this.f7483e = jwVar;
+        this.f7479a = new Rect();
+        this.f7482d = new ArrayList();
     }
 }

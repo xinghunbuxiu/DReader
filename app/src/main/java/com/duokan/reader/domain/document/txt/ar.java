@@ -1,7 +1,9 @@
 package com.duokan.reader.domain.document.txt;
 
 interface ar {
-    void a(as asVar);
+    /* renamed from: a */
+    void mo1462a(as asVar);
 
-    void b(as asVar);
+    /* renamed from: b */
+    void mo1463b(as asVar);
 }

@@ -1,31 +1,35 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.micloud.o;
+import com.duokan.reader.common.async.work.C0523c;
+import com.duokan.reader.domain.micloud.C1068i;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 class jc implements Runnable {
-    final /* synthetic */ o a;
-    final /* synthetic */ boolean b;
-    final /* synthetic */ jj c;
-    final /* synthetic */ String d;
-    final /* synthetic */ ja e;
+    /* renamed from: a */
+    final /* synthetic */ it f3381a;
 
-    jc(ja jaVar, o oVar, boolean z, jj jjVar, String str) {
-        this.e = jaVar;
-        this.a = oVar;
-        this.b = z;
-        this.c = jjVar;
-        this.d = str;
+    jc(it itVar) {
+        this.f3381a = itVar;
     }
 
     public void run() {
-        synchronized (this.e.a) {
-            if (b.a(this.a.j(), this.e.a.i)) {
-                if (this.e.a.l) {
-                    this.e.a.k.a = this.c.a;
-                    this.e.a.k.a(this.d);
-                } else if (this.b) {
-                    this.e.a.k = this.c;
-                    this.e.a.l = true;
+        jp b = this.f3381a.f3365i;
+        if (b != null) {
+            C1068i c1068i;
+            LinkedList linkedList = new LinkedList();
+            Iterator it = b.f3405b.m8112a().m2368c().iterator();
+            while (it.hasNext()) {
+                c1068i = (C1068i) it.next();
+                if (c1068i.m2300o() && !it.m4704d(c1068i)) {
+                    linkedList.add(c1068i);
+                }
+            }
+            Iterator it2 = linkedList.iterator();
+            while (it2.hasNext()) {
+                c1068i = (C1068i) it2.next();
+                if (c1068i.m2300o()) {
+                    b.f3405b.m8112a().m2360a((C0523c) c1068i, false);
                 }
             }
         }

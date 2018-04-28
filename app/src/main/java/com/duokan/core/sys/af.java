@@ -1,54 +1,62 @@
 package com.duokan.core.sys;
 
-public class af {
-    private Object a;
-    private boolean b;
+public class af<T> {
+    /* renamed from: a */
+    private T f635a;
+    /* renamed from: b */
+    private boolean f636b;
 
     public af() {
-        this.a = null;
-        this.b = false;
+        this.f635a = null;
+        this.f636b = false;
     }
 
-    public af(Object obj) {
-        this.a = null;
-        this.a = obj;
-        this.b = true;
+    public af(T t) {
+        this.f635a = null;
+        this.f635a = t;
+        this.f636b = true;
     }
 
-    public Object a() {
-        return this.a;
+    /* renamed from: a */
+    public T m858a() {
+        return this.f635a;
     }
 
-    public void a(Object obj) {
-        this.a = obj;
-        this.b = true;
+    /* renamed from: a */
+    public void mo975a(T t) {
+        this.f635a = t;
+        this.f636b = true;
     }
 
-    public boolean b() {
-        return this.b;
+    /* renamed from: b */
+    public boolean m861b() {
+        return this.f636b;
     }
 
-    public boolean b(Object obj) {
-        if (!this.b) {
+    /* renamed from: b */
+    public boolean m862b(T t) {
+        if (!this.f636b) {
             return false;
         }
-        if (this.a != null && obj != null) {
-            return this.a.equals(obj);
+        if (this.f635a != null && t != null) {
+            return this.f635a.equals(t);
         }
-        if (this.a == obj) {
+        if (this.f635a == t) {
             return true;
         }
         return false;
     }
 
-    public void c() {
-        this.a = null;
-        this.b = false;
+    /* renamed from: c */
+    public void m863c() {
+        this.f635a = null;
+        this.f636b = false;
     }
 
-    public void a(af afVar) {
-        this.a = afVar.a;
-        this.b = afVar.b;
+    /* renamed from: a */
+    public void m859a(af<T> afVar) {
+        this.f635a = afVar.f635a;
+        this.f636b = afVar.f636b;
     }
 
     public boolean equals(Object obj) {
@@ -56,10 +64,10 @@ public class af {
             return false;
         }
         af afVar = (af) obj;
-        if (this.b && afVar.b) {
-            return b(afVar.a);
+        if (this.f636b && afVar.f636b) {
+            return m862b(afVar.f635a);
         }
-        if (this.b == afVar.b) {
+        if (this.f636b == afVar.f636b) {
             return true;
         }
         return false;

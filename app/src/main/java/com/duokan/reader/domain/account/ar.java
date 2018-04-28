@@ -1,17 +1,18 @@
 package com.duokan.reader.domain.account;
 
-class ar implements b {
-    final /* synthetic */ aq a;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 
-    ar(aq aqVar) {
-        this.a = aqVar;
+class ar extends BroadcastReceiver {
+    /* renamed from: a */
+    final /* synthetic */ MiAccount f2370a;
+
+    ar(MiAccount miAccount) {
+        this.f2370a = miAccount;
     }
 
-    public void a(a aVar) {
-        this.a.d.a(this.a.c, this.a.a, this.a.b);
-    }
-
-    public void a(a aVar, String str) {
-        this.a.b.a(this.a.e.b, str);
+    public void onReceive(Context context, Intent intent) {
+        this.f2370a.m3192y();
     }
 }

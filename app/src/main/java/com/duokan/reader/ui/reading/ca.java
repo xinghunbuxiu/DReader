@@ -1,29 +1,19 @@
 package com.duokan.reader.ui.reading;
 
-import android.text.TextUtils;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.UmengManager;
 
-import com.duokan.c.j;
-import com.duokan.reader.DkPublic;
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.u;
-import com.duokan.reader.ui.general.be;
-
-class ca implements u {
-    final /* synthetic */ bz a;
+class ca implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ bz f9927a;
 
     ca(bz bzVar) {
-        this.a = bzVar;
+        this.f9927a = bzVar;
     }
 
-    public void onQueryAccountOk(a aVar) {
-        DkPublic.exchangeNewIdThenDo(this.a.a.a.f.G().H(), "", new cb(this), null);
-    }
-
-    public void onQueryAccountError(a aVar, String str) {
-        CharSequence string;
-        if (TextUtils.isEmpty(str)) {
-            string = this.a.a.a.getResources().getString(j.reading__comment_view__tip_no_account);
-        }
-        be.a(this.a.a.a.getContext(), string, 0).show();
+    public void onClick(View view) {
+        UmengManager.get().onEvent("V2_READING_MENU", "Tip");
+        this.f9927a.m13598a(new cb(this));
     }
 }

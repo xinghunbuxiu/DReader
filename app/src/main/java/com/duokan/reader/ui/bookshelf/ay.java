@@ -1,25 +1,17 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.content.Context;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-import com.duokan.b.i;
-import com.duokan.common.tools;
-import com.duokan.reader.ui.general.FileTransferPrompter;
-import com.duokan.reader.ui.general.cm;
+class ay implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ao f6149a;
 
-public class ay {
-    public static void a(Context context, long j, cm cmVar) {
-        String str;
-        String string = context.getResources().getString(i.bookshelf__book__download_prompt__title);
-        if (j <= 0) {
-            str = "";
-        } else {
-            str = context.getString(i.bookshelf__book__download_prompt_at_data_plan, new Object[]{tools.getByteSize(j)});
-        }
-        FileTransferPrompter.a(context, j, string, str, cmVar);
+    ay(ao aoVar) {
+        this.f6149a = aoVar;
     }
 
-    public static void b(Context context, long j, cm cmVar) {
-        FileTransferPrompter.b(context, j, context.getResources().getString(i.bookshelf__book__upload_prompt__title), context.getString(i.bookshelf__book__upload_prompt_at_data_plan, new Object[]{tools.getByteSize(j)}), cmVar);
+    public void onClick(View view) {
+        this.f6149a.m9162j();
     }
 }

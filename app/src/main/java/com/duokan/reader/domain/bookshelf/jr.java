@@ -1,62 +1,84 @@
 package com.duokan.reader.domain.bookshelf;
 
-import android.text.TextUtils;
+import com.duokan.reader.common.async.work.C0521a;
+import com.duokan.reader.common.async.work.C0525e;
+import com.duokan.reader.common.async.work.IAsyncWorkProgressListener;
+import com.duokan.reader.common.async.work.IAsyncWorkProgressListener.CheckErrorResult;
+import com.duokan.reader.domain.micloud.C1068i;
+import java.util.Iterator;
 
-import com.duokan.reader.domain.document.aa;
+class jr implements IAsyncWorkProgressListener<C1068i> {
+    /* renamed from: a */
+    final /* synthetic */ jp f3412a;
 
-class jr implements n {
-    final /* synthetic */ n a;
-    final /* synthetic */ jp b;
-
-    jr(jp jpVar, n nVar) {
-        this.b = jpVar;
-        this.a = nVar;
+    jr(jp jpVar) {
+        this.f3412a = jpVar;
     }
 
-    public void a(com.duokan.reader.domain.document.n nVar, aa aaVar) {
-        if (this.a != null) {
-            this.a.a(nVar, aaVar);
+    /* renamed from: a */
+    public void m4769a(C1068i c1068i) {
+        Iterator it = this.f3412a.f3408e.f3362f.iterator();
+        while (it.hasNext()) {
+            ((IAsyncWorkProgressListener) it.next()).mo745a(c1068i);
         }
     }
 
-    public void a(com.duokan.reader.domain.document.n nVar) {
-        if (!(TextUtils.isEmpty(this.b.I()) || this.b.I().equals(this.b.M()))) {
-            this.b.h(this.b.I());
-        }
-        if (this.a != null) {
-            this.a.a(nVar);
-        }
-    }
-
-    public void b(com.duokan.reader.domain.document.n nVar) {
-        this.b.a.decrementAndGet();
-        if (this.a != null) {
-            this.a.b(nVar);
+    /* renamed from: b */
+    public void m4771b(C1068i c1068i) {
+        Iterator it = this.f3412a.f3408e.f3362f.iterator();
+        while (it.hasNext()) {
+            ((IAsyncWorkProgressListener) it.next()).mo746b(c1068i);
         }
     }
 
-    public void c(com.duokan.reader.domain.document.n nVar) {
-        this.b.a.decrementAndGet();
-        if (this.a != null) {
-            this.a.c(nVar);
+    /* renamed from: c */
+    public void m4773c(C1068i c1068i) {
+        Iterator it = this.f3412a.f3408e.f3362f.iterator();
+        while (it.hasNext()) {
+            ((IAsyncWorkProgressListener) it.next()).mo747c(c1068i);
         }
     }
 
-    public void d(com.duokan.reader.domain.document.n nVar) {
-        if (this.a != null) {
-            this.a.d(nVar);
+    /* renamed from: d */
+    public void m4775d(C1068i c1068i) {
+        Iterator it = this.f3412a.f3408e.f3362f.iterator();
+        while (it.hasNext()) {
+            ((IAsyncWorkProgressListener) it.next()).mo748d(c1068i);
         }
     }
 
-    public void e(com.duokan.reader.domain.document.n nVar) {
-        if (this.a != null) {
-            this.a.e(nVar);
+    /* renamed from: e */
+    public void m4777e(C1068i c1068i) {
+        Iterator it = this.f3412a.f3408e.f3362f.iterator();
+        while (it.hasNext()) {
+            ((IAsyncWorkProgressListener) it.next()).mo749e(c1068i);
         }
     }
 
-    public void f(com.duokan.reader.domain.document.n nVar) {
-        if (this.a != null) {
-            this.a.f(nVar);
+    /* renamed from: f */
+    public void m4779f(C1068i c1068i) {
+        Iterator it = this.f3412a.f3408e.f3362f.iterator();
+        while (it.hasNext()) {
+            ((IAsyncWorkProgressListener) it.next()).mo750f(c1068i);
+        }
+    }
+
+    /* renamed from: a */
+    public CheckErrorResult m4767a(C1068i c1068i, C0525e c0525e) {
+        CheckErrorResult checkErrorResult = CheckErrorResult.Ignored;
+        Iterator it = this.f3412a.f3408e.f3362f.iterator();
+        CheckErrorResult checkErrorResult2 = checkErrorResult;
+        while (it.hasNext()) {
+            checkErrorResult2 = C0521a.m2253a(checkErrorResult2, ((IAsyncWorkProgressListener) it.next()).mo744a(c1068i, c0525e));
+        }
+        return checkErrorResult2;
+    }
+
+    /* renamed from: g */
+    public void m4781g(C1068i c1068i) {
+        Iterator it = this.f3412a.f3408e.f3362f.iterator();
+        while (it.hasNext()) {
+            ((IAsyncWorkProgressListener) it.next()).mo751g(c1068i);
         }
     }
 }

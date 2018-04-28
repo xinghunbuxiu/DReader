@@ -1,14 +1,17 @@
 package com.duokan.reader.ui.reading;
 
 class abm implements Runnable {
-    final /* synthetic */ abl a;
+    /* renamed from: a */
+    final /* synthetic */ abg f9399a;
 
-    abm(abl com_duokan_reader_ui_reading_abl) {
-        this.a = com_duokan_reader_ui_reading_abl;
+    abm(abg abg) {
+        this.f9399a = abg;
     }
 
     public void run() {
-        this.a.a.a.d.onDragStart(this.a.a.e, CurlDirection.PAGE_UP);
-        this.a.a.a.i = null;
+        if (this.f9399a.f9391a.f9387i != null) {
+            this.f9399a.f9391a.f9387i.run();
+            this.f9399a.f9391a.f9387i = null;
+        }
     }
 }

@@ -1,34 +1,28 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.h;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.WebSession;
+import com.duokan.reader.domain.account.al;
 
-class bx implements h {
-    final /* synthetic */ bw a;
+class bx extends WebSession {
+    /* renamed from: a */
+    final /* synthetic */ al f2876a;
+    /* renamed from: b */
+    final /* synthetic */ bw f2877b;
 
-    bx(bw bwVar) {
-        this.a = bwVar;
+    bx(bw bwVar, C0657i c0657i, al alVar) {
+        this.f2877b = bwVar;
+        this.f2876a = alVar;
+        super(c0657i);
     }
 
-    public void a(a aVar) {
-        this.a.a.c = new ab(aVar);
-        this.a.a.c();
+    protected void onSessionTry() {
+        new bq(this.f2876a).m4053a();
     }
 
-    public void b(a aVar) {
+    protected void onSessionSucceeded() {
     }
 
-    public void c(a aVar) {
-        if (this.a.a.c.c()) {
-            new by(this, this.a.a.c).open();
-        }
-        this.a.a.c = ab.g;
-        this.a.a.e = true;
-        this.a.a.f = System.currentTimeMillis();
-        this.a.a.d = new cs();
-    }
-
-    public void d(a aVar) {
+    protected void onSessionFailed() {
     }
 }

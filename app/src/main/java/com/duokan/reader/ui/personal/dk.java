@@ -1,18 +1,18 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.domain.account.C0672a;
+import com.duokan.reader.domain.account.C0699c;
 
-import com.duokan.reader.ui.account.m;
+class dk implements C0699c {
+    /* renamed from: a */
+    final /* synthetic */ dj f8454a;
 
-class dk implements OnClickListener {
-    final /* synthetic */ MiAccountProfileSettingsController a;
-
-    dk(MiAccountProfileSettingsController miAccountProfileSettingsController) {
-        this.a = miAccountProfileSettingsController;
+    dk(dj djVar) {
+        this.f8454a = djVar;
     }
 
-    public void onClick(View view) {
-        this.a.b.pushHalfPageSmoothly(new m(this.a.getContext()), null);
+    /* renamed from: a */
+    public void mo867a(C0672a c0672a) {
+        this.f8454a.f8453b.requestBack();
     }
 }

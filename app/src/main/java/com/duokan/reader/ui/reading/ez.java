@@ -1,20 +1,22 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
+import android.view.View;
+import com.duokan.core.ui.bk;
+import com.duokan.core.ui.bq;
 
-import com.duokan.b.d;
-import com.duokan.reader.ui.general.DkLabelView;
+class ez implements bq {
+    /* renamed from: a */
+    final /* synthetic */ ex f10128a;
 
-class ez extends acz {
-    private final DkLabelView a = new DkLabelView(getContext());
+    ez(ex exVar) {
+        this.f10128a = exVar;
+    }
 
-    public ez(Context context, int i, int i2) {
-        super(context, i);
-        addView(this.a, new LayoutParams(-2, -2, 17));
-        this.a.setTextSize(0, getResources().getDimension(d.general_font__shared__e));
-        this.a.setIncludeFontPadding(false);
-        this.a.setTextColor(i2);
-        this.a.setText(getResources().getString(i.reading__custom_theme_color_view__edit));
-        this.a.setGravity(17);
+    /* renamed from: a */
+    public void mo2314a(bk bkVar, View view, View view2, boolean z) {
+        if (z) {
+            this.f10128a.f10116a = this.f10128a.f10119d.getSelectedIndex() == 0;
+            this.f10128a.m14038d();
+        }
     }
 }

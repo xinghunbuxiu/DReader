@@ -1,14 +1,16 @@
 package com.duokan.reader.ui.general.expandable;
 
 import com.duokan.reader.ui.general.cd;
-
 import java.util.HashMap;
 import java.util.Map;
 
 public abstract class StateExpandableAdapter extends cd {
-    private Map a = new HashMap();
-    private c c = null;
-    private boolean d = false;
+    /* renamed from: a */
+    private Map<Integer, Map<Integer, ExpandableAdapterState>> f7173a = new HashMap();
+    /* renamed from: c */
+    private C1331c f7174c = null;
+    /* renamed from: d */
+    private boolean f7175d = false;
 
     public enum ExpandableAdapterState {
         SELECTED,
@@ -16,35 +18,39 @@ public abstract class StateExpandableAdapter extends cd {
         IGNORE
     }
 
-    public abstract void h();
+    /* renamed from: h */
+    public abstract void mo2529h();
 
-    public ExpandableAdapterState c(int i, int i2) {
-        return (ExpandableAdapterState) k(i).get(Integer.valueOf(i2));
+    /* renamed from: c */
+    public ExpandableAdapterState m10580c(int i, int i2) {
+        return (ExpandableAdapterState) m10578k(i).get(Integer.valueOf(i2));
     }
 
-    public void a(int i, int i2, ExpandableAdapterState expandableAdapterState, boolean z) {
-        k(i).put(Integer.valueOf(i2), expandableAdapterState);
+    /* renamed from: a */
+    public void m10579a(int i, int i2, ExpandableAdapterState expandableAdapterState, boolean z) {
+        m10578k(i).put(Integer.valueOf(i2), expandableAdapterState);
         if (z) {
-            if (this.c != null) {
-                this.c.a(i(), this.d);
+            if (this.f7174c != null) {
+                this.f7174c.m10583a(m10582i(), this.f7175d);
             }
-            g();
+            mo1715g();
         }
     }
 
-    public int i() {
-        this.d = true;
+    /* renamed from: i */
+    public int m10582i() {
+        this.f7175d = true;
         int i = 0;
-        for (int i2 = 0; i2 < a(); i2++) {
+        for (int i2 = 0; i2 < mo486a(); i2++) {
             int i3 = 0;
-            while (i3 < h(i2)) {
+            while (i3 < mo2457h(i2)) {
                 int i4;
-                ExpandableAdapterState c = c(i2, i3);
+                ExpandableAdapterState c = m10580c(i2, i3);
                 if (c == ExpandableAdapterState.SELECTED) {
                     i4 = i + 1;
                 } else {
                     if (c == ExpandableAdapterState.UNSELECT) {
-                        this.d = false;
+                        this.f7175d = false;
                     }
                     i4 = i;
                 }
@@ -55,13 +61,14 @@ public abstract class StateExpandableAdapter extends cd {
         return i;
     }
 
-    private Map k(int i) {
-        Map map = (Map) this.a.get(Integer.valueOf(i));
+    /* renamed from: k */
+    private Map<Integer, ExpandableAdapterState> m10578k(int i) {
+        Map<Integer, ExpandableAdapterState> map = (Map) this.f7173a.get(Integer.valueOf(i));
         if (map != null) {
             return map;
         }
-        map = new HashMap();
-        this.a.put(Integer.valueOf(i), map);
-        return map;
+        Map hashMap = new HashMap();
+        this.f7173a.put(Integer.valueOf(i), hashMap);
+        return hashMap;
     }
 }

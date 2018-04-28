@@ -1,17 +1,29 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.micloud.C1068i;
+import java.lang.ref.WeakReference;
+import java.util.Iterator;
 
-class dl implements OnClickListener {
-    final /* synthetic */ dh a;
+class dl implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ C1068i f6339a;
+    /* renamed from: b */
+    final /* synthetic */ dk f6340b;
 
-    dl(dh dhVar) {
-        this.a = dhVar;
+    dl(dk dkVar, C1068i c1068i) {
+        this.f6340b = dkVar;
+        this.f6339a = c1068i;
     }
 
-    public void onClick(View view) {
-        this.a.b.a(!this.a.b.e());
-        this.a.c();
+    public void run() {
+        Iterator it = de.f6048d.iterator();
+        while (it.hasNext()) {
+            de deVar = (de) ((WeakReference) it.next()).get();
+            if (deVar != null && (deVar.getItem() instanceof C0800c) && ((C0800c) deVar.getItem()).m4222e().equals(this.f6339a.m8228w())) {
+                deVar.m9099a(this.f6339a);
+                return;
+            }
+        }
     }
 }

@@ -1,127 +1,48 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.cloud.DkCloudPurchasedBook;
-import com.duokan.reader.domain.cloud.DkCloudPurchasedFiction;
-import com.duokan.reader.domain.cloud.DkUserPurchasedBooksManager;
-import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
+import com.duokan.core.app.ManagedApp;
+import com.duokan.reader.common.async.work.C0523c;
+import com.duokan.reader.common.p036b.C0542e;
+import com.duokan.reader.common.p037c.C0559f;
+import com.duokan.reader.domain.micloud.C1068i;
+import com.duokan.reader.domain.statistics.dailystats.C1167a;
+import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
+import java.io.File;
 import java.util.List;
+import org.json.JSONException;
 
-public class jl {
-    private final ArrayList a = new ArrayList();
-    private final ArrayList b = new ArrayList();
-    private final ArrayList c = new ArrayList();
-    private final ArrayList d = new ArrayList();
-    private final ArrayList e = new ArrayList();
-    private final HashMap f = new HashMap();
-    private final HashMap g = new HashMap();
-    private final HashMap h = new HashMap();
-    private final HashMap i = new HashMap();
-    private final HashMap j = new HashMap();
+class jl implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ List f3396a;
+    /* renamed from: b */
+    final /* synthetic */ FlowChargingTransferChoice f3397b;
+    /* renamed from: c */
+    final /* synthetic */ it f3398c;
 
-    public void a() {
-        this.a.addAll(DkUserPurchasedBooksManager.a().b());
-        this.b.addAll(DkUserPurchasedBooksManager.a().c());
-        this.c.addAll(DkUserPurchasedFictionsManager.a().b());
-        this.d.addAll(DkUserPurchasedFictionsManager.a().c());
-        this.e.addAll(iz.a().c());
+    jl(it itVar, List list, FlowChargingTransferChoice flowChargingTransferChoice) {
+        this.f3398c = itVar;
+        this.f3396a = list;
+        this.f3397b = flowChargingTransferChoice;
     }
 
-    public void b() {
-        Iterator it = this.a.iterator();
-        while (it.hasNext()) {
-            DkCloudPurchasedBook dkCloudPurchasedBook = (DkCloudPurchasedBook) it.next();
-            this.f.put(ae.a(dkCloudPurchasedBook), dkCloudPurchasedBook);
-        }
-        it = this.b.iterator();
-        while (it.hasNext()) {
-            dkCloudPurchasedBook = (DkCloudPurchasedBook) it.next();
-            this.g.put(ae.a(dkCloudPurchasedBook), dkCloudPurchasedBook);
-        }
-        it = this.c.iterator();
-        while (it.hasNext()) {
-            DkCloudPurchasedFiction dkCloudPurchasedFiction = (DkCloudPurchasedFiction) it.next();
-            this.h.put(ae.a(dkCloudPurchasedFiction), dkCloudPurchasedFiction);
-        }
-        it = this.d.iterator();
-        while (it.hasNext()) {
-            dkCloudPurchasedFiction = (DkCloudPurchasedFiction) it.next();
-            this.i.put(ae.a(dkCloudPurchasedFiction), dkCloudPurchasedFiction);
-        }
-        it = this.e.iterator();
-        while (it.hasNext()) {
-            iy iyVar = (iy) it.next();
-            this.j.put(iyVar.f(), iyVar);
-        }
-    }
-
-    public DkCloudPurchasedBook a(String str) {
-        DkCloudPurchasedBook dkCloudPurchasedBook = (DkCloudPurchasedBook) this.f.get(str);
-        if (dkCloudPurchasedBook != null) {
-            return dkCloudPurchasedBook;
-        }
-        return (DkCloudPurchasedBook) this.g.get(str);
-    }
-
-    public DkCloudPurchasedFiction b(String str) {
-        DkCloudPurchasedFiction dkCloudPurchasedFiction = (DkCloudPurchasedFiction) this.h.get(str);
-        if (dkCloudPurchasedFiction != null) {
-            return dkCloudPurchasedFiction;
-        }
-        return (DkCloudPurchasedFiction) this.h.get(str);
-    }
-
-    public iy c(String str) {
-        return (iy) this.j.get(str);
-    }
-
-    public List c() {
-        return this.e;
-    }
-
-    public boolean a(c cVar) {
-        return a(cVar.ao(), cVar.ap());
-    }
-
-    public boolean a(int i, String str) {
-        if (i == -1) {
-            return false;
-        }
-        if (i == 0 && (this.f.containsKey(str) || this.g.containsKey(str))) {
-            return true;
-        }
-        if (i == 1 && (this.h.containsKey(str) || this.i.containsKey(str))) {
-            return true;
-        }
-        if (i == 3 && this.j.containsKey(str)) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean b(c cVar) {
-        return b(cVar.ao(), cVar.ap());
-    }
-
-    public boolean b(int i, String str) {
-        boolean z = true;
-        if (i == -1) {
-            return false;
-        }
-        if (i == 0) {
-            return ((DkCloudPurchasedBook) this.f.get(str)) != null;
-        } else if (i == 1 && this.h.containsKey(str)) {
-            if (((DkCloudPurchasedFiction) this.h.get(str)) == null) {
-                z = false;
+    public void run() {
+        jp b = this.f3398c.f3365i;
+        if (b != null) {
+            C0542e.m2413b(ManagedApp.get().getTopActivity());
+            for (File file : this.f3396a) {
+                C1068i a = b.f3405b.m8112a().m8232a(file.getAbsolutePath(), "/Books", file.getName(), 5);
+                try {
+                    a.m2306u().put("book_upload_choice_at_flow_charging", this.f3397b == null ? FlowChargingTransferChoice.Default.name() : this.f3397b.name());
+                } catch (JSONException e) {
+                }
+                a.m8218a(file.length());
+                b.f3405b.m8112a().m8233a(a);
+                b.f3405b.m8112a().m2358a((C0523c) a);
+                if (C0559f.m2476b().m2484c() && !it.m4704d(a)) {
+                    b.f3405b.m8112a().m2360a((C0523c) a, false);
+                }
+                C1167a.m8671d().m8685c(file.getName());
             }
-            return z;
-        } else if (i == 3 && this.j.containsKey(str)) {
-            return true;
-        } else {
-            return false;
         }
     }
 }

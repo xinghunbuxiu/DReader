@@ -1,19 +1,21 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.graphics.Rect;
 
-import com.duokan.reader.domain.account.MiGuestAccount;
-import com.duokan.reader.domain.account.i;
+class hf implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ fz f8649a;
 
-class hf implements OnClickListener {
-    final /* synthetic */ fl a;
-
-    hf(fl flVar) {
-        this.a = flVar;
+    hf(fz fzVar) {
+        this.f8649a = fzVar;
     }
 
-    public void onClick(View view) {
-        i.f().a(MiGuestAccount.class, new hg(this));
+    public void run() {
+        Rect rect = new Rect();
+        Rect rect2 = new Rect();
+        boolean globalVisibleRect = this.f8649a.f8593t.getGlobalVisibleRect(rect);
+        if (this.f8649a.f8593t.getLocalVisibleRect(rect2) && globalVisibleRect && rect2.height() == this.f8649a.f8593t.getHeight() && this.f8649a.f8574a.getPageCount() == 0) {
+            this.f8649a.m11843a(rect);
+        }
     }
 }

@@ -1,16 +1,17 @@
 package com.duokan.reader.ui.account;
 
-import com.duokan.core.ui.j;
-import com.duokan.core.ui.OnShowListener;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class by implements OnShowListener {
-    final /* synthetic */ bx a;
+class by implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ bx f5905a;
 
     by(bx bxVar) {
-        this.a = bxVar;
+        this.f5905a = bxVar;
     }
 
-    public void a(j jVar) {
-        this.a.c.e();
+    public void onClick(View view) {
+        this.f5905a.dismiss();
     }
 }

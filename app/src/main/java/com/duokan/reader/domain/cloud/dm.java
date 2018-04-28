@@ -1,20 +1,17 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.async.a.a;
+import java.util.Comparator;
 
-class dm implements a {
-    final /* synthetic */ dl a;
-
-    dm(dl dlVar) {
-        this.a = dlVar;
+class dm implements Comparator<DkCloudPurchasedFiction> {
+    private dm() {
     }
 
-    public void a(Void voidR) {
-        new dn(this, DkUserPurchasedFictionsManager.g()).open();
+    public /* synthetic */ int compare(Object obj, Object obj2) {
+        return m5449a((DkCloudPurchasedFiction) obj, (DkCloudPurchasedFiction) obj2);
     }
 
-    public void a(int i, String str) {
-        this.a.b.g.a(i, str);
-        this.a.b.g.b();
+    /* renamed from: a */
+    public int m5449a(DkCloudPurchasedFiction dkCloudPurchasedFiction, DkCloudPurchasedFiction dkCloudPurchasedFiction2) {
+        return -dkCloudPurchasedFiction.comparePurchaseTimeTo(dkCloudPurchasedFiction2);
     }
 }

@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class af {
-    public List a = new ArrayList();
-    public String b = "";
-    public int c = 0;
-    public String d = "";
-    public String e = "";
-    public String f = "";
+    /* renamed from: a */
+    public List<CommentBook> f2102a = new ArrayList();
+    /* renamed from: b */
+    public String f2103b = "";
+    /* renamed from: c */
+    public int f2104c = 0;
+    /* renamed from: d */
+    public String f2105d = "";
+    /* renamed from: e */
+    public String f2106e = "";
+    /* renamed from: f */
+    public String f2107f = "";
 }

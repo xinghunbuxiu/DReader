@@ -1,34 +1,23 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.PointF;
-import android.view.View;
+import fi.harism.curl.CurlDirection;
 
-import com.duokan.core.ui.er;
-import com.duokan.core.ui.r;
+class abj implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ CurlDirection f9395a;
+    /* renamed from: b */
+    final /* synthetic */ abg f9396b;
 
-class abj implements r {
-    final /* synthetic */ abi a;
-
-    abj(abi com_duokan_reader_ui_reading_abi) {
-        this.a = com_duokan_reader_ui_reading_abi;
+    abj(abg abg, CurlDirection curlDirection) {
+        this.f9396b = abg;
+        this.f9395a = curlDirection;
     }
 
-    public void onTouchDown(View view, PointF pointF) {
-    }
-
-    public void onTouchUp(View view, PointF pointF) {
-    }
-
-    public void onTouchCancel(View view, PointF pointF) {
-    }
-
-    public void a(er erVar, View view, PointF pointF, PointF pointF2) {
-        if (this.a.a.i != null) {
-            this.a.a.l();
+    public void run() {
+        if (this.f9395a == CurlDirection.PAGE_DOWN) {
+            this.f9396b.f9391a.f9379a.mo2179u();
         } else {
-            this.a.a.d.onDragEnd(pointF, pointF2);
+            this.f9396b.f9391a.f9379a.mo2178t();
         }
-        this.a.h = false;
-        this.a.d(true);
     }
 }

@@ -1,33 +1,24 @@
 package com.duokan.reader.ui.general.web;
 
 import android.text.TextUtils;
-import android.view.View;
+import android.view.KeyEvent;
+import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 
-import com.duokan.core.ui.HatGridView;
-import com.duokan.core.ui.an;
-import com.duokan.reader.UmengManager;
-
-class ai implements an {
-    final /* synthetic */ SearchController a;
+class ai implements OnEditorActionListener {
+    /* renamed from: a */
+    final /* synthetic */ SearchController f7577a;
 
     ai(SearchController searchController) {
-        this.a = searchController;
+        this.f7577a = searchController;
     }
 
-    public void a(HatGridView hatGridView, View view, int i) {
-        this.a.mHitWord = (String) this.a.mSearchHintView.getAdapter().d(i);
-        this.a.mEditText.setText(this.a.mHitWord);
-        this.a.mEditText.setSelection(this.a.mHitWord.length());
-        String str = "";
-        if (this.a.hasHint()) {
-            str = "hint";
-        } else if (i < this.a.mHistory.size()) {
-            str = "history";
-        } else if (i < this.a.mHotWord.size() + this.a.mHistory.size()) {
-            str = "hot";
+    public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+        if (i != 3) {
+            return false;
         }
-        if (!TextUtils.isEmpty(str)) {
-            UmengManager.get().onEvent("SEARCH_FROM_V1", str);
-        }
+        Object obj = this.f7577a.mEditText.getText().toString();
+        this.f7577a.search(obj, TextUtils.equals(obj, this.f7577a.mDefaultSearchWord) ? "default" : "user");
+        return true;
     }
 }

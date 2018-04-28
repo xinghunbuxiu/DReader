@@ -1,17 +1,21 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Bitmap;
+import android.view.ViewTreeObserver.OnPreDrawListener;
+import android.view.animation.Animation;
 
-import com.duokan.reader.domain.document.ad;
+class jv implements OnPreDrawListener {
+    /* renamed from: a */
+    final /* synthetic */ jq f10474a;
 
-public class jv {
-    int a;
-    Bitmap b;
-    ad c;
-    FrameStatus d = FrameStatus.DIRTY;
-    final /* synthetic */ GifFrameLoader e;
+    jv(jq jqVar) {
+        this.f10474a = jqVar;
+    }
 
-    public jv(GifFrameLoader gifFrameLoader) {
-        this.e = gifFrameLoader;
+    public boolean onPreDraw() {
+        Animation b = this.f10474a.f10457c.m14489b(this.f10474a.f10456b, this.f10474a.f10455a);
+        b.setDuration(200);
+        this.f10474a.startAnimation(b);
+        this.f10474a.getViewTreeObserver().removeOnPreDrawListener(this);
+        return false;
     }
 }

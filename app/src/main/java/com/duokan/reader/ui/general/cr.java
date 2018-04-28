@@ -3,18 +3,24 @@ package com.duokan.reader.ui.general;
 import android.view.View;
 import android.view.ViewGroup;
 
-public abstract class cr extends ge {
-    public abstract int a();
+public abstract class cr extends fy {
+    /* renamed from: a */
+    public abstract int mo2316a();
 
-    public abstract int a(int i);
+    /* renamed from: a */
+    public abstract int mo2317a(int i);
 
-    public abstract int a(gh ghVar);
+    /* renamed from: a */
+    public abstract int mo2318a(gb gbVar);
 
-    public abstract int b(int i);
+    /* renamed from: b */
+    public abstract int mo2321b(int i);
 
-    public abstract gh c(int i);
+    /* renamed from: c */
+    public abstract gb mo2323c(int i);
 
-    public final View d(int i, View view, ViewGroup viewGroup) {
+    /* renamed from: d */
+    public final View mo508d(int i, View view, ViewGroup viewGroup) {
         return null;
     }
 }

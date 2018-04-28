@@ -1,22 +1,19 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.reader.domain.store.DkStoreFictionDetail;
+import java.util.concurrent.Semaphore;
 
 class en implements Runnable {
-    final /* synthetic */ DkStoreFictionDetail a;
-    final /* synthetic */ em b;
+    /* renamed from: a */
+    final /* synthetic */ Semaphore f3112a;
+    /* renamed from: b */
+    final /* synthetic */ ee f3113b;
 
-    en(em emVar, DkStoreFictionDetail dkStoreFictionDetail) {
-        this.b = emVar;
-        this.a = dkStoreFictionDetail;
+    en(ee eeVar, Semaphore semaphore) {
+        this.f3113b = eeVar;
+        this.f3112a = semaphore;
     }
 
     public void run() {
-        this.b.a.c.c(this.a);
-        this.b.a.c.aL();
-        if (this.b.a.a != null) {
-            TaskHandler.postTask(new eo(this));
-        }
+        this.f3113b.m4410a(true, new eo(this), new ep(this));
     }
 }

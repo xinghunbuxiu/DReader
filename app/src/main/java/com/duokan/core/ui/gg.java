@@ -6,79 +6,95 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
-
-import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.sys.UIdleHandler;
+import com.duokan.core.sys.UThread;
 
 public class gg implements Runnable {
-    static final /* synthetic */ boolean a = (!ZoomView.class.desiredAssertionStatus());
-    final /* synthetic */ ZoomView b;
-    private final PointF c = new PointF();
-    private final PointF d = new PointF();
-    private final float e;
-    private final float f;
-    private final PointF g = new PointF();
-    private final float h;
-    private final float i;
-    private final Runnable j;
-    private final Runnable k;
-    private final AlphaAnimation l = new AlphaAnimation(0.0f, 1.0f);
-    private final Transformation m = new Transformation();
-    private boolean n = false;
+    /* renamed from: a */
+    static final /* synthetic */ boolean f1295a = (!ZoomView.class.desiredAssertionStatus());
+    /* renamed from: b */
+    final /* synthetic */ ZoomView f1296b;
+    /* renamed from: c */
+    private final PointF f1297c = new PointF();
+    /* renamed from: d */
+    private final PointF f1298d = new PointF();
+    /* renamed from: e */
+    private final float f1299e;
+    /* renamed from: f */
+    private final float f1300f;
+    /* renamed from: g */
+    private final PointF f1301g = new PointF();
+    /* renamed from: h */
+    private final float f1302h;
+    /* renamed from: i */
+    private final float f1303i;
+    /* renamed from: j */
+    private final Runnable f1304j;
+    /* renamed from: k */
+    private final Runnable f1305k;
+    /* renamed from: l */
+    private final AlphaAnimation f1306l = new AlphaAnimation(0.0f, 1.0f);
+    /* renamed from: m */
+    private final Transformation f1307m = new Transformation();
+    /* renamed from: n */
+    private boolean f1308n = false;
 
     public gg(ZoomView zoomView, float f, float f2, float f3, float f4, float f5, float f6, Runnable runnable, Runnable runnable2) {
-        this.b = zoomView;
-        View d = zoomView.e();
-        if (a || d != null) {
-            this.c.set(f, f2);
-            this.d.set(f, f2);
-            UTools.addAnimation(this.d, d, (View) zoomView);
-            this.d.offset((float) (-zoomView.getScrollX()), (float) (-zoomView.getScrollY()));
-            this.e = zoomView.getZoomFactor();
-            this.f = (float) UTools.getAngle((double) zoomView.getZoomAngle(), (double) (f6 - 180.0f), (double) (180.0f + f6));
-            this.g.set(f3, f4);
-            this.h = f5;
-            this.i = f6;
-            this.j = runnable;
-            this.k = runnable2;
-            this.l.initialize(0, 0, 0, 0);
+        this.f1296b = zoomView;
+        View d = zoomView.mo2335e();
+        if (f1295a || d != null) {
+            this.f1297c.set(f, f2);
+            this.f1298d.set(f, f2);
+            dv.m1900a(this.f1298d, d, (View) zoomView);
+            this.f1298d.offset((float) (-zoomView.getScrollX()), (float) (-zoomView.getScrollY()));
+            this.f1299e = zoomView.getZoomFactor();
+            this.f1300f = (float) dv.m1927b((double) zoomView.getZoomAngle(), (double) (f6 - 180.0f), (double) (180.0f + f6));
+            this.f1301g.set(f3, f4);
+            this.f1302h = f5;
+            this.f1303i = f6;
+            this.f1304j = runnable;
+            this.f1305k = runnable2;
+            this.f1306l.initialize(0, 0, 0, 0);
             return;
         }
         throw new AssertionError();
     }
 
-    public void a() {
-        if (!this.n && !this.l.hasStarted()) {
-            this.l.setInterpolator(new AccelerateDecelerateInterpolator());
-            this.l.setDuration(300);
-            this.l.start();
-            TaskHandler.PostTask((Runnable) this);
+    /* renamed from: a */
+    public void m2153a() {
+        if (!this.f1308n && !this.f1306l.hasStarted()) {
+            this.f1306l.setInterpolator(new AccelerateDecelerateInterpolator());
+            this.f1306l.setDuration(300);
+            this.f1306l.start();
+            UThread.post((Runnable) this);
         }
     }
 
-    public void b() {
-        if (!this.n && this.l.hasStarted() && !this.l.hasEnded()) {
-            this.n = true;
-            j.a(this.k);
+    /* renamed from: b */
+    public void m2154b() {
+        if (!this.f1308n && this.f1306l.hasStarted() && !this.f1306l.hasEnded()) {
+            this.f1308n = true;
+            UIdleHandler.runAction(this.f1305k);
         }
     }
 
     public void run() {
-        if (!this.n) {
-            View d = this.b.e();
+        if (!this.f1308n) {
+            View d = this.f1296b.mo2335e();
             if (d != null) {
-                this.l.getTransformation(AnimationUtils.currentAnimationTimeMillis(), this.m);
-                float alpha = this.d.x + ((this.g.x - this.d.x) * this.m.getAlpha());
-                float alpha2 = this.d.y + ((this.g.y - this.d.y) * this.m.getAlpha());
-                this.b.a(d, this.c.x, this.c.y, alpha, alpha2, this.e + ((this.h - this.e) * this.m.getAlpha()), this.f + ((this.i - this.f) * this.m.getAlpha()));
-                if (this.l.hasEnded()) {
-                    j.a(this.j);
+                this.f1306l.getTransformation(AnimationUtils.currentAnimationTimeMillis(), this.f1307m);
+                float alpha = this.f1298d.x + ((this.f1301g.x - this.f1298d.x) * this.f1307m.getAlpha());
+                float alpha2 = this.f1298d.y + ((this.f1301g.y - this.f1298d.y) * this.f1307m.getAlpha());
+                this.f1296b.m1331a(d, this.f1297c.x, this.f1297c.y, alpha, alpha2, this.f1299e + ((this.f1302h - this.f1299e) * this.f1307m.getAlpha()), this.f1300f + ((this.f1303i - this.f1300f) * this.f1307m.getAlpha()));
+                if (this.f1306l.hasEnded()) {
+                    UIdleHandler.runAction(this.f1304j);
                     return;
                 } else {
-                    TaskHandler.PostTask((Runnable) this);
+                    UThread.post((Runnable) this);
                     return;
                 }
             }
-            j.a(this.j);
+            UIdleHandler.runAction(this.f1304j);
         }
     }
 }

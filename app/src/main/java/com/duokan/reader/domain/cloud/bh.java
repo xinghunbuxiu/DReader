@@ -1,30 +1,28 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.async.a.a;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.u;
+import com.duokan.reader.common.async.p035a.C0517a;
+import com.duokan.reader.domain.account.C0666x;
+import com.duokan.reader.domain.account.C0672a;
 
-class bh implements u {
-    final /* synthetic */ boolean a;
-    final /* synthetic */ a b;
-    final /* synthetic */ boolean c;
-    final /* synthetic */ bd d;
+class bh implements C0666x {
+    /* renamed from: a */
+    final /* synthetic */ String f3752a;
+    /* renamed from: b */
+    final /* synthetic */ C0517a f3753b;
+    /* renamed from: c */
+    final /* synthetic */ DkUserPurchasedBooksManager f3754c;
 
-    bh(bd bdVar, boolean z, a aVar, boolean z2) {
-        this.d = bdVar;
-        this.a = z;
-        this.b = aVar;
-        this.c = z2;
+    bh(DkUserPurchasedBooksManager dkUserPurchasedBooksManager, String str, C0517a c0517a) {
+        this.f3754c = dkUserPurchasedBooksManager;
+        this.f3752a = str;
+        this.f3753b = c0517a;
     }
 
-    public void onQueryAccountOk(com.duokan.reader.domain.account.a aVar) {
-        this.d.f = new ab(aVar);
-        new bi(this, aVar, this.d.f).open();
+    public void onQueryAccountOk(C0672a c0672a) {
+        this.f3754c.m5053a(new bi(this));
     }
 
-    public void onQueryAccountError(com.duokan.reader.domain.account.a aVar, String str) {
-        if (this.b != null) {
-            this.b.a(-1, str);
-        }
+    public void onQueryAccountError(C0672a c0672a, String str) {
+        this.f3753b.mo729a(-1, str);
     }
 }

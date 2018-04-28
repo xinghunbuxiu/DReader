@@ -16,23 +16,37 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
+import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 
 public class TabBarView extends FrameLayout {
-    private Drawable a;
-    private int b;
-    private int c;
-    private TranslateAnimation d;
-    private TranslateAnimation e;
-    private final bt f;
-    private int g;
-    private int h;
-    private int i;
-    private cs j;
-    private Transformation k;
-    private Rect l;
-    private boolean m;
+    /* renamed from: a */
+    private Drawable f856a;
+    /* renamed from: b */
+    private int f857b;
+    /* renamed from: c */
+    private int f858c;
+    /* renamed from: d */
+    private TranslateAnimation f859d;
+    /* renamed from: e */
+    private TranslateAnimation f860e;
+    /* renamed from: f */
+    private final bt f861f;
+    /* renamed from: g */
+    private int f862g;
+    /* renamed from: h */
+    private int f863h;
+    /* renamed from: i */
+    private int f864i;
+    /* renamed from: j */
+    private cs f865j;
+    /* renamed from: k */
+    private Transformation f866k;
+    /* renamed from: l */
+    private Rect f867l;
+    /* renamed from: m */
+    private boolean f868m;
 
     public TabBarView(Context context) {
         this(context, null);
@@ -40,78 +54,78 @@ public class TabBarView extends FrameLayout {
 
     public TabBarView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.a = null;
-        this.b = -1;
-        this.c = -1;
-        this.d = null;
-        this.e = null;
-        this.g = 0;
-        this.h = 0;
-        this.i = 23;
-        this.j = null;
-        this.k = new Transformation();
-        this.l = new Rect(0, 0, 0, 0);
-        this.m = true;
+        this.f856a = null;
+        this.f857b = -1;
+        this.f858c = -1;
+        this.f859d = null;
+        this.f860e = null;
+        this.f862g = 0;
+        this.f863h = 0;
+        this.f864i = 23;
+        this.f865j = null;
+        this.f866k = new Transformation();
+        this.f867l = new Rect(0, 0, 0, 0);
+        this.f868m = true;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, new int[]{16842948});
         CharSequence string = obtainStyledAttributes.hasValue(0) ? obtainStyledAttributes.getString(0) : "horizontal";
         obtainStyledAttributes.recycle();
         if (TextUtils.equals(string, "horizontal")) {
-            this.f = new HorzLinearView(context);
+            this.f861f = new HorzLinearView(context);
         } else {
-            this.f = new eq(context);
+            this.f861f = new eq(context);
         }
-        addView(this.f, new LayoutParams(-1, -1));
+        addView(this.f861f, new LayoutParams(-1, -1));
         setWillNotDraw(false);
     }
 
     public TabBarView(Context context, int i) {
         super(context);
-        this.a = null;
-        this.b = -1;
-        this.c = -1;
-        this.d = null;
-        this.e = null;
-        this.g = 0;
-        this.h = 0;
-        this.i = 23;
-        this.j = null;
-        this.k = new Transformation();
-        this.l = new Rect(0, 0, 0, 0);
-        this.m = true;
+        this.f856a = null;
+        this.f857b = -1;
+        this.f858c = -1;
+        this.f859d = null;
+        this.f860e = null;
+        this.f862g = 0;
+        this.f863h = 0;
+        this.f864i = 23;
+        this.f865j = null;
+        this.f866k = new Transformation();
+        this.f867l = new Rect(0, 0, 0, 0);
+        this.f868m = true;
         if (i == 1) {
-            this.f = new eq(context);
+            this.f861f = new eq(context);
         } else {
-            this.f = new HorzLinearView(context);
+            this.f861f = new HorzLinearView(context);
         }
-        addView(this.f, new LayoutParams(-1, -1));
+        addView(this.f861f, new LayoutParams(-1, -1));
         setWillNotDraw(false);
     }
 
     public int getSelectedTabIndex() {
-        return this.b;
+        return this.f857b;
     }
 
     public int getTabCount() {
-        return this.f.getCellCount();
+        return this.f861f.getCellCount();
     }
 
     public void setIndicatorGravity(int i) {
-        this.i = i;
+        this.f864i = i;
         invalidate();
     }
 
     public ScaleType getDividerScaleType() {
-        return this.f.getDividerScaleType();
+        return this.f861f.getDividerScaleType();
     }
 
     public void setDividerScaleType(ScaleType scaleType) {
-        this.f.setDividerScaleType(scaleType);
+        this.f861f.setDividerScaleType(scaleType);
         requestLayout();
         invalidate();
     }
 
     public Drawable getFirstDividerDrawable() {
-        return this.f.getFirstDivider();
+        return this.f861f.getFirstDivider();
     }
 
     public void setFirstDividerDrawable(int i) {
@@ -119,13 +133,13 @@ public class TabBarView extends FrameLayout {
     }
 
     public void setFirstDividerDrawable(Drawable drawable) {
-        this.f.setFirstDivider(drawable);
+        this.f861f.setFirstDivider(drawable);
         requestLayout();
         invalidate();
     }
 
     public Drawable getMiddleDividerDrawable() {
-        return this.f.getMiddleDivider();
+        return this.f861f.getMiddleDivider();
     }
 
     public void setMiddleDividerDrawable(int i) {
@@ -133,13 +147,13 @@ public class TabBarView extends FrameLayout {
     }
 
     public void setMiddleDividerDrawable(Drawable drawable) {
-        this.f.setMiddleDivider(drawable);
+        this.f861f.setMiddleDivider(drawable);
         requestLayout();
         invalidate();
     }
 
     public Drawable getLastDividerDrawable() {
-        return this.f.getLastDivider();
+        return this.f861f.getLastDivider();
     }
 
     public void setLastDividerDrawable(int i) {
@@ -147,43 +161,47 @@ public class TabBarView extends FrameLayout {
     }
 
     public void setLastDividerDrawable(Drawable drawable) {
-        this.f.setLastDivider(drawable);
+        this.f861f.setLastDivider(drawable);
         requestLayout();
         invalidate();
     }
 
     public void setIgnoreRepeatedClicks(boolean z) {
-        this.m = z;
+        this.f868m = z;
     }
 
-    public int a(int i) {
-        int i2 = this.b;
-        a(i, false);
+    /* renamed from: a */
+    public int m1319a(int i) {
+        int i2 = this.f857b;
+        m1308a(i, false);
         return i2;
     }
 
-    public View b(int i) {
-        return e(i).getChildAt(0);
+    /* renamed from: b */
+    public View m1321b(int i) {
+        return m1318e(i).getChildAt(0);
     }
 
-    public View c(int i) {
-        ViewGroup a = a();
+    /* renamed from: c */
+    public View m1322c(int i) {
+        ViewGroup a = m1306a();
         LayoutInflater.from(getContext()).inflate(i, a, true);
-        if (this.f.getChildCount() == 1) {
-            a(0, false);
+        if (this.f861f.getChildCount() == 1) {
+            m1308a(0, false);
         }
         return a.getChildAt(0);
     }
 
-    public int a(View view) {
+    /* renamed from: a */
+    public int m1320a(View view) {
         if (view.getLayoutParams() == null) {
             view.setLayoutParams(new LayoutParams(-1, -1));
         }
-        a().addView(view);
-        if (this.f.getChildCount() == 1) {
-            a(0, false);
+        m1306a().addView(view);
+        if (this.f861f.getChildCount() == 1) {
+            m1308a(0, false);
         }
-        return this.f.getChildCount() - 1;
+        return this.f861f.getChildCount() - 1;
     }
 
     public void setIndicatorDrawable(int i) {
@@ -191,65 +209,67 @@ public class TabBarView extends FrameLayout {
     }
 
     public void setIndicatorDrawable(Drawable drawable) {
-        this.a = drawable;
+        this.f856a = drawable;
         invalidate();
     }
 
     public void setSelectionChangeListener(cs csVar) {
-        this.j = csVar;
+        this.f865j = csVar;
     }
 
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (this.a != null && this.b >= 0) {
-            b();
-            c();
-            a(canvas);
+        if (this.f856a != null && this.f857b >= 0) {
+            m1314b();
+            m1316c();
+            m1309a(canvas);
         }
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
-        if (this.a != null) {
-            a(null, false);
+        if (this.f856a != null) {
+            m1310a(null, false);
         }
     }
 
     public void setTabEnabled(boolean z) {
-        for (int i = 0; i < this.f.getCellCount(); i++) {
-            this.f.a(i).setEnabled(z);
+        for (int i = 0; i < this.f861f.getCellCount(); i++) {
+            this.f861f.mo456a(i).setEnabled(z);
         }
     }
 
-    private void a(int i, boolean z) {
-        if (this.b != i || !this.m) {
+    /* renamed from: a */
+    private void m1308a(int i, boolean z) {
+        if (this.f857b != i || !this.f868m) {
             FrameLayout e;
-            this.c = this.b;
-            if (this.b >= 0) {
-                e = e(this.b);
+            this.f858c = this.f857b;
+            if (this.f857b >= 0) {
+                e = m1318e(this.f857b);
                 e.setSelected(false);
                 e.getChildAt(0).setSelected(false);
             }
             e = null;
             if (i >= 0) {
-                e = e(i);
-                this.b = i;
+                e = m1318e(i);
+                this.f857b = i;
             }
-            a(e, z);
-            if (this.j != null) {
-                this.j.a(this.c, this.b, z);
+            m1310a(e, z);
+            if (this.f865j != null) {
+                this.f865j.mo1697a(this.f858c, this.f857b, z);
             }
         }
     }
 
-    private void a(FrameLayout frameLayout, boolean z) {
-        if (this.b < 0) {
-            this.d = null;
-            this.e = null;
+    /* renamed from: a */
+    private void m1310a(FrameLayout frameLayout, boolean z) {
+        if (this.f857b < 0) {
+            this.f859d = null;
+            this.f860e = null;
             setIndicatorCenter(0);
             setIndicatorWidth(0);
             invalidate();
-        } else if (this.a == null || getVisibility() != 0) {
+        } else if (this.f856a == null || getVisibility() != 0) {
             if (frameLayout != null) {
                 frameLayout.setSelected(true);
                 frameLayout.getChildAt(0).setSelected(true);
@@ -257,25 +277,25 @@ public class TabBarView extends FrameLayout {
             post(new cn(this, z));
         } else {
             Rect selectedTabRect = getSelectedTabRect();
-            if (!c(selectedTabRect)) {
-                if (this.f instanceof eq) {
-                    this.d = new TranslateAnimation(0.0f, 0.0f, (float) getIndicatorCenter(), (float) a(selectedTabRect));
-                    this.e = new TranslateAnimation(0.0f, 0.0f, (float) getIndicatorWidth(), (float) b(selectedTabRect));
+            if (!m1317c(selectedTabRect)) {
+                if (this.f861f instanceof eq) {
+                    this.f859d = new TranslateAnimation(0.0f, 0.0f, (float) getIndicatorCenter(), (float) m1303a(selectedTabRect));
+                    this.f860e = new TranslateAnimation(0.0f, 0.0f, (float) getIndicatorWidth(), (float) m1312b(selectedTabRect));
                 } else {
-                    this.d = new TranslateAnimation((float) getIndicatorCenter(), (float) a(selectedTabRect), 0.0f, 0.0f);
-                    this.e = new TranslateAnimation((float) getIndicatorWidth(), (float) b(selectedTabRect), 0.0f, 0.0f);
+                    this.f859d = new TranslateAnimation((float) getIndicatorCenter(), (float) m1303a(selectedTabRect), 0.0f, 0.0f);
+                    this.f860e = new TranslateAnimation((float) getIndicatorWidth(), (float) m1312b(selectedTabRect), 0.0f, 0.0f);
                 }
-                this.d.initialize(selectedTabRect.width(), selectedTabRect.height(), getWidth(), getHeight());
-                this.d.setDuration(200);
-                this.d.setFillAfter(true);
-                this.d.setFillEnabled(true);
-                this.d.setInterpolator(new AccelerateDecelerateInterpolator());
-                this.e.initialize(selectedTabRect.width(), selectedTabRect.height(), getWidth(), getHeight());
-                this.e.setDuration(200);
-                this.e.setFillAfter(true);
-                this.e.setFillEnabled(true);
-                this.e.setInterpolator(new AccelerateDecelerateInterpolator());
-                this.e.setAnimationListener(new co(this, frameLayout, z));
+                this.f859d.initialize(selectedTabRect.width(), selectedTabRect.height(), getWidth(), getHeight());
+                this.f859d.setDuration(200);
+                this.f859d.setFillAfter(true);
+                this.f859d.setFillEnabled(true);
+                this.f859d.setInterpolator(new AccelerateDecelerateInterpolator());
+                this.f860e.initialize(selectedTabRect.width(), selectedTabRect.height(), getWidth(), getHeight());
+                this.f860e.setDuration(200);
+                this.f860e.setFillAfter(true);
+                this.f860e.setFillEnabled(true);
+                this.f860e.setInterpolator(new AccelerateDecelerateInterpolator());
+                this.f860e.setAnimationListener(new co(this, frameLayout, z));
                 invalidate();
             } else if (frameLayout != null) {
                 frameLayout.setSelected(true);
@@ -285,124 +305,134 @@ public class TabBarView extends FrameLayout {
     }
 
     private Rect getSelectedTabRect() {
-        if (this.b < 0) {
+        if (this.f857b < 0) {
             return new Rect(0, 0, 0, 0);
         }
         Rect rect = new Rect();
-        UTools.getRectF(new RectF(), b(this.b), (View) this).round(rect);
+        dv.m1906a(new RectF(), m1321b(this.f857b), (View) this).round(rect);
         return rect;
     }
 
-    private int a(Rect rect) {
-        if (this.f instanceof eq) {
+    /* renamed from: a */
+    private int m1303a(Rect rect) {
+        if (this.f861f instanceof eq) {
             return rect.centerY();
         }
         return rect.centerX();
     }
 
-    private FrameLayout a() {
+    /* renamed from: a */
+    private FrameLayout m1306a() {
         View frameLayout = new FrameLayout(getContext());
         frameLayout.setOnClickListener(new cq(this));
         frameLayout.setOnTouchListener(new cr(this));
-        this.f.a(frameLayout, new LinearLayout.LayoutParams(-1, -1, 1.0f));
+        this.f861f.mo455a(frameLayout, new LinearLayout.LayoutParams(-1, -1, 1.0f));
         return frameLayout;
     }
 
-    private int a(FrameLayout frameLayout) {
-        for (int i = 0; i < this.f.getCellCount(); i++) {
-            if (this.f.a(i) == frameLayout) {
+    /* renamed from: a */
+    private int m1304a(FrameLayout frameLayout) {
+        for (int i = 0; i < this.f861f.getCellCount(); i++) {
+            if (this.f861f.mo456a(i) == frameLayout) {
                 return i;
             }
         }
         return -1;
     }
 
-    private FrameLayout e(int i) {
-        return (FrameLayout) this.f.a(i);
+    /* renamed from: e */
+    private FrameLayout m1318e(int i) {
+        return (FrameLayout) this.f861f.mo456a(i);
     }
 
-    protected void d(int i) {
+    /* renamed from: d */
+    protected void m1323d(int i) {
         setIndicatorCenter(i);
         invalidate();
     }
 
     private int getIndicatorCenter() {
-        return this.g;
+        return this.f862g;
     }
 
     private void setIndicatorCenter(int i) {
-        this.g = i;
+        this.f862g = i;
     }
 
     private int getIndicatorWidth() {
-        return this.h;
+        return this.f863h;
     }
 
     private void setIndicatorWidth(int i) {
-        this.h = i;
+        this.f863h = i;
     }
 
-    private void b() {
+    /* renamed from: b */
+    private void m1314b() {
         long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
-        if (this.d != null && !this.d.hasEnded()) {
-            if (!this.d.hasStarted()) {
-                this.d.setStartTime(currentAnimationTimeMillis);
+        if (this.f859d != null && !this.f859d.hasEnded()) {
+            if (!this.f859d.hasStarted()) {
+                this.f859d.setStartTime(currentAnimationTimeMillis);
             }
             float[] fArr = new float[]{0.0f, 0.0f};
-            this.d.getTransformation(currentAnimationTimeMillis, this.k);
-            this.k.getMatrix().mapPoints(fArr);
-            if (this.f instanceof eq) {
-                this.g = Math.round(fArr[1]);
+            this.f859d.getTransformation(currentAnimationTimeMillis, this.f866k);
+            this.f866k.getMatrix().mapPoints(fArr);
+            if (this.f861f instanceof eq) {
+                this.f862g = Math.round(fArr[1]);
             } else {
-                this.g = Math.round(fArr[0]);
+                this.f862g = Math.round(fArr[0]);
             }
             invalidate();
         }
     }
 
-    private void c() {
+    /* renamed from: c */
+    private void m1316c() {
         long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
-        if (this.e != null && !this.e.hasEnded()) {
-            if (!this.e.hasStarted()) {
-                this.e.setStartTime(currentAnimationTimeMillis);
+        if (this.f860e != null && !this.f860e.hasEnded()) {
+            if (!this.f860e.hasStarted()) {
+                this.f860e.setStartTime(currentAnimationTimeMillis);
             }
             float[] fArr = new float[]{0.0f, 0.0f};
-            this.e.getTransformation(currentAnimationTimeMillis, this.k);
-            this.k.getMatrix().mapPoints(fArr);
-            if (this.f instanceof eq) {
-                this.h = Math.round(fArr[1]);
+            this.f860e.getTransformation(currentAnimationTimeMillis, this.f866k);
+            this.f866k.getMatrix().mapPoints(fArr);
+            if (this.f861f instanceof eq) {
+                this.f863h = Math.round(fArr[1]);
             } else {
-                this.h = Math.round(fArr[0]);
+                this.f863h = Math.round(fArr[0]);
             }
             invalidate();
         }
     }
 
-    private void a(Canvas canvas) {
+    /* renamed from: a */
+    private void m1309a(Canvas canvas) {
         canvas.save();
-        if (this.f instanceof eq) {
-            this.l.set(0, this.g - (this.h / 2), getWidth(), this.g + ((this.h + 1) / 2));
+        if (this.f861f instanceof eq) {
+            this.f867l.set(0, this.f862g - (this.f863h / 2), getWidth(), this.f862g + ((this.f863h + 1) / 2));
         } else {
-            this.l.set(this.g - (this.h / 2), 0, this.g + ((this.h + 1) / 2), getHeight());
+            this.f867l.set(this.f862g - (this.f863h / 2), 0, this.f862g + ((this.f863h + 1) / 2), getHeight());
         }
-        UTools.addAnimation(canvas, this.a, this.l, this.i);
+        dv.m1911a(canvas, this.f856a, this.f867l, this.f864i);
         canvas.restore();
     }
 
-    private int b(Rect rect) {
-        if (this.f instanceof eq) {
+    /* renamed from: b */
+    private int m1312b(Rect rect) {
+        if (this.f861f instanceof eq) {
             return rect.height();
         }
         return rect.width();
     }
 
-    private boolean c(Rect rect) {
-        if (this.f instanceof eq) {
-            if (this.g == rect.centerY() && this.h == rect.height()) {
+    /* renamed from: c */
+    private boolean m1317c(Rect rect) {
+        if (this.f861f instanceof eq) {
+            if (this.f862g == rect.centerY() && this.f863h == rect.height()) {
                 return true;
             }
             return false;
-        } else if (this.g == rect.centerX() && this.h == rect.width()) {
+        } else if (this.f862g == rect.centerX() && this.f863h == rect.width()) {
             return true;
         } else {
             return false;

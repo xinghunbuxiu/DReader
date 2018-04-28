@@ -1,24 +1,17 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.view.View;
-import android.view.View.OnFocusChangeListener;
+class dz implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ he f6364a;
+    /* renamed from: b */
+    final /* synthetic */ C1287do f6365b;
 
-class dz implements OnFocusChangeListener {
-    final /* synthetic */ du a;
-
-    dz(du duVar) {
-        this.a = duVar;
+    dz(C1287do c1287do, he heVar) {
+        this.f6365b = c1287do;
+        this.f6364a = heVar;
     }
 
-    public void onFocusChange(View view, boolean z) {
-        if (z) {
-            this.a.i = true;
-            this.a.h.setVisibility(0);
-            a.a(this.a.g, 300, null);
-            a.a(this.a.h, 0.0f, 1.0f, 300, Boolean.valueOf(false), null);
-            return;
-        }
-        this.a.i = false;
-        this.a.e();
+    public void run() {
+        this.f6365b.f6350c.mo1646a(this.f6364a);
     }
 }

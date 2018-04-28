@@ -1,27 +1,31 @@
 package com.duokan.reader.ui.bookshelf;
 
 import android.view.View;
-
-import com.duokan.c.j;
+import com.duokan.core.app.AppContext;
 import com.duokan.core.ui.HatGridView;
 import com.duokan.core.ui.an;
-import com.duokan.reader.UmengManager;
-import com.duokan.reader.domain.bookshelf.aa;
-import com.duokan.reader.ui.general.jf;
+import com.duokan.reader.ReaderFeature;
+import com.duokan.reader.domain.bookshelf.C0800c;
 
 class ee implements an {
-    final /* synthetic */ ec a;
+    /* renamed from: a */
+    final /* synthetic */ ec f6379a;
 
     ee(ec ecVar) {
-        this.a = ecVar;
+        this.f6379a = ecVar;
     }
 
-    public void a(HatGridView hatGridView, View view, int i) {
-        if (i == this.a.g.size()) {
-            UmengManager.get().onEvent("V2_SHELF_CREATEGROUP", "FromArrange");
-            new jf(this.a.getContext(), this.a.getContext().getResources().getString(j.bookshelf__general_shared__new_category_name), "", new ef(this)).show();
-            return;
+    /* renamed from: a */
+    public void mo1558a(HatGridView hatGridView, View view, int i) {
+        com.duokan.reader.domain.bookshelf.an anVar = (com.duokan.reader.domain.bookshelf.an) this.f6379a.f6370b.mo509d(i);
+        if (this.f6379a.f6373e.mo1657b()) {
+            if (this.f6379a.f6373e.mo1651a(anVar)) {
+                this.f6379a.f6373e.mo1655b(anVar);
+                return;
+            }
+            this.f6379a.f6373e.mo1649a(anVar);
+        } else if (anVar instanceof C0800c) {
+            ((ReaderFeature) AppContext.getAppContext(this.f6379a.getContext()).queryFeature(ReaderFeature.class)).openBook((C0800c) anVar);
         }
-        this.a.a.a((aa) this.a.g.get(i));
     }
 }

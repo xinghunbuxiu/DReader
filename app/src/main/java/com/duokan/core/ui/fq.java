@@ -33,18 +33,18 @@ public class fq {
     }
 
     public void onFormResubmission(fr frVar, Message message, Message message2) {
-        this.mDefault.onFormResubmission(frVar.a, message, message2);
+        this.mDefault.onFormResubmission(frVar.f1261a, message, message2);
     }
 
     public void doUpdateVisitedHistory(fr frVar, String str, boolean z) {
     }
 
     public void onReceivedSslError(fr frVar, SslErrorHandler sslErrorHandler, SslError sslError) {
-        this.mDefault.onReceivedSslError(frVar.a, sslErrorHandler, sslError);
+        this.mDefault.onReceivedSslError(frVar.f1261a, sslErrorHandler, sslError);
     }
 
     public void onReceivedHttpAuthRequest(fr frVar, HttpAuthHandler httpAuthHandler, String str, String str2) {
-        this.mDefault.onReceivedHttpAuthRequest(frVar.a, httpAuthHandler, str, str2);
+        this.mDefault.onReceivedHttpAuthRequest(frVar.f1261a, httpAuthHandler, str, str2);
     }
 
     public boolean shouldOverrideKeyEvent(fr frVar, KeyEvent keyEvent) {

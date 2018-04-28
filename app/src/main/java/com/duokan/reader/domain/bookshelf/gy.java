@@ -1,57 +1,33 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.document.epub.an;
-import com.duokan.reader.domain.document.epub.b;
+import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.io.C0336a;
+import com.duokan.core.p027b.p028a.C0320a;
+import com.duokan.core.p027b.p028a.C0321b;
+import java.io.File;
 
-import java.util.ArrayList;
+class gy implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ File f3271a;
+    /* renamed from: b */
+    final /* synthetic */ int f3272b;
+    /* renamed from: c */
+    final /* synthetic */ gx f3273c;
 
-class gy implements an {
-    final /* synthetic */ fv a;
-    private final String[] b;
-    private final String[] c;
-    private final ArrayList d = new ArrayList();
+    gy(gx gxVar, File file, int i) {
+        this.f3273c = gxVar;
+        this.f3271a = file;
+        this.f3272b = i;
+    }
 
-    public gy(fv fvVar) {
-        this.a = fvVar;
-        fvVar.aT().a(fvVar.aF());
+    public void run() {
+        this.f3271a.getParentFile().mkdirs();
         try {
-            this.b = fvVar.bk();
-            this.c = fvVar.bm();
-            if (fvVar.k() && fvVar.aj()) {
-                this.d.ensureCapacity(this.b.length / 2);
-            } else {
-                this.d.ensureCapacity(this.b.length / 2);
-            }
-            for (int i = 0; i < this.b.length; i += 2) {
-                int i2 = i / 2;
-                this.d.add(new go(fvVar, this.b[i], this.b[i + 1], i2 < this.c.length ? this.c[i2] : ""));
-            }
-        } finally {
-            fvVar.aT().b(fvVar.aF());
+            C0336a.m793f(this.f3271a);
+            C0321b.m725a(this.f3273c.f3270b.f2718b, this.f3271a, new C0320a().m721a(this.f3272b).m724b(131072));
+        } catch (Throwable th) {
+            C0328a.m757c().m748a(LogLevel.ERROR, "epub-l", "fail to download the book " + this.f3273c.f3270b.f2718b, th);
         }
-    }
-
-    public int a() {
-        return this.d.size();
-    }
-
-    public b a(int i) {
-        return (b) this.d.get(i);
-    }
-
-    public int a(an anVar) {
-        if (this == anVar) {
-            return 0;
-        }
-        gy gyVar = (gy) anVar;
-        if (this.b != gyVar.b || this.c != gyVar.c) {
-            return 2;
-        }
-        for (int i = 0; i < this.d.size(); i++) {
-            if (((go) this.d.get(i)).d() != ((go) gyVar.d.get(i)).d()) {
-                return 1;
-            }
-        }
-        return 0;
     }
 }

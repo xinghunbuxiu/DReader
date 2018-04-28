@@ -2,14 +2,14 @@ package com.duokan.core.ui;
 
 import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
-
-import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.sys.UThread;
 
 class bn implements AnimationListener {
-    final /* synthetic */ bk a;
+    /* renamed from: a */
+    final /* synthetic */ bk f1026a;
 
     bn(bk bkVar) {
-        this.a = bkVar;
+        this.f1026a = bkVar;
     }
 
     public void onAnimationStart(Animation animation) {
@@ -19,6 +19,6 @@ class bn implements AnimationListener {
     }
 
     public void onAnimationEnd(Animation animation) {
-        TaskHandler.PostTask(new bo(this));
+        UThread.post(new bo(this));
     }
 }

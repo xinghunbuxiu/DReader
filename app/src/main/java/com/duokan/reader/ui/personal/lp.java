@@ -1,51 +1,21 @@
 package com.duokan.reader.ui.personal;
 
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.View.OnLongClickListener;
 
-import com.duokan.reader.domain.cloud.DkCloudStoreBook;
-import com.duokan.reader.ui.bookshelf.hn;
+class lp implements OnLongClickListener {
+    /* renamed from: a */
+    final /* synthetic */ int f8897a;
+    /* renamed from: b */
+    final /* synthetic */ ll f8898b;
 
-import java.util.LinkedList;
-import java.util.List;
-
-class lp implements hn {
-    final /* synthetic */ lo a;
-
-    lp(lo loVar) {
-        this.a = loVar;
+    lp(ll llVar, int i) {
+        this.f8898b = llVar;
+        this.f8897a = i;
     }
 
-    public int a() {
-        return 0;
-    }
-
-    public void a(String str) {
-        if (str == null || str.length() == 0) {
-            this.a.f();
-            return;
-        }
-        List<DkCloudStoreBook> a = this.a.m;
-        List linkedList = new LinkedList();
-        if (str != null && str.length() > 0) {
-            for (DkCloudStoreBook dkCloudStoreBook : a) {
-                if (this.a.a(dkCloudStoreBook, str)) {
-                    linkedList.add(dkCloudStoreBook);
-                }
-            }
-        }
-        this.a.k.a(linkedList, str);
-        this.a.e();
-    }
-
-    public View a(int i, View view, ViewGroup viewGroup) {
-        return null;
-    }
-
-    public void a(int i, View view) {
-    }
-
-    public boolean b(int i, View view) {
-        return false;
+    public boolean onLongClick(View view) {
+        this.f8898b.f8888h.mo2231c(0, this.f8897a);
+        return true;
     }
 }

@@ -1,29 +1,20 @@
 package com.duokan.reader.ui.personal;
 
-import android.text.TextUtils;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.ReaderEnv;
+import com.duokan.reader.ReaderEnv.BookshelfItemStyle;
 
-import com.duokan.reader.DkApp;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.bookshelf.fv;
-import com.duokan.reader.domain.cloud.DkCloudBookManifest;
-import com.duokan.reader.domain.cloud.ao;
-import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
-import com.duokan.reader.ui.general.be;
+class jz implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ jg f8799a;
 
-final class jz implements ao {
-    final /* synthetic */ c a;
-
-    jz(c cVar) {
-        this.a = cVar;
+    jz(jg jgVar) {
+        this.f8799a = jgVar;
     }
 
-    public void a(String str, DkCloudBookManifest dkCloudBookManifest) {
-        ((fv) this.a).a(dkCloudBookManifest, FlowChargingTransferChoice.Default.wifiOnly());
-    }
-
-    public void a(String str, String str2) {
-        if (!TextUtils.isEmpty(str2)) {
-            be.a(DkApp.get(), (CharSequence) str2, 1).show();
-        }
+    public void onClick(View view) {
+        ReaderEnv.get().setBookshelfItemStyle(ReaderEnv.get().getBookshelfItemStyle() == BookshelfItemStyle.SIMPLE ? BookshelfItemStyle.TRADITIONAL : BookshelfItemStyle.SIMPLE);
+        this.f8799a.m12047a();
     }
 }

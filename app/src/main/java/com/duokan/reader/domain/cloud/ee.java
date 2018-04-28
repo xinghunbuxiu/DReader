@@ -1,21 +1,11 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.cache.ab;
+import com.duokan.reader.domain.cloud.DkUserReadBookManager.ReadBook;
 
-class ee implements ab {
-    final /* synthetic */ ed a;
+public interface ee {
+    /* renamed from: a */
+    void mo1156a(String str);
 
-    ee(ed edVar) {
-        this.a = edVar;
-    }
-
-    public void a(int i) {
-        if (i < 1) {
-            this.a.clearItems();
-            this.a.updateInfo(null);
-        }
-        if (i < 3) {
-            this.a.replaceWithItems(this.a.queryItems());
-        }
-    }
+    /* renamed from: a */
+    void mo1157a(ReadBook[] readBookArr, boolean z, boolean z2);
 }

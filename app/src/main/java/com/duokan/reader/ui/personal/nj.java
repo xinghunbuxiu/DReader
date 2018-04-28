@@ -2,32 +2,16 @@ package com.duokan.reader.ui.personal;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.CheckBox;
-
-import com.duokan.reader.domain.cloud.hk;
 
 class nj implements OnClickListener {
-    final /* synthetic */ ng a;
+    /* renamed from: a */
+    final /* synthetic */ nh f8991a;
 
-    nj(ng ngVar) {
-        this.a = ngVar;
+    nj(nh nhVar) {
+        this.f8991a = nhVar;
     }
 
     public void onClick(View view) {
-        boolean z;
-        boolean z2 = true;
-        ng ngVar = this.a;
-        String str = hk.c;
-        if (this.a.c.isChecked()) {
-            z = false;
-        } else {
-            z = true;
-        }
-        ngVar.a(str, z);
-        CheckBox c = this.a.c;
-        if (this.a.c.isChecked()) {
-            z2 = false;
-        }
-        c.setChecked(z2);
+        this.f8991a.m12342a(1);
     }
 }

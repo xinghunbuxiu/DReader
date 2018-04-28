@@ -1,30 +1,18 @@
 package com.duokan.reader.ui.personal;
 
-import android.accounts.AccountManagerCallback;
-import android.accounts.AccountManagerFuture;
-import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.ui.account.C1249a;
 
-import com.duokan.c.j;
-import com.duokan.reader.DkApp;
-import com.duokan.reader.common.classc;
+class de implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ MiAccountProfileSettingsController f8447a;
 
-class de implements AccountManagerCallback {
-    final /* synthetic */ da a;
-
-    de(da daVar) {
-        this.a = daVar;
+    de(MiAccountProfileSettingsController miAccountProfileSettingsController) {
+        this.f8447a = miAccountProfileSettingsController;
     }
 
-    public void run(AccountManagerFuture accountManagerFuture) {
-        try {
-            this.a.a(((Bundle) accountManagerFuture.getResult()).getString("authtoken"));
-        } catch (Exception e) {
-            e.printStackTrace();
-            String str = "";
-            if (!classc.ConnectivityReceiver.b().e()) {
-                str = DkApp.get().getApplicationContext().getResources().getString(j.general__shared__network_error);
-            }
-            this.a.f.a(str);
-        }
+    public void onClick(View view) {
+        this.f8447a.b.pushHalfPageSmoothly(new C1249a(this.f8447a.getContext()), null);
     }
 }

@@ -3,23 +3,27 @@ package com.duokan.reader.domain.micloud;
 import java.util.HashMap;
 
 public class ao implements ae {
-    private static final ao a = new ao();
-    private final HashMap b = new HashMap();
+    /* renamed from: a */
+    private static final ao f5194a = new ao();
+    /* renamed from: b */
+    private final HashMap<String, HashMap<String, aq>> f5195b = new HashMap();
 
     private ao() {
     }
 
-    public static ao a() {
-        return a;
+    /* renamed from: a */
+    public static ao m8071a() {
+        return f5194a;
     }
 
-    public synchronized ad a(String str, String str2) {
+    /* renamed from: a */
+    public synchronized ad mo1479a(String str, String str2) {
         ad adVar;
         HashMap hashMap;
-        HashMap hashMap2 = (HashMap) this.b.get(str);
+        HashMap hashMap2 = (HashMap) this.f5195b.get(str);
         if (hashMap2 == null) {
             hashMap2 = new HashMap();
-            this.b.put(str, hashMap2);
+            this.f5195b.put(str, hashMap2);
             hashMap = hashMap2;
         } else {
             hashMap = hashMap2;

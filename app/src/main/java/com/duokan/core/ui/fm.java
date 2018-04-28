@@ -3,15 +3,17 @@ package com.duokan.core.ui;
 import android.webkit.WebChromeClient.CustomViewCallback;
 
 class fm implements CustomViewCallback {
-    final /* synthetic */ fo a;
-    final /* synthetic */ fl b;
+    /* renamed from: a */
+    final /* synthetic */ fo f1257a;
+    /* renamed from: b */
+    final /* synthetic */ fl f1258b;
 
     fm(fl flVar, fo foVar) {
-        this.b = flVar;
-        this.a = foVar;
+        this.f1258b = flVar;
+        this.f1257a = foVar;
     }
 
     public void onCustomViewHidden() {
-        this.a.a();
+        this.f1257a.mo530a();
     }
 }

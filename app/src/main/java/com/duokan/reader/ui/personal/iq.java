@@ -1,18 +1,21 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
+import com.duokan.reader.domain.cloud.DkUserReadBookManager.ReadBook;
+import com.duokan.reader.domain.cloud.ee;
 
-import com.duokan.core.ui.HatGridView;
-import com.duokan.core.ui.an;
+class iq implements ee {
+    /* renamed from: a */
+    final /* synthetic */ ij f8741a;
 
-class iq implements an {
-    final /* synthetic */ ip a;
-
-    iq(ip ipVar) {
-        this.a = ipVar;
+    iq(ij ijVar) {
+        this.f8741a = ijVar;
     }
 
-    public void a(HatGridView hatGridView, View view, int i) {
-        this.a.a.pushHalfPageSmoothly(new ih(this.a.getContext(), this.a.c.c(i)), null);
+    /* renamed from: a */
+    public void mo1157a(ReadBook[] readBookArr, boolean z, boolean z2) {
+    }
+
+    /* renamed from: a */
+    public void mo1156a(String str) {
     }
 }

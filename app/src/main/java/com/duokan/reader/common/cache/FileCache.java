@@ -1,10 +1,11 @@
 package com.duokan.reader.common.cache;
 
+import java.io.File;
 import java.io.Serializable;
 
-public class FileCache extends g {
+public class FileCache extends C0566g<File> {
 
-    public class CacheKey extends h implements Serializable {
+    public class CacheKey extends C0565h implements Serializable {
         static final /* synthetic */ boolean $assertionsDisabled = (!FileCache.class.desiredAssertionStatus() ? true : $assertionsDisabled);
         private static final long serialVersionUID = 1;
         public final Object mFileTag;

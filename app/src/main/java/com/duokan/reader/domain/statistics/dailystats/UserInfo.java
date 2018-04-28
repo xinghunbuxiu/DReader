@@ -1,14 +1,13 @@
 package com.duokan.reader.domain.statistics.dailystats;
 
-import org.json.JSONObject;
-
 import java.io.Serializable;
+import org.json.JSONObject;
 
 public class UserInfo implements Serializable {
     private static final long serialVersionUID = 1;
     public String deviceId;
     public String deviceType;
-    public String imei;
+    public String imeiMd5;
     public String userId;
     public String version;
 
@@ -16,7 +15,7 @@ public class UserInfo implements Serializable {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("ui", this.userId);
-            jSONObject.put("imei", this.imei);
+            jSONObject.put("imei", this.imeiMd5);
             jSONObject.put("di", this.deviceId);
             jSONObject.put("ver", this.version);
             jSONObject.put("dt", this.deviceType);

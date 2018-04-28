@@ -1,28 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.bookshelf.a;
-import com.duokan.reader.domain.bookshelf.ef;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class ta implements r {
-    final /* synthetic */ a a;
-    final /* synthetic */ ss b;
+class ta implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ sv f10963a;
 
-    ta(ss ssVar, a aVar) {
-        this.b = ssVar;
-        this.a = aVar;
+    ta(sv svVar) {
+        this.f10963a = svVar;
     }
 
-    public void a(String str) {
-        a aVar = (ef) this.a;
-        if (!str.equals(aVar.m())) {
-            aVar.e(str);
-            this.b.a.a.G().c(aVar);
-        }
-        this.b.a.a.aN();
-        this.b.a.a.aV();
-    }
-
-    public void a() {
-        this.b.a.a.aV();
+    public void onClick(View view) {
+        this.f10963a.m13563q();
+        this.f10963a.f9656a.aO();
     }
 }

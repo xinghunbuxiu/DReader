@@ -1,27 +1,30 @@
 package com.duokan.reader.domain.document.txt;
 
 import android.graphics.Rect;
-
 import com.duokan.kernel.DkBox;
 import com.duokan.kernel.txtlib.DktParserOption;
 
 public final class ab {
-    public static b a(long j) {
-        return new b(j);
+    /* renamed from: a */
+    public static C0986b m7382a(long j) {
+        return new C0986b(j);
     }
 
-    public static at a(b bVar, b bVar2) {
-        return new at(bVar, bVar2);
+    /* renamed from: a */
+    public static at m7381a(C0986b c0986b, C0986b c0986b2) {
+        return new at(c0986b, c0986b2);
     }
 
-    public static long a(b bVar) {
-        return bVar.g();
+    /* renamed from: a */
+    public static long m7379a(C0986b c0986b) {
+        return c0986b.m7539g();
     }
 
-    public static DktParserOption a(ad adVar) {
+    /* renamed from: a */
+    public static DktParserOption m7380a(ad adVar) {
         int max = Math.max(adVar.a, 20);
         int max2 = Math.max(adVar.b, 20);
-        Rect a = adVar.a();
+        Rect a = adVar.m6083a();
         DktParserOption dktParserOption = new DktParserOption();
         dktParserOption.mPageBox = new DkBox();
         dktParserOption.mPageBox.mX0 = 0.0f;

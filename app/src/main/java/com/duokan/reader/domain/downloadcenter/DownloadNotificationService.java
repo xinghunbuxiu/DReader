@@ -2,7 +2,6 @@ package com.duokan.reader.domain.downloadcenter;
 
 import android.app.IntentService;
 import android.content.Intent;
-
 import com.duokan.reader.DkApp;
 
 public class DownloadNotificationService extends IntentService {
@@ -15,6 +14,6 @@ public class DownloadNotificationService extends IntentService {
     }
 
     protected void onHandleIntent(Intent intent) {
-        DkApp.get().runWhenAppReady(new n(this, intent));
+        DkApp.get().runWhenAppReady(new C1026n(this, intent));
     }
 }

@@ -1,21 +1,22 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-import com.duokan.core.ui.t;
+class pn implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ int f10800a;
+    /* renamed from: b */
+    final /* synthetic */ pm f10801b;
 
-class pn extends t {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ pc b;
-
-    pn(pc pcVar, Context context, Runnable runnable) {
-        this.b = pcVar;
-        this.a = runnable;
-        super(context);
+    pn(pm pmVar, int i) {
+        this.f10801b = pmVar;
+        this.f10800a = i;
     }
 
-    public boolean onBack() {
-        this.a.run();
-        return true;
+    public void onClick(View view) {
+        if (this.f10801b.f10798b == null) {
+            this.f10801b.m14917a(this.f10800a);
+        }
     }
 }

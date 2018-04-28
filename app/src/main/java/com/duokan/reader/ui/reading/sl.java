@@ -1,16 +1,26 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.app.ag;
+import com.duokan.core.app.ah;
 
-class sl implements OnClickListener {
-    final /* synthetic */ si a;
+class sl implements ah {
+    /* renamed from: a */
+    final /* synthetic */ si f10942a;
 
     sl(si siVar) {
-        this.a = siVar;
+        this.f10942a = siVar;
     }
 
-    public void onClick(View view) {
-        this.a.q();
+    /* renamed from: a */
+    public void mo1562a(ag agVar) {
+        this.f10942a.bf();
+    }
+
+    /* renamed from: b */
+    public void mo1567b(ag agVar) {
+    }
+
+    /* renamed from: c */
+    public void mo1565c(ag agVar) {
     }
 }

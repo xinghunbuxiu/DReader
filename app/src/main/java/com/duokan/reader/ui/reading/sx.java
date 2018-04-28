@@ -1,13 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-class sx implements Runnable {
-    final /* synthetic */ ss a;
+import com.duokan.core.sys.IdleHandlerListener;
 
-    sx(ss ssVar) {
-        this.a = ssVar;
+class sx implements IdleHandlerListener {
+    /* renamed from: a */
+    final /* synthetic */ sw f10958a;
+
+    sx(sw swVar) {
+        this.f10958a = swVar;
     }
 
-    public void run() {
-        this.a.a.a.aV();
+    public boolean idleRun() {
+        this.f10958a.f10957a.m13562p();
+        return false;
     }
 }

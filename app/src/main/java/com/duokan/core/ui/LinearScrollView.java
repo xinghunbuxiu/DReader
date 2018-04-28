@@ -8,15 +8,23 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.MeasureSpec;
 import android.view.animation.Interpolator;
 import android.widget.LinearLayout;
+import com.duokan.core.ui.Scrollable.OverScrollMode;
+import com.duokan.core.ui.Scrollable.ScrollState;
 
 public class LinearScrollView extends LinearLayout implements Scrollable {
-    private final bj a;
-    private int b;
-    private int c;
-    private int d;
-    private int e;
+    /* renamed from: a */
+    private final bj f841a;
+    /* renamed from: b */
+    private int f842b;
+    /* renamed from: c */
+    private int f843c;
+    /* renamed from: d */
+    private int f844d;
+    /* renamed from: e */
+    private int f845e;
 
     public LinearScrollView(Context context) {
         this(context, null);
@@ -24,225 +32,233 @@ public class LinearScrollView extends LinearLayout implements Scrollable {
 
     public LinearScrollView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.b = 0;
-        this.c = 0;
-        this.d = 0;
-        this.e = 0;
+        this.f842b = 0;
+        this.f843c = 0;
+        this.f844d = 0;
+        this.f845e = 0;
         setWillNotDraw(false);
         setClipToPadding(false);
         setScrollContainer(true);
-        this.a = e();
+        this.f841a = mo1597e();
         setThumbEnabled(true);
         setHorizontalOverScrollMode(OverScrollMode.STRETCH);
         setVerticalOverScrollMode(OverScrollMode.STRETCH);
     }
 
-    public boolean b(View view, boolean z) {
-        return this.a.b(view, z);
+    /* renamed from: b */
+    public boolean m1281b(View view, boolean z) {
+        return this.f841a.m1522b(view, z);
     }
 
     public final int getContentWidth() {
-        return this.a.s();
+        return this.f841a.m1561s();
     }
 
     public final int getContentHeight() {
-        return this.a.t();
+        return this.f841a.m1562t();
     }
 
     public boolean getThumbEnabled() {
-        return this.a.u();
+        return this.f841a.m1563u();
     }
 
     public void setThumbEnabled(boolean z) {
-        this.a.c(z);
+        this.f841a.m1530c(z);
     }
 
     public boolean getSeekEnabled() {
-        return this.a.v();
+        return this.f841a.m1564v();
     }
 
     public void setSeekEnabled(boolean z) {
-        this.a.d(z);
+        this.f841a.m1538d(z);
     }
 
     public int getHorizontalThumbMarginLeft() {
-        return this.a.w();
+        return this.f841a.m1565w();
     }
 
     public int getHorizontalThumbMarginTop() {
-        return this.a.x();
+        return this.f841a.m1566x();
     }
 
     public int getHorizontalThumbMarginRight() {
-        return this.a.y();
+        return this.f841a.m1567y();
     }
 
     public int getHorizontalThumbMarginBottom() {
-        return this.a.z();
+        return this.f841a.m1568z();
     }
 
     public int getVerticalThumbMarginLeft() {
-        return this.a.A();
+        return this.f841a.m1449A();
     }
 
     public int getVerticalThumbMarginTop() {
-        return this.a.B();
+        return this.f841a.m1450B();
     }
 
     public int getVerticalThumbMarginRight() {
-        return this.a.C();
+        return this.f841a.m1451C();
     }
 
     public int getVerticalThumbMarginBottom() {
-        return this.a.D();
+        return this.f841a.m1452D();
     }
 
     public Drawable getHorizontalThumbDrawable() {
-        return this.a.E();
+        return this.f841a.m1453E();
     }
 
     public void setHorizontalThumbDrawable(Drawable drawable) {
-        this.a.a(drawable);
+        this.f841a.m1493a(drawable);
     }
 
     public Drawable getVerticalThumbDrawable() {
-        return this.a.F();
+        return this.f841a.m1454F();
     }
 
     public void setVerticalThumbDrawable(Drawable drawable) {
-        this.a.b(drawable);
+        this.f841a.m1517b(drawable);
     }
 
     public Drawable getHorizontalSeekDrawable() {
-        return this.a.G();
+        return this.f841a.m1455G();
     }
 
     public void setHorizontalSeekDrawable(Drawable drawable) {
-        this.a.c(drawable);
+        this.f841a.m1529c(drawable);
     }
 
     public Drawable getVerticalSeekDrawable() {
-        return this.a.H();
+        return this.f841a.m1456H();
     }
 
     public void setVerticalSeekDrawable(Drawable drawable) {
-        this.a.d(drawable);
+        this.f841a.m1537d(drawable);
     }
 
     public et getScrollDetector() {
-        return this.a.I();
+        return this.f841a.m1457I();
     }
 
     public final ScrollState getScrollState() {
-        return this.a.getScrollState();
+        return this.f841a.getScrollState();
     }
 
     public final int getIdleTime() {
-        return this.a.getIdleTime();
+        return this.f841a.getIdleTime();
     }
 
     public final int getScrollTime() {
-        return this.a.J();
+        return this.f841a.m1458J();
     }
 
     public int getScrollFinalX() {
-        return this.a.K();
+        return this.f841a.m1459K();
     }
 
     public int getScrollFinalY() {
-        return this.a.L();
+        return this.f841a.m1460L();
     }
 
     public final void setScrollInterpolator(Interpolator interpolator) {
-        this.a.a(interpolator);
+        this.f841a.m1496a(interpolator);
     }
 
-    public void a(View view, boolean z) {
-        this.a.a(view, z);
+    /* renamed from: a */
+    public void mo435a(View view, boolean z) {
+        this.f841a.mo435a(view, z);
     }
 
     public OverScrollMode getHorizontalOverScrollMode() {
-        return this.a.M();
+        return this.f841a.m1461M();
     }
 
     public void setHorizontalOverScrollMode(OverScrollMode overScrollMode) {
-        this.a.a(overScrollMode);
+        this.f841a.m1497a(overScrollMode);
     }
 
     public OverScrollMode getVerticalOverScrollMode() {
-        return this.a.N();
+        return this.f841a.m1462N();
     }
 
     public void setVerticalOverScrollMode(OverScrollMode overScrollMode) {
-        this.a.b(overScrollMode);
+        this.f841a.m1518b(overScrollMode);
     }
 
     public final int getMaxOverScrollWidth() {
-        return this.a.O();
+        return this.f841a.m1463O();
     }
 
     public final void setMaxOverScrollWidth(int i) {
-        this.a.c(i);
+        this.f841a.m1525c(i);
     }
 
     public final int getMaxOverScrollHeight() {
-        return this.a.getMaxOverScrollHeight();
+        return this.f841a.getMaxOverScrollHeight();
     }
 
     public final void setMaxOverScrollHeight(int i) {
-        this.a.d(i);
+        this.f841a.m1534d(i);
     }
 
     public final Rect getViewportBounds() {
-        return this.a.getViewportBounds();
+        return this.f841a.getViewportBounds();
     }
 
-    public final Rect a() {
-        return this.a.P();
+    /* renamed from: a */
+    public final Rect m1276a() {
+        return this.f841a.m1464P();
     }
 
     public void setOnContentBoundsChangedListener(cf cfVar) {
-        this.a.a(cfVar);
+        this.f841a.m1501a(cfVar);
     }
 
-    public void setOnScrollListener(OnScrollListener cgVar) {
-        this.a.a(cgVar);
+    public void setOnScrollListener(cg cgVar) {
+        this.f841a.m1502a(cgVar);
     }
 
-    public final boolean b() {
-        return this.a.Q();
+    /* renamed from: b */
+    public final boolean m1280b() {
+        return this.f841a.m1465Q();
     }
 
-    public final boolean c() {
-        return this.a.U();
+    /* renamed from: c */
+    public final boolean m1282c() {
+        return this.f841a.m1469U();
     }
 
-    public final boolean d() {
-        return this.a.V();
+    /* renamed from: d */
+    public final boolean m1283d() {
+        return this.f841a.m1470V();
     }
 
-    public final boolean a(int i) {
-        return this.a.e(i);
+    /* renamed from: a */
+    public final boolean m1279a(int i) {
+        return this.f841a.m1544e(i);
     }
 
-    public final void a(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
-        this.a.a(i, i2, i3, runnable, runnable2);
+    /* renamed from: a */
+    public final void mo434a(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
+        this.f841a.mo434a(i, i2, i3, runnable, runnable2);
     }
 
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return this.a.b(motionEvent);
+        return this.f841a.mo2419b(motionEvent);
     }
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.a.c(motionEvent);
+        return this.f841a.mo2420c(motionEvent);
     }
 
     protected void onMeasure(int i, int i2) {
         int i3;
         int i4;
         int i5 = 0;
-        this.b = i;
-        this.c = i2;
+        this.f842b = i;
+        this.f843c = i2;
         int mode = MeasureSpec.getMode(i);
         int size = MeasureSpec.getSize(i);
         int mode2 = MeasureSpec.getMode(i2);
@@ -262,130 +278,130 @@ public class LinearScrollView extends LinearLayout implements Scrollable {
             i5 = size2;
         }
         super.onMeasure(MeasureSpec.makeMeasureSpec(i3, i6), MeasureSpec.makeMeasureSpec(i5, i4));
-        this.d = getMeasuredWidth();
-        this.e = getMeasuredHeight();
+        this.f844d = getMeasuredWidth();
+        this.f845e = getMeasuredHeight();
         switch (mode) {
             case Integer.MIN_VALUE:
-                size = Math.min(this.d, size);
+                size = Math.min(this.f844d, size);
                 break;
             case 1073741824:
                 break;
             default:
-                size = this.d;
+                size = this.f844d;
                 break;
         }
         switch (mode2) {
             case Integer.MIN_VALUE:
-                size2 = Math.min(this.e, size2);
+                size2 = Math.min(this.f845e, size2);
                 break;
             case 1073741824:
                 break;
             default:
-                size2 = this.e;
+                size2 = this.f845e;
                 break;
         }
         if (getOrientation() == 0 && mode != 0) {
-            super.onMeasure(MeasureSpec.makeMeasureSpec(this.d, 1073741824), i2);
+            super.onMeasure(MeasureSpec.makeMeasureSpec(this.f844d, 1073741824), i2);
         } else if (getOrientation() == 1 && mode2 != 0) {
-            super.onMeasure(i, MeasureSpec.makeMeasureSpec(this.e, 1073741824));
+            super.onMeasure(i, MeasureSpec.makeMeasureSpec(this.f845e, 1073741824));
         }
         setMeasuredDimension(size, size2);
-        this.a.b(this.d, this.e);
+        this.f841a.m1512b(this.f844d, this.f845e);
     }
 
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.a.c();
+        this.f841a.m1523c();
     }
 
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.a.d();
+        this.f841a.m1532d();
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         if (getOrientation() == 0) {
-            super.onLayout(z, i, i2, i + this.d, i4);
+            super.onLayout(z, i, i2, i + this.f844d, i4);
         } else {
-            super.onLayout(z, i, i2, i3, i2 + this.e);
+            super.onLayout(z, i, i2, i3, i2 + this.f845e);
         }
         if (z) {
             if (getOrientation() == 0) {
                 setMaxOverScrollHeight(0);
-                setMaxOverScrollWidth(UTools.defaultClose(getContext()));
+                setMaxOverScrollWidth(dv.m1959f(getContext()));
             } else {
                 setMaxOverScrollWidth(0);
-                setMaxOverScrollHeight(UTools.getMinimumHeight(getContext()));
+                setMaxOverScrollHeight(dv.m1962g(getContext()));
             }
         }
-        this.a.a(z, i, i2, i3, i4);
+        this.f841a.m1504a(z, i, i2, i3, i4);
     }
 
     public void scrollBy(int i, int i2) {
-        this.a.c(i, i2);
+        this.f841a.m1526c(i, i2);
     }
 
     public void scrollTo(int i, int i2) {
-        this.a.d(i, i2);
+        this.f841a.m1535d(i, i2);
     }
 
     @SuppressLint({"MissingSuperCall"})
     public void draw(Canvas canvas) {
-        this.a.b(canvas);
-        this.a.c(canvas);
+        this.f841a.mo529b(canvas);
+        this.f841a.m1527c(canvas);
     }
 
     public boolean shouldDelayChildPressedState() {
-        return this.a.l();
+        return this.f841a.m1554l();
     }
 
     public void requestDisallowInterceptTouchEvent(boolean z) {
         super.requestDisallowInterceptTouchEvent(z);
-        this.a.b(z);
+        this.f841a.m1520b(z);
     }
 
     public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z) {
-        return this.a.a(view, rect, z);
+        return this.f841a.m1505a(view, rect, z);
     }
 
     public boolean isHorizontalFadingEdgeEnabled() {
-        return this.a.g();
+        return this.f841a.m1548g();
     }
 
     public boolean isHorizontalScrollBarEnabled() {
-        return this.a.h();
+        return this.f841a.m1550h();
     }
 
     public boolean isVerticalFadingEdgeEnabled() {
-        return this.a.i();
+        return this.f841a.m1551i();
     }
 
     public boolean isVerticalScrollBarEnabled() {
-        return this.a.j();
+        return this.f841a.m1552j();
     }
 
     protected int computeHorizontalScrollExtent() {
-        return this.a.m();
+        return this.f841a.m1555m();
     }
 
     protected int computeHorizontalScrollOffset() {
-        return this.a.n();
+        return this.f841a.m1556n();
     }
 
     protected int computeHorizontalScrollRange() {
-        return this.a.o();
+        return this.f841a.m1557o();
     }
 
     protected int computeVerticalScrollExtent() {
-        return this.a.p();
+        return this.f841a.m1558p();
     }
 
     protected int computeVerticalScrollOffset() {
-        return this.a.q();
+        return this.f841a.m1559q();
     }
 
     protected int computeVerticalScrollRange() {
-        return this.a.r();
+        return this.f841a.m1560r();
     }
 
     protected void measureChildWithMargins(View view, int i, int i2, int i3, int i4) {
@@ -393,13 +409,13 @@ public class LinearScrollView extends LinearLayout implements Scrollable {
         int i6;
         int i7;
         if (getOrientation() == 0 && view.getLayoutParams().width == -1) {
-            i5 = this.b;
+            i5 = this.f842b;
         } else {
             i5 = i;
         }
         if (getOrientation() == 1 && view.getLayoutParams().height == -1) {
             i6 = 0;
-            i7 = this.c;
+            i7 = this.f843c;
         } else {
             i6 = i4;
             i7 = i3;
@@ -407,7 +423,8 @@ public class LinearScrollView extends LinearLayout implements Scrollable {
         super.measureChildWithMargins(view, i5, 0, i7, i6);
     }
 
-    protected bj e() {
+    /* renamed from: e */
+    protected bj mo1597e() {
         return new bj(this);
     }
 }

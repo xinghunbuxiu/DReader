@@ -1,82 +1,43 @@
 package com.duokan.reader.ui.personal;
 
-import android.graphics.Color;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.widget.TextView;
-
-import com.duokan.c.f;
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.c.j;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.common.webservices.C0621a;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.WebSession;
+import com.duokan.reader.common.webservices.duokan.C0637k;
 import com.duokan.reader.common.webservices.duokan.DkFeedbackReply;
-import com.duokan.reader.ui.general.DkSmallFaceView;
-import com.duokan.reader.ui.general.bo;
+import com.duokan.reader.ui.general.be;
+import com.xiaomi.passport.accountmanager.MiAccountManager;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+class bq extends WebSession {
+    /* renamed from: a */
+    C0621a<Void> f8343a = new C0621a();
+    /* renamed from: b */
+    final /* synthetic */ bn f8344b;
 
-class bq extends bo {
-    final /* synthetic */ bo a;
-
-    bq(bo boVar) {
-        this.a = boVar;
+    bq(bn bnVar, C0657i c0657i) {
+        this.f8344b = bnVar;
+        super(c0657i);
     }
 
-    protected void b() {
-        this.a.b.clear();
+    protected void onSessionTry() {
+        this.f8343a = new C0637k(this, MiAccountManager.get(this.f8344b.getContext())).m2884a(this.f8344b.f8335a.f8323d, this.f8344b.f8336b.getText().toString(), this.f8344b.f8338d);
     }
 
-    protected void e(int i) {
-        this.a.a(0);
-    }
-
-    public int c() {
-        return this.a.b.size();
-    }
-
-    public Object d(int i) {
-        return this.a.b.get(i);
-    }
-
-    public View d(int i, View view, ViewGroup viewGroup) {
-        if (view == null) {
-            view = LayoutInflater.from(this.a.getContext()).inflate(h.personal__feedback_thread_reply_view, null);
+    protected void onSessionSucceeded() {
+        this.f8344b.f8337c.dismiss();
+        if (this.f8343a.b == 0) {
+            this.f8344b.dismiss();
+            be.m10286a(this.f8344b.getContext(), C0258j.personal__feedback_thread_view__succeed, 0).show();
+            this.f8344b.f8335a.m11456a(((DkFeedbackReply) this.f8344b.f8335a.f8321b.get(this.f8344b.f8335a.f8321b.size() - 1)).mPosition);
+            this.f8344b.f8335a.f8325f.mo1869a(this.f8344b.f8335a.f8324e);
+            return;
         }
-        DkFeedbackReply dkFeedbackReply = (DkFeedbackReply) d(i);
-        if (TextUtils.isEmpty(this.a.g)) {
-            this.a.g = dkFeedbackReply.mUserId;
-        }
-        DkSmallFaceView dkSmallFaceView = (DkSmallFaceView) view.findViewById(g.personal__feedback_thread_reply_view__face);
-        if (dkFeedbackReply.mUserId.equals(this.a.g)) {
-            dkSmallFaceView.setUser(i.f().h());
-        } else {
-            dkSmallFaceView.setBackgroundDrawable(this.a.getDrawable(f.general__shared__dkuser_icon_small));
-        }
-        ((TextView) view.findViewById(g.personal__feedback_thread_reply_view__nickname)).setText(dkFeedbackReply.mUserId.equals(this.a.g) ? i.f().c().f().a() : this.a.getString(j.personal__feedback_thread_view__official));
-        ((TextView) view.findViewById(g.personal__feedback_thread_reply_view__time)).setText(new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss").format(new Date(dkFeedbackReply.mDateLine * 1000)));
-        ((TextView) view.findViewById(g.personal__feedback_thread_reply_view__reply)).setText(dkFeedbackReply.mMessage);
-        view.setOnClickListener(new br(this, dkFeedbackReply));
-        return view;
+        be.m10287a(this.f8344b.getContext(), this.f8343a.c, 0).show();
     }
 
-    public View a(View view, ViewGroup viewGroup) {
-        if (view == null) {
-            return LayoutInflater.from(this.a.getContext()).inflate(h.personal__feedback_thread_empty_view, null);
-        }
-        return view;
-    }
-
-    public View c(int i, View view, ViewGroup viewGroup) {
-        if (c() == 0) {
-            return null;
-        }
-        View view2 = new View(this.a.getContext());
-        view2.setBackgroundColor(Color.parseColor("#cccccc"));
-        view2.setLayoutParams(new LayoutParams(-1, 1));
-        return view2;
+    protected void onSessionFailed() {
+        this.f8344b.f8337c.dismiss();
+        be.m10286a(this.f8344b.getContext(), C0258j.general__shared__network_error, 0).show();
     }
 }

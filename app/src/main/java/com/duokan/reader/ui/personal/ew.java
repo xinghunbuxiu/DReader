@@ -1,41 +1,29 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.domain.bookshelf.iz;
-import com.duokan.reader.domain.bookshelf.jk;
-import com.duokan.reader.domain.micloud.bj;
-import com.duokan.reader.domain.micloud.i;
+import android.text.TextUtils;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.ReaderEnv;
+import com.duokan.reader.domain.account.C0672a;
+import com.duokan.reader.domain.account.C0709k;
+import com.duokan.reader.domain.account.MiAccount;
+import com.duokan.reader.ui.general.be;
+import com.wali.live.sdk.manager.MiLiveSdkController;
 
-import java.util.ArrayList;
-import java.util.List;
+class ew implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ ev f8527a;
 
-class ew implements jk {
-    final /* synthetic */ eq a;
-
-    ew(eq eqVar) {
-        this.a = eqVar;
+    ew(ev evVar) {
+        this.f8527a = evVar;
     }
 
-    public void a() {
-        bj b = iz.a().b().b();
-        ArrayList arrayList = new ArrayList(iz.a().c());
-        List<i> f = iz.a().f();
-        ArrayList arrayList2 = new ArrayList(arrayList.size() + f.size());
-        for (i customCloudItem : f) {
-            arrayList2.add(new CustomCloudItem(customCloudItem));
+    public void run() {
+        C0672a b = C0709k.m3476a().m3502b(MiAccount.class);
+        Object miLiveUser = ReaderEnv.get().getMiLiveUser();
+        if (TextUtils.isEmpty(miLiveUser) || !miLiveUser.equals(b.mo832b())) {
+            be.m10286a(this.f8527a.f8526a.f8523a, C0258j.general__shared__login_succeed, 0).show();
+            ReaderEnv.get().setMiLiveUser(b.mo832b());
         }
-        a.a(new ex(this, arrayList, arrayList2, b), new Void[0]);
-    }
-
-    public void b() {
-        this.a.setData(new ArrayList());
-        c();
-    }
-
-    private void c() {
-        this.a.p = false;
-        if (this.a.q) {
-            this.a.q = false;
-            this.a.g();
-        }
+        MiLiveSdkController.getInstance().openContestPrepare(this.f8527a.f8526a.f8523a, null);
     }
 }

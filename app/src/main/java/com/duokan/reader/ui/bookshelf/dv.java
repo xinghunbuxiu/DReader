@@ -1,27 +1,19 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.reader.domain.bookshelf.aa;
-import com.duokan.reader.domain.bookshelf.ai;
-import com.duokan.reader.domain.bookshelf.an;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.domain.statistics.C1163a;
 
-import java.util.List;
+class dv implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ C1287do f6360a;
 
-class dv implements cy {
-    final /* synthetic */ du a;
-
-    dv(du duVar) {
-        this.a = duVar;
+    dv(C1287do c1287do) {
+        this.f6360a = c1287do;
     }
 
-    public void a(List list, Object obj, Object obj2, int i) {
-        throw new UnsupportedOperationException();
-    }
-
-    public void a(aa aaVar, Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    public void a(Object obj, int i) {
-        ai.a().a(this.a.a, (an) obj, i);
+    public void onClick(View view) {
+        C1163a.m8627k().m8655c("bookshelf_menu", "click", "wifi");
+        this.f6360a.m9502a(new jp(this.f6360a.getContext()));
     }
 }

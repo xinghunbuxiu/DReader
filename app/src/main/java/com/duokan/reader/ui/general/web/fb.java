@@ -1,33 +1,18 @@
 package com.duokan.reader.ui.general.web;
 
-import android.graphics.Rect;
-
 import com.duokan.core.sys.as;
-import com.duokan.reader.ui.general.bx;
+import com.duokan.reader.common.p036b.C0542e;
 
 class fb implements as {
-    final /* synthetic */ Rect a;
-    final /* synthetic */ String[] b;
-    final /* synthetic */ String c;
-    final /* synthetic */ fa d;
+    /* renamed from: a */
+    final /* synthetic */ ci f7820a;
 
-    fb(fa faVar, Rect rect, String[] strArr, String str) {
-        this.d = faVar;
-        this.a = rect;
-        this.b = strArr;
-        this.c = str;
+    fb(ci ciVar) {
+        this.f7820a = ciVar;
     }
 
-    public void a() {
-        int i = 0;
-        this.a.offset(0, this.d.b.pageController.mPageHeaderView == null ? 0 : this.d.b.pageController.mPageHeaderView.getHeight());
-        bx bxVar = new bx(this.d.b.pageController.getContext(), true);
-        while (i < this.b.length) {
-            bxVar.a(this.b[i]);
-            i++;
-        }
-        bxVar.a(new fc(this));
-        bxVar.a(this.a);
-        bxVar.open(new fd(this));
+    /* renamed from: a */
+    public void mo1831a() {
+        C0542e.m2411a(this.f7820a.f7581b.getContext()).m2393a(this.f7820a.f7581b.getActivity());
     }
 }

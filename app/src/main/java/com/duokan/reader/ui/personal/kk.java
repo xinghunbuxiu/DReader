@@ -1,36 +1,33 @@
 package com.duokan.reader.ui.personal;
 
-import android.text.TextUtils;
+import com.duokan.reader.domain.cloud.DkCloudPurchasedBook;
+import com.duokan.reader.domain.cloud.DkUserPurchasedBooksManager;
+import com.duokan.reader.ui.store.al;
 
-import com.duokan.c.j;
-import com.duokan.reader.common.async.a.a;
-import com.duokan.reader.ui.general.be;
+class kk implements al {
+    /* renamed from: a */
+    final /* synthetic */ DkCloudPurchasedBook f8814a;
+    /* renamed from: b */
+    final /* synthetic */ kj f8815b;
 
-class kk implements a {
-    final /* synthetic */ kj a;
-
-    kk(kj kjVar) {
-        this.a = kjVar;
+    kk(kj kjVar, DkCloudPurchasedBook dkCloudPurchasedBook) {
+        this.f8815b = kjVar;
+        this.f8814a = dkCloudPurchasedBook;
     }
 
-    public void a(Void voidR) {
-        this.a.b.dismiss();
-        be.a(this.a.e.getContext(), String.format(this.a.e.getString(j.bookshelf__shared__delete_files_num), new Object[]{Integer.valueOf(this.a.c.size())}), 1).show();
-        if (this.a.d != null) {
-            this.a.d.run();
-        }
-        this.a.e.c.a(this.a.c);
+    public void onDownloadCloudBookStarted() {
+        DkUserPurchasedBooksManager.m5029a().m5055a(this.f8814a);
     }
 
-    public void a(int i, String str) {
-        this.a.b.dismiss();
-        if (TextUtils.isEmpty(str)) {
-            be.a(this.a.e.getContext(), j.bookshelf__shared__delete_fail, 1).show();
-        } else {
-            be.a(this.a.e.getContext(), (CharSequence) str, 1).show();
+    public void onDownloadCloudBookError(String str) {
+        if (this.f8815b.f8813b.f8811b.f8227e == this.f8815b.f8813b.f8810a) {
+            this.f8815b.f8813b.f8811b.f8226d.setEnabled(true);
         }
-        if (this.a.d != null) {
-            this.a.d.run();
+    }
+
+    public void onDownloadCloudBookCanceled() {
+        if (this.f8815b.f8813b.f8811b.f8227e == this.f8815b.f8813b.f8810a) {
+            this.f8815b.f8813b.f8811b.f8226d.setEnabled(true);
         }
     }
 }

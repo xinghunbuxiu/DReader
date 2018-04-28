@@ -1,16 +1,16 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.bookshelf.jn;
-import com.duokan.reader.domain.bookshelf.jo;
+class qx implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ qt f10880a;
 
-class qx implements jn {
-    final /* synthetic */ qh a;
-
-    qx(qh qhVar) {
-        this.a = qhVar;
+    qx(qt qtVar) {
+        this.f10880a = qtVar;
     }
 
-    public void a(String str, jo joVar) {
-        this.a.runAfterActive(new qy(this, str, this, joVar));
+    public void run() {
+        if (!this.f10880a.f10873a.f9293q && this.f10880a.f10873a.f9270J != null) {
+            this.f10880a.f10873a.f9270J.mo2379j();
+        }
     }
 }

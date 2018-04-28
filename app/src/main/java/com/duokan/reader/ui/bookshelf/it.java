@@ -4,13 +4,18 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 class it implements OnClickListener {
-    final /* synthetic */ ir a;
+    /* renamed from: a */
+    final /* synthetic */ je f6637a;
+    /* renamed from: b */
+    final /* synthetic */ ie f6638b;
 
-    it(ir irVar) {
-        this.a = irVar;
+    it(ie ieVar, je jeVar) {
+        this.f6638b = ieVar;
+        this.f6637a = jeVar;
     }
 
     public void onClick(View view) {
-        this.a.requestBack();
+        this.f6637a.requestBack();
+        this.f6638b.m9849a();
     }
 }

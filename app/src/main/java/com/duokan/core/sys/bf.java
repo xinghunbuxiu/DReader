@@ -1,11 +1,13 @@
 package com.duokan.core.sys;
 
 class bf {
-    public av a;
-    public String b;
+    /* renamed from: a */
+    public av f698a;
+    /* renamed from: b */
+    public String f699b;
 
     private bf() {
-        this.a = null;
-        this.b = null;
+        this.f698a = null;
+        this.f699b = null;
     }
 }

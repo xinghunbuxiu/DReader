@@ -1,26 +1,15 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+class ug implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ uf f11008a;
 
-import com.duokan.core.sys.af;
-import com.duokan.reader.domain.bookshelf.c;
-
-class ug implements OnClickListener {
-    final /* synthetic */ ud a;
-
-    ug(ud udVar) {
-        this.a = udVar;
+    ug(uf ufVar) {
+        this.f11008a = ufVar;
     }
 
-    public void onClick(View view) {
-        c G = this.a.a.G();
-        this.a.d.setSelected(!view.isSelected());
-        if (this.a.d.isSelected()) {
-            G.a(new af(Boolean.valueOf(true)));
-        } else {
-            G.a(new af(Boolean.valueOf(false)));
-        }
-        G.aL();
+    public void run() {
+        this.f11008a.f11007a.f9677h = false;
+        this.f11008a.f11007a.f9675f.az();
     }
 }

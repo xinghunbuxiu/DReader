@@ -1,24 +1,21 @@
 package com.duokan.reader.ui.personal;
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import java.util.Comparator;
 
-import com.duokan.c.h;
+class es implements Comparator<CustomCloudItem> {
+    /* renamed from: a */
+    final /* synthetic */ er f8521a;
 
-class es extends av {
-    final /* synthetic */ eq a;
-
-    es(eq eqVar, Context context) {
-        this.a = eqVar;
-        super(context);
+    es(er erVar) {
+        this.f8521a = erVar;
     }
 
-    public View a(View view, ViewGroup viewGroup) {
-        if (this.a.a.c() == 0) {
-            return this.a.a.a(view, viewGroup);
-        }
-        return LayoutInflater.from(this.a.getContext()).inflate(h.personal__search_empty_view, viewGroup, false);
+    public /* synthetic */ int compare(Object obj, Object obj2) {
+        return m11771a((CustomCloudItem) obj, (CustomCloudItem) obj2);
+    }
+
+    /* renamed from: a */
+    public int m11771a(CustomCloudItem customCloudItem, CustomCloudItem customCloudItem2) {
+        return Long.valueOf(customCloudItem.m11344f()).compareTo(Long.valueOf(customCloudItem.m11344f())) * -1;
     }
 }

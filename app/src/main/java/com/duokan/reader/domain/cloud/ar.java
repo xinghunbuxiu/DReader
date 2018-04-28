@@ -1,11 +1,17 @@
 package com.duokan.reader.domain.cloud;
 
-public interface ar {
-    void a(DkCloudReadingInfo dkCloudReadingInfo, DkCloudReadingInfo dkCloudReadingInfo2, String str);
+import com.duokan.reader.domain.cloud.DkSharedStorageManager.SharedKey;
 
-    void a(DkCloudReadingInfo dkCloudReadingInfo, String str, String str2);
+class ar implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ ap f3703a;
 
-    void b(DkCloudReadingInfo dkCloudReadingInfo, DkCloudReadingInfo dkCloudReadingInfo2, String str);
+    ar(ap apVar) {
+        this.f3703a = apVar;
+    }
 
-    void b(DkCloudReadingInfo dkCloudReadingInfo, String str, String str2);
+    public void run() {
+        this.f3703a.f3697c.m3494a(this.f3703a.f3698d);
+        DkSharedStorageManager.m5016a().m5025a(this.f3703a, SharedKey.USER_FAV_COUNT);
+    }
 }

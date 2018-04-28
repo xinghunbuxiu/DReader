@@ -4,14 +4,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 class aa implements OnClickListener {
-    final /* synthetic */ SearchController a;
+    /* renamed from: a */
+    final /* synthetic */ SearchController f7566a;
 
     aa(SearchController searchController) {
-        this.a = searchController;
+        this.f7566a = searchController;
     }
 
     public void onClick(View view) {
-        this.a.mLocalSearchLoadTime = this.a.mLocalSearchLoadTime + 1;
-        this.a.refreshView();
+        this.f7566a.mEditText.getText().clear();
     }
 }

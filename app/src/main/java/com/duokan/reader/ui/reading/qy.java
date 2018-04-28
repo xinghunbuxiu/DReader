@@ -1,23 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.AIdleOperation;
-import com.duokan.reader.domain.bookshelf.jn;
-import com.duokan.reader.domain.bookshelf.jo;
+import com.duokan.reader.domain.bookshelf.C0798a;
+import com.duokan.reader.domain.bookshelf.C0837w;
 
-class qy implements Runnable {
-    final /* synthetic */ String a;
-    final /* synthetic */ jn b;
-    final /* synthetic */ jo c;
-    final /* synthetic */ qx d;
+class qy implements C0837w {
+    /* renamed from: a */
+    final /* synthetic */ qr f10881a;
 
-    qy(qx qxVar, String str, jn jnVar, jo joVar) {
-        this.d = qxVar;
-        this.a = str;
-        this.b = jnVar;
-        this.c = joVar;
+    qy(qr qrVar) {
+        this.f10881a = qrVar;
     }
 
-    public void run() {
-        AIdleOperation.addIdleStatus(new qz(this));
+    /* renamed from: a */
+    public void mo2474a(C0798a[] c0798aArr) {
+        this.f10881a.f9281e.getShowingDocPresenter().setAnnotations(this.f10881a.m12849n().as());
     }
 }

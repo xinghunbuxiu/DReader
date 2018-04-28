@@ -12,230 +12,316 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
-
-import com.duokan.core.ui.UTools;
-
-import org.apache.http.HttpStatus;
-
+import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.ui.dv;
+import com.duokan.reader.common.bitmap.C0544a;
 import java.lang.ref.WeakReference;
 import java.util.Collections;
 import java.util.List;
+import org.apache.http.HttpStatus;
 
 public abstract class as extends Drawable {
-    static final /* synthetic */ boolean b = (!as.class.desiredAssertionStatus());
-    private static Handler c = new Handler(Looper.getMainLooper());
-    private static WeakReference d = new WeakReference(null);
-    private static Bitmap e = null;
-    protected final Paint a = new Paint();
-    private int f = 0;
-    private int g = 0;
-    private Rect h = new Rect();
-    private int i = 0;
-    private boolean j = false;
+    /* renamed from: b */
+    static final /* synthetic */ boolean f4343b = (!as.class.desiredAssertionStatus());
+    /* renamed from: c */
+    private static Handler f4344c = new Handler(Looper.getMainLooper());
+    /* renamed from: d */
+    private static WeakReference<Drawable> f4345d = new WeakReference(null);
+    /* renamed from: e */
+    private static Bitmap f4346e = null;
+    /* renamed from: a */
+    protected final Paint f4347a = new Paint();
+    /* renamed from: f */
+    private int f4348f = 0;
+    /* renamed from: g */
+    private int f4349g = 0;
+    /* renamed from: h */
+    private Rect f4350h = new Rect();
+    /* renamed from: i */
+    private int f4351i = 0;
+    /* renamed from: j */
+    private boolean f4352j = false;
 
-    public abstract Rect A();
+    /* renamed from: A */
+    public abstract Rect mo1280A();
 
-    public abstract int B();
+    /* renamed from: B */
+    public abstract int mo1281B();
 
-    public abstract boolean E();
+    /* renamed from: E */
+    public abstract boolean mo1282E();
 
-    public abstract boolean F();
+    /* renamed from: F */
+    public abstract boolean mo1283F();
 
-    public abstract boolean G();
+    /* renamed from: G */
+    public abstract boolean mo1284G();
 
-    public abstract void H();
+    /* renamed from: H */
+    public abstract void mo1285H();
 
-    public abstract String I();
+    /* renamed from: I */
+    public abstract String mo1286I();
 
-    public abstract String J();
+    /* renamed from: J */
+    public abstract String mo1287J();
 
-    public abstract String K();
+    /* renamed from: N */
+    protected abstract void mo1288N();
 
-    protected abstract void O();
+    /* renamed from: a */
+    public abstract int mo1289a(Point point, int i);
 
-    public abstract int a(Point point, int i);
+    /* renamed from: a */
+    public abstract int mo1290a(bb bbVar);
 
-    public abstract int a(bb bbVar);
+    /* renamed from: a */
+    public abstract Rect mo1291a(au auVar);
 
-    public abstract Rect a(au auVar);
+    /* renamed from: a */
+    public abstract ae mo1292a(Point point);
 
-    public abstract ae a(Point point);
+    /* renamed from: a */
+    public abstract bb mo1293a(Point point, Point point2);
 
-    public abstract bb a(Point point, Point point2);
+    /* renamed from: a */
+    public abstract void mo1296a(C0923m c0923m);
 
-    public abstract void a(m mVar);
+    /* renamed from: a */
+    public abstract void mo1297a(Runnable runnable, Runnable runnable2);
 
-    public abstract void a(Runnable runnable, Runnable runnable2);
+    /* renamed from: a */
+    public abstract void mo1298a(boolean z);
 
-    public abstract void a(boolean z);
+    /* renamed from: b */
+    protected abstract int mo1300b(Canvas canvas, long j);
 
-    protected abstract int b(Canvas canvas, long j);
+    /* renamed from: b */
+    public abstract Rect mo1301b(Rect rect);
 
-    public abstract Rect b(Rect rect);
+    /* renamed from: b */
+    public abstract bb mo1302b(Point point);
 
-    public abstract bb b(Point point);
+    /* renamed from: b */
+    public abstract String mo1303b(bb bbVar);
 
-    public abstract String b(bb bbVar);
+    /* renamed from: c */
+    public abstract int mo1306c(Point point);
 
-    public abstract int c(Point point);
+    /* renamed from: c */
+    public abstract Rect mo1307c(Rect rect);
 
-    public abstract Rect c(Rect rect);
+    /* renamed from: c */
+    public abstract af mo1308c(int i);
 
-    public abstract af c(int i);
+    /* renamed from: c */
+    public abstract String mo1309c(bb bbVar);
 
-    public abstract String c(bb bbVar);
+    /* renamed from: d */
+    public abstract int mo1310d(Point point);
 
-    public abstract int d(Point point);
+    /* renamed from: d */
+    public abstract Rect mo1311d(bb bbVar);
 
-    public abstract Rect d(bb bbVar);
+    /* renamed from: d */
+    public abstract aw mo1312d(int i);
 
-    public abstract aw d(int i);
+    /* renamed from: e */
+    public abstract int mo1314e(Point point);
 
-    public abstract int e(Point point);
+    /* renamed from: e */
+    public abstract ab mo1315e(int i);
 
-    public abstract ab e(int i);
+    /* renamed from: e */
+    public abstract Rect[] mo1316e(bb bbVar);
 
-    public abstract Rect[] e(bb bbVar);
+    /* renamed from: f */
+    public abstract int mo1317f(Point point);
 
-    public abstract int f(Point point);
+    /* renamed from: f */
+    public abstract Point mo1318f(bb bbVar);
 
-    public abstract Point f(bb bbVar);
+    /* renamed from: f */
+    public abstract ah mo1319f(int i);
 
-    public abstract ah f(int i);
+    /* renamed from: g */
+    public abstract int mo1320g(Point point);
 
-    public abstract int g(Point point);
+    /* renamed from: g */
+    public abstract Point mo1321g(bb bbVar);
 
-    public abstract Point g(bb bbVar);
+    /* renamed from: g */
+    public abstract Rect mo1322g(int i);
 
-    public abstract Rect g(int i);
+    /* renamed from: h */
+    public abstract Rect mo1325h(int i);
 
-    public abstract Rect h(int i);
+    /* renamed from: i */
+    public abstract Rect mo1326i(int i);
 
-    public abstract Rect i(int i);
+    /* renamed from: j */
+    public abstract long mo1327j();
 
-    public abstract long j();
+    /* renamed from: j */
+    public abstract Rect mo1328j(int i);
 
-    public abstract Rect j(int i);
+    /* renamed from: k */
+    public abstract ac mo1329k(int i);
 
-    public abstract ac k(int i);
+    /* renamed from: k */
+    public abstract boolean mo1330k();
 
-    public abstract boolean k();
+    /* renamed from: l */
+    public abstract Rect mo1331l(int i);
 
-    public abstract Rect l(int i);
+    /* renamed from: l */
+    public abstract ak mo1332l();
 
-    public abstract ak l();
+    /* renamed from: m */
+    public abstract Rect mo1333m(int i);
 
-    public abstract Rect m(int i);
+    /* renamed from: m */
+    public abstract bb mo1334m();
 
-    public abstract bb m();
+    /* renamed from: n */
+    public abstract aj mo1335n(int i);
 
-    public abstract aj n(int i);
+    /* renamed from: n */
+    public abstract C0897d[] mo1336n();
 
-    public abstract d[] n();
+    /* renamed from: o */
+    public abstract Rect mo1337o(int i);
 
-    public abstract Rect o(int i);
+    /* renamed from: o */
+    public abstract CharSequence mo1338o();
 
-    public abstract CharSequence o();
+    /* renamed from: p */
+    public abstract Rect mo1339p(int i);
 
-    public abstract Rect p(int i);
+    /* renamed from: p */
+    public abstract C0917k mo1340p();
 
-    public abstract k p();
+    /* renamed from: q */
+    public abstract ad mo1341q(int i);
 
-    public abstract ad q(int i);
+    /* renamed from: q */
+    public abstract C0923m mo1342q();
 
-    public abstract m q();
+    /* renamed from: r */
+    public abstract int mo1343r();
 
-    public abstract int r();
+    /* renamed from: r */
+    public abstract Rect mo1344r(int i);
 
-    public abstract Rect r(int i);
+    /* renamed from: s */
+    public abstract int mo1345s();
 
-    public abstract int s();
+    /* renamed from: s */
+    public abstract ax mo1346s(int i);
 
-    public abstract ax s(int i);
+    /* renamed from: t */
+    public abstract int mo1347t();
 
-    public abstract int t();
+    /* renamed from: t */
+    public abstract Rect mo1348t(int i);
 
-    public abstract Rect t(int i);
+    /* renamed from: u */
+    public abstract int mo1349u();
 
-    public abstract int u();
+    /* renamed from: u */
+    public abstract Rect mo1350u(int i);
 
-    public abstract Rect u(int i);
+    /* renamed from: v */
+    public abstract int mo1351v();
 
-    public abstract int v();
+    /* renamed from: v */
+    public abstract int mo1352v(int i);
 
-    public abstract int v(int i);
+    /* renamed from: w */
+    public abstract int mo1353w();
 
-    public abstract int w();
+    /* renamed from: x */
+    public abstract int mo1354x();
 
-    public abstract int x();
+    /* renamed from: y */
+    public abstract int mo1355y();
 
-    public abstract int y();
+    /* renamed from: z */
+    public abstract Rect mo1356z();
 
-    public abstract Rect z();
-
-    public int f() {
-        return this.f;
+    /* renamed from: f */
+    public int m6141f() {
+        return this.f4348f;
     }
 
-    public void a(int i) {
-        this.f = i;
+    /* renamed from: a */
+    public void m6115a(int i) {
+        this.f4348f = i;
     }
 
-    public int g() {
-        return this.g;
+    /* renamed from: g */
+    public int m6145g() {
+        return this.f4349g;
     }
 
-    public void b(int i) {
-        this.g = i;
+    /* renamed from: b */
+    public void m6129b(int i) {
+        this.f4349g = i;
     }
 
-    public Rect h() {
-        return this.h;
+    /* renamed from: h */
+    public Rect m6149h() {
+        return this.f4350h;
     }
 
-    public void a(Rect rect) {
-        this.h.set(rect);
-        d(this.h);
+    /* renamed from: a */
+    public void m6120a(Rect rect) {
+        this.f4350h.set(rect);
+        mo1313d(this.f4350h);
     }
 
-    public int i() {
-        return this.i;
+    /* renamed from: i */
+    public int m6151i() {
+        return this.f4351i;
     }
 
-    public final boolean C() {
-        return this.j;
+    /* renamed from: C */
+    public final boolean m6098C() {
+        return this.f4352j;
     }
 
-    public List D() {
+    /* renamed from: D */
+    public List<String> mo1456D() {
         return Collections.emptyList();
     }
 
-    public final void a(Canvas canvas, long j) {
-        this.i = 0;
-        this.j = false;
-        if (!F() && !q().o) {
+    /* renamed from: a */
+    public final void m6117a(Canvas canvas, long j) {
+        this.f4351i = 0;
+        this.f4352j = false;
+        if (!mo1283F() && !mo1342q().f4367o) {
             canvas.save();
             canvas.clipRect(getBounds());
             canvas.translate((float) getBounds().left, (float) getBounds().top);
-            m q = q();
-            this.a.setColor(q.e == 0 ? Color.rgb(HttpStatus.SC_PROCESSING, HttpStatus.SC_PROCESSING, HttpStatus.SC_PROCESSING) : q.e);
-            this.a.setSubpixelText(true);
-            this.a.setAntiAlias(true);
-            this.i = b(canvas, j);
+            C0923m q = mo1342q();
+            this.f4347a.setColor(q.f4357e == 0 ? Color.rgb(HttpStatus.SC_PROCESSING, HttpStatus.SC_PROCESSING, HttpStatus.SC_PROCESSING) : q.f4357e);
+            this.f4347a.setSubpixelText(true);
+            this.f4347a.setAntiAlias(true);
+            this.f4351i = mo1300b(canvas, j);
             canvas.restore();
         }
     }
 
     public int getIntrinsicWidth() {
-        return p().a;
+        return mo1340p().f4330a;
     }
 
     public int getIntrinsicHeight() {
-        return p().b;
+        return mo1340p().f4331b;
     }
 
     public final void draw(Canvas canvas) {
-        a(canvas, 0);
+        m6117a(canvas, 0);
     }
 
     public int getOpacity() {
@@ -250,20 +336,22 @@ public abstract class as extends Drawable {
 
     public void invalidateSelf() {
         super.invalidateSelf();
-        this.j = true;
+        this.f4352j = true;
     }
 
-    protected void d(Rect rect) {
+    /* renamed from: d */
+    protected void mo1313d(Rect rect) {
     }
 
-    protected void a(Canvas canvas) {
-        a.c().b(N());
-        int i = p().a;
-        int i2 = p().b;
-        Drawable drawable = q().a;
-        if (p().c()) {
+    /* renamed from: a */
+    protected void mo1376a(Canvas canvas) {
+        C0328a.m757c().m764b(m6108M());
+        int i = mo1340p().f4330a;
+        int i2 = mo1340p().f4331b;
+        Drawable drawable = mo1342q().f4353a;
+        if (mo1340p().mo1274c()) {
             canvas.drawColor(-1);
-        } else if (p().e) {
+        } else if (mo1340p().f4334e) {
             canvas.drawColor(0);
         } else if (drawable != null) {
             drawable.setBounds(0, 0, i, i2);
@@ -271,70 +359,73 @@ public abstract class as extends Drawable {
         } else {
             canvas.drawColor(0);
         }
-        this.i = 2;
+        this.f4351i = 2;
         invalidateSelf();
     }
 
-    protected Bitmap L() {
-        return e;
+    /* renamed from: K */
+    protected Bitmap m6106K() {
+        return f4346e;
     }
 
-    protected boolean M() {
-        a.c().b(N());
-        Drawable drawable = (Drawable) d.get();
-        if (p().c()) {
-            if (drawable == null && e == null) {
+    /* renamed from: L */
+    protected boolean m6107L() {
+        C0328a.m757c().m764b(m6108M());
+        Drawable drawable = (Drawable) f4345d.get();
+        if (mo1340p().mo1274c()) {
+            if (drawable == null && f4346e == null) {
                 return false;
             }
-            if (e != null) {
-                synchronized (e) {
-                    b();
+            if (f4346e != null) {
+                synchronized (f4346e) {
+                    mo1305b();
                 }
             } else {
-                b();
+                mo1305b();
             }
             return true;
-        } else if (!q().p) {
-            int i = p().a;
-            int i2 = p().b;
-            if (drawable == q().a && e != null && e.getWidth() == i && e.getHeight() == i2) {
+        } else if (!mo1342q().f4368p) {
+            int i = mo1340p().f4330a;
+            int i2 = mo1340p().f4331b;
+            if (drawable == mo1342q().f4353a && f4346e != null && f4346e.getWidth() == i && f4346e.getHeight() == i2) {
                 return false;
             }
-            if (e != null) {
-                synchronized (e) {
-                    a();
+            if (f4346e != null) {
+                synchronized (f4346e) {
+                    mo1299a();
                 }
             } else {
-                a();
+                mo1299a();
             }
             return true;
-        } else if (drawable == null && e == null) {
+        } else if (drawable == null && f4346e == null) {
             return false;
         } else {
-            if (e != null) {
-                synchronized (e) {
-                    b();
+            if (f4346e != null) {
+                synchronized (f4346e) {
+                    mo1305b();
                 }
             } else {
-                b();
+                mo1305b();
             }
             return true;
         }
     }
 
-    private void a() {
-        if (b || e == null || Thread.holdsLock(e)) {
-            b();
-            int i = p().a;
-            int i2 = p().b;
-            Drawable drawable = q().a;
+    /* renamed from: a */
+    private void mo1299a() {
+        if (f4343b || f4346e == null || Thread.holdsLock(f4346e)) {
+            mo1305b();
+            int i = mo1340p().f4330a;
+            int i2 = mo1340p().f4331b;
+            Drawable drawable = mo1342q().f4353a;
             if (drawable != null) {
-                Bitmap c = com.duokan.reader.common.bitmap.a.c(i, i2, Config.RGB_565);
+                Bitmap c = C0544a.m2447c(i, i2, Config.RGB_565);
                 Canvas canvas = new Canvas(c);
                 drawable.setBounds(0, 0, i, i2);
                 drawable.draw(canvas);
-                d = new WeakReference(drawable);
-                e = c;
+                f4345d = new WeakReference(drawable);
+                f4346e = c;
                 return;
             }
             return;
@@ -342,43 +433,48 @@ public abstract class as extends Drawable {
         throw new AssertionError();
     }
 
-    private void b() {
-        if (b || e == null || Thread.holdsLock(e)) {
-            if (e != null) {
-                e.recycle();
-                e = null;
+    /* renamed from: b */
+    private void mo1305b() {
+        if (f4343b || f4346e == null || Thread.holdsLock(f4346e)) {
+            if (f4346e != null) {
+                f4346e.recycle();
+                f4346e = null;
             }
-            d = new WeakReference(null);
+            f4345d = new WeakReference(null);
             return;
         }
         throw new AssertionError();
     }
 
-    protected void a(Canvas canvas, String str, int i, int i2, Paint paint) {
-        k p = p();
-        RectF rectF = (RectF) UTools.h.getRect();
+    /* renamed from: a */
+    protected void m6118a(Canvas canvas, String str, int i, int i2, Paint paint) {
+        C0917k p = mo1340p();
+        RectF rectF = (RectF) dv.f1199h.addAnimation();
         if (i == 3) {
-            rectF.set((float) p.c.left, 0.0f, (float) Math.min(getBounds().width() - p.c.right, p.c.left + i2), (float) p.c.top);
+            rectF.set((float) p.f4332c.left, 0.0f, (float) Math.min(getBounds().width() - p.f4332c.right, p.f4332c.left + i2), (float) p.f4332c.top);
         } else {
-            rectF.set((float) Math.max((getBounds().width() - p.c.right) - i2, p.c.left), 0.0f, (float) (getBounds().width() - p.c.right), (float) p.c.top);
+            rectF.set((float) Math.max((getBounds().width() - p.f4332c.right) - i2, p.f4332c.left), 0.0f, (float) (getBounds().width() - p.f4332c.right), (float) p.f4332c.top);
         }
-        UTools.addAnimation(canvas, str, rectF, i | 80, paint);
-        UTools.h.getRect(rectF);
+        dv.m1914a(canvas, str, rectF, i | 80, paint);
+        dv.f1199h.clearAnimation(rectF);
     }
 
-    protected void a(Canvas canvas, String str, int i, Paint paint) {
-        k p = p();
-        Rect rect = (Rect) UTools.g.getRect();
-        rect.set(p.c.left, getBounds().height() - p.c.bottom, getBounds().width() - p.c.right, (getBounds().height() - p.c.bottom) + q().f);
-        UTools.addAnimation(canvas, str, rect, i | 16, paint);
-        UTools.g.getRect(rect);
+    /* renamed from: a */
+    protected void m6119a(Canvas canvas, String str, int i, Paint paint) {
+        C0917k p = mo1340p();
+        Rect rect = (Rect) dv.f1198g.addAnimation();
+        rect.set(p.f4332c.left, getBounds().height() - p.f4332c.bottom, getBounds().width() - p.f4332c.right, (getBounds().height() - p.f4332c.bottom) + mo1342q().f4358f);
+        dv.m1913a(canvas, str, rect, i | 16, paint);
+        dv.f1198g.clearAnimation(rect);
     }
 
-    protected void a(Runnable runnable) {
-        c.post(runnable);
+    /* renamed from: a */
+    protected void m6122a(Runnable runnable) {
+        f4344c.post(runnable);
     }
 
-    protected boolean N() {
+    /* renamed from: M */
+    protected boolean m6108M() {
         return Thread.currentThread() == Looper.getMainLooper().getThread();
     }
 }

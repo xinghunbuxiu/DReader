@@ -8,5 +8,6 @@ public interface BitmapsRecycler {
         LowMemory
     }
 
-    void a(RecycleReason recycleReason);
+    /* renamed from: a */
+    void mo1802a(RecycleReason recycleReason);
 }

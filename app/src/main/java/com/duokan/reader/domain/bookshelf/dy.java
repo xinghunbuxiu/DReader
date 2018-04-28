@@ -1,22 +1,18 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.b;
+import com.duokan.reader.domain.account.al;
 
-class dy implements b {
-    final /* synthetic */ dx a;
+class dy {
+    /* renamed from: a */
+    public final al f3071a;
+    /* renamed from: b */
+    public final jx f3072b;
+    /* renamed from: c */
+    public final dz f3073c;
 
-    dy(dx dxVar) {
-        this.a = dxVar;
-    }
-
-    public void a(a aVar) {
-        this.a.d.c = new ab(aVar);
-        this.a.d.a(this.a.b, this.a.c);
-    }
-
-    public void a(a aVar, String str) {
-        this.a.c.a("");
+    public dy(al alVar, jx jxVar, dz dzVar) {
+        this.f3071a = alVar;
+        this.f3072b = jxVar;
+        this.f3073c = dzVar;
     }
 }

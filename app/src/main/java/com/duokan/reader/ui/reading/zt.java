@@ -1,20 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.ah;
-import com.duokan.reader.domain.bookshelf.ej;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class zt implements Runnable {
-    final /* synthetic */ aaq a;
-    final /* synthetic */ ej b;
-    final /* synthetic */ zo c;
+class zt implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ze f11279a;
 
-    zt(zo zoVar, aaq com_duokan_reader_ui_reading_aaq, ej ejVar) {
-        this.c = zoVar;
-        this.a = com_duokan_reader_ui_reading_aaq;
-        this.b = ejVar;
+    zt(ze zeVar) {
+        this.f11279a = zeVar;
     }
 
-    public void run() {
-        ah.future(new zu(this));
+    public void onClick(View view) {
+        this.f11279a.f11222D.put("Action2", "COPY");
+        this.f11279a.f11224F.mo2212e();
     }
 }

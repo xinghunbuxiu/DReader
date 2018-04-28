@@ -1,13 +1,14 @@
 package com.duokan.core.ui;
 
 class ca implements Runnable {
-    final /* synthetic */ PullDownRefreshView a;
+    /* renamed from: a */
+    final /* synthetic */ PullDownRefreshView f1063a;
 
     ca(PullDownRefreshView pullDownRefreshView) {
-        this.a = pullDownRefreshView;
+        this.f1063a = pullDownRefreshView;
     }
 
     public void run() {
-        this.a.a();
+        this.f1063a.m1286a();
     }
 }

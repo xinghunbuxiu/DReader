@@ -1,48 +1,20 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.widget.FrameLayout;
+import com.duokan.reader.ui.general.cx;
 
-class kc extends FrameLayout {
-    jv a;
-    final /* synthetic */ jz b;
+class kc implements cx {
+    /* renamed from: a */
+    final /* synthetic */ jz f10489a;
+    /* renamed from: b */
+    final /* synthetic */ kb f10490b;
 
-    private kc(jz jzVar, Context context) {
-        this.b = jzVar;
-        super(context);
-        this.a = null;
-        setWillNotDraw(false);
+    kc(kb kbVar, jz jzVar) {
+        this.f10490b = kbVar;
+        this.f10489a = jzVar;
     }
 
-    protected void onDraw(Canvas canvas) {
-        int i = 0;
-        super.onDraw(canvas);
-        jv b = GifFrameLoader.a().b(this.b.f, this.b.c, this.b.e.width(), this.b.e.height());
-        if (b != null) {
-            b.d = FrameStatus.SHOW;
-            canvas.drawBitmap(b.b, null, new Rect(0, 0, getWidth(), getHeight()), null);
-            if (!(this.a == b || this.a == null)) {
-                int i2 = b.a + 1;
-                if (i2 < this.b.f.a()) {
-                    i = i2;
-                }
-                this.a.a = i;
-                this.a.d = FrameStatus.DIRTY;
-            }
-            this.a = b;
-        } else if (this.a != null && this.a.d == FrameStatus.SHOW) {
-            canvas.drawBitmap(this.a.b, null, new Rect(0, 0, getWidth(), getHeight()), null);
-        }
-    }
-
-    protected void onMeasure(int i, int i2) {
-        int size = MeasureSpec.getSize(i);
-        int size2 = MeasureSpec.getSize(i2);
-        int width = this.b.e.width();
-        int height = this.b.e.height();
-        this.b.b = Math.min(((float) size) / ((float) width), ((float) size2) / ((float) height));
-        setMeasuredDimension(width, height);
+    /* renamed from: a */
+    public void mo1699a(int i, int i2) {
+        this.f10490b.f10488a.m14520b(i, i2);
     }
 }

@@ -7,29 +7,30 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 class ab extends LinearLayout {
-    final /* synthetic */ HatGridView a;
+    /* renamed from: a */
+    final /* synthetic */ HatGridView f893a;
 
     ab(HatGridView hatGridView, Context context) {
-        this.a = hatGridView;
+        this.f893a = hatGridView;
         super(context);
     }
 
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, this.a.a);
-        boolean onInterceptTouchEvent = this.a.a.onInterceptTouchEvent(a);
+        MotionEvent a = dv.m1908a(motionEvent, (View) this, this.f893a.f811a);
+        boolean onInterceptTouchEvent = this.f893a.f811a.onInterceptTouchEvent(a);
         a.recycle();
         return onInterceptTouchEvent;
     }
 
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, this.a.a);
-        boolean onTouchEvent = this.a.a.onTouchEvent(a);
+        MotionEvent a = dv.m1908a(motionEvent, (View) this, this.f893a.f811a);
+        boolean onTouchEvent = this.f893a.f811a.onTouchEvent(a);
         a.recycle();
         return onTouchEvent;
     }
 
     public final void dispatchDraw(Canvas canvas) {
-        canvas.clipRect(0, this.a.u() - this.a.e.getTop(), getWidth(), getHeight());
+        canvas.clipRect(0, this.f893a.m1231u() - this.f893a.f815e.getTop(), getWidth(), getHeight());
         super.dispatchDraw(canvas);
     }
 }

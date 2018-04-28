@@ -1,7 +1,6 @@
 package com.duokan.reader.common.webservices.duokan;
 
 import com.duokan.reader.domain.account.User;
-
 import java.io.Serializable;
 
 public class FavBookListInfo implements Serializable {

@@ -7,24 +7,31 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.multidex.MultiDexApplication;
 import android.view.KeyEvent;
-
-import com.duokan.core.sys.TaskHandler;
-
+import com.duokan.core.sys.UThread;
 import java.lang.ref.WeakReference;
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class ManagedApp extends MultiDexApplication implements Controller, IFeature {
-    static final boolean a = (!ManagedApp.class.desiredAssertionStatus());
-    private static ManagedApp manage = null;
-    private final ConcurrentLinkedQueue<WeakReference<Activity>> activitys = new ConcurrentLinkedQueue();
-    private final CopyOnWriteArrayList<IActivityLife> activityLifes = new CopyOnWriteArrayList();
-    private final CopyOnWriteArrayList<IActivityRunStatusChanged> runStatusChangeds = new CopyOnWriteArrayList();
-    private final FeatureManage featureManage = new FeatureManage();
-    private RunningState oldRunningState = RunningState.UNDERGROUND;
-    private long currentTime = System.currentTimeMillis();
-    private Runnable runnable = null;
+public class ManagedApp extends MultiDexApplication implements ISubController, IFeature {
+    /* renamed from: a */
+    static final /* synthetic */ boolean f494a = (!ManagedApp.class.desiredAssertionStatus());
+    /* renamed from: b */
+    private static ManagedApp f495b = null;
+    /* renamed from: c */
+    private final ConcurrentLinkedQueue<WeakReference<Activity>> f496c = new ConcurrentLinkedQueue();
+    /* renamed from: d */
+    private final CopyOnWriteArrayList<C0297a> f497d = new CopyOnWriteArrayList();
+    /* renamed from: e */
+    private final CopyOnWriteArrayList<C0286x> f498e = new CopyOnWriteArrayList();
+    /* renamed from: f */
+    private final FeatureManage f499f = new FeatureManage();
+    /* renamed from: g */
+    private RunningState f500g = RunningState.UNDERGROUND;
+    /* renamed from: h */
+    private long f501h = System.currentTimeMillis();
+    /* renamed from: i */
+    private Runnable f502i = null;
 
     public enum RunningState {
         UNDERGROUND,
@@ -34,28 +41,28 @@ public class ManagedApp extends MultiDexApplication implements Controller, IFeat
 
     @TargetApi(14)
     protected ManagedApp() {
-        manage = this;
-        registerActivityLifecycleCallbacks(new MyActivityLife(this));
+        f495b = this;
+        registerActivityLifecycleCallbacks(new C0318v(this));
     }
 
     public final boolean isDebuggable() {
         return (getApplicationInfo().flags & 2) == 2;
     }
 
-    public final RunningState getOldRunningState() {
-        return this.oldRunningState;
+    public final RunningState getRunningState() {
+        return this.f500g;
     }
 
     public final long getRunningStateMillis() {
-        return Math.max(0, System.currentTimeMillis() - this.currentTime);
+        return Math.max(0, System.currentTimeMillis() - this.f501h);
     }
 
     public final Activity getTopActivity() {
-        Iterator<WeakReference<Activity>> iterator = this.activitys.iterator();
+        Iterator it = this.f496c.iterator();
         Activity activity = null;
-        while (iterator.hasNext()) {
-            Activity activity2 = iterator.next().get();
-            if (!(activity2 == null || activity2.isFinishing())) {
+        while (it.hasNext()) {
+            Activity activity2 = (Activity) ((WeakReference) it.next()).get();
+            if (AppManage.isFinishing(activity2)) {
                 activity = activity2;
             }
         }
@@ -66,43 +73,43 @@ public class ManagedApp extends MultiDexApplication implements Controller, IFeat
         return getTopActivity() != null;
     }
 
-    public final void addActivityLifecycleMonitor(IActivityLife activityLife) {
-        if (a || activityLife != null) {
-            this.activityLifes.addIfAbsent(activityLife);
+    public final void addActivityLifecycleMonitor(C0297a c0297a) {
+        if (f494a || c0297a != null) {
+            this.f497d.addIfAbsent(c0297a);
             return;
         }
         throw new AssertionError();
     }
 
-    public final void removeActivityLifecycleMonitor(IActivityLife IActivityLifeVar) {
-        if (a || IActivityLifeVar != null) {
-            this.activityLifes.remove(IActivityLifeVar);
+    public final void removeActivityLifecycleMonitor(C0297a c0297a) {
+        if (f494a || c0297a != null) {
+            this.f497d.remove(c0297a);
             return;
         }
         throw new AssertionError();
     }
 
-    public final void addOnRunningStateChangedListener(IActivityRunStatusChanged runStatusChanged) {
-        if (a || runStatusChanged != null) {
-            this.runStatusChangeds.addIfAbsent(runStatusChanged);
+    public final void addOnRunningStateChangedListener(C0286x c0286x) {
+        if (f494a || c0286x != null) {
+            this.f498e.addIfAbsent(c0286x);
             return;
         }
         throw new AssertionError();
     }
 
-    public final void removeOnRunningStateChangedListener(IActivityRunStatusChanged runStatusChanged) {
-        this.runStatusChangeds.remove(runStatusChanged);
+    public final void removeOnRunningStateChangedListener(C0286x c0286x) {
+        this.f498e.remove(c0286x);
     }
 
     public static ManagedApp get() {
-        return manage;
+        return f495b;
     }
 
-    public final void onActivityResult(BaseActivity baseActivity, int requestCode, int resultCode, Intent intent) {
-        if (!a && baseActivity == null) {
+    public final void onActivityResult(BaseActivity mActivity, int i, int i2, Intent intent) {
+        if (!f494a && mActivity == null) {
             throw new AssertionError();
-        } else if (baseActivity.getContentController() != null) {
-            baseActivity.getContentController().onActivityResult(baseActivity, requestCode, resultCode, intent);
+        } else if (mActivity.getContentController() != null) {
+            mActivity.getContentController().onActivityResult(mActivity, i, i2, intent);
         }
     }
 
@@ -114,94 +121,94 @@ public class ManagedApp extends MultiDexApplication implements Controller, IFeat
         return this;
     }
 
-    public final IController getParent() {
+    public final ISubControllerParent getParent() {
         return null;
     }
 
-    public boolean requestShowMenu(ActivatedController activatedControllerVar) {
-        return activatedControllerVar.onActivityShowMenu();
+    public boolean requestShowMenu(ActivatedController c0303e) {
+        return c0303e.onActivityShowMenu();
     }
 
-    public boolean requestHideMenu(ActivatedController activatedControllerVar) {
-        return activatedControllerVar.onActivityHideMenu();
+    public boolean requestHideMenu(ActivatedController c0303e) {
+        return c0303e.onActivityHideMenu();
     }
 
-    public boolean requestSoftInputMode(ActivatedController activatedControllerVar, int i) {
-        activatedControllerVar.getActivity().getWindow().setSoftInputMode(i);
+    public boolean requestSoftInputMode(ActivatedController c0303e, int i) {
+        c0303e.getActivity().getWindow().setSoftInputMode(i);
         return true;
     }
 
-    public boolean requestDetach(ActivatedController activatedControllerVar) {
+    public boolean requestDetach(ActivatedController controller) {
         return false;
     }
 
-    public int getSoftInputMode(ActivatedController activatedControllerVar) {
-        return activatedControllerVar.getActivity().getWindow().getAttributes().softInputMode;
+    public int getSoftInputMode(ActivatedController c0303e) {
+        return c0303e.getActivity().getWindow().getAttributes().softInputMode;
     }
 
-    public FeatureListening queryFeature(Class cls) {
+    public <T extends FeatureListening> T queryFeature(Class<T> cls) {
         return queryLocalFeature(cls);
     }
 
-    public FeatureListening queryLocalFeature(Class cls) {
+    public <T extends FeatureListening> T queryLocalFeature(Class<T> cls) {
         if (cls == null) {
             return null;
         }
-        return this.featureManage.addFirst(cls);
+        return this.f499f.isContainsListener((Class) cls);
     }
 
-    public boolean registerLocalFeature(FeatureListening featurelistening) {
-        return this.featureManage.addFirst(featurelistening);
+    public boolean registerLocalFeature(FeatureListening featureListening) {
+        return this.f499f.addFeatureListener(featureListening);
     }
 
-    public boolean unregisterLocalFeature(FeatureListening featurelistening) {
-        return this.featureManage.remove(featurelistening);
+    public boolean unregisterLocalFeature(FeatureListening featureListening) {
+        return this.f499f.removeFeatureListener(featureListening);
     }
 
-    public boolean registerGlobalFeature(FeatureListening featurelistening) {
-        return this.featureManage.addFirst(featurelistening);
+    public boolean registerGlobalFeature(FeatureListening featureListening) {
+        return this.f499f.addFeatureListener(featureListening);
     }
 
-    public boolean unregisterGlobalFeature(FeatureListening featurelistening) {
-        return this.featureManage.remove(featurelistening);
+    public boolean unregisterGlobalFeature(FeatureListening featureListening) {
+        return this.f499f.removeFeatureListener(featureListening);
     }
 
-    public final void onActivityConfigurationChanged(BaseActivity baseActivityVar, Configuration configuration) {
-        if (!a && baseActivityVar == null) {
+    public final void onActivityConfigurationChanged(BaseActivity mActivity, Configuration configuration) {
+        if (!f494a && mActivity == null) {
             throw new AssertionError();
-        } else if (baseActivityVar.getContentController() != null) {
-            baseActivityVar.getContentController().onActivityConfigurationChanged(baseActivityVar, configuration);
+        } else if (mActivity.getContentController() != null) {
+            mActivity.getContentController().onActivityConfigurationChanged(mActivity, configuration);
         }
     }
 
-    public final void onActivityWindowFocusChanged(BaseActivity baseActivityVar, boolean z) {
-        if (!a && baseActivityVar == null) {
+    public final void onActivityWindowFocusChanged(BaseActivity mActivity, boolean z) {
+        if (!f494a && mActivity == null) {
             throw new AssertionError();
-        } else if (baseActivityVar.getContentController() != null) {
-            baseActivityVar.getContentController().onActivityWindowFocusChanged(baseActivityVar, z);
+        } else if (mActivity.getContentController() != null) {
+            mActivity.getContentController().onActivityWindowFocusChanged(mActivity, z);
         }
     }
 
-    public final boolean onActivityKeyDown(BaseActivity baseActivityVar, int i, KeyEvent keyEvent) {
-        if (!a && baseActivityVar == null) {
+    public final boolean onActivityKeyDown(BaseActivity mActivity, int i, KeyEvent keyEvent) {
+        if (!f494a && mActivity == null) {
             throw new AssertionError();
-        } else if (baseActivityVar.getContentController() != null) {
-            return baseActivityVar.getContentController().onActivityKeyDown(baseActivityVar, i, keyEvent);
+        } else if (mActivity.getContentController() != null) {
+            return mActivity.getContentController().onActivityKeyDown(mActivity, i, keyEvent);
         } else {
             return false;
         }
     }
 
-    public final boolean onActivityKeyUp(BaseActivity baseActivityVar, int i, KeyEvent keyEvent) {
-        if (baseActivityVar.getContentController() != null) {
-            return baseActivityVar.getContentController().onActivityKeyUp(baseActivityVar, i, keyEvent);
+    public final boolean onActivityKeyUp(BaseActivity mActivity, int i, KeyEvent keyEvent) {
+        if (mActivity.getContentController() != null) {
+            return mActivity.getContentController().onActivityKeyUp(mActivity, i, keyEvent);
         }
         return false;
     }
 
-    public final boolean onActivityBackPressed(BaseActivity baseActivityVar) {
-        if (baseActivityVar.getContentController() != null) {
-            return baseActivityVar.getContentController().onActivityBackPressed(baseActivityVar);
+    public final boolean onActivityBackPressed(BaseActivity mActivity) {
+        if (mActivity.getContentController() != null) {
+            return mActivity.getContentController().onActivityBackPressed(mActivity);
         }
         return false;
     }
@@ -210,13 +217,13 @@ public class ManagedApp extends MultiDexApplication implements Controller, IFeat
         if (i == 20) {
             runningState(RunningState.BACKGROUND);
         }
-        Iterator<WeakReference<Activity>> it = this.activitys.iterator();
+        Iterator it = this.f496c.iterator();
         while (it.hasNext()) {
-            Activity activity = it.next().get();
+            Activity activity = (Activity) ((WeakReference) it.next()).get();
             if (!(activity == null || activity.isFinishing())) {
-                BaseActivity baseActivity = managedActivity(activity);
+                activity = managedActivity(activity);
                 if (activity != null) {
-                    ActivatedController contentController = baseActivity.getContentController();
+                    ActivatedController contentController = activity.getContentController();
                     if (contentController != null) {
                         contentController.onActivityTrimMemory(activity, i);
                     }
@@ -230,13 +237,13 @@ public class ManagedApp extends MultiDexApplication implements Controller, IFeat
     }
 
     protected void onActivityCreated(Activity activity, Bundle bundle) {
-        if (a || activity != null) {
-            activitys.add(new WeakReference(activity));
-            Iterator<IActivityLife> it = activityLifes.iterator();
+        if (f494a || activity != null) {
+            this.f496c.add(new WeakReference(activity));
+            Iterator it = this.f497d.iterator();
             while (it.hasNext()) {
-                it.next().onActivityCreated(activity, bundle);
+                ((C0297a) it.next()).onActivityCreated(activity, bundle);
             }
-            if (oldRunningState == RunningState.UNDERGROUND) {
+            if (this.f500g == RunningState.UNDERGROUND) {
                 runningState(RunningState.BACKGROUND);
             }
             BaseActivity managedActivity = managedActivity(activity);
@@ -250,10 +257,10 @@ public class ManagedApp extends MultiDexApplication implements Controller, IFeat
     }
 
     protected void onActivityPaused(Activity activity) {
-        if (a || activity != null) {
-            Iterator<IActivityLife> it = activityLifes.iterator();
+        if (f494a || activity != null) {
+            Iterator it = this.f497d.iterator();
             while (it.hasNext()) {
-                it.next().onActivityPaused(activity);
+                ((C0297a) it.next()).onActivityPaused(activity);
             }
             runningState(RunningState.BACKGROUND, 5000);
             BaseActivity managedActivity = managedActivity(activity);
@@ -267,18 +274,18 @@ public class ManagedApp extends MultiDexApplication implements Controller, IFeat
     }
 
     protected void onActivityResumed(Activity activity) {
-        if (a || activity != null) {
-            Iterator<WeakReference<Activity>> it = activitys.iterator();
+        if (f494a || activity != null) {
+            Iterator it = this.f496c.iterator();
             while (it.hasNext()) {
-                Activity activity2 = it.next().get();
+                Activity activity2 = (Activity) ((WeakReference) it.next()).get();
                 if (activity2 == null || activity2 == activity) {
                     it.remove();
                 }
             }
-            activitys.add(new WeakReference(activity));
-            Iterator<IActivityLife> lifeIterator = activityLifes.iterator();
-            while (lifeIterator.hasNext()) {
-                lifeIterator.next().onActivityResumed(activity);
+            this.f496c.add(new WeakReference(activity));
+            it = this.f497d.iterator();
+            while (it.hasNext()) {
+                ((C0297a) it.next()).onActivityResumed(activity);
             }
             runningState(RunningState.FOREGROUND);
             BaseActivity managedActivity = managedActivity(activity);
@@ -292,19 +299,19 @@ public class ManagedApp extends MultiDexApplication implements Controller, IFeat
     }
 
     protected void onActivityDestroyed(Activity activity) {
-        if (a || activity != null) {
-            Iterator<WeakReference<Activity>> it = activitys.iterator();
+        if (f494a || activity != null) {
+            Iterator it = this.f496c.iterator();
             while (it.hasNext()) {
-                Activity activity2 = it.next().get();
+                Activity activity2 = (Activity) ((WeakReference) it.next()).get();
                 if (activity2 == null || activity2 == activity) {
                     it.remove();
                 }
             }
-            Iterator<IActivityLife> lifeIterator = activityLifes.iterator();
-            while (lifeIterator.hasNext()) {
-                ((IActivityLife) it.next()).onActivityDestroyed(activity);
+            it = this.f497d.iterator();
+            while (it.hasNext()) {
+                ((C0297a) it.next()).onActivityDestroyed(activity);
             }
-            if (activitys.isEmpty()) {
+            if (this.f496c.isEmpty()) {
                 runningState(RunningState.UNDERGROUND);
             }
             BaseActivity managedActivity = managedActivity(activity);
@@ -324,38 +331,22 @@ public class ManagedApp extends MultiDexApplication implements Controller, IFeat
         return null;
     }
 
-    private void runningState(final RunningState runningState, final int time) {
-        runnable = new RunTask(this, runningState);
-        TaskHandler.postDelayed(runnable, (long) time);
-    }
-
-    class RunTask implements Runnable {
-        final RunningState runningState;
-        final ManagedApp managedApp;
-
-        RunTask(ManagedApp managedApp, RunningState runningState) {
-            this.managedApp = managedApp;
-            this.runningState = runningState;
-        }
-
-        public void run() {
-            if (this.managedApp.runnable == this) {
-                this.managedApp.runningState(this.runningState);
-            }
-        }
+    private void runningState(RunningState runningState, int i) {
+        this.f502i = new C0319w(this, runningState);
+        UThread.postDelayed(this.f502i, (long) i);
     }
 
     private void runningState(RunningState runningState) {
-        if (this.oldRunningState != runningState) {
-            RunningState tempRunningState = this.oldRunningState;
-            this.oldRunningState = runningState;
-            this.currentTime = System.currentTimeMillis();
-            onRunningStateChanged(tempRunningState, this.oldRunningState);
-            Iterator it = this.runStatusChangeds.iterator();
+        if (this.f500g != runningState) {
+            RunningState runningState2 = this.f500g;
+            this.f500g = runningState;
+            this.f501h = System.currentTimeMillis();
+            onRunningStateChanged(runningState2, this.f500g);
+            Iterator it = this.f498e.iterator();
             while (it.hasNext()) {
-                ((IActivityRunStatusChanged) it.next()).onRunningStateChanged(this, tempRunningState, this.oldRunningState);
+                ((C0286x) it.next()).onRunningStateChanged(this, runningState2, this.f500g);
             }
         }
-        this.runnable = null;
+        this.f502i = null;
     }
 }

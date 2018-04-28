@@ -1,7 +1,6 @@
 package com.duokan.reader.domain.account.oauth.evernote;
 
 import com.evernote.edam.type.Resource;
-
 import java.io.InputStream;
 import java.security.MessageDigest;
 

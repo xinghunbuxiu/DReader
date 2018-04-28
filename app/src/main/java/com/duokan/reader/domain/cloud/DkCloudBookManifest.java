@@ -1,13 +1,12 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.webservices.duokan.z;
-
+import com.duokan.reader.common.webservices.duokan.C0651y;
 import org.json.JSONObject;
 import org.w3c.dom.Node;
 
 public class DkCloudBookManifest extends DkCloudItem {
     static final /* synthetic */ boolean $assertionsDisabled = (!DkCloudBookManifest.class.desiredAssertionStatus());
-    private z mBookCertification = null;
+    private C0651y mBookCertification = null;
     private String mBookMd5 = "";
     private final String mBookRevision;
     private String mBookUri = "";
@@ -15,7 +14,7 @@ public class DkCloudBookManifest extends DkCloudItem {
     private String mOpfMd5 = "";
     private String mOpfUri = "";
 
-    protected DkCloudBookManifest(String str, String str2, String str3, String str4, String str5, String str6, z zVar) {
+    protected DkCloudBookManifest(String str, String str2, String str3, String str4, String str5, String str6, C0651y c0651y) {
         super(0);
         if (!$assertionsDisabled && str == null) {
             throw new AssertionError();
@@ -25,14 +24,14 @@ public class DkCloudBookManifest extends DkCloudItem {
             throw new AssertionError();
         } else if (!$assertionsDisabled && str4 == null) {
             throw new AssertionError();
-        } else if ($assertionsDisabled || zVar != null) {
+        } else if ($assertionsDisabled || c0651y != null) {
             this.mBookUuid = str;
             this.mBookRevision = str2;
             this.mBookUri = str3;
             this.mBookMd5 = str4;
             this.mOpfUri = str5;
             this.mOpfMd5 = str6;
-            this.mBookCertification = zVar;
+            this.mBookCertification = c0651y;
         } else {
             throw new AssertionError();
         }
@@ -54,7 +53,7 @@ public class DkCloudBookManifest extends DkCloudItem {
         return this.mBookMd5;
     }
 
-    public z getBookCertification() {
+    public C0651y getBookCertification() {
         return this.mBookCertification;
     }
 

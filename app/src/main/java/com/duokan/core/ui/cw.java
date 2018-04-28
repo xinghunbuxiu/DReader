@@ -5,10 +5,11 @@ import android.app.Application.ActivityLifecycleCallbacks;
 import android.os.Bundle;
 
 class cw implements ActivityLifecycleCallbacks {
-    final /* synthetic */ cv a;
+    /* renamed from: a */
+    final /* synthetic */ cv f1117a;
 
     cw(cv cvVar) {
-        this.a = cvVar;
+        this.f1117a = cvVar;
     }
 
     public void onActivityCreated(Activity activity, Bundle bundle) {
@@ -30,8 +31,8 @@ class cw implements ActivityLifecycleCallbacks {
     }
 
     public void onActivityDestroyed(Activity activity) {
-        if (activity == this.a.f) {
-            this.a.dismissNow();
+        if (activity == this.f1117a.f1098f) {
+            this.f1117a.dismissNow();
         }
     }
 }

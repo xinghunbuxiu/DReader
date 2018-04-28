@@ -1,30 +1,17 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.domain.bookshelf.ai;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.ui.store.al;
-import com.mipay.sdk.Mipay;
+import com.duokan.core.sys.as;
 
-class hi implements al {
-    final /* synthetic */ hh a;
+class hi implements as {
+    /* renamed from: a */
+    final /* synthetic */ ci f7929a;
 
-    hi(hh hhVar) {
-        this.a = hhVar;
+    hi(ci ciVar) {
+        this.f7929a = ciVar;
     }
 
-    public void onDownloadCloudBookStarted() {
-        c b = ai.a().b(this.a.a.d);
-        if (b != null) {
-            b.j(this.a.a.e);
-        }
-        this.a.a.f.b.pageController.web_notifyWeb(this.a.a.b, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
-    }
-
-    public void onDownloadCloudBookError(String str) {
-        this.a.a.f.b.pageController.web_notifyWeb(this.a.a.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str);
-    }
-
-    public void onDownloadCloudBookCanceled() {
-        this.a.a.f.b.pageController.web_notifyWeb(this.a.a.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2));
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7929a.setRetroactiveSucceed("");
     }
 }

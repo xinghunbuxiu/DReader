@@ -1,35 +1,20 @@
 package com.duokan.reader.domain.bookshelf;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.duokan.reader.domain.micloud.bi;
+import java.util.Arrays;
 
-public class ju {
-    public long a = 0;
-    public int b = 0;
-    public String c = "";
+class ju implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ bi f3417a;
+    /* renamed from: b */
+    final /* synthetic */ jp f3418b;
 
-    public ju(String str) {
-        try {
-            JSONObject jSONObject = new JSONObject(str);
-            this.a = jSONObject.optLong("readMillis", jSONObject.optLong("local_reading_millis", 0));
-            this.b = jSONObject.optInt("readChars", 0);
-            this.c = jSONObject.optString("traceId", "");
-        } catch (JSONException e) {
-        }
+    ju(jp jpVar, bi biVar) {
+        this.f3418b = jpVar;
+        this.f3417a = biVar;
     }
 
-    public JSONObject a() {
-        JSONObject jSONObject = new JSONObject();
-        try {
-            jSONObject.put("readMillis", this.a);
-            jSONObject.put("readChars", this.b);
-            jSONObject.put("traceId", this.c);
-        } catch (JSONException e) {
-        }
-        return jSONObject;
-    }
-
-    public String toString() {
-        return a().toString();
+    public void run() {
+        this.f3418b.m4742a(null, Arrays.asList(new bi[]{this.f3417a}));
     }
 }

@@ -1,33 +1,32 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.sys.TaskHandler;
+import android.content.Context;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+public interface nc {
+    /* renamed from: a */
+    void mo1904a(Context context, nd ndVar);
 
-class nc implements Runnable {
-    final /* synthetic */ List a;
-    final /* synthetic */ List b;
-    final /* synthetic */ List c;
-    final /* synthetic */ Runnable d;
-    final /* synthetic */ mz e;
+    /* renamed from: a */
+    boolean mo1905a();
 
-    nc(mz mzVar, List list, List list2, List list3, Runnable runnable) {
-        this.e = mzVar;
-        this.a = list;
-        this.b = list2;
-        this.c = list3;
-        this.d = runnable;
-    }
+    /* renamed from: b */
+    long mo1906b();
 
-    public void run() {
-        Comparator ndVar = new nd(this);
-        Object arrayList = new ArrayList();
-        arrayList.ensureCapacity(this.a.size());
-        arrayList.addAll(this.a);
-        Collections.sort(arrayList, ndVar);
-        TaskHandler.PostTask(new ne(this, arrayList));
-    }
+    /* renamed from: c */
+    long mo1907c();
+
+    /* renamed from: d */
+    long mo1908d();
+
+    /* renamed from: e */
+    long mo1909e();
+
+    /* renamed from: f */
+    double mo1910f();
+
+    /* renamed from: g */
+    long mo1911g();
+
+    /* renamed from: h */
+    int[] mo1912h();
 }

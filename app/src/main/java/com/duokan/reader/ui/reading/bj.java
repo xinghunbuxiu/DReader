@@ -4,10 +4,11 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 
 class bj implements AnimationListener {
-    final /* synthetic */ bh a;
+    /* renamed from: a */
+    final /* synthetic */ bh f9854a;
 
     bj(bh bhVar) {
-        this.a = bhVar;
+        this.f9854a = bhVar;
     }
 
     public void onAnimationStart(Animation animation) {
@@ -17,6 +18,6 @@ class bj implements AnimationListener {
     }
 
     public void onAnimationEnd(Animation animation) {
-        this.a.q.post(this.a.r);
+        this.f9854a.f9850q.post(this.f9854a.f9851r);
     }
 }

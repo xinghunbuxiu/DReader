@@ -1,15 +1,12 @@
 package com.duokan.reader.domain.bookshelf;
 
-class io implements ee {
-    final /* synthetic */ in a;
+public interface io {
+    /* renamed from: a */
+    void mo1701a();
 
-    io(in inVar) {
-        this.a = inVar;
-    }
+    /* renamed from: a */
+    void mo1702a(String str);
 
-    public void a() {
-    }
-
-    public void a(String str) {
-    }
+    /* renamed from: b */
+    void mo1705b();
 }

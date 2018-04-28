@@ -1,17 +1,21 @@
 package com.duokan.reader.domain.document;
 
 class ao implements aq {
-    final /* synthetic */ Object a;
-    final /* synthetic */ int b;
-    final /* synthetic */ al c;
+    /* renamed from: a */
+    final /* synthetic */ Object f4414a;
+    /* renamed from: b */
+    final /* synthetic */ int f4415b;
+    /* renamed from: c */
+    final /* synthetic */ al f4416c;
 
     ao(al alVar, Object obj, int i) {
-        this.c = alVar;
-        this.a = obj;
-        this.b = i;
+        this.f4416c = alVar;
+        this.f4414a = obj;
+        this.f4415b = i;
     }
 
-    public boolean a(ap apVar, int i) {
-        return (apVar.l || apVar.m || apVar.f() || apVar.i != this.a || i < this.b) ? false : true;
+    /* renamed from: a */
+    public boolean mo1357a(ap apVar, int i) {
+        return (apVar.f4428l || apVar.f4429m || apVar.m6388f() || apVar.f4425i != this.f4414a || i < this.f4415b) ? false : true;
     }
 }

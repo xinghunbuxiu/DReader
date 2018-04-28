@@ -1,16 +1,23 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.os.Handler.Callback;
+import android.os.Message;
+import com.duokan.reader.domain.bookshelf.ai;
+import com.duokan.reader.domain.cloud.PersonalPrefs;
 
-class hz implements OnClickListener {
-    final /* synthetic */ hw a;
+class hz implements Callback {
+    /* renamed from: a */
+    final /* synthetic */ hy f8694a;
 
-    hz(hw hwVar) {
-        this.a = hwVar;
+    hz(hy hyVar) {
+        this.f8694a = hyVar;
     }
 
-    public void onClick(View view) {
-        this.a.b.pushHalfPageSmoothly(new hi(this.a.getContext()), null);
+    public boolean handleMessage(Message message) {
+        if (message.what != 0 || !PersonalPrefs.m5175a().m5250z()) {
+            return false;
+        }
+        ai.m3980a().mo973a(true, true);
+        return true;
     }
 }

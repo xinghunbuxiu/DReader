@@ -2,18 +2,17 @@ package com.duokan.reader.ui.personal;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-
 import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.ui.account.z;
 
 class jq implements OnClickListener {
-    final /* synthetic */ it a;
+    /* renamed from: a */
+    final /* synthetic */ jg f8789a;
 
-    jq(it itVar) {
-        this.a = itVar;
+    jq(jg jgVar) {
+        this.f8789a = jgVar;
     }
 
     public void onClick(View view) {
-        ((ReaderFeature) this.a.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new z(this.a.getContext()), null);
+        ((ReaderFeature) this.f8789a.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new az(this.f8789a.getContext(), false), null);
     }
 }

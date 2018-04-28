@@ -1,45 +1,20 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.common.FileTypeRecognizer;
-import com.duokan.common.FileTypeRecognizer.FileType;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-import org.apache.http.protocol.HTTP;
+class gl implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ha f6518a;
+    /* renamed from: b */
+    final /* synthetic */ gk f6519b;
 
-import java.io.File;
-import java.io.FileFilter;
-import java.util.List;
-
-class gl implements FileFilter {
-    final /* synthetic */ FileScanTask a;
-    private final List b = this.a.a();
-
-    gl(FileScanTask fileScanTask) {
-        this.a = fileScanTask;
+    gl(gk gkVar, ha haVar) {
+        this.f6519b = gkVar;
+        this.f6518a = haVar;
     }
 
-    public boolean accept(File file) {
-        if (file.isHidden()) {
-            return false;
-        }
-        String absolutePath = file.getAbsolutePath();
-        FileType a = FileTypeRecognizer.a(absolutePath);
-        if (a == FileType.UNSUPPORTED) {
-            return false;
-        }
-        if (a == FileType.TXT) {
-            try {
-                if (file.length() < 51200 && absolutePath.getBytes(HTTP.UTF_8).length <= absolutePath.length()) {
-                    return false;
-                }
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-        for (String startsWith : this.b) {
-            if (absolutePath.startsWith(startsWith)) {
-                return false;
-            }
-        }
-        return true;
+    public void onClick(View view) {
+        this.f6519b.f6517a.m9727a(this.f6518a);
     }
 }

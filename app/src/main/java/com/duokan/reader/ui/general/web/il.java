@@ -1,97 +1,52 @@
 package com.duokan.reader.ui.general.web;
 
 import android.text.TextUtils;
-
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.core.sys.af;
 import com.duokan.core.sys.as;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.common.i;
-import com.duokan.reader.domain.bookshelf.BookState;
-import com.duokan.reader.domain.bookshelf.ai;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.bookshelf.ej;
-import com.duokan.reader.domain.store.DkStoreBookDetail;
-import com.duokan.reader.domain.store.DkStoreFictionDetail;
-import com.duokan.reader.ui.general.jq;
-
-import org.json.JSONObject;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.domain.account.oauth.ThirdWeiXin;
+import com.duokan.reader.ui.account.ab;
+import com.duokan.reader.ui.account.ar;
+import com.duokan.reader.ui.account.bu;
+import com.duokan.reader.ui.general.be;
 
 class il implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
+    /* renamed from: a */
+    final /* synthetic */ String f7997a;
+    /* renamed from: b */
+    final /* synthetic */ String f7998b;
+    /* renamed from: c */
+    final /* synthetic */ String f7999c;
+    /* renamed from: d */
+    final /* synthetic */ String f8000d;
+    /* renamed from: e */
+    final /* synthetic */ String f8001e;
+    /* renamed from: f */
+    final /* synthetic */ ik f8002f;
 
-    il(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    il(ik ikVar, String str, String str2, String str3, String str4, String str5) {
+        this.f8002f = ikVar;
+        this.f7997a = str;
+        this.f7998b = str2;
+        this.f7999c = str3;
+        this.f8000d = str4;
+        this.f8001e = str5;
     }
 
-    public void a() {
-        jq jqVar = (jq) TaskHandler.getTaskHandler(new im(this));
-        af afVar = new af();
-        JSONObject jSONObject = new JSONObject(this.a);
-        String string = jSONObject.getString("msgid");
-        jSONObject = jSONObject.getJSONObject("params");
-        String b = i.b(jSONObject, "bookUuid");
-        int optInt = jSONObject.optInt("chapterIndex", -1);
-        String optString = jSONObject.optString("trace_id", "");
-        Object b2 = ai.a().b(b);
-        try {
-            ReaderFeature readerFeature;
-            Object a;
-            if (c.k(b)) {
-                DkStoreBookDetail dkStoreBookDetail;
-                if (jSONObject.has("detail")) {
-                    dkStoreBookDetail = new DkStoreBookDetail(jSONObject.getJSONObject("detail"));
-                } else {
-                    dkStoreBookDetail = null;
-                }
-                if (dkStoreBookDetail == null || TextUtils.isEmpty(dkStoreBookDetail.getOpfUri())) {
-                    if (b2 != null && b2.i() == BookState.NORMAL) {
-                        afVar.a(b2);
-                    }
-                } else if (b2 != null) {
-                    afVar.a(b2);
-                } else {
-                    readerFeature = (ReaderFeature) this.b.pageController.getContext().queryFeature(ReaderFeature.class);
-                    if (readerFeature == null || readerFeature.getReadingBook() == null || !TextUtils.equals(dkStoreBookDetail.getBook().getBookUuid(), readerFeature.getReadingBook().H())) {
-                        a = ai.a().a(dkStoreBookDetail);
-                        a.j(optString);
-                        afVar.a(a);
-                    } else {
-                        afVar.a(readerFeature.getReadingBook());
-                    }
-                }
-            } else {
-                DkStoreFictionDetail dkStoreFictionDetail;
-                if (jSONObject.has("detail")) {
-                    dkStoreFictionDetail = new DkStoreFictionDetail(jSONObject.getJSONObject("detail"));
-                } else {
-                    dkStoreFictionDetail = null;
-                }
-                if (b2 != null) {
-                    afVar.a(b2);
-                } else if (dkStoreFictionDetail == null || optInt >= dkStoreFictionDetail.getToc().length) {
-                    TaskHandler.postTask(new in(this, b, optString, afVar));
-                    synchronized (afVar) {
-                        afVar.wait();
-                    }
-                } else {
-                    readerFeature = (ReaderFeature) this.b.pageController.getContext().queryFeature(ReaderFeature.class);
-                    if (readerFeature == null || readerFeature.getReadingBook() == null || !TextUtils.equals(dkStoreFictionDetail.getFiction().getBookUuid(), readerFeature.getReadingBook().H())) {
-                        a = (ej) ai.a().a(dkStoreFictionDetail);
-                        a.j(optString);
-                        a.a(dkStoreFictionDetail);
-                        afVar.a(a);
-                    } else {
-                        afVar.a(readerFeature.getReadingBook());
-                    }
-                }
-            }
-            TaskHandler.postTask(new ip(this, jqVar, afVar, string, optInt));
-        } catch (Throwable th) {
-            Throwable th2 = th;
-            TaskHandler.postTask(new ip(this, jqVar, afVar, string, optInt));
+    /* renamed from: a */
+    public void mo1831a() {
+        if (this.f8002f.f7996b.f7581b.mShareController != null) {
+            this.f8002f.f7996b.f7581b.deactivate(this.f8002f.f7996b.f7581b.mShareController);
+            this.f8002f.f7996b.f7581b.removeSubController(this.f8002f.f7996b.f7581b.mShareController);
+        }
+        bu imVar = new im(this);
+        if (TextUtils.isEmpty(this.f7998b)) {
+            new ab(this.f8002f.f7996b.f7581b.getContext(), false, new in(this, imVar)).show();
+        } else if (this.f7998b.equals("weibo") || ThirdWeiXin.isWeiXinInstalled(this.f8002f.f7996b.f7581b.getContext())) {
+            this.f8002f.f7996b.f7581b.mShareController = new ar(this.f8002f.f7996b.f7581b.getContext(), this.f7998b, this.f7999c, this.f8000d, this.f8001e, imVar);
+            this.f8002f.f7996b.f7581b.addSubController(this.f8002f.f7996b.f7581b.mShareController);
+            this.f8002f.f7996b.f7581b.activate(this.f8002f.f7996b.f7581b.mShareController);
+        } else {
+            be.m10286a(this.f8002f.f7996b.f7581b.getContext(), C0258j.share_name_weixin_not_install, 0).show();
         }
     }
 }

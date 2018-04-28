@@ -2,25 +2,18 @@ package com.duokan.reader.ui.reading;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-
-import com.duokan.core.sys.af;
-import com.duokan.reader.domain.bookshelf.c;
+import com.duokan.reader.UmengManager;
 
 class pz implements OnClickListener {
-    final /* synthetic */ pw a;
+    /* renamed from: a */
+    final /* synthetic */ py f10842a;
 
-    pz(pw pwVar) {
-        this.a = pwVar;
+    pz(py pyVar) {
+        this.f10842a = pyVar;
     }
 
     public void onClick(View view) {
-        c G = this.a.a.G();
-        this.a.d.setSelected(!view.isSelected());
-        if (this.a.d.isSelected()) {
-            G.a(new af(Boolean.valueOf(true)));
-        } else {
-            G.a(new af(Boolean.valueOf(false)));
-        }
-        G.aL();
+        UmengManager.get().onEvent("V2_READING_MENU", "Search");
+        this.f10842a.f.aO();
     }
 }

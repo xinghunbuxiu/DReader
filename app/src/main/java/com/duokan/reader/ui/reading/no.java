@@ -1,36 +1,27 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.document.aa;
-import com.duokan.reader.domain.document.n;
-import com.duokan.reader.domain.document.w;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import com.duokan.core.sys.UThread;
 
-class no implements w {
-    final /* synthetic */ nk a;
+class no implements AnimationListener {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f10685a;
+    /* renamed from: b */
+    final /* synthetic */ nh f10686b;
 
-    no(nk nkVar) {
-        this.a = nkVar;
+    no(nh nhVar, Runnable runnable) {
+        this.f10686b = nhVar;
+        this.f10685a = runnable;
     }
 
-    public void a(n nVar) {
+    public void onAnimationStart(Animation animation) {
     }
 
-    public void b(n nVar) {
+    public void onAnimationRepeat(Animation animation) {
     }
 
-    public void c(n nVar) {
-    }
-
-    public void d(n nVar) {
-        this.a.l = null;
-        this.a.a();
-    }
-
-    public void e(n nVar) {
-    }
-
-    public void f(n nVar) {
-    }
-
-    public void a(n nVar, aa aaVar) {
+    public void onAnimationEnd(Animation animation) {
+        UThread.post(this.f10685a);
     }
 }

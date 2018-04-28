@@ -1,22 +1,14 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+class uv implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ uu f11034a;
 
-import com.duokan.b.i;
-
-class uv implements OnClickListener {
-    final /* synthetic */ uq a;
-
-    uv(uq uqVar) {
-        this.a = uqVar;
+    uv(uu uuVar) {
+        this.f11034a = uuVar;
     }
 
-    public void onClick(View view) {
-        this.a.a.a(1, 0);
-        if (!this.a.a.l()) {
-            this.a.a.v().prompt(this.a.getString(i.reading__shared__reach_min_size));
-        }
-        this.a.c();
+    public void run() {
+        this.f11034a.f11033a.f11020a.af();
     }
 }

@@ -1,26 +1,17 @@
 package com.duokan.reader.ui.account;
 
-import com.duokan.core.sys.ag;
-import com.duokan.reader.common.webservices.duokan.p;
-import com.duokan.reader.ui.account.ShareEntranceController.ShareType;
+import com.duokan.reader.domain.cloud.DkCloudNoteBookInfo;
 
-class al implements ag {
-    final /* synthetic */ ShareType a;
-    final /* synthetic */ ag b;
-    final /* synthetic */ ai c;
+class al implements aq {
+    /* renamed from: a */
+    final /* synthetic */ DkCloudNoteBookInfo f5793a;
 
-    al(ai aiVar, ShareType shareType, ag agVar) {
-        this.c = aiVar;
-        this.a = shareType;
-        this.b = agVar;
+    al(DkCloudNoteBookInfo dkCloudNoteBookInfo) {
+        this.f5793a = dkCloudNoteBookInfo;
     }
 
-    public void a(String str) {
-        Object a = p.i().a(new String[]{str});
-        if (this.a == ShareType.TEXT || this.a == ShareType.COMMENT || this.a == ShareType.NOTE) {
-            a = a + "&setDrawable=note";
-        }
-        this.b.a(a);
-        this.c.m = false;
+    /* renamed from: a */
+    public Object mo1569a() {
+        return this.f5793a;
     }
 }

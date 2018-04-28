@@ -1,19 +1,22 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.as;
-import com.duokan.reader.domain.ad.e;
-import com.duokan.reader.domain.ad.g;
+import com.duokan.reader.common.async.p035a.C0517a;
 
-class jn implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
+class jn implements C0517a<Void> {
+    /* renamed from: a */
+    final /* synthetic */ jk f8057a;
 
-    jn(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    jn(jk jkVar) {
+        this.f8057a = jkVar;
     }
 
-    public void a() {
-        g.a().a(e.a(this.a));
+    /* renamed from: a */
+    public void m11229a(Void voidR) {
+        this.f8057a.f8053d.m708a(Boolean.valueOf(true));
+    }
+
+    /* renamed from: a */
+    public void mo729a(int i, String str) {
+        this.f8057a.f8053d.m708a(Boolean.valueOf(false));
     }
 }

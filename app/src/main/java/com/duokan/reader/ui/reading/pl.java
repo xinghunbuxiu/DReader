@@ -1,22 +1,41 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.BaseActivity;
-import com.duokan.core.app.TansFormUtils;
-import com.duokan.core.ui.UTools;
+import android.content.Context;
+import android.graphics.Point;
 
-class pl implements Runnable {
-    final /* synthetic */ pk a;
+public class pl extends gd {
+    /* renamed from: b */
+    final /* synthetic */ pg f10796b;
 
-    pl(pk pkVar) {
-        this.a = pkVar;
+    public pl(pg pgVar, Context context) {
+        this.f10796b = pgVar;
+        super(context);
     }
 
-    public void run() {
-        ((BaseActivity) TansFormUtils.getContext(this.a.b.j.getContext())).unlockCurrentOrientation();
-        this.a.b.b.setVisibility(4);
-        this.a.b.j.b.dismiss();
-        this.a.b.j.b = null;
-        this.a.b.j.c = false;
-        UTools.async.a(true);
+    /* renamed from: g */
+    public void mo2413g() {
+        m14207b(true);
+        this.f10796b.f10780b.m14910a();
+    }
+
+    /* renamed from: f */
+    public void mo2412f() {
+        super.mo2412f();
+        this.f10796b.f10780b.m14911b();
+        this.f10796b.mo2406k();
+    }
+
+    /* renamed from: e */
+    public void mo2335e() {
+        super.mo2335e();
+        this.f10796b.mo2407l();
+    }
+
+    protected float getContentStaticScale() {
+        return ((float) this.f10796b.f10779a.mo1390e()) / ((float) this.f10796b.f10779a.mo1397l().width());
+    }
+
+    protected Point getContentStaticCenter() {
+        return new Point(this.f10796b.f10779a.mo1397l().centerX(), this.f10796b.f10779a.mo1397l().centerY());
     }
 }

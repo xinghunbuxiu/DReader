@@ -2,25 +2,24 @@ package com.duokan.core.ui;
 
 import android.view.animation.Transformation;
 
-import com.duokan.core.sys.ap;
+import com.duokan.core.sys.BaseAnimation;
 
-final class ei extends ap {
+final class ei extends BaseAnimation<Transformation> {
     ei() {
     }
 
-    protected Object b() {
-        return c();
+    protected Transformation createAnimation() {
+        return getTransformation();
     }
 
-    protected  void b(Object obj) {
-        a((Transformation) obj);
+    protected void destroyAnimation(Transformation transformation) {
+        transformation.clear();
     }
 
-    protected Transformation c() {
+
+    protected Transformation getTransformation() {
         return new Transformation();
     }
 
-    protected void a(Transformation transformation) {
-        transformation.clear();
-    }
+
 }

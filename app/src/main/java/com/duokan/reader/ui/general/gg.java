@@ -1,54 +1,38 @@
 package com.duokan.reader.ui.general;
 
-import android.content.Context;
+import android.graphics.PointF;
+import android.view.View;
+import com.duokan.core.ui.C0385i;
+import com.duokan.core.ui.er;
 
-import com.duokan.core.ui.ay;
+class gg implements C0385i {
+    /* renamed from: a */
+    final /* synthetic */ ge f7273a;
 
-public abstract class gg extends ay {
-    final /* synthetic */ PagesView d;
-
-    public gg(PagesView pagesView, Context context) {
-        this.d = pagesView;
-        super(context, null);
+    gg(ge geVar) {
+        this.f7273a = geVar;
     }
 
-    protected final void o() {
-        super.j();
+    public void onTouchUp(View view, PointF pointF) {
     }
 
-    protected final void p() {
-        super.i();
+    public void onTouchDown(View view, PointF pointF) {
     }
 
-    protected final void q() {
-        super.l();
+    public void onTouchCancel(View view, PointF pointF) {
     }
 
-    protected final int a(int i) {
-        if (s(i)) {
-            return super.l(i);
+    /* renamed from: a */
+    public void mo1788a(er erVar, View view, PointF pointF, int i) {
+        float f = 1.0f;
+        this.f7273a.m1613b(false);
+        this.f7273a.m1620d(true);
+        PagesView pagesView = this.f7273a.f7268a;
+        int i2 = (int) pointF.x;
+        int i3 = (int) pointF.y;
+        if (this.f7273a.f7268a.getZoomFactor() == 1.0f) {
+            f = 2.0f;
         }
-        return 0;
-    }
-
-    protected final int b(int i) {
-        if (s(i)) {
-            return super.m(i);
-        }
-        return 0;
-    }
-
-    protected final int d(int i) {
-        if (s(i)) {
-            return super.n(i);
-        }
-        return 0;
-    }
-
-    protected final int e(int i) {
-        if (s(i)) {
-            return super.o(i);
-        }
-        return 0;
+        pagesView.m10004b(i2, i3, f);
     }
 }

@@ -1,56 +1,49 @@
 package com.duokan.reader.ui.general;
 
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import java.util.ArrayList;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.UTools;
+class fk implements Runnable {
+    /* renamed from: a */
+    static final /* synthetic */ boolean f7231a = (!PagesController.class.desiredAssertionStatus());
+    /* renamed from: b */
+    final /* synthetic */ fs f7232b;
+    /* renamed from: c */
+    final /* synthetic */ View f7233c;
+    /* renamed from: d */
+    final /* synthetic */ fs f7234d;
+    /* renamed from: e */
+    final /* synthetic */ ArrayList f7235e;
+    /* renamed from: f */
+    final /* synthetic */ Runnable f7236f;
+    /* renamed from: g */
+    final /* synthetic */ PagesController f7237g;
 
-public class fk implements dr {
-    private final ActivatedController a;
-    private final ViewGroup b = ((ViewGroup) LayoutInflater.from(this.a.getContext()).inflate(g.general__spirt_menu_view_at_hd, null));
-    private final BoxView c = ((BoxView) this.b.findViewById(f.general__spirt_mene_view__page));
-    private final View d = this.b.findViewById(f.general__spirt_mene_view__dark_bg);
-    private final ViewGroup e = ((BoxView) this.b.findViewById(f.general__spirt_mene_view__page));
-    private final ViewGroup f = ((ViewGroup) this.b.findViewById(f.general__spirt_mene_view__content_items));
-    private final ViewGroup g = ((ViewGroup) this.b.findViewById(f.general__spirt_mene_view__extra_view));
-
-    public fk(ActivatedController controller) {
-        this.a = controller;
-        this.c.setMaxHeight(Math.round(((float) Math.min(UTools.getHeightPixels(this.a.getContext()), UTools.getWidthPixels(this.a.getContext()))) * 0.7f));
-        this.d.setOnClickListener(new fl(this));
+    fk(PagesController pagesController, fs fsVar, View view, fs fsVar2, ArrayList arrayList, Runnable runnable) {
+        this.f7237g = pagesController;
+        this.f7232b = fsVar;
+        this.f7233c = view;
+        this.f7234d = fsVar2;
+        this.f7235e = arrayList;
+        this.f7236f = runnable;
     }
 
-    public ViewGroup a() {
-        return this.b;
-    }
-
-    public void b(Runnable runnable, Runnable runnable2) {
-        a.a(this.d, 0.0f, 1.0f, a.a(this.c, new fm(this, runnable, runnable2)).getDuration(), Boolean.valueOf(true), null);
-    }
-
-    public void a(Runnable runnable, Runnable runnable2) {
-        a.a(this.d, 1.0f, 0.0f, a.b(this.c, new fn(this, runnable, runnable2)).getDuration(), Boolean.valueOf(true), null);
-    }
-
-    public ViewGroup b() {
-        return this.f;
-    }
-
-    public ViewGroup c() {
-        return this.g;
-    }
-
-    public View a(String str, int i, boolean z) {
-        View inflate = LayoutInflater.from(this.a.getContext()).inflate(g.general__dk_spirt_menu_item_view_at_hd, null);
-        DkLabelView dkLabelView = (DkLabelView) inflate.findViewById(f.general__shared_spirt_menu_item_view__text);
-        if (i != 0) {
-            dkLabelView.setCompoundDrawablesWithIntrinsicBounds(this.a.getResources().getDrawable(i), null, null, null);
-            dkLabelView.setCompoundDrawablePadding(i.a(this.a.getContext(), 10.0f));
+    public void run() {
+        if (!f7231a && this.f7232b == null) {
+            throw new AssertionError();
+        } else if (f7231a || this.f7233c != null) {
+            if (this.f7234d != null) {
+                this.f7237g.activate(this.f7234d);
+            }
+            for (int i = 0; i < this.f7235e.size(); i++) {
+                this.f7237g.m9224b((fs) this.f7235e.get(i));
+            }
+            this.f7237g.mo1972b(this.f7237g.f6184b.size());
+            if (this.f7236f != null) {
+                this.f7236f.run();
+            }
+        } else {
+            throw new AssertionError();
         }
-        dkLabelView.setText(str);
-        return inflate;
     }
 }

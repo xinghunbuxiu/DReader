@@ -1,50 +1,115 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Paint.Style;
+import android.graphics.PointF;
 import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.view.View;
+import com.duokan.core.app.IFeature;
+import com.duokan.reader.domain.document.au;
+import com.duokan.reader.ui.general.gs;
 
-import com.duokan.core.ui.UTools;
+public class yd extends sv {
+    /* renamed from: i */
+    private bz f11185i;
 
-class yd extends Drawable {
-    final /* synthetic */ yb a;
-
-    yd(yb ybVar) {
-        this.a = ybVar;
+    /* renamed from: a */
+    public /* bridge */ /* synthetic */ void mo2365a(au auVar, Rect rect) {
+        super.mo2365a(auVar, rect);
     }
 
-    public void draw(Canvas canvas) {
-        RectF rectF = (RectF) UTools.h.getRect();
-        Paint paint = (Paint) UTools.b.getRect();
-        rectF.set(getBounds());
-        rectF.right -= 1.0f;
-        rectF.bottom -= 1.0f;
-        rectF.inset(0.5f, 0.5f);
-        paint.setAntiAlias(true);
-        paint.setStrokeWidth(1.0f);
-        paint.setStyle(Style.STROKE);
-        paint.setColor(this.a.g);
-        canvas.drawRoundRect(rectF, (float) UTools.getMinimumHeight(this.a.getContext(), 5.0f), (float) UTools.getMinimumHeight(this.a.getContext(), 5.0f), paint);
-        UTools.h.getRect(rectF);
-        UTools.b.getRect(paint);
+    /* renamed from: a */
+    public /* bridge */ /* synthetic */ boolean mo2371a(PointF pointF, Runnable runnable, Runnable runnable2) {
+        return super.mo2371a(pointF, runnable, runnable2);
     }
 
-    public int getOpacity() {
-        return 0;
+    /* renamed from: b */
+    public /* bridge */ /* synthetic */ boolean mo2373b(PointF pointF, Runnable runnable, Runnable runnable2) {
+        return super.mo2373b(pointF, runnable, runnable2);
     }
 
-    public boolean getPadding(Rect rect) {
-        rect.set(2, 2, 2, 2);
-        return true;
+    /* renamed from: e */
+    public /* bridge */ /* synthetic */ boolean mo2374e() {
+        return super.mo2374e();
     }
 
-    public void setAlpha(int i) {
+    /* renamed from: f */
+    public /* bridge */ /* synthetic */ boolean mo2375f() {
+        return super.mo2375f();
     }
 
-    public void setColorFilter(ColorFilter colorFilter) {
+    /* renamed from: g */
+    public /* bridge */ /* synthetic */ void mo2376g() {
+        super.mo2376g();
+    }
+
+    /* renamed from: h */
+    public /* bridge */ /* synthetic */ void mo2377h() {
+        super.mo2377h();
+    }
+
+    /* renamed from: i */
+    public /* bridge */ /* synthetic */ void mo2378i() {
+        super.mo2378i();
+    }
+
+    /* renamed from: j */
+    public /* bridge */ /* synthetic */ void mo2379j() {
+        super.mo2379j();
+    }
+
+    /* renamed from: k */
+    public /* bridge */ /* synthetic */ boolean mo2380k() {
+        return super.mo2380k();
+    }
+
+    /* renamed from: l */
+    public /* bridge */ /* synthetic */ void mo2381l() {
+        super.mo2381l();
+    }
+
+    /* renamed from: m */
+    public /* bridge */ /* synthetic */ boolean mo2382m() {
+        return super.mo2382m();
+    }
+
+    /* renamed from: n */
+    public /* bridge */ /* synthetic */ void mo2383n() {
+        super.mo2383n();
+    }
+
+    /* renamed from: o */
+    public /* bridge */ /* synthetic */ void mo2384o() {
+        super.mo2384o();
+    }
+
+    public yd(IFeature mFeature, su suVar, wy wyVar) {
+        super(mFeature, suVar, wyVar);
+    }
+
+    protected void onActive(boolean z) {
+        if (z) {
+            this.a.mo2021a(new ye(this));
+        }
+        super.onActive(z);
+    }
+
+    /* renamed from: a */
+    protected gs mo2244a() {
+        this.f11185i = new bz(getContext());
+        return this.f11185i;
+    }
+
+    /* renamed from: b */
+    protected View mo2245b() {
+        return this.f11185i.m13626m();
+    }
+
+    /* renamed from: c */
+    protected View mo2246c() {
+        return this.f11185i.m13627n();
+    }
+
+    /* renamed from: d */
+    protected View mo2247d() {
+        return this.f11185i.m13628o();
     }
 }

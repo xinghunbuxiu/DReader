@@ -1,17 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-import android.animation.ValueAnimator;
-import android.animation.ValueAnimator.AnimatorUpdateListener;
+import android.graphics.Bitmap;
 
-class abt implements AnimatorUpdateListener {
-    final /* synthetic */ abs a;
+final class abt {
+    /* renamed from: a */
+    public Bitmap f9421a;
+    /* renamed from: b */
+    public boolean f9422b;
+    /* renamed from: c */
+    final /* synthetic */ abe f9423c;
 
-    abt(abs com_duokan_reader_ui_reading_abs) {
-        this.a = com_duokan_reader_ui_reading_abs;
-    }
-
-    public void onAnimationUpdate(ValueAnimator valueAnimator) {
-        this.a.f.c(1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue());
-        this.a.invalidate();
+    private abt(abe abe) {
+        this.f9423c = abe;
+        this.f9421a = null;
+        this.f9422b = false;
     }
 }

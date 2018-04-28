@@ -1,20 +1,28 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.ah;
+import com.duokan.core.sys.UThread;
+import com.duokan.core.sys.af;
+import com.duokan.reader.domain.cloud.DkCloudBookManifest;
+import com.duokan.reader.domain.cloud.ah;
 
-import java.util.Map;
+class gg implements ah {
+    /* renamed from: a */
+    final /* synthetic */ gf f3226a;
 
-class gg implements Runnable {
-    final /* synthetic */ Map a;
-    final /* synthetic */ gf b;
-
-    gg(gf gfVar, Map map) {
-        this.b = gfVar;
-        this.a = map;
+    gg(gf gfVar) {
+        this.f3226a = gfVar;
     }
 
-    public void run() {
-        ej.E.acquireUninterruptibly();
-        ah.submitFuture(new gh(this));
+    /* renamed from: a */
+    public void mo1047a(String str, DkCloudBookManifest dkCloudBookManifest) {
+        if (!this.f3226a.f3225b.aZ()) {
+            this.f3226a.f3225b.m4481a(dkCloudBookManifest, new af(Boolean.valueOf(true)));
+        }
+        UThread.post(this.f3226a.f3224a);
+    }
+
+    /* renamed from: a */
+    public void mo1048a(String str, String str2) {
+        this.f3226a.f3225b.m4471b(this.f3226a.f3224a);
     }
 }

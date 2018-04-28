@@ -1,21 +1,28 @@
 package com.duokan.reader.ui.general;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.ui.j;
-import com.duokan.reader.ReaderEnv;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.TextView;
+import com.duokan.core.app.AppContext;
+import com.duokan.reader.ui.surfing.al;
 
-public class hz {
-    public static dr a(ActivatedController controller, boolean z, boolean z2) {
-        if (ReaderEnv.get().forHd()) {
-            return new fk(controller);
-        }
-        return new gr(controller, z, z2);
+class hz implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ TextView f7361a;
+    /* renamed from: b */
+    final /* synthetic */ hu f7362b;
+
+    hz(hu huVar, TextView textView) {
+        this.f7362b = huVar;
+        this.f7361a = textView;
     }
 
-    public static dq a(j jVar) {
-        if (ReaderEnv.get().forHd()) {
-            return new fj(jVar);
+    public void onClick(View view) {
+        int a = this.f7362b.m10753a(this.f7361a);
+        if (this.f7362b.f7352c != a) {
+            this.f7362b.m10765b(a);
+        } else {
+            ((al) AppContext.getAppContext(this.f7362b.getContext()).queryFeature(al.class)).mo2556k();
         }
-        return new gq(jVar);
     }
 }

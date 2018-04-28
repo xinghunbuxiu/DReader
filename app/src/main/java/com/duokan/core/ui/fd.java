@@ -3,30 +3,32 @@ package com.duokan.core.ui;
 import android.graphics.PointF;
 import android.view.View;
 
-class fd implements bw, onTapListener {
-    final ev a;
+class fd implements bw, cu {
+    /* renamed from: a */
+    final /* synthetic */ ev f1244a;
 
     private fd(ev evVar) {
-        this.a = evVar;
+        this.f1244a = evVar;
     }
 
     public void onTouchDown(View view, PointF pointF) {
-        this.a.a(pointF);
+        this.f1244a.mo493a(pointF);
     }
 
     public void onTouchUp(View view, PointF pointF) {
-        this.a.b(pointF);
+        this.f1244a.mo496b(pointF);
     }
 
     public void onTouchCancel(View view, PointF pointF) {
-        this.a.c(pointF);
+        this.f1244a.mo497c(pointF);
     }
 
-    public void a(View view, PointF pointF) {
-        this.a.e(pointF);
+    /* renamed from: a */
+    public void mo521a(View view, PointF pointF) {
+        this.f1244a.mo499e(pointF);
     }
 
     public void onTap(er erVar, View view, PointF pointF) {
-        this.a.d(pointF);
+        this.f1244a.mo498d(pointF);
     }
 }

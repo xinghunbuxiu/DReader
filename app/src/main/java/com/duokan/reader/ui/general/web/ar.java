@@ -1,17 +1,21 @@
 package com.duokan.reader.ui.general.web;
 
-class ar implements Runnable {
-    final /* synthetic */ String a;
-    final /* synthetic */ boolean b;
-    final /* synthetic */ StorePageController c;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import com.duokan.core.ui.dv;
 
-    ar(StorePageController storePageController, String str, boolean z) {
-        this.c = storePageController;
-        this.a = str;
-        this.b = z;
+class ar extends FrameLayout {
+    /* renamed from: a */
+    final /* synthetic */ SearchController f7594a;
+
+    public ar(SearchController searchController, Context context) {
+        this.f7594a = searchController;
+        super(context);
     }
 
-    public void run() {
-        this.c.queryFictionDetail(this.a, new as(this), true);
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        dv.m1909a(getContext());
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

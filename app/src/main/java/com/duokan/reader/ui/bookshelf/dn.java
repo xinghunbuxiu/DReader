@@ -1,13 +1,10 @@
 package com.duokan.reader.ui.bookshelf;
 
-class dn implements Runnable {
-    final /* synthetic */ dm a;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.ActivatedController;
 
-    dn(dm dmVar) {
-        this.a = dmVar;
-    }
-
-    public void run() {
-        this.a.a.a.pushPageSmoothly(new fc(this.a.a.getContext()), null);
+public abstract class dn extends ActivatedController implements ex {
+    public dn(IFeature mFeature) {
+        super(mFeature);
     }
 }

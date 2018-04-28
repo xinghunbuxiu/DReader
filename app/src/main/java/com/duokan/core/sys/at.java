@@ -1,7 +1,9 @@
 package com.duokan.core.sys;
 
 interface at {
-    boolean a();
+    /* renamed from: a */
+    boolean mo412a();
 
-    long b();
+    /* renamed from: b */
+    long mo413b();
 }

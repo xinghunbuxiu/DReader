@@ -1,7 +1,9 @@
 package com.duokan.reader.domain.document;
 
 public interface at {
-    void a(n nVar, as asVar);
+    /* renamed from: a */
+    void mo1221a(C0903n c0903n, as asVar);
 
-    void b(n nVar, as asVar);
+    /* renamed from: b */
+    void mo1225b(C0903n c0903n, as asVar);
 }

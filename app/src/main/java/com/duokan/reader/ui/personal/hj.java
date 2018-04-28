@@ -1,45 +1,38 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.c.j;
-import com.duokan.core.app.ab;
-import com.duokan.core.app.ac;
-import com.duokan.reader.domain.cloud.DkUserReadBookManager;
-import com.duokan.reader.domain.cloud.DkUserReadBookManager.ReadBook;
-import com.duokan.reader.ui.general.be;
-import com.duokan.reader.ui.general.jq;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import com.duokan.core.ui.dv;
 
-import java.util.ArrayList;
-import java.util.List;
+class hj extends FrameLayout {
+    /* renamed from: a */
+    final /* synthetic */ View f8653a;
+    /* renamed from: b */
+    final /* synthetic */ Rect f8654b;
+    /* renamed from: c */
+    final /* synthetic */ ImageView f8655c;
+    /* renamed from: d */
+    final /* synthetic */ ImageView f8656d;
+    /* renamed from: e */
+    final /* synthetic */ fz f8657e;
 
-class hj implements ac {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ hi b;
-
-    hj(hi hiVar, Runnable runnable) {
-        this.b = hiVar;
-        this.a = runnable;
+    hj(fz fzVar, Context context, View view, Rect rect, ImageView imageView, ImageView imageView2) {
+        this.f8657e = fzVar;
+        this.f8653a = view;
+        this.f8654b = rect;
+        this.f8655c = imageView;
+        this.f8656d = imageView2;
+        super(context);
     }
 
-    public void a(ab abVar) {
-        ArrayList arrayList = new ArrayList();
-        List selectedItems = this.b.a.getSelectedItems();
-        for (int i = 0; i < selectedItems.size(); i++) {
-            if (selectedItems.get(i) instanceof ReadBook) {
-                arrayList.add((ReadBook) selectedItems.get(i));
-            }
-        }
-        if (arrayList.size() == 0) {
-            be.a(this.b.getContext(), j.bookshelf__shared__unselect_any_books, 0).show();
-            return;
-        }
-        com.duokan.core.ui.j a = jq.a(this.b.getContext(), "", this.b.getString(j.personal__readed_books_view__removing), true, true);
-        ArrayList arrayList2 = new ArrayList();
-        for (int i2 = 0; i2 < arrayList.size(); i2++) {
-            ReadBook readBook = (ReadBook) arrayList.get(i2);
-            DkUserReadBookManager.a().a(readBook.getBookUuid(), new hk(this, arrayList2, readBook, i2, arrayList, a));
-        }
-    }
-
-    public void b(ab abVar) {
+    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+        this.f8653a.layout(i, this.f8654b.top, i3, this.f8654b.bottom);
+        int b = dv.m1932b(getContext(), 78.0f);
+        int b2 = dv.m1932b(getContext(), 5.0f);
+        this.f8655c.layout(i + b, (this.f8653a.getTop() - this.f8655c.getMeasuredHeight()) - b2, b + this.f8655c.getMeasuredWidth(), this.f8653a.getTop() - b2);
+        this.f8656d.layout(this.f8655c.getRight() + b2, (this.f8655c.getTop() - this.f8656d.getMeasuredHeight()) - b2, (this.f8655c.getRight() + this.f8656d.getMeasuredWidth()) + b2, this.f8655c.getTop() - b2);
     }
 }

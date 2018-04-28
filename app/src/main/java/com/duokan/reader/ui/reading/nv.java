@@ -1,20 +1,28 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
+import com.duokan.reader.domain.bookshelf.C0798a;
+import java.util.Comparator;
 
-import com.duokan.core.ui.ay;
-import com.duokan.core.ui.bg;
-import com.duokan.reader.domain.bookshelf.ah;
+class nv implements Comparator<C0798a> {
+    /* renamed from: a */
+    final /* synthetic */ nu f10722a;
 
-class nv implements bg {
-    final /* synthetic */ nk a;
-
-    nv(nk nkVar) {
-        this.a = nkVar;
+    nv(nu nuVar) {
+        this.f10722a = nuVar;
     }
 
-    public void a(ay ayVar, View view, int i) {
-        ny nyVar = (ny) ayVar.getAdapter();
-        this.a.c.a(nyVar.a, (ah) nyVar.d(i));
+    public /* synthetic */ int compare(Object obj, Object obj2) {
+        return m14793a((C0798a) obj, (C0798a) obj2);
+    }
+
+    /* renamed from: a */
+    public int m14793a(C0798a c0798a, C0798a c0798a2) {
+        if (c0798a.m3726d().mo1190c(c0798a2.m3726d())) {
+            return 1;
+        }
+        if (c0798a.m3726d().mo1188a(c0798a2.m3726d())) {
+            return -1;
+        }
+        return 0;
     }
 }

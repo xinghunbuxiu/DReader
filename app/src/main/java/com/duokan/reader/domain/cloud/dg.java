@@ -1,58 +1,31 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.webservices.WebSession;
-import com.duokan.reader.common.webservices.b;
-import com.duokan.reader.common.webservices.duokan.aa;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.i;
+import com.duokan.reader.common.async.p035a.C0517a;
+import com.duokan.reader.domain.account.C0666x;
+import com.duokan.reader.domain.account.C0672a;
 
-class dg extends ef {
-    final /* synthetic */ ab a;
-    final /* synthetic */ df b;
-    private b d = null;
-    private DkCloudPurchasedFiction e = null;
+class dg implements C0666x {
+    /* renamed from: a */
+    final /* synthetic */ boolean f3872a;
+    /* renamed from: b */
+    final /* synthetic */ boolean f3873b;
+    /* renamed from: c */
+    final /* synthetic */ C0517a f3874c;
+    /* renamed from: d */
+    final /* synthetic */ DkUserPurchasedFictionsManager f3875d;
 
-    dg(df dfVar, ab abVar) {
-        this.b = dfVar;
-        this.a = abVar;
-        super(dfVar.a.c);
+    dg(DkUserPurchasedFictionsManager dkUserPurchasedFictionsManager, boolean z, boolean z2, C0517a c0517a) {
+        this.f3875d = dkUserPurchasedFictionsManager;
+        this.f3872a = z;
+        this.f3873b = z2;
+        this.f3874c = c0517a;
     }
 
-    protected void onSessionTry() {
-        this.d = new aa((WebSession) this, this.a).b(false, this.b.a.a);
-        if (this.d.b == 0) {
-            ei eiVar = new ei(this.a);
-            eiVar.a();
-            DkCloudPurchasedFiction dkCloudPurchasedFiction = (DkCloudPurchasedFiction) eiVar.queryItem(this.b.a.a);
-            if (dkCloudPurchasedFiction != null) {
-                dkCloudPurchasedFiction.setHidden(false);
-                eiVar.updateItem(dkCloudPurchasedFiction);
-                this.e = dkCloudPurchasedFiction;
-            }
-        }
+    public void onQueryAccountOk(C0672a c0672a) {
+        this.f3875d.m5103b(new dh(this));
     }
 
-    protected void onSessionSucceeded() {
-        if (!this.a.a(DkUserPurchasedFictionsManager.g())) {
-            this.b.a.b.a(-1, "");
-        } else if (this.d.b == 1001 || this.d.b == 1002 || this.d.b == 1003) {
-            i.f().a(this.a.a, new dh(this));
-        } else if (this.d.b != 0) {
-            this.b.a.b.a(this.d.b, this.d.c);
-        } else {
-            if (this.e != null) {
-                this.b.a.c.h.a(this.e);
-                this.b.a.c.f();
-            }
-            this.b.a.b.a(null);
-        }
-    }
-
-    protected void onSessionFailed() {
-        if (this.a.a(DkUserPurchasedFictionsManager.g())) {
-            this.b.a.b.a(-1, this.b.a.c.b.getString(com.duokan.b.i.general__shared__network_error));
-        } else {
-            this.b.a.b.a(-1, "");
-        }
+    public void onQueryAccountError(C0672a c0672a, String str) {
+        this.f3874c.mo729a(-1, "");
     }
 }

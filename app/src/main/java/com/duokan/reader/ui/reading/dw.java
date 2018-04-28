@@ -1,72 +1,26 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.af;
-import com.duokan.reader.common.webservices.b;
-import com.duokan.reader.common.webservices.duokan.ag;
-import com.duokan.reader.common.webservices.duokan.g;
-import com.duokan.reader.common.webservices.duokan.i;
-import com.duokan.reader.common.webservices.duokan.o;
-import com.duokan.reader.common.webservices.duokan.r;
-import com.duokan.reader.common.webservices.duokan.v;
+import com.duokan.core.app.AppContext;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.sys.ag;
+import com.duokan.reader.domain.statistics.C1163a;
 
-import java.util.LinkedList;
+class dw implements ag<String> {
+    /* renamed from: a */
+    final /* synthetic */ dv f10050a;
 
-class dw extends r {
-    final /* synthetic */ eh a;
-    final /* synthetic */ af b;
-    final /* synthetic */ de c;
-
-    dw(de deVar, eh ehVar, af afVar) {
-        this.c = deVar;
-        this.a = ehVar;
-        this.b = afVar;
+    dw(dv dvVar) {
+        this.f10050a = dvVar;
     }
 
-    protected void onSessionTry() {
-        b g;
-        if (this.c.F == null) {
-            this.c.F = (String) new o(this, null).g(this.a.c.H()).a;
-        }
-        if (this.a.a.i()) {
-            this.a.e = 0;
-            this.a.d = new g();
-        } else {
-            b e = new i(this, this.a.a).e(this.c.F);
-            this.a.e = ((g) e.a).n;
-            this.a.d = (g) e.a;
-        }
-        v vVar = new v(this, this.a.a);
-        if (this.c.e.bm()) {
-            g = vVar.g(this.c.F);
-            if (g.b == 0) {
-                this.a.g = (ag) g.a;
-            }
-        }
-        if (this.a.c.k()) {
-            g = vVar.a(this.c.y.H(), this.c.y.l() ? 6 : 2);
-            if (g.b == 0) {
-                this.a.f = (LinkedList) g.a;
-                return;
-            }
-            return;
-        }
-        g = vVar.a(this.c.y.H(), 1);
-        if (g.b == 0) {
-            this.a.f = (LinkedList) g.a;
-        }
+    public /* synthetic */ void run(Object obj) {
+        m13997a((String) obj);
     }
 
-    protected void onSessionSucceeded() {
-        if (de.b == this.b) {
-            de.b.a(this.a);
-            de.e();
-        }
-    }
-
-    protected void onSessionFailed() {
-        if (de.b == this.b) {
-            de.b.a(this.a);
-            de.e();
-        }
+    /* renamed from: a */
+    public void m13997a(String str) {
+        ActivatedController commentView$2$1$1$1 = new CommentView$2$1$1$1(this, AppContext.getAppContext(this.f10050a.f10049a.f10048a.getContext()));
+        C1163a.m8627k().m8648a("tip", "click", "reading_comment_page_tip_entrance", false);
+        this.f10050a.f10049a.f10048a.f9993B.showPopupSmoothly(commentView$2$1$1$1, null);
     }
 }

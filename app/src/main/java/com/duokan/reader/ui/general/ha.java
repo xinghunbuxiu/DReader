@@ -1,26 +1,31 @@
 package com.duokan.reader.ui.general;
 
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.Drawable.Callback;
 
-import com.duokan.core.sys.TaskHandler;
+public class ha extends Drawable {
+    /* renamed from: a */
+    private Paint f7317a = new Paint();
 
-class ha implements Callback {
-    final /* synthetic */ PicView a;
-
-    ha(PicView picView) {
-        this.a = picView;
+    /* renamed from: a */
+    public void m10738a(int i) {
+        this.f7317a.setColor(i);
     }
 
-    public void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        TaskHandler.removeCallbacks(runnable);
+    public void draw(Canvas canvas) {
+        canvas.drawRect(getBounds(), this.f7317a);
     }
 
-    public void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
-        TaskHandler.postDelayed(runnable, j);
+    public void setAlpha(int i) {
+        this.f7317a.setAlpha(i);
     }
 
-    public void invalidateDrawable(Drawable drawable) {
-        this.a.invalidate();
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
+
+    public int getOpacity() {
+        return 0;
     }
 }

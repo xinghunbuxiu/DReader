@@ -1,27 +1,14 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.cloud.PersonalPrefs;
+class ga implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ PersonalController$1 f8602a;
 
-import java.util.concurrent.Callable;
-
-class ga implements Callable {
-    final /* synthetic */ fz a;
-
-    ga(fz fzVar) {
-        this.a = fzVar;
+    ga(PersonalController$1 personalController$1) {
+        this.f8602a = personalController$1;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
-    }
-
-    public ActivatedController a() {
-        PersonalPrefs.a().g(false);
-        if (i.f().c() == null || i.f().c().i()) {
-            return new kg(this.a.a.getContext());
-        }
-        return new ae(this.a.a.getContext());
+    public void run() {
+        this.f8602a.this$0.m11854a(true);
     }
 }

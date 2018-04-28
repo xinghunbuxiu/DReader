@@ -4,13 +4,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 class jf implements OnClickListener {
-    final /* synthetic */ jd a;
+    /* renamed from: a */
+    final /* synthetic */ ie f6657a;
+    /* renamed from: b */
+    final /* synthetic */ je f6658b;
 
-    jf(jd jdVar) {
-        this.a = jdVar;
+    jf(je jeVar, ie ieVar) {
+        this.f6658b = jeVar;
+        this.f6657a = ieVar;
     }
 
     public void onClick(View view) {
-        this.a.requestBack();
+        this.f6658b.requestBack();
     }
 }

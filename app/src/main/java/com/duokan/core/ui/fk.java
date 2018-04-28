@@ -4,5 +4,6 @@ import android.graphics.Matrix;
 import android.view.View;
 
 public interface fk {
-    Matrix c(View view);
+    /* renamed from: c */
+    Matrix mo475c(View view);
 }

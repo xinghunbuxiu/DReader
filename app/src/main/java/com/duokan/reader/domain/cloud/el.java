@@ -1,30 +1,31 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.async.a.c;
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.h;
+import com.duokan.reader.common.async.p035a.C0517a;
 
-class el implements h {
-    final /* synthetic */ DkUserReadBookManager a;
+class el implements C0517a<Void> {
+    /* renamed from: a */
+    final /* synthetic */ boolean f3931a;
+    /* renamed from: b */
+    final /* synthetic */ boolean f3932b;
+    /* renamed from: c */
+    final /* synthetic */ eu f3933c;
+    /* renamed from: d */
+    final /* synthetic */ DkUserReadingNotesManager f3934d;
 
-    el(DkUserReadBookManager dkUserReadBookManager) {
-        this.a = dkUserReadBookManager;
+    el(DkUserReadingNotesManager dkUserReadingNotesManager, boolean z, boolean z2, eu euVar) {
+        this.f3934d = dkUserReadingNotesManager;
+        this.f3931a = z;
+        this.f3932b = z2;
+        this.f3933c = euVar;
     }
 
-    public void a(a aVar) {
-        this.a.f = new ab(this.a.c.c());
+    /* renamed from: a */
+    public void m5498a(Void voidR) {
+        DkUserPurchasedFictionsManager.m5072a().m5094a(new em(this));
     }
 
-    public void b(a aVar) {
-        this.a.a(c.a);
-    }
-
-    public void c(a aVar) {
-        this.a.f = new ab();
-        this.a.b();
-    }
-
-    public void d(a aVar) {
+    /* renamed from: a */
+    public void mo729a(int i, String str) {
+        this.f3933c.mo1158a("");
     }
 }

@@ -1,78 +1,49 @@
 package com.duokan.reader.ui.personal;
 
-import android.content.Intent;
-import android.view.View;
-import android.widget.TextView;
+import android.text.TextUtils;
+import com.duokan.reader.domain.cloud.DkCloudReadingInfo;
+import com.duokan.reader.domain.cloud.al;
+import com.duokan.reader.ui.general.be;
+import com.duokan.reader.ui.general.em;
 
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.c.j;
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.IFeature;
-import com.duokan.reader.DkApp;
-import com.duokan.reader.ui.general.PageHeaderView;
+class mt implements al {
+    /* renamed from: a */
+    final /* synthetic */ em f8965a;
+    /* renamed from: b */
+    final /* synthetic */ int f8966b;
+    /* renamed from: c */
+    final /* synthetic */ mj f8967c;
 
-import java.util.Locale;
-
-public class mt extends ActivatedController {
-    static final /* synthetic */ boolean a = (!mt.class.desiredAssertionStatus());
-    private final Locale[] b = new Locale[]{null, new Locale(Locale.CHINESE.getLanguage(), Locale.SIMPLIFIED_CHINESE.getCountry()), new Locale(Locale.CHINESE.getLanguage(), Locale.TRADITIONAL_CHINESE.getCountry())};
-    private final int[] c = new int[]{j.personal__setup_language_view__default, j.personal__setup_language_view__chinese, j.personal__setup_language_view__chinese_traditional};
-    private int d = -1;
-
-    public mt(IFeature featrue) {
-        super(featrue);
-        setContentView(h.personal__setup_language_view);
-        ((PageHeaderView) findViewById(g.personal__setup_language_view__header)).setLeftTitle(j.personal__setup_language_view__title);
-        Locale userChosenLocale = DkApp.get().getUserChosenLocale();
-        if (userChosenLocale == null) {
-            this.d = 0;
-        } else if (userChosenLocale.getLanguage().equalsIgnoreCase(Locale.CHINESE.getLanguage())) {
-            if (userChosenLocale.getCountry().equalsIgnoreCase(Locale.TRADITIONAL_CHINESE.getCountry())) {
-                this.d = 2;
-            } else {
-                this.d = 1;
-            }
-        } else if (userChosenLocale.getLanguage().equalsIgnoreCase(Locale.ENGLISH.getLanguage())) {
-            this.d = 3;
-        } else if (a) {
-            this.d = 1;
-        } else {
-            throw new AssertionError();
-        }
-        a();
-        View findViewById = findViewById(g.personal__setup_language_view__first);
-        ((TextView) findViewById.findViewById(g.personal__setup_language_item_view__language)).setText(this.c[0]);
-        findViewById.setOnClickListener(new mu(this));
-        findViewById = findViewById(g.personal__setup_language_view__second);
-        ((TextView) findViewById.findViewById(g.personal__setup_language_item_view__language)).setText(this.c[1]);
-        findViewById.setOnClickListener(new mv(this));
-        findViewById = findViewById(g.personal__setup_language_view__third);
-        ((TextView) findViewById.findViewById(g.personal__setup_language_item_view__language)).setText(this.c[2]);
-        findViewById.setOnClickListener(new mw(this));
+    mt(mj mjVar, em emVar, int i) {
+        this.f8967c = mjVar;
+        this.f8965a = emVar;
+        this.f8966b = i;
     }
 
-    private void a() {
-        findViewById(g.personal__setup_language_view__first).findViewById(g.personal__setup_language_item_view__selected).setSelected(false);
-        findViewById(g.personal__setup_language_view__second).findViewById(g.personal__setup_language_item_view__selected).setSelected(false);
-        findViewById(g.personal__setup_language_view__third).findViewById(g.personal__setup_language_item_view__selected).setSelected(false);
-        if (this.d == 0) {
-            findViewById(g.personal__setup_language_view__first).findViewById(g.personal__setup_language_item_view__selected).setSelected(true);
-        } else if (this.d == 1) {
-            findViewById(g.personal__setup_language_view__second).findViewById(g.personal__setup_language_item_view__selected).setSelected(true);
-        } else if (this.d == 2) {
-            findViewById(g.personal__setup_language_view__third).findViewById(g.personal__setup_language_item_view__selected).setSelected(true);
-        } else {
-            findViewById(g.personal__setup_language_view__first).findViewById(g.personal__setup_language_item_view__selected).setSelected(true);
-        }
+    /* renamed from: a */
+    public void mo1112a(DkCloudReadingInfo dkCloudReadingInfo, DkCloudReadingInfo dkCloudReadingInfo2, String str) {
     }
 
-    private void a(int i) {
-        a();
-        getActivity().finish();
-        DkApp.get().setUserChosenLocale(this.b[i]);
-        Intent intent = new Intent(getActivity(), DkApp.get().getMainActivityClass());
-        intent.setAction("android.intent.action.MAIN");
-        getActivity().startActivity(intent);
+    /* renamed from: a */
+    public void mo1113a(DkCloudReadingInfo dkCloudReadingInfo, String str, String str2) {
+    }
+
+    /* renamed from: b */
+    public void mo1114b(DkCloudReadingInfo dkCloudReadingInfo, DkCloudReadingInfo dkCloudReadingInfo2, String str) {
+        this.f8967c.f8951a.f8945g = dkCloudReadingInfo2;
+        this.f8965a.dismiss();
+        this.f8967c.c.m9954a();
+    }
+
+    /* renamed from: b */
+    public void mo1115b(DkCloudReadingInfo dkCloudReadingInfo, String str, String str2) {
+        this.f8965a.dismiss();
+        this.f8967c.f8951a.f8945g = dkCloudReadingInfo;
+        if (TextUtils.isEmpty(str)) {
+            be.m10286a(this.f8967c.getContext(), this.f8966b, 0).show();
+        } else {
+            be.m10287a(this.f8967c.getContext(), (CharSequence) str, 0).show();
+        }
+        this.f8967c.c.m9954a();
     }
 }

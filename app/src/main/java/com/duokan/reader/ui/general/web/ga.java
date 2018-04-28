@@ -1,17 +1,20 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.ag;
+import com.duokan.core.sys.as;
 
-import org.json.JSONObject;
+class ga implements as {
+    /* renamed from: a */
+    final /* synthetic */ boolean f7874a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7875b;
 
-class ga implements ag {
-    final /* synthetic */ fz a;
-
-    ga(fz fzVar) {
-        this.a = fzVar;
+    ga(ci ciVar, boolean z) {
+        this.f7875b = ciVar;
+        this.f7874a = z;
     }
 
-    public void a(JSONObject jSONObject) {
-        this.a.b.pageController.triggerEventOnCurrentUrl("feedCommit", jSONObject);
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7875b.f7581b.mWebView.requestDisallowInterceptTouchEvent(this.f7874a);
     }
 }

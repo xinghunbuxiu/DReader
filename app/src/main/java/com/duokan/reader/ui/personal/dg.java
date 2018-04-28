@@ -1,18 +1,20 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.d;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.core.app.ActivatedController;
 
-class dg implements d {
-    final /* synthetic */ df a;
+class dg implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ MiAccountProfileSettingsController f8449a;
 
-    dg(df dfVar) {
-        this.a = dfVar;
+    dg(MiAccountProfileSettingsController miAccountProfileSettingsController) {
+        this.f8449a = miAccountProfileSettingsController;
     }
 
-    public void a(a aVar) {
-    }
-
-    public void a(a aVar, String str) {
+    public void onClick(View view) {
+        ActivatedController changePasswordController = new ChangePasswordController(this.f8449a.getContext());
+        changePasswordController.loadUrl("https://account.xiaomi.com/");
+        this.f8449a.b.pushHalfPageSmoothly(changePasswordController, null);
     }
 }

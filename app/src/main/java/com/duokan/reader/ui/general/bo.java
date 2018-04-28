@@ -4,55 +4,65 @@ import com.duokan.core.ui.aj;
 import com.duokan.reader.ui.general.DkWebListView.ListState;
 
 public abstract class bo extends aj {
-    private ListState a = ListState.UNKNOWN;
+    /* renamed from: a */
+    private ListState f5732a = ListState.UNKNOWN;
 
-    protected abstract void b();
+    /* renamed from: b */
+    protected abstract void mo1555b();
 
-    protected abstract void e(int i);
+    /* renamed from: e */
+    protected abstract void mo1557e(int i);
 
-    public final ListState l() {
-        return this.a;
+    /* renamed from: l */
+    public final ListState m8789l() {
+        return this.f5732a;
     }
 
-    public final void m() {
-        this.a = c() > 0 ? ListState.LOADING_COMPLETE : ListState.ERROR;
-        super.d();
+    /* renamed from: m */
+    public final void m8790m() {
+        this.f5732a = mo506c() > 0 ? ListState.LOADING_COMPLETE : ListState.ERROR;
+        super.mo1691d();
     }
 
-    public final void a(boolean z) {
-        if (c() > 0) {
-            this.a = z ? ListState.MORE_TO_LOAD : ListState.LOADING_COMPLETE;
+    /* renamed from: a */
+    public final void m8785a(boolean z) {
+        if (mo506c() > 0) {
+            this.f5732a = z ? ListState.MORE_TO_LOAD : ListState.LOADING_COMPLETE;
         } else {
-            this.a = ListState.EMPTY;
+            this.f5732a = ListState.EMPTY;
         }
-        super.d();
+        super.mo1691d();
     }
 
-    private final void b(boolean z) {
-        if (!g()) {
+    /* renamed from: b */
+    private final void mo1755b(boolean z) {
+        if (!mo1715g()) {
             if (!z) {
-                this.a = ListState.LOADING_UPDATES;
-                if (e()) {
+                this.f5732a = ListState.LOADING_UPDATES;
+                if (mo1712e()) {
                     return;
                 }
             }
-            b();
-            this.a = ListState.FIRST_LOADING;
-            e(50);
-            super.d();
+            mo1555b();
+            this.f5732a = ListState.FIRST_LOADING;
+            mo1557e(50);
+            super.mo1691d();
         }
     }
 
-    private final void c(int i) {
-        this.a = ListState.LOADING_MORE;
-        e(i);
+    /* renamed from: c */
+    private final void mo1556c(int i) {
+        this.f5732a = ListState.LOADING_MORE;
+        mo1557e(i);
     }
 
-    private final boolean g() {
-        return this.a == ListState.FIRST_LOADING || this.a == ListState.LOADING_MORE || this.a == ListState.LOADING_UPDATES;
+    /* renamed from: g */
+    private final boolean mo1715g() {
+        return this.f5732a == ListState.FIRST_LOADING || this.f5732a == ListState.LOADING_MORE || this.f5732a == ListState.LOADING_UPDATES;
     }
 
-    protected boolean e() {
+    /* renamed from: e */
+    protected boolean mo1712e() {
         return false;
     }
 }

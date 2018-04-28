@@ -1,17 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import java.io.File;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class wm implements Runnable {
-    final /* synthetic */ wl a;
+class wm implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ wd f11117a;
 
-    wm(wl wlVar) {
-        this.a = wlVar;
+    wm(wd wdVar) {
+        this.f11117a = wdVar;
     }
 
-    public void run() {
-        for (File d : this.a.n()) {
-            a.d(d);
-        }
+    public void onClick(View view) {
+        this.f11117a.m15051d();
     }
 }

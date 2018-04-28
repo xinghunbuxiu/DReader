@@ -1,30 +1,20 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.audio.AudioPlayer;
-import com.duokan.reader.domain.document.ay;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.core.sys.af;
 
-class hf implements Runnable {
-    final /* synthetic */ hb a;
+class hf implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ he f10317a;
 
-    hf(hb hbVar) {
-        this.a = hbVar;
+    hf(he heVar) {
+        this.f10317a = heVar;
     }
 
-    public void run() {
-        if (!this.a.q && this == this.a.K) {
-            ay Z = this.a.c.Z();
-            ay e = AudioPlayer.a().e();
-            this.a.K = null;
-            if (Z == null || e == null) {
-                this.a.c.aV();
-            } else if (Z.b(e)) {
-                this.a.c.aV();
-            } else {
-                if (AudioPlayer.a().b()) {
-                    this.a.c.a(Z, false);
-                }
-                this.a.c.aV();
-            }
+    public void onClick(View view) {
+        if (!this.f10317a.f10313a.m4170W()) {
+            this.f10317a.f10313a.m4208b(new af(Boolean.valueOf(false)));
         }
     }
 }

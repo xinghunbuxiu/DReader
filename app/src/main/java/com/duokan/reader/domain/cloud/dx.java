@@ -1,19 +1,17 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.async.a.a;
+import com.duokan.reader.domain.cloud.DkSharedStorageManager.SharedKey;
 
-class dx implements a {
-    final /* synthetic */ dw a;
+class dx implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ DkUserReadBookManager f3894a;
 
-    dx(dw dwVar) {
-        this.a = dwVar;
+    dx(DkUserReadBookManager dkUserReadBookManager) {
+        this.f3894a = dkUserReadBookManager;
     }
 
-    public void a(Void voidR) {
-        new dy(this, DkUserPurchasedFictionsManager.g()).open();
-    }
-
-    public void a(int i, String str) {
-        this.a.b.a(i, str);
+    public void run() {
+        this.f3894a.f3619c.m3494a(this.f3894a.f3620d);
+        DkSharedStorageManager.m5016a().m5025a(this.f3894a, SharedKey.USER_READ_COUNT);
     }
 }

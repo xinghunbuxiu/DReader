@@ -1,24 +1,17 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.Drawable.Callback;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class ba implements Callback {
-    final /* synthetic */ az a;
+class ba implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ao f6153a;
 
-    ba(az azVar) {
-        this.a = azVar;
+    ba(ao aoVar) {
+        this.f6153a = aoVar;
     }
 
-    public void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        this.a.unscheduleSelf(runnable);
-    }
-
-    public void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
-        this.a.scheduleSelf(runnable, j);
-    }
-
-    public void invalidateDrawable(Drawable drawable) {
-        this.a.invalidateSelf();
+    public void onClick(View view) {
+        this.f6153a.m9167m();
     }
 }

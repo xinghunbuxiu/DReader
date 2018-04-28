@@ -1,52 +1,37 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.TextView;
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
+import android.graphics.RectF;
+import com.duokan.core.ui.dv;
+import com.duokan.reader.ui.general.C1326b;
 
-import com.duokan.reader.ui.general.PagesView;
+class xy extends C1326b {
+    /* renamed from: a */
+    final /* synthetic */ xx f11169a;
 
-public class xy extends wl {
-    private fo n = null;
-    private final View o = findViewById(g.reading__reading_view__chapter_info);
-    private final TextView p = ((TextView) findViewById(g.reading__reading_view__chapter_name));
-    private final TextView q = ((TextView) findViewById(g.reading__reading_view__chapter_index));
-
-    public xy(Context context, xb xbVar) {
-        super(context, xbVar);
+    public xy(xx xxVar, int i, int i2) {
+        this.f11169a = xxVar;
+        super(Config.ARGB_8888, dv.f1204m);
     }
 
-    protected fi getFixedPagesView() {
-        return null;
+    public int getIntrinsicWidth() {
+        return this.f11169a.f11165b.m6407b();
     }
 
-    protected fo getFlowPagesView() {
-        return this.n;
+    public int getIntrinsicHeight() {
+        return this.f11169a.f11165b.m6411c();
     }
 
-    public PagesView getShowingPagesView() {
-        return this.n;
+    /* renamed from: a */
+    protected void mo2512a(Bitmap bitmap, RectF rectF, float f) {
+        rectF.round(this.f11169a.f11167d);
+        bitmap.eraseColor(0);
+        this.f11169a.f11165b.m6406a(bitmap, this.f11169a.f11167d);
     }
 
-    public gy getShowingDocPresenter() {
-        return this.n;
-    }
-
-    public void a() {
-        this.n = new xt(getContext());
-        this.b.addView(this.n, new LayoutParams(-1, -1));
-    }
-
-    public void a(int i, String str, String str2) {
-        this.o.setVisibility(i);
-        if (!TextUtils.isEmpty(str)) {
-            this.p.setVisibility(0);
-            this.p.setText(str);
-        }
-        if (!TextUtils.isEmpty(str2)) {
-            this.q.setVisibility(0);
-            this.q.setText(str2);
-        }
+    public void invalidateSelf() {
+        super.invalidateSelf();
+        this.f11169a.invalidate();
     }
 }

@@ -1,13 +1,14 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.widget.TextView;
+class hg implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ he f6546a;
 
-class hg {
-    public TextView a;
-    public TextView b;
-    final /* synthetic */ hf c;
+    hg(he heVar) {
+        this.f6546a = heVar;
+    }
 
-    private hg(hf hfVar) {
-        this.c = hfVar;
+    public void run() {
+        this.f6546a.requestDetach();
     }
 }

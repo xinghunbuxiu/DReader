@@ -1,7 +1,7 @@
 package com.duokan.kernel.epublib;
 
 import com.duokan.kernel.DkFlowPosition;
-
+import com.duokan.kernel.epublib.DkeBook.Callback;
 import java.util.Arrays;
 
 public class DkeBookEx extends DkeBook {

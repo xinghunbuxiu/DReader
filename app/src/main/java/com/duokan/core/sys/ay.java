@@ -1,40 +1,47 @@
 package com.duokan.core.sys;
 
 class ay implements at {
-    public final ax a;
-    public final aw b;
-    public boolean c = true;
+    /* renamed from: a */
+    public final ax f681a;
+    /* renamed from: b */
+    public final aw f682b;
+    /* renamed from: c */
+    public boolean f683c = true;
 
     public ay(ax axVar, aw awVar) {
-        this.a = axVar;
-        this.b = awVar;
+        this.f681a = axVar;
+        this.f682b = awVar;
     }
 
     public ay(ay ayVar) {
-        this.a = ayVar.a;
-        this.b = ayVar.b;
-        this.c = ayVar.c;
+        this.f681a = ayVar.f681a;
+        this.f682b = ayVar.f682b;
+        this.f683c = ayVar.f683c;
     }
 
-    public long c() {
-        return this.a.d.get();
+    /* renamed from: c */
+    public long m931c() {
+        return this.f681a.f673d.get();
     }
 
-    public void a(long j) {
+    /* renamed from: a */
+    public void m928a(long j) {
         long j2;
         do {
-            j2 = this.a.d.get();
+            j2 = this.f681a.f673d.get();
             if (j2 >= j) {
                 return;
             }
-        } while (!this.a.d.compareAndSet(j2, j));
+        } while (!this.f681a.f673d.compareAndSet(j2, j));
     }
 
-    public boolean a() {
-        return this.c;
+    /* renamed from: a */
+    public boolean mo412a() {
+        return this.f683c;
     }
 
-    public long b() {
-        return this.a.f.get();
+    /* renamed from: b */
+    public long mo413b() {
+        return this.f681a.f675f.get();
     }
 }

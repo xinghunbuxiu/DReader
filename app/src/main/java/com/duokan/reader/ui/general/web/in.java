@@ -1,21 +1,26 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.af;
+import android.text.TextUtils;
+import com.duokan.reader.ui.account.ae;
+import com.duokan.reader.ui.account.ar;
+import com.duokan.reader.ui.account.bu;
 
-class in implements Runnable {
-    final /* synthetic */ String a;
-    final /* synthetic */ String b;
-    final /* synthetic */ af c;
-    final /* synthetic */ il d;
+class in implements ae {
+    /* renamed from: a */
+    final /* synthetic */ bu f8004a;
+    /* renamed from: b */
+    final /* synthetic */ il f8005b;
 
-    in(il ilVar, String str, String str2, af afVar) {
-        this.d = ilVar;
-        this.a = str;
-        this.b = str2;
-        this.c = afVar;
+    in(il ilVar, bu buVar) {
+        this.f8005b = ilVar;
+        this.f8004a = buVar;
     }
 
-    public void run() {
-        a.a().a(this.a, true, true, -1, -1, -1, new io(this));
+    public void onChoiced(String str) {
+        if (!TextUtils.isEmpty(str)) {
+            this.f8005b.f8002f.f7996b.f7581b.mShareController = new ar(this.f8005b.f8002f.f7996b.f7581b.getContext(), str, this.f8005b.f7999c, this.f8005b.f8000d, this.f8005b.f8001e, this.f8004a);
+            this.f8005b.f8002f.f7996b.f7581b.addSubController(this.f8005b.f8002f.f7996b.f7581b.mShareController);
+            this.f8005b.f8002f.f7996b.f7581b.activate(this.f8005b.f8002f.f7996b.f7581b.mShareController);
+        }
     }
 }

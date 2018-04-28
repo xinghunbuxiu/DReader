@@ -1,31 +1,31 @@
 package com.duokan.reader.ui.general;
 
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
+import android.graphics.PointF;
+import android.view.View;
+import com.duokan.core.ui.C0382r;
+import com.duokan.core.ui.er;
 
-class fn implements AnimationListener {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ Runnable b;
-    final /* synthetic */ fk c;
+class fn implements C0382r {
+    /* renamed from: a */
+    final /* synthetic */ fm f7247a;
 
-    fn(fk fkVar, Runnable runnable, Runnable runnable2) {
-        this.c = fkVar;
-        this.a = runnable;
-        this.b = runnable2;
+    fn(fm fmVar) {
+        this.f7247a = fmVar;
     }
 
-    public void onAnimationStart(Animation animation) {
-        if (this.a != null) {
-            this.a.run();
-        }
+    public void onTouchDown(View view, PointF pointF) {
     }
 
-    public void onAnimationEnd(Animation animation) {
-        if (this.b != null) {
-            this.b.run();
-        }
+    public void onTouchUp(View view, PointF pointF) {
     }
 
-    public void onAnimationRepeat(Animation animation) {
+    public void onTouchCancel(View view, PointF pointF) {
+    }
+
+    /* renamed from: a */
+    public void mo528a(er erVar, View view, PointF pointF, PointF pointF2) {
+        this.f7247a.m10663e(this.f7247a.f7243e, pointF2);
+        this.f7247a.f7245g = false;
+        this.f7247a.m1620d(true);
     }
 }

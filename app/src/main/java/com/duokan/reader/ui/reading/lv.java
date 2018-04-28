@@ -1,32 +1,36 @@
 package com.duokan.reader.ui.reading;
 
-class lv implements mb {
-    final /* synthetic */ lw a;
-    final /* synthetic */ ls b;
+import android.graphics.PointF;
+import android.view.View;
+import com.duokan.core.ui.cc;
 
-    lv(ls lsVar, lw lwVar) {
-        this.b = lsVar;
-        this.a = lwVar;
+class lv implements cc {
+    /* renamed from: a */
+    final /* synthetic */ float[] f10592a;
+    /* renamed from: b */
+    final /* synthetic */ PointF f10593b;
+    /* renamed from: c */
+    final /* synthetic */ lt f10594c;
+
+    lv(lt ltVar, float[] fArr, PointF pointF) {
+        this.f10594c = ltVar;
+        this.f10592a = fArr;
+        this.f10593b = pointF;
     }
 
-    public void a() {
-        this.b.b.removeView(this.b.c.b());
-        this.b.c = null;
-        this.b.d.a(false);
-        this.a.a();
-        this.b.b.getShowingPagesView().setEnabled(true);
-        this.b.a.a(0, 12);
+    public void onTouchUp(View view, PointF pointF) {
     }
 
-    public void b() {
-        this.a.b();
+    public void onTouchDown(View view, PointF pointF) {
     }
 
-    public void c() {
-        this.a.c();
+    public void onTouchCancel(View view, PointF pointF) {
     }
 
-    public void a(boolean z) {
-        this.b.b.getShowingPagesView().setEnabled(!z);
+    /* renamed from: a */
+    public void mo538a(View view, PointF pointF, float f) {
+        this.f10592a[0] = f;
+        this.f10593b.x = pointF.x;
+        this.f10593b.y = pointF.y;
     }
 }

@@ -1,42 +1,26 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.cloud.DkCloudPurchasedFiction;
-import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
+import com.duokan.core.sys.ag;
+import com.duokan.reader.domain.store.DkStoreFictionDetail;
 import com.mipay.sdk.Mipay;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+class iu implements ag<DkStoreFictionDetail> {
+    /* renamed from: a */
+    final /* synthetic */ String f8015a;
+    /* renamed from: b */
+    final /* synthetic */ it f8016b;
 
-import java.util.Arrays;
-import java.util.concurrent.Callable;
-
-class iu implements Callable {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
-
-    iu(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    iu(it itVar, String str) {
+        this.f8016b = itVar;
+        this.f8015a = str;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
+    public /* synthetic */ void run(Object obj) {
+        m11206a((DkStoreFictionDetail) obj);
     }
 
-    public String a() {
-        JSONObject jSONObject = new JSONObject();
-        if (i.f().a(PersonalAccount.class)) {
-            DkCloudPurchasedFiction b = DkUserPurchasedFictionsManager.a().b(this.a);
-            jSONObject.put(Mipay.KEY_CODE, 0);
-            if (b != null) {
-                jSONObject.put("entire", b.isEntirePaid());
-                jSONObject.put("paid", new JSONArray(Arrays.asList(b.getPaidChaptersId())));
-            }
-        } else {
-            jSONObject.put(Mipay.KEY_CODE, 3);
-        }
-        return jSONObject.toString();
+    /* renamed from: a */
+    public void m11206a(DkStoreFictionDetail dkStoreFictionDetail) {
+        this.f8016b.f8014b.f7581b.web_notifyWeb(this.f8015a, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
     }
 }

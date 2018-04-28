@@ -1,30 +1,19 @@
 package com.duokan.reader.ui.personal;
 
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
-
-import com.duokan.reader.domain.bookshelf.ai;
-import com.duokan.reader.domain.cloud.PersonalPrefs;
+import com.duokan.reader.ReaderFeature;
+import com.duokan.reader.ui.account.C1261m;
 
 class jj implements OnClickListener {
-    final /* synthetic */ Handler a;
-    final /* synthetic */ it b;
+    /* renamed from: a */
+    final /* synthetic */ jg f8781a;
 
-    jj(it itVar, Handler handler) {
-        this.b = itVar;
-        this.a = handler;
+    jj(jg jgVar) {
+        this.f8781a = jgVar;
     }
 
     public void onClick(View view) {
-        PersonalPrefs.a().h(!PersonalPrefs.a().x());
-        this.b.a();
-        if (PersonalPrefs.a().y()) {
-            this.a.sendMessageDelayed(Message.obtain(this.a, 0), 5000);
-            return;
-        }
-        this.a.removeMessages(0);
-        ai.a().s();
+        ((ReaderFeature) this.f8781a.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new C1261m(this.f8781a.getContext()), null);
     }
 }

@@ -1,19 +1,22 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.ReaderFeature;
+import com.duokan.reader.common.webservices.duokan.C0650x;
 
 class us implements Runnable {
-    final /* synthetic */ ur a;
+    /* renamed from: a */
+    final /* synthetic */ ur f11031a;
 
     us(ur urVar) {
-        this.a = urVar;
+        this.f11031a = urVar;
     }
 
     public void run() {
-        if (this.a.a.a.G().ai()) {
-            ((ReaderFeature) this.a.a.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new en(this.a.a.getContext(), false), null);
-        } else {
-            ((ReaderFeature) this.a.a.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new et(this.a.a.getContext(), false), null);
+        String I = this.f11031a.f11029a.m4156I();
+        if (this.f11031a.f11029a.al()) {
+            I = new C0650x(this.f11031a.f11029a.m4156I()).m3046a();
         }
+        su a = this.f11031a.f11030b.f11020a;
+        int i = this.f11031a.f11029a.al() ? 4 : this.f11031a.f11029a.mo1038k() ? 2 : 1;
+        a.mo2037a(I, i);
     }
 }

@@ -5,7 +5,6 @@ import com.evernote.thrift.TException;
 import com.evernote.thrift.protocol.TField;
 import com.evernote.thrift.protocol.TProtocol;
 import com.evernote.thrift.protocol.TStruct;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -27,7 +26,6 @@ public class FileData extends Data {
     }
 
     public void write(TProtocol tProtocol) {
-        InputStream fileInputStream;
         Throwable e;
         validate();
         tProtocol.writeStructBegin(STRUCT_DESC);
@@ -41,6 +39,7 @@ public class FileData extends Data {
         tProtocol.writeFieldEnd();
         if (this.mBodyFile != null && this.mBodyFile.isFile()) {
             tProtocol.writeFieldBegin(BODY_FIELD_DESC);
+            InputStream fileInputStream;
             try {
                 fileInputStream = new FileInputStream(this.mBodyFile);
                 try {

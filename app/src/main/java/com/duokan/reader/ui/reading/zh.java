@@ -4,14 +4,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 class zh implements OnClickListener {
-    final /* synthetic */ yr a;
+    /* renamed from: a */
+    final /* synthetic */ ze f11266a;
 
-    zh(yr yrVar) {
-        this.a = yrVar;
+    zh(ze zeVar) {
+        this.f11266a = zeVar;
     }
 
     public void onClick(View view) {
-        this.a.D.put("Action2", "NOTE");
-        this.a.F.f();
+        this.f11266a.f11224F.mo2214g();
     }
 }

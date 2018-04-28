@@ -1,36 +1,40 @@
 package com.duokan.reader.ui.account;
 
 import android.graphics.Bitmap;
-import android.text.TextUtils;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.common.webservices.C0237c;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.WebSession;
 
-import com.duokan.c.j;
-import com.duokan.reader.domain.account.oauth.ThirdWeiXin;
-import com.duokan.reader.ui.general.be;
+class ca extends WebSession {
+    /* renamed from: a */
+    Bitmap f5911a = null;
+    /* renamed from: b */
+    final /* synthetic */ co f5912b;
+    /* renamed from: c */
+    final /* synthetic */ bx f5913c;
 
-class ca implements cd {
-    final /* synthetic */ bz a;
-
-    ca(bz bzVar) {
-        this.a = bzVar;
+    ca(bx bxVar, C0657i c0657i, co coVar) {
+        this.f5913c = bxVar;
+        this.f5912b = coVar;
+        super(c0657i);
     }
 
-    public void a(Bitmap bitmap, boolean z) {
-        new ThirdWeiXin().share(!TextUtils.isEmpty(this.a.d) ? this.a.d : " ", !TextUtils.isEmpty(this.a.e) ? this.a.e : " ", !TextUtils.isEmpty(this.a.c) ? this.a.c : " ", bitmap, true, this.a.b.equals("wenxin_friends"));
-        this.a.a(this.a.b);
-        this.a.e();
-        if (bitmap != null && !bitmap.isRecycled() && z) {
-            bitmap.recycle();
+    protected void onSessionTry() {
+        this.f5911a = new C0237c(this).m545a(this.f5913c.f5893e.f5801b);
+    }
+
+    protected void onSessionSucceeded() {
+        this.f5913c.f5901m = false;
+        if (this.f5911a != null) {
+            this.f5912b.mo1586a(this.f5911a, true);
+        } else {
+            onSessionFailed();
         }
     }
 
-    public void a() {
-        this.a.e();
-        CharSequence string = this.a.getString(j.gen_bitmap_fail);
-        if (this.a.h != null) {
-            this.a.h.b(string);
-            this.a.h = null;
-            return;
-        }
-        be.a(this.a.getContext(), string, 0).show();
+    protected void onSessionFailed() {
+        this.f5913c.f5901m = false;
+        this.f5912b.mo1587a(this.f5913c.getContext().getResources().getString(C0258j.gen_bitmap_fail));
     }
 }

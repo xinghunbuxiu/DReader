@@ -1,21 +1,19 @@
 package com.duokan.reader.ui.account;
 
-import com.duokan.reader.domain.account.oauth.TokenStore.OnAccessTokenUnbindListener;
-import com.duokan.reader.ui.general.jq;
+public class af {
+    /* renamed from: a */
+    String f5779a;
+    /* renamed from: b */
+    String f5780b;
+    /* renamed from: c */
+    int f5781c;
+    /* renamed from: d */
+    final /* synthetic */ ab f5782d;
 
-class af implements OnAccessTokenUnbindListener {
-    final /* synthetic */ jq a;
-    final /* synthetic */ ae b;
-
-    af(ae aeVar, jq jqVar) {
-        this.b = aeVar;
-        this.a = jqVar;
-    }
-
-    public void onOk() {
-        if (this.a != null && this.a.isShowing()) {
-            this.a.dismiss();
-        }
-        this.b.b.b();
+    af(ab abVar, String str, String str2, int i) {
+        this.f5782d = abVar;
+        this.f5780b = str2;
+        this.f5779a = str;
+        this.f5781c = i;
     }
 }

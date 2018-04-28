@@ -1,13 +1,14 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.domain.account.ab;
+class ei implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ DkUserReadingNotesManager f3925a;
 
-class ei extends ek {
-    public ei(ab abVar) {
-        super(abVar, "UserPurchasedFictionsCache");
+    ei(DkUserReadingNotesManager dkUserReadingNotesManager) {
+        this.f3925a = dkUserReadingNotesManager;
     }
 
-    public void a() {
-        upgradeVersion(5, new ej(this));
+    public void run() {
+        this.f3925a.f3624b.m3494a(this.f3925a.f3625c);
     }
 }

@@ -1,9 +1,16 @@
 package com.duokan.reader.ui.account;
 
-import android.graphics.Bitmap;
+import com.duokan.reader.ui.general.ReaderUi;
 
-public interface cd {
-    void a();
+class cd implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ bx f5919a;
 
-    void a(Bitmap bitmap, boolean z);
+    cd(bx bxVar) {
+        this.f5919a = bxVar;
+    }
+
+    public void run() {
+        ReaderUi.m10162a(this.f5919a.getActivity(), this.f5919a.f5898j);
+    }
 }

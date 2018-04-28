@@ -1,19 +1,23 @@
 package com.duokan.reader.domain.bookshelf;
 
-class ij implements Runnable {
-    final /* synthetic */ c a;
-    final /* synthetic */ String b;
-    final /* synthetic */ hi c;
+import com.duokan.reader.common.p037c.C0562i;
+import com.duokan.reader.domain.downloadcenter.DownloadCenterTask;
+import java.util.HashSet;
+import java.util.concurrent.FutureTask;
 
-    ij(hi hiVar, c cVar, String str) {
-        this.c = hiVar;
-        this.a = cVar;
-        this.b = str;
+public abstract class ij implements C0562i {
+    /* renamed from: a */
+    private final HashSet<FutureTask<?>> f2687a = new HashSet();
+
+    /* renamed from: a */
+    protected void mo990a(DownloadCenterTask downloadCenterTask) {
     }
 
-    public void run() {
-        if (this.c.g(this.a)) {
-            bv.a().a(this.a.ao(), this.a.ap(), this.b);
-        }
+    /* renamed from: b */
+    protected void mo992b(DownloadCenterTask downloadCenterTask) {
+    }
+
+    /* renamed from: c */
+    protected void mo993c(DownloadCenterTask downloadCenterTask) {
     }
 }

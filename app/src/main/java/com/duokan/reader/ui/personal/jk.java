@@ -2,18 +2,18 @@ package com.duokan.reader.ui.personal;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-
-import com.duokan.reader.domain.bookshelf.ai;
+import com.duokan.reader.ReaderEnv;
 
 class jk implements OnClickListener {
-    final /* synthetic */ it a;
+    /* renamed from: a */
+    final /* synthetic */ jg f8782a;
 
-    jk(it itVar) {
-        this.a = itVar;
+    jk(jg jgVar) {
+        this.f8782a = jgVar;
     }
 
     public void onClick(View view) {
-        ai.a().a(!view.isSelected());
-        this.a.a();
+        ReaderEnv.get().setReceiveReplyMessage(!ReaderEnv.get().getIsReceiveReplyMessage());
+        this.f8782a.m12047a();
     }
 }

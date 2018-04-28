@@ -1,15 +1,17 @@
 package com.duokan.reader.ui.general;
 
 class cz implements Runnable {
-    final /* synthetic */ int a;
-    final /* synthetic */ cy b;
+    /* renamed from: a */
+    final /* synthetic */ int f7052a;
+    /* renamed from: b */
+    final /* synthetic */ cy f7053b;
 
     cz(cy cyVar, int i) {
-        this.b = cyVar;
-        this.a = i;
+        this.f7053b = cyVar;
+        this.f7052a = i;
     }
 
     public void run() {
-        this.b.d.setShowingChild(this.a);
+        this.f7053b.f6454d.setShowingChild(this.f7052a);
     }
 }

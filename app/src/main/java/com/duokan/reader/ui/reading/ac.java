@@ -4,13 +4,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 class ac implements OnClickListener {
-    final /* synthetic */ ab a;
+    /* renamed from: a */
+    final /* synthetic */ ab f9435a;
 
     ac(ab abVar) {
-        this.a = abVar;
+        this.f9435a = abVar;
     }
 
     public void onClick(View view) {
-        this.a.requestHideMenu();
+        this.f9435a.requestHideMenu();
     }
 }

@@ -1,20 +1,17 @@
 package com.duokan.reader.ui.bookshelf;
 
-import org.apache.http.entity.ContentProducer;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+class jb implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ie f6650a;
 
-class jb implements ContentProducer {
-    final /* synthetic */ iv a;
-
-    jb(iv ivVar) {
-        this.a = ivVar;
+    jb(ie ieVar) {
+        this.f6650a = ieVar;
     }
 
-    public void writeTo(OutputStream outputStream) {
-        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "utf-8");
-        outputStreamWriter.write(this.a.j());
-        outputStreamWriter.flush();
+    public void onClick(View view) {
+        this.f6650a.f6590b.m4924d();
     }
 }

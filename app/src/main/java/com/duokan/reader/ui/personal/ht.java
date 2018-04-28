@@ -1,31 +1,24 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.text.TextUtils;
+import com.duokan.reader.domain.account.C0666x;
+import com.duokan.reader.domain.account.C0672a;
+import com.duokan.reader.ui.general.be;
 
-import com.duokan.c.j;
-import com.duokan.reader.domain.cloud.DkUserReadBookManager.ReadBook;
-import com.duokan.reader.ui.general.expandable.ViewMode;
-import com.duokan.reader.ui.general.jq;
+class ht implements C0666x {
+    /* renamed from: a */
+    final /* synthetic */ hs f8672a;
 
-class ht implements OnClickListener {
-    final /* synthetic */ int a;
-    final /* synthetic */ int b;
-    final /* synthetic */ ReadBook c;
-    final /* synthetic */ hs d;
-
-    ht(hs hsVar, int i, int i2, ReadBook readBook) {
-        this.d = hsVar;
-        this.a = i;
-        this.b = i2;
-        this.c = readBook;
+    ht(hs hsVar) {
+        this.f8672a = hsVar;
     }
 
-    public void onClick(View view) {
-        if (this.d.a.s.f() == ViewMode.Edit) {
-            this.d.a.b(this.a, this.b);
-        } else {
-            new hu(this, jq.a(this.d.a.getContext(), "", this.d.a.a.getString(j.personal__readed_books_view__opening), true, true)).open();
+    public void onQueryAccountOk(C0672a c0672a) {
+    }
+
+    public void onQueryAccountError(C0672a c0672a, String str) {
+        if (!TextUtils.isEmpty(str)) {
+            be.m10287a(this.f8672a.f8671a.getContext(), (CharSequence) str, 0).show();
         }
     }
 }

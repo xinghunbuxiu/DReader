@@ -1,19 +1,28 @@
 package com.duokan.reader.ui.general;
 
-import com.duokan.core.app.c;
-import com.duokan.core.app.d;
-import com.duokan.reader.common.k;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 
-class hv implements d {
-    final /* synthetic */ k a;
-    final /* synthetic */ hs b;
+class hv extends Drawable {
+    /* renamed from: a */
+    final /* synthetic */ hu f7357a;
 
-    hv(hs hsVar, k kVar) {
-        this.b = hsVar;
-        this.a = kVar;
+    hv(hu huVar) {
+        this.f7357a = huVar;
     }
 
-    public void onCancel(c cVar) {
-        this.a.a(Boolean.valueOf(true));
+    public void draw(Canvas canvas) {
+        this.f7357a.m10763a(canvas);
+    }
+
+    public void setAlpha(int i) {
+    }
+
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
+
+    public int getOpacity() {
+        return -3;
     }
 }

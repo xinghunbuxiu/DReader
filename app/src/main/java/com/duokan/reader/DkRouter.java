@@ -7,12 +7,12 @@ import android.net.Uri;
 import android.os.Build.VERSION;
 import android.text.TextUtils;
 
-import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.BaseActivity;
+import com.duokan.core.p027b.C0324a;
 import com.duokan.core.sys.ah;
-import com.duokan.reader.common.webservices.duokan.p;
+import com.duokan.reader.common.webservices.duokan.C0641o;
+import com.duokan.reader.domain.bookshelf.C0800c;
 import com.duokan.reader.domain.bookshelf.ai;
-import com.duokan.reader.domain.bookshelf.c;
 
 import org.apache.http.HttpHost;
 import org.apache.http.cookie.ClientCookie;
@@ -24,40 +24,42 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class DkRouter {
-    private BaseActivity a;
-    private ReaderController b;
+    /* renamed from: a */
+    private BaseActivity f1452a;
+    /* renamed from: b */
+    private ReaderController readerController;
 
-    private DkRouter(BaseActivity baseActivityVar) {
-        this.a = baseActivityVar;
+    private DkRouter(BaseActivity mActivity) {
+        this.f1452a = mActivity;
     }
 
     public DkRouter(ReaderController readerController) {
-        this.b = readerController;
+        this.readerController = readerController;
     }
 
     public static DkRouter from(ReaderController readerController) {
         return new DkRouter(readerController);
     }
 
-    public static DkRouter from(BaseActivity baseActivityVar) {
-        return new DkRouter(baseActivityVar);
+    public static DkRouter from(BaseActivity mActivity) {
+        return new DkRouter(mActivity);
     }
 
     public boolean route(String str) {
-        if (this.b.getActivity() instanceof DkMainActivity) {
+        if (this.readerController.getActivity() instanceof DkMainActivity) {
             return false;
         }
         Intent intent = new Intent();
         intent.setComponent(new ComponentName(DkApp.get(), DkReader.get().getMainActivityClass()));
         intent.setAction("android.intent.action.VIEW");
         intent.setData(Uri.parse(str));
-        this.b.getActivity().startActivity(intent);
-        this.b.getActivity().finish();
+        this.readerController.getActivity().startActivity(intent);
+        this.readerController.getActivity().finish();
         return true;
     }
 
     public boolean route(Intent intent) {
-        if (this.a == null || intent == null) {
+        if (this.f1452a == null || intent == null) {
             return false;
         }
         CharSequence action = intent.getAction();
@@ -66,98 +68,83 @@ public class DkRouter {
             return false;
         }
         final Map parseUri = parseUri(data);
-        final boolean z = a.a(data.toString(), "file", "content") && TextUtils.equals(intent.getAction(), "android.intent.action.VIEW");
+        final boolean z = C0324a.m735a(data.toString(), "file", "content") && TextUtils.equals(intent.getAction(), "android.intent.action.VIEW");
         if (parseUri.containsKey("book") || z) {
             final Intent intent2 = intent;
-            ah.submitFuture(new Runnable(this) {
-                final /* synthetic */ DkRouter e;
+            ah.m871b(new Runnable() {
+
+                class C04403 implements Runnable {
+
+
+                    public void run() {
+                        if (f1452a.getContentController() == null) {
+                            goToReaderActivity();
+                        }
+                    }
+                }
 
                 public void run() {
-                    String str;
+                    String str = null;
                     ai a;
-                    final c a2;
-                    Throwable th;
                     Cursor cursor = null;
                     final boolean booleanExtra = intent2.getBooleanExtra("miback", false);
                     if (z) {
-                        Cursor cursor2;
                         try {
                             if (VERSION.SDK_INT < 24 || !ReaderEnv.get().onMiui()) {
-                                cursor2 = null;
+                                cursor = null;
                             } else {
-                                cursor2 = DkApp.get().getContentResolver().query(data, new String[]{"_data"}, null, null, null);
-                                if (cursor2 != null) {
-                                    try {
-                                        if (cursor2.moveToFirst()) {
-                                            cursor = cursor2.getString(cursor2.getColumnIndex("_data"));
-                                        }
-                                    } catch (Throwable th2) {
-                                        cursor = cursor2;
-                                        th = th2;
-                                        if (cursor != null) {
-                                            cursor.close();
-                                        }
-                                        throw th;
+                                cursor = DkApp.get().getContentResolver().query(data, new String[]{"_data"}, null, null, null);
+                                if (cursor != null) {
+                                    if (cursor.moveToFirst()) {
+                                        str = cursor.getString(cursor.getColumnIndex("_data"));
                                     }
                                 }
                             }
-                            if (cursor2 != null) {
-                                cursor2.close();
-                                str = cursor;
-                            } else {
-                                Object obj = cursor;
+                            if (cursor != null) {
+                                cursor.close();
                             }
-                        } catch (Throwable th3) {
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            if (cursor != null) {
+                                cursor.close();
+                            }
                         }
-                        a = ai.a();
+
+                        a = ai.m3980a();
                         if (TextUtils.isEmpty(str)) {
                             str = data.getPath();
                         }
-                        a2 = a.a(new File(str));
-                        DkApp.get().runWhenAppReady(new Runnable(this) {
-                            final /* synthetic */ AnonymousClass1 c;
+                        final C0800c a2 = a.m3876a(new File(str));
+                        DkApp.get().runWhenAppReady(new Runnable() {
 
                             public void run() {
                                 if (a2 != null) {
-                                    ActivatedController from = DkReaderController.from(this.c.e.a, a2);
+                                    DkReaderController from = DkReaderController.from(f1452a, a2);
                                     from.setQuitOnBack(booleanExtra);
-                                    this.c.e.a.setContentController(from);
+                                    f1452a.setContentController(from);
                                 }
                             }
                         });
                     } else {
-                        DkApp.get().runWhenAppReady(new Runnable(this) {
-                            final /* synthetic */ AnonymousClass1 b;
+                        DkApp.get().runWhenAppReady(new Runnable() {
 
                             public void run() {
-                                ActivatedController from = DkReaderController.from(this.b.e.a, (String) parseUri.get("book"));
+                                DkReaderController from = DkReaderController.from(f1452a, (String) parseUri.get("book"));
                                 if (from != null) {
                                     from.setQuitOnBack(booleanExtra);
                                 }
-                                this.b.e.a.setContentController(from);
+                                f1452a.setContentController(from);
                             }
                         });
                     }
-                    DkApp.get().runWhenAppReady(new Runnable(this) {
-                        final /* synthetic */ AnonymousClass1 a;
-
-                        {
-                            this.a = r1;
-                        }
-
-                        public void run() {
-                            if (this.a.e.a.getContentController() == null) {
-                                this.a.e.goToReaderActivity();
-                            }
-                        }
-                    });
+                    DkApp.get().runWhenAppReady(new C04403());
                 }
             });
             return true;
         } else if ((!TextUtils.equals(action, "android.intent.action.VIEW") && !TextUtils.isEmpty(action)) || TextUtils.isEmpty((CharSequence) parseUri.get("simple-web"))) {
             return false;
         } else {
-            this.a.setContentController(DkReaderController.from(this.a, Uri.parse((String) parseUri.get("simple-web"))));
+            this.f1452a.setContentController(DkReaderController.from(this.f1452a, Uri.parse((String) parseUri.get("simple-web"))));
             return true;
         }
     }
@@ -166,14 +153,14 @@ public class DkRouter {
         Intent intent = new Intent();
         intent.setComponent(new ComponentName(DkApp.get(), DkApp.get().getReaderActivityClass()));
         intent.setFlags(0);
-        this.a.startActivity(intent);
-        this.a.finish();
+        this.f1452a.startActivity(intent);
+        this.f1452a.finish();
     }
 
-    public static Map parseUri(Uri uri) {
+    public static Map<String, String> parseUri(Uri uri) {
         CharSequence scheme = uri.getScheme();
         CharSequence path = uri.getPath();
-        Map hashMap = new HashMap();
+        Map<String, String> hashMap = new HashMap();
         try {
             if (!TextUtils.isEmpty(scheme) && (TextUtils.equals(scheme, HttpHost.DEFAULT_SCHEME_NAME) || TextUtils.equals(scheme, "https") || TextUtils.equals(scheme, "duokan-reader"))) {
                 String queryParameter = uri.getQueryParameter("miref");
@@ -182,7 +169,7 @@ public class DkRouter {
                 hashMap.put("miback", queryParameter2);
                 if (TextUtils.equals(scheme, "duokan-reader")) {
                     hashMap.put(ClientCookie.PATH_ATTR, uri.toString());
-                    CharSequence lastPathSegment = uri.getLastPathSegment();
+                    String lastPathSegment = uri.getLastPathSegment();
                     if (Boolean.valueOf(queryParameter2).booleanValue() && TextUtils.equals(uri.getHost(), "reading") && !TextUtils.isEmpty(lastPathSegment)) {
                         if (lastPathSegment.equals("recently")) {
                             hashMap.put("book", "");
@@ -207,7 +194,7 @@ public class DkRouter {
                 }
                 Matcher matcher = Pattern.compile("/m/book/([0-9a-zA-Z]+)").matcher(path);
                 String str;
-                p i;
+                C0641o i;
                 String group;
                 if (matcher.find()) {
                     hashMap.put(ClientCookie.PATH_ATTR, "duokan-reader://store/book/" + matcher.group(1));
@@ -215,13 +202,13 @@ public class DkRouter {
                         return hashMap;
                     }
                     str = "simple-web";
-                    i = p.i();
+                    i = C0641o.m2934i();
                     String str2 = "0";
                     group = matcher.group(1);
                     if (TextUtils.isEmpty(queryParameter)) {
                         queryParameter = "external";
                     }
-                    hashMap.put(str, i.a(str2, 1, group, queryParameter));
+                    hashMap.put(str, i.m2954a(str2, 1, group, queryParameter));
                     return hashMap;
                 }
                 matcher = Pattern.compile("/m/special/([0-9a-zA-Z]+)").matcher(path);
@@ -231,12 +218,12 @@ public class DkRouter {
                         return hashMap;
                     }
                     str = "simple-web";
-                    i = p.i();
+                    i = C0641o.m2934i();
                     group = matcher.group(1);
                     if (TextUtils.isEmpty(queryParameter)) {
                         queryParameter = "external";
                     }
-                    hashMap.put(str, i.c(group, queryParameter));
+                    hashMap.put(str, i.m2966c(group, queryParameter));
                     return hashMap;
                 } else if (Pattern.compile("/m/u/coupon").matcher(path).find()) {
                     hashMap.put(ClientCookie.PATH_ATTR, "duokan-reader://personal/coupons");

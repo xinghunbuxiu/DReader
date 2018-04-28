@@ -1,43 +1,30 @@
 package com.duokan.reader.ui.general;
 
-import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
 
-import java.util.ArrayList;
+class fq implements AnimationListener {
+    /* renamed from: a */
+    final /* synthetic */ boolean f7250a;
+    /* renamed from: b */
+    final /* synthetic */ fm f7251b;
 
-class fq implements Runnable {
-    static final /* synthetic */ boolean a = (!PagesController.class.desiredAssertionStatus());
-    final /* synthetic */ fy b;
-    final /* synthetic */ View c;
-    final /* synthetic */ fy d;
-    final /* synthetic */ ArrayList e;
-    final /* synthetic */ Runnable f;
-    final /* synthetic */ PagesController g;
-
-    fq(PagesController pagesController, fy fyVar, View view, fy fyVar2, ArrayList arrayList, Runnable runnable) {
-        this.g = pagesController;
-        this.b = fyVar;
-        this.c = view;
-        this.d = fyVar2;
-        this.e = arrayList;
-        this.f = runnable;
+    fq(fm fmVar, boolean z) {
+        this.f7251b = fmVar;
+        this.f7250a = z;
     }
 
-    public void run() {
-        if (!a && this.b == null) {
-            throw new AssertionError();
-        } else if (a || this.c != null) {
-            if (this.d != null) {
-                this.g.activate(this.d);
-            }
-            for (int i = 0; i < this.e.size(); i++) {
-                this.g.b((fy) this.e.get(i));
-            }
-            this.g.b(this.g.b.size());
-            if (this.f != null) {
-                this.f.run();
-            }
-        } else {
-            throw new AssertionError();
+    public void onAnimationStart(Animation animation) {
+    }
+
+    public void onAnimationRepeat(Animation animation) {
+    }
+
+    public void onAnimationEnd(Animation animation) {
+        this.f7251b.f7246h = false;
+        if (this.f7250a) {
+            this.f7251b.f7240a.f6189g = true;
+            this.f7251b.f7240a.mo1641a();
         }
     }
 }

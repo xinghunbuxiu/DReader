@@ -5,257 +5,257 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.BaseActivity;
 import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.IFeature;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.core.app.BaseActivity;
 import com.duokan.core.sys.af;
+import com.duokan.reader.domain.bookshelf.C0800c;
 import com.duokan.reader.domain.bookshelf.ai;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.document.Document_a;
-import com.duokan.reader.ui.bookshelf.gx;
-import com.duokan.reader.ui.bookshelf.hb;
-import com.duokan.reader.ui.IWindowRecord;
-import com.duokan.reader.ui.reading.sh;
+import com.duokan.reader.domain.document.C0896a;
+import com.duokan.reader.ui.C0457r;
+import com.duokan.reader.ui.bookshelf.he;
+import com.duokan.reader.ui.bookshelf.hi;
+import com.duokan.reader.ui.reading.su;
 
 public class DkReaderController extends ReaderController {
-    public  void addSystemUiConditioner(SystemUiConditioner systemUiConditioner) {
+    public void addSystemUiConditioner(SystemUiConditioner systemUiConditioner) {
         super.addSystemUiConditioner(systemUiConditioner);
     }
 
-    public  void chooseNavigationBarColor(af afVar) {
+    public void chooseNavigationBarColor(af afVar) {
         super.chooseNavigationBarColor(afVar);
     }
 
-    public  void chooseNavigationBarMode(af afVar) {
+    public void chooseNavigationBarMode(af afVar) {
         super.chooseNavigationBarMode(afVar);
     }
 
-    public  void chooseStatusBarStyle(af afVar) {
+    public void chooseStatusBarStyle(af afVar) {
         super.chooseStatusBarStyle(afVar);
     }
 
-    public  void downloadBooks(c[] cVarArr) {
-        super.downloadBooks(cVarArr);
+    public void downloadBooks(C0800c[] c0800cArr) {
+        super.downloadBooks(c0800cArr);
     }
 
-    public  float[] getEyesSavingModeDensity() {
+    public float[] getEyesSavingModeDensity() {
         return super.getEyesSavingModeDensity();
     }
 
-    public  Drawable getHeaderBackground() {
+    public Drawable getHeaderBackground() {
         return super.getHeaderBackground();
     }
 
-    public  float getKeyboardBrightness() {
+    public float getKeyboardBrightness() {
         return super.getKeyboardBrightness();
     }
 
-    public  BrightnessMode getKeyboardBrightnessMode() {
+    public BrightnessMode getKeyboardBrightnessMode() {
         return super.getKeyboardBrightnessMode();
     }
 
-    public  int getPageCount() {
+    public int getPageCount() {
         return super.getPageCount();
     }
 
-    public  c getReadingBook() {
+    public C0800c getReadingBook() {
         return super.getReadingBook();
     }
 
-    public  sh getReadingFeature() {
+    public su getReadingFeature() {
         return super.getReadingFeature();
     }
 
-    public  float getScreenBrightness() {
+    public float getScreenBrightness() {
         return super.getScreenBrightness();
     }
 
-    public  BrightnessMode getScreenBrightnessMode() {
+    public BrightnessMode getScreenBrightnessMode() {
         return super.getScreenBrightnessMode();
     }
 
-    public  float[] getScreenBrightnessRange() {
+    public float[] getScreenBrightnessRange() {
         return super.getScreenBrightnessRange();
     }
 
-    public  int getScreenTimeout() {
+    public int getScreenTimeout() {
         return super.getScreenTimeout();
     }
 
-    public IWindowRecord getTheme() {
+    public C0457r getTheme() {
         return super.getTheme();
     }
 
-    public  long getTotalActiveTime() {
+    public long getTotalActiveTime() {
         return super.getTotalActiveTime();
     }
 
-    public  void goHome(Runnable runnable) {
+    public void goHome(Runnable runnable) {
         super.goHome(runnable);
     }
 
-    public  boolean inNightMode() {
+    public boolean inNightMode() {
         return super.inNightMode();
     }
 
-    public  void navigate(Intent intent) {
+    public void navigate(Intent intent) {
         super.navigate(intent);
     }
 
-    public  boolean navigate(String str, Object obj, boolean z, Runnable runnable) {
+    public boolean navigate(String str, Object obj, boolean z, Runnable runnable) {
         return super.navigate(str, obj, z, runnable);
     }
 
-    public  boolean navigateSmoothly(String str) {
+    public boolean navigateSmoothly(String str) {
         return super.navigateSmoothly(str);
     }
 
-    public  boolean navigateSmoothly(String str, Runnable runnable) {
+    public boolean navigateSmoothly(String str, Runnable runnable) {
         return super.navigateSmoothly(str, runnable);
     }
 
-    public  void openBook(c cVar) {
-        super.openBook(cVar);
+    public void openBook(C0800c c0800c) {
+        super.openBook(c0800c);
     }
 
-    public  void openBook(c cVar, Document_a aVar, Runnable runnable) {
-        super.openBook(cVar, aVar, runnable);
+    public void openBook(C0800c c0800c, C0896a c0896a, Runnable runnable) {
+        super.openBook(c0800c, c0896a, runnable);
     }
 
-    public  void openBook(String str, Document_a aVar) {
-        super.openBook(str, aVar);
+    public void openBook(String str, C0896a c0896a) {
+        super.openBook(str, c0896a);
     }
 
-    public  void prompt(String str) {
+    public void prompt(String str) {
         super.prompt(str);
     }
 
-    public  void prompt(String str, int i) {
+    public void prompt(String str, int i) {
         super.prompt(str, i);
     }
 
-    public  boolean pushFloatingPage(ActivatedController activatedControllerVar) {
-        return super.pushFloatingPage(activatedControllerVar);
+    public boolean pushFloatingPage(ActivatedController c0303e) {
+        return super.pushFloatingPage(c0303e);
     }
 
-    public  boolean pushFloatingPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
-        return super.pushFloatingPageSmoothly(activatedControllerVar, runnable);
+    public boolean pushFloatingPageSmoothly(ActivatedController c0303e, Runnable runnable) {
+        return super.pushFloatingPageSmoothly(c0303e, runnable);
     }
 
-    public  boolean pushHalfPage(ActivatedController activatedControllerVar) {
-        return super.pushHalfPage(activatedControllerVar);
+    public boolean pushHalfPage(ActivatedController c0303e) {
+        return super.pushHalfPage(c0303e);
     }
 
-    public  boolean pushHalfPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
-        return super.pushHalfPageSmoothly(activatedControllerVar, runnable);
+    public boolean pushHalfPageSmoothly(ActivatedController c0303e, Runnable runnable) {
+        return super.pushHalfPageSmoothly(c0303e, runnable);
     }
 
-    public  boolean pushPage(ActivatedController activatedControllerVar) {
-        return super.pushPage(activatedControllerVar);
+    public boolean pushPage(ActivatedController c0303e) {
+        return super.pushPage(c0303e);
     }
 
-    public  boolean pushPageSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
-        return super.pushPageSmoothly(activatedControllerVar, runnable);
+    public boolean pushPageSmoothly(ActivatedController c0303e, Runnable runnable) {
+        return super.pushPageSmoothly(c0303e, runnable);
     }
 
-    public  void removeSystemUiConditioner(SystemUiConditioner systemUiConditioner) {
+    public void removeSystemUiConditioner(SystemUiConditioner systemUiConditioner) {
         super.removeSystemUiConditioner(systemUiConditioner);
     }
 
-    public  void setKeyboardBrightness(float f) {
+    public void setKeyboardBrightness(float f) {
         super.setKeyboardBrightness(f);
     }
 
-    public  void setKeyboardBrightnessMode(BrightnessMode brightnessMode) {
+    public void setKeyboardBrightnessMode(BrightnessMode brightnessMode) {
         super.setKeyboardBrightnessMode(brightnessMode);
     }
 
-    public  void setQuitOnBack(boolean z) {
+    public void setQuitOnBack(boolean z) {
         super.setQuitOnBack(z);
     }
 
-    public  void setScreenBrightness(float f) {
+    public void setScreenBrightness(float f) {
         super.setScreenBrightness(f);
     }
 
-    public  void setScreenBrightnessMode(BrightnessMode brightnessMode) {
+    public void setScreenBrightnessMode(BrightnessMode brightnessMode) {
         super.setScreenBrightnessMode(brightnessMode);
     }
 
-    public  void setScreenTimeout(int i) {
+    public void setScreenTimeout(int i) {
         super.setScreenTimeout(i);
     }
 
-    public  void shareBooks(ActivatedController activatedControllerVar, c[] cVarArr) {
-        super.shareBooks(activatedControllerVar, cVarArr);
+    public void shareBooks(ActivatedController c0303e, C0800c[] c0800cArr) {
+        super.shareBooks(c0303e, c0800cArr);
     }
 
-    public  void showBookHomePage(IFeature featrue, String str, String str2, boolean z, String str3) {
-        super.showBookHomePage(featrue, str, str2, z, str3);
+    public void showBookHomePage(IFeature mFeature, String str, String str2, boolean z, String str3) {
+        super.showBookHomePage(mFeature, str, str2, z, str3);
     }
 
-    public  void showMenuFromBottom(hb hbVar) {
-        super.showMenuFromBottom(hbVar);
+    public void showMenuFromBottom(hi hiVar) {
+        super.showMenuFromBottom(hiVar);
     }
 
-    public  void showMenuFromTop(gx gxVar) {
-        super.showMenuFromTop(gxVar);
+    public void showMenuFromTop(he heVar) {
+        super.showMenuFromTop(heVar);
     }
 
-    public  boolean showPopup(ActivatedController activatedControllerVar) {
-        return super.showPopup(activatedControllerVar);
+    public boolean showPopup(ActivatedController c0303e) {
+        return super.showPopup(c0303e);
     }
 
-    public  boolean showPopup(ActivatedController activatedControllerVar, int i, int i2) {
-        return super.showPopup(activatedControllerVar, i, i2);
+    public boolean showPopup(ActivatedController c0303e, int i, int i2) {
+        return super.showPopup(c0303e, i, i2);
     }
 
-    public  boolean showPopupSmoothly(ActivatedController activatedControllerVar, Runnable runnable) {
-        return super.showPopupSmoothly(activatedControllerVar, runnable);
+    public boolean showPopupSmoothly(ActivatedController c0303e, Runnable runnable) {
+        return super.showPopupSmoothly(c0303e, runnable);
     }
 
-    public  void switchEyesSavingMode(boolean z) {
+    public void switchEyesSavingMode(boolean z) {
         super.switchEyesSavingMode(z);
     }
 
-    public  void switchNightMode(boolean z, boolean z2) {
+    public void switchNightMode(boolean z, boolean z2) {
         super.switchNightMode(z, z2);
     }
 
-    public  void updateSystemUi(boolean z) {
+    public void updateSystemUi(boolean z) {
         super.updateSystemUi(z);
     }
 
-    private DkReaderController(IFeature featrue) {
-        super(featrue);
+    private DkReaderController(IFeature mFeature) {
+        super(mFeature);
     }
 
-    private DkReaderController(IFeature featrue, Uri uri) {
-        super(featrue, uri);
+    private DkReaderController(IFeature mFeature, Uri uri) {
+        super(mFeature, uri);
     }
 
-    private DkReaderController(BaseActivity baseActivityVar, c cVar) {
-        super((IFeature) baseActivityVar, cVar);
+    private DkReaderController(BaseActivity mActivity, C0800c c0800c) {
+        super((IFeature) mActivity, c0800c);
     }
 
-    public static DkReaderController from(BaseActivity baseActivityVar, String str) {
+    public static DkReaderController from(BaseActivity mActivity, String str) {
         if (!DkApp.get().isWebAccessEnabled() && TextUtils.isEmpty(str)) {
             return null;
         }
-        c b = TextUtils.isEmpty(str) ? ai.a().b(ReaderEnv.get().getReadingBookUuid()) : ai.a().b(str);
+        C0800c b = TextUtils.isEmpty(str) ? ai.m3980a().m3906b(ReaderEnv.get().getReadingBookUuid()) : ai.m3980a().m3906b(str);
         if (b != null) {
-            return new DkReaderController(baseActivityVar, b);
+            return new DkReaderController(mActivity, b);
         }
         return null;
     }
 
-    public static DkReaderController from(BaseActivity baseActivityVar, c cVar) {
-        return new DkReaderController(baseActivityVar, cVar);
+    public static DkReaderController from(BaseActivity mActivity, C0800c c0800c) {
+        return new DkReaderController(mActivity, c0800c);
     }
 
-    public static DkReaderController from(BaseActivity baseActivityVar, Uri uri) {
-        return new DkReaderController((IFeature) baseActivityVar, uri);
+    public static DkReaderController from(BaseActivity mActivity, Uri uri) {
+        return new DkReaderController((IFeature) mActivity, uri);
     }
 
     public static DkReaderController from(DkMainActivity dkMainActivity) {

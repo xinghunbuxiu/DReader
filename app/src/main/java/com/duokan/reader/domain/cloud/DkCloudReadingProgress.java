@@ -1,24 +1,22 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.e.a;
-
-import org.json.JSONObject;
-import org.w3c.dom.Node;
-
+import com.duokan.reader.common.p039e.C0606a;
 import java.util.Calendar;
 import java.util.Date;
+import org.json.JSONObject;
+import org.w3c.dom.Node;
 
 public class DkCloudReadingProgress extends DkCloudItem {
     static final /* synthetic */ boolean $assertionsDisabled = (!DkCloudReadingProgress.class.desiredAssertionStatus());
     private final Date mCreationDate;
     private final Date mModifiedDate;
-    private final g mStartPos;
+    private final C0847g mStartPos;
 
-    public DkCloudReadingProgress(g gVar) {
+    public DkCloudReadingProgress(C0847g c0847g) {
         super(0);
         this.mCreationDate = Calendar.getInstance().getTime();
         this.mModifiedDate = Calendar.getInstance().getTime();
-        this.mStartPos = gVar;
+        this.mStartPos = c0847g;
     }
 
     public DkCloudReadingProgress(Node node, long j) {
@@ -28,7 +26,7 @@ public class DkCloudReadingProgress extends DkCloudItem {
         this.mStartPos = xmlGetRefPos(node, "RefPos");
     }
 
-    public g getStartPos() {
+    public C0847g getStartPos() {
         return this.mStartPos;
     }
 
@@ -48,12 +46,12 @@ public class DkCloudReadingProgress extends DkCloudItem {
         jSONObject.put("DataID", "0");
         jSONObject.put("CreateTime", "" + (this.mCreationDate.getTime() / 1000));
         jSONObject.put("LastModifyTime", "" + (this.mModifiedDate.getTime() / 1000));
-        jSONObject.put("RefPos", this.mStartPos.f());
+        jSONObject.put("RefPos", this.mStartPos.m5596f());
     }
 
     protected void fillXmlNode(Node node) {
-        a.b(node, "Type", "PROGRESS");
-        a.b(node, "DataID", "0");
+        C0606a.m2779b(node, "Type", "PROGRESS");
+        C0606a.m2779b(node, "DataID", "0");
         xmlInsertRefPos(node, "RefPos", this.mStartPos);
         xmlInsertDate(node, "CreateTime", this.mCreationDate);
         xmlInsertDate(node, "LastModifyTime", this.mModifiedDate);

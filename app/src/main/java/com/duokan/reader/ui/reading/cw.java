@@ -1,35 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.PointF;
-import android.view.View;
+import com.duokan.core.ui.C0380do;
 
-import com.duokan.core.ui.er;
-import com.duokan.core.ui.i;
-import com.duokan.reader.ui.welcome.DkTipManager.UserInput;
-import com.duokan.reader.ui.welcome.p;
-
-class cw implements i {
-    final /* synthetic */ cv a;
+class cw implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ cv f9966a;
 
     cw(cv cvVar) {
-        this.a = cvVar;
+        this.f9966a = cvVar;
     }
 
-    public void onTouchUp(View view, PointF pointF) {
-    }
-
-    public void onTouchDown(View view, PointF pointF) {
-    }
-
-    public void onTouchCancel(View view, PointF pointF) {
-    }
-
-    public void a(er erVar, View view, PointF pointF, int i) {
-        if (this.a.d != null) {
-            ((p) this.a.a.getContext().queryFeature(p.class)).a(this.a.a.getContext(), UserInput.READING_SHOW_CARTOON_GESTURE);
-            this.a.a.b(((gs) this.a.d.first).getPageDrawable().v(((Integer) this.a.d.second).intValue()));
-            this.a.d(true);
-            this.a.b(false);
-        }
+    public void run() {
+        this.f9966a.f9965a.f9951c.setVisibility(4);
+        this.f9966a.f9965a.f9949a.mo2040a(0, 2);
+        this.f9966a.f9965a.f9951c.m1835a(this.f9966a.f9965a.f9952d, new C0380do(0.0f));
     }
 }

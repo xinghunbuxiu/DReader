@@ -1,13 +1,19 @@
 package com.duokan.reader.ui.reading;
 
-class wz implements Runnable {
-    final /* synthetic */ ww a;
+import com.duokan.core.io.C0336a;
+import java.io.File;
 
-    wz(ww wwVar) {
-        this.a = wwVar;
+class wz implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ wy f11131a;
+
+    wz(wy wyVar) {
+        this.f11131a = wyVar;
     }
 
     public void run() {
-        this.a.b(false);
+        for (File f : this.f11131a.m13645n()) {
+            C0336a.m793f(f);
+        }
     }
 }

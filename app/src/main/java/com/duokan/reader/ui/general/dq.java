@@ -5,15 +5,21 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 public interface dq {
-    View a(String str, int i, boolean z);
+    /* renamed from: a */
+    View mo1782a(String str, int i, boolean z);
 
-    LinearLayout a();
+    /* renamed from: a */
+    LinearLayout mo1783a();
 
-    void a(String str);
+    /* renamed from: a */
+    void mo1784a(String str);
 
-    void a(boolean z);
+    /* renamed from: a */
+    void mo1785a(boolean z);
 
-    ViewGroup b();
+    /* renamed from: b */
+    ViewGroup mo1786b();
 
-    int c();
+    /* renamed from: c */
+    int mo1787c();
 }

@@ -1,27 +1,17 @@
 package com.duokan.reader.ui.general;
 
-import com.duokan.core.ui.cs;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class it implements cs {
-    final /* synthetic */ iu a;
-    final /* synthetic */ ir b;
+class it implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ir f7408a;
 
-    it(ir irVar, iu iuVar) {
-        this.b = irVar;
-        this.a = iuVar;
+    it(ir irVar) {
+        this.f7408a = irVar;
     }
 
-    public void a(int i, int i2, boolean z) {
-    }
-
-    public void b(int i, int i2, boolean z) {
-        if (!z) {
-            return;
-        }
-        if (this.a.getShowingChildIndex() != i2) {
-            this.a.b(i2);
-        } else if (this.b.d != null) {
-            this.b.d.a(i, i2);
-        }
+    public void onClick(View view) {
+        this.f7408a.m10812c();
     }
 }

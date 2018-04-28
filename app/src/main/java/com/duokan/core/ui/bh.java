@@ -3,77 +3,88 @@ package com.duokan.core.ui;
 import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.PointF;
+import com.duokan.core.ui.Scrollable.ScrollState;
 
 public class bh extends ev {
-    final /* synthetic */ ay b;
+    /* renamed from: b */
+    final /* synthetic */ ay f960b;
 
     public bh(ay ayVar) {
-        this.b = ayVar;
+        this.f960b = ayVar;
         super(ayVar);
     }
 
-    protected void a(ScrollState scrollState, ScrollState scrollState2) {
+    /* renamed from: a */
+    protected void mo494a(ScrollState scrollState, ScrollState scrollState2) {
         if (scrollState == ScrollState.IDLE && scrollState2 == ScrollState.DRAG) {
-            this.b.o();
+            this.f960b.mo1756o();
         }
     }
 
-    protected void a(boolean z) {
+    /* renamed from: a */
+    protected void mo495a(boolean z) {
         if (z) {
-            this.b.k();
+            this.f960b.m1152k();
         }
-        this.b.l();
+        this.f960b.m1155l();
     }
 
-    protected void a(PointF pointF) {
-        if (this.b.y == ScrollState.IDLE) {
-            if ((this.b.E != null || this.b.F != null) && !this.b.p()) {
+    /* renamed from: a */
+    protected void mo493a(PointF pointF) {
+        if (this.f960b.f788y == ScrollState.IDLE) {
+            if ((this.f960b.f763E != null || this.f960b.f764F != null) && !this.f960b.mo1757p()) {
                 Point point = new Point(Math.round(pointF.x), Math.round(pointF.y));
-                b(point);
-                this.b.A = this.b.a(point);
-                if (this.b.A >= 0) {
-                    this.b.a(this.b.A);
+                m1508b(point);
+                this.f960b.f759A = this.f960b.mo447a(point);
+                if (this.f960b.f759A >= 0) {
+                    this.f960b.mo445a(this.f960b.f759A);
                 }
             }
         }
     }
 
-    protected void b(PointF pointF) {
-        if (this.b.A >= 0) {
-            this.b.o();
-            this.b.A = -1;
+    /* renamed from: b */
+    protected void mo496b(PointF pointF) {
+        if (this.f960b.f759A >= 0) {
+            this.f960b.mo1756o();
+            this.f960b.f759A = -1;
         }
     }
 
-    protected void c(PointF pointF) {
-        this.b.o();
-        this.b.A = -1;
+    /* renamed from: c */
+    protected void mo497c(PointF pointF) {
+        this.f960b.mo1756o();
+        this.f960b.f759A = -1;
     }
 
-    protected void d(PointF pointF) {
-        if (this.b.E == null || this.b.A < 0) {
-            super.d(pointF);
+    /* renamed from: d */
+    protected void mo498d(PointF pointF) {
+        if (this.f960b.f763E == null || this.f960b.f759A < 0) {
+            super.mo498d(pointF);
             return;
         }
-        this.b.a(new bi(this, this.b.A));
-        this.b.A = -1;
+        this.f960b.m1073a(new bi(this, this.f960b.f759A));
+        this.f960b.f759A = -1;
     }
 
-    protected void e(PointF pointF) {
-        if (this.b.F == null || this.b.A < 0) {
-            super.e(pointF);
+    /* renamed from: e */
+    protected void mo499e(PointF pointF) {
+        if (this.f960b.f764F == null || this.f960b.f759A < 0) {
+            super.mo499e(pointF);
         } else {
-            this.b.F.a(this.b, this.b.g(this.b.A), this.b.A);
+            this.f960b.f764F.mo481a(this.f960b, this.f960b.m1141g(this.f960b.f759A), this.f960b.f759A);
         }
     }
 
-    protected void a(Canvas canvas) {
-        this.b.a(canvas);
+    /* renamed from: a */
+    protected void mo492a(Canvas canvas) {
+        this.f960b.mo449a(canvas);
         super.draw(canvas);
-        this.b.b(canvas);
+        this.f960b.mo452b(canvas);
     }
 
-    protected void a(int i, int i2) {
+    /* renamed from: a */
+    protected void mo491a(int i, int i2) {
         super.scrollTo(i, i2);
     }
 }

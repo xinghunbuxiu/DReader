@@ -1,13 +1,14 @@
 package com.duokan.reader.ui.reading;
 
 class kk implements Runnable {
-    final /* synthetic */ kd a;
+    /* renamed from: a */
+    final /* synthetic */ kj f10509a;
 
-    kk(kd kdVar) {
-        this.a = kdVar;
+    kk(kj kjVar) {
+        this.f10509a = kjVar;
     }
 
     public void run() {
-        this.a.b(null);
+        this.f10509a.m14549m();
     }
 }

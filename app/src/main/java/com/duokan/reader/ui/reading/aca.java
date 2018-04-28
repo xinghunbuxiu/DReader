@@ -1,28 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Bitmap;
-import android.graphics.Point;
+import fi.harism.curl.CurlDirection;
 
-class aca {
-    public abp a;
-    public Bitmap b;
-    public float c;
-    public float d;
-    public Point e;
-    public Point f;
-    public float g;
-    public float h;
-    final /* synthetic */ abs i;
+class aca implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ aby f9436a;
 
-    private aca(abs com_duokan_reader_ui_reading_abs) {
-        this.i = com_duokan_reader_ui_reading_abs;
-        this.a = null;
-        this.b = null;
-        this.c = 0.0f;
-        this.d = 0.0f;
-        this.e = new Point();
-        this.f = new Point();
-        this.g = 0.0f;
-        this.h = 0.0f;
+    aca(aby aby) {
+        this.f9436a = aby;
+    }
+
+    public void run() {
+        this.f9436a.f9433a.f9424a.f9382d.onDragStart(this.f9436a.f9433a.f9427e, CurlDirection.PAGE_DOWN);
+        this.f9436a.f9433a.f9424a.f9387i = null;
     }
 }

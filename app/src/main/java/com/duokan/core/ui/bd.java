@@ -8,26 +8,29 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 public class bd extends FrameLayout {
-    final /* synthetic */ ay a;
-    private bc b;
+    /* renamed from: a */
+    final /* synthetic */ ay f1009a;
+    /* renamed from: b */
+    private bc f1010b;
 
     public bd(ay ayVar, Context context) {
         this(ayVar, context, null);
     }
 
     public bd(ay ayVar, Context context, AttributeSet attributeSet) {
-        this.a = ayVar;
+        this.f1009a = ayVar;
         super(context, attributeSet);
-        this.b = null;
+        this.f1010b = null;
         setVisibility(4);
     }
 
-    public void a() {
+    /* renamed from: a */
+    public void m1677a() {
         super.forceLayout();
     }
 
     public View getItemView() {
-        return this.b.c;
+        return this.f1010b.f995c;
     }
 
     protected void dispatchDraw(Canvas canvas) {
@@ -41,12 +44,12 @@ public class bd extends FrameLayout {
     }
 
     public final void forceLayout() {
-        a();
-        if (this.b != null) {
-            this.b.f = -1;
-            this.b.g = -1;
-            this.b.b(false);
-            this.a.j();
+        m1677a();
+        if (this.f1010b != null) {
+            this.f1010b.f998f = -1;
+            this.f1010b.f999g = -1;
+            this.f1010b.m1665b(false);
+            this.f1009a.m1150j();
         }
     }
 

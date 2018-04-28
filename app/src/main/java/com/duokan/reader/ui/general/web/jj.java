@@ -1,30 +1,24 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.as;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.bookshelf.fv;
+import com.duokan.reader.ui.general.ja;
+import java.util.concurrent.Callable;
 
-import java.util.concurrent.Semaphore;
+class jj implements Callable<ja> {
+    /* renamed from: a */
+    final /* synthetic */ ji f8049a;
 
-class jj implements as {
-    final /* synthetic */ Semaphore a;
-    final /* synthetic */ iv b;
-
-    jj(iv ivVar, Semaphore semaphore) {
-        this.b = ivVar;
-        this.a = semaphore;
+    jj(ji jiVar) {
+        this.f8049a = jiVar;
     }
 
-    public void a() {
-        ReaderFeature readerFeature = (ReaderFeature) this.b.b.pageController.getContext().queryFeature(ReaderFeature.class);
-        if (readerFeature != null) {
-            c readingBook = readerFeature.getReadingBook();
-            if (readingBook instanceof fv) {
-                ((fv) readingBook).a(new jk(this));
-                return;
-            }
-        }
-        this.a.release();
+    public /* synthetic */ Object call() {
+        return m11219a();
+    }
+
+    /* renamed from: a */
+    public ja m11219a() {
+        ja jaVar = new ja(this.f8049a.f8048b.f7581b.getContext());
+        jaVar.show();
+        return jaVar;
     }
 }

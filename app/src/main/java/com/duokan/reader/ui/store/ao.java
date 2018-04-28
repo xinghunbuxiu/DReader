@@ -4,9 +4,12 @@ import com.duokan.core.app.FeatureListening;
 import com.duokan.reader.domain.store.DkStoreFictionDetail;
 
 public interface ao extends FeatureListening {
-    void a(DkStoreFictionDetail dkStoreFictionDetail);
+    /* renamed from: a */
+    void mo1832a(DkStoreFictionDetail dkStoreFictionDetail);
 
-    void a(String str, ap apVar);
+    /* renamed from: a */
+    void mo1833a(String str, ap apVar);
 
-    void b(String str, ap apVar);
+    /* renamed from: b */
+    void mo1834b(String str, ap apVar);
 }

@@ -1,18 +1,35 @@
 package com.duokan.reader.ui.general;
 
-class ke implements ib {
-    final /* synthetic */ kd a;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
 
-    ke(kd kdVar) {
-        this.a = kdVar;
-    }
+abstract class ke {
+    /* renamed from: b */
+    final /* synthetic */ deprecatedDkTextView f7458b;
 
-    public void a(int i) {
-        if (i == 0) {
-            this.a.a.i();
-            return;
-        }
-        this.a.a.j();
-        be.a(this.a.a.getContext(), i.general__web_window_view__copy_notify, 0).show();
+    /* renamed from: a */
+    public abstract void mo1803a();
+
+    /* renamed from: a */
+    public abstract void mo1804a(Context context, Canvas canvas, Rect rect);
+
+    /* renamed from: a */
+    public abstract void mo1805a(Canvas canvas);
+
+    /* renamed from: a */
+    public abstract boolean mo1806a(Rect rect);
+
+    /* renamed from: b */
+    public abstract void mo1807b();
+
+    /* renamed from: c */
+    public abstract void mo1808c();
+
+    /* renamed from: d */
+    public abstract boolean mo1809d();
+
+    private ke(deprecatedDkTextView deprecateddktextview) {
+        this.f7458b = deprecateddktextview;
     }
 }

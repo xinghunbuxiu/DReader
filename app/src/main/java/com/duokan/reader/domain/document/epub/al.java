@@ -1,6 +1,8 @@
 package com.duokan.reader.domain.document.epub;
 
 public class al extends ap {
-    public an b = null;
-    public boolean c = true;
+    /* renamed from: b */
+    public an f4485b = null;
+    /* renamed from: c */
+    public boolean f4486c = true;
 }

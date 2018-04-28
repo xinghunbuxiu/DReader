@@ -1,17 +1,23 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.ui.general.cx;
+class js implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ jr f10467a;
 
-class js implements cx {
-    final /* synthetic */ jp a;
-    final /* synthetic */ jr b;
-
-    js(jr jrVar, jp jpVar) {
-        this.b = jrVar;
-        this.a = jpVar;
+    js(jr jrVar) {
+        this.f10467a = jrVar;
     }
 
-    public void a(int i, int i2) {
-        this.b.a.b(i, i2);
+    public void run() {
+        if (this.f10467a.f10466b.f10460f) {
+            this.f10467a.f10466b.f10463i.m2043a(true);
+            this.f10467a.f10466b.setVisibility(0);
+            return;
+        }
+        this.f10467a.f10466b.f10463i.m2043a(false);
+        this.f10467a.f10466b.setVisibility(8);
+        if (this.f10467a.f10466b.f10457c.f10450f != null) {
+            this.f10467a.f10466b.f10457c.f10450f.run();
+        }
     }
 }

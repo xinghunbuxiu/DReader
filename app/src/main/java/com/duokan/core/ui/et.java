@@ -4,30 +4,39 @@ import android.graphics.PointF;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
-
 import java.util.Iterator;
 import java.util.LinkedList;
 
 public class et implements OnTouchListener {
-    static final /* synthetic */ boolean a = (!et.class.desiredAssertionStatus());
-    private final LinkedList b = new LinkedList();
-    private OnTouchChangeListener c = null;
-    private er d = null;
-    private boolean e = true;
-    private boolean f = false;
-    private eu g = null;
+    /* renamed from: a */
+    static final /* synthetic */ boolean f1222a = (!et.class.desiredAssertionStatus());
+    /* renamed from: b */
+    private final LinkedList<er> f1223b = new LinkedList();
+    /* renamed from: c */
+    private es f1224c = null;
+    /* renamed from: d */
+    private er f1225d = null;
+    /* renamed from: e */
+    private boolean f1226e = true;
+    /* renamed from: f */
+    private boolean f1227f = false;
+    /* renamed from: g */
+    private eu f1228g = null;
 
-    public void a(boolean z) {
-        this.e = z;
+    /* renamed from: a */
+    public void m2043a(boolean z) {
+        this.f1226e = z;
     }
 
-    public void a(OnTouchChangeListener esVar) {
-        this.c = esVar;
+    /* renamed from: a */
+    public void m2042a(es esVar) {
+        this.f1224c = esVar;
     }
 
-    public er[] a(Class... clsArr) {
+    /* renamed from: a */
+    public er[] m2045a(Class<?>... clsArr) {
         LinkedList linkedList = new LinkedList();
-        Iterator it = this.b.iterator();
+        Iterator it = this.f1223b.iterator();
         while (it.hasNext()) {
             er erVar = (er) it.next();
             for (Class isInstance : clsArr) {
@@ -39,132 +48,139 @@ public class et implements OnTouchListener {
         return (er[]) linkedList.toArray(new er[0]);
     }
 
-    public void a(er erVar) {
-        if (a || erVar != null) {
-            this.b.addFirst(erVar);
+    /* renamed from: a */
+    public void m2041a(er erVar) {
+        if (f1222a || erVar != null) {
+            this.f1223b.addFirst(erVar);
             return;
         }
         throw new AssertionError();
     }
 
-    public void a(View view) {
-        d(view);
-        this.f = false;
-        this.g = null;
-        this.d = null;
+    /* renamed from: a */
+    public void m2040a(View view) {
+        m2038d(view);
+        this.f1227f = false;
+        this.f1228g = null;
+        this.f1225d = null;
     }
 
-    public void b(View view) {
+    /* renamed from: b */
+    public void m2046b(View view) {
         view.setOnTouchListener(this);
     }
 
-    public er a() {
-        return this.d;
+    /* renamed from: a */
+    public er m2039a() {
+        return this.f1225d;
     }
 
     public boolean onTouch(View view, MotionEvent motionEvent) {
-        return a(view, motionEvent, false, false);
+        return m2033a(view, motionEvent, false, false);
     }
 
-    public boolean a(View view, MotionEvent motionEvent) {
-        return a(view, motionEvent, false, true);
+    /* renamed from: a */
+    public boolean m2044a(View view, MotionEvent motionEvent) {
+        return m2033a(view, motionEvent, false, true);
     }
 
-    private boolean a(View view, MotionEvent motionEvent, boolean z, boolean z2) {
+    /* renamed from: a */
+    private boolean m2033a(View view, MotionEvent motionEvent, boolean z, boolean z2) {
         boolean z3 = false;
-        if (this.e) {
+        if (this.f1226e) {
             if (motionEvent.getActionMasked() == 0) {
-                if (this.g != null) {
-                    this.g.run();
-                    if (!(a || this.g == null)) {
+                if (this.f1228g != null) {
+                    this.f1228g.run();
+                    if (!(f1222a || this.f1228g == null)) {
                         throw new AssertionError();
                     }
                 }
-                c(view);
-                if (this.c != null) {
-                    this.c.onTouchDown(view, new PointF(motionEvent.getX(), motionEvent.getY()));
+                m2037c(view);
+                if (this.f1224c != null) {
+                    this.f1224c.onTouchDown(view, new PointF(motionEvent.getX(), motionEvent.getY()));
                 }
             } else if (motionEvent.getActionMasked() == 3) {
-                if (this.c != null) {
-                    this.c.onTouchCancel(view, new PointF(motionEvent.getX(), motionEvent.getY()));
+                if (this.f1224c != null) {
+                    this.f1224c.onTouchCancel(view, new PointF(motionEvent.getX(), motionEvent.getY()));
                 }
-                a(view);
-            } else if (motionEvent.getActionMasked() == 1 && this.f && this.g == null) {
-                this.g = new eu(this, view, motionEvent, z2);
-                view.postDelayed(this.g, (long) UTools.getScaledTouchSlop());
+                m2040a(view);
+            } else if (motionEvent.getActionMasked() == 1 && this.f1227f && this.f1228g == null) {
+                this.f1228g = new eu(this, view, motionEvent, z2);
+                view.postDelayed(this.f1228g, (long) dv.getDoubleTapTimeout());
             }
-            this.f = false;
-            z3 = a(view, motionEvent, z, z2, this.c);
+            this.f1227f = false;
+            z3 = m2034a(view, motionEvent, z, z2, this.f1224c);
             if (motionEvent.getAction() == 1) {
-                if (this.c != null) {
-                    this.c.onTouchUp(view, new PointF(motionEvent.getX(), motionEvent.getY()));
+                if (this.f1224c != null) {
+                    this.f1224c.onTouchUp(view, new PointF(motionEvent.getX(), motionEvent.getY()));
                 }
-                c(view);
+                m2037c(view);
             }
         } else {
-            a(view);
+            m2040a(view);
         }
         return z3;
     }
 
-    private boolean a(View view, MotionEvent motionEvent, boolean z, boolean z2, OnTouchChangeListener esVar) {
-        er erVar;
+    /* renamed from: a */
+    private boolean m2034a(View view, MotionEvent motionEvent, boolean z, boolean z2, es esVar) {
         boolean z3;
         Object obj = null;
         Object obj2 = null;
-        if (this.d != null) {
-            if (!this.d.b()) {
-                this.d = null;
-            } else if (this.d.d()) {
+        if (this.f1225d != null) {
+            if (!this.f1225d.m1614b()) {
+                this.f1225d = null;
+            } else if (this.f1225d.m1621d()) {
+                er erVar;
                 Object obj3;
                 Object obj4;
-                erVar = this.d;
-                erVar.a(view, motionEvent, z, z2, esVar);
-                this.f = erVar.f();
-                if (erVar.c()) {
+                erVar = this.f1225d;
+                erVar.m1605a(view, motionEvent, z, z2, esVar);
+                this.f1227f = erVar.m1624f();
+                if (erVar.m1618c()) {
                     obj3 = 1;
                 } else {
                     obj3 = null;
                 }
-                if (erVar.e()) {
+                if (erVar.m1623e()) {
                     obj4 = 1;
                 } else {
                     obj4 = null;
                 }
-                if (!erVar.d()) {
-                    this.d = null;
-                    c(view);
+                if (!erVar.m1621d()) {
+                    this.f1225d = null;
+                    m2037c(view);
                 }
                 if (z2) {
                     return true;
                 }
                 return (obj3 == null && obj4 == null) ? false : true;
             } else {
-                this.d = null;
+                this.f1225d = null;
             }
         }
-        Iterator it = this.b.iterator();
+        Iterator it = this.f1223b.iterator();
         while (it.hasNext()) {
             erVar = (er) it.next();
-            if (!a && erVar == null) {
+            if (!f1222a && erVar == null) {
                 throw new AssertionError();
-            } else if (erVar.b()) {
-                if (erVar.c()) {
-                    erVar.a(view, motionEvent, z, z2, esVar);
-                    this.f |= erVar.f();
+            } else if (erVar.m1614b()) {
+                if (erVar.m1618c()) {
+                    erVar.m1605a(view, motionEvent, z, z2, esVar);
+                    this.f1227f |= erVar.m1624f();
                 }
-                if (erVar.c()) {
+                if (erVar.m1618c()) {
                     obj = 1;
                 }
-                if (erVar.e()) {
+                if (erVar.m1623e()) {
                     obj2 = 1;
                 }
-                if (erVar.d()) {
-                    this.d = erVar;
-                    a(view, this.d);
+                if (erVar.m1621d()) {
+                    this.f1225d = erVar;
+                    m2032a(view, this.f1225d);
                     z3 = true;
                     break;
-                } else if (erVar.e()) {
+                } else if (erVar.m1623e()) {
                     z3 = false;
                     break;
                 }
@@ -180,24 +196,27 @@ public class et implements OnTouchListener {
         return true;
     }
 
-    private void c(View view) {
-        Iterator it = this.b.iterator();
+    /* renamed from: c */
+    private void m2037c(View view) {
+        Iterator it = this.f1223b.iterator();
         while (it.hasNext()) {
             er erVar = (er) it.next();
-            erVar.b(view, !erVar.c());
+            erVar.m1612b(view, !erVar.m1618c());
         }
     }
 
-    private void d(View view) {
-        a(view, null);
+    /* renamed from: d */
+    private void m2038d(View view) {
+        m2032a(view, null);
     }
 
-    private void a(View view, er erVar) {
-        Iterator it = this.b.iterator();
+    /* renamed from: a */
+    private void m2032a(View view, er erVar) {
+        Iterator it = this.f1223b.iterator();
         while (it.hasNext()) {
             er erVar2 = (er) it.next();
             if (erVar2 != erVar) {
-                erVar2.b(view, true);
+                erVar2.m1612b(view, true);
             }
         }
     }

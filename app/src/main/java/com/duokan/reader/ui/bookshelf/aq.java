@@ -1,22 +1,35 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.view.View;
-import android.view.View.OnClickListener;
-
+import com.duokan.core.sys.ag;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.bookshelf.aa;
+import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.domain.bookshelf.an;
+import java.util.ArrayList;
+import java.util.List;
 
-class aq implements OnClickListener {
-    final /* synthetic */ ai a;
+class aq implements ag<aa> {
+    /* renamed from: a */
+    final /* synthetic */ ao f6140a;
 
-    aq(ai aiVar) {
-        this.a = aiVar;
+    aq(ao aoVar) {
+        this.f6140a = aoVar;
     }
 
-    public void onClick(View view) {
-        if (this.a.b(this.a.h())) {
-            this.a.a.b(this.a.h().d());
-        } else {
-            this.a.a.a((an[]) this.a.b.a(this.a.h()).toArray(new an[0]));
+    public /* synthetic */ void run(Object obj) {
+        m9183a((aa) obj);
+    }
+
+    /* renamed from: a */
+    public void m9183a(aa aaVar) {
+        List<an> c = this.f6140a.f6121a.mo1658c();
+        ArrayList arrayList = new ArrayList(c.size());
+        for (an anVar : c) {
+            if (anVar instanceof C0800c) {
+                arrayList.add((C0800c) anVar);
+            }
         }
+        ai.m3980a().m3899a((C0800c[]) arrayList.toArray(new C0800c[0]), aaVar);
+        this.f6140a.requestDetach();
     }
 }

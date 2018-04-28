@@ -1,37 +1,25 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.PointF;
-import android.view.View;
+import android.graphics.Point;
 
-import com.duokan.core.ui.du;
-import com.duokan.core.ui.er;
+class gh implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ boolean f10237a;
+    /* renamed from: b */
+    final /* synthetic */ gd f10238b;
 
-class gh implements du {
-    final /* synthetic */ gf a;
-
-    gh(gf gfVar) {
-        this.a = gfVar;
+    gh(gd gdVar, boolean z) {
+        this.f10238b = gdVar;
+        this.f10237a = z;
     }
 
-    public void onTouchUp(View view, PointF pointF) {
-    }
-
-    public void onTouchDown(View view, PointF pointF) {
-    }
-
-    public void onTouchCancel(View view, PointF pointF) {
-    }
-
-    public void a(er erVar, View view, PointF pointF, PointF pointF2) {
-        if (!this.a.d && Float.compare(this.a.a.i(), this.a.a.getZoomFactor()) == 0) {
-            this.a.d = true;
-            this.a.c(true);
-            this.a.a.setPullingDown(true);
-        }
-        if (this.a.d) {
-            this.a.c = this.a.c + ((int) pointF2.y);
-            float max = Math.max(-1.0f, Math.min(1.0f, ((float) this.a.c) / ((float) this.a.a.getHeight())));
-            this.a.a.a((float) (this.a.a.c.getWidth() / 2), ((float) (this.a.a.c.getHeight() / 2)) - (max * ((float) this.a.a.getHeight())), Math.max(this.a.a.i() * (1.0f - Math.abs(max)), this.a.a.getMinZoomFactor() * 0.5f));
+    public void run() {
+        Point contentStaticCenter = this.f10238b.getContentStaticCenter();
+        this.f10238b.setMinZoomFactor(this.f10238b.getContentStaticScale());
+        if (this.f10237a) {
+            this.f10238b.m1360b((float) contentStaticCenter.x, (float) contentStaticCenter.y, this.f10238b.getContentStaticScale(), null, null);
+        } else {
+            this.f10238b.m1357b((float) contentStaticCenter.x, (float) contentStaticCenter.y, this.f10238b.getContentStaticScale());
         }
     }
 }

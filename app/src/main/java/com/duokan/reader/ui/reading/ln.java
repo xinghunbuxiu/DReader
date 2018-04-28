@@ -1,30 +1,14 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.PointF;
-import android.view.View;
+class ln implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ lm f10574a;
 
-import com.duokan.core.ui.onTapListener;
-import com.duokan.core.ui.er;
-
-class ln implements onTapListener {
-    final /* synthetic */ boolean[] a;
-    final /* synthetic */ lj b;
-
-    ln(lj ljVar, boolean[] zArr) {
-        this.b = ljVar;
-        this.a = zArr;
+    ln(lm lmVar) {
+        this.f10574a = lmVar;
     }
 
-    public void onTouchUp(View view, PointF pointF) {
-    }
-
-    public void onTouchDown(View view, PointF pointF) {
-    }
-
-    public void onTouchCancel(View view, PointF pointF) {
-    }
-
-    public void onTap(er erVar, View view, PointF pointF) {
-        this.a[0] = true;
+    public void run() {
+        this.f10574a.f10573b.mo2342c();
     }
 }

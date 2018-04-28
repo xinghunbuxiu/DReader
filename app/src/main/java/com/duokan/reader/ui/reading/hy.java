@@ -1,13 +1,15 @@
 package com.duokan.reader.ui.reading;
 
-class hy implements Runnable {
-    final /* synthetic */ hx a;
+import com.duokan.reader.domain.document.as;
+import com.duokan.reader.domain.document.epub.av;
 
-    hy(hx hxVar) {
-        this.a = hxVar;
-    }
+public interface hy extends abd {
+    /* renamed from: a */
+    int mo2353a(av avVar);
 
-    public void run() {
-        this.a.a.p();
-    }
+    /* renamed from: a */
+    boolean mo2357a(as asVar);
+
+    /* renamed from: d */
+    void mo2360d(long j);
 }

@@ -4,10 +4,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 class wf implements OnClickListener {
-    final /* synthetic */ vq a;
+    /* renamed from: a */
+    final /* synthetic */ wd f11109a;
 
-    wf(vq vqVar) {
-        this.a = vqVar;
+    wf(wd wdVar) {
+        this.f11109a = wdVar;
     }
 
     public void onClick(View view) {
@@ -19,11 +20,11 @@ class wf implements OnClickListener {
             z = true;
         }
         view.setSelected(z);
-        ReadingPrefs ae = this.a.a.ae();
-        if (this.a.a.ae().I()) {
+        ReadingPrefs ae = this.f11109a.f11102a.ae();
+        if (this.f11109a.f11102a.ae().m12449J()) {
             z2 = false;
         }
-        ae.d(z2);
-        this.a.a.ae().Y();
+        ae.m12498e(z2);
+        this.f11109a.f11102a.ae().m12463X();
     }
 }

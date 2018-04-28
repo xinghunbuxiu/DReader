@@ -3,19 +3,15 @@ package com.duokan.reader.ui.personal;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.c.j;
-import com.duokan.reader.domain.account.oauth.ThirdWeiXin;
-
 class im implements OnClickListener {
-    final /* synthetic */ String a;
-    final /* synthetic */ ih b;
+    /* renamed from: a */
+    final /* synthetic */ ij f8736a;
 
-    im(ih ihVar, String str) {
-        this.b = ihVar;
-        this.a = str;
+    im(ij ijVar) {
+        this.f8736a = ijVar;
     }
 
     public void onClick(View view) {
-        new ThirdWeiXin().send2Friend(this.b.getString(j.personal__personal_redeem_info_view__send_title), this.a);
+        this.f8736a.b.pushHalfPageSmoothly(new hv(this.f8736a.getContext()), null);
     }
 }

@@ -1,16 +1,24 @@
 package com.duokan.reader.ui.general;
 
-import android.content.Context;
+import com.duokan.core.ui.Scrollable;
+import com.duokan.core.ui.Scrollable.ScrollState;
+import com.duokan.core.ui.cg;
 
-class dx extends cw {
-    final /* synthetic */ ds a;
+class dx implements cg {
+    /* renamed from: a */
+    final /* synthetic */ dr f7128a;
 
-    dx(ds dsVar, Context context) {
-        this.a = dsVar;
-        super(context);
+    dx(dr drVar) {
+        this.f7128a = drVar;
     }
 
-    public boolean isEnabled() {
-        return this.a.b();
+    /* renamed from: a */
+    public void mo478a(Scrollable scrollable, ScrollState scrollState, ScrollState scrollState2) {
+    }
+
+    /* renamed from: a */
+    public void mo479a(Scrollable scrollable, boolean z) {
+        this.f7128a.f7110h.invalidate();
+        this.f7128a.f7111i.invalidate();
     }
 }

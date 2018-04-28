@@ -1,20 +1,19 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.ag;
+class ki implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ ey f3461a;
+    /* renamed from: b */
+    final /* synthetic */ kh f3462b;
 
-class ki implements ag {
-    final /* synthetic */ ag a;
-    final /* synthetic */ jv b;
-
-    ki(jv jvVar, ag agVar) {
-        this.b = jvVar;
-        this.a = agVar;
+    ki(kh khVar, ey eyVar) {
+        this.f3462b = khVar;
+        this.f3461a = eyVar;
     }
 
-    public void a(Integer num) {
-        this.b.bq();
-        if (this.a != null) {
-            this.a.a(num);
+    public void run() {
+        if (this.f3461a.f3148c != null) {
+            this.f3461a.f3148c.run(this.f3461a.f3147b);
         }
     }
 }

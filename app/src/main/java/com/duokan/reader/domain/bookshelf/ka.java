@@ -1,15 +1,9 @@
 package com.duokan.reader.domain.bookshelf;
 
-class ka implements Runnable {
-    final /* synthetic */ jz a;
+public interface ka {
+    /* renamed from: a */
+    void mo1065a(jz jzVar);
 
-    ka(jz jzVar) {
-        this.a = jzVar;
-    }
-
-    public void run() {
-        if (this.a.a.b.a.c != null) {
-            this.a.a.b.a.c.a(this.a.a.b.a.b);
-        }
-    }
+    /* renamed from: b */
+    void mo1066b(jz jzVar);
 }

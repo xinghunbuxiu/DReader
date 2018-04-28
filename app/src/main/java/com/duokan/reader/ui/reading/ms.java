@@ -1,21 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.ui.Scrollable;
-import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.OnScrollListener;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class ms implements OnScrollListener {
-    final /* synthetic */ mr a;
+class ms implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ mr f10644a;
 
     ms(mr mrVar) {
-        this.a = mrVar;
+        this.f10644a = mrVar;
     }
 
-    public void a(Scrollable scrollable, ScrollState scrollState, ScrollState scrollState2) {
-        this.a.a.invalidate();
-    }
-
-    public void a(Scrollable scrollable, boolean z) {
-        this.a.a.invalidate();
+    public void onClick(View view) {
+        this.f10644a.f10643e.mo2442b();
     }
 }

@@ -1,15 +1,16 @@
 package com.duokan.reader.common.cache;
 
-import org.apache.http.Header;
-import org.apache.http.HttpRequest;
-
 import java.io.Serializable;
 import java.lang.reflect.Array;
+import org.apache.http.Header;
+import org.apache.http.HttpRequest;
+import org.apache.http.HttpResponse;
 
-public class HttpCache extends g {
-    static final /* synthetic */ boolean b = (!HttpCache.class.desiredAssertionStatus());
+public class HttpCache extends C0566g<HttpResponse> {
+    /* renamed from: b */
+    static final /* synthetic */ boolean f1853b = (!HttpCache.class.desiredAssertionStatus());
 
-    public class CacheKey extends h implements Serializable {
+    public class CacheKey extends C0565h implements Serializable {
         static final /* synthetic */ boolean $assertionsDisabled = (!HttpCache.class.desiredAssertionStatus() ? true : $assertionsDisabled);
         private static final long serialVersionUID = 1;
         private final String[][] mRequestHeaders;
@@ -46,7 +47,7 @@ public class HttpCache extends g {
                 return $assertionsDisabled;
             }
             for (String[] a : this.mRequestHeaders) {
-                if (!HttpCache.b(cacheKey.mRequestHeaders, a)) {
+                if (!HttpCache.m2489b(cacheKey.mRequestHeaders, a)) {
                     return $assertionsDisabled;
                 }
             }
@@ -74,7 +75,7 @@ public class HttpCache extends g {
                 return false;
             }
             for (String[] a : this.mRequestHeaders) {
-                if (!HttpCache.b(fileCacheKey.mRequestHeaders, a)) {
+                if (!HttpCache.m2489b(fileCacheKey.mRequestHeaders, a)) {
                     return false;
                 }
             }
@@ -82,7 +83,8 @@ public class HttpCache extends g {
         }
     }
 
-    private static boolean b(String[][] strArr, String[] strArr2) {
+    /* renamed from: b */
+    private static boolean m2489b(String[][] strArr, String[] strArr2) {
         int i = 0;
         while (i < strArr.length) {
             if (strArr[i][0].equals(strArr2[0]) && strArr[i][1].equals(strArr2[1])) {

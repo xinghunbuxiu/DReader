@@ -1,20 +1,20 @@
 package com.duokan.reader.ui.general;
 
 import android.widget.EditText;
+import com.duokan.core.sys.IdleHandlerListener;
 
-import com.duokan.core.sys.IdleStatus;
-
-class ag implements IdleStatus {
-    final /* synthetic */ af a;
+class ag implements IdleHandlerListener {
+    /* renamed from: a */
+    final /* synthetic */ af f6929a;
 
     ag(af afVar) {
-        this.a = afVar;
+        this.f6929a = afVar;
     }
 
     public boolean idleRun() {
-        EditText focusedEditText = this.a.getFocusedEditText();
+        EditText focusedEditText = this.f6929a.getFocusedEditText();
         if (focusedEditText != null) {
-            ReaderUi.a(this.a.getContext(), focusedEditText);
+            ReaderUi.m10162a(this.f6929a.getContext(), focusedEditText);
         }
         return false;
     }

@@ -4,72 +4,86 @@ import com.duokan.reader.domain.document.av;
 import com.duokan.reader.domain.document.bb;
 
 public class ah extends bb {
-    private final b a;
-    private final b b;
+    /* renamed from: a */
+    private final C0965b f4790a;
+    /* renamed from: b */
+    private final C0965b f4791b;
 
-    public /* synthetic */ av g() {
-        return j();
+    /* renamed from: g */
+    public /* synthetic */ av mo1198g() {
+        return m7130j();
     }
 
-    public /* synthetic */ av h() {
-        return k();
+    /* renamed from: h */
+    public /* synthetic */ av mo1199h() {
+        return m7131k();
     }
 
     protected ah() {
-        this(new b(0, 0, 0), new b(0, 0, 0));
+        this(new C0965b(0, 0, 0), new C0965b(0, 0, 0));
     }
 
-    protected ah(b bVar, b bVar2) {
-        this.a = bVar;
-        this.b = bVar2;
+    protected ah(C0965b c0965b, C0965b c0965b2) {
+        this.f4790a = c0965b;
+        this.f4791b = c0965b2;
     }
 
-    protected static ah a(ah ahVar, ah ahVar2) {
-        if (ahVar.f()) {
+    /* renamed from: a */
+    protected static ah m7120a(ah ahVar, ah ahVar2) {
+        if (ahVar.m5817f()) {
             return ahVar2;
         }
-        if (ahVar2.f()) {
+        if (ahVar2.m5817f()) {
             return ahVar;
         }
-        return new ah(ahVar.j().a(ahVar2.j()) ? ahVar.j() : ahVar2.j(), ahVar.k().c(ahVar2.k()) ? ahVar.k() : ahVar2.k());
+        return new ah(ahVar.m7130j().mo1188a(ahVar2.m7130j()) ? ahVar.m7130j() : ahVar2.m7130j(), ahVar.m7131k().mo1190c(ahVar2.m7131k()) ? ahVar.m7131k() : ahVar2.m7131k());
     }
 
-    protected static ah b(ah ahVar, ah ahVar2) {
-        if (ahVar.f() || ahVar2.f()) {
+    /* renamed from: b */
+    protected static ah m7121b(ah ahVar, ah ahVar2) {
+        if (ahVar.m5817f() || ahVar2.m5817f()) {
             return ahVar;
         }
-        return new ah(ahVar.j().a(ahVar2.j()) ? ahVar2.j() : ahVar.j(), ahVar.k().a(ahVar2.k()) ? ahVar.k() : ahVar2.k());
+        return new ah(ahVar.m7130j().mo1188a(ahVar2.m7130j()) ? ahVar2.m7130j() : ahVar.m7130j(), ahVar.m7131k().mo1188a(ahVar2.m7131k()) ? ahVar.m7131k() : ahVar2.m7131k());
     }
 
-    public boolean a() {
+    /* renamed from: a */
+    public boolean mo1186a() {
         return true;
     }
 
-    public boolean c() {
+    /* renamed from: c */
+    public boolean mo1189c() {
         return false;
     }
 
-    public boolean e() {
+    /* renamed from: e */
+    public boolean mo1192e() {
         return true;
     }
 
-    public boolean a(long j) {
+    /* renamed from: a */
+    public boolean mo1187a(long j) {
         return true;
     }
 
-    public b j() {
-        return this.a;
+    /* renamed from: j */
+    public C0965b m7130j() {
+        return this.f4790a;
     }
 
-    public b k() {
-        return this.b;
+    /* renamed from: k */
+    public C0965b m7131k() {
+        return this.f4791b;
     }
 
-    public bb a(bb bbVar) {
-        return a(this, (ah) bbVar);
+    /* renamed from: a */
+    public bb mo1196a(bb bbVar) {
+        return m7120a(this, (ah) bbVar);
     }
 
-    public bb b(bb bbVar) {
-        return b(this, (ah) bbVar);
+    /* renamed from: b */
+    public bb mo1197b(bb bbVar) {
+        return m7121b(this, (ah) bbVar);
     }
 }

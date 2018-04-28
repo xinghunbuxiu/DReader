@@ -1,112 +1,43 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.core.app.ah;
-import com.duokan.core.app.ai;
-import com.duokan.reader.DkApp;
-import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.domain.account.h;
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.cloud.DkSharedStorageManager.SharedKey;
+import android.text.TextUtils;
+import com.duokan.reader.common.webservices.C0621a;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.WebSession;
+import com.duokan.reader.common.webservices.duokan.C0640n;
+import com.duokan.reader.domain.account.al;
+import java.util.HashSet;
+import java.util.Set;
 
-import org.json.JSONObject;
+class gf extends WebSession {
+    /* renamed from: a */
+    C0621a<String> f4044a = new C0621a();
+    /* renamed from: b */
+    final al f4045b = new al(this.f4046c.f3632d.m3508d());
+    /* renamed from: c */
+    final /* synthetic */ PersonalPrefs f4046c;
 
-import java.io.Serializable;
-import java.util.Iterator;
-import java.util.LinkedList;
-
-public class gf implements ah, av {
-    private static final ai a = new ai();
-    private final i b;
-    private final h c;
-    private final LinkedList d = new LinkedList();
-    private gl e = new gj(this);
-    private int f = 0;
-
-    private gf(i iVar) {
-        this.b = iVar;
-        this.c = new gg(this);
-        DkApp.get().runPreReady(new gh(this));
-        this.f = a(DkSharedStorageManager.a().a(SharedKey.CART_CACHE));
-        switch (ReaderEnv.get().getShoppingCartSituation()) {
-            case 0:
-                this.e = new gi(this);
-                return;
-            case 1:
-                this.e = new gm(this);
-                return;
-            default:
-                this.e = new gj(this);
-                return;
-        }
+    gf(PersonalPrefs personalPrefs, C0657i c0657i) {
+        this.f4046c = personalPrefs;
+        super(c0657i);
     }
 
-    public static void a(i iVar) {
-        a.a(new gf(iVar));
+    protected void onSessionTry() {
+        this.f4044a = new C0640n(this, this.f4045b).m2925h(this.f4046c.m5197a(this.f4046c.m5219c()));
     }
 
-    public static gf a() {
-        return (gf) a.a();
-    }
-
-    public gl b() {
-        return this.e;
-    }
-
-    public void a(gk gkVar) {
-        this.d.add(gkVar);
-    }
-
-    public void b(gk gkVar) {
-        this.d.remove(gkVar);
-    }
-
-    public void c() {
-        this.e.a(this);
-    }
-
-    public void a(SharedKey sharedKey, Serializable serializable) {
-        if (sharedKey == SharedKey.CART_CACHE) {
-            int a = a((String) serializable);
-            if (this.f != a) {
-                if (a > this.f || a == 0) {
-                    this.e.a(this, a);
+    protected void onSessionSucceeded() {
+        if (this.f4044a.b == 0 && this.f4046c.m5209a(this.f4045b) && !TextUtils.isEmpty((CharSequence) this.f4044a.f2058a)) {
+            Set hashSet = new HashSet();
+            for (String str : ((String) this.f4044a.f2058a).split(",")) {
+                if (!str.equals("empty")) {
+                    hashSet.add(str);
                 }
-                this.f = a;
             }
+            this.f4046c.m5207a(hashSet, false);
         }
     }
 
-    public void a(SharedKey sharedKey) {
-        if (sharedKey == SharedKey.CART_CACHE) {
-            this.f = 0;
-            this.e.a(this, this.f);
-        }
-    }
-
-    private void a(gl glVar) {
-        if (!this.e.equals(glVar)) {
-            int i;
-            this.e = glVar;
-            if (this.e instanceof gi) {
-                i = 0;
-            } else if (this.e instanceof gm) {
-                i = 1;
-            } else {
-                i = 2;
-            }
-            ReaderEnv.get().setShoppingCartSituation(i);
-            Iterator it = this.d.iterator();
-            while (it.hasNext()) {
-                ((gk) it.next()).a(this.e);
-            }
-        }
-    }
-
-    private int a(String str) {
-        try {
-            return new JSONObject(str).optJSONObject("__data__").optJSONArray("items").length();
-        } catch (Exception e) {
-            return 0;
-        }
+    protected void onSessionFailed() {
     }
 }

@@ -1,49 +1,46 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.account.ab;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.WebSession;
+import com.duokan.reader.domain.account.al;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+class ce extends WebSession {
+    /* renamed from: a */
+    final /* synthetic */ al f2944a;
+    /* renamed from: b */
+    final /* synthetic */ ct f2945b;
+    /* renamed from: c */
+    final /* synthetic */ bu f2946c;
+    /* renamed from: d */
+    private final cp f2947d = new cp();
 
-class ce extends ap {
-    final /* synthetic */ ab a;
-    final /* synthetic */ bt b;
-    final /* synthetic */ ArrayList c;
-    final /* synthetic */ cd d;
-
-    ce(cd cdVar, ab abVar, bt btVar, ArrayList arrayList) {
-        this.d = cdVar;
-        this.a = abVar;
-        this.b = btVar;
-        this.c = arrayList;
+    ce(bu buVar, C0657i c0657i, al alVar, ct ctVar) {
+        this.f2946c = buVar;
+        this.f2944a = alVar;
+        this.f2945b = ctVar;
+        super(c0657i);
     }
 
     protected void onSessionTry() {
-        br brVar = new br(this.a);
-        brVar.a();
-        brVar.updateInfo(this.b);
-        if (!this.c.isEmpty()) {
-            Iterator it = this.c.iterator();
-            while (it.hasNext()) {
-                bu buVar = (bu) it.next();
-                if (buVar.h == 0) {
-                    brVar.updateItem(buVar);
-                } else if (buVar.h == 3) {
-                    brVar.deleteItem(buVar);
-                }
-            }
-        }
+        bq bqVar = new bq(this.f2944a);
+        bqVar.m4053a();
+        this.f2947d.m4278a(bqVar);
     }
 
     protected void onSessionSucceeded() {
-        if (this.a.a(this.d.c.c)) {
-            this.d.b.a();
-        } else {
-            this.d.b.a("");
+        if (this.f2944a.m3365a(this.f2946c.f2868c)) {
+            this.f2946c.m4088a(this.f2947d);
+            if (this.f2945b != null) {
+                this.f2945b.mo984a();
+            }
+        } else if (this.f2945b != null) {
+            this.f2945b.mo985b();
         }
     }
 
     protected void onSessionFailed() {
-        this.d.b.a("");
+        if (this.f2945b != null) {
+            this.f2945b.mo985b();
+        }
     }
 }

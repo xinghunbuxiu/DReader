@@ -1,16 +1,16 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.sys.UThread;
 
-class gj implements OnClickListener {
-    final /* synthetic */ FileScanTask a;
+class gj implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ gi f6516a;
 
-    gj(FileScanTask fileScanTask) {
-        this.a = fileScanTask;
+    gj(gi giVar) {
+        this.f6516a = giVar;
     }
 
-    public void onClick(View view) {
-        this.a.cancel(true);
+    public void run() {
+        UThread.post(this.f6516a.f6514a);
     }
 }

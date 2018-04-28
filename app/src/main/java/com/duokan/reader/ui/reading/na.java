@@ -1,24 +1,15 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.bookshelf.ah;
-import com.duokan.reader.ui.general.ib;
+public interface na {
+    /* renamed from: a */
+    void mo2431a();
 
-class na implements ib {
-    final /* synthetic */ ah a;
-    final /* synthetic */ mz b;
+    /* renamed from: a */
+    void mo2432a(int i);
 
-    na(mz mzVar, ah ahVar) {
-        this.b = mzVar;
-        this.a = ahVar;
-    }
+    /* renamed from: b */
+    void mo2433b();
 
-    public void a(int i) {
-        if (i == 0) {
-            this.b.a.a.a(this.a.d());
-            this.b.a.c();
-            return;
-        }
-        this.b.a.a.G().b(this.a);
-        this.b.a.d();
-    }
+    /* renamed from: c */
+    void mo2434c();
 }

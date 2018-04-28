@@ -1,27 +1,29 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.c.j;
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.core.sys.ag;
-import com.duokan.reader.ui.general.ja;
-import com.duokan.reader.ui.general.web.StorePageController;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.core.ui.dv;
+import com.duokan.reader.ui.general.ReaderUi;
 
-class dz implements ag {
-    final /* synthetic */ dy a;
+class dz implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ el f10054a;
+    /* renamed from: b */
+    final /* synthetic */ dg f10055b;
 
-    dz(dy dyVar) {
-        this.a = dyVar;
+    dz(dg dgVar, el elVar) {
+        this.f10055b = dgVar;
+        this.f10054a = elVar;
     }
 
-    public void a(String str) {
-        ActivatedController jaVar = new ja(MyContextWrapper.getFeature(this.a.a.getContext()));
-        ActivatedController storePageController = new StorePageController(MyContextWrapper.getFeature(this.a.a.getContext()));
-        storePageController.setHasTitle(false);
-        ActivatedController storePageController2 = new StorePageController(MyContextWrapper.getFeature(this.a.a.getContext()));
-        storePageController2.setHasTitle(false);
-        jaVar.a(storePageController, this.a.a.getResources().getString(j.reading__comment_view__tip_list));
-        jaVar.a(storePageController2, this.a.a.getResources().getString(j.reading__comment_view__tip_rank));
-        this.a.a.A.pushHalfPageSmoothly(jaVar, null);
+    public void onClick(View view) {
+        this.f10055b.f10012m.setText(this.f10054a.f10082d.f2067l);
+        this.f10055b.f10010k.setScore(this.f10054a.f10083e);
+        ReaderUi.m10162a(this.f10055b.getContext(), this.f10055b.f10012m);
+        this.f10055b.f10012m.selectAll();
+        this.f10055b.f10015p.setVisibility(8);
+        this.f10055b.f10014o.setVisibility(0);
+        dv.hideAnimation(this.f10055b.f10015p, null);
+        dv.showAnimation(this.f10055b.f10014o, null);
     }
 }

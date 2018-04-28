@@ -2,64 +2,71 @@ package com.duokan.reader.domain.document.epub;
 
 import android.text.TextUtils;
 import android.webkit.URLUtil;
-
 import com.duokan.kernel.DkFlowPosition;
 import com.duokan.kernel.epublib.DkeLinkInfo;
 import com.duokan.reader.domain.document.ae;
 import com.duokan.reader.domain.document.av;
 
 class bp extends ae {
-    static final /* synthetic */ boolean d = (!az.class.desiredAssertionStatus());
-    public final String a;
-    public final String b;
-    public final av c;
-    final /* synthetic */ az e;
+    /* renamed from: d */
+    static final /* synthetic */ boolean f4580d = (!az.class.desiredAssertionStatus());
+    /* renamed from: a */
+    public final String f4581a;
+    /* renamed from: b */
+    public final String f4582b;
+    /* renamed from: c */
+    public final av f4583c;
+    /* renamed from: e */
+    final /* synthetic */ az f4584e;
 
     private bp(az azVar, DkeLinkInfo dkeLinkInfo) {
-        this.e = azVar;
+        this.f4584e = azVar;
         if (dkeLinkInfo != null && dkeLinkInfo.mLinkType == 1) {
-            DkFlowPosition flowPositionByLink = azVar.Z().getFlowPositionByLink(dkeLinkInfo.mLinkTarget, dkeLinkInfo.mLinkAnchor);
+            DkFlowPosition flowPositionByLink = azVar.m6544Y().getFlowPositionByLink(dkeLinkInfo.mLinkTarget, dkeLinkInfo.mLinkAnchor);
             if (flowPositionByLink == null || URLUtil.isValidUrl(dkeLinkInfo.mLinkTarget)) {
                 switch (dkeLinkInfo.mFileType) {
                     case 1:
-                        this.a = "";
+                        this.f4581a = "";
                         break;
                     case 2:
-                        this.a = "text/html";
+                        this.f4581a = "text/html";
                         break;
                     default:
-                        this.a = "";
+                        this.f4581a = "";
                         break;
                 }
                 if (TextUtils.isEmpty(dkeLinkInfo.mLinkAnchor)) {
-                    this.b = dkeLinkInfo.mLinkTarget;
+                    this.f4582b = dkeLinkInfo.mLinkTarget;
                 } else {
-                    this.b = dkeLinkInfo.mLinkTarget + "#" + dkeLinkInfo.mLinkAnchor;
+                    this.f4582b = dkeLinkInfo.mLinkTarget + "#" + dkeLinkInfo.mLinkAnchor;
                 }
-                this.c = null;
+                this.f4583c = null;
                 return;
             }
-            this.a = "";
-            this.b = "";
-            this.c = ai.a(flowPositionByLink.mChapterIndex, flowPositionByLink.mParaIndex, flowPositionByLink.mAtomIndex);
-        } else if (d) {
-            this.a = "";
-            this.b = "";
-            this.c = null;
+            this.f4581a = "";
+            this.f4582b = "";
+            this.f4583c = ai.m6508a(flowPositionByLink.mChapterIndex, flowPositionByLink.mParaIndex, flowPositionByLink.mAtomIndex);
+        } else if (f4580d) {
+            this.f4581a = "";
+            this.f4582b = "";
+            this.f4583c = null;
         } else {
             throw new AssertionError();
         }
     }
 
-    public String a() {
-        return this.a;
+    /* renamed from: a */
+    public String mo1406a() {
+        return this.f4581a;
     }
 
-    public String b() {
-        return this.b;
+    /* renamed from: b */
+    public String mo1407b() {
+        return this.f4582b;
     }
 
-    public av c() {
-        return this.c;
+    /* renamed from: c */
+    public av mo1408c() {
+        return this.f4583c;
     }
 }

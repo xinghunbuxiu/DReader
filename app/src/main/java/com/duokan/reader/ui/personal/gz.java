@@ -1,41 +1,36 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
+import android.text.TextUtils;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.reader.domain.account.C0666x;
+import com.duokan.reader.domain.account.C0672a;
+import com.duokan.reader.ui.general.be;
+import java.util.concurrent.Callable;
 
-import com.duokan.core.ui.Scrollable;
-import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.OnScrollListener;
-import com.duokan.reader.ReaderFeature;
+class gz implements C0666x {
+    /* renamed from: a */
+    final /* synthetic */ Callable f8627a;
+    /* renamed from: b */
+    final /* synthetic */ boolean f8628b;
+    /* renamed from: c */
+    final /* synthetic */ fz f8629c;
 
-class gz implements OnScrollListener {
-    boolean a = false;
-    final /* synthetic */ View b;
-    final /* synthetic */ fl c;
-
-    gz(fl flVar, View view) {
-        this.c = flVar;
-        this.b = view;
+    gz(fz fzVar, Callable callable, boolean z) {
+        this.f8629c = fzVar;
+        this.f8627a = callable;
+        this.f8628b = z;
     }
 
-    public void a(Scrollable scrollable, ScrollState scrollState, ScrollState scrollState2) {
+    public void onQueryAccountOk(C0672a c0672a) {
+        try {
+            this.f8629c.m11846a((ActivatedController) this.f8627a.call(), this.f8628b, null);
+        } catch (Throwable th) {
+        }
     }
 
-    public void a(Scrollable scrollable, boolean z) {
-        boolean z2 = false;
-        if (z && this.b.getHeight() != 0) {
-            int max = Math.max(this.b.getHeight() - Math.max(0, (scrollable.getViewportBounds().top + this.b.getHeight()) - this.c.d.getHeight()), 0);
-            if (this.c.z != max) {
-                this.c.z = max;
-                this.b.invalidate();
-            }
-            this.c.d.invalidate();
-            if ((this.c.z < this.c.y && !this.a) || (this.c.z == this.c.y && this.a)) {
-                if (!this.a) {
-                    z2 = true;
-                }
-                this.a = z2;
-                ((ReaderFeature) this.c.getContext().queryFeature(ReaderFeature.class)).updateSystemUi(true);
-            }
+    public void onQueryAccountError(C0672a c0672a, String str) {
+        if (!TextUtils.isEmpty(str)) {
+            be.m10287a(this.f8629c.getContext(), (CharSequence) str, 0).show();
         }
     }
 }

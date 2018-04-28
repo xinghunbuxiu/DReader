@@ -6,6 +6,6 @@ import android.os.IBinder;
 
 public class AudioPlayerService extends Service {
     public IBinder onBind(Intent intent) {
-        return AudioPlayer.a();
+        return AudioPlayer.m3613a();
     }
 }

@@ -1,27 +1,19 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.domain.bookshelf.C0800c;
 
-import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.ui.general.ReaderUi;
-
-class cl implements OnClickListener {
-    final /* synthetic */ ck a;
+class cl implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ ck f9939a;
 
     cl(ck ckVar) {
-        this.a = ckVar;
+        this.f9939a = ckVar;
     }
 
-    public void onClick(View view) {
-        if (!ReaderEnv.get().forHd() && this.a.a.am()) {
-            ReaderUi.a(this.a.getActivity(), 1);
-            this.a.e = true;
+    public void run() {
+        C0800c G = this.f9939a.f9938a.f.mo1992G();
+        if (G.ak() && !G.al()) {
+            ((abd) this.f9939a.f9938a.f).mo2190c();
         }
-        if (this.a.a.U() != PageAnimationMode.HSCROLL) {
-            this.a.a.a(PageAnimationMode.HSCROLL);
-            this.a.e = true;
-        }
-        this.a.requestDetach();
     }
 }

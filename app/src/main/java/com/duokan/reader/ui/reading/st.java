@@ -1,39 +1,33 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.drawable.Drawable;
-import android.util.Pair;
+import com.duokan.reader.domain.bookshelf.C0798a;
+import com.duokan.reader.domain.document.C0896a;
+import com.duokan.reader.domain.document.C0897d;
+import com.duokan.reader.domain.document.bb;
+import java.util.Comparator;
 
-import com.duokan.reader.domain.document.ah;
+class st implements Comparator<C0798a> {
+    /* renamed from: a */
+    final /* synthetic */ si f10956a;
 
-class st implements lw {
-    final /* synthetic */ ah a;
-    final /* synthetic */ gs b;
-    final /* synthetic */ Pair c;
-    final /* synthetic */ Drawable d;
-    final /* synthetic */ ss e;
-
-    st(ss ssVar, ah ahVar, gs gsVar, Pair pair, Drawable drawable) {
-        this.e = ssVar;
-        this.a = ahVar;
-        this.b = gsVar;
-        this.c = pair;
-        this.d = drawable;
+    st(si siVar) {
+        this.f10956a = siVar;
     }
 
-    public void a() {
-        if (this.a.e()) {
-            this.b.a(((Integer) this.c.second).intValue(), this.d);
+    public /* synthetic */ int compare(Object obj, Object obj2) {
+        return m14977a((C0798a) obj, (C0798a) obj2);
+    }
+
+    /* renamed from: a */
+    public int m14977a(C0798a c0798a, C0798a c0798a2) {
+        bb a = this.f10956a.getDocument().mo1216a((C0897d) c0798a.m3726d(), (C0897d) c0798a.m3728e());
+        C0896a a2 = this.f10956a.getDocument().mo1216a((C0897d) c0798a2.m3726d(), (C0897d) c0798a2.m3728e());
+        if (a.mo1188a(a2)) {
+            return -1;
         }
-        this.b.setActiveMedia(-1);
-        this.e.a.a.v().setScreenTimeout(this.e.a.a.ae().m());
-    }
-
-    public void b() {
-        this.b.setActiveMedia(-1);
-    }
-
-    public void c() {
-        this.b.setActiveMedia(((Integer) this.c.second).intValue());
-        this.e.a.a.v().setScreenTimeout(Integer.MAX_VALUE);
+        if (a.mo1190c(a2)) {
+            return 1;
+        }
+        return 0;
     }
 }

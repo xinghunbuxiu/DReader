@@ -1,22 +1,24 @@
 package com.duokan.reader.ui.bookshelf;
 
-class cq implements Runnable {
-    final /* synthetic */ cn a;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
 
-    cq(cn cnVar) {
-        this.a = cnVar;
+class cq implements AnimationListener {
+    /* renamed from: c */
+    final /* synthetic */ ce f6277c;
+
+    private cq(ce ceVar) {
+        this.f6277c = ceVar;
     }
 
-    public void run() {
-        if (!this.a.i.hasEnded()) {
-            this.a.getChildAt(0).invalidate();
-            this.a.invalidate();
-            this.a.post(this);
-        }
-        if (this.a.i.hasEnded() && this.a.l != null) {
-            this.a.l.run();
-            this.a.l = null;
-            this.a.h.setEmpty();
-        }
+    public void onAnimationStart(Animation animation) {
+        this.f6277c.f6265q = true;
+    }
+
+    public void onAnimationEnd(Animation animation) {
+        this.f6277c.f6265q = false;
+    }
+
+    public void onAnimationRepeat(Animation animation) {
     }
 }

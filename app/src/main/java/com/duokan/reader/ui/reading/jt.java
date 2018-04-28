@@ -1,36 +1,27 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.MotionEvent;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import com.duokan.core.sys.UThread;
 
-import com.duokan.reader.ui.general.cy;
+class jt implements AnimationListener {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f10468a;
+    /* renamed from: b */
+    final /* synthetic */ jq f10469b;
 
-class jt extends cy {
-    final /* synthetic */ jr b;
-
-    private jt(jr jrVar) {
-        this.b = jrVar;
-        super(jrVar);
+    jt(jq jqVar, Runnable runnable) {
+        this.f10469b = jqVar;
+        this.f10468a = runnable;
     }
 
-    protected int ab() {
-        return this.b.a.b ? super.ab() + 1 : super.ab();
+    public void onAnimationStart(Animation animation) {
     }
 
-    protected void a(int i, int i2) {
-        super.a(i, i2);
+    public void onAnimationRepeat(Animation animation) {
     }
 
-    public boolean c(MotionEvent motionEvent) {
-        if (this.b.a.k()) {
-            return false;
-        }
-        return super.c(motionEvent);
-    }
-
-    public boolean b(MotionEvent motionEvent) {
-        if (this.b.a.k()) {
-            return false;
-        }
-        return super.b(motionEvent);
+    public void onAnimationEnd(Animation animation) {
+        UThread.post(this.f10468a);
     }
 }

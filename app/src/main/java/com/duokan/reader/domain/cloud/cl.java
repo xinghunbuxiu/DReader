@@ -1,26 +1,33 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.async.a.a;
-import com.duokan.reader.domain.account.u;
+import com.duokan.reader.common.async.p035a.C0519c;
+import com.duokan.reader.domain.account.C0586j;
+import com.duokan.reader.domain.account.C0672a;
 
-class cl implements u {
-    final /* synthetic */ boolean a;
-    final /* synthetic */ a b;
-    final /* synthetic */ boolean c;
-    final /* synthetic */ DkUserPurchasedBooksManager d;
+class cl implements C0586j {
+    /* renamed from: a */
+    final /* synthetic */ DkUserPurchasedFictionsManager f3817a;
 
-    cl(DkUserPurchasedBooksManager dkUserPurchasedBooksManager, boolean z, a aVar, boolean z2) {
-        this.d = dkUserPurchasedBooksManager;
-        this.a = z;
-        this.b = aVar;
-        this.c = z2;
+    cl(DkUserPurchasedFictionsManager dkUserPurchasedFictionsManager) {
+        this.f3817a = dkUserPurchasedFictionsManager;
     }
 
-    public void onQueryAccountOk(com.duokan.reader.domain.account.a aVar) {
-        this.d.a(new cm(this));
+    public void onAccountLoginedTopHalf(C0672a c0672a) {
+        this.f3817a.f3616h = new dr();
     }
 
-    public void onQueryAccountError(com.duokan.reader.domain.account.a aVar, String str) {
-        this.b.a(-1, str);
+    public void onAccountLoginedBottomHalf(C0672a c0672a) {
+        this.f3817a.m5100a(false, false, C0519c.f1752a);
+    }
+
+    public void onAccountLogoff(C0672a c0672a) {
+        dr drVar = new dr();
+        drVar.f3888a = true;
+        drVar.f3889b = true;
+        this.f3817a.f3616h = drVar;
+        this.f3817a.m5091f();
+    }
+
+    public void onAccountDetailChanged(C0672a c0672a) {
     }
 }

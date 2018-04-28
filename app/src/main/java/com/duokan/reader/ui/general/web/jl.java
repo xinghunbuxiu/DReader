@@ -1,24 +1,23 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.as;
-import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.ui.general.jq;
-import com.mipay.sdk.Mipay;
+import com.duokan.reader.common.async.p035a.C0517a;
+import com.duokan.reader.domain.cloud.DkCloudPurchasedFiction;
 
-class jl implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ jq b;
-    final /* synthetic */ iv c;
+class jl implements C0517a<DkCloudPurchasedFiction> {
+    /* renamed from: a */
+    final /* synthetic */ jk f8055a;
 
-    jl(iv ivVar, String str, jq jqVar) {
-        this.c = ivVar;
-        this.a = str;
-        this.b = jqVar;
+    jl(jk jkVar) {
+        this.f8055a = jkVar;
     }
 
-    public void a() {
-        this.c.b.pageController.web_notifyWeb(this.a, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
-        this.b.dismiss();
-        ReaderEnv.get().setAdvancedActionTime(System.currentTimeMillis());
+    /* renamed from: a */
+    public void m11222a(DkCloudPurchasedFiction dkCloudPurchasedFiction) {
+        this.f8055a.f8053d.m708a(Boolean.valueOf(true));
+    }
+
+    /* renamed from: a */
+    public void mo729a(int i, String str) {
+        this.f8055a.f8053d.m708a(Boolean.valueOf(false));
     }
 }

@@ -1,19 +1,28 @@
 package com.duokan.reader.domain.cloud;
 
-import java.util.Comparator;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.WebSession;
+import com.duokan.reader.domain.account.al;
 
-class eh implements Comparator {
-    final /* synthetic */ eg a;
+class eh extends WebSession {
+    /* renamed from: a */
+    final /* synthetic */ al f3923a;
+    /* renamed from: b */
+    final /* synthetic */ eg f3924b;
 
-    eh(eg egVar) {
-        this.a = egVar;
+    eh(eg egVar, C0657i c0657i, al alVar) {
+        this.f3924b = egVar;
+        this.f3923a = alVar;
+        super(c0657i);
     }
 
-    public /* synthetic */ int compare(Object obj, Object obj2) {
-        return a((DkCloudPurchasedFiction) obj, (DkCloudPurchasedFiction) obj2);
+    protected void onSessionTry() {
+        new ev(this.f3923a).destroy();
     }
 
-    public int a(DkCloudPurchasedFiction dkCloudPurchasedFiction, DkCloudPurchasedFiction dkCloudPurchasedFiction2) {
-        return -dkCloudPurchasedFiction.compareUpdateTimeTo(dkCloudPurchasedFiction2);
+    protected void onSessionSucceeded() {
+    }
+
+    protected void onSessionFailed() {
     }
 }

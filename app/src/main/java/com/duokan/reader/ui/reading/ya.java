@@ -1,16 +1,29 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.app.ac;
+import com.duokan.core.app.ad;
 
-class ya implements OnClickListener {
-    final /* synthetic */ xz a;
+class ya implements ad {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f11179a;
+    /* renamed from: b */
+    final /* synthetic */ Runnable f11180b;
+    /* renamed from: c */
+    final /* synthetic */ xz f11181c;
 
-    ya(xz xzVar) {
-        this.a = xzVar;
+    ya(xz xzVar, Runnable runnable, Runnable runnable2) {
+        this.f11181c = xzVar;
+        this.f11179a = runnable;
+        this.f11180b = runnable2;
     }
 
-    public void onClick(View view) {
-        this.a.requestDetach();
+    /* renamed from: a */
+    public void mo1553a(ac acVar) {
+        this.f11179a.run();
+    }
+
+    /* renamed from: b */
+    public void mo1554b(ac acVar) {
+        this.f11180b.run();
     }
 }

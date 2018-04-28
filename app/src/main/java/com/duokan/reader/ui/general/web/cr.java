@@ -1,33 +1,21 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.DkApp;
-import com.duokan.reader.domain.account.AccountType;
-import com.duokan.reader.domain.account.i;
+import com.duokan.core.sys.as;
+import com.duokan.reader.domain.cloud.DkSharedStorageManager;
 
-import org.json.JSONArray;
+class cr implements as {
+    /* renamed from: a */
+    final /* synthetic */ String f7692a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7693b;
 
-import java.util.concurrent.Callable;
-
-class cr implements Callable {
-    final /* synthetic */ PageController a;
-
-    cr(PageController cgVar) {
-        this.a = cgVar;
+    cr(ci ciVar, String str) {
+        this.f7693b = ciVar;
+        this.f7692a = str;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
-    }
-
-    public String a() {
-        JSONArray jSONArray = new JSONArray();
-        if (!i.f().a().equals(AccountType.XIAOMI_GUEST)) {
-            jSONArray.put("MIPAY");
-        }
-        jSONArray.put("ALIPAY_MOBILE");
-        if (DkApp.get().supportWxPay()) {
-            jSONArray.put("WXPAY");
-        }
-        return jSONArray.toString();
+    /* renamed from: a */
+    public void mo1831a() {
+        DkSharedStorageManager.m5016a().m5028b(this.f7692a);
     }
 }

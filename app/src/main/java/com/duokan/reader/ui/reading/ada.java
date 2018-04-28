@@ -1,28 +1,24 @@
 package com.duokan.reader.ui.reading;
 
-import android.net.Uri;
+import android.graphics.Point;
 import android.view.View;
-import android.view.View.OnClickListener;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.UmengManager;
-import com.duokan.reader.ui.general.web.StorePageController;
+class ada implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ Point f9499a;
+    /* renamed from: b */
+    final /* synthetic */ View f9500b;
+    /* renamed from: c */
+    final /* synthetic */ TextSelectionController f9501c;
 
-class ada implements OnClickListener {
-    final /* synthetic */ adk a;
-    final /* synthetic */ TranslationController b;
-
-    ada(TranslationController translationController, adk com_duokan_reader_ui_reading_adk) {
-        this.b = translationController;
-        this.a = com_duokan_reader_ui_reading_adk;
+    ada(TextSelectionController textSelectionController, Point point, View view) {
+        this.f9501c = textSelectionController;
+        this.f9499a = point;
+        this.f9500b = view;
     }
 
-    public void onClick(View view) {
-        UmengManager.get().onEvent("V2_READING_POPMENU", "DictBaidu");
-        ActivatedController storePageController = new StorePageController(this.b.getContext());
-        storePageController.loadUrl(String.format("http://baike.baidu.com/search/word?word=%s&pic=1&enc=utf8", new Object[]{Uri.encode(this.b.d.trim())}));
-        ((ReaderFeature) this.b.getContext().queryFeature(ReaderFeature.class)).pushPageSmoothly(storePageController, null);
-        this.a.a();
+    public void run() {
+        this.f9501c.m12567c(this.f9499a.x, this.f9499a.y, this.f9501c.f9152a, this.f9500b);
+        this.f9501c.m12558a(false);
     }
 }

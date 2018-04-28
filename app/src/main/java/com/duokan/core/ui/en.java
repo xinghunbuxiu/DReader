@@ -1,26 +1,29 @@
 package com.duokan.core.ui;
 
 import android.graphics.RectF;
+import com.duokan.core.sys.BaseAnimation;
 
-import com.duokan.core.sys.ap;
-
-final class en extends ap {
+final class en extends BaseAnimation<RectF> {
     en() {
     }
 
-    protected Object b() {
-        return c();
+    /* renamed from: b */
+    protected /* synthetic */ Object createAnimation() {
+        return m2020c();
     }
 
-    protected  void b(Object obj) {
-        a((RectF) obj);
+    /* renamed from: b */
+    protected /* synthetic */ void mo516b(Object obj) {
+        m2017a((RectF) obj);
     }
 
-    protected RectF c() {
+    /* renamed from: c */
+    protected RectF m2020c() {
         return new RectF();
     }
 
-    protected void a(RectF rectF) {
+    /* renamed from: a */
+    protected void m2017a(RectF rectF) {
         rectF.setEmpty();
     }
 }

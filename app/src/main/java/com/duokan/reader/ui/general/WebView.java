@@ -3,15 +3,20 @@ package com.duokan.reader.ui.general;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
-
+import android.view.View.MeasureSpec;
+import com.duokan.core.ui.Scrollable.OverScrollMode;
+import com.duokan.core.ui.Scrollable.ScrollState;
 import com.duokan.core.ui.fr;
-import com.duokan.core.ui.ft;
-import com.duokan.core.ui.fx;
+import com.duokan.core.ui.fv;
+import com.duokan.core.ui.fz;
 
 public class WebView extends fr {
-    private final jx b;
-    private OverScrollMode c;
-    private int d;
+    /* renamed from: b */
+    private final jh f6886b;
+    /* renamed from: c */
+    private OverScrollMode f6887c;
+    /* renamed from: d */
+    private int f6888d;
 
     public enum PullDownHeaderState {
         NONE,
@@ -21,95 +26,101 @@ public class WebView extends fr {
         DOCKED
     }
 
-    protected /* synthetic */ ft a(fx fxVar) {
-        return b(fxVar);
+    /* renamed from: a */
+    protected /* synthetic */ fv mo1744a(fz fzVar) {
+        return mo1816b(fzVar);
     }
 
     public WebView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.b = new jx();
-        this.c = OverScrollMode.ALWAYS;
-        this.d = 0;
-        this.c = super.getVerticalOverScrollMode();
+        this.f6886b = new jh();
+        this.f6887c = OverScrollMode.ALWAYS;
+        this.f6888d = 0;
+        this.f6887c = super.getVerticalOverScrollMode();
     }
 
     public View getPullDownHeaderView() {
-        return this.b.a;
+        return this.f6886b.f7432a;
     }
 
     public void setPullDownHeaderView(View view) {
-        if (this.b.a != view) {
-            if (this.b.a != null) {
-                removeView(this.b.a);
-                this.b.a = null;
+        if (this.f6886b.f7432a != view) {
+            if (this.f6886b.f7432a != null) {
+                removeView(this.f6886b.f7432a);
+                this.f6886b.f7432a = null;
             }
-            this.b.a = view;
-            if (this.b.a != null) {
-                addView(this.b.a);
+            this.f6886b.f7432a = view;
+            if (this.f6886b.f7432a != null) {
+                addView(this.f6886b.f7432a);
             }
         }
     }
 
     public boolean getPullDownHeaderDockable() {
-        return this.b.c;
+        return this.f6886b.f7434c;
     }
 
     public void setPullDownHeaderDockable(boolean z) {
-        if (this.b.c != z) {
-            this.b.c = z;
-            if (!this.b.c) {
-                a(PullDownHeaderState.UNDOCKING);
+        if (this.f6886b.f7434c != z) {
+            this.f6886b.f7434c = z;
+            if (!this.f6886b.f7434c) {
+                m10177a(PullDownHeaderState.UNDOCKING);
                 if (getScrollState() != ScrollState.DRAG) {
-                    a();
+                    m2110a();
                 }
             }
         }
     }
 
     public void setPullDownHeaderDockableHeight(int i) {
-        this.b.d = i;
+        this.f6886b.f7435d = i;
     }
 
-    public void i() {
-        a(PullDownHeaderState.UNDOCKING);
+    /* renamed from: i */
+    public void m10190i() {
+        m10177a(PullDownHeaderState.UNDOCKING);
         if (getScrollState() != ScrollState.DRAG) {
-            a();
+            m2110a();
         }
     }
 
     public PullDownHeaderState getPullDownHeaderState() {
-        return l();
+        return m10185l();
     }
 
-    public boolean j() {
-        return k();
+    /* renamed from: j */
+    public boolean m10191j() {
+        return mo1822k();
     }
 
-    public void setOnPullDownHeaderStateChangedListener(jv jvVar) {
-        this.b.e = jvVar;
+    public void setOnPullDownHeaderStateChangedListener(jf jfVar) {
+        this.f6886b.f7436e = jfVar;
     }
 
-    private final boolean k() {
-        if (this.b.a != null && (-getScrollY()) >= this.b.a.getHeight()) {
+    /* renamed from: k */
+    private final boolean mo1822k() {
+        if (this.f6886b.f7432a != null && (-getScrollY()) >= this.f6886b.f7432a.getHeight()) {
             return true;
         }
         return false;
     }
 
-    private PullDownHeaderState l() {
-        return this.b.a == null ? PullDownHeaderState.NONE : this.b.b;
+    /* renamed from: l */
+    private PullDownHeaderState m10185l() {
+        return this.f6886b.f7432a == null ? PullDownHeaderState.NONE : this.f6886b.f7433b;
     }
 
-    private void a(PullDownHeaderState pullDownHeaderState) {
-        if (this.b.b != pullDownHeaderState) {
-            PullDownHeaderState pullDownHeaderState2 = this.b.b;
+    /* renamed from: a */
+    private void m10177a(PullDownHeaderState pullDownHeaderState) {
+        if (this.f6886b.f7433b != pullDownHeaderState) {
+            PullDownHeaderState pullDownHeaderState2 = this.f6886b.f7433b;
             if (pullDownHeaderState2 != PullDownHeaderState.DOCKING || pullDownHeaderState != PullDownHeaderState.UNDOCKED) {
                 if (pullDownHeaderState2 != PullDownHeaderState.DOCKED || pullDownHeaderState != PullDownHeaderState.UNDOCKED) {
                     if (pullDownHeaderState2 != PullDownHeaderState.UNDOCKING || pullDownHeaderState != PullDownHeaderState.DOCKED) {
                         if (pullDownHeaderState2 != PullDownHeaderState.UNDOCKED || pullDownHeaderState != PullDownHeaderState.DOCKED) {
-                            this.b.b = pullDownHeaderState;
-                            if (this.b.e != null) {
-                                this.b.e.a(this, pullDownHeaderState2, this.b.b);
+                            this.f6886b.f7433b = pullDownHeaderState;
+                            if (this.f6886b.f7436e != null) {
+                                this.f6886b.f7436e.m10845a(this, pullDownHeaderState2, this.f6886b.f7433b);
                             }
                         }
                     }
@@ -118,48 +129,51 @@ public class WebView extends fr {
         }
     }
 
-    private int m() {
+    /* renamed from: m */
+    private int m10186m() {
         if (getVerticalOverScrollMode() == OverScrollMode.NEVER) {
             return 0;
         }
-        return this.b.d >= 0 ? Math.max(this.b.d, n()) : n();
+        return this.f6886b.f7435d >= 0 ? Math.max(this.f6886b.f7435d, m10187n()) : m10187n();
     }
 
-    private int n() {
-        if (getVerticalOverScrollMode() == OverScrollMode.NEVER || this.b.a == null) {
+    /* renamed from: n */
+    private int m10187n() {
+        if (getVerticalOverScrollMode() == OverScrollMode.NEVER || this.f6886b.f7432a == null) {
             return 0;
         }
-        return this.b.a.getHeight();
+        return this.f6886b.f7432a.getHeight();
     }
 
     public OverScrollMode getVerticalOverScrollMode() {
-        return this.c;
+        return this.f6887c;
     }
 
     public void setVerticalOverScrollMode(OverScrollMode overScrollMode) {
-        OverScrollMode overScrollMode2 = this.c;
-        this.c = overScrollMode;
+        OverScrollMode overScrollMode2 = this.f6887c;
+        this.f6887c = overScrollMode;
         if (super.getVerticalOverScrollMode() == overScrollMode2) {
-            super.setVerticalOverScrollMode(this.c);
+            super.setVerticalOverScrollMode(this.f6887c);
         }
     }
 
     protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         int measuredWidth = getMeasuredWidth();
-        if (this.b.a != null) {
-            this.b.a.measure(MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), MeasureSpec.makeMeasureSpec(0, 0));
+        if (this.f6886b.f7432a != null) {
+            this.f6886b.f7432a.measure(MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), MeasureSpec.makeMeasureSpec(0, 0));
         }
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
-        if (this.b.a != null) {
-            this.b.a.layout(0, -this.b.a.getMeasuredHeight(), i3 - i, 0);
+        if (this.f6886b.f7432a != null) {
+            this.f6886b.f7432a.layout(0, -this.f6886b.f7432a.getMeasuredHeight(), i3 - i, 0);
         }
     }
 
-    protected jw b(fx fxVar) {
-        return new jw(this, fxVar);
+    /* renamed from: b */
+    protected jg mo1816b(fz fzVar) {
+        return new jg(this, fzVar);
     }
 }

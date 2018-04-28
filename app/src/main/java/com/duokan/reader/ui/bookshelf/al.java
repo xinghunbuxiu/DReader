@@ -1,13 +1,22 @@
 package com.duokan.reader.ui.bookshelf;
 
-class al implements Runnable {
-    final /* synthetic */ ai a;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
 
-    al(ai aiVar) {
-        this.a = aiVar;
+class al implements AnimationListener {
+    /* renamed from: a */
+    final /* synthetic */ aj f6115a;
+
+    al(aj ajVar) {
+        this.f6115a = ajVar;
     }
 
-    public void run() {
-        this.a.requestDetach();
+    public void onAnimationStart(Animation animation) {
+    }
+
+    public void onAnimationRepeat(Animation animation) {
+    }
+
+    public void onAnimationEnd(Animation animation) {
     }
 }

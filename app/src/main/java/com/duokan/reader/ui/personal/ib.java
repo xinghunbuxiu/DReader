@@ -1,38 +1,28 @@
 package com.duokan.reader.ui.personal;
 
-import android.graphics.Color;
+import com.duokan.reader.domain.cloud.DkUserReadBookManager.ReadBook;
+import com.duokan.reader.domain.cloud.ee;
 
-import com.duokan.core.ui.Scrollable;
-import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.OnScrollListener;
-import com.duokan.reader.ui.general.PageHeaderView;
+class ib implements ee {
+    /* renamed from: a */
+    final /* synthetic */ int f8698a;
+    /* renamed from: b */
+    final /* synthetic */ hy f8699b;
 
-import org.apache.http.HttpStatus;
-
-class ib implements OnScrollListener {
-    final /* synthetic */ PageHeaderView a;
-    final /* synthetic */ hw b;
-
-    ib(hw hwVar, PageHeaderView pageHeaderView) {
-        this.b = hwVar;
-        this.a = pageHeaderView;
+    ib(hy hyVar, int i) {
+        this.f8699b = hyVar;
+        this.f8698a = i;
     }
 
-    public void a(Scrollable scrollable, ScrollState scrollState, ScrollState scrollState2) {
+    /* renamed from: a */
+    public void mo1157a(ReadBook[] readBookArr, boolean z, boolean z2) {
+        this.f8699b.f8693u = !z;
+        this.f8699b.m11977a(new ic(this, readBookArr, z));
     }
 
-    public void a(Scrollable scrollable, boolean z) {
-        if (this.a != null && this.a.getHeight() != 0 && z) {
-            int i = this.b.d.getViewportBounds().top;
-            if (this.b.d.getContentHeight() - this.a.getHeight() <= UTools.getHeightPixels(this.b.getContext())) {
-                i = 0;
-            } else {
-                i = (int) (UTools.addAnimation(((((float) i) - ((float) this.a.getHeight())) / ((float) this.a.getHeight())) + 1.0f) * 255.0f);
-            }
-            this.a.setBackgroundColor(Color.argb(i, 248, 248, 248));
-            this.a.setBottomLineColor(Color.argb(i, HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT));
-            this.a.getCenterTitleView().setTextColor(Color.argb(i, HttpStatus.SC_PROCESSING, HttpStatus.SC_PROCESSING, HttpStatus.SC_PROCESSING));
-        }
+    /* renamed from: a */
+    public void mo1156a(String str) {
+        this.f8699b.f8693u = false;
+        this.f8699b.getAdapter().m8790m();
     }
 }

@@ -1,19 +1,130 @@
 package com.duokan.reader.ui.reading;
 
+import android.graphics.PointF;
+import android.graphics.Rect;
 import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.app.IFeature;
+import com.duokan.reader.domain.document.au;
+import com.duokan.reader.ui.general.gc;
+import com.duokan.reader.ui.general.gs;
 
-import com.duokan.reader.UmengManager;
+public class hz extends sv {
+    /* renamed from: i */
+    private ia f10361i;
+    /* renamed from: j */
+    private kn f10362j = null;
 
-class hz implements OnClickListener {
-    final /* synthetic */ hq a;
-
-    hz(hq hqVar) {
-        this.a = hqVar;
+    /* renamed from: a */
+    public /* bridge */ /* synthetic */ void mo2365a(au auVar, Rect rect) {
+        super.mo2365a(auVar, rect);
     }
 
-    public void onClick(View view) {
-        UmengManager.get().onEvent("V2_READING_PUSHUP_OPTION", "Comment");
-        this.a.a(new ia(this));
+    /* renamed from: a */
+    public /* bridge */ /* synthetic */ boolean mo2371a(PointF pointF, Runnable runnable, Runnable runnable2) {
+        return super.mo2371a(pointF, runnable, runnable2);
+    }
+
+    /* renamed from: b */
+    public /* bridge */ /* synthetic */ boolean mo2373b(PointF pointF, Runnable runnable, Runnable runnable2) {
+        return super.mo2373b(pointF, runnable, runnable2);
+    }
+
+    /* renamed from: e */
+    public /* bridge */ /* synthetic */ boolean mo2374e() {
+        return super.mo2374e();
+    }
+
+    /* renamed from: f */
+    public /* bridge */ /* synthetic */ boolean mo2375f() {
+        return super.mo2375f();
+    }
+
+    /* renamed from: g */
+    public /* bridge */ /* synthetic */ void mo2376g() {
+        super.mo2376g();
+    }
+
+    /* renamed from: h */
+    public /* bridge */ /* synthetic */ void mo2377h() {
+        super.mo2377h();
+    }
+
+    /* renamed from: i */
+    public /* bridge */ /* synthetic */ void mo2378i() {
+        super.mo2378i();
+    }
+
+    /* renamed from: j */
+    public /* bridge */ /* synthetic */ void mo2379j() {
+        super.mo2379j();
+    }
+
+    /* renamed from: k */
+    public /* bridge */ /* synthetic */ boolean mo2380k() {
+        return super.mo2380k();
+    }
+
+    /* renamed from: l */
+    public /* bridge */ /* synthetic */ void mo2381l() {
+        super.mo2381l();
+    }
+
+    /* renamed from: m */
+    public /* bridge */ /* synthetic */ boolean mo2382m() {
+        return super.mo2382m();
+    }
+
+    /* renamed from: n */
+    public /* bridge */ /* synthetic */ void mo2383n() {
+        super.mo2383n();
+    }
+
+    /* renamed from: o */
+    public /* bridge */ /* synthetic */ void mo2384o() {
+        super.mo2384o();
+    }
+
+    public hz(IFeature mFeature, su suVar, wy wyVar) {
+        super(mFeature, suVar, wyVar);
+    }
+
+    /* renamed from: a */
+    protected gs mo2244a() {
+        this.f10361i = new ia(getContext());
+        return this.f10361i;
+    }
+
+    /* renamed from: b */
+    protected View mo2245b() {
+        return this.f10361i.m13626m();
+    }
+
+    /* renamed from: c */
+    protected View mo2246c() {
+        return this.f10361i.m13627n();
+    }
+
+    /* renamed from: d */
+    protected View mo2247d() {
+        return this.f10361i.m13628o();
+    }
+
+    protected void onActive(boolean z) {
+        super.onActive(z);
+        kn.m14559a();
+    }
+
+    /* renamed from: a */
+    public void mo2367a(gc gcVar) {
+        super.mo2367a(gcVar);
+        if (this.f10362j == null && this.a.mo1992G().mo1038k() && kn.m14567b()) {
+            this.f10362j = new kn(getContext());
+            this.b.addView(this.f10362j.getContentView());
+            addSubController(this.f10362j);
+            activate(this.f10362j);
+        }
+        if (this.f10362j != null) {
+            this.f10362j.m14579a(gcVar);
+        }
     }
 }

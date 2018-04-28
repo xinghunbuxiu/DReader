@@ -1,30 +1,18 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.domain.account.UserAccount;
-import com.duokan.reader.domain.account.i;
+import com.duokan.core.sys.as;
 
-import org.json.JSONObject;
+class dc implements as {
+    /* renamed from: a */
+    final /* synthetic */ ci f7717a;
 
-import java.util.concurrent.Callable;
-
-class dc implements Callable {
-    final /* synthetic */ PageController a;
-
-    dc(PageController cgVar) {
-        this.a = cgVar;
+    dc(ci ciVar) {
+        this.f7717a = ciVar;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
-    }
-
-    public String a() {
-        UserAccount c = i.f().c();
-        if (c == null || c.i()) {
-            return new JSONObject().toString();
-        }
-        JSONObject a = c.s().a();
-        a.remove("user_id");
-        return a.toString();
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7717a.f7581b.mRequestBack = true;
+        this.f7717a.f7581b.requestBack();
     }
 }

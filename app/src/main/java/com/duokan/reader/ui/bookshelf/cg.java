@@ -1,24 +1,34 @@
 package com.duokan.reader.ui.bookshelf;
 
+import android.graphics.PointF;
 import android.view.View;
-import android.view.animation.Animation;
+import com.duokan.core.ui.du;
+import com.duokan.core.ui.dv;
+import com.duokan.core.ui.er;
 
-import java.util.ArrayList;
+class cg implements du {
+    /* renamed from: a */
+    final /* synthetic */ ce f6269a;
 
-class cg extends cl {
-    final /* synthetic */ ArrayList a;
-    final /* synthetic */ bz b;
-
-    cg(bz bzVar, ArrayList arrayList) {
-        this.b = bzVar;
-        this.a = arrayList;
-        super(bzVar);
+    cg(ce ceVar) {
+        this.f6269a = ceVar;
     }
 
-    public void onAnimationEnd(Animation animation) {
-        super.onAnimationEnd(animation);
-        for (int i = 0; i < this.a.size(); i++) {
-            ((View) this.a.get(i)).clearAnimation();
+    public void onTouchUp(View view, PointF pointF) {
+    }
+
+    public void onTouchDown(View view, PointF pointF) {
+    }
+
+    public void onTouchCancel(View view, PointF pointF) {
+    }
+
+    /* renamed from: a */
+    public void mo527a(er erVar, View view, PointF pointF, PointF pointF2) {
+        if (this.f6269a.f6255g) {
+            dv.m1946c(pointF2, view);
+            this.f6269a.f6256h.m9424a((int) pointF2.x, (int) pointF2.y);
+            this.f6269a.m9395g(true);
         }
     }
 }

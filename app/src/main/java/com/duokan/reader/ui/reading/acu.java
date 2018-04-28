@@ -1,34 +1,22 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.PointF;
-import android.view.View;
+import com.duokan.reader.ui.reading.TextSelectionAssistant.IndicatorStatus;
 
-import com.duokan.core.ui.du;
-import com.duokan.core.ui.er;
+class acu implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ act f9485a;
 
-class acu implements du {
-    final /* synthetic */ acr a;
-
-    acu(acr com_duokan_reader_ui_reading_acr) {
-        this.a = com_duokan_reader_ui_reading_acr;
+    acu(act act) {
+        this.f9485a = act;
     }
 
-    public void onTouchUp(View view, PointF pointF) {
-    }
-
-    public void onTouchDown(View view, PointF pointF) {
-    }
-
-    public void onTouchCancel(View view, PointF pointF) {
-    }
-
-    public void a(er erVar, View view, PointF pointF, PointF pointF2) {
-        if (!this.a.a.g() && this.a.a.d() && !this.a.a.d) {
-            if (this.a.a.e.ae().H()) {
-                this.a.a.a(SelectionStyle.RAPID_SLIDE, view);
-            } else {
-                this.a.a.a(SelectionStyle.FAST_SELECTING, view);
-            }
+    public void run() {
+        if (!this.f9485a.f9484d.f9156e.mo1994K()) {
+            TextSelectionAssistant textSelectionAssistant = new TextSelectionAssistant(this.f9485a.f9484d.f9156e, 1);
+            textSelectionAssistant.m12539a(this.f9485a.f9481a, this.f9485a.f9482b, IndicatorStatus.FOOTER_DRAGGED);
+            this.f9485a.f9484d.f9158g.add(textSelectionAssistant);
+            this.f9485a.f9484d.m12567c(this.f9485a.f9482b.x, this.f9485a.f9482b.y, this.f9485a.f9484d.f9152a, this.f9485a.f9483c);
+            this.f9485a.f9484d.m12558a(false);
         }
     }
 }

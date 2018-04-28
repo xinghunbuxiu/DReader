@@ -1,15 +1,14 @@
 package com.duokan.reader.ui.reading;
 
 class tk implements Runnable {
-    final /* synthetic */ tj a;
+    /* renamed from: a */
+    final /* synthetic */ tf f10982a;
 
-    tk(tj tjVar) {
-        this.a = tjVar;
+    tk(tf tfVar) {
+        this.f10982a = tfVar;
     }
 
     public void run() {
-        if (!this.a.a.f.K()) {
-            this.a.a.d();
-        }
+        this.f10982a.f10968a.f9656a.aV();
     }
 }

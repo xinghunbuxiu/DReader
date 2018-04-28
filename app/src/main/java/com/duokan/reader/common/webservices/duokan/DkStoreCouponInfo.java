@@ -1,8 +1,7 @@
 package com.duokan.reader.common.webservices.duokan;
 
-import org.json.JSONObject;
-
 import java.io.Serializable;
+import org.json.JSONObject;
 
 public class DkStoreCouponInfo implements Serializable {
     public int mConsumeType = 0;

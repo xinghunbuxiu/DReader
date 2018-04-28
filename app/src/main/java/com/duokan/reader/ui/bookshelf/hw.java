@@ -4,13 +4,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 class hw implements OnClickListener {
-    final /* synthetic */ hp a;
+    /* renamed from: a */
+    final /* synthetic */ SignInBookshelfView f6577a;
 
-    hw(hp hpVar) {
-        this.a = hpVar;
+    hw(SignInBookshelfView signInBookshelfView) {
+        this.f6577a = signInBookshelfView;
     }
 
     public void onClick(View view) {
-        this.a.g();
+        this.f6577a.m9090e();
+        this.f6577a.m9093c();
     }
 }

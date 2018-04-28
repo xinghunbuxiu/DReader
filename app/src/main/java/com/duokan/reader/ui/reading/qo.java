@@ -1,16 +1,14 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.bookshelf.a;
-import com.duokan.reader.domain.bookshelf.w;
+class qo implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ qn f10869a;
 
-class qo implements w {
-    final /* synthetic */ qh a;
-
-    qo(qh qhVar) {
-        this.a = qhVar;
+    qo(qn qnVar) {
+        this.f10869a = qnVar;
     }
 
-    public void a(a[] aVarArr) {
-        this.a.e.getShowingDocPresenter().setAnnotations(this.a.n().aq());
+    public void run() {
+        this.f10869a.f10868a.f10867a.f10853a.bj();
     }
 }

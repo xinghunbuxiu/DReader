@@ -1,30 +1,24 @@
 package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.sys.as;
-
 import java.util.List;
 
 class an implements as {
-    final /* synthetic */ List a;
-    final /* synthetic */ List b;
-    final /* synthetic */ am c;
+    /* renamed from: a */
+    final /* synthetic */ List f7585a;
+    /* renamed from: b */
+    final /* synthetic */ am f7586b;
 
-    an(am amVar, List list, List list2) {
-        this.c = amVar;
-        this.a = list;
-        this.b = list2;
+    an(am amVar, List list) {
+        this.f7586b = amVar;
+        this.f7585a = list;
     }
 
-    public void a() {
-        if (this.c.b.a.mHistory.size() > 0 && this.a.size() > 0 && this.a.size() <= this.c.b.a.mHistory.size()) {
-            this.c.b.a.mHistory.removeAll(this.a);
-        }
-        for (String access$3000 : this.b) {
-            this.c.b.a.addHistoryToList(access$3000, false);
-        }
-        if (this.c.b.a.mIsHistoryLoaded) {
-            this.c.b.a.writeHistory();
-        }
-        this.c.b.a.notifyHistoryChanged();
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7586b.f7584b.f7582a.mHotWord.clear();
+        this.f7586b.f7584b.f7582a.mHotWord.addAll(this.f7585a);
+        this.f7586b.f7584b.f7582a.writeHotWords();
+        this.f7586b.f7584b.f7582a.mSearchHintView.getAdapter().m8785a(false);
     }
 }

@@ -1,19 +1,14 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.as;
+class jx implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ jw f8076a;
 
-import org.json.JSONObject;
-
-class jx implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
-
-    jx(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    jx(jw jwVar) {
+        this.f8076a = jwVar;
     }
 
-    public void a() {
-        b.a(new JSONObject(this.a)).a();
+    public void run() {
+        this.f8076a.f8074a.release();
     }
 }

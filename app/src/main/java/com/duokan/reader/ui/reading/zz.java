@@ -1,17 +1,16 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.ag;
+import com.duokan.reader.ui.general.ReaderUi;
 
-import java.util.Map;
+class zz implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ zx f11290a;
 
-class zz implements ag {
-    final /* synthetic */ zy a;
-
-    zz(zy zyVar) {
-        this.a = zyVar;
+    zz(zx zxVar) {
+        this.f11290a = zxVar;
     }
 
-    public void a(Map map) {
-        this.a.b.a.c.E();
+    public void run() {
+        ReaderUi.m10162a(this.f11290a.getContext(), this.f11290a.f11288g);
     }
 }

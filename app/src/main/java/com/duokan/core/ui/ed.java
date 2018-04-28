@@ -1,17 +1,18 @@
 package com.duokan.core.ui;
 
-import com.duokan.core.sys.AIdleOperation;
+import com.duokan.core.sys.UIdleHandler;
 
 class ed implements Runnable {
-    final ec a;
+    /* renamed from: a */
+    final /* synthetic */ ec f1214a;
 
     ed(ec ecVar) {
-        this.a = ecVar;
+        this.f1214a = ecVar;
     }
 
     public void run() {
-        if (this.a.view.requestFocus()) {
-            AIdleOperation.addIdleStatus(new ee(this));
+        if (this.f1214a.f1212a.requestFocus()) {
+            UIdleHandler.addIdleHandler(new ee(this));
         }
     }
 }

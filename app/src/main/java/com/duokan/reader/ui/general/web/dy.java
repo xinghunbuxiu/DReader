@@ -1,22 +1,21 @@
 package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.sys.as;
-import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.i;
+import org.json.JSONObject;
 
 class dy implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ dx b;
+    /* renamed from: a */
+    final /* synthetic */ String f7753a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7754b;
 
-    dy(dx dxVar, String str) {
-        this.b = dxVar;
-        this.a = str;
+    dy(ci ciVar, String str) {
+        this.f7754b = ciVar;
+        this.f7753a = str;
     }
 
-    public void a() {
-        PersonalAccount personalAccount = (PersonalAccount) i.f().b(PersonalAccount.class);
-        if (personalAccount != null && !personalAccount.i()) {
-            personalAccount.g(new dz(this));
-        }
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7754b.m11016a(new dz(this, new JSONObject(this.f7753a).getString("msgid")));
     }
 }

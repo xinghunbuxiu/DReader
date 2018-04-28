@@ -1,19 +1,20 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.u;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.core.app.AppContext;
+import com.duokan.reader.ReaderFeature;
+import com.duokan.reader.ui.store.bv;
 
-class iv implements u {
-    final /* synthetic */ iu a;
+class iv implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ iu f8750a;
 
     iv(iu iuVar) {
-        this.a = iuVar;
+        this.f8750a = iuVar;
     }
 
-    public void onQueryAccountOk(a aVar) {
-        this.a.a.a();
-    }
-
-    public void onQueryAccountError(a aVar, String str) {
+    public void onClick(View view) {
+        ((ReaderFeature) this.f8750a.getContext().queryFeature(ReaderFeature.class)).pushPageSmoothly(bv.m15355a(AppContext.getAppContext(this.f8750a.getContext()), String.valueOf(0), 1, this.f8750a.f8748a.getBookUuid(), "redeem_" + this.f8750a.f8748a.getBookUuid()), null);
     }
 }

@@ -1,29 +1,20 @@
 package com.duokan.reader.ui.general.web;
 
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
+import com.duokan.core.sys.UThread;
 
-import com.duokan.core.sys.TaskHandler;
+class bz implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ by f7656a;
 
-class bz implements AnimationListener {
-    final /* synthetic */ AlphaAnimation a;
-    final /* synthetic */ Runnable b;
-    final /* synthetic */ by c;
-
-    bz(by byVar, AlphaAnimation alphaAnimation, Runnable runnable) {
-        this.c = byVar;
-        this.a = alphaAnimation;
-        this.b = runnable;
+    bz(by byVar) {
+        this.f7656a = byVar;
     }
 
-    public void onAnimationStart(Animation animation) {
-    }
-
-    public void onAnimationEnd(Animation animation) {
-        TaskHandler.PostTask(new ca(this));
-    }
-
-    public void onAnimationRepeat(Animation animation) {
+    public void run() {
+        if (this.f7656a.f7655c.f7652a.mPageLoadingView.getAnimation() == this.f7656a.f7653a) {
+            this.f7656a.f7655c.f7652a.mPageLoadingView.setVisibility(4);
+            this.f7656a.f7655c.f7652a.mPageLoadingView.clearAnimation();
+        }
+        UThread.runOnThread(this.f7656a.f7654b);
     }
 }

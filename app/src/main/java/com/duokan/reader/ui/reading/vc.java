@@ -1,21 +1,19 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.ReaderFeature;
+import com.duokan.reader.UmengManager;
 
-class vc implements OnClickListener {
-    final /* synthetic */ uq a;
+class vc implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ vb f11042a;
 
-    vc(uq uqVar) {
-        this.a = uqVar;
+    vc(vb vbVar) {
+        this.f11042a = vbVar;
     }
 
-    public void onClick(View view) {
-        this.a.a(new vd(this.a.getContext()), null);
-        this.a.a.a(1, 0);
-        this.a.a.ae().a(TypesettingStyle.CUSTOM);
-        this.a.a.ae().Y();
-        this.a.a.aB();
-        this.a.b();
+    public void run() {
+        UmengManager.get().onEvent("V2_READING_OPTION_MORE_MORE");
+        this.f11042a.f11041a.f11020a.mo2040a(1, 0);
+        ((ReaderFeature) this.f11042a.f11041a.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new wd(this.f11042a.f11041a.getContext()), null);
     }
 }

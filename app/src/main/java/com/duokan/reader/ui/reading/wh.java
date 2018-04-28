@@ -1,17 +1,28 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.ui.general.hq;
 
-class wh implements OnClickListener {
-    final /* synthetic */ wg a;
+class wh implements hq {
+    /* renamed from: a */
+    final /* synthetic */ wd f11111a;
 
-    wh(wg wgVar) {
-        this.a = wgVar;
+    wh(wd wdVar) {
+        this.f11111a = wdVar;
     }
 
-    public void onClick(View view) {
-        this.a.a.a(view.isSelected() ? SlideShowEffect.NONE : SlideShowEffect.SIMPLE);
-        this.a.a();
+    /* renamed from: a */
+    public void mo1590a(int i) {
+        switch (i) {
+            case 0:
+                this.f11111a.f11102a.ae().m12468a(AnnotationStyle.BUBBLE);
+                this.f11111a.f11102a.ae().m12463X();
+                this.f11111a.m15054e();
+                return;
+            default:
+                this.f11111a.f11102a.ae().m12468a(AnnotationStyle.PAPERTAPE);
+                this.f11111a.f11102a.ae().m12463X();
+                this.f11111a.m15054e();
+                return;
+        }
     }
 }

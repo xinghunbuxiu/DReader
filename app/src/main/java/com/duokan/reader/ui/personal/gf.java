@@ -3,22 +3,16 @@ package com.duokan.reader.ui.personal;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.i;
-
 class gf implements OnClickListener {
-    final /* synthetic */ fl a;
+    /* renamed from: a */
+    final /* synthetic */ fz f8607a;
 
-    gf(fl flVar) {
-        this.a = flVar;
+    gf(fz fzVar) {
+        this.f8607a = fzVar;
     }
 
     public void onClick(View view) {
-        this.a.a("notes");
-        if (((PersonalAccount) i.f().b(PersonalAccount.class)).p()) {
-            this.a.c(false, new gh(this));
-        } else {
-            this.a.b(false, new gg(this));
-        }
+        this.f8607a.m11853a("reward");
+        this.f8607a.m11862b(false, new gg(this));
     }
 }

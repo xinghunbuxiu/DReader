@@ -1,7 +1,9 @@
 package com.duokan.reader.domain.bookshelf;
 
 public interface dz {
-    void a();
+    /* renamed from: a */
+    void mo1004a();
 
-    void b();
+    /* renamed from: a */
+    void mo1005a(String str);
 }

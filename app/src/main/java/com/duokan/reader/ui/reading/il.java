@@ -1,29 +1,17 @@
 package com.duokan.reader.ui.reading;
 
 import android.view.View;
+import android.view.View.OnClickListener;
 
-import com.duokan.reader.domain.document.Document_a;
-import com.duokan.reader.ui.general.gh;
+class il implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ia f10390a;
 
-public class il extends in {
-    final /* synthetic */ ij c;
-    private final View e;
-
-    public il(ij ijVar, Document_a aVar, Document_a aVar2, View view) {
-        this.c = ijVar;
-        super(ijVar, aVar);
-        this.e = view;
-        ijVar.e = ijVar.e + 1;
+    il(ia iaVar) {
+        this.f10390a = iaVar;
     }
 
-    public View b() {
-        return this.e;
-    }
-
-    public gh a(int i) {
-        if (i > 0) {
-            return this.c.b(b(i - 1));
-        }
-        return this.c.b(b(i));
+    public void onClick(View view) {
+        this.f10390a.m13598a(new im(this, view));
     }
 }

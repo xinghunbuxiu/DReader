@@ -5,36 +5,50 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.KeyEvent;
 import android.view.View;
-
-import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
+import com.duokan.core.app.ActivatedController;
 import com.duokan.reader.UmengManager;
 import com.duokan.reader.domain.bookshelf.BookFormat;
-import com.duokan.reader.domain.bookshelf.ef;
-import com.duokan.reader.domain.bookshelf.eg;
+import com.duokan.reader.domain.bookshelf.C0798a;
+import com.duokan.reader.domain.bookshelf.ea;
+import com.duokan.reader.domain.bookshelf.eb;
 import com.duokan.reader.domain.document.WritingDirection;
 import com.duokan.reader.domain.document.bb;
-import com.duokan.reader.ui.general.el;
-
+import com.duokan.reader.ui.general.ej;
 import java.util.LinkedList;
 import java.util.List;
 
 public class TextSelectionController extends ActivatedController {
-    private int a;
-    private final wl b;
-    private boolean c = false;
-    private boolean d = false;
-    private final sh e;
-    private final int f = 11;
-    private final List g;
-    private final acv h;
-    private final x i;
-    private acw j = null;
-    private SelectionStyle k = SelectionStyle.UNKNOW;
-    private ef l = ((ef) a.d(null));
-    private Drawable m;
-    private el n;
-    private boolean o;
+    /* renamed from: a */
+    private int f9152a;
+    /* renamed from: b */
+    private final wy f9153b;
+    /* renamed from: c */
+    private boolean f9154c = false;
+    /* renamed from: d */
+    private boolean f9155d = false;
+    /* renamed from: e */
+    private final su f9156e;
+    /* renamed from: f */
+    private final int f9157f = 11;
+    /* renamed from: g */
+    private final List<TextSelectionAssistant> f9158g;
+    /* renamed from: h */
+    private final adi f9159h;
+    /* renamed from: i */
+    private final C1447x f9160i;
+    /* renamed from: j */
+    private adj f9161j = null;
+    /* renamed from: k */
+    private SelectionStyle f9162k = SelectionStyle.UNKNOW;
+    /* renamed from: l */
+    private ea f9163l = ((ea) C0798a.m3713d(null));
+    /* renamed from: m */
+    private Drawable f9164m;
+    /* renamed from: n */
+    private ej f9165n;
+    /* renamed from: o */
+    private boolean f9166o;
 
     public enum PointPosition {
         LEFT,
@@ -51,239 +65,254 @@ public class TextSelectionController extends ActivatedController {
         FAST_SELECTING
     }
 
-    public TextSelectionController(IFeature featrue, sh shVar, wl wlVar, acv com_duokan_reader_ui_reading_acv) {
-        super(featrue);
-        this.b = wlVar;
-        this.e = shVar;
-        this.h = com_duokan_reader_ui_reading_acv;
-        this.g = new LinkedList();
-        this.g.add(new TextSelectionAssistant(this.e, 0));
-        this.b.a(new acr(this, getActivity(), shVar));
-        this.i = new acf(this);
+    public TextSelectionController(IFeature mFeature, su suVar, wy wyVar, adi adi) {
+        super(mFeature);
+        this.f9153b = wyVar;
+        this.f9156e = suVar;
+        this.f9159h = adi;
+        this.f9158g = new LinkedList();
+        this.f9158g.add(new TextSelectionAssistant(this.f9156e, 0));
+        this.f9153b.m13649a(new ade(this, getActivity(), suVar));
+        this.f9160i = new acs(this);
     }
 
     protected boolean onShowMenu() {
-        if (d()) {
-            i();
+        if (m12570d()) {
+            m12580i();
         }
         return super.onShowMenu();
     }
 
     protected boolean onBack() {
-        if (!d()) {
+        if (!m12570d()) {
             return false;
         }
-        i();
+        m12580i();
         return true;
     }
 
     protected boolean onKeyDown(int i, KeyEvent keyEvent) {
         if (i == 24 || i == 25) {
-            i();
+            m12580i();
         }
         return super.onKeyDown(i, keyEvent);
     }
 
-    private void a() {
-        this.m = this.e.getSelectionDrawable();
-        this.o = this.e.s();
+    /* renamed from: a */
+    private void m12549a() {
+        this.f9164m = this.f9156e.getSelectionDrawable();
+        this.f9166o = this.f9156e.mo2171s();
     }
 
-    private void b() {
+    /* renamed from: b */
+    private void m12561b() {
         int i = 255;
-        int round = (this.e.getDocument().l().i || this.e.getDocument().l().j) ? Math.round(153.0f) : 255;
-        a();
-        this.n = (el) this.e.a(DecorDrawableStyle.SELECTION_HIGHLIGHT_LINE);
-        this.n.a(((float) Math.sqrt((double) this.e.getDocument().k().f)) * 0.618f);
-        this.n.a(eg.a().b());
-        el elVar = this.n;
-        if (!this.e.g()) {
+        int round = (this.f9156e.getDocument().mo1246l().f4361i || this.f9156e.getDocument().mo1246l().f4362j) ? Math.round(153.0f) : 255;
+        m12549a();
+        this.f9165n = (ej) this.f9156e.mo2012a(DecorDrawableStyle.SELECTION_HIGHLIGHT_LINE);
+        this.f9165n.m10559a(((float) Math.sqrt((double) this.f9156e.getDocument().mo1245k().f4335f)) * 0.618f);
+        this.f9165n.m10560a(eb.m4386a().m4389b());
+        ej ejVar = this.f9165n;
+        if (!this.f9156e.mo2145g()) {
             i = round;
         }
-        elVar.setAlpha(i);
-        if (this.k == SelectionStyle.RAPID_SLIDE) {
-            if (this.e.getDocument().c() == WritingDirection.RIGHT_TO_LEFT) {
-                this.n.b(3);
-            } else if (this.e.getDocument().c() == WritingDirection.LEFT_TO_RIGHT) {
-                this.n.b(5);
+        ejVar.setAlpha(i);
+        if (this.f9162k == SelectionStyle.RAPID_SLIDE) {
+            if (this.f9156e.getDocument().mo1228c() == WritingDirection.RIGHT_TO_LEFT) {
+                this.f9165n.m10562b(3);
+            } else if (this.f9156e.getDocument().mo1228c() == WritingDirection.LEFT_TO_RIGHT) {
+                this.f9165n.m10562b(5);
             } else {
-                this.n.b(80);
+                this.f9165n.m10562b(80);
             }
-            this.e.setSelectionDrawable(this.n);
-            this.e.setShowSelectionIndicators(false);
+            this.f9156e.setSelectionDrawable(this.f9165n);
+            this.f9156e.setShowSelectionIndicators(false);
             return;
         }
-        this.e.setSelectionDrawable(this.e.a(DecorDrawableStyle.SELECTION_HIGHLIGHT_RECT));
-        this.e.setShowSelectionIndicators(true);
+        this.f9156e.setSelectionDrawable(this.f9156e.mo2012a(DecorDrawableStyle.SELECTION_HIGHLIGHT_RECT));
+        this.f9156e.setShowSelectionIndicators(true);
     }
 
-    private void c() {
-        this.e.setSelectionDrawable(this.m);
-        this.e.setShowSelectionIndicators(this.o);
+    /* renamed from: c */
+    private void m12566c() {
+        this.f9156e.setSelectionDrawable(this.f9164m);
+        this.f9156e.setShowSelectionIndicators(this.f9166o);
     }
 
-    private boolean d() {
-        return e().d();
+    /* renamed from: d */
+    private boolean m12570d() {
+        return m12571e().m12543d();
     }
 
-    private TextSelectionAssistant e() {
-        return (TextSelectionAssistant) this.g.get(this.g.size() - 1);
+    /* renamed from: e */
+    private TextSelectionAssistant m12571e() {
+        return (TextSelectionAssistant) this.f9158g.get(this.f9158g.size() - 1);
     }
 
-    private String f() {
-        return this.e.getDocument().b(h());
+    /* renamed from: f */
+    private String m12574f() {
+        return this.f9156e.getDocument().m5916b(m12578h());
     }
 
-    private boolean g() {
-        return this.k != SelectionStyle.UNKNOW;
+    /* renamed from: g */
+    private boolean m12576g() {
+        return this.f9162k != SelectionStyle.UNKNOW;
     }
 
-    private void a(SelectionStyle selectionStyle, View view) {
-        if (this.k != selectionStyle) {
-            this.k = selectionStyle;
+    /* renamed from: a */
+    private void m12552a(SelectionStyle selectionStyle, View view) {
+        if (this.f9162k != selectionStyle) {
+            this.f9162k = selectionStyle;
             if (selectionStyle == SelectionStyle.FAST_SELECTING || selectionStyle == SelectionStyle.RAPID_SLIDE) {
-                Point b = e().b();
-                b(b.x, b.y, 0, view);
+                Point b = m12571e().m12541b();
+                m12563b(b.x, b.y, 0, view);
                 UmengManager.get().onEvent("V2_READING_FASTDIGEST");
             }
-            b();
+            m12561b();
         }
     }
 
-    private bb h() {
-        bb a = ((TextSelectionAssistant) this.g.get(0)).a();
-        for (int i = 1; i < this.g.size(); i++) {
-            a = a.a(((TextSelectionAssistant) this.g.get(i)).a());
+    /* renamed from: h */
+    private bb m12578h() {
+        bb a = ((TextSelectionAssistant) this.f9158g.get(0)).m12537a();
+        for (int i = 1; i < this.f9158g.size(); i++) {
+            a = a.mo1196a(((TextSelectionAssistant) this.f9158g.get(i)).m12537a());
         }
         return a;
     }
 
-    private boolean a(int i, int i2, int i3, View view) {
-        if (l()) {
+    /* renamed from: a */
+    private boolean m12559a(int i, int i2, int i3, View view) {
+        if (m12585l()) {
             return false;
         }
-        boolean a = e().a(i, i2, i3, view);
+        boolean a = m12571e().m12540a(i, i2, i3, view);
         if (!a) {
             return false;
         }
-        if (a && this.e.a(h()) >= 0) {
-            this.d = true;
+        if (a && this.f9156e.mo2010a(m12578h()) >= 0) {
+            this.f9155d = true;
         }
-        m().a(this.d);
-        c(i, i2, i3, view);
+        m12587m().m13363a(this.f9155d);
+        m12567c(i, i2, i3, view);
         return a;
     }
 
-    private boolean b(int i, int i2, int i3, View view) {
-        if (l()) {
-            this.a = i3;
+    /* renamed from: b */
+    private boolean m12563b(int i, int i2, int i3, View view) {
+        if (m12585l()) {
+            this.f9152a = i3;
             return false;
         }
-        boolean a = e().a(i, i2, i3, view);
-        c(i, i2, i3, view);
+        boolean a = m12571e().m12540a(i, i2, i3, view);
+        m12567c(i, i2, i3, view);
         return a;
     }
 
-    private void a(Point point, Rect rect, View view) {
-        TextSelectionAssistant e = e();
-        if (!l() && !e.c() && !this.d) {
+    /* renamed from: a */
+    private void m12551a(Point point, Rect rect, View view) {
+        TextSelectionAssistant e = m12571e();
+        if (!m12585l() && !e.m12542c() && !this.f9155d) {
             Point point2 = new Point(1, 1);
             Point point3 = new Point(rect.width() - 1, rect.height() - 1);
-            DocPageLayout M = this.e.M();
-            if (this.e.c(point.x, point.y)) {
+            DocPageLayout M = this.f9156e.mo1996M();
+            if (this.f9156e.mo2129c(point.x, point.y)) {
                 if (M == DocPageLayout.LEFT_TO_RIGHT) {
-                    b(point, point2, point3, view);
+                    m12562b(point, point2, point3, view);
                 } else if (M == DocPageLayout.RIGHT_TO_LEFT) {
                     point2.set(rect.width(), 0);
                     point3.set(0, rect.height());
-                    b(point, point2, point3, view);
+                    m12562b(point, point2, point3, view);
                 } else if (M == DocPageLayout.TOP_TO_BOTTOM) {
-                    b(point, point2, point3, view);
+                    m12562b(point, point2, point3, view);
                 }
-            } else if (!this.e.d(point.x, point.y)) {
+            } else if (!this.f9156e.mo2134d(point.x, point.y)) {
             } else {
                 if (M == DocPageLayout.LEFT_TO_RIGHT) {
-                    a(point, point2, point3, view);
+                    m12550a(point, point2, point3, view);
                 } else if (M == DocPageLayout.RIGHT_TO_LEFT) {
                     point2.set(rect.width(), 0);
                     point3.set(0, rect.height());
-                    a(point, point2, point3, view);
+                    m12550a(point, point2, point3, view);
                 } else if (M == DocPageLayout.TOP_TO_BOTTOM) {
-                    a(point, point2, point3, view);
+                    m12550a(point, point2, point3, view);
                 }
             }
         }
     }
 
-    private void c(int i, int i2, int i3, View view) {
-        this.e.setSelection(h());
-        TextSelectionAssistant e = e();
-        e.e();
-        if (!m().b()) {
-            this.e.aU();
-            this.b.addView(m());
-            this.e.a(0, 128);
+    /* renamed from: c */
+    private void m12567c(int i, int i2, int i3, View view) {
+        this.f9156e.setSelection(m12578h());
+        TextSelectionAssistant e = m12571e();
+        e.m12544e();
+        if (!m12587m().m13365b()) {
+            this.f9156e.aU();
+            this.f9153b.addView(m12587m());
+            this.f9156e.mo2040a(0, 128);
         }
         if (i3 == 1) {
-            switch (acq.a[this.k.ordinal()]) {
+            switch (add.f9506a[this.f9162k.ordinal()]) {
                 case 1:
-                    a(SelectionStyle.DRAG_INDICATOR, view);
-                    m().a(e.g());
+                    m12552a(SelectionStyle.DRAG_INDICATOR, view);
+                    m12587m().m13364a(e.m12546g());
                     return;
                 case 2:
-                    this.i.b();
-                    i();
+                    this.f9160i.mo2202b();
+                    m12580i();
                     return;
                 case 3:
-                    if (e.c()) {
-                        i();
+                    if (e.m12542c()) {
+                        m12580i();
                         return;
                     }
-                    a(SelectionStyle.DRAG_INDICATOR, view);
-                    m().a(e.g());
+                    m12552a(SelectionStyle.DRAG_INDICATOR, view);
+                    m12587m().m13364a(e.m12546g());
                     return;
                 case 4:
-                    if (e.c()) {
-                        i();
+                    if (e.m12542c()) {
+                        m12580i();
                         return;
                     } else {
-                        m().a(e.g());
+                        m12587m().m13364a(e.m12546g());
                         return;
                     }
                 default:
                     return;
             }
-        } else if (this.k == SelectionStyle.DRAG_INDICATOR && e.c()) {
-            m().a();
+        } else if (this.f9162k == SelectionStyle.DRAG_INDICATOR && e.m12542c()) {
+            m12587m().m13361a();
         } else {
-            m().a(this.b.getPagesFrameView(), e.f(), new Point(i, i2));
+            m12587m().m13362a(this.f9153b.getPagesFrameView(), e.m12545f(), new Point(i, i2));
         }
     }
 
-    private void i() {
-        this.g.clear();
-        a(false);
-        this.d = false;
-        this.e.setSelection(null);
-        this.k = SelectionStyle.UNKNOW;
-        this.g.add(new TextSelectionAssistant(this.e, 0));
-        if (this.j != null) {
-            this.b.removeView(this.j);
+    /* renamed from: i */
+    private void m12580i() {
+        this.f9158g.clear();
+        m12558a(false);
+        this.f9155d = false;
+        this.f9156e.setSelection(null);
+        this.f9162k = SelectionStyle.UNKNOW;
+        this.f9158g.add(new TextSelectionAssistant(this.f9156e, 0));
+        if (this.f9161j != null) {
+            this.f9153b.removeView(this.f9161j);
         }
-        c();
-        this.e.aV();
-        this.e.a(128, 0);
+        m12566c();
+        this.f9156e.aV();
+        this.f9156e.mo2040a(128, 0);
     }
 
-    private boolean j() {
+    /* renamed from: j */
+    private boolean m12581j() {
         boolean z = false;
-        if (this.e.G().q() == BookFormat.PDF) {
+        if (this.f9156e.mo1992G().mo1039q() == BookFormat.PDF) {
             return true;
         }
         int i = 0;
-        for (TextSelectionAssistant h : this.g) {
+        for (TextSelectionAssistant h : this.f9158g) {
             int i2;
-            if (h.h() > 0) {
+            if (h.m12547h() > 0) {
                 i2 = i + 1;
             } else {
                 i2 = i;
@@ -296,15 +325,16 @@ public class TextSelectionController extends ActivatedController {
         return z;
     }
 
-    private boolean k() {
+    /* renamed from: k */
+    private boolean m12583k() {
         boolean z = false;
-        if (this.e.G().q() == BookFormat.PDF) {
+        if (this.f9156e.mo1992G().mo1039q() == BookFormat.PDF) {
             return true;
         }
         int i = 0;
-        for (TextSelectionAssistant h : this.g) {
+        for (TextSelectionAssistant h : this.f9158g) {
             int i2;
-            if (h.h() < 0) {
+            if (h.m12547h() < 0) {
                 i2 = i + 1;
             } else {
                 i2 = i;
@@ -317,52 +347,57 @@ public class TextSelectionController extends ActivatedController {
         return z;
     }
 
-    private void a(Point point, Point point2, Point point3, View view) {
-        if (j()) {
-            a(true);
-            this.a = 2;
-            TextSelectionAssistant e = e();
-            if (e.h() >= 0) {
-                e.a(point3);
-                this.e.setSelection(h());
-                e.e();
-                this.e.b(new acg(this, point2, point, view), new aci(this, point, view));
+    /* renamed from: a */
+    private void m12550a(Point point, Point point2, Point point3, View view) {
+        if (m12581j()) {
+            m12558a(true);
+            this.f9152a = 2;
+            TextSelectionAssistant e = m12571e();
+            if (e.m12547h() >= 0) {
+                e.m12538a(point3);
+                this.f9156e.setSelection(m12578h());
+                e.m12544e();
+                this.f9156e.mo2104b(new act(this, point2, point, view), new acv(this, point, view));
                 return;
             }
-            this.g.remove(this.g.size() - 1);
-            this.e.b(new acj(this, point, view), null);
+            this.f9158g.remove(this.f9158g.size() - 1);
+            this.f9156e.mo2104b(new acw(this, point, view), null);
         }
     }
 
-    private void b(Point point, Point point2, Point point3, View view) {
-        if (k()) {
-            a(true);
-            this.a = 2;
-            TextSelectionAssistant e = e();
-            if (e.h() <= 0) {
-                e.a(point2);
-                this.e.setSelection(h());
-                e.e();
-                this.e.a(new acl(this, point, point3, view), new acn(this, point, view));
+    /* renamed from: b */
+    private void m12562b(Point point, Point point2, Point point3, View view) {
+        if (m12583k()) {
+            m12558a(true);
+            this.f9152a = 2;
+            TextSelectionAssistant e = m12571e();
+            if (e.m12547h() <= 0) {
+                e.m12538a(point2);
+                this.f9156e.setSelection(m12578h());
+                e.m12544e();
+                this.f9156e.mo2035a(new acy(this, point, point3, view), new ada(this, point, view));
                 return;
             }
-            this.g.remove(this.g.size() - 1);
-            this.e.a(new aco(this, point, view), null);
+            this.f9158g.remove(this.f9158g.size() - 1);
+            this.f9156e.mo2035a(new adb(this, point, view), null);
         }
     }
 
-    private boolean l() {
-        return this.c || this.e.q();
+    /* renamed from: l */
+    private boolean m12585l() {
+        return this.f9154c || this.f9156e.mo2169q();
     }
 
-    private void a(boolean z) {
-        this.c = z;
+    /* renamed from: a */
+    private void m12558a(boolean z) {
+        this.f9154c = z;
     }
 
-    private acw m() {
-        if (this.j == null) {
-            this.j = new acw(getContext(), this.i);
+    /* renamed from: m */
+    private adj m12587m() {
+        if (this.f9161j == null) {
+            this.f9161j = new adj(getContext(), this.f9160i);
         }
-        return this.j;
+        return this.f9161j;
     }
 }

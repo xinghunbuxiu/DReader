@@ -1,17 +1,20 @@
 package com.duokan.reader.ui.reading;
 
-class acp implements Runnable {
-    final /* synthetic */ aco a;
+import java.io.File;
+import java.io.FileFilter;
 
-    acp(aco com_duokan_reader_ui_reading_aco) {
-        this.a = com_duokan_reader_ui_reading_aco;
+class acp implements FileFilter {
+    /* renamed from: a */
+    final /* synthetic */ aco f9478a;
+
+    acp(aco aco) {
+        this.f9478a = aco;
     }
 
-    public void run() {
-        if (!this.a.c.e.K()) {
-            this.a.c.e().a(this.a.a);
-            this.a.c.c(this.a.a.x, this.a.a.y, this.a.c.a, this.a.b);
-            this.a.c.a(false);
+    public boolean accept(File file) {
+        if (!file.isFile() || file.getName().equalsIgnoreCase(".") || file.getName().equalsIgnoreCase("..")) {
+            return false;
         }
+        return true;
     }
 }

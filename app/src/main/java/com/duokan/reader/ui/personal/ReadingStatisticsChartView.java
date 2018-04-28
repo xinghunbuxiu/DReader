@@ -10,23 +10,32 @@ import android.graphics.Paint.Style;
 import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.View;
-
-import com.duokan.core.ui.UTools;
-
+import com.duokan.core.ui.dv;
+import com.duokan.p023b.C0241c;
+import com.duokan.p023b.C0247i;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class ReadingStatisticsChartView extends View {
-    private final Paint a;
-    private final Paint b;
-    private final Paint c;
-    private final Path d;
-    private final ArrayList e;
-    private final ArrayList f;
-    private int[] g;
-    private float h;
-    private long i;
+    /* renamed from: a */
+    private final Paint f8230a;
+    /* renamed from: b */
+    private final Paint f8231b;
+    /* renamed from: c */
+    private final Paint f8232c;
+    /* renamed from: d */
+    private final Path f8233d;
+    /* renamed from: e */
+    private final ArrayList<Integer> f8234e;
+    /* renamed from: f */
+    private final ArrayList<Integer> f8235f;
+    /* renamed from: g */
+    private int[] f8236g;
+    /* renamed from: h */
+    private float f8237h;
+    /* renamed from: i */
+    private long f8238i;
 
     public ReadingStatisticsChartView(Context context) {
         this(context, null);
@@ -35,41 +44,42 @@ public class ReadingStatisticsChartView extends View {
     public ReadingStatisticsChartView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         setWillNotDraw(false);
-        this.d = new Path();
-        this.a = new Paint();
-        this.a.setAntiAlias(true);
-        this.a.setStyle(Style.STROKE);
-        this.a.setStrokeCap(Cap.ROUND);
-        this.a.setStrokeJoin(Join.ROUND);
-        this.b = new Paint();
-        this.b.setAntiAlias(true);
-        this.b.setStyle(Style.FILL);
-        this.c = new Paint();
-        this.c.setAntiAlias(true);
-        this.c.setStyle(Style.FILL_AND_STROKE);
-        this.c.setTextSize((float) UTools.getMinimumHeight(getContext(), 12.0f));
-        this.e = new ArrayList();
-        this.f = new ArrayList();
+        this.f8233d = new Path();
+        this.f8230a = new Paint();
+        this.f8230a.setAntiAlias(true);
+        this.f8230a.setStyle(Style.STROKE);
+        this.f8230a.setStrokeCap(Cap.ROUND);
+        this.f8230a.setStrokeJoin(Join.ROUND);
+        this.f8231b = new Paint();
+        this.f8231b.setAntiAlias(true);
+        this.f8231b.setStyle(Style.FILL);
+        this.f8232c = new Paint();
+        this.f8232c.setAntiAlias(true);
+        this.f8232c.setStyle(Style.FILL_AND_STROKE);
+        this.f8232c.setTextSize((float) dv.m1932b(getContext(), 12.0f));
+        this.f8234e = new ArrayList();
+        this.f8235f = new ArrayList();
     }
 
-    public void a(int[] iArr) {
+    /* renamed from: a */
+    public void m11372a(int[] iArr) {
         int i;
-        this.g = new int[25];
+        this.f8236g = new int[25];
         for (i = 0; i < 24; i++) {
-            this.g[i] = iArr[i];
+            this.f8236g[i] = iArr[i];
         }
-        this.g[24] = this.g[0];
-        this.h = (float) this.g[0];
-        this.i = 1;
-        int i2 = this.g[0] + this.g[1];
+        this.f8236g[24] = this.f8236g[0];
+        this.f8237h = (float) this.f8236g[0];
+        this.f8238i = 1;
+        int i2 = this.f8236g[0] + this.f8236g[1];
         i = 0;
         while (i < 25) {
-            if (this.h < ((float) this.g[i])) {
-                this.h = (float) this.g[i];
+            if (this.f8237h < ((float) this.f8236g[i])) {
+                this.f8237h = (float) this.f8236g[i];
             }
-            if (i >= 2 && i <= 24 && this.g[i] + this.g[i - 1] > r0) {
-                i2 = this.g[i] + this.g[i - 1];
-                this.i = (long) i;
+            if (i >= 2 && i <= 24 && this.f8236g[i] + this.f8236g[i - 1] > i2) {
+                i2 = this.f8236g[i] + this.f8236g[i - 1];
+                this.f8238i = (long) i;
             }
             i++;
         }
@@ -79,73 +89,74 @@ public class ReadingStatisticsChartView extends View {
     protected void onDraw(Canvas canvas) {
         int i;
         super.onDraw(canvas);
-        int b = UTools.getMinimumHeight(getContext(), 20.0f);
+        int b = dv.m1932b(getContext(), 20.0f);
         int width = getWidth();
         int measuredHeight = getMeasuredHeight();
-        int b2 = UTools.getMinimumHeight(getContext(), 20.0f);
-        int b3 = UTools.getMinimumHeight(getContext(), 20.0f);
+        int b2 = dv.m1932b(getContext(), 20.0f);
+        int b3 = dv.m1932b(getContext(), 20.0f);
         int i2 = (measuredHeight - b2) - b3;
         float f = (1.0f * ((float) width)) / 24.0f;
-        float f2 = this.h == 0.0f ? 0.0f : (1.0f * ((float) (i2 - (b * 2)))) / this.h;
+        float f2 = this.f8237h == 0.0f ? 0.0f : (1.0f * ((float) (i2 - (b * 2)))) / this.f8237h;
         float f3 = (float) ((b2 + i2) - b);
-        if (this.h != 0.0f) {
-            this.c.setTextAlign(Align.CENTER);
-            this.c.setColor(getResources().getColor(c.general__shared__808c9d));
-            String string = getResources().getString(i.personal__experience_view__preference_reading_time);
+        if (this.f8237h != 0.0f) {
+            this.f8232c.setTextAlign(Align.CENTER);
+            this.f8232c.setColor(getResources().getColor(C0241c.general__shared__808c9d));
+            String string = getResources().getString(C0247i.personal__experience_view__preference_reading_time);
             Object[] objArr = new Object[2];
-            objArr[0] = Long.valueOf(this.i - 1 < 0 ? 23 : this.i - 1);
-            objArr[1] = Long.valueOf(this.i + 1 > 24 ? 1 : this.i + 1);
-            canvas.drawText(String.format(string, objArr), (float) (width / 2), (float) b2, this.c);
+            objArr[0] = Long.valueOf(this.f8238i - 1 < 0 ? 23 : this.f8238i - 1);
+            objArr[1] = Long.valueOf(this.f8238i + 1 > 24 ? 1 : this.f8238i + 1);
+            canvas.drawText(String.format(string, objArr), (float) (width / 2), (float) b2, this.f8232c);
         }
-        this.e.clear();
-        this.f.clear();
+        this.f8234e.clear();
+        this.f8235f.clear();
         for (i = 0; i <= 24; i++) {
-            this.e.add(Integer.valueOf((int) (((float) i) * f)));
-            this.f.add(Integer.valueOf((int) (f3 - (((float) this.g[i]) * f2))));
+            this.f8234e.add(Integer.valueOf((int) (((float) i) * f)));
+            this.f8235f.add(Integer.valueOf((int) (f3 - (((float) this.f8236g[i]) * f2))));
         }
-        List a = a(this.e);
-        List a2 = a(this.f);
-        this.a.setStrokeWidth((float) UTools.getMinimumHeight(getContext(), 4.0f));
-        this.a.setColor(getResources().getColor(c.general__shared__92c182));
-        this.d.reset();
-        this.d.moveTo(((mn) a.get(0)).a(0.0f), ((mn) a2.get(0)).a(0.0f));
+        List a = m11371a(this.f8234e);
+        List a2 = m11371a(this.f8235f);
+        this.f8230a.setStrokeWidth((float) dv.m1932b(getContext(), 4.0f));
+        this.f8230a.setColor(getResources().getColor(C0241c.general__shared__92c182));
+        this.f8233d.reset();
+        this.f8233d.moveTo(((nb) a.get(0)).m12340a(0.0f), ((nb) a2.get(0)).m12340a(0.0f));
         for (b = 0; b < a.size(); b++) {
             for (i2 = 1; i2 <= 36; i2++) {
                 float f4 = (1.0f * ((float) i2)) / 36.0f;
-                this.d.lineTo(((mn) a.get(b)).a(f4), ((mn) a2.get(b)).a(f4));
+                this.f8233d.lineTo(((nb) a.get(b)).m12340a(f4), ((nb) a2.get(b)).m12340a(f4));
             }
         }
-        canvas.drawPath(this.d, this.a);
-        this.b.setColor(getResources().getColor(c.general__shared__daf1d4));
-        this.d.lineTo((float) width, f3 - (((float) this.g[24]) * f2));
-        this.d.lineTo((float) width, (float) (measuredHeight - b3));
-        this.d.lineTo(0.0f, (float) (measuredHeight - b3));
-        this.d.close();
-        canvas.drawPath(this.d, this.b);
-        if (this.h != 0.0f) {
-            this.a.setColor(getResources().getColor(c.general__shared__ffffff));
-            this.a.setStrokeWidth((float) UTools.getMinimumHeight(getContext(), 2.0f));
-            this.b.setColor(getResources().getColor(c.general__shared__92c182));
+        canvas.drawPath(this.f8233d, this.f8230a);
+        this.f8231b.setColor(getResources().getColor(C0241c.general__shared__daf1d4));
+        this.f8233d.lineTo((float) width, f3 - (((float) this.f8236g[24]) * f2));
+        this.f8233d.lineTo((float) width, (float) (measuredHeight - b3));
+        this.f8233d.lineTo(0.0f, (float) (measuredHeight - b3));
+        this.f8233d.close();
+        canvas.drawPath(this.f8233d, this.f8231b);
+        if (this.f8237h != 0.0f) {
+            this.f8230a.setColor(getResources().getColor(C0241c.general__shared__ffffff));
+            this.f8230a.setStrokeWidth((float) dv.m1932b(getContext(), 2.0f));
+            this.f8231b.setColor(getResources().getColor(C0241c.general__shared__92c182));
             for (i = 6; i < 24; i += 6) {
-                canvas.drawCircle(((float) i) * f, f3 - (((float) this.g[i]) * f2), (float) UTools.getMinimumHeight(getContext(), 4.0f), this.a);
-                canvas.drawCircle(((float) i) * f, f3 - (((float) this.g[i]) * f2), (float) UTools.getMinimumHeight(getContext(), 3.0f), this.b);
+                canvas.drawCircle(((float) i) * f, f3 - (((float) this.f8236g[i]) * f2), (float) dv.m1932b(getContext(), 4.0f), this.f8230a);
+                canvas.drawCircle(((float) i) * f, f3 - (((float) this.f8236g[i]) * f2), (float) dv.m1932b(getContext(), 3.0f), this.f8231b);
             }
         }
-        this.a.setColor(getResources().getColor(c.general__shared__92c182));
-        this.a.setStrokeWidth(1.0f);
-        canvas.drawLine(0.0f, (float) (measuredHeight - b3), (float) width, (float) (measuredHeight - b3), this.a);
-        this.c.setColor(getResources().getColor(c.general__shared__aab2bc));
-        this.c.setTextAlign(Align.LEFT);
-        canvas.drawText(String.format(getResources().getString(i.personal__experience_view__time_formatter), new Object[]{Integer.valueOf(0)}), 0.0f, (float) measuredHeight, this.c);
-        this.c.setTextAlign(Align.RIGHT);
-        canvas.drawText(String.format(getResources().getString(i.personal__experience_view__time_formatter), new Object[]{Integer.valueOf(24)}), (float) width, (float) measuredHeight, this.c);
-        this.c.setTextAlign(Align.CENTER);
+        this.f8230a.setColor(getResources().getColor(C0241c.general__shared__92c182));
+        this.f8230a.setStrokeWidth(1.0f);
+        canvas.drawLine(0.0f, (float) (measuredHeight - b3), (float) width, (float) (measuredHeight - b3), this.f8230a);
+        this.f8232c.setColor(getResources().getColor(C0241c.general__shared__aab2bc));
+        this.f8232c.setTextAlign(Align.LEFT);
+        canvas.drawText(String.format(getResources().getString(C0247i.personal__experience_view__time_formatter), new Object[]{Integer.valueOf(0)}), 0.0f, (float) measuredHeight, this.f8232c);
+        this.f8232c.setTextAlign(Align.RIGHT);
+        canvas.drawText(String.format(getResources().getString(C0247i.personal__experience_view__time_formatter), new Object[]{Integer.valueOf(24)}), (float) width, (float) measuredHeight, this.f8232c);
+        this.f8232c.setTextAlign(Align.CENTER);
         for (i = 6; i < 24; i += 6) {
-            canvas.drawText(String.format(getResources().getString(i.personal__experience_view__time_formatter), new Object[]{Integer.valueOf(i)}), (float) ((width * i) / 24), (float) measuredHeight, this.c);
+            canvas.drawText(String.format(getResources().getString(C0247i.personal__experience_view__time_formatter), new Object[]{Integer.valueOf(i)}), (float) ((width * i) / 24), (float) measuredHeight, this.f8232c);
         }
     }
 
-    private List a(List list) {
+    /* renamed from: a */
+    private List<nb> m11371a(List<Integer> list) {
         int i;
         int i2 = 1;
         int size = list.size() - 1;
@@ -167,9 +178,9 @@ public class ReadingStatisticsChartView extends View {
         for (i = size - 1; i >= 0; i--) {
             fArr3[i] = fArr2[i] - (fArr[i] * fArr3[i + 1]);
         }
-        List linkedList = new LinkedList();
+        List<nb> linkedList = new LinkedList();
         for (int i3 = 0; i3 < size; i3++) {
-            linkedList.add(new mn(this, (float) ((Integer) list.get(i3)).intValue(), fArr3[i3], (((float) ((((Integer) list.get(i3 + 1)).intValue() - ((Integer) list.get(i3)).intValue()) * 3)) - (fArr3[i3] * 2.0f)) - fArr3[i3 + 1], fArr3[i3 + 1] + (((float) ((((Integer) list.get(i3)).intValue() - ((Integer) list.get(i3 + 1)).intValue()) * 2)) + fArr3[i3])));
+            linkedList.add(new nb(this, (float) ((Integer) list.get(i3)).intValue(), fArr3[i3], (((float) ((((Integer) list.get(i3 + 1)).intValue() - ((Integer) list.get(i3)).intValue()) * 3)) - (fArr3[i3] * 2.0f)) - fArr3[i3 + 1], fArr3[i3 + 1] + (((float) ((((Integer) list.get(i3)).intValue() - ((Integer) list.get(i3 + 1)).intValue()) * 2)) + fArr3[i3])));
         }
         return linkedList;
     }

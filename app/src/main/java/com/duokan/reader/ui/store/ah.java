@@ -4,13 +4,15 @@ import com.duokan.reader.ui.general.ak;
 import com.duokan.reader.ui.general.an;
 
 final class ah implements an {
-    final /* synthetic */ ak a;
+    /* renamed from: a */
+    final /* synthetic */ ak f11316a;
 
     ah(ak akVar) {
-        this.a = akVar;
+        this.f11316a = akVar;
     }
 
-    public void a(int i) {
-        this.a.dismiss();
+    /* renamed from: a */
+    public void mo1689a(int i) {
+        this.f11316a.dismiss();
     }
 }

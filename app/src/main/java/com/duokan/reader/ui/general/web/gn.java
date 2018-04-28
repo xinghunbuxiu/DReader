@@ -3,15 +3,17 @@ package com.duokan.reader.ui.general.web;
 import com.duokan.core.sys.as;
 
 class gn implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
+    /* renamed from: a */
+    final /* synthetic */ ci f7893a;
 
-    gn(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    gn(ci ciVar) {
+        this.f7893a = ciVar;
     }
 
-    public void a() {
-        this.b.a(new go(this));
+    /* renamed from: a */
+    public void mo1831a() {
+        if (this.f7893a.f7581b.mEditFeedController != null) {
+            this.f7893a.f7581b.mEditFeedController.m8763a();
+        }
     }
 }

@@ -1,30 +1,38 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.common.webservices.duokan.z;
-import com.duokan.reader.domain.bookshelf.ai;
-import com.duokan.reader.domain.bookshelf.c;
+import android.text.TextUtils;
+import com.duokan.reader.domain.account.C0709k;
+import com.duokan.reader.domain.account.PersonalAccount;
+import com.duokan.reader.domain.store.C0466h;
+import com.duokan.reader.domain.store.DkStoreBookDetail;
+import com.duokan.reader.domain.store.DkStoreItem;
+import com.duokan.reader.ui.bookshelf.be;
 import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
-import com.duokan.reader.ui.general.cm;
+import com.duokan.reader.ui.store.C1502o;
 import com.mipay.sdk.Mipay;
 
-class hp implements cm {
-    final /* synthetic */ ho a;
+class hp implements C0466h {
+    /* renamed from: a */
+    final /* synthetic */ ho f7944a;
 
     hp(ho hoVar) {
-        this.a = hoVar;
+        this.f7944a = hoVar;
     }
 
-    public void onChoice(boolean z, FlowChargingTransferChoice flowChargingTransferChoice) {
-        if (z) {
-            c a = ai.a().a(this.a.b.a, (z) this.a.d.a, flowChargingTransferChoice.wifiOnly());
-            if (a != null) {
-                a.j(this.a.b.b.a.e);
-                this.a.b.b.a.f.b.pageController.web_notifyWeb(this.a.b.b.a.b, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
-                return;
-            }
-            this.a.b.b.a.f.b.pageController.web_notifyWeb(this.a.b.b.a.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2));
-            return;
+    public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
+        DkStoreBookDetail dkStoreBookDetail = (DkStoreBookDetail) dkStoreItem;
+        if (TextUtils.equals(this.f7944a.f7940c, "NORMAL")) {
+            C1502o.m15410a().m15431a(this.f7944a.f7941d, dkStoreBookDetail, new hq(this), FlowChargingTransferChoice.Default);
+        } else if (TextUtils.equals(this.f7944a.f7940c, "TRIED")) {
+            C1502o.m15417a(dkStoreBookDetail.getMinKernelVersion(), new hr(this, dkStoreBookDetail));
+        } else if (TextUtils.equals(this.f7944a.f7940c, "UPDATING")) {
+            be.m9188a(this.f7944a.f7943f.f7937b.f7581b.getContext(), dkStoreBookDetail.getEpubSize(), new ht(this));
+        } else if (TextUtils.equals(this.f7944a.f7940c, "TIME")) {
+            C0709k.m3476a().m3497a(PersonalAccount.class, new hv(this, dkStoreBookDetail));
         }
-        this.a.b.b.a.f.b.pageController.web_notifyWeb(this.a.b.b.a.b, 4, new Object[0]);
+    }
+
+    public void onFetchBookDetailError(String str) {
+        this.f7944a.f7943f.f7937b.f7581b.web_notifyWeb(this.f7944a.f7939b, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str);
     }
 }

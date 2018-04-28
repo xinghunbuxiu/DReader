@@ -1,18 +1,15 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+public interface ml {
+    /* renamed from: a */
+    void mo2426a();
 
-class ml implements OnClickListener {
-    final /* synthetic */ int a;
-    final /* synthetic */ mh b;
+    /* renamed from: a */
+    void mo2427a(boolean z);
 
-    ml(mh mhVar, int i) {
-        this.b = mhVar;
-        this.a = i;
-    }
+    /* renamed from: b */
+    void mo2428b();
 
-    public void onClick(View view) {
-        this.b.e.a(this.a - 1);
-    }
+    /* renamed from: c */
+    void mo2429c();
 }

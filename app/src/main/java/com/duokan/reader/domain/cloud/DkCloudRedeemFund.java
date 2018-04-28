@@ -1,10 +1,8 @@
 package com.duokan.reader.domain.cloud;
 
 import android.text.TextUtils;
-
 import com.duokan.reader.common.webservices.duokan.DkStoreRedeemFundInfo;
 import com.duokan.reader.domain.account.User;
-
 import java.util.Date;
 
 public class DkCloudRedeemFund extends DkCloudJsonItem {

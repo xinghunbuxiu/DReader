@@ -1,17 +1,15 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+class zf implements adx {
+    /* renamed from: a */
+    final /* synthetic */ ze f11264a;
 
-class zf implements OnClickListener {
-    final /* synthetic */ yr a;
-
-    zf(yr yrVar) {
-        this.a = yrVar;
+    zf(ze zeVar) {
+        this.f11264a = zeVar;
     }
 
-    public void onClick(View view) {
-        this.a.D.put("Action1", "COPY");
-        this.a.F.e();
+    /* renamed from: a */
+    public void mo2521a() {
+        this.f11264a.f11224F.mo2208a();
     }
 }

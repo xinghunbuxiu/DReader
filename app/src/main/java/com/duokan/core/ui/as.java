@@ -5,81 +5,93 @@ import android.view.MotionEvent;
 import android.view.View;
 
 public class as extends er {
-    private MotionEvent a = null;
-    private MotionEvent c = null;
-    private int d = ((int) (((float) UTools.getLongPressTimeout()) * 1.5f));
-    private int e = 0;
-    private int f = this.d;
-    private at g = null;
-    private boolean h = false;
+    /* renamed from: a */
+    private MotionEvent f978a = null;
+    /* renamed from: c */
+    private MotionEvent f979c = null;
+    /* renamed from: d */
+    private int f980d = ((int) (((float) dv.getLongPressTimeout()) * 1.5f));
+    /* renamed from: e */
+    private int f981e = 0;
+    /* renamed from: f */
+    private int f982f = this.f980d;
+    /* renamed from: g */
+    private at f983g = null;
+    /* renamed from: h */
+    private boolean f984h = false;
 
-    public int a() {
-        return this.d;
+    /* renamed from: a */
+    public int m1631a() {
+        return this.f980d;
     }
 
-    public void a(int i) {
-        this.d = i;
+    /* renamed from: a */
+    public void m1632a(int i) {
+        this.f980d = i;
     }
 
-    public void b(int i) {
-        this.f = i;
+    /* renamed from: b */
+    public void m1635b(int i) {
+        this.f982f = i;
     }
 
-    protected void a(View view, boolean z) {
-        if (this.a != null) {
-            this.a.recycle();
-            this.a = null;
+    /* renamed from: a */
+    protected void mo511a(View view, boolean z) {
+        if (this.f978a != null) {
+            this.f978a.recycle();
+            this.f978a = null;
         }
-        if (this.c != null) {
-            this.c.recycle();
-            this.c = null;
+        if (this.f979c != null) {
+            this.f979c.recycle();
+            this.f979c = null;
         }
-        this.g = null;
-        this.h = false;
-        this.e = 0;
+        this.f983g = null;
+        this.f984h = false;
+        this.f981e = 0;
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
+    /* renamed from: a */
+    protected void mo510a(View view, MotionEvent motionEvent, boolean z, es esVar) {
         if (esVar instanceof au) {
             au auVar = (au) esVar;
             if (motionEvent.getPointerCount() > 1) {
-                b(false);
-                this.g = null;
+                m1613b(false);
+                this.f983g = null;
                 return;
-            } else if (this.a == null) {
-                this.a = MotionEvent.obtainNoHistory(motionEvent);
-                this.g = new at(this, view);
-                view.postDelayed(this.g, (long) this.d);
+            } else if (this.f978a == null) {
+                this.f978a = MotionEvent.obtainNoHistory(motionEvent);
+                this.f983g = new at(this, view);
+                view.postDelayed(this.f983g, (long) this.f980d);
                 return;
             } else {
-                if (this.c != null) {
-                    this.c.recycle();
-                    this.c = null;
+                if (this.f979c != null) {
+                    this.f979c.recycle();
+                    this.f979c = null;
                 }
-                this.c = MotionEvent.obtainNoHistory(motionEvent);
-                if (d(new PointF(this.a.getRawX(), this.a.getRawY()), new PointF(this.c.getRawX(), this.c.getRawY())) > ((double) b(view))) {
-                    this.e = 0;
-                    this.a = this.c;
-                    this.c = null;
-                    this.g = new at(this, view);
-                    view.postDelayed(this.g, (long) this.d);
+                this.f979c = MotionEvent.obtainNoHistory(motionEvent);
+                if (m1619d(new PointF(this.f978a.getRawX(), this.f978a.getRawY()), new PointF(this.f979c.getRawX(), this.f979c.getRawY())) > ((double) m1610b(view))) {
+                    this.f981e = 0;
+                    this.f978a = this.f979c;
+                    this.f979c = null;
+                    this.f983g = new at(this, view);
+                    view.postDelayed(this.f983g, (long) this.f980d);
                     return;
-                } else if (this.h) {
-                    PointF pointF = new PointF(this.c.getX(0), this.c.getY(0));
-                    int i = this.e;
-                    this.e = i + 1;
-                    auVar.a(view, pointF, i);
-                    this.a = this.c;
-                    this.c = null;
-                    this.g = new at(this, view);
-                    view.postDelayed(this.g, (long) this.f);
+                } else if (this.f984h) {
+                    PointF pointF = new PointF(this.f979c.getX(0), this.f979c.getY(0));
+                    int i = this.f981e;
+                    this.f981e = i + 1;
+                    auVar.mo1681a(view, pointF, i);
+                    this.f978a = this.f979c;
+                    this.f979c = null;
+                    this.f983g = new at(this, view);
+                    view.postDelayed(this.f983g, (long) this.f982f);
                     return;
                 } else {
                     return;
                 }
             }
         }
-        b(false);
-        this.g = null;
+        m1613b(false);
+        this.f983g = null;
     }
 }

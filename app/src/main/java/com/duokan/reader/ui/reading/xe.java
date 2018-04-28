@@ -1,15 +1,16 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.ui.general.FixedPagesView.PageScaleType;
+import com.duokan.core.io.C0336a;
 
 class xe implements Runnable {
-    final /* synthetic */ xd a;
+    /* renamed from: a */
+    final /* synthetic */ wy f11140a;
 
-    xe(xd xdVar) {
-        this.a = xdVar;
+    xe(wy wyVar) {
+        this.f11140a = wyVar;
     }
 
     public void run() {
-        this.a.a.c.a(PageScaleType.MATCH_INSIDE);
+        C0336a.m793f(this.f11140a.m13646o());
     }
 }

@@ -1,26 +1,13 @@
 package com.duokan.reader.domain.account;
 
-import com.duokan.reader.domain.statistics.a;
-
-class cb implements b {
-    final /* synthetic */ b a;
-    final /* synthetic */ PersonalAccount b;
-
-    cb(PersonalAccount personalAccount, b bVar) {
-        this.b = personalAccount;
-        this.a = bVar;
+public class cb implements C0704h<PersonalAccount> {
+    /* renamed from: a */
+    public /* synthetic */ C0672a mo870a(C0706e c0706e) {
+        return m3434b(c0706e);
     }
 
-    public void a(a aVar) {
-        a.k().b("login", "wechat", "success");
-        this.a.a(i.f().b(MiGuestAccount.class));
-        this.b.k = false;
-    }
-
-    public void a(a aVar, String str) {
-        a.k().b("login", "wechat", "failed");
-        this.b.o();
-        this.a.a(i.f().b(MiGuestAccount.class), str);
-        this.b.k = false;
+    /* renamed from: b */
+    public PersonalAccount m3434b(C0706e c0706e) {
+        return new PersonalAccount(c0706e);
     }
 }

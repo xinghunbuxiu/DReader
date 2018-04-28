@@ -1,18 +1,23 @@
 package com.duokan.reader.ui.reading;
 
-import java.util.Map;
+import com.duokan.core.app.ac;
+import com.duokan.core.app.ad;
 
-class hh implements Runnable {
-    final /* synthetic */ Map a;
-    final /* synthetic */ hg b;
+class hh implements ad {
+    /* renamed from: a */
+    final /* synthetic */ hg f10325a;
 
-    hh(hg hgVar, Map map) {
-        this.b = hgVar;
-        this.a = map;
+    hh(hg hgVar) {
+        this.f10325a = hgVar;
     }
 
-    public void run() {
-        this.b.b.i_();
-        this.b.b.c.b(new hi(this));
+    /* renamed from: a */
+    public void mo1553a(ac acVar) {
+        this.f10325a.m14317c();
+    }
+
+    /* renamed from: b */
+    public void mo1554b(ac acVar) {
+        this.f10325a.m14319d();
     }
 }

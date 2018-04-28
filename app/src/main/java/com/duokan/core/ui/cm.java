@@ -3,9 +3,12 @@ package com.duokan.core.ui;
 import android.graphics.Rect;
 
 public interface cm {
-    void a();
+    /* renamed from: a */
+    void mo517a();
 
-    void a(Rect rect);
+    /* renamed from: a */
+    void mo518a(Rect rect);
 
-    void b(Rect rect);
+    /* renamed from: b */
+    void mo519b(Rect rect);
 }

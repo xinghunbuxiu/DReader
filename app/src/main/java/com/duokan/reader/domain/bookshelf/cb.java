@@ -1,70 +1,50 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.account.ab;
-
+import com.duokan.reader.domain.account.al;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-class cb extends ap {
-    final /* synthetic */ jl a;
-    final /* synthetic */ ab b;
-    final /* synthetic */ boolean c;
-    final /* synthetic */ da d;
-    final /* synthetic */ bv e;
-    private bt f;
-    private cs g = new cs();
+class cb implements cy {
+    /* renamed from: a */
+    final /* synthetic */ List f2931a;
+    /* renamed from: b */
+    final /* synthetic */ cx f2932b;
+    /* renamed from: c */
+    final /* synthetic */ bu f2933c;
 
-    cb(bv bvVar, jl jlVar, ab abVar, boolean z, da daVar) {
-        this.e = bvVar;
-        this.a = jlVar;
-        this.b = abVar;
-        this.c = z;
-        this.d = daVar;
+    cb(bu buVar, List list, cx cxVar) {
+        this.f2933c = buVar;
+        this.f2931a = list;
+        this.f2932b = cxVar;
     }
 
-    protected void onSessionTry() {
-        this.a.b();
-        br brVar = new br(this.b);
-        brVar.a();
-        this.f = brVar.b();
-        if (this.c) {
-            this.g.a(brVar);
-        }
-    }
-
-    protected void onSessionSucceeded() {
-        if (this.b.a(this.e.c)) {
-            if (this.c) {
-                this.e.a(this.g);
-            }
-            List arrayList = new ArrayList();
-            Iterator it = this.e.d.a.iterator();
-            while (it.hasNext()) {
-                bu buVar = (bu) it.next();
-                if (buVar.g && this.a.a(buVar.a, buVar.b)) {
-                    arrayList.add(buVar.a());
+    /* renamed from: a */
+    public void mo995a(bs bsVar) {
+        al b = this.f2933c.f2868c;
+        ArrayList arrayList = new ArrayList(this.f2931a.size());
+        for (bt btVar : this.f2931a) {
+            bt a = this.f2933c.f2869d.m4277a(btVar.f2857a, btVar.f2858b);
+            if (a != null && a.f2864h == btVar.f2864h && a.f2865i == btVar.f2865i) {
+                if (a.f2864h == 1 || a.f2864h == 2) {
+                    a.f2863g = false;
+                    a.f2860d = bsVar.m4060a(a.f2857a);
+                    a.f2864h = 0;
+                } else if (a.f2864h == 3) {
+                    this.f2933c.f2869d.m4281b(a);
                 }
+                arrayList.add(a.m4068a());
             }
-            if (arrayList.size() > 0) {
-                this.e.a(this.f, arrayList, new cc(this));
-                return;
-            }
-            this.d.a();
-            a();
-            return;
         }
-        this.d.a("");
-        a();
+        new cc(this, aq.f2771a, b, bsVar, arrayList).open();
     }
 
-    protected void onSessionFailed() {
-        this.d.a("");
-        a();
+    /* renamed from: a */
+    public void mo994a() {
+        this.f2932b.mo978b();
     }
 
-    private void a() {
-        this.e.h.poll();
-        this.e.e();
+    /* renamed from: a */
+    public void mo996a(String str) {
+        this.f2932b.mo977a("");
     }
 }

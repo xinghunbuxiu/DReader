@@ -1,21 +1,22 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.document.Document_a;
+import com.duokan.core.sys.ag;
 
-import java.util.LinkedList;
+class aej implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ ag f9580a;
+    /* renamed from: b */
+    final /* synthetic */ afa f9581b;
+    /* renamed from: c */
+    final /* synthetic */ adz f9582c;
 
-class aej {
-    public Document_a a;
-    public final LinkedList b;
-    public ael c;
-    public boolean d;
-    public boolean e;
+    aej(adz adz, ag agVar, afa afa) {
+        this.f9582c = adz;
+        this.f9580a = agVar;
+        this.f9581b = afa;
+    }
 
-    private aej() {
-        this.a = null;
-        this.b = new LinkedList();
-        this.c = null;
-        this.d = false;
-        this.e = false;
+    public void run() {
+        this.f9580a.run(this.f9581b);
     }
 }

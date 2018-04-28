@@ -1,48 +1,36 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Bitmap;
+import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.sys.ag;
+import java.util.Map;
+import java.util.Map.Entry;
 
-import com.duokan.core.sys.TaskHandler;
+class aat implements ag<Map<String, Integer>> {
+    /* renamed from: a */
+    final /* synthetic */ aas f9351a;
 
-class aat implements PageProvider {
-    final /* synthetic */ aar a;
-
-    aat(aar com_duokan_reader_ui_reading_aar) {
-        this.a = com_duokan_reader_ui_reading_aar;
+    aat(aas aas) {
+        this.f9351a = aas;
     }
 
-    public CurlAnchor nextPageAnchor(CurlAnchor curlAnchor) {
-        return (CurlAnchor) TaskHandler.getTaskHandler(new aau(this, curlAnchor));
+    public /* synthetic */ void run(Object obj) {
+        m12910a((Map) obj);
     }
 
-    public CurlAnchor prevPageAnchor(CurlAnchor curlAnchor) {
-        return (CurlAnchor) TaskHandler.getTaskHandler(new aav(this));
-    }
-
-    public Bitmap getPageBitmap(CurlAnchor curlAnchor) {
-        return this.a.e.a(curlAnchor.mPageDrawable);
-    }
-
-    public Bitmap getBackgroundBitmap() {
-        return this.a.e.a().a;
-    }
-
-    public void flipPage(CurlDirection curlDirection) {
-        TaskHandler.postTask(new aaw(this, curlDirection));
-    }
-
-    public void afterFlip(boolean z) {
-        TaskHandler.postTask(new aax(this));
-    }
-
-    public void afterDrawFrame() {
-        TaskHandler.postTask(new aay(this));
-    }
-
-    public void afterSurfaceChanged() {
-        TaskHandler.PostTask(new aaz(this));
-    }
-
-    public void onPageSizeChanged(int i, int i2) {
+    /* renamed from: a */
+    public void m12910a(Map<String, Integer> map) {
+        C0328a.m757c().m764b(map.size() == this.f9351a.f9347a.size());
+        for (Entry entry : map.entrySet()) {
+            String str = (String) entry.getKey();
+            int intValue = ((Integer) entry.getValue()).intValue();
+            this.f9351a.f9350d.f9309P.remove(str);
+            if (intValue >= 1000) {
+                this.f9351a.f9350d.f9310Q.put(str, Integer.valueOf(intValue));
+            }
+        }
+        this.f9351a.f9350d.m12832a(false);
+        if (this.f9351a.f9349c != null) {
+            this.f9351a.f9349c.run(map);
+        }
     }
 }

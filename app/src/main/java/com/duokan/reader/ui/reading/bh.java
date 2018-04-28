@@ -12,115 +12,142 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.duokan.core.app.MyContextWrapper;
+import com.duokan.common.C0267i;
+import com.duokan.core.app.AppContext;
+import com.duokan.p024c.C0250b;
+import com.duokan.p024c.C0254f;
+import com.duokan.p024c.C0255g;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.domain.bookshelf.C0798a;
 import com.duokan.reader.domain.bookshelf.ah;
-import com.duokan.reader.ui.reading.a.v;
+import com.duokan.reader.ui.reading.p054a.C1441v;
+import com.duokan.reader.ui.welcome.C1540p;
 import com.duokan.reader.ui.welcome.DkTipManager.UserInput;
-import com.duokan.reader.ui.welcome.p;
 
-public class bh implements v {
-    static final /* synthetic */ boolean a = (!bh.class.desiredAssertionStatus());
-    private final sh b;
-    private final wl c;
-    private View d;
-    private TextView e;
-    private ImageView f;
-    private ImageView g;
-    private View h;
-    private View i;
-    private float j;
-    private float k;
-    private Animation l;
-    private Animation m;
-    private boolean n = false;
-    private boolean o = false;
-    private Context p;
-    private final Handler q = new Handler(Looper.getMainLooper());
-    private final Runnable r = new bi(this);
+public class bh implements C1441v {
+    /* renamed from: a */
+    static final /* synthetic */ boolean f9834a = (!bh.class.desiredAssertionStatus());
+    /* renamed from: b */
+    private final su f9835b;
+    /* renamed from: c */
+    private final wy f9836c;
+    /* renamed from: d */
+    private View f9837d;
+    /* renamed from: e */
+    private TextView f9838e;
+    /* renamed from: f */
+    private ImageView f9839f;
+    /* renamed from: g */
+    private ImageView f9840g;
+    /* renamed from: h */
+    private View f9841h;
+    /* renamed from: i */
+    private View f9842i;
+    /* renamed from: j */
+    private float f9843j;
+    /* renamed from: k */
+    private float f9844k;
+    /* renamed from: l */
+    private Animation f9845l;
+    /* renamed from: m */
+    private Animation f9846m;
+    /* renamed from: n */
+    private boolean f9847n = false;
+    /* renamed from: o */
+    private boolean f9848o = false;
+    /* renamed from: p */
+    private Context f9849p;
+    /* renamed from: q */
+    private final Handler f9850q = new Handler(Looper.getMainLooper());
+    /* renamed from: r */
+    private final Runnable f9851r = new bi(this);
 
-    public bh(Context context, sh shVar, wl wlVar) {
-        this.b = shVar;
-        this.c = wlVar;
-        this.p = context;
-        this.l = AnimationUtils.loadAnimation(context, b.rotate_up);
-        this.m = AnimationUtils.loadAnimation(context, b.rotate_down);
-        this.l.setDuration(200);
-        this.l.setFillAfter(true);
-        this.l.setFillEnabled(true);
-        this.m.setDuration(200);
-        this.m.setFillAfter(true);
-        this.m.setFillEnabled(true);
-        this.d = this.c.findViewById(g.reading__reading_view__pull_down_background);
-        this.i = this.c.findViewById(g.reading__reading_background_view__logo);
-        this.g = (ImageView) this.c.findViewById(g.reading__reading_view__bookmark);
-        this.h = this.c.findViewById(g.reading__reading_background_view__header);
-        this.e = (TextView) this.h.findViewById(g.reading__reading_background_view__bookmark_hint);
-        this.f = (ImageView) this.h.findViewById(g.reading__reading_background_view__arrow);
+    public bh(Context context, su suVar, wy wyVar) {
+        this.f9835b = suVar;
+        this.f9836c = wyVar;
+        this.f9849p = context;
+        this.f9845l = AnimationUtils.loadAnimation(context, C0250b.rotate_up);
+        this.f9846m = AnimationUtils.loadAnimation(context, C0250b.rotate_down);
+        this.f9845l.setDuration(200);
+        this.f9845l.setFillAfter(true);
+        this.f9845l.setFillEnabled(true);
+        this.f9846m.setDuration(200);
+        this.f9846m.setFillAfter(true);
+        this.f9846m.setFillEnabled(true);
+        this.f9837d = this.f9836c.findViewById(C0255g.reading__reading_view__pull_down_background);
+        this.f9842i = this.f9836c.findViewById(C0255g.reading__reading_background_view__logo);
+        this.f9840g = (ImageView) this.f9836c.findViewById(C0255g.reading__reading_view__bookmark);
+        this.f9841h = this.f9836c.findViewById(C0255g.reading__reading_background_view__header);
+        this.f9838e = (TextView) this.f9841h.findViewById(C0255g.reading__reading_background_view__bookmark_hint);
+        this.f9839f = (ImageView) this.f9841h.findViewById(C0255g.reading__reading_background_view__arrow);
     }
 
-    public void a(MotionEvent motionEvent, MotionEvent motionEvent2) {
-        this.b.a(1, 0);
-        this.o = e();
-        if (this.o) {
-            this.d.setVisibility(0);
-            this.j = 0.0f;
-            this.n = false;
-            this.k = (float) (-this.h.getHeight());
-            this.m.setDuration(0);
-            this.f.startAnimation(this.m);
-            c();
-            a(this.h, 0.0f, 0.0f, 0.0f, this.k, 0, null);
-            a(this.i, 0.0f, 0.0f, (float) this.h.getHeight(), (float) this.h.getHeight(), 0, null);
-            h().setIsHideMarkIcon(true);
-            if (d()) {
-                this.g.setVisibility(0);
+    /* renamed from: a */
+    public void mo2278a(MotionEvent motionEvent, MotionEvent motionEvent2) {
+        this.f9835b.mo2040a(1, 0);
+        this.f9848o = m13787e();
+        if (this.f9848o) {
+            this.f9837d.setVisibility(0);
+            this.f9843j = 0.0f;
+            this.f9847n = false;
+            this.f9844k = (float) (-this.f9841h.getHeight());
+            this.f9846m.setDuration(0);
+            this.f9839f.startAnimation(this.f9846m);
+            m13782c();
+            m13779a(this.f9841h, 0.0f, 0.0f, 0.0f, this.f9844k, 0, null);
+            m13779a(this.f9842i, 0.0f, 0.0f, (float) this.f9841h.getHeight(), (float) this.f9841h.getHeight(), 0, null);
+            m13792h().setIsHideMarkIcon(true);
+            if (m13785d()) {
+                this.f9840g.setVisibility(0);
             } else {
-                this.g.setVisibility(4);
+                this.f9840g.setVisibility(4);
             }
-            p pVar = (p) MyContextWrapper.getFeature(this.p).queryFeature(p.class);
-            if (!a && pVar == null) {
+            C1540p c1540p = (C1540p) AppContext.getAppContext(this.f9849p).queryFeature(C1540p.class);
+            if (!f9834a && c1540p == null) {
                 throw new AssertionError();
-            } else if (pVar != null) {
-                pVar.a(this.p, UserInput.DO_BOOK_MARK_GESTURE_START);
+            } else if (c1540p != null) {
+                c1540p.mo2564a(this.f9849p, UserInput.DO_BOOK_MARK_GESTURE_START);
             }
         }
     }
 
-    public void a(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
-        if (this.o) {
-            if (!this.n && this.k >= ((float) i.a(this.p, 4.0f))) {
-                this.n = true;
-                this.f.startAnimation(this.l);
-                c();
+    /* renamed from: a */
+    public void mo2279a(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
+        if (this.f9848o) {
+            if (!this.f9847n && this.f9844k >= ((float) C0267i.m598a(this.f9849p, 4.0f))) {
+                this.f9847n = true;
+                this.f9839f.startAnimation(this.f9845l);
+                m13782c();
             }
-            if (this.n && this.k < ((float) i.a(this.p, 4.0f))) {
-                this.n = false;
-                this.f.startAnimation(this.m);
-                this.m.setDuration(200);
-                c();
+            if (this.f9847n && this.f9844k < ((float) C0267i.m598a(this.f9849p, 4.0f))) {
+                this.f9847n = false;
+                this.f9839f.startAnimation(this.f9846m);
+                this.f9846m.setDuration(200);
+                m13782c();
             }
-            this.j += f2 / 3.0f;
-            this.k += f2 / 3.0f;
-            this.j = this.j < 0.0f ? 0.0f : this.j;
-            this.k = this.k < ((float) (-this.h.getHeight())) ? (float) (-this.h.getHeight()) : this.k;
-            if (!this.n) {
-                a(this.h, 0.0f, 0.0f, Math.min(0.0f, this.k), Math.min(0.0f, this.k), 0, null);
+            this.f9843j += f2 / 3.0f;
+            this.f9844k += f2 / 3.0f;
+            this.f9843j = this.f9843j < 0.0f ? 0.0f : this.f9843j;
+            this.f9844k = this.f9844k < ((float) (-this.f9841h.getHeight())) ? (float) (-this.f9841h.getHeight()) : this.f9844k;
+            if (!this.f9847n) {
+                m13779a(this.f9841h, 0.0f, 0.0f, Math.min(0.0f, this.f9844k), Math.min(0.0f, this.f9844k), 0, null);
             }
-            a(this.c.getPagesFrameView(), 0.0f, 0.0f, this.j, this.j, 0, null);
+            m13779a(this.f9836c.getPagesFrameView(), 0.0f, 0.0f, this.f9843j, this.f9843j, 0, null);
         }
     }
 
-    public void b(MotionEvent motionEvent, MotionEvent motionEvent2) {
-        if (this.o) {
-            int height = (int) ((this.j / ((float) this.c.getPagesFrameView().getHeight())) * 1000.0f);
-            a(this.i, 0.0f, 0.0f, (float) this.h.getHeight(), (float) (this.h.getHeight() / 4), (long) height, null);
-            a(this.h, 0.0f, 0.0f, 0.0f, (float) (-this.h.getHeight()), (long) height, null);
-            a(this.c.getPagesFrameView(), 0.0f, 0.0f, this.j, 0.0f, (long) height, new bj(this));
+    /* renamed from: b */
+    public void mo2280b(MotionEvent motionEvent, MotionEvent motionEvent2) {
+        if (this.f9848o) {
+            int height = (int) ((this.f9843j / ((float) this.f9836c.getPagesFrameView().getHeight())) * 1000.0f);
+            m13779a(this.f9842i, 0.0f, 0.0f, (float) this.f9841h.getHeight(), (float) (this.f9841h.getHeight() / 4), (long) height, null);
+            m13779a(this.f9841h, 0.0f, 0.0f, 0.0f, (float) (-this.f9841h.getHeight()), (long) height, null);
+            m13779a(this.f9836c.getPagesFrameView(), 0.0f, 0.0f, this.f9843j, 0.0f, (long) height, new bj(this));
         }
     }
 
-    private void a(View view, float f, float f2, float f3, float f4, long j, AnimationListener animationListener) {
+    /* renamed from: a */
+    private void m13779a(View view, float f, float f2, float f3, float f4, long j, AnimationListener animationListener) {
         Animation translateAnimation = new TranslateAnimation(f, f2, f3, f4);
         translateAnimation.setDuration(j);
         translateAnimation.setFillAfter(true);
@@ -129,80 +156,88 @@ public class bh implements v {
         view.startAnimation(translateAnimation);
     }
 
-    private String a() {
+    /* renamed from: a */
+    private String m13778a() {
         String string;
-        if (this.n) {
-            string = this.p.getString(j.lift_finger);
+        if (this.f9847n) {
+            string = this.f9849p.getString(C0258j.lift_finger);
         } else {
-            string = this.p.getString(j.down_drag);
+            string = this.f9849p.getString(C0258j.down_drag);
         }
-        if (d()) {
-            return string + this.p.getString(j.remove_bookmark);
+        if (m13785d()) {
+            return string + this.f9849p.getString(C0258j.remove_bookmark);
         }
-        return string + this.p.getString(j.add_bookmark);
+        return string + this.f9849p.getString(C0258j.add_bookmark);
     }
 
-    private int b() {
-        if ((this.n ^ d()) != 0) {
-            return f.reading__shared__bookmark_highlight;
+    /* renamed from: b */
+    private int m13780b() {
+        if ((this.f9847n ^ m13785d()) != 0) {
+            return C0254f.reading__shared__bookmark_highlight;
         }
-        return f.reading__shared__bookmark;
+        return C0254f.reading__shared__bookmark;
     }
 
-    private void c() {
-        this.e.setText(a());
-        if (b() == f.reading__shared__bookmark_highlight) {
-            this.g.setVisibility(0);
+    /* renamed from: c */
+    private void m13782c() {
+        this.f9838e.setText(m13778a());
+        if (m13780b() == C0254f.reading__shared__bookmark_highlight) {
+            this.f9840g.setVisibility(0);
         } else {
-            this.g.setVisibility(4);
+            this.f9840g.setVisibility(4);
         }
     }
 
-    private boolean d() {
-        return h().g().size() > 0;
+    /* renamed from: d */
+    private boolean m13785d() {
+        return m13792h().m14301g().size() > 0;
     }
 
-    private boolean e() {
-        if (this.b.X() == null) {
-            this.o = false;
+    /* renamed from: e */
+    private boolean m13787e() {
+        if (this.f9835b.mo2007X() == null) {
+            this.f9848o = false;
         }
-        if (h().getPageDrawable() == null) {
-            this.o = false;
+        if (m13792h().getPageDrawable() == null) {
+            this.f9848o = false;
         }
-        if (this.b.X().g().f()) {
-            this.o = false;
+        if (this.f9835b.mo2007X().mo2331g().m5817f()) {
+            this.f9848o = false;
         }
         return true;
     }
 
-    private ah f() {
+    /* renamed from: f */
+    private ah m13789f() {
         String str;
-        CharSequence g = g();
+        CharSequence g = m13791g();
         if (TextUtils.isEmpty(g)) {
             str = "";
         } else {
-            CharSequence charSequence = g;
+            CharSequence str2 = g;
         }
-        ah ahVar = (ah) a.c(null);
-        ahVar.b(this.b.G().aF());
-        ahVar.a(str);
-        ahVar.a(this.b.Z().g());
-        ahVar.b(this.b.Z().h());
+        ah ahVar = (ah) C0798a.m3712c(null);
+        ahVar.m3721b(this.f9835b.mo1992G().aH());
+        ahVar.m3719a(str2);
+        ahVar.m3718a(this.f9835b.mo2009Z().mo1198g());
+        ahVar.m3722b(this.f9835b.mo2009Z().mo1199h());
         return ahVar;
     }
 
-    private String g() {
-        String J = this.b.aa().J();
-        if (J == null) {
+    /* renamed from: g */
+    private String m13791g() {
+        String I = this.f9835b.aa().mo1286I();
+        if (I == null) {
             return null;
         }
-        if (J.length() > 100) {
-            return J.substring(0, 100);
+        if (I.length() > 100) {
+            return I.substring(0, 100);
         }
-        return J;
+        return I;
     }
 
-    private gs h() {
-        return (gs) this.b.X().d();
+    /* renamed from: h */
+    private gx m13792h() {
+        return (gx) this.f9835b.mo2007X().mo2328d();
     }
 }

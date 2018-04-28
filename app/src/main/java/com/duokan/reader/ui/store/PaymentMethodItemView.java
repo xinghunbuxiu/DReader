@@ -5,19 +5,25 @@ import android.util.AttributeSet;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
-import com.duokan.reader.domain.payment.q;
+import com.duokan.p023b.C0244f;
+import com.duokan.reader.domain.payment.C1085q;
 import com.duokan.reader.ui.general.DkLabelView;
 import com.duokan.reader.ui.general.az;
 import com.duokan.reader.ui.general.ba;
 
-public class PaymentMethodItemView extends LinearLayout implements az {
-    private RadioButton a;
-    private RadioGroup b;
-    private DkLabelView c;
-    private DkLabelView d;
-    private ba e;
-    private q f;
+public class PaymentMethodItemView extends LinearLayout implements az<C1085q> {
+    /* renamed from: a */
+    private RadioButton f11292a;
+    /* renamed from: b */
+    private RadioGroup f11293b;
+    /* renamed from: c */
+    private DkLabelView f11294c;
+    /* renamed from: d */
+    private DkLabelView f11295d;
+    /* renamed from: e */
+    private ba<C1085q> f11296e;
+    /* renamed from: f */
+    private C1085q f11297f;
 
     public PaymentMethodItemView(Context context) {
         super(context);
@@ -29,43 +35,43 @@ public class PaymentMethodItemView extends LinearLayout implements az {
 
     protected void onFinishInflate() {
         super.onFinishInflate();
-        this.a = (RadioButton) findViewById(f.store__payment_method_item_view__select);
-        this.b = (RadioGroup) findViewById(f.store__payment_method_item_view__select_container);
-        this.c = (DkLabelView) findViewById(f.store__payment_method_item_view__method_display_name);
-        this.d = (DkLabelView) findViewById(f.store__payment_method_item_view__balance_status);
-        this.a.setOnCheckedChangeListener(new bk(this));
-        this.b.clearCheck();
+        this.f11292a = (RadioButton) findViewById(C0244f.store__payment_method_item_view__select);
+        this.f11293b = (RadioGroup) findViewById(C0244f.store__payment_method_item_view__select_container);
+        this.f11294c = (DkLabelView) findViewById(C0244f.store__payment_method_item_view__method_display_name);
+        this.f11295d = (DkLabelView) findViewById(C0244f.store__payment_method_item_view__balance_status);
+        this.f11292a.setOnCheckedChangeListener(new bk(this));
+        this.f11293b.clearCheck();
     }
 
     public void setChecked(boolean z) {
         if (z) {
-            this.a.setChecked(true);
+            this.f11292a.setChecked(true);
         } else {
-            this.b.clearCheck();
+            this.f11293b.clearCheck();
         }
     }
 
     public boolean isChecked() {
-        return this.a.isChecked();
+        return this.f11292a.isChecked();
     }
 
     public void toggle() {
         if (isChecked()) {
-            this.b.clearCheck();
+            this.f11293b.clearCheck();
         } else {
-            this.a.setChecked(true);
+            this.f11292a.setChecked(true);
         }
     }
 
-    public void setOnCheckedChangeListener(ba baVar) {
-        this.e = baVar;
+    public void setOnCheckedChangeListener(ba<C1085q> baVar) {
+        this.f11296e = baVar;
     }
 
     public String getDataObjectId() {
-        return this.f.a();
+        return this.f11297f.mo1499a();
     }
 
-    public q getDataObject() {
-        return this.f;
+    public C1085q getDataObject() {
+        return this.f11297f;
     }
 }

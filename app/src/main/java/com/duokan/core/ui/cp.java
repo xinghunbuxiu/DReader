@@ -1,15 +1,16 @@
 package com.duokan.core.ui;
 
 class cp implements Runnable {
-    final /* synthetic */ co a;
+    /* renamed from: a */
+    final /* synthetic */ co f1089a;
 
     cp(co coVar) {
-        this.a = coVar;
+        this.f1089a = coVar;
     }
 
     public void run() {
-        if (this.a.c.j != null) {
-            this.a.c.j.b(this.a.c.c, this.a.c.b, this.a.b);
+        if (this.f1089a.f1088c.f865j != null) {
+            this.f1089a.f1088c.f865j.mo1698b(this.f1089a.f1088c.f858c, this.f1089a.f1088c.f857b, this.f1089a.f1087b);
         }
     }
 }

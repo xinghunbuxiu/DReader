@@ -1,40 +1,29 @@
 package com.duokan.reader.ui.reading;
 
-import android.text.TextUtils;
-import android.view.LayoutInflater;
-import android.widget.FrameLayout.LayoutParams;
-import android.widget.TextView;
+/* synthetic */ class xh {
+    /* renamed from: a */
+    static final /* synthetic */ int[] f11143a = new int[PageAnimationMode.values().length];
 
-import com.duokan.core.app.IFeature;
-import com.duokan.reader.domain.bookshelf.jn;
-import com.duokan.reader.domain.bookshelf.jo;
-import com.duokan.reader.domain.store.DkStoreBookDetail;
-
-public class xh extends ei {
-    private final jn h;
-    private final jo i;
-    private final TextView j = ((TextView) findViewById(g.reading__repair_cert_view__reason));
-
-    public xh(IFeature featrue, wl wlVar, DkStoreBookDetail dkStoreBookDetail, String str, jn jnVar, jo joVar) {
-        super(featrue, wlVar);
-        this.h = jnVar;
-        this.i = joVar;
-        this.e.addView(LayoutInflater.from(getContext()).inflate(h.reading__repair_cert_view, null), new LayoutParams(-1, -1));
-        TextView textView = (TextView) findViewById(g.reading__repair_cert_view__retry);
-        textView.setOnClickListener(new xi(this));
-        findViewById(g.reading__repair_cert_view__back).setOnClickListener(new xj(this));
-        this.j.setTextColor(this.a.R());
-        if (TextUtils.isEmpty(str)) {
-            this.j.setText(j.reading__repair_cert_view__default_reason);
-            textView.setText(j.general__shared__repair);
-            return;
+    static {
+        try {
+            f11143a[PageAnimationMode.HSCROLL.ordinal()] = 1;
+        } catch (NoSuchFieldError e) {
         }
-        this.j.setText(str);
-        textView.setText(j.general__shared__retry);
-    }
-
-    protected boolean onBack() {
-        this.i.b(this.h);
-        return super.onBack();
+        try {
+            f11143a[PageAnimationMode.THREE_DIMEN.ordinal()] = 2;
+        } catch (NoSuchFieldError e2) {
+        }
+        try {
+            f11143a[PageAnimationMode.FADE_IN.ordinal()] = 3;
+        } catch (NoSuchFieldError e3) {
+        }
+        try {
+            f11143a[PageAnimationMode.NONE.ordinal()] = 4;
+        } catch (NoSuchFieldError e4) {
+        }
+        try {
+            f11143a[PageAnimationMode.OVERLAP.ordinal()] = 5;
+        } catch (NoSuchFieldError e5) {
+        }
     }
 }

@@ -1,26 +1,33 @@
 package com.duokan.reader.ui.general;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.PointF;
 import android.view.View;
-import android.widget.FrameLayout;
+import com.duokan.core.ui.du;
+import com.duokan.core.ui.er;
 
-class fo extends FrameLayout {
-    final /* synthetic */ fs a;
-    final /* synthetic */ PagesController b;
+class fo implements du {
+    /* renamed from: a */
+    final /* synthetic */ fm f7248a;
 
-    fo(PagesController pagesController, Context context, fs fsVar) {
-        this.b = pagesController;
-        this.a = fsVar;
-        super(context);
+    fo(fm fmVar) {
+        this.f7248a = fmVar;
     }
 
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        this.b.c.a((View) this, motionEvent);
-        return this.a.d();
+    public void onTouchUp(View view, PointF pointF) {
     }
 
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.b.c.onTouch(this, motionEvent);
+    public void onTouchDown(View view, PointF pointF) {
+    }
+
+    public void onTouchCancel(View view, PointF pointF) {
+    }
+
+    /* renamed from: a */
+    public void mo527a(er erVar, View view, PointF pointF, PointF pointF2) {
+        this.f7248a.f7243e.x = Math.max(0.0f, this.f7248a.f7243e.x + pointF2.x);
+        fs k = this.f7248a.f7240a.m9244k();
+        if (k != null) {
+            this.f7248a.m10656a(k, Math.round(this.f7248a.f7243e.x), Math.round(this.f7248a.f7243e.x), 0, null);
+        }
     }
 }

@@ -1,23 +1,20 @@
 package com.duokan.reader.ui.personal;
 
-import android.content.Context;
+import java.util.ArrayList;
 
-import com.duokan.c.j;
-import com.duokan.reader.domain.cloud.DkCloudAnnotation;
-import com.duokan.reader.ui.general.ap;
+class mb implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ ArrayList f8922a;
+    /* renamed from: b */
+    final /* synthetic */ ma f8923b;
 
-class mb extends ap {
-    final /* synthetic */ DkCloudAnnotation a;
-    final /* synthetic */ lv b;
-
-    mb(lv lvVar, Context context, DkCloudAnnotation dkCloudAnnotation) {
-        this.b = lvVar;
-        this.a = dkCloudAnnotation;
-        super(context);
+    mb(ma maVar, ArrayList arrayList) {
+        this.f8923b = maVar;
+        this.f8922a = arrayList;
     }
 
-    protected void onOk() {
-        super.onOk();
-        this.b.a(new DkCloudAnnotation[]{this.a}, j.personal__reading_note_info_header_view__deleting_one_note, j.personal__reading_note_info_header_view__failed_to_delete_one_note);
+    public void run() {
+        this.f8923b.f8920a.run();
+        this.f8923b.f8921b.m12223b(this.f8922a);
     }
 }

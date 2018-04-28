@@ -1,6 +1,6 @@
 package com.duokan.reader.common.async.work;
 
-public interface IAsyncWorkProgressListener {
+public interface IAsyncWorkProgressListener<TItem extends C0523c> {
 
     public enum CheckErrorResult {
         Ignored,
@@ -8,19 +8,27 @@ public interface IAsyncWorkProgressListener {
         Failed
     }
 
-    CheckErrorResult a(c cVar, e eVar);
+    /* renamed from: a */
+    CheckErrorResult mo744a(TItem tItem, C0525e c0525e);
 
-    void a(c cVar);
+    /* renamed from: a */
+    void mo745a(TItem tItem);
 
-    void b(c cVar);
+    /* renamed from: b */
+    void mo746b(TItem tItem);
 
-    void c(c cVar);
+    /* renamed from: c */
+    void mo747c(TItem tItem);
 
-    void d(c cVar);
+    /* renamed from: d */
+    void mo748d(TItem tItem);
 
-    void e(c cVar);
+    /* renamed from: e */
+    void mo749e(TItem tItem);
 
-    void f(c cVar);
+    /* renamed from: f */
+    void mo750f(TItem tItem);
 
-    void g(c cVar);
+    /* renamed from: g */
+    void mo751g(TItem tItem);
 }

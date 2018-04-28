@@ -1,15 +1,19 @@
 package com.duokan.reader.ui.personal;
 
-class eg implements Runnable {
-    final /* synthetic */ ds a;
+import java.util.List;
 
-    eg(ds dsVar) {
-        this.a = dsVar;
+class eg implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ List f8498a;
+    /* renamed from: b */
+    final /* synthetic */ ed f8499b;
+
+    eg(ed edVar, List list) {
+        this.f8499b = edVar;
+        this.f8498a = list;
     }
 
     public void run() {
-        if (this.a.b != null && this.a.isDelayedRunnableOnActive(this)) {
-            this.a.b.i();
-        }
+        this.f8499b.f8492a.mo1902a(this.f8498a, null);
     }
 }

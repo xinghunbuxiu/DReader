@@ -1,20 +1,28 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.document.ak;
+import com.duokan.core.sys.ag;
+import com.duokan.reader.domain.bookshelf.ee;
+import java.util.List;
 
-class aas implements tb {
-    final /* synthetic */ aar a;
+class aas implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ List f9347a;
+    /* renamed from: b */
+    final /* synthetic */ ee f9348b;
+    /* renamed from: c */
+    final /* synthetic */ ag f9349c;
+    /* renamed from: d */
+    final /* synthetic */ aab f9350d;
 
-    aas(aar com_duokan_reader_ui_reading_aar) {
-        this.a = com_duokan_reader_ui_reading_aar;
+    aas(aab aab, List list, ee eeVar, ag agVar) {
+        this.f9350d = aab;
+        this.f9347a = list;
+        this.f9348b = eeVar;
+        this.f9349c = agVar;
     }
 
-    public void a(sh shVar, int i, int i2) {
-        if (this.a.a.b(4) && this.a.d.getVisibility() != 4) {
-            this.a.d.setVisibility(4);
-        }
-    }
-
-    public void a(sh shVar, ak akVar, ak akVar2) {
+    public void run() {
+        this.f9350d.f9309P.addAll(this.f9347a);
+        this.f9348b.mo1029a(this.f9347a, this.f9350d.f9307N.m861b() ? ((Boolean) this.f9350d.f9307N.m858a()).booleanValue() : true, new aat(this));
     }
 }

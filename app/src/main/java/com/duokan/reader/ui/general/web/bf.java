@@ -1,18 +1,17 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.ui.store.j;
-
 class bf implements Runnable {
-    final /* synthetic */ String a;
-    final /* synthetic */ StorePageController b;
+    /* renamed from: a */
+    final /* synthetic */ String f7623a;
+    /* renamed from: b */
+    final /* synthetic */ StorePageController f7624b;
 
     bf(StorePageController storePageController, String str) {
-        this.b = storePageController;
-        this.a = str;
+        this.f7624b = storePageController;
+        this.f7623a = str;
     }
 
     public void run() {
-        ((ReaderFeature) this.b.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new j(this.b.getContext(), this.a), null);
+        this.f7624b.mWebView.mo1815a(String.format("javascript:(function() { try { %s } catch(e) { fictionApi.log(e.message); } }())", new Object[]{this.f7623a}));
     }
 }

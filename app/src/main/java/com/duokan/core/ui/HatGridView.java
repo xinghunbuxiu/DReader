@@ -7,8 +7,8 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
@@ -17,36 +17,69 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 
+import com.duokan.p023b.C0243e;
+
 public class HatGridView extends ViewGroup implements Scrollable {
-    private Runnable A;
-    private OnScrollListener B;
-    private am C;
-    private final ak a;
-    private final FrameLayout b;
-    private final FrameLayout c;
-    private final FrameLayout d;
-    private final LinearLayout e;
-    private final FrameLayout f;
-    private final FrameLayout g;
-    private final FrameLayout h;
-    private final FrameLayout i;
-    private final FrameLayout j;
-    private final ImageView k;
-    private final Rect l;
-    private final ap m;
-    private OverScrollMode n;
-    private int o;
-    private int p;
-    private boolean q;
-    private boolean r;
-    private int s;
-    private int t;
-    private int u;
-    private boolean v;
-    private int w;
-    private HatTipState x;
-    private int y;
-    private ai z;
+    /* renamed from: A */
+    private Runnable f807A;
+    /* renamed from: B */
+    private cg f808B;
+    /* renamed from: C */
+    private am f809C;
+    /* renamed from: D */
+    private int f810D;
+    /* renamed from: a */
+    private final ak f811a;
+    /* renamed from: b */
+    private final FrameLayout f812b;
+    /* renamed from: c */
+    private final FrameLayout f813c;
+    /* renamed from: d */
+    private final FrameLayout f814d;
+    /* renamed from: e */
+    private final LinearLayout f815e;
+    /* renamed from: f */
+    private final FrameLayout f816f;
+    /* renamed from: g */
+    private final FrameLayout f817g;
+    /* renamed from: h */
+    private final FrameLayout f818h;
+    /* renamed from: i */
+    private final FrameLayout f819i;
+    /* renamed from: j */
+    private final FrameLayout f820j;
+    /* renamed from: k */
+    private final ImageView f821k;
+    /* renamed from: l */
+    private final Rect f822l;
+    /* renamed from: m */
+    private final ap f823m;
+    /* renamed from: n */
+    private OverScrollMode f824n;
+    /* renamed from: o */
+    private int f825o;
+    /* renamed from: p */
+    private int f826p;
+    /* renamed from: q */
+    private boolean f827q;
+    /* renamed from: r */
+    private boolean f828r;
+    /* renamed from: s */
+    private int f829s;
+    /* renamed from: t */
+    private int f830t;
+    /* renamed from: u */
+    private int f831u;
+    /* renamed from: v */
+    private boolean f832v;
+    /* renamed from: w */
+    private int f833w;
+    /* renamed from: x */
+    private HatTipState f834x;
+    /* renamed from: y */
+    private int f835y;
+    /* renamed from: z */
+    private ai f836z;
 
     public enum HatTipState {
         UNDOCKED,
@@ -61,794 +94,769 @@ public class HatGridView extends ViewGroup implements Scrollable {
 
     public HatGridView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.l = new Rect();
-        this.n = OverScrollMode.ALWAYS;
-        this.o = 0;
-        this.p = 0;
-        this.q = true;
-        this.r = true;
-        this.s = 1;
-        this.t = 0;
-        this.u = 0;
-        this.v = false;
-        this.w = -1;
-        this.x = HatTipState.UNDOCKED;
-        this.y = 0;
-        this.z = null;
-        this.A = null;
-        this.B = null;
-        this.C = null;
+        this.f822l = new Rect();
+        this.f824n = OverScrollMode.ALWAYS;
+        this.f825o = 0;
+        this.f826p = 0;
+        this.f827q = true;
+        this.f828r = true;
+        this.f829s = 1;
+        this.f830t = 0;
+        this.f831u = 0;
+        this.f832v = false;
+        this.f833w = -1;
+        this.f834x = HatTipState.UNDOCKED;
+        this.f835y = 0;
+        this.f836z = null;
+        this.f807A = null;
+        this.f808B = null;
+        this.f809C = null;
         setWillNotDraw(false);
-        this.j = new FrameLayout(context);
-        this.d = new y(this, context);
-        this.f = new aa(this, context);
-        this.d.addView(this.f, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-        this.e = new ab(this, context);
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        layoutParams.gravity = Gravity.BOTTOM;
-        this.e.setOrientation(LinearLayout.VERTICAL);
-        this.e.setClipChildren(false);
-        this.e.setClipToPadding(false);
-        this.d.addView(this.e, layoutParams);
-        this.g = new FrameLayout(context);
-        this.g.setClipChildren(false);
-        this.g.setClipToPadding(false);
-        this.g.setMinimumHeight(UTools.getMinimumHeight(getContext()));
-        this.e.addView(this.g, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-        this.h = new FrameLayout(context);
-        this.h.setClipChildren(false);
-        this.h.setClipToPadding(false);
-        this.e.addView(this.h, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-        this.i = new FrameLayout(context);
-        this.e.addView(this.i, new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-        this.c = new ac(this, context);
-        this.b = new ad(this, context);
-        this.a = new ak(this, context);
-        this.n = this.a.getVerticalOverScrollMode();
-        this.a.setThumbEnabled(true);
-        this.a.setRowSpacing(this.t);
-        this.a.setNumColumns(this.s);
-        this.a.setOnScrollListener(new ae(this));
-        addView(this.a, new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
-        addView(this.c, new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-        addView(this.b, new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-        addView(this.d, new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-        addView(this.j, new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-        this.m = new ap();
-        this.a.setAdapter(this.m);
-        this.k = new ImageView(context);
-        this.k.setScaleType(ScaleType.CENTER);
-        this.k.setImageResource(R.drawable.general__hat_grid_view__back_to_top);
-        this.k.setBackgroundResource(R.drawable.general__shared__button_circular_48dip);
-        addView(this.k, new ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-        this.k.setOnClickListener(new af(this));
-        this.k.setEnabled(false);
-        this.k.setVisibility(INVISIBLE);
+        this.f820j = new FrameLayout(context);
+        this.f814d = new C0397y(this, context);
+        this.f816f = new aa(this, context);
+        this.f814d.addView(this.f816f, new LayoutParams(-1, -1));
+        this.f815e = new ab(this, context);
+        ViewGroup.LayoutParams layoutParams = new LayoutParams(-1, -2);
+        layoutParams.gravity = 80;
+        this.f815e.setOrientation(1);
+        this.f815e.setClipChildren(false);
+        this.f815e.setClipToPadding(false);
+        this.f814d.addView(this.f815e, layoutParams);
+        this.f817g = new FrameLayout(context);
+        this.f817g.setClipChildren(false);
+        this.f817g.setClipToPadding(false);
+        this.f817g.setMinimumHeight(dv.m1962g(getContext()));
+        this.f815e.addView(this.f817g, new LinearLayout.LayoutParams(-1, -2));
+        this.f818h = new FrameLayout(context);
+        this.f818h.setClipChildren(false);
+        this.f818h.setClipToPadding(false);
+        this.f815e.addView(this.f818h, new LinearLayout.LayoutParams(-1, -1));
+        this.f819i = new FrameLayout(context);
+        this.f815e.addView(this.f819i, new LinearLayout.LayoutParams(-1, -2));
+        this.f813c = new ac(this, context);
+        this.f812b = new ad(this, context);
+        this.f811a = new ak(this, context);
+        this.f824n = this.f811a.getVerticalOverScrollMode();
+        this.f811a.setThumbEnabled(true);
+        this.f811a.setRowSpacing(this.f830t);
+        this.f811a.setNumColumns(this.f829s);
+        this.f811a.setOnScrollListener(new ae(this));
+        addView(this.f811a, new ViewGroup.LayoutParams(-1, -1));
+        addView(this.f813c, new ViewGroup.LayoutParams(-1, -2));
+        addView(this.f812b, new ViewGroup.LayoutParams(-1, -2));
+        addView(this.f814d, new ViewGroup.LayoutParams(-1, -2));
+        addView(this.f820j, new ViewGroup.LayoutParams(-1, -2));
+        this.f823m = new ap();
+        this.f811a.setAdapter(this.f823m);
+        this.f821k = new ImageView(context);
+        this.f821k.setScaleType(ScaleType.CENTER);
+        this.f821k.setImageResource(C0243e.general__hat_grid_view__back_to_top);
+        this.f821k.setBackgroundResource(C0243e.general__shared__button_circular_48dip);
+        addView(this.f821k, new ViewGroup.LayoutParams(-2, -2));
+        this.f821k.setOnClickListener(new af(this));
+        this.f821k.setEnabled(false);
+        this.f821k.setVisibility(4);
     }
 
-    class ae implements OnScrollListener {
-        final  HatGridView a;
-
-        ae(HatGridView hatGridView) {
-            this.a = hatGridView;
-        }
-
-        public void a(Scrollable scrollable, ScrollState scrollState, ScrollState scrollState2) {
-            if (scrollState2 == ScrollState.IDLE) {
-                if (this.a.x == HatTipState.DOCKING) {
-                    this.a.a(HatTipState.DOCKED);
-                } else if (this.a.x == HatTipState.UNDOCKING) {
-                    this.a.a(HatTipState.UNDOCKED);
-                }
-            }
-            if (scrollState == ScrollState.DRAG) {
-                this.a.y = 0;
-                if (!this.a.b()) {
-                    this.a.a(HatTipState.UNDOCKING);
-                }
-            }
-            this.a.a(scrollState, scrollState2);
-            if (this.a.B != null) {
-                this.a.B.a(scrollable, scrollState, scrollState2);
-            }
-        }
-
-        public void a(Scrollable scrollable, boolean z) {
-            int i = this.a.a.getViewportBounds().top;
-            int height = this.a.a.getViewportBounds().bottom - this.a.a.getHeight();
-            int scrollY = this.a.d.getScrollY() + this.a.t();
-            if (this.a.r || i < scrollY) {
-                scrollY = Math.max(0, Math.min((-this.a.t()) + i, (-this.a.t()) + this.a.s()));
-                this.a.d.scrollTo(0, scrollY);
-                this.a.f.scrollTo(0, (-scrollY) / 2);
-                this.a.e.invalidate();
-            } else {
-                this.a.d.invalidate();
-            }
-            this.a.c.offsetTopAndBottom((((this.a.a.getPaddingTop() - this.a.j()) + this.a.h()) - i) - this.a.c.getTop());
-            this.a.b.offsetTopAndBottom(((((this.a.a.getContentHeight() - this.a.l.bottom) - this.a.k()) - this.a.i()) - height) - this.a.b.getTop());
-            if (this.a.B != null) {
-                this.a.B.a(scrollable, z);
-            }
-        }
-    }
-    class aa extends FrameLayout {
-        final HatGridView a;
-
-        public aa(HatGridView hatGridView, Context context) {
-            super(context);
-            this.a = hatGridView;
-        }
-
-        protected void dispatchDraw(Canvas canvas) {
-            canvas.clipRect(0, getScrollY(), getWidth(), (getScrollY() + getHeight()) - this.a.i.getHeight());
-            super.dispatchDraw(canvas);
-        }
-    }
     public final av getAdapter() {
-        return this.m.b();
+        return this.f823m.m1593b();
     }
 
     public final void setAdapter(aj ajVar) {
-        this.m.a(ajVar);
+        this.f823m.m1591a(ajVar);
     }
 
     public final int getStretchMode() {
-        return this.a.getStretchMode();
+        return this.f811a.getStretchMode();
     }
 
     public final void setStretchMode(int i) {
-        this.a.setStretchMode(i);
+        this.f811a.setStretchMode(i);
     }
 
     public final Drawable getItemsBackground() {
-        return this.a.getItemsBackground();
+        return this.f811a.getItemsBackground();
     }
 
     public final void setItemsBackground(int i) {
-        this.a.setItemsBackground(i);
+        this.f811a.setItemsBackground(i);
     }
 
     public final void setItemsBackground(Drawable drawable) {
-        this.a.setItemsBackground(drawable);
+        this.f811a.setItemsBackground(drawable);
     }
 
-    public final View a(int i) {
-        return this.a.g(i);
+    /* renamed from: a */
+    public final View m1241a(int i) {
+        return this.f811a.m1141g(i);
     }
 
     public final int getNumColumns() {
-        return this.a.getNumColumns();
+        return this.f811a.getNumColumns();
     }
 
     public final void setNumColumns(int i) {
-        this.a.setNumColumns(i);
+        this.f811a.setNumColumns(i);
     }
 
     public final int getColumnCount() {
-        return this.a.getColumnCount();
+        return this.f811a.getColumnCount();
     }
 
     public final Drawable getColumnDivider() {
-        return this.a.getColumnDivider();
+        return this.f811a.getColumnDivider();
     }
 
     public final void setColumnDivider(Drawable drawable) {
-        this.a.setColumnDivider(drawable);
+        this.f811a.setColumnDivider(drawable);
     }
 
     public final int getColumnSpacing() {
-        return this.a.getDesiredColumnSpacing();
+        return this.f811a.getDesiredColumnSpacing();
     }
 
     public final void setColumnSpacing(int i) {
-        this.a.setDesiredColumnSpacing(i);
+        this.f811a.setDesiredColumnSpacing(i);
     }
 
     public final int getRowCount() {
-        return this.a.getRowCount();
+        return this.f811a.getRowCount();
     }
 
     public final Drawable getRowBackground() {
-        return this.a.getRowBackground();
+        return this.f811a.getRowBackground();
     }
 
     public final void setRowBackground(int i) {
-        this.a.setRowBackground(getResources().getDrawable(i));
+        this.f811a.setRowBackground(getResources().getDrawable(i));
     }
 
     public final void setRowBackground(Drawable drawable) {
-        this.a.setRowBackground(drawable);
+        this.f811a.setRowBackground(drawable);
     }
 
     public final Drawable getRowDivider() {
-        return this.a.getRowDivider();
+        return this.f811a.getRowDivider();
     }
 
     public final void setRowDivider(int i) {
-        this.a.setRowDivider(i);
+        this.f811a.setRowDivider(i);
     }
 
     public final void setRowDivider(Drawable drawable) {
-        this.a.setRowDivider(drawable);
+        this.f811a.setRowDivider(drawable);
     }
 
     public final int getRowSpacing() {
-        return this.a.getRowSpacing();
+        return this.f811a.getRowSpacing();
     }
 
     public final void setRowSpacing(int i) {
-        this.a.setRowSpacing(i);
+        this.f811a.setRowSpacing(i);
     }
 
     public final ScrollState getGridScrollState() {
-        return this.a.getScrollState();
+        return this.f811a.getScrollState();
     }
 
     public final int getGridScrollX() {
-        return this.a.getScrollX();
+        return this.f811a.getScrollX();
     }
 
     public final int getGridScrollY() {
-        return this.a.getScrollY();
+        return this.f811a.getScrollY();
     }
 
     public final void setOnItemClickListener(an anVar) {
-        this.a.setOnItemClickListener(new ag(this, anVar));
+        this.f811a.setOnItemClickListener(new ag(this, anVar));
     }
 
     public final void setOnItemLongPressListener(ao aoVar) {
-        this.a.setOnItemLongPressListener(new ah(this, aoVar));
+        this.f811a.setOnItemLongPressListener(new ah(this, aoVar));
     }
 
     public final am getOnHatTipStateChange() {
-        return this.C;
+        return this.f809C;
     }
 
     public final void setOnHatTipStateChange(am amVar) {
-        this.C = amVar;
+        this.f809C = amVar;
     }
 
     public final int getHeaderSink() {
-        return this.o;
+        return this.f825o;
     }
 
     public final void setHeaderSink(int i) {
-        this.o = i;
+        this.f825o = i;
         requestLayout();
     }
 
     public final int getFooterRise() {
-        return this.p;
+        return this.f826p;
     }
 
     public final void setFooterRise(int i) {
-        this.p = i;
+        this.f826p = i;
         requestLayout();
     }
 
     public final View getTitleView() {
-        if (this.j.getChildCount() > 0) {
-            return this.j.getChildAt(0);
+        if (this.f820j.getChildCount() > 0) {
+            return this.f820j.getChildAt(0);
         }
         return null;
     }
 
     public final void setTitleView(View view) {
-        this.j.removeAllViews();
-        this.j.setClickable(false);
+        this.f820j.removeAllViews();
+        this.f820j.setClickable(false);
         if (view != null) {
             if (view.getLayoutParams() == null) {
-                view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT, 17));
+                view.setLayoutParams(new LayoutParams(-1, -2, 17));
             }
-            this.j.addView(view);
-            this.j.setClickable(true);
+            this.f820j.addView(view);
+            this.f820j.setClickable(true);
         }
     }
 
     public final void setHatBackgroundView(View view) {
-        this.f.removeAllViews();
+        this.f816f.removeAllViews();
         if (view != null) {
             if (view.getLayoutParams() == null) {
-                view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+                view.setLayoutParams(new LayoutParams(-1, -1));
             }
-            this.f.addView(view);
+            this.f816f.addView(view);
         }
     }
 
     public final View getHatTipView() {
-        if (this.g.getChildCount() > 0) {
-            return this.g.getChildAt(0);
+        if (this.f817g.getChildCount() > 0) {
+            return this.f817g.getChildAt(0);
         }
         return null;
     }
 
-    public final View b(int i) {
-        this.g.removeAllViews();
+    /* renamed from: b */
+    public final View m1249b(int i) {
+        this.f817g.removeAllViews();
         if (i == 0) {
             return null;
         }
-        View inflate = LayoutInflater.from(getContext()).inflate(i, this.g, false);
-        this.g.addView(inflate);
+        View inflate = LayoutInflater.from(getContext()).inflate(i, this.f817g, false);
+        this.f817g.addView(inflate);
         return inflate;
     }
 
     public final void setHatTipView(View view) {
-        this.g.removeAllViews();
+        this.f817g.removeAllViews();
         if (view != null) {
             if (view.getLayoutParams() == null) {
-                view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+                view.setLayoutParams(new LayoutParams(-1, -2));
             }
-            this.g.addView(view);
+            this.f817g.addView(view);
         }
     }
 
     public final HatTipState getHatTipState() {
-        return this.x;
+        return this.f834x;
     }
 
     public final boolean getHatTipDockable() {
-        return this.v;
+        return this.f832v;
     }
 
     public final void setHatTipDockable(boolean z) {
-        if (this.v != z) {
-            this.v = z;
-            if (!this.v) {
+        if (this.f832v != z) {
+            this.f832v = z;
+            if (!this.f832v) {
                 setHatTipDockable(false);
                 if (getScrollState() != ScrollState.DRAG) {
-                    g();
+                    m1266g();
                 }
             }
         }
     }
 
     public final void setHatTipDockableHeight(int i) {
-        this.w = i;
+        this.f833w = i;
     }
 
-    public final void a(int i, int i2, int i3, int i4) {
-        this.g.setPadding(i, i2, i3, i4);
+    /* renamed from: a */
+    public final void m1242a(int i, int i2, int i3, int i4) {
+        this.f817g.setPadding(i, i2, i3, i4);
     }
 
-    public final View c(int i) {
-        this.h.removeAllViews();
+    /* renamed from: c */
+    public final View m1253c(int i) {
+        this.f818h.removeAllViews();
         if (i == 0) {
             return null;
         }
-        View inflate = LayoutInflater.from(getContext()).inflate(i, this.h, false);
-        this.h.addView(inflate);
+        View inflate = LayoutInflater.from(getContext()).inflate(i, this.f818h, false);
+        this.f818h.addView(inflate);
         return inflate;
     }
 
     public final void setHatBodyView(View view) {
-        this.h.removeAllViews();
+        this.f818h.removeAllViews();
         if (view != null) {
             if (view.getLayoutParams() == null) {
-                view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+                view.setLayoutParams(new LayoutParams(-1, -2));
             }
-            this.h.addView(view);
+            this.f818h.addView(view);
         }
     }
 
     public final View getHatBodyView() {
-        if (this.h.getChildCount() >= 1) {
-            return this.h.getChildAt(0);
+        if (this.f818h.getChildCount() >= 1) {
+            return this.f818h.getChildAt(0);
         }
         return null;
     }
 
     public final int getHatBodyVisibleHeight() {
-        return (this.d.getHeight() - u()) - this.i.getHeight();
+        return (this.f814d.getHeight() - m1231u()) - this.f819i.getHeight();
     }
 
     public final View getBrimView() {
-        if (this.i.getChildCount() > 0) {
-            return this.i.getChildAt(0);
+        if (this.f819i.getChildCount() > 0) {
+            return this.f819i.getChildAt(0);
         }
         return null;
     }
 
     public final void setBrimView(View view) {
-        this.i.removeAllViews();
+        this.f819i.removeAllViews();
         if (view != null) {
             if (view.getLayoutParams() == null) {
-                view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+                view.setLayoutParams(new LayoutParams(-1, -2));
             }
-            this.i.addView(view);
+            this.f819i.addView(view);
         }
     }
 
     public final View getHatView() {
-        return this.e;
+        return this.f815e;
     }
 
     public final int getHatVisibleHeight() {
-        return this.d.getHeight() - u();
+        return this.f814d.getHeight() - m1231u();
     }
 
     public final View getHatBackgroundView() {
-        return this.f.getChildAt(0);
+        return this.f816f.getChildAt(0);
     }
 
     public final void setFastToTopEnabled(boolean z) {
-        this.k.setEnabled(z);
+        this.f821k.setEnabled(z);
     }
 
     public final int getGridPaddingLeft() {
-        return this.l.left;
+        return this.f822l.left;
     }
 
     public final int getGridPaddingRight() {
-        return this.l.right;
+        return this.f822l.right;
     }
 
     public final int getGridPaddingTop() {
-        return this.l.top;
+        return this.f822l.top;
     }
 
     public final int getGridPaddingBottom() {
-        return this.l.bottom;
+        return this.f822l.bottom;
     }
 
-    public final void b(int i, int i2, int i3, int i4) {
-        this.l.set(i, i2, i3, i4);
-        this.c.setPadding(i, 0, i3, 0);
-        this.b.setPadding(i, 0, i3, 0);
+    /* renamed from: b */
+    public final void m1250b(int i, int i2, int i3, int i4) {
+        this.f822l.set(i, i2, i3, i4);
+        this.f813c.setPadding(i, 0, i3, 0);
+        this.f812b.setPadding(i, 0, i3, 0);
         requestLayout();
         invalidate();
     }
 
-    public final void c(int i, int i2, int i3, int i4) {
-        this.c.setPadding(i, i2, i3, i4);
+    /* renamed from: c */
+    public final void m1255c(int i, int i2, int i3, int i4) {
+        this.f813c.setPadding(i, i2, i3, i4);
     }
 
-    public final void d(int i, int i2, int i3, int i4) {
-        this.b.setPadding(i, i2, i3, i4);
+    /* renamed from: d */
+    public final void m1257d(int i, int i2, int i3, int i4) {
+        this.f812b.setPadding(i, i2, i3, i4);
     }
 
     public final int getItemCount() {
-        return this.a.getItemCount();
+        return this.f811a.getItemCount();
     }
 
     public final View[] getItemViews() {
-        return this.a.getItemViews();
+        return this.f811a.getItemViews();
     }
 
     public final int[] getVisibleItemIndices() {
-        return this.a.getVisibleItemIndices();
+        return this.f811a.getVisibleItemIndices();
     }
 
     public final int getFirstVisibleItemIndex() {
-        return this.a.getFirstVisibleItemIndex();
+        return this.f811a.getFirstVisibleItemIndex();
     }
 
     public final int getLastVisibleItemIndex() {
-        return this.a.getLastVisibleItemIndex();
+        return this.f811a.getLastVisibleItemIndex();
     }
 
     public final int getVisibleItemCount() {
-        return this.a.getVisibleItemCount();
+        return this.f811a.getVisibleItemCount();
     }
 
     public final Rect getPreviewExtents() {
-        return this.a.getPreviewExtents();
+        return this.f811a.getPreviewExtents();
     }
 
-    public final void e(int i, int i2, int i3, int i4) {
-        this.a.a(i, i2, i3, i4);
+    /* renamed from: e */
+    public final void m1260e(int i, int i2, int i3, int i4) {
+        this.f811a.m1111a(i, i2, i3, i4);
     }
 
-    public void d(int i) {
-        if (i >= 0 && i < this.a.getGroupCount()) {
-            this.a.b(i);
-            Rect c = this.a.c(i);
-            int height = this.j.getHeight() + this.i.getHeight();
-            if (c.top < this.a.getViewportBounds().top + height) {
-                this.a.scrollBy(0, c.top - (height + this.a.getViewportBounds().top));
+    /* renamed from: d */
+    public void m1256d(int i) {
+        if (i >= 0 && i < this.f811a.getGroupCount()) {
+            this.f811a.mo451b(i);
+            Rect c = this.f811a.m1179c(i);
+            int height = this.f820j.getHeight() + this.f819i.getHeight();
+            if (c.top < this.f811a.getViewportBounds().top + height) {
+                this.f811a.scrollBy(0, c.top - (height + this.f811a.getViewportBounds().top));
             }
-            this.a.e();
+            this.f811a.m1138e();
         }
     }
 
-    public final void e(int i) {
-        if (i >= 0 && i < this.a.getItemCount()) {
-            this.a.i(i);
-            Rect h = this.a.h(i);
-            int height = this.j.getHeight() + this.i.getHeight();
-            if (h.top < this.a.getViewportBounds().top + height) {
-                this.a.scrollBy(0, h.top - (height + this.a.getViewportBounds().top));
+    /* renamed from: e */
+    public final void m1259e(int i) {
+        if (i >= 0 && i < this.f811a.getItemCount()) {
+            this.f811a.m1148i(i);
+            Rect h = this.f811a.m1144h(i);
+            int height = this.f820j.getHeight() + this.f819i.getHeight();
+            if (h.top < this.f811a.getViewportBounds().top + height) {
+                this.f811a.scrollBy(0, h.top - (height + this.f811a.getViewportBounds().top));
             }
-            this.a.e();
+            this.f811a.m1138e();
         }
     }
 
     public final int getGroupCount() {
-        return this.a.getGroupCount();
+        return this.f811a.getGroupCount();
     }
 
-    public final int f(int i) {
-        return this.a.a(i);
+    /* renamed from: f */
+    public final int m1262f(int i) {
+        return this.f811a.mo445a(i);
     }
 
-    public final boolean a() {
-        return this.a.getScrollY() <= (n() - r()) - this.j.getHeight();
+    /* renamed from: a */
+    public final boolean m1248a() {
+        return this.f811a.getScrollY() <= (m1217n() - m1225r()) - this.f820j.getHeight();
     }
 
-    public final boolean b() {
-        return q() > 0 && this.a.getScrollY() <= (n() - q()) - this.j.getHeight();
+    /* renamed from: b */
+    public final boolean m1252b() {
+        return m1223q() > 0 && this.f811a.getScrollY() <= (m1217n() - m1223q()) - this.f820j.getHeight();
     }
 
-    public final Rect g(int i) {
-        return this.a.h(i);
+    /* renamed from: g */
+    public final Rect m1265g(int i) {
+        return this.f811a.m1144h(i);
     }
 
     public final void setClipGridToBrim(boolean z) {
-        this.q = z;
+        this.f827q = z;
         invalidate();
     }
 
     public final void setHatPushable(boolean z) {
-        this.r = z;
+        this.f828r = z;
         scrollBy(0, 0);
     }
 
-    public final void c() {
-        a(HatTipState.UNDOCKING);
+    /* renamed from: c */
+    public final void m1254c() {
+        m1191a(HatTipState.UNDOCKING);
         if (getScrollState() != ScrollState.DRAG) {
-            g();
+            m1266g();
+        }
+    }
+
+    public final void setMinScrollY(int i) {
+        this.f810D = i;
+        if (this.f811a.getViewportBounds().top < i) {
+            this.f811a.scrollTo(0, i);
         }
     }
 
     public int getContentWidth() {
-        return this.a.getContentWidth();
+        return this.f811a.getContentWidth();
     }
 
     public int getContentHeight() {
-        return this.a.getContentHeight();
+        return this.f811a.getContentHeight();
     }
 
     public boolean getThumbEnabled() {
-        return this.a.getThumbEnabled();
+        return this.f811a.getThumbEnabled();
     }
 
     public void setThumbEnabled(boolean z) {
-        this.a.setThumbEnabled(z);
+        this.f811a.setThumbEnabled(z);
     }
 
     public boolean getSeekEnabled() {
-        return this.a.getSeekEnabled();
+        return this.f811a.getSeekEnabled();
     }
 
     public void setSeekEnabled(boolean z) {
-        this.a.setSeekEnabled(z);
+        this.f811a.setSeekEnabled(z);
     }
 
     public int getHorizontalThumbMarginLeft() {
-        return this.a.getHorizontalThumbMarginLeft();
+        return this.f811a.getHorizontalThumbMarginLeft();
     }
 
     public int getHorizontalThumbMarginTop() {
-        return this.a.getHorizontalThumbMarginTop();
+        return this.f811a.getHorizontalThumbMarginTop();
     }
 
     public int getHorizontalThumbMarginRight() {
-        return this.a.getHorizontalThumbMarginRight();
+        return this.f811a.getHorizontalThumbMarginRight();
     }
 
     public int getHorizontalThumbMarginBottom() {
-        return this.a.getHorizontalThumbMarginBottom();
+        return this.f811a.getHorizontalThumbMarginBottom();
     }
 
     public int getVerticalThumbMarginLeft() {
-        return this.a.getVerticalThumbMarginLeft();
+        return this.f811a.getVerticalThumbMarginLeft();
     }
 
     public int getVerticalThumbMarginTop() {
-        return this.a.getVerticalThumbMarginTop();
+        return this.f811a.getVerticalThumbMarginTop();
     }
 
     public int getVerticalThumbMarginRight() {
-        return this.a.getVerticalThumbMarginRight();
+        return this.f811a.getVerticalThumbMarginRight();
     }
 
     public int getVerticalThumbMarginBottom() {
-        return this.a.getVerticalThumbMarginBottom();
+        return this.f811a.getVerticalThumbMarginBottom();
     }
 
-    public void f(int i, int i2, int i3, int i4) {
-        this.a.b(i, i2, i3, i4);
+    /* renamed from: f */
+    public void m1264f(int i, int i2, int i3, int i4) {
+        this.f811a.m1124b(i, i2, i3, i4);
     }
 
     public Drawable getHorizontalThumbDrawable() {
-        return this.a.getHorizontalThumbDrawable();
+        return this.f811a.getHorizontalThumbDrawable();
     }
 
     public void setHorizontalThumbDrawable(Drawable drawable) {
-        this.a.setHorizontalThumbDrawable(drawable);
+        this.f811a.setHorizontalThumbDrawable(drawable);
     }
 
     public Drawable getVerticalThumbDrawable() {
-        return this.a.getVerticalThumbDrawable();
+        return this.f811a.getVerticalThumbDrawable();
     }
 
     public void setVerticalThumbDrawable(Drawable drawable) {
-        this.a.setVerticalThumbDrawable(drawable);
+        this.f811a.setVerticalThumbDrawable(drawable);
     }
 
     public Drawable getHorizontalSeekDrawable() {
-        return this.a.getHorizontalSeekDrawable();
+        return this.f811a.getHorizontalSeekDrawable();
     }
 
     public void setHorizontalSeekDrawable(Drawable drawable) {
-        this.a.setHorizontalSeekDrawable(drawable);
+        this.f811a.setHorizontalSeekDrawable(drawable);
     }
 
     public Drawable getVerticalSeekDrawable() {
-        return this.a.getVerticalSeekDrawable();
+        return this.f811a.getVerticalSeekDrawable();
     }
 
     public void setVerticalSeekDrawable(Drawable drawable) {
-        this.a.setVerticalSeekDrawable(drawable);
+        this.f811a.setVerticalSeekDrawable(drawable);
     }
 
     public et getScrollDetector() {
-        return this.a.getScrollDetector();
+        return this.f811a.getScrollDetector();
     }
 
     public final ScrollState getScrollState() {
-        return this.a.getScrollState();
+        return this.f811a.getScrollState();
     }
 
     public final int getIdleTime() {
-        return this.a.getIdleTime();
+        return this.f811a.getIdleTime();
     }
 
     public final int getScrollTime() {
-        return this.a.getScrollTime();
+        return this.f811a.getScrollTime();
     }
 
     public int getScrollFinalX() {
-        return this.a.getScrollFinalX();
+        return this.f811a.getScrollFinalX();
     }
 
     public int getScrollFinalY() {
-        return this.a.getScrollFinalY();
+        return this.f811a.getScrollFinalY();
     }
 
     public final void setScrollInterpolator(Interpolator interpolator) {
-        this.a.setScrollInterpolator(interpolator);
+        this.f811a.setScrollInterpolator(interpolator);
     }
 
-    public void a(View view, boolean z) {
-        this.a.a(view, z);
+    /* renamed from: a */
+    public void mo435a(View view, boolean z) {
+        this.f811a.mo435a(view, z);
     }
 
     public OverScrollMode getHorizontalOverScrollMode() {
-        return this.a.getHorizontalOverScrollMode();
+        return this.f811a.getHorizontalOverScrollMode();
     }
 
     public void setHorizontalOverScrollMode(OverScrollMode overScrollMode) {
-        this.a.setHorizontalOverScrollMode(overScrollMode);
+        this.f811a.setHorizontalOverScrollMode(overScrollMode);
     }
 
     public OverScrollMode getVerticalOverScrollMode() {
-        return this.n;
+        return this.f824n;
     }
 
     public void setVerticalOverScrollMode(OverScrollMode overScrollMode) {
-        OverScrollMode overScrollMode2 = this.n;
-        this.n = overScrollMode;
-        if (this.a.getVerticalOverScrollMode() == overScrollMode2) {
-            this.a.setVerticalOverScrollMode(this.n);
+        OverScrollMode overScrollMode2 = this.f824n;
+        this.f824n = overScrollMode;
+        if (this.f811a.getVerticalOverScrollMode() == overScrollMode2) {
+            this.f811a.setVerticalOverScrollMode(this.f824n);
         }
     }
 
     public final int getMaxOverScrollWidth() {
-        return this.a.getMaxOverScrollWidth();
+        return this.f811a.getMaxOverScrollWidth();
     }
 
     public final void setMaxOverScrollWidth(int i) {
-        this.a.setMaxOverScrollWidth(i);
+        this.f811a.setMaxOverScrollWidth(i);
     }
 
     public final int getMaxOverScrollHeight() {
-        return this.a.getMaxOverScrollHeight();
+        return this.f811a.getMaxOverScrollHeight();
     }
 
     public final void setMaxOverScrollHeight(int i) {
-        this.a.setMaxOverScrollHeight(i);
+        this.f811a.setMaxOverScrollHeight(i);
     }
 
     public final Rect getViewportBounds() {
-        return this.a.getViewportBounds();
+        return this.f811a.getViewportBounds();
     }
 
     public void setOnContentBoundsChangedListener(cf cfVar) {
-        this.a.setOnContentBoundsChangedListener(cfVar);
+        this.f811a.setOnContentBoundsChangedListener(cfVar);
     }
 
-    public final void setOnScrollListener(OnScrollListener cgVar) {
-        this.B = cgVar;
+    public final void setOnScrollListener(cg cgVar) {
+        this.f808B = cgVar;
     }
 
-    public final boolean d() {
-        return this.a.c();
+    /* renamed from: d */
+    public final boolean m1258d() {
+        return this.f811a.m1132c();
     }
 
-    public final boolean e() {
-        return this.a.d();
+    /* renamed from: e */
+    public final boolean m1261e() {
+        return this.f811a.m1135d();
     }
 
-    public final void a(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
-        this.a.a(i, i2, i3, runnable, runnable2);
+    /* renamed from: a */
+    public final void mo434a(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
+        this.f811a.mo434a(i, i2, i3, runnable, runnable2);
     }
 
-    public void f() {
-        this.a.e();
+    /* renamed from: b */
+    public final void m1251b(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
+        this.f811a.m1125b(i, i2, i3, runnable, runnable2);
     }
 
-    public void g() {
-        this.a.f();
+    /* renamed from: f */
+    public void m1263f() {
+        this.f811a.m1138e();
+    }
+
+    /* renamed from: g */
+    public void m1266g() {
+        this.f811a.m1139f();
     }
 
     public void scrollBy(int i, int i2) {
-        this.a.scrollBy(i, i2);
+        this.f811a.scrollBy(i, i2);
     }
 
     public void scrollTo(int i, int i2) {
-        this.a.scrollTo(i, i2);
+        this.f811a.scrollTo(i, i2);
     }
 
     public void setEnabled(boolean z) {
-        this.a.setEnabled(z);
+        this.f811a.setEnabled(z);
         super.setEnabled(z);
     }
 
     public void draw(Canvas canvas) {
         super.draw(canvas);
-        canvas.translate((float) (-this.a.getScrollX()), (float) (-this.a.getScrollY()));
-        if (this.a.c(canvas)) {
+        canvas.translate((float) (-this.f811a.getScrollX()), (float) (-this.f811a.getScrollY()));
+        if (this.f811a.m1411c(canvas)) {
             invalidate();
         }
-        canvas.translate((float) this.a.getScrollX(), (float) this.a.getScrollY());
+        canvas.translate((float) this.f811a.getScrollX(), (float) this.f811a.getScrollY());
     }
 
     protected void onMeasure(int i, int i2) {
         int i3 = 0;
         int paddingLeft = getPaddingLeft() + getPaddingRight();
         int paddingTop = getPaddingTop() + getPaddingBottom();
-        measureChild(this.j, i, i2);
-        if (this.e.getPaddingTop() != this.j.getMeasuredHeight()) {
-            this.e.setPadding(0, this.j.getMeasuredHeight(), 0, 0);
+        measureChild(this.f820j, i, i2);
+        if (this.f815e.getPaddingTop() != this.f820j.getMeasuredHeight()) {
+            this.f815e.setPadding(0, this.f820j.getMeasuredHeight(), 0, 0);
         }
-        measureChild(this.d, i, MeasureSpec.makeMeasureSpec(0, 0));
-        measureChild(this.a, i, i2);
-        measureChild(this.k, i, i2);
-        int max = Math.max(this.j.getMeasuredWidth(), Math.max(this.d.getMeasuredWidth(), this.a.getMeasuredWidth()));
-        int max2 = Math.max(this.j.getMeasuredHeight(), Math.max(this.d.getMeasuredHeight() - this.g.getMeasuredHeight(), this.a.getMeasuredHeight()));
+        measureChild(this.f814d, i, MeasureSpec.makeMeasureSpec(0, 0));
+        measureChild(this.f811a, i, i2);
+        measureChild(this.f821k, i, i2);
+        int max = Math.max(this.f820j.getMeasuredWidth(), Math.max(this.f814d.getMeasuredWidth(), this.f811a.getMeasuredWidth()));
+        int max2 = Math.max(this.f820j.getMeasuredHeight(), Math.max(this.f814d.getMeasuredHeight() - this.f817g.getMeasuredHeight(), this.f811a.getMeasuredHeight()));
         int resolveSize = resolveSize(Math.max(getSuggestedMinimumWidth(), paddingLeft + max), i);
         max2 = resolveSize(Math.max(getSuggestedMinimumHeight(), max2 + paddingTop), i2);
-        this.j.measure(MeasureSpec.makeMeasureSpec(max, 1073741824), MeasureSpec.makeMeasureSpec(this.j.getMeasuredHeight(), 1073741824));
-        this.d.measure(MeasureSpec.makeMeasureSpec(max, 1073741824), MeasureSpec.makeMeasureSpec(this.d.getMeasuredHeight(), 1073741824));
-        this.c.measure(MeasureSpec.makeMeasureSpec(max, 1073741824), MeasureSpec.makeMeasureSpec(0, 0));
-        this.b.measure(MeasureSpec.makeMeasureSpec(max, 1073741824), MeasureSpec.makeMeasureSpec(0, 0));
-        int measuredHeight = this.j.getMeasuredHeight();
-        int measuredHeight2 = this.h.getMeasuredHeight();
-        int measuredHeight3 = this.i.getMeasuredHeight();
-        paddingLeft = getFirstChild() == null ? 0 : getFirstChild().getMeasuredHeight();
-        if (m() != null) {
-            i3 = m().getMeasuredHeight();
+        this.f820j.measure(MeasureSpec.makeMeasureSpec(max, 1073741824), MeasureSpec.makeMeasureSpec(this.f820j.getMeasuredHeight(), 1073741824));
+        this.f814d.measure(MeasureSpec.makeMeasureSpec(max, 1073741824), MeasureSpec.makeMeasureSpec(this.f814d.getMeasuredHeight(), 1073741824));
+        this.f813c.measure(MeasureSpec.makeMeasureSpec(max, 1073741824), MeasureSpec.makeMeasureSpec(0, 0));
+        this.f812b.measure(MeasureSpec.makeMeasureSpec(max, 1073741824), MeasureSpec.makeMeasureSpec(0, 0));
+        int measuredHeight = this.f820j.getMeasuredHeight();
+        int measuredHeight2 = this.f818h.getMeasuredHeight();
+        int measuredHeight3 = this.f819i.getMeasuredHeight();
+        paddingLeft = m1214l() == null ? 0 : m1214l().getMeasuredHeight();
+        if (m1216m() != null) {
+            i3 = m1216m().getMeasuredHeight();
         }
-        int i4 = this.l.left;
-        paddingLeft = (paddingLeft + (((measuredHeight + measuredHeight2) + measuredHeight3) + this.l.top)) - h();
-        int i5 = this.l.right;
-        i3 = (i3 + this.l.bottom) - i();
-        if (!(this.a.getPaddingLeft() == i4 && this.a.getPaddingTop() == paddingLeft && this.a.getPaddingRight() == i5 && this.a.getPaddingBottom() == i3)) {
-            this.a.setPadding(i4, paddingLeft, i5, i3);
+        int i4 = this.f822l.left;
+        paddingLeft = (paddingLeft + (((measuredHeight + measuredHeight2) + measuredHeight3) + this.f822l.top)) - m1205h();
+        int i5 = this.f822l.right;
+        i3 = (i3 + this.f822l.bottom) - m1207i();
+        if (!(this.f811a.getPaddingLeft() == i4 && this.f811a.getPaddingTop() == paddingLeft && this.f811a.getPaddingRight() == i5 && this.f811a.getPaddingBottom() == i3)) {
+            this.f811a.setPadding(i4, paddingLeft, i5, i3);
         }
-        this.a.measure(MeasureSpec.makeMeasureSpec(max, 1073741824), MeasureSpec.makeMeasureSpec(max2 - paddingTop, 1073741824));
-        this.a.setMaxOverScrollHeight(((this.e.getMeasuredHeight() - measuredHeight) - measuredHeight2) - measuredHeight3);
+        this.f811a.measure(MeasureSpec.makeMeasureSpec(max, 1073741824), MeasureSpec.makeMeasureSpec(max2 - paddingTop, 1073741824));
+        this.f811a.setMaxOverScrollHeight(((this.f815e.getMeasuredHeight() - measuredHeight) - measuredHeight2) - measuredHeight3);
         setMeasuredDimension(resolveSize, max2);
     }
 
@@ -857,38 +865,41 @@ public class HatGridView extends ViewGroup implements Scrollable {
         int paddingTop = getPaddingTop();
         int width = getWidth() - getPaddingRight();
         int height = getHeight() - getPaddingBottom();
-        int i5 = (z || this.u != this.d.getMeasuredHeight()) ? 1 : 0;
-        this.u = this.d.getMeasuredHeight();
-        this.j.layout(paddingLeft, paddingTop, this.j.getMeasuredWidth() + paddingLeft, this.j.getMeasuredHeight() + paddingTop);
-        this.d.layout(paddingLeft, paddingTop, this.d.getMeasuredWidth() + paddingLeft, this.d.getMeasuredHeight() + paddingTop);
-        this.c.layout(paddingLeft, paddingTop, this.c.getMeasuredWidth() + paddingLeft, this.c.getMeasuredHeight() + paddingTop);
-        this.b.layout(paddingLeft, paddingTop, this.b.getMeasuredWidth() + paddingLeft, this.b.getMeasuredHeight() + paddingTop);
-        this.a.layout(paddingLeft, paddingTop, this.a.getMeasuredWidth() + paddingLeft, this.a.getMeasuredHeight() + paddingTop);
-        this.k.layout(width - this.k.getMeasuredWidth(), height - this.k.getMeasuredHeight(), width, height);
+        int i5 = (z || this.f831u != this.f814d.getMeasuredHeight()) ? 1 : 0;
+        this.f831u = this.f814d.getMeasuredHeight();
+        this.f820j.layout(paddingLeft, paddingTop, this.f820j.getMeasuredWidth() + paddingLeft, this.f820j.getMeasuredHeight() + paddingTop);
+        this.f814d.layout(paddingLeft, paddingTop, this.f814d.getMeasuredWidth() + paddingLeft, this.f814d.getMeasuredHeight() + paddingTop);
+        this.f813c.layout(paddingLeft, paddingTop, this.f813c.getMeasuredWidth() + paddingLeft, this.f813c.getMeasuredHeight() + paddingTop);
+        this.f812b.layout(paddingLeft, paddingTop, this.f812b.getMeasuredWidth() + paddingLeft, this.f812b.getMeasuredHeight() + paddingTop);
+        this.f811a.layout(paddingLeft, paddingTop, this.f811a.getMeasuredWidth() + paddingLeft, this.f811a.getMeasuredHeight() + paddingTop);
+        this.f821k.layout(width - this.f821k.getMeasuredWidth(), height - this.f821k.getMeasuredHeight(), width, height);
         if (i5 != 0) {
-            this.a.e();
+            this.f811a.m1138e();
         } else if (getScrollState() == ScrollState.IDLE) {
-            this.a.scrollBy(0, 0);
+            this.f811a.scrollBy(0, 0);
         }
-        this.a.b(0, this.j.getHeight() + UTools.getMinimumHeight(getContext(), 2.0f), UTools.getMinimumHeight(getContext(), 2.0f), UTools.getMinimumHeight(getContext(), 6.0f));
+        this.f811a.m1124b(0, this.f820j.getHeight() + dv.m1932b(getContext(), 2.0f), dv.m1932b(getContext(), 2.0f), dv.m1932b(getContext(), 6.0f));
     }
 
-    protected void a(PointF pointF) {
+    /* renamed from: a */
+    protected void mo1621a(PointF pointF) {
     }
 
-    protected void a(ScrollState scrollState, RectF rectF) {
+    /* renamed from: a */
+    protected void mo1750a(ScrollState scrollState, RectF rectF) {
     }
 
-    private void a(HatTipState hatTipState) {
-        if (this.x != hatTipState) {
-            HatTipState hatTipState2 = this.x;
+    /* renamed from: a */
+    private void m1191a(HatTipState hatTipState) {
+        if (this.f834x != hatTipState) {
+            HatTipState hatTipState2 = this.f834x;
             if (hatTipState2 != HatTipState.DOCKING || hatTipState != HatTipState.UNDOCKED) {
                 if (hatTipState2 != HatTipState.DOCKED || hatTipState != HatTipState.UNDOCKED) {
                     if (hatTipState2 != HatTipState.UNDOCKING || hatTipState != HatTipState.DOCKED) {
                         if (hatTipState2 != HatTipState.UNDOCKED || hatTipState != HatTipState.DOCKED) {
-                            this.x = hatTipState;
-                            if (this.C != null) {
-                                this.C.a(hatTipState2, this.x);
+                            this.f834x = hatTipState;
+                            if (this.f809C != null) {
+                                this.f809C.m1583a(hatTipState2, this.f834x);
                             }
                         }
                     }
@@ -897,129 +908,161 @@ public class HatGridView extends ViewGroup implements Scrollable {
         }
     }
 
-    private int h() {
-        return getFirstChild() == null ? 0 : this.o;
+    /* renamed from: h */
+    private int m1205h() {
+        return m1214l() == null ? 0 : this.f825o;
     }
 
-    private int i() {
-        return m() == null ? 0 : this.p;
+    /* renamed from: i */
+    private int m1207i() {
+        return m1216m() == null ? 0 : this.f826p;
     }
 
-    private final int getFirsChildHeight() {
-        return getFirstChild() == null ? 0 : getFirstChild().getHeight();
+    /* renamed from: j */
+    private final int m1209j() {
+        return m1214l() == null ? 0 : m1214l().getHeight();
     }
 
-    private final int k() {
-        return m() == null ? 0 : m().getHeight();
+    /* renamed from: k */
+    private final int m1211k() {
+        return m1216m() == null ? 0 : m1216m().getHeight();
     }
 
-    private final View getFirstChild() {
-        if (this.c.getChildCount() > 0) {
-            return this.c.getChildAt(0);
+    /* renamed from: l */
+    private final View m1214l() {
+        if (this.f813c.getChildCount() > 0) {
+            return this.f813c.getChildAt(0);
         }
         return null;
     }
 
-    private final void a(View view) {
-        this.c.removeAllViews();
+    /* renamed from: a */
+    private final void m1190a(View view) {
+        this.f813c.removeAllViews();
         if (view != null) {
             if (view.getLayoutParams() == null) {
-                view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+                view.setLayoutParams(new LayoutParams(-1, -2));
             }
-            this.c.addView(view);
+            this.f813c.addView(view);
         }
     }
 
-    private final View m() {
-        if (this.b.getChildCount() > 0) {
-            return this.b.getChildAt(0);
+    /* renamed from: m */
+    private final View m1216m() {
+        if (this.f812b.getChildCount() > 0) {
+            return this.f812b.getChildAt(0);
         }
         return null;
     }
 
-    private final void b(View view) {
-        this.b.removeAllViews();
+    /* renamed from: b */
+    private final void m1198b(View view) {
+        this.f812b.removeAllViews();
         if (view != null) {
             if (view.getLayoutParams() == null) {
-                view.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+                view.setLayoutParams(new LayoutParams(-1, -2));
             }
-            this.b.addView(view);
+            this.f812b.addView(view);
         }
     }
 
-    private final int n() {
-        return o() + r();
+    /* renamed from: n */
+    private final int m1217n() {
+        return m1219o() + m1225r();
     }
 
-    private final int o() {
-        return p() + t();
+    /* renamed from: o */
+    private final int m1219o() {
+        return m1221p() + m1229t();
     }
 
-    private final int p() {
-        return (getHatTipView() == null ? 0 : getHatTipView().getTop()) + (this.g.getTop() + this.e.getTop());
+    /* renamed from: p */
+    private final int m1221p() {
+        return (getHatTipView() == null ? 0 : getHatTipView().getTop()) + (this.f817g.getTop() + this.f815e.getTop());
     }
 
-    private final int q() {
-        if (!this.v) {
+    /* renamed from: q */
+    private final int m1223q() {
+        if (!this.f832v) {
             return 0;
         }
-        if (this.w < 0) {
-            return r();
+        if (this.f833w < 0) {
+            return m1225r();
         }
-        return Math.min(this.w, r());
+        return Math.min(this.f833w, m1225r());
     }
 
-    private final int r() {
+    /* renamed from: r */
+    private final int m1225r() {
         return getHatTipView() == null ? 0 : getHatTipView().getHeight();
     }
 
-    private final int s() {
-        return this.h.getHeight();
+    /* renamed from: s */
+    private final int m1227s() {
+        return this.f818h.getHeight();
     }
 
-    private final int t() {
-        return (-v()) + this.j.getHeight();
+    /* renamed from: t */
+    private final int m1229t() {
+        return (-m1233v()) + this.f820j.getHeight();
     }
 
-    private final int u() {
-        return this.d.getScrollY() + this.j.getBottom();
+    /* renamed from: u */
+    private final int m1231u() {
+        return this.f814d.getScrollY() + this.f820j.getBottom();
     }
 
-    private final int v() {
-        return this.e.getTop() + this.h.getTop();
+    /* renamed from: v */
+    private final int m1233v() {
+        return this.f815e.getTop() + this.f818h.getTop();
     }
 
-    private void w() {
-        if (this.k.isEnabled() && this.k.getVisibility() != 0) {
-            this.k.clearAnimation();
-            this.k.setVisibility(0);
-            UTools.closeAnimation(this.k, null);
+    /* renamed from: w */
+    private void m1236w() {
+        if (this.f821k.isEnabled() && this.f821k.getVisibility() != 0) {
+            this.f821k.clearAnimation();
+            this.f821k.setVisibility(0);
+            dv.showAnimation(this.f821k, null);
         }
     }
 
-    private void x() {
-        if (this.k.isEnabled() && this.k.getVisibility() != 4) {
-            this.k.clearAnimation();
-            this.k.setVisibility(4);
-            UTools.showAnimation(this.k, null);
+    /* renamed from: x */
+    private void m1237x() {
+        if (this.f821k.isEnabled() && this.f821k.getVisibility() != 4) {
+            this.f821k.clearAnimation();
+            this.f821k.setVisibility(4);
+            dv.hideAnimation(this.f821k, null);
         }
     }
 
-    private void a(ScrollState scrollState, ScrollState scrollState2) {
-        if (this.k.isEnabled()) {
-            if (this.A != null) {
-                removeCallbacks(this.A);
-                this.A = null;
+    /* renamed from: a */
+    private void m1195a(ScrollState scrollState, ScrollState scrollState2) {
+        if (this.f821k.isEnabled()) {
+            if (this.f807A != null) {
+                removeCallbacks(this.f807A);
+                this.f807A = null;
             }
             if (scrollState2 != ScrollState.IDLE) {
                 return;
             }
             if (getHatBodyVisibleHeight() > 0) {
-                x();
-            } else if (this.A == null) {
-                this.A = new z(this);
-                postDelayed(this.A, 2000);
+                m1237x();
+            } else if (this.f807A == null) {
+                this.f807A = new C0398z(this);
+                postDelayed(this.f807A, 2000);
             }
+        }
+    }
+
+    /* renamed from: a */
+    protected void mo1622a(MotionEvent motionEvent) {
+        if (motionEvent.getActionMasked() == 0) {
+            if (this.f832v) {
+                this.f811a.setVerticalOverScrollMode(OverScrollMode.ALWAYS);
+            } else {
+                this.f811a.setVerticalOverScrollMode(this.f824n);
+            }
+        } else if (motionEvent.getActionMasked() != 1 && motionEvent.getActionMasked() == 3) {
         }
     }
 }

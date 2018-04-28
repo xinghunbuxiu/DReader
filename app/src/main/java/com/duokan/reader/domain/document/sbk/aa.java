@@ -1,17 +1,18 @@
 package com.duokan.reader.domain.document.sbk;
 
 class aa implements Runnable {
-    final /* synthetic */ z a;
+    /* renamed from: a */
+    final /* synthetic */ C0984z f4772a;
 
-    aa(z zVar) {
-        this.a = zVar;
+    aa(C0984z c0984z) {
+        this.f4772a = c0984z;
     }
 
     public void run() {
-        if (this.a.c.G()) {
-            this.a.a.run();
+        if (this.f4772a.f4872c.mo1284G()) {
+            this.f4772a.f4870a.run();
         } else {
-            this.a.b.run();
+            this.f4772a.f4871b.run();
         }
     }
 }

@@ -1,11 +1,8 @@
 package com.duokan.reader.domain.umeng;
 
 import android.content.Context;
-
 import com.umeng.analytics.MobclickAgent;
-
 import java.util.HashMap;
-import java.util.Map;
 
 public class MobclickAgentImpl implements UmengAgent {
     public MobclickAgentImpl() {
@@ -28,8 +25,8 @@ public class MobclickAgentImpl implements UmengAgent {
         MobclickAgent.onEvent(context, str, str2);
     }
 
-    public void onEvent(Context context, String str, HashMap hashMap) {
-        MobclickAgent.onEvent(context, str, (Map) hashMap);
+    public void onEvent(Context context, String str, HashMap<String, String> hashMap) {
+        MobclickAgent.onEvent(context, str, hashMap);
     }
 
     public void setDebugMode(boolean z) {

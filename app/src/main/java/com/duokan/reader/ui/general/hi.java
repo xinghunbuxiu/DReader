@@ -1,37 +1,31 @@
 package com.duokan.reader.ui.general;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
+import android.view.View.OnClickListener;
+import com.duokan.reader.domain.bookshelf.BookState;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.bookshelf.ai;
 
-import com.duokan.core.ui.UTools;
+class hi implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ hh f7335a;
 
-class hi implements OnTouchListener {
-    final /* synthetic */ hd a;
-    final /* synthetic */ int b;
-    final /* synthetic */ hg c;
-
-    hi(hg hgVar, hd hdVar, int i) {
-        this.c = hgVar;
-        this.a = hdVar;
-        this.b = i;
+    hi(hh hhVar) {
+        this.f7335a = hhVar;
     }
 
-    public boolean onTouch(View view, MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 1) {
-            View b = this.c.b();
-            Rect rect = (Rect) UTools.g.getRect();
-            rect.set(b.getLeft(), b.getTop(), b.getRight(), b.getBottom());
-            boolean z = !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY());
-            UTools.g.getRect(rect);
-            if (z && (this.b & 1) == 1) {
-                this.c.requestDetach();
-            }
+    public void onClick(View view) {
+        if (this.f7335a.f7334d) {
+            this.f7335a.m10742a();
+            return;
         }
-        if ((this.b & 2) == 2) {
-            return true;
+        C0800c b = ai.m3980a().m3906b(this.f7335a.f7332b);
+        if (b == null || b.m4233i() == BookState.CLOUD_ONLY) {
+            this.f7335a.m10744b();
+        } else if (!b.m4171X()) {
+            this.f7335a.m10747c();
+        } else if (b.aa()) {
+            this.f7335a.m10744b();
         }
-        return false;
     }
 }

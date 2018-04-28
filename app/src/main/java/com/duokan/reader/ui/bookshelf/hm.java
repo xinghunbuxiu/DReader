@@ -1,48 +1,57 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import com.duokan.core.ui.aw;
+import com.duokan.p024c.C0255g;
+import com.duokan.p024c.C0256h;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.domain.bookshelf.aa;
+import java.util.List;
 
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.domain.bookshelf.an;
-import com.duokan.reader.domain.bookshelf.c;
+class hm extends aw {
+    /* renamed from: a */
+    final /* synthetic */ hk f6557a;
+    /* renamed from: c */
+    private List<aa> f6558c;
 
-import java.util.LinkedList;
-
-public class hm implements hn {
-    private Context a;
-    private cr b = ((cr) MyContextWrapper.getFeature(this.a).queryFeature(cr.class));
-    private cx c = new cx(new LinkedList(), this.a);
-    private String d = "";
-
-    public hm(Context context) {
-        this.a = context;
+    public hm(hk hkVar, List<aa> list) {
+        this.f6557a = hkVar;
+        this.f6558c = list;
     }
 
-    public int a() {
-        return this.c.c();
+    /* renamed from: c */
+    public int mo506c() {
+        return this.f6558c == null ? 0 : this.f6558c.size();
     }
 
-    public void a(String str) {
-        this.c.b(this.b.a(str));
-        this.d = str;
+    /* renamed from: d */
+    public Object mo509d(int i) {
+        return this.f6558c == null ? null : (aa) this.f6558c.get(i);
     }
 
-    public View a(int i, View view, ViewGroup viewGroup) {
-        return this.c.d(i, view, viewGroup);
-    }
-
-    public void a(int i, View view) {
-        an anVar = (an) this.c.d(i);
-        if (anVar instanceof c) {
-            ((ReaderFeature) MyContextWrapper.getFeature(this.a).queryFeature(ReaderFeature.class)).openBook((c) anVar);
+    /* renamed from: d */
+    public View mo508d(int i, View view, ViewGroup viewGroup) {
+        hn hnVar;
+        if (view == null) {
+            LayoutInflater from = LayoutInflater.from(this.f6557a.getContext());
+            hnVar = new hn();
+            view = from.inflate(C0256h.bookshelf__modify_category_child_view, null);
+            hnVar.f6559a = (TextView) view.findViewById(C0255g.bookshelf__modify_category_child_view__left_part);
+            hnVar.f6560b = (TextView) view.findViewById(C0255g.bookshelf__modify_category_child_view__right_part);
+            view.setTag(hnVar);
+        } else {
+            hnVar = (hn) view.getTag();
         }
-    }
-
-    public boolean b(int i, View view) {
-        new gu(this.a, (an) this.c.d(i)).show();
-        return true;
+        aa aaVar = (aa) mo509d(i);
+        hnVar.f6559a.setText(aaVar.m3767h() ? this.f6557a.getContext().getString(C0258j.bookshelf__shared__main_category) : aaVar.m3770k());
+        int length = aaVar.m3767h() ? aaVar.m3763d().length : aaVar.m3765f();
+        if (this.f6557a.f6555b.m9445e()) {
+            length -= aaVar.m3766g();
+        }
+        hnVar.f6560b.setText(String.format(this.f6557a.getContext().getString(C0258j.bookshelf__general_shared__book_count), new Object[]{Integer.valueOf(length)}));
+        return view;
     }
 }

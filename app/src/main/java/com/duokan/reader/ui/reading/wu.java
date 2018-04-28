@@ -1,28 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-/* synthetic */ class wu {
-    static final /* synthetic */ int[] a = new int[PageAnimationMode.values().length];
+import android.view.View;
+import android.view.View.OnClickListener;
 
-    static {
-        try {
-            a[PageAnimationMode.HSCROLL.ordinal()] = 1;
-        } catch (NoSuchFieldError e) {
-        }
-        try {
-            a[PageAnimationMode.THREE_DIMEN.ordinal()] = 2;
-        } catch (NoSuchFieldError e2) {
-        }
-        try {
-            a[PageAnimationMode.FADE_IN.ordinal()] = 3;
-        } catch (NoSuchFieldError e3) {
-        }
-        try {
-            a[PageAnimationMode.NONE.ordinal()] = 4;
-        } catch (NoSuchFieldError e4) {
-        }
-        try {
-            a[PageAnimationMode.OVERLAP.ordinal()] = 5;
-        } catch (NoSuchFieldError e5) {
-        }
+class wu implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ wt f11128a;
+
+    wu(wt wtVar) {
+        this.f11128a = wtVar;
+    }
+
+    public void onClick(View view) {
+        this.f11128a.f11124a.mo2032a(view.isSelected() ? SlideShowEffect.NONE : SlideShowEffect.SIMPLE);
+        this.f11128a.m15061a();
     }
 }

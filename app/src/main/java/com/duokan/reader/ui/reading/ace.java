@@ -1,9 +1,6 @@
 package com.duokan.reader.ui.reading;
 
 public interface ace {
-    void a(int i);
-
-    void k();
-
-    void l();
+    /* renamed from: a */
+    void m13301a(int i, int i2);
 }

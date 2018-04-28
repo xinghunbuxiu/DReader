@@ -1,18 +1,29 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.as;
+import com.duokan.reader.domain.account.C0709k;
+import java.util.List;
+import java.util.concurrent.Callable;
+import org.json.JSONArray;
 
-class cx implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
+class cx implements Callable<String> {
+    /* renamed from: a */
+    final /* synthetic */ ci f7709a;
 
-    cx(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    cx(ci ciVar) {
+        this.f7709a = ciVar;
     }
 
-    public void a() {
-        StorePageController.mBackParam = this.a;
-        this.b.pageController.requestDetach();
+    public /* synthetic */ Object call() {
+        return m11072a();
+    }
+
+    /* renamed from: a */
+    public String m11072a() {
+        JSONArray jSONArray = new JSONArray();
+        List e = C0709k.m3476a().m3510e();
+        for (int i = 0; i < e.size(); i++) {
+            jSONArray.put((String) e.get(i));
+        }
+        return jSONArray.toString();
     }
 }

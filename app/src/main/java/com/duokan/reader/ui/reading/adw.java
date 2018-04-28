@@ -1,19 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.ag;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnPreparedListener;
 
-class adw implements Runnable {
-    final /* synthetic */ ag a;
-    final /* synthetic */ aej b;
-    final /* synthetic */ adm c;
+class adw implements OnPreparedListener {
+    /* renamed from: a */
+    final /* synthetic */ TranslationController f9540a;
 
-    adw(adm com_duokan_reader_ui_reading_adm, ag agVar, aej com_duokan_reader_ui_reading_aej) {
-        this.c = com_duokan_reader_ui_reading_adm;
-        this.a = agVar;
-        this.b = com_duokan_reader_ui_reading_aej;
+    adw(TranslationController translationController) {
+        this.f9540a = translationController;
     }
 
-    public void run() {
-        this.a.a(this.b);
+    public void onPrepared(MediaPlayer mediaPlayer) {
+        this.f9540a.f9174h.start();
     }
 }

@@ -1,10 +1,14 @@
 package com.duokan.reader.ui.bookshelf;
 
 public class ImportedFileInfo {
-    private long a;
-    private String b;
-    private String c;
-    private FileStatus d;
+    /* renamed from: a */
+    private long f6031a;
+    /* renamed from: b */
+    private String f6032b;
+    /* renamed from: c */
+    private String f6033c;
+    /* renamed from: d */
+    private FileStatus f6034d;
 
     public enum FileStatus {
         UNSELECTED,
@@ -12,29 +16,34 @@ public class ImportedFileInfo {
         IMPORTED
     }
 
-    public String c() {
-        return this.b;
+    /* renamed from: c */
+    public String m9084c() {
+        return this.f6032b;
     }
 
-    public String d() {
-        return this.c;
+    /* renamed from: d */
+    public String m9085d() {
+        return this.f6033c;
     }
 
-    public long e() {
-        return this.a;
+    /* renamed from: e */
+    public long m9086e() {
+        return this.f6031a;
     }
 
-    public FileStatus f() {
-        return this.d;
+    /* renamed from: f */
+    public FileStatus m9087f() {
+        return this.f6034d;
     }
 
-    public void a(FileStatus fileStatus) {
-        this.d = fileStatus;
+    /* renamed from: a */
+    public void m9083a(FileStatus fileStatus) {
+        this.f6034d = fileStatus;
     }
 
     public ImportedFileInfo(String str, String str2, long j) {
-        this.b = str;
-        this.c = str2;
-        this.a = j;
+        this.f6032b = str;
+        this.f6033c = str2;
+        this.f6031a = j;
     }
 }

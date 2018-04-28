@@ -11,8 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.duokan.core.sys.DelayedRunnableQueue;
-import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.sys.UThread;
+import com.duokan.core.sys.JobManager;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -22,52 +22,52 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ActivatedController {
     static final boolean $assertionsDisabled = (!ActivatedController.class.desiredAssertionStatus());
-    private final CopyOnWriteArrayList mActivatedControllers;
+    private final CopyOnWriteArrayList<ActivatedController> mActivatedControllers;
     private boolean mActive;
     private final Activity mActivity;
     private View mContentView;
-    private final MyWrapper mContext;
-    private final DelayedRunnableQueue mDelayedRunnableQueue;
+    private final ContextManager mContext;
+    private final JobManager mDelayedRunnableQueue;
     private boolean mFirstActive;
-    private WeakReference mMenuShownRef;
-    private IController mParent;
+    private WeakReference<ActivatedController> mMenuShownRef;
+    private ISubControllerParent mParent;
     private Runnable mRunBeforeDetach;
-    private final IController mSubControllerParent;
-    private final ArrayList mSubControllers;
+    private final ISubControllerParent mSubControllerParent;
+    private final ArrayList<ActivatedController> mSubControllers;
 
-    public ActivatedController(IFeature featrue, int i) {
-        this(featrue);
-        setContentView(i);
+    public ActivatedController(IFeature mFeature, int resource) {
+        this(mFeature);
+        setContentView(resource);
     }
 
-    public ActivatedController(IFeature featrue) {
+    public ActivatedController(IFeature mFeature) {
         this.mSubControllers = new ArrayList();
         this.mActivatedControllers = new CopyOnWriteArrayList();
-        this.mDelayedRunnableQueue = new DelayedRunnableQueue();
+        this.mDelayedRunnableQueue = new JobManager();
         this.mParent = null;
         this.mMenuShownRef = null;
         this.mContentView = null;
         this.mActive = false;
         this.mFirstActive = true;
-        this.mContext = new MyWrapper(featrue, this);
+        this.mContext = new ContextManager(mFeature, this);
         this.mActivity = (Activity) this.mContext.getBaseContext();
         this.mSubControllerParent = newSubControllerParent();
         if (this instanceof FeatureListening) {
-            getContext().addFirstLocalFeature((FeatureListening) this);
+            getContext().addFeatureListener((FeatureListening) this);
         }
     }
 
-    public final MyContextWrapper getContext() {
+    public final AppContext getContext() {
         return this.mContext;
     }
 
-    public final IController getParent() {
+    public final ISubControllerParent getParent() {
         return this.mParent;
     }
 
-    public final void setParent(IController IController) {
-        if (this.mParent != IController) {
-            this.mParent = IController;
+    public final void setParent(ISubControllerParent subController) {
+        if (this.mParent != subController) {
+            this.mParent = subController;
             if (this.mParent == null) {
                 dispatchDetachFromStub();
             } else if (isAttached()) {
@@ -84,8 +84,8 @@ public class ActivatedController {
         return this.mContentView;
     }
 
-    public final void setContentView(int i) {
-        this.mContentView = LayoutInflater.from(getContext()).inflate(i, null);
+    public final void setContentView(int resource) {
+        this.mContentView = LayoutInflater.from(getContext()).inflate(resource, null);
     }
 
     public final void setContentView(View view) {
@@ -97,11 +97,11 @@ public class ActivatedController {
     }
 
     public final void runLater(Runnable runnable) {
-        TaskHandler.PostTask(runnable);
+        UThread.post(runnable);
     }
 
     public final void runLater(Runnable runnable, long j) {
-        TaskHandler.postDelayed(runnable, j);
+        UThread.postDelayed(runnable, j);
     }
 
     public final boolean runAfterActive(Runnable runnable) {
@@ -109,7 +109,7 @@ public class ActivatedController {
             runnable.run();
             return true;
         }
-        this.mDelayedRunnableQueue.offer(runnable);
+        this.mDelayedRunnableQueue.m847a(runnable);
         return false;
     }
 
@@ -118,7 +118,7 @@ public class ActivatedController {
             runnable.run();
             return true;
         }
-        this.mDelayedRunnableQueue.offerMax(str, runnable);
+        this.mDelayedRunnableQueue.m850b(str, runnable);
         return false;
     }
 
@@ -127,12 +127,12 @@ public class ActivatedController {
             runnable.run();
             return true;
         }
-        this.mDelayedRunnableQueue.c(str, runnable);
+        this.mDelayedRunnableQueue.m852c(str, runnable);
         return false;
     }
 
     public final boolean isDelayedRunnableOnActive(Runnable runnable) {
-        return this.mDelayedRunnableQueue.offerMax(runnable);
+        return this.mDelayedRunnableQueue.m851b(runnable);
     }
 
     public final boolean isActive() {
@@ -144,8 +144,8 @@ public class ActivatedController {
     }
 
     public final boolean isAttached() {
-        for (IController IController = this.mParent; IController != null; IController = IController.getParent()) {
-            if (IController.isStub()) {
+        for (ISubControllerParent subController = this.mParent; subController != null; subController = subController.getParent()) {
+            if (subController.isStub()) {
                 return true;
             }
         }
@@ -189,45 +189,45 @@ public class ActivatedController {
         return false;
     }
 
-    public final void activate(ActivatedController activatedControllerVar) {
-        if (!$assertionsDisabled && activatedControllerVar == null) {
+    public final void activate(ActivatedController c0303e) {
+        if (!$assertionsDisabled && c0303e == null) {
             throw new AssertionError();
-        } else if (activatedControllerVar != null && activatedControllerVar.getParent() == this.mSubControllerParent) {
-            this.mActivatedControllers.remove(activatedControllerVar);
-            this.mActivatedControllers.add(activatedControllerVar);
-            if (this.mActive && !activatedControllerVar.isActive()) {
-                activatedControllerVar.gotoActive();
+        } else if (c0303e != null && c0303e.getParent() == this.mSubControllerParent) {
+            this.mActivatedControllers.remove(c0303e);
+            this.mActivatedControllers.add(c0303e);
+            if (this.mActive && !c0303e.isActive()) {
+                c0303e.gotoActive();
             }
         }
     }
 
-    public final void deactivate(ActivatedController activatedControllerVar) {
-        if (!$assertionsDisabled && activatedControllerVar == null) {
+    public final void deactivate(ActivatedController c0303e) {
+        if (!$assertionsDisabled && c0303e == null) {
             throw new AssertionError();
-        } else if (activatedControllerVar != null && activatedControllerVar.getParent() == this.mSubControllerParent) {
-            this.mActivatedControllers.remove(activatedControllerVar);
-            if (activatedControllerVar.isActive()) {
-                activatedControllerVar.gotoDeactive();
+        } else if (c0303e != null && c0303e.getParent() == this.mSubControllerParent) {
+            this.mActivatedControllers.remove(c0303e);
+            if (c0303e.isActive()) {
+                c0303e.gotoDeactive();
             } else if (!$assertionsDisabled && !this.mActive) {
                 throw new AssertionError();
             }
         }
     }
 
-    public final boolean containsDirectly(ActivatedController activatedControllerVar) {
-        if (activatedControllerVar.getParent() == this.mSubControllerParent) {
+    public final boolean containsDirectly(ActivatedController c0303e) {
+        if (c0303e.getParent() == this.mSubControllerParent) {
             return true;
         }
         return false;
     }
 
-    public final boolean contains(ActivatedController activatedControllerVar) {
-        if (containsDirectly(activatedControllerVar)) {
+    public final boolean contains(ActivatedController c0303e) {
+        if (containsDirectly(c0303e)) {
             return true;
         }
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            if (((ActivatedController) it.next()).contains(activatedControllerVar)) {
+            if (((ActivatedController) it.next()).contains(c0303e)) {
                 return true;
             }
         }
@@ -238,39 +238,39 @@ public class ActivatedController {
         return this.mSubControllers.size();
     }
 
-    public final ActivatedController[] getSubControllers() {
-        return (ActivatedController[]) this.mSubControllers.toArray(new ActivatedController[0]);
+    public final ArrayList<ActivatedController> getSubControllers() {
+        return this.mSubControllers;
     }
 
     public final ActivatedController getSubController(int i) {
         return (ActivatedController) this.mSubControllers.get(i);
     }
 
-    public final boolean addSubController(ActivatedController activatedControllerVar) {
-        if (this.mSubControllers.contains(activatedControllerVar)) {
+    public final boolean addSubController(ActivatedController c0303e) {
+        if (this.mSubControllers.contains(c0303e)) {
             return false;
         }
-        this.mSubControllers.add(activatedControllerVar);
-        activatedControllerVar.setParent(this.mSubControllerParent);
+        this.mSubControllers.add(c0303e);
+        c0303e.setParent(this.mSubControllerParent);
         return true;
     }
 
-    public final boolean removeSubController(ActivatedController activatedControllerVar) {
-        if (!this.mSubControllers.contains(activatedControllerVar)) {
+    public final boolean removeSubController(ActivatedController c0303e) {
+        if (!this.mSubControllers.contains(c0303e)) {
             return false;
         }
-        deactivate(activatedControllerVar);
-        this.mSubControllers.remove(activatedControllerVar);
-        activatedControllerVar.setParent(null);
+        deactivate(c0303e);
+        this.mSubControllers.remove(c0303e);
+        c0303e.setParent(null);
         return true;
     }
 
     public final ActivatedController findSubController(View view) {
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            ActivatedController activatedControllerVar = (ActivatedController) it.next();
-            if (activatedControllerVar.getContentView() == view) {
-                return activatedControllerVar;
+            ActivatedController c0303e = (ActivatedController) it.next();
+            if (c0303e.getContentView() == view) {
+                return c0303e;
             }
         }
         return null;
@@ -317,9 +317,9 @@ public class ActivatedController {
         }
     }
 
-    protected final void onActivityResult(Activity activity, int requestCode, int resultCode, Intent intent) {
+    protected final void onActivityResult(Activity activity, int i, int i2, Intent intent) {
         if (activity == getActivity()) {
-            dispatchActivityResult(requestCode, resultCode, intent);
+            dispatchActivityResult(i, i2, intent);
         }
     }
 
@@ -423,7 +423,7 @@ public class ActivatedController {
         return true;
     }
 
-    protected boolean onRequestDetach(ActivatedController activatedControllerVar) {
+    protected boolean onRequestDetach(ActivatedController c0303e) {
         return requestDetach();
     }
 
@@ -468,8 +468,8 @@ public class ActivatedController {
     protected void onActivityResult(int i, int i2, Intent intent) {
     }
 
-    protected IController newSubControllerParent() {
-        return new f(this);
+    protected ISubControllerParent newSubControllerParent() {
+        return new C0304f(this);
     }
 
     private final ActivatedController menuShownController() {
@@ -483,12 +483,12 @@ public class ActivatedController {
             this.mFirstActive = false;
             Iterator it = this.mActivatedControllers.iterator();
             while (it.hasNext()) {
-                ActivatedController activatedControllerVar = (ActivatedController) it.next();
-                if (!activatedControllerVar.isActive()) {
-                    activatedControllerVar.gotoActive();
+                ActivatedController c0303e = (ActivatedController) it.next();
+                if (!c0303e.isActive()) {
+                    c0303e.gotoActive();
                 }
             }
-            this.mDelayedRunnableQueue.poll();
+            this.mDelayedRunnableQueue.m846a();
             return;
         }
         throw new AssertionError();
@@ -534,11 +534,11 @@ public class ActivatedController {
         }
     }
 
-    private final void dispatchActivityResult(int requestCode, int resultCode, Intent intent) {
-        onActivityResult(requestCode, resultCode, intent);
+    private final void dispatchActivityResult(int i, int i2, Intent intent) {
+        onActivityResult(i, i2, intent);
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            ((ActivatedController) it.next()).dispatchActivityResult(requestCode, resultCode, intent);
+            ((ActivatedController) it.next()).dispatchActivityResult(i, i2, intent);
         }
     }
 
@@ -625,9 +625,9 @@ public class ActivatedController {
         }
         ListIterator listIterator = this.mActivatedControllers.listIterator(this.mActivatedControllers.size());
         while (listIterator.hasPrevious()) {
-            ActivatedController activatedControllerVar = (ActivatedController) listIterator.previous();
-            if (activatedControllerVar.doShowMenu()) {
-                this.mMenuShownRef = new WeakReference(activatedControllerVar);
+            ActivatedController c0303e = (ActivatedController) listIterator.previous();
+            if (c0303e.doShowMenu()) {
+                this.mMenuShownRef = new WeakReference(c0303e);
                 return true;
             }
         }

@@ -2,29 +2,32 @@ package com.duokan.reader.ui.reading;
 
 import android.view.MotionEvent;
 import android.view.View;
-
 import com.duokan.core.ui.ct;
 import com.duokan.core.ui.er;
-import com.duokan.core.ui.OnTouchChangeListener;
+import com.duokan.core.ui.es;
 
 class az extends er {
-    final /* synthetic */ aq a;
-    private final ct c;
+    /* renamed from: a */
+    final /* synthetic */ aq f9812a;
+    /* renamed from: c */
+    private final ct f9813c;
 
     private az(aq aqVar) {
-        this.a = aqVar;
-        this.c = new ct();
+        this.f9812a = aqVar;
+        this.f9813c = new ct();
     }
 
-    protected void a(View view, boolean z) {
-        this.c.b(view, z);
+    /* renamed from: a */
+    protected void mo511a(View view, boolean z) {
+        this.f9813c.m1612b(view, z);
     }
 
-    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
-        if (this.a.d()) {
-            this.c.b(view, motionEvent, z, new ba(this));
+    /* renamed from: a */
+    protected void mo510a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+        if (this.f9812a.m13756d()) {
+            this.f9813c.m1611b(view, motionEvent, z, new ba(this));
         } else {
-            b(false);
+            m1613b(false);
         }
     }
 }

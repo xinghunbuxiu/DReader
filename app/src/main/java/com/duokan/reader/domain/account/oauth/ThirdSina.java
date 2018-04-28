@@ -5,40 +5,64 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.text.TextUtils;
-
-import com.duokan.b.i;
 import com.duokan.core.app.BaseActivity;
-import com.duokan.core.app.onActivityResult;
+import com.duokan.core.app.OnActivityResultListener;
+import com.duokan.p023b.C0247i;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
+import com.duokan.reader.common.webservices.C0237c;
+import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.WebSession.SessionState;
-import com.duokan.reader.common.webservices.duokan.a.a;
-import com.duokan.reader.common.webservices.duokan.a.c;
-import com.duokan.reader.common.webservices.duokan.a.d;
+import com.duokan.reader.common.webservices.duokan.p040a.C0624a;
+import com.duokan.reader.common.webservices.duokan.p040a.C0626c;
+import com.duokan.reader.common.webservices.duokan.p040a.C0627d;
 import com.duokan.reader.domain.account.oauth.TokenStore.OnAccessTokenBindListener;
 import com.duokan.reader.ui.general.be;
-import com.duokan.reader.ui.general.jq;
+import com.duokan.reader.ui.general.ja;
 import com.sina.weibo.sdk.auth.AuthInfo;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.sina.weibo.sdk.auth.WeiboAuthListener;
 import com.sina.weibo.sdk.auth.sso.SsoHandler;
 import com.sina.weibo.sdk.exception.WeiboException;
-
 import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.protocol.HTTP;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ThirdSina extends ThirdOAuth implements onActivityResult, WeiboAuthListener {
+public class ThirdSina extends ThirdOAuth implements OnActivityResultListener, WeiboAuthListener {
     static final /* synthetic */ boolean $assertionsDisabled;
     private static final int[] INVALID_TOKEN_ERRORS = new int[]{10006, 21301, 21314, 21315, 21316, 21317, 21319, 21327, 21332};
     private OAuthCallback mCallBack;
     private boolean mIsCancelled = false;
     private boolean mIsShareFinish = false;
     private SsoHandler mSsoHandler;
-    private ThirdSession mUpdateSession;
+    private WebSession mUpdateSession;
     private AuthInfo mWeiboAuth;
+
+    /* renamed from: com.duokan.reader.domain.account.oauth.ThirdSina$6 */
+    class C07186 implements OnAccessTokenBindListener {
+        C07186() {
+        }
+
+        public void onOk() {
+            if (ThirdSina.this.mCallBack != null) {
+                final ja jaVar = new ja(ThirdSina.this.getActivity());
+                jaVar.m10843a(ThirdSina.this.getActivity().getString(C0247i.account__shared__exchange_username));
+                jaVar.show();
+                ThirdSina.this.fetchUserInfo(new FetchUserInfoHandler() {
+                    public void onFetchUserInfoFinished(boolean z) {
+                        jaVar.dismiss();
+                        if (z) {
+                            ThirdSina.this.mCallBack.onOauthSuccess();
+                        } else {
+                            ThirdSina.this.mCallBack.onGetUserNameFailed();
+                        }
+                    }
+                });
+            }
+        }
+    }
 
     static {
         boolean z;
@@ -51,7 +75,7 @@ public class ThirdSina extends ThirdOAuth implements onActivityResult, WeiboAuth
     }
 
     public ThirdSina(Activity activity) {
-        super(activity, "sina");
+        super(activity, "weibo");
     }
 
     public String getSinaAppKey() {
@@ -82,22 +106,43 @@ public class ThirdSina extends ThirdOAuth implements onActivityResult, WeiboAuth
             final String str4 = str2;
             final boolean z2 = z;
             final UpdateHandler updateHandler2 = updateHandler;
-            this.mUpdateSession = new ThirdSession() {
-                private ResponseHandleResult mResult = null;
+            this.mUpdateSession = new WebSession(ThirdSessionConfig.VALUE) {
+                private ResponseHandleResult<Boolean> mResult = null;
+
+                /* renamed from: com.duokan.reader.domain.account.oauth.ThirdSina$2$1 */
+                class C07141 implements OAuthCallback {
+                    C07141() {
+                    }
+
+                    public void onOauthSuccess() {
+                        ThirdSina.this.update(str3, bitmap2, str4, false, updateHandler2);
+                    }
+
+                    public void onOauthFailed(String str) {
+                        if (!TextUtils.isEmpty(str)) {
+                            be.m10287a(ThirdSina.this.getActivity(), (CharSequence) str, 0).show();
+                        }
+                        updateHandler2.onUpdateError();
+                    }
+
+                    public void onGetUserNameFailed() {
+                        updateHandler2.onUpdateError();
+                    }
+                }
 
                 protected void onSessionTry() {
-                    d a;
-                    com.duokan.reader.common.webservices.d dVar = new com.duokan.reader.common.webservices.d(this);
+                    C0627d a;
+                    C0237c c0237c = new C0237c(this);
                     if (bitmap2 != null || TextUtils.isEmpty(str4)) {
-                        a = dVar.a(ThirdSina.this.makeUpdateRequest(str3, bitmap2));
+                        a = c0237c.mo376a(ThirdSina.this.makeUpdateRequest(str3, bitmap2));
                     } else {
-                        a = dVar.a(ThirdSina.this.makeUpdateRequest(str3, dVar.a(str4)));
+                        a = c0237c.mo376a(ThirdSina.this.makeUpdateRequest(str3, c0237c.m545a(str4)));
                     }
                     ThirdSina.this.mIsShareFinish = true;
-                    if (a.a() != HttpStatus.SC_OK) {
+                    if (a.mo812a() != HttpStatus.SC_OK) {
                         this.mResult = new ResponseHandleResult(Boolean.valueOf(false), true);
                     } else {
-                        this.mResult = ThirdSina.this.handleUpdateResponse(dVar.b(a, HTTP.UTF_8));
+                        this.mResult = ThirdSina.this.handleUpdateResponse(c0237c.m550b(a, HTTP.UTF_8));
                     }
                 }
 
@@ -109,22 +154,7 @@ public class ThirdSina extends ThirdOAuth implements onActivityResult, WeiboAuth
                         updateHandler2.onUpdateError();
                     } else if (this.mResult.mNeedReauth) {
                         if (z2) {
-                            ThirdSina.this.oauth(new OAuthCallback() {
-                                public void onOauthSuccess() {
-                                    ThirdSina.this.update(str3, bitmap2, str4, false, updateHandler2);
-                                }
-
-                                public void onOauthFailed(String str) {
-                                    if (!TextUtils.isEmpty(str)) {
-                                        be.a(ThirdSina.this.getActivity(), (CharSequence) str, 0).show();
-                                    }
-                                    updateHandler2.onUpdateError();
-                                }
-
-                                public void onGetUserNameFailed() {
-                                    updateHandler2.onUpdateError();
-                                }
-                            });
+                            ThirdSina.this.oauth(new C07141());
                         } else {
                             updateHandler2.onUpdateError();
                         }
@@ -166,12 +196,12 @@ public class ThirdSina extends ThirdOAuth implements onActivityResult, WeiboAuth
 
     public void fetchUserInfo(final FetchUserInfoHandler fetchUserInfoHandler) {
         if ($assertionsDisabled || fetchUserInfoHandler != null) {
-            new ThirdSession() {
+            new WebSession(ThirdSessionConfig.VALUE) {
                 private boolean mResult;
 
                 protected void onSessionTry() {
-                    com.duokan.reader.common.webservices.d dVar = new com.duokan.reader.common.webservices.d(this);
-                    this.mResult = ThirdSina.this.handleUserInfoResponse(dVar.b(dVar.a(ThirdSina.this.makeFetchUserInfoRequest()), HTTP.UTF_8));
+                    C0237c c0237c = new C0237c(this);
+                    this.mResult = ThirdSina.this.handleUserInfoResponse(c0237c.m550b(c0237c.mo376a(ThirdSina.this.makeFetchUserInfoRequest()), HTTP.UTF_8));
                 }
 
                 protected void onSessionSucceeded() {
@@ -200,25 +230,7 @@ public class ThirdSina extends ThirdOAuth implements onActivityResult, WeiboAuth
     public void onComplete(Bundle bundle) {
         Oauth2AccessToken parseAccessToken = Oauth2AccessToken.parseAccessToken(bundle);
         if (parseAccessToken.isSessionValid()) {
-            this.mTokenStore.bindAccessToken(getActivity(), this.mThirdName, parseAccessToken.getUid(), parseAccessToken.getToken(), "", String.valueOf(parseAccessToken.getExpiresTime()), "", new OnAccessTokenBindListener() {
-                public void onOk() {
-                    if (ThirdSina.this.mCallBack != null) {
-                        final jq jqVar = new jq(ThirdSina.this.getActivity());
-                        jqVar.a(ThirdSina.this.getActivity().getString(i.account__shared__exchange_username));
-                        jqVar.show();
-                        ThirdSina.this.fetchUserInfo(new FetchUserInfoHandler() {
-                            public void onFetchUserInfoFinished(boolean z) {
-                                jqVar.dismiss();
-                                if (z) {
-                                    ThirdSina.this.mCallBack.onOauthSuccess();
-                                } else {
-                                    ThirdSina.this.mCallBack.onGetUserNameFailed();
-                                }
-                            }
-                        });
-                    }
-                }
-            });
+            this.mTokenStore.bindAccessToken(getActivity(), this.mThirdName, parseAccessToken.getUid(), parseAccessToken.getToken(), "", String.valueOf(parseAccessToken.getExpiresTime()), "", new C07186());
         } else if (this.mCallBack != null) {
             this.mCallBack.onOauthFailed("");
         }
@@ -244,8 +256,8 @@ public class ThirdSina extends ThirdOAuth implements onActivityResult, WeiboAuth
         }
     }
 
-    protected a makeFetchUserInfoRequest() {
-        return new c().a(HttpGet.METHOD_NAME).b(makeGetUrl("https://api.weibo.com/2/users/show.json", "access_token", this.mTokenStore.getAccessToken(DkApp.get().getTopActivity(), this.mThirdName), "uid", this.mTokenStore.getUserId(DkApp.get().getTopActivity(), this.mThirdName))).a();
+    protected C0624a makeFetchUserInfoRequest() {
+        return new C0626c().m2853a(HttpGet.METHOD_NAME).m2856b(makeGetUrl("https://api.weibo.com/2/users/show.json", "access_token", this.mTokenStore.getAccessToken(DkApp.get().getTopActivity(), this.mThirdName), "uid", this.mTokenStore.getUserId(DkApp.get().getTopActivity(), this.mThirdName))).m2851a();
     }
 
     protected boolean handleUserInfoResponse(String str) {
@@ -257,14 +269,14 @@ public class ThirdSina extends ThirdOAuth implements onActivityResult, WeiboAuth
         }
     }
 
-    protected a makeUpdateRequest(String str, Bitmap bitmap) {
+    protected C0624a makeUpdateRequest(String str, Bitmap bitmap) {
         if (bitmap != null) {
             return makePostRequest("https://api.weibo.com/2/statuses/share.json", "pic", bitmap, "access_token", this.mTokenStore.getAccessToken(DkApp.get().getTopActivity(), this.mThirdName), "status", str);
         }
         return makePostRequest("https://api.weibo.com/2/statuses/share.json", "access_token", this.mTokenStore.getAccessToken(DkApp.get().getTopActivity(), this.mThirdName), "status", str);
     }
 
-    protected ResponseHandleResult handleUpdateResponse(String str) {
+    protected ResponseHandleResult<Boolean> handleUpdateResponse(String str) {
         try {
             JSONObject jSONObject = new JSONObject(str);
             if (!jSONObject.has("error_code")) {

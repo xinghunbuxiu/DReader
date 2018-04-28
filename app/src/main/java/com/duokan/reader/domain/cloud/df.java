@@ -1,19 +1,19 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.async.a.a;
+import com.duokan.reader.common.async.p035a.C0517a;
 
-class df implements a {
-    final /* synthetic */ de a;
+class df implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ C0517a f3870a;
+    /* renamed from: b */
+    final /* synthetic */ DkUserPurchasedFictionsManager f3871b;
 
-    df(de deVar) {
-        this.a = deVar;
+    df(DkUserPurchasedFictionsManager dkUserPurchasedFictionsManager, C0517a c0517a) {
+        this.f3871b = dkUserPurchasedFictionsManager;
+        this.f3870a = c0517a;
     }
 
-    public void a(Void voidR) {
-        new dg(this, DkUserPurchasedFictionsManager.g()).open();
-    }
-
-    public void a(int i, String str) {
-        this.a.b.a(i, str);
+    public void run() {
+        this.f3870a.mo729a(-1, "");
     }
 }

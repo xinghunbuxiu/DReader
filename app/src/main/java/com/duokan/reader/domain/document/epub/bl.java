@@ -6,18 +6,20 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
 class bl extends Drawable {
-    final /* synthetic */ az a;
-    final /* synthetic */ bk b;
+    /* renamed from: a */
+    final /* synthetic */ az f4571a;
+    /* renamed from: b */
+    final /* synthetic */ bk f4572b;
 
     bl(bk bkVar, az azVar) {
-        this.b = bkVar;
-        this.a = azVar;
+        this.f4572b = bkVar;
+        this.f4571a = azVar;
     }
 
     public void draw(Canvas canvas) {
         Rect bounds = getBounds();
-        for (int i = 0; i < this.b.g.length; i++) {
-            canvas.drawBitmap(this.b.g[i], (float) (bounds.left + this.b.f[i].left), (float) (bounds.top + this.b.f[i].top), null);
+        for (int i = 0; i < this.f4572b.f4569g.length; i++) {
+            canvas.drawBitmap(this.f4572b.f4569g[i], (float) (bounds.left + this.f4572b.f4568f[i].left), (float) (bounds.top + this.f4572b.f4568f[i].top), null);
         }
     }
 

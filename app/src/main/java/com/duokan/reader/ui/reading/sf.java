@@ -1,26 +1,21 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.IdleStatus;
-import com.duokan.core.ui.Scrollable.ScrollState;
+import com.duokan.reader.domain.account.oauth.ThirdOAuth.UpdateHandler;
 
-class sf implements IdleStatus {
-    final /* synthetic */ boolean a;
-    final /* synthetic */ rx b;
+class sf implements UpdateHandler {
+    /* renamed from: a */
+    final /* synthetic */ sd f10937a;
 
-    sf(rx rxVar, boolean z) {
-        this.b = rxVar;
-        this.a = z;
+    sf(sd sdVar) {
+        this.f10937a = sdVar;
     }
 
-    public boolean idleRun() {
-        if (this.b.c.a != this || this.b.c.q) {
-            return false;
-        }
-        if (this.b.c.e.getShowingPagesView().getScrollState() != ScrollState.IDLE) {
-            return true;
-        }
-        this.b.c.a = null;
-        this.b.a(this.a);
-        return false;
+    public void onUpdateOk() {
+    }
+
+    public void onUpdateError() {
+    }
+
+    public void onUpdateCancel() {
     }
 }

@@ -20,26 +20,30 @@ import android.view.ViewParent;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
-
 import java.util.HashMap;
 
 public class di extends ViewGroup implements OnPreDrawListener, fk {
-    static final /* synthetic */ boolean a = (!di.class.desiredAssertionStatus());
-    private final HashMap b;
-    private OnHierarchyChangeListener c;
-    private View d;
-    private boolean e;
+    /* renamed from: a */
+    static final /* synthetic */ boolean f1143a = (!di.class.desiredAssertionStatus());
+    /* renamed from: b */
+    private final HashMap<View, ds> f1144b;
+    /* renamed from: c */
+    private OnHierarchyChangeListener f1145c;
+    /* renamed from: d */
+    private View f1146d;
+    /* renamed from: e */
+    private boolean f1147e;
 
     protected /* synthetic */ LayoutParams generateDefaultLayoutParams() {
-        return a();
+        return m1827a();
     }
 
     public /* synthetic */ LayoutParams generateLayoutParams(AttributeSet attributeSet) {
-        return a(attributeSet);
+        return m1828a(attributeSet);
     }
 
     protected /* synthetic */ LayoutParams generateLayoutParams(LayoutParams layoutParams) {
-        return a(layoutParams);
+        return m1829a(layoutParams);
     }
 
     public di(Context context) {
@@ -48,67 +52,69 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
 
     public di(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.b = new HashMap();
-        this.c = null;
-        this.d = null;
-        this.e = false;
+        this.f1144b = new HashMap();
+        this.f1145c = null;
+        this.f1146d = null;
+        this.f1147e = false;
         setClipChildren(false);
         setStaticTransformationsEnabled(true);
         super.setOnHierarchyChangeListener(new dj(this));
     }
 
-    public dl a(View view) {
-        ds dsVar = (ds) this.b.get(view);
+    /* renamed from: a */
+    public dl m1826a(View view) {
+        ds dsVar = (ds) this.f1144b.get(view);
         if (dsVar == null) {
             return null;
         }
-        return dsVar.f;
+        return dsVar.f1177f;
     }
 
-    public void a(View view, dl dlVar) {
-        if (!a && dlVar == null) {
+    /* renamed from: a */
+    public void m1830a(View view, dl dlVar) {
+        if (!f1143a && dlVar == null) {
             throw new AssertionError();
         } else if (dlVar != null) {
-            ds dsVar = (ds) this.b.get(view);
-            if (!a && dsVar == null) {
+            ds dsVar = (ds) this.f1144b.get(view);
+            if (!f1143a && dsVar == null) {
                 throw new AssertionError();
             } else if (dsVar != null) {
-                if (dsVar.h != null) {
-                    dsVar.h.f();
-                    dsVar.h = null;
+                if (dsVar.f1179h != null) {
+                    dsVar.f1179h.m1846f();
+                    dsVar.f1179h = null;
                 }
-                dsVar.f.a(dlVar);
-                dsVar.a |= 5;
+                dsVar.f1177f.m1871a(dlVar);
+                dsVar.f1172a |= 5;
                 view.invalidate();
                 invalidate();
             }
         }
     }
 
-    public do
-
-    b(View view) {
-        ds dsVar = (ds) this.b.get(view);
+    /* renamed from: b */
+    public C0380do m1836b(View view) {
+        ds dsVar = (ds) this.f1144b.get(view);
         if (dsVar == null) {
             return null;
         }
-        return dsVar.g;
+        return dsVar.f1178g;
     }
 
-    public void a(View view, do doVar) {
-        if (!a && doVar == null) {
+    /* renamed from: a */
+    public void m1835a(View view, C0380do c0380do) {
+        if (!f1143a && c0380do == null) {
             throw new AssertionError();
-        } else if (doVar != null) {
-            ds dsVar = (ds) this.b.get(view);
-            if (!a && dsVar == null) {
+        } else if (c0380do != null) {
+            ds dsVar = (ds) this.f1144b.get(view);
+            if (!f1143a && dsVar == null) {
                 throw new AssertionError();
             } else if (dsVar != null) {
-                if (dsVar.i != null) {
-                    dsVar.i.f();
-                    dsVar.i = null;
+                if (dsVar.f1180i != null) {
+                    dsVar.f1180i.m1846f();
+                    dsVar.f1180i = null;
                 }
-                dsVar.g.a(doVar);
-                dsVar.a |= 7;
+                dsVar.f1178g.m1854a(c0380do);
+                dsVar.f1172a |= 7;
                 view.requestLayout();
                 requestLayout();
                 invalidate();
@@ -116,45 +122,50 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
         }
     }
 
-    public void a(View view, dl dlVar, int i) {
-        a(view, dlVar, i, null, null);
+    /* renamed from: a */
+    public void m1831a(View view, dl dlVar, int i) {
+        m1832a(view, dlVar, i, null, null);
     }
 
-    public void a(View view, dl dlVar, int i, Runnable runnable, Runnable runnable2) {
-        dl dlVar2 = new dl(a(view));
-        dlVar2.d((float) UTools.getAngle((double) dlVar2.l(), (double) (dlVar.l() - 180.0f), (double) (dlVar.l() + 180.0f)));
-        a(view, dlVar2, dlVar, i, runnable, runnable2);
+    /* renamed from: a */
+    public void m1832a(View view, dl dlVar, int i, Runnable runnable, Runnable runnable2) {
+        dl dlVar2 = new dl(m1826a(view));
+        dlVar2.m1858d((float) dv.m1927b((double) dlVar2.m1865l(), (double) (dlVar.m1865l() - 180.0f), (double) (dlVar.m1865l() + 180.0f)));
+        m1834a(view, dlVar2, dlVar, i, runnable, runnable2);
     }
 
-    public void a(View view, dl dlVar, dl dlVar2, int i) {
-        a(view, dlVar, dlVar2, i, null, null);
+    /* renamed from: a */
+    public void m1833a(View view, dl dlVar, dl dlVar2, int i) {
+        m1834a(view, dlVar, dlVar2, i, null, null);
     }
 
-    public void a(View view, dl dlVar, dl dlVar2, int i, Runnable runnable, Runnable runnable2) {
-        if (!a && (dlVar == null || dlVar2 == null)) {
+    /* renamed from: a */
+    public void m1834a(View view, dl dlVar, dl dlVar2, int i, Runnable runnable, Runnable runnable2) {
+        if (!f1143a && (dlVar == null || dlVar2 == null)) {
             throw new AssertionError();
         } else if (dlVar != null && dlVar2 != null) {
-            ds dsVar = (ds) this.b.get(view);
-            if (!a && dsVar == null) {
+            ds dsVar = (ds) this.f1144b.get(view);
+            if (!f1143a && dsVar == null) {
                 throw new AssertionError();
             } else if (dsVar != null) {
-                if (dsVar.h != null) {
-                    dsVar.h.f();
-                    dsVar.h = null;
+                if (dsVar.f1179h != null) {
+                    dsVar.f1179h.m1846f();
+                    dsVar.f1179h = null;
                 }
-                dsVar.f.a(dlVar);
-                dsVar.h = new dk(this, dlVar, dlVar2, (long) i, runnable, runnable2);
+                dsVar.f1177f.m1871a(dlVar);
+                dsVar.f1179h = new dk(this, dlVar, dlVar2, (long) i, runnable, runnable2);
                 view.invalidate();
             }
         }
     }
 
-    public Matrix c(View view) {
-        ds dsVar = (ds) this.b.get(view);
+    /* renamed from: c */
+    public Matrix mo475c(View view) {
+        ds dsVar = (ds) this.f1144b.get(view);
         if (dsVar == null) {
             return new Matrix();
         }
-        return dsVar.d;
+        return dsVar.f1175d;
     }
 
     protected void onAttachedToWindow() {
@@ -171,31 +182,31 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
         long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
         for (int i = 0; i < getChildCount(); i++) {
             View childAt = getChildAt(i);
-            ds d = d(childAt);
-            b(childAt, d, currentAnimationTimeMillis);
-            a(childAt, d, currentAnimationTimeMillis);
-            a(childAt, d);
+            ds d = m1838d(childAt);
+            m1824b(childAt, d, currentAnimationTimeMillis);
+            m1820a(childAt, d, currentAnimationTimeMillis);
+            m1819a(childAt, d);
         }
         return true;
     }
 
     protected boolean drawChild(Canvas canvas, View view, long j) {
-        ds d = d(view);
+        ds d = m1838d(view);
         if (d == null) {
             return super.drawChild(canvas, view, j);
         }
         canvas.save();
         canvas.translate((float) view.getLeft(), (float) view.getTop());
-        canvas.concat(d.d);
+        canvas.concat(d.f1175d);
         canvas.translate((float) (-view.getLeft()), (float) (-view.getTop()));
         boolean drawChild = super.drawChild(canvas, view, j);
         canvas.restore();
-        if (d.i != null) {
+        if (d.f1180i != null) {
             view.requestLayout();
             requestLayout();
             invalidate();
         }
-        if (d.h == null) {
+        if (d.f1179h == null) {
             return drawChild;
         }
         view.invalidate();
@@ -204,18 +215,18 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
     }
 
     protected boolean getChildStaticTransformation(View view, Transformation transformation) {
-        ds dsVar = (ds) this.b.get(view);
+        ds dsVar = (ds) this.f1144b.get(view);
         if (dsVar == null) {
             return false;
         }
         transformation.clear();
-        transformation.setAlpha(dsVar.f.a());
+        transformation.setAlpha(dsVar.f1177f.m1868a());
         transformation.setTransformationType(1);
         return true;
     }
 
     public void requestDisallowInterceptTouchEvent(boolean z) {
-        this.e = z;
+        this.f1147e = z;
         super.requestDisallowInterceptTouchEvent(z);
     }
 
@@ -223,46 +234,46 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         boolean a;
         if (motionEvent.getActionMasked() == 0) {
-            this.e = false;
+            this.f1147e = false;
         }
-        if ((motionEvent.getActionMasked() == 0 || this.d != null) && !this.e && onInterceptTouchEvent(motionEvent) && this.d != null) {
+        if ((motionEvent.getActionMasked() == 0 || this.f1146d != null) && !this.f1147e && onInterceptTouchEvent(motionEvent) && this.f1146d != null) {
             long uptimeMillis = SystemClock.uptimeMillis();
             MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 3, 0.0f, 0.0f, 0);
             if (VERSION.SDK_INT >= 12) {
                 obtain.setSource(4098);
             }
-            this.d.dispatchTouchEvent(obtain);
-            this.d = null;
+            this.f1146d.dispatchTouchEvent(obtain);
+            this.f1146d = null;
         }
         if (motionEvent.getActionMasked() == 0) {
-            PointF pointF = (PointF) UTools.f.getRect();
-            RectF rectF = (RectF) UTools.h.getRect();
-            this.d = null;
+            PointF pointF = (PointF) dv.f1197f.addAnimation();
+            RectF rectF = (RectF) dv.f1199h.addAnimation();
+            this.f1146d = null;
             for (int childCount = getChildCount() - 1; childCount >= 0; childCount--) {
                 View childAt = getChildAt(childCount);
                 pointF.set(((float) getScrollX()) + motionEvent.getX(), ((float) getScrollY()) + motionEvent.getY());
                 rectF.set((float) childAt.getScrollX(), (float) childAt.getScrollY(), (float) (childAt.getScrollX() + childAt.getWidth()), (float) (childAt.getScrollY() + childAt.getHeight()));
-                UTools.addAnimation(pointF, (View) this, childAt);
-                if (rectF.contains(pointF.x, pointF.y) && a(childAt, motionEvent)) {
-                    this.d = childAt;
+                dv.m1900a(pointF, (View) this, childAt);
+                if (rectF.contains(pointF.x, pointF.y) && m1821a(childAt, motionEvent)) {
+                    this.f1146d = childAt;
                     break;
                 }
             }
-            UTools.f.getRect(pointF);
-            UTools.h.getRect(rectF);
-            if (this.d != null) {
+            dv.f1197f.clearAnimation(pointF);
+            dv.f1199h.clearAnimation(rectF);
+            if (this.f1146d != null) {
                 return true;
             }
         }
-        if (this.d != null) {
-            a = a(this.d, motionEvent);
+        if (this.f1146d != null) {
+            a = m1821a(this.f1146d, motionEvent);
         } else {
             a = onTouchEvent(motionEvent);
         }
         if (motionEvent.getActionMasked() != 1 && motionEvent.getActionMasked() != 3) {
             return a;
         }
-        this.d = null;
+        this.f1146d = null;
         return a;
     }
 
@@ -272,7 +283,7 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
     }
 
     public void setOnHierarchyChangeListener(OnHierarchyChangeListener onHierarchyChangeListener) {
-        this.c = onHierarchyChangeListener;
+        this.f1145c = onHierarchyChangeListener;
     }
 
     protected void dispatchDraw(Canvas canvas) {
@@ -282,9 +293,9 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
     public boolean getChildVisibleRect(View view, Rect rect, Point point) {
         rect.offset(view.getScrollX(), view.getScrollY());
         point.offset(view.getScrollX(), view.getScrollY());
-        UTools.closeAnimation(rect, view, (View) this);
+        dv.m1937b(rect, view, (View) this);
         if (point != null) {
-            UTools.getTouchPoint(point, view, (View) this);
+            dv.m1897a(point, view, (View) this);
         }
         rect.offset(-getScrollX(), -getScrollY());
         point.offset(-getScrollX(), -getScrollY());
@@ -298,17 +309,17 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        Rect rect = (Rect) UTools.g.getRect();
+        Rect rect = (Rect) dv.f1198g.addAnimation();
         rect.set(0, 0, i3 - i, i4 - i2);
         for (int i5 = 0; i5 < getChildCount(); i5++) {
             View childAt = getChildAt(i5);
-            ds d = d(childAt);
+            ds d = m1838d(childAt);
             dn dnVar = (dn) childAt.getLayoutParams();
-            Gravity.apply(dnVar.a, d.j, d.k, rect, d.m);
-            d.m.offset(dnVar.b, dnVar.c);
-            childAt.layout(d.m.left + ((d.m.width() - childAt.getMeasuredWidth()) / 2), d.m.top + ((d.m.height() - childAt.getMeasuredHeight()) / 2), (d.m.left + ((d.m.width() - childAt.getMeasuredWidth()) / 2)) + childAt.getMeasuredWidth(), (((d.m.height() - childAt.getMeasuredHeight()) / 2) + d.m.top) + childAt.getMeasuredHeight());
+            Gravity.apply(dnVar.f1167a, d.f1181j, d.f1182k, rect, d.f1184m);
+            d.f1184m.offset(dnVar.f1168b, dnVar.f1169c);
+            childAt.layout(d.f1184m.left + ((d.f1184m.width() - childAt.getMeasuredWidth()) / 2), d.f1184m.top + ((d.f1184m.height() - childAt.getMeasuredHeight()) / 2), (d.f1184m.left + ((d.f1184m.width() - childAt.getMeasuredWidth()) / 2)) + childAt.getMeasuredWidth(), (((d.f1184m.height() - childAt.getMeasuredHeight()) / 2) + d.f1184m.top) + childAt.getMeasuredHeight());
         }
-        UTools.g.getRect(rect);
+        dv.f1198g.clearAnimation(rect);
     }
 
     protected void onMeasure(int i, int i2) {
@@ -321,29 +332,29 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
         int i5 = 0;
         while (i3 < getChildCount()) {
             View childAt = getChildAt(i3);
-            ds d = d(childAt);
-            if ((d.a & 2) == 2) {
-                d.b.reset();
-                d.b.preScale(d.g.m(), d.g.n());
-                Matrix matrix = (Matrix) UTools.d.getRect();
-                d.b.preConcat(a(matrix, d.g.j(), d.g.k(), d.g.l()));
-                UTools.d.getRect(matrix);
-                d.a &= -3;
+            ds d = m1838d(childAt);
+            if ((d.f1172a & 2) == 2) {
+                d.f1173b.reset();
+                d.f1173b.preScale(d.f1178g.m1866m(), d.f1178g.m1867n());
+                Matrix matrix = (Matrix) dv.f1195d.addAnimation();
+                d.f1173b.preConcat(m1816a(matrix, d.f1178g.m1863j(), d.f1178g.m1864k(), d.f1178g.m1865l()));
+                dv.f1195d.clearAnimation(matrix);
+                d.f1172a &= -3;
             }
-            a(d.m, size, size2, d.b);
-            measureChildWithMargins(childAt, MeasureSpec.makeMeasureSpec(d.m.width(), mode), 0, MeasureSpec.makeMeasureSpec(d.m.height(), mode2), 0);
-            if (d.b.isIdentity()) {
-                d.j = childAt.getMeasuredWidth();
-                d.k = childAt.getMeasuredHeight();
+            m1818a(d.f1184m, size, size2, d.f1173b);
+            measureChildWithMargins(childAt, MeasureSpec.makeMeasureSpec(d.f1184m.width(), mode), 0, MeasureSpec.makeMeasureSpec(d.f1184m.height(), mode2), 0);
+            if (d.f1173b.isIdentity()) {
+                d.f1181j = childAt.getMeasuredWidth();
+                d.f1182k = childAt.getMeasuredHeight();
             } else {
-                d.l.set(0.0f, 0.0f, (float) childAt.getMeasuredWidth(), (float) childAt.getMeasuredHeight());
-                d.b.mapRect(d.l);
-                d.j = (int) d.l.width();
-                d.k = (int) d.l.height();
+                d.f1183l.set(0.0f, 0.0f, (float) childAt.getMeasuredWidth(), (float) childAt.getMeasuredHeight());
+                d.f1173b.mapRect(d.f1183l);
+                d.f1181j = (int) d.f1183l.width();
+                d.f1182k = (int) d.f1183l.height();
             }
-            int max = Math.max(i5, d.j);
+            int max = Math.max(i5, d.f1181j);
             i3++;
-            i4 = Math.max(i4, d.k);
+            i4 = Math.max(i4, d.f1182k);
             i5 = max;
         }
         switch (mode) {
@@ -369,11 +380,11 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
         for (int i6 = 0; i6 < getChildCount(); i6++) {
             int makeMeasureSpec;
             View childAt2 = getChildAt(i6);
-            ds d2 = d(childAt2);
+            ds d2 = m1838d(childAt2);
             dn dnVar = (dn) childAt2.getLayoutParams();
-            a(d2.m, size, size2, d2.b);
-            max = d2.m.width();
-            int height = d2.m.height();
+            m1818a(d2.f1184m, size, size2, d2.f1173b);
+            max = d2.f1184m.width();
+            int height = d2.f1184m.height();
             if (dnVar.width == -1) {
                 max = MeasureSpec.makeMeasureSpec(max, 1073741824);
             } else if (dnVar.width == -2) {
@@ -389,107 +400,117 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
                 makeMeasureSpec = MeasureSpec.makeMeasureSpec(dnVar.height, 1073741824);
             }
             childAt2.measure(max, makeMeasureSpec);
-            if (d2.b.isIdentity()) {
-                d2.j = childAt2.getMeasuredWidth();
-                d2.k = childAt2.getMeasuredHeight();
+            if (d2.f1173b.isIdentity()) {
+                d2.f1181j = childAt2.getMeasuredWidth();
+                d2.f1182k = childAt2.getMeasuredHeight();
             } else {
-                d2.l.set(0.0f, 0.0f, (float) childAt2.getMeasuredWidth(), (float) childAt2.getMeasuredHeight());
-                d2.b.mapRect(d2.l);
-                d2.j = (int) d2.l.width();
-                d2.k = (int) d2.l.height();
+                d2.f1183l.set(0.0f, 0.0f, (float) childAt2.getMeasuredWidth(), (float) childAt2.getMeasuredHeight());
+                d2.f1173b.mapRect(d2.f1183l);
+                d2.f1181j = (int) d2.f1183l.width();
+                d2.f1182k = (int) d2.f1183l.height();
             }
         }
         setMeasuredDimension(i5, i4);
     }
 
-    public dn a(AttributeSet attributeSet) {
+    /* renamed from: a */
+    public dn m1828a(AttributeSet attributeSet) {
         return new dn(getContext(), attributeSet);
     }
 
-    protected dn a() {
+    /* renamed from: a */
+    protected dn m1827a() {
         return new dn(-1, -1, 17);
     }
 
-    protected dn a(LayoutParams layoutParams) {
+    /* renamed from: a */
+    protected dn m1829a(LayoutParams layoutParams) {
         return new dn(layoutParams);
     }
 
-    private boolean a(View view, MotionEvent motionEvent) {
-        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, view);
+    /* renamed from: a */
+    private boolean m1821a(View view, MotionEvent motionEvent) {
+        MotionEvent a = dv.m1908a(motionEvent, (View) this, view);
         boolean dispatchTouchEvent = view.dispatchTouchEvent(a);
         a.recycle();
         return dispatchTouchEvent;
     }
 
-    private void a(View view, ds dsVar) {
-        b(view, dsVar);
-        c(view, dsVar);
-        if ((dsVar.a & 1) == 1) {
+    /* renamed from: a */
+    private void m1819a(View view, ds dsVar) {
+        m1823b(view, dsVar);
+        m1825c(view, dsVar);
+        if ((dsVar.f1172a & 1) == 1) {
             float width = ((float) view.getWidth()) / 2.0f;
             float height = ((float) view.getHeight()) / 2.0f;
-            dsVar.d.reset();
-            dsVar.d.preTranslate(width, height);
-            dsVar.d.preConcat(dsVar.b);
-            dsVar.d.preTranslate(-width, -height);
-            dsVar.d.preConcat(dsVar.c);
-            dsVar.d.invert(dsVar.e);
-            dsVar.a &= -2;
+            dsVar.f1175d.reset();
+            dsVar.f1175d.preTranslate(width, height);
+            dsVar.f1175d.preConcat(dsVar.f1173b);
+            dsVar.f1175d.preTranslate(-width, -height);
+            dsVar.f1175d.preConcat(dsVar.f1174c);
+            dsVar.f1175d.invert(dsVar.f1176e);
+            dsVar.f1172a &= -2;
         }
     }
 
-    private void b(View view, ds dsVar) {
-        if ((dsVar.a & 4) == 4) {
-            float f = dsVar.f.f() * ((float) view.getWidth());
-            float g = dsVar.f.g() * ((float) view.getHeight());
-            dsVar.c.reset();
-            dsVar.c.preTranslate((float) dsVar.f.h(), (float) dsVar.f.i());
-            dsVar.c.preTranslate(f, g);
-            dsVar.c.preScale(dsVar.f.m(), dsVar.f.n());
-            Matrix matrix = (Matrix) UTools.d.getRect();
-            dsVar.c.preConcat(a(matrix, dsVar.f.j(), dsVar.f.k(), dsVar.f.l()));
-            UTools.d.getRect(matrix);
-            dsVar.c.preTranslate(-f, -g);
-            dsVar.a &= -5;
+    /* renamed from: b */
+    private void m1823b(View view, ds dsVar) {
+        if ((dsVar.f1172a & 4) == 4) {
+            float f = dsVar.f1177f.m1859f() * ((float) view.getWidth());
+            float g = dsVar.f1177f.m1860g() * ((float) view.getHeight());
+            dsVar.f1174c.reset();
+            dsVar.f1174c.preTranslate((float) dsVar.f1177f.m1861h(), (float) dsVar.f1177f.m1862i());
+            dsVar.f1174c.preTranslate(f, g);
+            dsVar.f1174c.preScale(dsVar.f1177f.m1866m(), dsVar.f1177f.m1867n());
+            Matrix matrix = (Matrix) dv.f1195d.addAnimation();
+            dsVar.f1174c.preConcat(m1816a(matrix, dsVar.f1177f.m1863j(), dsVar.f1177f.m1864k(), dsVar.f1177f.m1865l()));
+            dv.f1195d.clearAnimation(matrix);
+            dsVar.f1174c.preTranslate(-f, -g);
+            dsVar.f1172a &= -5;
         }
     }
 
-    private void c(View view, ds dsVar) {
-        if ((dsVar.a & 2) == 2) {
-            dsVar.b.reset();
-            dsVar.b.preScale(dsVar.g.m(), dsVar.g.n());
-            Matrix matrix = (Matrix) UTools.d.getRect();
-            dsVar.b.preConcat(a(matrix, dsVar.g.j(), dsVar.g.k(), dsVar.g.l()));
-            UTools.d.getRect(matrix);
-            dsVar.a &= -3;
+    /* renamed from: c */
+    private void m1825c(View view, ds dsVar) {
+        if ((dsVar.f1172a & 2) == 2) {
+            dsVar.f1173b.reset();
+            dsVar.f1173b.preScale(dsVar.f1178g.m1866m(), dsVar.f1178g.m1867n());
+            Matrix matrix = (Matrix) dv.f1195d.addAnimation();
+            dsVar.f1173b.preConcat(m1816a(matrix, dsVar.f1178g.m1863j(), dsVar.f1178g.m1864k(), dsVar.f1178g.m1865l()));
+            dv.f1195d.clearAnimation(matrix);
+            dsVar.f1172a &= -3;
         }
     }
 
-    private void a(View view, ds dsVar, long j) {
-        if (dsVar.h != null) {
-            if (!dsVar.h.a(dsVar.f, j)) {
-                dsVar.h = null;
+    /* renamed from: a */
+    private void m1820a(View view, ds dsVar, long j) {
+        if (dsVar.f1179h != null) {
+            if (!dsVar.f1179h.mo512a(dsVar.f1177f, j)) {
+                dsVar.f1179h = null;
             }
-            dsVar.a |= 5;
+            dsVar.f1172a |= 5;
         }
     }
 
-    private void b(View view, ds dsVar, long j) {
-        if (dsVar.i != null) {
-            if (!dsVar.i.a(dsVar.g, j)) {
-                dsVar.i = null;
+    /* renamed from: b */
+    private void m1824b(View view, ds dsVar, long j) {
+        if (dsVar.f1180i != null) {
+            if (!dsVar.f1180i.mo512a(dsVar.f1178g, j)) {
+                dsVar.f1180i = null;
             }
-            dsVar.a |= 7;
+            dsVar.f1172a |= 7;
         }
     }
 
-    private void a(Rect rect, int i, int i2, Matrix matrix) {
+    /* renamed from: a */
+    private void m1818a(Rect rect, int i, int i2, Matrix matrix) {
         if (matrix.isIdentity()) {
             rect.set(0, 0, i, i2);
         } else if (i <= 0 || i2 <= 0) {
             rect.setEmpty();
         } else {
             float abs;
-            float[] fArr = (float[]) UTools.k.getRect();
+            float[] fArr = (float[]) dv.f1202k.addAnimation();
             matrix.getValues(fArr);
             float f = fArr[0];
             float f2 = fArr[1];
@@ -528,7 +549,7 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
                 f = Math.min(f2, abs2) * 0.5f;
                 abs = Math.min(f3, f4) * 0.5f;
                 if ((Float.compare(abs2, f2) >= 0 && Float.compare(f3, f4) <= 0) || (Float.compare(abs2, f2) <= 0 && Float.compare(f3, f4) >= 0)) {
-                    RectF rectF = (RectF) UTools.h.getRect();
+                    RectF rectF = (RectF) dv.f1199h.addAnimation();
                     rectF.set(0.0f, 0.0f, f, abs);
                     matrix.mapRect(rectF);
                     f2 = Math.min(((float) i) / rectF.width(), ((float) i2) / rectF.height());
@@ -536,25 +557,27 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
                         f *= f2;
                         abs *= f2;
                     }
-                    UTools.h.getRect(rectF);
+                    dv.f1199h.clearAnimation(rectF);
                 }
             }
             rect.set(0, 0, (int) f, (int) abs);
-            UTools.k.getRect(fArr);
+            dv.f1202k.clearAnimation(fArr);
         }
     }
 
-    private Matrix a(Matrix matrix, float f, float f2, float f3) {
-        Camera camera = (Camera) UTools.a.getRect();
+    /* renamed from: a */
+    private Matrix m1816a(Matrix matrix, float f, float f2, float f3) {
+        Camera camera = (Camera) dv.f1192a.addAnimation();
         camera.rotateX(f);
         camera.rotateY(f2);
         camera.rotateZ(f3);
         camera.getMatrix(matrix);
-        UTools.a.getRect(camera);
+        dv.f1192a.clearAnimation(camera);
         return matrix;
     }
 
-    protected ds d(View view) {
-        return (ds) this.b.get(view);
+    /* renamed from: d */
+    protected ds m1838d(View view) {
+        return (ds) this.f1144b.get(view);
     }
 }

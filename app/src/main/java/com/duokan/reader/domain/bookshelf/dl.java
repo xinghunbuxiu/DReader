@@ -1,39 +1,24 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.account.ab;
+import java.util.List;
 
-class dl extends ap {
-    final /* synthetic */ ab a;
-    final /* synthetic */ dz b;
-    final /* synthetic */ dh c;
-    private final ea d = new ea();
+class dl implements dw {
+    /* renamed from: a */
+    final /* synthetic */ dk f3034a;
 
-    dl(dh dhVar, ab abVar, dz dzVar) {
-        this.c = dhVar;
-        this.a = abVar;
-        this.b = dzVar;
+    dl(dk dkVar) {
+        this.f3034a = dkVar;
     }
 
-    protected void onSessionTry() {
-        dd ddVar = new dd(this.a);
-        ddVar.a();
-        this.d.a(ddVar);
+    /* renamed from: a */
+    public void mo983a(List<dd> list) {
+        this.f3034a.f3031b.mo983a((List) list);
+        this.f3034a.m4345a();
     }
 
-    protected void onSessionSucceeded() {
-        if (this.a.a(this.c.c)) {
-            this.c.a(this.d);
-            if (this.b != null) {
-                this.b.a();
-            }
-        } else if (this.b != null) {
-            this.b.b();
-        }
-    }
-
-    protected void onSessionFailed() {
-        if (this.b != null) {
-            this.b.b();
-        }
+    /* renamed from: a */
+    public void mo982a(String str) {
+        this.f3034a.f3031b.mo982a(str);
+        this.f3034a.m4345a();
     }
 }

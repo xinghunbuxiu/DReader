@@ -1,27 +1,23 @@
 package com.duokan.reader.ui.reading;
 
-import android.widget.SeekBar;
-import android.widget.SeekBar.OnSeekBarChangeListener;
+import com.duokan.reader.domain.document.FootnoteStyle;
 
-class te implements OnSeekBarChangeListener {
-    final /* synthetic */ tc a;
+/* synthetic */ class te {
+    /* renamed from: a */
+    static final /* synthetic */ int[] f10967a = new int[FootnoteStyle.values().length];
 
-    te(tc tcVar) {
-        this.a = tcVar;
-    }
-
-    public void onStopTrackingTouch(SeekBar seekBar) {
-        this.a.a((long) this.a.l.getProgress());
-    }
-
-    public void onStartTrackingTouch(SeekBar seekBar) {
-        this.a.p.setVisibility(0);
-        this.a.s.setVisibility(8);
-    }
-
-    public void onProgressChanged(SeekBar seekBar, int i, boolean z) {
-        this.a.a(i);
-        this.a.n.setVisibility(8);
-        this.a.m.setVisibility(0);
+    static {
+        try {
+            f10967a[FootnoteStyle.BUBBLE.ordinal()] = 1;
+        } catch (NoSuchFieldError e) {
+        }
+        try {
+            f10967a[FootnoteStyle.PAPERTAPE.ordinal()] = 2;
+        } catch (NoSuchFieldError e2) {
+        }
+        try {
+            f10967a[FootnoteStyle.NONE.ordinal()] = 3;
+        } catch (NoSuchFieldError e3) {
+        }
     }
 }

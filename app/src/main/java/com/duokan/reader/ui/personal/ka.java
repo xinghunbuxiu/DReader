@@ -1,34 +1,28 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.ui.store.DkCloudBookStatusHelper.StoreBookStatus;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.domain.bookshelf.lb;
+import com.duokan.reader.domain.cloud.PersonalPrefs;
 
-/* synthetic */ class ka {
-    static final /* synthetic */ int[] a = new int[StoreBookStatus.values().length];
+class ka implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ jg f8801a;
 
-    static {
-        try {
-            a[StoreBookStatus.UPDATE.ordinal()] = 1;
-        } catch (NoSuchFieldError e) {
+    ka(jg jgVar) {
+        this.f8801a = jgVar;
+    }
+
+    public void onClick(View view) {
+        boolean z;
+        PersonalPrefs a = PersonalPrefs.m5175a();
+        if (PersonalPrefs.m5175a().m5234j()) {
+            z = false;
+        } else {
+            z = true;
         }
-        try {
-            a[StoreBookStatus.DOWNLOAD.ordinal()] = 2;
-        } catch (NoSuchFieldError e2) {
-        }
-        try {
-            a[StoreBookStatus.DOWNLOADING.ordinal()] = 3;
-        } catch (NoSuchFieldError e3) {
-        }
-        try {
-            a[StoreBookStatus.ORDER.ordinal()] = 4;
-        } catch (NoSuchFieldError e4) {
-        }
-        try {
-            a[StoreBookStatus.TRADING.ordinal()] = 5;
-        } catch (NoSuchFieldError e5) {
-        }
-        try {
-            a[StoreBookStatus.NORMAL.ordinal()] = 6;
-        } catch (NoSuchFieldError e6) {
-        }
+        a.m5208a(z);
+        this.f8801a.m12047a();
+        lb.m4896a().m4919a(false);
     }
 }

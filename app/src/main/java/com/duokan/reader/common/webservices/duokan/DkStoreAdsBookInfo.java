@@ -46,7 +46,7 @@ public class DkStoreAdsBookInfo extends DkStoreItemInfo {
         PUBLISHER(4),
         FICTION_INFO(100),
         FICTION_TOPIC(HttpStatus.SC_SWITCHING_PROTOCOLS);
-
+        
         private int mTypeValue;
 
         private AdsType(int i) {
@@ -63,7 +63,7 @@ public class DkStoreAdsBookInfo extends DkStoreItemInfo {
                     return WEBSIZE;
                 case 4:
                     return PUBLISHER;
-                case 100:
+                case HttpStatus.SC_CONTINUE /*100*/:
                     return FICTION_INFO;
                 case HttpStatus.SC_SWITCHING_PROTOCOLS /*101*/:
                     return FICTION_TOPIC;

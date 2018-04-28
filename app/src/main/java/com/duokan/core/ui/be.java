@@ -6,7 +6,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.ViewGroup.MarginLayoutParams;
 
 public class be extends MarginLayoutParams {
-    public int a = 17;
+    /* renamed from: a */
+    public int f1011a = 17;
 
     public be(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);

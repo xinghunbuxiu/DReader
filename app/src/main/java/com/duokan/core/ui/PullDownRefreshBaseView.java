@@ -5,8 +5,10 @@ import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
 public abstract class PullDownRefreshBaseView extends FrameLayout {
-    private RefreshState a = RefreshState.NO_REFRESH;
-    private Runnable b;
+    /* renamed from: a */
+    private RefreshState f846a = RefreshState.NO_REFRESH;
+    /* renamed from: b */
+    private Runnable f847b;
 
     public enum RefreshState {
         NO_REFRESH,
@@ -16,15 +18,20 @@ public abstract class PullDownRefreshBaseView extends FrameLayout {
         REFRESH_DONE
     }
 
-    protected abstract void a(RefreshState refreshState);
+    /* renamed from: a */
+    protected abstract void mo469a(RefreshState refreshState);
 
-    protected abstract void b();
+    /* renamed from: b */
+    protected abstract void mo470b();
 
-    protected abstract void c();
+    /* renamed from: c */
+    protected abstract void mo471c();
 
-    protected abstract void d();
+    /* renamed from: d */
+    protected abstract void mo472d();
 
-    protected abstract void e();
+    /* renamed from: e */
+    protected abstract void mo473e();
 
     public abstract void setRate(float f);
 
@@ -35,74 +42,76 @@ public abstract class PullDownRefreshBaseView extends FrameLayout {
     }
 
     public final RefreshState getRefreshState() {
-        return this.a;
+        return this.f846a;
     }
 
     public final void setRefreshState(RefreshState refreshState) {
-        RefreshState refreshState2 = this.a;
+        RefreshState refreshState2 = this.f846a;
         if (refreshState2 != refreshState) {
-            switch (bz.a[refreshState2.ordinal()]) {
+            switch (bz.f1062a[refreshState2.ordinal()]) {
                 case 1:
                     if (refreshState == RefreshState.DOWN_TO_REFRESH) {
-                        this.a = refreshState;
+                        this.f846a = refreshState;
                         break;
                     }
                     break;
                 case 2:
                     if (refreshState == RefreshState.NO_REFRESH || refreshState == RefreshState.RELEASE_TO_REFRESH) {
-                        this.a = refreshState;
+                        this.f846a = refreshState;
                         break;
                     }
                 case 3:
                     if (refreshState == RefreshState.DOWN_TO_REFRESH || refreshState == RefreshState.REFRESHING) {
-                        this.a = refreshState;
+                        this.f846a = refreshState;
                         break;
                     }
                 case 4:
                     if (refreshState == RefreshState.REFRESH_DONE) {
-                        this.a = refreshState;
+                        this.f846a = refreshState;
                         break;
                     }
                     break;
                 case 5:
                     if (refreshState == RefreshState.NO_REFRESH || refreshState == RefreshState.DOWN_TO_REFRESH) {
-                        this.a = refreshState;
+                        this.f846a = refreshState;
                         break;
                     }
             }
-            if (refreshState2 != this.a) {
-                a(refreshState2, this.a);
+            if (refreshState2 != this.f846a) {
+                m1285a(refreshState2, this.f846a);
             }
         }
     }
 
-    public void a() {
-        if (this.b != null) {
-            this.b.run();
-            this.b = null;
+    /* renamed from: a */
+    public void m1286a() {
+        if (this.f847b != null) {
+            this.f847b.run();
+            this.f847b = null;
         }
     }
 
     public void setOnRefreshDone(Runnable runnable) {
-        this.b = runnable;
+        this.f847b = runnable;
     }
 
-    private final void a(RefreshState refreshState, RefreshState refreshState2) {
-        switch (bz.a[refreshState2.ordinal()]) {
+    /* renamed from: a */
+    private final void m1285a(RefreshState refreshState, RefreshState refreshState2) {
+        switch (bz.f1062a[refreshState2.ordinal()]) {
             case 1:
-                b();
+                mo470b();
                 return;
             case 2:
-                a(refreshState);
+                mo469a(refreshState);
                 return;
             case 3:
-                c();
+                mo471c();
                 return;
             case 4:
-                d();
+                mo472d();
                 return;
             case 5:
-                e();
+                mo473e();
                 return;
             default:
                 return;

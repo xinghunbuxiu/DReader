@@ -19,23 +19,40 @@ import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 
 public class ZoomView extends ViewGroup implements Scrollable, fk {
-    static final /* synthetic */ boolean a = (!ZoomView.class.desiredAssertionStatus());
-    private final gf b;
-    private final Matrix c;
-    private int d;
-    private int e;
-    private ZoomState f;
-    private float g;
-    private float h;
-    private float i;
-    private float j;
-    private boolean k;
-    private gg l;
-    private View m;
-    private boolean n;
-    private ge o;
-    private OverScrollMode p;
-    private OverScrollMode q;
+    /* renamed from: a */
+    static final /* synthetic */ boolean f869a = (!ZoomView.class.desiredAssertionStatus());
+    /* renamed from: b */
+    private final gf f870b;
+    /* renamed from: c */
+    private final Matrix f871c;
+    /* renamed from: d */
+    private int f872d;
+    /* renamed from: e */
+    private int f873e;
+    /* renamed from: f */
+    private ZoomState f874f;
+    /* renamed from: g */
+    private float f875g;
+    /* renamed from: h */
+    private float f876h;
+    /* renamed from: i */
+    private float f877i;
+    /* renamed from: j */
+    private float f878j;
+    /* renamed from: k */
+    private boolean f879k;
+    /* renamed from: l */
+    private gg f880l;
+    /* renamed from: m */
+    private View f881m;
+    /* renamed from: n */
+    private boolean f882n;
+    /* renamed from: o */
+    private ge f883o;
+    /* renamed from: p */
+    private OverScrollMode f884p;
+    /* renamed from: q */
+    private OverScrollMode f885q;
 
     public enum ZoomState {
         IDLE,
@@ -49,334 +66,350 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
 
     public ZoomView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.c = new Matrix();
-        this.d = 0;
-        this.e = 0;
-        this.f = ZoomState.IDLE;
-        this.g = 1.0f;
-        this.h = 1.0f;
-        this.i = 10.0f;
-        this.j = 0.0f;
-        this.k = true;
-        this.l = null;
-        this.m = null;
-        this.n = false;
-        this.o = null;
+        this.f871c = new Matrix();
+        this.f872d = 0;
+        this.f873e = 0;
+        this.f874f = ZoomState.IDLE;
+        this.f875g = 1.0f;
+        this.f876h = 1.0f;
+        this.f877i = 10.0f;
+        this.f878j = 0.0f;
+        this.f879k = true;
+        this.f880l = null;
+        this.f881m = null;
+        this.f882n = false;
+        this.f883o = null;
         setWillNotDraw(false);
-        this.b = c();
-        this.b.I().a(new gh());
+        this.f870b = m1362c();
+        this.f870b.m1457I().m2041a(new gh());
         setThumbEnabled(true);
         setHorizontalOverScrollMode(OverScrollMode.STRETCH);
         setVerticalOverScrollMode(OverScrollMode.STRETCH);
-        setMaxOverScrollWidth(UTools.defaultClose(context));
-        setMaxOverScrollHeight(UTools.getMinimumHeight(context));
+        setMaxOverScrollWidth(dv.m1959f(context));
+        setMaxOverScrollHeight(dv.m1962g(context));
     }
 
     public final ZoomState getZoomState() {
-        return this.f;
+        return this.f874f;
     }
 
     public final float getZoomFactor() {
-        return this.g;
+        return this.f875g;
     }
 
     public final float getMinZoomFactor() {
-        return this.h;
+        return this.f876h;
     }
 
     public final void setMinZoomFactor(float f) {
-        this.h = f;
-        l_();
+        this.f876h = f;
+        m_();
     }
 
     public final float getMaxZoomFactor() {
-        return this.i;
+        return this.f877i;
     }
 
     public final void setMaxZoomFactor(float f) {
-        this.i = f;
-        l_();
+        this.f877i = f;
+        m_();
     }
 
     public final float getZoomAngle() {
-        return this.j;
+        return this.f878j;
     }
 
     public final boolean getRotateEnabled() {
-        return this.k;
+        return this.f879k;
     }
 
     public final void setRotateEnabled(boolean z) {
-        this.k = z;
+        this.f879k = z;
     }
 
     public ge getOnZoomListener() {
-        return this.o;
+        return this.f883o;
     }
 
     public void setOnZoomListener(ge geVar) {
-        this.o = geVar;
+        this.f883o = geVar;
     }
 
-    public final void a(float f, float f2, float f3, Runnable runnable, Runnable runnable2) {
-        a(f, f2, f3, getZoomAngle(), runnable, runnable2);
+    /* renamed from: a */
+    public final void m1353a(float f, float f2, float f3, Runnable runnable, Runnable runnable2) {
+        m1352a(f, f2, f3, getZoomAngle(), runnable, runnable2);
     }
 
-    public final void a(float f, float f2, float f3, float f4, Runnable runnable, Runnable runnable2) {
-        if (e() != null) {
-            b(f, f2, ((float) getWidth()) / 2.0f, ((float) getHeight()) / 2.0f, f3, f4, runnable, runnable2);
+    /* renamed from: a */
+    public final void m1352a(float f, float f2, float f3, float f4, Runnable runnable, Runnable runnable2) {
+        if (mo2335e() != null) {
+            m1342b(f, f2, ((float) getWidth()) / 2.0f, ((float) getHeight()) / 2.0f, f3, f4, runnable, runnable2);
         }
     }
 
-    public final void a(float f, float f2, float f3) {
-        a(f, f2, f3, getZoomAngle());
+    /* renamed from: a */
+    public final void m1350a(float f, float f2, float f3) {
+        m1351a(f, f2, f3, getZoomAngle());
     }
 
-    public final void a(float f, float f2, float f3, float f4) {
-        b(f, f2, ((float) getWidth()) / 2.0f, ((float) getHeight()) / 2.0f, f3, f4);
+    /* renamed from: a */
+    public final void m1351a(float f, float f2, float f3, float f4) {
+        m1341b(f, f2, ((float) getWidth()) / 2.0f, ((float) getHeight()) / 2.0f, f3, f4);
     }
 
-    public final void b(float f, float f2, float f3) {
-        b(f, f2, f3, getZoomAngle());
+    /* renamed from: b */
+    public final void m1357b(float f, float f2, float f3) {
+        m1358b(f, f2, f3, getZoomAngle());
     }
 
-    public final void b(float f, float f2, float f3, float f4) {
-        if (e() != null) {
-            a(f, f2, ((float) getWidth()) / 2.0f, ((float) getHeight()) / 2.0f, f3, f4);
+    /* renamed from: b */
+    public final void m1358b(float f, float f2, float f3, float f4) {
+        if (mo2335e() != null) {
+            m1327a(f, f2, ((float) getWidth()) / 2.0f, ((float) getHeight()) / 2.0f, f3, f4);
         }
     }
 
-    public final void b(float f, float f2, float f3, Runnable runnable, Runnable runnable2) {
-        b(f, f2, f3, getZoomAngle(), runnable, runnable2);
+    /* renamed from: b */
+    public final void m1360b(float f, float f2, float f3, Runnable runnable, Runnable runnable2) {
+        m1359b(f, f2, f3, getZoomAngle(), runnable, runnable2);
     }
 
-    public final void b(float f, float f2, float f3, float f4, Runnable runnable, Runnable runnable2) {
-        if (e() != null) {
-            a(f, f2, ((float) getWidth()) / 2.0f, ((float) getHeight()) / 2.0f, f3, f4, runnable, runnable2);
+    /* renamed from: b */
+    public final void m1359b(float f, float f2, float f3, float f4, Runnable runnable, Runnable runnable2) {
+        if (mo2335e() != null) {
+            m1328a(f, f2, ((float) getWidth()) / 2.0f, ((float) getHeight()) / 2.0f, f3, f4, runnable, runnable2);
         }
     }
 
-    public Matrix c(View view) {
-        return this.c;
+    /* renamed from: c */
+    public Matrix mo475c(View view) {
+        return this.f871c;
     }
 
     public final int getContentWidth() {
-        return this.b.s();
+        return this.f870b.m1561s();
     }
 
     public final int getContentHeight() {
-        return this.b.t();
+        return this.f870b.m1562t();
     }
 
     public boolean getThumbEnabled() {
-        return this.b.u();
+        return this.f870b.m1563u();
     }
 
     public void setThumbEnabled(boolean z) {
-        this.b.c(z);
+        this.f870b.m1530c(z);
     }
 
     public boolean getSeekEnabled() {
-        return this.b.v();
+        return this.f870b.m1564v();
     }
 
     public void setSeekEnabled(boolean z) {
-        this.b.d(z);
+        this.f870b.m1538d(z);
     }
 
     public int getHorizontalThumbMarginLeft() {
-        return this.b.w();
+        return this.f870b.m1565w();
     }
 
     public int getHorizontalThumbMarginTop() {
-        return this.b.x();
+        return this.f870b.m1566x();
     }
 
     public int getHorizontalThumbMarginRight() {
-        return this.b.y();
+        return this.f870b.m1567y();
     }
 
     public int getHorizontalThumbMarginBottom() {
-        return this.b.z();
+        return this.f870b.m1568z();
     }
 
     public int getVerticalThumbMarginLeft() {
-        return this.b.A();
+        return this.f870b.m1449A();
     }
 
     public int getVerticalThumbMarginTop() {
-        return this.b.B();
+        return this.f870b.m1450B();
     }
 
     public int getVerticalThumbMarginRight() {
-        return this.b.C();
+        return this.f870b.m1451C();
     }
 
     public int getVerticalThumbMarginBottom() {
-        return this.b.D();
+        return this.f870b.m1452D();
     }
 
     public Drawable getHorizontalThumbDrawable() {
-        return this.b.E();
+        return this.f870b.m1453E();
     }
 
     public void setHorizontalThumbDrawable(Drawable drawable) {
-        this.b.a(drawable);
+        this.f870b.m1493a(drawable);
     }
 
     public Drawable getVerticalThumbDrawable() {
-        return this.b.F();
+        return this.f870b.m1454F();
     }
 
     public void setVerticalThumbDrawable(Drawable drawable) {
-        this.b.b(drawable);
+        this.f870b.m1517b(drawable);
     }
 
     public Drawable getHorizontalSeekDrawable() {
-        return this.b.G();
+        return this.f870b.m1455G();
     }
 
     public void setHorizontalSeekDrawable(Drawable drawable) {
-        this.b.c(drawable);
+        this.f870b.m1529c(drawable);
     }
 
     public Drawable getVerticalSeekDrawable() {
-        return this.b.H();
+        return this.f870b.m1456H();
     }
 
     public void setVerticalSeekDrawable(Drawable drawable) {
-        this.b.d(drawable);
+        this.f870b.m1537d(drawable);
     }
 
     public et getScrollDetector() {
-        return this.b.I();
+        return this.f870b.m1457I();
     }
 
     public final ScrollState getScrollState() {
-        return this.b.getScrollState();
+        return this.f870b.getScrollState();
     }
 
     public final int getIdleTime() {
-        return this.b.getIdleTime();
+        return this.f870b.getIdleTime();
     }
 
     public final int getScrollTime() {
-        return this.b.J();
+        return this.f870b.m1458J();
     }
 
     public int getScrollFinalX() {
-        return this.b.K();
+        return this.f870b.m1459K();
     }
 
     public int getScrollFinalY() {
-        return this.b.L();
+        return this.f870b.m1460L();
     }
 
     public final void setScrollInterpolator(Interpolator interpolator) {
-        this.b.a(interpolator);
+        this.f870b.m1496a(interpolator);
     }
 
-    public void a(View view, boolean z) {
-        this.b.a(view, z);
+    /* renamed from: a */
+    public void mo435a(View view, boolean z) {
+        this.f870b.mo435a(view, z);
     }
 
     public OverScrollMode getHorizontalOverScrollMode() {
-        return this.p;
+        return this.f884p;
     }
 
     public void setHorizontalOverScrollMode(OverScrollMode overScrollMode) {
-        this.p = overScrollMode;
-        this.b.a(overScrollMode);
+        this.f884p = overScrollMode;
+        this.f870b.m1497a(overScrollMode);
     }
 
     public OverScrollMode getVerticalOverScrollMode() {
-        return this.q;
+        return this.f885q;
     }
 
     public void setVerticalOverScrollMode(OverScrollMode overScrollMode) {
-        this.q = overScrollMode;
-        this.b.b(overScrollMode);
+        this.f885q = overScrollMode;
+        this.f870b.m1518b(overScrollMode);
     }
 
     public final int getMaxOverScrollWidth() {
-        return this.b.O();
+        return this.f870b.m1463O();
     }
 
     public final void setMaxOverScrollWidth(int i) {
-        this.b.c(i);
+        this.f870b.m1525c(i);
     }
 
     public final int getMaxOverScrollHeight() {
-        return this.b.getMaxOverScrollHeight();
+        return this.f870b.getMaxOverScrollHeight();
     }
 
     public final void setMaxOverScrollHeight(int i) {
-        this.b.d(i);
+        this.f870b.m1534d(i);
     }
 
     public final Rect getViewportBounds() {
-        return this.b.getViewportBounds();
+        return this.f870b.getViewportBounds();
     }
 
     public void setOnContentBoundsChangedListener(cf cfVar) {
-        this.b.a(cfVar);
+        this.f870b.m1501a(cfVar);
     }
 
-    public final void setOnScrollListener(OnScrollListener cgVar) {
-        this.b.a(cgVar);
+    public final void setOnScrollListener(cg cgVar) {
+        this.f870b.m1502a(cgVar);
     }
 
-    public void a(int i, int i2) {
-        this.b.e(i, i2);
+    /* renamed from: a */
+    public final void mo434a(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
+        this.f870b.mo434a(i, i2, i3, runnable, runnable2);
     }
 
-    public void l_() {
-        View e = e();
-        if (e != null) {
-            PointF pointF = (PointF) UTools.f.getRect();
-            pointF.set(((float) getScrollX()) + (((float) getWidth()) / 2.0f), ((float) getScrollY()) + (((float) getHeight()) / 2.0f));
-            UTools.addAnimation(pointF, (View) this, e);
-            PointF pointF2 = (PointF) UTools.f.getRect();
-            pointF2.set(pointF);
-            UTools.addAnimation(pointF2, e, (View) this);
-            pointF2.offset((float) (-getScrollX()), (float) (-getScrollY()));
-            float[] d = d(pointF.x, pointF.y, pointF2.x, pointF2.y, getZoomFactor(), getZoomAngle());
-            b(d[0], d[1], d[2], d[3], d[4], d[5]);
-            UTools.f.getRect(pointF);
-            UTools.f.getRect(pointF2);
-        }
+    /* renamed from: a */
+    public void m1354a(int i, int i2) {
+        this.f870b.m1541e(i, i2);
     }
 
     public void m_() {
-        View e = e();
+        View e = mo2335e();
         if (e != null) {
-            PointF pointF = (PointF) UTools.f.getRect();
+            PointF pointF = (PointF) dv.f1197f.addAnimation();
             pointF.set(((float) getScrollX()) + (((float) getWidth()) / 2.0f), ((float) getScrollY()) + (((float) getHeight()) / 2.0f));
-            UTools.addAnimation(pointF, (View) this, e);
-            PointF pointF2 = (PointF) UTools.f.getRect();
+            dv.m1900a(pointF, (View) this, e);
+            PointF pointF2 = (PointF) dv.f1197f.addAnimation();
             pointF2.set(pointF);
-            UTools.addAnimation(pointF2, e, (View) this);
+            dv.m1900a(pointF2, e, (View) this);
             pointF2.offset((float) (-getScrollX()), (float) (-getScrollY()));
-            float[] d = d(pointF.x, pointF.y, pointF2.x, pointF2.y, getZoomFactor(), getZoomAngle());
-            b(d[0], d[1], d[2], d[3], d[4], d[5], null, null);
-            UTools.f.getRect(pointF);
-            UTools.f.getRect(pointF2);
+            float[] d = m1347d(pointF.x, pointF.y, pointF2.x, pointF2.y, getZoomFactor(), getZoomAngle());
+            m1341b(d[0], d[1], d[2], d[3], d[4], d[5]);
+            dv.f1197f.clearAnimation(pointF);
+            dv.f1197f.clearAnimation(pointF2);
+        }
+    }
+
+    public void n_() {
+        View e = mo2335e();
+        if (e != null) {
+            PointF pointF = (PointF) dv.f1197f.addAnimation();
+            pointF.set(((float) getScrollX()) + (((float) getWidth()) / 2.0f), ((float) getScrollY()) + (((float) getHeight()) / 2.0f));
+            dv.m1900a(pointF, (View) this, e);
+            PointF pointF2 = (PointF) dv.f1197f.addAnimation();
+            pointF2.set(pointF);
+            dv.m1900a(pointF2, e, (View) this);
+            pointF2.offset((float) (-getScrollX()), (float) (-getScrollY()));
+            float[] d = m1347d(pointF.x, pointF.y, pointF2.x, pointF2.y, getZoomFactor(), getZoomAngle());
+            m1342b(d[0], d[1], d[2], d[3], d[4], d[5], null, null);
+            dv.f1197f.clearAnimation(pointF);
+            dv.f1197f.clearAnimation(pointF2);
         }
     }
 
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return this.b.b(motionEvent);
+        return this.f870b.mo2419b(motionEvent);
     }
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.b.c(motionEvent);
+        return this.f870b.mo2420c(motionEvent);
     }
 
     protected void onMeasure(int i, int i2) {
         int i3 = 0;
         int paddingRight = getPaddingRight() + getPaddingLeft();
         int paddingBottom = getPaddingBottom() + getPaddingTop();
-        View e = e();
+        View e = mo2335e();
         if (e != null) {
             LayoutParams layoutParams = e.getLayoutParams();
             int childMeasureSpec = getChildMeasureSpec(layoutParams.width == -1 ? i : 0, paddingRight, layoutParams.width);
@@ -384,115 +417,115 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
                 i3 = i2;
             }
             e.measure(childMeasureSpec, getChildMeasureSpec(i3, paddingBottom, layoutParams.height));
-            this.d = e.getMeasuredWidth();
-            this.e = e.getMeasuredHeight();
+            this.f872d = e.getMeasuredWidth();
+            this.f873e = e.getMeasuredHeight();
         } else {
-            this.d = 0;
-            this.e = 0;
+            this.f872d = 0;
+            this.f873e = 0;
         }
-        setMeasuredDimension(resolveSize(this.d + paddingRight, i), resolveSize(this.e + paddingBottom, i2));
+        setMeasuredDimension(resolveSize(this.f872d + paddingRight, i), resolveSize(this.f873e + paddingBottom, i2));
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         int i5 = i4 - i2;
         int paddingLeft = getPaddingLeft() + getPaddingRight();
         int paddingTop = getPaddingTop() + getPaddingBottom();
-        int max = Math.max(i3 - i, this.d + paddingLeft);
-        i5 = Math.max(i5, this.e + paddingTop);
-        View e = e();
+        int max = Math.max(i3 - i, this.f872d + paddingLeft);
+        i5 = Math.max(i5, this.f873e + paddingTop);
+        View e = mo2335e();
         if (e != null) {
-            max = (((max - paddingLeft) - this.d) / 2) + getPaddingLeft();
-            i5 = (((i5 - paddingTop) - this.e) / 2) + getPaddingTop();
+            max = (((max - paddingLeft) - this.f872d) / 2) + getPaddingLeft();
+            i5 = (((i5 - paddingTop) - this.f873e) / 2) + getPaddingTop();
             e.layout(max, i5, e.getMeasuredWidth() + max, e.getMeasuredHeight() + i5);
         }
-        Rect rect = (Rect) UTools.g.getRect();
-        Point point = (Point) UTools.e.getRect();
-        a(rect, point, 0.0f, 0.0f, 0.0f, 0.0f, this.g, this.j);
-        this.b.a(rect);
-        UTools.g.getRect(rect);
-        UTools.e.getRect(point);
-        this.b.a(z, i, i2, i3, i4);
-        l_();
+        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Point point = (Point) dv.f1196e.addAnimation();
+        m1330a(rect, point, 0.0f, 0.0f, 0.0f, 0.0f, this.f875g, this.f878j);
+        this.f870b.m1491a(rect);
+        dv.f1198g.clearAnimation(rect);
+        dv.f1196e.clearAnimation(point);
+        this.f870b.m1504a(z, i, i2, i3, i4);
+        m_();
     }
 
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.b.c();
+        this.f870b.m1523c();
     }
 
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.b.d();
+        this.f870b.m1532d();
     }
 
     public void scrollBy(int i, int i2) {
-        this.b.c(i, i2);
+        this.f870b.m1526c(i, i2);
     }
 
     public void scrollTo(int i, int i2) {
-        this.b.d(i, i2);
+        this.f870b.m1535d(i, i2);
     }
 
     @SuppressLint({"MissingSuperCall"})
     public void draw(Canvas canvas) {
-        this.b.b(canvas);
-        this.b.c(canvas);
+        this.f870b.mo529b(canvas);
+        this.f870b.m1527c(canvas);
     }
 
     public boolean shouldDelayChildPressedState() {
-        return this.b.l();
+        return this.f870b.m1554l();
     }
 
     public void requestDisallowInterceptTouchEvent(boolean z) {
-        this.n = z;
+        this.f882n = z;
         super.requestDisallowInterceptTouchEvent(z);
-        this.b.b(z);
+        this.f870b.m1520b(z);
     }
 
     public boolean isHorizontalFadingEdgeEnabled() {
-        return this.b.g();
+        return this.f870b.m1548g();
     }
 
     public boolean isHorizontalScrollBarEnabled() {
-        return this.b.h();
+        return this.f870b.m1550h();
     }
 
     public boolean isVerticalFadingEdgeEnabled() {
-        return this.b.i();
+        return this.f870b.m1551i();
     }
 
     public boolean isVerticalScrollBarEnabled() {
-        return this.b.j();
+        return this.f870b.m1552j();
     }
 
     protected int computeHorizontalScrollExtent() {
-        return this.b.m();
+        return this.f870b.m1555m();
     }
 
     protected int computeHorizontalScrollOffset() {
-        return this.b.n();
+        return this.f870b.m1556n();
     }
 
     protected int computeHorizontalScrollRange() {
-        return this.b.o();
+        return this.f870b.m1557o();
     }
 
     protected int computeVerticalScrollExtent() {
-        return this.b.p();
+        return this.f870b.m1558p();
     }
 
     protected int computeVerticalScrollOffset() {
-        return this.b.q();
+        return this.f870b.m1559q();
     }
 
     protected int computeVerticalScrollRange() {
-        return this.b.r();
+        return this.f870b.m1560r();
     }
 
     protected boolean drawChild(Canvas canvas, View view, long j) {
         canvas.save();
         canvas.translate((float) view.getLeft(), (float) view.getTop());
-        canvas.concat(this.c);
+        canvas.concat(this.f871c);
         canvas.translate((float) (-view.getLeft()), (float) (-view.getTop()));
         boolean drawChild = super.drawChild(canvas, view, j);
         canvas.restore();
@@ -503,158 +536,167 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         boolean a;
         if (motionEvent.getActionMasked() == 0) {
-            this.n = false;
+            this.f882n = false;
         }
-        if ((motionEvent.getActionMasked() == 0 || this.m != null) && !this.n && onInterceptTouchEvent(motionEvent) && this.m != null) {
+        if ((motionEvent.getActionMasked() == 0 || this.f881m != null) && !this.f882n && onInterceptTouchEvent(motionEvent) && this.f881m != null) {
             long uptimeMillis = SystemClock.uptimeMillis();
             MotionEvent obtain = MotionEvent.obtain(uptimeMillis, uptimeMillis, 3, 0.0f, 0.0f, 0);
             if (VERSION.SDK_INT >= 12) {
                 obtain.setSource(4098);
             }
-            this.m.dispatchTouchEvent(obtain);
-            this.m = null;
+            this.f881m.dispatchTouchEvent(obtain);
+            this.f881m = null;
         }
         if (motionEvent.getActionMasked() == 0) {
-            PointF pointF = (PointF) UTools.f.getRect();
-            RectF rectF = (RectF) UTools.h.getRect();
-            this.m = null;
+            PointF pointF = (PointF) dv.f1197f.addAnimation();
+            RectF rectF = (RectF) dv.f1199h.addAnimation();
+            this.f881m = null;
             for (int childCount = getChildCount() - 1; childCount >= 0; childCount--) {
                 View childAt = getChildAt(childCount);
                 pointF.set(((float) getScrollX()) + motionEvent.getX(), ((float) getScrollY()) + motionEvent.getY());
                 rectF.set((float) childAt.getScrollX(), (float) childAt.getScrollY(), (float) (childAt.getScrollX() + childAt.getWidth()), (float) (childAt.getScrollY() + childAt.getHeight()));
-                UTools.addAnimation(pointF, (View) this, childAt);
-                if (rectF.contains(pointF.x, pointF.y) && a(childAt, motionEvent)) {
-                    this.m = childAt;
+                dv.m1900a(pointF, (View) this, childAt);
+                if (rectF.contains(pointF.x, pointF.y) && m1339a(childAt, motionEvent)) {
+                    this.f881m = childAt;
                     break;
                 }
             }
-            UTools.f.getRect(pointF);
-            UTools.h.getRect(rectF);
-            if (this.m != null) {
+            dv.f1197f.clearAnimation(pointF);
+            dv.f1199h.clearAnimation(rectF);
+            if (this.f881m != null) {
                 return true;
             }
         }
-        if (this.m != null) {
-            a = a(this.m, motionEvent);
+        if (this.f881m != null) {
+            a = m1339a(this.f881m, motionEvent);
         } else {
             a = onTouchEvent(motionEvent);
         }
         if (motionEvent.getActionMasked() != 1 && motionEvent.getActionMasked() != 3) {
             return a;
         }
-        this.m = null;
+        this.f881m = null;
         return a;
     }
 
-    private boolean a(View view, MotionEvent motionEvent) {
-        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, view);
+    /* renamed from: a */
+    private boolean m1339a(View view, MotionEvent motionEvent) {
+        MotionEvent a = dv.m1908a(motionEvent, (View) this, view);
         boolean dispatchTouchEvent = view.dispatchTouchEvent(a);
         a.recycle();
         return dispatchTouchEvent;
     }
 
-    private void a(float f, float f2, float f3, float f4, float f5, float f6) {
-        float[] d = d(f, f2, f3, f4, f5, f6);
-        b(d[0], d[1], d[2], d[3], d[4], d[5]);
+    /* renamed from: a */
+    private void m1327a(float f, float f2, float f3, float f4, float f5, float f6) {
+        float[] d = m1347d(f, f2, f3, f4, f5, f6);
+        m1341b(d[0], d[1], d[2], d[3], d[4], d[5]);
     }
 
-    private void a(float f, float f2, float f3, float f4, float f5, float f6, Runnable runnable, Runnable runnable2) {
-        float[] d = d(f, f2, f3, f4, f5, f6);
-        b(d[0], d[1], d[2], d[3], d[4], d[5], runnable, runnable2);
+    /* renamed from: a */
+    private void m1328a(float f, float f2, float f3, float f4, float f5, float f6, Runnable runnable, Runnable runnable2) {
+        float[] d = m1347d(f, f2, f3, f4, f5, f6);
+        m1342b(d[0], d[1], d[2], d[3], d[4], d[5], runnable, runnable2);
     }
 
-    private void b(float f, float f2, float f3, float f4, float f5, float f6) {
-        View e = e();
+    /* renamed from: b */
+    private void m1341b(float f, float f2, float f3, float f4, float f5, float f6) {
+        View e = mo2335e();
         if (e != null) {
-            if (this.l != null) {
-                this.l.b();
+            if (this.f880l != null) {
+                this.f880l.m2154b();
             }
-            if (a || this.l == null) {
-                a(ZoomState.IDLE);
-                a(e, f, f2, f3, f4, f5, f6);
+            if (f869a || this.f880l == null) {
+                m1332a(ZoomState.IDLE);
+                m1331a(e, f, f2, f3, f4, f5, f6);
                 return;
             }
             throw new AssertionError();
         }
     }
 
-    private void b(float f, float f2, float f3, float f4, float f5, float f6, Runnable runnable, Runnable runnable2) {
-        if (e() != null) {
-            if (this.l != null) {
-                this.l.b();
+    /* renamed from: b */
+    private void m1342b(float f, float f2, float f3, float f4, float f5, float f6, Runnable runnable, Runnable runnable2) {
+        if (mo2335e() != null) {
+            if (this.f880l != null) {
+                this.f880l.m2154b();
             }
-            if (a || this.l == null) {
-                a(ZoomState.SMOOTH);
-                this.l = new gg(this, f, f2, f3, f4, f5, f6, new gc(this, runnable), new gd(this, runnable2));
-                this.l.a();
+            if (f869a || this.f880l == null) {
+                m1332a(ZoomState.SMOOTH);
+                this.f880l = new gg(this, f, f2, f3, f4, f5, f6, new gc(this, runnable), new gd(this, runnable2));
+                this.f880l.m2153a();
                 return;
             }
             throw new AssertionError();
         }
     }
 
-    private void c(float f, float f2, float f3, float f4, float f5, float f6) {
-        View e = e();
+    /* renamed from: c */
+    private void m1344c(float f, float f2, float f3, float f4, float f5, float f6) {
+        View e = mo2335e();
         if (e != null) {
-            if (this.l != null) {
-                this.l.b();
+            if (this.f880l != null) {
+                this.f880l.m2154b();
             }
-            if (a || this.l == null) {
-                a(ZoomState.PINCH);
-                a(e, f, f2, f3, f4, f5, f6);
+            if (f869a || this.f880l == null) {
+                m1332a(ZoomState.PINCH);
+                m1331a(e, f, f2, f3, f4, f5, f6);
                 return;
             }
             throw new AssertionError();
         }
     }
 
-    private void a(View view, float f, float f2, float f3, float f4, float f5, float f6) {
-        this.g = f5;
-        this.j = f6;
-        this.c.reset();
-        this.c.preTranslate((float) (view.getWidth() / 2), (float) (view.getHeight() / 2));
-        this.c.preScale(this.g, this.g);
-        this.c.preRotate(-this.j);
-        this.c.preTranslate((float) ((-view.getWidth()) / 2), (float) ((-view.getHeight()) / 2));
-        Rect rect = (Rect) UTools.g.getRect();
-        Point point = (Point) UTools.e.getRect();
-        a(rect, point, f, f2, f3, f4, f5, f6);
-        this.b.a(rect);
-        this.b.e(point.x, point.y);
-        UTools.g.getRect(rect);
-        UTools.e.getRect(point);
+    /* renamed from: a */
+    private void m1331a(View view, float f, float f2, float f3, float f4, float f5, float f6) {
+        this.f875g = f5;
+        this.f878j = f6;
+        this.f871c.reset();
+        this.f871c.preTranslate((float) (view.getWidth() / 2), (float) (view.getHeight() / 2));
+        this.f871c.preScale(this.f875g, this.f875g);
+        this.f871c.preRotate(-this.f878j);
+        this.f871c.preTranslate((float) ((-view.getWidth()) / 2), (float) ((-view.getHeight()) / 2));
+        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Point point = (Point) dv.f1196e.addAnimation();
+        m1330a(rect, point, f, f2, f3, f4, f5, f6);
+        this.f870b.m1491a(rect);
+        this.f870b.m1541e(point.x, point.y);
+        dv.f1198g.clearAnimation(rect);
+        dv.f1196e.clearAnimation(point);
         invalidate();
-        d();
+        mo2334d();
     }
 
-    private float[] d(float f, float f2, float f3, float f4, float f5, float f6) {
-        if (e() == null) {
+    /* renamed from: d */
+    private float[] m1347d(float f, float f2, float f3, float f4, float f5, float f6) {
+        if (mo2335e() == null) {
             return new float[]{f, f2, f3, f4, f5, f6};
         }
-        Rect rect = (Rect) UTools.g.getRect();
-        Point point = (Point) UTools.e.getRect();
-        a(rect, point, f, f2, f3, f4, Math.min(Math.max(getMinZoomFactor(), f5), getMaxZoomFactor()), 0.0f);
-        Point point2 = (Point) UTools.e.getRect();
+        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Point point = (Point) dv.f1196e.addAnimation();
+        m1330a(rect, point, f, f2, f3, f4, Math.min(Math.max(getMinZoomFactor(), f5), getMaxZoomFactor()), 0.0f);
+        Point point2 = (Point) dv.f1196e.addAnimation();
         point2.x = Math.min(Math.max(rect.left, point.x), rect.right - getWidth());
         point2.y = Math.min(Math.max(rect.top, point.y), rect.bottom - getHeight());
         float[] fArr = new float[]{f, f2, f3 - ((float) (point2.x - point.x)), f4 - ((float) (point2.y - point.y)), r7, 0.0f};
-        UTools.e.getRect(point2);
-        UTools.e.getRect(point);
-        UTools.g.getRect(rect);
+        dv.f1196e.clearAnimation(point2);
+        dv.f1196e.clearAnimation(point);
+        dv.f1198g.clearAnimation(rect);
         return fArr;
     }
 
-    private void a(Rect rect, Point point, float f, float f2, float f3, float f4, float f5, float f6) {
-        View e = e();
+    /* renamed from: a */
+    private void m1330a(Rect rect, Point point, float f, float f2, float f3, float f4, float f5, float f6) {
+        View e = mo2335e();
         if (e == null) {
             rect.set(0, 0, getWidth(), getHeight());
             point.set(0, 0);
             return;
         }
-        Matrix matrix = (Matrix) UTools.d.getRect();
-        a(matrix, f5, f6);
+        Matrix matrix = (Matrix) dv.f1195d.addAnimation();
+        m1329a(matrix, f5, f6);
         rect.set(e.getScrollX(), e.getScrollY(), e.getScrollX() + e.getWidth(), e.getScrollY() + e.getHeight());
-        UTools.addAnimation(matrix, rect);
+        dv.m1901a(matrix, rect);
         rect.left -= getPaddingLeft();
         rect.top -= getPaddingTop();
         rect.right += getPaddingRight();
@@ -669,19 +711,20 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
             rect.top = ((e.getTop() + e.getBottom()) - height) / 2;
             rect.bottom = ((e.getBottom() + e.getTop()) + height) / 2;
         }
-        PointF pointF = (PointF) UTools.f.getRect();
+        PointF pointF = (PointF) dv.f1197f.addAnimation();
         pointF.set(f, f2);
-        UTools.addAnimation(matrix, pointF);
+        dv.m1898a(matrix, pointF);
         pointF.offset(-f3, -f4);
         point.x = Math.round(pointF.x);
         point.y = Math.round(pointF.y);
-        UTools.d.getRect(matrix);
-        UTools.f.getRect(pointF);
+        dv.f1195d.clearAnimation(matrix);
+        dv.f1197f.clearAnimation(pointF);
     }
 
     @TargetApi(11)
-    private void a(Matrix matrix, float f, float f2) {
-        View e = e();
+    /* renamed from: a */
+    private void m1329a(Matrix matrix, float f, float f2) {
+        View e = mo2335e();
         if (e != null) {
             matrix.reset();
             matrix.preTranslate((float) e.getLeft(), (float) e.getTop());
@@ -696,31 +739,36 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         }
     }
 
-    private void a(ZoomState zoomState) {
-        if (this.f != zoomState) {
-            ZoomState zoomState2 = this.f;
-            this.f = zoomState;
-            a(zoomState2, this.f);
+    /* renamed from: a */
+    private void m1332a(ZoomState zoomState) {
+        if (this.f874f != zoomState) {
+            ZoomState zoomState2 = this.f874f;
+            this.f874f = zoomState;
+            m1333a(zoomState2, this.f874f);
         }
     }
 
-    private void a(ZoomState zoomState, ZoomState zoomState2) {
-        if (this.o != null) {
-            this.o.a(this, zoomState, zoomState2);
+    /* renamed from: a */
+    private void m1333a(ZoomState zoomState, ZoomState zoomState2) {
+        if (this.f883o != null) {
+            this.f883o.mo2424a(this, zoomState, zoomState2);
         }
     }
 
-    private void d() {
-        if (this.o != null) {
-            this.o.a(this);
+    /* renamed from: d */
+    private void mo2334d() {
+        if (this.f883o != null) {
+            this.f883o.mo2423a(this);
         }
     }
 
-    private View e() {
+    /* renamed from: e */
+    private View mo2335e() {
         return getChildCount() < 1 ? null : getChildAt(0);
     }
 
-    protected gf c() {
+    /* renamed from: c */
+    protected gf m1362c() {
         return new gf(this);
     }
 }

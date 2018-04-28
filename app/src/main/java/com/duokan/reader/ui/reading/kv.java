@@ -1,18 +1,16 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Bitmap;
-
 class kv implements Runnable {
-    final /* synthetic */ Bitmap a;
-    final /* synthetic */ ku b;
+    /* renamed from: a */
+    final /* synthetic */ kn f10531a;
 
-    kv(ku kuVar, Bitmap bitmap) {
-        this.b = kuVar;
-        this.a = bitmap;
+    kv(kn knVar) {
+        this.f10531a = knVar;
     }
 
     public void run() {
-        this.b.a.f.setImageBitmap(null);
-        this.a.recycle();
+        if (this.f10531a.f10516d.getVisibility() == 0) {
+            this.f10531a.m14575g();
+        }
     }
 }

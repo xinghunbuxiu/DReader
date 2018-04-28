@@ -1,9 +1,7 @@
 package com.duokan.reader.domain.job;
 
 import android.content.Intent;
-
-import com.duokan.b.e;
-
+import com.duokan.p023b.C0243e;
 import java.io.Serializable;
 
 public class JobNotificationInfo implements Serializable {
@@ -12,7 +10,7 @@ public class JobNotificationInfo implements Serializable {
     public String mContentText;
     public String mContentTitle;
     public int mDefaultOptions = 1;
-    public int mIconResId = e.mipush_small_notification;
+    public int mIconResId = C0243e.mipush_small_notification;
     public int mId;
     public Intent mIntent;
     public long mTime = System.currentTimeMillis();

@@ -1,80 +1,88 @@
 package com.duokan.reader.domain.document.txt;
 
 import com.duokan.reader.domain.document.bc;
-
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.concurrent.Semaphore;
 
-import miuipub.date.Calendar;
-
 abstract class au extends bc {
-    static final /* synthetic */ boolean m = (!au.class.desiredAssertionStatus());
-    public int[][] i = new int[Calendar.MILLISECOND_OF_SECOND][];
-    public long j = 0;
-    public int k = 0;
-    public final LinkedList l = new LinkedList();
+    /* renamed from: m */
+    static final /* synthetic */ boolean f4919m = (!au.class.desiredAssertionStatus());
+    /* renamed from: i */
+    public int[][] f4920i = new int[1000][];
+    /* renamed from: j */
+    public long f4921j = 0;
+    /* renamed from: k */
+    public int f4922k = 0;
+    /* renamed from: l */
+    public final LinkedList<ax> f4923l = new LinkedList();
 
-    public abstract c e();
+    /* renamed from: e */
+    public abstract C0987c mo1469e();
 
-    public abstract long f();
+    /* renamed from: f */
+    public abstract long mo1470f();
 
     public au(ae aeVar, ad adVar, Semaphore semaphore) {
         super(aeVar, adVar, semaphore);
     }
 
-    public ae g() {
+    /* renamed from: g */
+    public ae m7523g() {
         return (ae) this.d;
     }
 
-    public ad h() {
+    /* renamed from: h */
+    public ad m7524h() {
         return (ad) this.e;
     }
 
-    public long b(long j) {
+    /* renamed from: b */
+    public long m7519b(long j) {
         int i = 0;
-        if (!m && b() < 0) {
+        if (!f4919m && m5839b() < 0) {
             throw new AssertionError();
         } else if (j < 0) {
             return -1;
         } else {
-            if (j >= f()) {
-                return b();
+            if (j >= mo1470f()) {
+                return m5839b();
             }
             int i2 = 0;
             int i3 = 0;
-            while (i2 < this.i.length && this.i[i2] != null && this.i[i2].length >= 1 && ((long) this.i[i2][0]) <= j) {
+            while (i2 < this.f4920i.length && this.f4920i[i2] != null && this.f4920i[i2].length >= 1 && ((long) this.f4920i[i2][0]) <= j) {
                 i3 = i2;
                 i2++;
             }
-            if (this.i[i3] == null) {
+            if (this.f4920i[i3] == null) {
                 return 0;
             }
             i2 = 0;
-            while (i < this.i[i3].length && this.i[i3][i] >= 0 && ((long) this.i[i3][i]) <= j) {
+            while (i < this.f4920i[i3].length && this.f4920i[i3][i] >= 0 && ((long) this.f4920i[i3][i]) <= j) {
                 i2 = i;
                 i++;
             }
-            return Math.max(0, Math.min((long) (i2 + (i3 * Calendar.MILLISECOND_OF_SECOND)), b() - 1));
+            return Math.max(0, Math.min((long) (i2 + (i3 * 1000)), m5839b() - 1));
         }
     }
 
-    public long c(long j) {
-        if (!m && b() < 0) {
+    /* renamed from: c */
+    public long m7520c(long j) {
+        if (!f4919m && m5839b() < 0) {
             throw new AssertionError();
         } else if (j < 0) {
             return Long.MIN_VALUE;
         } else {
-            if (j >= b()) {
+            if (j >= m5839b()) {
                 return Long.MAX_VALUE;
             }
-            int i = ((int) j) % Calendar.MILLISECOND_OF_SECOND;
+            int i = ((int) j) % 1000;
             long j2 = -1;
-            for (int min = Math.min(this.i.length - 1, ((int) j) / Calendar.MILLISECOND_OF_SECOND); min >= 0; min--) {
-                if (this.i[min] != null) {
-                    i = Math.min(this.i[min].length - 1, i);
+            for (int min = Math.min(this.f4920i.length - 1, ((int) j) / 1000); min >= 0; min--) {
+                if (this.f4920i[min] != null) {
+                    i = Math.min(this.f4920i[min].length - 1, i);
                     while (i >= 0) {
-                        j2 = (long) this.i[min][i];
+                        j2 = (long) this.f4920i[min][i];
                         if (j2 >= 0) {
                             break;
                         }
@@ -89,48 +97,51 @@ abstract class au extends bc {
         }
     }
 
-    public as a(ai aiVar, ar arVar) {
-        if (m || this.a) {
+    /* renamed from: a */
+    public as m7517a(ai aiVar, ar arVar) {
+        if (f4919m || this.a) {
             ax axVar = new ax(aiVar, arVar);
             synchronized (this) {
-                this.l.addFirst(axVar);
+                this.f4923l.addFirst(axVar);
             }
             this.f.release();
-            return axVar.c;
+            return axVar.f4934c;
         }
         throw new AssertionError();
     }
 
-    public o a(e eVar, n nVar) {
-        if (m || this.a) {
-            ai j = eVar.j();
-            o oVar = new o();
-            ax axVar = new ax(j, new av(this, eVar, j, nVar, oVar));
-            oVar.a = axVar;
+    /* renamed from: a */
+    public C0999o m7518a(C0989e c0989e, C0992n c0992n) {
+        if (f4919m || this.a) {
+            ai j = c0989e.m7560j();
+            C0999o c0999o = new C0999o();
+            ax axVar = new ax(j, new av(this, c0989e, j, c0992n, c0999o));
+            c0999o.f4977a = axVar;
             synchronized (this) {
-                this.l.addFirst(axVar);
+                this.f4923l.addFirst(axVar);
             }
             this.f.release();
-            return oVar;
+            return c0999o;
         }
         throw new AssertionError();
     }
 
-    public ax i() {
+    /* renamed from: i */
+    public ax m7525i() {
         synchronized (this) {
-            Iterator it = this.l.iterator();
+            Iterator it = this.f4923l.iterator();
             while (it.hasNext()) {
                 ax axVar = (ax) it.next();
-                if (!m && axVar == null) {
+                if (!f4919m && axVar == null) {
                     throw new AssertionError();
-                } else if (!m && axVar.c == null) {
+                } else if (!f4919m && axVar.f4934c == null) {
                     throw new AssertionError();
-                } else if (!axVar.c.b()) {
-                    if (axVar.c.d()) {
-                        axVar.c.e();
-                    } else if (!m && axVar.c.c()) {
+                } else if (!axVar.f4934c.m7498b()) {
+                    if (axVar.f4934c.m7500d()) {
+                        axVar.f4934c.m7501e();
+                    } else if (!f4919m && axVar.f4934c.m7499c()) {
                         throw new AssertionError();
-                    } else if (!axVar.c.c()) {
+                    } else if (!axVar.f4934c.m7499c()) {
                         return axVar;
                     }
                 }

@@ -1,22 +1,21 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class iq implements AnimationListener {
-    final /* synthetic */ il a;
+class iq implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ je f6632a;
+    /* renamed from: b */
+    final /* synthetic */ ie f6633b;
 
-    iq(il ilVar) {
-        this.a = ilVar;
+    iq(ie ieVar, je jeVar) {
+        this.f6633b = ieVar;
+        this.f6632a = jeVar;
     }
 
-    public void onAnimationStart(Animation animation) {
-    }
-
-    public void onAnimationEnd(Animation animation) {
-        this.a.requestDetach();
-    }
-
-    public void onAnimationRepeat(Animation animation) {
+    public void onClick(View view) {
+        this.f6632a.requestBack();
+        this.f6633b.m9849a();
     }
 }

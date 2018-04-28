@@ -1,100 +1,40 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.c.j;
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.IFeature;
-import com.duokan.reader.domain.cloud.push.a;
-import com.duokan.reader.ui.bookshelf.ho;
-
+import com.duokan.core.app.ac;
+import com.duokan.core.app.ad;
+import com.duokan.core.ui.C0342j;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.domain.cloud.push.C0857b;
+import com.duokan.reader.domain.cloud.push.C0876u;
+import com.duokan.reader.ui.general.ja;
 import java.util.ArrayList;
+import java.util.List;
 
-public class cr extends ActivatedController implements a, ho {
-    private final ct a = new ct(this, getContext(), this);
-    private final ArrayList b = new ArrayList();
+class cr implements ad {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f8418a;
+    /* renamed from: b */
+    final /* synthetic */ cm f8419b;
 
-    public cr(IFeature featrue) {
-        super(featrue);
-        setContentView(this.a);
+    cr(cm cmVar, Runnable runnable) {
+        this.f8419b = cmVar;
+        this.f8418a = runnable;
     }
 
-    protected void onActive(boolean z) {
-        super.onActive(z);
-        if (z) {
-            this.a.b(true);
-            l();
-            b.a().a((a) this);
-        } else {
-            this.a.b(true);
-            l();
-            b.a().a((a) this);
+    /* renamed from: a */
+    public void mo1553a(ac acVar) {
+        C0342j a = ja.m10832a(this.f8419b.getContext(), "", this.f8419b.getResources().getString(C0258j.personal__message_push_view__deleting), true, true);
+        List j = this.f8419b.getAdapter().m9788j();
+        List arrayList = new ArrayList();
+        for (Object next : j) {
+            if (next instanceof C0876u) {
+                arrayList.add((C0876u) next);
+            }
         }
+        C0857b.m5649a().m5684a(arrayList, new cs(this, arrayList, a));
     }
 
-    protected void onDeactive() {
-        b.a().b((a) this);
-        super.onDeactive();
-    }
-
-    public void a() {
-        if (b.a().c() > 0) {
-            this.a.a(0, 0);
-            l();
-        }
-    }
-
-    private void l() {
-        getContentView().postDelayed(new cs(this), 3000);
-    }
-
-    public void a(int i, int i2) {
-        this.a.c(i, i2);
-    }
-
-    public void b() {
-        this.a.q();
-    }
-
-    public void c() {
-        this.a.m();
-    }
-
-    public void d() {
-        this.a.n();
-    }
-
-    public void a(Runnable runnable) {
-        this.a.a(runnable);
-    }
-
-    public int e() {
-        return this.a.getSelectedCount();
-    }
-
-    public void f() {
-        this.a.a();
-    }
-
-    public boolean g() {
-        return this.a.c();
-    }
-
-    public void h() {
-        this.a.b();
-    }
-
-    public void b(int i, int i2) {
-        this.a.b(i, i2);
-    }
-
-    public String i() {
-        return getString(j.personal__message_push_view__edit_title);
-    }
-
-    public String j() {
-        return getString(j.personal__message_push_view__edit_selected);
-    }
-
-    public String k() {
-        return null;
+    /* renamed from: b */
+    public void mo1554b(ac acVar) {
     }
 }

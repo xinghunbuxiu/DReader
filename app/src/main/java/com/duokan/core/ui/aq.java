@@ -7,42 +7,47 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 class aq extends FrameLayout {
-    final /* synthetic */ HatGridView a;
-    private final View b;
-    private final View c;
-    private final View d;
+    /* renamed from: a */
+    final /* synthetic */ HatGridView f964a;
+    /* renamed from: b */
+    private final View f965b;
+    /* renamed from: c */
+    private final View f966c;
+    /* renamed from: d */
+    private final View f967d;
 
-    public void a() {
-        Point point = new Point(0, this.a.z.g);
-        this.a.a.b(point);
-        scrollTo(0, -(point.y - this.a.z.c.getTop()));
+    /* renamed from: a */
+    public void m1599a() {
+        Point point = new Point(0, this.f964a.f836z.f908g);
+        this.f964a.f811a.m1121b(point);
+        scrollTo(0, -(point.y - this.f964a.f836z.f904c.getTop()));
         invalidate();
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        this.b.layout(0, getHeight() - this.b.getMeasuredHeight(), getWidth(), getHeight());
-        if (this.c != null) {
-            this.c.layout(0, Math.min(0, -this.a.z.h), getWidth(), getHeight() - this.b.getMeasuredHeight());
+        this.f965b.layout(0, getHeight() - this.f965b.getMeasuredHeight(), getWidth(), getHeight());
+        if (this.f966c != null) {
+            this.f966c.layout(0, Math.min(0, -this.f964a.f836z.f909h), getWidth(), getHeight() - this.f965b.getMeasuredHeight());
         }
-        if (this.d != null) {
-            this.d.layout(0, getHeight() - this.b.getMeasuredHeight(), getWidth(), ((getHeight() - this.b.getMeasuredHeight()) + this.a.z.i) + Math.max(0, this.a.z.h));
+        if (this.f967d != null) {
+            this.f967d.layout(0, getHeight() - this.f965b.getMeasuredHeight(), getWidth(), ((getHeight() - this.f965b.getMeasuredHeight()) + this.f964a.f836z.f910i) + Math.max(0, this.f964a.f836z.f909h));
         }
     }
 
     @SuppressLint({"MissingSuperCall"})
     public void draw(Canvas canvas) {
-        if (this.c != null) {
-            drawChild(canvas, this.c, getDrawingTime());
+        if (this.f966c != null) {
+            drawChild(canvas, this.f966c, getDrawingTime());
         }
-        if (this.d != null) {
+        if (this.f967d != null) {
             canvas.save();
-            canvas.clipRect(this.d.getLeft(), this.b.getTop() + this.a.z.m, this.d.getRight(), (this.b.getTop() + this.a.z.m) + this.d.getHeight());
-            drawChild(canvas, this.d, getDrawingTime());
+            canvas.clipRect(this.f967d.getLeft(), this.f965b.getTop() + this.f964a.f836z.f914m, this.f967d.getRight(), (this.f965b.getTop() + this.f964a.f836z.f914m) + this.f967d.getHeight());
+            drawChild(canvas, this.f967d, getDrawingTime());
             canvas.restore();
         }
         canvas.save();
-        canvas.clipRect(this.b.getLeft(), this.b.getTop(), this.b.getRight(), this.b.getTop() + this.a.z.m);
-        drawChild(canvas, this.b, getDrawingTime());
+        canvas.clipRect(this.f965b.getLeft(), this.f965b.getTop(), this.f965b.getRight(), this.f965b.getTop() + this.f964a.f836z.f914m);
+        drawChild(canvas, this.f965b, getDrawingTime());
         canvas.restore();
     }
 }

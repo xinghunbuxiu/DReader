@@ -1,27 +1,21 @@
 package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.sys.as;
-
-import java.util.Arrays;
-import java.util.LinkedHashMap;
+import org.json.JSONObject;
 
 class ee implements as {
-    final /* synthetic */ LinkedHashMap a;
-    final /* synthetic */ int b;
-    final /* synthetic */ ec c;
+    /* renamed from: a */
+    final /* synthetic */ String f7766a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7767b;
 
-    ee(ec ecVar, LinkedHashMap linkedHashMap, int i) {
-        this.c = ecVar;
-        this.a = linkedHashMap;
-        this.b = i;
+    ee(ci ciVar, String str) {
+        this.f7767b = ciVar;
+        this.f7766a = str;
     }
 
-    public void a() {
-        if (!Arrays.asList(this.c.b.pageController.mTabsTitle.keySet().toArray()).equals(Arrays.asList(this.a.keySet().toArray()))) {
-            this.c.b.pageController.mTabsTitle.clear();
-            this.c.b.pageController.mHasTabsTitleChange = true;
-        }
-        this.c.b.pageController.mTabsTitle.putAll(this.a);
-        this.c.b.pageController.mSurfingBarOffset = this.b;
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7767b.m11016a(new ef(this, new JSONObject(this.f7766a).getString("msgid")));
     }
 }

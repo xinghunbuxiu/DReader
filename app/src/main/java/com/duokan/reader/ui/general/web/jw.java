@@ -1,52 +1,32 @@
 package com.duokan.reader.ui.general.web;
 
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Intent;
-import android.support.v4.app.NotificationCompat.Builder;
-import android.text.TextUtils;
-
-import com.duokan.c.f;
 import com.duokan.core.sys.as;
-import com.duokan.reader.DkApp;
-
-import org.json.JSONObject;
+import com.duokan.reader.ReaderFeature;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.bookshelf.fp;
+import java.util.concurrent.Semaphore;
 
 class jw implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
+    /* renamed from: a */
+    final /* synthetic */ Semaphore f8074a;
+    /* renamed from: b */
+    final /* synthetic */ ji f8075b;
 
-    jw(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    jw(ji jiVar, Semaphore semaphore) {
+        this.f8075b = jiVar;
+        this.f8074a = semaphore;
     }
 
-    public void a() {
-        Intent intent = null;
-        JSONObject jSONObject = new JSONObject(this.a);
-        CharSequence optString = jSONObject.optString("title");
-        CharSequence optString2 = jSONObject.optString("content");
-        Object optString3 = jSONObject.optString("url");
-        int optInt = jSONObject.optInt("id", 23);
-        Builder builder = new Builder(this.b.pageController.getContext());
-        builder.setSmallIcon(f.mipush_small_notification);
-        builder.setContentTitle(optString);
-        builder.setTicker(optString);
-        builder.setContentText(optString2);
-        builder.setDefaults(-1);
-        builder.setAutoCancel(true);
-        if (!TextUtils.isEmpty(optString3)) {
-            try {
-                intent = Intent.parseUri(optString3, 0);
-            } catch (Throwable th) {
+    /* renamed from: a */
+    public void mo1831a() {
+        ReaderFeature readerFeature = (ReaderFeature) this.f8075b.f8048b.f7581b.getContext().queryFeature(ReaderFeature.class);
+        if (readerFeature != null) {
+            C0800c readingBook = readerFeature.getReadingBook();
+            if (readingBook instanceof fp) {
+                ((fp) readingBook).m4483a(new jx(this));
+                return;
             }
         }
-        if (intent == null) {
-            intent = new Intent(this.b.pageController.getContext(), DkApp.get().getReaderActivityClass());
-            intent.setAction("android.intent.action.VIEW");
-            intent.setFlags(268468224);
-        }
-        builder.setContentIntent(PendingIntent.getActivity(this.b.pageController.getContext(), 0, intent, 268435456));
-        ((NotificationManager) this.b.pageController.getContext().getSystemService("notification")).notify(getClass().getName(), optInt, builder.build());
+        this.f8074a.release();
     }
 }

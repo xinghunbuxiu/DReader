@@ -1,65 +1,44 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.common.webservices.b;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.i;
-
-import org.apache.http.HttpStatus;
-
+import com.duokan.reader.domain.account.al;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-class dr extends al {
-    final /* synthetic */ ab a;
-    final /* synthetic */ df b;
-    final /* synthetic */ eb c;
-    final /* synthetic */ dh d;
-    private b e;
-    private List f;
+class dr implements dx {
+    /* renamed from: a */
+    final /* synthetic */ List f3056a;
+    /* renamed from: b */
+    final /* synthetic */ dz f3057b;
+    /* renamed from: c */
+    final /* synthetic */ de f3058c;
 
-    dr(dh dhVar, ab abVar, df dfVar, eb ebVar) {
-        this.d = dhVar;
-        this.a = abVar;
-        this.b = dfVar;
-        this.c = ebVar;
+    dr(de deVar, List list, dz dzVar) {
+        this.f3058c = deVar;
+        this.f3056a = list;
+        this.f3057b = dzVar;
     }
 
-    protected void onSessionTry() {
-        fj fjVar = new fj(this, this.a);
-        List arrayList = new ArrayList(af.a.length);
-        long currentTimeMillis = System.currentTimeMillis() - this.b.b;
-        for (int i : af.a) {
-            fq fqVar = new fq();
-            fqVar.a = i;
-            fqVar.b = (((int) (currentTimeMillis / 864000000)) * 100) + HttpStatus.SC_OK;
-            if (fqVar.b > HttpStatus.SC_INTERNAL_SERVER_ERROR) {
-                fqVar.b = HttpStatus.SC_INTERNAL_SERVER_ERROR;
-            }
-            arrayList.add(fqVar);
-        }
-        this.e = fjVar.c(arrayList);
-        if (this.e.b == 0) {
-            this.f = new ArrayList();
-            for (fu fuVar : ((HashMap) this.e.a).values()) {
-                this.f.addAll(fuVar.b);
+    /* renamed from: a */
+    public void mo1006a() {
+        al b = this.f3058c.f3011c;
+        ArrayList arrayList = new ArrayList(this.f3056a.size());
+        for (dd ddVar : this.f3056a) {
+            dd a = this.f3058c.f3012d.m4371a(ddVar.f3002a, ddVar.f3003b);
+            if (a != null && a.f3007f == ddVar.f3007f && a.f3008g == ddVar.f3008g) {
+                if (a.f3007f == 1) {
+                    a.f3006e = false;
+                    a.f3007f = 0;
+                } else if (a.f3007f == 2) {
+                    this.f3058c.f3012d.m4376b(a);
+                }
+                arrayList.add(a.m4305a());
             }
         }
+        new ds(this, aq.f2771a, b, arrayList).open();
     }
 
-    protected void onSessionSucceeded() {
-        if (!this.a.a(this.d.c)) {
-            this.c.a("");
-        } else if (this.e.b == 1) {
-            i.f().a(this.a.a, new ds(this));
-        } else if (this.e.b != 0) {
-            this.c.a(this.e.c);
-        } else {
-            this.c.a(this.f);
-        }
-    }
-
-    protected void onSessionFailed() {
-        this.c.a(this.d.b.getResources().getString(com.duokan.b.i.general__shared__network_error));
+    /* renamed from: a */
+    public void mo1007a(String str) {
+        this.f3057b.mo1005a(str);
     }
 }

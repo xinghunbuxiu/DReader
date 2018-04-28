@@ -4,17 +4,24 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public interface av {
-    View a(View view, ViewGroup viewGroup);
+    /* renamed from: a */
+    View mo482a(View view, ViewGroup viewGroup);
 
-    void a(ax axVar);
+    /* renamed from: a */
+    void mo483a(ax axVar);
 
-    void b(ax axVar);
+    /* renamed from: b */
+    void mo484b(ax axVar);
 
-    int c();
+    /* renamed from: c */
+    int mo506c();
 
-    View d(int i, View view, ViewGroup viewGroup);
+    /* renamed from: d */
+    View mo508d(int i, View view, ViewGroup viewGroup);
 
-    Object d(int i);
+    /* renamed from: d */
+    Object mo509d(int i);
 
-    int e(int i, int i2);
+    /* renamed from: e */
+    int mo485e(int i, int i2);
 }

@@ -1,28 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-import android.net.Uri;
-import android.view.View;
-import android.view.View.OnClickListener;
+class adc implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ adb f9505a;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.UmengManager;
-import com.duokan.reader.ui.general.web.StorePageController;
-
-class adc implements OnClickListener {
-    final /* synthetic */ adk a;
-    final /* synthetic */ TranslationController b;
-
-    adc(TranslationController translationController, adk com_duokan_reader_ui_reading_adk) {
-        this.b = translationController;
-        this.a = com_duokan_reader_ui_reading_adk;
+    adc(adb adb) {
+        this.f9505a = adb;
     }
 
-    public void onClick(View view) {
-        UmengManager.get().onEvent("V2_READING_POPMENU", "DictWiki");
-        ActivatedController storePageController = new StorePageController(this.b.getContext());
-        storePageController.loadUrl(String.format("http://zh.wikipedia.org/zh-cn/index.php?search=%s&fulltext=Search", new Object[]{Uri.encode(this.b.d.trim())}));
-        ((ReaderFeature) this.b.getContext().queryFeature(ReaderFeature.class)).pushPageSmoothly(storePageController, null);
-        this.a.a();
+    public void run() {
+        if (!this.f9505a.f9504c.f9156e.mo1994K()) {
+            this.f9505a.f9504c.m12571e().m12538a(this.f9505a.f9502a);
+            this.f9505a.f9504c.m12567c(this.f9505a.f9502a.x, this.f9505a.f9502a.y, this.f9505a.f9504c.f9152a, this.f9505a.f9503b);
+            this.f9505a.f9504c.m12558a(false);
+        }
     }
 }

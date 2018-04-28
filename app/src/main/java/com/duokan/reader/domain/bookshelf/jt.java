@@ -1,24 +1,20 @@
 package com.duokan.reader.domain.bookshelf;
 
-/* synthetic */ class jt {
-    static final /* synthetic */ int[] a = new int[BookFormat.values().length];
+import com.duokan.reader.domain.micloud.bi;
+import java.util.Arrays;
 
-    static {
-        try {
-            a[BookFormat.EPUB.ordinal()] = 1;
-        } catch (NoSuchFieldError e) {
-        }
-        try {
-            a[BookFormat.PDF.ordinal()] = 2;
-        } catch (NoSuchFieldError e2) {
-        }
-        try {
-            a[BookFormat.TXT.ordinal()] = 3;
-        } catch (NoSuchFieldError e3) {
-        }
-        try {
-            a[BookFormat.SBK.ordinal()] = 4;
-        } catch (NoSuchFieldError e4) {
-        }
+class jt implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ bi f3415a;
+    /* renamed from: b */
+    final /* synthetic */ jp f3416b;
+
+    jt(jp jpVar, bi biVar) {
+        this.f3416b = jpVar;
+        this.f3415a = biVar;
+    }
+
+    public void run() {
+        this.f3416b.m4742a(Arrays.asList(new bi[]{this.f3415a}), null);
     }
 }

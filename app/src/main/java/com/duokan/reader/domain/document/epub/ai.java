@@ -3,7 +3,6 @@ package com.duokan.reader.domain.document.epub;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.text.TextUtils;
-
 import com.duokan.kernel.DkBox;
 import com.duokan.kernel.DkFlowPosition;
 import com.duokan.kernel.epublib.DkeBook;
@@ -12,94 +11,101 @@ import com.duokan.kernel.epublib.DkeBookEx;
 import com.duokan.kernel.epublib.DkeFuzzyMatchResult;
 import com.duokan.kernel.epublib.DkePage;
 import com.duokan.kernel.epublib.DkeParserOption;
-import com.duokan.reader.common.b;
-import com.duokan.reader.domain.document.Document_a;
+import com.duokan.reader.common.C0543b;
+import com.duokan.reader.domain.document.C0896a;
+import com.duokan.reader.domain.document.C1011x;
 import com.duokan.reader.domain.document.bb;
-import com.duokan.reader.domain.document.x;
-
 import java.io.File;
 import java.util.Collections;
 import java.util.List;
 
 public final class ai {
-    static final /* synthetic */ boolean a = (!ai.class.desiredAssertionStatus());
+    /* renamed from: a */
+    static final /* synthetic */ boolean f4484a = (!ai.class.desiredAssertionStatus());
 
-    public static aq a(String str, ap apVar) {
-        return a(str, apVar, null);
+    /* renamed from: a */
+    public static aq m6506a(String str, ap apVar) {
+        return m6507a(str, apVar, null);
     }
 
-    public static aq a(String str, ap apVar, Callback callback) {
+    /* renamed from: a */
+    public static aq m6507a(String str, ap apVar, Callback callback) {
         DkeBook dkeBookEx;
         String[] strArr = null;
         aq aqVar = new aq();
         File file = new File(Uri.parse(str).getPath());
         if (apVar instanceof ag) {
-            dkeBookEx = new DkeBookEx(file.getAbsolutePath(), ah.e().c(), callback, ((ag) apVar).b);
+            dkeBookEx = new DkeBookEx(file.getAbsolutePath(), ah.m6500e().m6503c(), callback, ((ag) apVar).f4477b);
         } else if (apVar instanceof al) {
             al alVar = (al) apVar;
-            String[] a = a(alVar.b);
-            dkeBookEx = new DkeBookEx(file.getAbsolutePath(), a, "", "", ah.e().c(), alVar.c);
+            String[] a = m6517a(alVar.f4485b);
+            dkeBookEx = new DkeBookEx(file.getAbsolutePath(), a, "", "", ah.m6500e().m6503c(), alVar.f4486c);
             strArr = a;
         } else {
-            dkeBookEx = new DkeBookEx(file.getAbsolutePath(), ah.e().c(), callback, (byte[][]) null);
+            dkeBookEx = new DkeBookEx(file.getAbsolutePath(), ah.m6500e().m6503c(), callback, (byte[][]) null);
         }
-        aqVar.a = strArr;
-        aqVar.b = dkeBookEx;
+        aqVar.f4488a = strArr;
+        aqVar.f4489b = dkeBookEx;
         return aqVar;
     }
 
-    public static void a(aq aqVar) {
-        if (aqVar.b != null && aqVar.b.isValid()) {
-            aqVar.b.close();
+    /* renamed from: a */
+    public static void m6512a(aq aqVar) {
+        if (aqVar.f4489b != null && aqVar.f4489b.isValid()) {
+            aqVar.f4489b.close();
         }
-        aqVar.b = null;
-        aqVar.a = null;
+        aqVar.f4489b = null;
+        aqVar.f4488a = null;
     }
 
-    public static c a(long j, long j2, long j3) {
-        return new c(j, j2, j3);
+    /* renamed from: a */
+    public static C0936c m6508a(long j, long j2, long j3) {
+        return new C0936c(j, j2, j3);
     }
 
-    public static ce a(c cVar, c cVar2) {
-        return new ce(cVar, cVar2);
+    /* renamed from: a */
+    public static ce m6509a(C0936c c0936c, C0936c c0936c2) {
+        return new ce(c0936c, c0936c2);
     }
 
-    public static void a(DkeBook dkeBook, Document_a aVar) {
-        if (aVar instanceof c) {
-            ((c) aVar).a(dkeBook);
-        } else if (aVar instanceof ce) {
-            ((ce) aVar).a(dkeBook);
+    /* renamed from: a */
+    public static void m6511a(DkeBook dkeBook, C0896a c0896a) {
+        if (c0896a instanceof C0936c) {
+            ((C0936c) c0896a).m6772a(dkeBook);
+        } else if (c0896a instanceof ce) {
+            ((ce) c0896a).m6806a(dkeBook);
         }
     }
 
-    public static boolean a(DkeBook dkeBook, List list) {
+    /* renamed from: a */
+    public static boolean m6516a(DkeBook dkeBook, List<C1011x<ce>> list) {
         boolean z = false;
         Collections.sort(list, new aj());
-        c cVar = null;
-        x xVar = null;
+        C0936c c0936c = null;
+        C1011x c1011x = null;
         int i = 0;
         while (i < list.size()) {
             boolean z2;
-            x xVar2 = (x) list.get(i);
-            if (!((ce) xVar2.a()).b()) {
+            C1011x c1011x2 = (C1011x) list.get(i);
+            if (!((ce) c1011x2.m7779a()).m5777b()) {
                 z2 = z;
-            } else if (((ce) xVar2.a()).d()) {
-                c cVar2;
+            } else if (((ce) c1011x2.m7779a()).mo1191d()) {
+                C0936c c0936c2;
                 int a;
-                if (xVar == null || ((ce) xVar.a()).j().g() != ((ce) xVar2.a()).j().g()) {
-                    cVar2 = new c(((ce) xVar2.a()).j().g(), 0, 0, "", ((ce) xVar2.a()).j().k(), -1, "");
+                if (c1011x == null || ((ce) c1011x.m7779a()).m6813j().m6780g() != ((ce) c1011x2.m7779a()).m6813j().m6780g()) {
+                    c0936c2 = new C0936c(((ce) c1011x2.m7779a()).m6813j().m6780g(), 0, 0, "", ((ce) c1011x2.m7779a()).m6813j().m6784k(), -1, "");
                 } else {
-                    cVar2 = cVar;
+                    c0936c2 = c0936c;
                 }
-                boolean a2 = a(dkeBook, cVar2, xVar2);
+                boolean a2 = m6514a(dkeBook, c0936c2, c1011x2);
                 if (a2) {
-                    cVar2 = ((ce) xVar2.a()).j();
+                    c0936c2 = ((ce) c1011x2.m7779a()).m6813j();
                     z2 = a2;
                 } else {
-                    a = a(dkeBook, xVar2);
+                    a = m6515a(dkeBook, c1011x2);
                 }
                 z2 = a | z;
-                cVar = cVar2;
+                c0936c = c0936c2;
             } else {
                 z2 = z;
             }
@@ -109,35 +115,36 @@ public final class ai {
         return z;
     }
 
-    private static boolean a(DkeBook dkeBook, c cVar, x xVar) {
-        if (((ce) xVar.a()).j().j() == null) {
+    /* renamed from: a */
+    private static boolean m6514a(DkeBook dkeBook, C0936c c0936c, C1011x<ce> c1011x) {
+        if (((ce) c1011x.m7779a()).m6813j().m6783j() == null) {
             return false;
         }
         if (dkeBook.getBookRevision() == null) {
             return false;
         }
-        if (dkeBook.getBookRevision().compareTo(((ce) xVar.a()).j().j()) <= 0) {
+        if (dkeBook.getBookRevision().compareTo(((ce) c1011x.m7779a()).m6813j().m6783j()) <= 0) {
             return false;
         }
-        if (TextUtils.isEmpty(xVar.b())) {
+        if (TextUtils.isEmpty(c1011x.m7782b())) {
             return false;
         }
         String chapterId;
-        if (b.a(xVar.b())) {
-            if (xVar.b().length() < 40) {
+        if (C0543b.m2422a(c1011x.m7782b())) {
+            if (c1011x.m7782b().length() < 40) {
                 return false;
             }
-        } else if (xVar.b().length() < 10) {
+        } else if (c1011x.m7782b().length() < 10) {
             return false;
         }
-        if (TextUtils.isEmpty(cVar.k())) {
-            chapterId = dkeBook.getChapterId(cVar.g());
+        if (TextUtils.isEmpty(c0936c.m6784k())) {
+            chapterId = dkeBook.getChapterId(c0936c.m6780g());
         } else {
-            chapterId = cVar.k();
+            chapterId = c0936c.m6784k();
         }
-        DkFlowPosition b = cVar.b(dkeBook);
+        DkFlowPosition b = c0936c.m6774b(dkeBook);
         b.mChapterIndex = dkeBook.getChapterIndex(chapterId);
-        DkeFuzzyMatchResult fuzzyMatch = dkeBook.fuzzyMatch(chapterId, b, xVar.b());
+        DkeFuzzyMatchResult fuzzyMatch = dkeBook.fuzzyMatch(chapterId, b, c1011x.m7782b());
         if (fuzzyMatch == null) {
             return false;
         }
@@ -147,54 +154,56 @@ public final class ai {
         } else {
             b.mParaIndex = 0;
             b.mAtomIndex = 0;
-            dkeFuzzyMatchResult = dkeBook.fuzzyMatch(chapterId, b, xVar.b());
+            dkeFuzzyMatchResult = dkeBook.fuzzyMatch(chapterId, b, c1011x.m7782b());
         }
         if (dkeFuzzyMatchResult.isEmpty()) {
             return false;
         }
-        bb ceVar = new ce(new c(dkeFuzzyMatchResult.mStartPos.mChapterIndex, dkeFuzzyMatchResult.mStartPos.mParaIndex, dkeFuzzyMatchResult.mStartPos.mAtomIndex, dkeBook.getBookRevision(), dkeBook.getChapterId(dkeFuzzyMatchResult.mStartPos.mChapterIndex), dkeFuzzyMatchResult.mStartOffset, ah.e().a()), new c(dkeFuzzyMatchResult.mEndPos.mChapterIndex, dkeFuzzyMatchResult.mEndPos.mParaIndex, dkeFuzzyMatchResult.mEndPos.mAtomIndex, dkeBook.getBookRevision(), dkeBook.getChapterId(dkeFuzzyMatchResult.mEndPos.mChapterIndex), dkeFuzzyMatchResult.mEndOffset, ah.e().a()));
-        chapterId = dkeBook.getChapterTextOfRange(ceVar.j().b(dkeBook), ceVar.k().b(dkeBook));
-        xVar.a(ceVar);
-        xVar.a(chapterId);
+        bb ceVar = new ce(new C0936c(dkeFuzzyMatchResult.mStartPos.mChapterIndex, dkeFuzzyMatchResult.mStartPos.mParaIndex, dkeFuzzyMatchResult.mStartPos.mAtomIndex, dkeBook.getBookRevision(), dkeBook.getChapterId(dkeFuzzyMatchResult.mStartPos.mChapterIndex), dkeFuzzyMatchResult.mStartOffset, ah.m6500e().m6501a()), new C0936c(dkeFuzzyMatchResult.mEndPos.mChapterIndex, dkeFuzzyMatchResult.mEndPos.mParaIndex, dkeFuzzyMatchResult.mEndPos.mAtomIndex, dkeBook.getBookRevision(), dkeBook.getChapterId(dkeFuzzyMatchResult.mEndPos.mChapterIndex), dkeFuzzyMatchResult.mEndOffset, ah.m6500e().m6501a()));
+        chapterId = dkeBook.getChapterTextOfRange(ceVar.m6813j().m6774b(dkeBook), ceVar.m6814k().m6774b(dkeBook));
+        c1011x.m7780a(ceVar);
+        c1011x.m7781a(chapterId);
         return true;
     }
 
-    private static boolean a(DkeBook dkeBook, x xVar) {
+    /* renamed from: a */
+    private static boolean m6515a(DkeBook dkeBook, C1011x<ce> c1011x) {
         bb bbVar = null;
-        if (!(((ce) xVar.a()).j().j() == null || dkeBook.getBookRevision() == null || dkeBook.getBookRevision().compareTo(((ce) xVar.a()).j().j()) <= 0)) {
+        if (!(((ce) c1011x.m7779a()).m6813j().m6783j() == null || dkeBook.getBookRevision() == null || dkeBook.getBookRevision().compareTo(((ce) c1011x.m7779a()).m6813j().m6783j()) <= 0)) {
             long j;
-            long chapterIndex = dkeBook.getChapterIndex(((ce) xVar.a()).j().k());
-            long chapterIndex2 = dkeBook.getChapterIndex(((ce) xVar.a()).k().k());
+            long chapterIndex = dkeBook.getChapterIndex(((ce) c1011x.m7779a()).m6813j().m6784k());
+            long chapterIndex2 = dkeBook.getChapterIndex(((ce) c1011x.m7779a()).m6814k().m6784k());
             if (chapterIndex < 0) {
-                chapterIndex = ((ce) xVar.a()).j().g();
+                chapterIndex = ((ce) c1011x.m7779a()).m6813j().m6780g();
             }
-            c cVar = new c(chapterIndex, ((ce) xVar.a()).j().h(), ((ce) xVar.a()).j().i(), dkeBook.getBookRevision(), ((ce) xVar.a()).j().k(), ((ce) xVar.a()).j().l(), ((ce) xVar.a()).j().m());
+            C0936c c0936c = new C0936c(chapterIndex, ((ce) c1011x.m7779a()).m6813j().m6781h(), ((ce) c1011x.m7779a()).m6813j().m6782i(), dkeBook.getBookRevision(), ((ce) c1011x.m7779a()).m6813j().m6784k(), ((ce) c1011x.m7779a()).m6813j().m6785l(), ((ce) c1011x.m7779a()).m6813j().m6786m());
             if (chapterIndex2 >= 0) {
                 j = chapterIndex2;
             } else {
-                j = ((ce) xVar.a()).k().g();
+                j = ((ce) c1011x.m7779a()).m6814k().m6780g();
             }
-            bbVar = new ce(cVar, new c(j, ((ce) xVar.a()).k().h(), ((ce) xVar.a()).k().i(), dkeBook.getBookRevision(), ((ce) xVar.a()).k().k(), ((ce) xVar.a()).k().l(), ((ce) xVar.a()).k().m()));
+            bbVar = new ce(c0936c, new C0936c(j, ((ce) c1011x.m7779a()).m6814k().m6781h(), ((ce) c1011x.m7779a()).m6814k().m6782i(), dkeBook.getBookRevision(), ((ce) c1011x.m7779a()).m6814k().m6784k(), ((ce) c1011x.m7779a()).m6814k().m6785l(), ((ce) c1011x.m7779a()).m6814k().m6786m()));
         }
-        if (!((ce) xVar.a()).j().m().equals(ah.e().a())) {
+        if (!((ce) c1011x.m7779a()).m6813j().m6786m().equals(ah.m6500e().m6501a())) {
             if (bbVar == null) {
-                bbVar = new ce(new c(((ce) xVar.a()).j().g(), ((ce) xVar.a()).j().h(), ((ce) xVar.a()).j().i(), ((ce) xVar.a()).j().j(), ((ce) xVar.a()).j().k(), ((ce) xVar.a()).j().l(), ((ce) xVar.a()).j().m()), new c(((ce) xVar.a()).k().g(), ((ce) xVar.a()).k().h(), ((ce) xVar.a()).k().i(), ((ce) xVar.a()).k().j(), ((ce) xVar.a()).k().k(), ((ce) xVar.a()).k().l(), ((ce) xVar.a()).k().m()));
+                bbVar = new ce(new C0936c(((ce) c1011x.m7779a()).m6813j().m6780g(), ((ce) c1011x.m7779a()).m6813j().m6781h(), ((ce) c1011x.m7779a()).m6813j().m6782i(), ((ce) c1011x.m7779a()).m6813j().m6783j(), ((ce) c1011x.m7779a()).m6813j().m6784k(), ((ce) c1011x.m7779a()).m6813j().m6785l(), ((ce) c1011x.m7779a()).m6813j().m6786m()), new C0936c(((ce) c1011x.m7779a()).m6814k().m6780g(), ((ce) c1011x.m7779a()).m6814k().m6781h(), ((ce) c1011x.m7779a()).m6814k().m6782i(), ((ce) c1011x.m7779a()).m6814k().m6783j(), ((ce) c1011x.m7779a()).m6814k().m6784k(), ((ce) c1011x.m7779a()).m6814k().m6785l(), ((ce) c1011x.m7779a()).m6814k().m6786m()));
             }
-            a(dkeBook, (Document_a) bbVar);
+            m6511a(dkeBook, (C0896a) bbVar);
         }
         if (bbVar == null) {
             return false;
         }
-        xVar.a(bbVar);
+        c1011x.m7780a(bbVar);
         return true;
     }
 
-    public static void a(DkeBook dkeBook, long j, long j2, DkFlowPosition dkFlowPosition, DkFlowPosition dkFlowPosition2) {
-        if (!a && dkFlowPosition == null) {
+    /* renamed from: a */
+    public static void m6510a(DkeBook dkeBook, long j, long j2, DkFlowPosition dkFlowPosition, DkFlowPosition dkFlowPosition2) {
+        if (!f4484a && dkFlowPosition == null) {
             throw new AssertionError();
-        } else if (a || dkFlowPosition2 != null) {
+        } else if (f4484a || dkFlowPosition2 != null) {
             DkePage pageOfChapterEx = dkeBook.getPageOfChapterEx(j, j2);
-            if (a || pageOfChapterEx != null) {
+            if (f4484a || pageOfChapterEx != null) {
                 pageOfChapterEx.getBeginPosition(dkFlowPosition);
                 pageOfChapterEx.getEndPosition(dkFlowPosition2);
                 return;
@@ -205,8 +214,9 @@ public final class ai {
         }
     }
 
-    public static boolean a(DkFlowPosition dkFlowPosition, DkFlowPosition dkFlowPosition2, DkFlowPosition dkFlowPosition3) {
-        if (!a && dkFlowPosition2.mChapterIndex != dkFlowPosition3.mChapterIndex) {
+    /* renamed from: a */
+    public static boolean m6513a(DkFlowPosition dkFlowPosition, DkFlowPosition dkFlowPosition2, DkFlowPosition dkFlowPosition3) {
+        if (!f4484a && dkFlowPosition2.mChapterIndex != dkFlowPosition3.mChapterIndex) {
             throw new AssertionError();
         } else if (dkFlowPosition.mChapterIndex < dkFlowPosition2.mChapterIndex || dkFlowPosition.mChapterIndex > dkFlowPosition3.mChapterIndex) {
             return false;
@@ -230,10 +240,11 @@ public final class ai {
         }
     }
 
-    public static DkeParserOption a(am amVar, long j) {
+    /* renamed from: a */
+    public static DkeParserOption m6505a(am amVar, long j) {
         int max = Math.max(amVar.a, 20);
         int max2 = Math.max(amVar.b, 20);
-        Rect a = amVar.a();
+        Rect a = amVar.m6083a();
         DkeParserOption dkeParserOption = new DkeParserOption();
         dkeParserOption.mPageBox = new DkBox();
         dkeParserOption.mPageBox.mX0 = 0.0f;
@@ -247,17 +258,18 @@ public final class ai {
         dkeParserOption.mPaddingBox.mY1 = (float) (max2 - a.bottom);
         dkeParserOption.mPageTableMode = 1;
         dkeParserOption.mChapterIndex = j;
-        dkeParserOption.mStuffings = amVar.l.containsKey(Long.valueOf(j)) ? ((Integer) amVar.l.get(Long.valueOf(j))).intValue() : 0;
+        dkeParserOption.mStuffings = amVar.f4487l.containsKey(Long.valueOf(j)) ? ((Integer) amVar.f4487l.get(Long.valueOf(j))).intValue() : 0;
         dkeParserOption.mBleed = amVar.e;
         return dkeParserOption;
     }
 
-    public static String[] a(an anVar) {
-        String[] strArr = new String[(anVar.a() * 2)];
-        for (int i = 0; i < anVar.a(); i++) {
-            b a = anVar.a(i);
-            strArr[i * 2] = a.a();
-            strArr[(i * 2) + 1] = a.c();
+    /* renamed from: a */
+    public static String[] m6517a(an anVar) {
+        String[] strArr = new String[(anVar.mo1067a() * 2)];
+        for (int i = 0; i < anVar.mo1067a(); i++) {
+            C0809b a = anVar.mo1069a(i);
+            strArr[i * 2] = a.mo1056a();
+            strArr[(i * 2) + 1] = a.mo1058c();
         }
         return strArr;
     }

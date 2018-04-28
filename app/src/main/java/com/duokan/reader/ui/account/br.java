@@ -1,34 +1,48 @@
 package com.duokan.reader.ui.account;
 
-import android.content.Context;
-import android.text.TextUtils;
+import android.graphics.Bitmap;
+import com.duokan.reader.common.webservices.C0237c;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.WebSession;
 
-import com.duokan.c.j;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth.OAuthCallback;
-import com.duokan.reader.ui.general.be;
+class br extends WebSession {
+    /* renamed from: a */
+    Bitmap f5883a = null;
+    /* renamed from: b */
+    final /* synthetic */ String f5884b;
+    /* renamed from: c */
+    final /* synthetic */ bt f5885c;
+    /* renamed from: d */
+    final /* synthetic */ bp f5886d;
 
-class br implements OAuthCallback {
-    final /* synthetic */ bn a;
-
-    br(bn bnVar) {
-        this.a = bnVar;
+    br(bp bpVar, C0657i c0657i, String str, bt btVar) {
+        this.f5886d = bpVar;
+        this.f5884b = str;
+        this.f5885c = btVar;
+        super(c0657i);
     }
 
-    public void onOauthSuccess() {
-        this.a.f = true;
-        this.a.c();
+    protected void onSessionTry() {
+        this.f5883a = new C0237c(this).m545a(this.f5884b);
     }
 
-    public void onOauthFailed(String str) {
-        CharSequence string;
-        Context context = this.a.getContext();
-        if (TextUtils.isEmpty(str)) {
-            string = this.a.getContext().getString(j.account_failed);
+    protected void onSessionSucceeded() {
+        if (!this.f5886d.f5812g) {
+            if (this.f5883a != null) {
+                this.f5885c.mo1573a(this.f5883a, true);
+            } else {
+                onSessionFailed();
+            }
         }
-        be.a(context, string, 0).show();
     }
 
-    public void onGetUserNameFailed() {
-        be.a(this.a.getContext(), j.account_get_name_failed, 0).show();
+    protected void onSessionFailed() {
+        if (!this.f5886d.f5812g) {
+            this.f5885c.mo1572a();
+        }
+    }
+
+    protected void onSessionClosed() {
+        this.f5886d.f5812g = false;
     }
 }

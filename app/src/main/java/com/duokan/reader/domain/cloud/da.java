@@ -1,82 +1,63 @@
 package com.duokan.reader.domain.cloud;
 
+import com.duokan.core.diagnostic.C0328a;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.reader.common.webservices.C0657i;
 import com.duokan.reader.common.webservices.WebSession;
-import com.duokan.reader.common.webservices.b;
-import com.duokan.reader.common.webservices.duokan.DkCloudPurchasedFictionInfo;
-import com.duokan.reader.common.webservices.duokan.DkStoreFictionDetailInfo;
-import com.duokan.reader.common.webservices.duokan.aa;
-import com.duokan.reader.common.webservices.duokan.v;
-import com.duokan.reader.domain.account.ab;
+import com.duokan.reader.domain.account.al;
 
-class da extends ef {
-    final /* synthetic */ ab a;
-    final /* synthetic */ cz b;
-    private DkCloudPurchasedFiction d = null;
+class da extends WebSession {
+    /* renamed from: a */
+    final /* synthetic */ al f3851a;
+    /* renamed from: b */
+    final /* synthetic */ cz f3852b;
+    /* renamed from: c */
+    private final dr f3853c = new dr();
+    /* renamed from: d */
+    private dt f3854d = null;
 
-    da(cz czVar, ab abVar) {
-        this.b = czVar;
-        this.a = abVar;
-        super(czVar.a.c);
+    da(cz czVar, C0657i c0657i, al alVar) {
+        this.f3852b = czVar;
+        this.f3851a = alVar;
+        super(c0657i);
     }
 
     protected void onSessionTry() {
-        boolean z;
-        ei eiVar = new ei(this.a);
-        eiVar.a();
-        DkCloudPurchasedFiction dkCloudPurchasedFiction = (DkCloudPurchasedFiction) eiVar.queryItem(this.b.a.a);
-        DkCloudPurchasedFictionInfo dkCloudPurchasedFictionInfo = (DkCloudPurchasedFictionInfo) new aa((WebSession) this, this.a).e(this.b.a.a).a;
-        try {
-            b a = new v(this, null).a(this.b.a.a, true, false, -1, -1, -1);
-            dkCloudPurchasedFictionInfo.mTitle = ((DkStoreFictionDetailInfo) a.a).mFictionInfo.mTitle;
-            dkCloudPurchasedFictionInfo.mAuthors = ((DkStoreFictionDetailInfo) a.a).mFictionInfo.mAuthors;
-            dkCloudPurchasedFictionInfo.mChapterCount = ((DkStoreFictionDetailInfo) a.a).mFictionInfo.mChapterCount;
-            dkCloudPurchasedFictionInfo.mCoverUri = ((DkStoreFictionDetailInfo) a.a).mFictionInfo.mCoverUri;
-            dkCloudPurchasedFictionInfo.mFinish = ((DkStoreFictionDetailInfo) a.a).mFictionInfo.mFinish;
-            dkCloudPurchasedFictionInfo.mLatest = ((DkStoreFictionDetailInfo) a.a).mFictionInfo.mLatest;
-            dkCloudPurchasedFictionInfo.mLatestId = ((DkStoreFictionDetailInfo) a.a).mFictionInfo.mLatestId;
-        } catch (Throwable th) {
-            dkCloudPurchasedFictionInfo.mTitle = "";
-            dkCloudPurchasedFictionInfo.mAuthors = new String[0];
-            dkCloudPurchasedFictionInfo.mChapterCount = 1;
-            dkCloudPurchasedFictionInfo.mCoverUri = "";
-            dkCloudPurchasedFictionInfo.mFinish = false;
-            dkCloudPurchasedFictionInfo.mLatest = "";
-            dkCloudPurchasedFictionInfo.mLatestId = "0";
-        }
-        if (dkCloudPurchasedFiction == null || !dkCloudPurchasedFiction.isHidden()) {
-            z = false;
-        } else {
-            z = true;
-        }
-        DkCloudItem dkCloudPurchasedFiction2 = new DkCloudPurchasedFiction(dkCloudPurchasedFictionInfo, z);
-        if (dkCloudPurchasedFiction != null) {
-            this.d = (DkCloudPurchasedFiction) dkCloudPurchasedFiction.merge(dkCloudPurchasedFiction2);
-            eiVar.updateItem(this.d);
+        if (this.f3851a.m3364a()) {
+            this.f3853c.f3889b = true;
+            this.f3853c.f3888a = true;
             return;
         }
-        this.d = dkCloudPurchasedFiction2;
-        eiVar.insertItem(this.d);
+        this.f3854d = new dt(this.f3851a);
+        this.f3854d.m5468a();
+        this.f3853c.m5461a(this.f3852b.f3850a.f3849b.m5075a(this.f3854d));
+        this.f3853c.f3888a = true;
+        this.f3853c.f3889b = true;
     }
 
     protected void onSessionSucceeded() {
-        if (this.a.a(DkUserPurchasedFictionsManager.g())) {
-            if (this.d != null) {
-                this.b.a.c.h.a(this.d);
-                this.b.a.c.f();
-            }
-            this.b.a.b.a(this.d);
+        if (this.f3851a.m3365a(DkUserPurchasedFictionsManager.m5092g())) {
+            this.f3852b.f3850a.f3849b.f3616h = this.f3853c;
+            this.f3852b.f3850a.f3849b.m5091f();
+            this.f3852b.f3850a.f3849b.f3615g.mo730a(null);
+            this.f3852b.f3850a.f3849b.f3615g.m2234b();
             return;
         }
-        this.b.a.b.a(-1, "");
+        this.f3852b.f3850a.f3849b.f3615g.mo729a(-1, "");
+        this.f3852b.f3850a.f3849b.f3615g.m2234b();
     }
 
     protected void onSessionFailed() {
-        this.b.a.b.a(-1, "");
+        this.f3852b.f3850a.f3849b.f3615g.mo729a(-1, "");
+        this.f3852b.f3850a.f3849b.f3615g.m2234b();
     }
 
     protected boolean onSessionException(Exception exception, int i) {
-        a.c().a(LogLevel.ERROR, "pm", String.format("unexpected error while updating purchased chapters(bookUuid: %s).", new Object[]{this.b.a.a}), (Throwable) exception);
+        C0328a.m757c().m748a(LogLevel.ERROR, "pm", "unexpected error while full-loading purchased fictions.", (Throwable) exception);
+        if (this.f3854d != null) {
+            this.f3854d.clearInfo();
+            this.f3854d.clearItems();
+        }
         return super.onSessionException(exception, i);
     }
 }

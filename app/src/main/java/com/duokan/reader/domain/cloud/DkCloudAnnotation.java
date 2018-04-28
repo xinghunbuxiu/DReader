@@ -1,31 +1,29 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.e.a;
-
-import org.w3c.dom.Node;
-
+import com.duokan.reader.common.p039e.C0606a;
 import java.util.Date;
+import org.w3c.dom.Node;
 
 public abstract class DkCloudAnnotation extends DkCloudItem {
     static final /* synthetic */ boolean $assertionsDisabled = (!DkCloudAnnotation.class.desiredAssertionStatus());
     private final String mAnnotationId;
     private final String mBookRevision;
     private final Date mCreationDate;
-    private final g mEndPos;
+    private final C0847g mEndPos;
     private final String mKernelVersion;
     private final Date mModifiedDate;
     private final String mSample;
-    private final g mStartPos;
+    private final C0847g mStartPos;
 
-    public DkCloudAnnotation(String str, String str2, String str3, long j, Date date, Date date2, g gVar, g gVar2, String str4) {
+    public DkCloudAnnotation(String str, String str2, String str3, long j, Date date, Date date2, C0847g c0847g, C0847g c0847g2, String str4) {
         super(j);
         this.mBookRevision = str;
         this.mKernelVersion = str2;
         this.mAnnotationId = str3;
         this.mCreationDate = date;
         this.mModifiedDate = date2;
-        this.mStartPos = gVar;
-        this.mEndPos = gVar2;
+        this.mStartPos = c0847g;
+        this.mEndPos = c0847g2;
         this.mSample = str4;
     }
 
@@ -33,24 +31,24 @@ public abstract class DkCloudAnnotation extends DkCloudItem {
         super(node, j);
         this.mBookRevision = str;
         this.mKernelVersion = str2;
-        this.mAnnotationId = a.c(node, "DataID");
+        this.mAnnotationId = C0606a.m2780c(node, "DataID");
         this.mCreationDate = xmlOptDate(node, "CreateTime", new Date(0));
         this.mModifiedDate = xmlOptDate(node, "LastModifyTime", this.mCreationDate);
-        if (a.e(node, "RefPos")) {
+        if (C0606a.m2782e(node, "RefPos")) {
             this.mStartPos = xmlGetRefPos(node, "RefPos");
             this.mEndPos = null;
         } else {
             this.mStartPos = xmlGetRefPos(node, "BeginRefPos");
             this.mEndPos = xmlGetRefPos(node, "EndRefPos");
         }
-        this.mSample = a.c(node, "RefContent");
+        this.mSample = C0606a.m2780c(node, "RefContent");
     }
 
-    public g getStartPos() {
+    public C0847g getStartPos() {
         return this.mStartPos;
     }
 
-    public g getEndPos() {
+    public C0847g getEndPos() {
         return this.mEndPos;
     }
 
@@ -96,7 +94,7 @@ public abstract class DkCloudAnnotation extends DkCloudItem {
             xmlInsertRefPos(node, "BeginRefPos", this.mStartPos);
             xmlInsertRefPos(node, "EndRefPos", this.mEndPos);
         }
-        a.b(node, "DataID", this.mAnnotationId);
-        a.b(node, "RefContent", this.mSample);
+        C0606a.m2779b(node, "DataID", this.mAnnotationId);
+        C0606a.m2779b(node, "RefContent", this.mSample);
     }
 }

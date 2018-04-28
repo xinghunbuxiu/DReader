@@ -1,31 +1,36 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.async.a.c;
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.h;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.WebSession;
+import com.duokan.reader.domain.account.al;
+import java.io.Serializable;
 
-class ax implements h {
-    final /* synthetic */ aw a;
+class ax extends WebSession {
+    /* renamed from: a */
+    final al f3721a = this.f3723c.f3718f;
+    /* renamed from: b */
+    final /* synthetic */ Serializable f3722b;
+    /* renamed from: c */
+    final /* synthetic */ av f3723c;
+    /* renamed from: d */
+    private bb f3724d = new bb();
 
-    ax(aw awVar) {
-        this.a = awVar;
+    ax(av avVar, C0657i c0657i, Serializable serializable) {
+        this.f3723c = avVar;
+        this.f3722b = serializable;
+        super(c0657i);
     }
 
-    public void a(a aVar) {
-        this.a.f = new ab(this.a.c.c());
+    protected void onSessionTry() {
+        this.f3724d = this.f3723c.m5320a(this.f3721a.f2360a, (String) this.f3722b);
     }
 
-    public void b(a aVar) {
-        this.a.a(c.a);
+    protected void onSessionSucceeded() {
+        if (this.f3721a.m3365a(this.f3723c.f3718f) && !this.f3723c.f3717e.equals(this.f3724d)) {
+            this.f3723c.m5326a(false, false, null);
+        }
     }
 
-    public void c(a aVar) {
-        this.a.f = new ab();
-        this.a.g = 0;
-        this.a.c();
-    }
-
-    public void d(a aVar) {
+    protected void onSessionFailed() {
     }
 }

@@ -1,13 +1,14 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.domain.account.ab;
+import com.duokan.reader.domain.cloud.DkUserReadBookManager.ReadBook;
 
-class ed extends ek {
-    public ed(ab abVar) {
-        super(abVar, "UserPurchasedHidedFictionsCachePrefix");
-    }
+public interface ed {
+    /* renamed from: a */
+    void mo1916a(ReadBook[] readBookArr);
 
-    public void a() {
-        upgradeVersion(3, new ee(this));
-    }
+    /* renamed from: b */
+    void mo1918b(ReadBook[] readBookArr);
+
+    /* renamed from: g */
+    void mo1920g();
 }

@@ -3,24 +3,33 @@ package com.duokan.reader.ui.reading;
 import com.duokan.reader.domain.document.ak;
 import com.duokan.reader.domain.document.ba;
 
-public interface bm extends sh {
-    long a();
+public interface bm extends su {
+    /* renamed from: a */
+    long mo2354a();
 
-    long a(ba baVar);
+    /* renamed from: a */
+    long mo2355a(ba baVar);
 
-    String a(long j);
+    /* renamed from: a */
+    String mo2356a(long j);
 
-    long[] a(ak akVar);
+    /* renamed from: a */
+    long[] mo2358a(ak akVar);
 
-    String b(long j);
+    /* renamed from: b */
+    String mo2359b(long j);
 
-    boolean b(ba baVar);
+    /* renamed from: b */
+    boolean mo2187b(ba baVar);
 
-    int c(ba baVar);
+    /* renamed from: c */
+    int mo2188c(ba baVar);
 
-    void c();
+    /* renamed from: c */
+    void mo2190c();
 
-    boolean c(long j);
+    /* renamed from: c */
+    boolean mo2191c(long j);
 
-    boolean g_();
+    boolean h_();
 }

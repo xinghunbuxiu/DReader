@@ -12,7 +12,7 @@ import android.text.TextUtils.TruncateAt;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewParent;
-
+import com.duokan.core.sys.UThread;
 import com.duokan.core.ui.Scrollable;
 import com.duokan.kernel.DkBox;
 import com.duokan.kernel.DkUtils;
@@ -21,7 +21,7 @@ import com.duokan.kernel.txtlib.DktRenderTextInfo;
 import com.duokan.kernel.txtlib.DktRenderer;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.bitmap.BitmapsRecycler;
-
+import com.duokan.reader.common.bitmap.C0544a;
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -30,66 +30,104 @@ import java.util.Iterator;
 
 @Deprecated
 public class deprecatedDkTextView extends View {
-    private static final int[] H = new int[2];
-    static final /* synthetic */ boolean a = (!deprecatedDkTextView.class.desiredAssertionStatus());
-    private static final ArrayList b = new ArrayList();
-    private static final HashMap c = new HashMap();
-    private static final ArrayList d = new ArrayList();
-    private static BitmapsRecycler e;
-    private static deprecatedDkTextView f = null;
-    private static final DktRenderer g = new DktRenderer();
-    private static final Paint h = new Paint();
-    private static final Paint i = new Paint();
-    private static String j = null;
-    private static String k = null;
-    private static Typeface l = null;
-    private static Typeface m = null;
-    private Rect A;
-    private boolean B;
-    private boolean C;
-    private boolean D;
-    private ku E;
-    private WeakReference F;
-    private WeakReference G;
-    private final Rect I;
-    private final int[] J;
-    private final DktLayoutOption n;
-    private final Rect o;
-    private Typeface p;
-    private DktRenderTextInfo q;
-    private String r;
-    private String s;
-    private int t;
-    private int u;
-    private TruncateAt v;
-    private int w;
-    private boolean x;
-    private TruncateMode y;
-    private boolean z;
+    /* renamed from: H */
+    private static final int[] f7058H = new int[2];
+    /* renamed from: a */
+    static final /* synthetic */ boolean f7059a = (!deprecatedDkTextView.class.desiredAssertionStatus());
+    /* renamed from: b */
+    private static final ArrayList<WeakReference<Scrollable>> f7060b = new ArrayList();
+    /* renamed from: c */
+    private static final HashMap<WeakReference<Scrollable>, ArrayList<WeakReference<deprecatedDkTextView>>> f7061c = new HashMap();
+    /* renamed from: d */
+    private static final ArrayList<WeakReference<deprecatedDkTextView>> f7062d = new ArrayList();
+    /* renamed from: e */
+    private static BitmapsRecycler f7063e;
+    /* renamed from: f */
+    private static deprecatedDkTextView f7064f = null;
+    /* renamed from: g */
+    private static final DktRenderer f7065g = new DktRenderer();
+    /* renamed from: h */
+    private static final Paint f7066h = new Paint();
+    /* renamed from: i */
+    private static final Paint f7067i = new Paint();
+    /* renamed from: j */
+    private static String f7068j = null;
+    /* renamed from: k */
+    private static String f7069k = null;
+    /* renamed from: l */
+    private static Typeface f7070l = null;
+    /* renamed from: m */
+    private static Typeface f7071m = null;
+    /* renamed from: A */
+    private Rect f7072A;
+    /* renamed from: B */
+    private boolean f7073B;
+    /* renamed from: C */
+    private boolean f7074C;
+    /* renamed from: D */
+    private boolean f7075D;
+    /* renamed from: E */
+    private ke f7076E;
+    /* renamed from: F */
+    private WeakReference<Scrollable> f7077F;
+    /* renamed from: G */
+    private WeakReference<View> f7078G;
+    /* renamed from: I */
+    private final Rect f7079I;
+    /* renamed from: J */
+    private final int[] f7080J;
+    /* renamed from: n */
+    private final DktLayoutOption f7081n;
+    /* renamed from: o */
+    private final Rect f7082o;
+    /* renamed from: p */
+    private Typeface f7083p;
+    /* renamed from: q */
+    private DktRenderTextInfo f7084q;
+    /* renamed from: r */
+    private String f7085r;
+    /* renamed from: s */
+    private String f7086s;
+    /* renamed from: t */
+    private int f7087t;
+    /* renamed from: u */
+    private int f7088u;
+    /* renamed from: v */
+    private TruncateAt f7089v;
+    /* renamed from: w */
+    private int f7090w;
+    /* renamed from: x */
+    private boolean f7091x;
+    /* renamed from: y */
+    private TruncateMode f7092y;
+    /* renamed from: z */
+    private boolean f7093z;
 
     public enum TruncateMode {
         NORMAL,
         END_WITH_SPACING
     }
 
-    private static void i() {
-        t.a(new kj());
+    /* renamed from: i */
+    private static void m10457i() {
+        UThread.runOnThread(new jt());
     }
 
-    private static void m(deprecatedDkTextView com_duokan_reader_ui_general_deprecatedDkTextView) {
-        if (com_duokan_reader_ui_general_deprecatedDkTextView.F != null) {
-            j();
-            int[] iArr = H;
-            ArrayList arrayList = (ArrayList) c.get(com_duokan_reader_ui_general_deprecatedDkTextView.F);
+    /* renamed from: m */
+    private static void m10465m(deprecatedDkTextView deprecateddktextview) {
+        if (deprecateddktextview.f7077F != null) {
+            m10458j();
+            int[] iArr = f7058H;
+            ArrayList arrayList = (ArrayList) f7061c.get(deprecateddktextview.f7077F);
             if (arrayList != null) {
                 Iterator it = arrayList.iterator();
                 while (it.hasNext()) {
-                    deprecatedDkTextView com_duokan_reader_ui_general_deprecatedDkTextView2 = (deprecatedDkTextView) ((WeakReference) it.next()).get();
-                    if (!(com_duokan_reader_ui_general_deprecatedDkTextView2 == null || f == com_duokan_reader_ui_general_deprecatedDkTextView2 || com_duokan_reader_ui_general_deprecatedDkTextView2 == com_duokan_reader_ui_general_deprecatedDkTextView || !com_duokan_reader_ui_general_deprecatedDkTextView2.E.d())) {
+                    deprecatedDkTextView deprecateddktextview2 = (deprecatedDkTextView) ((WeakReference) it.next()).get();
+                    if (!(deprecateddktextview2 == null || f7064f == deprecateddktextview2 || deprecateddktextview2 == deprecateddktextview || !deprecateddktextview2.f7076E.mo1809d())) {
                         int i;
-                        int i2 = (com_duokan_reader_ui_general_deprecatedDkTextView2.getParent() == null || com_duokan_reader_ui_general_deprecatedDkTextView2.getVisibility() != 0) ? 0 : 1;
-                        if (!(i2 == 0 || com_duokan_reader_ui_general_deprecatedDkTextView2.G == null)) {
-                            View view = (View) com_duokan_reader_ui_general_deprecatedDkTextView2.G.get();
+                        int i2 = (deprecateddktextview2.getParent() == null || deprecateddktextview2.getVisibility() != 0) ? 0 : 1;
+                        if (!(i2 == 0 || deprecateddktextview2.f7078G == null)) {
+                            View view = (View) deprecateddktextview2.f7078G.get();
                             if (view != null) {
                                 if (view.getParent() == null || view.getVisibility() != 0) {
                                     i = 0;
@@ -97,31 +135,31 @@ public class deprecatedDkTextView extends View {
                                     i = 1;
                                 }
                                 if (i != 0) {
-                                    ((km) com_duokan_reader_ui_general_deprecatedDkTextView2.E).c();
-                                    com_duokan_reader_ui_general_deprecatedDkTextView2.invalidate();
+                                    ((jw) deprecateddktextview2.f7076E).mo1808c();
+                                    deprecateddktextview2.invalidate();
                                 } else {
-                                    i = com_duokan_reader_ui_general_deprecatedDkTextView2.getUserVisibleAreaHeight();
-                                    com_duokan_reader_ui_general_deprecatedDkTextView2.a(iArr);
-                                    i2 = iArr[1] + com_duokan_reader_ui_general_deprecatedDkTextView2.getMeasuredHeight();
+                                    i = deprecateddktextview2.getUserVisibleAreaHeight();
+                                    deprecateddktextview2.m10441a(iArr);
+                                    i2 = iArr[1] + deprecateddktextview2.getMeasuredHeight();
                                     if (iArr[1] < i || i2 <= 0) {
-                                        ((km) com_duokan_reader_ui_general_deprecatedDkTextView2.E).c();
-                                        com_duokan_reader_ui_general_deprecatedDkTextView2.invalidate();
+                                        ((jw) deprecateddktextview2.f7076E).mo1808c();
+                                        deprecateddktextview2.invalidate();
                                     }
                                 }
                             }
                         }
                         i = i2;
                         if (i != 0) {
-                            i = com_duokan_reader_ui_general_deprecatedDkTextView2.getUserVisibleAreaHeight();
-                            com_duokan_reader_ui_general_deprecatedDkTextView2.a(iArr);
-                            i2 = iArr[1] + com_duokan_reader_ui_general_deprecatedDkTextView2.getMeasuredHeight();
+                            i = deprecateddktextview2.getUserVisibleAreaHeight();
+                            deprecateddktextview2.m10441a(iArr);
+                            i2 = iArr[1] + deprecateddktextview2.getMeasuredHeight();
                             if (iArr[1] < i) {
                             }
-                            ((km) com_duokan_reader_ui_general_deprecatedDkTextView2.E).c();
-                            com_duokan_reader_ui_general_deprecatedDkTextView2.invalidate();
+                            ((jw) deprecateddktextview2.f7076E).mo1808c();
+                            deprecateddktextview2.invalidate();
                         } else {
-                            ((km) com_duokan_reader_ui_general_deprecatedDkTextView2.E).c();
-                            com_duokan_reader_ui_general_deprecatedDkTextView2.invalidate();
+                            ((jw) deprecateddktextview2.f7076E).mo1808c();
+                            deprecateddktextview2.invalidate();
                         }
                     }
                 }
@@ -129,10 +167,11 @@ public class deprecatedDkTextView extends View {
         }
     }
 
-    private static WeakReference a(Scrollable scrollable) {
-        Iterator it = b.iterator();
+    /* renamed from: a */
+    private static WeakReference<Scrollable> m10437a(Scrollable scrollable) {
+        Iterator it = f7060b.iterator();
         while (it.hasNext()) {
-            WeakReference weakReference = (WeakReference) it.next();
+            WeakReference<Scrollable> weakReference = (WeakReference) it.next();
             if (weakReference.get() == scrollable) {
                 return weakReference;
             }
@@ -140,37 +179,39 @@ public class deprecatedDkTextView extends View {
         return null;
     }
 
-    private static WeakReference a(deprecatedDkTextView com_duokan_reader_ui_general_deprecatedDkTextView, ArrayList arrayList) {
+    /* renamed from: a */
+    private static WeakReference<deprecatedDkTextView> m10438a(deprecatedDkTextView deprecateddktextview, ArrayList<WeakReference<deprecatedDkTextView>> arrayList) {
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {
-            WeakReference weakReference = (WeakReference) it.next();
-            if (weakReference.get() == com_duokan_reader_ui_general_deprecatedDkTextView) {
+            WeakReference<deprecatedDkTextView> weakReference = (WeakReference) it.next();
+            if (weakReference.get() == deprecateddktextview) {
                 return weakReference;
             }
         }
         return null;
     }
 
-    private static void j() {
-        Iterator it = b.iterator();
+    /* renamed from: j */
+    private static void m10458j() {
+        Iterator it = f7060b.iterator();
         while (it.hasNext()) {
             WeakReference weakReference = (WeakReference) it.next();
             if (((Scrollable) weakReference.get()) == null) {
                 it.remove();
-                ArrayList arrayList = (ArrayList) c.remove(weakReference);
+                ArrayList arrayList = (ArrayList) f7061c.remove(weakReference);
                 if (arrayList != null) {
                     Iterator it2 = arrayList.iterator();
                     while (it2.hasNext()) {
-                        deprecatedDkTextView com_duokan_reader_ui_general_deprecatedDkTextView = (deprecatedDkTextView) ((WeakReference) it2.next()).get();
-                        if (com_duokan_reader_ui_general_deprecatedDkTextView != null) {
-                            com_duokan_reader_ui_general_deprecatedDkTextView.E.c();
+                        deprecatedDkTextView deprecateddktextview = (deprecatedDkTextView) ((WeakReference) it2.next()).get();
+                        if (deprecateddktextview != null) {
+                            deprecateddktextview.f7076E.mo1808c();
                         }
                     }
                     arrayList.clear();
                 }
             }
         }
-        Iterator it3 = d.iterator();
+        Iterator it3 = f7062d.iterator();
         while (it3.hasNext()) {
             if (((deprecatedDkTextView) ((WeakReference) it3.next()).get()) == null) {
                 it3.remove();
@@ -184,78 +225,78 @@ public class deprecatedDkTextView extends View {
 
     public deprecatedDkTextView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.n = new DktLayoutOption();
-        this.o = new Rect();
-        this.p = null;
-        this.q = null;
-        this.r = "";
-        this.s = null;
-        this.t = -16777216;
-        this.u = Integer.MAX_VALUE;
-        this.v = TruncateAt.END;
-        this.w = -1;
-        this.x = false;
-        this.z = false;
-        this.A = new Rect();
-        this.B = false;
-        this.C = false;
-        this.D = false;
-        this.E = new kt();
-        this.F = null;
-        this.G = null;
-        this.I = new Rect();
-        this.J = new int[2];
-        if (j == null) {
-            j = ReaderEnv.get().getSystemFontFileZh().getAbsolutePath();
-            k = ReaderEnv.get().getSystemFontFileEn().getAbsolutePath();
+        this.f7081n = new DktLayoutOption();
+        this.f7082o = new Rect();
+        this.f7083p = null;
+        this.f7084q = null;
+        this.f7085r = "";
+        this.f7086s = null;
+        this.f7087t = -16777216;
+        this.f7088u = Integer.MAX_VALUE;
+        this.f7089v = TruncateAt.END;
+        this.f7090w = -1;
+        this.f7091x = false;
+        this.f7093z = false;
+        this.f7072A = new Rect();
+        this.f7073B = false;
+        this.f7074C = false;
+        this.f7075D = false;
+        this.f7076E = new kd();
+        this.f7077F = null;
+        this.f7078G = null;
+        this.f7079I = new Rect();
+        this.f7080J = new int[2];
+        if (f7068j == null) {
+            f7068j = ReaderEnv.get().getSystemFontFileZh().getAbsolutePath();
+            f7069k = ReaderEnv.get().getSystemFontFileEn().getAbsolutePath();
             try {
-                l = Typeface.createFromFile(j);
+                f7070l = Typeface.createFromFile(f7068j);
             } catch (Throwable th) {
             }
             try {
-                m = Typeface.createFromFile(k);
+                f7071m = Typeface.createFromFile(f7069k);
             } catch (Exception e) {
-                m = l;
-                k = j;
+                f7071m = f7070l;
+                f7069k = f7068j;
             }
         }
-        kq.a(context);
-        if (e == null) {
-            e = new kl();
-            a.a(e);
+        ka.m10902a(context);
+        if (f7063e == null) {
+            f7063e = new jv();
+            C0544a.m2441a(f7063e);
         }
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, new int[]{16842901, 16842904, 16842923, 16842927, 16843087, 16843091});
-        this.r = obtainStyledAttributes.hasValue(4) ? obtainStyledAttributes.getString(4) : "";
-        this.t = obtainStyledAttributes.getColor(1, -16777216);
+        this.f7085r = obtainStyledAttributes.hasValue(4) ? obtainStyledAttributes.getString(4) : "";
+        this.f7087t = obtainStyledAttributes.getColor(1, -16777216);
         switch (obtainStyledAttributes.getInt(2, 0)) {
             case 1:
             case 4:
-                if (!a) {
+                if (!f7059a) {
                     throw new AssertionError();
                 }
                 break;
             case 2:
-                this.v = TruncateAt.MIDDLE;
+                this.f7089v = TruncateAt.MIDDLE;
                 break;
             default:
-                this.v = TruncateAt.END;
+                this.f7089v = TruncateAt.END;
                 break;
         }
-        this.u = obtainStyledAttributes.getInteger(5, Integer.MAX_VALUE);
-        if (this.v == TruncateAt.MIDDLE) {
-            this.y = TruncateMode.END_WITH_SPACING;
+        this.f7088u = obtainStyledAttributes.getInteger(5, Integer.MAX_VALUE);
+        if (this.f7089v == TruncateAt.MIDDLE) {
+            this.f7092y = TruncateMode.END_WITH_SPACING;
         } else {
-            this.y = TruncateMode.NORMAL;
+            this.f7092y = TruncateMode.NORMAL;
         }
         int integer = obtainStyledAttributes.getInteger(3, 3);
-        this.n.mFontSize = (double) obtainStyledAttributes.getDimension(0, 16.0f);
-        this.n.mLineGap = 1.2d;
-        this.n.mParaSpacing = this.n.mLineGap - 1.0d;
-        this.n.mTabStop = 4.0d;
-        this.n.mIndent = 0.0d;
-        this.n.mZhFontPath = j;
-        this.n.mEnFontPath = k;
-        this.n.mAlignType = a(integer);
+        this.f7081n.mFontSize = (double) obtainStyledAttributes.getDimension(0, 16.0f);
+        this.f7081n.mLineGap = 1.2d;
+        this.f7081n.mParaSpacing = this.f7081n.mLineGap - 1.0d;
+        this.f7081n.mTabStop = 4.0d;
+        this.f7081n.mIndent = 0.0d;
+        this.f7081n.mZhFontPath = f7068j;
+        this.f7081n.mEnFontPath = f7069k;
+        this.f7081n.mAlignType = m10435a(integer);
         obtainStyledAttributes.recycle();
         setDrawingCacheEnabled(true);
         setWillNotDraw(false);
@@ -263,33 +304,33 @@ public class deprecatedDkTextView extends View {
     }
 
     public void setUseBitmapCache(boolean z) {
-        if (this.C != z) {
-            this.C = z;
-            this.E.c();
-            if (this.C) {
-                this.E = new km();
+        if (this.f7074C != z) {
+            this.f7074C = z;
+            this.f7076E.mo1808c();
+            if (this.f7074C) {
+                this.f7076E = new jw();
                 if (getWindowToken() != null) {
-                    k();
+                    m10461k();
                 }
             } else {
-                this.E = new kt();
+                this.f7076E = new kd();
                 if (getWindowToken() != null) {
-                    l();
+                    m10463l();
                 }
             }
             Scrollable scrollable;
-            if (!this.C) {
+            if (!this.f7074C) {
                 setUsePartialDraw(false);
-                if (this.F != null) {
-                    scrollable = (Scrollable) this.F.get();
+                if (this.f7077F != null) {
+                    scrollable = (Scrollable) this.f7077F.get();
                     if (scrollable != null) {
-                        scrollable.a(this, false);
+                        scrollable.mo435a(this, false);
                     }
                 }
-            } else if (this.F != null) {
-                scrollable = (Scrollable) this.F.get();
+            } else if (this.f7077F != null) {
+                scrollable = (Scrollable) this.f7077F.get();
                 if (scrollable != null) {
-                    scrollable.a(this, true);
+                    scrollable.mo435a(this, true);
                 }
             }
             invalidate();
@@ -297,22 +338,22 @@ public class deprecatedDkTextView extends View {
     }
 
     public void setUsePartialDraw(boolean z) {
-        if (this.D != z) {
+        if (this.f7075D != z) {
             if (z) {
                 setUseBitmapCache(true);
             }
-            this.D = z;
+            this.f7075D = z;
             invalidate();
         }
     }
 
     public void setEnTypefaceFile(File file) {
-        if (file != null && !TextUtils.equals(file.getAbsolutePath(), this.n.mEnFontPath)) {
+        if (file != null && !TextUtils.equals(file.getAbsolutePath(), this.f7081n.mEnFontPath)) {
             try {
-                this.p = Typeface.createFromFile(file.getAbsolutePath());
-                this.n.mEnFontPath = file.getAbsolutePath();
-                n();
-                m();
+                this.f7083p = Typeface.createFromFile(file.getAbsolutePath());
+                this.f7081n.mEnFontPath = file.getAbsolutePath();
+                m10466n();
+                m10464m();
                 requestLayout();
                 invalidate();
             } catch (Exception e) {
@@ -325,138 +366,138 @@ public class deprecatedDkTextView extends View {
     }
 
     public void setText(String str) {
-        this.r = str;
-        this.s = null;
-        n();
-        m();
+        this.f7085r = str;
+        this.f7086s = null;
+        m10466n();
+        m10464m();
         requestLayout();
         invalidate();
     }
 
     public void setTextColor(int i) {
-        this.t = i;
-        m();
+        this.f7087t = i;
+        m10464m();
         invalidate();
     }
 
     public float getTextSize() {
-        return (float) this.n.mFontSize;
+        return (float) this.f7081n.mFontSize;
     }
 
     public void setTextSize(int i) {
-        this.n.mFontSize = (double) i;
-        n();
-        m();
+        this.f7081n.mFontSize = (double) i;
+        m10466n();
+        m10464m();
         requestLayout();
         invalidate();
     }
 
     public void setEllipsize(TruncateAt truncateAt) {
-        this.v = truncateAt == TruncateAt.MIDDLE ? TruncateAt.MIDDLE : TruncateAt.END;
-        if (this.v == TruncateAt.MIDDLE) {
-            this.y = TruncateMode.END_WITH_SPACING;
+        this.f7089v = truncateAt == TruncateAt.MIDDLE ? TruncateAt.MIDDLE : TruncateAt.END;
+        if (this.f7089v == TruncateAt.MIDDLE) {
+            this.f7092y = TruncateMode.END_WITH_SPACING;
         } else {
-            this.y = TruncateMode.NORMAL;
+            this.f7092y = TruncateMode.NORMAL;
         }
-        n();
-        m();
+        m10466n();
+        m10464m();
         requestLayout();
         invalidate();
     }
 
     public void setDrawUnderLine(boolean z) {
-        this.B = z;
+        this.f7073B = z;
     }
 
     public void setGravity(int i) {
-        this.n.mAlignType = a(i);
-        n();
-        m();
+        this.f7081n.mAlignType = m10435a(i);
+        m10466n();
+        m10464m();
         requestLayout();
         invalidate();
     }
 
     public double getFirstLineIndent() {
-        return this.n.mIndent;
+        return this.f7081n.mIndent;
     }
 
     public void setFirstLineIndent(double d) {
-        this.n.mIndent = d;
-        n();
-        m();
+        this.f7081n.mIndent = d;
+        m10466n();
+        m10464m();
         requestLayout();
         invalidate();
     }
 
     public double getLineGap() {
-        return this.n.mLineGap;
+        return this.f7081n.mLineGap;
     }
 
     public void setLineGap(double d) {
-        this.n.mLineGap = d;
-        n();
-        m();
+        this.f7081n.mLineGap = d;
+        m10466n();
+        m10464m();
         requestLayout();
         invalidate();
     }
 
     public double getParaSpacing() {
-        return this.n.mParaSpacing;
+        return this.f7081n.mParaSpacing;
     }
 
     public void setParaSpacing(double d) {
-        this.n.mParaSpacing = d;
-        n();
-        m();
+        this.f7081n.mParaSpacing = d;
+        m10466n();
+        m10464m();
         requestLayout();
         invalidate();
     }
 
     public double getTabStop() {
-        return this.n.mTabStop;
+        return this.f7081n.mTabStop;
     }
 
     public void setTabStop(double d) {
-        this.n.mTabStop = d;
-        n();
-        m();
+        this.f7081n.mTabStop = d;
+        m10466n();
+        m10464m();
         requestLayout();
         invalidate();
     }
 
     public void setMaxWidth(int i) {
-        this.w = i;
-        n();
-        m();
+        this.f7090w = i;
+        m10466n();
+        m10464m();
         requestLayout();
         invalidate();
     }
 
     public boolean getChsToChtChars() {
-        return this.x;
+        return this.f7091x;
     }
 
     public void setChsToChtChars(boolean z) {
-        this.x = z;
-        this.s = null;
-        n();
-        m();
+        this.f7091x = z;
+        this.f7086s = null;
+        m10466n();
+        m10464m();
         requestLayout();
         invalidate();
     }
 
     public void setMaxLines(int i) {
-        this.u = i;
-        n();
-        m();
+        this.f7088u = i;
+        m10466n();
+        m10464m();
         requestLayout();
         invalidate();
     }
 
     public void setPadding(int i, int i2, int i3, int i4) {
         super.setPadding(i, i2, i3, i4);
-        n();
-        m();
+        m10466n();
+        m10464m();
         requestLayout();
         invalidate();
     }
@@ -468,71 +509,71 @@ public class deprecatedDkTextView extends View {
         int paddingLeft = getPaddingLeft() + getPaddingRight();
         int paddingTop = getPaddingTop() + getPaddingBottom();
         int size2 = MeasureSpec.getMode(i) != 0 ? MeasureSpec.getSize(i) - paddingLeft : Integer.MAX_VALUE;
-        if (this.w <= 0 || size2 <= this.w) {
+        if (this.f7090w <= 0 || size2 <= this.f7090w) {
             i3 = size2;
         } else {
-            i3 = this.w;
+            i3 = this.f7090w;
         }
         if (MeasureSpec.getMode(i2) != 0) {
             size = MeasureSpec.getSize(i2) - paddingTop;
         } else {
             size = Integer.MAX_VALUE;
         }
-        if (this.u < Integer.MAX_VALUE) {
-            renderBoxByLineCount = g.getRenderBoxByLineCount(getRenderText(), this.n, (float) i3, this.u, false);
+        if (this.f7088u < Integer.MAX_VALUE) {
+            renderBoxByLineCount = f7065g.getRenderBoxByLineCount(getRenderText(), this.f7081n, (float) i3, this.f7088u, false);
         } else {
-            renderBoxByLineCount = g.getRenderBoxByHeight(getRenderText(), this.n, (float) i3, (float) size, false);
+            renderBoxByLineCount = f7065g.getRenderBoxByHeight(getRenderText(), this.f7081n, (float) i3, (float) size, false);
         }
         setMeasuredDimension(resolveSize((int) Math.ceil((double) Math.max((float) getSuggestedMinimumWidth(), (renderBoxByLineCount.mX1 - renderBoxByLineCount.mX0) + ((float) paddingLeft))), i), resolveSize((int) Math.ceil((double) Math.max((float) getSuggestedMinimumHeight(), (renderBoxByLineCount.mY1 - renderBoxByLineCount.mY0) + ((float) paddingTop))), i2));
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        if (z || this.q == null) {
+        if (z || this.f7084q == null) {
             int paddingLeft = ((i3 - i) - getPaddingLeft()) - getPaddingRight();
             int paddingTop = ((i4 - i2) - getPaddingTop()) - getPaddingBottom();
-            if (this.u < Integer.MAX_VALUE) {
-                this.q = g.getRenderInfoByLineCount(getRenderText(), this.n, (float) paddingLeft, this.u, this.v == TruncateAt.END);
+            if (this.f7088u < Integer.MAX_VALUE) {
+                this.f7084q = f7065g.getRenderInfoByLineCount(getRenderText(), this.f7081n, (float) paddingLeft, this.f7088u, this.f7089v == TruncateAt.END);
             } else {
-                this.q = g.getRenderInfoByHeight(getRenderText(), this.n, (float) paddingLeft, (float) paddingTop, this.v == TruncateAt.END);
+                this.f7084q = f7065g.getRenderInfoByHeight(getRenderText(), this.f7081n, (float) paddingLeft, (float) paddingTop, this.f7089v == TruncateAt.END);
             }
-            this.o.left = 0;
-            this.o.right = i3 - i;
-            this.o.top = 0;
-            this.o.bottom = i4 - i2;
-            this.A.left = this.o.right - 200;
-            this.A.right = this.o.right;
-            this.A.top = this.o.bottom - 10;
-            this.A.bottom = this.o.bottom;
-            if (this.q.mFollowAfter) {
-                this.z = true;
+            this.f7082o.left = 0;
+            this.f7082o.right = i3 - i;
+            this.f7082o.top = 0;
+            this.f7082o.bottom = i4 - i2;
+            this.f7072A.left = this.f7082o.right - 200;
+            this.f7072A.right = this.f7082o.right;
+            this.f7072A.top = this.f7082o.bottom - 10;
+            this.f7072A.bottom = this.f7082o.bottom;
+            if (this.f7084q.mFollowAfter) {
+                this.f7093z = true;
             } else {
-                this.z = false;
+                this.f7093z = false;
             }
-            this.E.b();
-            this.E.a();
-            this.E.c();
+            this.f7076E.mo1807b();
+            this.f7076E.mo1803a();
+            this.f7076E.mo1808c();
         }
         super.onLayout(z, i, i2, i3, i4);
     }
 
     protected void onDraw(Canvas canvas) {
-        if (this.q != null) {
+        if (this.f7084q != null) {
             try {
-                f = this;
-                h.setAntiAlias(true);
-                h.setSubpixelText(true);
-                h.setTextAlign(Align.LEFT);
-                h.setTextSize((float) this.n.mFontSize);
-                h.setColor(this.t);
+                f7064f = this;
+                f7066h.setAntiAlias(true);
+                f7066h.setSubpixelText(true);
+                f7066h.setTextAlign(Align.LEFT);
+                f7066h.setTextSize((float) this.f7081n.mFontSize);
+                f7066h.setColor(this.f7087t);
                 int[] iArr = new int[2];
-                a(iArr);
-                a(this.I, iArr, getUserVisibleAreaHeight());
-                if ((this.I.isEmpty() && this.E.d()) || !(this.I.isEmpty() || this.E.a(this.I))) {
-                    this.E.a(getContext(), canvas, this.I);
+                m10441a(iArr);
+                m10440a(this.f7079I, iArr, getUserVisibleAreaHeight());
+                if ((this.f7079I.isEmpty() && this.f7076E.mo1809d()) || !(this.f7079I.isEmpty() || this.f7076E.mo1806a(this.f7079I))) {
+                    this.f7076E.mo1804a(getContext(), canvas, this.f7079I);
                 }
-                this.E.a(canvas);
+                this.f7076E.mo1805a(canvas);
             } finally {
-                f = null;
+                f7064f = null;
             }
         }
     }
@@ -549,118 +590,123 @@ public class deprecatedDkTextView extends View {
                 viewParent = parent;
                 parent = parent.getParent();
             } else {
-                this.F = a((Scrollable) parent);
-                if (this.F == null) {
-                    this.F = new WeakReference((Scrollable) parent);
+                this.f7077F = m10437a((Scrollable) parent);
+                if (this.f7077F == null) {
+                    this.f7077F = new WeakReference((Scrollable) parent);
                 }
                 if (viewParent instanceof View) {
-                    this.G = new WeakReference((View) viewParent);
+                    this.f7078G = new WeakReference((View) viewParent);
                 }
-                if (this.C) {
-                    ((Scrollable) this.F.get()).a(this, true);
+                if (this.f7074C) {
+                    ((Scrollable) this.f7077F.get()).mo435a(this, true);
                 }
             }
         }
-        if (this.C) {
-            k();
+        if (this.f7074C) {
+            m10461k();
         }
     }
 
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.E.c();
-        if (this.C) {
-            l();
+        this.f7076E.mo1808c();
+        if (this.f7074C) {
+            m10463l();
         }
         invalidate();
-        if (this.F != null) {
-            if (this.C) {
-                Scrollable scrollable = (Scrollable) this.F.get();
+        if (this.f7077F != null) {
+            if (this.f7074C) {
+                Scrollable scrollable = (Scrollable) this.f7077F.get();
                 if (scrollable != null) {
-                    scrollable.a(this, false);
+                    scrollable.mo435a(this, false);
                 }
             }
-            this.F = null;
-            this.G = null;
+            this.f7077F = null;
+            this.f7078G = null;
         }
     }
 
     protected void onVisibilityChanged(View view, int i) {
         super.onVisibilityChanged(view, i);
-        if (i != 0 && this.E != null) {
-            this.E.c();
+        if (i != 0 && this.f7076E != null) {
+            this.f7076E.mo1808c();
             invalidate();
         }
     }
 
     protected void finalize() {
         super.finalize();
-        t.a(new kk(this));
+        UThread.runOnThread(new ju(this));
     }
 
-    private void k() {
-        if (this.F != null) {
-            ArrayList arrayList = (ArrayList) c.get(this.F);
+    /* renamed from: k */
+    private void m10461k() {
+        if (this.f7077F != null) {
+            ArrayList arrayList = (ArrayList) f7061c.get(this.f7077F);
             if (arrayList == null) {
-                b.add(this.F);
+                f7060b.add(this.f7077F);
                 arrayList = new ArrayList();
-                c.put(this.F, arrayList);
+                f7061c.put(this.f7077F, arrayList);
             }
             arrayList.add(new WeakReference(this));
             return;
         }
-        d.add(new WeakReference(this));
+        f7062d.add(new WeakReference(this));
     }
 
-    private void l() {
-        if (this.F != null) {
-            j();
-            ArrayList arrayList = (ArrayList) c.get(this.F);
+    /* renamed from: l */
+    private void m10463l() {
+        if (this.f7077F != null) {
+            m10458j();
+            ArrayList arrayList = (ArrayList) f7061c.get(this.f7077F);
             if (arrayList != null) {
-                WeakReference a = a(this, arrayList);
+                WeakReference a = m10438a(this, arrayList);
                 if (a != null) {
                     arrayList.remove(a);
                 }
                 if (arrayList.isEmpty()) {
-                    c.remove(this.F);
-                    b.remove(this.F);
+                    f7061c.remove(this.f7077F);
+                    f7060b.remove(this.f7077F);
                     return;
                 }
                 return;
             }
             return;
         }
-        WeakReference a2 = a(this, d);
+        WeakReference a2 = m10438a(this, f7062d);
         if (a2 != null) {
-            d.remove(a2);
+            f7062d.remove(a2);
         }
     }
 
-    private void m() {
-        if (this.E != null) {
-            this.E.c();
+    /* renamed from: m */
+    private void m10464m() {
+        if (this.f7076E != null) {
+            this.f7076E.mo1808c();
         }
     }
 
-    private void n() {
-        this.q = null;
-        if (this.E != null) {
-            this.E.b();
+    /* renamed from: n */
+    private void m10466n() {
+        this.f7084q = null;
+        if (this.f7076E != null) {
+            this.f7076E.mo1807b();
         }
     }
 
     private String getRenderText() {
-        String str = TextUtils.isEmpty(this.r) ? "" : this.r;
-        if (!this.x) {
+        String str = TextUtils.isEmpty(this.f7085r) ? "" : this.f7085r;
+        if (!this.f7091x) {
             return str;
         }
-        if (this.s == null) {
-            this.s = DkUtils.chs2chtText(str);
+        if (this.f7086s == null) {
+            this.f7086s = DkUtils.chs2chtText(str);
         }
-        return this.s;
+        return this.f7086s;
     }
 
-    private int a(int i) {
+    /* renamed from: a */
+    private int m10435a(int i) {
         switch (i) {
             case 3:
                 return 0;
@@ -674,27 +720,28 @@ public class deprecatedDkTextView extends View {
     }
 
     private Typeface getEnTypeface() {
-        return this.p != null ? this.p : m;
+        return this.f7083p != null ? this.f7083p : f7071m;
     }
 
-    private void a(Rect rect, int[] iArr, int i) {
-        rect.top = this.o.top;
-        rect.left = this.o.left;
-        rect.bottom = this.o.bottom;
-        rect.right = this.o.right;
-        if (this.C && this.F != null && this.F.get() != null) {
-            int i2 = iArr[1] + this.o.top;
-            int i3 = iArr[1] + this.o.bottom;
+    /* renamed from: a */
+    private void m10440a(Rect rect, int[] iArr, int i) {
+        rect.top = this.f7082o.top;
+        rect.left = this.f7082o.left;
+        rect.bottom = this.f7082o.bottom;
+        rect.right = this.f7082o.right;
+        if (this.f7074C && this.f7077F != null && this.f7077F.get() != null) {
+            int i2 = iArr[1] + this.f7082o.top;
+            int i3 = iArr[1] + this.f7082o.bottom;
             if (i2 >= i) {
                 rect.top = 0;
                 rect.bottom = 0;
             } else if (i3 <= 0) {
                 rect.top = 0;
                 rect.bottom = 0;
-            } else if (this.D && this.o.height() > kq.g().b() * 2 && this.o.height() > i / 2) {
+            } else if (this.f7075D && this.f7082o.height() > ka.m10910g().m10915b() * 2 && this.f7082o.height() > i / 2) {
                 if (i2 < 0) {
                     rect.top = iArr[1] * -1;
-                    if (rect.top + i < this.o.bottom) {
+                    if (rect.top + i < this.f7082o.bottom) {
                         rect.bottom = rect.top + i;
                     }
                 } else if (i2 >= i) {
@@ -706,22 +753,23 @@ public class deprecatedDkTextView extends View {
         }
     }
 
-    private void a(int[] iArr) {
+    /* renamed from: a */
+    private void m10441a(int[] iArr) {
         getLocationOnScreen(iArr);
-        if (this.F != null) {
-            Scrollable scrollable = (Scrollable) this.F.get();
+        if (this.f7077F != null) {
+            Scrollable scrollable = (Scrollable) this.f7077F.get();
             if (scrollable != null) {
-                ((View) scrollable).getLocationOnScreen(this.J);
-                iArr[0] = iArr[0] - this.J[0];
-                iArr[1] = iArr[1] - this.J[1];
+                ((View) scrollable).getLocationOnScreen(this.f7080J);
+                iArr[0] = iArr[0] - this.f7080J[0];
+                iArr[1] = iArr[1] - this.f7080J[1];
             }
         }
     }
 
     private int getUserVisibleAreaHeight() {
         int i = getResources().getDisplayMetrics().heightPixels;
-        if (this.F != null) {
-            View view = (View) this.F.get();
+        if (this.f7077F != null) {
+            View view = (View) this.f7077F.get();
             if (view != null && view.getMeasuredHeight() < i) {
                 return view.getMeasuredHeight();
             }

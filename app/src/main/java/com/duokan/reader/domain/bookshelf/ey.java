@@ -1,25 +1,18 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.WebLog;
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.b;
+import com.duokan.core.sys.ag;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 
-class ey implements b {
-    final /* synthetic */ ex a;
+public class ey {
+    /* renamed from: a */
+    public final LinkedList<String> f3146a = new LinkedList();
+    /* renamed from: b */
+    public final Map<String, Integer> f3147b = new HashMap();
+    /* renamed from: c */
+    public ag<Map<String, Integer>> f3148c = null;
 
-    ey(ex exVar) {
-        this.a = exVar;
-    }
-
-    public void a(a aVar) {
-        this.a.a.f.b(this.a.a.c, this.a.a.a, this.a.a.e);
-    }
-
-    public void a(a aVar, String str) {
-        WebLog.c().a(LogLevel.ERROR, "dkbook", "fail to getAllSortStackTraces chapter links because of setDrawable login error(book=%s, name=%s)", this.a.a.b, this.a.a.f.aw());
-        if (this.a.a.e != null) {
-            this.a.a.e.a(this.a.a.d);
-        }
+    protected ey() {
     }
 }

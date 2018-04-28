@@ -4,13 +4,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 class uo implements OnClickListener {
-    final /* synthetic */ ud a;
+    /* renamed from: a */
+    final /* synthetic */ ul f11018a;
 
-    uo(ud udVar) {
-        this.a = udVar;
+    uo(ul ulVar) {
+        this.f11018a = ulVar;
     }
 
     public void onClick(View view) {
-        this.a.a(new up(this));
+        this.f11018a.m13847a(new up(this));
     }
 }

@@ -1,49 +1,38 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.c.j;
-import com.duokan.reader.common.webservices.b;
-import com.duokan.reader.common.webservices.duokan.o;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.domain.account.C0709k;
 import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.cloud.PersonalPrefs;
+import com.duokan.reader.ui.general.ik;
+import com.duokan.reader.ui.general.web.StorePageController;
+import com.duokan.reader.ui.store.bv;
+import java.util.concurrent.Callable;
 
-class gr extends hh {
-    final ab a = new ab(i.f().b(PersonalAccount.class));
-    int b = 0;
-    final /* synthetic */ fl c;
-    private b e = null;
-    private b f = null;
-    private b g = null;
+class gr implements Callable<ActivatedController> {
+    /* renamed from: a */
+    final /* synthetic */ gq f8619a;
 
-    gr(fl flVar) {
-        this.c = flVar;
-        super(flVar);
+    gr(gq gqVar) {
+        this.f8619a = gqVar;
     }
 
-    protected void onSessionTry() {
-        o oVar = new o(this, this.a);
-        this.e = oVar.b(0);
-        this.f = oVar.b(1);
-        this.g = oVar.b();
+    public /* synthetic */ Object call() {
+        return m11937a();
     }
 
-    protected void onSessionSucceeded() {
-        if (PersonalPrefs.a().a(this.a)) {
-            if (this.e.b == 0) {
-                this.b = ((Integer) this.e.a).intValue() + this.b;
-            }
-            if (this.f.b == 0) {
-                this.b = ((Integer) this.f.a).intValue() + this.b;
-            }
-            if (this.g.b == 0) {
-                this.b = ((Integer) this.g.a).intValue() + this.b;
-            }
+    /* renamed from: a */
+    public ActivatedController m11937a() {
+        if (!((PersonalAccount) C0709k.m3476a().m3502b(PersonalAccount.class)).mo845p()) {
+            return bv.m15360c(this.f8619a.f8618a.getContext());
         }
-        this.c.m.setText(this.c.getString(j.personal__account_summary_view__my_coupon) + this.b);
-    }
-
-    protected void onSessionFailed() {
-        this.c.m.setText(this.c.getString(j.personal__account_summary_view__my_coupon) + this.b);
+        ActivatedController ikVar = new ik(this.f8619a.f8618a.getContext());
+        StorePageController storePageController = (StorePageController) bv.m15360c(this.f8619a.f8618a.getContext());
+        StorePageController storePageController2 = (StorePageController) bv.m15358b(this.f8619a.f8618a.getContext());
+        storePageController.setHasTitle(false);
+        storePageController2.setHasTitle(false);
+        ikVar.m10793a(storePageController, this.f8619a.f8618a.getContext().getString(C0258j.general__shared__favourite));
+        ikVar.m10793a(storePageController2, this.f8619a.f8618a.getContext().getString(C0258j.general__shared__recommend));
+        return ikVar;
     }
 }

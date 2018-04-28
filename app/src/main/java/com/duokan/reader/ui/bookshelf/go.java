@@ -1,22 +1,19 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.common.FileTypeRecognizer.FileType;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-/* synthetic */ class go {
-    static final /* synthetic */ int[] a = new int[FileType.values().length];
+class go implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ gm f6524a;
 
-    static {
-        try {
-            a[FileType.EPUB.ordinal()] = 1;
-        } catch (NoSuchFieldError e) {
-        }
-        try {
-            a[FileType.TXT.ordinal()] = 2;
-        } catch (NoSuchFieldError e2) {
-        }
-        try {
-            a[FileType.PDF.ordinal()] = 3;
-        } catch (NoSuchFieldError e3) {
+    go(gm gmVar) {
+        this.f6524a = gmVar;
+    }
+
+    public void onClick(View view) {
+        if (this.f6524a.f6521b != null) {
+            this.f6524a.f6521b.mo1690a((String) view.getTag());
         }
     }
 }

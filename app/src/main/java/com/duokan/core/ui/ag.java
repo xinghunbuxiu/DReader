@@ -3,15 +3,18 @@ package com.duokan.core.ui;
 import android.view.View;
 
 class ag implements bf {
-    final /* synthetic */ an a;
-    final /* synthetic */ HatGridView b;
+    /* renamed from: a */
+    final /* synthetic */ an f898a;
+    /* renamed from: b */
+    final /* synthetic */ HatGridView f899b;
 
     ag(HatGridView hatGridView, an anVar) {
-        this.b = hatGridView;
-        this.a = anVar;
+        this.f899b = hatGridView;
+        this.f898a = anVar;
     }
 
-    public void a(ay ayVar, View view, int i) {
-        this.a.a(this.b, view, i);
+    /* renamed from: a */
+    public void mo480a(ay ayVar, View view, int i) {
+        this.f898a.mo1558a(this.f899b, view, i);
     }
 }

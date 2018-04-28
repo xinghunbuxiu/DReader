@@ -1,89 +1,97 @@
 package com.duokan.reader.domain.micloud;
 
 import android.text.TextUtils;
-
-import com.duokan.reader.common.cache.d;
-import com.duokan.reader.common.cache.j;
-
+import com.duokan.reader.common.cache.C0572d;
+import com.duokan.reader.common.cache.C0577j;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
+import org.json.JSONObject;
 
 class aq implements ad {
-    private final String a;
-    private final String b;
-    private d c;
+    /* renamed from: a */
+    private final String f5196a;
+    /* renamed from: b */
+    private final String f5197b;
+    /* renamed from: c */
+    private C0572d<au, bi, JSONObject> f5198c;
 
     public aq(String str, String str2) {
-        this.a = str;
-        this.b = str2;
+        this.f5196a = str;
+        this.f5197b = str2;
     }
 
-    public synchronized bj a() {
-        b();
-        return ((au) this.c.queryInfo()).c;
+    /* renamed from: a */
+    public synchronized bj mo1481a() {
+        m8073b();
+        return ((au) this.f5198c.queryInfo()).f5204c;
     }
 
-    public synchronized void a(bj bjVar) {
-        b();
-        au auVar = (au) this.c.queryInfo();
-        auVar.c = bjVar;
-        this.c.updateInfo(auVar);
+    /* renamed from: a */
+    public synchronized void mo1483a(bj bjVar) {
+        m8073b();
+        au auVar = (au) this.f5198c.queryInfo();
+        auVar.f5204c = bjVar;
+        this.f5198c.updateInfo(auVar);
     }
 
-    public synchronized bi a(String str) {
-        b();
-        return (bi) this.c.queryItem(new File(str).getAbsolutePath());
+    /* renamed from: a */
+    public synchronized bi mo1480a(String str) {
+        m8073b();
+        return (bi) this.f5198c.queryItem(new File(str).getAbsolutePath());
     }
 
-    public synchronized Collection b(String str) {
-        b();
-        return this.c.queryItems(new ar(this, new File(str).getAbsolutePath()), null, null);
+    /* renamed from: b */
+    public synchronized Collection<bi> mo1486b(String str) {
+        m8073b();
+        return this.f5198c.queryItems(new ar(this, new File(str).getAbsolutePath()), null, null);
     }
 
-    public synchronized void a(bi biVar) {
-        b();
-        bi a = a(biVar.l());
-        if (biVar.g()) {
+    /* renamed from: a */
+    public synchronized void mo1482a(bi biVar) {
+        m8073b();
+        bi a = mo1480a(biVar.m8162l());
+        if (biVar.m8157g()) {
             if (a == null) {
-                biVar.p();
-                this.c.insertItem(biVar);
-            } else if (!a.g()) {
-                this.c.deleteItem(a);
-                biVar.p();
-                this.c.insertItem(biVar);
-            } else if (a.d().equals(biVar.d())) {
-                if (a.i() != biVar.i()) {
-                    biVar.p();
-                } else if (a.n()) {
-                    biVar.o();
+                biVar.m8166p();
+                this.f5198c.insertItem(biVar);
+            } else if (!a.m8157g()) {
+                this.f5198c.deleteItem(a);
+                biVar.m8166p();
+                this.f5198c.insertItem(biVar);
+            } else if (a.m8154d().equals(biVar.m8154d())) {
+                if (a.m8159i() != biVar.m8159i()) {
+                    biVar.m8166p();
+                } else if (a.m8164n()) {
+                    biVar.m8165o();
                 }
-                this.c.updateItem(biVar);
+                this.f5198c.updateItem(biVar);
             } else {
-                a(Arrays.asList(new bi[]{a}));
-                biVar.p();
-                this.c.insertItem(biVar);
+                mo1485a(Arrays.asList(new bi[]{a}));
+                biVar.m8166p();
+                this.f5198c.insertItem(biVar);
             }
         } else if (a == null) {
-            this.c.insertItem(biVar);
-        } else if (a.g()) {
-            a(Arrays.asList(new bi[]{a}));
-            this.c.insertItem(biVar);
+            this.f5198c.insertItem(biVar);
+        } else if (a.m8157g()) {
+            mo1485a(Arrays.asList(new bi[]{a}));
+            this.f5198c.insertItem(biVar);
         } else {
-            this.c.updateItem(biVar);
+            this.f5198c.updateItem(biVar);
         }
     }
 
-    public synchronized void a(String str, Collection collection) {
-        bi biVar;
-        b();
-        Collection<bi> b = b(str);
+    /* renamed from: a */
+    public synchronized void mo1484a(String str, Collection<bi> collection) {
+        m8073b();
+        Collection<bi> b = mo1486b(str);
         Collection arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        for (bi biVar2 : b) {
-            if (biVar2.g()) {
+        for (bi biVar : b) {
+            bi biVar2;
+            if (biVar2.m8157g()) {
                 arrayList2.add(biVar2);
             } else {
                 arrayList.add(biVar2);
@@ -92,7 +100,7 @@ class aq implements ad {
         Collection arrayList3 = new ArrayList();
         Collection arrayList4 = new ArrayList();
         for (bi biVar22 : collection) {
-            if (biVar22.g()) {
+            if (biVar22.m8157g()) {
                 arrayList4.add(biVar22);
             } else {
                 arrayList3.add(biVar22);
@@ -105,67 +113,70 @@ class aq implements ad {
             Iterator it2 = arrayList4.iterator();
             while (it2.hasNext()) {
                 bi biVar3 = (bi) it2.next();
-                if (biVar22.d().equals(biVar3.d()) && biVar22.e().equalsIgnoreCase(biVar3.e())) {
+                if (biVar22.m8154d().equals(biVar3.m8154d()) && biVar22.m8155e().equalsIgnoreCase(biVar3.m8155e())) {
                     Object obj = null;
                     break;
                 }
             }
-            int i = 1;
-            if (obj != null) {
+            int obj2 = 1;
+            if (obj2 != null) {
                 arrayList5.add(biVar22);
             }
         }
-        a(arrayList5);
-        a(arrayList);
-        this.c.insertItems(arrayList3);
+        mo1485a(arrayList5);
+        mo1485a(arrayList);
+        this.f5198c.insertItems(arrayList3);
         Iterator it3 = arrayList4.iterator();
         while (it3.hasNext()) {
             biVar22 = (bi) it3.next();
             Iterator it4 = arrayList2.iterator();
             while (it4.hasNext()) {
                 biVar3 = (bi) it4.next();
-                if (biVar3.d().equals(biVar22.d()) && biVar3.e().equalsIgnoreCase(biVar22.e())) {
+                if (biVar3.m8154d().equals(biVar22.m8154d()) && biVar3.m8155e().equalsIgnoreCase(biVar22.m8155e())) {
                     break;
                 }
             }
             biVar3 = null;
             if (biVar3 == null) {
-                biVar22.p();
-            } else if (!biVar3.n()) {
-                biVar22.p();
-            } else if (biVar3.i() != biVar22.i()) {
-                biVar22.p();
+                biVar22.m8166p();
+            } else if (!biVar3.m8164n()) {
+                biVar22.m8166p();
+            } else if (biVar3.m8159i() != biVar22.m8159i()) {
+                biVar22.m8166p();
             } else {
-                biVar22.o();
+                biVar22.m8165o();
             }
         }
-        this.c.insertItems(arrayList4);
+        this.f5198c.insertItems(arrayList4);
     }
 
-    public synchronized void c(String str) {
-        b();
-        a(b(str));
+    /* renamed from: c */
+    public synchronized void mo1487c(String str) {
+        m8073b();
+        mo1485a(mo1486b(str));
     }
 
-    public synchronized void a(Collection collection) {
-        b();
+    /* renamed from: a */
+    public synchronized void mo1485a(Collection<bi> collection) {
+        m8073b();
         for (bi biVar : collection) {
-            if (biVar.g()) {
-                c(biVar.l());
+            if (biVar.m8157g()) {
+                mo1487c(biVar.m8162l());
             }
         }
-        this.c.deleteItems(collection);
+        this.f5198c.deleteItems((Collection) collection);
     }
 
-    private void b() {
-        if (this.c == null) {
-            this.c = new d("MiCloudDirectoryStructCacheKey_" + this.a + "_" + this.b, j.a, new at(), new as(), 0);
-            au auVar = (au) this.c.queryInfo();
-            if (TextUtils.isEmpty(auVar.a)) {
-                auVar.a = this.a;
-                auVar.b = this.b;
-                auVar.c = null;
-                this.c.updateInfo(auVar);
+    /* renamed from: b */
+    private void m8073b() {
+        if (this.f5198c == null) {
+            this.f5198c = new C0572d("MiCloudDirectoryStructCacheKey_" + this.f5196a + "_" + this.f5197b, C0577j.f1885a, new at(), new as(), 0);
+            au auVar = (au) this.f5198c.queryInfo();
+            if (TextUtils.isEmpty(auVar.f5202a)) {
+                auVar.f5202a = this.f5196a;
+                auVar.f5203b = this.f5197b;
+                auVar.f5204c = null;
+                this.f5198c.updateInfo(auVar);
             }
         }
     }

@@ -17,25 +17,39 @@ public interface IDownloadTask {
         STOPPED
     }
 
-    void a(JSONObject jSONObject);
+    /* renamed from: a */
+    void mo789a(JSONObject jSONObject);
 
-    String b();
+    /* renamed from: b */
+    String mo790b();
 
-    JSONObject d();
+    /* renamed from: d */
+    JSONObject mo791d();
 
-    TaskStatus e();
+    /* renamed from: e */
+    TaskStatus mo792e();
 
-    TaskState f();
+    /* renamed from: f */
+    TaskState mo793f();
 
-    long g();
+    /* renamed from: g */
+    long mo794g();
 
-    DownloadFailCode h();
+    /* renamed from: h */
+    DownloadFailCode mo795h();
 
-    String j();
+    /* renamed from: j */
+    String mo796j();
 
-    long l();
+    /* renamed from: l */
+    long mo797l();
 
-    long m();
+    /* renamed from: m */
+    long mo798m();
 
-    float n();
+    /* renamed from: n */
+    float mo799n();
+
+    /* renamed from: o */
+    long mo800o();
 }

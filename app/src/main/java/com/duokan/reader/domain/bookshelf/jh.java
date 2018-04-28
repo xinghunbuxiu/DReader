@@ -1,17 +1,25 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.common.classc;
+import com.duokan.core.sys.UThread;
 
 class jh implements Runnable {
-    final /* synthetic */ iz a;
+    /* renamed from: a */
+    final /* synthetic */ jo f3387a;
+    /* renamed from: b */
+    final /* synthetic */ it f3388b;
 
-    jh(iz izVar) {
-        this.a = izVar;
+    jh(it itVar, jo joVar) {
+        this.f3388b = itVar;
+        this.f3387a = joVar;
     }
 
     public void run() {
-        this.a.h();
-        this.a.a(classc.ConnectivityReceiver.b());
-        classc.ConnectivityReceiver.b().a(this.a.c);
+        jp b = this.f3388b.f3365i;
+        if (b != null) {
+            b.m4742a(null, null);
+            if (this.f3387a != null) {
+                UThread.runOnThread(new ji(this));
+            }
+        }
     }
 }

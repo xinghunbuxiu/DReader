@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.store;
 
+import com.duokan.reader.domain.payment.C1089s;
 import com.duokan.reader.domain.payment.PaymentResult;
-import com.duokan.reader.domain.payment.s;
 
 public interface DkStoreCallback {
 
@@ -10,9 +10,12 @@ public interface DkStoreCallback {
         REPEAT_PAY
     }
 
-    void a(s sVar, PaymentResult paymentResult);
+    /* renamed from: a */
+    void mo1163a(C1089s c1089s, PaymentResult paymentResult);
 
-    void a(s sVar, String str);
+    /* renamed from: a */
+    void mo1164a(C1089s c1089s, String str);
 
-    void a(s sVar, String str, AbortPayErrorCode abortPayErrorCode);
+    /* renamed from: a */
+    void mo1165a(C1089s c1089s, String str, AbortPayErrorCode abortPayErrorCode);
 }

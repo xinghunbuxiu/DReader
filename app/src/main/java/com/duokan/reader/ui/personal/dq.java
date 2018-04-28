@@ -1,16 +1,16 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.c;
+class dq implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ dn f8464a;
 
-class dq implements c {
-    final /* synthetic */ dp a;
-
-    dq(dp dpVar) {
-        this.a = dpVar;
+    dq(dn dnVar) {
+        this.f8464a = dnVar;
     }
 
-    public void a(a aVar) {
-        this.a.b.requestBack();
+    public void run() {
+        if (this.f8464a.f8461a.f8457b != null) {
+            this.f8464a.f8461a.f8457b.mo1901a(true);
+        }
     }
 }

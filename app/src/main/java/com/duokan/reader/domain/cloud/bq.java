@@ -1,20 +1,29 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.b;
+import com.duokan.reader.common.async.p035a.C0517a;
 
-class bq implements b {
-    final /* synthetic */ bp a;
+class bq implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ C0517a f3773a;
+    /* renamed from: b */
+    final /* synthetic */ DkUserPurchasedBooksManager f3774b;
 
-    bq(bp bpVar) {
-        this.a = bpVar;
+    bq(DkUserPurchasedBooksManager dkUserPurchasedBooksManager, C0517a c0517a) {
+        this.f3774b = dkUserPurchasedBooksManager;
+        this.f3773a = c0517a;
     }
 
-    public void a(a aVar) {
-        this.a.b.a.c.a(this.a.b.a.b, this.a.b.a.a);
-    }
-
-    public void a(a aVar, String str) {
-        this.a.b.a.b.a(-1, str);
+    public void run() {
+        if (this.f3774b.f3606f.m2233a()) {
+            this.f3774b.f3606f.m2231a(this.f3773a);
+            if (this.f3774b.f3608h.f3812a) {
+                this.f3774b.f3606f.mo730a(null);
+                this.f3774b.f3606f.m2234b();
+                return;
+            }
+            new br(this, cg.f3811a, DkUserPurchasedBooksManager.m5051h()).open();
+            return;
+        }
+        this.f3774b.f3606f.m2231a(this.f3773a);
     }
 }

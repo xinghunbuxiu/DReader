@@ -1,22 +1,17 @@
 package com.duokan.reader.ui.bookshelf;
 
-import java.util.List;
+import com.duokan.reader.ui.general.cx;
 
-class fv implements fw {
-    final /* synthetic */ fr a;
+class fv implements cx {
+    /* renamed from: a */
+    final /* synthetic */ fo f6470a;
 
-    fv(fr frVar) {
-        this.a = frVar;
+    fv(fo foVar) {
+        this.f6470a = foVar;
     }
 
-    public int a() {
-        return this.a.a;
-    }
-
-    public List b() {
-        if (this.a.e != null) {
-            return this.a.e;
-        }
-        return null;
+    /* renamed from: a */
+    public void mo1699a(int i, int i2) {
+        this.f6470a.f6460c.m1319a(i2);
     }
 }

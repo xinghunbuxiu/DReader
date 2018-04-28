@@ -2,16 +2,19 @@ package com.duokan.reader.ui.reading;
 
 import android.view.View;
 import android.view.View.OnClickListener;
+import com.duokan.reader.UmengManager;
 
 class yy implements OnClickListener {
-    final /* synthetic */ yr a;
+    /* renamed from: a */
+    final /* synthetic */ yx f11258a;
 
-    yy(yr yrVar) {
-        this.a = yrVar;
+    yy(yx yxVar) {
+        this.f11258a = yxVar;
     }
 
     public void onClick(View view) {
-        this.a.D.put("Action2", "COLOR");
-        this.a.F.i();
+        UmengManager.get().onEvent("V2_READING_POPMENU", "ShareImage");
+        this.f11258a.f11254a.dismiss();
+        this.f11258a.f11257d.mo2495a(this.f11258a.f11255b, this.f11258a.f11256c);
     }
 }

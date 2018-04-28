@@ -1,5 +1,6 @@
 package com.duokan.reader.ui.general;
 
 public interface an {
-    void a(int i);
+    /* renamed from: a */
+    void mo1689a(int i);
 }

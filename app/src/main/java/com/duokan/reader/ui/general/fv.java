@@ -1,32 +1,21 @@
 package com.duokan.reader.ui.general;
 
-import android.graphics.PointF;
-import android.view.View;
+class fv implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f7265a;
+    /* renamed from: b */
+    final /* synthetic */ PagesView f7266b;
 
-import com.duokan.core.ui.du;
-import com.duokan.core.ui.er;
-
-class fv implements du {
-    final /* synthetic */ fs a;
-
-    fv(fs fsVar) {
-        this.a = fsVar;
+    fv(PagesView pagesView, Runnable runnable) {
+        this.f7266b = pagesView;
+        this.f7265a = runnable;
     }
 
-    public void onTouchUp(View view, PointF pointF) {
-    }
-
-    public void onTouchDown(View view, PointF pointF) {
-    }
-
-    public void onTouchCancel(View view, PointF pointF) {
-    }
-
-    public void a(er erVar, View view, PointF pointF, PointF pointF2) {
-        this.a.f = this.a.f + pointF2.x;
-        if (pointF2.x > 0.0f) {
-            this.a.g = true;
-            this.a.c(true);
+    public void run() {
+        if (this.f7266b.m10025m()) {
+            this.f7265a.run();
+        } else {
+            this.f7266b.f6827g.add(this.f7265a);
         }
     }
 }

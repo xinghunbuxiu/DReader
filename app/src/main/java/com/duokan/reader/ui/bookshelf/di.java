@@ -1,17 +1,26 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+class di implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ boolean f6335a;
+    /* renamed from: b */
+    final /* synthetic */ int f6336b;
+    /* renamed from: c */
+    final /* synthetic */ dh f6337c;
 
-class di implements OnClickListener {
-    final /* synthetic */ dh a;
-
-    di(dh dhVar) {
-        this.a = dhVar;
+    di(dh dhVar, boolean z, int i) {
+        this.f6337c = dhVar;
+        this.f6335a = z;
+        this.f6336b = i;
     }
 
-    public void onClick(View view) {
-        this.a.a(new dj(this));
-        this.a.requestBack();
+    public void run() {
+        if (this.f6335a) {
+            this.f6337c.f6334d.f6070s.start();
+        } else {
+            this.f6337c.f6334d.f6070s.stop();
+        }
+        this.f6337c.f6334d.f6070s.setLevel(this.f6336b);
+        this.f6337c.f6334d.invalidate();
     }
 }

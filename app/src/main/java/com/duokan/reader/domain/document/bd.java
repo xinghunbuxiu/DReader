@@ -1,5 +1,6 @@
 package com.duokan.reader.domain.document;
 
 public interface bd {
-    void a(bc bcVar, long j, long j2);
+    /* renamed from: a */
+    void mo1295a(bc bcVar, long j, long j2);
 }

@@ -1,66 +1,64 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.webservices.b;
-import com.duokan.reader.common.webservices.duokan.o;
-import com.duokan.reader.common.webservices.duokan.r;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.cloud.DkUserReadBookManager.ReadBook;
-import com.duokan.reader.domain.cloud.DkUserReadBookManager.ReadBookInfo;
+import com.duokan.reader.DkPublic;
+import com.duokan.reader.common.cache.C0448v;
+import org.json.JSONObject;
 
-class es extends r {
-    final /* synthetic */ ab a;
-    final /* synthetic */ er b;
-    private b c = null;
-    private ReadBook[] d = new ReadBook[0];
-
-    es(er erVar, ab abVar) {
-        this.b = erVar;
-        this.a = abVar;
+class es extends C0448v<DkUserReadingNotesCacheInfo, DkCloudNoteBookInfo, JSONObject> {
+    private es() {
     }
 
-    protected void onSessionTry() {
-        int i = 0;
-        this.c = new o(this, this.a).a(this.b.a, this.b.b);
-        if (this.c.b == 0) {
-            ReadBook[] readBookArr = new ReadBook[((ReadBookInfo[]) this.c.a).length];
-            for (int i2 = 0; i2 < readBookArr.length; i2++) {
-                readBookArr[i2] = new ReadBook(((ReadBookInfo[]) this.c.a)[i2]);
-            }
-            this.d = new ReadBook[readBookArr.length];
-            while (i < readBookArr.length) {
-                this.d[i] = readBookArr[i];
-                i++;
-            }
-        }
+    public /* synthetic */ Object deserializeInfoFromJson(JSONObject jSONObject) {
+        return m5508a(jSONObject);
     }
 
-    protected void onSessionSucceeded() {
-        if (!this.a.a(this.b.e.f)) {
-            this.b.c.a("");
-        } else if (this.c.b == 1001 || this.c.b == 1002 || this.c.b == 1003) {
-            if (this.b.d) {
-                i.f().a(this.a.a, new et(this));
-            } else {
-                this.b.c.a("");
-            }
-        } else if (this.c.b != 0) {
-            this.b.c.a("");
-        } else {
-            if (this.b.a == 0) {
-                this.b.e.a(this.d);
-            } else {
-                this.b.e.b(this.d);
-            }
-            this.b.c.a(this.d, Boolean.parseBoolean(this.c.c), false);
-        }
+    public /* synthetic */ Object deserializeItemFromJson(String str, Object obj) {
+        return m5507a(str, (JSONObject) obj);
     }
 
-    protected void onSessionFailed() {
-        if (this.a.a(this.b.e.f)) {
-            this.b.c.a("");
-        } else {
-            this.b.c.a("");
+    public /* synthetic */ String getUniqueId(Object obj) {
+        return m5509a((DkCloudNoteBookInfo) obj);
+    }
+
+    public /* synthetic */ JSONObject serializeInfoToJson(Object obj) {
+        return m5511a((DkUserReadingNotesCacheInfo) obj);
+    }
+
+    public /* synthetic */ Object serializeItemToJson(Object obj, Object obj2) {
+        return m5510a((DkCloudNoteBookInfo) obj, (JSONObject) obj2);
+    }
+
+    /* renamed from: a */
+    public JSONObject m5511a(DkUserReadingNotesCacheInfo dkUserReadingNotesCacheInfo) {
+        return DkPublic.serializeToJson(dkUserReadingNotesCacheInfo);
+    }
+
+    /* renamed from: a */
+    public DkUserReadingNotesCacheInfo m5508a(JSONObject jSONObject) {
+        return (DkUserReadingNotesCacheInfo) DkPublic.deserializeFromJson(jSONObject, new DkUserReadingNotesCacheInfo(), DkUserReadingNotesCacheInfo.class);
+    }
+
+    /* renamed from: a */
+    public String m5509a(DkCloudNoteBookInfo dkCloudNoteBookInfo) {
+        return dkCloudNoteBookInfo.getBookUuid();
+    }
+
+    /* renamed from: a */
+    public JSONObject m5510a(DkCloudNoteBookInfo dkCloudNoteBookInfo, JSONObject jSONObject) {
+        if (dkCloudNoteBookInfo == null) {
+            return new JSONObject();
         }
+        return dkCloudNoteBookInfo.convertToJson();
+    }
+
+    /* renamed from: a */
+    public DkCloudNoteBookInfo m5507a(String str, JSONObject jSONObject) {
+        if (jSONObject == null) {
+            return null;
+        }
+        if (DkCloudNoteBookInfo.canCreateFromJson(jSONObject)) {
+            return DkCloudNoteBookInfo.createFromJson(jSONObject);
+        }
+        return (DkCloudNoteBookInfo) DkPublic.deserializeFromJsonText(jSONObject.toString(), DkCloudNoteBookInfo.class);
     }
 }

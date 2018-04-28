@@ -1,9 +1,12 @@
 package com.duokan.reader.domain.document.epub;
 
 public interface ao {
-    String a();
+    /* renamed from: a */
+    String mo1056a();
 
-    String b();
+    /* renamed from: b */
+    String mo1057b();
 
-    String c();
+    /* renamed from: c */
+    String mo1058c();
 }

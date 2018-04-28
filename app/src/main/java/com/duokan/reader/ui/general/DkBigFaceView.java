@@ -2,39 +2,40 @@ package com.duokan.reader.ui.general;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
-
-import com.duokan.b.e;
-import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.dv;
+import com.duokan.p023b.C0243e;
 
 public class DkBigFaceView extends bf {
     public DkBigFaceView(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, UTools.getMinimumHeight(context, 72.0f), UTools.getMinimumHeight(context, 72.0f));
-        this.a.a(getResources().getDrawable(e.personal__shared__avatar));
+        super(context, attributeSet, dv.m1932b(context, 72.0f), dv.m1932b(context, 72.0f));
+        this.a.m10568a(getResources().getDrawable(C0243e.personal__shared__avatar));
         LayoutParams layoutParams = (LayoutParams) this.d.getLayoutParams();
-        layoutParams.leftMargin = UTools.getMinimumHeight(context, 5.0f);
-        layoutParams.rightMargin = UTools.getMinimumHeight(context, 5.0f);
-        layoutParams.topMargin = UTools.getMinimumHeight(context, 5.0f);
-        layoutParams.bottomMargin = UTools.getMinimumHeight(context, 5.0f);
+        layoutParams.leftMargin = dv.m1932b(context, 5.0f);
+        layoutParams.rightMargin = dv.m1932b(context, 5.0f);
+        layoutParams.topMargin = dv.m1932b(context, 5.0f);
+        layoutParams.bottomMargin = dv.m1932b(context, 5.0f);
         this.d.setLayoutParams(layoutParams);
-        this.b.a(e.personal__shared__avatar);
+        this.b.m10713a(C0243e.personal__shared__avatar);
         layoutParams = (LayoutParams) this.c.getLayoutParams();
-        layoutParams.rightMargin = UTools.getMinimumHeight(context, 2.0f);
-        layoutParams.bottomMargin = UTools.getMinimumHeight(context, 4.0f);
+        layoutParams.rightMargin = dv.m1932b(context, 2.0f);
+        layoutParams.bottomMargin = dv.m1932b(context, 4.0f);
         this.c.setLayoutParams(layoutParams);
     }
 
-    protected ImageView a(Context context) {
+    /* renamed from: a */
+    protected ImageView mo1731a(Context context) {
         ImageView imageView = new ImageView(context);
-        imageView.setImageResource(e.general__shared__vip_icon_normal);
+        imageView.setImageResource(C0243e.general__shared__vip_icon_normal);
         return imageView;
     }
 
     protected int getMiAccountDefaultFaceRes() {
-        return e.personal__shared__avatar;
+        return C0243e.personal__shared__avatar;
     }
 
     protected int getAnonymousAccountDefaultFaceRes() {
-        return e.personal__shared__anonymous_avatar;
+        return C0243e.personal__shared__anonymous_avatar;
     }
 }

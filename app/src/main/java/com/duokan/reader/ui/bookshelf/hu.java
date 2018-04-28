@@ -1,21 +1,21 @@
 package com.duokan.reader.ui.bookshelf;
 
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.ui.UTools;
+public interface hu {
+    /* renamed from: a */
+    int mo1716a();
 
-class hu implements OnClickListener {
-    final /* synthetic */ ActivatedController a;
-    final /* synthetic */ hp b;
+    /* renamed from: a */
+    View mo1717a(int i, View view, ViewGroup viewGroup);
 
-    hu(hp hpVar, ActivatedController activatedControllerVar) {
-        this.b = hpVar;
-        this.a = activatedControllerVar;
-    }
+    /* renamed from: a */
+    void mo1718a(int i, View view);
 
-    public void onClick(View view) {
-        UTools.showAnimation(this.a.getContentView(), new hv(this));
-    }
+    /* renamed from: a */
+    void mo1719a(String str);
+
+    /* renamed from: b */
+    boolean mo1720b(int i, View view);
 }

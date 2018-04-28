@@ -11,360 +11,390 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.view.animation.Interpolator;
 import android.webkit.DownloadListener;
 import android.webkit.WebBackForwardList;
 import android.webkit.WebSettings;
-
+import com.duokan.core.ui.Scrollable.OverScrollMode;
+import com.duokan.core.ui.Scrollable.ScrollState;
 import java.util.concurrent.TimeUnit;
 
 public class fr extends ViewGroup implements Scrollable {
-    protected final fx a = h();
-    private final ft b = a(this.a);
-    private fq c = null;
-    private fl d = null;
-    private String e = "";
-    private boolean f = false;
-    private int g = 0;
-    private long h = TimeUnit.SECONDS.toMillis(30);
-    private Runnable i = null;
-    private Runnable j = null;
-    private boolean k = false;
-    private boolean l = false;
+    /* renamed from: a */
+    protected final fz f1261a = m2124h();
+    /* renamed from: b */
+    private final fv f1262b = mo1744a(this.f1261a);
+    /* renamed from: c */
+    private fq f1263c = null;
+    /* renamed from: d */
+    private fl f1264d = null;
+    /* renamed from: e */
+    private String f1265e = "";
+    /* renamed from: f */
+    private boolean f1266f = false;
+    /* renamed from: g */
+    private int f1267g = 0;
+    /* renamed from: h */
+    private long f1268h = TimeUnit.SECONDS.toMillis(30);
+    /* renamed from: i */
+    private Runnable f1269i = null;
+    /* renamed from: j */
+    private Runnable f1270j = null;
+    /* renamed from: k */
+    private boolean f1271k = false;
+    /* renamed from: l */
+    private boolean f1272l = false;
 
     public fr(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        addView(this.a, new LayoutParams(-1, -1));
+        addView(this.f1261a, new LayoutParams(-1, -1));
         setWillNotDraw(false);
         setWillNotCacheDrawing(false);
         setDrawingCacheEnabled(false);
         setAnimationCacheEnabled(false);
         setClipChildren(false);
         setClipToPadding(false);
-        this.b.c(true);
-        this.b.d(UTools.getMinimumHeight(getContext()));
+        this.f1262b.m1530c(true);
+        this.f1262b.m1534d(dv.m1962g(getContext()));
     }
 
     public final int getContentWidth() {
-        return this.b.s();
+        return this.f1262b.m1561s();
     }
 
     public final int getContentHeight() {
-        return this.b.t();
+        return this.f1262b.m1562t();
     }
 
     public boolean getThumbEnabled() {
-        return this.b.u();
+        return this.f1262b.m1563u();
     }
 
     public void setThumbEnabled(boolean z) {
-        this.b.c(z);
+        this.f1262b.m1530c(z);
     }
 
     public boolean getSeekEnabled() {
-        return this.b.v();
+        return this.f1262b.m1564v();
     }
 
     public void setSeekEnabled(boolean z) {
-        this.b.d(z);
+        this.f1262b.m1538d(z);
     }
 
     public int getHorizontalThumbMarginLeft() {
-        return this.b.w();
+        return this.f1262b.m1565w();
     }
 
     public int getHorizontalThumbMarginTop() {
-        return this.b.x();
+        return this.f1262b.m1566x();
     }
 
     public int getHorizontalThumbMarginRight() {
-        return this.b.y();
+        return this.f1262b.m1567y();
     }
 
     public int getHorizontalThumbMarginBottom() {
-        return this.b.z();
+        return this.f1262b.m1568z();
     }
 
     public int getVerticalThumbMarginLeft() {
-        return this.b.A();
+        return this.f1262b.m1449A();
     }
 
     public int getVerticalThumbMarginTop() {
-        return this.b.B();
+        return this.f1262b.m1450B();
     }
 
     public int getVerticalThumbMarginRight() {
-        return this.b.C();
+        return this.f1262b.m1451C();
     }
 
     public int getVerticalThumbMarginBottom() {
-        return this.b.D();
+        return this.f1262b.m1452D();
     }
 
     public Drawable getHorizontalThumbDrawable() {
-        return this.b.E();
+        return this.f1262b.m1453E();
     }
 
     public void setHorizontalThumbDrawable(Drawable drawable) {
-        this.b.a(drawable);
+        this.f1262b.m1493a(drawable);
     }
 
     public Drawable getVerticalThumbDrawable() {
-        return this.b.F();
+        return this.f1262b.m1454F();
     }
 
     public void setVerticalThumbDrawable(Drawable drawable) {
-        this.b.b(drawable);
+        this.f1262b.m1517b(drawable);
     }
 
     public Drawable getHorizontalSeekDrawable() {
-        return this.b.G();
+        return this.f1262b.m1455G();
     }
 
     public void setHorizontalSeekDrawable(Drawable drawable) {
-        this.b.c(drawable);
+        this.f1262b.m1529c(drawable);
     }
 
     public Drawable getVerticalSeekDrawable() {
-        return this.b.H();
+        return this.f1262b.m1456H();
     }
 
     public void setVerticalSeekDrawable(Drawable drawable) {
-        this.b.d(drawable);
+        this.f1262b.m1537d(drawable);
     }
 
     public et getScrollDetector() {
-        return this.b.I();
+        return this.f1262b.m1457I();
     }
 
     public final ScrollState getScrollState() {
-        return this.b.getScrollState();
+        return this.f1262b.getScrollState();
     }
 
     public final int getIdleTime() {
-        return this.b.getIdleTime();
+        return this.f1262b.getIdleTime();
     }
 
     public final int getScrollTime() {
-        return this.b.J();
+        return this.f1262b.m1458J();
     }
 
     public int getScrollFinalX() {
-        return this.b.K();
+        return this.f1262b.m1459K();
     }
 
     public int getScrollFinalY() {
-        return this.b.L();
+        return this.f1262b.m1460L();
     }
 
     public final void setScrollInterpolator(Interpolator interpolator) {
-        this.b.a(interpolator);
+        this.f1262b.m1496a(interpolator);
     }
 
-    public void a(View view, boolean z) {
-        this.b.a(view, z);
+    /* renamed from: a */
+    public void mo435a(View view, boolean z) {
+        this.f1262b.mo435a(view, z);
     }
 
     public OverScrollMode getHorizontalOverScrollMode() {
-        return this.b.M();
+        return this.f1262b.m1461M();
     }
 
     public void setHorizontalOverScrollMode(OverScrollMode overScrollMode) {
-        this.b.a(overScrollMode);
+        this.f1262b.m1497a(overScrollMode);
     }
 
     public OverScrollMode getVerticalOverScrollMode() {
-        return this.b.N();
+        return this.f1262b.m1462N();
     }
 
     public void setVerticalOverScrollMode(OverScrollMode overScrollMode) {
-        this.b.b(overScrollMode);
+        this.f1262b.m1518b(overScrollMode);
     }
 
     public final int getMaxOverScrollWidth() {
-        return this.b.O();
+        return this.f1262b.m1463O();
     }
 
     public final void setMaxOverScrollWidth(int i) {
-        this.b.c(i);
+        this.f1262b.m1525c(i);
     }
 
     public final int getMaxOverScrollHeight() {
-        return this.b.getMaxOverScrollHeight();
+        return this.f1262b.getMaxOverScrollHeight();
     }
 
     public final void setMaxOverScrollHeight(int i) {
-        this.b.d(i);
+        this.f1262b.m1534d(i);
     }
 
     public final Rect getViewportBounds() {
-        return this.b.getViewportBounds();
+        return this.f1262b.getViewportBounds();
     }
 
     public void setOnContentBoundsChangedListener(cf cfVar) {
-        this.b.a(cfVar);
+        this.f1262b.m1501a(cfVar);
     }
 
-    public void setOnScrollListener(OnScrollListener cgVar) {
-        this.b.a(cgVar);
+    public void setOnScrollListener(cg cgVar) {
+        this.f1262b.m1502a(cgVar);
     }
 
     public void scrollTo(int i, int i2) {
-        this.b.d(i, i2);
+        this.f1262b.m1535d(i, i2);
     }
 
-    public final void a(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
-        this.b.a(i, i2, i3, runnable, runnable2);
+    /* renamed from: a */
+    public final void mo434a(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
+        this.f1262b.mo434a(i, i2, i3, runnable, runnable2);
     }
 
-    public void a() {
-        this.b.Z();
+    /* renamed from: a */
+    public void m2110a() {
+        this.f1262b.m1474Z();
     }
 
     public void requestDisallowInterceptTouchEvent(boolean z) {
         super.requestDisallowInterceptTouchEvent(z);
-        this.b.b(z);
+        this.f1262b.m1520b(z);
     }
 
     public void setBackgroundColor(int i) {
         super.setBackgroundColor(i);
-        this.a.setBackgroundColor(i);
+        this.f1261a.setBackgroundColor(i);
     }
 
     public void draw(Canvas canvas) {
         super.draw(canvas);
-        canvas.translate((float) (-this.a.getScrollX()), (float) (-this.a.getScrollY()));
-        this.b.c(canvas);
-        canvas.translate((float) this.a.getScrollX(), (float) this.a.getScrollY());
-        if (this.a.isDirty()) {
+        canvas.translate((float) (-this.f1261a.getScrollX()), (float) (-this.f1261a.getScrollY()));
+        this.f1262b.m1527c(canvas);
+        canvas.translate((float) this.f1261a.getScrollX(), (float) this.f1261a.getScrollY());
+        if (this.f1261a.isDirty()) {
             invalidate();
         }
     }
 
     protected void onMeasure(int i, int i2) {
-        this.a.measure(i, i2);
-        setMeasuredDimension(this.a.getMeasuredWidth(), this.a.getMeasuredHeight());
+        this.f1261a.measure(i, i2);
+        setMeasuredDimension(this.f1261a.getMeasuredWidth(), this.f1261a.getMeasuredHeight());
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        this.a.layout(0, 0, i3 - i, i4 - i2);
+        this.f1261a.layout(0, 0, i3 - i, i4 - i2);
     }
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, this.a);
-        boolean c = this.b.c(a);
+        MotionEvent a = dv.m1908a(motionEvent, (View) this, this.f1261a);
+        boolean c = this.f1262b.mo2420c(a);
         a.recycle();
         return c;
     }
 
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        MotionEvent a = UTools.resetMotionEvent(motionEvent, (View) this, this.a);
-        boolean b = this.b.b(a);
+        MotionEvent a = dv.m1908a(motionEvent, (View) this, this.f1261a);
+        boolean b = this.f1262b.mo2419b(a);
         a.recycle();
         return b;
     }
 
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.b.c();
+        this.f1262b.m1523c();
     }
 
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.b.d();
+        this.f1262b.m1532d();
     }
 
     public String getCurrentUrl() {
-        return this.e;
+        return this.f1265e;
     }
 
-    public boolean b() {
-        return this.f;
+    /* renamed from: b */
+    public boolean m2118b() {
+        return this.f1266f;
     }
 
     public int getLoadingError() {
-        return this.g;
+        return this.f1267g;
     }
 
     public long getLoadingTimeout() {
-        return this.h;
+        return this.f1268h;
     }
 
     public void setLoadingTimout(long j) {
-        this.h = j;
+        this.f1268h = j;
     }
 
-    public void a(String str) {
+    /* renamed from: a */
+    public void mo1815a(String str) {
         if (!TextUtils.isEmpty(str)) {
-            this.a.loadUrl(str);
+            this.f1261a.loadUrl(str);
         }
     }
 
     public fq getWebpageClient() {
-        return this.c;
+        return this.f1263c;
     }
 
     public void setWebpageClient(fq fqVar) {
-        this.c = fqVar;
+        this.f1263c = fqVar;
     }
 
     public void setDownloadListener(DownloadListener downloadListener) {
-        this.a.setDownloadListener(downloadListener);
+        this.f1261a.setDownloadListener(downloadListener);
     }
 
     public void setWebpageChromeClient(fl flVar) {
-        this.d = flVar;
+        this.f1264d = flVar;
     }
 
-    public void a(Object obj, String str) {
-        this.a.addJavascriptInterface(obj, str);
+    /* renamed from: a */
+    public void mo1814a(Object obj, String str) {
+        this.f1261a.addJavascriptInterface(obj, str);
     }
 
     public WebSettings getSettings() {
-        return this.a.getSettings();
+        return this.f1261a.getSettings();
     }
 
-    public void c() {
-        this.a.reload();
+    /* renamed from: c */
+    public void mo1818c() {
+        this.f1261a.reload();
     }
 
-    public boolean d() {
-        return this.a.canGoBack();
+    /* renamed from: d */
+    public boolean mo1819d() {
+        return this.f1261a.canGoBack();
     }
 
-    public void a(int i) {
-        this.a.goBackOrForward(i);
+    /* renamed from: a */
+    public void mo1813a(int i) {
+        this.f1261a.goBackOrForward(i);
     }
 
-    public WebBackForwardList e() {
-        return this.a.copyBackForwardList();
+    /* renamed from: e */
+    public WebBackForwardList mo1820e() {
+        return this.f1261a.copyBackForwardList();
     }
 
-    public void f() {
-        this.a.destroy();
-        this.i = null;
+    /* renamed from: f */
+    public void mo1821f() {
+        this.f1261a.destroy();
+        this.f1269i = null;
     }
 
-    public void g() {
-        this.a.clearHistory();
+    /* renamed from: g */
+    public void m2123g() {
+        this.f1261a.clearHistory();
     }
 
     @TargetApi(19)
     public static void setWebContentsDebuggingEnabled(boolean z) {
-        fx.setWebContentsDebuggingEnabled(z);
+        fz.setWebContentsDebuggingEnabled(z);
     }
 
-    protected void a(String str, Bitmap bitmap) {
+    /* renamed from: a */
+    protected void m2116a(String str, Bitmap bitmap) {
     }
 
-    protected void b(String str) {
+    /* renamed from: b */
+    protected void mo1817b(String str) {
     }
 
-    protected ft a(fx fxVar) {
-        return new ft(this, fxVar);
+    /* renamed from: a */
+    protected fv mo1744a(fz fzVar) {
+        return new fv(this, fzVar);
     }
 
-    protected fx h() {
-        return new fx(this, getContext());
+    /* renamed from: h */
+    protected fz m2124h() {
+        return new fz(this, getContext());
     }
 }

@@ -1,11 +1,10 @@
 package com.duokan.reader.domain.account.oauth.evernote;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.scribe.exceptions.OAuthException;
 import org.scribe.model.Token;
 import org.scribe.utils.OAuthEncoder;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class EvernoteAuthToken extends Token {
     private static final Pattern NOTESTORE_REGEX = Pattern.compile("edam_noteStoreUrl=([^&]+)");
@@ -25,7 +24,7 @@ public class EvernoteAuthToken extends Token {
         if (matcher.find() && matcher.groupCount() >= 1) {
             return OAuthEncoder.decode(matcher.group(1));
         }
-        throw new OAuthException("Response body is incorrect. Can'TaskHandler extract token and secret from this: '" + str + "'", null);
+        throw new OAuthException("Response body is incorrect. Can't extract token and secret from this: '" + str + "'", null);
     }
 
     public String getNoteStoreUrl() {

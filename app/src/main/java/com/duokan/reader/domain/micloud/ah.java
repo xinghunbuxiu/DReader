@@ -1,26 +1,27 @@
 package com.duokan.reader.domain.micloud;
 
+import cn.kuaipan.android.kss.upload.UploadFileInfo;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import cn.kuaipan.android.kss.upload.UploadFileInfo;
-
 public class ah {
-    private JSONObject a;
+    /* renamed from: a */
+    private JSONObject f5189a;
 
     public ah(UploadFileInfo uploadFileInfo) {
-        this.a = new JSONObject();
+        this.f5189a = new JSONObject();
         try {
-            this.a.put("kss", new JSONObject(uploadFileInfo.getKssString()));
+            this.f5189a.put("kss", new JSONObject(uploadFileInfo.getKssString()));
         } catch (JSONException e) {
         }
     }
 
     public ah(JSONObject jSONObject) {
-        this.a = jSONObject;
+        this.f5189a = jSONObject;
     }
 
-    public JSONObject a() {
-        return this.a;
+    /* renamed from: a */
+    public JSONObject m8059a() {
+        return this.f5189a;
     }
 }

@@ -1,34 +1,22 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Color;
-import android.graphics.PorterDuff.Mode;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import com.duokan.core.ui.ay;
+import com.duokan.core.ui.bf;
+import com.duokan.reader.domain.document.C0901g;
+import com.duokan.reader.ui.general.cd;
 
-import com.duokan.c.g;
-import com.duokan.c.h;
+class ob implements bf {
+    /* renamed from: a */
+    final /* synthetic */ nu f10729a;
 
-class ob extends ny {
-    final /* synthetic */ nk e;
-
-    private ob(nk nkVar) {
-        this.e = nkVar;
-        super(nkVar);
+    ob(nu nuVar) {
+        this.f10729a = nuVar;
     }
 
-    public void d() {
-        this.e.f();
-        super.d();
-    }
-
-    public View a(View view, ViewGroup viewGroup) {
-        View inflate = LayoutInflater.from(this.e.getContext()).inflate(h.reading__comment_empty_view, viewGroup, false);
-        ((ImageView) inflate.findViewById(g.reading__comment_empty_view__icon)).setColorFilter(Color.argb((int) Math.round(25.5d), Color.red(this.e.u), Color.green(this.e.u), Color.blue(this.e.u)), Mode.SRC_IN);
-        ((TextView) inflate.findViewById(g.reading__comment_empty_view__no_comment)).setTextColor(Color.argb((int) Math.round(102.0d), Color.red(this.e.u), Color.green(this.e.u), Color.blue(this.e.u)));
-        ((TextView) inflate.findViewById(g.reading__comment_empty_view__hint)).setTextColor(Color.argb((int) Math.round(102.0d), Color.red(this.e.u), Color.green(this.e.u), Color.blue(this.e.u)));
-        return inflate;
+    /* renamed from: a */
+    public void mo480a(ay ayVar, View view, int i) {
+        int[] b = this.f10729a.f10706h.m1404b(i);
+        this.f10729a.m14767a((C0901g) ((cd) this.f10729a.f10705g.getAdapter()).mo2456b(b[0], b[1]));
     }
 }

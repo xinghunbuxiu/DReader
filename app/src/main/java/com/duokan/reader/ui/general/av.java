@@ -4,15 +4,16 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 class av implements OnClickListener {
-    final /* synthetic */ DkCheckBox a;
+    /* renamed from: a */
+    final /* synthetic */ DkCheckBox f6946a;
 
     av(DkCheckBox dkCheckBox) {
-        this.a = dkCheckBox;
+        this.f6946a = dkCheckBox;
     }
 
     public void onClick(View view) {
-        if (this.a.c != null) {
-            this.a.c.onClick(this.a);
+        if (this.f6946a.f6781c != null) {
+            this.f6946a.f6781c.onClick(this.f6946a);
         }
     }
 }

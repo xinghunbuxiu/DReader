@@ -1,17 +1,20 @@
 package com.duokan.reader.domain.micloud;
 
-import com.duokan.core.c.IRunTask;
+import com.duokan.core.p029c.C0326b;
 
-class ab implements IRunTask {
-    final /* synthetic */ String a;
-    final /* synthetic */ aa b;
+class ab implements C0326b<C1084z> {
+    /* renamed from: a */
+    final /* synthetic */ String f5187a;
+    /* renamed from: b */
+    final /* synthetic */ aa f5188b;
 
     ab(aa aaVar, String str) {
-        this.b = aaVar;
-        this.a = str;
+        this.f5188b = aaVar;
+        this.f5187a = str;
     }
 
-    public boolean a(z zVar) {
-        return zVar.w().equals(this.a);
+    /* renamed from: a */
+    public boolean m8047a(C1084z c1084z) {
+        return c1084z.m8326w().equals(this.f5187a);
     }
 }

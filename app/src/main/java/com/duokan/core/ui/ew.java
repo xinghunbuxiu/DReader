@@ -1,14 +1,15 @@
 package com.duokan.core.ui;
 
 class ew implements Runnable {
-    final /* synthetic */ ev a;
+    /* renamed from: a */
+    final /* synthetic */ ev f1233a;
 
     ew(ev evVar) {
-        this.a = evVar;
+        this.f1233a = evVar;
     }
 
     public void run() {
-        this.a.D = null;
-        this.a.d(0.0f, 0.0f);
+        this.f1233a.f924D = null;
+        this.f1233a.m1533d(0.0f, 0.0f);
     }
 }

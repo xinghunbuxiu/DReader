@@ -1,13 +1,14 @@
 package com.duokan.reader.ui.reading;
 
 class be implements Runnable {
-    final /* synthetic */ bd a;
+    /* renamed from: a */
+    final /* synthetic */ bd f9828a;
 
     be(bd bdVar) {
-        this.a = bdVar;
+        this.f9828a = bdVar;
     }
 
     public void run() {
-        this.a.dismiss();
+        this.f9828a.dismiss();
     }
 }

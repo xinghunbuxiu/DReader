@@ -1,7 +1,9 @@
 package com.duokan.reader.ui.store;
 
 public interface am {
-    void a();
+    /* renamed from: a */
+    void mo1842a();
 
-    void b();
+    /* renamed from: b */
+    void mo1843b();
 }

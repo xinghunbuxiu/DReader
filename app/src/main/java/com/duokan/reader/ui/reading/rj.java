@@ -1,30 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.c.j;
-import com.duokan.reader.ui.general.PagesView;
-import com.duokan.reader.ui.general.gd;
-import com.duokan.reader.ui.general.gi;
+import com.duokan.core.sys.IdleHandlerListener;
 
-class rj implements gd {
-    final /* synthetic */ qh a;
+class rj implements IdleHandlerListener {
+    /* renamed from: a */
+    final /* synthetic */ ri f10897a;
 
-    rj(qh qhVar) {
-        this.a = qhVar;
+    rj(ri riVar) {
+        this.f10897a = riVar;
     }
 
-    public void a(PagesView pagesView) {
-        this.a.A().prompt(this.a.getString(j.reading__shared__reach_first_page));
-    }
-
-    public void b(PagesView pagesView) {
-        this.a.A().prompt(this.a.getString(j.reading__shared__reach_last_page));
-    }
-
-    public void a(PagesView pagesView, gi giVar) {
-        this.a.a((gn) giVar);
-    }
-
-    public void b(PagesView pagesView, gi giVar) {
-        this.a.b((gn) giVar);
+    public boolean idleRun() {
+        this.f10897a.f10896d.f10892a.m11284b(new xu(this.f10897a.f10896d.f10892a.getContext(), this.f10897a.f10896d.f10892a.f9281e, this.f10897a.f10896d.f10892a.f9268G, this.f10897a.f10893a, this.f10897a.f10894b, this.f10897a.f10895c));
+        return false;
     }
 }

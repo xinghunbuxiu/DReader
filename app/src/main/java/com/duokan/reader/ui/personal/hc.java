@@ -1,38 +1,40 @@
 package com.duokan.reader.ui.personal;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.common.webservices.C0621a;
+import com.duokan.reader.common.webservices.duokan.C0640n;
+import com.duokan.reader.domain.account.C0709k;
+import com.duokan.reader.domain.account.PersonalAccount;
+import com.duokan.reader.domain.account.al;
+import com.duokan.reader.domain.cloud.PersonalPrefs;
 
-import com.duokan.core.ui.UTools;
+class hc extends hu {
+    /* renamed from: a */
+    final al f8636a = new al(C0709k.m3476a().m3502b(PersonalAccount.class));
+    /* renamed from: b */
+    int f8637b = 0;
+    /* renamed from: c */
+    final /* synthetic */ fz f8638c;
+    /* renamed from: e */
+    private C0621a<Integer> f8639e = null;
 
-class hc extends Drawable {
-    final /* synthetic */ View a;
-    final /* synthetic */ fl b;
-
-    hc(fl flVar, View view) {
-        this.b = flVar;
-        this.a = view;
+    hc(fz fzVar) {
+        this.f8638c = fzVar;
+        super(fzVar);
     }
 
-    public void draw(Canvas canvas) {
-        float width = (float) ((this.a.getWidth() / 2) - UTools.getMinimumHeight(this.b.getContext(), 3.0f));
-        Paint paint = new Paint();
-        paint.setColor(Color.parseColor("#cccccc"));
-        paint.setAntiAlias(true);
-        canvas.drawCircle((float) (this.a.getWidth() / 2), (float) (this.a.getHeight() / 2), width, paint);
+    protected void onSessionTry() {
+        this.f8639e = new C0640n(this, this.f8636a).m2910a();
     }
 
-    public void setAlpha(int i) {
+    protected void onSessionSucceeded() {
+        if (PersonalPrefs.m5175a().m5209a(this.f8636a) && this.f8639e.b == 0) {
+            this.f8637b = ((Integer) this.f8639e.f2058a).intValue();
+        }
+        this.f8638c.f8588o.setText(this.f8638c.getString(C0258j.personal__account_summary_view__my_reward) + this.f8637b);
     }
 
-    public void setColorFilter(ColorFilter colorFilter) {
-    }
-
-    public int getOpacity() {
-        return 0;
+    protected void onSessionFailed() {
+        this.f8638c.f8588o.setText(this.f8638c.getString(C0258j.personal__account_summary_view__my_reward) + this.f8637b);
     }
 }

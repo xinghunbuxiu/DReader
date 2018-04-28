@@ -1,15 +1,17 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.ui.general.ib;
+import com.duokan.reader.ui.general.dm;
 
-class eu implements ib {
-    final /* synthetic */ et a;
+class eu implements dm {
+    /* renamed from: a */
+    final /* synthetic */ es f7802a;
 
-    eu(et etVar) {
-        this.a = etVar;
+    eu(es esVar) {
+        this.f7802a = esVar;
     }
 
-    public void a(int i) {
-        this.a.d.b.pageController.web_notifyWeb(this.a.c, 0, "index", Integer.valueOf(i));
+    /* renamed from: a */
+    public void mo1841a() {
+        this.f7802a.f7799d.mo1840b(new Object[0]);
     }
 }

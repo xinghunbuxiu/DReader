@@ -1,34 +1,42 @@
 package com.duokan.reader.ui.general.web;
 
 import android.text.TextUtils;
-
-import com.duokan.reader.domain.bookshelf.fv;
-import com.duokan.reader.domain.cloud.DkCloudBookManifest;
-import com.duokan.reader.domain.cloud.ao;
-import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.bookshelf.im;
+import com.duokan.reader.domain.cloud.DkCloudStorage;
+import com.duokan.reader.domain.store.DkStoreBookDetail;
 import com.duokan.reader.ui.general.be;
+import com.duokan.reader.ui.general.ja;
 import com.mipay.sdk.Mipay;
 
-class aw implements ao {
-    final /* synthetic */ fv a;
-    final /* synthetic */ String b;
-    final /* synthetic */ StorePageController c;
+class aw implements im {
+    /* renamed from: a */
+    final /* synthetic */ ja f7604a;
+    /* renamed from: b */
+    final /* synthetic */ String f7605b;
+    /* renamed from: c */
+    final /* synthetic */ DkStoreBookDetail f7606c;
+    /* renamed from: d */
+    final /* synthetic */ StorePageController f7607d;
 
-    aw(StorePageController storePageController, fv fvVar, String str) {
-        this.c = storePageController;
-        this.a = fvVar;
-        this.b = str;
+    aw(StorePageController storePageController, ja jaVar, String str, DkStoreBookDetail dkStoreBookDetail) {
+        this.f7607d = storePageController;
+        this.f7604a = jaVar;
+        this.f7605b = str;
+        this.f7606c = dkStoreBookDetail;
     }
 
-    public void a(String str, DkCloudBookManifest dkCloudBookManifest) {
-        this.a.a(dkCloudBookManifest, FlowChargingTransferChoice.Default.wifiOnly());
-        this.c.web_notifyWeb(this.b, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
+    /* renamed from: a */
+    public void mo1021a(C0800c c0800c) {
+        DkCloudStorage.m4994a().m5014a(c0800c.m4156I(), new ax(this, c0800c));
     }
 
-    public void a(String str, String str2) {
-        this.c.web_notifyWeb(this.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str2);
-        if (!TextUtils.isEmpty(str2)) {
-            be.a(this.c.getContext(), (CharSequence) str2, 1).show();
+    /* renamed from: a */
+    public void mo1022a(String str) {
+        this.f7604a.dismiss();
+        this.f7607d.web_notifyWeb(this.f7605b, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str);
+        if (!TextUtils.isEmpty(str)) {
+            be.m10287a(this.f7607d.getContext(), (CharSequence) str, 1).show();
         }
     }
 }

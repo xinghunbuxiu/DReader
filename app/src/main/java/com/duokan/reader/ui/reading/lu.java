@@ -1,30 +1,31 @@
 package com.duokan.reader.ui.reading;
 
-class lu implements mb {
-    final /* synthetic */ lw a;
-    final /* synthetic */ ls b;
+import android.graphics.PointF;
+import android.view.View;
+import com.duokan.core.ui.bw;
 
-    lu(ls lsVar, lw lwVar) {
-        this.b = lsVar;
-        this.a = lwVar;
+class lu implements bw {
+    /* renamed from: a */
+    final /* synthetic */ lt f10591a;
+
+    lu(lt ltVar) {
+        this.f10591a = ltVar;
     }
 
-    public void a() {
-        this.b.b.removeView(this.b.c.b());
-        this.b.c = null;
-        this.b.d.a(false);
-        this.a.a();
-        this.b.a.a(0, 12);
+    public void onTouchUp(View view, PointF pointF) {
     }
 
-    public void b() {
-        this.a.b();
+    public void onTouchDown(View view, PointF pointF) {
     }
 
-    public void c() {
-        this.a.c();
+    public void onTouchCancel(View view, PointF pointF) {
     }
 
-    public void a(boolean z) {
+    /* renamed from: a */
+    public void mo521a(View view, PointF pointF) {
+        fz a = this.f10591a.m14616a(pointF.x, pointF.y);
+        if (a != null) {
+            this.f10591a.f10583a.mo2341b(a);
+        }
     }
 }

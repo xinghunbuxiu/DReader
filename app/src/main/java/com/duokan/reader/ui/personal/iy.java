@@ -1,26 +1,22 @@
 package com.duokan.reader.ui.personal;
 
-import android.text.TextUtils;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.common.C0268j;
+import com.duokan.core.app.BaseActivity;
 
-import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.domain.cloud.push.s;
-import com.duokan.reader.ui.general.be;
+class iy implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ String f8753a;
+    /* renamed from: b */
+    final /* synthetic */ iu f8754b;
 
-class iy implements s {
-    final /* synthetic */ ix a;
-
-    iy(ix ixVar) {
-        this.a = ixVar;
+    iy(iu iuVar, String str) {
+        this.f8754b = iuVar;
+        this.f8753a = str;
     }
 
-    public void a(boolean z) {
-        ReaderEnv.get().setReceivePushes(z);
-        this.a.a.a();
-    }
-
-    public void a(String str) {
-        if (!TextUtils.isEmpty(str)) {
-            be.a(this.a.a.getContext(), (CharSequence) str, 1).show();
-        }
+    public void onClick(View view) {
+        C0268j.m612a((BaseActivity) this.f8754b.getActivity(), this.f8753a);
     }
 }

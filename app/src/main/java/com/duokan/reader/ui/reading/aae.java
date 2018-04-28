@@ -1,21 +1,23 @@
 package com.duokan.reader.ui.reading;
 
+import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ag;
-
 import java.util.Map;
 
-class aae implements ag {
-    final /* synthetic */ zo a;
+class aae implements ag<Map<String, Integer>> {
+    /* renamed from: a */
+    final /* synthetic */ aad f9324a;
 
-    aae(zo zoVar) {
-        this.a = zoVar;
+    aae(aad aad) {
+        this.f9324a = aad;
     }
 
-    public void a(Map map) {
-        if (this.a.q) {
-            this.a.O = false;
-        } else {
-            this.a.J();
-        }
+    public /* synthetic */ void run(Object obj) {
+        m12901a((Map) obj);
+    }
+
+    /* renamed from: a */
+    public void m12901a(Map<String, Integer> map) {
+        UThread.post(this.f9324a.f9323a.f9315c);
     }
 }

@@ -1,28 +1,22 @@
 package com.duokan.reader.ui.general;
 
-import com.duokan.core.ui.aw;
-import com.duokan.core.ui.ax;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.core.ui.C0343f;
 
-public abstract class gj extends aw implements ax {
-    protected ge c = null;
-    final /* synthetic */ PagesView d;
+class gj implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ gh f7280a;
 
-    protected gj(PagesView pagesView) {
-        this.d = pagesView;
+    gj(gh ghVar) {
+        this.f7280a = ghVar;
     }
 
-    public ge b() {
-        return this.c;
-    }
-
-    public void a(ge geVar) {
-        if (this.c != null) {
-            this.c.b(this);
+    public void onClick(View view) {
+        if (this.f7280a.f7274a instanceof C0343f) {
+            ((C0343f) this.f7280a.f7274a).cancel();
+        } else {
+            this.f7280a.f7274a.dismiss();
         }
-        this.c = geVar;
-        if (this.c != null) {
-            this.c.a(this);
-        }
-        this.d.a(geVar);
     }
 }

@@ -1,12 +1,10 @@
 package com.duokan.reader.domain.store;
 
 import android.text.TextUtils;
-
+import com.duokan.reader.common.webservices.duokan.C0647u;
 import com.duokan.reader.common.webservices.duokan.DkStoreAbsBookInfo;
 import com.duokan.reader.common.webservices.duokan.DkStoreFictionDetailInfo;
-import com.duokan.reader.common.webservices.duokan.v;
 import com.duokan.reader.domain.cloud.DkCloudFictionChapter;
-
 import org.json.JSONObject;
 
 public class DkStoreFictionDetail extends DkStoreItemDetail {
@@ -16,7 +14,7 @@ public class DkStoreFictionDetail extends DkStoreItemDetail {
     private final DkStoreFictionDetailInfo mDetailInfo;
 
     public DkStoreFictionDetail(JSONObject jSONObject) {
-        this(v.b(jSONObject));
+        this(C0647u.m3013b(jSONObject));
     }
 
     public DkStoreFictionDetail(DkStoreFictionDetailInfo dkStoreFictionDetailInfo) {

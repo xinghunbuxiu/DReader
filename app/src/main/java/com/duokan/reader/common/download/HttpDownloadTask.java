@@ -3,17 +3,18 @@ package com.duokan.reader.common.download;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.http.Headers;
-
+import com.duokan.reader.common.p037c.C0554a;
+import java.io.File;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.json.JSONObject;
 
-import java.io.File;
-
 class HttpDownloadTask extends DownloadTask {
-    static final /* synthetic */ boolean u;
-    private static final DefaultHttpClient v = a.b().a(HttpDownloadTask.class.getName());
+    /* renamed from: u */
+    static final /* synthetic */ boolean f1978u;
+    /* renamed from: v */
+    private static final DefaultHttpClient f1979v = C0554a.m2459b().m2461a(HttpDownloadTask.class.getName());
 
     static {
         boolean z;
@@ -22,27 +23,29 @@ class HttpDownloadTask extends DownloadTask {
         } else {
             z = true;
         }
-        u = z;
-        HttpParams params = v.getParams();
+        f1978u = z;
+        HttpParams params = f1979v.getParams();
         HttpConnectionParams.setSocketBufferSize(params, 131072);
-        v.setParams(params);
+        f1979v.setParams(params);
     }
 
-    public HttpDownloadTask(Context context, long j, SQLiteDatabase sQLiteDatabase, l lVar, File file) {
-        super(context, j, sQLiteDatabase, lVar, file);
+    public HttpDownloadTask(Context context, long j, SQLiteDatabase sQLiteDatabase, C0595l c0595l, File file) {
+        super(context, j, sQLiteDatabase, c0595l, file);
     }
 
-    protected DownloadBlock b(long j) {
-        return new HttpDownloadBlock(j, this.e, this.r, this, this.s, v);
+    /* renamed from: b */
+    protected DownloadBlock mo805b(long j) {
+        return new HttpDownloadBlock(j, this.e, this.r, this, this.s, f1979v);
     }
 
-    protected JSONObject a(c cVar) {
-        if (u || cVar != null) {
-            JSONObject a = super.a(cVar);
-            o oVar = (o) cVar;
-            if (u || oVar != null) {
-                a.putOpt(Headers.ETAG, oVar.h);
-                a.putOpt("last_modified_time", oVar.i);
+    /* renamed from: a */
+    protected JSONObject mo804a(C0593c c0593c) {
+        if (f1978u || c0593c != null) {
+            JSONObject a = super.mo804a(c0593c);
+            C0605o c0605o = (C0605o) c0593c;
+            if (f1978u || c0605o != null) {
+                a.putOpt(Headers.ETAG, c0605o.f2028h);
+                a.putOpt("last_modified_time", c0605o.f2029i);
                 return a;
             }
             throw new AssertionError();
@@ -50,15 +53,16 @@ class HttpDownloadTask extends DownloadTask {
         throw new AssertionError();
     }
 
-    protected void c(JSONObject jSONObject) {
-        if (u || jSONObject != null) {
+    /* renamed from: c */
+    protected void mo806c(JSONObject jSONObject) {
+        if (f1978u || jSONObject != null) {
             if (this.n == null) {
-                this.n = new o();
+                this.n = new C0605o();
             }
-            o oVar = (o) this.n;
-            oVar.h = jSONObject.optString(Headers.ETAG);
-            oVar.i = jSONObject.optString("last_modified_time");
-            super.c(jSONObject);
+            C0605o c0605o = (C0605o) this.n;
+            c0605o.f2028h = jSONObject.optString(Headers.ETAG);
+            c0605o.f2029i = jSONObject.optString("last_modified_time");
+            super.mo806c(jSONObject);
             return;
         }
         throw new AssertionError();

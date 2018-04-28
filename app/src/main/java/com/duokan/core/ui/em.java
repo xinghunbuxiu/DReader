@@ -1,26 +1,29 @@
 package com.duokan.core.ui;
 
 import android.graphics.Rect;
+import com.duokan.core.sys.BaseAnimation;
 
-import com.duokan.core.sys.ap;
-
-final class em extends ap {
+final class em extends BaseAnimation<Rect> {
     em() {
     }
 
-    protected  Object b() {
-        return c();
+    /* renamed from: b */
+    protected /* synthetic */ Object createAnimation() {
+        return m2016c();
     }
 
-    protected  void b(Object obj) {
-        a((Rect) obj);
+    /* renamed from: b */
+    protected /* synthetic */ void mo516b(Object obj) {
+        m2013a((Rect) obj);
     }
 
-    protected Rect c() {
+    /* renamed from: c */
+    protected Rect m2016c() {
         return new Rect();
     }
 
-    protected void a(Rect rect) {
+    /* renamed from: a */
+    protected void m2013a(Rect rect) {
         rect.setEmpty();
     }
 }

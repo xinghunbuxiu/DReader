@@ -6,12 +6,16 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.view.View.MeasureSpec;
 import android.widget.ImageView.ScaleType;
 
-public class ar extends d {
-    private Drawable b;
-    private Drawable c;
-    private Rect d;
+public class ar extends C0377d {
+    /* renamed from: b */
+    private Drawable f969b;
+    /* renamed from: c */
+    private Drawable f970c;
+    /* renamed from: d */
+    private Rect f971d;
 
     public ar(Context context) {
         this(context, null);
@@ -19,54 +23,54 @@ public class ar extends d {
 
     public ar(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.b = null;
-        this.c = null;
-        this.d = new Rect();
+        this.f969b = null;
+        this.f970c = null;
+        this.f971d = new Rect();
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, new int[]{16843037, 16843119, 16843120});
-        this.b = obtainStyledAttributes.hasValue(1) ? obtainStyledAttributes.getDrawable(1) : this.b;
-        this.c = obtainStyledAttributes.hasValue(2) ? obtainStyledAttributes.getDrawable(2) : this.c;
+        this.f969b = obtainStyledAttributes.hasValue(1) ? obtainStyledAttributes.getDrawable(1) : this.f969b;
+        this.f970c = obtainStyledAttributes.hasValue(2) ? obtainStyledAttributes.getDrawable(2) : this.f970c;
         obtainStyledAttributes.recycle();
     }
 
     public Drawable getLeftDrawable() {
-        return this.b;
+        return this.f969b;
     }
 
     public void setLeftDrawable(Drawable drawable) {
-        this.b = drawable;
+        this.f969b = drawable;
         requestLayout();
     }
 
     public Drawable getRightDrawable() {
-        return this.c;
+        return this.f970c;
     }
 
     public void setRightDrawable(Drawable drawable) {
-        this.c = drawable;
+        this.f970c = drawable;
         requestLayout();
     }
 
     protected void onDraw(Canvas canvas) {
-        if (this.b != null) {
-            this.d.set(0, 0, this.b.getIntrinsicWidth(), getHeight());
+        if (this.f969b != null) {
+            this.f971d.set(0, 0, this.f969b.getIntrinsicWidth(), getHeight());
             if (this.a == ScaleType.CENTER) {
-                this.d.inset(0, ((getHeight() - this.b.getIntrinsicHeight()) + 1) / 2);
+                this.f971d.inset(0, ((getHeight() - this.f969b.getIntrinsicHeight()) + 1) / 2);
             }
             canvas.save();
-            canvas.clipRect(this.d);
-            this.b.setBounds(this.d);
-            this.b.draw(canvas);
+            canvas.clipRect(this.f971d);
+            this.f969b.setBounds(this.f971d);
+            this.f969b.draw(canvas);
             canvas.restore();
         }
-        if (this.c != null) {
-            this.d.set(getWidth() - this.c.getIntrinsicWidth(), 0, getWidth(), getHeight());
+        if (this.f970c != null) {
+            this.f971d.set(getWidth() - this.f970c.getIntrinsicWidth(), 0, getWidth(), getHeight());
             if (this.a == ScaleType.CENTER) {
-                this.d.inset(0, ((getHeight() - this.c.getIntrinsicHeight()) + 1) / 2);
+                this.f971d.inset(0, ((getHeight() - this.f970c.getIntrinsicHeight()) + 1) / 2);
             }
             canvas.save();
-            canvas.clipRect(this.d);
-            this.c.setBounds(this.d);
-            this.c.draw(canvas);
+            canvas.clipRect(this.f971d);
+            this.f970c.setBounds(this.f971d);
+            this.f970c.draw(canvas);
             canvas.restore();
         }
     }
@@ -90,10 +94,10 @@ public class ar extends d {
     }
 
     private int getLeftDrawableWidth() {
-        return this.b != null ? this.b.getIntrinsicWidth() : 0;
+        return this.f969b != null ? this.f969b.getIntrinsicWidth() : 0;
     }
 
     private int getRightDrawableWidth() {
-        return this.c != null ? this.c.getIntrinsicWidth() : 0;
+        return this.f970c != null ? this.f970c.getIntrinsicWidth() : 0;
     }
 }

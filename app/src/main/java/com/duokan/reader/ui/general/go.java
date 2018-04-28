@@ -1,18 +1,11 @@
 package com.duokan.reader.ui.general;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.graphics.Bitmap;
 
-class go implements OnClickListener {
-    final /* synthetic */ bx a;
-    final /* synthetic */ gn b;
+public interface go {
+    /* renamed from: a */
+    void mo1789a(Bitmap bitmap);
 
-    go(gn gnVar, bx bxVar) {
-        this.b = gnVar;
-        this.a = bxVar;
-    }
-
-    public void onClick(View view) {
-        this.a.cancel();
-    }
+    /* renamed from: b */
+    void mo1790b(gl glVar);
 }

@@ -1,30 +1,28 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.account.ab;
+class av implements cx {
+    /* renamed from: a */
+    final /* synthetic */ int f2786a;
+    /* renamed from: b */
+    final /* synthetic */ ar f2787b;
 
-import java.util.List;
-
-class av extends bp {
-    final /* synthetic */ au a;
-
-    av(au auVar, ab abVar, List list, boolean z, iq iqVar) {
-        this.a = auVar;
-        super(auVar.f, abVar, list, z, iqVar);
+    av(ar arVar, int i) {
+        this.f2787b = arVar;
+        this.f2786a = i;
     }
 
-    protected void onSessionSucceeded() {
-        super.onSessionSucceeded();
-        if (!this.a.a.isCancelled()) {
-            this.a.f.a(this.a.e);
-            this.a.f.p();
+    /* renamed from: a */
+    public void mo976a() {
+    }
+
+    /* renamed from: b */
+    public void mo978b() {
+        if (this.f2786a < 2) {
+            this.f2787b.m3960a(false, false, this.f2786a + 1);
         }
     }
 
-    protected void onSessionFailed() {
-        super.onSessionFailed();
-        this.a.f.x();
-        if (!this.a.a.isCancelled()) {
-            this.a.f.i("");
-        }
+    /* renamed from: a */
+    public void mo977a(String str) {
     }
 }

@@ -1,48 +1,21 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
-import android.view.ViewGroup;
+import java.util.Comparator;
 
-import com.duokan.reader.ui.bookshelf.hn;
+class et implements Comparator<CustomCloudItem> {
+    /* renamed from: a */
+    final /* synthetic */ ek f8522a;
 
-import java.util.LinkedList;
-import java.util.List;
-
-class et implements hn {
-    final /* synthetic */ eq a;
-
-    et(eq eqVar) {
-        this.a = eqVar;
+    et(ek ekVar) {
+        this.f8522a = ekVar;
     }
 
-    public int a() {
-        return 0;
+    public /* synthetic */ int compare(Object obj, Object obj2) {
+        return m11772a((CustomCloudItem) obj, (CustomCloudItem) obj2);
     }
 
-    public void a(String str) {
-        if (str == null || str.length() == 0) {
-            this.a.f();
-            return;
-        }
-        List<CustomCloudItem> cloudItem = this.a.getCloudItem();
-        List linkedList = new LinkedList();
-        for (CustomCloudItem customCloudItem : cloudItem) {
-            if (customCloudItem.g().toLowerCase().contains(str.toLowerCase())) {
-                linkedList.add(customCloudItem);
-            }
-        }
-        this.a.k.a(linkedList, str);
-        this.a.e();
-    }
-
-    public View a(int i, View view, ViewGroup viewGroup) {
-        return null;
-    }
-
-    public void a(int i, View view) {
-    }
-
-    public boolean b(int i, View view) {
-        return false;
+    /* renamed from: a */
+    public int m11772a(CustomCloudItem customCloudItem, CustomCloudItem customCloudItem2) {
+        return customCloudItem.m11336a(customCloudItem2);
     }
 }

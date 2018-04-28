@@ -1,18 +1,10 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.app.FeatureListening;
+import com.duokan.reader.domain.cloud.DkCloudRedeemFund;
+import java.util.List;
 
-class gy implements OnClickListener {
-    final /* synthetic */ gx a;
-
-    gy(gx gxVar) {
-        this.a = gxVar;
-    }
-
-    public void onClick(View view) {
-        if (this.a.g) {
-            this.a.requestBack();
-        }
-    }
+public interface gy extends FeatureListening {
+    /* renamed from: a */
+    void mo1929a(int i, int i2, List<DkCloudRedeemFund> list);
 }

@@ -2,7 +2,14 @@ package com.duokan.reader.domain.account.oauth.evernote;
 
 import com.evernote.thrift.transport.TTransport;
 import com.evernote.thrift.transport.TTransportException;
-
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.concurrent.TimeUnit;
 import org.apache.http.ConnectionReuseStrategy;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
@@ -29,18 +36,9 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.protocol.HttpContext;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.concurrent.TimeUnit;
-
 public class TEvernoteHttpClient extends TTransport {
     private static final int MEMORY_BUFFER_SIZE = 524288;
-    private Map customHeaders_ = null;
+    private Map<String, String> customHeaders_ = null;
     private HttpParams httpParameters = new BasicHttpParams();
     private InputStream inputStream_ = null;
     private ClientConnectionManager mConnectionManager;
@@ -49,6 +47,26 @@ public class TEvernoteHttpClient extends TTransport {
     private final DiskBackedByteStore requestBuffer_;
     private URL url_ = null;
     private String userAgent = null;
+
+    /* renamed from: com.duokan.reader.domain.account.oauth.evernote.TEvernoteHttpClient$1 */
+    class C07321 implements ConnectionKeepAliveStrategy {
+        C07321() {
+        }
+
+        public long getKeepAliveDuration(HttpResponse httpResponse, HttpContext httpContext) {
+            return 120000;
+        }
+    }
+
+    /* renamed from: com.duokan.reader.domain.account.oauth.evernote.TEvernoteHttpClient$2 */
+    class C07332 implements ConnectionReuseStrategy {
+        C07332() {
+        }
+
+        public boolean keepAlive(HttpResponse httpResponse, HttpContext httpContext) {
+            return true;
+        }
+    }
 
     public TEvernoteHttpClient(String str, String str2, File file) {
         getHTTPClient();
@@ -69,7 +87,7 @@ public class TEvernoteHttpClient extends TTransport {
         HttpConnectionParams.setSoTimeout(this.httpParameters, i);
     }
 
-    public void setCustomHeaders(Map map) {
+    public void setCustomHeaders(Map<String, String> map) {
         this.customHeaders_ = map;
     }
 
@@ -133,16 +151,8 @@ public class TEvernoteHttpClient extends TTransport {
                 schemeRegistry.register(new Scheme("https", SSLSocketFactory.getSocketFactory(), 443));
                 this.mConnectionManager = new ThreadSafeClientConnManager(basicHttpParams, schemeRegistry);
                 DefaultHttpClient defaultHttpClient = new DefaultHttpClient(this.mConnectionManager, basicHttpParams);
-                defaultHttpClient.setKeepAliveStrategy(new ConnectionKeepAliveStrategy() {
-                    public long getKeepAliveDuration(HttpResponse httpResponse, HttpContext httpContext) {
-                        return 120000;
-                    }
-                });
-                defaultHttpClient.setReuseStrategy(new ConnectionReuseStrategy() {
-                    public boolean keepAlive(HttpResponse httpResponse, HttpContext httpContext) {
-                        return true;
-                    }
-                });
+                defaultHttpClient.setKeepAliveStrategy(new C07321());
+                defaultHttpClient.setReuseStrategy(new C07332());
                 this.mHttpClient = defaultHttpClient;
             }
             return this.mHttpClient;
@@ -160,7 +170,7 @@ public class TEvernoteHttpClient extends TTransport {
         try {
             HttpUriRequest httpPost = new HttpPost(this.url_.toExternalForm());
             this.request = httpPost;
-            httpPost.addHeader("Content-Type", "application/MyContextWrapper-thrift");
+            httpPost.addHeader("Content-Type", "application/x-thrift");
             httpPost.addHeader("Cache-Control", "no-transform");
             if (this.customHeaders_ != null) {
                 for (Entry entry : this.customHeaders_.entrySet()) {
@@ -168,7 +178,7 @@ public class TEvernoteHttpClient extends TTransport {
                 }
             }
             httpPost.setEntity(new InputStreamEntity(this.requestBuffer_.getInputStream(), (long) this.requestBuffer_.getSize()));
-            httpPost.addHeader("Accept", "application/MyContextWrapper-thrift");
+            httpPost.addHeader("Accept", "application/x-thrift");
             httpPost.addHeader(HTTP.USER_AGENT, this.userAgent == null ? "Java/THttpClient" : this.userAgent);
             httpPost.getParams().setBooleanParameter(CoreProtocolPNames.USE_EXPECT_CONTINUE, false);
             HttpResponse execute = getHTTPClient().execute(httpPost);

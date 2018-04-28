@@ -1,33 +1,19 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.domain.document.au;
+class kp implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ kn f10523a;
 
-public class kp extends fy {
-    private final sh b = ((sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class));
-    private final au c;
-    private final kq d;
-
-    public kp(Context context, au auVar) {
-        super(context);
-        this.c = auVar;
-        this.d = new kq(this, context);
-        a(this.d, null);
+    kp(kn knVar) {
+        this.f10523a = knVar;
     }
 
-    public float i() {
-        return this.d.a();
-    }
-
-    public void e() {
-        super.e();
-        this.d.a(true);
-    }
-
-    public void f() {
-        super.f();
-        this.d.a(false);
+    public void onClick(View view) {
+        if (this.f10523a.f10519g != null) {
+            this.f10523a.m14563a(this.f10523a.f10519g.f10538f.toString());
+        }
     }
 }

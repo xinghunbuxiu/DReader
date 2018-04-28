@@ -1,16 +1,26 @@
 package com.duokan.reader.ui.general;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.text.TextUtils;
 
-class ff implements OnClickListener {
-    final /* synthetic */ fc a;
+class ff implements C1329do {
+    /* renamed from: a */
+    final /* synthetic */ fa f7212a;
 
-    ff(fc fcVar) {
-        this.a = fcVar;
+    ff(fa faVar) {
+        this.f7212a = faVar;
     }
 
-    public void onClick(View view) {
-        this.a.c();
+    /* renamed from: a */
+    public void mo1780a() {
+        this.f7212a.m10625g();
+        this.f7212a.f7202b.mo1777f();
+    }
+
+    /* renamed from: a */
+    public void mo1781a(String str) {
+        this.f7212a.m10625g();
+        if (!TextUtils.isEmpty(str)) {
+            be.m10287a(this.f7212a.f7201a, (CharSequence) str, 1).show();
+        }
     }
 }

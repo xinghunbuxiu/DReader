@@ -2,18 +2,18 @@ package com.duokan.reader.ui.reading;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-
 import com.duokan.reader.UmengManager;
 
 class qa implements OnClickListener {
-    final /* synthetic */ pw a;
+    /* renamed from: a */
+    final /* synthetic */ py f10844a;
 
-    qa(pw pwVar) {
-        this.a = pwVar;
+    qa(py pyVar) {
+        this.f10844a = pyVar;
     }
 
     public void onClick(View view) {
-        UmengManager.get().onEvent("V2_READING_TOP_TOOLBUTTON", "Bookmark");
-        this.a.a(new qb(this));
+        this.f10844a.mo2248a(new vd(this.f10844a.getContext()));
+        UmengManager.get().onEvent("V2_READING_MENU", "Option");
     }
 }

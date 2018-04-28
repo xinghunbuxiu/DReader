@@ -1,22 +1,21 @@
 package com.duokan.reader.ui.personal;
 
 import android.view.View;
-import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.reader.common.webservices.duokan.p;
-import com.duokan.reader.ui.general.web.StorePageController;
+class ft implements OnLongClickListener {
+    /* renamed from: a */
+    final /* synthetic */ int f8563a;
+    /* renamed from: b */
+    final /* synthetic */ fr f8564b;
 
-class ft implements OnClickListener {
-    final /* synthetic */ fl a;
-
-    ft(fl flVar) {
-        this.a = flVar;
+    ft(fr frVar, int i) {
+        this.f8564b = frVar;
+        this.f8563a = i;
     }
 
-    public void onClick(View view) {
-        ActivatedController storePageController = new StorePageController(this.a.getContext());
-        storePageController.loadUrl(p.i().D());
-        this.a.a.showPopup(storePageController);
+    public boolean onLongClick(View view) {
+        this.f8564b.e.mo1878a(this.f8564b.m11825c(), this.f8563a);
+        return true;
     }
 }

@@ -1,30 +1,28 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.app.ManagedApp;
-import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.reader.common.classc;
+import com.duokan.reader.domain.account.al;
+import java.util.List;
 
-class bh implements Runnable {
-    final /* synthetic */ classc.ConnectivityReceiver a;
-    final /* synthetic */ aq b;
+class bh extends ir {
+    /* renamed from: a */
+    final /* synthetic */ bg f2824a;
 
-    bh(aq aqVar, classc.ConnectivityReceiver connectivity) {
-        this.b = aqVar;
-        this.a = connectivity;
+    bh(bg bgVar, al alVar, List list, ik ikVar) {
+        this.f2824a = bgVar;
+        super(bgVar.f2816b, alVar, list, ikVar);
     }
 
-    public void run() {
-        for (BaseConnect onConnectivityChanged : this.b.h.values()) {
-            onConnectivityChanged.onConnectivityChanged(this.a);
+    protected void onSessionSucceeded() {
+        super.onSessionSucceeded();
+        if (this.f2824a.f2815a.m3365a(this.f2824a.f2816b.j)) {
+            this.f2824a.f2816b.m3966c(this.f2824a.f2815a);
+        } else {
+            this.f2824a.f2816b.m3949x();
         }
-        if ((this.a.e() && ManagedApp.get().getOldRunningState() == RunningState.FOREGROUND) || this.a.d()) {
-            try {
-                this.b.k.a();
-                this.b.a(false, false);
-                this.b.a();
-            } finally {
-                this.b.k.b();
-            }
-        }
+    }
+
+    protected void onSessionFailed() {
+        super.onSessionFailed();
+        this.f2824a.f2816b.m3949x();
     }
 }

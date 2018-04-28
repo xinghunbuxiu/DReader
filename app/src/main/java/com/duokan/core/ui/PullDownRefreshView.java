@@ -5,23 +5,31 @@ import android.graphics.drawable.Animatable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-
-import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.sys.UThread;
+import com.duokan.p023b.C0243e;
+import com.duokan.p023b.C0244f;
+import com.duokan.p023b.C0245g;
 import com.duokan.reader.ui.general.DkLabelView;
-
 import org.apache.http.HttpStatus;
 
 public class PullDownRefreshView extends PullDownRefreshBaseView {
-    private View a;
-    private ImageView b;
-    private DkLabelView c;
-    private DkLabelView d;
-    private DkLabelView e;
-    private DkLabelView f;
-    private RefreshStyle g;
-    private final ImageView h;
+    /* renamed from: a */
+    private View f848a;
+    /* renamed from: b */
+    private ImageView f849b;
+    /* renamed from: c */
+    private DkLabelView f850c;
+    /* renamed from: d */
+    private DkLabelView f851d;
+    /* renamed from: e */
+    private DkLabelView f852e;
+    /* renamed from: f */
+    private DkLabelView f853f;
+    /* renamed from: g */
+    private RefreshStyle f854g;
+    /* renamed from: h */
+    private final ImageView f855h;
 
     public enum RefreshStyle {
         NORMAL,
@@ -35,115 +43,124 @@ public class PullDownRefreshView extends PullDownRefreshBaseView {
 
     public PullDownRefreshView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.g = RefreshStyle.NORMAL;
-        g();
-        this.h = new ImageView(getContext());
-        LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -2);
-        layoutParams.setMargins(0, UTools.getMinimumHeight(getContext(), 10.0f), 0, 0);
-        addView(this.h, layoutParams);
+        this.f854g = RefreshStyle.NORMAL;
+        m1293g();
+        this.f855h = new ImageView(getContext());
+        addView(this.f855h, new LayoutParams(-1, -2));
     }
 
     public void setRate(float f) {
     }
 
-    protected void b() {
-        k();
-        this.c.setVisibility(4);
-        this.d.setVisibility(4);
-        this.e.setVisibility(4);
-        this.f.setVisibility(4);
+    /* renamed from: b */
+    protected void mo470b() {
+        m1297k();
+        this.f850c.setVisibility(4);
+        this.f851d.setVisibility(4);
+        this.f852e.setVisibility(4);
+        this.f853f.setVisibility(4);
     }
 
-    protected void a(RefreshState refreshState) {
-        this.c.setVisibility(0);
+    /* renamed from: a */
+    protected void mo469a(RefreshState refreshState) {
+        this.f850c.setVisibility(0);
         if (refreshState == RefreshState.RELEASE_TO_REFRESH) {
-            if (this.g != RefreshStyle.COMIC) {
-                i();
+            if (this.f854g != RefreshStyle.COMIC) {
+                m1295i();
             }
-            this.d.setVisibility(4);
+            this.f851d.setVisibility(4);
         } else if (refreshState == RefreshState.REFRESH_DONE) {
-            k();
-            this.f.setVisibility(4);
+            m1297k();
+            this.f853f.setVisibility(4);
         }
     }
 
-    protected void c() {
-        this.d.setVisibility(0);
-        this.c.setVisibility(4);
-        if (this.g != RefreshStyle.COMIC) {
-            h();
+    /* renamed from: c */
+    protected void mo471c() {
+        this.f851d.setVisibility(0);
+        this.f850c.setVisibility(4);
+        if (this.f854g != RefreshStyle.COMIC) {
+            m1294h();
         }
     }
 
-    protected void d() {
-        this.e.setVisibility(0);
-        this.d.setVisibility(4);
-        j();
+    /* renamed from: d */
+    protected void mo472d() {
+        this.f852e.setVisibility(0);
+        this.f851d.setVisibility(4);
+        m1296j();
     }
 
-    protected void e() {
-        k();
-        this.f.setVisibility(0);
-        this.e.setVisibility(4);
-        TaskHandler.postDelayed(new ca(this), 300);
+    /* renamed from: e */
+    protected void mo473e() {
+        m1297k();
+        this.f853f.setVisibility(0);
+        this.f852e.setVisibility(4);
+        UThread.postDelayed(new ca(this), 300);
     }
 
     public void setRefreshStyle(RefreshStyle refreshStyle) {
-        if (this.g != refreshStyle) {
+        if (this.f854g != refreshStyle) {
             if (refreshStyle == RefreshStyle.COMIC) {
                 removeAllViews();
-                f();
-            } else if (this.g == RefreshStyle.COMIC) {
+                m1292f();
+            } else if (this.f854g == RefreshStyle.COMIC) {
                 removeAllViews();
-                g();
+                m1293g();
             }
-            this.g = refreshStyle;
-            if (this.g == RefreshStyle.STORE) {
-                this.h.setImageResource(e.general__shared__refresh_background);
-                this.a.setPadding(0, UTools.getMinimumHeight(getContext(), 10.0f), 0, UTools.getMinimumHeight(getContext(), 5.0f));
-            } else if (this.g == RefreshStyle.COMIC) {
-                this.a.setPadding(0, 0, 0, 0);
+            this.f854g = refreshStyle;
+            if (this.f854g == RefreshStyle.STORE) {
+                this.f855h.setImageResource(C0243e.general__shared__refresh_background);
+                this.f848a.setPadding(0, dv.m1932b(getContext(), 10.0f), 0, dv.m1932b(getContext(), 5.0f));
+            } else if (this.f854g == RefreshStyle.COMIC) {
+                this.f848a.setPadding(0, 0, 0, 0);
             } else {
-                this.a.setPadding(0, 0, 0, UTools.getMinimumHeight(getContext(), 10.0f));
+                this.f848a.setPadding(0, 0, 0, dv.m1932b(getContext(), 10.0f));
             }
         }
     }
 
-    private void f() {
-        this.a = LayoutInflater.from(getContext()).inflate(g.general__web_pull_refresh_comic_view, this, false);
-        addView(this.a);
-        this.b = (ImageView) findViewById(f.general__web_pull_refresh_view__icon);
-        this.c = (DkLabelView) findViewById(f.general__web_pull_refresh_view__pull_down_tip);
-        this.d = (DkLabelView) findViewById(f.general__web_pull_refresh_view__release_tip);
-        this.e = (DkLabelView) findViewById(f.general__web_pull_refresh_view__refreshing_tip);
-        this.f = (DkLabelView) findViewById(f.general__web_pull_refresh_view__refreshed_tip);
+    /* renamed from: f */
+    private void m1292f() {
+        this.f848a = LayoutInflater.from(getContext()).inflate(C0245g.general__web_pull_refresh_comic_view, this, false);
+        addView(this.f848a);
+        this.f849b = (ImageView) findViewById(C0244f.general__web_pull_refresh_view__icon);
+        this.f850c = (DkLabelView) findViewById(C0244f.general__web_pull_refresh_view__pull_down_tip);
+        this.f851d = (DkLabelView) findViewById(C0244f.general__web_pull_refresh_view__release_tip);
+        this.f852e = (DkLabelView) findViewById(C0244f.general__web_pull_refresh_view__refreshing_tip);
+        this.f853f = (DkLabelView) findViewById(C0244f.general__web_pull_refresh_view__refreshed_tip);
     }
 
-    private void g() {
-        this.a = LayoutInflater.from(getContext()).inflate(g.general__web_pull_refresh_view, this, false);
-        addView(this.a);
-        this.b = (ImageView) findViewById(f.general__web_pull_refresh_view__icon);
-        this.c = (DkLabelView) findViewById(f.general__web_pull_refresh_view__pull_down_tip);
-        this.d = (DkLabelView) findViewById(f.general__web_pull_refresh_view__release_tip);
-        this.e = (DkLabelView) findViewById(f.general__web_pull_refresh_view__refreshing_tip);
-        this.f = (DkLabelView) findViewById(f.general__web_pull_refresh_view__refreshed_tip);
+    /* renamed from: g */
+    private void m1293g() {
+        this.f848a = LayoutInflater.from(getContext()).inflate(C0245g.general__web_pull_refresh_view, this, false);
+        addView(this.f848a);
+        this.f849b = (ImageView) findViewById(C0244f.general__web_pull_refresh_view__icon);
+        this.f850c = (DkLabelView) findViewById(C0244f.general__web_pull_refresh_view__pull_down_tip);
+        this.f851d = (DkLabelView) findViewById(C0244f.general__web_pull_refresh_view__release_tip);
+        this.f852e = (DkLabelView) findViewById(C0244f.general__web_pull_refresh_view__refreshing_tip);
+        this.f853f = (DkLabelView) findViewById(C0244f.general__web_pull_refresh_view__refreshed_tip);
     }
 
-    private final void h() {
-        UTools.addAnimation(this.b, 0.0f, 0.0f, -1.0f, 0.0f, HttpStatus.SC_OK, true, null);
+    /* renamed from: h */
+    private final void m1294h() {
+        dv.startTranslateAnimation(this.f849b, 0.0f, 0.0f, -1.0f, 0.0f, HttpStatus.SC_OK, true, null);
     }
 
-    private final void i() {
-        UTools.f(this.b, null);
+    /* renamed from: i */
+    private final void m1295i() {
+        dv.m1961f(this.f849b, null);
     }
 
-    private final void j() {
-        ((Animatable) this.b.getDrawable()).start();
+    /* renamed from: j */
+    private final void m1296j() {
+        ((Animatable) this.f849b.getDrawable()).start();
     }
 
-    private final void k() {
-        this.b.getDrawable().setVisible(true, true);
-        ((Animatable) this.b.getDrawable()).stop();
-        this.b.clearAnimation();
+    /* renamed from: k */
+    private final void m1297k() {
+        this.f849b.getDrawable().setVisible(true, true);
+        ((Animatable) this.f849b.getDrawable()).stop();
+        this.f849b.clearAnimation();
     }
 }

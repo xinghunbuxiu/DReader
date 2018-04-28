@@ -1,18 +1,14 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.TaskHandler;
-
 class rb implements Runnable {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ qh b;
+    /* renamed from: a */
+    final /* synthetic */ qr f10884a;
 
-    rb(qh qhVar, Runnable runnable) {
-        this.b = qhVar;
-        this.a = runnable;
+    rb(qr qrVar) {
+        this.f10884a = qrVar;
     }
 
     public void run() {
-        this.b.a(null);
-        TaskHandler.PostTask(this.a);
+        this.f10884a.m12770C();
     }
 }

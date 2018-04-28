@@ -1,30 +1,19 @@
 package com.duokan.reader.domain.account;
 
-import com.duokan.reader.ui.general.jq;
+class ca implements C0699c {
+    /* renamed from: a */
+    final /* synthetic */ C0699c f2456a;
+    /* renamed from: b */
+    final /* synthetic */ PersonalAccount f2457b;
 
-class ca implements b {
-    final /* synthetic */ jq a;
-    final /* synthetic */ b b;
-    final /* synthetic */ PersonalAccount c;
-
-    ca(PersonalAccount personalAccount, jq jqVar, b bVar) {
-        this.c = personalAccount;
-        this.a = jqVar;
-        this.b = bVar;
+    ca(PersonalAccount personalAccount, C0699c c0699c) {
+        this.f2457b = personalAccount;
+        this.f2456a = c0699c;
     }
 
-    public void a(a aVar) {
-        this.a.dismiss();
-        if (this.b != null) {
-            this.b.a(aVar);
-        }
-    }
-
-    public void a(a aVar, String str) {
-        this.a.dismiss();
-        this.c.h.u();
-        if (this.b != null) {
-            this.b.a(aVar, str);
-        }
+    /* renamed from: a */
+    public void mo867a(C0672a c0672a) {
+        this.f2457b.f2266f = this.f2457b.f2269i;
+        this.f2456a.mo867a(this.f2457b);
     }
 }

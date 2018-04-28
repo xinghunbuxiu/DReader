@@ -1,20 +1,22 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.content.Context;
+import com.duokan.core.ui.C0394t;
 
-import com.duokan.reader.domain.bookshelf.c;
+class px extends C0394t {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f10840a;
+    /* renamed from: b */
+    final /* synthetic */ pm f10841b;
 
-class px implements OnClickListener {
-    final /* synthetic */ c a;
-    final /* synthetic */ pw b;
-
-    px(pw pwVar, c cVar) {
-        this.b = pwVar;
-        this.a = cVar;
+    px(pm pmVar, Context context, Runnable runnable) {
+        this.f10841b = pmVar;
+        this.f10840a = runnable;
+        super(context);
     }
 
-    public void onClick(View view) {
-        this.b.a(new py(this));
+    public boolean onBack() {
+        this.f10840a.run();
+        return true;
     }
 }

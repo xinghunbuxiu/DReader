@@ -1,45 +1,26 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.view.View;
-import android.widget.CheckBox;
-import android.widget.ImageView;
-import android.widget.TextView;
+import java.io.File;
+import java.text.Collator;
+import java.util.Comparator;
+import java.util.Locale;
 
-import com.duokan.c.g;
+final class ez implements Comparator<File> {
+    /* renamed from: a */
+    private Collator f6428a = Collator.getInstance(Locale.CHINESE);
 
-class ez {
-    ImageView a;
-    TextView b;
-    CheckBox c;
-    View d;
-    final /* synthetic */ ex e;
-
-    ez(ex exVar, View view) {
-        this.e = exVar;
-        this.d = view;
-        this.a = (ImageView) view.findViewById(g.bookshelf__file_browser_item_view__more);
-        this.b = (TextView) view.findViewById(g.bookshelf__file_browser_item_view__msg);
-        this.c = (CheckBox) view.findViewById(g.bookshelf__file_browser_item_view__check);
-        this.c.setEnabled(false);
-        this.c.setClickable(false);
+    ez() {
     }
 
-    void a() {
-        this.a.setVisibility(0);
-        this.b.setVisibility(4);
-        this.c.setVisibility(4);
+    public /* synthetic */ int compare(Object obj, Object obj2) {
+        return m9592a((File) obj, (File) obj2);
     }
 
-    void b() {
-        this.b.setVisibility(0);
-        this.a.setVisibility(4);
-        this.c.setVisibility(4);
-    }
-
-    void a(boolean z) {
-        this.c.setChecked(z);
-        this.c.setVisibility(0);
-        this.b.setVisibility(4);
-        this.a.setVisibility(4);
+    /* renamed from: a */
+    public int m9592a(File file, File file2) {
+        if (file.isDirectory() == file2.isDirectory()) {
+            return this.f6428a.compare(file.getName(), file2.getName());
+        }
+        return file.isDirectory() ? 1 : -1;
     }
 }

@@ -2,17 +2,18 @@ package com.duokan.reader.ui.bookshelf;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-
-import com.duokan.reader.domain.bookshelf.kp;
+import com.duokan.reader.domain.bookshelf.lb;
 
 class ib implements OnClickListener {
-    final /* synthetic */ hp a;
+    /* renamed from: a */
+    final /* synthetic */ SignInBookshelfView f6586a;
 
-    ib(hp hpVar) {
-        this.a = hpVar;
+    ib(SignInBookshelfView signInBookshelfView) {
+        this.f6586a = signInBookshelfView;
     }
 
     public void onClick(View view) {
-        kp.a().i();
+        lb.m4896a().m4927g();
+        this.f6586a.m9093c();
     }
 }

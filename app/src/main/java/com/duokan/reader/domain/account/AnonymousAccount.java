@@ -2,36 +2,37 @@ package com.duokan.reader.domain.account;
 
 import android.app.Activity;
 import android.content.ContentValues;
-import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-
-import com.duokan.core.a.n;
-import com.duokan.core.sys.o;
-import com.duokan.reader.DkApp;
+import com.duokan.core.sys.C0366o;
+import com.duokan.core.sys.p025a.C0345c;
 import com.duokan.reader.ReaderEnv;
 import com.xiaomi.micloudsdk.request.Request.RequestEnv;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class AnonymousAccount extends a {
-    private String e = null;
-    private final Set f = new HashSet();
+public class AnonymousAccount extends C0672a {
+    /* renamed from: e */
+    private String f2246e;
+    /* renamed from: f */
+    private final Set<String> f2247f;
 
-    public AnonymousAccount(e eVar) {
-        super(eVar);
+    private AnonymousAccount(C0706e c0706e) {
+        super(c0706e);
+        this.f2246e = null;
+        this.f2247f = new HashSet();
     }
 
     /* JADX WARNING: inconsistent code. */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    protected void k() {
+    /* renamed from: k */
+    protected void mo841k() {
         /*
         r7 = this;
         r0 = 0;
-        r1 = r7.getScaledMaximumFlingVelocity;	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }
+        r1 = r7.c;	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }
         r2 = "SELECT * FROM %1$s WHERE %2$s IS '%3$s'";
         r3 = 3;
         r3 = new java.lang.Object[r3];	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }
@@ -46,15 +47,15 @@ public class AnonymousAccount extends a {
         r3[r4] = r5;	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }
         r2 = java.lang.String.format(r2, r3);	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }
         r3 = 0;
-        r0 = r1.setDrawable(r2, r3);	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }
+        r0 = r1.m670a(r2, r3);	 Catch:{ Throwable -> 0x003c, all -> 0x0043 }
         r1 = r0.moveToLast();	 Catch:{ Throwable -> 0x003c, all -> 0x004d }
         if (r1 == 0) goto L_0x0036;
     L_0x0026:
         r1 = "tokens";
         r1 = r0.getColumnIndex(r1);	 Catch:{ Throwable -> 0x003c, all -> 0x004d }
         r1 = r0.getString(r1);	 Catch:{ Throwable -> 0x003c, all -> 0x004d }
-        r1 = com.duokan.reader.domain.account.setDrawable.getVisible(r1);	 Catch:{ Throwable -> 0x003c, all -> 0x004d }
-        r7.getScaledPagingTouchSlop = r1;	 Catch:{ Throwable -> 0x003c, all -> 0x004d }
+        r1 = com.duokan.reader.domain.account.C0672a.m3136b(r1);	 Catch:{ Throwable -> 0x003c, all -> 0x004d }
+        r7.f2246e = r1;	 Catch:{ Throwable -> 0x003c, all -> 0x004d }
     L_0x0036:
         if (r0 == 0) goto L_0x003b;
     L_0x0038:
@@ -85,74 +86,60 @@ public class AnonymousAccount extends a {
         r0 = r6;
         goto L_0x0047;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.account.AnonymousAccount.getHeightPixels():void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.account.AnonymousAccount.k():void");
     }
 
-    public String b() {
-        n nVar = null;
-        if (TextUtils.isEmpty(this.e)) {
-            String str;
-            Object n = n();
-            if (TextUtils.isEmpty(n)) {
-                str = "";
-            } else {
-                str = o.b(n, "md5");
+    /* renamed from: b */
+    public String mo832b() {
+        String str = null;
+        if (TextUtils.isEmpty(this.f2246e)) {
+            Object a;
+            String str2;
+            try {
+                a = C0345c.m830a();
+            } catch (Throwable th) {
+                a = null;
             }
-            this.e = str;
-            if (!TextUtils.isEmpty(this.e)) {
-                this.c.b();
+            if (TextUtils.isEmpty(a)) {
+                str2 = "";
+            } else {
+                str2 = C0366o.m1034b(a, "md5");
+            }
+            this.f2246e = str2;
+            if (!TextUtils.isEmpty(this.f2246e)) {
+                this.c.m677b();
                 try {
                     ContentValues contentValues = new ContentValues();
                     contentValues.put("account_id", Long.valueOf(-2));
-                    contentValues.put("tokens", a.a(this.e));
-                    this.c.a("tokens", null, contentValues);
-                    this.c.f();
-                } catch (Throwable th) {
+                    contentValues.put("tokens", C0672a.m3132a(this.f2246e));
+                    this.c.m668a("tokens", null, contentValues);
+                    this.c.m681f();
+                } catch (Throwable th2) {
                 } finally {
-                    nVar = this.c;
-                    nVar.c();
+                    str = this.c;
+                    str.m678c();
                 }
             }
         }
-        if (TextUtils.isEmpty(this.e)) {
-            return nVar;
-        }
-        return this.e;
+        return TextUtils.isEmpty(this.f2246e) ? str : this.f2246e;
     }
 
-    public static String n() {
-        String str;
-        if (ReaderEnv.get().onMiui()) {
-            try {
-                Class cls = Class.forName("miui.sendSms.TelephonyManagerEx");
-                str = (String) cls.getDeclaredMethod("getMiuiDeviceId", new Class[0]).invoke(cls.getDeclaredMethod("getDefault", new Class[0]).invoke(cls, new Object[0]), new Object[0]);
-            } catch (Throwable th) {
-                str = null;
-            }
-        } else {
-            str = null;
-        }
-        if (TextUtils.isEmpty(str)) {
-            return ((TelephonyManager) DkApp.get().getSystemService("phone")).getDeviceId();
-        }
-        return str;
-    }
-
-    public synchronized Set o() {
-        Set set;
-        if (this.f.size() > 0) {
-            set = this.f;
+    /* renamed from: n */
+    public synchronized Set<String> mo843n() {
+        Set<String> set;
+        if (this.f2247f.size() > 0) {
+            set = this.f2247f;
         } else {
             try {
                 if (ReaderEnv.get().onMiui()) {
-                    Class cls = Class.forName("miui.sendSms.TelephonyManagerEx");
+                    Class cls = Class.forName("miui.telephony.TelephonyManagerEx");
                     for (String b : (List) cls.getDeclaredMethod("getDeviceIdList", new Class[0]).invoke(cls.getDeclaredMethod("getDefault", new Class[0]).invoke(cls, new Object[0]), new Object[0])) {
-                        this.f.add(o.b(b, "md5"));
+                        this.f2247f.add(C0366o.m1034b(b, "md5"));
                     }
-                    set = this.f;
+                    set = this.f2247f;
                 } else {
-                    this.f.add(o.b(((TelephonyManager) DkApp.get().getSystemService("phone")).getDeviceId(), "md5"));
-                    set = this.f;
+                    this.f2247f.add(C0366o.m1034b(C0345c.m830a(), "md5"));
+                    set = this.f2247f;
                 }
             } catch (Throwable th) {
             }
@@ -160,64 +147,79 @@ public class AnonymousAccount extends a {
         return set;
     }
 
-    public String c() {
-        return b();
+    /* renamed from: c */
+    public String mo833c() {
+        return mo832b();
     }
 
-    public String d() {
+    /* renamed from: d */
+    public String mo834d() {
         return null;
     }
 
-    public AccountType e() {
+    /* renamed from: e */
+    public AccountType mo835e() {
         return AccountType.ANONYMOUS;
     }
 
-    public g f() {
-        return new v(this);
+    /* renamed from: f */
+    public C0705g mo836f() {
+        return new C0742y(this);
     }
 
-    public Map g() {
-        Map hashMap = new HashMap();
+    /* renamed from: g */
+    public Map<String, String> mo837g() {
+        Map<String, String> hashMap = new HashMap();
         long currentTimeMillis = System.currentTimeMillis() / 1000;
-        hashMap.put("en_device_hash", i.f().a(currentTimeMillis));
+        hashMap.put("en_device_hash", C0709k.m3476a().m3491a(currentTimeMillis));
         hashMap.put("en_ts", currentTimeMillis + "");
         return hashMap;
     }
 
-    public Map h() {
-        return g();
+    /* renamed from: h */
+    public Map<String, String> mo838h() {
+        return mo837g();
     }
 
-    public void a(Activity activity, d dVar) {
+    /* renamed from: a */
+    public void mo829a(Activity activity, C0700d c0700d) {
     }
 
-    public void a(c cVar) {
+    /* renamed from: a */
+    public void mo830a(C0699c c0699c) {
     }
 
-    public RequestEnv j() {
+    /* renamed from: j */
+    public RequestEnv mo840j() {
         return null;
     }
 
-    protected void a(String str, String str2, String str3) {
+    /* renamed from: a */
+    protected void mo831a(String str, String str2, String str3) {
     }
 
-    protected String m() {
+    /* renamed from: m */
+    protected String mo842m() {
         return null;
     }
 
-    public boolean i() {
-        return TextUtils.isEmpty(c());
+    /* renamed from: i */
+    public boolean mo839i() {
+        return TextUtils.isEmpty(mo833c());
     }
 
-    public boolean p() {
+    /* renamed from: o */
+    public boolean mo844o() {
         return false;
     }
 
-    public boolean q() {
+    /* renamed from: p */
+    public boolean mo845p() {
         return false;
     }
 
-    public boolean r() {
+    /* renamed from: q */
+    public boolean mo846q() {
         return false;
     }
 }

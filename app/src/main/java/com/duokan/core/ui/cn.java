@@ -1,17 +1,19 @@
 package com.duokan.core.ui;
 
 class cn implements Runnable {
-    final /* synthetic */ boolean a;
-    final /* synthetic */ TabBarView b;
+    /* renamed from: a */
+    final /* synthetic */ boolean f1084a;
+    /* renamed from: b */
+    final /* synthetic */ TabBarView f1085b;
 
     cn(TabBarView tabBarView, boolean z) {
-        this.b = tabBarView;
-        this.a = z;
+        this.f1085b = tabBarView;
+        this.f1084a = z;
     }
 
     public void run() {
-        if (this.b.j != null) {
-            this.b.j.b(this.b.c, this.b.b, this.a);
+        if (this.f1085b.f865j != null) {
+            this.f1085b.f865j.mo1698b(this.f1085b.f858c, this.f1085b.f857b, this.f1084a);
         }
     }
 }

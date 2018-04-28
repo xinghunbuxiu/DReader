@@ -1,42 +1,28 @@
 package com.duokan.reader.ui.reading;
 
-import android.os.Build.VERSION;
+import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.sys.UIdleHandler;
 
-import com.duokan.c.e;
-import com.duokan.core.ui.UTools;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.ui.IWindowRecord;
+class ry implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ qr f10922a;
 
-class ry implements IWindowRecord {
-    final /* synthetic */ rx a;
-
-    ry(rx rxVar) {
-        this.a = rxVar;
+    ry(qr qrVar) {
+        this.f10922a = qrVar;
     }
 
-    public int getPageHeaderHeight() {
-        if (getPageHeaderPaddingTop() == 0) {
-            return this.a.c.getResources().getDimensionPixelSize(e.general__shared__page_header_height) - UTools.getMinimumHeight(this.a.c.getContext(), 15.0f);
+    public void run() {
+        if (!this.f10922a.f9293q && !this.f10922a.f9284h.mo1448b()) {
+            try {
+                this.f10922a.f9291o = true;
+                this.f10922a.mo1979a();
+                this.f10922a.f9292p = true;
+                UIdleHandler.addIdleHandler(new rz(this));
+            } catch (Throwable e) {
+                C0328a.m757c().m748a(LogLevel.ERROR, "reading", "an exception occurs during init", e);
+                throw e;
+            }
         }
-        return this.a.c.getResources().getDimensionPixelSize(e.general__shared__page_header_height);
-    }
-
-    public int getPageHeaderPaddingTop() {
-        if (!this.a.an() || VERSION.SDK_INT < 19) {
-            return 0;
-        }
-        int identifier = this.a.c.getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (identifier > 0) {
-            return this.a.c.getResources().getDimensionPixelSize(identifier);
-        }
-        return UTools.getMinimumHeight(this.a.c.getContext(), 20.0f);
-    }
-
-    public int getHeaderPaddingTop() {
-        return this.a.an() ? ((ReaderFeature) this.a.c.getContext().queryFeature(ReaderFeature.class)).getTheme().getHeaderPaddingTop() : 0;
-    }
-
-    public int getPagePaddingBottom() {
-        return 0;
     }
 }

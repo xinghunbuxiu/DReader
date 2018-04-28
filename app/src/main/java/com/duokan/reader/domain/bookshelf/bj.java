@@ -1,35 +1,32 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.common.async.a.a;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.cloud.DkUserPurchasedBooksManager;
+import com.duokan.reader.domain.account.al;
+import java.util.List;
 
-class bj implements a {
-    final /* synthetic */ iq a;
-    final /* synthetic */ boolean b;
-    final /* synthetic */ boolean c;
-    final /* synthetic */ int d;
-    final /* synthetic */ ab e;
-    final /* synthetic */ aq f;
+class bj extends ir {
+    /* renamed from: a */
+    final /* synthetic */ bi f2831a;
 
-    bj(aq aqVar, iq iqVar, boolean z, boolean z2, int i, ab abVar) {
-        this.f = aqVar;
-        this.a = iqVar;
-        this.b = z;
-        this.c = z2;
-        this.d = i;
-        this.e = abVar;
+    bj(bi biVar, al alVar, List list, ik ikVar) {
+        this.f2831a = biVar;
+        super(biVar.f2830f, alVar, list, ikVar);
     }
 
-    public void a(Void voidR) {
-        if (!this.a.isCancelled()) {
-            DkUserPurchasedBooksManager.a().b(false, true, new bk(this));
+    protected void onSessionSucceeded() {
+        super.onSessionSucceeded();
+        if (this.f2831a.f2825a.isCancelled()) {
+            this.f2831a.f2830f.m3949x();
+            return;
         }
+        this.f2831a.f2830f.m3945t();
+        this.f2831a.f2830f.m3968c(this.f2831a.f2827c, this.f2831a.f2828d, this.f2831a.f2829e, this.f2831a.f2826b, this.f2831a.f2825a);
     }
 
-    public void a(int i, String str) {
-        if (!this.a.isCancelled()) {
-            this.f.i(str);
+    protected void onSessionFailed() {
+        super.onSessionFailed();
+        this.f2831a.f2830f.m3949x();
+        if (!this.f2831a.f2825a.isCancelled()) {
+            this.f2831a.f2830f.m3933i("");
         }
     }
 }

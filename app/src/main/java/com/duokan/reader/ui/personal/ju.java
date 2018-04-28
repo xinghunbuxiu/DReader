@@ -1,37 +1,23 @@
 package com.duokan.reader.ui.personal;
 
-import android.text.TextUtils;
+import android.os.Handler.Callback;
+import android.os.Message;
+import com.duokan.reader.domain.bookshelf.ai;
+import com.duokan.reader.domain.cloud.PersonalPrefs;
 
-import com.duokan.core.app.ManagedApp;
-import com.duokan.reader.DkApp;
-import com.duokan.reader.domain.cloud.DkCloudStoreBook;
-import com.duokan.reader.domain.store.DkStoreBookDetail;
-import com.duokan.reader.domain.store.DkStoreItem;
-import com.duokan.reader.domain.store.h;
-import com.duokan.reader.ui.bookshelf.ay;
-import com.duokan.reader.ui.general.be;
-import com.duokan.reader.ui.store.o;
+class ju implements Callback {
+    /* renamed from: a */
+    final /* synthetic */ jg f8793a;
 
-final class ju implements h {
-    final /* synthetic */ DkCloudStoreBook a;
-    final /* synthetic */ PurchasedBookItemView b;
-
-    ju(DkCloudStoreBook dkCloudStoreBook, PurchasedBookItemView purchasedBookItemView) {
-        this.a = dkCloudStoreBook;
-        this.b = purchasedBookItemView;
+    ju(jg jgVar) {
+        this.f8793a = jgVar;
     }
 
-    public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
-        ay.a(ManagedApp.get().getTopActivity(), ((DkStoreBookDetail) dkStoreItem).getEpubSize(), new jv(this, dkStoreItem));
-    }
-
-    public void onFetchBookDetailError(String str) {
-        o.a().c(this.a.getBookUuid());
-        if (!TextUtils.isEmpty(str)) {
-            be.a(DkApp.get(), (CharSequence) str, 1).show();
+    public boolean handleMessage(Message message) {
+        if (message.what != 0 || !PersonalPrefs.m5175a().m5250z()) {
+            return false;
         }
-        if (this.b.e == this.a) {
-            this.b.d.setEnabled(true);
-        }
+        ai.m3980a().mo973a(true, true);
+        return true;
     }
 }

@@ -5,17 +5,24 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 
 public abstract class ac implements au {
-    public abstract int a();
+    /* renamed from: a */
+    public abstract int mo1381a();
 
-    public abstract bb a(Point point, Point point2);
+    /* renamed from: a */
+    public abstract bb mo1382a(Point point, Point point2);
 
-    public abstract void a(int i);
+    /* renamed from: a */
+    public abstract void mo1384a(int i);
 
-    public abstract Rect b();
+    /* renamed from: b */
+    public abstract Rect mo1385b();
 
-    public abstract au b(int i);
+    /* renamed from: b */
+    public abstract au mo1386b(int i);
 
-    public abstract Drawable c();
+    /* renamed from: c */
+    public abstract Drawable mo1388c();
 
-    public abstract int d();
+    /* renamed from: d */
+    public abstract int mo1389d();
 }

@@ -1,17 +1,22 @@
 package com.duokan.reader.domain.bookshelf;
 
-class ho implements Runnable {
-    final /* synthetic */ c a;
-    final /* synthetic */ hi b;
+import java.util.LinkedList;
 
-    ho(hi hiVar, c cVar) {
-        this.b = hiVar;
-        this.a = cVar;
+class ho implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ LinkedList f3312a;
+    /* renamed from: b */
+    final /* synthetic */ Runnable f3313b;
+    /* renamed from: c */
+    final /* synthetic */ hc f3314c;
+
+    ho(hc hcVar, LinkedList linkedList, Runnable runnable) {
+        this.f3314c = hcVar;
+        this.f3312a = linkedList;
+        this.f3313b = runnable;
     }
 
     public void run() {
-        if (this.b.g(this.a)) {
-            dh.a().b(this.a.ao(), this.a.ap());
-        }
+        this.f3314c.m3829a(this.f3312a, this.f3313b);
     }
 }

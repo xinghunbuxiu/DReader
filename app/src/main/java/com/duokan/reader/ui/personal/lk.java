@@ -1,150 +1,32 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.c.j;
-import com.duokan.core.app.IFeature;
-import com.duokan.reader.domain.bookshelf.ai;
-import com.duokan.reader.domain.bookshelf.an;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.bookshelf.iv;
-import com.duokan.reader.domain.bookshelf.iw;
-import com.duokan.reader.domain.cloud.a;
-import com.duokan.reader.ui.bookshelf.ho;
-import com.duokan.reader.ui.general.ap;
-import com.duokan.reader.ui.general.hd;
+class lk implements fy {
+    /* renamed from: a */
+    final /* synthetic */ lc f8887a;
 
-import java.text.Collator;
-import java.util.List;
-import java.util.Locale;
-
-public class lk extends hd implements iv, iw, ho {
-    private lo a;
-    private final String[] b;
-    private kn c;
-
-    public lk(IFeature featrue, a aVar, String[] strArr) {
-        super(featrue);
-        this.b = strArr;
-        for (String a : this.b) {
-            aVar = aVar.a(a);
-        }
-        this.c = (kn) featrue.queryFeature(kn.class);
-        this.a = new lo(getContext(), aVar, this, new ke(getContext()));
-        setContentView(this.a);
-        this.a.getHeaderView().setOnBackListener(new ll(this));
+    lk(lc lcVar) {
+        this.f8887a = lcVar;
     }
 
-    private void b(List list) {
-        if (this.a.getAdapter() instanceof mq) {
-            ((mq) this.a.getAdapter()).a(list);
+    /* renamed from: a */
+    public void mo1943a(int i) {
+        if (i != mo1942a()) {
+            this.f8887a.m12139a(i, false);
         }
     }
 
-    public void a(List list) {
-        Collator instance = Collator.getInstance(Locale.CHINESE);
-        a a = a.a(list);
-        a.a(instance);
-        a.b(instance);
-        for (String str : this.b) {
-            if (a == null) {
-                break;
-            }
-            a = a.a(str);
+    /* renamed from: a */
+    public int mo1942a() {
+        PurchasedSortType a = this.f8887a.f8857a.mo1932a();
+        if (a == PurchasedSortType.TIME) {
+            return 0;
         }
-        this.a.setData(a);
-    }
-
-    protected void onAttachToStub() {
-        super.onAttachToStub();
-        ai.a().a((iw) this);
-        ai.a().a((iv) this);
-    }
-
-    protected void onDetachFromStub() {
-        super.onDetachFromStub();
-        ai.a().b((iw) this);
-        ai.a().b((iv) this);
-    }
-
-    protected void onDeactive() {
-        super.onDeactive();
-        this.a.p();
-    }
-
-    protected boolean onBack() {
-        if (this.a != null && this.a.j()) {
-            return true;
+        if (a == PurchasedSortType.NAME) {
+            return 1;
         }
-        if (!this.a.k()) {
-            return super.onBack();
+        if (a == PurchasedSortType.GROUP) {
+            return 2;
         }
-        this.a.l();
-        return true;
-    }
-
-    public void onItemsChanged() {
-    }
-
-    public void onItemChanged(an anVar, int i) {
-        if ((anVar instanceof c) && (i & 72) != 0) {
-            this.a.d();
-        }
-    }
-
-    public void a(int i, int i2) {
-        this.a.c(i, i2);
-    }
-
-    public void b() {
-        this.a.q();
-    }
-
-    public void c() {
-        this.a.m();
-    }
-
-    public void d() {
-        this.a.n();
-    }
-
-    public void a(Runnable runnable) {
-        ap apVar = new ap(getContext());
-        apVar.setPrompt(j.bookshelf__remove_books_in_purchased_dlg__title);
-        apVar.setCancelLabel(j.general__shared__cancel);
-        apVar.setOkLabel(j.general__shared__remove);
-        apVar.setCancelOnBack(true);
-        apVar.setCancelOnTouchOutside(false);
-        apVar.open(new lm(this, runnable));
-    }
-
-    public boolean g() {
-        return this.a.c();
-    }
-
-    public int e() {
-        return this.a.getSelectedCount();
-    }
-
-    public void f() {
-        this.a.a();
-    }
-
-    public void h() {
-        this.a.b();
-    }
-
-    public void b(int i, int i2) {
-        this.a.b(i, i2);
-    }
-
-    public String i() {
-        return null;
-    }
-
-    public String j() {
-        return null;
-    }
-
-    public String k() {
-        return null;
+        return 0;
     }
 }

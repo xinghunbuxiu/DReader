@@ -1,160 +1,104 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.reader.common.webservices.WebSession;
-import com.duokan.reader.common.webservices.b;
+import com.duokan.reader.common.webservices.duokan.C0650x;
 import com.duokan.reader.common.webservices.duokan.DkCloudPurchasedFictionInfo;
-import com.duokan.reader.common.webservices.duokan.aa;
-import com.duokan.reader.domain.account.ab;
-
+import com.duokan.reader.domain.cmread.CmBookManager;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
-class dr extends ef {
-    final /* synthetic */ ab a;
-    final /* synthetic */ dq b;
-    private eg d = null;
-    private b e = null;
-    private b f = null;
-    private eg g = null;
-    private List h = new ArrayList();
-    private boolean i = false;
+class dr {
+    /* renamed from: a */
+    private boolean f3888a = false;
+    /* renamed from: b */
+    private boolean f3889b = false;
+    /* renamed from: c */
+    private final ConcurrentHashMap<String, DkCloudPurchasedFiction> f3890c = new ConcurrentHashMap();
 
-    dr(dq dqVar, ab abVar) {
-        this.b = dqVar;
-        this.a = abVar;
-        super(dqVar.a.d);
+    public dr(dr drVar) {
+        this.f3890c.putAll(drVar.f3890c);
+        this.f3888a = drVar.f3888a;
+        this.f3889b = drVar.f3889b;
     }
 
-    protected void onSessionOpen() {
-        if (this.a.a(DkUserPurchasedFictionsManager.g())) {
-            this.d = this.b.a.d.h;
-        }
+    /* renamed from: a */
+    public DkCloudPurchasedFiction m5458a(String str) {
+        return (DkCloudPurchasedFiction) this.f3890c.get(str);
     }
 
-    protected void onSessionTry() {
-        long max;
-        if (this.d == null) {
-            fail();
+    /* renamed from: b */
+    public DkCloudPurchasedFiction m5462b(String str) {
+        DkCloudPurchasedFiction dkCloudPurchasedFiction = (DkCloudPurchasedFiction) this.f3890c.get(str);
+        if (dkCloudPurchasedFiction != null && dkCloudPurchasedFiction.isFullData()) {
+            return dkCloudPurchasedFiction;
         }
-        ei eiVar = new ei(this.a);
-        eiVar.a();
-        DkUserPurchasedFictionsInfo b = eiVar.b();
-        aa aaVar = new aa((WebSession) this, this.a);
-        long currentTimeMillis = System.currentTimeMillis();
-        if (this.b.a.a) {
-            max = Math.max(b.mLatestFullRefreshTime / 1000, b.mLatestPurchaseTime);
+        if (new C0650x(str).m3047b() == 1) {
+            DkCloudPurchasedFictionInfo purchaseInfo = CmBookManager.get().getPurchaseInfo(str);
+            return purchaseInfo == null ? null : new DkCloudPurchasedFiction(purchaseInfo, false);
         } else {
-            max = 0;
-        }
-        this.f = aaVar.d(max);
-        this.e = aaVar.a(max);
-        if (this.f.b == 0 && this.e.b == 0) {
-            Iterator it;
-            DkCloudPurchasedFiction b2;
-            List linkedList = new LinkedList();
-            for (DkCloudPurchasedFictionInfo dkCloudPurchasedFictionInfo : (DkCloudPurchasedFictionInfo[]) this.e.a) {
-                if (dkCloudPurchasedFictionInfo.mIsHide) {
-                    ((List) this.f.a).add(dkCloudPurchasedFictionInfo);
-                } else {
-                    DkCloudItem dkCloudPurchasedFiction = new DkCloudPurchasedFiction(dkCloudPurchasedFictionInfo, false);
-                    DkCloudPurchasedFiction b3 = max > 0 ? this.d.b(dkCloudPurchasedFiction.getBookUuid()) : null;
-                    if (b3 != null) {
-                        linkedList.add((DkCloudPurchasedFiction) b3.merge(dkCloudPurchasedFiction));
-                    } else {
-                        linkedList.add(dkCloudPurchasedFiction);
-                    }
-                    this.i = true;
-                }
+            try {
+                dt dtVar = new dt(DkUserPurchasedFictionsManager.m5092g());
+                dtVar.m5468a();
+                return (DkCloudPurchasedFiction) dtVar.queryItem(str);
+            } catch (Throwable th) {
+                return null;
             }
-            List linkedList2 = new LinkedList();
-            for (DkCloudPurchasedFictionInfo dkCloudPurchasedFiction2 : (List) this.f.a) {
-                DkCloudItem dkCloudPurchasedFiction3 = new DkCloudPurchasedFiction(dkCloudPurchasedFiction2, true);
-                b2 = max > 0 ? this.d.b(dkCloudPurchasedFiction3.getBookUuid()) : null;
-                if (b2 != null) {
-                    linkedList2.add((DkCloudPurchasedFiction) b2.merge(dkCloudPurchasedFiction3));
-                } else {
-                    linkedList2.add(dkCloudPurchasedFiction3);
-                }
-                this.i = true;
-            }
-            if (!linkedList.isEmpty()) {
-                if (this.d.d()) {
-                    this.h.addAll(linkedList);
-                } else {
-                    it = linkedList.iterator();
-                    while (it.hasNext()) {
-                        b2 = (DkCloudPurchasedFiction) it.next();
-                        if (!b2.isHidden() && this.d.a(b2.getBookUuid()) == null) {
-                            this.h.add(b2);
-                        }
-                    }
-                }
-            }
-            if (max > 0) {
-                this.g = new eg(this.d);
-            } else {
-                this.g = new eg();
-                this.g.b = true;
-                this.g.a = true;
-            }
-            this.g.a(linkedList2);
-            this.g.a(linkedList);
-            if (max > 0) {
-                eiVar.updateItems((Collection) linkedList2);
-                eiVar.updateItems((Collection) linkedList);
-            } else {
-                eiVar.replaceWithItems((Collection) linkedList2);
-                eiVar.replaceWithItems((Collection) linkedList);
-            }
-            if (max <= 0) {
-                b.mLatestFullRefreshTime = currentTimeMillis;
-            }
-            if (!this.g.d()) {
-                b.mLatestPurchaseTime = ((DkCloudPurchasedFiction) this.g.c().get(0)).getUpdateTimeInSeconds() + 1;
-            }
-            eiVar.updateInfo(b);
         }
     }
 
-    protected void onSessionSucceeded() {
-        if (!this.a.a(DkUserPurchasedFictionsManager.g())) {
-            this.b.a.b.a(-1, "");
-        } else if (this.e.b == 1001 || this.e.b == 1002 || this.e.b == 1003) {
-            if (this.b.a.c) {
-                i.f().a(this.a.a, new ds(this));
-            } else {
-                this.b.a.b.a(this.e.b, this.e.c);
+    /* renamed from: a */
+    public List<DkCloudPurchasedFiction> m5459a() {
+        List arrayList = new ArrayList(this.f3890c.size());
+        for (DkCloudPurchasedFiction dkCloudPurchasedFiction : this.f3890c.values()) {
+            if (!dkCloudPurchasedFiction.isHidden()) {
+                arrayList.add(dkCloudPurchasedFiction);
             }
-        } else if (this.f.b != 0) {
-            this.b.a.b.a(this.f.b, this.f.c);
-        } else if (this.e.b != 0) {
-            this.b.a.b.a(this.e.b, this.e.c);
-        } else if (this.i) {
-            this.b.a.d.h = this.g;
-            this.b.a.d.f();
-            if (!this.h.isEmpty()) {
-                this.b.a.d.a(this.h);
-            }
-            this.b.a.b.a(null);
-        } else {
-            this.b.a.b.a(null);
         }
+        return arrayList;
     }
 
-    protected void onSessionFailed() {
-        if (this.a.a(DkUserPurchasedFictionsManager.g())) {
-            this.b.a.b.a(-1, "");
-        } else {
-            this.b.a.b.a(-1, "");
+    /* renamed from: b */
+    public List<DkCloudPurchasedFiction> m5463b() {
+        List arrayList = new ArrayList(this.f3890c.size());
+        for (DkCloudPurchasedFiction dkCloudPurchasedFiction : this.f3890c.values()) {
+            if (dkCloudPurchasedFiction.isHidden()) {
+                arrayList.add(dkCloudPurchasedFiction);
+            }
         }
+        return arrayList;
     }
 
-    protected boolean onSessionException(Exception exception, int i) {
-        a.c().a(LogLevel.ERROR, "pm", "unexpected error while updating purchased fictions.", (Throwable) exception);
-        return super.onSessionException(exception, i);
+    /* renamed from: c */
+    public List<DkCloudPurchasedFiction> m5464c() {
+        List<DkCloudPurchasedFiction> arrayList = new ArrayList(this.f3890c.values());
+        Collections.sort(arrayList, new ds(this));
+        return arrayList;
+    }
+
+    /* renamed from: c */
+    public boolean m5465c(String str) {
+        DkCloudPurchasedFiction dkCloudPurchasedFiction = (DkCloudPurchasedFiction) this.f3890c.get(str);
+        if (dkCloudPurchasedFiction == null) {
+            return false;
+        }
+        return dkCloudPurchasedFiction.isHidden();
+    }
+
+    /* renamed from: d */
+    public boolean m5466d() {
+        return this.f3890c.isEmpty();
+    }
+
+    /* renamed from: a */
+    public void m5460a(DkCloudPurchasedFiction dkCloudPurchasedFiction) {
+        this.f3890c.put(dkCloudPurchasedFiction.getBookUuid(), dkCloudPurchasedFiction);
+    }
+
+    /* renamed from: a */
+    public void m5461a(List<DkCloudPurchasedFiction> list) {
+        for (DkCloudPurchasedFiction dkCloudPurchasedFiction : list) {
+            this.f3890c.put(dkCloudPurchasedFiction.getBookUuid(), dkCloudPurchasedFiction);
+        }
     }
 }

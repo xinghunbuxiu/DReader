@@ -1,23 +1,22 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.ui.Scrollable;
-import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.OnScrollListener;
-import com.duokan.reader.ui.general.ReaderUi;
+import com.duokan.reader.domain.cloud.DkCloudStoreBook;
+import java.util.Comparator;
 
-class nr implements OnScrollListener {
-    final /* synthetic */ nm a;
+class nr implements Comparator<DkCloudStoreBook> {
+    /* renamed from: a */
+    final /* synthetic */ nq f9015a;
 
-    nr(nm nmVar) {
-        this.a = nmVar;
+    nr(nq nqVar) {
+        this.f9015a = nqVar;
     }
 
-    public void a(Scrollable scrollable, ScrollState scrollState, ScrollState scrollState2) {
-        if (scrollState2 == ScrollState.DRAG) {
-            ReaderUi.a(this.a.getContext(), this.a.f);
-        }
+    public /* synthetic */ int compare(Object obj, Object obj2) {
+        return m12363a((DkCloudStoreBook) obj, (DkCloudStoreBook) obj2);
     }
 
-    public void a(Scrollable scrollable, boolean z) {
+    /* renamed from: a */
+    public int m12363a(DkCloudStoreBook dkCloudStoreBook, DkCloudStoreBook dkCloudStoreBook2) {
+        return -dkCloudStoreBook.comparePurchaseTimeTo(dkCloudStoreBook2);
     }
 }

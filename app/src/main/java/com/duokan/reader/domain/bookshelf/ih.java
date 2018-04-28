@@ -1,32 +1,20 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.micloud.i;
+import com.duokan.reader.domain.cloud.PersonalPrefs;
 
 class ih implements Runnable {
-    final /* synthetic */ i a;
-    final /* synthetic */ iy b;
-    final /* synthetic */ ig c;
+    /* renamed from: a */
+    final /* synthetic */ hc f3350a;
 
-    ih(ig igVar, i iVar, iy iyVar) {
-        this.c = igVar;
-        this.a = iVar;
-        this.b = iyVar;
+    ih(hc hcVar) {
+        this.f3350a = hcVar;
     }
 
     public void run() {
-        if (b.a(this.a.N(), this.c.a.a.j.a)) {
-            c d = ai.a().d(this.a.w());
-            if (d != null) {
-                d.a(this.b);
-                d.aL();
-                aa b = ai.a().b(d.aH());
-                if (b != null) {
-                    this.c.a.a.a(d, b.k());
-                }
-                if (d.ax() > 0) {
-                    this.c.a.a.i(d);
-                }
-            }
+        if (!this.f3350a.f2746j.m3366b() && PersonalPrefs.m5175a().m5250z()) {
+            jx jxVar = new jx();
+            jxVar.m4783a();
+            de.m4313a().m4342a(jxVar, new ii(this));
         }
     }
 }

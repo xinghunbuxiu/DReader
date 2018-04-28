@@ -1,7 +1,6 @@
 package com.duokan.reader.domain.document.epub;
 
 import com.duokan.reader.domain.document.bc;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -12,13 +11,20 @@ import java.util.List;
 import java.util.concurrent.Semaphore;
 
 abstract class EpubTypesettingContext extends bc {
-    static final /* synthetic */ boolean o = (!EpubTypesettingContext.class.desiredAssertionStatus());
-    public long[][] i = new long[0][];
-    public ChapterState[] j = new ChapterState[0];
-    public long k = 0;
-    public final ArrayList l = new ArrayList();
-    public final ArrayList m = new ArrayList();
-    public final LinkedList n = new LinkedList();
+    /* renamed from: o */
+    static final /* synthetic */ boolean f4450o = (!EpubTypesettingContext.class.desiredAssertionStatus());
+    /* renamed from: i */
+    public long[][] f4451i = new long[0][];
+    /* renamed from: j */
+    public ChapterState[] f4452j = new ChapterState[0];
+    /* renamed from: k */
+    public long f4453k = 0;
+    /* renamed from: l */
+    public final ArrayList<HashSet<av>> f4454l = new ArrayList();
+    /* renamed from: m */
+    public final ArrayList<HashSet<av>> f4455m = new ArrayList();
+    /* renamed from: n */
+    public final LinkedList<ch> f4456n = new LinkedList();
 
     public enum ChapterState {
         NOT_TYPESETTED,
@@ -26,71 +32,83 @@ abstract class EpubTypesettingContext extends bc {
         TYPESETTED
     }
 
-    public abstract av a(String str, boolean z);
+    /* renamed from: a */
+    public abstract av mo1368a(String str, boolean z);
 
-    public abstract e e();
+    /* renamed from: e */
+    public abstract C0934e mo1369e();
 
-    public abstract void f();
+    /* renamed from: f */
+    public abstract void mo1370f();
 
-    public abstract List g();
+    /* renamed from: g */
+    public abstract List<av> mo1371g();
 
-    public abstract List h();
+    /* renamed from: h */
+    public abstract List<av> mo1372h();
 
     public EpubTypesettingContext(ap apVar, am amVar, Semaphore semaphore) {
         super(apVar, amVar, semaphore);
     }
 
-    public ap i() {
+    /* renamed from: i */
+    public ap m6454i() {
         return (ap) this.d;
     }
 
-    public void a(ap apVar) {
+    /* renamed from: a */
+    public void m6445a(ap apVar) {
         this.d = apVar;
     }
 
-    public am j() {
+    /* renamed from: j */
+    public am m6455j() {
         return (am) this.e;
     }
 
-    public List b(long j) {
-        HashSet hashSet = (HashSet) this.l.get((int) j);
+    /* renamed from: b */
+    public List<av> m6447b(long j) {
+        HashSet hashSet = (HashSet) this.f4454l.get((int) j);
         if (hashSet == null) {
             return Collections.emptyList();
         }
         return Arrays.asList(hashSet.toArray(new av[0]));
     }
 
-    public List c(long j) {
-        HashSet hashSet = (HashSet) this.m.get((int) j);
+    /* renamed from: c */
+    public List<av> m6448c(long j) {
+        HashSet hashSet = (HashSet) this.f4455m.get((int) j);
         if (hashSet == null) {
             return Collections.emptyList();
         }
         return Arrays.asList(hashSet.toArray(new av[0]));
     }
 
-    public long d(long j) {
-        if (this.i.length >= 1 && this.i[(int) j] != null) {
-            return (long) this.i[(int) j].length;
+    /* renamed from: d */
+    public long m6449d(long j) {
+        if (this.f4451i.length >= 1 && this.f4451i[(int) j] != null) {
+            return (long) this.f4451i[(int) j].length;
         }
         return -1;
     }
 
-    public long a(long j, long j2, long j3) {
-        if (!o && b() < 0) {
+    /* renamed from: a */
+    public long m6441a(long j, long j2, long j3) {
+        if (!f4450o && m5839b() < 0) {
             throw new AssertionError();
-        } else if (j >= ((long) this.i.length) || j2 == Long.MAX_VALUE) {
-            return b();
+        } else if (j >= ((long) this.f4451i.length) || j2 == Long.MAX_VALUE) {
+            return m5839b();
         } else {
             if (j < 0 || j2 == Long.MIN_VALUE) {
                 return -1;
             }
             long j4 = 0;
             int i = 0;
-            int length = this.i[(int) j].length;
+            int length = this.f4451i[(int) j].length;
             while (i < length) {
                 long j5;
                 int i2 = (i + length) / 2;
-                long j6 = this.i[(int) j][i2];
+                long j6 = this.f4451i[(int) j][i2];
                 long j7 = (long) ((int) (j6 >> 32));
                 j6 = (long) ((int) j6);
                 if (j7 > j2 || (j7 == j2 && j6 > j3)) {
@@ -107,7 +125,7 @@ abstract class EpubTypesettingContext extends bc {
             i = 0;
             long j8 = j4;
             while (((long) i) < j) {
-                j4 = ((long) this.i[i].length) + j8;
+                j4 = ((long) this.f4451i[i].length) + j8;
                 i++;
                 j8 = j4;
             }
@@ -115,48 +133,51 @@ abstract class EpubTypesettingContext extends bc {
         }
     }
 
-    public cd a(ay ayVar, cc ccVar) {
-        if (o || this.a) {
+    /* renamed from: a */
+    public cd m6443a(ay ayVar, cc ccVar) {
+        if (f4450o || this.a) {
             ch chVar = new ch(ayVar, ccVar);
             synchronized (this) {
-                this.n.addFirst(chVar);
+                this.f4456n.addFirst(chVar);
             }
             this.f.release();
-            return chVar.c;
+            return chVar.f4664c;
         }
         throw new AssertionError();
     }
 
-    public r a(h hVar, q qVar) {
-        if (o || this.a) {
-            ay j = hVar.j();
-            r rVar = new r();
-            ch chVar = new ch(j, new cf(this, hVar, j, qVar, rVar));
-            rVar.a = chVar;
+    /* renamed from: a */
+    public C0951r m6444a(C0940h c0940h, C0944q c0944q) {
+        if (f4450o || this.a) {
+            ay j = c0940h.m6846j();
+            C0951r c0951r = new C0951r();
+            ch chVar = new ch(j, new cf(this, c0940h, j, c0944q, c0951r));
+            c0951r.f4721a = chVar;
             synchronized (this) {
-                this.n.addFirst(chVar);
+                this.f4456n.addFirst(chVar);
             }
             this.f.release();
-            return rVar;
+            return c0951r;
         }
         throw new AssertionError();
     }
 
-    public ch k() {
+    /* renamed from: k */
+    public ch m6456k() {
         synchronized (this) {
-            Iterator it = this.n.iterator();
+            Iterator it = this.f4456n.iterator();
             while (it.hasNext()) {
                 ch chVar = (ch) it.next();
-                if (!o && chVar == null) {
+                if (!f4450o && chVar == null) {
                     throw new AssertionError();
-                } else if (!o && chVar.c == null) {
+                } else if (!f4450o && chVar.f4664c == null) {
                     throw new AssertionError();
-                } else if (!chVar.c.b()) {
-                    if (chVar.c.d()) {
-                        chVar.c.e();
-                    } else if (!o && chVar.c.c()) {
+                } else if (!chVar.f4664c.m6795b()) {
+                    if (chVar.f4664c.m6797d()) {
+                        chVar.f4664c.m6798e();
+                    } else if (!f4450o && chVar.f4664c.m6796c()) {
                         throw new AssertionError();
-                    } else if (!chVar.c.c()) {
+                    } else if (!chVar.f4664c.m6796c()) {
                         return chVar;
                     }
                 }
@@ -165,13 +186,14 @@ abstract class EpubTypesettingContext extends bc {
         }
     }
 
-    public long[][] a(am amVar) {
-        if (j() != amVar) {
+    /* renamed from: a */
+    public long[][] m6446a(am amVar) {
+        if (m6455j() != amVar) {
             return (long[][]) null;
         }
-        long[][] jArr = new long[this.i.length][];
+        long[][] jArr = new long[this.f4451i.length][];
         for (int i = 0; i < jArr.length; i++) {
-            jArr[i] = this.i[i] == null ? null : Arrays.copyOf(this.i[i], this.i[i].length);
+            jArr[i] = this.f4451i[i] == null ? null : Arrays.copyOf(this.f4451i[i], this.f4451i[i].length);
         }
         return jArr;
     }

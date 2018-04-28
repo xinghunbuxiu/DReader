@@ -1,22 +1,24 @@
 package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.sys.as;
-import com.duokan.reader.domain.cloud.DkSharedStorageManager;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.common.C0611i;
+import org.json.JSONObject;
 
 class ck implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ String b;
-    final /* synthetic */ boolean c;
-    final /* synthetic */ PageController d;
+    /* renamed from: a */
+    final /* synthetic */ String f7674a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7675b;
 
-    ck(PageController cgVar, String str, String str2, boolean z) {
-        this.d = cgVar;
-        this.a = str;
-        this.b = str2;
-        this.c = z;
+    ck(ci ciVar, String str) {
+        this.f7675b = ciVar;
+        this.f7674a = str;
     }
 
-    public void a() {
-        DkSharedStorageManager.a().a(this.a, this.b, this.c);
+    /* renamed from: a */
+    public void mo1831a() {
+        JSONObject jSONObject = new JSONObject(this.f7674a);
+        this.f7675b.m11016a(new cl(this, jSONObject.getBoolean("show"), C0611i.m2786a(jSONObject, "msg", this.f7675b.f7581b.getContext().getString(C0258j.bookcity_store__shared__creating_order)), jSONObject.optBoolean("cancelable", true), jSONObject.optBoolean("now", false)));
     }
 }

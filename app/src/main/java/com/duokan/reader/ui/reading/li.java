@@ -1,13 +1,20 @@
 package com.duokan.reader.ui.reading;
 
-class li implements Runnable {
-    final /* synthetic */ lb a;
+import android.graphics.Bitmap;
 
-    li(lb lbVar) {
-        this.a = lbVar;
+class li implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ Bitmap f10569a;
+    /* renamed from: b */
+    final /* synthetic */ lh f10570b;
+
+    li(lh lhVar, Bitmap bitmap) {
+        this.f10570b = lhVar;
+        this.f10569a = bitmap;
     }
 
     public void run() {
-        this.a.b();
+        this.f10570b.f10568a.f10551f.setImageBitmap(null);
+        this.f10569a.recycle();
     }
 }

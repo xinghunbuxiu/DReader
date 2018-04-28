@@ -1,20 +1,15 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.b;
+public interface al {
+    /* renamed from: a */
+    void mo1112a(DkCloudReadingInfo dkCloudReadingInfo, DkCloudReadingInfo dkCloudReadingInfo2, String str);
 
-class al implements b {
-    final /* synthetic */ ak a;
+    /* renamed from: a */
+    void mo1113a(DkCloudReadingInfo dkCloudReadingInfo, String str, String str2);
 
-    al(ak akVar) {
-        this.a = akVar;
-    }
+    /* renamed from: b */
+    void mo1114b(DkCloudReadingInfo dkCloudReadingInfo, DkCloudReadingInfo dkCloudReadingInfo2, String str);
 
-    public void a(a aVar) {
-        this.a.i.a(this.a.c, this.a.d, this.a.f, aVar, this.a.b, this.a.g, this.a.h);
-    }
-
-    public void a(a aVar, String str) {
-        this.a.h.a(this.a.b, str, this.a.g);
-    }
+    /* renamed from: b */
+    void mo1115b(DkCloudReadingInfo dkCloudReadingInfo, String str, String str2);
 }

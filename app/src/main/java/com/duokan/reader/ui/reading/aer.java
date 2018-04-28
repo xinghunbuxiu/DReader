@@ -1,18 +1,16 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+class aer implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ adz f9593a;
 
-class aer implements OnClickListener {
-    final /* synthetic */ aem a;
-
-    aer(aem com_duokan_reader_ui_reading_aem) {
-        this.a = com_duokan_reader_ui_reading_aem;
+    aer(adz adz) {
+        this.f9593a = adz;
     }
 
-    public void onClick(View view) {
-        this.a.a.aY();
-        this.a.a();
-        this.a.requestDetach();
+    public void run() {
+        this.f9593a.removeSubController(this.f9593a.f9551k);
+        this.f9593a.f9543c.removeView(this.f9593a.f9551k.getContentView());
+        this.f9593a.f9551k = null;
     }
 }

@@ -1,29 +1,28 @@
 package com.duokan.reader.ui.account;
 
-import android.content.Context;
-import android.graphics.Color;
-import android.view.LayoutInflater;
-import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.graphics.Bitmap;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.ui.general.be;
 
-import com.bumptech.glide.Glide;
-import com.duokan.c.g;
-import com.duokan.c.h;
+class bf implements bt {
+    /* renamed from: a */
+    final /* synthetic */ String f5864a;
+    /* renamed from: b */
+    final /* synthetic */ bd f5865b;
 
-public class bf extends FrameLayout {
-    private final ImageView a = ((ImageView) findViewById(g.share__share_book_to_weibo_dialog_view__image));
-    private final EditText b = ((EditText) findViewById(g.share__share_book_to_weibo_dialog_view__share_reason_edit));
-
-    public bf(Context context, String str, String str2) {
-        super(context);
-        setBackgroundColor(Color.rgb(254, 250, 248));
-        LayoutInflater.from(context).inflate(h.share__share_event_to_weibo_dialog_view, this, true);
-        Glide.with(getContext().getApplicationContext()).load(str).into(this.a);
-        this.b.setText(str2);
+    bf(bd bdVar, String str) {
+        this.f5865b = bdVar;
+        this.f5864a = str;
     }
 
-    public EditText getReasonEditView() {
-        return this.b;
+    /* renamed from: a */
+    public void mo1573a(Bitmap bitmap, boolean z) {
+        this.f5865b.f5822c.update(this.f5864a, bitmap, this.f5865b.f5827h, new bg(this, bitmap, z));
+    }
+
+    /* renamed from: a */
+    public void mo1572a() {
+        be.m10286a(this.f5865b.getContext(), C0258j.sina_gen_bitmap_fail, 0).show();
+        this.f5865b.f5823d.setEnabled(true);
     }
 }

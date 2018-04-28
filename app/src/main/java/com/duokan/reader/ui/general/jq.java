@@ -1,145 +1,90 @@
 package com.duokan.reader.ui.general;
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup.LayoutParams;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.TextView;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.net.http.SslError;
+import android.text.TextUtils;
+import android.webkit.SslErrorHandler;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import com.duokan.common.C0268j;
+import com.duokan.core.app.AppContext;
+import com.duokan.core.app.BaseActivity;
+import com.duokan.p023b.C0247i;
+import com.duokan.reader.ReaderFeature;
+import org.apache.http.HttpHost;
 
-import com.duokan.b.g;
-import com.duokan.core.app.d;
-import com.duokan.core.diagnostic.WebLog;
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.core.ui.f;
-import com.duokan.reader.ReaderEnv;
+class jq extends WebViewClient {
+    /* renamed from: a */
+    final /* synthetic */ ji f7454a;
 
-import org.apache.http.HttpStatus;
+    jq(ji jiVar) {
+        this.f7454a = jiVar;
+    }
 
-public class jq extends f {
-    private final View a;
-    private final TextView b;
-    private Animation c = null;
-    private Animation d = null;
-    private Runnable e = null;
-    private Runnable f = null;
-
-    public jq(Context context) {
-        super(context);
-        this.a = LayoutInflater.from(context).inflate(g.general__waiting_dialog_view, null);
-        this.b = (TextView) this.a.findViewById(com.duokan.b.f.general__waiting_dialog_view__text);
-        if (ReaderEnv.get().forHd()) {
-            this.a.setLayoutParams(new LayoutParams(-2, -2));
-            setEnterAnimation(17432576);
-            setExitAnimation(17432577);
-            setGravity(17);
-        } else {
-            setEnterAnimation(b.general__shared__push_down_in);
-            setExitAnimation(b.general__shared__push_down_out);
-            setGravity(80);
+    public boolean shouldOverrideUrlLoading(WebView webView, String str) {
+        if (this.f7454a.f7444h != null) {
+            this.f7454a.f7444h.m10876a(str);
         }
-        setDimAmount(0.0f);
-        this.a.setVisibility(4);
-        setContentView(this.a);
-        setCancelOnTouchOutside(false);
-    }
-
-    public static jq a(Context context, CharSequence charSequence, CharSequence charSequence2) {
-        return a(context, charSequence, charSequence2, false);
-    }
-
-    public static jq a(Context context, CharSequence charSequence, CharSequence charSequence2, boolean z) {
-        return a(context, charSequence, charSequence2, z, false, null);
-    }
-
-    public static jq a(Context context, CharSequence charSequence, CharSequence charSequence2, boolean z, boolean z2) {
-        return a(context, charSequence, charSequence2, z, z2, null);
-    }
-
-    public static jq a(Context context, CharSequence charSequence, CharSequence charSequence2, boolean z, boolean z2, d dVar) {
-        jq jqVar = new jq(context);
-        jqVar.a(charSequence2);
-        jqVar.setCancelOnBack(z2);
-        jqVar.setCancelOnTouchOutside(false);
-        jqVar.open(dVar);
-        return jqVar;
-    }
-
-    public void a(CharSequence charSequence) {
-        this.b.setText(charSequence);
-    }
-
-    public void a(boolean z) {
-    }
-
-    public void a(int i) {
-        this.f = null;
-        if (this.e != null) {
-            a.c().b(isShowing());
-            return;
+        if (!TextUtils.isEmpty(str)) {
+            Uri parse = Uri.parse(str);
+            CharSequence scheme = parse.getScheme();
+            if (TextUtils.equals("duokan-reader", scheme)) {
+                this.f7454a.dismiss();
+                ((ReaderFeature) AppContext.getAppContext(this.f7454a.getContext()).queryFeature(ReaderFeature.class)).navigate(str, "", true, null);
+                return true;
+            } else if (TextUtils.equals(scheme, "tel")) {
+                String schemeSpecificPart = parse.getSchemeSpecificPart();
+                if (!TextUtils.isEmpty(schemeSpecificPart)) {
+                    ap jrVar = new jr(this, this.f7454a.getContext(), schemeSpecificPart);
+                    jrVar.setTitle(this.f7454a.getActivity().getString(C0247i.general__shared__call));
+                    jrVar.setPrompt(schemeSpecificPart);
+                    jrVar.setOkLabelResid(C0247i.general__shared__confirm);
+                    jrVar.setCancelLabel(C0247i.general__shared__cancel);
+                    jrVar.show();
+                    return true;
+                }
+            } else if (TextUtils.equals(scheme, "sms")) {
+                Object schemeSpecificPart2 = parse.getSchemeSpecificPart();
+                if (!TextUtils.isEmpty(schemeSpecificPart2) && (this.f7454a.getActivity() instanceof BaseActivity)) {
+                    C0268j.m613a((BaseActivity) this.f7454a.getActivity(), schemeSpecificPart2, "");
+                    return true;
+                }
+            } else {
+                boolean z = TextUtils.equals(HttpHost.DEFAULT_SCHEME_NAME, scheme) || TextUtils.equals("https", scheme);
+                if (!z) {
+                    Intent intent = new Intent("android.intent.action.VIEW");
+                    intent.setData(parse);
+                    try {
+                        this.f7454a.getContext().startActivity(intent);
+                        return true;
+                    } catch (Exception e) {
+                        return super.shouldOverrideUrlLoading(webView, str);
+                    }
+                }
+            }
         }
-        super.show();
-        this.e = new jr(this);
-        TaskHandler.postDelayed(this.e, (long) i);
+        return super.shouldOverrideUrlLoading(webView, str);
     }
 
-    public void setEnterAnimation(int i) {
-        this.c = AnimationUtils.loadAnimation(getContext(), i);
+    public void doUpdateVisitedHistory(WebView webView, String str, boolean z) {
+        super.doUpdateVisitedHistory(webView, str, z);
+        this.f7454a.m10865h();
     }
 
-    public void setExitAnimation(int i) {
-        this.d = AnimationUtils.loadAnimation(getContext(), i);
-        this.d.setFillAfter(true);
+    public void onPageStarted(WebView webView, String str, Bitmap bitmap) {
+        this.f7454a.m10854c();
+        super.onPageStarted(webView, str, bitmap);
+        this.f7454a.m10865h();
     }
 
-    public void open(d dVar) {
-        super.open(dVar);
-        show();
+    public void onPageFinished(WebView webView, String str) {
+        this.f7454a.m10857d();
+        super.onPageFinished(webView, str);
     }
 
-    public void show() {
-        a((int) HttpStatus.SC_INTERNAL_SERVER_ERROR);
-    }
-
-    public void dismiss() {
-        boolean z = true;
-        WebLog c;
-        if (!isShowing()) {
-            a.c().b(this.e == null);
-            c = a.c();
-            if (this.f != null) {
-                z = false;
-            }
-            c.b(z);
-        } else if (this.f != null) {
-            c = a.c();
-            if (this.e != null) {
-                z = false;
-            }
-            c.b(z);
-        } else if (this.e == null) {
-            c = a.c();
-            if (this.a.getVisibility() != 0) {
-                z = false;
-            }
-            c.b(z);
-            this.a.setVisibility(4);
-            this.f = new js(this);
-            if (this.d != null) {
-                this.d.setAnimationListener(new jt(this));
-                this.a.startAnimation(this.d);
-                return;
-            }
-            TaskHandler.PostTask(this.f);
-        } else {
-            c = a.c();
-            if (this.a.getVisibility() == 0) {
-                z = false;
-            }
-            c.b(z);
-            this.e = null;
-            super.dismiss();
-        }
+    public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
+        sslErrorHandler.proceed();
     }
 }

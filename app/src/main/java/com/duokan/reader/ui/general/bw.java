@@ -4,17 +4,18 @@ import android.view.View;
 import android.view.ViewGroup.OnHierarchyChangeListener;
 
 class bw implements OnHierarchyChangeListener {
-    final /* synthetic */ DotScrollerView a;
+    /* renamed from: a */
+    final /* synthetic */ DotScrollerView f7011a;
 
     bw(DotScrollerView dotScrollerView) {
-        this.a = dotScrollerView;
+        this.f7011a = dotScrollerView;
     }
 
     public void onChildViewRemoved(View view, View view2) {
-        this.a.d = true;
+        this.f7011a.f6820d = true;
     }
 
     public void onChildViewAdded(View view, View view2) {
-        this.a.d = true;
+        this.f7011a.f6820d = true;
     }
 }

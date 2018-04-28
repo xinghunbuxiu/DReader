@@ -1,22 +1,27 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.core.sys.ag;
-import com.duokan.reader.domain.store.DkStoreFictionDetail;
+import android.view.MotionEvent;
+import android.view.View;
+import com.duokan.core.ui.er;
+import com.duokan.core.ui.es;
 
-class ra implements ag {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ qh b;
+class ra extends er {
+    /* renamed from: a */
+    final /* synthetic */ qr f10883a;
 
-    ra(qh qhVar, Runnable runnable) {
-        this.b = qhVar;
-        this.a = runnable;
+    ra(qr qrVar) {
+        this.f10883a = qrVar;
     }
 
-    public void a(DkStoreFictionDetail dkStoreFictionDetail) {
-        if (!this.b.q) {
-            this.b.a(dkStoreFictionDetail);
-            TaskHandler.PostTask(this.a);
+    /* renamed from: a */
+    protected void mo511a(View view, boolean z) {
+    }
+
+    /* renamed from: a */
+    protected void mo510a(View view, MotionEvent motionEvent, boolean z, es esVar) {
+        if (motionEvent.getActionMasked() == 0 && motionEvent.getY() < ((float) m1603a(view, 20))) {
+            m1617c(true);
+            m1620d(true);
         }
     }
 }

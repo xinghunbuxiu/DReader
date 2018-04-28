@@ -1,140 +1,89 @@
 package com.duokan.reader.ui.personal;
 
+import android.graphics.Color;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.TextView;
+import com.duokan.p024c.C0254f;
+import com.duokan.p024c.C0255g;
+import com.duokan.p024c.C0256h;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.common.webservices.duokan.DkFeedbackReply;
+import com.duokan.reader.domain.account.C0709k;
+import com.duokan.reader.ui.general.DkSmallFaceView;
+import com.duokan.reader.ui.general.bo;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.IFeature;
-import com.duokan.core.ui.UTools;
-import com.duokan.reader.common.webservices.duokan.DkFeedbackThreadInfo;
-import com.duokan.reader.common.webservices.duokan.ae;
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.h;
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.cloud.DkSharedStorageManager;
-import com.duokan.reader.ui.general.DkWebListView;
-import com.duokan.reader.ui.general.DkWebListView.ListState;
-import com.duokan.reader.ui.general.dk;
+class bj extends bo {
+    /* renamed from: a */
+    final /* synthetic */ bh f8328a;
 
-import org.json.JSONObject;
+    bj(bh bhVar) {
+        this.f8328a = bhVar;
+    }
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+    /* renamed from: b */
+    protected void mo1555b() {
+        this.f8328a.f8321b.clear();
+    }
 
-public class bj extends ActivatedController implements ae, h {
-    private final DkWebListView a;
-    private final Map b = new HashMap();
-    private final List c = new ArrayList();
-    private a d;
-    private boolean e = false;
+    /* renamed from: e */
+    protected void mo1557e(int i) {
+        this.f8328a.m11456a(0);
+    }
 
-    public bj(IFeature featrue) {
-        super(featrue);
-        if (i.f().b()) {
-            this.d = i.f().c();
+    /* renamed from: c */
+    public int mo506c() {
+        return this.f8328a.f8321b.size();
+    }
+
+    /* renamed from: d */
+    public Object mo509d(int i) {
+        return this.f8328a.f8321b.get(i);
+    }
+
+    /* renamed from: d */
+    public View mo508d(int i, View view, ViewGroup viewGroup) {
+        if (view == null) {
+            view = LayoutInflater.from(this.f8328a.getContext()).inflate(C0256h.personal__feedback_thread_reply_view, null);
         }
-        this.a = new DkWebListView(getContext());
-        this.a.setBackgroundColor(-1);
-        setContentView(this.a);
-        this.a.setAdapter(new bk(this));
-        this.a.setRowDivider(new dk(getResources().getColor(d.general__shared__cccccc)));
-        this.a.a(UTools.getMinimumHeight(getContext(), 15.0f), 0, UTools.getMinimumHeight(getContext(), 15.0f), UTools.getMinimumHeight(getContext(), 60.0f));
-        this.a.b(0, 0, 0, 0);
-        c();
-        a();
-        com.duokan.reader.common.d.a().c();
-    }
-
-    protected void onAttachToStub() {
-        super.onAttachToStub();
-        i.f().add((h) this);
-    }
-
-    protected void onDetachFromStub() {
-        super.onDetachFromStub();
-        i.f().remove((h) this);
-    }
-
-    public void a(DkFeedbackThreadInfo dkFeedbackThreadInfo) {
-        if (this.d != null) {
-            this.c.add(0, dkFeedbackThreadInfo);
-            this.b.put(dkFeedbackThreadInfo.mThreadId, Integer.valueOf(dkFeedbackThreadInfo.mReplyCount));
-            DkSharedStorageManager.a().a("read_threads_" + this.d.b(), new JSONObject(this.b).toString(), true);
-            if (this.a.getAdapter().l() == ListState.EMPTY) {
-                this.a.getAdapter().a(false);
-            } else {
-                this.a.getAdapter().d();
-            }
+        DkFeedbackReply dkFeedbackReply = (DkFeedbackReply) mo509d(i);
+        if (TextUtils.isEmpty(this.f8328a.f8326g)) {
+            this.f8328a.f8326g = dkFeedbackReply.mUserId;
         }
-    }
-
-    public void b(DkFeedbackThreadInfo dkFeedbackThreadInfo) {
-        this.c.remove(dkFeedbackThreadInfo);
-        if (this.a.getAdapter().c() == 0) {
-            this.a.getAdapter().a(false);
+        DkSmallFaceView dkSmallFaceView = (DkSmallFaceView) view.findViewById(C0255g.personal__feedback_thread_reply_view__face);
+        if (dkFeedbackReply.mUserId.equals(this.f8328a.f8326g)) {
+            dkSmallFaceView.setUser(C0709k.m3476a().m3513h());
         } else {
-            this.a.getAdapter().d();
+            dkSmallFaceView.setBackgroundDrawable(this.f8328a.getDrawable(C0254f.general__shared__dkuser_icon_small));
         }
+        ((TextView) view.findViewById(C0255g.personal__feedback_thread_reply_view__nickname)).setText(dkFeedbackReply.mUserId.equals(this.f8328a.f8326g) ? C0709k.m3476a().m3508d().mo836f().mo871a() : this.f8328a.getString(C0258j.personal__feedback_thread_view__official));
+        ((TextView) view.findViewById(C0255g.personal__feedback_thread_reply_view__time)).setText(new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss").format(new Date(dkFeedbackReply.mDateLine * 1000)));
+        ((TextView) view.findViewById(C0255g.personal__feedback_thread_reply_view__reply)).setText(dkFeedbackReply.mMessage);
+        view.setOnClickListener(new bk(this, dkFeedbackReply));
+        return view;
     }
 
-    public void a(int i) {
-        a(i, (DkFeedbackThreadInfo) this.c.get(i));
-    }
-
-    public void a() {
-        this.a.a();
-    }
-
-    private void a(int i, DkFeedbackThreadInfo dkFeedbackThreadInfo) {
-        new bm(this, dkFeedbackThreadInfo, i).open();
-    }
-
-    private void b() {
-        if (this.d != null) {
-            new bn(this).open();
-        } else {
-            this.a.getAdapter().a(false);
+    /* renamed from: a */
+    public View mo482a(View view, ViewGroup viewGroup) {
+        if (view == null) {
+            return LayoutInflater.from(this.f8328a.getContext()).inflate(C0256h.personal__feedback_thread_empty_view, null);
         }
+        return view;
     }
 
-    private void c() {
-        try {
-            if (this.d != null) {
-                String a = DkSharedStorageManager.a().a("read_threads_" + this.d.b());
-                if (TextUtils.isEmpty(a)) {
-                    a = DkSharedStorageManager.a().a("read_threads");
-                    DkSharedStorageManager.a().a("read_threads_" + this.d.b(), a, true);
-                    this.e = true;
-                }
-                JSONObject jSONObject = new JSONObject(a);
-                Iterator keys = jSONObject.keys();
-                while (keys.hasNext()) {
-                    a = (String) keys.next();
-                    this.b.put(a, Integer.valueOf(jSONObject.getInt(a)));
-                }
-            }
-        } catch (Throwable th) {
-            th.printStackTrace();
+    /* renamed from: c */
+    public View mo507c(int i, View view, ViewGroup viewGroup) {
+        if (mo506c() == 0) {
+            return null;
         }
-    }
-
-    public void a(a aVar) {
-    }
-
-    public void b(a aVar) {
-        this.d = aVar;
-        c();
-        a();
-    }
-
-    public void c(a aVar) {
-        this.d = null;
-        this.c.clear();
-        a();
-    }
-
-    public void d(a aVar) {
+        View view2 = new View(this.f8328a.getContext());
+        view2.setBackgroundColor(Color.parseColor("#cccccc"));
+        view2.setLayoutParams(new LayoutParams(-1, 1));
+        return view2;
     }
 }

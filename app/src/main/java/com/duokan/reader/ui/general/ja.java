@@ -1,47 +1,158 @@
 package com.duokan.reader.ui.general;
 
+import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup.LayoutParams;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
+import com.duokan.core.app.OnCancelListener;
+import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.sys.UThread;
+import com.duokan.core.ui.C0343f;
+import com.duokan.p023b.C0240b;
+import com.duokan.p023b.C0244f;
+import com.duokan.p023b.C0245g;
+import com.duokan.reader.ReaderEnv;
+import org.apache.http.HttpStatus;
 
-import com.duokan.b.g;
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.IFeature;
+public class ja extends C0343f {
+    /* renamed from: a */
+    private final View f7422a;
+    /* renamed from: b */
+    private final TextView f7423b;
+    /* renamed from: c */
+    private Animation f7424c = null;
+    /* renamed from: d */
+    private Animation f7425d = null;
+    /* renamed from: e */
+    private Runnable f7426e = null;
+    /* renamed from: f */
+    private Runnable f7427f = null;
 
-import java.util.ArrayList;
-
-public class ja extends ActivatedController {
-    private final ik a = new jb(this, getContext());
-    private final ArrayList b = new ArrayList();
-    private int c = -1;
-
-    public ja(IFeature featrue) {
-        super(featrue);
-        LayoutInflater.from(getContext()).inflate(g.surfing__surfing_base_view__back, this.a.getLeftLayout(), true).setOnClickListener(new jc(this));
-        this.a.setOnCurrentPageChangedListener(new jd(this));
-        setContentView(this.a);
-    }
-
-    protected boolean a() {
-        return true;
-    }
-
-    public void a(ActivatedController activatedControllerVar, String str) {
-        this.b.add(activatedControllerVar);
-        addSubController(activatedControllerVar);
-        this.a.a(str, activatedControllerVar.getContentView());
-    }
-
-    public void a(int i) {
-        this.c = Math.min(i, this.b.size() - 1);
-        if (this.c >= 0) {
-            this.a.a(this.c);
-            activate((ActivatedController) this.b.get(this.c));
+    public ja(Context context) {
+        super(context);
+        this.f7422a = LayoutInflater.from(context).inflate(C0245g.general__waiting_dialog_view, null);
+        this.f7423b = (TextView) this.f7422a.findViewById(C0244f.general__waiting_dialog_view__text);
+        if (ReaderEnv.get().forHd()) {
+            this.f7422a.setLayoutParams(new LayoutParams(-2, -2));
+            setEnterAnimation(17432576);
+            setExitAnimation(17432577);
+            setGravity(17);
+        } else {
+            setEnterAnimation(C0240b.general__shared__push_down_in);
+            setExitAnimation(C0240b.general__shared__push_down_out);
+            setGravity(80);
         }
+        setDimAmount(0.0f);
+        this.f7422a.setVisibility(4);
+        setContentView(this.f7422a);
+        setCancelOnTouchOutside(false);
     }
 
-    protected void onActive(boolean z) {
-        super.onActive(z);
-        if (z && this.c < 0 && this.b.size() > 0) {
-            a(0);
+    /* renamed from: a */
+    public static ja m10830a(Context context, CharSequence charSequence, CharSequence charSequence2) {
+        return m10831a(context, charSequence, charSequence2, false);
+    }
+
+    /* renamed from: a */
+    public static ja m10831a(Context context, CharSequence charSequence, CharSequence charSequence2, boolean z) {
+        return m10833a(context, charSequence, charSequence2, z, false, null);
+    }
+
+    /* renamed from: a */
+    public static ja m10832a(Context context, CharSequence charSequence, CharSequence charSequence2, boolean z, boolean z2) {
+        return m10833a(context, charSequence, charSequence2, z, z2, null);
+    }
+
+    /* renamed from: a */
+    public static ja m10833a(Context context, CharSequence charSequence, CharSequence charSequence2, boolean z, boolean z2, OnCancelListener onCancelListener) {
+        ja jaVar = new ja(context);
+        jaVar.m10843a(charSequence2);
+        jaVar.setCancelOnBack(z2);
+        jaVar.setCancelOnTouchOutside(false);
+        jaVar.open(onCancelListener);
+        return jaVar;
+    }
+
+    /* renamed from: a */
+    public void m10843a(CharSequence charSequence) {
+        this.f7423b.setText(charSequence);
+    }
+
+    /* renamed from: a */
+    public void m10844a(boolean z) {
+    }
+
+    /* renamed from: a */
+    public void m10842a(int i) {
+        this.f7427f = null;
+        if (this.f7426e != null) {
+            C0328a.m757c().m764b(isShowing());
+            return;
+        }
+        super.show();
+        this.f7426e = new jb(this);
+        UThread.postDelayed(this.f7426e, (long) i);
+    }
+
+    public void setEnterAnimation(int i) {
+        this.f7424c = AnimationUtils.loadAnimation(getContext(), i);
+    }
+
+    public void setExitAnimation(int i) {
+        this.f7425d = AnimationUtils.loadAnimation(getContext(), i);
+        this.f7425d.setFillAfter(true);
+    }
+
+    public void open(OnCancelListener onCancelListener) {
+        super.open(onCancelListener);
+        show();
+    }
+
+    public void show() {
+        m10842a((int) HttpStatus.SC_INTERNAL_SERVER_ERROR);
+    }
+
+    public void dismiss() {
+        boolean z = true;
+        C0328a c;
+        if (!isShowing()) {
+            C0328a.m757c().m764b(this.f7426e == null);
+            c = C0328a.m757c();
+            if (this.f7427f != null) {
+                z = false;
+            }
+            c.m764b(z);
+        } else if (this.f7427f != null) {
+            c = C0328a.m757c();
+            if (this.f7426e != null) {
+                z = false;
+            }
+            c.m764b(z);
+        } else if (this.f7426e == null) {
+            c = C0328a.m757c();
+            if (this.f7422a.getVisibility() != 0) {
+                z = false;
+            }
+            c.m764b(z);
+            this.f7422a.setVisibility(4);
+            this.f7427f = new jc(this);
+            if (this.f7425d != null) {
+                this.f7425d.setAnimationListener(new jd(this));
+                this.f7422a.startAnimation(this.f7425d);
+                return;
+            }
+            UThread.post(this.f7427f);
+        } else {
+            c = C0328a.m757c();
+            if (this.f7422a.getVisibility() == 0) {
+                z = false;
+            }
+            c.m764b(z);
+            this.f7426e = null;
+            super.dismiss();
         }
     }
 }

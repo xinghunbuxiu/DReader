@@ -1,30 +1,32 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.core.ui.UTools;
-import com.duokan.reader.ui.ITheme;
+import com.duokan.core.sys.as;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.bookshelf.ai;
+import com.duokan.reader.domain.bookshelf.ee;
+import com.mipay.sdk.Mipay;
+import org.json.JSONObject;
 
-import java.util.concurrent.Callable;
+class it implements as {
+    /* renamed from: a */
+    final /* synthetic */ String f8013a;
+    /* renamed from: b */
+    final /* synthetic */ ci f8014b;
 
-class it implements Callable {
-    final /* synthetic */ PageController a;
-
-    it(PageController cgVar) {
-        this.a = cgVar;
+    it(ci ciVar, String str) {
+        this.f8014b = ciVar;
+        this.f8013a = str;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
-    }
-
-    public Integer a() {
-        int round;
-        ITheme sVar = (ITheme) MyContextWrapper.getFeature(this.a.pageController.getContext()).queryFeature(ITheme.class);
-        if (sVar != null) {
-            round = Math.round(UTools.closeAnimation(this.a.pageController.getContext(), sVar.getTheme().getPageHeaderPaddingTop()));
-        } else {
-            round = 0;
+    /* renamed from: a */
+    public void mo1831a() {
+        JSONObject jSONObject = new JSONObject(this.f8013a);
+        String string = jSONObject.getString("msgid");
+        C0800c b = ai.m3980a().m3906b(String.valueOf(jSONObject.getJSONObject("params").get("bookUuid")));
+        if (b instanceof ee) {
+            ((ee) b).m4410a(true, new iu(this, string), new iv(this, string));
+            return;
         }
-        return Integer.valueOf(round);
+        this.f8014b.f7581b.web_notifyWeb(string, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
     }
 }

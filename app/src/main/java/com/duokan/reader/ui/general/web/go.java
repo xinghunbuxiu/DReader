@@ -1,29 +1,22 @@
 package com.duokan.reader.ui.general.web;
 
-import android.text.TextUtils;
+import com.duokan.reader.common.p037c.C0559f;
+import java.util.concurrent.Callable;
 
-import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.sys.af;
-import com.duokan.core.sys.as;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.ui.reading.sh;
+class go implements Callable<Boolean> {
+    /* renamed from: a */
+    final /* synthetic */ ci f7894a;
 
-class go implements as {
-    final /* synthetic */ gn a;
-
-    go(gn gnVar) {
-        this.a = gnVar;
+    go(ci ciVar) {
+        this.f7894a = ciVar;
     }
 
-    public void a() {
-        sh shVar = (sh) this.a.b.pageController.getContext().queryFeature(sh.class);
-        if (shVar != null) {
-            c G = shVar.G();
-            if (TextUtils.equals(G.H(), this.a.a) && G.k()) {
-                a.c().a(LogLevel.EVENT, "autopay", "confirm(allowed: %s, book: %s(%s))", "" + shVar.ag(), G.aw(), this.a.a);
-                G.a(new af(Boolean.valueOf(r0)));
-                G.aL();
-            }
-        }
+    public /* synthetic */ Object call() {
+        return m11154a();
+    }
+
+    /* renamed from: a */
+    public Boolean m11154a() {
+        return Boolean.valueOf(C0559f.m2476b().m2485d());
     }
 }

@@ -3,7 +3,6 @@ package com.duokan.core.ui;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.EditText;
-
 import com.duokan.reader.DkApp;
 
 public class DkEditorView extends EditText {

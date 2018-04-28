@@ -3,15 +3,21 @@ package com.duokan.reader.ui.general.web;
 import com.duokan.core.sys.as;
 
 class cv implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
+    /* renamed from: a */
+    final /* synthetic */ boolean f7705a;
+    /* renamed from: b */
+    final /* synthetic */ String f7706b;
+    /* renamed from: c */
+    final /* synthetic */ cu f7707c;
 
-    cv(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    cv(cu cuVar, boolean z, String str) {
+        this.f7707c = cuVar;
+        this.f7705a = z;
+        this.f7706b = str;
     }
 
-    public void a() {
-        this.b.pageController.doShowToast(this.a);
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7707c.f7704b.f7581b.js_button(this.f7705a, this.f7706b);
     }
 }

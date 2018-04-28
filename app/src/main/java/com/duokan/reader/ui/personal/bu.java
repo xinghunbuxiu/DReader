@@ -1,70 +1,28 @@
 package com.duokan.reader.ui.personal;
 
-import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
+import com.duokan.core.sys.UThread;
+import com.duokan.reader.domain.cloud.C0840a;
 
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.c.j;
-import com.duokan.core.ui.UTools;
-import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.ui.general.PageHeaderView;
-import com.duokan.reader.ui.general.af;
-import com.duokan.reader.ui.general.be;
-import com.duokan.reader.ui.general.hm;
-import com.duokan.reader.ui.general.jq;
+class bu implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ C0840a f8364a;
+    /* renamed from: b */
+    final /* synthetic */ bt f8365b;
 
-class bu extends af {
-    final /* synthetic */ bo a;
-    private final EditText b;
-    private final jq c;
-    private final String d;
-
-    public bu(bo boVar, Context context, String str) {
-        this.a = boVar;
-        super(context);
-        this.d = str;
-        setContentView(h.personal__feedback_reply_view);
-        PageHeaderView pageHeaderView = (PageHeaderView) findViewById(g.personal__feedback_reply_view__header);
-        pageHeaderView.setLeftTitle(j.personal__feedback_thread_view__title);
-        View findViewById = findViewById(g.personal__feedback_reply_view__container);
-        if (ReaderEnv.get().forHd()) {
-            pageHeaderView.setBackgroundDrawable(new hm(new ColorDrawable(Color.parseColor("#ffffff")), (float) UTools.getMinimumHeight(getContext(), 6.0f), 3));
-            findViewById.setBackgroundDrawable(new hm(new ColorDrawable(Color.parseColor("#efeff1")), (float) UTools.getMinimumHeight(getContext(), 6.0f), 12));
-        } else {
-            pageHeaderView.setBackgroundColor(Color.parseColor("#ffffff"));
-            findViewById.setBackgroundColor(Color.parseColor("#efeff1"));
-        }
-        pageHeaderView.setOnBackListener(new bv(this, boVar));
-        TextView b = pageHeaderView.b(getContext().getString(j.general__shared__send));
-        b.setTextColor(Color.parseColor("#f35d02"));
-        b.setOnClickListener(new bw(this, boVar));
-        this.b = (EditText) findViewById(g.personal__feedback_reply_view__content);
-        this.c = new jq(getContext());
-        this.c.setCancelOnBack(false);
-        this.c.setCancelOnTouchOutside(false);
-        setResizeForSoftInput(true);
+    bu(bt btVar, C0840a c0840a) {
+        this.f8365b = btVar;
+        this.f8364a = c0840a;
     }
 
-    private void a() {
-        if (TextUtils.isEmpty(this.b.getText())) {
-            be.a(getContext(), j.personal__feedback_thread_view__empty_feed, 0).show();
-            return;
+    public void run() {
+        if (this.f8365b.f8363d.f8354i != this.f8365b.f8360a) {
+            this.f8365b.f8363d.f8354i = this.f8365b.f8360a;
+            this.f8365b.f8363d.f8355j = this.f8365b.f8361b;
+            this.f8365b.f8363d.f8352g = this.f8364a;
+            if (this.f8365b.f8363d.f8356k != null && this.f8365b.f8363d.f8356k.isAttached()) {
+                this.f8365b.f8363d.f8356k.m12226a(this.f8365b.f8363d.f8354i);
+            }
+            UThread.post(this.f8365b.f8362c);
         }
-        if (!this.c.isShowing()) {
-            this.c.a(getContext().getString(j.personal__create_feedback_view__post_thread));
-            this.c.show();
-        }
-        UTools.hideSoftInputFromWindow(getContext());
-        b();
-    }
-
-    private void b() {
-        new bx(this).open();
     }
 }

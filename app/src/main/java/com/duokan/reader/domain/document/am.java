@@ -1,13 +1,14 @@
 package com.duokan.reader.domain.document;
 
 class am implements Runnable {
-    final /* synthetic */ al a;
+    /* renamed from: a */
+    final /* synthetic */ al f4411a;
 
     am(al alVar) {
-        this.a = alVar;
+        this.f4411a = alVar;
     }
 
     public void run() {
-        this.a.b();
+        this.f4411a.m6352b();
     }
 }

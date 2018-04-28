@@ -1,48 +1,17 @@
 package com.duokan.reader.ui.personal;
 
-import android.os.AsyncTask;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.ui.general.be;
 
-import com.duokan.reader.domain.bookshelf.iy;
-import com.duokan.reader.domain.micloud.bj;
+class ex implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ ev f8528a;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-
-class ex extends AsyncTask {
-    final /* synthetic */ ArrayList a;
-    final /* synthetic */ ArrayList b;
-    final /* synthetic */ bj c;
-    final /* synthetic */ ew d;
-
-    ex(ew ewVar, ArrayList arrayList, ArrayList arrayList2, bj bjVar) {
-        this.d = ewVar;
-        this.a = arrayList;
-        this.b = arrayList2;
-        this.c = bjVar;
+    ex(ev evVar) {
+        this.f8528a = evVar;
     }
 
-    protected /* synthetic */ Object doInBackground(Object[] objArr) {
-        return a((Void[]) objArr);
-    }
-
-    protected /* synthetic */ void onPostExecute(Object obj) {
-        a((Void) obj);
-    }
-
-    protected Void a(Void... voidArr) {
-        Iterator it = this.a.iterator();
-        while (it.hasNext()) {
-            this.b.add(new CustomCloudItem((iy) it.next()));
-        }
-        Collections.sort(this.b, new ey(this));
-        return null;
-    }
-
-    protected void a(Void voidR) {
-        super.onPostExecute(voidR);
-        this.d.a.setSpaceQuota(this.c);
-        this.d.a.setData(this.b);
-        this.d.c();
+    public void run() {
+        be.m10286a(this.f8528a.f8526a.f8523a, C0258j.general__shared__login_failed, 0).show();
     }
 }

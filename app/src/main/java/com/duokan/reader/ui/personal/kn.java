@@ -1,22 +1,31 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.FeatureListening;
-import com.duokan.reader.domain.cloud.DkCloudStoreBook;
+import android.text.TextUtils;
+import com.duokan.reader.DkApp;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.bookshelf.fp;
+import com.duokan.reader.domain.cloud.DkCloudBookManifest;
+import com.duokan.reader.domain.cloud.ah;
+import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
+import com.duokan.reader.ui.general.be;
 
-import java.util.List;
+final class kn implements ah {
+    /* renamed from: a */
+    final /* synthetic */ C0800c f8820a;
 
-public interface kn extends FeatureListening {
-    PurchasedSortType a();
+    kn(C0800c c0800c) {
+        this.f8820a = c0800c;
+    }
 
-    void a(DkCloudStoreBook dkCloudStoreBook);
+    /* renamed from: a */
+    public void mo1047a(String str, DkCloudBookManifest dkCloudBookManifest) {
+        ((fp) this.f8820a).m4481a(dkCloudBookManifest, FlowChargingTransferChoice.Default.wifiOnly());
+    }
 
-    void a(PurchasedSortType purchasedSortType);
-
-    void a(Runnable runnable, List list);
-
-    void b();
-
-    void c();
-
-    void d();
+    /* renamed from: a */
+    public void mo1048a(String str, String str2) {
+        if (!TextUtils.isEmpty(str2)) {
+            be.m10287a(DkApp.get(), (CharSequence) str2, 1).show();
+        }
+    }
 }

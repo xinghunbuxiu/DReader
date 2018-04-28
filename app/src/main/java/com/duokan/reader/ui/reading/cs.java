@@ -1,14 +1,30 @@
 package com.duokan.reader.ui.reading;
 
-class cs implements Runnable {
-    final /* synthetic */ cr a;
+import android.graphics.Bitmap;
 
-    cs(cr crVar) {
-        this.a = crVar;
+class cs extends acc {
+    /* renamed from: a */
+    final /* synthetic */ int f9959a;
+    /* renamed from: b */
+    final /* synthetic */ cr f9960b;
+
+    cs(cr crVar, int i) {
+        this.f9960b = crVar;
+        this.f9959a = i;
     }
 
-    public void run() {
-        this.a.c.a.aR();
-        this.a.c.b.f();
+    /* renamed from: a */
+    public int mo2304a() {
+        return this.f9960b.f9958a.m13863r().mo1254a(this.f9959a).mo1430b();
+    }
+
+    /* renamed from: b */
+    public int mo2306b() {
+        return this.f9960b.f9958a.m13863r().mo1254a(this.f9959a).mo1431c();
+    }
+
+    /* renamed from: a */
+    public Bitmap mo2305a(int i, int i2) {
+        return this.f9960b.f9958a.m13863r().mo1254a(this.f9959a).mo1428a(i, i2);
     }
 }

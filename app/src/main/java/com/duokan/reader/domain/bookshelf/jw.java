@@ -1,17 +1,14 @@
 package com.duokan.reader.domain.bookshelf;
 
 class jw implements Runnable {
-    final /* synthetic */ fe a;
-    final /* synthetic */ jv b;
+    /* renamed from: a */
+    final /* synthetic */ jp f3420a;
 
-    jw(jv jvVar, fe feVar) {
-        this.b = jvVar;
-        this.a = feVar;
+    jw(jp jpVar) {
+        this.f3420a = jpVar;
     }
 
     public void run() {
-        if (this.a.c != null) {
-            this.a.c.a(this.a.b);
-        }
+        this.f3420a.m4742a(this.f3420a.f3405b.m8115c().m8262b("/Books"), null);
     }
 }

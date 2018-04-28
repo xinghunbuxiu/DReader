@@ -1,14 +1,24 @@
 package com.duokan.reader.domain.document.sbk;
 
 public class ag extends aj {
-    public long a = -1;
-    public long b = -1;
-    public long c = -1;
-    public long d = -1;
-    public long e = -1;
-    public long f = -1;
-    public boolean g = false;
-    public boolean h = false;
-    public int i = 0;
-    public int j = 0;
+    /* renamed from: a */
+    public long f4780a = -1;
+    /* renamed from: b */
+    public long f4781b = -1;
+    /* renamed from: c */
+    public long f4782c = -1;
+    /* renamed from: d */
+    public long f4783d = -1;
+    /* renamed from: e */
+    public long f4784e = -1;
+    /* renamed from: f */
+    public long f4785f = -1;
+    /* renamed from: g */
+    public boolean f4786g = false;
+    /* renamed from: h */
+    public boolean f4787h = false;
+    /* renamed from: i */
+    public int f4788i = 0;
+    /* renamed from: j */
+    public int f4789j = 0;
 }

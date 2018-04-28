@@ -15,22 +15,35 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.core.ui.UTools;
-import com.duokan.reader.ui.ITheme;
+import com.duokan.core.app.AppContext;
+import com.duokan.core.ui.dv;
+import com.duokan.p023b.C0241c;
+import com.duokan.p023b.C0242d;
+import com.duokan.p023b.C0244f;
+import com.duokan.p023b.C0245g;
+import com.duokan.reader.ui.C0435s;
 
 public class HeaderView extends FrameLayout {
-    private final ImageView a;
-    private final LinearLayout b;
-    private final LinearLayout c;
-    private final LinearLayout d;
-    private final TextView e;
-    private final TextView f;
-    private final et g;
-    private final View h;
-    private int i;
-    private dj j;
+    /* renamed from: a */
+    private final ImageView f6865a;
+    /* renamed from: b */
+    private final LinearLayout f6866b;
+    /* renamed from: c */
+    private final LinearLayout f6867c;
+    /* renamed from: d */
+    private final LinearLayout f6868d;
+    /* renamed from: e */
+    private final TextView f6869e;
+    /* renamed from: f */
+    private final TextView f6870f;
+    /* renamed from: g */
+    private final er f6871g;
+    /* renamed from: h */
+    private final View f6872h;
+    /* renamed from: i */
+    private int f6873i;
+    /* renamed from: j */
+    private dj f6874j;
 
     public HeaderView(Context context) {
         this(context, null);
@@ -39,174 +52,181 @@ public class HeaderView extends FrameLayout {
     @TargetApi(14)
     public HeaderView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.i = -1;
-        this.j = null;
-        inflate(context, g.general__header_view, this);
-        this.a = (ImageView) findViewById(f.general__header_view__back);
-        this.b = (LinearLayout) findViewById(f.general__header_view__left_buttons);
-        this.c = (LinearLayout) findViewById(f.general__header_view__right_buttons);
-        this.d = (LinearLayout) findViewById(f.general__header_view__center_buttons);
-        this.e = (TextView) findViewById(f.general__header_view__left_title);
-        this.e.getPaint().setFakeBoldText(true);
-        this.f = (TextView) findViewById(f.general__header_view__center_title);
-        this.f.getPaint().setFakeBoldText(true);
-        this.a.setOnClickListener(new di(this));
-        this.h = new View(getContext());
-        this.h.setBackgroundColor(getResources().getColor(c.general__shared__page_header_divider));
-        addView(this.h, new LayoutParams(-1, 1, 80));
+        this.f6873i = -1;
+        this.f6874j = null;
+        inflate(context, C0245g.general__header_view, this);
+        this.f6865a = (ImageView) findViewById(C0244f.general__header_view__back);
+        this.f6866b = (LinearLayout) findViewById(C0244f.general__header_view__left_buttons);
+        this.f6867c = (LinearLayout) findViewById(C0244f.general__header_view__right_buttons);
+        this.f6868d = (LinearLayout) findViewById(C0244f.general__header_view__center_buttons);
+        this.f6869e = (TextView) findViewById(C0244f.general__header_view__left_title);
+        this.f6869e.getPaint().setFakeBoldText(true);
+        this.f6870f = (TextView) findViewById(C0244f.general__header_view__center_title);
+        this.f6870f.getPaint().setFakeBoldText(true);
+        this.f6865a.setOnClickListener(new di(this));
+        this.f6872h = new View(getContext());
+        this.f6872h.setBackgroundColor(getResources().getColor(C0241c.general__shared__page_header_divider));
+        addView(this.f6872h, new LayoutParams(-1, 1, 80));
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, new int[]{16842964});
         if (!obtainStyledAttributes.hasValue(0)) {
-            setBackgroundColor(getContext().getResources().getColor(c.general__shared__ffffff));
+            setBackgroundColor(getContext().getResources().getColor(C0241c.general__shared__ffffff));
         }
         obtainStyledAttributes.recycle();
-        this.g = new et(context);
+        this.f6871g = new er(context);
         setWillNotDraw(false);
     }
 
     public boolean getHasBackButton() {
-        return this.a.getVisibility() == 0;
+        return this.f6865a.getVisibility() == 0;
     }
 
     public void setHasBackButton(boolean z) {
-        this.a.setVisibility(z ? 0 : 8);
+        this.f6865a.setVisibility(z ? 0 : 8);
     }
 
     public void setOnBackListener(dj djVar) {
-        this.j = djVar;
+        this.f6874j = djVar;
     }
 
     public void setBackDrawable(Drawable drawable) {
-        this.a.setImageDrawable(drawable);
+        this.f6865a.setImageDrawable(drawable);
     }
 
     public void setLeftTitle(int i) {
-        this.e.setText(i);
+        this.f6869e.setText(i);
     }
 
     public void setLeftTitle(String str) {
-        this.e.setText(str);
+        this.f6869e.setText(str);
     }
 
     public TextView getCenterTitleView() {
-        return this.f;
+        return this.f6870f;
     }
 
     public void setCenterTitle(int i) {
-        this.f.setText(i);
+        this.f6870f.setText(i);
     }
 
     public void setCenterTitle(String str) {
-        this.f.setText(str);
+        this.f6870f.setText(str);
     }
 
     public void setTitleTextColor(int i) {
-        this.e.setTextColor(i);
-        this.f.setTextColor(i);
+        this.f6869e.setTextColor(i);
+        this.f6870f.setTextColor(i);
     }
 
     public void setTitleTextSize(float f) {
-        this.e.setTextSize(0, f);
+        this.f6869e.setTextSize(0, f);
     }
 
     public void setCenterTitleNoticeNum(int i) {
-        this.g.a("" + i);
+        this.f6871g.m10570a("" + i);
         invalidate();
     }
 
-    public TextView a(String str) {
-        View a = a(getContext(), str);
-        this.b.addView(a, new LinearLayout.LayoutParams(-2, -1));
+    /* renamed from: a */
+    public TextView m10144a(String str) {
+        View a = m10141a(getContext(), str);
+        this.f6866b.addView(a, new LinearLayout.LayoutParams(-2, -1));
         return a;
     }
 
-    public void a(View view) {
-        this.c.addView(view, 0, new LinearLayout.LayoutParams(-2, -1));
+    /* renamed from: a */
+    public void m10146a(View view) {
+        this.f6867c.addView(view, 0, new LinearLayout.LayoutParams(-2, -1));
     }
 
-    public ImageView a(Drawable drawable) {
+    /* renamed from: a */
+    public ImageView m10143a(Drawable drawable) {
         View imageView = new ImageView(getContext());
         imageView.setImageDrawable(drawable);
         imageView.setScaleType(ScaleType.CENTER);
-        imageView.setMinimumWidth(UTools.getMinimumHeight(getContext(), 40.0f));
-        this.c.addView(imageView, 0, new LinearLayout.LayoutParams(-2, -1));
+        imageView.setMinimumWidth(dv.m1932b(getContext(), 40.0f));
+        this.f6867c.addView(imageView, 0, new LinearLayout.LayoutParams(-2, -1));
         return imageView;
     }
 
-    public TextView b(String str) {
-        View a = a(getContext(), str);
-        this.c.addView(a, 0, new LinearLayout.LayoutParams(-2, -1));
+    /* renamed from: b */
+    public TextView m10148b(String str) {
+        View a = m10141a(getContext(), str);
+        this.f6867c.addView(a, 0, new LinearLayout.LayoutParams(-2, -1));
         return a;
     }
 
-    public void a(String str, OnClickListener onClickListener) {
+    /* renamed from: a */
+    public void m10147a(String str, OnClickListener onClickListener) {
         if (!TextUtils.isEmpty(str)) {
             View textView = new TextView(getContext());
             textView.setTextSize(16.0f);
-            textView.setPadding(UTools.getMinimumHeight(getContext(), 15.0f), 0, UTools.getMinimumHeight(getContext(), 15.0f), 0);
+            textView.setPadding(dv.m1932b(getContext(), 15.0f), 0, dv.m1932b(getContext(), 15.0f), 0);
             textView.setGravity(17);
             textView.setText(str);
             textView.setSingleLine(true);
-            textView.setTextColor(getResources().getColorStateList(c.general__shared__666666_selected));
+            textView.setTextColor(getResources().getColorStateList(C0241c.general__shared__666666_selected));
             if (onClickListener != null) {
                 textView.setOnClickListener(onClickListener);
             }
-            this.d.addView(textView, new LinearLayout.LayoutParams(-2, -1));
+            this.f6868d.addView(textView, new LinearLayout.LayoutParams(-2, -1));
         }
     }
 
     public ViewGroup getCenterButtonView() {
-        return this.d;
+        return this.f6868d;
     }
 
-    public void a() {
-        this.c.removeAllViews();
+    /* renamed from: a */
+    public void m10145a() {
+        this.f6867c.removeAllViews();
     }
 
     public void setBottomLineColor(int i) {
-        this.h.setVisibility(0);
-        this.h.setBackgroundColor(i);
+        this.f6872h.setVisibility(0);
+        this.f6872h.setBackgroundColor(i);
     }
 
     public void setBottomLineHeight(int i) {
-        this.h.setVisibility(0);
-        ViewGroup.LayoutParams layoutParams = this.h.getLayoutParams();
+        this.f6872h.setVisibility(0);
+        ViewGroup.LayoutParams layoutParams = this.f6872h.getLayoutParams();
         layoutParams.height = i;
-        this.h.setLayoutParams(layoutParams);
+        this.f6872h.setLayoutParams(layoutParams);
     }
 
     protected void onMeasure(int i, int i2) {
-        int pageHeaderHeight = ((ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class)).getTheme().getPageHeaderHeight();
-        int pageHeaderPaddingTop = ((ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class)).getTheme().getPageHeaderPaddingTop();
+        int pageHeaderHeight = ((C0435s) AppContext.getAppContext(getContext()).queryFeature(C0435s.class)).getTheme().getPageHeaderHeight();
+        int pageHeaderPaddingTop = ((C0435s) AppContext.getAppContext(getContext()).queryFeature(C0435s.class)).getTheme().getPageHeaderPaddingTop();
         if (getPaddingTop() != pageHeaderPaddingTop) {
             setPadding(0, pageHeaderPaddingTop, 0, 0);
         }
         super.onMeasure(i, MeasureSpec.makeMeasureSpec(pageHeaderHeight, 1073741824));
-        pageHeaderPaddingTop = getMeasuredWidth() - (Math.max((this.a.getVisibility() == 8 ? 0 : this.a.getMeasuredWidth()) + this.b.getMeasuredWidth(), this.c.getMeasuredWidth()) * 2);
-        if (this.i != pageHeaderPaddingTop) {
-            this.i = pageHeaderPaddingTop;
-            this.f.setMaxWidth(this.i);
+        pageHeaderPaddingTop = getMeasuredWidth() - (Math.max((this.f6865a.getVisibility() == 8 ? 0 : this.f6865a.getMeasuredWidth()) + this.f6866b.getMeasuredWidth(), this.f6867c.getMeasuredWidth()) * 2);
+        if (this.f6873i != pageHeaderPaddingTop) {
+            this.f6873i = pageHeaderPaddingTop;
+            this.f6870f.setMaxWidth(this.f6873i);
         }
         super.onMeasure(i, MeasureSpec.makeMeasureSpec(pageHeaderHeight, 1073741824));
     }
 
     public void draw(Canvas canvas) {
         super.draw(canvas);
-        if (!TextUtils.isEmpty(this.f.getText())) {
+        if (!TextUtils.isEmpty(this.f6870f.getText())) {
             canvas.save();
-            Rect a = UTools.getRect(new Rect(), this.f, (View) this);
-            this.g.setBounds(new Rect(a.right - (this.g.getIntrinsicWidth() / 2), a.top - (this.g.getIntrinsicHeight() / 2), a.right + (this.g.getIntrinsicWidth() / 2), a.top + (this.g.getIntrinsicHeight() / 2)));
-            this.g.draw(canvas);
+            Rect a = dv.m1904a(new Rect(), this.f6870f, (View) this);
+            this.f6871g.setBounds(new Rect(a.right - (this.f6871g.getIntrinsicWidth() / 2), a.top - (this.f6871g.getIntrinsicHeight() / 2), a.right + (this.f6871g.getIntrinsicWidth() / 2), a.top + (this.f6871g.getIntrinsicHeight() / 2)));
+            this.f6871g.draw(canvas);
             canvas.restore();
         }
     }
 
-    private TextView a(Context context, String str) {
+    /* renamed from: a */
+    private TextView m10141a(Context context, String str) {
         TextView textView = new TextView(getContext());
-        textView.setTextSize(0, getResources().getDimension(d.general_font__shared__t3));
-        textView.setTextColor(getResources().getColor(c.general__shared__c5));
+        textView.setTextSize(0, getResources().getDimension(C0242d.general_font__shared__t3));
+        textView.setTextColor(getResources().getColor(C0241c.general__shared__c5));
         textView.setText(str);
         textView.setGravity(17);
-        int b = UTools.getMinimumHeight(getContext(), 15.0f);
+        int b = dv.m1932b(getContext(), 15.0f);
         textView.setPadding(b, 0, b, 0);
         return textView;
     }

@@ -1,23 +1,23 @@
 package com.duokan.reader.ui.surfing;
 
-import android.widget.FrameLayout;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
 
-import com.duokan.core.sys.TaskHandler;
+class ae extends Animation {
+    /* renamed from: a */
+    final /* synthetic */ int f11507a;
+    /* renamed from: b */
+    final /* synthetic */ int f11508b;
+    /* renamed from: c */
+    final /* synthetic */ ad f11509c;
 
-class ae implements Runnable {
-    final /* synthetic */ FrameLayout a;
-    final /* synthetic */ Runnable b;
-    final /* synthetic */ f c;
-
-    ae(f fVar, FrameLayout frameLayout, Runnable runnable) {
-        this.c = fVar;
-        this.a = frameLayout;
-        this.b = runnable;
+    ae(ad adVar, int i, int i2) {
+        this.f11509c = adVar;
+        this.f11507a = i;
+        this.f11508b = i2;
     }
 
-    public void run() {
-        this.c.h.removeView(this.a);
-        this.a.removeAllViews();
-        TaskHandler.postTask(this.b);
+    protected void applyTransformation(float f, Transformation transformation) {
+        this.f11509c.f11506d.f11549q.m15332a(((int) (((float) (this.f11507a - this.f11508b)) * f)) + this.f11508b);
     }
 }

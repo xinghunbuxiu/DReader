@@ -4,99 +4,108 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.c.j;
-import com.duokan.reader.common.webservices.duokan.y;
+import com.duokan.p024c.C0255g;
+import com.duokan.p024c.C0256h;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.common.webservices.duokan.C0650x;
 import com.duokan.reader.domain.cloud.DkCloudFictionChapter;
 import com.duokan.reader.domain.cloud.DkCloudFictionChapter.ChapterState;
 import com.duokan.reader.ui.general.expandable.StateExpandableAdapter;
+import com.duokan.reader.ui.general.expandable.StateExpandableAdapter.ExpandableAdapterState;
 
 class bf extends StateExpandableAdapter {
-    static final /* synthetic */ boolean a = (!bc.class.desiredAssertionStatus());
-    final /* synthetic */ bc c;
+    /* renamed from: a */
+    static final /* synthetic */ boolean f11363a = (!bc.class.desiredAssertionStatus());
+    /* renamed from: c */
+    final /* synthetic */ bc f11364c;
 
     bf(bc bcVar) {
-        this.c = bcVar;
+        this.f11364c = bcVar;
     }
 
-    public int a() {
+    /* renamed from: a */
+    public int mo486a() {
         int i = 0;
-        if (this.c.c.length == 0) {
+        if (this.f11364c.f11359c.length == 0) {
             return 0;
         }
-        int length = this.c.c.length / 100;
-        if (this.c.c.length % 100 > 0) {
+        int length = this.f11364c.f11359c.length / 100;
+        if (this.f11364c.f11359c.length % 100 > 0) {
             i = 1;
         }
         return i + length;
     }
 
-    public int h(int i) {
-        if (i == a() - 1) {
-            return this.c.c.length - (i * 100);
+    /* renamed from: h */
+    public int mo2457h(int i) {
+        if (i == mo486a() - 1) {
+            return this.f11364c.f11359c.length - (i * 100);
         }
-        if (this.c.c.length < 100) {
-            return this.c.c.length;
+        if (this.f11364c.f11359c.length < 100) {
+            return this.f11364c.f11359c.length;
         }
         return 100;
     }
 
-    public Object i(int i) {
+    /* renamed from: i */
+    public Object mo2458i(int i) {
         return null;
     }
 
-    public Object b(int i, int i2) {
-        return this.c.c[(i * 100) + i2];
+    /* renamed from: b */
+    public Object mo2456b(int i, int i2) {
+        return this.f11364c.f11359c[(i * 100) + i2];
     }
 
-    public void h() {
-        if (this.c.c != null) {
-            for (int i = 0; i < a(); i++) {
-                for (int i2 = 0; i2 < h(i); i2++) {
-                    ExpandableAdapterState expandableAdapterState = ((DkCloudFictionChapter) b(i, i2)).getChapterState().ordinal() < ChapterState.FREE.ordinal() ? ExpandableAdapterState.UNSELECT : ExpandableAdapterState.IGNORE;
-                    if (c(i, i2) == ExpandableAdapterState.SELECTED && expandableAdapterState != ExpandableAdapterState.IGNORE) {
+    /* renamed from: h */
+    public void mo2529h() {
+        if (this.f11364c.f11359c != null) {
+            for (int i = 0; i < mo486a(); i++) {
+                for (int i2 = 0; i2 < mo2457h(i); i2++) {
+                    ExpandableAdapterState expandableAdapterState = ((DkCloudFictionChapter) mo2456b(i, i2)).getChapterState().ordinal() < ChapterState.FREE.ordinal() ? ExpandableAdapterState.UNSELECT : ExpandableAdapterState.IGNORE;
+                    if (m10580c(i, i2) == ExpandableAdapterState.SELECTED && expandableAdapterState != ExpandableAdapterState.IGNORE) {
                         expandableAdapterState = ExpandableAdapterState.SELECTED;
                     }
-                    a(i, i2, expandableAdapterState, false);
+                    m10579a(i, i2, expandableAdapterState, false);
                 }
             }
         }
     }
 
-    public View a(int i, boolean z, View view, ViewGroup viewGroup) {
-        if (view == null || view.findViewById(g.store__fiction_toc_item_header_view__title) == null) {
-            view = LayoutInflater.from(this.c.getContext()).inflate(h.store__fiction_toc_item_header_view, viewGroup, false);
+    /* renamed from: a */
+    public View mo2455a(int i, boolean z, View view, ViewGroup viewGroup) {
+        if (view == null || view.findViewById(C0255g.store__fiction_toc_item_header_view__title) == null) {
+            view = LayoutInflater.from(this.f11364c.getContext()).inflate(C0256h.store__fiction_toc_item_header_view, viewGroup, false);
         }
-        int f = f();
-        View findViewById = view.findViewById(g.store__fiction_toc_item_header_view__split);
+        int f = m10355f();
+        View findViewById = view.findViewById(C0255g.store__fiction_toc_item_header_view__split);
         f = (f == -1 || f != i - 1) ? 4 : 0;
         findViewById.setVisibility(f);
-        view.findViewById(g.store__fiction_toc_item_header_view__expand).setSelected(z);
-        ((TextView) view.findViewById(g.store__fiction_toc_item_header_view__title)).setText(String.format(this.c.getContext().getString(j.store__fiction_chapter_view__chapter_group), new Object[]{Integer.valueOf((i * 100) + 1), Integer.valueOf((i * 100) + h(i))}));
-        view.findViewById(g.store__fiction_toc_item_header_view__choice).setVisibility(4);
+        view.findViewById(C0255g.store__fiction_toc_item_header_view__expand).setSelected(z);
+        ((TextView) view.findViewById(C0255g.store__fiction_toc_item_header_view__title)).setText(String.format(this.f11364c.getContext().getString(C0258j.store__fiction_chapter_view__chapter_group), new Object[]{Integer.valueOf((i * 100) + 1), Integer.valueOf((i * 100) + mo2457h(i))}));
+        view.findViewById(C0255g.store__fiction_toc_item_header_view__choice).setVisibility(4);
         return view;
     }
 
-    public View a(int i, int i2, View view, ViewGroup viewGroup) {
-        if (view == null || view.findViewById(g.store__fiction_toc_item_view__title) == null) {
-            view = LayoutInflater.from(this.c.getContext()).inflate(h.store__fiction_toc_item_view, viewGroup, false);
+    /* renamed from: a */
+    public View mo2454a(int i, int i2, View view, ViewGroup viewGroup) {
+        if (view == null || view.findViewById(C0255g.store__fiction_toc_item_view__title) == null) {
+            view = LayoutInflater.from(this.f11364c.getContext()).inflate(C0256h.store__fiction_toc_item_view, viewGroup, false);
         }
-        DkCloudFictionChapter dkCloudFictionChapter = (DkCloudFictionChapter) b(i, i2);
-        ((TextView) view.findViewById(g.store__fiction_toc_item_view__title)).setText(dkCloudFictionChapter.getTitle());
-        TextView textView = (TextView) view.findViewById(g.store__fiction_toc_item_view__update);
+        DkCloudFictionChapter dkCloudFictionChapter = (DkCloudFictionChapter) mo2456b(i, i2);
+        ((TextView) view.findViewById(C0255g.store__fiction_toc_item_view__title)).setText(dkCloudFictionChapter.getTitle());
+        TextView textView = (TextView) view.findViewById(C0255g.store__fiction_toc_item_view__update);
         if (dkCloudFictionChapter.isFree()) {
-            textView.setText(j.store__shared__free);
-        } else if (new y(this.c.b.getFiction().getBookUuid()).b() == 0) {
-            textView.setText(this.c.getResources().getString(j.store__shared__yuan) + String.format("%.2f", new Object[]{Float.valueOf(((float) dkCloudFictionChapter.getPrice()) / 100.0f)}));
+            textView.setText(C0258j.store__shared__free);
+        } else if (new C0650x(this.f11364c.f11358b.getFiction().getBookUuid()).m3047b() == 0) {
+            textView.setText(this.f11364c.getResources().getString(C0258j.store__shared__yuan) + String.format("%.2f", new Object[]{Float.valueOf(((float) dkCloudFictionChapter.getPrice()) / 100.0f)}));
         } else {
-            textView.setText(this.c.getResources().getString(j.store__shared__yuan) + this.c.b.getFeeDescription());
+            textView.setText(this.f11364c.getResources().getString(C0258j.store__shared__yuan) + this.f11364c.f11358b.getFeeDescription());
         }
-        ExpandableAdapterState c = c(i, i2);
-        View findViewById = view.findViewById(g.store__fiction_toc_item_view__choice);
-        textView = (TextView) view.findViewById(g.store__fiction_toc_item_view__state);
-        View findViewById2 = view.findViewById(g.store__fiction_toc_item_view__lock);
+        ExpandableAdapterState c = m10580c(i, i2);
+        View findViewById = view.findViewById(C0255g.store__fiction_toc_item_view__choice);
+        textView = (TextView) view.findViewById(C0255g.store__fiction_toc_item_view__state);
+        View findViewById2 = view.findViewById(C0255g.store__fiction_toc_item_view__lock);
         if (c != ExpandableAdapterState.IGNORE) {
             findViewById.setVisibility(4);
             textView.setVisibility(8);
@@ -104,12 +113,12 @@ class bf extends StateExpandableAdapter {
         } else {
             findViewById.setVisibility(4);
             textView.setVisibility(0);
-            switch (bh.a[dkCloudFictionChapter.getChapterState().ordinal()]) {
+            switch (bh.f11367a[dkCloudFictionChapter.getChapterState().ordinal()]) {
                 case 1:
-                    textView.setText(j.store__shared__order);
+                    textView.setText(C0258j.store__shared__order);
                     break;
                 case 2:
-                    if (!a) {
+                    if (!f11363a) {
                         throw new AssertionError();
                     }
                     break;
@@ -122,7 +131,8 @@ class bf extends StateExpandableAdapter {
         return view;
     }
 
-    public void j(int i) {
-        this.c.d(i);
+    /* renamed from: j */
+    public void mo2459j(int i) {
+        this.f11364c.m1256d(i);
     }
 }

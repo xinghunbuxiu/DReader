@@ -1,19 +1,22 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.ui.cs;
+import com.duokan.reader.ui.general.cy;
 
-class fn implements cs {
-    final /* synthetic */ fh a;
+class fn extends cy {
+    /* renamed from: b */
+    final /* synthetic */ FileExplorerFlipperView f6455b;
 
-    fn(fh fhVar) {
-        this.a = fhVar;
+    fn(FileExplorerFlipperView fileExplorerFlipperView) {
+        this.f6455b = fileExplorerFlipperView;
+        super(fileExplorerFlipperView);
     }
 
-    public void a(int i, int i2, boolean z) {
+    /* renamed from: a */
+    protected float mo1695a(float f) {
+        return 1.0f;
     }
 
-    public void b(int i, int i2, boolean z) {
-        this.a.d.b(i2);
-        this.a.b.setVisibility(i2 == 0 ? 4 : 0);
+    protected int ab() {
+        return super.ab() + 1;
     }
 }

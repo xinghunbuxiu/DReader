@@ -1,26 +1,17 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.as;
-import com.duokan.reader.common.i;
+import com.duokan.reader.ui.general.hq;
 
-import org.json.JSONObject;
+class fe implements hq {
+    /* renamed from: a */
+    final /* synthetic */ fd f7827a;
 
-class fe implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
-
-    fe(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    fe(fd fdVar) {
+        this.f7827a = fdVar;
     }
 
-    public void a() {
-        JSONObject jSONObject = new JSONObject(this.a);
-        JSONObject optJSONObject = jSONObject.optJSONObject("flag");
-        boolean z = jSONObject.getBoolean("show");
-        boolean z2 = jSONObject.getBoolean("focus");
-        String b = i.b(jSONObject, "hint");
-        String b2 = i.b(jSONObject, "confirm");
-        this.b.a(new ff(this, z, optJSONObject, b, i.b(jSONObject, "inputted"), b2, z2));
+    /* renamed from: a */
+    public void mo1590a(int i) {
+        this.f7827a.f7826d.f7822b.f7581b.web_notifyWeb(this.f7827a.f7825c, 0, "index", Integer.valueOf(i));
     }
 }

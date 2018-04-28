@@ -1,11 +1,13 @@
 package com.duokan.reader.domain.bookshelf;
 
-class gw {
-    public int a = 0;
-    public byte[][] b = ((byte[][]) null);
-    final /* synthetic */ gp c;
+import java.util.concurrent.FutureTask;
 
-    gw(gp gpVar) {
-        this.c = gpVar;
+class gw extends FutureTask<Void> {
+    /* renamed from: a */
+    final /* synthetic */ fp f3268a;
+
+    public gw(fp fpVar, ac acVar) {
+        this.f3268a = fpVar;
+        super(new gx(fpVar, acVar));
     }
 }

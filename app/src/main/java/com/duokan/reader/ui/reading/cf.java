@@ -1,25 +1,16 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-
-import com.duokan.reader.UmengManager;
+import com.duokan.reader.ui.store.comment.C1478a;
 
 class cf implements Runnable {
-    final /* synthetic */ View a;
-    final /* synthetic */ ce b;
+    /* renamed from: a */
+    final /* synthetic */ ce f9932a;
 
-    cf(ce ceVar, View view) {
-        this.b = ceVar;
-        this.a = view;
+    cf(ce ceVar) {
+        this.f9932a = ceVar;
     }
 
     public void run() {
-        if (this.a.isSelected()) {
-            UmengManager.get().onEvent("V2_READING_FLOAT_TOOLBUTTON", "Comics-Frame-Out");
-            this.b.a.f.w().b();
-            return;
-        }
-        UmengManager.get().onEvent("V2_READING_FLOAT_TOOLBUTTON", "Comics-Frame-In");
-        this.b.a.f.w().a();
+        C1478a.m15369a(this.f9932a.f9931a.getContext(), this.f9932a.f9931a.f.mo1992G().m4156I());
     }
 }

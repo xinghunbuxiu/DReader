@@ -1,8 +1,10 @@
 package com.duokan.reader.domain.bookshelf;
 
 public class fn {
-    public int a;
-    public int b;
-    public int c;
-    public long d;
+    /* renamed from: a */
+    public int f3180a;
+    /* renamed from: b */
+    public long f3181b;
+    /* renamed from: c */
+    public long f3182c;
 }

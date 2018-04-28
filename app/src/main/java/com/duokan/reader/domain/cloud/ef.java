@@ -1,12 +1,12 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.webservices.duokan.b;
+public interface ef {
+    /* renamed from: a */
+    void mo1921a();
 
-public abstract class ef extends b {
-    final /* synthetic */ DkUserPurchasedFictionsManager c;
+    /* renamed from: a */
+    void mo1922a(String str);
 
-    public ef(DkUserPurchasedFictionsManager dkUserPurchasedFictionsManager) {
-        this.c = dkUserPurchasedFictionsManager;
-        super(ef.class.getName());
-    }
+    /* renamed from: b */
+    void mo1923b();
 }

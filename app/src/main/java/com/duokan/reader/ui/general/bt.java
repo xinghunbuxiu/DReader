@@ -3,5 +3,6 @@ package com.duokan.reader.ui.general;
 import android.graphics.Canvas;
 
 interface bt {
-    void a(Canvas canvas);
+    /* renamed from: a */
+    void mo1752a(Canvas canvas);
 }

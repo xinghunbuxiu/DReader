@@ -1,37 +1,47 @@
 package com.duokan.reader.domain.social.message;
 
-import android.text.TextUtils;
+import com.duokan.reader.domain.account.User;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import com.duokan.reader.common.cache.j;
-import com.duokan.reader.common.cache.k;
-import com.duokan.reader.domain.account.ab;
+public class av extends C1138l {
+    /* renamed from: a */
+    public final User f5529a = new User();
 
-class av extends k {
-    private ab a;
-
-    public /* synthetic */ Object queryInfo() {
-        return b();
+    public av(User user) {
+        User.copy(user, this.f5529a);
     }
 
-    public av(String str, ab abVar, int i) {
-        super(str + "_" + abVar.a, j.a, new at(), new au(), i);
-        this.a = abVar;
+    /* renamed from: a */
+    public static av m8532a(JSONObject jSONObject) {
+        User user = new User();
+        user.mUserId = jSONObject.getString("user_id");
+        user.mNickName = jSONObject.optString("user_nick_name");
+        user.mIconUrl = jSONObject.optString("user_icon");
+        return new av(user);
     }
 
-    public void a() {
-        upgradeVersion(2);
+    /* renamed from: a */
+    public User mo1515a() {
+        return this.f5529a;
     }
 
-    public DkMessagesInfo b() {
-        DkMessagesInfo dkMessagesInfo = (DkMessagesInfo) super.queryInfo();
-        if (TextUtils.isEmpty(dkMessagesInfo.mAccountUuid)) {
-            dkMessagesInfo.mAccountUuid = this.a.a;
-            dkMessagesInfo.mAccountName = this.a.c;
-            dkMessagesInfo.mReadThreshold = "";
-            dkMessagesInfo.mUnreadThreshold = "";
-            dkMessagesInfo.mUnreadMessageIds = new String[0];
-            updateInfo(dkMessagesInfo);
+    /* renamed from: b */
+    public String mo1516b() {
+        return "";
+    }
+
+    /* renamed from: c */
+    public long mo1518c() {
+        return 0;
+    }
+
+    /* renamed from: b */
+    public void mo1517b(JSONObject jSONObject) {
+        try {
+            jSONObject.put("user_nick_name", this.f5529a.mNickName);
+            jSONObject.put("user_icon", this.f5529a.mIconUrl);
+        } catch (JSONException e) {
         }
-        return dkMessagesInfo;
     }
 }

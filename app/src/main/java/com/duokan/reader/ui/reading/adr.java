@@ -1,23 +1,23 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.c.j;
-import com.duokan.core.app.af;
-import com.duokan.core.app.ag;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.ReaderFeature;
+import com.duokan.reader.domain.plugins.dict.DictDownloadController;
 
-class adr implements ag {
-    final /* synthetic */ adm a;
+class adr implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ adx f9532a;
+    /* renamed from: b */
+    final /* synthetic */ TranslationController f9533b;
 
-    adr(adm com_duokan_reader_ui_reading_adm) {
-        this.a = com_duokan_reader_ui_reading_adm;
+    adr(TranslationController translationController, adx adx) {
+        this.f9533b = translationController;
+        this.f9532a = adx;
     }
 
-    public void a(af afVar) {
-        a.a(this.a.getContext()).a(this.a.h.getServiceApkUrl(), this.a.getString(j.reading__shared__iflytek_download_title));
-    }
-
-    public void b(af afVar) {
-    }
-
-    public void c(af afVar) {
+    public void onClick(View view) {
+        ((ReaderFeature) this.f9533b.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new DictDownloadController(this.f9533b.getContext()), null);
+        this.f9532a.mo2521a();
     }
 }

@@ -1,40 +1,23 @@
 package com.duokan.reader.ui.general.web;
 
-import android.text.TextUtils;
-
 import com.duokan.core.sys.as;
-import com.duokan.reader.common.i;
-import com.duokan.reader.domain.payment.d;
-
+import com.duokan.reader.common.C0611i;
 import org.json.JSONObject;
 
 class cu implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
+    /* renamed from: a */
+    final /* synthetic */ String f7703a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7704b;
 
-    cu(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    cu(ci ciVar, String str) {
+        this.f7704b = ciVar;
+        this.f7703a = str;
     }
 
-    public void a() {
-        JSONObject jSONObject = new JSONObject(this.a);
-        String string = jSONObject.getString("msgid");
-        JSONObject jSONObject2 = jSONObject.getJSONObject("params");
-        Object string2 = jSONObject2.getString("orderInfo");
-        String optString = jSONObject2.optString("payment_method");
-        String b = i.b(jSONObject2, "url");
-        jSONObject2 = jSONObject2.optJSONObject("continue");
-        if (!TextUtils.isEmpty(string2) && !TextUtils.isEmpty(string)) {
-            if (TextUtils.isEmpty(optString)) {
-                optString = "MIPAY";
-            }
-            d a = d.a(string2, optString);
-            if (a != null) {
-                this.b.pageController.js_pay(string, b, a, jSONObject2);
-            } else {
-                this.b.pageController.web_notifyWeb(string, 1, new Object[0]);
-            }
-        }
+    /* renamed from: a */
+    public void mo1831a() {
+        JSONObject jSONObject = new JSONObject(this.f7703a);
+        this.f7704b.m11016a(new cv(this, jSONObject.getBoolean("add"), C0611i.m2793b(jSONObject, "text")));
     }
 }

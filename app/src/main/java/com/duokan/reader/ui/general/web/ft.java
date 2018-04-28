@@ -1,25 +1,22 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.common.async.a.a;
-import com.duokan.reader.ui.store.comment.n;
+import com.duokan.reader.common.p037c.C0559f;
+import java.util.concurrent.Callable;
 
-class ft implements a {
-    static final /* synthetic */ boolean a = (!StorePageController.class.desiredAssertionStatus());
-    final /* synthetic */ String b;
-    final /* synthetic */ fs c;
+class ft implements Callable<Boolean> {
+    /* renamed from: a */
+    final /* synthetic */ ci f7859a;
 
-    ft(fs fsVar, String str) {
-        this.c = fsVar;
-        this.b = str;
+    ft(ci ciVar) {
+        this.f7859a = ciVar;
     }
 
-    public void a(n nVar) {
-        this.c.a.b.pageController.web_notifyWeb(this.b, 0, "operation", Boolean.valueOf(nVar.d), "score", Integer.valueOf(nVar.a), "title", nVar.b, "content", nVar.c);
+    public /* synthetic */ Object call() {
+        return m11132a();
     }
 
-    public void a(int i, String str) {
-        if (!a) {
-            throw new AssertionError();
-        }
+    /* renamed from: a */
+    public Boolean m11132a() {
+        return Boolean.valueOf(C0559f.m2476b().m2486e());
     }
 }

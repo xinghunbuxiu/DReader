@@ -1,80 +1,37 @@
 package com.duokan.reader.domain.social.message;
 
-import android.content.Context;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.WebSession;
+import com.duokan.reader.domain.account.al;
 
-import com.duokan.b.i;
+class ac extends WebSession {
+    /* renamed from: a */
+    final /* synthetic */ al f5485a;
+    /* renamed from: b */
+    final /* synthetic */ DkMessagesManager f5486b;
+    /* renamed from: c */
+    private DkMessagesInfo f5487c = null;
 
-import org.json.JSONObject;
-
-public abstract class ac {
-    public static k a(JSONObject jSONObject) {
-        return k.a(jSONObject, g.a());
+    ac(DkMessagesManager dkMessagesManager, C0657i c0657i, al alVar) {
+        this.f5486b = dkMessagesManager;
+        this.f5485a = alVar;
+        super(c0657i);
     }
 
-    public static String a(Context context, k kVar) {
-        int i;
-        switch (kVar.c) {
-            case 5:
-                i = i.personal__comment_message_item_view__reply_type_text;
-                break;
-            case 6:
-                i = i.personal__comment_message_item_view__like_type_text;
-                break;
-            case 10:
-                i = i.personal__comment_message_item_view__reply_of_reply_type_text;
-                break;
-            case 14:
-                i iVar = (i) kVar.h;
-                if (iVar.e != 0) {
-                    if (iVar.e != 2) {
-                        if (iVar.e != 1) {
-                            i = i.personal__feed_message_item_view__reply_type_text;
-                            break;
-                        }
-                        i = i.personal__note_feed_message_item_view__reply_type_text;
-                        break;
-                    }
-                    i = i.personal__book_feed_message_item_view__reply_type_text;
-                    break;
-                }
-                i = i.personal__comment_feed_message_item_view__reply_type_text;
-                break;
-            case 15:
-                i = i.personal__feed_message_item_view__reply_of_reply_type_text;
-                break;
-            case 17:
-                b bVar = (b) kVar.h;
-                if (bVar.a.c != 2) {
-                    if (bVar.a.c != 4) {
-                        if (bVar.a.c != 1) {
-                            i = i.personal__comment_message_item_view__reply_type_text;
-                            break;
-                        }
-                        i = i.personal__feed_message_item_view__reply_type_text_v4;
-                        break;
-                    }
-                    i = i.personal__comment_message_item_view__reply_of_reply_type_text;
-                    break;
-                }
-                i = i.personal__comment_feed_message_item_view__reply_type_text;
-                break;
-            case 18:
-                c cVar = (c) kVar.h;
-                if (cVar.a.b != 0) {
-                    if (cVar.a.b != 1) {
-                        i = i.personal__comment_message_item_view__tip_type_text;
-                        break;
-                    }
-                    i = i.personal__feed_message_item_view__vote_type_text;
-                    break;
-                }
-                i = i.personal__comment_message_item_view__vote_type_text;
-                break;
-            case 19:
-                return "";
-            default:
-                throw new IllegalArgumentException();
+    protected void onSessionTry() {
+        synchronized (DkMessagesManager.f5470a) {
+            aq aqVar = new aq(this.f5486b.f5474e, this.f5485a, this.f5486b.f5475f);
+            aqVar.m8529a();
+            this.f5487c = aqVar.m8530b();
         }
-        return context.getString(i);
+    }
+
+    protected void onSessionSucceeded() {
+        if (this.f5486b.f5479j.m3365a(this.f5485a)) {
+            this.f5486b.m8468a(this.f5487c.mUnreadMessageIds);
+        }
+    }
+
+    protected void onSessionFailed() {
     }
 }

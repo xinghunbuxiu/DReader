@@ -1,35 +1,21 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.common.webservices.duokan.r;
-import com.duokan.reader.common.webservices.duokan.t;
-import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.bookshelf.c;
+import com.duokan.reader.ui.general.gc;
 
-class re extends r {
-    final /* synthetic */ c a;
-    final /* synthetic */ rd b;
+class re implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ gc f10887a;
+    /* renamed from: b */
+    final /* synthetic */ qr f10888b;
 
-    re(rd rdVar, c cVar) {
-        this.b = rdVar;
-        this.a = cVar;
+    re(qr qrVar, gc gcVar) {
+        this.f10888b = qrVar;
+        this.f10887a = gcVar;
     }
 
-    protected void onSessionTry() {
-        t tVar = new t(this, new ab(i.f().b(PersonalAccount.class)));
-        int i = 1;
-        if (this.b.a.aj()) {
-            i = 4;
-        } else if (this.b.a.k()) {
-            i = 2;
+    public void run() {
+        if (this.f10888b.f9279c.mo2007X() == this.f10887a) {
+            this.f10888b.mo1980a(this.f10887a);
         }
-        tVar.a(this.a.ap(), i);
-    }
-
-    protected void onSessionSucceeded() {
-    }
-
-    protected void onSessionFailed() {
     }
 }

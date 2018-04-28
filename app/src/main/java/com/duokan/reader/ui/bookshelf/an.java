@@ -1,22 +1,25 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.sys.ag;
-import com.duokan.reader.domain.bookshelf.aa;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Drawable.Callback;
 
-class an implements ei {
-    final /* synthetic */ ag a;
-    final /* synthetic */ ai b;
+class an implements Callback {
+    /* renamed from: a */
+    final /* synthetic */ am f6120a;
 
-    an(ai aiVar, ag agVar) {
-        this.b = aiVar;
-        this.a = agVar;
+    an(am amVar) {
+        this.f6120a = amVar;
     }
 
-    public void a(aa aaVar) {
-        this.a.a(aaVar);
+    public void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        this.f6120a.unscheduleSelf(runnable);
     }
 
-    public void a() {
-        this.b.o();
+    public void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
+        this.f6120a.scheduleSelf(runnable, j);
+    }
+
+    public void invalidateDrawable(Drawable drawable) {
+        this.f6120a.invalidateSelf();
     }
 }

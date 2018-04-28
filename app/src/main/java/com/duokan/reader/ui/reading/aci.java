@@ -1,21 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Point;
-import android.view.View;
+import android.animation.ValueAnimator;
+import android.animation.ValueAnimator.AnimatorUpdateListener;
 
-class aci implements Runnable {
-    final /* synthetic */ Point a;
-    final /* synthetic */ View b;
-    final /* synthetic */ TextSelectionController c;
+class aci implements AnimatorUpdateListener {
+    /* renamed from: a */
+    final /* synthetic */ acf f9453a;
 
-    aci(TextSelectionController textSelectionController, Point point, View view) {
-        this.c = textSelectionController;
-        this.a = point;
-        this.b = view;
+    aci(acf acf) {
+        this.f9453a = acf;
     }
 
-    public void run() {
-        this.c.c(this.a.x, this.a.y, this.c.a, this.b);
-        this.c.a(false);
+    public void onAnimationUpdate(ValueAnimator valueAnimator) {
+        this.f9453a.f9442f.mo2126c(((Float) valueAnimator.getAnimatedValue()).floatValue());
+        this.f9453a.invalidate();
     }
 }

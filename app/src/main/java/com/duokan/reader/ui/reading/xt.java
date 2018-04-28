@@ -1,40 +1,16 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
-import android.view.View;
+import com.duokan.reader.ui.general.FixedPagesView.PageScaleType;
 
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.domain.document.Document_a;
+class xt implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ xs f11158a;
 
-class xt extends fo {
-    private final sh a = ((sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class));
-    private View b = null;
-    private int c = -1;
-    private boolean d = true;
-
-    protected /* synthetic */ fs b(Document_a aVar) {
-        return c(aVar);
+    xt(xs xsVar) {
+        this.f11158a = xsVar;
     }
 
-    public xt(Context context) {
-        super(context);
-        setAdapter(new xx());
-    }
-
-    protected xw c(Document_a aVar) {
-        return new xw(this, aVar);
-    }
-
-    public void setPageLayout(PageLayout pageLayout) {
-        if (getPageLayout() != pageLayout) {
-            setZoomEnabled(pageLayout == PageLayout.TOP_TO_BOTTOM);
-            setZoomFactor(1.0f);
-            super.setPageLayout(pageLayout);
-        }
-    }
-
-    public void a(Document_a aVar) {
-        this.d = true;
-        super.a(aVar);
+    public void run() {
+        this.f11158a.f11157a.f11154c.mo2029a(PageScaleType.MATCH_WIDTH);
     }
 }

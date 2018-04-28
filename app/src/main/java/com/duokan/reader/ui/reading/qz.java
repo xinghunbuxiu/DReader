@@ -1,16 +1,25 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.IdleStatus;
+import com.duokan.core.ui.Scrollable;
+import com.duokan.core.ui.Scrollable.ScrollState;
+import com.duokan.core.ui.cg;
 
-class qz implements IdleStatus {
-    final /* synthetic */ qy a;
+class qz implements cg {
+    /* renamed from: a */
+    final /* synthetic */ qr f10882a;
 
-    qz(qy qyVar) {
-        this.a = qyVar;
+    qz(qr qrVar) {
+        this.f10882a = qrVar;
     }
 
-    public boolean idleRun() {
-        this.a.d.a.b(new xh(this.a.d.a.getContext(), this.a.d.a.e, this.a.d.a.G, this.a.a, this.a.b, this.a.c));
-        return false;
+    /* renamed from: a */
+    public void mo478a(Scrollable scrollable, ScrollState scrollState, ScrollState scrollState2) {
+        if (scrollState2 != ScrollState.IDLE) {
+            this.f10882a.f9279c.mo2040a(1, 0);
+        }
+    }
+
+    /* renamed from: a */
+    public void mo479a(Scrollable scrollable, boolean z) {
     }
 }

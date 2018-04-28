@@ -1,22 +1,21 @@
 package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.sys.as;
-import com.duokan.core.ui.UTools;
+import org.json.JSONObject;
 
 class eb implements as {
-    final /* synthetic */ int a;
-    final /* synthetic */ int b;
-    final /* synthetic */ boolean c;
-    final /* synthetic */ PageController d;
+    /* renamed from: a */
+    final /* synthetic */ String f7761a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7762b;
 
-    eb(PageController cgVar, int i, int i2, boolean z) {
-        this.d = cgVar;
-        this.a = i;
-        this.b = i2;
-        this.c = z;
+    eb(ci ciVar, String str) {
+        this.f7762b = ciVar;
+        this.f7761a = str;
     }
 
-    public void a() {
-        this.d.pageController.scrollPosToTop(UTools.getMinimumHeight(this.d.pageController.getContext(), (float) this.a), UTools.getMinimumHeight(this.d.pageController.getContext(), (float) this.b), this.c);
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7762b.m11016a(new ec(this, new JSONObject(this.f7761a).getString("msgid")));
     }
 }

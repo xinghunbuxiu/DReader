@@ -3,23 +3,20 @@ package com.duokan.core.ui;
 import android.view.View;
 
 final class ec implements Runnable {
-    final  View view;
-    final int flag;
+    /* renamed from: a */
+    final /* synthetic */ View f1212a;
+    /* renamed from: b */
+    final /* synthetic */ int f1213b;
 
-    /**
-     *
-     * @param view
-     * @param flag  InputMethodManager.Flag
-     */
-    ec(View view, int flag) {
-        this.view = view;
-        this.flag = flag;
+    ec(View view, int i) {
+        this.f1212a = view;
+        this.f1213b = i;
     }
 
     public void run() {
         Runnable edVar = new ed(this);
-        if (this.view.getWindowToken() == null || this.view.isLayoutRequested()) {
-            UTools.creatCallTask(this.view, edVar);
+        if (this.f1212a.getWindowToken() == null || this.f1212a.isLayoutRequested()) {
+            dv.m1921a(this.f1212a, edVar);
         } else {
             edVar.run();
         }

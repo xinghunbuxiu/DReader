@@ -1,5 +1,5 @@
 package com.duokan.core.sys;
 
-public interface ag {
-    void a(Object obj);
+public interface ag<T> {
+    void run(T t);
 }

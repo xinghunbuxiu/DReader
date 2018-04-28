@@ -1,38 +1,24 @@
 package com.duokan.reader.ui.account;
 
-import android.text.TextUtils;
 import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.ui.ay;
+import com.duokan.core.ui.bf;
 
-import com.duokan.c.g;
+class ah implements bf {
+    /* renamed from: a */
+    final /* synthetic */ ae f5786a;
+    /* renamed from: b */
+    final /* synthetic */ ag f5787b;
 
-class ah implements OnClickListener {
-    final /* synthetic */ z a;
-
-    private ah(z zVar) {
-        this.a = zVar;
+    ah(ag agVar, ae aeVar) {
+        this.f5787b = agVar;
+        this.f5786a = aeVar;
     }
 
-    public void onClick(View view) {
-        int id = view.getId();
-        String str = "";
-        if (id == g.account_sina_ll) {
-            str = "sina";
-        } else if (id == g.account_yingxiang_ll) {
-            str = "yinxiang";
-        }
-        if (TextUtils.equals("yinxiang", str)) {
-            if (this.a.a.isBindAccessToken(this.a.getContext(), "yinxiang")) {
-                this.a.a("yinxiang");
-            } else if (this.a.a.isBindAccessToken(this.a.getContext(), "evernote")) {
-                this.a.a("evernote");
-            } else {
-                this.a.b("yinxiang");
-            }
-        } else if (this.a.a.isBindAccessToken(this.a.getContext(), str)) {
-            this.a.a(str);
-        } else {
-            this.a.b(str);
+    /* renamed from: a */
+    public void mo480a(ay ayVar, View view, int i) {
+        if (this.f5786a != null) {
+            this.f5786a.onChoiced(this.f5787b.f5784b.m8864a(i).f5780b);
         }
     }
 }

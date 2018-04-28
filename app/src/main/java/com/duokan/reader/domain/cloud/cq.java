@@ -1,77 +1,22 @@
 package com.duokan.reader.domain.cloud;
 
-import android.text.TextUtils;
+import com.duokan.reader.common.async.p035a.C0517a;
 
-import com.duokan.reader.DkPublic;
-import com.duokan.reader.common.cache.v;
+class cq implements C0517a<Void> {
+    /* renamed from: a */
+    final /* synthetic */ cp f3829a;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-class cq extends v {
-    private cq() {
+    cq(cp cpVar) {
+        this.f3829a = cpVar;
     }
 
-    public /* synthetic */ Object deserializeCorePropertiesFromJson(String str, Object obj) {
-        return b(str, (String) obj);
+    /* renamed from: a */
+    public void m5412a(Void voidR) {
+        new cr(this, dq.f3887a, DkUserPurchasedFictionsManager.m5092g()).open();
     }
 
-    public /* synthetic */ Object deserializeInfoFromJson(JSONObject jSONObject) {
-        return a(jSONObject);
-    }
-
-    public /* synthetic */ Object deserializeItemFromJson(String str, Object obj) {
-        return a(str, (String) obj);
-    }
-
-    public /* synthetic */ String getUniqueId(Object obj) {
-        return a((DkCloudPurchasedBook) obj);
-    }
-
-    public /* synthetic */ JSONObject serializeInfoToJson(Object obj) {
-        return a((DkUserPurchasedBooksInfo) obj);
-    }
-
-    public /* synthetic */ Object serializeItemCorePropertiesToJson(Object obj) {
-        return b((DkCloudPurchasedBook) obj);
-    }
-
-    public /* synthetic */ Object serializeItemToJson(Object obj, Object obj2) {
-        return a((DkCloudPurchasedBook) obj, (String) obj2);
-    }
-
-    public JSONObject a(DkUserPurchasedBooksInfo dkUserPurchasedBooksInfo) {
-        return DkPublic.serializeToJson(dkUserPurchasedBooksInfo);
-    }
-
-    public DkUserPurchasedBooksInfo a(JSONObject jSONObject) {
-        return (DkUserPurchasedBooksInfo) DkPublic.deserializeFromJson(jSONObject, new DkUserPurchasedBooksInfo(), DkUserPurchasedBooksInfo.class);
-    }
-
-    public String a(DkCloudPurchasedBook dkCloudPurchasedBook) {
-        return dkCloudPurchasedBook.getBookUuid();
-    }
-
-    public String a(DkCloudPurchasedBook dkCloudPurchasedBook, String str) {
-        return DkPublic.serializeToJsonText(dkCloudPurchasedBook);
-    }
-
-    public DkCloudPurchasedBook a(String str, String str2) {
-        return (DkCloudPurchasedBook) DkPublic.deserializeFromJsonText(str2, DkCloudPurchasedBook.class);
-    }
-
-    public DkCloudPurchasedBook b(String str, String str2) {
-        try {
-            if (TextUtils.isEmpty(str2)) {
-                return null;
-            }
-            return new DkCloudPurchasedBook(new e(new JSONObject(str2)));
-        } catch (JSONException e) {
-            return null;
-        }
-    }
-
-    public String b(DkCloudPurchasedBook dkCloudPurchasedBook) {
-        return new e(dkCloudPurchasedBook).a().toString();
+    /* renamed from: a */
+    public void mo729a(int i, String str) {
+        this.f3829a.f3827c.mo729a(i, str);
     }
 }

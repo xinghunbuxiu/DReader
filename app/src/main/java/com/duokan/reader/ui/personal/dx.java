@@ -1,15 +1,25 @@
 package com.duokan.reader.ui.personal;
 
-class dx implements Runnable {
-    final /* synthetic */ ds a;
+import com.duokan.reader.domain.micloud.C1068i;
+import java.util.ArrayList;
+import java.util.List;
 
-    dx(ds dsVar) {
-        this.a = dsVar;
+class dx implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ C1068i f8474a;
+    /* renamed from: b */
+    final /* synthetic */ dr f8475b;
+
+    dx(dr drVar, C1068i c1068i) {
+        this.f8475b = drVar;
+        this.f8474a = c1068i;
     }
 
     public void run() {
-        if (this.a.b != null) {
-            this.a.b.f_();
+        if (this.f8475b.f8465a.f8457b != null) {
+            List arrayList = new ArrayList();
+            arrayList.add(this.f8474a);
+            this.f8475b.f8465a.f8457b.setfilterCreateFileTaskItems(arrayList);
         }
     }
 }

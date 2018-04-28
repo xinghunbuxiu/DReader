@@ -4,11 +4,13 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 
 class co {
-    public final Bitmap a;
-    public final Rect b;
+    /* renamed from: a */
+    public final Bitmap f7037a;
+    /* renamed from: b */
+    public final Rect f7038b;
 
     public co(Bitmap bitmap, Rect rect) {
-        this.a = bitmap;
-        this.b = rect;
+        this.f7037a = bitmap;
+        this.f7038b = rect;
     }
 }

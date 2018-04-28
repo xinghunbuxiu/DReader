@@ -1,19 +1,12 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.async.a.a;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.C0659k;
 
-class dq implements a {
-    final /* synthetic */ dp a;
+class dq {
+    /* renamed from: a */
+    private static final C0657i f3887a = new C0659k().m3096a(dq.class.getName()).m3094a();
 
-    dq(dp dpVar) {
-        this.a = dpVar;
-    }
-
-    public void a(Void voidR) {
-        new dr(this, DkUserPurchasedFictionsManager.g()).open();
-    }
-
-    public void a(int i, String str) {
-        this.a.b.a(i, str);
+    private dq() {
     }
 }

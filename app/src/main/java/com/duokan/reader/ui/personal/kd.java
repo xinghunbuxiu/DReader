@@ -2,18 +2,17 @@ package com.duokan.reader.ui.personal;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-
-import com.duokan.core.app.MyContextWrapper;
+import com.duokan.reader.ReaderFeature;
 
 class kd implements OnClickListener {
-    final /* synthetic */ kc a;
+    /* renamed from: a */
+    final /* synthetic */ jg f8804a;
 
-    kd(kc kcVar) {
-        this.a = kcVar;
+    kd(jg jgVar) {
+        this.f8804a = jgVar;
     }
 
     public void onClick(View view) {
-        view.setEnabled(false);
-        ((kn) MyContextWrapper.getFeature(this.a.o()).queryFeature(kn.class)).b();
+        ((ReaderFeature) this.f8804a.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new C1408p(this.f8804a.getContext()), null);
     }
 }

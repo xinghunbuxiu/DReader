@@ -1,17 +1,19 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.domain.document.C0897d;
 
-class aeo implements OnClickListener {
-    final /* synthetic */ aem a;
+class aeo implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ C0897d f9589a;
+    /* renamed from: b */
+    final /* synthetic */ adz f9590b;
 
-    aeo(aem com_duokan_reader_ui_reading_aem) {
-        this.a = com_duokan_reader_ui_reading_aem;
+    aeo(adz adz, C0897d c0897d) {
+        this.f9590b = adz;
+        this.f9589a = c0897d;
     }
 
-    public void onClick(View view) {
-        this.a.a.c("xiaoyan");
-        this.a.a();
+    public void run() {
+        this.f9590b.m13427b(this.f9589a);
     }
 }

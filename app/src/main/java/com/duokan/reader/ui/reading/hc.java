@@ -1,20 +1,42 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 
-import com.duokan.reader.domain.audio.AudioPlayer;
-import com.duokan.reader.domain.audio.AudioPlayerService;
+class hc extends Drawable {
+    /* renamed from: a */
+    final /* synthetic */ gx f10312a;
 
-class hc implements Runnable {
-    final /* synthetic */ hb a;
-
-    hc(hb hbVar) {
-        this.a = hbVar;
+    private hc(gx gxVar) {
+        this.f10312a = gxVar;
     }
 
-    public void run() {
-        this.a.getContext().startService(new Intent(this.a.getContext(), AudioPlayerService.class));
-        this.a.L = new hd(this);
-        AudioPlayer.a().a(this.a.L);
+    public int getIntrinsicWidth() {
+        if (this.f10312a.f10292k == null) {
+            return 0;
+        }
+        return this.f10312a.f10292k.getIntrinsicWidth();
+    }
+
+    public int getIntrinsicHeight() {
+        if (this.f10312a.f10292k == null) {
+            return 0;
+        }
+        return this.f10312a.f10292k.getIntrinsicHeight();
+    }
+
+    public void draw(Canvas canvas) {
+        this.f10312a.mo2515a(canvas, true);
+    }
+
+    public void setAlpha(int i) {
+    }
+
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
+
+    public int getOpacity() {
+        return 0;
     }
 }

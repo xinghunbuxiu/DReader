@@ -2,22 +2,27 @@ package com.duokan.reader.ui.reading;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-
 import com.duokan.reader.UmengManager;
 
 class ts implements OnClickListener {
-    final /* synthetic */ to a;
+    /* renamed from: a */
+    final /* synthetic */ tp f10992a;
 
-    ts(to toVar) {
-        this.a = toVar;
+    ts(tp tpVar) {
+        this.f10992a = tpVar;
     }
 
     public void onClick(View view) {
-        UmengManager.get().onEvent("V2_READING_TOP_TOOLBUTTON", "Navigation");
-        if (this.a.l()) {
-            this.a.dismissTopPopup();
+        if (this.f10992a.m13623j()) {
+            if (this.f10992a.f.mo2106b(2)) {
+                this.f10992a.f.mo2181w().mo2302m();
+            } else {
+                this.f10992a.f.au();
+            }
+            this.f10992a.mo2385d();
+            this.f10992a.f9686m.setVisibility(8);
+            this.f10992a.f9687n.setVisibility(0);
         }
-        this.a.h = true;
-        this.a.a(new tt(this));
+        UmengManager.get().onEvent("V2_READING_MENU", "Go-Back");
     }
 }

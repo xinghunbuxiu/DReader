@@ -1,21 +1,22 @@
 package com.duokan.reader.ui.general;
 
 import android.view.View;
-
 import com.duokan.core.ui.HatGridView;
 import com.duokan.core.ui.ao;
 import com.duokan.reader.ui.general.DkWebListView.ListState;
 
 class bl implements ao {
-    final /* synthetic */ DkWebListView a;
+    /* renamed from: a */
+    final /* synthetic */ DkWebListView f7001a;
 
     bl(DkWebListView dkWebListView) {
-        this.a = dkWebListView;
+        this.f7001a = dkWebListView;
     }
 
-    public void a(HatGridView hatGridView, View view, int i) {
-        if ((this.a.getListState() != ListState.LOADING_MORE || i != this.a.d.c() - 1) && this.a.i != null) {
-            this.a.i.a(hatGridView, view, i);
+    /* renamed from: a */
+    public void mo1751a(HatGridView hatGridView, View view, int i) {
+        if ((this.f7001a.getListState() != ListState.LOADING_MORE || i != this.f7001a.f6795d.mo506c() - 1) && this.f7001a.f6800i != null) {
+            this.f7001a.f6800i.mo1751a(hatGridView, view, i);
         }
     }
 }

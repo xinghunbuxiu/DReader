@@ -1,59 +1,30 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.document.aa;
-import com.duokan.reader.domain.document.n;
-import com.duokan.reader.domain.document.txt.z;
+import android.text.TextUtils;
+import com.duokan.reader.common.webservices.duokan.C0643q;
+import com.duokan.reader.domain.account.C0666x;
+import com.duokan.reader.domain.account.C0672a;
+import com.duokan.reader.domain.account.al;
+import com.duokan.reader.ui.general.be;
 
-class ld implements z {
-    final /* synthetic */ z a;
-    final /* synthetic */ lb b;
+class ld implements C0666x {
+    /* renamed from: a */
+    final /* synthetic */ lb f3536a;
 
-    ld(lb lbVar, z zVar) {
-        this.b = lbVar;
-        this.a = zVar;
+    ld(lb lbVar) {
+        this.f3536a = lbVar;
     }
 
-    public void a(n nVar, aa aaVar) {
-        if (this.a != null) {
-            this.a.a(nVar, aaVar);
-        }
+    public void onQueryAccountOk(C0672a c0672a) {
+        al alVar = new al(c0672a);
+        this.f3536a.f3528h = new le(this, alVar.f2360a, C0643q.f2173a, alVar);
+        this.f3536a.f3528h.open();
     }
 
-    public void a(n nVar) {
-        if (this.a != null) {
-            this.a.a(nVar);
-        }
-    }
-
-    public void b(n nVar) {
-        this.b.a.decrementAndGet();
-        if (this.a != null) {
-            this.a.b(nVar);
-        }
-    }
-
-    public void c(n nVar) {
-        this.b.a.decrementAndGet();
-        if (this.a != null) {
-            this.a.c(nVar);
-        }
-    }
-
-    public void d(n nVar) {
-        if (this.a != null) {
-            this.a.d(nVar);
-        }
-    }
-
-    public void e(n nVar) {
-        if (this.a != null) {
-            this.a.e(nVar);
-        }
-    }
-
-    public void f(n nVar) {
-        if (this.a != null) {
-            this.a.f(nVar);
+    public void onQueryAccountError(C0672a c0672a, String str) {
+        this.f3536a.m4926f();
+        if (!TextUtils.isEmpty(str)) {
+            be.m10287a(this.f3536a.f3522b, (CharSequence) str, 0).show();
         }
     }
 }

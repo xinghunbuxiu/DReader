@@ -4,17 +4,18 @@ import android.view.ViewTreeObserver.OnPreDrawListener;
 import android.view.animation.Animation;
 
 class ae implements OnPreDrawListener {
-    final /* synthetic */ ad a;
+    /* renamed from: a */
+    final /* synthetic */ ad f6928a;
 
     ae(ad adVar) {
-        this.a = adVar;
+        this.f6928a = adVar;
     }
 
     public boolean onPreDraw() {
-        Animation a = this.a.b.a(this.a.j, this.a.m);
-        a.setDuration((long) this.a.b.b);
-        this.a.startAnimation(a);
-        this.a.getViewTreeObserver().removeOnPreDrawListener(this);
+        Animation a = this.f6928a.f6916b.m9923a(this.f6928a.f6924j, this.f6928a.f6927m);
+        a.setDuration((long) this.f6928a.f6916b.f6769b);
+        this.f6928a.startAnimation(a);
+        this.f6928a.getViewTreeObserver().removeOnPreDrawListener(this);
         return false;
     }
 }

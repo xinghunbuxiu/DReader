@@ -17,299 +17,405 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
-
-import com.duokan.core.diagnostic.WebLog;
-import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.io.C0336a;
+import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ah;
-import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.C0342j;
 import com.duokan.core.ui.ct;
-import com.duokan.core.ui.onTapListener;
+import com.duokan.core.ui.cu;
+import com.duokan.core.ui.dv;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.et;
-import com.duokan.core.ui.j;
+import com.duokan.p024c.C0254f;
+import com.duokan.p024c.C0255g;
+import com.duokan.p024c.C0256h;
+import com.duokan.p024c.C0258j;
 import com.duokan.reader.ReaderEnv.PrivatePref;
-import com.duokan.reader.common.classc;
+import com.duokan.reader.common.p037c.C0559f;
 import com.duokan.reader.common.webservices.WebSession;
-import com.duokan.reader.common.webservices.duokan.ad;
-import com.duokan.reader.common.webservices.duokan.p;
-import com.duokan.reader.domain.account.ab;
+import com.duokan.reader.common.webservices.duokan.C0641o;
+import com.duokan.reader.common.webservices.duokan.ac;
+import com.duokan.reader.domain.account.C0709k;
+import com.duokan.reader.domain.account.al;
 import com.duokan.reader.domain.cloud.PersonalPrefs;
-
-import org.apache.commons.logging.LogFactory;
-import org.apache.http.HttpStatus;
-import org.apache.http.protocol.HTTP;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
+import com.duokan.reader.domain.statistics.C1163a;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
+import org.apache.commons.logging.LogFactory;
+import org.apache.http.HttpStatus;
+import org.apache.http.protocol.HTTP;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-public class WelcomeDialog extends j {
-    private static final long a = TimeUnit.MINUTES.toMillis(30);
-    private static WebSession b = null;
-    private static long c = 0;
-    private final boolean d;
-    private final StateListener stateListener;
-    private ImageView f;
-    private Drawable g = null;
-    private Uri h = null;
-    private RectF i = null;
-    private boolean j = false;
-    private boolean k = false;
-    private long l = 0;
+public class WelcomeDialog extends C0342j {
+    /* renamed from: a */
+    private static final long f1702a = TimeUnit.MINUTES.toMillis(30);
+    /* renamed from: b */
+    private static WebSession f1703b = null;
+    /* renamed from: c */
+    private static long f1704c = 0;
+    /* renamed from: d */
+    private final boolean f1705d;
+    /* renamed from: e */
+    private final StateListener f1706e;
+    /* renamed from: f */
+    private ImageView f1707f;
+    /* renamed from: g */
+    private Drawable f1708g = null;
+    /* renamed from: h */
+    private Uri f1709h = null;
+    /* renamed from: i */
+    private RectF f1710i = null;
+    /* renamed from: j */
+    private boolean f1711j = false;
+    /* renamed from: k */
+    private boolean f1712k = false;
+    /* renamed from: l */
+    private long f1713l = 0;
 
     public interface StateListener {
         void onEnd(Uri uri);
     }
 
-    final class AnonymousClass5 extends WebSession {
-        final  ab a;
-        final  long b;
+    /* renamed from: com.duokan.reader.WelcomeDialog$1 */
+    class C04951 implements OnClickListener {
+        /* renamed from: a */
+        final /* synthetic */ WelcomeDialog f1670a;
 
-        AnonymousClass5(ab abVar, long j) {
-            this.a = abVar;
-            this.b = j;
+        C04951(WelcomeDialog welcomeDialog) {
+            this.f1670a = welcomeDialog;
+        }
+
+        public void onClick(View view) {
+            this.f1670a.f1711j = false;
+            this.f1670a.doFinishShow();
+        }
+    }
+
+    /* renamed from: com.duokan.reader.WelcomeDialog$2 */
+    class C04962 extends Drawable {
+        /* renamed from: a */
+        final /* synthetic */ WelcomeDialog f1671a;
+
+        C04962(WelcomeDialog welcomeDialog) {
+            this.f1671a = welcomeDialog;
+        }
+
+        public void setColorFilter(ColorFilter colorFilter) {
+        }
+
+        public void setAlpha(int i) {
+        }
+
+        public int getOpacity() {
+            return -1;
+        }
+
+        public void draw(Canvas canvas) {
+            if (this.f1671a.f1708g != null) {
+                int width = getBounds().width();
+                int height = getBounds().height();
+                int intrinsicWidth = this.f1671a.f1708g.getIntrinsicWidth();
+                int intrinsicHeight = this.f1671a.f1708g.getIntrinsicHeight();
+                float max = Math.max(((float) getBounds().width()) / ((float) intrinsicWidth), ((float) getBounds().height()) / ((float) intrinsicHeight));
+                this.f1671a.f1708g.setBounds(Math.round((-((((float) intrinsicWidth) * max) - ((float) width))) / 2.0f), Math.round((-((((float) intrinsicHeight) * max) - ((float) height))) / 2.0f), Math.round((((float) intrinsicWidth) * max) + ((-((((float) intrinsicWidth) * max) - ((float) width))) / 2.0f)), Math.round((((float) intrinsicHeight) * max) + ((-((((float) intrinsicHeight) * max) - ((float) height))) / 2.0f)));
+                canvas.save();
+                canvas.clipRect(0, 0, width, height);
+                this.f1671a.f1708g.draw(canvas);
+                canvas.restore();
+            }
+        }
+    }
+
+    /* renamed from: com.duokan.reader.WelcomeDialog$3 */
+    class C04973 implements cu {
+        /* renamed from: a */
+        final /* synthetic */ WelcomeDialog f1672a;
+
+        C04973(WelcomeDialog welcomeDialog) {
+            this.f1672a = welcomeDialog;
+        }
+
+        public void onTouchUp(View view, PointF pointF) {
+        }
+
+        public void onTouchDown(View view, PointF pointF) {
+        }
+
+        public void onTouchCancel(View view, PointF pointF) {
+        }
+
+        public void onTap(er erVar, View view, PointF pointF) {
+            if (this.f1672a.f1708g != null && this.f1672a.f1710i != null) {
+                RectF rectF = (RectF) dv.f1199h.addAnimation();
+                Rect bounds = this.f1672a.f1708g.getBounds();
+                rectF.set(this.f1672a.f1710i.left * ((float) bounds.width()), this.f1672a.f1710i.top * ((float) bounds.width()), this.f1672a.f1710i.right * ((float) bounds.width()), this.f1672a.f1710i.bottom * ((float) bounds.width()));
+                if (rectF.contains(pointF.x - ((float) bounds.left), pointF.y - ((float) bounds.top))) {
+                    this.f1672a.f1711j = true;
+                    this.f1672a.doFinishShow();
+                }
+                dv.f1199h.clearAnimation(rectF);
+            }
+        }
+    }
+
+    /* renamed from: com.duokan.reader.WelcomeDialog$5 */
+    final class C05045 extends WebSession {
+        /* renamed from: a */
+        final /* synthetic */ al f1688a;
+        /* renamed from: b */
+        final /* synthetic */ long f1689b;
+
+        C05045(al alVar, long j) {
+            this.f1688a = alVar;
+            this.f1689b = j;
         }
 
         protected void onSessionTry() {
             File cacheDir = DkReader.get().getCacheDir();
             File file = new File(cacheDir, "splash.config");
             File file2 = new File(cacheDir, "splash.config.tmp");
-            String format = String.format(Locale.US, p.i().v() + "?user_type=%getTriangleEdge&device_id=%s&app_id=%s&build=%getTriangleEdge&channel=%s", new Object[]{Integer.valueOf(PersonalPrefs.a().b()), ReaderEnv.get().getDeviceId(), ReaderEnv.get().getAppId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel()});
-            ad adVar = new ad((WebSession) this, this.a);
-            a.d(file2);
-            if (adVar.a(format, file2, true)) {
+            String format = String.format(Locale.US, C0641o.m2934i().m2995v() + "?user_type=%d&device_id=%s&app_id=%s&build=%d&channel=%s", new Object[]{Integer.valueOf(PersonalPrefs.m5175a().m5210b()), ReaderEnv.get().getDeviceId(), ReaderEnv.get().getAppId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel()});
+            ac acVar = new ac((WebSession) this, this.f1688a);
+            C0336a.m793f(file2);
+            if (acVar.m549a(format, file2, true)) {
                 file2.renameTo(file);
             }
             for (SplashInfo splashInfo : WelcomeDialog.listSplashInfos(file)) {
-                if (!splashInfo.h.exists()) {
-                    adVar.a(splashInfo.i, splashInfo.h, true);
+                if (!splashInfo.f1700h.exists()) {
+                    acVar.m549a(splashInfo.f1701i, splashInfo.f1700h, true);
                 }
             }
         }
 
         protected void onSessionSucceeded() {
-            WelcomeDialog.b = null;
-            WelcomeDialog.c = this.b;
+            WelcomeDialog.f1703b = null;
+            WelcomeDialog.f1704c = this.f1689b;
         }
 
         protected void onSessionFailed() {
-            WelcomeDialog.b = null;
+            WelcomeDialog.f1703b = null;
+        }
+    }
+
+    /* renamed from: com.duokan.reader.WelcomeDialog$6 */
+    final class C05056 implements Runnable {
+        C05056() {
+        }
+
+        public void run() {
+            WelcomeDialog.f1703b.open();
+        }
+    }
+
+    /* renamed from: com.duokan.reader.WelcomeDialog$7 */
+    class C05077 implements Runnable {
+        /* renamed from: a */
+        final /* synthetic */ WelcomeDialog f1692a;
+
+        /* renamed from: com.duokan.reader.WelcomeDialog$7$1 */
+        class C05061 implements Runnable {
+            /* renamed from: a */
+            final /* synthetic */ C05077 f1690a;
+            /* renamed from: b */
+            private boolean f1691b = false;
+
+            C05061(C05077 c05077) {
+                this.f1690a = c05077;
+            }
+
+            public void run() {
+                if (!this.f1691b) {
+                    this.f1691b = true;
+                    C1163a.m8627k().m8634a(this.f1690a.f1692a.f1709h, this.f1690a.f1692a.f1711j);
+                    this.f1690a.f1692a.dismiss();
+                    if (this.f1690a.f1692a.f1706e != null) {
+                        this.f1690a.f1692a.f1706e.onEnd(this.f1690a.f1692a.f1711j ? this.f1690a.f1692a.f1709h : null);
+                    }
+                }
+            }
+        }
+
+        C05077(WelcomeDialog welcomeDialog) {
+            this.f1692a = welcomeDialog;
+        }
+
+        public void run() {
+            Runnable c05061 = new C05061(this);
+            DkApp.get().runWhenUiReady(c05061);
+            UThread.postDelayed(c05061, TimeUnit.SECONDS.toMillis(2));
         }
     }
 
     class SplashInfo {
-        public int a;
-        public int b;
-        public long c;
-        public long d;
-        public int e;
-        public final RectF f;
-        public Uri g;
-        public File h;
-        public String i;
+        /* renamed from: a */
+        public int f1693a;
+        /* renamed from: b */
+        public int f1694b;
+        /* renamed from: c */
+        public long f1695c;
+        /* renamed from: d */
+        public long f1696d;
+        /* renamed from: e */
+        public int f1697e;
+        /* renamed from: f */
+        public final RectF f1698f;
+        /* renamed from: g */
+        public Uri f1699g;
+        /* renamed from: h */
+        public File f1700h;
+        /* renamed from: i */
+        public String f1701i;
 
         private SplashInfo() {
-            this.a = 0;
-            this.b = 0;
-            this.c = 0;
-            this.d = 0;
-            this.e = 0;
-            this.f = new RectF();
-            this.g = null;
-            this.h = null;
-            this.i = "";
+            this.f1693a = 0;
+            this.f1694b = 0;
+            this.f1695c = 0;
+            this.f1696d = 0;
+            this.f1697e = 0;
+            this.f1698f = new RectF();
+            this.f1699g = null;
+            this.f1700h = null;
+            this.f1701i = "";
         }
     }
 
     public WelcomeDialog(Context context, boolean z, StateListener stateListener) {
         super(context);
-        this.d = z;
-        this.stateListener = stateListener;
-        setContentView(h.welcome__welcome_view);
+        this.f1705d = z;
+        this.f1706e = stateListener;
+        setContentView(C0256h.welcome__welcome_view);
         setDimAmount(0.0f);
     }
 
     protected void onShow() {
         super.onShow();
         final long currentTimeMillis = System.currentTimeMillis();
-        final View findViewById = findViewById(g.welcome__welcome_view__skip);
-        findViewById.setOnClickListener(new OnClickListener(this) {
-            final  WelcomeDialog a;
-
-            {
-                this.a = r1;
-            }
-
-            public void onClick(View view) {
-                this.a.j = false;
-                this.a.doFinishShow();
-            }
-        });
+        final View findViewById = findViewById(C0255g.welcome__welcome_view__skip);
+        findViewById.setOnClickListener(new C04951(this));
         findViewById.setVisibility(4);
-        final View findViewById2 = findViewById(g.welcome__welcome_view__shadow);
+        final View findViewById2 = findViewById(C0255g.welcome__welcome_view__shadow);
         findViewById2.setVisibility(4);
-        this.l = (long) Integer.valueOf(getContext().getString(com.duokan.c.j.welcome__welcome_view__delay_time)).intValue();
-        this.f = (ImageView) findViewById(g.welcome__welcome_view__pic);
-        this.f.setDrawingCacheEnabled(true);
-        this.f.setWillNotCacheDrawing(true);
-        this.f.setBackgroundDrawable(new Drawable(this) {
-            final  WelcomeDialog a;
-
-            {
-                this.a = r1;
-            }
-
-            public void setColorFilter(ColorFilter colorFilter) {
-            }
-
-            public void setAlpha(int i) {
-            }
-
-            public int getOpacity() {
-                return -1;
-            }
-
-            public void draw(Canvas canvas) {
-                if (this.a.g != null) {
-                    int width = getBounds().width();
-                    int height = getBounds().height();
-                    int intrinsicWidth = this.a.g.getIntrinsicWidth();
-                    int intrinsicHeight = this.a.g.getIntrinsicHeight();
-                    float max = Math.max(((float) getBounds().width()) / ((float) intrinsicWidth), ((float) getBounds().height()) / ((float) intrinsicHeight));
-                    this.a.g.setBounds(Math.round((-((((float) intrinsicWidth) * max) - ((float) width))) / 2.0f), Math.round((-((((float) intrinsicHeight) * max) - ((float) height))) / 2.0f), Math.round((((float) intrinsicWidth) * max) + ((-((((float) intrinsicWidth) * max) - ((float) width))) / 2.0f)), Math.round((((float) intrinsicHeight) * max) + ((-((((float) intrinsicHeight) * max) - ((float) height))) / 2.0f)));
-                    canvas.save();
-                    canvas.clipRect(0, 0, width, height);
-                    this.a.g.draw(canvas);
-                    canvas.restore();
-                }
-            }
-        });
+        this.f1713l = (long) Integer.valueOf(getContext().getString(C0258j.welcome__welcome_view__delay_time)).intValue();
+        this.f1707f = (ImageView) findViewById(C0255g.welcome__welcome_view__pic);
+        this.f1707f.setDrawingCacheEnabled(true);
+        this.f1707f.setWillNotCacheDrawing(true);
+        this.f1707f.setBackgroundDrawable(new C04962(this));
         et etVar = new et();
-        etVar.a(new ct());
-        etVar.a(new onTapListener(this) {
-            final  WelcomeDialog a;
+        etVar.m2041a(new ct());
+        etVar.m2042a(new C04973(this));
+        etVar.m2046b(this.f1707f);
+        ah.m871b(new Runnable(this) {
+            /* renamed from: d */
+            final /* synthetic */ WelcomeDialog f1687d;
 
-            {
-                this.a = r1;
-            }
+            /* renamed from: com.duokan.reader.WelcomeDialog$4$1 */
+            class C05001 implements Runnable {
+                /* renamed from: a */
+                final /* synthetic */ C05034 f1675a;
 
-            public void onTouchUp(View view, PointF pointF) {
-            }
+                /* renamed from: com.duokan.reader.WelcomeDialog$4$1$1 */
+                class C04991 implements Runnable {
+                    /* renamed from: a */
+                    final /* synthetic */ C05001 f1674a;
 
-            public void onTouchDown(View view, PointF pointF) {
-            }
+                    /* renamed from: com.duokan.reader.WelcomeDialog$4$1$1$1 */
+                    class C04981 implements Runnable {
+                        /* renamed from: a */
+                        final /* synthetic */ C04991 f1673a;
 
-            public void onTouchCancel(View view, PointF pointF) {
-            }
+                        C04981(C04991 c04991) {
+                            this.f1673a = c04991;
+                        }
 
-            public void onTap(er erVar, View view, PointF pointF) {
-                if (this.a.g != null && this.a.i != null) {
-                    RectF rectF = (RectF) UTools.h.getRect();
-                    Rect bounds = this.a.g.getBounds();
-                    rectF.set(this.a.i.left * ((float) bounds.width()), this.a.i.top * ((float) bounds.width()), this.a.i.right * ((float) bounds.width()), this.a.i.bottom * ((float) bounds.width()));
-                    if (rectF.contains(pointF.x - ((float) bounds.left), pointF.y - ((float) bounds.top))) {
-                        this.a.j = true;
-                        this.a.doFinishShow();
+                        public void run() {
+                            this.f1673a.f1674a.f1675a.f1687d.doFinishShow();
+                        }
                     }
-                    UTools.h.getRect(rectF);
+
+                    C04991(C05001 c05001) {
+                        this.f1674a = c05001;
+                    }
+
+                    public void run() {
+                        UThread.postDelayed(new C04981(this), this.f1674a.f1675a.f1687d.f1713l);
+                    }
+                }
+
+                C05001(C05034 c05034) {
+                    this.f1675a = c05034;
+                }
+
+                public void run() {
+                    C0328a.m757c().m760a();
+                    dv.startAlphaAnimation(this.f1675a.f1687d.f1707f, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, new C04991(this));
                 }
             }
-        });
-        etVar.b(this.f);
-        ah.submitFuture(new Runnable(this) {
-            final  WelcomeDialog d;
 
             public void run() {
                 Drawable drawable;
-                SplashInfo splashInfo = null;
-                if (this.d.d) {
-                    drawable = this.d.getContext().getResources().getDrawable(f.welcome__welcome_view__default_pic);
+                SplashInfo splashInfo;
+                int i = 0;
+                if (this.f1687d.f1705d) {
+                    drawable = this.f1687d.getContext().getResources().getDrawable(C0254f.welcome__welcome_view__default_pic);
+                    splashInfo = null;
                 } else {
-                    SplashInfo access$500 = WelcomeDialog.getShowableSplashInfo();
-                    if (access$500 != null) {
+                    Drawable bitmapDrawable;
+                    splashInfo = WelcomeDialog.getShowableSplashInfo();
+                    if (splashInfo != null) {
                         try {
-                            DisplayMetrics displayMetrics = this.d.getContext().getResources().getDisplayMetrics();
+                            DisplayMetrics displayMetrics = this.f1687d.getContext().getResources().getDisplayMetrics();
                             Options options = new Options();
                             options.inJustDecodeBounds = true;
-                            BitmapFactory.decodeFile(access$500.h.getAbsolutePath(), options);
+                            BitmapFactory.decodeFile(splashInfo.f1700h.getAbsolutePath(), options);
                             Options options2 = new Options();
                             options2.inSampleSize = Math.min(options.outWidth / displayMetrics.widthPixels, options.outHeight / displayMetrics.heightPixels);
-                            Bitmap decodeFile = BitmapFactory.decodeFile(access$500.h.getAbsolutePath(), options2);
+                            Bitmap decodeFile = BitmapFactory.decodeFile(splashInfo.f1700h.getAbsolutePath(), options2);
                             if (decodeFile != null) {
-                                drawable = new BitmapDrawable(this.d.getContext().getResources(), decodeFile);
+                                bitmapDrawable = new BitmapDrawable(this.f1687d.getContext().getResources(), decodeFile);
+                                drawable = bitmapDrawable;
                                 if (drawable == null) {
-                                    splashInfo = access$500;
+                                    i = (this.f1687d.getContext().getResources().getDrawable(C0254f.general__shared__welcome_logo).getIntrinsicHeight() * 3) / 2;
                                 } else {
-                                    drawable = this.d.getContext().getResources().getDrawable(f.welcome__welcome_view__default_pic);
-                                    if (access$500 != null) {
-                                        access$500.a = 0;
+                                    drawable = this.f1687d.getContext().getResources().getDrawable(C0254f.welcome__welcome_view__default_pic);
+                                    if (splashInfo != null) {
+                                        splashInfo.f1693a = 0;
                                     }
-                                    splashInfo = access$500;
                                 }
                             }
                         } catch (Throwable th) {
                             drawable = null;
                         }
                     }
-                    drawable = null;
+                    bitmapDrawable = null;
+                    drawable = bitmapDrawable;
                     if (drawable == null) {
-                        drawable = this.d.getContext().getResources().getDrawable(f.welcome__welcome_view__default_pic);
-                        if (access$500 != null) {
-                            access$500.a = 0;
+                        drawable = this.f1687d.getContext().getResources().getDrawable(C0254f.welcome__welcome_view__default_pic);
+                        if (splashInfo != null) {
+                            splashInfo.f1693a = 0;
                         }
-                        splashInfo = access$500;
                     } else {
-                        splashInfo = access$500;
+                        i = (this.f1687d.getContext().getResources().getDrawable(C0254f.general__shared__welcome_logo).getIntrinsicHeight() * 3) / 2;
                     }
                 }
-                final Runnable anonymousClass1 = new Runnable(this) {
-                    final  AnonymousClass4 a;
-
-                    {
-                        this.a = r1;
-                    }
-
-                    public void run() {
-                        WebLog.c().WebLog();
-                        UTools.a(this.a.d.f, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, new Runnable(this) {
-                            final  AnonymousClass1 a;
-
-                            {
-                                this.a = r1;
-                            }
-
-                            public void run() {
-                                TaskHandler.postTask(new Runnable(this) {
-                                    final  AnonymousClass1 a;
-
-                                    {
-                                        this.a = r1;
-                                    }
-
-                                    public void run() {
-                                        this.a.a.a.d.doFinishShow();
-                                    }
-                                }, this.a.a.d.l);
-                            }
-                        });
-                    }
-                };
-                if (splashInfo == null || splashInfo.a == 0) {
+                final Runnable c05001 = new C05001(this);
+                if (splashInfo == null || splashInfo.f1693a == 0) {
                     long j;
-                    Runnable anonymousClass3 = new Runnable(this) {
-                        final  AnonymousClass4 c;
+                    Runnable c05023 = new Runnable(this) {
+                        /* renamed from: c */
+                        final /* synthetic */ C05034 f1683c;
 
                         public void run() {
-                            this.c.d.f.setImageDrawable(drawable);
+                            this.f1683c.f1687d.f1707f.setImageDrawable(drawable);
                             if (DkApp.get().isUiReady()) {
-                                this.c.d.doFinishShow();
+                                this.f1683c.f1687d.doFinishShow();
                             } else {
-                                anonymousClass1.run();
+                                c05001.run();
                             }
                         }
                     };
@@ -318,31 +424,33 @@ public class WelcomeDialog extends j {
                     } else {
                         j = Math.max(0, 200 - (System.currentTimeMillis() - currentTimeMillis));
                     }
-                    TaskHandler.postDelayed(anonymousClass3, j);
+                    UThread.postDelayed(c05023, j);
                     return;
                 }
-                TaskHandler.PostTask(new Runnable(this) {
-                    final  AnonymousClass4 d;
+                UThread.post(new Runnable(this) {
+                    /* renamed from: e */
+                    final /* synthetic */ C05034 f1680e;
 
                     public void run() {
-                        this.d.d.g = drawable;
-                        this.d.d.f.invalidate();
-                        this.d.d.l = 1000;
-                        if (WelcomeDialog.lastShownSplashId() != splashInfo.a) {
-                            WelcomeDialog.lastShownSplashId(splashInfo.a);
-                            if (splashInfo.e > 0) {
-                                this.d.d.l = TimeUnit.SECONDS.toMillis((long) splashInfo.e);
+                        this.f1680e.f1687d.f1708g = drawable;
+                        this.f1680e.f1687d.f1707f.setTranslationY((float) (-i));
+                        this.f1680e.f1687d.f1707f.invalidate();
+                        this.f1680e.f1687d.f1713l = 1000;
+                        if (WelcomeDialog.lastShownSplashId() != splashInfo.f1693a) {
+                            WelcomeDialog.lastShownSplashId(splashInfo.f1693a);
+                            if (splashInfo.f1697e > 0) {
+                                this.f1680e.f1687d.f1713l = TimeUnit.SECONDS.toMillis((long) splashInfo.f1697e);
                             } else {
-                                this.d.d.l = 3000;
+                                this.f1680e.f1687d.f1713l = 3000;
                             }
                         }
-                        this.d.d.i = splashInfo.f;
-                        this.d.d.h = splashInfo.g;
+                        this.f1680e.f1687d.f1710i = splashInfo.f1698f;
+                        this.f1680e.f1687d.f1709h = splashInfo.f1699g;
                         findViewById2.setVisibility(0);
-                        if (this.d.d.h != null) {
+                        if (this.f1680e.f1687d.f1709h != null) {
                             findViewById.setVisibility(0);
                         }
-                        anonymousClass1.run();
+                        c05001.run();
                     }
                 });
             }
@@ -350,68 +458,38 @@ public class WelcomeDialog extends j {
     }
 
     protected boolean onBack() {
-        if (this.h == null) {
+        if (this.f1709h == null) {
             doFinishShow();
         }
         return true;
     }
 
+    public static boolean hasShowableSplash() {
+        return getShowableSplashInfo() != null;
+    }
+
     public static boolean hasNewShowableSplash() {
         SplashInfo showableSplashInfo = getShowableSplashInfo();
-        if (showableSplashInfo == null || lastShownSplashId() == showableSplashInfo.a) {
+        if (showableSplashInfo == null || lastShownSplashId() == showableSplashInfo.f1693a) {
             return false;
         }
         return true;
     }
 
     public static void fetchNewSplash() {
-        if (classc.f.b().e() && b == null) {
+        if (C0559f.m2476b().m2486e() && f1703b == null) {
             long currentTimeMillis = System.currentTimeMillis();
-            if (currentTimeMillis - c >= a) {
-                b = new AnonymousClass5(i.f().e(), currentTimeMillis);
-                DkReader.get().runWhenUiReady(new Runnable() {
-                    public void run() {
-                        WelcomeDialog.b.open();
-                    }
-                });
+            if (currentTimeMillis - f1704c >= f1702a) {
+                f1703b = new C05045(C0709k.m3476a().m3511f(), currentTimeMillis);
+                DkReader.get().runWhenUiReady(new C05056());
             }
         }
     }
 
     private void doFinishShow() {
-        if (this.k) {
-            this.k = false;
-            DkApp.get().runWhenAppReady(new Runnable(this) {
-                final  WelcomeDialog a;
-
-                {
-                    this.a = r1;
-                }
-
-                public void run() {
-                    Runnable anonymousClass1 = new Runnable(this) {
-                        final  AnonymousClass7 a;
-                        private boolean b = false;
-
-                        {
-                            this.a = r2;
-                        }
-
-                        public void run() {
-                            if (!this.b) {
-                                this.b = true;
-                                com.duokan.reader.domain.statistics.a.k().a(this.a.a.h, this.a.a.j);
-                                this.a.a.dismiss();
-                                if (this.a.a.e != null) {
-                                    this.a.a.e.onEnd(this.a.a.j ? this.a.a.h : null);
-                                }
-                            }
-                        }
-                    };
-                    DkApp.get().runWhenUiReady(anonymousClass1);
-                    TaskHandler.postDelayed(anonymousClass1, TimeUnit.SECONDS.toMillis(2));
-                }
-            });
+        if (this.f1712k) {
+            this.f1712k = false;
+            DkApp.get().runWhenAppReady(new C05077(this));
         }
     }
 
@@ -422,7 +500,7 @@ public class WelcomeDialog extends j {
             long currentTimeMillis = System.currentTimeMillis() / 1000;
             for (SplashInfo splashInfo2 : listSplashInfos) {
                 SplashInfo splashInfo22;
-                if (currentTimeMillis < splashInfo22.c || currentTimeMillis >= splashInfo22.d || !splashInfo22.h.exists() || (splashInfo != null && splashInfo.b >= splashInfo22.b && (splashInfo.b != splashInfo22.b || splashInfo.c >= splashInfo22.c))) {
+                if (currentTimeMillis < splashInfo22.f1695c || currentTimeMillis >= splashInfo22.f1696d || !splashInfo22.f1700h.exists() || (splashInfo != null && splashInfo.f1694b >= splashInfo22.f1694b && (splashInfo.f1694b != splashInfo22.f1694b || splashInfo.f1695c >= splashInfo22.f1695c))) {
                     splashInfo22 = splashInfo;
                 }
                 splashInfo = splashInfo22;
@@ -431,7 +509,7 @@ public class WelcomeDialog extends j {
         return splashInfo;
     }
 
-    private static List listSplashInfos(File file) {
+    private static List<SplashInfo> listSplashInfos(File file) {
         Object linkedList = new LinkedList();
         File cacheDir = DkReader.get().getCacheDir();
         JSONObject jsonObjectFromFile = getJsonObjectFromFile(file);
@@ -447,27 +525,27 @@ public class WelcomeDialog extends j {
                 Object optString = jsonObjectFromFile.optString("action", "");
                 int optInt = jsonObjectFromFile.optInt("timeout");
                 String string = jsonObjectFromFile.getString("startup_pic");
-                File file2 = new File(cacheDir, String.format("splash%getTriangleEdge.img", new Object[]{Integer.valueOf(i2)}));
+                File file2 = new File(cacheDir, String.format("splash%d.img", new Object[]{Integer.valueOf(i2)}));
                 if (currentTimeMillis < j2) {
                     SplashInfo splashInfo = new SplashInfo();
                     if (jsonObjectFromFile.has("trigger")) {
                         try {
                             JSONArray jSONArray2 = jsonObjectFromFile.getJSONArray("trigger");
-                            splashInfo.f.left = (float) jSONArray2.getDouble(0);
-                            splashInfo.f.top = (float) jSONArray2.getDouble(1);
-                            splashInfo.f.right = splashInfo.f.left + ((float) jSONArray2.getDouble(2));
-                            splashInfo.f.bottom = ((float) jSONArray2.getDouble(3)) + splashInfo.f.top;
+                            splashInfo.f1698f.left = (float) jSONArray2.getDouble(0);
+                            splashInfo.f1698f.top = (float) jSONArray2.getDouble(1);
+                            splashInfo.f1698f.right = splashInfo.f1698f.left + ((float) jSONArray2.getDouble(2));
+                            splashInfo.f1698f.bottom = ((float) jSONArray2.getDouble(3)) + splashInfo.f1698f.top;
                         } catch (Throwable th) {
                         }
                     }
-                    splashInfo.a = i2;
-                    splashInfo.b = i3;
-                    splashInfo.c = j;
-                    splashInfo.d = j2;
-                    splashInfo.e = optInt;
-                    splashInfo.g = TextUtils.isEmpty(optString) ? null : Uri.parse(optString);
-                    splashInfo.i = string;
-                    splashInfo.h = file2;
+                    splashInfo.f1693a = i2;
+                    splashInfo.f1694b = i3;
+                    splashInfo.f1695c = j;
+                    splashInfo.f1696d = j2;
+                    splashInfo.f1697e = optInt;
+                    splashInfo.f1699g = TextUtils.isEmpty(optString) ? null : Uri.parse(optString);
+                    splashInfo.f1701i = string;
+                    splashInfo.f1700h = file2;
                     linkedList.add(splashInfo);
                 }
             }
@@ -534,6 +612,6 @@ public class WelcomeDialog extends j {
 
     public void show() {
         super.show();
-        this.k = true;
+        this.f1712k = true;
     }
 }

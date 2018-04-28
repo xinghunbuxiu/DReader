@@ -1,20 +1,15 @@
 package com.duokan.reader.ui.general;
 
-import com.duokan.reader.ui.store.al;
+class hy implements cx {
+    /* renamed from: a */
+    final /* synthetic */ hu f7360a;
 
-class hy implements al {
-    final /* synthetic */ hx a;
-
-    hy(hx hxVar) {
-        this.a = hxVar;
+    hy(hu huVar) {
+        this.f7360a = huVar;
     }
 
-    public void onDownloadCloudBookStarted() {
-    }
-
-    public void onDownloadCloudBookError(String str) {
-    }
-
-    public void onDownloadCloudBookCanceled() {
+    /* renamed from: a */
+    public void mo1699a(int i, int i2) {
+        this.f7360a.m10758c(i2);
     }
 }

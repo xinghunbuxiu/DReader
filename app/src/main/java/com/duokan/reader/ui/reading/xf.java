@@ -1,19 +1,28 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import java.io.File;
+import java.util.Comparator;
 
-import com.duokan.reader.UmengManager;
+class xf implements Comparator<File> {
+    /* renamed from: a */
+    final /* synthetic */ wy f11141a;
 
-class xf implements OnClickListener {
-    final /* synthetic */ xc a;
-
-    xf(xc xcVar) {
-        this.a = xcVar;
+    xf(wy wyVar) {
+        this.f11141a = wyVar;
     }
 
-    public void onClick(View view) {
-        UmengManager.get().onEvent("V2_READING_TOP_TOOLBUTTON", "PDF-FitWidth");
-        this.a.a(new xg(this));
+    public /* synthetic */ int compare(Object obj, Object obj2) {
+        return m15063a((File) obj, (File) obj2);
+    }
+
+    /* renamed from: a */
+    public int m15063a(File file, File file2) {
+        if (file.lastModified() == file2.lastModified()) {
+            return 0;
+        }
+        if (file.lastModified() > file2.lastModified()) {
+            return 1;
+        }
+        return -1;
     }
 }

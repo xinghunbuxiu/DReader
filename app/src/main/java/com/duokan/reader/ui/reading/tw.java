@@ -1,13 +1,16 @@
 package com.duokan.reader.ui.reading;
 
-class tw implements Runnable {
-    final /* synthetic */ to a;
+import com.duokan.core.sys.UThread;
 
-    tw(to toVar) {
-        this.a = toVar;
+class tw implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ tp f10996a;
+
+    tw(tp tpVar) {
+        this.f10996a = tpVar;
     }
 
     public void run() {
-        this.a.f.v().goHome(null);
+        UThread.postDelayed(new tx(this), 300);
     }
 }

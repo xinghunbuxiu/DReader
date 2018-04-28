@@ -5,15 +5,16 @@ import android.graphics.Canvas;
 import android.widget.FrameLayout;
 
 class aa extends FrameLayout {
-    final HatGridView a;
+    /* renamed from: a */
+    final /* synthetic */ HatGridView f892a;
 
-    public aa(HatGridView hatGridView, Context context) {
+    aa(HatGridView hatGridView, Context context) {
+        this.f892a = hatGridView;
         super(context);
-        this.a = hatGridView;
     }
 
     protected void dispatchDraw(Canvas canvas) {
-        canvas.clipRect(0, getScrollY(), getWidth(), (getScrollY() + getHeight()) - this.a.i.getHeight());
+        canvas.clipRect(0, getScrollY(), getWidth(), (getScrollY() + getHeight()) - this.f892a.f819i.getHeight());
         super.dispatchDraw(canvas);
     }
 }

@@ -1,44 +1,32 @@
 package com.duokan.reader.ui.personal;
 
 import android.text.TextUtils;
-
-import com.duokan.c.j;
-import com.duokan.reader.common.webservices.b;
-import com.duokan.reader.common.webservices.duokan.k;
-import com.duokan.reader.common.webservices.duokan.r;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.bookshelf.im;
+import com.duokan.reader.ui.bookshelf.BookActionAssistant.BookAction;
 import com.duokan.reader.ui.general.be;
-import com.xiaomi.passport.accountmanager.MiAccountManager;
 
-class as extends r {
-    b a = new b();
-    final /* synthetic */ am b;
+class as implements im {
+    /* renamed from: a */
+    final /* synthetic */ ar f8285a;
 
-    as(am amVar) {
-        this.b = amVar;
+    as(ar arVar) {
+        this.f8285a = arVar;
     }
 
-    protected void onSessionTry() {
-        k kVar = new k(this, MiAccountManager.get(this.b.getContext()));
-        this.a = kVar.a();
-        if (TextUtils.isEmpty((CharSequence) this.a.a)) {
-            this.a = kVar.e(this.b.c());
-        } else {
-            this.b.k = (String) this.a.a;
+    /* renamed from: a */
+    public void mo1021a(C0800c c0800c) {
+        this.f8285a.f8282b.m11339a(false);
+        this.f8285a.f8282b.m11338a(c0800c);
+        this.f8285a.f8284d.mo1691d();
+    }
+
+    /* renamed from: a */
+    public void mo1022a(String str) {
+        this.f8285a.f8282b.m11339a(false);
+        this.f8285a.f8283c.setAction(BookAction.DOWNLOAD);
+        if (!TextUtils.equals(str, "")) {
+            be.m10287a(this.f8285a.f8284d.f8270a, (CharSequence) str, 0).show();
         }
-    }
-
-    protected void onSessionSucceeded() {
-        if (this.a.b != 0 || TextUtils.isEmpty((CharSequence) this.a.a)) {
-            this.b.g.dismiss();
-            be.a(this.b.getContext(), j.personal__create_feedback_view__fail, 0).show();
-            return;
-        }
-        this.b.k = (String) this.a.a;
-        this.b.e();
-    }
-
-    protected void onSessionFailed() {
-        this.b.g.dismiss();
-        be.a(this.b.getContext(), j.personal__create_feedback_view__fail, 0).show();
     }
 }

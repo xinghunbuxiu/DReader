@@ -1,166 +1,165 @@
 package com.duokan.reader.domain.bookshelf;
 
-import android.content.ContentValues;
-import android.database.Cursor;
+import android.graphics.Rect;
 import android.text.TextUtils;
+import com.duokan.reader.domain.document.av;
+import com.duokan.reader.domain.document.bb;
+import com.duokan.reader.domain.document.epub.C0936c;
+import com.duokan.reader.domain.document.epub.C0952s;
+import com.duokan.reader.domain.document.epub.ce;
+import com.duokan.reader.domain.document.p045a.C0898a;
+import com.duokan.reader.domain.document.p045a.C0904d;
+import com.duokan.reader.domain.document.sbk.C0965b;
+import com.duokan.reader.domain.document.sbk.C0969f;
+import com.duokan.reader.domain.document.txt.C0986b;
+import com.duokan.reader.domain.document.txt.C1000p;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.domain.document.sbk.f;
-import com.duokan.reader.domain.document.sbk.n;
-import com.duokan.reader.domain.document.sbk.p;
-import com.duokan.reader.domain.document.sbk.s;
+public class ke {
+    /* renamed from: a */
+    public av f3445a;
+    /* renamed from: b */
+    public Rect f3446b;
+    /* renamed from: c */
+    public bb f3447c;
+    /* renamed from: d */
+    public int f3448d;
+    /* renamed from: e */
+    public float f3449e;
+    /* renamed from: f */
+    public hb f3450f;
+    /* renamed from: g */
+    private boolean f3451g;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.Semaphore;
-
-class ke implements n {
-    static final /* synthetic */ boolean a = (!jv.class.desiredAssertionStatus());
-    final /* synthetic */ jv b;
-
-    ke(jv jvVar) {
-        this.b = jvVar;
+    public ke() {
+        this.f3445a = null;
+        this.f3446b = new Rect();
+        this.f3447c = null;
+        this.f3448d = -1;
+        this.f3449e = 0.0f;
+        this.f3451g = false;
+        this.f3450f = new hb();
+        this.f3445a = null;
+        this.f3446b = new Rect();
+        this.f3449e = 0.0f;
+        this.f3448d = -1;
+        this.f3450f = new hb();
     }
 
-    public void a(f fVar, String str, p pVar, long[][] jArr) {
-        if (a || jArr != null) {
-            File d = this.b.d();
-            am aT = this.b.aT();
-            com.duokan.core.a.n i = aT.i();
-            try {
-                aT.a();
-                i.b();
-                ContentValues contentValues = new ContentValues();
-                contentValues.put("book_id", Long.valueOf(this.b.aF()));
-                contentValues.put("kernel_version", ReaderEnv.get().getKernelVersion());
-                contentValues.put("layout_params", pVar.toString());
-                contentValues.put("file_size", Long.valueOf(d.length()));
-                contentValues.put("modified_date", Long.valueOf(d.lastModified()));
-                contentValues.put("content_digest", str);
-                OutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-                new ObjectOutputStream(byteArrayOutputStream).writeObject(jArr);
-                contentValues.put("pagination_result", byteArrayOutputStream.toByteArray());
-                i.a("typesetting", null, contentValues);
-                i.f();
-                i.c();
-            } catch (Exception e) {
-                e.printStackTrace();
-                i.c();
-            } catch (Throwable th) {
-                aT.b();
-            }
-            aT.b();
+    public ke(BookFormat bookFormat, String str) {
+        this.f3445a = null;
+        this.f3446b = new Rect();
+        this.f3447c = null;
+        this.f3448d = -1;
+        this.f3449e = 0.0f;
+        this.f3451g = false;
+        this.f3450f = new hb();
+        switch (kf.f3452a[bookFormat.ordinal()]) {
+            case 1:
+                this.f3445a = C0952s.m6987a(0, 0, 0);
+                break;
+            case 2:
+                this.f3445a = C0904d.m5963a(0, 0, 0);
+                break;
+            case 3:
+                this.f3445a = C1000p.m7689b(0);
+                break;
+            case 4:
+                this.f3445a = C0969f.m7162a(0, 0, 0);
+                break;
+        }
+        this.f3449e = 0.0f;
+        this.f3448d = -1;
+        this.f3450f = new hb();
+        if (TextUtils.isEmpty(str)) {
+            this.f3451g = true;
             return;
         }
-        throw new AssertionError();
-    }
-
-    public long[][] a(f fVar, String str, p pVar) {
-        long[][] jArr;
-        File d = this.b.d();
-        am aT = this.b.aT();
-        com.duokan.core.a.n i = aT.i();
-        Cursor cursor;
         try {
-            aT.a();
-            cursor = null;
-            try {
-                cursor = i.a(String.format("SELECT * FROM %s WHERE %s = \"%s\"", new Object[]{"typesetting", "book_id", "" + this.b.aF()}), null);
-                cursor.moveToPosition(cursor.getCount());
-                Object obj = null;
-                while (cursor.moveToPrevious()) {
-                    long j = cursor.getLong(cursor.getColumnIndex("file_size"));
-                    long j2 = cursor.getLong(cursor.getColumnIndex("modified_date"));
-                    String string = cursor.getString(cursor.getColumnIndex("kernel_version"));
-                    CharSequence string2 = cursor.isNull(cursor.getColumnIndex("content_digest")) ? "" : cursor.getString(cursor.getColumnIndex("content_digest"));
-                    if ((!d.isDirectory() && (j != d.length() || j2 != d.lastModified())) || !string.equals(ReaderEnv.get().getKernelVersion())) {
-                        obj = 1;
-                        break;
-                    } else if (!TextUtils.equals(string2, str)) {
-                        obj = 1;
-                        break;
-                    } else {
-                        p a = p.a(cursor.getString(cursor.getColumnIndex("layout_params")));
-                        if (a != null && pVar.equals(a)) {
-                            jArr = (long[][]) new ObjectInputStream(new ByteArrayInputStream(cursor.getBlob(cursor.getColumnIndex("pagination_result")))).readObject();
-                            if (cursor != null) {
-                                cursor.close();
-                            }
-                            aT.b();
-                            return jArr;
-                        }
-                    }
-                }
-                if (obj != null) {
-                    i.b();
-                    try {
-                        i.a(String.format("DELETE FROM %s WHERE %s = \"%s\"", new Object[]{"typesetting", "book_id", "" + this.b.aF()}));
-                        i.f();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        if (cursor != null) {
-                            cursor.close();
-                        }
-                        jArr = (long[][]) null;
-                        aT.b();
-                        return jArr;
-                    } finally {
-                        i.c();
-                    }
-                }
-                if (cursor != null) {
-                    cursor.close();
-                }
-            } catch (Exception e2) {
-                e2.printStackTrace();
-                if (cursor != null) {
-                    cursor.close();
-                }
-            } catch (Throwable th) {
-                if (cursor != null) {
-                    cursor.close();
-                }
+            JSONObject jSONObject = new JSONObject(str);
+            switch (kf.f3452a[bookFormat.ordinal()]) {
+                case 1:
+                    this.f3445a = C0936c.m6768a(jSONObject);
+                    break;
+                case 2:
+                    this.f3445a = C0898a.m5785a(jSONObject);
+                    break;
+                case 4:
+                    this.f3445a = C0965b.m7132a(jSONObject);
+                    break;
+                default:
+                    this.f3445a = C0986b.m7530a(jSONObject);
+                    break;
             }
-            jArr = (long[][]) null;
-            aT.b();
-        } catch (Exception e22) {
-            e22.printStackTrace();
-            jArr = (long[][]) null;
-            if (cursor != null) {
-                cursor.close();
+            this.f3446b = new Rect();
+            JSONArray optJSONArray = jSONObject.optJSONArray("viewport");
+            if (optJSONArray != null) {
+                this.f3446b.set(optJSONArray.getInt(0), optJSONArray.getInt(1), optJSONArray.getInt(2), optJSONArray.getInt(3));
             }
-            aT.b();
-        } catch (Throwable th2) {
-            aT.b();
-        }
-        return jArr;
-    }
-
-    public s a(f fVar, s sVar) {
-        try {
-            this.b.bi();
+            this.f3448d = jSONObject.optInt("slide_index", -1);
+            this.f3449e = Math.max(0.0f, Math.min((float) jSONObject.optDouble("percent", 0.0d), 100.0f));
+            JSONObject optJSONObject = jSONObject.optJSONObject("fixed_info");
+            if (optJSONObject != null) {
+                this.f3450f = new hb(optJSONObject);
+            }
+            jSONObject = jSONObject.optJSONObject("audio_position");
+            if (jSONObject != null) {
+                this.f3447c = ce.m6801a(jSONObject);
+            }
         } catch (Throwable th) {
         }
-        if (this.b.o() == BookType.SERIAL) {
+    }
+
+    /* renamed from: a */
+    public boolean m4818a() {
+        return this.f3451g;
+    }
+
+    /* renamed from: b */
+    public hb m4819b() {
+        if (this.f3450f == null) {
+            this.f3450f = new hb();
+        }
+        return this.f3450f;
+    }
+
+    /* renamed from: c */
+    public bb m4820c() {
+        return this.f3447c;
+    }
+
+    public String toString() {
+        JSONObject f;
+        Throwable th;
+        JSONObject jSONObject = new JSONObject();
+        try {
+            f = this.f3445a.mo1193f();
             try {
-                String[] bh = this.b.bh();
-                if (sVar == null && bh.length > 0 && !this.b.u(bh[0])) {
-                    Semaphore semaphore = new Semaphore(0);
-                    this.b.a(Arrays.asList(new String[]{bh[0]}), new kf(this, semaphore));
-                    semaphore.acquire();
-                    List v = this.b.v(bh[0]);
-                    this.b.a(v.subList(0, Math.min(3, v.size())), true, new kg(this, semaphore));
-                    semaphore.acquire();
+                JSONArray jSONArray = new JSONArray();
+                jSONArray.put(0, this.f3446b.left);
+                jSONArray.put(1, this.f3446b.top);
+                jSONArray.put(2, this.f3446b.right);
+                jSONArray.put(3, this.f3446b.bottom);
+                f.put("viewport", jSONArray);
+                f.put("percent", (double) this.f3449e);
+                f.put("slide_index", this.f3448d);
+                f.accumulate("fixed_info", this.f3450f.m4629j());
+                if (this.f3447c != null) {
+                    f.put("audio_position", this.f3447c.mo1427i());
                 }
             } catch (Throwable th2) {
+                th = th2;
+                th.printStackTrace();
+                return f.toString();
             }
+        } catch (Throwable th3) {
+            Throwable th4 = th3;
+            f = jSONObject;
+            th = th4;
+            th.printStackTrace();
+            return f.toString();
         }
-        return this.b.bo();
+        return f.toString();
     }
 }

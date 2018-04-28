@@ -1,15 +1,21 @@
 package com.duokan.reader.domain.bookshelf;
 
 class hq implements Runnable {
-    final /* synthetic */ hp a;
+    /* renamed from: a */
+    final /* synthetic */ C0800c f3317a;
+    /* renamed from: b */
+    final /* synthetic */ long f3318b;
+    /* renamed from: c */
+    final /* synthetic */ hp f3319c;
 
-    hq(hp hpVar) {
-        this.a = hpVar;
+    hq(hp hpVar, C0800c c0800c, long j) {
+        this.f3319c = hpVar;
+        this.f3317a = c0800c;
+        this.f3318b = j;
     }
 
     public void run() {
-        this.a.b.a.remove(this.a.a);
-        this.a.c.w = this.a.c.w - 1;
-        this.a.c.G();
+        this.f3319c.f3316b.m3820a(this.f3317a, this.f3318b);
+        this.f3319c.f3316b.m3807G();
     }
 }

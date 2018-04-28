@@ -5,13 +5,14 @@ import android.view.View.OnClickListener;
 import android.widget.FrameLayout;
 
 class cq implements OnClickListener {
-    final /* synthetic */ TabBarView a;
+    /* renamed from: a */
+    final /* synthetic */ TabBarView f1090a;
 
     cq(TabBarView tabBarView) {
-        this.a = tabBarView;
+        this.f1090a = tabBarView;
     }
 
     public void onClick(View view) {
-        this.a.a(this.a.a((FrameLayout) view), true);
+        this.f1090a.m1308a(this.f1090a.m1304a((FrameLayout) view), true);
     }
 }

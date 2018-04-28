@@ -1,45 +1,21 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.core.sys.ag;
-import com.duokan.reader.domain.document.epub.av;
-
-import java.util.HashMap;
-import java.util.List;
-
-import miuipub.date.Calendar;
+import com.duokan.core.sys.ah;
+import java.util.Map;
 
 class ga implements Runnable {
-    final /* synthetic */ List a;
-    final /* synthetic */ ag b;
-    final /* synthetic */ fv c;
+    /* renamed from: a */
+    final /* synthetic */ Map f3216a;
+    /* renamed from: b */
+    final /* synthetic */ fz f3217b;
 
-    ga(fv fvVar, List list, ag agVar) {
-        this.c = fvVar;
-        this.a = list;
-        this.b = agVar;
+    ga(fz fzVar, Map map) {
+        this.f3217b = fzVar;
+        this.f3216a = map;
     }
 
     public void run() {
-        HashMap hashMap = new HashMap();
-        for (av put : this.a) {
-            hashMap.put(put, Integer.valueOf(-1));
-        }
-        for (av put2 : this.a) {
-            int i;
-            int i2 = Calendar.MILLISECOND_OF_SECOND;
-            try {
-                gz gzVar = (gz) put2;
-                i2 = gzVar.b();
-                gzVar.c();
-                i = i2;
-            } catch (InterruptedException e) {
-                i = -1;
-            } catch (Throwable th) {
-                i = i2;
-            }
-            hashMap.put(put2, Integer.valueOf(i));
-        }
-        TaskHandler.postTask(new gb(this, hashMap));
+        ee.f3084E.acquireUninterruptibly();
+        ah.m871b(new gb(this));
     }
 }

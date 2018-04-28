@@ -1,17 +1,18 @@
 package com.duokan.reader.domain.document.txt;
 
 class al implements Runnable {
-    final /* synthetic */ ak a;
+    /* renamed from: a */
+    final /* synthetic */ ak f4906a;
 
     al(ak akVar) {
-        this.a = akVar;
+        this.f4906a = akVar;
     }
 
     public void run() {
-        if (this.a.c.G()) {
-            this.a.a.run();
+        if (this.f4906a.f4905c.mo1284G()) {
+            this.f4906a.f4903a.run();
         } else {
-            this.a.b.run();
+            this.f4906a.f4904b.run();
         }
     }
 }

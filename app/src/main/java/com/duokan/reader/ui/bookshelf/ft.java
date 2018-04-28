@@ -1,33 +1,28 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.reader.ui.bookshelf.FileScanTask.ErrorCode;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 
-import java.util.List;
+class ft extends Drawable {
+    /* renamed from: a */
+    final /* synthetic */ fo f6468a;
 
-class ft implements gm {
-    final /* synthetic */ fr a;
-
-    ft(fr frVar) {
-        this.a = frVar;
+    ft(fo foVar) {
+        this.f6468a = foVar;
     }
 
-    public void a(gt gtVar) {
-        this.a.c = this.a.a(gtVar);
-        TaskHandler.postTask(new fu(this));
+    public void draw(Canvas canvas) {
+        this.f6468a.m9632a(canvas);
     }
 
-    public void a(List list, ErrorCode errorCode) {
-        if (errorCode == ErrorCode.OK || errorCode == ErrorCode.CANCELED) {
-            this.a.e.clear();
-            this.a.e = list;
-            new fx(this.a).execute(new String[0]);
-            this.a.a = 0;
-            for (gt gtVar : this.a.e) {
-                this.a.a = gtVar.a() + this.a.a;
-            }
-            return;
-        }
-        this.a.requestDetach();
+    public void setAlpha(int i) {
+    }
+
+    public void setColorFilter(ColorFilter colorFilter) {
+    }
+
+    public int getOpacity() {
+        return -3;
     }
 }

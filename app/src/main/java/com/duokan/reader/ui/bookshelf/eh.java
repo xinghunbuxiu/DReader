@@ -1,40 +1,26 @@
 package com.duokan.reader.ui.bookshelf;
 
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.View.OnFocusChangeListener;
+import com.duokan.reader.ui.general.p052a.C1317a;
 
-import com.duokan.core.ui.aj;
-import com.duokan.reader.domain.bookshelf.an;
+class eh implements OnFocusChangeListener {
+    /* renamed from: a */
+    final /* synthetic */ ec f6382a;
 
-class eh extends aj {
-    final /* synthetic */ ec a;
-
-    private eh(ec ecVar) {
-        this.a = ecVar;
+    eh(ec ecVar) {
+        this.f6382a = ecVar;
     }
 
-    public int c() {
-        return this.a.g.size() + 1;
-    }
-
-    public Object d(int i) {
-        if (i < 0 || i >= this.a.g.size()) {
-            return null;
+    public void onFocusChange(View view, boolean z) {
+        if (z) {
+            this.f6382a.f6377i = true;
+            this.f6382a.f6376h.setVisibility(0);
+            C1317a.m10196a(this.f6382a.f6375g, 300, null);
+            C1317a.m10193a(this.f6382a.f6376h, 0.0f, 1.0f, 300, Boolean.valueOf(false), null);
+            return;
         }
-        return this.a.g.get(i);
-    }
-
-    public View d(int i, View view, ViewGroup viewGroup) {
-        an anVar = (an) d(i);
-        if (anVar == null) {
-            return new a(this.a.getContext());
-        }
-        if (view == null || (view instanceof a)) {
-            view = new cz(this.a.getContext());
-        } else {
-            view = (cz) view;
-        }
-        view.setItemData(anVar);
-        return view;
+        this.f6382a.f6377i = false;
+        this.f6382a.m9544e();
     }
 }

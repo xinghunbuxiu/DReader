@@ -1,26 +1,28 @@
 package com.duokan.reader.domain.bookshelf;
 
-import android.text.TextUtils;
+public class ky {
+    /* renamed from: a */
+    public final String f3496a;
+    /* renamed from: b */
+    public final String f3497b;
+    /* renamed from: c */
+    public final String f3498c;
+    /* renamed from: d */
+    public final String f3499d;
+    /* renamed from: e */
+    public final long f3500e;
+    /* renamed from: f */
+    public final int f3501f;
+    /* renamed from: g */
+    public final int f3502g;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.b;
-import com.duokan.reader.ui.general.be;
-
-class ky implements b {
-    final /* synthetic */ kx a;
-
-    ky(kx kxVar) {
-        this.a = kxVar;
-    }
-
-    public void a(a aVar) {
-        this.a.c.a.f();
-    }
-
-    public void a(a aVar, String str) {
-        this.a.c.a.e();
-        if (!TextUtils.isEmpty(str)) {
-            be.a(this.a.c.a.b, (CharSequence) str, 0).show();
-        }
+    public ky(String str, String str2, String str3, String str4, long j, int i, int i2) {
+        this.f3496a = str;
+        this.f3497b = str2;
+        this.f3498c = str3;
+        this.f3499d = str4;
+        this.f3500e = j;
+        this.f3501f = i;
+        this.f3502g = i2;
     }
 }

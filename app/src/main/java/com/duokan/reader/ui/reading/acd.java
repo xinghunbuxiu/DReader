@@ -1,83 +1,53 @@
 package com.duokan.reader.ui.reading;
 
-import android.os.AsyncTask;
+import com.duokan.reader.domain.document.av;
 
-import java.io.FileOutputStream;
-import java.io.InputStream;
+public interface acd {
+    /* renamed from: a */
+    void mo2286a();
 
-class acd extends AsyncTask {
-    final /* synthetic */ acb a;
+    /* renamed from: a */
+    void mo2288a(int i, boolean z);
 
-    private acd(acb com_duokan_reader_ui_reading_acb) {
-        this.a = com_duokan_reader_ui_reading_acb;
-    }
+    /* renamed from: a */
+    void mo2289a(av avVar, boolean z);
 
-    protected /* synthetic */ Object doInBackground(Object[] objArr) {
-        return a((Void[]) objArr);
-    }
+    /* renamed from: b */
+    void mo2290b();
 
-    protected /* synthetic */ void onPostExecute(Object obj) {
-        a((Integer) obj);
-    }
+    /* renamed from: c */
+    int mo2291c();
 
-    protected /* synthetic */ void onProgressUpdate(Object[] objArr) {
-        a((Long[]) objArr);
-    }
+    /* renamed from: c */
+    void mo2292c(int i);
 
-    protected Integer a(Void... voidArr) {
-        Integer valueOf;
-        synchronized (this.a.g) {
-            try {
-                this.a.e();
-                InputStream inputStream = this.a.f.b()[0].b;
-                inputStream.reset();
-                FileOutputStream fileOutputStream = new FileOutputStream(this.a.g);
-                byte[] bArr = new byte[1024];
-                long j = 0;
-                while (!isCancelled()) {
-                    long read = (long) inputStream.read(bArr);
-                    if (read != -1) {
-                        fileOutputStream.write(bArr);
-                        j += read;
-                        publishProgress(new Long[]{Long.valueOf(j), Long.valueOf((long) this.a.f.b()[0].d)});
-                    }
-                }
-                fileOutputStream.flush();
-                fileOutputStream.close();
-                valueOf = Integer.valueOf(0);
-            } catch (Exception e) {
-                e.printStackTrace();
-                valueOf = Integer.valueOf(-1);
-            }
-        }
-        return valueOf;
-    }
+    /* renamed from: d */
+    int mo2293d();
 
-    protected void onCancelled() {
-        super.onCancelled();
-        this.a.d();
-    }
+    /* renamed from: e */
+    av mo2294e();
 
-    protected void a(Integer num) {
-        super.onPostExecute(num);
-        if (this.a.e == null) {
-            return;
-        }
-        if (num.intValue() == 0) {
-            this.a.e.l();
-            return;
-        }
-        this.a.e.k();
-        this.a.d();
-    }
+    /* renamed from: f */
+    boolean mo2295f();
 
-    protected void onPreExecute() {
-        super.onPreExecute();
-    }
+    /* renamed from: g */
+    void mo2296g();
 
-    protected void a(Long... lArr) {
-        if (this.a.e != null) {
-            this.a.e.a((int) (((1.0f * ((float) lArr[0].longValue())) / ((float) lArr[1].longValue())) * 100.0f));
-        }
-    }
+    /* renamed from: h */
+    void mo2297h();
+
+    /* renamed from: i */
+    boolean mo2298i();
+
+    /* renamed from: j */
+    boolean mo2299j();
+
+    /* renamed from: k */
+    void mo2300k();
+
+    /* renamed from: l */
+    void mo2301l();
+
+    /* renamed from: m */
+    void mo2302m();
 }

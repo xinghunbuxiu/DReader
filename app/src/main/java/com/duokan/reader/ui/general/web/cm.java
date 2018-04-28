@@ -1,18 +1,21 @@
 package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.sys.as;
-import com.duokan.reader.domain.cloud.DkSharedStorageManager;
 
-class cm implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
+class cm implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ as f7681a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7682b;
 
-    cm(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    cm(ci ciVar, as asVar) {
+        this.f7682b = ciVar;
+        this.f7681a = asVar;
     }
 
-    public void a() {
-        DkSharedStorageManager.a().b(this.a);
+    public void run() {
+        if (this.f7682b.f7581b.isAttached()) {
+            this.f7682b.m11020b(this.f7681a);
+        }
     }
 }

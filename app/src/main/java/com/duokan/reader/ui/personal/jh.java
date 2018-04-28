@@ -1,23 +1,18 @@
 package com.duokan.reader.ui.personal;
 
-import android.os.Handler.Callback;
-import android.os.Message;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.domain.account.C0709k;
 
-import com.duokan.reader.domain.bookshelf.ai;
-import com.duokan.reader.domain.cloud.PersonalPrefs;
+class jh implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ jg f8779a;
 
-class jh implements Callback {
-    final /* synthetic */ it a;
-
-    jh(it itVar) {
-        this.a = itVar;
+    jh(jg jgVar) {
+        this.f8779a = jgVar;
     }
 
-    public boolean handleMessage(Message message) {
-        if (message.what != 0 || !PersonalPrefs.a().y()) {
-            return false;
-        }
-        ai.a().a(true, true);
-        return true;
+    public void onClick(View view) {
+        C0709k.m3476a().m3495a(new ji(this));
     }
 }

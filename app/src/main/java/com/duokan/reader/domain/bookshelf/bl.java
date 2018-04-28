@@ -1,23 +1,24 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.account.ab;
+import com.duokan.reader.domain.account.al;
+import java.util.List;
 
-import java.util.ArrayList;
+class bl extends bo {
+    /* renamed from: a */
+    final /* synthetic */ bk f2843a;
 
-class bl implements dz {
-    final /* synthetic */ ab a;
-    final /* synthetic */ aq b;
-
-    bl(aq aqVar, ab abVar) {
-        this.b = aqVar;
-        this.a = abVar;
+    bl(bk bkVar, al alVar, List list, boolean z, ik ikVar) {
+        this.f2843a = bkVar;
+        super(bkVar.f2833b, alVar, list, z, ikVar);
     }
 
-    public void a() {
-        new bm(this, this.a, new ArrayList(dh.a().b()), null).open();
+    protected void onSessionSucceeded() {
+        super.onSessionSucceeded();
+        this.f2843a.f2833b.m3949x();
     }
 
-    public void b() {
-        this.b.x();
+    protected void onSessionFailed() {
+        super.onSessionFailed();
+        this.f2843a.f2833b.m3949x();
     }
 }

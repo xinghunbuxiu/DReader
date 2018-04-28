@@ -1,24 +1,20 @@
 package com.duokan.reader.ui.general;
 
-import android.graphics.Rect;
 import android.view.View;
+import android.view.View.OnClickListener;
 
-public interface gi {
-    Rect a();
+class gi implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ bx f7278a;
+    /* renamed from: b */
+    final /* synthetic */ gh f7279b;
 
-    void a(Rect rect);
+    gi(gh ghVar, bx bxVar) {
+        this.f7279b = ghVar;
+        this.f7278a = bxVar;
+    }
 
-    Rect b(Rect rect);
-
-    void b();
-
-    Rect c(Rect rect);
-
-    gh c();
-
-    View d();
-
-    boolean e();
-
-    boolean f();
+    public void onClick(View view) {
+        this.f7278a.cancel();
+    }
 }

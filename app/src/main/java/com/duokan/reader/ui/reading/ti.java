@@ -1,19 +1,24 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.net.Uri;
+import java.io.File;
 
-class ti implements OnClickListener {
-    final /* synthetic */ tc a;
+class ti implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ boolean f10979a;
+    /* renamed from: b */
+    final /* synthetic */ th f10980b;
 
-    ti(tc tcVar) {
-        this.a = tcVar;
+    ti(th thVar, boolean z) {
+        this.f10980b = thVar;
+        this.f10979a = z;
     }
 
-    public void onClick(View view) {
-        this.a.p.setVisibility(0);
-        this.a.s.setVisibility(8);
-        this.a.g();
-        this.a.d();
+    public void run() {
+        if (this.f10979a) {
+            this.f10980b.f10977c.loadUrl(Uri.fromFile(new File(this.f10980b.f10975a, "index.html")).toString());
+        } else {
+            this.f10980b.f10977c.requestDetach();
+        }
     }
 }

@@ -1,27 +1,29 @@
 package com.duokan.core.ui;
 
-import com.duokan.core.sys.AIdleOperation;
+import com.duokan.core.sys.UIdleHandler;
 
 class bb implements Runnable {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ ay b;
+    /* renamed from: a */
+    final /* synthetic */ Runnable f991a;
+    /* renamed from: b */
+    final /* synthetic */ ay f992b;
 
     bb(ay ayVar, Runnable runnable) {
-        this.b = ayVar;
-        this.a = runnable;
+        this.f992b = ayVar;
+        this.f991a = runnable;
     }
 
     public void run() {
-        if (this.b.D == this) {
-            bc r = this.b.r(this.b.B);
+        if (this.f992b.f762D == this) {
+            bc r = this.f992b.m1163r(this.f992b.f760B);
             if (r != null) {
-                if (r.b != null) {
-                    r.b.setPressed(false);
+                if (r.f994b != null) {
+                    r.f994b.setPressed(false);
                 }
-                AIdleOperation.postRunnable(this.a);
+                UIdleHandler.runAction(this.f991a);
             }
-            this.b.B = -1;
-            this.b.D = null;
+            this.f992b.f760B = -1;
+            this.f992b.f762D = null;
         }
     }
 }

@@ -1,33 +1,19 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.graphics.PointF;
-import android.view.View;
+import com.duokan.reader.domain.bookshelf.C0800c;
 
-import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.du;
-import com.duokan.core.ui.er;
+class cb implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ C0800c f6243a;
+    /* renamed from: b */
+    final /* synthetic */ bp f6244b;
 
-class cb implements du {
-    final /* synthetic */ bz a;
-
-    cb(bz bzVar) {
-        this.a = bzVar;
+    cb(bp bpVar, C0800c c0800c) {
+        this.f6244b = bpVar;
+        this.f6243a = c0800c;
     }
 
-    public void onTouchUp(View view, PointF pointF) {
-    }
-
-    public void onTouchDown(View view, PointF pointF) {
-    }
-
-    public void onTouchCancel(View view, PointF pointF) {
-    }
-
-    public void a(er erVar, View view, PointF pointF, PointF pointF2) {
-        if (this.a.g) {
-            UTools.getTempPointF(pointF2, view);
-            this.a.h.a((int) pointF2.x, (int) pointF2.y);
-            this.a.g(true);
-        }
+    public void run() {
+        this.f6244b.f6197h.m9511a(this.f6243a);
     }
 }

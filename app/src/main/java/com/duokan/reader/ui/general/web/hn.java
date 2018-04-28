@@ -1,26 +1,25 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.c.j;
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.u;
-import com.duokan.reader.domain.store.DkStoreBookDetail;
-import com.duokan.reader.ui.general.jq;
-import com.mipay.sdk.Mipay;
+import com.duokan.core.sys.as;
+import org.json.JSONObject;
 
-class hn implements u {
-    final /* synthetic */ DkStoreBookDetail a;
-    final /* synthetic */ hh b;
+class hn implements as {
+    /* renamed from: a */
+    final /* synthetic */ String f7936a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7937b;
 
-    hn(hh hhVar, DkStoreBookDetail dkStoreBookDetail) {
-        this.b = hhVar;
-        this.a = dkStoreBookDetail;
+    hn(ci ciVar, String str) {
+        this.f7937b = ciVar;
+        this.f7936a = str;
     }
 
-    public void onQueryAccountOk(a aVar) {
-        new ho(this, jq.a(this.b.a.f.b.pageController.getContext(), "", this.b.a.f.b.pageController.getContext().getString(j.bookcity_store__shared__creating_order), true)).open();
-    }
-
-    public void onQueryAccountError(a aVar, String str) {
-        this.b.a.f.b.pageController.web_notifyWeb(this.b.a.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str);
+    /* renamed from: a */
+    public void mo1831a() {
+        JSONObject jSONObject = new JSONObject(this.f7936a);
+        String string = jSONObject.getString("msgid");
+        JSONObject jSONObject2 = jSONObject.getJSONObject("params");
+        String string2 = jSONObject2.getString("bookUuid");
+        this.f7937b.m11016a(new ho(this, jSONObject2, string, jSONObject2.getString("state").toUpperCase(), string2, jSONObject2.optString("trace_id")));
     }
 }

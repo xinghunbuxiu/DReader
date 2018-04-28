@@ -8,7 +8,7 @@ import android.text.TextUtils;
 public class DkPushService extends Service {
     public int onStartCommand(Intent intent, int i, int i2) {
         if (intent != null && TextUtils.equals(intent.getAction(), "com.xiaomi.xmsf.push.SCAN")) {
-            z.a().c();
+            C0880y.m5742a().m5755c();
         }
         return super.onStartCommand(intent, i, i2);
     }

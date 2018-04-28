@@ -1,26 +1,22 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Rect;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-import com.duokan.reader.domain.document.bb;
+class fj implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ int f10149a;
+    /* renamed from: b */
+    final /* synthetic */ fh f10150b;
 
-import org.apache.http.HttpStatus;
-
-class fj implements Runnable {
-    final /* synthetic */ bb a;
-    final /* synthetic */ fi b;
-
-    fj(fi fiVar, bb bbVar) {
-        this.b = fiVar;
-        this.a = bbVar;
+    fj(fh fhVar, int i) {
+        this.f10150b = fhVar;
+        this.f10149a = i;
     }
 
-    public void run() {
-        Rect[] b = this.b.b(this.a);
-        Rect rect = new Rect();
-        for (Rect union : b) {
-            rect.union(union);
-        }
-        this.b.a(this.b.a(rect), this.b.getViewableBounds(), HttpStatus.SC_OK, null, null);
+    public void onClick(View view) {
+        this.f10150b.f10141a.mo2040a(1, 0);
+        this.f10150b.f10141a.mo2031a(this.f10150b.f10143c[this.f10149a]);
+        this.f10150b.m14056a();
     }
 }

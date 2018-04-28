@@ -1,139 +1,64 @@
 package com.duokan.reader.ui.personal;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.view.View.OnClickListener;
+import com.duokan.core.app.IFeature;
+import com.duokan.reader.ReaderFeature;
+import com.duokan.reader.domain.social.message.C1139a;
+import com.duokan.reader.domain.social.message.C1141b;
+import com.duokan.reader.domain.social.message.C1142c;
+import com.duokan.reader.domain.social.message.C1143d;
+import com.duokan.reader.domain.social.message.C1144e;
+import com.duokan.reader.domain.social.message.C1151k;
+import com.duokan.reader.ui.general.expandable.ViewMode;
+import com.duokan.reader.ui.store.bv;
+import com.duokan.reader.ui.store.comment.C1478a;
 
-import com.duokan.core.sys.ah;
-import com.duokan.core.ui.UTools;
-import com.duokan.reader.domain.cloud.a;
-import com.duokan.reader.ui.bookshelf.ho;
-import com.duokan.reader.ui.general.deprecatedDkTextView;
-import com.duokan.reader.ui.general.hn;
+class by implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ int f8382a;
+    /* renamed from: b */
+    final /* synthetic */ C1151k f8383b;
+    /* renamed from: c */
+    final /* synthetic */ IFeature f8384c;
+    /* renamed from: d */
+    final /* synthetic */ bx f8385d;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class by extends fj {
-    static final /* synthetic */ boolean a = (!by.class.desiredAssertionStatus());
-    private final Context f;
-    private a g = null;
-    private Drawable[] h;
-    private List i = new ArrayList();
-    private List j = new ArrayList();
-    private lk k = null;
-
-    public by(Context context, com.duokan.reader.ui.general.expandable.a aVar, ke keVar, ho hoVar, fk fkVar) {
-        super(context, aVar, keVar, hoVar, fkVar);
-        this.f = context;
+    by(bx bxVar, int i, C1151k c1151k, IFeature mFeature) {
+        this.f8385d = bxVar;
+        this.f8382a = i;
+        this.f8383b = c1151k;
+        this.f8384c = mFeature;
     }
 
-    public int a() {
-        if (this.g == null) {
-            return 0;
+    public void onClick(View view) {
+        if (this.f8385d.mo1714f() == ViewMode.Edit) {
+            this.f8385d.f8381a.m11522b(0, this.f8382a);
+            return;
         }
-        int b = this.g.b();
-        return b > 0 ? b + 1 : b;
-    }
-
-    public int b() {
-        int i = 0;
-        if (this.g == null) {
-            return 0;
-        }
-        int i2 = 0;
-        while (i < this.g.b()) {
-            i2 += this.g.a(i).b();
-            i++;
-        }
-        return i2;
-    }
-
-    public Object a(int i) {
-        return null;
-    }
-
-    public int b(int i) {
-        if (this.g == null || i == 0) {
-            return 0;
-        }
-        return this.g.a(i - 1).b();
-    }
-
-    public View a(int i, View view, ViewGroup viewGroup) {
-        a aVar;
-        a aVar2 = null;
-        int i2 = 0;
-        if (view == null || view.findViewById(g.bookshelf__purchased_book_group_list_item_view__group_name) == null) {
-            view = LayoutInflater.from(this.f).inflate(h.bookshelf__purchased_book_group_list_item_view, viewGroup, false);
-        }
-        int i3 = i;
-        for (int i4 = 0; i4 < this.g.b(); i4++) {
-            a a = this.g.a(i4);
-            int b = a.b();
-            if (i3 >= 0 && i3 < b) {
-                aVar2 = a.a(i3);
-                aVar = a;
-                break;
-            }
-            i3 -= b;
-        }
-        aVar = null;
-        if (a || aVar2 != null) {
-            ((TextView) view.findViewById(g.bookshelf__purchased_book_group_list_item_view__group_name)).setText(aVar2.a());
-            deprecatedDkTextView com_duokan_reader_ui_general_deprecatedDkTextView = (deprecatedDkTextView) view.findViewById(g.bookshelf__purchased_book_group_list_item_view__book_names);
-            StringBuilder stringBuilder = new StringBuilder();
-            while (i2 < Math.min(aVar2.d(), 10)) {
-                if (i2 > 0) {
-                    stringBuilder.append(this.f.getResources().getString(j.bookshelf__shared__short_comma));
+        switch (this.f8383b.f5556c) {
+            case 5:
+                C1478a.m15369a(this.f8384c, ((C1143d) this.f8383b.f5561h).f5535b.f2073a);
+                return;
+            case 10:
+                C1478a.m15369a(this.f8384c, ((C1144e) this.f8383b.f5561h).f5537b.f2073a);
+                return;
+            case 17:
+                C1141b c1141b = (C1141b) this.f8383b.f5561h;
+                ((ReaderFeature) this.f8384c.queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(C1478a.m15368a(this.f8384c, c1141b.f5532a.f2127c, c1141b.f5532a.f2128d), null);
+                return;
+            case 18:
+                C1142c c1142c = (C1142c) this.f8383b.f5561h;
+                if (c1142c.f5533a.f2132b != 2) {
+                    ((ReaderFeature) this.f8384c.queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(C1478a.m15368a(this.f8384c, c1142c.f5533a.f2132b, c1142c.f5533a.f2133c), null);
+                    return;
                 }
-                stringBuilder.append(aVar2.b(i2).getTitle());
-                i2++;
-            }
-            com_duokan_reader_ui_general_deprecatedDkTextView.setText(stringBuilder.toString());
-            ((TextView) view.findViewById(g.bookshelf__purchased_book_group_list_item_view__total_books)).setText("" + aVar2.d());
-            view.findViewById(g.bookshelf__purchased_book_group_list_item_view__cover).setBackgroundDrawable(c(i));
-            view.setOnClickListener(new bz(this, aVar.a(), aVar2.a()));
-            return view;
+                return;
+            case 19:
+                ((ReaderFeature) this.f8384c.queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(bv.m15354a(this.f8384c, ((C1139a) this.f8383b.f5561h).f5483a.f2123d), null);
+                return;
+            default:
+                return;
         }
-        throw new AssertionError();
-    }
-
-    public View b(int i, View view, ViewGroup viewGroup) {
-        if (i == 0) {
-            return null;
-        }
-        return c(i - 1, view, viewGroup);
-    }
-
-    public void a(List list, List list2, List list3, Runnable runnable) {
-        ah.future(new ca(this, list, list2, runnable));
-    }
-
-    private View c(int i, View view, ViewGroup viewGroup) {
-        if (view == null) {
-            view = LayoutInflater.from(this.f).inflate(h.bookshelf__purchased_category_title_view, viewGroup, false);
-        }
-        ((TextView) view.findViewById(g.bookshelf__purchased_category_title_view__title)).setText(this.g.a(i).a());
-        return view;
-    }
-
-    private Drawable c(int i) {
-        if (this.h == null) {
-            this.h = new Drawable[8];
-            int b = UTools.getMinimumHeight(this.f, 5.0f);
-            this.h[0] = new hn((float) b, (float) b, this.f.getResources().getColor(d.general__shared__f6bc7e));
-            this.h[1] = new hn((float) b, (float) b, this.f.getResources().getColor(d.general__shared__e49baa));
-            this.h[2] = new hn((float) b, (float) b, this.f.getResources().getColor(d.general__shared__98d4db));
-            this.h[3] = new hn((float) b, (float) b, this.f.getResources().getColor(d.general__shared__8bb2d2));
-            this.h[4] = new hn((float) b, (float) b, this.f.getResources().getColor(d.general__shared__95c5f3));
-            this.h[5] = new hn((float) b, (float) b, this.f.getResources().getColor(d.general__shared__c1d8bf));
-            this.h[6] = new hn((float) b, (float) b, this.f.getResources().getColor(d.general__shared__c0afd0));
-            this.h[7] = new hn((float) b, (float) b, this.f.getResources().getColor(d.general__shared__ffa191));
-        }
-        return this.h[i % this.h.length];
     }
 }

@@ -1,13 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-class uc implements Runnable {
-    final /* synthetic */ ub a;
+import android.view.View;
+import android.view.View.OnClickListener;
+
+class uc implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ub f11004a;
 
     uc(ub ubVar) {
-        this.a = ubVar;
+        this.f11004a = ubVar;
     }
 
-    public void run() {
-        this.a.a.a.aC();
+    public void onClick(View view) {
+        this.f11004a.requestDetach();
     }
 }

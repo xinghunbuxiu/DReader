@@ -1,33 +1,24 @@
 package com.duokan.reader.ui.personal;
 
-import android.content.Context;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.view.View.OnLongClickListener;
 
-import com.duokan.c.d;
-import com.duokan.c.j;
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.ui.general.DkWebListView;
-import com.duokan.reader.ui.general.PageHeaderView;
-import com.duokan.reader.ui.ITheme;
+class mg implements OnLongClickListener {
+    /* renamed from: a */
+    final /* synthetic */ int f8936a;
+    /* renamed from: b */
+    final /* synthetic */ int f8937b;
+    /* renamed from: c */
+    final /* synthetic */ me f8938c;
 
-public class mg extends LinearLayout {
-    jr a = new jr(getContext());
-
-    public mg(Context context) {
-        super(context);
-        setOrientation(1);
-        setBackgroundColor(getResources().getColor(d.general__shared__eeeeee));
-        View pageHeaderView = new PageHeaderView(getContext());
-        pageHeaderView.setCenterTitle(j.personal__reading_notes_view__title);
-        pageHeaderView.setHasBackButton(true);
-        addView(pageHeaderView);
-        ITheme sVar = (ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class);
-        this.a.a(0, 0, 0, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
-        addView(this.a, new LayoutParams(-1, 0, 1.0f));
+    mg(me meVar, int i, int i2) {
+        this.f8938c = meVar;
+        this.f8936a = i;
+        this.f8937b = i2;
     }
 
-    public DkWebListView getNoteSummaryListView() {
-        return this.a;
+    public boolean onLongClick(View view) {
+        this.f8938c.f8930i.mo2231c(this.f8936a, this.f8937b);
+        return true;
     }
 }

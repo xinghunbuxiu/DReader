@@ -1,70 +1,80 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.common.webservices.b;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.i;
-
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.WebSession;
+import com.duokan.reader.domain.account.al;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
-class bz extends al {
-    final /* synthetic */ ab a;
-    final /* synthetic */ bt b;
-    final /* synthetic */ cy c;
-    final /* synthetic */ bv d;
-    private b e;
-    private bt f;
-    private ArrayList g;
+class bz extends WebSession {
+    /* renamed from: a */
+    final /* synthetic */ jx f2885a;
+    /* renamed from: b */
+    final /* synthetic */ al f2886b;
+    /* renamed from: c */
+    final /* synthetic */ boolean f2887c;
+    /* renamed from: d */
+    final /* synthetic */ cx f2888d;
+    /* renamed from: e */
+    final /* synthetic */ bu f2889e;
+    /* renamed from: f */
+    private bs f2890f;
+    /* renamed from: g */
+    private cp f2891g = new cp();
 
-    bz(bv bvVar, ab abVar, bt btVar, cy cyVar) {
-        this.d = bvVar;
-        this.a = abVar;
-        this.b = btVar;
-        this.c = cyVar;
+    bz(bu buVar, C0657i c0657i, jx jxVar, al alVar, boolean z, cx cxVar) {
+        this.f2889e = buVar;
+        this.f2885a = jxVar;
+        this.f2886b = alVar;
+        this.f2887c = z;
+        this.f2888d = cxVar;
+        super(c0657i);
     }
 
     protected void onSessionTry() {
-        fj fjVar = new fj(this, this.a);
-        List arrayList = new ArrayList(af.a.length);
-        for (int i : af.a) {
-            fo foVar = new fo();
-            foVar.a = i;
-            foVar.b = this.b.a(i);
-            arrayList.add(foVar);
-        }
-        this.e = fjVar.a(arrayList);
-        if (this.e.b == 0) {
-            this.f = new bt();
-            this.g = new ArrayList();
-            this.f.a = this.a.a;
-            for (fs fsVar : ((HashMap) this.e.a).values()) {
-                this.f.b(fsVar.a, fsVar.d);
-                long a = this.b.a(fsVar.a);
-                for (bu buVar : fsVar.b) {
-                    if (buVar.d > a) {
-                        a = buVar.d;
-                    }
-                }
-                this.f.a(fsVar.a, a);
-                this.g.addAll(fsVar.b);
-            }
+        this.f2885a.m4787b();
+        bq bqVar = new bq(this.f2886b);
+        bqVar.m4053a();
+        this.f2890f = bqVar.m4054b();
+        if (this.f2887c) {
+            this.f2891g.m4278a(bqVar);
         }
     }
 
     protected void onSessionSucceeded() {
-        if (!this.a.a(this.d.c)) {
-            this.c.a("");
-        } else if (this.e.b == 1) {
-            i.f().a(this.a.a, new ca(this));
-        } else if (this.e.b != 0) {
-            this.c.a(this.e.c);
-        } else {
-            this.c.a(this.f, this.g);
+        if (this.f2886b.m3365a(this.f2889e.f2868c)) {
+            if (this.f2887c) {
+                this.f2889e.m4088a(this.f2891g);
+            }
+            List arrayList = new ArrayList();
+            Iterator it = this.f2889e.f2869d.f2980a.iterator();
+            while (it.hasNext()) {
+                bt btVar = (bt) it.next();
+                if (btVar.f2863g && this.f2885a.m4784a(btVar.f2857a, btVar.f2858b)) {
+                    arrayList.add(btVar.m4068a());
+                }
+            }
+            if (arrayList.size() > 0) {
+                this.f2889e.m4082a(this.f2890f, arrayList, new ca(this));
+                return;
+            }
+            this.f2888d.mo976a();
+            m4118a();
+            return;
         }
+        this.f2888d.mo977a("");
+        m4118a();
     }
 
     protected void onSessionFailed() {
-        this.c.a(this.d.b.getResources().getString(com.duokan.b.i.general__shared__network_error));
+        this.f2888d.mo977a("");
+        m4118a();
+    }
+
+    /* renamed from: a */
+    private void m4118a() {
+        this.f2889e.f2873h.poll();
+        this.f2889e.m4100e();
     }
 }

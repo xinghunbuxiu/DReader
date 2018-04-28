@@ -1,15 +1,17 @@
 package com.duokan.reader.ui.general.web;
 
 class bi implements Runnable {
-    final /* synthetic */ String a;
-    final /* synthetic */ StorePageController b;
+    /* renamed from: a */
+    final /* synthetic */ String f7628a;
+    /* renamed from: b */
+    final /* synthetic */ StorePageController f7629b;
 
     bi(StorePageController storePageController, String str) {
-        this.b = storePageController;
-        this.a = str;
+        this.f7629b = storePageController;
+        this.f7628a = str;
     }
 
     public void run() {
-        this.b.mWebView.a(String.format("javascript:(function() { try { %s } catch(getScaledPagingTouchSlop) { fictionApi.log(getScaledPagingTouchSlop.message); } }())", new Object[]{this.a}));
+        this.f7629b.mWebView.m10989c(String.format("javascript:(function() { try { %s } catch(e) { fictionApi.log(e.message); } }())", new Object[]{this.f7628a}));
     }
 }

@@ -10,50 +10,51 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.duokan.c.d;
-import com.duokan.c.e;
-import com.duokan.c.f;
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.c.j;
 import com.duokan.core.app.IFeature;
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.core.b.UrlTools;
-import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.app.AppContext;
+import com.duokan.core.p027b.C0324a;
+import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ah;
 import com.duokan.core.ui.GridItemsView;
-import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.dv;
+import com.duokan.core.ui.fr;
+import com.duokan.p024c.C0252d;
+import com.duokan.p024c.C0253e;
+import com.duokan.p024c.C0254f;
+import com.duokan.p024c.C0255g;
+import com.duokan.p024c.C0256h;
+import com.duokan.p024c.C0258j;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.common.classc;
-import com.duokan.reader.common.webservices.duokan.p;
+import com.duokan.reader.common.C0616o;
+import com.duokan.reader.common.p037c.C0559f;
+import com.duokan.reader.common.webservices.duokan.C0641o;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.domain.bookshelf.an;
-import com.duokan.reader.domain.bookshelf.iv;
-import com.duokan.reader.domain.bookshelf.iw;
-import com.duokan.reader.ui.bookshelf.ds;
-import com.duokan.reader.ui.bookshelf.hn;
+import com.duokan.reader.domain.bookshelf.ip;
+import com.duokan.reader.domain.bookshelf.iq;
+import com.duokan.reader.domain.store.C1176a;
+import com.duokan.reader.ui.C0435s;
+import com.duokan.reader.ui.bookshelf.ea;
+import com.duokan.reader.ui.bookshelf.hu;
 import com.duokan.reader.ui.general.DkWebListView;
 import com.duokan.reader.ui.general.ReaderUi;
 import com.duokan.reader.ui.general.bo;
 import com.duokan.reader.ui.general.dk;
-import com.duokan.reader.ui.ITheme;
-import com.duokan.reader.ui.surfing.af;
-
+import com.duokan.reader.ui.surfing.al;
 import java.util.LinkedList;
 
-public class SearchController extends StorePageController implements iv, iw {
-    private static final int HISTORY_SIZE = 5;
+public class SearchController extends StorePageController implements ip, iq {
+    private static final int HISTORY_SIZE = Integer.MAX_VALUE;
     private static final String KEY_SEARCH_HISTORY = "search_history";
     private static final String KEY_SEARCH_HOTWORD = "search_hotword";
     private static final int MAX_LOAD_TIME = 5;
     private View mClearView;
     private String mDefaultSearchWord = "";
     private EditText mEditText;
-    private final LinkedList mHistory = new LinkedList();
+    private final LinkedList<String> mHistory = new LinkedList();
     private String mHitWord = null;
-    private final LinkedList mHotWord = new LinkedList();
+    private final LinkedList<String> mHotWord = new LinkedList();
     private boolean mIsHistoryLoaded = false;
     private boolean mLoadHistory = true;
     private boolean mLoadHotWord = true;
@@ -64,59 +65,71 @@ public class SearchController extends StorePageController implements iv, iw {
     private View mLocalSearchResultView;
     private String mOpenFrom = null;
     private GridItemsView mPresenterResultView;
-    private final LinkedList mSearchHint = new LinkedList();
+    private String mReloadUrl;
+    private final LinkedList<String> mSearchHint = new LinkedList();
     private DkWebListView mSearchHintView;
     private boolean mSearchOnTextChange = true;
-    private hn mSearchPresenter = null;
+    private hu mSearchPresenter = null;
     private String mSearchSource;
     private boolean mStartSearch = false;
     private Runnable mTimeoutRunnable;
-    private final View mWebContentView;
+    private boolean mXiaoAiAwake = false;
+    private View mXiaoAiInputView;
 
-    public SearchController(IFeature featrue) {
-        super(featrue);
-        ((TextView) this.mErrorView.findViewById(g.general__emtpy_view__line_1)).setText(j.general__shared__web_error);
-        TextView textView = (TextView) this.mErrorView.findViewById(g.general__emtpy_view__line_3);
-        textView.setText(j.general__shared__web_refresh);
+    public SearchController(IFeature mFeature) {
+        super(mFeature);
+        ((TextView) this.mErrorView.findViewById(C0255g.general__emtpy_view__line_1)).setText(C0258j.general__shared__web_error);
+        TextView textView = (TextView) this.mErrorView.findViewById(C0255g.general__emtpy_view__line_3);
+        textView.setText(C0258j.general__shared__web_refresh);
         textView.setVisibility(0);
-        textView.setOnClickListener(new p(this));
+        textView.setOnClickListener(new C1370p(this));
         this.mWebRootView.setPadding(0, 0, 0, 0);
-        this.mWebContentView = this.mWebRootView.findViewById(g.general__web_core_view__content);
-        View findViewById = findViewById(g.store__store_search_root_view__title);
-        ITheme sVar = (ITheme) MyContextWrapper.getFeature(getContext()).queryFeature(ITheme.class);
-        if (sVar != null) {
-            findViewById.setPadding(findViewById.getPaddingLeft(), sVar.getTheme().getHeaderPaddingTop() + findViewById.getPaddingTop(), findViewById.getPaddingRight(), findViewById.getPaddingBottom());
+        View findViewById = findViewById(C0255g.store__store_search_root_view__title);
+        C0435s c0435s = (C0435s) AppContext.getAppContext(getContext()).queryFeature(C0435s.class);
+        if (c0435s != null) {
+            findViewById.setPadding(findViewById.getPaddingLeft(), c0435s.getTheme().getHeaderPaddingTop() + findViewById.getPaddingTop(), findViewById.getPaddingRight(), findViewById.getPaddingBottom());
         }
-        ReaderFeature readerFeature = (ReaderFeature) MyContextWrapper.getFeature(getContext()).queryFeature(ReaderFeature.class);
+        ReaderFeature readerFeature = (ReaderFeature) AppContext.getAppContext(getContext()).queryFeature(ReaderFeature.class);
         if (readerFeature != null) {
             findViewById.setBackgroundDrawable(readerFeature.getHeaderBackground());
         }
-        this.mClearView = findViewById(g.store__store_search_root_view__clear);
-        this.mClearView.setOnClickListener(new z(this));
-        this.mLocalSearchResultView = LayoutInflater.from(getContext()).inflate(h.bookshelf__local_search_hint_view, null);
-        ImageView imageView = (ImageView) this.mLocalSearchResultView.findViewById(g.store__store_search_root_view__presenter_load_more);
-        imageView.setOnClickListener(new aa(this));
-        this.mPresenterResultView = (GridItemsView) this.mLocalSearchResultView.findViewById(g.store__store_search_root_view__presenter_result);
-        this.mPresenterResultView.setBackgroundColor(getResources().getColor(d.general__shared__ffffff));
-        this.mPresenterResultView.setAdapter(new ab(this, imageView));
-        this.mPresenterResultView.setOnItemClickListener(new ac(this));
-        this.mPresenterResultView.setOnItemLongPressListener(new ad(this));
-        this.mPresenterResultView.setNumColumns(ds.a(getContext()));
-        this.mPresenterResultView.setMaxOverScrollHeight(UTools.getMinimumHeight(getContext()));
+        this.mClearView = findViewById(C0255g.store__store_search_root_view__clear);
+        this.mClearView.setOnClickListener(new aa(this));
+        this.mLocalSearchResultView = LayoutInflater.from(getContext()).inflate(C0256h.bookshelf__local_search_hint_view, null);
+        ImageView imageView = (ImageView) this.mLocalSearchResultView.findViewById(C0255g.store__store_search_root_view__presenter_load_more);
+        imageView.setOnClickListener(new ab(this));
+        this.mPresenterResultView = (GridItemsView) this.mLocalSearchResultView.findViewById(C0255g.store__store_search_root_view__presenter_result);
+        this.mPresenterResultView.setBackgroundColor(getResources().getColor(C0252d.general__shared__ffffff));
+        this.mPresenterResultView.setAdapter(new ac(this, imageView));
+        this.mPresenterResultView.setOnItemClickListener(new ad(this));
+        this.mPresenterResultView.setOnItemLongPressListener(new ae(this));
+        this.mPresenterResultView.setNumColumns(ea.m9503a(getContext()));
+        this.mPresenterResultView.setMaxOverScrollHeight(dv.m1962g(getContext()));
         this.mSearchHintView.setHatBodyView(this.mLocalSearchResultView);
-        this.mEditText = (EditText) findViewById(g.store__store_search_root_view__edittext);
-        this.mEditText.addTextChangedListener(new ae(this));
-        this.mEditText.setOnEditorActionListener(new ah(this));
-        int b = UTools.getMinimumHeight(getContext(), 15.0f);
-        this.mSearchHintView.a(b, 0, b, sVar == null ? 0 : sVar.getTheme().getPagePaddingBottom());
+        this.mEditText = (EditText) findViewById(C0255g.store__store_search_root_view__edittext);
+        this.mEditText.addTextChangedListener(new af(this));
+        this.mEditText.setOnEditorActionListener(new ai(this));
+        int b = dv.m1932b(getContext(), 15.0f);
+        this.mXiaoAiInputView = findViewById(C0255g.store__store_search_root_view__voice);
+        if (C0616o.m2804a().m2814d()) {
+            this.mXiaoAiInputView.setClickable(true);
+            this.mXiaoAiInputView.setOnClickListener(new aj(this));
+        } else {
+            this.mXiaoAiInputView.setVisibility(8);
+        }
+        this.mSearchHintView.m9955a(b, 0, b, c0435s == null ? 0 : c0435s.getTheme().getPagePaddingBottom());
         this.mSearchHintView.setPullDownRefreshEnabled(false);
-        this.mSearchHintView.setOnItemClickListener(new ai(this));
+        this.mSearchHintView.setOnItemClickListener(new C1371q(this));
         initViewForPh();
     }
 
     public void checkDefaultSearch() {
         if (!TextUtils.isEmpty(this.mDefaultSearchWord)) {
-            this.mSearchOnTextChange = false;
+            if (this.mXiaoAiAwake) {
+                this.mSearchOnTextChange = true;
+            } else {
+                this.mSearchOnTextChange = false;
+            }
             this.mEditText.setText(this.mDefaultSearchWord);
             this.mEditText.selectAll();
             if (this.mStartSearch) {
@@ -124,7 +137,9 @@ public class SearchController extends StorePageController implements iv, iw {
                 return;
             }
         }
-        ReaderUi.a(getContext(), this.mEditText);
+        if (!this.mXiaoAiAwake) {
+            ReaderUi.m10162a(getContext(), this.mEditText);
+        }
     }
 
     public void setSearchSource(String str) {
@@ -133,6 +148,10 @@ public class SearchController extends StorePageController implements iv, iw {
 
     public void setOpenFrom(String str) {
         this.mOpenFrom = str;
+    }
+
+    public void setXiaoAiAwake(boolean z) {
+        this.mXiaoAiAwake = z;
     }
 
     public void setDefaultSearchWord(String str, String str2) {
@@ -145,45 +164,58 @@ public class SearchController extends StorePageController implements iv, iw {
         this.mStartSearch = true;
     }
 
-    public void setBookshelfResultPresenter(hn hnVar) {
-        this.mSearchPresenter = hnVar;
+    public void setBookshelfResultPresenter(hu huVar) {
+        this.mSearchPresenter = huVar;
+    }
+
+    private void reloadUrl(String str) {
+        this.mReloadUrl = str;
+        this.mWebView.mo1815a("about:blank");
+    }
+
+    public void onPageFinished(fr frVar, String str) {
+        super.onPageFinished(frVar, str);
+        if (!TextUtils.isEmpty(this.mReloadUrl) && TextUtils.equals(str, "about:blank")) {
+            loadUrl(this.mReloadUrl);
+            this.mReloadUrl = null;
+        }
     }
 
     protected void onActive(boolean z) {
         super.onActive(z);
         if (z) {
-            this.mSearchHintView.a();
+            this.mSearchHintView.m9954a();
             updateAllViews();
             checkDefaultSearch();
         }
-        ai.a().a((iv) this);
-        ai.a().a((iw) this);
-        af afVar = (af) getContext().queryFeature(af.class);
-        if (afVar != null) {
-            afVar.n();
+        ai.m3980a().m3889a((ip) this);
+        ai.m3980a().m3890a((iq) this);
+        al alVar = (al) getContext().queryFeature(al.class);
+        if (alVar != null) {
+            alVar.mo2558n();
         }
     }
 
     protected void onDeactive() {
-        af afVar = (af) getContext().queryFeature(af.class);
-        if (afVar != null) {
-            afVar.m();
+        al alVar = (al) getContext().queryFeature(al.class);
+        if (alVar != null) {
+            alVar.mo2557m();
         }
-        ai.a().b((iv) this);
-        ai.a().b((iw) this);
-        UTools.hideSoftInputFromWindow(getContext());
+        ai.m3980a().m3912b((ip) this);
+        ai.m3980a().m3913b((iq) this);
+        dv.m1909a(getContext());
         super.onDeactive();
     }
 
-    protected aj newJavascriptImpl() {
-        return new aj(this);
+    protected al newJavascriptImpl() {
+        return new al(this);
     }
 
     protected boolean onBack() {
         if (TextUtils.isEmpty(this.mEditText.getText())) {
             return false;
         }
-        if (!isPageChanged(p.i().f()) && this.mWebRootView.getVisibility() == 0) {
+        if (!isPageChanged(C0641o.m2934i().m2973f()) && this.mWebRootView.getVisibility() == 0) {
             return false;
         }
         this.mEditText.getText().clear();
@@ -199,56 +231,55 @@ public class SearchController extends StorePageController implements iv, iw {
     }
 
     protected void initContentView() {
-        View qVar = new q(this, getContext());
-        LinearLayout linearLayout = (LinearLayout) LayoutInflater.from(getContext()).inflate(h.store__store_search_root_view, qVar, false);
-        qVar.addView(linearLayout);
-        View apVar = new ap(this, getContext());
-        linearLayout.addView(apVar, new LayoutParams(-1, -1));
+        View c1372r = new C1372r(this, getContext());
+        LinearLayout linearLayout = (LinearLayout) LayoutInflater.from(getContext()).inflate(C0256h.store__store_search_root_view, c1372r, false);
+        c1372r.addView(linearLayout);
+        View arVar = new ar(this, getContext());
+        linearLayout.addView(arVar, new LayoutParams(-1, -1));
         this.mSearchHintView = new DkWebListView(getContext());
-        apVar.addView(this.mSearchHintView, new LayoutParams(-1, -1));
-        LayoutInflater.from(getContext()).inflate(h.general__web_core_view, apVar, true);
-        setContentView(qVar);
+        LayoutInflater.from(getContext()).inflate(C0256h.general__web_core_view, arVar, true);
+        arVar.addView(this.mSearchHintView, new LayoutParams(-1, -1));
+        setContentView(c1372r);
     }
 
     protected void webPageError(boolean z) {
         this.mErrorView.setVisibility(z ? 0 : 4);
         if (z && TextUtils.isEmpty(this.mEditText.getText())) {
-            hideWebView();
+            showHintView();
         }
     }
 
     protected void onPageCreated(int i, String str) {
-        Uri a = a.a(getCurrentUrl());
-        Uri a2 = a.a(this.mLoadingUrl);
+        Uri a = C0324a.m734a(getCurrentUrl());
+        Uri a2 = C0324a.m734a(this.mLoadingUrl);
         if (i == 0 && a != null && a2 != null) {
             if (a.getFragment() == null || a.getFragment().equals(a2.getFragment())) {
                 this.mLoadingSucceed = true;
-                this.mWebContentView.setVisibility(0);
-                this.mWebView.g();
+                this.mWebView.m2123g();
             }
         }
     }
 
     private void initViewForPh() {
         this.mPresenterResultView.setPadding(this.mPresenterResultView.getPaddingLeft(), 0, this.mPresenterResultView.getPaddingRight(), this.mPresenterResultView.getPaddingBottom());
-        Drawable dkVar = new dk(getResources().getColor(d.general__shared__eeeeee));
-        dkVar.a(1);
+        Drawable dkVar = new dk(getResources().getColor(C0252d.general__shared__eeeeee));
+        dkVar.m10476a(1);
         this.mSearchHintView.setRowDivider(dkVar);
-        this.mSearchHintView.a(UTools.getMinimumHeight(getContext(), 20.0f), 0, UTools.getMinimumHeight(getContext(), 20.0f), 0);
-        this.mSearchHintView.setBackgroundColor(getResources().getColor(d.general__shared__ffffff));
-        this.mSearchHintView.setAdapter(new r(this));
+        this.mSearchHintView.m9955a(dv.m1932b(getContext(), 20.0f), 0, dv.m1932b(getContext(), 20.0f), 0);
+        this.mSearchHintView.setBackgroundColor(getResources().getColor(C0252d.general__shared__ffffff));
+        this.mSearchHintView.setAdapter(new C1373s(this));
     }
 
     private void refreshView() {
         if (this.mSearchPresenter != null) {
-            this.mSearchPresenter.a(this.mEditText.getText().toString().trim());
-            ((bo) this.mPresenterResultView.getAdapter()).d();
+            this.mSearchPresenter.mo1719a(this.mEditText.getText().toString().trim());
+            ((bo) this.mPresenterResultView.getAdapter()).mo1691d();
             updateBookshelfResultVisibility();
         }
     }
 
     private int getLocalHintSize() {
-        return ReaderUi.c(getContext(), UTools.getWidthPixels(getContext()) - (getResources().getDimensionPixelSize(e.general__shared__cover_grid_horz_padding) * 2));
+        return ReaderUi.m10165c(getContext(), dv.getWidthPixels(getContext()) - (getResources().getDimensionPixelSize(C0253e.general__shared__cover_grid_horz_padding) * 2));
     }
 
     private boolean hasHint() {
@@ -267,35 +298,35 @@ public class SearchController extends StorePageController implements iv, iw {
     }
 
     private void setHotWordView(View view, int i, String str) {
-        ((TextView) view.findViewById(g.store__hot_word_item_view__text)).setText(str);
-        view.findViewById(g.store__hot_word_item_view__close).setVisibility(8);
-        ((ImageView) view.findViewById(g.store__hot_word_item_view__icon)).setImageResource(f.search__hot_world_item_view__hint);
+        ((TextView) view.findViewById(C0255g.store__hot_word_item_view__text)).setText(str);
+        view.findViewById(C0255g.store__hot_word_item_view__close).setVisibility(8);
+        ((ImageView) view.findViewById(C0255g.store__hot_word_item_view__icon)).setImageResource(C0254f.search__hot_world_item_view__hint);
     }
 
     private void setHistoryView(View view, int i, String str) {
-        TextView textView = (TextView) view.findViewById(g.store__hot_word_item_view__text);
-        ((ImageView) view.findViewById(g.store__hot_word_item_view__icon)).setImageResource(f.search__hot_world_item_view__history);
+        TextView textView = (TextView) view.findViewById(C0255g.store__hot_word_item_view__text);
+        ((ImageView) view.findViewById(C0255g.store__hot_word_item_view__icon)).setImageResource(C0254f.search__hot_world_item_view__history);
         textView.setText(str);
-        View findViewById = view.findViewById(g.store__hot_word_item_view__close);
+        View findViewById = view.findViewById(C0255g.store__hot_word_item_view__close);
         findViewById.setVisibility(0);
-        findViewById.setOnClickListener(new ITheme(this, i));
+        findViewById.setOnClickListener(new C1374t(this, i));
     }
 
     private void getHotWord() {
         if (this.mLoadHotWord) {
             this.mLoadHotWord = false;
-            ah.submitFuture(new TaskHandler(this));
+            ah.m871b(new C1375u(this));
         }
     }
 
     private void querySearchHint(String str, Runnable runnable) {
         if (!TextUtils.isEmpty(str)) {
-            com.duokan.reader.domain.store.a.a().a(str, new v(this, runnable));
+            C1176a.m8695a().m8702a(str, new C1377w(this, runnable));
         }
     }
 
     private void updateBookshelfResultVisibility() {
-        if (this.mSearchPresenter.a() == 0) {
+        if (this.mSearchPresenter.mo1716a() == 0) {
             this.mLocalSearchResultView.setVisibility(8);
         } else {
             this.mLocalSearchResultView.setVisibility(0);
@@ -303,37 +334,34 @@ public class SearchController extends StorePageController implements iv, iw {
     }
 
     private void updateAllViews() {
-        if (classc.f.b().e()) {
-            String f = p.i().f();
+        if (C0559f.m2476b().m2486e()) {
+            String f = C0641o.m2934i().m2973f();
             if (isPageChanged(f)) {
                 startLoading();
-                showWebView();
-                this.mWebView.a("about:blank");
-                this.mLoadingUrl = UrlTools.resetUrl(UrlTools.parse(f), "loadingStamp=" + System.currentTimeMillis() + (TextUtils.isEmpty(this.mOpenFrom) ? "" : "&from=" + this.mOpenFrom)).toString();
-                loadUrl(this.mLoadingUrl);
-                this.mTimeoutRunnable = new w(this);
-                TaskHandler.postDelayed(this.mTimeoutRunnable, 3000);
+                hideHintView();
+                this.mLoadingUrl = C0324a.m733a(C0324a.m734a(f), "loadingStamp=" + System.currentTimeMillis() + (TextUtils.isEmpty(this.mOpenFrom) ? "" : "&from=" + this.mOpenFrom)).toString();
+                reloadUrl(this.mLoadingUrl);
+                this.mTimeoutRunnable = new C1378x(this);
+                UThread.postDelayed(this.mTimeoutRunnable, 3000);
                 return;
             }
-            showWebView();
+            hideHintView();
             return;
         }
-        hideWebView();
+        showHintView();
     }
 
     private void startLoading() {
-        TaskHandler.removeCallbacks(this.mTimeoutRunnable);
+        UThread.removeCallbacks(this.mTimeoutRunnable);
         this.mLoadingSucceed = false;
-        this.mWebContentView.setVisibility(4);
     }
 
-    private void showWebView() {
-        this.mWebRootView.setVisibility(0);
-        this.mSearchHintView.setVisibility(8);
+    private void hideHintView() {
+        this.mSearchHintView.setVisibility(4);
     }
 
-    private void hideWebView() {
-        this.mWebRootView.setVisibility(8);
+    private void showHintView() {
+        this.mWebView.mo1815a("about:blank");
         this.mSearchHintView.setVisibility(0);
     }
 
@@ -354,35 +382,34 @@ public class SearchController extends StorePageController implements iv, iw {
                     this.mSearchHint.add(str2);
                 }
             }
-            this.mSearchHintView.getAdapter().a(false);
+            this.mSearchHintView.getAdapter().m8785a(false);
         }
     }
 
     private void search(String str, String str2) {
         if (!TextUtils.isEmpty(str)) {
-            UTools.hideSoftInputFromWindow(getContext());
+            dv.m1909a(getContext());
             this.mLocalSearchResultView.setVisibility(8);
-            p i = p.i();
+            C0641o i = C0641o.m2934i();
             if (!TextUtils.isEmpty(this.mSearchSource)) {
                 str2 = this.mSearchSource;
             }
-            String a = i.a(str, str2);
+            String a = i.m2955a(str, str2);
             this.mSearchSource = "";
             if (isPageChanged(a)) {
                 startLoading();
-                showWebView();
+                hideHintView();
                 addHistory(str);
-                this.mWebView.a("about:blank");
-                this.mLoadingUrl = a.a(a.a(a), "loadingStamp=" + System.currentTimeMillis() + (TextUtils.isEmpty(this.mOpenFrom) ? "" : "&from=" + this.mOpenFrom)).toString();
-                loadUrl(this.mLoadingUrl);
+                this.mLoadingUrl = C0324a.m733a(C0324a.m734a(a), "loadingStamp=" + System.currentTimeMillis() + (TextUtils.isEmpty(this.mOpenFrom) ? "" : "&from=" + this.mOpenFrom)).toString();
+                reloadUrl(this.mLoadingUrl);
                 return;
             }
-            showWebView();
+            hideHintView();
         }
     }
 
     private void notifyHistoryChanged() {
-        this.mSearchHintView.getAdapter().a(false);
+        this.mSearchHintView.getAdapter().m8785a(false);
     }
 
     private void addHistory(String str) {
@@ -396,7 +423,7 @@ public class SearchController extends StorePageController implements iv, iw {
     private void addHistoryToList(String str, boolean z) {
         if (this.mHistory.contains(str)) {
             this.mHistory.remove(str);
-        } else if (this.mHistory.size() >= 5) {
+        } else if (this.mHistory.size() >= HISTORY_SIZE) {
             this.mHistory.removeLast();
         }
         if (z) {
@@ -415,15 +442,15 @@ public class SearchController extends StorePageController implements iv, iw {
     }
 
     private void writeHistory() {
-        ReaderEnv.get().getDb().b(KEY_SEARCH_HISTORY, this.mHistory);
+        ReaderEnv.get().getDb().m634b(KEY_SEARCH_HISTORY, this.mHistory);
     }
 
     private void writeHotWords() {
-        ReaderEnv.get().getDb().b(KEY_SEARCH_HOTWORD, this.mHotWord);
+        ReaderEnv.get().getDb().m634b(KEY_SEARCH_HOTWORD, this.mHotWord);
     }
 
     private void loadHistoryForPh() {
         this.mLoadHistory = false;
-        ah.submitFuture(new MyContextWrapper(this));
+        ah.m871b(new C1379y(this));
     }
 }

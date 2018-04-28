@@ -1,42 +1,29 @@
 package com.duokan.reader.ui.general.web;
 
-import android.text.TextUtils;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.common.webservices.duokan.C0629b;
+import com.duokan.reader.domain.account.C0666x;
+import com.duokan.reader.domain.account.C0672a;
+import com.duokan.reader.domain.store.DkStoreBookDetail;
+import com.duokan.reader.ui.general.ja;
+import com.mipay.sdk.Mipay;
 
-import com.duokan.reader.ui.account.as;
-import com.duokan.reader.ui.account.bv;
-import com.duokan.reader.ui.account.ce;
-import com.duokan.reader.ui.account.cf;
+class hv implements C0666x {
+    /* renamed from: a */
+    final /* synthetic */ DkStoreBookDetail f7951a;
+    /* renamed from: b */
+    final /* synthetic */ hp f7952b;
 
-class hv implements as {
-    final /* synthetic */ ce a;
-    final /* synthetic */ ht b;
-
-    hv(ht htVar, ce ceVar) {
-        this.b = htVar;
-        this.a = ceVar;
+    hv(hp hpVar, DkStoreBookDetail dkStoreBookDetail) {
+        this.f7952b = hpVar;
+        this.f7951a = dkStoreBookDetail;
     }
 
-    public void onChoiced(String str) {
-        if (!TextUtils.isEmpty(str)) {
-            String str2 = this.b.b;
-            String str3 = this.b.c;
-            String str4 = this.b.d;
-            if (str.equals("wenxin_friends")) {
-                str2 = this.b.e;
-                str3 = this.b.f;
-                str4 = this.b.g;
-            }
-            if (TextUtils.isEmpty(this.b.h)) {
-                this.b.m.b.pageController.mShareController = new bv(this.b.m.b.pageController.getContext(), false, str, this.b.i, str2, str3, str4, this.b.j, this.b.k, this.a);
-            } else {
-                if (str.equals("sina")) {
-                    str3 = this.b.l;
-                    str4 = this.b.h;
-                }
-                this.b.m.b.pageController.mShareController = new cf(this.b.m.b.pageController.getContext(), str, this.b.i, str2, str3, str4, this.a);
-            }
-            this.b.m.b.pageController.addSubController(this.b.m.b.pageController.mShareController);
-            this.b.m.b.pageController.activate(this.b.m.b.pageController.mShareController);
-        }
+    public void onQueryAccountOk(C0672a c0672a) {
+        new hw(this, C0629b.f2117a, ja.m10831a(this.f7952b.f7944a.f7943f.f7937b.f7581b.getContext(), "", this.f7952b.f7944a.f7943f.f7937b.f7581b.getContext().getString(C0258j.bookcity_store__shared__creating_order), true)).open();
+    }
+
+    public void onQueryAccountError(C0672a c0672a, String str) {
+        this.f7952b.f7944a.f7943f.f7937b.f7581b.web_notifyWeb(this.f7952b.f7944a.f7939b, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str);
     }
 }

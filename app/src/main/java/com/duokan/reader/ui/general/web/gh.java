@@ -1,38 +1,22 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.c.j;
-import com.duokan.core.sys.af;
-import com.duokan.core.sys.as;
-import com.duokan.reader.common.classc;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.ui.general.ap;
+import com.duokan.core.sys.ag;
+import org.json.JSONObject;
 
-import java.util.concurrent.Semaphore;
+class gh implements ag<JSONObject> {
+    /* renamed from: a */
+    final /* synthetic */ gf f7886a;
 
-class gh implements as {
-    final /* synthetic */ c a;
-    final /* synthetic */ String b;
-    final /* synthetic */ Semaphore c;
-    final /* synthetic */ gg d;
-
-    gh(gg ggVar, c cVar, String str, Semaphore semaphore) {
-        this.d = ggVar;
-        this.a = cVar;
-        this.b = str;
-        this.c = semaphore;
+    gh(gf gfVar) {
+        this.f7886a = gfVar;
     }
 
-    public void a() {
-        if (classc.ConnectivityReceiver.b().c()) {
-            ap apVar = new ap(this.d.b.pageController.getContext());
-            apVar.setOkLabel(j.general__shared__continue);
-            apVar.setCancelLabel(j.general__shared__cancel);
-            apVar.setTitle(j.bookshelf__book__download_dialog__title);
-            apVar.setPrompt(j.bookshelf__book__download_dialog__serial_prompt);
-            apVar.open(new gi(this));
-            return;
-        }
-        this.a.a(this.a.f(), this.b, "", "", true, new af(Boolean.valueOf(true)));
-        this.c.release();
+    public /* synthetic */ void run(Object obj) {
+        m11147a((JSONObject) obj);
+    }
+
+    /* renamed from: a */
+    public void m11147a(JSONObject jSONObject) {
+        this.f7886a.f7884a.f7883b.f7581b.triggerEventOnCurrentUrl("commentCommit", jSONObject);
     }
 }

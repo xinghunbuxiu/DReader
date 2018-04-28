@@ -1,19 +1,24 @@
 package com.duokan.reader.ui.personal;
 
-import java.util.ArrayList;
+import android.text.TextUtils;
+import com.duokan.reader.domain.account.C0666x;
+import com.duokan.reader.domain.account.C0672a;
+import com.duokan.reader.ui.general.be;
 
-class hr implements Runnable {
-    final /* synthetic */ ArrayList a;
-    final /* synthetic */ hl b;
+class hr implements C0666x {
+    /* renamed from: a */
+    final /* synthetic */ hq f8670a;
 
-    hr(hl hlVar, ArrayList arrayList) {
-        this.b = hlVar;
-        this.a = arrayList;
+    hr(hq hqVar) {
+        this.f8670a = hqVar;
     }
 
-    public void run() {
-        this.b.l.removeAll(this.a);
-        this.b.g();
-        this.b.s.a(!this.b.t);
+    public void onQueryAccountOk(C0672a c0672a) {
+    }
+
+    public void onQueryAccountError(C0672a c0672a, String str) {
+        if (!TextUtils.isEmpty(str)) {
+            be.m10287a(this.f8670a.f8669a.getContext(), (CharSequence) str, 0).show();
+        }
     }
 }

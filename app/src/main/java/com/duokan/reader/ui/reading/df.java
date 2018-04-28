@@ -1,18 +1,31 @@
 package com.duokan.reader.ui.reading;
 
+import android.graphics.PointF;
 import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.ui.C0385i;
+import com.duokan.core.ui.er;
 
-import com.duokan.reader.DkPublic;
+class df implements C0385i {
+    /* renamed from: a */
+    final /* synthetic */ da f9989a;
 
-class df implements OnClickListener {
-    final /* synthetic */ de a;
-
-    df(de deVar) {
-        this.a = deVar;
+    df(da daVar) {
+        this.f9989a = daVar;
     }
 
-    public void onClick(View view) {
-        DkPublic.exchangeNewIdThenDo(this.a.y.H(), this.a.F, new dg(this), null);
+    public void onTouchUp(View view, PointF pointF) {
+    }
+
+    public void onTouchDown(View view, PointF pointF) {
+    }
+
+    public void onTouchCancel(View view, PointF pointF) {
+    }
+
+    /* renamed from: a */
+    public void mo1788a(er erVar, View view, PointF pointF, int i) {
+        this.f9989a.f9975a.f9949a.mo2181w().mo2290b();
+        this.f9989a.m1613b(false);
+        this.f9989a.m1620d(true);
     }
 }

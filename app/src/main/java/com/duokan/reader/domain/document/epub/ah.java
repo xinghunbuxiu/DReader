@@ -2,51 +2,63 @@ package com.duokan.reader.domain.document.epub;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
-
 import com.duokan.core.app.ai;
+import com.duokan.core.app.aj;
 import com.duokan.kernel.epublib.DkEpubLib;
 import com.duokan.reader.ReaderEnv;
 
-public class ah implements com.duokan.core.app.ah {
-    static final /* synthetic */ boolean a = (!ah.class.desiredAssertionStatus());
-    private static ah b = null;
-    private static final ai c = new ai();
-    private final DkEpubLib d = new DkEpubLib();
-    private final String e;
-    private final String f;
+public class ah implements ai {
+    /* renamed from: a */
+    static final /* synthetic */ boolean f4478a = (!ah.class.desiredAssertionStatus());
+    /* renamed from: b */
+    private static ah f4479b = null;
+    /* renamed from: c */
+    private static final aj<ah> f4480c = new aj();
+    /* renamed from: d */
+    private final DkEpubLib f4481d = new DkEpubLib();
+    /* renamed from: e */
+    private final String f4482e;
+    /* renamed from: f */
+    private final String f4483f;
 
     protected ah(Context context, ReaderEnv readerEnv) {
-        this.e = readerEnv.getKernelDirectory().getAbsolutePath();
-        this.f = readerEnv.getTempDirectory().getPath();
-        this.d.initialize(this.e);
+        this.f4482e = readerEnv.getKernelDirectory().getAbsolutePath();
+        this.f4483f = readerEnv.getTempDirectory().getPath();
+        this.f4481d.initialize(this.f4482e);
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-        this.d.setDeviceParams(Math.min(displayMetrics.widthPixels, displayMetrics.heightPixels), Math.max(displayMetrics.widthPixels, displayMetrics.heightPixels), 65535, displayMetrics.densityDpi);
+        this.f4481d.setDeviceParams(Math.min(displayMetrics.widthPixels, displayMetrics.heightPixels), Math.max(displayMetrics.widthPixels, displayMetrics.heightPixels), 65535, displayMetrics.densityDpi);
     }
 
-    public String a() {
-        return d().getKernelVersion();
+    /* renamed from: a */
+    public String m6501a() {
+        return m6504d().getKernelVersion();
     }
 
-    public String b() {
-        return this.e;
+    /* renamed from: b */
+    public String m6502b() {
+        return this.f4482e;
     }
 
-    public String c() {
-        return this.f;
+    /* renamed from: c */
+    public String m6503c() {
+        return this.f4483f;
     }
 
-    public DkEpubLib d() {
-        if (a || this.d != null) {
-            return this.d;
+    /* renamed from: d */
+    public DkEpubLib m6504d() {
+        if (f4478a || this.f4481d != null) {
+            return this.f4481d;
         }
         throw new AssertionError();
     }
 
-    public static void a(Context context, ReaderEnv readerEnv) {
-        c.a(new ah(context, readerEnv));
+    /* renamed from: a */
+    public static void m6499a(Context context, ReaderEnv readerEnv) {
+        f4480c.m709a(new ah(context, readerEnv));
     }
 
-    public static ah e() {
-        return (ah) c.a();
+    /* renamed from: e */
+    public static ah m6500e() {
+        return (ah) f4480c.m707a();
     }
 }

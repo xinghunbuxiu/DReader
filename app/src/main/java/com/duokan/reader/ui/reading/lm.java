@@ -1,34 +1,25 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.PointF;
-import android.view.View;
+import org.apache.http.HttpStatus;
 
-import com.duokan.core.ui.ce;
-import com.duokan.core.ui.er;
+class lm implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ fz f10572a;
+    /* renamed from: b */
+    final /* synthetic */ ll f10573b;
 
-class lm implements ce {
-    final /* synthetic */ float[] a;
-    final /* synthetic */ PointF b;
-    final /* synthetic */ lj c;
-
-    lm(lj ljVar, float[] fArr, PointF pointF) {
-        this.c = ljVar;
-        this.a = fArr;
-        this.b = pointF;
+    lm(ll llVar, fz fzVar) {
+        this.f10573b = llVar;
+        this.f10572a = fzVar;
     }
 
-    public void onTouchUp(View view, PointF pointF) {
-    }
-
-    public void onTouchDown(View view, PointF pointF) {
-    }
-
-    public void onTouchCancel(View view, PointF pointF) {
-    }
-
-    public void a(er erVar, View view, PointF pointF, float f) {
-        this.a[0] = f;
-        this.b.x = pointF.x;
-        this.b.y = pointF.y;
+    public void run() {
+        Runnable lnVar = new ln(this);
+        if (this.f10572a.mo2468b()) {
+            this.f10572a.mo2436a(null);
+            this.f10573b.m1832a(this.f10572a, this.f10573b.mo2339a(this.f10572a), HttpStatus.SC_MULTIPLE_CHOICES, lnVar, null);
+            return;
+        }
+        this.f10572a.mo2436a(new lo(this, lnVar));
     }
 }

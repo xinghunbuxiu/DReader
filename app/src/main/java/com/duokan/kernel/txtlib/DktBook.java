@@ -4,13 +4,12 @@ import com.duokan.kernel.DkArgbColor;
 import com.duokan.kernel.DkFindTextSnippet;
 import com.duokan.kernel.DkNative;
 import com.duokan.reader.domain.document.txt.aa;
-
 import java.util.Iterator;
 import java.util.LinkedList;
 
 public class DktBook extends DkNative {
     private final long mDktHandle;
-    private final LinkedList mDktPageList = new LinkedList();
+    private final LinkedList<DktPage> mDktPageList = new LinkedList();
 
     private native long createPage(DktParserOption dktParserOption, long j, int i);
 
@@ -56,7 +55,7 @@ public class DktBook extends DkNative {
 
     public void close() {
         if (this.mDktHandle != 0) {
-            aa.c().a().closeDocument(this.mDktHandle);
+            aa.m7376c().m7377a().closeDocument(this.mDktHandle);
         }
     }
 

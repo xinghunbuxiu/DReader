@@ -1,89 +1,155 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
+import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.IntentFilter;
+import android.content.res.Configuration;
+import android.graphics.Rect;
+import android.media.AudioManager;
+import android.media.AudioManager.OnAudioFocusChangeListener;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
+import android.media.MediaPlayer.OnPreparedListener;
+import android.os.Handler;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.domain.document.ah;
+import com.duokan.reader.ui.general.be;
+import com.duokan.reader.ui.reading.p054a.C1445z;
+import java.io.FileInputStream;
 
-import com.duokan.core.ui.UTools;
+public abstract class mh implements OnCompletionListener, OnPreparedListener, C1445z, acr {
+    /* renamed from: a */
+    protected final su f9725a;
+    /* renamed from: b */
+    protected ml f9726b;
+    /* renamed from: c */
+    protected Activity f9727c;
+    /* renamed from: d */
+    protected Handler f9728d = new mi(this);
+    /* renamed from: e */
+    private MediaPlayer f9729e;
+    /* renamed from: f */
+    private ah f9730f;
+    /* renamed from: g */
+    private Rect f9731g;
+    /* renamed from: h */
+    private BroadcastReceiver f9732h;
+    /* renamed from: i */
+    private boolean f9733i = false;
+    /* renamed from: j */
+    private AudioManager f9734j = null;
+    /* renamed from: k */
+    private OnAudioFocusChangeListener f9735k = null;
 
-public class mh extends LinearLayout implements mu {
-    private final mm a;
-    private final mm b;
-    private final mm c;
-    private final LinearLayout d = new LinearLayout(getContext());
-    private final mn e;
+    /* renamed from: a */
+    protected abstract void mo2265a();
 
-    public mh(Context context, int i, mn mnVar) {
-        super(context);
-        this.e = mnVar;
-        this.b = new mm(this, context);
-        this.c = new mm(this, context);
-        this.a = new mm(this, context);
-        this.b.setOnClickListener(new mi(this));
-        this.c.setOnClickListener(new mj(this));
-        this.a.setOnClickListener(new mk(this));
-        this.d.setOrientation(0);
-        LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -1);
-        layoutParams.setMargins(UTools.getMinimumHeight(context, 10.0f), 0, UTools.getMinimumHeight(context, 10.0f), 0);
-        this.d.addView(this.a, layoutParams);
-        for (int i2 = 1; i2 <= i; i2++) {
-            View mmVar = new mm(this, context);
-            mmVar.a("" + i2);
-            LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -1);
-            layoutParams2.setMargins(UTools.getMinimumHeight(context, 10.0f), 0, UTools.getMinimumHeight(context, 10.0f), 0);
-            this.d.addView(mmVar, layoutParams2);
-            mmVar.setOnClickListener(new ml(this, i2));
-        }
-        addView(this.b, new LinearLayout.LayoutParams(-2, -1));
-        View frameLayout = new FrameLayout(context);
-        frameLayout.addView(this.d, new FrameLayout.LayoutParams(-2, -1, 17));
-        addView(frameLayout, new LinearLayout.LayoutParams(0, -1, 1.0f));
-        addView(this.c, new LinearLayout.LayoutParams(-2, -1));
-        setShowInFullScreen(false);
-        a(-1);
+    /* renamed from: b */
+    public abstract View mo2270b();
+
+    public mh(Activity activity, su suVar, ah ahVar, Rect rect, ml mlVar) {
+        this.f9727c = activity;
+        this.f9725a = suVar;
+        this.f9730f = ahVar;
+        this.f9731g = rect;
+        this.f9729e = new MediaPlayer();
+        this.f9726b = mlVar;
+        this.f9732h = new mj(this);
+        this.f9727c.registerReceiver(this.f9732h, new IntentFilter("android.intent.action.SCREEN_OFF"));
+        this.f9734j = (AudioManager) this.f9727c.getSystemService("audio");
+        this.f9735k = new mk(this);
     }
 
-    public void setShowInFullScreen(boolean z) {
-        int i;
-        if (z) {
-            this.b.b(e.reading__callout_indicator_view__left_1);
-            this.c.b(e.reading__callout_indicator_view__right_1);
-            this.a.b(e.reading__callout_indicator_view__all_1);
-            this.a.a(false);
-            for (i = 1; i < this.d.getChildCount(); i++) {
-                mm mmVar = (mm) this.d.getChildAt(i);
-                mmVar.a(-1);
-                mmVar.a(false);
-                mmVar.b(e.reading__callout_indicator_view__item_bg_1);
-            }
-            setPadding(UTools.getMinimumHeight(getContext(), 10.0f), UTools.getMinimumHeight(getContext(), 3.0f), UTools.getMinimumHeight(getContext(), 10.0f), UTools.getMinimumHeight(getContext(), 3.0f));
-            setBackgroundResource(e.reading__callout_indicator_view__bg);
-            return;
-        }
-        this.b.b(e.reading__callout_indicator_view__left);
-        this.c.b(e.reading__callout_indicator_view__right);
-        this.a.b(e.reading__callout_indicator_view__all);
-        for (i = 1; i < this.d.getChildCount(); i++) {
-            mmVar = (mm) this.d.getChildAt(i);
-            mmVar.a(-16777216);
-            mmVar.b(e.reading__callout_indicator_view__item_bg);
-        }
-        setBackgroundDrawable(new ColorDrawable(0));
-        setPadding(0, UTools.getMinimumHeight(getContext(), 1.0f), UTools.getMinimumHeight(getContext(), 10.0f), UTools.getMinimumHeight(getContext(), 1.0f));
+    /* renamed from: d */
+    public ah m13679d() {
+        return this.f9730f;
     }
 
-    public void a(int i) {
-        for (int i2 = 0; i2 < this.d.getChildCount(); i2++) {
-            boolean z;
-            View childAt = this.d.getChildAt(i2);
-            if (i + 1 == i2) {
-                z = true;
-            } else {
-                z = false;
-            }
-            childAt.setSelected(z);
+    /* renamed from: e */
+    public Rect m13680e() {
+        return this.f9731g;
+    }
+
+    /* renamed from: f */
+    public boolean mo2271f() {
+        m13682g();
+        return true;
+    }
+
+    /* renamed from: g */
+    public void m13682g() {
+        this.f9730f = null;
+        this.f9733i = false;
+        this.f9728d.removeMessages(1);
+        this.f9729e.release();
+        aco.m13312a().m13323c();
+        this.f9726b.mo2426a();
+        try {
+            this.f9727c.unregisterReceiver(this.f9732h);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        if (this.f9734j != null && this.f9735k != null) {
+            this.f9734j.abandonAudioFocus(this.f9735k);
+        }
+    }
+
+    /* renamed from: c */
+    public void mo2514c() {
+    }
+
+    /* renamed from: a */
+    public void mo2267a(Configuration configuration) {
+    }
+
+    /* renamed from: h */
+    public boolean mo2272h() {
+        return false;
+    }
+
+    /* renamed from: i */
+    public boolean mo2273i() {
+        return false;
+    }
+
+    /* renamed from: j */
+    public boolean mo2274j() {
+        return false;
+    }
+
+    /* renamed from: k */
+    public void mo2263k() {
+        be.m10286a(this.f9727c, C0258j.reading__media_loading_failed, 1).show();
+        m13682g();
+    }
+
+    /* renamed from: l */
+    public void mo2264l() {
+        try {
+            this.f9729e.setDataSource(new FileInputStream(aco.m13312a().m13322b()).getFD());
+            this.f9729e.setAudioStreamType(3);
+            this.f9729e.prepareAsync();
+            this.f9729e.setOnPreparedListener(this);
+            this.f9729e.setOnCompletionListener(this);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /* renamed from: m */
+    protected void m13688m() {
+        this.f9726b.mo2429c();
+        aco.m13312a().m13321a(this.f9725a.mo1992G().aH(), this.f9730f, this.f9727c, this);
+        this.f9733i = true;
+        this.f9725a.mo2040a(4, 0);
+        if (this.f9734j != null && this.f9735k != null) {
+            this.f9734j.requestAudioFocus(this.f9735k, 3, 1);
+        }
+    }
+
+    /* renamed from: n */
+    protected MediaPlayer m13689n() {
+        return this.f9729e;
     }
 }

@@ -4,26 +4,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 class vs implements OnClickListener {
-    final /* synthetic */ vq a;
+    /* renamed from: a */
+    final /* synthetic */ vq f11088a;
 
     vs(vq vqVar) {
-        this.a = vqVar;
+        this.f11088a = vqVar;
     }
 
     public void onClick(View view) {
-        boolean z;
-        boolean z2 = true;
-        if (view.isSelected()) {
-            z = false;
-        } else {
-            z = true;
-        }
-        view.setSelected(z);
-        ReadingPrefs ae = this.a.a.ae();
-        if (this.a.a.ae().J()) {
-            z2 = false;
-        }
-        ae.e(z2);
-        this.a.a.ae().Y();
+        this.f11088a.f11066a.ae().m12497e(Math.max(this.f11088a.f11070e, Math.min(this.f11088a.f11066a.ae().m12528v() - this.f11088a.f11066a.ae().f9130d, this.f11088a.f11071f)));
+        this.f11088a.f11066a.ae().m12463X();
+        this.f11088a.f11066a.aB();
+        this.f11088a.m15039a();
     }
 }

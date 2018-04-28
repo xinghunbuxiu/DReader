@@ -1,32 +1,27 @@
 package com.duokan.reader.ui.personal;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.ClipDrawable;
-import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.domain.cloud.bb;
+import com.duokan.reader.ui.general.ak;
 
-class hb extends Drawable {
-    final /* synthetic */ ClipDrawable a;
-    final /* synthetic */ fl b;
+class hb implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ bb f8632a;
+    /* renamed from: b */
+    final /* synthetic */ long f8633b;
+    /* renamed from: c */
+    final /* synthetic */ fz f8634c;
 
-    hb(fl flVar, ClipDrawable clipDrawable) {
-        this.b = flVar;
-        this.a = clipDrawable;
+    hb(fz fzVar, bb bbVar, long j) {
+        this.f8634c = fzVar;
+        this.f8632a = bbVar;
+        this.f8633b = j;
     }
 
-    public void draw(Canvas canvas) {
-        this.a.setBounds(0, 0, this.b.d.getWidth(), this.b.d.getHeight());
-        this.a.setLevel((this.b.d.getHeight() * 10000) / this.b.d.getHeight());
-        this.a.draw(canvas);
-    }
-
-    public void setAlpha(int i) {
-    }
-
-    public void setColorFilter(ColorFilter colorFilter) {
-    }
-
-    public int getOpacity() {
-        return 0;
+    public void onClick(View view) {
+        ak akVar = new ak(this.f8634c.getContext());
+        akVar.setPrompt(this.f8634c.m11864c(this.f8632a, this.f8633b));
+        akVar.show();
     }
 }

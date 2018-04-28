@@ -1,32 +1,54 @@
 package com.duokan.reader.ui.general;
 
-import android.graphics.PointF;
-import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.Transformation;
 
-import com.duokan.core.ui.du;
-import com.duokan.core.ui.er;
+class fu implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ float f7258a;
+    /* renamed from: b */
+    final /* synthetic */ AlphaAnimation f7259b;
+    /* renamed from: c */
+    final /* synthetic */ Transformation f7260c;
+    /* renamed from: d */
+    final /* synthetic */ float f7261d;
+    /* renamed from: e */
+    final /* synthetic */ int f7262e;
+    /* renamed from: f */
+    final /* synthetic */ int f7263f;
+    /* renamed from: g */
+    final /* synthetic */ PagesView f7264g;
 
-class fu implements du {
-    final /* synthetic */ fs a;
-
-    fu(fs fsVar) {
-        this.a = fsVar;
+    fu(PagesView pagesView, float f, AlphaAnimation alphaAnimation, Transformation transformation, float f2, int i, int i2) {
+        this.f7264g = pagesView;
+        this.f7258a = f;
+        this.f7259b = alphaAnimation;
+        this.f7260c = transformation;
+        this.f7261d = f2;
+        this.f7262e = i;
+        this.f7263f = i2;
     }
 
-    public void onTouchUp(View view, PointF pointF) {
-    }
-
-    public void onTouchDown(View view, PointF pointF) {
-    }
-
-    public void onTouchCancel(View view, PointF pointF) {
-    }
-
-    public void a(er erVar, View view, PointF pointF, PointF pointF2) {
-        this.a.e.x = Math.max(0.0f, this.a.e.x + pointF2.x);
-        fy l = this.a.a.l();
-        if (l != null) {
-            this.a.a(l, Math.round(this.a.e.x), Math.round(this.a.e.x), 0, null);
+    public void run() {
+        if (this.f7264g.f6835o == this) {
+            if (Float.compare(this.f7264g.getZoomFactor(), this.f7258a) == 0) {
+                this.f7264g.f6835o = null;
+                return;
+            }
+            if (!this.f7259b.hasStarted()) {
+                this.f7259b.setInterpolator(new AccelerateDecelerateInterpolator());
+                this.f7259b.setDuration(300);
+                this.f7259b.start();
+            }
+            this.f7259b.getTransformation(AnimationUtils.currentAnimationTimeMillis(), this.f7260c);
+            this.f7264g.m10011c(this.f7262e, this.f7263f, this.f7261d + ((this.f7258a - this.f7261d) * this.f7260c.getAlpha()));
+            if (this.f7259b.hasEnded()) {
+                this.f7264g.f6835o = null;
+            } else {
+                this.f7264g.post(this);
+            }
         }
     }
 }

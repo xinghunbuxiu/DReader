@@ -1,24 +1,11 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.Drawable.Callback;
+import android.graphics.RectF;
 
-class jc implements Callback {
-    final /* synthetic */ FixedPageClipView a;
-    final /* synthetic */ jb b;
+public interface jc {
+    /* renamed from: a */
+    void mo2463a();
 
-    jc(jb jbVar, FixedPageClipView fixedPageClipView) {
-        this.b = jbVar;
-        this.a = fixedPageClipView;
-    }
-
-    public void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-    }
-
-    public void scheduleDrawable(Drawable drawable, Runnable runnable, long j) {
-    }
-
-    public void invalidateDrawable(Drawable drawable) {
-        this.b.invalidate();
-    }
+    /* renamed from: a */
+    void mo2464a(RectF[] rectFArr);
 }

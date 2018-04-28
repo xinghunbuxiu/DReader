@@ -1,24 +1,32 @@
 package com.duokan.reader.ui.reading;
 
-import android.text.TextUtils;
+import android.graphics.PointF;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.ui.bw;
 
-class adf implements OnClickListener {
-    final /* synthetic */ TranslationController a;
+class adf implements bw {
+    /* renamed from: a */
+    final /* synthetic */ MotionEvent f9511a;
+    /* renamed from: b */
+    final /* synthetic */ ade f9512b;
 
-    adf(TranslationController translationController) {
-        this.a = translationController;
+    adf(ade ade, MotionEvent motionEvent) {
+        this.f9512b = ade;
+        this.f9511a = motionEvent;
     }
 
-    public void onClick(View view) {
-        if (this.a.e == null || this.a.e.a != 1) {
-            return;
-        }
-        if (!TextUtils.isEmpty(this.a.e.b)) {
-            this.a.b(this.a.e.b);
-        } else if (!TextUtils.isEmpty(this.a.e.c)) {
-            this.a.c(this.a.e.c);
-        }
+    public void onTouchUp(View view, PointF pointF) {
+    }
+
+    public void onTouchDown(View view, PointF pointF) {
+    }
+
+    public void onTouchCancel(View view, PointF pointF) {
+    }
+
+    /* renamed from: a */
+    public void mo521a(View view, PointF pointF) {
+        this.f9512b.m1617c(this.f9512b.f9507a.m12559a((int) pointF.x, (int) pointF.y, this.f9511a.getAction(), view));
     }
 }

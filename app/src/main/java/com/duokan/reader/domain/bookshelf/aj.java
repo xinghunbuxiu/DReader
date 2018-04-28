@@ -1,20 +1,22 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.common.classc;
-import com.duokan.reader.common.d.a;
+import com.duokan.core.sys.p025a.Permissions;
+import com.duokan.reader.common.p037c.C0559f;
+import com.duokan.reader.common.p038d.C0587a;
 
 class aj implements Runnable {
-    final /* synthetic */ ai a;
+    /* renamed from: a */
+    final /* synthetic */ ai f2765a;
 
     aj(ai aiVar) {
-        this.a = aiVar;
+        this.f2765a = aiVar;
     }
 
     public void run() {
-        new a(new ak(this), 31).a(600000);
-        classc.ConnectivityReceiver.b().a(this.a);
-        if (classc.ConnectivityReceiver.b().e()) {
-            this.a.onConnectivityChanged(classc.ConnectivityReceiver.b());
+        new C0587a(new ak(this), 31).m2637a(600000);
+        C0559f.m2476b().m2480a(this.f2765a);
+        if (C0559f.m2476b().m2486e() && Permissions.getInstance().m834b()) {
+            this.f2765a.mo949a(C0559f.m2476b());
         }
     }
 }

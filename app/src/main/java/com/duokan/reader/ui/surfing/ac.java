@@ -1,30 +1,23 @@
 package com.duokan.reader.ui.surfing;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.u;
+import com.duokan.reader.domain.cloud.PersonalPrefs.UserTab;
 
-class ac implements u {
-    final /* synthetic */ ActivatedController a;
-    final /* synthetic */ boolean b;
-    final /* synthetic */ boolean c;
-    final /* synthetic */ Runnable d;
-    final /* synthetic */ ab e;
+/* synthetic */ class ac {
+    /* renamed from: a */
+    static final /* synthetic */ int[] f11502a = new int[UserTab.values().length];
 
-    ac(ab abVar, ActivatedController controller, boolean z, boolean z2, Runnable runnable) {
-        this.e = abVar;
-        this.a = controller;
-        this.b = z;
-        this.c = z2;
-        this.d = runnable;
-    }
-
-    public void onQueryAccountOk(a aVar) {
-        this.e.a(this.a, this.b, this.c, this.d);
-    }
-
-    public void onQueryAccountError(a aVar, String str) {
-        TaskHandler.PostTask(this.d);
+    static {
+        try {
+            f11502a[UserTab.PUB.ordinal()] = 1;
+        } catch (NoSuchFieldError e) {
+        }
+        try {
+            f11502a[UserTab.SERIAL.ordinal()] = 2;
+        } catch (NoSuchFieldError e2) {
+        }
+        try {
+            f11502a[UserTab.COMIC.ordinal()] = 3;
+        } catch (NoSuchFieldError e3) {
+        }
     }
 }

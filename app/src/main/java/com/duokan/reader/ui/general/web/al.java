@@ -1,22 +1,43 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.as;
-
+import android.text.TextUtils;
+import android.webkit.JavascriptInterface;
 import java.util.List;
+import org.json.JSONArray;
 
-class al implements as {
-    final /* synthetic */ List a;
-    final /* synthetic */ ak b;
+public class al extends ci {
+    /* renamed from: a */
+    final /* synthetic */ SearchController f7582a;
 
-    al(ak akVar, List list) {
-        this.b = akVar;
-        this.a = list;
+    protected al(SearchController searchController) {
+        this.f7582a = searchController;
+        super(searchController);
     }
 
-    public void a() {
-        this.b.b.a.mHotWord.clear();
-        this.b.b.a.mHotWord.addAll(this.a);
-        this.b.b.a.writeHotWords();
-        this.b.b.a.mSearchHintView.getAdapter().a(false);
+    @JavascriptInterface
+    public void setHotWords(String str) {
+        m11020b(new am(this, str));
+    }
+
+    @JavascriptInterface
+    public void editSearchHistory(String str) {
+        m11020b(new ao(this, str));
+    }
+
+    /* renamed from: a */
+    private void m11022a(List<String> list, JSONArray jSONArray) {
+        if (jSONArray != null) {
+            for (int i = 0; i < jSONArray.length(); i++) {
+                CharSequence optString = jSONArray.optString(i);
+                if (!TextUtils.isEmpty(optString)) {
+                    list.add(optString);
+                }
+            }
+        }
+    }
+
+    @JavascriptInterface
+    public void getSearchHistory(String str) {
+        m11020b(new aq(this, str));
     }
 }

@@ -1,19 +1,31 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.common.async.a.a;
+import com.duokan.core.app.AppContext;
+import com.duokan.core.ui.dv;
+import com.duokan.reader.ui.C0435s;
+import java.util.concurrent.Callable;
 
-class jf implements a {
-    final /* synthetic */ je a;
+class jf implements Callable<Integer> {
+    /* renamed from: a */
+    final /* synthetic */ ci f8043a;
 
-    jf(je jeVar) {
-        this.a = jeVar;
+    jf(ci ciVar) {
+        this.f8043a = ciVar;
     }
 
-    public void a(Void voidR) {
-        this.a.c.release();
+    public /* synthetic */ Object call() {
+        return m11215a();
     }
 
-    public void a(int i, String str) {
-        this.a.c.release();
+    /* renamed from: a */
+    public Integer m11215a() {
+        int round;
+        C0435s c0435s = (C0435s) AppContext.getAppContext(this.f8043a.f7581b.getContext()).queryFeature(C0435s.class);
+        if (c0435s != null) {
+            round = Math.round(dv.m1929b(this.f8043a.f7581b.getContext(), c0435s.getTheme().getPageHeaderHeight()));
+        } else {
+            round = 0;
+        }
+        return Integer.valueOf(round);
     }
 }

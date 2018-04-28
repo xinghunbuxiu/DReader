@@ -1,26 +1,22 @@
 package com.duokan.reader.ui.general.web;
 
-import java.util.Iterator;
-import java.util.concurrent.Callable;
+import com.duokan.core.sys.as;
+import com.duokan.reader.domain.ad.C0748e;
+import com.duokan.reader.domain.ad.C0750g;
 
-class kc implements Callable {
-    final /* synthetic */ kb a;
+class kc implements as {
+    /* renamed from: a */
+    final /* synthetic */ String f8086a;
+    /* renamed from: b */
+    final /* synthetic */ ci f8087b;
 
-    kc(kb kbVar) {
-        this.a = kbVar;
+    kc(ci ciVar, String str) {
+        this.f8087b = ciVar;
+        this.f8086a = str;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
-    }
-
-    public Void a() {
-        if (StoreWebController.sMirrorEnabled) {
-            Iterator it = StoreWebController.sAttachedInstQueue.iterator();
-            while (it.hasNext()) {
-                ((StoreWebController) it.next()).onStoreMirrorUpdated();
-            }
-        }
-        return null;
+    /* renamed from: a */
+    public void mo1831a() {
+        C0750g.m3561a().m3588b(C0748e.m3555a(this.f8086a));
     }
 }

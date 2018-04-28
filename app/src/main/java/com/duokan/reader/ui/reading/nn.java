@@ -1,18 +1,21 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.ui.general.ix;
+import com.duokan.reader.common.async.p035a.C0517a;
 
-class nn implements ix {
-    final /* synthetic */ nk a;
+class nn implements C0517a<Void> {
+    /* renamed from: a */
+    final /* synthetic */ nm f10684a;
 
-    nn(nk nkVar) {
-        this.a = nkVar;
+    nn(nm nmVar) {
+        this.f10684a = nmVar;
     }
 
-    public void a(float f, int i) {
-        this.a.d.a(f);
+    /* renamed from: a */
+    public void m14761a(Void voidR) {
+        this.f10684a.f10683a.f10674h = false;
     }
 
-    public void a(int i, int i2) {
+    /* renamed from: a */
+    public void mo729a(int i, String str) {
     }
 }

@@ -1,19 +1,20 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.ReaderFeature;
 
-class vf implements OnClickListener {
-    final /* synthetic */ vd a;
+class vf implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ ve f11054a;
 
-    vf(vd vdVar) {
-        this.a = vdVar;
+    vf(ve veVar) {
+        this.f11054a = veVar;
     }
 
-    public void onClick(View view) {
-        this.a.a.ae().e(Math.max(this.a.e, Math.min(this.a.a.ae().v() - this.a.a.ae().d, this.a.f)));
-        this.a.a.ae().Y();
-        this.a.a.aB();
-        this.a.a();
+    public void run() {
+        if (this.f11054a.f11053a.f11043a.mo1992G().ak()) {
+            ((ReaderFeature) this.f11054a.f11053a.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new er(this.f11054a.f11053a.getContext(), false), null);
+        } else {
+            ((ReaderFeature) this.f11054a.f11053a.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new ex(this.f11054a.f11053a.getContext(), false), null);
+        }
     }
 }

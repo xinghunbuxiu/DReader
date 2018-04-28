@@ -1,40 +1,26 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.bookshelf.y;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.core.sys.af;
+import com.duokan.reader.domain.bookshelf.C0800c;
 
-class qj implements y {
-    final /* synthetic */ qh a;
+class qj implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ qg f10864a;
 
-    qj(qh qhVar) {
-        this.a = qhVar;
+    qj(qg qgVar) {
+        this.f10864a = qgVar;
     }
 
-    public void a(c cVar, boolean z) {
-        if (z) {
-            this.a.c.b(new qk(this, cVar));
+    public void onClick(View view) {
+        C0800c G = this.f10864a.f10853a.mo1992G();
+        this.f10864a.f10856d.setSelected(!view.isSelected());
+        if (this.f10864a.f10856d.isSelected()) {
+            G.mo1009a(new af(Boolean.valueOf(true)));
+        } else {
+            G.mo1009a(new af(Boolean.valueOf(false)));
         }
-    }
-
-    public void a(c cVar, String str) {
-        if (this.a.f == cVar) {
-        }
-    }
-
-    public void a(c cVar) {
-        if (this.a.f == cVar) {
-            this.a.runAfterActive(new qm(this));
-        }
-    }
-
-    public void b(c cVar, boolean z) {
-        if (this.a.f == cVar && z) {
-            this.a.runAfterActive(new qn(this));
-        }
-    }
-
-    public void b(c cVar, String str) {
-        if (this.a.f == cVar) {
-        }
+        G.aN();
     }
 }

@@ -1,20 +1,20 @@
 package com.duokan.reader.ui.personal;
 
-import android.content.Context;
+import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
+import com.duokan.reader.ui.general.cm;
 
-import com.duokan.reader.ui.bookshelf.ho;
-import com.duokan.reader.ui.general.expandable.a;
+class fj implements cm {
+    /* renamed from: a */
+    final /* synthetic */ fi f8542a;
 
-public abstract class fj extends kf {
-    protected Context b;
-    protected final a c;
-    protected final ke d;
-    protected final ho e;
+    fj(fi fiVar) {
+        this.f8542a = fiVar;
+    }
 
-    public fj(Context context, a aVar, ke keVar, ho hoVar, fk fkVar) {
-        this.b = context;
-        this.c = aVar;
-        this.d = keVar;
-        this.e = hoVar;
+    public void onChoice(boolean z, FlowChargingTransferChoice flowChargingTransferChoice) {
+        if (z) {
+            this.f8542a.f8541a.f8524b.checkUpdate();
+            this.f8542a.f8541a.f8524b.downUpdate();
+        }
     }
 }

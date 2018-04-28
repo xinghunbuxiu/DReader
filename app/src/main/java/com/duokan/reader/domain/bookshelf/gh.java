@@ -1,60 +1,86 @@
 package com.duokan.reader.domain.bookshelf;
 
 import android.text.TextUtils;
+import com.duokan.reader.domain.cloud.DkUserPurchasedBooksManager;
+import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
+import com.duokan.reader.domain.document.C0903n;
+import com.duokan.reader.domain.document.aa;
+import com.duokan.reader.domain.document.epub.C0952s;
+import com.duokan.reader.domain.document.epub.af;
 
-import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.sys.TaskHandler;
+class gh implements af {
+    /* renamed from: a */
+    final /* synthetic */ af f3227a;
+    /* renamed from: b */
+    final /* synthetic */ fp f3228b;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
-
-class gh implements Runnable {
-    final /* synthetic */ gg a;
-
-    gh(gg ggVar) {
-        this.a = ggVar;
+    gh(fp fpVar, af afVar) {
+        this.f3228b = fpVar;
+        this.f3227a = afVar;
     }
 
-    public void run() {
-        try {
-            Iterator it = this.a.b.a.a.iterator();
-            while (it.hasNext()) {
-                String str = (String) it.next();
-                String t = this.a.b.b.t(str);
-                fd fdVar = (fd) this.a.a.get(str);
-                if (fdVar.a != -1) {
-                    this.a.b.a.b.put(str, Integer.valueOf(fdVar.a));
-                    if (fdVar.a != 1002) {
-                        a.c().a(LogLevel.ERROR, "epub-s", "fail to pull the chapter(%s)(error=%getTriangleEdge, msg=%s, book=%s, name=%s)", str, Integer.valueOf(fdVar.a), fdVar.b, this.a.b.b.H(), this.a.b.b.aw());
-                    }
-                } else {
-                    a.c().b(!TextUtils.isEmpty(fdVar.c));
-                    this.a.b.a.b.put(str, Integer.valueOf(-1));
-                    Map hashMap = new HashMap();
-                    hashMap.put("sha1", fdVar.d);
-                    this.a.b.a.b.put(str, Integer.valueOf(((Integer) this.a.b.b.a(t, null, -1, fdVar.c, hashMap, null).get()).intValue()));
-                }
-            }
-            ej.E.release();
-            for (Entry entry : this.a.b.a.b.entrySet()) {
-                if ((((Integer) entry.getValue()).intValue() == 0 || ((Integer) entry.getValue()).intValue() == 1) && !this.a.b.b.u((String) entry.getKey())) {
-                    this.a.b.b.bq();
-                    break;
-                }
-            }
-            TaskHandler.postTask(new gi(this));
-        } catch (Throwable th) {
-            Throwable th2 = th;
-            ej.E.release();
-            for (Entry entry2 : this.a.b.a.b.entrySet()) {
-                if ((((Integer) entry2.getValue()).intValue() == 0 || ((Integer) entry2.getValue()).intValue() == 1) && !this.a.b.b.u((String) entry2.getKey())) {
-                    this.a.b.b.bq();
-                    break;
-                }
-            }
-            TaskHandler.postTask(new gi(this));
+    /* renamed from: a */
+    public void mo1050a(C0903n c0903n, aa aaVar) {
+        if (this.f3227a != null) {
+            this.f3227a.mo1050a(c0903n, aaVar);
+        }
+    }
+
+    /* renamed from: a */
+    public void mo1049a(C0903n c0903n) {
+        String B = ((C0952s) c0903n).m7025B();
+        if (!(TextUtils.isEmpty(B) || B.equals(this.f3228b.m4157J()))) {
+            this.f3228b.m4227f(B);
+        }
+        if (!(TextUtils.isEmpty(this.f3228b.m4157J()) || this.f3228b.m4157J().equals(this.f3228b.m4161N()))) {
+            this.f3228b.m4232h(this.f3228b.m4157J());
+        }
+        if (this.f3227a != null) {
+            this.f3227a.mo1049a(c0903n);
+        }
+    }
+
+    /* renamed from: b */
+    public void mo1051b(C0903n c0903n) {
+        this.f3228b.a.decrementAndGet();
+        if (this.f3227a != null) {
+            this.f3227a.mo1051b(c0903n);
+        }
+        this.f3228b.bx();
+    }
+
+    /* renamed from: c */
+    public void mo1052c(C0903n c0903n) {
+        this.f3228b.a.decrementAndGet();
+        if (this.f3227a != null) {
+            this.f3227a.mo1052c(c0903n);
+        }
+        this.f3228b.bx();
+        if (this.f3228b.mo1038k()) {
+            DkUserPurchasedFictionsManager.m5072a().m5109d(this.f3228b.m4156I());
+        } else {
+            DkUserPurchasedBooksManager.m5029a().m5071e(this.f3228b.m4156I());
+        }
+    }
+
+    /* renamed from: d */
+    public void mo1053d(C0903n c0903n) {
+        if (this.f3227a != null) {
+            this.f3227a.mo1053d(c0903n);
+        }
+    }
+
+    /* renamed from: e */
+    public void mo1054e(C0903n c0903n) {
+        if (this.f3227a != null) {
+            this.f3227a.mo1054e(c0903n);
+        }
+    }
+
+    /* renamed from: f */
+    public void mo1055f(C0903n c0903n) {
+        if (this.f3227a != null) {
+            this.f3227a.mo1055f(c0903n);
         }
     }
 }

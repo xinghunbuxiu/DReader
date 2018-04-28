@@ -1,17 +1,14 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.domain.bookshelf.iz;
-
 class du implements Runnable {
-    final /* synthetic */ dt a;
+    /* renamed from: a */
+    final /* synthetic */ dr f8469a;
 
-    du(dt dtVar) {
-        this.a = dtVar;
+    du(dr drVar) {
+        this.f8469a = drVar;
     }
 
     public void run() {
-        if (this.a.a.b != null) {
-            this.a.a.b.setSpaceQuota(iz.a().b());
-        }
+        this.f8469a.f8465a.m11667l();
     }
 }

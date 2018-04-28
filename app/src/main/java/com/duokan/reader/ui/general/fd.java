@@ -1,24 +1,17 @@
 package com.duokan.reader.ui.general;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class fd implements TextWatcher {
-    final /* synthetic */ fc a;
+class fd implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ fa f7210a;
 
-    fd(fc fcVar) {
-        this.a = fcVar;
+    fd(fa faVar) {
+        this.f7210a = faVar;
     }
 
-    public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-    }
-
-    public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
-    }
-
-    public void afterTextChanged(Editable editable) {
-        if (this.a.c > 0) {
-            this.a.d();
-        }
+    public void onClick(View view) {
+        this.f7210a.m10634c();
     }
 }

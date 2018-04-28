@@ -3,15 +3,21 @@ package com.duokan.reader.domain.document.epub;
 import java.nio.ByteBuffer;
 
 public interface ax extends Cloneable {
-    int a(ByteBuffer byteBuffer, long j);
+    /* renamed from: a */
+    int mo1078a(ByteBuffer byteBuffer, long j);
 
-    ax a();
+    /* renamed from: a */
+    ax mo1079a();
 
-    boolean b();
+    /* renamed from: b */
+    boolean mo1080b();
 
-    boolean c();
+    /* renamed from: c */
+    boolean mo1081c();
 
-    long d();
+    /* renamed from: d */
+    long mo1082d();
 
-    void e();
+    /* renamed from: e */
+    void mo1083e();
 }

@@ -1,21 +1,19 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.app.AppContext;
+import com.duokan.reader.common.C0619r;
+import com.duokan.reader.ui.general.hd;
 
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.ReaderFeature;
+class aa implements C0619r {
+    /* renamed from: a */
+    final /* synthetic */ C1312z f6079a;
 
-class aa implements OnClickListener {
-    final /* synthetic */ g a;
-
-    aa(g gVar) {
-        this.a = gVar;
+    aa(C1312z c1312z) {
+        this.f6079a = c1312z;
     }
 
-    public void onClick(View view) {
-        ReaderFeature readerFeature = (ReaderFeature) MyContextWrapper.getFeature(this.a.getContext()).queryFeature(ReaderFeature.class);
-        readerFeature.switchNightMode(!readerFeature.inNightMode(), true);
-        this.a.i();
+    /* renamed from: a */
+    public void mo1619a(String str) {
+        ((hd) AppContext.getAppContext(this.f6079a.f6750a.getContext()).queryFeature(hd.class)).mo2548a("", str, "");
     }
 }

@@ -1,27 +1,18 @@
 package com.duokan.reader.ui.general;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
 
-class il extends Drawable {
-    final /* synthetic */ ik a;
+class il extends hu {
+    /* renamed from: d */
+    final /* synthetic */ ik f7386d;
 
-    il(ik ikVar) {
-        this.a = ikVar;
+    il(ik ikVar, Context context) {
+        this.f7386d = ikVar;
+        super(context);
     }
 
-    public void draw(Canvas canvas) {
-        this.a.a(canvas);
-    }
-
-    public void setAlpha(int i) {
-    }
-
-    public void setColorFilter(ColorFilter colorFilter) {
-    }
-
-    public int getOpacity() {
-        return -3;
+    /* renamed from: a */
+    protected boolean mo1797a() {
+        return this.f7386d.m10794a();
     }
 }

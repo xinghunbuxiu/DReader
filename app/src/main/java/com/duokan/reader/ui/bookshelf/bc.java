@@ -3,17 +3,15 @@ package com.duokan.reader.ui.bookshelf;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.reader.domain.bookshelf.c;
-
 class bc implements OnClickListener {
-    final /* synthetic */ bb a;
+    /* renamed from: a */
+    final /* synthetic */ ao f6155a;
 
-    bc(bb bbVar) {
-        this.a = bbVar;
+    bc(ao aoVar) {
+        this.f6155a = aoVar;
     }
 
     public void onClick(View view) {
-        bg bgVar = (bg) view;
-        this.a.k.a((c) bgVar.getItem(), bgVar);
+        this.f6155a.m9168n();
     }
 }

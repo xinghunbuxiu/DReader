@@ -1,66 +1,42 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.graphics.PointF;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.View;
+import android.text.TextUtils;
+import com.duokan.core.sys.af;
+import com.duokan.reader.common.p037c.C0559f;
+import com.duokan.reader.domain.bookshelf.BookPackageType;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.bookshelf.ai;
+import com.duokan.reader.domain.store.C0466h;
+import com.duokan.reader.domain.store.DkStoreBookDetail;
+import com.duokan.reader.domain.store.DkStoreItem;
+import com.duokan.reader.ui.general.be;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.au;
-import com.duokan.reader.domain.bookshelf.an;
+class cd implements C0466h {
+    /* renamed from: a */
+    final /* synthetic */ cc f6249a;
 
-class cd implements au {
-    final /* synthetic */ bz a;
-
-    cd(bz bzVar) {
-        this.a = bzVar;
+    cd(cc ccVar) {
+        this.f6249a = ccVar;
     }
 
-    public void onTouchUp(View view, PointF pointF) {
-    }
-
-    public void onTouchDown(View view, PointF pointF) {
-    }
-
-    public void onTouchCancel(View view, PointF pointF) {
-    }
-
-    public void a(View view, PointF pointF, int i) {
-        boolean z = true;
-        if (this.a.g && !this.a.q) {
-            PointF c = this.a.h.c();
-            boolean g = this.a.g(false);
-            if (g) {
-                z = g;
-            } else {
-                Rect rect = (Rect) UTools.g.getRect();
-                RectF rectF = (RectF) UTools.h.getRect();
-                this.a.a(rect);
-                this.a.h.a(rectF);
-                if (rectF.centerY() < ((float) rect.top) && this.a.i() && !this.a.m()) {
-                    this.a.a(this.a.k);
-                } else if (rectF.centerY() > ((float) rect.bottom) && this.a.i() && !this.a.m()) {
-                    this.a.a(this.a.k);
-                } else if (rectF.top < ((float) rect.top) && !this.a.j.c_()) {
-                    this.a.o = new cm(this.a, ((int) (rectF.top - ((float) rect.top))) / 2);
-                    TaskHandler.postTask(this.a.o);
-                } else if (rectF.bottom <= ((float) rect.bottom) || this.a.j.d_()) {
-                    z = g;
-                } else {
-                    this.a.o = new cm(this.a, ((int) (rectF.bottom - ((float) rect.bottom))) / 2);
-                    TaskHandler.postTask(this.a.o);
-                }
-                UTools.g.getRect(rect);
-                UTools.h.getRect(rectF);
+    public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
+        C0800c a = ai.m3980a().m3875a(dkStoreItem);
+        if (a == null) {
+            return;
+        }
+        if (!a.aB() || a.m4247s() == BookPackageType.EPUB_OPF) {
+            this.f6249a.f6247c.openBook(a);
+        } else if (C0559f.m2476b().m2485d() && (dkStoreItem instanceof DkStoreBookDetail)) {
+            DkStoreBookDetail dkStoreBookDetail = (DkStoreBookDetail) dkStoreItem;
+            if (!TextUtils.isEmpty(dkStoreBookDetail.getTrialUri())) {
+                a.m4198a(a.m4225f(), dkStoreBookDetail.getTrialUri(), dkStoreBookDetail.getRevision(), dkStoreBookDetail.getTrialMd5(), false, new af(Boolean.valueOf(true)));
             }
-            if (!z) {
-                int a = this.a.a(c);
-                an b = this.a.b(a);
-                if (a >= 0 && b != this.a.k && !this.a.l() && !this.a.j() && !this.a.m()) {
-                    this.a.a(a);
-                }
-            }
+        }
+    }
+
+    public void onFetchBookDetailError(String str) {
+        if (!TextUtils.isEmpty(str)) {
+            be.m10287a(this.f6249a.f6248d.getContext(), (CharSequence) str, 0).show();
         }
     }
 }

@@ -1,30 +1,35 @@
 package com.duokan.reader.ui.reading;
 
-import android.animation.Animator;
-import android.animation.Animator.AnimatorListener;
+import android.graphics.PointF;
+import android.view.View;
+import com.duokan.core.ui.C0382r;
+import com.duokan.core.ui.er;
 
-class abw implements AnimatorListener {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ abs b;
+class abw implements C0382r {
+    /* renamed from: a */
+    final /* synthetic */ abv f9431a;
 
-    abw(abs com_duokan_reader_ui_reading_abs, Runnable runnable) {
-        this.b = com_duokan_reader_ui_reading_abs;
-        this.a = runnable;
+    abw(abv abv) {
+        this.f9431a = abv;
     }
 
-    public void onAnimationStart(Animator animator) {
+    public void onTouchDown(View view, PointF pointF) {
     }
 
-    public void onAnimationEnd(Animator animator) {
-        this.b.c = null;
-        this.b.post(this.a);
+    public void onTouchUp(View view, PointF pointF) {
     }
 
-    public void onAnimationCancel(Animator animator) {
-        this.b.c = null;
-        this.b.post(this.a);
+    public void onTouchCancel(View view, PointF pointF) {
     }
 
-    public void onAnimationRepeat(Animator animator) {
+    /* renamed from: a */
+    public void mo528a(er erVar, View view, PointF pointF, PointF pointF2) {
+        if (this.f9431a.f9424a.f9387i != null) {
+            this.f9431a.f9424a.m13232l();
+        } else {
+            this.f9431a.f9424a.f9382d.onDragEnd(pointF, pointF2);
+        }
+        this.f9431a.f9430h = false;
+        this.f9431a.m1620d(true);
     }
 }

@@ -8,12 +8,12 @@ public final class JobInfo implements Serializable {
     protected int mFlags = 0;
     protected long mInitialTime = 0;
     protected long mIntervalTime = 0;
-    protected final Class mJobClass;
+    protected final Class<?> mJobClass;
     protected final String mJobName;
     protected Serializable mParams = null;
     protected int mRepeatCount = 0;
 
-    protected JobInfo(String str, Class cls) {
+    protected JobInfo(String str, Class<?> cls) {
         this.mJobName = str;
         this.mJobClass = cls;
     }
@@ -22,7 +22,7 @@ public final class JobInfo implements Serializable {
         return this.mJobName;
     }
 
-    public Object getParams() {
+    public <T> T getParams() {
         return this.mParams;
     }
 }

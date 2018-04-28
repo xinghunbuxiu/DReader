@@ -1,15 +1,31 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.domain.bookshelf.kp;
+import android.text.TextUtils;
+import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.sys.af;
+import com.duokan.core.sys.as;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.ui.reading.su;
 
-class gy implements Runnable {
-    final /* synthetic */ gx a;
+class gy implements as {
+    /* renamed from: a */
+    final /* synthetic */ gx f7913a;
 
     gy(gx gxVar) {
-        this.a = gxVar;
+        this.f7913a = gxVar;
     }
 
-    public void run() {
-        kp.a().d();
+    /* renamed from: a */
+    public void mo1831a() {
+        su suVar = (su) this.f7913a.f7912b.f7581b.getContext().queryFeature(su.class);
+        if (suVar != null) {
+            C0800c G = suVar.mo1992G();
+            if (TextUtils.equals(G.m4156I(), this.f7913a.f7911a) && G.mo1038k()) {
+                C0328a.m757c().m749a(LogLevel.EVENT, "autopay", "confirm(allowed: %s, book: %s(%s))", "" + suVar.ag(), G.ay(), this.f7913a.f7911a);
+                G.mo1009a(new af(Boolean.valueOf(r0)));
+                G.aN();
+            }
+        }
     }
 }

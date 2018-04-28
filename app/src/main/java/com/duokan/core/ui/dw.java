@@ -1,28 +1,31 @@
 package com.duokan.core.ui;
 
 import android.graphics.Camera;
+import com.duokan.core.sys.BaseAnimation;
 
-import com.duokan.core.sys.ap;
-
-final class dw extends ap {
+final class dw extends BaseAnimation<Camera> {
     dw() {
     }
 
-    protected Object b() {
-        return c();
+    /* renamed from: b */
+    protected /* synthetic */ Object createAnimation() {
+        return m1974c();
     }
 
-    protected void b(Object obj) {
-        a((Camera) obj);
+    /* renamed from: b */
+    protected /* synthetic */ void mo516b(Object obj) {
+        m1971a((Camera) obj);
     }
 
-    protected Camera c() {
+    /* renamed from: c */
+    protected Camera m1974c() {
         Camera camera = new Camera();
         camera.save();
         return camera;
     }
 
-    protected void a(Camera camera) {
+    /* renamed from: a */
+    protected void m1971a(Camera camera) {
         camera.restore();
         camera.save();
     }

@@ -1,37 +1,25 @@
 package com.duokan.reader.ui.general;
 
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-class fb implements dp {
-    final /* synthetic */ fa a;
+class fb implements TextWatcher {
+    /* renamed from: a */
+    final /* synthetic */ fa f7208a;
 
     fb(fa faVar) {
-        this.a = faVar;
+        this.f7208a = faVar;
     }
 
-    public View a() {
-        return this.a.c;
+    public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 
-    public TextView b() {
-        return this.a.c;
+    public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
     }
 
-    public View c() {
-        return this.a.d;
-    }
-
-    public EditText d() {
-        return this.a.e;
-    }
-
-    public TextView e() {
-        return this.a.f;
-    }
-
-    public void f() {
-        this.a.dismiss();
+    public void afterTextChanged(Editable editable) {
+        if (this.f7208a.f7203c > 0) {
+            this.f7208a.m10618d();
+        }
     }
 }

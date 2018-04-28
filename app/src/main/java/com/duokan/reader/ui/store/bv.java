@@ -1,76 +1,87 @@
 package com.duokan.reader.ui.store;
 
-import com.duokan.c.j;
-import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.IFeature;
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.common.webservices.duokan.p;
-import com.duokan.reader.ui.InavOperater;
+import com.duokan.core.app.AppContext;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.common.webservices.duokan.C0641o;
+import com.duokan.reader.ui.C0436e;
 import com.duokan.reader.ui.general.web.StorePageController;
 
 public abstract class bv {
-    public static ActivatedController a(IFeature featrue, String str, int i, String str2, String str3) {
-        ActivatedController storePageController = new StorePageController(featrue);
-        ((StorePageController) storePageController).loadUrl(p.i().a(str, i, str2, str3));
+    /* renamed from: a */
+    public static ActivatedController m15355a(IFeature mFeature, String str, int i, String str2, String str3) {
+        ActivatedController storePageController = new StorePageController(mFeature);
+        ((StorePageController) storePageController).loadUrl(C0641o.m2934i().m2954a(str, i, str2, str3));
         return storePageController;
     }
 
-    public static void a(IFeature featrue, String str, String str2, String str3, boolean z) {
-        ((InavOperater) featrue.queryFeature(InavOperater.class)).pushPageSmoothly(a(featrue, String.valueOf(0), z ? 1 : 2, str, str3), null);
+    /* renamed from: a */
+    public static void m15356a(IFeature mFeature, String str, String str2, String str3, boolean z) {
+        ((C0436e) mFeature.queryFeature(C0436e.class)).pushPageSmoothly(m15355a(mFeature, String.valueOf(0), z ? 1 : 2, str, str3), null);
     }
 
-    public static ActivatedController a(IFeature featrue) {
-        ActivatedController storePageController = new StorePageController(featrue);
-        storePageController.loadUrl(p.i().H());
+    /* renamed from: a */
+    public static ActivatedController m15353a(IFeature mFeature) {
+        ActivatedController storePageController = new StorePageController(mFeature);
+        storePageController.loadUrl(C0641o.m2934i().m2943G());
         return storePageController;
     }
 
-    public static ActivatedController a(MyContextWrapper mContext) {
-        ActivatedController storePageController = new StorePageController(mContext);
-        storePageController.loadUrl(p.i().E());
-        storePageController.setPageTitle(mContext.getString(j.personal__purchased_book_group_title_view__subscribe));
+    /* renamed from: a */
+    public static ActivatedController m15352a(AppContext appContext) {
+        ActivatedController storePageController = new StorePageController(appContext);
+        storePageController.loadUrl(C0641o.m2934i().m2940D());
+        storePageController.setPageTitle(appContext.getString(C0258j.personal__purchased_book_group_title_view__subscribe));
         return storePageController;
     }
 
-    public static ActivatedController a(IFeature featrue, String str) {
-        ActivatedController storePageController = new StorePageController(featrue);
-        storePageController.loadUrl(p.i().g(str));
+    /* renamed from: a */
+    public static ActivatedController m15354a(IFeature mFeature, String str) {
+        ActivatedController storePageController = new StorePageController(mFeature);
+        storePageController.loadUrl(C0641o.m2934i().m2977g(str));
         return storePageController;
     }
 
-    public static ActivatedController b(IFeature featrue) {
-        ActivatedController storePageController = new StorePageController(featrue);
-        storePageController.loadUrl(p.i().F());
+    /* renamed from: b */
+    public static ActivatedController m15358b(IFeature mFeature) {
+        ActivatedController storePageController = new StorePageController(mFeature);
+        storePageController.loadUrl(C0641o.m2934i().m2941E());
         return storePageController;
     }
 
-    public static ActivatedController c(IFeature featrue) {
-        ActivatedController storePageController = new StorePageController(featrue);
-        storePageController.loadUrl(p.i().G());
+    /* renamed from: c */
+    public static ActivatedController m15360c(IFeature mFeature) {
+        ActivatedController storePageController = new StorePageController(mFeature);
+        storePageController.loadUrl(C0641o.m2934i().m2942F());
         return storePageController;
     }
 
-    public static ActivatedController b(MyContextWrapper mContext) {
-        ActivatedController storePageController = new StorePageController(mContext);
-        storePageController.loadUrl(p.i().b(null));
+    /* renamed from: b */
+    public static ActivatedController m15357b(AppContext appContext) {
+        ActivatedController storePageController = new StorePageController(appContext);
+        storePageController.loadUrl(C0641o.m2934i().m2962b(null));
         return storePageController;
     }
 
-    public static ActivatedController c(MyContextWrapper mContext) {
-        ActivatedController storePageController = new StorePageController(mContext);
-        storePageController.loadUrl(p.i().A());
+    /* renamed from: c */
+    public static ActivatedController m15359c(AppContext appContext) {
+        ActivatedController storePageController = new StorePageController(appContext);
+        storePageController.loadUrl(C0641o.m2934i().m2937A());
         return storePageController;
     }
 
-    public static ActivatedController d(MyContextWrapper mContext) {
-        ActivatedController storePageController = new StorePageController(mContext);
-        storePageController.loadUrl(p.i().B());
+    /* renamed from: d */
+    public static ActivatedController m15361d(AppContext appContext) {
+        ActivatedController storePageController = new StorePageController(appContext);
+        storePageController.loadUrl(C0641o.m2934i().m2938B());
         return storePageController;
     }
 
-    public static ActivatedController e(MyContextWrapper mContext) {
-        ActivatedController storePageController = new StorePageController(mContext);
-        storePageController.loadUrl(p.i().C());
+    /* renamed from: e */
+    public static ActivatedController m15362e(AppContext appContext) {
+        ActivatedController storePageController = new StorePageController(appContext);
+        storePageController.loadUrl(C0641o.m2934i().m2939C());
         return storePageController;
     }
 }

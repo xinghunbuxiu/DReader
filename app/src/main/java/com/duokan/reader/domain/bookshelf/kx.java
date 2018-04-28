@@ -1,65 +1,85 @@
 package com.duokan.reader.domain.bookshelf;
 
-import android.text.TextUtils;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import com.duokan.core.io.C0339d;
+import com.duokan.core.sys.C0352r;
+import com.duokan.reader.domain.document.sbk.C0824v;
+import java.io.Closeable;
 
-import com.duokan.reader.common.webservices.b;
-import com.duokan.reader.common.webservices.duokan.DkSignInInfo;
-import com.duokan.reader.common.webservices.duokan.r;
-import com.duokan.reader.common.webservices.duokan.s;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.ui.general.be;
+class kx implements C0824v {
+    /* renamed from: a */
+    final /* synthetic */ kh f3494a;
+    /* renamed from: b */
+    private final ky f3495b;
 
-class kx extends r {
-    b a = new b();
-    final /* synthetic */ ab b;
-    final /* synthetic */ kw c;
-
-    kx(kw kwVar, ab abVar) {
-        this.c = kwVar;
-        this.b = abVar;
+    public kx(kh khVar, ky kyVar) {
+        this.f3494a = khVar;
+        this.f3495b = kyVar;
     }
 
-    protected void onSessionTry() {
-        this.a = new s(this, this.b).d();
-    }
-
-    protected void onSessionSucceeded() {
-        if (this.a.b == 1001 || this.a.b == 1002 || this.a.b == 1003) {
-            i.f().a(this.b.a, new ky(this));
-        } else if (this.a.b != 0) {
-            this.c.a.e();
-            if (TextUtils.isEmpty(this.a.c)) {
-                CharSequence string;
-                if (this.a.b == 14) {
-                    string = this.c.a.b.getResources().getString(com.duokan.b.i.general__shared__local_time_error);
-                } else {
-                    string = String.format(this.c.a.b.getString(com.duokan.b.i.general__shared__unknown_error_code), new Object[]{Integer.valueOf(this.a.b)});
-                }
-                be.a(this.c.a.b, string, 0).show();
-            } else {
-                be.a(this.c.a.b, this.a.c, 0).show();
-            }
-            this.c.a.b(true);
-        } else if (this.c.a.e.a(this.b)) {
-            this.c.a.e.b(((DkSignInInfo) this.a.a).mLottery);
-            this.c.a.a(((DkSignInInfo) this.a.a).mSignStatus, ((DkSignInInfo) this.a.a).mToday, ((DkSignInInfo) this.a.a).mReward, ((DkSignInInfo) this.a.a).mLottery, ((DkSignInInfo) this.a.a).mHasPhysical, true, false, 0, null);
-        } else {
-            this.c.a.e();
-            be.a(this.c.a.b, com.duokan.b.i.general__shared__account_change, 0).show();
+    /* renamed from: a */
+    public boolean m4883a() {
+        try {
+            boolean a = this.f3494a.br().mo418a(this.f3495b.f3497b);
+            return a;
+        } finally {
+            this.f3494a.bs();
         }
     }
 
-    protected void onSessionCancelled() {
-        this.c.a.e();
+    /* renamed from: c */
+    public String mo1124c() {
+        return this.f3495b.f3496a;
     }
 
-    protected void onSessionClosed() {
-        this.c.a.i = null;
+    /* renamed from: d */
+    public String mo1125d() {
+        return "";
     }
 
-    protected void onSessionFailed() {
-        this.c.a.e();
-        be.a(this.c.a.b, this.c.a.b.getString(com.duokan.b.i.general__shared__network_error), 0).show();
+    /* renamed from: e */
+    public String mo1126e() {
+        return "";
+    }
+
+    /* renamed from: b */
+    public int mo1131b() {
+        return this.f3495b.f3501f;
+    }
+
+    /* renamed from: f */
+    public int mo1132f() {
+        return this.f3495b.f3502g;
+    }
+
+    /* renamed from: g */
+    public boolean m4890g() {
+        return m4883a();
+    }
+
+    /* renamed from: a */
+    public boolean mo1130a(Canvas canvas, Rect rect) {
+        C0352r a = this.f3494a.br();
+        Closeable c;
+        try {
+            if (m4890g()) {
+                c = a.mo422c(this.f3495b.f3497b);
+                Bitmap decodeStream = BitmapFactory.decodeStream(c);
+                if (decodeStream != null) {
+                    canvas.drawBitmap(decodeStream, rect, new Rect(0, 0, rect.width(), rect.height()), null);
+                    decodeStream.recycle();
+                }
+                C0339d.m795a(c);
+                this.f3494a.bs();
+                return true;
+            }
+            this.f3494a.bs();
+            return false;
+        } catch (Throwable th) {
+            this.f3494a.bs();
+        }
     }
 }

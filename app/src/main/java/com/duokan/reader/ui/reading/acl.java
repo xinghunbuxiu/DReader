@@ -1,22 +1,30 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Point;
-import android.view.View;
+import android.animation.Animator;
+import android.animation.Animator.AnimatorListener;
 
-class acl implements Runnable {
-    final /* synthetic */ Point a;
-    final /* synthetic */ Point b;
-    final /* synthetic */ View c;
-    final /* synthetic */ TextSelectionController d;
+class acl implements AnimatorListener {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f9457a;
+    /* renamed from: b */
+    final /* synthetic */ acf f9458b;
 
-    acl(TextSelectionController textSelectionController, Point point, Point point2, View view) {
-        this.d = textSelectionController;
-        this.a = point;
-        this.b = point2;
-        this.c = view;
+    acl(acf acf, Runnable runnable) {
+        this.f9458b = acf;
+        this.f9457a = runnable;
     }
 
-    public void run() {
-        this.d.e.b(new acm(this));
+    public void onAnimationStart(Animator animator) {
+    }
+
+    public void onAnimationEnd(Animator animator) {
+        this.f9458b.post(this.f9457a);
+    }
+
+    public void onAnimationCancel(Animator animator) {
+        this.f9458b.post(this.f9457a);
+    }
+
+    public void onAnimationRepeat(Animator animator) {
     }
 }

@@ -3,19 +3,22 @@ package com.duokan.reader.ui.general;
 import com.duokan.core.ui.cs;
 
 class as implements cs {
-    final /* synthetic */ ar a;
+    /* renamed from: a */
+    final /* synthetic */ ar f6945a;
 
     as(ar arVar) {
-        this.a = arVar;
+        this.f6945a = arVar;
     }
 
-    public void a(int i, int i2, boolean z) {
+    /* renamed from: a */
+    public void mo1697a(int i, int i2, boolean z) {
     }
 
-    public void b(int i, int i2, boolean z) {
-        if (i >= 0 && i < this.a.f.getChildCount() && i2 < this.a.f.getChildCount()) {
-            this.a.a(i, i2, z);
-            this.a.a(i2);
+    /* renamed from: b */
+    public void mo1698b(int i, int i2, boolean z) {
+        if (i >= 0 && i < this.f6945a.f6942f.getChildCount() && i2 < this.f6945a.f6942f.getChildCount()) {
+            this.f6945a.m10231a(i, i2, z);
+            this.f6945a.m10230a(i2);
         }
     }
 }

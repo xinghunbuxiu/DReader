@@ -1,56 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-class acx implements zj {
-    final /* synthetic */ x a;
-    final /* synthetic */ acw b;
+class acx implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ acw f9492a;
 
-    acx(acw com_duokan_reader_ui_reading_acw, x xVar) {
-        this.b = com_duokan_reader_ui_reading_acw;
-        this.a = xVar;
+    acx(acw acw) {
+        this.f9492a = acw;
     }
 
-    public void a() {
-        this.b.c.e();
-        this.a.d();
-    }
-
-    public void d() {
-        this.a.f();
-    }
-
-    public void b() {
-        this.a.e();
-    }
-
-    public void e() {
-        this.a.a();
-    }
-
-    public void c() {
-        this.a.b();
-    }
-
-    public void f() {
-        this.a.c();
-    }
-
-    public void h() {
-        this.a.a(0);
-    }
-
-    public void i() {
-        this.a.a(1);
-    }
-
-    public void j() {
-        this.a.a(2);
-    }
-
-    public void k() {
-        this.a.a(3);
-    }
-
-    public void g() {
-        this.a.g();
+    public void run() {
+        if (!this.f9492a.f9491c.f9156e.mo1994K()) {
+            this.f9492a.f9491c.m12571e().m12538a(this.f9492a.f9489a);
+            this.f9492a.f9491c.m12567c(this.f9492a.f9489a.x, this.f9492a.f9489a.y, this.f9492a.f9491c.f9152a, this.f9492a.f9490b);
+            this.f9492a.f9491c.m12558a(false);
+        }
     }
 }

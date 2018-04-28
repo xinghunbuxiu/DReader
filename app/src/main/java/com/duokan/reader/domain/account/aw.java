@@ -1,15 +1,19 @@
 package com.duokan.reader.domain.account;
 
-class aw implements Runnable {
-    final /* synthetic */ b a;
-    final /* synthetic */ MiAccount b;
+import com.duokan.reader.common.p036b.C0538a;
 
-    aw(MiAccount miAccount, b bVar) {
-        this.b = miAccount;
-        this.a = bVar;
+class aw implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ C0538a f2390a;
+    /* renamed from: b */
+    final /* synthetic */ MiAccount f2391b;
+
+    aw(MiAccount miAccount, C0538a c0538a) {
+        this.f2391b = miAccount;
+        this.f2390a = c0538a;
     }
 
     public void run() {
-        MiAccount.e.a(this.b, this.a);
+        this.f2390a.m2404d();
     }
 }

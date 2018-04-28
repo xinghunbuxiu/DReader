@@ -1,20 +1,19 @@
 package com.duokan.core.ui;
 
-import android.content.Context;
 import android.view.inputmethod.InputMethodManager;
+import com.duokan.core.sys.IdleHandlerListener;
 
-import com.duokan.core.sys.IdleStatus;
-
-class ee implements IdleStatus {
-    final  ed a;
+class ee implements IdleHandlerListener {
+    /* renamed from: a */
+    final /* synthetic */ ed f1215a;
 
     ee(ed edVar) {
-        this.a = edVar;
+        this.f1215a = edVar;
     }
 
     public boolean idleRun() {
-        if (!(this.a.a.view.getRootView() == null || this.a.a.view.getWindowToken() == null)) {
-            ((InputMethodManager) this.a.a.view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE)).showSoftInput(this.a.a.view, this.a.a.flag);
+        if (!(this.f1215a.f1214a.f1212a.getRootView() == null || this.f1215a.f1214a.f1212a.getWindowToken() == null)) {
+            ((InputMethodManager) this.f1215a.f1214a.f1212a.getContext().getSystemService("input_method")).showSoftInput(this.f1215a.f1214a.f1212a, this.f1215a.f1214a.f1213b);
         }
         return false;
     }

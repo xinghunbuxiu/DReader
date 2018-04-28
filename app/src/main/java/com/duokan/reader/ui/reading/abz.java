@@ -1,16 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import android.animation.ValueAnimator;
-import android.animation.ValueAnimator.AnimatorUpdateListener;
+import fi.harism.curl.CurlDirection;
 
-class abz implements AnimatorUpdateListener {
-    final /* synthetic */ abs a;
+class abz implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ aby f9434a;
 
-    abz(abs com_duokan_reader_ui_reading_abs) {
-        this.a = com_duokan_reader_ui_reading_abs;
+    abz(aby aby) {
+        this.f9434a = aby;
     }
 
-    public void onAnimationUpdate(ValueAnimator valueAnimator) {
-        this.a.invalidate();
+    public void run() {
+        this.f9434a.f9433a.f9424a.f9382d.onDragStart(this.f9434a.f9433a.f9427e, CurlDirection.PAGE_UP);
+        this.f9434a.f9433a.f9424a.f9387i = null;
     }
 }

@@ -1,56 +1,23 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.document.i;
+import com.duokan.reader.domain.document.ak;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.concurrent.Callable;
+class abf implements to {
+    /* renamed from: a */
+    final /* synthetic */ abe f9390a;
 
-class abf implements Callable {
-    final /* synthetic */ int a;
-    final /* synthetic */ abd b;
-
-    abf(abd com_duokan_reader_ui_reading_abd, int i) {
-        this.b = com_duokan_reader_ui_reading_abd;
-        this.a = i;
+    abf(abe abe) {
+        this.f9390a = abe;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
-    }
-
-    public List a() {
-        List linkedList = new LinkedList();
-        gn X = this.b.b.a.X();
-        gn e = this.b.b.a.e(this.a);
-        if (X.h() instanceof i) {
-            i iVar = (i) X.h();
-            linkedList.add(iVar.b());
-            linkedList.add(iVar.c());
-            if (e == null) {
-                return linkedList;
-            }
-            if (this.b.b.a.d(X.g()) && this.a == -1) {
-                return linkedList;
-            }
-            if (this.b.b.a.e(X.g()) && this.a == 1) {
-                return linkedList;
-            }
-            iVar = (i) e.h();
-            linkedList.add(iVar.b());
-            linkedList.add(iVar.c());
-        } else if (e == null) {
-            return linkedList;
-        } else {
-            if (this.b.b.a.d(X.g()) && this.a == -1) {
-                return linkedList;
-            }
-            if (this.b.b.a.e(X.g()) && this.a == 1) {
-                return linkedList;
-            }
-            linkedList.add(X.h());
-            linkedList.add(e.h());
+    /* renamed from: a */
+    public void mo2198a(su suVar, int i, int i2) {
+        if (this.f9390a.f9379a.mo2106b(4) && this.f9390a.f9382d.getVisibility() != 4) {
+            this.f9390a.f9382d.setVisibility(4);
         }
-        return linkedList;
+    }
+
+    /* renamed from: a */
+    public void mo2199a(su suVar, ak akVar, ak akVar2) {
     }
 }

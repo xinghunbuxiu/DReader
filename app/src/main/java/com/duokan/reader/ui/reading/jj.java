@@ -1,26 +1,21 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
+import android.view.ViewTreeObserver.OnPreDrawListener;
 
-import com.duokan.core.sys.TaskHandler;
+class jj implements OnPreDrawListener {
+    /* renamed from: a */
+    final /* synthetic */ FixedPageClipView f10437a;
+    /* renamed from: b */
+    final /* synthetic */ ji f10438b;
 
-class jj implements AnimationListener {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ jg b;
-
-    jj(jg jgVar, Runnable runnable) {
-        this.b = jgVar;
-        this.a = runnable;
+    jj(ji jiVar, FixedPageClipView fixedPageClipView) {
+        this.f10438b = jiVar;
+        this.f10437a = fixedPageClipView;
     }
 
-    public void onAnimationStart(Animation animation) {
-    }
-
-    public void onAnimationRepeat(Animation animation) {
-    }
-
-    public void onAnimationEnd(Animation animation) {
-        TaskHandler.PostTask(this.a);
+    public boolean onPreDraw() {
+        this.f10438b.m14475d();
+        this.f10438b.getViewTreeObserver().removeOnPreDrawListener(this);
+        return false;
     }
 }

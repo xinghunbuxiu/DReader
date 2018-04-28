@@ -1,21 +1,28 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
+import java.util.LinkedList;
+import java.util.List;
 
-class ha extends FrameLayout {
-    final /* synthetic */ gx a;
+public class ha extends ImportedFileInfo {
+    /* renamed from: a */
+    private List<ImportedFileInfo> f6536a = new LinkedList();
 
-    public ha(gx gxVar, Context context) {
-        this.a = gxVar;
-        super(context);
+    public ha(String str, String str2, long j) {
+        super(str, str2, j);
     }
 
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.a.c()) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        return true;
+    /* renamed from: a */
+    public void m9761a(ImportedFileInfo importedFileInfo) {
+        this.f6536a.add(importedFileInfo);
+    }
+
+    /* renamed from: a */
+    public int m9760a() {
+        return this.f6536a.size();
+    }
+
+    /* renamed from: b */
+    public List<ImportedFileInfo> m9762b() {
+        return this.f6536a;
     }
 }

@@ -1,17 +1,26 @@
 package com.duokan.reader.ui.general;
 
-class ig implements Runnable {
-    final /* synthetic */ SpirtMenuController a;
+import android.view.View;
 
-    ig(SpirtMenuController spirtMenuController) {
-        this.a = spirtMenuController;
+class ig implements cx {
+    /* renamed from: a */
+    final /* synthetic */ ie f7377a;
+
+    ig(ie ieVar) {
+        this.f7377a = ieVar;
     }
 
-    public void run() {
-        this.a.d = MenuState.HIDE;
-        this.a.requestBack();
-        if (this.a.f != null) {
-            this.a.f.run();
+    /* renamed from: a */
+    public void mo1699a(int i, int i2) {
+        View childAt = this.f7377a.getChildAt(i2);
+        if (childAt instanceof ii) {
+            ((ii) childAt).m10790a();
+        }
+        if (this.f7377a.f7373a != null) {
+            this.f7377a.f7373a.mo1699a(i, i2);
+        }
+        if (this.f7377a.f7375c != null) {
+            this.f7377a.f7375c.mo1699a(i, i2);
         }
     }
 }

@@ -7,31 +7,33 @@ import android.graphics.NinePatch;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-
-import com.duokan.core.ui.UTools;
+import com.duokan.core.ui.dv;
 
 class cp extends Drawable {
-    private final NinePatch a;
-    private int b = 255;
-    private Rect c = new Rect();
+    /* renamed from: a */
+    private final NinePatch f7039a;
+    /* renamed from: b */
+    private int f7040b = 255;
+    /* renamed from: c */
+    private Rect f7041c = new Rect();
 
     public cp(Bitmap bitmap, Rect rect) {
-        this.a = new NinePatch(bitmap, bitmap.getNinePatchChunk(), null);
-        this.c.set(rect);
+        this.f7039a = new NinePatch(bitmap, bitmap.getNinePatchChunk(), null);
+        this.f7041c.set(rect);
     }
 
     public void draw(Canvas canvas) {
         Paint paint = new Paint();
-        paint.setAlpha(this.b);
+        paint.setAlpha(this.f7040b);
         paint.setFilterBitmap(true);
-        Rect rect = (Rect) UTools.g.getRect();
+        Rect rect = (Rect) dv.f1198g.addAnimation();
         rect.set(getBounds());
-        this.a.draw(canvas, rect, paint);
-        UTools.g.getRect(rect);
+        this.f7039a.draw(canvas, rect, paint);
+        dv.f1198g.clearAnimation(rect);
     }
 
     public void setAlpha(int i) {
-        this.b = i;
+        this.f7040b = i;
     }
 
     public void setColorFilter(ColorFilter colorFilter) {
@@ -42,7 +44,7 @@ class cp extends Drawable {
     }
 
     public boolean getPadding(Rect rect) {
-        rect.set(this.c);
+        rect.set(this.f7041c);
         return true;
     }
 }

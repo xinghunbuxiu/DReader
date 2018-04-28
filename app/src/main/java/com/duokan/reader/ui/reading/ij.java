@@ -1,26 +1,19 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.UmengManager;
 
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.domain.bookshelf.ej;
+class ij implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ia f10388a;
 
-class ij extends fo {
-    private final sh a = ((sh) MyContextWrapper.getFeature(getContext()).queryFeature(sh.class));
-    private int b = 0;
-    private long c = System.currentTimeMillis();
-    private long d = 0;
-    private int e = 0;
-
-    public ij(Context context) {
-        super(context);
-        if (this.a.G() instanceof ej) {
-            this.b = (((ej) this.a.G()).be() + 1) / 2;
-        }
-        setAdapter(new im());
+    ij(ia iaVar) {
+        this.f10388a = iaVar;
     }
 
-    public int u() {
-        return this.e;
+    public void onClick(View view) {
+        UmengManager.get().onEvent("V2_READING_MENU", "Comment");
+        this.f10388a.m13598a(new ik(this));
     }
 }

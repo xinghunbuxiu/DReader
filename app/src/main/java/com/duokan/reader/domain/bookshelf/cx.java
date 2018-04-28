@@ -1,9 +1,12 @@
 package com.duokan.reader.domain.bookshelf;
 
-import java.util.List;
-
 public interface cx {
-    void a(String str);
+    /* renamed from: a */
+    void mo976a();
 
-    void a(List list);
+    /* renamed from: a */
+    void mo977a(String str);
+
+    /* renamed from: b */
+    void mo978b();
 }

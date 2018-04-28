@@ -1,16 +1,19 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.app.c;
-import com.duokan.core.app.d;
+import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.OnDismissListener;
 
-class ev implements d {
-    final /* synthetic */ et a;
+class ev implements OnDismissListener {
+    /* renamed from: a */
+    final /* synthetic */ es f7803a;
 
-    ev(et etVar) {
-        this.a = etVar;
+    ev(es esVar) {
+        this.f7803a = esVar;
     }
 
-    public void onCancel(c cVar) {
-        this.a.d.b.pageController.web_notifyWeb(this.a.c, 2, new Object[0]);
+    public void onDismiss(C0342j c0342j) {
+        if (!this.f7803a.f7800e.f7793b.f7581b.mCallBackSucceed) {
+            this.f7803a.f7799d.mo1840b(new Object[0]);
+        }
     }
 }

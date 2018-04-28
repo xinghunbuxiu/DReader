@@ -6,14 +6,18 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView.ScaleType;
-
-import com.duokan.reader.ui.general.jl;
+import android.widget.LinearLayout.LayoutParams;
+import com.duokan.reader.ui.general.iv;
 
 public class eq extends bt {
-    private ScaleType a;
-    private Drawable b;
-    private Drawable c;
-    private Drawable d;
+    /* renamed from: a */
+    private ScaleType f1218a;
+    /* renamed from: b */
+    private Drawable f1219b;
+    /* renamed from: c */
+    private Drawable f1220c;
+    /* renamed from: d */
+    private Drawable f1221d;
 
     public eq(Context context) {
         this(context, null);
@@ -21,26 +25,26 @@ public class eq extends bt {
 
     public eq(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.a = ScaleType.CENTER;
-        this.b = null;
-        this.c = null;
-        this.d = null;
+        this.f1218a = ScaleType.CENTER;
+        this.f1219b = null;
+        this.f1220c = null;
+        this.f1221d = null;
         super.setOrientation(1);
     }
 
     public ScaleType getDividerScaleType() {
-        return this.a;
+        return this.f1218a;
     }
 
     public void setDividerScaleType(ScaleType scaleType) {
-        this.a = scaleType;
-        a();
+        this.f1218a = scaleType;
+        m2026a();
         requestLayout();
         invalidate();
     }
 
     public Drawable getFirstDivider() {
-        return this.b;
+        return this.f1219b;
     }
 
     public void setFirstDivider(int i) {
@@ -48,14 +52,14 @@ public class eq extends bt {
     }
 
     public void setFirstDivider(Drawable drawable) {
-        this.b = drawable;
-        a();
+        this.f1219b = drawable;
+        m2026a();
         requestLayout();
         invalidate();
     }
 
     public Drawable getMiddleDivider() {
-        return this.c;
+        return this.f1220c;
     }
 
     public void setMiddleDivider(int i) {
@@ -63,14 +67,14 @@ public class eq extends bt {
     }
 
     public void setMiddleDivider(Drawable drawable) {
-        this.c = drawable;
-        a();
+        this.f1220c = drawable;
+        m2026a();
         requestLayout();
         invalidate();
     }
 
     public Drawable getLastDivider() {
-        return this.d;
+        return this.f1221d;
     }
 
     public void setLastDivider(int i) {
@@ -78,20 +82,22 @@ public class eq extends bt {
     }
 
     public void setLastDivider(Drawable drawable) {
-        this.d = drawable;
-        a();
+        this.f1221d = drawable;
+        m2026a();
         requestLayout();
         invalidate();
     }
 
-    public int a(View view, LayoutParams layoutParams) {
-        addView(a(view), layoutParams);
-        a();
+    /* renamed from: a */
+    public int mo455a(View view, LayoutParams layoutParams) {
+        addView(m2025a(view), layoutParams);
+        m2026a();
         return getCellCount() - 1;
     }
 
-    public View a(int i) {
-        return b(i).getChildAt(0);
+    /* renamed from: a */
+    public View mo456a(int i) {
+        return m2027b(i).getChildAt(0);
     }
 
     public int getCellCount() {
@@ -101,39 +107,42 @@ public class eq extends bt {
     public void setOrientation(int i) {
     }
 
-    private final void a() {
+    /* renamed from: a */
+    private final void m2026a() {
         if (getCellCount() >= 1) {
             int i;
             for (i = 0; i < getCellCount(); i++) {
-                jl b = b(i);
+                iv b = m2027b(i);
                 b.setTopDrawable(null);
                 b.setBottomDrawable(null);
             }
-            jl b2 = b(0);
-            jl b3 = b(getCellCount() - 1);
-            b2.setTopDrawable(this.b);
-            b2.setScaleType(this.a);
-            b3.setBottomDrawable(this.d);
-            b3.setScaleType(this.a);
+            iv b2 = m2027b(0);
+            iv b3 = m2027b(getCellCount() - 1);
+            b2.setTopDrawable(this.f1219b);
+            b2.setScaleType(this.f1218a);
+            b3.setBottomDrawable(this.f1221d);
+            b3.setScaleType(this.f1218a);
             for (i = 1; i < getCellCount(); i++) {
-                b3 = b(i);
-                b3.setTopDrawable(this.c);
-                b3.setScaleType(this.a);
+                b3 = m2027b(i);
+                b3.setTopDrawable(this.f1220c);
+                b3.setScaleType(this.f1218a);
             }
         }
     }
 
-    private final jl b(int i) {
-        return (jl) getChildAt(i);
+    /* renamed from: b */
+    private final iv m2027b(int i) {
+        return (iv) getChildAt(i);
     }
 
-    private final jl a(View view) {
-        jl jlVar = new jl(getContext());
+    /* renamed from: a */
+    private final iv m2025a(View view) {
+        iv ivVar = new iv(getContext());
         if (view.getLayoutParams() != null) {
-            jlVar.setLayoutParams(view.getLayoutParams());
+            ivVar.setLayoutParams(view.getLayoutParams());
         }
-        jlVar.setScaleType(this.a);
-        jlVar.addView(view, new FrameLayout.LayoutParams(-1, -1));
-        return jlVar;
+        ivVar.setScaleType(this.f1218a);
+        ivVar.addView(view, new FrameLayout.LayoutParams(-1, -1));
+        return ivVar;
     }
 }

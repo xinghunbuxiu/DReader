@@ -1,32 +1,97 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Point;
-import android.view.ViewTreeObserver.OnPreDrawListener;
+import android.content.Context;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.widget.FrameLayout.LayoutParams;
+import com.duokan.reader.domain.bookshelf.hb;
+import com.duokan.reader.ui.general.FixedPagesView.PageScaleType;
+import com.duokan.reader.ui.general.PagesView;
 
-import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.dl;
+public class pf extends wy {
+    /* renamed from: n */
+    private fs f10776n = null;
+    /* renamed from: o */
+    private fm f10777o = null;
+    /* renamed from: p */
+    private PagesView f10778p = null;
 
-import org.apache.http.HttpStatus;
-
-class pf implements OnPreDrawListener {
-    final /* synthetic */ Point a;
-    final /* synthetic */ pe b;
-
-    pf(pe peVar, Point point) {
-        this.b = peVar;
-        this.a = point;
+    public pf(Context context, xo xoVar) {
+        super(context, xoVar);
     }
 
-    public boolean onPreDraw() {
-        Point point = new Point(0, 0);
-        UTools.showAnimation(point, this.b.a);
-        Point point2 = new Point(this.a.x - point.x, this.a.y - point.y);
-        UTools.addAnimation(point2, this.b.c);
-        this.b.c.a(this.b.c.getScrollX() - point2.x, this.b.c.getScrollY() - point2.y);
-        this.b.c.setThumbEnabled(false);
-        this.b.c.m_();
-        this.b.b.a(this.b.c, new dl(), HttpStatus.SC_INTERNAL_SERVER_ERROR, new pg(this), null);
-        this.b.b.getViewTreeObserver().removeOnPreDrawListener(this);
-        return false;
+    /* renamed from: b */
+    public void mo2465b() {
+        this.f10777o.setVisibility(4);
+        this.f10776n.setVisibility(0);
+        this.f10778p = this.f10776n;
+    }
+
+    /* renamed from: c */
+    public void mo2466c() {
+        this.f10777o.setVisibility(0);
+        this.f10776n.setVisibility(8);
+        this.c.setVisibility(4);
+        this.f10778p = this.f10777o;
+    }
+
+    public void setPageContentMargins(RectF[] rectFArr) {
+        this.f10777o.setContentMargins(rectFArr);
+    }
+
+    public PageScaleType getPageScaleType() {
+        return this.f10777o.getPageScaleType();
+    }
+
+    public void setPageScaleType(PageScaleType pageScaleType) {
+        this.f10777o.setPageScaleType(pageScaleType);
+    }
+
+    /* renamed from: a */
+    public void m14896a(int i, int i2, float f) {
+        this.f10777o.m9989a(i, i2, f);
+    }
+
+    public float getZoomFactor() {
+        return this.f10777o.getZoomFactor();
+    }
+
+    public Rect getCurrentPageVisiableRect() {
+        return this.f10777o.getCurrentPagePresenter().mo1762a();
+    }
+
+    public PagesView getShowingPagesView() {
+        return this.f10778p;
+    }
+
+    public hd getShowingDocPresenter() {
+        return (hd) this.f10778p;
+    }
+
+    /* renamed from: a */
+    public void mo2257a() {
+        this.f10776n = new fs(getContext());
+        this.f10777o = new fm(getContext());
+        this.f10777o.setClipToContent(true);
+        this.b.addView(this.f10776n, new LayoutParams(-1, -1));
+        this.b.addView(this.f10777o, new LayoutParams(-1, -1));
+        this.f10776n.setVisibility(4);
+        hb b = this.a.mo1992G().m4152E().m4819b();
+        setPageContentMargins(b.m4623d());
+        setPageScaleType(b.m4624e());
+        m14896a(0, 0, b.m4622c());
+        if (this.a.mo2145g()) {
+            mo2466c();
+        } else {
+            mo2465b();
+        }
+    }
+
+    protected fm getFixedPagesView() {
+        return this.f10777o;
+    }
+
+    protected fs getFlowPagesView() {
+        return this.f10776n;
     }
 }

@@ -1,17 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-class ack implements Runnable {
-    final /* synthetic */ acj a;
+import android.animation.ValueAnimator;
+import android.animation.ValueAnimator.AnimatorUpdateListener;
 
-    ack(acj com_duokan_reader_ui_reading_acj) {
-        this.a = com_duokan_reader_ui_reading_acj;
+class ack implements AnimatorUpdateListener {
+    /* renamed from: a */
+    final /* synthetic */ acf f9456a;
+
+    ack(acf acf) {
+        this.f9456a = acf;
     }
 
-    public void run() {
-        if (!this.a.c.e.K()) {
-            this.a.c.e().a(this.a.a);
-            this.a.c.c(this.a.a.x, this.a.a.y, this.a.c.a, this.a.b);
-            this.a.c.a(false);
-        }
+    public void onAnimationUpdate(ValueAnimator valueAnimator) {
+        this.f9456a.invalidate();
     }
 }

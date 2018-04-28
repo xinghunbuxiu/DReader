@@ -1,15 +1,14 @@
 package com.duokan.reader.domain.account;
 
-class ax implements Runnable {
-    final /* synthetic */ b a;
-    final /* synthetic */ MiAccount b;
+class ax implements C0699c {
+    /* renamed from: a */
+    final /* synthetic */ MiAccount f2392a;
 
-    ax(MiAccount miAccount, b bVar) {
-        this.b = miAccount;
-        this.a = bVar;
+    ax(MiAccount miAccount) {
+        this.f2392a = miAccount;
     }
 
-    public void run() {
-        MiAccount.e.b(this.b, this.a);
+    /* renamed from: a */
+    public void mo867a(C0672a c0672a) {
     }
 }

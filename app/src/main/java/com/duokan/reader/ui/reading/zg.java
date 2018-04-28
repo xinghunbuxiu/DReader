@@ -4,14 +4,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 class zg implements OnClickListener {
-    final /* synthetic */ yr a;
+    /* renamed from: a */
+    final /* synthetic */ ze f11265a;
 
-    zg(yr yrVar) {
-        this.a = yrVar;
+    zg(ze zeVar) {
+        this.f11265a = zeVar;
     }
 
     public void onClick(View view) {
-        this.a.D.put("Action2", "COPY");
-        this.a.F.e();
+        this.f11265a.m15211c();
     }
 }

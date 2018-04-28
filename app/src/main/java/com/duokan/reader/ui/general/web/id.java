@@ -1,49 +1,43 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.sys.as;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.ui.general.ja;
+import android.text.TextUtils;
+import com.duokan.reader.ui.account.ae;
+import com.duokan.reader.ui.account.bl;
+import com.duokan.reader.ui.account.bu;
+import com.duokan.reader.ui.account.bv;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+class id implements ae {
+    /* renamed from: a */
+    final /* synthetic */ bu f7979a;
+    /* renamed from: b */
+    final /* synthetic */ ib f7980b;
 
-class id implements as {
-    final /* synthetic */ ic a;
-
-    id(ic icVar) {
-        this.a = icVar;
+    id(ib ibVar, bu buVar) {
+        this.f7980b = ibVar;
+        this.f7979a = buVar;
     }
 
-    public void a() {
-        JSONObject jSONObject = new JSONObject(this.a.a);
-        JSONArray optJSONArray = jSONObject.optJSONArray("data");
-        int optInt = jSONObject.optInt("position");
-        if (optJSONArray.length() != 0) {
-            ActivatedController activatedControllerVar;
-            if (optJSONArray.length() < 2) {
-                jSONObject = optJSONArray.getJSONObject(0);
-                String optString = jSONObject.optString("title", "");
-                String optString2 = jSONObject.optString("url");
-                ActivatedController storePageController = new StorePageController(this.a.b.pageController.getContext());
-                storePageController.loadUrl(optString2);
-                storePageController.setPageTitle(optString);
-                activatedControllerVar = storePageController;
-            } else {
-                ActivatedController jaVar = new ja(this.a.b.pageController.getContext());
-                for (int i = 0; i < optJSONArray.length(); i++) {
-                    JSONObject jSONObject2 = optJSONArray.getJSONObject(i);
-                    String optString3 = jSONObject2.optString("title", "");
-                    String optString4 = jSONObject2.optString("url");
-                    ActivatedController storePageController2 = new StorePageController(this.a.b.pageController.getContext());
-                    storePageController2.loadUrl(optString4);
-                    storePageController2.setHasTitle(false);
-                    jaVar.a(storePageController2, optString3);
-                }
-                jaVar.a(optInt);
-                activatedControllerVar = jaVar;
+    public void onChoiced(String str) {
+        if (!TextUtils.isEmpty(str)) {
+            String str2 = this.f7980b.f7966b;
+            String str3 = this.f7980b.f7967c;
+            String str4 = this.f7980b.f7968d;
+            if (str.equals("weixin_timeline")) {
+                str2 = this.f7980b.f7969e;
+                str3 = this.f7980b.f7970f;
+                str4 = this.f7980b.f7971g;
             }
-            ((ReaderFeature) this.a.b.pageController.getContext().queryFeature(ReaderFeature.class)).pushPageSmoothly(activatedControllerVar, null);
+            if (TextUtils.isEmpty(this.f7980b.f7972h)) {
+                this.f7980b.f7977m.f7964b.f7581b.mShareController = new bl(this.f7980b.f7977m.f7964b.f7581b.getContext(), false, str, this.f7980b.f7973i, str2, str3, str4, this.f7980b.f7974j, this.f7980b.f7975k, this.f7979a);
+            } else {
+                if (str.equals("weibo")) {
+                    str3 = this.f7980b.f7976l;
+                    str4 = this.f7980b.f7972h;
+                }
+                this.f7980b.f7977m.f7964b.f7581b.mShareController = new bv(this.f7980b.f7977m.f7964b.f7581b.getContext(), str, this.f7980b.f7973i, str2, str3, str4, this.f7979a);
+            }
+            this.f7980b.f7977m.f7964b.f7581b.addSubController(this.f7980b.f7977m.f7964b.f7581b.mShareController);
+            this.f7980b.f7977m.f7964b.f7581b.activate(this.f7980b.f7977m.f7964b.f7581b.mShareController);
         }
     }
 }

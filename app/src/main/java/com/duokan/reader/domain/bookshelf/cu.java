@@ -1,6 +1,11 @@
 package com.duokan.reader.domain.bookshelf;
 
-public class cu extends cv {
-    public String a;
-    public String b;
+import java.util.List;
+
+public interface cu {
+    /* renamed from: a */
+    void mo986a(String str);
+
+    /* renamed from: a */
+    void mo987a(List<bt> list);
 }

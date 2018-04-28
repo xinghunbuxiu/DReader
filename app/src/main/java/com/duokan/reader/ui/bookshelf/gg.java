@@ -1,13 +1,24 @@
 package com.duokan.reader.ui.bookshelf;
 
-class gg implements Runnable {
-    final /* synthetic */ gf a;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.p024c.C0258j;
+
+class gg implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ gf f6512a;
 
     gg(gf gfVar) {
-        this.a = gfVar;
+        this.f6512a = gfVar;
     }
 
-    public void run() {
-        this.a.a(this.a.getContentWidth() - this.a.getWidth(), 0, 0, null, null);
+    public void onClick(View view) {
+        if (this.f6512a.f6505d != this.f6512a.f6511j) {
+            this.f6512a.m9719c();
+            this.f6512a.f6504c.setText(this.f6512a.getContext().getString(C0258j.bookshelf__file_import_view__inverse));
+            return;
+        }
+        this.f6512a.m9722d();
+        this.f6512a.f6504c.setText(this.f6512a.getContext().getString(C0258j.bookshelf__file_import_view__all));
     }
 }

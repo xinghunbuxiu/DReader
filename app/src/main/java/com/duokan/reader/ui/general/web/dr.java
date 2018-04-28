@@ -1,19 +1,22 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.as;
+import com.duokan.reader.domain.account.C0420b;
+import com.duokan.reader.domain.account.C0672a;
+import com.mipay.sdk.Mipay;
 
-import org.json.JSONObject;
+class dr implements C0420b {
+    /* renamed from: a */
+    final /* synthetic */ dq f7743a;
 
-class dr implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
-
-    dr(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    dr(dq dqVar) {
+        this.f7743a = dqVar;
     }
 
-    public void a() {
-        this.b.a(new ds(this, new JSONObject(this.a).getString("msgid")));
+    public void onLoginOk(C0672a c0672a) {
+        this.f7743a.f7742b.f7740b.m11008a(this.f7743a.f7741a, c0672a);
+    }
+
+    public void onLoginError(C0672a c0672a, String str) {
+        this.f7743a.f7742b.f7740b.f7581b.web_notifyWeb(this.f7743a.f7741a, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str);
     }
 }

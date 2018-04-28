@@ -3,15 +3,21 @@ package com.duokan.core.ui;
 import android.content.Intent;
 
 public abstract class fp {
-    public abstract int a();
+    /* renamed from: a */
+    public abstract int mo531a();
 
-    public abstract String[] b();
+    /* renamed from: b */
+    public abstract String[] mo532b();
 
-    public abstract boolean c();
+    /* renamed from: c */
+    public abstract boolean mo533c();
 
-    public abstract CharSequence d();
+    /* renamed from: d */
+    public abstract CharSequence mo534d();
 
-    public abstract String e();
+    /* renamed from: e */
+    public abstract String mo535e();
 
-    public abstract Intent f();
+    /* renamed from: f */
+    public abstract Intent mo536f();
 }

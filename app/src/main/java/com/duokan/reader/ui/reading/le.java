@@ -1,17 +1,42 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.TaskHandler;
+import android.graphics.Bitmap;
+import com.duokan.core.sys.ag;
+import com.duokan.core.ui.dv;
 
-class le implements Runnable {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ lc b;
+class le implements ag<Bitmap> {
+    /* renamed from: a */
+    final /* synthetic */ la f10564a;
 
-    le(lc lcVar, Runnable runnable) {
-        this.b = lcVar;
-        this.a = runnable;
+    le(la laVar) {
+        this.f10564a = laVar;
     }
 
-    public void run() {
-        TaskHandler.PostTask(this.a);
+    public /* synthetic */ void run(Object obj) {
+        m14611a((Bitmap) obj);
+    }
+
+    /* renamed from: a */
+    public void m14611a(Bitmap bitmap) {
+        if (this.f10564a.getWindowToken() == null) {
+            if (bitmap != null) {
+                bitmap.recycle();
+            }
+        } else if (bitmap != null) {
+            Bitmap f = this.f10564a.f10552g;
+            this.f10564a.f10552g = bitmap;
+            this.f10564a.f10554i = true;
+            this.f10564a.f10549d.setImageBitmap(this.f10564a.f10552g);
+            if (this.f10564a.f10549d.getVisibility() == 0) {
+                if (f != null) {
+                    this.f10564a.f10551f.setImageBitmap(f);
+                    dv.hideAnimation(this.f10564a.f10551f, new lf(this, f));
+                    return;
+                }
+                dv.showAnimation(this.f10564a.f10549d, null);
+            } else if (f != null) {
+                f.recycle();
+            }
+        }
     }
 }

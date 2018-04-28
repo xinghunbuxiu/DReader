@@ -2,27 +2,35 @@ package com.duokan.reader.domain.bookshelf;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.os.Parcelable.Creator;
 import android.util.Log;
-
-import com.duokan.b.i;
+import com.duokan.p023b.C0247i;
 
 public class BookTag implements Parcelable {
-    public static final Creator CREATOR = new ag();
-    public static final String a = BookTag.class.getName();
-    public static final int b = i.booktag__shared__unarrangement;
-    public static final int c = i.booktag__shared__my_download;
-    private long d;
-    private long e;
-    private String f;
-    private BookTagType g;
+    public static final Creator<BookTag> CREATOR = new ag();
+    /* renamed from: a */
+    public static final String f2671a = BookTag.class.getName();
+    /* renamed from: b */
+    public static final int f2672b = C0247i.booktag__shared__unarrangement;
+    /* renamed from: c */
+    public static final int f2673c = C0247i.booktag__shared__my_download;
+    /* renamed from: d */
+    private long f2674d;
+    /* renamed from: e */
+    private long f2675e;
+    /* renamed from: f */
+    private String f2676f;
+    /* renamed from: g */
+    private BookTagType f2677g;
 
     public enum BookTagType {
         PREDEFINED,
         CUSTOM
     }
 
-    public long a() {
-        return this.d;
+    /* renamed from: a */
+    public long m3708a() {
+        return this.f2674d;
     }
 
     public int describeContents() {
@@ -31,13 +39,13 @@ public class BookTag implements Parcelable {
 
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeByte((byte) 1);
-        parcel.writeLong(this.d);
+        parcel.writeLong(this.f2674d);
         parcel.writeByte((byte) 2);
-        parcel.writeLong(this.e);
+        parcel.writeLong(this.f2675e);
         parcel.writeByte((byte) 3);
-        parcel.writeString(this.f);
+        parcel.writeString(this.f2676f);
         parcel.writeByte((byte) 4);
-        parcel.writeString(this.g.toString());
+        parcel.writeString(this.f2677g.toString());
         parcel.writeByte((byte) 5);
     }
 
@@ -47,19 +55,19 @@ public class BookTag implements Parcelable {
             if (readByte != (byte) 5) {
                 switch (readByte) {
                     case (byte) 1:
-                        this.d = parcel.readLong();
+                        this.f2674d = parcel.readLong();
                         break;
                     case (byte) 2:
-                        this.e = parcel.readLong();
+                        this.f2675e = parcel.readLong();
                         break;
                     case (byte) 3:
-                        this.f = parcel.readString();
+                        this.f2676f = parcel.readString();
                         break;
                     case (byte) 4:
-                        this.g = BookTagType.valueOf(parcel.readString());
+                        this.f2677g = BookTagType.valueOf(parcel.readString());
                         break;
                     default:
-                        Log.d(a, "unrecognized block : " + readByte);
+                        Log.d(f2671a, "unrecognized block : " + readByte);
                         break;
                 }
             }

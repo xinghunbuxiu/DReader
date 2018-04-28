@@ -4,14 +4,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 class yz implements OnClickListener {
-    final /* synthetic */ yr a;
+    /* renamed from: a */
+    final /* synthetic */ yx f11259a;
 
-    yz(yr yrVar) {
-        this.a = yrVar;
+    yz(yx yxVar) {
+        this.f11259a = yxVar;
     }
 
     public void onClick(View view) {
-        this.a.D.put("Action2", "COLOR");
-        this.a.F.j();
+        this.f11259a.f11254a.dismiss();
     }
 }

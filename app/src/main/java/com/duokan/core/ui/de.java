@@ -6,171 +6,185 @@ import android.os.Build.VERSION;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.view.WindowManager;
-
-import com.duokan.core.sys.z;
+import com.duokan.core.sys.C0373z;
+import com.umeng.analytics.pro.C2295j;
 
 class de extends dh {
-    static final /* synthetic */ boolean a = (!cv.class.desiredAssertionStatus());
-    private final Activity b;
-    private final WindowManager c;
-    private dg d = null;
-    private dg e = null;
+    /* renamed from: a */
+    static final /* synthetic */ boolean f1135a = (!cv.class.desiredAssertionStatus());
+    /* renamed from: b */
+    private final Activity f1136b;
+    /* renamed from: c */
+    private final WindowManager f1137c;
+    /* renamed from: d */
+    private dg f1138d = null;
+    /* renamed from: e */
+    private dg f1139e = null;
 
     public de(Activity activity) {
         super();
-        this.b = activity;
-        this.c = this.b.getWindowManager();
+        this.f1136b = activity;
+        this.f1137c = this.f1136b.getWindowManager();
     }
 
-    public void a() {
+    /* renamed from: a */
+    public void m1802a() {
         dc dcVar = new dc();
-        dcVar.a = true;
-        int i = this.b.getWindow().getAttributes().flags;
+        dcVar.f1129a = true;
+        int i = this.f1136b.getWindow().getAttributes().flags;
         if ((i & 2048) == 2048) {
-            dcVar.a = true;
+            dcVar.f1129a = true;
         } else if ((i & 1024) == 1024) {
-            dcVar.a = false;
+            dcVar.f1129a = false;
         }
-        if (this.e != null) {
-            dcVar.a = this.e.a(dcVar.a);
+        if (this.f1139e != null) {
+            dcVar.f1129a = this.f1139e.m1811a(dcVar.f1129a);
         }
-        if (this.d != null) {
-            dcVar.a = this.d.a(dcVar.a);
+        if (this.f1138d != null) {
+            dcVar.f1129a = this.f1138d.m1811a(dcVar.f1129a);
         }
         if (VERSION.SDK_INT < 19) {
-            dcVar.b = false;
+            dcVar.f1130b = false;
         } else if ((i & 67108864) == 67108864) {
-            dcVar.b = true;
+            dcVar.f1130b = true;
         } else {
-            dcVar.b = false;
+            dcVar.f1130b = false;
         }
         if (VERSION.SDK_INT >= 23) {
             boolean z;
-            if ((this.b.getWindow().getDecorView().getSystemUiVisibility() & 8192) == 8192) {
+            if ((this.f1136b.getWindow().getDecorView().getSystemUiVisibility() & 8192) == 8192) {
                 z = true;
             } else {
                 z = false;
             }
-            dcVar.c = z;
+            dcVar.f1131c = z;
         } else {
-            dcVar.c = z.a(this.b);
+            dcVar.f1131c = C0373z.m1053a(this.f1136b);
         }
-        if (this.e != null) {
-            dcVar.c = this.e.b(dcVar.c);
+        if (this.f1139e != null) {
+            dcVar.f1131c = this.f1139e.m1814b(dcVar.f1131c);
         }
-        if (this.d != null) {
-            dcVar.c = this.d.b(dcVar.c);
+        if (this.f1138d != null) {
+            dcVar.f1131c = this.f1138d.m1814b(dcVar.f1131c);
         }
-        if (this.e != null) {
-            dcVar.d = this.e.a();
-            dcVar.e = true;
-            a(this.e.a, dcVar);
+        if (this.f1139e != null) {
+            dcVar.f1132d = this.f1139e.m1810a();
+            dcVar.f1133e = true;
+            m1796a(this.f1139e.f1141a, dcVar);
         }
-        if (this.d != null) {
-            dcVar.d = false;
-            dcVar.e = false;
-            a(this.d.a, dcVar);
+        if (this.f1138d != null) {
+            dcVar.f1132d = false;
+            dcVar.f1133e = false;
+            m1796a(this.f1138d.f1141a, dcVar);
         }
     }
 
-    public int b() {
+    /* renamed from: b */
+    public int m1804b() {
         int i = 0;
-        int b = this.d == null ? 0 : this.d.b();
-        if (this.e != null) {
-            i = this.e.b();
+        int b = this.f1138d == null ? 0 : this.f1138d.m1812b();
+        if (this.f1139e != null) {
+            i = this.f1139e.m1812b();
         }
         return b + i;
     }
 
-    public cv a(int i) {
-        if (this.e != null && i < this.e.b()) {
-            return this.e.a(i);
+    /* renamed from: a */
+    public cv m1801a(int i) {
+        if (this.f1139e != null && i < this.f1139e.m1812b()) {
+            return this.f1139e.m1808a(i);
         }
-        return this.d.a(i - (this.e == null ? 0 : this.e.b()));
+        return this.f1138d.m1808a(i - (this.f1139e == null ? 0 : this.f1139e.m1812b()));
     }
 
-    public void a(cv cvVar) {
-        if (this.e == null) {
-            this.e = new dg(e());
+    /* renamed from: a */
+    public void m1803a(cv cvVar) {
+        if (this.f1139e == null) {
+            this.f1139e = new dg(m1799e());
         }
-        if (this.d == null) {
-            this.d = new dg(d());
+        if (this.f1138d == null) {
+            this.f1138d = new dg(m1798d());
         }
-        if (cvVar.g) {
-            this.d.a(cvVar);
+        if (cvVar.f1099g) {
+            this.f1138d.m1809a(cvVar);
         } else {
-            this.e.a(cvVar);
+            this.f1139e.m1809a(cvVar);
         }
-        a();
-        if (this.e.a.getParent() == null) {
-            a(this.e.a);
+        m1802a();
+        if (this.f1139e.f1141a.getParent() == null) {
+            m1795a(this.f1139e.f1141a);
         }
-        if (this.d.a.getParent() == null) {
-            a(this.d.a);
+        if (this.f1138d.f1141a.getParent() == null) {
+            m1795a(this.f1138d.f1141a);
         }
     }
 
-    public void b(cv cvVar) {
-        if (cvVar.g) {
-            if (a || this.d != null) {
-                this.d.b(cvVar);
+    /* renamed from: b */
+    public void m1805b(cv cvVar) {
+        if (cvVar.f1099g) {
+            if (f1135a || this.f1138d != null) {
+                this.f1138d.m1813b(cvVar);
             } else {
                 throw new AssertionError();
             }
-        } else if (a || this.e != null) {
-            this.e.b(cvVar);
+        } else if (f1135a || this.f1139e != null) {
+            this.f1139e.m1813b(cvVar);
         } else {
             throw new AssertionError();
         }
-        if (b() < 1) {
-            if (this.d != null) {
-                b(this.d.a);
-                this.d = null;
+        if (m1804b() < 1) {
+            if (this.f1138d != null) {
+                m1797b(this.f1138d.f1141a);
+                this.f1138d = null;
             }
-            if (this.e != null) {
-                b(this.e.a);
-                this.e = null;
+            if (this.f1139e != null) {
+                m1797b(this.f1139e.f1141a);
+                this.f1139e = null;
                 return;
             }
             return;
         }
-        a();
+        m1802a();
     }
 
-    public void c() {
-        if (this.d != null) {
-            this.d.c();
+    /* renamed from: c */
+    public void m1806c() {
+        if (this.f1138d != null) {
+            this.f1138d.m1815c();
         }
-        if (this.e != null) {
-            this.e.c();
+        if (this.f1139e != null) {
+            this.f1139e.m1815c();
         }
     }
 
-    private dd d() {
-        LayoutParams f = f();
+    /* renamed from: d */
+    private dd m1798d() {
+        LayoutParams f = m1800f();
         f.flags |= 272;
-        dd ddVar = new dd(this.b);
+        dd ddVar = new dd(this.f1136b);
         ddVar.setVisibility(8);
         ddVar.setLayoutParams(f);
         return ddVar;
     }
 
-    private dd e() {
-        LayoutParams f = f();
-        dd dfVar = new df(this, this.b);
+    /* renamed from: e */
+    private dd m1799e() {
+        LayoutParams f = m1800f();
+        dd dfVar = new df(this, this.f1136b);
         dfVar.setLayoutParams(f);
         dfVar.setVisibility(8);
-        dfVar.setSystemUiVisibility(j.e);
+        dfVar.setSystemUiVisibility(C2295j.f14325e);
         return dfVar;
     }
 
-    private WindowManager.LayoutParams f() {
+    /* renamed from: f */
+    private WindowManager.LayoutParams m1800f() {
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
         layoutParams.type = 2;
         layoutParams.token = null;
         layoutParams.format = -3;
         layoutParams.flags &= -8883993;
-        layoutParams.flags = (this.b.getWindow().getAttributes().flags & 3072) | layoutParams.flags;
+        layoutParams.flags = (this.f1136b.getWindow().getAttributes().flags & 3072) | layoutParams.flags;
         if (VERSION.SDK_INT >= 21) {
             layoutParams.flags |= Integer.MIN_VALUE;
         }
@@ -179,55 +193,58 @@ class de extends dh {
     }
 
     @TargetApi(19)
-    private void a(dd ddVar, dc dcVar) {
+    /* renamed from: a */
+    private void m1796a(dd ddVar, dc dcVar) {
         WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) ddVar.getLayoutParams();
         layoutParams.flags &= -67243017;
-        if (dcVar.a) {
+        if (dcVar.f1129a) {
             layoutParams.flags |= 2048;
         } else {
             layoutParams.flags |= 1024;
         }
-        if (dcVar.b) {
+        if (dcVar.f1130b) {
             layoutParams.flags |= 67108864;
         }
-        if (!dcVar.d) {
+        if (!dcVar.f1132d) {
             layoutParams.flags |= 8;
-            if (dcVar.e) {
+            if (dcVar.f1133e) {
                 layoutParams.flags |= 131072;
             }
-        } else if (!dcVar.e) {
+        } else if (!dcVar.f1133e) {
             layoutParams.flags |= 131072;
         }
         if (VERSION.SDK_INT >= 23) {
-            if (dcVar.c) {
+            if (dcVar.f1131c) {
                 ddVar.setSystemUiVisibility(ddVar.getSystemUiVisibility() | 8192);
             } else {
                 ddVar.setSystemUiVisibility(ddVar.getSystemUiVisibility() & -8193);
             }
         }
-        z.a((View) ddVar, dcVar.c);
+        C0373z.m1049a((View) ddVar, dcVar.f1131c);
         if (ddVar.getParent() == null) {
             ddVar.setLayoutParams(layoutParams);
             return;
         }
         try {
-            this.c.updateViewLayout(ddVar, layoutParams);
+            this.f1137c.updateViewLayout(ddVar, layoutParams);
         } catch (Throwable th) {
             th.printStackTrace();
         }
     }
 
-    private void a(dd ddVar) {
+    /* renamed from: a */
+    private void m1795a(dd ddVar) {
         try {
-            this.c.addView(ddVar, (WindowManager.LayoutParams) ddVar.getLayoutParams());
+            this.f1137c.addView(ddVar, (WindowManager.LayoutParams) ddVar.getLayoutParams());
         } catch (Throwable th) {
             th.printStackTrace();
         }
     }
 
-    private void b(dd ddVar) {
+    /* renamed from: b */
+    private void m1797b(dd ddVar) {
         try {
-            this.c.removeViewImmediate(ddVar);
+            this.f1137c.removeViewImmediate(ddVar);
         } catch (Throwable th) {
             th.printStackTrace();
         }

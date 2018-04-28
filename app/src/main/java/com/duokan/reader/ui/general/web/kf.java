@@ -1,28 +1,25 @@
 package com.duokan.reader.ui.general.web;
 
-import android.content.Context;
+import com.duokan.reader.domain.ad.C0761r;
+import java.util.concurrent.Callable;
 
-import com.duokan.reader.ui.general.ap;
+class kf implements Callable<Boolean> {
+    /* renamed from: a */
+    final /* synthetic */ ci f8092a;
 
-class kf extends ap {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ Runnable b;
-    final /* synthetic */ ke c;
-
-    kf(ke keVar, Context context, Runnable runnable, Runnable runnable2) {
-        this.c = keVar;
-        this.a = runnable;
-        this.b = runnable2;
-        super(context);
+    kf(ci ciVar) {
+        this.f8092a = ciVar;
     }
 
-    protected void onOk() {
-        super.onOk();
-        this.a.run();
+    public /* synthetic */ Object call() {
+        return m11253a();
     }
 
-    protected void onCancel() {
-        super.onCancel();
-        this.b.run();
+    /* renamed from: a */
+    public Boolean m11253a() {
+        if (this.f8092a.f7581b.mAdSdkService == null) {
+            this.f8092a.f7581b.mAdSdkService = new C0761r(this.f8092a.f7581b.mAdLifecycleManager);
+        }
+        return Boolean.valueOf(this.f8092a.f7581b.mAdSdkService.m3610a());
     }
 }

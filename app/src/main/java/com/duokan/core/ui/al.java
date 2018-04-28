@@ -3,81 +3,82 @@ package com.duokan.core.ui;
 import android.graphics.PointF;
 import android.graphics.RectF;
 import android.view.MotionEvent;
-
 import com.duokan.core.ui.HatGridView.HatTipState;
 
 class al extends bh {
-    final /* synthetic */ ak a;
+    /* renamed from: a */
+    final /* synthetic */ ak f961a;
 
     al(ak akVar) {
-        this.a = akVar;
+        this.f961a = akVar;
         super(akVar);
     }
 
-    protected void a(MotionEvent motionEvent) {
-        super.a(motionEvent);
-        if (motionEvent.getActionMasked() == 0) {
-            if (this.a.b.v) {
-                this.a.b.a.setVerticalOverScrollMode(OverScrollMode.ALWAYS);
-            } else {
-                this.a.b.a.setVerticalOverScrollMode(this.a.b.n);
-            }
-        } else if (motionEvent.getActionMasked() != 1 && motionEvent.getActionMasked() == 3) {
-        }
+    /* renamed from: a */
+    protected void mo502a(MotionEvent motionEvent) {
+        super.mo502a(motionEvent);
+        this.f961a.f919b.mo1622a(motionEvent);
     }
 
-    protected void a(ScrollState scrollState, RectF rectF) {
-        this.a.b.a(scrollState, rectF);
+    /* renamed from: a */
+    protected void mo503a(ScrollState scrollState, RectF rectF) {
+        this.f961a.f919b.mo1750a(scrollState, rectF);
     }
 
-    protected void a(float f, float f2) {
-        PointF pointF = (PointF) UTools.f.getRect();
+    /* renamed from: a */
+    protected void mo501a(float f, float f2) {
+        PointF pointF = (PointF) dv.f1197f.addAnimation();
         pointF.set(f, f2);
-        this.a.b.a(pointF);
+        this.f961a.f919b.mo1621a(pointF);
         float f3 = pointF.x;
         float f4 = pointF.y;
-        UTools.f.getRect(pointF);
-        this.a.b.y = (int) (((float) this.a.b.y) + f4);
-        if (Math.abs(this.a.b.y) > UTools.getScaledTouchSlop(this.a.getContext())) {
-            if (this.a.b.y > 0) {
-                this.a.b.w();
-            } else if (this.a.b.y < 0) {
-                this.a.b.x();
+        dv.f1197f.clearAnimation(pointF);
+        this.f961a.f919b.f835y = (int) (((float) this.f961a.f919b.f835y) + f4);
+        if (Math.abs(this.f961a.f919b.f835y) > dv.getScaledTouchSlop(this.f961a.getContext())) {
+            if (this.f961a.f919b.f835y > 0) {
+                this.f961a.f919b.m1236w();
+            } else if (this.f961a.f919b.f835y < 0) {
+                this.f961a.f919b.m1237x();
             }
-            if (this.a.b.y > 0) {
-                if (this.a.b.b()) {
-                    this.a.b.a(HatTipState.DOCKING);
+            if (this.f961a.f919b.f835y > 0) {
+                if (this.f961a.f919b.m1252b()) {
+                    this.f961a.f919b.m1191a(HatTipState.DOCKING);
                 } else {
-                    this.a.b.a(HatTipState.UNDOCKING);
+                    this.f961a.f919b.m1191a(HatTipState.UNDOCKING);
                 }
-            } else if (this.a.b.y < 0) {
-                this.a.b.a(HatTipState.UNDOCKING);
+            } else if (this.f961a.f919b.f835y < 0) {
+                this.f961a.f919b.m1191a(HatTipState.UNDOCKING);
             }
-            this.a.b.y = 0;
+            this.f961a.f919b.f835y = 0;
         }
-        int min = Math.min(0, k().top);
+        int min = Math.min(0, m1553k().top);
         if (Float.compare(((float) getViewportBounds().top) - f4, (float) min) >= 0) {
-            super.b(this.a.b.n);
-        } else if (Float.compare(((float) getViewportBounds().top) - f4, (float) min) < 0 && this.a.b.v) {
-            super.b(OverScrollMode.ALWAYS);
+            super.m1518b(this.f961a.f919b.f824n);
+        } else if (Float.compare(((float) getViewportBounds().top) - f4, (float) min) < 0 && this.f961a.f919b.f832v) {
+            super.m1518b(OverScrollMode.ALWAYS);
         }
-        super.a(f3, f4);
+        super.mo501a(f3, f4);
     }
 
-    protected int a() {
-        if (!this.a.b.v) {
-            return super.a();
+    /* renamed from: a */
+    protected int mo500a() {
+        if (!this.f961a.f919b.f832v) {
+            return super.mo500a();
         }
-        if (this.a.b.x == HatTipState.DOCKED || this.a.b.x == HatTipState.DOCKING) {
-            return Math.max(super.a() - this.a.b.q(), 0);
+        if (this.f961a.f919b.f834x == HatTipState.DOCKED || this.f961a.f919b.f834x == HatTipState.DOCKING) {
+            return Math.max(super.mo500a() - this.f961a.f919b.m1223q(), 0);
         }
-        return super.a();
+        return super.mo500a();
     }
 
-    protected int b() {
-        if (this.a.b.x == HatTipState.DOCKED || this.a.b.x == HatTipState.DOCKING) {
-            return super.b() - this.a.b.q();
+    /* renamed from: b */
+    protected int mo504b() {
+        if (this.f961a.f919b.f810D > 0) {
+            return this.f961a.f919b.f810D;
         }
-        return super.b();
+        if (this.f961a.f919b.f834x == HatTipState.DOCKED || this.f961a.f919b.f834x == HatTipState.DOCKING) {
+            return super.mo504b() - this.f961a.f919b.m1223q();
+        }
+        return super.mo504b();
     }
 }

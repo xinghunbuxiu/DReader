@@ -1,28 +1,26 @@
 package com.duokan.reader.ui.reading;
 
 import com.duokan.core.sys.ag;
-import com.duokan.reader.domain.document.ak;
-
 import java.util.Map;
 
-class aan implements ag {
-    final /* synthetic */ ak a;
-    final /* synthetic */ aak b;
+class aan implements ag<Map<String, Integer>> {
+    /* renamed from: a */
+    final /* synthetic */ aab f9337a;
 
-    aan(aak com_duokan_reader_ui_reading_aak, ak akVar) {
-        this.b = com_duokan_reader_ui_reading_aak;
-        this.a = akVar;
+    aan(aab aab) {
+        this.f9337a = aab;
     }
 
-    public void a(Map map) {
-        for (Integer intValue : map.values()) {
-            int intValue2 = intValue.intValue();
-            if (intValue2 != 0 && intValue2 != 1) {
-                this.b.a.a(null);
-                return;
-            }
+    public /* synthetic */ void run(Object obj) {
+        m12907a((Map) obj);
+    }
+
+    /* renamed from: a */
+    public void m12907a(Map<String, Integer> map) {
+        if (this.f9337a.q) {
+            this.f9337a.f9303J = false;
+        } else {
+            this.f9337a.m12866G();
         }
-        this.b.c.a(true);
-        this.b.c.b(this.a, this.b.b, this.b.a);
     }
 }

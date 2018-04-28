@@ -1,60 +1,25 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.domain.ad.b;
-import com.duokan.reader.domain.ad.e;
+import com.duokan.reader.common.async.p035a.C0517a;
+import com.duokan.reader.domain.cloud.DkCloudPurchasedFiction;
+import com.duokan.reader.ui.store.ao;
 
-import org.json.JSONObject;
+class ju implements C0517a<DkCloudPurchasedFiction> {
+    /* renamed from: a */
+    final /* synthetic */ jr f8072a;
 
-class ju implements b {
-    final /* synthetic */ e a;
-    final /* synthetic */ jt b;
-
-    ju(jt jtVar, e eVar) {
-        this.b = jtVar;
-        this.a = eVar;
+    ju(jr jrVar) {
+        this.f8072a = jrVar;
     }
 
-    public void a() {
-        a("CODE_DOWNLOAD_START");
+    /* renamed from: a */
+    public void m11239a(DkCloudPurchasedFiction dkCloudPurchasedFiction) {
+        ((ao) this.f8072a.f8069e.f8048b.f7581b.getContext().queryFeature(ao.class)).mo1832a(null);
+        this.f8072a.f8067c.release();
     }
 
-    public void b() {
-        a("CODE_DOWNLOAD_SUCCESS");
-    }
-
-    public void c() {
-        a("CODE_INSTALL_SUCCESS");
-    }
-
-    public void d() {
-    }
-
-    public void e() {
-        a("CODE_INSTALL_START");
-    }
-
-    public void a(int i) {
-        a("CODE_DOWNLOAD_PROGRESS", i);
-    }
-
-    private void a(String str) {
-        try {
-            JSONObject jSONObject = new JSONObject();
-            jSONObject.put("status", str);
-            jSONObject.put("packageName", this.a.r);
-            this.b.b.pageController.triggerEventOnCurrentUrl("adAppInstallStatus", jSONObject.toString());
-        } catch (Throwable th) {
-        }
-    }
-
-    private void a(String str, int i) {
-        try {
-            JSONObject jSONObject = new JSONObject();
-            jSONObject.put("status", str);
-            jSONObject.put("packageName", this.a.r);
-            jSONObject.put("progress", i);
-            this.b.b.pageController.triggerEventOnCurrentUrl("adAppInstallStatus", jSONObject.toString());
-        } catch (Throwable th) {
-        }
+    /* renamed from: a */
+    public void mo729a(int i, String str) {
+        this.f8072a.f8067c.release();
     }
 }

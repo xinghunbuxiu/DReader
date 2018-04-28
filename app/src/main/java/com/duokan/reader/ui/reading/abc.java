@@ -1,22 +1,28 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.PointF;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.bookshelf.im;
+import com.duokan.reader.ui.general.be;
 
-class abc implements Runnable {
-    final /* synthetic */ PointF a;
-    final /* synthetic */ Runnable b;
-    final /* synthetic */ Runnable c;
-    final /* synthetic */ aar d;
+class abc implements im {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f9377a;
+    /* renamed from: b */
+    final /* synthetic */ aaw f9378b;
 
-    abc(aar com_duokan_reader_ui_reading_aar, PointF pointF, Runnable runnable, Runnable runnable2) {
-        this.d = com_duokan_reader_ui_reading_aar;
-        this.a = pointF;
-        this.b = runnable;
-        this.c = runnable2;
+    abc(aaw aaw, Runnable runnable) {
+        this.f9378b = aaw;
+        this.f9377a = runnable;
     }
 
-    public void run() {
-        this.d.d.pageDownSmoothly(this.a, this.b, this.c);
-        this.d.i = null;
+    /* renamed from: a */
+    public void mo1021a(C0800c c0800c) {
+        this.f9377a.run();
+    }
+
+    /* renamed from: a */
+    public void mo1022a(String str) {
+        be.m10286a(this.f9378b.f9363d.getContext(), C0258j.general__shared__network_error, 1).show();
     }
 }

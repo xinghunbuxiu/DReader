@@ -1,19 +1,21 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.DrawFilter;
+import android.view.View;
+import com.duokan.core.ui.ay;
+import com.duokan.core.ui.bg;
+import com.duokan.reader.domain.bookshelf.ea;
 
-import java.util.LinkedList;
+class oh implements bg {
+    /* renamed from: a */
+    final /* synthetic */ nu f10736a;
 
-public class oh extends DrawFilter {
-    private final LinkedList a = new LinkedList();
-    private final LinkedList b = new LinkedList();
-    private int c = 0;
-
-    public void a() {
-        this.c |= 1;
+    oh(nu nuVar) {
+        this.f10736a = nuVar;
     }
 
-    public boolean b() {
-        return (this.c & 1) == 1;
+    /* renamed from: a */
+    public void mo481a(ay ayVar, View view, int i) {
+        oi oiVar = (oi) ayVar.getAdapter();
+        this.f10736a.f10701c.mo2451a(oiVar.f10737a, (ea) oiVar.mo509d(i));
     }
 }

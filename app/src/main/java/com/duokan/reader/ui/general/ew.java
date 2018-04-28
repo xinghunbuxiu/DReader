@@ -4,72 +4,41 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.duokan.b.i;
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.IFeature;
-import com.duokan.reader.ReaderEnv;
+class ew implements dp {
+    /* renamed from: a */
+    final /* synthetic */ eu f7171a;
 
-public class ew extends ActivatedController implements dl {
-    private final HeaderView a = ((HeaderView) findViewById(f.general__multiline_input_view__header));
-    private final DkLabelView b;
-    private final View c;
-    private final TextView d;
-    private final EditText e;
-    private final DkNumView f;
-    private final fc g;
-
-    public ew(IFeature featrue) {
-        super(featrue);
-        setContentView(g.general__multiline_input_view);
-        this.a.setHasBackButton(true);
-        this.a.setOnBackListener(new ex(this));
-        this.b = (DkLabelView) findViewById(f.general__multiline_input_view__description);
-        this.e = (EditText) findViewById(f.general__multiline_input_view__editor);
-        this.f = (DkNumView) findViewById(f.general__multiline_input_view__remained_length);
-        View findViewById = findViewById(f.general__multiline_input_view__save);
-        if (ReaderEnv.get().forHd()) {
-            findViewById.setVisibility(0);
-            this.c = findViewById;
-            this.d = (DkLabelView) findViewById(f.general__multiline_input_view__save_text);
-        } else {
-            findViewById.setVisibility(8);
-            this.d = this.a.b(getContext().getString(i.general__shared__confirm));
-            this.c = this.d;
-        }
-        this.g = new fc(getContext(), new ey(this));
+    ew(eu euVar) {
+        this.f7171a = euVar;
     }
 
-    public void a(int i) {
-        this.a.setLeftTitle(i);
+    /* renamed from: a */
+    public View mo1772a() {
+        return this.f7171a.f5768c;
     }
 
-    public void b(int i) {
-        this.g.b(i);
+    /* renamed from: b */
+    public TextView mo1773b() {
+        return this.f7171a.f5769d;
     }
 
-    public void a(String str) {
-        this.g.c(str);
+    /* renamed from: c */
+    public View mo1774c() {
+        return null;
     }
 
-    public void a(dn dnVar) {
-        this.g.a(dnVar);
+    /* renamed from: d */
+    public EditText mo1775d() {
+        return this.f7171a.f5770e;
     }
 
-    protected void onActive(boolean z) {
-        super.onActive(z);
-        if (z) {
-            this.g.a();
-            this.e.postDelayed(new ez(this), 400);
-        }
+    /* renamed from: e */
+    public TextView mo1776e() {
+        return this.f7171a.f5771f;
     }
 
-    protected void onDeactive() {
-        ReaderUi.a(getContext(), this.e);
-        super.onDeactive();
-    }
-
-    protected boolean onBack() {
-        this.e.clearFocus();
-        return super.onBack();
+    /* renamed from: f */
+    public void mo1777f() {
+        this.f7171a.requestDetach();
     }
 }

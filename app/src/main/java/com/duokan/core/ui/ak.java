@@ -4,35 +4,39 @@ import android.content.Context;
 import android.graphics.Canvas;
 
 class ak extends GridItemsView {
-    final /* synthetic */ HatGridView b;
+    /* renamed from: b */
+    final /* synthetic */ HatGridView f919b;
 
     public ak(HatGridView hatGridView, Context context) {
-        this.b = hatGridView;
+        this.f919b = hatGridView;
         super(context);
     }
 
-    public boolean c(Canvas canvas) {
-        return super.d(canvas);
+    /* renamed from: c */
+    public boolean m1411c(Canvas canvas) {
+        return super.mo490d(canvas);
     }
 
     protected void dispatchDraw(Canvas canvas) {
-        if (this.b.r) {
+        if (this.f919b.f828r) {
             int scrollY;
-            if (this.b.q) {
-                scrollY = (getScrollY() + this.b.d.getHeight()) - this.b.d.getScrollY();
+            if (this.f919b.f827q) {
+                scrollY = (getScrollY() + this.f919b.f814d.getHeight()) - this.f919b.f814d.getScrollY();
             } else {
-                scrollY = ((getScrollY() + this.b.d.getHeight()) - this.b.d.getScrollY()) - this.b.i.getHeight();
+                scrollY = ((getScrollY() + this.f919b.f814d.getHeight()) - this.f919b.f814d.getScrollY()) - this.f919b.f819i.getHeight();
             }
             canvas.clipRect(0, scrollY, getWidth(), getHeight() + scrollY);
         }
         super.dispatchDraw(canvas);
     }
 
-    protected boolean d(Canvas canvas) {
+    /* renamed from: d */
+    protected boolean mo490d(Canvas canvas) {
         return false;
     }
 
-    protected bh b() {
+    /* renamed from: b */
+    protected bh mo489b() {
         return new al(this);
     }
 }

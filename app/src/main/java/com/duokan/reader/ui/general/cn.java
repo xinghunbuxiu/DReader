@@ -7,19 +7,18 @@ import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
-
 import com.duokan.reader.DkApp;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
 public class cn {
-    private static Map a = new HashMap();
+    /* renamed from: a */
+    private static Map<Integer, co> f7036a = new HashMap();
 
-    public static Drawable a(Context context, int i) {
-        InputStream openRawResource;
+    /* renamed from: a */
+    public static Drawable m10370a(Context context, int i) {
         Bitmap bitmap;
         Drawable cpVar;
         Throwable th;
@@ -27,11 +26,12 @@ public class cn {
         if (!DkApp.get().forHd()) {
             return resources.getDrawable(i);
         }
-        if (a.containsKey(Integer.valueOf(i))) {
-            co coVar = (co) a.get(Integer.valueOf(i));
-            return new cp(coVar.a, coVar.b);
+        if (f7036a.containsKey(Integer.valueOf(i))) {
+            co coVar = (co) f7036a.get(Integer.valueOf(i));
+            return new cp(coVar.f7037a, coVar.f7038b);
         }
         Rect rect = new Rect();
+        InputStream openRawResource;
         try {
             TypedValue typedValue = new TypedValue();
             openRawResource = resources.openRawResource(i, typedValue);
@@ -58,7 +58,7 @@ public class cn {
                     return null;
                 }
                 cpVar = new cp(bitmap, rect);
-                a.put(Integer.valueOf(i), new co(bitmap, rect));
+                f7036a.put(Integer.valueOf(i), new co(bitmap, rect));
                 return cpVar;
             } catch (Throwable th2) {
                 th = th2;
@@ -80,7 +80,7 @@ public class cn {
                 return null;
             }
             cpVar = new cp(bitmap, rect);
-            a.put(Integer.valueOf(i), new co(bitmap, rect));
+            f7036a.put(Integer.valueOf(i), new co(bitmap, rect));
             return cpVar;
         } catch (Throwable th3) {
             Throwable th4 = th3;
@@ -95,7 +95,7 @@ public class cn {
             return null;
         }
         cpVar = new cp(bitmap, rect);
-        a.put(Integer.valueOf(i), new co(bitmap, rect));
+        f7036a.put(Integer.valueOf(i), new co(bitmap, rect));
         return cpVar;
     }
 }

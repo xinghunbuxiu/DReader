@@ -1,24 +1,23 @@
 package com.duokan.reader.ui.reading;
 
-/* synthetic */ class adb {
-    static final /* synthetic */ int[] a = new int[LineType.values().length];
+import android.graphics.Point;
+import android.view.View;
 
-    static {
-        try {
-            a[LineType.PRONOUN.ordinal()] = 1;
-        } catch (NoSuchFieldError e) {
-        }
-        try {
-            a[LineType.MEANING.ordinal()] = 2;
-        } catch (NoSuchFieldError e2) {
-        }
-        try {
-            a[LineType.ATTR.ordinal()] = 3;
-        } catch (NoSuchFieldError e3) {
-        }
-        try {
-            a[LineType.EXTRA.ordinal()] = 4;
-        } catch (NoSuchFieldError e4) {
-        }
+class adb implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ Point f9502a;
+    /* renamed from: b */
+    final /* synthetic */ View f9503b;
+    /* renamed from: c */
+    final /* synthetic */ TextSelectionController f9504c;
+
+    adb(TextSelectionController textSelectionController, Point point, View view) {
+        this.f9504c = textSelectionController;
+        this.f9502a = point;
+        this.f9503b = view;
+    }
+
+    public void run() {
+        this.f9504c.f9156e.mo2103b(new adc(this));
     }
 }

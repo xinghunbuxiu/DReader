@@ -1,53 +1,44 @@
 package com.duokan.reader.ui.general;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.ActivatedController;
 
-import com.duokan.core.ui.HatGridView;
-
-final class ek extends Drawable {
-    final /* synthetic */ Context a;
-    final /* synthetic */ HatGridView b;
-    final /* synthetic */ int c;
-    private Drawable d = this.a.getResources().getDrawable(e.general__shared__list_item_view__bg1);
-    private Drawable e = this.a.getResources().getDrawable(e.general__shared__list_item_view__bg2);
-
-    ek(Context context, HatGridView hatGridView, int i) {
-        this.a = context;
-        this.b = hatGridView;
-        this.c = i;
+public class ek extends PagesController {
+    public ek(IFeature mFeature) {
+        super(mFeature);
     }
 
-    public void draw(Canvas canvas) {
-        int i = 0;
-        if (this.b.getNumColumns() != 0) {
-            int i2 = 0;
-            while (i < this.c) {
-                int f = this.b.f(i) % this.b.getNumColumns();
-                if (f == 0) {
-                    f = this.b.f(i) / this.b.getNumColumns();
-                } else {
-                    f = ((this.b.f(i) - f) / this.b.getNumColumns()) + 1;
-                }
-                i2 += f + 1;
-                i++;
-            }
-            Drawable drawable = i2 % 2 == 0 ? this.e : this.d;
-            drawable.setState(getState());
-            drawable.setBounds(getBounds());
-            drawable.draw(canvas);
+    /* renamed from: a */
+    protected Animation mo1640a(AnimationType animationType, ActivatedController c0303e) {
+        switch (el.f7154a[animationType.ordinal()]) {
+            case 1:
+                return new TranslateAnimation(1, 1.0f, 1, 0.0f, 1, 0.0f, 1, 0.0f);
+            case 2:
+                return new TranslateAnimation(1, 0.0f, 1, 1.0f, 1, 0.0f, 1, 0.0f);
+            case 3:
+                return new TranslateAnimation(1, 0.0f, 1, -1.0f, 1, 0.0f, 1, 0.0f);
+            case 4:
+                return new TranslateAnimation(1, -1.0f, 1, 0.0f, 1, 0.0f, 1, 0.0f);
+            default:
+                return super.mo1640a(animationType, c0303e);
         }
     }
 
-    public void setAlpha(int i) {
-    }
-
-    public void setColorFilter(ColorFilter colorFilter) {
-    }
-
-    public int getOpacity() {
-        return 0;
+    /* renamed from: a */
+    protected Animation mo1639a(AnimationType animationType) {
+        switch (el.f7154a[animationType.ordinal()]) {
+            case 1:
+                return new TranslateAnimation(1, 1.0f, 1, 0.0f, 1, 0.0f, 1, 0.0f);
+            case 2:
+                return new TranslateAnimation(1, 0.0f, 1, 1.0f, 1, 0.0f, 1, 0.0f);
+            case 3:
+                return new TranslateAnimation(1, 0.0f, 1, -1.0f, 1, 0.0f, 1, 0.0f);
+            case 4:
+                return new TranslateAnimation(1, -1.0f, 1, 0.0f, 1, 0.0f, 1, 0.0f);
+            default:
+                return super.mo1639a(animationType);
+        }
     }
 }

@@ -1,35 +1,38 @@
 package com.duokan.reader.domain.account;
 
-import android.text.TextUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-import com.duokan.reader.common.webservices.WebSession;
-import com.duokan.reader.common.webservices.d;
-import com.duokan.reader.common.webservices.duokan.a.c;
+public class bn {
+    /* renamed from: a */
+    public String f2439a;
+    /* renamed from: b */
+    public String f2440b;
+    /* renamed from: c */
+    public String f2441c;
+    /* renamed from: d */
+    public String f2442d;
 
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.cookie.SM;
-
-class bn extends WebSession {
-    final /* synthetic */ MiGuestAccount a;
-
-    bn(MiGuestAccount miGuestAccount) {
-        this.a = miGuestAccount;
-    }
-
-    protected void onSessionTry() {
-        String optString = new d(this).a(execute(this.a.d("miuibbs"))).getJSONObject("data").optString("callback");
-        if (!TextUtils.isEmpty(optString)) {
-            for (String optString2 : execute(new c().b(optString2).a(HttpGet.METHOD_NAME).a()).a(SM.SET_COOKIE)) {
-                if (optString2.contains("serviceToken=")) {
-                    this.a.f = optString2.substring(optString2.indexOf("serviceToken=") + "serviceToken=".length(), optString2.indexOf(";"));
-                }
-            }
+    /* renamed from: a */
+    public static bn m3415a(JSONObject jSONObject) {
+        bn bnVar = new bn();
+        try {
+            bnVar.f2439a = jSONObject.optString("visitorId");
+            bnVar.f2440b = jSONObject.optString("visitorPassTokenMd5");
+            bnVar.f2442d = jSONObject.optString("cVisitorId");
+            bnVar.f2441c = jSONObject.optString("visitorPassToken");
+        } catch (Throwable th) {
         }
+        return bnVar;
     }
 
-    protected void onSessionSucceeded() {
-    }
-
-    protected void onSessionFailed() {
+    public String toString() {
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("visitorId", this.f2439a);
+            jSONObject.put("cVisitorId", this.f2442d);
+        } catch (JSONException e) {
+        }
+        return jSONObject.toString();
     }
 }

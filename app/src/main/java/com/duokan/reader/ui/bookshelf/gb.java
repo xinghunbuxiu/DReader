@@ -1,39 +1,17 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+class gb implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ ga f6498a;
 
-import com.duokan.c.j;
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.ui.bookshelf.ImportedFileInfo.FileStatus;
-import com.duokan.reader.ui.general.be;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
-class gb implements OnClickListener {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ fy b;
-
-    gb(fy fyVar, Runnable runnable) {
-        this.b = fyVar;
-        this.a = runnable;
+    gb(ga gaVar) {
+        this.f6498a = gaVar;
     }
 
-    public void onClick(View view) {
-        if (this.b.d > 0) {
-            List arrayList = new ArrayList();
-            for (gt b : this.b.g) {
-                for (ImportedFileInfo importedFileInfo : b.b()) {
-                    if (importedFileInfo.f() == FileStatus.SELECTED) {
-                        arrayList.add(new File(importedFileInfo.c()));
-                    }
-                }
-            }
-            ((cu) MyContextWrapper.getFeature(this.b.getContext()).queryFeature(cu.class)).c(arrayList, new gc(this), null);
-            return;
+    public void run() {
+        if (this.f6498a.f6497a.f6475c != null && !this.f6498a.f6497a.f6476d.contains(this.f6498a.f6497a.f6475c)) {
+            this.f6498a.f6497a.f6476d.add(this.f6498a.f6497a.f6475c);
+            this.f6498a.f6497a.f6474b.m9728a(this.f6498a.f6497a.f6476d);
         }
-        be.a(this.b.getContext(), j.bookshelf__shared__unselect_any_books, 0).show();
     }
 }

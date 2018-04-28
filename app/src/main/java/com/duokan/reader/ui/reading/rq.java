@@ -1,39 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import android.text.TextUtils;
-
-import com.duokan.c.j;
+import com.duokan.reader.domain.bookshelf.ai;
 
 class rq implements Runnable {
-    final /* synthetic */ qh a;
+    /* renamed from: a */
+    final /* synthetic */ rn f10910a;
 
-    rq(qh qhVar) {
-        this.a = qhVar;
+    rq(rn rnVar) {
+        this.f10910a = rnVar;
     }
 
     public void run() {
-        Object obj;
-        a.d().a(this.a.f);
-        switch (this.a.h.a()) {
-            case 0:
-                obj = "";
-                break;
-            case 2:
-                obj = "";
-                break;
-            case 3:
-                obj = this.a.getString(j.reading__shared__fail_to_repair_cert);
-                break;
-            case 4:
-                obj = this.a.getString(j.reading__shared__no_open_params);
-                break;
-            default:
-                obj = this.a.getString(j.reading__shared__fail_to_open_book);
-                break;
-        }
-        if (!TextUtils.isEmpty(obj)) {
-            this.a.A().prompt(obj);
-        }
-        this.a.A().goHome(null);
+        ai.m3980a().m3881a(this.f10910a.f10905b.f9282f.m4219d());
+        this.f10910a.f10904a.run();
     }
 }

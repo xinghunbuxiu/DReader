@@ -1,45 +1,22 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import android.view.View;
+import com.duokan.reader.domain.document.C0901g;
+import com.duokan.reader.ui.general.cd;
+import com.duokan.reader.ui.general.cf;
 
-import com.duokan.core.ui.UTools;
+class oa implements cf {
+    /* renamed from: a */
+    final /* synthetic */ nu f10728a;
 
-class oa extends Drawable {
-    final /* synthetic */ nk a;
-    private Paint b = new Paint();
-    private final int c;
-
-    public oa(nk nkVar, int i) {
-        this.a = nkVar;
-        this.c = UTools.getMinimumHeight(nkVar.getContext(), 12.0f);
-        this.b.setColor(i);
-        this.b.setAntiAlias(true);
+    oa(nu nuVar) {
+        this.f10728a = nuVar;
     }
 
-    public void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        canvas.drawCircle((float) bounds.centerX(), (float) bounds.centerY(), (float) bounds.centerX(), this.b);
-    }
-
-    public void setAlpha(int i) {
-    }
-
-    public void setColorFilter(ColorFilter colorFilter) {
-    }
-
-    public int getOpacity() {
-        return 0;
-    }
-
-    public int getIntrinsicWidth() {
-        return this.c;
-    }
-
-    public int getIntrinsicHeight() {
-        return this.c;
+    /* renamed from: a */
+    public boolean mo2453a(View view, int i) {
+        this.f10728a.f10700b.aP();
+        this.f10728a.m14767a((C0901g) ((cd) this.f10728a.f10705g.getAdapter()).mo2458i(i));
+        return true;
     }
 }

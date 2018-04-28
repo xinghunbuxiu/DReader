@@ -1,31 +1,31 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.cloud.DkCloudStoreBook;
-import com.duokan.reader.ui.bookshelf.BookActionAssistant.BookAction;
-import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
-import com.duokan.reader.ui.general.cm;
-import com.duokan.reader.ui.store.o;
+import android.os.Handler;
+import android.os.Message;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.domain.bookshelf.ai;
+import com.duokan.reader.domain.cloud.PersonalPrefs;
 
-final class jx implements cm {
-    final /* synthetic */ PurchasedBookItemView a;
-    final /* synthetic */ DkCloudStoreBook b;
-    final /* synthetic */ c c;
+class jx implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ Handler f8796a;
+    /* renamed from: b */
+    final /* synthetic */ jg f8797b;
 
-    jx(PurchasedBookItemView purchasedBookItemView, DkCloudStoreBook dkCloudStoreBook, c cVar) {
-        this.a = purchasedBookItemView;
-        this.b = dkCloudStoreBook;
-        this.c = cVar;
+    jx(jg jgVar, Handler handler) {
+        this.f8797b = jgVar;
+        this.f8796a = handler;
     }
 
-    public void onChoice(boolean z, FlowChargingTransferChoice flowChargingTransferChoice) {
-        if (z) {
-            if (this.a.e == this.b) {
-                this.a.d.setEnabled(false);
-                this.a.d.setAction(BookAction.CONNECTING);
-            }
-            o.a().b(this.c.H());
-            o.a().a(this.c, new jy(this), flowChargingTransferChoice);
+    public void onClick(View view) {
+        PersonalPrefs.m5175a().m5232h(!PersonalPrefs.m5175a().m5249y());
+        this.f8797b.m12047a();
+        if (PersonalPrefs.m5175a().m5250z()) {
+            this.f8796a.sendMessageDelayed(Message.obtain(this.f8796a, 0), 5000);
+            return;
         }
+        this.f8796a.removeMessages(0);
+        ai.m3980a().m3944s();
     }
 }

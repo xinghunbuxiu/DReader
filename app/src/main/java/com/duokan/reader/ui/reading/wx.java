@@ -1,20 +1,27 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.ActivatedController;
 
-class wx implements Runnable {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ ww b;
+public abstract class wx extends ActivatedController {
+    /* renamed from: a */
+    private Runnable f9940a = null;
 
-    wx(ww wwVar, Runnable runnable) {
-        this.b = wwVar;
-        this.a = runnable;
+    public wx(IFeature mFeature) {
+        super(mFeature);
     }
 
-    public void run() {
-        if (this.b.a()) {
-            TaskHandler.PostTask(new wy(this));
+    protected void onDetachFromStub() {
+        super.onDetachFromStub();
+        if (this.f9940a != null) {
+            this.f9940a.run();
+            this.f9940a = null;
         }
-        this.b.b.addLast(this.a);
+    }
+
+    /* renamed from: a */
+    protected void m13847a(Runnable runnable) {
+        this.f9940a = runnable;
+        requestHideMenu();
     }
 }

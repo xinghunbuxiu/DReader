@@ -1,17 +1,19 @@
 package com.duokan.core.ui;
 
 class bi implements Runnable {
-    final /* synthetic */ int a;
-    final /* synthetic */ bh b;
+    /* renamed from: a */
+    final /* synthetic */ int f1012a;
+    /* renamed from: b */
+    final /* synthetic */ bh f1013b;
 
     bi(bh bhVar, int i) {
-        this.b = bhVar;
-        this.a = i;
+        this.f1013b = bhVar;
+        this.f1012a = i;
     }
 
     public void run() {
-        if (this.b.b.E != null) {
-            this.b.b.E.a(this.b.b, this.b.b.g(this.a), this.a);
+        if (this.f1013b.f960b.f763E != null) {
+            this.f1013b.f960b.f763E.mo480a(this.f1013b.f960b, this.f1013b.f960b.m1141g(this.f1012a), this.f1012a);
         }
     }
 }

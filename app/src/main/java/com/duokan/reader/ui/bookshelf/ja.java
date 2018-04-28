@@ -1,19 +1,17 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.bookshelf.ai;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class ja implements Runnable {
-    final /* synthetic */ iv a;
+class ja implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ie f6649a;
 
-    ja(iv ivVar) {
-        this.a = ivVar;
+    ja(ie ieVar) {
+        this.f6649a = ieVar;
     }
 
-    public void run() {
-        Object obj = (!i.f().b() || ai.a().c().b()) ? null : 1;
-        if (obj != null) {
-            new ij(this.a.getContext()).a(null);
-        }
+    public void onClick(View view) {
+        this.f6649a.f6590b.m4928h();
     }
 }

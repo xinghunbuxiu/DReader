@@ -1,21 +1,39 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.as;
-import com.duokan.reader.ui.store.comment.j;
-
+import android.text.TextUtils;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.EditText;
+import com.duokan.core.ui.dv;
 import org.json.JSONObject;
 
-class fs implements as {
-    final /* synthetic */ fr a;
+class fs implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ EditText f7857a;
+    /* renamed from: b */
+    final /* synthetic */ fp f7858b;
 
-    fs(fr frVar) {
-        this.a = frVar;
+    fs(fp fpVar, EditText editText) {
+        this.f7858b = fpVar;
+        this.f7857a = editText;
     }
 
-    public void a() {
-        JSONObject jSONObject = new JSONObject(this.a.a);
-        String string = jSONObject.getString("msgid");
-        jSONObject = jSONObject.getJSONObject("params");
-        new j(this.a.b.pageController.getContext(), jSONObject.optInt("score", -1), jSONObject.optString("title", null), jSONObject.optString("titlePlaceholder"), jSONObject.optString("content", null), jSONObject.optString("contentPlaceholder"), jSONObject.optBoolean("showTitle", true), jSONObject.optBoolean("showScore", true), jSONObject.optString("header", this.a.b.pageController.getContext().getResources().getString(com.duokan.c.j.store_comment__publish_comment_view__title)), jSONObject.optString("cancel", this.a.b.pageController.getContext().getResources().getString(com.duokan.c.j.general__shared__cancel)), jSONObject.optString("send", this.a.b.pageController.getContext().getResources().getString(com.duokan.c.j.general__shared__send)), jSONObject.optInt("wordCount", -1), jSONObject.optString("wordCountErrorMsg", this.a.b.pageController.getString(com.duokan.c.j.store_comment__publish_comment_view__content_too_long)), new ft(this, string)).show();
+    public void onClick(View view) {
+        CharSequence obj = this.f7857a.getText().toString();
+        if (!TextUtils.isEmpty(obj)) {
+            try {
+                JSONObject jSONObject = new JSONObject();
+                jSONObject.put("operation", 1);
+                jSONObject.put("text", obj);
+                if (this.f7858b.f7852g.f7845b.f7581b.mInputFlag != null) {
+                    jSONObject.put("flag", this.f7858b.f7852g.f7845b.f7581b.mInputFlag);
+                }
+                this.f7858b.f7852g.f7845b.f7581b.triggerEventOnCurrentUrl("input", jSONObject.toString());
+            } catch (Throwable th) {
+            }
+        }
+        this.f7857a.setText("");
+        this.f7857a.clearFocus();
+        dv.m1909a(this.f7858b.f7852g.f7845b.f7581b.getContext());
     }
 }

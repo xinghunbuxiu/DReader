@@ -1,15 +1,22 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.as;
+import com.duokan.reader.domain.bookshelf.ai;
+import java.util.concurrent.Callable;
 
-class ha implements as {
-    final /* synthetic */ PageController a;
+class ha implements Callable<Integer> {
+    /* renamed from: a */
+    final /* synthetic */ ci f7918a;
 
-    ha(PageController cgVar) {
-        this.a = cgVar;
+    ha(ci ciVar) {
+        this.f7918a = ciVar;
     }
 
-    public void a() {
-        this.a.setRetroactiveSucceed("");
+    public /* synthetic */ Object call() {
+        return m11165a();
+    }
+
+    /* renamed from: a */
+    public Integer m11165a() {
+        return Integer.valueOf(ai.m3980a().m3931h());
     }
 }

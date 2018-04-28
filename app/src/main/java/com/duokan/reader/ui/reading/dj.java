@@ -4,14 +4,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 class dj implements OnClickListener {
-    final /* synthetic */ de a;
+    /* renamed from: a */
+    final /* synthetic */ dg f10028a;
 
-    dj(de deVar) {
-        this.a = deVar;
+    dj(dg dgVar) {
+        this.f10028a = dgVar;
     }
 
     public void onClick(View view) {
-        this.a.E.run();
-        a.k().a("tip", "click", "reading_comment_page_tip_list_entrance_button", false);
+        this.f10028a.f10005f.bj();
     }
 }

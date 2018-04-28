@@ -1,24 +1,14 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.domain.cloud.DkCloudStoreBook;
+class fh implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ fg f8540a;
 
-import java.text.Collator;
-import java.util.Comparator;
-
-class fh implements Comparator {
-    final /* synthetic */ Collator a;
-    final /* synthetic */ fg b;
-
-    fh(fg fgVar, Collator collator) {
-        this.b = fgVar;
-        this.a = collator;
+    fh(fg fgVar) {
+        this.f8540a = fgVar;
     }
 
-    public /* synthetic */ int compare(Object obj, Object obj2) {
-        return a((DkCloudStoreBook) obj, (DkCloudStoreBook) obj2);
-    }
-
-    public int a(DkCloudStoreBook dkCloudStoreBook, DkCloudStoreBook dkCloudStoreBook2) {
-        return dkCloudStoreBook.compareNameTo(this.a, dkCloudStoreBook2);
+    public void run() {
+        this.f8540a.f8539a.m11781c();
     }
 }

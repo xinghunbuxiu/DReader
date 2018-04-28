@@ -1,19 +1,23 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.graphics.DrawFilter;
+import java.util.LinkedList;
 
-import com.duokan.reader.UmengManager;
+public class or extends DrawFilter {
+    /* renamed from: a */
+    private final LinkedList<Integer> f10753a = new LinkedList();
+    /* renamed from: b */
+    private final LinkedList<Integer> f10754b = new LinkedList();
+    /* renamed from: c */
+    private int f10755c = 0;
 
-class or implements OnClickListener {
-    final /* synthetic */ on a;
-
-    or(on onVar) {
-        this.a = onVar;
+    /* renamed from: a */
+    public void m14832a() {
+        this.f10755c |= 1;
     }
 
-    public void onClick(View view) {
-        UmengManager.get().onEvent("V2_READING_TOP_TOOLBUTTON", "PDF-Crop");
-        this.a.a(new os(this));
+    /* renamed from: b */
+    public boolean m14833b() {
+        return (this.f10755c & 1) == 1;
     }
 }

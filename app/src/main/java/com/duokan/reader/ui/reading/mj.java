@@ -1,16 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 
-class mj implements OnClickListener {
-    final /* synthetic */ mh a;
+class mj extends BroadcastReceiver {
+    /* renamed from: a */
+    final /* synthetic */ mh f10627a;
 
     mj(mh mhVar) {
-        this.a = mhVar;
+        this.f10627a = mhVar;
     }
 
-    public void onClick(View view) {
-        this.a.e.a();
+    public void onReceive(Context context, Intent intent) {
+        this.f10627a.m13682g();
     }
 }

@@ -9,46 +9,57 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.duokan.b.e;
-import com.duokan.core.ui.UTools;
 import com.duokan.core.ui.ct;
+import com.duokan.core.ui.dv;
 import com.duokan.core.ui.et;
+import com.duokan.p023b.C0243e;
+import com.duokan.p023b.C0248j;
 
 public class DkCommentScoreView extends View {
-    static final /* synthetic */ boolean a = (!DkCommentScoreView.class.desiredAssertionStatus());
-    private final boolean b;
-    private final Drawable c;
-    private final Drawable d;
-    private final int e;
-    private int f;
-    private int g;
-    private float h = 0.0f;
-    private e i;
-    private et j = null;
+    /* renamed from: a */
+    static final /* synthetic */ boolean f11388a = (!DkCommentScoreView.class.desiredAssertionStatus());
+    /* renamed from: b */
+    private final boolean f11389b;
+    /* renamed from: c */
+    private final Drawable f11390c;
+    /* renamed from: d */
+    private final Drawable f11391d;
+    /* renamed from: e */
+    private final int f11392e;
+    /* renamed from: f */
+    private int f11393f;
+    /* renamed from: g */
+    private int f11394g;
+    /* renamed from: h */
+    private float f11395h = 0.0f;
+    /* renamed from: i */
+    private C1453e f11396i;
+    /* renamed from: j */
+    private et f11397j = null;
 
     public DkCommentScoreView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, j.DkCommentScoreView);
-        this.b = obtainStyledAttributes.getBoolean(j.DkCommentScoreView_custom_operation, false);
-        boolean z = obtainStyledAttributes.getBoolean(j.DkCommentScoreView_need_login, true);
-        this.c = getResources().getDrawable(obtainStyledAttributes.getResourceId(j.DkCommentScoreView_high_score, e.bookcity_comment__shared__red_star));
-        this.d = getResources().getDrawable(obtainStyledAttributes.getResourceId(j.DkCommentScoreView_normal_score, e.bookcity_comment__shared__small_gray_star));
-        this.e = obtainStyledAttributes.getDimensionPixelSize(j.DkCommentScoreView_score_space, 5);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0248j.DkCommentScoreView);
+        this.f11389b = obtainStyledAttributes.getBoolean(C0248j.DkCommentScoreView_custom_operation, false);
+        boolean z = obtainStyledAttributes.getBoolean(C0248j.DkCommentScoreView_need_login, true);
+        this.f11390c = getResources().getDrawable(obtainStyledAttributes.getResourceId(C0248j.DkCommentScoreView_high_score, C0243e.bookcity_comment__shared__red_star));
+        this.f11391d = getResources().getDrawable(obtainStyledAttributes.getResourceId(C0248j.DkCommentScoreView_normal_score, C0243e.bookcity_comment__shared__small_gray_star));
+        this.f11392e = obtainStyledAttributes.getDimensionPixelSize(C0248j.DkCommentScoreView_score_space, 5);
         obtainStyledAttributes.recycle();
-        if (this.b) {
-            this.j = new et();
-            this.j.a(new ct());
-            this.j.b(this);
-            this.j.a(new c(this, z));
+        if (this.f11389b) {
+            this.f11397j = new et();
+            this.f11397j.m2041a(new ct());
+            this.f11397j.m2046b(this);
+            this.f11397j.m2042a(new C1480c(this, z));
         }
     }
 
     public void setScore(float f) {
-        if (!a && (0.0f > f || f > 5.0f)) {
+        if (!f11388a && (0.0f > f || f > 5.0f)) {
             throw new AssertionError();
-        } else if (!a(false)) {
-            this.h = a(f);
-            b(false);
+        } else if (!m15366a(false)) {
+            this.f11395h = m15363a(f);
+            m15367b(false);
             invalidate();
         }
     }
@@ -58,12 +69,12 @@ public class DkCommentScoreView extends View {
     }
 
     public float getScore() {
-        return this.h;
+        return this.f11395h;
     }
 
-    public void setScoreChangeListener(e eVar) {
-        if (a || eVar != null) {
-            this.i = eVar;
+    public void setScoreChangeListener(C1453e c1453e) {
+        if (f11388a || c1453e != null) {
+            this.f11396i = c1453e;
             return;
         }
         throw new AssertionError();
@@ -72,30 +83,30 @@ public class DkCommentScoreView extends View {
     protected void onDraw(Canvas canvas) {
         int i;
         int i2 = 0;
-        int paddingLeft = (this.e / 2) + getPaddingLeft();
-        int intrinsicWidth = this.d.getIntrinsicWidth();
+        int paddingLeft = (this.f11392e / 2) + getPaddingLeft();
+        int intrinsicWidth = this.f11391d.getIntrinsicWidth();
         for (i = 0; i < 5; i++) {
-            int i3 = ((this.e + intrinsicWidth) * i) + paddingLeft;
-            this.d.setBounds(i3, getPaddingTop(), this.d.getIntrinsicWidth() + i3, getPaddingTop() + this.d.getIntrinsicHeight());
-            this.d.draw(canvas);
+            int i3 = ((this.f11392e + intrinsicWidth) * i) + paddingLeft;
+            this.f11391d.setBounds(i3, getPaddingTop(), this.f11391d.getIntrinsicWidth() + i3, getPaddingTop() + this.f11391d.getIntrinsicHeight());
+            this.f11391d.draw(canvas);
         }
-        i = (int) Math.floor((double) this.h);
+        i = (int) Math.floor((double) this.f11395h);
         while (i2 < i) {
-            i3 = ((this.e + intrinsicWidth) * i2) + paddingLeft;
-            this.c.setBounds(i3, getPaddingTop(), this.c.getIntrinsicWidth() + i3, getPaddingTop() + this.c.getIntrinsicHeight());
-            this.c.draw(canvas);
+            i3 = ((this.f11392e + intrinsicWidth) * i2) + paddingLeft;
+            this.f11390c.setBounds(i3, getPaddingTop(), this.f11390c.getIntrinsicWidth() + i3, getPaddingTop() + this.f11390c.getIntrinsicHeight());
+            this.f11390c.draw(canvas);
             i2++;
         }
-        if (((double) (this.h - ((float) i))) >= 0.5d) {
-            i = paddingLeft + ((this.e + intrinsicWidth) * i);
-            Rect rect = (Rect) UTools.g.getRect();
-            rect.set(i, getPaddingTop(), (this.c.getIntrinsicWidth() / 2) + i, this.c.getIntrinsicHeight() + getPaddingTop());
+        if (((double) (this.f11395h - ((float) i))) >= 0.5d) {
+            i = paddingLeft + ((this.f11392e + intrinsicWidth) * i);
+            Rect rect = (Rect) dv.f1198g.addAnimation();
+            rect.set(i, getPaddingTop(), (this.f11390c.getIntrinsicWidth() / 2) + i, this.f11390c.getIntrinsicHeight() + getPaddingTop());
             canvas.save();
             canvas.clipRect(rect);
-            this.c.setBounds(i, getPaddingTop(), this.c.getIntrinsicWidth() + i, getPaddingTop() + this.c.getIntrinsicHeight());
-            this.c.draw(canvas);
+            this.f11390c.setBounds(i, getPaddingTop(), this.f11390c.getIntrinsicWidth() + i, getPaddingTop() + this.f11390c.getIntrinsicHeight());
+            this.f11390c.draw(canvas);
             canvas.restore();
-            UTools.g.getRect(rect);
+            dv.f1198g.clearAnimation(rect);
         }
     }
 
@@ -106,19 +117,20 @@ public class DkCommentScoreView extends View {
         int size = MeasureSpec.getSize(i);
         int size2 = MeasureSpec.getSize(i2);
         if (mode == 1073741824) {
-            this.f = size;
+            this.f11393f = size;
         } else {
-            this.f = (getPaddingLeft() + getPaddingRight()) + ((this.c.getIntrinsicWidth() + this.e) * 5);
+            this.f11393f = (getPaddingLeft() + getPaddingRight()) + ((this.f11390c.getIntrinsicWidth() + this.f11392e) * 5);
         }
         if (mode2 == 1073741824) {
-            this.g = size2;
+            this.f11394g = size2;
         } else {
-            this.g = (getPaddingTop() + getPaddingBottom()) + this.c.getIntrinsicHeight();
+            this.f11394g = (getPaddingTop() + getPaddingBottom()) + this.f11390c.getIntrinsicHeight();
         }
-        setMeasuredDimension(this.f, this.g);
+        setMeasuredDimension(this.f11393f, this.f11394g);
     }
 
-    private void a(PointF pointF) {
+    /* renamed from: a */
+    private void m15364a(PointF pointF) {
         int i = 5;
         int width = getWidth();
         int paddingLeft = getPaddingLeft();
@@ -129,21 +141,22 @@ public class DkCommentScoreView extends View {
         } else if (i2 > width - paddingRight) {
             width = 5;
         } else {
-            width = (int) Math.ceil((double) (((((float) i2) - ((float) paddingLeft)) - ((float) paddingRight)) / ((float) (this.c.getIntrinsicWidth() + this.e))));
+            width = (int) Math.ceil((double) (((((float) i2) - ((float) paddingLeft)) - ((float) paddingRight)) / ((float) (this.f11390c.getIntrinsicWidth() + this.f11392e))));
         }
         if (width <= 0) {
             i = 1;
         } else if (width <= 5) {
             i = width;
         }
-        if (this.h != ((float) i) && !a(true)) {
-            this.h = (float) i;
+        if (this.f11395h != ((float) i) && !m15366a(true)) {
+            this.f11395h = (float) i;
             invalidate();
-            b(true);
+            m15367b(true);
         }
     }
 
-    private float a(float f) {
+    /* renamed from: a */
+    private float m15363a(float f) {
         if (f < 0.0f) {
             return 0.0f;
         }
@@ -153,16 +166,18 @@ public class DkCommentScoreView extends View {
         return f;
     }
 
-    private boolean a(boolean z) {
-        if (this.i != null) {
-            return this.i.a(this, z);
+    /* renamed from: a */
+    private boolean m15366a(boolean z) {
+        if (this.f11396i != null) {
+            return this.f11396i.mo2308a(this, z);
         }
         return false;
     }
 
-    private void b(boolean z) {
-        if (this.i != null) {
-            this.i.a(this, (int) this.h, z);
+    /* renamed from: b */
+    private void m15367b(boolean z) {
+        if (this.f11396i != null) {
+            this.f11396i.mo2307a(this, (int) this.f11395h, z);
         }
     }
 }

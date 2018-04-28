@@ -1,15 +1,17 @@
 package com.duokan.reader.ui.general.web;
 
-class ii implements Runnable {
-    final /* synthetic */ String a;
-    final /* synthetic */ ig b;
+import com.duokan.core.sys.as;
 
-    ii(ig igVar, String str) {
-        this.b = igVar;
-        this.a = str;
+class ii implements as {
+    /* renamed from: a */
+    final /* synthetic */ ih f7993a;
+
+    ii(ih ihVar) {
+        this.f7993a = ihVar;
     }
 
-    public void run() {
-        this.b.b.pageController.web_notifyWeb(this.a, 2, new Object[0]);
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7993a.f7992b.f7581b.queryBookDetail(this.f7993a.f7991a, new ij(this), true);
     }
 }

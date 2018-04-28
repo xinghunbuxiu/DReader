@@ -1,33 +1,27 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.reader.domain.micloud.bi;
-import com.duokan.reader.domain.micloud.o;
-import com.duokan.reader.domain.micloud.t;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.WebSession;
 
-import java.util.HashMap;
+class ie extends WebSession {
+    /* renamed from: a */
+    final /* synthetic */ hc f3344a;
 
-class ie implements t {
-    final /* synthetic */ ic a;
-
-    ie(ic icVar) {
-        this.a = icVar;
+    ie(hc hcVar, C0657i c0657i) {
+        this.f3344a = hcVar;
+        super(c0657i);
     }
 
-    public void a(o oVar) {
+    protected void onSessionTry() {
+        this.f3344a.m3946u();
+        this.f3344a.m3915b(this.f3344a.m3806F(), true);
     }
 
-    public void b(o oVar) {
+    protected void onSessionSucceeded() {
+        this.f3344a.m3949x();
     }
 
-    public void a(o oVar, bi biVar) {
-        this.a.a.u();
-        HashMap v = this.a.a.v();
-        iy iyVar = new iy(biVar);
-        iyVar.g();
-        TaskHandler.b(new if (this,(c) v.get(iyVar.f())));
-    }
-
-    public void b(o oVar, bi biVar) {
+    protected void onSessionFailed() {
+        this.f3344a.m3949x();
     }
 }

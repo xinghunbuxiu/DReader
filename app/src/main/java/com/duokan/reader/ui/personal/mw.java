@@ -1,16 +1,22 @@
 package com.duokan.reader.ui.personal;
 
 import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.ui.HatGridView;
+import com.duokan.core.ui.an;
+import com.duokan.reader.domain.cloud.DkCloudNoteBookInfo;
+import com.duokan.reader.domain.cloud.DkCloudStorage;
 
-class mw implements OnClickListener {
-    final /* synthetic */ mt a;
+class mw implements an {
+    /* renamed from: a */
+    final /* synthetic */ mv f8972a;
 
-    mw(mt mtVar) {
-        this.a = mtVar;
+    mw(mv mvVar) {
+        this.f8972a = mvVar;
     }
 
-    public void onClick(View view) {
-        this.a.a(2);
+    /* renamed from: a */
+    public void mo1558a(HatGridView hatGridView, View view, int i) {
+        DkCloudNoteBookInfo c = this.f8972a.f8971d.mo1556c(i);
+        this.f8972a.b.pushHalfPageSmoothly(new mh(this.f8972a.getContext(), c, DkCloudStorage.m4994a().m5009a(c.getBookUuid())), null);
     }
 }

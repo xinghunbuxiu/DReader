@@ -2,89 +2,105 @@ package com.duokan.reader.domain.document.epub;
 
 import android.graphics.Bitmap;
 import android.graphics.Rect;
-
 import com.duokan.core.sys.ah;
 import com.duokan.kernel.DkAtomRenderOption;
 import com.duokan.kernel.epublib.DkeInteractiveGifImage;
 import com.duokan.reader.domain.document.ad;
 import com.duokan.reader.domain.document.ag;
-
 import java.util.concurrent.Future;
 import java.util.concurrent.FutureTask;
 
 class bm implements ad {
-    final /* synthetic */ az a;
-    private final Rect b;
-    private DkeInteractiveGifImage c;
-    private boolean d;
+    /* renamed from: a */
+    final /* synthetic */ az f4573a;
+    /* renamed from: b */
+    private final Rect f4574b;
+    /* renamed from: c */
+    private DkeInteractiveGifImage f4575c;
+    /* renamed from: d */
+    private boolean f4576d;
 
     private bm(az azVar, DkeInteractiveGifImage dkeInteractiveGifImage) {
-        this.a = azVar;
-        this.d = true;
-        this.c = dkeInteractiveGifImage;
-        this.b = dkeInteractiveGifImage.getBoundingBox().toRect();
+        this.f4573a = azVar;
+        this.f4576d = true;
+        this.f4575c = dkeInteractiveGifImage;
+        this.f4574b = dkeInteractiveGifImage.getBoundingBox().toRect();
     }
 
-    public int e() {
-        return this.c.getWidth();
+    /* renamed from: e */
+    public int mo1390e() {
+        return this.f4575c.getWidth();
     }
 
-    public int f() {
-        return this.c.getHeight();
+    /* renamed from: f */
+    public int mo1391f() {
+        return this.f4575c.getHeight();
     }
 
-    public float g() {
+    /* renamed from: g */
+    public float mo1392g() {
         return 1.0f;
     }
 
-    public float h() {
+    /* renamed from: h */
+    public float mo1393h() {
         return 1.0f;
     }
 
-    public float i() {
+    /* renamed from: i */
+    public float mo1394i() {
         return 0.0f;
     }
 
-    public boolean j() {
-        return this.d;
+    /* renamed from: j */
+    public boolean mo1395j() {
+        return this.f4576d;
     }
 
-    public ag k() {
+    /* renamed from: k */
+    public ag mo1396k() {
         return new bn(this);
     }
 
-    public Rect l() {
+    /* renamed from: l */
+    public Rect mo1397l() {
         return null;
     }
 
-    public Future a(com.duokan.core.sys.ag agVar) {
+    /* renamed from: a */
+    public Future<Bitmap> mo1383a(com.duokan.core.sys.ag<Bitmap> agVar) {
         Runnable futureTask = new FutureTask(new bo(this, agVar));
-        ah.submitFuture(futureTask);
+        ah.m871b(futureTask);
         return futureTask;
     }
 
-    public Future b(com.duokan.core.sys.ag agVar) {
+    /* renamed from: b */
+    public Future<Bitmap> mo1387b(com.duokan.core.sys.ag<Bitmap> agVar) {
         return null;
     }
 
-    public int a() {
-        return this.c.getFrameCount();
+    /* renamed from: a */
+    public int mo1398a() {
+        return this.f4575c.getFrameCount();
     }
 
-    public int a(int i) {
-        return this.c.getDuration(i);
+    /* renamed from: a */
+    public int mo1399a(int i) {
+        return this.f4575c.getDuration(i);
     }
 
-    public void a(int i, Bitmap bitmap) {
+    /* renamed from: a */
+    public void mo1400a(int i, Bitmap bitmap) {
         DkAtomRenderOption dkAtomRenderOption = new DkAtomRenderOption();
-        dkAtomRenderOption.mWidth = e();
-        dkAtomRenderOption.mHeight = f();
+        dkAtomRenderOption.mWidth = mo1390e();
+        dkAtomRenderOption.mHeight = mo1391f();
         dkAtomRenderOption.mBitmap = bitmap;
-        dkAtomRenderOption.mScale = Math.min((((float) bitmap.getWidth()) * 1.0f) / ((float) e()), (((float) bitmap.getHeight()) * 1.0f) / ((float) f()));
-        this.c.render(i, dkAtomRenderOption);
+        dkAtomRenderOption.mScale = Math.min((((float) bitmap.getWidth()) * 1.0f) / ((float) mo1390e()), (((float) bitmap.getHeight()) * 1.0f) / ((float) mo1391f()));
+        this.f4575c.render(i, dkAtomRenderOption);
     }
 
-    public void b() {
-        this.d = false;
+    /* renamed from: b */
+    public void m6708b() {
+        this.f4576d = false;
     }
 }

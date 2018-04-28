@@ -4,12 +4,10 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
-
-import com.duokan.core.a.n;
-import com.duokan.core.diagnostic.HttpLogger;
+import com.duokan.core.diagnostic.C0327f;
 import com.duokan.core.io.FileAlreadyExistsException;
 import com.duokan.core.io.OutputException;
-
+import com.duokan.core.p026a.C0285n;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
@@ -20,56 +18,70 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 
 class av {
-    private final n a;
-    private final ReentrantLock b;
-    private final String c;
-    private final String d;
-    private final String e;
-    private final HttpLogger f;
-    private boolean g = false;
-    private long h = -1;
-    private final HashMap i = new HashMap();
-    private final HashMap j = new HashMap();
-    private final ConcurrentHashMap k = new ConcurrentHashMap();
+    /* renamed from: a */
+    private final C0285n f656a;
+    /* renamed from: b */
+    private final ReentrantLock f657b;
+    /* renamed from: c */
+    private final String f658c;
+    /* renamed from: d */
+    private final String f659d;
+    /* renamed from: e */
+    private final String f660e;
+    /* renamed from: f */
+    private final C0327f f661f;
+    /* renamed from: g */
+    private boolean f662g = false;
+    /* renamed from: h */
+    private long f663h = -1;
+    /* renamed from: i */
+    private final HashMap<String, aw> f664i = new HashMap();
+    /* renamed from: j */
+    private final HashMap<String, ba> f665j = new HashMap();
+    /* renamed from: k */
+    private final ConcurrentHashMap<String, ax> f666k = new ConcurrentHashMap();
 
-    public av(n nVar, ReentrantLock reentrantLock, String str, String str2, String str3, HttpLogger fVar) {
-        this.a = nVar;
-        this.b = reentrantLock;
-        this.c = str;
-        this.d = str2;
-        this.e = str3;
-        this.f = fVar;
+    public av(C0285n c0285n, ReentrantLock reentrantLock, String str, String str2, String str3, C0327f c0327f) {
+        this.f656a = c0285n;
+        this.f657b = reentrantLock;
+        this.f658c = str;
+        this.f659d = str2;
+        this.f660e = str3;
+        this.f661f = c0327f;
     }
 
-    public String a() {
-        return this.c;
+    /* renamed from: a */
+    public String m916a() {
+        return this.f658c;
     }
 
-    public String b() {
-        return this.e;
+    /* renamed from: b */
+    public String m922b() {
+        return this.f660e;
     }
 
     /* JADX WARNING: inconsistent code. */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    public boolean a(java.lang.String r8) {
+    /* renamed from: a */
+    public boolean m918a(java.lang.String r8) {
         /*
         r7 = this;
         r0 = 1;
         r1 = 0;
-        r2 = r7.FeatureListening;
+        r2 = r7.f666k;
         r2 = r2.contains(r8);
         if (r2 == 0) goto L_0x000b;
     L_0x000a:
         return r0;
     L_0x000b:
         r2 = 0;
-        r3 = r7.setDrawable;	 Catch:{ Throwable -> 0x0028, all -> 0x0031 }
+        r3 = r7.f656a;	 Catch:{ Throwable -> 0x0028, all -> 0x0031 }
         r4 = 1;
         r4 = new java.lang.String[r4];	 Catch:{ Throwable -> 0x0028, all -> 0x0031 }
         r5 = 0;
         r6 = "attributes";
         r4[r5] = r6;	 Catch:{ Throwable -> 0x0028, all -> 0x0031 }
-        r2 = com.duokan.core.sys.au.getVisible(r3, r8, r4);	 Catch:{ Throwable -> 0x0028, all -> 0x0031 }
+        r2 = com.duokan.core.sys.au.m896b(r3, r8, r4);	 Catch:{ Throwable -> 0x0028, all -> 0x0031 }
         r3 = r2.getCount();	 Catch:{ Throwable -> 0x0038, all -> 0x0031 }
         if (r3 <= 0) goto L_0x0026;
     L_0x0020:
@@ -102,97 +114,101 @@ class av {
         r0 = r2;
         goto L_0x002a;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.core.sys.av.setDrawable(java.lang.String):boolean");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.core.sys.av.a(java.lang.String):boolean");
     }
 
-    public boolean a(String str, String str2) {
+    /* renamed from: a */
+    public boolean m919a(String str, String str2) {
         ReentrantLock reentrantLock = null;
         if (TextUtils.equals(str, str2)) {
             return true;
         }
-        this.b.lock();
+        this.f657b.lock();
         try {
-            if (this.g) {
+            if (this.f662g) {
                 return reentrantLock;
             }
-            if (!a(str) || a(str2)) {
-                this.b.unlock();
+            if (!m918a(str) || m918a(str2)) {
+                this.f657b.unlock();
                 return false;
             }
             try {
-                ax c = c(str);
-                this.a.b();
-                a(c, str2);
-                this.a.f();
-                this.a.c();
-                this.b.unlock();
+                ax c = m910c(str);
+                this.f656a.m677b();
+                m906a(c, str2);
+                this.f656a.m681f();
+                this.f656a.m678c();
+                this.f657b.unlock();
                 return true;
             } catch (Throwable th) {
-                this.b.unlock();
+                this.f657b.unlock();
                 return false;
             }
         } finally {
-            reentrantLock = this.b;
+            reentrantLock = this.f657b;
             reentrantLock.unlock();
         }
     }
 
-    public void a(String str, long j) {
-        this.b.lock();
+    /* renamed from: a */
+    public void m917a(String str, long j) {
+        this.f657b.lock();
         try {
-            if (this.g) {
-                throw new OutputException(String.format(Locale.getDefault(), "the repository(%s) is already closed.", new Object[]{this.c}));
-            } else if (a(str)) {
-                throw new FileAlreadyExistsException(String.format(Locale.getDefault(), "fail to create setDrawable file(%s) with an expected size of %getTriangleEdge bytes, cause it already exists.", new Object[]{str, Long.valueOf(j)}));
+            if (this.f662g) {
+                throw new OutputException(String.format(Locale.getDefault(), "the repository(%s) is already closed.", new Object[]{this.f658c}));
+            } else if (m918a(str)) {
+                throw new FileAlreadyExistsException(String.format(Locale.getDefault(), "fail to create a file(%s) with an expected size of %d bytes, cause it already exists.", new Object[]{str, Long.valueOf(j)}));
             } else {
                 try {
-                    this.a.b();
-                    c(str, a(a(j)));
-                    this.a.f();
-                    this.a.c();
+                    this.f656a.m677b();
+                    m911c(str, m904a(m907a(j)));
+                    this.f656a.m681f();
+                    this.f656a.m678c();
                 } catch (IOException e) {
                     throw e;
                 } catch (Throwable th) {
-                    IOException iOException = new IOException(String.format(Locale.getDefault(), "fail to create setDrawable file(%s) with an expected size of %getTriangleEdge bytes.", new Object[]{str, Long.valueOf(j)}), th);
+                    IOException iOException = new IOException(String.format(Locale.getDefault(), "fail to create a file(%s) with an expected size of %d bytes.", new Object[]{str, Long.valueOf(j)}), th);
                 }
             }
         } finally {
-            this.b.unlock();
+            this.f657b.unlock();
         }
     }
 
-    public boolean b(String str) {
-        this.b.lock();
+    /* renamed from: b */
+    public boolean m924b(String str) {
+        this.f657b.lock();
         try {
-            if (this.g) {
+            if (this.f662g) {
                 return false;
             }
-            if (a(str)) {
+            if (m918a(str)) {
                 try {
-                    this.a.b();
-                    au.a(this.a, str);
-                    this.k.remove(str);
-                    this.a.f();
-                    this.a.c();
-                    this.b.unlock();
+                    this.f656a.m677b();
+                    au.m893a(this.f656a, str);
+                    this.f666k.remove(str);
+                    this.f656a.m681f();
+                    this.f656a.m678c();
+                    this.f657b.unlock();
                     return true;
                 } catch (Throwable th) {
-                    this.b.unlock();
+                    this.f657b.unlock();
                     return false;
                 }
             }
-            this.b.unlock();
+            this.f657b.unlock();
             return true;
         } finally {
-            this.b.unlock();
+            this.f657b.unlock();
         }
     }
 
-    public at a(at atVar) {
+    /* renamed from: a */
+    public at m915a(at atVar) {
         if (atVar == null) {
             throw new IllegalArgumentException();
         }
-        this.b.lock();
+        this.f657b.lock();
         try {
             at ayVar;
             if (atVar.getClass() == ay.class) {
@@ -202,243 +218,248 @@ class av {
             } else {
                 throw new IllegalArgumentException();
             }
-            if (ayVar.c) {
-                ayVar.a.k.add(ayVar);
-                aw awVar = ayVar.b;
-                awVar.c++;
+            if (ayVar.f683c) {
+                ayVar.f681a.f680k.add(ayVar);
+                aw awVar = ayVar.f682b;
+                awVar.f669c++;
             }
-            this.b.unlock();
+            this.f657b.unlock();
             return ayVar;
         } catch (Throwable th) {
-            this.b.unlock();
+            this.f657b.unlock();
         }
     }
 
-    public at b(String str, String str2) {
-        this.b.lock();
+    /* renamed from: b */
+    public at m921b(String str, String str2) {
+        this.f657b.lock();
         try {
-            if (this.g) {
-                throw new IOException(String.format(Locale.getDefault(), "the repository(%s) is already closed.", new Object[]{this.c}));
+            if (this.f662g) {
+                throw new IOException(String.format(Locale.getDefault(), "the repository(%s) is already closed.", new Object[]{this.f658c}));
             }
-            if (!(a(str) || str2.equals("onActivityResult"))) {
-                a(str, 1024);
+            if (!(m918a(str) || str2.equals("r"))) {
+                m917a(str, 1024);
             }
-            ax c = c(str);
+            ax c = m910c(str);
             if (c == null) {
                 throw new VirtualFileAssertionFailsException();
-            } else if (this.b.isHeldByCurrentThread()) {
+            } else if (this.f657b.isHeldByCurrentThread()) {
                 aw awVar;
                 at ayVar;
-                if (!c.a()) {
-                    c.j = e(c.b);
+                if (!c.m927a()) {
+                    c.f679j = m913e(c.f671b);
                 }
-                aw awVar2 = (aw) this.i.get(str2);
+                aw awVar2 = (aw) this.f664i.get(str2);
                 if (awVar2 == null) {
-                    awVar2 = new aw(new File(Uri.parse(this.d).getPath()), str2);
-                    this.i.put(str2, awVar2);
+                    awVar2 = new aw(new File(Uri.parse(this.f659d).getPath()), str2);
+                    this.f664i.put(str2, awVar2);
                     awVar = awVar2;
                 } else {
                     awVar = awVar2;
                 }
-                awVar.c++;
-                if (str2.equals("onActivityResult")) {
+                awVar.f669c++;
+                if (str2.equals("r")) {
                     ayVar = new ay(c, awVar);
                 } else {
                     ayVar = new az(c, awVar);
                 }
-                c.k.add(ayVar);
-                this.b.unlock();
+                c.f680k.add(ayVar);
+                this.f657b.unlock();
                 return ayVar;
             } else {
                 throw new VirtualFileAssertionFailsException();
             }
         } catch (Throwable th) {
-            this.b.unlock();
+            this.f657b.unlock();
         }
     }
 
-    public int a(at atVar, long j, byte[] bArr, int i, int i2) {
-        int i3;
+    /* renamed from: a */
+    public int m914a(at atVar, long j, byte[] bArr, int i, int i2) {
         ay ayVar = (ay) atVar;
-        while (!ayVar.b.b.compareAndSet(null, Thread.currentThread())) {
+        while (!ayVar.f682b.f668b.compareAndSet(null, Thread.currentThread())) {
             try {
                 LockSupport.parkNanos(1000000);
             } catch (VirtualFileBrokenException e) {
                 throw e;
             } catch (Throwable th) {
-                ayVar.b.b.compareAndSet(Thread.currentThread(), null);
+                ayVar.f682b.f668b.compareAndSet(Thread.currentThread(), null);
             }
         }
-        ba[] baVarArr = ayVar.a.j;
+        ba[] baVarArr = ayVar.f681a.f679j;
         if (baVarArr.length < 1) {
             throw new VirtualFileAssertionFailsException();
         }
-        long max = Math.max(0, Math.min((long) i2, ayVar.a.f.get() - j));
+        long max = Math.max(0, Math.min((long) i2, ayVar.f681a.f675f.get() - j));
         if (max == 0) {
-            ayVar.b.b.compareAndSet(Thread.currentThread(), null);
+            ayVar.f682b.f668b.compareAndSet(Thread.currentThread(), null);
             return -1;
         }
-        int i4 = 0;
+        int i3 = 0;
         long j2 = 0;
-        long j3 = baVarArr[0].c;
-        i3 = 0;
+        long j3 = baVarArr[0].f687c;
+        r2 = 0;
         while (j >= j2) {
             if (j >= j3) {
-                if (i4 < baVarArr.length - 1) {
-                    i4++;
-                    j2 += baVarArr[i4 - 1].c;
-                    j3 = baVarArr[i4].c + j2;
+                if (i3 < baVarArr.length - 1) {
+                    i3++;
+                    j2 += baVarArr[i3 - 1].f687c;
+                    j3 = baVarArr[i3].f687c + j2;
                 }
             }
             long j4 = j - j2;
-            long min = Math.min((max - ((long) i3)) + j4, baVarArr[i4].c);
+            long min = Math.min((max - ((long) r2)) + j4, baVarArr[i3].f687c);
             if (j4 >= min) {
                 break;
             }
-            int i5 = (int) (min - j4);
-            ayVar.b.seek(j4 + baVarArr[i4].b);
-            i5 = ayVar.b.read(bArr, i + i3, i5);
-            if (i5 < 0) {
-                throw new VirtualFileBrokenException(String.format(Locale.getDefault(), "fail to read the file(%s) from %getTriangleEdge to %getTriangleEdge, cause it was broken at %getTriangleEdge.", new Object[]{ayVar.a.b, Long.valueOf(j), Long.valueOf(((long) i2) + j), Integer.valueOf(i + i3)}));
+            int i4 = (int) (min - j4);
+            ayVar.f682b.seek(j4 + baVarArr[i3].f686b);
+            i4 = ayVar.f682b.read(bArr, i + r2, i4);
+            if (i4 < 0) {
+                throw new VirtualFileBrokenException(String.format(Locale.getDefault(), "fail to read the file(%s) from %d to %d, cause it was broken at %d.", new Object[]{ayVar.f681a.f671b, Long.valueOf(j), Long.valueOf(((long) i2) + j), Integer.valueOf(i + r2)}));
             }
-            i3 += i5;
-            j += (long) i5;
+            r2 += i4;
+            j += (long) i4;
         }
-        if (i3 > 0) {
-            ayVar.a(System.currentTimeMillis());
+        if (r2 > 0) {
+            ayVar.m928a(System.currentTimeMillis());
         }
-        ayVar.b.b.compareAndSet(Thread.currentThread(), null);
-        return i3;
+        ayVar.f682b.f668b.compareAndSet(Thread.currentThread(), null);
+        return r2;
     }
 
-    public int b(at atVar, long j, byte[] bArr, int i, int i2) {
+    /* renamed from: b */
+    public int m920b(at atVar, long j, byte[] bArr, int i, int i2) {
         az azVar = (az) atVar;
-        while (!azVar.b.b.compareAndSet(null, Thread.currentThread())) {
+        while (!azVar.b.f668b.compareAndSet(null, Thread.currentThread())) {
             try {
                 LockSupport.parkNanos(1000000);
             } catch (Throwable th) {
-                azVar.b.b.compareAndSet(Thread.currentThread(), null);
+                azVar.b.f668b.compareAndSet(Thread.currentThread(), null);
             }
         }
-        ba[] baVarArr = azVar.a.j;
+        ba[] baVarArr = azVar.a.f679j;
         if (baVarArr.length < 1) {
             throw new VirtualFileAssertionFailsException();
         }
         long j2 = (long) i2;
         if (j2 == 0) {
-            azVar.b.b.compareAndSet(Thread.currentThread(), null);
+            azVar.b.f668b.compareAndSet(Thread.currentThread(), null);
             return 0;
         }
         ba[] baVarArr2;
         long j3 = 0;
         for (ba baVar : baVarArr) {
-            j3 += baVar.c;
+            j3 += baVar.f687c;
         }
         if (j + j2 > j3) {
-            this.b.lock();
-            a(azVar.a, j + j2);
-            baVarArr = azVar.a.j;
-            this.b.unlock();
+            this.f657b.lock();
+            m905a(azVar.a, j + j2);
+            baVarArr = azVar.a.f679j;
+            this.f657b.unlock();
             baVarArr2 = baVarArr;
         } else {
             baVarArr2 = baVarArr;
         }
         int i3 = 0;
         long j4 = 0;
-        j3 = baVarArr2[0].c;
+        j3 = baVarArr2[0].f687c;
         r2 = 0;
         while (j >= j4) {
             if (j >= j3) {
                 if (i3 < baVarArr2.length - 1) {
                     i3++;
-                    j4 += baVarArr2[i3 - 1].c;
-                    j3 = baVarArr2[i3].c + j4;
+                    j4 += baVarArr2[i3 - 1].f687c;
+                    j3 = baVarArr2[i3].f687c + j4;
                 }
             }
             long j5 = j - j4;
-            long min = Math.min((j2 - ((long) r2)) + j5, baVarArr2[i3].c);
+            long min = Math.min((j2 - ((long) r2)) + j5, baVarArr2[i3].f687c);
             if (j5 >= min) {
                 break;
             }
             int i4 = (int) (min - j5);
-            azVar.b.seek(j5 + baVarArr2[i3].b);
+            azVar.b.seek(j5 + baVarArr2[i3].f686b);
             azVar.b.write(bArr, i + r2, i4);
             r2 += i4;
             j += (long) i4;
         }
         if (r2 > 0) {
-            azVar.b(j);
-            azVar.c(System.currentTimeMillis());
+            azVar.m932b(j);
+            azVar.m933c(System.currentTimeMillis());
         }
-        azVar.b.b.compareAndSet(Thread.currentThread(), null);
+        azVar.b.f668b.compareAndSet(Thread.currentThread(), null);
         return r2;
     }
 
-    public void b(at atVar) {
+    /* renamed from: b */
+    public void m923b(at atVar) {
         ay ayVar = (ay) atVar;
-        if (ayVar.c) {
-            this.b.lock();
+        if (ayVar.f683c) {
+            this.f657b.lock();
             try {
-                if (this.g) {
-                    throw new IOException(String.format(Locale.getDefault(), "the repository(%s) is already closed.", new Object[]{this.c}));
+                if (this.f662g) {
+                    throw new IOException(String.format(Locale.getDefault(), "the repository(%s) is already closed.", new Object[]{this.f658c}));
                 }
-                this.a.b();
+                this.f656a.m677b();
                 az azVar;
                 try {
-                    long b = ayVar.b();
-                    long c = ayVar.c();
+                    long b = ayVar.mo413b();
+                    long c = ayVar.m931c();
                     ContentValues contentValues = new ContentValues();
                     contentValues.put("file_size", Long.valueOf(b));
                     contentValues.put("last_access_time", Long.valueOf(c));
                     if (atVar instanceof az) {
                         azVar = (az) ayVar;
-                        b = azVar.d();
+                        b = azVar.m934d();
                         azVar.b.getFD().sync();
                         contentValues.put("last_write_time", Long.valueOf(b));
                     }
-                    au.a(this.a, ayVar.a.a, contentValues);
-                    this.a.f();
-                    this.a.c();
+                    au.m894a(this.f656a, ayVar.f681a.f670a, contentValues);
+                    this.f656a.m681f();
+                    this.f656a.m678c();
                 } catch (Throwable th) {
-                    this.a.c();
+                    this.f656a.m678c();
                 }
             } finally {
-                this.b.unlock();
+                this.f657b.unlock();
             }
         } else {
             throw new IllegalArgumentException();
         }
     }
 
-    public void c(at atVar) {
+    /* renamed from: c */
+    public void m926c(at atVar) {
         atVar = (ay) atVar;
-        if (atVar != null && atVar.c) {
-            this.b.lock();
+        if (atVar != null && atVar.f683c) {
+            this.f657b.lock();
             try {
-                b(atVar);
-                atVar.a.k.remove(atVar);
-                if (atVar.a.k.size() < 1) {
-                    atVar.a.j = null;
+                m923b(atVar);
+                atVar.f681a.f680k.remove(atVar);
+                if (atVar.f681a.f680k.size() < 1) {
+                    atVar.f681a.f679j = null;
                 }
-                atVar.c = false;
-                aw awVar = atVar.b;
-                int i = awVar.c - 1;
-                awVar.c = i;
+                atVar.f683c = false;
+                aw awVar = atVar.f682b;
+                int i = awVar.f669c - 1;
+                awVar.f669c = i;
                 if (i < 1) {
                 }
             } finally {
-                this.b.unlock();
+                this.f657b.unlock();
             }
         }
     }
 
-    public void c() {
-        this.b.lock();
+    /* renamed from: c */
+    public void m925c() {
+        this.f657b.lock();
         try {
-            if (!this.g) {
-                for (aw awVar : this.i.values()) {
+            if (!this.f662g) {
+                for (aw awVar : this.f664i.values()) {
                     try {
-                        if (awVar.c > 0) {
+                        if (awVar.f669c > 0) {
                             awVar.close();
                         } else {
                             awVar.close();
@@ -446,75 +467,78 @@ class av {
                     } catch (Throwable th) {
                     }
                 }
-                this.i.clear();
-                this.g = true;
+                this.f664i.clear();
+                this.f662g = true;
             }
-            this.b.unlock();
+            this.f657b.unlock();
         } catch (Throwable th2) {
-            this.b.unlock();
+            this.f657b.unlock();
         }
     }
 
-    private void a(ax axVar, long j) {
+    /* renamed from: a */
+    private void m905a(ax axVar, long j) {
         int i = 0;
-        if (!this.b.isHeldByCurrentThread()) {
+        if (!this.f657b.isHeldByCurrentThread()) {
             throw new VirtualFileAssertionFailsException();
-        } else if (this.g) {
-            throw new IOException(String.format(Locale.getDefault(), "the repository(%s) is already closed.", new Object[]{this.c}));
+        } else if (this.f662g) {
+            throw new IOException(String.format(Locale.getDefault(), "the repository(%s) is already closed.", new Object[]{this.f658c}));
         } else {
-            ba[] e = e(axVar.b);
+            ba[] e = m913e(axVar.f671b);
             long j2 = 0;
             while (i < e.length) {
-                j2 += e[i].c;
+                j2 += e[i].f687c;
                 i++;
             }
             if (j2 != j) {
                 ba[] a;
-                this.a.b();
+                this.f656a.m677b();
                 if (j2 < j) {
                     try {
-                        a = a(e, j - j2);
+                        a = m908a(e, j - j2);
                     } catch (Throwable th) {
-                        this.a.c();
+                        this.f656a.m678c();
                     }
                 } else {
                     a = e;
                 }
-                axVar.b = a(a);
-                if (axVar.j == null) {
+                axVar.f671b = m904a(a);
+                if (axVar.f679j == null) {
                     a = null;
                 }
-                axVar.j = a;
+                axVar.f679j = a;
                 ContentValues contentValues = new ContentValues();
-                contentValues.put("space_uri", axVar.b);
-                au.a(this.a, axVar.a, contentValues);
-                this.a.f();
-                this.a.c();
+                contentValues.put("space_uri", axVar.f671b);
+                au.m894a(this.f656a, axVar.f670a, contentValues);
+                this.f656a.m681f();
+                this.f656a.m678c();
             }
         }
     }
 
-    private void a(ax axVar, String str) {
-        if (!this.b.isHeldByCurrentThread()) {
+    /* renamed from: a */
+    private void m906a(ax axVar, String str) {
+        if (!this.f657b.isHeldByCurrentThread()) {
             throw new VirtualFileAssertionFailsException();
-        } else if (this.a.e()) {
-            String str2 = axVar.a;
-            axVar.a = str;
-            this.k.remove(str2);
-            this.k.put(axVar.a, axVar);
+        } else if (this.f656a.m680e()) {
+            String str2 = axVar.f670a;
+            axVar.f670a = str;
+            this.f666k.remove(str2);
+            this.f666k.put(axVar.f670a, axVar);
             ContentValues contentValues = new ContentValues();
-            contentValues.put("storage_uri", axVar.a);
-            au.a(this.a, str2, contentValues);
+            contentValues.put("storage_uri", axVar.f670a);
+            au.m894a(this.f656a, str2, contentValues);
         } else {
             throw new VirtualFileAssertionFailsException();
         }
     }
 
-    private ax c(String str) {
-        if (this.b.isHeldByCurrentThread()) {
-            ax axVar = (ax) this.k.get(str);
+    /* renamed from: c */
+    private ax m910c(String str) {
+        if (this.f657b.isHeldByCurrentThread()) {
+            ax axVar = (ax) this.f666k.get(str);
             if (axVar == null) {
-                axVar = d(str);
+                axVar = m912d(str);
                 if (axVar != null) {
                 }
             }
@@ -523,28 +547,29 @@ class av {
         throw new VirtualFileAssertionFailsException();
     }
 
-    private ax d(String str) {
-        Cursor c;
+    /* renamed from: d */
+    private ax m912d(String str) {
         Throwable th;
         String str2 = null;
-        if (this.b.isHeldByCurrentThread()) {
+        if (this.f657b.isHeldByCurrentThread()) {
+            Cursor c;
             try {
-                c = au.c(this.a, str, "storage_uri", "space_uri", "creation_time", "last_access_time", "last_write_time", "file_size", "owner", "attributes", "metadata");
+                c = au.m899c(this.f656a, str, "storage_uri", "space_uri", "creation_time", "last_access_time", "last_write_time", "file_size", "owner", "attributes", "metadata");
                 try {
                     if (c.getCount() > 1) {
                         throw new IllegalArgumentException();
                     } else if (c.moveToFirst()) {
                         ax axVar = new ax(c.getString(0), c.getString(1), c.getLong(2));
-                        axVar.d.set(c.getLong(3));
-                        axVar.e.set(c.getLong(4));
-                        axVar.f.set(c.getLong(5));
-                        axVar.g = c.isNull(6) ? null : c.getString(6);
-                        axVar.h = c.getInt(7);
+                        axVar.f673d.set(c.getLong(3));
+                        axVar.f674e.set(c.getLong(4));
+                        axVar.f675f.set(c.getLong(5));
+                        axVar.f676g = c.isNull(6) ? null : c.getString(6);
+                        axVar.f677h = c.getInt(7);
                         if (!c.isNull(8)) {
                             str2 = c.getString(8);
                         }
-                        axVar.i = str2;
-                        this.k.put(str, axVar);
+                        axVar.f678i = str2;
+                        this.f666k.put(str, axVar);
                         if (c != null) {
                             c.close();
                         }
@@ -574,54 +599,56 @@ class av {
         throw new VirtualFileAssertionFailsException();
     }
 
-    private ax c(String str, String str2) {
-        if (!this.b.isHeldByCurrentThread()) {
+    /* renamed from: c */
+    private ax m911c(String str, String str2) {
+        if (!this.f657b.isHeldByCurrentThread()) {
             throw new VirtualFileAssertionFailsException();
-        } else if (this.a.e()) {
+        } else if (this.f656a.m680e()) {
             try {
                 ax axVar = new ax(str, str2, System.currentTimeMillis());
-                axVar.h = 0;
+                axVar.f677h = 0;
                 ContentValues contentValues = new ContentValues();
-                contentValues.put("storage_uri", axVar.a);
-                contentValues.put("space_uri", axVar.b);
-                contentValues.put("creation_time", Long.valueOf(axVar.c));
-                contentValues.put("last_access_time", Long.valueOf(axVar.d.get()));
-                contentValues.put("last_write_time", Long.valueOf(axVar.e.get()));
-                contentValues.put("file_size", Long.valueOf(axVar.f.get()));
-                contentValues.put("attributes", Integer.valueOf(axVar.h));
-                if (axVar.g != null) {
-                    contentValues.put("owner", axVar.g);
+                contentValues.put("storage_uri", axVar.f670a);
+                contentValues.put("space_uri", axVar.f671b);
+                contentValues.put("creation_time", Long.valueOf(axVar.f672c));
+                contentValues.put("last_access_time", Long.valueOf(axVar.f673d.get()));
+                contentValues.put("last_write_time", Long.valueOf(axVar.f674e.get()));
+                contentValues.put("file_size", Long.valueOf(axVar.f675f.get()));
+                contentValues.put("attributes", Integer.valueOf(axVar.f677h));
+                if (axVar.f676g != null) {
+                    contentValues.put("owner", axVar.f676g);
                 } else {
                     contentValues.putNull("owner");
                 }
-                if (axVar.i != null) {
-                    contentValues.put("metadata", axVar.i);
+                if (axVar.f678i != null) {
+                    contentValues.put("metadata", axVar.f678i);
                 } else {
                     contentValues.putNull("metadata");
                 }
-                au.b(this.a, contentValues);
-                this.k.put(str, axVar);
+                au.m898b(this.f656a, contentValues);
+                this.f666k.put(str, axVar);
                 return axVar;
             } catch (Throwable th) {
-                IOException iOException = new IOException(String.format(Locale.getDefault(), "fail to create setDrawable file(%s) at(%s).", new Object[]{str, str2}), th);
+                IOException iOException = new IOException(String.format(Locale.getDefault(), "fail to create a file(%s) at(%s).", new Object[]{str, str2}), th);
             }
         } else {
             throw new VirtualFileAssertionFailsException();
         }
     }
 
-    private ba[] e(String str) {
-        if (this.b.isHeldByCurrentThread()) {
+    /* renamed from: e */
+    private ba[] m913e(String str) {
+        if (this.f657b.isHeldByCurrentThread()) {
             try {
-                long[] a = au.a(str);
+                long[] a = au.m895a(str);
                 if (a.length < 1) {
                     throw new IllegalArgumentException();
                 }
                 ba[] baVarArr = new ba[a.length];
                 for (int i = 0; i < baVarArr.length; i++) {
-                    baVarArr[i] = (ba) this.j.get(au.a(this.c, a[i]));
+                    baVarArr[i] = (ba) this.f665j.get(au.m889a(this.f658c, a[i]));
                     if (baVarArr[i] == null) {
-                        baVarArr[i] = b(a[i]);
+                        baVarArr[i] = m909b(a[i]);
                     }
                 }
                 return baVarArr;
@@ -635,9 +662,10 @@ class av {
         }
     }
 
-    private ba[] a(ba[] baVarArr, long j) {
-        if (this.b.isHeldByCurrentThread()) {
-            ba[] a = a(j);
+    /* renamed from: a */
+    private ba[] m908a(ba[] baVarArr, long j) {
+        if (this.f657b.isHeldByCurrentThread()) {
+            ba[] a = m907a(j);
             ba[] baVarArr2 = (ba[]) Arrays.copyOf(baVarArr, baVarArr.length + a.length);
             for (int length = baVarArr.length; length < baVarArr2.length; length++) {
                 baVarArr2[length] = a[length - baVarArr.length];
@@ -647,29 +675,30 @@ class av {
         throw new VirtualFileAssertionFailsException();
     }
 
-    private ba[] a(long j) {
+    /* renamed from: a */
+    private ba[] m907a(long j) {
         IOException e;
         Throwable th;
-        if (!this.b.isHeldByCurrentThread()) {
+        if (!this.f657b.isHeldByCurrentThread()) {
             throw new VirtualFileAssertionFailsException();
-        } else if (this.a.e()) {
+        } else if (this.f656a.m680e()) {
             Cursor cursor = null;
             try {
                 Cursor cursor2;
-                if (this.h < 0) {
-                    cursor = au.d(this.a, au.a(this.c, new long[0]), "offset", "size");
+                if (this.f663h < 0) {
+                    cursor = au.m902d(this.f656a, au.m889a(this.f658c, new long[0]), "offset", "size");
                     if (cursor.moveToLast()) {
-                        this.h = cursor.getLong(0) + cursor.getLong(1);
+                        this.f663h = cursor.getLong(0) + cursor.getLong(1);
                         cursor2 = cursor;
                     } else {
-                        this.h = 0;
+                        this.f663h = 0;
                         cursor2 = cursor;
                     }
                 } else {
                     cursor2 = null;
                 }
                 try {
-                    this.h += a(this.h, j, 1).c;
+                    this.f663h += m903a(this.f663h, j, 1).f687c;
                     ba[] baVarArr = new ba[]{r0};
                     if (cursor2 != null) {
                         cursor2.close();
@@ -696,26 +725,27 @@ class av {
                 throw e;
             } catch (Throwable th4) {
                 th = th4;
-                throw new IOException(String.format(Locale.getDefault(), "fail to allocate atom spaces of size %getTriangleEdge bytes.", new Object[]{Long.valueOf(j)}), th);
+                throw new IOException(String.format(Locale.getDefault(), "fail to allocate atom spaces of size %d bytes.", new Object[]{Long.valueOf(j)}), th);
             }
         } else {
             throw new VirtualFileAssertionFailsException();
         }
     }
 
-    private ba b(long j) {
+    /* renamed from: b */
+    private ba m909b(long j) {
         Throwable th;
-        if (this.b.isHeldByCurrentThread()) {
+        if (this.f657b.isHeldByCurrentThread()) {
             Cursor cursor = null;
             try {
-                String a = au.a(this.c, j);
-                Cursor d = au.d(this.a, a, "uri", "offset", "size", "state");
+                String a = au.m889a(this.f658c, j);
+                Cursor d = au.m902d(this.f656a, a, "uri", "offset", "size", "state");
                 try {
                     if (d.getCount() == 1 && d.moveToFirst()) {
                         d.moveToFirst();
                         ba baVar = new ba(d.getString(0), d.getLong(1), d.getLong(2));
-                        baVar.d = d.getInt(3);
-                        this.j.put(a, baVar);
+                        baVar.f688d = d.getInt(3);
+                        this.f665j.put(a, baVar);
                         if (d != null) {
                             d.close();
                         }
@@ -732,42 +762,44 @@ class av {
                 }
             } catch (Throwable th3) {
                 th = th3;
-                throw new IOException(String.format(Locale.getDefault(), "fail to load an atom space at %getTriangleEdge.", new Object[]{Long.valueOf(j)}), th);
+                throw new IOException(String.format(Locale.getDefault(), "fail to load an atom space at %d.", new Object[]{Long.valueOf(j)}), th);
             }
         }
         throw new VirtualFileAssertionFailsException();
     }
 
-    private ba a(long j, long j2, int i) {
-        if (!this.b.isHeldByCurrentThread()) {
+    /* renamed from: a */
+    private ba m903a(long j, long j2, int i) {
+        if (!this.f657b.isHeldByCurrentThread()) {
             throw new VirtualFileAssertionFailsException();
-        } else if (this.a.e()) {
+        } else if (this.f656a.m680e()) {
             long max = Math.max(1, j2);
             try {
-                String a = au.a(this.c, j);
+                String a = au.m889a(this.f658c, j);
                 ba baVar = new ba(a, j, max);
-                baVar.d = i;
+                baVar.f688d = i;
                 ContentValues contentValues = new ContentValues();
-                contentValues.put("uri", baVar.a);
-                contentValues.put("offset", Long.valueOf(baVar.b));
-                contentValues.put("size", Long.valueOf(baVar.c));
-                contentValues.put("state", Integer.valueOf(baVar.d));
-                au.c(this.a, contentValues);
-                this.j.put(a, baVar);
+                contentValues.put("uri", baVar.f685a);
+                contentValues.put("offset", Long.valueOf(baVar.f686b));
+                contentValues.put("size", Long.valueOf(baVar.f687c));
+                contentValues.put("state", Integer.valueOf(baVar.f688d));
+                au.m901c(this.f656a, contentValues);
+                this.f665j.put(a, baVar);
                 return baVar;
             } catch (Throwable th) {
-                IOException iOException = new IOException(String.format(Locale.getDefault(), "fail to create an atom space at [%getTriangleEdge, %getTriangleEdge).", new Object[]{Long.valueOf(j), Long.valueOf(max + j)}), th);
+                IOException iOException = new IOException(String.format(Locale.getDefault(), "fail to create an atom space at [%d, %d).", new Object[]{Long.valueOf(j), Long.valueOf(max + j)}), th);
             }
         } else {
             throw new VirtualFileAssertionFailsException();
         }
     }
 
-    private String a(ba[] baVarArr) {
+    /* renamed from: a */
+    private String m904a(ba[] baVarArr) {
         long[] jArr = new long[baVarArr.length];
         for (int i = 0; i < jArr.length; i++) {
-            jArr[i] = baVarArr[i].b;
+            jArr[i] = baVarArr[i].f686b;
         }
-        return au.a(this.c, jArr);
+        return au.m889a(this.f658c, jArr);
     }
 }

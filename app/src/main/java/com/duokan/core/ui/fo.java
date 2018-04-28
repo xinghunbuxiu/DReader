@@ -1,5 +1,6 @@
 package com.duokan.core.ui;
 
 public interface fo {
-    void a();
+    /* renamed from: a */
+    void mo530a();
 }

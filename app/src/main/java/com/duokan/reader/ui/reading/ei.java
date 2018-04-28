@@ -1,57 +1,31 @@
 package com.duokan.reader.ui.reading;
 
-import android.annotation.TargetApi;
-import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.os.Build.VERSION;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
-import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
+import android.view.View.OnClickListener;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.domain.p041a.C0664a;
+import com.duokan.reader.ui.general.ReaderUi;
+import com.duokan.reader.ui.general.be;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.IFeature;
-import com.duokan.kernel.DkUtils;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.domain.bookshelf.c;
+class ei implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ dg f10073a;
 
-public class ei extends ActivatedController {
-    protected final sh a = ((sh) getContext().queryFeature(sh.class));
-    protected final c b = this.a.G();
-    protected final wl c;
-    protected final Drawable d;
-    protected final FrameLayout e;
-    protected final View f;
-    protected final ImageView g;
-
-    @TargetApi(11)
-    public ei(IFeature featrue, wl wlVar) {
-        super(featrue);
-        this.c = wlVar;
-        this.d = this.a.S();
-        this.e = new FrameLayout(getContext());
-        setContentView(this.e);
-        this.f = new ej(this, getContext());
-        this.g = new ImageView(getContext());
-        Bitmap c = a.c(this.c.getWidth() / 2, this.c.getHeight() / 2, Config.ARGB_8888);
-        Canvas canvas = new Canvas(c);
-        canvas.scale(0.5f, 0.5f);
-        this.c.draw(canvas);
-        DkUtils.blurBitmap(c, 8);
-        this.g.setImageBitmap(c);
-        if (VERSION.SDK_INT >= 11) {
-            this.g.setAlpha(0.2f);
-        }
-        this.g.setScaleType(ScaleType.FIT_XY);
-        this.e.addView(this.f, new LayoutParams(-1, -1));
-        this.e.addView(this.g, new LayoutParams(-1, -1));
+    ei(dg dgVar) {
+        this.f10073a = dgVar;
     }
 
-    protected boolean onBack() {
-        ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).goHome(null);
-        return true;
+    public void onClick(View view) {
+        if (dg.f9991b.m861b()) {
+            el elVar = (el) dg.f9991b.m858a();
+            int score = (int) this.f10073a.f10010k.getScore();
+            if (score < 1) {
+                be.m10286a(this.f10073a.getContext(), C0258j.store_comment__publish_comment_view__rating_null, 0).show();
+                return;
+            }
+            String obj = this.f10073a.f10012m.getText().toString();
+            ReaderUi.m10161a(this.f10073a.getContext(), this.f10073a);
+            C0664a.m3108a().m3113a(this.f10073a.f10025z.m4156I(), score, elVar.f10082d.f2064i, obj, new ej(this, elVar, score, obj));
+        }
     }
 }

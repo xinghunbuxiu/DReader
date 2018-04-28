@@ -1,23 +1,35 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.MyContextWrapper;
 import com.duokan.core.sys.ag;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.common.webservices.duokan.p;
-import com.duokan.reader.ui.general.web.StorePageController;
+import com.duokan.reader.domain.document.ak;
+import com.duokan.reader.domain.document.epub.av;
+import java.util.Map;
 
-class hw implements ag {
-    final /* synthetic */ hv a;
+class hw implements ag<Map<av, Integer>> {
+    /* renamed from: a */
+    final /* synthetic */ ak f10357a;
+    /* renamed from: b */
+    final /* synthetic */ hv f10358b;
 
-    hw(hv hvVar) {
-        this.a = hvVar;
+    hw(hv hvVar, ak akVar) {
+        this.f10358b = hvVar;
+        this.f10357a = akVar;
     }
 
-    public void a(String str) {
-        ActivatedController storePageController = new StorePageController(MyContextWrapper.getFeature(this.a.a.a.a.getContext()));
-        storePageController.loadUrl(p.i().f(str, null));
-        a.k().a("tip", "click", "reading_menu_tip_entrance", true);
-        ((ReaderFeature) this.a.a.a.a.getContext().queryFeature(ReaderFeature.class)).showPopupSmoothly(storePageController, null);
+    public /* synthetic */ void run(Object obj) {
+        m14396a((Map) obj);
+    }
+
+    /* renamed from: a */
+    public void m14396a(Map<av, Integer> map) {
+        for (Integer intValue : map.values()) {
+            int intValue2 = intValue.intValue();
+            if (intValue2 != 0 && intValue2 != 1) {
+                this.f10358b.f10354a.run(null);
+                return;
+            }
+        }
+        this.f10358b.f10356c.mo2185a(true);
+        this.f10358b.f10356c.m13100b(this.f10357a, this.f10358b.f10355b, this.f10358b.f10354a);
     }
 }

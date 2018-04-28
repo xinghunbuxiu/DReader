@@ -5,8 +5,8 @@ import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.text.TextUtils;
-
-import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ah;
 import com.duokan.kernel.DkArgbColor;
 import com.duokan.kernel.DkBox;
@@ -14,6 +14,11 @@ import com.duokan.kernel.DkFlowRenderOption;
 import com.duokan.kernel.DkPos;
 import com.duokan.kernel.DkUtils;
 import com.duokan.kernel.txtlib.DktPage;
+import com.duokan.reader.domain.document.C0897d;
+import com.duokan.reader.domain.document.C0901g;
+import com.duokan.reader.domain.document.C0911h;
+import com.duokan.reader.domain.document.C0917k;
+import com.duokan.reader.domain.document.C0923m;
 import com.duokan.reader.domain.document.ab;
 import com.duokan.reader.domain.document.ac;
 import com.duokan.reader.domain.document.ad;
@@ -30,502 +35,566 @@ import com.duokan.reader.domain.document.ba;
 import com.duokan.reader.domain.document.bb;
 import com.duokan.reader.domain.document.bc;
 import com.duokan.reader.domain.document.bd;
-import com.duokan.reader.domain.document.d;
-import com.duokan.reader.domain.document.g;
-import com.duokan.reader.domain.document.h;
-import com.duokan.reader.domain.document.k;
-import com.duokan.reader.domain.document.m;
-
 import java.util.Arrays;
 
 public class aj extends ag implements ba, bd, ar {
-    static final /* synthetic */ boolean c = (!aj.class.desiredAssertionStatus());
-    private final au d;
-    private final ai e;
-    private ah f = null;
-    private final al g;
-    private final at h;
-    private as i = null;
-    private boolean j = false;
-    private boolean k = false;
-    private int l = -1;
-    private long m = -1;
-    private String n = null;
-    private String o = null;
-    private ap p = null;
-    private ap q = null;
+    /* renamed from: c */
+    static final /* synthetic */ boolean f4888c = (!aj.class.desiredAssertionStatus());
+    /* renamed from: d */
+    private final au f4889d;
+    /* renamed from: e */
+    private final ai f4890e;
+    /* renamed from: f */
+    private ah f4891f = null;
+    /* renamed from: g */
+    private final al f4892g;
+    /* renamed from: h */
+    private final at f4893h;
+    /* renamed from: i */
+    private as f4894i = null;
+    /* renamed from: j */
+    private boolean f4895j = false;
+    /* renamed from: k */
+    private boolean f4896k = false;
+    /* renamed from: l */
+    private int f4897l = -1;
+    /* renamed from: m */
+    private long f4898m = -1;
+    /* renamed from: n */
+    private String f4899n = null;
+    /* renamed from: o */
+    private String f4900o = null;
+    /* renamed from: p */
+    private ap f4901p = null;
+    /* renamed from: q */
+    private ap f4902q = null;
 
-    public /* synthetic */ bb a(Point point, Point point2) {
-        return b(point, point2);
+    /* renamed from: a */
+    public /* synthetic */ bb mo1293a(Point point, Point point2) {
+        return m7440b(point, point2);
     }
 
-    public /* synthetic */ bb b(Point point) {
-        return h(point);
+    /* renamed from: b */
+    public /* synthetic */ bb mo1302b(Point point) {
+        return m7462h(point);
     }
 
-    public /* synthetic */ d[] n() {
-        return c();
+    /* renamed from: n */
+    public /* synthetic */ C0897d[] mo1336n() {
+        return m7448c();
     }
 
     public aj(au auVar, ai aiVar, ah ahVar, al alVar, at atVar) {
-        if (!c && (auVar == null || ahVar == null)) {
+        if (!f4888c && (auVar == null || ahVar == null)) {
             throw new AssertionError();
-        } else if (c || (aiVar != null && aiVar.a())) {
-            a.c().b(N());
-            this.d = auVar;
-            this.d.b((Object) TaskHandler.getThread());
-            this.d.b((Object) this);
-            this.e = new ai(this.d, aiVar, 0);
-            this.f = ahVar;
-            this.g = alVar;
-            this.h = atVar;
-            this.l = this.d.h().b;
-            this.i = this.d.a(this.e, (ar) this);
+        } else if (f4888c || (aiVar != null && aiVar.mo1186a())) {
+            C0328a.m757c().m764b(m6108M());
+            this.f4889d = auVar;
+            this.f4889d.m5841b((Object) UThread.getCurrentThread());
+            this.f4889d.m5841b((Object) this);
+            this.f4890e = new ai(this.f4889d, aiVar, 0);
+            this.f4891f = ahVar;
+            this.f4892g = alVar;
+            this.f4893h = atVar;
+            this.f4897l = this.f4889d.m7524h().b;
+            this.f4894i = this.f4889d.m7517a(this.f4890e, (ar) this);
         } else {
             throw new AssertionError();
         }
     }
 
-    public boolean a() {
-        a.c().b(N());
+    /* renamed from: a */
+    public boolean mo1299a() {
+        C0328a.m757c().m764b(m6108M());
         return false;
     }
 
-    public boolean b() {
-        a.c().b(N());
+    /* renamed from: b */
+    public boolean mo1305b() {
+        C0328a.m757c().m764b(m6108M());
         return false;
     }
 
-    public long j() {
-        a.c().b(N());
-        return this.m;
+    /* renamed from: j */
+    public long mo1327j() {
+        C0328a.m757c().m764b(m6108M());
+        return this.f4898m;
     }
 
-    public k p() {
-        a.c().b(N());
-        return this.d.h();
+    /* renamed from: p */
+    public C0917k mo1340p() {
+        C0328a.m757c().m764b(m6108M());
+        return this.f4889d.m7524h();
     }
 
-    public m q() {
-        a.c().b(N());
-        return this.f;
+    /* renamed from: q */
+    public C0923m mo1342q() {
+        C0328a.m757c().m764b(m6108M());
+        return this.f4891f;
     }
 
-    public void a(m mVar) {
-        O();
-        this.f = (ah) mVar;
+    /* renamed from: a */
+    public void mo1296a(C0923m c0923m) {
+        mo1288N();
+        this.f4891f = (ah) c0923m;
         invalidateSelf();
     }
 
-    public boolean k() {
-        a.c().b(N());
+    /* renamed from: k */
+    public boolean mo1330k() {
+        C0328a.m757c().m764b(m6108M());
         return false;
     }
 
-    public ak l() {
-        a.c().b(N());
-        return this.e;
+    /* renamed from: l */
+    public ak mo1332l() {
+        C0328a.m757c().m764b(m6108M());
+        return this.f4890e;
     }
 
-    public bb m() {
-        if (E()) {
-            return new at(this.e.n(), this.e.o());
+    /* renamed from: m */
+    public bb mo1334m() {
+        if (mo1282E()) {
+            return new at(this.f4890e.mo1460n(), this.f4890e.mo1461o());
         }
         return new at();
     }
 
-    public b[] c() {
+    /* renamed from: c */
+    public C0986b[] m7448c() {
         int i = 0;
-        a.c().b(N());
-        if (!E()) {
-            return new b[0];
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1282E()) {
+            return new C0986b[0];
         }
-        long[] charPositions = Q().getCharPositions();
-        b[] bVarArr = new b[charPositions.length];
-        while (i < bVarArr.length) {
-            bVarArr[i] = ab.a(charPositions[i]);
+        long[] charPositions = m7402P().getCharPositions();
+        C0986b[] c0986bArr = new C0986b[charPositions.length];
+        while (i < c0986bArr.length) {
+            c0986bArr[i] = ab.m7382a(charPositions[i]);
             i++;
         }
-        R();
-        return bVarArr;
+        m7403Q();
+        return c0986bArr;
     }
 
-    public CharSequence o() {
-        a.c().b(N());
-        if (!E()) {
+    /* renamed from: o */
+    public CharSequence mo1338o() {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1282E()) {
             return "";
         }
-        CharSequence chars = Q().getChars();
-        R();
+        CharSequence chars = m7402P().getChars();
+        m7403Q();
         return chars;
     }
 
-    public int r() {
-        a.c().b(N());
+    /* renamed from: r */
+    public int mo1343r() {
+        C0328a.m757c().m764b(m6108M());
         return 0;
     }
 
-    public int s() {
-        a.c().b(N());
+    /* renamed from: s */
+    public int mo1345s() {
+        C0328a.m757c().m764b(m6108M());
         return 0;
     }
 
-    public int t() {
-        a.c().b(N());
+    /* renamed from: t */
+    public int mo1347t() {
+        C0328a.m757c().m764b(m6108M());
         return 0;
     }
 
-    public int u() {
-        a.c().b(N());
+    /* renamed from: u */
+    public int mo1349u() {
+        C0328a.m757c().m764b(m6108M());
         return 0;
     }
 
-    public int x() {
-        a.c().b(N());
+    /* renamed from: x */
+    public int mo1354x() {
+        C0328a.m757c().m764b(m6108M());
         return 0;
     }
 
-    public int v() {
-        a.c().b(N());
+    /* renamed from: v */
+    public int mo1351v() {
+        C0328a.m757c().m764b(m6108M());
         return 0;
     }
 
-    public int w() {
-        a.c().b(N());
+    /* renamed from: w */
+    public int mo1353w() {
+        C0328a.m757c().m764b(m6108M());
         return 0;
     }
 
-    public int y() {
-        a.c().b(N());
+    /* renamed from: y */
+    public int mo1355y() {
+        C0328a.m757c().m764b(m6108M());
         return 0;
     }
 
-    public Rect z() {
-        a.c().b(N());
+    /* renamed from: z */
+    public Rect mo1356z() {
+        C0328a.m757c().m764b(m6108M());
         return new Rect();
     }
 
-    public Rect A() {
-        a.c().b(N());
+    /* renamed from: A */
+    public Rect mo1280A() {
+        C0328a.m757c().m764b(m6108M());
         return new Rect();
     }
 
-    public int B() {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: B */
+    public int mo1281B() {
+        C0328a.m757c().m764b(m6108M());
+        if (f4888c || mo1284G()) {
             return 0;
         }
         throw new AssertionError();
     }
 
-    public Rect a(au auVar) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: a */
+    public Rect mo1291a(au auVar) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4888c || mo1284G()) {
             return new Rect();
         }
         throw new AssertionError();
     }
 
-    public boolean E() {
-        a.c().b(N());
-        if (G()) {
+    /* renamed from: E */
+    public boolean mo1282E() {
+        C0328a.m757c().m764b(m6108M());
+        if (mo1284G()) {
             return true;
         }
-        while (!this.j && !this.i.d() && this.d.a && !this.d.c()) {
+        while (!this.f4895j && !this.f4894i.m7500d() && this.f4889d.a && !this.f4889d.mo1272c()) {
             try {
                 Thread.sleep(50);
             } catch (Throwable th) {
             }
         }
-        return G();
+        return mo1284G();
     }
 
-    public void a(Runnable runnable, Runnable runnable2) {
-        a.c().b(N());
-        ah.submitFuture(new ak(this, runnable, runnable2));
+    /* renamed from: a */
+    public void mo1297a(Runnable runnable, Runnable runnable2) {
+        C0328a.m757c().m764b(m6108M());
+        ah.m871b(new ak(this, runnable, runnable2));
     }
 
-    public boolean F() {
-        a.c().b(N());
-        return this.i.d();
+    /* renamed from: F */
+    public boolean mo1283F() {
+        C0328a.m757c().m764b(m6108M());
+        return this.f4894i.m7500d();
     }
 
-    public boolean G() {
-        a.c().b(N());
-        return !this.i.d() && this.j;
+    /* renamed from: G */
+    public boolean mo1284G() {
+        C0328a.m757c().m764b(m6108M());
+        return !this.f4894i.m7500d() && this.f4895j;
     }
 
-    public void H() {
-        a.c().b(N());
-        if (!this.i.d()) {
-            this.i.a();
-            if (this.k) {
-                d();
-                this.j = false;
+    /* renamed from: H */
+    public void mo1285H() {
+        C0328a.m757c().m764b(m6108M());
+        if (!this.f4894i.m7500d()) {
+            this.f4894i.mo1467a();
+            if (this.f4896k) {
+                m7412d();
+                this.f4895j = false;
             }
-            O();
-            this.d.b((bd) this);
-            this.d.c(TaskHandler.getThread());
+            mo1288N();
+            this.f4889d.m5840b((bd) this);
+            this.f4889d.m5842c(UThread.getCurrentThread());
         }
     }
 
-    public void a(boolean z) {
-        a.c().b(N());
-        if (this.p != null) {
+    /* renamed from: a */
+    public void mo1298a(boolean z) {
+        C0328a.m757c().m764b(m6108M());
+        if (this.f4901p != null) {
             if (z) {
-                this.g.a(this.p, true);
+                this.f4892g.m6360a(this.f4901p, true);
             } else {
-                this.g.a(this.p);
+                this.f4892g.m6359a(this.f4901p);
             }
-            this.p = null;
+            this.f4901p = null;
         }
     }
 
-    public ae a(Point point) {
-        a.c().b(N());
+    /* renamed from: a */
+    public ae mo1292a(Point point) {
+        C0328a.m757c().m764b(m6108M());
         return null;
     }
 
-    public at b(Point point, Point point2) {
-        a.c().b(N());
-        if (!c && !G()) {
+    /* renamed from: b */
+    public at m7440b(Point point, Point point2) {
+        C0328a.m757c().m764b(m6108M());
+        if (!f4888c && !mo1284G()) {
             throw new AssertionError();
-        } else if (!G() || this.e.f()) {
+        } else if (!mo1284G() || this.f4890e.m5817f()) {
             return new at();
         } else {
-            DktPage Q = Q();
-            if (c || Q != null) {
+            DktPage P = m7402P();
+            if (f4888c || P != null) {
                 DkPos dkPos = new DkPos();
                 dkPos.mX = (float) point.x;
                 dkPos.mY = (float) point.y;
                 DkPos dkPos2 = new DkPos();
                 dkPos2.mX = (float) point2.x;
                 dkPos2.mY = (float) point2.y;
-                long[] selectionRange = Q.getSelectionRange(dkPos, dkPos2);
+                long[] selectionRange = P.getSelectionRange(dkPos, dkPos2);
                 if (selectionRange.length < 2) {
                     return new at();
                 }
-                at a = ab.a(ab.a(selectionRange[0]), ab.a(selectionRange[1]));
-                R();
+                at a = ab.m7381a(ab.m7382a(selectionRange[0]), ab.m7382a(selectionRange[1]));
+                m7403Q();
                 return a;
             }
             throw new AssertionError();
         }
     }
 
-    public at h(Point point) {
-        a.c().b(N());
-        if (!c && !G()) {
+    /* renamed from: h */
+    public at m7462h(Point point) {
+        C0328a.m757c().m764b(m6108M());
+        if (!f4888c && !mo1284G()) {
             throw new AssertionError();
-        } else if (!G() || this.e.f()) {
+        } else if (!mo1284G() || this.f4890e.m5817f()) {
             return new at();
         } else {
-            DktPage Q = Q();
-            if (c || Q != null) {
+            DktPage P = m7402P();
+            if (f4888c || P != null) {
                 DkPos dkPos = new DkPos();
                 dkPos.mX = (float) point.x;
                 dkPos.mY = (float) point.y;
-                long[] hitTestTextRangeByMode = Q.hitTestTextRangeByMode(dkPos, 2);
+                long[] hitTestTextRangeByMode = P.hitTestTextRangeByMode(dkPos, 2);
                 if (hitTestTextRangeByMode.length < 2) {
                     return new at();
                 }
-                at a = ab.a(ab.a(hitTestTextRangeByMode[0]), ab.a(hitTestTextRangeByMode[1]));
-                R();
-                return (at) a.b(m());
+                at a = ab.m7381a(ab.m7382a(hitTestTextRangeByMode[0]), ab.m7382a(hitTestTextRangeByMode[1]));
+                m7403Q();
+                return (at) a.mo1197b(mo1334m());
             }
             throw new AssertionError();
         }
     }
 
-    public int c(Point point) {
-        a.c().b(N());
+    /* renamed from: c */
+    public int mo1306c(Point point) {
+        C0328a.m757c().m764b(m6108M());
         return -1;
     }
 
-    public int a(Point point, int i) {
-        a.c().b(N());
+    /* renamed from: a */
+    public int mo1289a(Point point, int i) {
+        C0328a.m757c().m764b(m6108M());
         return -1;
     }
 
-    public int d(Point point) {
-        a.c().b(N());
+    /* renamed from: d */
+    public int mo1310d(Point point) {
+        C0328a.m757c().m764b(m6108M());
         return -1;
     }
 
-    public int e(Point point) {
-        a.c().b(N());
+    /* renamed from: e */
+    public int mo1314e(Point point) {
+        C0328a.m757c().m764b(m6108M());
         return -1;
     }
 
-    public int a(bb bbVar) {
-        a.c().b(N());
+    /* renamed from: a */
+    public int mo1290a(bb bbVar) {
+        C0328a.m757c().m764b(m6108M());
         return -1;
     }
 
-    public int f(Point point) {
-        a.c().b(N());
+    /* renamed from: f */
+    public int mo1317f(Point point) {
+        C0328a.m757c().m764b(m6108M());
         return -1;
     }
 
-    public int g(Point point) {
+    /* renamed from: g */
+    public int mo1320g(Point point) {
         return -1;
     }
 
-    public Rect b(Rect rect) {
-        a.c().b(N());
+    /* renamed from: b */
+    public Rect mo1301b(Rect rect) {
+        C0328a.m757c().m764b(m6108M());
         return new Rect(rect);
     }
 
-    public Rect c(Rect rect) {
-        a.c().b(N());
+    /* renamed from: c */
+    public Rect mo1307c(Rect rect) {
+        C0328a.m757c().m764b(m6108M());
         return new Rect(rect);
     }
 
-    public af c(int i) {
-        a.c().b(N());
+    /* renamed from: c */
+    public af mo1308c(int i) {
+        C0328a.m757c().m764b(m6108M());
         return null;
     }
 
-    public aw d(int i) {
-        a.c().b(N());
+    /* renamed from: d */
+    public aw mo1312d(int i) {
+        C0328a.m757c().m764b(m6108M());
         return null;
     }
 
-    public ab e(int i) {
-        a.c().b(N());
+    /* renamed from: e */
+    public ab mo1315e(int i) {
+        C0328a.m757c().m764b(m6108M());
         return null;
     }
 
-    public com.duokan.reader.domain.document.ah f(int i) {
-        a.c().b(N());
+    /* renamed from: f */
+    public com.duokan.reader.domain.document.ah mo1319f(int i) {
+        C0328a.m757c().m764b(m6108M());
         return null;
     }
 
-    public Rect g(int i) {
-        a.c().b(N());
+    /* renamed from: g */
+    public Rect mo1322g(int i) {
+        C0328a.m757c().m764b(m6108M());
         return new Rect();
     }
 
-    public Rect h(int i) {
-        a.c().b(N());
+    /* renamed from: h */
+    public Rect mo1325h(int i) {
+        C0328a.m757c().m764b(m6108M());
         return null;
     }
 
-    public Rect i(int i) {
-        a.c().b(N());
+    /* renamed from: i */
+    public Rect mo1326i(int i) {
+        C0328a.m757c().m764b(m6108M());
         return new Rect();
     }
 
-    public Rect j(int i) {
-        a.c().b(N());
+    /* renamed from: j */
+    public Rect mo1328j(int i) {
+        C0328a.m757c().m764b(m6108M());
         return new Rect();
     }
 
-    public String I() {
-        return this.n == null ? "" : this.n;
-    }
-
-    public String J() {
-        a.c().b(N());
-        if (!E() || this.e.f()) {
+    /* renamed from: I */
+    public String mo1286I() {
+        C0328a.m757c().m764b(m6108M());
+        if (!mo1282E() || this.f4890e.m5817f()) {
             return "";
         }
-        String textContent = Q().getTextContent();
-        R();
+        String textContent = m7402P().getTextContent();
+        m7403Q();
         return textContent;
     }
 
-    public String b(bb bbVar) {
-        a.c().b(N());
-        if (!c && bbVar == null) {
+    /* renamed from: b */
+    public String mo1303b(bb bbVar) {
+        C0328a.m757c().m764b(m6108M());
+        if (!f4888c && bbVar == null) {
             throw new AssertionError();
-        } else if (!E() || this.e.f()) {
+        } else if (!mo1282E() || this.f4890e.m5817f()) {
             return "";
         } else {
             String str = "";
-            at atVar = (at) bbVar.b(m());
-            str = Q().getTextContentOfRange(ab.a(atVar.j()), ab.a(atVar.k()));
-            R();
+            at atVar = (at) bbVar.mo1197b(mo1334m());
+            str = m7402P().getTextContentOfRange(ab.m7379a(atVar.m7513j()), ab.m7379a(atVar.m7514k()));
+            m7403Q();
             return str;
         }
     }
 
-    public String K() {
-        a.c().b(N());
-        if (!c && !G()) {
+    /* renamed from: J */
+    public String mo1287J() {
+        C0328a.m757c().m764b(m6108M());
+        if (!f4888c && !mo1284G()) {
             throw new AssertionError();
-        } else if (this.f.k) {
-            return DkUtils.chs2chtText(J());
+        } else if (this.f4891f.k) {
+            return DkUtils.chs2chtText(mo1286I());
         } else {
-            return J();
+            return mo1286I();
         }
     }
 
-    public String c(bb bbVar) {
-        a.c().b(N());
-        if (!c && !G()) {
+    /* renamed from: c */
+    public String mo1309c(bb bbVar) {
+        C0328a.m757c().m764b(m6108M());
+        if (!f4888c && !mo1284G()) {
             throw new AssertionError();
-        } else if (this.f.k) {
-            return DkUtils.chs2chtText(b(bbVar));
+        } else if (this.f4891f.k) {
+            return DkUtils.chs2chtText(mo1303b(bbVar));
         } else {
-            return b(bbVar);
+            return mo1303b(bbVar);
         }
     }
 
-    public Rect d(bb bbVar) {
-        a.c().b(N());
-        if (!c && !G()) {
+    /* renamed from: d */
+    public Rect mo1311d(bb bbVar) {
+        C0328a.m757c().m764b(m6108M());
+        if (!f4888c && !mo1284G()) {
             throw new AssertionError();
-        } else if (!c && bbVar == null) {
+        } else if (!f4888c && bbVar == null) {
             throw new AssertionError();
-        } else if (!G() || this.e.f()) {
+        } else if (!mo1284G() || this.f4890e.m5817f()) {
             return new Rect();
         } else {
-            if (bbVar == null || bbVar.f()) {
+            if (bbVar == null || bbVar.m5817f()) {
                 return new Rect();
             }
-            DkBox[] textRects = Q().getTextRects(((b) bbVar.g()).g(), ((b) bbVar.h()).g());
+            DkBox[] textRects = m7402P().getTextRects(((C0986b) bbVar.mo1198g()).m7539g(), ((C0986b) bbVar.mo1199h()).m7539g());
             Rect rect = new Rect();
             for (int i = 0; i < textRects.length; i++) {
                 rect.union(new Rect(Math.round(textRects[i].mX0), Math.round(textRects[i].mY0), Math.round(textRects[i].mX1), Math.round(textRects[i].mY1)));
             }
-            R();
+            m7403Q();
             return rect;
         }
     }
 
-    public Rect[] e(bb bbVar) {
-        a.c().b(N());
-        if (!c && !G()) {
+    /* renamed from: e */
+    public Rect[] mo1316e(bb bbVar) {
+        C0328a.m757c().m764b(m6108M());
+        if (!f4888c && !mo1284G()) {
             throw new AssertionError();
-        } else if (!c && bbVar == null) {
+        } else if (!f4888c && bbVar == null) {
             throw new AssertionError();
-        } else if (!G() || this.e.f()) {
+        } else if (!mo1284G() || this.f4890e.m5817f()) {
             return new Rect[0];
         } else {
-            if (bbVar == null || bbVar.f()) {
+            if (bbVar == null || bbVar.m5817f()) {
                 return new Rect[0];
             }
-            bb b = bbVar.b(m());
-            if (b == null || b.f()) {
+            bb b = bbVar.mo1197b(mo1334m());
+            if (b == null || b.m5817f()) {
                 return new Rect[0];
             }
-            DkBox[] textRects = Q().getTextRects(((b) b.g()).g(), ((b) b.h()).g());
+            DkBox[] textRects = m7402P().getTextRects(((C0986b) b.mo1198g()).m7539g(), ((C0986b) b.mo1199h()).m7539g());
             Rect[] rectArr = new Rect[textRects.length];
             for (int i = 0; i < rectArr.length; i++) {
                 rectArr[i] = new Rect(Math.round(textRects[i].mX0), Math.round(textRects[i].mY0), Math.round(textRects[i].mX1), Math.round(textRects[i].mY1));
             }
             Arrays.sort(rectArr, new am(this));
-            R();
+            m7403Q();
             return rectArr;
         }
     }
 
-    public Point f(bb bbVar) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: f */
+    public Point mo1318f(bb bbVar) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4888c || mo1284G()) {
             Point point = new Point();
-            Rect[] e = e(bbVar);
+            Rect[] e = mo1316e(bbVar);
             if (e.length >= 1) {
                 point.x = e[0].left;
                 point.y = e[0].top;
@@ -535,11 +604,12 @@ public class aj extends ag implements ba, bd, ar {
         throw new AssertionError();
     }
 
-    public Point g(bb bbVar) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: g */
+    public Point mo1321g(bb bbVar) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4888c || mo1284G()) {
             Point point = new Point();
-            Rect[] e = e(bbVar);
+            Rect[] e = mo1316e(bbVar);
             if (e.length >= 1) {
                 point.x = e[e.length - 1].right;
                 point.y = e[e.length - 1].bottom;
@@ -549,149 +619,163 @@ public class aj extends ag implements ba, bd, ar {
         throw new AssertionError();
     }
 
-    public ac k(int i) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: k */
+    public ac mo1329k(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4888c || mo1284G()) {
             return null;
         }
         throw new AssertionError();
     }
 
-    public Rect l(int i) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: l */
+    public Rect mo1331l(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4888c || mo1284G()) {
             return null;
         }
         throw new AssertionError();
     }
 
-    public Rect m(int i) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: m */
+    public Rect mo1333m(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4888c || mo1284G()) {
             return null;
         }
         throw new AssertionError();
     }
 
-    public com.duokan.reader.domain.document.aj n(int i) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: n */
+    public com.duokan.reader.domain.document.aj mo1335n(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4888c || mo1284G()) {
             return null;
         }
         throw new AssertionError();
     }
 
-    public Rect p(int i) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: p */
+    public Rect mo1339p(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4888c || mo1284G()) {
             return null;
         }
         throw new AssertionError();
     }
 
-    public Rect o(int i) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: o */
+    public Rect mo1337o(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4888c || mo1284G()) {
             return null;
         }
         throw new AssertionError();
     }
 
-    public ad q(int i) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: q */
+    public ad mo1341q(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4888c || mo1284G()) {
             return null;
         }
         throw new AssertionError();
     }
 
-    public Rect r(int i) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: r */
+    public Rect mo1344r(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4888c || mo1284G()) {
             return null;
         }
         throw new AssertionError();
     }
 
-    public ax s(int i) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: s */
+    public ax mo1346s(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4888c || mo1284G()) {
             return null;
         }
         throw new AssertionError();
     }
 
-    public Rect t(int i) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: t */
+    public Rect mo1348t(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4888c || mo1284G()) {
             return null;
         }
         throw new AssertionError();
     }
 
-    public Rect u(int i) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: u */
+    public Rect mo1350u(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4888c || mo1284G()) {
             return null;
         }
         throw new AssertionError();
     }
 
-    public int v(int i) {
-        a.c().b(N());
-        if (c || G()) {
+    /* renamed from: v */
+    public int mo1352v(int i) {
+        C0328a.m757c().m764b(m6108M());
+        if (f4888c || mo1284G()) {
             return -1;
         }
         throw new AssertionError();
     }
 
-    protected void O() {
-        if (this.p != null) {
-            this.g.b(this.p);
-            this.p = null;
+    /* renamed from: N */
+    protected void mo1288N() {
+        if (this.f4901p != null) {
+            this.f4892g.m6361b(this.f4901p);
+            this.f4901p = null;
         }
-        if (this.q != null) {
-            this.g.b(this.q);
-            this.q = null;
+        if (this.f4902q != null) {
+            this.f4892g.m6361b(this.f4902q);
+            this.f4902q = null;
         }
     }
 
-    protected int b(Canvas canvas, long j) {
-        if (!c && this.e == null) {
+    /* renamed from: b */
+    protected int mo1300b(Canvas canvas, long j) {
+        if (!f4888c && this.f4890e == null) {
             throw new AssertionError();
-        } else if (!this.k) {
-            a(canvas);
+        } else if (!this.f4896k) {
+            mo1376a(canvas);
             return 2;
-        } else if (this.e.f()) {
-            this.f.a.setBounds(0, 0, getBounds().width(), getBounds().height());
-            this.f.a.draw(canvas);
+        } else if (this.f4890e.m5817f()) {
+            this.f4891f.a.setBounds(0, 0, getBounds().width(), getBounds().height());
+            this.f4891f.a.draw(canvas);
             return 1;
         } else {
             int i;
-            Rect e = e();
-            if (M()) {
-                O();
+            Rect e = m7414e();
+            if (m6107L()) {
+                mo1288N();
             }
-            if (this.p != null && (this.p.b() != this.f || this.p.d() != L() || this.p.f() || this.p.a(e, 1.0f) == 0)) {
-                this.g.b(this.p);
-                this.p = null;
+            if (this.f4901p != null && (this.f4901p.m6384b() != this.f4891f || this.f4901p.m6386d() != m6106K() || this.f4901p.m6388f() || this.f4901p.m6381a(e, 1.0f) == 0)) {
+                this.f4892g.m6361b(this.f4901p);
+                this.f4901p = null;
             }
-            if (this.q != null && (this.q.b() != this.f || this.q.d() != L() || this.q.f() || this.q.a(e, 1.0f) == 0)) {
-                this.g.b(this.q);
-                this.q = null;
+            if (this.f4902q != null && (this.f4902q.m6384b() != this.f4891f || this.f4902q.m6386d() != m6106K() || this.f4902q.m6388f() || this.f4902q.m6381a(e, 1.0f) == 0)) {
+                this.f4892g.m6361b(this.f4902q);
+                this.f4902q = null;
             }
-            if (this.p == null) {
-                this.p = this.g.a(this.d, this.e, e, this.f, 1.0f, L());
+            if (this.f4901p == null) {
+                this.f4901p = this.f4892g.m6354a(this.f4889d, this.f4890e, e, this.f4891f, 1.0f, m6106K());
             } else {
-                int a = this.p.a(e, 1.0f);
+                int a = this.f4901p.m6381a(e, 1.0f);
                 if (a < Integer.MAX_VALUE) {
-                    ap a2 = this.g.a(this.d, this.e, e, this.f, 1.0f, L(), a + 1);
+                    ap a2 = this.f4892g.m6355a(this.f4889d, this.f4890e, e, this.f4891f, 1.0f, m6106K(), a + 1);
                     if (a2 != null) {
-                        if (!a2.e()) {
-                            this.g.a(a2);
-                        } else if (c || !a2.f()) {
-                            this.g.b(this.p);
-                            this.p = a2;
+                        if (!a2.m6387e()) {
+                            this.f4892g.m6359a(a2);
+                        } else if (f4888c || !a2.m6388f()) {
+                            this.f4892g.m6361b(this.f4901p);
+                            this.f4901p = a2;
                         } else {
                             throw new AssertionError();
                         }
@@ -699,10 +783,10 @@ public class aj extends ag implements ba, bd, ar {
                 }
             }
             Object obj;
-            if (this.p != null) {
-                obj = this.p.a(e, 1.0f) == Integer.MAX_VALUE ? 1 : null;
-                if (!this.p.a(canvas, 0.0f, 0.0f, 1.0f)) {
-                    a(canvas);
+            if (this.f4901p != null) {
+                obj = this.f4901p.m6381a(e, 1.0f) == Integer.MAX_VALUE ? 1 : null;
+                if (!this.f4901p.m6383a(canvas, 0.0f, 0.0f, 1.0f)) {
+                    mo1376a(canvas);
                     i = 2;
                 } else if (obj == null) {
                     invalidateSelf();
@@ -711,174 +795,182 @@ public class aj extends ag implements ba, bd, ar {
                     i = 1;
                 }
             } else {
-                a(canvas);
+                mo1376a(canvas);
                 obj = null;
                 i = 2;
             }
-            if (this.q == this.p) {
-                this.q = null;
+            if (this.f4902q == this.f4901p) {
+                this.f4902q = null;
             }
-            if (this.q != null && this.q.e()) {
-                this.q = null;
+            if (this.f4902q != null && this.f4902q.m6387e()) {
+                this.f4902q = null;
             }
-            if (this.q == null && r0 == null) {
-                this.q = P();
+            if (this.f4902q == null && obj == null) {
+                this.f4902q = m7401O();
             }
-            if (k() || this.d.d()) {
+            if (mo1330k() || this.f4889d.m5844d()) {
                 return i;
             }
-            this.a.setTextSize((float) this.f.f);
-            h d = this.d.e().d();
-            if (this.d.h().c.top >= this.f.f) {
+            this.a.setTextSize((float) this.f4891f.f);
+            C0911h d = this.f4889d.mo1469e().mo1258d();
+            if (this.f4889d.m7524h().c.top >= this.f4891f.f) {
                 float length;
                 float f;
-                if (this.f.m && this.n == null) {
-                    this.n = d.a();
-                    g b = d.b(this.e);
-                    if (!(b == null || b.f().equals(this.e.n()))) {
-                        this.n = b.e();
+                if (this.f4891f.m && this.f4899n == null) {
+                    this.f4899n = d.mo1264a();
+                    C0901g b = d.mo1267b(this.f4890e);
+                    if (!(b == null || b.mo1203f().equals(this.f4890e.mo1460n()))) {
+                        this.f4899n = b.mo1202e();
                     }
-                    if (this.f.k) {
-                        this.n = DkUtils.chs2chtText(this.n);
+                    if (this.f4891f.k) {
+                        this.f4899n = DkUtils.chs2chtText(this.f4899n);
                     }
                 }
-                if (this.f.l) {
-                    length = (float) d.a().length();
+                if (this.f4891f.l) {
+                    length = (float) d.mo1264a().length();
                 } else {
                     length = 0.0f;
                 }
-                if (!this.f.m || TextUtils.isEmpty(this.n) || (this.f.l && this.n == d.a())) {
+                if (!this.f4891f.m || TextUtils.isEmpty(this.f4899n) || (this.f4891f.l && this.f4899n == d.mo1264a())) {
                     f = 0.0f;
                 } else {
-                    f = (float) this.n.length();
+                    f = (float) this.f4899n.length();
                 }
-                int width = getBounds().width() - (p().c.left + p().c.right);
+                int width = getBounds().width() - (mo1340p().f4332c.left + mo1340p().f4332c.right);
                 if (Float.compare(length, 1.0f) > 0) {
-                    a(canvas, d.a(), 3, Math.round((((float) width) * length) / (length + f)), this.a);
+                    m6118a(canvas, d.mo1264a(), 3, Math.round((((float) width) * length) / (length + f)), this.a);
                 }
                 if (Float.compare(f, 1.0f) > 0) {
-                    String str = this.n;
-                    int i2 = (!this.f.n || this.f.l) ? 5 : 3;
-                    a(canvas, str, i2, Math.round((((float) width) * f) / (length + f)), this.a);
+                    String str = this.f4899n;
+                    int i2 = (!this.f4891f.n || this.f4891f.l) ? 5 : 3;
+                    m6118a(canvas, str, i2, Math.round((((float) width) * f) / (length + f)), this.a);
                 }
             }
-            if (this.d.h().c.bottom < this.f.f) {
+            if (this.f4889d.m7524h().c.bottom < this.f4891f.f) {
                 return i;
             }
-            if (this.o == null && this.m >= 0) {
-                this.o = String.format("%getTriangleEdge / %getTriangleEdge", new Object[]{Long.valueOf(this.m + 1), Long.valueOf(this.d.b())});
+            if (this.f4900o == null && this.f4898m >= 0) {
+                this.f4900o = String.format("%d / %d", new Object[]{Long.valueOf(this.f4898m + 1), Long.valueOf(this.f4889d.m5839b())});
             }
-            if (TextUtils.isEmpty(this.o)) {
+            if (TextUtils.isEmpty(this.f4900o)) {
                 return i;
             }
             int i3;
-            String str2 = this.o;
-            if (this.f.n) {
+            String str2 = this.f4900o;
+            if (this.f4891f.n) {
                 i3 = 5;
             } else {
                 i3 = 1;
             }
-            a(canvas, str2, i3, this.a);
+            m6119a(canvas, str2, i3, this.a);
             return i;
         }
     }
 
-    public void a(bc bcVar, long j, long j2) {
-        if (j2 > 0 && this.i != null) {
-            this.m = c(this.i);
+    /* renamed from: a */
+    public void mo1295a(bc bcVar, long j, long j2) {
+        if (j2 > 0 && this.f4894i != null) {
+            this.f4898m = m7410c(this.f4894i);
         }
-        a(new an(this));
+        m6122a(new an(this));
     }
 
-    public void a(as asVar) {
-        if (!c && (this.d == null || !this.d.a)) {
+    /* renamed from: a */
+    public void mo1462a(as asVar) {
+        if (!f4888c && (this.f4889d == null || !this.f4889d.a)) {
             throw new AssertionError();
-        } else if (c || (this.e != null && this.e.b())) {
-            this.i = asVar;
-            DktPage Q = Q();
-            if (this.d.b() >= 0) {
-                this.m = c(this.i);
+        } else if (f4888c || (this.f4890e != null && this.f4890e.m5777b())) {
+            this.f4894i = asVar;
+            DktPage P = m7402P();
+            if (this.f4889d.m5839b() >= 0) {
+                this.f4898m = m7410c(this.f4894i);
             } else {
-                this.d.a((bd) this);
+                this.f4889d.m5836a((bd) this);
             }
-            if (this.i.d() || this.e.f()) {
-                this.n = "";
+            if (this.f4894i.m7500d() || this.f4890e.m5817f()) {
+                this.f4899n = "";
             } else {
-                if (this.d.h().e) {
-                    this.l = Math.max(this.l, (int) Q.getPageHeight());
+                if (this.f4889d.m7524h().e) {
+                    this.f4897l = Math.max(this.f4897l, (int) P.getPageHeight());
                 }
-                if (!this.e.f()) {
-                    if (!c && this.q != null) {
+                if (!this.f4890e.m5817f()) {
+                    if (!f4888c && this.f4902q != null) {
                         throw new AssertionError();
-                    } else if (this.q == null) {
-                        this.q = P();
+                    } else if (this.f4902q == null) {
+                        this.f4902q = m7401O();
                     }
                 }
             }
-            this.j = true;
-            a(new ao(this));
-            this.d.c(this);
+            this.f4895j = true;
+            m6122a(new ao(this));
+            this.f4889d.m5842c(this);
         } else {
             throw new AssertionError();
         }
     }
 
-    public void b(as asVar) {
-        if (c || this.i.d()) {
-            this.j = false;
-            a(new ap(this));
-            this.d.c(this);
+    /* renamed from: b */
+    public void mo1463b(as asVar) {
+        if (f4888c || this.f4894i.m7500d()) {
+            this.f4895j = false;
+            m6122a(new ap(this));
+            this.f4889d.m5842c(this);
             return;
         }
         throw new AssertionError();
     }
 
     public int getIntrinsicHeight() {
-        return this.l;
+        return this.f4897l;
     }
 
-    private void d() {
-        if (this.j) {
-            R();
+    /* renamed from: d */
+    private void m7412d() {
+        if (this.f4895j) {
+            m7403Q();
         }
     }
 
-    private Rect e() {
-        Rect rect = new Rect(0, 0, this.d.h().a, this.l);
+    /* renamed from: e */
+    private Rect m7414e() {
+        Rect rect = new Rect(0, 0, this.f4889d.m7524h().a, this.f4897l);
         if (rect.width() % 2 != 0) {
             rect.right++;
         }
         return rect;
     }
 
-    private long c(as asVar) {
-        if (c || (asVar != null && this.d.b() >= 0)) {
-            return this.d.b(asVar.a);
+    /* renamed from: c */
+    private long m7410c(as asVar) {
+        if (f4888c || (asVar != null && this.f4889d.m5839b() >= 0)) {
+            return this.f4889d.m7519b(asVar.f4915a);
         }
         throw new AssertionError();
     }
 
-    private ap P() {
-        Rect e = e();
-        ap a = this.g.a(this.d, this.e, e, this.f, 1.0f, L());
+    /* renamed from: O */
+    private ap m7401O() {
+        Rect e = m7414e();
+        ap a = this.f4892g.m6354a(this.f4889d, this.f4890e, e, this.f4891f, 1.0f, m6106K());
         if (a != null) {
-            this.g.a(a);
-            if (a.a(e, 1.0f) == Integer.MAX_VALUE) {
+            this.f4892g.m6359a(a);
+            if (a.m6381a(e, 1.0f) == Integer.MAX_VALUE) {
                 return a;
             }
         }
-        Q();
-        a = this.g.a(this.d, this.e, e, this.f, 1.0f, L(), new aq(this));
-        this.g.a(a);
+        m7402P();
+        a = this.f4892g.m6356a(this.f4889d, this.f4890e, e, this.f4891f, 1.0f, m6106K(), new aq(this));
+        this.f4892g.m6359a(a);
         return a;
     }
 
-    private void a(Bitmap bitmap, Bitmap bitmap2) {
-        if (!c && bitmap == null) {
+    /* renamed from: a */
+    private void m7404a(Bitmap bitmap, Bitmap bitmap2) {
+        if (!f4888c && bitmap == null) {
             throw new AssertionError();
-        } else if (!c && this.f == null) {
+        } else if (!f4888c && this.f4891f == null) {
             throw new AssertionError();
-        } else if (c || this.d.a) {
+        } else if (f4888c || this.f4889d.a) {
             if (bitmap2 != null) {
                 synchronized (bitmap2) {
                     if (!bitmap2.isRecycled()) {
@@ -888,31 +980,33 @@ public class aj extends ag implements ba, bd, ar {
             } else {
                 bitmap.eraseColor(0);
             }
-            aa.c().a().setChsToCht(this.f.k);
-            this.d.e().h().setTextColor(new DkArgbColor(this.f.c));
-            DktPage Q = Q();
+            aa.m7376c().m7377a().setChsToCht(this.f4891f.k);
+            this.f4889d.mo1469e().mo1468h().setTextColor(new DkArgbColor(this.f4891f.c));
+            DktPage P = m7402P();
             DkFlowRenderOption dkFlowRenderOption = new DkFlowRenderOption();
             dkFlowRenderOption.mWidth = bitmap.getWidth();
             dkFlowRenderOption.mHeight = bitmap.getHeight();
             dkFlowRenderOption.mBitmap = bitmap;
-            dkFlowRenderOption.mNightColor = new DkArgbColor(this.f.d);
-            dkFlowRenderOption.mOptimizeForNight = this.f.i;
-            dkFlowRenderOption.mOptimizeForDarkBackground = this.f.j;
-            Q.render(dkFlowRenderOption);
-            if (!(Q.checkRenderStatus() == 0 || this.h == null)) {
-                this.h.b(null, this);
+            dkFlowRenderOption.mNightColor = new DkArgbColor(this.f4891f.d);
+            dkFlowRenderOption.mOptimizeForNight = this.f4891f.i;
+            dkFlowRenderOption.mOptimizeForDarkBackground = this.f4891f.j;
+            P.render(dkFlowRenderOption);
+            if (!(P.checkRenderStatus() == 0 || this.f4893h == null)) {
+                this.f4893h.mo1225b(null, this);
             }
-            R();
+            m7403Q();
         } else {
             throw new AssertionError();
         }
     }
 
-    private DktPage Q() {
-        return this.d.e().h().acquirePage(this.e.n().g(), ab.a(this.d.h()));
+    /* renamed from: P */
+    private DktPage m7402P() {
+        return this.f4889d.mo1469e().mo1468h().acquirePage(this.f4890e.mo1460n().m7539g(), ab.m7380a(this.f4889d.m7524h()));
     }
 
-    private void R() {
-        this.d.e().h().releasePage(this.e.n().g(), ab.a(this.d.h()));
+    /* renamed from: Q */
+    private void m7403Q() {
+        this.f4889d.mo1469e().mo1468h().releasePage(this.f4890e.mo1460n().m7539g(), ab.m7380a(this.f4889d.m7524h()));
     }
 }

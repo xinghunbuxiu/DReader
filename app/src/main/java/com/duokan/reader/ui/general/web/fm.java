@@ -1,13 +1,17 @@
 package com.duokan.reader.ui.general.web;
 
-class fm implements Runnable {
-    final /* synthetic */ fk a;
+import com.duokan.reader.ui.general.hq;
 
-    fm(fk fkVar) {
-        this.a = fkVar;
+class fm implements hq {
+    /* renamed from: a */
+    final /* synthetic */ fl f7842a;
+
+    fm(fl flVar) {
+        this.f7842a = flVar;
     }
 
-    public void run() {
-        this.a.f.b.pageController.web_notifyWeb(this.a.e, 0, "operation", Integer.valueOf(0));
+    /* renamed from: a */
+    public void mo1590a(int i) {
+        this.f7842a.f7841d.f7837b.f7581b.web_notifyWeb(this.f7842a.f7840c, 0, "index", Integer.valueOf(i));
     }
 }

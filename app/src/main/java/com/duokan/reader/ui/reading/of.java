@@ -1,16 +1,21 @@
 package com.duokan.reader.ui.reading;
 
-class of implements Runnable {
-    final /* synthetic */ oe a;
+import android.view.View;
+import com.duokan.core.ui.ay;
+import com.duokan.core.ui.bg;
+import com.duokan.reader.domain.bookshelf.ah;
 
-    of(oe oeVar) {
-        this.a = oeVar;
+class of implements bg {
+    /* renamed from: a */
+    final /* synthetic */ nu f10734a;
+
+    of(nu nuVar) {
+        this.f10734a = nuVar;
     }
 
-    public void run() {
-        if (!this.a.a.d.b.K()) {
-            this.a.a.e = false;
-            this.a.a.d.h.h(0, this.a.a.d.h.c());
-        }
+    /* renamed from: a */
+    public void mo481a(ay ayVar, View view, int i) {
+        oi oiVar = (oi) ayVar.getAdapter();
+        this.f10734a.f10701c.mo2450a(oiVar.f10737a, (ah) oiVar.mo509d(i));
     }
 }

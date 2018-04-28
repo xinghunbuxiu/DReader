@@ -1,19 +1,21 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.common.webservices.duokan.r;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
 
-abstract class hh extends r {
-    final /* synthetic */ fl d;
+class hh extends View {
+    /* renamed from: a */
+    final /* synthetic */ fz f8651a;
 
-    private hh(fl flVar) {
-        this.d = flVar;
+    hh(fz fzVar, Context context) {
+        this.f8651a = fzVar;
+        super(context);
     }
 
-    protected void onSessionOpen() {
-        this.d.v.add(this);
-    }
-
-    protected void onSessionClosed() {
-        this.d.v.remove(this);
+    public void draw(Canvas canvas) {
+        super.draw(canvas);
+        canvas.drawColor(-1);
+        this.f8651a.f8593t.draw(canvas);
     }
 }

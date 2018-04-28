@@ -1,23 +1,40 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.account.ab;
+import com.duokan.reader.common.C0613k;
+import com.duokan.reader.common.async.p035a.C0517a;
 
-import java.util.ArrayList;
+class as implements C0517a<Void> {
+    /* renamed from: a */
+    final /* synthetic */ C0613k f2773a;
+    /* renamed from: b */
+    final /* synthetic */ boolean f2774b;
+    /* renamed from: c */
+    final /* synthetic */ boolean f2775c;
+    /* renamed from: d */
+    final /* synthetic */ ar f2776d;
 
-class as implements cw {
-    final /* synthetic */ ab a;
-    final /* synthetic */ aq b;
-
-    as(aq aqVar, ab abVar) {
-        this.b = aqVar;
-        this.a = abVar;
+    as(ar arVar, C0613k c0613k, boolean z, boolean z2) {
+        this.f2776d = arVar;
+        this.f2773a = c0613k;
+        this.f2774b = z;
+        this.f2775c = z2;
     }
 
-    public void a() {
-        new at(this, this.a, new ArrayList(bv.a().b()), true, null).open();
+    /* renamed from: a */
+    public void m4017a(Void voidR) {
+        this.f2773a.m2796a(Integer.valueOf(((Integer) this.f2773a.m2795a()).intValue() + 1));
+        if (((Integer) this.f2773a.m2795a()).intValue() == 3) {
+            this.f2776d.m3949x();
+            try {
+                this.f2776d.k.mo1090a();
+                this.f2776d.m3960a(this.f2774b, this.f2775c, 0);
+            } finally {
+                this.f2776d.k.mo1096b();
+            }
+        }
     }
 
-    public void b() {
-        this.b.x();
+    /* renamed from: a */
+    public void mo729a(int i, String str) {
     }
 }

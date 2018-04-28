@@ -1,7 +1,6 @@
 package com.duokan.reader.domain.bookshelf;
 
 public interface jo {
-    void a(jn jnVar);
-
-    void b(jn jnVar);
+    /* renamed from: a */
+    void mo979a();
 }

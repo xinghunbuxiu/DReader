@@ -1,21 +1,17 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.reader.ui.general.iq;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class ah implements iq {
-    final /* synthetic */ ae a;
+class ah implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ af f8258a;
 
-    ah(ae aeVar) {
-        this.a = aeVar;
+    ah(af afVar) {
+        this.f8258a = afVar;
     }
 
-    public void a(int i, int i2) {
-        if (i >= 0 && i2 >= 0) {
-            ActivatedController a = this.a.a(i);
-            ActivatedController a2 = this.a.a(i2);
-            this.a.deactivate(a);
-            this.a.activate(a2);
-        }
+    public void onClick(View view) {
+        this.f8258a.m11383d();
     }
 }

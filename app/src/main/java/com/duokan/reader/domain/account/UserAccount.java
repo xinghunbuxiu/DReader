@@ -2,28 +2,32 @@ package com.duokan.reader.domain.account;
 
 import android.content.Context;
 import android.text.TextUtils;
-
-import com.duokan.reader.domain.social.b.b;
-
+import com.duokan.reader.domain.social.p048b.C1135b;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class UserAccount extends a {
-    public abstract void a(Context context, String str, bb bbVar);
+public abstract class UserAccount extends C0672a {
+    /* renamed from: a */
+    public abstract void mo847a(Context context, String str, ba baVar);
 
-    public abstract b s();
+    /* renamed from: s */
+    public abstract C1135b mo849s();
 
-    public abstract void t();
+    /* renamed from: t */
+    public abstract void mo850t();
 
-    public abstract void u();
+    /* renamed from: u */
+    public abstract void mo851u();
 
-    public abstract cf v();
+    /* renamed from: v */
+    public abstract cm mo852v();
 
-    public UserAccount(e eVar) {
-        super(eVar);
+    public UserAccount(C0706e c0706e) {
+        super(c0706e);
     }
 
-    public static Map a(String str, String str2) {
+    /* renamed from: a */
+    public static Map<String, String> m3175a(String str, String str2) {
         Map hashMap = new HashMap();
         if (!TextUtils.isEmpty(str)) {
             hashMap.put("user_id", str);

@@ -4,21 +4,22 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
-
 import com.duokan.core.ui.LinearScrollView;
+import com.duokan.core.ui.Scrollable.OverScrollMode;
 import com.duokan.core.ui.bj;
-
-import org.apache.http.HttpStatus;
-
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.http.HttpStatus;
 
 public class cw extends LinearScrollView {
-    private cx a;
-    private int b;
+    /* renamed from: a */
+    private cx f6018a;
+    /* renamed from: b */
+    private int f6019b;
 
-    protected /* synthetic */ bj e() {
-        return f();
+    /* renamed from: e */
+    protected /* synthetic */ bj mo1597e() {
+        return mo1599f();
     }
 
     public cw(Context context) {
@@ -27,8 +28,8 @@ public class cw extends LinearScrollView {
 
     public cw(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.a = null;
-        this.b = -1;
+        this.f6018a = null;
+        this.f6019b = -1;
         setOrientation(0);
         setThumbEnabled(false);
         setHorizontalOverScrollMode(OverScrollMode.NEVER);
@@ -37,7 +38,7 @@ public class cw extends LinearScrollView {
     public int getShowingChildIndex() {
         int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
-            if (a(i)) {
+            if (m1279a(i)) {
                 return i;
             }
         }
@@ -45,16 +46,18 @@ public class cw extends LinearScrollView {
     }
 
     public void setOnFlipListener(cx cxVar) {
-        this.a = cxVar;
+        this.f6018a = cxVar;
     }
 
-    public void b(int i) {
+    /* renamed from: b */
+    public void m9070b(int i) {
         scrollBy(getChildAt(i).getLeft() - getViewportBounds().left, 0);
         setShowingChild(i);
     }
 
-    public void a(int i, Runnable runnable, Runnable runnable2) {
-        a(getChildAt(i).getLeft(), 0, this.b < 0 ? HttpStatus.SC_MULTIPLE_CHOICES : Math.abs(i - this.b) * HttpStatus.SC_MULTIPLE_CHOICES, runnable, runnable2);
+    /* renamed from: a */
+    public void m9069a(int i, Runnable runnable, Runnable runnable2) {
+        mo434a(getChildAt(i).getLeft(), 0, this.f6019b < 0 ? HttpStatus.SC_MULTIPLE_CHOICES : Math.abs(i - this.f6019b) * HttpStatus.SC_MULTIPLE_CHOICES, runnable, runnable2);
     }
 
     public Integer[] getVisiableViewIndex() {
@@ -70,19 +73,20 @@ public class cw extends LinearScrollView {
         return (Integer[]) arrayList.toArray(new Integer[0]);
     }
 
-    public void g() {
-        this.b = -1;
-        removeAllViews();
+    /* renamed from: g */
+    public void m9073g() {
+        this.f6019b = -1;
     }
 
-    protected cy f() {
+    /* renamed from: f */
+    protected cy mo1599f() {
         return new cy(this);
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         if (z) {
-            int min = Math.min(this.b, getChildCount() - 1);
+            int min = Math.min(this.f6019b, getChildCount() - 1);
             if (min >= 0) {
                 scrollTo(getChildAt(min).getLeft(), 0);
             }
@@ -90,18 +94,18 @@ public class cw extends LinearScrollView {
     }
 
     private void setShowingChild(int i) {
-        if (this.b != i) {
-            int i2 = this.b;
-            this.b = i;
-            if (this.a != null) {
-                this.a.a(i2, this.b);
+        if (this.f6019b != i) {
+            int i2 = this.f6019b;
+            this.f6019b = i;
+            if (this.f6018a != null) {
+                this.f6018a.mo1699a(i2, this.f6019b);
             }
         }
     }
 
     private int getFirstViewableChildIndex() {
         for (int i = 0; i < getChildCount(); i++) {
-            if (a(i)) {
+            if (m1279a(i)) {
                 return i;
             }
         }
@@ -110,7 +114,7 @@ public class cw extends LinearScrollView {
 
     private int getLastViewableChildIndex() {
         for (int childCount = getChildCount() - 1; childCount >= 0; childCount--) {
-            if (a(childCount)) {
+            if (m1279a(childCount)) {
                 return childCount;
             }
         }

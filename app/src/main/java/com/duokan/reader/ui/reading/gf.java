@@ -1,54 +1,35 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.MotionEvent;
+import android.graphics.Point;
 import android.view.View;
 
-import com.duokan.core.ui.dt;
-import com.duokan.core.ui.er;
-import com.duokan.core.ui.OnTouchChangeListener;
-import com.duokan.core.ui.g;
+class gf implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ boolean f10229a;
+    /* renamed from: b */
+    final /* synthetic */ Point f10230b;
+    /* renamed from: c */
+    final /* synthetic */ float f10231c;
+    /* renamed from: d */
+    final /* synthetic */ int f10232d;
+    /* renamed from: e */
+    final /* synthetic */ View f10233e;
+    /* renamed from: f */
+    final /* synthetic */ gd f10234f;
 
-class gf extends er {
-    final /* synthetic */ fy a;
-    private int c = 0;
-    private boolean d = false;
-    private final g e = new g();
-    private final dt f = new dt();
-
-    public gf(fy fyVar) {
-        this.a = fyVar;
-        this.f.b(60.0f);
-        this.f.c(120.0f);
-        this.f.a(30);
+    gf(gd gdVar, boolean z, Point point, float f, int i, View view) {
+        this.f10234f = gdVar;
+        this.f10229a = z;
+        this.f10230b = point;
+        this.f10231c = f;
+        this.f10232d = i;
+        this.f10233e = view;
     }
 
-    protected void a(View view, boolean z) {
-        boolean z2 = false;
-        this.c = 0;
-        this.d = false;
-        this.a.setPullingDown(false);
-        this.f.b(view, z);
-        g gVar = this.e;
-        if (z || !this.e.c()) {
-            z2 = true;
-        }
-        gVar.b(view, z2);
-    }
-
-    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
-        boolean z2 = true;
-        if (this.d && motionEvent.getAction() == 1) {
-            if (!this.a.f) {
-                this.a.j();
-            } else if (this.a.d != null) {
-                this.a.d.run();
-            }
-        }
-        this.e.b(view, motionEvent, z, new gg(this));
-        this.f.b(view, motionEvent, z, new gh(this));
-        if (!(c() && (this.e.c() || this.f.c()))) {
-            z2 = false;
-        }
-        b(z2);
+    public void run() {
+        float i = this.f10229a ? this.f10234f.mo2421i() : this.f10234f.getZoomFactor();
+        Runnable ggVar = new gg(this, i);
+        this.f10234f.m1351a((float) this.f10230b.x, (float) this.f10230b.y, this.f10231c, ((float) this.f10232d) + this.f10234f.getZoomAngle());
+        this.f10234f.m1352a((float) (this.f10233e.getWidth() / 2), (float) (this.f10233e.getHeight() / 2), i, 0.0f, ggVar, ggVar);
     }
 }

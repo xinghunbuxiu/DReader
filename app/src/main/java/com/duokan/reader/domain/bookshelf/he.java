@@ -1,29 +1,17 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.b.UrlTools;
-import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.diagnostic.WebLog;
+import com.duokan.core.p029c.C0326b;
 
-import java.io.File;
+class he implements C0326b<C0800c> {
+    /* renamed from: a */
+    final /* synthetic */ hc f3298a;
 
-class he implements Runnable {
-    final /* synthetic */ File a;
-    final /* synthetic */ int b;
-    final /* synthetic */ hd c;
-
-    he(hd hdVar, File file, int i) {
-        this.c = hdVar;
-        this.a = file;
-        this.b = i;
+    he(hc hcVar) {
+        this.f3298a = hcVar;
     }
 
-    public void run() {
-        this.a.getParentFile().mkdirs();
-        try {
-            a.d(this.a);
-            b.a(this.c.b.b, this.a, new UrlTools.a().a(this.b).b(131072));
-        } catch (Throwable th) {
-            WebLog.c().printStackTrace(LogLevel.ERROR, "epub-OnDismissListener", "fail to download the book " + this.c.b.b, th);
-        }
+    /* renamed from: a */
+    public boolean m4630a(C0800c c0800c) {
+        return c0800c.aq() == -1;
     }
 }

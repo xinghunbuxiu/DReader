@@ -1,49 +1,24 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.reader.domain.account.ab;
+import com.duokan.reader.common.async.p035a.C0517a;
+import com.duokan.reader.domain.account.al;
 
-import java.util.Arrays;
+class dd implements C0517a<Void> {
+    /* renamed from: a */
+    final /* synthetic */ dc f3861a;
 
-class dd extends ef {
-    final /* synthetic */ ab a;
-    final /* synthetic */ dc b;
-    private DkCloudPurchasedFiction d = null;
-
-    dd(dc dcVar, ab abVar) {
-        this.b = dcVar;
-        this.a = abVar;
-        super(dcVar.a.d);
+    dd(dc dcVar) {
+        this.f3861a = dcVar;
     }
 
-    protected void onSessionTry() {
-        ei eiVar = new ei(this.a);
-        eiVar.a();
-        this.d = (DkCloudPurchasedFiction) eiVar.queryItem(this.b.a.a);
-        if (this.d != null) {
-            this.d.addPurchasedChapterIds(this.b.a.b);
-            eiVar.updateItem(this.d);
-        }
+    /* renamed from: a */
+    public void m5426a(Void voidR) {
+        al e = DkUserPurchasedFictionsManager.m5092g();
+        new de(this, e.f2360a, dq.f3887a, e).open();
     }
 
-    protected void onSessionSucceeded() {
-        if (!this.a.a(DkUserPurchasedFictionsManager.g())) {
-            this.b.a.c.a(-1, "");
-        } else if (this.d != null) {
-            this.b.a.d.h.a(this.d);
-            this.b.a.d.f();
-            this.b.a.c.a(this.d);
-        } else {
-            this.b.a.d.a(this.b.a.a, this.b.a.c);
-        }
-    }
-
-    protected void onSessionFailed() {
-        this.b.a.c.a(-1, "");
-    }
-
-    protected boolean onSessionException(Exception exception, int i) {
-        a.c().a(LogLevel.ERROR, "pm", String.format("unexpected error while marking setDrawable chapter purchased(bookUuid: %s, chapterIds: %s).", new Object[]{this.b.a.a, Arrays.deepToString(this.b.a.b.toArray(new String[0]))}), (Throwable) exception);
-        return super.onSessionException(exception, i);
+    /* renamed from: a */
+    public void mo729a(int i, String str) {
+        this.f3861a.f3858b.mo729a(i, str);
     }
 }

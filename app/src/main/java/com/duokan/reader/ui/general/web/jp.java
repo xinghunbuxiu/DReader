@@ -1,28 +1,31 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.domain.ad.p;
+import com.duokan.core.sys.as;
+import com.duokan.reader.ReaderFeature;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.bookshelf.fp;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+class jp implements as {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f8062a;
+    /* renamed from: b */
+    final /* synthetic */ ji f8063b;
 
-class jp implements p {
-    final /* synthetic */ String a;
-    final /* synthetic */ jo b;
-
-    jp(jo joVar, String str) {
-        this.b = joVar;
-        this.a = str;
+    jp(ji jiVar, Runnable runnable) {
+        this.f8063b = jiVar;
+        this.f8062a = runnable;
     }
 
-    public void a(String str) {
-        try {
-            this.b.b.pageController.web_notifyWeb(this.a, 0, new JSONObject(str));
-        } catch (JSONException e) {
-            e.printStackTrace();
+    /* renamed from: a */
+    public void mo1831a() {
+        ReaderFeature readerFeature = (ReaderFeature) this.f8063b.f8048b.f7581b.getContext().queryFeature(ReaderFeature.class);
+        if (readerFeature != null) {
+            C0800c readingBook = readerFeature.getReadingBook();
+            if ((readingBook instanceof fp) && !readingBook.mo1038k()) {
+                ((fp) readingBook).m4483a(new jq(this));
+                return;
+            }
         }
-    }
-
-    public void a() {
-        this.b.b.pageController.web_notifyWeb(this.a, 2, new Object[0]);
+        this.f8062a.run();
     }
 }

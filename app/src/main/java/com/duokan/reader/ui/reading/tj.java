@@ -1,15 +1,14 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.TaskHandler;
-
 class tj implements Runnable {
-    final /* synthetic */ tc a;
+    /* renamed from: a */
+    final /* synthetic */ tf f10981a;
 
-    tj(tc tcVar) {
-        this.a = tcVar;
+    tj(tf tfVar) {
+        this.f10981a = tfVar;
     }
 
     public void run() {
-        TaskHandler.postDelayed(new tk(this), 300);
+        this.f10981a.f10968a.f9656a.aV();
     }
 }

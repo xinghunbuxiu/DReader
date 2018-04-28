@@ -1,16 +1,26 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.core.sys.ag;
+import com.duokan.reader.domain.bookshelf.aa;
 
-class at implements OnClickListener {
-    final /* synthetic */ ai a;
+class at implements ep {
+    /* renamed from: a */
+    final /* synthetic */ ag f6143a;
+    /* renamed from: b */
+    final /* synthetic */ ao f6144b;
 
-    at(ai aiVar) {
-        this.a = aiVar;
+    at(ao aoVar, ag agVar) {
+        this.f6144b = aoVar;
+        this.f6143a = agVar;
     }
 
-    public void onClick(View view) {
-        this.a.k();
+    /* renamed from: a */
+    public void mo1633a(aa aaVar) {
+        this.f6143a.run(aaVar);
+    }
+
+    /* renamed from: a */
+    public void mo1632a() {
+        this.f6144b.m9169o();
     }
 }

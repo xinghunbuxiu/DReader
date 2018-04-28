@@ -3,18 +3,16 @@ package com.duokan.reader.ui.personal;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.duokan.reader.domain.cloud.gf;
-
 class gb implements OnClickListener {
-    final /* synthetic */ fl a;
+    /* renamed from: a */
+    final /* synthetic */ fz f8603a;
 
-    gb(fl flVar) {
-        this.a = flVar;
+    gb(fz fzVar) {
+        this.f8603a = fzVar;
     }
 
     public void onClick(View view) {
-        this.a.a("cart");
-        gf.a().c();
-        this.a.b(false, new gc(this));
+        this.f8603a.m11853a("coupon");
+        this.f8603a.m11862b(false, new gc(this));
     }
 }

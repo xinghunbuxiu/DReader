@@ -1,14 +1,14 @@
 package com.duokan.reader.ui.bookshelf;
 
 class jn implements Runnable {
-    final /* synthetic */ jh a;
+    /* renamed from: a */
+    final /* synthetic */ jj f6673a;
 
-    jn(jh jhVar) {
-        this.a = jhVar;
+    jn(jj jjVar) {
+        this.f6673a = jjVar;
     }
 
     public void run() {
-        this.a.d();
-        this.a.b = null;
+        this.f6673a.f6668e.mo1880b();
     }
 }

@@ -1,25 +1,21 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.ag;
-import com.duokan.reader.domain.document.as;
+import com.duokan.core.app.C0286x;
+import com.duokan.core.app.ManagedApp;
+import com.duokan.core.app.ManagedApp.RunningState;
+import com.duokan.reader.domain.statistics.dailystats.C1167a;
 
-class sc implements ag {
-    final /* synthetic */ ag a;
-    final /* synthetic */ rx b;
+class sc implements C0286x {
+    /* renamed from: a */
+    final /* synthetic */ qr f10931a;
 
-    sc(rx rxVar, ag agVar) {
-        this.b = rxVar;
-        this.a = agVar;
+    sc(qr qrVar) {
+        this.f10931a = qrVar;
     }
 
-    public void a(as asVar) {
-        if (asVar == null) {
-            this.a.a(null);
-        } else if (this.b.b(asVar)) {
-            this.a.a(asVar);
-        } else {
-            asVar.H();
-            this.a.a(null);
+    public void onRunningStateChanged(ManagedApp managedApp, RunningState runningState, RunningState runningState2) {
+        if (runningState2 != RunningState.FOREGROUND) {
+            C1167a.m8671d().m8676a(this.f10931a.f9282f, 1, this.f10931a.f9266E, this.f10931a.f9267F);
         }
     }
 }

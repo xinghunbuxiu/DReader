@@ -1,10 +1,8 @@
 package com.duokan.reader.domain.account;
 
 import android.text.TextUtils;
-
-import org.json.JSONObject;
-
 import java.io.Serializable;
+import org.json.JSONObject;
 
 public class User implements Serializable {
     static final /* synthetic */ boolean $assertionsDisabled = (!User.class.desiredAssertionStatus());

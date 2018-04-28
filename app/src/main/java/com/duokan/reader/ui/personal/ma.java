@@ -1,27 +1,35 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.domain.cloud.DkCloudComment;
+import com.duokan.core.app.ac;
+import com.duokan.core.app.ad;
+import com.duokan.reader.domain.cloud.DkCloudStoreBook;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.Comparator;
+class ma implements ad {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f8920a;
+    /* renamed from: b */
+    final /* synthetic */ ly f8921b;
 
-class ma implements Comparator {
-    final /* synthetic */ lv a;
-
-    ma(lv lvVar) {
-        this.a = lvVar;
+    ma(ly lyVar, Runnable runnable) {
+        this.f8921b = lyVar;
+        this.f8920a = runnable;
     }
 
-    public /* synthetic */ int compare(Object obj, Object obj2) {
-        return a((DkCloudComment) obj, (DkCloudComment) obj2);
+    /* renamed from: a */
+    public void mo1553a(ac acVar) {
+        List arrayList = new ArrayList();
+        List j = this.f8921b.f8915a.getAdapter().m9788j();
+        for (int i = 0; i < j.size(); i++) {
+            if (j.get(i) instanceof DkCloudStoreBook) {
+                arrayList.add((DkCloudStoreBook) j.get(i));
+            }
+        }
+        this.f8921b.f8917c.mo1935a(new mb(this, arrayList), arrayList);
     }
 
-    public int a(DkCloudComment dkCloudComment, DkCloudComment dkCloudComment2) {
-        if (dkCloudComment.getStartPos().b(dkCloudComment2.getStartPos())) {
-            return -1;
-        }
-        if (dkCloudComment.getStartPos().a(dkCloudComment2.getStartPos())) {
-            return 1;
-        }
-        return 0;
+    /* renamed from: b */
+    public void mo1554b(ac acVar) {
     }
 }

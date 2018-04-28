@@ -1,29 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.document.as;
-import com.duokan.reader.domain.document.i;
+class aav implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f9354a;
+    /* renamed from: b */
+    final /* synthetic */ aab f9355b;
 
-import java.util.concurrent.Callable;
-
-class aav implements Callable {
-    final /* synthetic */ aat a;
-
-    aav(aat com_duokan_reader_ui_reading_aat) {
-        this.a = com_duokan_reader_ui_reading_aat;
+    aav(aab aab, Runnable runnable) {
+        this.f9355b = aab;
+        this.f9354a = runnable;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
-    }
-
-    public CurlAnchor a() {
-        CurlAnchor curlAnchor = new CurlAnchor();
-        as h = this.a.a.a.e(-1).h();
-        if (h instanceof i) {
-            curlAnchor.mPageDrawable = ((i) h).b();
-        } else {
-            curlAnchor.mPageDrawable = h;
-        }
-        return curlAnchor;
+    public void run() {
+        this.f9355b.f9307N.mo975a(Boolean.valueOf(true));
+        this.f9354a.run();
     }
 }

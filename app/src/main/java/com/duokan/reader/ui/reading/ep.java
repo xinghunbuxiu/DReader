@@ -1,21 +1,27 @@
 package com.duokan.reader.ui.reading;
 
 import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.p023b.C0247i;
+import com.duokan.reader.common.p037c.C0559f;
+import com.duokan.reader.domain.p044b.C0781b;
+import com.duokan.reader.ui.general.be;
 
-import com.duokan.core.ui.bk;
-import com.duokan.core.ui.bq;
+class ep implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ eo f10096a;
 
-class ep implements bq {
-    final /* synthetic */ en a;
-
-    ep(en enVar) {
-        this.a = enVar;
+    ep(eo eoVar) {
+        this.f10096a = eoVar;
     }
 
-    public void a(bk bkVar, View view, View view2, boolean z) {
-        if (z) {
-            this.a.a = this.a.d.getSelectedIndex() == 0;
-            this.a.d();
+    public void onClick(View view) {
+        if (!C0559f.m2476b().m2486e()) {
+            be.m10287a(this.f10096a.getContext(), this.f10096a.getContext().getString(C0247i.report_no_network_error), 0).show();
+        } else if (C0781b.m3667b().m3690c().f2665e) {
+            this.f10096a.m14009d();
+        } else {
+            this.f10096a.m14010e();
         }
     }
 }

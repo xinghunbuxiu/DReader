@@ -1,13 +1,14 @@
 package com.duokan.reader.ui.general;
 
 class bi implements Runnable {
-    final /* synthetic */ bg a;
+    /* renamed from: a */
+    final /* synthetic */ bg f6998a;
 
     bi(bg bgVar) {
-        this.a = bgVar;
+        this.f6998a = bgVar;
     }
 
     public void run() {
-        this.a.a.b(false);
+        this.f6998a.f6996a.m9942b(false);
     }
 }

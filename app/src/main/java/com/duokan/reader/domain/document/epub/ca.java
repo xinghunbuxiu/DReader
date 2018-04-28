@@ -1,31 +1,37 @@
 package com.duokan.reader.domain.document.epub;
 
 import android.graphics.Rect;
-
 import com.duokan.kernel.epublib.DkePreText;
 import com.duokan.reader.domain.document.ax;
 import com.duokan.reader.domain.document.az;
 
 class ca extends ax {
-    final /* synthetic */ az a;
-    private final DkePreText b;
-    private final Rect c = this.b.mBoundingBox.toRect();
-    private final ce d = ai.a(ai.a(this.b.mStartPos.mChapterIndex, this.b.mStartPos.mParaIndex, this.b.mStartPos.mAtomIndex), ai.a(this.b.mEndPos.mChapterIndex, this.b.mEndPos.mParaIndex, this.b.mEndPos.mAtomIndex));
-    private final cb e;
+    /* renamed from: a */
+    final /* synthetic */ az f4635a;
+    /* renamed from: b */
+    private final DkePreText f4636b;
+    /* renamed from: c */
+    private final Rect f4637c = this.f4636b.mBoundingBox.toRect();
+    /* renamed from: d */
+    private final ce f4638d = ai.m6509a(ai.m6508a(this.f4636b.mStartPos.mChapterIndex, this.f4636b.mStartPos.mParaIndex, this.f4636b.mStartPos.mAtomIndex), ai.m6508a(this.f4636b.mEndPos.mChapterIndex, this.f4636b.mEndPos.mParaIndex, this.f4636b.mEndPos.mAtomIndex));
+    /* renamed from: e */
+    private final cb f4639e;
 
     public ca(az azVar, DkePreText dkePreText) {
-        this.a = azVar;
-        this.b = dkePreText;
-        this.e = new cb(azVar, this.b.mPrePage, null);
-        this.e.b(azVar.e.j().f);
-        this.e.a(this.b.mMaxWidth);
+        this.f4635a = azVar;
+        this.f4636b = dkePreText;
+        this.f4639e = new cb(azVar, this.f4636b.mPrePage, null);
+        this.f4639e.m6409b(azVar.f4524e.m6455j().f);
+        this.f4639e.m6404a(this.f4636b.mMaxWidth);
     }
 
-    public int a() {
-        return this.b.mMaxWidth;
+    /* renamed from: a */
+    public int mo1422a() {
+        return this.f4636b.mMaxWidth;
     }
 
-    public az b() {
-        return this.e;
+    /* renamed from: b */
+    public az mo1423b() {
+        return this.f4639e;
     }
 }

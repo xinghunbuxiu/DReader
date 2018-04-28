@@ -1,24 +1,17 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.micloud.o;
+import com.duokan.reader.common.p037c.C0559f;
 
 class je implements Runnable {
-    final /* synthetic */ o a;
-    final /* synthetic */ jj b;
-    final /* synthetic */ ja c;
+    /* renamed from: a */
+    final /* synthetic */ it f3383a;
 
-    je(ja jaVar, o oVar, jj jjVar) {
-        this.c = jaVar;
-        this.a = oVar;
-        this.b = jjVar;
+    je(it itVar) {
+        this.f3383a = itVar;
     }
 
     public void run() {
-        synchronized (this.c.a) {
-            if (b.a(this.a.j(), this.c.a.i)) {
-                this.c.a.k = this.b;
-                this.c.a.l = true;
-            }
-        }
+        this.f3383a.m4696a(C0559f.m2476b());
+        C0559f.m2476b().m2481a(this.f3383a.f3358b);
     }
 }

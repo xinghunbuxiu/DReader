@@ -1,25 +1,21 @@
 package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.sys.as;
+import org.json.JSONObject;
 
 class dl implements as {
-    final /* synthetic */ int a;
-    final /* synthetic */ String b;
-    final /* synthetic */ PageController c;
+    /* renamed from: a */
+    final /* synthetic */ String f7733a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7734b;
 
-    dl(PageController cgVar, int i, String str) {
-        this.c = cgVar;
-        this.a = i;
-        this.b = str;
+    dl(ci ciVar, String str) {
+        this.f7734b = ciVar;
+        this.f7733a = str;
     }
 
-    public void a() {
-        if (this.c.pageController.mJsPageStatusCode != this.a) {
-            this.c.pageController.mJsPageStatusCode = this.a;
-            if (this.c.pageController.mJsPageStatusCode < 0) {
-                this.c.pageController.webPageError(true);
-            }
-        }
-        this.c.pageController.onPageCreated(this.a, this.b);
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7734b.m11016a(new dm(this, new JSONObject(this.f7733a).getString("msgid")));
     }
 }

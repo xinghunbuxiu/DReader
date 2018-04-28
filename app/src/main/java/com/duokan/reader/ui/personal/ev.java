@@ -1,31 +1,56 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.core.ui.j;
-import com.duokan.reader.domain.bookshelf.iz;
-import com.duokan.reader.ui.general.be;
+import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.sys.UThread;
+import com.duokan.reader.ReaderEnv;
+import com.wali.live.sdk.manager.IMiLiveSdk.CallbackWrapper;
+import com.wali.live.watchsdk.ipc.service.ShareInfo;
 
-import java.util.List;
+class ev extends CallbackWrapper {
+    /* renamed from: a */
+    final /* synthetic */ eu f8526a;
 
-class ev implements ep {
-    final /* synthetic */ j a;
-    final /* synthetic */ eu b;
-
-    ev(eu euVar, j jVar) {
-        this.b = euVar;
-        this.a = jVar;
+    ev(eu euVar) {
+        this.f8526a = euVar;
     }
 
-    public void a(List list, List list2) {
-        int size = (list2 == null ? 0 : list2.size()) + (list == null ? 0 : list.size());
-        this.b.b.setfilterMiCloudItemInfos(list);
-        this.b.b.setSpaceQuota(iz.a().b().b());
-        this.a.dismiss();
-        if (size > 0) {
-            be.a(this.b.b.getContext(), String.format(this.b.b.getContext().getString(com.duokan.c.j.bookshelf__shared__delete_files_num), new Object[]{Integer.valueOf(size)}), 0).show();
-            TaskHandler.postTask(this.b.a);
-            return;
+    public void notifyServiceNull(int i) {
+        C0328a.m757c().m752c(LogLevel.ERROR, "miLive", "notifyServiceNull aidlFlag=" + i);
+    }
+
+    public void notifyAidlFailure(int i) {
+        C0328a.m757c().m752c(LogLevel.ERROR, "miLive", "notifyAidlFailure aidlFlag=" + i);
+    }
+
+    public void notifyLogin(int i) {
+        if (i == 0) {
+            UThread.runOnThread(new ew(this));
+        } else {
+            UThread.runOnThread(new ex(this));
         }
-        be.a(this.b.b.getContext(), this.b.b.getContext().getString(com.duokan.c.j.general__shared__network_error), 0).show();
+    }
+
+    public void notifyLogoff(int i) {
+        if (i != 0) {
+            C0328a.m757c().m752c(LogLevel.ERROR, "miLive", "LogoutError errorCode=" + i);
+        } else {
+            ReaderEnv.get().setMiLiveUser("");
+        }
+    }
+
+    public void notifyWantLogin() {
+        UThread.runOnThread(new ey(this));
+    }
+
+    public void notifyVerifyFailure(int i) {
+        C0328a.m757c().m752c(LogLevel.ERROR, "miLive", "验证失败，errCode=" + i);
+    }
+
+    public void notifyOtherAppActive() {
+        C0328a.m757c().m752c(LogLevel.ERROR, "miLive", "有其他APP在活跃");
+    }
+
+    public void notifyWantShare(ShareInfo shareInfo) {
     }
 }

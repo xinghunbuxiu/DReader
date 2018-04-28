@@ -1,23 +1,26 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.common.async.a.a;
+import com.duokan.reader.domain.account.al;
+import java.util.ArrayList;
 
-class bk implements a {
-    final /* synthetic */ bj a;
+class bk implements ct {
+    /* renamed from: a */
+    final /* synthetic */ al f2832a;
+    /* renamed from: b */
+    final /* synthetic */ ar f2833b;
 
-    bk(bj bjVar) {
-        this.a = bjVar;
+    bk(ar arVar, al alVar) {
+        this.f2833b = arVar;
+        this.f2832a = alVar;
     }
 
-    public void a(Object obj) {
-        if (!this.a.a.isCancelled()) {
-            this.a.f.d(this.a.b, this.a.c, this.a.d, this.a.e, this.a.a);
-        }
+    /* renamed from: a */
+    public void mo984a() {
+        new bl(this, this.f2832a, new ArrayList(bu.m4077a().m4112b()), true, null).open();
     }
 
-    public void a(int i, String str) {
-        if (!this.a.a.isCancelled()) {
-            this.a.f.i(str);
-        }
+    /* renamed from: b */
+    public void mo985b() {
+        this.f2833b.m3949x();
     }
 }

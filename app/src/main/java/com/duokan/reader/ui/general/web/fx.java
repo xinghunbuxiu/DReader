@@ -1,17 +1,14 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.ag;
-
-import org.json.JSONObject;
-
-class fx implements ag {
-    final /* synthetic */ fv a;
+class fx implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ fv f7869a;
 
     fx(fv fvVar) {
-        this.a = fvVar;
+        this.f7869a = fvVar;
     }
 
-    public void a(JSONObject jSONObject) {
-        this.a.a.b.pageController.triggerEventOnCurrentUrl("commentCommit", jSONObject);
+    public void run() {
+        this.f7869a.f7867f.f7861b.f7581b.web_notifyWeb(this.f7869a.f7866e, 0, "operation", Integer.valueOf(0));
     }
 }

@@ -1,37 +1,23 @@
 package com.duokan.reader.ui.general.web;
 
-import android.content.pm.PackageInfo;
+import com.duokan.reader.common.async.p035a.C0517a;
+import com.duokan.reader.domain.cloud.DkCloudPurchasedFiction;
 
-import org.json.JSONObject;
+class jm implements C0517a<DkCloudPurchasedFiction> {
+    /* renamed from: a */
+    final /* synthetic */ jk f8056a;
 
-import java.util.concurrent.Callable;
-
-class jm implements Callable {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
-
-    jm(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    jm(jk jkVar) {
+        this.f8056a = jkVar;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
+    /* renamed from: a */
+    public void m11225a(DkCloudPurchasedFiction dkCloudPurchasedFiction) {
+        this.f8056a.f8053d.m708a(Boolean.valueOf(true));
     }
 
-    public String a() {
-        try {
-            PackageInfo packageInfo = this.b.pageController.getContext().getPackageManager().getPackageInfo(this.a, 0);
-            JSONObject jSONObject = new JSONObject();
-            jSONObject.put("version_name", packageInfo.versionName);
-            jSONObject.put("version_code", packageInfo.versionCode);
-            jSONObject.put("package_name", packageInfo.packageName);
-            jSONObject.put("first_install_time", packageInfo.firstInstallTime);
-            jSONObject.put("last_update_time", packageInfo.lastUpdateTime);
-            jSONObject.put("install_location", packageInfo.installLocation);
-            return jSONObject.toString();
-        } catch (Throwable th) {
-            return "";
-        }
+    /* renamed from: a */
+    public void mo729a(int i, String str) {
+        this.f8056a.f8053d.m708a(Boolean.valueOf(false));
     }
 }

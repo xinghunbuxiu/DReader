@@ -1,19 +1,20 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+class xd implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ wy f11139a;
 
-import com.duokan.reader.UmengManager;
-
-class xd implements OnClickListener {
-    final /* synthetic */ xc a;
-
-    xd(xc xcVar) {
-        this.a = xcVar;
+    xd(wy wyVar) {
+        this.f11139a = wyVar;
     }
 
-    public void onClick(View view) {
-        UmengManager.get().onEvent("V2_READING_TOP_TOOLBUTTON", "PDF-FitScreen");
-        this.a.a(new xe(this));
+    public void run() {
+        this.f11139a.m13643l();
+        if (this.f11139a.f9704g != null) {
+            this.f11139a.f9704g.recycle();
+            this.f11139a.f9704g = null;
+        }
+        this.f11139a.f9705h = null;
+        this.f11139a.invalidate();
     }
 }

@@ -1,22 +1,21 @@
 package com.duokan.reader;
 
 import android.graphics.drawable.Drawable;
-
-import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.IFeature;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.document.Document_a;
-import com.duokan.reader.ui.bookshelf.gx;
-import com.duokan.reader.ui.bookshelf.hb;
-import com.duokan.reader.ui.reading.sh;
-import com.duokan.reader.ui.ITheme;
-import com.duokan.reader.ui.PushHalfPage;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.document.C0896a;
+import com.duokan.reader.ui.C0435s;
+import com.duokan.reader.ui.C0437t;
+import com.duokan.reader.ui.bookshelf.he;
+import com.duokan.reader.ui.bookshelf.hi;
+import com.duokan.reader.ui.reading.su;
 
-public interface ReaderFeature extends ITheme, PushHalfPage {
+public interface ReaderFeature extends C0435s, C0437t {
     void addSystemUiConditioner(SystemUiConditioner systemUiConditioner);
 
-    void downloadBooks(c... cVarArr);
+    void downloadBooks(C0800c... c0800cArr);
 
     float[] getEyesSavingModeDensity();
 
@@ -28,9 +27,9 @@ public interface ReaderFeature extends ITheme, PushHalfPage {
 
     int getPageCount();
 
-    c getReadingBook();
+    C0800c getReadingBook();
 
-    sh getReadingFeature();
+    su getReadingFeature();
 
     float getScreenBrightness();
 
@@ -46,11 +45,11 @@ public interface ReaderFeature extends ITheme, PushHalfPage {
 
     boolean inNightMode();
 
-    void openBook(c cVar);
+    void openBook(C0800c c0800c);
 
-    void openBook(c cVar, Document_a aVar, Runnable runnable);
+    void openBook(C0800c c0800c, C0896a c0896a, Runnable runnable);
 
-    void openBook(String str, Document_a aVar);
+    void openBook(String str, C0896a c0896a);
 
     void prompt(String str);
 
@@ -70,13 +69,13 @@ public interface ReaderFeature extends ITheme, PushHalfPage {
 
     void setScreenTimeout(int i);
 
-    void shareBooks(ActivatedController activatedControllerVar, c... cVarArr);
+    void shareBooks(ActivatedController c0303e, C0800c... c0800cArr);
 
-    void showBookHomePage(IFeature featrue, String str, String str2, boolean z, String str3);
+    void showBookHomePage(IFeature mFeature, String str, String str2, boolean z, String str3);
 
-    void showMenuFromBottom(hb hbVar);
+    void showMenuFromBottom(hi hiVar);
 
-    void showMenuFromTop(gx gxVar);
+    void showMenuFromTop(he heVar);
 
     void switchEyesSavingMode(boolean z);
 

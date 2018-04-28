@@ -1,22 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.document.bb;
-import com.duokan.reader.ui.account.cz;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class sy implements cz {
-    final /* synthetic */ bb a;
-    final /* synthetic */ String b;
-    final /* synthetic */ ss c;
+class sy implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ sv f10959a;
 
-    sy(ss ssVar, bb bbVar, String str) {
-        this.c = ssVar;
-        this.a = bbVar;
-        this.b = str;
+    sy(sv svVar) {
+        this.f10959a = svVar;
     }
 
-    public void a(String str, String str2, boolean z) {
-        if (z) {
-            this.c.a(this.a, this.b, str2);
-        }
+    public void onClick(View view) {
+        this.f10959a.m13563q();
     }
 }

@@ -1,22 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-import com.duokan.reader.domain.document.aj;
+class mt implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ mr f10645a;
 
-class mt extends mv {
-    final /* synthetic */ mr b;
-
-    mt(mr mrVar, Context context, aj ajVar) {
-        this.b = mrVar;
-        super(context, ajVar);
+    mt(mr mrVar) {
+        this.f10645a = mrVar;
     }
 
-    public void a(int i, float f, float f2, float f3) {
-        super.a(i, f, f2, f3);
-        if (this.b.o()) {
-            this.b.c.a(i);
-        }
-        this.b.a(i);
+    public void onClick(View view) {
+        this.f10645a.f10643e.mo2438a();
     }
 }

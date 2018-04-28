@@ -1,27 +1,40 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.domain.cloud.DkCloudRedeemFund;
-import com.duokan.reader.domain.cloud.ge;
+import android.graphics.Color;
+import com.duokan.core.ui.Scrollable;
+import com.duokan.core.ui.Scrollable.ScrollState;
+import com.duokan.core.ui.cg;
+import com.duokan.core.ui.dv;
+import com.duokan.reader.ui.general.PageHeaderView;
+import org.apache.http.HttpStatus;
 
-do;
+class io implements cg {
+    /* renamed from: a */
+    final /* synthetic */ PageHeaderView f8738a;
+    /* renamed from: b */
+    final /* synthetic */ ij f8739b;
 
-class io implements ge {
-    final /* synthetic */ String a;
-    final /* synthetic */ do b;
-    final /* synthetic */ ih c;
-
-    io(ih ihVar, String str, do doVar) {
-        this.c = ihVar;
-        this.a = str;
-        this.b = doVar;
+    io(ij ijVar, PageHeaderView pageHeaderView) {
+        this.f8739b = ijVar;
+        this.f8738a = pageHeaderView;
     }
 
-    public void a(DkCloudRedeemFund dkCloudRedeemFund) {
-        this.c.b.setText(this.a);
-        this.b.a();
+    /* renamed from: a */
+    public void mo478a(Scrollable scrollable, ScrollState scrollState, ScrollState scrollState2) {
     }
 
-    public void a(String str) {
-        this.b.a(str);
+    /* renamed from: a */
+    public void mo479a(Scrollable scrollable, boolean z) {
+        if (this.f8738a != null && this.f8738a.getHeight() != 0 && z) {
+            int i = this.f8739b.f8720d.getViewportBounds().top;
+            if (this.f8739b.f8720d.getContentHeight() - this.f8738a.getHeight() <= dv.getHeightPixels(this.f8739b.getContext())) {
+                i = 0;
+            } else {
+                i = (int) (dv.getAlpha(((((float) i) - ((float) this.f8738a.getHeight())) / ((float) this.f8738a.getHeight())) + 1.0f) * 255.0f);
+            }
+            this.f8738a.setBackgroundColor(Color.argb(i, 248, 248, 248));
+            this.f8738a.setBottomLineColor(Color.argb(i, HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT));
+            this.f8738a.getCenterTitleView().setTextColor(Color.argb(i, HttpStatus.SC_PROCESSING, HttpStatus.SC_PROCESSING, HttpStatus.SC_PROCESSING));
+        }
     }
 }

@@ -1,20 +1,22 @@
 package com.duokan.reader.ui.store;
 
-import com.duokan.reader.ui.general.ef;
+import com.duokan.reader.ui.general.ee;
 
-class bt implements ef {
-    final /* synthetic */ br a;
+class bt implements ee {
+    /* renamed from: a */
+    final /* synthetic */ br f11385a;
 
     bt(br brVar) {
-        this.a = brVar;
+        this.f11385a = brVar;
     }
 
-    public void a(int i, int i2) {
+    /* renamed from: a */
+    public void mo2536a(int i, int i2) {
         if (i >= 0 && i2 >= 0) {
-            bl blVar = (bl) this.a.b.get(i2);
-            this.a.deactivate((bl) this.a.b.get(i));
-            this.a.activate(blVar);
-            this.a.a();
+            bl blVar = (bl) this.f11385a.f11381b.get(i2);
+            this.f11385a.deactivate((bl) this.f11385a.f11381b.get(i));
+            this.f11385a.activate(blVar);
+            this.f11385a.mo2562a();
         }
     }
 }

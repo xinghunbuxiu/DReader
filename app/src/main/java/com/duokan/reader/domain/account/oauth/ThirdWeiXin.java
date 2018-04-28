@@ -1,10 +1,12 @@
 package com.duokan.reader.domain.account.oauth;
 
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
+import android.net.Uri;
 import android.text.TextUtils;
-
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.common.webservices.WebSession;
@@ -18,16 +20,33 @@ import com.tencent.mm.opensdk.modelmsg.WXTextObject;
 import com.tencent.mm.opensdk.modelmsg.WXWebpageObject;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
-import com.umeng.analytics.pro.j;
-
+import com.umeng.analytics.pro.C2295j;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.OutputStream;
 
 public class ThirdWeiXin {
     private static boolean mInstalled = false;
     private final int THUMB_MAX_BYTE_COUNT = 32768;
-    private final int THUMB_SCALE_SIZE = j.e;
+    private final int THUMB_SCALE_SIZE = C2295j.f14325e;
     private final Context mContext = DkApp.get();
+
+    /* renamed from: com.duokan.reader.domain.account.oauth.ThirdWeiXin$1 */
+    final class C07191 extends WebSession {
+        C07191() {
+        }
+
+        protected void onSessionTry() {
+            ThirdWeiXin.resetInstalledStatus();
+        }
+
+        protected void onSessionSucceeded() {
+        }
+
+        protected void onSessionFailed() {
+        }
+    }
 
     public void login() {
         BaseReq req = new Req();
@@ -45,8 +64,8 @@ public class ThirdWeiXin {
             wXMediaMessage.mediaObject = new WXImageObject(bitmap);
             req.transaction = buildTransaction("img");
             req.message = wXMediaMessage;
-            wXMediaMessage.title = subString(str, j.e);
-            wXMediaMessage.description = subString(str2, j.g);
+            wXMediaMessage.title = subString(str, C2295j.f14325e);
+            wXMediaMessage.description = subString(str2, C2295j.f14327g);
             if (!(isSupportShareWeiXinFriends(this.mContext) && z2)) {
                 i = 0;
             }
@@ -57,9 +76,9 @@ public class ThirdWeiXin {
         IMediaObject wXWebpageObject = new WXWebpageObject();
         wXWebpageObject.webpageUrl = str3;
         WXMediaMessage wXMediaMessage2 = new WXMediaMessage(wXWebpageObject);
-        wXMediaMessage2.title = subString(str, j.e);
-        wXMediaMessage2.description = subString(str2, j.g);
-        byte[] bmpToByteArray = bmpToByteArray(Bitmap.createScaledBitmap(bitmap, j.e, j.e, true), true);
+        wXMediaMessage2.title = subString(str, C2295j.f14325e);
+        wXMediaMessage2.description = subString(str2, C2295j.f14327g);
+        byte[] bmpToByteArray = bmpToByteArray(Bitmap.createScaledBitmap(bitmap, C2295j.f14325e, C2295j.f14325e, true), true);
         if (bmpToByteArray.length <= 32768) {
             wXMediaMessage2.thumbData = bmpToByteArray;
         }
@@ -71,6 +90,32 @@ public class ThirdWeiXin {
         }
         req2.scene = i;
         createWxApi.sendReq(req2);
+    }
+
+    public void shareWithSummary(Bitmap bitmap, String str) {
+        Intent intent = new Intent();
+        intent.setComponent(new ComponentName("com.tencent.mm", "com.tencent.mm.ui.tools.ShareToTimeLineUI"));
+        intent.setAction("android.intent.action.SEND");
+        intent.setType("image/*");
+        intent.putExtra("Kdescription", str);
+        intent.putExtra("android.intent.extra.STREAM", Uri.fromFile(saveBitmap(bitmap, "temp.jpg")));
+        DkApp.get().getTopActivity().startActivity(intent);
+    }
+
+    private File saveBitmap(Bitmap bitmap, String str) {
+        File file = new File(ReaderEnv.get().getPrivateCacheDirectory() + "/" + str);
+        if (file.exists()) {
+            file.delete();
+        }
+        try {
+            OutputStream fileOutputStream = new FileOutputStream(file);
+            if (bitmap.compress(CompressFormat.JPEG, 85, fileOutputStream)) {
+                fileOutputStream.flush();
+                fileOutputStream.close();
+            }
+        } catch (Throwable th) {
+        }
+        return file;
     }
 
     public void send2Friend(String str, String str2) {
@@ -95,17 +140,7 @@ public class ThirdWeiXin {
     }
 
     public static void asyncResetInstalledStatus() {
-        new WebSession() {
-            protected void onSessionTry() {
-                ThirdWeiXin.resetInstalledStatus();
-            }
-
-            protected void onSessionSucceeded() {
-            }
-
-            protected void onSessionFailed() {
-            }
-        }.open();
+        new C07191().open();
     }
 
     public static synchronized void resetInstalledStatus() {

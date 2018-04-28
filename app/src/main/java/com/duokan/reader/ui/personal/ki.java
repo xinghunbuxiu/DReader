@@ -1,33 +1,37 @@
 package com.duokan.reader.ui.personal;
 
 import android.text.TextUtils;
+import com.duokan.core.app.ManagedApp;
+import com.duokan.reader.DkApp;
+import com.duokan.reader.domain.cloud.DkCloudStoreBook;
+import com.duokan.reader.domain.store.C0466h;
+import com.duokan.reader.domain.store.DkStoreBookDetail;
+import com.duokan.reader.domain.store.DkStoreItem;
+import com.duokan.reader.ui.bookshelf.be;
+import com.duokan.reader.ui.store.C1502o;
 
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.cloud.DkCloudBookManifest;
-import com.duokan.reader.domain.cloud.ao;
-import com.duokan.reader.ui.general.be;
+final class ki implements C0466h {
+    /* renamed from: a */
+    final /* synthetic */ DkCloudStoreBook f8810a;
+    /* renamed from: b */
+    final /* synthetic */ PurchasedBookItemView f8811b;
 
-class ki implements ao {
-    final /* synthetic */ c a;
-    final /* synthetic */ kh b;
-
-    ki(kh khVar, c cVar) {
-        this.b = khVar;
-        this.a = cVar;
+    ki(DkCloudStoreBook dkCloudStoreBook, PurchasedBookItemView purchasedBookItemView) {
+        this.f8810a = dkCloudStoreBook;
+        this.f8811b = purchasedBookItemView;
     }
 
-    public void a(String str, DkCloudBookManifest dkCloudBookManifest) {
-        if (this.a == this.b.b.get(this.b.b.size() - 1) && this.b.c != null) {
-            this.b.c.run();
-        }
+    public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
+        be.m9188a(ManagedApp.get().getTopActivity(), ((DkStoreBookDetail) dkStoreItem).getEpubSize(), new kj(this, dkStoreItem));
     }
 
-    public void a(String str, String str2) {
-        if (!TextUtils.isEmpty(str2)) {
-            be.a(this.b.d.getContext(), (CharSequence) str2, 1).show();
+    public void onFetchBookDetailError(String str) {
+        C1502o.m15410a().m15436c(this.f8810a.getBookUuid());
+        if (!TextUtils.isEmpty(str)) {
+            com.duokan.reader.ui.general.be.m10287a(DkApp.get(), (CharSequence) str, 1).show();
         }
-        if (this.a == this.b.b.get(this.b.b.size() - 1) && this.b.c != null) {
-            this.b.c.run();
+        if (this.f8811b.f8227e == this.f8810a) {
+            this.f8811b.f8226d.setEnabled(true);
         }
     }
 }

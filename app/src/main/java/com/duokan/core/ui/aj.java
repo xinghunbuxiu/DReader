@@ -3,24 +3,29 @@ package com.duokan.core.ui;
 import android.view.View;
 import android.view.ViewGroup;
 
-public abstract class aj extends x {
-    public int a() {
+public abstract class aj extends C0376x {
+    /* renamed from: a */
+    public int mo486a() {
         return 0;
     }
 
-    public int a(int i) {
+    /* renamed from: a */
+    public int mo487a(int i) {
         return 0;
     }
 
-    public View a(int i, View view, ViewGroup viewGroup) {
+    /* renamed from: a */
+    public View mo488a(int i, View view, ViewGroup viewGroup) {
         return null;
     }
 
-    public View b(int i, View view, ViewGroup viewGroup) {
+    /* renamed from: b */
+    public View mo505b(int i, View view, ViewGroup viewGroup) {
         return null;
     }
 
-    public View c(int i, View view, ViewGroup viewGroup) {
+    /* renamed from: c */
+    public View mo507c(int i, View view, ViewGroup viewGroup) {
         return null;
     }
 }

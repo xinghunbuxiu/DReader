@@ -1,26 +1,29 @@
 package com.duokan.core.ui;
 
 import android.graphics.Matrix;
+import com.duokan.core.sys.BaseAnimation;
 
-import com.duokan.core.sys.ap;
-
-final class ej extends ap {
+final class ej extends BaseAnimation<Matrix> {
     ej() {
     }
 
-    protected Object b() {
-        return c();
+    /* renamed from: b */
+    protected /* synthetic */ Object createAnimation() {
+        return m2004c();
     }
 
-    protected void b(Object obj) {
-        a((Matrix) obj);
+    /* renamed from: b */
+    protected /* synthetic */ void mo516b(Object obj) {
+        m2001a((Matrix) obj);
     }
 
-    protected Matrix c() {
+    /* renamed from: c */
+    protected Matrix m2004c() {
         return new Matrix();
     }
 
-    protected void a(Matrix matrix) {
+    /* renamed from: a */
+    protected void m2001a(Matrix matrix) {
         matrix.reset();
     }
 }

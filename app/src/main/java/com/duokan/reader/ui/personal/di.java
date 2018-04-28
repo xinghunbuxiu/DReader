@@ -1,18 +1,21 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.domain.account.C0672a;
+import com.duokan.reader.domain.account.C0700d;
 
-import com.duokan.reader.common.b.e;
-
-class di implements OnClickListener {
-    final /* synthetic */ MiAccountProfileSettingsController a;
+class di implements C0700d {
+    /* renamed from: a */
+    final /* synthetic */ MiAccountProfileSettingsController f8451a;
 
     di(MiAccountProfileSettingsController miAccountProfileSettingsController) {
-        this.a = miAccountProfileSettingsController;
+        this.f8451a = miAccountProfileSettingsController;
     }
 
-    public void onClick(View view) {
-        e.a(this.a.getContext()).a(this.a.getActivity());
+    /* renamed from: a */
+    public void mo868a(C0672a c0672a) {
+    }
+
+    /* renamed from: a */
+    public void mo869a(C0672a c0672a, String str) {
     }
 }

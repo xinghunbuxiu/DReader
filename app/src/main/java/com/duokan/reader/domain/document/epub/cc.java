@@ -1,7 +1,9 @@
 package com.duokan.reader.domain.document.epub;
 
 interface cc {
-    void a(cd cdVar);
+    /* renamed from: a */
+    void mo1377a(cd cdVar);
 
-    void b(cd cdVar);
+    /* renamed from: b */
+    void mo1378b(cd cdVar);
 }

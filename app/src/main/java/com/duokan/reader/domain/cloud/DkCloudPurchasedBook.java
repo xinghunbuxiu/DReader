@@ -2,6 +2,7 @@ package com.duokan.reader.domain.cloud;
 
 import com.duokan.reader.common.webservices.duokan.DkCloudPurchasedBookInfo;
 import com.duokan.reader.common.webservices.duokan.DkStoreBookSourceType;
+import com.duokan.reader.domain.cloud.DkCloudBook.DkCloudBookFormat;
 
 public class DkCloudPurchasedBook extends DkCloudStoreBook {
     private DkCloudRedeemBenefit mBenefit;
@@ -17,21 +18,21 @@ public class DkCloudPurchasedBook extends DkCloudStoreBook {
         this.mHasFullData = true;
     }
 
-    protected DkCloudPurchasedBook(e eVar) {
-        super(eVar.a);
+    protected DkCloudPurchasedBook(C0845e c0845e) {
+        super(c0845e.f3901a);
         this.mLabels = (String[][]) null;
         this.mBenefit = null;
         this.mBookInfo = new DkCloudPurchasedBookInfo();
-        this.mBookInfo.mBookUuid = eVar.a;
-        this.mBookInfo.mTitle = eVar.b;
-        this.mBookInfo.mAuthors = eVar.c;
-        this.mBookInfo.mEditors = eVar.d;
-        this.mBookInfo.mOrderUuid = eVar.e;
-        this.mBookInfo.mType = eVar.f;
-        this.mBookInfo.setPurchaseTimeInSeconds(eVar.g);
-        this.mBookInfo.mUpdateTime = eVar.h;
-        this.mBookInfo.mCoverUri = eVar.i;
-        this.mBookInfo.mIsHide = eVar.j;
+        this.mBookInfo.mBookUuid = c0845e.f3901a;
+        this.mBookInfo.mTitle = c0845e.f3902b;
+        this.mBookInfo.mAuthors = c0845e.f3903c;
+        this.mBookInfo.mEditors = c0845e.f3904d;
+        this.mBookInfo.mOrderUuid = c0845e.f3905e;
+        this.mBookInfo.mType = c0845e.f3906f;
+        this.mBookInfo.setPurchaseTimeInSeconds(c0845e.f3907g);
+        this.mBookInfo.mUpdateTime = c0845e.f3908h;
+        this.mBookInfo.mCoverUri = c0845e.f3909i;
+        this.mBookInfo.mIsHide = c0845e.f3910j;
         this.mHasFullData = false;
     }
 

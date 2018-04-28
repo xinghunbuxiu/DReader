@@ -1,110 +1,31 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.PointF;
-import android.graphics.Rect;
-import android.view.View;
+import com.duokan.reader.domain.audio.AudioPlayer;
+import com.duokan.reader.domain.document.ay;
 
-import com.duokan.core.app.IFeature;
-import com.duokan.reader.domain.document.au;
-import com.duokan.reader.ui.general.gi;
-import com.duokan.reader.ui.general.hd;
+class hp implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ hl f10345a;
 
-public class hp extends si {
-    private hq i;
-    private kd j = null;
-
-    public /* bridge */ /* synthetic */ void a(au auVar, Rect rect) {
-        super.a(auVar, rect);
+    hp(hl hlVar) {
+        this.f10345a = hlVar;
     }
 
-    public /* bridge */ /* synthetic */ boolean a(PointF pointF, Runnable runnable, Runnable runnable2) {
-        return super.a(pointF, runnable, runnable2);
-    }
-
-    public /* bridge */ /* synthetic */ boolean b(PointF pointF, Runnable runnable, Runnable runnable2) {
-        return super.b(pointF, runnable, runnable2);
-    }
-
-    public /* bridge */ /* synthetic */ boolean e() {
-        return super.e();
-    }
-
-    public /* bridge */ /* synthetic */ boolean f() {
-        return super.f();
-    }
-
-    public /* bridge */ /* synthetic */ void g() {
-        super.g();
-    }
-
-    public /* bridge */ /* synthetic */ void h() {
-        super.h();
-    }
-
-    public /* bridge */ /* synthetic */ void i() {
-        super.i();
-    }
-
-    public /* bridge */ /* synthetic */ void j() {
-        super.j();
-    }
-
-    public /* bridge */ /* synthetic */ boolean k() {
-        return super.k();
-    }
-
-    public /* bridge */ /* synthetic */ void l() {
-        super.l();
-    }
-
-    public /* bridge */ /* synthetic */ boolean m() {
-        return super.m();
-    }
-
-    public /* bridge */ /* synthetic */ void n() {
-        super.n();
-    }
-
-    public /* bridge */ /* synthetic */ void o() {
-        super.o();
-    }
-
-    public hp(IFeature featrue, sh shVar, wl wlVar) {
-        super(featrue, shVar, wlVar);
-    }
-
-    protected hd a() {
-        this.i = new hq(getContext());
-        return this.i;
-    }
-
-    protected View b() {
-        return this.i.m();
-    }
-
-    protected View c() {
-        return this.i.n();
-    }
-
-    protected View d() {
-        return this.i.o();
-    }
-
-    protected void onActive(boolean z) {
-        super.onActive(z);
-        kd.a();
-    }
-
-    public void a(gi giVar) {
-        super.a(giVar);
-        if (this.j == null && this.a.G().k() && kd.b()) {
-            this.j = new kd(getContext());
-            this.b.addView(this.j.getContentView());
-            addSubController(this.j);
-            activate(this.j);
-        }
-        if (this.j != null) {
-            this.j.a(giVar);
+    public void run() {
+        if (!this.f10345a.q && this == this.f10345a.f10332K) {
+            ay Z = this.f10345a.c.mo2009Z();
+            ay e = AudioPlayer.m3613a().m3644e();
+            this.f10345a.f10332K = null;
+            if (Z == null || e == null) {
+                this.f10345a.c.aV();
+            } else if (Z.m5814b(e)) {
+                this.f10345a.c.aV();
+            } else {
+                if (AudioPlayer.m3613a().m3641b()) {
+                    this.f10345a.c.mo2025a(Z, false);
+                }
+                this.f10345a.c.aV();
+            }
         }
     }
 }

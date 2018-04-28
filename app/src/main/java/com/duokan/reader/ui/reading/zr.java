@@ -1,18 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.core.sys.ag;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-import java.util.Map;
+class zr implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ze f11277a;
 
-class zr implements ag {
-    final /* synthetic */ zq a;
-
-    zr(zq zqVar) {
-        this.a = zqVar;
+    zr(ze zeVar) {
+        this.f11277a = zeVar;
     }
 
-    public void a(Map map) {
-        TaskHandler.PostTask(this.a.a.c);
+    public void onClick(View view) {
+        this.f11277a.f11222D.put("Action2", "SHARE");
+        this.f11277a.f11224F.mo2209b();
     }
 }

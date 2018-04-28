@@ -1,43 +1,18 @@
 package com.duokan.reader.ui.general.web;
 
-import android.text.TextUtils;
-import android.webkit.JavascriptInterface;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.common.C0616o;
 
-import org.json.JSONArray;
+class aj implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ SearchController f7578a;
 
-import java.util.List;
-
-public class aj extends PageController {
-    final /* synthetic */ SearchController a;
-
-    protected aj(SearchController searchController) {
-        this.a = searchController;
-        super(searchController);
+    aj(SearchController searchController) {
+        this.f7578a = searchController;
     }
 
-    @JavascriptInterface
-    public void setHotWords(String str) {
-        b(new ak(this, str));
-    }
-
-    @JavascriptInterface
-    public void editSearchHistory(String str) {
-        b(new am(this, str));
-    }
-
-    private void a(List list, JSONArray jSONArray) {
-        if (jSONArray != null) {
-            for (int i = 0; i < jSONArray.length(); i++) {
-                CharSequence optString = jSONArray.optString(i);
-                if (!TextUtils.isEmpty(optString)) {
-                    list.add(optString);
-                }
-            }
-        }
-    }
-
-    @JavascriptInterface
-    public void getSearchHistory(String str) {
-        b(new ao(this, str));
+    public void onClick(View view) {
+        C0616o.m2804a().m2810a(new ak(this));
     }
 }

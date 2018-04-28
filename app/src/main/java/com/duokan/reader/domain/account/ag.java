@@ -1,27 +1,21 @@
 package com.duokan.reader.domain.account;
 
-import android.accounts.Account;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-import com.duokan.reader.common.b.a;
+class ag implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ C0420b f2355a;
+    /* renamed from: b */
+    final /* synthetic */ ad f2356b;
 
-class ag implements be {
-    final /* synthetic */ a a;
-    final /* synthetic */ b b;
-    final /* synthetic */ MiAccount c;
-
-    ag(MiAccount miAccount, a aVar, b bVar) {
-        this.c = miAccount;
-        this.a = aVar;
-        this.b = bVar;
+    ag(ad adVar, C0420b c0420b) {
+        this.f2356b = adVar;
+        this.f2355a = c0420b;
     }
 
-    public void a(Account account, String str) {
-        this.a.a("com.xiaomi", str);
-        this.c.a.a(this.c);
-        this.b.a(this.c);
-    }
-
-    public void b(Account account, String str) {
-        this.b.a(this.c, str);
+    public void onClick(View view) {
+        this.f2356b.dismiss();
+        C0709k.m3476a().m3509d(this.f2355a);
     }
 }

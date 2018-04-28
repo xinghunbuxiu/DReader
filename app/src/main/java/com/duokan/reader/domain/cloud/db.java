@@ -1,28 +1,19 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.reader.common.async.a.a;
-import com.duokan.reader.domain.account.u;
+import com.duokan.reader.common.async.p035a.C0517a;
 
-import java.util.List;
+class db implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ C0517a f3855a;
+    /* renamed from: b */
+    final /* synthetic */ DkUserPurchasedFictionsManager f3856b;
 
-class db implements u {
-    final /* synthetic */ String a;
-    final /* synthetic */ List b;
-    final /* synthetic */ a c;
-    final /* synthetic */ DkUserPurchasedFictionsManager d;
-
-    db(DkUserPurchasedFictionsManager dkUserPurchasedFictionsManager, String str, List list, a aVar) {
-        this.d = dkUserPurchasedFictionsManager;
-        this.a = str;
-        this.b = list;
-        this.c = aVar;
+    db(DkUserPurchasedFictionsManager dkUserPurchasedFictionsManager, C0517a c0517a) {
+        this.f3856b = dkUserPurchasedFictionsManager;
+        this.f3855a = c0517a;
     }
 
-    public void onQueryAccountOk(com.duokan.reader.domain.account.a aVar) {
-        this.d.a(new dc(this));
-    }
-
-    public void onQueryAccountError(com.duokan.reader.domain.account.a aVar, String str) {
-        this.c.a(-1, str);
+    public void run() {
+        this.f3855a.mo729a(-1, "");
     }
 }

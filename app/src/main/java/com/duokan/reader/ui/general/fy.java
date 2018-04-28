@@ -1,33 +1,26 @@
 package com.duokan.reader.ui.general;
 
 import android.view.View;
+import android.view.ViewGroup;
+import com.duokan.core.ui.aw;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.IFeature;
+public abstract class fy extends aw {
+    /* renamed from: a */
+    protected abstract gc mo2319a(gb gbVar, View view, ViewGroup viewGroup);
 
-public class fy extends ActivatedController {
-    private final ActivatedController a;
-    final /* synthetic */ PagesController c;
+    /* renamed from: a */
+    protected abstract boolean mo2320a(gc gcVar);
 
-    public fy(PagesController pagesController, IFeature featrue, ActivatedController activatedControllerVar) {
-        this.c = pagesController;
-        super(featrue);
-        this.a = activatedControllerVar;
-        setContentView(this.a.getContentView());
-        addSubController(this.a);
+    /* renamed from: b */
+    protected abstract boolean mo2322b(gc gcVar);
+
+    /* renamed from: c */
+    public final int mo506c() {
+        return -1;
     }
 
-    public final ActivatedController b() {
-        return this.a;
-    }
-
-    public final View c() {
-        return this.a.getContentView();
-    }
-
-    protected void onActive(boolean z) {
-        if (z) {
-            activate(this.a);
-        }
+    /* renamed from: d */
+    public final Object mo509d(int i) {
+        return null;
     }
 }

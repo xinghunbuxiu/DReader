@@ -1,24 +1,24 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.bookshelf.a;
-import com.duokan.reader.domain.bookshelf.ef;
-import com.duokan.reader.domain.document.av;
-import com.duokan.reader.domain.document.bb;
+import android.graphics.Point;
+import android.view.View;
 
-public interface acv {
-    ef a(bb bbVar, String str, String str2);
+class acv implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ Point f9486a;
+    /* renamed from: b */
+    final /* synthetic */ View f9487b;
+    /* renamed from: c */
+    final /* synthetic */ TextSelectionController f9488c;
 
-    void a(a aVar);
+    acv(TextSelectionController textSelectionController, Point point, View view) {
+        this.f9488c = textSelectionController;
+        this.f9486a = point;
+        this.f9487b = view;
+    }
 
-    void a(av avVar, String str);
-
-    void a(bb bbVar, String str);
-
-    void a(String str);
-
-    void b(a aVar);
-
-    void c(a aVar);
-
-    void d(a aVar);
+    public void run() {
+        this.f9488c.m12567c(this.f9486a.x, this.f9486a.y, this.f9488c.f9152a, this.f9487b);
+        this.f9488c.m12558a(false);
+    }
 }

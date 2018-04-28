@@ -1,15 +1,16 @@
 package com.duokan.reader.ui.reading;
 
-class qn implements Runnable {
-    final /* synthetic */ qj a;
+import com.duokan.core.sys.UThread;
 
-    qn(qj qjVar) {
-        this.a = qjVar;
+class qn implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ qm f10868a;
+
+    qn(qm qmVar) {
+        this.f10868a = qmVar;
     }
 
     public void run() {
-        if (!this.a.a.q && this.a.a.J != null) {
-            this.a.a.J.j();
-        }
+        UThread.postDelayed(new qo(this), 500);
     }
 }

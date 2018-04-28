@@ -1,15 +1,25 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.DkPublic;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.TextView;
 
-class dy implements Runnable {
-    final /* synthetic */ de a;
+class dy implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ TextView f10052a;
+    /* renamed from: b */
+    final /* synthetic */ dg f10053b;
 
-    dy(de deVar) {
-        this.a = deVar;
+    dy(dg dgVar, TextView textView) {
+        this.f10053b = dgVar;
+        this.f10052a = textView;
     }
 
-    public void run() {
-        DkPublic.exchangeNewIdThenDo(this.a.y.H(), this.a.F, new dz(this), null);
+    public void onClick(View view) {
+        if (this.f10052a.getMaxLines() != 5) {
+            this.f10052a.setMaxLines(5);
+        } else {
+            this.f10052a.setMaxLines(Integer.MAX_VALUE);
+        }
     }
 }

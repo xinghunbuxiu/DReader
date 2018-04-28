@@ -3,10 +3,8 @@ package com.duokan.reader.domain.cloud.push;
 import com.duokan.reader.common.webservices.duokan.DkCloudMessageInfo;
 import com.duokan.reader.domain.cloud.DkCloudItem;
 import com.duokan.reader.domain.cloud.DkCloudJsonItem;
-
-import org.json.JSONObject;
-
 import java.util.Date;
+import org.json.JSONObject;
 
 public class DkCloudPushMessage extends DkCloudJsonItem {
     private static final long MESSAGE_VERSION = 0;

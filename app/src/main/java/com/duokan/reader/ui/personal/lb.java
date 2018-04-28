@@ -1,19 +1,28 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
-import android.view.View.OnLongClickListener;
+import com.duokan.core.app.FeatureListening;
+import com.duokan.reader.domain.cloud.DkCloudStoreBook;
+import java.util.List;
 
-class lb implements OnLongClickListener {
-    final /* synthetic */ int a;
-    final /* synthetic */ kx b;
+public interface lb extends FeatureListening {
+    /* renamed from: a */
+    PurchasedSortType mo1932a();
 
-    lb(kx kxVar, int i) {
-        this.b = kxVar;
-        this.a = i;
-    }
+    /* renamed from: a */
+    void mo1933a(DkCloudStoreBook dkCloudStoreBook);
 
-    public boolean onLongClick(View view) {
-        this.b.h.c(0, this.a);
-        return true;
-    }
+    /* renamed from: a */
+    void mo1934a(PurchasedSortType purchasedSortType);
+
+    /* renamed from: a */
+    void mo1935a(Runnable runnable, List<DkCloudStoreBook> list);
+
+    /* renamed from: b */
+    void mo1936b();
+
+    /* renamed from: c */
+    void mo1937c();
+
+    /* renamed from: d */
+    void mo1938d();
 }

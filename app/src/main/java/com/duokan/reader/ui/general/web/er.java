@@ -1,16 +1,23 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.as;
-import com.duokan.reader.common.b.e;
+class er implements C1352a {
+    /* renamed from: a */
+    final /* synthetic */ String f7794a;
+    /* renamed from: b */
+    final /* synthetic */ eq f7795b;
 
-class er implements as {
-    final /* synthetic */ PageController a;
-
-    er(PageController cgVar) {
-        this.a = cgVar;
+    er(eq eqVar, String str) {
+        this.f7795b = eqVar;
+        this.f7794a = str;
     }
 
-    public void a() {
-        e.a(this.a.pageController.getContext()).a(this.a.pageController.getActivity());
+    /* renamed from: a */
+    public void mo1839a(Object... objArr) {
+        this.f7795b.f7793b.f7581b.web_notifyWeb(this.f7794a, 0, "operation", Integer.valueOf(1), "text", (String) objArr[0]);
+    }
+
+    /* renamed from: b */
+    public void mo1840b(Object... objArr) {
+        this.f7795b.f7793b.f7581b.web_notifyWeb(this.f7794a, 0, "operation", Integer.valueOf(0), "text", "");
     }
 }

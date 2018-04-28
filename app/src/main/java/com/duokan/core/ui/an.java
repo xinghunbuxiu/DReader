@@ -3,5 +3,6 @@ package com.duokan.core.ui;
 import android.view.View;
 
 public interface an {
-    void a(HatGridView hatGridView, View view, int i);
+    /* renamed from: a */
+    void mo1558a(HatGridView hatGridView, View view, int i);
 }

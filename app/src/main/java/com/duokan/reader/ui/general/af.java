@@ -11,17 +11,16 @@ import android.view.ViewGroup.MarginLayoutParams;
 import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-
-import com.duokan.b.b;
-import com.duokan.b.c;
-import com.duokan.b.d;
-import com.duokan.b.e;
-import com.duokan.core.sys.AIdleOperation;
-import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.f;
+import com.duokan.core.sys.UIdleHandler;
+import com.duokan.core.ui.C0343f;
+import com.duokan.core.ui.dv;
+import com.duokan.p023b.C0240b;
+import com.duokan.p023b.C0241c;
+import com.duokan.p023b.C0242d;
+import com.duokan.p023b.C0243e;
 import com.duokan.reader.ReaderEnv;
 
-public class af extends f {
+public class af extends C0343f {
     private static int mDialogHeight = 0;
     private static int mDialogWidth = 0;
     private final FrameLayout mContentContainer = new FrameLayout(getContext());
@@ -32,8 +31,8 @@ public class af extends f {
         super(new ah(context));
         initContent(this.mContentContainer);
         super.setContentView(this.mContentContainer);
-        setEnterAnimation(ReaderEnv.get().forHd() ? b.general__shared__scale_center_in : b.general__shared__push_down_in);
-        setExitAnimation(ReaderEnv.get().forHd() ? b.general__shared__scale_center_out : b.general__shared__push_down_out);
+        setEnterAnimation(ReaderEnv.get().forHd() ? C0240b.general__shared__scale_center_in : C0240b.general__shared__push_down_in);
+        setExitAnimation(ReaderEnv.get().forHd() ? C0240b.general__shared__scale_center_out : C0240b.general__shared__push_down_out);
     }
 
     public View getContentView() {
@@ -61,13 +60,13 @@ public class af extends f {
 
     public void show() {
         super.show();
-        AIdleOperation.addIdleStatus(new ag(this));
+        UIdleHandler.addIdleHandler(new ag(this));
     }
 
     public void dismiss() {
         View focusedEditText = getFocusedEditText();
         if (focusedEditText != null) {
-            ReaderUi.a(getContext(), focusedEditText);
+            ReaderUi.m10161a(getContext(), focusedEditText);
         }
         super.dismiss();
     }
@@ -114,7 +113,7 @@ public class af extends f {
 
     public void setContentBackgroundColor(int i) {
         if (ReaderEnv.get().forHd()) {
-            this.mContentContainer.setBackgroundDrawable(new hn((float) UTools.getMinimumHeight(getContext(), 7.0f), (float) UTools.getMinimumHeight(getContext(), 7.0f), i));
+            this.mContentContainer.setBackgroundDrawable(new hc((float) dv.m1932b(getContext(), 7.0f), (float) dv.m1932b(getContext(), 7.0f), i));
             return;
         }
         this.mContentContainer.setBackgroundColor(i);
@@ -127,18 +126,18 @@ public class af extends f {
     protected void initContent(FrameLayout frameLayout) {
         LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -1);
         if (ReaderEnv.get().forHd()) {
-            this.mDefaultHdBgDrawable = frameLayout.getResources().getDrawable(e.general__shared__center_dialog_bg);
+            this.mDefaultHdBgDrawable = frameLayout.getResources().getDrawable(C0243e.general__shared__center_dialog_bg);
             frameLayout.setBackgroundDrawable(this.mDefaultHdBgDrawable);
             initHdContent(frameLayout, layoutParams);
         } else {
-            frameLayout.setBackgroundColor(getContext().getResources().getColor(c.general__shared__ffffff));
+            frameLayout.setBackgroundColor(getContext().getResources().getColor(C0241c.general__shared__ffffff));
         }
         frameLayout.setLayoutParams(layoutParams);
     }
 
     protected void initHdContent(FrameLayout frameLayout, FrameLayout.LayoutParams layoutParams) {
         if (mDialogWidth == 0) {
-            Point a = ReaderUi.a(getActivity());
+            Point a = ReaderUi.m10155a(getActivity());
             mDialogWidth = a.x;
             mDialogHeight = a.y;
         }
@@ -149,13 +148,13 @@ public class af extends f {
     public static void initCenterDialogHeaderStyle(HeaderView headerView) {
         if (ReaderEnv.get().forHd()) {
             headerView.setBackgroundColor(0);
-            headerView.setTitleTextColor(headerView.getResources().getColor(c.general__shared__666666));
-            headerView.setTitleTextSize((float) headerView.getResources().getDimensionPixelSize(d.general_font__shared__c));
+            headerView.setTitleTextColor(headerView.getResources().getColor(C0241c.general__shared__666666));
+            headerView.setTitleTextSize((float) headerView.getResources().getDimensionPixelSize(C0242d.general_font__shared__c));
         }
     }
 
     public static void initWebViewCenterDialog(af afVar, WebView webView) {
-        initWebViewCenterDialog(afVar, webView, webView.getContext().getResources().getColor(c.general__shared__ebebeb));
+        initWebViewCenterDialog(afVar, webView, webView.getContext().getResources().getColor(C0241c.general__shared__ebebeb));
     }
 
     public static void initWebViewCenterDialog(af afVar, WebView webView, int i) {
@@ -166,7 +165,7 @@ public class af extends f {
     public static void initCenterDialogWebViewBg(WebView webView, int i) {
         if (ReaderEnv.get().forHd()) {
             MarginLayoutParams marginLayoutParams = (MarginLayoutParams) webView.getLayoutParams();
-            marginLayoutParams.bottomMargin = UTools.getMinimumHeight(webView.getContext(), 7.0f);
+            marginLayoutParams.bottomMargin = dv.m1932b(webView.getContext(), 7.0f);
             webView.setLayoutParams(marginLayoutParams);
         }
         webView.setBackgroundColor(i);

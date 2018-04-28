@@ -1,19 +1,17 @@
 package com.duokan.reader.ui.bookshelf;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class jr extends BroadcastReceiver {
-    final /* synthetic */ jp a;
+class jr implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ jp f6689a;
 
     jr(jp jpVar) {
-        this.a = jpVar;
+        this.f6689a = jpVar;
     }
 
-    public void onReceive(Context context, Intent intent) {
-        if ("android.intent.action.MEDIA_MOUNTED".equals(intent.getAction())) {
-            this.a.c();
-        }
+    public void onClick(View view) {
+        this.f6689a.requestBack();
     }
 }

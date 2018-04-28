@@ -1,23 +1,19 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.domain.cloud.DkCloudReadingInfo;
-import com.duokan.reader.domain.cloud.ap;
+import com.duokan.reader.ui.general.dj;
 
-class lz implements ap {
-    final /* synthetic */ lv a;
+class lz implements dj {
+    /* renamed from: a */
+    final /* synthetic */ ly f8918a;
 
-    lz(lv lvVar) {
-        this.a = lvVar;
+    lz(ly lyVar) {
+        this.f8918a = lyVar;
     }
 
-    public void a(DkCloudReadingInfo dkCloudReadingInfo) {
-        this.a.a(dkCloudReadingInfo);
-        this.a.a();
-        this.a.c.getAdapter().a(false);
-    }
-
-    public void a(String str) {
-        this.a.a();
-        this.a.c.getAdapter().m();
+    public boolean onBack() {
+        if (this.f8918a.f8915a == null || !this.f8918a.f8915a.m11529j()) {
+            return this.f8918a.requestDetach();
+        }
+        return true;
     }
 }

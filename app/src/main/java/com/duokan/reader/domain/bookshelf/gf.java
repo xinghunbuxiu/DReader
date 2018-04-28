@@ -1,20 +1,17 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.ag;
-import com.duokan.core.sys.ah;
+class gf implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f3224a;
+    /* renamed from: b */
+    final /* synthetic */ fp f3225b;
 
-import java.util.Map;
-
-class gf implements ag {
-    final /* synthetic */ fe a;
-    final /* synthetic */ fv b;
-
-    gf(fv fvVar, fe feVar) {
-        this.b = fvVar;
-        this.a = feVar;
+    gf(fp fpVar, Runnable runnable) {
+        this.f3225b = fpVar;
+        this.f3224a = runnable;
     }
 
-    public void a(Map map) {
-        ah.future(new gg(this, map), "serialPullingQueue");
+    public void run() {
+        this.f3225b.aV().mo1103f().m5014a(this.f3225b.m4156I(), new gg(this));
     }
 }

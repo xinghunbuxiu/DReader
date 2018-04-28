@@ -1,65 +1,19 @@
 package com.duokan.reader.ui.reading;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
+import com.duokan.core.sys.UThread;
 
-class lo extends View {
-    final /* synthetic */ lb a;
-    private float b = 1.0f;
-    private boolean c = true;
-    private ValueAnimator d = null;
+class lo implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f10575a;
+    /* renamed from: b */
+    final /* synthetic */ lm f10576b;
 
-    public lo(lb lbVar, Context context) {
-        this.a = lbVar;
-        super(context);
-        setWillNotDraw(false);
+    lo(lm lmVar, Runnable runnable) {
+        this.f10576b = lmVar;
+        this.f10575a = runnable;
     }
 
-    public boolean a() {
-        return this.c;
-    }
-
-    public void b() {
-        this.b = 0.0f;
-        this.c = false;
-        this.a.b.c(1.0f - this.b);
-        e();
-        invalidate();
-    }
-
-    public void c() {
-        if (!this.c) {
-            this.c = true;
-            e();
-            this.d = ValueAnimator.ofFloat(new float[]{this.b, 1.0f});
-            this.d.setDuration((long) Math.round((1.0f - this.b) * 500.0f));
-            this.d.addUpdateListener(new lp(this));
-            this.d.start();
-        }
-    }
-
-    public void d() {
-        if (this.c) {
-            this.c = false;
-            e();
-            this.d = ValueAnimator.ofFloat(new float[]{this.b, 0.0f});
-            this.d.setDuration((long) Math.round(this.b * 500.0f));
-            this.d.addUpdateListener(new lq(this));
-            this.d.start();
-        }
-    }
-
-    public void draw(Canvas canvas) {
-        super.draw(canvas);
-        canvas.drawARGB(Math.round(this.b * 255.0f), 0, 0, 0);
-    }
-
-    private void e() {
-        if (this.d != null) {
-            this.d.cancel();
-            this.d = null;
-        }
+    public void run() {
+        UThread.post(this.f10575a);
     }
 }

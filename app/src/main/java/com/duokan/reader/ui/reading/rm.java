@@ -1,21 +1,23 @@
 package com.duokan.reader.ui.reading;
 
-class rm implements Runnable {
-    final /* synthetic */ rl a;
+import com.duokan.core.sys.UThread;
+import com.duokan.reader.domain.statistics.C1163a;
 
-    rm(rl rlVar) {
-        this.a = rlVar;
+class rm implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f10902a;
+    /* renamed from: b */
+    final /* synthetic */ qr f10903b;
+
+    rm(qr qrVar, Runnable runnable) {
+        this.f10903b = qrVar;
+        this.f10902a = runnable;
     }
 
     public void run() {
-        if (this.a.b.isMenuShowing()) {
-            this.a.b.c.b((Runnable) this);
-        } else if (this.a.b.J != null && this.a.b.J.m()) {
-            this.a.b.c.b((Runnable) this);
-        } else if (this.a.b.M != null && this.a.b.M.f()) {
-            this.a.b.c.b((Runnable) this);
-        } else if (this.a.a != null) {
-            this.a.a.run();
+        if (this.f10903b.f9282f.ak()) {
+            C1163a.m8627k().m8636a(this.f10903b.f9282f, this.f10903b.f9290n, (int) (Math.max(0, System.currentTimeMillis() - this.f10903b.f9289m) / 1000));
         }
+        UThread.runOnThread(this.f10902a);
     }
 }

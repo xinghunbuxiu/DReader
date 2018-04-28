@@ -9,9 +9,9 @@ public class DkCloudPurchasedFictionInfo extends DkCloudStoreBookInfo {
     public String[][] mLabels;
     public String mLatest;
     public String mLatestId;
-    public CopyOnWriteArrayList mNotPurchasedChapterIds;
+    public CopyOnWriteArrayList<String> mNotPurchasedChapterIds;
     public String[] mPaidChapterId;
-    public CopyOnWriteArrayList mPurchasedChapterIds;
+    public CopyOnWriteArrayList<String> mPurchasedChapterIds;
     public String mTypeId;
 
     public DkCloudPurchasedFictionInfo() {

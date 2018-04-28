@@ -3,13 +3,17 @@ package com.duokan.reader.ui.general.web;
 import com.duokan.core.sys.as;
 
 class cj implements as {
-    final /* synthetic */ ci a;
+    /* renamed from: a */
+    final /* synthetic */ String f7672a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7673b;
 
-    cj(ci ciVar) {
-        this.a = ciVar;
+    cj(ci ciVar, String str) {
+        this.f7673b = ciVar;
+        this.f7672a = str;
     }
 
-    public void a() {
-        this.a.b.pageController.webPageLoading(this.a.a);
+    /* renamed from: a */
+    public void mo1831a() {
     }
 }

@@ -2,51 +2,51 @@ package com.duokan.reader.domain.cmread;
 
 import android.net.Uri;
 import android.os.Looper;
-
-import com.duokan.core.a.a;
 import com.duokan.core.app.ManagedApp;
-import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.app.aj;
+import com.duokan.core.p026a.C0272a;
+import com.duokan.core.sys.UThread;
+import com.duokan.p023b.C0247i;
 import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.common.webservices.b;
+import com.duokan.reader.common.webservices.C0621a;
+import com.duokan.reader.common.webservices.WebSession;
+import com.duokan.reader.common.webservices.duokan.C0643q;
+import com.duokan.reader.common.webservices.duokan.C0647u;
+import com.duokan.reader.common.webservices.duokan.C0650x;
 import com.duokan.reader.common.webservices.duokan.DkCloudPurchasedFictionInfo;
 import com.duokan.reader.common.webservices.duokan.DkStoreFictionDetailInfo;
-import com.duokan.reader.common.webservices.duokan.r;
-import com.duokan.reader.common.webservices.duokan.v;
-import com.duokan.reader.common.webservices.duokan.y;
+import com.duokan.reader.domain.account.C0709k;
 import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.i;
 import com.duokan.reader.domain.cloud.DkCloudFictionChapter;
+import com.duokan.reader.domain.store.C0466h;
 import com.duokan.reader.domain.store.DkStoreFiction;
 import com.duokan.reader.domain.store.DkStoreFictionDetail;
 import com.duokan.reader.domain.store.DkStoreItem;
-import com.duokan.reader.domain.store.h;
-
 import java.io.File;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.concurrent.Semaphore;
 
-public class CmBookManager implements ah {
+public class CmBookManager implements ai {
     public static final int SC_NOAUTH = 2;
     public static final int SC_NOLOGIN = 1;
     public static final int SC_OK = 0;
-    private static final ai sWrapper = new ai();
-    private final i mAccountManager;
-    private final a mCache;
+    private static final aj<CmBookManager> sWrapper = new aj();
+    private final C0709k mAccountManager;
+    private final C0272a mCache;
     private final ReaderEnv mEnv;
-    private final HashMap mFictionDetailMap = new HashMap();
+    private final HashMap<String, DkStoreFictionDetail> mFictionDetailMap = new HashMap();
     private Looper mHandlerLooper = null;
     private final Thread mHandlerThread;
-    private final HashMap mPurchaseInfoMap = new HashMap();
-    private final HashSet mPurchasedFictionIds;
+    private final HashMap<String, DkCloudPurchasedFictionInfo> mPurchaseInfoMap = new HashMap();
+    private final HashSet<String> mPurchasedFictionIds;
 
-    private CmBookManager(ReaderEnv readerEnv, i iVar) {
+    private CmBookManager(ReaderEnv readerEnv, C0709k c0709k) {
         this.mEnv = readerEnv;
-        this.mAccountManager = iVar;
-        this.mCache = new a(Uri.fromFile(new File(readerEnv.getDatabaseDirectory(), "cmbooks.db")).toString());
+        this.mAccountManager = c0709k;
+        this.mCache = new C0272a(Uri.fromFile(new File(readerEnv.getDatabaseDirectory(), "cmbooks.db")).toString());
         final Semaphore semaphore = new Semaphore(0);
         this.mHandlerThread = new Thread(new Runnable() {
             public void run() {
@@ -58,39 +58,39 @@ public class CmBookManager implements ah {
         });
         this.mHandlerThread.start();
         semaphore.acquireUninterruptibly();
-        this.mPurchasedFictionIds = (HashSet) this.mCache.a(cacheKey("fictions"), new HashSet());
+        this.mPurchasedFictionIds = (HashSet) this.mCache.m631a(cacheKey("fictions"), new HashSet());
     }
 
-    public void fetchFictionDetail(String str, boolean z, boolean z2, int i, int i2, int i3, h hVar) {
-        final y yVar = new y(str);
+    public void fetchFictionDetail(String str, boolean z, boolean z2, int i, int i2, int i3, C0466h c0466h) {
+        final C0650x c0650x = new C0650x(str);
         final boolean z3 = z;
         final boolean z4 = z2;
         final int i4 = i;
         final int i5 = i2;
         final int i6 = i3;
-        final h hVar2 = hVar;
+        final C0466h c0466h2 = c0466h;
         final String str2 = str;
-        new r() {
-            private b mResult = null;
+        new WebSession(C0643q.f2173a) {
+            private C0621a<DkStoreFictionDetailInfo> mResult = null;
 
             protected void onSessionTry() {
-                this.mResult = new v(this, CmBookManager.this.mAccountManager.b(PersonalAccount.class)).a(yVar.a(), z3, z4, i4, i5, i6);
+                this.mResult = new C0647u(this, CmBookManager.this.mAccountManager.m3502b(PersonalAccount.class)).m3035a(c0650x.m3046a(), z3, z4, i4, i5, i6);
             }
 
             protected void onSessionFailed() {
-                hVar2.onFetchBookDetailError(ManagedApp.get().getString(com.duokan.b.i.general__shared__network_error));
+                c0466h2.onFetchBookDetailError(ManagedApp.get().getString(C0247i.general__shared__network_error));
             }
 
             protected void onSessionSucceeded() {
                 if (this.mResult.b == 0) {
-                    DkStoreItem dkStoreFictionDetail = new DkStoreFictionDetail(new DkStoreFiction(((DkStoreFictionDetailInfo) this.mResult.a).mFictionInfo), (DkStoreFictionDetailInfo) this.mResult.a);
+                    DkStoreItem dkStoreFictionDetail = new DkStoreFictionDetail(new DkStoreFiction(((DkStoreFictionDetailInfo) this.mResult.f2058a).mFictionInfo), (DkStoreFictionDetailInfo) this.mResult.f2058a);
                     if (!z3 && !z4 && i4 == -1 && i5 == -1 && i6 == -1) {
                         CmBookManager.this.mFictionDetailMap.put(str2, dkStoreFictionDetail);
                     }
-                    hVar2.onFetchBookDetailOk(dkStoreFictionDetail);
+                    c0466h2.onFetchBookDetailOk(dkStoreFictionDetail);
                     return;
                 }
-                hVar2.onFetchBookDetailError(ManagedApp.get().getString(com.duokan.b.i.bookcity_store__shared__fail_to_find_book));
+                c0466h2.onFetchBookDetailError(ManagedApp.get().getString(C0247i.bookcity_store__shared__fail_to_find_book));
             }
         }.open();
     }
@@ -99,12 +99,12 @@ public class CmBookManager implements ah {
         return findPurchaseInfo(str);
     }
 
-    public static void startup(ReaderEnv readerEnv, i iVar) {
-        sWrapper.a(new CmBookManager(readerEnv, iVar));
+    public static void startup(ReaderEnv readerEnv, C0709k c0709k) {
+        sWrapper.m709a(new CmBookManager(readerEnv, c0709k));
     }
 
     public static CmBookManager get() {
-        return (CmBookManager) sWrapper.a();
+        return (CmBookManager) sWrapper.m707a();
     }
 
     private void setBookPurchased(DkStoreFictionDetail dkStoreFictionDetail, boolean z) {
@@ -124,21 +124,28 @@ public class CmBookManager implements ah {
     private void setChapterPurchased(final String str, final String str2, final boolean z) {
         DkCloudPurchasedFictionInfo findPurchaseInfo = findPurchaseInfo(str);
         if (findPurchaseInfo == null) {
-            TaskHandler.postTask(new Runnable() {
+            UThread.runOnThread(new Runnable() {
+
+                /* renamed from: com.duokan.reader.domain.cmread.CmBookManager$3$1 */
+                class C08941 implements C0466h {
+                    C08941() {
+                    }
+
+                    public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
+                        CmBookManager.this.setChapterPurchased((DkStoreFictionDetail) dkStoreItem, str2, z);
+                    }
+
+                    public void onFetchBookDetailError(String str) {
+                    }
+                }
+
                 public void run() {
                     DkStoreFictionDetail dkStoreFictionDetail = (DkStoreFictionDetail) CmBookManager.this.mFictionDetailMap.get(str);
                     if (dkStoreFictionDetail != null) {
                         CmBookManager.this.setChapterPurchased(dkStoreFictionDetail, str2, z);
                         return;
                     }
-                    CmBookManager.this.fetchFictionDetail(str, false, false, -1, -1, -1, new h() {
-                        public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
-                            CmBookManager.this.setChapterPurchased((DkStoreFictionDetail) dkStoreItem, str2, z);
-                        }
-
-                        public void onFetchBookDetailError(String str) {
-                        }
-                    });
+                    CmBookManager.this.fetchFictionDetail(str, false, false, -1, -1, -1, new C08941());
                 }
             });
             return;
@@ -181,15 +188,15 @@ public class CmBookManager implements ah {
         }
         this.mPurchaseInfoMap.put(bookUuid, dkCloudPurchasedFictionInfo);
         this.mPurchasedFictionIds.add(bookUuid);
-        this.mCache.a();
+        this.mCache.m632a();
         try {
-            this.mCache.b(cacheKey(bookUuid), (Serializable) dkCloudPurchasedFictionInfo);
-            this.mCache.b(cacheKey("fictions"), this.mPurchasedFictionIds);
-            this.mCache.b();
+            this.mCache.m634b(cacheKey(bookUuid), (Serializable) dkCloudPurchasedFictionInfo);
+            this.mCache.m634b(cacheKey("fictions"), this.mPurchasedFictionIds);
+            this.mCache.m635b();
         } catch (Throwable th) {
         } finally {
             dkCloudPurchasedFictionInfo = this.mCache;
-            dkCloudPurchasedFictionInfo.c();
+            dkCloudPurchasedFictionInfo.m636c();
         }
         return dkCloudPurchasedFictionInfo;
     }
@@ -202,7 +209,7 @@ public class CmBookManager implements ah {
             addIfAbsent = (0 | dkCloudPurchasedFictionInfo.mPurchasedChapterIds.remove(str)) | dkCloudPurchasedFictionInfo.mNotPurchasedChapterIds.addIfAbsent(str);
         }
         if (addIfAbsent != 0) {
-            this.mCache.b(cacheKey(dkCloudPurchasedFictionInfo.mBookUuid), (Serializable) dkCloudPurchasedFictionInfo);
+            this.mCache.m634b(cacheKey(dkCloudPurchasedFictionInfo.mBookUuid), (Serializable) dkCloudPurchasedFictionInfo);
         }
     }
 
@@ -211,7 +218,7 @@ public class CmBookManager implements ah {
         synchronized (this.mPurchaseInfoMap) {
             dkCloudPurchasedFictionInfo = (DkCloudPurchasedFictionInfo) this.mPurchaseInfoMap.get(str);
             if (dkCloudPurchasedFictionInfo == null) {
-                dkCloudPurchasedFictionInfo = (DkCloudPurchasedFictionInfo) this.mCache.a(cacheKey(str));
+                dkCloudPurchasedFictionInfo = (DkCloudPurchasedFictionInfo) this.mCache.m630a(cacheKey(str));
                 if (dkCloudPurchasedFictionInfo != null) {
                     this.mPurchaseInfoMap.put(str, dkCloudPurchasedFictionInfo);
                 }
@@ -221,6 +228,6 @@ public class CmBookManager implements ah {
     }
 
     private String cacheKey(String str) {
-        return str + "@" + this.mAccountManager.c().b();
+        return str + "@" + this.mAccountManager.m3508d().mo832b();
     }
 }

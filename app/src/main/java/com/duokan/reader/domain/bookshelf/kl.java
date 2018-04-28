@@ -1,76 +1,49 @@
 package com.duokan.reader.domain.bookshelf;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Rect;
+import android.text.TextUtils;
+import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.sys.C0352r;
+import com.duokan.core.sys.UThread;
+import com.wali.live.sdk.manager.IMiLiveSdk.ICallback;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
-import com.duokan.core.sys.r;
-import com.duokan.reader.domain.document.sbk.v;
+class kl implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ kk f3467a;
 
-import java.io.Closeable;
-
-class kl implements v {
-    final /* synthetic */ jv a;
-    private final km b;
-
-    public kl(jv jvVar, km kmVar) {
-        this.a = jvVar;
-        this.b = kmVar;
+    kl(kk kkVar) {
+        this.f3467a = kkVar;
     }
 
-    public boolean a() {
+    public void run() {
+        C0352r a = this.f3467a.f3466b.f3464b.br();
         try {
-            boolean a = this.a.bp().a(this.b.b);
-            return a;
-        } finally {
-            this.a.bq();
-        }
-    }
-
-    public String c() {
-        return this.b.a;
-    }
-
-    public String d() {
-        return "";
-    }
-
-    public String e() {
-        return "";
-    }
-
-    public int b() {
-        return this.b.f;
-    }
-
-    public int f() {
-        return this.b.g;
-    }
-
-    public boolean g() {
-        return a();
-    }
-
-    public boolean a(Canvas canvas, Rect rect) {
-        r a = this.a.bp();
-        Closeable c;
-        try {
-            if (g()) {
-                c = a.c(this.b.b);
-                Bitmap decodeStream = BitmapFactory.decodeStream(c);
-                if (decodeStream != null) {
-                    canvas.drawBitmap(decodeStream, rect, new Rect(0, 0, rect.width(), rect.height()), null);
-                    decodeStream.recycle();
+            Iterator it = this.f3467a.f3466b.f3463a.f3146a.iterator();
+            while (it.hasNext()) {
+                String str = (String) it.next();
+                String u = this.f3467a.f3466b.f3464b.mo1040u(str);
+                ex exVar = (ex) this.f3467a.f3465a.get(str);
+                if (exVar.f3142a != -1) {
+                    this.f3467a.f3466b.f3463a.f3147b.put(str, Integer.valueOf(exVar.f3142a));
+                    if (exVar.f3142a != ICallback.LOGIN_OAUTH_AIDL) {
+                        C0328a.m757c().m749a(LogLevel.ERROR, "sbk", "fail to pull the chapter(%s)(error=%d, msg=%s, book=%s, name=%s)", str, Integer.valueOf(exVar.f3142a), exVar.f3143b, this.f3467a.f3466b.f3464b.m4156I(), this.f3467a.f3466b.f3464b.ay());
+                    }
+                } else {
+                    C0328a.m757c().m764b(!TextUtils.isEmpty(exVar.f3144c));
+                    this.f3467a.f3466b.f3463a.f3147b.put(str, Integer.valueOf(-1));
+                    Map hashMap = new HashMap();
+                    hashMap.put("sha1", exVar.f3145d);
+                    this.f3467a.f3466b.f3463a.f3147b.put(str, Integer.valueOf(((Integer) this.f3467a.f3466b.f3464b.m4399a(u, a, -1, exVar.f3144c, hashMap, null).get()).intValue()));
                 }
-                FileUtil1.a(c);
-                this.a.bq();
-                return true;
             }
-            this.a.bq();
-            return false;
         } catch (Throwable th) {
-            this.a.bq();
+        } finally {
+            this.f3467a.f3466b.f3464b.bs();
+            ee.f3084E.release();
+            UThread.post(new km(this));
         }
     }
 }

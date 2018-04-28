@@ -1,20 +1,21 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.sys.ag;
+import java.util.HashMap;
 
-class fx implements ag {
-    final /* synthetic */ ag a;
-    final /* synthetic */ fv b;
+class fx implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ HashMap f3208a;
+    /* renamed from: b */
+    final /* synthetic */ fw f3209b;
 
-    fx(fv fvVar, ag agVar) {
-        this.b = fvVar;
-        this.a = agVar;
+    fx(fw fwVar, HashMap hashMap) {
+        this.f3209b = fwVar;
+        this.f3208a = hashMap;
     }
 
-    public void a(Integer num) {
-        this.b.bq();
-        if (this.a != null) {
-            this.a.a(num);
+    public void run() {
+        if (this.f3209b.f3206b != null) {
+            this.f3209b.f3206b.run(this.f3208a);
         }
     }
 }

@@ -5,15 +5,21 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public interface dp {
-    View a();
+    /* renamed from: a */
+    View mo1772a();
 
-    TextView b();
+    /* renamed from: b */
+    TextView mo1773b();
 
-    View c();
+    /* renamed from: c */
+    View mo1774c();
 
-    EditText d();
+    /* renamed from: d */
+    EditText mo1775d();
 
-    TextView e();
+    /* renamed from: e */
+    TextView mo1776e();
 
-    void f();
+    /* renamed from: f */
+    void mo1777f();
 }

@@ -1,19 +1,16 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.View;
-import android.view.View.OnLongClickListener;
+class ff implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ fe f8538a;
 
-class ff implements OnLongClickListener {
-    final /* synthetic */ int a;
-    final /* synthetic */ fd b;
-
-    ff(fd fdVar, int i) {
-        this.b = fdVar;
-        this.a = i;
+    ff(fe feVar) {
+        this.f8538a = feVar;
     }
 
-    public boolean onLongClick(View view) {
-        this.b.e.a(this.b.c(), this.a);
-        return true;
+    public void run() {
+        if (this.f8538a.f8537a.f8530a.f8525c != null && this.f8538a.f8537a.f8530a.f8525c.isShowing()) {
+            this.f8538a.f8537a.f8530a.f8525c.dismiss();
+        }
     }
 }

@@ -1,26 +1,31 @@
 package com.duokan.reader.ui.general.web;
 
-import android.view.View;
-import android.view.View.OnClickListener;
-
-import com.mipay.sdk.Mipay;
-
+import com.duokan.reader.domain.account.C0709k;
+import com.duokan.reader.domain.account.PersonalAccount;
+import com.duokan.reader.domain.payment.C1090d;
 import org.json.JSONObject;
 
-class br implements OnClickListener {
-    final /* synthetic */ bq a;
+class br implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ JSONObject f7641a;
+    /* renamed from: b */
+    final /* synthetic */ String f7642b;
+    /* renamed from: c */
+    final /* synthetic */ C1090d f7643c;
+    /* renamed from: d */
+    final /* synthetic */ String f7644d;
+    /* renamed from: e */
+    final /* synthetic */ StorePageController f7645e;
 
-    br(bq bqVar) {
-        this.a = bqVar;
+    br(StorePageController storePageController, JSONObject jSONObject, String str, C1090d c1090d, String str2) {
+        this.f7645e = storePageController;
+        this.f7641a = jSONObject;
+        this.f7642b = str;
+        this.f7643c = c1090d;
+        this.f7644d = str2;
     }
 
-    public void onClick(View view) {
-        try {
-            JSONObject jSONObject = new JSONObject();
-            jSONObject.put(Mipay.KEY_RESULT, 0);
-            jSONObject.put("text", this.a.b);
-            this.a.c.triggerEventOnCurrentUrl("button", jSONObject);
-        } catch (Exception e) {
-        }
+    public void run() {
+        C0709k.m3476a().m3497a(PersonalAccount.class, new bs(this));
     }
 }

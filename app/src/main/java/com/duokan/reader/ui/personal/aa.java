@@ -1,57 +1,23 @@
 package com.duokan.reader.ui.personal;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.reader.ui.general.ia;
 
-import com.duokan.c.g;
-import com.duokan.c.h;
-import com.duokan.core.app.IFeature;
-import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.ReaderEnv.BookShelfType;
-import com.duokan.reader.ReaderEnv.BookshelfItemStyle;
-import com.duokan.reader.ui.bookshelf.gx;
+class aa implements ia {
+    /* renamed from: a */
+    final /* synthetic */ C1416x f8239a;
 
-public class aa extends gx {
-    private final LinearLayout a;
-    private final LinearLayout b;
-    private final TextView c;
-    private final TextView d;
-    private final LinearLayout e;
-    private BookShelfType f = ReaderEnv.get().getBookShelfType();
+    aa(C1416x c1416x) {
+        this.f8239a = c1416x;
+    }
 
-    public aa(IFeature featrue) {
-        super(featrue);
-        View inflate = LayoutInflater.from(getContext()).inflate(h.personal__bookshelf_popup_style_view, null, false);
-        this.a = (LinearLayout) inflate.findViewById(g.personal__bookshelf_popup_style_view__simple);
-        this.b = (LinearLayout) inflate.findViewById(g.personal__bookshelf_popup_style_view__classic);
-        this.c = (TextView) inflate.findViewById(g.personal__bookshelf_popup_style_view__simple_title);
-        this.d = (TextView) inflate.findViewById(g.personal__bookshelf_popup_style_view__classic_title);
-        this.e = (LinearLayout) inflate.findViewById(g.personal__bookshelf_popup_style_view__show_read_progress);
-        if (BookShelfType.Simple == this.f) {
-            c();
-        } else {
-            d();
+    /* renamed from: a */
+    public void mo1798a(int i, int i2) {
+        if (i >= 0 && i2 >= 0) {
+            ActivatedController a = this.f8239a.m12391a(i);
+            ActivatedController a2 = this.f8239a.m12391a(i2);
+            this.f8239a.deactivate(a);
+            this.f8239a.activate(a2);
         }
-        this.a.setOnClickListener(new ab(this));
-        this.b.setOnClickListener(new ac(this));
-        this.e.setOnClickListener(new ad(this));
-        this.e.setSelected(ReaderEnv.get().getBookshelfItemStyle() != BookshelfItemStyle.SIMPLE);
-        a(inflate);
-    }
-
-    private void c() {
-        this.a.setBackgroundResource(f.general__shared__layout_selected_bg);
-        this.c.setBackgroundResource(f.general__shared__title_selected_bg);
-        this.b.setBackgroundResource(f.general__shared__layout_unselected_bg);
-        this.d.setBackgroundResource(f.general__shared__title_unselected_bg);
-    }
-
-    private void d() {
-        this.a.setBackgroundResource(f.general__shared__layout_unselected_bg);
-        this.c.setBackgroundResource(f.general__shared__title_unselected_bg);
-        this.b.setBackgroundResource(f.general__shared__layout_selected_bg);
-        this.d.setBackgroundResource(f.general__shared__title_selected_bg);
     }
 }

@@ -3,5 +3,6 @@ package com.duokan.core.ui;
 import android.graphics.Rect;
 
 public interface cf {
-    void a(Scrollable scrollable, Rect rect, Rect rect2);
+    /* renamed from: a */
+    void m1761a(Scrollable scrollable, Rect rect, Rect rect2);
 }

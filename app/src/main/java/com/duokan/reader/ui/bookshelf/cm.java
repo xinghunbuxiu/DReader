@@ -1,26 +1,25 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.core.ui.UTools;
+import com.duokan.reader.domain.bookshelf.an;
 
 class cm implements Runnable {
-    public final int a;
-    final /* synthetic */ bz b;
+    /* renamed from: a */
+    final /* synthetic */ an f6280a;
+    /* renamed from: b */
+    final /* synthetic */ an f6281b;
+    /* renamed from: c */
+    final /* synthetic */ int f6282c;
+    /* renamed from: d */
+    final /* synthetic */ ce f6283d;
 
-    public cm(bz bzVar, int i) {
-        this.b = bzVar;
-        this.a = (i > 0 ? 1 : -1) * UTools.getMinimumHeight(bzVar.a.getContext(), 7.0f);
+    cm(ce ceVar, an anVar, an anVar2, int i) {
+        this.f6283d = ceVar;
+        this.f6280a = anVar;
+        this.f6281b = anVar2;
+        this.f6282c = i;
     }
 
     public void run() {
-        if (this.b.o != this) {
-            return;
-        }
-        if ((this.b.j.c_() || this.a >= 0) && (this.b.j.d_() || this.a <= 0)) {
-            this.b.o = null;
-            return;
-        }
-        this.b.j.a(0, this.a);
-        TaskHandler.PostTask((Runnable) this);
+        this.f6283d.m9367a(500, new cn(this));
     }
 }

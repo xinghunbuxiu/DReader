@@ -1,84 +1,35 @@
 package com.duokan.reader.domain.bookshelf;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.duokan.reader.domain.account.C0586j;
+import com.duokan.reader.domain.account.C0672a;
+import com.duokan.reader.domain.account.al;
 
-import java.util.ArrayList;
+class dg implements C0586j {
+    /* renamed from: a */
+    final /* synthetic */ df f3018a;
 
-public class dg implements Cloneable {
-    public int a;
-    public String b;
-    public long c;
-    public boolean d;
-    public boolean e;
-    public int f;
-    public long g;
-
-    public /* synthetic */ Object clone() {
-        return a();
+    dg(df dfVar) {
+        this.f3018a = dfVar;
     }
 
-    public dg(int i, String str) {
-        this.a = i;
-        this.b = str;
-        this.c = 0;
-        this.d = false;
-        this.e = false;
-        this.f = 0;
-        this.g = 0;
+    public void onAccountLoginedTopHalf(C0672a c0672a) {
+        this.f3018a.f3017a.f3011c = new al(c0672a);
+        this.f3018a.f3017a.m4330c();
     }
 
-    public dg(JSONObject jSONObject) {
-        this.a = jSONObject.optInt("book_source");
-        a(jSONObject);
+    public void onAccountLoginedBottomHalf(C0672a c0672a) {
     }
 
-    public dg(int i, JSONObject jSONObject) {
-        this.a = i;
-        a(jSONObject);
-    }
-
-    private void a(JSONObject jSONObject) {
-        this.b = jSONObject.optString("book_id");
-        this.c = jSONObject.optLong("client_read_time");
-        this.d = jSONObject.optBoolean("is_deleted", false);
-        this.e = jSONObject.optBoolean("is_local_dirty", this.e);
-        this.f = jSONObject.optInt("local_operation_type", 0);
-        this.g = jSONObject.optLong("local_operation_time");
-    }
-
-    public dg a() {
-        try {
-            return (dg) super.clone();
-        } catch (CloneNotSupportedException e) {
-            return null;
+    public void onAccountLogoff(C0672a c0672a) {
+        if (this.f3018a.f3017a.f3011c.m3367c()) {
+            new dh(this, aq.f2771a, this.f3018a.f3017a.f3011c).open();
         }
+        this.f3018a.f3017a.f3013e = true;
+        this.f3018a.f3017a.f3014f = System.currentTimeMillis();
+        this.f3018a.f3017a.f3011c = al.f2359g;
+        this.f3018a.f3017a.f3012d = new dv();
     }
 
-    public JSONObject b() {
-        JSONObject jSONObject = new JSONObject();
-        try {
-            jSONObject.put("book_source", this.a);
-            jSONObject.put("book_id", this.b);
-            jSONObject.put("client_read_time", this.c);
-            jSONObject.put("is_deleted", this.d);
-            jSONObject.put("is_local_dirty", this.e);
-            jSONObject.put("local_operation_type", this.f);
-            jSONObject.put("local_operation_time", this.g);
-        } catch (JSONException e) {
-        }
-        return jSONObject;
-    }
-
-    public static ArrayList a(int i, JSONArray jSONArray) {
-        ArrayList arrayList = new ArrayList(jSONArray.length());
-        for (int i2 = 0; i2 < jSONArray.length(); i2++) {
-            try {
-                arrayList.add(new dg(i, jSONArray.getJSONObject(i2)));
-            } catch (JSONException e) {
-            }
-        }
-        return arrayList;
+    public void onAccountDetailChanged(C0672a c0672a) {
     }
 }

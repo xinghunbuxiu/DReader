@@ -1,27 +1,24 @@
 package com.duokan.reader.ui.general.web;
 
-import android.text.TextUtils;
+import com.duokan.core.sys.as;
+import com.duokan.reader.ui.general.hd;
 
-import com.duokan.reader.domain.cloud.DkCloudBookManifest;
-import com.duokan.reader.domain.cloud.ao;
-import com.duokan.reader.ui.general.be;
-import com.mipay.sdk.Mipay;
+class hm implements as {
+    /* renamed from: a */
+    final /* synthetic */ String f7934a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7935b;
 
-class hm implements ao {
-    final /* synthetic */ hl a;
-
-    hm(hl hlVar) {
-        this.a = hlVar;
+    hm(ci ciVar, String str) {
+        this.f7935b = ciVar;
+        this.f7934a = str;
     }
 
-    public void a(String str, DkCloudBookManifest dkCloudBookManifest) {
-        this.a.a.a.f.b.pageController.web_notifyWeb(this.a.a.a.b, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
-    }
-
-    public void a(String str, String str2) {
-        if (!TextUtils.isEmpty(str2)) {
-            be.a(this.a.a.a.f.b.pageController.getContext(), (CharSequence) str2, 1).show();
+    /* renamed from: a */
+    public void mo1831a() {
+        hd hdVar = (hd) this.f7935b.f7581b.getContext().queryFeature(hd.class);
+        if (hdVar != null) {
+            hdVar.mo2548a("", this.f7934a, "");
         }
-        this.a.a.a.f.b.pageController.web_notifyWeb(this.a.a.a.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str2);
     }
 }

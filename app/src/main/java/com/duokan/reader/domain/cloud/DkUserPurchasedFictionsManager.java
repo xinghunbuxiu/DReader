@@ -1,33 +1,40 @@
 package com.duokan.reader.domain.cloud;
 
 import android.content.Context;
-
-import com.duokan.core.app.ah;
 import com.duokan.core.app.ai;
-import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.app.aj;
+import com.duokan.core.sys.UThread;
 import com.duokan.reader.DkApp;
-import com.duokan.reader.common.async.a.a;
-import com.duokan.reader.common.async.a.b;
+import com.duokan.reader.common.async.p035a.C0517a;
+import com.duokan.reader.common.async.p035a.C0518b;
+import com.duokan.reader.common.async.p035a.C0519c;
+import com.duokan.reader.domain.account.C0586j;
+import com.duokan.reader.domain.account.C0709k;
 import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.ab;
-import com.duokan.reader.domain.account.h;
-import com.duokan.reader.domain.account.i;
-
+import com.duokan.reader.domain.account.al;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class DkUserPurchasedFictionsManager implements ah {
-    private static final ai a = new ai();
-    private final Context b;
-    private final i c;
-    private final h d;
-    private final CopyOnWriteArrayList e = new CopyOnWriteArrayList();
-    private final b f = new b();
-    private final b g = new b();
-    private eg h = new eg();
+public class DkUserPurchasedFictionsManager implements ai {
+    /* renamed from: a */
+    private static final aj<DkUserPurchasedFictionsManager> f3609a = new aj();
+    /* renamed from: b */
+    private final Context f3610b;
+    /* renamed from: c */
+    private final C0709k f3611c;
+    /* renamed from: d */
+    private final C0586j f3612d;
+    /* renamed from: e */
+    private final CopyOnWriteArrayList<dn> f3613e = new CopyOnWriteArrayList();
+    /* renamed from: f */
+    private final C0518b<Void> f3614f = new C0518b();
+    /* renamed from: g */
+    private final C0518b<Void> f3615g = new C0518b();
+    /* renamed from: h */
+    private dr f3616h = new dr();
 
     class DkUserPurchasedFictionsInfo implements Serializable {
         public String mAccountName;
@@ -42,146 +49,173 @@ public class DkUserPurchasedFictionsManager implements ah {
         }
     }
 
-    private DkUserPurchasedFictionsManager(Context context, i iVar) {
-        this.b = context;
-        this.c = iVar;
-        this.d = new cx(this);
-        DkApp.get().runPreReady(new di(this));
+    private DkUserPurchasedFictionsManager(Context context, C0709k c0709k) {
+        this.f3610b = context;
+        this.f3611c = c0709k;
+        this.f3612d = new cl(this);
+        DkApp.get().runPreReady(new cv(this));
     }
 
-    public static void a(Context context, i iVar) {
-        a.a(new DkUserPurchasedFictionsManager(context, iVar));
+    /* renamed from: a */
+    public static void m5076a(Context context, C0709k c0709k) {
+        f3609a.m709a(new DkUserPurchasedFictionsManager(context, c0709k));
     }
 
-    public static DkUserPurchasedFictionsManager a() {
-        return (DkUserPurchasedFictionsManager) a.a();
+    /* renamed from: a */
+    public static DkUserPurchasedFictionsManager m5072a() {
+        return (DkUserPurchasedFictionsManager) f3609a.m707a();
     }
 
-    public void a(ec ecVar) {
-        if (ecVar != null && !this.e.contains(ecVar)) {
-            this.e.add(ecVar);
+    /* renamed from: a */
+    public void m5096a(dn dnVar) {
+        if (dnVar != null && !this.f3613e.contains(dnVar)) {
+            this.f3613e.add(dnVar);
         }
     }
 
-    public void b(ec ecVar) {
-        if (ecVar != null) {
-            this.e.remove(ecVar);
+    /* renamed from: b */
+    public void m5104b(dn dnVar) {
+        if (dnVar != null) {
+            this.f3613e.remove(dnVar);
         }
     }
 
-    public List b() {
-        return this.h.a();
+    /* renamed from: b */
+    public List<DkCloudPurchasedFiction> m5102b() {
+        return this.f3616h.m5459a();
     }
 
-    public List c() {
-        return this.h.b();
+    /* renamed from: c */
+    public List<DkCloudPurchasedFiction> m5107c() {
+        return this.f3616h.m5463b();
     }
 
-    public boolean d() {
-        return this.h.d();
+    /* renamed from: d */
+    public boolean m5110d() {
+        return this.f3616h.m5466d();
     }
 
-    public DkCloudPurchasedFiction a(String str) {
-        return this.h.a(str);
+    /* renamed from: a */
+    public DkCloudPurchasedFiction m5093a(String str) {
+        return this.f3616h.m5458a(str);
     }
 
-    public DkCloudPurchasedFiction b(String str) {
-        return this.h.b(str);
+    /* renamed from: b */
+    public DkCloudPurchasedFiction m5101b(String str) {
+        return this.f3616h.m5462b(str);
     }
 
-    public boolean c(String str) {
-        return this.h.c(str);
+    /* renamed from: c */
+    public boolean m5108c(String str) {
+        return this.f3616h.m5465c(str);
     }
 
-    public void a(a aVar) {
-        TaskHandler.PostTask(new dj(this, aVar));
+    /* renamed from: a */
+    public void m5094a(C0517a<Void> c0517a) {
+        UThread.post(new cw(this, c0517a));
     }
 
-    public void b(a aVar) {
-        TaskHandler.PostTask(new dl(this, aVar));
+    /* renamed from: b */
+    public void m5103b(C0517a<Void> c0517a) {
+        UThread.post(new cy(this, c0517a));
     }
 
-    public void a(boolean z, a aVar) {
+    /* renamed from: a */
+    public void m5099a(boolean z, C0517a<Void> c0517a) {
         if (z) {
-            a(aVar);
+            m5094a((C0517a) c0517a);
         } else {
-            b(aVar);
+            m5103b((C0517a) c0517a);
         }
     }
 
-    public void b(boolean z, a aVar) {
-        a(z, true, aVar);
+    /* renamed from: b */
+    public void m5105b(boolean z, C0517a<Void> c0517a) {
+        m5100a(z, true, (C0517a) c0517a);
     }
 
-    public void a(boolean z, boolean z2, a aVar) {
-        if (z || this.c.a(PersonalAccount.class)) {
-            this.c.a(PersonalAccount.class, new dp(this, z2, aVar, z));
+    /* renamed from: a */
+    public void m5100a(boolean z, boolean z2, C0517a<Void> c0517a) {
+        if (z || this.f3611c.m3500a(PersonalAccount.class)) {
+            this.f3611c.m3497a(PersonalAccount.class, new dc(this, z2, c0517a, z));
         } else {
-            TaskHandler.b(new do (this, aVar));
+            UThread.post(new db(this, c0517a));
         }
     }
 
-    public void b(boolean z, boolean z2, a aVar) {
-        if (z || this.c.a(PersonalAccount.class)) {
-            this.c.a(PersonalAccount.class, new du(this, z, z2, aVar));
+    /* renamed from: b */
+    public void m5106b(boolean z, boolean z2, C0517a<Void> c0517a) {
+        if (z || this.f3611c.m3500a(PersonalAccount.class)) {
+            this.f3611c.m3497a(PersonalAccount.class, new dg(this, z, z2, c0517a));
         } else {
-            TaskHandler.PostTask(new dt(this, aVar));
+            UThread.post(new df(this, c0517a));
         }
     }
 
-    public void a(a aVar, String... strArr) {
-        this.c.a(PersonalAccount.class, new dw(this, strArr, aVar));
+    /* renamed from: a */
+    public void m5095a(C0517a<Void> c0517a, String... strArr) {
+        this.f3611c.m3497a(PersonalAccount.class, new di(this, strArr, c0517a));
     }
 
-    public void d(String str) {
-        if (this.c.a(PersonalAccount.class) && c(str)) {
-            b(str, c.a);
+    /* renamed from: d */
+    public void m5109d(String str) {
+        if (this.f3611c.m3500a(PersonalAccount.class) && m5108c(str)) {
+            m5085b(str, C0519c.f1752a);
         }
     }
 
-    public void a(String str, a aVar) {
-        this.c.a(PersonalAccount.class, new cy(this, str, aVar));
+    /* renamed from: a */
+    public void m5097a(String str, C0517a<DkCloudPurchasedFiction> c0517a) {
+        this.f3611c.m3497a(PersonalAccount.class, new cm(this, str, c0517a));
     }
 
-    public void a(String str, List list, a aVar) {
-        this.c.a(PersonalAccount.class, new db(this, str, list, aVar));
+    /* renamed from: a */
+    public void m5098a(String str, List<String> list, C0517a<DkCloudPurchasedFiction> c0517a) {
+        this.f3611c.m3497a(PersonalAccount.class, new cp(this, str, list, c0517a));
     }
 
-    private void b(String str, a aVar) {
-        this.c.a(PersonalAccount.class, new de(this, str, aVar));
+    /* renamed from: b */
+    private void m5085b(String str, C0517a<Void> c0517a) {
+        this.f3611c.m3497a(PersonalAccount.class, new cs(this, str, c0517a));
     }
 
-    private List a(ei eiVar) {
-        List arrayList = new ArrayList(eiVar.queryItems());
-        Collections.sort(arrayList, new eb());
+    /* renamed from: a */
+    private List<DkCloudPurchasedFiction> m5075a(dt dtVar) {
+        List<DkCloudPurchasedFiction> arrayList = new ArrayList(dtVar.queryItems());
+        Collections.sort(arrayList, new dm());
         return arrayList;
     }
 
-    private List b(ei eiVar) {
-        List arrayList = new ArrayList(eiVar.queryCorePropertiesOfItems());
-        Collections.sort(arrayList, new eb());
+    /* renamed from: b */
+    private List<DkCloudPurchasedFiction> m5084b(dt dtVar) {
+        List<DkCloudPurchasedFiction> arrayList = new ArrayList(dtVar.queryCorePropertiesOfItems());
+        Collections.sort(arrayList, new dm());
         return arrayList;
     }
 
-    private void f() {
-        for (int i = 0; i < this.e.size(); i++) {
-            ((ec) this.e.get(i)).e();
+    /* renamed from: f */
+    private void m5091f() {
+        for (int i = 0; i < this.f3613e.size(); i++) {
+            ((dn) this.f3613e.get(i)).mo966e();
         }
     }
 
-    private void a(String[] strArr) {
-        for (int i = 0; i < this.e.size(); i++) {
-            ((ec) this.e.get(i)).b(strArr);
+    /* renamed from: a */
+    private void m5081a(String[] strArr) {
+        for (int i = 0; i < this.f3613e.size(); i++) {
+            ((dn) this.f3613e.get(i)).mo964b(strArr);
         }
     }
 
-    private void a(List list) {
-        for (int i = 0; i < this.e.size(); i++) {
-            ((ec) this.e.get(i)).b(list);
+    /* renamed from: a */
+    private void m5080a(List<DkCloudStoreBook> list) {
+        for (int i = 0; i < this.f3613e.size(); i++) {
+            ((dn) this.f3613e.get(i)).mo963b((List) list);
         }
     }
 
-    private static ab g() {
-        return new ab(i.f().b(PersonalAccount.class));
+    /* renamed from: g */
+    private static al m5092g() {
+        return new al(C0709k.m3476a().m3502b(PersonalAccount.class));
     }
 }

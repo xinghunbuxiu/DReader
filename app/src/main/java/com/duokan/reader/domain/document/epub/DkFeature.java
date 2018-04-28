@@ -19,7 +19,7 @@ public enum DkFeature {
     FRAME_COMIC(false),
     PAGE_COMIC(false),
     VERTICAL_COMIC(false);
-
+    
     private final boolean mLinearizable;
 
     private DkFeature(boolean z) {

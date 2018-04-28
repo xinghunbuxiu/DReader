@@ -1,35 +1,16 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.MotionEvent;
-import android.view.View;
+import com.duokan.reader.ui.general.FixedPagesView.PageScaleType;
 
-import com.duokan.core.ui.er;
-import com.duokan.core.ui.OnTouchChangeListener;
-import com.duokan.core.ui.et;
-
-class xr extends er {
-    final /* synthetic */ xq a;
+class xr implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ xq f11156a;
 
     xr(xq xqVar) {
-        this.a = xqVar;
+        this.f11156a = xqVar;
     }
 
-    protected void a(View view, boolean z) {
-        if (!this.a.a.K()) {
-            et zoomDetector = ((gs) this.a.a.X().d()).getZoomDetector();
-            if (zoomDetector != null) {
-                zoomDetector.a(view);
-            }
-        }
-    }
-
-    protected void a(View view, MotionEvent motionEvent, boolean z, OnTouchChangeListener esVar) {
-        if (!this.a.a.K()) {
-            et zoomDetector = ((gs) this.a.a.X().d()).getZoomDetector();
-            if (zoomDetector != null) {
-                zoomDetector.onTouch(view, motionEvent);
-                c(zoomDetector.a() != null);
-            }
-        }
+    public void run() {
+        this.f11156a.f11155a.f11154c.mo2029a(PageScaleType.MATCH_INSIDE);
     }
 }

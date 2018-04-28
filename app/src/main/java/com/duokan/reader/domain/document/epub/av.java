@@ -1,19 +1,27 @@
 package com.duokan.reader.domain.document.epub;
 
 public interface av {
-    int e();
+    /* renamed from: e */
+    int mo1070e();
 
-    aw g();
+    /* renamed from: g */
+    aw mo1071g();
 
-    boolean h();
+    /* renamed from: h */
+    boolean mo1072h();
 
-    boolean i();
+    /* renamed from: i */
+    boolean mo1073i();
 
-    boolean j();
+    /* renamed from: j */
+    boolean mo1074j();
 
-    boolean k();
+    /* renamed from: k */
+    boolean mo1075k();
 
-    av l();
+    /* renamed from: l */
+    av mo1076l();
 
-    ax m();
+    /* renamed from: m */
+    ax mo1077m();
 }

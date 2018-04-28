@@ -1,32 +1,23 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.sys.ag;
+import com.duokan.core.sys.ah;
+import com.duokan.reader.domain.bookshelf.ee;
 
-import java.util.Map;
-import java.util.Map.Entry;
+class aag implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ abd f9326a;
+    /* renamed from: b */
+    final /* synthetic */ ee f9327b;
+    /* renamed from: c */
+    final /* synthetic */ aab f9328c;
 
-import miuipub.date.Calendar;
-
-class aag implements ag {
-    final /* synthetic */ aaf a;
-
-    aag(aaf com_duokan_reader_ui_reading_aaf) {
-        this.a = com_duokan_reader_ui_reading_aaf;
+    aag(aab aab, abd abd, ee eeVar) {
+        this.f9328c = aab;
+        this.f9326a = abd;
+        this.f9327b = eeVar;
     }
 
-    public void a(Map map) {
-        a.c().b(map.size() == this.a.a.size());
-        for (Entry entry : map.entrySet()) {
-            String str = (String) entry.getKey();
-            int intValue = ((Integer) entry.getValue()).intValue();
-            this.a.d.P.remove(str);
-            if (intValue >= Calendar.MILLISECOND_OF_SECOND) {
-                this.a.d.Q.put(str, Integer.valueOf(intValue));
-            }
-        }
-        this.a.d.a(false);
-        if (this.a.c != null) {
-            this.a.c.a(map);
-        }
+    public void run() {
+        ah.m865a(new aah(this));
     }
 }

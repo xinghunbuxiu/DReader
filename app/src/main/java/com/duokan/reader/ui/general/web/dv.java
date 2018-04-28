@@ -1,19 +1,21 @@
 package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.sys.as;
-import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.i;
+import org.json.JSONObject;
 
 class dv implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ du b;
+    /* renamed from: a */
+    final /* synthetic */ String f7748a;
+    /* renamed from: b */
+    final /* synthetic */ ci f7749b;
 
-    dv(du duVar, String str) {
-        this.b = duVar;
-        this.a = str;
+    dv(ci ciVar, String str) {
+        this.f7749b = ciVar;
+        this.f7748a = str;
     }
 
-    public void a() {
-        ((PersonalAccount) i.f().b(PersonalAccount.class)).e(new dw(this));
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7749b.m11016a(new dw(this, new JSONObject(this.f7748a).getString("msgid")));
     }
 }

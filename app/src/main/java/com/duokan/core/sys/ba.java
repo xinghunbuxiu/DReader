@@ -1,14 +1,18 @@
 package com.duokan.core.sys;
 
 class ba {
-    public final String a;
-    public final long b;
-    public final long c;
-    public int d = 0;
+    /* renamed from: a */
+    public final String f685a;
+    /* renamed from: b */
+    public final long f686b;
+    /* renamed from: c */
+    public final long f687c;
+    /* renamed from: d */
+    public int f688d = 0;
 
     public ba(String str, long j, long j2) {
-        this.a = str;
-        this.b = j;
-        this.c = j2;
+        this.f685a = str;
+        this.f686b = j;
+        this.f687c = j2;
     }
 }

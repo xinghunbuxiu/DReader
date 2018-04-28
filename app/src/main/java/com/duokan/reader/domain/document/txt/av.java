@@ -1,40 +1,47 @@
 package com.duokan.reader.domain.document.txt;
 
 class av implements ar {
-    final /* synthetic */ e a;
-    final /* synthetic */ ai b;
-    final /* synthetic */ n c;
-    final /* synthetic */ o d;
-    final /* synthetic */ au e;
+    /* renamed from: a */
+    final /* synthetic */ C0989e f4924a;
+    /* renamed from: b */
+    final /* synthetic */ ai f4925b;
+    /* renamed from: c */
+    final /* synthetic */ C0992n f4926c;
+    /* renamed from: d */
+    final /* synthetic */ C0999o f4927d;
+    /* renamed from: e */
+    final /* synthetic */ au f4928e;
 
-    av(au auVar, e eVar, ai aiVar, n nVar, o oVar) {
-        this.e = auVar;
-        this.a = eVar;
-        this.b = aiVar;
-        this.c = nVar;
-        this.d = oVar;
+    av(au auVar, C0989e c0989e, ai aiVar, C0992n c0992n, C0999o c0999o) {
+        this.f4928e = auVar;
+        this.f4924a = c0989e;
+        this.f4925b = aiVar;
+        this.f4926c = c0992n;
+        this.f4927d = c0999o;
     }
 
-    public void a(as asVar) {
-        if (!this.a.m()) {
-            this.a.a(this.b);
+    /* renamed from: a */
+    public void mo1462a(as asVar) {
+        if (!this.f4924a.m7563m()) {
+            this.f4924a.m7552a(this.f4925b);
         }
-        if (this.c != null) {
-            this.c.a(this.d);
+        if (this.f4926c != null) {
+            this.f4926c.mo1464a(this.f4927d);
         }
-        ax axVar = new ax(this.a.k(), null);
-        ax axVar2 = new ax(this.a.l(), new aw(this));
-        synchronized (this.e) {
-            this.e.l.addFirst(axVar2);
-            this.e.l.addFirst(axVar);
+        ax axVar = new ax(this.f4924a.m7561k(), null);
+        ax axVar2 = new ax(this.f4924a.m7562l(), new aw(this));
+        synchronized (this.f4928e) {
+            this.f4928e.f4923l.addFirst(axVar2);
+            this.f4928e.f4923l.addFirst(axVar);
         }
-        this.e.f.release();
-        this.e.f.release();
+        this.f4928e.f.release();
+        this.f4928e.f.release();
     }
 
-    public void b(as asVar) {
-        if (this.c != null) {
-            this.c.c(this.d);
+    /* renamed from: b */
+    public void mo1463b(as asVar) {
+        if (this.f4926c != null) {
+            this.f4926c.mo1466c(this.f4927d);
         }
     }
 }

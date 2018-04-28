@@ -1,34 +1,26 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.common.async.a.a;
-import com.duokan.reader.common.k;
+import com.duokan.reader.common.async.p035a.C0517a;
 
-class bf implements a {
-    final /* synthetic */ k a;
-    final /* synthetic */ boolean b;
-    final /* synthetic */ boolean c;
-    final /* synthetic */ aq d;
+class bf implements C0517a {
+    /* renamed from: a */
+    final /* synthetic */ be f2814a;
 
-    bf(aq aqVar, k kVar, boolean z, boolean z2) {
-        this.d = aqVar;
-        this.a = kVar;
-        this.b = z;
-        this.c = z2;
+    bf(be beVar) {
+        this.f2814a = beVar;
     }
 
-    public void a(Void voidR) {
-        this.a.a(Integer.valueOf(((Integer) this.a.a()).intValue() + 1));
-        if (((Integer) this.a.a()).intValue() == 3) {
-            this.d.x();
-            try {
-                this.d.k.a();
-                this.d.a(this.b, this.c, 0);
-            } finally {
-                this.d.k.b();
-            }
+    /* renamed from: a */
+    public void mo730a(Object obj) {
+        if (!this.f2814a.f2808a.isCancelled()) {
+            this.f2814a.f2813f.m3970d(this.f2814a.f2809b, this.f2814a.f2810c, this.f2814a.f2811d, this.f2814a.f2812e, this.f2814a.f2808a);
         }
     }
 
-    public void a(int i, String str) {
+    /* renamed from: a */
+    public void mo729a(int i, String str) {
+        if (!this.f2814a.f2808a.isCancelled()) {
+            this.f2814a.f2813f.m3933i(str);
+        }
     }
 }

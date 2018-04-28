@@ -1,31 +1,18 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.domain.cloud.DkCloudPurchasedBook;
-import com.duokan.reader.domain.store.DkStoreBookDetail;
-import com.duokan.reader.domain.store.DkStoreItem;
-import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
-import com.duokan.reader.ui.general.cm;
-import com.duokan.reader.ui.store.o;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.reader.ReaderFeature;
 
-class jv implements cm {
-    final /* synthetic */ DkStoreItem a;
-    final /* synthetic */ ju b;
+class jv implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ jg f8794a;
 
-    jv(ju juVar, DkStoreItem dkStoreItem) {
-        this.b = juVar;
-        this.a = dkStoreItem;
+    jv(jg jgVar) {
+        this.f8794a = jgVar;
     }
 
-    public void onChoice(boolean z, FlowChargingTransferChoice flowChargingTransferChoice) {
-        if (z) {
-            DkCloudPurchasedBook dkCloudPurchasedBook = (DkCloudPurchasedBook) this.b.a;
-            o.a().a(dkCloudPurchasedBook.getBookUuid(), (DkStoreBookDetail) this.a, new jw(this, dkCloudPurchasedBook), flowChargingTransferChoice);
-            return;
-        }
-        o.a().c(this.b.a.getBookUuid());
-        if (this.b.b.e == this.b.a) {
-            this.b.b.d.setEnabled(true);
-            this.b.b.b();
-        }
+    public void onClick(View view) {
+        ((ReaderFeature) this.f8794a.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new av(this.f8794a.getContext()), null);
     }
 }

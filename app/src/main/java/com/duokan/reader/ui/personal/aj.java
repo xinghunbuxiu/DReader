@@ -1,20 +1,17 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.b.f;
-import com.duokan.b.g;
-import com.duokan.b.i;
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.ui.general.HeaderView;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-public class aj extends ActivatedController {
-    private final HeaderView a = ((HeaderView) findViewById(f.personal__cmread_settings_view__header));
+class aj implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ af f8260a;
 
-    public aj(MyContextWrapper mContext) {
-        super(mContext);
-        setContentView(g.personal__cmread_settings_view);
-        this.a.setLeftTitle(i.personal__cmread_settings_view__title);
-        findViewById(f.personal__cmread_settings_view__bind).setOnClickListener(new ak(this));
-        findViewById(f.personal__cmread_settings_view__unbind).setOnClickListener(new al(this));
+    aj(af afVar) {
+        this.f8260a = afVar;
+    }
+
+    public void onClick(View view) {
+        this.f8260a.f8249d.setSelected(!this.f8260a.f8249d.isSelected());
     }
 }

@@ -1,16 +1,17 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.c;
-import com.duokan.core.app.d;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class dd implements d {
-    final /* synthetic */ da a;
+class dd implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ MiAccountProfileSettingsController f8446a;
 
-    dd(da daVar) {
-        this.a = daVar;
+    dd(MiAccountProfileSettingsController miAccountProfileSettingsController) {
+        this.f8446a = miAccountProfileSettingsController;
     }
 
-    public void onCancel(c cVar) {
-        this.a.f.a("");
+    public void onClick(View view) {
+        this.f8446a.m11351a();
     }
 }

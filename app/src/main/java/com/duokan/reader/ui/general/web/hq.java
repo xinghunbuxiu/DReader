@@ -1,36 +1,31 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.domain.cloud.DkUserPurchasedBooksManager;
-import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
+import com.duokan.reader.domain.bookshelf.C0800c;
+import com.duokan.reader.domain.bookshelf.ai;
+import com.duokan.reader.ui.store.al;
+import com.mipay.sdk.Mipay;
 
-import org.json.JSONArray;
+class hq implements al {
+    /* renamed from: a */
+    final /* synthetic */ hp f7945a;
 
-import java.util.concurrent.Callable;
-
-class hq implements Callable {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
-
-    hq(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    hq(hp hpVar) {
+        this.f7945a = hpVar;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
-    }
-
-    public String a() {
-        JSONArray jSONArray = new JSONArray();
-        JSONArray jSONArray2 = new JSONArray(this.a);
-        for (int i = 0; i < jSONArray2.length(); i++) {
-            String optString = jSONArray2.optString(i);
-            if (DkUserPurchasedBooksManager.a().b(optString) != null) {
-                jSONArray.put(optString);
-            } else if (DkUserPurchasedFictionsManager.a().b(optString) != null) {
-                jSONArray.put(optString);
-            }
+    public void onDownloadCloudBookStarted() {
+        C0800c b = ai.m3980a().m3906b(this.f7945a.f7944a.f7941d);
+        if (b != null) {
+            b.m4235j(this.f7945a.f7944a.f7942e);
         }
-        return jSONArray.toString();
+        this.f7945a.f7944a.f7943f.f7937b.f7581b.web_notifyWeb(this.f7945a.f7944a.f7939b, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
+    }
+
+    public void onDownloadCloudBookError(String str) {
+        this.f7945a.f7944a.f7943f.f7937b.f7581b.web_notifyWeb(this.f7945a.f7944a.f7939b, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str);
+    }
+
+    public void onDownloadCloudBookCanceled() {
+        this.f7945a.f7944a.f7943f.f7937b.f7581b.web_notifyWeb(this.f7945a.f7944a.f7939b, 2, Mipay.KEY_RESULT, Integer.valueOf(2));
     }
 }

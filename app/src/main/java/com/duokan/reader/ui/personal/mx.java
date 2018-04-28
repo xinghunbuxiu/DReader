@@ -1,67 +1,34 @@
 package com.duokan.reader.ui.personal;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
-import android.text.TextUtils;
+import com.duokan.reader.domain.cloud.DkCloudNoteBookInfo;
+import com.duokan.reader.domain.cloud.eu;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-public class mx {
-    private static boolean e = false;
-    private static mx f;
-    private long a = 0;
-    private long b = 0;
-    private long c = 0;
-    private double[] d;
-    private final String g = "readTime";
-    private long h = 0;
-    private double i = 0.0d;
+class mx implements eu {
+    /* renamed from: a */
+    final /* synthetic */ mv f8973a;
 
-    private mx() {
+    mx(mv mvVar) {
+        this.f8973a = mvVar;
     }
 
-    public static synchronized mx a() {
-        mx mxVar;
-        synchronized (mx.class) {
-            if (f == null) {
-                f = new mx();
+    /* renamed from: a */
+    public void mo1159a(DkCloudNoteBookInfo[] dkCloudNoteBookInfoArr, boolean z) {
+        if (z) {
+            this.f8973a.f8970c = new ArrayList(Arrays.asList(dkCloudNoteBookInfoArr));
+            if (this.f8973a.f8970c.size() > 0) {
+                this.f8973a.f8971d.m8785a(false);
+                return;
             }
-            mxVar = f;
+            return;
         }
-        return mxVar;
+        this.f8973a.f8970c = new ArrayList(Arrays.asList(dkCloudNoteBookInfoArr));
+        this.f8973a.f8971d.m8785a(false);
     }
 
-    public void a(Context context) {
-        SharedPreferences sharedPreferences = context.getSharedPreferences("setting", 0);
-        if (sharedPreferences.getBoolean("isfirst", true)) {
-            Editor edit = sharedPreferences.edit();
-            edit.putLong("day", System.currentTimeMillis());
-            edit.putBoolean("isfirst", false);
-            edit.apply();
-        }
-        this.c = sharedPreferences.getLong("pageCount", 0);
-        this.b = (System.currentTimeMillis() - sharedPreferences.getLong("day", System.currentTimeMillis())) / 86400000;
-        this.h = sharedPreferences.getLong("readTime", 0);
-        this.a = sharedPreferences.getLong("readedCount", 0);
-        this.d = a(sharedPreferences.getString("TimeDistribution", ""));
-        e = true;
-    }
-
-    public void b(Context context) {
-        if (!e) {
-            a(context);
-        }
-        this.a++;
-    }
-
-    private double[] a(String str) {
-        if (TextUtils.isEmpty(str)) {
-            return new double[]{0.0d, 0.0d, 0.0d, 0.0d, 0.0d, 0.0d, 0.0d, 0.0d, 0.0d, 0.0d, 0.0d, 0.0d};
-        }
-        String[] split = str.split(",");
-        double[] dArr = new double[split.length];
-        for (int i = 0; i < split.length; i++) {
-            dArr[i] = Double.valueOf(split[i]).doubleValue();
-        }
-        return dArr;
+    /* renamed from: a */
+    public void mo1158a(String str) {
+        this.f8973a.f8971d.m8790m();
     }
 }

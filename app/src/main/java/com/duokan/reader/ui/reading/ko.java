@@ -1,33 +1,30 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
-import android.view.View;
+import com.duokan.core.ui.Scrollable;
+import com.duokan.core.ui.Scrollable.ScrollState;
+import com.duokan.core.ui.cg;
+import com.duokan.reader.domain.statistics.C1163a;
 
-import com.duokan.b.f;
-import com.duokan.b.g;
-import com.duokan.reader.domain.document.au;
-import com.duokan.reader.ui.general.deprecatedDkTextView;
+class ko implements cg {
+    /* renamed from: a */
+    final /* synthetic */ kn f10522a;
 
-public class ko extends fu {
-    public ko(Context context, gn gnVar, Rect rect, au auVar) {
-        super(context, gnVar, rect, auVar);
-        if (!TextUtils.isEmpty(auVar.k().d()) || !TextUtils.isEmpty(auVar.k().e())) {
-            View inflate = LayoutInflater.from(getContext()).inflate(g.reading__illustration_tip_view, this, false);
-            deprecatedDkTextView com_duokan_reader_ui_general_deprecatedDkTextView = (deprecatedDkTextView) inflate.findViewById(f.reading__illustration_view__sub_title);
-            ((deprecatedDkTextView) inflate.findViewById(f.reading__illustration_view__main_title)).setText(auVar.k().d());
-            com_duokan_reader_ui_general_deprecatedDkTextView.setText(auVar.k().e());
-            a(inflate, null);
+    ko(kn knVar) {
+        this.f10522a = knVar;
+    }
+
+    /* renamed from: a */
+    public void mo478a(Scrollable scrollable, ScrollState scrollState, ScrollState scrollState2) {
+        if (this.f10522a.f10519g != null && scrollState2 == ScrollState.FLING && scrollable.getViewportBounds().top > 0) {
+            this.f10522a.m14570d();
+            C1163a.m8627k().m8657d("reading/hang-ad/" + this.f10522a.f10519g.f10533a + "/ignore");
         }
     }
 
-    public fy a(au auVar) {
-        return new kp(getContext(), auVar);
-    }
-
-    public float getZoomFactor() {
-        return getWatchingView().getZoomFactor() / getWatchingView().getMinZoomFactor();
+    /* renamed from: a */
+    public void mo479a(Scrollable scrollable, boolean z) {
+        if (this.f10522a.f10519g != null && scrollable.getScrollState() == ScrollState.DRAG && ((float) scrollable.getViewportBounds().top) < ((float) (-scrollable.getMaxOverScrollHeight())) * 0.9f) {
+            this.f10522a.m14563a(this.f10522a.f10519g.f10538f.toString());
+        }
     }
 }

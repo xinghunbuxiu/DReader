@@ -3,18 +3,21 @@ package com.duokan.core.ui;
 import android.graphics.Canvas;
 
 public class bj extends ev {
-    final /* synthetic */ LinearScrollView a;
+    /* renamed from: a */
+    final /* synthetic */ LinearScrollView f1014a;
 
     public bj(LinearScrollView linearScrollView) {
-        this.a = linearScrollView;
+        this.f1014a = linearScrollView;
         super(linearScrollView);
     }
 
-    protected void a(Canvas canvas) {
+    /* renamed from: a */
+    protected void mo492a(Canvas canvas) {
         super.draw(canvas);
     }
 
-    protected void a(int i, int i2) {
+    /* renamed from: a */
+    protected void mo491a(int i, int i2) {
         super.scrollTo(i, i2);
     }
 }

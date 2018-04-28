@@ -1,38 +1,53 @@
 package com.duokan.reader.ui.general.web;
 
 import android.text.TextUtils;
+import com.duokan.core.app.ManagedApp.RunningState;
+import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.reader.DkApp;
+import com.duokan.reader.common.webservices.duokan.DkSignInInfo;
+import com.duokan.reader.common.webservices.duokan.DkSignInReward;
+import com.duokan.reader.domain.bookshelf.lb;
+import com.duokan.reader.domain.cloud.PersonalPrefs;
+import com.duokan.reader.domain.cloud.ft;
 
-import com.duokan.reader.domain.account.PersonalAccount;
-import com.duokan.reader.domain.account.i;
-import com.duokan.reader.domain.store.DkStoreBookDetail;
-import com.duokan.reader.domain.store.DkStoreItem;
-import com.duokan.reader.domain.store.h;
-import com.duokan.reader.ui.bookshelf.ay;
-import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
-import com.duokan.reader.ui.store.o;
-import com.mipay.sdk.Mipay;
+class hh implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ DkSignInInfo f7927a;
+    /* renamed from: b */
+    final /* synthetic */ hf f7928b;
 
-class hh implements h {
-    final /* synthetic */ hg a;
-
-    hh(hg hgVar) {
-        this.a = hgVar;
+    hh(hf hfVar, DkSignInInfo dkSignInInfo) {
+        this.f7928b = hfVar;
+        this.f7927a = dkSignInInfo;
     }
 
-    public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
-        DkStoreBookDetail dkStoreBookDetail = (DkStoreBookDetail) dkStoreItem;
-        if (TextUtils.equals(this.a.c, "NORMAL")) {
-            o.a().a(this.a.d, dkStoreBookDetail, new hi(this), FlowChargingTransferChoice.Default);
-        } else if (TextUtils.equals(this.a.c, "TRIED")) {
-            o.a(dkStoreBookDetail.getMinKernelVersion(), new hj(this, dkStoreBookDetail));
-        } else if (TextUtils.equals(this.a.c, "UPDATING")) {
-            ay.a(this.a.f.b.pageController.getContext(), dkStoreBookDetail.getEpubSize(), new hl(this));
-        } else if (TextUtils.equals(this.a.c, "TIME")) {
-            i.f().a(PersonalAccount.class, new hn(this, dkStoreBookDetail));
+    public void run() {
+        if (!PersonalPrefs.m5175a().m5242r()) {
+            String str;
+            C0328a.m757c().m752c(LogLevel.EVENT, "resign_event", "no pass through message, notify by client");
+            String str2 = "";
+            if (this.f7927a == null || this.f7927a.mReward == null) {
+                lb.m4896a().m4918a(null);
+                str = str2;
+            } else {
+                lb.m4896a().m4918a(this.f7927a.mReward);
+                str = str2;
+                int i = 0;
+                while (i < this.f7927a.mReward.size()) {
+                    String str3 = (str + "," + ((DkSignInReward) this.f7927a.mReward.get(i)).mValue) + ((DkSignInReward) this.f7927a.mReward.get(i)).mName;
+                    i++;
+                    str = str3;
+                }
+            }
+            if (DkApp.get().getRunningState() != RunningState.FOREGROUND) {
+                ft a = ft.m5575a();
+                if (!TextUtils.isEmpty(str)) {
+                    str = str.substring(1);
+                }
+                a.m5586b(str);
+            }
+            PersonalPrefs.m5175a().m5228f(true);
         }
-    }
-
-    public void onFetchBookDetailError(String str) {
-        this.a.f.b.pageController.web_notifyWeb(this.a.b, 2, Mipay.KEY_RESULT, Integer.valueOf(2), Mipay.KEY_MESSAGE, str);
     }
 }

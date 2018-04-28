@@ -1,32 +1,45 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.micloud.i;
-import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
+import com.duokan.reader.domain.account.al;
+import java.util.List;
 
-import java.io.File;
+class bi implements dw {
+    /* renamed from: a */
+    final /* synthetic */ ik f2825a;
+    /* renamed from: b */
+    final /* synthetic */ al f2826b;
+    /* renamed from: c */
+    final /* synthetic */ boolean f2827c;
+    /* renamed from: d */
+    final /* synthetic */ boolean f2828d;
+    /* renamed from: e */
+    final /* synthetic */ int f2829e;
+    /* renamed from: f */
+    final /* synthetic */ ar f2830f;
 
-class bi implements Runnable {
-    final /* synthetic */ aq a;
-
-    bi(aq aqVar) {
-        this.a = aqVar;
+    bi(ar arVar, ik ikVar, al alVar, boolean z, boolean z2, int i) {
+        this.f2830f = arVar;
+        this.f2825a = ikVar;
+        this.f2826b = alVar;
+        this.f2827c = z;
+        this.f2828d = z2;
+        this.f2829e = i;
     }
 
-    public void run() {
-        if (this.a.c().b(Boolean.valueOf(true)) && this.a.e.b() && this.a.d.d() && !this.a.b.e()) {
-            for (c cVar : this.a.h.values()) {
-                if (!cVar.ai() && cVar.ao() == -1 && this.a.b.b(cVar.e()) == null) {
-                    break;
-                }
-            }
-            c cVar2 = null;
-            if (cVar2 != null) {
-                File d = cVar2.d();
-                i a = this.a.b.a(d.getAbsolutePath(), d.getName());
-                if (a != null) {
-                    this.a.b.a(a, FlowChargingTransferChoice.NoTransfer);
-                }
-            }
+    /* renamed from: a */
+    public void mo983a(List<dd> list) {
+        if (this.f2825a.isCancelled()) {
+            this.f2830f.m3949x();
+        } else {
+            new bj(this, this.f2826b, list, this.f2825a).open();
+        }
+    }
+
+    /* renamed from: a */
+    public void mo982a(String str) {
+        this.f2830f.m3949x();
+        if (!this.f2825a.isCancelled()) {
+            this.f2830f.m3933i(str);
         }
     }
 }

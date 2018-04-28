@@ -1,30 +1,40 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.reader.domain.cloud.a;
-
-import java.text.Collator;
+import com.duokan.core.app.ac;
+import com.duokan.core.app.ad;
+import com.duokan.core.ui.C0342j;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.domain.social.message.C1148h;
+import com.duokan.reader.domain.social.message.C1151k;
+import com.duokan.reader.ui.general.ja;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
-class ca implements Runnable {
-    final /* synthetic */ List a;
-    final /* synthetic */ List b;
-    final /* synthetic */ Runnable c;
-    final /* synthetic */ by d;
+class ca implements ad {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f8389a;
+    /* renamed from: b */
+    final /* synthetic */ bw f8390b;
 
-    ca(by byVar, List list, List list2, Runnable runnable) {
-        this.d = byVar;
-        this.a = list;
-        this.b = list2;
-        this.c = runnable;
+    ca(bw bwVar, Runnable runnable) {
+        this.f8390b = bwVar;
+        this.f8389a = runnable;
     }
 
-    public void run() {
-        Collator instance = Collator.getInstance(Locale.CHINESE);
-        a a = a.a(this.a);
-        a.a(instance);
-        a.b(instance);
-        TaskHandler.PostTask(new cb(this, a));
+    /* renamed from: a */
+    public void mo1553a(ac acVar) {
+        C0342j a = ja.m10832a(this.f8390b.getContext(), "", this.f8390b.getResources().getString(C0258j.personal__message_center_view__deleting), true, true);
+        List j = this.f8390b.f8380l.m9788j();
+        List arrayList = new ArrayList();
+        for (Object next : j) {
+            if (next instanceof C1151k) {
+                arrayList.add((C1151k) next);
+            }
+        }
+        C1148h.m8567a().m8487a(arrayList, new cb(this, arrayList, a));
+    }
+
+    /* renamed from: b */
+    public void mo1554b(ac acVar) {
     }
 }

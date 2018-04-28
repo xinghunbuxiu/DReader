@@ -1,30 +1,22 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.as;
-import com.duokan.reader.domain.bookshelf.ai;
-import com.duokan.reader.domain.bookshelf.c;
-import com.duokan.reader.domain.bookshelf.ej;
-import com.mipay.sdk.Mipay;
+import android.text.TextUtils;
+import com.duokan.reader.ui.account.ae;
+import com.duokan.reader.ui.account.bl;
 
-import org.json.JSONObject;
+class ig implements ae {
+    /* renamed from: a */
+    final /* synthetic */ C1362if f7990a;
 
-class ig implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
-
-    ig(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    ig(C1362if c1362if) {
+        this.f7990a = c1362if;
     }
 
-    public void a() {
-        JSONObject jSONObject = new JSONObject(this.a);
-        String string = jSONObject.getString("msgid");
-        c b = ai.a().b(String.valueOf(jSONObject.getJSONObject("params").get("bookUuid")));
-        if (b instanceof ej) {
-            ((ej) b).a(true, new ih(this, string), new ii(this, string));
-            return;
+    public void onChoiced(String str) {
+        if (!TextUtils.isEmpty(str)) {
+            this.f7990a.f7989g.f7982b.f7581b.mShareController = new bl(this.f7990a.f7989g.f7982b.f7581b.getContext(), false, str, this.f7990a.f7983a, this.f7990a.f7984b, this.f7990a.f7985c, this.f7990a.f7986d, this.f7990a.f7987e, this.f7990a.f7988f, null);
+            this.f7990a.f7989g.f7982b.f7581b.addSubController(this.f7990a.f7989g.f7982b.f7581b.mShareController);
+            this.f7990a.f7989g.f7982b.f7581b.activate(this.f7990a.f7989g.f7982b.f7581b.mShareController);
         }
-        this.b.pageController.web_notifyWeb(string, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
     }
 }

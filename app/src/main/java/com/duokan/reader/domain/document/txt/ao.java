@@ -1,21 +1,22 @@
 package com.duokan.reader.domain.document.txt;
 
 class ao implements Runnable {
-    final /* synthetic */ aj a;
+    /* renamed from: a */
+    final /* synthetic */ aj f4909a;
 
     ao(aj ajVar) {
-        this.a = ajVar;
+        this.f4909a = ajVar;
     }
 
     public void run() {
-        this.a.k = true;
-        if (this.a.i.d()) {
-            this.a.d();
-            this.a.j = false;
+        this.f4909a.f4896k = true;
+        if (this.f4909a.f4894i.m7500d()) {
+            this.f4909a.m7412d();
+            this.f4909a.f4895j = false;
         }
-        if (this.a.h != null) {
-            this.a.h.a(null, this.a);
+        if (this.f4909a.f4893h != null) {
+            this.f4909a.f4893h.mo1221a(null, this.f4909a);
         }
-        this.a.invalidateSelf();
+        this.f4909a.invalidateSelf();
     }
 }

@@ -1,21 +1,21 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.reader.domain.bookshelf.ai;
+import com.duokan.core.sys.as;
+import com.duokan.reader.ui.reading.su;
 
-import java.util.concurrent.Callable;
+class gq implements as {
+    /* renamed from: a */
+    final /* synthetic */ gp f7896a;
 
-class gq implements Callable {
-    final /* synthetic */ PageController a;
-
-    gq(PageController cgVar) {
-        this.a = cgVar;
+    gq(gp gpVar) {
+        this.f7896a = gpVar;
     }
 
-    public /* synthetic */ Object call() {
-        return a();
-    }
-
-    public Integer a() {
-        return Integer.valueOf(ai.a().h());
+    /* renamed from: a */
+    public void mo1831a() {
+        su suVar = (su) this.f7896a.f7895a.f7581b.getContext().queryFeature(su.class);
+        if (suVar != null) {
+            suVar.mo2159j(true);
+        }
     }
 }

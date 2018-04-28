@@ -1,18 +1,34 @@
 package com.duokan.reader.ui.general.web;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.net.Uri;
+import android.text.TextUtils;
+import com.duokan.reader.common.webservices.duokan.C0641o;
+import com.duokan.reader.ui.general.be;
+import com.duokan.reader.ui.general.iq;
 
-class bl implements OnClickListener {
-    final /* synthetic */ String a;
-    final /* synthetic */ bk b;
+class bl implements iq {
+    /* renamed from: a */
+    final /* synthetic */ StorePageController f7633a;
 
-    bl(bk bkVar, String str) {
-        this.b = bkVar;
-        this.a = str;
+    bl(StorePageController storePageController) {
+        this.f7633a = storePageController;
     }
 
-    public void onClick(View view) {
-        this.b.a.scrollPosToTop(0, ((Integer) this.b.a.mTabsTitle.get(this.a)).intValue(), true);
+    /* renamed from: a */
+    public boolean mo1688a(String str) {
+        Uri parse = Uri.parse(str);
+        if (TextUtils.isEmpty(str)) {
+            C0641o.m2934i().m2983k("");
+        } else {
+            CharSequence str2;
+            if (str2.startsWith("http://")) {
+                this.f7633a.loadUrl(str2);
+            } else {
+                str2 = "http://" + parse.getHost() + (parse.getPort() == -1 ? "" : ":" + parse.getPort());
+                C0641o.m2934i().m2983k(str2);
+            }
+            be.m10287a(this.f7633a.getContext(), str2, 1).show();
+        }
+        return true;
     }
 }

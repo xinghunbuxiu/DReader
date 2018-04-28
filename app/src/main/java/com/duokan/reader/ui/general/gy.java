@@ -1,42 +1,28 @@
 package com.duokan.reader.ui.general;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
+import android.view.View;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.ActivatedController;
 
-import com.bumptech.glide.request.animation.GlideAnimation;
-import com.bumptech.glide.request.target.SimpleTarget;
+abstract class gy extends ActivatedController {
+    /* renamed from: a */
+    private final ActivatedController f7303a;
+    /* renamed from: b */
+    final /* synthetic */ gs f7304b;
 
-class gy extends SimpleTarget {
-    final /* synthetic */ gw a;
-
-    private gy(gw gwVar) {
-        this.a = gwVar;
+    public gy(gs gsVar, IFeature mFeature, ActivatedController c0303e) {
+        this.f7304b = gsVar;
+        super(mFeature);
+        this.f7303a = c0303e;
     }
 
-    public /* synthetic */ void onResourceReady(Object obj, GlideAnimation glideAnimation) {
-        a((Bitmap) obj, glideAnimation);
+    /* renamed from: a */
+    public final ActivatedController m10732a() {
+        return this.f7303a;
     }
 
-    public void a(Bitmap bitmap, GlideAnimation glideAnimation) {
-        this.a.j = new BitmapDrawable(this.a.c.getResources(), bitmap);
-        if (this.a.i != null) {
-            this.a.i.a(bitmap);
-        }
-        this.a.m = true;
-        this.a.invalidateSelf();
-    }
-
-    public void onLoadCleared(Drawable drawable) {
-        this.a.j = drawable;
-        this.a.invalidateSelf();
-    }
-
-    public void onLoadFailed(Exception exception, Drawable drawable) {
-        this.a.j = drawable;
-        if (this.a.i != null) {
-            this.a.i.b(this.a);
-        }
-        this.a.invalidateSelf();
+    /* renamed from: b */
+    public final View m10733b() {
+        return this.f7303a.getContentView();
     }
 }

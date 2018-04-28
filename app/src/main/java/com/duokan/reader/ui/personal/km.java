@@ -1,74 +1,35 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.c.j;
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.ReaderEnv;
-import com.duokan.reader.ReaderEnv.PrivatePref;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.domain.cloud.DkCloudPurchasedBook;
-import com.duokan.reader.domain.cloud.DkCloudPurchasedFiction;
-import com.duokan.reader.domain.cloud.DkCloudStoreBook;
-import com.duokan.reader.ui.InavOperater;
+import android.text.TextUtils;
+import com.duokan.reader.DkApp;
+import com.duokan.reader.domain.cloud.DkCloudBookManifest;
+import com.duokan.reader.domain.cloud.ah;
 import com.duokan.reader.ui.general.be;
-import com.duokan.reader.ui.store.bv;
 
-import java.util.List;
+class km implements ah {
+    /* renamed from: a */
+    final /* synthetic */ kl f8819a;
 
-class km implements kn {
-    final /* synthetic */ kg a;
-
-    private km(kg kgVar) {
-        this.a = kgVar;
+    km(kl klVar) {
+        this.f8819a = klVar;
     }
 
-    public PurchasedSortType a() {
-        String prefString = ReaderEnv.get().getPrefString(PrivatePref.BOOKSHELF, "showing_purchased_list", PurchasedSortType.TIME.toString());
-        if (prefString.equals("purchased")) {
-            return PurchasedSortType.TIME;
-        }
-        if (prefString.equals("cloud_only")) {
-            return PurchasedSortType.NAME;
-        }
-        if (prefString.equals("group")) {
-            return PurchasedSortType.GROUP;
-        }
-        if (prefString.equals(PurchasedSortType.CLOUD_ONLY.toString())) {
-            return PurchasedSortType.NAME;
-        }
-        return PurchasedSortType.valueOf(prefString);
-    }
-
-    public void a(PurchasedSortType purchasedSortType) {
-        ReaderEnv.get().setPrefString(PrivatePref.BOOKSHELF, "showing_purchased_list", purchasedSortType.toString());
-        ReaderEnv.get().commitPrefs();
-    }
-
-    public void a(DkCloudStoreBook dkCloudStoreBook) {
-        InavOperater eVar = (InavOperater) MyContextWrapper.getFeature(this.a.getContext()).queryFeature(InavOperater.class);
-        if (dkCloudStoreBook instanceof DkCloudPurchasedBook) {
-            eVar.pushPageSmoothly(bv.a(this.a.getContext(), String.valueOf(0), 1, dkCloudStoreBook.getBookUuid(), "Purchased_" + dkCloudStoreBook.getBookUuid()), null);
-        } else if (dkCloudStoreBook instanceof DkCloudPurchasedFiction) {
-            eVar.pushPageSmoothly(bv.a(this.a.getContext(), String.valueOf(0), 2, dkCloudStoreBook.getBookUuid(), "Purchased_" + dkCloudStoreBook.getBookUuid()), null);
+    /* renamed from: a */
+    public void mo1047a(String str, DkCloudBookManifest dkCloudBookManifest) {
+        if (this.f8819a.f8816a.f8227e == this.f8819a.f8817b) {
+            this.f8819a.f8816a.f8226d.setEnabled(true);
+            this.f8819a.f8816a.m11363b();
         }
     }
 
-    public void a(Runnable runnable, List list) {
-        if (list.size() == 0) {
-            be.a(this.a.getContext(), j.bookshelf__shared__unselect_any_books, 0).show();
-        } else {
-            this.a.a(runnable, list);
+    /* renamed from: a */
+    public void mo1048a(String str, String str2) {
+        if (!TextUtils.isEmpty(str2)) {
+            be.m10287a(DkApp.get(), (CharSequence) str2, 1).show();
         }
-    }
-
-    public void b() {
-        this.a.a(this.a.c.h(), null, null);
-    }
-
-    public void c() {
-        ((ReaderFeature) this.a.getContext().queryFeature(ReaderFeature.class)).pushPageSmoothly(new ip(this.a.getContext(), true), null);
-    }
-
-    public void d() {
-        ((ReaderFeature) this.a.getContext().queryFeature(ReaderFeature.class)).pushPageSmoothly(bv.a(this.a.getContext()), null);
+        if (this.f8819a.f8816a.f8227e == this.f8819a.f8817b) {
+            this.f8819a.f8816a.f8226d.setEnabled(true);
+            this.f8819a.f8816a.m11363b();
+        }
     }
 }

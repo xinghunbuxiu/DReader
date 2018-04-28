@@ -1,32 +1,29 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.app.ab;
-import com.duokan.core.app.ac;
-import com.duokan.reader.domain.cloud.DkCloudStoreBook;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.core.app.AppContext;
+import com.duokan.reader.ui.general.expandable.ViewMode;
 
-import java.util.ArrayList;
-import java.util.List;
+class lm implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ int f8889a;
+    /* renamed from: b */
+    final /* synthetic */ int f8890b;
+    /* renamed from: c */
+    final /* synthetic */ ll f8891c;
 
-class lm implements ac {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ lk b;
-
-    lm(lk lkVar, Runnable runnable) {
-        this.b = lkVar;
-        this.a = runnable;
+    lm(ll llVar, int i, int i2) {
+        this.f8891c = llVar;
+        this.f8889a = i;
+        this.f8890b = i2;
     }
 
-    public void a(ab abVar) {
-        List arrayList = new ArrayList();
-        List j = this.b.a.getAdapter().j();
-        for (int i = 0; i < j.size(); i++) {
-            if (j.get(i) instanceof DkCloudStoreBook) {
-                arrayList.add((DkCloudStoreBook) j.get(i));
-            }
+    public void onClick(View view) {
+        if (this.f8891c.f8888h.getNormalAdapter().mo1714f() == ViewMode.Edit) {
+            this.f8891c.f8888h.m11522b(this.f8889a, this.f8890b);
+        } else {
+            ((lb) AppContext.getAppContext(this.f8891c.m12080o()).queryFeature(lb.class)).mo1933a(this.f8891c.mo1952j(this.f8890b));
         }
-        this.b.c.a(new ln(this, arrayList), arrayList);
-    }
-
-    public void b(ab abVar) {
     }
 }

@@ -1,23 +1,22 @@
 package com.duokan.reader.domain.bookshelf;
 
-class ay implements da {
-    final /* synthetic */ int a;
-    final /* synthetic */ aq b;
+import com.duokan.reader.common.async.work.IAsyncWorkProgressListener;
 
-    ay(aq aqVar, int i) {
-        this.b = aqVar;
-        this.a = i;
+class ay implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ IAsyncWorkProgressListener f2796a;
+    /* renamed from: b */
+    final /* synthetic */ aw f2797b;
+
+    ay(aw awVar, IAsyncWorkProgressListener iAsyncWorkProgressListener) {
+        this.f2797b = awVar;
+        this.f2796a = iAsyncWorkProgressListener;
     }
 
-    public void a() {
-    }
-
-    public void b() {
-        if (this.a < 2) {
-            this.b.a(false, false, this.a + 1);
+    public void run() {
+        it.m4692a().m4727b(this.f2796a);
+        if (!this.f2797b.f2788a.isCancelled()) {
+            this.f2797b.f2793f.m3933i("");
         }
-    }
-
-    public void a(String str) {
     }
 }

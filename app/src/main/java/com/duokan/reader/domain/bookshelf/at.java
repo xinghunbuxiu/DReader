@@ -1,24 +1,27 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.reader.domain.account.ab;
+import com.duokan.reader.domain.account.al;
+import com.duokan.reader.domain.cloud.PersonalPrefs;
 
-import java.util.List;
+class at implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ int f2777a;
+    /* renamed from: b */
+    final /* synthetic */ ar f2778b;
 
-class at extends bp {
-    final /* synthetic */ as a;
-
-    at(as asVar, ab abVar, List list, boolean z, iq iqVar) {
-        this.a = asVar;
-        super(asVar.b, abVar, list, z, iqVar);
+    at(ar arVar, int i) {
+        this.f2778b = arVar;
+        this.f2777a = i;
     }
 
-    protected void onSessionSucceeded() {
-        super.onSessionSucceeded();
-        this.a.b.x();
-    }
-
-    protected void onSessionFailed() {
-        super.onSessionFailed();
-        this.a.b.x();
+    public void run() {
+        if (!this.f2778b.j.m3366b() && PersonalPrefs.m5175a().m5250z()) {
+            al alVar = this.f2778b.j;
+            if (this.f2777a == 0) {
+                new au(this, alVar, alVar).open();
+            } else {
+                this.f2778b.m3962b(this.f2777a);
+            }
+        }
     }
 }

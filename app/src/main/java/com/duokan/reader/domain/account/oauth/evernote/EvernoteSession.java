@@ -5,16 +5,14 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.util.Log;
-
 import com.evernote.edam.notestore.NoteStore.Client;
 import com.evernote.edam.userstore.UserStore;
 import com.evernote.thrift.protocol.TBinaryProtocol;
 import com.evernote.thrift.protocol.TProtocol;
-
-import org.apache.http.HttpHost;
-
+import com.iflytek.speech.VoiceWakeuperAidl;
 import java.io.File;
 import java.util.Locale;
+import org.apache.http.HttpHost;
 
 public class EvernoteSession extends Utils {
     public static final String HOST_CHINA = "app.yinxiang.com";
@@ -108,7 +106,7 @@ public class EvernoteSession extends Utils {
                 } else {
                     str = str + " (" + Locale.US + ");";
                 }
-                this.mUserAgentString = (str + "Android/" + VERSION.RELEASE + "; ") + Build.MODEL + "/" + VERSION.SDK_INT + ";";
+                this.mUserAgentString = (str + "Android/" + VERSION.RELEASE + "; ") + Build.MODEL + "/" + VERSION.SDK_INT + VoiceWakeuperAidl.PARAMS_SEPARATE;
             }
         } catch (NameNotFoundException e3) {
             NameNotFoundException nameNotFoundException = e3;
@@ -122,7 +120,7 @@ public class EvernoteSession extends Utils {
             } else {
                 str = str + " (" + locale.toString() + "); ";
             }
-            this.mUserAgentString = (str + "Android/" + VERSION.RELEASE + "; ") + Build.MODEL + "/" + VERSION.SDK_INT + ";";
+            this.mUserAgentString = (str + "Android/" + VERSION.RELEASE + "; ") + Build.MODEL + "/" + VERSION.SDK_INT + VoiceWakeuperAidl.PARAMS_SEPARATE;
         }
         str = packageName + " Android/" + i;
         locale = Locale.getDefault();
@@ -131,7 +129,7 @@ public class EvernoteSession extends Utils {
         } else {
             str = str + " (" + locale.toString() + "); ";
         }
-        this.mUserAgentString = (str + "Android/" + VERSION.RELEASE + "; ") + Build.MODEL + "/" + VERSION.SDK_INT + ";";
+        this.mUserAgentString = (str + "Android/" + VERSION.RELEASE + "; ") + Build.MODEL + "/" + VERSION.SDK_INT + VoiceWakeuperAidl.PARAMS_SEPARATE;
     }
 
     public String getUserAgentString() {

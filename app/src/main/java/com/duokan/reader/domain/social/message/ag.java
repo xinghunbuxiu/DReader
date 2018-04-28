@@ -1,47 +1,36 @@
 package com.duokan.reader.domain.social.message;
 
-import com.duokan.reader.common.j;
-import com.duokan.reader.domain.account.ab;
+import com.duokan.reader.common.webservices.duokan.ae;
+import com.duokan.reader.domain.account.C0666x;
+import com.duokan.reader.domain.account.C0672a;
+import com.duokan.reader.domain.account.al;
 
-import java.util.ArrayList;
-import java.util.Collection;
+class ag implements C0666x {
+    /* renamed from: a */
+    final /* synthetic */ int f5497a;
+    /* renamed from: b */
+    final /* synthetic */ int f5498b;
+    /* renamed from: c */
+    final /* synthetic */ as f5499c;
+    /* renamed from: d */
+    final /* synthetic */ boolean f5500d;
+    /* renamed from: e */
+    final /* synthetic */ DkMessagesManager f5501e;
 
-class ag extends j {
-    final /* synthetic */ Collection a;
-    final /* synthetic */ ab b;
-    final /* synthetic */ ax c;
-    final /* synthetic */ DkMessagesManager d;
-    private ArrayList e = new ArrayList(this.a.size());
-
-    ag(DkMessagesManager dkMessagesManager, Collection collection, ab abVar, ax axVar) {
-        this.d = dkMessagesManager;
-        this.a = collection;
-        this.b = abVar;
-        this.c = axVar;
+    ag(DkMessagesManager dkMessagesManager, int i, int i2, as asVar, boolean z) {
+        this.f5501e = dkMessagesManager;
+        this.f5497a = i;
+        this.f5498b = i2;
+        this.f5499c = asVar;
+        this.f5500d = z;
     }
 
-    protected void onSessionTry() {
-        synchronized (DkMessagesManager.a) {
-            av avVar = new av(this.d.e, this.b, this.d.f);
-            avVar.a();
-            for (String queryItem : this.a) {
-                k kVar = (k) avVar.queryItem(queryItem);
-                if (kVar != null) {
-                    this.e.add(kVar);
-                }
-            }
-        }
+    public void onQueryAccountOk(C0672a c0672a) {
+        this.f5501e.f5479j = new al(c0672a);
+        new ah(this, this.f5501e.f5479j.f2360a, ae.f2100a, this.f5501e.f5479j).open();
     }
 
-    protected void onSessionSucceeded() {
-        if (this.d.k.a(this.b)) {
-            this.c.a((k[]) this.e.toArray(new k[0]), false);
-        } else {
-            this.c.a(new k[0], "");
-        }
-    }
-
-    protected void onSessionFailed() {
-        this.c.a(new k[0], "");
+    public void onQueryAccountError(C0672a c0672a, String str) {
+        this.f5499c.mo1179a(new C1151k[0], "");
     }
 }

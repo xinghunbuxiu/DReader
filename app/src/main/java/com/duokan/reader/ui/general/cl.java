@@ -1,24 +1,24 @@
 package com.duokan.reader.ui.general;
 
 import android.content.Context;
-
 import com.duokan.reader.ui.general.FileTransferPrompter.FlowChargingTransferChoice;
 
 final class cl extends ap {
-    final /* synthetic */ cm a;
+    /* renamed from: a */
+    final /* synthetic */ cm f7035a;
 
     cl(Context context, cm cmVar) {
-        this.a = cmVar;
+        this.f7035a = cmVar;
         super(context);
     }
 
     protected void onOk() {
         super.onOk();
-        this.a.onChoice(true, FlowChargingTransferChoice.Transfer);
+        this.f7035a.onChoice(true, FlowChargingTransferChoice.Transfer);
     }
 
     protected void onCancel() {
         super.onCancel();
-        this.a.onChoice(false, FlowChargingTransferChoice.NoTransfer);
+        this.f7035a.onChoice(false, FlowChargingTransferChoice.NoTransfer);
     }
 }

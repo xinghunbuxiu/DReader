@@ -1,26 +1,16 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.View;
-import android.view.View.OnClickListener;
+import com.duokan.reader.domain.account.C0709k;
 
-import com.duokan.reader.UmengManager;
-import com.duokan.reader.domain.audio.AudioPlayer;
+class ie implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ id f10383a;
 
-class ie implements OnClickListener {
-    final /* synthetic */ hq a;
-
-    ie(hq hqVar) {
-        this.a = hqVar;
+    ie(id idVar) {
+        this.f10383a = idVar;
     }
 
-    public void onClick(View view) {
-        if (AudioPlayer.a().b()) {
-            UmengManager.get().onEvent("V2_READING_TOP_TOOLBUTTON", "Pron-Pause");
-            this.a.f.i();
-        } else {
-            UmengManager.get().onEvent("V2_READING_TOP_TOOLBUTTON", "Pron-Start");
-            this.a.f.a(this.a.f.Z(), false);
-        }
-        this.a.requestDetach();
+    public void run() {
+        C0709k.m3476a().m3495a(new C1458if(this));
     }
 }

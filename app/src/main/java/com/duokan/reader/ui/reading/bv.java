@@ -1,39 +1,36 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.ActivatedController;
-import com.duokan.core.app.IFeature;
-import com.duokan.core.app.MyContextWrapper;
-import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.u;
-import com.duokan.reader.ui.general.web.StorePageController;
+import com.duokan.reader.common.webservices.C0621a;
+import com.duokan.reader.common.webservices.C0657i;
+import com.duokan.reader.common.webservices.WebSession;
+import com.duokan.reader.common.webservices.duokan.C0640n;
+import com.duokan.reader.common.webservices.duokan.C0641o;
+import com.duokan.reader.domain.account.C0672a;
+import com.duokan.reader.domain.account.al;
+import com.duokan.reader.domain.cloud.DkSharedStorageManager;
 
-class bv implements u {
-    final /* synthetic */ String a;
-    final /* synthetic */ bn b;
+class bv extends WebSession {
+    /* renamed from: a */
+    final /* synthetic */ C0672a f9903a;
+    /* renamed from: b */
+    final /* synthetic */ bu f9904b;
 
-    bv(bn bnVar, String str) {
-        this.b = bnVar;
-        this.a = str;
+    bv(bu buVar, C0657i c0657i, C0672a c0672a) {
+        this.f9904b = buVar;
+        this.f9903a = c0672a;
+        super(c0657i);
     }
 
-    public void onQueryAccountOk(a aVar) {
-        IFeature a = MyContextWrapper.getFeature(this.b.getContext());
-        if (a != null) {
-            ActivatedController storePageController = new StorePageController(a);
-            storePageController.loadUrl(this.a);
-            ReaderFeature readerFeature = (ReaderFeature) a.queryFeature(ReaderFeature.class);
-            if (readerFeature == null) {
-                return;
-            }
-            if (storePageController.transparent()) {
-                readerFeature.showPopup(storePageController);
-            } else {
-                readerFeature.pushHalfPageSmoothly(storePageController, null);
-            }
+    protected void onSessionTry() {
+        C0621a a = new C0640n(this, new al(this.f9903a)).m2915a(this.f9904b.f9900a, C0641o.m2934i().m2987n() + this.f9904b.f9901b);
+        if (a.b == 0) {
+            DkSharedStorageManager.m5016a().m5026a("preload_" + this.f9904b.f9901b, (String) a.f2058a, true);
         }
     }
 
-    public void onQueryAccountError(a aVar, String str) {
+    protected void onSessionSucceeded() {
+    }
+
+    protected void onSessionFailed() {
     }
 }

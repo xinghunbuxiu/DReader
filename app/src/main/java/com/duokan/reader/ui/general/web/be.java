@@ -1,28 +1,20 @@
 package com.duokan.reader.ui.general.web;
 
-import android.text.TextUtils;
-
 import com.duokan.reader.ReaderFeature;
-import com.duokan.reader.domain.store.DkStoreBookDetail;
-import com.duokan.reader.domain.store.DkStoreItem;
-import com.duokan.reader.domain.store.h;
-import com.duokan.reader.ui.store.g;
+import com.duokan.reader.ui.store.C1497j;
 
-class be implements h {
-    final /* synthetic */ bd a;
+class be implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ String f7621a;
+    /* renamed from: b */
+    final /* synthetic */ StorePageController f7622b;
 
-    be(bd bdVar) {
-        this.a = bdVar;
+    be(StorePageController storePageController, String str) {
+        this.f7622b = storePageController;
+        this.f7621a = str;
     }
 
-    public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
-        DkStoreBookDetail dkStoreBookDetail = (DkStoreBookDetail) dkStoreItem;
-        ((ReaderFeature) this.a.b.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new g(this.a.b.getContext(), dkStoreBookDetail.getBook().getTitle(), dkStoreBookDetail.getToc()), null);
-    }
-
-    public void onFetchBookDetailError(String str) {
-        if (!TextUtils.isEmpty(str)) {
-            com.duokan.reader.ui.general.be.a(this.a.b.getContext(), (CharSequence) str, 1).show();
-        }
+    public void run() {
+        ((ReaderFeature) this.f7622b.getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(new C1497j(this.f7622b.getContext(), this.f7621a), null);
     }
 }

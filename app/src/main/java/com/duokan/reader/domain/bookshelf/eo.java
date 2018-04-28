@@ -1,13 +1,22 @@
 package com.duokan.reader.domain.bookshelf;
 
-class eo implements Runnable {
-    final /* synthetic */ en a;
+import com.duokan.core.sys.ag;
+import com.duokan.reader.domain.store.DkStoreFictionDetail;
+
+class eo implements ag<DkStoreFictionDetail> {
+    /* renamed from: a */
+    final /* synthetic */ en f3114a;
 
     eo(en enVar) {
-        this.a = enVar;
+        this.f3114a = enVar;
     }
 
-    public void run() {
-        this.a.b.a.a.a(this.a.a);
+    public /* synthetic */ void run(Object obj) {
+        m4435a((DkStoreFictionDetail) obj);
+    }
+
+    /* renamed from: a */
+    public void m4435a(DkStoreFictionDetail dkStoreFictionDetail) {
+        this.f3114a.f3112a.release();
     }
 }

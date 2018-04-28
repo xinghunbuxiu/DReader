@@ -1,17 +1,18 @@
 package com.duokan.reader.ui.general.web;
 
+import android.os.Handler;
 import com.duokan.core.sys.as;
 
 class hb implements as {
-    final /* synthetic */ String a;
-    final /* synthetic */ PageController b;
+    /* renamed from: a */
+    final /* synthetic */ ci f7919a;
 
-    hb(PageController cgVar, String str) {
-        this.b = cgVar;
-        this.a = str;
+    hb(ci ciVar) {
+        this.f7919a = ciVar;
     }
 
-    public void a() {
-        this.b.a(new hc(this));
+    /* renamed from: a */
+    public void mo1831a() {
+        this.f7919a.m11016a(new hd(this, new Handler(new hc(this))));
     }
 }

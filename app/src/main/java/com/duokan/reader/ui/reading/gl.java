@@ -1,22 +1,29 @@
 package com.duokan.reader.ui.reading;
 
-import android.content.Context;
-import android.graphics.Rect;
+import android.graphics.PointF;
 import android.view.View;
-import android.widget.FrameLayout;
+import com.duokan.core.ui.C0385i;
+import com.duokan.core.ui.er;
 
-class gl extends FrameLayout {
-    final /* synthetic */ gk a;
+class gl implements C0385i {
+    /* renamed from: a */
+    final /* synthetic */ gk f10248a;
 
-    public gl(gk gkVar, Context context) {
-        this.a = gkVar;
-        super(context);
+    gl(gk gkVar) {
+        this.f10248a = gkVar;
     }
 
-    public void a(View view, Rect rect) {
-        LayoutParams layoutParams = new FrameLayout.LayoutParams(rect.width(), rect.height());
-        layoutParams.leftMargin = rect.left;
-        layoutParams.topMargin = rect.top;
-        addView(view, layoutParams);
+    public void onTouchUp(View view, PointF pointF) {
+    }
+
+    public void onTouchDown(View view, PointF pointF) {
+    }
+
+    public void onTouchCancel(View view, PointF pointF) {
+    }
+
+    /* renamed from: a */
+    public void mo1788a(er erVar, View view, PointF pointF, int i) {
+        this.f10248a.f10243a.mo2441a(pointF);
     }
 }

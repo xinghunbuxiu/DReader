@@ -1,139 +1,125 @@
 package com.duokan.reader.ui.reading;
 
-import android.graphics.Point;
-import android.graphics.PointF;
-import android.graphics.Rect;
-import android.view.View;
+import android.media.AudioManager;
+import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.sys.UThread;
+import com.duokan.core.sys.ag;
+import com.duokan.p024c.C0258j;
+import com.duokan.reader.DkApp;
+import com.duokan.reader.UmengManager;
+import com.duokan.reader.domain.tts.SpeakingListener;
+import com.duokan.reader.domain.tts.TtsEngineIflytek;
+import com.duokan.reader.ui.general.ap;
+import com.duokan.reader.ui.general.be;
+import java.util.ArrayList;
+import java.util.List;
 
-import com.duokan.core.ui.UTools;
-import com.duokan.core.ui.du;
-import com.duokan.core.ui.er;
-import com.duokan.reader.domain.document.as;
-import com.duokan.reader.domain.document.d;
-import com.duokan.reader.domain.document.i;
+class aee implements SpeakingListener {
+    /* renamed from: a */
+    final /* synthetic */ afc f9571a;
+    /* renamed from: b */
+    final /* synthetic */ afa f9572b;
+    /* renamed from: c */
+    final /* synthetic */ ag f9573c;
+    /* renamed from: d */
+    final /* synthetic */ adz f9574d;
+    /* renamed from: e */
+    private boolean f9575e = false;
 
-class aee implements du {
-    final /* synthetic */ as a;
-    final /* synthetic */ aed b;
-
-    aee(aed com_duokan_reader_ui_reading_aed, as asVar) {
-        this.b = com_duokan_reader_ui_reading_aed;
-        this.a = asVar;
+    aee(adz adz, afc afc, afa afa, ag agVar) {
+        this.f9574d = adz;
+        this.f9571a = afc;
+        this.f9572b = afa;
+        this.f9573c = agVar;
     }
 
-    public void onTouchUp(View view, PointF pointF) {
-    }
-
-    public void onTouchDown(View view, PointF pointF) {
-    }
-
-    public void onTouchCancel(View view, PointF pointF) {
-    }
-
-    public void a(er erVar, View view, PointF pointF, PointF pointF2) {
-        Rect d;
-        if (this.b.a.m != null) {
-            Point point = this.b.a.m.c;
-            point.y += (int) pointF2.y;
-            if (Math.abs(this.b.a.m.d.y - this.b.a.m.c.y) > UTools.getScaledTouchSlop(this.b.a.getContext())) {
-                this.b.a.m.d.set(this.b.a.m.c.x, this.b.a.m.c.y);
-                int a = this.b.a.m.a();
-                d dVar;
-                aeg com_duokan_reader_ui_reading_aeg;
-                if (a == this.b.a.m.a.length - 1 && this.b.a.m.c.y >= this.a.d(this.b.a.m.d().b).bottom + UTools.getScaledPagingTouchSlop(this.b.a.getContext())) {
-                    dVar = (d) this.b.a.m.d().b.g();
-                    com_duokan_reader_ui_reading_aeg = new aeg();
-                    com_duokan_reader_ui_reading_aeg.b = dVar;
-                    this.b.a.m = com_duokan_reader_ui_reading_aeg;
-                    this.b.a.a.u();
-                    return;
-                } else if (a != 0 || this.b.a.m.c.y >= this.a.d(this.b.a.m.c().b).top - UTools.getScaledPagingTouchSlop(this.b.a.getContext())) {
-                    as asVar;
-                    if (this.a instanceof i) {
-                        as b;
-                        i iVar = (i) this.a;
-                        if (iVar.d().contains(this.b.a.m.c.x, this.b.a.m.c.y)) {
-                            b = iVar.b();
-                        } else {
-                            b = iVar.c();
-                        }
-                        asVar = b;
-                    } else {
-                        asVar = this.a;
-                    }
-                    d = asVar.d(this.b.a.m.a[a].b);
-                    ael com_duokan_reader_ui_reading_ael;
-                    if (pointF2.y < 0.0f || a >= this.b.a.m.a.length - 1) {
-                        if (pointF2.y < 0.0f && a > 0 && this.b.a.m.c.y < d.top) {
-                            com_duokan_reader_ui_reading_ael = this.b.a.m.a[a - 1];
-                            this.b.a.m.b = (d) com_duokan_reader_ui_reading_ael.b.g();
-                            if (!asVar.l().b(com_duokan_reader_ui_reading_ael.b)) {
-                                point = this.a.g(com_duokan_reader_ui_reading_ael.b);
-                                this.b.a.m.c.x = point.x;
-                                this.b.a.m.c.y = point.y;
-                            }
-                        }
-                    } else if (this.b.a.m.c.y >= d.bottom) {
-                        com_duokan_reader_ui_reading_ael = this.b.a.m.a[a + 1];
-                        this.b.a.m.b = (d) com_duokan_reader_ui_reading_ael.b.g();
-                        if (!asVar.l().b(com_duokan_reader_ui_reading_ael.b)) {
-                            point = this.a.f(com_duokan_reader_ui_reading_ael.b);
-                            this.b.a.m.c.x = point.x;
-                            this.b.a.m.c.y = point.y;
-                        }
-                    }
-                } else {
-                    dVar = (d) this.b.a.m.c().b.g();
-                    com_duokan_reader_ui_reading_aeg = new aeg();
-                    com_duokan_reader_ui_reading_aeg.b = dVar;
-                    this.b.a.m = com_duokan_reader_ui_reading_aeg;
-                    this.b.a.a.t();
-                    return;
-                }
+    public void onSpeakingStart(String str) {
+        UThread.postDelayed(new aef(this), 60000);
+        this.f9574d.f9541a.setActiveColorText(this.f9571a.f9622b);
+        if (!this.f9574d.f9541a.bi()) {
+            if (this.f9574d.f9541a.mo2004U() == PageAnimationMode.VSCROLL || this.f9571a.f9623c <= 0) {
+                this.f9574d.f9541a.mo2131d(this.f9571a.f9622b);
             }
-        } else if (!this.b.a.j.b.isEmpty()) {
-            this.b.a.d();
-            this.b.a.m = new aeg();
-            this.b.a.m.a = this.b.a.a(this.a);
-            ael com_duokan_reader_ui_reading_ael2 = (ael) this.b.a.j.b.getFirst();
-            if (this.a.l().b(com_duokan_reader_ui_reading_ael2.b)) {
-                int i;
-                this.b.a.m.b = (d) this.b.a.m.c().b.g();
-                for (i = 0; i < this.b.a.m.a.length; i++) {
-                    if (com_duokan_reader_ui_reading_ael2.b.a(this.b.a.m.a[i].b.g())) {
-                        this.b.a.m.b = (d) this.b.a.m.a[i].b.g();
-                        break;
-                    }
-                }
-                i = this.b.a.b.k().f;
-                d = this.a.d(com_duokan_reader_ui_reading_ael2.b);
-                if (pointF2.y >= 0.0f) {
-                    this.b.a.m.c.x = d.centerX();
-                    this.b.a.m.c.y = d.bottom - i;
-                } else {
-                    this.b.a.m.c.x = d.centerX();
-                    this.b.a.m.c.y = d.top + i;
-                }
-            } else if (pointF2.y >= 0.0f) {
-                com_duokan_reader_ui_reading_ael2 = this.b.a.m.c();
-                r1 = this.a.d(com_duokan_reader_ui_reading_ael2.b);
-                this.b.a.m.b = (d) com_duokan_reader_ui_reading_ael2.b.g();
-                this.b.a.m.c.x = r1.centerX();
-                this.b.a.m.c.y = r1.top;
-            } else {
-                com_duokan_reader_ui_reading_ael2 = this.b.a.m.d();
-                r1 = this.a.d(com_duokan_reader_ui_reading_ael2.b);
-                this.b.a.m.b = (d) com_duokan_reader_ui_reading_ael2.b.g();
-                this.b.a.m.c.x = r1.centerX();
-                this.b.a.m.c.y = r1.bottom;
-            }
-            this.b.a.m.d.set(this.b.a.m.c.x, this.b.a.m.c.y);
-            this.b.c(true);
-            this.b.d(true);
-        } else {
+        }
+    }
+
+    public void onSpeakingPaused(String str) {
+        this.f9575e = true;
+        if (!this.f9574d.m13449e()) {
             return;
         }
-        this.b.a.a.setActiveColorText(this.b.a.m.b().b);
-        this.b.a.c.invalidate();
+        if (!((AudioManager) this.f9574d.getContext().getSystemService("audio")).isMusicActive()) {
+            this.f9574d.f9548h.resumeSpeaking();
+        } else if (this.f9574d.f9549i != null && !this.f9574d.f9549i.f9616e) {
+            this.f9574d.f9549i.f9616e = true;
+            if (this.f9574d.f9550j != null) {
+                this.f9574d.f9550j.m13490d();
+            }
+            if (this.f9574d.f9556p != null) {
+                this.f9574d.f9556p.m13497b();
+            }
+        }
+    }
+
+    public void onSpeakingResumed(String str) {
+        this.f9574d.m13436i();
+    }
+
+    public void onSpeakingProgress(String str, int i, int i2, int i3) {
+        if (!this.f9574d.f9541a.bi() && this.f9574d.f9541a.mo2004U() != PageAnimationMode.VSCROLL && this.f9571a.f9623c > 0 && Math.round(((float) this.f9571a.f9621a.length()) * (((float) i) / 100.0f)) > this.f9571a.f9623c) {
+            this.f9574d.f9541a.mo2131d(this.f9571a.f9622b);
+        }
+        this.f9574d.m13407a(this.f9572b, this.f9571a.f9621a.length() - Math.round(((float) this.f9571a.f9621a.length()) * (((float) i) / 100.0f)));
+    }
+
+    public void onSpeakingEnd(String str) {
+        this.f9575e = true;
+        this.f9574d.f9541a.setActiveColorText(null);
+        this.f9572b.f9613b.clear();
+        this.f9574d.m13425b(this.f9572b, this.f9573c);
+    }
+
+    public void onSpeakingCancel(String str) {
+        this.f9575e = true;
+        this.f9574d.f9541a.setActiveColorText(null);
+        ((AudioManager) DkApp.get().getSystemService("audio")).abandonAudioFocus(null);
+    }
+
+    public void onSpeakingError(int i, String str) {
+        this.f9575e = true;
+        this.f9574d.f9541a.setActiveColorText(null);
+        C0328a.m757c().m752c(LogLevel.ERROR, "tts", String.format("errorCode: %d, errorDesc: %s", new Object[]{Integer.valueOf(i), str}));
+        UmengManager.get().onEvent("TTS_SPEAKING_ERROR_V2", String.format("%d, %s", new Object[]{Integer.valueOf(i), str}));
+        ((AudioManager) DkApp.get().getSystemService("audio")).abandonAudioFocus(null);
+        ap apVar;
+        if (i == TtsEngineIflytek.ERROR_AUTH_EXPIRED) {
+            this.f9574d.m13446b();
+            apVar = new ap(this.f9574d.getContext());
+            apVar.setPrompt(C0258j.reading__tts_view__expire);
+            apVar.setOkLabelResid(C0258j.reading__tts_view__expire_ok);
+            apVar.setNoLabel(C0258j.reading__tts_view__expire_no);
+            apVar.open(new aeg(this));
+        } else if (this.f9574d.m13426b(i)) {
+            this.f9574d.m13446b();
+            apVar = new ap(this.f9574d.getContext());
+            apVar.setPrompt(C0258j.reading__tts_view__no_network);
+            apVar.setOkLabelResid(C0258j.reading__tts_view__change_speaker);
+            apVar.setNoLabel(C0258j.reading__tts_view__cancel);
+            apVar.open(new aeh(this));
+        } else if (i == TtsEngineIflytek.ERROR_LOCAL_ENGINE_ERROR) {
+            List arrayList = new ArrayList();
+            arrayList.add(this.f9574d.f9547g.getCurrentSpeaker());
+            this.f9574d.f9547g.removeSpeakers(arrayList);
+            this.f9574d.m13446b();
+            apVar = new ap(this.f9574d.getContext());
+            apVar.setPrompt(C0258j.reading__tts_view__local_file_missed);
+            apVar.setOkLabelResid(C0258j.reading__tts_view__go_download);
+            apVar.setNoLabel(C0258j.reading__tts_view__expire_no);
+            apVar.open(new aei(this));
+        } else {
+            be.m10287a(this.f9574d.getContext(), String.format(this.f9574d.getString(C0258j.reading__tts_view__engine_error), new Object[]{Integer.valueOf(i)}), 0).show();
+            this.f9574d.m13446b();
+        }
     }
 }

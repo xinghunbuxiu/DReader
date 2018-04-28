@@ -1,19 +1,22 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.core.sys.TaskHandler;
+import com.duokan.core.app.AppManage;
+import com.duokan.core.sys.IdleHandlerListener;
+import com.duokan.reader.common.webservices.duokan.C0641o;
 
-class ca implements Runnable {
-    final /* synthetic */ bz a;
+class ca implements IdleHandlerListener {
+    /* renamed from: a */
+    final /* synthetic */ StorePageController f7659a;
 
-    ca(bz bzVar) {
-        this.a = bzVar;
+    ca(StorePageController storePageController) {
+        this.f7659a = storePageController;
     }
 
-    public void run() {
-        if (this.a.c.a.mPageLoadingView.getAnimation() == this.a.a) {
-            this.a.c.a.mPageLoadingView.setVisibility(4);
-            this.a.c.a.mPageLoadingView.clearAnimation();
+    public boolean idleRun() {
+        if (StorePageController.sPreloadedController == null && AppManage.isFinishing(this.f7659a.getActivity())) {
+            StorePageController.sPreloadedController = new StorePageController(this.f7659a.getContext());
+            StorePageController.sPreloadedController.loadUrl(C0641o.m2934i().m2952a());
         }
-        TaskHandler.postTask(this.a.b);
+        return false;
     }
 }

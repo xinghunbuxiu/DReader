@@ -1,39 +1,26 @@
 package com.duokan.reader.ui.general.web;
 
-import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.EditText;
-
-import com.duokan.core.ui.UTools;
-
-import org.json.JSONObject;
+import com.duokan.reader.ui.general.bx;
 
 class fi implements OnClickListener {
-    final /* synthetic */ EditText a;
-    final /* synthetic */ ff b;
+    /* renamed from: a */
+    final /* synthetic */ View f7833a;
+    /* renamed from: b */
+    final /* synthetic */ fh f7834b;
 
-    fi(ff ffVar, EditText editText) {
-        this.b = ffVar;
-        this.a = editText;
+    fi(fh fhVar, View view) {
+        this.f7834b = fhVar;
+        this.f7833a = view;
     }
 
     public void onClick(View view) {
-        CharSequence obj = this.a.getText().toString();
-        if (!TextUtils.isEmpty(obj)) {
-            try {
-                JSONObject jSONObject = new JSONObject();
-                jSONObject.put("operation", 1);
-                jSONObject.put("text", obj);
-                if (this.b.g.b.pageController.mInputFlag != null) {
-                    jSONObject.put("flag", this.b.g.b.pageController.mInputFlag);
-                }
-                this.b.g.b.pageController.triggerEventOnCurrentUrl("input", jSONObject.toString());
-            } catch (Throwable th) {
-            }
+        bx bxVar = new bx(this.f7834b.f7832b.f7830b.f7581b.getContext());
+        for (String a : this.f7834b.f7831a) {
+            bxVar.m10320a(a);
         }
-        this.a.setText("");
-        this.a.clearFocus();
-        UTools.hideSoftInputFromWindow(this.b.g.b.pageController.getContext());
+        bxVar.m10323a(new fj(this));
+        bxVar.m10322a(this.f7833a);
     }
 }

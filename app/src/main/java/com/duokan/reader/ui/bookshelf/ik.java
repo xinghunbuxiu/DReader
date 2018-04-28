@@ -1,29 +1,22 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.app.af;
-import com.duokan.core.app.ag;
-import com.duokan.core.sys.TaskHandler;
-import com.duokan.reader.domain.bookshelf.ai;
+import android.view.View;
+import android.view.View.OnClickListener;
+import com.duokan.core.app.ActivatedController;
+import com.duokan.reader.common.webservices.duokan.C0641o;
+import com.duokan.reader.ui.general.web.StorePageController;
 
-class ik implements ag {
-    final /* synthetic */ Runnable a;
-    final /* synthetic */ ij b;
+class ik implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ ie f6614a;
 
-    ik(ij ijVar, Runnable runnable) {
-        this.b = ijVar;
-        this.a = runnable;
+    ik(ie ieVar) {
+        this.f6614a = ieVar;
     }
 
-    public void a(af afVar) {
-        ai.a().a(true);
-        TaskHandler.PostTask(this.a);
-    }
-
-    public void b(af afVar) {
-        ai.a().a(false);
-        TaskHandler.PostTask(this.a);
-    }
-
-    public void c(af afVar) {
+    public void onClick(View view) {
+        ActivatedController createWebPage = StorePageController.createWebPage(this.f6614a.getContext());
+        createWebPage.loadUrl(C0641o.m2934i().m2937A());
+        this.f6614a.f6599k.pushHalfPageSmoothly(createWebPage, null);
     }
 }

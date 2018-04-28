@@ -2,248 +2,268 @@ package com.duokan.reader.domain.bookshelf;
 
 import android.content.ContentValues;
 import android.database.Cursor;
-
-import com.duokan.core.a.n;
-import com.duokan.reader.common.c.ConnectivityReceiver;
-
+import com.duokan.core.p026a.C0285n;
+import com.duokan.core.sys.ah;
+import com.duokan.reader.common.p037c.C0559f;
 import java.io.File;
 
-public abstract class an extends BaseConnect {
-    protected final am D;
-    private final long a;
-    private long b;
-    private boolean c = false;
-    private boolean d = true;
-    private boolean e = false;
-    private boolean f = true;
-    private int g = 0;
-    private boolean h = false;
+public abstract class an extends ij {
+    /* renamed from: D */
+    protected final am f2688D;
+    /* renamed from: a */
+    private final long f2689a;
+    /* renamed from: b */
+    private long f2690b;
+    /* renamed from: c */
+    private boolean f2691c = false;
+    /* renamed from: d */
+    private boolean f2692d = true;
+    /* renamed from: e */
+    private boolean f2693e = false;
+    /* renamed from: f */
+    private boolean f2694f = true;
+    /* renamed from: g */
+    private int f2695g = 0;
+    /* renamed from: h */
+    private boolean f2696h = false;
 
-    protected abstract void a(ContentValues contentValues);
+    /* renamed from: a */
+    protected abstract void mo950a(ContentValues contentValues);
 
-    protected abstract void a(Cursor cursor);
+    /* renamed from: a */
+    protected abstract void mo951a(Cursor cursor);
 
-    protected abstract String aA();
+    public abstract boolean aA();
 
-    public abstract boolean ay();
+    public abstract boolean aB();
 
-    public abstract boolean az();
+    protected abstract String aC();
 
-    protected abstract void o(String str);
+    /* renamed from: p */
+    protected abstract void mo955p(String str);
 
     protected an(am amVar, long j, boolean z, boolean z2) {
         boolean z3 = false;
-        this.D = amVar;
-        this.a = j;
-        this.d = z;
-        boolean z4 = !this.d && z2;
-        this.c = z4;
-        this.g = this.c ? 0 : -1;
-        if (this.c || this.d) {
+        this.f2688D = amVar;
+        this.f2689a = j;
+        this.f2692d = z;
+        boolean z4 = !this.f2692d && z2;
+        this.f2691c = z4;
+        this.f2695g = this.f2691c ? 0 : -1;
+        if (this.f2691c || this.f2692d) {
             z3 = true;
         }
-        this.h = z3;
-        if (!this.c) {
-            this.e = true;
-            av();
+        this.f2696h = z3;
+        if (!this.f2691c) {
+            this.f2693e = true;
+            ax();
         }
-    }
-
-    public final long aF() {
-        return this.a;
-    }
-
-    public final boolean aG() {
-        return this.d;
     }
 
     public final long aH() {
-        return this.b;
+        return this.f2689a;
     }
 
-    public boolean aI() {
-        return this.b != 0;
+    public final boolean aI() {
+        return this.f2692d;
     }
 
-    protected void aJ() {
-        h(0);
+    public final long aJ() {
+        return this.f2690b;
     }
 
-    protected final void h(long j) {
-        this.b = j;
+    public boolean aK() {
+        return this.f2690b != 0;
     }
 
-    public static final boolean a(int i, int i2) {
+    protected void aL() {
+        m3748h(0);
+    }
+
+    /* renamed from: h */
+    protected final void m3748h(long j) {
+        this.f2690b = j;
+    }
+
+    /* renamed from: a */
+    public static final boolean m3740a(int i, int i2) {
         return (i & i2) != 0;
     }
 
-    public final boolean aK() {
-        return !ay();
+    public final boolean aM() {
+        return !aA();
     }
 
-    public final void aL() {
-        try {
-            this.D.a(aF());
-            aM();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } catch (Throwable th) {
-            this.D.b(aF());
+    public final void aN() {
+        m3746c(true);
+    }
+
+    /* renamed from: c */
+    public final void m3746c(boolean z) {
+        Runnable aoVar = new ao(this);
+        if (z) {
+            aoVar.run();
+        } else {
+            ah.m866a(aoVar, an.class.getName());
         }
-        this.D.b(aF());
     }
 
-    public void aM() {
+    public final void aO() {
         try {
-            this.D.a(aF());
-            int i = this.g;
-            if (!this.d) {
-                aR().b();
+            this.f2688D.mo1091a(aH());
+            int i = this.f2695g;
+            if (!this.f2692d) {
+                aT().m677b();
                 ContentValues contentValues = new ContentValues();
-                if (!this.c) {
-                    contentValues.put("_id", Long.valueOf(this.a));
-                    this.g = -1;
+                if (!this.f2691c) {
+                    contentValues.put("_id", Long.valueOf(this.f2689a));
+                    this.f2695g = -1;
                 }
-                a(contentValues);
+                mo950a(contentValues);
                 if (contentValues.size() > 0) {
-                    if (this.c) {
-                        aR().a(aA(), contentValues, "_id = ?", new String[]{Long.toString(this.a)});
-                        this.h = true;
+                    if (this.f2691c) {
+                        aT().m666a(aC(), contentValues, "_id = ?", new String[]{Long.toString(this.f2689a)});
+                        this.f2696h = true;
                     } else {
-                        aR().a(aA(), null, contentValues);
-                        this.c = true;
+                        aT().m668a(aC(), null, contentValues);
+                        this.f2691c = true;
                     }
                 }
-                aR().f();
-                aR().c();
+                aT().m681f();
+                aT().m678c();
             }
-            this.g = 0;
-            if (this.h && (i & 16777215) != 0) {
-                aT().a(this, i & 16777215);
+            this.f2695g = 0;
+            if (this.f2696h && (i & 16777215) != 0) {
+                aV().mo1092a(this, i & 16777215);
             }
-            this.D.b(aF());
+            this.f2688D.mo1097b(aH());
         } catch (Throwable th) {
-            this.D.b(aF());
+            this.f2688D.mo1097b(aH());
         }
     }
 
-    public void onConnectivityChanged(ConnectivityReceiver connectivity) {
+    /* renamed from: a */
+    public void mo949a(C0559f c0559f) {
     }
 
-    protected void aN() {
-        if (this.d) {
-            this.d = false;
+    protected void aP() {
+        if (this.f2692d) {
+            this.f2692d = false;
         }
     }
 
-    protected final void aO() {
-        if (!this.e) {
-            if (this.c) {
+    protected final void aQ() {
+        if (!this.f2693e) {
+            if (this.f2691c) {
                 Cursor a;
                 try {
-                    a = aR().a(String.format("SELECT * FROM %1$s WHERE _id IS '%2$s'", new Object[]{aA(), Long.valueOf(this.a)}), null);
+                    a = aT().m670a(String.format("SELECT * FROM %1$s WHERE _id IS '%2$s'", new Object[]{aC(), Long.valueOf(this.f2689a)}), null);
                     a.moveToFirst();
-                    b(a);
+                    m3745b(a);
                     a.close();
                     return;
                 } catch (Throwable th) {
                     return;
                 }
             }
-            b(null);
+            m3745b(null);
         }
     }
 
     /* JADX WARNING: inconsistent code. */
     /* Code decompiled incorrectly, please refer to instructions dump. */
-    protected final void b(android.database.Cursor r6) {
+    /* renamed from: b */
+    protected final void m3745b(android.database.Cursor r6) {
         /*
         r5 = this;
-        r0 = r5.getScaledPagingTouchSlop;
+        r0 = r5.f2693e;
         if (r0 == 0) goto L_0x0005;
     L_0x0004:
         return;
     L_0x0005:
-        r0 = r5.D;	 Catch:{ Throwable -> 0x0035 }
-        r2 = r5.aF();	 Catch:{ Throwable -> 0x0035 }
-        r0.setDrawable(r2);	 Catch:{ Throwable -> 0x0035 }
-        r0 = r5.getScaledPagingTouchSlop;	 Catch:{ Throwable -> 0x0035 }
+        r0 = r5.f2688D;	 Catch:{ Throwable -> 0x0035 }
+        r2 = r5.aH();	 Catch:{ Throwable -> 0x0035 }
+        r0.mo1091a(r2);	 Catch:{ Throwable -> 0x0035 }
+        r0 = r5.f2693e;	 Catch:{ Throwable -> 0x0035 }
         if (r0 != 0) goto L_0x0016;
     L_0x0012:
-        r0 = r5.HttpLogger;	 Catch:{ Throwable -> 0x0035 }
+        r0 = r5.f2694f;	 Catch:{ Throwable -> 0x0035 }
         if (r0 != 0) goto L_0x0020;
     L_0x0016:
-        r0 = r5.D;
-        r2 = r5.aF();
-        r0.getVisible(r2);
+        r0 = r5.f2688D;
+        r2 = r5.aH();
+        r0.mo1097b(r2);
         goto L_0x0004;
     L_0x0020:
         if (r6 == 0) goto L_0x0025;
     L_0x0022:
-        r5.setDrawable(r6);	 Catch:{ Throwable -> 0x0035 }
+        r5.mo951a(r6);	 Catch:{ Throwable -> 0x0035 }
     L_0x0025:
         r0 = 1;
-        r5.getScaledPagingTouchSlop = r0;	 Catch:{ Throwable -> 0x0035 }
-        r5.av();	 Catch:{ Throwable -> 0x0035 }
-        r0 = r5.D;
-        r2 = r5.aF();
-        r0.getVisible(r2);
+        r5.f2693e = r0;	 Catch:{ Throwable -> 0x0035 }
+        r5.ax();	 Catch:{ Throwable -> 0x0035 }
+        r0 = r5.f2688D;
+        r2 = r5.aH();
+        r0.mo1097b(r2);
         goto L_0x0004;
     L_0x0035:
         r0 = move-exception;
         r1 = 0;
-        r5.HttpLogger = r1;	 Catch:{ all -> 0x0050 }
-        r1 = com.duokan.core.diagnostic.setDrawable.getScaledMaximumFlingVelocity();	 Catch:{ all -> 0x0050 }
+        r5.f2694f = r1;	 Catch:{ all -> 0x0050 }
+        r1 = com.duokan.core.diagnostic.C0328a.m757c();	 Catch:{ all -> 0x0050 }
         r2 = com.duokan.core.diagnostic.LogLevel.ERROR;	 Catch:{ all -> 0x0050 }
         r3 = "shelf";
         r4 = "item init exception!";
-        r1.setDrawable(r2, r3, r4, r0);	 Catch:{ all -> 0x0050 }
-        r0 = r5.D;
-        r2 = r5.aF();
-        r0.getVisible(r2);
+        r1.m748a(r2, r3, r4, r0);	 Catch:{ all -> 0x0050 }
+        r0 = r5.f2688D;
+        r2 = r5.aH();
+        r0.mo1097b(r2);
         goto L_0x0004;
     L_0x0050:
         r0 = move-exception;
-        r1 = r5.D;
-        r2 = r5.aF();
-        r1.getVisible(r2);
+        r1 = r5.f2688D;
+        r2 = r5.aH();
+        r1.mo1097b(r2);
         throw r0;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.bookshelf.an.getVisible(android.database.Cursor):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.bookshelf.an.b(android.database.Cursor):void");
     }
 
-    protected void av() {
+    protected void ax() {
     }
 
-    protected boolean aP() {
-        return this.e;
+    protected boolean aR() {
+        return this.f2693e;
     }
 
-    protected File aQ() {
-        return this.D.c();
+    protected File aS() {
+        return this.f2688D.mo1098c();
     }
 
-    protected n aR() {
-        return this.D.h();
+    protected C0285n aT() {
+        return this.f2688D.mo1105h();
     }
 
-    protected n aS() {
-        return this.D.i();
+    protected C0285n aU() {
+        return this.f2688D.mo1106i();
     }
 
-    protected an i(long j) {
-        return this.D.d(j);
+    /* renamed from: i */
+    protected an m3749i(long j) {
+        return this.f2688D.mo1100d(j);
     }
 
-    protected am aT() {
-        return this.D;
+    protected am aV() {
+        return this.f2688D;
     }
 
-    protected void b(int i) {
-        this.g |= i;
+    /* renamed from: b */
+    protected void m3744b(int i) {
+        this.f2695g |= i;
     }
 
-    protected boolean c(int i) {
-        return (this.g & i) != 0;
+    /* renamed from: c */
+    protected boolean m3747c(int i) {
+        return (this.f2695g & i) != 0;
     }
 }

@@ -1,18 +1,18 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.reader.domain.account.a;
-import com.duokan.reader.domain.account.u;
+import com.duokan.reader.domain.bookshelf.jz;
+import com.duokan.reader.domain.bookshelf.ka;
 
-class rh implements u {
-    final /* synthetic */ rg a;
+class rh implements jz {
+    /* renamed from: a */
+    final /* synthetic */ qr f10892a;
 
-    rh(rg rgVar) {
-        this.a = rgVar;
+    rh(qr qrVar) {
+        this.f10892a = qrVar;
     }
 
-    public void onQueryAccountOk(a aVar) {
-    }
-
-    public void onQueryAccountError(a aVar, String str) {
+    /* renamed from: a */
+    public void mo2477a(String str, ka kaVar) {
+        this.f10892a.runAfterActive(new ri(this, str, this, kaVar));
     }
 }

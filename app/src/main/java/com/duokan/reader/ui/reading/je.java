@@ -1,22 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import android.view.animation.Animation;
-import android.view.animation.Animation.AnimationListener;
+import android.view.View;
+import android.view.View.OnClickListener;
 
-class je implements AnimationListener {
-    final /* synthetic */ jd a;
+class je implements OnClickListener {
+    /* renamed from: a */
+    final /* synthetic */ FixedPageClipView f10424a;
 
-    je(jd jdVar) {
-        this.a = jdVar;
+    je(FixedPageClipView fixedPageClipView) {
+        this.f10424a = fixedPageClipView;
     }
 
-    public void onAnimationStart(Animation animation) {
-    }
-
-    public void onAnimationRepeat(Animation animation) {
-    }
-
-    public void onAnimationEnd(Animation animation) {
-        this.a.post(new jf(this));
+    public void onClick(View view) {
+        this.f10424a.f9094g.mo2396b();
     }
 }

@@ -1,18 +1,17 @@
 package com.duokan.reader.ui.reading;
 
-import android.animation.ValueAnimator;
-import android.animation.ValueAnimator.AnimatorUpdateListener;
+class lp implements Runnable {
+    /* renamed from: a */
+    final /* synthetic */ Runnable f10577a;
+    /* renamed from: b */
+    final /* synthetic */ ll f10578b;
 
-class lp implements AnimatorUpdateListener {
-    final /* synthetic */ lo a;
-
-    lp(lo loVar) {
-        this.a = loVar;
+    lp(ll llVar, Runnable runnable) {
+        this.f10578b = llVar;
+        this.f10577a = runnable;
     }
 
-    public void onAnimationUpdate(ValueAnimator valueAnimator) {
-        this.a.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        this.a.a.b.c(1.0f - this.a.b);
-        this.a.invalidate();
+    public void run() {
+        this.f10577a.run();
     }
 }

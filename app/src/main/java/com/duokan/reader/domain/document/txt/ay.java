@@ -1,32 +1,41 @@
 package com.duokan.reader.domain.document.txt;
 
 public class ay {
-    private boolean a = false;
-    private boolean b = false;
-    private boolean c = false;
+    /* renamed from: a */
+    private boolean f4912a = false;
+    /* renamed from: b */
+    private boolean f4913b = false;
+    /* renamed from: c */
+    private boolean f4914c = false;
 
-    public boolean b() {
-        return this.a;
+    /* renamed from: b */
+    public boolean m7498b() {
+        return this.f4912a;
     }
 
-    public boolean c() {
-        return this.b;
+    /* renamed from: c */
+    public boolean m7499c() {
+        return this.f4913b;
     }
 
-    public boolean d() {
-        return this.c;
+    /* renamed from: d */
+    public boolean m7500d() {
+        return this.f4914c;
     }
 
-    public void e() {
-        this.a = true;
+    /* renamed from: e */
+    public void m7501e() {
+        this.f4912a = true;
     }
 
-    public void f() {
-        this.b = true;
-        this.a = true;
+    /* renamed from: f */
+    public void m7502f() {
+        this.f4913b = true;
+        this.f4912a = true;
     }
 
-    public void a() {
-        this.c = true;
+    /* renamed from: a */
+    public void mo1467a() {
+        this.f4914c = true;
     }
 }

@@ -1,22 +1,24 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.reader.UmengManager;
+import android.content.Context;
 
-import java.util.List;
+class el extends ao {
+    /* renamed from: a */
+    final /* synthetic */ ek f8509a;
 
-class el implements Runnable {
-    final /* synthetic */ List a;
-    final /* synthetic */ ek b;
-
-    el(ek ekVar, List list) {
-        this.b = ekVar;
-        this.a = list;
+    el(ek ekVar, Context context) {
+        this.f8509a = ekVar;
+        super(context);
     }
 
-    public void run() {
-        for (int i = 0; i < this.a.size(); i++) {
-            UmengManager.get().onEvent("V3_SHELF_BOOK_ACTION", "DeleteCloud");
-        }
-        this.b.a.a(this.a, null);
+    /* renamed from: e */
+    protected void mo1557e(int i) {
+        this.f8509a.m11748r();
+    }
+
+    /* renamed from: e */
+    protected boolean mo1712e() {
+        this.f8509a.m11748r();
+        return true;
     }
 }

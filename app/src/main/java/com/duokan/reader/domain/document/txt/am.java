@@ -1,21 +1,22 @@
 package com.duokan.reader.domain.document.txt;
 
 import android.graphics.Rect;
-
 import java.util.Comparator;
 
-class am implements Comparator {
-    final /* synthetic */ aj a;
+class am implements Comparator<Rect> {
+    /* renamed from: a */
+    final /* synthetic */ aj f4907a;
 
     am(aj ajVar) {
-        this.a = ajVar;
+        this.f4907a = ajVar;
     }
 
     public /* synthetic */ int compare(Object obj, Object obj2) {
-        return a((Rect) obj, (Rect) obj2);
+        return m7494a((Rect) obj, (Rect) obj2);
     }
 
-    public int a(Rect rect, Rect rect2) {
+    /* renamed from: a */
+    public int m7494a(Rect rect, Rect rect2) {
         if (rect.top > rect2.top) {
             return 1;
         }

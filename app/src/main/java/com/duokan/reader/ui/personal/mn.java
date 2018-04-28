@@ -1,21 +1,26 @@
 package com.duokan.reader.ui.personal;
 
-class mn {
-    final /* synthetic */ ReadingStatisticsChartView a;
-    private final float b;
-    private final float c;
-    private final float d;
-    private final float e;
+import com.duokan.reader.domain.cloud.DkCloudReadingInfo;
+import com.duokan.reader.domain.cloud.ai;
 
-    public mn(ReadingStatisticsChartView readingStatisticsChartView, float f, float f2, float f3, float f4) {
-        this.a = readingStatisticsChartView;
-        this.b = f;
-        this.c = f2;
-        this.d = f3;
-        this.e = f4;
+class mn implements ai {
+    /* renamed from: a */
+    final /* synthetic */ mj f8955a;
+
+    mn(mj mjVar) {
+        this.f8955a = mjVar;
     }
 
-    public float a(float f) {
-        return (((((this.e * f) + this.d) * f) + this.c) * f) + this.b;
+    /* renamed from: a */
+    public void mo1969a(DkCloudReadingInfo dkCloudReadingInfo) {
+        this.f8955a.m12294a(dkCloudReadingInfo);
+        this.f8955a.mo1964a();
+        this.f8955a.c.getAdapter().m8785a(false);
+    }
+
+    /* renamed from: a */
+    public void mo1970a(String str) {
+        this.f8955a.mo1964a();
+        this.f8955a.c.getAdapter().m8790m();
     }
 }
