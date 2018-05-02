@@ -2,7 +2,7 @@ package com.duokan.reader.domain.bookshelf;
 
 import android.net.Uri;
 import android.text.TextUtils;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.io.FileUtil;
 import com.duokan.core.io.IOUtils;
@@ -72,22 +72,22 @@ class ev {
             File file2 = new File(file.getPath() + ".tmp");
             a = C0321b.m725a(str, file2, c0320a);
             if (a < 1 || (this.f3134c > 0 && a != this.f3134c)) {
-                C0328a.m757c().m749a(LogLevel.ERROR, "dkbook", "unexpected file length(length=%d, httpUri=%s, fileUri=%s)", Long.valueOf(a), str, this.f3132a);
-                FileUtil.m793f(file2);
+                WebLog.init().a(LogLevel.ERROR, "dkbook", "unexpected file length(length=%d, httpUri=%s, fileUri=%s)", Long.valueOf(a), str, this.f3132a);
+                FileUtil.deleteFile(file2);
                 return 1007;
             }
             try {
                 if (TextUtils.isEmpty((CharSequence) this.f3136e.get("md5"))) {
                     if (!(TextUtils.isEmpty((CharSequence) this.f3136e.get("sha1")) || C0366o.m1028a(file2, "sha1").startsWith((String) this.f3136e.get("sha1")))) {
-                        FileUtil.m793f(file2);
+                        FileUtil.deleteFile(file2);
                         return 1008;
                     }
                 } else if (!C0366o.m1028a(file2, "md5").startsWith((String) this.f3136e.get("md5"))) {
-                    FileUtil.m793f(file2);
+                    FileUtil.deleteFile(file2);
                     return 1008;
                 }
                 if (file2.renameTo(file)) {
-                    FileUtil.m793f(file2);
+                    FileUtil.deleteFile(file2);
                     return 0;
                 }
                 if (file.exists()) {
@@ -95,10 +95,10 @@ class ev {
                 } else {
                     i = 1006;
                 }
-                FileUtil.m793f(file2);
+                FileUtil.deleteFile(file2);
                 return i;
             } catch (Throwable th) {
-                FileUtil.m793f(file2);
+                FileUtil.deleteFile(file2);
                 throw th;
             }
         } else if (this.f3133b.mo418a(this.f3132a)) {
@@ -111,7 +111,7 @@ class ev {
             try {
                 a = C0321b.m726a(str, (OutputStream) d, c0320a);
                 if (a < 1 || (this.f3134c > 0 && a != this.f3134c)) {
-                    C0328a.m757c().m749a(LogLevel.ERROR, "dkbook", "unexpected file length(length=%d, httpUri=%s, fileUri=%s)", Long.valueOf(a), str, this.f3132a);
+                    WebLog.init().a(LogLevel.ERROR, "dkbook", "unexpected file length(length=%d, httpUri=%s, fileUri=%s)", Long.valueOf(a), str, this.f3132a);
                     IOUtils.close(d);
                     this.f3133b.mo421b(str2);
                     return 1007;
@@ -148,7 +148,7 @@ class ev {
                         return 1;
                     }
                     this.f3140i = th2;
-                    C0328a.m757c().m748a(LogLevel.ERROR, "dkbook", String.format("an exception occurs(httpUri=%s, fileUri=%s)", new Object[]{str, this.f3132a}), th2);
+                    WebLog.init().printStackTrace(LogLevel.ERROR, "dkbook", String.format("an exception occurs(httpUri=%s, fileUri=%s)", new Object[]{str, this.f3132a}), th2);
                     if (th2 instanceof OutputException) {
                         this.f3133b.mo421b(str2);
                         return 1006;

@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.document.epub;
 
 import android.net.Uri;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.kernel.epublib.DkeAudioText;
 import com.duokan.kernel.epublib.DkeBook;
 import com.duokan.reader.domain.document.C0896a;
@@ -121,13 +121,13 @@ class ab extends C0934e {
 
     /* renamed from: f */
     public void mo1260f() {
-        C0328a.m757c().m764b(this.f4462b.get() > 0);
+        WebLog.init().w(this.f4462b.get() > 0);
         this.f4462b.incrementAndGet();
     }
 
     /* renamed from: g */
     public void mo1261g() {
-        C0328a.m757c().m764b(this.f4462b.get() > 0);
+        WebLog.init().w(this.f4462b.get() > 0);
         if (this.f4462b.decrementAndGet() == 0) {
             this.f4464d.close();
         }

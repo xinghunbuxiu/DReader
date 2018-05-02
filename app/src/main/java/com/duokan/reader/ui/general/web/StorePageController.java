@@ -16,7 +16,7 @@ import com.duokan.core.app.AppContext;
 import com.duokan.core.app.AppManage;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.ManagedApp;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.p027b.C0324a;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.C0373z;
@@ -157,7 +157,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
 
     public static StorePageController createWebPage(IFeature mFeature) {
         StorePageController storePageController;
-        C0328a.m757c().m760a();
+        WebLog.init().w();
         StorePageController storePageController2 = sPreloadedController;
         if (storePageController2 == null || storePageController2.getActivity() != AppManage.getCurrentActivity((Context) mFeature)) {
             storePageController = new StorePageController(mFeature);
@@ -342,7 +342,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     public void onStoreMirrorUpdated() {
-        C0328a.m757c().m760a();
+        WebLog.init().w();
         if (sPreloadedController != null) {
             sPreloadedController.mWebView.mo1821f();
             sPreloadedController = null;
@@ -715,7 +715,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
                     this.mEventListMap.putIfAbsent(path, new CopyOnWriteArrayList());
                 }
                 CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) this.mEventListMap.get(path);
-                C0328a.m757c().m764b(copyOnWriteArrayList != null);
+                WebLog.init().w(copyOnWriteArrayList != null);
                 copyOnWriteArrayList.add(str);
             }
         }
@@ -728,7 +728,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
                 String path = a.getPath();
                 if (this.mEventListMap.containsKey(path)) {
                     CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) this.mEventListMap.get(path);
-                    C0328a.m757c().m764b(copyOnWriteArrayList != null);
+                    WebLog.init().w(copyOnWriteArrayList != null);
                     copyOnWriteArrayList.remove(str);
                     if (TextUtils.equals(str, "adAppInstallStatus")) {
                         this.mAdLifecycleManager.m3539g(path);
@@ -748,7 +748,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
             return false;
         }
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) this.mEventListMap.get(path);
-        C0328a.m757c().m764b(copyOnWriteArrayList != null);
+        WebLog.init().w(copyOnWriteArrayList != null);
         if (!copyOnWriteArrayList.contains(str)) {
             return false;
         }

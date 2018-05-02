@@ -4,7 +4,7 @@ import android.view.View;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.AppContext;
 import com.duokan.core.app.ActivatedController;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
@@ -131,7 +131,7 @@ public abstract class aab extends qr {
         Iterator it = this.f9311a.keySet().iterator();
         while (it.hasNext()) {
             af afVar = (af) this.f9311a.get((String) it.next());
-            C0328a.m757c().m764b(afVar != null);
+            WebLog.init().w(afVar != null);
             if (afVar.m861b() && ((Integer) afVar.m858a()).intValue() != 0) {
                 it.remove();
             }
@@ -205,7 +205,7 @@ public abstract class aab extends qr {
 
     /* renamed from: b */
     private final void m12873b(List<String> list, ag<Map<String, Integer>> agVar) {
-        C0328a.m757c().m764b(UThread.isCurrentThread());
+        WebLog.init().w(UThread.isCurrentThread());
         abd abd = (abd) this.c;
         ee eeVar = (ee) this.c.mo1992G();
         this.f9304K.addAll(list);
@@ -320,7 +320,7 @@ public abstract class aab extends qr {
 
     /* renamed from: a */
     protected void m12895a(List<String> list, ag<Map<String, Integer>> agVar) {
-        C0328a.m757c().m764b(UThread.isCurrentThread());
+        WebLog.init().w(UThread.isCurrentThread());
         Runnable aas = new aas(this, list, (ee) this.f, agVar);
         if (this.f9307N.m861b() || !C0559f.m2476b().m2484c()) {
             aas.run();

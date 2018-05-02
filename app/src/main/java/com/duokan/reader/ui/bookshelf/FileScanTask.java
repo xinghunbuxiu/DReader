@@ -190,7 +190,7 @@ public class FileScanTask extends AsyncTask<String, Integer, List<ha>> {
     /* renamed from: a */
     private List<String> m9076a() {
         List linkedList = new LinkedList();
-        for (File file : FileUtil.m774a(this.f6022c)) {
+        for (File file : FileUtil.getDiskFiles(this.f6022c)) {
             linkedList.add(file.getAbsolutePath() + File.separator + "DuoKan" + File.separator + "Downloads" + File.separator);
             linkedList.add(file.getAbsolutePath() + File.separator + "DuoKanHD" + File.separator + "Downloads" + File.separator);
             linkedList.add(file.getAbsolutePath() + File.separator + "MiReader" + File.separator + "Downloads" + File.separator);

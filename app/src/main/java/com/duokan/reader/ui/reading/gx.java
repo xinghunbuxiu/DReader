@@ -13,7 +13,7 @@ import android.view.ViewTreeObserver.OnPreDrawListener;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.ui.C0379c;
 import com.duokan.core.ui.Scrollable.OverScrollMode;
 import com.duokan.core.ui.ZoomView;
@@ -592,7 +592,7 @@ public class gx extends FrameLayout implements OnPreDrawListener {
                 this.f10281B = null;
             }
             if (z && this.f10281B != null) {
-                C0328a.m757c().m764b(f10279A != null);
+                WebLog.init().w(f10279A != null);
                 this.f10292k.m6117a(new Canvas(f10279A), getDrawingTime());
                 if (this.f10292k.m6151i() != 1) {
                     canvas.drawBitmap(this.f10281B, null, this.f10292k.getBounds(), null);

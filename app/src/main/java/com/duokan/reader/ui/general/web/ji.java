@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.general.web;
 
 import android.text.TextUtils;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.C0299i;
 import com.duokan.core.sys.UThread;
@@ -43,7 +43,7 @@ class ji implements as {
                 JSONObject jSONObject3 = a.getJSONObject(i);
                 Object b = C0611i.m2793b(jSONObject3, "bookUuid");
                 m = C0800c.m4141m(b);
-                C0328a.m757c().m764b(!TextUtils.isEmpty(b));
+                WebLog.init().w(!TextUtils.isEmpty(b));
                 if (TextUtils.isEmpty(b)) {
                     z2 = z;
                 } else {
@@ -54,16 +54,16 @@ class ji implements as {
                         b2 = "";
                     }
                     if (m) {
-                        C0328a.m757c().m749a(LogLevel.EVENT, "store", "purchased a couple of serial chapters(book: %s, chapters: %s)", b, b2);
+                        WebLog.init().a(LogLevel.EVENT, "store", "purchased a couple of serial chapters(book: %s, chapters: %s)", b, b2);
                     } else {
-                        C0328a.m757c().m749a(LogLevel.EVENT, "store", "purchased a book(book: %s)", b);
+                        WebLog.init().a(LogLevel.EVENT, "store", "purchased a book(book: %s)", b);
                     }
                     C0299i c0299i = new C0299i();
                     this.f8048b.m11016a(new jk(this, m, b2, b, c0299i));
                     if (((Boolean) c0299i.m707a()).booleanValue()) {
                         z2 = z;
                     } else {
-                        C0328a.m757c().m749a(LogLevel.ERROR, "store", "fail to update a purchased book(%s)", b);
+                        WebLog.init().a(LogLevel.ERROR, "store", "fail to update a purchased book(%s)", b);
                         z2 = false;
                     }
                 }
@@ -84,11 +84,11 @@ class ji implements as {
                     arrayList.add(a2.getString(i2));
                 }
             }
-            C0328a.m757c().m749a(LogLevel.EVENT, "store", "purchased a couple of serial chapters(book: %s, chapters: %s)", b3, C0652z.m3048a((String[]) arrayList.toArray(new String[0])));
+            WebLog.init().a(LogLevel.EVENT, "store", "purchased a couple of serial chapters(book: %s, chapters: %s)", b3, C0652z.m3048a((String[]) arrayList.toArray(new String[0])));
         } else if (TextUtils.equals(b3, WeiboAuthException.DEFAULT_AUTH_ERROR_CODE)) {
-            C0328a.m757c().m752c(LogLevel.EVENT, "store", "purchased a couple of books");
+            WebLog.init().c(LogLevel.EVENT, "store", "purchased a couple of books");
         } else {
-            C0328a.m757c().m749a(LogLevel.EVENT, "store", "purchased a book(book: %s)", b3);
+            WebLog.init().a(LogLevel.EVENT, "store", "purchased a book(book: %s)", b3);
         }
         Semaphore semaphore = new Semaphore(0);
         this.f8048b.m11016a(new jr(this, m, b3, semaphore, arrayList));

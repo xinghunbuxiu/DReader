@@ -8,7 +8,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import com.duokan.core.app.OnCancelListener;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.ui.C0343f;
 import com.duokan.p023b.C0240b;
@@ -89,7 +89,7 @@ public class ja extends C0343f {
     public void m10842a(int i) {
         this.f7427f = null;
         if (this.f7426e != null) {
-            C0328a.m757c().m764b(isShowing());
+            WebLog.init().w(isShowing());
             return;
         }
         super.show();
@@ -117,26 +117,26 @@ public class ja extends C0343f {
 
     public void dismiss() {
         boolean z = true;
-        C0328a c;
+        WebLog c;
         if (!isShowing()) {
-            C0328a.m757c().m764b(this.f7426e == null);
-            c = C0328a.m757c();
+            WebLog.init().w(this.f7426e == null);
+            c = WebLog.init();
             if (this.f7427f != null) {
                 z = false;
             }
-            c.m764b(z);
+            c.w(z);
         } else if (this.f7427f != null) {
-            c = C0328a.m757c();
+            c = WebLog.init();
             if (this.f7426e != null) {
                 z = false;
             }
-            c.m764b(z);
+            c.w(z);
         } else if (this.f7426e == null) {
-            c = C0328a.m757c();
+            c = WebLog.init();
             if (this.f7422a.getVisibility() != 0) {
                 z = false;
             }
-            c.m764b(z);
+            c.w(z);
             this.f7422a.setVisibility(4);
             this.f7427f = new jc(this);
             if (this.f7425d != null) {
@@ -146,11 +146,11 @@ public class ja extends C0343f {
             }
             UThread.post(this.f7427f);
         } else {
-            c = C0328a.m757c();
+            c = WebLog.init();
             if (this.f7422a.getVisibility() == 0) {
                 z = false;
             }
-            c.m764b(z);
+            c.w(z);
             this.f7426e = null;
             super.dismiss();
         }

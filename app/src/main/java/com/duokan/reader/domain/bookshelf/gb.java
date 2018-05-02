@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.bookshelf;
 
 import android.text.TextUtils;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.UThread;
 import com.wali.live.sdk.manager.IMiLiveSdk.ICallback;
@@ -28,10 +28,10 @@ class gb implements Runnable {
                 if (exVar.f3142a != -1) {
                     this.f3218a.f3217b.f3212a.f3147b.put(str, Integer.valueOf(exVar.f3142a));
                     if (exVar.f3142a != ICallback.LOGIN_OAUTH_AIDL) {
-                        C0328a.m757c().m749a(LogLevel.ERROR, "epub-s", "fail to pull the chapter(%s)(error=%d, msg=%s, book=%s, name=%s)", str, Integer.valueOf(exVar.f3142a), exVar.f3143b, this.f3218a.f3217b.f3213b.m4156I(), this.f3218a.f3217b.f3213b.ay());
+                        WebLog.init().a(LogLevel.ERROR, "epub-s", "fail to pull the chapter(%s)(error=%d, msg=%s, book=%s, name=%s)", str, Integer.valueOf(exVar.f3142a), exVar.f3143b, this.f3218a.f3217b.f3213b.m4156I(), this.f3218a.f3217b.f3213b.ay());
                     }
                 } else {
-                    C0328a.m757c().m764b(!TextUtils.isEmpty(exVar.f3144c));
+                    WebLog.init().w(!TextUtils.isEmpty(exVar.f3144c));
                     this.f3218a.f3217b.f3212a.f3147b.put(str, Integer.valueOf(-1));
                     Map hashMap = new HashMap();
                     hashMap.put("sha1", exVar.f3145d);

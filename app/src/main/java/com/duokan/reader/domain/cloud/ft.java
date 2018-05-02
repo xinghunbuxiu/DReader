@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.app.ai;
 import com.duokan.core.app.aj;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.UThread;
 import com.duokan.p023b.C0243e;
@@ -73,11 +73,11 @@ public class ft implements ai, MessageWakeupListener {
         if (messageSubType == MessageSubType.USER_TASK) {
             m5578c();
         } else if (messageSubType == MessageSubType.RESIGN_SUCCEED && obj != null && !PersonalPrefs.m5175a().m5242r()) {
-            C0328a.m757c().m752c(LogLevel.EVENT, "resign_event", "resign_pass_through");
+            WebLog.init().c(LogLevel.EVENT, "resign_event", "resign_pass_through");
             try {
                 JSONArray jSONArray = new JSONArray((String) obj);
                 if (DkApp.get().getRunningState() == RunningState.FOREGROUND) {
-                    C0328a.m757c().m752c(LogLevel.EVENT, "resign_event", "pass_through_on_foreground");
+                    WebLog.init().c(LogLevel.EVENT, "resign_event", "pass_through_on_foreground");
                     List arrayList = new ArrayList();
                     while (i < jSONArray.length()) {
                         DkSignInReward dkSignInReward = new DkSignInReward();
@@ -89,7 +89,7 @@ public class ft implements ai, MessageWakeupListener {
                     }
                     UThread.runOnThread(new fv(this, arrayList));
                 } else {
-                    C0328a.m757c().m752c(LogLevel.EVENT, "resign_event", "pass_through_on_background");
+                    WebLog.init().c(LogLevel.EVENT, "resign_event", "pass_through_on_background");
                     String str = "";
                     int i2 = 0;
                     while (i2 < jSONArray.length()) {

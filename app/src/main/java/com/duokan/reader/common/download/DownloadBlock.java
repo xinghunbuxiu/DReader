@@ -2,7 +2,7 @@ package com.duokan.reader.common.download;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import com.duokan.core.diagnostic.C0327f;
+import com.duokan.core.diagnostic.HttpLogger;
 import com.duokan.reader.common.download.DownloadTask.DownloadingStage;
 import java.nio.channels.FileChannel;
 
@@ -38,7 +38,7 @@ abstract class DownloadBlock {
     /* renamed from: m */
     protected final SQLiteDatabase f1945m;
     /* renamed from: n */
-    protected final C0327f f1946n;
+    protected final HttpLogger f1946n;
     /* renamed from: o */
     protected DownloadingStage f1947o = DownloadingStage.UNKNOWN;
 
@@ -208,7 +208,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
         throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.common.download.DownloadBlock.g():void");
     }
 
-    public DownloadBlock(long r14, java.lang.String r16, android.database.sqlite.SQLiteDatabase r17, com.duokan.reader.common.download.C0591a r18, com.duokan.core.diagnostic.C0327f r19) {
+    public DownloadBlock(long r14, java.lang.String r16, android.database.sqlite.SQLiteDatabase r17, com.duokan.reader.common.download.C0591a r18, HttpLogger r19) {
         /* JADX: method processing error */
 /*
 Error: java.lang.NullPointerException

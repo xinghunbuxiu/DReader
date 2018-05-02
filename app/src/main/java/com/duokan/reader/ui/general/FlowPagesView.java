@@ -6,7 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.SparseIntArray;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.ui.dv;
 import java.util.ArrayList;
@@ -108,11 +108,11 @@ public class FlowPagesView extends PagesView {
                 getCellsView().m1141g(n);
                 getCellsView().m1119a(n, false);
             }
-            C0328a c = C0328a.m757c();
+            WebLog c = WebLog.init();
             if (this.f6848a.get(n) == null) {
                 z = false;
             }
-            c.m764b(z);
+            c.w(z);
             setCurrentPagePresenter((gc) this.f6848a.get(n));
             getCellsView().m1126b(n, new Rect(0, 0, getWidth(), getHeight()), 51);
             return;
@@ -340,11 +340,11 @@ public class FlowPagesView extends PagesView {
         this.f6854g = m10107i(0);
         this.f6855h = m10109j(0);
         df dfVar = (df) this.f6848a.get(m10117n(0));
-        C0328a c = C0328a.m757c();
+        WebLog c = WebLog.init();
         if (dfVar != null) {
             z = true;
         }
-        c.m764b(z);
+        c.w(z);
         setCurrentPageIndicator(dfVar.mo2327c());
         setCurrentPagePresenter(dfVar);
         getCellsView().mo1756o();
@@ -362,11 +362,11 @@ public class FlowPagesView extends PagesView {
         this.f6854g = m10107i(0);
         this.f6855h = m10109j(0);
         df dfVar = (df) this.f6848a.get(m10117n(0));
-        C0328a c = C0328a.m757c();
+        WebLog c = WebLog.init();
         if (dfVar != null) {
             z = true;
         }
-        c.m764b(z);
+        c.w(z);
         setCurrentPageIndicator(dfVar.mo2327c());
         setCurrentPagePresenter(dfVar);
         getCellsView().mo1756o();
@@ -655,9 +655,9 @@ public class FlowPagesView extends PagesView {
 
     /* renamed from: n */
     private int m10117n(int i) {
-        C0328a c = C0328a.m757c();
+        WebLog c = WebLog.init();
         boolean z = i >= this.f6852e && i <= this.f6853f;
-        c.m764b(z);
+        c.w(z);
         return this.f6849b.get(i);
     }
 }

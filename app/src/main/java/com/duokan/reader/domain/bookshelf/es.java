@@ -2,7 +2,7 @@ package com.duokan.reader.domain.bookshelf;
 
 import android.text.TextUtils;
 import android.util.Pair;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.reader.common.webservices.C0621a;
 import com.duokan.reader.common.webservices.C0657i;
@@ -86,7 +86,7 @@ class es extends ReloginSession {
 
     /* renamed from: a */
     public void mo826a(String str) {
-        C0328a.m757c().m764b(this.f3126b.f3122d.size() == this.f3126b.f3121c.size());
+        WebLog.init().w(this.f3126b.f3122d.size() == this.f3126b.f3121c.size());
         if (this.f3126b.f3122d.size() != this.f3126b.f3121c.size()) {
             for (String str2 : this.f3126b.f3121c) {
                 if (!this.f3126b.f3122d.containsKey(str2)) {
@@ -110,7 +110,7 @@ class es extends ReloginSession {
             exVar.f3143b = TextUtils.isEmpty(exception.getMessage()) ? "" : exception.getMessage();
             this.f3126b.f3122d.put(str, exVar);
         }
-        C0328a.m757c().m748a(LogLevel.ERROR, "dkbook", String.format("fail to get chapter links(book=%s, name=%s)", new Object[]{this.f3126b.f3120b, this.f3126b.f3124f.ay()}), (Throwable) exception);
+        WebLog.init().printStackTrace(LogLevel.ERROR, "dkbook", String.format("fail to get chapter links(book=%s, name=%s)", new Object[]{this.f3126b.f3120b, this.f3126b.f3124f.ay()}), (Throwable) exception);
     }
 
     /* renamed from: c */

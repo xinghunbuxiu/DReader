@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
-import com.duokan.core.diagnostic.C0327f;
+import com.duokan.core.diagnostic.HttpLogger;
 import com.duokan.core.io.FileAlreadyExistsException;
 import com.duokan.core.io.OutputException;
 import com.duokan.core.p026a.C0285n;
@@ -29,7 +29,7 @@ class av {
     /* renamed from: e */
     private final String f660e;
     /* renamed from: f */
-    private final C0327f f661f;
+    private final HttpLogger f661f;
     /* renamed from: g */
     private boolean f662g = false;
     /* renamed from: h */
@@ -41,13 +41,13 @@ class av {
     /* renamed from: k */
     private final ConcurrentHashMap<String, ax> f666k = new ConcurrentHashMap();
 
-    public av(C0285n c0285n, ReentrantLock reentrantLock, String str, String str2, String str3, C0327f c0327f) {
+    public av(C0285n c0285n, ReentrantLock reentrantLock, String str, String str2, String str3, HttpLogger httpLogger) {
         this.f656a = c0285n;
         this.f657b = reentrantLock;
         this.f658c = str;
         this.f659d = str2;
         this.f660e = str3;
-        this.f661f = c0327f;
+        this.f661f = httpLogger;
     }
 
     /* renamed from: a */

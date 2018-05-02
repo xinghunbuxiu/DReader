@@ -96,7 +96,7 @@ public class hg extends ap implements C0780k {
     /* renamed from: a */
     public boolean m14320a() {
         try {
-            if (!FileUtil.m793f(this.f10319b.getTtsDir())) {
+            if (!FileUtil.deleteFile(this.f10319b.getTtsDir())) {
                 return false;
             }
             long defaultPackSize = this.f10319b.getDefaultPackSize();
@@ -117,7 +117,7 @@ public class hg extends ap implements C0780k {
         if (this.f10324g != null) {
             C1016b.m7857p().m7871a(this.f10324g);
         }
-        FileUtil.m793f(this.f10319b.getTtsDir());
+        FileUtil.deleteFile(this.f10319b.getTtsDir());
         dismiss();
     }
 
@@ -140,7 +140,7 @@ public class hg extends ap implements C0780k {
                 this.f10324g = null;
                 if (downloadCenterTask.m7794h()) {
                     be.m10286a(getContext(), C0258j.bookshelf__general_shared__download_failed, 0).show();
-                    FileUtil.m793f(this.f10319b.getTtsDir());
+                    FileUtil.deleteFile(this.f10319b.getTtsDir());
                     dismiss();
                     return;
                 }

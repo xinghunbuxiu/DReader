@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.text.TextUtils;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ah;
 import com.duokan.core.ui.dv;
@@ -149,7 +149,7 @@ public class az extends as implements ba, bd, cc {
         if (!f4514c && (epubTypesettingContext == null || auVar == null)) {
             throw new AssertionError();
         } else if (f4514c || (ayVar != null && ayVar.mo1186a())) {
-            C0328a.m757c().m764b(m6108M());
+            WebLog.init().w(m6108M());
             this.f4524e = epubTypesettingContext;
             this.f4524e.m5841b((Object) UThread.getCurrentThread());
             this.f4524e.m5841b((Object) this);
@@ -176,7 +176,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: a */
     public boolean mo1299a() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4534o;
         }
@@ -185,7 +185,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: b */
     public boolean mo1305b() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4535p;
         }
@@ -194,13 +194,13 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: j */
     public long mo1327j() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         return this.f4538s;
     }
 
     /* renamed from: k */
     public boolean mo1330k() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E() && !this.f4525f.m5817f() && !this.f4535p && !this.f4534o && m6544Y().getChapterType(this.f4529j.f4647a) == 2 && mo1280A().isEmpty()) {
             return true;
         }
@@ -209,13 +209,13 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: l */
     public ak mo1332l() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         return this.f4525f;
     }
 
     /* renamed from: m */
     public bb mo1334m() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return new ce(this.f4525f.m6533k(), this.f4525f.m6534l());
         }
@@ -224,7 +224,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: e */
     public C0936c[] m6626e() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1282E()) {
             return new C0936c[0];
         }
@@ -241,7 +241,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: o */
     public CharSequence mo1338o() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1282E()) {
             return "";
         }
@@ -253,19 +253,19 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: p */
     public C0917k mo1340p() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         return this.f4524e.m6455j();
     }
 
     /* renamed from: q */
     public C0923m mo1342q() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         return this.f4526g;
     }
 
     /* renamed from: a */
     public void mo1296a(C0923m c0923m) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         mo1288N();
         this.f4526g = (au) c0923m;
         if (this.f4517B != null) {
@@ -278,7 +278,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: r */
     public int mo1343r() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!f4514c && !mo1284G()) {
             throw new AssertionError();
         } else if (mo1284G()) {
@@ -295,7 +295,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: t */
     public int mo1347t() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1284G()) {
             return this.f4545z.length;
         }
@@ -304,7 +304,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: u */
     public int mo1349u() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1284G()) {
             return this.f4516A.length;
         }
@@ -313,7 +313,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: v */
     public int mo1351v() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1284G()) {
             return this.f4517B.length;
         }
@@ -322,7 +322,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: w */
     public int mo1353w() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1284G()) {
             return this.f4518C.length;
         }
@@ -331,7 +331,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: x */
     public int mo1354x() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1284G()) {
             return this.f4519D.length;
         }
@@ -340,7 +340,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: y */
     public int mo1355y() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1284G()) {
             return this.f4520E.length;
         }
@@ -349,7 +349,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: z */
     public Rect mo1356z() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1284G()) {
             return new Rect(0, 0, 0, 0);
         }
@@ -367,7 +367,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: A */
     public Rect mo1280A() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1284G()) {
             return new Rect(0, 0, 0, 0);
         }
@@ -398,7 +398,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: a */
     public Rect mo1291a(au auVar) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1284G()) {
             return new Rect();
         }
@@ -410,7 +410,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: b */
     public boolean m6613b(au auVar) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1284G() || auVar == null) {
             return false;
         }
@@ -451,7 +451,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: H */
     public void mo1285H() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!this.f4529j.m6797d()) {
             this.f4529j.mo1440a();
             if (this.f4533n) {
@@ -466,7 +466,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: a */
     public void mo1298a(boolean z) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (this.f4521F != null) {
             if (z) {
                 this.f4527h.m6360a(this.f4521F, true);
@@ -479,7 +479,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: E */
     public boolean mo1282E() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1284G()) {
             return true;
         }
@@ -494,25 +494,25 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: a */
     public void mo1297a(Runnable runnable, Runnable runnable2) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         ah.m871b(new ba(this, runnable, runnable2));
     }
 
     /* renamed from: F */
     public boolean mo1283F() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         return this.f4529j.m6797d();
     }
 
     /* renamed from: G */
     public boolean mo1284G() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         return !this.f4529j.m6797d() && this.f4532m;
     }
 
     /* renamed from: a */
     public ae mo1292a(Point point) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1284G() || this.f4525f.m5817f()) {
             return null;
         }
@@ -543,7 +543,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: b */
     public ce m6609b(Point point, Point point2) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1284G() || this.f4525f.m5817f()) {
             return new ce();
         }
@@ -556,7 +556,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: h */
     public ce m6634h(Point point) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1284G() || this.f4525f.m5817f()) {
             return new ce();
         }
@@ -584,7 +584,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: c */
     public int mo1306c(Point point) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1284G()) {
             return -1;
         }
@@ -598,7 +598,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: a */
     public int mo1289a(Point point, int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1284G()) {
             return -1;
         }
@@ -614,7 +614,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: d */
     public int mo1310d(Point point) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1284G()) {
             return -1;
         }
@@ -628,7 +628,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: e */
     public int mo1314e(Point point) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1284G()) {
             return -1;
         }
@@ -642,7 +642,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: a */
     public int mo1290a(bb bbVar) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1284G()) {
             return -1;
         }
@@ -656,13 +656,13 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: f */
     public int mo1317f(Point point) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         return this.f4543x == null ? -1 : 0;
     }
 
     /* renamed from: g */
     public int mo1320g(Point point) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1284G()) {
             return -1;
         }
@@ -676,19 +676,19 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: b */
     public Rect mo1301b(Rect rect) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         return new Rect(rect);
     }
 
     /* renamed from: c */
     public Rect mo1307c(Rect rect) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         return new Rect(rect);
     }
 
     /* renamed from: c */
     public af mo1308c(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4544y[i];
         }
@@ -702,7 +702,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: e */
     public ab mo1315e(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4545z[i];
         }
@@ -711,7 +711,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: f */
     public com.duokan.reader.domain.document.ah mo1319f(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4516A[i];
         }
@@ -720,7 +720,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: g */
     public Rect mo1322g(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4544y[i].c;
         }
@@ -729,7 +729,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: h */
     public Rect mo1325h(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return (this.f4543x == null || i != 0) ? new Rect() : this.f4543x.c;
         } else {
@@ -739,7 +739,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: i */
     public Rect mo1326i(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4545z[i].f4559c;
         }
@@ -748,7 +748,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: j */
     public Rect mo1328j(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4516A[i].f4606d;
         }
@@ -757,7 +757,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: I */
     public String mo1286I() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return m6543X().getTextContent();
         }
@@ -766,7 +766,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: b */
     public String mo1303b(bb bbVar) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!f4514c && bbVar == null) {
             throw new AssertionError();
         } else if (!mo1282E()) {
@@ -780,7 +780,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: J */
     public String mo1287J() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!f4514c && !mo1284G()) {
             throw new AssertionError();
         } else if (this.f4526g.k) {
@@ -792,7 +792,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: c */
     public String mo1309c(bb bbVar) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!f4514c && !mo1284G()) {
             throw new AssertionError();
         } else if (this.f4526g.k) {
@@ -805,7 +805,7 @@ public class az extends as implements ba, bd, cc {
     /* renamed from: d */
     public Rect mo1311d(bb bbVar) {
         int i = 0;
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!f4514c && !mo1284G()) {
             throw new AssertionError();
         } else if (!f4514c && bbVar == null) {
@@ -842,7 +842,7 @@ public class az extends as implements ba, bd, cc {
     /* renamed from: e */
     public Rect[] mo1316e(bb bbVar) {
         int i = 0;
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!f4514c && !mo1284G()) {
             throw new AssertionError();
         } else if (!f4514c && bbVar == null) {
@@ -880,7 +880,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: f */
     public Point mo1318f(bb bbVar) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (f4514c || mo1284G()) {
             Point point = new Point();
             Rect[] e = mo1316e(bbVar);
@@ -907,7 +907,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: g */
     public Point mo1321g(bb bbVar) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (f4514c || mo1284G()) {
             Point point = new Point();
             Rect[] e = mo1316e(bbVar);
@@ -934,7 +934,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: k */
     public ac mo1329k(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4517B[i];
         }
@@ -943,7 +943,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: l */
     public Rect mo1331l(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4517B[i].f4565c;
         }
@@ -952,7 +952,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: m */
     public Rect mo1333m(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1282E()) {
             return new Rect();
         }
@@ -963,7 +963,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: n */
     public aj mo1335n(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4518C[i];
         }
@@ -972,7 +972,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: p */
     public Rect mo1339p(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4518C[i].f4610n;
         }
@@ -981,7 +981,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: o */
     public Rect mo1337o(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4518C[i].m6760c();
         }
@@ -990,7 +990,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: w */
     public bm m6663w(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4519D[i];
         }
@@ -999,7 +999,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: r */
     public Rect mo1344r(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4519D[i].f4574b;
         }
@@ -1008,7 +1008,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: s */
     public ax mo1346s(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4520E[i];
         }
@@ -1017,7 +1017,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: t */
     public Rect mo1348t(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return this.f4520E[i].f4637c;
         }
@@ -1026,7 +1026,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: u */
     public Rect mo1350u(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return m6543X().getFrameBoxOnPage((long) i).toRect();
         }
@@ -1035,7 +1035,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: v */
     public int mo1352v(int i) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (mo1282E()) {
             return (int) m6543X().getGlobalFrameIndex((long) i);
         }
@@ -1044,7 +1044,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: P */
     public List<av> mo1374P() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1282E()) {
             return Collections.emptyList();
         }
@@ -1058,7 +1058,7 @@ public class az extends as implements ba, bd, cc {
 
     /* renamed from: Q */
     public List<av> mo1375Q() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         if (!mo1282E()) {
             return Collections.emptyList();
         }

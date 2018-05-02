@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.general.web;
 
 import android.text.TextUtils;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.as;
@@ -21,7 +21,7 @@ class hf implements as {
 
     /* renamed from: a */
     public void mo1831a() {
-        C0328a.m757c().m752c(LogLevel.EVENT, "resign_event", "receive_frontend_callback");
+        WebLog.init().c(LogLevel.EVENT, "resign_event", "receive_frontend_callback");
         PersonalPrefs.m5175a().m5228f(false);
         UThread.runOnThread(new hg(this));
         DkSignInInfo dkSignInInfo = null;

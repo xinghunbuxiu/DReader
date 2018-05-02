@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.reader.common.webservices.C0621a;
 import com.duokan.reader.common.webservices.C0657i;
@@ -81,7 +81,7 @@ class co extends WebSession {
     }
 
     protected boolean onSessionException(Exception exception, int i) {
-        C0328a.m757c().m748a(LogLevel.ERROR, "pm", String.format("unexpected error while updating purchased chapters(bookUuid: %s).", new Object[]{this.f3823b.f3821a.f3818a}), (Throwable) exception);
+        WebLog.init().printStackTrace(LogLevel.ERROR, "pm", String.format("unexpected error while updating purchased chapters(bookUuid: %s).", new Object[]{this.f3823b.f3821a.f3818a}), (Throwable) exception);
         return super.onSessionException(exception, i);
     }
 }

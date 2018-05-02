@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.reading;
 
 import android.text.TextUtils;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
@@ -221,7 +221,7 @@ public abstract class aaw extends si implements dn, abd {
 
     /* renamed from: b */
     public boolean mo2187b(ba baVar) {
-        C0328a.m757c().m764b(UThread.isCurrentThread());
+        WebLog.init().w(UThread.isCurrentThread());
         if (this.f9363d.f9304K.contains(mo2356a(mo2355a(baVar)))) {
             return true;
         }
@@ -239,7 +239,7 @@ public abstract class aaw extends si implements dn, abd {
 
     /* renamed from: c */
     public int mo2188c(ba baVar) {
-        C0328a.m757c().m764b(UThread.isCurrentThread());
+        WebLog.init().w(UThread.isCurrentThread());
         if (this.f9363d.f9305L.isEmpty() && this.f9363d.f9310Q.isEmpty()) {
             return -1;
         }

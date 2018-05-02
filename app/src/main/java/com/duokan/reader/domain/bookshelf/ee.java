@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Pair;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.p026a.C0293u;
 import com.duokan.core.sys.C0352r;
@@ -136,7 +136,7 @@ public abstract class ee extends C0800c {
                 adVar = (ad) apVar.m858a();
                 return adVar;
             } catch (Throwable th) {
-                C0328a.m757c().m748a(LogLevel.ERROR, "shelf", "an exception occurs", th);
+                WebLog.init().printStackTrace(LogLevel.ERROR, "shelf", "an exception occurs", th);
                 apVar.m4012c(null);
             } finally {
                 apVar = aV();
@@ -652,7 +652,7 @@ public abstract class ee extends C0800c {
                 try {
                     contentValues.put(Column.DRM.toString(), adVar.m3781b() ? "" : adVar.m3782c().toString());
                 } catch (Throwable e) {
-                    C0328a.m757c().m748a(LogLevel.ERROR, "shelf", "an exception occurs!", e);
+                    WebLog.init().printStackTrace(LogLevel.ERROR, "shelf", "an exception occurs!", e);
                 }
             }
         }
@@ -722,7 +722,7 @@ public abstract class ee extends C0800c {
     /* renamed from: a */
     protected Future<Integer> m4399a(String str, C0352r c0352r, long j, String str2, Map<String, String> map, ag<Integer> agVar) {
         Object obj;
-        C0328a.m757c().m762a(UThread.isCurrentThread());
+        WebLog.init().m762a(UThread.isCurrentThread());
         String format = String.format("%s;%s", new Object[]{str, c0352r});
         synchronized (f3086K) {
             ev evVar;
@@ -810,7 +810,7 @@ public abstract class ee extends C0800c {
     }
 
     protected final String[] bm() {
-        C0328a.m757c().m764b(this.D.mo1099c(aH()));
+        WebLog.init().w(this.D.mo1099c(aH()));
         if (this.f3088G != null) {
             return this.f3088G;
         }
@@ -842,7 +842,7 @@ public abstract class ee extends C0800c {
     }
 
     protected short[] bn() {
-        C0328a.m757c().m764b(this.D.mo1099c(aH()));
+        WebLog.init().w(this.D.mo1099c(aH()));
         if (this.f3089H != null) {
             return this.f3089H;
         }
@@ -874,7 +874,7 @@ public abstract class ee extends C0800c {
     }
 
     protected String[] bo() {
-        C0328a.m757c().m764b(this.D.mo1099c(aH()));
+        WebLog.init().w(this.D.mo1099c(aH()));
         if (this.f3090I != null) {
             return this.f3090I;
         }

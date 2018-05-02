@@ -20,7 +20,7 @@ import com.duokan.common.C0267i;
 import com.duokan.core.app.C0286x;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.io.FileUtil;
 import com.duokan.core.p026a.C0272a;
@@ -184,7 +184,7 @@ public class ReaderEnv implements C0286x {
             this.f1594a.prepareInternalFiles();
             if (!this.f1594a.f1634z.equals(this.f1594a.f1632x)) {
                 Object obj;
-                for (File access$1002 : FileUtil.m782b(this.f1594a.f1627b)) {
+                for (File access$1002 : FileUtil.getAllFile(this.f1594a.f1627b)) {
                     if (this.f1594a.f1634z.getParentFile().equals(access$1002)) {
                         obj = 1;
                         break;
@@ -354,7 +354,7 @@ public class ReaderEnv implements C0286x {
         ensureDirectoryExists(this.f1634z);
         this.f1619E = new C0272a(Uri.fromFile(new File(getDatabaseDirectory(), "reader.db")).toString());
         if (i < 413000000 && this.f1634z.compareTo(this.f1632x) != 0) {
-            File[] fileArr = (File[]) FileUtil.m782b(this.f1627b).toArray(new File[0]);
+            File[] fileArr = (File[]) FileUtil.getAllFile(this.f1627b).toArray(new File[0]);
             File file = fileArr[fileArr.length - 1];
             setPrefString(PrivatePref.PERSONAL, "storage", file.getAbsolutePath());
             this.f1634z = new File(file, this.f1628t);
@@ -697,36 +697,36 @@ public class ReaderEnv implements C0286x {
                     classLoader = new DexClassLoader(file.getAbsolutePath(), this.f1627b.getCacheDir().getAbsolutePath(), str2, getClass().getClassLoader());
                 }
                 loadClass = classLoader.loadClass(str);
-                C0328a c = C0328a.m757c();
+                WebLog c = WebLog.init();
                 if (loadClass != null) {
                     z2 = true;
                 } else {
                     z2 = false;
                 }
-                c.m764b(z2);
+                c.w(z2);
                 if (loadClass != null) {
                     if (!this.f1620F.containsKey(file)) {
                         this.f1620F.put(file, classLoader);
                     }
                 }
             } catch (Throwable th) {
-                C0328a.m757c().m748a(LogLevel.ERROR, "env", String.format("fail to load extend class(class=%s, file=%s)", new Object[]{str, file}), th);
+                WebLog.init().printStackTrace(LogLevel.ERROR, "env", String.format("fail to load extend class(class=%s, file=%s)", new Object[]{str, file}), th);
             }
             try {
                 ClassLoader pathClassLoader = new PathClassLoader(file.getAbsolutePath(), str2, getClass().getClassLoader());
                 loadClass = pathClassLoader.loadClass(str);
-                C0328a c2 = C0328a.m757c();
+                WebLog c2 = WebLog.init();
                 if (loadClass == null) {
                     z = false;
                 }
-                c2.m764b(z);
+                c2.w(z);
                 if (loadClass != null) {
                     if (!this.f1620F.containsKey(file)) {
                         this.f1620F.put(file, pathClassLoader);
                     }
                 }
             } catch (Throwable th2) {
-                C0328a.m757c().m748a(LogLevel.ERROR, "env", String.format("fail to load extend class(class=%s, file=%s)", new Object[]{str, file}), th2);
+                WebLog.init().printStackTrace(LogLevel.ERROR, "env", String.format("fail to load extend class(class=%s, file=%s)", new Object[]{str, file}), th2);
             }
             loadClass = null;
         }
@@ -1235,13 +1235,13 @@ public class ReaderEnv implements C0286x {
 
     private void prepareInternalFiles() {
         if (!this.f1633y.exists()) {
-            C0328a.m757c().m749a(LogLevel.EVENT, "env", "preparing internal files...(ver=%d)", Integer.valueOf(17));
+            WebLog.init().a(LogLevel.EVENT, "env", "preparing internal files...(ver=%d)", Integer.valueOf(17));
             int i = 0;
             while (i < 3) {
                 File file = new File(this.f1631w, "res.v17.arch");
-                FileUtil.m793f(file);
+                FileUtil.deleteFile(file);
                 File file2 = new File(this.f1633y.getAbsolutePath() + ".tmp");
-                FileUtil.m793f(file2);
+                FileUtil.deleteFile(file2);
                 file2.mkdirs();
                 OutputStream fileOutputStream = new FileOutputStream(file);
                 try {
@@ -1252,24 +1252,24 @@ public class ReaderEnv implements C0286x {
                     } catch (Throwable th) {
                     }
                     DkarchLib.extract(file.getAbsolutePath(), file2.getAbsolutePath());
-                    FileUtil.m793f(this.f1633y);
+                    FileUtil.deleteFile(this.f1633y);
                     if (file2.renameTo(this.f1633y)) {
-                        C0328a.m757c().m749a(LogLevel.EVENT, "env", "internal files are ready(ver=%d)", Integer.valueOf(17));
-                        FileUtil.m793f(file);
-                        FileUtil.m793f(file2);
+                        WebLog.init().a(LogLevel.EVENT, "env", "internal files are ready(ver=%d)", Integer.valueOf(17));
+                        FileUtil.deleteFile(file);
+                        FileUtil.deleteFile(file2);
                         return;
                     }
-                    C0328a.m757c().m749a(LogLevel.ERROR, "env", "can't move internal files in place(ver=%d)", Integer.valueOf(17));
-                    FileUtil.m793f(file);
-                    FileUtil.m793f(file2);
+                    WebLog.init().a(LogLevel.ERROR, "env", "can't move internal files in place(ver=%d)", Integer.valueOf(17));
+                    FileUtil.deleteFile(file);
+                    FileUtil.deleteFile(file2);
                     UIdleHandler.sleep(3000);
                     i++;
                 } catch (Throwable th2) {
                     try {
-                        C0328a.m757c().m748a(LogLevel.ERROR, "env", String.format("an exception occurs while preparing internal files(ver=%d)", new Object[]{Integer.valueOf(17)}), th2);
+                        WebLog.init().printStackTrace(LogLevel.ERROR, "env", String.format("an exception occurs while preparing internal files(ver=%d)", new Object[]{Integer.valueOf(17)}), th2);
                     } finally {
-                        FileUtil.m793f(file);
-                        FileUtil.m793f(file2);
+                        FileUtil.deleteFile(file);
+                        FileUtil.deleteFile(file2);
                     }
                 }
             }
@@ -1379,14 +1379,14 @@ public class ReaderEnv implements C0286x {
                 }
             }
         }
-        List<File> a = FileUtil.m776a(new File("/system/fonts"), new FileFilter[0]);
+        List<File> a = FileUtil.getDirFiles(new File("/system/fonts"), new FileFilter[0]);
         Collections.sort(a, new C04824(this));
         for (File file4 : a) {
             if (DkUtils.isZhFont(file4.getAbsolutePath())) {
                 return file4;
             }
         }
-        C0328a.m757c().m763b();
+        WebLog.init().defaultW();
         return new File("/system/fonts", "DroidSansFallback.ttf");
     }
 

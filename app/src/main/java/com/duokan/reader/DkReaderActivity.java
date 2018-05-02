@@ -11,7 +11,7 @@ import android.view.WindowManager;
 import com.duokan.core.app.BaseActivity;
 import com.duokan.core.app.ae;
 import com.duokan.core.app.af;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.p025a.IPermissionsResultListener;
 import com.duokan.core.sys.p025a.Permissions;
@@ -48,7 +48,7 @@ public class DkReaderActivity extends BaseActivity implements IPermissionsResult
         C1163a.m8627k().m8642a("app", 1);
         final Intent intent = getIntent();
         if (!TextUtils.equals(intent.getAction(), "android.intent.action.MAIN")) {
-            C0328a.m757c().m749a(LogLevel.EVENT, "nav", "got an intent(action=%s, data=%s)", intent.getAction(), intent.getData());
+            WebLog.init().a(LogLevel.EVENT, "nav", "got an intent(action=%s, data=%s)", intent.getAction(), intent.getData());
         }
         DkApp.get().runWhenAppReady(new Runnable() {
             public void run() {

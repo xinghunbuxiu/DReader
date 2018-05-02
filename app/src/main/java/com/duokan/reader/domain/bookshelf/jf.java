@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.domain.account.UserAccount;
 
 class jf implements Runnable {
@@ -15,7 +15,7 @@ class jf implements Runnable {
     }
 
     public void run() {
-        C0328a.m757c().m764b(this.f3385b.f3365i == null);
+        WebLog.init().w(this.f3385b.f3365i == null);
         this.f3385b.f3365i = new jp(this.f3385b, this.f3385b.f3363g, this.f3384a.mo833c());
     }
 }

@@ -5,12 +5,10 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.text.TextUtils;
-import com.duokan.core.diagnostic.C0327f;
+import com.duokan.core.diagnostic.HttpLogger;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.C0366o;
 import com.duokan.reader.common.download.DownloadBlock.BlockState;
-import com.duokan.reader.common.download.IDownloadTask.TaskState;
-import com.duokan.reader.common.download.IDownloadTask.TaskStatus;
 import com.duokan.reader.common.p037c.C0558e;
 import java.io.File;
 import java.io.RandomAccessFile;
@@ -62,7 +60,7 @@ public abstract class DownloadTask implements IDownloadTask, C0591a {
     /* renamed from: r */
     protected final SQLiteDatabase f1967r;
     /* renamed from: s */
-    protected final C0327f f1968s;
+    protected final HttpLogger f1968s;
     /* renamed from: v */
     private LinkedList<DownloadBlock> f1969v = new LinkedList();
     /* renamed from: w */
@@ -322,7 +320,7 @@ Error: java.lang.NullPointerException
         r5 = java.lang.String.format(r5, r6, r7);
         r0 = r18;
         r4.<init>(r0, r5);
-        r2.m750a(r4);
+        r2.setFile(r4);
         r2 = new org.json.JSONObject;	 Catch:{ Exception -> 0x017e }
         r4 = "runtime_info";	 Catch:{ Exception -> 0x017e }
         r4 = r3.getColumnIndex(r4);	 Catch:{ Exception -> 0x017e }
@@ -567,7 +565,7 @@ Error: java.lang.NullPointerException
     }
 
     /* renamed from: q */
-    public C0327f m2725q() {
+    public HttpLogger m2725q() {
         return this.f1968s;
     }
 
@@ -813,9 +811,9 @@ Error: java.lang.NullPointerException
             this.f1962m = w ? DownloadFailCode.NONE : DownloadFailCode.MD5_MISMATCH;
         }
         if (this.f1959j == TaskState.SUCCEEDED) {
-            this.f1968s.m752c(LogLevel.EVENT, "", "download succeeded");
+            this.f1968s.c(LogLevel.EVENT, "", "download succeeded");
         } else {
-            this.f1968s.m749a(LogLevel.ERROR, "", "download failed(%s)", this.f1962m.name());
+            this.f1968s.a(LogLevel.ERROR, "", "download failed(%s)", this.f1962m.name());
         }
         this.f1961l = System.currentTimeMillis();
         m2734z();

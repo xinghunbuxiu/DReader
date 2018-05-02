@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.reader.common.webservices.C0657i;
 import com.duokan.reader.common.webservices.WebSession;
@@ -53,7 +53,7 @@ class da extends WebSession {
     }
 
     protected boolean onSessionException(Exception exception, int i) {
-        C0328a.m757c().m748a(LogLevel.ERROR, "pm", "unexpected error while full-loading purchased fictions.", (Throwable) exception);
+        WebLog.init().printStackTrace(LogLevel.ERROR, "pm", "unexpected error while full-loading purchased fictions.", (Throwable) exception);
         if (this.f3854d != null) {
             this.f3854d.clearInfo();
             this.f3854d.clearItems();

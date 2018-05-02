@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.bookshelf;
 
 import android.util.Pair;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.io.FileAlreadyExistsException;
 import com.duokan.core.p027b.p028a.C0320a;
@@ -62,24 +62,24 @@ class gu implements Callable<Pair<Integer, Long>> {
                 } else if (this.f3264a.m4576o()) {
                     i2 = 1;
                 } else {
-                    C0328a.m757c().m746a(LogLevel.ERROR, "epub-l", "fail to download the resource " + str);
+                    WebLog.init().printStackTraceString(LogLevel.ERROR, "epub-l", "fail to download the resource " + str);
                     i2 = 1006;
                 }
             } else if (obj == null) {
-                C0328a.m757c().m749a(LogLevel.ERROR, "epub-l", "fail to download the resource %s(size error: %s!=%s)", str, Long.valueOf(c.mo428c()), Long.valueOf(j));
+                WebLog.init().a(LogLevel.ERROR, "epub-l", "fail to download the resource %s(size error: %s!=%s)", str, Long.valueOf(c.mo428c()), Long.valueOf(j));
                 C1163a.m8627k().m8639a(this.f3264a.f3258b, this.f3264a.f3259c.f4492a, str3, a);
                 i2 = 1007;
             } else {
-                C0328a.m757c().m749a(LogLevel.ERROR, "epub-l", "fail to download the resource %s(md5 error: %s!=%s)", str, a, str3);
+                WebLog.init().a(LogLevel.ERROR, "epub-l", "fail to download the resource %s(md5 error: %s!=%s)", str, a, str3);
                 C1163a.m8627k().m8639a(this.f3264a.f3258b, this.f3264a.f3259c.f4492a, str3, a);
                 i2 = 1008;
             }
             i = i2;
         } catch (Throwable e3) {
-            C0328a.m757c().m748a(LogLevel.ERROR, "epub-l", "fail to download the resource " + str, e3);
+            WebLog.init().printStackTrace(LogLevel.ERROR, "epub-l", "fail to download the resource " + str, e3);
             i = 1006;
         } catch (Throwable e32) {
-            C0328a.m757c().m748a(LogLevel.ERROR, "epub-l", "fail to download the resource " + str, e32);
+            WebLog.init().printStackTrace(LogLevel.ERROR, "epub-l", "fail to download the resource " + str, e32);
             i = 1000;
         }
         if (i == 0 || i == 1) {

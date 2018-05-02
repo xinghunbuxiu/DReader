@@ -4,7 +4,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
 import com.duokan.core.app.ManagedApp;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.io.FileUtil;
 import com.duokan.core.p027b.p028a.C0320a;
@@ -189,7 +189,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
             /* renamed from: b */
             public final void mo1034b(List<String> list) {
                 for (String y : list) {
-                    FileUtil.m793f(m4500y(y));
+                    FileUtil.deleteFile(m4500y(y));
                 }
                 bs();
             }
@@ -738,11 +738,11 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                             C0321b.m725a(this.x.f2718b, d, new C0320a().m721a(1).m724b(131072));
                         }
                         if (!d.exists()) {
-                            C0328a.m757c().m752c(LogLevel.ERROR, "epub", "fail to create the book " + d.getAbsolutePath());
+                            WebLog.init().c(LogLevel.ERROR, "epub", "fail to create the book " + d.getAbsolutePath());
                             throw new IOException();
                         }
                     } catch (Throwable th2) {
-                        C0328a.m757c().m748a(LogLevel.ERROR, "epub", "fail to create the book " + d.getAbsolutePath(), th2);
+                        WebLog.init().printStackTrace(LogLevel.ERROR, "epub", "fail to create the book " + d.getAbsolutePath(), th2);
                         IOException iOException = new IOException();
                     }
                 }

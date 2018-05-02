@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.document.sbk;
 
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.domain.document.bc;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -57,7 +57,7 @@ abstract class SbkTypesettingContext extends bc {
 
     /* renamed from: a */
     public long m7100a(long j, long j2, long j3) {
-        C0328a.m757c().m764b(m5839b() >= 0);
+        WebLog.init().w(m5839b() >= 0);
         if (j >= ((long) this.f4768i.length)) {
             return m5839b();
         }
@@ -75,7 +75,7 @@ abstract class SbkTypesettingContext extends bc {
 
     /* renamed from: b */
     public long m7104b(long j, long j2, long j3) {
-        C0328a.m757c().m764b(m7103b(j) >= 0);
+        WebLog.init().w(m7103b(j) >= 0);
         if (j < 0 || j >= ((long) this.f4768i.length)) {
             return 0;
         }

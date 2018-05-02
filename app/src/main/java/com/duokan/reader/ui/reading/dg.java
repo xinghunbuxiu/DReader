@@ -18,7 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.af;
 import com.duokan.core.ui.LinearScrollView;
@@ -394,7 +394,7 @@ public class dg extends FrameLayout {
 
     /* renamed from: a */
     protected void m13991a(el elVar) {
-        C0328a.m757c().m764b(elVar != null);
+        WebLog.init().w(elVar != null);
         LinkedList linkedList = elVar.f10084f;
         this.f10020u.removeAllViews();
         if (linkedList != null) {
@@ -532,7 +532,7 @@ public class dg extends FrameLayout {
 
     /* renamed from: c */
     private void m13964c(el elVar) {
-        C0328a.m757c().m764b(elVar != null);
+        WebLog.init().w(elVar != null);
         if (this.f10025z.mo1038k() && m13977i() && (!((ee) this.f10025z).be().f3516j || DkUserPurchasedFictionsManager.m5072a().m5093a(this.f10025z.m4156I()) == null)) {
             this.f10015p.setVisibility(8);
             this.f10014o.setVisibility(8);

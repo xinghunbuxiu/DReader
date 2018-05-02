@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.reader.common.webservices.C0621a;
 import com.duokan.reader.common.webservices.C0657i;
@@ -165,7 +165,7 @@ class de extends ReloginSession {
 
     /* renamed from: a */
     public void mo1024a(Exception exception) {
-        C0328a.m757c().m748a(LogLevel.ERROR, "pm", "unexpected error while updating purchased fictions.", (Throwable) exception);
+        WebLog.init().printStackTrace(LogLevel.ERROR, "pm", "unexpected error while updating purchased fictions.", (Throwable) exception);
     }
 
     /* renamed from: c */

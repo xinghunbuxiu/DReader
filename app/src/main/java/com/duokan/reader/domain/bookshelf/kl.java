@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.bookshelf;
 
 import android.text.TextUtils;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.C0352r;
 import com.duokan.core.sys.UThread;
@@ -29,10 +29,10 @@ class kl implements Runnable {
                 if (exVar.f3142a != -1) {
                     this.f3467a.f3466b.f3463a.f3147b.put(str, Integer.valueOf(exVar.f3142a));
                     if (exVar.f3142a != ICallback.LOGIN_OAUTH_AIDL) {
-                        C0328a.m757c().m749a(LogLevel.ERROR, "sbk", "fail to pull the chapter(%s)(error=%d, msg=%s, book=%s, name=%s)", str, Integer.valueOf(exVar.f3142a), exVar.f3143b, this.f3467a.f3466b.f3464b.m4156I(), this.f3467a.f3466b.f3464b.ay());
+                        WebLog.init().a(LogLevel.ERROR, "sbk", "fail to pull the chapter(%s)(error=%d, msg=%s, book=%s, name=%s)", str, Integer.valueOf(exVar.f3142a), exVar.f3143b, this.f3467a.f3466b.f3464b.m4156I(), this.f3467a.f3466b.f3464b.ay());
                     }
                 } else {
-                    C0328a.m757c().m764b(!TextUtils.isEmpty(exVar.f3144c));
+                    WebLog.init().w(!TextUtils.isEmpty(exVar.f3144c));
                     this.f3467a.f3466b.f3463a.f3147b.put(str, Integer.valueOf(-1));
                     Map hashMap = new HashMap();
                     hashMap.put("sha1", exVar.f3145d);

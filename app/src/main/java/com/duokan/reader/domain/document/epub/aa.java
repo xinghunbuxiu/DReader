@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.document.epub;
 
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.kernel.epublib.DkeBook;
 import com.duokan.reader.domain.document.C0896a;
 import com.duokan.reader.domain.document.C0908f;
@@ -27,7 +27,7 @@ class aa extends C0908f {
 
     /* renamed from: a */
     public int mo1252a() {
-        C0328a.m757c().m764b(this.f4458a.m5889A());
+        WebLog.init().w(this.f4458a.m5889A());
         if (this.f4458a.m5945p()) {
             return m6457b().length;
         }
@@ -36,7 +36,7 @@ class aa extends C0908f {
 
     /* renamed from: b */
     public C0937d m6461b(int i) {
-        C0328a.m757c().m764b(this.f4458a.m5889A());
+        WebLog.init().w(this.f4458a.m5889A());
         if (!this.f4458a.m5945p() || i < 0 || i >= mo1252a()) {
             return null;
         }
@@ -52,7 +52,7 @@ class aa extends C0908f {
 
     /* renamed from: a */
     public int mo1253a(av avVar) {
-        C0328a.m757c().m764b(this.f4458a.m5889A());
+        WebLog.init().w(this.f4458a.m5889A());
         if (!this.f4458a.m5945p()) {
             return -1;
         }
@@ -68,7 +68,7 @@ class aa extends C0908f {
 
     /* renamed from: b */
     private C0937d[] m6457b() {
-        C0328a.m757c().m764b(this.f4458a.m5889A());
+        WebLog.init().w(this.f4458a.m5889A());
         if (!this.f4458a.m5945p()) {
             return new C0937d[0];
         }

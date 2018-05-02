@@ -3,7 +3,7 @@ package com.duokan.reader.ui.general;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout.LayoutParams;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 
 class dg extends gd {
     /* renamed from: a */
@@ -31,7 +31,7 @@ class dg extends gd {
 
     /* renamed from: d */
     public View mo508d(int i, View view, ViewGroup viewGroup) {
-        C0328a.m757c().m764b(this.f7095a.getCurrentPageIndicator() != null);
+        WebLog.init().w(this.f7095a.getCurrentPageIndicator() != null);
         int b = this.f7095a.f6852e;
         while (b <= this.f7095a.f6853f && this.f7095a.m10117n(b) != i) {
             b++;

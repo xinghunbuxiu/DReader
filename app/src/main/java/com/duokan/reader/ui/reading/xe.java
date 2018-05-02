@@ -11,6 +11,6 @@ class xe implements Runnable {
     }
 
     public void run() {
-        FileUtil.m793f(this.f11140a.m13646o());
+        FileUtil.deleteFile(this.f11140a.m13646o());
     }
 }

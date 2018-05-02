@@ -6,7 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.text.TextUtils;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.common.p036b.C0538a;
@@ -153,7 +153,7 @@ public class MiAccount extends UserAccount {
 
     /* renamed from: a */
     public void mo830a(C0699c c0699c) {
-        C0328a.m757c().m752c(LogLevel.EVENT, "miaccount", "log off");
+        WebLog.init().c(LogLevel.EVENT, "miaccount", "log off");
         this.f2253f = "";
         this.f2254g = new bd(this.f2252e);
         m3155l();

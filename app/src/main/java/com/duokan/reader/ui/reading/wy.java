@@ -413,7 +413,7 @@ public abstract class wy extends FrameLayout {
         if (fileArr.length > 100) {
             Arrays.sort(fileArr, new xf(this));
             while (i < fileArr.length / 2) {
-                FileUtil.m793f(fileArr[i]);
+                FileUtil.deleteFile(fileArr[i]);
                 i++;
             }
         }
@@ -421,7 +421,7 @@ public abstract class wy extends FrameLayout {
 
     /* renamed from: n */
     private final List<File> m13645n() {
-        return FileUtil.m776a(ReaderEnv.get().getReadingCacheDirectory(), new xg(this));
+        return FileUtil.getDirFiles(ReaderEnv.get().getReadingCacheDirectory(), new xg(this));
     }
 
     /* renamed from: o */

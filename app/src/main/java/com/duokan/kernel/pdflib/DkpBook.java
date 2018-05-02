@@ -1,6 +1,6 @@
 package com.duokan.kernel.pdflib;
 
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.ah;
 import com.duokan.kernel.DkFlowPosition;
 import com.duokan.kernel.DkFlowRenderOption;
@@ -29,9 +29,9 @@ public class DkpBook extends DkNative {
             Iterator it = DkpBook.this.mDkpFixedPages.iterator();
             while (it.hasNext()) {
                 DkpPage dkpPage = (DkpPage) it.next();
-                C0328a c = C0328a.m757c();
+                WebLog c = WebLog.init();
                 boolean z = dkpPage == null || (dkpPage.mRefCount == 0 && dkpPage.mReleased);
-                c.m764b(z);
+                c.w(z);
             }
             C0915o.m6074c().m6075a().closeBook(DkpBook.this);
         }
@@ -113,13 +113,13 @@ public class DkpBook extends DkNative {
                 return dkpPage;
             }
         }
-        C0328a.m757c().m762a(dkpPage.mReleased);
+        WebLog.init().m762a(dkpPage.mReleased);
         return dkpPage;
     }
 
     public synchronized void releaseFixedPage(long j) {
         final DkpPage dkpPage = (DkpPage) this.mDkpFixedPages.get(((int) j) - 1);
-        C0328a.m757c().m764b(dkpPage.mRefCount > 0);
+        WebLog.init().w(dkpPage.mRefCount > 0);
         dkpPage.mRefCount--;
         if (dkpPage.mRefCount == 0) {
             ah.m866a(new Runnable() {

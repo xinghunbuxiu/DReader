@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.af;
@@ -17,7 +17,7 @@ class aad implements an {
 
     /* renamed from: a */
     public void mo1982a(String str, String str2) {
-        C0328a.m757c().m749a(LogLevel.EVENT, "autopay", "pay-ok(book: %s(%s), chapter: %s(%d|%s))", this.f9323a.f9316d, str, this.f9323a.f9318f, Long.valueOf(this.f9323a.f9314b), str2);
+        WebLog.init().a(LogLevel.EVENT, "autopay", "pay-ok(book: %s(%s), chapter: %s(%d|%s))", this.f9323a.f9316d, str, this.f9323a.f9318f, Long.valueOf(this.f9323a.f9314b), str2);
         this.f9323a.f9322j.f9311a.put(str2, new af(Integer.valueOf(0)));
         aab aab = this.f9323a.f9322j;
         aab.E++;
@@ -28,7 +28,7 @@ class aad implements an {
 
     /* renamed from: a */
     public void mo1983a(String str, String str2, Integer num) {
-        C0328a.m757c().m749a(LogLevel.EVENT, "autopay", "pay-error: %d(book: %s(%s), chapter: %s(%d|%s))", num, this.f9323a.f9316d, str, this.f9323a.f9318f, Long.valueOf(this.f9323a.f9314b), str2);
+        WebLog.init().a(LogLevel.EVENT, "autopay", "pay-error: %d(book: %s(%s), chapter: %s(%d|%s))", num, this.f9323a.f9316d, str, this.f9323a.f9318f, Long.valueOf(this.f9323a.f9314b), str2);
         if (num != null) {
             this.f9323a.f9322j.f9311a.put(str2, new af(num));
         } else {

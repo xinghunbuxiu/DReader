@@ -26,7 +26,7 @@ class th implements Runnable {
     }
 
     public void run() {
-        FileUtil.m793f(this.f10975a);
+        FileUtil.deleteFile(this.f10975a);
         UThread.runOnThread(new ti(this, DkPublic.unzip(new ZipInputStream(this.f10976b), this.f10975a)));
     }
 }

@@ -4,7 +4,7 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.text.TextUtils;
 import android.util.SparseArray;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.p026a.C0285n;
 import com.duokan.core.p026a.C0293u;
@@ -104,15 +104,15 @@ public class BookshelfHelper {
                 c0285n.m677b();
                 if (d < 4) {
                     try {
-                        C0328a.m757c().m752c(LogLevel.EVENT, "shelf", "begin creating the database...");
+                        WebLog.init().c(LogLevel.EVENT, "shelf", "begin creating the database...");
                         m8450x(c0285n);
                     } catch (Throwable th) {
-                        C0328a.m757c().m748a(LogLevel.DISASTER, "shelf", "a fatal exception occurs while creating or upgrading database!", th);
+                        WebLog.init().printStackTrace(LogLevel.DISASTER, "shelf", "a fatal exception occurs while creating or upgrading database!", th);
                     } finally {
                         c0285n.m678c();
                     }
                 } else {
-                    C0328a.m757c().m749a(LogLevel.EVENT, "shelf", "begin upgrading the database from v%d to v%d", Integer.valueOf(d), Integer.valueOf(15));
+                    WebLog.init().a(LogLevel.EVENT, "shelf", "begin upgrading the database from v%d to v%d", Integer.valueOf(d), Integer.valueOf(15));
                     if (d < 5) {
                         m8428b(c0285n);
                         m8439m(c0285n);
@@ -280,7 +280,7 @@ public class BookshelfHelper {
                 }
             }
         } catch (Throwable th) {
-            C0328a.m757c().m748a(LogLevel.ERROR, "shelf", "an exception occurs while upgrading data to v5.", th);
+            WebLog.init().printStackTrace(LogLevel.ERROR, "shelf", "an exception occurs while upgrading data to v5.", th);
         }
     }
 
@@ -300,7 +300,7 @@ public class BookshelfHelper {
                 }
             }
         } catch (Throwable th) {
-            C0328a.m757c().m748a(LogLevel.ERROR, "shelf", "an exception occurs while upgrading data to v6.", th);
+            WebLog.init().printStackTrace(LogLevel.ERROR, "shelf", "an exception occurs while upgrading data to v6.", th);
         }
     }
 
@@ -334,7 +334,7 @@ public class BookshelfHelper {
             c0285n.m668a("book_categories", null, contentValues);
             m8451y(c0285n);
         } catch (Throwable th) {
-            C0328a.m757c().m748a(LogLevel.ERROR, "shelf", "an exception occurs while upgrading data to v7.", th);
+            WebLog.init().printStackTrace(LogLevel.ERROR, "shelf", "an exception occurs while upgrading data to v7.", th);
         }
     }
 
@@ -357,7 +357,7 @@ public class BookshelfHelper {
                 c0285n.m673a(String.format("UPDATE OR IGNORE %s SET %s=%s", new Object[]{"books", Column.SERIAL_INVALID, Column.SERIAL_INVAILD}));
             }
         } catch (Throwable th) {
-            C0328a.m757c().m748a(LogLevel.ERROR, "shelf", "an exception occurs while upgrading data to v11.", th);
+            WebLog.init().printStackTrace(LogLevel.ERROR, "shelf", "an exception occurs while upgrading data to v11.", th);
         }
     }
 
@@ -389,7 +389,7 @@ public class BookshelfHelper {
                 }
             }
         } catch (Throwable th) {
-            C0328a.m757c().m748a(LogLevel.ERROR, "shelf", "an exception occurs while upgrading data to v15.", th);
+            WebLog.init().printStackTrace(LogLevel.ERROR, "shelf", "an exception occurs while upgrading data to v15.", th);
         }
         try {
             a = c0285n.m670a("SELECT _id,book_state FROM books", null);
@@ -401,7 +401,7 @@ public class BookshelfHelper {
                 }
             }
         } catch (Throwable th2) {
-            C0328a.m757c().m748a(LogLevel.ERROR, "shelf", "an exception occurs while upgrading data to v15.", th2);
+            WebLog.init().printStackTrace(LogLevel.ERROR, "shelf", "an exception occurs while upgrading data to v15.", th2);
         }
         try {
             a2 = c0285n.m670a("SELECT _id,book_detail FROM books", null);
@@ -414,7 +414,7 @@ public class BookshelfHelper {
                 }
             }
         } catch (Throwable th22) {
-            C0328a.m757c().m748a(LogLevel.ERROR, "shelf", "an exception occurs while upgrading data to v15.", th22);
+            WebLog.init().printStackTrace(LogLevel.ERROR, "shelf", "an exception occurs while upgrading data to v15.", th22);
         }
         try {
             a2 = c0285n.m670a("SELECT _id,serial_detail FROM books", null);
@@ -427,7 +427,7 @@ public class BookshelfHelper {
                 }
             }
         } catch (Throwable th222) {
-            C0328a.m757c().m748a(LogLevel.ERROR, "shelf", "an exception occurs while upgrading data to v15.", th222);
+            WebLog.init().printStackTrace(LogLevel.ERROR, "shelf", "an exception occurs while upgrading data to v15.", th222);
         }
     }
 

@@ -9,7 +9,7 @@ import com.duokan.common.C0266h;
 import com.duokan.common.C0267i;
 import com.duokan.core.app.C0286x;
 import com.duokan.core.app.ai;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.io.FileUtil;
 import com.duokan.core.p026a.C0285n;
@@ -1034,7 +1034,7 @@ Error: java.lang.NullPointerException
                 } else {
                     file = new File(this.f2742f.getCloudBookDirectory(), dkStoreBookDetail.getBook().getBookUuid() + "." + dkStoreBookDetail.getRevision() + ".epub");
                 }
-                FileUtil.m793f(file);
+                FileUtil.deleteFile(file);
                 String uri = Uri.fromFile(file).toString();
                 b = (fp) m3864a(BookFormat.EPUB, BookPackageType.EPUB, BookType.TRIAL, BookState.CLOUD_ONLY);
                 b.m4224e(dkStoreBookDetail.getBook().getBookUuid());
@@ -1516,7 +1516,7 @@ Error: java.lang.NullPointerException
             this.f2743g.m681f();
             this.f2743g.m678c();
         } catch (Throwable e) {
-            C0328a.m757c().m748a(LogLevel.ERROR, "shelf", "an exception occurs", e);
+            WebLog.init().printStackTrace(LogLevel.ERROR, "shelf", "an exception occurs", e);
             this.f2743g.m678c();
         } catch (Throwable th) {
             this.f2747k.mo1096b();
@@ -1601,7 +1601,7 @@ Error: java.lang.NullPointerException
                 }
                 c0800c.aj();
                 if (z && c0800c.af()) {
-                    FileUtil.m793f(c0800c.m4219d());
+                    FileUtil.deleteFile(c0800c.m4219d());
                 }
                 aaVar.m3760b(c0800c);
                 aaVar.aO();

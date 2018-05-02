@@ -30,7 +30,7 @@ import com.duokan.core.app.C0301c;
 import com.duokan.core.app.OnCancelListener;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.BaseActivity;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.io.FileUtil;
 import com.duokan.core.p027b.C0324a;
@@ -580,14 +580,14 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
 
     public boolean navigate(String str, Object obj, final boolean z, final Runnable runnable) {
         final String toLowerCase = str.toLowerCase(Locale.US);
-        C0328a c = C0328a.m757c();
+        WebLog c = WebLog.init();
         LogLevel logLevel = LogLevel.EVENT;
         String str2 = "nav";
         String str3 = "navigate to %s(params: %s)";
         Object[] objArr = new Object[2];
         objArr[0] = toLowerCase;
         objArr[1] = obj == null ? "null" : obj.toString();
-        c.m749a(logLevel, str2, str3, objArr);
+        c.a(logLevel, str2, str3, objArr);
         if (DkRouter.from(this).route(toLowerCase)) {
             return true;
         }
@@ -1312,7 +1312,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     }
 
     private void setupFirstScene() {
-        C0328a.m757c().m764b(this.f1438q != null);
+        WebLog.init().w(this.f1438q != null);
         this.f1424c.addView(this.f1438q.getContentView(), 0);
         addSubController(this.f1438q);
         activate(this.f1438q);
@@ -1396,7 +1396,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     }
 
     private final void handleIntent(Intent intent) {
-        C0328a.m757c().m764b(DkApp.get().isReady());
+        WebLog.init().w(DkApp.get().isReady());
         CharSequence action = intent.getAction();
         final Uri data = intent.getData();
         C0800c a;
@@ -1409,19 +1409,19 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 } else {
                     str = "duokan-reader://bookshelf";
                 }
-                C0328a.m757c().m749a(LogLevel.EVENT, "nav", "handle an intent(action: %s, uri: %s)", action, str);
+                WebLog.init().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, uri: %s)", action, str);
                 navigate(str, null, false, null);
             } else if (TextUtils.equals(action, "com.duokan.reader.actions.SHOW_RUNNING_DOWNLOAD_TASKS")) {
-                C0328a.m757c().m749a(LogLevel.EVENT, "nav", "handle an intent(action: %s)", action);
+                WebLog.init().a(LogLevel.EVENT, "nav", "handle an intent(action: %s)", action);
             } else if (TextUtils.equals(action, "com.duokan.reader.actions.SHOW_PROMPT")) {
                 String stringExtra = intent.getStringExtra("push_message_target");
                 if (TextUtils.isEmpty(stringExtra)) {
-                    C0328a.m757c().m749a(LogLevel.EVENT, "nav", "handle an intent(action: %s, msgId: null)", action);
+                    WebLog.init().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, msgId: null)", action);
                     navigate("duokan-reader://personal/message/notification", null, false, null);
                     return;
                 }
                 DkCloudPushMessage dkCloudPushMessage;
-                C0328a.m757c().m749a(LogLevel.EVENT, "nav", "handle an intent(action: %s, msgId: %s)", action, stringExtra);
+                WebLog.init().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, msgId: %s)", action, stringExtra);
                 Object stringExtra2 = intent.getStringExtra("push_server_message_id");
                 Object stringExtra3 = intent.getStringExtra("raw_push_message");
                 if (TextUtils.isEmpty(stringExtra2) || TextUtils.isEmpty(stringExtra3)) {
@@ -1437,7 +1437,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                     dkCloudPushMessage = C0857b.m5649a().m5677a(stringExtra);
                 }
                 if (dkCloudPushMessage == null) {
-                    C0328a.m757c().m749a(LogLevel.ERROR, "push", "push message not found, msgId: %s", stringExtra);
+                    WebLog.init().a(LogLevel.ERROR, "push", "push message not found, msgId: %s", stringExtra);
                     navigate("duokan-reader://personal/message/notification", null, false, null);
                 } else if ((dkCloudPushMessage.getEndTime() == 0 || dkCloudPushMessage.getEndTime() > System.currentTimeMillis()) && !TextUtils.isEmpty(dkCloudPushMessage.getActionParamString())) {
                     C0857b.m5649a().m5688b(dkCloudPushMessage.getCloudId());
@@ -1450,7 +1450,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                     navigate("duokan-reader://personal/message/notification", null, false, null);
                 }
             } else if (TextUtils.equals(action, "com.duokan.reader.actions.OPEN_REPLY_MESSAGES")) {
-                C0328a.m757c().m749a(LogLevel.EVENT, "nav", "handle an intent(action: %s)", action);
+                WebLog.init().a(LogLevel.EVENT, "nav", "handle an intent(action: %s)", action);
                 navigate("duokan-reader://personal/message/feed", null, false, null);
             } else if (TextUtils.equals(action, "com.duokan.reader.actions.SHOW_STORE")) {
                 int i;
@@ -1463,7 +1463,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                         i = 1;
                     }
                 }
-                C0328a.m757c().m749a(LogLevel.EVENT, "nav", "handle an intent(action: %s, store: %d)", action, Integer.valueOf(i));
+                WebLog.init().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, store: %d)", action, Integer.valueOf(i));
                 switch (i) {
                     case 1:
                         navigate("duokan-reader://store", null, false, null);
@@ -1473,13 +1473,13 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                         return;
                 }
             } else if (TextUtils.equals(action, "com.duokan.reader.actions.SHOW_FEEDBACK")) {
-                C0328a.m757c().m749a(LogLevel.EVENT, "nav", "handle an intent(action: %s)", action);
+                WebLog.init().a(LogLevel.EVENT, "nav", "handle an intent(action: %s)", action);
                 navigate("duokan-reader://personal/feedback", null, false, null);
             } else if ((TextUtils.equals(action, "android.intent.action.VIEW") || TextUtils.isEmpty(action)) && data != null) {
                 String path = data.getPath();
                 String scheme = data.getScheme();
                 Map parseUri = DkRouter.parseUri(data);
-                C0328a.m757c().m749a(LogLevel.EVENT, "nav", "handle an intent(action: %s, uri: %s)", action, data);
+                WebLog.init().a(LogLevel.EVENT, "nav", "handle an intent(action: %s, uri: %s)", action, data);
                 if (!TextUtils.isEmpty((CharSequence) parseUri.get(ClientCookie.PATH_ATTR))) {
                     if (TextUtils.equals((CharSequence) parseUri.get("miback"), "true")) {
                         this.f1438q.m11279a(1);
@@ -1504,7 +1504,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                         public void run() {
                             try {
                                 File file = new File(ReaderEnv.get().getLocalBookDirectory(), data.getLastPathSegment());
-                                FileUtil.m778a(this.f1529d.getContext().getContentResolver().openInputStream(data), file);
+                                FileUtil.writeFiles(this.f1529d.getContext().getContentResolver().openInputStream(data), file);
                                 final C0800c a = ai.m3980a().m3876a(file);
                                 UThread.runOnThread(new Runnable(this) {
                                     /* renamed from: b */
@@ -1627,7 +1627,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
                 }
             }
         } else if (ReaderEnv.get().getKeepReading() && !TextUtils.isEmpty(ReaderEnv.get().getReadingBookUuid())) {
-            C0328a.m757c().m752c(LogLevel.EVENT, "nav", "keep reading");
+            WebLog.init().c(LogLevel.EVENT, "nav", "keep reading");
             a = ai.m3980a().m3906b(ReaderEnv.get().getReadingBookUuid());
             if (a != null) {
                 openBook(a);
@@ -1710,7 +1710,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
     }
 
     private final void pendSwitch(final Switcher switcher, final Runnable runnable) {
-        C0328a.m757c().m764b(switcher != null);
+        WebLog.init().w(switcher != null);
         Runnable anonymousClass22 = new Runnable(this) {
             /* renamed from: c */
             final /* synthetic */ ReaderController f1541c;

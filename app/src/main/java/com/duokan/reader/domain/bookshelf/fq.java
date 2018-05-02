@@ -20,7 +20,7 @@ class fq implements Runnable {
     public void run() {
         if (this.f3194b.f3186L == this.f3193a) {
             Object concurrentHashMap = new ConcurrentHashMap();
-            for (File name : FileUtil.m776a(this.f3194b.m4219d(), new FileFilter[0])) {
+            for (File name : FileUtil.getDirFiles(this.f3194b.m4219d(), new FileFilter[0])) {
                 String name2 = name.getName();
                 concurrentHashMap.put(name2, name2);
             }

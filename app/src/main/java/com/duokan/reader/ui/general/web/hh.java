@@ -2,7 +2,7 @@ package com.duokan.reader.ui.general.web;
 
 import android.text.TextUtils;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.common.webservices.duokan.DkSignInInfo;
@@ -25,7 +25,7 @@ class hh implements Runnable {
     public void run() {
         if (!PersonalPrefs.m5175a().m5242r()) {
             String str;
-            C0328a.m757c().m752c(LogLevel.EVENT, "resign_event", "no pass through message, notify by client");
+            WebLog.init().c(LogLevel.EVENT, "resign_event", "no pass through message, notify by client");
             String str2 = "";
             if (this.f7927a == null || this.f7927a.mReward == null) {
                 lb.m4896a().m4918a(null);

@@ -10,7 +10,7 @@ import android.view.View;
 import com.duokan.core.app.AppContext;
 import com.duokan.core.app.BaseActivity;
 import com.duokan.core.app.IScreenRotationChangedListener;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.ui.C0380do;
 import com.duokan.core.ui.di;
@@ -216,7 +216,7 @@ public abstract class ll extends di implements lk {
 
     /* renamed from: k */
     private void m14240k() {
-        C0328a.m757c().m764b(this.f10256h != null);
+        WebLog.init().w(this.f10256h != null);
         this.f10251c.m14629c();
         Rect originBounds = this.f10256h.getOriginBounds();
         float min = Math.min((((float) getWidth()) * 1.0f) / ((float) originBounds.width()), (((float) getHeight()) * 1.0f) / ((float) originBounds.height()));
@@ -233,7 +233,7 @@ public abstract class ll extends di implements lk {
 
     /* renamed from: a */
     private void m14229a(PointF pointF, float f, float f2) {
-        C0328a.m757c().m764b(this.f10256h != null);
+        WebLog.init().w(this.f10256h != null);
         Rect originBounds = this.f10256h.getOriginBounds();
         m1830a(this.f10256h, new dl(1.0f, Math.round(((float) originBounds.left) + pointF.x), Math.round(((float) originBounds.top) + pointF.y), f, f2, f2));
         float f3 = this.f10255g;

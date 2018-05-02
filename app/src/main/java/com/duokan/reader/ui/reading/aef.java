@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 
 class aef implements Runnable {
@@ -13,7 +13,7 @@ class aef implements Runnable {
 
     public void run() {
         if (!this.f9576a.f9575e) {
-            C0328a.m757c().m752c(LogLevel.WARNING, "tts", "Task takes too long.");
+            WebLog.init().c(LogLevel.WARNING, "tts", "Task takes too long.");
         }
     }
 }

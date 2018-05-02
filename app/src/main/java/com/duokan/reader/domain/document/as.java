@@ -12,7 +12,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.ui.dv;
 import com.duokan.reader.common.bitmap.C0544a;
 import java.lang.ref.WeakReference;
@@ -345,7 +345,7 @@ public abstract class as extends Drawable {
 
     /* renamed from: a */
     protected void mo1376a(Canvas canvas) {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         int i = mo1340p().f4330a;
         int i2 = mo1340p().f4331b;
         Drawable drawable = mo1342q().f4353a;
@@ -370,7 +370,7 @@ public abstract class as extends Drawable {
 
     /* renamed from: L */
     protected boolean m6107L() {
-        C0328a.m757c().m764b(m6108M());
+        WebLog.init().w(m6108M());
         Drawable drawable = (Drawable) f4345d.get();
         if (mo1340p().mo1274c()) {
             if (drawable == null && f4346e == null) {

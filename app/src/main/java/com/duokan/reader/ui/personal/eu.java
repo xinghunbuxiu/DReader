@@ -2,7 +2,7 @@ package com.duokan.reader.ui.personal;
 
 import android.app.Activity;
 import android.content.Context;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ah;
@@ -63,14 +63,14 @@ public class eu {
     private String m11775a(Context context) {
         ServiceTokenResult serviceTokenResult = MiAccountManager.get(context).getServiceToken(context, "xmzhibo").get();
         if (serviceTokenResult == null) {
-            C0328a.m757c().m752c(LogLevel.ERROR, "miLive", "getServiceToken is null");
+            WebLog.init().c(LogLevel.ERROR, "miLive", "getServiceToken is null");
             return null;
         }
         ErrorCode errorCode = serviceTokenResult.errorCode;
         if (errorCode == ErrorCode.ERROR_NONE) {
             return serviceTokenResult.serviceToken;
         }
-        C0328a.m757c().m752c(LogLevel.ERROR, "miLive", "account getServiceToken errCode=" + errorCode);
+        WebLog.init().c(LogLevel.ERROR, "miLive", "account getServiceToken errCode=" + errorCode);
         return null;
     }
 

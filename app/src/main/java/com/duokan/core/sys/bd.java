@@ -2,7 +2,7 @@ package com.duokan.core.sys;
 
 import android.content.ContentValues;
 import android.text.TextUtils;
-import com.duokan.core.diagnostic.C0327f;
+import com.duokan.core.diagnostic.HttpLogger;
 import com.duokan.core.p026a.C0285n;
 import java.io.IOException;
 import java.util.Locale;
@@ -11,7 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 class bd implements C0352r {
     /* renamed from: a */
-    private final C0327f f692a;
+    private final HttpLogger f692a;
     /* renamed from: b */
     private final C0285n f693b;
     /* renamed from: c */
@@ -35,14 +35,14 @@ class bd implements C0352r {
         this(str, null);
     }
 
-    public bd(String str, C0327f c0327f) {
+    public bd(String str, HttpLogger httpLogger) {
         this.f694c = new ReentrantLock();
         this.f695d = new ConcurrentHashMap();
         this.f696e = new ConcurrentHashMap();
-        if (c0327f == null) {
-            c0327f = new C0327f();
+        if (httpLogger == null) {
+            httpLogger = new HttpLogger();
         }
-        this.f692a = c0327f;
+        this.f692a = httpLogger;
         this.f693b = new C0285n(str, null);
         int d = this.f693b.m679d();
         if (d != 1) {

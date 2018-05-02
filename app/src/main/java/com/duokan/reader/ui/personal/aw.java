@@ -2,7 +2,7 @@ package com.duokan.reader.ui.personal;
 
 import android.content.Context;
 import android.widget.TextView;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.ui.LinearScrollView;
 import com.duokan.core.ui.dv;
@@ -31,6 +31,6 @@ class aw extends C0236a {
     }
 
     protected void onSessionSucceeded() {
-        C0328a.m757c().m752c(LogLevel.EVENT, "DIAGNOSTICS", this.f8287b.getText().toString());
+        WebLog.init().c(LogLevel.EVENT, "DIAGNOSTICS", this.f8287b.getText().toString());
     }
 }

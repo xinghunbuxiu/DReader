@@ -84,7 +84,7 @@ abstract class StoreWebController extends lj {
         r4 = new java.io.File;	 Catch:{ all -> 0x013a }
         r0 = "store.arch";
         r4.<init>(r1, r0);	 Catch:{ all -> 0x013a }
-        com.duokan.core.io.C0336a.m793f(r1);	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
+        com.duokan.core.io.C0336a.deleteFile(r1);	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
         r1.mkdirs();	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
         r5 = new java.io.FileOutputStream;	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
         r5.<init>(r4);	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
@@ -105,8 +105,8 @@ abstract class StoreWebController extends lj {
         r5 = android.text.TextUtils.isEmpty(r0);	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
         if (r5 == 0) goto L_0x00fc;
     L_0x009e:
-        com.duokan.core.io.C0336a.m793f(r4);	 Catch:{ all -> 0x013a }
-        com.duokan.core.io.C0336a.m793f(r1);	 Catch:{ all -> 0x013a }
+        com.duokan.core.io.C0336a.deleteFile(r4);	 Catch:{ all -> 0x013a }
+        com.duokan.core.io.C0336a.deleteFile(r1);	 Catch:{ all -> 0x013a }
         r0 = sStoreMirrorReady;
         r0.countDown();
         goto L_0x0004;
@@ -152,15 +152,15 @@ abstract class StoreWebController extends lj {
         throw r0;	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
     L_0x00ee:
         r0 = move-exception;
-        com.duokan.core.io.C0336a.m793f(r4);	 Catch:{ all -> 0x013a }
-        com.duokan.core.io.C0336a.m793f(r1);	 Catch:{ all -> 0x013a }
+        com.duokan.core.io.C0336a.deleteFile(r4);	 Catch:{ all -> 0x013a }
+        com.duokan.core.io.C0336a.deleteFile(r1);	 Catch:{ all -> 0x013a }
     L_0x00f5:
         r0 = sStoreMirrorReady;
         r0.countDown();
         goto L_0x0004;
     L_0x00fc:
         r5 = storeMirrorDirectory(r0);	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
-        com.duokan.core.io.C0336a.m793f(r5);	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
+        com.duokan.core.io.C0336a.deleteFile(r5);	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
         r6 = r1.renameTo(r5);	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
         if (r6 == 0) goto L_0x0133;
     L_0x0109:
@@ -182,8 +182,8 @@ abstract class StoreWebController extends lj {
         r7[r8] = r0;	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
         r2.m749a(r3, r5, r6, r7);	 Catch:{ Throwable -> 0x00ee, all -> 0x0141 }
     L_0x0133:
-        com.duokan.core.io.C0336a.m793f(r4);	 Catch:{ all -> 0x013a }
-        com.duokan.core.io.C0336a.m793f(r1);	 Catch:{ all -> 0x013a }
+        com.duokan.core.io.C0336a.deleteFile(r4);	 Catch:{ all -> 0x013a }
+        com.duokan.core.io.C0336a.deleteFile(r1);	 Catch:{ all -> 0x013a }
         goto L_0x00f5;
     L_0x013a:
         r0 = move-exception;
@@ -192,8 +192,8 @@ abstract class StoreWebController extends lj {
         throw r0;
     L_0x0141:
         r0 = move-exception;
-        com.duokan.core.io.C0336a.m793f(r4);	 Catch:{ all -> 0x013a }
-        com.duokan.core.io.C0336a.m793f(r1);	 Catch:{ all -> 0x013a }
+        com.duokan.core.io.C0336a.deleteFile(r4);	 Catch:{ all -> 0x013a }
+        com.duokan.core.io.C0336a.deleteFile(r1);	 Catch:{ all -> 0x013a }
         throw r0;	 Catch:{ all -> 0x013a }
     L_0x0149:
         r2 = move-exception;

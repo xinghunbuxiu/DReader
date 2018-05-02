@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.reader.common.webservices.C0657i;
 import com.duokan.reader.common.webservices.WebSession;
@@ -48,7 +48,7 @@ class cr extends WebSession {
     }
 
     protected boolean onSessionException(Exception exception, int i) {
-        C0328a.m757c().m748a(LogLevel.ERROR, "pm", String.format("unexpected error while marking a chapter purchased(bookUuid: %s, chapterIds: %s).", new Object[]{this.f3831b.f3829a.f3825a, Arrays.deepToString(this.f3831b.f3829a.f3826b.toArray(new String[0]))}), (Throwable) exception);
+        WebLog.init().printStackTrace(LogLevel.ERROR, "pm", String.format("unexpected error while marking a chapter purchased(bookUuid: %s, chapterIds: %s).", new Object[]{this.f3831b.f3829a.f3825a, Arrays.deepToString(this.f3831b.f3829a.f3826b.toArray(new String[0]))}), (Throwable) exception);
         return super.onSessionException(exception, i);
     }
 }

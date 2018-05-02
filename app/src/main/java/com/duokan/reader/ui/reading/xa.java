@@ -20,8 +20,8 @@ class xa implements Runnable {
     }
 
     public void run() {
-        FileUtil.m793f(this.f11132a);
-        FileUtil.m784b(this.f11133b, CompressFormat.PNG, 100, this.f11132a);
+        FileUtil.deleteFile(this.f11132a);
+        FileUtil.saveImage(this.f11133b, CompressFormat.PNG, 100, this.f11132a);
         this.f11133b.recycle();
         this.f11134c.m13644m();
     }

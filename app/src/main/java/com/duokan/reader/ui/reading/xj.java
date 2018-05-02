@@ -2,7 +2,7 @@ package com.duokan.reader.ui.reading;
 
 import android.view.View;
 import android.view.ViewTreeObserver.OnPreDrawListener;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.UIdleHandler;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.ui.Scrollable.ScrollState;
@@ -42,7 +42,7 @@ class xj implements OnPreDrawListener {
 
     /* renamed from: b */
     protected void m15067b(boolean z) {
-        C0328a.m757c().m764b(UThread.isCurrentThread());
+        WebLog.init().w(UThread.isCurrentThread());
         try {
             if (this.f11144b.isEmpty()) {
                 if (!this.f11144b.isEmpty()) {

@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.reader.common.webservices.C0621a;
 import com.duokan.reader.common.webservices.C0657i;
 import com.duokan.reader.common.webservices.WebSession;
@@ -51,7 +51,7 @@ class ba extends ReloginSession {
             return;
         }
         if (this.f3737d.b == 0) {
-            C0328a.m757c().m764b(this.f3739f != null);
+            WebLog.init().w(this.f3739f != null);
             this.f3736c.f3731c.f3717e = this.f3738e;
             DkSharedStorageManager.m5016a().m5024a(SharedKey.USER_PRIVILEGE, this.f3739f.toString(), false);
             if (this.f3736c.f3729a != null) {

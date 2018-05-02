@@ -66,7 +66,7 @@ class ha implements Runnable {
         r1.f3278e = r0;	 Catch:{ Throwable -> 0x00af }
         if (r2 != 0) goto L_0x008b;
     L_0x0058:
-        r0 = com.duokan.core.diagnostic.C0328a.m757c();	 Catch:{ Throwable -> 0x00af }
+        r0 = com.duokan.core.diagnostic.C0328a.init();	 Catch:{ Throwable -> 0x00af }
         r1 = com.duokan.core.diagnostic.LogLevel.ERROR;	 Catch:{ Throwable -> 0x00af }
         r2 = "epub-l";
         r6 = "fail to download the resource %s(size error: %s!=%s)";
@@ -83,7 +83,7 @@ class ha implements Runnable {
         r5 = r5.mo1070e();	 Catch:{ Throwable -> 0x00af }
         r5 = java.lang.Integer.valueOf(r5);	 Catch:{ Throwable -> 0x00af }
         r7[r4] = r5;	 Catch:{ Throwable -> 0x00af }
-        r0.m749a(r1, r2, r6, r7);	 Catch:{ Throwable -> 0x00af }
+        r0.a(r1, r2, r6, r7);	 Catch:{ Throwable -> 0x00af }
     L_0x0081:
         r0 = r10.f3286c;
         r0.release();
@@ -98,7 +98,7 @@ class ha implements Runnable {
     L_0x008b:
         if (r0 != 0) goto L_0x0081;
     L_0x008d:
-        r0 = com.duokan.core.diagnostic.C0328a.m757c();	 Catch:{ Throwable -> 0x00af }
+        r0 = com.duokan.core.diagnostic.C0328a.init();	 Catch:{ Throwable -> 0x00af }
         r1 = com.duokan.core.diagnostic.LogLevel.ERROR;	 Catch:{ Throwable -> 0x00af }
         r2 = "epub-l";
         r4 = "fail to download the resource %s(md5 error: %s!=%s)";
@@ -113,14 +113,14 @@ class ha implements Runnable {
         r7 = r7.f3274a;	 Catch:{ Throwable -> 0x00af }
         r7 = r7.m4582f();	 Catch:{ Throwable -> 0x00af }
         r5[r6] = r7;	 Catch:{ Throwable -> 0x00af }
-        r0.m749a(r1, r2, r4, r5);	 Catch:{ Throwable -> 0x00af }
+        r0.a(r1, r2, r4, r5);	 Catch:{ Throwable -> 0x00af }
         goto L_0x0081;
     L_0x00af:
         r0 = move-exception;
         r1 = r10.f3284a;	 Catch:{ all -> 0x00d9 }
         r2 = 0;
         r1.f3278e = r2;	 Catch:{ all -> 0x00d9 }
-        r1 = com.duokan.core.diagnostic.C0328a.m757c();	 Catch:{ all -> 0x00d9 }
+        r1 = com.duokan.core.diagnostic.C0328a.init();	 Catch:{ all -> 0x00d9 }
         r2 = com.duokan.core.diagnostic.LogLevel.ERROR;	 Catch:{ all -> 0x00d9 }
         r4 = "epub-l";
         r5 = new java.lang.StringBuilder;	 Catch:{ all -> 0x00d9 }

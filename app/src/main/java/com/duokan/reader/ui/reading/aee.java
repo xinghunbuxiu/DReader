@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.reading;
 
 import android.media.AudioManager;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ag;
@@ -89,7 +89,7 @@ class aee implements SpeakingListener {
     public void onSpeakingError(int i, String str) {
         this.f9575e = true;
         this.f9574d.f9541a.setActiveColorText(null);
-        C0328a.m757c().m752c(LogLevel.ERROR, "tts", String.format("errorCode: %d, errorDesc: %s", new Object[]{Integer.valueOf(i), str}));
+        WebLog.init().c(LogLevel.ERROR, "tts", String.format("errorCode: %d, errorDesc: %s", new Object[]{Integer.valueOf(i), str}));
         UmengManager.get().onEvent("TTS_SPEAKING_ERROR_V2", String.format("%d, %s", new Object[]{Integer.valueOf(i), str}));
         ((AudioManager) DkApp.get().getSystemService("audio")).abandonAudioFocus(null);
         ap apVar;

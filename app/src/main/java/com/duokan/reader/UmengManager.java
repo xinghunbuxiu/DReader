@@ -7,8 +7,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import com.duokan.core.app.C0297a;
-import com.duokan.core.diagnostic.C0328a;
-import com.duokan.core.diagnostic.C0330c;
+import com.duokan.core.diagnostic.WebLog;
+import com.duokan.core.diagnostic.IOnAnr;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.aq;
@@ -56,7 +56,7 @@ public class UmengManager implements C0297a {
     private ja f1667h = null;
 
     /* renamed from: com.duokan.reader.UmengManager$1 */
-    class C04851 implements C0330c {
+    class C04851 implements IOnAnr {
         /* renamed from: a */
         final /* synthetic */ UmengManager f1641a;
 
@@ -119,7 +119,7 @@ public class UmengManager implements C0297a {
         this.f1663d.addActivityLifecycleMonitor(this);
         initMobclickAgent();
         if (!this.f1662c) {
-            C0328a.m757c().m761a(new C04851(this));
+            WebLog.init().setOnAnrListener(new C04851(this));
         }
     }
 
@@ -348,7 +348,7 @@ public class UmengManager implements C0297a {
         } else if (!initMobclickAgent() || this.f1664e.isEmpty()) {
             z = false;
         } else {
-            C0328a.m757c().m752c(LogLevel.INFO, "umeng", "send delayed events.");
+            WebLog.init().c(LogLevel.INFO, "umeng", "send delayed events.");
             Iterator it = this.f1664e.iterator();
             while (it.hasNext()) {
                 ((Runnable) it.next()).run();

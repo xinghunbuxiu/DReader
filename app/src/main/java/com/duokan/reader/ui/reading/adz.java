@@ -16,7 +16,7 @@ import android.widget.ImageView.ScaleType;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.ManagedApp;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.af;
@@ -406,12 +406,12 @@ public class adz extends gs implements SystemUiConditioner, C0563j, OnCurrentSpe
         try {
             this.f9548h = new TtsEngineIflytek(ManagedApp.get());
         } catch (Throwable th) {
-            C0328a.m757c().m748a(LogLevel.ERROR, "tts", "an exception occurs while preparing the iflytek tts engine", th);
+            WebLog.init().printStackTrace(LogLevel.ERROR, "tts", "an exception occurs while preparing the iflytek tts engine", th);
         }
         if (this.f9548h != null) {
-            C0328a.m757c().m752c(LogLevel.EVENT, "tts", "use the iflytek tts engine");
+            WebLog.init().c(LogLevel.EVENT, "tts", "use the iflytek tts engine");
         } else {
-            C0328a.m757c().m752c(LogLevel.ERROR, "tts", "no usable tts engine");
+            WebLog.init().c(LogLevel.ERROR, "tts", "no usable tts engine");
             be.m10286a(getContext(), C0258j.general__shared__tts_init_failed, 0).show();
         }
         return this.f9548h;
@@ -540,7 +540,7 @@ public class adz extends gs implements SystemUiConditioner, C0563j, OnCurrentSpe
             }
             this.f9548h.startSpeaking(b.f9621a, new aee(this, b, afa, agVar));
         } else if (afa.f9612a == null) {
-            C0328a.m757c().m752c(LogLevel.ERROR, "tts", "no content");
+            WebLog.init().c(LogLevel.ERROR, "tts", "no content");
             UThread.post(new aej(this, agVar, afa));
         } else {
             m13408a(afa, new aek(this, agVar));

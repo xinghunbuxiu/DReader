@@ -2,10 +2,9 @@ package com.duokan.reader.common.download;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
-import com.duokan.core.diagnostic.C0327f;
+import com.duokan.core.diagnostic.HttpLogger;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.ah;
-import com.duokan.reader.common.download.DownloadBlock.BlockState;
 import com.duokan.reader.common.download.DownloadTask.DownloadingStage;
 import com.duokan.reader.common.p037c.C0558e;
 import com.iflytek.speech.VoiceWakeuperAidl;
@@ -50,8 +49,8 @@ class HttpDownloadBlock extends DownloadBlock {
         RETRY
     }
 
-    public HttpDownloadBlock(long j, String str, SQLiteDatabase sQLiteDatabase, C0591a c0591a, C0327f c0327f, HttpClient httpClient) {
-        super(j, str, sQLiteDatabase, c0591a, c0327f);
+    public HttpDownloadBlock(long j, String str, SQLiteDatabase sQLiteDatabase, C0591a c0591a, HttpLogger httpLogger, HttpClient httpClient) {
+        super(j, str, sQLiteDatabase, c0591a, httpLogger);
         this.f1977v = httpClient;
     }
 
@@ -788,7 +787,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r6 = r6.append(r7);	 Catch:{ all -> 0x008d }
         r6 = r6.toString();	 Catch:{ all -> 0x008d }
         r7 = "failed to write bytes";
-        r4.m748a(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
+        r4.printStackTrace(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
         r1 = r13.f2025i;	 Catch:{ all -> 0x008d }
         r4 = r12.mo802d();	 Catch:{ all -> 0x008d }
         if (r1 <= r4) goto L_0x0121;
@@ -927,7 +926,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r6 = r6.append(r7);	 Catch:{ all -> 0x008d }
         r6 = r6.toString();	 Catch:{ all -> 0x008d }
         r7 = "failed to write bytes";
-        r4.m748a(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
+        r4.printStackTrace(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
         r1 = r13.f2025i;	 Catch:{ all -> 0x008d }
         r4 = r12.mo802d();	 Catch:{ all -> 0x008d }
         if (r1 <= r4) goto L_0x0206;
@@ -1050,7 +1049,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r6 = r6.append(r7);	 Catch:{ all -> 0x008d }
         r6 = r6.toString();	 Catch:{ all -> 0x008d }
         r7 = "failed to write bytes";
-        r4.m748a(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
+        r4.printStackTrace(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
         r1 = r13.f2025i;	 Catch:{ all -> 0x008d }
         r4 = r12.mo802d();	 Catch:{ all -> 0x008d }
         if (r1 <= r4) goto L_0x02da;
@@ -1163,7 +1162,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r6 = r6.append(r7);	 Catch:{ all -> 0x008d }
         r6 = r6.toString();	 Catch:{ all -> 0x008d }
         r7 = "failed to write bytes";
-        r4.m748a(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
+        r4.printStackTrace(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
         r1 = r13.f2025i;	 Catch:{ all -> 0x008d }
         r4 = r12.mo802d();	 Catch:{ all -> 0x008d }
         if (r1 <= r4) goto L_0x039c;
@@ -1250,7 +1249,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r6 = r6.append(r7);	 Catch:{ all -> 0x008d }
         r6 = r6.toString();	 Catch:{ all -> 0x008d }
         r7 = "failed to write bytes";
-        r4.m748a(r5, r6, r7, r0);	 Catch:{ all -> 0x008d }
+        r4.printStackTrace(r5, r6, r7, r0);	 Catch:{ all -> 0x008d }
         r0 = r13.f2025i;	 Catch:{ all -> 0x008d }
         r4 = r12.mo802d();	 Catch:{ all -> 0x008d }
         if (r0 <= r4) goto L_0x0431;
@@ -1290,7 +1289,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r4 = r4.append(r5);	 Catch:{ all -> 0x0526 }
         r4 = r4.toString();	 Catch:{ all -> 0x0526 }
         r5 = "failed to read bytes";
-        r1.m748a(r3, r4, r5, r0);	 Catch:{ all -> 0x0526 }
+        r1.printStackTrace(r3, r4, r5, r0);	 Catch:{ all -> 0x0526 }
         r0 = com.duokan.reader.common.download.HttpDownloadBlock.RetryableResult.RETRY;	 Catch:{ all -> 0x0526 }
         if (r2 <= 0) goto L_0x04c3;
     L_0x0468:
@@ -1371,7 +1370,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r6 = r6.append(r7);	 Catch:{ all -> 0x008d }
         r6 = r6.toString();	 Catch:{ all -> 0x008d }
         r7 = "failed to write bytes";
-        r4.m748a(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
+        r4.printStackTrace(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
         r1 = r13.f2025i;	 Catch:{ all -> 0x008d }
         r4 = r12.mo802d();	 Catch:{ all -> 0x008d }
         if (r1 <= r4) goto L_0x050c;
@@ -1479,7 +1478,7 @@ class HttpDownloadBlock extends DownloadBlock {
         r6 = r6.append(r7);	 Catch:{ all -> 0x008d }
         r6 = r6.toString();	 Catch:{ all -> 0x008d }
         r7 = "failed to write bytes";
-        r4.m748a(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
+        r4.printStackTrace(r5, r6, r7, r1);	 Catch:{ all -> 0x008d }
         r1 = r13.f2025i;	 Catch:{ all -> 0x008d }
         r4 = r12.mo802d();	 Catch:{ all -> 0x008d }
         if (r1 <= r4) goto L_0x05c3;

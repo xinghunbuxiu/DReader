@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.reader.UmengManager;
 import org.apache.http.client.methods.HttpGet;
@@ -63,7 +63,7 @@ class bt implements OnClickListener {
             this.f9899k.m13838j();
         }
         if (!TextUtils.isEmpty(this.f9890b)) {
-            C0328a.m757c().m749a(LogLevel.EVENT, "reading", "click server ui(book: %s(%s), chapter: %s(%d|%s), type: %s, click: %s)", this.f9891c, this.f9892d, this.f9893e, Long.valueOf(this.f9894f), this.f9895g, this.f9889a, this.f9890b);
+            WebLog.init().a(LogLevel.EVENT, "reading", "click server ui(book: %s(%s), chapter: %s(%d|%s), type: %s, click: %s)", this.f9891c, this.f9892d, this.f9893e, Long.valueOf(this.f9894f), this.f9895g, this.f9889a, this.f9890b);
             if (TextUtils.equals(this.f9889a, "button")) {
                 UmengManager.get().onEvent("READING_PURCHASE_PAGE", "PURCHASE");
             } else {

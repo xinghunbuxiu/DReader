@@ -17,7 +17,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.io.FileUtil;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ah;
@@ -182,7 +182,7 @@ public class WelcomeDialog extends C0342j {
             File file2 = new File(cacheDir, "splash.config.tmp");
             String format = String.format(Locale.US, C0641o.m2934i().m2995v() + "?user_type=%d&device_id=%s&app_id=%s&build=%d&channel=%s", new Object[]{Integer.valueOf(PersonalPrefs.m5175a().m5210b()), ReaderEnv.get().getDeviceId(), ReaderEnv.get().getAppId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel()});
             ac acVar = new ac((WebSession) this, this.f1688a);
-            FileUtil.m793f(file2);
+            FileUtil.deleteFile(file2);
             if (acVar.m549a(format, file2, true)) {
                 file2.renameTo(file);
             }
@@ -352,7 +352,7 @@ public class WelcomeDialog extends C0342j {
                 }
 
                 public void run() {
-                    C0328a.m757c().m760a();
+                    WebLog.init().w();
                     dv.startAlphaAnimation(this.f1675a.f1687d.f1707f, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, new C04991(this));
                 }
             }

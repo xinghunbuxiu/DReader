@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.UThread;
 import com.wali.live.sdk.manager.IMiLiveSdk.IUpdateListener;
@@ -20,7 +20,7 @@ class ez implements IUpdateListener {
     }
 
     public void onCheckVersionFailed() {
-        C0328a.m757c().m752c(LogLevel.ERROR, "miLive", "checkVersionFailed");
+        WebLog.init().c(LogLevel.ERROR, "miLive", "checkVersionFailed");
         UThread.runOnThread(new fa(this));
     }
 
@@ -40,7 +40,7 @@ class ez implements IUpdateListener {
     }
 
     public void onDownloadFailed(int i) {
-        C0328a.m757c().m752c(LogLevel.ERROR, "miLive", "downloadFailed ErrorCode=" + i);
+        WebLog.init().c(LogLevel.ERROR, "miLive", "downloadFailed ErrorCode=" + i);
         UThread.runOnThread(new fe(this));
     }
 }

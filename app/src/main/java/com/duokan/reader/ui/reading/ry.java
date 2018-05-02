@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.UIdleHandler;
 
@@ -20,7 +20,7 @@ class ry implements Runnable {
                 this.f10922a.f9292p = true;
                 UIdleHandler.addIdleHandler(new rz(this));
             } catch (Throwable e) {
-                C0328a.m757c().m748a(LogLevel.ERROR, "reading", "an exception occurs during init", e);
+                WebLog.init().printStackTrace(LogLevel.ERROR, "reading", "an exception occurs during init", e);
                 throw e;
             }
         }

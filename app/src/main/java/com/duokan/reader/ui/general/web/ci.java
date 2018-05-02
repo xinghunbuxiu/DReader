@@ -3,7 +3,7 @@ package com.duokan.reader.ui.general.web;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.webkit.JavascriptInterface;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.p027b.C0324a;
 import com.duokan.core.sys.UThread;
@@ -555,7 +555,7 @@ public class ci {
 
     @JavascriptInterface
     public boolean downloadAdApp(String str) {
-        C0328a.m757c().m752c(LogLevel.INFO, "task_wall", "download called");
+        WebLog.init().c(LogLevel.INFO, "task_wall", "download called");
         return ((Boolean) m11015a(new kg(this, str), Boolean.valueOf(false))).booleanValue();
     }
 
@@ -591,7 +591,7 @@ public class ci {
                 t = callable.call();
             }
         } catch (Throwable th) {
-            C0328a.m757c().m748a(LogLevel.ERROR, "jscall", "unexpected exception!", th);
+            WebLog.init().printStackTrace(LogLevel.ERROR, "jscall", "unexpected exception!", th);
         }
         return t;
     }
@@ -603,7 +603,7 @@ public class ci {
                 t = UThread.m1035a((Callable) callable);
             }
         } catch (Throwable th) {
-            C0328a.m757c().m748a(LogLevel.ERROR, "jscall", "unexpected exception!", th);
+            WebLog.init().printStackTrace(LogLevel.ERROR, "jscall", "unexpected exception!", th);
         }
         return t;
     }
@@ -620,7 +620,7 @@ public class ci {
                 asVar.mo1831a();
             }
         } catch (Throwable th) {
-            C0328a.m757c().m748a(LogLevel.ERROR, "jscall", "unexpected exception!", th);
+            WebLog.init().printStackTrace(LogLevel.ERROR, "jscall", "unexpected exception!", th);
         }
     }
 
@@ -631,7 +631,7 @@ public class ci {
                 asVar.mo1831a();
             }
         } catch (Throwable th) {
-            C0328a.m757c().m748a(LogLevel.ERROR, "jscall", "unexpected exception!", th);
+            WebLog.init().printStackTrace(LogLevel.ERROR, "jscall", "unexpected exception!", th);
             if (!TextUtils.isEmpty(str)) {
                 be.m10287a(this.f7581b.getContext(), (CharSequence) str, 1).show();
             }

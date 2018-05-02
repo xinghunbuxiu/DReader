@@ -1,7 +1,7 @@
 package com.duokan.reader.common.webservices;
 
 import android.os.Looper;
-import com.duokan.core.diagnostic.C0327f;
+import com.duokan.core.diagnostic.HttpLogger;
 import com.duokan.core.p027b.p028a.C0320a;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ah;
@@ -19,7 +19,7 @@ public abstract class WebSession {
     private static final long HTTP_COUNTING_TIME = TimeUnit.SECONDS.toMillis(100);
     private static final int HTTP_COUNT_TO_WARN = 20;
     private static final HashMap<String, Long> sHttpCountingMap = new HashMap();
-    private static C0327f sHttpLogger = null;
+    private static HttpLogger sHttpLogger = null;
     private CacheStrategy mCacheStrategy;
     private final C0320a mHttpConfig;
     protected boolean mIsClosed;
@@ -109,8 +109,8 @@ public abstract class WebSession {
         return this.mSessionState;
     }
 
-    public static void setLogger(C0327f c0327f) {
-        sHttpLogger = c0327f;
+    public static void setLogger(HttpLogger httpLogger) {
+        sHttpLogger = httpLogger;
     }
 
     public void open() {

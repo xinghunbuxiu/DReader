@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.UThread;
 import com.duokan.reader.ui.store.C1502o;
@@ -46,7 +46,7 @@ class aac implements Runnable {
                 UThread.post(this.f9315c);
                 return;
             }
-            C0328a.m757c().m749a(LogLevel.EVENT, "autopay", "pay(book: %s(%s), chapter: %s(%d|%s))", this.f9316d, this.f9317e, this.f9318f, Long.valueOf(this.f9314b), this.f9319g);
+            WebLog.init().a(LogLevel.EVENT, "autopay", "pay(book: %s(%s), chapter: %s(%d|%s))", this.f9316d, this.f9317e, this.f9318f, Long.valueOf(this.f9314b), this.f9319g);
             C1502o.m15410a().m15432a(this.f9317e, this.f9319g, this.f9320h, new aad(this));
         }
     }

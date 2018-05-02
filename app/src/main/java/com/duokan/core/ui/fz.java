@@ -9,7 +9,7 @@ import android.view.ViewParent;
 import android.view.ViewTreeObserver.OnPreDrawListener;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.ui.Scrollable.ScrollState;
@@ -102,7 +102,7 @@ public class fz extends WebView implements OnPreDrawListener {
         if (!this.f1281a.f1272l) {
             this.f1281a.f1272l = true;
             super.onPause();
-            C0328a.m757c().m749a(LogLevel.INFO, "webpage", "paused(url=%s)", this.f1281a.f1265e);
+            WebLog.init().a(LogLevel.INFO, "webpage", "paused(url=%s)", this.f1281a.f1265e);
         }
     }
 
@@ -110,7 +110,7 @@ public class fz extends WebView implements OnPreDrawListener {
         if (this.f1281a.f1272l) {
             this.f1281a.f1272l = false;
             super.onResume();
-            C0328a.m757c().m749a(LogLevel.INFO, "webpage", "resumed(url=%s)", this.f1281a.f1265e);
+            WebLog.init().a(LogLevel.INFO, "webpage", "resumed(url=%s)", this.f1281a.f1265e);
         }
     }
 

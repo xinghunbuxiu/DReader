@@ -3,7 +3,7 @@ package com.duokan.reader.domain.bookshelf;
 import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.C0352r;
 import com.duokan.core.sys.UThread;
@@ -303,7 +303,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                     File d = m4219d();
                     d.mkdirs();
                     if (!d.exists()) {
-                        C0328a.m757c().m752c(LogLevel.ERROR, "sbk", "fail to create the book " + d.getAbsolutePath());
+                        WebLog.init().c(LogLevel.ERROR, "sbk", "fail to create the book " + d.getAbsolutePath());
                         throw new IOException();
                     }
                 }

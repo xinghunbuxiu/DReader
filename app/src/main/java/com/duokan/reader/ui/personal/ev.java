@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.UThread;
 import com.duokan.reader.ReaderEnv;
@@ -16,11 +16,11 @@ class ev extends CallbackWrapper {
     }
 
     public void notifyServiceNull(int i) {
-        C0328a.m757c().m752c(LogLevel.ERROR, "miLive", "notifyServiceNull aidlFlag=" + i);
+        WebLog.init().c(LogLevel.ERROR, "miLive", "notifyServiceNull aidlFlag=" + i);
     }
 
     public void notifyAidlFailure(int i) {
-        C0328a.m757c().m752c(LogLevel.ERROR, "miLive", "notifyAidlFailure aidlFlag=" + i);
+        WebLog.init().c(LogLevel.ERROR, "miLive", "notifyAidlFailure aidlFlag=" + i);
     }
 
     public void notifyLogin(int i) {
@@ -33,7 +33,7 @@ class ev extends CallbackWrapper {
 
     public void notifyLogoff(int i) {
         if (i != 0) {
-            C0328a.m757c().m752c(LogLevel.ERROR, "miLive", "LogoutError errorCode=" + i);
+            WebLog.init().c(LogLevel.ERROR, "miLive", "LogoutError errorCode=" + i);
         } else {
             ReaderEnv.get().setMiLiveUser("");
         }
@@ -44,11 +44,11 @@ class ev extends CallbackWrapper {
     }
 
     public void notifyVerifyFailure(int i) {
-        C0328a.m757c().m752c(LogLevel.ERROR, "miLive", "验证失败，errCode=" + i);
+        WebLog.init().c(LogLevel.ERROR, "miLive", "验证失败，errCode=" + i);
     }
 
     public void notifyOtherAppActive() {
-        C0328a.m757c().m752c(LogLevel.ERROR, "miLive", "有其他APP在活跃");
+        WebLog.init().c(LogLevel.ERROR, "miLive", "有其他APP在活跃");
     }
 
     public void notifyWantShare(ShareInfo shareInfo) {

@@ -19,7 +19,7 @@ import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.C0286x;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.IdleHandlerListener;
 import com.duokan.core.sys.af;
 import com.duokan.core.ui.cv;
@@ -342,7 +342,7 @@ public abstract class qr extends C1367p implements SystemUiConditioner, C0563j, 
 
     /* renamed from: a */
     public void mo1049a(C0903n c0903n) {
-        C0328a.m757c().m762a(this.f9284h.mo1448b());
+        WebLog.init().m762a(this.f9284h.mo1448b());
         runAfterActive(new ry(this));
     }
 

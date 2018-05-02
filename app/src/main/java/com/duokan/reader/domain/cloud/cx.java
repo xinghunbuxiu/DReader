@@ -1,6 +1,6 @@
 package com.duokan.reader.domain.cloud;
 
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.reader.common.webservices.C0657i;
 import com.duokan.reader.common.webservices.WebSession;
@@ -52,7 +52,7 @@ class cx extends WebSession {
     }
 
     protected boolean onSessionException(Exception exception, int i) {
-        C0328a.m757c().m748a(LogLevel.ERROR, "pm", "unexpected error while partial-loading purchased fictions.", (Throwable) exception);
+        WebLog.init().printStackTrace(LogLevel.ERROR, "pm", "unexpected error while partial-loading purchased fictions.", (Throwable) exception);
         if (this.f3847d != null) {
             this.f3847d.clearInfo();
             this.f3847d.clearItems();

@@ -5,7 +5,7 @@ import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.app.ai;
 import com.duokan.core.app.aj;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.p023b.C0247i;
 import com.duokan.reader.DkApp;
@@ -119,7 +119,7 @@ public class lb implements ai, C0563j, C0586j {
     public void m4915a(DkSignInInfo dkSignInInfo) {
         if (dkSignInInfo == null) {
             m4925e();
-            C0328a.m757c().m752c(LogLevel.EVENT, "sign_in_event", "receive_sign_in_succeed");
+            WebLog.init().c(LogLevel.EVENT, "sign_in_event", "receive_sign_in_succeed");
             if (this.f3525e.m5209a(this.f3527g)) {
                 new lh(this, C0643q.f2173a).open();
                 return;
@@ -154,7 +154,7 @@ public class lb implements ai, C0563j, C0586j {
     /* renamed from: a */
     public void m4918a(List<DkSignInReward> list) {
         m4925e();
-        C0328a.m757c().m752c(LogLevel.EVENT, "resign_event", "receive_succeed");
+        WebLog.init().c(LogLevel.EVENT, "resign_event", "receive_succeed");
         if (this.f3525e.m5209a(this.f3527g)) {
             new li(this, C0643q.f2173a, list).open();
             return;

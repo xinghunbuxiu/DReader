@@ -5,7 +5,7 @@ import android.graphics.Bitmap.Config;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.kernel.DkFlowPosition;
 import com.duokan.kernel.DkFlowRenderOption;
 import com.duokan.kernel.DkPos;
@@ -80,13 +80,13 @@ class bk extends ac {
 
     /* renamed from: a */
     public int mo1381a() {
-        C0328a.m757c().m764b(this.f4563a.m6108M());
+        WebLog.init().w(this.f4563a.m6108M());
         return this.f4564b.getCurActiveCell();
     }
 
     /* renamed from: a */
     public void mo1384a(int i) {
-        C0328a.m757c().m764b(this.f4563a.m6108M());
+        WebLog.init().w(this.f4563a.m6108M());
         if (mo1381a() != i) {
             this.f4564b.setCurActiveCell(i);
             m6682m();
@@ -95,31 +95,31 @@ class bk extends ac {
 
     /* renamed from: b */
     public Rect mo1385b() {
-        C0328a.m757c().m764b(this.f4563a.m6108M());
+        WebLog.init().w(this.f4563a.m6108M());
         return this.f4566d;
     }
 
     /* renamed from: c */
     public Drawable mo1388c() {
-        C0328a.m757c().m764b(this.f4563a.m6108M());
+        WebLog.init().w(this.f4563a.m6108M());
         return this.f4570h;
     }
 
     /* renamed from: d */
     public int mo1389d() {
-        C0328a.m757c().m764b(this.f4563a.m6108M());
+        WebLog.init().w(this.f4563a.m6108M());
         return this.f4567e.length;
     }
 
     /* renamed from: b */
     public au mo1386b(int i) {
-        C0328a.m757c().m764b(this.f4563a.m6108M());
+        WebLog.init().w(this.f4563a.m6108M());
         return this.f4567e[i];
     }
 
     /* renamed from: a */
     public bb mo1382a(Point point, Point point2) {
-        C0328a.m757c().m764b(this.f4563a.m6108M());
+        WebLog.init().w(this.f4563a.m6108M());
         if (!this.f4563a.mo1284G() || this.f4563a.f4525f.m5817f()) {
             return new ce();
         }

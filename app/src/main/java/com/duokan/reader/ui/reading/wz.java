@@ -13,7 +13,7 @@ class wz implements Runnable {
 
     public void run() {
         for (File f : this.f11131a.m13645n()) {
-            FileUtil.m793f(f);
+            FileUtil.deleteFile(f);
         }
     }
 }

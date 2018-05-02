@@ -20,7 +20,7 @@ import android.os.Environment;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.io.IOUtils;
 import com.duokan.core.sys.C0373z;
 import com.duokan.core.sys.af;
@@ -981,7 +981,7 @@ public final class DkPublic {
     }
 
     public static void exchangeNewIdThenDo(String str, String str2, ag<String> agVar, Runnable runnable) {
-        C0328a.m757c().m764b(agVar != null);
+        WebLog.init().w(agVar != null);
         if (TextUtils.isEmpty(str2)) {
             new C04271(C0643q.f2173a, str, agVar, runnable).open();
         } else {

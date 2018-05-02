@@ -60,7 +60,7 @@ public class jp extends jt {
         this.f6686k.setSelected(false);
         this.f6687l.setVisibility(8);
         if (wifiState == 3) {
-            InetAddress a = C0559f.m2476b().m2479a();
+            InetAddress a = C0559f.m2476b().getInetAddress();
             if (a != null) {
                 this.f6686k.setSelected(true);
                 this.f6687l.setVisibility(0);

@@ -13,7 +13,7 @@ import android.util.Pair;
 import android.view.View;
 import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.diagnostic.C0328a;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.UIdleHandler;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ag;
@@ -297,7 +297,7 @@ public abstract class si implements ip, at, su {
         if (this.f9358c.f9273M != null) {
             return this.f9358c.f9273M;
         }
-        C0328a.m757c().m763b();
+        WebLog.init().defaultW();
         return new cz();
     }
 
@@ -690,7 +690,7 @@ public abstract class si implements ip, at, su {
             return null;
         }
         gx gxVar = (gx) X.mo2328d();
-        C0328a.m757c().m764b(gxVar != null);
+        WebLog.init().w(gxVar != null);
         if (gxVar == null) {
             return null;
         }
