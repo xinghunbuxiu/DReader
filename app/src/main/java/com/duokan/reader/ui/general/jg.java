@@ -3,7 +3,7 @@ package com.duokan.reader.ui.general;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.fv;
 import com.duokan.reader.ui.general.WebView.PullDownHeaderState;
 
@@ -32,7 +32,7 @@ public class jg extends fv {
     /* renamed from: a */
     protected void mo501a(float f, float f2) {
         this.f7431b.f6888d = (int) (((float) this.f7431b.f6888d) + f2);
-        if (Math.abs(this.f7431b.f6888d) > dv.getScaledTouchSlop(this.f7431b.getContext())) {
+        if (Math.abs(this.f7431b.f6888d) > AnimUtils.getScaledTouchSlop(this.f7431b.getContext())) {
             if (this.f7431b.f6886b.f7432a == null) {
                 this.f7431b.m10177a(PullDownHeaderState.NONE);
             } else if (!this.f7431b.f6886b.f7434c) {

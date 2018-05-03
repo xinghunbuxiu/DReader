@@ -8,7 +8,7 @@ import android.view.View;
 import com.duokan.core.ui.as;
 import com.duokan.core.ui.bu;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import org.apache.http.HttpStatus;
@@ -25,7 +25,7 @@ public class ade extends er {
 
     public ade(TextSelectionController textSelectionController, Activity activity, su suVar) {
         this.f9507a = textSelectionController;
-        this.f9509d.m1882a(dv.getScaledPagingTouchSlop(activity));
+        this.f9509d.m1882a(AnimUtils.getScaledPagingTouchSlop(activity));
     }
 
     /* renamed from: a */

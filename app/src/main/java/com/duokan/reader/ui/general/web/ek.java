@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.sys.as;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import java.util.LinkedHashMap;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -27,14 +27,14 @@ class ek implements as {
             this.f7780b.m11016a(new em(this, jSONObject.getString("ad_wall_status")));
         }
         if (jSONObject.has("search_bar")) {
-            this.f7780b.m11016a(new en(this, dv.m1932b(this.f7780b.f7581b.getContext(), (float) jSONObject.getInt("search_bar"))));
+            this.f7780b.m11016a(new en(this, AnimUtils.m1932b(this.f7780b.f7581b.getContext(), (float) jSONObject.getInt("search_bar"))));
         }
         if (jSONObject.has("keyword")) {
             this.f7780b.m11016a(new eo(this, jSONObject.getString("keyword")));
         }
         if (jSONObject.has("top_banner")) {
             JSONObject jSONObject2 = jSONObject.getJSONObject("top_banner");
-            this.f7780b.f7581b.mBannerInfo.f7670a = dv.m1932b(this.f7780b.f7581b.getContext(), (float) jSONObject2.optInt("height", this.f7780b.f7581b.getHeaderViewOffset()));
+            this.f7780b.f7581b.mBannerInfo.f7670a = AnimUtils.m1932b(this.f7780b.f7581b.getContext(), (float) jSONObject2.optInt("height", this.f7780b.f7581b.getHeaderViewOffset()));
         }
         if (jSONObject.has("nav_tabs")) {
             JSONArray jSONArray = jSONObject.getJSONArray("nav_tabs");
@@ -43,7 +43,7 @@ class ek implements as {
             for (int i = 0; i < jSONArray.length(); i++) {
                 JSONObject jSONObject3 = jSONArray.getJSONObject(i);
                 String string = jSONObject3.getString("name");
-                int b = dv.m1932b(this.f7780b.f7581b.getContext(), (float) jSONObject3.getInt("pos"));
+                int b = AnimUtils.m1932b(this.f7780b.f7581b.getContext(), (float) jSONObject3.getInt("pos"));
                 if (i == 0) {
                     access$600 = b;
                 }

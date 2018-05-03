@@ -130,7 +130,7 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
     /* renamed from: a */
     public void m1832a(View view, dl dlVar, int i, Runnable runnable, Runnable runnable2) {
         dl dlVar2 = new dl(m1826a(view));
-        dlVar2.m1858d((float) dv.m1927b((double) dlVar2.m1865l(), (double) (dlVar.m1865l() - 180.0f), (double) (dlVar.m1865l() + 180.0f)));
+        dlVar2.m1858d((float) AnimUtils.m1927b((double) dlVar2.m1865l(), (double) (dlVar.m1865l() - 180.0f), (double) (dlVar.m1865l() + 180.0f)));
         m1834a(view, dlVar2, dlVar, i, runnable, runnable2);
     }
 
@@ -246,21 +246,21 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
             this.f1146d = null;
         }
         if (motionEvent.getActionMasked() == 0) {
-            PointF pointF = (PointF) dv.f1197f.addAnimation();
-            RectF rectF = (RectF) dv.f1199h.addAnimation();
+            PointF pointF = (PointF) AnimUtils.f1197f.addAnimation();
+            RectF rectF = (RectF) AnimUtils.f1199h.addAnimation();
             this.f1146d = null;
             for (int childCount = getChildCount() - 1; childCount >= 0; childCount--) {
                 View childAt = getChildAt(childCount);
                 pointF.set(((float) getScrollX()) + motionEvent.getX(), ((float) getScrollY()) + motionEvent.getY());
                 rectF.set((float) childAt.getScrollX(), (float) childAt.getScrollY(), (float) (childAt.getScrollX() + childAt.getWidth()), (float) (childAt.getScrollY() + childAt.getHeight()));
-                dv.m1900a(pointF, (View) this, childAt);
+                AnimUtils.m1900a(pointF, (View) this, childAt);
                 if (rectF.contains(pointF.x, pointF.y) && m1821a(childAt, motionEvent)) {
                     this.f1146d = childAt;
                     break;
                 }
             }
-            dv.f1197f.clearAnimation(pointF);
-            dv.f1199h.clearAnimation(rectF);
+            AnimUtils.f1197f.clearAnimation(pointF);
+            AnimUtils.f1199h.clearAnimation(rectF);
             if (this.f1146d != null) {
                 return true;
             }
@@ -293,9 +293,9 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
     public boolean getChildVisibleRect(View view, Rect rect, Point point) {
         rect.offset(view.getScrollX(), view.getScrollY());
         point.offset(view.getScrollX(), view.getScrollY());
-        dv.m1937b(rect, view, (View) this);
+        AnimUtils.m1937b(rect, view, (View) this);
         if (point != null) {
-            dv.m1897a(point, view, (View) this);
+            AnimUtils.m1897a(point, view, (View) this);
         }
         rect.offset(-getScrollX(), -getScrollY());
         point.offset(-getScrollX(), -getScrollY());
@@ -309,7 +309,7 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         rect.set(0, 0, i3 - i, i4 - i2);
         for (int i5 = 0; i5 < getChildCount(); i5++) {
             View childAt = getChildAt(i5);
@@ -319,7 +319,7 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
             d.f1184m.offset(dnVar.f1168b, dnVar.f1169c);
             childAt.layout(d.f1184m.left + ((d.f1184m.width() - childAt.getMeasuredWidth()) / 2), d.f1184m.top + ((d.f1184m.height() - childAt.getMeasuredHeight()) / 2), (d.f1184m.left + ((d.f1184m.width() - childAt.getMeasuredWidth()) / 2)) + childAt.getMeasuredWidth(), (((d.f1184m.height() - childAt.getMeasuredHeight()) / 2) + d.f1184m.top) + childAt.getMeasuredHeight());
         }
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect);
     }
 
     protected void onMeasure(int i, int i2) {
@@ -336,9 +336,9 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
             if ((d.f1172a & 2) == 2) {
                 d.f1173b.reset();
                 d.f1173b.preScale(d.f1178g.m1866m(), d.f1178g.m1867n());
-                Matrix matrix = (Matrix) dv.f1195d.addAnimation();
+                Matrix matrix = (Matrix) AnimUtils.f1195d.addAnimation();
                 d.f1173b.preConcat(m1816a(matrix, d.f1178g.m1863j(), d.f1178g.m1864k(), d.f1178g.m1865l()));
-                dv.f1195d.clearAnimation(matrix);
+                AnimUtils.f1195d.clearAnimation(matrix);
                 d.f1172a &= -3;
             }
             m1818a(d.f1184m, size, size2, d.f1173b);
@@ -430,7 +430,7 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
 
     /* renamed from: a */
     private boolean m1821a(View view, MotionEvent motionEvent) {
-        MotionEvent a = dv.m1908a(motionEvent, (View) this, view);
+        MotionEvent a = AnimUtils.m1908a(motionEvent, (View) this, view);
         boolean dispatchTouchEvent = view.dispatchTouchEvent(a);
         a.recycle();
         return dispatchTouchEvent;
@@ -462,9 +462,9 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
             dsVar.f1174c.preTranslate((float) dsVar.f1177f.m1861h(), (float) dsVar.f1177f.m1862i());
             dsVar.f1174c.preTranslate(f, g);
             dsVar.f1174c.preScale(dsVar.f1177f.m1866m(), dsVar.f1177f.m1867n());
-            Matrix matrix = (Matrix) dv.f1195d.addAnimation();
+            Matrix matrix = (Matrix) AnimUtils.f1195d.addAnimation();
             dsVar.f1174c.preConcat(m1816a(matrix, dsVar.f1177f.m1863j(), dsVar.f1177f.m1864k(), dsVar.f1177f.m1865l()));
-            dv.f1195d.clearAnimation(matrix);
+            AnimUtils.f1195d.clearAnimation(matrix);
             dsVar.f1174c.preTranslate(-f, -g);
             dsVar.f1172a &= -5;
         }
@@ -475,9 +475,9 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
         if ((dsVar.f1172a & 2) == 2) {
             dsVar.f1173b.reset();
             dsVar.f1173b.preScale(dsVar.f1178g.m1866m(), dsVar.f1178g.m1867n());
-            Matrix matrix = (Matrix) dv.f1195d.addAnimation();
+            Matrix matrix = (Matrix) AnimUtils.f1195d.addAnimation();
             dsVar.f1173b.preConcat(m1816a(matrix, dsVar.f1178g.m1863j(), dsVar.f1178g.m1864k(), dsVar.f1178g.m1865l()));
-            dv.f1195d.clearAnimation(matrix);
+            AnimUtils.f1195d.clearAnimation(matrix);
             dsVar.f1172a &= -3;
         }
     }
@@ -510,7 +510,7 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
             rect.setEmpty();
         } else {
             float abs;
-            float[] fArr = (float[]) dv.f1202k.addAnimation();
+            float[] fArr = (float[]) AnimUtils.f1202k.addAnimation();
             matrix.getValues(fArr);
             float f = fArr[0];
             float f2 = fArr[1];
@@ -549,7 +549,7 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
                 f = Math.min(f2, abs2) * 0.5f;
                 abs = Math.min(f3, f4) * 0.5f;
                 if ((Float.compare(abs2, f2) >= 0 && Float.compare(f3, f4) <= 0) || (Float.compare(abs2, f2) <= 0 && Float.compare(f3, f4) >= 0)) {
-                    RectF rectF = (RectF) dv.f1199h.addAnimation();
+                    RectF rectF = (RectF) AnimUtils.f1199h.addAnimation();
                     rectF.set(0.0f, 0.0f, f, abs);
                     matrix.mapRect(rectF);
                     f2 = Math.min(((float) i) / rectF.width(), ((float) i2) / rectF.height());
@@ -557,22 +557,22 @@ public class di extends ViewGroup implements OnPreDrawListener, fk {
                         f *= f2;
                         abs *= f2;
                     }
-                    dv.f1199h.clearAnimation(rectF);
+                    AnimUtils.f1199h.clearAnimation(rectF);
                 }
             }
             rect.set(0, 0, (int) f, (int) abs);
-            dv.f1202k.clearAnimation(fArr);
+            AnimUtils.f1202k.clearAnimation(fArr);
         }
     }
 
     /* renamed from: a */
     private Matrix m1816a(Matrix matrix, float f, float f2, float f3) {
-        Camera camera = (Camera) dv.f1192a.addAnimation();
+        Camera camera = (Camera) AnimUtils.f1192a.addAnimation();
         camera.rotateX(f);
         camera.rotateY(f2);
         camera.rotateZ(f3);
         camera.getMatrix(matrix);
-        dv.f1192a.clearAnimation(camera);
+        AnimUtils.f1192a.clearAnimation(camera);
         return matrix;
     }
 

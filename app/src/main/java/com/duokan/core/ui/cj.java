@@ -68,7 +68,7 @@ public class cj {
 
     /* renamed from: c */
     private void m1767c() {
-        dv.m1921a(this.f1078b.getWindow().getDecorView(), new ck(this));
+        AnimUtils.m1921a(this.f1078b.getWindow().getDecorView(), new ck(this));
         this.f1078b.getWindow().getDecorView().requestLayout();
     }
 

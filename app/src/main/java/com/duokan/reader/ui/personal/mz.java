@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
@@ -100,7 +100,7 @@ public abstract class mz extends LinearLayout {
             this.f8948c.setBackgroundColor(-1);
             C0435s c0435s = (C0435s) AppContext.getAppContext(getContext()).queryFeature(C0435s.class);
             this.f8948c.m9955a(0, 0, 0, c0435s == null ? 0 : c0435s.getTheme().getPagePaddingBottom());
-            this.f8948c.setRowDivider(new InsetDrawable(new dk(getResources().getColor(C0252d.general__shared__cccccc)), dv.m1932b(getContext(), 15.0f), 0, dv.m1932b(getContext(), 15.0f), 0));
+            this.f8948c.setRowDivider(new InsetDrawable(new dk(getResources().getColor(C0252d.general__shared__cccccc)), AnimUtils.m1932b(getContext(), 15.0f), 0, AnimUtils.m1932b(getContext(), 15.0f), 0));
             View inflate = inflate(getContext(), C0256h.personal__notes_info_header_view, null);
             mo1966a(inflate);
             this.f8948c.setHatBodyView(inflate);

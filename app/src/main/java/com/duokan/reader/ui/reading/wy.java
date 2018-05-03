@@ -14,7 +14,7 @@ import com.duokan.core.io.FileUtil;
 import com.duokan.core.sys.C0366o;
 import com.duokan.core.sys.ah;
 import com.duokan.core.ui.cg;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.p024c.C0254f;
@@ -261,7 +261,7 @@ public abstract class wy extends FrameLayout {
         super.onAttachedToWindow();
         getViewTreeObserver().addOnPreDrawListener(this.f9702e);
         getViewTreeObserver().addOnPreDrawListener(this.f9703f);
-        dv.m1921a((View) this, new xb(this));
+        AnimUtils.m1921a((View) this, new xb(this));
         m13650a(new xd(this));
     }
 
@@ -302,7 +302,7 @@ public abstract class wy extends FrameLayout {
 
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (this.f9710m != null) {
-            MotionEvent a = dv.m1908a(motionEvent, (View) this, this.f9710m);
+            MotionEvent a = AnimUtils.m1908a(motionEvent, (View) this, this.f9710m);
             boolean dispatchTouchEvent = this.f9710m.dispatchTouchEvent(a);
             a.recycle();
             if (dispatchTouchEvent) {

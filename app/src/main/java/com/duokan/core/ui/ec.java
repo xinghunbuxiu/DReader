@@ -16,7 +16,7 @@ final class ec implements Runnable {
     public void run() {
         Runnable edVar = new ed(this);
         if (this.f1212a.getWindowToken() == null || this.f1212a.isLayoutRequested()) {
-            dv.m1921a(this.f1212a, edVar);
+            AnimUtils.m1921a(this.f1212a, edVar);
         } else {
             edVar.run();
         }

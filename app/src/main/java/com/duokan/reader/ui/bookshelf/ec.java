@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0253e;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0256h;
@@ -55,12 +55,12 @@ public class ec extends LinearLayout implements ip, iq, db, ex {
         this.f6373e = (cz) AppContext.getAppContext(context).queryFeature(cz.class);
         this.f6370b.m9455a(new ed(this));
         this.f6371c = new gz(getContext());
-        this.f6371c.m1250b(this.f6371c.getGridPaddingLeft(), dv.m1932b(getContext(), 20.0f), this.f6371c.getGridPaddingRight(), dv.m1932b(getContext(), 20.0f));
+        this.f6371c.m1250b(this.f6371c.getGridPaddingLeft(), AnimUtils.m1932b(getContext(), 20.0f), this.f6371c.getGridPaddingRight(), AnimUtils.m1932b(getContext(), 20.0f));
         this.f6371c.setAdapter(this.f6370b);
         this.f6371c.m1249b(C0256h.bookshelf__category_expand_tip_view);
         this.f6371c.setNumColumns(ea.m9503a(getContext()));
         this.f6371c.setOnItemClickListener(new ee(this));
-        int b = dv.m1932b(getContext(), 10.0f);
+        int b = AnimUtils.m1932b(getContext(), 10.0f);
         LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams.addRule(11);
         layoutParams.addRule(15);
@@ -71,7 +71,7 @@ public class ec extends LinearLayout implements ip, iq, db, ex {
         this.f6376h.setVisibility(8);
         this.f6376h.setOnClickListener(new ef(this));
         layoutParams = new RelativeLayout.LayoutParams(-2, -2);
-        int b2 = dv.m1932b(getContext(), 30.0f);
+        int b2 = AnimUtils.m1932b(getContext(), 30.0f);
         layoutParams.leftMargin = b2;
         layoutParams.rightMargin = b2;
         layoutParams.addRule(14);
@@ -90,9 +90,9 @@ public class ec extends LinearLayout implements ip, iq, db, ex {
         this.f6375g.setOnFocusChangeListener(new eh(this));
         layoutParams = new LinearLayout.LayoutParams(-1, -2);
         if (DkApp.get().forHd()) {
-            b = Math.min(Math.max((dv.getWidthPixels(getContext()) - dv.m1932b(getContext(), 300.0f)) / 2, 0), dv.m1932b(getContext(), 100.0f));
+            b = Math.min(Math.max((AnimUtils.getWidthPixels(getContext()) - AnimUtils.m1932b(getContext(), 300.0f)) / 2, 0), AnimUtils.m1932b(getContext(), 100.0f));
         } else {
-            b = dv.m1932b(getContext(), 40.0f);
+            b = AnimUtils.m1932b(getContext(), 40.0f);
         }
         layoutParams.rightMargin = b;
         layoutParams.leftMargin = b;
@@ -102,13 +102,13 @@ public class ec extends LinearLayout implements ip, iq, db, ex {
         this.f6374f.addView(this.f6375g);
         this.f6374f.addView(this.f6376h);
         View linearLayout = new LinearLayout(getContext());
-        linearLayout.setPadding(0, 0, 0, dv.m1932b(getContext(), 15.0f));
+        linearLayout.setPadding(0, 0, 0, AnimUtils.m1932b(getContext(), 15.0f));
         linearLayout.setGravity(81);
         linearLayout.setBackgroundColor(Color.parseColor("#33666666"));
         linearLayout.addView(this.f6374f);
         LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-1, 1);
-        layoutParams2.leftMargin = dv.m1932b(getContext(), 15.0f);
-        layoutParams2.rightMargin = dv.m1932b(getContext(), 15.0f);
+        layoutParams2.leftMargin = AnimUtils.m1932b(getContext(), 15.0f);
+        layoutParams2.rightMargin = AnimUtils.m1932b(getContext(), 15.0f);
         addView(linearLayout, new LinearLayout.LayoutParams(-1, 0, 2.0f));
         addView(this.f6371c, new LinearLayout.LayoutParams(-1, 0, 6.0f));
         linearLayout = new View(getContext());
@@ -164,7 +164,7 @@ public class ec extends LinearLayout implements ip, iq, db, ex {
     /* renamed from: a */
     public Rect mo1661a(int i) {
         Rect g = this.f6371c.m1265g(i);
-        dv.m1936b(g, this.f6371c);
+        AnimUtils.m1936b(g, this.f6371c);
         return g;
     }
 
@@ -206,7 +206,7 @@ public class ec extends LinearLayout implements ip, iq, db, ex {
     /* renamed from: a */
     public void mo1664a(Rect rect) {
         rect.set(0, 0, this.f6371c.getWidth(), this.f6371c.getHeight());
-        dv.m1936b(rect, this.f6371c);
+        AnimUtils.m1936b(rect, this.f6371c);
     }
 
     /* renamed from: a */
@@ -324,7 +324,7 @@ public class ec extends LinearLayout implements ip, iq, db, ex {
             be.m10287a(getContext(), getResources().getString(C0258j.bookshelf__category_rename_view__name_exists), 0).show();
             return;
         }
-        dv.m1909a(getContext());
+        AnimUtils.m1909a(getContext());
         requestFocus();
         C1317a.m10197b(this.f6375g, 300, new ej(this, z, obj));
         C1317a.m10193a(this.f6376h, 1.0f, 0.0f, 300, Boolean.valueOf(false), null);

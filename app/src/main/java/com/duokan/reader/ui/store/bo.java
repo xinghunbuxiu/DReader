@@ -2,7 +2,7 @@ package com.duokan.reader.ui.store;
 
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.sys.IdleHandlerListener;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.common.p037c.C0559f;
@@ -21,7 +21,7 @@ class bo implements IdleHandlerListener {
             ReaderEnv.get().setLastCommentTime(System.currentTimeMillis());
             ActivatedController c1475a = new C1475a(this.f11378a.f11377a.getContext());
             ((ReaderFeature) this.f11378a.f11377a.getContext().queryFeature(ReaderFeature.class)).showPopup(c1475a);
-            dv.showAnimation(c1475a.getContentView(), null);
+            AnimUtils.showAnimation(c1475a.getContentView(), null);
         }
         return false;
     }

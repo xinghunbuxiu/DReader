@@ -5,7 +5,7 @@ import android.view.ViewGroup.MarginLayoutParams;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.ui.C0374a;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
 import com.umeng.analytics.pro.C2295j;
 
@@ -20,7 +20,7 @@ class gu extends gy {
         super(gsVar, mFeature, c0303e);
         this.f7306c.setIndicator(C0243e.general__shared__balloon_indicator);
         this.f7306c.setBackgroundResource(C0243e.general__shared__balloon_background);
-        this.f7306c.setIndicatorMargin(dv.m1932b(getContext(), 5.0f));
+        this.f7306c.setIndicatorMargin(AnimUtils.m1932b(getContext(), 5.0f));
         this.f7306c.addView(m10733b());
         LayoutParams marginLayoutParams = new MarginLayoutParams(-2, -2);
         switch (i) {

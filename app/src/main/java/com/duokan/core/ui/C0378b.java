@@ -18,7 +18,7 @@ class C0378b extends InsetDrawable {
     public void draw(Canvas canvas) {
         super.draw(canvas);
         if (this.f988a.f888c != null) {
-            Rect rect = (Rect) dv.f1198g.addAnimation();
+            Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
             this.f988a.m1365a(rect);
             if (!rect.isEmpty()) {
                 canvas.save();
@@ -30,7 +30,7 @@ class C0378b extends InsetDrawable {
                 this.f988a.f888c.draw(canvas);
                 canvas.restore();
             }
-            dv.f1198g.clearAnimation(rect);
+            AnimUtils.f1198g.clearAnimation(rect);
         }
     }
 }

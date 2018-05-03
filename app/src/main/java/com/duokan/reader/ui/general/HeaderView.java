@@ -16,7 +16,7 @@ import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0241c;
 import com.duokan.p023b.C0242d;
 import com.duokan.p023b.C0244f;
@@ -143,7 +143,7 @@ public class HeaderView extends FrameLayout {
         View imageView = new ImageView(getContext());
         imageView.setImageDrawable(drawable);
         imageView.setScaleType(ScaleType.CENTER);
-        imageView.setMinimumWidth(dv.m1932b(getContext(), 40.0f));
+        imageView.setMinimumWidth(AnimUtils.m1932b(getContext(), 40.0f));
         this.f6867c.addView(imageView, 0, new LinearLayout.LayoutParams(-2, -1));
         return imageView;
     }
@@ -160,7 +160,7 @@ public class HeaderView extends FrameLayout {
         if (!TextUtils.isEmpty(str)) {
             View textView = new TextView(getContext());
             textView.setTextSize(16.0f);
-            textView.setPadding(dv.m1932b(getContext(), 15.0f), 0, dv.m1932b(getContext(), 15.0f), 0);
+            textView.setPadding(AnimUtils.m1932b(getContext(), 15.0f), 0, AnimUtils.m1932b(getContext(), 15.0f), 0);
             textView.setGravity(17);
             textView.setText(str);
             textView.setSingleLine(true);
@@ -212,7 +212,7 @@ public class HeaderView extends FrameLayout {
         super.draw(canvas);
         if (!TextUtils.isEmpty(this.f6870f.getText())) {
             canvas.save();
-            Rect a = dv.m1904a(new Rect(), this.f6870f, (View) this);
+            Rect a = AnimUtils.m1904a(new Rect(), this.f6870f, (View) this);
             this.f6871g.setBounds(new Rect(a.right - (this.f6871g.getIntrinsicWidth() / 2), a.top - (this.f6871g.getIntrinsicHeight() / 2), a.right + (this.f6871g.getIntrinsicWidth() / 2), a.top + (this.f6871g.getIntrinsicHeight() / 2)));
             this.f6871g.draw(canvas);
             canvas.restore();
@@ -226,7 +226,7 @@ public class HeaderView extends FrameLayout {
         textView.setTextColor(getResources().getColor(C0241c.general__shared__c5));
         textView.setText(str);
         textView.setGravity(17);
-        int b = dv.m1932b(getContext(), 15.0f);
+        int b = AnimUtils.m1932b(getContext(), 15.0f);
         textView.setPadding(b, 0, b, 0);
         return textView;
     }

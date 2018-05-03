@@ -53,7 +53,7 @@ public class C0383g extends er {
         } else if (esVar instanceof C0385i) {
             C0385i c0385i = (C0385i) esVar;
             long eventTime = motionEvent.getEventTime();
-            if (this.f1285e <= 0 || (eventTime - this.f1287g < ((long) dv.getDoubleTapTimeout()) && dv.m1949d(new PointF(motionEvent.getX(), motionEvent.getY()), this.f1286f) <= ((double) dv.getScaledPagingTouchSlop(view.getContext())))) {
+            if (this.f1285e <= 0 || (eventTime - this.f1287g < ((long) AnimUtils.getDoubleTapTimeout()) && AnimUtils.m1949d(new PointF(motionEvent.getX(), motionEvent.getY()), this.f1286f) <= ((double) AnimUtils.getScaledPagingTouchSlop(view.getContext())))) {
                 m1622e(this.f1285e < this.f1283c + -1);
                 this.f1284d.m1611b(view, motionEvent, z, new C0384h(this, z, eventTime, c0385i, motionEvent));
                 if (!(m1618c() && this.f1284d.m1618c())) {

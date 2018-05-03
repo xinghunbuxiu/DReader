@@ -7,7 +7,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import com.duokan.core.app.BrightnessMode;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0241c;
 import com.duokan.p023b.C0243e;
 import com.duokan.reader.ReaderEnv;
@@ -506,7 +506,7 @@ class ReadingPrefs {
 
     /* renamed from: w */
     public int m12529w() {
-        return (m12528v() * dv.m1960f(this.f9142p, (float) this.f9141o)) / 10;
+        return (m12528v() * AnimUtils.m1960f(this.f9142p, (float) this.f9141o)) / 10;
     }
 
     /* renamed from: x */
@@ -521,12 +521,12 @@ class ReadingPrefs {
 
     /* renamed from: y */
     public int m12531y() {
-        return (m12530x() * dv.m1963g(this.f9142p, (float) this.f9127a)) / 10;
+        return (m12530x() * AnimUtils.m1963g(this.f9142p, (float) this.f9127a)) / 10;
     }
 
     /* renamed from: z */
     public int m12532z() {
-        return (m12530x() * dv.m1963g(this.f9142p, (float) this.f9128b)) / 10;
+        return (m12530x() * AnimUtils.m1963g(this.f9142p, (float) this.f9128b)) / 10;
     }
 
     /* renamed from: A */
@@ -824,6 +824,6 @@ class ReadingPrefs {
 
     /* renamed from: a */
     private int m12437a(Context context, float f) {
-        return (dv.spToPixels(context, f) / 2) * 2;
+        return (AnimUtils.spToPixels(context, f) / 2) * 2;
     }
 }

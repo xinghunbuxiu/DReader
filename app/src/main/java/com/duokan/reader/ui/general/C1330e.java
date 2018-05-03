@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.view.View;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.kernel.DkUtils;
 import com.duokan.reader.common.bitmap.C0544a;
 
@@ -31,10 +31,10 @@ public class C1330e extends es {
             super.mo1770a(canvas, view);
             return;
         }
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         rect.set(0, 0, this.f7139c.getWidth(), this.f7139c.getHeight());
         canvas.drawBitmap(this.f7139c, rect, getBounds(), this.f7137a);
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect);
     }
 
     /* renamed from: a */

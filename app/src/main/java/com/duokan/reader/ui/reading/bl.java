@@ -7,8 +7,8 @@ import android.graphics.Paint.Style;
 import android.graphics.Path;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
-import com.duokan.core.ui.dv;
+
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.domain.document.C0931c;
 import com.duokan.reader.ui.general.hc;
 
@@ -32,12 +32,12 @@ class bl extends FrameLayout {
         setWillNotDraw(false);
         setClipChildren(false);
         this.f9861e = m13800a(c0931c);
-        this.f9860d = dv.m1932b(context, 6.0f);
-        this.f9859c = dv.m1932b(context, 20.0f);
+        this.f9860d = AnimUtils.m1932b(context, 6.0f);
+        this.f9859c = AnimUtils.m1932b(context, 20.0f);
         this.f9862f = new xx(context, c0931c.m6433e());
         this.f9862f.setMaxWidth((int) c0931c.m6431c());
-        int b = dv.m1932b(context, 10.0f);
-        this.f9862f.setTextSize(dv.m1932b(context, 18.0f));
+        int b = AnimUtils.m1932b(context, 10.0f);
+        this.f9862f.setTextSize(AnimUtils.m1932b(context, 18.0f));
         this.f9862f.setPadding(b, b, b, b);
         this.f9862f.setBackgroundDrawable(new hc((float) (b / 2), (float) (b / 2), -1));
         addView(this.f9862f, new LayoutParams(-2, -2));
@@ -89,7 +89,7 @@ class bl extends FrameLayout {
         paint.setAntiAlias(true);
         paint.setColor(-1);
         paint.setStyle(Style.FILL);
-        paint.setStrokeWidth((float) dv.m1932b(getContext(), 1.5f));
+        paint.setStrokeWidth((float) AnimUtils.m1932b(getContext(), 1.5f));
         return paint;
     }
 

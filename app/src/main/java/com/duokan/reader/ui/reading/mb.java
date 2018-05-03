@@ -9,7 +9,7 @@ import android.graphics.Point;
 import android.graphics.PorterDuff.Mode;
 import android.graphics.PorterDuffXfermode;
 import android.view.View;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0254f;
 import com.duokan.reader.common.bitmap.C0544a;
 
@@ -21,9 +21,9 @@ public class mb extends View {
     /* renamed from: c */
     private final Bitmap f10609c = C0544a.m2444b(this.f10607a.getWidth(), this.f10607a.getHeight(), Config.ARGB_8888);
     /* renamed from: d */
-    private final int f10610d = dv.m1932b(getContext(), 115.0f);
+    private final int f10610d = AnimUtils.m1932b(getContext(), 115.0f);
     /* renamed from: e */
-    private final int f10611e = dv.m1932b(getContext(), 100.0f);
+    private final int f10611e = AnimUtils.m1932b(getContext(), 100.0f);
     /* renamed from: f */
     private final Canvas f10612f = new Canvas(this.f10609c);
     /* renamed from: g */

@@ -5,7 +5,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import com.duokan.core.ui.C0392q;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.ui.general.ix;
@@ -34,7 +34,7 @@ final class abv extends er {
     /* renamed from: a */
     protected void mo511a(View view, boolean z) {
         this.f9425c.m1612b(view, z);
-        this.f9425c.m1882a(dv.getScaledTouchSlop(view.getContext()));
+        this.f9425c.m1882a(AnimUtils.getScaledTouchSlop(view.getContext()));
         this.f9425c.m1881a(0.0f);
         this.f9425c.m1885b(-50.0f);
         this.f9425c.m1887c(50.0f);
@@ -67,26 +67,26 @@ final class abv extends er {
                     } else if (this.f9424a.f9382d.getDirection() == CurlDirection.PAGE_UP) {
                         if (this.f9424a.f9379a.al()) {
                             if ((-this.f9428f.x) > ((float) a)) {
-                                this.f9424a.f9382d.onDragEnd(new ix(view, motionEvent).m10817a(0, new PointF()), new PointF((float) (-dv.getScaledMinimumFlingVelocity(view.getContext())), 0.0f));
+                                this.f9424a.f9382d.onDragEnd(new ix(view, motionEvent).m10817a(0, new PointF()), new PointF((float) (-AnimUtils.getScaledMinimumFlingVelocity(view.getContext())), 0.0f));
                             } else {
-                                this.f9424a.f9382d.onDragEnd(new ix(view, motionEvent).m10817a(0, new PointF()), new PointF((float) dv.getScaledMinimumFlingVelocity(view.getContext()), 0.0f));
+                                this.f9424a.f9382d.onDragEnd(new ix(view, motionEvent).m10817a(0, new PointF()), new PointF((float) AnimUtils.getScaledMinimumFlingVelocity(view.getContext()), 0.0f));
                             }
                         } else if (this.f9428f.x > ((float) a)) {
-                            this.f9424a.f9382d.onDragEnd(new ix(view, motionEvent).m10817a(0, new PointF()), new PointF((float) dv.getScaledMinimumFlingVelocity(view.getContext()), 0.0f));
+                            this.f9424a.f9382d.onDragEnd(new ix(view, motionEvent).m10817a(0, new PointF()), new PointF((float) AnimUtils.getScaledMinimumFlingVelocity(view.getContext()), 0.0f));
                         } else {
-                            this.f9424a.f9382d.onDragEnd(new ix(view, motionEvent).m10817a(0, new PointF()), new PointF((float) (-dv.getScaledMinimumFlingVelocity(view.getContext())), 0.0f));
+                            this.f9424a.f9382d.onDragEnd(new ix(view, motionEvent).m10817a(0, new PointF()), new PointF((float) (-AnimUtils.getScaledMinimumFlingVelocity(view.getContext())), 0.0f));
                         }
                     } else if (this.f9424a.f9382d.getDirection() == CurlDirection.PAGE_DOWN) {
                         if (this.f9424a.f9379a.al()) {
                             if (this.f9428f.x > ((float) a)) {
-                                this.f9424a.f9382d.onDragEnd(new ix(view, motionEvent).m10817a(0, new PointF()), new PointF((float) dv.getScaledMinimumFlingVelocity(view.getContext()), 0.0f));
+                                this.f9424a.f9382d.onDragEnd(new ix(view, motionEvent).m10817a(0, new PointF()), new PointF((float) AnimUtils.getScaledMinimumFlingVelocity(view.getContext()), 0.0f));
                             } else {
-                                this.f9424a.f9382d.onDragEnd(new ix(view, motionEvent).m10817a(0, new PointF()), new PointF((float) (-dv.getScaledMinimumFlingVelocity(view.getContext())), 0.0f));
+                                this.f9424a.f9382d.onDragEnd(new ix(view, motionEvent).m10817a(0, new PointF()), new PointF((float) (-AnimUtils.getScaledMinimumFlingVelocity(view.getContext())), 0.0f));
                             }
                         } else if ((-this.f9428f.x) > ((float) a)) {
-                            this.f9424a.f9382d.onDragEnd(new ix(view, motionEvent).m10817a(0, new PointF()), new PointF((float) (-dv.getScaledMinimumFlingVelocity(view.getContext())), 0.0f));
+                            this.f9424a.f9382d.onDragEnd(new ix(view, motionEvent).m10817a(0, new PointF()), new PointF((float) (-AnimUtils.getScaledMinimumFlingVelocity(view.getContext())), 0.0f));
                         } else {
-                            this.f9424a.f9382d.onDragEnd(new ix(view, motionEvent).m10817a(0, new PointF()), new PointF((float) dv.getScaledMinimumFlingVelocity(view.getContext()), 0.0f));
+                            this.f9424a.f9382d.onDragEnd(new ix(view, motionEvent).m10817a(0, new PointF()), new PointF((float) AnimUtils.getScaledMinimumFlingVelocity(view.getContext()), 0.0f));
                         }
                     }
                     this.f9430h = false;

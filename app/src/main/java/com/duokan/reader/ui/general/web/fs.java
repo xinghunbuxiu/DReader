@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import org.json.JSONObject;
 
 class fs implements OnClickListener {
@@ -34,6 +34,6 @@ class fs implements OnClickListener {
         }
         this.f7857a.setText("");
         this.f7857a.clearFocus();
-        dv.m1909a(this.f7858b.f7852g.f7845b.f7581b.getContext());
+        AnimUtils.m1909a(this.f7858b.f7852g.f7845b.f7581b.getContext());
     }
 }

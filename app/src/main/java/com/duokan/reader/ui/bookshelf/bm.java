@@ -3,7 +3,7 @@ package com.duokan.reader.ui.bookshelf;
 import android.content.Context;
 import android.graphics.Rect;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0253e;
 import com.duokan.p024c.C0254f;
 import com.duokan.reader.ui.general.C1332f;
@@ -40,13 +40,13 @@ class bm extends de {
     /* renamed from: a */
     protected void mo1636a(Rect rect) {
         rect.set(getCoverDrawable().getBounds());
-        Rect rect2 = (Rect) dv.f1198g.addAnimation();
+        Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
         getResources().getDrawable(C0254f.bookshelf__recently_reading_cover_shadow).getPadding(rect2);
         rect.left += rect2.left;
         rect.top += rect2.top;
         rect.right -= rect2.right;
         rect.bottom -= rect2.bottom;
-        dv.f1198g.clearAnimation(rect2);
+        AnimUtils.f1198g.clearAnimation(rect2);
     }
 
     protected C1332f getBookCoverDrawable() {

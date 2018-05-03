@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import java.util.concurrent.Callable;
 
 /* renamed from: com.duokan.reader.ui.bookshelf.j */
@@ -33,7 +33,7 @@ class C1296j implements Callable<Boolean> {
             this.f6648b.f6488h.m9804a(false);
         }
         if (this.f6648b.f6489i.getVisibility() == 0) {
-            dv.m1921a(this.f6648b.f6489i, new C1297k(this));
+            AnimUtils.m1921a(this.f6648b.f6489i, new C1297k(this));
         }
         return Boolean.valueOf(false);
     }

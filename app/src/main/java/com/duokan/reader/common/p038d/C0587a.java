@@ -2,7 +2,7 @@ package com.duokan.reader.common.p038d;
 
 import android.os.Handler;
 import android.os.Looper;
-import com.duokan.core.app.C0286x;
+import com.duokan.core.app.ApplicationsStateCallbacks;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.reader.DkApp;
@@ -15,7 +15,7 @@ import com.duokan.reader.domain.account.C0672a;
 import com.duokan.reader.domain.account.C0709k;
 
 /* renamed from: com.duokan.reader.common.d.a */
-public class C0587a implements C0286x, C0563j, C0585n, C0586j {
+public class C0587a implements ApplicationsStateCallbacks, C0563j, C0585n, C0586j {
     /* renamed from: a */
     private final Handler f1911a = new Handler(Looper.getMainLooper());
     /* renamed from: b */

@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 final class ii extends View {
     /* renamed from: a */
@@ -36,7 +36,7 @@ final class ii extends View {
             return null;
         }
         ViewGroup viewGroup = (ViewGroup) parent;
-        dv.hideAnimation((View) this, new ij(this, viewGroup, viewGroup.indexOfChild(this)));
+        AnimUtils.hideAnimation((View) this, new ij(this, viewGroup, viewGroup.indexOfChild(this)));
         return this.f7379b;
     }
 

@@ -6,13 +6,12 @@ import android.text.TextUtils.TruncateAt;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.duokan.core.sys.ag;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
@@ -96,7 +95,7 @@ public class C1270v extends RelativeLayout {
         c1271w.addView(this.f5981c, new LayoutParams(0, -2));
         this.f5982d = new TextView(getContext());
         this.f5982d.setTextColor(getResources().getColor(C0252d.general__shared__c7));
-        this.f5982d.setPadding(dv.m1932b(getContext(), 6.0f), 0, dv.m1932b(getContext(), 10.0f), 0);
+        this.f5982d.setPadding(AnimUtils.m1932b(getContext(), 6.0f), 0, AnimUtils.m1932b(getContext(), 10.0f), 0);
         this.f5982d.setTextSize(1, 12.0f);
         c1271w.addView(this.f5982d);
         this.f5983e = new TextView(getContext());
@@ -105,7 +104,7 @@ public class C1270v extends RelativeLayout {
         this.f5983e.setGravity(5);
         c1271w.addView(this.f5983e);
         LayoutParams layoutParams = new LinearLayout.LayoutParams(-1, -2);
-        layoutParams.setMargins(dv.m1932b(getContext(), 28.0f), dv.m1932b(getContext(), 40.0f), dv.m1932b(getContext(), 28.0f), dv.m1932b(getContext(), 25.0f));
+        layoutParams.setMargins(AnimUtils.m1932b(getContext(), 28.0f), AnimUtils.m1932b(getContext(), 40.0f), AnimUtils.m1932b(getContext(), 28.0f), AnimUtils.m1932b(getContext(), 25.0f));
         linearLayout.addView(c1271w, 0, layoutParams);
     }
 

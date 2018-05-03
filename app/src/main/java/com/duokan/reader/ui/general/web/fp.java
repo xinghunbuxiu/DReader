@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.duokan.core.sys.as;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0255g;
 import org.json.JSONObject;
 
@@ -54,7 +54,7 @@ class fp implements as {
                     textView.setOnClickListener(new fs(this, view));
                 }
                 if (this.f7851f) {
-                    dv.m1915a(view);
+                    AnimUtils.m1915a(view);
                     return;
                 }
                 return;

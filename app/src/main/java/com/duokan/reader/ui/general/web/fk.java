@@ -2,7 +2,7 @@ package com.duokan.reader.ui.general.web;
 
 import android.graphics.Rect;
 import com.duokan.core.sys.as;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -31,7 +31,7 @@ class fk implements as {
         Rect rect = new Rect();
         int i2 = jSONArray2.getInt(0);
         int i3 = jSONArray2.getInt(1);
-        rect.set(dv.m1932b(this.f7837b.f7581b.getContext(), (float) i2), dv.m1932b(this.f7837b.f7581b.getContext(), (float) i3), dv.m1932b(this.f7837b.f7581b.getContext(), (float) (i2 + jSONArray2.getInt(2))), dv.m1932b(this.f7837b.f7581b.getContext(), (float) (i3 + jSONArray2.getInt(3))));
+        rect.set(AnimUtils.m1932b(this.f7837b.f7581b.getContext(), (float) i2), AnimUtils.m1932b(this.f7837b.f7581b.getContext(), (float) i3), AnimUtils.m1932b(this.f7837b.f7581b.getContext(), (float) (i2 + jSONArray2.getInt(2))), AnimUtils.m1932b(this.f7837b.f7581b.getContext(), (float) (i3 + jSONArray2.getInt(3))));
         this.f7837b.m11016a(new fl(this, rect, strArr, string));
     }
 }

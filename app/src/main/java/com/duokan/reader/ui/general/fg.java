@@ -12,7 +12,7 @@ import com.duokan.common.C0267i;
 import com.duokan.core.ui.BoxView;
 import com.duokan.core.ui.C0342j;
 import com.duokan.core.ui.C0374a;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
@@ -39,7 +39,7 @@ class fg implements dq {
         this.f7218f = (ViewGroup) this.f7215c.findViewById(C0244f.general__spirt_dialog_view__content_extra);
         this.f7214b = new C0374a(context);
         this.f7214b.setGravity(48);
-        this.f7214b.setIndicatorMargin(dv.m1932b(context, 11.0f));
+        this.f7214b.setIndicatorMargin(AnimUtils.m1932b(context, 11.0f));
         this.f7214b.setIndicator(C0243e.store__search_hint_view__indicator);
         this.f7214b.setBackgroundDrawable(context.getResources().getDrawable(C0243e.store__search_hint_view__bg));
         this.f7214b.addView(this.f7215c, new LayoutParams(-2, -2));
@@ -48,8 +48,8 @@ class fg implements dq {
 
     /* renamed from: a */
     public void m10640a(Rect rect) {
-        LayoutParams marginLayoutParams = new MarginLayoutParams(dv.m1932b(this.f7213a.getContext(), 240.0f), -2);
-        int b = dv.m1932b(this.f7213a.getContext(), 10.0f);
+        LayoutParams marginLayoutParams = new MarginLayoutParams(AnimUtils.m1932b(this.f7213a.getContext(), 240.0f), -2);
+        int b = AnimUtils.m1932b(this.f7213a.getContext(), 10.0f);
         marginLayoutParams.leftMargin = b;
         marginLayoutParams.rightMargin = b;
         this.f7213a.showBalloon(this.f7214b, rect, marginLayoutParams);
@@ -58,8 +58,8 @@ class fg implements dq {
 
     /* renamed from: a */
     public void m10641a(View view) {
-        LayoutParams marginLayoutParams = new MarginLayoutParams(dv.m1932b(this.f7213a.getContext(), 240.0f), -2);
-        int b = dv.m1932b(this.f7213a.getContext(), 10.0f);
+        LayoutParams marginLayoutParams = new MarginLayoutParams(AnimUtils.m1932b(this.f7213a.getContext(), 240.0f), -2);
+        int b = AnimUtils.m1932b(this.f7213a.getContext(), 10.0f);
         marginLayoutParams.leftMargin = b;
         marginLayoutParams.rightMargin = b;
         this.f7213a.showBalloon(this.f7214b, view, marginLayoutParams);

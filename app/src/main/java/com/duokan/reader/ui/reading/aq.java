@@ -9,7 +9,7 @@ import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.af;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.et;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0258j;
@@ -166,7 +166,7 @@ public class aq extends gs implements SystemUiConditioner {
         }
         this.f9802u = new al(getContext());
         showPopup(this.f9802u);
-        dv.showAnimation(this.f9802u.getContentView(), null);
+        AnimUtils.showAnimation(this.f9802u.getContentView(), null);
         return true;
     }
 
@@ -187,7 +187,7 @@ public class aq extends gs implements SystemUiConditioner {
             return super.onRequestDetach(c0303e);
         }
         if (this.f9802u.getContentView().getAnimation() == null) {
-            dv.hideAnimation(this.f9802u.getContentView(), new as(this));
+            AnimUtils.hideAnimation(this.f9802u.getContentView(), new as(this));
         }
         return true;
     }

@@ -50,13 +50,13 @@ public class ExtendView extends FrameLayout {
             } else if (!this.alphaAnimation.hasEnded()) {
                 invalidate(this.rect);
             }
-            Transformation transformation = (Transformation) dv.f1194c.addAnimation();
+            Transformation transformation = (Transformation) AnimUtils.f1194c.addAnimation();
             this.alphaAnimation.getTransformation(getDrawingTime(), transformation);
             this.rect.left = Math.round((((float) this.rect1.left) + (((float) (getLeft() - this.rect1.left)) * transformation.getAlpha())) - ((float) getLeft()));
             this.rect.top = Math.round((((float) this.rect1.top) + (((float) (getTop() - this.rect1.top)) * transformation.getAlpha())) - ((float) getTop()));
             this.rect.right = Math.round((((float) this.rect1.right) + (((float) (getRight() - this.rect1.right)) * transformation.getAlpha())) - ((float) getLeft()));
             this.rect.bottom = Math.round((((float) this.rect1.bottom) + (((float) (getBottom() - this.rect1.bottom)) * transformation.getAlpha())) - ((float) getTop()));
-            dv.f1194c.clearAnimation(transformation);
+            AnimUtils.f1194c.clearAnimation(transformation);
         } else {
             this.rect.set(0, 0, getWidth(), getHeight());
         }

@@ -3,7 +3,7 @@ package com.duokan.reader.ui.reading.p054a;
 import android.view.MotionEvent;
 import android.view.View;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 
@@ -17,7 +17,7 @@ public class C1426g extends er {
         this.f9217a.m1612b(view, z);
         this.f9217a.m1885b(45.0f);
         this.f9217a.m1887c(135.0f);
-        this.f9217a.m1882a(dv.getScaledPagingTouchSlop(view.getContext()));
+        this.f9217a.m1882a(AnimUtils.getScaledPagingTouchSlop(view.getContext()));
     }
 
     /* renamed from: a */

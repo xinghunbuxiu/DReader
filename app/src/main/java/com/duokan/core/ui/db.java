@@ -33,10 +33,10 @@ class db extends BoxView {
             if (!this.f1128b.f1109q.hasStarted()) {
                 this.f1128b.f1109q.start();
             }
-            Transformation transformation = (Transformation) dv.f1194c.addAnimation();
+            Transformation transformation = (Transformation) AnimUtils.f1194c.addAnimation();
             this.f1128b.f1109q.getTransformation(AnimationUtils.currentAnimationTimeMillis(), transformation);
             alpha = transformation.getAlpha();
-            dv.f1194c.clearAnimation(transformation);
+            AnimUtils.f1194c.clearAnimation(transformation);
             if (this.f1128b.f1109q.hasEnded()) {
                 this.f1128b.f1109q = null;
                 i = 0;

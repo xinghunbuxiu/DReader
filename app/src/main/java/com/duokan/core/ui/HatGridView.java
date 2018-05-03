@@ -126,7 +126,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.f817g = new FrameLayout(context);
         this.f817g.setClipChildren(false);
         this.f817g.setClipToPadding(false);
-        this.f817g.setMinimumHeight(dv.m1962g(getContext()));
+        this.f817g.setMinimumHeight(AnimUtils.m1962g(getContext()));
         this.f815e.addView(this.f817g, new LinearLayout.LayoutParams(-1, -2));
         this.f818h = new FrameLayout(context);
         this.f818h.setClipChildren(false);
@@ -878,7 +878,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         } else if (getScrollState() == ScrollState.IDLE) {
             this.f811a.scrollBy(0, 0);
         }
-        this.f811a.m1124b(0, this.f820j.getHeight() + dv.m1932b(getContext(), 2.0f), dv.m1932b(getContext(), 2.0f), dv.m1932b(getContext(), 6.0f));
+        this.f811a.m1124b(0, this.f820j.getHeight() + AnimUtils.m1932b(getContext(), 2.0f), AnimUtils.m1932b(getContext(), 2.0f), AnimUtils.m1932b(getContext(), 6.0f));
     }
 
     /* renamed from: a */
@@ -1022,7 +1022,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         if (this.f821k.isEnabled() && this.f821k.getVisibility() != 0) {
             this.f821k.clearAnimation();
             this.f821k.setVisibility(0);
-            dv.showAnimation(this.f821k, null);
+            AnimUtils.showAnimation(this.f821k, null);
         }
     }
 
@@ -1031,7 +1031,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         if (this.f821k.isEnabled() && this.f821k.getVisibility() != 4) {
             this.f821k.clearAnimation();
             this.f821k.setVisibility(4);
-            dv.hideAnimation(this.f821k, null);
+            AnimUtils.hideAnimation(this.f821k, null);
         }
     }
 

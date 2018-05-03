@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.et;
 import com.duokan.p024c.C0255g;
@@ -166,7 +166,7 @@ public class nh extends ActivatedController implements ak {
         alphaAnimation.setAnimationListener(new no(this, runnable));
         Runnable npVar = new np(this, alphaAnimation, i, i2, i3, i4);
         if (this.f10669c.isLayoutRequested()) {
-            dv.m1921a(this.f10669c, npVar);
+            AnimUtils.m1921a(this.f10669c, npVar);
         } else {
             npVar.run();
         }

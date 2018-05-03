@@ -7,31 +7,33 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.multidex.MultiDexApplication;
 import android.view.KeyEvent;
+
 import com.duokan.core.sys.UThread;
+
 import java.lang.ref.WeakReference;
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ManagedApp extends MultiDexApplication implements ISubController, IFeature {
-    /* renamed from: a */
-    static final /* synthetic */ boolean f494a = (!ManagedApp.class.desiredAssertionStatus());
-    /* renamed from: b */
-    private static ManagedApp f495b = null;
-    /* renamed from: c */
-    private final ConcurrentLinkedQueue<WeakReference<Activity>> f496c = new ConcurrentLinkedQueue();
-    /* renamed from: d */
-    private final CopyOnWriteArrayList<C0297a> f497d = new CopyOnWriteArrayList();
-    /* renamed from: e */
-    private final CopyOnWriteArrayList<C0286x> f498e = new CopyOnWriteArrayList();
-    /* renamed from: f */
-    private final FeatureManage f499f = new FeatureManage();
-    /* renamed from: g */
-    private RunningState f500g = RunningState.UNDERGROUND;
-    /* renamed from: h */
-    private long f501h = System.currentTimeMillis();
-    /* renamed from: i */
-    private Runnable f502i = null;
+
+    static final boolean desAsseertionStatus = (!ManagedApp.class.desiredAssertionStatus());
+
+    private static ManagedApp managedApp = null;
+
+    private final ConcurrentLinkedQueue<WeakReference<BaseActivity>> activitys = new ConcurrentLinkedQueue();
+
+    private final CopyOnWriteArrayList<IActivityLifecycleCallbacks> lifecycleCallbacks = new CopyOnWriteArrayList();
+
+    private final CopyOnWriteArrayList<ApplicationsStateCallbacks> runStatusChangeds = new CopyOnWriteArrayList();
+
+    private final FeatureManage featureManage = new FeatureManage();
+
+    private RunningState runningState = RunningState.UNDERGROUND;
+
+    private long currentTimeMillis = System.currentTimeMillis();
+
+    private Runnable runnable = null;
 
     public enum RunningState {
         UNDERGROUND,
@@ -41,8 +43,43 @@ public class ManagedApp extends MultiDexApplication implements ISubController, I
 
     @TargetApi(14)
     protected ManagedApp() {
-        f495b = this;
-        registerActivityLifecycleCallbacks(new C0318v(this));
+        managedApp = this;
+        registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
+            @Override
+            public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+                managedApp.onActivityCreated(activity, savedInstanceState);
+            }
+
+            @Override
+            public void onActivityStarted(Activity activity) {
+
+            }
+
+            @Override
+            public void onActivityResumed(Activity activity) {
+                managedApp.onActivityResumed(activity);
+            }
+
+            @Override
+            public void onActivityPaused(Activity activity) {
+                managedApp.onActivityPaused(activity);
+            }
+
+            @Override
+            public void onActivityStopped(Activity activity) {
+                managedApp.onActivityPaused(activity);
+            }
+
+            @Override
+            public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
+
+            }
+
+            @Override
+            public void onActivityDestroyed(Activity activity) {
+                managedApp.onActivityDestroyed(activity);
+            }
+        });
     }
 
     public final boolean isDebuggable() {
@@ -50,18 +87,18 @@ public class ManagedApp extends MultiDexApplication implements ISubController, I
     }
 
     public final RunningState getRunningState() {
-        return this.f500g;
+        return this.runningState;
     }
 
     public final long getRunningStateMillis() {
-        return Math.max(0, System.currentTimeMillis() - this.f501h);
+        return Math.max(0, System.currentTimeMillis() - this.currentTimeMillis);
     }
 
     public final Activity getTopActivity() {
-        Iterator it = this.f496c.iterator();
+        Iterator<WeakReference<BaseActivity>> it = this.activitys.iterator();
         Activity activity = null;
         while (it.hasNext()) {
-            Activity activity2 = (Activity) ((WeakReference) it.next()).get();
+            Activity activity2 = it.next().get();
             if (AppManage.isFinishing(activity2)) {
                 activity = activity2;
             }
@@ -73,43 +110,43 @@ public class ManagedApp extends MultiDexApplication implements ISubController, I
         return getTopActivity() != null;
     }
 
-    public final void addActivityLifecycleMonitor(C0297a c0297a) {
-        if (f494a || c0297a != null) {
-            this.f497d.addIfAbsent(c0297a);
+    public final void addActivityLifecycleMonitor(IActivityLifecycleCallbacks mctivityLife) {
+        if (desAsseertionStatus || mctivityLife != null) {
+            this.lifecycleCallbacks.addIfAbsent(mctivityLife);
             return;
         }
         throw new AssertionError();
     }
 
-    public final void removeActivityLifecycleMonitor(C0297a c0297a) {
-        if (f494a || c0297a != null) {
-            this.f497d.remove(c0297a);
+    public final void removeActivityLifecycleMonitor(IActivityLifecycleCallbacks mctivityLife) {
+        if (desAsseertionStatus || mctivityLife != null) {
+            this.lifecycleCallbacks.remove(mctivityLife);
             return;
         }
         throw new AssertionError();
     }
 
-    public final void addOnRunningStateChangedListener(C0286x c0286x) {
-        if (f494a || c0286x != null) {
-            this.f498e.addIfAbsent(c0286x);
+    public final void addOnRunningStateChangedListener(ApplicationsStateCallbacks stateCallbacks) {
+        if (desAsseertionStatus || stateCallbacks != null) {
+            this.runStatusChangeds.addIfAbsent(stateCallbacks);
             return;
         }
         throw new AssertionError();
     }
 
-    public final void removeOnRunningStateChangedListener(C0286x c0286x) {
-        this.f498e.remove(c0286x);
+    public final void removeOnRunningStateChangedListener(ApplicationsStateCallbacks stateCallbacks) {
+        this.runStatusChangeds.remove(stateCallbacks);
     }
 
     public static ManagedApp get() {
-        return f495b;
+        return managedApp;
     }
 
-    public final void onActivityResult(BaseActivity mActivity, int i, int i2, Intent intent) {
-        if (!f494a && mActivity == null) {
+    public final void onActivityResult(BaseActivity mActivity, int requestCode, int resultCode, Intent intent) {
+        if (!desAsseertionStatus && mActivity == null) {
             throw new AssertionError();
         } else if (mActivity.getContentController() != null) {
-            mActivity.getContentController().onActivityResult(mActivity, i, i2, intent);
+            mActivity.getContentController().onActivityResult(mActivity, requestCode, resultCode, intent);
         }
     }
 
@@ -125,16 +162,16 @@ public class ManagedApp extends MultiDexApplication implements ISubController, I
         return null;
     }
 
-    public boolean requestShowMenu(ActivatedController c0303e) {
-        return c0303e.onActivityShowMenu();
+    public boolean requestShowMenu(ActivatedController activatedController) {
+        return activatedController.onActivityShowMenu();
     }
 
-    public boolean requestHideMenu(ActivatedController c0303e) {
-        return c0303e.onActivityHideMenu();
+    public boolean requestHideMenu(ActivatedController activatedController) {
+        return activatedController.onActivityHideMenu();
     }
 
-    public boolean requestSoftInputMode(ActivatedController c0303e, int i) {
-        c0303e.getActivity().getWindow().setSoftInputMode(i);
+    public boolean requestSoftInputMode(ActivatedController activatedController, int i) {
+        activatedController.getActivity().getWindow().setSoftInputMode(i);
         return true;
     }
 
@@ -142,8 +179,8 @@ public class ManagedApp extends MultiDexApplication implements ISubController, I
         return false;
     }
 
-    public int getSoftInputMode(ActivatedController c0303e) {
-        return c0303e.getActivity().getWindow().getAttributes().softInputMode;
+    public int getSoftInputMode(ActivatedController controller) {
+        return controller.getActivity().getWindow().getAttributes().softInputMode;
     }
 
     public <T extends FeatureListening> T queryFeature(Class<T> cls) {
@@ -154,43 +191,45 @@ public class ManagedApp extends MultiDexApplication implements ISubController, I
         if (cls == null) {
             return null;
         }
-        return this.f499f.isContainsListener((Class) cls);
+        return this.featureManage.isContainsListener(cls);
     }
 
     public boolean registerLocalFeature(FeatureListening featureListening) {
-        return this.f499f.addFeatureListener(featureListening);
+        return this.featureManage.addFeatureListener(featureListening);
     }
 
     public boolean unregisterLocalFeature(FeatureListening featureListening) {
-        return this.f499f.removeFeatureListener(featureListening);
+        return this.featureManage.removeFeatureListener(featureListening);
     }
 
     public boolean registerGlobalFeature(FeatureListening featureListening) {
-        return this.f499f.addFeatureListener(featureListening);
+        return this.featureManage.addFeatureListener(featureListening);
     }
 
     public boolean unregisterGlobalFeature(FeatureListening featureListening) {
-        return this.f499f.removeFeatureListener(featureListening);
+        return this.featureManage.removeFeatureListener(featureListening);
     }
 
     public final void onActivityConfigurationChanged(BaseActivity mActivity, Configuration configuration) {
-        if (!f494a && mActivity == null) {
+        if (!desAsseertionStatus && mActivity == null) {
             throw new AssertionError();
         } else if (mActivity.getContentController() != null) {
             mActivity.getContentController().onActivityConfigurationChanged(mActivity, configuration);
         }
     }
 
+    @Override
     public final void onActivityWindowFocusChanged(BaseActivity mActivity, boolean z) {
-        if (!f494a && mActivity == null) {
+        if (!desAsseertionStatus && mActivity == null) {
             throw new AssertionError();
         } else if (mActivity.getContentController() != null) {
             mActivity.getContentController().onActivityWindowFocusChanged(mActivity, z);
         }
     }
 
+    @Override
     public final boolean onActivityKeyDown(BaseActivity mActivity, int i, KeyEvent keyEvent) {
-        if (!f494a && mActivity == null) {
+        if (!desAsseertionStatus && mActivity == null) {
             throw new AssertionError();
         } else if (mActivity.getContentController() != null) {
             return mActivity.getContentController().onActivityKeyDown(mActivity, i, keyEvent);
@@ -199,6 +238,7 @@ public class ManagedApp extends MultiDexApplication implements ISubController, I
         }
     }
 
+    @Override
     public final boolean onActivityKeyUp(BaseActivity mActivity, int i, KeyEvent keyEvent) {
         if (mActivity.getContentController() != null) {
             return mActivity.getContentController().onActivityKeyUp(mActivity, i, keyEvent);
@@ -213,13 +253,14 @@ public class ManagedApp extends MultiDexApplication implements ISubController, I
         return false;
     }
 
+    @Override
     public void onTrimMemory(int i) {
         if (i == 20) {
             runningState(RunningState.BACKGROUND);
         }
-        Iterator it = this.f496c.iterator();
+        Iterator<WeakReference<BaseActivity>> it = this.activitys.iterator();
         while (it.hasNext()) {
-            Activity activity = (Activity) ((WeakReference) it.next()).get();
+            BaseActivity activity = it.next().get();
             if (!(activity == null || activity.isFinishing())) {
                 activity = managedActivity(activity);
                 if (activity != null) {
@@ -237,13 +278,13 @@ public class ManagedApp extends MultiDexApplication implements ISubController, I
     }
 
     protected void onActivityCreated(Activity activity, Bundle bundle) {
-        if (f494a || activity != null) {
-            this.f496c.add(new WeakReference(activity));
-            Iterator it = this.f497d.iterator();
+        if (desAsseertionStatus || activity != null) {
+            this.activitys.add(new WeakReference(activity));
+            Iterator<IActivityLifecycleCallbacks> it = this.lifecycleCallbacks.iterator();
             while (it.hasNext()) {
-                ((C0297a) it.next()).onActivityCreated(activity, bundle);
+                it.next().onActivityCreated(activity, bundle);
             }
-            if (this.f500g == RunningState.UNDERGROUND) {
+            if (this.runningState == RunningState.UNDERGROUND) {
                 runningState(RunningState.BACKGROUND);
             }
             BaseActivity managedActivity = managedActivity(activity);
@@ -257,10 +298,10 @@ public class ManagedApp extends MultiDexApplication implements ISubController, I
     }
 
     protected void onActivityPaused(Activity activity) {
-        if (f494a || activity != null) {
-            Iterator it = this.f497d.iterator();
+        if (desAsseertionStatus || activity != null) {
+            Iterator it = this.lifecycleCallbacks.iterator();
             while (it.hasNext()) {
-                ((C0297a) it.next()).onActivityPaused(activity);
+                ((IActivityLifecycleCallbacks) it.next()).onActivityPaused(activity);
             }
             runningState(RunningState.BACKGROUND, 5000);
             BaseActivity managedActivity = managedActivity(activity);
@@ -274,18 +315,18 @@ public class ManagedApp extends MultiDexApplication implements ISubController, I
     }
 
     protected void onActivityResumed(Activity activity) {
-        if (f494a || activity != null) {
-            Iterator it = this.f496c.iterator();
+        if (desAsseertionStatus || activity != null) {
+            Iterator<WeakReference<BaseActivity>> it = this.activitys.iterator();
             while (it.hasNext()) {
-                Activity activity2 = (Activity) ((WeakReference) it.next()).get();
+                BaseActivity activity2 = it.next().get();
                 if (activity2 == null || activity2 == activity) {
                     it.remove();
                 }
             }
-            this.f496c.add(new WeakReference(activity));
-            it = this.f497d.iterator();
-            while (it.hasNext()) {
-                ((C0297a) it.next()).onActivityResumed(activity);
+            this.activitys.add(new WeakReference(activity));
+            Iterator<IActivityLifecycleCallbacks> callbacksIterator = this.lifecycleCallbacks.iterator();
+            while (callbacksIterator.hasNext()) {
+                callbacksIterator.next().onActivityResumed(activity);
             }
             runningState(RunningState.FOREGROUND);
             BaseActivity managedActivity = managedActivity(activity);
@@ -299,19 +340,19 @@ public class ManagedApp extends MultiDexApplication implements ISubController, I
     }
 
     protected void onActivityDestroyed(Activity activity) {
-        if (f494a || activity != null) {
-            Iterator it = this.f496c.iterator();
+        if (desAsseertionStatus || activity != null) {
+            Iterator<WeakReference<BaseActivity>> it = this.activitys.iterator();
             while (it.hasNext()) {
-                Activity activity2 = (Activity) ((WeakReference) it.next()).get();
+                Activity activity2 = it.next().get();
                 if (activity2 == null || activity2 == activity) {
                     it.remove();
                 }
             }
-            it = this.f497d.iterator();
-            while (it.hasNext()) {
-                ((C0297a) it.next()).onActivityDestroyed(activity);
+            Iterator<IActivityLifecycleCallbacks> callbacksIterator = this.lifecycleCallbacks.iterator();
+            while (callbacksIterator.hasNext()) {
+                callbacksIterator.next().onActivityDestroyed(activity);
             }
-            if (this.f496c.isEmpty()) {
+            if (this.activitys.isEmpty()) {
                 runningState(RunningState.UNDERGROUND);
             }
             BaseActivity managedActivity = managedActivity(activity);
@@ -331,22 +372,29 @@ public class ManagedApp extends MultiDexApplication implements ISubController, I
         return null;
     }
 
-    private void runningState(RunningState runningState, int i) {
-        this.f502i = new C0319w(this, runningState);
-        UThread.postDelayed(this.f502i, (long) i);
+    private void runningState(final RunningState runState, int delayMillis) {
+        this.runnable = new Runnable() {
+            @Override
+            public void run() {
+//                if (this.managedApp.runnable == this) {
+                managedApp.runningState(runState);
+
+            }
+        };
+        UThread.postDelayed(this.runnable, delayMillis);
     }
 
     private void runningState(RunningState runningState) {
-        if (this.f500g != runningState) {
-            RunningState runningState2 = this.f500g;
-            this.f500g = runningState;
-            this.f501h = System.currentTimeMillis();
-            onRunningStateChanged(runningState2, this.f500g);
-            Iterator it = this.f498e.iterator();
+        if (this.runningState != runningState) {
+            RunningState runningState2 = this.runningState;
+            this.runningState = runningState;
+            this.currentTimeMillis = System.currentTimeMillis();
+            onRunningStateChanged(runningState2, this.runningState);
+            Iterator<ApplicationsStateCallbacks> it = this.runStatusChangeds.iterator();
             while (it.hasNext()) {
-                ((C0286x) it.next()).onRunningStateChanged(this, runningState2, this.f500g);
+                it.next().onRunningStateChanged(this, runningState2, this.runningState);
             }
         }
-        this.f502i = null;
+        this.runnable = null;
     }
 }

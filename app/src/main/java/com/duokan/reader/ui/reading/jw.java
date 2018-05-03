@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
 import com.duokan.reader.domain.document.ac;
 
@@ -12,7 +12,7 @@ public class jw extends FrameLayout implements jx {
     /* renamed from: a */
     private final ac f10475a;
     /* renamed from: b */
-    private final int f10476b = dv.m1932b(getContext(), 2.0f);
+    private final int f10476b = AnimUtils.m1932b(getContext(), 2.0f);
     /* renamed from: c */
     private final Drawable f10477c = getResources().getDrawable(C0243e.general__shared__jindu_02);
     /* renamed from: d */

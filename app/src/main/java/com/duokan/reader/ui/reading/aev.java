@@ -5,7 +5,7 @@ import android.graphics.PointF;
 import android.graphics.Rect;
 import android.view.View;
 import com.duokan.core.ui.du;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.reader.domain.document.C0897d;
 import com.duokan.reader.domain.document.C0941i;
@@ -37,19 +37,19 @@ class aev implements du {
         if (this.f9601b.f9598a.f9552l != null) {
             Point point = this.f9601b.f9598a.f9552l.f9606c;
             point.y += (int) pointF2.y;
-            if (Math.abs(this.f9601b.f9598a.f9552l.f9607d.y - this.f9601b.f9598a.f9552l.f9606c.y) > dv.getScaledTouchSlop(this.f9601b.f9598a.getContext())) {
+            if (Math.abs(this.f9601b.f9598a.f9552l.f9607d.y - this.f9601b.f9598a.f9552l.f9606c.y) > AnimUtils.getScaledTouchSlop(this.f9601b.f9598a.getContext())) {
                 this.f9601b.f9598a.f9552l.f9607d.set(this.f9601b.f9598a.f9552l.f9606c.x, this.f9601b.f9598a.f9552l.f9606c.y);
                 int a = this.f9601b.f9598a.f9552l.m13480a();
                 C0897d c0897d;
                 aex aex;
-                if (a == this.f9601b.f9598a.f9552l.f9604a.length - 1 && this.f9601b.f9598a.f9552l.f9606c.y >= this.f9600a.mo1311d(this.f9601b.f9598a.f9552l.m13483d().f9622b).bottom + dv.getScaledPagingTouchSlop(this.f9601b.f9598a.getContext())) {
+                if (a == this.f9601b.f9598a.f9552l.f9604a.length - 1 && this.f9601b.f9598a.f9552l.f9606c.y >= this.f9600a.mo1311d(this.f9601b.f9598a.f9552l.m13483d().f9622b).bottom + AnimUtils.getScaledPagingTouchSlop(this.f9601b.f9598a.getContext())) {
                     c0897d = (C0897d) this.f9601b.f9598a.f9552l.m13483d().f9622b.mo1198g();
                     aex = new aex();
                     aex.f9605b = c0897d;
                     this.f9601b.f9598a.f9552l = aex;
                     this.f9601b.f9598a.f9541a.mo2179u();
                     return;
-                } else if (a != 0 || this.f9601b.f9598a.f9552l.f9606c.y >= this.f9600a.mo1311d(this.f9601b.f9598a.f9552l.m13482c().f9622b).top - dv.getScaledPagingTouchSlop(this.f9601b.f9598a.getContext())) {
+                } else if (a != 0 || this.f9601b.f9598a.f9552l.f9606c.y >= this.f9600a.mo1311d(this.f9601b.f9598a.f9552l.m13482c().f9622b).top - AnimUtils.getScaledPagingTouchSlop(this.f9601b.f9598a.getContext())) {
                     as asVar;
                     if (this.f9600a instanceof C0941i) {
                         as b;

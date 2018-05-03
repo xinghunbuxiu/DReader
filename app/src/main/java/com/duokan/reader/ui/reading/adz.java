@@ -21,7 +21,7 @@ import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ag;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.kernel.DkUtils;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0254f;
@@ -100,7 +100,7 @@ public class adz extends gs implements SystemUiConditioner, C0563j, OnCurrentSpe
         imageView.setContentDescription(getResources().getString(C0258j.reading__tts_menu_view__open));
         imageView.setBackgroundResource(C0254f.general__shared__button_circular_48dip);
         this.f9546f = new FrameLayout(getContext());
-        this.f9546f.setPadding(0, 0, dv.m1932b(getContext(), 15.0f), dv.m1932b(getContext(), 30.0f));
+        this.f9546f.setPadding(0, 0, AnimUtils.m1932b(getContext(), 15.0f), AnimUtils.m1932b(getContext(), 30.0f));
         this.f9546f.setOnClickListener(new aem(this));
         this.f9546f.addView(imageView, new LayoutParams(-2, -2));
         this.f9543c.addView(this.f9546f, new LayoutParams(-2, -2, 85));
@@ -323,9 +323,9 @@ public class adz extends gs implements SystemUiConditioner, C0563j, OnCurrentSpe
             return super.onRequestDetach(c0303e);
         }
         if (this.f9551k.getContentView().getAnimation() == null) {
-            dv.hideAnimation(this.f9551k.getContentView(), new aer(this));
+            AnimUtils.hideAnimation(this.f9551k.getContentView(), new aer(this));
             this.f9546f.setVisibility(0);
-            dv.showAnimation(this.f9546f, null);
+            AnimUtils.showAnimation(this.f9546f, null);
         }
         return true;
     }
@@ -434,7 +434,7 @@ public class adz extends gs implements SystemUiConditioner, C0563j, OnCurrentSpe
         if (this.f9552l != null) {
             as aa = this.f9541a.aa();
             if (aa.mo1284G()) {
-                Rect rect = (Rect) dv.f1198g.addAnimation();
+                Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
                 if (aa instanceof C0941i) {
                     C0941i c0941i = (C0941i) aa;
                     if (c0941i.mo1435d().contains(this.f9552l.f9606c.x, this.f9552l.f9606c.y)) {
@@ -443,16 +443,16 @@ public class adz extends gs implements SystemUiConditioner, C0563j, OnCurrentSpe
                         aa = c0941i.mo1434c();
                     }
                 }
-                int b = dv.m1932b(getContext(), 3.0f);
+                int b = AnimUtils.m1932b(getContext(), 3.0f);
                 rect.left = aa.getBounds().left;
                 rect.top = this.f9552l.f9606c.y - (b / 2);
                 rect.right = aa.getBounds().right;
                 rect.bottom = rect.top + b;
-                Paint paint = (Paint) dv.f1193b.addAnimation();
+                Paint paint = (Paint) AnimUtils.f1193b.addAnimation();
                 paint.setColor(getResources().getColor(C0252d.general__shared__00000066));
                 canvas.drawRect(rect, paint);
-                dv.f1193b.clearAnimation(paint);
-                dv.f1198g.clearAnimation(rect);
+                AnimUtils.f1193b.clearAnimation(paint);
+                AnimUtils.f1198g.clearAnimation(rect);
             }
         }
     }

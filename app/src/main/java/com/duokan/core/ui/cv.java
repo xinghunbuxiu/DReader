@@ -464,16 +464,16 @@ public class cv {
         if (this.f1105m == null) {
             return true;
         }
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         rect.set(this.f1105m.getLeft(), this.f1105m.getTop(), this.f1105m.getRight(), this.f1105m.getBottom());
         try {
             if (rect.contains(i, i2)) {
                 return rect;
             }
-            dv.f1198g.clearAnimation(rect);
+            AnimUtils.f1198g.clearAnimation(rect);
             return true;
         } finally {
-            dv.f1198g.clearAnimation(rect);
+            AnimUtils.f1198g.clearAnimation(rect);
         }
     }
 }

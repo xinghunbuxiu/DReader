@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 import android.util.Pair;
 import android.view.View;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
 import com.duokan.reader.domain.bookshelf.C0798a;
 import com.duokan.reader.domain.document.C0896a;
@@ -103,7 +103,7 @@ public class fm extends FixedPagesView implements hd {
             if (view2.m14303i()) {
                 Rect selectionStartIndicatorBounds = view2.getSelectionStartIndicatorBounds();
                 if (!selectionStartIndicatorBounds.isEmpty()) {
-                    dv.m1937b(selectionStartIndicatorBounds, view2, (View) this);
+                    AnimUtils.m1937b(selectionStartIndicatorBounds, view2, (View) this);
                     return selectionStartIndicatorBounds;
                 }
             }
@@ -118,7 +118,7 @@ public class fm extends FixedPagesView implements hd {
             if (view2.m14303i()) {
                 Rect selectionEndIndicatorBounds = view2.getSelectionEndIndicatorBounds();
                 if (!selectionEndIndicatorBounds.isEmpty()) {
-                    dv.m1937b(selectionEndIndicatorBounds, view2, (View) this);
+                    AnimUtils.m1937b(selectionEndIndicatorBounds, view2, (View) this);
                     return selectionEndIndicatorBounds;
                 }
             }
@@ -200,7 +200,7 @@ public class fm extends FixedPagesView implements hd {
             return this.f10154c.mo1250s();
         }
         Point point = new Point(i, i2);
-        dv.m1897a(point, (View) this, view);
+        AnimUtils.m1897a(point, (View) this, view);
         return view.m14303i() ? view.getPageDrawable().mo1302b(point) : this.f10154c.mo1250s();
     }
 
@@ -215,8 +215,8 @@ public class fm extends FixedPagesView implements hd {
             }
             Point point = new Point(i, i2);
             Point point2 = new Point(i3, i4);
-            dv.m1897a(point, (View) this, view2);
-            dv.m1897a(point2, (View) this, view2);
+            AnimUtils.m1897a(point, (View) this, view2);
+            AnimUtils.m1897a(point2, (View) this, view2);
             s = s.mo1196a(view2.getPageDrawable().mo1293a(point, point2));
         }
         return s;
@@ -261,7 +261,7 @@ public class fm extends FixedPagesView implements hd {
             View view2 = (gx) view2;
             if (view2.m14303i()) {
                 Rect[] e = view2.getPageDrawable().mo1316e(bbVar);
-                dv.m1926a(e, view2, (View) this);
+                AnimUtils.m1926a(e, view2, (View) this);
                 linkedList.addAll(Arrays.asList(e));
             }
         }
@@ -303,12 +303,12 @@ public class fm extends FixedPagesView implements hd {
 
     /* renamed from: c */
     public boolean mo2129c(int i, int i2) {
-        return i2 < dv.m1932b(getContext(), 50.0f);
+        return i2 < AnimUtils.m1932b(getContext(), 50.0f);
     }
 
     /* renamed from: d */
     public boolean mo2134d(int i, int i2) {
-        return i2 > getHeight() - dv.m1932b(getContext(), 50.0f);
+        return i2 > getHeight() - AnimUtils.m1932b(getContext(), 50.0f);
     }
 
     /* renamed from: d */
@@ -423,10 +423,10 @@ public class fm extends FixedPagesView implements hd {
             Rect selectionStartIndicatorBounds = getSelectionStartIndicatorBounds();
             Rect selectionEndIndicatorBounds = getSelectionEndIndicatorBounds();
             if (!selectionStartIndicatorBounds.isEmpty()) {
-                dv.m1911a(canvas, mo2012a(DecorDrawableStyle.SELECTION_INDICATOR_START), selectionStartIndicatorBounds, 17);
+                AnimUtils.m1911a(canvas, mo2012a(DecorDrawableStyle.SELECTION_INDICATOR_START), selectionStartIndicatorBounds, 17);
             }
             if (!selectionEndIndicatorBounds.isEmpty()) {
-                dv.m1911a(canvas, mo2012a(DecorDrawableStyle.SELECTION_INDICATOR_END), selectionEndIndicatorBounds, 17);
+                AnimUtils.m1911a(canvas, mo2012a(DecorDrawableStyle.SELECTION_INDICATOR_END), selectionEndIndicatorBounds, 17);
             }
         }
     }

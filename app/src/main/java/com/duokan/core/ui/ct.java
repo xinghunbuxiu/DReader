@@ -26,7 +26,7 @@ public class ct extends er {
             } else if (motionEvent.getPointerCount() > 1) {
                 m1613b(false);
                 return;
-            } else if (motionEvent.getEventTime() - this.f1092a.getEventTime() > ((long) dv.getJumpTapTimeout())) {
+            } else if (motionEvent.getEventTime() - this.f1092a.getEventTime() > ((long) AnimUtils.getJumpTapTimeout())) {
                 m1613b(false);
                 return;
             } else {

@@ -149,9 +149,9 @@ public class fz extends WebView implements OnPreDrawListener {
                 }
                 z = true;
                 if (z) {
-                    RectF rectF = (RectF) dv.f1199h.addAnimation();
-                    boolean a = dv.m1925a(rectF, (View) this);
-                    dv.f1199h.clearAnimation(rectF);
+                    RectF rectF = (RectF) AnimUtils.f1199h.addAnimation();
+                    boolean a = AnimUtils.m1925a(rectF, (View) this);
+                    AnimUtils.f1199h.clearAnimation(rectF);
                     z = a;
                 }
                 if (z) {

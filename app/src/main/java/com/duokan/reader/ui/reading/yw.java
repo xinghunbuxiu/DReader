@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.reading;
 
 import com.duokan.core.app.IFeature;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 public class yw extends ze {
     public yw(IFeature mFeature, zw zwVar) {
@@ -27,9 +27,9 @@ public class yw extends ze {
             this.z.m10809a(this.h);
         }
         for (int i = 0; i < this.z.getToolCount(); i++) {
-            this.z.m10807a(i).setPadding(0, 0, dv.m1932b(getContext(), 20.0f), 0);
+            this.z.m10807a(i).setPadding(0, 0, AnimUtils.m1932b(getContext(), 20.0f), 0);
         }
-        this.z.m10808a(dv.m1932b(getContext(), 10.0f), 0, dv.m1932b(getContext(), 10.0f), 0);
+        this.z.m10808a(AnimUtils.m1932b(getContext(), 10.0f), 0, AnimUtils.m1932b(getContext(), 10.0f), 0);
         this.d.addView(this.z);
     }
 }

@@ -4,8 +4,8 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
-import com.duokan.core.ui.dv;
+
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
 import com.duokan.reader.domain.document.C0931c;
 import com.duokan.reader.ui.general.DkNumView;
@@ -60,7 +60,7 @@ public class bk extends FrameLayout {
         DkNumView dkNumView = new DkNumView(context, null);
         dkNumView.setTextColor(-1);
         dkNumView.setGravity(17);
-        dkNumView.setTextSize((float) dv.m1932b(context, 8.0f));
+        dkNumView.setTextSize((float) AnimUtils.m1932b(context, 8.0f));
         dkNumView.setBackgroundResource(C0243e.reading__callout_indicator_view__item_bg_1);
         return dkNumView;
     }

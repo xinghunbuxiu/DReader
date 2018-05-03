@@ -7,7 +7,7 @@ import android.graphics.Paint.Style;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 class yq extends Drawable {
     /* renamed from: a */
@@ -18,8 +18,8 @@ class yq extends Drawable {
     }
 
     public void draw(Canvas canvas) {
-        RectF rectF = (RectF) dv.f1199h.addAnimation();
-        Paint paint = (Paint) dv.f1193b.addAnimation();
+        RectF rectF = (RectF) AnimUtils.f1199h.addAnimation();
+        Paint paint = (Paint) AnimUtils.f1193b.addAnimation();
         rectF.set(getBounds());
         rectF.right -= 1.0f;
         rectF.bottom -= 1.0f;
@@ -28,9 +28,9 @@ class yq extends Drawable {
         paint.setStrokeWidth(1.0f);
         paint.setStyle(Style.STROKE);
         paint.setColor(this.f11214a.f11207g);
-        canvas.drawRoundRect(rectF, (float) dv.m1932b(this.f11214a.getContext(), 5.0f), (float) dv.m1932b(this.f11214a.getContext(), 5.0f), paint);
-        dv.f1199h.clearAnimation(rectF);
-        dv.f1193b.clearAnimation(paint);
+        canvas.drawRoundRect(rectF, (float) AnimUtils.m1932b(this.f11214a.getContext(), 5.0f), (float) AnimUtils.m1932b(this.f11214a.getContext(), 5.0f), paint);
+        AnimUtils.f1199h.clearAnimation(rectF);
+        AnimUtils.f1193b.clearAnimation(paint);
     }
 
     public int getOpacity() {

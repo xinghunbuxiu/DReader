@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.View;
 import android.view.ViewTreeObserver.OnPreDrawListener;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.domain.document.az;
 
 public class xx extends View implements OnPreDrawListener {
@@ -90,12 +90,12 @@ public class xx extends View implements OnPreDrawListener {
 
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        RectF rectF = (RectF) dv.f1199h.addAnimation();
-        RectF rectF2 = (RectF) dv.f1199h.addAnimation();
-        Rect rect = (Rect) dv.f1198g.addAnimation();
-        if (dv.m1925a(rectF, (View) this)) {
+        RectF rectF = (RectF) AnimUtils.f1199h.addAnimation();
+        RectF rectF2 = (RectF) AnimUtils.f1199h.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
+        if (AnimUtils.m1925a(rectF, (View) this)) {
             rectF2.set(0.0f, 0.0f, (float) getResources().getDisplayMetrics().widthPixels, (float) getResources().getDisplayMetrics().heightPixels);
-            dv.m1938b(rectF2, (View) this);
+            AnimUtils.m1938b(rectF2, (View) this);
             int paddingLeft = getPaddingLeft();
             int paddingTop = getPaddingTop();
             rectF.offset((float) (-paddingLeft), (float) (-paddingTop));
@@ -107,9 +107,9 @@ public class xx extends View implements OnPreDrawListener {
             this.f11166c.m10249a(rect);
             this.f11166c.draw(canvas);
         }
-        dv.f1199h.clearAnimation(rectF);
-        dv.f1199h.clearAnimation(rectF2);
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1199h.clearAnimation(rectF);
+        AnimUtils.f1199h.clearAnimation(rectF2);
+        AnimUtils.f1198g.clearAnimation(rect);
     }
 
     protected void onVisibilityChanged(View view, int i) {

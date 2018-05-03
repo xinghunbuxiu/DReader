@@ -2,7 +2,7 @@ package com.duokan.reader.ui.personal;
 
 import android.content.Context;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.domain.bookshelf.it;
 import com.duokan.reader.domain.micloud.C1068i;
@@ -37,7 +37,7 @@ public class ek extends oa {
         this.b.setVisibility(8);
         this.f8503m = (ei) AppContext.getAppContext(context).queryFeature(ei.class);
         this.f8506p = new ab(getContext());
-        this.f8506p.setPadding(dv.m1932b(getContext(), 15.0f), 0, 0, 0);
+        this.f8506p.setPadding(AnimUtils.m1932b(getContext(), 15.0f), 0, 0, 0);
         this.e.addView(this.f8506p);
         this.e.setVisibility(4);
         this.f8501a = new el(this, getContext());

@@ -10,7 +10,7 @@ public class as extends er {
     /* renamed from: c */
     private MotionEvent f979c = null;
     /* renamed from: d */
-    private int f980d = ((int) (((float) dv.getLongPressTimeout()) * 1.5f));
+    private int f980d = ((int) (((float) AnimUtils.getLongPressTimeout()) * 1.5f));
     /* renamed from: e */
     private int f981e = 0;
     /* renamed from: f */

@@ -3,7 +3,7 @@ package com.duokan.reader.ui.reading;
 import android.content.Context;
 import android.graphics.PointF;
 import android.view.View;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.ge;
 import com.duokan.reader.domain.document.aj;
 
@@ -103,7 +103,7 @@ public class nf extends gd implements mx {
 
     /* renamed from: a */
     protected boolean mo2441a(PointF pointF) {
-        if (this.f10663e.m14670a(dv.m1900a(new PointF(pointF.x + ((float) getScrollX()), pointF.y + ((float) getScrollY())), (View) this, this.f10663e))) {
+        if (this.f10663e.m14670a(AnimUtils.m1900a(new PointF(pointF.x + ((float) getScrollX()), pointF.y + ((float) getScrollY())), (View) this, this.f10663e))) {
             return true;
         }
         return super.mo2441a(pointF);

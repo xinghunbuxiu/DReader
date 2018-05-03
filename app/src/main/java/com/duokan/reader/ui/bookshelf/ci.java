@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import android.view.View;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.ui.au;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.domain.bookshelf.an;
 
 class ci implements au {
@@ -35,8 +35,8 @@ class ci implements au {
             if (g) {
                 z = g;
             } else {
-                Rect rect = (Rect) dv.f1198g.addAnimation();
-                RectF rectF = (RectF) dv.f1199h.addAnimation();
+                Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
+                RectF rectF = (RectF) AnimUtils.f1199h.addAnimation();
                 this.f6271a.m9368a(rect);
                 this.f6271a.f6256h.m9428a(rectF);
                 if (rectF.centerY() < ((float) rect.top) && this.f6271a.m9400i() && !this.f6271a.m9407m()) {
@@ -52,8 +52,8 @@ class ci implements au {
                     this.f6271a.f6263o = new cr(this.f6271a, ((int) (rectF.bottom - ((float) rect.bottom))) / 2);
                     UThread.runOnThread(this.f6271a.f6263o);
                 }
-                dv.f1198g.clearAnimation(rect);
-                dv.f1199h.clearAnimation(rectF);
+                AnimUtils.f1198g.clearAnimation(rect);
+                AnimUtils.f1199h.clearAnimation(rectF);
             }
             if (!z) {
                 int a = this.f6271a.m9352a(c);

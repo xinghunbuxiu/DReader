@@ -3,7 +3,7 @@ package com.duokan.reader.ui.personal;
 import android.view.ViewGroup.LayoutParams;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.UThread;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.fr;
 import com.duokan.reader.UmengManager;
 import com.duokan.reader.domain.cloud.PersonalPrefs;
@@ -40,7 +40,7 @@ class PersonalController$1 extends TaskController {
         if (layoutParams.height == 0) {
             logTaskShown();
         }
-        int b = dv.m1932b(getContext(), (float) i);
+        int b = AnimUtils.m1932b(getContext(), (float) i);
         if (layoutParams.height != b) {
             layoutParams.height = b;
             this.this$0.f8589p.setLayoutParams(layoutParams);

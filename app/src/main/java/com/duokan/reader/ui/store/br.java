@@ -4,7 +4,7 @@ import android.content.res.Configuration;
 import android.view.View;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.ui.general.dr;
 import com.duokan.reader.ui.surfing.al;
 import java.util.ArrayList;
@@ -158,7 +158,7 @@ public class br extends ActivatedController {
 
     /* renamed from: i */
     public void m15344i() {
-        dv.m1921a(this.f11380a, new bu(this));
+        AnimUtils.m1921a(this.f11380a, new bu(this));
     }
 
     /* renamed from: j */

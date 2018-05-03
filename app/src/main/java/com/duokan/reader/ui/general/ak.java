@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.duokan.common.C0267i;
 import com.duokan.core.ui.BoxView;
 import com.duokan.core.ui.C0343f;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0240b;
 import com.duokan.p023b.C0241c;
 import com.duokan.p023b.C0243e;
@@ -50,7 +50,7 @@ public class ak extends C0343f {
         setContentView(C0245g.general__common_dialog_view);
         if (ReaderEnv.get().forHd()) {
             setGravity(17);
-            ((BoxView) getContentView()).setMaxWidth(dv.m1932b(getContext(), 380.0f));
+            ((BoxView) getContentView()).setMaxWidth(AnimUtils.m1932b(getContext(), 380.0f));
         } else {
             setGravity(80);
         }
@@ -98,7 +98,7 @@ public class ak extends C0343f {
 
     public void setPromptLayoutGravity(int i) {
         LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2, (float) i);
-        layoutParams.setMargins(0, dv.m1932b(getContext(), 10.0f), 0, 0);
+        layoutParams.setMargins(0, AnimUtils.m1932b(getContext(), 10.0f), 0, 0);
         this.f595b.setLayoutParams(layoutParams);
     }
 
@@ -183,7 +183,7 @@ public class ak extends C0343f {
     }
 
     private void setWindowAttr() {
-        int b = dv.m1932b(getContext(), 8.0f);
+        int b = AnimUtils.m1932b(getContext(), 8.0f);
         getContentView().setBackgroundDrawable(new hb(new ColorDrawable(getContext().getResources().getColor(C0241c.general__shared__dialog)), (float) b));
         if (ReaderEnv.get().forHd()) {
             setEnterAnimation(C0240b.general__shared__scale_center_in);
@@ -196,11 +196,11 @@ public class ak extends C0343f {
 
     private void scheduleButtonBackground() {
         if (this.f599f.size() == 1) {
-            getButton(0).setBackgroundDrawable(new hb(getContext().getResources().getDrawable(C0243e.general__shared__dialog_button_background), (float) dv.m1932b(getContext(), 6.0f), 12));
+            getButton(0).setBackgroundDrawable(new hb(getContext().getResources().getDrawable(C0243e.general__shared__dialog_button_background), (float) AnimUtils.m1932b(getContext(), 6.0f), 12));
             return;
         }
-        getButton(0).setBackgroundDrawable(new hb(getContext().getResources().getDrawable(C0243e.general__shared__dialog_button_background), (float) dv.m1932b(getContext(), 6.0f), 4));
-        getButton(this.f599f.size() - 1).setBackgroundDrawable(new hb(getContext().getResources().getDrawable(C0243e.general__shared__dialog_button_background), (float) dv.m1932b(getContext(), 6.0f), 8));
+        getButton(0).setBackgroundDrawable(new hb(getContext().getResources().getDrawable(C0243e.general__shared__dialog_button_background), (float) AnimUtils.m1932b(getContext(), 6.0f), 4));
+        getButton(this.f599f.size() - 1).setBackgroundDrawable(new hb(getContext().getResources().getDrawable(C0243e.general__shared__dialog_button_background), (float) AnimUtils.m1932b(getContext(), 6.0f), 8));
     }
 
     private FrameLayout newCheckFrameView(View view) {
@@ -237,7 +237,7 @@ public class ak extends C0343f {
 
     private View newButtonView(String str, int i) {
         TextView textView = (TextView) LayoutInflater.from(getContext()).inflate(C0245g.general__common_dialog_view__button, null);
-        int b = dv.m1932b(getContext(), 20.0f);
+        int b = AnimUtils.m1932b(getContext(), 20.0f);
         textView.getPaint().setFakeBoldText(true);
         textView.setPadding(0, b, 0, b);
         textView.setBackgroundResource(C0243e.general__shared__dialog_button_background);

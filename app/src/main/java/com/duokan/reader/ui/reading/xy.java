@@ -3,7 +3,7 @@ package com.duokan.reader.ui.reading;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.RectF;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.ui.general.C1326b;
 
 class xy extends C1326b {
@@ -12,7 +12,7 @@ class xy extends C1326b {
 
     public xy(xx xxVar, int i, int i2) {
         this.f11169a = xxVar;
-        super(Config.ARGB_8888, dv.cathe);
+        super(Config.ARGB_8888, AnimUtils.cathe);
     }
 
     public int getIntrinsicWidth() {

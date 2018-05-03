@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.view.View;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 class pj extends View {
     /* renamed from: a */
@@ -19,10 +19,10 @@ class pj extends View {
     }
 
     protected void onDraw(Canvas canvas) {
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         rect.set(0, 0, this.f10793b.f10786e.width(), this.f10793b.f10786e.height());
         canvas.drawBitmap(this.f10793b.f10785d, this.f10793b.f10786e, rect, null);
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect);
     }
 
     protected void onMeasure(int i, int i2) {

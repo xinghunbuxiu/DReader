@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.domain.store.DkStoreAbsBook;
 import com.duokan.reader.ui.general.bz;
@@ -34,7 +34,7 @@ class C1226l implements OnClickListener {
         } else if (this.f5721b < this.f5723d.f5701f.size()) {
             bzVar.m10329a(String.format(this.f5723d.getString(C0258j.discovery__edit_feed_item_view__desc_default), new Object[]{((DkStoreAbsBook) this.f5723d.f5701f.get(this.f5721b)).getTitle()}));
         }
-        bzVar.getDecorView().setPadding(0, dv.m1932b(this.f5723d.getContext(), 50.0f), 0, 0);
+        bzVar.getDecorView().setPadding(0, AnimUtils.m1932b(this.f5723d.getContext(), 50.0f), 0, 0);
         bzVar.setGravity(119);
         bzVar.m10328a(new C1227m(this, bzVar));
     }

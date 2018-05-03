@@ -8,7 +8,7 @@ import com.duokan.core.app.IScreenRotationChangedListener;
 import com.duokan.core.ui.ZoomView;
 import com.duokan.core.ui.di;
 import com.duokan.core.ui.dl;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import org.apache.http.HttpStatus;
 
 class pr implements OnPreDrawListener {
@@ -59,15 +59,15 @@ class pr implements OnPreDrawListener {
     }
 
     public boolean onPreDraw() {
-        Point point = (Point) dv.f1196e.addAnimation();
-        dv.m1897a(point, this.f10809a, this.f10822n.f10797a);
+        Point point = (Point) AnimUtils.f1196e.addAnimation();
+        AnimUtils.m1897a(point, this.f10809a, this.f10822n.f10797a);
         this.f10810b.m1853a(this.f10811c.left - point.x, this.f10811c.top - point.y);
         this.f10810b.m1870a(0.0f, 0.0f, ((float) (this.f10812d.getWidth() - this.f10811c.width())) / ((float) this.f10812d.getWidth()), ((float) (this.f10812d.getHeight() - this.f10811c.height())) / ((float) this.f10812d.getHeight()));
         this.f10813e.m1833a(this.f10814f, this.f10815g, this.f10816h, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR);
         this.f10813e.m1833a(this.f10817i, this.f10818j, this.f10819k, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR);
         this.f10813e.m1834a(this.f10812d, this.f10810b, this.f10820l, HttpStatus.SC_INTERNAL_SERVER_ERROR, new ps(this), null);
         this.f10813e.getViewTreeObserver().removeOnPreDrawListener(this);
-        dv.f1196e.clearAnimation(point);
+        AnimUtils.f1196e.clearAnimation(point);
         return false;
     }
 }

@@ -23,7 +23,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.kernel.DkUtils;
 import com.duokan.reader.common.bitmap.C0544a;
 import com.duokan.reader.domain.document.C0896a;
@@ -103,7 +103,7 @@ public class PagesFrameView extends FrameLayout {
         this.f9110c = new bc(getContext());
         this.f9111d = new io(getContext());
         this.f9111d.m10797a().setSubpixelText(true);
-        this.f9111d.m10797a().setTextSize((float) dv.m1932b(getContext(), 14.0f));
+        this.f9111d.m10797a().setTextSize((float) AnimUtils.m1932b(getContext(), 14.0f));
         this.f9111d.m10797a().setAntiAlias(true);
         this.f9111d.m10798a(19);
         getContext().registerReceiver(this.f9119l, new IntentFilter("android.intent.action.BATTERY_CHANGED"));
@@ -186,7 +186,7 @@ public class PagesFrameView extends FrameLayout {
             }
             canvas.save();
             if (this.f9123p != null) {
-                Rect rect = (Rect) dv.f1198g.addAnimation();
+                Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
                 rect.set(0, 0, getWidth(), getHeight());
                 if (this.f9123p.hasEnded() || this.f9124q.getWidth() != getWidth() || this.f9124q.getHeight() != getHeight()) {
                     this.f9124q.recycle();
@@ -206,7 +206,7 @@ public class PagesFrameView extends FrameLayout {
                     this.f9125r.setAlpha(255);
                     canvas.drawBitmap(this.f9124q, null, rect, this.f9125r);
                 }
-                dv.f1198g.clearAnimation(rect);
+                AnimUtils.f1198g.clearAnimation(rect);
             }
             canvas.restore();
         }
@@ -263,19 +263,19 @@ public class PagesFrameView extends FrameLayout {
                     canvas.drawBitmap(this.f9117j, 0.0f, (float) (getHeight() - this.f9117j.getHeight()), this.f9109b);
                     if (k.f4332c.bottom >= l.f4358f) {
                         Rect rect = k.f4332c;
-                        Rect rect2 = (Rect) dv.f1198g.addAnimation();
-                        this.f9110c.m13768c(l.f4358f - dv.m1963g(getContext(), 2.0f));
+                        Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
+                        this.f9110c.m13768c(l.f4358f - AnimUtils.m1963g(getContext(), 2.0f));
                         rect2.set(getPaddingLeft() + rect.left, getHeight() - rect.bottom, rect.left + this.f9110c.getIntrinsicWidth(), (getHeight() - rect.bottom) + this.f9110c.getIntrinsicHeight());
                         this.f9110c.setBounds(rect2);
                         this.f9110c.draw(canvas);
-                        Rect rect3 = (Rect) dv.f1198g.addAnimation();
-                        rect3.set(rect2.right + dv.m1932b(getContext(), 8.0f), getHeight() - rect.bottom, getWidth() - rect.right, (getHeight() - rect.bottom) + this.f9110c.getIntrinsicHeight());
+                        Rect rect3 = (Rect) AnimUtils.f1198g.addAnimation();
+                        rect3.set(rect2.right + AnimUtils.m1932b(getContext(), 8.0f), getHeight() - rect.bottom, getWidth() - rect.right, (getHeight() - rect.bottom) + this.f9110c.getIntrinsicHeight());
                         this.f9111d.setBounds(rect3);
                         this.f9111d.draw(canvas);
-                        dv.f1198g.clearAnimation(rect3);
-                        dv.f1198g.clearAnimation(rect2);
+                        AnimUtils.f1198g.clearAnimation(rect3);
+                        AnimUtils.f1198g.clearAnimation(rect2);
                         if (this.f9108a.bg()) {
-                            this.f9108a.mo2017a(canvas, getWidth() / 2, (this.f9110c.getIntrinsicHeight() / 2) + (getHeight() - rect.bottom), getHeight() - dv.m1932b(getContext(), 65.0f), getHeight(), this.f9111d.m10797a().getColor());
+                            this.f9108a.mo2017a(canvas, getWidth() / 2, (this.f9110c.getIntrinsicHeight() / 2) + (getHeight() - rect.bottom), getHeight() - AnimUtils.m1932b(getContext(), 65.0f), getHeight(), this.f9111d.m10797a().getColor());
                         }
                         if (!TextUtils.isEmpty(this.f9115h)) {
                             this.f9109b.setColor(this.f9112e);
@@ -283,7 +283,7 @@ public class PagesFrameView extends FrameLayout {
                             m12429a(canvas, this.f9114g, 53, this.f9109b);
                         }
                     } else if (this.f9108a.bg()) {
-                        this.f9108a.mo2017a(canvas, getWidth() / 2, getHeight() - (this.f9117j.getHeight() / 2), getHeight() - dv.m1932b(getContext(), 65.0f), getHeight(), this.f9111d.m10797a().getColor());
+                        this.f9108a.mo2017a(canvas, getWidth() / 2, getHeight() - (this.f9117j.getHeight() / 2), getHeight() - AnimUtils.m1932b(getContext(), 65.0f), getHeight(), this.f9111d.m10797a().getColor());
                     }
                 }
             }
@@ -315,7 +315,7 @@ public class PagesFrameView extends FrameLayout {
                     canvas.drawRect(0.0f, 0.0f, (float) this.f9116i.getWidth(), (float) this.f9116i.getHeight(), paint);
                 }
             }
-            int b = (k.f4332c.bottom + k.f4333d.bottom) + dv.m1932b(getContext(), 5.0f);
+            int b = (k.f4332c.bottom + k.f4333d.bottom) + AnimUtils.m1932b(getContext(), 5.0f);
             if (this.f9117j == null || this.f9117j.getWidth() != getWidth() || this.f9117j.getHeight() != b) {
                 int intrinsicHeight;
                 if (this.f9117j != null) {
@@ -323,7 +323,7 @@ public class PagesFrameView extends FrameLayout {
                     this.f9117j = null;
                 }
                 if (this.f9108a.bg()) {
-                    intrinsicHeight = b + ((this.f9108a.bh().getIntrinsicHeight() / 2) - ((l.f4358f - dv.m1963g(getContext(), 2.0f)) / 2));
+                    intrinsicHeight = b + ((this.f9108a.bh().getIntrinsicHeight() / 2) - ((l.f4358f - AnimUtils.m1963g(getContext(), 2.0f)) / 2));
                 } else {
                     intrinsicHeight = b;
                 }
@@ -380,23 +380,23 @@ public class PagesFrameView extends FrameLayout {
     /* renamed from: a */
     private void m12428a(Canvas canvas, String str, int i, int i2, Paint paint) {
         C0917k k = this.f9108a.getDocument().mo1245k();
-        RectF rectF = (RectF) dv.f1199h.addAnimation();
+        RectF rectF = (RectF) AnimUtils.f1199h.addAnimation();
         if (i == 3) {
             rectF.set((float) k.f4332c.left, 0.0f, (float) Math.min(getWidth() - k.f4332c.right, k.f4332c.left + i2), (float) k.f4332c.top);
         } else {
             rectF.set((float) Math.max((getWidth() - k.f4332c.right) - i2, k.f4332c.left), 0.0f, (float) (getWidth() - k.f4332c.right), (float) k.f4332c.top);
         }
-        dv.m1914a(canvas, str, rectF, i | 80, paint);
-        dv.f1199h.clearAnimation(rectF);
+        AnimUtils.m1914a(canvas, str, rectF, i | 80, paint);
+        AnimUtils.f1199h.clearAnimation(rectF);
     }
 
     /* renamed from: a */
     private void m12429a(Canvas canvas, String str, int i, Paint paint) {
         C0917k k = this.f9108a.getDocument().mo1245k();
         this.f9108a.getDocument().mo1246l();
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         rect.set(k.f4332c.left, getHeight() - k.f4332c.bottom, getWidth() - k.f4332c.right, getHeight());
-        dv.m1913a(canvas, str, rect, i | 16, paint);
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.m1913a(canvas, str, rect, i | 16, paint);
+        AnimUtils.f1198g.clearAnimation(rect);
     }
 }

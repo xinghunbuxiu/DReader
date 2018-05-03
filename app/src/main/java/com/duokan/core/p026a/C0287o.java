@@ -1,11 +1,11 @@
 package com.duokan.core.p026a;
 
-import com.duokan.core.app.C0286x;
+import com.duokan.core.app.ApplicationsStateCallbacks;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 
 
-class C0287o implements C0286x {
+class C0287o implements ApplicationsStateCallbacks {
     
     final  C0285n f483a;
 

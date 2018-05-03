@@ -3,7 +3,7 @@ package com.duokan.reader.ui.reading;
 import android.graphics.Bitmap;
 import android.view.animation.AlphaAnimation;
 import com.duokan.core.sys.ag;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import org.apache.http.HttpStatus;
 
 class lh implements ag<Bitmap> {
@@ -32,16 +32,16 @@ class lh implements ag<Bitmap> {
             if (this.f10568a.f10550e.getVisibility() == 0) {
                 if (i != null) {
                     this.f10568a.f10551f.setImageBitmap(i);
-                    dv.hideAnimation(this.f10568a.f10551f, new li(this, i));
+                    AnimUtils.hideAnimation(this.f10568a.f10551f, new li(this, i));
                     return;
                 }
-                dv.showAnimation(this.f10568a.f10550e, null);
+                AnimUtils.showAnimation(this.f10568a.f10550e, null);
             } else if (this.f10568a.f10547b) {
                 this.f10568a.f10558m = new AlphaAnimation(0.0f, 1.0f);
                 this.f10568a.f10558m.setDuration(500);
                 this.f10568a.f10550e.invalidate();
                 this.f10568a.f10550e.setVisibility(0);
-                dv.startAlphaAnimation(this.f10568a.f10550e, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, false, new lj(this));
+                AnimUtils.startAlphaAnimation(this.f10568a.f10550e, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, false, new lj(this));
             } else if (i != null) {
                 i.recycle();
             }

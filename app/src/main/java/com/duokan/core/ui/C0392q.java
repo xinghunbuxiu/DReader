@@ -41,7 +41,7 @@ public class C0392q extends er {
     protected void mo510a(View view, MotionEvent motionEvent, boolean z, es esVar) {
         if (esVar instanceof C0382r) {
             C0382r c0382r = (C0382r) esVar;
-            MotionEvent a = dv.m1908a(motionEvent, view, null);
+            MotionEvent a = AnimUtils.m1908a(motionEvent, view, null);
             if (this.f1332c == null) {
                 this.f1332c = VelocityTracker.obtain();
             }
@@ -50,9 +50,9 @@ public class C0392q extends er {
                 this.f1331a.set(a.getX(), a.getY());
             }
             if (motionEvent.getActionMasked() == 1) {
-                if (m1619d(this.f1331a, new PointF(a.getX(), a.getY())) >= ((double) dv.getScaledTouchSlop(view.getContext()))) {
-                    float b = Float.isNaN(this.f1333d) ? (float) dv.getScaledMinimumFlingVelocity(view.getContext()) : this.f1333d;
-                    this.f1332c.computeCurrentVelocity(1000, Float.isNaN(this.f1334e) ? (float) dv.getScaledMaximumFlingVelocity(view.getContext()) : this.f1334e);
+                if (m1619d(this.f1331a, new PointF(a.getX(), a.getY())) >= ((double) AnimUtils.getScaledTouchSlop(view.getContext()))) {
+                    float b = Float.isNaN(this.f1333d) ? (float) AnimUtils.getScaledMinimumFlingVelocity(view.getContext()) : this.f1333d;
+                    this.f1332c.computeCurrentVelocity(1000, Float.isNaN(this.f1334e) ? (float) AnimUtils.getScaledMaximumFlingVelocity(view.getContext()) : this.f1334e);
                     PointF pointF = new PointF(this.f1332c.getXVelocity(), this.f1332c.getYVelocity());
                     if (Math.abs(pointF.x) < b) {
                         pointF.x = 0.0f;
@@ -60,8 +60,8 @@ public class C0392q extends er {
                     if (Math.abs(pointF.y) < b) {
                         pointF.y = 0.0f;
                     }
-                    dv.m1899a(pointF, view);
-                    if (dv.m1924a(new PointF(0.0f, 0.0f), pointF, (double) this.f1335f, (double) this.f1336g) && !(Float.compare(Math.abs(pointF.x), 0.0f) == 0 && Float.compare(Math.abs(pointF.y), 0.0f) == 0)) {
+                    AnimUtils.m1899a(pointF, view);
+                    if (AnimUtils.m1924a(new PointF(0.0f, 0.0f), pointF, (double) this.f1335f, (double) this.f1336g) && !(Float.compare(Math.abs(pointF.x), 0.0f) == 0 && Float.compare(Math.abs(pointF.y), 0.0f) == 0)) {
                         c0382r.mo528a(this, view, new PointF(motionEvent.getX(0), motionEvent.getY(0)), pointF);
                     }
                 }

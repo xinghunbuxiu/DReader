@@ -3,7 +3,7 @@ package com.duokan.reader.ui.reading;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import com.duokan.core.app.IFeature;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0255g;
 import com.duokan.reader.ReaderFeature;
 import com.duokan.reader.domain.document.C0923m;
@@ -12,7 +12,7 @@ class ym extends yo {
     public ym(IFeature mFeature, yu yuVar) {
         super(mFeature, yuVar);
         findViewById(C0255g.reading__search_text_view__cancel).setOnClickListener(new yn(this));
-        findViewById(C0255g.reading__search_text_view__bar).setPadding(dv.m1932b(getContext(), 15.0f), ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).getTheme().getHeaderPaddingTop() + dv.m1932b(getContext(), 10.0f), dv.m1932b(getContext(), 15.0f), dv.m1932b(getContext(), 10.0f));
+        findViewById(C0255g.reading__search_text_view__bar).setPadding(AnimUtils.m1932b(getContext(), 15.0f), ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).getTheme().getHeaderPaddingTop() + AnimUtils.m1932b(getContext(), 10.0f), AnimUtils.m1932b(getContext(), 15.0f), AnimUtils.m1932b(getContext(), 10.0f));
     }
 
     protected void onAttachToStub() {

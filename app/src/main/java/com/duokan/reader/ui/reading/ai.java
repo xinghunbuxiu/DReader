@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.p024c.C0254f;
 import com.duokan.reader.domain.audio.AudioPlayer;
@@ -52,7 +52,7 @@ public class ai extends gs implements to {
                 imageView.setBackgroundResource(C0254f.general__shared__button_circular_48dip);
                 imageView.setScaleType(ScaleType.CENTER);
                 this.f9765b = new FrameLayout(getContext());
-                this.f9765b.setPadding(0, 0, dv.m1932b(getContext(), 15.0f), dv.m1932b(getContext(), 30.0f));
+                this.f9765b.setPadding(0, 0, AnimUtils.m1932b(getContext(), 15.0f), AnimUtils.m1932b(getContext(), 30.0f));
                 this.f9765b.addView(imageView, new LayoutParams(-2, -2));
                 this.f9767d.getPagesFrameView().addView(this.f9765b, new LayoutParams(-2, -2, 85));
                 this.f9765b.setOnClickListener(new aj(this));
@@ -88,7 +88,7 @@ public class ai extends gs implements to {
         }
         this.f9766c = new ab(getContext());
         showPopup(this.f9766c);
-        dv.showAnimation(this.f9766c.getContentView(), null);
+        AnimUtils.showAnimation(this.f9766c.getContentView(), null);
         return true;
     }
 
@@ -109,7 +109,7 @@ public class ai extends gs implements to {
             return super.onRequestDetach(c0303e);
         }
         if (this.f9766c.getContentView().getAnimation() == null) {
-            dv.hideAnimation(this.f9766c.getContentView(), new ak(this));
+            AnimUtils.hideAnimation(this.f9766c.getContentView(), new ak(this));
         }
         return true;
     }

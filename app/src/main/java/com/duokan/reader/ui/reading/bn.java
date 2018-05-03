@@ -7,10 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 import com.duokan.core.sys.af;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0253e;
 import com.duokan.p024c.C0254f;
@@ -297,7 +296,7 @@ public class bn extends gt {
             this.f9879o = (LinearLayout) this.f9874j.findViewById(C0255g.reading__chapter_not_purchased_view__server_info);
             addView(this.f9874j);
         }
-        this.f9874j.setPadding(0, k.m6083a().top + dv.m1932b(getContext(), 10.0f), 0, k.m6083a().bottom + dv.m1932b(getContext(), 10.0f));
+        this.f9874j.setPadding(0, k.m6083a().top + AnimUtils.m1932b(getContext(), 10.0f), 0, k.m6083a().bottom + AnimUtils.m1932b(getContext(), 10.0f));
         this.f9875k.setPadding(k.m6083a().left, 0, k.m6083a().right, 0);
         this.f9875k.setChsToChtChars(l.f4363k);
         this.f9875k.setText(m13824s());
@@ -376,10 +375,10 @@ public class bn extends gt {
                 if (TextUtils.isEmpty(optString2)) {
                     LayoutParams layoutParams2 = new LayoutParams(-2, 0, 1.0f);
                     textView.setLayoutParams(new LayoutParams(-2, 0, 1.0f));
-                    textView.setMaxHeight(dv.m1932b(getContext(), 20.0f));
+                    textView.setMaxHeight(AnimUtils.m1932b(getContext(), 20.0f));
                     layoutParams = layoutParams2;
                 } else {
-                    textView.setPadding(dv.m1932b(getContext(), 5.0f), 0, dv.m1932b(getContext(), 5.0f), dv.m1932b(getContext(), 5.0f));
+                    textView.setPadding(AnimUtils.m1932b(getContext(), 5.0f), 0, AnimUtils.m1932b(getContext(), 5.0f), AnimUtils.m1932b(getContext(), 5.0f));
                     textView.setText(Html.fromHtml(optString2));
                     textView.setTextColor(m13813p());
                     textView.setTextSize(0, (float) getResources().getDimensionPixelSize(C0253e.general_font__shared__c));
@@ -392,12 +391,12 @@ public class bn extends gt {
                     textView.setPadding(0, 0, 0, 0);
                     textView.setGravity(17);
                     textView.setTextSize(0, (float) getResources().getDimensionPixelSize(C0253e.general_font__shared__b));
-                    int b = dv.m1932b(getContext(), 10.0f);
+                    int b = AnimUtils.m1932b(getContext(), 10.0f);
                     layoutParams4.bottomMargin = b;
                     layoutParams4.rightMargin = b;
                     layoutParams4.leftMargin = b;
-                    layoutParams4.width = dv.m1932b(getContext(), 207.0f);
-                    layoutParams4.height = dv.m1932b(getContext(), 36.0f);
+                    layoutParams4.width = AnimUtils.m1932b(getContext(), 207.0f);
+                    layoutParams4.height = AnimUtils.m1932b(getContext(), 36.0f);
                     if (TextUtils.equals(optString5, "hollow")) {
                         textView.setBackgroundResource(C0254f.general__shared__rounded_hollow_button_orange);
                         textView.setTextColor(getResources().getColor(C0252d.general__shared__orange));
@@ -406,11 +405,11 @@ public class bn extends gt {
                         textView.setTextColor(-1);
                     }
                     if (linkedList.size() > 0 && ((View) linkedList.getLast()).findViewWithTag("button") == null) {
-                        layoutParams4.topMargin = dv.m1932b(getContext(), 25.0f);
+                        layoutParams4.topMargin = AnimUtils.m1932b(getContext(), 25.0f);
                     }
                 } else if (TextUtils.equals(optString, "autopay")) {
                     textView.setCompoundDrawablesWithIntrinsicBounds(C0254f.general__shared__small_checkbox, 0, 0, 0);
-                    textView.setCompoundDrawablePadding(dv.m1932b(getContext(), 5.0f));
+                    textView.setCompoundDrawablePadding(AnimUtils.m1932b(getContext(), 5.0f));
                     textView.setSelected(this.b.ag());
                 }
                 ee eeVar = (ee) this.b.mo1992G();

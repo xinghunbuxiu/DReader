@@ -3,7 +3,7 @@ package com.duokan.reader.ui.general.web;
 import android.content.Context;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 class ar extends FrameLayout {
     /* renamed from: a */
@@ -15,7 +15,7 @@ class ar extends FrameLayout {
     }
 
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        dv.m1909a(getContext());
+        AnimUtils.m1909a(getContext());
         return super.onInterceptTouchEvent(motionEvent);
     }
 }

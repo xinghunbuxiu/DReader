@@ -4,9 +4,9 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Pair;
 import android.view.View;
-import android.widget.LinearLayout.LayoutParams;
+
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0253e;
 import com.duokan.p024c.C0254f;
@@ -40,7 +40,7 @@ public class gm extends LinearScrollView {
     /* renamed from: f */
     private void m9740f() {
         removeAllViews();
-        int b = dv.m1932b(getContext(), 12.0f);
+        int b = AnimUtils.m1932b(getContext(), 12.0f);
         int color = getResources().getColor(C0252d.general__shared__333333);
         for (int i = 0; i < this.f6522c.size(); i++) {
             Pair pair = (Pair) this.f6522c.get(i);
@@ -58,7 +58,7 @@ public class gm extends LinearScrollView {
             }
             addView(dkLabelView, new LayoutParams(-2, -2));
         }
-        dv.m1921a((View) this, new gn(this));
+        AnimUtils.m1921a((View) this, new gn(this));
     }
 
     /* renamed from: g */

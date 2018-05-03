@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.duokan.core.ui.ct;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.et;
 import com.duokan.p023b.C0243e;
 import com.duokan.p023b.C0248j;
@@ -99,14 +99,14 @@ public class DkCommentScoreView extends View {
         }
         if (((double) (this.f11395h - ((float) i))) >= 0.5d) {
             i = paddingLeft + ((this.f11392e + intrinsicWidth) * i);
-            Rect rect = (Rect) dv.f1198g.addAnimation();
+            Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
             rect.set(i, getPaddingTop(), (this.f11390c.getIntrinsicWidth() / 2) + i, this.f11390c.getIntrinsicHeight() + getPaddingTop());
             canvas.save();
             canvas.clipRect(rect);
             this.f11390c.setBounds(i, getPaddingTop(), this.f11390c.getIntrinsicWidth() + i, getPaddingTop() + this.f11390c.getIntrinsicHeight());
             this.f11390c.draw(canvas);
             canvas.restore();
-            dv.f1198g.clearAnimation(rect);
+            AnimUtils.f1198g.clearAnimation(rect);
         }
     }
 

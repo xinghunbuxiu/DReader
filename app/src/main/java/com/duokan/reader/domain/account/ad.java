@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0240b;
 import com.duokan.p023b.C0241c;
 import com.duokan.p023b.C0243e;
@@ -29,7 +29,7 @@ public class ad extends ak {
         setContentView(C0245g.account__choose_login_dialog);
         if (ReaderEnv.get().forHd()) {
             setGravity(17);
-            ((BoxView) getContentView()).setMaxWidth(dv.m1932b(getContext(), 380.0f));
+            ((BoxView) getContentView()).setMaxWidth(AnimUtils.m1932b(getContext(), 380.0f));
         } else {
             setGravity(80);
         }
@@ -81,7 +81,7 @@ public class ad extends ak {
     /* renamed from: a */
     private TextView m3360a(String str, int i) {
         TextView textView = (TextView) LayoutInflater.from(getContext()).inflate(C0245g.general__common_dialog_view__button, null);
-        int b = dv.m1932b(getContext(), 20.0f);
+        int b = AnimUtils.m1932b(getContext(), 20.0f);
         textView.getPaint().setFakeBoldText(true);
         textView.setPadding(0, b, 0, b);
         textView.setBackgroundResource(C0243e.general__shared__dialog_button_background);
@@ -92,7 +92,7 @@ public class ad extends ak {
 
     /* renamed from: a */
     private void m3361a() {
-        int b = dv.m1932b(getContext(), 8.0f);
+        int b = AnimUtils.m1932b(getContext(), 8.0f);
         getContentView().setBackgroundDrawable(new hb(new ColorDrawable(getContext().getResources().getColor(C0241c.general__shared__dialog)), (float) b));
         if (ReaderEnv.get().forHd()) {
             setEnterAnimation(C0240b.general__shared__scale_center_in);

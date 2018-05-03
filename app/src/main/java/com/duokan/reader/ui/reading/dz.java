@@ -2,7 +2,7 @@ package com.duokan.reader.ui.reading;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.ui.general.ReaderUi;
 
 class dz implements OnClickListener {
@@ -23,7 +23,7 @@ class dz implements OnClickListener {
         this.f10055b.f10012m.selectAll();
         this.f10055b.f10015p.setVisibility(8);
         this.f10055b.f10014o.setVisibility(0);
-        dv.hideAnimation(this.f10055b.f10015p, null);
-        dv.showAnimation(this.f10055b.f10014o, null);
+        AnimUtils.hideAnimation(this.f10055b.f10015p, null);
+        AnimUtils.showAnimation(this.f10055b.f10014o, null);
     }
 }

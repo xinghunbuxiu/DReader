@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0258j;
@@ -40,7 +40,7 @@ class C1499l extends DkWebListView {
         this.f11451b.setLeftTitle(c1497j.getString(C0258j.store__change_log_view__title));
         setTitleView(this.f11451b);
         setAdapter(new C1500m(this, c1497j));
-        this.f11453d = (dv.m1932b(getContext(), 15.0f) + (getResources().getDrawable(C0254f.store__change_log_view__icon1).getIntrinsicWidth() / 2)) - 1;
+        this.f11453d = (AnimUtils.m1932b(getContext(), 15.0f) + (getResources().getDrawable(C0254f.store__change_log_view__icon1).getIntrinsicWidth() / 2)) - 1;
     }
 
     protected void dispatchDraw(Canvas canvas) {

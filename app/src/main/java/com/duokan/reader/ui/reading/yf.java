@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.domain.document.ba;
 import com.duokan.reader.domain.document.sbk.C0979t;
 
@@ -58,11 +58,11 @@ public class yf extends gx {
         if (this.j != null && !(this.j.mo2327c() instanceof yi) && this.k.mo1284G() && this.k.isVisible()) {
             if ((!this.k.mo1456D().isEmpty() || this.k.m6151i() == 2) && !((ba) this.k).mo1299a()) {
                 C0979t c0979t = (C0979t) this.k.mo1332l();
-                Paint paint = (Paint) dv.f1193b.addAnimation();
+                Paint paint = (Paint) AnimUtils.f1193b.addAnimation();
                 paint.setColor(this.k.mo1342q().f4355c);
                 paint.setTextSize((float) (this.k.mo1340p().f4330a / 5));
-                dv.m1913a(canvas, "" + (c0979t.mo1454j().m7142h() + 1), this.k.getBounds(), 17, paint);
-                dv.f1193b.clearAnimation(paint);
+                AnimUtils.m1913a(canvas, "" + (c0979t.mo1454j().m7142h() + 1), this.k.getBounds(), 17, paint);
+                AnimUtils.f1193b.clearAnimation(paint);
             }
         }
     }
@@ -73,10 +73,10 @@ public class yf extends gx {
             if (!(this.j.mo2327c() instanceof yi)) {
                 super.mo2515a(canvas, z);
             } else if (this.j.mo2332h().mo1340p().f4334e) {
-                Paint paint = (Paint) dv.f1193b.addAnimation();
+                Paint paint = (Paint) AnimUtils.f1193b.addAnimation();
                 paint.setColor(-1);
                 canvas.drawRect(0.0f, 0.0f, (float) getWidth(), (float) getHeight(), paint);
-                dv.f1193b.clearAnimation(paint);
+                AnimUtils.f1193b.clearAnimation(paint);
             }
         }
     }

@@ -13,7 +13,7 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import java.util.HashMap;
 
 /* renamed from: com.duokan.reader.ui.f */
@@ -48,7 +48,7 @@ public class C1315f extends ViewGroup {
             DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
             C1383h c1383h = new C1383h();
             c1383h.f8188a.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
-            dv.m1936b(c1383h.f8188a, (View) this);
+            AnimUtils.m1936b(c1383h.f8188a, (View) this);
             c1383h.f8188a.right = displayMetrics.widthPixels - c1383h.f8188a.right;
             c1383h.f8188a.bottom = displayMetrics.heightPixels - c1383h.f8188a.bottom;
             this.f6754a.put(view, c1383h);
@@ -81,11 +81,11 @@ public class C1315f extends ViewGroup {
             C1383h c1383h = (C1383h) this.f6754a.get(childAt);
             if (c1383h != null) {
                 DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-                Rect rect = (Rect) dv.f1198g.addAnimation();
+                Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
                 rect.set(c1383h.f8188a.left, c1383h.f8188a.top, displayMetrics.widthPixels - c1383h.f8188a.right, displayMetrics.heightPixels - c1383h.f8188a.bottom);
-                dv.m1903a(rect, (View) this);
+                AnimUtils.m1903a(rect, (View) this);
                 childAt.measure(MeasureSpec.makeMeasureSpec(rect.width(), 1073741824), MeasureSpec.makeMeasureSpec(rect.height(), 1073741824));
-                dv.f1198g.clearAnimation(rect);
+                AnimUtils.f1198g.clearAnimation(rect);
             } else if (childAt.getVisibility() != 8) {
                 childAt.measure(i, i2);
             } else {
@@ -111,11 +111,11 @@ public class C1315f extends ViewGroup {
             C1383h c1383h = (C1383h) this.f6754a.get(childAt);
             if (c1383h != null) {
                 DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-                Rect rect = (Rect) dv.f1198g.addAnimation();
+                Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
                 rect.set(c1383h.f8188a.left, c1383h.f8188a.top, displayMetrics.widthPixels - c1383h.f8188a.right, displayMetrics.heightPixels - c1383h.f8188a.bottom);
-                dv.m1903a(rect, (View) this);
+                AnimUtils.m1903a(rect, (View) this);
                 childAt.layout(rect.left, rect.top, rect.right, rect.bottom);
-                dv.f1198g.clearAnimation(rect);
+                AnimUtils.f1198g.clearAnimation(rect);
             } else if (childAt.getVisibility() != 8) {
                 childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
             }

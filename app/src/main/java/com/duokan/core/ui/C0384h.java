@@ -41,7 +41,7 @@ class C0384h implements cu {
             this.f1326e.m1613b(false);
         } else if (this.f1326e.f1285e == this.f1326e.f1283c) {
             long uptimeMillis = SystemClock.uptimeMillis();
-            if (!this.f1322a || uptimeMillis - this.f1323b >= ((long) dv.getDoubleTapTimeout())) {
+            if (!this.f1322a || uptimeMillis - this.f1323b >= ((long) AnimUtils.getDoubleTapTimeout())) {
                 this.f1326e.m1613b(false);
                 this.f1324c.mo1788a(this.f1326e, view, pointF, this.f1326e.f1283c);
             }

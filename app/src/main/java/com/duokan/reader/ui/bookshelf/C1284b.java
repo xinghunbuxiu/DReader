@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0254f;
 import com.duokan.reader.ui.general.C1283z;
 
@@ -26,13 +26,13 @@ class C1284b extends C1283z {
         super.draw(canvas);
         int intrinsicWidth = this.f6152h.getIntrinsicWidth();
         int intrinsicHeight = this.f6152h.getIntrinsicHeight();
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         this.f6151a.mo1636a(rect);
         int width = (rect.width() - intrinsicWidth) / 2;
         int height = (rect.height() - intrinsicHeight) / 2;
         this.f6152h.setBounds(width, height, intrinsicWidth + width, intrinsicHeight + height);
         this.f6152h.draw(canvas);
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect);
     }
 
     public void setAlpha(int i) {

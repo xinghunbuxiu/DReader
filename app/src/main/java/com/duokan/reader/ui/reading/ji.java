@@ -9,8 +9,8 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
-import com.duokan.core.ui.dv;
+
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0241c;
 import com.duokan.reader.ui.general.ej;
 import com.duokan.reader.ui.reading.FixedPageClipView.ClipIndicator;
@@ -29,9 +29,9 @@ class ji extends FrameLayout {
     /* renamed from: f */
     private final jl f10434f;
     /* renamed from: g */
-    private final int f10435g = dv.m1932b(getContext(), 150.0f);
+    private final int f10435g = AnimUtils.m1932b(getContext(), 150.0f);
     /* renamed from: h */
-    private final int f10436h = dv.m1932b(getContext(), 180.0f);
+    private final int f10436h = AnimUtils.m1932b(getContext(), 180.0f);
 
     public ji(FixedPageClipView fixedPageClipView, Context context, su suVar) {
         this.f10429a = fixedPageClipView;
@@ -59,7 +59,7 @@ class ji extends FrameLayout {
     /* renamed from: a */
     public ClipIndicator m14477a(PointF pointF) {
         RectF c = m14474c();
-        int b = dv.m1932b(getContext(), 20.0f);
+        int b = AnimUtils.m1932b(getContext(), 20.0f);
         if (new RectF(c.left - ((float) b), c.top - ((float) b), c.left + ((float) b), c.top + ((float) b)).contains(pointF.x, pointF.y)) {
             return ClipIndicator.LEFT_TOP;
         }
@@ -216,14 +216,14 @@ class ji extends FrameLayout {
         rect.right += this.f10429a.f9093f.getIntrinsicWidth() / 2;
         rect.top -= this.f10429a.f9093f.getIntrinsicHeight() / 2;
         rect.bottom += this.f10429a.f9093f.getIntrinsicHeight() / 2;
-        dv.m1911a(canvas, this.f10429a.f9093f, rect, 51);
-        dv.m1911a(canvas, this.f10429a.f9093f, rect, 83);
-        dv.m1911a(canvas, this.f10429a.f9093f, rect, 19);
-        dv.m1911a(canvas, this.f10429a.f9093f, rect, 53);
-        dv.m1911a(canvas, this.f10429a.f9093f, rect, 85);
-        dv.m1911a(canvas, this.f10429a.f9093f, rect, 21);
-        dv.m1911a(canvas, this.f10429a.f9093f, rect, 49);
-        dv.m1911a(canvas, this.f10429a.f9093f, rect, 81);
+        AnimUtils.m1911a(canvas, this.f10429a.f9093f, rect, 51);
+        AnimUtils.m1911a(canvas, this.f10429a.f9093f, rect, 83);
+        AnimUtils.m1911a(canvas, this.f10429a.f9093f, rect, 19);
+        AnimUtils.m1911a(canvas, this.f10429a.f9093f, rect, 53);
+        AnimUtils.m1911a(canvas, this.f10429a.f9093f, rect, 85);
+        AnimUtils.m1911a(canvas, this.f10429a.f9093f, rect, 21);
+        AnimUtils.m1911a(canvas, this.f10429a.f9093f, rect, 49);
+        AnimUtils.m1911a(canvas, this.f10429a.f9093f, rect, 81);
     }
 
     /* renamed from: b */
@@ -244,7 +244,7 @@ class ji extends FrameLayout {
 
     /* renamed from: d */
     private void m14475d() {
-        int b = dv.m1932b(getContext(), 20.0f);
+        int b = AnimUtils.m1932b(getContext(), 20.0f);
         int width = getWidth();
         int height = getHeight();
         Drawable a = this.f10434f.m14481a();

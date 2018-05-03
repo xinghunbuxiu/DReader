@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 
 import com.duokan.core.sys.UThread;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 
 public abstract class C1283z extends Drawable {
@@ -46,7 +46,7 @@ public abstract class C1283z extends Drawable {
 
     public C1283z(Context context, boolean z) {
         this.context = context;
-        int b = dv.m1932b(this.context, 5.0f);
+        int b = AnimUtils.m1932b(this.context, 5.0f);
         this.oldBounds.set(b, b, b, b);
         this.mDrawable = new ab(this);
         this.mDrawable.setCallback(this.callback);

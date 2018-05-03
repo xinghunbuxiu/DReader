@@ -3,7 +3,7 @@ package com.duokan.reader.ui.bookshelf;
 import android.graphics.PointF;
 import android.view.View;
 import com.duokan.core.ui.bw;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import java.util.Iterator;
 
 class cf implements bw {
@@ -34,12 +34,12 @@ class cf implements bw {
                 b = this.f6268a.f6250a.f6191b;
             }
             ceVar.f6258j = b;
-            PointF pointF2 = (PointF) dv.f1197f.addAnimation();
+            PointF pointF2 = (PointF) AnimUtils.f1197f.addAnimation();
             pointF2.x = (float) ((int) pointF.x);
             pointF2.y = (float) ((int) pointF.y);
-            dv.m1953d(pointF2, view);
+            AnimUtils.m1953d(pointF2, view);
             int a = this.f6268a.m9353a(pointF2, false);
-            dv.f1197f.clearAnimation(pointF2);
+            AnimUtils.f1197f.clearAnimation(pointF2);
             if (a >= 0) {
                 de a2 = this.f6268a.m9381c(a);
                 if (a2.m9119g()) {

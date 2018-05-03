@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.duokan.core.sys.ah;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
@@ -144,7 +144,7 @@ public class br extends fx {
     private Drawable m11492c(int i) {
         if (this.f8353h == null) {
             this.f8353h = new Drawable[8];
-            int b = dv.m1932b(this.f8351f, 5.0f);
+            int b = AnimUtils.m1932b(this.f8351f, 5.0f);
             this.f8353h[0] = new hc((float) b, (float) b, this.f8351f.getResources().getColor(C0252d.general__shared__f6bc7e));
             this.f8353h[1] = new hc((float) b, (float) b, this.f8351f.getResources().getColor(C0252d.general__shared__e49baa));
             this.f8353h[2] = new hc((float) b, (float) b, this.f8351f.getResources().getColor(C0252d.general__shared__98d4db));

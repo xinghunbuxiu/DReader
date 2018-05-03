@@ -7,7 +7,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.SeekBar;
 import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.IFeature;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
@@ -26,7 +26,7 @@ public class qb extends wx {
     public qb(IFeature mFeature) {
         super(mFeature);
         ViewGroup viewGroup = (ViewGroup) LayoutInflater.from(getContext()).inflate(C0245g.reading__reading_brightness_view, null);
-        viewGroup.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? dv.m1932b(getContext(), 400.0f) : -1, -2));
+        viewGroup.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? AnimUtils.m1932b(getContext(), 400.0f) : -1, -2));
         setContentView((View) viewGroup);
         this.f10845a = (su) getContext().queryFeature(su.class);
         this.f10846b = (SeekBar) findViewById(C0244f.reading__reading_brightness_view__seek_brightness);

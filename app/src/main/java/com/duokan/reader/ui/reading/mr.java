@@ -3,10 +3,9 @@ package com.duokan.reader.ui.reading;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
 
 public class mr extends LinearLayout implements ne {
@@ -32,13 +31,13 @@ public class mr extends LinearLayout implements ne {
         this.f10639a.setOnClickListener(new mu(this));
         this.f10642d.setOrientation(0);
         LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -1);
-        layoutParams.setMargins(dv.m1932b(context, 10.0f), 0, dv.m1932b(context, 10.0f), 0);
+        layoutParams.setMargins(AnimUtils.m1932b(context, 10.0f), 0, AnimUtils.m1932b(context, 10.0f), 0);
         this.f10642d.addView(this.f10639a, layoutParams);
         for (int i2 = 1; i2 <= i; i2++) {
             View mwVar = new mw(this, context);
             mwVar.m14682a("" + i2);
             LayoutParams layoutParams2 = new LinearLayout.LayoutParams(-2, -1);
-            layoutParams2.setMargins(dv.m1932b(context, 10.0f), 0, dv.m1932b(context, 10.0f), 0);
+            layoutParams2.setMargins(AnimUtils.m1932b(context, 10.0f), 0, AnimUtils.m1932b(context, 10.0f), 0);
             this.f10642d.addView(mwVar, layoutParams2);
             mwVar.setOnClickListener(new mv(this, i2));
         }
@@ -64,7 +63,7 @@ public class mr extends LinearLayout implements ne {
                 mwVar.m14683a(false);
                 mwVar.m14684b(C0243e.reading__callout_indicator_view__item_bg_1);
             }
-            setPadding(dv.m1932b(getContext(), 10.0f), dv.m1932b(getContext(), 3.0f), dv.m1932b(getContext(), 10.0f), dv.m1932b(getContext(), 3.0f));
+            setPadding(AnimUtils.m1932b(getContext(), 10.0f), AnimUtils.m1932b(getContext(), 3.0f), AnimUtils.m1932b(getContext(), 10.0f), AnimUtils.m1932b(getContext(), 3.0f));
             setBackgroundResource(C0243e.reading__callout_indicator_view__bg);
             return;
         }
@@ -77,7 +76,7 @@ public class mr extends LinearLayout implements ne {
             mwVar.m14684b(C0243e.reading__callout_indicator_view__item_bg);
         }
         setBackgroundDrawable(new ColorDrawable(0));
-        setPadding(0, dv.m1932b(getContext(), 1.0f), dv.m1932b(getContext(), 10.0f), dv.m1932b(getContext(), 1.0f));
+        setPadding(0, AnimUtils.m1932b(getContext(), 1.0f), AnimUtils.m1932b(getContext(), 10.0f), AnimUtils.m1932b(getContext(), 1.0f));
     }
 
     /* renamed from: a */

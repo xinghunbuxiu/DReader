@@ -7,7 +7,7 @@ import android.graphics.NinePatch;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 class cp extends Drawable {
     /* renamed from: a */
@@ -26,10 +26,10 @@ class cp extends Drawable {
         Paint paint = new Paint();
         paint.setAlpha(this.f7040b);
         paint.setFilterBitmap(true);
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         rect.set(getBounds());
         this.f7039a.draw(canvas, rect, paint);
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect);
     }
 
     public void setAlpha(int i) {

@@ -21,7 +21,7 @@ import android.widget.ImageView.ScaleType;
 import com.duokan.common.C0267i;
 import com.duokan.core.app.AppContext;
 import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0251c;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0255g;
@@ -126,10 +126,10 @@ public class bx extends af {
     private void m8950a() {
         View inflate = LayoutInflater.from(getContext()).inflate(C0256h.account__third_share_view, null);
         if (ReaderEnv.get().forHd()) {
-            inflate.setBackgroundDrawable(new hb(new ColorDrawable(getContext().getResources().getColor(C0252d.general__shared__fefaf8)), (float) dv.m1932b(getContext(), 8.0f)));
+            inflate.setBackgroundDrawable(new hb(new ColorDrawable(getContext().getResources().getColor(C0252d.general__shared__fefaf8)), (float) AnimUtils.m1932b(getContext(), 8.0f)));
         }
         setContentView(inflate);
-        inflate.findViewById(C0255g.account__third_share_view__btns).setPadding(dv.m1932b(getContext(), 15.0f), (ReaderEnv.get().forHd() ? 0 : ((C0435s) AppContext.getAppContext(getContext()).queryFeature(C0435s.class)).getTheme().getHeaderPaddingTop()) + dv.m1932b(getContext(), 10.0f), dv.m1932b(getContext(), 15.0f), dv.m1932b(getContext(), 10.0f));
+        inflate.findViewById(C0255g.account__third_share_view__btns).setPadding(AnimUtils.m1932b(getContext(), 15.0f), (ReaderEnv.get().forHd() ? 0 : ((C0435s) AppContext.getAppContext(getContext()).queryFeature(C0435s.class)).getTheme().getHeaderPaddingTop()) + AnimUtils.m1932b(getContext(), 10.0f), AnimUtils.m1932b(getContext(), 15.0f), AnimUtils.m1932b(getContext(), 10.0f));
         DkLabelView dkLabelView = (DkLabelView) inflate.findViewById(C0255g.account__third_share_view__third_name);
         CharSequence k = m8975k();
         dkLabelView.setText(k);
@@ -172,7 +172,7 @@ public class bx extends af {
         }
         View boxView = new BoxView(getActivity(), null);
         View imageView = new ImageView(getActivity());
-        imageView.setPadding(0, dv.m1932b(getActivity(), 10.0f), 0, dv.m1932b(getActivity(), 10.0f));
+        imageView.setPadding(0, AnimUtils.m1932b(getActivity(), 10.0f), 0, AnimUtils.m1932b(getActivity(), 10.0f));
         imageView.setScaleType(ScaleType.CENTER_INSIDE);
         imageView.setImageBitmap(this.f5893e.f5804e);
         boxView.setMaxHeight(C0267i.m609c(getActivity()) / 3);

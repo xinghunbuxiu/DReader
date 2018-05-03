@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.et;
 import com.duokan.reader.ui.general.ReaderUi;
 
@@ -61,9 +61,9 @@ public class NavigationFrameView extends FrameLayout {
         if (isInEditMode()) {
             i3 = 0;
         } else if (ReaderUi.m10170m(getContext())) {
-            i3 = (ReaderUi.m10170m(getContext()) && this.f9105a.am()) ? getMeasuredWidth() / 2 : ReaderUi.m10154a(getContext(), MeasureSpec.getMode(i) != 0 ? MeasureSpec.getSize(i) : dv.getWidthPixels(getContext()), 0.618f);
+            i3 = (ReaderUi.m10170m(getContext()) && this.f9105a.am()) ? getMeasuredWidth() / 2 : ReaderUi.m10154a(getContext(), MeasureSpec.getMode(i) != 0 ? MeasureSpec.getSize(i) : AnimUtils.getWidthPixels(getContext()), 0.618f);
         } else {
-            i3 = dv.m1932b(getContext(), 40.0f);
+            i3 = AnimUtils.m1932b(getContext(), 40.0f);
         }
         if (getPaddingRight() != i3) {
             setPadding(0, 0, i3, 0);

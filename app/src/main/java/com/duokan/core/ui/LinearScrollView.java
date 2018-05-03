@@ -8,11 +8,8 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.animation.Interpolator;
 import android.widget.LinearLayout;
-import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.Scrollable.ScrollState;
 
 public class LinearScrollView extends LinearLayout implements Scrollable {
     /* renamed from: a */
@@ -328,10 +325,10 @@ public class LinearScrollView extends LinearLayout implements Scrollable {
         if (z) {
             if (getOrientation() == 0) {
                 setMaxOverScrollHeight(0);
-                setMaxOverScrollWidth(dv.m1959f(getContext()));
+                setMaxOverScrollWidth(AnimUtils.m1959f(getContext()));
             } else {
                 setMaxOverScrollWidth(0);
-                setMaxOverScrollHeight(dv.m1962g(getContext()));
+                setMaxOverScrollHeight(AnimUtils.m1962g(getContext()));
             }
         }
         this.f841a.m1504a(z, i, i2, i3, i4);

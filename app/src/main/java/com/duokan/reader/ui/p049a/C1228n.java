@@ -3,7 +3,7 @@ package com.duokan.reader.ui.p049a;
 import android.widget.EditText;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
 import com.duokan.p024c.C0258j;
@@ -38,12 +38,12 @@ public class C1228n extends ActivatedController {
         this.f5726a.setOnItemClickListener(new C1232r(this, c1221u));
         this.f5726a.setOnScrollListener(new C1233s(this));
         this.f5726a.m9954a();
-        dv.m1915a(this.f5727b);
+        AnimUtils.m1915a(this.f5727b);
     }
 
     protected void onDetachFromStub() {
         super.onDetachFromStub();
-        dv.m1909a(getContext());
+        AnimUtils.m1909a(getContext());
     }
 
     /* renamed from: a */

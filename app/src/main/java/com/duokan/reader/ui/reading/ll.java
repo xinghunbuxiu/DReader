@@ -16,7 +16,7 @@ import com.duokan.core.ui.C0380do;
 import com.duokan.core.ui.di;
 import com.duokan.core.ui.dl;
 import com.duokan.core.ui.dn;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.et;
 import com.duokan.core.ui.ge;
 import com.duokan.reader.DkApp;
@@ -141,7 +141,7 @@ public abstract class ll extends di implements lk {
             Runnable lmVar = new lm(this, view);
             if (Float.compare(0.0f, m1836b(view).m1865l()) != 0) {
                 m14228a(0, false);
-                dv.m1921a(view, new lp(this, lmVar));
+                AnimUtils.m1921a(view, new lp(this, lmVar));
                 return;
             }
             UThread.post(lmVar);
@@ -251,6 +251,6 @@ public abstract class ll extends di implements lk {
     /* renamed from: h */
     protected Point m14253h() {
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        return dv.m1934b(new Point(displayMetrics.widthPixels / 2, displayMetrics.heightPixels / 2), (View) this);
+        return AnimUtils.m1934b(new Point(displayMetrics.widthPixels / 2, displayMetrics.heightPixels / 2), (View) this);
     }
 }

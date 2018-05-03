@@ -9,7 +9,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
 import com.duokan.reader.domain.bookshelf.C0800c;
 import com.duokan.reader.domain.bookshelf.aa;
@@ -55,7 +55,7 @@ public class aj extends C1283z {
         float f6 = (((f - f5) - ((8.0f * f) / 356.0f)) - (2.0f * f3)) / 3.0f;
         int i2 = i / 2;
         int i3 = i % 2;
-        RectF rectF = (RectF) dv.f1199h.addAnimation();
+        RectF rectF = (RectF) AnimUtils.f1199h.addAnimation();
         rectF.left = (f4 + ((((width - (2.0f * f4)) - (2.0f * f2)) / 3.0f) * ((float) (i3 + 1)))) + (((float) i3) * f2);
         rectF.right = f2 + rectF.left;
         rectF.top = ((((float) (i2 + 1)) * f6) + f5) + (((float) i2) * f3);
@@ -65,7 +65,7 @@ public class aj extends C1283z {
         rect2.top = Math.round(rectF.centerY() - (f / 2.0f));
         rect2.right = Math.round(((float) rect2.left) + width);
         rect2.bottom = Math.round(((float) rect2.top) + f);
-        dv.f1199h.clearAnimation(rectF);
+        AnimUtils.f1199h.clearAnimation(rectF);
         return rect2;
     }
 
@@ -122,17 +122,17 @@ public class aj extends C1283z {
         for (int i = 0; i < this.f6106h.length; i++) {
             C1332f c1332f = this.f6106h[i];
             if (c1332f.isVisible()) {
-                Rect rect = (Rect) dv.f1198g.addAnimation();
+                Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
                 m9135b(rect, i);
                 if (i != this.f6106h.length - 1 || this.f6110l == 0.0f) {
                     canvas.save();
                     canvas.scale(0.42105263f, 0.42105263f, (float) rect.centerX(), (float) rect.centerY());
-                    Rect rect2 = (Rect) dv.f1198g.addAnimation();
+                    Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
                     rect2.set(c1332f.getBounds());
                     c1332f.setBounds(rect);
                     c1332f.draw(canvas);
                     c1332f.setBounds(rect2);
-                    dv.f1198g.clearAnimation(rect2);
+                    AnimUtils.f1198g.clearAnimation(rect2);
                     canvas.restore();
                 } else {
                     canvas.save();
@@ -142,7 +142,7 @@ public class aj extends C1283z {
                     c1332f.draw(canvas);
                     canvas.restore();
                 }
-                dv.f1198g.clearAnimation(rect);
+                AnimUtils.f1198g.clearAnimation(rect);
             }
         }
     }
@@ -211,12 +211,12 @@ public class aj extends C1283z {
             rect.set(this.f6106h[i].getBounds());
         } else if (i + 1 < this.f6106h.length) {
             C1332f c1332f = this.f6106h[i];
-            Rect rect2 = (Rect) dv.f1198g.addAnimation();
+            Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
             rect2.set(this.f6106h[i + 1].getBounds());
             float f = (((float) (rect2.left - c1332f.getBounds().left)) * ((this.f6110l / 0.9f) - 0.11111111f)) + ((float) c1332f.getBounds().left);
             float f2 = (((float) (rect2.top - c1332f.getBounds().top)) * ((this.f6110l / 0.9f) - 0.11111111f)) + ((float) c1332f.getBounds().top);
             rect.set((int) f, (int) f2, (int) (((float) c1332f.getBounds().width()) + f), (int) (((float) c1332f.getBounds().height()) + f2));
-            dv.f1198g.clearAnimation(rect2);
+            AnimUtils.f1198g.clearAnimation(rect2);
         } else {
             rect.set(this.f6106h[i].getBounds());
         }

@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import com.duokan.core.ui.ct;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.domain.bookshelf.C0798a;
@@ -60,7 +60,7 @@ public class ao extends er {
             if (!TextUtils.isEmpty(c0798a.m4384m())) {
                 Rect b = m12659b(view, a, point);
                 if (b != null) {
-                    b.bottom += dv.m1932b(view.getContext(), 3.0f);
+                    b.bottom += AnimUtils.m1932b(view.getContext(), 3.0f);
                     aqVar.mo2492a((er) this, e, c0798a, this.f9204a.mo2011a(b));
                     return true;
                 }
@@ -75,7 +75,7 @@ public class ao extends er {
 
     /* renamed from: a */
     private boolean m12657a(View view, Rect[] rectArr, Point point) {
-        int b = dv.m1932b(view.getContext(), 10.0f);
+        int b = AnimUtils.m1932b(view.getContext(), 10.0f);
         for (Rect intersects : rectArr) {
             if (intersects.intersects(point.x - b, point.y - b, point.x + b, point.y + b)) {
                 return true;
@@ -86,7 +86,7 @@ public class ao extends er {
 
     /* renamed from: b */
     private Rect m12659b(View view, Rect[] rectArr, Point point) {
-        int b = dv.m1932b(view.getContext(), 5.0f);
+        int b = AnimUtils.m1932b(view.getContext(), 5.0f);
         for (Rect rect : rectArr) {
             if (rect.intersects(point.x - b, point.y - b, point.x + b, point.y + b)) {
                 return rect;

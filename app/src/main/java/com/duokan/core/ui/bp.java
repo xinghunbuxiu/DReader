@@ -18,7 +18,7 @@ class bp extends InsetDrawable {
 
     public void draw(Canvas canvas) {
         this.f1029b = true;
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         if (this.f1028a.f1021g != null) {
             if (!this.f1028a.f1021g.hasStarted()) {
                 this.f1028a.f1021g.start();
@@ -58,7 +58,7 @@ class bp extends InsetDrawable {
             this.f1028a.f1017c.draw(canvas);
             canvas.restore();
         }
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect);
         this.f1029b = false;
     }
 

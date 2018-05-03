@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.bookshelf;
 
 import com.duokan.core.sys.UThread;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 class cr implements Runnable {
     /* renamed from: a */
@@ -11,7 +11,7 @@ class cr implements Runnable {
 
     public cr(ce ceVar, int i) {
         this.f6290b = ceVar;
-        this.f6289a = (i > 0 ? 1 : -1) * dv.m1932b(ceVar.f6250a.getContext(), 7.0f);
+        this.f6289a = (i > 0 ? 1 : -1) * AnimUtils.m1932b(ceVar.f6250a.getContext(), 7.0f);
     }
 
     public void run() {

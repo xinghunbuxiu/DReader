@@ -204,10 +204,10 @@ public class GridItemsView extends ay {
     public final void m1170a(int i, Rect rect, int i2) {
         if (!rect.isEmpty() && rect.width() != 0 && rect.height() != 0 && i >= 0 && this.f806r.size() > i) {
             Rect c = m1179c(i);
-            Rect rect2 = (Rect) dv.f1198g.addAnimation();
+            Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
             Gravity.apply(i2, c.width(), c.height(), m1130c(rect), rect2);
             scrollBy(c.left - rect2.left, c.top - rect2.top);
-            dv.f1198g.clearAnimation(rect2);
+            AnimUtils.f1198g.clearAnimation(rect2);
             m1138e();
         }
     }
@@ -290,7 +290,7 @@ public class GridItemsView extends ay {
     /* renamed from: a */
     protected void mo449a(Canvas canvas) {
         super.mo449a(canvas);
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         if (this.f798j != null) {
             int[] m = m1157m();
             if (m.length > 0) {
@@ -303,7 +303,7 @@ public class GridItemsView extends ay {
                 }
             }
         }
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect);
     }
 
     /* renamed from: b */
@@ -313,8 +313,8 @@ public class GridItemsView extends ay {
         int i;
         int f;
         super.mo452b(canvas);
-        Rect rect = (Rect) dv.f1198g.addAnimation();
-        Rect rect2 = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
+        Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
         if (this.f799k != null) {
             int[] m = m1157m();
             if (m.length > 0) {
@@ -356,8 +356,8 @@ public class GridItemsView extends ay {
                 }
             }
         }
-        dv.f1198g.clearAnimation(rect2);
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect2);
+        AnimUtils.f1198g.clearAnimation(rect);
     }
 
     /* renamed from: a */

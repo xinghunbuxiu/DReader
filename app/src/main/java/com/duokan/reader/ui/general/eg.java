@@ -5,7 +5,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import com.duokan.core.app.AppContext;
 import com.duokan.core.ui.HatGridView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0241c;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ui.C0435s;
@@ -37,7 +37,7 @@ public class eg {
 
     /* renamed from: a */
     public static int m10551a(Context context, int i) {
-        return m10552a(context, i, dv.m1932b(context, 380.0f));
+        return m10552a(context, i, AnimUtils.m1932b(context, 380.0f));
     }
 
     /* renamed from: a */

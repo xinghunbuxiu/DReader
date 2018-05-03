@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
 import com.duokan.core.app.IFeature;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
 import com.duokan.p023b.C0247i;
@@ -24,7 +24,7 @@ public class ul extends wx {
     public ul(IFeature mFeature) {
         super(mFeature);
         ViewGroup viewGroup = (ViewGroup) LayoutInflater.from(getContext()).inflate(C0245g.reading__reading_mode_view, null);
-        viewGroup.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? dv.m1932b(getContext(), 400.0f) : -1, -2));
+        viewGroup.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? AnimUtils.m1932b(getContext(), 400.0f) : -1, -2));
         setContentView((View) viewGroup);
         this.f11013a = (su) getContext().queryFeature(su.class);
         this.f11014b = (TextView) findViewById(C0244f.reading__reading_mode_view__tts);

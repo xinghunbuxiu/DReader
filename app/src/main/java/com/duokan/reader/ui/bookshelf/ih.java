@@ -3,7 +3,7 @@ package com.duokan.reader.ui.bookshelf;
 import android.view.View;
 import android.view.View.OnClickListener;
 import com.duokan.core.app.ActivatedController;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 class ih implements OnClickListener {
     /* renamed from: a */
@@ -17,6 +17,6 @@ class ih implements OnClickListener {
     }
 
     public void onClick(View view) {
-        dv.hideAnimation(this.f6610a.getContentView(), new ii(this));
+        AnimUtils.hideAnimation(this.f6610a.getContentView(), new ii(this));
     }
 }

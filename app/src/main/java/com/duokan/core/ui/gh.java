@@ -57,7 +57,7 @@ class gh extends er {
         }
         c0383g.m1612b(view, z2);
         this.f1310c.m1756a(0.01f);
-        this.f1310c.m1757a(dv.getScaledPagingTouchSlop(view.getContext()));
+        this.f1310c.m1757a(AnimUtils.getScaledPagingTouchSlop(view.getContext()));
         this.f1313f.set(0.0f, 0.0f);
         this.f1315h.set(0.0f, 0.0f);
         this.f1314g = false;

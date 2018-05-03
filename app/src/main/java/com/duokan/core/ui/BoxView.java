@@ -125,10 +125,10 @@ public class BoxView extends FrameLayout {
         if (this.f747d) {
             cj a = cj.m1764a(getContext());
             if (a.m1775a()) {
-                Rect rect = (Rect) dv.f1198g.addAnimation();
-                dv.m1904a(rect, (View) this, null);
+                Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
+                AnimUtils.m1904a(rect, (View) this, null);
                 int max = Math.max(0, rect.bottom - a.m1776b().top);
-                dv.f1198g.clearAnimation(rect);
+                AnimUtils.f1198g.clearAnimation(rect);
                 if (max > 0) {
                     int height = getHeight() - max;
                     measure(MeasureSpec.makeMeasureSpec(getWidth(), 1073741824), MeasureSpec.makeMeasureSpec(height, 1073741824));

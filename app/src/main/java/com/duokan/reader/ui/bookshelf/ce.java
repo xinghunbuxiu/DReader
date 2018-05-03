@@ -11,7 +11,7 @@ import android.view.animation.TranslateAnimation;
 import com.duokan.core.ui.as;
 import com.duokan.core.ui.bu;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.domain.bookshelf.an;
@@ -86,7 +86,7 @@ class ce extends er {
         this.f6254f.m1612b(view, z);
         this.f6254f.m1632a((int) HttpStatus.SC_MULTIPLE_CHOICES);
         this.f6254f.m1635b((int) HttpStatus.SC_MULTIPLE_CHOICES);
-        this.f6253e.m1882a(dv.getScaledPagingTouchSlop(this.f6250a.getContext()));
+        this.f6253e.m1882a(AnimUtils.getScaledPagingTouchSlop(this.f6250a.getContext()));
         this.f6255g = false;
         this.f6259k = null;
         this.f6261m = 0;
@@ -164,7 +164,7 @@ class ce extends er {
         } else {
             an b = m9375b(a);
             de c2 = m9381c(a);
-            if (dv.m1949d(c2.getViewCenter(), c) >= ((double) dv.m1932b(this.f6250a.getContext(), 25.0f)) || this.f6259k == b || !c2.m9122j() || !this.f6260l) {
+            if (AnimUtils.m1949d(c2.getViewCenter(), c) >= ((double) AnimUtils.m1932b(this.f6250a.getContext(), 25.0f)) || this.f6259k == b || !c2.m9122j() || !this.f6260l) {
                 m9365a();
                 if (this.f6258j != null) {
                     de draggingItemView = this.f6258j.getDraggingItemView();
@@ -214,7 +214,7 @@ class ce extends er {
         for (int b : visibleItemIndices) {
             View b2 = this.f6258j.mo1670b(b);
             Rect rect = new Rect();
-            dv.m1904a(rect, b2, null);
+            AnimUtils.m1904a(rect, b2, null);
             arrayList.add(b2);
             arrayList2.add(rect);
         }
@@ -223,7 +223,7 @@ class ce extends er {
             if (i < this.f6258j.getItemCount()) {
                 Rect a = this.f6258j.mo1661a(i);
                 View b3 = this.f6258j.mo1670b(i);
-                dv.m1904a(a, b3, null);
+                AnimUtils.m1904a(a, b3, null);
                 arrayList.add(b3);
                 arrayList2.add(a);
             }
@@ -243,7 +243,7 @@ class ce extends er {
 
     /* renamed from: a */
     private Animation m9356a(Rect rect, View view, long j) {
-        dv.m1903a(rect, view);
+        AnimUtils.m1903a(rect, view);
         Animation translateAnimation = new TranslateAnimation((float) rect.left, 0.0f, (float) rect.top, 0.0f);
         translateAnimation.setDuration(j);
         return translateAnimation;
@@ -253,10 +253,10 @@ class ce extends er {
     private void m9373a(de deVar, an anVar, an anVar2, int i) {
         this.f6266r = true;
         m9365a();
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         deVar.m9113a(rect, 300);
         this.f6256h.m9427a(rect, 300, new cm(this, anVar, anVar2, i));
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect);
     }
 
     /* renamed from: a */
@@ -299,7 +299,7 @@ class ce extends er {
             rectF.setEmpty();
         } else {
             rectF.set(0.0f, 0.0f, (float) c.getWidth(), (float) c.getHeight());
-            dv.m1947c(rectF, c);
+            AnimUtils.m1947c(rectF, c);
         }
         return c;
     }
@@ -396,8 +396,8 @@ class ce extends er {
     /* renamed from: a */
     private boolean m9374a(de deVar, float f) {
         boolean z = false;
-        Rect rect = (Rect) dv.f1198g.addAnimation();
-        RectF rectF = (RectF) dv.f1199h.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
+        RectF rectF = (RectF) AnimUtils.f1199h.addAnimation();
         m9368a(rect);
         rectF.set(rect);
         RectF dragBounds = deVar.getDragBounds();
@@ -406,8 +406,8 @@ class ce extends er {
                 z = true;
             }
         }
-        dv.f1199h.clearAnimation(rectF);
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1199h.clearAnimation(rectF);
+        AnimUtils.f1198g.clearAnimation(rect);
         return z;
     }
 }

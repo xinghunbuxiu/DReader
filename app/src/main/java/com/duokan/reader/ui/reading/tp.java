@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.sys.ah;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.domain.bookshelf.BookContent;
@@ -248,9 +248,9 @@ abstract class tp extends ub {
             this.f9682i.setVisibility(4);
             this.f9683j.setVisibility(4);
             m13628o().setVisibility(4);
-            dv.loadSuccess(this.f9683j, null);
-            dv.m1961f(this.f9682i, null);
-            dv.m1958e(this.f9684k, null);
+            AnimUtils.loadSuccess(this.f9683j, null);
+            AnimUtils.m1961f(this.f9682i, null);
+            AnimUtils.m1958e(this.f9684k, null);
         }
     }
 

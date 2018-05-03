@@ -5,7 +5,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import java.lang.ref.WeakReference;
 
 public class es extends Drawable {
@@ -120,7 +120,7 @@ public class es extends Drawable {
     /* renamed from: a */
     private static void m10533a(WeakReference<es> weakReference, View view) {
         if (weakReference != null && view != null) {
-            dv.m1922a(view, new et(weakReference, view));
+            AnimUtils.m1922a(view, new et(weakReference, view));
             view.invalidate();
         }
     }

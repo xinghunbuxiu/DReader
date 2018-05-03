@@ -16,14 +16,14 @@ class ab extends LinearLayout {
     }
 
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        MotionEvent a = dv.m1908a(motionEvent, (View) this, this.f893a.f811a);
+        MotionEvent a = AnimUtils.m1908a(motionEvent, (View) this, this.f893a.f811a);
         boolean onInterceptTouchEvent = this.f893a.f811a.onInterceptTouchEvent(a);
         a.recycle();
         return onInterceptTouchEvent;
     }
 
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        MotionEvent a = dv.m1908a(motionEvent, (View) this, this.f893a.f811a);
+        MotionEvent a = AnimUtils.m1908a(motionEvent, (View) this, this.f893a.f811a);
         boolean onTouchEvent = this.f893a.f811a.onTouchEvent(a);
         a.recycle();
         return onTouchEvent;

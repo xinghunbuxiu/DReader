@@ -4,7 +4,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ui.general.fs;
 import com.duokan.reader.ui.general.hs;
@@ -175,7 +175,7 @@ public class C1384i extends hs {
     private void m11319h(ActivatedController c0303e) {
         ActivatedController d = m9232d(c0303e);
         if (d != null) {
-            dv.startAlphaAnimation(d.getContentView(), 1.0f, 0.3f, (int) HttpStatus.SC_MULTIPLE_CHOICES, true, new C1385j(this));
+            AnimUtils.startAlphaAnimation(d.getContentView(), 1.0f, 0.3f, (int) HttpStatus.SC_MULTIPLE_CHOICES, true, new C1385j(this));
         }
     }
 
@@ -215,7 +215,7 @@ public class C1384i extends hs {
         }
         ActivatedController d = m9232d(c0303e);
         if (d != null) {
-            dv.startAlphaAnimation(d.getContentView(), 0.3f, 1.0f, (int) HttpStatus.SC_MULTIPLE_CHOICES, false, null);
+            AnimUtils.startAlphaAnimation(d.getContentView(), 0.3f, 1.0f, (int) HttpStatus.SC_MULTIPLE_CHOICES, false, null);
         }
     }
 }

@@ -5,10 +5,9 @@ import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
-import com.duokan.core.ui.dv;
+
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0253e;
 import com.duokan.p024c.C0254f;
 import com.duokan.reader.DkApp;
@@ -51,7 +50,7 @@ public class bh extends FrameLayout {
 
     public bh(Context context) {
         super(context);
-        setPadding(dv.m1932b(getContext(), 18.0f), 0, dv.m1932b(getContext(), 18.0f), 0);
+        setPadding(AnimUtils.m1932b(getContext(), 18.0f), 0, AnimUtils.m1932b(getContext(), 18.0f), 0);
         this.f6171i = ReaderUi.m10168d(getContext(), getResources().getDisplayMetrics().widthPixels - (this.f6170h * 2));
         this.f6172j = (int) ((((float) this.f6171i) * 349.0f) / 256.0f);
         this.f6165c = getResources().getDrawable(C0254f.bookshelf__recently_reading_left_shadow);
@@ -127,10 +126,10 @@ public class bh extends FrameLayout {
             m9193a(canvas, m9195b(i), m9195b(i + 1), z);
         }
         View b = m9195b(0);
-        this.f6167e.setBounds(Math.max(b.getLeft() - this.f6167e.getIntrinsicWidth(), dv.m1932b(getContext(), 18.0f)), Math.max(b.getBottom() - this.f6167e.getIntrinsicHeight(), b.getTop()), b.getLeft(), b.getBottom());
+        this.f6167e.setBounds(Math.max(b.getLeft() - this.f6167e.getIntrinsicWidth(), AnimUtils.m1932b(getContext(), 18.0f)), Math.max(b.getBottom() - this.f6167e.getIntrinsicHeight(), b.getTop()), b.getLeft(), b.getBottom());
         this.f6167e.draw(canvas);
         b = m9195b(childCount - 1);
-        int min = Math.min(b.getRight() + this.f6168f.getIntrinsicWidth(), getResources().getDisplayMetrics().widthPixels - dv.m1932b(getContext(), 18.0f));
+        int min = Math.min(b.getRight() + this.f6168f.getIntrinsicWidth(), getResources().getDisplayMetrics().widthPixels - AnimUtils.m1932b(getContext(), 18.0f));
         this.f6168f.setBounds(b.getRight(), Math.max(b.getBottom() - this.f6168f.getIntrinsicHeight(), b.getTop()), min, b.getBottom());
         this.f6168f.draw(canvas);
     }

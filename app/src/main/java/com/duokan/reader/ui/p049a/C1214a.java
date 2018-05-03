@@ -10,7 +10,7 @@ import com.duokan.core.app.ActivatedController;
 import com.duokan.core.sys.ag;
 import com.duokan.core.ui.BoxView;
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
 import com.duokan.p024c.C0258j;
@@ -79,7 +79,7 @@ public class C1214a extends ActivatedController {
         this.f5705j = (LinkedList) this.f5701f.clone();
         this.f5706k = (LinkedList) this.f5702g.clone();
         m8754b();
-        dv.m1915a(this.f5699d);
+        AnimUtils.m1915a(this.f5699d);
     }
 
     protected void onDetachFromStub() {
@@ -89,7 +89,7 @@ public class C1214a extends ActivatedController {
         } else {
             this.f5707l.dismiss();
         }
-        dv.m1909a(getContext());
+        AnimUtils.m1909a(getContext());
     }
 
     /* renamed from: a */

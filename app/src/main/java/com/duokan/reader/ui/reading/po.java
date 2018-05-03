@@ -6,7 +6,7 @@ import com.duokan.core.ui.C0380do;
 import com.duokan.core.ui.ZoomView;
 import com.duokan.core.ui.di;
 import com.duokan.core.ui.dl;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 class po implements IScreenRotationChangedListener {
     /* renamed from: a */
@@ -28,12 +28,12 @@ class po implements IScreenRotationChangedListener {
     /* renamed from: a */
     public void ScreenRotationChanged(int i) {
         Point point = new Point(0, 0);
-        dv.m1945c(point, this.f10802a);
+        AnimUtils.m1945c(point, this.f10802a);
         C0380do b = this.f10803b.m1836b(this.f10804c);
         dl a = this.f10803b.m1826a(this.f10804c);
         float l = b.m1865l() + a.m1865l();
         C0380do c0380do = new C0380do(b);
-        c0380do.m1858d((float) dv.m1892a(i, 0, 360));
+        c0380do.m1858d((float) AnimUtils.m1892a(i, 0, 360));
         this.f10803b.m1835a(this.f10804c, c0380do);
         dl dlVar = new dl(a);
         dlVar.m1858d(l - c0380do.m1865l());

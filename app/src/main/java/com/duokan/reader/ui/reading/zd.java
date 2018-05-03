@@ -3,7 +3,7 @@ package com.duokan.reader.ui.reading;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.domain.bookshelf.eb;
 
 class zd implements OnClickListener {
@@ -33,12 +33,12 @@ class zd implements OnClickListener {
                 this.f11263a.z.m10809a(this.f11263a.k);
             }
             for (i = 0; i < this.f11263a.z.getToolCount(); i++) {
-                this.f11263a.z.m10807a(i).setPadding(0, 0, dv.m1932b(this.f11263a.getContext(), 20.0f), 0);
+                this.f11263a.z.m10807a(i).setPadding(0, 0, AnimUtils.m1932b(this.f11263a.getContext(), 20.0f), 0);
             }
-            this.f11263a.z.m10808a(dv.m1932b(this.f11263a.getContext(), 10.0f), 0, dv.m1932b(this.f11263a.getContext(), 10.0f), 0);
+            this.f11263a.z.m10808a(AnimUtils.m1932b(this.f11263a.getContext(), 10.0f), 0, AnimUtils.m1932b(this.f11263a.getContext(), 10.0f), 0);
         }
         this.f11263a.m15212d();
-        this.f11263a.y.leftMargin = dv.m1932b(this.f11263a.getContext(), -25.0f);
+        this.f11263a.y.leftMargin = AnimUtils.m1932b(this.f11263a.getContext(), -25.0f);
         for (i = 1; i < this.f11263a.s.getChildCount(); i++) {
             this.f11263a.s.getChildAt(i).setLayoutParams(this.f11263a.y);
         }

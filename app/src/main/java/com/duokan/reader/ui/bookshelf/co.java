@@ -2,7 +2,7 @@ package com.duokan.reader.ui.bookshelf;
 
 import android.graphics.PointF;
 import android.graphics.Rect;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.domain.bookshelf.aa;
 import com.duokan.reader.domain.bookshelf.an;
 
@@ -27,10 +27,10 @@ class co implements Runnable {
         this.f6287c.f6262n = 0;
         this.f6287c.f6261m = 0;
         Rect a = this.f6287c.f6258j.mo1661a(0);
-        PointF pointF = (PointF) dv.f1197f.addAnimation();
+        PointF pointF = (PointF) AnimUtils.f1197f.addAnimation();
         pointF.set((float) a.centerX(), (float) a.centerY());
         this.f6287c.f6256h.m9426a(pointF);
-        dv.f1197f.clearAnimation(pointF);
+        AnimUtils.f1197f.clearAnimation(pointF);
         this.f6287c.m9367a(300, new cp(this));
     }
 }

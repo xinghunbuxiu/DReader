@@ -2,7 +2,7 @@ package com.duokan.reader.ui.account;
 
 import android.graphics.Bitmap;
 import com.duokan.core.sys.ag;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.common.C0614l;
 
 /* renamed from: com.duokan.reader.ui.account.x */
@@ -24,7 +24,7 @@ class C1272x implements ag<String> {
     /* renamed from: a */
     public void m9024a(String str) {
         try {
-            Bitmap a = C0614l.m2797a(str, dv.m1932b(this.f5994b.getContext(), 55.0f));
+            Bitmap a = C0614l.m2797a(str, AnimUtils.m1932b(this.f5994b.getContext(), 55.0f));
             if (a != null) {
                 this.f5994b.f5987i.setImageBitmap(a);
                 this.f5994b.f5988j.setText(this.f5993a);

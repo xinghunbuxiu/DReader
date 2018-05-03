@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
 import com.duokan.p023b.C0248j;
 
@@ -59,7 +59,7 @@ public class DotProgressBar extends View {
         this.f6814n = null;
         this.f6815o = null;
         this.f6816p = true;
-        this.f6811k = dv.m1932b(getContext(), 2.0f);
+        this.f6811k = AnimUtils.m1932b(getContext(), 2.0f);
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, C0248j.DotProgressBar);
         this.f6802b = obtainStyledAttributes.getBoolean(C0248j.DotProgressBar_draw_continous, true);
         this.f6804d = getResources().getDrawable(obtainStyledAttributes.getResourceId(C0248j.DotProgressBar_highlight_resource, C0243e.general__shared__jindu_01));
@@ -69,10 +69,10 @@ public class DotProgressBar extends View {
         obtainStyledAttributes.recycle();
         if (this.f6802b) {
             this.f6806f = new bs();
-            this.f6812l = dv.m1932b(getContext(), 5.0f);
+            this.f6812l = AnimUtils.m1932b(getContext(), 5.0f);
         } else {
             this.f6806f = new bu();
-            this.f6812l = dv.m1932b(getContext(), 9.0f);
+            this.f6812l = AnimUtils.m1932b(getContext(), 9.0f);
         }
         this.f6815o = new Paint();
         this.f6815o.setAntiAlias(true);

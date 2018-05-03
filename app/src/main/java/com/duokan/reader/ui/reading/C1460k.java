@@ -4,7 +4,7 @@ import android.content.Context;
 import android.widget.EditText;
 import com.duokan.core.app.AppContext;
 import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
 import com.duokan.p024c.C0258j;
@@ -30,7 +30,7 @@ public class C1460k {
         this.f10484b = new C1461l(this, context, str2);
         this.f10484b.setContentView(C0256h.reading__add_note_view);
         ((BoxView) this.f10484b.getContentView()).setResizeLayoutForSoftInput(true);
-        this.f10484b.findViewById(C0255g.reading__addnotedlg_view__btns).setPadding(dv.m1932b(context, 15.0f), (ReaderEnv.get().forHd() ? 0 : ((C0435s) AppContext.getAppContext(context).queryFeature(C0435s.class)).getTheme().getHeaderPaddingTop()) + dv.m1932b(context, 10.0f), dv.m1932b(context, 15.0f), dv.m1932b(context, 10.0f));
+        this.f10484b.findViewById(C0255g.reading__addnotedlg_view__btns).setPadding(AnimUtils.m1932b(context, 15.0f), (ReaderEnv.get().forHd() ? 0 : ((C0435s) AppContext.getAppContext(context).queryFeature(C0435s.class)).getTheme().getHeaderPaddingTop()) + AnimUtils.m1932b(context, 10.0f), AnimUtils.m1932b(context, 15.0f), AnimUtils.m1932b(context, 10.0f));
         ((PinView) this.f10484b.findViewById(C0255g.reading__addnotedlg_view__sample)).setText(str);
         this.f10485c = (EditText) this.f10484b.findViewById(C0255g.reading__addnotedlg_view__note);
         this.f10485c.setText(str2);

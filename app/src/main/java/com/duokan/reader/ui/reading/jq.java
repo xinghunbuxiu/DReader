@@ -15,13 +15,12 @@ import android.graphics.drawable.BitmapDrawable;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
-import com.duokan.core.ui.dv;
+
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.et;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0254f;
@@ -154,16 +153,16 @@ class jq extends FrameLayout {
     public void m14500a(int i) {
         this.f10456b = i;
         if (i == 0) {
-            this.f10458d.setPadding(dv.m1932b(getContext(), 20.0f), dv.m1932b(getContext(), 15.0f), dv.m1932b(getContext(), 25.0f), dv.m1932b(getContext(), 15.0f));
+            this.f10458d.setPadding(AnimUtils.m1932b(getContext(), 20.0f), AnimUtils.m1932b(getContext(), 15.0f), AnimUtils.m1932b(getContext(), 25.0f), AnimUtils.m1932b(getContext(), 15.0f));
         } else {
-            this.f10458d.setPadding(dv.m1932b(getContext(), 35.0f), dv.m1932b(getContext(), 15.0f), dv.m1932b(getContext(), 5.0f), dv.m1932b(getContext(), 15.0f));
+            this.f10458d.setPadding(AnimUtils.m1932b(getContext(), 35.0f), AnimUtils.m1932b(getContext(), 15.0f), AnimUtils.m1932b(getContext(), 5.0f), AnimUtils.m1932b(getContext(), 15.0f));
         }
     }
 
     /* renamed from: a */
     private Bitmap m14492a(Bitmap bitmap) {
         Paint paint = new Paint();
-        paint.setMaskFilter(new BlurMaskFilter((float) dv.m1932b(getContext(), 4.0f), Blur.SOLID));
+        paint.setMaskFilter(new BlurMaskFilter((float) AnimUtils.m1932b(getContext(), 4.0f), Blur.SOLID));
         int[] iArr = new int[2];
         Bitmap extractAlpha = bitmap.extractAlpha(paint, iArr);
         Bitmap createBitmap = Bitmap.createBitmap(extractAlpha.getWidth(), extractAlpha.getHeight(), Config.ARGB_8888);

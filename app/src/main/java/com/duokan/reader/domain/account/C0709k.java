@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.util.Base64;
 import com.alipay.android.client.Aes;
 import com.alipay.android.client.Rsa;
-import com.duokan.core.app.C0297a;
+import com.duokan.core.app.IActivityLifecycleCallbacks;
 import com.duokan.core.p026a.C0285n;
 import com.duokan.core.sys.C0366o;
 import com.duokan.core.sys.UThread;
@@ -26,7 +26,7 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /* renamed from: com.duokan.reader.domain.account.k */
-public class C0709k implements C0297a, IPermissionsResultListener {
+public class C0709k implements IActivityLifecycleCallbacks, IPermissionsResultListener {
     /* renamed from: a */
     static final /* synthetic */ boolean f2474a = (!C0709k.class.desiredAssertionStatus());
     /* renamed from: b */

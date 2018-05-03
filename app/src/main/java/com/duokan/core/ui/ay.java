@@ -347,10 +347,10 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         if (m1164s(i) && !rect.isEmpty() && rect.width() != 0 && rect.height() != 0) {
             Rect h = m1144h(i);
             if (!h.isEmpty()) {
-                Rect rect2 = (Rect) dv.f1198g.addAnimation();
+                Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
                 Gravity.apply(i2, h.width(), h.height(), m1130c(rect), rect2);
                 scrollBy(h.left - rect2.left, h.top - rect2.top);
-                dv.f1198g.clearAnimation(rect2);
+                AnimUtils.f1198g.clearAnimation(rect2);
                 m1138e();
             }
         }
@@ -870,7 +870,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     private final void mo445a(int i) {
         if (f758c || this.f761C == null) {
             this.f761C = new ba(this, i);
-            UThread.postDelayed(this.f761C, (long) dv.getTapTimeout());
+            UThread.postDelayed(this.f761C, (long) AnimUtils.getTapTimeout());
             return;
         }
         throw new AssertionError();
@@ -887,7 +887,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
                 throw new AssertionError();
             } else if (this.f760B >= 0) {
                 this.f762D = new bb(this, runnable);
-                UThread.postDelayed(this.f762D, (long) dv.getPressedStateDuration());
+                UThread.postDelayed(this.f762D, (long) AnimUtils.getPressedStateDuration());
                 return;
             } else {
                 return;
@@ -1301,8 +1301,8 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     /* renamed from: t */
     private final void m1101t() {
         if (this.f780q != null) {
-            Rect rect = (Rect) dv.f1198g.addAnimation();
-            Rect rect2 = (Rect) dv.f1198g.addAnimation();
+            Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
+            Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
             rect.set(this.f765a.m1553k());
             rect.left += getPaddingLeft();
             rect.top += getPaddingTop();
@@ -1333,8 +1333,8 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
                     break;
             }
             this.f780q.layout(rect2.left, rect2.top, rect2.right, rect2.bottom);
-            dv.f1198g.clearAnimation(rect2);
-            dv.f1198g.clearAnimation(rect);
+            AnimUtils.f1198g.clearAnimation(rect2);
+            AnimUtils.f1198g.clearAnimation(rect);
         }
     }
 

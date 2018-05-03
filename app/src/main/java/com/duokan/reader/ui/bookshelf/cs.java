@@ -9,7 +9,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.ui.general.DkSimulationInterpolator;
 import com.duokan.reader.ui.general.DkSimulationInterpolator.Mode;
 
@@ -47,7 +47,7 @@ class cs extends FrameLayout {
         this.f6294d.m9114b();
         addView(this.f6294d, deVar.getWidth(), deVar.getHeight());
         this.f6295e.set(deVar.getDragBounds().width() / 2.0f, deVar.getDragBounds().height() / 2.0f);
-        dv.m1953d(this.f6295e, (View) deVar);
+        AnimUtils.m1953d(this.f6295e, (View) deVar);
         this.f6297g.set(this.f6295e);
         this.f6296f.set(deVar.getViewCenter());
         setStaticTransformationsEnabled(true);
@@ -117,9 +117,9 @@ class cs extends FrameLayout {
 
     protected boolean getChildStaticTransformation(View view, Transformation transformation) {
         float f;
-        PointF pointF = (PointF) dv.f1197f.addAnimation();
+        PointF pointF = (PointF) AnimUtils.f1197f.addAnimation();
         pointF.set(this.f6295e);
-        dv.m1935b(pointF, (View) this);
+        AnimUtils.m1935b(pointF, (View) this);
         transformation.clear();
         transformation.setTransformationType(2);
         if (this.f6299i == null) {
@@ -138,16 +138,16 @@ class cs extends FrameLayout {
             width = pointF.x - (((float) this.f6294d.getWidth()) * f);
             f = pointF.y - (f * ((float) this.f6294d.getHeight()));
         } else {
-            Rect rect = (Rect) dv.f1198g.addAnimation();
+            Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
             this.f6294d.getItemDrawable().getPadding(rect);
             float centerX = (((-width) - ((float) (rect.left / 2))) + this.f6298h.centerX()) - ((this.f6298h.width() * this.f6300j) / 2.0f);
             width = (((-height) - ((float) (rect.top / 2))) + this.f6298h.centerY()) - ((this.f6298h.height() * this.f6300j) / 2.0f);
-            dv.f1198g.clearAnimation(rect);
+            AnimUtils.f1198g.clearAnimation(rect);
             f = width;
             width = centerX;
         }
         transformation.getMatrix().postTranslate(width, f);
-        dv.f1197f.clearAnimation(pointF);
+        AnimUtils.f1197f.clearAnimation(pointF);
         return true;
     }
 

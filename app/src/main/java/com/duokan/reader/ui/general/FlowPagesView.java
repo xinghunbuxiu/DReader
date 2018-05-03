@@ -8,7 +8,7 @@ import android.util.DisplayMetrics;
 import android.util.SparseIntArray;
 import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.UThread;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import java.util.ArrayList;
 import org.apache.http.HttpStatus;
 
@@ -303,7 +303,7 @@ public class FlowPagesView extends PagesView {
     private boolean m10081b(Rect rect) {
         df dfVar = (df) getCurrentPagePresenter();
         if (dfVar != null && dfVar.mo2329e()) {
-            Rect rect2 = (Rect) dv.f1198g.addAnimation();
+            Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
             int i = this.f6852e;
             while (i <= this.f6853f) {
                 m10074a(rect2, i);
@@ -312,7 +312,7 @@ public class FlowPagesView extends PagesView {
                 }
                 i++;
             }
-            dv.f1198g.clearAnimation(rect2);
+            AnimUtils.f1198g.clearAnimation(rect2);
             if (i != 0) {
                 int i2;
                 if (i > 0 && !getAdapter().mo2322b(dfVar)) {
@@ -376,7 +376,7 @@ public class FlowPagesView extends PagesView {
     /* renamed from: c */
     private boolean m10085c(Rect rect) {
         boolean z = true;
-        Rect rect2 = (Rect) dv.f1198g.addAnimation();
+        Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
         rect2.set(m10097f(0), m10105h(0), m10092e(0), m10101g(0));
         if (m10027o()) {
             if (m10026n()) {
@@ -389,7 +389,7 @@ public class FlowPagesView extends PagesView {
         } else if (rect.top >= rect2.top) {
             z = false;
         }
-        dv.f1198g.clearAnimation(rect2);
+        AnimUtils.f1198g.clearAnimation(rect2);
         return z;
     }
 
@@ -416,7 +416,7 @@ public class FlowPagesView extends PagesView {
     /* renamed from: d */
     private boolean m10090d(Rect rect) {
         boolean z = true;
-        Rect rect2 = (Rect) dv.f1198g.addAnimation();
+        Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
         rect2.set(m10097f(0), m10105h(0), m10092e(0), m10101g(0));
         if (m10027o()) {
             if (m10026n()) {
@@ -429,7 +429,7 @@ public class FlowPagesView extends PagesView {
         } else if (rect.bottom <= rect2.bottom) {
             z = false;
         }
-        dv.f1198g.clearAnimation(rect2);
+        AnimUtils.f1198g.clearAnimation(rect2);
         return z;
     }
 
@@ -456,12 +456,12 @@ public class FlowPagesView extends PagesView {
     /* renamed from: e */
     private void m10095e(Rect rect) {
         if (getCurrentPagePresenter() != null && this.f6856i >= 1 && this.f6857j >= 1) {
-            Rect rect2 = (Rect) dv.f1198g.addAnimation();
+            Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
             m10103g(rect2);
             if (rect2.isEmpty() || !Rect.intersects(rect2, rect)) {
-                dv.f1198g.clearAnimation(rect2);
+                AnimUtils.f1198g.clearAnimation(rect2);
             } else if (rect2.contains(rect)) {
-                dv.f1198g.clearAnimation(rect2);
+                AnimUtils.f1198g.clearAnimation(rect2);
             } else {
                 while (true) {
                     int i;
@@ -476,7 +476,7 @@ public class FlowPagesView extends PagesView {
                                     i2 = null;
                                 }
                             } catch (Throwable th) {
-                                dv.f1198g.clearAnimation(rect2);
+                                AnimUtils.f1198g.clearAnimation(rect2);
                             }
                         } else {
                             i2 = rect.left < rect2.left ? 1 : null;
@@ -527,7 +527,7 @@ public class FlowPagesView extends PagesView {
                                 getCellsView().mo1756o();
                             }
                         } else {
-                            dv.f1198g.clearAnimation(rect2);
+                            AnimUtils.f1198g.clearAnimation(rect2);
                             return;
                         }
                     }
@@ -539,7 +539,7 @@ public class FlowPagesView extends PagesView {
     /* renamed from: f */
     private Rect m10099f(Rect rect) {
         int i;
-        Rect rect2 = (Rect) dv.f1198g.addAnimation();
+        Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
         for (i = 0; i >= this.f6852e; i--) {
             df dfVar = (df) this.f6848a.get(m10117n(i));
             if (dfVar != null) {
@@ -558,7 +558,7 @@ public class FlowPagesView extends PagesView {
                 }
             }
         }
-        dv.f1198g.clearAnimation(rect2);
+        AnimUtils.f1198g.clearAnimation(rect2);
         if (m10027o()) {
             rect.top = 0;
             rect.bottom = getContentHeight();
@@ -571,12 +571,12 @@ public class FlowPagesView extends PagesView {
 
     /* renamed from: g */
     private Rect m10103g(Rect rect) {
-        Rect rect2 = (Rect) dv.f1198g.addAnimation();
+        Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
         m10074a(rect2, this.f6852e);
         rect.set(rect2);
         m10074a(rect2, this.f6853f);
         rect.union(rect2);
-        dv.f1198g.clearAnimation(rect2);
+        AnimUtils.f1198g.clearAnimation(rect2);
         return rect;
     }
 

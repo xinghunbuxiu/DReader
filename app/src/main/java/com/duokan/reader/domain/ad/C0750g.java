@@ -4,7 +4,7 @@ import android.content.Context;
 import com.duokan.core.app.ai;
 import com.duokan.core.app.aj;
 import com.duokan.core.sys.UThread;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.DkApp;
 import java.util.Iterator;
 import java.util.List;
@@ -68,13 +68,13 @@ public class C0750g implements ai {
         this.f2544b = DkApp.get().getSplashAdUpId();
         this.f2545c = DkApp.get().getComicChapterEndAdUpId();
         this.f2559r = new C0746c(context);
-        this.f2550i = dv.m1932b(context, 275.0f);
-        this.f2551j = dv.m1932b(context, 185.0f);
-        this.f2552k = dv.m1932b(context, 120.0f);
-        this.f2553l = dv.m1932b(context, 285.0f);
-        this.f2554m = dv.m1932b(context, 205.0f);
-        this.f2555n = dv.m1932b(context, 155.0f);
-        this.f2556o = dv.m1932b(context, 115.0f);
+        this.f2550i = AnimUtils.m1932b(context, 275.0f);
+        this.f2551j = AnimUtils.m1932b(context, 185.0f);
+        this.f2552k = AnimUtils.m1932b(context, 120.0f);
+        this.f2553l = AnimUtils.m1932b(context, 285.0f);
+        this.f2554m = AnimUtils.m1932b(context, 205.0f);
+        this.f2555n = AnimUtils.m1932b(context, 155.0f);
+        this.f2556o = AnimUtils.m1932b(context, 115.0f);
     }
 
     /* renamed from: a */

@@ -17,7 +17,7 @@ import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.ui.C0379c;
 import com.duokan.core.ui.Scrollable.OverScrollMode;
 import com.duokan.core.ui.ZoomView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.et;
 import com.duokan.p023b.C0243e;
 import com.duokan.reader.domain.bookshelf.C0798a;
@@ -484,7 +484,7 @@ public class gx extends FrameLayout implements OnPreDrawListener {
         int i2 = getResources().getDisplayMetrics().widthPixels;
         int i3 = getResources().getDisplayMetrics().heightPixels;
         Rect rect = new Rect(0, 0, i2, i3);
-        dv.m1937b(rect, null, (View) this);
+        AnimUtils.m1937b(rect, null, (View) this);
         if (rect.intersect(0, 0, getWidth(), getHeight())) {
             this.f10292k.m6120a(rect);
             return true;
@@ -782,11 +782,11 @@ public class gx extends FrameLayout implements OnPreDrawListener {
     /* renamed from: f */
     private void m14277f(Canvas canvas) {
         if (this.f10298q) {
-            Rect rect = (Rect) dv.f1198g.addAnimation();
+            Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
             rect.set(0, 0, getWidth(), getHeight());
-            rect.right -= dv.m1932b(getContext(), 15.0f);
-            dv.m1911a(canvas, this.f10282a.mo2012a(DecorDrawableStyle.BOOK_MARK), rect, 53);
-            dv.f1198g.clearAnimation(rect);
+            rect.right -= AnimUtils.m1932b(getContext(), 15.0f);
+            AnimUtils.m1911a(canvas, this.f10282a.mo2012a(DecorDrawableStyle.BOOK_MARK), rect, 53);
+            AnimUtils.f1198g.clearAnimation(rect);
         }
     }
 

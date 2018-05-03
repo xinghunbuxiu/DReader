@@ -9,7 +9,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 import com.duokan.common.C0267i;
 import com.duokan.core.app.IFeature;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
@@ -32,7 +32,7 @@ public class fh extends wx {
     public fh(IFeature mFeature) {
         int i;
         super(mFeature);
-        this.f10142b.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? dv.m1932b(getContext(), 400.0f) : -1, -2));
+        this.f10142b.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? AnimUtils.m1932b(getContext(), 400.0f) : -1, -2));
         setContentView(this.f10142b);
         this.f10143c = new ReadingTheme[]{ReadingTheme.THEME7, ReadingTheme.THEME1, ReadingTheme.THEME2, ReadingTheme.THEME3, ReadingTheme.THEME4, ReadingTheme.THEME6, ReadingTheme.THEME9, ReadingTheme.THEME8, ReadingTheme.THEME10, ReadingTheme.THEME11, ReadingTheme.THEME12, ReadingTheme.THEME17, ReadingTheme.THEME13, ReadingTheme.THEME15, ReadingTheme.THEME14, ReadingTheme.THEME16, ReadingTheme.THEME18};
         this.f10144d = (LinearLayout) findViewById(C0244f.reading__reading_options_view__theme_bar_1);

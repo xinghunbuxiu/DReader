@@ -2,7 +2,7 @@ package com.duokan.reader.ui.p049a;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 /* renamed from: com.duokan.reader.ui.a.c */
 class C1216c implements OnClickListener {
@@ -14,6 +14,6 @@ class C1216c implements OnClickListener {
     }
 
     public void onClick(View view) {
-        dv.m1915a(this.f5709a.f5700e);
+        AnimUtils.m1915a(this.f5709a.f5700e);
     }
 }

@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0242d;
 import com.duokan.p023b.C0243e;
 import com.duokan.reader.domain.bookshelf.C0800c;
@@ -173,7 +173,7 @@ public class C1332f extends C1283z {
             invalidateSelf();
         }
         Rect bounds = getBounds();
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         rect.set(bounds);
         if (this.f7199v != 0.0f) {
             float f = (float) ((((bounds.left + this.f7186i.left) + bounds.right) - this.f7186i.right) / 2);
@@ -182,10 +182,10 @@ public class C1332f extends C1283z {
             f = (((((float) this.f7197t.centerY()) * f) - (f2 * ((float) this.f7197t.centerX()))) + ((f2 - ((float) this.f7197t.centerY())) * centerX)) / (f - ((float) this.f7197t.centerX()));
             f2 = (((((10.0f * 0.42105263f) - 10.0f) * this.f7199v) + 10.0f) - 0.42105263f) / 9.0f;
             canvas.scale(f2, f2, centerX, f);
-            RectF rectF = (RectF) dv.f1199h.addAnimation();
+            RectF rectF = (RectF) AnimUtils.f1199h.addAnimation();
             rectF.set((centerX - ((float) (this.f7197t.width() / 2))) - ((float) this.f7186i.left), (f - ((float) (this.f7197t.height() / 2))) - ((float) this.f7186i.top), (centerX + ((float) (this.f7197t.width() / 2))) + ((float) this.f7186i.right), (f + ((float) (this.f7197t.height() / 2))) + ((float) this.f7186i.bottom));
             rectF.round(rect);
-            dv.f1199h.clearAnimation(rectF);
+            AnimUtils.f1199h.clearAnimation(rectF);
         }
         f7184a.set(rect.left + this.f7186i.left, rect.top + this.f7186i.top, rect.right - this.f7186i.right, rect.bottom - this.f7186i.bottom);
         this.f7187j.setBounds(f7184a);
@@ -209,20 +209,20 @@ public class C1332f extends C1283z {
         }
         if (this.f7192o != null) {
             canvas.save();
-            canvas.translate((float) dv.m1932b(m10606a(), 2.0f), (float) (-Math.round(1.5f * ((float) this.f7192o.getIntrinsicHeight()))));
-            dv.m1911a(canvas, this.f7192o, f7184a, 85);
+            canvas.translate((float) AnimUtils.m1932b(m10606a(), 2.0f), (float) (-Math.round(1.5f * ((float) this.f7192o.getIntrinsicHeight()))));
+            AnimUtils.m1911a(canvas, this.f7192o, f7184a, 85);
             canvas.restore();
         }
         if (this.f7193p != null) {
             canvas.save();
             canvas.translate(0.0f, (float) ((-this.f7193p.getIntrinsicHeight()) / 2));
-            dv.m1911a(canvas, this.f7193p, f7184a, 83);
+            AnimUtils.m1911a(canvas, this.f7193p, f7184a, 83);
             canvas.restore();
         }
         if (this.f7191n != null) {
-            dv.m1911a(canvas, this.f7191n, f7184a, 53);
+            AnimUtils.m1911a(canvas, this.f7191n, f7184a, 53);
         }
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect);
         canvas.restore();
     }
 

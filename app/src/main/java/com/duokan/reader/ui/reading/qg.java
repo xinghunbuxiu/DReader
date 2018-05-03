@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
 import com.duokan.reader.ReaderEnv;
@@ -37,7 +37,7 @@ public class qg extends wx {
         int i;
         super(mFeature);
         ViewGroup viewGroup = (ViewGroup) LayoutInflater.from(getContext()).inflate(this.f10853a.am() ? C0256h.reading__reading_comic_more_horizontal_view : C0256h.reading__reading_comic_more_vertical_view, null);
-        viewGroup.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? dv.m1932b(getContext(), 240.0f) : -1, -2));
+        viewGroup.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? AnimUtils.m1932b(getContext(), 240.0f) : -1, -2));
         setContentView((View) viewGroup);
         this.f10858f = findViewById(C0255g.reading__reading_comic_more_view);
         this.f10859g = (FrameLayout) findViewById(C0255g.reading__reading_comic_more_view__sub_menu_frame);

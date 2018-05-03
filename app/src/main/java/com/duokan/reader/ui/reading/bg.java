@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.View.MeasureSpec;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0252d;
 import com.duokan.reader.domain.document.ab;
 import com.duokan.reader.domain.document.az;
@@ -29,7 +29,7 @@ public class bg implements bb {
         this.f9831b.m13772a(runnable);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         this.f9832c.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        this.f9833d = displayMetrics.widthPixels - dv.m1932b(this.f9832c, 115.0f);
+        this.f9833d = displayMetrics.widthPixels - AnimUtils.m1932b(this.f9832c, 115.0f);
     }
 
     /* renamed from: a */

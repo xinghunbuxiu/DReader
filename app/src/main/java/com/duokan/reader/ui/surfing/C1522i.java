@@ -19,7 +19,7 @@ import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.UThread;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.et;
 import com.duokan.p024c.C0255g;
@@ -497,7 +497,7 @@ public class C1522i extends C1367p implements OnPrimaryClipChangedListener, io, 
             frameLayout.setBackgroundDrawable(c1330e);
             frameLayout.addView(view, new LayoutParams(-1, -1));
             this.f11543k.addView(frameLayout, new LayoutParams(-1, -1));
-            dv.showAnimation(frameLayout, runnable);
+            AnimUtils.showAnimation(frameLayout, runnable);
         }
     }
 
@@ -506,7 +506,7 @@ public class C1522i extends C1367p implements OnPrimaryClipChangedListener, io, 
         if (view != null) {
             View view2 = (FrameLayout) view.getParent();
             view2.setVisibility(4);
-            dv.hideAnimation(view2, new C1527n(this, view2, runnable));
+            AnimUtils.hideAnimation(view2, new C1527n(this, view2, runnable));
         }
     }
 

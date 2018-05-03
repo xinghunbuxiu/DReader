@@ -15,7 +15,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.duokan.core.app.AppContext;
 import com.duokan.core.sys.UThread;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0241c;
 import com.duokan.p023b.C0242d;
 import com.duokan.p023b.C0243e;
@@ -46,7 +46,7 @@ public class dr extends FrameLayout {
     /* renamed from: f */
     private final int f7108f = 14;
     /* renamed from: g */
-    private final int f7109g = dv.m1932b(getContext(), 29.0f);
+    private final int f7109g = AnimUtils.m1932b(getContext(), 29.0f);
     /* renamed from: h */
     private final FrameLayout f7110h;
     /* renamed from: i */
@@ -75,8 +75,8 @@ public class dr extends FrameLayout {
         FrameLayout frameLayout;
         super(context);
         int pageHeaderHeight = ((C0435s) AppContext.getAppContext(getContext()).queryFeature(C0435s.class)).getTheme().getPageHeaderHeight();
-        this.f7106d = dv.m1932b(getContext(), 2.0f);
-        this.f7107e = dv.m1932b(getContext(), 8.0f);
+        this.f7106d = AnimUtils.m1932b(getContext(), 2.0f);
+        this.f7107e = AnimUtils.m1932b(getContext(), 8.0f);
         this.f7110h = (FrameLayout) LayoutInflater.from(getContext()).inflate(C0245g.surfing__immersive_surfing_view, this, false);
         this.f7110h.setLayoutParams(new LayoutParams(-1, pageHeaderHeight));
         this.f7116n = this.f7110h.findViewById(C0244f.surfing__immersive_surfing_view__content);
@@ -141,7 +141,7 @@ public class dr extends FrameLayout {
     /* renamed from: a */
     public void m10517a(int i, boolean z) {
         if ((this.f7104b != i || z) && i >= 0 && i < this.f7114l.getChildCount()) {
-            dv.m1921a(this.f7114l, new du(this, i));
+            AnimUtils.m1921a(this.f7114l, new du(this, i));
         }
     }
 
@@ -179,7 +179,7 @@ public class dr extends FrameLayout {
     public void m10514a() {
         int j;
         if (ReaderEnv.get().forHd() && DkPublic.isLandscape(getContext())) {
-            j = (int) (((float) dv.getWidthPixels(getContext())) * 0.1f);
+            j = (int) (((float) AnimUtils.getWidthPixels(getContext())) * 0.1f);
         } else {
             j = 0;
         }
@@ -227,7 +227,7 @@ public class dr extends FrameLayout {
     private void m10513h() {
         this.f7119q.clear();
         for (int i = 0; i < this.f7114l.getChildCount(); i++) {
-            Rect rect = (Rect) dv.f1198g.addAnimation();
+            Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
             View childAt = this.f7114l.getChildAt(i);
             if (childAt.getVisibility() != 0) {
                 this.f7119q.put(Integer.valueOf(i), Float.valueOf(0.0f));
@@ -241,7 +241,7 @@ public class dr extends FrameLayout {
                     this.f7119q.put(Integer.valueOf(i), Float.valueOf(((float) (this.f7114l.getViewportBounds().right - rect.left)) / ((float) rect.width())));
                 } else {
                     this.f7119q.put(Integer.valueOf(i), Float.valueOf(1.0f));
-                    dv.f1198g.clearAnimation(rect);
+                    AnimUtils.f1198g.clearAnimation(rect);
                 }
             }
         }
@@ -283,7 +283,7 @@ public class dr extends FrameLayout {
             int dimensionPixelSize = getResources().getDimensionPixelSize(C0242d.general_font__shared__c);
             int i = dimensionPixelSize * 2;
             View childAt = this.f7112j.getChildAt(((Integer) visibleList.get(0)).intValue());
-            Rect rect = (Rect) dv.f1198g.addAnimation();
+            Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
             childAt.getGlobalVisibleRect(rect);
             int width = (rect.right - (childAt.getWidth() / 2)) + (i / 2);
             View childAt2 = this.f7112j.getChildAt(((Integer) visibleList.get(visibleList.size() - 1)).intValue());
@@ -296,11 +296,11 @@ public class dr extends FrameLayout {
             }
             paint.setColor(Color.rgb(m10494a(255, (int) HttpStatus.SC_PROCESSING, floatValue, f), m10494a(132, (int) HttpStatus.SC_PROCESSING, floatValue, f), m10494a(0, (int) HttpStatus.SC_PROCESSING, floatValue, f)));
             dimensionPixelSize = this.f7110h.getPaddingTop() + (((childAt.getTop() + childAt.getPaddingTop()) + dimensionPixelSize) + this.f7107e);
-            RectF rectF = (RectF) dv.f1199h.addAnimation();
+            RectF rectF = (RectF) AnimUtils.f1199h.addAnimation();
             rectF.set((float) (contentWidth - i), (float) dimensionPixelSize, (float) contentWidth, (float) (dimensionPixelSize + this.f7106d));
             canvas.drawRoundRect(rectF, (float) (this.f7106d / 2), (float) (this.f7106d / 2), paint);
-            dv.f1199h.clearAnimation(rectF);
-            dv.f1198g.clearAnimation(rect);
+            AnimUtils.f1199h.clearAnimation(rectF);
+            AnimUtils.f1198g.clearAnimation(rect);
         }
     }
 
@@ -309,20 +309,20 @@ public class dr extends FrameLayout {
         float c = mo2531c();
         int rgb = Color.rgb(m10493a(255, 122, c), m10493a(255, 122, c), m10493a(255, 122, c));
         int d = (int) ((((c + 1.0f) / 2.0f) * 255.0f) * mo2532d());
-        RectF rectF = (RectF) dv.f1199h.addAnimation();
+        RectF rectF = (RectF) AnimUtils.f1199h.addAnimation();
         int height = view.getHeight() - view.getPaddingBottom();
         rectF.set((float) view.getPaddingLeft(), (float) Math.max(0, height - this.f7109g), (float) (view.getWidth() - view.getPaddingRight()), (float) height);
         Paint paint = new Paint();
         paint.setColor(Color.parseColor("#f2f2f2"));
         paint.setAntiAlias(true);
         paint.setAlpha(d);
-        canvas.drawRoundRect(rectF, (float) dv.m1932b(getContext(), 4.0f), (float) dv.m1932b(getContext(), 4.0f), paint);
+        canvas.drawRoundRect(rectF, (float) AnimUtils.m1932b(getContext(), 4.0f), (float) AnimUtils.m1932b(getContext(), 4.0f), paint);
         paint = new Paint();
         paint.setAntiAlias(true);
-        paint.setTextSize((float) dv.getScaledDensity(getContext(), 12.0f));
+        paint.setTextSize((float) AnimUtils.getScaledDensity(getContext(), 12.0f));
         paint.measureText(getSearchKeyWord());
         Drawable drawable = getResources().getDrawable(C0243e.surfing__surfing_tab_view__search_light);
-        int max = (int) Math.max(rectF.left, rectF.centerX() - ((float) (((int) (((float) (drawable.getIntrinsicWidth() + dv.m1932b(getContext(), 7.0f))) + paint.measureText(getSearchKeyWord()))) / 2)));
+        int max = (int) Math.max(rectF.left, rectF.centerX() - ((float) (((int) (((float) (drawable.getIntrinsicWidth() + AnimUtils.m1932b(getContext(), 7.0f))) + paint.measureText(getSearchKeyWord()))) / 2)));
         int min = (int) Math.min(rectF.right, (float) (drawable.getIntrinsicWidth() + max));
         int max2 = (int) Math.max(rectF.top, rectF.centerY() - ((float) (drawable.getIntrinsicHeight() / 2)));
         int min2 = (int) Math.min(rectF.bottom, (float) (drawable.getIntrinsicHeight() + max2));
@@ -331,11 +331,11 @@ public class dr extends FrameLayout {
         drawable.draw(canvas);
         paint.setColor(rgb);
         paint.setAlpha(d);
-        RectF rectF2 = (RectF) dv.f1199h.addAnimation();
-        rectF2.set((float) ((drawable.getIntrinsicWidth() + max) + dv.m1932b(getContext(), 7.0f)), rectF.top, rectF.right, rectF.bottom);
-        dv.m1914a(canvas, getSearchKeyWord(), rectF2, 19, paint);
-        dv.f1199h.clearAnimation(rectF2);
-        dv.f1199h.clearAnimation(rectF);
+        RectF rectF2 = (RectF) AnimUtils.f1199h.addAnimation();
+        rectF2.set((float) ((drawable.getIntrinsicWidth() + max) + AnimUtils.m1932b(getContext(), 7.0f)), rectF.top, rectF.right, rectF.bottom);
+        AnimUtils.m1914a(canvas, getSearchKeyWord(), rectF2, 19, paint);
+        AnimUtils.f1199h.clearAnimation(rectF2);
+        AnimUtils.f1199h.clearAnimation(rectF);
     }
 
     /* renamed from: a */
@@ -366,7 +366,7 @@ public class dr extends FrameLayout {
 
     /* renamed from: a */
     private TextView m10498a(String str) {
-        TextView dvVar = new dv(this, getContext());
+        TextView dvVar = new AnimUtils(this, getContext());
         dvVar.setText(str);
         dvVar.setGravity(1);
         dvVar.setSingleLine(true);
@@ -377,7 +377,7 @@ public class dr extends FrameLayout {
     }
 
     private int getTabTextHeight() {
-        return (dv.getScaledDensity(getContext(), 14.0f) + this.f7106d) + this.f7107e;
+        return (AnimUtils.getScaledDensity(getContext(), 14.0f) + this.f7106d) + this.f7107e;
     }
 
     public View getTabView() {

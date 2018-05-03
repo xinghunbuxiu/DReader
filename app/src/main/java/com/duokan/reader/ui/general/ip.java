@@ -3,7 +3,7 @@ package com.duokan.reader.ui.general;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.EditText;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0241c;
 import com.duokan.p023b.C0245g;
 import com.duokan.p023b.C0247i;
@@ -46,7 +46,7 @@ public class ip extends ak {
     }
 
     public void dismiss() {
-        dv.m1909a(getContext());
+        AnimUtils.m1909a(getContext());
         super.dismiss();
     }
 }

@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 class gx implements OnTouchListener {
     /* renamed from: a */
@@ -23,10 +23,10 @@ class gx implements OnTouchListener {
     public boolean onTouch(View view, MotionEvent motionEvent) {
         if (motionEvent.getAction() == 1) {
             View b = this.f7314c.m10733b();
-            Rect rect = (Rect) dv.f1198g.addAnimation();
+            Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
             rect.set(b.getLeft(), b.getTop(), b.getRight(), b.getBottom());
             boolean z = !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY());
-            dv.f1198g.clearAnimation(rect);
+            AnimUtils.f1198g.clearAnimation(rect);
             if (z && (this.f7313b & 1) == 1) {
                 this.f7314c.requestDetach();
             }

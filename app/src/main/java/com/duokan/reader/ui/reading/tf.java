@@ -15,7 +15,7 @@ import android.view.View;
 import com.duokan.core.app.BrightnessMode;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.sys.C0366o;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.kernel.DkUtils;
 import com.duokan.p024c.C0258j;
@@ -89,7 +89,7 @@ class tf implements ac, af, an, aq, C1428i, C1433n, C1436q, C1439t, adi, za {
         if (f.mo1414e()) {
             gxVar.m14290a(((Integer) pair.second).intValue(), new ColorDrawable(-16777216));
         }
-        this.f10968a.f9665j.m14639a(f, dv.m1937b(new Rect(rect), (View) pair.first, this.f10968a.f9657b), new tg(this, f, gxVar, pair, a));
+        this.f10968a.f9665j.m14639a(f, AnimUtils.m1937b(new Rect(rect), (View) pair.first, this.f10968a.f9657b), new tg(this, f, gxVar, pair, a));
         this.f10968a.f9656a.mo2180v().setScreenTimeout(Integer.MAX_VALUE);
     }
 
@@ -135,7 +135,7 @@ class tf implements ac, af, an, aq, C1428i, C1433n, C1436q, C1439t, adi, za {
     public void mo2489a(Pair<gx, Integer> pair) {
         ab e = ((gx) pair.first).getPageDrawable().mo1315e(((Integer) pair.second).intValue());
         this.f10968a.f9656a.aU();
-        this.f10968a.m13551a(new tj(this)).mo2262a(dv.m1936b(new Rect(((gx) pair.first).getPageDrawable().mo1326i(((Integer) pair.second).intValue())), (View) pair.first), e);
+        this.f10968a.m13551a(new tj(this)).mo2262a(AnimUtils.m1936b(new Rect(((gx) pair.first).getPageDrawable().mo1326i(((Integer) pair.second).intValue())), (View) pair.first), e);
     }
 
     /* renamed from: a */

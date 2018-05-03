@@ -11,7 +11,7 @@ import com.duokan.core.app.ActivatedController;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.ui.C0374a;
 import com.duokan.core.ui.cv;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 public class gs extends ActivatedController {
     static final /* synthetic */ boolean $assertionsDisabled = (!gs.class.desiredAssertionStatus() ? true : $assertionsDisabled);
@@ -38,7 +38,7 @@ public class gs extends ActivatedController {
                     this.mPopupWindow = new gt(this, getContext(), $assertionsDisabled);
                     this.mPopupRootView = new FrameLayout(getContext());
                     this.mPopupWindow.setContentView(this.mPopupRootView, new LayoutParams(-1, -1));
-                    int b = dv.m1932b(getContext(), 5.0f);
+                    int b = AnimUtils.m1932b(getContext(), 5.0f);
                     this.mPopupWindow.setBalloonPadding(b, b, b, b);
                 } else {
                     throw new AssertionError();

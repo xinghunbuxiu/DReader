@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.bookshelf;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 /* renamed from: com.duokan.reader.ui.bookshelf.e */
 class C1288e implements Runnable {
@@ -15,6 +15,6 @@ class C1288e implements Runnable {
         if (this.f6366a.f6319a.f6237a != null) {
             this.f6366a.f6319a.f6237a.m9696c();
         }
-        dv.hideAnimation(this.f6366a.f6319a.f6238b, new C1289f(this));
+        AnimUtils.hideAnimation(this.f6366a.f6319a.f6238b, new C1289f(this));
     }
 }

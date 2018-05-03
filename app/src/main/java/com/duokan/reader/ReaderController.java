@@ -40,7 +40,7 @@ import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ah;
 import com.duokan.core.ui.cv;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0253e;
 import com.duokan.p024c.C0258j;
@@ -269,11 +269,11 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
 
         public void showSmoothly() {
             show();
-            dv.startAlphaAnimation(getContentView(), 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, false, null);
+            AnimUtils.startAlphaAnimation(getContentView(), 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, false, null);
         }
 
         public void dismissSmoothly() {
-            dv.startAlphaAnimation(getContentView(), 1.0f, 0.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, new C04721(this));
+            AnimUtils.startAlphaAnimation(getContentView(), 1.0f, 0.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, new C04721(this));
         }
     }
 
@@ -329,7 +329,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                         z = false;
                     }
                     this.f1590a.activate(this.f1590a.f1439r);
-                    dv.m1921a(this.f1590a.f1439r.getContentView(), new Runnable(this) {
+                    AnimUtils.m1921a(this.f1590a.f1439r.getContentView(), new Runnable(this) {
                         /* renamed from: c */
                         final /* synthetic */ ReadingSwitcher f1589c;
 
@@ -1166,7 +1166,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
 
     public void showMenuFromBottom(final hi hiVar) {
         showPopup(hiVar);
-        dv.startTranslateAnimation(hiVar.m9791a(), 0.0f, 0.0f, 1.0f, 0.0f, HttpStatus.SC_OK, true, new Runnable(this) {
+        AnimUtils.startTranslateAnimation(hiVar.m9791a(), 0.0f, 0.0f, 1.0f, 0.0f, HttpStatus.SC_OK, true, new Runnable(this) {
             /* renamed from: b */
             final /* synthetic */ ReaderController f1516b;
 
@@ -1174,12 +1174,12 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 hiVar.m9792a(true);
             }
         });
-        dv.startAlphaAnimation(hiVar.m9793b(), 0.0f, 1.0f, HttpStatus.SC_OK, true, null);
+        AnimUtils.startAlphaAnimation(hiVar.m9793b(), 0.0f, 1.0f, HttpStatus.SC_OK, true, null);
     }
 
     public void showMenuFromTop(final he heVar) {
         showPopup(heVar);
-        dv.startTranslateAnimation(heVar.m9488a(), 0.0f, 0.0f, -1.0f, 0.0f, HttpStatus.SC_OK, true, new Runnable(this) {
+        AnimUtils.startTranslateAnimation(heVar.m9488a(), 0.0f, 0.0f, -1.0f, 0.0f, HttpStatus.SC_OK, true, new Runnable(this) {
             /* renamed from: b */
             final /* synthetic */ ReaderController f1518b;
 
@@ -1187,7 +1187,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 heVar.m9492a(true);
             }
         });
-        dv.startAlphaAnimation(heVar.m9493b(), 0.0f, 1.0f, (int) HttpStatus.SC_OK, true, null);
+        AnimUtils.startAlphaAnimation(heVar.m9493b(), 0.0f, 1.0f, (int) HttpStatus.SC_OK, true, null);
     }
 
     public long getTotalActiveTime() {

@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ah;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.kernel.DkArgbColor;
 import com.duokan.kernel.DkBox;
 import com.duokan.kernel.DkFlowPosition;
@@ -1307,16 +1307,16 @@ public class az extends as implements ba, bd, cc {
             }
             C0917k p = mo1340p();
             C0923m q = mo1342q();
-            Rect rect = (Rect) dv.f1198g.addAnimation();
-            Rect rect2 = (Rect) dv.f1198g.addAnimation();
+            Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
+            Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
             int i3 = p.f4332c.left;
             a = getBounds().height() - p.f4332c.bottom;
             int width2 = getBounds().width() - p.f4332c.right;
-            int width3 = (this.f4526g.n && this.f4526g.f4491r && this.f4540u != null) ? dv.getTextBounds(rect2, this.a, this.f4540u, (float) (getBounds().width() - p.f4332c.right)).width() + dv.m1932b(DkApp.get().getTopActivity(), 10.0f) : 0;
+            int width3 = (this.f4526g.n && this.f4526g.f4491r && this.f4540u != null) ? AnimUtils.getTextBounds(rect2, this.a, this.f4540u, (float) (getBounds().width() - p.f4332c.right)).width() + AnimUtils.m1932b(DkApp.get().getTopActivity(), 10.0f) : 0;
             rect.set(i3, a, width2 - width3, (getBounds().height() - p.f4332c.bottom) + q.f4358f);
-            dv.m1913a(canvas, this.f4541v, rect, (this.f4526g.n ? 5 : 1) | 16, this.a);
-            dv.f1198g.clearAnimation(rect2);
-            dv.f1198g.clearAnimation(rect);
+            AnimUtils.m1913a(canvas, this.f4541v, rect, (this.f4526g.n ? 5 : 1) | 16, this.a);
+            AnimUtils.f1198g.clearAnimation(rect2);
+            AnimUtils.f1198g.clearAnimation(rect);
             return i;
         }
     }
@@ -1686,7 +1686,7 @@ public class az extends as implements ba, bd, cc {
                     if ((X instanceof DkeErrorPage) || !this.f4531l.isEmpty()) {
                         if (!(this.f4523H == 0 || m6544Y().getChapterType(this.f4529j.f4647a) == 2)) {
                             Canvas canvas = new Canvas(bitmap);
-                            Paint paint = (Paint) dv.f1193b.addAnimation();
+                            Paint paint = (Paint) AnimUtils.f1193b.addAnimation();
                             paint.setColor(Color.argb(Math.round(12.75f), 0, 0, 0));
                             for (av avVar : this.f4531l) {
                                 if (avVar.mo1074j() || avVar.mo1076l() == null) {
@@ -1698,7 +1698,7 @@ public class az extends as implements ba, bd, cc {
                                     }
                                 }
                             }
-                            dv.f1193b.clearAnimation(paint);
+                            AnimUtils.f1193b.clearAnimation(paint);
                         }
                         if (this.f4528i != null) {
                             this.f4528i.mo1225b(null, this);

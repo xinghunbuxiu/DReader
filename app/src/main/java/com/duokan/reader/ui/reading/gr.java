@@ -8,7 +8,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0242d;
 import com.duokan.p023b.C0243e;
 import com.duokan.p023b.C0247i;
@@ -48,7 +48,7 @@ public class gr extends Drawable {
 
     public void draw(Canvas canvas) {
         Rect bounds = getBounds();
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         int R = this.f10265b.mo2001R();
         if (this.f10266c.getColor() != R) {
             this.f10266c.setColor(R);
@@ -59,10 +59,10 @@ public class gr extends Drawable {
         }
         rect.set(bounds);
         rect.inset(0, Math.round((((float) (bounds.height() - this.f10267d.getIntrinsicHeight())) - (this.f10270g * 3.0f)) / 2.0f));
-        dv.m1912a(canvas, this.f10268e, rect, this.f10267d.getIntrinsicWidth(), this.f10267d.getIntrinsicHeight(), 49);
+        AnimUtils.m1912a(canvas, this.f10268e, rect, this.f10267d.getIntrinsicWidth(), this.f10267d.getIntrinsicHeight(), 49);
         rect.top += this.f10267d.getIntrinsicHeight();
-        dv.m1913a(canvas, this.f10269f, rect, 17, this.f10264a);
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.m1913a(canvas, this.f10269f, rect, 17, this.f10264a);
+        AnimUtils.f1198g.clearAnimation(rect);
     }
 
     public void setAlpha(int i) {

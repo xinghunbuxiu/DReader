@@ -6,7 +6,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 class hp extends Drawable {
     /* renamed from: a */
@@ -20,7 +20,7 @@ class hp extends Drawable {
     }
 
     public void draw(Canvas canvas) {
-        float width = (float) ((this.f8667a.getWidth() / 2) - dv.m1932b(this.f8668b.getContext(), 3.0f));
+        float width = (float) ((this.f8667a.getWidth() / 2) - AnimUtils.m1932b(this.f8668b.getContext(), 3.0f));
         Paint paint = new Paint();
         paint.setColor(Color.parseColor("#cccccc"));
         paint.setAntiAlias(true);

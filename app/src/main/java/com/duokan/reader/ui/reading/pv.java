@@ -2,7 +2,7 @@ package com.duokan.reader.ui.reading;
 
 import com.duokan.core.app.AppManage;
 import com.duokan.core.app.BaseActivity;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 class pv implements Runnable {
     /* renamed from: a */
@@ -18,6 +18,6 @@ class pv implements Runnable {
         this.f10836a.f10835b.f10833j.f10798b.dismiss();
         this.f10836a.f10835b.f10833j.f10798b = null;
         this.f10836a.f10835b.f10833j.f10799c = false;
-        dv.cathe.m816a(true);
+        AnimUtils.cathe.m816a(true);
     }
 }

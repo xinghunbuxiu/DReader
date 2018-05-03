@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import com.duokan.core.ui.C0392q;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 
@@ -25,7 +25,7 @@ public class C1422c extends er {
 
     /* renamed from: c */
     protected void mo526c(View view, MotionEvent motionEvent, boolean z, es esVar) {
-        if (motionEvent.getX() < ((float) dv.m1932b(view.getContext(), 23.0f))) {
+        if (motionEvent.getX() < ((float) AnimUtils.m1932b(view.getContext(), 23.0f))) {
             m1617c(true);
         } else if (!(this.f9211a.mo2400a() || this.f9214e)) {
             m1613b(false);
@@ -63,7 +63,7 @@ public class C1422c extends er {
             z2 = true;
         }
         dtVar.m1612b(view, z2);
-        this.f9212c.m1882a(dv.getScaledPagingTouchSlop(view.getContext()));
+        this.f9212c.m1882a(AnimUtils.getScaledPagingTouchSlop(view.getContext()));
         this.f9212c.m1881a(0.0f);
         this.f9212c.m1885b(-30.0f);
         this.f9212c.m1887c(30.0f);

@@ -4,16 +4,16 @@ import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import java.io.File;
 
-/* renamed from: com.duokan.core.a.q */
+
 class C0290q implements Runnable {
-    /* renamed from: a */
-    static final /* synthetic */ boolean f487a = (!C0285n.class.desiredAssertionStatus());
-    /* renamed from: b */
-    final /* synthetic */ File f488b;
-    /* renamed from: c */
-    final /* synthetic */ File f489c;
-    /* renamed from: d */
-    final /* synthetic */ C0285n f490d;
+    
+    static final  boolean f487a = (!C0285n.class.desiredAssertionStatus());
+    
+    final  File f488b;
+    
+    final  File f489c;
+    
+    final  C0285n f490d;
 
     C0290q(C0285n c0285n, File file, File file2) {
         this.f490d = c0285n;

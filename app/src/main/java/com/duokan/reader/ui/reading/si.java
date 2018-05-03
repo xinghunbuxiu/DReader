@@ -17,7 +17,7 @@ import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.UIdleHandler;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ag;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.DkPublic;
@@ -375,7 +375,7 @@ public abstract class si implements ip, at, su {
             View view2 = (gx) view2;
             Rect a = view2.m14287a(eaVar);
             if (!a.isEmpty()) {
-                dv.m1937b(a, view2, this.f9358c.f9281e.getShowingPagesView());
+                AnimUtils.m1937b(a, view2, this.f9358c.f9281e.getShowingPagesView());
                 linkedList.add(a);
             }
         }
@@ -804,37 +804,37 @@ public abstract class si implements ip, at, su {
         } else {
             switch (rt.f10913a[ReaderUi.m10169l(this.f9358c.getContext()).ordinal()]) {
                 case 1:
-                    rect.top = dv.m1963g(this.f9358c.getContext(), 110.0f);
-                    rect.bottom = dv.m1963g(this.f9358c.getContext(), 74.0f);
-                    w = dv.m1960f(this.f9358c.getContext(), 54.0f);
+                    rect.top = AnimUtils.m1963g(this.f9358c.getContext(), 110.0f);
+                    rect.bottom = AnimUtils.m1963g(this.f9358c.getContext(), 74.0f);
+                    w = AnimUtils.m1960f(this.f9358c.getContext(), 54.0f);
                     rect.right = w;
                     rect.left = w;
                     break;
                 case 2:
-                    rect.top = dv.m1963g(this.f9358c.getContext(), 100.0f);
-                    rect.bottom = dv.m1963g(this.f9358c.getContext(), 70.0f);
-                    w = dv.m1960f(this.f9358c.getContext(), 44.0f);
+                    rect.top = AnimUtils.m1963g(this.f9358c.getContext(), 100.0f);
+                    rect.bottom = AnimUtils.m1963g(this.f9358c.getContext(), 70.0f);
+                    w = AnimUtils.m1960f(this.f9358c.getContext(), 44.0f);
                     rect.right = w;
                     rect.left = w;
                     break;
                 case 3:
-                    rect.top = dv.m1963g(this.f9358c.getContext(), 46.0f);
-                    rect.bottom = dv.m1963g(this.f9358c.getContext(), 36.0f);
-                    w = dv.m1960f(this.f9358c.getContext(), 20.0f);
+                    rect.top = AnimUtils.m1963g(this.f9358c.getContext(), 46.0f);
+                    rect.bottom = AnimUtils.m1963g(this.f9358c.getContext(), 36.0f);
+                    w = AnimUtils.m1960f(this.f9358c.getContext(), 20.0f);
                     rect.right = w;
                     rect.left = w;
                     break;
                 case 5:
-                    rect.top = dv.m1963g(this.f9358c.getContext(), 66.0f);
-                    rect.bottom = dv.m1963g(this.f9358c.getContext(), 42.0f);
-                    w = dv.m1960f(this.f9358c.getContext(), 30.0f);
+                    rect.top = AnimUtils.m1963g(this.f9358c.getContext(), 66.0f);
+                    rect.bottom = AnimUtils.m1963g(this.f9358c.getContext(), 42.0f);
+                    w = AnimUtils.m1960f(this.f9358c.getContext(), 30.0f);
                     rect.right = w;
                     rect.left = w;
                     break;
                 default:
-                    rect.top = dv.m1963g(this.f9358c.getContext(), 60.0f);
-                    rect.bottom = dv.m1963g(this.f9358c.getContext(), 38.0f);
-                    w = dv.m1960f(this.f9358c.getContext(), 24.0f);
+                    rect.top = AnimUtils.m1963g(this.f9358c.getContext(), 60.0f);
+                    rect.bottom = AnimUtils.m1963g(this.f9358c.getContext(), 38.0f);
+                    w = AnimUtils.m1960f(this.f9358c.getContext(), 24.0f);
                     rect.right = w;
                     rect.left = w;
                     break;
@@ -854,7 +854,7 @@ public abstract class si implements ip, at, su {
             }
         }
         if (bg()) {
-            rect.bottom = Math.max(rect.bottom, dv.m1932b(this.f9358c.getContext(), 30.0f));
+            rect.bottom = Math.max(rect.bottom, AnimUtils.m1932b(this.f9358c.getContext(), 30.0f));
         }
         return rect;
     }
@@ -1598,13 +1598,13 @@ public abstract class si implements ip, at, su {
     /* renamed from: a */
     public void mo2017a(Canvas canvas, int i, int i2, int i3, int i4, int i5) {
         C1455g bh = bh();
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         rect.set(i - (bh.getIntrinsicWidth() / 2), i2 - (bh.getIntrinsicHeight() / 2), (bh.getIntrinsicWidth() / 2) + i, (bh.getIntrinsicHeight() / 2) + i2);
         bh.setBounds(rect);
         bh.m14194a(rect.left, i3, rect.right, i4);
         bh.m14193a(i5);
         bh.draw(canvas);
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect);
     }
 
     public boolean bi() {

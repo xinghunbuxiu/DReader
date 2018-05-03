@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0256h;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.ad.C0750g;
@@ -80,7 +80,7 @@ public class is extends gx {
         }
         if (this.f10403z.mo2155h() && !TextUtils.isEmpty(this.k.mo1287J()) && !ReaderEnv.get().isVipDevice()) {
             A = this.k.mo1356z();
-            int max = Math.max(dv.m1932b(getContext(), 10.0f), (int) (((double) this.k.mo1340p().f4335f) * this.k.mo1340p().f4337h));
+            int max = Math.max(AnimUtils.m1932b(getContext(), 10.0f), (int) (((double) this.k.mo1340p().f4335f) * this.k.mo1340p().f4337h));
             this.f10402D = this.f10403z.bl().m12755a(getContext(), (ViewGroup) this, A.height() - max);
             if (this.f10402D != null) {
                 LayoutParams layoutParams = (LayoutParams) this.f10402D.getLayoutParams();

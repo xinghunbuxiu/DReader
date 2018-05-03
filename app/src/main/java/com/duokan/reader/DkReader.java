@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap.Config;
 import android.util.DisplayMetrics;
-import com.duokan.core.app.C0286x;
+import com.duokan.core.app.ApplicationsStateCallbacks;
 import com.duokan.core.app.ManagedApp;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.common.C0590d;
 import com.duokan.reader.common.C0615m;
 import com.duokan.reader.common.C0616o;
@@ -113,7 +113,7 @@ public abstract class DkReader extends DkApp {
     }
 
     /* renamed from: com.duokan.reader.DkReader$2 */
-    class C04292 implements C0286x {
+    class C04292 implements ApplicationsStateCallbacks {
         /* renamed from: a */
         final /* synthetic */ DkReader f1412a;
 
@@ -155,7 +155,7 @@ public abstract class DkReader extends DkApp {
         C1167a.m8666a(ReaderEnv.get(), C0559f.m2476b());
         addOnRunningStateChangedListener(new C04292(this));
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        dv.cathe.m814a(C0544a.m2425a(displayMetrics.widthPixels, displayMetrics.heightPixels, Config.ARGB_8888) * 5);
+        AnimUtils.cathe.m814a(C0544a.m2425a(displayMetrics.widthPixels, displayMetrics.heightPixels, Config.ARGB_8888) * 5);
         aa.m7375a(this, ReaderEnv.get());
         ah.m6499a(this, ReaderEnv.get());
         C0915o.m6073a(this, ReaderEnv.get());

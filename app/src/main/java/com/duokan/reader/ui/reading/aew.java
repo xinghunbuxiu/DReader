@@ -4,7 +4,7 @@ import android.graphics.PointF;
 import android.graphics.Rect;
 import android.view.View;
 import com.duokan.core.ui.du;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.reader.domain.document.C0897d;
 import com.duokan.reader.domain.document.as;
@@ -36,7 +36,7 @@ class aew implements du {
             int a = this.f9603b.f9598a.f9552l.m13480a();
             Rect c = this.f9603b.f9598a.f9541a.mo2124c(this.f9603b.f9598a.f9552l.m13481b().f9622b);
             aex aex;
-            if (this.f9603b.f9598a.f9552l.f9606c.y >= c.bottom + dv.getScaledPagingTouchSlop(this.f9603b.f9598a.getContext())) {
+            if (this.f9603b.f9598a.f9552l.f9606c.y >= c.bottom + AnimUtils.getScaledPagingTouchSlop(this.f9603b.f9598a.getContext())) {
                 if (a < this.f9603b.f9598a.f9552l.f9604a.length - 1) {
                     this.f9603b.f9598a.f9552l.f9605b = (C0897d) this.f9603b.f9598a.f9552l.f9604a[a + 1].f9622b.mo1198g();
                 } else {
@@ -47,7 +47,7 @@ class aew implements du {
                     this.f9603b.f9598a.f9552l = aex;
                     return;
                 }
-            } else if (this.f9603b.f9598a.f9552l.f9606c.y < c.top - dv.getScaledPagingTouchSlop(this.f9603b.f9598a.getContext())) {
+            } else if (this.f9603b.f9598a.f9552l.f9606c.y < c.top - AnimUtils.getScaledPagingTouchSlop(this.f9603b.f9598a.getContext())) {
                 if (a > 0) {
                     this.f9603b.f9598a.f9552l.f9605b = (C0897d) this.f9603b.f9598a.f9552l.f9604a[a - 1].f9622b.mo1198g();
                 } else {

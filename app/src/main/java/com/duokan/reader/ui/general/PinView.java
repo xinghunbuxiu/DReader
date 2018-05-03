@@ -7,11 +7,10 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils.TruncateAt;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
 
 public class PinView extends FrameLayout {
@@ -57,8 +56,8 @@ public class PinView extends FrameLayout {
         this.f6883b.setBackgroundResource(C0243e.general__shared__pin_view_bg);
         this.f6883b.setGravity(119);
         this.f6883b.setLineGap(1.2999999523162842d);
-        this.f6883b.setPadding(dv.m1932b(context, 15.0f), dv.m1932b(context, 15.0f), dv.m1932b(context, 15.0f), dv.m1932b(context, 15.0f));
-        this.f6884c = new Point(dv.m1932b(context, 4.0f), dv.m1932b(context, 7.5f));
+        this.f6883b.setPadding(AnimUtils.m1932b(context, 15.0f), AnimUtils.m1932b(context, 15.0f), AnimUtils.m1932b(context, 15.0f), AnimUtils.m1932b(context, 15.0f));
+        this.f6884c = new Point(AnimUtils.m1932b(context, 4.0f), AnimUtils.m1932b(context, 7.5f));
         LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -2);
         layoutParams.leftMargin = this.f6884c.x;
         layoutParams.topMargin = this.f6884c.y;

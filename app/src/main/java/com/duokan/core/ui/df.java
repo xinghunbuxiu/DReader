@@ -20,7 +20,7 @@ class df extends dd {
         if (super.dispatchTouchEvent(motionEvent)) {
             return true;
         }
-        MotionEvent a = dv.m1908a(motionEvent, (View) this, this.f1140a.f1136b.getWindow().getDecorView());
+        MotionEvent a = AnimUtils.m1908a(motionEvent, (View) this, this.f1140a.f1136b.getWindow().getDecorView());
         boolean dispatchTouchEvent = this.f1140a.f1136b.getWindow().getDecorView().dispatchTouchEvent(a);
         a.recycle();
         return dispatchTouchEvent;

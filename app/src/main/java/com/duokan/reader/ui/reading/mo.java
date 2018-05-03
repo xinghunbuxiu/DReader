@@ -9,7 +9,7 @@ import android.graphics.RectF;
 import android.view.View;
 import android.view.ViewGroup;
 import com.duokan.common.C0259a;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.domain.document.C0931c;
 import com.duokan.reader.domain.document.aj;
 
@@ -74,7 +74,7 @@ public class mo extends ViewGroup {
     /* renamed from: a */
     public PointF m14667a(View view, int i) {
         C0931c a = this.f10634d.mo1416a(i);
-        return dv.m1900a(new PointF(a.m6429b().x, a.m6429b().y), (View) this, view);
+        return AnimUtils.m1900a(new PointF(a.m6429b().x, a.m6429b().y), (View) this, view);
     }
 
     public void setShowClearImage(boolean z) {
@@ -90,8 +90,8 @@ public class mo extends ViewGroup {
     public boolean m14670a(PointF pointF) {
         for (int i = 0; i < this.f10634d.mo1415a(); i++) {
             PointF b = this.f10634d.mo1416a(i).m6429b();
-            int b2 = dv.m1932b(getContext(), 40.0f);
-            int b3 = dv.m1932b(getContext(), 40.0f);
+            int b2 = AnimUtils.m1932b(getContext(), 40.0f);
+            int b3 = AnimUtils.m1932b(getContext(), 40.0f);
             if (new RectF(b.x - ((float) (b2 / 2)), b.y - ((float) (b3 / 2)), ((float) (b2 / 2)) + b.x, b.y + ((float) (b3 / 2))).contains(pointF.x, pointF.y)) {
                 return m14669a(i);
             }

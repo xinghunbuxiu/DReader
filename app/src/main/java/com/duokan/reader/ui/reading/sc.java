@@ -1,11 +1,11 @@
 package com.duokan.reader.ui.reading;
 
-import com.duokan.core.app.C0286x;
+import com.duokan.core.app.ApplicationsStateCallbacks;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.reader.domain.statistics.dailystats.C1167a;
 
-class sc implements C0286x {
+class sc implements ApplicationsStateCallbacks {
     /* renamed from: a */
     final /* synthetic */ qr f10931a;
 

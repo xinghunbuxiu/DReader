@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.duokan.core.ui.bd;
 import com.duokan.core.ui.bh;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import java.util.ArrayList;
 
 class dc extends ga {
@@ -32,8 +32,8 @@ class dc extends ga {
         if (getItemCount() < 3 || this.f7055a.getCellsView().getChildCount() < 3 || this.f7055a.getCurrentPagePresenter() == null) {
             return true;
         }
-        Rect rect = (Rect) dv.f1198g.addAnimation();
-        Rect rect2 = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
+        Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
         rect2.set(getViewportBounds());
         this.f7055a.m10099f(rect);
         if (rect2.top < rect.top) {
@@ -55,8 +55,8 @@ class dc extends ga {
         if (!rect2.equals(getViewportBounds())) {
             scrollTo(rect2.left, rect2.top);
         }
-        dv.f1198g.clearAnimation(rect2);
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect2);
+        AnimUtils.f1198g.clearAnimation(rect);
         this.f7055a.m10095e(getPreviewBounds());
         if (this.f7055a.m10081b(getViewportBounds())) {
             return false;

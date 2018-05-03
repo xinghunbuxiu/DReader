@@ -10,7 +10,7 @@ import android.graphics.Paint.Style;
 import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.View;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0241c;
 import com.duokan.p023b.C0247i;
 import java.util.ArrayList;
@@ -56,7 +56,7 @@ public class ReadingStatisticsChartView extends View {
         this.f8232c = new Paint();
         this.f8232c.setAntiAlias(true);
         this.f8232c.setStyle(Style.FILL_AND_STROKE);
-        this.f8232c.setTextSize((float) dv.m1932b(getContext(), 12.0f));
+        this.f8232c.setTextSize((float) AnimUtils.m1932b(getContext(), 12.0f));
         this.f8234e = new ArrayList();
         this.f8235f = new ArrayList();
     }
@@ -89,11 +89,11 @@ public class ReadingStatisticsChartView extends View {
     protected void onDraw(Canvas canvas) {
         int i;
         super.onDraw(canvas);
-        int b = dv.m1932b(getContext(), 20.0f);
+        int b = AnimUtils.m1932b(getContext(), 20.0f);
         int width = getWidth();
         int measuredHeight = getMeasuredHeight();
-        int b2 = dv.m1932b(getContext(), 20.0f);
-        int b3 = dv.m1932b(getContext(), 20.0f);
+        int b2 = AnimUtils.m1932b(getContext(), 20.0f);
+        int b3 = AnimUtils.m1932b(getContext(), 20.0f);
         int i2 = (measuredHeight - b2) - b3;
         float f = (1.0f * ((float) width)) / 24.0f;
         float f2 = this.f8237h == 0.0f ? 0.0f : (1.0f * ((float) (i2 - (b * 2)))) / this.f8237h;
@@ -115,7 +115,7 @@ public class ReadingStatisticsChartView extends View {
         }
         List a = m11371a(this.f8234e);
         List a2 = m11371a(this.f8235f);
-        this.f8230a.setStrokeWidth((float) dv.m1932b(getContext(), 4.0f));
+        this.f8230a.setStrokeWidth((float) AnimUtils.m1932b(getContext(), 4.0f));
         this.f8230a.setColor(getResources().getColor(C0241c.general__shared__92c182));
         this.f8233d.reset();
         this.f8233d.moveTo(((nb) a.get(0)).m12340a(0.0f), ((nb) a2.get(0)).m12340a(0.0f));
@@ -134,11 +134,11 @@ public class ReadingStatisticsChartView extends View {
         canvas.drawPath(this.f8233d, this.f8231b);
         if (this.f8237h != 0.0f) {
             this.f8230a.setColor(getResources().getColor(C0241c.general__shared__ffffff));
-            this.f8230a.setStrokeWidth((float) dv.m1932b(getContext(), 2.0f));
+            this.f8230a.setStrokeWidth((float) AnimUtils.m1932b(getContext(), 2.0f));
             this.f8231b.setColor(getResources().getColor(C0241c.general__shared__92c182));
             for (i = 6; i < 24; i += 6) {
-                canvas.drawCircle(((float) i) * f, f3 - (((float) this.f8236g[i]) * f2), (float) dv.m1932b(getContext(), 4.0f), this.f8230a);
-                canvas.drawCircle(((float) i) * f, f3 - (((float) this.f8236g[i]) * f2), (float) dv.m1932b(getContext(), 3.0f), this.f8231b);
+                canvas.drawCircle(((float) i) * f, f3 - (((float) this.f8236g[i]) * f2), (float) AnimUtils.m1932b(getContext(), 4.0f), this.f8230a);
+                canvas.drawCircle(((float) i) * f, f3 - (((float) this.f8236g[i]) * f2), (float) AnimUtils.m1932b(getContext(), 3.0f), this.f8231b);
             }
         }
         this.f8230a.setColor(getResources().getColor(C0241c.general__shared__92c182));

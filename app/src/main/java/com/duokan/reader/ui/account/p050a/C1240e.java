@@ -3,7 +3,7 @@ package com.duokan.reader.ui.account.p050a;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import com.duokan.core.app.C0297a;
+import com.duokan.core.app.IActivityLifecycleCallbacks;
 import com.duokan.core.app.ag;
 import com.duokan.core.app.ah;
 import com.duokan.p023b.C0247i;
@@ -15,7 +15,7 @@ import com.duokan.reader.ui.general.ak;
 import com.duokan.reader.ui.general.ja;
 
 /* renamed from: com.duokan.reader.ui.account.a.e */
-public abstract class C1240e implements C0297a, ah, C1239d {
+public abstract class C1240e implements IActivityLifecycleCallbacks, ah, C1239d {
     /* renamed from: a */
     protected final Context f5756a;
     /* renamed from: b */

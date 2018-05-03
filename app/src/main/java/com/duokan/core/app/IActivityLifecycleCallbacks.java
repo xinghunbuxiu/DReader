@@ -3,8 +3,8 @@ package com.duokan.core.app;
 import android.app.Activity;
 import android.os.Bundle;
 
-/* renamed from: com.duokan.core.app.a */
-public interface C0297a {
+
+public interface IActivityLifecycleCallbacks {
     void onActivityCreated(Activity activity, Bundle bundle);
 
     void onActivityDestroyed(Activity activity);

@@ -13,7 +13,7 @@ import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0242d;
 import com.duokan.p023b.C0247i;
 import com.duokan.reader.DkPublic;
@@ -22,7 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.regex.Pattern;
 
-public abstract class ReaderUi extends dv {
+public abstract class ReaderUi extends AnimUtils {
 
     public enum ScreenType {
         SMALL,
@@ -60,8 +60,8 @@ public abstract class ReaderUi extends dv {
         if (DkPublic.isLandscape(context)) {
             return i / 2;
         }
-        int max = Math.max(Math.round(((float) i) * f), dv.m1932b(context, 420.0f));
-        return max > i - dv.m1932b(context, 40.0f) ? dv.m1932b(context, 40.0f) : i - max;
+        int max = Math.max(Math.round(((float) i) * f), AnimUtils.m1932b(context, 420.0f));
+        return max > i - AnimUtils.m1932b(context, 40.0f) ? AnimUtils.m1932b(context, 40.0f) : i - max;
     }
 
     /* renamed from: c */
@@ -200,7 +200,7 @@ public abstract class ReaderUi extends dv {
         }
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int b = (displayMetrics.widthPixels > displayMetrics.heightPixels ? displayMetrics.heightPixels : displayMetrics.widthPixels) - dv.m1932b((Context) activity, 30.0f);
+        int b = (displayMetrics.widthPixels > displayMetrics.heightPixels ? displayMetrics.heightPixels : displayMetrics.widthPixels) - AnimUtils.m1932b((Context) activity, 30.0f);
         int dimensionPixelSize = activity.getResources().getDimensionPixelSize(C0242d.general__shared__max_center_dialog_width_at_hd);
         if (dimensionPixelSize > b) {
             dimensionPixelSize = b;
@@ -233,7 +233,7 @@ public abstract class ReaderUi extends dv {
     /* renamed from: l */
     public static ScreenType m10169l(Context context) {
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-        double sqrt = Math.sqrt(Math.pow((double) (((float) displayMetrics.heightPixels) / dv.m1967i(context)), 2.0d) + Math.pow((double) (((float) displayMetrics.widthPixels) / dv.m1965h(context)), 2.0d));
+        double sqrt = Math.sqrt(Math.pow((double) (((float) displayMetrics.heightPixels) / AnimUtils.m1967i(context)), 2.0d) + Math.pow((double) (((float) displayMetrics.widthPixels) / AnimUtils.m1965h(context)), 2.0d));
         if (Double.compare(sqrt, 4.5d) <= 0) {
             return ScreenType.SMALL;
         }

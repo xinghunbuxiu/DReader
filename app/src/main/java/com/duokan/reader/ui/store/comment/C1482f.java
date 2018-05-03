@@ -10,7 +10,7 @@ import android.widget.FrameLayout.LayoutParams;
 import android.widget.TextView;
 import com.duokan.core.sys.ag;
 import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
@@ -83,7 +83,7 @@ public class C1482f extends af {
     protected void initHdContent(FrameLayout frameLayout, LayoutParams layoutParams) {
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int b = (displayMetrics.widthPixels > displayMetrics.heightPixels ? displayMetrics.heightPixels : displayMetrics.widthPixels) - dv.m1932b(getActivity(), 30.0f);
+        int b = (displayMetrics.widthPixels > displayMetrics.heightPixels ? displayMetrics.heightPixels : displayMetrics.widthPixels) - AnimUtils.m1932b(getActivity(), 30.0f);
         layoutParams.width = (b * 4) / 5;
         layoutParams.height = b;
         layoutParams.gravity = 17;

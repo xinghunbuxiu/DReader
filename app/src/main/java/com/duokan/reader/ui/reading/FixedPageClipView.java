@@ -7,8 +7,8 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
-import com.duokan.core.ui.dv;
+
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
@@ -54,7 +54,7 @@ public class FixedPageClipView extends FrameLayout {
         this.f9089b = new ji(this, context, suVar);
         addView(this.f9089b, new LayoutParams(-1, -1));
         this.f9090c = new BubbleFloatingView(context);
-        this.f9090c.m9925a(LayoutInflater.from(context).inflate(C0245g.reading__page_clip_tool_view, null), new LayoutParams(-2, dv.m1932b(getContext(), 40.0f)));
+        this.f9090c.m9925a(LayoutInflater.from(context).inflate(C0245g.reading__page_clip_tool_view, null), new LayoutParams(-2, AnimUtils.m1932b(getContext(), 40.0f)));
         addView(this.f9090c);
         m12409a();
     }

@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.reading;
 
 import android.os.Build.VERSION;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0253e;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderFeature;
@@ -27,7 +27,7 @@ class sj implements C0457r {
         if (identifier > 0) {
             return this.f10940a.f9358c.getResources().getDimensionPixelSize(identifier);
         }
-        return dv.m1932b(this.f10940a.f9358c.getContext(), 20.0f);
+        return AnimUtils.m1932b(this.f10940a.f9358c.getContext(), 20.0f);
     }
 
     public int getHeaderPaddingTop() {

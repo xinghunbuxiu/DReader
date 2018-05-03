@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.statistics.dailystats;
 
 import android.net.Uri;
-import com.duokan.core.app.C0286x;
+import com.duokan.core.app.ApplicationsStateCallbacks;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.app.ai;
@@ -17,7 +17,7 @@ import java.io.File;
 import java.io.Serializable;
 
 /* renamed from: com.duokan.reader.domain.statistics.dailystats.a */
-public class C1167a implements ai, C0286x {
+public class C1167a implements ai, ApplicationsStateCallbacks {
     /* renamed from: h */
     private static final aj<C1167a> f5608h = new aj();
     /* renamed from: a */

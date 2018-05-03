@@ -64,7 +64,7 @@ public class C0374a extends ExtendView {
 
     public final Point getIndicatorPosition() {
         Point point = new Point();
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         m1365a(rect);
         switch (this.f886a) {
             case 3:
@@ -84,7 +84,7 @@ public class C0374a extends ExtendView {
                 point.y = rect.bottom;
                 break;
         }
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect);
         return point;
     }
 
@@ -132,7 +132,7 @@ public class C0374a extends ExtendView {
             super.setBackgroundDrawable(null);
             return;
         }
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         switch (this.f886a) {
             case 3:
                 rect.left = Math.max(m1370d() - this.f889d, 0);
@@ -148,7 +148,7 @@ public class C0374a extends ExtendView {
                 break;
         }
         super.setBackgroundDrawable(new C0378b(this, this.f887b, rect.left, rect.top, rect.right, rect.bottom));
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect);
     }
 
     /* renamed from: a */

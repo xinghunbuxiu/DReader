@@ -16,7 +16,7 @@ import com.duokan.core.p027b.C0324a;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ah;
 import com.duokan.core.ui.GridItemsView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.fr;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0253e;
@@ -104,12 +104,12 @@ public class SearchController extends StorePageController implements ip, iq {
         this.mPresenterResultView.setOnItemClickListener(new ad(this));
         this.mPresenterResultView.setOnItemLongPressListener(new ae(this));
         this.mPresenterResultView.setNumColumns(ea.m9503a(getContext()));
-        this.mPresenterResultView.setMaxOverScrollHeight(dv.m1962g(getContext()));
+        this.mPresenterResultView.setMaxOverScrollHeight(AnimUtils.m1962g(getContext()));
         this.mSearchHintView.setHatBodyView(this.mLocalSearchResultView);
         this.mEditText = (EditText) findViewById(C0255g.store__store_search_root_view__edittext);
         this.mEditText.addTextChangedListener(new af(this));
         this.mEditText.setOnEditorActionListener(new ai(this));
-        int b = dv.m1932b(getContext(), 15.0f);
+        int b = AnimUtils.m1932b(getContext(), 15.0f);
         this.mXiaoAiInputView = findViewById(C0255g.store__store_search_root_view__voice);
         if (C0616o.m2804a().m2814d()) {
             this.mXiaoAiInputView.setClickable(true);
@@ -203,7 +203,7 @@ public class SearchController extends StorePageController implements ip, iq {
         }
         ai.m3980a().m3912b((ip) this);
         ai.m3980a().m3913b((iq) this);
-        dv.m1909a(getContext());
+        AnimUtils.m1909a(getContext());
         super.onDeactive();
     }
 
@@ -265,7 +265,7 @@ public class SearchController extends StorePageController implements ip, iq {
         Drawable dkVar = new dk(getResources().getColor(C0252d.general__shared__eeeeee));
         dkVar.m10476a(1);
         this.mSearchHintView.setRowDivider(dkVar);
-        this.mSearchHintView.m9955a(dv.m1932b(getContext(), 20.0f), 0, dv.m1932b(getContext(), 20.0f), 0);
+        this.mSearchHintView.m9955a(AnimUtils.m1932b(getContext(), 20.0f), 0, AnimUtils.m1932b(getContext(), 20.0f), 0);
         this.mSearchHintView.setBackgroundColor(getResources().getColor(C0252d.general__shared__ffffff));
         this.mSearchHintView.setAdapter(new C1373s(this));
     }
@@ -279,7 +279,7 @@ public class SearchController extends StorePageController implements ip, iq {
     }
 
     private int getLocalHintSize() {
-        return ReaderUi.m10165c(getContext(), dv.getWidthPixels(getContext()) - (getResources().getDimensionPixelSize(C0253e.general__shared__cover_grid_horz_padding) * 2));
+        return ReaderUi.m10165c(getContext(), AnimUtils.getWidthPixels(getContext()) - (getResources().getDimensionPixelSize(C0253e.general__shared__cover_grid_horz_padding) * 2));
     }
 
     private boolean hasHint() {
@@ -388,7 +388,7 @@ public class SearchController extends StorePageController implements ip, iq {
 
     private void search(String str, String str2) {
         if (!TextUtils.isEmpty(str)) {
-            dv.m1909a(getContext());
+            AnimUtils.m1909a(getContext());
             this.mLocalSearchResultView.setVisibility(8);
             C0641o i = C0641o.m2934i();
             if (!TextUtils.isEmpty(this.mSearchSource)) {

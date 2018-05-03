@@ -3,7 +3,7 @@ package com.duokan.reader.ui.reading.p054a;
 import android.graphics.PointF;
 import android.view.MotionEvent;
 import android.view.View;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.ui.reading.DocPageLayout;
@@ -44,7 +44,7 @@ public class C1440u extends er {
             return;
         }
         boolean z2;
-        this.f9242g = dv.getScaledPagingTouchSlop(view.getContext()) * dv.getScaledPagingTouchSlop(view.getContext());
+        this.f9242g = AnimUtils.getScaledPagingTouchSlop(view.getContext()) * AnimUtils.getScaledPagingTouchSlop(view.getContext());
         switch (motionEvent.getAction() & 255) {
             case 0:
                 m1613b(true);
@@ -66,7 +66,7 @@ public class C1440u extends er {
                     int y2 = (int) (motionEvent.getY() - this.f9241f.getY());
                     if (((x2 * x2) + (y2 * y2) > this.f9242g || this.f9240e) && this.f9246k != null) {
                         if (!this.f9240e) {
-                            if (dv.m1924a(new PointF(0.0f, 0.0f), new PointF((float) x2, (float) y2), 75.0d, 105.0d) && y2 > 0) {
+                            if (AnimUtils.m1924a(new PointF(0.0f, 0.0f), new PointF((float) x2, (float) y2), 75.0d, 105.0d) && y2 > 0) {
                                 if (this.f9245j >= 0) {
                                     int i = this.f9245j + 1;
                                     this.f9245j = i;

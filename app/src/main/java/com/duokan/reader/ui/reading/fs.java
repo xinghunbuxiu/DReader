@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 import android.util.Pair;
 import android.view.View;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
 import com.duokan.reader.domain.bookshelf.C0798a;
 import com.duokan.reader.domain.document.C0896a;
@@ -131,7 +131,7 @@ public class fs extends FlowPagesView implements hd {
             if (view2.m14303i()) {
                 Rect selectionStartIndicatorBounds = view2.getSelectionStartIndicatorBounds();
                 if (!selectionStartIndicatorBounds.isEmpty()) {
-                    dv.m1937b(selectionStartIndicatorBounds, view2, (View) this);
+                    AnimUtils.m1937b(selectionStartIndicatorBounds, view2, (View) this);
                     return selectionStartIndicatorBounds;
                 }
             }
@@ -146,7 +146,7 @@ public class fs extends FlowPagesView implements hd {
             if (view2.m14303i()) {
                 Rect selectionEndIndicatorBounds = view2.getSelectionEndIndicatorBounds();
                 if (!selectionEndIndicatorBounds.isEmpty()) {
-                    dv.m1937b(selectionEndIndicatorBounds, view2, (View) this);
+                    AnimUtils.m1937b(selectionEndIndicatorBounds, view2, (View) this);
                     return selectionEndIndicatorBounds;
                 }
             }
@@ -228,7 +228,7 @@ public class fs extends FlowPagesView implements hd {
             return this.f10174b.mo1250s();
         }
         Point point = new Point(i, i2);
-        dv.m1897a(point, (View) this, view);
+        AnimUtils.m1897a(point, (View) this, view);
         return view.m14303i() ? view.getPageDrawable().mo1302b(point) : this.f10174b.mo1250s();
     }
 
@@ -243,8 +243,8 @@ public class fs extends FlowPagesView implements hd {
             }
             Point point = new Point(i, i2);
             Point point2 = new Point(i3, i4);
-            dv.m1897a(point, (View) this, view2);
-            dv.m1897a(point2, (View) this, view2);
+            AnimUtils.m1897a(point, (View) this, view2);
+            AnimUtils.m1897a(point2, (View) this, view2);
             s = s.mo1196a(view2.getPageDrawable().mo1293a(point, point2));
         }
         return s;
@@ -263,7 +263,7 @@ public class fs extends FlowPagesView implements hd {
             return null;
         }
         Point point2 = new Point(point);
-        dv.m1897a(point2, (View) this, view);
+        AnimUtils.m1897a(point2, (View) this, view);
         int d = view.m14303i() ? view.getPageDrawable().mo1310d(point2) : -1;
         return d < 0 ? null : new Pair(view, Integer.valueOf(d));
     }
@@ -275,7 +275,7 @@ public class fs extends FlowPagesView implements hd {
             return null;
         }
         Point point2 = new Point(point);
-        dv.m1897a(point2, (View) this, view);
+        AnimUtils.m1897a(point2, (View) this, view);
         int a = view.m14303i() ? view.getPageDrawable().mo1289a(point2, i) : -1;
         return a < 0 ? null : new Pair(view, Integer.valueOf(a));
     }
@@ -287,7 +287,7 @@ public class fs extends FlowPagesView implements hd {
             return null;
         }
         Point point2 = new Point(point);
-        dv.m1897a(point2, (View) this, view);
+        AnimUtils.m1897a(point2, (View) this, view);
         int g = view.m14303i() ? view.getPageDrawable().mo1320g(point2) : -1;
         return g < 0 ? null : new Pair(view, Integer.valueOf(g));
     }
@@ -318,7 +318,7 @@ public class fs extends FlowPagesView implements hd {
             View view2 = (gx) view2;
             if (view2.m14303i()) {
                 Rect[] e = view2.getPageDrawable().mo1316e(bbVar);
-                dv.m1926a(e, view2, (View) this);
+                AnimUtils.m1926a(e, view2, (View) this);
                 linkedList.addAll(Arrays.asList(e));
             }
         }
@@ -361,7 +361,7 @@ public class fs extends FlowPagesView implements hd {
     /* renamed from: c */
     public boolean mo2129c(int i, int i2) {
         boolean z = true;
-        int b = dv.m1932b(getContext(), 50.0f);
+        int b = AnimUtils.m1932b(getContext(), 50.0f);
         if (m10028p()) {
             boolean z2;
             if (i2 < b) {
@@ -409,7 +409,7 @@ public class fs extends FlowPagesView implements hd {
     /* renamed from: d */
     public boolean mo2134d(int i, int i2) {
         boolean z = true;
-        int b = dv.m1932b(getContext(), 50.0f);
+        int b = AnimUtils.m1932b(getContext(), 50.0f);
         if (m10028p()) {
             boolean z2;
             if (i2 > getHeight() - b) {
@@ -638,10 +638,10 @@ public class fs extends FlowPagesView implements hd {
             Rect selectionStartIndicatorBounds = getSelectionStartIndicatorBounds();
             Rect selectionEndIndicatorBounds = getSelectionEndIndicatorBounds();
             if (!selectionStartIndicatorBounds.isEmpty()) {
-                dv.m1911a(canvas, mo2012a(DecorDrawableStyle.SELECTION_INDICATOR_START), selectionStartIndicatorBounds, 17);
+                AnimUtils.m1911a(canvas, mo2012a(DecorDrawableStyle.SELECTION_INDICATOR_START), selectionStartIndicatorBounds, 17);
             }
             if (!selectionEndIndicatorBounds.isEmpty()) {
-                dv.m1911a(canvas, mo2012a(DecorDrawableStyle.SELECTION_INDICATOR_END), selectionEndIndicatorBounds, 17);
+                AnimUtils.m1911a(canvas, mo2012a(DecorDrawableStyle.SELECTION_INDICATOR_END), selectionEndIndicatorBounds, 17);
             }
         }
     }

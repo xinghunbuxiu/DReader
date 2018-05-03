@@ -13,7 +13,7 @@ import android.os.Bundle;
 import android.os.Process;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
-import com.duokan.core.app.C0286x;
+import com.duokan.core.app.ApplicationsStateCallbacks;
 import com.duokan.core.app.BaseActivity;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
@@ -36,7 +36,7 @@ public class DkMainActivity extends BaseActivity {
     /* renamed from: b */
     private static WeakReference<DkMainActivity> f1394b = new WeakReference(null);
     /* renamed from: c */
-    private static C0286x f1395c = null;
+    private static ApplicationsStateCallbacks f1395c = null;
     /* renamed from: d */
     private static long f1396d = -1;
     /* renamed from: e */
@@ -66,7 +66,7 @@ public class DkMainActivity extends BaseActivity {
     }
 
     /* renamed from: com.duokan.reader.DkMainActivity$5 */
-    final class C04265 implements C0286x {
+    final class C04265 implements ApplicationsStateCallbacks {
         C04265() {
         }
 

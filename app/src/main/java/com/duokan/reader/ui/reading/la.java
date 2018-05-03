@@ -10,7 +10,7 @@ import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.common.p037c.C0559f;
 import com.duokan.reader.domain.bookshelf.fp;
 import com.duokan.reader.domain.document.epub.at;
@@ -87,13 +87,13 @@ class la extends FrameLayout {
         }
         m14595b();
         if (this.f10547b) {
-            dv.m1921a((View) this, new lc(this));
+            AnimUtils.m1921a((View) this, new lc(this));
             if (this.f10550e.getVisibility() == 0) {
                 this.f10558m = new AlphaAnimation(1.0f, 0.0f);
                 this.f10558m.setDuration(500);
                 this.f10550e.invalidate();
                 this.f10549d.setVisibility(0);
-                dv.startAlphaAnimation(this.f10550e, 1.0f, 0.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, false, new ld(this));
+                AnimUtils.startAlphaAnimation(this.f10550e, 1.0f, 0.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, false, new ld(this));
             }
         }
     }
@@ -190,7 +190,7 @@ class la extends FrameLayout {
             this.f10549d.invalidate();
             this.f10551f.invalidate();
             this.f10550e.setVisibility(0);
-            dv.startAlphaAnimation(this.f10550e, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, false, new lg(this));
+            AnimUtils.startAlphaAnimation(this.f10550e, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, false, new lg(this));
         }
     }
 

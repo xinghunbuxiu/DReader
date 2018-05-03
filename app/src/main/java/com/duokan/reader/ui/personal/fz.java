@@ -20,7 +20,7 @@ import com.duokan.core.app.AppContext;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.sys.af;
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
@@ -785,7 +785,7 @@ public class fz extends ActivatedController implements SystemUiConditioner, C056
 
     /* renamed from: t */
     private void m11902t() {
-        dv.m1921a(getContentView(), new hf(this));
+        AnimUtils.m1921a(getContentView(), new hf(this));
     }
 
     /* renamed from: u */

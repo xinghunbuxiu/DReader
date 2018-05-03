@@ -5,10 +5,8 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.view.ViewGroup.MarginLayoutParams;
+
 import com.umeng.analytics.pro.C2295j;
 
 class cy extends ViewGroup {
@@ -33,7 +31,7 @@ class cy extends ViewGroup {
 
     @SuppressLint({"DrawAllocation"})
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        dv.m1921a((View) this, new cz(this, z, i, i2, i3, i4));
+        AnimUtils.m1921a((View) this, new cz(this, z, i, i2, i3, i4));
     }
 
     protected void onMeasure(int i, int i2) {
@@ -80,7 +78,7 @@ class cy extends ViewGroup {
             View view = daVar.f1127b == null ? null : (View) daVar.f1127b.get();
             if (view != null) {
                 rect.set(0, 0, view.getWidth(), view.getHeight());
-                dv.m1937b(rect, view, (View) this);
+                AnimUtils.m1937b(rect, view, (View) this);
             }
             switch (c0374a.getGravity()) {
                 case 3:

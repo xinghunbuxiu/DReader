@@ -4,10 +4,9 @@ import android.content.Context;
 import android.graphics.Point;
 import android.graphics.PointF;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
-import com.duokan.core.ui.Scrollable.OverScrollMode;
+
 import com.duokan.core.ui.ZoomView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 public abstract class gd extends ZoomView {
     /* renamed from: b */
@@ -80,7 +79,7 @@ public abstract class gd extends ZoomView {
     /* renamed from: a */
     public void mo2411a(Runnable runnable) {
         if (this.f10223c != null) {
-            dv.m1921a(this.f10223c, new ge(this, runnable));
+            AnimUtils.m1921a(this.f10223c, new ge(this, runnable));
         }
     }
 
@@ -89,8 +88,8 @@ public abstract class gd extends ZoomView {
         if (this.f10223c != null) {
             View view = this.f10223c;
             Point point = new Point(getScrollX() + (getWidth() / 2), getScrollY() + (getHeight() / 2));
-            dv.m1897a(point, (View) this, view);
-            dv.m1921a(view, new gf(this, z, point, getZoomFactor(), i, view));
+            AnimUtils.m1897a(point, (View) this, view);
+            AnimUtils.m1921a(view, new gf(this, z, point, getZoomFactor(), i, view));
         }
     }
 
@@ -131,15 +130,15 @@ public abstract class gd extends ZoomView {
 
     /* renamed from: a */
     protected void m14205a(boolean z) {
-        dv.m1921a(this.f10223c, new gh(this, z));
+        AnimUtils.m1921a(this.f10223c, new gh(this, z));
     }
 
     /* renamed from: b */
     protected void m14207b(boolean z) {
         if (this.f10223c != null) {
             Point point = new Point(0, 0);
-            dv.m1945c(point, this.f10223c);
-            dv.m1921a((View) this, new gi(this, z, point));
+            AnimUtils.m1945c(point, this.f10223c);
+            AnimUtils.m1921a((View) this, new gi(this, z, point));
         }
     }
 

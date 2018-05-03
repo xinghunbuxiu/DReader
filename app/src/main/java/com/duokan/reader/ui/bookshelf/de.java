@@ -23,7 +23,7 @@ import android.view.animation.Transformation;
 import android.widget.TextView;
 import com.duokan.core.app.AppContext;
 import com.duokan.core.sys.ah;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0253e;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0258j;
@@ -177,7 +177,7 @@ public class de extends ViewGroup {
     public void draw(Canvas canvas) {
         if (!this.f6071t) {
             super.draw(canvas);
-            Rect rect = (Rect) dv.f1198g.addAnimation();
+            Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
             mo1636a(rect);
             if (this.f6072u != DragItemStatus.Draged) {
                 m9111a(canvas, rect);
@@ -187,13 +187,13 @@ public class de extends ViewGroup {
             } else if (getAlpha() != 0.3f) {
                 setAlpha(0.3f);
             }
-            dv.f1198g.clearAnimation(rect);
+            AnimUtils.f1198g.clearAnimation(rect);
         }
     }
 
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         mo1636a(rect);
         getCoverDrawable().draw(canvas);
         if (m9117e()) {
@@ -202,7 +202,7 @@ public class de extends ViewGroup {
         if (isPressed()) {
             m9102b(canvas, rect);
         }
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect);
     }
 
     protected void onMeasure(int i, int i2) {
@@ -249,7 +249,7 @@ public class de extends ViewGroup {
             this.f6065n = new RectF();
         }
         this.f6065n.set(0.0f, 0.0f, (float) getWidth(), (float) getHeight());
-        dv.m1947c(this.f6065n, (View) this);
+        AnimUtils.m1947c(this.f6065n, (View) this);
         return this.f6065n;
     }
 
@@ -257,11 +257,11 @@ public class de extends ViewGroup {
         if (this.f6064m == null) {
             this.f6064m = new RectF();
         }
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         getCategoryCoverDrawable().getPadding(rect);
         this.f6064m.set((float) rect.left, (float) rect.top, (float) (getWidth() - rect.right), (float) ((getHeight() - rect.bottom) - m9107o()));
-        dv.m1947c(this.f6064m, (View) this);
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.m1947c(this.f6064m, (View) this);
+        AnimUtils.f1198g.clearAnimation(rect);
         return this.f6064m;
     }
 
@@ -270,7 +270,7 @@ public class de extends ViewGroup {
             this.f6066o = new PointF();
         }
         this.f6066o.set(((float) getWidth()) / 2.0f, ((float) (getHeight() - m9107o())) / 2.0f);
-        dv.m1953d(this.f6066o, (View) this);
+        AnimUtils.m1953d(this.f6066o, (View) this);
         return this.f6066o;
     }
 
@@ -312,7 +312,7 @@ public class de extends ViewGroup {
     /* renamed from: a */
     protected void mo1636a(Rect rect) {
         rect.set(getCoverDrawable().getBounds());
-        Rect rect2 = (Rect) dv.f1198g.addAnimation();
+        Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
         if (!m9117e()) {
             rect2.set(f6049e);
         } else if (((C1332f) getCoverDrawable()).m10612c()) {
@@ -326,7 +326,7 @@ public class de extends ViewGroup {
         rect.top += rect2.top;
         rect.right -= rect2.right;
         rect.bottom -= rect2.bottom;
-        dv.f1198g.clearAnimation(rect2);
+        AnimUtils.f1198g.clearAnimation(rect2);
     }
 
     /* renamed from: a */
@@ -343,7 +343,7 @@ public class de extends ViewGroup {
                 canvas.restore();
             } else if (this.f6073v > 0) {
                 canvas.save();
-                canvas.translate((float) (rect.left + dv.m1932b(getContext(), 2.0f)), (float) (rect.top + dv.m1932b(getContext(), 3.0f)));
+                canvas.translate((float) (rect.left + AnimUtils.m1932b(getContext(), 2.0f)), (float) (rect.top + AnimUtils.m1932b(getContext(), 3.0f)));
                 this.f6053A.m10570a(String.format(getResources().getString(C0258j.bookshelf__shared__d_new_chapters), new Object[]{Integer.valueOf(this.f6073v)}));
                 this.f6053A.setBounds(0, 0, this.f6053A.m10569a(), this.f6053A.getIntrinsicHeight());
                 this.f6053A.draw(canvas);
@@ -354,10 +354,10 @@ public class de extends ViewGroup {
 
     /* renamed from: b */
     private void m9102b(Canvas canvas, Rect rect) {
-        Paint paint = (Paint) dv.f1193b.addAnimation();
+        Paint paint = (Paint) AnimUtils.f1193b.addAnimation();
         paint.setColor(Color.argb(48, 0, 0, 0));
         canvas.drawRect(rect, paint);
-        dv.f1193b.clearAnimation(paint);
+        AnimUtils.f1193b.clearAnimation(paint);
     }
 
     /* renamed from: c */
@@ -409,14 +409,14 @@ public class de extends ViewGroup {
                     f2 = f;
                 }
                 if (!c0800c.mo1037j() && (this.f6068q != null || c0800c.m4171X())) {
-                    Rect rect2 = (Rect) dv.f1198g.addAnimation();
+                    Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
                     rect2.set(rect);
                     rect2.bottom -= Math.round(((float) rect2.height()) * f2);
-                    Paint paint = (Paint) dv.f1193b.addAnimation();
+                    Paint paint = (Paint) AnimUtils.f1193b.addAnimation();
                     paint.setColor(Color.argb(153, 0, 0, 0));
                     canvas.drawRect(rect2, paint);
-                    dv.f1193b.clearAnimation(paint);
-                    dv.f1198g.clearAnimation(rect2);
+                    AnimUtils.f1193b.clearAnimation(paint);
+                    AnimUtils.f1198g.clearAnimation(rect2);
                 }
                 if (this.f6067p == null) {
                     this.f6067p = new am(getContext());
@@ -427,10 +427,10 @@ public class de extends ViewGroup {
                 } else {
                     this.f6067p.stop();
                 }
-                canvas.translate((float) dv.m1932b(getContext(), 4.0f), (float) (-dv.m1932b(getContext(), 5.0f)));
+                canvas.translate((float) AnimUtils.m1932b(getContext(), 4.0f), (float) (-AnimUtils.m1932b(getContext(), 5.0f)));
                 this.f6067p.setLevel(Math.round(10000.0f * f2));
-                dv.m1911a(canvas, this.f6067p, rect, 83);
-                canvas.translate((float) (-dv.m1932b(getContext(), 4.0f)), (float) dv.m1932b(getContext(), 5.0f));
+                AnimUtils.m1911a(canvas, this.f6067p, rect, 83);
+                canvas.translate((float) (-AnimUtils.m1932b(getContext(), 4.0f)), (float) AnimUtils.m1932b(getContext(), 5.0f));
             } else if (this.f6067p != null) {
                 this.f6067p.stop();
                 this.f6067p = null;
@@ -447,9 +447,9 @@ public class de extends ViewGroup {
                 }
                 boolean isRunning = this.f6070s.isRunning();
                 int level = this.f6070s.getLevel();
-                canvas.translate((float) dv.m1932b(getContext(), 4.0f), (float) (-dv.m1932b(getContext(), 5.0f)));
-                dv.m1911a(canvas, this.f6070s, rect, 83);
-                canvas.translate((float) (-dv.m1932b(getContext(), 4.0f)), (float) dv.m1932b(getContext(), 5.0f));
+                canvas.translate((float) AnimUtils.m1932b(getContext(), 4.0f), (float) (-AnimUtils.m1932b(getContext(), 5.0f)));
+                AnimUtils.m1911a(canvas, this.f6070s, rect, 83);
+                canvas.translate((float) (-AnimUtils.m1932b(getContext(), 4.0f)), (float) AnimUtils.m1932b(getContext(), 5.0f));
                 ah.m865a(new dh(this, c0800c, isRunning, level));
             } else if (this.f6070s != null) {
                 this.f6070s.stop();
@@ -485,11 +485,11 @@ public class de extends ViewGroup {
     private int m9107o() {
         switch (this.f6063l) {
             case 1:
-                return dv.getScaledDensity(getContext(), 35.0f);
+                return AnimUtils.getScaledDensity(getContext(), 35.0f);
             case 2:
-                return dv.getScaledDensity(getContext(), 0.0f);
+                return AnimUtils.getScaledDensity(getContext(), 0.0f);
             default:
-                return dv.getScaledDensity(getContext(), 53.0f);
+                return AnimUtils.getScaledDensity(getContext(), 53.0f);
         }
     }
 
@@ -661,16 +661,16 @@ public class de extends ViewGroup {
         if (m9118f()) {
             getCategoryCoverDrawable().m9136a(rect, j);
         } else {
-            Rect rect2 = (Rect) dv.f1198g.addAnimation();
+            Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
             rect2.set(getCategoryCoverDrawable().getBounds().isEmpty() ? getBookCoverDrawable().getBounds() : getCategoryCoverDrawable().getBounds());
             getCategoryCoverDrawable().m9137a(rect2, rect, 0);
-            Rect rect3 = (Rect) dv.f1198g.addAnimation();
+            Rect rect3 = (Rect) AnimUtils.f1198g.addAnimation();
             getCategoryCoverDrawable().m9137a(rect2, rect3, 1);
             getBookCoverDrawable().m10607a(rect3, j);
-            dv.f1198g.clearAnimation(rect3);
-            dv.f1198g.clearAnimation(rect2);
+            AnimUtils.f1198g.clearAnimation(rect3);
+            AnimUtils.f1198g.clearAnimation(rect2);
         }
-        dv.m1936b(rect, (View) this);
+        AnimUtils.m1936b(rect, (View) this);
     }
 
     /* renamed from: k */

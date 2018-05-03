@@ -106,7 +106,7 @@ public class et implements OnTouchListener {
                 m2040a(view);
             } else if (motionEvent.getActionMasked() == 1 && this.f1227f && this.f1228g == null) {
                 this.f1228g = new eu(this, view, motionEvent, z2);
-                view.postDelayed(this.f1228g, (long) dv.getDoubleTapTimeout());
+                view.postDelayed(this.f1228g, (long) AnimUtils.getDoubleTapTimeout());
             }
             this.f1227f = false;
             z3 = m2034a(view, motionEvent, z, z2, this.f1224c);

@@ -14,7 +14,7 @@ import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import com.duokan.common.C0267i;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
@@ -46,7 +46,7 @@ public class C1473y extends mh {
         this.f11178j.m9925a(m15095o(), new LayoutParams(Math.min(displayMetrics.widthPixels - C0267i.m598a(this.c, 20.0f), C0267i.m598a(this.c, 320.0f)), -2));
         this.f11178j.setUpArrow(C0254f.reading__shared__arrow_top);
         this.f11178j.setDownArrow(C0254f.reading__shared__arrow_bottom);
-        this.f11178j.m9924a(dv.m1932b((Context) activity, 15.0f), 0, dv.m1932b((Context) activity, 15.0f), 0);
+        this.f11178j.m9924a(AnimUtils.m1932b((Context) activity, 15.0f), 0, AnimUtils.m1932b((Context) activity, 15.0f), 0);
         this.f11178j.m9926a(new Rect[]{m13680e()}, false, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR);
         m13688m();
     }

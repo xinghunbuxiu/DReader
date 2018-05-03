@@ -15,7 +15,7 @@ import com.duokan.core.app.IFeature;
 import com.duokan.core.app.AppContext;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.ui.HatGridView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
@@ -139,7 +139,7 @@ public class C1290g extends FrameLayout implements io, ln, gp, db, ex {
     /* renamed from: a */
     public Rect mo1661a(int i) {
         Rect g = this.f6486f.m1265g(i);
-        dv.m1936b(g, this.f6486f);
+        AnimUtils.m1936b(g, this.f6486f);
         return g;
     }
 
@@ -186,7 +186,7 @@ public class C1290g extends FrameLayout implements io, ln, gp, db, ex {
     public void mo1664a(Rect rect) {
         rect.set(0, 0, this.f6486f.getWidth(), this.f6486f.getHeight());
         rect.top += this.f6486f.getHatVisibleHeight();
-        dv.m1936b(rect, this.f6486f);
+        AnimUtils.m1936b(rect, this.f6486f);
     }
 
     public boolean d_() {
@@ -256,7 +256,7 @@ public class C1290g extends FrameLayout implements io, ln, gp, db, ex {
         int i = this.f6486f.getViewportBounds().top;
         if (this.f6495o == null) {
             this.f6495o = new C1296j(this, i);
-            dv.m1922a((View) this, this.f6495o);
+            AnimUtils.m1922a((View) this, this.f6495o);
             invalidate();
         }
     }
@@ -407,10 +407,10 @@ public class C1290g extends FrameLayout implements io, ln, gp, db, ex {
             boolean a = this.f6489i.m9091a();
             if (this.f6489i.getVisibility() == 8) {
                 this.f6489i.setVisibility(0);
-                dv.m1921a(this.f6489i, new C1306t(this, this.f6486f.getViewportBounds().top, a));
+                AnimUtils.m1921a(this.f6489i, new C1306t(this, this.f6486f.getViewportBounds().top, a));
             }
         } else if (this.f6489i.getVisibility() == 0) {
-            dv.m1921a(this.f6489i, new C1304r(this));
+            AnimUtils.m1921a(this.f6489i, new C1304r(this));
         } else {
             this.f6489i.setVisibility(8);
             m9663a(null);
@@ -452,7 +452,7 @@ public class C1290g extends FrameLayout implements io, ln, gp, db, ex {
             this.f6486f.m1250b(this.f6486f.getGridPaddingLeft(), 0, this.f6486f.getGridPaddingRight(), gridPaddingBottom);
             this.f6486f.m1255c(0, 0, 0, 0);
         }
-        dv.m1921a(this.f6486f, runnable);
+        AnimUtils.m1921a(this.f6486f, runnable);
     }
 
     /* renamed from: a */

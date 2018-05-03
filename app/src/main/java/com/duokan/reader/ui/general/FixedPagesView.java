@@ -6,8 +6,8 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
-import com.duokan.core.ui.dv;
-import com.duokan.reader.ui.general.PagesView.PageLayout;
+import com.duokan.core.ui.AnimUtils;
+
 import org.apache.http.HttpStatus;
 
 public class FixedPagesView extends PagesView {
@@ -54,7 +54,7 @@ public class FixedPagesView extends PagesView {
     public FixedPagesView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        this.f6837b = dv.m1932b(getContext(), 5.0f);
+        this.f6837b = AnimUtils.m1932b(getContext(), 5.0f);
         this.f6842g = displayMetrics.widthPixels;
         this.f6843h = displayMetrics.heightPixels;
         setPageLayout(PageLayout.TOP_TO_BOTTOM);

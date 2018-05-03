@@ -5,7 +5,7 @@ import android.widget.TextView;
 import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p022a.C0236a;
 
 class aw extends C0236a {
@@ -26,7 +26,7 @@ class aw extends C0236a {
     protected <T> void onSessionProgressUpdate(T t) {
         if (t instanceof String) {
             this.f8287b.append(t + "\n");
-            dv.m1921a(this.f8288c, new ax(this));
+            AnimUtils.m1921a(this.f8288c, new ax(this));
         }
     }
 

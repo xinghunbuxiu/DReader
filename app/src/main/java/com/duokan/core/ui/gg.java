@@ -45,10 +45,10 @@ public class gg implements Runnable {
         if (f1295a || d != null) {
             this.f1297c.set(f, f2);
             this.f1298d.set(f, f2);
-            dv.m1900a(this.f1298d, d, (View) zoomView);
+            AnimUtils.m1900a(this.f1298d, d, (View) zoomView);
             this.f1298d.offset((float) (-zoomView.getScrollX()), (float) (-zoomView.getScrollY()));
             this.f1299e = zoomView.getZoomFactor();
-            this.f1300f = (float) dv.m1927b((double) zoomView.getZoomAngle(), (double) (f6 - 180.0f), (double) (180.0f + f6));
+            this.f1300f = (float) AnimUtils.m1927b((double) zoomView.getZoomAngle(), (double) (f6 - 180.0f), (double) (180.0f + f6));
             this.f1301g.set(f3, f4);
             this.f1302h = f5;
             this.f1303i = f6;

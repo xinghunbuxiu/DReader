@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
 
 public class er extends Drawable {
@@ -21,7 +21,7 @@ public class er extends Drawable {
     public er(Context context) {
         this.f7165a.setColor(-1);
         this.f7165a.setFakeBoldText(true);
-        this.f7165a.setTextSize((float) dv.m1932b(context, 10.0f));
+        this.f7165a.setTextSize((float) AnimUtils.m1932b(context, 10.0f));
         this.f7165a.setAntiAlias(true);
         this.f7165a.setSubpixelText(true);
         this.f7166b = context.getResources().getDrawable(C0243e.general__shared__message_bubble);
@@ -35,10 +35,10 @@ public class er extends Drawable {
 
     /* renamed from: a */
     public int m10569a() {
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         this.f7166b.getPadding(rect);
         float measureText = (this.f7165a.measureText(this.f7167c) + ((float) rect.left)) + ((float) rect.right);
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect);
         return Math.max(getIntrinsicWidth(), ((int) Math.ceil((double) (measureText / ((float) getIntrinsicWidth())))) * getIntrinsicWidth());
     }
 
@@ -47,7 +47,7 @@ public class er extends Drawable {
             Rect bounds = getBounds();
             this.f7166b.setBounds(bounds);
             this.f7166b.draw(canvas);
-            dv.m1913a(canvas, this.f7167c, bounds, 17, this.f7165a);
+            AnimUtils.m1913a(canvas, this.f7167c, bounds, 17, this.f7165a);
         }
     }
 

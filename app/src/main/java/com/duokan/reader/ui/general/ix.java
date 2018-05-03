@@ -3,7 +3,7 @@ package com.duokan.reader.ui.general;
 import android.graphics.PointF;
 import android.view.MotionEvent;
 import android.view.View;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import java.util.LinkedList;
 
 public class ix {
@@ -23,7 +23,7 @@ public class ix {
             izVar.f7419a = motionEvent.getPointerId(i);
             izVar.f7420b.x = motionEvent.getX(i) + ((float) this.f7416a.getScrollX());
             izVar.f7420b.y = motionEvent.getY(i) + ((float) this.f7416a.getScrollY());
-            dv.m1953d(izVar.f7420b, this.f7416a);
+            AnimUtils.m1953d(izVar.f7420b, this.f7416a);
             this.f7418c.add(izVar);
             i++;
         }
@@ -100,14 +100,14 @@ public class ix {
 
     /* renamed from: a */
     public PointF m10818a(PointF pointF) {
-        dv.m1935b(pointF, this.f7416a);
+        AnimUtils.m1935b(pointF, this.f7416a);
         pointF.offset((float) (-this.f7416a.getScrollX()), (float) (-this.f7416a.getScrollY()));
         return pointF;
     }
 
     /* renamed from: b */
     public PointF m10822b(PointF pointF) {
-        dv.m1899a(pointF, this.f7416a);
+        AnimUtils.m1899a(pointF, this.f7416a);
         return pointF;
     }
 }

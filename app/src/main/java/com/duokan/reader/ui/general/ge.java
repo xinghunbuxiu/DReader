@@ -5,7 +5,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import com.duokan.core.ui.C0383g;
 import com.duokan.core.ui.cd;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 
@@ -35,7 +35,7 @@ public class ge extends er {
         }
         c0383g.m1612b(view, z2);
         this.f7269c.m1756a(0.01f);
-        this.f7269c.m1757a(dv.getScaledPagingTouchSlop(view.getContext()));
+        this.f7269c.m1757a(AnimUtils.getScaledPagingTouchSlop(view.getContext()));
         this.f7271e = null;
     }
 

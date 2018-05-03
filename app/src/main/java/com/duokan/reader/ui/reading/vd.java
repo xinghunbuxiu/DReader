@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
 import com.duokan.p023b.C0247i;
@@ -41,7 +41,7 @@ class vd extends wx {
     @SuppressLint({"NewApi"})
     public vd(IFeature mFeature) {
         super(mFeature);
-        this.f11044b.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? dv.m1932b(getContext(), 400.0f) : -1, -2));
+        this.f11044b.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? AnimUtils.m1932b(getContext(), 400.0f) : -1, -2));
         setContentView(this.f11044b);
         this.f11046d = findViewById(C0244f.reading__reading_options_view);
         this.f11048f = (FrameLayout) findViewById(C0244f.reading__reading_options_bottom_view__sub_menu_frame);
@@ -69,7 +69,7 @@ class vd extends wx {
         findViewById(C0244f.reading__reading_options_view__typesetting_custom).setOnClickListener(new vp(this));
         findViewById(C0244f.reading__reading_options_view__more_themes).setOnClickListener(new vg(this));
         if (getContext().getResources().getDisplayMetrics().widthPixels < 720) {
-            findViewById(C0244f.reading__reading_options_view__padding_panel).setPadding(dv.m1932b(getContext(), 5.0f), 0, dv.m1932b(getContext(), 5.0f), 0);
+            findViewById(C0244f.reading__reading_options_view__padding_panel).setPadding(AnimUtils.m1932b(getContext(), 5.0f), 0, AnimUtils.m1932b(getContext(), 5.0f), 0);
         }
         m15030b();
     }
@@ -165,7 +165,7 @@ class vd extends wx {
         if (this.f11052j) {
             this.f11052j = false;
         } else {
-            layoutParams.setMargins(dv.m1932b(getContext(), 15.0f), 0, 0, 0);
+            layoutParams.setMargins(AnimUtils.m1932b(getContext(), 15.0f), 0, 0, 0);
             adm.setLayoutParams(layoutParams);
         }
         adm.setOnClickListener(new vh(this, i));

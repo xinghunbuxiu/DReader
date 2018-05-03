@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.duokan.core.app.AppContext;
 import com.duokan.core.sys.UThread;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0241c;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
@@ -118,7 +118,7 @@ public class hu extends LinearLayout {
     /* renamed from: a */
     protected void m10763a(Canvas canvas) {
         for (int i = 0; i < this.f7355f.getChildCount(); i++) {
-            Rect rect = (Rect) dv.f1198g.addAnimation();
+            Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
             View childAt = this.f7355f.getChildAt(i);
             rect.set(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
             if (this.f7354e.getChildAt(i) instanceof TextView) {
@@ -132,7 +132,7 @@ public class hu extends LinearLayout {
                     ((TextView) this.f7354e.getChildAt(i)).setTextColor(Color.rgb(m10759a(255, 163, r0), m10759a(132, 163, r0), m10759a(0, 163, r0)));
                 } else {
                     ((TextView) this.f7354e.getChildAt(i)).setTextColor(Color.rgb(255, 108, 0));
-                    dv.f1198g.clearAnimation(rect);
+                    AnimUtils.f1198g.clearAnimation(rect);
                 }
             }
         }

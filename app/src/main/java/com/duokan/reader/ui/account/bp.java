@@ -2,7 +2,7 @@ package com.duokan.reader.ui.account;
 
 import android.content.Intent;
 import android.text.TextUtils;
-import com.duokan.core.app.C0286x;
+import com.duokan.core.app.ApplicationsStateCallbacks;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.ManagedApp;
@@ -14,7 +14,7 @@ import com.duokan.reader.ui.general.gs;
 import com.duokan.reader.ui.general.ja;
 import org.apache.http.protocol.HTTP;
 
-public abstract class bp extends gs implements C0286x {
+public abstract class bp extends gs implements ApplicationsStateCallbacks {
     /* renamed from: a */
     protected WebSession f5806a;
     /* renamed from: b */

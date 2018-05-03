@@ -2,7 +2,7 @@ package com.duokan.reader.ui.personal;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 class ai implements OnClickListener {
     /* renamed from: a */
@@ -14,7 +14,7 @@ class ai implements OnClickListener {
 
     public void onClick(View view) {
         if (!this.f8259a.f8251f.isShowing()) {
-            dv.m1909a(this.f8259a.getContext());
+            AnimUtils.m1909a(this.f8259a.getContext());
             this.f8259a.f8251f.show();
         }
     }

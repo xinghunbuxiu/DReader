@@ -3,7 +3,7 @@ package com.duokan.reader.ui.personal;
 import android.widget.TextView;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
@@ -43,7 +43,7 @@ public class bh extends ActivatedController {
         this.f8320a.setAdapter(new bj(this));
         this.f8320a.setRowDivider(new dk(getResources().getColor(C0252d.general__shared__cccccc)));
         this.f8320a.setBackgroundColor(-1);
-        this.f8320a.m9955a(dv.m1932b(getContext(), 15.0f), 0, dv.m1932b(getContext(), 15.0f), 0);
+        this.f8320a.m9955a(AnimUtils.m1932b(getContext(), 15.0f), 0, AnimUtils.m1932b(getContext(), 15.0f), 0);
         this.f8320a.m9962b(0, 0, 0, 0);
         this.f8322c = new em(getContext());
         this.f8323d = str;

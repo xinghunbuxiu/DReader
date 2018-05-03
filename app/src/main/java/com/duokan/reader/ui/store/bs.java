@@ -3,7 +3,7 @@ package com.duokan.reader.ui.store;
 import android.content.Context;
 import android.text.TextUtils;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.ui.general.dr;
 import com.duokan.reader.ui.general.hd;
@@ -28,7 +28,7 @@ class bs extends dr {
         float f = 0.0f;
         for (Integer intValue : getVisibleViewIndexMap().keySet()) {
             int intValue2 = intValue.intValue();
-            f = (((Float) getVisibleViewIndexMap().get(Integer.valueOf(intValue2))).floatValue() * dv.getAlpha(((float) ((bl) this.f11384c.f11381b.get(intValue2)).m15304l()) / ((float) (this.f11384c.f11383d - getTabView().getHeight())))) + f;
+            f = (((Float) getVisibleViewIndexMap().get(Integer.valueOf(intValue2))).floatValue() * AnimUtils.getAlpha(((float) ((bl) this.f11384c.f11381b.get(intValue2)).m15304l()) / ((float) (this.f11384c.f11383d - getTabView().getHeight())))) + f;
         }
         return f;
     }
@@ -40,7 +40,7 @@ class bs extends dr {
             return 0.0f;
         }
         if (visibleList.size() == 1) {
-            return dv.getAlpha(((((float) ((bl) this.f11384c.f11381b.get(((Integer) visibleList.get(0)).intValue())).m15304l()) - ((float) this.f11384c.f11383d)) + ((float) getStatusView().getHeight())) / ((float) getStatusView().getHeight()));
+            return AnimUtils.getAlpha(((((float) ((bl) this.f11384c.f11381b.get(((Integer) visibleList.get(0)).intValue())).m15304l()) - ((float) this.f11384c.f11383d)) + ((float) getStatusView().getHeight())) / ((float) getStatusView().getHeight()));
         }
         float c = mo2531c();
         if (c == 1.0f) {
@@ -59,7 +59,7 @@ class bs extends dr {
         for (Integer intValue : getVisibleViewIndexMap().keySet()) {
             int intValue2 = intValue.intValue();
             bl blVar = (bl) this.f11384c.f11381b.get(intValue2);
-            f = (((Float) getVisibleViewIndexMap().get(Integer.valueOf(intValue2))).floatValue() * dv.getAlpha(((float) (((getTabView().getHeight() + blVar.m15304l()) - (visibleList.size() == 1 ? getTabView().getHeight() / 2 : 0)) - blVar.m15305m())) / ((float) dv.m1932b(getContext(), 12.0f)))) + f;
+            f = (((Float) getVisibleViewIndexMap().get(Integer.valueOf(intValue2))).floatValue() * AnimUtils.getAlpha(((float) (((getTabView().getHeight() + blVar.m15304l()) - (visibleList.size() == 1 ? getTabView().getHeight() / 2 : 0)) - blVar.m15305m())) / ((float) AnimUtils.m1932b(getContext(), 12.0f)))) + f;
         }
         return f;
     }

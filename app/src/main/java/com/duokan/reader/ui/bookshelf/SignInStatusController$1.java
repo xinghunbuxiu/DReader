@@ -3,7 +3,7 @@ package com.duokan.reader.ui.bookshelf;
 import android.view.ViewGroup.LayoutParams;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.UThread;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.fr;
 import com.duokan.reader.ui.general.web.StorePageController;
 
@@ -39,7 +39,7 @@ class SignInStatusController$1 extends StorePageController {
             this.this$0.f6604p.setVisibility(0);
             this.this$0.f6602n.setVisibility(8);
             LayoutParams layoutParams = this.this$0.f6604p.getLayoutParams();
-            int b = dv.m1932b(getContext(), (float) i);
+            int b = AnimUtils.m1932b(getContext(), (float) i);
             if (layoutParams.height != b) {
                 layoutParams.height = b;
                 this.this$0.f6604p.setLayoutParams(layoutParams);

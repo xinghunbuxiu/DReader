@@ -3,7 +3,7 @@ package com.duokan.reader.ui.p049a;
 import android.view.View;
 import android.view.View.OnClickListener;
 import com.duokan.core.sys.UThread;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.ui.general.ja;
 
@@ -17,7 +17,7 @@ class C1217d implements OnClickListener {
     }
 
     public void onClick(View view) {
-        dv.m1909a(this.f5710a.getContext());
+        AnimUtils.m1909a(this.f5710a.getContext());
         this.f5710a.f5707l = new ja(this.f5710a.getContext());
         this.f5710a.f5707l.m10843a(this.f5710a.getString(C0258j.general__shared__committing));
         this.f5710a.f5707l.setCancelOnBack(false);

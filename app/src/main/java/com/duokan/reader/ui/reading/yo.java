@@ -7,7 +7,7 @@ import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.sys.UIdleHandler;
 import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
 import com.duokan.reader.domain.document.C0808w;
@@ -59,7 +59,7 @@ abstract class yo extends ActivatedController implements C0808w {
         this.f11205e.setBackgroundDrawable(new yq(this));
         this.f11205e.setOnItemClickListener(new yr(this));
         this.f11205e.setOnScrollListener(new ys(this));
-        getContentView().setLayoutParams(new LayoutParams(dv.m1932b(getContext(), 320.0f), -2));
+        getContentView().setLayoutParams(new LayoutParams(AnimUtils.m1932b(getContext(), 320.0f), -2));
     }
 
     /* renamed from: a */

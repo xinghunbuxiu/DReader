@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.common.webservices.C0621a;
 import com.duokan.reader.common.webservices.C0657i;
@@ -37,7 +37,7 @@ class bl extends WebSession {
             be.m10287a(this.f8333c.getContext(), this.f8331a.c, 0).show();
         }
         this.f8333c.f8320a.getAdapter().m8785a(false);
-        dv.m1921a(this.f8333c.f8320a, new bm(this));
+        AnimUtils.m1921a(this.f8333c.f8320a, new bm(this));
     }
 
     protected void onSessionFailed() {

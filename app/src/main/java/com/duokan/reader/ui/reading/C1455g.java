@@ -12,7 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0247i;
 import com.duokan.reader.UmengManager;
 import com.duokan.reader.domain.bookshelf.ee;
@@ -49,17 +49,17 @@ public class C1455g extends Drawable {
     public C1455g(Context context, su suVar) {
         this.f10206a = context;
         this.f10207b = suVar;
-        this.f10208c = dv.m1932b(context, 80.0f);
-        this.f10209d = dv.m1932b(context, 25.0f);
+        this.f10208c = AnimUtils.m1932b(context, 80.0f);
+        this.f10209d = AnimUtils.m1932b(context, 25.0f);
         this.f10216k = context.getResources().getString(C0247i.reading__shared__add_to_bookshelf_ok_plus);
         this.f10212g = (ee) suVar.mo1992G();
         this.f10210e = new Paint();
         this.f10210e.setColor(Color.parseColor("#cccccc"));
         this.f10210e.setAntiAlias(true);
         this.f10211f = new Paint(this.f10210e);
-        this.f10211f.setTextSize((float) dv.m1932b(context, 14.0f));
+        this.f10211f.setTextSize((float) AnimUtils.m1932b(context, 14.0f));
         this.f10211f.setSubpixelText(true);
-        this.f10210e.setStrokeWidth((float) dv.m1932b(context, 1.0f));
+        this.f10210e.setStrokeWidth((float) AnimUtils.m1932b(context, 1.0f));
         this.f10210e.setStyle(Style.STROKE);
     }
 
@@ -75,7 +75,7 @@ public class C1455g extends Drawable {
             invalidateSelf();
         }
         canvas.drawRoundRect(new RectF(getBounds()), (float) (this.f10209d / 2), (float) (this.f10209d / 2), this.f10210e);
-        dv.m1913a(canvas, this.f10216k, getBounds(), 17, this.f10211f);
+        AnimUtils.m1913a(canvas, this.f10216k, getBounds(), 17, this.f10211f);
     }
 
     public void setAlpha(int i) {

@@ -11,7 +11,7 @@ import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
 import com.duokan.reader.ReaderEnv;
@@ -132,7 +132,7 @@ public class TranslationController extends ActivatedController {
             View dkTextView = new DkTextView(getContext());
             this.f9168b.addView(dkTextView, new LayoutParams(-1, -2));
             dkTextView.setGravity(119);
-            dkTextView.setPadding(0, dv.m1932b(getContext(), 10.0f), 0, 0);
+            dkTextView.setPadding(0, AnimUtils.m1932b(getContext(), 10.0f), 0, 0);
             dkTextView.setChsToChtChars(m12602d().mo2003T());
             dkTextView.setTextSize((float) Math.round(((float) m12602d().mo1988C()) * 0.875f));
             dkTextView.setTextPixelSize(m12602d().mo1988C());

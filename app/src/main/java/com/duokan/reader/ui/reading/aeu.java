@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.domain.document.C0897d;
@@ -18,7 +18,7 @@ class aeu extends er {
 
     public aeu(adz adz) {
         this.f9598a = adz;
-        this.f9599c.m1882a(dv.getScaledTouchSlop(adz.getContext()));
+        this.f9599c.m1882a(AnimUtils.getScaledTouchSlop(adz.getContext()));
         this.f9599c.m1885b(45.0f);
         this.f9599c.m1887c(135.0f);
     }

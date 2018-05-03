@@ -11,8 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.JobManager;
+import com.duokan.core.sys.UThread;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -201,33 +201,33 @@ public class ActivatedController {
         }
     }
 
-    public final void deactivate(ActivatedController c0303e) {
-        if (!$assertionsDisabled && c0303e == null) {
+    public final void deactivate(ActivatedController controller) {
+        if (!$assertionsDisabled && controller == null) {
             throw new AssertionError();
-        } else if (c0303e != null && c0303e.getParent() == this.mSubControllerParent) {
-            this.mActivatedControllers.remove(c0303e);
-            if (c0303e.isActive()) {
-                c0303e.gotoDeactive();
+        } else if (controller != null && controller.getParent() == this.mSubControllerParent) {
+            this.mActivatedControllers.remove(controller);
+            if (controller.isActive()) {
+                controller.gotoDeactive();
             } else if (!$assertionsDisabled && !this.mActive) {
                 throw new AssertionError();
             }
         }
     }
 
-    public final boolean containsDirectly(ActivatedController c0303e) {
-        if (c0303e.getParent() == this.mSubControllerParent) {
+    public final boolean containsDirectly(ActivatedController controller) {
+        if (controller.getParent() == this.mSubControllerParent) {
             return true;
         }
         return false;
     }
 
-    public final boolean contains(ActivatedController c0303e) {
-        if (containsDirectly(c0303e)) {
+    public final boolean contains(ActivatedController activatedController) {
+        if (containsDirectly(activatedController)) {
             return true;
         }
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            if (((ActivatedController) it.next()).contains(c0303e)) {
+            if (((ActivatedController) it.next()).contains(activatedController)) {
                 return true;
             }
         }
@@ -243,34 +243,34 @@ public class ActivatedController {
     }
 
     public final ActivatedController getSubController(int i) {
-        return (ActivatedController) this.mSubControllers.get(i);
+        return this.mSubControllers.get(i);
     }
 
-    public final boolean addSubController(ActivatedController c0303e) {
-        if (this.mSubControllers.contains(c0303e)) {
+    public final boolean addSubController(ActivatedController controller) {
+        if (this.mSubControllers.contains(controller)) {
             return false;
         }
-        this.mSubControllers.add(c0303e);
-        c0303e.setParent(this.mSubControllerParent);
+        this.mSubControllers.add(controller);
+        controller.setParent(this.mSubControllerParent);
         return true;
     }
 
-    public final boolean removeSubController(ActivatedController c0303e) {
-        if (!this.mSubControllers.contains(c0303e)) {
+    public final boolean removeSubController(ActivatedController controller) {
+        if (!this.mSubControllers.contains(controller)) {
             return false;
         }
-        deactivate(c0303e);
-        this.mSubControllers.remove(c0303e);
-        c0303e.setParent(null);
+        deactivate(controller);
+        this.mSubControllers.remove(controller);
+        controller.setParent(null);
         return true;
     }
 
     public final ActivatedController findSubController(View view) {
         Iterator it = this.mSubControllers.iterator();
         while (it.hasNext()) {
-            ActivatedController c0303e = (ActivatedController) it.next();
-            if (c0303e.getContentView() == view) {
-                return c0303e;
+            ActivatedController controller = (ActivatedController) it.next();
+            if (controller.getContentView() == view) {
+                return controller;
             }
         }
         return null;
@@ -481,11 +481,11 @@ public class ActivatedController {
             this.mActive = true;
             onActive(this.mFirstActive);
             this.mFirstActive = false;
-            Iterator it = this.mActivatedControllers.iterator();
+            Iterator<ActivatedController> it = this.mActivatedControllers.iterator();
             while (it.hasNext()) {
-                ActivatedController c0303e = (ActivatedController) it.next();
-                if (!c0303e.isActive()) {
-                    c0303e.gotoActive();
+                ActivatedController controller = it.next();
+                if (!controller.isActive()) {
+                    controller.gotoActive();
                 }
             }
             this.mDelayedRunnableQueue.m846a();

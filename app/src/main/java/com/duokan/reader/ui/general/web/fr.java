@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.EditText;
 import com.duokan.core.ui.cj;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 class fr implements OnTouchListener {
     /* renamed from: a */
@@ -22,7 +22,7 @@ class fr implements OnTouchListener {
         if (motionEvent.getActionMasked() != 0 || !this.f7855a.hasFocus() || !cj.m1764a(this.f7856b.f7852g.f7845b.f7581b.getContext()).m1775a()) {
             return false;
         }
-        dv.m1909a(this.f7856b.f7852g.f7845b.f7581b.getContext());
+        AnimUtils.m1909a(this.f7856b.f7852g.f7845b.f7581b.getContext());
         return true;
     }
 }

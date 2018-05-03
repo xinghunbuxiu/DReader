@@ -3,7 +3,7 @@ package com.duokan.reader.ui.p049a;
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
 import com.duokan.core.ui.cg;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 /* renamed from: com.duokan.reader.ui.a.b */
 class C1215b implements cg {
@@ -17,7 +17,7 @@ class C1215b implements cg {
     /* renamed from: a */
     public void mo478a(Scrollable scrollable, ScrollState scrollState, ScrollState scrollState2) {
         if (scrollState2 == ScrollState.DRAG) {
-            dv.m1909a(this.f5708a.getContext());
+            AnimUtils.m1909a(this.f5708a.getContext());
         }
     }
 

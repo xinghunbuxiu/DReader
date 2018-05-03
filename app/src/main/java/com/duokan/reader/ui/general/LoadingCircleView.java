@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
 import com.duokan.p023b.C0245g;
 
@@ -59,7 +59,7 @@ public class LoadingCircleView extends FrameLayout {
         super.onVisibilityChanged(view, i);
         if (this.f6875a != null && (this.f6875a.getDrawable() instanceof AnimationDrawable)) {
             AnimationDrawable animationDrawable = (AnimationDrawable) this.f6875a.getDrawable();
-            if (i == 0 && dv.m1933b(view) == 0) {
+            if (i == 0 && AnimUtils.m1933b(view) == 0) {
                 animationDrawable.start();
             } else {
                 animationDrawable.stop();

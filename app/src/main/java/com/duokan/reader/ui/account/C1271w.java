@@ -2,9 +2,8 @@ package com.duokan.reader.ui.account;
 
 import android.content.Context;
 import android.text.TextPaint;
-import android.view.View.MeasureSpec;
 import android.widget.LinearLayout;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 /* renamed from: com.duokan.reader.ui.account.w */
 class C1271w extends LinearLayout {
@@ -25,7 +24,7 @@ class C1271w extends LinearLayout {
                 int measuredWidth = (getMeasuredWidth() - this.f5992a.f5982d.getMeasuredWidth()) - this.f5992a.f5983e.getMeasuredWidth();
                 int i3 = 15;
                 while (ceil > measuredWidth && i3 > 12) {
-                    paint.setTextSize((float) dv.m1932b(getContext(), (float) i3));
+                    paint.setTextSize((float) AnimUtils.m1932b(getContext(), (float) i3));
                     ceil = (int) Math.ceil((double) paint.measureText(String.valueOf(this.f5992a.f5981c.getText())));
                     i3--;
                 }

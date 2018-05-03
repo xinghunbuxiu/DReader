@@ -6,7 +6,7 @@ import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 public class io extends Drawable {
     /* renamed from: a */
@@ -41,7 +41,7 @@ public class io extends Drawable {
 
     public void draw(Canvas canvas) {
         if (!TextUtils.isEmpty(this.f7391c)) {
-            dv.m1913a(canvas, this.f7391c, getBounds(), this.f7392d, this.f7390b);
+            AnimUtils.m1913a(canvas, this.f7391c, getBounds(), this.f7392d, this.f7390b);
         }
     }
 

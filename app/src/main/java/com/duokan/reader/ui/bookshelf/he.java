@@ -4,7 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.duokan.core.app.IFeature;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
 import com.duokan.reader.ui.general.gs;
@@ -85,8 +85,8 @@ public class he extends gs {
             return true;
         }
         this.f6346f = true;
-        dv.startTranslateAnimation(m9488a(), 0.0f, 0.0f, 0.0f, -1.0f, HttpStatus.SC_OK, true, new hg(this));
-        dv.startAlphaAnimation(m9493b(), 1.0f, 0.0f, (int) HttpStatus.SC_OK, true, null);
+        AnimUtils.startTranslateAnimation(m9488a(), 0.0f, 0.0f, 0.0f, -1.0f, HttpStatus.SC_OK, true, new hg(this));
+        AnimUtils.startAlphaAnimation(m9493b(), 1.0f, 0.0f, (int) HttpStatus.SC_OK, true, null);
         return true;
     }
 

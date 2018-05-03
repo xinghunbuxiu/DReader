@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 import com.duokan.common.C0266h;
 import com.duokan.common.C0267i;
-import com.duokan.core.app.C0286x;
+import com.duokan.core.app.ApplicationsStateCallbacks;
 import com.duokan.core.app.ai;
 import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
@@ -80,7 +80,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import org.apache.http.protocol.HTTP;
 
 @SuppressLint({"UseSparseArrays"})
-public abstract class hc implements ai, C0286x, C0562i, C0586j, cf, dn, et {
+public abstract class hc implements ai, ApplicationsStateCallbacks, C0562i, C0586j, cf, dn, et {
     /* renamed from: c */
     protected static final String f2728c = (ai.class.getName() + ".asyncTaskQueue");
     /* renamed from: l */

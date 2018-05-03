@@ -10,7 +10,7 @@ import android.view.View;
 import android.webkit.CookieManager;
 import android.widget.TextView;
 import com.duokan.common.C0267i;
-import com.duokan.core.app.C0286x;
+import com.duokan.core.app.ApplicationsStateCallbacks;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.AppContext;
 import com.duokan.core.app.AppManage;
@@ -25,7 +25,7 @@ import com.duokan.core.ui.BoxView;
 import com.duokan.core.ui.C0342j;
 import com.duokan.core.ui.PullDownRefreshView.RefreshStyle;
 import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0258j;
@@ -99,7 +99,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     private static C0586j sAccountListener = null;
     private static boolean sCookieSet = false;
     private static StorePageController sPreloadedController = null;
-    private static C0286x sRunningStateListener = null;
+    private static ApplicationsStateCallbacks sRunningStateListener = null;
     private C0744a mAdLifecycleManager;
     private C0761r mAdSdkService;
     private cf mBannerInfo;
@@ -1002,7 +1002,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
         if (c0435s == null) {
             return 0;
         }
-        return Math.max(0, ((int) dv.m1929b(getContext(), c0435s.getTheme().getPagePaddingBottom())) - 10);
+        return Math.max(0, ((int) AnimUtils.m1929b(getContext(), c0435s.getTheme().getPagePaddingBottom())) - 10);
     }
 
     public void setOnScrollListener(com.duokan.core.ui.cg cgVar) {

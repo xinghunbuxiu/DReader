@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.InsetDrawable;
 import android.util.Pair;
 import com.duokan.core.diagnostic.WebLog;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.ui.bookshelf.hv;
@@ -21,7 +21,7 @@ class afn extends oa {
         super(context, hvVar);
         this.c.setVisibility(8);
         this.b.setLeftTitle(C0258j.reading__tts_setting_view__title);
-        this.f.setRowDivider(new InsetDrawable(new dk(getResources().getColor(C0252d.general__shared__e9e9e9)), dv.m1932b(getContext(), 3.0f), 0, 0, 0));
+        this.f.setRowDivider(new InsetDrawable(new dk(getResources().getColor(C0252d.general__shared__e9e9e9)), AnimUtils.m1932b(getContext(), 3.0f), 0, 0, 0));
         this.f.setPullDownRefreshEnabled(false);
         this.f.setOnItemClickListener(new afo(this, afm));
         this.f.setOnItemLongPressListener(new afp(this, afm));
@@ -31,7 +31,7 @@ class afn extends oa {
     /* renamed from: c */
     public void mo2231c(int i, int i2) {
         super.mo2231c(i, i2);
-        this.f.m9955a(0, 0, 0, dv.m1932b(getContext(), 50.0f));
+        this.f.m9955a(0, 0, 0, AnimUtils.m1932b(getContext(), 50.0f));
     }
 
     /* renamed from: q */

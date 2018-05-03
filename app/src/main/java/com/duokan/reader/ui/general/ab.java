@@ -9,7 +9,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.AnimationUtils;
 
 import com.duokan.core.sys.UThread;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
 import com.duokan.reader.ui.general.DkSimulationInterpolator.Mode;
 
@@ -80,12 +80,12 @@ final class ab extends Drawable {
             canvas.save();
             int width = (this.mBounds.width() - i) / 2;
             int height = (this.mBounds.height() - i2) / 2;
-            Rect rect = (Rect) dv.f1198g.addAnimation();
+            Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
             rect.set(width, height, i + width, i2 + height);
             this.drawable.setBounds(rect);
             this.drawable.draw(canvas);
             canvas.restore();
-            dv.f1198g.clearAnimation(rect);
+            AnimUtils.f1198g.clearAnimation(rect);
         }
     }
 

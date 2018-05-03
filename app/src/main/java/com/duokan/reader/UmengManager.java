@@ -6,7 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import com.duokan.core.app.C0297a;
+import com.duokan.core.app.IActivityLifecycleCallbacks;
 import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.IOnAnr;
 import com.duokan.core.diagnostic.LogLevel;
@@ -14,7 +14,7 @@ import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.aq;
 import com.duokan.core.ui.BoxView;
 import com.duokan.core.ui.FrameScrollView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
 import com.duokan.p023b.C0247i;
@@ -37,7 +37,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map.Entry;
 
-public class UmengManager implements C0297a {
+public class UmengManager implements IActivityLifecycleCallbacks {
     /* renamed from: a */
     static final /* synthetic */ boolean f1660a = (!UmengManager.class.desiredAssertionStatus());
     /* renamed from: b */
@@ -240,7 +240,7 @@ public class UmengManager implements C0297a {
         int i = context.getResources().getDisplayMetrics().heightPixels;
         boxView.setMaxHeight(i / 2);
         boxView.setMinimumHeight(i / 7);
-        ((FrameScrollView) inflate.findViewById(C0244f.general__auto_update_content__scrollview)).setMaxOverScrollHeight(dv.m1962g(context));
+        ((FrameScrollView) inflate.findViewById(C0244f.general__auto_update_content__scrollview)).setMaxOverScrollHeight(AnimUtils.m1962g(context));
         ((deprecatedDkTextView) inflate.findViewById(C0244f.general__auto_update_content__text)).setText(str2);
         c04906.setPrompt(C0247i.general__update__title);
         c04906.setExtraContentView(inflate);

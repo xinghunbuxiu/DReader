@@ -8,7 +8,7 @@ import com.duokan.core.ui.C0380do;
 import com.duokan.core.ui.ZoomView;
 import com.duokan.core.ui.di;
 import com.duokan.core.ui.dl;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.DkApp;
 
 class pt implements Runnable {
@@ -50,7 +50,7 @@ class pt implements Runnable {
         if (this.f10833j.f10798b != null && !this.f10833j.f10799c) {
             this.f10833j.f10799c = true;
             Point point = new Point(0, 0);
-            dv.m1945c(point, this.f10824a);
+            AnimUtils.m1945c(point, this.f10824a);
             C0380do b = this.f10825b.m1836b(this.f10826c);
             dl a = this.f10825b.m1826a(this.f10826c);
             float l = b.m1865l() + a.m1865l();

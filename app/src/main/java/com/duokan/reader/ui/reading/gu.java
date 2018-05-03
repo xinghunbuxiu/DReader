@@ -7,7 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.text.format.DateFormat;
 import android.widget.FrameLayout;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.domain.document.C0917k;
 import com.duokan.reader.domain.document.C0923m;
 import com.duokan.reader.ui.general.io;
@@ -72,22 +72,22 @@ public class gu extends FrameLayout {
                 if (k.f4332c.bottom >= l.f4358f) {
                     Rect rect = k.f4332c;
                     int height = (getHeight() - getPaddingBottom()) - rect.bottom;
-                    this.f10271a.m13768c(l.f4358f - dv.m1963g(getContext(), 2.0f));
-                    Rect rect2 = (Rect) dv.f1198g.addAnimation();
+                    this.f10271a.m13768c(l.f4358f - AnimUtils.m1963g(getContext(), 2.0f));
+                    Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
                     rect2.set(getPaddingLeft() + rect.left, height, (getPaddingLeft() + rect.left) + this.f10271a.getIntrinsicWidth(), ((int) this.f10272b.m10797a().getTextSize()) + height);
-                    Rect rect3 = (Rect) dv.f1198g.addAnimation();
-                    rect3.set(rect2.right + dv.m1932b(getContext(), 8.0f), height, (getWidth() - getPaddingRight()) - rect.right, ((int) this.f10272b.m10797a().getTextSize()) + height);
+                    Rect rect3 = (Rect) AnimUtils.f1198g.addAnimation();
+                    rect3.set(rect2.right + AnimUtils.m1932b(getContext(), 8.0f), height, (getWidth() - getPaddingRight()) - rect.right, ((int) this.f10272b.m10797a().getTextSize()) + height);
                     if (this.f10273c.bg()) {
-                        this.f10273c.mo2017a(canvas, getWidth() / 2, height + (((int) this.f10272b.m10797a().getTextSize()) / 2), getHeight() - dv.m1932b(getContext(), 65.0f), getHeight(), this.f10272b.m10797a().getColor());
+                        this.f10273c.mo2017a(canvas, getWidth() / 2, height + (((int) this.f10272b.m10797a().getTextSize()) / 2), getHeight() - AnimUtils.m1932b(getContext(), 65.0f), getHeight(), this.f10272b.m10797a().getColor());
                     }
                     this.f10271a.setBounds(rect2);
                     this.f10271a.draw(canvas);
                     this.f10272b.setBounds(rect3);
                     this.f10272b.draw(canvas);
-                    dv.f1198g.clearAnimation(rect3);
-                    dv.f1198g.clearAnimation(rect2);
+                    AnimUtils.f1198g.clearAnimation(rect3);
+                    AnimUtils.f1198g.clearAnimation(rect2);
                 } else if (this.f10273c.bg()) {
-                    this.f10273c.mo2017a(canvas, getWidth() / 2, getHeight() - (k.m6083a().bottom / 2), getHeight() - dv.m1932b(getContext(), 65.0f), getHeight(), this.f10272b.m10797a().getColor());
+                    this.f10273c.mo2017a(canvas, getWidth() / 2, getHeight() - (k.m6083a().bottom / 2), getHeight() - AnimUtils.m1932b(getContext(), 65.0f), getHeight(), this.f10272b.m10797a().getColor());
                 }
             }
         }

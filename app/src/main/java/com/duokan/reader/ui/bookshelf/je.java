@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
 
@@ -50,7 +50,7 @@ class je extends ActivatedController {
         View textView = new TextView(getContext());
         textView.setTextSize(13.0f);
         textView.setIncludeFontPadding(false);
-        textView.setPadding(dv.m1932b(getContext(), 6.0f), 0, dv.m1932b(getContext(), 6.0f), 0);
+        textView.setPadding(AnimUtils.m1932b(getContext(), 6.0f), 0, AnimUtils.m1932b(getContext(), 6.0f), 0);
         textView.setText(str);
         textView.setTextColor(i);
         this.f6654c.addView(textView);
@@ -61,7 +61,7 @@ class je extends ActivatedController {
         View textView = new TextView(getContext());
         textView.setTextSize(13.0f);
         textView.setIncludeFontPadding(false);
-        textView.setPadding(dv.m1932b(getContext(), 6.0f), 0, dv.m1932b(getContext(), 6.0f), 0);
+        textView.setPadding(AnimUtils.m1932b(getContext(), 6.0f), 0, AnimUtils.m1932b(getContext(), 6.0f), 0);
         m9855a(textView, str, i, str2, i2);
         this.f6654c.addView(textView);
     }

@@ -4,7 +4,7 @@ import android.graphics.Color;
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
 import com.duokan.core.ui.cg;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.ui.general.PageHeaderView;
 import org.apache.http.HttpStatus;
 
@@ -27,10 +27,10 @@ class io implements cg {
     public void mo479a(Scrollable scrollable, boolean z) {
         if (this.f8738a != null && this.f8738a.getHeight() != 0 && z) {
             int i = this.f8739b.f8720d.getViewportBounds().top;
-            if (this.f8739b.f8720d.getContentHeight() - this.f8738a.getHeight() <= dv.getHeightPixels(this.f8739b.getContext())) {
+            if (this.f8739b.f8720d.getContentHeight() - this.f8738a.getHeight() <= AnimUtils.getHeightPixels(this.f8739b.getContext())) {
                 i = 0;
             } else {
-                i = (int) (dv.getAlpha(((((float) i) - ((float) this.f8738a.getHeight())) / ((float) this.f8738a.getHeight())) + 1.0f) * 255.0f);
+                i = (int) (AnimUtils.getAlpha(((((float) i) - ((float) this.f8738a.getHeight())) / ((float) this.f8738a.getHeight())) + 1.0f) * 255.0f);
             }
             this.f8738a.setBackgroundColor(Color.argb(i, 248, 248, 248));
             this.f8738a.setBottomLineColor(Color.argb(i, HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT, HttpStatus.SC_NO_CONTENT));

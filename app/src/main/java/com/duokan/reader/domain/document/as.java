@@ -13,7 +13,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Looper;
 import com.duokan.core.diagnostic.WebLog;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.common.bitmap.C0544a;
 import java.lang.ref.WeakReference;
 import java.util.Collections;
@@ -449,23 +449,23 @@ public abstract class as extends Drawable {
     /* renamed from: a */
     protected void m6118a(Canvas canvas, String str, int i, int i2, Paint paint) {
         C0917k p = mo1340p();
-        RectF rectF = (RectF) dv.f1199h.addAnimation();
+        RectF rectF = (RectF) AnimUtils.f1199h.addAnimation();
         if (i == 3) {
             rectF.set((float) p.f4332c.left, 0.0f, (float) Math.min(getBounds().width() - p.f4332c.right, p.f4332c.left + i2), (float) p.f4332c.top);
         } else {
             rectF.set((float) Math.max((getBounds().width() - p.f4332c.right) - i2, p.f4332c.left), 0.0f, (float) (getBounds().width() - p.f4332c.right), (float) p.f4332c.top);
         }
-        dv.m1914a(canvas, str, rectF, i | 80, paint);
-        dv.f1199h.clearAnimation(rectF);
+        AnimUtils.m1914a(canvas, str, rectF, i | 80, paint);
+        AnimUtils.f1199h.clearAnimation(rectF);
     }
 
     /* renamed from: a */
     protected void m6119a(Canvas canvas, String str, int i, Paint paint) {
         C0917k p = mo1340p();
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         rect.set(p.f4332c.left, getBounds().height() - p.f4332c.bottom, getBounds().width() - p.f4332c.right, (getBounds().height() - p.f4332c.bottom) + mo1342q().f4358f);
-        dv.m1913a(canvas, str, rect, i | 16, paint);
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.m1913a(canvas, str, rect, i | 16, paint);
+        AnimUtils.f1198g.clearAnimation(rect);
     }
 
     /* renamed from: a */

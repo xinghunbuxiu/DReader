@@ -13,7 +13,7 @@ import android.view.animation.Animation;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.sys.af;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.p024c.C0255g;
 import com.duokan.reader.ReaderEnv;
@@ -258,7 +258,7 @@ abstract class sv extends gs {
             this.f9656a.mo2131d(a.f5024a);
         }
         this.f9666k.setVisibility(0);
-        dv.showAnimation(this.f9666k, null);
+        AnimUtils.showAnimation(this.f9666k, null);
         this.f9656a.mo2040a(0, 128);
     }
 
@@ -269,7 +269,7 @@ abstract class sv extends gs {
             this.f9656a.mo2101b(a.f5024a, DecorDrawableStyle.SELECTION_HIGHLIGHT_RECT);
         }
         this.f9666k.setVisibility(8);
-        dv.hideAnimation(this.f9666k, null);
+        AnimUtils.hideAnimation(this.f9666k, null);
         this.f9656a.mo2040a(128, 0);
     }
 
@@ -409,8 +409,8 @@ abstract class sv extends gs {
         this.f9658c = true;
         showPopup(this.f9660e);
         UmengManager.get().onEvent("V2_READING_MENU", "Expose");
-        dv.m1958e(mo2246c(), null);
-        dv.m1954d(mo2245b(), null);
+        AnimUtils.m1958e(mo2246c(), null);
+        AnimUtils.m1954d(mo2245b(), null);
         m13552a(mo2247d(), 0.0f, 1.0f, 200, 200);
         if (this.f9660e instanceof ia) {
             m13552a(((ia) this.f9660e).mo2385d(), 0.0f, 1.0f, 200, 200);
@@ -451,9 +451,9 @@ abstract class sv extends gs {
                 ((ox) this.f9660e).mo2385d().setVisibility(4);
             }
             if (mo2245b().getVisibility() == 0) {
-                dv.m1961f(mo2245b(), null);
+                AnimUtils.m1961f(mo2245b(), null);
             }
-            dv.loadSuccess(mo2246c(), new tc(this));
+            AnimUtils.loadSuccess(mo2246c(), new tc(this));
         }
         return true;
     }

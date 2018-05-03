@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 class zi implements OnClickListener {
     /* renamed from: a */
@@ -19,16 +19,16 @@ class zi implements OnClickListener {
             int toolCount;
             Rect[] rectArr = new Rect[this.f11267a.f11253z.getToolCount()];
             for (toolCount = this.f11267a.f11253z.getToolCount() - 1; toolCount > 0; toolCount--) {
-                rectArr[toolCount] = dv.m1904a(new Rect(), this.f11267a.f11253z.m10807a(toolCount), null);
+                rectArr[toolCount] = AnimUtils.m1904a(new Rect(), this.f11267a.f11253z.m10807a(toolCount), null);
             }
             LayoutParams layoutParams = this.f11267a.f11246s.getLayoutParams();
-            layoutParams.width = dv.m1932b(this.f11267a.getContext(), 200.0f);
+            layoutParams.width = AnimUtils.m1932b(this.f11267a.getContext(), 200.0f);
             this.f11267a.f11246s.setLayoutParams(layoutParams);
-            this.f11267a.f11252y.leftMargin = dv.m1932b(this.f11267a.getContext(), 15.0f);
+            this.f11267a.f11252y.leftMargin = AnimUtils.m1932b(this.f11267a.getContext(), 15.0f);
             for (toolCount = 1; toolCount < this.f11267a.f11246s.getChildCount(); toolCount++) {
                 this.f11267a.f11246s.getChildAt(toolCount).setLayoutParams(this.f11267a.f11252y);
             }
-            dv.m1921a(this.f11267a.f11246s, new zj(this, rectArr));
+            AnimUtils.m1921a(this.f11267a.f11246s, new zj(this, rectArr));
             this.f11267a.f11248u.setClickable(true);
             this.f11267a.f11249v.setClickable(true);
             this.f11267a.f11250w.setClickable(true);

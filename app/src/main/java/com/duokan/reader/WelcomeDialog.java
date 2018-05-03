@@ -24,7 +24,7 @@ import com.duokan.core.sys.ah;
 import com.duokan.core.ui.C0342j;
 import com.duokan.core.ui.ct;
 import com.duokan.core.ui.cu;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.et;
 import com.duokan.p024c.C0254f;
@@ -152,14 +152,14 @@ public class WelcomeDialog extends C0342j {
 
         public void onTap(er erVar, View view, PointF pointF) {
             if (this.f1672a.f1708g != null && this.f1672a.f1710i != null) {
-                RectF rectF = (RectF) dv.f1199h.addAnimation();
+                RectF rectF = (RectF) AnimUtils.f1199h.addAnimation();
                 Rect bounds = this.f1672a.f1708g.getBounds();
                 rectF.set(this.f1672a.f1710i.left * ((float) bounds.width()), this.f1672a.f1710i.top * ((float) bounds.width()), this.f1672a.f1710i.right * ((float) bounds.width()), this.f1672a.f1710i.bottom * ((float) bounds.width()));
                 if (rectF.contains(pointF.x - ((float) bounds.left), pointF.y - ((float) bounds.top))) {
                     this.f1672a.f1711j = true;
                     this.f1672a.doFinishShow();
                 }
-                dv.f1199h.clearAnimation(rectF);
+                AnimUtils.f1199h.clearAnimation(rectF);
             }
         }
     }
@@ -353,7 +353,7 @@ public class WelcomeDialog extends C0342j {
 
                 public void run() {
                     WebLog.init().w();
-                    dv.startAlphaAnimation(this.f1675a.f1687d.f1707f, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, new C04991(this));
+                    AnimUtils.startAlphaAnimation(this.f1675a.f1687d.f1707f, 0.0f, 1.0f, (int) HttpStatus.SC_INTERNAL_SERVER_ERROR, true, new C04991(this));
                 }
             }
 

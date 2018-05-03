@@ -7,7 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
 import com.duokan.p024c.C0258j;
@@ -38,8 +38,8 @@ class bn extends af {
         pageHeaderView.setLeftTitle(C0258j.personal__feedback_thread_view__title);
         View findViewById = findViewById(C0255g.personal__feedback_reply_view__container);
         if (ReaderEnv.get().forHd()) {
-            pageHeaderView.setBackgroundDrawable(new hb(new ColorDrawable(Color.parseColor("#ffffff")), (float) dv.m1932b(getContext(), 6.0f), 3));
-            findViewById.setBackgroundDrawable(new hb(new ColorDrawable(Color.parseColor("#efeff1")), (float) dv.m1932b(getContext(), 6.0f), 12));
+            pageHeaderView.setBackgroundDrawable(new hb(new ColorDrawable(Color.parseColor("#ffffff")), (float) AnimUtils.m1932b(getContext(), 6.0f), 3));
+            findViewById.setBackgroundDrawable(new hb(new ColorDrawable(Color.parseColor("#efeff1")), (float) AnimUtils.m1932b(getContext(), 6.0f), 12));
         } else {
             pageHeaderView.setBackgroundColor(Color.parseColor("#ffffff"));
             findViewById.setBackgroundColor(Color.parseColor("#efeff1"));
@@ -65,7 +65,7 @@ class bn extends af {
             this.f8337c.m10843a(getContext().getString(C0258j.personal__create_feedback_view__post_thread));
             this.f8337c.show();
         }
-        dv.m1909a(getContext());
+        AnimUtils.m1909a(getContext());
         m11476b();
     }
 

@@ -10,8 +10,8 @@ import android.view.animation.AnimationSet;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
-import com.duokan.core.ui.dv;
+
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.DkApp;
 import org.apache.http.HttpStatus;
 
@@ -98,7 +98,7 @@ public class jn extends FrameLayout {
             int i5 = (int) ((this.f10447c.top - ((float) this.f10452h.top)) - ((float) this.f10448d));
             int i6 = (int) ((((float) this.f10452h.bottom) - this.f10447c.bottom) - ((float) this.f10448d));
             int measuredHeight = this.f10445a.getMeasuredHeight();
-            int b = dv.m1932b(getContext(), 50.0f);
+            int b = AnimUtils.m1932b(getContext(), 50.0f);
             if (i5 <= measuredHeight && i6 < measuredHeight) {
                 i5 = ((i4 - i2) / 2) - (this.f10445a.getMeasuredHeight() / 2);
                 this.f10451g.top = i5;

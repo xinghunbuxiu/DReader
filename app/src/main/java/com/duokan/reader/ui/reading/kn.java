@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
@@ -100,7 +100,7 @@ public class kn extends ActivatedController {
         }
         ActivatedController c0303e2 = this.f10521i;
         this.f10521i = null;
-        dv.m1961f(c0303e2.getContentView(), new kr(this, c0303e2));
+        AnimUtils.m1961f(c0303e2.getContentView(), new kr(this, c0303e2));
         return true;
     }
 
@@ -137,7 +137,7 @@ public class kn extends ActivatedController {
             ((ViewGroup) getContentView()).addView(this.f10521i.getContentView(), new LayoutParams(-1, -1));
             addSubController(this.f10521i);
             ActivatedController c0303e = this.f10521i;
-            dv.m1954d(c0303e.getContentView(), new kt(this, c0303e));
+            AnimUtils.m1954d(c0303e.getContentView(), new kt(this, c0303e));
             m14570d();
         }
     }
@@ -160,7 +160,7 @@ public class kn extends ActivatedController {
                     options.inJustDecodeBounds = true;
                     BitmapFactory.decodeFile(kxVar.f10539g.getAbsolutePath(), options);
                     Options options2 = new Options();
-                    int b = dv.m1932b(getContext(), 64.0f);
+                    int b = AnimUtils.m1932b(getContext(), 64.0f);
                     options2.inSampleSize = Math.min(options.outWidth / b, options.outHeight / b);
                     Bitmap decodeFile = BitmapFactory.decodeFile(kxVar.f10539g.getAbsolutePath(), options2);
                     View imageView = new ImageView(getContext());
@@ -181,7 +181,7 @@ public class kn extends ActivatedController {
             m14560a(this.f10519g.f10533a);
             if (this.f10516d.getVisibility() == 0) {
                 this.f10516d.setVisibility(4);
-                dv.hideAnimation(this.f10516d, new ku(this));
+                AnimUtils.hideAnimation(this.f10516d, new ku(this));
             }
         }
     }
@@ -194,7 +194,7 @@ public class kn extends ActivatedController {
                 this.f10520h = currentTimeMillis;
                 if (this.f10516d.getVisibility() != 0) {
                     this.f10516d.setVisibility(0);
-                    dv.loadNetError(this.f10516d, new kv(this));
+                    AnimUtils.loadNetError(this.f10516d, new kv(this));
                     C1163a.m8627k().m8657d("reading/hang-ad/" + this.f10519g.f10533a + "/show");
                 }
             }
@@ -205,7 +205,7 @@ public class kn extends ActivatedController {
     private void m14574f() {
         if (this.f10519g != null && this.f10516d.getVisibility() == 0) {
             this.f10516d.setVisibility(4);
-            dv.m1961f(this.f10516d, null);
+            AnimUtils.m1961f(this.f10516d, null);
             m14576h();
         }
     }
@@ -216,8 +216,8 @@ public class kn extends ActivatedController {
             this.f10518f.setVisibility(0);
             this.f10517e.setVisibility(0);
             this.f10518f.setOnTouchListener(new kw(this));
-            dv.showAnimation(this.f10517e, null);
-            dv.showAnimation(this.f10518f, null);
+            AnimUtils.showAnimation(this.f10517e, null);
+            AnimUtils.showAnimation(this.f10518f, null);
         }
     }
 
@@ -227,8 +227,8 @@ public class kn extends ActivatedController {
         if (this.f10519g != null && this.f10518f.getVisibility() == 0) {
             this.f10518f.setVisibility(4);
             this.f10517e.setVisibility(4);
-            dv.hideAnimation(this.f10518f, null);
-            dv.hideAnimation(this.f10517e, null);
+            AnimUtils.hideAnimation(this.f10518f, null);
+            AnimUtils.hideAnimation(this.f10517e, null);
         }
     }
 

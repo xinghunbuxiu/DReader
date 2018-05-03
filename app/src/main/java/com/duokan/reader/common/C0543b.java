@@ -4,7 +4,7 @@ import android.text.SpannableStringBuilder;
 import android.text.style.AbsoluteSizeSpan;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0241c;
 import com.duokan.p023b.C0247i;
 import com.duokan.reader.DkApp;
@@ -74,7 +74,7 @@ public abstract class C0543b {
             spannableStringBuilder.delete(indexOf - 1, indexOf);
             indexOf--;
             spannableStringBuilder.setSpan(new ForegroundColorSpan(DkApp.get().getResources().getColor(C0241c.general__shared__ff6c00)), i4, indexOf, 17);
-            spannableStringBuilder.setSpan(new AbsoluteSizeSpan(dv.m1932b(DkApp.get(), (float) i2)), i4, indexOf, 17);
+            spannableStringBuilder.setSpan(new AbsoluteSizeSpan(AnimUtils.m1932b(DkApp.get(), (float) i2)), i4, indexOf, 17);
             i4 = indexOf + 1;
             i3++;
         }

@@ -111,11 +111,11 @@ public class PullDownRefreshView extends PullDownRefreshBaseView {
             this.f854g = refreshStyle;
             if (this.f854g == RefreshStyle.STORE) {
                 this.f855h.setImageResource(C0243e.general__shared__refresh_background);
-                this.f848a.setPadding(0, dv.m1932b(getContext(), 10.0f), 0, dv.m1932b(getContext(), 5.0f));
+                this.f848a.setPadding(0, AnimUtils.m1932b(getContext(), 10.0f), 0, AnimUtils.m1932b(getContext(), 5.0f));
             } else if (this.f854g == RefreshStyle.COMIC) {
                 this.f848a.setPadding(0, 0, 0, 0);
             } else {
-                this.f848a.setPadding(0, 0, 0, dv.m1932b(getContext(), 10.0f));
+                this.f848a.setPadding(0, 0, 0, AnimUtils.m1932b(getContext(), 10.0f));
             }
         }
     }
@@ -144,12 +144,12 @@ public class PullDownRefreshView extends PullDownRefreshBaseView {
 
     /* renamed from: h */
     private final void m1294h() {
-        dv.startTranslateAnimation(this.f849b, 0.0f, 0.0f, -1.0f, 0.0f, HttpStatus.SC_OK, true, null);
+        AnimUtils.startTranslateAnimation(this.f849b, 0.0f, 0.0f, -1.0f, 0.0f, HttpStatus.SC_OK, true, null);
     }
 
     /* renamed from: i */
     private final void m1295i() {
-        dv.m1961f(this.f849b, null);
+        AnimUtils.m1961f(this.f849b, null);
     }
 
     /* renamed from: j */

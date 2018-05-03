@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewParent;
 import com.duokan.core.app.AppContext;
 import com.duokan.core.sys.UThread;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.domain.document.ad;
 import com.duokan.reader.domain.document.ak;
 
@@ -39,7 +39,7 @@ public class kj extends gd implements to {
         this.f10502e = rect;
         this.f10505h = (su) AppContext.getAppContext(getContext()).queryFeature(su.class);
         this.f10507j = this.f10505h.mo2106b(128);
-        dv.m1921a((View) this, new kl(this));
+        AnimUtils.m1921a((View) this, new kl(this));
         this.f10504g = new km(this, getContext());
         m14203a(this.f10504g, null);
         this.f10505h.mo2033a((to) this);

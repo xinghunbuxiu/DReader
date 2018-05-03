@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import com.duokan.core.app.AppContext;
 import com.duokan.core.ui.HatGridView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.domain.cloud.DkCloudFictionChapter;
@@ -31,7 +31,7 @@ public class bc extends HatGridView {
         setTitleView(pageHeaderView);
         Drawable dkVar = new dk(getResources().getColor(C0252d.general__shared__bcbcbc));
         dkVar.m10476a(0);
-        int b = dv.m1932b(getContext(), 15.0f);
+        int b = AnimUtils.m1932b(getContext(), 15.0f);
         dkVar.m10477a(b, b);
         setRowDivider(dkVar);
         C0435s c0435s = (C0435s) AppContext.getAppContext(getContext()).queryFeature(C0435s.class);
@@ -52,7 +52,7 @@ public class bc extends HatGridView {
     /* renamed from: a */
     public void m15313a(boolean z) {
         if (z) {
-            dv.m1921a((View) this, new bg(this, this.f11357a.mo486a() - 1));
+            AnimUtils.m1921a((View) this, new bg(this, this.f11357a.mo486a() - 1));
         } else {
             this.f11357a.m10356f(0);
         }

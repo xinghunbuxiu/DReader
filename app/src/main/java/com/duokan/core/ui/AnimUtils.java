@@ -39,7 +39,7 @@ import org.apache.http.HttpStatus;
 import java.lang.reflect.Field;
 import java.util.concurrent.Callable;
 
-public abstract class dv {
+public abstract class AnimUtils {
     public static final BaseAnimation<Camera> f1192a = new dw();
     public static final BaseAnimation<Paint> f1193b = new eh();
     public static final BaseAnimation<Transformation> f1194c = new ei();
@@ -53,7 +53,7 @@ public abstract class dv {
     public static final BaseAnimation<float[]> f1202k = new dy();
     public static final BaseAnimation<int[]> f1203l = new dz();
     public static final AsyncCache cathe = new AsyncCache();
-    static final boolean assertionStatus = (!dv.class.desiredAssertionStatus());
+    static final boolean assertionStatus = (!AnimUtils.class.desiredAssertionStatus());
     private static float xdpi = Float.NaN;
     private static float ydpi = Float.NaN;
 

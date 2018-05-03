@@ -3,7 +3,7 @@ package com.duokan.reader.ui.reading.p054a;
 import android.view.MotionEvent;
 import android.view.View;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 import com.duokan.reader.ui.reading.DocPageLayout;
@@ -28,7 +28,7 @@ public class al extends er {
         dtVar.m1612b(view, z2);
         this.f9200c.m1885b(75.0f);
         this.f9200c.m1887c(105.0f);
-        this.f9200c.m1882a(dv.m1932b(view.getContext(), 15.0f));
+        this.f9200c.m1882a(AnimUtils.m1932b(view.getContext(), 15.0f));
     }
 
     /* renamed from: c */

@@ -17,17 +17,17 @@ class cl extends View {
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
-        if (this.f1083a.f1080d.isEmpty() && displayMetrics.heightPixels - getHeight() >= dv.m1932b(getContext(), 100.0f)) {
+        if (this.f1083a.f1080d.isEmpty() && displayMetrics.heightPixels - getHeight() >= AnimUtils.m1932b(getContext(), 100.0f)) {
             m1778a(this.f1083a.f1080d);
             this.f1083a.m1768d();
-        } else if (!this.f1083a.f1080d.isEmpty() && displayMetrics.heightPixels - getHeight() >= dv.m1932b(getContext(), 100.0f)) {
-            Rect rect = (Rect) dv.f1198g.addAnimation();
+        } else if (!this.f1083a.f1080d.isEmpty() && displayMetrics.heightPixels - getHeight() >= AnimUtils.m1932b(getContext(), 100.0f)) {
+            Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
             m1778a(rect);
             if (!this.f1083a.f1080d.equals(rect)) {
                 this.f1083a.f1080d.set(rect);
                 this.f1083a.m1772f();
             }
-            dv.f1198g.clearAnimation(rect);
+            AnimUtils.f1198g.clearAnimation(rect);
         } else if (!this.f1083a.f1080d.isEmpty()) {
             this.f1083a.f1080d.setEmpty();
             this.f1083a.m1770e();
@@ -38,7 +38,7 @@ class cl extends View {
     private void m1778a(Rect rect) {
         DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
         rect.set(0, 0, getWidth(), getHeight());
-        dv.m1936b(rect, (View) this);
+        AnimUtils.m1936b(rect, (View) this);
         rect.top = rect.bottom;
         rect.bottom = displayMetrics.heightPixels;
     }

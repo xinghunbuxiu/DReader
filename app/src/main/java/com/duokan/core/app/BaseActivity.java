@@ -13,6 +13,7 @@ import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.view.KeyEvent;
@@ -22,6 +23,7 @@ import android.view.View;
 import android.view.WindowManager.LayoutParams;
 
 import com.duokan.core.sys.UThread;
+import com.duokan.core.ui.AnimUtils;
 
 import java.util.Iterator;
 import java.util.concurrent.ConcurrentHashMap;
@@ -38,8 +40,8 @@ public class BaseActivity extends Activity implements ActivityCompat.OnRequestPe
     private final ConcurrentHashMap<Integer, OnRequestPermissionsResultCallback> permissions = new ConcurrentHashMap();
     private boolean isFirst = false;
     private OrientationEventListener orientationEventListener = null;
-    private int f522j = 0;
     private int screenRotation = 0;
+    private int mOrientation = 0;
     private SensorManager sensorManager = null;
     private ActivatedController tempController = null;
     private BrightnessMode brightnessMode = BrightnessMode.SYSTEM;
@@ -126,8 +128,8 @@ public class BaseActivity extends Activity implements ActivityCompat.OnRequestPe
         }
     }
 
-    public int getScreenRotation() {
-        return this.screenRotation;
+    public int getmOrientation() {
+        return this.mOrientation;
     }
 
     public BrightnessMode getKeyboardBrightnessMode() {
@@ -326,7 +328,20 @@ public class BaseActivity extends Activity implements ActivityCompat.OnRequestPe
         lockScreen();
         resetScreenTimeout();
         if (this.orientationEventListener == null) {
-            this.orientationEventListener = new C0310n(this, this, 3);
+            this.orientationEventListener = new OrientationEventListener(this, SensorManager.SENSOR_DELAY_NORMAL) {
+                @Override
+                public void onOrientationChanged(int orientation) {
+                    if (orientation >= 0 && orientation < 360 && Math.abs(screenRotation - orientation) >= 75) {
+                        int mOrientation = orientation < 45 ? 0 : orientation < 135 ? 90 : orientation < 225 ? 180 : orientation < 315 ? 270 : 0;
+                        screenRotation = mOrientation;
+                        mOrientation = screenRotation - AnimUtils.m1892a((-getWindowManager().getDefaultDisplay().getRotation()) * 90, 0, 360);
+                        if (screenRotation != mOrientation) {
+                            screenRotation = mOrientation;
+                            notifyScreenRotationChanged(screenRotation);
+                        }
+                    }
+                }
+            };
         }
         this.orientationEventListener.enable();
         Iterator it = this.SensorListeners.iterator();
@@ -391,7 +406,14 @@ public class BaseActivity extends Activity implements ActivityCompat.OnRequestPe
 
     private final void resetScreenTimeout() {
         if (this.mHandler == null) {
-            this.mHandler = new Handler(Looper.getMainLooper(), new C0311o(this));
+            this.mHandler = new Handler(Looper.getMainLooper(), new Handler.Callback() {
+                @Override
+                public boolean handleMessage(Message msg) {
+                    unlockScreen();
+                    closeScreenTimeout();
+                    return false;
+                }
+            });
         }
         this.mHandler.removeCallbacksAndMessages(null);
         if (this.screenTimeout == 0) {

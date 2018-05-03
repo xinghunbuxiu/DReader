@@ -7,8 +7,8 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.FrameLayout.LayoutParams;
-import com.duokan.core.ui.dv;
+
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.ge;
 import com.duokan.p023b.C0243e;
 import com.duokan.reader.domain.document.au;
@@ -142,7 +142,7 @@ public abstract class fz extends FrameLayout {
         this.f10204h.mo2410a(i, z);
         if (this.f10202f != null) {
             this.f10202f.setVisibility(4);
-            dv.m1921a(this.f10202f, new gb(this));
+            AnimUtils.m1921a(this.f10202f, new gb(this));
         }
     }
 

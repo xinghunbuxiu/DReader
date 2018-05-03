@@ -2,7 +2,7 @@ package com.duokan.reader.ui.reading;
 
 import android.graphics.Point;
 import android.view.ViewTreeObserver.OnPreDrawListener;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import org.apache.http.HttpStatus;
 
 class pu implements OnPreDrawListener {
@@ -18,9 +18,9 @@ class pu implements OnPreDrawListener {
 
     public boolean onPreDraw() {
         Point point = new Point(0, 0);
-        dv.m1945c(point, this.f10835b.f10824a);
+        AnimUtils.m1945c(point, this.f10835b.f10824a);
         Point point2 = new Point(this.f10834a.x - point.x, this.f10834a.y - point.y);
-        dv.m1896a(point2, this.f10835b.f10826c);
+        AnimUtils.m1896a(point2, this.f10835b.f10826c);
         this.f10835b.f10826c.m1354a(this.f10835b.f10826c.getScrollX() - point2.x, this.f10835b.f10826c.getScrollY() - point2.y);
         this.f10835b.f10826c.setThumbEnabled(false);
         this.f10835b.f10826c.m1360b(0.0f, 0.0f, 1.0f, null, null);

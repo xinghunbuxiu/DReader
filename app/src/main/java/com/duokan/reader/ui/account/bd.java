@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import com.duokan.common.C0267i;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
@@ -77,7 +77,7 @@ public abstract class bd extends af {
 
     public void show() {
         super.show();
-        dv.m1915a(this.f5826g);
+        AnimUtils.m1915a(this.f5826g);
     }
 
     public void dismiss() {
@@ -105,10 +105,10 @@ public abstract class bd extends af {
     protected void m8908b() {
         View inflate = LayoutInflater.from(getContext()).inflate(C0256h.account__third_share_view_v4, null);
         if (ReaderEnv.get().forHd()) {
-            inflate.setBackgroundDrawable(new hb(new ColorDrawable(getContext().getResources().getColor(C0252d.general__shared__fefaf8)), (float) dv.m1932b(getContext(), 8.0f)));
+            inflate.setBackgroundDrawable(new hb(new ColorDrawable(getContext().getResources().getColor(C0252d.general__shared__fefaf8)), (float) AnimUtils.m1932b(getContext(), 8.0f)));
         }
         setContentView(inflate);
-        inflate.findViewById(C0255g.account__third_share_view__btns).setPadding(dv.m1932b(getContext(), 15.0f), (ReaderEnv.get().forHd() ? 0 : ((C0435s) AppContext.getAppContext(getContext()).queryFeature(C0435s.class)).getTheme().getHeaderPaddingTop()) + dv.m1932b(getContext(), 10.0f), dv.m1932b(getContext(), 15.0f), dv.m1932b(getContext(), 10.0f));
+        inflate.findViewById(C0255g.account__third_share_view__btns).setPadding(AnimUtils.m1932b(getContext(), 15.0f), (ReaderEnv.get().forHd() ? 0 : ((C0435s) AppContext.getAppContext(getContext()).queryFeature(C0435s.class)).getTheme().getHeaderPaddingTop()) + AnimUtils.m1932b(getContext(), 10.0f), AnimUtils.m1932b(getContext(), 15.0f), AnimUtils.m1932b(getContext(), 10.0f));
         ((DkLabelView) inflate.findViewById(C0255g.account__third_share_view__third_name)).setText(getContext().getString(C0258j.share_name_sina));
         inflate.findViewById(C0255g.account__third_share_view__cancel).setOnClickListener(new be(this));
         this.f5823d = inflate.findViewById(C0255g.account__third_share_view__send);

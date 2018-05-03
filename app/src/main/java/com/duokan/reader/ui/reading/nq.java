@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 class nq extends Drawable {
     /* renamed from: a */
@@ -21,10 +21,10 @@ class nq extends Drawable {
     }
 
     public void draw(Canvas canvas) {
-        Paint paint = (Paint) dv.f1193b.addAnimation();
+        Paint paint = (Paint) AnimUtils.f1193b.addAnimation();
         paint.setColor(this.f10694b);
         canvas.drawRect((float) ((-this.f10693a) + this.f10695c.f10668b.getPaddingLeft()), 0.0f, (float) this.f10695c.f10668b.getWidth(), (float) this.f10695c.f10668b.getHeight(), paint);
-        dv.f1193b.clearAnimation(paint);
+        AnimUtils.f1193b.clearAnimation(paint);
     }
 
     /* renamed from: a */

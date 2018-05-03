@@ -2,7 +2,7 @@ package com.duokan.reader.ui.reading;
 
 import android.content.Context;
 import android.widget.TextView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 /* renamed from: com.duokan.reader.ui.reading.b */
 class C1448b implements Runnable {
@@ -21,7 +21,7 @@ class C1448b implements Runnable {
 
     public void run() {
         if (this.f9814a.getLineCount() == 1) {
-            this.f9814a.setPadding(0, dv.m1932b(this.f9815b, 10.0f), 0, 0);
+            this.f9814a.setPadding(0, AnimUtils.m1932b(this.f9815b, 10.0f), 0, 0);
         }
     }
 }

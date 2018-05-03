@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.general.web;
 
 import com.duokan.core.sys.as;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 class ej implements as {
     /* renamed from: a */
@@ -22,6 +22,6 @@ class ej implements as {
 
     /* renamed from: a */
     public void mo1831a() {
-        this.f7778d.f7581b.scrollPosToTop(dv.m1932b(this.f7778d.f7581b.getContext(), (float) this.f7775a), dv.m1932b(this.f7778d.f7581b.getContext(), (float) this.f7776b), this.f7777c);
+        this.f7778d.f7581b.scrollPosToTop(AnimUtils.m1932b(this.f7778d.f7581b.getContext(), (float) this.f7775a), AnimUtils.m1932b(this.f7778d.f7581b.getContext(), (float) this.f7776b), this.f7777c);
     }
 }

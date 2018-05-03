@@ -4,7 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import com.duokan.core.app.IFeature;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
 import com.duokan.reader.ReaderEnv;
@@ -22,7 +22,7 @@ public class xp extends wx {
     public xp(IFeature mFeature) {
         super(mFeature);
         View inflate = LayoutInflater.from(getContext()).inflate(C0245g.reading__reading_viewtype_view, null);
-        inflate.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? dv.m1932b(getContext(), 240.0f) : -1, -2));
+        inflate.setLayoutParams(new LayoutParams(ReaderEnv.get().forHd() ? AnimUtils.m1932b(getContext(), 240.0f) : -1, -2));
         setContentView(inflate);
         this.f11152a = findViewById(C0244f.reading__reading_viewtype_view__single_page);
         this.f11153b = findViewById(C0244f.reading__reading_viewtype_view__scroll);

@@ -3,7 +3,7 @@ package com.duokan.reader.ui.personal;
 import android.content.Context;
 import android.graphics.drawable.InsetDrawable;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.ReaderEnv;
@@ -27,15 +27,15 @@ public class bw extends oa {
         this.b.setVisibility(8);
         this.c.setVisibility(8);
         setAdapter(this.f8380l);
-        this.f.setRowDivider(new InsetDrawable(new dk(getResources().getColor(C0252d.general__shared__e9e9e9)), dv.m1932b(getContext(), 3.0f), 0, 0, 0));
+        this.f.setRowDivider(new InsetDrawable(new dk(getResources().getColor(C0252d.general__shared__e9e9e9)), AnimUtils.m1932b(getContext(), 3.0f), 0, 0, 0));
         setBackgroundColor(getContext().getResources().getColor(C0252d.general__shared__ffffff));
         C0435s c0435s = (C0435s) AppContext.getAppContext(getContext()).queryFeature(C0435s.class);
         if (ReaderEnv.get().forHd()) {
-            int b = dv.m1932b(getContext(), 15.0f);
+            int b = AnimUtils.m1932b(getContext(), 15.0f);
             this.f.m9955a(b, 0, b, c0435s == null ? 0 : c0435s.getTheme().getPagePaddingBottom());
             return;
         }
-        b = dv.m1932b(getContext(), 10.0f);
+        b = AnimUtils.m1932b(getContext(), 10.0f);
         this.f.m9955a(b, 0, b, c0435s == null ? 0 : c0435s.getTheme().getPagePaddingBottom());
     }
 

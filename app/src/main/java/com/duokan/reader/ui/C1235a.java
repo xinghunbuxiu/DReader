@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.C0373z;
 import com.duokan.core.ui.cv;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.SystemUiMode;
 import com.umeng.analytics.pro.C2295j;
@@ -49,7 +49,7 @@ public class C1235a extends FrameLayout {
             if (identifier > 0) {
                 this.f5742d = getResources().getDimensionPixelSize(identifier);
             } else {
-                this.f5742d = dv.m1932b(getContext(), 20.0f);
+                this.f5742d = AnimUtils.m1932b(getContext(), 20.0f);
             }
         } else {
             this.f5742d = 0;
@@ -116,7 +116,7 @@ public class C1235a extends FrameLayout {
     private void m8804a() {
         if (this.f5741c.getVisibility() != 0) {
             this.f5741c.setVisibility(0);
-            dv.m1954d(this.f5741c, null);
+            AnimUtils.m1954d(this.f5741c, null);
         }
     }
 
@@ -124,7 +124,7 @@ public class C1235a extends FrameLayout {
     private void m8810b() {
         if (this.f5741c.getVisibility() != 4) {
             this.f5741c.setVisibility(4);
-            dv.m1961f(this.f5741c, null);
+            AnimUtils.m1961f(this.f5741c, null);
         }
     }
 
@@ -141,7 +141,7 @@ public class C1235a extends FrameLayout {
         if (this.f5744f.getVisibility() != 0) {
             this.f5744f.setBackgroundColor(this.f5746h);
             this.f5744f.setVisibility(0);
-            dv.m1958e(this.f5744f, null);
+            AnimUtils.m1958e(this.f5744f, null);
         }
     }
 
@@ -149,7 +149,7 @@ public class C1235a extends FrameLayout {
     private void m8812d() {
         if (this.f5744f.getVisibility() != 4) {
             this.f5744f.setVisibility(4);
-            dv.loadSuccess(this.f5744f, null);
+            AnimUtils.loadSuccess(this.f5744f, null);
         }
     }
 

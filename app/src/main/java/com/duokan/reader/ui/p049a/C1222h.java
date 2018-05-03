@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.p049a;
 
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.domain.store.DkStoreAbsBook;
 
 /* renamed from: com.duokan.reader.ui.a.h */
@@ -18,7 +18,7 @@ class C1222h implements C1221u {
         this.f5714a.f5713a.f5702g.add("");
         this.f5714a.f5713a.m8756c();
         this.f5714a.f5713a.m8754b();
-        dv.m1921a(this.f5714a.f5713a.f5698c, new C1223i(this));
+        AnimUtils.m1921a(this.f5714a.f5713a.f5698c, new C1223i(this));
     }
 
     /* renamed from: a */

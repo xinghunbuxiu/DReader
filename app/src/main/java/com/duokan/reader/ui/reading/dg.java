@@ -23,7 +23,7 @@ import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.af;
 import com.duokan.core.ui.LinearScrollView;
 import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0253e;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0255g;
@@ -362,9 +362,9 @@ public class dg extends FrameLayout {
         ((TextView) this.f10018s.findViewById(C0255g.reading__comment_view__fans_title)).getPaint().setFakeBoldText(true);
         ((TextView) this.f10018s.findViewById(C0255g.reading__comment_view__fans_count)).setText(String.format(getResources().getString(C0258j.reading__comment_view__tip_count), new Object[]{Integer.valueOf(agVar.f2116i)}));
         LinearLayout linearLayout = (LinearLayout) this.f10018s.findViewById(C0255g.reading__comment_view__fans_avatars);
-        ViewGroup.LayoutParams layoutParams = new LinearLayout.LayoutParams(dv.m1932b(getContext(), 40.0f), dv.m1932b(getContext(), 40.0f));
-        layoutParams.leftMargin = dv.m1932b(getContext(), 7.5f);
-        layoutParams.rightMargin = dv.m1932b(getContext(), 7.5f);
+        ViewGroup.LayoutParams layoutParams = new LinearLayout.LayoutParams(AnimUtils.m1932b(getContext(), 40.0f), AnimUtils.m1932b(getContext(), 40.0f));
+        layoutParams.leftMargin = AnimUtils.m1932b(getContext(), 7.5f);
+        layoutParams.rightMargin = AnimUtils.m1932b(getContext(), 7.5f);
         linearLayout.removeAllViews();
         for (int i = 0; i < Math.min(agVar.f2115h.size(), 6); i++) {
             View dkGeneralFaceView = new DkGeneralFaceView(getContext());
@@ -376,7 +376,7 @@ public class dg extends FrameLayout {
             imageView.setImageDrawable(getResources().getDrawable(C0254f.reading__comment_view__more));
             imageView.setScaleType(ScaleType.CENTER);
             imageView.setOnClickListener(new dm(this));
-            imageView.setPadding(dv.m1932b(getContext(), 5.0f), 0, dv.m1932b(getContext(), 5.0f), 0);
+            imageView.setPadding(AnimUtils.m1932b(getContext(), 5.0f), 0, AnimUtils.m1932b(getContext(), 5.0f), 0);
             linearLayout.addView(imageView, new ViewGroup.LayoutParams(-2, -1));
         }
         this.f10018s.findViewById(C0255g.reading__comment_view__tip_author).setOnClickListener(this.f9996E);
@@ -471,12 +471,12 @@ public class dg extends FrameLayout {
                 findViewById = new LinearScrollView(getContext());
                 findViewById.setOnScrollListener(new ds(this));
                 linearLayout.addView(findViewById, new ViewGroup.LayoutParams(-1, -1));
-                findViewById.setPadding(dv.m1932b(getContext(), 15.0f), 0, dv.m1932b(getContext(), 15.0f), 0);
+                findViewById.setPadding(AnimUtils.m1932b(getContext(), 15.0f), 0, AnimUtils.m1932b(getContext(), 15.0f), 0);
                 linearLayout2 = findViewById;
-                i2 = dv.m1932b(getContext(), 20.0f);
+                i2 = AnimUtils.m1932b(getContext(), 20.0f);
             } else {
-                linearLayout.setPadding(dv.m1932b(getContext(), 15.0f), 0, dv.m1932b(getContext(), 15.0f), 0);
-                i2 = (((dv.getWidthPixels(getContext()) - linearLayout.getPaddingLeft()) - linearLayout.getPaddingRight()) - (getResources().getDimensionPixelSize(C0253e.general__shared__cover_detail_width) * 3)) / 2;
+                linearLayout.setPadding(AnimUtils.m1932b(getContext(), 15.0f), 0, AnimUtils.m1932b(getContext(), 15.0f), 0);
+                i2 = (((AnimUtils.getWidthPixels(getContext()) - linearLayout.getPaddingLeft()) - linearLayout.getPaddingRight()) - (getResources().getDimensionPixelSize(C0253e.general__shared__cover_detail_width) * 3)) / 2;
                 linearLayout2 = linearLayout;
             }
             for (CommentBook commentBook2 : afVar.f2102a) {

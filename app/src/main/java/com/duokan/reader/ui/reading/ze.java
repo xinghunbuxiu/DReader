@@ -20,7 +20,7 @@ import android.widget.TextView;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
@@ -119,7 +119,7 @@ public class ze extends ActivatedController {
         this.f11228a.setCenterViewResource(C0256h.reading__selection_bar_view);
         this.f11228a.setUpArrow(C0254f.reading__shared__arrow_top);
         this.f11228a.setDownArrow(C0254f.reading__shared__arrow_bottom);
-        this.f11228a.m9924a(dv.m1932b(getContext(), 15.0f), 0, dv.m1932b(getContext(), 15.0f), 0);
+        this.f11228a.m9924a(AnimUtils.m1932b(getContext(), 15.0f), 0, AnimUtils.m1932b(getContext(), 15.0f), 0);
         this.f11253z = new ir(getContext(), null);
         this.f11219A = new LayoutParams(-1, -1);
         this.f11219A.gravity = 17;
@@ -127,7 +127,7 @@ public class ze extends ActivatedController {
         this.f11253z.setScrollRightResource(C0254f.general__shared__arrow_right_13dip_ffffff);
         this.f11253z.setScrollLeftResource(C0254f.general__shared__arrow_left_13dip_ffffff);
         this.f11229b = (BoxView) this.f11228a.getCenterView();
-        this.f11229b.getLayoutParams().width = Math.min(getResources().getDisplayMetrics().widthPixels, dv.m1932b(getContext(), 360.0f));
+        this.f11229b.getLayoutParams().width = Math.min(getResources().getDisplayMetrics().widthPixels, AnimUtils.m1932b(getContext(), 360.0f));
         this.f11231d = (LinearLayout) findViewById(C0255g.reading__selection_bar_view__line1);
         this.f11232e = (LinearLayout) findViewById(C0255g.reading__selection_bar_view__line2);
         this.f11233f = (LinearLayout) findViewById(C0255g.reading__selection_bar_view__line_visible);
@@ -162,7 +162,7 @@ public class ze extends ActivatedController {
         this.f11243p = (ImageView) this.f11242o.getChildAt(0);
         this.f11234g.addView(this.f11223E.getContentView());
         this.f11252y = new LayoutParams(-2, -2);
-        this.f11252y.setMargins(dv.m1932b(getContext(), -25.0f), 0, 0, 0);
+        this.f11252y.setMargins(AnimUtils.m1932b(getContext(), -25.0f), 0, 0, 0);
         this.f11222D = new HashMap();
         this.f11235h.setOnClickListener(new zo(this));
         this.f11238k.setOnClickListener(new zp(this));
@@ -334,10 +334,10 @@ public class ze extends ActivatedController {
 
     /* renamed from: e */
     private int m15202e(Rect... rectArr) {
-        int b = dv.m1932b(getContext(), 15.0f);
+        int b = AnimUtils.m1932b(getContext(), 15.0f);
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
         int i = (displayMetrics.heightPixels / 2) - b;
-        Rect rect = (Rect) dv.f1198g.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         for (Rect rect2 : rectArr) {
             if (rect.isEmpty()) {
                 rect.set(rect2);
@@ -348,7 +348,7 @@ public class ze extends ActivatedController {
         int i2 = rect.top - b;
         int height = rect.height() - b;
         b = (displayMetrics.heightPixels - rect.bottom) - b;
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1198g.clearAnimation(rect);
         return Math.min(Math.max(Math.max(i2, height), b), i);
     }
 

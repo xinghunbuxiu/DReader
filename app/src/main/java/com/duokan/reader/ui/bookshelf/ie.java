@@ -15,7 +15,7 @@ import com.duokan.core.app.IFeature;
 import com.duokan.core.app.AppContext;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
@@ -276,7 +276,7 @@ public class ie extends ActivatedController implements ln {
         ((ImageView) inflate.findViewById(C0255g.bookshelf__sign_in_detail_view__main)).setImageURI(Uri.fromFile(new File(str)));
         lb.m4896a().m4926f();
         this.f6599k.showPopup(c0303e);
-        dv.showAnimation(c0303e.getContentView(), null);
+        AnimUtils.showAnimation(c0303e.getContentView(), null);
     }
 
     /* renamed from: e */

@@ -9,7 +9,7 @@ import com.duokan.core.ui.C0383g;
 import com.duokan.core.ui.C0392q;
 import com.duokan.core.ui.cd;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 
@@ -44,7 +44,7 @@ public class da extends er {
         boolean z3 = z || !this.f9976c.m1618c();
         cdVar.m1612b(view, z3);
         this.f9976c.m1756a(0.01f);
-        this.f9976c.m1757a(dv.getScaledPagingTouchSlop(view.getContext()));
+        this.f9976c.m1757a(AnimUtils.getScaledPagingTouchSlop(view.getContext()));
         C0392q c0392q = this.f9977d;
         if (z || !this.f9977d.m1618c()) {
             z3 = true;

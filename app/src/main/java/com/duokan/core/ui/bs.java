@@ -22,9 +22,9 @@ class bs extends AlphaAnimation {
 
     /* renamed from: a */
     public void m1699a(Rect rect, long j) {
-        Transformation transformation = (Transformation) dv.f1194c.addAnimation();
-        Rect rect2 = (Rect) dv.f1198g.addAnimation();
-        Rect rect3 = (Rect) dv.f1198g.addAnimation();
+        Transformation transformation = (Transformation) AnimUtils.f1194c.addAnimation();
+        Rect rect2 = (Rect) AnimUtils.f1198g.addAnimation();
+        Rect rect3 = (Rect) AnimUtils.f1198g.addAnimation();
         getTransformation(j, transformation);
         if (this.f1031b == null || this.f1031b.getParent() != this.f1032c) {
             rect.setEmpty();
@@ -38,8 +38,8 @@ class bs extends AlphaAnimation {
             rect.right = Math.round(((float) rect2.right) + (((float) (rect3.right - rect2.right)) * transformation.getAlpha()));
             rect.bottom = Math.round(((float) rect2.bottom) + (((float) (rect3.bottom - rect2.bottom)) * transformation.getAlpha()));
         }
-        dv.f1194c.clearAnimation(transformation);
-        dv.f1198g.clearAnimation(rect2);
-        dv.f1198g.clearAnimation(rect3);
+        AnimUtils.f1194c.clearAnimation(transformation);
+        AnimUtils.f1198g.clearAnimation(rect2);
+        AnimUtils.f1198g.clearAnimation(rect3);
     }
 }

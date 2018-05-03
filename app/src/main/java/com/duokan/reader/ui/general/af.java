@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import com.duokan.core.sys.UIdleHandler;
 import com.duokan.core.ui.C0343f;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0240b;
 import com.duokan.p023b.C0241c;
 import com.duokan.p023b.C0242d;
@@ -113,7 +113,7 @@ public class af extends C0343f {
 
     public void setContentBackgroundColor(int i) {
         if (ReaderEnv.get().forHd()) {
-            this.mContentContainer.setBackgroundDrawable(new hc((float) dv.m1932b(getContext(), 7.0f), (float) dv.m1932b(getContext(), 7.0f), i));
+            this.mContentContainer.setBackgroundDrawable(new hc((float) AnimUtils.m1932b(getContext(), 7.0f), (float) AnimUtils.m1932b(getContext(), 7.0f), i));
             return;
         }
         this.mContentContainer.setBackgroundColor(i);
@@ -165,7 +165,7 @@ public class af extends C0343f {
     public static void initCenterDialogWebViewBg(WebView webView, int i) {
         if (ReaderEnv.get().forHd()) {
             MarginLayoutParams marginLayoutParams = (MarginLayoutParams) webView.getLayoutParams();
-            marginLayoutParams.bottomMargin = dv.m1932b(webView.getContext(), 7.0f);
+            marginLayoutParams.bottomMargin = AnimUtils.m1932b(webView.getContext(), 7.0f);
             webView.setLayoutParams(marginLayoutParams);
         }
         webView.setBackgroundColor(i);

@@ -11,19 +11,17 @@ import android.view.View;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
+
 import com.duokan.core.ui.HatGridView;
 import com.duokan.core.ui.PullDownRefreshBaseView;
 import com.duokan.core.ui.PullDownRefreshBaseView.RefreshState;
 import com.duokan.core.ui.PullDownRefreshView;
 import com.duokan.core.ui.Scrollable;
-import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.Scrollable.ScrollState;
 import com.duokan.core.ui.an;
 import com.duokan.core.ui.ao;
 import com.duokan.core.ui.cf;
 import com.duokan.core.ui.cg;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.et;
 import com.duokan.p023b.C0241c;
 
@@ -75,7 +73,7 @@ public class DkWebListView extends FrameLayout implements Scrollable {
         this.f6794c = new PullDownRefreshView(getContext());
         this.f6793b.addView(this.f6794c, new LayoutParams(-1, -2));
         this.f6792a.setHatTipView(this.f6793b);
-        this.f6792a.m1242a(0, dv.m1932b(getContext(), 60.0f), 0, 0);
+        this.f6792a.m1242a(0, AnimUtils.m1932b(getContext(), 60.0f), 0, 0);
         this.f6792a.setOnScrollListener(new bg(this));
         addView(this.f6792a, new FrameLayout.LayoutParams(-1, -1));
         setBackgroundColor(getResources().getColor(C0241c.general__shared__eeeeee));

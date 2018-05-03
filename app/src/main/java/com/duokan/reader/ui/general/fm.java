@@ -7,7 +7,7 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import com.duokan.core.ui.C0392q;
 import com.duokan.core.ui.dt;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
 
@@ -45,7 +45,7 @@ class fm extends er {
     /* renamed from: a */
     protected void mo511a(View view, boolean z) {
         this.f7241c.m1612b(view, z);
-        this.f7241c.m1882a(dv.getScaledTouchSlop(this.f7240a.getContext()) * Math.round(this.f7240a.getResources().getDisplayMetrics().density * 2.0f));
+        this.f7241c.m1882a(AnimUtils.getScaledTouchSlop(this.f7240a.getContext()) * Math.round(this.f7240a.getResources().getDisplayMetrics().density * 2.0f));
         this.f7241c.m1881a(2.0f);
         this.f7241c.m1885b(135.0f);
         this.f7241c.m1887c(225.0f);

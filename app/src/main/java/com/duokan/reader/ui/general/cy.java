@@ -1,9 +1,9 @@
 package com.duokan.reader.ui.general;
 
 import android.view.View;
-import com.duokan.core.ui.Scrollable.ScrollState;
+
 import com.duokan.core.ui.bj;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import org.apache.http.HttpStatus;
 
 public class cy extends bj {
@@ -38,11 +38,11 @@ public class cy extends bj {
             return;
         }
         int min = Math.min(this.f6454d.f6019b, this.f6454d.getChildCount() - 1);
-        if (Float.compare(Math.abs(f), (float) dv.m1932b(this.f6454d.getContext(), 30.0f)) < 0) {
+        if (Float.compare(Math.abs(f), (float) AnimUtils.m1932b(this.f6454d.getContext(), 30.0f)) < 0) {
             if (min >= 0) {
                 if (m1544e(this.f6454d.f6019b)) {
                     int left = (this.f6454d.getChildAt(min).getLeft() + this.f6454d.getChildAt(min).getRight()) / 2;
-                    if (Math.abs(left - getViewportBounds().centerX()) >= dv.m1932b(this.f6454d.getContext(), 30.0f)) {
+                    if (Math.abs(left - getViewportBounds().centerX()) >= AnimUtils.m1932b(this.f6454d.getContext(), 30.0f)) {
                         if (left - getViewportBounds().centerX() <= 0) {
                             a = b;
                         }

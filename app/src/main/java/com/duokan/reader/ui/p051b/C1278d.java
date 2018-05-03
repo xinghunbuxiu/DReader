@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.p051b;
 
 import android.content.Context;
-import com.duokan.core.app.C0286x;
+import com.duokan.core.app.ApplicationsStateCallbacks;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.app.ai;
@@ -17,7 +17,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 /* renamed from: com.duokan.reader.ui.b.d */
-public class C1278d implements ai, C0286x, C0610h, C0856a, au {
+public class C1278d implements ai, ApplicationsStateCallbacks, C0610h, C0856a, au {
     /* renamed from: a */
     static final /* synthetic */ boolean f6005a = (!C1278d.class.desiredAssertionStatus());
     /* renamed from: b */

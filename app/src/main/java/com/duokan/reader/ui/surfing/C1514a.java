@@ -3,11 +3,11 @@ package com.duokan.reader.ui.surfing;
 import android.content.Context;
 import android.view.View;
 import android.widget.LinearLayout;
-import com.duokan.core.app.C0286x;
+import com.duokan.core.app.ApplicationsStateCallbacks;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
 import com.duokan.core.ui.C0342j;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
@@ -23,7 +23,7 @@ import org.apache.http.HttpStatus;
 import org.json.JSONObject;
 
 /* renamed from: com.duokan.reader.ui.surfing.a */
-public class C1514a extends C0342j implements C0286x {
+public class C1514a extends C0342j implements ApplicationsStateCallbacks {
     /* renamed from: a */
     private final C1521h f11491a;
     /* renamed from: b */
@@ -150,7 +150,7 @@ public class C1514a extends C0342j implements C0286x {
     /* renamed from: a */
     private void m15449a() {
         if (isShowing()) {
-            dv.startAlphaAnimation(getContentView(), 1.0f, 0.0f, (int) HttpStatus.SC_OK, true, new C1520g(this));
+            AnimUtils.startAlphaAnimation(getContentView(), 1.0f, 0.0f, (int) HttpStatus.SC_OK, true, new C1520g(this));
         }
     }
 }

@@ -4,9 +4,8 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout.LayoutParams;
-import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.dv;
+
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.ge;
 import com.duokan.reader.domain.document.ac;
 
@@ -45,7 +44,7 @@ public class jz extends gd {
     public void mo2413g() {
         this.f10479b = true;
         this.f10481d.setHorizontalOverScrollMode(OverScrollMode.STRETCH);
-        this.f10481d.setMaxOverScrollWidth(dv.m1959f(getContext()));
+        this.f10481d.setMaxOverScrollWidth(AnimUtils.m1959f(getContext()));
         for (int i = 0; i < this.f10481d.getChildCount(); i++) {
             ky kyVar = (ky) this.f10481d.getChildAt(i);
             kyVar.m14176i();

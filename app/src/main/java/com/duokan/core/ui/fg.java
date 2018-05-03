@@ -25,7 +25,7 @@ class fg implements du {
     public void mo527a(er erVar, View view, PointF pointF, PointF pointF2) {
         float f = 0.0f;
         if (this.f1252a.f1249a.f952s != ScrollState.DRAG && this.f1252a.f1249a.f952s != ScrollState.SEEK) {
-            double b = dv.m1928b(new PointF(0.0f, 0.0f), pointF2);
+            double b = AnimUtils.m1928b(new PointF(0.0f, 0.0f), pointF2);
             if (this.f1252a.f1249a.m1465Q() || this.f1252a.f1249a.m1466R()) {
                 this.f1252a.f1249a.f955v = m2052a(b, (int) pointF2.x);
                 this.f1252a.f1249a.f956w = m2053b(b, (int) pointF2.y);
@@ -64,7 +64,7 @@ class fg implements du {
         if (!this.f1252a.f1249a.m1465Q()) {
             return false;
         }
-        if (!dv.m1923a(d, -50.0d, 50.0d)) {
+        if (!AnimUtils.m1923a(d, -50.0d, 50.0d)) {
             return false;
         }
         if (i == 0) {
@@ -90,7 +90,7 @@ class fg implements du {
         if (!this.f1252a.f1249a.m1466R()) {
             return false;
         }
-        if (!dv.m1923a(d, 40.0d, 140.0d)) {
+        if (!AnimUtils.m1923a(d, 40.0d, 140.0d)) {
             return false;
         }
         if (i == 0) {

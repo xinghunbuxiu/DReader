@@ -2,7 +2,7 @@ package com.duokan.reader.ui.reading;
 
 import android.graphics.Bitmap;
 import com.duokan.core.sys.ag;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 class le implements ag<Bitmap> {
     /* renamed from: a */
@@ -30,10 +30,10 @@ class le implements ag<Bitmap> {
             if (this.f10564a.f10549d.getVisibility() == 0) {
                 if (f != null) {
                     this.f10564a.f10551f.setImageBitmap(f);
-                    dv.hideAnimation(this.f10564a.f10551f, new lf(this, f));
+                    AnimUtils.hideAnimation(this.f10564a.f10551f, new lf(this, f));
                     return;
                 }
-                dv.showAnimation(this.f10564a.f10549d, null);
+                AnimUtils.showAnimation(this.f10564a.f10549d, null);
             } else if (f != null) {
                 f.recycle();
             }

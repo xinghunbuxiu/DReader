@@ -5,7 +5,7 @@ import android.graphics.PointF;
 import android.util.Pair;
 import android.view.View;
 import com.duokan.core.ui.cu;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 
 /* renamed from: com.duokan.reader.ui.reading.a.m */
@@ -30,7 +30,7 @@ class C1432m implements cu {
     }
 
     public void onTap(er erVar, View view, PointF pointF) {
-        Pair a = this.f9228b.f9225a.mo2013a(new Point((int) pointF.x, (int) pointF.y), dv.m1932b(view.getContext(), 20.0f));
+        Pair a = this.f9228b.f9225a.mo2013a(new Point((int) pointF.x, (int) pointF.y), AnimUtils.m1932b(view.getContext(), 20.0f));
         if (a != null) {
             this.f9227a.mo2489a(a);
             this.f9228b.m1620d(true);

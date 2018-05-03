@@ -27,14 +27,14 @@ class al extends bh {
 
     /* renamed from: a */
     protected void mo501a(float f, float f2) {
-        PointF pointF = (PointF) dv.f1197f.addAnimation();
+        PointF pointF = (PointF) AnimUtils.f1197f.addAnimation();
         pointF.set(f, f2);
         this.f961a.f919b.mo1621a(pointF);
         float f3 = pointF.x;
         float f4 = pointF.y;
-        dv.f1197f.clearAnimation(pointF);
+        AnimUtils.f1197f.clearAnimation(pointF);
         this.f961a.f919b.f835y = (int) (((float) this.f961a.f919b.f835y) + f4);
-        if (Math.abs(this.f961a.f919b.f835y) > dv.getScaledTouchSlop(this.f961a.getContext())) {
+        if (Math.abs(this.f961a.f919b.f835y) > AnimUtils.getScaledTouchSlop(this.f961a.getContext())) {
             if (this.f961a.f919b.f835y > 0) {
                 this.f961a.f919b.m1236w();
             } else if (this.f961a.f919b.f835y < 0) {

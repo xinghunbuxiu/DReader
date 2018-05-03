@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import com.duokan.common.C0267i;
 import com.duokan.core.ui.C0343f;
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 
 public final class bd extends C0343f {
     /* renamed from: a */
@@ -26,7 +26,7 @@ public final class bd extends C0343f {
         super(context);
         this.f9824a = new jn(context, new be(this));
         this.f9824a.setOnTouchListener(new bf(this));
-        this.f9824a.setVerticalOffset(dv.m1932b(getContext(), 10.0f));
+        this.f9824a.setVerticalOffset(AnimUtils.m1932b(getContext(), 10.0f));
         setDimAmount(0.0f);
         setContentView(this.f9824a, new LayoutParams(-1, -1));
     }

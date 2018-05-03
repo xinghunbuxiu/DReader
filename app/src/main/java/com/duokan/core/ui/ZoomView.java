@@ -85,8 +85,8 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         setThumbEnabled(true);
         setHorizontalOverScrollMode(OverScrollMode.STRETCH);
         setVerticalOverScrollMode(OverScrollMode.STRETCH);
-        setMaxOverScrollWidth(dv.m1959f(context));
-        setMaxOverScrollHeight(dv.m1962g(context));
+        setMaxOverScrollWidth(AnimUtils.m1959f(context));
+        setMaxOverScrollHeight(AnimUtils.m1962g(context));
     }
 
     public final ZoomState getZoomState() {
@@ -366,34 +366,34 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
     public void m_() {
         View e = mo2335e();
         if (e != null) {
-            PointF pointF = (PointF) dv.f1197f.addAnimation();
+            PointF pointF = (PointF) AnimUtils.f1197f.addAnimation();
             pointF.set(((float) getScrollX()) + (((float) getWidth()) / 2.0f), ((float) getScrollY()) + (((float) getHeight()) / 2.0f));
-            dv.m1900a(pointF, (View) this, e);
-            PointF pointF2 = (PointF) dv.f1197f.addAnimation();
+            AnimUtils.m1900a(pointF, (View) this, e);
+            PointF pointF2 = (PointF) AnimUtils.f1197f.addAnimation();
             pointF2.set(pointF);
-            dv.m1900a(pointF2, e, (View) this);
+            AnimUtils.m1900a(pointF2, e, (View) this);
             pointF2.offset((float) (-getScrollX()), (float) (-getScrollY()));
             float[] d = m1347d(pointF.x, pointF.y, pointF2.x, pointF2.y, getZoomFactor(), getZoomAngle());
             m1341b(d[0], d[1], d[2], d[3], d[4], d[5]);
-            dv.f1197f.clearAnimation(pointF);
-            dv.f1197f.clearAnimation(pointF2);
+            AnimUtils.f1197f.clearAnimation(pointF);
+            AnimUtils.f1197f.clearAnimation(pointF2);
         }
     }
 
     public void n_() {
         View e = mo2335e();
         if (e != null) {
-            PointF pointF = (PointF) dv.f1197f.addAnimation();
+            PointF pointF = (PointF) AnimUtils.f1197f.addAnimation();
             pointF.set(((float) getScrollX()) + (((float) getWidth()) / 2.0f), ((float) getScrollY()) + (((float) getHeight()) / 2.0f));
-            dv.m1900a(pointF, (View) this, e);
-            PointF pointF2 = (PointF) dv.f1197f.addAnimation();
+            AnimUtils.m1900a(pointF, (View) this, e);
+            PointF pointF2 = (PointF) AnimUtils.f1197f.addAnimation();
             pointF2.set(pointF);
-            dv.m1900a(pointF2, e, (View) this);
+            AnimUtils.m1900a(pointF2, e, (View) this);
             pointF2.offset((float) (-getScrollX()), (float) (-getScrollY()));
             float[] d = m1347d(pointF.x, pointF.y, pointF2.x, pointF2.y, getZoomFactor(), getZoomAngle());
             m1342b(d[0], d[1], d[2], d[3], d[4], d[5], null, null);
-            dv.f1197f.clearAnimation(pointF);
-            dv.f1197f.clearAnimation(pointF2);
+            AnimUtils.f1197f.clearAnimation(pointF);
+            AnimUtils.f1197f.clearAnimation(pointF2);
         }
     }
 
@@ -438,12 +438,12 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
             i5 = (((i5 - paddingTop) - this.f873e) / 2) + getPaddingTop();
             e.layout(max, i5, e.getMeasuredWidth() + max, e.getMeasuredHeight() + i5);
         }
-        Rect rect = (Rect) dv.f1198g.addAnimation();
-        Point point = (Point) dv.f1196e.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
+        Point point = (Point) AnimUtils.f1196e.addAnimation();
         m1330a(rect, point, 0.0f, 0.0f, 0.0f, 0.0f, this.f875g, this.f878j);
         this.f870b.m1491a(rect);
-        dv.f1198g.clearAnimation(rect);
-        dv.f1196e.clearAnimation(point);
+        AnimUtils.f1198g.clearAnimation(rect);
+        AnimUtils.f1196e.clearAnimation(point);
         this.f870b.m1504a(z, i, i2, i3, i4);
         m_();
     }
@@ -548,21 +548,21 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
             this.f881m = null;
         }
         if (motionEvent.getActionMasked() == 0) {
-            PointF pointF = (PointF) dv.f1197f.addAnimation();
-            RectF rectF = (RectF) dv.f1199h.addAnimation();
+            PointF pointF = (PointF) AnimUtils.f1197f.addAnimation();
+            RectF rectF = (RectF) AnimUtils.f1199h.addAnimation();
             this.f881m = null;
             for (int childCount = getChildCount() - 1; childCount >= 0; childCount--) {
                 View childAt = getChildAt(childCount);
                 pointF.set(((float) getScrollX()) + motionEvent.getX(), ((float) getScrollY()) + motionEvent.getY());
                 rectF.set((float) childAt.getScrollX(), (float) childAt.getScrollY(), (float) (childAt.getScrollX() + childAt.getWidth()), (float) (childAt.getScrollY() + childAt.getHeight()));
-                dv.m1900a(pointF, (View) this, childAt);
+                AnimUtils.m1900a(pointF, (View) this, childAt);
                 if (rectF.contains(pointF.x, pointF.y) && m1339a(childAt, motionEvent)) {
                     this.f881m = childAt;
                     break;
                 }
             }
-            dv.f1197f.clearAnimation(pointF);
-            dv.f1199h.clearAnimation(rectF);
+            AnimUtils.f1197f.clearAnimation(pointF);
+            AnimUtils.f1199h.clearAnimation(rectF);
             if (this.f881m != null) {
                 return true;
             }
@@ -581,7 +581,7 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
 
     /* renamed from: a */
     private boolean m1339a(View view, MotionEvent motionEvent) {
-        MotionEvent a = dv.m1908a(motionEvent, (View) this, view);
+        MotionEvent a = AnimUtils.m1908a(motionEvent, (View) this, view);
         boolean dispatchTouchEvent = view.dispatchTouchEvent(a);
         a.recycle();
         return dispatchTouchEvent;
@@ -656,13 +656,13 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         this.f871c.preScale(this.f875g, this.f875g);
         this.f871c.preRotate(-this.f878j);
         this.f871c.preTranslate((float) ((-view.getWidth()) / 2), (float) ((-view.getHeight()) / 2));
-        Rect rect = (Rect) dv.f1198g.addAnimation();
-        Point point = (Point) dv.f1196e.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
+        Point point = (Point) AnimUtils.f1196e.addAnimation();
         m1330a(rect, point, f, f2, f3, f4, f5, f6);
         this.f870b.m1491a(rect);
         this.f870b.m1541e(point.x, point.y);
-        dv.f1198g.clearAnimation(rect);
-        dv.f1196e.clearAnimation(point);
+        AnimUtils.f1198g.clearAnimation(rect);
+        AnimUtils.f1196e.clearAnimation(point);
         invalidate();
         mo2334d();
     }
@@ -672,16 +672,16 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         if (mo2335e() == null) {
             return new float[]{f, f2, f3, f4, f5, f6};
         }
-        Rect rect = (Rect) dv.f1198g.addAnimation();
-        Point point = (Point) dv.f1196e.addAnimation();
+        Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
+        Point point = (Point) AnimUtils.f1196e.addAnimation();
         m1330a(rect, point, f, f2, f3, f4, Math.min(Math.max(getMinZoomFactor(), f5), getMaxZoomFactor()), 0.0f);
-        Point point2 = (Point) dv.f1196e.addAnimation();
+        Point point2 = (Point) AnimUtils.f1196e.addAnimation();
         point2.x = Math.min(Math.max(rect.left, point.x), rect.right - getWidth());
         point2.y = Math.min(Math.max(rect.top, point.y), rect.bottom - getHeight());
         float[] fArr = new float[]{f, f2, f3 - ((float) (point2.x - point.x)), f4 - ((float) (point2.y - point.y)), r7, 0.0f};
-        dv.f1196e.clearAnimation(point2);
-        dv.f1196e.clearAnimation(point);
-        dv.f1198g.clearAnimation(rect);
+        AnimUtils.f1196e.clearAnimation(point2);
+        AnimUtils.f1196e.clearAnimation(point);
+        AnimUtils.f1198g.clearAnimation(rect);
         return fArr;
     }
 
@@ -693,10 +693,10 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
             point.set(0, 0);
             return;
         }
-        Matrix matrix = (Matrix) dv.f1195d.addAnimation();
+        Matrix matrix = (Matrix) AnimUtils.f1195d.addAnimation();
         m1329a(matrix, f5, f6);
         rect.set(e.getScrollX(), e.getScrollY(), e.getScrollX() + e.getWidth(), e.getScrollY() + e.getHeight());
-        dv.m1901a(matrix, rect);
+        AnimUtils.m1901a(matrix, rect);
         rect.left -= getPaddingLeft();
         rect.top -= getPaddingTop();
         rect.right += getPaddingRight();
@@ -711,14 +711,14 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
             rect.top = ((e.getTop() + e.getBottom()) - height) / 2;
             rect.bottom = ((e.getBottom() + e.getTop()) + height) / 2;
         }
-        PointF pointF = (PointF) dv.f1197f.addAnimation();
+        PointF pointF = (PointF) AnimUtils.f1197f.addAnimation();
         pointF.set(f, f2);
-        dv.m1898a(matrix, pointF);
+        AnimUtils.m1898a(matrix, pointF);
         pointF.offset(-f3, -f4);
         point.x = Math.round(pointF.x);
         point.y = Math.round(pointF.y);
-        dv.f1195d.clearAnimation(matrix);
-        dv.f1197f.clearAnimation(pointF);
+        AnimUtils.f1195d.clearAnimation(matrix);
+        AnimUtils.f1197f.clearAnimation(pointF);
     }
 
     @TargetApi(11)

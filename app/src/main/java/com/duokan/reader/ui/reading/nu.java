@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
@@ -98,7 +98,7 @@ public class nu extends FrameLayout implements in {
         int pageHeaderPaddingTop = ((C0435s) AppContext.getAppContext(getContext()).queryFeature(C0435s.class)).getTheme().getPageHeaderPaddingTop();
         this.f10713o = ((C0435s) AppContext.getAppContext(getContext()).queryFeature(C0435s.class)).getTheme().getPageHeaderHeight();
         this.f10702d = new ns(context);
-        this.f10702d.setPadding(dv.m1932b(getContext(), 45.0f), pageHeaderPaddingTop, dv.m1932b(getContext(), 45.0f), 0);
+        this.f10702d.setPadding(AnimUtils.m1932b(getContext(), 45.0f), pageHeaderPaddingTop, AnimUtils.m1932b(getContext(), 45.0f), 0);
         this.f10702d.setLayoutParams(new ViewGroup.LayoutParams(-1, this.f10713o));
         addView(this.f10702d);
         LayoutInflater from = LayoutInflater.from(getContext());
@@ -230,14 +230,14 @@ public class nu extends FrameLayout implements in {
         headerPaddingTop = this.f10702d.getVisibility() == 0 ? this.f10713o : 0;
         this.f10705g.m1124b(0, headerPaddingTop, 0, 0);
         if (ReaderEnv.get().forHd()) {
-            int b = dv.m1932b(getContext(), 25.0f);
-            int b2 = dv.m1932b(getContext(), 30.0f);
+            int b = AnimUtils.m1932b(getContext(), 25.0f);
+            int b2 = AnimUtils.m1932b(getContext(), 30.0f);
             this.f10705g.setPadding(0, headerPaddingTop, 0, b2);
             this.f10707i.setPadding(b, headerPaddingTop, b, b2);
             this.f10708j.setPadding(b, headerPaddingTop, b, b2);
             return;
         }
-        b = dv.m1932b(getContext(), 15.0f);
+        b = AnimUtils.m1932b(getContext(), 15.0f);
         this.f10705g.setPadding(0, headerPaddingTop, 0, b);
         this.f10707i.setPadding(b, headerPaddingTop, b, b);
         this.f10708j.setPadding(b, headerPaddingTop, b, b);

@@ -16,14 +16,14 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.FrameLayout.LayoutParams;
 import com.duokan.core.app.BrightnessMode;
-import com.duokan.core.app.C0286x;
+import com.duokan.core.app.ApplicationsStateCallbacks;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.sys.IdleHandlerListener;
 import com.duokan.core.sys.af;
 import com.duokan.core.ui.cv;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.DkApp;
@@ -120,7 +120,7 @@ public abstract class qr extends C1367p implements SystemUiConditioner, C0563j, 
     /* renamed from: N */
     private C0837w f9274N = null;
     /* renamed from: O */
-    private C0286x f9275O = null;
+    private ApplicationsStateCallbacks f9275O = null;
     /* renamed from: P */
     private Callback f9276P = new qs(this);
     /* renamed from: a */
@@ -323,7 +323,7 @@ public abstract class qr extends C1367p implements SystemUiConditioner, C0563j, 
             ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).pushHalfPageSmoothly(exVar, runnable);
         } else {
             ((ReaderFeature) getContext().queryFeature(ReaderFeature.class)).pushHalfPage(exVar);
-            dv.m1921a(exVar.getContentView(), runnable);
+            AnimUtils.m1921a(exVar.getContentView(), runnable);
         }
         return true;
     }
@@ -819,11 +819,11 @@ public abstract class qr extends C1367p implements SystemUiConditioner, C0563j, 
         switch (rt.f10913a[ReaderUi.m10169l(getContext()).ordinal()]) {
             case 1:
             case 2:
-                return (dv.m1963g(getContext(), 16.0f) / 2) * 2;
+                return (AnimUtils.m1963g(getContext(), 16.0f) / 2) * 2;
             case 3:
-                return (dv.m1963g(getContext(), 12.0f) / 2) * 2;
+                return (AnimUtils.m1963g(getContext(), 12.0f) / 2) * 2;
             default:
-                return (dv.m1963g(getContext(), 14.0f) / 2) * 2;
+                return (AnimUtils.m1963g(getContext(), 14.0f) / 2) * 2;
         }
     }
 
@@ -867,7 +867,7 @@ public abstract class qr extends C1367p implements SystemUiConditioner, C0563j, 
             Rect c;
             gs X = this.f9279c.mo2007X();
             if (X.mo2329e() && X.mo2331g().equals(this.f9262A)) {
-                c = X.mo2326c(dv.m1904a(new Rect(), this.f9281e.getShowingPagesView(), X.mo2328d()));
+                c = X.mo2326c(AnimUtils.m1904a(new Rect(), this.f9281e.getShowingPagesView(), X.mo2328d()));
             } else {
                 c = new Rect(0, 0, 0, 0);
             }

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.duokan.core.sys.UIdleHandler;
-import com.duokan.core.ui.dv;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.kernel.DkUtils;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0255g;
@@ -129,7 +129,7 @@ class on extends cd {
             z2 = imageView.getVisibility() != 0 && c0901g.mo1208k();
             int h = c0901g.mo1205h();
             if (h > 0) {
-                dkLabelView.setPadding((h * ((int) dkLabelView.getTextSize())) + dv.m1932b(this.f10747d.getContext(), 45.0f), 0, 0, 0);
+                dkLabelView.setPadding((h * ((int) dkLabelView.getTextSize())) + AnimUtils.m1932b(this.f10747d.getContext(), 45.0f), 0, 0, 0);
             } else {
                 dkLabelView.setPadding(0, 0, 0, 0);
             }
@@ -150,7 +150,7 @@ class on extends cd {
         } else if (this.f10747d.getDocument() instanceof C0904d) {
             r1 = c0901g.mo1205h();
             if (r1 > 0) {
-                dkLabelView.setPadding((r1 * ((int) dkLabelView.getTextSize())) + dv.m1932b(this.f10747d.getContext(), 45.0f), 0, 0, 0);
+                dkLabelView.setPadding((r1 * ((int) dkLabelView.getTextSize())) + AnimUtils.m1932b(this.f10747d.getContext(), 45.0f), 0, 0, 0);
             } else {
                 dkLabelView.setPadding(0, 0, 0, 0);
             }
@@ -177,7 +177,7 @@ class on extends cd {
             boolean z3 = imageView.getVisibility() != 0 && c0901g.mo1208k();
             r1 = c0901g.mo1205h();
             if (r1 > 0) {
-                dkLabelView.setPadding((r1 * ((int) dkLabelView.getTextSize())) + dv.m1932b(this.f10747d.getContext(), 45.0f), 0, 0, 0);
+                dkLabelView.setPadding((r1 * ((int) dkLabelView.getTextSize())) + AnimUtils.m1932b(this.f10747d.getContext(), 45.0f), 0, 0, 0);
             } else {
                 dkLabelView.setPadding(0, 0, 0, 0);
             }
