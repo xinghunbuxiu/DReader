@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.personal;
 
 import com.duokan.core.sys.UThread;
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.domain.bookshelf.it;
 import com.duokan.reader.domain.micloud.C1068i;
@@ -11,13 +11,13 @@ import java.util.List;
 
 class ep implements ej {
     /* renamed from: a */
-    final /* synthetic */ C0342j f8514a;
+    final /* synthetic */ BaseDialog f8514a;
     /* renamed from: b */
     final /* synthetic */ eo f8515b;
 
-    ep(eo eoVar, C0342j c0342j) {
+    ep(eo eoVar, BaseDialog dialog) {
         this.f8515b = eoVar;
-        this.f8514a = c0342j;
+        this.f8514a = dialog;
     }
 
     /* renamed from: a */

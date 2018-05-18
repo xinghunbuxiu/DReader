@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.domain.cloud.DkUserReadBookManager.ReadBook;
 import com.duokan.reader.domain.cloud.ef;
@@ -17,17 +17,17 @@ class hx implements ef {
     /* renamed from: d */
     final /* synthetic */ ArrayList f8680d;
     /* renamed from: e */
-    final /* synthetic */ C0342j f8681e;
+    final /* synthetic */ BaseDialog f8681e;
     /* renamed from: f */
     final /* synthetic */ hw f8682f;
 
-    hx(hw hwVar, ArrayList arrayList, ReadBook readBook, int i, ArrayList arrayList2, C0342j c0342j) {
+    hx(hw hwVar, ArrayList arrayList, ReadBook readBook, int i, ArrayList arrayList2, BaseDialog dialog) {
         this.f8682f = hwVar;
         this.f8677a = arrayList;
         this.f8678b = readBook;
         this.f8679c = i;
         this.f8680d = arrayList2;
-        this.f8681e = c0342j;
+        this.f8681e = dialog;
     }
 
     /* renamed from: a */

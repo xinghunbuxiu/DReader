@@ -73,13 +73,13 @@ public class fz extends WebView implements OnPreDrawListener {
     }
 
     public boolean onPreDraw() {
-        if (!(this.f1281a.f1262b.m1561s() == getHorizontalScrollRange() && this.f1281a.f1262b.m1562t() == getVerticalScrollRange())) {
+        if (!(this.f1281a.f1262b.m1561s() == getHorizontalScrollRange() && this.f1281a.f1262b.getContentHeight() == getVerticalScrollRange())) {
             this.f1281a.f1262b.m1512b(getHorizontalScrollRange(), getVerticalScrollRange());
         }
         if (this.f1281a.f1262b.getScrollState() != ScrollState.IDLE) {
             this.f1281a.f1262b.mo491a(this.f1281a.f1262b.getViewportBounds().left, this.f1281a.f1262b.getViewportBounds().top);
         } else {
-            this.f1281a.f1262b.m1535d(getScrollX() + super.getScrollX(), getScrollY() + super.getScrollY());
+            this.f1281a.f1262b.scrollTo(getScrollX() + super.getScrollX(), getScrollY() + super.getScrollY());
         }
         return true;
     }

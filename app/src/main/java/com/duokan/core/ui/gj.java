@@ -27,8 +27,8 @@ class gj implements cc {
     /* renamed from: a */
     public void mo538a(View view, PointF pointF, float f) {
         if (!this.f1321b.f1314g) {
-            this.f1321b.f1309a.f870b.m1497a(OverScrollMode.NEVER);
-            this.f1321b.f1309a.f870b.m1518b(OverScrollMode.NEVER);
+            this.f1321b.f1309a.f870b.setHorizontalOverScrollMode(OverScrollMode.NEVER);
+            this.f1321b.f1309a.f870b.setVerticalOverScrollMode(OverScrollMode.NEVER);
             this.f1321b.f1313f.set(pointF.x + ((float) this.f1321b.f1309a.getScrollX()), pointF.y + ((float) this.f1321b.f1309a.getScrollY()));
             AnimUtils.m1900a(this.f1321b.f1313f, this.f1321b.f1309a, this.f1320a);
             this.f1321b.f1314g = true;

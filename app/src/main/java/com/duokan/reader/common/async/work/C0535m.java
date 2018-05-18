@@ -1,9 +1,9 @@
 package com.duokan.reader.common.async.work;
 
-import com.duokan.core.p029c.C0326b;
+import com.duokan.core.p029c.IRunTask;
 
 /* renamed from: com.duokan.reader.common.async.work.m */
-class C0535m implements C0326b<TItem> {
+class C0535m implements IRunTask<TItem> {
     /* renamed from: a */
     final /* synthetic */ String f1793a;
     /* renamed from: b */

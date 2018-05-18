@@ -4,7 +4,7 @@ import android.util.Pair;
 import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.io.FileAlreadyExistsException;
-import com.duokan.core.p027b.p028a.C0320a;
+import com.duokan.core.p027b.p028a.HttpConfig;
 import com.duokan.core.p027b.p028a.C0321b;
 import com.duokan.core.sys.C0352r;
 import com.duokan.core.sys.UIdleHandler;
@@ -47,7 +47,7 @@ class gu implements Callable<Pair<Integer, Long>> {
             }
             i = C0559f.m2476b().m2485d() ? 20 : 10;
             d = e.mo424d(str2);
-            C0321b.m726a(str, d, new C0320a().m721a(i).m724b(131072));
+            C0321b.m726a(str, d, new HttpConfig().m721a(i).m724b(131072));
             d.close();
             InputStream c = e.mo422c(str2);
             String a = C0366o.m1029a(c, "md5");

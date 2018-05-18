@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.personal;
 
 import com.duokan.core.app.IFeature;
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.domain.bookshelf.BookState;
@@ -95,7 +95,7 @@ public class ku extends nm implements hv {
 
     /* renamed from: a */
     private void m12096a(Runnable runnable, List<DkCloudStoreBook> list) {
-        C0342j a = ja.m10832a(getContext(), "", getString(C0258j.store__shared__purchased_book_delete), true, false);
+        BaseDialog a = ja.m10832a(getContext(), "", getString(C0258j.store__shared__purchased_book_delete), true, false);
         LinkedList linkedList = new LinkedList();
         LinkedList linkedList2 = new LinkedList();
         for (DkCloudStoreBook dkCloudStoreBook : list) {

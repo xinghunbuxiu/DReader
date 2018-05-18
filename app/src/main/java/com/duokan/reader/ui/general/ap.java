@@ -10,25 +10,25 @@ import com.duokan.core.app.ah;
 import com.duokan.p023b.C0241c;
 
 public class ap extends ak implements ac, ae, ag {
-    /* renamed from: a */
+    
     private int f603a = -1;
-    /* renamed from: b */
+    
     private int okLabelResid = -1;
-    /* renamed from: c */
+    
     private String okLabelStr = null;
-    /* renamed from: d */
+    
     private int f606d = -1;
-    /* renamed from: e */
+    
     private int f607e = -1;
-    /* renamed from: f */
+    
     private int f608f = -1;
-    /* renamed from: g */
+    
     private String f609g = null;
-    /* renamed from: h */
+    
     private af f610h = null;
-    /* renamed from: i */
+    
     private ad f611i = null;
-    /* renamed from: j */
+    
     private ah f612j = null;
 
     public ap(Context context) {

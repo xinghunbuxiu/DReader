@@ -28,7 +28,7 @@ class gb implements Runnable {
                 if (exVar.f3142a != -1) {
                     this.f3218a.f3217b.f3212a.f3147b.put(str, Integer.valueOf(exVar.f3142a));
                     if (exVar.f3142a != ICallback.LOGIN_OAUTH_AIDL) {
-                        WebLog.init().a(LogLevel.ERROR, "epub-s", "fail to pull the chapter(%s)(error=%d, msg=%s, book=%s, name=%s)", str, Integer.valueOf(exVar.f3142a), exVar.f3143b, this.f3218a.f3217b.f3213b.m4156I(), this.f3218a.f3217b.f3213b.ay());
+                        WebLog.init().a(LogLevel.ERROR, "epub-s", "fail to pull the chapter(%s)(error=%d, msg=%s, book=%s, name=%s)", str, Integer.valueOf(exVar.f3142a), exVar.f3143b, this.f3218a.f3217b.f3213b.getId(), this.f3218a.f3217b.f3213b.ay());
                     }
                 } else {
                     WebLog.init().w(!TextUtils.isEmpty(exVar.f3144c));

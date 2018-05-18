@@ -18,7 +18,7 @@ import com.duokan.core.ui.dl;
 import com.duokan.core.ui.dn;
 import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.et;
-import com.duokan.core.ui.ge;
+import com.duokan.core.ui.OnZoomListener;
 import com.duokan.reader.DkApp;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -149,7 +149,7 @@ public abstract class ll extends di implements lk {
     }
 
     /* renamed from: g */
-    protected ge m14252g() {
+    protected OnZoomListener m14252g() {
         return new lq(this);
     }
 

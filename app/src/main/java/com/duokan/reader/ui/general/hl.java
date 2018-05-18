@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.general;
 
 import android.text.TextUtils;
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.common.C0613k;
 import com.duokan.reader.domain.cloud.DkCloudPurchasedBook;
@@ -14,16 +14,16 @@ class hl implements C0466h {
     /* renamed from: a */
     final /* synthetic */ C0613k f7340a;
     /* renamed from: b */
-    final /* synthetic */ C0342j f7341b;
+    final /* synthetic */ BaseDialog f7341b;
     /* renamed from: c */
     final /* synthetic */ DkCloudPurchasedBook f7342c;
     /* renamed from: d */
     final /* synthetic */ hh f7343d;
 
-    hl(hh hhVar, C0613k c0613k, C0342j c0342j, DkCloudPurchasedBook dkCloudPurchasedBook) {
+    hl(hh hhVar, C0613k c0613k, BaseDialog dialog, DkCloudPurchasedBook dkCloudPurchasedBook) {
         this.f7343d = hhVar;
         this.f7340a = c0613k;
-        this.f7341b = c0342j;
+        this.f7341b = dialog;
         this.f7342c = dkCloudPurchasedBook;
     }
 

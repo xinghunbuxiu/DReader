@@ -2,7 +2,7 @@ package com.duokan.reader.common.webservices.duokan;
 
 import android.text.TextUtils;
 import com.duokan.core.io.FileUtil;
-import com.duokan.core.p027b.p028a.C0320a;
+import com.duokan.core.p027b.p028a.HttpConfig;
 import com.duokan.core.p027b.p028a.C0321b;
 import com.duokan.core.sys.C0366o;
 import com.duokan.reader.ReaderEnv;
@@ -118,7 +118,7 @@ public class C0644r extends ac {
             if (!TextUtils.isEmpty(optString)) {
                 if (!new File(str).exists()) {
                     FileUtil.deleteFile(new File(str));
-                    C0321b.m732b(optString, new File(str), new C0320a());
+                    C0321b.m732b(optString, new File(str), new HttpConfig());
                 }
                 c0621a.f2058a = str;
             }

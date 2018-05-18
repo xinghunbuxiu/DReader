@@ -7,7 +7,7 @@ import android.text.TextUtils;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.io.FileUtil;
-import com.duokan.core.p027b.C0324a;
+import com.duokan.core.p027b.UrlTools;
 import com.duokan.core.sys.UThread;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
@@ -83,7 +83,7 @@ public class C1163a {
         try {
             C1174h c1174h = new C1174h();
             c1174h.f5624a = "fiction/chapter-damaged";
-            c1174h.f5625b = new String[]{"id", c0800c.m4156I(), "chapter", str};
+            c1174h.f5625b = new String[]{"id", c0800c.getId(), "chapter", str};
             this.f5595g.add(c1174h);
             m8628l();
         } catch (Throwable th) {
@@ -95,7 +95,7 @@ public class C1163a {
         try {
             C1174h c1174h = new C1174h();
             c1174h.f5624a = "book/res-badmd5";
-            c1174h.f5625b = new String[]{"id", c0800c.m4156I(), "res", Uri.encode(str), "md5", str2, "bad-md5", str3};
+            c1174h.f5625b = new String[]{"id", c0800c.getId(), "res", Uri.encode(str), "md5", str2, "bad-md5", str3};
             this.f5595g.add(c1174h);
             m8628l();
         } catch (Throwable th) {
@@ -121,7 +121,7 @@ public class C1163a {
     
     public void m8649a(String str, Throwable th) {
         try {
-            Uri a = C0324a.m734a(str);
+            Uri a = UrlTools.parse(str);
             if (a != null) {
                 String str2 = "";
                 try {
@@ -359,7 +359,7 @@ public class C1163a {
             c1174h.f5624a = "readnew";
             String[] strArr = new String[14];
             strArr[0] = "id";
-            strArr[1] = c0800c.m4156I();
+            strArr[1] = c0800c.getId();
             strArr[2] = "name";
             strArr[3] = Uri.encode(c0800c.ay());
             strArr[4] = "serial";

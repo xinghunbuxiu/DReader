@@ -157,7 +157,7 @@ public class PurchasedBookItemView extends RelativeLayout {
         if (b.m4247s() == BookPackageType.EPUB) {
             be.m9188a(ManagedApp.get().getTopActivity(), b.m4151D(), new kl(purchasedBookItemView, dkCloudStoreBook, b));
         } else {
-            DkCloudStorage.m4994a().m5014a(b.m4156I(), new kn(b));
+            DkCloudStorage.m4994a().m5014a(b.getId(), new kn(b));
         }
     }
 }

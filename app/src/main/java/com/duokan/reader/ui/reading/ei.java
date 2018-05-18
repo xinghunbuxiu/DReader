@@ -25,7 +25,7 @@ class ei implements OnClickListener {
             }
             String obj = this.f10073a.f10012m.getText().toString();
             ReaderUi.m10161a(this.f10073a.getContext(), this.f10073a);
-            C0664a.m3108a().m3113a(this.f10073a.f10025z.m4156I(), score, elVar.f10082d.f2064i, obj, new ej(this, elVar, score, obj));
+            C0664a.m3108a().m3113a(this.f10073a.f10025z.getId(), score, elVar.f10082d.f2064i, obj, new ej(this, elVar, score, obj));
         }
     }
 }

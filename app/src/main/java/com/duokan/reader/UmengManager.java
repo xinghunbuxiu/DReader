@@ -18,7 +18,7 @@ import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
 import com.duokan.p023b.C0247i;
-import com.duokan.p030d.C0399a;
+import com.duokan.p030d.DownloadUtil;
 import com.duokan.p030d.C0402d;
 import com.duokan.p030d.C0406h;
 import com.duokan.reader.common.p037c.C0559f;
@@ -227,7 +227,7 @@ public class UmengManager implements IActivityLifecycleCallbacks {
                 super.onOk();
                 be.m10286a(context, C0247i.general__update__start_update, 0).show();
                 if (str != null && str.length() > 0) {
-                    C0399a.m2174a(context).m2176a(str, this.f1651c.f1663d.getString(C0247i.general__update__downloading_dkreadker_apk));
+                    DownloadUtil.init(context).downloadAPK(str, this.f1651c.f1663d.getString(C0247i.general__update__downloading_dkreadker_apk));
                 }
             }
 
@@ -240,7 +240,7 @@ public class UmengManager implements IActivityLifecycleCallbacks {
         int i = context.getResources().getDisplayMetrics().heightPixels;
         boxView.setMaxHeight(i / 2);
         boxView.setMinimumHeight(i / 7);
-        ((FrameScrollView) inflate.findViewById(C0244f.general__auto_update_content__scrollview)).setMaxOverScrollHeight(AnimUtils.m1962g(context));
+        ((FrameScrollView) inflate.findViewById(C0244f.general__auto_update_content__scrollview)).setMaxOverScrollHeight(AnimUtils.getMaxOverScrollHeight(context));
         ((deprecatedDkTextView) inflate.findViewById(C0244f.general__auto_update_content__text)).setText(str2);
         c04906.setPrompt(C0247i.general__update__title);
         c04906.setExtraContentView(inflate);

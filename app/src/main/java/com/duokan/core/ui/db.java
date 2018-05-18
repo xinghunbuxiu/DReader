@@ -10,12 +10,12 @@ import android.view.animation.Transformation;
 import com.duokan.core.sys.UThread;
 
 class db extends BoxView {
-    /* renamed from: b */
-    final /* synthetic */ cv f1128b;
+    
+    final  cv f1128b;
 
     public db(cv cvVar, Context context) {
-        this.f1128b = cvVar;
         super(context);
+        this.f1128b = cvVar;
         setWillNotDraw(false);
     }
 

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.PointF;
 import android.view.View;
 import com.duokan.core.ui.AnimUtils;
-import com.duokan.core.ui.ge;
+import com.duokan.core.ui.OnZoomListener;
 import com.duokan.reader.domain.document.aj;
 
 public class nf extends gd implements mx {
@@ -13,7 +13,7 @@ public class nf extends gd implements mx {
     /* renamed from: b */
     private boolean f10661b = false;
     /* renamed from: d */
-    private ge f10662d;
+    private OnZoomListener f10662d;
     /* renamed from: e */
     private mo f10663e;
     /* renamed from: f */
@@ -30,8 +30,8 @@ public class nf extends gd implements mx {
         this.f10664f = naVar;
     }
 
-    public void setOnZoomListener(ge geVar) {
-        this.f10662d = geVar;
+    public void setOnZoomListener(OnZoomListener onZoomListener) {
+        this.f10662d = onZoomListener;
     }
 
     /* renamed from: a */

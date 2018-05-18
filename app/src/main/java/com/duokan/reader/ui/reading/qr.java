@@ -431,7 +431,7 @@ public abstract class qr extends C1367p implements SystemUiConditioner, C0563j, 
             this.f9282f.m4191a(H);
             C0848h.m5604a().m5622b(this.f9282f);
             if (this.f9282f.m4251w()) {
-                C1163a.m8627k().m8645a(this.f9282f.m4156I(), String.valueOf((System.currentTimeMillis() - this.f9289m) / 1000));
+                C1163a.m8627k().m8645a(this.f9282f.getId(), String.valueOf((System.currentTimeMillis() - this.f9289m) / 1000));
             }
             if (this.f9284h.m5945p()) {
                 if (this.f9293q) {
@@ -446,7 +446,7 @@ public abstract class qr extends C1367p implements SystemUiConditioner, C0563j, 
                     m12787a(this.f9282f, this.f9284h);
                 }
                 if (this.f9282f.ak() && this.f9282f.m4242o() == BookType.NORMAL) {
-                    DkUserPurchasedBooksManager.m5029a().m5069d(this.f9282f.m4156I());
+                    DkUserPurchasedBooksManager.m5029a().m5069d(this.f9282f.getId());
                 }
             }
         }
@@ -498,7 +498,7 @@ public abstract class qr extends C1367p implements SystemUiConditioner, C0563j, 
 
     /* renamed from: a */
     protected void mo1979a() {
-        ReaderEnv.get().setReadingBookUuid(this.f9282f.m4156I());
+        ReaderEnv.get().setReadingBookUuid(this.f9282f.getId());
         this.f9284h.mo1240h().mo1265a(this.f9282f.ay());
         this.f9281e.setLineDirection(this.f9284h.mo1228c());
         this.f9281e.getShowingDocPresenter().setAnnotations(m12849n().as());
@@ -1276,14 +1276,14 @@ public abstract class qr extends C1367p implements SystemUiConditioner, C0563j, 
             ((ee) this.f9282f).m4410a(false, new rk(this, runnable), new rl(this, runnable));
             return;
         }
-        C1176a.m8695a().m8703a(this.f9282f.m4156I(), false, new rg(this, runnable));
+        C1176a.m8695a().m8703a(this.f9282f.getId(), false, new rg(this, runnable));
     }
 
     /* renamed from: a */
     private void m12789a(DkStoreBookDetail dkStoreBookDetail) {
         this.f9268G = dkStoreBookDetail;
         Object obj = null;
-        if (TextUtils.equals(this.f9268G.getBook().getBookUuid(), this.f9282f.m4156I()) && this.f9282f.m4159L() != this.f9268G.getBook().getNewPrice()) {
+        if (TextUtils.equals(this.f9268G.getBook().getBookUuid(), this.f9282f.getId()) && this.f9282f.m4159L() != this.f9268G.getBook().getNewPrice()) {
             this.f9282f.m4175a(this.f9268G.getBook().getNewPrice());
             obj = 1;
         }

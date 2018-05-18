@@ -126,7 +126,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.f817g = new FrameLayout(context);
         this.f817g.setClipChildren(false);
         this.f817g.setClipToPadding(false);
-        this.f817g.setMinimumHeight(AnimUtils.m1962g(getContext()));
+        this.f817g.setMinimumHeight(AnimUtils.getMaxOverScrollHeight(getContext()));
         this.f815e.addView(this.f817g, new LinearLayout.LayoutParams(-1, -2));
         this.f818h = new FrameLayout(context);
         this.f818h.setClipChildren(false);

@@ -8,7 +8,7 @@ import android.os.Build.VERSION;
 import android.text.TextUtils;
 
 import com.duokan.core.app.BaseActivity;
-import com.duokan.core.p027b.C0324a;
+import com.duokan.core.p027b.UrlTools;
 import com.duokan.core.sys.ah;
 import com.duokan.reader.common.webservices.duokan.C0641o;
 import com.duokan.reader.domain.bookshelf.C0800c;
@@ -68,7 +68,7 @@ public class DkRouter {
             return false;
         }
         final Map parseUri = parseUri(data);
-        final boolean z = C0324a.m735a(data.toString(), "file", "content") && TextUtils.equals(intent.getAction(), "android.intent.action.VIEW");
+        final boolean z = UrlTools.equalsIgnoreCase(data.toString(), "file", "content") && TextUtils.equals(intent.getAction(), "android.intent.action.VIEW");
         if (parseUri.containsKey("book") || z) {
             final Intent intent2 = intent;
             ah.m871b(new Runnable() {

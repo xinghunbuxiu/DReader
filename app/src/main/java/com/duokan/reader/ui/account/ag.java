@@ -33,7 +33,7 @@ public class ag extends FrameLayout {
         this.f5784b = new aj();
         this.f5785c.setAdapter(this.f5784b);
         this.f5785c.setThumbEnabled(true);
-        this.f5785c.setMaxOverScrollHeight(AnimUtils.m1962g(getContext()));
+        this.f5785c.setMaxOverScrollHeight(AnimUtils.getMaxOverScrollHeight(getContext()));
         this.f5785c.setOnItemClickListener(new ah(this, aeVar));
         TextView textView = (TextView) findViewById(C0255g.account__share_choice_view__cancel);
         textView.getPaint().setFakeBoldText(true);

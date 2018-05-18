@@ -10,28 +10,28 @@ import com.duokan.core.sys.C0373z;
 import com.umeng.analytics.pro.C2295j;
 
 class de extends dh {
-    /* renamed from: a */
-    static final /* synthetic */ boolean f1135a = (!cv.class.desiredAssertionStatus());
-    /* renamed from: b */
-    private final Activity f1136b;
-    /* renamed from: c */
-    private final WindowManager f1137c;
-    /* renamed from: d */
+    
+    static final  boolean desStatus = (!cv.class.desiredAssertionStatus());
+    
+    private final Activity activity;
+    
+    private final WindowManager windowManager;
+    
     private dg f1138d = null;
-    /* renamed from: e */
+    
     private dg f1139e = null;
 
     public de(Activity activity) {
-        super();
-        this.f1136b = activity;
-        this.f1137c = this.f1136b.getWindowManager();
+        super(activity);
+        this.activity = activity;
+        this.windowManager = this.activity.getWindowManager();
     }
 
-    /* renamed from: a */
+    
     public void m1802a() {
         dc dcVar = new dc();
         dcVar.f1129a = true;
-        int i = this.f1136b.getWindow().getAttributes().flags;
+        int i = this.activity.getWindow().getAttributes().flags;
         if ((i & 2048) == 2048) {
             dcVar.f1129a = true;
         } else if ((i & 1024) == 1024) {
@@ -52,14 +52,14 @@ class de extends dh {
         }
         if (VERSION.SDK_INT >= 23) {
             boolean z;
-            if ((this.f1136b.getWindow().getDecorView().getSystemUiVisibility() & 8192) == 8192) {
+            if ((this.activity.getWindow().getDecorView().getSystemUiVisibility() & 8192) == 8192) {
                 z = true;
             } else {
                 z = false;
             }
             dcVar.f1131c = z;
         } else {
-            dcVar.f1131c = C0373z.m1053a(this.f1136b);
+            dcVar.f1131c = C0373z.m1053a(this.activity);
         }
         if (this.f1139e != null) {
             dcVar.f1131c = this.f1139e.m1814b(dcVar.f1131c);
@@ -79,7 +79,7 @@ class de extends dh {
         }
     }
 
-    /* renamed from: b */
+    
     public int m1804b() {
         int i = 0;
         int b = this.f1138d == null ? 0 : this.f1138d.m1812b();
@@ -89,7 +89,7 @@ class de extends dh {
         return b + i;
     }
 
-    /* renamed from: a */
+    
     public cv m1801a(int i) {
         if (this.f1139e != null && i < this.f1139e.m1812b()) {
             return this.f1139e.m1808a(i);
@@ -97,7 +97,7 @@ class de extends dh {
         return this.f1138d.m1808a(i - (this.f1139e == null ? 0 : this.f1139e.m1812b()));
     }
 
-    /* renamed from: a */
+    
     public void m1803a(cv cvVar) {
         if (this.f1139e == null) {
             this.f1139e = new dg(m1799e());
@@ -119,15 +119,15 @@ class de extends dh {
         }
     }
 
-    /* renamed from: b */
+    
     public void m1805b(cv cvVar) {
         if (cvVar.f1099g) {
-            if (f1135a || this.f1138d != null) {
+            if (desStatus || this.f1138d != null) {
                 this.f1138d.m1813b(cvVar);
             } else {
                 throw new AssertionError();
             }
-        } else if (f1135a || this.f1139e != null) {
+        } else if (desStatus || this.f1139e != null) {
             this.f1139e.m1813b(cvVar);
         } else {
             throw new AssertionError();
@@ -147,7 +147,7 @@ class de extends dh {
         m1802a();
     }
 
-    /* renamed from: c */
+    
     public void m1806c() {
         if (this.f1138d != null) {
             this.f1138d.m1815c();
@@ -157,34 +157,34 @@ class de extends dh {
         }
     }
 
-    /* renamed from: d */
+    
     private dd m1798d() {
         LayoutParams f = m1800f();
         f.flags |= 272;
-        dd ddVar = new dd(this.f1136b);
+        dd ddVar = new dd(this.activity);
         ddVar.setVisibility(8);
         ddVar.setLayoutParams(f);
         return ddVar;
     }
 
-    /* renamed from: e */
+    
     private dd m1799e() {
         LayoutParams f = m1800f();
-        dd dfVar = new df(this, this.f1136b);
+        dd dfVar = new df(this, this.activity);
         dfVar.setLayoutParams(f);
         dfVar.setVisibility(8);
         dfVar.setSystemUiVisibility(C2295j.f14325e);
         return dfVar;
     }
 
-    /* renamed from: f */
+    
     private WindowManager.LayoutParams m1800f() {
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
         layoutParams.type = 2;
         layoutParams.token = null;
         layoutParams.format = -3;
         layoutParams.flags &= -8883993;
-        layoutParams.flags = (this.f1136b.getWindow().getAttributes().flags & 3072) | layoutParams.flags;
+        layoutParams.flags = (this.activity.getWindow().getAttributes().flags & 3072) | layoutParams.flags;
         if (VERSION.SDK_INT >= 21) {
             layoutParams.flags |= Integer.MIN_VALUE;
         }
@@ -193,7 +193,7 @@ class de extends dh {
     }
 
     @TargetApi(19)
-    /* renamed from: a */
+    
     private void m1796a(dd ddVar, dc dcVar) {
         WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) ddVar.getLayoutParams();
         layoutParams.flags &= -67243017;
@@ -226,25 +226,25 @@ class de extends dh {
             return;
         }
         try {
-            this.f1137c.updateViewLayout(ddVar, layoutParams);
+            this.windowManager.updateViewLayout(ddVar, layoutParams);
         } catch (Throwable th) {
             th.printStackTrace();
         }
     }
 
-    /* renamed from: a */
+    
     private void m1795a(dd ddVar) {
         try {
-            this.f1137c.addView(ddVar, (WindowManager.LayoutParams) ddVar.getLayoutParams());
+            this.windowManager.addView(ddVar, (WindowManager.LayoutParams) ddVar.getLayoutParams());
         } catch (Throwable th) {
             th.printStackTrace();
         }
     }
 
-    /* renamed from: b */
+    
     private void m1797b(dd ddVar) {
         try {
-            this.f1137c.removeViewImmediate(ddVar);
+            this.windowManager.removeViewImmediate(ddVar);
         } catch (Throwable th) {
             th.printStackTrace();
         }

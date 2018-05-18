@@ -3,9 +3,9 @@ package com.duokan.reader.ui.bookshelf;
 import android.os.AsyncTask;
 import android.os.AsyncTask.Status;
 import com.duokan.reader.ui.general.ak;
-import com.duokan.reader.ui.general.an;
+import com.duokan.reader.ui.general.OnButtonClickedListener;
 
-class eu implements an {
+class eu implements OnButtonClickedListener {
     /* renamed from: a */
     final /* synthetic */ AsyncTask f6414a;
     /* renamed from: b */

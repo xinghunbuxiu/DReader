@@ -5,24 +5,24 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import org.apache.http.HttpStatus;
 
-/* renamed from: com.duokan.reader.a.a.a.a */
+
 public class C0509a extends C0508c {
-    /* renamed from: a */
+    
     short[][] f1716a;
-    /* renamed from: b */
+    
     short[][] f1717b;
-    /* renamed from: c */
+    
     short[][] f1718c;
-    /* renamed from: d */
+    
     short[][] f1719d;
-    /* renamed from: e */
+    
     short[][] f1720e;
-    /* renamed from: f */
+    
     short[][] f1721f;
-    /* renamed from: g */
+    
     public boolean f1722g = false;
 
-    /* renamed from: a */
+    
     public int m2188a(byte[] bArr) {
         int i = 0;
         int[] iArr = new int[21];
@@ -82,7 +82,7 @@ public class C0509a extends C0508c {
         return i2;
     }
 
-    /* renamed from: b */
+    
     int m2191b(byte[] bArr) {
         int i = 1;
         int i2 = 1;
@@ -150,7 +150,7 @@ public class C0509a extends C0508c {
         return ((int) (((((float) j) / ((float) j2)) * 50.0f) + ((((float) i2) / ((float) i)) * 50.0f))) - 1;
     }
 
-    /* renamed from: c */
+    
     int m2194c(byte[] bArr) {
         int i = 1;
         int i2 = 1;
@@ -222,7 +222,7 @@ public class C0509a extends C0508c {
         return ((int) (((((float) j) / ((float) j2)) * 50.0f) + ((((float) i2) / ((float) i)) * 50.0f))) - 1;
     }
 
-    /* renamed from: d */
+    
     int m2197d(byte[] bArr) {
         float f;
         int i = 0;
@@ -345,7 +345,7 @@ public class C0509a extends C0508c {
         return (int) (f + (50.0f * (((float) j) / ((float) j2))));
     }
 
-    /* renamed from: e */
+    
     int m2199e(byte[] bArr) {
         int i = 1;
         int i2 = 1;
@@ -405,7 +405,7 @@ public class C0509a extends C0508c {
         return (int) (((((float) j) / ((float) j2)) * 50.0f) + ((((float) i2) / ((float) i)) * 50.0f));
     }
 
-    /* renamed from: f */
+    
     int m2201f(byte[] bArr) {
         int i = 1;
         int i2 = 1;
@@ -455,7 +455,7 @@ public class C0509a extends C0508c {
         return (int) (((((float) j) / ((float) j2)) * 50.0f) + ((((float) i2) / ((float) i)) * 50.0f));
     }
 
-    /* renamed from: g */
+    
     int m2202g(byte[] bArr) {
         int i = 1;
         int i2 = 1;
@@ -513,7 +513,7 @@ public class C0509a extends C0508c {
         return (int) (((((float) j) / ((float) j2)) * 50.0f) + ((((float) i2) / ((float) i)) * 50.0f));
     }
 
-    /* renamed from: h */
+    
     int m2203h(byte[] bArr) {
         int length = bArr.length;
         int i = 0;
@@ -544,7 +544,7 @@ public class C0509a extends C0508c {
         return i;
     }
 
-    /* renamed from: i */
+    
     int m2204i(byte[] bArr) {
         int i = 75;
         int length = bArr.length;
@@ -561,7 +561,7 @@ public class C0509a extends C0508c {
         return i;
     }
 
-    /* renamed from: j */
+    
     int m2205j(byte[] bArr) {
         int i = 1;
         int i2 = 1;
@@ -590,7 +590,7 @@ public class C0509a extends C0508c {
         return (int) (((((float) j) / ((float) j2)) * 50.0f) + ((((float) i2) / ((float) i)) * 50.0f));
     }
 
-    /* renamed from: k */
+    
     int m2206k(byte[] bArr) {
         int i = 1;
         int i2 = 1;
@@ -619,7 +619,7 @@ public class C0509a extends C0508c {
         return (int) (((((float) j) / ((float) j2)) * 50.0f) + ((((float) i2) / ((float) i)) * 50.0f));
     }
 
-    /* renamed from: l */
+    
     int m2207l(byte[] bArr) {
         int i = 0;
         while (i < bArr.length) {
@@ -631,7 +631,7 @@ public class C0509a extends C0508c {
         return 0;
     }
 
-    /* renamed from: m */
+    
     int m2208m(byte[] bArr) {
         int i = 1;
         int i2 = 1;
@@ -660,7 +660,7 @@ public class C0509a extends C0508c {
         return (int) (((((float) j) / ((float) j2)) * 50.0f) + ((((float) i2) / ((float) i)) * 50.0f));
     }
 
-    /* renamed from: n */
+    
     int m2209n(byte[] bArr) {
         int i = 0;
         while (i < bArr.length) {
@@ -672,7 +672,7 @@ public class C0509a extends C0508c {
         return 0;
     }
 
-    /* renamed from: o */
+    
     int m2210o(byte[] bArr) {
         int i = 1;
         int i2 = 1;
@@ -733,42 +733,42 @@ public class C0509a extends C0508c {
         return ((int) (((((float) j) / ((float) j2)) * 50.0f) + ((((float) i2) / ((float) i)) * 50.0f))) - 1;
     }
 
-    /* renamed from: a */
+    
     void m2189a() {
         for (int i = 0; i < 94; i++) {
             Arrays.fill(this.f1716a[i], (short) 0);
         }
     }
 
-    /* renamed from: b */
+    
     void m2192b() {
         for (int i = 0; i < 126; i++) {
             Arrays.fill(this.f1717b[i], (short) 0);
         }
     }
 
-    /* renamed from: c */
+    
     void m2195c() {
         for (int i = 0; i < 94; i++) {
             Arrays.fill(this.f1718c[i], (short) 0);
         }
     }
 
-    /* renamed from: d */
+    
     void m2198d() {
         for (int i = 0; i < 94; i++) {
             Arrays.fill(this.f1720e[i], (short) 0);
         }
     }
 
-    /* renamed from: e */
+    
     void m2200e() {
         for (int i = 0; i < 94; i++) {
             Arrays.fill(this.f1719d[i], (short) 0);
         }
     }
 
-    /* renamed from: a */
+    
     void m2190a(short[][] sArr) {
         sArr[20][35] = (short) 599;
         sArr[49][26] = (short) 598;
@@ -1172,7 +1172,7 @@ public class C0509a extends C0508c {
         sArr[18][53] = (short) 200;
     }
 
-    /* renamed from: b */
+    
     void m2193b(short[][] sArr) {
         sArr[48][49] = (short) 599;
         sArr[35][65] = (short) 598;
@@ -1575,7 +1575,7 @@ public class C0509a extends C0508c {
         sArr[46][59] = (short) 201;
     }
 
-    /* renamed from: c */
+    
     void m2196c(short[][] sArr) {
         sArr[52][132] = (short) 600;
         sArr[73][135] = (short) 599;

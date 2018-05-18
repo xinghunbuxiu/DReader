@@ -27,7 +27,7 @@ final class kl implements cm {
                 this.f8816a.f8226d.setEnabled(false);
                 this.f8816a.f8226d.setAction(BookAction.CONNECTING);
             }
-            C1502o.m15410a().m15435b(this.f8818c.m4156I());
+            C1502o.m15410a().m15435b(this.f8818c.getId());
             C1502o.m15410a().m15429a(this.f8818c, new km(this), flowChargingTransferChoice);
         }
     }

@@ -3,7 +3,7 @@ package com.duokan.reader.ui.account;
 import android.text.TextUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.p024c.C0255g;
@@ -77,7 +77,7 @@ public class C1261m extends ActivatedController {
 
     /* renamed from: b */
     private void m9010b(String str) {
-        if (C0267i.m604a(getContext())) {
+        if (CommonUtils.m604a(getContext())) {
             if (this.f5968f != null) {
                 this.f5968f.onDeactive();
             }

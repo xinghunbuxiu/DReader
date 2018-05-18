@@ -6,8 +6,8 @@ import android.util.DisplayMetrics;
 import android.view.View;
 
 class cl extends View {
-    /* renamed from: a */
-    final /* synthetic */ cj f1083a;
+    
+    final  cj f1083a;
 
     public cl(cj cjVar, Context context) {
         this.f1083a = cjVar;
@@ -34,7 +34,7 @@ class cl extends View {
         }
     }
 
-    /* renamed from: a */
+    
     private void m1778a(Rect rect) {
         DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
         rect.set(0, 0, getWidth(), getHeight());

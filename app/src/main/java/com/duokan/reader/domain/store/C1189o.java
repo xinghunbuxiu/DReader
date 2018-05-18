@@ -113,7 +113,7 @@ public class C1189o implements ai, C0562i, iq, MessageWakeupListener {
                 if (j[i] instanceof ee) {
                     boolean z2;
                     ee eeVar = (ee) j[i];
-                    C0650x c0650x = new C0650x(eeVar.m4156I());
+                    C0650x c0650x = new C0650x(eeVar.getId());
                     String str = this.f5673d + c0650x.m3046a();
                     if (z && m8732a(eeVar) && c0650x.m3047b() == 0) {
                         z2 = true;

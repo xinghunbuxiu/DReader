@@ -3,7 +3,7 @@ package com.duokan.reader.ui.personal;
 import com.duokan.core.app.ac;
 import com.duokan.core.app.ad;
 import com.duokan.core.sys.af;
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.domain.bookshelf.C0800c;
 import com.duokan.reader.ui.general.be;
@@ -25,7 +25,7 @@ class C1394d implements ad {
 
     /* renamed from: a */
     public void mo1553a(ac acVar) {
-        C0342j a = ja.m10832a(this.f8443b.getContext(), "", this.f8443b.getString(C0258j.personal__auto_buy_view__deleting), true, true);
+        BaseDialog a = ja.m10832a(this.f8443b.getContext(), "", this.f8443b.getString(C0258j.personal__auto_buy_view__deleting), true, true);
         List selectedItems = this.f8443b.f8388a.getSelectedItems();
         List arrayList = new ArrayList();
         for (Object next : selectedItems) {

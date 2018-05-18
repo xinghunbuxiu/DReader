@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.io.FileUtil;
-import com.duokan.core.p027b.p028a.C0320a;
+import com.duokan.core.p027b.p028a.HttpConfig;
 import com.duokan.core.p027b.p028a.C0321b;
 import com.duokan.core.sys.C0366o;
 import com.duokan.core.sys.UThread;
@@ -37,7 +37,7 @@ class kv implements Runnable {
             File file2 = new File(file, "cache.appcache");
             FileUtil.deleteFile(file);
             try {
-                C0320a c0320a = new C0320a();
+                HttpConfig httpConfig = new HttpConfig();
                 StringBuilder stringBuilder = new StringBuilder();
                 stringBuilder.append(String.format("app_id=%s;device_id=%s;build=%d;channel=%s;", new Object[]{ReaderEnv.get().getAppId(), ReaderEnv.get().getDeviceId(), Integer.valueOf(ReaderEnv.get().getVersionCode()), ReaderEnv.get().getDistChannel()}));
                 if (!TextUtils.isEmpty(C0709k.m3476a().m3514i())) {
@@ -53,16 +53,16 @@ class kv implements Runnable {
                 if (C0373z.m1052a()) {
                     stringBuilder.append("_m=1;");
                 }
-                c0320a.m721a(3).m722a(SM.COOKIE, stringBuilder.toString());
+                httpConfig.m721a(3).addPair(SM.COOKIE, stringBuilder.toString());
                 file.mkdirs();
-                C0321b.m732b(C0641o.m2934i().m2999z() + "/phone/" + "cache.appcache", file2, c0320a);
+                C0321b.m732b(C0641o.m2934i().m2999z() + "/phone/" + "cache.appcache", file2, httpConfig);
                 String a = C0366o.m1028a(file2, "md5");
                 if (!TextUtils.isEmpty(a)) {
                     File access$600 = StoreWebController.storeMirrorDirectory(a);
                     if (this.f8118a || !TextUtils.equals(StoreWebController.sStoreMirrorDir.getAbsolutePath(), access$600.getAbsolutePath())) {
                         WebLog.init().c(LogLevel.EVENT, "store", "updating store mirror");
                         File file3 = new File(file, "index.html");
-                        if (C0321b.m732b(C0641o.m2934i().m2999z() + "/phone/", file3, c0320a) < 0) {
+                        if (C0321b.m732b(C0641o.m2934i().m2999z() + "/phone/", file3, httpConfig) < 0) {
                             C1163a.m8627k().m8644a(str, -1);
                             FileUtil.deleteFile(file);
                             return;
@@ -100,7 +100,7 @@ class kv implements Runnable {
                                         file5.getParentFile().mkdirs();
                                         if (this.f8118a || !file4.exists() || !FileUtil.doCopyFile(file4, file5)) {
                                             FileUtil.deleteFile(file5);
-                                            C0321b.m725a(a2.f8117b, file5, c0320a);
+                                            C0321b.getFileLength(a2.f8117b, file5, httpConfig);
                                         }
                                     }
                                     i++;

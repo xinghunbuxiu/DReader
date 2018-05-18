@@ -87,14 +87,17 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" scope="TEST" name="com.android.support.test:exposed-instrumentation-api-publish-0.5" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:multidex-1.0.1" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\github\DReader\app\libs\com.duokan.reader-enjarify.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.squareup.okhttp3:okhttp:3.10.0@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.squareup.okio:okio:1.14.0@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.squareup.okhttp3:logging-interceptor:3.10.0@jar" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="junit:junit:4.12@jar" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javax.inject:javax.inject:1@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-core-ui-25.3.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="com.squareup:javawriter:2.1.1@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-compat-25.3.1" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\github\DReader\app\libs\duokan_core.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\github\DReader\app\libs\org_apache_http.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" exported="" name="org.apache.httpcomponents:httpcore:4.4.3@jar" level="project" />
+    <orderEntry type="library" exported="" name="com.github.bumptech.glide:glide:3.6.1@jar" level="project" />
+    <orderEntry type="library" exported="" name="org.apache.httpcomponents:httpclient-android:4.3.5@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-core-utils-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-v4-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-fragment-25.3.1" level="project" />
@@ -102,6 +105,7 @@
     <orderEntry type="library" exported="" scope="TEST" name="com.google.code.findbugs:jsr305:2.0.1@jar" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="org.hamcrest:hamcrest-core:1.3@jar" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="com.android.support.test.espresso:espresso-core-2.2.2" level="project" />
+    <orderEntry type="library" exported="" name="org.apache.httpcomponents:httpmime:4.3.6@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:animated-vector-drawable-25.3.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="com.android.support.test:rules-0.5" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="org.hamcrest:hamcrest-library:1.3@jar" level="project" />
@@ -110,7 +114,6 @@
     <orderEntry type="library" exported="" name="com.android.support:appcompat-v7-25.3.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="com.android.support.test.espresso:espresso-idling-resource-2.2.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javax.annotation:javax.annotation-api:1.2@jar" level="project" />
-    <orderEntry type="library" exported="" name="__local_jars__:D.\github\DReader\app\libs\miuipub.jar:unspecified@jar" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-vector-drawable-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="com.android.support:support-annotations:25.3.1@jar" level="project" />
   </component>

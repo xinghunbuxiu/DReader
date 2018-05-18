@@ -17,7 +17,7 @@ class kp implements in, ip {
             Iterator it = PurchasedBookItemView.f8224b.iterator();
             while (it.hasNext()) {
                 PurchasedBookItemView purchasedBookItemView = (PurchasedBookItemView) it.next();
-                if ((purchasedBookItemView.f8227e instanceof DkCloudPurchasedBook) && ((DkCloudPurchasedBook) purchasedBookItemView.f8227e).getBookUuid().equals(c0800c.m4156I())) {
+                if ((purchasedBookItemView.f8227e instanceof DkCloudPurchasedBook) && ((DkCloudPurchasedBook) purchasedBookItemView.f8227e).getBookUuid().equals(c0800c.getId())) {
                     purchasedBookItemView.m11361a(true);
                     return;
                 }
@@ -30,7 +30,7 @@ class kp implements in, ip {
         Iterator it = PurchasedBookItemView.f8224b.iterator();
         while (it.hasNext()) {
             PurchasedBookItemView purchasedBookItemView = (PurchasedBookItemView) it.next();
-            if ((purchasedBookItemView.f8227e instanceof DkCloudPurchasedBook) && ((DkCloudPurchasedBook) purchasedBookItemView.f8227e).getBookUuid().equals(c0800c.m4156I())) {
+            if ((purchasedBookItemView.f8227e instanceof DkCloudPurchasedBook) && ((DkCloudPurchasedBook) purchasedBookItemView.f8227e).getBookUuid().equals(c0800c.getId())) {
                 purchasedBookItemView.m11361a(false);
                 return;
             }

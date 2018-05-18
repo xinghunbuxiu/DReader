@@ -9,10 +9,10 @@ import android.view.ViewGroup.MarginLayoutParams;
 import java.lang.ref.WeakReference;
 
 public class da extends MarginLayoutParams {
-    /* renamed from: a */
-    public final Rect f1126a = new Rect();
-    /* renamed from: b */
-    public WeakReference<View> f1127b = null;
+    
+    public final Rect rect = new Rect();
+    
+    public WeakReference<View> viewWeakReference = null;
 
     public da(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);

@@ -57,9 +57,9 @@ class gh implements af {
         }
         this.f3228b.bx();
         if (this.f3228b.mo1038k()) {
-            DkUserPurchasedFictionsManager.m5072a().m5109d(this.f3228b.m4156I());
+            DkUserPurchasedFictionsManager.m5072a().m5109d(this.f3228b.getId());
         } else {
-            DkUserPurchasedBooksManager.m5029a().m5071e(this.f3228b.m4156I());
+            DkUserPurchasedBooksManager.m5029a().m5071e(this.f3228b.getId());
         }
     }
 

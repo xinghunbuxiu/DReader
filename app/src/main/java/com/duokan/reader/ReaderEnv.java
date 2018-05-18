@@ -17,7 +17,7 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.view.KeyCharacterMap;
 
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.core.app.ApplicationsStateCallbacks;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
@@ -70,7 +70,7 @@ public class ReaderEnv implements ApplicationsStateCallbacks {
 
     protected static ReaderEnv readerEnv = null;
 
-    static final boolean f1598c;
+    static final boolean desiredAssertionStatus;
 
     private static final String url_lib = (File.separator + "lib");
 
@@ -298,13 +298,8 @@ public class ReaderEnv implements ApplicationsStateCallbacks {
     }
 
     static {
-        boolean z;
-        if (ReaderEnv.class.desiredAssertionStatus()) {
-            z = false;
-        } else {
-            z = true;
-        }
-        f1598c = z;
+        desiredAssertionStatus = ReaderEnv.class.desiredAssertionStatus();
+
     }
 
     public ReaderEnv(final DkApp dkApp) {
@@ -631,7 +626,7 @@ public class ReaderEnv implements ApplicationsStateCallbacks {
     }
 
     public synchronized int getDefaultReadingFontSize() {
-        return C0267i.m598a(this.dkApp, 18.0f);
+        return CommonUtils.dip2px(this.dkApp, 18.0f);
     }
 
     public synchronized boolean isExternalStorageMounted() {
@@ -847,7 +842,7 @@ public class ReaderEnv implements ApplicationsStateCallbacks {
     public static synchronized ReaderEnv get() {
         ReaderEnv readerEnv;
         synchronized (ReaderEnv.class) {
-            if (f1598c || ReaderEnv.readerEnv != null) {
+            if (desiredAssertionStatus || ReaderEnv.readerEnv != null) {
                 readerEnv = ReaderEnv.readerEnv;
             } else {
                 throw new AssertionError();
@@ -1185,7 +1180,7 @@ public class ReaderEnv implements ApplicationsStateCallbacks {
 
     private String getNewDeviceId() {
         String[] genDeviceIds = genDeviceIds(new String[]{getMacAddress(), getAndroidId()});
-        if (f1598c || genDeviceIds.length > 0) {
+        if (desiredAssertionStatus || genDeviceIds.length > 0) {
             String cachedDeviceId = getCachedDeviceId();
             if (TextUtils.isEmpty(cachedDeviceId)) {
                 String chooseDeviceId = chooseDeviceId(genDeviceIds);
@@ -1317,7 +1312,7 @@ public class ReaderEnv implements ApplicationsStateCallbacks {
                 return str;
             }
         }
-        if (f1598c) {
+        if (desiredAssertionStatus) {
             return "";
         }
         throw new AssertionError();

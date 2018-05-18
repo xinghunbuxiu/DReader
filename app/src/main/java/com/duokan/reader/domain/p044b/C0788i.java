@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.p044b;
 
 import android.text.TextUtils;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import java.io.File;
 import java.io.FileFilter;
 
@@ -15,7 +15,7 @@ class C0788i implements FileFilter {
     }
 
     public boolean accept(File file) {
-        String a = C0267i.m601a(file.getName());
+        String a = CommonUtils.m601a(file.getName());
         if (TextUtils.isEmpty(a)) {
             return false;
         }

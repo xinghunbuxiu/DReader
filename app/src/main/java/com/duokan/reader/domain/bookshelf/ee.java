@@ -484,7 +484,7 @@ public abstract class ee extends C0800c {
             egVar.run();
             return;
         }
-        aV().mo1102e().m8704a(m4156I(), true, true, -1, -1, -1, new ek(this, egVar, agVar, runnable));
+        aV().mo1102e().m8704a(getId(), true, true, -1, -1, -1, new ek(this, egVar, agVar, runnable));
     }
 
     /* renamed from: c */
@@ -604,7 +604,7 @@ public abstract class ee extends C0800c {
                 if (bm.length <= 0) {
                     if (m4251w()) {
                         try {
-                            m4418c(new DkStoreFictionDetail(C0647u.m3013b(new JSONObject(DkPublic.readFile(new File(new File(new File(ReaderEnv.get().getExternalFilesDirectory(), "/Downloads/BookInfos"), m4156I()), "complete.json"))).getJSONObject("item"))));
+                            m4418c(new DkStoreFictionDetail(C0647u.m3013b(new JSONObject(DkPublic.readFile(new File(new File(new File(ReaderEnv.get().getExternalFilesDirectory(), "/Downloads/BookInfos"), getId()), "complete.json"))).getJSONObject("item"))));
                             aV().mo1091a(aH());
                             bm = bm();
                             aV().mo1097b(aH());
@@ -696,7 +696,7 @@ public abstract class ee extends C0800c {
 
     /* renamed from: b */
     protected final void m4415b(List<String> list, boolean z, ag<Map<String, ex>> agVar) {
-        String I = m4156I();
+        String I = getId();
         Map hashMap = new HashMap();
         DkStoreFictionDetail aW = aW();
         if (aW != null) {
@@ -779,7 +779,7 @@ public abstract class ee extends C0800c {
                 mo955p(dkStoreFictionDetail.getFiction().getTitle());
                 m4221d(dkStoreFictionDetail.getFiction().getAuthorLine());
                 m4176a(System.currentTimeMillis());
-                BookContent bookContent = C0800c.m4143o(m4156I()) ? dkStoreFictionDetail.getFiction().isVerticalComic() ? BookContent.VERTICAL_COMIC : BookContent.PAGE_COMIC : BookContent.NORMAL;
+                BookContent bookContent = C0800c.m4143o(getId()) ? dkStoreFictionDetail.getFiction().isVerticalComic() ? BookContent.VERTICAL_COMIC : BookContent.PAGE_COMIC : BookContent.NORMAL;
                 m4182a(bookContent);
                 m4175a(dkStoreFictionDetail.getFiction().isFree() ? 0 : dkStoreFictionDetail.getFiction().getPrice());
                 m4418c(dkStoreFictionDetail);

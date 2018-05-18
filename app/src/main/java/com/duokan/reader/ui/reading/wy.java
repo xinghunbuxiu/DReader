@@ -427,6 +427,6 @@ public abstract class wy extends FrameLayout {
     /* renamed from: o */
     private final File m13646o() {
         C0800c G = this.f9698a.mo1992G();
-        return new File(ReaderEnv.get().getReadingCacheDirectory(), C0366o.m1034b(String.format(Locale.getDefault(), "book=%s;pos=%s;w=%d;h=%d;theme=%s;v=%d;", new Object[]{G.m4156I(), G.m4152E().toString(), Integer.valueOf(getWidth()), Integer.valueOf(getHeight()), this.f9698a.mo1997N(), Integer.valueOf(2)}), "md5") + ".snap");
+        return new File(ReaderEnv.get().getReadingCacheDirectory(), C0366o.m1034b(String.format(Locale.getDefault(), "book=%s;pos=%s;w=%d;h=%d;theme=%s;v=%d;", new Object[]{G.getId(), G.m4152E().toString(), Integer.valueOf(getWidth()), Integer.valueOf(getHeight()), this.f9698a.mo1997N(), Integer.valueOf(2)}), "md5") + ".snap");
     }
 }

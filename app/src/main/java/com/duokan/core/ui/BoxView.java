@@ -10,12 +10,12 @@ import android.widget.FrameLayout;
 public class BoxView extends FrameLayout {
     
     static final  boolean desiredAssertionStatus = (!BoxView.class.desiredAssertionStatus());
-    
-    private int f745b;
-    
-    private int f746c;
-    
-    private boolean f747d;
+
+    private int maxWidth;
+
+    private int maxHeight;
+
+    private boolean resizeLayoutForSoftInput;
     
     private cm f748e;
 
@@ -26,34 +26,34 @@ public class BoxView extends FrameLayout {
     public BoxView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, new int[]{16843039, 16843040});
-        this.f745b = obtainStyledAttributes.getDimensionPixelSize(0, -1);
-        this.f746c = obtainStyledAttributes.getDimensionPixelSize(1, -1);
+        this.maxWidth = obtainStyledAttributes.getDimensionPixelSize(0, -1);
+        this.maxHeight = obtainStyledAttributes.getDimensionPixelSize(1, -1);
         obtainStyledAttributes.recycle();
     }
 
-    public void setMaxWidth(int i) {
-        if (this.f745b != i) {
-            this.f745b = i;
+    public void setMaxWidth(int maxWidth) {
+        if (this.maxWidth != maxWidth) {
+            this.maxWidth = maxWidth;
             requestLayout();
         }
     }
 
     public void setMaxHeight(int i) {
-        if (this.f746c != i) {
-            this.f746c = i;
+        if (this.maxHeight != i) {
+            this.maxHeight = i;
             requestLayout();
         }
     }
 
     public boolean getResizeLayoutForSoftInput() {
-        return this.f747d;
+        return this.resizeLayoutForSoftInput;
     }
 
-    public void setResizeLayoutForSoftInput(boolean z) {
-        if (this.f747d != z) {
-            this.f747d = z;
+    public void setResizeLayoutForSoftInput(boolean resizeLayoutForSoftInput) {
+        if (this.resizeLayoutForSoftInput != resizeLayoutForSoftInput) {
+            this.resizeLayoutForSoftInput = resizeLayoutForSoftInput;
             cj a = cj.m1764a(getContext());
-            if (this.f747d) {
+            if (this.resizeLayoutForSoftInput) {
                 if (this.f748e == null) {
                     this.f748e = new C0381e(this);
                     a.m1774a(this.f748e);
@@ -65,25 +65,26 @@ public class BoxView extends FrameLayout {
         }
     }
 
-    protected void onMeasure(int i, int i2) {
-        int size = MeasureSpec.getSize(i);
-        int size2 = MeasureSpec.getSize(i2);
-        switch (MeasureSpec.getMode(i)) {
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int size = MeasureSpec.getSize(widthMeasureSpec);
+        int size2 = MeasureSpec.getSize(heightMeasureSpec);
+        switch (MeasureSpec.getMode(widthMeasureSpec)) {
             case Integer.MIN_VALUE:
-                if (this.f745b >= 0) {
-                    i = MeasureSpec.makeMeasureSpec(Math.min(this.f745b, size), MeasureSpec.AT_MOST);
+                if (this.maxWidth >= 0) {
+                    widthMeasureSpec = MeasureSpec.makeMeasureSpec(Math.min(this.maxWidth, size), MeasureSpec.AT_MOST);
                     break;
                 }
                 break;
             case 0:
-                if (this.f745b >= 0) {
-                    i = MeasureSpec.makeMeasureSpec(this.f745b, MeasureSpec.AT_MOST);
+                if (this.maxWidth >= 0) {
+                    widthMeasureSpec = MeasureSpec.makeMeasureSpec(this.maxWidth, MeasureSpec.AT_MOST);
                     break;
                 }
                 break;
             case 1073741824:
-                if (this.f745b >= 0) {
-                    i = MeasureSpec.makeMeasureSpec(Math.min(this.f745b, size), MeasureSpec.EXACTLY);
+                if (this.maxWidth >= 0) {
+                    widthMeasureSpec = MeasureSpec.makeMeasureSpec(Math.min(this.maxWidth, size), MeasureSpec.EXACTLY);
                     break;
                 }
                 break;
@@ -93,22 +94,22 @@ public class BoxView extends FrameLayout {
                 }
                 break;
         }
-        switch (MeasureSpec.getMode(i2)) {
+        switch (MeasureSpec.getMode(heightMeasureSpec)) {
             case Integer.MIN_VALUE:
-                if (this.f746c >= 0) {
-                    i2 = MeasureSpec.makeMeasureSpec(Math.min(this.f746c, size2), MeasureSpec.AT_MOST);
+                if (this.maxHeight >= 0) {
+                    heightMeasureSpec = MeasureSpec.makeMeasureSpec(Math.min(this.maxHeight, size2), MeasureSpec.AT_MOST);
                     break;
                 }
                 break;
             case 0:
-                if (this.f746c >= 0) {
-                    i2 = MeasureSpec.makeMeasureSpec(this.f746c, MeasureSpec.AT_MOST);
+                if (this.maxHeight >= 0) {
+                    heightMeasureSpec = MeasureSpec.makeMeasureSpec(this.maxHeight, MeasureSpec.AT_MOST);
                     break;
                 }
                 break;
             case 1073741824:
-                if (this.f746c >= 0) {
-                    i2 = MeasureSpec.makeMeasureSpec(Math.min(this.f746c, size2), MeasureSpec.EXACTLY);
+                if (this.maxHeight >= 0) {
+                    heightMeasureSpec = MeasureSpec.makeMeasureSpec(Math.min(this.maxHeight, size2), MeasureSpec.EXACTLY);
                     break;
                 }
                 break;
@@ -118,11 +119,12 @@ public class BoxView extends FrameLayout {
                 }
                 break;
         }
-        super.onMeasure(i, i2);
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
-    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        if (this.f747d) {
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        if (this.resizeLayoutForSoftInput) {
             cj a = cj.m1764a(getContext());
             if (a.m1775a()) {
                 Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
@@ -133,14 +135,15 @@ public class BoxView extends FrameLayout {
                     int height = getHeight() - max;
                     measure(MeasureSpec.makeMeasureSpec(getWidth(), 1073741824), MeasureSpec.makeMeasureSpec(height, 1073741824));
                     setMeasuredDimension(getWidth(), getHeight());
-                    super.onLayout(true, i, i2, i3, i2 + height);
+                    super.onLayout(true, left, top, right, bottom + height);
                     return;
                 }
             }
         }
-        super.onLayout(z, i, i2, i3, i4);
+        super.onLayout(changed, left, top, right, bottom);
     }
 
+    @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         if (this.f748e != null) {
@@ -148,6 +151,7 @@ public class BoxView extends FrameLayout {
         }
     }
 
+    @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         if (this.f748e != null) {

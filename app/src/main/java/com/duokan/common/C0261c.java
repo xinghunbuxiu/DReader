@@ -9,14 +9,14 @@ import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 
-/* renamed from: com.duokan.common.c */
+
 public class C0261c {
-    /* renamed from: a */
+    
     private RandomAccessFile f438a = null;
-    /* renamed from: b */
+    
     private String f439b = null;
 
-    /* renamed from: a */
+    
     boolean m590a(String str) {
         try {
             this.f438a = new RandomAccessFile(str, "r");
@@ -31,27 +31,27 @@ public class C0261c {
         }
     }
 
-    /* renamed from: a */
+    
     static int m571a(byte b) {
         return b & 255;
     }
 
-    /* renamed from: a */
+    
     static int m572a(byte b, byte b2) {
         return (C0261c.m571a(b) << 8) | C0261c.m571a(b2);
     }
 
-    /* renamed from: a */
+    
     static int m573a(byte b, byte b2, byte b3, byte b4) {
         return ((C0261c.m571a(b) << 24) | ((C0261c.m571a(b2) << 16) | (C0261c.m571a(b3) << 8))) | C0261c.m571a(b4);
     }
 
-    /* renamed from: a */
+    
     static int m574a(byte[] bArr, int i) {
         return C0261c.m573a(bArr[i], bArr[i + 1], bArr[i + 2], bArr[i + 3]);
     }
 
-    /* renamed from: a */
+    
     long m587a() {
         try {
             return this.f438a.getFilePointer();
@@ -61,7 +61,7 @@ public class C0261c {
         }
     }
 
-    /* renamed from: a */
+    
     int m586a(byte[] bArr) {
         try {
             return this.f438a.read(bArr);
@@ -71,7 +71,7 @@ public class C0261c {
         }
     }
 
-    /* renamed from: b */
+    
     void m593b() {
         try {
             this.f438a.close();
@@ -80,7 +80,7 @@ public class C0261c {
         }
     }
 
-    /* renamed from: a */
+    
     void m589a(long j) {
         try {
             this.f438a.seek(j);
@@ -93,7 +93,7 @@ public class C0261c {
         }
     }
 
-    /* renamed from: b */
+    
     public String m592b(String str) {
         if (!m590a(str)) {
             return null;
@@ -111,7 +111,7 @@ public class C0261c {
             c0264f.f449b = C0261c.m572a(bArr[0], bArr[1]);
             c0264f.f450c = C0261c.m572a(bArr[2], bArr[3]);
             c0264f.f448a = C0261c.m572a(bArr[4], bArr[5]);
-            String a = C0267i.m601a(str);
+            String a = CommonUtils.m601a(str);
             Object obj = null;
             if (a != null && a.equalsIgnoreCase("ttf")) {
                 obj = 1;
@@ -180,7 +180,7 @@ public class C0261c {
         }
     }
 
-    /* renamed from: b */
+    
     private String m576b(byte[] bArr, int i) {
         try {
             return new String(bArr, 0, i, m594c());
@@ -190,12 +190,12 @@ public class C0261c {
         }
     }
 
-    /* renamed from: c */
+    
     String m594c() {
         return this.f439b;
     }
 
-    /* renamed from: a */
+    
     String m588a(C0262d c0262d, byte[] bArr) {
         String b;
         if (c0262d.f440a == 3) {
@@ -213,7 +213,7 @@ public class C0261c {
         }
     }
 
-    /* renamed from: b */
+    
     String m591b(C0262d c0262d, byte[] bArr) {
         if (c0262d.f440a != 3) {
             return null;
@@ -224,7 +224,7 @@ public class C0261c {
         return m578b(bArr) ? m580d() : m594c();
     }
 
-    /* renamed from: c */
+    
     String m595c(C0262d c0262d, byte[] bArr) {
         if (c0262d.f440a != 1) {
             return null;
@@ -241,7 +241,7 @@ public class C0261c {
         return m578b(bArr) ? m582e() : m594c();
     }
 
-    /* renamed from: b */
+    
     private boolean m578b(byte[] bArr) {
         try {
             Charset.forName("UTF-16BE").newDecoder().decode(ByteBuffer.wrap(bArr));
@@ -251,32 +251,32 @@ public class C0261c {
         }
     }
 
-    /* renamed from: d */
+    
     private String m580d() {
         return "UTF-16BE";
     }
 
-    /* renamed from: e */
+    
     private String m582e() {
         return "ucs-2";
     }
 
-    /* renamed from: f */
+    
     private String m583f() {
         return "GBK";
     }
 
-    /* renamed from: g */
+    
     private String m584g() {
         return "Big5";
     }
 
-    /* renamed from: h */
+    
     private String m585h() {
         return "iso-2022-jp";
     }
 
-    /* renamed from: a */
+    
     private boolean m575a(C0262d c0262d) {
         if (c0262d.f440a == 3 && c0262d.f442c == 2052) {
             return true;
@@ -287,7 +287,7 @@ public class C0261c {
         return false;
     }
 
-    /* renamed from: b */
+    
     private boolean m577b(C0262d c0262d) {
         if (c0262d.f440a == 3 && c0262d.f442c == 1028) {
             return true;
@@ -298,7 +298,7 @@ public class C0261c {
         return false;
     }
 
-    /* renamed from: c */
+    
     private boolean m579c(C0262d c0262d) {
         if ((c0262d.f442c == 1033 && c0262d.f440a == 3) || c0262d.f442c == 0 || c0262d.f440a == 1) {
             return true;
@@ -306,7 +306,7 @@ public class C0261c {
         return false;
     }
 
-    /* renamed from: d */
+    
     private boolean m581d(C0262d c0262d) {
         if ((c0262d.f442c == 1041 && c0262d.f440a == 3) || c0262d.f442c == 11 || c0262d.f440a == 1) {
             return true;

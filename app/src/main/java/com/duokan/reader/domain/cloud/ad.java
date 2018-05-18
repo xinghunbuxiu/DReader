@@ -45,7 +45,7 @@ class ad extends WebSession {
     }
 
     protected void onSessionTry() {
-        this.f3653a = new C0636j(this, this.f3654b).m2876a(this.f3662j.f3595c.getString(C0247i.app__shared__build_name) + " " + ReaderEnv.get().getVersionName(), this.f3656d.m4156I(), this.f3656d.ay(), this.f3656d.m4242o() == BookType.SERIAL ? "LianZai" : this.f3656d.m4157J(), String.format("(%d, %d, %d)", new Object[]{Long.valueOf(this.f3655c.m6780g()), Long.valueOf(this.f3655c.m6781h()), Long.valueOf(this.f3655c.m6782i())}), this.f3657e, this.f3658f, this.f3659g, this.f3660h, this.f3654b.f2362c);
+        this.f3653a = new C0636j(this, this.f3654b).m2876a(this.f3662j.f3595c.getString(C0247i.app__shared__build_name) + " " + ReaderEnv.get().getVersionName(), this.f3656d.getId(), this.f3656d.ay(), this.f3656d.m4242o() == BookType.SERIAL ? "LianZai" : this.f3656d.m4157J(), String.format("(%d, %d, %d)", new Object[]{Long.valueOf(this.f3655c.m6780g()), Long.valueOf(this.f3655c.m6781h()), Long.valueOf(this.f3655c.m6782i())}), this.f3657e, this.f3658f, this.f3659g, this.f3660h, this.f3654b.f2362c);
     }
 
     protected void onSessionSucceeded() {

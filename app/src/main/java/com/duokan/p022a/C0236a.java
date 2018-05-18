@@ -19,13 +19,13 @@ import java.util.Enumeration;
 import org.apache.http.HttpHost;
 import org.json.JSONObject;
 
-/* renamed from: com.duokan.a.a */
+
 public class C0236a extends WebSession {
-    /* renamed from: a */
-    Context f374a;
+    
+    Context context;
 
     public C0236a(Context context) {
-        this.f374a = context;
+        this.context = context;
     }
 
     protected void onSessionTry() {
@@ -48,7 +48,7 @@ public class C0236a extends WebSession {
     protected void onSessionFailed() {
     }
 
-    /* renamed from: a */
+    
     protected void m538a() {
         if (!shouldBreak() && DkApp.get().forCommunity()) {
             m535a("--- profile ---", new Object[0]);
@@ -60,7 +60,7 @@ public class C0236a extends WebSession {
         }
     }
 
-    /* renamed from: a */
+    
     protected void m539a(String str, boolean z, boolean z2) {
         m535a("--- %s ---", str);
         String b = m540b(str);
@@ -74,7 +74,7 @@ public class C0236a extends WebSession {
         m535a("", new Object[0]);
     }
 
-    /* renamed from: b */
+    
     protected void m541b() {
         if (!shouldBreak()) {
             m535a("--- client ip ---", new Object[0]);
@@ -106,7 +106,7 @@ public class C0236a extends WebSession {
         }
     }
 
-    /* renamed from: c */
+    
     protected void m542c() {
         if (!shouldBreak()) {
             m535a("--- time ---", new Object[0]);
@@ -124,7 +124,7 @@ public class C0236a extends WebSession {
         }
     }
 
-    /* renamed from: a */
+    
     protected int m537a(String str, boolean z) {
         String str2 = z ? "https" : HttpHost.DEFAULT_SCHEME_NAME;
         try {
@@ -138,12 +138,12 @@ public class C0236a extends WebSession {
         }
     }
 
-    /* renamed from: a */
+    
     protected int m536a(String str) {
         return execute(new C0626c().m2856b(str).m2851a()).mo812a();
     }
 
-    /* renamed from: b */
+    
     protected String m540b(String str) {
         String str2 = null;
         if (!shouldBreak()) {
@@ -158,7 +158,7 @@ public class C0236a extends WebSession {
         return str2;
     }
 
-    /* renamed from: c */
+    
     protected void m543c(String str) {
         if (str != null && str.length() != 0 && !shouldBreak()) {
             m535a("traceroute %s", str);
@@ -203,7 +203,7 @@ public class C0236a extends WebSession {
         }
     }
 
-    /* renamed from: d */
+    
     protected void m544d() {
         if (!shouldBreak()) {
             m535a("--- account ---", new Object[0]);
@@ -240,7 +240,7 @@ public class C0236a extends WebSession {
         }
     }
 
-    /* renamed from: a */
+    
     private void m535a(String str, Object... objArr) {
         if (!shouldBreak()) {
             if (objArr.length == 0) {
@@ -251,7 +251,7 @@ public class C0236a extends WebSession {
         }
     }
 
-    /* renamed from: a */
+    
     private void m534a(Exception exception) {
         m535a(exception.toString(), new Object[0]);
     }

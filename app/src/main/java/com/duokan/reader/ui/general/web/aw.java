@@ -28,7 +28,7 @@ class aw implements im {
 
     /* renamed from: a */
     public void mo1021a(C0800c c0800c) {
-        DkCloudStorage.m4994a().m5014a(c0800c.m4156I(), new ax(this, c0800c));
+        DkCloudStorage.m4994a().m5014a(c0800c.getId(), new ax(this, c0800c));
     }
 
     /* renamed from: a */

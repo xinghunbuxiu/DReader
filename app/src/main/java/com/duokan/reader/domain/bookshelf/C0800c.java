@@ -283,7 +283,7 @@ public abstract class C0800c extends an {
     
     public final String m4231h() {
         if (TextUtils.isEmpty(this.f2896F)) {
-            Object I = m4156I();
+            Object I = getId();
             if (TextUtils.isEmpty(I)) {
                 this.f2896F = "";
             } else {
@@ -813,7 +813,7 @@ public abstract class C0800c extends an {
     }
 
     
-    public final String m4156I() {
+    public final String getId() {
         try {
             aV().mo1091a(aH());
             if (TextUtils.isEmpty(this.f2920q)) {
@@ -1047,7 +1047,7 @@ public abstract class C0800c extends an {
             aN();
             aD();
             if (ak()) {
-                I = m4156I();
+                I = getId();
             } else {
                 I = ay();
             }
@@ -1617,7 +1617,7 @@ public abstract class C0800c extends an {
             if (aq() == 3) {
                 f = am().m4686f();
             } else {
-                f = m4156I();
+                f = getId();
                 aV().mo1097b(aH());
             }
             return f;
@@ -1775,7 +1775,7 @@ public abstract class C0800c extends an {
             }
             StringBuffer stringBuffer = new StringBuffer();
             stringBuffer.append(ay()).append(".").append(mo1039q().name());
-            DkCloudStorage.m4994a().m5012a(new DkCloudReadingInfo(m4156I(), stringBuffer.toString(), ak(), m4160M(), ReaderEnv.get().getDeviceId(), m4157J(), ah.m6500e().m6501a(), dkCloudReadingProgress, dkCloudAnnotationArr), TextUtils.isEmpty(m4162O()) ? ConflictStrategy.TAKE_SERVER_VERSION : ConflictStrategy.MERGE, m4162O(), z, new C0810h(this, c0801y, z));
+            DkCloudStorage.m4994a().m5012a(new DkCloudReadingInfo(getId(), stringBuffer.toString(), ak(), m4160M(), ReaderEnv.get().getDeviceId(), m4157J(), ah.m6500e().m6501a(), dkCloudReadingProgress, dkCloudAnnotationArr), TextUtils.isEmpty(m4162O()) ? ConflictStrategy.TAKE_SERVER_VERSION : ConflictStrategy.MERGE, m4162O(), z, new C0810h(this, c0801y, z));
             return;
         }
         c0801y.mo1001a(this, false);
@@ -1977,19 +1977,19 @@ public abstract class C0800c extends an {
             contentValues.put(Column.ADDED_DATE.toString(), Long.valueOf(m4148A()));
             contentValues.put(Column.ADDED_FROM.toString(), m4149B());
             contentValues.put(Column.BOOK_NAME.toString(), ay());
-            contentValues.put(Column.BOOK_UUID.toString(), m4156I());
+            contentValues.put(Column.BOOK_UUID.toString(), getId());
             contentValues.put(Column.BOOK_URI.toString(), m4225f());
             contentValues.put(Column.ONLINE_COVER_URI.toString(), m4228g());
             contentValues.put(Column.BOOK_FORMAT.toString(), mo1039q().toString());
             contentValues.put(Column.FILE_SIZE.toString(), Long.valueOf(m4151D()));
             contentValues.put(Column.AUTHOR.toString(), m4150C());
             contentValues.put(Column.BOOK_DETAIL.toString(), m4248t().toString());
-            contentValues.put(Column.BOOK_UUID.toString(), m4156I());
+            contentValues.put(Column.BOOK_UUID.toString(), getId());
             contentValues.put(Column.BOOK_REVISION.toString(), m4157J());
             contentValues.put(Column.LAST_REVISION.toString(), m4158K());
             contentValues.put(Column.BOOK_CONTENT.toString(), m4246r().toString());
             contentValues.put(Column.PACKAGE_TYPE.toString(), m4247s().toString());
-            if (!TextUtils.isEmpty(m4156I())) {
+            if (!TextUtils.isEmpty(getId())) {
                 try {
                     JSONObject jSONObject = new JSONObject();
                     jSONObject.put("local_reading_info_version", m4160M());
@@ -2066,7 +2066,7 @@ public abstract class C0800c extends an {
         }
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append(ay()).append(".").append(mo1039q().name());
-        DkCloudStorage.m4994a().m5010a((int) (m4152E().f3449e * 100.0f), m4155H(), new DkCloudReadingInfo(m4156I(), stringBuffer.toString(), ak(), m4160M(), ReaderEnv.get().getDeviceId(), m4157J(), ah.m6500e().m6501a(), dkCloudReadingProgress, dkCloudAnnotationArr), ConflictStrategy.MERGE, m4162O(), new C0816k(this, avVar));
+        DkCloudStorage.m4994a().m5010a((int) (m4152E().f3449e * 100.0f), m4155H(), new DkCloudReadingInfo(getId(), stringBuffer.toString(), ak(), m4160M(), ReaderEnv.get().getDeviceId(), m4157J(), ah.m6500e().m6501a(), dkCloudReadingProgress, dkCloudAnnotationArr), ConflictStrategy.MERGE, m4162O(), new C0816k(this, avVar));
     }
 
     

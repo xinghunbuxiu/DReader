@@ -11,7 +11,7 @@ import android.text.TextUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.model.LazyHeaders.Builder;
-import com.duokan.core.p027b.C0324a;
+import com.duokan.core.p027b.UrlTools;
 import org.apache.http.HttpHost;
 
 public class gl extends Drawable {
@@ -88,7 +88,7 @@ public class gl extends Drawable {
         if (!m10709b(str)) {
             m10710c(str);
             if (!TextUtils.isEmpty(this.f7289e)) {
-                if (C0324a.m735a(this.f7289e, HttpHost.DEFAULT_SCHEME_NAME, "https")) {
+                if (UrlTools.equalsIgnoreCase(this.f7289e, HttpHost.DEFAULT_SCHEME_NAME, "https")) {
                     m10706a(new GlideUrl(this.f7289e, new Builder().addHeader("Accept-Encoding", "gzip,deflate,sdch").build()));
                 } else {
                     m10706a(this.f7289e);
@@ -98,15 +98,15 @@ public class gl extends Drawable {
     }
 
     /* renamed from: a */
-    public final void m10719a(C1342n c1342n) {
-        if (TextUtils.isEmpty(c1342n.m10939a())) {
-            m10720a(c1342n.m10940b());
-        } else if (!m10709b(c1342n.m10940b())) {
-            m10710c(c1342n.m10940b());
+    public final void m10719a(CustomGlideUrl c1342n) {
+        if (TextUtils.isEmpty(c1342n.getId())) {
+            m10720a(c1342n.getSafeUrl());
+        } else if (!m10709b(c1342n.getSafeUrl())) {
+            m10710c(c1342n.getSafeUrl());
             if (!TextUtils.isEmpty(this.f7289e)) {
                 if (this.f7286b != null) {
                     Glide.with(this.f7287c).load((Object) c1342n).asBitmap().placeholder(this.f7286b).error(this.f7286b).into(this.f7298n);
-                } else if (!TextUtils.isEmpty(c1342n.m10940b()) || this.f7293i == null) {
+                } else if (!TextUtils.isEmpty(c1342n.getSafeUrl()) || this.f7293i == null) {
                     Glide.with(this.f7287c).load((Object) c1342n).asBitmap().into(this.f7298n);
                 } else {
                     this.f7293i.mo1790b(this);

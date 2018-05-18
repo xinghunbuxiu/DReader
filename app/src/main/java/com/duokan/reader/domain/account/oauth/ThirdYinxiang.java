@@ -9,11 +9,6 @@ import com.duokan.core.app.ManagedApp;
 import com.duokan.p023b.C0247i;
 import com.duokan.reader.common.webservices.WebSession;
 import com.duokan.reader.common.webservices.duokan.p040a.C0624a;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth.DeleteHandler;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth.OAuthCallback;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth.QueryAccountListener;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth.ResponseHandleResult;
-import com.duokan.reader.domain.account.oauth.ThirdOAuth.UpdateHandler;
 import com.duokan.reader.domain.account.oauth.evernote.Evernote;
 import com.duokan.reader.domain.account.oauth.evernote.EvernoteCallback;
 import com.duokan.reader.domain.account.oauth.evernote.EvernoteOAuthDialog;
@@ -189,7 +184,7 @@ public class ThirdYinxiang extends ThirdOAuth {
             objArr[4] = str2;
             stringBuffer.append(String.format(string, objArr));
         }
-        stringBuffer.append(String.format(getActivity().getString(C0247i.reading__shared__foot), new Object[]{c0800c.m4156I()}));
+        stringBuffer.append(String.format(getActivity().getString(C0247i.reading__shared__foot), new Object[]{c0800c.getId()}));
         return stringBuffer.toString();
     }
 

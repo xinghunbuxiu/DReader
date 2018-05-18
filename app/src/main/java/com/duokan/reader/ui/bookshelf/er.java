@@ -3,9 +3,9 @@ package com.duokan.reader.ui.bookshelf;
 import com.duokan.reader.domain.bookshelf.C0800c;
 import com.duokan.reader.domain.bookshelf.ai;
 import com.duokan.reader.ui.general.ak;
-import com.duokan.reader.ui.general.an;
+import com.duokan.reader.ui.general.OnButtonClickedListener;
 
-class er implements an {
+class er implements OnButtonClickedListener {
     /* renamed from: a */
     final /* synthetic */ ak f6401a;
     /* renamed from: b */

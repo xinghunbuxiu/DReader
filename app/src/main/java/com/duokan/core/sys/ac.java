@@ -1,8 +1,8 @@
 package com.duokan.core.sys;
 
-import com.duokan.core.p029c.C0326b;
+import com.duokan.core.p029c.IRunTask;
 
-class ac implements C0326b<ae> {
+class ac implements IRunTask<ae> {
     /* renamed from: a */
     final /* synthetic */ Runnable f627a;
     /* renamed from: b */

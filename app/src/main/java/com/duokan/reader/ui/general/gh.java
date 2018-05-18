@@ -9,8 +9,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import com.duokan.common.C0267i;
-import com.duokan.core.ui.C0342j;
+import com.duokan.common.CommonUtils;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.p023b.C0240b;
 import com.duokan.p023b.C0241c;
 import com.duokan.p023b.C0243e;
@@ -20,7 +20,7 @@ import com.duokan.p023b.C0247i;
 
 public class gh implements dq {
     /* renamed from: a */
-    private final C0342j f7274a;
+    private final BaseDialog f7274a;
     /* renamed from: b */
     private final Context f7275b;
     /* renamed from: c */
@@ -80,7 +80,7 @@ public class gh implements dq {
         DkLabelView dkLabelView = (DkLabelView) inflate.findViewById(C0244f.general__shared_spirt_menu_item_view__text);
         if (i != 0) {
             dkLabelView.setCompoundDrawablesWithIntrinsicBounds(m10691d().getResources().getDrawable(i), null, null, null);
-            dkLabelView.setCompoundDrawablePadding(C0267i.m598a(m10691d(), 10.0f));
+            dkLabelView.setCompoundDrawablePadding(CommonUtils.dip2px(m10691d(), 10.0f));
         }
         if (!z) {
             inflate.findViewById(C0244f.general__shared_spirt_menu_item_view__top_line).setVisibility(8);

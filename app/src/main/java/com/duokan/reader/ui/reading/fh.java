@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
@@ -103,7 +103,7 @@ public class fh extends wx {
         }
         adm adm = new adm(getContext(), drawable);
         LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2, 1.0f);
-        int a = C0267i.m598a(getContext(), 8.0f);
+        int a = CommonUtils.dip2px(getContext(), 8.0f);
         adm.setPadding(a, 0, a, 0);
         adm.setLayoutParams(layoutParams);
         adm.setOnClickListener(new fi(this, i));
@@ -114,7 +114,7 @@ public class fh extends wx {
     private final adm m14058b(int i) {
         adm adm = new adm(getContext(), this.f10141a.ae().m12484c(this.f10143c[i]));
         LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2, 1.0f);
-        int a = C0267i.m598a(getContext(), 8.0f);
+        int a = CommonUtils.dip2px(getContext(), 8.0f);
         adm.setPadding(a, 0, a, 0);
         adm.setLayoutParams(layoutParams);
         adm.setOnClickListener(new fj(this, i));
@@ -124,7 +124,7 @@ public class fh extends wx {
     /* renamed from: b */
     private View m14057b() {
         View fdVar = new fd(getContext(), this.f10141a.mo1998O(), this.f10141a.mo1999P());
-        int a = C0267i.m598a(getContext(), 8.0f);
+        int a = CommonUtils.dip2px(getContext(), 8.0f);
         fdVar.setPadding(a, 0, a, 0);
         fdVar.setLayoutParams(new LinearLayout.LayoutParams(-2, -2, 1.0f));
         fdVar.setOnClickListener(new fk(this));

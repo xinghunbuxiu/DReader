@@ -9,7 +9,7 @@ import android.webkit.JsResult;
 import android.webkit.WebBackForwardList;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.sys.UThread;
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.core.ui.fr;
 import com.duokan.p024c.C0255g;
 import com.duokan.p024c.C0256h;
@@ -96,8 +96,8 @@ public abstract class lj extends gs implements li {
         }
     }
 
-    public C0342j js_showDialog(String str, String str2, String str3, String str4, Runnable runnable, Runnable runnable2) {
-        C0342j lkVar = new lk(this, getContext(), runnable, runnable2);
+    public BaseDialog js_showDialog(String str, String str2, String str3, String str4, Runnable runnable, Runnable runnable2) {
+        BaseDialog lkVar = new lk(this, getContext(), runnable, runnable2);
         if (!TextUtils.isEmpty(str)) {
             lkVar.setTitle(str);
         }

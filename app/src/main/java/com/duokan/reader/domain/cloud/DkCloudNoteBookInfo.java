@@ -1,7 +1,7 @@
 package com.duokan.reader.domain.cloud;
 
 import android.text.TextUtils;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.reader.common.webservices.duokan.DkAnnotationBookInfo;
 import java.util.Date;
 import org.apache.http.cookie.ClientCookie;
@@ -22,8 +22,8 @@ public class DkCloudNoteBookInfo extends DkCloudJsonItem {
             this.mBookTitle = this.mBookInfo.mBookName;
             this.mBookFormat = "";
         } else {
-            this.mBookTitle = C0267i.m607b(this.mBookInfo.mBookName);
-            this.mBookFormat = C0267i.m601a(this.mBookInfo.mBookName).toUpperCase();
+            this.mBookTitle = CommonUtils.m607b(this.mBookInfo.mBookName);
+            this.mBookFormat = CommonUtils.m601a(this.mBookInfo.mBookName).toUpperCase();
         }
         this.mIsDuokanBook = z;
     }

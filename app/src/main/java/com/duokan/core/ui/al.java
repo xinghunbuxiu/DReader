@@ -53,9 +53,9 @@ class al extends bh {
         }
         int min = Math.min(0, m1553k().top);
         if (Float.compare(((float) getViewportBounds().top) - f4, (float) min) >= 0) {
-            super.m1518b(this.f961a.f919b.f824n);
+            super.setVerticalOverScrollMode(this.f961a.f919b.f824n);
         } else if (Float.compare(((float) getViewportBounds().top) - f4, (float) min) < 0 && this.f961a.f919b.f832v) {
-            super.m1518b(OverScrollMode.ALWAYS);
+            super.setVerticalOverScrollMode(OverScrollMode.ALWAYS);
         }
         super.mo501a(f3, f4);
     }

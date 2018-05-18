@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
 import com.duokan.p023b.C0247i;
@@ -47,6 +47,6 @@ public class ab extends FrameLayout {
             d = d2;
         }
         d = Math.floor(d * 10.0d) / 10.0d;
-        this.f8242c.setText(getResources().getString(C0247i.bookshelf__upload_books_view__storage_quota_used, new Object[]{C0267i.m599a(bjVar.f5251a)}) + String.format("%1$.1f%%", new Object[]{Double.valueOf(d)}));
+        this.f8242c.setText(getResources().getString(C0247i.bookshelf__upload_books_view__storage_quota_used, new Object[]{CommonUtils.m599a(bjVar.f5251a)}) + String.format("%1$.1f%%", new Object[]{Double.valueOf(d)}));
     }
 }

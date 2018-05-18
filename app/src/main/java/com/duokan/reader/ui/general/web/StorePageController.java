@@ -9,7 +9,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.CookieManager;
 import android.widget.TextView;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.core.app.ApplicationsStateCallbacks;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.AppContext;
@@ -17,12 +17,12 @@ import com.duokan.core.app.AppManage;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.diagnostic.WebLog;
-import com.duokan.core.p027b.C0324a;
+import com.duokan.core.p027b.UrlTools;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.C0373z;
 import com.duokan.core.sys.af;
 import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.core.ui.PullDownRefreshView.RefreshStyle;
 import com.duokan.core.ui.Scrollable.OverScrollMode;
 import com.duokan.core.ui.AnimUtils;
@@ -107,7 +107,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     protected final ao mDetailFeature;
     private C1482f mEditCommentDialog;
     private C1214a mEditFeedController;
-    protected C0342j mErrorDialog;
+    protected BaseDialog mErrorDialog;
     protected final View mErrorView;
     private final ConcurrentHashMap<String, CopyOnWriteArrayList<String>> mEventListMap;
     protected DkStoreFictionDetail mFictionCache;
@@ -643,15 +643,15 @@ public class StorePageController extends StoreWebController implements SystemUiC
             web_notifyWeb(str, 0, Mipay.KEY_RESULT, Integer.valueOf(0));
         } else if (((double) dkStoreBookDetail.getHighSize()) * 0.8d <= ((double) dkStoreBookDetail.getLowSize()) || dkStoreBookDetail.getLowSize() <= 0) {
             com.duokan.reader.ui.general.ap apVar = new com.duokan.reader.ui.general.ap(getContext());
-            apVar.setPrompt(String.format(getContext().getResources().getString(C0258j.reading__shared__download_prompt), new Object[]{C0267i.m599a(dkStoreBookDetail.getHighSize())}));
+            apVar.setPrompt(String.format(getContext().getResources().getString(C0258j.reading__shared__download_prompt), new Object[]{CommonUtils.m599a(dkStoreBookDetail.getHighSize())}));
             apVar.setCancelLabel(C0258j.general__shared__cancel);
             apVar.setOkLabelResid(C0258j.general__shared__ok);
             apVar.open(new au(this, fpVar, str));
         } else {
             hp hpVar = new hp(getContext());
             hpVar.m9768a(getContext().getResources().getString(C0258j.reading__shared__download_prompt1));
-            hpVar.m9770b(String.format(getContext().getResources().getString(C0258j.reading__shared__low_quality), new Object[]{C0267i.m599a(dkStoreBookDetail.getLowSize())}));
-            hpVar.m9770b(String.format(getContext().getResources().getString(C0258j.reading__shared__high_quality), new Object[]{C0267i.m599a(dkStoreBookDetail.getHighSize())}));
+            hpVar.m9770b(String.format(getContext().getResources().getString(C0258j.reading__shared__low_quality), new Object[]{CommonUtils.m599a(dkStoreBookDetail.getLowSize())}));
+            hpVar.m9770b(String.format(getContext().getResources().getString(C0258j.reading__shared__high_quality), new Object[]{CommonUtils.m599a(dkStoreBookDetail.getHighSize())}));
             hpVar.m9767a(new ce(this, fpVar, str));
             hpVar.open(new at(this, str));
         }
@@ -666,7 +666,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
         } else if (TextUtils.equals(str2, "NORMAL")) {
             downloadChapter(fpVar, str, dkStoreBookDetail);
         } else if (TextUtils.equals(str2, "UPDATING")) {
-            DkCloudStorage.m4994a().m5014a(fpVar.m4156I(), new av(this, fpVar, str));
+            DkCloudStorage.m4994a().m5014a(fpVar.getId(), new av(this, fpVar, str));
         }
     }
 
@@ -708,7 +708,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
 
     protected void registerEventOnCurrentUrl(String str) {
         if (!TextUtils.isEmpty(str)) {
-            Uri a = C0324a.m734a(getCurrentUrl());
+            Uri a = UrlTools.parse(getCurrentUrl());
             if (a != null && a.getPath() != null) {
                 String path = a.getPath();
                 if (!this.mEventListMap.containsKey(path)) {
@@ -723,7 +723,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
 
     protected void unregisterEventOnCurrentUrl(String str) {
         if (!TextUtils.isEmpty(str)) {
-            Uri a = C0324a.m734a(getCurrentUrl());
+            Uri a = UrlTools.parse(getCurrentUrl());
             if (a != null && a.getPath() != null) {
                 String path = a.getPath();
                 if (this.mEventListMap.containsKey(path)) {
@@ -739,7 +739,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     protected boolean triggerEventOnCurrentUrl(String str, Object obj) {
-        Uri a = C0324a.m734a(getCurrentUrl());
+        Uri a = UrlTools.parse(getCurrentUrl());
         if (a == null || a.getPath() == null) {
             return false;
         }
@@ -757,7 +757,7 @@ public class StorePageController extends StoreWebController implements SystemUiC
     }
 
     protected boolean broadcastEvent(String str, String str2) {
-        Uri a = C0324a.m734a(getCurrentUrl());
+        Uri a = UrlTools.parse(getCurrentUrl());
         if (a == null || a.getPath() == null) {
             return false;
         }

@@ -114,13 +114,13 @@ public class C1343o implements go {
                     if (TextUtils.isEmpty(this.f7540d)) {
                         break;
                     }
-                    this.f7542f.m10719a(new C1342n(this.f7545i, this.f7540d));
+                    this.f7542f.m10719a(new CustomGlideUrl(this.f7545i, this.f7540d));
                     return;
                 case 2:
                     if (TextUtils.isEmpty(this.f7541e)) {
                         break;
                     }
-                    this.f7542f.m10719a(new C1342n(this.f7545i, this.f7541e));
+                    this.f7542f.m10719a(new CustomGlideUrl(this.f7545i, this.f7541e));
                     return;
                 case 3:
                     if (!(TextUtils.isEmpty(this.f7538b) || this.f7546j == null || !TextUtils.isEmpty(this.f7541e))) {

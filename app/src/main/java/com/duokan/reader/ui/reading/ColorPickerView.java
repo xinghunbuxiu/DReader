@@ -17,7 +17,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.MeasureSpec;
+
 import com.duokan.p023b.C0243e;
 import com.duokan.reader.common.bitmap.C0544a;
 
@@ -160,7 +160,8 @@ public class ColorPickerView extends View {
         setMeasuredDimension(this.f9065d, this.f9064c);
     }
 
-    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         this.f9076o.y = (((float) (this.f9064c - (this.f9072k * 2))) * this.f9087z) + ((float) this.f9072k);
         Bitmap gradual = getGradual();
         for (int i5 = 0; i5 < gradual.getWidth(); i5++) {
@@ -169,12 +170,12 @@ public class ColorPickerView extends View {
                     this.f9075n.x = (float) (i5 + this.f9072k);
                     this.f9075n.y = (float) (this.f9072k + i6);
                     this.f9063b.setColor(this.f9083v);
-                    super.onLayout(z, i, i2, i3, i4);
+                    super.onLayout(changed, left, top, right, bottom);
                     return;
                 }
             }
         }
-        super.onLayout(z, i, i2, i3, i4);
+        super.onLayout(changed, left, top, right, bottom);
     }
 
     public boolean onTouchEvent(MotionEvent motionEvent) {

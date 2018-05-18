@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 import com.duokan.p023b.C0247i;
-import com.duokan.p030d.C0399a;
+import com.duokan.p030d.DownloadUtil;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.ad.C0748e;
 import com.duokan.reader.domain.ad.C0750g;
@@ -53,7 +53,7 @@ class C1452e implements OnClickListener {
                         this.f10059d.setText(C0247i.general__shared__downloading);
                     }
                     if (!ReaderEnv.get().onMiui()) {
-                        C0399a.m2174a(this.f10058c).m2177a(this.f10057b.f2531p, this.f10058c.getResources().getString(C0247i.general__shared__ad_download) + this.f10057b.f2534s, this.f10057b.f2533r);
+                        DownloadUtil.init(this.f10058c).downloadAPK(this.f10057b.f2531p, this.f10058c.getResources().getString(C0247i.general__shared__ad_download) + this.f10057b.f2534s, this.f10057b.f2533r);
                     }
                 } else if (!(this.f10059d == null || this.f10057b.f2523h != C0748e.f2517b || C0767x.m3611a(this.f10058c, this.f10057b.f2533r))) {
                     this.f10059d.setText(C0247i.general__shared__downloading);

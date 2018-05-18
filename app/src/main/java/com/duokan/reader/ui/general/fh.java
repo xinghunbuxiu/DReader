@@ -7,16 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.p023b.C0240b;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
 
 public class fh implements dq {
     /* renamed from: a */
-    private final C0342j f7219a;
+    private final BaseDialog f7219a;
     /* renamed from: b */
     private final View f7220b;
     /* renamed from: c */
@@ -28,20 +28,20 @@ public class fh implements dq {
     /* renamed from: f */
     private final ViewGroup f7224f = ((ViewGroup) this.f7220b.findViewById(C0244f.general__spirt_dialog_view__content_extra));
 
-    public fh(C0342j c0342j) {
-        this.f7219a = c0342j;
+    public fh(BaseDialog dialog) {
+        this.f7219a = dialog;
         Context context = this.f7219a.getContext();
         this.f7220b = LayoutInflater.from(context).inflate(C0245g.general__spirt_dialog_view_at_hd, null);
-        int c = C0267i.m609c(context);
-        int b = C0267i.m606b(context);
+        int c = CommonUtils.m609c(context);
+        int b = CommonUtils.m606b(context);
         if (b >= c) {
             b = c;
         }
         this.f7223e.setMaxHeight(Math.round(((float) b) * 0.7f));
-        c0342j.setContentView(this.f7220b, new LayoutParams(-2, -2));
-        c0342j.setEnterAnimation(C0240b.general__shared__scale_center_in);
-        c0342j.setExitAnimation(C0240b.general__shared__scale_center_out);
-        c0342j.setGravity(17);
+        dialog.setContentView(this.f7220b, new LayoutParams(-2, -2));
+        dialog.setEnterAnimation(C0240b.general__shared__scale_center_in);
+        dialog.setExitAnimation(C0240b.general__shared__scale_center_out);
+        dialog.setGravity(17);
     }
 
     /* renamed from: a */
@@ -74,7 +74,7 @@ public class fh implements dq {
         DkLabelView dkLabelView = (DkLabelView) inflate.findViewById(C0244f.general__shared_spirt_menu_item_view__text);
         if (i != 0) {
             dkLabelView.setCompoundDrawablesWithIntrinsicBounds(this.f7219a.getContext().getResources().getDrawable(i), null, null, null);
-            dkLabelView.setCompoundDrawablePadding(C0267i.m598a(this.f7219a.getContext(), 10.0f));
+            dkLabelView.setCompoundDrawablePadding(CommonUtils.dip2px(this.f7219a.getContext(), 10.0f));
         }
         dkLabelView.setText(str);
         return inflate;

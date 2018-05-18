@@ -9,18 +9,18 @@ import com.duokan.reader.common.webservices.duokan.p040a.C0627d;
 import java.util.Iterator;
 import org.apache.http.HttpHost;
 
-/* renamed from: com.duokan.reader.common.webservices.f */
+
 class C0654f implements Runnable {
-    /* renamed from: a */
+    
     public boolean f2196a = false;
-    /* renamed from: b */
+    
     public boolean f2197b = false;
-    /* renamed from: c */
+    
     public long f2198c = 0;
-    /* renamed from: d */
+    
     public final CacheStrategy f2199d;
-    /* renamed from: e */
-    final /* synthetic */ WebSession f2200e;
+    
+    final  WebSession f2200e;
 
     public C0654f(WebSession webSession, CacheStrategy cacheStrategy) {
         this.f2200e = webSession;

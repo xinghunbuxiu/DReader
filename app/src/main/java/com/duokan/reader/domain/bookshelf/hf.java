@@ -1,8 +1,8 @@
 package com.duokan.reader.domain.bookshelf;
 
-import com.duokan.core.p029c.C0326b;
+import com.duokan.core.p029c.IRunTask;
 
-class hf implements C0326b<C0800c> {
+class hf implements IRunTask<C0800c> {
     /* renamed from: a */
     final /* synthetic */ hc f3299a;
 

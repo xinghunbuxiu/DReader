@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.bookshelf;
 
 import android.content.Context;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.p024c.C0253e;
 import com.duokan.reader.domain.bookshelf.an;
 import java.util.List;
@@ -32,13 +32,13 @@ public class ea {
 
     /* renamed from: a */
     public static int m9503a(Context context) {
-        return m9504a(context, C0267i.m606b(context));
+        return m9504a(context, CommonUtils.m606b(context));
     }
 
     /* renamed from: a */
     public static int m9504a(Context context, int i) {
         int i2 = 0;
-        int a = C0267i.m598a(context, 15.0f);
+        int a = CommonUtils.dip2px(context, 15.0f);
         int dimension = ((int) context.getResources().getDimension(C0253e.general__shared__cover_grid_width)) + a;
         int i3 = i - (a * 2);
         int i4 = 0;

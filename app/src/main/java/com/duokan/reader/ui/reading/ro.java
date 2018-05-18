@@ -23,7 +23,7 @@ class ro implements im {
 
     /* renamed from: a */
     public void mo1021a(C0800c c0800c) {
-        C1167a.m8671d().m8683b(this.f10906a.m4156I(), this.f10906a.m4155H().f3455c);
+        C1167a.m8671d().m8683b(this.f10906a.getId(), this.f10906a.m4155H().f3455c);
         new rp(this, C0643q.f2173a, c0800c).open();
         if (c0800c.m4247s() == BookPackageType.EPUB_OPF) {
             c0800c.m4208b(new af(Boolean.valueOf(true)));

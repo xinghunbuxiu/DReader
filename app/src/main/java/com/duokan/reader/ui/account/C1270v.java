@@ -183,7 +183,7 @@ public class C1270v extends RelativeLayout {
             str2 = c0800c.ay();
             str3 = c0800c.m4150C();
             if (c0800c.ak()) {
-                str = c0800c.m4156I();
+                str = c0800c.getId();
             }
             z = true;
             str4 = str2;

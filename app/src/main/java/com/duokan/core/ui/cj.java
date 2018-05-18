@@ -11,44 +11,44 @@ import java.util.ListIterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class cj {
-    /* renamed from: a */
+    
     private static final LinkedList<WeakReference<cj>> f1077a = new LinkedList();
-    /* renamed from: b */
-    private final Activity f1078b;
-    /* renamed from: c */
+    
+    private final Activity activity;
+    
     private final cl f1079c;
-    /* renamed from: d */
+    
     private final Rect f1080d = new Rect();
-    /* renamed from: e */
+    
     private final CopyOnWriteArrayList<cm> f1081e = new CopyOnWriteArrayList();
 
     private cj(Activity activity) {
-        this.f1078b = AppManage.getCurrentActivity((Context) activity);
-        this.f1079c = new cl(this, this.f1078b);
+        this.activity = AppManage.getCurrentActivity(activity);
+        this.f1079c = new cl(this, this.activity);
         m1767c();
     }
 
-    /* renamed from: a */
+    
     public boolean m1775a() {
         return !this.f1080d.isEmpty();
     }
 
-    /* renamed from: b */
+    
     public Rect m1776b() {
         return this.f1080d;
     }
 
-    /* renamed from: a */
+    
     public void m1774a(cm cmVar) {
         this.f1081e.add(cmVar);
     }
 
-    /* renamed from: b */
+    
     public void m1777b(cm cmVar) {
         this.f1081e.remove(cmVar);
     }
 
-    /* renamed from: a */
+    
     public static cj m1764a(Context context) {
         cj cjVar;
         Activity a = AppManage.getCurrentActivity(context);
@@ -57,7 +57,7 @@ public class cj {
             cjVar = (cj) ((WeakReference) listIterator.next()).get();
             if (cjVar == null) {
                 listIterator.remove();
-            } else if (cjVar.f1078b == a) {
+            } else if (cjVar.activity == a) {
                 return cjVar;
             }
         }
@@ -66,13 +66,13 @@ public class cj {
         return cjVar;
     }
 
-    /* renamed from: c */
+    
     private void m1767c() {
-        AnimUtils.m1921a(this.f1078b.getWindow().getDecorView(), new ck(this));
-        this.f1078b.getWindow().getDecorView().requestLayout();
+        AnimUtils.m1921a(this.activity.getWindow().getDecorView(), new ck(this));
+        this.activity.getWindow().getDecorView().requestLayout();
     }
 
-    /* renamed from: d */
+    
     private void m1768d() {
         Iterator it = this.f1081e.iterator();
         while (it.hasNext()) {
@@ -80,7 +80,7 @@ public class cj {
         }
     }
 
-    /* renamed from: e */
+    
     private void m1770e() {
         Iterator it = this.f1081e.iterator();
         while (it.hasNext()) {
@@ -88,7 +88,7 @@ public class cj {
         }
     }
 
-    /* renamed from: f */
+    
     private void m1772f() {
         Iterator it = this.f1081e.iterator();
         while (it.hasNext()) {

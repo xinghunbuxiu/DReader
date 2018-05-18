@@ -3,7 +3,7 @@ package com.duokan.reader.ui.reading;
 import android.graphics.Rect;
 import android.view.LayoutInflater;
 import android.view.View;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.ui.C0394t;
@@ -54,7 +54,7 @@ public class yx extends ActivatedController {
         BubbleFloatingView a = m15221a();
         View irVar = new ir(getContext(), null);
         irVar.setScrollRightResource(C0254f.general__shared__arrow_right_13dip_ffffff);
-        irVar.m10808a(C0267i.m598a(getContext(), 10.0f), C0267i.m598a(getContext(), 10.0f), C0267i.m598a(getContext(), 10.0f), C0267i.m598a(getContext(), 10.0f));
+        irVar.m10808a(CommonUtils.dip2px(getContext(), 10.0f), CommonUtils.dip2px(getContext(), 10.0f), CommonUtils.dip2px(getContext(), 10.0f), CommonUtils.dip2px(getContext(), 10.0f));
         irVar.setScrollLeftResource(C0254f.general__shared__arrow_left_13dip_ffffff);
         irVar.setBackgroundResource(C0254f.reading__annotation_operator_view__bg2);
         View inflate = LayoutInflater.from(getContext()).inflate(C0256h.reading__menu_button_view, null);
@@ -64,7 +64,7 @@ public class yx extends ActivatedController {
         irVar.m10809a(inflate);
         a.m9925a(irVar, null);
         a.setBackgroundColor(0);
-        a.m9924a(0, C0267i.m598a(getContext(), 8.0f), 0, C0267i.m598a(getContext(), 8.0f));
+        a.m9924a(0, CommonUtils.dip2px(getContext(), 8.0f), 0, CommonUtils.dip2px(getContext(), 8.0f));
         a.setUpArrow(C0254f.reading__annotation_operator_view__up_arrow2);
         a.setDownArrow(C0254f.reading__annotation_operator_view__down_arrow2);
         a.setOnClickListener(new yz(this));

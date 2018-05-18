@@ -53,8 +53,8 @@ public class fr extends ViewGroup implements Scrollable {
         setAnimationCacheEnabled(false);
         setClipChildren(false);
         setClipToPadding(false);
-        this.f1262b.m1530c(true);
-        this.f1262b.m1534d(AnimUtils.m1962g(getContext()));
+        this.f1262b.setThumbEnabled(true);
+        this.f1262b.MaxOverScrollHeight(AnimUtils.getMaxOverScrollHeight(getContext()));
     }
 
     public final int getContentWidth() {
@@ -62,91 +62,91 @@ public class fr extends ViewGroup implements Scrollable {
     }
 
     public final int getContentHeight() {
-        return this.f1262b.m1562t();
+        return this.f1262b.getContentHeight();
     }
 
     public boolean getThumbEnabled() {
-        return this.f1262b.m1563u();
+        return this.f1262b.getThumbEnabled();
     }
 
     public void setThumbEnabled(boolean z) {
-        this.f1262b.m1530c(z);
+        this.f1262b.setThumbEnabled(z);
     }
 
     public boolean getSeekEnabled() {
-        return this.f1262b.m1564v();
+        return this.f1262b.getSeekEnabled();
     }
 
     public void setSeekEnabled(boolean z) {
-        this.f1262b.m1538d(z);
+        this.f1262b.setSeekEnabled(z);
     }
 
     public int getHorizontalThumbMarginLeft() {
-        return this.f1262b.m1565w();
+        return this.f1262b.getHorizontalThumbMarginLeft();
     }
 
     public int getHorizontalThumbMarginTop() {
-        return this.f1262b.m1566x();
+        return this.f1262b.getHorizontalThumbMarginTop();
     }
 
     public int getHorizontalThumbMarginRight() {
-        return this.f1262b.m1567y();
+        return this.f1262b.getHorizontalThumbMarginRight();
     }
 
     public int getHorizontalThumbMarginBottom() {
-        return this.f1262b.m1568z();
+        return this.f1262b.getHorizontalThumbMarginBottom();
     }
 
     public int getVerticalThumbMarginLeft() {
-        return this.f1262b.m1449A();
+        return this.f1262b.getVerticalThumbMarginLeft();
     }
 
     public int getVerticalThumbMarginTop() {
-        return this.f1262b.m1450B();
+        return this.f1262b.getVerticalThumbMarginTop();
     }
 
     public int getVerticalThumbMarginRight() {
-        return this.f1262b.m1451C();
+        return this.f1262b.getVerticalThumbMarginRight();
     }
 
     public int getVerticalThumbMarginBottom() {
-        return this.f1262b.m1452D();
+        return this.f1262b.getVerticalThumbMarginBottom();
     }
 
     public Drawable getHorizontalThumbDrawable() {
-        return this.f1262b.m1453E();
+        return this.f1262b.getHorizontalThumbDrawable();
     }
 
     public void setHorizontalThumbDrawable(Drawable drawable) {
-        this.f1262b.m1493a(drawable);
+        this.f1262b.setHorizontalThumbDrawable(drawable);
     }
 
     public Drawable getVerticalThumbDrawable() {
-        return this.f1262b.m1454F();
+        return this.f1262b.getVerticalThumbDrawable();
     }
 
     public void setVerticalThumbDrawable(Drawable drawable) {
-        this.f1262b.m1517b(drawable);
+        this.f1262b.setVerticalThumbDrawable(drawable);
     }
 
     public Drawable getHorizontalSeekDrawable() {
-        return this.f1262b.m1455G();
+        return this.f1262b.getHorizontalSeekDrawable();
     }
 
     public void setHorizontalSeekDrawable(Drawable drawable) {
-        this.f1262b.m1529c(drawable);
+        this.f1262b.setHorizontalSeekDrawable(drawable);
     }
 
     public Drawable getVerticalSeekDrawable() {
-        return this.f1262b.m1456H();
+        return this.f1262b.getVerticalSeekDrawable();
     }
 
     public void setVerticalSeekDrawable(Drawable drawable) {
-        this.f1262b.m1537d(drawable);
+        this.f1262b.setVerticalSeekDrawable(drawable);
     }
 
     public et getScrollDetector() {
-        return this.f1262b.m1457I();
+        return this.f1262b.getScrollDetector();
     }
 
     public final ScrollState getScrollState() {
@@ -162,15 +162,15 @@ public class fr extends ViewGroup implements Scrollable {
     }
 
     public int getScrollFinalX() {
-        return this.f1262b.m1459K();
+        return this.f1262b.getScrollFinalX();
     }
 
     public int getScrollFinalY() {
-        return this.f1262b.m1460L();
+        return this.f1262b.getScrollFinalY();
     }
 
     public final void setScrollInterpolator(Interpolator interpolator) {
-        this.f1262b.m1496a(interpolator);
+        this.f1262b.setScrollInterpolator(interpolator);
     }
 
     /* renamed from: a */
@@ -183,7 +183,7 @@ public class fr extends ViewGroup implements Scrollable {
     }
 
     public void setHorizontalOverScrollMode(OverScrollMode overScrollMode) {
-        this.f1262b.m1497a(overScrollMode);
+        this.f1262b.setHorizontalOverScrollMode(overScrollMode);
     }
 
     public OverScrollMode getVerticalOverScrollMode() {
@@ -191,15 +191,15 @@ public class fr extends ViewGroup implements Scrollable {
     }
 
     public void setVerticalOverScrollMode(OverScrollMode overScrollMode) {
-        this.f1262b.m1518b(overScrollMode);
+        this.f1262b.setVerticalOverScrollMode(overScrollMode);
     }
 
     public final int getMaxOverScrollWidth() {
-        return this.f1262b.m1463O();
+        return this.f1262b.getMaxOverScrollWidth();
     }
 
     public final void setMaxOverScrollWidth(int i) {
-        this.f1262b.m1525c(i);
+        this.f1262b.setMaxOverScrollWidth(i);
     }
 
     public final int getMaxOverScrollHeight() {
@@ -207,7 +207,7 @@ public class fr extends ViewGroup implements Scrollable {
     }
 
     public final void setMaxOverScrollHeight(int i) {
-        this.f1262b.m1534d(i);
+        this.f1262b.MaxOverScrollHeight(i);
     }
 
     public final Rect getViewportBounds() {
@@ -215,15 +215,15 @@ public class fr extends ViewGroup implements Scrollable {
     }
 
     public void setOnContentBoundsChangedListener(cf cfVar) {
-        this.f1262b.m1501a(cfVar);
+        this.f1262b.setOnContentBoundsChangedListener(cfVar);
     }
 
     public void setOnScrollListener(cg cgVar) {
-        this.f1262b.m1502a(cgVar);
+        this.f1262b.setOnScrollListener(cgVar);
     }
 
     public void scrollTo(int i, int i2) {
-        this.f1262b.m1535d(i, i2);
+        this.f1262b.scrollTo(i, i2);
     }
 
     /* renamed from: a */
@@ -267,26 +267,26 @@ public class fr extends ViewGroup implements Scrollable {
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
         MotionEvent a = AnimUtils.m1908a(motionEvent, (View) this, this.f1261a);
-        boolean c = this.f1262b.mo2420c(a);
+        boolean c = this.f1262b.onTouchEvent(a);
         a.recycle();
         return c;
     }
 
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         MotionEvent a = AnimUtils.m1908a(motionEvent, (View) this, this.f1261a);
-        boolean b = this.f1262b.mo2419b(a);
+        boolean b = this.f1262b.onInterceptTouchEvent(a);
         a.recycle();
         return b;
     }
 
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.f1262b.m1523c();
+        this.f1262b.onAttachedToWindow();
     }
 
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.f1262b.m1532d();
+        this.f1262b.onDetachedFromWindow();
     }
 
     public String getCurrentUrl() {

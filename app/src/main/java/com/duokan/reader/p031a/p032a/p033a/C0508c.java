@@ -2,11 +2,11 @@ package com.duokan.reader.p031a.p032a.p033a;
 
 import org.apache.http.protocol.HTTP;
 
-/* renamed from: com.duokan.reader.a.a.a.c */
+
 public class C0508c {
-    /* renamed from: a */
+    
     private static String[] f1714a = null;
-    /* renamed from: b */
+    
     private static C0508c f1715b = null;
 
     public C0508c() {
@@ -34,7 +34,7 @@ public class C0508c {
         f1714a[20] = "ISO8859_1";
     }
 
-    /* renamed from: a */
+    
     public String m2187a(int i) {
         if (i < 0 || i >= f1714a.length) {
             return "Unknown";

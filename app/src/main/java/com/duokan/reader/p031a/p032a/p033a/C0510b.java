@@ -5,24 +5,24 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import org.apache.http.protocol.HTTP;
 
-/* renamed from: com.duokan.reader.a.a.a.b */
+
 public class C0510b {
-    /* renamed from: a */
+    
     private RandomAccessFile f1723a = null;
-    /* renamed from: b */
+    
     private int f1724b = 0;
-    /* renamed from: c */
+    
     private C0509a f1725c = null;
-    /* renamed from: d */
+    
     private int f1726d = 4096;
-    /* renamed from: e */
+    
     private byte[] f1727e = null;
-    /* renamed from: f */
+    
     private byte[] f1728f = null;
-    /* renamed from: g */
+    
     private String f1729g = null;
 
-    /* renamed from: a */
+    
     public String m2213a(File file) {
         this.f1723a = new RandomAccessFile(file, "r");
         String a = m2211a();
@@ -38,7 +38,7 @@ public class C0510b {
         return a;
     }
 
-    /* renamed from: a */
+    
     private String m2211a() {
         byte[] bArr = new byte[2];
         int read = this.f1723a.read(bArr, 0, 2);
@@ -70,7 +70,7 @@ public class C0510b {
         }
     }
 
-    /* renamed from: b */
+    
     private String m2212b() {
         if (this.f1725c == null) {
             this.f1725c = new C0509a();

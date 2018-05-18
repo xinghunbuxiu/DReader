@@ -1,9 +1,9 @@
 package com.duokan.reader.ui.store;
 
 import com.duokan.reader.ui.general.ak;
-import com.duokan.reader.ui.general.an;
+import com.duokan.reader.ui.general.OnButtonClickedListener;
 
-final class ah implements an {
+final class ah implements OnButtonClickedListener {
     /* renamed from: a */
     final /* synthetic */ ak f11316a;
 

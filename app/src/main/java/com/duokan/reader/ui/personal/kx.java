@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.personal;
 
 import android.text.TextUtils;
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.common.async.p035a.C0517a;
 import com.duokan.reader.domain.cloud.DkUserPurchasedFictionsManager;
@@ -13,7 +13,7 @@ class kx implements C0517a<Void> {
     /* renamed from: a */
     final /* synthetic */ LinkedList f8842a;
     /* renamed from: b */
-    final /* synthetic */ C0342j f8843b;
+    final /* synthetic */ BaseDialog f8843b;
     /* renamed from: c */
     final /* synthetic */ List f8844c;
     /* renamed from: d */
@@ -21,10 +21,10 @@ class kx implements C0517a<Void> {
     /* renamed from: e */
     final /* synthetic */ ku f8846e;
 
-    kx(ku kuVar, LinkedList linkedList, C0342j c0342j, List list, Runnable runnable) {
+    kx(ku kuVar, LinkedList linkedList, BaseDialog dialog, List list, Runnable runnable) {
         this.f8846e = kuVar;
         this.f8842a = linkedList;
-        this.f8843b = c0342j;
+        this.f8843b = dialog;
         this.f8844c = list;
         this.f8845d = runnable;
     }

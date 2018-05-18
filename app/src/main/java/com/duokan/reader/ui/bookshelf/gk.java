@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.common.FileTypeRecognizer;
 import com.duokan.core.ui.aj;
 import com.duokan.p024c.C0255g;
@@ -113,8 +113,8 @@ class gk extends aj {
         TextView textView3 = (TextView) view.findViewById(C0255g.bookshelf__file_import_item_view__msg);
         CheckBox checkBox = (CheckBox) view.findViewById(C0255g.bookshelf__file_import_item_view__check_box);
         ImportedFileInfo c = m9735c(i);
-        textView.setText(C0267i.m610c(c.m9084c()));
-        textView2.setText(String.format(this.f6517a.getContext().getString(C0258j.file_type), new Object[]{C0267i.m601a(c.m9085d())}) + " / " + String.format(this.f6517a.getContext().getString(C0258j.file_size), new Object[]{C0267i.m599a(c.m9086e())}));
+        textView.setText(CommonUtils.m610c(c.m9084c()));
+        textView2.setText(String.format(this.f6517a.getContext().getString(C0258j.file_type), new Object[]{CommonUtils.m601a(c.m9085d())}) + " / " + String.format(this.f6517a.getContext().getString(C0258j.file_size), new Object[]{CommonUtils.m599a(c.m9086e())}));
         if (c.m9087f() == FileStatus.IMPORTED) {
             checkBox.setVisibility(8);
             textView3.setVisibility(0);

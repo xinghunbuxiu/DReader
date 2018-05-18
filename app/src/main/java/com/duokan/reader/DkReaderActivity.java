@@ -15,7 +15,7 @@ import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.sys.p025a.IPermissionsResultListener;
 import com.duokan.core.sys.p025a.Permissions;
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.core.ui.OnDismissListener;
 import com.duokan.reader.domain.account.cn;
 import com.duokan.reader.domain.ad.C0768y;
@@ -72,7 +72,7 @@ public class DkReaderActivity extends BaseActivity implements IPermissionsResult
         final C1557r c1557r = new C1557r(this);
         c1557r.open(new af(this) {
             class MyOnDismissListener implements OnDismissListener {
-                public void onDismiss(C0342j c0342j) {
+                public void onDismiss(BaseDialog dialog) {
                     C1163a.m8627k().m8642a("app", 1);
                     C1163a.m8627k().m8650b();
                     c04322.run();

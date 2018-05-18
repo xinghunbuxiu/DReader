@@ -2,7 +2,7 @@ package com.duokan.reader.ui.personal;
 
 import com.duokan.core.app.ac;
 import com.duokan.core.app.ad;
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.domain.cloud.DkUserReadBookManager;
 import com.duokan.reader.domain.cloud.DkUserReadBookManager.ReadBook;
@@ -35,7 +35,7 @@ class hw implements ad {
             be.m10286a(this.f8676b.getContext(), C0258j.bookshelf__shared__unselect_any_books, 0).show();
             return;
         }
-        C0342j a = ja.m10832a(this.f8676b.getContext(), "", this.f8676b.getString(C0258j.personal__readed_books_view__removing), true, true);
+        BaseDialog a = ja.m10832a(this.f8676b.getContext(), "", this.f8676b.getString(C0258j.personal__readed_books_view__removing), true, true);
         ArrayList arrayList2 = new ArrayList();
         for (int i2 = 0; i2 < arrayList.size(); i2++) {
             ReadBook readBook = (ReadBook) arrayList.get(i2);

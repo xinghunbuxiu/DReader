@@ -28,7 +28,7 @@ class gn extends WebSession {
     }
 
     protected void onSessionTry() {
-        this.f3244c = new C0652z((WebSession) this, this.f3243b).m3078g(this.f3242a.f3241a.f3240a.f3239c.f3235b.m4156I(), this.f3242a.f3241a.f3240a.f3239c.f3235b.m4157J());
+        this.f3244c = new C0652z((WebSession) this, this.f3243b).m3078g(this.f3242a.f3241a.f3240a.f3239c.f3235b.getId(), this.f3242a.f3241a.f3240a.f3239c.f3235b.m4157J());
         if (this.f3244c.b == 0 && this.f3244c.f2058a != null) {
             this.f3242a.f3241a.f3240a.f3239c.f3235b.mo1011a(new ad(ReaderEnv.get().getDeviceIdVersion(), ((C0651y) this.f3244c.f2058a).f2183a, C0366o.m1031a(((C0651y) this.f3244c.f2058a).f2184b) + "\n" + C0366o.m1031a(((C0651y) this.f3244c.f2058a).f2185c), 0));
             this.f3242a.f3241a.f3240a.f3239c.f3235b.m4183a(BookLimitType.NONE);

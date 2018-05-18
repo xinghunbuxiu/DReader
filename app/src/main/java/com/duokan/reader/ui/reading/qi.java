@@ -11,9 +11,9 @@ class qi implements Runnable {
     }
 
     public void run() {
-        String I = this.f10863a.f10861a.m4156I();
+        String I = this.f10863a.f10861a.getId();
         if (this.f10863a.f10861a.al()) {
-            I = new C0650x(this.f10863a.f10861a.m4156I()).m3046a();
+            I = new C0650x(this.f10863a.f10861a.getId()).m3046a();
         }
         su a = this.f10863a.f10862b.f10853a;
         int i = this.f10863a.f10861a.al() ? 4 : this.f10863a.f10861a.mo1038k() ? 2 : 1;

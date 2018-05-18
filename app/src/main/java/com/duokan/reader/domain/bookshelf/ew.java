@@ -1,8 +1,8 @@
 package com.duokan.reader.domain.bookshelf;
 
 import android.util.Pair;
-import com.duokan.core.p027b.C0324a;
-import com.duokan.core.p027b.p028a.C0320a;
+import com.duokan.core.p027b.UrlTools;
+import com.duokan.core.p027b.p028a.HttpConfig;
 import com.duokan.reader.common.webservices.duokan.C0641o;
 import com.duokan.reader.domain.statistics.C1163a;
 import java.net.SocketTimeoutException;
@@ -38,8 +38,8 @@ class ew implements Callable<Integer> {
                 Pair b = C0641o.m2934i().m2960b(this.f3141a.f3135d);
                 if (b != null) {
                     List linkedList = new LinkedList();
-                    linkedList.add(new Pair(HTTP.TARGET_HOST, C0324a.m737c((String) b.first)));
-                    this.f3141a.f3139h = this.f3141a.m4442a((String) b.second, new C0320a().m723a(linkedList));
+                    linkedList.add(new Pair(HTTP.TARGET_HOST, UrlTools.getHost((String) b.first)));
+                    this.f3141a.f3139h = this.f3141a.m4442a((String) b.second, new HttpConfig().setPairList(linkedList));
                     if (this.f3141a.f3140i instanceof SocketTimeoutException) {
                         ev.f3131k.incrementAndGet();
                     } else if (this.f3141a.f3139h == 1008 || this.f3141a.f3139h == 1007) {
@@ -54,7 +54,7 @@ class ew implements Callable<Integer> {
                 Object obj3 = null;
                 while (i2 < this.f3141a.f3135d.length) {
                     String str = this.f3141a.f3135d[i2];
-                    this.f3141a.f3139h = this.f3141a.m4442a(str, new C0320a().m721a(i2 == 0 ? 2 : 0));
+                    this.f3141a.f3139h = this.f3141a.m4442a(str, new HttpConfig().m721a(i2 == 0 ? 2 : 0));
                     if (this.f3141a.f3139h == 0 || this.f3141a.f3139h == 1) {
                         break;
                     }

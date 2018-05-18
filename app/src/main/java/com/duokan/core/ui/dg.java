@@ -5,9 +5,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 class dg extends dh {
-    /* renamed from: a */
+    
     private final dd f1141a;
-    /* renamed from: b */
+    
     private final LinkedList<cv> f1142b = new LinkedList();
 
     public dg(dd ddVar) {
@@ -15,7 +15,7 @@ class dg extends dh {
         this.f1141a = ddVar;
     }
 
-    /* renamed from: a */
+    
     public boolean m1811a(boolean z) {
         Iterator it = this.f1142b.iterator();
         while (it.hasNext()) {
@@ -27,7 +27,7 @@ class dg extends dh {
         return z;
     }
 
-    /* renamed from: b */
+    
     public boolean m1814b(boolean z) {
         Iterator it = this.f1142b.iterator();
         while (it.hasNext()) {
@@ -39,7 +39,7 @@ class dg extends dh {
         return z;
     }
 
-    /* renamed from: a */
+    
     public boolean m1810a() {
         Iterator it = this.f1142b.iterator();
         while (it.hasNext()) {
@@ -50,17 +50,17 @@ class dg extends dh {
         return false;
     }
 
-    /* renamed from: b */
+    
     public int m1812b() {
         return this.f1142b.size();
     }
 
-    /* renamed from: a */
+    
     public cv m1808a(int i) {
         return (cv) this.f1142b.get(i);
     }
 
-    /* renamed from: a */
+    
     public void m1809a(cv cvVar) {
         if (!this.f1142b.contains(cvVar)) {
             this.f1142b.add(cvVar);
@@ -69,7 +69,7 @@ class dg extends dh {
         }
     }
 
-    /* renamed from: b */
+    
     public void m1813b(cv cvVar) {
         if (this.f1142b.contains(cvVar)) {
             this.f1141a.removeView(cvVar.f1100h);
@@ -80,7 +80,7 @@ class dg extends dh {
         }
     }
 
-    /* renamed from: c */
+    
     public void m1815c() {
         this.f1141a.invalidate();
     }

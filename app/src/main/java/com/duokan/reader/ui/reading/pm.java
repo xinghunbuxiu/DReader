@@ -94,8 +94,8 @@ class pm extends FrameLayout {
         zoomView.setClipToPadding(false);
         zoomView.setPadding(b, b2, b, b2);
         zoomView.mo435a(xxVar, true);
-        zoomView.setMaxOverScrollWidth(AnimUtils.m1959f(getContext()));
-        zoomView.setMaxOverScrollHeight(AnimUtils.m1962g(getContext()));
+        zoomView.setMaxOverScrollWidth(AnimUtils.getMaxOverScrollWidth(getContext()));
+        zoomView.setMaxOverScrollHeight(AnimUtils.getMaxOverScrollHeight(getContext()));
         zoomView.addView(xxVar, new LayoutParams(s.mo1422a(), s.mo1423b().m6411c()));
         View diVar = new di(getContext());
         diVar.addView(imageView, new dn(-1, -1, 17));

@@ -17,7 +17,7 @@ class dv implements C0666x {
 
     public void onQueryAccountOk(C0672a c0672a) {
         this.f10049a.f10048a.m13981k();
-        DkPublic.exchangeNewIdThenDo(this.f10049a.f10048a.f10025z.m4156I(), this.f10049a.f10048a.f9998G, new dw(this), null);
+        DkPublic.exchangeNewIdThenDo(this.f10049a.f10048a.f10025z.getId(), this.f10049a.f10048a.f9998G, new dw(this), null);
     }
 
     public void onQueryAccountError(C0672a c0672a, String str) {

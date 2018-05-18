@@ -8,32 +8,32 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 public class et implements OnTouchListener {
-    /* renamed from: a */
-    static final /* synthetic */ boolean f1222a = (!et.class.desiredAssertionStatus());
-    /* renamed from: b */
+    
+    static final  boolean f1222a = (!et.class.desiredAssertionStatus());
+    
     private final LinkedList<er> f1223b = new LinkedList();
-    /* renamed from: c */
+    
     private es f1224c = null;
-    /* renamed from: d */
+    
     private er f1225d = null;
-    /* renamed from: e */
+    
     private boolean f1226e = true;
-    /* renamed from: f */
+    
     private boolean f1227f = false;
-    /* renamed from: g */
+    
     private eu f1228g = null;
 
-    /* renamed from: a */
+    
     public void m2043a(boolean z) {
         this.f1226e = z;
     }
 
-    /* renamed from: a */
+    
     public void m2042a(es esVar) {
         this.f1224c = esVar;
     }
 
-    /* renamed from: a */
+    
     public er[] m2045a(Class<?>... clsArr) {
         LinkedList linkedList = new LinkedList();
         Iterator it = this.f1223b.iterator();
@@ -48,7 +48,7 @@ public class et implements OnTouchListener {
         return (er[]) linkedList.toArray(new er[0]);
     }
 
-    /* renamed from: a */
+    
     public void m2041a(er erVar) {
         if (f1222a || erVar != null) {
             this.f1223b.addFirst(erVar);
@@ -57,7 +57,7 @@ public class et implements OnTouchListener {
         throw new AssertionError();
     }
 
-    /* renamed from: a */
+    
     public void m2040a(View view) {
         m2038d(view);
         this.f1227f = false;
@@ -65,12 +65,12 @@ public class et implements OnTouchListener {
         this.f1225d = null;
     }
 
-    /* renamed from: b */
+    
     public void m2046b(View view) {
         view.setOnTouchListener(this);
     }
 
-    /* renamed from: a */
+    
     public er m2039a() {
         return this.f1225d;
     }
@@ -79,12 +79,12 @@ public class et implements OnTouchListener {
         return m2033a(view, motionEvent, false, false);
     }
 
-    /* renamed from: a */
+    
     public boolean m2044a(View view, MotionEvent motionEvent) {
         return m2033a(view, motionEvent, false, true);
     }
 
-    /* renamed from: a */
+    
     private boolean m2033a(View view, MotionEvent motionEvent, boolean z, boolean z2) {
         boolean z3 = false;
         if (this.f1226e) {
@@ -122,7 +122,7 @@ public class et implements OnTouchListener {
         return z3;
     }
 
-    /* renamed from: a */
+    
     private boolean m2034a(View view, MotionEvent motionEvent, boolean z, boolean z2, es esVar) {
         boolean z3;
         Object obj = null;
@@ -196,7 +196,7 @@ public class et implements OnTouchListener {
         return true;
     }
 
-    /* renamed from: c */
+    
     private void m2037c(View view) {
         Iterator it = this.f1223b.iterator();
         while (it.hasNext()) {
@@ -205,12 +205,12 @@ public class et implements OnTouchListener {
         }
     }
 
-    /* renamed from: d */
+    
     private void m2038d(View view) {
         m2032a(view, null);
     }
 
-    /* renamed from: a */
+    
     private void m2032a(View view, er erVar) {
         Iterator it = this.f1223b.iterator();
         while (it.hasNext()) {

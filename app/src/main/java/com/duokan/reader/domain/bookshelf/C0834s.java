@@ -160,10 +160,10 @@ class C0834s implements Runnable {
         r0 = "";
         r1.f5044g = r0;	 Catch:{ all -> 0x009a }
         r0 = r4.f3579b;	 Catch:{ all -> 0x009a }
-        r0 = r0.m4156I();	 Catch:{ all -> 0x009a }
+        r0 = r0.getId();	 Catch:{ all -> 0x009a }
         r1.f5039b = r0;	 Catch:{ all -> 0x009a }
         r0 = r4.f3579b;	 Catch:{ all -> 0x009a }
-        r0 = r0.m4156I();	 Catch:{ all -> 0x009a }
+        r0 = r0.getId();	 Catch:{ all -> 0x009a }
         r1.f5040c = r0;	 Catch:{ all -> 0x009a }
         r0 = r4.f3578a;	 Catch:{ all -> 0x009a }
         r0 = r0.f2719c;	 Catch:{ all -> 0x009a }
@@ -232,10 +232,10 @@ class C0834s implements Runnable {
         r0 = r0.f2706d;	 Catch:{ all -> 0x009a }
         r1.f5044g = r0;	 Catch:{ all -> 0x009a }
         r0 = r4.f3579b;	 Catch:{ all -> 0x009a }
-        r0 = r0.m4156I();	 Catch:{ all -> 0x009a }
+        r0 = r0.getId();	 Catch:{ all -> 0x009a }
         r1.f5039b = r0;	 Catch:{ all -> 0x009a }
         r0 = r4.f3579b;	 Catch:{ all -> 0x009a }
-        r0 = r0.m4156I();	 Catch:{ all -> 0x009a }
+        r0 = r0.getId();	 Catch:{ all -> 0x009a }
         r1.f5040c = r0;	 Catch:{ all -> 0x009a }
         r0 = r4.f3578a;	 Catch:{ all -> 0x009a }
         r0 = r0.f2719c;	 Catch:{ all -> 0x009a }

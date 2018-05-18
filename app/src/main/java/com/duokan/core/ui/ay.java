@@ -117,7 +117,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
 
     public ay(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f765a.m1496a(new AccelerateDecelerateInterpolator());
+        this.f765a.setScrollInterpolator(new AccelerateDecelerateInterpolator());
         setWillNotDraw(false);
         setClipChildren(false);
         setStaticTransformationsEnabled(true);
@@ -370,23 +370,23 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public final int getContentHeight() {
-        return this.f765a.m1562t();
+        return this.f765a.getContentHeight();
     }
 
     public final boolean getThumbEnabled() {
-        return this.f765a.m1563u();
+        return this.f765a.getThumbEnabled();
     }
 
     public final void setThumbEnabled(boolean z) {
-        this.f765a.m1530c(z);
+        this.f765a.setThumbEnabled(z);
     }
 
     public boolean getSeekEnabled() {
-        return this.f765a.m1564v();
+        return this.f765a.getSeekEnabled();
     }
 
     public void setSeekEnabled(boolean z) {
-        this.f765a.m1538d(z);
+        this.f765a.setSeekEnabled(z);
     }
 
     /* renamed from: a */
@@ -395,35 +395,35 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public int getHorizontalThumbMarginLeft() {
-        return this.f765a.m1565w();
+        return this.f765a.getHorizontalThumbMarginLeft();
     }
 
     public int getHorizontalThumbMarginTop() {
-        return this.f765a.m1566x();
+        return this.f765a.getHorizontalThumbMarginTop();
     }
 
     public int getHorizontalThumbMarginRight() {
-        return this.f765a.m1567y();
+        return this.f765a.getHorizontalThumbMarginRight();
     }
 
     public int getHorizontalThumbMarginBottom() {
-        return this.f765a.m1568z();
+        return this.f765a.getHorizontalThumbMarginBottom();
     }
 
     public int getVerticalThumbMarginLeft() {
-        return this.f765a.m1449A();
+        return this.f765a.getVerticalThumbMarginLeft();
     }
 
     public int getVerticalThumbMarginTop() {
-        return this.f765a.m1450B();
+        return this.f765a.getVerticalThumbMarginTop();
     }
 
     public int getVerticalThumbMarginRight() {
-        return this.f765a.m1451C();
+        return this.f765a.getVerticalThumbMarginRight();
     }
 
     public int getVerticalThumbMarginBottom() {
-        return this.f765a.m1452D();
+        return this.f765a.getVerticalThumbMarginBottom();
     }
 
     /* renamed from: b */
@@ -432,39 +432,39 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public Drawable getHorizontalThumbDrawable() {
-        return this.f765a.m1453E();
+        return this.f765a.getHorizontalThumbDrawable();
     }
 
     public void setHorizontalThumbDrawable(Drawable drawable) {
-        this.f765a.m1493a(drawable);
+        this.f765a.setHorizontalThumbDrawable(drawable);
     }
 
     public Drawable getVerticalThumbDrawable() {
-        return this.f765a.m1454F();
+        return this.f765a.getVerticalThumbDrawable();
     }
 
     public void setVerticalThumbDrawable(Drawable drawable) {
-        this.f765a.m1517b(drawable);
+        this.f765a.setVerticalThumbDrawable(drawable);
     }
 
     public Drawable getHorizontalSeekDrawable() {
-        return this.f765a.m1455G();
+        return this.f765a.getHorizontalSeekDrawable();
     }
 
     public void setHorizontalSeekDrawable(Drawable drawable) {
-        this.f765a.m1529c(drawable);
+        this.f765a.setHorizontalSeekDrawable(drawable);
     }
 
     public Drawable getVerticalSeekDrawable() {
-        return this.f765a.m1456H();
+        return this.f765a.getVerticalSeekDrawable();
     }
 
     public void setVerticalSeekDrawable(Drawable drawable) {
-        this.f765a.m1537d(drawable);
+        this.f765a.setVerticalSeekDrawable(drawable);
     }
 
     public et getScrollDetector() {
-        return this.f765a.m1457I();
+        return this.f765a.getScrollDetector();
     }
 
     public final ScrollState getScrollState() {
@@ -480,15 +480,15 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public int getScrollFinalX() {
-        return this.f765a.m1459K();
+        return this.f765a.getScrollFinalX();
     }
 
     public int getScrollFinalY() {
-        return this.f765a.m1460L();
+        return this.f765a.getScrollFinalY();
     }
 
     public final void setScrollInterpolator(Interpolator interpolator) {
-        this.f765a.m1496a(interpolator);
+        this.f765a.setScrollInterpolator(interpolator);
     }
 
     /* renamed from: a */
@@ -501,7 +501,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public void setHorizontalOverScrollMode(OverScrollMode overScrollMode) {
-        this.f765a.m1497a(overScrollMode);
+        this.f765a.setHorizontalOverScrollMode(overScrollMode);
     }
 
     public OverScrollMode getVerticalOverScrollMode() {
@@ -509,15 +509,15 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public void setVerticalOverScrollMode(OverScrollMode overScrollMode) {
-        this.f765a.m1518b(overScrollMode);
+        this.f765a.setVerticalOverScrollMode(overScrollMode);
     }
 
     public final int getMaxOverScrollWidth() {
-        return this.f765a.m1463O();
+        return this.f765a.getMaxOverScrollWidth();
     }
 
     public final void setMaxOverScrollWidth(int i) {
-        this.f765a.m1525c(i);
+        this.f765a.setMaxOverScrollWidth(i);
     }
 
     public final int getMaxOverScrollHeight() {
@@ -525,7 +525,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public final void setMaxOverScrollHeight(int i) {
-        this.f765a.m1534d(i);
+        this.f765a.MaxOverScrollHeight(i);
     }
 
     public final Rect getViewportBounds() {
@@ -533,11 +533,11 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public void setOnContentBoundsChangedListener(cf cfVar) {
-        this.f765a.m1501a(cfVar);
+        this.f765a.setOnContentBoundsChangedListener(cfVar);
     }
 
     public final void setOnScrollListener(cg cgVar) {
-        this.f765a.m1502a(cgVar);
+        this.f765a.setOnScrollListener(cgVar);
     }
 
     /* renamed from: c */
@@ -644,13 +644,13 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         getViewTreeObserver().addOnPreDrawListener(this);
-        this.f765a.m1523c();
+        this.f765a.onAttachedToWindow();
     }
 
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         getViewTreeObserver().removeOnPreDrawListener(this);
-        this.f765a.m1532d();
+        this.f765a.onDetachedFromWindow();
         this.f761C = null;
         this.f762D = null;
         this.f759A = -1;
@@ -658,11 +658,11 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return this.f765a.mo2419b(motionEvent);
+        return this.f765a.onInterceptTouchEvent(motionEvent);
     }
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.f765a.mo2420c(motionEvent);
+        return this.f765a.onTouchEvent(motionEvent);
     }
 
     @SuppressLint({"MissingSuperCall"})
@@ -732,55 +732,55 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public boolean isHorizontalFadingEdgeEnabled() {
-        return this.f765a.m1548g();
+        return this.f765a.isHorizontalFadingEdgeEnabled();
     }
 
     public boolean isHorizontalScrollBarEnabled() {
-        return this.f765a.m1550h();
+        return this.f765a.isHorizontalScrollBarEnabled();
     }
 
     public boolean isVerticalFadingEdgeEnabled() {
-        return this.f765a.m1551i();
+        return this.f765a.isVerticalFadingEdgeEnabled();
     }
 
     public boolean isVerticalScrollBarEnabled() {
-        return this.f765a.m1552j();
+        return this.f765a.isVerticalScrollBarEnabled();
     }
 
     public void scrollBy(int i, int i2) {
-        this.f765a.m1526c(i, i2);
+        this.f765a.scrollBy(i, i2);
     }
 
     public void scrollTo(int i, int i2) {
-        this.f765a.m1535d(i, i2);
+        this.f765a.scrollTo(i, i2);
     }
 
     public boolean shouldDelayChildPressedState() {
-        return this.f765a.m1554l();
+        return this.f765a.shouldDelayChildPressedState();
     }
 
     protected int computeHorizontalScrollExtent() {
-        return this.f765a.m1555m();
+        return this.f765a.computeHorizontalScrollExtent();
     }
 
     protected int computeHorizontalScrollOffset() {
-        return this.f765a.m1556n();
+        return this.f765a.computeHorizontalScrollOffset();
     }
 
     protected int computeHorizontalScrollRange() {
-        return this.f765a.m1557o();
+        return this.f765a.computeHorizontalScrollRange();
     }
 
     protected int computeVerticalScrollExtent() {
-        return this.f765a.m1558p();
+        return this.f765a.computeVerticalScrollExtent();
     }
 
     protected int computeVerticalScrollOffset() {
-        return this.f765a.m1559q();
+        return this.f765a.computeVerticalScrollOffset();
     }
 
     protected int computeVerticalScrollRange() {
-        return this.f765a.m1560r();
+        return this.f765a.computeVerticalScrollRange();
     }
 
     protected boolean drawChild(Canvas canvas, View view, long j) {

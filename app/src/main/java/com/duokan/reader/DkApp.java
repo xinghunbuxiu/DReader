@@ -102,8 +102,6 @@ public abstract class DkApp extends ManagedApp {
                 final long currentTimeMillis = System.currentTimeMillis() - TimeUnit.DAYS.toMillis(30);
                 for (File f : FileUtil.getDirFiles(this.f1371a.getDiagnosticDirectory(), new FileFilter(this) {
 
-                    final C04175 f1370b;
-
                     public boolean accept(File file) {
                         return file.lastModified() < currentTimeMillis;
                     }

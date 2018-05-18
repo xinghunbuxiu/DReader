@@ -13,97 +13,98 @@ import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.duokan.common.C0267i;
+
+import com.duokan.common.CommonUtils;
+import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.BoxView;
 import com.duokan.core.ui.C0343f;
-import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0240b;
 import com.duokan.p023b.C0241c;
 import com.duokan.p023b.C0243e;
-import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
 import com.duokan.reader.ReaderEnv;
+
 import java.util.ArrayList;
 
 public class ak extends C0343f {
-    /* renamed from: a */
-    private final TextView f594a;
-    /* renamed from: b */
-    private final TextView f595b;
-    /* renamed from: c */
-    private final ViewGroup f596c;
-    /* renamed from: d */
-    private final ArrayList<FrameLayout> f597d = new ArrayList();
-    /* renamed from: e */
-    private final ViewGroup f598e;
-    /* renamed from: f */
-    private final ArrayList<FrameLayout> f599f = new ArrayList();
-    /* renamed from: g */
-    private final ViewGroup f600g;
-    /* renamed from: h */
-    private ao f601h = null;
-    /* renamed from: i */
-    private an f602i = null;
+
+    private final TextView general__common_dialog_view__title;
+
+    private final TextView common_dialog_view__prompt;
+
+    private final ViewGroup common_dialog_view__check_frame;
+    
+    private final ArrayList<FrameLayout> checkFrameViews = new ArrayList();
+
+    private final ViewGroup common_dialog_view__button_frame;
+    
+    private final ArrayList<FrameLayout> buttonFrameViews = new ArrayList();
+
+    private final ViewGroup common_dialog_view__extra_content_frame;
+
+    private OnCheckStateChangedListener checkStateChangedListener = null;
+
+    private OnButtonClickedListener onButtonClickedListener = null;
 
     public ak(Context context) {
         super(context);
-        setContentView(C0245g.general__common_dialog_view);
+        setContentView(R.layout.general__common_dialog_view);
         if (ReaderEnv.get().forHd()) {
             setGravity(17);
             ((BoxView) getContentView()).setMaxWidth(AnimUtils.m1932b(getContext(), 380.0f));
         } else {
             setGravity(80);
         }
-        this.f594a = (TextView) findViewById(C0244f.general__common_dialog_view__title);
-        this.f594a.getPaint().setFakeBoldText(true);
-        this.f595b = (TextView) findViewById(C0244f.general__common_dialog_view__prompt);
-        this.f596c = (ViewGroup) findViewById(C0244f.general__common_dialog_view__check_frame);
-        this.f598e = (ViewGroup) findViewById(C0244f.general__common_dialog_view__button_frame);
-        this.f600g = (ViewGroup) findViewById(C0244f.general__common_dialog_view__extra_content_frame);
+        this.general__common_dialog_view__title = (TextView) findViewById(R.id.general__common_dialog_view__title);
+        this.general__common_dialog_view__title.getPaint().setFakeBoldText(true);
+        this.common_dialog_view__prompt = (TextView) findViewById(R.id.general__common_dialog_view__prompt);
+        this.common_dialog_view__check_frame = (ViewGroup) findViewById(R.id.general__common_dialog_view__check_frame);
+        this.common_dialog_view__button_frame = (ViewGroup) findViewById(R.id.general__common_dialog_view__button_frame);
+        this.common_dialog_view__extra_content_frame = (ViewGroup) findViewById(R.id.general__common_dialog_view__extra_content_frame);
         setWindowAttr();
     }
 
-    public void setOnCheckStateChangedListener(ao aoVar) {
-        this.f601h = aoVar;
+    public void setOnCheckStateChangedListener(OnCheckStateChangedListener checkStateChangedListener) {
+        this.checkStateChangedListener = checkStateChangedListener;
     }
 
-    public void setOnButtonClickedListener(an anVar) {
-        this.f602i = anVar;
+    public void setOnButtonClickedListener(OnButtonClickedListener onButtonClickedListener) {
+        this.onButtonClickedListener = onButtonClickedListener;
     }
 
-    public void setTitle(int i) {
-        this.f594a.setText(i);
-        this.f594a.setVisibility(i == 0 ? 8 : 0);
+    public void setTitle(int resId) {
+        this.general__common_dialog_view__title.setText(resId);
+        this.general__common_dialog_view__title.setVisibility(resId == 0 ? View.GONE : View.VISIBLE);
     }
 
     public void setTitle(String str) {
-        this.f594a.setText(str);
-        this.f594a.setVisibility(TextUtils.isEmpty(str) ? 8 : 0);
+        this.general__common_dialog_view__title.setText(str);
+        this.general__common_dialog_view__title.setVisibility(TextUtils.isEmpty(str) ? View.GONE : View.VISIBLE);
     }
 
     public void setTitle(Drawable drawable) {
-        this.f594a.setBackgroundDrawable(drawable);
+        this.general__common_dialog_view__title.setBackgroundDrawable(drawable);
         setTitle("  ");
     }
 
-    public void setPrompt(int i) {
-        this.f595b.setText(i);
-        this.f595b.setVisibility(i == 0 ? 8 : 0);
+    public void setPrompt(int prompt) {
+        this.common_dialog_view__prompt.setText(prompt);
+        this.common_dialog_view__prompt.setVisibility(prompt == 0 ? View.GONE : View.VISIBLE);
     }
 
     public void setPrompt(String str) {
-        this.f595b.setText(str);
-        this.f595b.setVisibility(TextUtils.isEmpty(str) ? 8 : 0);
+        this.common_dialog_view__prompt.setText(str);
+        this.common_dialog_view__prompt.setVisibility(TextUtils.isEmpty(str) ? View.GONE : View.VISIBLE);
     }
 
-    public void setPromptLayoutGravity(int i) {
-        LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -2, (float) i);
+    public void setPromptLayoutGravity(int weight) {
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, weight);
         layoutParams.setMargins(0, AnimUtils.m1932b(getContext(), 10.0f), 0, 0);
-        this.f595b.setLayoutParams(layoutParams);
+        this.common_dialog_view__prompt.setLayoutParams(layoutParams);
     }
 
-    public int addButtonView(int i) {
-        return addButtonView(getContext().getString(i), getContext().getResources().getColor(C0241c.general__shared__c6));
+    public int addButtonView(int resId) {
+        return addButtonView(getContext().getString(resId), getContext().getResources().getColor(R.color.general__shared__c6));
     }
 
     public int addButtonView(int i, int i2) {
@@ -111,14 +112,14 @@ public class ak extends C0343f {
     }
 
     public int addButtonView(String str, int i) {
-        View newButtonFrameView = newButtonFrameView(newButtonView(str, i));
-        if (this.f598e.getVisibility() != 0) {
-            this.f598e.setVisibility(0);
+        FrameLayout newButtonFrameView = newButtonFrameView(newButtonView(str, i));
+        if (this.common_dialog_view__button_frame.getVisibility() != 0) {
+            this.common_dialog_view__button_frame.setVisibility(0);
         }
-        this.f598e.addView(newButtonFrameView, new LinearLayout.LayoutParams(-1, -2, 1.0f));
-        this.f599f.add(newButtonFrameView);
+        this.common_dialog_view__button_frame.addView(newButtonFrameView, new LinearLayout.LayoutParams(-1, -2, 1.0f));
+        this.buttonFrameViews.add(newButtonFrameView);
         scheduleButtonBackground();
-        return this.f599f.size() - 1;
+        return this.buttonFrameViews.size() - 1;
     }
 
     public int addCheckBoxView(int i) {
@@ -126,16 +127,16 @@ public class ak extends C0343f {
     }
 
     public int addCheckBoxView(String str) {
-        View newCheckFrameView = newCheckFrameView(newCheckBoxView(str));
-        this.f596c.setVisibility(0);
-        LayoutParams layoutParams = new LinearLayout.LayoutParams(-2, -1);
+        FrameLayout newCheckFrameView = newCheckFrameView(newCheckBoxView(str));
+        this.common_dialog_view__check_frame.setVisibility(0);
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT);
         layoutParams.gravity = 3;
-        this.f596c.addView(newCheckFrameView, layoutParams);
-        this.f597d.add(newCheckFrameView);
-        if (this.f597d.size() > 1) {
-            ((MarginLayoutParams) newCheckFrameView.getLayoutParams()).topMargin = C0267i.m598a(getContext(), 0.0f);
+        this.common_dialog_view__check_frame.addView(newCheckFrameView, layoutParams);
+        this.checkFrameViews.add(newCheckFrameView);
+        if (this.checkFrameViews.size() > 1) {
+            ((MarginLayoutParams) newCheckFrameView.getLayoutParams()).topMargin = CommonUtils.dip2px(getContext(), 0.0f);
         }
-        return this.f597d.size() - 1;
+        return this.checkFrameViews.size() - 1;
     }
 
     public void setButtonText(int i, int i2) {
@@ -155,13 +156,13 @@ public class ak extends C0343f {
     }
 
     public void setExtraContentView(View view) {
-        this.f600g.removeAllViews();
+        this.common_dialog_view__extra_content_frame.removeAllViews();
         if (view != null) {
-            this.f600g.addView(view, new FrameLayout.LayoutParams(-1, -1));
-            this.f600g.setVisibility(0);
+            this.common_dialog_view__extra_content_frame.addView(view, new FrameLayout.LayoutParams(-1, -1));
+            this.common_dialog_view__extra_content_frame.setVisibility(0);
             return;
         }
-        this.f600g.setVisibility(8);
+        this.common_dialog_view__extra_content_frame.setVisibility(8);
     }
 
     public void setChecked(int i, boolean z) {
@@ -173,7 +174,7 @@ public class ak extends C0343f {
     }
 
     protected TextView getButton(int i) {
-        return (TextView) ((FrameLayout) this.f599f.get(i)).getChildAt(0);
+        return (TextView) ((FrameLayout) this.buttonFrameViews.get(i)).getChildAt(0);
     }
 
     protected void onCheckStateChanged(int i) {
@@ -186,21 +187,21 @@ public class ak extends C0343f {
         int b = AnimUtils.m1932b(getContext(), 8.0f);
         getContentView().setBackgroundDrawable(new hb(new ColorDrawable(getContext().getResources().getColor(C0241c.general__shared__dialog)), (float) b));
         if (ReaderEnv.get().forHd()) {
-            setEnterAnimation(C0240b.general__shared__scale_center_in);
-            setExitAnimation(C0240b.general__shared__scale_center_out);
+            setEnterAnimation(R.anim.general__shared__scale_center_in);
+            setExitAnimation(R.anim.general__shared__scale_center_out);
             return;
         }
-        setEnterAnimation(C0240b.general__shared__push_down_in);
-        setExitAnimation(C0240b.general__shared__push_down_out);
+        setEnterAnimation(R.anim.general__shared__push_down_in);
+        setExitAnimation(R.anim.general__shared__push_down_out);
     }
 
     private void scheduleButtonBackground() {
-        if (this.f599f.size() == 1) {
-            getButton(0).setBackgroundDrawable(new hb(getContext().getResources().getDrawable(C0243e.general__shared__dialog_button_background), (float) AnimUtils.m1932b(getContext(), 6.0f), 12));
+        if (this.buttonFrameViews.size() == 1) {
+            getButton(0).setBackgroundDrawable(new hb(getContext().getResources().getDrawable(R.drawable.general__shared__dialog_button_background), (float) AnimUtils.m1932b(getContext(), 6.0f), 12));
             return;
         }
-        getButton(0).setBackgroundDrawable(new hb(getContext().getResources().getDrawable(C0243e.general__shared__dialog_button_background), (float) AnimUtils.m1932b(getContext(), 6.0f), 4));
-        getButton(this.f599f.size() - 1).setBackgroundDrawable(new hb(getContext().getResources().getDrawable(C0243e.general__shared__dialog_button_background), (float) AnimUtils.m1932b(getContext(), 6.0f), 8));
+        getButton(0).setBackgroundDrawable(new hb(getContext().getResources().getDrawable(R.drawable.general__shared__dialog_button_background), (float) AnimUtils.m1932b(getContext(), 6.0f), 4));
+        getButton(this.buttonFrameViews.size() - 1).setBackgroundDrawable(new hb(getContext().getResources().getDrawable(R.drawable.general__shared__dialog_button_background), (float) AnimUtils.m1932b(getContext(), 6.0f), 8));
     }
 
     private FrameLayout newCheckFrameView(View view) {
@@ -217,7 +218,7 @@ public class ak extends C0343f {
     }
 
     private int getCheckIndex(View view) {
-        for (int i = 0; i < this.f597d.size(); i++) {
+        for (int i = 0; i < this.checkFrameViews.size(); i++) {
             if (getCheckBox(i) == view) {
                 return i;
             }
@@ -226,7 +227,7 @@ public class ak extends C0343f {
     }
 
     private CheckBox getCheckBox(int i) {
-        return (CheckBox) ((FrameLayout) this.f597d.get(i)).getChildAt(0);
+        return (CheckBox) ((FrameLayout) this.checkFrameViews.get(i)).getChildAt(0);
     }
 
     private FrameLayout newButtonFrameView(View view) {
@@ -236,11 +237,11 @@ public class ak extends C0343f {
     }
 
     private View newButtonView(String str, int i) {
-        TextView textView = (TextView) LayoutInflater.from(getContext()).inflate(C0245g.general__common_dialog_view__button, null);
+        TextView textView = (TextView) LayoutInflater.from(getContext()).inflate(R.luout.general__common_dialog_view__button, null);
         int b = AnimUtils.m1932b(getContext(), 20.0f);
         textView.getPaint().setFakeBoldText(true);
         textView.setPadding(0, b, 0, b);
-        textView.setBackgroundResource(C0243e.general__shared__dialog_button_background);
+        textView.setBackgroundResource(R.luout.general__shared__dialog_button_background);
         textView.setText(str);
         textView.setTextColor(i);
         textView.setOnClickListener(new am(this));
@@ -248,7 +249,7 @@ public class ak extends C0343f {
     }
 
     private int getButtonIndex(View view) {
-        for (int i = 0; i < this.f599f.size(); i++) {
+        for (int i = 0; i < this.buttonFrameViews.size(); i++) {
             if (getButton(i) == view) {
                 return i;
             }

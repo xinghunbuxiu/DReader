@@ -12,6 +12,6 @@ class gf implements Runnable {
     }
 
     public void run() {
-        this.f3225b.aV().mo1103f().m5014a(this.f3225b.m4156I(), new gg(this));
+        this.f3225b.aV().mo1103f().m5014a(this.f3225b.getId(), new gg(this));
     }
 }
