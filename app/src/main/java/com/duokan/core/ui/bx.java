@@ -5,15 +5,15 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 
 public class bx {
-    /* renamed from: a */
+    
     private int f1039a;
-    /* renamed from: b */
+    
     private final by f1040b;
-    /* renamed from: c */
+    
     private final by f1041c;
-    /* renamed from: d */
+    
     private Interpolator f1042d;
-    /* renamed from: e */
+    
     private final boolean f1043e;
 
     public bx(Context context) {
@@ -32,52 +32,52 @@ public class bx {
         by.m1725a(context);
     }
 
-    /* renamed from: a */
+    
     void m1710a(Interpolator interpolator) {
         this.f1042d = interpolator;
     }
 
-    /* renamed from: a */
+    
     public final boolean m1712a() {
         return this.f1040b.f1058k && this.f1041c.f1058k;
     }
 
-    /* renamed from: a */
+    
     public final void m1711a(boolean z) {
         this.f1040b.f1058k = this.f1041c.f1058k = z;
     }
 
-    /* renamed from: b */
+    
     public final int m1714b() {
         return this.f1040b.f1049b;
     }
 
-    /* renamed from: c */
+    
     public final int m1716c() {
         return this.f1041c.f1049b;
     }
 
-    /* renamed from: d */
+    
     public float m1717d() {
         return this.f1040b.f1052e;
     }
 
-    /* renamed from: e */
+    
     public float m1718e() {
         return this.f1041c.f1052e;
     }
 
-    /* renamed from: f */
+    
     public final int m1719f() {
         return this.f1040b.f1050c;
     }
 
-    /* renamed from: g */
+    
     public final int m1720g() {
         return this.f1041c.f1050c;
     }
 
-    /* renamed from: h */
+    
     public boolean m1721h() {
         if (m1712a()) {
             return false;
@@ -111,14 +111,14 @@ public class bx {
         return true;
     }
 
-    /* renamed from: a */
+    
     public void m1708a(int i, int i2, int i3, int i4, int i5) {
         this.f1039a = 0;
         this.f1040b.m1743a(i, i3, i5);
         this.f1041c.m1743a(i2, i4, i5);
     }
 
-    /* renamed from: a */
+    
     public boolean m1713a(int i, int i2, int i3, int i4, int i5, int i6) {
         this.f1039a = 1;
         boolean b = this.f1040b.m1746b(i, i3, i4);
@@ -129,7 +129,7 @@ public class bx {
         return false;
     }
 
-    /* renamed from: a */
+    
     public void m1709a(int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, int i10) {
         int i11;
         if (this.f1043e && !m1712a()) {
@@ -149,14 +149,14 @@ public class bx {
         this.f1041c.m1744a(i2, i4, i7, i8, i10);
     }
 
-    /* renamed from: b */
+    
     public void m1715b(int i, int i2, int i3, int i4, int i5, int i6) {
         this.f1039a = 1;
         this.f1040b.m1747c(i, i3, i5);
         this.f1041c.m1747c(i2, i4, i6);
     }
 
-    /* renamed from: i */
+    
     public void m1722i() {
         this.f1040b.m1741a();
         this.f1041c.m1741a();

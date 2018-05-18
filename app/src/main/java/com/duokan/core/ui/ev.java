@@ -14,13 +14,14 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.animation.Interpolator;
 
-import com.duokan.p023b.C0243e;
 import com.wali.live.sdk.manager.IMiLiveSdk.ICallback;
+
+import org.apache.http.HttpStatus;
+
 import java.lang.ref.WeakReference;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.ListIterator;
-import org.apache.http.HttpStatus;
 
 public abstract class ev implements Scrollable {
     
@@ -65,20 +66,20 @@ public abstract class ev implements Scrollable {
     private final ct f939f = new ct();
     
     private final bu f940g = new bu();
+
+    private final RectF screenInfo = new RectF();
     
-    private final RectF f941h = new RectF();
-    
-    private final Rect f942i = new Rect();
+    private final Rect r_screen = new Rect();
     
     private final Rect f943j = new Rect();
     
     private final LinkedList<WeakReference<View>> f944k = new LinkedList();
     
     private final LinkedList<ch> f945l = new LinkedList();
-    
-    private final Rect f946m = new Rect();
-    
-    private final Rect f947n = new Rect();
+
+    private final Rect rect = new Rect();
+
+    private final Rect rect1 = new Rect();
     
     private OverScrollMode scrollMode = OverScrollMode.STRETCH;
     
@@ -115,9 +116,9 @@ public abstract class ev implements Scrollable {
         this.f936b = new bx(this.viewGroup.getContext());
         this.f937d.m2041a(new ff(this));
         DisplayMetrics displayMetrics = this.viewGroup.getResources().getDisplayMetrics();
-        this.f941h.set(0.0f, 0.0f, (float) displayMetrics.widthPixels, (float) displayMetrics.heightPixels);
-        this.f941h.round(this.f942i);
-        this.f943j.set(this.f942i);
+        this.screenInfo.set(0.0f, 0.0f, displayMetrics.widthPixels, displayMetrics.heightPixels);
+        this.screenInfo.round(this.r_screen);
+        this.f943j.set(this.r_screen);
         this.f930J.set(0, AnimUtils.m1932b(this.viewGroup.getContext(), 2.0f), AnimUtils.m1932b(this.viewGroup.getContext(), 2.0f), AnimUtils.m1932b(this.viewGroup.getContext(), 6.0f));
         this.f931K[0] = this.viewGroup.getResources().getDrawable(R.drawable.general__shared__thumb_default_vert);
         this.f931K[1] = this.viewGroup.getResources().getDrawable(R.drawable.general__shared__thumb_seek_vert);
@@ -184,13 +185,13 @@ public abstract class ev implements Scrollable {
         int ae = ae();
         int af = af();
         if (ae > 0 || af > 0) {
-            float width = this.f941h.width() / ((float) this.f942i.width());
-            float height = this.f941h.height() / ((float) this.f942i.height());
+            float width = this.screenInfo.width() / ((float) this.r_screen.width());
+            float height = this.screenInfo.height() / ((float) this.r_screen.height());
             canvas.save();
             if (canvas.isHardwareAccelerated()) {
-                canvas.translate((float) this.f942i.left, (float) this.f942i.top);
+                canvas.translate((float) this.r_screen.left, (float) this.r_screen.top);
                 canvas.scale(width, height);
-                canvas.translate((float) (-this.f942i.left), (float) (-this.f942i.top));
+                canvas.translate((float) (-this.r_screen.left), (float) (-this.r_screen.top));
             } else {
                 canvas.scale(width, height);
             }
@@ -209,7 +210,7 @@ public abstract class ev implements Scrollable {
             if (!this.f932L.isEmpty()) {
                 ay = ay();
                 canvas.save();
-                canvas.translate((float) this.f942i.left, (float) this.f942i.top);
+                canvas.translate((float) this.r_screen.left, (float) this.r_screen.top);
                 canvas.clipRect(this.f932L);
                 ay.setBounds(this.f932L);
                 ay.setAlpha(ap);
@@ -219,7 +220,7 @@ public abstract class ev implements Scrollable {
             if (!this.f929I.isEmpty()) {
                 ay = az();
                 canvas.save();
-                canvas.translate((float) this.f942i.left, (float) this.f942i.top);
+                canvas.translate((float) this.r_screen.left, (float) this.r_screen.top);
                 canvas.clipRect(this.f929I);
                 ay.setBounds(this.f929I);
                 ay.setAlpha(ap);
@@ -256,7 +257,7 @@ public abstract class ev implements Scrollable {
         int c;
         Rect rect2 = new Rect(rect);
         AnimUtils.m1937b(rect2, view, this.viewGroup);
-        if (rect2.intersect(this.f946m)) {
+        if (rect2.intersect(this.rect)) {
             b = m1420b(e, rect2);
             c = m1424c(e, rect2);
         } else {
@@ -316,22 +317,22 @@ public abstract class ev implements Scrollable {
 
     
     public void m1512b(int i, int i2) {
-        m1487a(this.f946m.left, this.f946m.top, this.f946m.left + i, this.f946m.top + i2);
+        m1487a(this.rect.left, this.rect.top, this.rect.left + i, this.rect.top + i2);
     }
 
     
     public void m1485a(int i) {
-        m1487a(this.f946m.left, this.f946m.top, this.f946m.left + i, this.f946m.bottom);
+        m1487a(this.rect.left, this.rect.top, this.rect.left + i, this.rect.bottom);
     }
 
     
     public void m1511b(int i) {
-        m1487a(this.f946m.left, this.f946m.top, this.f946m.right, this.f946m.top + i);
+        m1487a(this.rect.left, this.rect.top, this.rect.right, this.rect.top + i);
     }
 
     
     public Rect m1553k() {
-        return this.f946m;
+        return this.rect;
     }
 
     
@@ -341,14 +342,14 @@ public abstract class ev implements Scrollable {
 
     
     public void m1487a(int i, int i2, int i3, int i4) {
-        if (this.f946m.left != i || this.f946m.top != i2 || this.f946m.right != i3 || this.f946m.bottom != i4) {
-            this.f947n.set(this.f946m);
-            this.f946m.set(i, i2, i3, i4);
+        if (this.rect.left != i || this.rect.top != i2 || this.rect.right != i3 || this.rect.bottom != i4) {
+            this.rect1.set(this.rect);
+            this.rect.set(i, i2, i3, i4);
             if (this.f925E != null) {
-                this.f925E.m1761a(this, this.f947n, this.f946m);
+                this.f925E.m1761a(this, this.rect1, this.rect);
             }
             if (this.scrollState == ScrollState.FLING) {
-                this.f936b.m1709a(this.f942i.left, this.f942i.top, Math.round(Math.signum(this.f936b.m1717d())), Math.round(Math.signum(this.f936b.m1718e())), al(), am(), mo504b(), an(), ak(), mo500a());
+                this.f936b.m1709a(this.r_screen.left, this.r_screen.top, Math.round(Math.signum(this.f936b.m1717d())), Math.round(Math.signum(this.f936b.m1718e())), al(), am(), mo504b(), an(), ak(), mo500a());
             }
         }
     }
@@ -360,42 +361,42 @@ public abstract class ev implements Scrollable {
 
     
     public int computeHorizontalScrollExtent() {
-        return Math.max(0, Math.min(this.f942i.right, this.f946m.right) - Math.max(this.f946m.left, this.f942i.left));
+        return Math.max(0, Math.min(this.r_screen.right, this.rect.right) - Math.max(this.rect.left, this.r_screen.left));
     }
 
     
     public int computeHorizontalScrollOffset() {
-        return Math.max(0, Math.min(this.f942i.left - this.f946m.left, this.f946m.width()));
+        return Math.max(0, Math.min(this.r_screen.left - this.rect.left, this.rect.width()));
     }
 
     
     public int computeHorizontalScrollRange() {
-        return this.f946m.width();
+        return this.rect.width();
     }
 
     
     public int computeVerticalScrollExtent() {
-        return Math.max(0, Math.min(this.f942i.bottom, this.f946m.bottom) - Math.max(this.f946m.top, this.f942i.top));
+        return Math.max(0, Math.min(this.r_screen.bottom, this.rect.bottom) - Math.max(this.rect.top, this.r_screen.top));
     }
 
     
     public int computeVerticalScrollOffset() {
-        return Math.max(0, Math.min(this.f942i.top - this.f946m.top, this.f946m.height()));
+        return Math.max(0, Math.min(this.r_screen.top - this.rect.top, this.rect.height()));
     }
 
     
     public int computeVerticalScrollRange() {
-        return this.f946m.height();
+        return this.rect.height();
     }
 
     
     public int m1561s() {
-        return this.f946m.width();
+        return this.rect.width();
     }
 
     
     public int getContentHeight() {
-        return this.f946m.height();
+        return this.rect.height();
     }
 
     
@@ -608,12 +609,12 @@ public abstract class ev implements Scrollable {
     }
 
     public Rect getViewportBounds() {
-        return this.f942i;
+        return this.r_screen;
     }
 
     
     public Rect m1464P() {
-        return new Rect(this.f942i);
+        return new Rect(this.r_screen);
     }
 
     
@@ -628,7 +629,7 @@ public abstract class ev implements Scrollable {
 
     
     public boolean m1465Q() {
-        if (this.f946m.width() > ((int) this.f941h.width())) {
+        if (this.rect.width() > ((int) this.screenInfo.width())) {
             return true;
         }
         switch (ey.f1235a[this.scrollMode.ordinal()]) {
@@ -644,7 +645,7 @@ public abstract class ev implements Scrollable {
 
     
     public boolean m1466R() {
-        if (this.f946m.height() > ((int) this.f941h.height())) {
+        if (this.rect.height() > ((int) this.screenInfo.height())) {
             return true;
         }
         switch (ey.f1235a[this.scrollMode1.ordinal()]) {
@@ -695,7 +696,7 @@ public abstract class ev implements Scrollable {
         }
         View childAt = this.viewGroup.getChildAt(i);
         if (childAt.getVisibility() != 8) {
-            return this.f942i.intersects(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
+            return this.r_screen.intersects(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
         }
         return false;
     }
@@ -719,7 +720,7 @@ public abstract class ev implements Scrollable {
         ao();
         this.f936b.m1711a(true);
         m1416a(ScrollState.SMOOTH);
-        mo1759a(((float) i) - this.f941h.left, ((float) i2) - this.f941h.top, i3, false, new ez(this, runnable), new fa(this, runnable2));
+        mo1759a(((float) i) - this.screenInfo.left, ((float) i2) - this.screenInfo.top, i3, false, new ez(this, runnable), new fa(this, runnable2));
     }
 
     
@@ -743,9 +744,9 @@ public abstract class ev implements Scrollable {
         int am = am();
         int b = mo504b();
         int an = an();
-        al = Math.max(al, Math.min(this.f942i.left, am));
-        am = Math.max(b, Math.min(this.f942i.top, an));
-        if (this.f942i.left != al || this.f942i.top != am) {
+        al = Math.max(al, Math.min(this.r_screen.left, am));
+        am = Math.max(b, Math.min(this.r_screen.top, an));
+        if (this.r_screen.left != al || this.r_screen.top != am) {
             scrollTo(al, am);
         }
     }
@@ -756,9 +757,9 @@ public abstract class ev implements Scrollable {
         int am = am();
         int b = mo504b();
         int an = an();
-        al = Math.max(al, Math.min(this.f942i.left, am));
-        am = Math.max(b, Math.min(this.f942i.top, an));
-        if (this.f942i.left != al || this.f942i.top != am) {
+        al = Math.max(al, Math.min(this.r_screen.left, am));
+        am = Math.max(b, Math.min(this.r_screen.top, an));
+        if (this.r_screen.left != al || this.r_screen.top != am) {
             ao();
             m1416a(ScrollState.SMOOTH);
             mo1694a(0.0f, 0.0f, new ex(this), null);
@@ -773,21 +774,21 @@ public abstract class ev implements Scrollable {
 
     
     public Point m1477a(Point point) {
-        point.x -= this.f942i.left;
-        point.y -= this.f942i.top;
+        point.x -= this.r_screen.left;
+        point.y -= this.r_screen.top;
         return point;
     }
 
     
     public Point m1508b(Point point) {
-        point.x += this.f942i.left;
-        point.y += this.f942i.top;
+        point.x += this.r_screen.left;
+        point.y += this.r_screen.top;
         return point;
     }
 
     
     public Rect m1509b(Rect rect) {
-        rect.offset(this.f942i.left, this.f942i.top);
+        rect.offset(this.r_screen.left, this.r_screen.top);
         return rect;
     }
 
@@ -847,7 +848,7 @@ public abstract class ev implements Scrollable {
 
     
     protected final void m1533d(float f, float f2) {
-        m1540e(this.f941h.left + f, this.f941h.top + f2);
+        m1540e(this.screenInfo.left + f, this.screenInfo.top + f2);
     }
 
     
@@ -857,39 +858,39 @@ public abstract class ev implements Scrollable {
 
     
     protected final void m1545f(float f, float f2) {
-        m1547g(this.f941h.left + f, this.f941h.top + f2);
+        m1547g(this.screenInfo.left + f, this.screenInfo.top + f2);
     }
 
     
     protected final void m1547g(float f, float f2) {
         boolean z;
-        this.f941h.set(f, f2, ((float) this.viewGroup.getWidth()) + f, ((float) this.viewGroup.getHeight()) + f2);
-        this.f941h.round(this.f942i);
-        mo503a(this.scrollState, this.f941h);
-        this.f941h.round(this.f942i);
+        this.screenInfo.set(f, f2, ((float) this.viewGroup.getWidth()) + f, ((float) this.viewGroup.getHeight()) + f2);
+        this.screenInfo.round(this.r_screen);
+        mo503a(this.scrollState, this.screenInfo);
+        this.screenInfo.round(this.r_screen);
         if (this.scrollMode == OverScrollMode.STRETCH) {
-            if (this.f942i.left < al() && this.f943j.left >= al()) {
-                this.f942i.left = al();
+            if (this.r_screen.left < al() && this.f943j.left >= al()) {
+                this.r_screen.left = al();
             }
-            if (this.f942i.left > am() && this.f943j.right <= am() + ((int) this.f941h.width())) {
-                this.f942i.right = am() + ((int) this.f941h.width());
+            if (this.r_screen.left > am() && this.f943j.right <= am() + ((int) this.screenInfo.width())) {
+                this.r_screen.right = am() + ((int) this.screenInfo.width());
             }
         }
         if (this.scrollMode1 == OverScrollMode.STRETCH) {
-            if (this.f942i.top < mo504b() && this.f943j.top >= mo504b()) {
-                this.f942i.top = mo504b();
+            if (this.r_screen.top < mo504b() && this.f943j.top >= mo504b()) {
+                this.r_screen.top = mo504b();
             }
-            if (this.f942i.top > an() && this.f943j.bottom <= an() + ((int) this.f941h.height())) {
-                this.f942i.bottom = an() + ((int) this.f941h.height());
+            if (this.r_screen.top > an() && this.f943j.bottom <= an() + ((int) this.screenInfo.height())) {
+                this.r_screen.bottom = an() + ((int) this.screenInfo.height());
             }
         }
-        if (this.f942i.equals(this.f943j)) {
+        if (this.r_screen.equals(this.f943j)) {
             z = false;
         } else {
             z = true;
         }
-        this.f943j.set(this.f942i);
-        mo491a(this.f942i.left, this.f942i.top);
+        this.f943j.set(this.r_screen);
+        mo491a(this.r_screen.left, this.r_screen.top);
         if (z) {
             this.viewGroup.invalidate();
         }
@@ -932,7 +933,7 @@ public abstract class ev implements Scrollable {
 
     
     protected void mo501a(float f, float f2) {
-        m1524c(((-f) * mo1695a(-f)) + this.f941h.left, ((-f2) * m1506b(-f2)) + this.f941h.top);
+        m1524c(((-f) * mo1695a(-f)) + this.screenInfo.left, ((-f2) * m1506b(-f2)) + this.screenInfo.top);
     }
 
     
@@ -946,7 +947,7 @@ public abstract class ev implements Scrollable {
 
     
     protected final void m1481a(float f, float f2, int i, int i2, int i3, int i4, Runnable runnable, Runnable runnable2) {
-        this.f936b.m1709a(Math.round(this.f941h.left), Math.round(this.f941h.top), Math.round(f), Math.round(f2), i, i2, i3, i4, ak(), mo500a());
+        this.f936b.m1709a(Math.round(this.screenInfo.left), Math.round(this.screenInfo.top), Math.round(f), Math.round(f2), i, i2, i3, i4, ak(), mo500a());
         this.f921A = new fe(this, false, runnable, runnable2);
         this.viewGroup.post(this.f921A);
     }
@@ -954,27 +955,27 @@ public abstract class ev implements Scrollable {
     
     protected void mo1759a(float f, float f2, int i, boolean z, Runnable runnable, Runnable runnable2) {
         if (!z) {
-            f = Math.max((float) (ag() - this.f942i.left), Math.min(f, (float) (ah() - this.f942i.left)));
-            f2 = Math.max((float) (ai() - this.f942i.top), Math.min(f2, (float) (aj() - this.f942i.top)));
+            f = Math.max((float) (ag() - this.r_screen.left), Math.min(f, (float) (ah() - this.r_screen.left)));
+            f2 = Math.max((float) (ai() - this.r_screen.top), Math.min(f2, (float) (aj() - this.r_screen.top)));
         }
-        this.f936b.m1708a(Math.round(this.f941h.left), Math.round(this.f941h.top), Math.round(f), Math.round(f2), i);
+        this.f936b.m1708a(Math.round(this.screenInfo.left), Math.round(this.screenInfo.top), Math.round(f), Math.round(f2), i);
         this.f921A = new fe(this, z, runnable, runnable2);
         this.viewGroup.post(this.f921A);
     }
 
     
     protected final void m1482a(float f, float f2, int i, int i2, Runnable runnable, Runnable runnable2) {
-        this.f936b.m1715b(Math.round(this.f941h.left), Math.round(this.f941h.top), i, i2, Math.round(f), Math.round(f2));
+        this.f936b.m1715b(Math.round(this.screenInfo.left), Math.round(this.screenInfo.top), i, i2, Math.round(f), Math.round(f2));
         this.f921A = new fe(this, false, runnable, runnable2);
         this.viewGroup.post(this.f921A);
     }
 
     protected final int ae() {
-        return ((int) this.f941h.width()) - this.f942i.width();
+        return ((int) this.screenInfo.width()) - this.r_screen.width();
     }
 
     protected final int af() {
-        return ((int) this.f941h.height()) - this.f942i.height();
+        return ((int) this.screenInfo.height()) - this.r_screen.height();
     }
 
     private final void ao() {
@@ -1042,18 +1043,18 @@ public abstract class ev implements Scrollable {
         float ah = (float) ah();
         float al = (float) al();
         float am = (float) am();
-        float f2 = this.f941h.left;
+        float f2 = this.screenInfo.left;
         if (Float.compare(f2, al) > 0 || Float.compare(f, 0.0f) >= 0) {
             if (Float.compare(f2, am) < 0 || Float.compare(f, 0.0f) <= 0) {
                 ag = 1.0f;
-            } else if (Float.compare(ah, (float) this.f946m.right) == 0) {
+            } else if (Float.compare(ah, (float) this.rect.right) == 0) {
                 ag = 0.0f;
             } else if (Float.compare(f2, ah) >= 0) {
                 ag = 0.0f;
             } else {
                 ag = Math.abs((f2 - ah) / (am - ah));
             }
-        } else if (Float.compare(ag, (float) this.f946m.left) == 0) {
+        } else if (Float.compare(ag, (float) this.rect.left) == 0) {
             ag = 0.0f;
         } else if (Float.compare(f2, ag) <= 0) {
             ag = 0.0f;
@@ -1072,18 +1073,18 @@ public abstract class ev implements Scrollable {
         float aj = (float) aj();
         float b = (float) mo504b();
         float an = (float) an();
-        float f2 = this.f941h.top;
+        float f2 = this.screenInfo.top;
         if (Float.compare(f2, b) > 0 || Float.compare(f, 0.0f) >= 0) {
             if (Float.compare(f2, an) < 0 || Float.compare(f, 0.0f) <= 0) {
                 ai = 1.0f;
-            } else if (Float.compare(aj, (float) this.f946m.bottom) == 0) {
+            } else if (Float.compare(aj, (float) this.rect.bottom) == 0) {
                 ai = 0.0f;
             } else if (Float.compare(f2, aj) >= 0) {
                 ai = 0.0f;
             } else {
                 ai = Math.abs((f2 - aj) / (an - aj));
             }
-        } else if (Float.compare(ai, (float) this.f946m.top) == 0) {
+        } else if (Float.compare(ai, (float) this.rect.top) == 0) {
             ai = 0.0f;
         } else if (Float.compare(f2, ai) <= 0) {
             ai = 0.0f;
@@ -1100,14 +1101,14 @@ public abstract class ev implements Scrollable {
         if (am() - al() == 0) {
             return 0.0f;
         }
-        return (this.f941h.left - ((float) al())) / ((float) (am() - al()));
+        return (this.screenInfo.left - ((float) al())) / ((float) (am() - al()));
     }
 
     private float ar() {
         if (an() - mo504b() == 0) {
             return 0.0f;
         }
-        return (this.f941h.top - ((float) mo504b())) / ((float) (an() - mo504b()));
+        return (this.screenInfo.top - ((float) mo504b())) / ((float) (an() - mo504b()));
     }
 
     protected int ag() {
@@ -1132,7 +1133,7 @@ public abstract class ev implements Scrollable {
                 return this.f950q;
             case 2:
             case 3:
-                return this.f946m.width() > ((int) this.f941h.width()) ? this.f950q : 0;
+                return this.rect.width() > ((int) this.screenInfo.width()) ? this.f950q : 0;
             default:
                 return 0;
         }
@@ -1145,27 +1146,27 @@ public abstract class ev implements Scrollable {
                 return this.f951r;
             case 2:
             case 3:
-                return this.f946m.height() > ((int) this.f941h.height()) ? this.f951r : 0;
+                return this.rect.height() > ((int) this.screenInfo.height()) ? this.f951r : 0;
             default:
                 return 0;
         }
     }
 
     protected int al() {
-        return Math.min(0, this.f946m.left);
+        return Math.min(0, this.rect.left);
     }
 
     
     protected int mo504b() {
-        return Math.min(0, this.f946m.top);
+        return Math.min(0, this.rect.top);
     }
 
     protected int am() {
-        return Math.max(al(), this.f946m.right - ((int) this.f941h.width()));
+        return Math.max(al(), this.rect.right - ((int) this.screenInfo.width()));
     }
 
     protected int an() {
-        return Math.max(mo504b(), this.f946m.bottom - ((int) this.f941h.height()));
+        return Math.max(mo504b(), this.rect.bottom - ((int) this.screenInfo.height()));
     }
 
     private final void as() {
@@ -1183,9 +1184,9 @@ public abstract class ev implements Scrollable {
         int aC = aC();
         m = Math.max(o, Math.round(f2 * ((float) aC)));
         n = Math.round(f * ((float) aC)) + this.f933M.left;
-        this.f932L.set(n, (((int) this.f941h.height()) - this.f933M.bottom) - (ay.getIntrinsicHeight() > 0 ? ay.getIntrinsicHeight() : AnimUtils.m1932b(this.viewGroup.getContext(), 5.0f)), m + n, ((int) this.f941h.height()) - this.f933M.bottom);
-        if (this.f932L.right > ((int) this.f941h.width()) - this.f933M.right) {
-            this.f932L.offset((((int) this.f941h.width()) - this.f933M.right) - this.f932L.right, 0);
+        this.f932L.set(n, (((int) this.screenInfo.height()) - this.f933M.bottom) - (ay.getIntrinsicHeight() > 0 ? ay.getIntrinsicHeight() : AnimUtils.m1932b(this.viewGroup.getContext(), 5.0f)), m + n, ((int) this.screenInfo.height()) - this.f933M.bottom);
+        if (this.f932L.right > ((int) this.screenInfo.width()) - this.f933M.right) {
+            this.f932L.offset((((int) this.screenInfo.width()) - this.f933M.right) - this.f932L.right, 0);
         }
     }
 
@@ -1234,9 +1235,9 @@ public abstract class ev implements Scrollable {
         int aD = aD();
         int intrinsicWidth = az.getIntrinsicWidth() > 0 ? az.getIntrinsicWidth() : AnimUtils.m1932b(this.viewGroup.getContext(), 5.0f);
         q = Math.round(f * ((float) aD)) + this.f930J.top;
-        this.f929I.set((((int) this.f941h.width()) - intrinsicWidth) - this.f930J.right, q, ((int) this.f941h.width()) - this.f930J.right, Math.max(r, Math.round(f2 * ((float) aD))) + q);
-        if (this.f929I.bottom > ((int) this.f941h.height()) - this.f930J.bottom) {
-            this.f929I.offset(0, (((int) this.f941h.height()) - this.f930J.bottom) - this.f929I.bottom);
+        this.f929I.set((((int) this.screenInfo.width()) - intrinsicWidth) - this.f930J.right, q, ((int) this.screenInfo.width()) - this.f930J.right, Math.max(r, Math.round(f2 * ((float) aD))) + q);
+        if (this.f929I.bottom > ((int) this.screenInfo.height()) - this.f930J.bottom) {
+            this.f929I.offset(0, (((int) this.screenInfo.height()) - this.f930J.bottom) - this.f929I.bottom);
         }
     }
 
@@ -1269,7 +1270,7 @@ public abstract class ev implements Scrollable {
         if (this.f953t) {
             return 1;
         }
-        if (Float.compare(((float) this.f942i.width()) / ((float) m1561s()), ((float) drawable.getIntrinsicWidth()) / ((float) aC())) <= 0) {
+        if (Float.compare(((float) this.r_screen.width()) / ((float) m1561s()), ((float) drawable.getIntrinsicWidth()) / ((float) aC())) <= 0) {
             return 1;
         }
         return 0;
@@ -1286,18 +1287,18 @@ public abstract class ev implements Scrollable {
         if (this.f954u) {
             return 1;
         }
-        if (Float.compare(((float) this.f942i.height()) / ((float) getContentHeight()), ((float) drawable.getIntrinsicHeight()) / ((float) aD())) <= 0) {
+        if (Float.compare(((float) this.r_screen.height()) / ((float) getContentHeight()), ((float) drawable.getIntrinsicHeight()) / ((float) aD())) <= 0) {
             return 1;
         }
         return 0;
     }
 
     private final int aC() {
-        return (((int) this.f941h.width()) - this.f933M.left) - this.f933M.right;
+        return (((int) this.screenInfo.width()) - this.f933M.left) - this.f933M.right;
     }
 
     private final int aD() {
-        return (((int) this.f941h.height()) - this.f930J.top) - this.f930J.bottom;
+        return (((int) this.screenInfo.height()) - this.f930J.top) - this.f930J.bottom;
     }
 
     
