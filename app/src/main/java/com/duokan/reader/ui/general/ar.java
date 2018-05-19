@@ -144,7 +144,7 @@ public class ar extends LinearLayout {
 
     /* renamed from: a */
     public void m10234a(int i, int i2) {
-        ImageView imageView = (ImageView) this.f6940d.m1321b(i).findViewById(C0244f.general__shared__tab_view__num);
+        ImageView imageView = (ImageView) this.f6940d.childView.m1321b(i, this.f6940d).findViewById(C0244f.general__shared__tab_view__num);
         if (i2 == 0) {
             imageView.setVisibility(8);
         } else {

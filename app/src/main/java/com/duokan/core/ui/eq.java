@@ -96,7 +96,7 @@ public class eq extends bt {
     }
 
     /* renamed from: a */
-    public View mo456a(int i) {
+    public View getTabView(int i) {
         return m2027b(i).getChildAt(0);
     }
 

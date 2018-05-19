@@ -13,7 +13,7 @@ public abstract class bt extends LinearLayout {
     public abstract int mo455a(View view, LayoutParams layoutParams);
 
     /* renamed from: a */
-    public abstract View mo456a(int i);
+    public abstract View getTabView(int i);
 
     public abstract int getCellCount();
 
@@ -45,5 +45,10 @@ public abstract class bt extends LinearLayout {
 
     public bt(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
+    }
+
+    /* renamed from: b */
+    public View m1321b(int i, TabBarView tabBarView) {
+        return tabBarView.m1318e(i).getChildAt(0);
     }
 }

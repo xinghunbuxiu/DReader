@@ -5,10 +5,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.view.ViewGroup.MarginLayoutParams;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -110,7 +107,7 @@ public class ir extends ViewGroup {
 
     /* renamed from: a */
     public View m10807a(int i) {
-        return this.f7403f.mo456a(i);
+        return this.f7403f.getTabView(i);
     }
 
     /* renamed from: a */
