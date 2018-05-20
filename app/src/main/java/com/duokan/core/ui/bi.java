@@ -13,7 +13,7 @@ class bi implements Runnable {
 
     public void run() {
         if (this.f1013b.f960b.f763E != null) {
-            this.f1013b.f960b.f763E.mo480a(this.f1013b.f960b, this.f1013b.f960b.m1141g(this.f1012a), this.f1012a);
+            this.f1013b.f960b.f763E.onItemClick(this.f1013b.f960b, this.f1013b.f960b.m1141g(this.f1012a), this.f1012a);
         }
     }
 }

@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.personal;
 
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.domain.social.message.ar;
 import com.duokan.reader.ui.general.be;
@@ -10,14 +10,14 @@ class cs implements ar {
     /* renamed from: a */
     final /* synthetic */ List f8420a;
     /* renamed from: b */
-    final /* synthetic */ C0342j f8421b;
+    final /* synthetic */ BaseDialog f8421b;
     /* renamed from: c */
     final /* synthetic */ cr f8422c;
 
-    cs(cr crVar, List list, C0342j c0342j) {
+    cs(cr crVar, List list, BaseDialog dialog) {
         this.f8422c = crVar;
         this.f8420a = list;
-        this.f8421b = c0342j;
+        this.f8421b = dialog;
     }
 
     /* renamed from: a */

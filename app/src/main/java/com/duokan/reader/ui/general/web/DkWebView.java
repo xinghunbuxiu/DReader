@@ -20,12 +20,11 @@ import com.duokan.core.sys.UIdleHandler;
 import com.duokan.core.ui.PullDownRefreshBaseView.RefreshState;
 import com.duokan.core.ui.PullDownRefreshView;
 import com.duokan.core.ui.PullDownRefreshView.RefreshStyle;
-import com.duokan.core.ui.cg;
-import com.duokan.core.ui.fl;
-import com.duokan.core.ui.fq;
+import com.duokan.core.ui.OnScrollListener;
+import com.duokan.core.ui.WebPageChromeClient;
+import com.duokan.core.ui.WebPageClient;
 import com.duokan.core.ui.fr;
 import com.duokan.core.ui.fv;
-import com.duokan.core.ui.fz;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.common.p037c.C0559f;
 import com.duokan.reader.common.p037c.C0563j;
@@ -36,26 +35,26 @@ import com.duokan.reader.ui.general.WebView;
 import com.duokan.reader.ui.general.jg;
 
 public class DkWebView extends WebView {
-    /* renamed from: b */
-    public static final String f7558b = DkWebView.class.getName();
-    /* renamed from: c */
-    private final WebSettings f7559c;
-    /* renamed from: d */
+    
+    public static final String TAG = DkWebView.class.getName();
+    
+    private final WebSettings webSettings;
+    
     private final C0563j f7560d = new C1360h(this);
-    /* renamed from: e */
+    
     private final LinearLayout f7561e;
-    /* renamed from: f */
-    private final PullDownRefreshView f7562f;
-    /* renamed from: g */
-    private cg f7563g = null;
-    /* renamed from: h */
+    
+    private final PullDownRefreshView pullDownRefreshView;
+    
+    private OnScrollListener onScrollListener = null;
+    
     private C1365o f7564h = null;
-    /* renamed from: i */
+    
     private boolean f7565i = false;
 
-    /* renamed from: a */
-    protected /* synthetic */ fv mo1744a(fz fzVar) {
-        return mo1816b(fzVar);
+    
+    protected  fv mo1744a(DkWebView webView) {
+        return mo1816b(webView);
     }
 
     @SuppressLint({"NewApi"})
@@ -64,8 +63,8 @@ public class DkWebView extends WebView {
         if (DkApp.get().forCommunity()) {
             setLoadingTimout(0);
         }
-        this.f7559c = getSettings();
-        lr.m11294a(this.f7559c);
+        this.webSettings = getSettings();
+        lr.m11294a(this.webSettings);
         super.setDownloadListener(new C1361i(this));
         if (VERSION.SDK_INT >= 11) {
             setLayerType(0, null);
@@ -75,84 +74,84 @@ public class DkWebView extends WebView {
         }
         this.f7561e = new LinearLayout(getContext());
         this.f7561e.setOrientation(1);
-        this.f7562f = new PullDownRefreshView(getContext());
-        this.f7562f.setPadding(0, ((C0435s) AppContext.getAppContext(getContext()).queryFeature(C0435s.class)).getTheme().getPageHeaderPaddingTop(), 0, 0);
-        this.f7561e.addView(this.f7562f, new LayoutParams(-1, -2));
+        this.pullDownRefreshView = new PullDownRefreshView(getContext());
+        this.pullDownRefreshView.setPadding(0, ((C0435s) AppContext.getAppContext(getContext()).queryFeature(C0435s.class)).getTheme().getPageHeaderPaddingTop(), 0, 0);
+        this.f7561e.addView(this.pullDownRefreshView, new LayoutParams(-1, -2));
         setPullDownHeaderView(this.f7561e);
         super.setOnScrollListener(new C1363j(this));
     }
 
-    /* renamed from: k */
+    
     public boolean mo1822k() {
         return this.f7565i;
     }
 
     public void setPullDownRefreshEnabled(boolean z) {
-        this.f7562f.setVisibility(z ? 0 : 4);
+        this.pullDownRefreshView.setVisibility(z ? 0 : 4);
     }
 
     public void setOnPullDownRefreshListener(C1365o c1365o) {
         this.f7564h = c1365o;
     }
 
-    /* renamed from: b */
-    protected jg mo1816b(fz fzVar) {
-        return new C1369n(this, fzVar);
+    
+    protected jg mo1816b(DkWebView webView) {
+        return new C1369n(this, webView);
     }
 
-    public void setOnScrollListener(cg cgVar) {
-        this.f7563g = cgVar;
+    public void setOnScrollListener(OnScrollListener onScrollListener) {
+        this.onScrollListener = onScrollListener;
     }
 
-    public cg getOnScrollerListener() {
-        return this.f7563g;
+    public OnScrollListener getOnScrollerListener() {
+        return this.onScrollListener;
     }
 
-    /* renamed from: c */
+    
     public boolean m10989c(String str) {
         if (this.f7565i) {
             return false;
         }
-        mo1815a(str);
+        loadUrl(str);
         return true;
     }
 
-    /* renamed from: a */
-    public void mo1815a(String str) {
+    
+    public void loadUrl(String str) {
         C1163a.m8627k().m8641a(str);
         if (!this.f7565i) {
-            super.mo1815a(str);
+            super.loadUrl(str);
         }
     }
 
-    /* renamed from: c */
-    public void mo1818c() {
+    
+    public void reload() {
         if (!this.f7565i) {
-            super.mo1818c();
+            super.reload();
         }
     }
 
-    /* renamed from: d */
-    public boolean mo1819d() {
+    
+    public boolean canGoBack() {
         if (this.f7565i) {
             return false;
         }
-        return super.mo1819d();
+        return super.canGoBack();
     }
 
-    /* renamed from: a */
-    public void mo1813a(int i) {
+    
+    public void goBackOrForward(int i) {
         if (!this.f7565i) {
-            super.mo1813a(i);
+            super.goBackOrForward(i);
         }
     }
 
-    /* renamed from: e */
-    public WebBackForwardList mo1820e() {
+    
+    public WebBackForwardList copyBackForwardList() {
         if (this.f7565i) {
             return null;
         }
-        return super.mo1820e();
+        return super.copyBackForwardList();
     }
 
     public void setOverScrollMode(int i) {
@@ -251,22 +250,22 @@ public class DkWebView extends WebView {
         }
     }
 
-    /* renamed from: a */
-    public void mo1814a(Object obj, String str) {
+    
+    public void addJavascriptInterface(Object obj, String str) {
         if (!this.f7565i) {
-            super.mo1814a(obj, str);
+            super.addJavascriptInterface(obj, str);
         }
     }
 
-    public void setWebpageClient(fq fqVar) {
+    public void setWebpageClient(WebPageClient webPageClient) {
         if (!this.f7565i) {
-            super.setWebpageClient(fqVar);
+            super.setWebpageClient(webPageClient);
         }
     }
 
-    public void setWebpageChromeClient(fl flVar) {
+    public void setWebpageChromeClient(WebPageChromeClient webPageChromeClient) {
         if (!this.f7565i) {
-            super.setWebpageChromeClient(flVar);
+            super.setWebpageChromeClient(webPageChromeClient);
         }
     }
 
@@ -277,10 +276,10 @@ public class DkWebView extends WebView {
     public final void setDownloadListener(DownloadListener downloadListener) {
     }
 
-    /* renamed from: f */
-    public void mo1821f() {
+    
+    public void destroy() {
         this.f7565i = true;
-        super.mo1821f();
+        super.destroy();
     }
 
     protected void onAttachedToWindow() {
@@ -294,26 +293,26 @@ public class DkWebView extends WebView {
         UIdleHandler.addIdleHandler(new C1366l(this));
     }
 
-    /* renamed from: b */
+    
     protected void mo1817b(String str) {
         super.mo1817b(str);
-        if (this.f7562f.getRefreshState() == RefreshState.REFRESHING) {
-            this.f7562f.setOnRefreshDone(new C1368m(this));
-            this.f7562f.setRefreshState(RefreshState.REFRESH_DONE);
+        if (this.pullDownRefreshView.getRefreshState() == RefreshState.REFRESHING) {
+            this.pullDownRefreshView.setOnRefreshDone(new C1368m(this));
+            this.pullDownRefreshView.setRefreshState(RefreshState.REFRESH_DONE);
         }
     }
 
     public void setRefreshStyle(RefreshStyle refreshStyle) {
-        this.f7562f.setRefreshStyle(refreshStyle);
+        this.pullDownRefreshView.setRefreshStyle(refreshStyle);
     }
 
-    /* renamed from: l */
+    
     private void m10980l() {
-        mo1818c();
+        reload();
     }
 
-    /* renamed from: m */
+    
     private boolean m10981m() {
-        return this.f7562f.getVisibility() == 0;
+        return this.pullDownRefreshView.getVisibility() == GONE;
     }
 }

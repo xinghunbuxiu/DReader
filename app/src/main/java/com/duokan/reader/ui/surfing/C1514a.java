@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import com.duokan.core.app.ApplicationsStateCallbacks;
 import com.duokan.core.app.ManagedApp;
 import com.duokan.core.app.ManagedApp.RunningState;
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0255g;
@@ -23,7 +23,7 @@ import org.apache.http.HttpStatus;
 import org.json.JSONObject;
 
 /* renamed from: com.duokan.reader.ui.surfing.a */
-public class C1514a extends C0342j implements ApplicationsStateCallbacks {
+public class C1514a extends BaseDialog implements ApplicationsStateCallbacks {
     /* renamed from: a */
     private final C1521h f11491a;
     /* renamed from: b */

@@ -47,14 +47,14 @@ public class ib {
         if ((this.f7368e != i || z) && this.f7364a.getTabCount() > 0 && this.f7366c != null) {
             View b;
             if (this.f7368e >= 0) {
-                b = this.f7364a.childView.m1321b(this.f7368e, this.f7364a);
+                b = this.f7364a.childView.getView(this.f7368e, this.f7364a);
                 if (b instanceof TextView) {
                     ((TextView) b).setTextColor(this.f7366c[0]);
                 }
                 b.setSelected(false);
             }
             this.f7368e = i;
-            b = this.f7364a.childView.m1321b(this.f7368e, this.f7364a);
+            b = this.f7364a.childView.getView(this.f7368e, this.f7364a);
             if (b instanceof TextView) {
                 ((TextView) b).setTextColor(this.f7366c[1]);
             }

@@ -106,7 +106,7 @@ class tf implements ac, af, an, aq, C1428i, C1433n, C1436q, C1439t, adi, za {
                 ((ReaderFeature) this.f10968a.getContext().queryFeature(ReaderFeature.class)).showPopup(bookHtmlController);
                 com.duokan.core.sys.ah.m871b(new th(this, file, bufferedInputStream, bookHtmlController));
             } else if ("duokan-reader".equalsIgnoreCase(scheme)) {
-                ((ReaderFeature) this.f10968a.getContext().queryFeature(ReaderFeature.class)).navigate(parse.toString(), "reading_" + this.f10968a.f9656a.mo1992G().m4156I(), true, null);
+                ((ReaderFeature) this.f10968a.getContext().queryFeature(ReaderFeature.class)).navigate(parse.toString(), "reading_" + this.f10968a.f9656a.mo1992G().getId(), true, null);
             } else {
                 ji jiVar = new ji(this.f10968a.getContext());
                 jiVar.m10872a(aeVar.mo1407b());

@@ -15,12 +15,12 @@ import com.duokan.reader.ui.general.DkWebListView;
 import com.duokan.reader.ui.general.PageHeaderView;
 import com.duokan.reader.ui.general.bo;
 
-/* renamed from: com.duokan.reader.ui.store.h */
+
 public class C1495h extends DkWebListView {
-    /* renamed from: a */
+    
     private final bo f11443a;
-    /* renamed from: b */
-    private DkStoreBookTocInfo[] f11444b;
+    
+    private DkStoreBookTocInfo[] storeBookTocInfos;
 
     public C1495h(Context context) {
         this(context, null);
@@ -28,12 +28,12 @@ public class C1495h extends DkWebListView {
 
     public C1495h(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f11444b = null;
-        setBackgroundResource(C0252d.store__shared__bg);
+        this.storeBookTocInfos = null;
+        setBackgroundResource(R.drawable.store__shared__bg);
         C0435s c0435s = (C0435s) AppContext.getAppContext(getContext()).queryFeature(C0435s.class);
         m9955a(0, 0, 0, c0435s == null ? 0 : c0435s.getTheme().getPagePaddingBottom());
-        View pageHeaderView = new PageHeaderView(getContext());
-        pageHeaderView.setLeftTitle(getContext().getString(C0258j.store__book_toc_view__title));
+        PageHeaderView pageHeaderView = new PageHeaderView(getContext());
+        pageHeaderView.setLeftTitle(getContext().getString(R.string.store__book_toc_view__title));
         setTitleView(pageHeaderView);
         setPullDownRefreshEnabled(false);
         m9961b(C0256h.store__book_toc_title_view);
@@ -46,7 +46,7 @@ public class C1495h extends DkWebListView {
     }
 
     public void setBookToc(DkStoreBookTocInfo[] dkStoreBookTocInfoArr) {
-        this.f11444b = dkStoreBookTocInfoArr;
+        this.storeBookTocInfos = dkStoreBookTocInfoArr;
         this.f11443a.m8785a(false);
     }
 

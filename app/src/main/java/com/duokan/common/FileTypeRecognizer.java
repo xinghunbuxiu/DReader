@@ -11,7 +11,7 @@ public class FileTypeRecognizer {
 
     /* renamed from: a */
     public static FileType m567a(String str) {
-        String a = C0267i.m601a(str);
+        String a = CommonUtils.m601a(str);
         if (a == null) {
             return FileType.UNSUPPORTED;
         }

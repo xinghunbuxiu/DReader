@@ -2,9 +2,9 @@ package com.duokan.reader.ui.bookshelf;
 
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 
-class fw implements cg {
+class fw implements OnScrollListener {
     /* renamed from: a */
     final /* synthetic */ fo f6471a;
 

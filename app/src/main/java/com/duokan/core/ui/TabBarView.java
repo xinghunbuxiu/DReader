@@ -20,31 +20,31 @@ import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 
 public class TabBarView extends FrameLayout {
-    /* renamed from: a */
+    
     private Drawable f856a;
-    /* renamed from: b */
+    
     private int tabIndex;
-    /* renamed from: c */
+    
     private int lastTabIndex;
-    /* renamed from: d */
+    
     private TranslateAnimation translateAnimation;
-    /* renamed from: e */
+    
     private TranslateAnimation f860e;
-    /* renamed from: f */
+    
     public final bt childView;
-    /* renamed from: g */
+    
     private int indicatorCenter;
-    /* renamed from: h */
+    
     private int indictorWidth;
-    /* renamed from: i */
+    
     private int gravity;
-    /* renamed from: j */
+    
     private cs f865j;
-    /* renamed from: k */
+    
     private Transformation f866k;
-    /* renamed from: l */
+    
     private Rect f867l;
-    /* renamed from: m */
+    
     private boolean repeatedClicks;
 
     public TabBarView(Context context) {
@@ -71,7 +71,7 @@ public class TabBarView extends FrameLayout {
         if (TextUtils.equals(string, "horizontal")) {
             this.childView = new HorzLinearView(context);
         } else {
-            this.childView = new eq(context);
+            this.childView = new MyListView(context);
         }
         addView(this.childView, new LayoutParams(-1, -1));
         setWillNotDraw(false);
@@ -92,7 +92,7 @@ public class TabBarView extends FrameLayout {
         this.f867l = new Rect(0, 0, 0, 0);
         this.repeatedClicks = true;
         if (i == 1) {
-            this.childView = new eq(context);
+            this.childView = new MyListView(context);
         } else {
             this.childView = new HorzLinearView(context);
         }
@@ -169,14 +169,14 @@ public class TabBarView extends FrameLayout {
         this.repeatedClicks = z;
     }
 
-    /* renamed from: a */
+    
     public int m1319a(int i) {
         int i2 = this.tabIndex;
         changeTabStatus(i, false);
         return i2;
     }
 
-    /* renamed from: c */
+    
     public View m1322c(int i) {
         ViewGroup a = m1306a();
         LayoutInflater.from(getContext()).inflate(i, a, true);
@@ -186,7 +186,7 @@ public class TabBarView extends FrameLayout {
         return a.getChildAt(0);
     }
 
-    /* renamed from: a */
+    
     public int m1320a(View view) {
         if (view.getLayoutParams() == null) {
             view.setLayoutParams(new LayoutParams(-1, -1));
@@ -223,7 +223,7 @@ public class TabBarView extends FrameLayout {
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         if (this.f856a != null) {
-            m1310a(null, false);
+            switchTabView(null, false);
         }
     }
 
@@ -233,30 +233,30 @@ public class TabBarView extends FrameLayout {
         }
     }
 
-    /* renamed from: a */
-    private void changeTabStatus(int i, boolean z) {
-        if (this.tabIndex != i || !this.repeatedClicks) {
-            FrameLayout e;
+    
+    private void changeTabStatus(int tabIndex, boolean isSelected) {
+        if (this.tabIndex != tabIndex || !this.repeatedClicks) {
+            FrameLayout tabView;
             this.lastTabIndex = this.tabIndex;
             if (this.tabIndex >= 0) {
-                e = getChildTabView(this.tabIndex);
-                e.setSelected(false);
-                e.getChildAt(0).setSelected(false);
+                tabView = getChildTabView(this.tabIndex);
+                tabView.setSelected(false);
+                tabView.getChildAt(0).setSelected(false);
             }
-            e = null;
-            if (i >= 0) {
-                e = getChildTabView(i);
-                this.tabIndex = i;
+            tabView = null;
+            if (tabIndex >= 0) {
+                tabView = getChildTabView(tabIndex);
+                this.tabIndex = tabIndex;
             }
-            m1310a(e, z);
+            switchTabView(tabView, isSelected);
             if (this.f865j != null) {
-                this.f865j.mo1697a(this.lastTabIndex, this.tabIndex, z);
+                this.f865j.mo1697a(this.lastTabIndex, this.tabIndex, isSelected);
             }
         }
     }
 
-    /* renamed from: a */
-    private void m1310a(FrameLayout frameLayout, boolean z) {
+    
+    private void switchTabView(FrameLayout frameLayout, boolean select) {
         if (this.tabIndex < 0) {
             this.translateAnimation = null;
             this.f860e = null;
@@ -268,11 +268,11 @@ public class TabBarView extends FrameLayout {
                 frameLayout.setSelected(true);
                 frameLayout.getChildAt(0).setSelected(true);
             }
-            post(new cn(this, z));
+            post(new cn(this, select));
         } else {
             Rect selectedTabRect = getSelectedTabRect();
             if (!m1317c(selectedTabRect)) {
-                if (this.childView instanceof eq) {
+                if (this.childView instanceof MyListView) {
                     this.translateAnimation = new TranslateAnimation(0.0f, 0.0f, (float) getIndicatorCenter(), (float) m1303a(selectedTabRect));
                     this.f860e = new TranslateAnimation(0.0f, 0.0f, (float) getIndicatorWidth(), (float) m1312b(selectedTabRect));
                 } else {
@@ -289,7 +289,7 @@ public class TabBarView extends FrameLayout {
                 this.f860e.setFillAfter(true);
                 this.f860e.setFillEnabled(true);
                 this.f860e.setInterpolator(new AccelerateDecelerateInterpolator());
-                this.f860e.setAnimationListener(new co(this, frameLayout, z));
+                this.f860e.setAnimationListener(new co(this, frameLayout, select));
                 invalidate();
             } else if (frameLayout != null) {
                 frameLayout.setSelected(true);
@@ -303,19 +303,19 @@ public class TabBarView extends FrameLayout {
             return new Rect(0, 0, 0, 0);
         }
         Rect rect = new Rect();
-        AnimUtils.m1906a(new RectF(), childView.m1321b(this.tabIndex, this), (View) this).round(rect);
+        AnimUtils.m1906a(new RectF(), childView.getView(this.tabIndex, this), (View) this).round(rect);
         return rect;
     }
 
-    /* renamed from: a */
+    
     private int m1303a(Rect rect) {
-        if (this.childView instanceof eq) {
+        if (this.childView instanceof MyListView) {
             return rect.centerY();
         }
         return rect.centerX();
     }
 
-    /* renamed from: a */
+    
     private FrameLayout m1306a() {
         View frameLayout = new FrameLayout(getContext());
         frameLayout.setOnClickListener(new cq(this));
@@ -324,7 +324,7 @@ public class TabBarView extends FrameLayout {
         return frameLayout;
     }
 
-    /* renamed from: a */
+    
     private int m1304a(FrameLayout frameLayout) {
         for (int i = 0; i < this.childView.getCellCount(); i++) {
             if (this.childView.getTabView(i) == frameLayout) {
@@ -334,12 +334,12 @@ public class TabBarView extends FrameLayout {
         return -1;
     }
 
-    /* renamed from: e */
+    
     private FrameLayout getChildTabView(int i) {
         return (FrameLayout) this.childView.getTabView(i);
     }
 
-    /* renamed from: d */
+    
     protected void m1323d(int i) {
         setIndicatorCenter(i);
         invalidate();
@@ -361,7 +361,7 @@ public class TabBarView extends FrameLayout {
         this.indictorWidth = i;
     }
 
-    /* renamed from: b */
+    
     private void m1314b() {
         long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
         if (this.translateAnimation != null && !this.translateAnimation.hasEnded()) {
@@ -371,7 +371,7 @@ public class TabBarView extends FrameLayout {
             float[] fArr = new float[]{0.0f, 0.0f};
             this.translateAnimation.getTransformation(currentAnimationTimeMillis, this.f866k);
             this.f866k.getMatrix().mapPoints(fArr);
-            if (this.childView instanceof eq) {
+            if (this.childView instanceof MyListView) {
                 this.indicatorCenter = Math.round(fArr[1]);
             } else {
                 this.indicatorCenter = Math.round(fArr[0]);
@@ -380,7 +380,7 @@ public class TabBarView extends FrameLayout {
         }
     }
 
-    /* renamed from: c */
+    
     private void m1316c() {
         long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
         if (this.f860e != null && !this.f860e.hasEnded()) {
@@ -390,7 +390,7 @@ public class TabBarView extends FrameLayout {
             float[] fArr = new float[]{0.0f, 0.0f};
             this.f860e.getTransformation(currentAnimationTimeMillis, this.f866k);
             this.f866k.getMatrix().mapPoints(fArr);
-            if (this.childView instanceof eq) {
+            if (this.childView instanceof MyListView) {
                 this.indictorWidth = Math.round(fArr[1]);
             } else {
                 this.indictorWidth = Math.round(fArr[0]);
@@ -399,10 +399,10 @@ public class TabBarView extends FrameLayout {
         }
     }
 
-    /* renamed from: a */
+    
     private void m1309a(Canvas canvas) {
         canvas.save();
-        if (this.childView instanceof eq) {
+        if (this.childView instanceof MyListView) {
             this.f867l.set(0, this.indicatorCenter - (this.indictorWidth / 2), getWidth(), this.indicatorCenter + ((this.indictorWidth + 1) / 2));
         } else {
             this.f867l.set(this.indicatorCenter - (this.indictorWidth / 2), 0, this.indicatorCenter + ((this.indictorWidth + 1) / 2), getHeight());
@@ -411,17 +411,17 @@ public class TabBarView extends FrameLayout {
         canvas.restore();
     }
 
-    /* renamed from: b */
+    
     private int m1312b(Rect rect) {
-        if (this.childView instanceof eq) {
+        if (this.childView instanceof MyListView) {
             return rect.height();
         }
         return rect.width();
     }
 
-    /* renamed from: c */
+    
     private boolean m1317c(Rect rect) {
-        if (this.childView instanceof eq) {
+        if (this.childView instanceof MyListView) {
             if (this.indicatorCenter == rect.centerY() && this.indictorWidth == rect.height()) {
                 return true;
             }

@@ -93,8 +93,8 @@ public class C1502o implements ai, C1186l {
 
     /* renamed from: a */
     public void m15429a(C0800c c0800c, ah ahVar, FlowChargingTransferChoice flowChargingTransferChoice) {
-        this.f11462g.add(c0800c.m4156I());
-        this.f11459d.m8703a(c0800c.m4156I(), false, new C1511x(this, c0800c, flowChargingTransferChoice, ahVar));
+        this.f11462g.add(c0800c.getId());
+        this.f11459d.m8703a(c0800c.getId(), false, new C1511x(this, c0800c, flowChargingTransferChoice, ahVar));
     }
 
     /* renamed from: a */

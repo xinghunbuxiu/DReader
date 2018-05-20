@@ -5,8 +5,8 @@ import android.content.Context;
 import com.duokan.core.app.C0301c;
 import com.duokan.core.app.OnCancelListener;
 
-/* renamed from: com.duokan.core.ui.f */
-public class C0343f extends C0342j implements C0301c {
+
+public class C0343f extends BaseDialog implements C0301c {
     private boolean mCancelOnBack = true;
     private boolean mCancelOnTouchOutside = true;
     private OnCancelListener mOnCancelListener = null;

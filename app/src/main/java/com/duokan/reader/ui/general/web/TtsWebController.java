@@ -82,8 +82,8 @@ public class TtsWebController extends StorePageController implements C0780k, OnU
         this.mWebRootView.setPadding(this.mWebRootView.getPaddingLeft(), ((su) getContext().queryFeature(su.class)).getTheme().getPageHeaderHeight(), this.mWebRootView.getPaddingRight(), this.mWebRootView.getPaddingBottom());
         this.mPageLoadingView = (LoadingCircleView) findViewById(C0255g.general__web_core_view__first_load);
         this.mPageLoadingView.setVisibility(0);
-        this.mWebView.mo1815a(C0641o.m2934i().m2950N());
-        this.mWebView.mo1814a(new lg(), "jsHandler");
+        this.mWebView.loadUrl(C0641o.m2934i().m2950N());
+        this.mWebView.addJavascriptInterface(new lg(), "jsHandler");
         this.mWebView.setVerticalOverScrollMode(OverScrollMode.STRETCH);
         this.mWebView.getSettings().setTextZoom(100);
         setPageTitleLeft(true);
@@ -92,7 +92,7 @@ public class TtsWebController extends StorePageController implements C0780k, OnU
     public String invokeJS(String str, String str2) {
         try {
             if (this.mWebView != null) {
-                this.mWebView.mo1815a("javascript:" + str + "(" + (TextUtils.isEmpty(str2) ? "" : "'" + str2 + "'") + ")");
+                this.mWebView.loadUrl("javascript:" + str + "(" + (TextUtils.isEmpty(str2) ? "" : "'" + str2 + "'") + ")");
             }
         } catch (Throwable th) {
         }
@@ -328,7 +328,7 @@ public class TtsWebController extends StorePageController implements C0780k, OnU
     }
 
     private void reload() {
-        this.mWebView.mo1818c();
+        this.mWebView.reload();
     }
 
     private String payTts(String str, String str2) {

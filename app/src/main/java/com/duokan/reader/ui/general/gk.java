@@ -9,8 +9,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import com.duokan.common.C0267i;
-import com.duokan.core.ui.C0342j;
+import com.duokan.common.CommonUtils;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0240b;
 import com.duokan.p023b.C0241c;
@@ -21,7 +21,7 @@ import com.duokan.p023b.C0245g;
 
 public class gk implements dq {
     /* renamed from: a */
-    private final C0342j f7281a;
+    private final BaseDialog f7281a;
     /* renamed from: b */
     private FrameLayout f7282b;
     /* renamed from: c */
@@ -29,8 +29,8 @@ public class gk implements dq {
     /* renamed from: d */
     private boolean f7284d = false;
 
-    public gk(C0342j c0342j) {
-        this.f7281a = c0342j;
+    public gk(BaseDialog dialog) {
+        this.f7281a = dialog;
         Context context = this.f7281a.getContext();
         this.f7283c = new LinearLayout(context);
         this.f7283c.setBackgroundResource(C0243e.general__shared__menu_bg);
@@ -42,11 +42,11 @@ public class gk implements dq {
         frameLayout.addView(this.f7283c, new LayoutParams(-1, -2));
         frameLayout.addView(this.f7282b, new LayoutParams(-1, -2));
         new RelativeLayout.LayoutParams(-1, -2).addRule(12);
-        c0342j.setContentView(frameLayout);
-        c0342j.setEnterAnimation(C0240b.general__shared__push_down_in);
-        c0342j.setExitAnimation(C0240b.general__shared__push_down_out);
-        c0342j.setGravity(80);
-        c0342j.setDimAmount(0.75f);
+        dialog.setContentView(frameLayout);
+        dialog.setEnterAnimation(C0240b.general__shared__push_down_in);
+        dialog.setExitAnimation(C0240b.general__shared__push_down_out);
+        dialog.setGravity(80);
+        dialog.setDimAmount(0.75f);
     }
 
     /* renamed from: a */
@@ -83,7 +83,7 @@ public class gk implements dq {
         DkLabelView dkLabelView = (DkLabelView) inflate.findViewById(C0244f.general__shared_spirt_menu_item_view__text);
         if (i != 0) {
             dkLabelView.setCompoundDrawablesWithIntrinsicBounds(this.f7281a.getContext().getResources().getDrawable(i), null, null, null);
-            dkLabelView.setCompoundDrawablePadding(C0267i.m598a(this.f7281a.getContext(), 10.0f));
+            dkLabelView.setCompoundDrawablePadding(CommonUtils.dip2px(this.f7281a.getContext(), 10.0f));
         }
         if (!z) {
             inflate.findViewById(C0244f.general__shared_spirt_menu_item_view__top_line).setVisibility(8);

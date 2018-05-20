@@ -15,14 +15,14 @@ class C1513z implements ah {
 
     /* renamed from: a */
     public void mo1047a(String str, DkCloudBookManifest dkCloudBookManifest) {
-        this.f11490a.f11489a.f11488d.f11462g.remove(this.f11490a.f11489a.f11485a.m4156I());
+        this.f11490a.f11489a.f11488d.f11462g.remove(this.f11490a.f11489a.f11485a.getId());
         ((fp) this.f11490a.f11489a.f11485a).m4481a(dkCloudBookManifest, this.f11490a.f11489a.f11486b.wifiOnly());
         this.f11490a.f11489a.f11487c.mo1047a(str, dkCloudBookManifest);
     }
 
     /* renamed from: a */
     public void mo1048a(String str, String str2) {
-        this.f11490a.f11489a.f11488d.f11462g.remove(this.f11490a.f11489a.f11485a.m4156I());
+        this.f11490a.f11489a.f11488d.f11462g.remove(this.f11490a.f11489a.f11485a.getId());
         this.f11490a.f11489a.f11487c.mo1048a(str, str2);
     }
 }

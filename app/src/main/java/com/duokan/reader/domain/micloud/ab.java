@@ -1,8 +1,8 @@
 package com.duokan.reader.domain.micloud;
 
-import com.duokan.core.p029c.C0326b;
+import com.duokan.core.p029c.IRunTask;
 
-class ab implements C0326b<C1084z> {
+class ab implements IRunTask<C1084z> {
     /* renamed from: a */
     final /* synthetic */ String f5187a;
     /* renamed from: b */

@@ -7,10 +7,10 @@ class fn extends FileChooserParams {
     /* renamed from: a */
     final /* synthetic */ fp f1259a;
     /* renamed from: b */
-    final /* synthetic */ fl f1260b;
+    final /* synthetic */ WebPageChromeClient f1260b;
 
-    fn(fl flVar, fp fpVar) {
-        this.f1260b = flVar;
+    fn(WebPageChromeClient webPageChromeClient, fp fpVar) {
+        this.f1260b = webPageChromeClient;
         this.f1259a = fpVar;
     }
 

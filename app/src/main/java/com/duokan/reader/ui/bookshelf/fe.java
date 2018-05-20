@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.common.FileTypeRecognizer;
 import com.duokan.core.ui.aj;
 import com.duokan.p024c.C0254f;
@@ -120,8 +120,8 @@ class fe extends aj {
             }
         } else {
             fhVar.f6447a.setImageResource(gu.m9742a(FileTypeRecognizer.m567a(c.m9084c())));
-            fhVar.f6449c.setText(String.format(this.f6439c.getContext().getString(C0258j.file_type), new Object[]{r4.toString()}) + " / " + String.format(this.f6439c.getContext().getString(C0258j.file_size), new Object[]{C0267i.m599a(c.m9086e())}));
-            fhVar.f6448b.setText(C0267i.m610c(c.m9084c()));
+            fhVar.f6449c.setText(String.format(this.f6439c.getContext().getString(C0258j.file_type), new Object[]{r4.toString()}) + " / " + String.format(this.f6439c.getContext().getString(C0258j.file_size), new Object[]{CommonUtils.m599a(c.m9086e())}));
+            fhVar.f6448b.setText(CommonUtils.m610c(c.m9084c()));
             if (c.m9087f() == FileStatus.IMPORTED) {
                 fhVar.f6450d.m9613b();
             } else {

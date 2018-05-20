@@ -1,9 +1,9 @@
 package com.duokan.core.sys;
 
 import android.text.TextUtils;
-import com.duokan.core.p029c.C0326b;
+import com.duokan.core.p029c.IRunTask;
 
-class ad implements C0326b<ae> {
+class ad implements IRunTask<ae> {
     /* renamed from: a */
     final /* synthetic */ JobManager f629a;
     /* renamed from: b */

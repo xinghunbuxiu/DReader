@@ -13,7 +13,7 @@ import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0254f;
 import com.duokan.p024c.C0255g;
@@ -43,7 +43,7 @@ public class C1473y extends mh {
         this.f11178j = (BubbleFloatingView) LayoutInflater.from(activity).inflate(C0256h.general__bubble_floating_view, null);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         ((WindowManager) this.c.getSystemService("window")).getDefaultDisplay().getMetrics(displayMetrics);
-        this.f11178j.m9925a(m15095o(), new LayoutParams(Math.min(displayMetrics.widthPixels - C0267i.m598a(this.c, 20.0f), C0267i.m598a(this.c, 320.0f)), -2));
+        this.f11178j.m9925a(m15095o(), new LayoutParams(Math.min(displayMetrics.widthPixels - CommonUtils.dip2px(this.c, 20.0f), CommonUtils.dip2px(this.c, 320.0f)), -2));
         this.f11178j.setUpArrow(C0254f.reading__shared__arrow_top);
         this.f11178j.setDownArrow(C0254f.reading__shared__arrow_bottom);
         this.f11178j.m9924a(AnimUtils.m1932b((Context) activity, 15.0f), 0, AnimUtils.m1932b((Context) activity, 15.0f), 0);

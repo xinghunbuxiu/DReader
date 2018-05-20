@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.duokan.core.app.IFeature;
 import com.duokan.core.app.AppContext;
-import com.duokan.core.p027b.C0324a;
+import com.duokan.core.p027b.UrlTools;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ah;
 import com.duokan.core.ui.GridItemsView;
@@ -104,7 +104,7 @@ public class SearchController extends StorePageController implements ip, iq {
         this.mPresenterResultView.setOnItemClickListener(new ad(this));
         this.mPresenterResultView.setOnItemLongPressListener(new ae(this));
         this.mPresenterResultView.setNumColumns(ea.m9503a(getContext()));
-        this.mPresenterResultView.setMaxOverScrollHeight(AnimUtils.m1962g(getContext()));
+        this.mPresenterResultView.setMaxOverScrollHeight(AnimUtils.getMaxOverScrollHeight(getContext()));
         this.mSearchHintView.setHatBodyView(this.mLocalSearchResultView);
         this.mEditText = (EditText) findViewById(C0255g.store__store_search_root_view__edittext);
         this.mEditText.addTextChangedListener(new af(this));
@@ -170,7 +170,7 @@ public class SearchController extends StorePageController implements ip, iq {
 
     private void reloadUrl(String str) {
         this.mReloadUrl = str;
-        this.mWebView.mo1815a("about:blank");
+        this.mWebView.loadUrl("about:blank");
     }
 
     public void onPageFinished(fr frVar, String str) {
@@ -250,12 +250,12 @@ public class SearchController extends StorePageController implements ip, iq {
     }
 
     protected void onPageCreated(int i, String str) {
-        Uri a = C0324a.m734a(getCurrentUrl());
-        Uri a2 = C0324a.m734a(this.mLoadingUrl);
+        Uri a = UrlTools.parse(getCurrentUrl());
+        Uri a2 = UrlTools.parse(this.mLoadingUrl);
         if (i == 0 && a != null && a2 != null) {
             if (a.getFragment() == null || a.getFragment().equals(a2.getFragment())) {
                 this.mLoadingSucceed = true;
-                this.mWebView.m2123g();
+                this.mWebView.clearHistory();
             }
         }
     }
@@ -339,7 +339,7 @@ public class SearchController extends StorePageController implements ip, iq {
             if (isPageChanged(f)) {
                 startLoading();
                 hideHintView();
-                this.mLoadingUrl = C0324a.m733a(C0324a.m734a(f), "loadingStamp=" + System.currentTimeMillis() + (TextUtils.isEmpty(this.mOpenFrom) ? "" : "&from=" + this.mOpenFrom)).toString();
+                this.mLoadingUrl = UrlTools.encodedFragment(UrlTools.parse(f), "loadingStamp=" + System.currentTimeMillis() + (TextUtils.isEmpty(this.mOpenFrom) ? "" : "&from=" + this.mOpenFrom)).toString();
                 reloadUrl(this.mLoadingUrl);
                 this.mTimeoutRunnable = new C1378x(this);
                 UThread.postDelayed(this.mTimeoutRunnable, 3000);
@@ -361,7 +361,7 @@ public class SearchController extends StorePageController implements ip, iq {
     }
 
     private void showHintView() {
-        this.mWebView.mo1815a("about:blank");
+        this.mWebView.loadUrl("about:blank");
         this.mSearchHintView.setVisibility(0);
     }
 
@@ -400,7 +400,7 @@ public class SearchController extends StorePageController implements ip, iq {
                 startLoading();
                 hideHintView();
                 addHistory(str);
-                this.mLoadingUrl = C0324a.m733a(C0324a.m734a(a), "loadingStamp=" + System.currentTimeMillis() + (TextUtils.isEmpty(this.mOpenFrom) ? "" : "&from=" + this.mOpenFrom)).toString();
+                this.mLoadingUrl = UrlTools.encodedFragment(UrlTools.parse(a), "loadingStamp=" + System.currentTimeMillis() + (TextUtils.isEmpty(this.mOpenFrom) ? "" : "&from=" + this.mOpenFrom)).toString();
                 reloadUrl(this.mLoadingUrl);
                 return;
             }

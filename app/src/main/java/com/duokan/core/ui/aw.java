@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import java.util.Iterator;
 import java.util.LinkedList;
 
-public abstract class aw implements av {
+public abstract class aw implements DkBaseAdapter {
     /* renamed from: b */
     static final /* synthetic */ boolean f917b = (!aw.class.desiredAssertionStatus());
     /* renamed from: a */

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.core.ui.BoxView;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
@@ -21,7 +21,7 @@ public class be extends Toast {
         BoxView boxView = (BoxView) ((LayoutInflater) context.getSystemService("layout_inflater")).inflate(C0245g.general__dktoast_view, null);
         this.f6995b = (TextView) boxView.findViewById(C0244f.general__dktoast_view__textview);
         setView(boxView);
-        int c = C0267i.m609c(context);
+        int c = CommonUtils.m609c(context);
         setGravity(17, 0, i == 0 ? (c / 2) - (c / 3) : c / 3);
     }
 

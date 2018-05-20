@@ -2,11 +2,11 @@ package com.duokan.reader.ui.p049a;
 
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 import com.duokan.core.ui.AnimUtils;
 
 /* renamed from: com.duokan.reader.ui.a.s */
-class C1233s implements cg {
+class C1233s implements OnScrollListener {
     /* renamed from: a */
     final /* synthetic */ C1228n f5736a;
 

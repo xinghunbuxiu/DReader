@@ -6,11 +6,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 import com.duokan.core.ui.AnimUtils;
 import org.apache.http.HttpStatus;
 
-class bj implements cg {
+class bj implements OnScrollListener {
     /* renamed from: a */
     final /* synthetic */ StorePageController f7630a;
 

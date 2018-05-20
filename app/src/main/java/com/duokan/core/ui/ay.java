@@ -26,122 +26,122 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 
 public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrollable, ax {
-    /* renamed from: c */
-    static final /* synthetic */ boolean f758c = (!ay.class.desiredAssertionStatus());
-    /* renamed from: A */
+    
+    static final  boolean f758c = (!ay.class.desiredAssertionStatus());
+    
     private int f759A = -1;
-    /* renamed from: B */
+    
     private int f760B = -1;
-    /* renamed from: C */
+    
     private Runnable f761C = null;
-    /* renamed from: D */
+    
     private Runnable f762D = null;
-    /* renamed from: E */
-    private bf f763E = null;
-    /* renamed from: F */
-    private bg f764F = null;
-    /* renamed from: a */
+    
+    private OnItemClickListener onItemClickListener = null;
+    
+    private OnItemLongPressListener onItemLongPressListener = null;
+    
     private final bh f765a = mo489b();
-    /* renamed from: b */
+    
     private final ArrayList<bc> f766b = new ArrayList();
-    /* renamed from: d */
+    
     private final LinkedList<bc> f767d = new LinkedList();
-    /* renamed from: e */
+    
     private final HashSet<Integer> f768e = new HashSet();
-    /* renamed from: f */
+    
     private final Rect f769f = new Rect();
-    /* renamed from: g */
-    private final Rect f770g = new Rect();
-    /* renamed from: h */
+    
+    private final Rect previewExtents = new Rect();
+    
     private final Rect f771h = new Rect();
-    /* renamed from: i */
+    
     private Drawable f772i = null;
-    /* renamed from: j */
+    
     private int f773j = 0;
-    /* renamed from: k */
+    
     private boolean f774k = true;
-    /* renamed from: l */
+    
     private boolean f775l = true;
-    /* renamed from: m */
+    
     private boolean f776m = true;
-    /* renamed from: n */
+    
     private boolean f777n = false;
-    /* renamed from: o */
+    
     private int f778o = MeasureSpec.makeMeasureSpec(0, 0);
-    /* renamed from: p */
+    
     private int f779p = MeasureSpec.makeMeasureSpec(0, 0);
-    /* renamed from: q */
+    
     private View f780q = null;
-    /* renamed from: r */
+    
     private boolean f781r = false;
-    /* renamed from: s */
+    
     private int f782s = 0;
-    /* renamed from: t */
+    
     private int f783t = 0;
-    /* renamed from: u */
+    
     private int f784u = -1;
-    /* renamed from: v */
+    
     private int f785v = -1;
-    /* renamed from: w */
+    
     private int[] f786w = new int[0];
-    /* renamed from: x */
+    
     private int[] f787x = new int[0];
-    /* renamed from: y */
+    
     private ScrollState f788y = ScrollState.IDLE;
-    /* renamed from: z */
-    private av f789z = null;
+    
+    private DkBaseAdapter adapter = null;
 
-    /* renamed from: a */
+    
     protected abstract int mo446a(int i, int i2);
 
-    /* renamed from: a */
+    
     protected abstract int mo447a(Point point);
 
-    /* renamed from: a */
+    
     protected abstract void mo448a();
 
-    /* renamed from: a */
+    
     protected abstract int[] mo450a(Rect rect);
 
-    protected /* synthetic */ LayoutParams generateDefaultLayoutParams() {
+    protected  LayoutParams generateDefaultLayoutParams() {
         return m1142g();
     }
 
-    public /* synthetic */ LayoutParams generateLayoutParams(AttributeSet attributeSet) {
+    public  LayoutParams generateLayoutParams(AttributeSet attributeSet) {
         return m1106a(attributeSet);
     }
 
-    protected /* synthetic */ LayoutParams generateLayoutParams(LayoutParams layoutParams) {
+    protected  LayoutParams generateLayoutParams(LayoutParams layoutParams) {
         return m1107a(layoutParams);
     }
 
     public ay(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f765a.m1496a(new AccelerateDecelerateInterpolator());
+        this.f765a.setScrollInterpolator(new AccelerateDecelerateInterpolator());
         setWillNotDraw(false);
         setClipChildren(false);
         setStaticTransformationsEnabled(true);
     }
 
-    public final void setOnItemClickListener(bf bfVar) {
-        this.f763E = bfVar;
+    public final void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 
-    public final void setOnItemLongPressListener(bg bgVar) {
-        this.f764F = bgVar;
+    public final void setOnItemLongPressListener(OnItemLongPressListener onItemLongPressListener) {
+        this.onItemLongPressListener = onItemLongPressListener;
     }
 
-    public final av getAdapter() {
-        return this.f789z;
+    public final DkBaseAdapter getAdapter() {
+        return this.adapter;
     }
 
-    public final void setAdapter(av avVar) {
-        if (this.f789z != null) {
-            this.f789z.mo484b(this);
+    public final void setAdapter(DkBaseAdapter adapter) {
+        if (this.adapter != null) {
+            this.adapter.mo484b(this);
         }
-        this.f789z = avVar;
-        if (this.f789z != null) {
-            this.f789z.mo483a(this);
+        this.adapter = adapter;
+        if (this.adapter != null) {
+            this.adapter.mo483a(this);
         }
         m1147i();
     }
@@ -176,7 +176,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         return this.f773j;
     }
 
-    /* renamed from: g */
+    
     public final View m1141g(int i) {
         m1155l();
         return m1163r(i).f995c;
@@ -236,29 +236,29 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public final Rect getPreviewExtents() {
-        return this.f770g;
+        return this.previewExtents;
     }
 
     public final Rect getPreviewBounds() {
         this.f771h.set(getViewportBounds());
         Rect rect = this.f771h;
-        rect.left -= this.f770g.left;
+        rect.left -= this.previewExtents.left;
         rect = this.f771h;
-        rect.top -= this.f770g.top;
+        rect.top -= this.previewExtents.top;
         rect = this.f771h;
-        rect.right += this.f770g.right;
+        rect.right += this.previewExtents.right;
         rect = this.f771h;
-        rect.bottom += this.f770g.bottom;
+        rect.bottom += this.previewExtents.bottom;
         return this.f771h;
     }
 
-    /* renamed from: a */
+    
     public final void m1111a(int i, int i2, int i3, int i4) {
-        this.f770g.set(i, i2, i3, i4);
+        this.previewExtents.set(i, i2, i3, i4);
         m1152k();
     }
 
-    /* renamed from: h */
+    
     public final Rect m1144h(int i) {
         boolean a = m1119a(i, true);
         m1155l();
@@ -274,7 +274,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         return rect;
     }
 
-    /* renamed from: e */
+    
     public final int m1137e(int i, int i2) {
         m1155l();
         Point point = new Point(i, i2);
@@ -282,7 +282,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         return mo447a(point);
     }
 
-    /* renamed from: b */
+    
     public final int[] m1128b(Rect rect) {
         m1155l();
         Rect rect2 = new Rect(rect);
@@ -290,7 +290,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         return mo450a(rect2);
     }
 
-    /* renamed from: a */
+    
     public final boolean m1119a(int i, boolean z) {
         bc r = m1163r(i);
         boolean c = r.m1668c();
@@ -305,7 +305,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         return c;
     }
 
-    /* renamed from: b */
+    
     public final void m1123b(int i, int i2, int i3) {
         bc r = m1163r(i);
         r.m1662a(i2, i3);
@@ -317,7 +317,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         m1155l();
     }
 
-    /* renamed from: a */
+    
     public final void m1109a(int i, float f) {
         bc r = m1163r(i);
         r.m1661a(f);
@@ -329,7 +329,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         m1155l();
     }
 
-    /* renamed from: i */
+    
     public final void m1148i(int i) {
         m1155l();
         if (m1164s(i) && !getViewportBounds().isEmpty() && getContentWidth() != 0 && getContentHeight() != 0 && !m1151j(i)) {
@@ -341,7 +341,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: b */
+    
     public final void m1126b(int i, Rect rect, int i2) {
         m1155l();
         if (m1164s(i) && !rect.isEmpty() && rect.width() != 0 && rect.height() != 0) {
@@ -356,7 +356,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: j */
+    
     public final boolean m1151j(int i) {
         m1155l();
         if (m1164s(i)) {
@@ -366,105 +366,105 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public final int getContentWidth() {
-        return this.f765a.m1561s();
+        return this.f765a.getContentWidth();
     }
 
     public final int getContentHeight() {
-        return this.f765a.m1562t();
+        return this.f765a.getContentHeight();
     }
 
     public final boolean getThumbEnabled() {
-        return this.f765a.m1563u();
+        return this.f765a.getThumbEnabled();
     }
 
     public final void setThumbEnabled(boolean z) {
-        this.f765a.m1530c(z);
+        this.f765a.setThumbEnabled(z);
     }
 
     public boolean getSeekEnabled() {
-        return this.f765a.m1564v();
+        return this.f765a.getSeekEnabled();
     }
 
     public void setSeekEnabled(boolean z) {
-        this.f765a.m1538d(z);
+        this.f765a.setSeekEnabled(z);
     }
 
-    /* renamed from: a */
+    
     public void m1117a(boolean z) {
         this.f765a.m1543e(z);
     }
 
     public int getHorizontalThumbMarginLeft() {
-        return this.f765a.m1565w();
+        return this.f765a.getHorizontalThumbMarginLeft();
     }
 
     public int getHorizontalThumbMarginTop() {
-        return this.f765a.m1566x();
+        return this.f765a.getHorizontalThumbMarginTop();
     }
 
     public int getHorizontalThumbMarginRight() {
-        return this.f765a.m1567y();
+        return this.f765a.getHorizontalThumbMarginRight();
     }
 
     public int getHorizontalThumbMarginBottom() {
-        return this.f765a.m1568z();
+        return this.f765a.getHorizontalThumbMarginBottom();
     }
 
     public int getVerticalThumbMarginLeft() {
-        return this.f765a.m1449A();
+        return this.f765a.getVerticalThumbMarginLeft();
     }
 
     public int getVerticalThumbMarginTop() {
-        return this.f765a.m1450B();
+        return this.f765a.getVerticalThumbMarginTop();
     }
 
     public int getVerticalThumbMarginRight() {
-        return this.f765a.m1451C();
+        return this.f765a.getVerticalThumbMarginRight();
     }
 
     public int getVerticalThumbMarginBottom() {
-        return this.f765a.m1452D();
+        return this.f765a.getVerticalThumbMarginBottom();
     }
 
-    /* renamed from: b */
+    
     public void m1124b(int i, int i2, int i3, int i4) {
         this.f765a.m1513b(i, i2, i3, i4);
     }
 
     public Drawable getHorizontalThumbDrawable() {
-        return this.f765a.m1453E();
+        return this.f765a.getHorizontalThumbDrawable();
     }
 
     public void setHorizontalThumbDrawable(Drawable drawable) {
-        this.f765a.m1493a(drawable);
+        this.f765a.setHorizontalThumbDrawable(drawable);
     }
 
     public Drawable getVerticalThumbDrawable() {
-        return this.f765a.m1454F();
+        return this.f765a.getVerticalThumbDrawable();
     }
 
     public void setVerticalThumbDrawable(Drawable drawable) {
-        this.f765a.m1517b(drawable);
+        this.f765a.setVerticalThumbDrawable(drawable);
     }
 
     public Drawable getHorizontalSeekDrawable() {
-        return this.f765a.m1455G();
+        return this.f765a.getHorizontalSeekDrawable();
     }
 
     public void setHorizontalSeekDrawable(Drawable drawable) {
-        this.f765a.m1529c(drawable);
+        this.f765a.setHorizontalSeekDrawable(drawable);
     }
 
     public Drawable getVerticalSeekDrawable() {
-        return this.f765a.m1456H();
+        return this.f765a.getVerticalSeekDrawable();
     }
 
     public void setVerticalSeekDrawable(Drawable drawable) {
-        this.f765a.m1537d(drawable);
+        this.f765a.setVerticalSeekDrawable(drawable);
     }
 
     public et getScrollDetector() {
-        return this.f765a.m1457I();
+        return this.f765a.getScrollDetector();
     }
 
     public final ScrollState getScrollState() {
@@ -476,32 +476,32 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public final int getScrollTime() {
-        return this.f765a.m1458J();
+        return this.f765a.getScrollTime();
     }
 
     public int getScrollFinalX() {
-        return this.f765a.m1459K();
+        return this.f765a.getScrollFinalX();
     }
 
     public int getScrollFinalY() {
-        return this.f765a.m1460L();
+        return this.f765a.getScrollFinalY();
     }
 
     public final void setScrollInterpolator(Interpolator interpolator) {
-        this.f765a.m1496a(interpolator);
+        this.f765a.setScrollInterpolator(interpolator);
     }
 
-    /* renamed from: a */
+    
     public final void mo435a(View view, boolean z) {
         this.f765a.mo435a(view, z);
     }
 
     public OverScrollMode getHorizontalOverScrollMode() {
-        return this.f765a.m1461M();
+        return this.f765a.getHorizontalOverScrollMode();
     }
 
     public void setHorizontalOverScrollMode(OverScrollMode overScrollMode) {
-        this.f765a.m1497a(overScrollMode);
+        this.f765a.setHorizontalOverScrollMode(overScrollMode);
     }
 
     public OverScrollMode getVerticalOverScrollMode() {
@@ -509,15 +509,15 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public void setVerticalOverScrollMode(OverScrollMode overScrollMode) {
-        this.f765a.m1518b(overScrollMode);
+        this.f765a.setVerticalOverScrollMode(overScrollMode);
     }
 
     public final int getMaxOverScrollWidth() {
-        return this.f765a.m1463O();
+        return this.f765a.getMaxOverScrollWidth();
     }
 
     public final void setMaxOverScrollWidth(int i) {
-        this.f765a.m1525c(i);
+        this.f765a.setMaxOverScrollWidth(i);
     }
 
     public final int getMaxOverScrollHeight() {
@@ -525,72 +525,72 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public final void setMaxOverScrollHeight(int i) {
-        this.f765a.m1534d(i);
+        this.f765a.MaxOverScrollHeight(i);
     }
 
     public final Rect getViewportBounds() {
         return this.f765a.getViewportBounds();
     }
 
-    public void setOnContentBoundsChangedListener(cf cfVar) {
-        this.f765a.m1501a(cfVar);
+    public void setOnContentBoundsChangedListener(OnContentBoundsChangedListener contentBoundsChangedListener) {
+        this.f765a.setOnContentBoundsChangedListener(contentBoundsChangedListener);
     }
 
-    public final void setOnScrollListener(cg cgVar) {
-        this.f765a.m1502a(cgVar);
+    public final void setOnScrollListener(OnScrollListener onScrollListener) {
+        this.f765a.setOnScrollListener(onScrollListener);
     }
 
-    /* renamed from: c */
+    
     public final boolean m1132c() {
         return this.f765a.m1471W();
     }
 
-    /* renamed from: d */
+    
     public final boolean m1135d() {
         return this.f765a.m1472X();
     }
 
-    /* renamed from: a */
+    
     public final void mo434a(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
         this.f765a.mo434a(i, i2, i3, runnable, runnable2);
     }
 
-    /* renamed from: b */
+    
     public final void m1125b(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
         this.f765a.m1514b(i, i2, i3, runnable, runnable2);
     }
 
-    /* renamed from: f */
+    
     public final void m1140f(int i, int i2) {
         this.f765a.m1541e(i, i2);
     }
 
-    /* renamed from: e */
+    
     public final void m1138e() {
         this.f765a.m1473Y();
     }
 
-    /* renamed from: f */
+    
     public final void m1139f() {
         this.f765a.m1474Z();
     }
 
-    /* renamed from: a */
+    
     public void m1115a(Rect rect, Rect rect2, int i, Runnable runnable, Runnable runnable2) {
         this.f765a.m1492a(rect, rect2, i, runnable, runnable2);
     }
 
-    /* renamed from: b */
+    
     public final Point m1121b(Point point) {
         return this.f765a.m1477a(point);
     }
 
-    /* renamed from: c */
+    
     public final Point m1129c(Point point) {
         return this.f765a.m1508b(point);
     }
 
-    /* renamed from: c */
+    
     public final Rect m1130c(Rect rect) {
         return this.f765a.m1509b(rect);
     }
@@ -607,14 +607,14 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         m1138e();
     }
 
-    /* renamed from: a */
+    
     public void mo440a(int i, int i2, int i3) {
         m1080c(i, i2, i3);
         m1155l();
         m1138e();
     }
 
-    /* renamed from: d */
+    
     public void mo444d(int i, int i2) {
         m1095l(i, i2);
         m1155l();
@@ -644,13 +644,13 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         getViewTreeObserver().addOnPreDrawListener(this);
-        this.f765a.m1523c();
+        this.f765a.onAttachedToWindow();
     }
 
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         getViewTreeObserver().removeOnPreDrawListener(this);
-        this.f765a.m1532d();
+        this.f765a.onDetachedFromWindow();
         this.f761C = null;
         this.f762D = null;
         this.f759A = -1;
@@ -658,11 +658,11 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return this.f765a.mo2419b(motionEvent);
+        return this.f765a.onInterceptTouchEvent(motionEvent);
     }
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.f765a.mo2420c(motionEvent);
+        return this.f765a.onTouchEvent(motionEvent);
     }
 
     @SuppressLint({"MissingSuperCall"})
@@ -732,55 +732,55 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
     }
 
     public boolean isHorizontalFadingEdgeEnabled() {
-        return this.f765a.m1548g();
+        return this.f765a.isHorizontalFadingEdgeEnabled();
     }
 
     public boolean isHorizontalScrollBarEnabled() {
-        return this.f765a.m1550h();
+        return this.f765a.isHorizontalScrollBarEnabled();
     }
 
     public boolean isVerticalFadingEdgeEnabled() {
-        return this.f765a.m1551i();
+        return this.f765a.isVerticalFadingEdgeEnabled();
     }
 
     public boolean isVerticalScrollBarEnabled() {
-        return this.f765a.m1552j();
+        return this.f765a.isVerticalScrollBarEnabled();
     }
 
     public void scrollBy(int i, int i2) {
-        this.f765a.m1526c(i, i2);
+        this.f765a.scrollBy(i, i2);
     }
 
     public void scrollTo(int i, int i2) {
-        this.f765a.m1535d(i, i2);
+        this.f765a.scrollTo(i, i2);
     }
 
     public boolean shouldDelayChildPressedState() {
-        return this.f765a.m1554l();
+        return this.f765a.shouldDelayChildPressedState();
     }
 
     protected int computeHorizontalScrollExtent() {
-        return this.f765a.m1555m();
+        return this.f765a.computeHorizontalScrollExtent();
     }
 
     protected int computeHorizontalScrollOffset() {
-        return this.f765a.m1556n();
+        return this.f765a.computeHorizontalScrollOffset();
     }
 
     protected int computeHorizontalScrollRange() {
-        return this.f765a.m1557o();
+        return this.f765a.computeHorizontalScrollRange();
     }
 
     protected int computeVerticalScrollExtent() {
-        return this.f765a.m1558p();
+        return this.f765a.computeVerticalScrollExtent();
     }
 
     protected int computeVerticalScrollOffset() {
-        return this.f765a.m1559q();
+        return this.f765a.computeVerticalScrollOffset();
     }
 
     protected int computeVerticalScrollRange() {
-        return this.f765a.m1560r();
+        return this.f765a.computeVerticalScrollRange();
     }
 
     protected boolean drawChild(Canvas canvas, View view, long j) {
@@ -808,22 +808,22 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         m1147i();
     }
 
-    /* renamed from: a */
+    
     public be m1106a(AttributeSet attributeSet) {
         return new be(getContext(), attributeSet);
     }
 
-    /* renamed from: g */
+    
     protected be m1142g() {
         return new be(-1, -2);
     }
 
-    /* renamed from: a */
+    
     protected be m1107a(LayoutParams layoutParams) {
         return layoutParams instanceof MarginLayoutParams ? new be((MarginLayoutParams) layoutParams) : new be(layoutParams);
     }
 
-    /* renamed from: a */
+    
     protected void mo449a(Canvas canvas) {
         if (this.f773j > 0 && this.f772i != null) {
             Rect k = this.f765a.m1553k();
@@ -832,23 +832,23 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: b */
+    
     protected void mo452b(Canvas canvas) {
     }
 
-    /* renamed from: d */
+    
     protected boolean mo490d(Canvas canvas) {
         boolean f = this.f765a.m1546f();
         this.f765a.m1527c(canvas);
         return f;
     }
 
-    /* renamed from: b */
+    
     protected bh mo489b() {
         return new bh(this);
     }
 
-    /* renamed from: o */
+    
     private final void mo1756o() {
         this.f761C = null;
         this.f762D = null;
@@ -861,12 +861,12 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: p */
+    
     private final boolean mo1757p() {
         return this.f761C != null || this.f760B >= 0;
     }
 
-    /* renamed from: a */
+    
     private final void mo445a(int i) {
         if (f758c || this.f761C == null) {
             this.f761C = new ba(this, i);
@@ -876,7 +876,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         throw new AssertionError();
     }
 
-    /* renamed from: a */
+    
     private final void m1073a(Runnable runnable) {
         if (f758c || this.f762D == null) {
             if (this.f761C != null) {
@@ -896,7 +896,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         throw new AssertionError();
     }
 
-    /* renamed from: j */
+    
     private final void m1093j(int i, int i2) {
         if (i2 > 0) {
             mo1756o();
@@ -911,7 +911,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: k */
+    
     private final void m1094k(int i, int i2) {
         if (i2 > 0) {
             mo1756o();
@@ -921,7 +921,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: c */
+    
     private final void m1080c(int i, int i2, int i3) {
         if (i2 > 0 && i != i3) {
             mo1756o();
@@ -931,7 +931,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: l */
+    
     private final void m1095l(int i, int i2) {
         for (int i3 = i; i3 < i + i2; i3++) {
             bc r = m1163r(i3);
@@ -942,7 +942,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         m1147i();
     }
 
-    /* renamed from: b */
+    
     private final void mo451b(int i) {
         mo1756o();
         this.f759A = -1;
@@ -961,7 +961,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         m1147i();
     }
 
-    /* renamed from: d */
+    
     private final void m1085d(int i, int i2, int i3) {
         int i4 = 0;
         if (i != i3) {
@@ -1000,7 +1000,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: q */
+    
     private final void mo1758q() {
         int size = this.f766b.size();
         for (int i = 0; i < size; i++) {
@@ -1008,12 +1008,12 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: h */
+    
     protected final void m1145h() {
         super.requestLayout();
     }
 
-    /* renamed from: i */
+    
     protected final void m1147i() {
         if (this.f776m) {
             this.f776m = false;
@@ -1021,7 +1021,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: j */
+    
     protected final void m1150j() {
         if (this.f775l) {
             this.f775l = false;
@@ -1029,7 +1029,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: k */
+    
     protected final void m1152k() {
         if (this.f774k) {
             this.f774k = false;
@@ -1037,7 +1037,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: l */
+    
     protected final void m1155l() {
         if (!this.f777n && !this.f774k) {
             Iterator it;
@@ -1081,12 +1081,12 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: m */
+    
     protected final int[] m1157m() {
         return this.f786w;
     }
 
-    /* renamed from: r */
+    
     private final void m1099r() {
         int i = 0;
         Rect viewportBounds = getViewportBounds();
@@ -1131,13 +1131,13 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: d */
+    
     private final void mo453d(int i) {
         if (!f758c && !this.f776m) {
             throw new AssertionError();
         } else if (!f758c && !this.f775l) {
             throw new AssertionError();
-        } else if (f758c || this.f789z != null) {
+        } else if (f758c || this.adapter != null) {
             bc r = m1163r(i);
             int g = r.f1003k - r.f1000h;
             int h = r.f1002j - r.f1001i;
@@ -1173,7 +1173,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: k */
+    
     protected final void m1153k(int i) {
         bc r = m1163r(i);
         mo454e(i);
@@ -1183,7 +1183,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         r.f999g = r.f994b.getMeasuredHeight();
     }
 
-    /* renamed from: e */
+    
     private final boolean mo454e(int i) {
         boolean z = true;
         if (f758c || this.f776m) {
@@ -1239,7 +1239,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
             if (f758c || r.f994b != null) {
                 if (z2) {
                     if (f758c || !r.m1666b()) {
-                        View d = this.f789z.mo508d(i, r.f995c, r.f994b);
+                        View d = this.adapter.mo508d(i, r.f995c, r.f994b);
                         if (!f758c && d == null) {
                             throw new AssertionError();
                         } else if (r.f995c == null) {
@@ -1271,7 +1271,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         throw new AssertionError();
     }
 
-    /* renamed from: b */
+    
     private final void m1078b(int i, boolean z) {
         bc r = m1163r(i);
         if (r.m1672e() != z) {
@@ -1285,7 +1285,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: s */
+    
     private final void m1100s() {
         if (!this.f775l) {
             m1102u();
@@ -1298,7 +1298,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: t */
+    
     private final void m1101t() {
         if (this.f780q != null) {
             Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
@@ -1322,7 +1322,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
                     break;
             }
             switch (beVar.f1011a & 112) {
-                case C2295j.f14321a /*48*/:
+                case C2295j.f14321a :
                     rect2.offset(0, beVar.topMargin);
                     break;
                 case 80:
@@ -1338,7 +1338,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: u */
+    
     private final void m1102u() {
         boolean z = false;
         if (!this.f776m) {
@@ -1359,7 +1359,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
                 removeViewInLayout(this.f780q);
             }
             if (this.f781r) {
-                this.f780q = this.f789z != null ? this.f789z.mo482a(this.f780q, this) : null;
+                this.f780q = this.adapter != null ? this.adapter.mo482a(this.f780q, this) : null;
                 if (this.f780q != null) {
                     LayoutParams g;
                     if (this.f780q.getLayoutParams() == null) {
@@ -1381,7 +1381,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         }
     }
 
-    /* renamed from: v */
+    
     private final void m1103v() {
         int paddingLeft = getPaddingLeft() + getPaddingRight();
         int paddingTop = getPaddingTop() + getPaddingBottom();
@@ -1412,14 +1412,14 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         throw new AssertionError();
     }
 
-    /* renamed from: n */
+    
     protected bd mo1766n() {
         return new bd(this, getContext());
     }
 
-    /* renamed from: a */
+    
     protected final void m1112a(int i, int i2, int i3, int i4, int i5) {
-        if (f758c || this.f789z != null) {
+        if (f758c || this.adapter != null) {
             bc r = m1163r(i);
             r.f1000h = i2;
             r.f1001i = i3;
@@ -1430,14 +1430,14 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         throw new AssertionError();
     }
 
-    /* renamed from: c */
+    
     protected final void m1131c(int i, int i2, int i3, int i4) {
         this.f782s = i3 - i;
         this.f783t = i4 - i2;
         this.f765a.m1487a(i, i2, i3, i4);
     }
 
-    /* renamed from: g */
+    
     protected final void m1143g(int i, int i2) {
         this.f782s = i;
         this.f783t = i2;
@@ -1445,59 +1445,59 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         this.f765a.m1511b(this.f783t);
     }
 
-    /* renamed from: a */
+    
     protected final boolean m1118a(int i, Point point) {
         bc r = m1163r(i);
         return point.x >= r.f1000h && point.y >= r.f1001i && point.x < r.f1003k && point.y < r.f1002j;
     }
 
-    /* renamed from: c */
+    
     protected final boolean m1133c(int i, Rect rect) {
         bc r = m1163r(i);
         return rect.intersects(r.f1000h, r.f1001i, r.f1003k, r.f1002j);
     }
 
-    /* renamed from: l */
+    
     protected final int m1154l(int i) {
         return m1163r(i).f1000h;
     }
 
-    /* renamed from: m */
+    
     protected final int m1156m(int i) {
         return m1163r(i).f1001i;
     }
 
-    /* renamed from: n */
+    
     protected final int m1158n(int i) {
         return m1163r(i).f1003k;
     }
 
-    /* renamed from: o */
+    
     protected final int m1160o(int i) {
         return m1163r(i).f1002j;
     }
 
-    /* renamed from: h */
+    
     protected final void m1146h(int i, int i2) {
         m1163r(i).f996d = i2;
     }
 
-    /* renamed from: i */
+    
     protected final void m1149i(int i, int i2) {
         m1163r(i).f997e = i2;
     }
 
-    /* renamed from: p */
+    
     protected final int m1161p(int i) {
         return m1163r(i).f998f;
     }
 
-    /* renamed from: q */
+    
     protected final int m1162q(int i) {
         return m1163r(i).f999g;
     }
 
-    /* renamed from: r */
+    
     protected final bc m1163r(int i) {
         if (!m1164s(i)) {
             return null;
@@ -1509,7 +1509,7 @@ public abstract class ay extends ViewGroup implements OnPreDrawListener, Scrolla
         throw new AssertionError();
     }
 
-    /* renamed from: s */
+    
     protected final boolean m1164s(int i) {
         return i >= 0 && i < this.f766b.size();
     }

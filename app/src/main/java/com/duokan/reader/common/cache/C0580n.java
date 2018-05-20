@@ -2,7 +2,7 @@ package com.duokan.reader.common.cache;
 
 import android.content.ContentValues;
 import android.text.TextUtils;
-import com.duokan.core.p029c.C0326b;
+import com.duokan.core.p029c.IRunTask;
 import com.duokan.reader.common.cache.ListCache.ListCacheStoreChangeType;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -14,7 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /* renamed from: com.duokan.reader.common.cache.n */
-class C0580n<TInfo, TItem, TJson, TFilter extends C0326b<TItem>, TComparator extends Comparator<TItem>> {
+class C0580n<TInfo, TItem, TJson, TFilter extends IRunTask<TItem>, TComparator extends Comparator<TItem>> {
     /* renamed from: a */
     private static ThreadPoolExecutor f1889a = new ThreadPoolExecutor(0, 1, 0, TimeUnit.SECONDS, new LinkedBlockingQueue());
     /* renamed from: b */
@@ -216,7 +216,7 @@ class C0580n<TInfo, TItem, TJson, TFilter extends C0326b<TItem>, TComparator ext
                 }
                 if (deserializeCorePropertiesFromJson != null) {
                     if (tFilter != null) {
-                        if (!tFilter.mo411a(deserializeCorePropertiesFromJson)) {
+                        if (!tFilter.isExitRunTask(deserializeCorePropertiesFromJson)) {
                         }
                     }
                     arrayList2.add(deserializeCorePropertiesFromJson);
@@ -250,7 +250,7 @@ class C0580n<TInfo, TItem, TJson, TFilter extends C0326b<TItem>, TComparator ext
                 }
                 if (deserializeItemFromJson != null) {
                     if (tFilter != null) {
-                        if (!tFilter.mo411a(deserializeItemFromJson)) {
+                        if (!tFilter.isExitRunTask(deserializeItemFromJson)) {
                         }
                     }
                     arrayList2.add(deserializeItemFromJson);

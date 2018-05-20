@@ -15,9 +15,9 @@ class cr implements OnTouchListener {
 
     public boolean onTouch(View view, MotionEvent motionEvent) {
         if (motionEvent.getActionMasked() == 0) {
-            this.f1091a.childView.m1321b(this.f1091a.m1304a((FrameLayout) view), this.f1091a).setPressed(true);
+            this.f1091a.childView.getView(this.f1091a.m1304a((FrameLayout) view), this.f1091a).setPressed(true);
         } else if (motionEvent.getActionMasked() == 1) {
-            this.f1091a.childView.m1321b(this.f1091a.m1304a((FrameLayout) view), this.f1091a).setPressed(false);
+            this.f1091a.childView.getView(this.f1091a.m1304a((FrameLayout) view), this.f1091a).setPressed(false);
         }
         return false;
     }

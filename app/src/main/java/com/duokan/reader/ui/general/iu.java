@@ -2,9 +2,9 @@ package com.duokan.reader.ui.general;
 
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 
-class iu implements cg {
+class iu implements OnScrollListener {
     /* renamed from: a */
     final /* synthetic */ ir f7409a;
 

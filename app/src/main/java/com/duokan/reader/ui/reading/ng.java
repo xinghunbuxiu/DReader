@@ -2,9 +2,9 @@ package com.duokan.reader.ui.reading;
 
 import com.duokan.core.ui.ZoomView;
 import com.duokan.core.ui.ZoomView.ZoomState;
-import com.duokan.core.ui.ge;
+import com.duokan.core.ui.OnZoomListener;
 
-class ng implements ge {
+class ng implements OnZoomListener {
     /* renamed from: a */
     final /* synthetic */ nf f10666a;
 
@@ -25,9 +25,9 @@ class ng implements ge {
     }
 
     /* renamed from: a */
-    public void mo2423a(ZoomView zoomView) {
+    public void onZoom(ZoomView zoomView) {
         if (this.f10666a.f10662d != null) {
-            this.f10666a.f10662d.mo2423a(zoomView);
+            this.f10666a.f10662d.onZoom(zoomView);
         }
     }
 }

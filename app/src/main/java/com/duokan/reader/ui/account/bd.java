@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.core.app.AppContext;
 import com.duokan.core.ui.AnimUtils;
 import com.duokan.p024c.C0252d;
@@ -117,7 +117,7 @@ public abstract class bd extends af {
 
     /* renamed from: c */
     protected void m8909c() {
-        if (!C0267i.m604a(getActivity())) {
+        if (!CommonUtils.m604a(getActivity())) {
             be.m10286a(getContext(), C0258j.report_no_network_error, 0).show();
         } else if (this.f5821b) {
             String a = mo1581a();

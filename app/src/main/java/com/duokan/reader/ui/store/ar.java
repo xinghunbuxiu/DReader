@@ -32,6 +32,6 @@ final class ar implements C0517a {
         jaVar.setCancelOnBack(false);
         jaVar.setCancelOnTouchOutside(false);
         jaVar.show();
-        C1502o.m15410a().m15433a(this.f11324b.m4156I(), false, false, -1, -1, -1, new as(this, jaVar));
+        C1502o.m15410a().m15433a(this.f11324b.getId(), false, false, -1, -1, -1, new as(this, jaVar));
     }
 }

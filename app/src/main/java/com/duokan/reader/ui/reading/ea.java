@@ -29,7 +29,7 @@ class ea extends WebSession {
     protected void onSessionTry() {
         C0621a g;
         if (this.f10063c.f9998G == null) {
-            this.f10063c.f9998G = (String) new C0640n(this, null).m2924g(this.f10061a.f10081c.m4156I()).f2058a;
+            this.f10063c.f9998G = (String) new C0640n(this, null).m2924g(this.f10061a.f10081c.getId()).f2058a;
         }
         if (this.f10061a.f10079a.mo839i()) {
             this.f10061a.f10083e = 0;
@@ -47,14 +47,14 @@ class ea extends WebSession {
             }
         }
         if (this.f10061a.f10081c.mo1038k()) {
-            g = c0647u.m3031a(this.f10063c.f10025z.m4156I(), this.f10063c.f10025z.m4239l() ? 6 : 2);
+            g = c0647u.m3031a(this.f10063c.f10025z.getId(), this.f10063c.f10025z.m4239l() ? 6 : 2);
             if (g.b == 0) {
                 this.f10061a.f10084f = (LinkedList) g.f2058a;
                 return;
             }
             return;
         }
-        g = c0647u.m3031a(this.f10063c.f10025z.m4156I(), 1);
+        g = c0647u.m3031a(this.f10063c.f10025z.getId(), 1);
         if (g.b == 0) {
             this.f10061a.f10084f = (LinkedList) g.f2058a;
         }

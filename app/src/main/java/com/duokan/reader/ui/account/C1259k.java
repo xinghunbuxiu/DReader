@@ -20,7 +20,7 @@ class C1259k implements QueryAccountListener {
         String makeContent;
         String makeTitle;
         if (this.f5961b.f5959a.f5955f != null) {
-            I = this.f5961b.f5959a.f5955f.m4156I();
+            I = this.f5961b.f5959a.f5955f.getId();
             makeContent = this.f5960a.makeContent(this.f5961b.f5959a.f5955f, this.f5961b.f5959a.f5956g, this.f5961b.f5959a.f5957h);
             makeTitle = this.f5960a.makeTitle(this.f5961b.f5959a.f5955f.ay(), this.f5961b.f5959a.f5955f.m4150C());
         } else {

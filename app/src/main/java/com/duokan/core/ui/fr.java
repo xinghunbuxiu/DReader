@@ -19,134 +19,134 @@ import android.webkit.WebSettings;
 import java.util.concurrent.TimeUnit;
 
 public class fr extends ViewGroup implements Scrollable {
-    /* renamed from: a */
-    protected final fz f1261a = m2124h();
-    /* renamed from: b */
-    private final fv f1262b = mo1744a(this.f1261a);
-    /* renamed from: c */
-    private fq f1263c = null;
-    /* renamed from: d */
-    private fl f1264d = null;
-    /* renamed from: e */
-    private String f1265e = "";
-    /* renamed from: f */
+    
+    protected final DkWebView dkWebView = getWebView();
+    
+    private final fv f1262b = mo1744a(this.dkWebView);
+    
+    private WebPageClient webPageClient = null;
+    
+    private WebPageChromeClient webPageChromeClient = null;
+    
+    private String currentUrl = "";
+    
     private boolean f1266f = false;
-    /* renamed from: g */
+    
     private int f1267g = 0;
-    /* renamed from: h */
-    private long f1268h = TimeUnit.SECONDS.toMillis(30);
-    /* renamed from: i */
+    
+    private long loadingTimeout = TimeUnit.SECONDS.toMillis(30);
+    
     private Runnable f1269i = null;
-    /* renamed from: j */
+    
     private Runnable f1270j = null;
-    /* renamed from: k */
+    
     private boolean f1271k = false;
-    /* renamed from: l */
+    
     private boolean f1272l = false;
 
     public fr(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        addView(this.f1261a, new LayoutParams(-1, -1));
+        addView(this.dkWebView, new LayoutParams(-1, -1));
         setWillNotDraw(false);
         setWillNotCacheDrawing(false);
         setDrawingCacheEnabled(false);
         setAnimationCacheEnabled(false);
         setClipChildren(false);
         setClipToPadding(false);
-        this.f1262b.m1530c(true);
-        this.f1262b.m1534d(AnimUtils.m1962g(getContext()));
+        this.f1262b.setThumbEnabled(true);
+        this.f1262b.MaxOverScrollHeight(AnimUtils.getMaxOverScrollHeight(getContext()));
     }
 
     public final int getContentWidth() {
-        return this.f1262b.m1561s();
+        return this.f1262b.getContentWidth();
     }
 
     public final int getContentHeight() {
-        return this.f1262b.m1562t();
+        return this.f1262b.getContentHeight();
     }
 
     public boolean getThumbEnabled() {
-        return this.f1262b.m1563u();
+        return this.f1262b.getThumbEnabled();
     }
 
     public void setThumbEnabled(boolean z) {
-        this.f1262b.m1530c(z);
+        this.f1262b.setThumbEnabled(z);
     }
 
     public boolean getSeekEnabled() {
-        return this.f1262b.m1564v();
+        return this.f1262b.getSeekEnabled();
     }
 
     public void setSeekEnabled(boolean z) {
-        this.f1262b.m1538d(z);
+        this.f1262b.setSeekEnabled(z);
     }
 
     public int getHorizontalThumbMarginLeft() {
-        return this.f1262b.m1565w();
+        return this.f1262b.getHorizontalThumbMarginLeft();
     }
 
     public int getHorizontalThumbMarginTop() {
-        return this.f1262b.m1566x();
+        return this.f1262b.getHorizontalThumbMarginTop();
     }
 
     public int getHorizontalThumbMarginRight() {
-        return this.f1262b.m1567y();
+        return this.f1262b.getHorizontalThumbMarginRight();
     }
 
     public int getHorizontalThumbMarginBottom() {
-        return this.f1262b.m1568z();
+        return this.f1262b.getHorizontalThumbMarginBottom();
     }
 
     public int getVerticalThumbMarginLeft() {
-        return this.f1262b.m1449A();
+        return this.f1262b.getVerticalThumbMarginLeft();
     }
 
     public int getVerticalThumbMarginTop() {
-        return this.f1262b.m1450B();
+        return this.f1262b.getVerticalThumbMarginTop();
     }
 
     public int getVerticalThumbMarginRight() {
-        return this.f1262b.m1451C();
+        return this.f1262b.getVerticalThumbMarginRight();
     }
 
     public int getVerticalThumbMarginBottom() {
-        return this.f1262b.m1452D();
+        return this.f1262b.getVerticalThumbMarginBottom();
     }
 
     public Drawable getHorizontalThumbDrawable() {
-        return this.f1262b.m1453E();
+        return this.f1262b.getHorizontalThumbDrawable();
     }
 
     public void setHorizontalThumbDrawable(Drawable drawable) {
-        this.f1262b.m1493a(drawable);
+        this.f1262b.setHorizontalThumbDrawable(drawable);
     }
 
     public Drawable getVerticalThumbDrawable() {
-        return this.f1262b.m1454F();
+        return this.f1262b.getVerticalThumbDrawable();
     }
 
     public void setVerticalThumbDrawable(Drawable drawable) {
-        this.f1262b.m1517b(drawable);
+        this.f1262b.setVerticalThumbDrawable(drawable);
     }
 
     public Drawable getHorizontalSeekDrawable() {
-        return this.f1262b.m1455G();
+        return this.f1262b.getHorizontalSeekDrawable();
     }
 
     public void setHorizontalSeekDrawable(Drawable drawable) {
-        this.f1262b.m1529c(drawable);
+        this.f1262b.setHorizontalSeekDrawable(drawable);
     }
 
     public Drawable getVerticalSeekDrawable() {
-        return this.f1262b.m1456H();
+        return this.f1262b.getVerticalSeekDrawable();
     }
 
     public void setVerticalSeekDrawable(Drawable drawable) {
-        this.f1262b.m1537d(drawable);
+        this.f1262b.setVerticalSeekDrawable(drawable);
     }
 
     public et getScrollDetector() {
-        return this.f1262b.m1457I();
+        return this.f1262b.getScrollDetector();
     }
 
     public final ScrollState getScrollState() {
@@ -158,32 +158,32 @@ public class fr extends ViewGroup implements Scrollable {
     }
 
     public final int getScrollTime() {
-        return this.f1262b.m1458J();
+        return this.f1262b.getScrollTime();
     }
 
     public int getScrollFinalX() {
-        return this.f1262b.m1459K();
+        return this.f1262b.getScrollFinalX();
     }
 
     public int getScrollFinalY() {
-        return this.f1262b.m1460L();
+        return this.f1262b.getScrollFinalY();
     }
 
     public final void setScrollInterpolator(Interpolator interpolator) {
-        this.f1262b.m1496a(interpolator);
+        this.f1262b.setScrollInterpolator(interpolator);
     }
 
-    /* renamed from: a */
+    
     public void mo435a(View view, boolean z) {
         this.f1262b.mo435a(view, z);
     }
 
     public OverScrollMode getHorizontalOverScrollMode() {
-        return this.f1262b.m1461M();
+        return this.f1262b.getHorizontalOverScrollMode();
     }
 
     public void setHorizontalOverScrollMode(OverScrollMode overScrollMode) {
-        this.f1262b.m1497a(overScrollMode);
+        this.f1262b.setHorizontalOverScrollMode(overScrollMode);
     }
 
     public OverScrollMode getVerticalOverScrollMode() {
@@ -191,15 +191,15 @@ public class fr extends ViewGroup implements Scrollable {
     }
 
     public void setVerticalOverScrollMode(OverScrollMode overScrollMode) {
-        this.f1262b.m1518b(overScrollMode);
+        this.f1262b.setVerticalOverScrollMode(overScrollMode);
     }
 
     public final int getMaxOverScrollWidth() {
-        return this.f1262b.m1463O();
+        return this.f1262b.getMaxOverScrollWidth();
     }
 
     public final void setMaxOverScrollWidth(int i) {
-        this.f1262b.m1525c(i);
+        this.f1262b.setMaxOverScrollWidth(i);
     }
 
     public final int getMaxOverScrollHeight() {
@@ -207,31 +207,31 @@ public class fr extends ViewGroup implements Scrollable {
     }
 
     public final void setMaxOverScrollHeight(int i) {
-        this.f1262b.m1534d(i);
+        this.f1262b.MaxOverScrollHeight(i);
     }
 
     public final Rect getViewportBounds() {
         return this.f1262b.getViewportBounds();
     }
 
-    public void setOnContentBoundsChangedListener(cf cfVar) {
-        this.f1262b.m1501a(cfVar);
+    public void setOnContentBoundsChangedListener(OnContentBoundsChangedListener contentBoundsChangedListener) {
+        this.f1262b.setOnContentBoundsChangedListener(contentBoundsChangedListener);
     }
 
-    public void setOnScrollListener(cg cgVar) {
-        this.f1262b.m1502a(cgVar);
+    public void setOnScrollListener(OnScrollListener onScrollListener) {
+        this.f1262b.setOnScrollListener(onScrollListener);
     }
 
     public void scrollTo(int i, int i2) {
-        this.f1262b.m1535d(i, i2);
+        this.f1262b.scrollTo(i, i2);
     }
 
-    /* renamed from: a */
+    
     public final void mo434a(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
         this.f1262b.mo434a(i, i2, i3, runnable, runnable2);
     }
 
-    /* renamed from: a */
+    
     public void m2110a() {
         this.f1262b.m1474Z();
     }
@@ -243,57 +243,57 @@ public class fr extends ViewGroup implements Scrollable {
 
     public void setBackgroundColor(int i) {
         super.setBackgroundColor(i);
-        this.f1261a.setBackgroundColor(i);
+        this.dkWebView.setBackgroundColor(i);
     }
 
     public void draw(Canvas canvas) {
         super.draw(canvas);
-        canvas.translate((float) (-this.f1261a.getScrollX()), (float) (-this.f1261a.getScrollY()));
+        canvas.translate((float) (-this.dkWebView.getScrollX()), (float) (-this.dkWebView.getScrollY()));
         this.f1262b.m1527c(canvas);
-        canvas.translate((float) this.f1261a.getScrollX(), (float) this.f1261a.getScrollY());
-        if (this.f1261a.isDirty()) {
+        canvas.translate((float) this.dkWebView.getScrollX(), (float) this.dkWebView.getScrollY());
+        if (this.dkWebView.isDirty()) {
             invalidate();
         }
     }
 
     protected void onMeasure(int i, int i2) {
-        this.f1261a.measure(i, i2);
-        setMeasuredDimension(this.f1261a.getMeasuredWidth(), this.f1261a.getMeasuredHeight());
+        this.dkWebView.measure(i, i2);
+        setMeasuredDimension(this.dkWebView.getMeasuredWidth(), this.dkWebView.getMeasuredHeight());
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        this.f1261a.layout(0, 0, i3 - i, i4 - i2);
+        this.dkWebView.layout(0, 0, i3 - i, i4 - i2);
     }
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        MotionEvent a = AnimUtils.m1908a(motionEvent, (View) this, this.f1261a);
-        boolean c = this.f1262b.mo2420c(a);
+        MotionEvent a = AnimUtils.m1908a(motionEvent, (View) this, this.dkWebView);
+        boolean c = this.f1262b.onTouchEvent(a);
         a.recycle();
         return c;
     }
 
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        MotionEvent a = AnimUtils.m1908a(motionEvent, (View) this, this.f1261a);
-        boolean b = this.f1262b.mo2419b(a);
+        MotionEvent a = AnimUtils.m1908a(motionEvent, (View) this, this.dkWebView);
+        boolean b = this.f1262b.onInterceptTouchEvent(a);
         a.recycle();
         return b;
     }
 
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.f1262b.m1523c();
+        this.f1262b.onAttachedToWindow();
     }
 
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.f1262b.m1532d();
+        this.f1262b.onDetachedFromWindow();
     }
 
     public String getCurrentUrl() {
-        return this.f1265e;
+        return this.currentUrl;
     }
 
-    /* renamed from: b */
+    
     public boolean m2118b() {
         return this.f1266f;
     }
@@ -303,96 +303,96 @@ public class fr extends ViewGroup implements Scrollable {
     }
 
     public long getLoadingTimeout() {
-        return this.f1268h;
+        return this.loadingTimeout;
     }
 
     public void setLoadingTimout(long j) {
-        this.f1268h = j;
+        this.loadingTimeout = j;
     }
 
-    /* renamed from: a */
-    public void mo1815a(String str) {
+    
+    public void loadUrl(String str) {
         if (!TextUtils.isEmpty(str)) {
-            this.f1261a.loadUrl(str);
+            this.dkWebView.loadUrl(str);
         }
     }
 
-    public fq getWebpageClient() {
-        return this.f1263c;
+    public WebPageClient getWebpageClient() {
+        return this.webPageClient;
     }
 
-    public void setWebpageClient(fq fqVar) {
-        this.f1263c = fqVar;
+    public void setWebpageClient(WebPageClient webPageClient) {
+        this.webPageClient = webPageClient;
     }
 
     public void setDownloadListener(DownloadListener downloadListener) {
-        this.f1261a.setDownloadListener(downloadListener);
+        this.dkWebView.setDownloadListener(downloadListener);
     }
 
-    public void setWebpageChromeClient(fl flVar) {
-        this.f1264d = flVar;
+    public void setWebpageChromeClient(WebPageChromeClient webPageChromeClient) {
+        this.webPageChromeClient = webPageChromeClient;
     }
 
-    /* renamed from: a */
-    public void mo1814a(Object obj, String str) {
-        this.f1261a.addJavascriptInterface(obj, str);
+    
+    public void addJavascriptInterface(Object obj, String str) {
+        this.dkWebView.addJavascriptInterface(obj, str);
     }
 
     public WebSettings getSettings() {
-        return this.f1261a.getSettings();
+        return this.dkWebView.getSettings();
     }
 
-    /* renamed from: c */
-    public void mo1818c() {
-        this.f1261a.reload();
+    
+    public void reload() {
+        this.dkWebView.reload();
     }
 
-    /* renamed from: d */
-    public boolean mo1819d() {
-        return this.f1261a.canGoBack();
+    
+    public boolean canGoBack() {
+        return this.dkWebView.canGoBack();
     }
 
-    /* renamed from: a */
-    public void mo1813a(int i) {
-        this.f1261a.goBackOrForward(i);
+    
+    public void goBackOrForward(int i) {
+        this.dkWebView.goBackOrForward(i);
     }
 
-    /* renamed from: e */
-    public WebBackForwardList mo1820e() {
-        return this.f1261a.copyBackForwardList();
+    
+    public WebBackForwardList copyBackForwardList() {
+        return this.dkWebView.copyBackForwardList();
     }
 
-    /* renamed from: f */
-    public void mo1821f() {
-        this.f1261a.destroy();
+    
+    public void destroy() {
+        this.dkWebView.destroy();
         this.f1269i = null;
     }
 
-    /* renamed from: g */
-    public void m2123g() {
-        this.f1261a.clearHistory();
+    
+    public void clearHistory() {
+        this.dkWebView.clearHistory();
     }
 
     @TargetApi(19)
     public static void setWebContentsDebuggingEnabled(boolean z) {
-        fz.setWebContentsDebuggingEnabled(z);
+        DkWebView.setWebContentsDebuggingEnabled(z);
     }
 
-    /* renamed from: a */
+    
     protected void m2116a(String str, Bitmap bitmap) {
     }
 
-    /* renamed from: b */
+    
     protected void mo1817b(String str) {
     }
 
-    /* renamed from: a */
-    protected fv mo1744a(fz fzVar) {
-        return new fv(this, fzVar);
+    
+    protected fv mo1744a(DkWebView webView) {
+        return new fv(this, webView);
     }
 
-    /* renamed from: h */
-    protected fz m2124h() {
-        return new fz(this, getContext());
+    
+    protected DkWebView getWebView() {
+        return new DkWebView(this, getContext());
     }
 }

@@ -56,7 +56,7 @@ class ix implements as {
                     afVar.mo975a(b2);
                 } else {
                     readerFeature = (ReaderFeature) this.f8022b.f7581b.getContext().queryFeature(ReaderFeature.class);
-                    if (readerFeature == null || readerFeature.getReadingBook() == null || !TextUtils.equals(dkStoreBookDetail.getBook().getBookUuid(), readerFeature.getReadingBook().m4156I())) {
+                    if (readerFeature == null || readerFeature.getReadingBook() == null || !TextUtils.equals(dkStoreBookDetail.getBook().getBookUuid(), readerFeature.getReadingBook().getId())) {
                         a = ai.m3980a().m3869a(dkStoreBookDetail);
                         a.m4235j(optString);
                         afVar.mo975a(a);
@@ -80,7 +80,7 @@ class ix implements as {
                     }
                 } else {
                     readerFeature = (ReaderFeature) this.f8022b.f7581b.getContext().queryFeature(ReaderFeature.class);
-                    if (readerFeature == null || readerFeature.getReadingBook() == null || !TextUtils.equals(dkStoreFictionDetail.getFiction().getBookUuid(), readerFeature.getReadingBook().m4156I())) {
+                    if (readerFeature == null || readerFeature.getReadingBook() == null || !TextUtils.equals(dkStoreFictionDetail.getFiction().getBookUuid(), readerFeature.getReadingBook().getId())) {
                         a = (ee) ai.m3980a().m3874a(dkStoreFictionDetail);
                         a.m4235j(optString);
                         a.m4406a(dkStoreFictionDetail);

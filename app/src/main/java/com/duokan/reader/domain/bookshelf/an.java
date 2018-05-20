@@ -8,29 +8,29 @@ import com.duokan.reader.common.p037c.C0559f;
 import java.io.File;
 
 public abstract class an extends ij {
-    /* renamed from: D */
+    
     protected final am f2688D;
-    /* renamed from: a */
+    
     private final long f2689a;
-    /* renamed from: b */
+    
     private long f2690b;
-    /* renamed from: c */
+    
     private boolean f2691c = false;
-    /* renamed from: d */
+    
     private boolean f2692d = true;
-    /* renamed from: e */
+    
     private boolean f2693e = false;
-    /* renamed from: f */
+    
     private boolean f2694f = true;
-    /* renamed from: g */
+    
     private int f2695g = 0;
-    /* renamed from: h */
+    
     private boolean f2696h = false;
 
-    /* renamed from: a */
+    
     protected abstract void mo950a(ContentValues contentValues);
 
-    /* renamed from: a */
+    
     protected abstract void mo951a(Cursor cursor);
 
     public abstract boolean aA();
@@ -39,7 +39,7 @@ public abstract class an extends ij {
 
     protected abstract String aC();
 
-    /* renamed from: p */
+    
     protected abstract void mo955p(String str);
 
     protected an(am amVar, long j, boolean z, boolean z2) {
@@ -80,12 +80,12 @@ public abstract class an extends ij {
         m3748h(0);
     }
 
-    /* renamed from: h */
+    
     protected final void m3748h(long j) {
         this.f2690b = j;
     }
 
-    /* renamed from: a */
+    
     public static final boolean m3740a(int i, int i2) {
         return (i & i2) != 0;
     }
@@ -98,7 +98,7 @@ public abstract class an extends ij {
         m3746c(true);
     }
 
-    /* renamed from: c */
+    
     public final void m3746c(boolean z) {
         Runnable aoVar = new ao(this);
         if (z) {
@@ -142,7 +142,7 @@ public abstract class an extends ij {
         }
     }
 
-    /* renamed from: a */
+    
     public void mo949a(C0559f c0559f) {
     }
 
@@ -170,62 +170,11 @@ public abstract class an extends ij {
         }
     }
 
-    /* JADX WARNING: inconsistent code. */
-    /* Code decompiled incorrectly, please refer to instructions dump. */
-    /* renamed from: b */
+    
+    
+    
     protected final void m3745b(android.database.Cursor r6) {
-        /*
-        r5 = this;
-        r0 = r5.f2693e;
-        if (r0 == 0) goto L_0x0005;
-    L_0x0004:
-        return;
-    L_0x0005:
-        r0 = r5.f2688D;	 Catch:{ Throwable -> 0x0035 }
-        r2 = r5.aH();	 Catch:{ Throwable -> 0x0035 }
-        r0.mo1091a(r2);	 Catch:{ Throwable -> 0x0035 }
-        r0 = r5.f2693e;	 Catch:{ Throwable -> 0x0035 }
-        if (r0 != 0) goto L_0x0016;
-    L_0x0012:
-        r0 = r5.f2694f;	 Catch:{ Throwable -> 0x0035 }
-        if (r0 != 0) goto L_0x0020;
-    L_0x0016:
-        r0 = r5.f2688D;
-        r2 = r5.aH();
-        r0.mo1097b(r2);
-        goto L_0x0004;
-    L_0x0020:
-        if (r6 == 0) goto L_0x0025;
-    L_0x0022:
-        r5.mo951a(r6);	 Catch:{ Throwable -> 0x0035 }
-    L_0x0025:
-        r0 = 1;
-        r5.f2693e = r0;	 Catch:{ Throwable -> 0x0035 }
-        r5.ax();	 Catch:{ Throwable -> 0x0035 }
-        r0 = r5.f2688D;
-        r2 = r5.aH();
-        r0.mo1097b(r2);
-        goto L_0x0004;
-    L_0x0035:
-        r0 = move-exception;
-        r1 = 0;
-        r5.f2694f = r1;	 Catch:{ all -> 0x0050 }
-        r1 = com.duokan.core.diagnostic.C0328a.m757c();	 Catch:{ all -> 0x0050 }
-        r2 = com.duokan.core.diagnostic.LogLevel.ERROR;	 Catch:{ all -> 0x0050 }
-        r3 = "shelf";
-        r4 = "item init exception!";
-        r1.m748a(r2, r3, r4, r0);	 Catch:{ all -> 0x0050 }
-        r0 = r5.f2688D;
-        r2 = r5.aH();
-        r0.mo1097b(r2);
-        goto L_0x0004;
-    L_0x0050:
-        r0 = move-exception;
-        r1 = r5.f2688D;
-        r2 = r5.aH();
-        r1.mo1097b(r2);
-        throw r0;
-        */
+        
         throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.domain.bookshelf.an.b(android.database.Cursor):void");
     }
 
@@ -248,7 +197,7 @@ public abstract class an extends ij {
         return this.f2688D.mo1106i();
     }
 
-    /* renamed from: i */
+    
     protected an m3749i(long j) {
         return this.f2688D.mo1100d(j);
     }
@@ -257,12 +206,12 @@ public abstract class an extends ij {
         return this.f2688D;
     }
 
-    /* renamed from: b */
+    
     protected void m3744b(int i) {
         this.f2695g |= i;
     }
 
-    /* renamed from: c */
+    
     protected boolean m3747c(int i) {
         return (this.f2695g & i) != 0;
     }

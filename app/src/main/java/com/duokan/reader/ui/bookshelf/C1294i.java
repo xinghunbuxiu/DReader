@@ -3,11 +3,11 @@ package com.duokan.reader.ui.bookshelf;
 import android.view.View;
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 import org.apache.http.HttpStatus;
 
 /* renamed from: com.duokan.reader.ui.bookshelf.i */
-class C1294i implements cg {
+class C1294i implements OnScrollListener {
     /* renamed from: a */
     final /* synthetic */ View f6581a;
     /* renamed from: b */

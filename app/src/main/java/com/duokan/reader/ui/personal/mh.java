@@ -74,7 +74,7 @@ public class mh extends ActivatedController implements ip, iq {
     public void onItemChanged(an anVar, int i) {
         if ((anVar instanceof C0800c) && (i & 72) != 0) {
             C0800c c0800c = (C0800c) anVar;
-            if (this.f8943e != null && c0800c.m4156I().equals(this.f8943e.getBookUuid())) {
+            if (this.f8943e != null && c0800c.getId().equals(this.f8943e.getBookUuid())) {
                 new hh(getContext(), this.f8943e.getBookUuid(), this.f8943e.getTitle(), this.f8942d.isSerial()).m10750a((DkLabelView) this.f8940b.findViewById(C0255g.personal__notes_info_header_view__read));
                 runFirstOnActive("redisplay_list", new mi(this));
             }

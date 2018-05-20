@@ -7,7 +7,7 @@ import com.duokan.core.app.ManagedApp;
 import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.io.FileUtil;
-import com.duokan.core.p027b.p028a.C0320a;
+import com.duokan.core.p027b.p028a.HttpConfig;
 import com.duokan.core.p027b.p028a.C0321b;
 import com.duokan.core.sys.C0352r;
 import com.duokan.core.sys.C0366o;
@@ -131,7 +131,7 @@ public class fp extends ee {
         boolean z;
         short[] paidChaptersId;
         int i = null;
-        DkCloudPurchasedFiction b = DkUserPurchasedFictionsManager.m5072a().m5101b(m4156I());
+        DkCloudPurchasedFiction b = DkUserPurchasedFictionsManager.m5072a().m5101b(getId());
         HashSet hashSet = new HashSet();
         if (b != null) {
             boolean isEntirePaid = b.isEntirePaid();
@@ -266,7 +266,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                                 m4184a(BookType.NORMAL);
                                 m4183a(BookLimitType.NONE);
                             } else {
-                                m4198a(Uri.fromFile(new File(new File(m4222e()).getParent(), m4156I() + "." + dkCloudBookManifest.getBookRevision() + ".epub")).toString(), dkCloudBookManifest.getBookUri(), dkCloudBookManifest.getBookRevision(), dkCloudBookManifest.getBookMd5(), true, afVar);
+                                m4198a(Uri.fromFile(new File(new File(m4222e()).getParent(), getId() + "." + dkCloudBookManifest.getBookRevision() + ".epub")).toString(), dkCloudBookManifest.getBookUri(), dkCloudBookManifest.getBookRevision(), dkCloudBookManifest.getBookMd5(), true, afVar);
                             }
                         }
                     }
@@ -473,7 +473,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                 if (!mo1038k()) {
                     return false;
                 }
-                if (new C0650x(m4156I()).m3047b() != 1) {
+                if (new C0650x(getId()).m3047b() != 1) {
                     z = false;
                 }
                 return z;
@@ -735,7 +735,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                             }
                         } else if (mo1037j() && !TextUtils.isEmpty(this.x.f2718b)) {
                             d.getParentFile().mkdirs();
-                            C0321b.m725a(this.x.f2718b, d, new C0320a().m721a(1).m724b(131072));
+                            C0321b.getFileLength(this.x.f2718b, d, new HttpConfig().m721a(1).m724b(131072));
                         }
                         if (!d.exists()) {
                             WebLog.init().c(LogLevel.ERROR, "epub", "fail to create the book " + d.getAbsolutePath());

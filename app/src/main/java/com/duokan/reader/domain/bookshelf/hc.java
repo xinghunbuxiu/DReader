@@ -6,14 +6,14 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.text.TextUtils;
 import com.duokan.common.C0266h;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.core.app.ApplicationsStateCallbacks;
 import com.duokan.core.app.ai;
 import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.io.FileUtil;
 import com.duokan.core.p026a.C0285n;
-import com.duokan.core.p029c.C0326b;
+import com.duokan.core.p029c.IRunTask;
 import com.duokan.core.sys.C0366o;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.af;
@@ -240,7 +240,7 @@ Error: java.lang.NullPointerException
         r4 = (r4 > r2 ? 1 : (r4 == r2 ? 0 : -1));	 Catch:{ Throwable -> 0x008e, all -> 0x01bb }
         if (r4 > 0) goto L_0x00b1;	 Catch:{ Throwable -> 0x008e, all -> 0x01bb }
     L_0x00a3:
-        r4 = com.duokan.reader.domain.cloud.av.m5316a();	 Catch:{ Throwable -> 0x008e, all -> 0x01bb }
+        r4 = com.duokan.reader.domain.cloud.DkBaseAdapter.m5316a();	 Catch:{ Throwable -> 0x008e, all -> 0x01bb }
         r4 = r4.m5334b();	 Catch:{ Throwable -> 0x008e, all -> 0x01bb }
         r4 = r4.f3740a;	 Catch:{ Throwable -> 0x008e, all -> 0x01bb }
         r2 = (r4 > r2 ? 1 : (r4 == r2 ? 0 : -1));	 Catch:{ Throwable -> 0x008e, all -> 0x01bb }
@@ -267,7 +267,7 @@ Error: java.lang.NullPointerException
         r2 = 1;	 Catch:{ Throwable -> 0x008e, all -> 0x01bb }
         r7 = r2;	 Catch:{ Throwable -> 0x008e, all -> 0x01bb }
     L_0x00d7:
-        r2 = com.duokan.reader.domain.cloud.av.m5316a();	 Catch:{ Throwable -> 0x008e, all -> 0x01bb }
+        r2 = com.duokan.reader.domain.cloud.DkBaseAdapter.m5316a();	 Catch:{ Throwable -> 0x008e, all -> 0x01bb }
         r2 = r2.m5334b();	 Catch:{ Throwable -> 0x008e, all -> 0x01bb }
         r2 = r2.f3740a;	 Catch:{ Throwable -> 0x008e, all -> 0x01bb }
         r4 = java.lang.System.currentTimeMillis();	 Catch:{ Throwable -> 0x008e, all -> 0x01bb }
@@ -900,7 +900,7 @@ Error: java.lang.NullPointerException
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(str);
         stringBuilder.append(File.separator);
-        stringBuilder.append(C0267i.m607b(isVar.m4682b()));
+        stringBuilder.append(CommonUtils.m607b(isVar.m4682b()));
         stringBuilder.append("_");
         stringBuilder.append(C0266h.m597a(isVar.m4685e()));
         stringBuilder.append("_");
@@ -1237,7 +1237,7 @@ Error: java.lang.NullPointerException
         if (!PersonalPrefs.m5175a().m5250z() || c0800c.aq() == -1) {
             return false;
         }
-        if (c0800c.m4242o() == BookType.TRIAL && DkUserPurchasedBooksManager.m5029a().m5052a(c0800c.m4156I()) == null) {
+        if (c0800c.m4242o() == BookType.TRIAL && DkUserPurchasedBooksManager.m5029a().m5052a(c0800c.getId()) == null) {
             return false;
         }
         return true;
@@ -1294,7 +1294,7 @@ Error: java.lang.NullPointerException
         if (c == null) {
             BookPackageType bookPackageType;
             DkPublic.rm(file);
-            BookFormat r = C0800c.m4145r(C0267i.m601a(isVar.m4682b()).toUpperCase(Locale.US));
+            BookFormat r = C0800c.m4145r(CommonUtils.m601a(isVar.m4682b()).toUpperCase(Locale.US));
             switch (hv.f3329a[r.ordinal()]) {
                 case 1:
                     bookPackageType = BookPackageType.EPUB;
@@ -1309,7 +1309,7 @@ Error: java.lang.NullPointerException
             c = m3864a(r, bookPackageType, BookType.NORMAL, BookState.CLOUD_ONLY);
             c.m4196a(uri);
             c.m4176a(System.currentTimeMillis());
-            c.mo955p(C0267i.m610c(isVar.m4680a().m8162l()));
+            c.mo955p(CommonUtils.m610c(isVar.m4680a().m8162l()));
             c.m4184a(BookType.NORMAL);
             c.m4207b(isVar.m4684d());
             c.m4186a(new ab());
@@ -1381,7 +1381,7 @@ Error: java.lang.NullPointerException
                 break;
             }
         }
-        BookFormat r = C0800c.m4145r(C0267i.m601a(str).toUpperCase(Locale.US));
+        BookFormat r = C0800c.m4145r(CommonUtils.m601a(str).toUpperCase(Locale.US));
         switch (hv.f3329a[r.ordinal()]) {
             case 1:
                 bookPackageType = BookPackageType.EPUB;
@@ -1407,7 +1407,7 @@ Error: java.lang.NullPointerException
         m3925e(c0800c);
         c0800c.m4253y();
         if (TextUtils.isEmpty(c0800c.ay())) {
-            c0800c.mo955p(C0267i.m610c(str));
+            c0800c.mo955p(CommonUtils.m610c(str));
         }
         c0800c.m4190a(new ke(c0800c.mo1039q(), null));
         return c0800c;
@@ -1575,7 +1575,7 @@ Error: java.lang.NullPointerException
                 m3821a(c0800c, m3862a((an) c0800c), z);
                 C1167a d = C1167a.m8671d();
                 if (c0800c.ak()) {
-                    I = c0800c.m4156I();
+                    I = c0800c.getId();
                 } else {
                     I = c0800c.ay();
                 }
@@ -2175,7 +2175,7 @@ Error: java.lang.NullPointerException
                 c.aN();
             } else {
                 BookPackageType bookPackageType;
-                BookFormat r = C0800c.m4145r(C0267i.m601a(isVar.m4682b()).toUpperCase(Locale.US));
+                BookFormat r = C0800c.m4145r(CommonUtils.m601a(isVar.m4682b()).toUpperCase(Locale.US));
                 switch (hv.f3329a[r.ordinal()]) {
                     case 1:
                         bookPackageType = BookPackageType.EPUB;
@@ -2191,7 +2191,7 @@ Error: java.lang.NullPointerException
                 c.m4196a(uri);
                 c.m4176a(btVar.f2861e);
                 c.m4220d(j);
-                c.mo955p(C0267i.m610c(isVar.m4680a().m8162l()));
+                c.mo955p(CommonUtils.m610c(isVar.m4680a().m8162l()));
                 c.m4184a(BookType.NORMAL);
                 c.m4207b(isVar.m4684d());
                 c.m4186a(new ab());
@@ -2404,14 +2404,14 @@ Error: java.lang.NullPointerException
     }
 
     /* renamed from: a */
-    private ArrayList<C0800c> m3815a(C0326b<C0800c> c0326b) {
+    private ArrayList<C0800c> m3815a(IRunTask<C0800c> runTask) {
         ArrayList arrayList = new ArrayList();
         arrayList.addAll(this.f2744h.values());
         ArrayList<C0800c> arrayList2 = new ArrayList();
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {
             C0800c c0800c = (C0800c) it.next();
-            if (c0326b.mo411a(c0800c)) {
+            if (runTask.isExitRunTask(c0800c)) {
                 arrayList2.add(c0800c);
             }
         }

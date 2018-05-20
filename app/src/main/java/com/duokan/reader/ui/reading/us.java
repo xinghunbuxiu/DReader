@@ -11,9 +11,9 @@ class us implements Runnable {
     }
 
     public void run() {
-        String I = this.f11031a.f11029a.m4156I();
+        String I = this.f11031a.f11029a.getId();
         if (this.f11031a.f11029a.al()) {
-            I = new C0650x(this.f11031a.f11029a.m4156I()).m3046a();
+            I = new C0650x(this.f11031a.f11029a.getId()).m3046a();
         }
         su a = this.f11031a.f11030b.f11020a;
         int i = this.f11031a.f11029a.al() ? 4 : this.f11031a.f11029a.mo1038k() ? 2 : 1;

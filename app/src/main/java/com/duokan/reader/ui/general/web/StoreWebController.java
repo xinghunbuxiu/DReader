@@ -30,7 +30,7 @@ abstract class StoreWebController extends lj {
         super(mFeature);
         this.mWebView.setWebpageChromeClient(new C1353b(this));
         this.mWebView.setWebpageClient(new C1357e(this));
-        this.mWebView.mo1814a(newJavascriptImpl(), "Dk");
+        this.mWebView.addJavascriptInterface(newJavascriptImpl(), "Dk");
         this.mWebView.setOnPullDownRefreshListener(new ks(this));
         ((C1357e) this.mWebView.getWebpageClient()).m11099a(new kt(this));
     }

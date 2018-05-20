@@ -5,9 +5,9 @@ import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
 public abstract class PullDownRefreshBaseView extends FrameLayout {
-    /* renamed from: a */
+    
     private RefreshState f846a = RefreshState.NO_REFRESH;
-    /* renamed from: b */
+    
     private Runnable f847b;
 
     public enum RefreshState {
@@ -18,19 +18,19 @@ public abstract class PullDownRefreshBaseView extends FrameLayout {
         REFRESH_DONE
     }
 
-    /* renamed from: a */
+    
     protected abstract void mo469a(RefreshState refreshState);
 
-    /* renamed from: b */
+    
     protected abstract void mo470b();
 
-    /* renamed from: c */
+    
     protected abstract void mo471c();
 
-    /* renamed from: d */
+    
     protected abstract void mo472d();
 
-    /* renamed from: e */
+    
     protected abstract void mo473e();
 
     public abstract void setRate(float f);
@@ -83,7 +83,7 @@ public abstract class PullDownRefreshBaseView extends FrameLayout {
         }
     }
 
-    /* renamed from: a */
+    
     public void m1286a() {
         if (this.f847b != null) {
             this.f847b.run();
@@ -95,7 +95,7 @@ public abstract class PullDownRefreshBaseView extends FrameLayout {
         this.f847b = runnable;
     }
 
-    /* renamed from: a */
+    
     private final void m1285a(RefreshState refreshState, RefreshState refreshState2) {
         switch (bz.f1062a[refreshState2.ordinal()]) {
             case 1:

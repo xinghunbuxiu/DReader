@@ -11,6 +11,6 @@ class ec implements Runnable {
     }
 
     public void run() {
-        DkPublic.exchangeNewIdThenDo(this.f10067a.f10025z.m4156I(), this.f10067a.f9998G, new ed(this), null);
+        DkPublic.exchangeNewIdThenDo(this.f10067a.f10025z.getId(), this.f10067a.f9998G, new ed(this), null);
     }
 }

@@ -3,12 +3,12 @@ package com.duokan.reader.ui.personal;
 import android.graphics.Color;
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 import com.duokan.core.ui.AnimUtils;
 import com.duokan.reader.ui.general.PageHeaderView;
 import org.apache.http.HttpStatus;
 
-class io implements cg {
+class io implements OnScrollListener {
     /* renamed from: a */
     final /* synthetic */ PageHeaderView f8738a;
     /* renamed from: b */

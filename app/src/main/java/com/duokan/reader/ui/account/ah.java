@@ -2,9 +2,9 @@ package com.duokan.reader.ui.account;
 
 import android.view.View;
 import com.duokan.core.ui.ay;
-import com.duokan.core.ui.bf;
+import com.duokan.core.ui.OnItemClickListener;
 
-class ah implements bf {
+class ah implements OnItemClickListener {
     /* renamed from: a */
     final /* synthetic */ ae f5786a;
     /* renamed from: b */
@@ -16,7 +16,7 @@ class ah implements bf {
     }
 
     /* renamed from: a */
-    public void mo480a(ay ayVar, View view, int i) {
+    public void onItemClick(ay ayVar, View view, int i) {
         if (this.f5786a != null) {
             this.f5786a.onChoiced(this.f5787b.f5784b.m8864a(i).f5780b);
         }

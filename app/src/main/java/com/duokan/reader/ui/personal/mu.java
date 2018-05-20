@@ -12,7 +12,7 @@ import com.duokan.reader.ui.general.DkWebListView;
 import com.duokan.reader.ui.general.PageHeaderView;
 
 public class mu extends LinearLayout {
-    /* renamed from: a */
+    
     kf f8968a = new kf(getContext());
 
     public mu(Context context) {

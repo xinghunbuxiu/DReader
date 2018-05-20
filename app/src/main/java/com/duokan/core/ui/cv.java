@@ -7,6 +7,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Build.VERSION;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -24,53 +25,53 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class cv {
-    /* renamed from: a */
+    
     private static final LinkedList<WeakReference<cv>> f1093a = new LinkedList();
-    /* renamed from: b */
-    static final /* synthetic */ boolean f1094b = (!cv.class.desiredAssertionStatus());
-    /* renamed from: c */
+    
+    static final  boolean desiredAssertionStatus = (!cv.class.desiredAssertionStatus());
+    
     private static final LinkedList<de> f1095c = new LinkedList();
-    /* renamed from: d */
-    private static int f1096d = Color.argb(255, 255, 255, 255);
-    /* renamed from: e */
-    private final Context f1097e;
-    /* renamed from: f */
-    private final Activity f1098f;
-    /* renamed from: g */
-    private final boolean f1099g;
-    /* renamed from: h */
-    private final db f1100h;
-    /* renamed from: i */
+    
+    private static int white = Color.argb(255, 255, 255, 255);
+    
+    private final Context context;
+    
+    private final Activity mActivity;
+    
+    private final boolean foreground;
+    
+    private final db decorView;
+    
     private final cy f1101i;
-    /* renamed from: j */
+    
     private final af<Boolean> f1102j;
-    /* renamed from: k */
+    
     private final af<Boolean> f1103k;
-    /* renamed from: l */
-    private final ActivityLifecycleCallbacks f1104l;
-    /* renamed from: m */
-    private View f1105m;
-    /* renamed from: n */
-    private boolean f1106n;
-    /* renamed from: o */
-    private int f1107o;
-    /* renamed from: p */
+    
+    private final ActivityLifecycleCallbacks lifecycleCallbacks;
+    
+    private View view;
+    
+    private boolean focusable;
+    
+    private int gravity;
+    
     private float f1108p;
-    /* renamed from: q */
-    private AlphaAnimation f1109q;
-    /* renamed from: r */
-    private Animation f1110r;
-    /* renamed from: s */
-    private Animation f1111s;
-    /* renamed from: t */
-    private Runnable f1112t;
-    /* renamed from: u */
-    private boolean f1113u;
-    /* renamed from: v */
+    
+    private AlphaAnimation alphaAnimation;
+    
+    private Animation animation;
+    
+    private Animation animation1;
+    
+    private Runnable runnable;
+    
+    private boolean isShowing;
+    
     private boolean f1114v;
-    /* renamed from: w */
+    
     private boolean f1115w;
-    /* renamed from: x */
+    
     private boolean f1116x;
 
     public cv(Context context) {
@@ -82,71 +83,108 @@ public class cv {
         boolean z2 = true;
         this.f1102j = new af();
         this.f1103k = new af();
-        this.f1105m = null;
-        this.f1107o = 17;
+        this.view = null;
+        this.gravity = 17;
         this.f1108p = 0.0f;
-        this.f1109q = null;
-        this.f1110r = null;
-        this.f1111s = null;
-        this.f1112t = null;
-        this.f1113u = false;
+        this.alphaAnimation = null;
+        this.animation = null;
+        this.animation1 = null;
+        this.runnable = null;
+        this.isShowing = false;
         this.f1114v = true;
         this.f1115w = false;
         this.f1116x = false;
-        this.f1097e = context;
-        this.f1098f = AppManage.getCurrentActivity(this.f1097e);
-        this.f1099g = z;
-        if (this.f1099g) {
+        this.context = context;
+        this.mActivity = AppManage.getCurrentActivity(this.context);
+        this.foreground = z;
+        if (this.foreground) {
             z2 = false;
         }
-        this.f1106n = z2;
-        this.f1100h = new db(this, getContext());
+        this.focusable = z2;
+        this.decorView = new db(this, getContext());
         this.f1101i = new cy(context);
         this.f1101i.setClipChildren(false);
-        this.f1100h.addView(this.f1101i, new LayoutParams(-1, -1));
+        this.decorView.addView(this.f1101i, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
         if (VERSION.SDK_INT >= 14) {
-            this.f1104l = new cw(this);
+            this.lifecycleCallbacks = new ActivityLifecycleCallbacks() {
+                @Override
+                public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+
+                }
+
+                @Override
+                public void onActivityStarted(Activity activity) {
+
+                }
+
+                @Override
+                public void onActivityResumed(Activity activity) {
+
+                }
+
+                @Override
+                public void onActivityPaused(Activity activity) {
+
+                }
+
+                @Override
+                public void onActivityStopped(Activity activity) {
+
+                }
+
+                @Override
+                public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
+
+                }
+
+                @Override
+                public void onActivityDestroyed(Activity activity) {
+                    if (activity == mActivity) {
+                        dismissNow();
+                    }
+                }
+            };
         } else {
-            this.f1104l = null;
+            this.lifecycleCallbacks = null;
         }
         f1093a.add(new WeakReference(this));
     }
 
     public final Context getContext() {
-        return this.f1097e;
+        return this.context;
     }
 
-    public final Activity getActivity() {
-        return this.f1098f;
+    public final Activity getmActivity() {
+        return this.mActivity;
     }
 
     public final View getDecorView() {
-        return this.f1100h;
+        return this.decorView;
     }
 
     public final boolean isForeground() {
-        return this.f1099g;
+        return this.foreground;
     }
 
     public final boolean isFocusable() {
-        return this.f1106n;
+        return this.focusable;
     }
 
-    public final void setFocusable(boolean z) {
-        if (!this.f1099g && this.f1106n != z) {
-            this.f1106n = z;
-            if (this.f1113u) {
+    public final void setFocusable(boolean focusable) {
+        if (!this.foreground && this.focusable != focusable) {
+            this.focusable = focusable;
+            if (this.isShowing) {
                 updateLayout();
             }
         }
     }
 
     public final boolean getResizeForSoftInput() {
-        return this.f1100h.getResizeLayoutForSoftInput();
+        return this.decorView.getResizeLayoutForSoftInput();
     }
 
     public final void setResizeForSoftInput(boolean z) {
-        this.f1100h.setResizeLayoutForSoftInput(z);
+        this.decorView.setResizeLayoutForSoftInput(z);
     }
 
     public final af<Boolean> getShowStatusBar() {
@@ -155,7 +193,7 @@ public class cv {
 
     public final void setShowStatusBar(af<Boolean> afVar) {
         this.f1102j.m859a((af) afVar);
-        if (this.f1113u) {
+        if (this.isShowing) {
             updateLayout();
         }
     }
@@ -166,52 +204,52 @@ public class cv {
 
     public final void setLightStatusBar(af<Boolean> afVar) {
         this.f1103k.m859a((af) afVar);
-        if (this.f1113u) {
+        if (this.isShowing) {
             updateLayout();
         }
     }
 
     public final View getContentView() {
-        return this.f1105m;
+        return this.view;
     }
 
     public final void setContentView(int i) {
-        setContentView(LayoutInflater.from(this.f1097e).inflate(i, this.f1100h, false));
+        setContentView(LayoutInflater.from(this.context).inflate(i, this.decorView, false));
     }
 
     public final void setContentView(View view) {
-        setContentView(view, view.getLayoutParams() != null ? view.getLayoutParams() : new FrameLayout.LayoutParams(-1, -1, this.f1107o));
+        setContentView(view, view.getLayoutParams() != null ? view.getLayoutParams() : new FrameLayout.LayoutParams(-1, -1, this.gravity));
     }
 
     public final void setContentView(View view, LayoutParams layoutParams) {
-        if (this.f1105m != view) {
-            if (this.f1105m != null) {
-                this.f1100h.removeView(this.f1105m);
-                this.f1105m = null;
+        if (this.view != view) {
+            if (this.view != null) {
+                this.decorView.removeView(this.view);
+                this.view = null;
             }
             if (view != null) {
-                this.f1105m = view;
+                this.view = view;
                 if (layoutParams instanceof FrameLayout.LayoutParams) {
                     layoutParams = (FrameLayout.LayoutParams) layoutParams;
                 } else {
                     layoutParams = new FrameLayout.LayoutParams(layoutParams);
                 }
-                layoutParams.gravity = this.f1107o;
-                this.f1100h.addView(this.f1105m, 0, layoutParams);
+                layoutParams.gravity = this.gravity;
+                this.decorView.addView(this.view, 0, layoutParams);
             }
         }
     }
 
     public final int getGravity() {
-        return this.f1107o;
+        return this.gravity;
     }
 
     public final void setGravity(int i) {
-        if (this.f1107o != i) {
-            this.f1107o = i;
-            if (this.f1105m != null) {
-                ((FrameLayout.LayoutParams) this.f1105m.getLayoutParams()).gravity = this.f1107o;
-                this.f1105m.requestLayout();
+        if (this.gravity != i) {
+            this.gravity = i;
+            if (this.view != null) {
+                ((FrameLayout.LayoutParams) this.view.getLayoutParams()).gravity = this.gravity;
+                this.view.requestLayout();
             }
         }
     }
@@ -222,16 +260,16 @@ public class cv {
 
     public final void setDimAmount(float f) {
         this.f1108p = f;
-        this.f1100h.invalidate();
+        this.decorView.invalidate();
     }
 
     public final void setEnterAnimation(int i) {
-        this.f1110r = AnimationUtils.loadAnimation(getContext(), i);
+        this.animation = AnimationUtils.loadAnimation(getContext(), i);
     }
 
     public final void setExitAnimation(int i) {
-        this.f1111s = AnimationUtils.loadAnimation(getContext(), i);
-        this.f1111s.setFillAfter(true);
+        this.animation1 = AnimationUtils.loadAnimation(getContext(), i);
+        this.animation1.setFillAfter(true);
     }
 
     public final boolean getConsumeKeyEvents() {
@@ -255,64 +293,64 @@ public class cv {
     }
 
     public final boolean isShowing() {
-        return this.f1113u;
+        return this.isShowing;
     }
 
     @TargetApi(14)
     public void show() {
-        if (!this.f1113u) {
+        if (!this.isShowing) {
             dismissNow();
             de findShowingManager = findShowingManager();
             if (findShowingManager == null) {
-                findShowingManager = new de(this.f1098f);
+                findShowingManager = new de(this.mActivity);
                 f1095c.addFirst(findShowingManager);
             } else {
                 f1095c.remove(findShowingManager);
                 f1095c.addFirst(findShowingManager);
             }
             findShowingManager.m1803a(this);
-            if (this.f1104l != null) {
-                this.f1098f.getApplication().registerActivityLifecycleCallbacks(this.f1104l);
+            if (this.lifecycleCallbacks != null) {
+                this.mActivity.getApplication().registerActivityLifecycleCallbacks(this.lifecycleCallbacks);
             }
             if (Float.compare(this.f1108p, 0.0f) > 0) {
-                this.f1109q = new AlphaAnimation(0.0f, this.f1108p);
-                this.f1109q.setDuration(300);
-                this.f1109q.initialize(0, 0, 0, 0);
+                this.alphaAnimation = new AlphaAnimation(0.0f, this.f1108p);
+                this.alphaAnimation.setDuration(300);
+                this.alphaAnimation.initialize(0, 0, 0, 0);
             }
-            if (!(this.f1105m == null || this.f1110r == null)) {
-                this.f1105m.startAnimation(this.f1110r);
+            if (!(this.view == null || this.animation == null)) {
+                this.view.startAnimation(this.animation);
             }
-            this.f1113u = true;
+            this.isShowing = true;
             onShow();
         }
     }
 
     public void dismiss() {
-        if (this.f1113u) {
+        if (this.isShowing) {
             if (Float.compare(this.f1108p, 0.0f) > 0) {
-                this.f1109q = new AlphaAnimation(this.f1108p, 0.0f);
-                this.f1109q.setDuration(300);
-                this.f1109q.initialize(0, 0, 0, 0);
-                this.f1100h.invalidate();
+                this.alphaAnimation = new AlphaAnimation(this.f1108p, 0.0f);
+                this.alphaAnimation.setDuration(300);
+                this.alphaAnimation.initialize(0, 0, 0, 0);
+                this.decorView.invalidate();
             }
-            if (!(this.f1105m == null || this.f1111s == null)) {
-                this.f1105m.startAnimation(this.f1111s);
+            if (!(this.view == null || this.animation1 == null)) {
+                this.view.startAnimation(this.animation1);
             }
             tryDismiss();
         }
     }
 
     public void dismissNow() {
-        if (this.f1112t != null) {
-            this.f1112t.run();
-        } else if (this.f1113u) {
-            this.f1113u = false;
+        if (this.runnable != null) {
+            this.runnable.run();
+        } else if (this.isShowing) {
+            this.isShowing = false;
             doDismiss();
         }
     }
 
     public final View findViewById(int i) {
-        return this.f1100h.findViewById(i);
+        return this.decorView.findViewById(i);
     }
 
     public final void showBalloon(C0374a c0374a, View view) {
@@ -320,7 +358,7 @@ public class cv {
     }
 
     public final void showBalloon(C0374a c0374a, View view, LayoutParams layoutParams) {
-        LayoutParams a = layoutParams == null ? this.f1101i.m1791a() : this.f1101i.m1793a(layoutParams);
+        LayoutParams a = layoutParams == null ? this.f1101i.getMarginLayoutParams() : this.f1101i.getMarginLayoutParams(layoutParams);
         this.f1101i.addView(c0374a, a);
         a.f1127b = new WeakReference(view);
     }
@@ -330,7 +368,7 @@ public class cv {
     }
 
     public void showBalloon(C0374a c0374a, Rect rect, LayoutParams layoutParams) {
-        LayoutParams a = layoutParams == null ? this.f1101i.m1791a() : this.f1101i.m1793a(layoutParams);
+        LayoutParams a = layoutParams == null ? this.f1101i.getMarginLayoutParams() : this.f1101i.getMarginLayoutParams(layoutParams);
         this.f1101i.addView(c0374a, a);
         a.f1126a.set(rect);
     }
@@ -356,7 +394,7 @@ public class cv {
             cv cvVar = (cv) ((WeakReference) it.next()).get();
             if (cvVar != null) {
                 for (ViewParent parent = view.getParent(); parent != null; parent = parent.getParent()) {
-                    if (parent == cvVar.f1100h) {
+                    if (parent == cvVar.decorView) {
                         return cvVar;
                     }
                 }
@@ -379,7 +417,7 @@ public class cv {
     }
 
     public static final void setRgbDensity(float f, float f2, float f3) {
-        f1096d = Color.argb(255, Math.round(255.0f * f), Math.round(255.0f * f2), Math.round(255.0f * f3));
+        white = Color.argb(255, Math.round(255.0f * f), Math.round(255.0f * f2), Math.round(255.0f * f3));
         Iterator it = f1095c.iterator();
         while (it.hasNext()) {
             ((de) it.next()).m1806c();
@@ -394,18 +432,18 @@ public class cv {
     }
 
     private void tryDismiss() {
-        this.f1113u = false;
+        this.isShowing = false;
         if (!hasRunningAnimation()) {
             doDismiss();
-        } else if (this.f1112t == null) {
-            this.f1112t = new cx(this);
+        } else if (this.runnable == null) {
+            this.runnable = new cx(this);
         }
     }
 
     @TargetApi(14)
     private void doDismiss() {
         de findShowingManager = findShowingManager();
-        if (f1094b || findShowingManager != null) {
+        if (desiredAssertionStatus || findShowingManager != null) {
             if (findShowingManager != null) {
                 onDismiss();
                 findShowingManager.m1805b(this);
@@ -419,8 +457,8 @@ public class cv {
                     }
                 }
             }
-            if (this.f1104l != null) {
-                this.f1098f.getApplication().unregisterActivityLifecycleCallbacks(this.f1104l);
+            if (this.lifecycleCallbacks != null) {
+                this.mActivity.getApplication().unregisterActivityLifecycleCallbacks(this.lifecycleCallbacks);
                 return;
             }
             return;
@@ -429,17 +467,17 @@ public class cv {
     }
 
     private boolean hasRunningAnimation() {
-        if (this.f1109q == null && (this.f1105m == null || this.f1105m.getAnimation() == null || this.f1105m.getAnimation().hasEnded())) {
+        if (this.alphaAnimation == null && (this.view == null || this.view.getAnimation() == null || this.view.getAnimation().hasEnded())) {
             return false;
         }
         return true;
     }
 
     private de findShowingManager() {
-        Iterator it = f1095c.iterator();
+        Iterator<de> it = f1095c.iterator();
         while (it.hasNext()) {
-            de deVar = (de) it.next();
-            if (deVar.f1136b == this.f1098f) {
+            de deVar =it.next();
+            if (deVar.activity == this.mActivity) {
                 return deVar;
             }
         }
@@ -461,11 +499,11 @@ public class cv {
     }
 
     protected boolean checkTouchOutside(int i, int i2) {
-        if (this.f1105m == null) {
+        if (this.view == null) {
             return true;
         }
         Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
-        rect.set(this.f1105m.getLeft(), this.f1105m.getTop(), this.f1105m.getRight(), this.f1105m.getBottom());
+        rect.set(this.view.getLeft(), this.view.getTop(), this.view.getRight(), this.view.getBottom());
         try {
             if (rect.contains(i, i2)) {
                 return rect;

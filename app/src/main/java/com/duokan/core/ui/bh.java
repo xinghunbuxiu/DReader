@@ -3,7 +3,6 @@ package com.duokan.core.ui;
 import android.graphics.Canvas;
 import android.graphics.Point;
 import android.graphics.PointF;
-import com.duokan.core.ui.Scrollable.ScrollState;
 
 public class bh extends ev {
     /* renamed from: b */
@@ -72,7 +71,7 @@ public class bh extends ev {
         if (this.f960b.f764F == null || this.f960b.f759A < 0) {
             super.mo499e(pointF);
         } else {
-            this.f960b.f764F.mo481a(this.f960b, this.f960b.m1141g(this.f960b.f759A), this.f960b.f759A);
+            this.f960b.f764F.onItemLongPress(this.f960b, this.f960b.m1141g(this.f960b.f759A), this.f960b.f759A);
         }
     }
 

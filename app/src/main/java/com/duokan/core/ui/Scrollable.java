@@ -20,10 +20,10 @@ public interface Scrollable {
         SMOOTH
     }
 
-    /* renamed from: a */
+    
     void mo434a(int i, int i2, int i3, Runnable runnable, Runnable runnable2);
 
-    /* renamed from: a */
+    
     void mo435a(View view, boolean z);
 
     int getIdleTime();

@@ -2,7 +2,7 @@ package com.duokan.reader.common.webservices;
 
 import android.os.Looper;
 import com.duokan.core.diagnostic.HttpLogger;
-import com.duokan.core.p027b.p028a.C0320a;
+import com.duokan.core.p027b.p028a.HttpConfig;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.ah;
 import com.duokan.reader.common.webservices.duokan.p040a.C0624a;
@@ -21,7 +21,7 @@ public abstract class WebSession {
     private static final HashMap<String, Long> sHttpCountingMap = new HashMap();
     private static HttpLogger sHttpLogger = null;
     private CacheStrategy mCacheStrategy;
-    private final C0320a mHttpConfig;
+    private final HttpConfig mHttpConfig;
     protected boolean mIsClosed;
     private int mMaxRetryCount;
     private final LinkedList<C0653e> mResponseList;
@@ -69,7 +69,7 @@ public abstract class WebSession {
         this.mSessionFuture = null;
         this.mResponseList = new LinkedList();
         this.mCacheStrategy = CacheStrategy.DISABLE_CACHE;
-        this.mHttpConfig = new C0320a();
+        this.mHttpConfig = new HttpConfig();
         this.mWebSessionConfig = DEFAULT_WEBSESSION_CONFIG;
         this.mWebSessionConfig = c0657i;
     }
@@ -92,11 +92,11 @@ public abstract class WebSession {
     }
 
     public void setReadTimeout(int i) {
-        this.mHttpConfig.f546b = i;
+        this.mHttpConfig.readTimeout = i;
     }
 
     public void setConnectTimeout(int i) {
-        this.mHttpConfig.f545a = i;
+        this.mHttpConfig.connectTimeout = i;
     }
 
     public void setMaxRetryCount(int i) {

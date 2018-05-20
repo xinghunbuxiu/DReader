@@ -5,7 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.common.FileTypeRecognizer;
 import com.duokan.core.app.AppContext;
 import com.duokan.p024c.C0252d;
@@ -154,7 +154,7 @@ public class ao extends hd {
                                     DkLabelView dkLabelView3 = (DkLabelView) a.findViewById(C0255g.bookshelf__custom_cloud_item_view__right_attr);
                                     dkLabelView3.setVisibility(0);
                                     dkLabelView.setVisibility(0);
-                                    dkLabelView3.setText(C0267i.m599a(c1068i2.m8217M()));
+                                    dkLabelView3.setText(CommonUtils.m599a(c1068i2.m8217M()));
                                     dkLabelView2.setText(String.format(this.f8270a.getString(C0258j.bookshelf__cloud_books_view__uploading_schedule), new Object[]{Math.round(a2.f6095c * 100.0f) + "%"}));
                                     return;
                                 } else if (a2.f6093a == BookAction.UPLOAD_FAILED || a2.f6093a == BookAction.UPLOAD_PAUSED) {
@@ -178,7 +178,7 @@ public class ao extends hd {
     /* renamed from: a */
     private void m11403a(View view, CustomCloudItem customCloudItem, int i) {
         BookCoverView bookCoverView = (BookCoverView) view.findViewById(C0255g.bookshelf__custom_cloud_item_view__cover);
-        ((DkLabelView) view.findViewById(C0255g.bookshelf__custom_cloud_item_view__name)).setText(ReaderUi.m10156a(C0267i.m611d(customCloudItem.m11345g()), this.f8271c, this.f8270a.getResources().getColor(C0252d.general__shared__ed6c00)));
+        ((DkLabelView) view.findViewById(C0255g.bookshelf__custom_cloud_item_view__name)).setText(ReaderUi.m10156a(CommonUtils.m611d(customCloudItem.m11345g()), this.f8271c, this.f8270a.getResources().getColor(C0252d.general__shared__ed6c00)));
         C0800c b = customCloudItem.m11340b();
         if (b == null || BookActionAssistant.m9055a(this.f8270a, b).f6093a != BookAction.READ) {
             bookCoverView.setCoverForegroundDrawable(this.f8270a.getResources().getDrawable(gu.m9743b(FileTypeRecognizer.m567a(customCloudItem.m11345g()))));
@@ -218,7 +218,7 @@ public class ao extends hd {
                 dkLabelView2.setText(a.f6094b);
                 ahVar = a;
             } else {
-                dkLabelView2.setText(C0267i.m599a(customCloudItem.m11343e()));
+                dkLabelView2.setText(CommonUtils.m599a(customCloudItem.m11343e()));
                 dkLabelView3.setText(ReaderUi.m10159a(this.f8270a, customCloudItem.m11344f(), false));
                 ahVar = a;
             }
@@ -231,7 +231,7 @@ public class ao extends hd {
                 dkLabelView2.setText(a2.f6094b);
                 ahVar = a2;
             } else {
-                dkLabelView3.setText(C0267i.m599a(c1068i.m8217M()));
+                dkLabelView3.setText(CommonUtils.m599a(c1068i.m8217M()));
                 dkLabelView2.setText(String.format(this.f8270a.getString(C0258j.bookshelf__cloud_books_view__uploading_schedule), new Object[]{Math.round(customCloudItem.m11342d() * 100.0f) + "%"}));
                 ahVar = a2;
             }

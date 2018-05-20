@@ -13,7 +13,7 @@ import com.duokan.core.app.AppContext;
 import com.duokan.core.io.FileUtil;
 import com.duokan.core.sys.C0366o;
 import com.duokan.core.sys.ah;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.er;
 import com.duokan.core.ui.es;
@@ -236,11 +236,11 @@ public abstract class wy extends FrameLayout {
         getFlowPagesView().getScrollDetector().m2042a(esVar);
     }
 
-    public void setOnScrollListener(cg cgVar) {
+    public void setOnScrollListener(OnScrollListener onScrollListener) {
         if (getFixedPagesView() != null) {
-            getFixedPagesView().setOnScrollListener(cgVar);
+            getFixedPagesView().setOnScrollListener(onScrollListener);
         }
-        getFlowPagesView().setOnScrollListener(cgVar);
+        getFlowPagesView().setOnScrollListener(onScrollListener);
     }
 
     public void setOnPageBroadcastListener(fx fxVar) {
@@ -427,6 +427,6 @@ public abstract class wy extends FrameLayout {
     /* renamed from: o */
     private final File m13646o() {
         C0800c G = this.f9698a.mo1992G();
-        return new File(ReaderEnv.get().getReadingCacheDirectory(), C0366o.m1034b(String.format(Locale.getDefault(), "book=%s;pos=%s;w=%d;h=%d;theme=%s;v=%d;", new Object[]{G.m4156I(), G.m4152E().toString(), Integer.valueOf(getWidth()), Integer.valueOf(getHeight()), this.f9698a.mo1997N(), Integer.valueOf(2)}), "md5") + ".snap");
+        return new File(ReaderEnv.get().getReadingCacheDirectory(), C0366o.m1034b(String.format(Locale.getDefault(), "book=%s;pos=%s;w=%d;h=%d;theme=%s;v=%d;", new Object[]{G.getId(), G.m4152E().toString(), Integer.valueOf(getWidth()), Integer.valueOf(getHeight()), this.f9698a.mo1997N(), Integer.valueOf(2)}), "md5") + ".snap");
     }
 }

@@ -121,7 +121,7 @@ public class bn extends gt {
                 if (eeVar.aZ()) {
                     return 9;
                 }
-                return DkUserPurchasedBooksManager.m5029a().m5052a(eeVar.m4156I()) != null ? 11 : 8;
+                return DkUserPurchasedBooksManager.m5029a().m5052a(eeVar.getId()) != null ? 11 : 8;
             } else if (eeVar.m4243p() != BookLimitType.NONE) {
                 return b;
             }
@@ -414,7 +414,7 @@ public class bn extends gt {
                 }
                 ee eeVar = (ee) this.b.mo1992G();
                 String ay = eeVar.ay();
-                String I = eeVar.m4156I();
+                String I = eeVar.getId();
                 String s = m13824s();
                 long t = m13825t();
                 String a = m13828w().mo2356a(t);
@@ -454,7 +454,7 @@ public class bn extends gt {
     private void getPaymentInfo() {
         ee eeVar = (ee) this.b.mo1992G();
         if (!this.c.mo1283F() && this.c.mo1284G()) {
-            String I = eeVar.m4156I();
+            String I = eeVar.getId();
             long t = m13825t();
             String a = m13828w().mo2356a(t);
             new bx(this, this.f9880p, new al((PersonalAccount) C0709k.m3476a().m3502b(PersonalAccount.class)), eeVar, t, I, a).open();
@@ -485,7 +485,7 @@ public class bn extends gt {
                 }
             }
             return 3;
-        } else if (DkUserPurchasedBooksManager.m5029a().m5052a(fpVar.m4156I()) != null) {
+        } else if (DkUserPurchasedBooksManager.m5029a().m5052a(fpVar.getId()) != null) {
             return 11;
         } else {
             return 8;

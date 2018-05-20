@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import com.duokan.core.ui.LinearScrollView;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0245g;
 
@@ -15,7 +15,7 @@ public class DotScrollerView extends LinearLayout {
     /* renamed from: b */
     private final DotProgressBar f6818b;
     /* renamed from: c */
-    private cg f6819c;
+    private OnScrollListener f6819c;
     /* renamed from: d */
     private boolean f6820d;
 
@@ -37,8 +37,8 @@ public class DotScrollerView extends LinearLayout {
         this.f6817a.setOnHierarchyChangeListener(new bw(this));
     }
 
-    public void setOnScrollListener(cg cgVar) {
-        this.f6819c = cgVar;
+    public void setOnScrollListener(OnScrollListener onScrollListener) {
+        this.f6819c = onScrollListener;
     }
 
     protected LinearScrollView getScrollView() {

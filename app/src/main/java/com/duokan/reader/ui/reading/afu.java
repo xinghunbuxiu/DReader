@@ -2,7 +2,7 @@ package com.duokan.reader.ui.reading;
 
 import com.duokan.core.app.ac;
 import com.duokan.core.app.ad;
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.domain.tts.TtsManager;
 import com.duokan.reader.domain.tts.TtsManager.TtsSpeaker;
@@ -24,7 +24,7 @@ class afu implements ad {
 
     /* renamed from: a */
     public void mo1553a(ac acVar) {
-        C0342j a = ja.m10832a(this.f9653b.getContext(), "", this.f9653b.getResources().getString(C0258j.reading__tts_setting_view__deleting), true, true);
+        BaseDialog a = ja.m10832a(this.f9653b.getContext(), "", this.f9653b.getResources().getString(C0258j.reading__tts_setting_view__deleting), true, true);
         List j = this.f9653b.getAdapter().m9788j();
         Object arrayList = new ArrayList();
         for (Object next : j) {

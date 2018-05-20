@@ -20,65 +20,65 @@ import android.widget.LinearLayout;
 import com.duokan.p023b.C0243e;
 
 public class HatGridView extends ViewGroup implements Scrollable {
-    /* renamed from: A */
+    
     private Runnable f807A;
-    /* renamed from: B */
-    private cg f808B;
-    /* renamed from: C */
+    
+    private OnScrollListener f808B;
+    
     private am f809C;
-    /* renamed from: D */
+    
     private int f810D;
-    /* renamed from: a */
+    
     private final ak f811a;
-    /* renamed from: b */
+    
     private final FrameLayout f812b;
-    /* renamed from: c */
+    
     private final FrameLayout f813c;
-    /* renamed from: d */
+    
     private final FrameLayout f814d;
-    /* renamed from: e */
+    
     private final LinearLayout f815e;
-    /* renamed from: f */
+    
     private final FrameLayout f816f;
-    /* renamed from: g */
+    
     private final FrameLayout f817g;
-    /* renamed from: h */
+    
     private final FrameLayout f818h;
-    /* renamed from: i */
+    
     private final FrameLayout f819i;
-    /* renamed from: j */
+    
     private final FrameLayout f820j;
-    /* renamed from: k */
+    
     private final ImageView f821k;
-    /* renamed from: l */
+    
     private final Rect f822l;
-    /* renamed from: m */
+    
     private final ap f823m;
-    /* renamed from: n */
-    private OverScrollMode f824n;
-    /* renamed from: o */
+    
+    private OverScrollMode scrollMode;
+    
     private int f825o;
-    /* renamed from: p */
+    
     private int f826p;
-    /* renamed from: q */
+    
     private boolean f827q;
-    /* renamed from: r */
+    
     private boolean f828r;
-    /* renamed from: s */
+    
     private int f829s;
-    /* renamed from: t */
+    
     private int f830t;
-    /* renamed from: u */
+    
     private int f831u;
-    /* renamed from: v */
+    
     private boolean f832v;
-    /* renamed from: w */
+    
     private int f833w;
-    /* renamed from: x */
-    private HatTipState f834x;
-    /* renamed from: y */
+    
+    private HatTipState hatTipState;
+    
     private int f835y;
-    /* renamed from: z */
+    
     private ai f836z;
 
     public enum HatTipState {
@@ -95,7 +95,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
     public HatGridView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.f822l = new Rect();
-        this.f824n = OverScrollMode.ALWAYS;
+        this.scrollMode = OverScrollMode.ALWAYS;
         this.f825o = 0;
         this.f826p = 0;
         this.f827q = true;
@@ -105,7 +105,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.f831u = 0;
         this.f832v = false;
         this.f833w = -1;
-        this.f834x = HatTipState.UNDOCKED;
+        this.hatTipState = HatTipState.UNDOCKED;
         this.f835y = 0;
         this.f836z = null;
         this.f807A = null;
@@ -117,7 +117,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.f816f = new aa(this, context);
         this.f814d.addView(this.f816f, new LayoutParams(-1, -1));
         this.f815e = new ab(this, context);
-        ViewGroup.LayoutParams layoutParams = new LayoutParams(-1, -2);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, -2);
         layoutParams.gravity = 80;
         this.f815e.setOrientation(1);
         this.f815e.setClipChildren(false);
@@ -126,7 +126,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.f817g = new FrameLayout(context);
         this.f817g.setClipChildren(false);
         this.f817g.setClipToPadding(false);
-        this.f817g.setMinimumHeight(AnimUtils.m1962g(getContext()));
+        this.f817g.setMinimumHeight(AnimUtils.getMaxOverScrollHeight(getContext()));
         this.f815e.addView(this.f817g, new LinearLayout.LayoutParams(-1, -2));
         this.f818h = new FrameLayout(context);
         this.f818h.setClipChildren(false);
@@ -137,7 +137,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.f813c = new ac(this, context);
         this.f812b = new ad(this, context);
         this.f811a = new ak(this, context);
-        this.f824n = this.f811a.getVerticalOverScrollMode();
+        this.scrollMode = this.f811a.getVerticalOverScrollMode();
         this.f811a.setThumbEnabled(true);
         this.f811a.setRowSpacing(this.f830t);
         this.f811a.setNumColumns(this.f829s);
@@ -159,7 +159,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.f821k.setVisibility(4);
     }
 
-    public final av getAdapter() {
+    public final DkBaseAdapter getAdapter() {
         return this.f823m.m1593b();
     }
 
@@ -187,7 +187,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.f811a.setItemsBackground(drawable);
     }
 
-    /* renamed from: a */
+    
     public final View m1241a(int i) {
         return this.f811a.m1141g(i);
     }
@@ -338,13 +338,13 @@ public class HatGridView extends ViewGroup implements Scrollable {
         return null;
     }
 
-    /* renamed from: b */
-    public final View m1249b(int i) {
+    
+    public final View m1249b(int layout) {
         this.f817g.removeAllViews();
-        if (i == 0) {
+        if (layout == 0) {
             return null;
         }
-        View inflate = LayoutInflater.from(getContext()).inflate(i, this.f817g, false);
+        View inflate = LayoutInflater.from(getContext()).inflate(layout, this.f817g, false);
         this.f817g.addView(inflate);
         return inflate;
     }
@@ -360,7 +360,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
     }
 
     public final HatTipState getHatTipState() {
-        return this.f834x;
+        return this.hatTipState;
     }
 
     public final boolean getHatTipDockable() {
@@ -383,12 +383,12 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.f833w = i;
     }
 
-    /* renamed from: a */
+    
     public final void m1242a(int i, int i2, int i3, int i4) {
         this.f817g.setPadding(i, i2, i3, i4);
     }
 
-    /* renamed from: c */
+    
     public final View m1253c(int i) {
         this.f818h.removeAllViews();
         if (i == 0) {
@@ -469,7 +469,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         return this.f822l.bottom;
     }
 
-    /* renamed from: b */
+    
     public final void m1250b(int i, int i2, int i3, int i4) {
         this.f822l.set(i, i2, i3, i4);
         this.f813c.setPadding(i, 0, i3, 0);
@@ -478,12 +478,12 @@ public class HatGridView extends ViewGroup implements Scrollable {
         invalidate();
     }
 
-    /* renamed from: c */
+    
     public final void m1255c(int i, int i2, int i3, int i4) {
         this.f813c.setPadding(i, i2, i3, i4);
     }
 
-    /* renamed from: d */
+    
     public final void m1257d(int i, int i2, int i3, int i4) {
         this.f812b.setPadding(i, i2, i3, i4);
     }
@@ -516,12 +516,12 @@ public class HatGridView extends ViewGroup implements Scrollable {
         return this.f811a.getPreviewExtents();
     }
 
-    /* renamed from: e */
+    
     public final void m1260e(int i, int i2, int i3, int i4) {
         this.f811a.m1111a(i, i2, i3, i4);
     }
 
-    /* renamed from: d */
+    
     public void m1256d(int i) {
         if (i >= 0 && i < this.f811a.getGroupCount()) {
             this.f811a.mo451b(i);
@@ -534,7 +534,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         }
     }
 
-    /* renamed from: e */
+    
     public final void m1259e(int i) {
         if (i >= 0 && i < this.f811a.getItemCount()) {
             this.f811a.m1148i(i);
@@ -551,22 +551,22 @@ public class HatGridView extends ViewGroup implements Scrollable {
         return this.f811a.getGroupCount();
     }
 
-    /* renamed from: f */
+    
     public final int m1262f(int i) {
         return this.f811a.mo445a(i);
     }
 
-    /* renamed from: a */
+    
     public final boolean m1248a() {
         return this.f811a.getScrollY() <= (m1217n() - m1225r()) - this.f820j.getHeight();
     }
 
-    /* renamed from: b */
+    
     public final boolean m1252b() {
         return m1223q() > 0 && this.f811a.getScrollY() <= (m1217n() - m1223q()) - this.f820j.getHeight();
     }
 
-    /* renamed from: g */
+    
     public final Rect m1265g(int i) {
         return this.f811a.m1144h(i);
     }
@@ -581,7 +581,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         scrollBy(0, 0);
     }
 
-    /* renamed from: c */
+    
     public final void m1254c() {
         m1191a(HatTipState.UNDOCKING);
         if (getScrollState() != ScrollState.DRAG) {
@@ -652,7 +652,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         return this.f811a.getVerticalThumbMarginBottom();
     }
 
-    /* renamed from: f */
+    
     public void m1264f(int i, int i2, int i3, int i4) {
         this.f811a.m1124b(i, i2, i3, i4);
     }
@@ -717,7 +717,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.f811a.setScrollInterpolator(interpolator);
     }
 
-    /* renamed from: a */
+    
     public void mo435a(View view, boolean z) {
         this.f811a.mo435a(view, z);
     }
@@ -731,14 +731,14 @@ public class HatGridView extends ViewGroup implements Scrollable {
     }
 
     public OverScrollMode getVerticalOverScrollMode() {
-        return this.f824n;
+        return this.scrollMode;
     }
 
     public void setVerticalOverScrollMode(OverScrollMode overScrollMode) {
-        OverScrollMode overScrollMode2 = this.f824n;
-        this.f824n = overScrollMode;
+        OverScrollMode overScrollMode2 = this.scrollMode;
+        this.scrollMode = overScrollMode;
         if (this.f811a.getVerticalOverScrollMode() == overScrollMode2) {
-            this.f811a.setVerticalOverScrollMode(this.f824n);
+            this.f811a.setVerticalOverScrollMode(this.scrollMode);
         }
     }
 
@@ -762,40 +762,40 @@ public class HatGridView extends ViewGroup implements Scrollable {
         return this.f811a.getViewportBounds();
     }
 
-    public void setOnContentBoundsChangedListener(cf cfVar) {
-        this.f811a.setOnContentBoundsChangedListener(cfVar);
+    public void setOnContentBoundsChangedListener(OnContentBoundsChangedListener contentBoundsChangedListener) {
+        this.f811a.setOnContentBoundsChangedListener(contentBoundsChangedListener);
     }
 
-    public final void setOnScrollListener(cg cgVar) {
-        this.f808B = cgVar;
+    public final void setOnScrollListener(OnScrollListener onScrollListener) {
+        this.f808B = onScrollListener;
     }
 
-    /* renamed from: d */
+    
     public final boolean m1258d() {
         return this.f811a.m1132c();
     }
 
-    /* renamed from: e */
+    
     public final boolean m1261e() {
         return this.f811a.m1135d();
     }
 
-    /* renamed from: a */
+    
     public final void mo434a(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
         this.f811a.mo434a(i, i2, i3, runnable, runnable2);
     }
 
-    /* renamed from: b */
+    
     public final void m1251b(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
         this.f811a.m1125b(i, i2, i3, runnable, runnable2);
     }
 
-    /* renamed from: f */
+    
     public void m1263f() {
         this.f811a.m1138e();
     }
 
-    /* renamed from: g */
+    
     public void m1266g() {
         this.f811a.m1139f();
     }
@@ -881,25 +881,25 @@ public class HatGridView extends ViewGroup implements Scrollable {
         this.f811a.m1124b(0, this.f820j.getHeight() + AnimUtils.m1932b(getContext(), 2.0f), AnimUtils.m1932b(getContext(), 2.0f), AnimUtils.m1932b(getContext(), 6.0f));
     }
 
-    /* renamed from: a */
+    
     protected void mo1621a(PointF pointF) {
     }
 
-    /* renamed from: a */
+    
     protected void mo1750a(ScrollState scrollState, RectF rectF) {
     }
 
-    /* renamed from: a */
+    
     private void m1191a(HatTipState hatTipState) {
-        if (this.f834x != hatTipState) {
-            HatTipState hatTipState2 = this.f834x;
+        if (this.hatTipState != hatTipState) {
+            HatTipState hatTipState2 = this.hatTipState;
             if (hatTipState2 != HatTipState.DOCKING || hatTipState != HatTipState.UNDOCKED) {
                 if (hatTipState2 != HatTipState.DOCKED || hatTipState != HatTipState.UNDOCKED) {
                     if (hatTipState2 != HatTipState.UNDOCKING || hatTipState != HatTipState.DOCKED) {
                         if (hatTipState2 != HatTipState.UNDOCKED || hatTipState != HatTipState.DOCKED) {
-                            this.f834x = hatTipState;
+                            this.hatTipState = hatTipState;
                             if (this.f809C != null) {
-                                this.f809C.m1583a(hatTipState2, this.f834x);
+                                this.f809C.m1583a(hatTipState2, this.hatTipState);
                             }
                         }
                     }
@@ -908,27 +908,27 @@ public class HatGridView extends ViewGroup implements Scrollable {
         }
     }
 
-    /* renamed from: h */
+    
     private int m1205h() {
         return m1214l() == null ? 0 : this.f825o;
     }
 
-    /* renamed from: i */
+    
     private int m1207i() {
         return m1216m() == null ? 0 : this.f826p;
     }
 
-    /* renamed from: j */
+    
     private final int m1209j() {
         return m1214l() == null ? 0 : m1214l().getHeight();
     }
 
-    /* renamed from: k */
+    
     private final int m1211k() {
         return m1216m() == null ? 0 : m1216m().getHeight();
     }
 
-    /* renamed from: l */
+    
     private final View m1214l() {
         if (this.f813c.getChildCount() > 0) {
             return this.f813c.getChildAt(0);
@@ -936,7 +936,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         return null;
     }
 
-    /* renamed from: a */
+    
     private final void m1190a(View view) {
         this.f813c.removeAllViews();
         if (view != null) {
@@ -947,7 +947,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         }
     }
 
-    /* renamed from: m */
+    
     private final View m1216m() {
         if (this.f812b.getChildCount() > 0) {
             return this.f812b.getChildAt(0);
@@ -955,7 +955,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         return null;
     }
 
-    /* renamed from: b */
+    
     private final void m1198b(View view) {
         this.f812b.removeAllViews();
         if (view != null) {
@@ -966,22 +966,22 @@ public class HatGridView extends ViewGroup implements Scrollable {
         }
     }
 
-    /* renamed from: n */
+    
     private final int m1217n() {
         return m1219o() + m1225r();
     }
 
-    /* renamed from: o */
+    
     private final int m1219o() {
         return m1221p() + m1229t();
     }
 
-    /* renamed from: p */
+    
     private final int m1221p() {
         return (getHatTipView() == null ? 0 : getHatTipView().getTop()) + (this.f817g.getTop() + this.f815e.getTop());
     }
 
-    /* renamed from: q */
+    
     private final int m1223q() {
         if (!this.f832v) {
             return 0;
@@ -992,32 +992,32 @@ public class HatGridView extends ViewGroup implements Scrollable {
         return Math.min(this.f833w, m1225r());
     }
 
-    /* renamed from: r */
+    
     private final int m1225r() {
         return getHatTipView() == null ? 0 : getHatTipView().getHeight();
     }
 
-    /* renamed from: s */
+    
     private final int m1227s() {
         return this.f818h.getHeight();
     }
 
-    /* renamed from: t */
+    
     private final int m1229t() {
         return (-m1233v()) + this.f820j.getHeight();
     }
 
-    /* renamed from: u */
+    
     private final int m1231u() {
         return this.f814d.getScrollY() + this.f820j.getBottom();
     }
 
-    /* renamed from: v */
+    
     private final int m1233v() {
         return this.f815e.getTop() + this.f818h.getTop();
     }
 
-    /* renamed from: w */
+    
     private void m1236w() {
         if (this.f821k.isEnabled() && this.f821k.getVisibility() != 0) {
             this.f821k.clearAnimation();
@@ -1026,7 +1026,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         }
     }
 
-    /* renamed from: x */
+    
     private void m1237x() {
         if (this.f821k.isEnabled() && this.f821k.getVisibility() != 4) {
             this.f821k.clearAnimation();
@@ -1035,7 +1035,7 @@ public class HatGridView extends ViewGroup implements Scrollable {
         }
     }
 
-    /* renamed from: a */
+    
     private void m1195a(ScrollState scrollState, ScrollState scrollState2) {
         if (this.f821k.isEnabled()) {
             if (this.f807A != null) {
@@ -1054,13 +1054,13 @@ public class HatGridView extends ViewGroup implements Scrollable {
         }
     }
 
-    /* renamed from: a */
+    
     protected void mo1622a(MotionEvent motionEvent) {
         if (motionEvent.getActionMasked() == 0) {
             if (this.f832v) {
                 this.f811a.setVerticalOverScrollMode(OverScrollMode.ALWAYS);
             } else {
-                this.f811a.setVerticalOverScrollMode(this.f824n);
+                this.f811a.setVerticalOverScrollMode(this.scrollMode);
             }
         } else if (motionEvent.getActionMasked() != 1 && motionEvent.getActionMasked() == 3) {
         }

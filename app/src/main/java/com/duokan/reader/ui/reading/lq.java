@@ -2,9 +2,9 @@ package com.duokan.reader.ui.reading;
 
 import com.duokan.core.ui.ZoomView;
 import com.duokan.core.ui.ZoomView.ZoomState;
-import com.duokan.core.ui.ge;
+import com.duokan.core.ui.OnZoomListener;
 
-class lq implements ge {
+class lq implements OnZoomListener {
     /* renamed from: a */
     final /* synthetic */ ll f10579a;
     /* renamed from: b */
@@ -23,7 +23,7 @@ class lq implements ge {
     }
 
     /* renamed from: a */
-    public void mo2423a(ZoomView zoomView) {
+    public void onZoom(ZoomView zoomView) {
         if (this.f10579a.f10256h != null) {
             gd gdVar = (gd) zoomView;
             if (gdVar.getZoomState() == ZoomState.PINCH || gdVar.mo2415k()) {

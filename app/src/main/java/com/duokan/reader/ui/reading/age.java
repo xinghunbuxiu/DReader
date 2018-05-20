@@ -5,7 +5,7 @@ import android.graphics.Rect;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.View.MeasureSpec;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.p024c.C0252d;
 import com.duokan.reader.domain.bookshelf.C0798a;
 import com.duokan.reader.domain.bookshelf.ea;
@@ -62,7 +62,7 @@ public class age implements bb {
         xxVar.setOnClickListener(this.f9723f);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         this.f9720c.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int min = Math.min(displayMetrics.widthPixels - C0267i.m598a(this.f9720c, 60.0f), C0267i.m598a(this.f9720c, 320.0f));
+        int min = Math.min(displayMetrics.widthPixels - CommonUtils.dip2px(this.f9720c, 60.0f), CommonUtils.dip2px(this.f9720c, 320.0f));
         xxVar.setMaxWidth(min);
         xxVar.measure(MeasureSpec.makeMeasureSpec(min, 1073741824), MeasureSpec.makeMeasureSpec(0, 0));
         this.f9719b.m13664a(xxVar, xxVar.getMeasuredWidth(), xxVar.getMeasuredHeight(), true);
@@ -82,7 +82,7 @@ public class age implements bb {
         dkTextView.setOnClickListener(this.f9723f);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         this.f9720c.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        dkTextView.measure(MeasureSpec.makeMeasureSpec(Math.min(displayMetrics.widthPixels - C0267i.m598a(this.f9720c, 60.0f), C0267i.m598a(this.f9720c, 320.0f)), 1073741824), MeasureSpec.makeMeasureSpec(0, 0));
+        dkTextView.measure(MeasureSpec.makeMeasureSpec(Math.min(displayMetrics.widthPixels - CommonUtils.dip2px(this.f9720c, 60.0f), CommonUtils.dip2px(this.f9720c, 320.0f)), 1073741824), MeasureSpec.makeMeasureSpec(0, 0));
         this.f9719b.m13664a(dkTextView, dkTextView.getMeasuredWidth(), dkTextView.getMeasuredHeight(), true);
         this.f9719b.m13663a(rect);
     }

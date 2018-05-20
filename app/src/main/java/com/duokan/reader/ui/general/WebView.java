@@ -3,12 +3,10 @@ package com.duokan.reader.ui.general;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.View.MeasureSpec;
-import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.Scrollable.ScrollState;
+
 import com.duokan.core.ui.fr;
 import com.duokan.core.ui.fv;
-import com.duokan.core.ui.fz;
+import com.duokan.core.ui.DkWebView;
 
 public class WebView extends fr {
     /* renamed from: b */
@@ -27,8 +25,8 @@ public class WebView extends fr {
     }
 
     /* renamed from: a */
-    protected /* synthetic */ fv mo1744a(fz fzVar) {
-        return mo1816b(fzVar);
+    protected /* synthetic */ fv mo1744a(DkWebView webView) {
+        return mo1816b(webView);
     }
 
     public WebView(Context context, AttributeSet attributeSet) {
@@ -173,7 +171,7 @@ public class WebView extends fr {
     }
 
     /* renamed from: b */
-    protected jg mo1816b(fz fzVar) {
-        return new jg(this, fzVar);
+    protected jg mo1816b(DkWebView webView) {
+        return new jg(this, webView);
     }
 }

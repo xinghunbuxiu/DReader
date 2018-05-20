@@ -47,8 +47,8 @@ public class C1192r extends ak {
     public void onCancel() {
     }
 
-    public void setTitle(int i) {
-        this.f5678a.setText(i);
+    public void setTitle(int resId) {
+        this.f5678a.setText(resId);
     }
 
     /* renamed from: a */

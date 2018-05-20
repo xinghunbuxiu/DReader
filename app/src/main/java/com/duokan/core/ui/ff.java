@@ -5,11 +5,11 @@ import android.view.View;
 import com.duokan.core.ui.Scrollable.ScrollState;
 
 class ff extends er {
-    /* renamed from: a */
-    final /* synthetic */ ev f1249a;
-    /* renamed from: c */
+    
+    final  ev f1249a;
+    
     private final C0392q f1250c = new C0392q();
-    /* renamed from: d */
+    
     private final dt f1251d = new dt();
 
     public ff(ev evVar) {
@@ -18,7 +18,7 @@ class ff extends er {
         this.f1251d.m1882a(0);
     }
 
-    /* renamed from: a */
+    
     protected void mo511a(View view, boolean z) {
         boolean z2;
         boolean z3 = false;
@@ -37,12 +37,12 @@ class ff extends er {
         this.f1251d.m1886b(this.f1249a.ab());
     }
 
-    /* renamed from: c */
+    
     protected void mo526c(View view, MotionEvent motionEvent, boolean z, es esVar) {
         mo510a(view, motionEvent, z, esVar);
     }
 
-    /* renamed from: a */
+    
     protected void mo510a(View view, MotionEvent motionEvent, boolean z, es esVar) {
         if (motionEvent.getPointerCount() <= 1 || this.f1249a.f952s != ScrollState.IDLE) {
             if (motionEvent.getActionMasked() == 0) {

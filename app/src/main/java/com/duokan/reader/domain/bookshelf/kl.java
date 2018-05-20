@@ -29,7 +29,7 @@ class kl implements Runnable {
                 if (exVar.f3142a != -1) {
                     this.f3467a.f3466b.f3463a.f3147b.put(str, Integer.valueOf(exVar.f3142a));
                     if (exVar.f3142a != ICallback.LOGIN_OAUTH_AIDL) {
-                        WebLog.init().a(LogLevel.ERROR, "sbk", "fail to pull the chapter(%s)(error=%d, msg=%s, book=%s, name=%s)", str, Integer.valueOf(exVar.f3142a), exVar.f3143b, this.f3467a.f3466b.f3464b.m4156I(), this.f3467a.f3466b.f3464b.ay());
+                        WebLog.init().a(LogLevel.ERROR, "sbk", "fail to pull the chapter(%s)(error=%d, msg=%s, book=%s, name=%s)", str, Integer.valueOf(exVar.f3142a), exVar.f3143b, this.f3467a.f3466b.f3464b.getId(), this.f3467a.f3466b.f3464b.ay());
                     }
                 } else {
                     WebLog.init().w(!TextUtils.isEmpty(exVar.f3144c));

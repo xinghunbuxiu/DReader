@@ -22,18 +22,18 @@ class kd extends cy {
     }
 
     /* renamed from: c */
-    public boolean mo2420c(MotionEvent motionEvent) {
+    public boolean onTouchEvent(MotionEvent motionEvent) {
         if (this.f10491b.f10488a.mo2415k()) {
             return false;
         }
-        return super.mo2420c(motionEvent);
+        return super.onTouchEvent(motionEvent);
     }
 
     /* renamed from: b */
-    public boolean mo2419b(MotionEvent motionEvent) {
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (this.f10491b.f10488a.mo2415k()) {
             return false;
         }
-        return super.mo2419b(motionEvent);
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

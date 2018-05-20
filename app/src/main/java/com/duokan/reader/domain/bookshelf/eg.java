@@ -17,6 +17,6 @@ class eg implements Runnable {
     }
 
     public void run() {
-        this.f3100c.aV().mo1102e().m8704a(this.f3100c.m4156I(), false, false, -1, -1, -1, new eh(this));
+        this.f3100c.aV().mo1102e().m8704a(this.f3100c.getId(), false, false, -1, -1, -1, new eh(this));
     }
 }

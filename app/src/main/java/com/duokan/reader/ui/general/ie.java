@@ -3,14 +3,14 @@ package com.duokan.reader.ui.general;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
-import android.view.ViewGroup.LayoutParams;
-import com.duokan.core.ui.cg;
+
+import com.duokan.core.ui.OnScrollListener;
 
 public class ie extends cw {
     /* renamed from: a */
     private ih f7373a;
     /* renamed from: b */
-    private cg f7374b;
+    private OnScrollListener f7374b;
     /* renamed from: c */
     private cx f7375c;
 
@@ -42,7 +42,7 @@ public class ie extends cw {
         this.f7375c = cxVar;
     }
 
-    public void setOnScrollListener(cg cgVar) {
-        this.f7374b = cgVar;
+    public void setOnScrollListener(OnScrollListener onScrollListener) {
+        this.f7374b = onScrollListener;
     }
 }

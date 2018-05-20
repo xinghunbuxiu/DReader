@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.account;
 
 import com.duokan.common.C0260b;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.domain.account.oauth.ThirdOAuth;
 import com.duokan.reader.domain.account.oauth.ThirdYinxiang;
@@ -22,7 +22,7 @@ class C1258j implements hq {
     public void mo1590a(int i) {
         switch (i) {
             case 0:
-                if (C0267i.m604a(this.f5959a.getContext())) {
+                if (CommonUtils.m604a(this.f5959a.getContext())) {
                     ThirdYinxiang thirdYinxiang;
                     if (TokenStore.getInstance().isBindAccessToken(this.f5959a.getContext(), "evernote")) {
                         thirdYinxiang = (ThirdYinxiang) ThirdOAuth.produceThird(this.f5959a.getActivity(), "evernote");

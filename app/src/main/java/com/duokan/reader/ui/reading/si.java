@@ -918,7 +918,7 @@ public abstract class si implements ip, at, su {
         if (this.f9358c.f9282f.mo1038k()) {
             return null;
         }
-        return DkUserPurchasedBooksManager.m5029a().m5067c(this.f9358c.f9282f.m4156I());
+        return DkUserPurchasedBooksManager.m5029a().m5067c(this.f9358c.f9282f.getId());
     }
 
     /* renamed from: a */

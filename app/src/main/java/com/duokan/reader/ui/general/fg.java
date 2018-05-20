@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.view.ViewGroup.MarginLayoutParams;
 import android.widget.LinearLayout;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.core.ui.BoxView;
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.core.ui.C0374a;
 import com.duokan.core.ui.AnimUtils;
 import com.duokan.p023b.C0243e;
@@ -19,7 +19,7 @@ import com.duokan.p023b.C0245g;
 
 class fg implements dq {
     /* renamed from: a */
-    private final C0342j f7213a;
+    private final BaseDialog f7213a;
     /* renamed from: b */
     private final C0374a f7214b;
     /* renamed from: c */
@@ -31,8 +31,8 @@ class fg implements dq {
     /* renamed from: f */
     private final ViewGroup f7218f;
 
-    public fg(C0342j c0342j) {
-        this.f7213a = c0342j;
+    public fg(BaseDialog dialog) {
+        this.f7213a = dialog;
         Context context = this.f7213a.getContext();
         this.f7215c = LayoutInflater.from(context).inflate(C0245g.general__spirt_dialog_view_at_hd, null);
         this.f7217e.setBackgroundDrawable(null);
@@ -43,7 +43,7 @@ class fg implements dq {
         this.f7214b.setIndicator(C0243e.store__search_hint_view__indicator);
         this.f7214b.setBackgroundDrawable(context.getResources().getDrawable(C0243e.store__search_hint_view__bg));
         this.f7214b.addView(this.f7215c, new LayoutParams(-2, -2));
-        c0342j.setDimAmount(0.1f);
+        dialog.setDimAmount(0.1f);
     }
 
     /* renamed from: a */
@@ -85,7 +85,7 @@ class fg implements dq {
         DkLabelView dkLabelView = (DkLabelView) inflate.findViewById(C0244f.general__shared_spirt_menu_item_view__text);
         if (i != 0) {
             dkLabelView.setCompoundDrawablesWithIntrinsicBounds(this.f7213a.getContext().getResources().getDrawable(i), null, null, null);
-            dkLabelView.setCompoundDrawablePadding(C0267i.m598a(this.f7213a.getContext(), 10.0f));
+            dkLabelView.setCompoundDrawablePadding(CommonUtils.dip2px(this.f7213a.getContext(), 10.0f));
         }
         dkLabelView.setText(str);
         return inflate;

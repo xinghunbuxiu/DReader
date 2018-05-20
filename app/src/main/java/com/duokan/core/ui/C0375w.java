@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /* renamed from: com.duokan.core.ui.w */
-public interface C0375w extends av {
+public interface C0375w extends DkBaseAdapter {
     /* renamed from: a */
     int mo486a();
 

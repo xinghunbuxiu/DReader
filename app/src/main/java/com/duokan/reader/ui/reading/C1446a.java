@@ -57,7 +57,7 @@ public class C1446a {
     /* renamed from: a */
     public void m12757a(C0800c c0800c) {
         if (c0800c.mo1018u()) {
-            C0750g.m3561a().m3585a(c0800c.m4156I());
+            C0750g.m3561a().m3585a(c0800c.getId());
         }
     }
 

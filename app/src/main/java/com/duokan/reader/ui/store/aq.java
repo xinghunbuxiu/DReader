@@ -72,7 +72,7 @@ public abstract class aq {
             axVar.f11336d.add(a);
             axVar.f11337e += (float) hyVar.mo2194g(j);
             axVar.f11333a = hyVar.mo2359b(j);
-            new ay(appContext, eeVar.m4156I(), eeVar.ay(), axVar, eeVar.bh(), eeVar.bi(), new ar(appContext, eeVar, axVar)).show();
+            new ay(appContext, eeVar.getId(), eeVar.ay(), axVar, eeVar.bh(), eeVar.bi(), new ar(appContext, eeVar, axVar)).show();
         }
     }
 

@@ -6,41 +6,41 @@ import android.view.animation.AnimationUtils;
 import org.apache.http.HttpStatus;
 
 class by {
-    /* renamed from: o */
+    
     private static float f1044o;
-    /* renamed from: p */
+    
     private static float f1045p = ((float) (Math.log(0.78d) / Math.log(0.9d)));
-    /* renamed from: q */
+    
     private static final float[] f1046q = new float[HttpStatus.SC_MOVED_PERMANENTLY];
-    /* renamed from: r */
+    
     private static final float[] f1047r = new float[HttpStatus.SC_MOVED_PERMANENTLY];
-    /* renamed from: a */
+    
     private int f1048a;
-    /* renamed from: b */
+    
     private int f1049b;
-    /* renamed from: c */
+    
     private int f1050c;
-    /* renamed from: d */
+    
     private int f1051d;
-    /* renamed from: e */
+    
     private float f1052e;
-    /* renamed from: f */
+    
     private float f1053f;
-    /* renamed from: g */
+    
     private long f1054g;
-    /* renamed from: h */
+    
     private int f1055h;
-    /* renamed from: i */
+    
     private int f1056i;
-    /* renamed from: j */
+    
     private int f1057j;
-    /* renamed from: k */
+    
     private boolean f1058k = true;
-    /* renamed from: l */
+    
     private int f1059l;
-    /* renamed from: m */
+    
     private float f1060m = 0.005f;
-    /* renamed from: n */
+    
     private int f1061n = 0;
 
     static {
@@ -87,7 +87,7 @@ class by {
         fArr[HttpStatus.SC_MULTIPLE_CHOICES] = 1.0f;
     }
 
-    /* renamed from: a */
+    
     static void m1725a(Context context) {
         f1044o = ((context.getResources().getDisplayMetrics().density * 160.0f) * 386.0878f) * 0.84f;
     }
@@ -95,17 +95,17 @@ class by {
     by() {
     }
 
-    /* renamed from: a */
+    
     void m1742a(float f) {
         this.f1049b = this.f1048a + Math.round(((float) (this.f1050c - this.f1048a)) * f);
     }
 
-    /* renamed from: a */
+    
     private static float m1723a(int i) {
         return i > 0 ? -6000.0f : 6000.0f;
     }
 
-    /* renamed from: d */
+    
     private void m1735d(int i, int i2, int i3) {
         float abs = Math.abs(((float) (i3 - i)) / ((float) (i2 - i)));
         int i4 = (int) (300.0f * abs);
@@ -117,7 +117,7 @@ class by {
         }
     }
 
-    /* renamed from: a */
+    
     void m1743a(int i, int i2, int i3) {
         this.f1058k = false;
         this.f1048a = i;
@@ -128,13 +128,13 @@ class by {
         this.f1051d = 0;
     }
 
-    /* renamed from: a */
+    
     void m1741a() {
         this.f1049b = this.f1050c;
         this.f1058k = true;
     }
 
-    /* renamed from: b */
+    
     boolean m1746b(int i, int i2, int i3) {
         this.f1058k = true;
         this.f1050c = i;
@@ -153,7 +153,7 @@ class by {
         return true;
     }
 
-    /* renamed from: e */
+    
     private void m1737e(int i, int i2, int i3) {
         this.f1058k = false;
         this.f1061n = 1;
@@ -166,7 +166,7 @@ class by {
         this.f1055h = (int) (Math.sqrt((((double) i4) * -2.0d) / ((double) this.f1053f)) * 1000.0d);
     }
 
-    /* renamed from: a */
+    
     void m1744a(int i, int i2, int i3, int i4, int i5) {
         this.f1059l = i5;
         this.f1058k = false;
@@ -201,7 +201,7 @@ class by {
         }
     }
 
-    /* renamed from: c */
+    
     void m1747c(int i, int i2, int i3) {
         this.f1059l = 0;
         this.f1058k = false;
@@ -225,22 +225,22 @@ class by {
         }
     }
 
-    /* renamed from: b */
+    
     private double m1728b(int i) {
         return Math.log((double) ((0.35f * ((float) Math.abs(i))) / (this.f1060m * f1044o)));
     }
 
-    /* renamed from: c */
+    
     private double m1730c(int i) {
         return Math.exp(m1728b(i) * (((double) f1045p) / (((double) f1045p) - 1.0d))) * ((double) (this.f1060m * f1044o));
     }
 
-    /* renamed from: d */
+    
     private int m1732d(int i) {
         return (int) (Math.exp(m1728b(i) / (((double) f1045p) - 1.0d)) * 1000.0d);
     }
 
-    /* renamed from: f */
+    
     private void m1739f(int i, int i2, int i3) {
         float sqrt = (float) Math.sqrt((((double) (((((float) (i3 * i3)) / 2.0f) / Math.abs(this.f1053f)) + ((float) Math.abs(i2 - i)))) * 2.0d) / ((double) Math.abs(this.f1053f)));
         this.f1054g -= (long) ((int) ((sqrt - (((float) (-i3)) / this.f1053f)) * 1000.0f));
@@ -248,7 +248,7 @@ class by {
         this.f1051d = (int) ((-this.f1053f) * sqrt);
     }
 
-    /* renamed from: g */
+    
     private void m1740g(int i, int i2, int i3) {
         int i4;
         if (i3 == 0) {
@@ -261,7 +261,7 @@ class by {
         m1734d();
     }
 
-    /* renamed from: a */
+    
     private void m1724a(int i, int i2, int i3, int i4) {
         boolean z = true;
         if (i <= i2 || i >= i3) {
@@ -291,7 +291,7 @@ class by {
         this.f1058k = true;
     }
 
-    /* renamed from: d */
+    
     private void m1734d() {
         float abs = ((float) (this.f1051d * this.f1051d)) / (Math.abs(this.f1053f) * 2.0f);
         float signum = Math.signum((float) this.f1051d);
@@ -309,7 +309,7 @@ class by {
         this.f1055h = -((int) ((1000.0f * ((float) this.f1051d)) / this.f1053f));
     }
 
-    /* renamed from: b */
+    
     boolean m1745b() {
         switch (this.f1061n) {
             case 0:
@@ -333,7 +333,7 @@ class by {
         return true;
     }
 
-    /* renamed from: c */
+    
     boolean m1748c() {
         long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis() - this.f1054g;
         if (currentAnimationTimeMillis > ((long) this.f1055h)) {

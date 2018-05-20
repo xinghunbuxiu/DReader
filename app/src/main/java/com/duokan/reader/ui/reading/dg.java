@@ -305,7 +305,7 @@ public class dg extends FrameLayout {
 
     /* renamed from: f */
     private void m13971f() {
-        if (this.f10025z.mo1038k() && m13977i() && (DkUserPurchasedFictionsManager.m5072a().m5093a(this.f10025z.m4156I()) == null || !((ee) this.f10025z).be().f3516j)) {
+        if (this.f10025z.mo1038k() && m13977i() && (DkUserPurchasedFictionsManager.m5072a().m5093a(this.f10025z.getId()) == null || !((ee) this.f10025z).be().f3516j)) {
             this.f10006g.setVisibility(8);
             this.f10007h.setVisibility(0);
             return;
@@ -533,7 +533,7 @@ public class dg extends FrameLayout {
     /* renamed from: c */
     private void m13964c(el elVar) {
         WebLog.init().w(elVar != null);
-        if (this.f10025z.mo1038k() && m13977i() && (!((ee) this.f10025z).be().f3516j || DkUserPurchasedFictionsManager.m5072a().m5093a(this.f10025z.m4156I()) == null)) {
+        if (this.f10025z.mo1038k() && m13977i() && (!((ee) this.f10025z).be().f3516j || DkUserPurchasedFictionsManager.m5072a().m5093a(this.f10025z.getId()) == null)) {
             this.f10015p.setVisibility(8);
             this.f10014o.setVisibility(8);
         } else if (elVar.f10083e > 0) {

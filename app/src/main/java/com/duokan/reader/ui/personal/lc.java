@@ -187,7 +187,7 @@ class lc extends oa {
                 ListIterator listIterator = linkedList.listIterator();
                 while (listIterator.hasNext()) {
                     DkCloudStoreBook dkCloudStoreBook2 = (DkCloudStoreBook) listIterator.next();
-                    if (TextUtils.equals(c0800c.m4156I(), dkCloudStoreBook2.getBookUuid())) {
+                    if (TextUtils.equals(c0800c.getId(), dkCloudStoreBook2.getBookUuid())) {
                         listIterator.remove();
                         linkedList2.add(dkCloudStoreBook2);
                         break;

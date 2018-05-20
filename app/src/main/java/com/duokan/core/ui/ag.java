@@ -2,7 +2,7 @@ package com.duokan.core.ui;
 
 import android.view.View;
 
-class ag implements bf {
+class ag implements OnItemClickListener {
     /* renamed from: a */
     final /* synthetic */ an f898a;
     /* renamed from: b */
@@ -14,7 +14,7 @@ class ag implements bf {
     }
 
     /* renamed from: a */
-    public void mo480a(ay ayVar, View view, int i) {
+    public void onItemClick(ay ayVar, View view, int i) {
         this.f898a.mo1558a(this.f899b, view, i);
     }
 }

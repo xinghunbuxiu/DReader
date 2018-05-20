@@ -14,7 +14,7 @@ class gt extends cv {
 
     protected boolean onBack() {
         if (this.f7302a.isActive()) {
-            getActivity().onBackPressed();
+            getmActivity().onBackPressed();
         }
         return true;
     }

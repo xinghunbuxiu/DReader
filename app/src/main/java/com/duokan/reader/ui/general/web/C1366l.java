@@ -19,7 +19,7 @@ class C1366l implements IdleHandlerListener {
                 viewGroup.removeView(this.f8129a);
                 this.f8129a.removeAllViews();
             }
-            this.f8129a.mo1821f();
+            this.f8129a.destroy();
         }
         return false;
     }

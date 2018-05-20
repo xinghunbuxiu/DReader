@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.webkit.JavascriptInterface;
 import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.p027b.C0324a;
+import com.duokan.core.p027b.UrlTools;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.as;
 import com.duokan.p024c.C0258j;
@@ -640,7 +640,7 @@ public class ci {
 
     /* renamed from: a */
     protected boolean m11018a() {
-        Uri a = C0324a.m734a(this.f7581b.currentUrl());
+        Uri a = UrlTools.parse(this.f7581b.currentUrl());
         String scheme = (a == null || a.getScheme() == null) ? "" : a.getScheme();
         if (scheme.equalsIgnoreCase(HttpHost.DEFAULT_SCHEME_NAME) || scheme.equalsIgnoreCase("https")) {
             Object host = a.getHost() != null ? a.getHost() : "";

@@ -21,9 +21,9 @@ public class jg extends fv {
         super.mo502a(motionEvent);
         if (motionEvent.getActionMasked() == 0) {
             if (this.f7431b.f6886b.f7432a == null || !this.f7431b.f6886b.f7434c) {
-                super.m1518b(this.f7431b.f6887c);
+                super.setVerticalOverScrollMode(this.f7431b.f6887c);
             } else {
-                super.m1518b(OverScrollMode.ALWAYS);
+                super.setVerticalOverScrollMode(OverScrollMode.ALWAYS);
             }
         } else if (motionEvent.getActionMasked() != 1 && motionEvent.getActionMasked() == 3) {
         }
@@ -50,9 +50,9 @@ public class jg extends fv {
         }
         int min = Math.min(0, m1553k().top);
         if (Float.compare(((float) getViewportBounds().top) - f2, (float) min) >= 0) {
-            super.m1518b(this.f7431b.f6887c);
+            super.setVerticalOverScrollMode(this.f7431b.f6887c);
         } else if (Float.compare(((float) getViewportBounds().top) - f2, (float) min) < 0 && this.f7431b.f6886b.f7432a != null && this.f7431b.f6886b.f7434c) {
-            super.m1518b(OverScrollMode.ALWAYS);
+            super.setVerticalOverScrollMode(OverScrollMode.ALWAYS);
         }
         super.mo501a(f, f2);
     }

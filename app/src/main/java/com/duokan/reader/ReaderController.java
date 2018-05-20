@@ -22,25 +22,26 @@ import android.view.animation.AnimationSet;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.Toast;
+
 import com.duokan.common.FileTypeRecognizer;
 import com.duokan.common.FileTypeRecognizer.FileType;
-import com.duokan.core.app.BrightnessMode;
-import com.duokan.core.app.IFeature;
-import com.duokan.core.app.C0301c;
-import com.duokan.core.app.OnCancelListener;
 import com.duokan.core.app.ActivatedController;
 import com.duokan.core.app.BaseActivity;
-import com.duokan.core.diagnostic.WebLog;
+import com.duokan.core.app.BrightnessMode;
+import com.duokan.core.app.C0301c;
+import com.duokan.core.app.IFeature;
+import com.duokan.core.app.OnCancelListener;
 import com.duokan.core.diagnostic.LogLevel;
+import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.io.FileUtil;
-import com.duokan.core.p027b.C0324a;
-import com.duokan.core.sys.UIdleHandler;
+import com.duokan.core.p027b.UrlTools;
 import com.duokan.core.sys.IdleHandlerListener;
+import com.duokan.core.sys.UIdleHandler;
 import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.af;
 import com.duokan.core.sys.ah;
-import com.duokan.core.ui.cv;
 import com.duokan.core.ui.AnimUtils;
+import com.duokan.core.ui.cv;
 import com.duokan.p024c.C0252d;
 import com.duokan.p024c.C0253e;
 import com.duokan.p024c.C0258j;
@@ -103,6 +104,11 @@ import com.duokan.reader.ui.store.al;
 import com.duokan.reader.ui.store.bv;
 import com.duokan.reader.ui.surfing.C1522i;
 import com.duokan.reader.ui.welcome.DkTipManager;
+
+import org.apache.http.HttpStatus;
+import org.apache.http.cookie.ClientCookie;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -111,65 +117,62 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import org.apache.http.HttpStatus;
-import org.apache.http.cookie.ClientCookie;
-import org.json.JSONObject;
 
 class ReaderController extends ActivatedController implements ReaderFeature, SystemUiConditioner {
-    /* renamed from: a */
+
     private static boolean f1422a = true;
-    /* renamed from: b */
+
     private final C1235a f1423b;
-    /* renamed from: c */
+
     private final C1315f f1424c;
-    /* renamed from: d */
+
     private final LinkedList<Runnable> f1425d;
-    /* renamed from: e */
-    private final LinkedList<SystemUiConditioner> f1426e;
-    /* renamed from: f */
+
+    private final LinkedList<SystemUiConditioner> systemUiConditioners;
+
     private Runnable f1427f;
-    /* renamed from: g */
+
     private Runnable f1428g;
-    /* renamed from: h */
-    private Toast f1429h;
-    /* renamed from: i */
+
+    private Toast toast;
+
     private boolean f1430i;
-    /* renamed from: j */
+
     private boolean f1431j;
-    /* renamed from: k */
-    private NightLayer f1432k;
-    /* renamed from: l */
+
+    private NightLayer nightLayer;
+
     private boolean f1433l;
-    /* renamed from: m */
-    private ActivatedController f1434m;
-    /* renamed from: n */
+
+    private ActivatedController activatedController;
+
     private long f1435n;
-    /* renamed from: o */
+
     private long f1436o;
-    /* renamed from: p */
+
     private final boolean f1437p;
-    /* renamed from: q */
+
     private C1367p f1438q;
-    /* renamed from: r */
+
     private qr f1439r;
-    /* renamed from: s */
+
     private final C0457r f1440s;
 
     interface Switcher {
         void doSwitch(Runnable runnable);
     }
 
-    /* renamed from: com.duokan.reader.ReaderController$1 */
+
     class C04581 implements C0457r {
-        /* renamed from: a */
-        final /* synthetic */ ReaderController f1530a;
+
+        final ReaderController f1530a;
 
         C04581(ReaderController readerController) {
             this.f1530a = readerController;
         }
 
         public int getPageHeaderHeight() {
-            return this.f1530a.getResources().getDimensionPixelSize(C0253e.general__shared__page_header_height) + getPageHeaderPaddingTop();
+            return this.f1530a.getResources().getDimensionPixelSize(R.dimen.general__shared__page_header_height) + getPageHeaderPaddingTop();
         }
 
         public int getPageHeaderPaddingTop() {
@@ -186,27 +189,27 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     }
 
     class HomeSwitcher implements Switcher {
-        /* renamed from: a */
-        final /* synthetic */ ReaderController f1575a;
+
+        final ReaderController readerController;
 
         private HomeSwitcher(ReaderController readerController) {
-            this.f1575a = readerController;
+            this.readerController = readerController;
         }
 
         public void doSwitch(final Runnable runnable) {
-            if (this.f1575a.f1439r == null) {
-                this.f1575a.activate(this.f1575a.f1438q);
+            if (this.readerController.f1439r == null) {
+                this.readerController.activate(this.readerController.f1438q);
                 UThread.post(runnable);
                 return;
             }
-            this.f1575a.f1439r.m12837b(new Runnable(this) {
-                /* renamed from: b */
-                final /* synthetic */ HomeSwitcher f1574b;
+            this.readerController.f1439r.m12837b(new Runnable(this) {
 
-                /* renamed from: com.duokan.reader.ReaderController$HomeSwitcher$1$1 */
+                final HomeSwitcher f1574b;
+
+                
                 class C04701 implements Runnable {
-                    /* renamed from: a */
-                    final /* synthetic */ C04711 f1572a;
+
+                    final C04711 f1572a;
 
                     C04701(C04711 c04711) {
                         this.f1572a = c04711;
@@ -224,15 +227,15 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 }
 
                 public void run() {
-                    boolean z = ReaderEnv.get().forHd() || this.f1574b.f1575a.getActivity().getRequestedOrientation() == 1;
-                    this.f1574b.f1575a.f1438q.getContentView().setVisibility(0);
-                    this.f1574b.f1575a.activate(this.f1574b.f1575a.f1438q);
-                    this.f1574b.f1575a.f1424c.m9916a(this.f1574b.f1575a.f1438q.getContentView(), false);
-                    this.f1574b.f1575a.f1424c.m9916a(this.f1574b.f1575a.f1439r.getContentView(), true);
-                    this.f1574b.f1575a.f1439r.getContentView().setVisibility(8);
+                    boolean z = ReaderEnv.get().forHd() || this.f1574b.readerController.getActivity().getRequestedOrientation() == 1;
+                    this.f1574b.readerController.f1438q.getContentView().setVisibility(0);
+                    this.f1574b.readerController.activate(this.f1574b.readerController.f1438q);
+                    this.f1574b.readerController.f1424c.m9916a(this.f1574b.readerController.f1438q.getContentView(), false);
+                    this.f1574b.readerController.f1424c.m9916a(this.f1574b.readerController.f1439r.getContentView(), true);
+                    this.f1574b.readerController.f1439r.getContentView().setVisibility(8);
                     Runnable c04701 = new C04701(this);
                     if (z) {
-                        this.f1574b.f1575a.startReadingOutAnim(c04701);
+                        this.f1574b.readerController.startReadingOutAnim(c04701);
                     } else {
                         c04701.run();
                     }
@@ -242,13 +245,13 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     }
 
     class NightLayer extends cv {
-        /* renamed from: a */
-        final /* synthetic */ ReaderController f1577a;
 
-        /* renamed from: com.duokan.reader.ReaderController$NightLayer$1 */
+        final ReaderController f1577a;
+
+        
         class C04721 implements Runnable {
-            /* renamed from: a */
-            final /* synthetic */ NightLayer f1576a;
+
+            final NightLayer f1576a;
 
             C04721(NightLayer nightLayer) {
                 this.f1576a = nightLayer;
@@ -278,8 +281,8 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     }
 
     class NullSwitcher implements Switcher {
-        /* renamed from: a */
-        final /* synthetic */ ReaderController f1578a;
+
+        final ReaderController f1578a;
 
         private NullSwitcher(ReaderController readerController) {
             this.f1578a = readerController;
@@ -291,11 +294,11 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     }
 
     class ReadingSwitcher implements Switcher {
-        /* renamed from: a */
-        final /* synthetic */ ReaderController f1590a;
-        /* renamed from: b */
+
+        final ReaderController f1590a;
+        
         private final C0800c f1591b;
-        /* renamed from: c */
+
         private final C0896a f1592c;
 
         public ReadingSwitcher(ReaderController readerController, C0800c c0800c, C0896a c0896a) {
@@ -308,8 +311,8 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
             boolean z = true;
             if (this.f1590a.f1439r == null) {
                 this.f1590a.f1439r = BookOpener.with(this.f1590a.getContext()).open(this.f1591b, this.f1592c, new ErrorHandler(this) {
-                    /* renamed from: b */
-                    final /* synthetic */ ReadingSwitcher f1584b;
+
+                    final ReadingSwitcher f1584b;
 
                     public void onError(String str) {
                         this.f1584b.f1590a.prompt(str);
@@ -330,18 +333,18 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                     }
                     this.f1590a.activate(this.f1590a.f1439r);
                     AnimUtils.m1921a(this.f1590a.f1439r.getContentView(), new Runnable(this) {
-                        /* renamed from: c */
-                        final /* synthetic */ ReadingSwitcher f1589c;
 
-                        /* renamed from: com.duokan.reader.ReaderController$ReadingSwitcher$4$1 */
+                        final ReadingSwitcher f1589c;
+
+                        
                         class C04771 implements Runnable {
-                            /* renamed from: a */
-                            final /* synthetic */ C04784 f1586a;
 
-                            /* renamed from: com.duokan.reader.ReaderController$ReadingSwitcher$4$1$1 */
+                            final C04784 f1586a;
+
+                            
                             class C04761 implements Runnable {
-                                /* renamed from: a */
-                                final /* synthetic */ C04771 f1585a;
+
+                                final C04771 f1585a;
 
                                 C04761(C04771 c04771) {
                                     this.f1585a = c04771;
@@ -379,13 +382,11 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                         }
                     });
                 }
-            } else if (this.f1590a.f1439r.m12849n().m4156I().equals(this.f1591b.m4156I())) {
+            } else if (this.f1590a.f1439r.m12849n().getId().equals(this.f1591b.getId())) {
                 this.f1590a.f1439r.m11283a(null);
                 if (this.f1592c != null) {
                     this.f1590a.f1439r.m12850o().mo1984a(this.f1592c);
-                    UIdleHandler.addIdleHandler(new IdleHandlerListener(this) {
-                        /* renamed from: b */
-                        final /* synthetic */ ReadingSwitcher f1580b;
+                    UIdleHandler.addIdleHandler(new IdleHandlerListener() {
 
                         public boolean idleRun() {
                             UThread.post(runnable);
@@ -396,9 +397,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 }
                 UThread.post(runnable);
             } else {
-                new HomeSwitcher().doSwitch(new Runnable(this) {
-                    /* renamed from: b */
-                    final /* synthetic */ ReadingSwitcher f1582b;
+                new HomeSwitcher(this).doSwitch(new Runnable(this) {
 
                     public void run() {
                         this.f1582b.doSwitch(runnable);
@@ -412,8 +411,8 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
         this(mFeature, false);
         this.f1424c.setBackgroundColor(-1);
         DkApp.get().runWhenAppReady(new Runnable(this) {
-            /* renamed from: c */
-            final /* synthetic */ ReaderController f1544c;
+
+            final ReaderController f1544c;
 
             public void run() {
                 this.f1544c.f1424c.setBackgroundColor(-16777216);
@@ -442,15 +441,15 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     private ReaderController(IFeature mFeature, boolean z) {
         super(mFeature);
         this.f1425d = new LinkedList();
-        this.f1426e = new LinkedList();
+        this.systemUiConditioners = new LinkedList();
         this.f1427f = null;
         this.f1428g = null;
-        this.f1429h = null;
+        this.toast = null;
         this.f1430i = false;
         this.f1431j = false;
-        this.f1432k = null;
+        this.nightLayer = null;
         this.f1433l = false;
-        this.f1434m = null;
+        this.activatedController = null;
         this.f1435n = -1;
         this.f1436o = 0;
         this.f1438q = null;
@@ -473,13 +472,13 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
 
     public void navigate(final Intent intent) {
         runAfterActive(new Runnable(this) {
-            /* renamed from: b */
-            final /* synthetic */ ReaderController f1547b;
 
-            /* renamed from: com.duokan.reader.ReaderController$3$1 */
+            final ReaderController f1547b;
+
+            
             class C04611 implements Runnable {
-                /* renamed from: a */
-                final /* synthetic */ C04623 f1545a;
+
+                final C04623 f1545a;
 
                 C04611(C04623 c04623) {
                     this.f1545a = c04623;
@@ -593,8 +592,8 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
         }
         if (toLowerCase.startsWith("http://") || toLowerCase.startsWith("https://")) {
             goHome(new Runnable(this) {
-                /* renamed from: d */
-                final /* synthetic */ ReaderController f1551d;
+
+                final ReaderController f1551d;
 
                 public void run() {
                     C0437t c0437t = (C0437t) this.f1551d.getContext().queryFeature(C0437t.class);
@@ -626,8 +625,8 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 final boolean z2 = z;
                 final Runnable runnable2 = runnable;
                 goHome(new Runnable(this) {
-                    /* renamed from: e */
-                    final /* synthetic */ ReaderController f1556e;
+
+                    final ReaderController f1556e;
 
                     public void run() {
                         this.f1556e.f1438q.navigate(toLowerCase, obj2, z2, runnable2);
@@ -701,21 +700,21 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     public void switchNightMode(boolean z, boolean z2) {
         if (inNightMode() != z) {
             if (z) {
-                if (this.f1432k == null) {
-                    this.f1432k = new NightLayer(this, getContext());
+                if (this.nightLayer == null) {
+                    this.nightLayer = new NightLayer(this, getContext());
                     if (z2) {
-                        this.f1432k.showSmoothly();
+                        this.nightLayer.showSmoothly();
                     } else {
-                        this.f1432k.show();
+                        this.nightLayer.show();
                     }
                 }
-            } else if (this.f1432k != null) {
+            } else if (this.nightLayer != null) {
                 if (z2) {
-                    this.f1432k.dismissSmoothly();
+                    this.nightLayer.dismissSmoothly();
                 } else {
-                    this.f1432k.dismiss();
+                    this.nightLayer.dismiss();
                 }
-                this.f1432k = null;
+                this.nightLayer = null;
             }
             ReaderEnv.get().setPrefBoolean(PrivatePref.GLOBAL, "night_mode", z);
             ReaderEnv.get().commitPrefs();
@@ -723,7 +722,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     }
 
     public boolean inNightMode() {
-        return this.f1432k != null;
+        return this.nightLayer != null;
     }
 
     public void switchEyesSavingMode(boolean z) {
@@ -757,12 +756,12 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     }
 
     public void addSystemUiConditioner(SystemUiConditioner systemUiConditioner) {
-        this.f1426e.addFirst(systemUiConditioner);
+        this.systemUiConditioners.addFirst(systemUiConditioner);
         updateSystemUi(false);
     }
 
     public void removeSystemUiConditioner(SystemUiConditioner systemUiConditioner) {
-        this.f1426e.remove(systemUiConditioner);
+        this.systemUiConditioners.remove(systemUiConditioner);
         updateSystemUi(false);
     }
 
@@ -782,11 +781,11 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
 
     public void prompt(String str, int i) {
         if (!TextUtils.isEmpty(str)) {
-            if (this.f1429h == null) {
-                this.f1429h = be.m10287a(getContext(), (CharSequence) str, i);
+            if (this.toast == null) {
+                this.toast = be.m10287a(getContext(), (CharSequence) str, i);
             }
-            this.f1429h.setText(str);
-            this.f1429h.show();
+            this.toast.setText(str);
+            this.toast.show();
         }
     }
 
@@ -805,8 +804,8 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                     c0800c.ac();
                 } else {
                     com.duokan.reader.ui.bookshelf.be.m9188a(getContext(), c0800c.m4151D(), new cm(this) {
-                        /* renamed from: b */
-                        final /* synthetic */ ReaderController f1558b;
+
+                        final ReaderController f1558b;
 
                         public void onChoice(boolean z, FlowChargingTransferChoice flowChargingTransferChoice) {
                             if (z) {
@@ -846,8 +845,8 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
         jaVar.show();
         if (a.length() >= 32) {
             C1176a.m8695a().m8703a(a, false, new C0466h(this) {
-                /* renamed from: c */
-                final /* synthetic */ ReaderController f1561c;
+
+                final ReaderController f1561c;
 
                 public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
                     jaVar.dismiss();
@@ -861,8 +860,8 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
             });
         } else {
             C1176a.m8695a().m8705b(a, true, new C0466h(this) {
-                /* renamed from: c */
-                final /* synthetic */ ReaderController f1564c;
+
+                final ReaderController f1564c;
 
                 public void onFetchBookDetailOk(DkStoreItem dkStoreItem) {
                     jaVar.dismiss();
@@ -879,9 +878,9 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
 
     public void shareBooks(ActivatedController c0303e, C0800c... c0800cArr) {
         if (c0303e != null && c0800cArr != null) {
-            if (this.f1434m != null) {
-                c0303e.deactivate(this.f1434m);
-                c0303e.removeSubController(this.f1434m);
+            if (this.activatedController != null) {
+                c0303e.deactivate(this.activatedController);
+                c0303e.removeSubController(this.activatedController);
             }
             if (c0800cArr.length != 1 || c0800cArr[0].ak()) {
                 String ay;
@@ -906,7 +905,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                     if (i == 0) {
                         str = c0800c.m4228g();
                     }
-                    arrayList.add(c0800c.m4156I());
+                    arrayList.add(c0800c.getId());
                     arrayList2.add(c0800c.m4155H().f3455c);
                     if (c0800cArr.length > 1) {
                         if (i < 5) {
@@ -922,45 +921,45 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 }
                 final ActivatedController c0303e2 = c0303e;
                 new ab(getContext(), false, new ae(this) {
-                    /* renamed from: g */
-                    final /* synthetic */ ReaderController f1571g;
+
+                    final ReaderController f1571g;
 
                     public void onChoiced(String str) {
                         if (!TextUtils.isEmpty(str)) {
-                            this.f1571g.f1434m = new bl(this.f1571g.getContext(), true, str, "", ay, str2, str, (String[]) arrayList.toArray(new String[0]), (String[]) arrayList2.toArray(new String[0]), null);
-                            c0303e2.addSubController(this.f1571g.f1434m);
-                            c0303e2.activate(this.f1571g.f1434m);
+                            this.f1571g.activatedController = new bl(this.f1571g.getContext(), true, str, "", ay, str2, str, (String[]) arrayList.toArray(new String[0]), (String[]) arrayList2.toArray(new String[0]), null);
+                            c0303e2.addSubController(this.f1571g.activatedController);
+                            c0303e2.activate(this.f1571g.activatedController);
                         }
                     }
                 }).show();
                 return;
             }
             C0800c c0800c2 = c0800cArr[0];
-            this.f1434m = new ShareEntranceController(getContext(), c0800c2.m4248t().f2708f, c0800c2, null);
-            c0303e.addSubController(this.f1434m);
-            c0303e.activate(this.f1434m);
+            this.activatedController = new ShareEntranceController(getContext(), c0800c2.m4248t().f2708f, c0800c2, null);
+            c0303e.addSubController(this.activatedController);
+            c0303e.activate(this.activatedController);
         }
     }
 
     public void downloadBooks(final C0800c... c0800cArr) {
         WebSession anonymousClass10 = new WebSession(this, C0630c.f2119a) {
-            /* renamed from: b */
-            final /* synthetic */ ReaderController f1505b;
-            /* renamed from: c */
+
+            final ReaderController f1505b;
+            
             private ja f1506c = null;
-            /* renamed from: d */
+
             private boolean f1507d = false;
-            /* renamed from: e */
+
             private LinkedList<AnonymousClass1DownloadInfo> f1508e = new LinkedList();
-            /* renamed from: f */
+
             private long f1509f = 0;
-            /* renamed from: g */
+
             private boolean f1510g = false;
 
-            /* renamed from: com.duokan.reader.ReaderController$10$1 */
+
             class C04511 implements OnCancelListener {
-                /* renamed from: a */
-                final /* synthetic */ AnonymousClass10 f1500a;
+
+                final AnonymousClass10 f1500a;
 
                 C04511(AnonymousClass10 anonymousClass10) {
                     this.f1500a = anonymousClass10;
@@ -973,10 +972,10 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 }
             }
 
-            /* renamed from: com.duokan.reader.ReaderController$10$2 */
+
             class C04532 implements cm {
-                /* renamed from: a */
-                final /* synthetic */ AnonymousClass10 f1503a;
+
+                final AnonymousClass10 f1503a;
 
                 C04532(AnonymousClass10 anonymousClass10) {
                     this.f1503a = anonymousClass10;
@@ -992,7 +991,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                                 if (c0800c.m4173Z()) {
                                     c0800c.m4208b(flowChargingTransferChoice.wifiOnly());
                                 } else if (c0800c.mo1037j()) {
-                                    C1167a.m8671d().m8686c(c0800c.m4156I(), c0800c.m4155H().f3455c);
+                                    C1167a.m8671d().m8686c(c0800c.getId(), c0800c.m4155H().f3455c);
                                     c0800c.m4208b(flowChargingTransferChoice.wifiOnly());
                                 } else if (c0800c.mo1038k()) {
                                     List bp;
@@ -1001,9 +1000,9 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                                     } else {
                                         bp = ((fp) c0800c).bp();
                                     }
-                                    c0800c.m4198a(c0800c.m4225f(), "dkcloud:///fiction/" + c0800c.m4156I() + "#" + C0652z.m3048a((String[]) bp.toArray(new String[0])), "", "", false, new af(Boolean.valueOf(false)));
+                                    c0800c.m4198a(c0800c.m4225f(), "dkcloud:///fiction/" + c0800c.getId() + "#" + C0652z.m3048a((String[]) bp.toArray(new String[0])), "", "", false, new af(Boolean.valueOf(false)));
                                 } else if (c0800c.ak()) {
-                                    DkCloudPurchasedBook a = DkUserPurchasedBooksManager.m5029a().m5052a(c0800c.m4156I());
+                                    DkCloudPurchasedBook a = DkUserPurchasedBooksManager.m5029a().m5052a(c0800c.getId());
                                     if (a == null) {
                                         DkStoreBookDetail dkStoreBookDetail = anonymousClass1DownloadInfo.f1532b;
                                         if (dkStoreBookDetail != null) {
@@ -1014,25 +1013,25 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                                                 ai.m3980a().m3871a(dkStoreBookDetail, flowChargingTransferChoice.wifiOnly());
                                             }
                                         }
-                                    } else if (!C1502o.m15410a().m15434a(c0800c.m4156I())) {
-                                        C1502o.m15410a().m15435b(c0800c.m4156I());
+                                    } else if (!C1502o.m15410a().m15434a(c0800c.getId())) {
+                                        C1502o.m15410a().m15435b(c0800c.getId());
                                         C1502o.m15410a().m15431a(a.getBookUuid(), anonymousClass1DownloadInfo.f1532b, new al(this) {
-                                            /* renamed from: b */
-                                            final /* synthetic */ C04532 f1502b;
+
+                                            final C04532 f1502b;
 
                                             public void onDownloadCloudBookStarted() {
-                                                C1502o.m15410a().m15436c(c0800c.m4156I());
+                                                C1502o.m15410a().m15436c(c0800c.getId());
                                             }
 
                                             public void onDownloadCloudBookError(String str) {
-                                                C1502o.m15410a().m15436c(c0800c.m4156I());
+                                                C1502o.m15410a().m15436c(c0800c.getId());
                                                 if (!TextUtils.isEmpty(str)) {
                                                     be.m10287a(this.f1502b.f1503a.f1505b.getContext(), (CharSequence) str, 1).show();
                                                 }
                                             }
 
                                             public void onDownloadCloudBookCanceled() {
-                                                C1502o.m15410a().m15436c(c0800c.m4156I());
+                                                C1502o.m15410a().m15436c(c0800c.getId());
                                             }
                                         }, flowChargingTransferChoice);
                                     }
@@ -1058,12 +1057,12 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 for (C0800c c0800c : c0800cArr) {
                     if (c0800c.m4168U()) {
                         AnonymousClass1DownloadInfo anonymousClass1DownloadInfo = new Object(this.f1505b) {
-                            /* renamed from: a */
+
                             public C0800c f1531a = null;
-                            /* renamed from: b */
+
                             public DkStoreBookDetail f1532b = null;
-                            /* renamed from: c */
-                            final /* synthetic */ ReaderController f1533c;
+
+                            final ReaderController f1533c;
 
                             {
                                 this.f1533c = r2;
@@ -1078,7 +1077,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                         } else if (c0800c.mo1038k()) {
                             this.f1508e.add(anonymousClass1DownloadInfo);
                         } else if (c0800c.ak()) {
-                            C0621a a = new C0647u(this, null).m3033a(c0800c.m4156I(), false);
+                            C0621a a = new C0647u(this, null).m3033a(c0800c.getId(), false);
                             this.f1509f += ((DkStoreBookDetailInfo) a.f2058a).mEpubSize;
                             anonymousClass1DownloadInfo.f1532b = new DkStoreBookDetail((DkStoreBookDetailInfo) a.f2058a);
                             this.f1508e.add(anonymousClass1DownloadInfo);
@@ -1114,8 +1113,8 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
             switchToHome(runnable);
         } else if (this.f1438q instanceof qr) {
             pendSwitch(new Switcher(this) {
-                /* renamed from: a */
-                final /* synthetic */ ReaderController f1514a;
+
+                final ReaderController f1514a;
 
                 {
                     this.f1514a = r1;
@@ -1124,13 +1123,13 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 public void doSwitch(Runnable runnable) {
                     final qr qrVar = (qr) this.f1514a.f1438q;
                     qrVar.m12837b(new Runnable(this) {
-                        /* renamed from: b */
-                        final /* synthetic */ AnonymousClass11 f1513b;
 
-                        /* renamed from: com.duokan.reader.ReaderController$11$1$1 */
+                        final AnonymousClass11 f1513b;
+
+                        
                         class C04541 implements IdleHandlerListener {
-                            /* renamed from: a */
-                            final /* synthetic */ C04551 f1511a;
+
+                            final C04551 f1511a;
 
                             C04541(C04551 c04551) {
                                 this.f1511a = c04551;
@@ -1167,8 +1166,8 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     public void showMenuFromBottom(final hi hiVar) {
         showPopup(hiVar);
         AnimUtils.startTranslateAnimation(hiVar.m9791a(), 0.0f, 0.0f, 1.0f, 0.0f, HttpStatus.SC_OK, true, new Runnable(this) {
-            /* renamed from: b */
-            final /* synthetic */ ReaderController f1516b;
+
+            final ReaderController f1516b;
 
             public void run() {
                 hiVar.m9792a(true);
@@ -1180,8 +1179,8 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     public void showMenuFromTop(final he heVar) {
         showPopup(heVar);
         AnimUtils.startTranslateAnimation(heVar.m9488a(), 0.0f, 0.0f, -1.0f, 0.0f, HttpStatus.SC_OK, true, new Runnable(this) {
-            /* renamed from: b */
-            final /* synthetic */ ReaderController f1518b;
+
+            final ReaderController f1518b;
 
             public void run() {
                 heVar.m9492a(true);
@@ -1252,8 +1251,8 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     private void monitorSystemUiVisibilityChange() {
         if (VERSION.SDK_INT >= 14) {
             getActivity().getWindow().getDecorView().setOnSystemUiVisibilityChangeListener(new OnSystemUiVisibilityChangeListener(this) {
-                /* renamed from: a */
-                final /* synthetic */ ReaderController f1519a;
+
+                final ReaderController f1519a;
 
                 {
                     this.f1519a = r1;
@@ -1281,8 +1280,8 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
         this.f1430i = true;
         prompt(getString(C0258j.exit_prompt));
         runLater(new Runnable(this) {
-            /* renamed from: a */
-            final /* synthetic */ ReaderController f1520a;
+
+            final ReaderController f1520a;
 
             {
                 this.f1520a = r1;
@@ -1318,8 +1317,8 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
         activate(this.f1438q);
         if (this.f1438q instanceof C1522i) {
             DkApp.get().runWhenAppReady(new Runnable(this) {
-                /* renamed from: a */
-                final /* synthetic */ ReaderController f1521a;
+
+                final ReaderController f1521a;
 
                 {
                     this.f1521a = r1;
@@ -1335,8 +1334,8 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
     private void pendSystemUiUpdate() {
         if (this.f1428g == null) {
             this.f1428g = new Runnable(this) {
-                /* renamed from: a */
-                final /* synthetic */ ReaderController f1522a;
+
+                final ReaderController f1522a;
 
                 {
                     this.f1522a = r1;
@@ -1350,8 +1349,8 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                 }
             };
             UIdleHandler.addIdleHandler(new IdleHandlerListener(this) {
-                /* renamed from: a */
-                final /* synthetic */ ReaderController f1523a;
+
+                final ReaderController f1523a;
 
                 {
                     this.f1523a = r1;
@@ -1371,7 +1370,7 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
         af afVar = new af();
         af afVar2 = new af();
         af afVar3 = new af();
-        Iterator it = this.f1426e.iterator();
+        Iterator it = this.systemUiConditioners.iterator();
         while (it.hasNext()) {
             SystemUiConditioner systemUiConditioner = (SystemUiConditioner) it.next();
             if (!afVar.m861b()) {
@@ -1492,14 +1491,14 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                     navigate(data.toString(), null, false, null);
                 } else if (FileType.UNSUPPORTED == FileTypeRecognizer.m567a(path)) {
                     be.m10286a(getContext(), C0258j.general__shared__unkown_book_format, 1).show();
-                } else if (C0324a.m735a(data.toString(), "content", new String[0])) {
+                } else if (UrlTools.equalsIgnoreCase(data.toString(), "content", new String[0])) {
                     final ja jaVar = new ja(getContext());
                     jaVar.show();
                     ah.m871b(new Runnable(this) {
-                        /* renamed from: a */
+
                         boolean f1526a = false;
-                        /* renamed from: d */
-                        final /* synthetic */ ReaderController f1529d;
+
+                        final ReaderController f1529d;
 
                         public void run() {
                             try {
@@ -1507,108 +1506,14 @@ class ReaderController extends ActivatedController implements ReaderFeature, Sys
                                 FileUtil.writeFiles(this.f1529d.getContext().getContentResolver().openInputStream(data), file);
                                 final C0800c a = ai.m3980a().m3876a(file);
                                 UThread.runOnThread(new Runnable(this) {
-                                    /* renamed from: b */
-                                    final /* synthetic */ AnonymousClass19 f1525b;
 
-                                    /* JADX WARNING: inconsistent code. */
-                                    /* Code decompiled incorrectly, please refer to instructions dump. */
+                                    final AnonymousClass19 f1525b;
+
+                                    
+                                    
                                     public void run() {
-                                        /* JADX: method processing error */
-/*
-Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offset: 0x003b in list [B:10:0x0034]
-	at jadx.core.utils.BlockUtils.getBlockByOffset(BlockUtils.java:43)
-	at jadx.core.dex.instructions.IfNode.initBlocks(IfNode.java:60)
-	at jadx.core.dex.visitors.blocksmaker.BlockFinish.initBlocksInIfNodes(BlockFinish.java:48)
-	at jadx.core.dex.visitors.blocksmaker.BlockFinish.visit(BlockFinish.java:33)
-	at jadx.core.dex.visitors.DepthTraversal.visit(DepthTraversal.java:31)
-	at jadx.core.dex.visitors.DepthTraversal.visit(DepthTraversal.java:17)
-	at jadx.core.dex.visitors.DepthTraversal.visit(DepthTraversal.java:14)
-	at jadx.core.dex.visitors.DepthTraversal.visit(DepthTraversal.java:14)
-	at jadx.core.ProcessClass.process(ProcessClass.java:34)
-	at jadx.api.JadxDecompiler.processClass(JadxDecompiler.java:282)
-	at jadx.api.JavaClass.decompile(JavaClass.java:62)
-*/
-                                        /*
-                                        r4 = this;
-                                        r3 = 0;
-                                        r0 = r0;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
-                                        if (r0 == 0) goto L_0x0013;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
-                                    L_0x0005:
-                                        r0 = r4.f1525b;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
-                                        r0 = r0.f1529d;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
-                                        r1 = r0;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
-                                        r0.openBook(r1);	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
-                                        r0 = r4.f1525b;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
-                                        r1 = 1;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
-                                        r0.f1526a = r1;	 Catch:{ Throwable -> 0x003c, all -> 0x0066 }
-                                    L_0x0013:
-                                        r0 = r4.f1525b;
-                                        r0 = r0.f1526a;
-                                        if (r0 != 0) goto L_0x002a;
-                                    L_0x0019:
-                                        r0 = r4.f1525b;
-                                        r0 = r0.f1529d;
-                                        r0 = r0.getContext();
-                                        r1 = com.duokan.p024c.C0258j.bookshelf__shared__file_not_exist;
-                                        r0 = com.duokan.reader.ui.general.be.m10286a(r0, r1, r3);
-                                        r0.show();
-                                    L_0x002a:
-                                        r0 = r4.f1525b;
-                                        r0 = r0;
-                                        r0 = r0.isShowing();
-                                        if (r0 == 0) goto L_0x003b;
-                                    L_0x0034:
-                                        r0 = r4.f1525b;
-                                        r0 = r0;
-                                        r0.dismiss();
-                                    L_0x003b:
-                                        return;
-                                    L_0x003c:
-                                        r0 = move-exception;
-                                        r0 = r4.f1525b;
-                                        r0 = r0.f1526a;
-                                        if (r0 != 0) goto L_0x0054;
-                                    L_0x0043:
-                                        r0 = r4.f1525b;
-                                        r0 = r0.f1529d;
-                                        r0 = r0.getContext();
-                                        r1 = com.duokan.p024c.C0258j.bookshelf__shared__file_not_exist;
-                                        r0 = com.duokan.reader.ui.general.be.m10286a(r0, r1, r3);
-                                        r0.show();
-                                    L_0x0054:
-                                        r0 = r4.f1525b;
-                                        r0 = r0;
-                                        r0 = r0.isShowing();
-                                        if (r0 == 0) goto L_0x003b;
-                                    L_0x005e:
-                                        r0 = r4.f1525b;
-                                        r0 = r0;
-                                        r0.dismiss();
-                                        goto L_0x003b;
-                                    L_0x0066:
-                                        r0 = move-exception;
-                                        r1 = r4.f1525b;
-                                        r1 = r1.f1526a;
-                                        if (r1 != 0) goto L_0x007e;
-                                    L_0x006d:
-                                        r1 = r4.f1525b;
-                                        r1 = r1.f1529d;
-                                        r1 = r1.getContext();
-                                        r2 = com.duokan.p024c.C0258j.bookshelf__shared__file_not_exist;
-                                        r1 = com.duokan.reader.ui.general.be.m10286a(r1, r2, r3);
-                                        r1.show();
-                                    L_0x007e:
-                                        r1 = r4.f1525b;
-                                        r1 = r0;
-                                        r1 = r1.isShowing();
-                                        if (r1 == 0) goto L_0x008f;
-                                    L_0x0088:
-                                        r1 = r4.f1525b;
-                                        r1 = r0;
-                                        r1.dismiss();
-                                    L_0x008f:
-                                        throw r0;
-                                        */
+
+
                                         throw new UnsupportedOperationException("Method not decompiled: com.duokan.reader.ReaderController.19.1.run():void");
                                     }
                                 });
@@ -1638,7 +1543,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
     private final void switchToReading(C0800c c0800c, C0896a c0896a, Runnable runnable) {
         Switcher readingSwitcher = new ReadingSwitcher(this, c0800c, c0896a);
         if (c0800c.m4251w()) {
-            C1163a.m8627k().m8651b(c0800c.m4156I());
+            C1163a.m8627k().m8651b(c0800c.getId());
         }
         pendSwitch(readingSwitcher, runnable);
     }
@@ -1650,19 +1555,18 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
     private final void startReadingInAnim(final Runnable runnable) {
         Animation alphaAnimation = new AlphaAnimation(1.0f, 0.75f);
         Animation scaleAnimation = new ScaleAnimation(1.0f, 0.9f, 1.0f, 0.9f, 1, 0.5f, 1, 0.5f);
-        Animation animationSet = new AnimationSet(true);
+        AnimationSet animationSet = new AnimationSet(true);
         animationSet.addAnimation(alphaAnimation);
         animationSet.addAnimation(scaleAnimation);
         animationSet.setDuration(500);
         animationSet.setInterpolator(new AccelerateDecelerateInterpolator());
         Animation translateAnimation = new TranslateAnimation(1, 1.0f, 1, 0.0f, 1, 0.0f, 1, 0.0f);
-        scaleAnimation = new AnimationSet(true);
-        scaleAnimation.addAnimation(translateAnimation);
-        scaleAnimation.setDuration(300);
-        scaleAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
+        AnimationSet animation = new AnimationSet(true);
+        animation.addAnimation(translateAnimation);
+        animation.setDuration(300);
+        animation.setInterpolator(new AccelerateDecelerateInterpolator());
         translateAnimation.setAnimationListener(new AnimationListener(this) {
-            /* renamed from: b */
-            final /* synthetic */ ReaderController f1535b;
+
 
             public void onAnimationStart(Animation animation) {
             }
@@ -1671,7 +1575,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
             }
 
             public void onAnimationEnd(Animation animation) {
-                this.f1535b.runLater(runnable);
+                runLater(runnable);
             }
         });
         this.f1438q.getContentView().startAnimation(animationSet);
@@ -1681,12 +1585,10 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
     private final void startReadingOutAnim(final Runnable runnable) {
         Animation alphaAnimation = new AlphaAnimation(0.75f, 1.0f);
         Animation scaleAnimation = new ScaleAnimation(0.9f, 1.0f, 0.9f, 1.0f, 1, 0.5f, 1, 0.5f);
-        Animation animationSet = new AnimationSet(true);
+        AnimationSet animationSet = new AnimationSet(true);
         animationSet.addAnimation(alphaAnimation);
         animationSet.addAnimation(scaleAnimation);
-        alphaAnimation.setAnimationListener(new AnimationListener(this) {
-            /* renamed from: b */
-            final /* synthetic */ ReaderController f1537b;
+        alphaAnimation.setAnimationListener(new AnimationListener() {
 
             public void onAnimationStart(Animation animation) {
             }
@@ -1695,47 +1597,36 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
             }
 
             public void onAnimationEnd(Animation animation) {
-                this.f1537b.runLater(runnable);
+                runLater(runnable);
             }
         });
         animationSet.setDuration(500);
         animationSet.setInterpolator(new AccelerateDecelerateInterpolator());
         Animation translateAnimation = new TranslateAnimation(1, 0.0f, 1, 1.0f, 1, 0.0f, 1, 0.0f);
-        scaleAnimation = new AnimationSet(true);
-        scaleAnimation.addAnimation(translateAnimation);
-        scaleAnimation.setDuration(300);
-        scaleAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
+        AnimationSet animation = new AnimationSet(true);
+        animation.addAnimation(translateAnimation);
+        animation.setDuration(300);
+        animation.setInterpolator(new AccelerateDecelerateInterpolator());
         this.f1438q.getContentView().startAnimation(animationSet);
-        this.f1439r.getContentView().startAnimation(scaleAnimation);
+        this.f1439r.getContentView().startAnimation(animation);
     }
 
     private final void pendSwitch(final Switcher switcher, final Runnable runnable) {
         WebLog.init().w(switcher != null);
-        Runnable anonymousClass22 = new Runnable(this) {
-            /* renamed from: c */
-            final /* synthetic */ ReaderController f1541c;
-
-            /* renamed from: com.duokan.reader.ReaderController$22$1 */
-            class C04591 implements Runnable {
-                /* renamed from: a */
-                final /* synthetic */ AnonymousClass22 f1538a;
-
-                C04591(AnonymousClass22 anonymousClass22) {
-                    this.f1538a = anonymousClass22;
-                }
-
-                public void run() {
-                    UThread.runOnThread(runnable);
-                    this.f1538a.f1541c.f1427f = null;
-                    if (this.f1538a.f1541c.f1425d.size() > 0) {
-                        this.f1538a.f1541c.f1427f = (Runnable) this.f1538a.f1541c.f1425d.pollFirst();
-                        UThread.post(this.f1538a.f1541c.f1427f);
-                    }
-                }
-            }
+        Runnable anonymousClass22 = new Runnable() {
 
             public void run() {
-                switcher.doSwitch(new C04591(this));
+                switcher.doSwitch(new Runnable() {
+                    @Override
+                    public void run() {
+                        UThread.runOnThread(runnable);
+                        this.f1538a.f1541c.f1427f = null;
+                        if (this.f1538a.f1541c.f1425d.size() > 0) {
+                            this.f1538a.f1541c.f1427f = (Runnable) this.f1538a.f1541c.f1425d.pollFirst();
+                            UThread.post(this.f1538a.f1541c.f1427f);
+                        }
+                    }
+                });
             }
         };
         if (this.f1427f == null) {

@@ -7,7 +7,7 @@ import com.duokan.core.diagnostic.LogLevel;
 import com.duokan.core.io.FileUtil;
 import com.duokan.core.io.IOUtils;
 import com.duokan.core.io.OutputException;
-import com.duokan.core.p027b.p028a.C0320a;
+import com.duokan.core.p027b.p028a.HttpConfig;
 import com.duokan.core.p027b.p028a.C0321b;
 import com.duokan.core.sys.C0352r;
 import com.duokan.core.sys.C0366o;
@@ -57,7 +57,7 @@ class ev {
     }
 
     /* renamed from: a */
-    private int m4442a(String str, C0320a c0320a) {
+    private int m4442a(String str, HttpConfig httpConfig) {
         if (TextUtils.isEmpty(str)) {
             return ICallback.CLEAR_ACCOUNT_AIDL;
         }
@@ -70,7 +70,7 @@ class ev {
                 return 1;
             }
             File file2 = new File(file.getPath() + ".tmp");
-            a = C0321b.m725a(str, file2, c0320a);
+            a = C0321b.getFileLength(str, file2, httpConfig);
             if (a < 1 || (this.f3134c > 0 && a != this.f3134c)) {
                 WebLog.init().a(LogLevel.ERROR, "dkbook", "unexpected file length(length=%d, httpUri=%s, fileUri=%s)", Long.valueOf(a), str, this.f3132a);
                 FileUtil.deleteFile(file2);
@@ -109,7 +109,7 @@ class ev {
             }
             Closeable d = this.f3133b.mo424d(str2);
             try {
-                a = C0321b.m726a(str, (OutputStream) d, c0320a);
+                a = C0321b.m726a(str, (OutputStream) d, httpConfig);
                 if (a < 1 || (this.f3134c > 0 && a != this.f3134c)) {
                     WebLog.init().a(LogLevel.ERROR, "dkbook", "unexpected file length(length=%d, httpUri=%s, fileUri=%s)", Long.valueOf(a), str, this.f3132a);
                     IOUtils.close(d);

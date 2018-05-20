@@ -8,11 +8,8 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.MeasureSpec;
 import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
-import com.duokan.core.ui.Scrollable.OverScrollMode;
-import com.duokan.core.ui.Scrollable.ScrollState;
 
 public class FrameScrollView extends FrameLayout implements Scrollable {
     /* renamed from: a */
@@ -44,95 +41,95 @@ public class FrameScrollView extends FrameLayout implements Scrollable {
     }
 
     public final int getContentWidth() {
-        return this.f753a.m1561s();
+        return this.f753a.getContentWidth();
     }
 
     public final int getContentHeight() {
-        return this.f753a.m1562t();
+        return this.f753a.getContentHeight();
     }
 
     public boolean getThumbEnabled() {
-        return this.f753a.m1563u();
+        return this.f753a.getThumbEnabled();
     }
 
     public void setThumbEnabled(boolean z) {
-        this.f753a.m1530c(z);
+        this.f753a.setThumbEnabled(z);
     }
 
     public boolean getSeekEnabled() {
-        return this.f753a.m1564v();
+        return this.f753a.getSeekEnabled();
     }
 
     public void setSeekEnabled(boolean z) {
-        this.f753a.m1538d(z);
+        this.f753a.setSeekEnabled(z);
     }
 
     public int getHorizontalThumbMarginLeft() {
-        return this.f753a.m1565w();
+        return this.f753a.getHorizontalThumbMarginLeft();
     }
 
     public int getHorizontalThumbMarginTop() {
-        return this.f753a.m1566x();
+        return this.f753a.getHorizontalThumbMarginTop();
     }
 
     public int getHorizontalThumbMarginRight() {
-        return this.f753a.m1567y();
+        return this.f753a.getHorizontalThumbMarginRight();
     }
 
     public int getHorizontalThumbMarginBottom() {
-        return this.f753a.m1568z();
+        return this.f753a.getHorizontalThumbMarginBottom();
     }
 
     public int getVerticalThumbMarginLeft() {
-        return this.f753a.m1449A();
+        return this.f753a.getVerticalThumbMarginLeft();
     }
 
     public int getVerticalThumbMarginTop() {
-        return this.f753a.m1450B();
+        return this.f753a.getVerticalThumbMarginTop();
     }
 
     public int getVerticalThumbMarginRight() {
-        return this.f753a.m1451C();
+        return this.f753a.getVerticalThumbMarginRight();
     }
 
     public int getVerticalThumbMarginBottom() {
-        return this.f753a.m1452D();
+        return this.f753a.getVerticalThumbMarginBottom();
     }
 
     public Drawable getHorizontalThumbDrawable() {
-        return this.f753a.m1453E();
+        return this.f753a.getHorizontalThumbDrawable();
     }
 
     public void setHorizontalThumbDrawable(Drawable drawable) {
-        this.f753a.m1493a(drawable);
+        this.f753a.setHorizontalThumbDrawable(drawable);
     }
 
     public Drawable getVerticalThumbDrawable() {
-        return this.f753a.m1454F();
+        return this.f753a.getVerticalThumbDrawable();
     }
 
     public void setVerticalThumbDrawable(Drawable drawable) {
-        this.f753a.m1517b(drawable);
+        this.f753a.setVerticalThumbDrawable(drawable);
     }
 
     public Drawable getHorizontalSeekDrawable() {
-        return this.f753a.m1455G();
+        return this.f753a.getHorizontalSeekDrawable();
     }
 
     public void setHorizontalSeekDrawable(Drawable drawable) {
-        this.f753a.m1529c(drawable);
+        this.f753a.setHorizontalSeekDrawable(drawable);
     }
 
     public Drawable getVerticalSeekDrawable() {
-        return this.f753a.m1456H();
+        return this.f753a.getVerticalSeekDrawable();
     }
 
     public void setVerticalSeekDrawable(Drawable drawable) {
-        this.f753a.m1537d(drawable);
+        this.f753a.setVerticalSeekDrawable(drawable);
     }
 
     public et getScrollDetector() {
-        return this.f753a.m1457I();
+        return this.f753a.getScrollDetector();
     }
 
     public final ScrollState getScrollState() {
@@ -144,19 +141,19 @@ public class FrameScrollView extends FrameLayout implements Scrollable {
     }
 
     public final int getScrollTime() {
-        return this.f753a.m1458J();
+        return this.f753a.getScrollTime();
     }
 
     public int getScrollFinalX() {
-        return this.f753a.m1459K();
+        return this.f753a.getScrollFinalX();
     }
 
     public int getScrollFinalY() {
-        return this.f753a.m1460L();
+        return this.f753a.getScrollFinalY();
     }
 
     public final void setScrollInterpolator(Interpolator interpolator) {
-        this.f753a.m1496a(interpolator);
+        this.f753a.setScrollInterpolator(interpolator);
     }
 
     /* renamed from: a */
@@ -165,11 +162,11 @@ public class FrameScrollView extends FrameLayout implements Scrollable {
     }
 
     public OverScrollMode getHorizontalOverScrollMode() {
-        return this.f753a.m1461M();
+        return this.f753a.getHorizontalOverScrollMode();
     }
 
     public void setHorizontalOverScrollMode(OverScrollMode overScrollMode) {
-        this.f753a.m1497a(overScrollMode);
+        this.f753a.setHorizontalOverScrollMode(overScrollMode);
     }
 
     public OverScrollMode getVerticalOverScrollMode() {
@@ -177,15 +174,15 @@ public class FrameScrollView extends FrameLayout implements Scrollable {
     }
 
     public void setVerticalOverScrollMode(OverScrollMode overScrollMode) {
-        this.f753a.m1518b(overScrollMode);
+        this.f753a.setVerticalOverScrollMode(overScrollMode);
     }
 
     public final int getMaxOverScrollWidth() {
-        return this.f753a.m1463O();
+        return this.f753a.getMaxOverScrollWidth();
     }
 
     public final void setMaxOverScrollWidth(int i) {
-        this.f753a.m1525c(i);
+        this.f753a.setMaxOverScrollWidth(i);
     }
 
     public final int getMaxOverScrollHeight() {
@@ -193,19 +190,19 @@ public class FrameScrollView extends FrameLayout implements Scrollable {
     }
 
     public final void setMaxOverScrollHeight(int i) {
-        this.f753a.m1534d(i);
+        this.f753a.MaxOverScrollHeight(i);
     }
 
     public final Rect getViewportBounds() {
         return this.f753a.getViewportBounds();
     }
 
-    public void setOnContentBoundsChangedListener(cf cfVar) {
-        this.f753a.m1501a(cfVar);
+    public void setOnContentBoundsChangedListener(OnContentBoundsChangedListener contentBoundsChangedListener) {
+        this.f753a.setOnContentBoundsChangedListener(contentBoundsChangedListener);
     }
 
-    public final void setOnScrollListener(cg cgVar) {
-        this.f753a.m1502a(cgVar);
+    public final void setOnScrollListener(OnScrollListener onScrollListener) {
+        this.f753a.setOnScrollListener(onScrollListener);
     }
 
     /* renamed from: a */
@@ -214,11 +211,11 @@ public class FrameScrollView extends FrameLayout implements Scrollable {
     }
 
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return this.f753a.mo2419b(motionEvent);
+        return this.f753a.onInterceptTouchEvent(motionEvent);
     }
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.f753a.mo2420c(motionEvent);
+        return this.f753a.onTouchEvent(motionEvent);
     }
 
     protected void onMeasure(int i, int i2) {
@@ -258,12 +255,12 @@ public class FrameScrollView extends FrameLayout implements Scrollable {
 
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.f753a.m1523c();
+        this.f753a.onAttachedToWindow();
     }
 
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.f753a.m1532d();
+        this.f753a.onDetachedFromWindow();
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
@@ -272,11 +269,11 @@ public class FrameScrollView extends FrameLayout implements Scrollable {
     }
 
     public void scrollBy(int i, int i2) {
-        this.f753a.m1526c(i, i2);
+        this.f753a.scrollBy(i, i2);
     }
 
     public void scrollTo(int i, int i2) {
-        this.f753a.m1535d(i, i2);
+        this.f753a.scrollTo(i, i2);
     }
 
     @SuppressLint({"MissingSuperCall"})
@@ -286,7 +283,7 @@ public class FrameScrollView extends FrameLayout implements Scrollable {
     }
 
     public boolean shouldDelayChildPressedState() {
-        return this.f753a.m1554l();
+        return this.f753a.shouldDelayChildPressedState();
     }
 
     public void requestDisallowInterceptTouchEvent(boolean z) {
@@ -295,43 +292,43 @@ public class FrameScrollView extends FrameLayout implements Scrollable {
     }
 
     public boolean isHorizontalFadingEdgeEnabled() {
-        return this.f753a.m1548g();
+        return this.f753a.isHorizontalFadingEdgeEnabled();
     }
 
     public boolean isHorizontalScrollBarEnabled() {
-        return this.f753a.m1550h();
+        return this.f753a.isHorizontalScrollBarEnabled();
     }
 
     public boolean isVerticalFadingEdgeEnabled() {
-        return this.f753a.m1551i();
+        return this.f753a.isVerticalFadingEdgeEnabled();
     }
 
     public boolean isVerticalScrollBarEnabled() {
-        return this.f753a.m1552j();
+        return this.f753a.isVerticalScrollBarEnabled();
     }
 
     protected int computeHorizontalScrollExtent() {
-        return this.f753a.m1555m();
+        return this.f753a.computeHorizontalScrollExtent();
     }
 
     protected int computeHorizontalScrollOffset() {
-        return this.f753a.m1556n();
+        return this.f753a.computeHorizontalScrollOffset();
     }
 
     protected int computeHorizontalScrollRange() {
-        return this.f753a.m1557o();
+        return this.f753a.computeHorizontalScrollRange();
     }
 
     protected int computeVerticalScrollExtent() {
-        return this.f753a.m1558p();
+        return this.f753a.computeVerticalScrollExtent();
     }
 
     protected int computeVerticalScrollOffset() {
-        return this.f753a.m1559q();
+        return this.f753a.computeVerticalScrollOffset();
     }
 
     protected int computeVerticalScrollRange() {
-        return this.f753a.m1560r();
+        return this.f753a.computeVerticalScrollRange();
     }
 
     protected void measureChildWithMargins(View view, int i, int i2, int i3, int i4) {

@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.duokan.core.ui.AnimUtils;
-import com.duokan.core.ui.ge;
+import com.duokan.core.ui.OnZoomListener;
 import com.duokan.reader.domain.document.ac;
 
 public class jz extends gd {
@@ -44,7 +44,7 @@ public class jz extends gd {
     public void mo2413g() {
         this.f10479b = true;
         this.f10481d.setHorizontalOverScrollMode(OverScrollMode.STRETCH);
-        this.f10481d.setMaxOverScrollWidth(AnimUtils.m1959f(getContext()));
+        this.f10481d.setMaxOverScrollWidth(AnimUtils.getMaxOverScrollWidth(getContext()));
         for (int i = 0; i < this.f10481d.getChildCount(); i++) {
             ky kyVar = (ky) this.f10481d.getChildAt(i);
             kyVar.m14176i();
@@ -79,9 +79,9 @@ public class jz extends gd {
         }
     }
 
-    public void setOnZoomListener(ge geVar) {
+    public void setOnZoomListener(OnZoomListener onZoomListener) {
         for (int i = 0; i < this.f10481d.getChildCount(); i++) {
-            ((ky) this.f10481d.getChildAt(i)).setZoomListener(geVar);
+            ((ky) this.f10481d.getChildAt(i)).setZoomListener(onZoomListener);
         }
     }
 

@@ -1,7 +1,7 @@
 package com.duokan.reader.common.async.work;
 
 import android.content.Context;
-import com.duokan.core.p029c.C0326b;
+import com.duokan.core.p029c.IRunTask;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -182,14 +182,14 @@ public abstract class C0533k<TItem extends C0523c, TWork extends C0520o<TItem>> 
     }
 
     /* renamed from: a */
-    public final TItem m2355a(C0326b<TItem> c0326b) {
+    public final TItem m2355a(IRunTask<TItem> runTask) {
         TItem tItem;
         synchronized (this) {
             if (!this.f1791j) {
                 Iterator it = this.f1786e.iterator();
                 while (it.hasNext()) {
                     tItem = (C0523c) it.next();
-                    if (c0326b.mo411a(tItem)) {
+                    if (runTask.isExitRunTask(tItem)) {
                         break;
                     }
                 }

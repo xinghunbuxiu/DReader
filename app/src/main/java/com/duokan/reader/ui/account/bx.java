@@ -18,7 +18,7 @@ import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.core.app.AppContext;
 import com.duokan.core.ui.BoxView;
 import com.duokan.core.ui.AnimUtils;
@@ -175,7 +175,7 @@ public class bx extends af {
         imageView.setPadding(0, AnimUtils.m1932b(getActivity(), 10.0f), 0, AnimUtils.m1932b(getActivity(), 10.0f));
         imageView.setScaleType(ScaleType.CENTER_INSIDE);
         imageView.setImageBitmap(this.f5893e.f5804e);
-        boxView.setMaxHeight(C0267i.m609c(getActivity()) / 3);
+        boxView.setMaxHeight(CommonUtils.m609c(getActivity()) / 3);
         boxView.addView(imageView, new LayoutParams(-1, -1));
         return boxView;
     }
@@ -216,7 +216,7 @@ public class bx extends af {
 
     /* renamed from: e */
     private void m8965e() {
-        if (C0267i.m604a(getActivity())) {
+        if (CommonUtils.m604a(getActivity())) {
             ReaderUi.m10161a(getActivity(), this.f5898j);
             ShareType shareType = this.f5893e.f5805f;
             if (this.f5892d.equals("weixin_friend")) {

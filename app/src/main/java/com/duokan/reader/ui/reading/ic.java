@@ -34,7 +34,7 @@ class ic extends WebSession {
     protected void onSessionTry() {
         C0652z c0652z = new C0652z((WebSession) this, new al(C0709k.m3476a().m3502b(PersonalAccount.class)));
         C0800c G = this.f10380b.f.mo1992G();
-        JSONArray a = C0611i.m2788a((JSONObject) c0652z.m3056a(G.m4156I(), G.m4159L()).f2058a, "ui", new JSONArray());
+        JSONArray a = C0611i.m2788a((JSONObject) c0652z.m3056a(G.getId(), G.m4159L()).f2058a, "ui", new JSONArray());
         for (int i = 0; i < a.length(); i++) {
             JSONObject jSONObject = a.getJSONObject(i);
             CharSequence optString = jSONObject.optString("type", "text");

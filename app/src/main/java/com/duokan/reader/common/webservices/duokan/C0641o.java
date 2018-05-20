@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Pair;
 import com.duokan.core.diagnostic.WebLog;
-import com.duokan.core.p027b.C0324a;
+import com.duokan.core.p027b.UrlTools;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.ReaderEnv.PrivatePref;
 import com.duokan.reader.common.p037c.C0559f;
@@ -508,7 +508,7 @@ public final class C0641o {
 
     /* renamed from: m */
     private String m2936m(String str) {
-        return C0324a.m733a(C0324a.m734a(m2927P() + "/phone/"), "path=" + str).toString();
+        return UrlTools.encodedFragment(UrlTools.parse(m2927P() + "/phone/"), "path=" + str).toString();
     }
 
     /* renamed from: P */

@@ -6,10 +6,10 @@ class fm implements CustomViewCallback {
     /* renamed from: a */
     final /* synthetic */ fo f1257a;
     /* renamed from: b */
-    final /* synthetic */ fl f1258b;
+    final /* synthetic */ WebPageChromeClient f1258b;
 
-    fm(fl flVar, fo foVar) {
-        this.f1258b = flVar;
+    fm(WebPageChromeClient webPageChromeClient, fo foVar) {
+        this.f1258b = webPageChromeClient;
         this.f1257a = foVar;
     }
 

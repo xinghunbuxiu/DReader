@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.reading;
 
 import android.widget.TextView;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.core.app.IFeature;
 import com.duokan.p023b.C0244f;
 import com.duokan.p023b.C0247i;
@@ -54,7 +54,7 @@ public abstract class eo extends gs implements C0779a, C0780k {
     /* renamed from: e */
     private void m14010e() {
         C0796q c = C0781b.m3667b().m3690c();
-        FileTransferPrompter.m9977a(getContext(), c.f2662b - c.f2664d, getContext().getResources().getString(C0247i.reading__custom_font__download_title), getContext().getString(C0247i.reading__custom_font__download_prompt_at_data_plan, new Object[]{C0267i.m599a(c.f2662b - c.f2664d)}), new eq(this));
+        FileTransferPrompter.m9977a(getContext(), c.f2662b - c.f2664d, getContext().getResources().getString(C0247i.reading__custom_font__download_title), getContext().getString(C0247i.reading__custom_font__download_prompt_at_data_plan, new Object[]{CommonUtils.m599a(c.f2662b - c.f2664d)}), new eq(this));
     }
 
     public void onTaskRunning(DownloadCenterTask downloadCenterTask) {

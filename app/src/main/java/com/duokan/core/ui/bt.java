@@ -9,11 +9,11 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 
 public abstract class bt extends LinearLayout {
-    /* renamed from: a */
+    
     public abstract int mo455a(View view, LayoutParams layoutParams);
 
-    /* renamed from: a */
-    public abstract View getTabView(int i);
+    
+    public abstract View getTabView(int index);
 
     public abstract int getCellCount();
 
@@ -27,15 +27,15 @@ public abstract class bt extends LinearLayout {
 
     public abstract void setDividerScaleType(ScaleType scaleType);
 
-    public abstract void setFirstDivider(int i);
+    public abstract void setFirstDivider(int index);
 
     public abstract void setFirstDivider(Drawable drawable);
 
-    public abstract void setLastDivider(int i);
+    public abstract void setLastDivider(int index);
 
     public abstract void setLastDivider(Drawable drawable);
 
-    public abstract void setMiddleDivider(int i);
+    public abstract void setMiddleDivider(int index);
 
     public abstract void setMiddleDivider(Drawable drawable);
 
@@ -47,8 +47,8 @@ public abstract class bt extends LinearLayout {
         super(context, attributeSet);
     }
 
-    /* renamed from: b */
-    public View m1321b(int i, TabBarView tabBarView) {
+    
+    public View getView(int i, TabBarView tabBarView) {
         return tabBarView.m1318e(i).getChildAt(0);
     }
 }

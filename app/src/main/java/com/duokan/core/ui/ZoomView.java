@@ -19,40 +19,40 @@ import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 
 public class ZoomView extends ViewGroup implements Scrollable, fk {
-    /* renamed from: a */
-    static final /* synthetic */ boolean f869a = (!ZoomView.class.desiredAssertionStatus());
-    /* renamed from: b */
+
+    static final boolean f869a = (!ZoomView.class.desiredAssertionStatus());
+    
     private final gf f870b;
-    /* renamed from: c */
-    private final Matrix f871c;
-    /* renamed from: d */
-    private int f872d;
-    /* renamed from: e */
-    private int f873e;
-    /* renamed from: f */
-    private ZoomState f874f;
-    /* renamed from: g */
-    private float f875g;
-    /* renamed from: h */
-    private float f876h;
-    /* renamed from: i */
-    private float f877i;
-    /* renamed from: j */
-    private float f878j;
-    /* renamed from: k */
-    private boolean f879k;
-    /* renamed from: l */
+
+    private final Matrix matrix;
+
+    private int width;
+
+    private int height;
+
+    private ZoomState zoomState;
+
+    private float zoomFactor;
+
+    private float minZoomFactor;
+
+    private float maxZoomFactor;
+
+    private float zoomAngle;
+
+    private boolean rotateEnabled;
+    
     private gg f880l;
-    /* renamed from: m */
+
     private View f881m;
-    /* renamed from: n */
+
     private boolean f882n;
-    /* renamed from: o */
-    private ge f883o;
-    /* renamed from: p */
-    private OverScrollMode f884p;
-    /* renamed from: q */
-    private OverScrollMode f885q;
+
+    private OnZoomListener onZoomListener;
+
+    private OverScrollMode scrollMode;
+
+    private OverScrollMode scrollMode1;
 
     public enum ZoomState {
         IDLE,
@@ -66,216 +66,216 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
 
     public ZoomView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        this.f871c = new Matrix();
-        this.f872d = 0;
-        this.f873e = 0;
-        this.f874f = ZoomState.IDLE;
-        this.f875g = 1.0f;
-        this.f876h = 1.0f;
-        this.f877i = 10.0f;
-        this.f878j = 0.0f;
-        this.f879k = true;
+        this.matrix = new Matrix();
+        this.width = 0;
+        this.height = 0;
+        this.zoomState = ZoomState.IDLE;
+        this.zoomFactor = 1.0f;
+        this.minZoomFactor = 1.0f;
+        this.maxZoomFactor = 10.0f;
+        this.zoomAngle = 0.0f;
+        this.rotateEnabled = true;
         this.f880l = null;
         this.f881m = null;
         this.f882n = false;
-        this.f883o = null;
+        this.onZoomListener = null;
         setWillNotDraw(false);
         this.f870b = m1362c();
-        this.f870b.m1457I().m2041a(new gh());
+        this.f870b.getScrollDetector().m2041a(new gh());
         setThumbEnabled(true);
         setHorizontalOverScrollMode(OverScrollMode.STRETCH);
         setVerticalOverScrollMode(OverScrollMode.STRETCH);
-        setMaxOverScrollWidth(AnimUtils.m1959f(context));
-        setMaxOverScrollHeight(AnimUtils.m1962g(context));
+        setMaxOverScrollWidth(AnimUtils.getMaxOverScrollWidth(context));
+        setMaxOverScrollHeight(AnimUtils.getMaxOverScrollHeight(context));
     }
 
     public final ZoomState getZoomState() {
-        return this.f874f;
+        return this.zoomState;
     }
 
     public final float getZoomFactor() {
-        return this.f875g;
+        return this.zoomFactor;
     }
 
     public final float getMinZoomFactor() {
-        return this.f876h;
+        return this.minZoomFactor;
     }
 
-    public final void setMinZoomFactor(float f) {
-        this.f876h = f;
+    public final void setMinZoomFactor(float minZoomFactor) {
+        this.minZoomFactor = minZoomFactor;
         m_();
     }
 
     public final float getMaxZoomFactor() {
-        return this.f877i;
+        return this.maxZoomFactor;
     }
 
     public final void setMaxZoomFactor(float f) {
-        this.f877i = f;
+        this.maxZoomFactor = f;
         m_();
     }
 
     public final float getZoomAngle() {
-        return this.f878j;
+        return this.zoomAngle;
     }
 
     public final boolean getRotateEnabled() {
-        return this.f879k;
+        return this.rotateEnabled;
     }
 
     public final void setRotateEnabled(boolean z) {
-        this.f879k = z;
+        this.rotateEnabled = z;
     }
 
-    public ge getOnZoomListener() {
-        return this.f883o;
+    public OnZoomListener getOnZoomListener() {
+        return this.onZoomListener;
     }
 
-    public void setOnZoomListener(ge geVar) {
-        this.f883o = geVar;
+    public void setOnZoomListener(OnZoomListener onZoomListener) {
+        this.onZoomListener = onZoomListener;
     }
 
-    /* renamed from: a */
+
     public final void m1353a(float f, float f2, float f3, Runnable runnable, Runnable runnable2) {
         m1352a(f, f2, f3, getZoomAngle(), runnable, runnable2);
     }
 
-    /* renamed from: a */
+
     public final void m1352a(float f, float f2, float f3, float f4, Runnable runnable, Runnable runnable2) {
-        if (mo2335e() != null) {
+        if (getCurrentView() != null) {
             m1342b(f, f2, ((float) getWidth()) / 2.0f, ((float) getHeight()) / 2.0f, f3, f4, runnable, runnable2);
         }
     }
 
-    /* renamed from: a */
+
     public final void m1350a(float f, float f2, float f3) {
         m1351a(f, f2, f3, getZoomAngle());
     }
 
-    /* renamed from: a */
+
     public final void m1351a(float f, float f2, float f3, float f4) {
         m1341b(f, f2, ((float) getWidth()) / 2.0f, ((float) getHeight()) / 2.0f, f3, f4);
     }
 
-    /* renamed from: b */
+
     public final void m1357b(float f, float f2, float f3) {
         m1358b(f, f2, f3, getZoomAngle());
     }
 
-    /* renamed from: b */
+
     public final void m1358b(float f, float f2, float f3, float f4) {
-        if (mo2335e() != null) {
+        if (getCurrentView() != null) {
             m1327a(f, f2, ((float) getWidth()) / 2.0f, ((float) getHeight()) / 2.0f, f3, f4);
         }
     }
 
-    /* renamed from: b */
+
     public final void m1360b(float f, float f2, float f3, Runnable runnable, Runnable runnable2) {
         m1359b(f, f2, f3, getZoomAngle(), runnable, runnable2);
     }
 
-    /* renamed from: b */
+
     public final void m1359b(float f, float f2, float f3, float f4, Runnable runnable, Runnable runnable2) {
-        if (mo2335e() != null) {
+        if (getCurrentView() != null) {
             m1328a(f, f2, ((float) getWidth()) / 2.0f, ((float) getHeight()) / 2.0f, f3, f4, runnable, runnable2);
         }
     }
 
-    /* renamed from: c */
+
     public Matrix mo475c(View view) {
-        return this.f871c;
+        return this.matrix;
     }
 
     public final int getContentWidth() {
-        return this.f870b.m1561s();
+        return this.f870b.getContentWidth();
     }
 
     public final int getContentHeight() {
-        return this.f870b.m1562t();
+        return this.f870b.getContentHeight();
     }
 
     public boolean getThumbEnabled() {
-        return this.f870b.m1563u();
+        return this.f870b.getThumbEnabled();
     }
 
     public void setThumbEnabled(boolean z) {
-        this.f870b.m1530c(z);
+        this.f870b.setThumbEnabled(z);
     }
 
     public boolean getSeekEnabled() {
-        return this.f870b.m1564v();
+        return this.f870b.getSeekEnabled();
     }
 
     public void setSeekEnabled(boolean z) {
-        this.f870b.m1538d(z);
+        this.f870b.setSeekEnabled(z);
     }
 
     public int getHorizontalThumbMarginLeft() {
-        return this.f870b.m1565w();
+        return this.f870b.getHorizontalThumbMarginLeft();
     }
 
     public int getHorizontalThumbMarginTop() {
-        return this.f870b.m1566x();
+        return this.f870b.getHorizontalThumbMarginTop();
     }
 
     public int getHorizontalThumbMarginRight() {
-        return this.f870b.m1567y();
+        return this.f870b.getHorizontalThumbMarginRight();
     }
 
     public int getHorizontalThumbMarginBottom() {
-        return this.f870b.m1568z();
+        return this.f870b.getHorizontalThumbMarginBottom();
     }
 
     public int getVerticalThumbMarginLeft() {
-        return this.f870b.m1449A();
+        return this.f870b.getVerticalThumbMarginLeft();
     }
 
     public int getVerticalThumbMarginTop() {
-        return this.f870b.m1450B();
+        return this.f870b.getVerticalThumbMarginTop();
     }
 
     public int getVerticalThumbMarginRight() {
-        return this.f870b.m1451C();
+        return this.f870b.getVerticalThumbMarginRight();
     }
 
     public int getVerticalThumbMarginBottom() {
-        return this.f870b.m1452D();
+        return this.f870b.getVerticalThumbMarginBottom();
     }
 
     public Drawable getHorizontalThumbDrawable() {
-        return this.f870b.m1453E();
+        return this.f870b.getHorizontalThumbDrawable();
     }
 
     public void setHorizontalThumbDrawable(Drawable drawable) {
-        this.f870b.m1493a(drawable);
+        this.f870b.setHorizontalThumbDrawable(drawable);
     }
 
     public Drawable getVerticalThumbDrawable() {
-        return this.f870b.m1454F();
+        return this.f870b.getVerticalThumbDrawable();
     }
 
     public void setVerticalThumbDrawable(Drawable drawable) {
-        this.f870b.m1517b(drawable);
+        this.f870b.setVerticalThumbDrawable(drawable);
     }
 
     public Drawable getHorizontalSeekDrawable() {
-        return this.f870b.m1455G();
+        return this.f870b.getHorizontalSeekDrawable();
     }
 
     public void setHorizontalSeekDrawable(Drawable drawable) {
-        this.f870b.m1529c(drawable);
+        this.f870b.setHorizontalSeekDrawable(drawable);
     }
 
     public Drawable getVerticalSeekDrawable() {
-        return this.f870b.m1456H();
+        return this.f870b.getVerticalSeekDrawable();
     }
 
     public void setVerticalSeekDrawable(Drawable drawable) {
-        this.f870b.m1537d(drawable);
+        this.f870b.setVerticalSeekDrawable(drawable);
     }
 
     public et getScrollDetector() {
-        return this.f870b.m1457I();
+        return this.f870b.getScrollDetector();
     }
 
     public final ScrollState getScrollState() {
@@ -286,51 +286,51 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         return this.f870b.getIdleTime();
     }
 
-    public final int getScrollTime() {
-        return this.f870b.m1458J();
+    public final int c() {
+        return this.f870b.getScrollTime();
     }
 
     public int getScrollFinalX() {
-        return this.f870b.m1459K();
+        return this.f870b.getScrollFinalX();
     }
 
     public int getScrollFinalY() {
-        return this.f870b.m1460L();
+        return this.f870b.getScrollFinalY();
     }
 
     public final void setScrollInterpolator(Interpolator interpolator) {
-        this.f870b.m1496a(interpolator);
+        this.f870b.setScrollInterpolator(interpolator);
     }
 
-    /* renamed from: a */
+
     public void mo435a(View view, boolean z) {
         this.f870b.mo435a(view, z);
     }
 
     public OverScrollMode getHorizontalOverScrollMode() {
-        return this.f884p;
+        return this.scrollMode;
     }
 
     public void setHorizontalOverScrollMode(OverScrollMode overScrollMode) {
-        this.f884p = overScrollMode;
-        this.f870b.m1497a(overScrollMode);
+        this.scrollMode = overScrollMode;
+        this.f870b.setHorizontalOverScrollMode(overScrollMode);
     }
 
     public OverScrollMode getVerticalOverScrollMode() {
-        return this.f885q;
+        return this.scrollMode1;
     }
 
     public void setVerticalOverScrollMode(OverScrollMode overScrollMode) {
-        this.f885q = overScrollMode;
-        this.f870b.m1518b(overScrollMode);
+        this.scrollMode1 = overScrollMode;
+        this.f870b.setVerticalOverScrollMode(overScrollMode);
     }
 
     public final int getMaxOverScrollWidth() {
-        return this.f870b.m1463O();
+        return this.f870b.getMaxOverScrollWidth();
     }
 
     public final void setMaxOverScrollWidth(int i) {
-        this.f870b.m1525c(i);
+        this.f870b.setMaxOverScrollWidth(i);
     }
 
     public final int getMaxOverScrollHeight() {
@@ -338,36 +338,36 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
     }
 
     public final void setMaxOverScrollHeight(int i) {
-        this.f870b.m1534d(i);
+        this.f870b.MaxOverScrollHeight(i);
     }
 
     public final Rect getViewportBounds() {
         return this.f870b.getViewportBounds();
     }
 
-    public void setOnContentBoundsChangedListener(cf cfVar) {
-        this.f870b.m1501a(cfVar);
+    public void setOnContentBoundsChangedListener(OnContentBoundsChangedListener contentBoundsChangedListener) {
+        this.f870b.setOnContentBoundsChangedListener(contentBoundsChangedListener);
     }
 
-    public final void setOnScrollListener(cg cgVar) {
-        this.f870b.m1502a(cgVar);
+    public final void setOnScrollListener(OnScrollListener onScrollListener) {
+        this.f870b.setOnScrollListener(onScrollListener);
     }
 
-    /* renamed from: a */
+
     public final void mo434a(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
         this.f870b.mo434a(i, i2, i3, runnable, runnable2);
     }
 
-    /* renamed from: a */
+
     public void m1354a(int i, int i2) {
         this.f870b.m1541e(i, i2);
     }
 
     public void m_() {
-        View e = mo2335e();
+        View e = getCurrentView();
         if (e != null) {
             PointF pointF = (PointF) AnimUtils.f1197f.addAnimation();
-            pointF.set(((float) getScrollX()) + (((float) getWidth()) / 2.0f), ((float) getScrollY()) + (((float) getHeight()) / 2.0f));
+            pointF.set(getScrollX() + getWidth() / 2.0f, getScrollY() + (getHeight()) / 2.0f);
             AnimUtils.m1900a(pointF, (View) this, e);
             PointF pointF2 = (PointF) AnimUtils.f1197f.addAnimation();
             pointF2.set(pointF);
@@ -381,7 +381,7 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
     }
 
     public void n_() {
-        View e = mo2335e();
+        View e = getCurrentView();
         if (e != null) {
             PointF pointF = (PointF) AnimUtils.f1197f.addAnimation();
             pointF.set(((float) getScrollX()) + (((float) getWidth()) / 2.0f), ((float) getScrollY()) + (((float) getHeight()) / 2.0f));
@@ -398,72 +398,73 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
     }
 
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return this.f870b.mo2419b(motionEvent);
+        return this.f870b.onInterceptTouchEvent(motionEvent);
     }
 
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.f870b.mo2420c(motionEvent);
+        return this.f870b.onTouchEvent(motionEvent);
     }
 
-    protected void onMeasure(int i, int i2) {
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int i3 = 0;
         int paddingRight = getPaddingRight() + getPaddingLeft();
         int paddingBottom = getPaddingBottom() + getPaddingTop();
-        View e = mo2335e();
+        View e = getCurrentView();
         if (e != null) {
             LayoutParams layoutParams = e.getLayoutParams();
-            int childMeasureSpec = getChildMeasureSpec(layoutParams.width == -1 ? i : 0, paddingRight, layoutParams.width);
+            int childMeasureSpec = getChildMeasureSpec(layoutParams.width == -1 ? widthMeasureSpec : 0, paddingRight, layoutParams.width);
             if (layoutParams.height == -1) {
-                i3 = i2;
+                i3 = heightMeasureSpec;
             }
             e.measure(childMeasureSpec, getChildMeasureSpec(i3, paddingBottom, layoutParams.height));
-            this.f872d = e.getMeasuredWidth();
-            this.f873e = e.getMeasuredHeight();
+            this.width = e.getMeasuredWidth();
+            this.height = e.getMeasuredHeight();
         } else {
-            this.f872d = 0;
-            this.f873e = 0;
+            this.width = 0;
+            this.height = 0;
         }
-        setMeasuredDimension(resolveSize(this.f872d + paddingRight, i), resolveSize(this.f873e + paddingBottom, i2));
+        setMeasuredDimension(resolveSize(this.width + paddingRight, widthMeasureSpec), resolveSize(this.height + paddingBottom, heightMeasureSpec));
     }
 
-    protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        int i5 = i4 - i2;
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        int height = bottom - top;
         int paddingLeft = getPaddingLeft() + getPaddingRight();
         int paddingTop = getPaddingTop() + getPaddingBottom();
-        int max = Math.max(i3 - i, this.f872d + paddingLeft);
-        i5 = Math.max(i5, this.f873e + paddingTop);
-        View e = mo2335e();
+        int max = Math.max(right - left, this.width + paddingLeft);
+        height = Math.max(height, this.height + paddingTop);
+        View e = getCurrentView();
         if (e != null) {
-            max = (((max - paddingLeft) - this.f872d) / 2) + getPaddingLeft();
-            i5 = (((i5 - paddingTop) - this.f873e) / 2) + getPaddingTop();
-            e.layout(max, i5, e.getMeasuredWidth() + max, e.getMeasuredHeight() + i5);
+            max = (((max - paddingLeft) - this.width) / 2) + getPaddingLeft();
+            height = (((height - paddingTop) - this.height) / 2) + getPaddingTop();
+            e.layout(max, height, e.getMeasuredWidth() + max, e.getMeasuredHeight() + height);
         }
         Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         Point point = (Point) AnimUtils.f1196e.addAnimation();
-        m1330a(rect, point, 0.0f, 0.0f, 0.0f, 0.0f, this.f875g, this.f878j);
+        m1330a(rect, point, 0.0f, 0.0f, 0.0f, 0.0f, this.zoomFactor, this.zoomAngle);
         this.f870b.m1491a(rect);
         AnimUtils.f1198g.clearAnimation(rect);
         AnimUtils.f1196e.clearAnimation(point);
-        this.f870b.m1504a(z, i, i2, i3, i4);
+        this.f870b.m1504a(changed, left, top, right, bottom);
         m_();
     }
 
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.f870b.m1523c();
+        this.f870b.onAttachedToWindow();
     }
 
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.f870b.m1532d();
+        this.f870b.onDetachedFromWindow();
     }
 
     public void scrollBy(int i, int i2) {
-        this.f870b.m1526c(i, i2);
+        this.f870b.scrollBy(i, i2);
     }
 
     public void scrollTo(int i, int i2) {
-        this.f870b.m1535d(i, i2);
+        this.f870b.scrollTo(i, i2);
     }
 
     @SuppressLint({"MissingSuperCall"})
@@ -473,7 +474,7 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
     }
 
     public boolean shouldDelayChildPressedState() {
-        return this.f870b.m1554l();
+        return this.f870b.shouldDelayChildPressedState();
     }
 
     public void requestDisallowInterceptTouchEvent(boolean z) {
@@ -483,50 +484,50 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
     }
 
     public boolean isHorizontalFadingEdgeEnabled() {
-        return this.f870b.m1548g();
+        return this.f870b.isHorizontalFadingEdgeEnabled();
     }
 
     public boolean isHorizontalScrollBarEnabled() {
-        return this.f870b.m1550h();
+        return this.f870b.isHorizontalScrollBarEnabled();
     }
 
     public boolean isVerticalFadingEdgeEnabled() {
-        return this.f870b.m1551i();
+        return this.f870b.isVerticalFadingEdgeEnabled();
     }
 
     public boolean isVerticalScrollBarEnabled() {
-        return this.f870b.m1552j();
+        return this.f870b.isVerticalScrollBarEnabled();
     }
 
     protected int computeHorizontalScrollExtent() {
-        return this.f870b.m1555m();
+        return this.f870b.computeHorizontalScrollExtent();
     }
 
     protected int computeHorizontalScrollOffset() {
-        return this.f870b.m1556n();
+        return this.f870b.computeHorizontalScrollOffset();
     }
 
     protected int computeHorizontalScrollRange() {
-        return this.f870b.m1557o();
+        return this.f870b.computeHorizontalScrollRange();
     }
 
     protected int computeVerticalScrollExtent() {
-        return this.f870b.m1558p();
+        return this.f870b.computeVerticalScrollExtent();
     }
 
     protected int computeVerticalScrollOffset() {
-        return this.f870b.m1559q();
+        return this.f870b.computeVerticalScrollOffset();
     }
 
     protected int computeVerticalScrollRange() {
-        return this.f870b.m1560r();
+        return this.f870b.computeVerticalScrollRange();
     }
 
     protected boolean drawChild(Canvas canvas, View view, long j) {
         canvas.save();
-        canvas.translate((float) view.getLeft(), (float) view.getTop());
-        canvas.concat(this.f871c);
-        canvas.translate((float) (-view.getLeft()), (float) (-view.getTop()));
+        canvas.translate(view.getLeft(), view.getTop());
+        canvas.concat(this.matrix);
+        canvas.translate(-view.getLeft(), -view.getTop());
         boolean drawChild = super.drawChild(canvas, view, j);
         canvas.restore();
         return drawChild;
@@ -553,9 +554,9 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
             this.f881m = null;
             for (int childCount = getChildCount() - 1; childCount >= 0; childCount--) {
                 View childAt = getChildAt(childCount);
-                pointF.set(((float) getScrollX()) + motionEvent.getX(), ((float) getScrollY()) + motionEvent.getY());
-                rectF.set((float) childAt.getScrollX(), (float) childAt.getScrollY(), (float) (childAt.getScrollX() + childAt.getWidth()), (float) (childAt.getScrollY() + childAt.getHeight()));
-                AnimUtils.m1900a(pointF, (View) this, childAt);
+                pointF.set((getScrollX()) + motionEvent.getX(), (getScrollY()) + motionEvent.getY());
+                rectF.set(childAt.getScrollX(), childAt.getScrollY(),(childAt.getScrollX() + childAt.getWidth()), (childAt.getScrollY() + childAt.getHeight()));
+                AnimUtils.m1900a(pointF, this, childAt);
                 if (rectF.contains(pointF.x, pointF.y) && m1339a(childAt, motionEvent)) {
                     this.f881m = childAt;
                     break;
@@ -579,29 +580,29 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         return a;
     }
 
-    /* renamed from: a */
+
     private boolean m1339a(View view, MotionEvent motionEvent) {
-        MotionEvent a = AnimUtils.m1908a(motionEvent, (View) this, view);
+        MotionEvent a = AnimUtils.m1908a(motionEvent, this, view);
         boolean dispatchTouchEvent = view.dispatchTouchEvent(a);
         a.recycle();
         return dispatchTouchEvent;
     }
 
-    /* renamed from: a */
+
     private void m1327a(float f, float f2, float f3, float f4, float f5, float f6) {
         float[] d = m1347d(f, f2, f3, f4, f5, f6);
         m1341b(d[0], d[1], d[2], d[3], d[4], d[5]);
     }
 
-    /* renamed from: a */
+
     private void m1328a(float f, float f2, float f3, float f4, float f5, float f6, Runnable runnable, Runnable runnable2) {
         float[] d = m1347d(f, f2, f3, f4, f5, f6);
         m1342b(d[0], d[1], d[2], d[3], d[4], d[5], runnable, runnable2);
     }
 
-    /* renamed from: b */
+
     private void m1341b(float f, float f2, float f3, float f4, float f5, float f6) {
-        View e = mo2335e();
+        View e = getCurrentView();
         if (e != null) {
             if (this.f880l != null) {
                 this.f880l.m2154b();
@@ -615,9 +616,9 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         }
     }
 
-    /* renamed from: b */
+
     private void m1342b(float f, float f2, float f3, float f4, float f5, float f6, Runnable runnable, Runnable runnable2) {
-        if (mo2335e() != null) {
+        if (getCurrentView() != null) {
             if (this.f880l != null) {
                 this.f880l.m2154b();
             }
@@ -631,9 +632,9 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         }
     }
 
-    /* renamed from: c */
+
     private void m1344c(float f, float f2, float f3, float f4, float f5, float f6) {
-        View e = mo2335e();
+        View e = getCurrentView();
         if (e != null) {
             if (this.f880l != null) {
                 this.f880l.m2154b();
@@ -647,15 +648,15 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         }
     }
 
-    /* renamed from: a */
+
     private void m1331a(View view, float f, float f2, float f3, float f4, float f5, float f6) {
-        this.f875g = f5;
-        this.f878j = f6;
-        this.f871c.reset();
-        this.f871c.preTranslate((float) (view.getWidth() / 2), (float) (view.getHeight() / 2));
-        this.f871c.preScale(this.f875g, this.f875g);
-        this.f871c.preRotate(-this.f878j);
-        this.f871c.preTranslate((float) ((-view.getWidth()) / 2), (float) ((-view.getHeight()) / 2));
+        this.zoomFactor = f5;
+        this.zoomAngle = f6;
+        this.matrix.reset();
+        this.matrix.preTranslate((float) (view.getWidth() / 2), (float) (view.getHeight() / 2));
+        this.matrix.preScale(this.zoomFactor, this.zoomFactor);
+        this.matrix.preRotate(-this.zoomAngle);
+        this.matrix.preTranslate((float) ((-view.getWidth()) / 2), (float) ((-view.getHeight()) / 2));
         Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
         Point point = (Point) AnimUtils.f1196e.addAnimation();
         m1330a(rect, point, f, f2, f3, f4, f5, f6);
@@ -667,9 +668,9 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         mo2334d();
     }
 
-    /* renamed from: d */
+
     private float[] m1347d(float f, float f2, float f3, float f4, float f5, float f6) {
-        if (mo2335e() == null) {
+        if (getCurrentView() == null) {
             return new float[]{f, f2, f3, f4, f5, f6};
         }
         Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
@@ -685,9 +686,9 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         return fArr;
     }
 
-    /* renamed from: a */
+
     private void m1330a(Rect rect, Point point, float f, float f2, float f3, float f4, float f5, float f6) {
-        View e = mo2335e();
+        View e = getCurrentView();
         if (e == null) {
             rect.set(0, 0, getWidth(), getHeight());
             point.set(0, 0);
@@ -722,9 +723,9 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
     }
 
     @TargetApi(11)
-    /* renamed from: a */
+
     private void m1329a(Matrix matrix, float f, float f2) {
-        View e = mo2335e();
+        View e = getCurrentView();
         if (e != null) {
             matrix.reset();
             matrix.preTranslate((float) e.getLeft(), (float) e.getTop());
@@ -739,35 +740,35 @@ public class ZoomView extends ViewGroup implements Scrollable, fk {
         }
     }
 
-    /* renamed from: a */
+
     private void m1332a(ZoomState zoomState) {
-        if (this.f874f != zoomState) {
-            ZoomState zoomState2 = this.f874f;
-            this.f874f = zoomState;
-            m1333a(zoomState2, this.f874f);
+        if (this.zoomState != zoomState) {
+            ZoomState zoomState2 = this.zoomState;
+            this.zoomState = zoomState;
+            m1333a(zoomState2, this.zoomState);
         }
     }
 
-    /* renamed from: a */
+
     private void m1333a(ZoomState zoomState, ZoomState zoomState2) {
-        if (this.f883o != null) {
-            this.f883o.mo2424a(this, zoomState, zoomState2);
+        if (this.onZoomListener != null) {
+            this.onZoomListener.mo2424a(this, zoomState, zoomState2);
         }
     }
 
-    /* renamed from: d */
+
     private void mo2334d() {
-        if (this.f883o != null) {
-            this.f883o.mo2423a(this);
+        if (this.onZoomListener != null) {
+            this.onZoomListener.onZoom(this);
         }
     }
 
-    /* renamed from: e */
-    private View mo2335e() {
+
+    private View getCurrentView() {
         return getChildCount() < 1 ? null : getChildAt(0);
     }
 
-    /* renamed from: c */
+
     protected gf m1362c() {
         return new gf(this);
     }

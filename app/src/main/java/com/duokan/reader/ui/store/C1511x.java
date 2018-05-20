@@ -30,7 +30,7 @@ class C1511x implements C0466h {
     }
 
     public void onFetchBookDetailError(String str) {
-        this.f11488d.f11462g.remove(this.f11485a.m4156I());
+        this.f11488d.f11462g.remove(this.f11485a.getId());
         this.f11487c.mo1048a("", str);
     }
 }

@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.core.ui.C0343f;
 import com.duokan.core.ui.LinearScrollView;
 import com.duokan.core.ui.AnimUtils;
@@ -37,7 +37,7 @@ public final class bd extends C0343f {
         this.f9826c.setFadingEdgeLength(0);
         this.f9826c.setClipChildren(true);
         this.f9826c.setBackgroundColor(0);
-        this.f9826c.setPadding(0, 0, C0267i.m598a(getContext(), 20.0f), 0);
+        this.f9826c.setPadding(0, 0, CommonUtils.dip2px(getContext(), 20.0f), 0);
         this.f9826c.setOrientation(1);
         this.f9826c.addView(view, new LinearLayout.LayoutParams(-2, -2));
         this.f9826c.mo435a(view, z);

@@ -11,7 +11,7 @@ public class cg implements C0586j {
     public void onAccountLoginedBottomHalf(C0672a c0672a) {
         WebLog.init().w();
         if (StorePageController.sPreloadedController != null) {
-            StorePageController.sPreloadedController.mWebView.mo1821f();
+            StorePageController.sPreloadedController.mWebView.destroy();
             StorePageController.sPreloadedController = null;
         }
     }
@@ -19,7 +19,7 @@ public class cg implements C0586j {
     public void onAccountLogoff(C0672a c0672a) {
         WebLog.init().w();
         if (StorePageController.sPreloadedController != null) {
-            StorePageController.sPreloadedController.mWebView.mo1821f();
+            StorePageController.sPreloadedController.mWebView.destroy();
             StorePageController.sPreloadedController = null;
         }
     }

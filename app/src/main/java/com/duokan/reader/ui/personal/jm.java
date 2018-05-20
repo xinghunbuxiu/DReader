@@ -1,20 +1,20 @@
 package com.duokan.reader.ui.personal;
 
 import android.text.TextUtils;
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.cloud.push.ag;
 import com.duokan.reader.ui.general.be;
 
 class jm implements ag {
     /* renamed from: a */
-    final /* synthetic */ C0342j f8784a;
+    final /* synthetic */ BaseDialog f8784a;
     /* renamed from: b */
     final /* synthetic */ jl f8785b;
 
-    jm(jl jlVar, C0342j c0342j) {
+    jm(jl jlVar, BaseDialog dialog) {
         this.f8785b = jlVar;
-        this.f8784a = c0342j;
+        this.f8784a = dialog;
     }
 
     /* renamed from: a */

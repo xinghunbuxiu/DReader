@@ -20,7 +20,7 @@ class ge extends WebSession {
     }
 
     protected void onSessionTry() {
-        C0621a a = new C0652z((WebSession) this, this.f3223a.f3220a).m3060a(this.f3223a.f3222c.m4156I(), this.f3223a.f3222c.m4157J(), UUID.randomUUID().toString());
+        C0621a a = new C0652z((WebSession) this, this.f3223a.f3220a).m3060a(this.f3223a.f3222c.getId(), this.f3223a.f3222c.m4157J(), UUID.randomUUID().toString());
         if (a.b == 0 && (this.f3223a.f3222c.mo1020z().m3781b() || this.f3223a.f3222c.mo1020z().m3780a())) {
             long j = ((C0651y) a.f2058a).f2186d;
             if (!this.f3223a.f3222c.aZ() || this.f3223a.f3222c.mo1020z().f2726e != j) {

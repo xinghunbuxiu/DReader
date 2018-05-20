@@ -1,12 +1,12 @@
 package com.duokan.reader.common.cache;
 
-import com.duokan.core.p029c.C0326b;
+import com.duokan.core.p029c.IRunTask;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 
 /* renamed from: com.duokan.reader.common.cache.w */
-public interface C0568w<TItem, TFilter extends C0326b<TItem>, TComparator extends Comparator<TItem>> {
+public interface C0568w<TItem, TFilter extends IRunTask<TItem>, TComparator extends Comparator<TItem>> {
     /* renamed from: a */
     C0584z mo756a(String str);
 

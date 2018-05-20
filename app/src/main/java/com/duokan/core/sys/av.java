@@ -114,7 +114,7 @@ class av {
         r0 = r2;
         goto L_0x002a;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.core.sys.av.a(java.lang.String):boolean");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.core.sys.DkBaseAdapter.a(java.lang.String):boolean");
     }
 
     /* renamed from: a */

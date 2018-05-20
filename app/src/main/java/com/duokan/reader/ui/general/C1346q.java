@@ -16,7 +16,7 @@ class C1346q implements C1345w {
     public void mo1810a() {
         try {
             if (DkApp.get().getTopActivity() != null) {
-                this.f7548a.f7547a.f7542f.m10719a(new C1342n(this.f7548a.f7547a.f7545i, this.f7548a.f7547a.f7540d));
+                this.f7548a.f7547a.f7542f.m10719a(new CustomGlideUrl(this.f7548a.f7547a.f7545i, this.f7548a.f7547a.f7540d));
                 this.f7548a.f7547a.f7544h.mo1793a(false);
                 this.f7548a.f7547a.f7543g = CoverSource.NONE;
             }

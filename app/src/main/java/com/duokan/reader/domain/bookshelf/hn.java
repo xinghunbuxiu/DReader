@@ -28,7 +28,7 @@ class hn extends WebSession {
         ArrayList arrayList = new ArrayList(linkedList.size());
         Iterator it = linkedList.iterator();
         while (it.hasNext()) {
-            arrayList.add(((C0800c) it.next()).m4156I());
+            arrayList.add(((C0800c) it.next()).getId());
         }
         if (!linkedList.isEmpty()) {
             String[] strArr = (String[]) new C0647u(this, null).m3037a((String[]) arrayList.toArray(new String[0])).f2058a;

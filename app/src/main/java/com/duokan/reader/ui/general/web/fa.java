@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.general.web;
 
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.core.sys.as;
 
 class fa implements as {
@@ -16,6 +16,6 @@ class fa implements as {
 
     /* renamed from: a */
     public void mo1831a() {
-        C0267i.m602a(this.f7819b.f7581b.getContext(), this.f7818a);
+        CommonUtils.m602a(this.f7819b.f7581b.getContext(), this.f7818a);
     }
 }

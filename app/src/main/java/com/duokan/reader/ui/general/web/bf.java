@@ -12,6 +12,6 @@ class bf implements Runnable {
     }
 
     public void run() {
-        this.f7624b.mWebView.mo1815a(String.format("javascript:(function() { try { %s } catch(e) { fictionApi.log(e.message); } }())", new Object[]{this.f7623a}));
+        this.f7624b.mWebView.loadUrl(String.format("javascript:(function() { try { %s } catch(e) { fictionApi.log(e.message); } }())", new Object[]{this.f7623a}));
     }
 }

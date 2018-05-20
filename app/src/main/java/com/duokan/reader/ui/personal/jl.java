@@ -2,7 +2,7 @@ package com.duokan.reader.ui.personal;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.reader.DkApp;
 import com.duokan.reader.ReaderEnv;
 import com.duokan.reader.domain.cloud.push.C0857b;
@@ -18,7 +18,7 @@ class jl implements OnClickListener {
 
     public void onClick(View view) {
         boolean z = true;
-        C0342j a = ja.m10832a(DkApp.get().getTopActivity(), "", this.f8783a.getString(C0450R.string.general__shared__push_server_accept), true, true);
+        BaseDialog a = ja.m10832a(DkApp.get().getTopActivity(), "", this.f8783a.getString(C0450R.string.general__shared__push_server_accept), true, true);
         C0857b a2 = C0857b.m5649a();
         if (ReaderEnv.get().getReceivePushes()) {
             z = false;

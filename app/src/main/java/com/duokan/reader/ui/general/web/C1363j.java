@@ -3,11 +3,11 @@ package com.duokan.reader.ui.general.web;
 import com.duokan.core.ui.PullDownRefreshBaseView.RefreshState;
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 import com.duokan.reader.ui.general.WebView.PullDownHeaderState;
 
 /* renamed from: com.duokan.reader.ui.general.web.j */
-class C1363j implements cg {
+class C1363j implements OnScrollListener {
     /* renamed from: a */
     final /* synthetic */ DkWebView f8028a;
 

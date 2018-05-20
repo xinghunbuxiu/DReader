@@ -1,6 +1,6 @@
 package com.duokan.reader.common.cache;
 
-import com.duokan.core.p029c.C0326b;
+import com.duokan.core.p029c.IRunTask;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import org.json.JSONObject;
 
-public class ListCache<TInfo, TItem, TJson, TFilter extends C0326b<TItem>, TComparator extends Comparator<TItem>> {
+public class ListCache<TInfo, TItem, TJson, TFilter extends IRunTask<TItem>, TComparator extends Comparator<TItem>> {
     /* renamed from: a */
     private static final HashMap<String, C0580n<?, ?, ?, ?, ?>> f1460a = new HashMap();
     /* renamed from: b */
@@ -169,7 +169,7 @@ public class ListCache<TInfo, TItem, TJson, TFilter extends C0326b<TItem>, TComp
                 arrayList = new ArrayList();
             } else {
                 ensureCacheExisted();
-                arrayList = this.f1469j.m2609a((C0326b) tFilter, (Comparator) tComparator, c0582t);
+                arrayList = this.f1469j.m2609a((IRunTask) tFilter, (Comparator) tComparator, c0582t);
             }
         }
         return arrayList;

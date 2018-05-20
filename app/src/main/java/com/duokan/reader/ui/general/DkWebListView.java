@@ -19,30 +19,30 @@ import com.duokan.core.ui.PullDownRefreshView;
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.an;
 import com.duokan.core.ui.ao;
-import com.duokan.core.ui.cf;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnContentBoundsChangedListener;
+import com.duokan.core.ui.OnScrollListener;
 import com.duokan.core.ui.AnimUtils;
 import com.duokan.core.ui.et;
 import com.duokan.p023b.C0241c;
 
 public class DkWebListView extends FrameLayout implements Scrollable {
-    /* renamed from: a */
+    
     private final HatGridView f6792a;
-    /* renamed from: b */
+    
     private final LinearLayout f6793b;
-    /* renamed from: c */
+    
     private final PullDownRefreshBaseView f6794c;
-    /* renamed from: d */
+    
     private final bp f6795d;
-    /* renamed from: e */
+    
     private View f6796e;
-    /* renamed from: f */
+    
     private boolean f6797f;
-    /* renamed from: g */
-    private cg f6798g;
-    /* renamed from: h */
+    
+    private OnScrollListener f6798g;
+    
     private an f6799h;
-    /* renamed from: i */
+    
     private ao f6800i;
 
     public enum ListState {
@@ -81,7 +81,7 @@ public class DkWebListView extends FrameLayout implements Scrollable {
         this.f6792a.setAdapter(this.f6795d);
     }
 
-    /* renamed from: a */
+    
     protected HatGridView m9953a(Context context) {
         return new bj(this, context);
     }
@@ -115,7 +115,7 @@ public class DkWebListView extends FrameLayout implements Scrollable {
         this.f6792a.setItemsBackground(drawable);
     }
 
-    /* renamed from: a */
+    
     public final View m9952a(int i) {
         return this.f6792a.m1241a(i);
     }
@@ -248,7 +248,7 @@ public class DkWebListView extends FrameLayout implements Scrollable {
         }
     }
 
-    /* renamed from: b */
+    
     public final View m9961b(int i) {
         return this.f6792a.m1253c(i);
     }
@@ -301,12 +301,12 @@ public class DkWebListView extends FrameLayout implements Scrollable {
         return this.f6792a.getGridPaddingBottom();
     }
 
-    /* renamed from: a */
+    
     public final void m9955a(int i, int i2, int i3, int i4) {
         this.f6792a.m1250b(i, i2, i3, i4);
     }
 
-    /* renamed from: b */
+    
     public final void m9962b(int i, int i2, int i3, int i4) {
         this.f6792a.m1257d(i, i2, i3, i4);
     }
@@ -315,12 +315,12 @@ public class DkWebListView extends FrameLayout implements Scrollable {
         return this.f6792a.getItemCount();
     }
 
-    /* renamed from: a */
+    
     public final void m9954a() {
         m9960a(false);
     }
 
-    /* renamed from: a */
+    
     public final void m9960a(boolean z) {
         if (this.f6794c.getRefreshState() != RefreshState.REFRESHING) {
             m9942b(z);
@@ -331,7 +331,7 @@ public class DkWebListView extends FrameLayout implements Scrollable {
         return this.f6794c.getRefreshState();
     }
 
-    /* renamed from: b */
+    
     public final boolean m9963b() {
         return this.f6795d.m10308e();
     }
@@ -478,7 +478,7 @@ public class DkWebListView extends FrameLayout implements Scrollable {
         this.f6792a.setScrollInterpolator(interpolator);
     }
 
-    /* renamed from: a */
+    
     public void mo435a(View view, boolean z) {
         this.f6792a.mo435a(view, z);
     }
@@ -519,20 +519,20 @@ public class DkWebListView extends FrameLayout implements Scrollable {
         return this.f6792a.getViewportBounds();
     }
 
-    public void setOnContentBoundsChangedListener(cf cfVar) {
-        this.f6792a.setOnContentBoundsChangedListener(cfVar);
+    public void setOnContentBoundsChangedListener(OnContentBoundsChangedListener contentBoundsChangedListener) {
+        this.f6792a.setOnContentBoundsChangedListener(contentBoundsChangedListener);
     }
 
-    public final void setOnScrollListener(cg cgVar) {
-        this.f6798g = cgVar;
+    public final void setOnScrollListener(OnScrollListener onScrollListener) {
+        this.f6798g = onScrollListener;
     }
 
-    /* renamed from: a */
+    
     public final void mo434a(int i, int i2, int i3, Runnable runnable, Runnable runnable2) {
         this.f6792a.mo434a(i, i2, i3, runnable, runnable2);
     }
 
-    /* renamed from: c */
+    
     public void m9964c() {
         this.f6792a.m1266g();
     }
@@ -574,20 +574,20 @@ public class DkWebListView extends FrameLayout implements Scrollable {
         m9946e();
     }
 
-    /* renamed from: a */
+    
     protected void m9957a(PointF pointF) {
     }
 
-    /* renamed from: a */
+    
     protected void m9959a(ScrollState scrollState, RectF rectF) {
     }
 
-    /* renamed from: d */
+    
     protected boolean m9965d() {
         return false;
     }
 
-    /* renamed from: c */
+    
     private final void m9944c(int i) {
         m9946e();
         if (this.f6794c.getRefreshState() == RefreshState.REFRESHING && getListState() != ListState.LOADING_UPDATES) {
@@ -596,14 +596,14 @@ public class DkWebListView extends FrameLayout implements Scrollable {
         }
     }
 
-    /* renamed from: b */
+    
     private final void m9942b(boolean z) {
         bp bpVar = this.f6795d;
         boolean z2 = z || ((getListState() == ListState.UNKNOWN || getListState() == ListState.EMPTY) && this.f6794c.getRefreshState() != RefreshState.REFRESHING);
         bpVar.m10300a(z2);
     }
 
-    /* renamed from: e */
+    
     private final void m9946e() {
         if (getListState() == ListState.MORE_TO_LOAD) {
             int lastVisibleItemIndex = this.f6792a.getLastVisibleItemIndex() + 1;
@@ -613,7 +613,7 @@ public class DkWebListView extends FrameLayout implements Scrollable {
         }
     }
 
-    /* renamed from: f */
+    
     private final boolean m9949f() {
         return this.f6794c.getVisibility() == 0;
     }

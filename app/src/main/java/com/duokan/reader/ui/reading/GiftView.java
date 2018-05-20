@@ -70,7 +70,7 @@ public class GiftView extends FrameLayout {
         this.f9102d = findViewById(C0244f.reading__gift_view__space);
         this.f9103e = (deprecatedDkTextView) findViewById(C0244f.reading__gift_view__msg);
         this.f9104f = (TextView) findViewById(C0244f.reading__gift_view__from);
-        ((FrameScrollView) findViewById(C0244f.reading__gift_view__scroll)).setMaxOverScrollHeight(AnimUtils.m1962g(getContext()));
+        ((FrameScrollView) findViewById(C0244f.reading__gift_view__scroll)).setMaxOverScrollHeight(AnimUtils.getMaxOverScrollHeight(getContext()));
     }
 
     protected void onDraw(Canvas canvas) {

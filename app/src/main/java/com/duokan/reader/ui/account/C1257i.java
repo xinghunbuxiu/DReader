@@ -1,6 +1,6 @@
 package com.duokan.reader.ui.account;
 
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.core.ui.OnDismissListener;
 
 /* renamed from: com.duokan.reader.ui.account.i */
@@ -12,7 +12,7 @@ class C1257i implements OnDismissListener {
         this.f5958a = c1256h;
     }
 
-    public void onDismiss(C0342j c0342j) {
+    public void onDismiss(BaseDialog dialog) {
         this.f5958a.requestDetach();
     }
 }

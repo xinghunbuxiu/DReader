@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.webkit.WebResourceResponse;
 import com.duokan.core.diagnostic.WebLog;
 import com.duokan.core.diagnostic.LogLevel;
-import com.duokan.core.p027b.C0324a;
+import com.duokan.core.p027b.UrlTools;
 import com.duokan.reader.domain.statistics.C1163a;
 import java.io.File;
 import java.io.FileInputStream;
@@ -41,7 +41,7 @@ class kt implements C1359g {
         if (!access$200.exists()) {
             return null;
         }
-        Uri a = C0324a.m734a(str);
+        Uri a = UrlTools.parse(str);
         if (a == null) {
             return null;
         }

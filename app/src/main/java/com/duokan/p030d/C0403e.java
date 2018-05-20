@@ -18,14 +18,14 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* renamed from: com.duokan.d.e */
+
 class C0403e extends WebSession {
-    /* renamed from: a */
-    static final /* synthetic */ boolean f1355a = (!C0402d.class.desiredAssertionStatus());
-    /* renamed from: b */
-    final /* synthetic */ C0402d f1356b;
-    /* renamed from: c */
-    private JSONObject f1357c;
+    
+    static final  boolean desStatus = (!C0402d.class.desiredAssertionStatus());
+    
+    final  C0402d f1356b;
+    
+    private JSONObject jsonObject;
 
     public C0403e(C0402d c0402d) {
         this.f1356b = c0402d;
@@ -44,25 +44,25 @@ class C0403e extends WebSession {
         arrayList.add(new BasicNameValuePair("sdk", Integer.toString(VERSION.SDK_INT)));
         arrayList.add(new BasicNameValuePair("info", this.f1356b.m2180b()));
         arrayList.add(new BasicNameValuePair("beta", DkApp.get().forCommunity() ? "1" : "0"));
-        this.f1357c = acVar.m547a(acVar.mo376a(new C0626c().m2856b(C0641o.m2934i().m2997x()).m2854a(arrayList).m2853a(HttpPost.METHOD_NAME).m2851a()));
+        this.jsonObject = acVar.m547a(acVar.mo376a(new C0626c().m2856b(C0641o.m2934i().m2997x()).m2854a(arrayList).m2853a(HttpPost.METHOD_NAME).m2851a()));
     }
 
     protected void onSessionSucceeded() {
         Object obj = null;
-        if (f1355a || this.f1356b.f1354b != null) {
+        if (desStatus || this.f1356b.f1354b != null) {
             try {
                 String str;
                 boolean z;
-                Object obj2 = this.f1357c.has("apk") ? (String) this.f1357c.get("apk") : null;
-                if (this.f1357c.has(ClientCookie.VERSION_ATTR)) {
-                    str = (String) this.f1357c.get(ClientCookie.VERSION_ATTR);
+                Object obj2 = this.jsonObject.has("apk") ? (String) this.jsonObject.get("apk") : null;
+                if (this.jsonObject.has(ClientCookie.VERSION_ATTR)) {
+                    str = (String) this.jsonObject.get(ClientCookie.VERSION_ATTR);
                 } else {
                     str = null;
                 }
-                if (this.f1357c.has("note")) {
-                    obj = (String) this.f1357c.get("note");
+                if (this.jsonObject.has("note")) {
+                    obj = (String) this.jsonObject.get("note");
                 }
-                if (this.f1357c.has("force") && this.f1357c.getBoolean("force")) {
+                if (this.jsonObject.has("force") && this.jsonObject.getBoolean("force")) {
                     z = true;
                 } else {
                     z = false;
@@ -92,7 +92,7 @@ class C0403e extends WebSession {
     protected void onSessionFailed() {
     }
 
-    /* renamed from: a */
+    
     private void m2186a() {
         new C0404f(this).open();
     }

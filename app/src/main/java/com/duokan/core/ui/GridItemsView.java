@@ -12,39 +12,39 @@ import android.view.View;
 import java.util.ArrayList;
 
 public class GridItemsView extends ay {
-    /* renamed from: a */
-    static final /* synthetic */ boolean f790a = (!GridItemsView.class.desiredAssertionStatus());
-    /* renamed from: b */
+    
+    static final  boolean f790a = (!GridItemsView.class.desiredAssertionStatus());
+    
     private int f791b;
-    /* renamed from: d */
+    
     private int f792d;
-    /* renamed from: e */
+    
     private int f793e;
-    /* renamed from: f */
+    
     private int f794f;
-    /* renamed from: g */
+    
     private int f795g;
-    /* renamed from: h */
+    
     private int f796h;
-    /* renamed from: i */
+    
     private int f797i;
-    /* renamed from: j */
+    
     private Drawable f798j;
-    /* renamed from: k */
+    
     private Drawable f799k;
-    /* renamed from: l */
+    
     private int f800l;
-    /* renamed from: m */
+    
     private Drawable f801m;
-    /* renamed from: n */
+    
     private int f802n;
-    /* renamed from: o */
+    
     private int f803o;
-    /* renamed from: p */
+    
     private int f804p;
-    /* renamed from: q */
+    
     private int f805q;
-    /* renamed from: r */
+    
     private ArrayList<C0396v> f806r;
 
     public GridItemsView(Context context) {
@@ -118,7 +118,7 @@ public class GridItemsView extends ay {
         m1172a(drawable, false);
     }
 
-    /* renamed from: a */
+    
     public final void m1172a(Drawable drawable, boolean z) {
         if (this.f801m != drawable) {
             this.f801m = drawable;
@@ -169,7 +169,7 @@ public class GridItemsView extends ay {
         m1178b(drawable, false);
     }
 
-    /* renamed from: b */
+    
     public final void m1178b(Drawable drawable, boolean z) {
         if (this.f799k != drawable) {
             this.f799k = drawable;
@@ -194,13 +194,13 @@ public class GridItemsView extends ay {
         return this.f804p;
     }
 
-    /* renamed from: a */
+    
     public final int mo445a(int i) {
         C0396v c0396v = (C0396v) this.f806r.get(i);
         return c0396v.f1339b - c0396v.f1338a;
     }
 
-    /* renamed from: a */
+    
     public final void m1170a(int i, Rect rect, int i2) {
         if (!rect.isEmpty() && rect.width() != 0 && rect.height() != 0 && i >= 0 && this.f806r.size() > i) {
             Rect c = m1179c(i);
@@ -212,7 +212,7 @@ public class GridItemsView extends ay {
         }
     }
 
-    /* renamed from: b */
+    
     public final void mo451b(int i) {
         if (!getViewportBounds().isEmpty() && getContentWidth() != 0 && getContentHeight() != 0 && i >= 0 && this.f806r.size() > i) {
             Rect c = m1179c(i);
@@ -221,13 +221,13 @@ public class GridItemsView extends ay {
         }
     }
 
-    /* renamed from: c */
+    
     public Rect m1179c(int i) {
         View view = ((C0396v) this.f806r.get(i)).f1342e;
         return new Rect(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
     }
 
-    /* renamed from: a */
+    
     protected int mo447a(Point point) {
         int i = 0;
         int i2 = 0;
@@ -253,7 +253,7 @@ public class GridItemsView extends ay {
         return -1;
     }
 
-    /* renamed from: a */
+    
     protected int[] mo450a(Rect rect) {
         int i = -1;
         int i2 = -1;
@@ -287,7 +287,7 @@ public class GridItemsView extends ay {
         return iArr;
     }
 
-    /* renamed from: a */
+    
     protected void mo449a(Canvas canvas) {
         super.mo449a(canvas);
         Rect rect = (Rect) AnimUtils.f1198g.addAnimation();
@@ -306,7 +306,7 @@ public class GridItemsView extends ay {
         AnimUtils.f1198g.clearAnimation(rect);
     }
 
-    /* renamed from: b */
+    
     protected void mo452b(Canvas canvas) {
         int d;
         int d2;
@@ -360,7 +360,7 @@ public class GridItemsView extends ay {
         AnimUtils.f1198g.clearAnimation(rect);
     }
 
-    /* renamed from: a */
+    
     protected void mo448a() {
         int cellsMarginLeft = getCellsMarginLeft();
         int cellsMarginTop = getCellsMarginTop();
@@ -419,7 +419,7 @@ public class GridItemsView extends ay {
         m1143g(this.f793e + getCellsMarginHorizontal(), getCellsMarginBottom() + cellsMarginTop);
     }
 
-    /* renamed from: a */
+    
     protected int mo446a(int i, int i2) {
         int size;
         C0396v c0396v;
@@ -613,7 +613,7 @@ public class GridItemsView extends ay {
         }
     }
 
-    /* renamed from: a */
+    
     protected final Rect m1168a(int i, Rect rect) {
         int b = m1174b(i, 0);
         rect.left = m1154l(b);
@@ -623,7 +623,7 @@ public class GridItemsView extends ay {
         return rect;
     }
 
-    /* renamed from: b */
+    
     protected final Rect m1175b(int i, Rect rect) {
         int b = m1174b(this.f794f - 1, 0);
         rect.left = getCellsMarginLeft() + ((this.f791b + this.f803o) * i);
@@ -633,13 +633,13 @@ public class GridItemsView extends ay {
         return rect;
     }
 
-    /* renamed from: d */
+    
     protected final int mo453d(int i) {
         C0396v c0396v = (C0396v) this.f806r.get(mo454e(i));
         return ((i - c0396v.f1338a) / this.f792d) + c0396v.f1340c;
     }
 
-    /* renamed from: b */
+    
     protected final int m1174b(int i, int i2) {
         int f = m1183f(i);
         if (f < 0) {
@@ -649,7 +649,7 @@ public class GridItemsView extends ay {
         return Math.max(c0396v.f1338a, Math.min((c0396v.f1338a + (this.f792d * (i - c0396v.f1340c))) + i2, c0396v.f1339b - 1));
     }
 
-    /* renamed from: e */
+    
     protected final int mo454e(int i) {
         for (int i2 = 0; i2 < this.f806r.size(); i2++) {
             C0396v c0396v = (C0396v) this.f806r.get(i2);
@@ -660,7 +660,7 @@ public class GridItemsView extends ay {
         return -1;
     }
 
-    /* renamed from: f */
+    
     protected final int m1183f(int i) {
         for (int i2 = 0; i2 < this.f806r.size(); i2++) {
             C0396v c0396v = (C0396v) this.f806r.get(i2);
@@ -671,7 +671,7 @@ public class GridItemsView extends ay {
         return -1;
     }
 
-    /* renamed from: c */
+    
     protected final boolean m1180c(int i, int i2) {
         C0396v c0396v = (C0396v) this.f806r.get(i);
         if (i2 + 1 < c0396v.f1341d - c0396v.f1340c) {

@@ -277,7 +277,7 @@ class bd implements C0352r {
         r4 = r7.getString(r0);	 Catch:{ Throwable -> 0x0099, all -> 0x0097 }
         r0 = 2;
         r5 = r7.getString(r0);	 Catch:{ Throwable -> 0x0099, all -> 0x0097 }
-        r0 = new com.duokan.core.sys.av;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
+        r0 = new com.duokan.core.sys.DkBaseAdapter;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r1 = r10.f693b;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r2 = r10.f694c;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
         r3 = new java.lang.StringBuilder;	 Catch:{ Throwable -> 0x009d, all -> 0x0097 }
@@ -346,7 +346,7 @@ class bd implements C0352r {
         r1 = r7;
         goto L_0x0075;
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.duokan.core.sys.bd.i(java.lang.String):com.duokan.core.sys.av");
+        throw new UnsupportedOperationException("Method not decompiled: com.duokan.core.sys.bd.i(java.lang.String):com.duokan.core.sys.DkBaseAdapter");
     }
 
     /* renamed from: b */

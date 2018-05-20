@@ -11,9 +11,9 @@ class fu implements IdleHandlerListener {
     }
 
     public boolean idleRun() {
-        fz fzVar = (fz) this.f1274a.f1273a.get();
-        if (fzVar != null) {
-            fzVar.m2138a();
+        DkWebView webView = (DkWebView) this.f1274a.f1273a.get();
+        if (webView != null) {
+            webView.m2138a();
         }
         return false;
     }

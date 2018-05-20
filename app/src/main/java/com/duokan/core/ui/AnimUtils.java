@@ -30,8 +30,8 @@ import android.view.animation.TranslateAnimation;
 import android.view.inputmethod.InputMethodManager;
 
 import com.duokan.core.sys.AsyncCache;
-import com.duokan.core.sys.UThread;
 import com.duokan.core.sys.BaseAnimation;
+import com.duokan.core.sys.UThread;
 import com.umeng.analytics.pro.C2295j;
 
 import org.apache.http.HttpStatus;
@@ -660,12 +660,12 @@ public abstract class AnimUtils {
     }
 
 
-    public static int m1959f(Context context) {
+    public static int getMaxOverScrollWidth(Context context) {
         return m1932b(context, 40.0f);
     }
 
 
-    public static int m1962g(Context context) {
+    public static int getMaxOverScrollHeight(Context context) {
         return m1932b(context, 40.0f);
     }
 
@@ -711,18 +711,18 @@ public abstract class AnimUtils {
 
 
     public static float m1965h(Context context) {
-        m1970l(context);
+        getDensityDpi(context);
         return xdpi;
     }
 
 
     public static float m1967i(Context context) {
-        m1970l(context);
+        getDensityDpi(context);
         return ydpi;
     }
 
 
-    private static void m1970l(Context context) {
+    private static void getDensityDpi(Context context) {
         if (Float.isNaN(xdpi) || Float.isNaN(ydpi)) {
             DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
             int round = Math.round((float) Math.sqrt((double) (displayMetrics.xdpi * displayMetrics.ydpi)));
@@ -731,9 +731,7 @@ public abstract class AnimUtils {
                 ydpi = displayMetrics.ydpi;
                 return;
             }
-            float f = (float) displayMetrics.densityDpi;
-            ydpi = f;
-            xdpi = f;
+            xdpi = ydpi = (float) displayMetrics.densityDpi;
         }
     }
 

@@ -12,7 +12,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 import com.duokan.core.app.AppContext;
 import com.duokan.p024c.C0250b;
 import com.duokan.p024c.C0254f;
@@ -114,12 +114,12 @@ public class bh implements C1441v {
     /* renamed from: a */
     public void mo2279a(MotionEvent motionEvent, MotionEvent motionEvent2, float f, float f2) {
         if (this.f9848o) {
-            if (!this.f9847n && this.f9844k >= ((float) C0267i.m598a(this.f9849p, 4.0f))) {
+            if (!this.f9847n && this.f9844k >= ((float) CommonUtils.dip2px(this.f9849p, 4.0f))) {
                 this.f9847n = true;
                 this.f9839f.startAnimation(this.f9845l);
                 m13782c();
             }
-            if (this.f9847n && this.f9844k < ((float) C0267i.m598a(this.f9849p, 4.0f))) {
+            if (this.f9847n && this.f9844k < ((float) CommonUtils.dip2px(this.f9849p, 4.0f))) {
                 this.f9847n = false;
                 this.f9839f.startAnimation(this.f9846m);
                 this.f9846m.setDuration(200);

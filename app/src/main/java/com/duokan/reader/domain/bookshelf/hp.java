@@ -121,7 +121,7 @@ class hp implements am {
     public void mo1095a(C0800c c0800c, im imVar) {
         C0800c b;
         if (c0800c.aq() != 3) {
-            b = this.f3316b.m3906b(c0800c.m4156I());
+            b = this.f3316b.m3906b(c0800c.getId());
         } else {
             b = this.f3316b.m3917c(c0800c.m4225f());
         }

@@ -76,7 +76,7 @@ public class kh extends ee {
         boolean z;
         short[] paidChaptersId;
         int i = null;
-        DkCloudPurchasedFiction b = DkUserPurchasedFictionsManager.m5072a().m5101b(m4156I());
+        DkCloudPurchasedFiction b = DkUserPurchasedFictionsManager.m5072a().m5101b(getId());
         HashSet hashSet = new HashSet();
         if (b != null) {
             boolean isEntirePaid = b.isEntirePaid();
@@ -274,7 +274,7 @@ Caused by: jadx.core.utils.exceptions.CodegenException: PHI can be used only in 
                 if (!mo1038k()) {
                     return false;
                 }
-                if (new C0650x(m4156I()).m3047b() != 1) {
+                if (new C0650x(getId()).m3047b() != 1) {
                     z = false;
                 }
                 return z;

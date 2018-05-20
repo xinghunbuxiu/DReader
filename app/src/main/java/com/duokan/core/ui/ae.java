@@ -3,7 +3,7 @@ package com.duokan.core.ui;
 import com.duokan.core.ui.HatGridView.HatTipState;
 import com.duokan.core.ui.Scrollable.ScrollState;
 
-class ae implements cg {
+class ae implements OnScrollListener {
     /* renamed from: a */
     final /* synthetic */ HatGridView f896a;
 

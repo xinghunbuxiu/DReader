@@ -13,6 +13,6 @@ class dh implements OnClickListener {
     }
 
     public void onClick(View view) {
-        DkPublic.exchangeNewIdThenDo(this.f10026a.f10025z.m4156I(), this.f10026a.f9998G, new di(this), null);
+        DkPublic.exchangeNewIdThenDo(this.f10026a.f10025z.getId(), this.f10026a.f9998G, new di(this), null);
     }
 }

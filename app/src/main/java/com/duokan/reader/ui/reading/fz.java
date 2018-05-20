@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.duokan.core.ui.AnimUtils;
-import com.duokan.core.ui.ge;
+import com.duokan.core.ui.OnZoomListener;
 import com.duokan.p023b.C0243e;
 import com.duokan.reader.domain.document.au;
 
@@ -92,7 +92,7 @@ public abstract class fz extends FrameLayout {
         this.f10205i = lkVar;
     }
 
-    public void setZoomListener(ge geVar) {
+    public void setZoomListener(OnZoomListener geVar) {
         this.f10204h.setOnZoomListener(geVar);
     }
 

@@ -3,10 +3,10 @@ package com.duokan.reader.ui.personal;
 import android.view.View;
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 import com.duokan.reader.ReaderFeature;
 
-class hm implements cg {
+class hm implements OnScrollListener {
     /* renamed from: a */
     boolean f8661a = false;
     /* renamed from: b */

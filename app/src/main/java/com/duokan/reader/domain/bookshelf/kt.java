@@ -50,7 +50,7 @@ class kt implements C0820o {
             this.f3480a.mo1052c(c0903n);
         }
         this.f3481b.bs();
-        DkUserPurchasedFictionsManager.m5072a().m5109d(this.f3481b.m4156I());
+        DkUserPurchasedFictionsManager.m5072a().m5109d(this.f3481b.getId());
     }
 
     /* renamed from: d */

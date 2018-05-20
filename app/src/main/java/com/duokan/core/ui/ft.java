@@ -5,10 +5,10 @@ import java.lang.ref.WeakReference;
 
 class ft implements Runnable {
     /* renamed from: a */
-    private final WeakReference<fz> f1273a;
+    private final WeakReference<DkWebView> f1273a;
 
-    ft(fz fzVar) {
-        this.f1273a = new WeakReference(fzVar);
+    ft(DkWebView webView) {
+        this.f1273a = new WeakReference(webView);
     }
 
     public void run() {

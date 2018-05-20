@@ -4,9 +4,9 @@ import com.duokan.core.ui.HatGridView.HatTipState;
 import com.duokan.core.ui.PullDownRefreshBaseView.RefreshState;
 import com.duokan.core.ui.Scrollable;
 import com.duokan.core.ui.Scrollable.ScrollState;
-import com.duokan.core.ui.cg;
+import com.duokan.core.ui.OnScrollListener;
 
-class bg implements cg {
+class bg implements OnScrollListener {
     /* renamed from: a */
     final /* synthetic */ DkWebListView f6996a;
 

@@ -14,21 +14,21 @@ import com.duokan.reader.ui.general.DkLabelView;
 import org.apache.http.HttpStatus;
 
 public class PullDownRefreshView extends PullDownRefreshBaseView {
-    /* renamed from: a */
+    
     private View f848a;
-    /* renamed from: b */
+    
     private ImageView f849b;
-    /* renamed from: c */
+    
     private DkLabelView f850c;
-    /* renamed from: d */
+    
     private DkLabelView f851d;
-    /* renamed from: e */
+    
     private DkLabelView f852e;
-    /* renamed from: f */
+    
     private DkLabelView f853f;
-    /* renamed from: g */
+    
     private RefreshStyle f854g;
-    /* renamed from: h */
+    
     private final ImageView f855h;
 
     public enum RefreshStyle {
@@ -52,7 +52,7 @@ public class PullDownRefreshView extends PullDownRefreshBaseView {
     public void setRate(float f) {
     }
 
-    /* renamed from: b */
+    
     protected void mo470b() {
         m1297k();
         this.f850c.setVisibility(4);
@@ -61,7 +61,7 @@ public class PullDownRefreshView extends PullDownRefreshBaseView {
         this.f853f.setVisibility(4);
     }
 
-    /* renamed from: a */
+    
     protected void mo469a(RefreshState refreshState) {
         this.f850c.setVisibility(0);
         if (refreshState == RefreshState.RELEASE_TO_REFRESH) {
@@ -75,7 +75,7 @@ public class PullDownRefreshView extends PullDownRefreshBaseView {
         }
     }
 
-    /* renamed from: c */
+    
     protected void mo471c() {
         this.f851d.setVisibility(0);
         this.f850c.setVisibility(4);
@@ -84,14 +84,14 @@ public class PullDownRefreshView extends PullDownRefreshBaseView {
         }
     }
 
-    /* renamed from: d */
+    
     protected void mo472d() {
         this.f852e.setVisibility(0);
         this.f851d.setVisibility(4);
         m1296j();
     }
 
-    /* renamed from: e */
+    
     protected void mo473e() {
         m1297k();
         this.f853f.setVisibility(0);
@@ -120,7 +120,7 @@ public class PullDownRefreshView extends PullDownRefreshBaseView {
         }
     }
 
-    /* renamed from: f */
+    
     private void m1292f() {
         this.f848a = LayoutInflater.from(getContext()).inflate(C0245g.general__web_pull_refresh_comic_view, this, false);
         addView(this.f848a);
@@ -131,7 +131,7 @@ public class PullDownRefreshView extends PullDownRefreshBaseView {
         this.f853f = (DkLabelView) findViewById(C0244f.general__web_pull_refresh_view__refreshed_tip);
     }
 
-    /* renamed from: g */
+    
     private void m1293g() {
         this.f848a = LayoutInflater.from(getContext()).inflate(C0245g.general__web_pull_refresh_view, this, false);
         addView(this.f848a);
@@ -142,22 +142,22 @@ public class PullDownRefreshView extends PullDownRefreshBaseView {
         this.f853f = (DkLabelView) findViewById(C0244f.general__web_pull_refresh_view__refreshed_tip);
     }
 
-    /* renamed from: h */
+    
     private final void m1294h() {
         AnimUtils.startTranslateAnimation(this.f849b, 0.0f, 0.0f, -1.0f, 0.0f, HttpStatus.SC_OK, true, null);
     }
 
-    /* renamed from: i */
+    
     private final void m1295i() {
         AnimUtils.m1961f(this.f849b, null);
     }
 
-    /* renamed from: j */
+    
     private final void m1296j() {
         ((Animatable) this.f849b.getDrawable()).start();
     }
 
-    /* renamed from: k */
+    
     private final void m1297k() {
         this.f849b.getDrawable().setVisible(true, true);
         ((Animatable) this.f849b.getDrawable()).stop();

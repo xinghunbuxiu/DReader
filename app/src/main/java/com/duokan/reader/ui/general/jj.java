@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.general;
 
 import android.webkit.DownloadListener;
-import com.duokan.common.C0267i;
+import com.duokan.common.CommonUtils;
 
 class jj implements DownloadListener {
     /* renamed from: a */
@@ -12,6 +12,6 @@ class jj implements DownloadListener {
     }
 
     public void onDownloadStart(String str, String str2, String str3, String str4, long j) {
-        C0267i.m602a(this.f7447a.getContext(), str);
+        CommonUtils.m602a(this.f7447a.getContext(), str);
     }
 }

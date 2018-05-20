@@ -1,7 +1,7 @@
 package com.duokan.reader.ui.personal;
 
 import com.duokan.core.app.AppContext;
-import com.duokan.core.ui.C0342j;
+import com.duokan.core.ui.BaseDialog;
 import com.duokan.p024c.C0258j;
 import com.duokan.reader.common.webservices.C0621a;
 import com.duokan.reader.common.webservices.C0657i;
@@ -12,15 +12,15 @@ import com.duokan.reader.ui.store.bv;
 
 class is extends WebSession {
     /* renamed from: a */
-    final /* synthetic */ C0342j f8744a;
+    final /* synthetic */ BaseDialog f8744a;
     /* renamed from: b */
     final /* synthetic */ ir f8745b;
     /* renamed from: c */
     private C0621a<String[]> f8746c = null;
 
-    is(ir irVar, C0657i c0657i, C0342j c0342j) {
+    is(ir irVar, C0657i c0657i, BaseDialog dialog) {
         this.f8745b = irVar;
-        this.f8744a = c0342j;
+        this.f8744a = dialog;
         super(c0657i);
     }
 
